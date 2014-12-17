@@ -1,0 +1,47 @@
+{
+  "firstRun_acceptableAdsHeadline": {
+    "message": "โฆษณาที่น่ารำคาญจะถูกปิดกั้น"
+  },
+  "firstRun_dataCorruptionWarning": {
+    "message": "ไม่ให้หน้านี้แสดงอีกครั้ง <a>คลิกที่นี้</a>"
+  },
+  "firstRun_donate": {
+    "message": "บริจาค"
+  },
+  "firstRun_donate_label": {
+    "message": "สนับสนุนโปรเจ็คของเรา"
+  },
+  "firstRun_feature_malware": {
+    "message": "บล็อกมัลแวร์"
+  },
+  "firstRun_feature_malware_description": {
+    "message": "ทำให้ท่องเว็บได้ปลอดภัยยิ่งขึ้น โดยการบล็อกเว็บที่มีมัลแวร์ที่รู้จัก"
+  },
+  "firstRun_feature_social": {
+    "message": "ลบปุ่มสื่อสังคมออก"
+  },
+  "firstRun_feature_tracking": {
+    "message": "ปิดระบบติดตามการใข้งาน"
+  },
+  "firstRun_features": {
+    "message": "Adblock Plus สามารถทำได้มากกกว่าบล็อกโฆษณา"
+  },
+  "firstRun_filterlistsReinitializedWarning": {
+    "message": "ดูเหมือนว่าปัญหาจะเกิดจากตัวกรองทั้งหมดถูกลบออกไปแล้วไม่สามารถคืนค่าจากตัวสำรองข้อมูลได้ ดังนั้นเรามีตัวรีเซ็ตตัวกรองที่ได้รับการยอมรับ กรุณาตรวจสอบรายการตัวกรองโฆษณาของคุณืั้ <a>ตัวเลือก Adblock Plus</a>"
+  },
+  "firstRun_legacySafariWarning": {
+    "message": "คุณกำลังใช้เวอร์ชั่นเก่าบน Safari ที่ไม่ได้รับการสนับสนุนจาก Adblock Plus จะทำให้ทำงานผิดพลาดได้ เราขอแนะนำให้คุณอัพเดต Safari เป็นเวอร์ชั่น 6.1.1 หรือรุ่นที่สูงกว่า (บน OS X 10.8 Mountain Lion) หรือ Safari 7.0.1 หรือสูงกว่า (บน OS X 10.9 Mavericks) หรือใช้เวอร์ชั่นล่าสุดบน Mozilla Firefox, Google Chrome และ Opera"
+  },
+  "firstRun_share": {
+    "message": "บอกเพื่อนของคุณ"
+  },
+  "firstRun_title": {
+    "message": "กาติดตั้ง Adblock Plus เสร็จสมบูรณ์"
+  },
+  "firstRun_toggle_off": {
+    "message": "ไม่ทำงาน"
+  },
+  "firstRun_toggle_on": {
+    "message": "ทำงาน"
+  }
+}

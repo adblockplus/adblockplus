@@ -1,0 +1,62 @@
+{
+  "firstRun_acceptableAdsExplanation": {
+    "message": "Kannustamme verkkosivuja käyttämään yksinkertaisia mainoksia, jotka eivät häiritse. Tämän vuoksi olemme luoneet <a>tiukat ohjesäännöt</a> hyväksyttävien mainosten tunnistamiseksi, jotka näytetään oletusasetuksilla. Jos silti haluat estää kaikki mainokset, voit ottaa tämän <a>pois käytöstä</a> käden käänteessä."
+  },
+  "firstRun_acceptableAdsHeadline": {
+    "message": "Häiritsevät mainokset estetään"
+  },
+  "firstRun_contributor_credits": {
+    "message": "Avustajat:"
+  },
+  "firstRun_dataCorruptionWarning": {
+    "message": "Näetkö tämän sivun koko ajan? <a>Napsauta tätä!</a>"
+  },
+  "firstRun_donate": {
+    "message": "lahjoita"
+  },
+  "firstRun_donate_label": {
+    "message": "Tue projektiamme"
+  },
+  "firstRun_feature_malware": {
+    "message": "Haittaohjelmien estäminen"
+  },
+  "firstRun_feature_malware_description": {
+    "message": "Tee selaimestasi turvallisempi estämällä verkko-osoitteita, joiden tiedetään sisältävän haitallisia ohjelmia."
+  },
+  "firstRun_feature_social": {
+    "message": "Sosiaalisen median painikkeiden poistaminen"
+  },
+  "firstRun_feature_social_description": {
+    "message": "Poista sivustoilta automaattisesti sosiaalisen median painikkeet, kuten Facebookin tykkää -painikkeet, jotka seuraavat verkkokäyttäytymistäsi."
+  },
+  "firstRun_feature_tracking": {
+    "message": "Seuraamisen estäminen"
+  },
+  "firstRun_feature_tracking_description": {
+    "message": "Selaa yksityisesti estämällä seuraaminen - piilota jälkesi mainosyhtiöiltä, jotka muuten seuraavat jokaista liikettäsi."
+  },
+  "firstRun_features": {
+    "message": "Adblock Plus voi tehdä muutakin kuin vain estää mainoksia"
+  },
+  "firstRun_filterlistsReinitializedWarning": {
+    "message": "Näyttäisi siltä, että ongelman takia kaikki suodattimet on poistettu ja niiden palauttaminen varmuuskopiosta epäonnistui. Tämän vuoksi kaikki suodattimien ja hyväksyttävien mainosten asetukset on palautettu alkuarvoihin. Tarkasta suodatinlistat ja hyväksyttävien mainosten asetukset <a>Adblock Plussan asetuksista</a>."
+  },
+  "firstRun_legacySafariWarning": {
+    "message": "Käytössäsi on Safarin vanha versio, jota Adblock Plus ei tue. Se ei välttämättä toimi oikein tai saattaa heikentää joidenkin sivustojen käyttökokemusta. Suosittelemme vahvasti päivittämään Safari 6.1.1:een tai uudempaan (OSX 10.8 Mountain Lion), tai Safari 7.0.1:een tai uudempaan (OSX 10.9 Mavericks), tai käyttämään Mozilla Firefoxin, Google Chromen tai Operan uusinta versiota."
+  },
+  "firstRun_share": {
+    "message": "Kerro ystävillesi"
+  },
+  "firstRun_share_headline": {
+    "message": "<a>Auta meitä</a> tekemään verkosta parempi paikka"
+  },
+  "firstRun_title": {
+    "message": "Adblock Plus on asennettu"
+  },
+  "firstRun_toggle_off": {
+    "message": "OFF"
+  },
+  "firstRun_toggle_on": {
+    "message": "ON"
+  }
+}

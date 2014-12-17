@@ -1,0 +1,62 @@
+{
+  "firstRun_acceptableAdsExplanation": {
+    "message": "Ens agradaria encoratjar els llocs web a utlitzar d'ara en endavant publicitat no intrusiva. És per això que hem establert uns <a>patrons estrictes</a> per identificar els anuncis acceptables, els quals es mostren a sota de les preferències per defecte. Si encara voleu bloquejar tots els anuncis podeu <a>desactivar</a> això en pocs segons."
+  },
+  "firstRun_acceptableAdsHeadline": {
+    "message": "Els anuncis molestos ara es bloquejaran"
+  },
+  "firstRun_contributor_credits": {
+    "message": "Reconeiximents als co·laboradors"
+  },
+  "firstRun_dataCorruptionWarning": {
+    "message": "Es segueix mostrant aquesta pàgina? <a>Cliqueu aquí!</a>"
+  },
+  "firstRun_donate": {
+    "message": "Feu un donatiu"
+  },
+  "firstRun_donate_label": {
+    "message": "Recolzeu el nostre projecte"
+  },
+  "firstRun_feature_malware": {
+    "message": "Bloqueig de programari maliciós"
+  },
+  "firstRun_feature_malware_description": {
+    "message": "Fer la vostra navegació més segura bloquejant els dominis de malware coneguts."
+  },
+  "firstRun_feature_social": {
+    "message": "Eliminar els botons de xarxes socials"
+  },
+  "firstRun_feature_social_description": {
+    "message": "Eliminar automàticament de la vostra experència de navegació els botons socials, com el m'agrada de Facebook, que apareixen a les pàgines web i segueixen el vostre comportament."
+  },
+  "firstRun_feature_tracking": {
+    "message": "Desactivar el seguiment"
+  },
+  "firstRun_feature_tracking_description": {
+    "message": "Navegar de forma privada mitjançant la desactivació del seguiment – amagant el vostre rastre a les companyies de publicitat, que us seguirien encara més."
+  },
+  "firstRun_features": {
+    "message": "Adblock Plus pot fer molt més que bloquejar anuncis"
+  },
+  "firstRun_filterlistsReinitializedWarning": {
+    "message": "Sembla que un problema ha causat que tots els filtres es suprimeixin, però hem pogut restaurar una còpia de seguretat. Durant aquest procés, també s'ha restaurat els filtres i la configuració d'anuncis acceptable. Verifiqueu que la configuració actual és la desitjada, mitjançant les <a>«Preferències del filtre»</a> de l'Adblock Plus."
+  },
+  "firstRun_legacySafariWarning": {
+    "message": "Estàs emprant una versió antiga de Safari que no es troba suportada per Adblock Plus, el que pot fer que no funcioni correctament o amb un pobre rendiment. Es recomana actualitzar a Safari 6.1.1 o superior (amb OS X 10.8 Mountain Lion), o Safari 7.0.1 o superior (amb OS X 10.9 Mavericks), o emprar la darrera versió de Mozilla Firefox, Google Chrome o Opera."
+  },
+  "firstRun_share": {
+    "message": "Digueu-ho a les vostres amistats"
+  },
+  "firstRun_share_headline": {
+    "message": "<a>Dóneu-nos un cop de mà</a> al fer la xarxa un lloc millor"
+  },
+  "firstRun_title": {
+    "message": "S'ha instal·lat l'AdBlock Plus"
+  },
+  "firstRun_toggle_off": {
+    "message": "DESACTIVAT"
+  },
+  "firstRun_toggle_on": {
+    "message": "ACTIVAT"
+  }
+}

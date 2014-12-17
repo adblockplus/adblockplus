@@ -1,0 +1,62 @@
+{
+  "firstRun_acceptableAdsExplanation": {
+    "message": "Radi by sme povzbudili webové stránky aby používali jednoduché a nevtieravé inzercie. To je dôvod, prečo sme zaviedli <a>prísne pravidlá</a> na identifikáciu prijateľné reklamy, ktoré sú uvedené v časti predvolené nastavenie. Ak si napriek tomu chcete blokovať každú reklamu môžete <a>vypnúť</a> toto za pár sekúnd."
+  },
+  "firstRun_acceptableAdsHeadline": {
+    "message": "Otravné reklamy budú teraz blokované"
+  },
+  "firstRun_contributor_credits": {
+    "message": "Zásluhy autorov"
+  },
+  "firstRun_dataCorruptionWarning": {
+    "message": "Chcete stále vidieť túto stránku? <a>Klikni tu!</a>"
+  },
+  "firstRun_donate": {
+    "message": "prispejte"
+  },
+  "firstRun_donate_label": {
+    "message": "Podporťe náš projekt"
+  },
+  "firstRun_feature_malware": {
+    "message": "Blokovanie malvéru"
+  },
+  "firstRun_feature_malware_description": {
+    "message": "Zabezpečenie prezeranie pomocou blokovanie známych domén s malware."
+  },
+  "firstRun_feature_social": {
+    "message": "Odstránenie tlačidiel sociálnych médií"
+  },
+  "firstRun_feature_social_description": {
+    "message": "Automaticky zbaviť prehliadanie webu tlačidiel sociálnych médií, ako napríklad Facebook podobne, ktoré sú uvedené na webových stránkach a sledují vaše správanie."
+  },
+  "firstRun_feature_tracking": {
+    "message": "Zakázať sledovanie"
+  },
+  "firstRun_feature_tracking_description": {
+    "message": "Prechádzať súkromne vypnutím sledovania - skryť vaše skladby z reklamné spoločnosti, ktoré by sledovali každý váš pohyb."
+  },
+  "firstRun_features": {
+    "message": "Adblock Plus môže urobiť viac, ako blokovať reklamy"
+  },
+  "firstRun_filterlistsReinitializedWarning": {
+    "message": "Zdá sa, že problém spôsobil, že všetky filtre boli odstránené a nie sme schopní obnoviť zálohu. Preto sme museli resetovať vaše filtre a prijateľné nastavenia reklám. Prosím, skontrolujte filter zoznamov a prijateľné nastavenia reklamy v <a>Nastavenia Adblock Plus</a>."
+  },
+  "firstRun_legacySafariWarning": {
+    "message": "Používate starú verziu Safari, ktorá nepodporuje Adblock Plus. Nemusel by pracovať správne alebo  by mohol narušiť používateľské skúsenosti na niektorých webových stránkach. Dôrazne odporúčame aktualizovať na Safari 6.1.1 alebo vyšší (k dispozícii pre Mac OS X 10,8 Mountain Lion), alebo Safari 7.0.1 a vyššie (pre OS X 10.9 Mavericks), alebo použiť najnovšiu verziu Mozilla Firefox, Google Chrome alebo Opera."
+  },
+  "firstRun_share": {
+    "message": "Povedzte svojim priateľom"
+  },
+  "firstRun_share_headline": {
+    "message": "<a>Pomuožte nám</a> urobiť web lepším miestom"
+  },
+  "firstRun_title": {
+    "message": "Adblock Plus bol nainštalovaný"
+  },
+  "firstRun_toggle_off": {
+    "message": "OFF"
+  },
+  "firstRun_toggle_on": {
+    "message": "ON"
+  }
+}

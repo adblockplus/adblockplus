@@ -1,0 +1,62 @@
+{
+  "firstRun_acceptableAdsExplanation": {
+    "message": "Nos gustaría fomentar en los sitios web, el uso de publicidad discreta y directa. Es por eso que hemos establecido <a>lineamientos estrictos</a> para identificar anuncios aceptables, que son mostrados bajo las configuraciones predeterminadas. Si aun así deseas bloquear todos los anuncios, puedes <a>desactivar</a> esta opción en pocos segundos."
+  },
+  "firstRun_acceptableAdsHeadline": {
+    "message": "Anuncios molestos serán bloqueados"
+  },
+  "firstRun_contributor_credits": {
+    "message": "Colaboradores"
+  },
+  "firstRun_dataCorruptionWarning": {
+    "message": "¿Se sigue mostrando esta página? <a>¡Haz clic acá!</a>"
+  },
+  "firstRun_donate": {
+    "message": "donar"
+  },
+  "firstRun_donate_label": {
+    "message": "Apoya nuestro proyecto"
+  },
+  "firstRun_feature_malware": {
+    "message": "Bloquear Malware"
+  },
+  "firstRun_feature_malware_description": {
+    "message": "Haz tu navegación más segura bloqueando dominios maliciosos conocidos."
+  },
+  "firstRun_feature_social": {
+    "message": "Quitar Botones de Redes Sociales"
+  },
+  "firstRun_feature_social_description": {
+    "message": "Libérate automáticamente de los botones de redes sociales, como el \"Me gusta\" de Facebook, el cual aparece en páginas web y rastrea tu actividad en línea."
+  },
+  "firstRun_feature_tracking": {
+    "message": "Desactivar el Rastreo"
+  },
+  "firstRun_feature_tracking_description": {
+    "message": "Navega de forma privada desactivando el rastreo, ocultando así tu actividad de compañías de publicidad que te rastrearían en cada momento."
+  },
+  "firstRun_features": {
+    "message": "Adblock Plus puede hacer más que bloquear anuncios"
+  },
+  "firstRun_filterlistsReinitializedWarning": {
+    "message": "Parece que un problema provocó que todos los filtros fueron removidos y fuimos incapaces de restaurar una copia de seguridad. Por lo tanto tuvimos que restaurar tus filtros y configuraciones de anuncios aceptables. Por favor revisa tu lista de filtros y configuración de anuncios aceptables en las <a>Opciones de Adblock Plus</a>."
+  },
+  "firstRun_legacySafariWarning": {
+    "message": "Está utilizando una versión antigua de Safari no soportada por Adblock Plus, por lo que podría funcionar incorrectamente o afectar a su experiencia de usuario en algunos sitios web. Le recomendamos actualizar a Safari 6.1.1 o superior (para Mac OS X 10.8 Mountain Lion), o a Safari 7.0.1 o superior (para Mac OS X 10.9 Mavericks), o usar la última versión de Mozilla Firefox, Google Chrome u Opera."
+  },
+  "firstRun_share": {
+    "message": "Cuéntale a tus amigos"
+  },
+  "firstRun_share_headline": {
+    "message": "<a>Ayúdanos</a> haciendo el internet un mejor lugar"
+  },
+  "firstRun_title": {
+    "message": "Adblock Plus ha sido instalado"
+  },
+  "firstRun_toggle_off": {
+    "message": "NO"
+  },
+  "firstRun_toggle_on": {
+    "message": "SÍ"
+  }
+}

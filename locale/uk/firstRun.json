@@ -1,0 +1,62 @@
+{
+  "firstRun_acceptableAdsExplanation": {
+    "message": "Ми хотіли б заохотити веб-сайти використовувати просту, ненав'язливу рекламу. Ось чому ми створили <a>суворі принципи</a> для ідентифікації прийнятної реклами, які по замовчуванню будуть показуватись. Якщо Ви все ж бажаєте заблокувати всю рекламу, то ви можете <a>вимкнути</a> це за декілька секунд."
+  },
+  "firstRun_acceptableAdsHeadline": {
+    "message": "Надокучлива реклама буде надалі блокуватися"
+  },
+  "firstRun_contributor_credits": {
+    "message": "Внески учасників"
+  },
+  "firstRun_dataCorruptionWarning": {
+    "message": "Ця сторінка все ще відображається? <a>Натисніть тут!</a>"
+  },
+  "firstRun_donate": {
+    "message": "пожертва"
+  },
+  "firstRun_donate_label": {
+    "message": "Підтримайте наш проект"
+  },
+  "firstRun_feature_malware": {
+    "message": "Блокування шкідливих програм"
+  },
+  "firstRun_feature_malware_description": {
+    "message": "Убезпечте ваші перегляд через блокування доменів відомих зловмисних програм."
+  },
+  "firstRun_feature_social": {
+    "message": "Видаляє кнопки соціальних мереж"
+  },
+  "firstRun_feature_social_description": {
+    "message": "Автоматично прибирає кнопки соціальних мереж на кшталт Facebook, які з'являються на веб-сторінках і відстежують вашу поведінку."
+  },
+  "firstRun_feature_tracking": {
+    "message": "Вимкнення відстеження"
+  },
+  "firstRun_feature_tracking_description": {
+    "message": "Переглядайте сайти анонімно шляхом вимкнення відстеження - приховування вашого шляху від рекламних компаній, які хочуть відслідковувати кожний ваш крок."
+  },
+  "firstRun_features": {
+    "message": "Adblock Plus може зробити більше, ніж блокування реклами"
+  },
+  "firstRun_filterlistsReinitializedWarning": {
+    "message": "Здається, що помилка призвела до того, що всі фільтри були знищені, і ми не можемо відновити резервну копію. Тому ми скинули фільтри і налаштування ненав’язливої реклами. Будь ласка, перевірте список ваших фільтрів та налаштування ненав’язливої реклами <a>Adblock Plus параметри</a>."
+  },
+  "firstRun_legacySafariWarning": {
+    "message": "Ви використовуєте стару версію Safari, яка не підтримується Adblock Plus. Вона може не працювати належним чином або погіршувати якість роботи користувача на деяких веб-сайтах. Ми настійно рекомендуємо онвити до Safari 6.1.1 або вище (в OS X 10.8 Mounain Lion), або Safari 7.0.1 або вище (в OS X 10.9 Mavericks), або використовувати останню версію Mozilla Firefox, Google Chrome або Mozilla."
+  },
+  "firstRun_share": {
+    "message": "Розказати друзям"
+  },
+  "firstRun_share_headline": {
+    "message": "<a>Подайте нам руку</a> для створення кращого середовища у мережі"
+  },
+  "firstRun_title": {
+    "message": "Adblock Plus вже встановлено"
+  },
+  "firstRun_toggle_off": {
+    "message": "ВИМКН"
+  },
+  "firstRun_toggle_on": {
+    "message": "УВІМК"
+  }
+}

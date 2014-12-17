@@ -1,0 +1,62 @@
+{
+  "firstRun_acceptableAdsExplanation": {
+    "message": "Искаме да насърчим сайтовете да ползват конкретна, ненатрапчива реклама. Ето защо въведохме <a>строги правила</a> за разпознаване на приемливи реклами, които се показват с настройките по подразбиране. И ако все пак желаете да блокирате всички да можете <a>да ги забраните</a> за няколко секунди."
+  },
+  "firstRun_acceptableAdsHeadline": {
+    "message": "Блокира досадните реклами"
+  },
+  "firstRun_contributor_credits": {
+    "message": "Сътрудници"
+  },
+  "firstRun_dataCorruptionWarning": {
+    "message": "Страницата продължава да се показва? <a>Щракнете тук!</a>"
+  },
+  "firstRun_donate": {
+    "message": "дари"
+  },
+  "firstRun_donate_label": {
+    "message": "Подкрепи проекта"
+  },
+  "firstRun_feature_malware": {
+    "message": "Блокира зловредния софтуер"
+  },
+  "firstRun_feature_malware_description": {
+    "message": "Прави сърфирането по-сигурно с блокиране на познатите зловредни домейни."
+  },
+  "firstRun_feature_social": {
+    "message": "Премахва бутоните на социалните мрежи"
+  },
+  "firstRun_feature_social_description": {
+    "message": "Отстранява автоматично бутоните на социалните мрежи, като „Харесвам“ на Facebook, чиято цел е да следят поведението ви в тези страници."
+  },
+  "firstRun_feature_tracking": {
+    "message": "Забранява проследяването"
+  },
+  "firstRun_feature_tracking_description": {
+    "message": "Забранява проследяването при поверително сърфиране, с което скрива следите ви от рекламните компании."
+  },
+  "firstRun_features": {
+    "message": "Adblock Plus може повече от блокирането на реклами"
+  },
+  "firstRun_filterlistsReinitializedWarning": {
+    "message": "Неизправност изглежда предизвика премахването на всички филтри без възможност за възстановяването им от резервно копие. Затова нулирахме настройките на филтрите и приемливите реклами. Моля, проверете списъка с филтри и настройките на приемливи реклами в <a>настройките на Adblock Plus</a>."
+  },
+  "firstRun_legacySafariWarning": {
+    "message": "Ползвате стара версия на Safari, която не се поддържа от Adblock Plus. Вероятно ще работи неправилно или с прекъсвания в определени сайтове. Строго препоръчваме или да обновите до Safari 6.1.1 или по-нова (за OS X 10.8 Mountain Lion), до Safari 7.0.1 или по-нова (за OS X 10.9 Mavericks), или да ползвате най-новата версия на Mozilla Firefox, Google Chrome или Opera."
+  },
+  "firstRun_share": {
+    "message": "Сподели с приятел"
+  },
+  "firstRun_share_headline": {
+    "message": "<a>Подайте ръка</a>, за да направим мрежата по-добро място"
+  },
+  "firstRun_title": {
+    "message": "Adblock Plus е инсталиран"
+  },
+  "firstRun_toggle_off": {
+    "message": "ИЗКЛ"
+  },
+  "firstRun_toggle_on": {
+    "message": "ВКЛ"
+  }
+}

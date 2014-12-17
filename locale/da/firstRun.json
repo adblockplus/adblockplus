@@ -1,0 +1,62 @@
+{
+  "firstRun_acceptableAdsExplanation": {
+    "message": "Vi vil gerne tilskynde websider til at bruge enkel, diskret annoncering. Derfor har vi indført <a>strenge retningslinjer</a> for at identificere de acceptable annoncer, der vises med standardindstillingerne. Hvis du stadig vil blokere alle annoncer, kan du let <a>deaktivere</a> dette."
+  },
+  "firstRun_acceptableAdsHeadline": {
+    "message": "Generende annoncer bliver nu blokeret"
+  },
+  "firstRun_contributor_credits": {
+    "message": "Tak til"
+  },
+  "firstRun_dataCorruptionWarning": {
+    "message": "<a>Klik her!</a> hvis denne side bliver ved med at dukke op."
+  },
+  "firstRun_donate": {
+    "message": "donér"
+  },
+  "firstRun_donate_label": {
+    "message": "Støt projektet"
+  },
+  "firstRun_feature_malware": {
+    "message": "Malwareblokering"
+  },
+  "firstRun_feature_malware_description": {
+    "message": "Gør din browsing mere sikker ved at blokere kendte malwaredomæner."
+  },
+  "firstRun_feature_social": {
+    "message": "Fjern knapper fra sociale medier"
+  },
+  "firstRun_feature_social_description": {
+    "message": "Fjern automatisk de knapper fra sociale medier, f.eks Facebook Like, som vises på websider og sporer din adfærd."
+  },
+  "firstRun_feature_tracking": {
+    "message": "Deaktiver sporing"
+  },
+  "firstRun_feature_tracking_description": {
+    "message": "Deaktiver sporing - og skjul dine netvaner fra de annoncefirmaer der holder øje med din færden."
+  },
+  "firstRun_features": {
+    "message": "Adblock Plus kan mere end blot blokere annoncer"
+  },
+  "firstRun_filterlistsReinitializedWarning": {
+    "message": "Et problem har tilsyneladende fjernet alle filtre og det var ikke muligt at gendanne en backup. Dine filtre og indstillinger for upåtrængende annoncer er derfor blevet nulstillet. Kontroller dine filtre m.m. i <a>Adblock Plus præferencer</a>."
+  },
+  "firstRun_legacySafariWarning": {
+    "message": "Du bruger en gammel udgave af Safari, som ikke understøttes af Adblock Plus. Det kan fungere dårligt eller forringe brugeroplevelsen på nogle websteder. Vi anbefaler kraftigt at opdatere til minimum Safari 6.1.1 (på OS X 10,8 Mountain Lion), Safari 7.0.1 (på OS X 10.9 Mavericks) eller bruge den nyeste Firefox, Google Chrome eller Opera."
+  },
+  "firstRun_share": {
+    "message": "Fortæl det til vennerne"
+  },
+  "firstRun_share_headline": {
+    "message": "<a>Giv en hånd</a> med at gøre internettet til et bedre sted"
+  },
+  "firstRun_title": {
+    "message": "Adblock Plus blev installeret"
+  },
+  "firstRun_toggle_off": {
+    "message": "FRA"
+  },
+  "firstRun_toggle_on": {
+    "message": "TIL"
+  }
+}

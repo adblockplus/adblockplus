@@ -1,0 +1,44 @@
+{
+  "firstRun_acceptableAdsHeadline": {
+    "message": "எரிச்சலூட்டும் விளம்பரங்கள் இப்போது தடைசெய்யப்படும்"
+  },
+  "firstRun_contributor_credits": {
+    "message": "பங்களிப்பாளர் கிரெடிட்கள்"
+  },
+  "firstRun_dataCorruptionWarning": {
+    "message": "இந்த பக்கம் இதை காட்டி கொண்டே இருக்கிறதா? <a>இங்கே கிளிக் செய்யவும்!</a>"
+  },
+  "firstRun_donate": {
+    "message": "தானம் செய்ய"
+  },
+  "firstRun_donate_label": {
+    "message": "நமது திட்டதுக்கு ஆதரவளிக்க"
+  },
+  "firstRun_feature_malware": {
+    "message": "தீம்பொருள் தடுப்பது"
+  },
+  "firstRun_feature_malware_description": {
+    "message": "தெரிந்த தீம்பொருள் தளங்களை தடுப்பது மூலம் உங்கள் உலாவல் பாதுகாப்பானாதாக செய்யவும்."
+  },
+  "firstRun_feature_social": {
+    "message": "சமூக ஊடகங்கள் பொத்தான்கள் நீக்கு"
+  },
+  "firstRun_feature_tracking": {
+    "message": "அறிதலை முடக்கு"
+  },
+  "firstRun_share": {
+    "message": "உங்கள் நண்பர்களுக்கு கூறுங்கள்"
+  },
+  "firstRun_share_headline": {
+    "message": "ஓரு நல்ல வலை இடமாக மாற்ற <a>எங்களுக்கு கை கொடுங்கள்</a>"
+  },
+  "firstRun_title": {
+    "message": "Adblock plus நிறுவப்பட்டது"
+  },
+  "firstRun_toggle_off": {
+    "message": "அணைக்க"
+  },
+  "firstRun_toggle_on": {
+    "message": "தொடங்க"
+  }
+}
