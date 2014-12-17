@@ -1,0 +1,50 @@
+{
+  "firstRun_acceptableAdsExplanation": {
+    "message": "Sooviksime julgustada veebilehti kasutama otsekoheseid, mittehäirivaid reklaame. Sellepärast on meil <a>ranged eeskirjad</a>, et tuvastada lubatavaid reklaame, mida kuvatakse vaikimise sätete all. Kui sa ikka soovid kõik reklaamid blokeerida, saad sa selle paari sekundi pärast <a>välja lülitada</a>."
+  },
+  "firstRun_acceptableAdsHeadline": {
+    "message": "Tüütud kuulutused on nüüd blokeeritud"
+  },
+  "firstRun_dataCorruptionWarning": {
+    "message": "Kas see leht ilmub ikka? <a>Kliki siia!</a>"
+  },
+  "firstRun_donate": {
+    "message": "anneta"
+  },
+  "firstRun_donate_label": {
+    "message": "Toeta meie projekti"
+  },
+  "firstRun_feature_malware": {
+    "message": "Viiruste blokeerimine"
+  },
+  "firstRun_feature_malware_description": {
+    "message": "Tehke veebis surfamine turvalisemaks tuntud pahavara domeeninimede blokeerimisega."
+  },
+  "firstRun_feature_social": {
+    "message": "Eemalde sotsiaalse meedia nuppe"
+  },
+  "firstRun_feature_tracking": {
+    "message": "Keela Jälgimine"
+  },
+  "firstRun_features": {
+    "message": "Adblock Plus suudab teha enamat, kui reklaame blokeerida"
+  },
+  "firstRun_legacySafariWarning": {
+    "message": "Te kasutate vana Safari versiooni, mida Adblock Plus ei toeta. Adblock Plus ei pruugi korralikult töötada ning võib mõnedel lehekülgedel kasutaja kogemust halvendada. Me soovitame tungivalt uuendada Safarit versioonile 6.1.1 või uuemale (OS X 10.8 Mountain Lion operatsioonisüsteemi puhul), versioonile 7.0.1 või uuemale (OS X 10.9 operatsioonisüsteemi puhul) või kasutada järgmiste veebilehitsejate värskemaid versioone: Mozilla Firefox, Google Chrome, Opera."
+  },
+  "firstRun_share": {
+    "message": "Räägi oma sõpradele"
+  },
+  "firstRun_share_headline": {
+    "message": "<a>Anna meile käsi</a> veebi muutmises paremaks kohaks"
+  },
+  "firstRun_title": {
+    "message": "Adblock Plus on paigaldatud"
+  },
+  "firstRun_toggle_off": {
+    "message": "VÄLJAS"
+  },
+  "firstRun_toggle_on": {
+    "message": "SEES"
+  }
+}

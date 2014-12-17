@@ -1,0 +1,62 @@
+{
+  "firstRun_acceptableAdsExplanation": {
+    "message": "من می خواهم وب سایت ها را تشویق کنم تا از تبلیغات درست و حسابی بدون مزاحمت استفاده کنند. این دلیل ساختن <a> دستورالعمل های دقیق </a> است تا بتواند تبلیغات قابل قبول را بپذیرد و آن ها را به شما نشان دهد ، تبلیغاتی که در شرایط استاندارد صدق کنند. اگر شما می خواهید هر تبلیغی را از هر صفحه ای مسدود کنید می توانید آن را در عرض چند ثانیه <a>غیر فعال</a> کنید."
+  },
+  "firstRun_acceptableAdsHeadline": {
+    "message": "تبلیغات آزار دهنده در حال حاضر مسدود خواهد شد"
+  },
+  "firstRun_contributor_credits": {
+    "message": "اعتبار نویسندگان"
+  },
+  "firstRun_dataCorruptionWarning": {
+    "message": "آیا این صفحه در حال رویت نگه داشته شده؟ <a>اینجا کلیک کن!</a>"
+  },
+  "firstRun_donate": {
+    "message": "کمک مالی"
+  },
+  "firstRun_donate_label": {
+    "message": "پروژه ما را حمایت کنید"
+  },
+  "firstRun_feature_malware": {
+    "message": "مسدود کردن نرم افزارهای مخرب"
+  },
+  "firstRun_feature_malware_description": {
+    "message": "مرور خود رابا مسدود کردن دامنه های مخرب شناخته شده امن تر کنید."
+  },
+  "firstRun_feature_social": {
+    "message": "حذف دکمه های رسانه های اجتماعی"
+  },
+  "firstRun_feature_social_description": {
+    "message": "به طور خودکار مانند like در فیس بوک ، تجربه وبگردی از رسانه های اجتماعی را بفرستید و وضعیت کارهای خود را دنبال کنید."
+  },
+  "firstRun_feature_tracking": {
+    "message": "غیر فعال کردن ردیابی"
+  },
+  "firstRun_feature_tracking_description": {
+    "message": "با غیر فعال کردن ردیابی با امنیت کامل به گشت و گذار اینترنتی بپردازید وخود را از شرکت هایی که می توانند هر لحظه زیر نظر داشته باشند مخفی کنید."
+  },
+  "firstRun_features": {
+    "message": "Adblock Plus می تواند تبلیغات بیشتری را مسدود کند"
+  },
+  "firstRun_filterlistsReinitializedWarning": {
+    "message": "به نظر می رسد که ناشی از موضوع همه فیلتر به حذف می شود و ما قادر به بازگرداندن پشتیبان. بنابراین ما مجبور به تنظیم مجدد فیلتر و تنظیمات تبلیغات قابل قبول. لطفا لیست فیلتر و تنظیمات تبلیغات قابل قبول در <a>Adblock پلاس گزینه های</a> خود را."
+  },
+  "firstRun_legacySafariWarning": {
+    "message": "شما در حال حاضر از يك نسخه قديمي تر مرورگر Safari استفاده ميكنيد كه توسط Adblock Plus پشتيباني نميشود. اين موضوع احتمال دارد بر روي تجربه وب گردي كاربر تأثير منفي گذاشته و يا باعث درست عمل نكردن پلاگين شود. ما قوياً توصيه مي كنيم كه مرورگر خود را به Safari 6.1.1 يا بالاتربه روز رساني كنيد (براي نسخه  Mountain Lion ورژن  OS X 10.8 در سيستم عامل مكينتاش)، و يا به روز رساني به Safari 7.0.1 (براي نسخه Mavericks ورژن OS X 10.9 در سيستم عامل مكينتاش). و يا اينكه ازآخرين ورژن مرورگرهايي مانند: Google Chrome ،Mozilla Firefox و يا Opera استفاده كنيد."
+  },
+  "firstRun_share": {
+    "message": "به دوستان خود بگویید"
+  },
+  "firstRun_share_headline": {
+    "message": "<a>بیایید</a> اینترنت را بهتر کنیم"
+  },
+  "firstRun_title": {
+    "message": "Adblock Plus با موفقیت نصب شد"
+  },
+  "firstRun_toggle_off": {
+    "message": "خاموش"
+  },
+  "firstRun_toggle_on": {
+    "message": "روشن"
+  }
+}

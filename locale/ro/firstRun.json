@@ -1,0 +1,62 @@
+{
+  "firstRun_acceptableAdsExplanation": {
+    "message": "Dorim să încurajăm site-urile web în a utiliza publicitate simplă, discretă. De aceea ne-am stabilit <a>reguli de orientare stricte</a> pentru a identifica anunțurile acceptabile, care sunt permise de către setările implicite. Dacă totuși doriți să bloca toată publicitatea, puteți <a>dezactiva</a> aceste permisiuni în câteva secunde."
+  },
+  "firstRun_acceptableAdsHeadline": {
+    "message": "Reclamele enervante vor fi blocate acum"
+  },
+  "firstRun_contributor_credits": {
+    "message": "Contributori"
+  },
+  "firstRun_dataCorruptionWarning": {
+    "message": "Această pagină continuă să apară și după terminarea instalării? <a>Faceți clic aici!</a>"
+  },
+  "firstRun_donate": {
+    "message": "Donaţii"
+  },
+  "firstRun_donate_label": {
+    "message": "Ajutați proiectul"
+  },
+  "firstRun_feature_malware": {
+    "message": "Blocare software rău intenţionat"
+  },
+  "firstRun_feature_malware_description": {
+    "message": "Securizarea navigării prin blocarea domeniilor rău-intenționate cunoscute."
+  },
+  "firstRun_feature_social": {
+    "message": "Ascundere butoane Social Media"
+  },
+  "firstRun_feature_social_description": {
+    "message": "Eliminare automată a butoanelor mass-media socială, cum ar fi Facebook, care apar pe paginile de web pentru a urmări și înregistra comportamentul dumneavoastră."
+  },
+  "firstRun_feature_tracking": {
+    "message": "Dezactivare urmărire"
+  },
+  "firstRun_feature_tracking_description": {
+    "message": "Navigare fără urme prin eliminarea indiciilor plantate de către companiile publicitare care urmăresc și înregistrează comportamentul dumneavoastră."
+  },
+  "firstRun_features": {
+    "message": "Adblock Plus poate face mai mult decât să blocheze publicitatea"
+  },
+  "firstRun_filterlistsReinitializedWarning": {
+    "message": "Se pare că din cauza unor probleme toate filtrele au fost eliminate şi a fost imposibil să le recuperăm. Prin urmare, am resetat filtrele şi setările pentru publicitate acceptabilă. Vă rugăm să verificaţi listele de filtre şi setările pentru publicitate acceptabilă în <a>Opţiuni pentru Adblock Plus</a>."
+  },
+  "firstRun_legacySafariWarning": {
+    "message": "Folosiți o versiune veche de Safari care nu este suportată de Adblock Plus. Aceasta putea funcționa incorect sau ar putea afecta navigarea pe unele site-uri. Vă recomandăm insistent să instalați cel puțin Safari 6.1.1 (pe sistemul de operare Mac OS X 10.8 Mountain Lion), sau Safari 7.0.1 (pe OS X 10.9 Mavericks), sau să utilizați cea mai recentă versiune de Mozilla Firefox, Google Chrome, sau Opera."
+  },
+  "firstRun_share": {
+    "message": "Spuneți prietenilor dumneavoastră"
+  },
+  "firstRun_share_headline": {
+    "message": "<a>Ajutați-ne</a> în a îmbunătăți web-ul"
+  },
+  "firstRun_title": {
+    "message": "Adblock Plus a fost instalat"
+  },
+  "firstRun_toggle_off": {
+    "message": "OFF"
+  },
+  "firstRun_toggle_on": {
+    "message": "ON"
+  }
+}

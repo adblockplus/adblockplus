@@ -1,0 +1,62 @@
+{
+  "firstRun_acceptableAdsExplanation": {
+    "message": "Kami ingin menggalakkan Laman sesawang untuk menggunakan pengiklanan yang jelas dan tidak mengganggu. Itulah sebabnya mengapa kita mewujudkan <a>garis panduan yang ketat</a> untuk mengenalpasti iklan yang boleh diterima, yang ditunjukkan di bawah tetapan lalai. Jika anda masih mahu menyekat setiap iklan anda boleh <a>mematikan</a> ini dalam beberapa saat."
+  },
+  "firstRun_acceptableAdsHeadline": {
+    "message": "Iklan yang mengganggu kini akan disekat"
+  },
+  "firstRun_contributor_credits": {
+    "message": "Kredit kepada penyumbang"
+  },
+  "firstRun_dataCorruptionWarning": {
+    "message": "Adakah laman ini muncul berkali-kali? <a>Klik di sini!</a>"
+  },
+  "firstRun_donate": {
+    "message": "Derma"
+  },
+  "firstRun_donate_label": {
+    "message": "Sokong projek kami"
+  },
+  "firstRun_feature_malware": {
+    "message": "Menyekat perisian jahat"
+  },
+  "firstRun_feature_malware_description": {
+    "message": "Membuat pelayar anda lebih selamat dengan menyekat domain perisian jahat."
+  },
+  "firstRun_feature_social": {
+    "message": "Mengalih keluar butang Media sosial"
+  },
+  "firstRun_feature_social_description": {
+    "message": "Membuang butang media sosial daripada pengalaman pelayaran anda secara automatik, seperti Facebook Like, yang muncul di laman sesawang dan mengesan tingkah laku anda."
+  },
+  "firstRun_feature_tracking": {
+    "message": "Melumpuhkan pengesanan"
+  },
+  "firstRun_feature_tracking_description": {
+    "message": "Melayar secara bebas dengan melumpuhkan pengesanan - menyembunyikan anda dari syarikat-syarikat iklan yang akan menjejaki setiap langkah anda."
+  },
+  "firstRun_features": {
+    "message": "Adblock Plus boleh melakukan lebih daripada menghalang iklan"
+  },
+  "firstRun_filterlistsReinitializedWarning": {
+    "message": "Terdapat isu yang menyebabkan semua penapisan telah ditanggalkan dan kami tidak dapat memasukkan semula maklumat sokongan. Dengan itu kami perlu melaras semula penapisan serta tetapan Iklan Yang Diterima. Sila periksa senarai penapisan dan tetapan Iklan Yang Diterima di dalam <a>Pilihan Adblock Plus</a>."
+  },
+  "firstRun_legacySafariWarning": {
+    "message": "Anda menggunakan versi lama Safari yang tidak disokong oleh Adblock Plus. Ia mungkin tidak berfungsi dengan betul atau menjejaskan pengalaman pengguna di sesetengah laman sesawang. Kami amat mengesyorkan sama ada mengemaskini kepada Safari 6.1.1 atau lebih tinggi (bagi Mac OS X 10.8 Mountain Lion) atau Safari 7.0.1 pada yang lebih tinggi (OS X 10.9 Mavericks), atau gunakan versi terkini pelayar Mozilla Firefox, Google Chrome atau Opera."
+  },
+  "firstRun_share": {
+    "message": "Beritahu rakan anda"
+  },
+  "firstRun_share_headline": {
+    "message": "<a>Berikan bantuan</a> menjadikan laman sesawang tempat yang lebih baik"
+  },
+  "firstRun_title": {
+    "message": "Adblock Plus telah dipasang"
+  },
+  "firstRun_toggle_off": {
+    "message": "MATI"
+  },
+  "firstRun_toggle_on": {
+    "message": "HIDUP"
+  }
+}

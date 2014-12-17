@@ -1,0 +1,17 @@
+{
+  "firstRun_dataCorruptionWarning": {
+    "message": "এই পৃষ্ঠাটি কি দেখানো অবিরত রাখা হবে?<a>এখানে ক্লিক করুন!</a>"
+  },
+  "firstRun_feature_social": {
+    "message": "সামাজিক মিডিয়ার বোতাম সরান"
+  },
+  "firstRun_title": {
+    "message": "Adblock Plus ইনস্টল করা হয়েছে"
+  },
+  "firstRun_toggle_off": {
+    "message": "বন্ধ"
+  },
+  "firstRun_toggle_on": {
+    "message": "চালু"
+  }
+}

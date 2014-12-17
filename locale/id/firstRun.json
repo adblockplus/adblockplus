@@ -1,0 +1,62 @@
+{
+  "firstRun_acceptableAdsExplanation": {
+    "message": "Kami ingin mendorong situs web untuk menggunakan iklan yang tanpa basa-basi dan tidak mengganggu. Itulah sebabnya kami telah menetapkan <a>panduan ketat</a> untuk mengidentifikasi iklan mana saja yang diizinkan, yang akan ditampilkan dengan pengaturan baku. Jika Anda masih ingin mencekal semua iklan, Anda dapat <a>menonaktifkan</a> fitur ini dalam beberapa detik."
+  },
+  "firstRun_acceptableAdsHeadline": {
+    "message": "Iklan yang mengganggu kini akan dicekal"
+  },
+  "firstRun_contributor_credits": {
+    "message": "Daftar Kontributor"
+  },
+  "firstRun_dataCorruptionWarning": {
+    "message": "Apakah halaman ini terus muncul? <a>Klik di sini!</a>"
+  },
+  "firstRun_donate": {
+    "message": "sumbang"
+  },
+  "firstRun_donate_label": {
+    "message": "Dukung proyek kami"
+  },
+  "firstRun_feature_malware": {
+    "message": "Pencekalan malware"
+  },
+  "firstRun_feature_malware_description": {
+    "message": "Membuat penjelajahan Anda lebih aman dengan memcekal domain malware yang sudah diketahui."
+  },
+  "firstRun_feature_social": {
+    "message": "Penghilangan Tombol Sosial Media"
+  },
+  "firstRun_feature_social_description": {
+    "message": "Secara otomatis menyingkirkan tombol media sosial dari pengalaman penjelajahan Anda, seperti tombol Suka Facebook yang muncul pada halaman web dan melacak kebiasaan anda."
+  },
+  "firstRun_feature_tracking": {
+    "message": "Penonaktifan Pelacakan"
+  },
+  "firstRun_feature_tracking_description": {
+    "message": "Menjelajah secara rahasia dengan menonaktifkan pelacakan - menyembunyikan jejak Anda dari perusahaan iklan yang akan melacak setiap langkah Anda."
+  },
+  "firstRun_features": {
+    "message": "Adblock Plus dapat melakukan lebih banyak hal daripada sekadar memcekal iklan"
+  },
+  "firstRun_filterlistsReinitializedWarning": {
+    "message": "Nampaknya ada masalah yang menyebabkan semua penyaring terhapus dan kami tak dapat memulihkan cadangan. Maka dari itu, kami telah mengatur ulang penyaring dan pengaturan Iklan yang Diizinkan Anda. Silakan periksa daftar penyaring dan pengaturan Iklan yang Diizinkan Anda di <a>opsi Adblock Plus</a>."
+  },
+  "firstRun_legacySafariWarning": {
+    "message": "Anda menggunakan Safari versi lama yang tidak didukung oleh Adblock Plus. Adblock Plus mungkin saja tidak dapat berfungsi dengan baik atau mengurangi kenyamanan pengguna pada beberapa situs. Kami sangat menyarankan agar Anda memutakhirkannya ke Safari 6.1.1 atau yang lebih baru (pada OS X 10.8 Mountain Lion), atau Safari 7.0.1 atau yang lebih baru (pada OS X 10.9 Mavericks), atau menggunakan Mozilla Firefox, Google Chrome atau Opera versi terbaru."
+  },
+  "firstRun_share": {
+    "message": "Beritahu teman Anda"
+  },
+  "firstRun_share_headline": {
+    "message": "<a>Bantulah kami</a> dalam membuat web menjadi tempat yang lebih baik"
+  },
+  "firstRun_title": {
+    "message": "Adblock Plus telah dipasang"
+  },
+  "firstRun_toggle_off": {
+    "message": "MATI"
+  },
+  "firstRun_toggle_on": {
+    "message": "NYALA"
+  }
+}
