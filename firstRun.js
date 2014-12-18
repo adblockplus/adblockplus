@@ -41,92 +41,96 @@
     }
   ];
 
+  function getDocLink(link, callback)
+  {
+    ext.backgroundPage.sendMessage({
+      type: "app.get",
+      what: "doclink",
+      link: link
+    }, callback);
+  }
+
   function onDOMLoaded()
   {
     // Set up URLs
-    var donateLink = E("donate");
-    donateLink.href = Utils.getDocLink("donate");
+    getDocLink("donate", function(link)
+    {
+      E("donate").href = link;
+    });
 
-    var contributors = E("contributors");
-    contributors.href = Utils.getDocLink("contributors");
+    getDocLink("contributors", function(link)
+    {
+      E("contributors").href = link;
+    });
 
-    setLinks("acceptableAdsExplanation", Utils.getDocLink("acceptable_ads_criteria"), openFilters);
-    setLinks("share-headline", Utils.getDocLink("contribute"));
+    getDocLink("acceptable_ads_criteria", function(link)
+    {
+      setLinks("acceptableAdsExplanation", link, openFilters);
+    });
 
-    if (typeof backgroundPage != "undefined")
+    getDocLink("contribute", function(link)
+    {
+      setLinks("share-headline", link);
+    });
+
+    ext.backgroundPage.sendMessage({
+      type: "app.get",
+      what: "issues"
+    }, function(issues)
     {
       // Show warning if data corruption was detected
-      if (backgroundPage.seenDataCorruption)
+      if (issues.seenDataCorruption)
       {
         E("dataCorruptionWarning").removeAttribute("hidden");
-        setLinks("dataCorruptionWarning", Utils.getDocLink("knownIssuesChrome_filterstorage"));
+        getDocLink("knownIssuesChrome_filterstorage", function(link)
+        {
+          setLinks("dataCorruptionWarning", link);
+        });
       }
 
       // Show warning if filterlists settings were reinitialized
-      if (backgroundPage.filterlistsReinitialized)
+      if (issues.filterlistsReinitialized)
       {
         E("filterlistsReinitializedWarning").removeAttribute("hidden");
         setLinks("filterlistsReinitializedWarning", openFilters);
       }
-    }
 
-    // Show warning if Safari version isn't supported
-    var info = require("info");
-    if (info.platform == "safari" && (
-      Services.vc.compare(info.platformVersion, "6.0")  < 0 ||  // beforeload breaks websites in Safari 5
-      Services.vc.compare(info.platformVersion, "6.1") == 0 ||  // extensions are broken in 6.1 and 7.0
-      Services.vc.compare(info.platformVersion, "7.0") == 0
-    ))
-      E("legacySafariWarning").removeAttribute("hidden");
+      if (issues.legacySafariVersion)
+        E("legacySafariWarning").removeAttribute("hidden");
+    });
 
     // Set up feature buttons linked to subscriptions
-    featureSubscriptions.forEach(setToggleSubscriptionButton);
-    var filterListener = function(action)
+    featureSubscriptions.forEach(initToggleSubscriptionButton);
+    updateToggleButtons();
+    updateSocialLinks();
+
+    ext.onMessage.addListener(function(message)
     {
-      if (/^subscription\.(added|removed|disabled)$/.test(action))
+      if (message.type == "subscriptions.listen")
       {
-        for (var i = 0; i < featureSubscriptions.length; i++)
-        {
-          var featureSubscription = featureSubscriptions[i];
-          updateToggleButton(featureSubscription.feature, isSubscriptionEnabled(featureSubscription));
-        }
+        updateToggleButtons();
+        updateSocialLinks();
       }
-    }
-    FilterNotifier.addListener(filterListener);
-    window.addEventListener("unload", function(event)
-    {
-      FilterNotifier.removeListener(filterListener);
-    }, false);
-
-    initSocialLinks();
+    });
+    ext.backgroundPage.sendMessage({
+      type: "subscriptions.listen",
+      filter: ["added", "removed", "disabled"]
+    });
   }
 
-  function isSubscriptionEnabled(featureSubscription)
-  {
-    return featureSubscription.url in FilterStorage.knownSubscriptions
-      && !Subscription.fromURL(featureSubscription.url).disabled;
-  }
-
-  function setToggleSubscriptionButton(featureSubscription)
+  function initToggleSubscriptionButton(featureSubscription)
   {
     var feature = featureSubscription.feature;
 
     var element = E("toggle-" + feature);
-    updateToggleButton(feature, isSubscriptionEnabled(featureSubscription));
     element.addEventListener("click", function(event)
     {
-      var subscription = Subscription.fromURL(featureSubscription.url);
-      if (isSubscriptionEnabled(featureSubscription))
-        FilterStorage.removeSubscription(subscription);
-      else
-      {
-        subscription.disabled = false;
-        subscription.title = featureSubscription.title;
-        subscription.homepage = featureSubscription.homepage;
-        FilterStorage.addSubscription(subscription);
-        if (!subscription.lastDownload)
-          Synchronizer.execute(subscription);
-      }
+      ext.backgroundPage.sendMessage({
+        type: "subscriptions.toggle",
+        url: featureSubscription.url,
+        title: featureSubscription.title,
+        homepage: featureSubscription.homepage
+      });
     }, false);
   }
 
@@ -138,8 +142,7 @@
 
     var popupMessageListener = function(event)
     {
-      var originFilter = Filter.fromText("||adblockplus.org^");
-      if (!originFilter.matches(event.origin, "OTHER", null, null))
+      if (!/[.\/]adblockplus\.org$/.test(event.origin))
         return;
 
       var width = event.data.width;
@@ -181,25 +184,38 @@
     glassPane.className = "visible";
   }
 
-  function initSocialLinks()
+  function updateSocialLinks()
   {
     var networks = ["twitter", "facebook", "gplus"];
     networks.forEach(function(network)
     {
       var link = E("share-" + network);
-      link.addEventListener("click", onSocialLinkClick, false);
+      var message = {
+        type: "filters.blocked",
+        url: link.getAttribute("data-script"),
+        requestType: "SCRIPT",
+        docDomain: "adblockplus.org",
+        thirdParty: true
+      };
+      ext.backgroundPage.sendMessage(message, function(blocked)
+      {
+        // Don't open the share page if the sharing script would be blocked
+        if (blocked)
+          link.removeEventListener("click", onSocialLinkClick, false);
+        else
+          link.addEventListener("click", onSocialLinkClick, false);
+      });
     });
   }
 
   function onSocialLinkClick(event)
   {
-    // Don't open the share page if the sharing script would be blocked
-    var filter = defaultMatcher.matchesAny(event.target.getAttribute("data-script"), "SCRIPT", "adblockplus.org", true);
-    if (!(filter instanceof BlockingFilter))
+    event.preventDefault();
+
+    getDocLink(event.target.id, function(link)
     {
-      event.preventDefault();
-      openSharePopup(Utils.getDocLink(event.target.id));
-    }
+      openSharePopup(link);
+    });
   }
 
   function setLinks(id)
@@ -229,12 +245,23 @@
 
   function openFilters()
   {
-    if (typeof UI != "undefined")
-      UI.openFiltersDialog();
-    else
+    ext.backgroundPage.sendMessage({type: "app.open", what: "options"});
+  }
+
+  function updateToggleButtons()
+  {
+    ext.backgroundPage.sendMessage({
+      type: "subscriptions.get",
+      downloadable: true,
+      ignoreDisabled: true
+    }, function(subscriptions)
     {
-      backgroundPage.openOptions();
-    }
+      for (var i = 0; i < featureSubscriptions.length; i++)
+      {
+        var featureSubscription = featureSubscriptions[i];
+        updateToggleButton(featureSubscription.feature, subscriptions.indexOf(featureSubscription.url) >= 0);
+      }
+    });
   }
 
   function updateToggleButton(feature, isEnabled)
