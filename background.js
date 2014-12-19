@@ -37,119 +37,131 @@
     "https://easylist-downloads.adblockplus.org/fanboy-social.txt"
   ];
 
-  global.Utils = {
-    getDocLink: function(link)
-    {
-      return "https://adblockplus.org/redirect?link=" + encodeURIComponent(link);
-    }
-  };
-
-  global.Subscription = function(url)
+  var modules = {};
+  global.require = function(module)
   {
-    this.url = url;
-    this.title = "Subscription " + url;
-    this.disabled = false;
-    this.lastDownload = 1234;
+    return modules[module];
   };
 
-  global.Subscription.fromURL = function(url)
-  {
-    return new global.Subscription(url);
-  };
-
-  global.DownloadableSubscription = global.Subscription;
-  global.SpecialSubscription = function() {};
-
-  global.FilterStorage = {
-    get subscriptions()
-    {
-      return subscriptions.map(global.Subscription.fromURL);
-    },
-
-    get knownSubscriptions()
-    {
-      var result = {};
-      for (var i = 0; i < subscriptions.length; i++)
-        result[subscriptions[i]] = global.Subscription.fromURL(subscriptions[i]);
-      return result;
-    },
-
-    addSubscription: function(subscription)
-    {
-      var index = subscriptions.indexOf(subscription.url);
-      if (index < 0)
+  modules.utils = {
+    Utils: {
+      getDocLink: function(link)
       {
-        subscriptions.push(subscription.url);
-        global.FilterNotifier.triggerListeners("subscription.added", subscription);
-      }
-    },
-
-    removeSubscription: function(subscription)
-    {
-      var index = subscriptions.indexOf(subscription.url);
-      if (index >= 0)
-      {
-        subscriptions.splice(index, 1);
-        global.FilterNotifier.triggerListeners("subscription.removed", subscription);
+        return "https://adblockplus.org/redirect?link=" + encodeURIComponent(link);
       }
     }
   };
 
-  global.BlockingFilter = function() {};
-
-  global.defaultMatcher = {
-    matchesAny: function(url, requestType, docDomain, thirdParty)
+  modules.subscriptionClasses = {
+    Subscription: function(url)
     {
-      var params = {blockedURLs: ""};
-      updateFromURL(params);
-      var blocked = params.blockedURLs.split(",");
-      if (blocked.indexOf(url) >= 0)
-        return new global.BlockingFilter();
-      else
-        return null;
+      this.url = url;
+      this.title = "Subscription " + url;
+      this.disabled = false;
+      this.lastDownload = 1234;
+    },
+
+    SpecialSubscription: function() {}
+  };
+  modules.subscriptionClasses.Subscription.fromURL = function(url)
+  {
+    return new modules.subscriptionClasses.Subscription(url);
+  };
+  modules.subscriptionClasses.DownloadableSubscription = modules.subscriptionClasses.Subscription;
+
+  modules.filterStorage = {
+    FilterStorage: {
+      get subscriptions()
+      {
+        return subscriptions.map(modules.subscriptionClasses.Subscription.fromURL);
+      },
+
+      get knownSubscriptions()
+      {
+        var result = {};
+        for (var i = 0; i < subscriptions.length; i++)
+          result[subscriptions[i]] = modules.subscriptionClasses.Subscription.fromURL(subscriptions[i]);
+        return result;
+      },
+
+      addSubscription: function(subscription)
+      {
+        var index = subscriptions.indexOf(subscription.url);
+        if (index < 0)
+        {
+          subscriptions.push(subscription.url);
+          modules.filterNotifier.FilterNotifier.triggerListeners("subscription.added", subscription);
+        }
+      },
+
+      removeSubscription: function(subscription)
+      {
+        var index = subscriptions.indexOf(subscription.url);
+        if (index >= 0)
+        {
+          subscriptions.splice(index, 1);
+          modules.filterNotifier.FilterNotifier.triggerListeners("subscription.removed", subscription);
+        }
+      }
+    }
+  };
+
+  modules.filterClasses = {
+    BlockingFilter: function() {}
+  };
+
+  modules.synchronizer = {
+    Synchronizer: {}
+  };
+
+  modules.matcher = {
+    defaultMatcher: {
+      matchesAny: function(url, requestType, docDomain, thirdParty)
+      {
+        var params = {blockedURLs: ""};
+        updateFromURL(params);
+        var blocked = params.blockedURLs.split(",");
+        if (blocked.indexOf(url) >= 0)
+          return new modules.filterClasses.BlockingFilter();
+        else
+          return null;
+      }
     }
   };
 
   var notifierListeners = [];
-  global.FilterNotifier = {
-    addListener: function(listener)
-    {
-      if (notifierListeners.indexOf(listener) < 0)
-        notifierListeners.push(listener);
-    },
+  modules.filterNotifier = {
+    FilterNotifier: {
+      addListener: function(listener)
+      {
+        if (notifierListeners.indexOf(listener) < 0)
+          notifierListeners.push(listener);
+      },
 
-    removeListener: function(listener)
-    {
-      var index = notifierListeners.indexOf(listener);
-      if (index >= 0)
-        notifierListeners.splice(index, 1);
-    },
+      removeListener: function(listener)
+      {
+        var index = notifierListeners.indexOf(listener);
+        if (index >= 0)
+          notifierListeners.splice(index, 1);
+      },
 
-    triggerListeners: function()
-    {
-      var args = Array.prototype.slice.apply(arguments);
-      var listeners = notifierListeners.slice();
-      for (var i = 0; i < listeners.length; i++)
-        listeners[i].apply(null, args);
+      triggerListeners: function()
+      {
+        var args = Array.prototype.slice.apply(arguments);
+        var listeners = notifierListeners.slice();
+        for (var i = 0; i < listeners.length; i++)
+          listeners[i].apply(null, args);
+      }
     }
   };
 
-  global.require = function(module)
-  {
-    if (module == "info")
-    {
-      var result = {
-        platform: "gecko",
-        platformVersion: "34.0",
-        application: "firefox",
-        applicationVersion: "34.0"
-      };
-      updateFromURL(result);
-      return result;
-    }
-    else
-      return undefined;
-  }
+  modules.info = {
+    platform: "gecko",
+    platformVersion: "34.0",
+    application: "firefox",
+    applicationVersion: "34.0"
+  };
+  updateFromURL(modules.info);
 
   global.openOptions = function()
   {

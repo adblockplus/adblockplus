@@ -12,7 +12,6 @@ Directory structure
 * Top-level files:
   * `firstRun.html` and `firstRun.js`: First-run page, see below
   * `i18n.js`: Localization functions, should be included by all pages.
-  * `utils.js`: Utility functions, to be removed soon.
   * `messageResponder.js`: Script to be used on the background page to respond
     to messages sent by UI code.
   * `background.html`, `background.js`: Test implementation of the background

@@ -19,6 +19,11 @@
 
 (function()
 {
+  function E(id)
+  {
+    return document.getElementById(id);
+  }
+
   // Load subscriptions for features
   var featureSubscriptions = [
     {
@@ -114,7 +119,7 @@
     });
     ext.backgroundPage.sendMessage({
       type: "subscriptions.listen",
-      filter: ["added", "removed", "disabled"]
+      filter: ["added", "removed", "updated", "disabled"]
     });
   }
 

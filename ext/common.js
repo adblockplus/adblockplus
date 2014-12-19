@@ -85,7 +85,7 @@
     // dash is dropped, since we only support language and region
     var parts = selectedLocale.split("-");
     var language = parts[0];
-    var region = (parts[1] || "").toUpperCase();
+    var region = (parts[1] || "").toUpperCase();
 
     if (region)
       candidates.push(language + "-" + region);

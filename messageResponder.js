@@ -17,6 +17,21 @@
 
 (function(global)
 {
+  if (!global.ext)
+    global.ext = require("ext_background");
+
+  var Utils = require("utils").Utils;
+  var FilterStorage = require("filterStorage").FilterStorage;
+  var FilterNotifier = require("filterNotifier").FilterNotifier;
+  var defaultMatcher = require("matcher").defaultMatcher;
+  var BlockingFilter = require("filterClasses").BlockingFilter;
+  var Synchronizer = require("synchronizer").Synchronizer;
+
+  var subscriptionClasses = require("subscriptionClasses");
+  var Subscription = subscriptionClasses.Subscription;
+  var DownloadableSubscription = subscriptionClasses.DownloadableSubscription;
+  var SpecialSubscription = subscriptionClasses.SpecialSubscription;
+
   var subscriptionKeys = ["disabled", "homepage", "lastSuccess", "title", "url", "downloadStatus"];
   function convertSubscription(subscription)
   {
@@ -74,7 +89,7 @@
     }
   };
 
-  ext.onMessage.addListener(function(message, sender, callback)
+  global.ext.onMessage.addListener(function(message, sender, callback)
   {
     switch (message.type)
     {
@@ -93,16 +108,23 @@
         }
         else if (message.what == "doclink")
           callback(Utils.getDocLink(message.link));
+        else if (message.what == "localeInfo")
+        {
+          callback({
+            locale: Utils.appLocale,
+            isRTL: Utils.chromeRegistry.isLocaleRTL("adblockplus")
+          });
+        }
         else
           callback(null);
         break;
       case "app.open":
         if (message.what == "options")
         {
-          if (typeof UI != "undefined")
-            UI.openFiltersDialog();
-          else
+          if (typeof global.openOptions == "function")
             global.openOptions();
+          else
+            require("ui").UI.openFiltersDialog();
         }
         break;
       case "subscriptions.get":

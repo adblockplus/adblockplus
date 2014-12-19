@@ -15,85 +15,33 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var i18n;
+// This variable should no longer be necessary once options.js in Chrome
+// accesses ext.i18n directly.
+var i18n = ext.i18n;
 
-if (typeof ext != "undefined")
+if (ext.i18n.getMessage("@@ui_locale"))
 {
-  i18n = ext.i18n;
-
   document.documentElement.lang = ext.i18n.getMessage("@@ui_locale").replace(/_/g, "-");
   document.documentElement.dir = ext.i18n.getMessage("@@bidi_dir");
 }
 else
 {
-  // Using Firefox' approach on i18n instead
-
-  // Randomize URI to work around bug 719376
-  var pageName = location.pathname.replace(/.*\//, '').replace(/\..*?$/, '');
-  var stringBundle = Services.strings.createBundle("chrome://adblockplus/locale/" + pageName +
-    ".properties?" + Math.random());
-
-  function getI18nMessage(key)
+  // Getting UI locale cannot be done synchronously on Firefox, requires
+  // messaging the background page.
+  ext.backgroundPage.sendMessage({
+    type: "app.get",
+    what: "localeInfo"
+  }, function(localeInfo)
   {
-    return {
-      "message": stringBundle.GetStringFromName(key)
-    };
-  }
-
-  i18n = (function()
-  {
-    function getText(message, args)
-    {
-      var text = message.message;
-      var placeholders = message.placeholders;
-
-      if (!args || !placeholders)
-        return text;
-
-      for (var key in placeholders)
-      {
-        var content = placeholders[key].content;
-        if (!content)
-          continue;
-
-        var index = parseInt(content.slice(1), 10);
-        if (isNaN(index))
-          continue;
-
-        var replacement = args[index - 1];
-        if (typeof replacement === "undefined")
-          continue;
-
-        text = text.split("$" + key + "$").join(replacement);
-      }
-      return text;
-    }
-
-    return {
-      getMessage: function(key, args)
-      {
-        try{
-          var message = getI18nMessage(key);
-          return getText(message, args);
-        }
-        catch(e)
-        {
-          Cu.reportError(e);
-          return "Missing translation: " + key;
-        }
-      }
-    };
-  })();
-
-  var Utils = require("utils").Utils;
-  document.documentElement.lang = Utils.appLocale;
-  document.documentElement.dir = Utils.chromeRegistry.isLocaleRTL("adblockplus") ? "rtl" : "ltr";
+    document.documentElement.lang = localeInfo.locale;
+    document.documentElement.dir = localeInfo.isRTL ? "rtl" : "ltr";
+  });
 }
 
 // Inserts i18n strings into matching elements. Any inner HTML already in the element is
 // parsed as JSON and used as parameters to substitute into placeholders in the i18n
 // message.
-i18n.setElementText = function(element, stringName, arguments)
+ext.i18n.setElementText = function(element, stringName, arguments)
 {
   function processString(str, element)
   {
@@ -114,7 +62,7 @@ i18n.setElementText = function(element, stringName, arguments)
 
   while (element.lastChild)
     element.removeChild(element.lastChild);
-  processString(i18n.getMessage(stringName, arguments), element);
+  processString(ext.i18n.getMessage(stringName, arguments), element);
 }
 
 // Loads i18n strings
@@ -133,7 +81,7 @@ function loadI18nStrings()
       className = className.animVal;
     var stringName = className.split(/\s/)[0].substring(5);
 
-    i18n.setElementText(node, stringName, arguments);
+    ext.i18n.setElementText(node, stringName, arguments);
   }
 }
 
