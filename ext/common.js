@@ -17,6 +17,63 @@
 
 (function(global)
 {
+  if (!global.ext)
+    global.ext = {};
+
+  function Page(source)
+  {
+    this._source = source;
+  }
+  Page.prototype =
+  {
+    sendMessage: function(message)
+    {
+      this._source.postMessage({
+        type: "message",
+        messageId: -1,
+        payload: message
+      }, "*");
+    }
+  };
+
+  global.ext.Page = Page;
+
+  /* Message passing */
+
+  global.ext.onMessage =
+  {
+    addListener: function(listener)
+    {
+      listener._extWrapper = function(event)
+      {
+        if (event.data.type != "message")
+          return;
+
+        var message = event.data.payload;
+        var messageId = event.data.messageId;
+        var sender = {
+          page: new Page(event.source)
+        };
+        var callback = function(message)
+        {
+          event.source.postMessage({
+            type: "response",
+            messageId: messageId,
+            payload: message
+          }, "*");
+        };
+        listener(message, sender, callback);
+      };
+      window.addEventListener("message", listener._extWrapper, false);
+    },
+
+    removeListener: function(listener)
+    {
+      if ("_extWrapper" in listener)
+        window.removeEventListener("message", listener._extWrapper, false);
+    }
+  };
+
   /* I18n */
 
   var getLocaleCandidates = function(selectedLocale)
@@ -109,9 +166,6 @@
         catalog[msgId] = parseMessage(rawCatalog[msgId]);
     }
   };
-
-  if (!global.ext)
-    global.ext = {};
 
   global.ext.i18n = {
     getMessage: function(msgId, substitutions)

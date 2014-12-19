@@ -9,8 +9,14 @@ as they will do in the final product.
 Directory structure
 -------------------
 
-* Top-level files: HTML pages and scripts meant to be imported into the
-  respective products.
+* Top-level files:
+  * `firstRun.html` and `firstRun.js`: First-run page, see below
+  * `i18n.js`: Localization functions, should be included by all pages.
+  * `utils.js`: Utility functions, to be removed soon.
+  * `messageResponder.js`: Script to be used on the background page to respond
+    to messages sent by UI code.
+  * `background.html`, `background.js`: Test implementation of the background
+    page, should *not be imported*.
 * `locale` directory: Localized strings, with one directory per locale. The
   Firefox format for locale identifiers is used (xx-YY where xx is the language
   code and YY the optional region code). The localization strings themselves are

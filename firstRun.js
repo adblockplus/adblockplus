@@ -256,10 +256,13 @@
       ignoreDisabled: true
     }, function(subscriptions)
     {
+      var known = Object.create(null);
+      for (var i = 0; i < subscriptions.length; i++)
+        known[subscriptions[i].url] = true;
       for (var i = 0; i < featureSubscriptions.length; i++)
       {
         var featureSubscription = featureSubscriptions[i];
-        updateToggleButton(featureSubscription.feature, subscriptions.indexOf(featureSubscription.url) >= 0);
+        updateToggleButton(featureSubscription.feature, featureSubscription.url in known);
       }
     });
   }
