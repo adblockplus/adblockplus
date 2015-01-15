@@ -120,12 +120,7 @@
         break;
       case "app.open":
         if (message.what == "options")
-        {
-          if (typeof global.openOptions == "function")
-            global.openOptions();
-          else
-            require("ui").UI.openFiltersDialog();
-        }
+          ext.showOptions();
         break;
       case "subscriptions.get":
         var subscriptions = FilterStorage.subscriptions.filter(function(s)

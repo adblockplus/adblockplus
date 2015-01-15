@@ -163,11 +163,6 @@
   };
   updateFromURL(modules.info);
 
-  global.openOptions = function()
-  {
-    window.open("http://example.com/options.html", "_blank");
-  };
-
   global.Services = {
     vc: {
       compare: function(v1, v2)
