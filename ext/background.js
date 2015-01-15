@@ -75,4 +75,9 @@
   };
 
   global.ext.PageMap = PageMap;
+
+  global.ext.showOptions = function()
+  {
+    window.open("http://example.com/options.html", "_blank");
+  };
 })(this);
