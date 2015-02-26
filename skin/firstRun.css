@@ -79,7 +79,7 @@ header
   background-image: url(background.png);
   background-repeat: repeat-x;
   width: 100%;
-  padding: 40px 0 0 0;
+  padding: 25px 0 0 0;
 }
 
 header h1
@@ -152,8 +152,8 @@ section > p
 #logo
 {
   margin: 0 auto;
-  height: 100px;
-  width: 99px;
+  height: 128px;
+  width: 128px;
   display: block;
   background-image: url(abp-icon-big.png);
   background-repeat: no-repeat;
