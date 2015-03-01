@@ -110,10 +110,13 @@
           callback(Utils.getDocLink(message.link));
         else if (message.what == "localeInfo")
         {
-          callback({
-            locale: Utils.appLocale,
-            isRTL: Utils.chromeRegistry.isLocaleRTL("adblockplus")
-          });
+          var bidiDir;
+          if ("chromeRegistry" in Utils)
+            bidiDir = Utils.chromeRegistry.isLocaleRTL("adblockplus") ? "rtl" : "ltr";
+          else
+            bidiDir = ext.i18n.getMessage("@@bidi_dir");
+
+          callback({locale: Utils.appLocale, bidiDir: bidiDir});
         }
         else
           callback(null);

@@ -19,24 +19,21 @@
 // accesses ext.i18n directly.
 var i18n = ext.i18n;
 
-if (ext.i18n.getMessage("@@ui_locale"))
-{
-  document.documentElement.lang = ext.i18n.getMessage("@@ui_locale").replace(/_/g, "-");
-  document.documentElement.dir = ext.i18n.getMessage("@@bidi_dir");
-}
-else
-{
-  // Getting UI locale cannot be done synchronously on Firefox, requires
-  // messaging the background page.
-  ext.backgroundPage.sendMessage({
+// Getting UI locale cannot be done synchronously on Firefox,
+// requires messaging the background page. For Chrome and Safari,
+// we could get the UI locale here, but would need to duplicate
+// the logic implemented in Utils.appLocale.
+ext.backgroundPage.sendMessage(
+  {
     type: "app.get",
     what: "localeInfo"
-  }, function(localeInfo)
+  },
+  function(localeInfo)
   {
     document.documentElement.lang = localeInfo.locale;
-    document.documentElement.dir = localeInfo.isRTL ? "rtl" : "ltr";
-  });
-}
+    document.documentElement.dir = localeInfo.bidiDir;
+  }
+);
 
 // Inserts i18n strings into matching elements. Any inner HTML already in the element is
 // parsed as JSON and used as parameters to substitute into placeholders in the i18n
