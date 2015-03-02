@@ -57,6 +57,17 @@
 
   function onDOMLoaded()
   {
+    // Set up logo image
+    var logo = E("logo");
+    logo.src = "skin/abp-128.png";
+    var errorCallback = function()
+    {
+      logo.removeEventListener("error", errorCallback, false);
+      // We are probably in Chrome/Opera/Safari, the image has a different path.
+      logo.src = "icons/detailed/abp-128.png";
+    };
+    logo.addEventListener("error", errorCallback, false);
+
     // Set up URLs
     getDocLink("donate", function(link)
     {

@@ -155,8 +155,6 @@ section > p
   height: 128px;
   width: 128px;
   display: block;
-  background-image: url(abp-icon-big.png);
-  background-repeat: no-repeat;
 }
 
 #can-do-more
