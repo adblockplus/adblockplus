@@ -334,12 +334,12 @@ section > p
 }
 
 #share-general,
-:root[lang^="zh-"] #share-chinese
+#share-chinese:lang(zh)
 {
   display: block;
 }
 
-:root[lang^="zh-"] #share-general,
+#share-general:lang(zh),
 #share-chinese
 {
   display: none;
@@ -476,6 +476,19 @@ section > p
 {
   -webkit-transition-duration: 0.15s;
   transition-duration: 0.15s;
+}
+
+/* Change order of the blocks for French */
+#content:lang(fr)
+{
+  display: table;
+  margin: auto;
+  caption-side: bottom;
+}
+
+#share:lang(fr)
+{
+  display: table-caption;
 }
 
 .toggle

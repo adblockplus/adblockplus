@@ -48,6 +48,10 @@
       getDocLink: function(link)
       {
         return "https://adblockplus.org/redirect?link=" + encodeURIComponent(link);
+      },
+      get appLocale()
+      {
+        return parent.ext.i18n.getMessage("@@ui_locale").replace(/_/g, "-");
       }
     }
   };
