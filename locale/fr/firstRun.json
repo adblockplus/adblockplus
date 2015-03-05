@@ -36,7 +36,7 @@
     "message": "Naviguer incognito en désactivant le suivi, en masquant vos traces aux publicistes qui traqueraient vos faits et gestes."
   },
   "firstRun_features": {
-    "message": "Adblock Plus peut faire plus que bloquer les pubs"
+    "message": "Pour terminer l'installation, choisissez un niveau de protection de votre vie privée"
   },
   "firstRun_filterlistsReinitializedWarning": {
     "message": "Il semblerait qu'à cause d'un problème, tous les filtres aient été supprimés et que nous n'ayons été en mesure de rétablir une sauvegarde. C'est pourquoi nous avons été contraints de réinitialiser vos filtres et les paramètres des publicités acceptables. Veuillez vérifier vos listes de filtres et les paramètres de publicités acceptables dans les <a>options d'Adblock Plus</a>."
