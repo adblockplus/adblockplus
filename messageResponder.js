@@ -20,11 +20,15 @@
   if (!global.ext)
     global.ext = require("ext_background");
 
+  var Prefs = require("prefs").Prefs;
   var Utils = require("utils").Utils;
   var FilterStorage = require("filterStorage").FilterStorage;
   var FilterNotifier = require("filterNotifier").FilterNotifier;
   var defaultMatcher = require("matcher").defaultMatcher;
-  var BlockingFilter = require("filterClasses").BlockingFilter;
+  
+  var filterClasses = require("filterClasses");
+  var Filter = filterClasses.Filter;
+  var BlockingFilter = filterClasses.BlockingFilter;
   var Synchronizer = require("synchronizer").Synchronizer;
 
   var subscriptionClasses = require("subscriptionClasses");
@@ -32,14 +36,17 @@
   var DownloadableSubscription = subscriptionClasses.DownloadableSubscription;
   var SpecialSubscription = subscriptionClasses.SpecialSubscription;
 
-  var subscriptionKeys = ["disabled", "homepage", "lastSuccess", "title", "url", "downloadStatus"];
-  function convertSubscription(subscription)
+  function convertObject(keys, obj)
   {
     var result = {};
-    for (var i = 0; i < subscriptionKeys.length; i++)
-      result[subscriptionKeys[i]] = subscription[subscriptionKeys[i]]
+    for (var i = 0; i < keys.length; i++)
+      result[keys[i]] = obj[keys[i]];
     return result;
   }
+
+  var convertSubscription = convertObject.bind(null, ["disabled",
+    "downloadStatus", "homepage", "lastSuccess", "title", "url"]);
+  var convertFilter = convertObject.bind(null, ["text"]);
 
   var changeListeners = null;
   var messageTypes = {
@@ -50,6 +57,9 @@
 
   function onFilterChange(action)
   {
+    if (action == "load")
+      action = "filter.loaded";
+
     var parts = action.split(".", 2);
     var type;
     if (parts.length == 1)
@@ -70,6 +80,8 @@
     {
       if (arg instanceof Subscription)
         return convertSubscription(arg);
+      else if (arg instanceof Filter)
+        return convertFilter(arg);
       else
         return arg;
     });
@@ -91,8 +103,37 @@
 
   global.ext.onMessage.addListener(function(message, sender, callback)
   {
+    var listenerFilters = null;
     switch (message.type)
     {
+      case "app.listen":
+      case "filters.listen":
+      case "subscriptions.listen":
+        if (!changeListeners)
+        {
+          changeListeners = new global.ext.PageMap();
+          FilterNotifier.addListener(onFilterChange);
+        }
+
+        listenerFilters = changeListeners.get(sender.page);
+        if (!listenerFilters)
+        {
+          listenerFilters = Object.create(null);
+          changeListeners.set(sender.page, listenerFilters);
+        }
+        break;
+    }
+
+    switch (message.type)
+    {
+      case "add-subscription":
+        ext.showOptions(function()
+        {
+          var subscription = Subscription.fromURL(message.url);
+          subscription.title = message.title;
+          onFilterChange("addSubscription", subscription);
+        });
+        break;
       case "app.get":
         if (message.what == "issues")
         {
@@ -118,12 +159,79 @@
 
           callback({locale: Utils.appLocale, bidiDir: bidiDir});
         }
+        else if (message.what == "addonVersion")
+        {
+          callback(require("info").addonVersion);
+        }
         else
           callback(null);
+        break;
+      case "app.listen":
+        if (message.filter)
+          listenerFilters.app = message.filter;
+        else
+          delete listenerFilters.app;
         break;
       case "app.open":
         if (message.what == "options")
           ext.showOptions();
+        break;
+      case "filters.add":
+        var filter = Filter.fromText(message.text);
+        FilterStorage.addFilter(filter);
+        break;
+      case "filters.blocked":
+        var filter = defaultMatcher.matchesAny(message.url, message.requestType,
+          message.docDomain, message.thirdParty);
+        callback(filter instanceof BlockingFilter);
+        break;
+      case "filters.get":
+        var subscription = Subscription.fromURL(message.subscriptionUrl);
+        if (!subscription)
+        {
+          callback([]);
+          break;
+        }
+        
+        callback(subscription.filters.map(convertFilter));
+        break;
+      case "filters.listen":
+        if (message.filter)
+          listenerFilters.filter = message.filter;
+        else
+          delete listenerFilters.filter;
+        break;
+      case "filters.remove":
+        var filter = Filter.fromText(message.text);
+        var subscription = null;
+        if (message.subscriptionUrl)
+          subscription = Subscription.fromURL(message.subscriptionUrl);
+
+        if (!subscription)
+          FilterStorage.removeFilter(filter);
+        else
+          FilterStorage.removeFilter(filter, subscription, message.index);
+        break;
+      case "prefs.get":
+        callback(Prefs[message.key]);
+        break;
+      case "subscriptions.add":
+        if (message.url in FilterStorage.knownSubscriptions)
+          return;
+
+        var subscription = Subscription.fromURL(message.url);
+        if (!subscription)
+          return;
+
+        subscription.disabled = false;
+        if ("title" in message)
+          subscription.title = message.title;
+        if ("homepage" in message)
+          subscription.homepage = message.homepage;
+        FilterStorage.addSubscription(subscription);
+
+        if (subscription instanceof DownloadableSubscription && !subscription.lastDownload)
+          Synchronizer.execute(subscription);
         break;
       case "subscriptions.get":
         var subscriptions = FilterStorage.subscriptions.filter(function(s)
@@ -138,9 +246,16 @@
         });
         callback(subscriptions.map(convertSubscription));
         break;
-      case "filters.blocked":
-        var filter = defaultMatcher.matchesAny(message.url, message.requestType, message.docDomain, message.thirdParty);
-        callback(filter instanceof BlockingFilter);
+      case "subscriptions.listen":
+        if (message.filter)
+          listenerFilters.subscription = message.filter;
+        else
+          delete listenerFilters.subscription;
+        break;
+      case "subscriptions.remove":
+        var subscription = Subscription.fromURL(message.url);
+        if (subscription.url in FilterStorage.knownSubscriptions)
+          FilterStorage.removeSubscription(subscription);
         break;
       case "subscriptions.toggle":
         var subscription = Subscription.fromURL(message.url);
@@ -155,25 +270,6 @@
           if (!subscription.lastDownload)
             Synchronizer.execute(subscription);
         }
-        break;
-      case "subscriptions.listen":
-        if (!changeListeners)
-        {
-          changeListeners = new global.ext.PageMap();
-          FilterNotifier.addListener(onFilterChange);
-        }
-
-        var filters = changeListeners.get(sender.page);
-        if (!filters)
-        {
-          filters = Object.create(null);
-          changeListeners.set(sender.page, filters);
-        }
-
-        if (message.filter)
-          filters.subscription = message.filter;
-        else
-          delete filters.subscription;
         break;
     }
   });
