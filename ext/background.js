@@ -76,8 +76,12 @@
 
   global.ext.PageMap = PageMap;
 
-  global.ext.showOptions = function()
+  global.ext.showOptions = function(callback)
   {
-    window.open("http://example.com/options.html", "_blank");
+    if (top.location.href.indexOf("options.html") == -1)
+      window.open("options.html", "_blank");
+
+    if (callback)
+      callback();
   };
 })(this);

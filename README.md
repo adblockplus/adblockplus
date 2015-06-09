@@ -59,3 +59,16 @@ The behavior of this page is affected by a number of URL parameters:
   `true` should trigger warnings referring to issues detected by Adblock Plus.
 * `blockedURLs`: a comma-separated list of URLs that should be considered
   blocked (necessary to test the check for blocked scripts in sharing buttons).
+
+options.html
+------------
+
+This is the implementation of the Adblock Plus options page which is the primary
+UI for changing settings and for managing filter lists.
+
+The behavior of this page is affected by a number of URL parameters:
+
+* `addonVersion`: sets addon version application parameter that is used for
+  creating the link to the version-specific release notes
+* `addSubscription=true`: this parameter should trigger a dialog for adding
+  subscriptions as initiated by clicking on an "abp:subscribe" link

@@ -31,12 +31,6 @@
     }
   }
 
-  var subscriptions =[
-    "https://easylist-downloads.adblockplus.org/easylistgermany+easylist.txt",
-    "https://easylist-downloads.adblockplus.org/exceptionrules.txt",
-    "https://easylist-downloads.adblockplus.org/fanboy-social.txt"
-  ];
-
   var modules = {};
   global.require = function(module)
   {
@@ -56,6 +50,12 @@
     }
   };
 
+  modules.prefs = {
+    Prefs: {
+      "subscriptions_exceptionsurl": "https://easylist-downloads.adblockplus.org/exceptionrules.txt"
+    }
+  }
+
   modules.subscriptionClasses = {
     Subscription: function(url)
     {
@@ -65,11 +65,19 @@
       this.lastDownload = 1234;
     },
 
-    SpecialSubscription: function() {}
+    SpecialSubscription: function(url)
+    {
+      this.url = url;
+      this.disabled = false;
+      this.filters = knownFilters.slice();
+    }
   };
   modules.subscriptionClasses.Subscription.fromURL = function(url)
   {
-    return new modules.subscriptionClasses.Subscription(url);
+    if (/^https?:\/\//.test(url))
+      return new modules.subscriptionClasses.Subscription(url);
+    else
+      return new modules.subscriptionClasses.SpecialSubscription(url);
   };
   modules.subscriptionClasses.DownloadableSubscription = modules.subscriptionClasses.Subscription;
 
@@ -77,41 +85,72 @@
     FilterStorage: {
       get subscriptions()
       {
-        return subscriptions.map(modules.subscriptionClasses.Subscription.fromURL);
+        var subscriptions = [];
+        for (var url in modules.filterStorage.FilterStorage.knownSubscriptions)
+          subscriptions.push(modules.filterStorage.FilterStorage.knownSubscriptions[url]);
+        return subscriptions;
       },
 
       get knownSubscriptions()
       {
-        var result = {};
-        for (var i = 0; i < subscriptions.length; i++)
-          result[subscriptions[i]] = modules.subscriptionClasses.Subscription.fromURL(subscriptions[i]);
-        return result;
+        return knownSubscriptions;
       },
 
       addSubscription: function(subscription)
       {
-        var index = subscriptions.indexOf(subscription.url);
-        if (index < 0)
+        if (!(subscription.url in modules.filterStorage.FilterStorage.knownSubscriptions))
         {
-          subscriptions.push(subscription.url);
+          knownSubscriptions[subscription.url] = modules.subscriptionClasses.Subscription.fromURL(subscription.url);
           modules.filterNotifier.FilterNotifier.triggerListeners("subscription.added", subscription);
         }
       },
 
       removeSubscription: function(subscription)
       {
-        var index = subscriptions.indexOf(subscription.url);
-        if (index >= 0)
+        if (subscription.url in modules.filterStorage.FilterStorage.knownSubscriptions)
         {
-          subscriptions.splice(index, 1);
+          delete knownSubscriptions[subscription.url];
           modules.filterNotifier.FilterNotifier.triggerListeners("subscription.removed", subscription);
+        }
+      },
+
+      addFilter: function(filter)
+      {
+        for (var i = 0; i < customSubscription.filters.length; i++)
+        {
+          if (customSubscription.filters[i].text == filter.text)
+            return;
+        }
+        customSubscription.filters.push(filter);
+        modules.filterNotifier.FilterNotifier.triggerListeners("filter.added", filter);
+      },
+
+      removeFilter: function(filter)
+      {
+        for (var i = 0; i < customSubscription.filters.length; i++)
+        {
+          if (customSubscription.filters[i].text == filter.text)
+          {
+            customSubscription.filters.splice(i, 1);
+            modules.filterNotifier.FilterNotifier.triggerListeners("filter.removed", filter);
+            return;
+          }
         }
       }
     }
   };
 
   modules.filterClasses = {
-    BlockingFilter: function() {}
+    BlockingFilter: function() {},
+    Filter: function(text)
+    {
+      this.text = text;
+      this.disabled = false;
+    }
+  };
+  modules.filterClasses.Filter.fromText = function(text)
+  {
+    return new modules.filterClasses.Filter(text);
   };
 
   modules.synchronizer = {
@@ -163,7 +202,9 @@
     platform: "gecko",
     platformVersion: "34.0",
     application: "firefox",
-    applicationVersion: "34.0"
+    applicationVersion: "34.0",
+    addonName: "adblockplus",
+    addonVersion: "2.6.7"
   };
   updateFromURL(modules.info);
 
@@ -176,8 +217,46 @@
     }
   };
 
+  var filters = [
+    "@@||alternate.de^$document",
+    "@@||der.postillion.com^$document", 
+    "@@||taz.de^$document",
+    "@@||amazon.de^$document"
+  ];
+  var knownFilters = filters.map(modules.filterClasses.Filter.fromText);
+
+  var subscriptions = [
+    "https://easylist-downloads.adblockplus.org/easylistgermany+easylist.txt",
+    "https://easylist-downloads.adblockplus.org/exceptionrules.txt",
+    "https://easylist-downloads.adblockplus.org/fanboy-social.txt",
+    "~user~786254"
+  ];
+  var knownSubscriptions = Object.create(null);
+  for (var subscriptionUrl of subscriptions)
+    knownSubscriptions[subscriptionUrl] = modules.subscriptionClasses.Subscription.fromURL(subscriptionUrl);
+  var customSubscription = knownSubscriptions["~user~786254"];
+
   var issues = {seenDataCorruption: false, filterlistsReinitialized: false};
   updateFromURL(issues);
   global.seenDataCorruption = issues.seenDataCorruption;
   global.filterlistsReinitialized = issues.filterlistsReinitialized;
+  
+  var events = {addSubscription: false};
+  updateFromURL(events);
+  if (events.addSubscription)
+  {
+    // We don't know how long it will take for the page to fully load
+    // so we'll post the message after one second
+    setTimeout(function()
+    {
+      window.postMessage({
+        type: "message",
+        payload: {
+          title: "Custom subscription",
+          url: "http://example.com/custom.txt",
+          type: "add-subscription"
+        }
+      }, "*");
+    }, 1000);
+  }
 })(this);
