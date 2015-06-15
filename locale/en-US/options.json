@@ -1,0 +1,266 @@
+{
+  "options_page_title": {
+    "description": "Options page title",
+    "message": "Adblock Plus Options"
+  },
+  "options_page_header_1": {
+    "description": "Page title in navigation sidebar",
+    "message": "Options"
+  },
+  "options_page_header_2": {
+    "description": "Name of extension in navigation sidebar",
+    "message": "Adblock <strong>Plus</strong>"
+  },
+  "options_tab_general": {
+    "description": "Name in sidebar for General tab",
+    "message": "General"
+  },
+  "options_tab_advanced": {
+    "description": "Name in sidebar for Advanced tab",
+    "message": "Advanced"
+  },
+  "options_tab_help": {
+    "description": "Name in sidebar for Help tab",
+    "message": "Help"
+  },
+  "options_version": {
+    "description": "Version label in navigation sidebar",
+    "message": "Version"
+  },
+  "options_tab_share": {
+    "description": "Share button in navigation sidebar",
+    "message": "Share"
+  },
+  "options_tab_donate": {
+    "description": "Donate button in navigation sidebar",
+    "message": "Donate"
+  },
+  "options_readMore": {
+    "description": "Read more element that shows tooltip with description",
+    "message": "read more"
+  },
+  "options_blocking_title": {
+    "description": "Blocking section name in General tab",
+    "message": "Blocking"
+  },
+  "options_language_title": {
+    "description": "Option name in General tab",
+    "message": "<strong>Adblocking</strong> for websites in..."
+  },
+  "options_language_add": {
+    "description": "Add other language button in General Tab",
+    "message": "add other website languages"
+  },
+  "options_furtherBlocking_title": {
+    "description": "Option name in General tab",
+    "message": "Further blocking options"
+  },
+  "options_popular": {
+    "description": "Popular label in further blocking options table",
+    "message": "popular"
+  },
+  "options_furtherBlocking_add": {
+    "description": "Button name for adding other blocking list in General tab",
+    "message": "add other blocking list"
+  },
+  "options_exceptions_title": {
+    "description": "Exceptions section name in General tab",
+    "message": "Exceptions"
+  },
+  "options_acceptableAds_title": {
+    "description": "Acceptable ads option name in General tab",
+    "message": "Acceptable ads"
+  },
+  "options_acceptableAds_description": {
+    "description": "Acceptable ads descriptive name in General tab",
+    "message": "Allow some non-intrusive advertising"
+  },
+  "options_whitelisted_title": {
+    "description": "Whitelisting option name in General tab",
+    "message": "Whitelisted websites"
+  },
+  "options_button_add": {
+    "description": "Add button label",
+    "message": "add"
+  },
+  "options_button_cancel": {
+    "description": "Cancel button label",
+    "message": "cancel"
+  },
+  "options_tweaks_title": {
+    "description": "Tweaks section name in Advanced tab",
+    "message": "Tweaks"
+  },
+  "options_tweaks_blockElement": {
+    "description": "Show block Element option in Advanced tab",
+    "message": "Show <a>Block Element</a> right-click menu item"
+  },
+  "options_blockingList_title": {
+    "description": "Blocking list section title in Advanced tab",
+    "message": "Blocking list"
+  },
+  "options_tab_overview": {
+    "description": "Tab name in Advanced tab",
+    "message": "Overview"
+  },
+  "options_tab_ownList": {
+    "description": "Tab name in Advanced tab",
+    "message": "Edit or create own blocking list"
+  },
+  "options_tableCol_name": {
+    "description": "Name of column of subscription list table in Advanced tab",
+    "message": "Name"
+  },
+  "options_tableCol_description": {
+    "description": "Name of column of subscription list table in Advanced tab",
+    "message": "Description"
+  },
+  "options_tableCol_date": {
+    "description": "Name of column of subscription list table in Advanced tab",
+    "message": "Date"
+  },
+  "options_blockingList_add": {
+    "description": "Import button in Advanced tab",
+    "message": "add/import other blocking list"
+  },
+  "options_blockingList_update": {
+    "description": "Update button in Advanced tab",
+    "message": "Update all blocking lists"
+  },
+  "options_blockingRules": {
+    "description": "Own blicking list header in Advanced tab",
+    "message": "Blocking rules"
+  },
+  "options_blockingRules_edit": {
+    "description": "Edit rules button in Advanced tab",
+    "message": "edit rules"
+  },
+  "options_faq_title": {
+    "description": "FAQ section name in Help tab and link label in same section",
+    "message": "Frequently asked questions"
+  },
+  "options_faq_description": {
+    "description": "FAQ section description in Help tab",
+    "message": "You only need to refresh your blocking list in \"Advanced\" very often, but there are also other known problems."
+  },
+  "options_forum_title": {
+    "description": "Forum section name in Help tab",
+    "message": "Forum"
+  },
+  "options_forum_description": {
+    "description": "Forum section description in Help tab",
+    "message": "If the frequently asked questions helped you can reach us in our forum."
+  },
+  "options_forum_link": {
+    "description": "Forum section link in Help tab",
+    "message": "Adblock Plus support forum"
+  },
+  "options_media_title": {
+    "description": "Social media Section name in Help tab",
+    "message": "Social media"
+  },
+  "options_media_description": {
+    "description": "Social media section description in Help tab",
+    "message": "If there are major problems with Adblock Plus which affects all of our users, we tell you in our social media channels."
+  },
+  "options_dialog_customlist_title": {
+    "description": "Title of custom list modal dialog",
+    "message": "Add other blocking list"
+  },
+  "options_close": {
+    "description": "Close modal button",
+    "message": "close"
+  },
+  "options_dialog_customlist_subscription_title": {
+    "description": "Add customlist modal import hint message",
+    "message": "Via URL/Link"
+  },
+  "options_dialog_customlist_import": {
+    "description": "Button in add custom subscription modal dialog",
+    "message": "import blocking list with this URL"
+  },
+  "options_dialog_edit_own_list": {
+    "description": "Edit own blocking list section name in custom subscription modal dialog",
+    "message": "edit own blocking list"
+  },
+  "options_dialog_create_own_list": {
+    "description": "Button in custom subscription modal dialog",
+    "message": "create own blocking rules"
+  },
+   "options_dialog_language_title": {
+    "description": "Button in gerenal tab",
+    "message": "Add other website language"
+  },
+  "options_dialog_language_find": {
+    "description": "Placeholder text in add language modal dialog",
+    "message": "Find language"
+  },
+  "options_dialog_language_added": {
+    "description": "Table headline in add language modal dialog",
+    "message": "Added languages"
+  },
+  "options_dialog_language_other": {
+    "description": "Table headline in add language modal dialog",
+    "message": "Other languages"
+  },
+  "options_language_en": {
+    "description": "Language name shown in add language modal dialog",
+    "message": "English"
+  },
+  "options_language_id": {
+    "description": "Language name shown in add language modal dialog",
+    "message": "Indonesian"
+  },
+  "options_language_bg": {
+    "description": "Language name shown in add language modal dialog",
+    "message": "Bulgarian"
+  },
+  "options_language_zh": {
+    "description": "Language name shown in add language modal dialog",
+    "message": "Chinese"
+  },
+  "options_language_cs_sk": {
+    "description": "Language name shown in add language modal dialog",
+    "message": "Czech and Slovak"
+  },
+  "options_language_nl": {
+    "description": "Language name shown in add language modal dialog",
+    "message": "Dutch"
+  },
+  "options_language_de": {
+    "description": "Language name shown in add language modal dialog",
+    "message": "German"
+  },
+  "options_language_he": {
+    "description": "Language name shown in add language modal dialog",
+    "message": "Hebrew"
+  },
+  "options_language_it": {
+    "description": "Language name shown in add language modal dialog",
+    "message": "Italian"
+  },
+  "options_language_lt": {
+    "description": "Language name shown in add language modal dialog",
+    "message": "Lithuanian"
+  },
+  "options_language_lv": {
+    "description": "Language name shown in add language modal dialog",
+    "message": "Latvian"
+  },
+  "options_language_ar": {
+    "description": "Language name shown in add language modal dialog",
+    "message": "Arabic"
+  },
+  "options_language_fr": {
+    "description": "Language name shown in add language modal dialog",
+    "message": "French"
+  },
+  "options_language_ro": {
+    "description": "Language name shown in add language modal dialog",
+    "message": "Romanian"
+  },
+  "options_language_ru_uk": {
+    "description": "Language name shown in add language modal dialog",
+    "message": "Russian and Ukrainian"
+  }
+}
