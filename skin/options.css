@@ -111,9 +111,11 @@ input[type="search"]::-webkit-search-cancel-button
   display: flex;
 }
 
-.tabs li span:first-child
+.tabs li a:first-child
 {
   flex: 1;
+  color: inherit;
+  text-decoration: none;
 }
 
 .tabs.vertical
@@ -213,7 +215,7 @@ body[data-tab="help"] #tab-help
   width: 16px;
 }
 
-#tab-donate .icon
+#tab-contribute .icon
 {
   background-position: -30px -17px;
   height: 16px;
@@ -236,11 +238,18 @@ body[data-tab="help"] #tab-help
   padding: 40px 0px 16px 0px;
 }
 
-.nav-link
+#link-version
 {
-  -moz-margin-start: 12px;
-  -webkit-margin-start: 12px;
+  display: flex;
+  margin: 12px 20px;
   color: #3A7BA6;
+  text-decoration: none;
+}
+
+#abp-version
+{
+  -moz-margin-start: 5px;
+  -webkit-margin-start: 5px;
 }
 
 #content-wrapper
