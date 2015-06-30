@@ -325,7 +325,6 @@
     var buttonText = ext.i18n.getMessage("options_button_add");
     languagesTemplate.content.querySelector(".button-add span").textContent = buttonText;
 
-    updateShareLink();
     populateLists();
 
     var tabList = document.querySelectorAll("#main-navigation-tabs li");
@@ -346,17 +345,29 @@
         searchStyle.innerHTML = "#all-lang-table li:not([data-search*=\"" + this.value.toLowerCase() + "\"]) { display: none; }";
     }
 
-    // Update version number in navigation sidebar
+    // Initialize navigation sidebar
     ext.backgroundPage.sendMessage(
     {
-      method: "app.get",
+      type: "app.get",
       what: "addonVersion"
     },
     function(addonVersion)
     {
       E("abp-version").textContent = addonVersion;
     });
-    
+    getDocLink("releases", function(link)
+    {
+      E("link-version").setAttribute("href", link);
+    });
+
+    getDocLink("contribute", function(link)
+    {
+      document.querySelector("#tab-contribute a").setAttribute("href", link);
+    });
+
+    updateShareLink();
+
+    // Initialize interactive UI elements
     var placeholderValue  = ext.i18n.getMessage("options_dialog_language_find");
     E("find-language").setAttribute("placeholder", placeholderValue);
     E("add-blocking-list").addEventListener("click", function()
@@ -618,6 +629,16 @@
   function E(id)
   {
     return document.getElementById(id);
+  }
+
+  function getDocLink(link, callback)
+  {
+    ext.backgroundPage.sendMessage(
+    {
+      type: "app.get",
+      what: "doclink",
+      link: link
+    }, callback);
   }
 
   ext.onMessage.addListener(function(message)

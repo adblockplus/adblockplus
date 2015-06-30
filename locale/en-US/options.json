@@ -31,9 +31,9 @@
     "description": "Share button in navigation sidebar",
     "message": "Share"
   },
-  "options_tab_donate": {
-    "description": "Donate button in navigation sidebar",
-    "message": "Donate"
+  "options_tab_contribute": {
+    "description": "Button in navigation sidebar to support Adblock Plus",
+    "message": "Support us"
   },
   "options_readMore": {
     "description": "Read more element that shows tooltip with description",
