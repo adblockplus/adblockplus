@@ -15,30 +15,61 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+@font-face
+{
+  font-family: "Source Sans Pro";
+  src: url(fonts/SourceSansPro-Light.woff);
+  /* local("Ø") forces using no local font called Source Sans Pro */
+  src: local("Ø"), url(fonts/SourceSansPro-Light.woff) format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face
+{
+  font-family: "Source Sans Pro";
+  src: url(fonts/SourceSansPro-Regular.woff);
+  /* local("Ø") forces using no local font called Source Sans Pro */
+  src: local("Ø"), url(fonts/SourceSansPro-Regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face
+{
+  font-family: "Source Sans Pro";
+  src: url(fonts/SourceSansPro-Semibold.woff);
+  /* local("Ø") forces using no local font called Source Sans Pro */
+  src: local("Ø"), url(fonts/SourceSansPro-Semibold.woff) format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
 body
 {
   background-color: #F5F5F5;
   display: flex;
+  margin: 20px 10px;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 14px;
-  white-space: nowrap;
 }
 
 h1 
 {
   font-size: 24px;
-  font-weight: 100;
+  line-height: 1em;
+  font-weight: 300;
 }
 
 h2
 {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 p
 {
-  font-weight: 100;
+  font-weight: 300;
 }
 
 hr
@@ -67,30 +98,27 @@ input[type="search"]::-webkit-search-cancel-button
 
 #nav-sidebar
 {
-  position: relative;
-  padding: 0px 0px 16px 0px;
-  -moz-padding-start: 10px;
-  -webkit-padding-start: 10px;
   min-width: 198px;
 }
 
 #nav-sidebar .fixed
 {
-  height: 100%;
+  top: 40px;
+  bottom: 2px;
+  height: auto;
   position: fixed;
 }
 
 #page-title
 {
-  -webkit-margin-start: 10px;
-  -moz-margin-start: 10px;
+  padding: 0px 20px;
 }
 
 #page-title p
 {
   margin: 0px;
-  padding: 40px 0px 0px 0px;
   font-size: 16px;
+  line-height: 1em;
 }
 
 #page-title h1
@@ -111,7 +139,7 @@ input[type="search"]::-webkit-search-cancel-button
   display: flex;
 }
 
-.tabs li a:first-child
+.tabs li a
 {
   flex: 1;
   color: inherit;
@@ -129,29 +157,14 @@ input[type="search"]::-webkit-search-cancel-button
 
 .tabs.vertical li
 {
-  border-color: #CDCDCD;
+  border-color: #CDCDCD transparent;
   border-style: solid;
-  border-width: 1px 0px 0px 0px;
+  border-width: 1px;
   font-size: 16px;
-  font-weight: 100;
-  padding: 16px 0px;
-  -moz-padding-end: 20px;
-  -webkit-padding-end: 20px;
-  -moz-padding-start: 11px;
-  -webkit-padding-start: 11px;
-}
-
-body[data-tab="general"] #tab-general + li,
-body[data-tab="advanced"] #tab-advanced + li,
-body[data-tab="help"] #tab-help + li
-{
-  border-width: 0px;
-}
-
-#tab-help,
-body[data-tab="advanced"] #tab-advanced + li
-{
-  border-bottom-width: 1px;
+  font-weight: 300;
+  line-height: 1em;
+  margin-top: -1px;
+  padding: 14px 20px;
 }
 
 body[data-tab="general"] #tab-general,
@@ -161,14 +174,24 @@ body[data-tab="help"] #tab-help
   background-color: #FFFFFF;
   border-radius: 3px 0px 0px 3px;
   border-width: 1px;
-  -moz-border-end: 0px;
-  -webkit-border-end: 0px;
-  font-weight: 900;
+  font-weight: 600;
+  -moz-border-start-color: #CDCDCD;
+  -webkit-border-start-color: #CDCDCD;
   -moz-margin-end: -1px;
   -webkit-margin-end: -1px;
-  -moz-padding-start: 10px;
-  -webkit-padding-start: 10px;
-  position: relative;
+  -moz-margin-start: -1px;
+  -webkit-margin-start: -1px;
+  -moz-padding-end: 21px;
+  -webkit-padding-end: 21px;
+  -moz-padding-start: 21px;
+  -webkit-padding-start: 21px;
+}
+
+html[dir="rtl"] body[data-tab="general"] #tab-general,
+html[dir="rtl"] body[data-tab="advanced"] #tab-advanced,
+html[dir="rtl"] body[data-tab="help"] #tab-help
+{
+  border-radius: 0px 3px 3px 0px;
 }
 
 .tabs.vertical.bottom
@@ -182,44 +205,40 @@ body[data-tab="help"] #tab-help
   border-top: 0px;
 }
 
-.tabs.vertical .icon
+#tab-contribute
 {
-  margin: 2px 0px 0px 0px;
+  border-bottom: none;
+}
+
+#nav-sidebar ul li .icon
+{
+  height: 14px;
+  width: 14px;
 }
 
 #tab-general .icon
 {
-  background-position: -15px -17px;
-  height: 16px;
-  width: 16px;
+  background-position: -16px -18px;
 }
 
 #tab-advanced .icon
 {
-  background-position: -45px -18px;
-  height: 16px;
-  width: 16px;
+  background-position: -46px -18px;
 }
 
 #tab-help .icon
 {
-  background-position: 0px -17px;
-  height: 16px;
-  width: 16px;
+  background-position: -1px -18px;
 }
 
 #tab-share .icon
 {
-  background-position: -60px -17px;
-  height: 16px;
-  width: 16px;
+  background-position: -61px -18px;
 }
 
 #tab-contribute .icon
 {
-  background-position: -30px -17px;
-  height: 16px;
-  width: 16px;
+  background-position: -31px -18px;
 }
 
 #tab-content
@@ -426,7 +445,7 @@ div.button
 {
   border-bottom: 2px solid #1E8728;
   color: black;
-  font-weight: bold;
+  font-weight: 600;
   padding-bottom: 10px;
 }
 
@@ -669,7 +688,7 @@ div.button
 {
   color: black;
   border-bottom-color: #3A7BA6;
-  font-weight: bold;
+  font-weight: 600;
   -moz-padding-start: 0px;
   -webkit-padding-start: 0px;
 }
