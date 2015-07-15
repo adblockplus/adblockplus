@@ -178,7 +178,7 @@
           <div>
             <h1><span class="i18n_options_blockingList_title"></span><a class="i18n_options_readMore tooltip" href="#" target="_blank"></a></h1>
             <ul id="blocking-list-tabs" class="tabs horizontal">
-              <li class="i18n_options_tab_overview active" data-show="blocking-list-overview"></li><li class="i18n_options_tab_ownList" data-show="blocking-list-own"></li>
+              <li class="i18n_options_tab_overview active" data-show="blocking-list-overview"></li><li class="i18n_options_tab_ownList" data-show="custom-filters"></li>
             </ul>
             <div id="blocking-list">
               <div id="blocking-list-overview">
@@ -199,33 +199,37 @@
                   </button>
                 </div>
               </div>
-              <div id="blocking-list-own">
-                <p class="i18n_options_blockingRules"></p>
-                <ul class="table list">
-                  <li><span>zap2it.com##.zc-station-position</span></li>
-                  <li><span>downturk.net##.zippo</span></li>
-                  <li><span>yahoo.com##.y708-promo-middle</span></li>
-                  <li><span>reflector.com##.yahooboss</span></li>
-                  <li><span>yardbarker.com##.yard_leader</span></li>
-                  <li><span>espn.co.uk##.will_hill</span></li>
-                  <li><span>listverse.com##.wiki</span></li>
-                  <li><span>planet5d.com##.wp-image-1573</span></li>
-                  <li><span>buzzinn.net##.wpn_finner</span></li>
-                  <li><span>talkers.com##.wpss_slideshow</span></li>
-                </ul>
-                <div class="controls" style="margin: 0px;">
-                  <input type="text" placeholder="add your blocking rule here"/>
-                  <div class="input-control">
-                    <span class="input-separator"></span>
-                    <span class="i18n_options_button_add input-button-text"></span>
-                    <span class="icon icon-enter-blue"></span>
+              <div id="custom-filters">
+                <h2 id="custom-filters-header" class="i18n_options_customFilters_title"></h2>
+                <div id="custom-filters-wrapper">
+                  <div id="custom-filters-list-wrapper">
+                    <ul id="custom-filters-table" class="table list">
+                      <template>
+                        <span class="display"></span>
+                      </template>
+                    </ul>
+                    <form id="custom-filters-add" class="controls">
+                      <input type="text"/>
+                      <button class="i18n_options_button_add" type="submit"></button>
+                    </form>
                   </div>
+                  <textarea id="custom-filters-raw"></textarea>
                 </div>
-                <div class="controls">
-                  <button>
+                <div id="custom-filters-edit-wrapper" class="controls">
+                  <button id="custom-filters-show-edit">
                     <span class="icon icon-edit"></span>
-                    <span class="i18n_options_blockingRules_edit"></span>
+                    <span class="i18n_options_customFilter_edit"></span>
                   </button>
+                  <div id="custom-filters-raw-controls">
+                    <button>
+                      <span class="icon icon-edit"></span>
+                      <span class="i18n_options_customFilter_list"></span>
+                    </button>
+                    <button id="custom-filters-raw-save">
+                      <span class="icon icon-edit"></span>
+                      <span class="i18n_options_customFilter_save"></span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

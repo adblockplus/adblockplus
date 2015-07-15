@@ -30,6 +30,7 @@
   var Filter = filterClasses.Filter;
   var BlockingFilter = filterClasses.BlockingFilter;
   var Synchronizer = require("synchronizer").Synchronizer;
+  var filterValidation = require("filterValidation");
 
   var subscriptionClasses = require("subscriptionClasses");
   var Subscription = subscriptionClasses.Subscription;
@@ -54,6 +55,23 @@
     "filter": "filters.listen",
     "subscription": "subscriptions.listen"
   };
+
+  function sendMessage(type, action, args, page)
+  {
+    var pages = page ? [page] : changeListeners.keys();
+    for (var i = 0; i < pages.length; i++)
+    {
+      var filters = changeListeners.get(pages[i]);
+      if (filters[type] && filters[type].indexOf(action) >= 0)
+      {
+        pages[i].sendMessage({
+          type:  messageTypes[type],
+          action: action,
+          args: args
+        });
+      }
+    }
+  }
 
   function onFilterChange(action)
   {
@@ -85,21 +103,8 @@
       else
         return arg;
     });
-
-    var pages = changeListeners.keys();
-    for (var i = 0; i < pages.length; i++)
-    {
-      var filters = changeListeners.get(pages[i]);
-      if (filters[type] && filters[type].indexOf(action) >= 0)
-      {
-        pages[i].sendMessage({
-          type: messageTypes[type],
-          action: action,
-          args: args
-        });
-      }
-    }
-  };
+    sendMessage(type, action, args);
+  }
 
   global.ext.onMessage.addListener(function(message, sender, callback)
   {
@@ -178,7 +183,11 @@
         break;
       case "filters.add":
         var filter = Filter.fromText(message.text);
-        FilterStorage.addFilter(filter);
+        var result = filterValidation.parseFilter(message.text);
+        if (result.error)
+          sendMessage("app", "error", [result.error.toString()], sender.page);
+        else if (result.filter)
+          FilterStorage.addFilter(result.filter);
         break;
       case "filters.blocked":
         var filter = defaultMatcher.matchesAny(message.url, message.requestType,
@@ -194,6 +203,47 @@
         }
         
         callback(subscription.filters.map(convertFilter));
+        break;
+      case "filters.importRaw":
+        var result = filterValidation.parseFilters(message.text);
+        var errors = [];
+        for (var i = 0; i < result.errors.length; i++)
+        {
+          var error = result.errors[i];
+          if (error.type != "unexpected-filter-list-header")
+            errors.push(error.toString());
+        }
+
+        if (errors.length > 0)
+        {
+          sendMessage("app", "error", errors, sender.page);
+          return;
+        }
+
+        var seenFilter = Object.create(null);
+        for (var i = 0; i < result.filters.length; i++)
+        {
+          var filter = result.filters[i];
+          FilterStorage.addFilter(filter);
+          seenFilter[filter.text] = null;
+        }
+
+        for (var i = 0; i < FilterStorage.subscriptions.length; i++)
+        {
+          var subscription = FilterStorage.subscriptions[i];
+          if (!(subscription instanceof SpecialSubscription))
+            continue;
+
+          for (var j = subscription.filters.length - 1; j >= 0; j--)
+          {
+            var filter = subscription.filters[j];
+            if (/^@@\|\|([^\/:]+)\^\$document$/.test(filter.text))
+              continue;
+
+            if (!(filter.text in seenFilter))
+              FilterStorage.removeFilter(filter);
+          }
+        }
         break;
       case "filters.listen":
         if (message.filter)

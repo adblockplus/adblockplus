@@ -85,6 +85,13 @@ input[type="search"]::-webkit-search-cancel-button
   display: none;
 }
 
+input[type="text"], input[type="search"]
+{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 .option-name
 {
   display: flex;
@@ -450,7 +457,8 @@ div.button
 }
 
 .icon, .table input[type="checkbox"]::before, .table button.delete,
-#content-help a::before, #dialog-close::before
+#content-help a::before, #dialog-close::before,
+#custom-filters-add button::after
 {
   background-image: url(options-sprite.png);
   display: inline-block;
@@ -461,7 +469,7 @@ div.button
   background-position: -0px -0px;
   cursor: pointer;
   height: 18px;
-  width: 18px;
+  min-width: 18px;
 }
 
 .icon-update
@@ -565,7 +573,7 @@ div.button
   outline: 0px;
   padding-bottom: 5px;
   vertical-align: text-bottom;
-  width: 330px;
+  width: 100%;
 }
 
 #whitelisting .controls .button-add span
@@ -609,65 +617,134 @@ div.button
   Advanced tab content
 */
 
-#blocking-list-own .table
+#custom-filters-header
+{
+  padding: 0px 20px;
+  margin-bottom: 10px;
+}
+
+#custom-filters-raw-controls
+{
+  display: flex;
+}
+
+#custom-filters:not(.mode-edit) #custom-filters-raw,
+#custom-filters:not(.mode-edit) #custom-filters-raw-controls,
+#custom-filters.mode-edit #custom-filters-show-edit,
+#custom-filters.mode-edit #custom-filters-list-wrapper
+{
+  display: none;
+}
+
+#custom-filters-raw-save
+{
+  padding: 0px 16px;
+}
+
+#custom-filters .table
 {
   height: 290px;
   overflow: auto;
   width: auto;
 }
 
-#blocking-list-own .controls
+#custom-filters-add
 {
   display: flex;
   padding: 0px;
   border: none;
 }
 
-#blocking-list-own input[type="text"],
-#blocking-list-own input[type="text"]:focus
+#custom-filters .controls
 {
-  border: 0px;
-  border-bottom: 1px solid;
-  border-top: 1px solid;
+  border-top: none;
+}
+
+#custom-filters-raw
+{
+  width: 100%;
+  height: 100%;
+}
+
+#custom-filters-wrapper
+{
+  height: 330px;
+}
+
+#custom-filters input[type="text"]
+{
+  border-width: 1px 0px 1px 0px;
+  border-bottom-style: solid;
+  border-top-style: solid;
   border-color: #1E8728;
-  box-sizing: border-box;
   height: 25px;
-  outline: 0px;
   -moz-padding-start: 10px;
   -webkit-padding-start: 10px;
+  -moz-padding-end: 60px;
+  -webkit-padding-end: 60px;
+  padding-top: 18px;
+  padding-bottom: 18px;
   width: 100%;
 }
 
-.icon-enter-blue
+#custom-filters input[type="text"]:focus
 {
-  background-position: -28px -85px;
+  outline: 0px;
+}
+
+#custom-filters-add input
+{
+  font-size: 13px;
+  background-color: #F5F5F5;
+}
+
+#custom-filters-add input::-webkit-input-placeholder
+{
+  font-weight: 600;
+}
+#custom-filters-add input::-moz-placeholder
+{
+  font-weight: 600;
+}
+
+#custom-filters-table
+{
+  border-top: 1px solid #CDCDCD;
+}
+
+#custom-filters-add button
+{
+  font-size: 14px;
+  -webkit-margin-start: -60px;
+  -moz-margin-start: -60px;
+  -webkit-padding-end: 6px;
+  -moz-padding-end: 6px;
   cursor: pointer;
-  height: 10px;
-  margin: 0px 0px -2px 2px;
-  width: 10px;
+  color: #3A7BA6;
 }
 
-#blocking-list-own .input-control
+#custom-filters-add button::before
 {
-  position: absolute;
-  -webkit-margin-start: -50px;
-  -moz-margin-start: -50px;
-  bottom: 5px;
-}
-
-#blocking-list-own .input-separator
-{
+  content: "";
   display: inline-block;
   -moz-border-end: 1px solid #CDCDCD;
   -webkit-border-end: 1px solid #CDCDCD;
   height: 15px;
-  margin: 0px 4px -4px 0px;
+  -webkit-margin-end: 10px;
+  -moz-margin-end: 10px;
+  margin-bottom: -2px;
   width: 1px;
 }
 
-#blocking-list-own .input-button-text
+#custom-filters-add button::after
 {
-  font-size: 12px;
+  content: "";
+  background-position: -28px -85px;
+  cursor: pointer;
+  height: 10px;
+  -webkit-margin-start: 6px;
+  -moz-margin-start: 6px;
+  width: 10px;
 }
 
 .tooltip, #block-element-explanation a
@@ -807,9 +884,6 @@ body[data-dialog] #dialog-background
 #dialog input[type="text"],
 #dialog input[type="search"]
 {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   font-size: 16px;
   margin-top: 10px;
   padding: 5px;
