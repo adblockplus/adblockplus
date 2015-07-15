@@ -31,6 +31,15 @@
     }
   }
 
+  var params = {
+    blockedURLs: "",
+    seenDataCorruption: false,
+    filterlistsReinitialized: false,
+    addSubscription: false,
+    filterError: false
+  };  
+  updateFromURL(params);
+
   var modules = {};
   global.require = function(module)
   {
@@ -153,6 +162,24 @@
     return new modules.filterClasses.Filter(text);
   };
 
+  modules.filterValidation = 
+  {
+    parseFilter: function(text) 
+    {
+      
+      if (params.filterError)
+        return {error: "Invalid filter"};
+      return {filter: modules.filterClasses.Filter.fromText(text)};
+    },
+    parseFilters: function(text)
+    {
+      if (params.filterError)
+        return {errors: ["Invalid filter"]};
+      return {filters: 
+              text.split("\n").map(modules.filterClasses.Filter.fromText)};
+    }
+  };
+
   modules.synchronizer = {
     Synchronizer: {}
   };
@@ -161,8 +188,6 @@
     defaultMatcher: {
       matchesAny: function(url, requestType, docDomain, thirdParty)
       {
-        var params = {blockedURLs: ""};
-        updateFromURL(params);
         var blocked = params.blockedURLs.split(",");
         if (blocked.indexOf(url) >= 0)
           return new modules.filterClasses.BlockingFilter();
@@ -221,7 +246,23 @@
     "@@||alternate.de^$document",
     "@@||der.postillion.com^$document", 
     "@@||taz.de^$document",
-    "@@||amazon.de^$document"
+    "@@||amazon.de^$document",
+    "||biglemon.am/bg_poster/banner.jpg",
+    "winfuture.de###header_logo_link",
+    "###WerbungObenRechts10_GesamtDIV",
+    "###WerbungObenRechts8_GesamtDIV",
+    "###WerbungObenRechts9_GesamtDIV",
+    "###WerbungUntenLinks4_GesamtDIV",
+    "###WerbungUntenLinks7_GesamtDIV",
+    "###WerbungUntenLinks8_GesamtDIV",
+    "###WerbungUntenLinks9_GesamtDIV",
+    "###Werbung_Sky",
+    "###Werbung_Wide",
+    "###__ligatus_placeholder__",
+    "###ad-bereich1-08",
+    "###ad-bereich1-superbanner",
+    "###ad-bereich2-08",
+    "###ad-bereich2-skyscrapper"
   ];
   var knownFilters = filters.map(modules.filterClasses.Filter.fromText);
 
@@ -236,14 +277,10 @@
     knownSubscriptions[subscriptionUrl] = modules.subscriptionClasses.Subscription.fromURL(subscriptionUrl);
   var customSubscription = knownSubscriptions["~user~786254"];
 
-  var issues = {seenDataCorruption: false, filterlistsReinitialized: false};
-  updateFromURL(issues);
-  global.seenDataCorruption = issues.seenDataCorruption;
-  global.filterlistsReinitialized = issues.filterlistsReinitialized;
+  global.seenDataCorruption = params.seenDataCorruption;
+  global.filterlistsReinitialized = params.filterlistsReinitialized;
   
-  var events = {addSubscription: false};
-  updateFromURL(events);
-  if (events.addSubscription)
+  if (params.addSubscription)
   {
     // We don't know how long it will take for the page to fully load
     // so we'll post the message after one second

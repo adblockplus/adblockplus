@@ -72,3 +72,5 @@ The behavior of this page is affected by a number of URL parameters:
   creating the link to the version-specific release notes
 * `addSubscription=true`: this parameter should trigger a dialog for adding
   subscriptions as initiated by clicking on an "abp:subscribe" link
+* `filterError=true`: causes filter validation to fail, showing validation
+  errors when adding new filters on the options page

@@ -38,8 +38,8 @@
 
     this.items.sort(function(a, b)
     {
-      var aValue = (a.title || a.url || a.text).toLowerCase();
-      var bValue = (b.title || b.url || a.text).toLowerCase();
+      var aValue = (a.title || a.text || a.url).toLowerCase();
+      var bValue = (b.title || b.text || b.url).toLowerCase();
       return aValue.localeCompare(bValue);
     });
 
@@ -107,7 +107,13 @@
     e.preventDefault();
     var subscriptionUrl = e.target.parentNode.dataset.access;
     if (!e.target.checked)
-      removeSubscription(subscriptionUrl);
+    {
+       ext.backgroundPage.sendMessage(
+        {
+          type: "subscriptions.remove",
+          url: subscriptionUrl
+        });
+    }
     else
       addEnableSubscription(subscriptionUrl);
   }
@@ -122,7 +128,11 @@
   function onRemoveFilterClick()
   {
     var filter = this.parentNode.dataset.access;
-    removeFilter(filter);
+    ext.backgroundPage.sendMessage(
+    {
+      type: "filters.remove",
+      text: filter
+    });
   }
 
   collections.popular = new Collection(
@@ -168,6 +178,12 @@
     {
       id: "whitelisting-table", 
       onClick: onRemoveFilterClick
+    }
+  ]);
+  collections.customFilters = new Collection(
+  [
+    {
+      id: "custom-filters-table"
     }
   ]);
 
@@ -266,12 +282,11 @@
     {
       filter.title = match[1];
       collections.whitelist.addItems(filter);
-      filtersMap[filter.text] = filter
     }
     else
-    {
-      // TODO: add `filters[i].text` to list of custom filters
-    }
+      collections.customFilters.addItems(filter);
+
+    filtersMap[filter.text] = filter;
   }
 
   function loadRecommendations()
@@ -345,6 +360,14 @@
         searchStyle.innerHTML = "#all-lang-table li:not([data-search*=\"" + this.value.toLowerCase() + "\"]) { display: none; }";
     }
 
+    function isEnterPressed(e)
+    {
+      // e.keyCode has been deprecated so we attempt to use e.key
+      if ("key" in e)
+        return e.key == "Enter";
+      return e.keyCode == 13;  // keyCode "13" corresponds to "Enter"
+    }
+
     // Initialize navigation sidebar
     ext.backgroundPage.sendMessage(
     {
@@ -395,9 +418,7 @@
     E("whitelisting-add-button").addEventListener("click", addWhitelistedDomain, false);
     E("whitelisting-textbox").addEventListener("keypress", function(e)
     {
-      // e.keyCode has been deprecated so we attempt to use e.key
-      // keyCode "13" corresponds to "Enter"
-      if ((e.key && e.key == "Enter") || (!e.key && e.keyCode == 13))
+      if (isEnterPressed(e))
         addWhitelistedDomain();
     }, false);
     E("import-blockingList-button").addEventListener("click", function()
@@ -405,6 +426,50 @@
       var url = E("blockingList-textbox").value;
       addEnableSubscription(url);
       delete document.body.dataset.dialog;
+    }, false);
+
+    // Advanced tab
+    var filterTextbox = document.querySelector("#custom-filters-add input");
+    placeholderValue = ext.i18n.getMessage("options_customFilters_textbox_placeholder");
+    filterTextbox.setAttribute("placeholder", placeholderValue);
+    function addCustomFilters()
+    {
+      var filterText = filterTextbox.value;
+      ext.backgroundPage.sendMessage(
+      {
+        type: "filters.add",
+        text: filterText
+      });
+      filterTextbox.value = "";
+    }
+    E("custom-filters-add").addEventListener("submit", function(e)
+    {
+      e.preventDefault();
+      addCustomFilters();
+    }, false);
+    var customFilterEditButtons = document.querySelectorAll("#custom-filters-edit-wrapper button");
+    E("custom-filters-edit-wrapper").addEventListener("click", function(e)
+    {
+      var target = null;
+      if (e.target.localName == "button")
+        target = e.target;
+      else if (e.target.parentElement.localName == "button")
+        target = e.target.parentElement;
+      else
+        return;
+
+      var id = target.id;
+      E("custom-filters").classList.toggle("mode-edit");
+      if (id == "custom-filters-show-edit")
+        editCustomFilters();
+      else if (id == "custom-filters-raw-save")
+      {
+        ext.backgroundPage.sendMessage(
+        {
+          type: "filters.importRaw",
+          text: E("custom-filters-raw").value
+        });
+      }
     }, false);
   }
 
@@ -485,7 +550,11 @@
 
   function editCustomFilters()
   {
-    //TODO: NYI
+    var customFilterItems = collections.customFilters.items;
+    var filterTexts = [];
+    for (var i = 0; i < customFilterItems.length; i++)
+      filterTexts.push(customFilterItems[i].text);
+    E("custom-filters-raw").value = filterTexts.join("\n");
   }
 
   function getAcceptableAdsURL(callback)
@@ -526,24 +595,6 @@
     ext.backgroundPage.sendMessage(message);
   }
 
-  function removeSubscription(url)
-  {
-    ext.backgroundPage.sendMessage(
-    {
-      type: "subscriptions.remove",
-      url: url
-    });
-  }
-
-  function removeFilter(filter)
-  {
-    ext.backgroundPage.sendMessage(
-    {
-      type: "filters.remove",
-      text: filter
-    });
-  }
-
   function onFilterMessage(action, filter)
   {
     switch (action)
@@ -558,6 +609,7 @@
       case "removed":
         var knownFilter = filtersMap[filter.text];
         collections.whitelist.removeItem(knownFilter);
+        collections.customFilters.removeItem(knownFilter);
         delete filtersMap[filter.text];
         updateShareLink();
         break;
@@ -647,7 +699,14 @@
     {
       case "app.listen":
         if (message.action == "addSubscription")
-          showAddSubscriptionDialog(message.args[0]);
+        {
+          E("blockingList-textbox").value = message.args[0].url;
+          openDialog("customlist");
+        }
+        else if (message.action == "error")
+        {
+          alert(message.args.join("\n"));
+        }
         break;
       case "filters.listen":
         onFilterMessage(message.action, message.args[0]);
@@ -661,7 +720,7 @@
   ext.backgroundPage.sendMessage(
   {
     type: "app.listen",
-    filter: ["addSubscription"]
+    filter: ["addSubscription", "error"]
   });
   ext.backgroundPage.sendMessage(
   {

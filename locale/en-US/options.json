@@ -44,7 +44,7 @@
     "message": "Blocking"
   },
   "options_language_title": {
-    "description": "Option name in General tab",
+    "description": "Ad blocking list option name in General tab",
     "message": "<strong>Adblocking</strong> for websites in..."
   },
   "options_language_add": {
@@ -52,7 +52,7 @@
     "message": "add other website languages"
   },
   "options_furtherBlocking_title": {
-    "description": "Option name in General tab",
+    "description": "Blocking list option name in General tab",
     "message": "Further blocking options"
   },
   "options_popular": {
@@ -127,13 +127,25 @@
     "description": "Update button in Advanced tab",
     "message": "Update all blocking lists"
   },
-  "options_blockingRules": {
-    "description": "Own blicking list header in Advanced tab",
+  "options_customFilters_title": {
+    "description": "Custom filters option name in Advanced tab",
     "message": "Blocking rules"
   },
-  "options_blockingRules_edit": {
-    "description": "Edit rules button in Advanced tab",
+  "options_customFilters_textbox_placeholder": {
+    "description": "Adding custom filter textbox placeholder text in Advanced tab",
+    "message": "add your blocking rule here"
+  },
+  "options_customFilter_edit": {
+    "description": "Label for editing custom filter in Advanced tab",
     "message": "edit rules"
+  },
+  "options_customFilter_list": {
+    "description": "Label for editing custom filter in Advanced tab",
+    "message": "list view"
+  },
+  "options_customFilter_save": {
+    "description": "Label for editing custom filter in Advanced tab",
+    "message": "save"
   },
   "options_faq_title": {
     "description": "FAQ section name in Help tab and link label in same section",
