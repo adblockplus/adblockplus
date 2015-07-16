@@ -175,19 +175,27 @@
     "description": "Social media section description in Help tab",
     "message": "If there are major problems with Adblock Plus which affects all of our users, we tell you in our social media channels."
   },
-  "options_dialog_customlist_title": {
-    "description": "Title of custom list modal dialog",
+  "options_dialog_predefined_confirm": {
+    "description": "Confirming to add a predefined subscription when asked in a dialog",
+    "message": "Yes, use this blocking list"
+  },
+  "options_dialog_predefined_title": {
+    "description": "Dialog title for adding a predefined subscription",
+    "message": "Do you really want to use this blocking list?"
+  },
+  "options_dialog_custom_title": {
+    "description": "Title of custom subscription modal dialog",
     "message": "Add other blocking list"
   },
   "options_close": {
     "description": "Close modal button",
     "message": "close"
   },
-  "options_dialog_customlist_subscription_title": {
-    "description": "Add customlist modal import hint message",
+  "options_dialog_custom_subscription_title": {
+    "description": "Add custom subscription modal import hint message",
     "message": "Via URL/Link"
   },
-  "options_dialog_customlist_import": {
+  "options_dialog_custom_import": {
     "description": "Button in add custom subscription modal dialog",
     "message": "import blocking list with this URL"
   },
