@@ -175,8 +175,10 @@
     {
       if (params.filterError)
         return {errors: ["Invalid filter"]};
-      return {filters: 
-              text.split("\n").map(modules.filterClasses.Filter.fromText)};
+      return {
+        filters: text.split("\n").map(modules.filterClasses.Filter.fromText),
+        errors: []
+      };
     }
   };
 
