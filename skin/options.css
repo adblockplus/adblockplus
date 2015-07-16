@@ -828,7 +828,6 @@ body[data-dialog] #dialog-background
   background-color: #FFFFFF;
   border: 2px solid #4D9D4B;
   border-radius: 3px;
-  display: none;
   margin: auto;
   position:absolute;
   top:100px;
@@ -915,25 +914,9 @@ body[data-dialog] #dialog-background
   color: #FFFFFF;
 }
 
-#dialog-title > span
-{
-  display: none;
-}
-
-body[data-dialog="customlist"] #dialog-title-customlist,
-body[data-dialog="language"] #dialog-title-language
-{
-  display: inline;
-}
-
 #dialog-body .dialog-content-block
 {
   padding: 12px 0px;
-}
-
-#dialog-body .dialog-content
-{
-  display: none;
 }
 
 #dialog .button-wrapper
@@ -954,11 +937,22 @@ body[data-dialog="language"] #dialog-title-language
   vertical-align: top;
 }
 
-body[data-dialog="customlist"] #dialog-content-customlist,
-body[data-dialog="language"] #dialog-content-language,
-body[data-dialog] #dialog
+#dialog .url
 {
-  display: block;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+}
+
+body:not([data-dialog="custom"]) #dialog-title-custom,
+body:not([data-dialog="custom"]) #dialog-content-custom,
+body:not([data-dialog="language"]) #dialog-title-language,
+body:not([data-dialog="language"]) #dialog-content-language,
+body:not([data-dialog="predefined"]) #dialog-title-predefined,
+body:not([data-dialog="predefined"]) #dialog-content-predefined,
+body:not([data-dialog]) #dialog
+{
+  display: none;
 }
 
 #other-language .button-add

@@ -53,10 +53,10 @@
         var text = item.title || item.url || item.text;
         var listItem = document.createElement("li");
         listItem.appendChild(document.importNode(template.content, true));
-        listItem.dataset.access = item.url || item.text;
+        listItem.setAttribute("data-access", item.url || item.text);
         listItem.querySelector(".display").textContent = text;
         if (text)
-          listItem.dataset.search = text.toLowerCase();
+          listItem.setAttribute("data-search", text.toLowerCase());
 
         var control = listItem.querySelector(".control");
         if (control)
@@ -105,7 +105,7 @@
   function onToggleSubscriptionClick(e)
   {
     e.preventDefault();
-    var subscriptionUrl = e.target.parentNode.dataset.access;
+    var subscriptionUrl = e.target.parentNode.getAttribute("data-access");
     if (!e.target.checked)
     {
        ext.backgroundPage.sendMessage(
@@ -121,13 +121,13 @@
   function onAddLanguageSubscriptionClick(e)
   {
     e.preventDefault();
-    var url = this.parentNode.dataset.access;
+    var url = this.parentNode.getAttribute("data-access");
     addEnableSubscription(url);
   }
 
   function onRemoveFilterClick()
   {
-    var filter = this.parentNode.dataset.access;
+    var filter = this.parentNode.getAttribute("data-access");
     ext.backgroundPage.sendMessage(
     {
       type: "filters.remove",
@@ -331,6 +331,72 @@
     request.send(null);
   }
 
+  function onClick(e)
+  {
+    var element = e.target;
+    while (true)
+    {
+      if (!element)
+        return;
+
+      if (element.hasAttribute("data-action"))
+        break;
+
+      element = element.parentElement;
+    }
+
+    var actions = element.getAttribute("data-action").split(",");
+    for (var i = 0; i < actions.length; i++)
+    {
+      switch (actions[i])
+      {
+        case "add-domain-exception":
+          addWhitelistedDomain();
+          break;
+        case "add-predefined-subscription":
+          var dialog = E("dialog-content-predefined");
+          var title = dialog.querySelector("h3").textContent;
+          var url = dialog.querySelector(".url").textContent;
+          addEnableSubscription(url, title);
+          document.body.removeAttribute("data-dialog");
+          break;
+        case "cancel-custom-filters":
+          E("custom-filters").classList.remove("mode-edit");
+          break;
+        case "cancel-domain-exception":
+          E("whitelisting-textbox").value = "";
+          break;
+        case "close-dialog":
+          document.body.removeAttribute("data-dialog");
+          break;
+        case "edit-custom-filters":
+          E("custom-filters").classList.add("mode-edit");
+          editCustomFilters();
+          break;
+        case "import-subscription":
+          var url = E("blockingList-textbox").value;
+          addEnableSubscription(url);
+          document.body.removeAttribute("data-dialog");
+          break;
+        case "open-dialog":
+          openDialog(element.getAttribute("data-dialog"));
+          break;
+        case "save-custom-filters":
+          ext.backgroundPage.sendMessage(
+          {
+            type: "filters.importRaw",
+            text: E("custom-filters-raw").value
+          });
+          E("custom-filters").classList.remove("mode-edit");
+          break;
+        case "switch-tab":
+          document.body.setAttribute("data-tab",
+            element.getAttribute("data-tab"));
+          break;
+      }
+    }
+  }
+
   function onDOMLoaded()
   {
     var recommendationTemplate = document.querySelector("#recommend-list-table template");
@@ -341,15 +407,6 @@
     languagesTemplate.content.querySelector(".button-add span").textContent = buttonText;
 
     populateLists();
-
-    var tabList = document.querySelectorAll("#main-navigation-tabs li");
-    for (var i = 0; i < tabList.length; i++)
-    {
-      tabList[i].addEventListener("click", function(e)
-      {
-        document.body.dataset.tab = e.currentTarget.dataset.show;
-      }, false);
-    }
 
     function onFindLanguageKeyUp()
     {
@@ -391,41 +448,14 @@
     updateShareLink();
 
     // Initialize interactive UI elements
+    document.body.addEventListener("click", onClick, false);
     var placeholderValue  = ext.i18n.getMessage("options_dialog_language_find");
     E("find-language").setAttribute("placeholder", placeholderValue);
-    E("add-blocking-list").addEventListener("click", function()
-    {
-      openDialog("customlist");
-    }, false);
-    E("add-website-language").addEventListener("click", function()
-    {
-      openDialog("language");
-    }, false);
-    E("dialog-close").addEventListener("click", function()
-    {
-      delete document.body.dataset.dialog;
-    }, false);
-    E("edit-ownBlockingList-button").addEventListener("click", editCustomFilters, false);
     E("find-language").addEventListener("keyup", onFindLanguageKeyUp, false);
-    E("whitelisting").addEventListener("click", function(e)
-    {
-      var id = e.target.id;
-      if (id == "whitelisting-add-icon" || id == "whitelisting-enter-icon")
-        addWhitelistedDomain();
-      else if (id == "whitelisting-cancel-button")
-        E("whitelisting-textbox").value = "";
-    }, false);
-    E("whitelisting-add-button").addEventListener("click", addWhitelistedDomain, false);
     E("whitelisting-textbox").addEventListener("keypress", function(e)
     {
       if (isEnterPressed(e))
         addWhitelistedDomain();
-    }, false);
-    E("import-blockingList-button").addEventListener("click", function()
-    {
-      var url = E("blockingList-textbox").value;
-      addEnableSubscription(url);
-      delete document.body.dataset.dialog;
     }, false);
 
     // Advanced tab
@@ -448,34 +478,11 @@
       addCustomFilters();
     }, false);
     var customFilterEditButtons = document.querySelectorAll("#custom-filters-edit-wrapper button");
-    E("custom-filters-edit-wrapper").addEventListener("click", function(e)
-    {
-      var target = null;
-      if (e.target.localName == "button")
-        target = e.target;
-      else if (e.target.parentElement.localName == "button")
-        target = e.target.parentElement;
-      else
-        return;
-
-      var id = target.id;
-      E("custom-filters").classList.toggle("mode-edit");
-      if (id == "custom-filters-show-edit")
-        editCustomFilters();
-      else if (id == "custom-filters-raw-save")
-      {
-        ext.backgroundPage.sendMessage(
-        {
-          type: "filters.importRaw",
-          text: E("custom-filters-raw").value
-        });
-      }
-    }, false);
   }
 
   function openDialog(name)
   {
-    document.body.dataset.dialog = name;
+    document.body.setAttribute("data-dialog", name);
   }
 
   function populateLists()
@@ -656,12 +663,6 @@
     }
   }
 
-  function showAddSubscriptionDialog(subscription)
-  {
-    E("blockingList-textbox").value = subscription.url;
-    openDialog("customlist");
-  }
-
   function updateShareLink()
   {
     ext.backgroundPage.sendMessage(
@@ -700,8 +701,11 @@
       case "app.listen":
         if (message.action == "addSubscription")
         {
-          E("blockingList-textbox").value = message.args[0].url;
-          openDialog("customlist");
+          var subscription = message.args[0];
+          var dialog = E("dialog-content-predefined");
+          dialog.querySelector("h3").textContent = subscription.title || "";
+          dialog.querySelector(".url").textContent = subscription.url;
+          openDialog("predefined");
         }
         else if (message.action == "error")
         {

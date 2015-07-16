@@ -35,16 +35,16 @@
           <p class="i18n_options_page_header_1"></p>
           <h1 class="i18n_options_page_header_2"></h1>
         </div>
-        <ul id="main-navigation-tabs" class="tabs vertical">
-          <li id="tab-general" data-show="general" class="active">
+        <ul class="tabs vertical">
+          <li id="tab-general" data-action="switch-tab" data-tab="general" class="active">
             <a class="i18n_options_tab_general"></a>
             <span class="icon"></span>
           </li>
-          <li id="tab-advanced" data-show="advanced">
+          <li id="tab-advanced" data-action="switch-tab" data-tab="advanced">
             <a class="i18n_options_tab_advanced"></a>
             <span class="icon"></span>
           </li>
-          <li id="tab-help" data-show="help">
+          <li id="tab-help" data-action="switch-tab" data-tab="help">
             <a class="i18n_options_tab_help"></a>
             <span class="icon"></span>
           </li>
@@ -86,7 +86,7 @@
                   </template>
                 </ul>
                 <div class="controls">
-                  <button id="add-website-language">
+                  <button data-action="open-dialog" data-dialog="language">
                     <span class="icon icon-add"></span>
                     <span class="i18n_options_language_add"></span>
                   </button>
@@ -113,7 +113,7 @@
                   </ul>
                 </div>
                 <div class="controls">
-                  <button id="add-blocking-list">
+                  <button data-action="open-dialog" data-dialog="custom">
                     <span class="icon icon-add"></span>
                     <span class="i18n_options_furtherBlocking_add"><span>
                   </button>
@@ -149,16 +149,16 @@
                 </ul>
                 <div class="controls">
                   <div>
-                    <span id="whitelisting-add-icon" class="icon icon-add"></span>
+                    <span class="icon icon-add" data-action="add-domain-exception"></span>
                     <input type="text" id="whitelisting-textbox" />
-                    <span id="whitelisting-enter-icon" class="icon icon-enter"></span>
+                    <span class="icon icon-enter" data-action="add-domain-exception"></span>
                   </div>
                   <div>
-                    <button id="whitelisting-add-button" class="button-add">
+                    <button id="whitelisting-add-button" class="button-add" data-action="add-domain-exception">
                       +<span class="i18n_options_button_add"></span>
                     </button>
                     <span></span>
-                    <button id="whitelisting-cancel-button" class="i18n_options_button_cancel cancel-button"></button>
+                    <button class="i18n_options_button_cancel cancel-button" data-action="cancel-domain-exception"></button>
                   </div>
                 </div>
               </div>
@@ -216,16 +216,16 @@
                   <textarea id="custom-filters-raw"></textarea>
                 </div>
                 <div id="custom-filters-edit-wrapper" class="controls">
-                  <button id="custom-filters-show-edit">
+                  <button id="custom-filters-show-edit" data-action="edit-custom-filters">
                     <span class="icon icon-edit"></span>
                     <span class="i18n_options_customFilter_edit"></span>
                   </button>
                   <div id="custom-filters-raw-controls">
-                    <button>
+                    <button data-action="cancel-custom-filters">
                       <span class="icon icon-edit"></span>
                       <span class="i18n_options_customFilter_list"></span>
                     </button>
-                    <button id="custom-filters-raw-save">
+                    <button id="custom-filters-raw-save" data-action="save-custom-filters">
                       <span class="icon icon-edit"></span>
                       <span class="i18n_options_customFilter_save"></span>
                     </button>
@@ -263,13 +263,14 @@
     <div id="dialog">
       <header>
         <span id="dialog-title">
-          <span id="dialog-title-customlist" class="i18n_options_dialog_customlist_title"></span>
+          <span id="dialog-title-custom" class="i18n_options_dialog_custom_title"></span>
           <span id="dialog-title-language" class="i18n_options_dialog_language_title"></span>
+          <span id="dialog-title-predefined" class="i18n_options_dialog_predefined_title"></span>
         </span>
-        <button id="dialog-close" class="i18n_options_close"></button>
+        <button id="dialog-close" class="i18n_options_close" data-action="close-dialog"></button>
       </header>
       <div id="dialog-body" class="content">
-        <!-- Add other website language: Dialog -->
+        <!-- Add language subscription -->
         <div id="dialog-content-language" class="dialog-content">
           <div class="dialog-content-block">
             <h3 class="i18n_options_dialog_language_added"></h3>
@@ -294,23 +295,34 @@
             </ul>
           </div>
         </div>
-        <!-- Add other blocking list: Dialog -->
-        <div id="dialog-content-customlist" class="dialog-content">
+        <!-- Add custom subscription -->
+        <div id="dialog-content-custom" class="dialog-content">
           <div class="dialog-content-block">
-            <h3 class="i18n_options_dialog_customlist_subscription_title"></h3>
+            <h3 class="i18n_options_dialog_custom_subscription_title"></h3>
             <div>
               <input id="blockingList-textbox" type="text" placeholder="www.example.com/blockinglist.txt" />
             </div>
-            <div id="import-blockingList-button" class="button-wrapper">
+            <div class="button-wrapper" data-action="import-subscription">
               <span class="icon icon-arrow"></span>
-              <span class="i18n_options_dialog_customlist_import"></span>
+              <span class="i18n_options_dialog_custom_import"></span>
             </div>
           </div>
           <div class="dialog-content-block">
             <h3 class="i18n_options_dialog_edit_own_list"></h3>
-            <div id="edit-ownBlockingList-button" class="button-wrapper">
+            <div class="button-wrapper" data-action="close-dialog,switch-tab,edit-custom-filters" data-tab="advanced">
               <span class="icon icon-arrow"></span>
               <span class="i18n_options_dialog_create_own_list"></span>
+            </div>
+          </div>
+        </div>
+        <!-- Add predefined subscription -->
+        <div id="dialog-content-predefined" class="dialog-content">
+          <div class="dialog-content-block">
+            <h3></h3>
+            <div class="url"></div>
+            <div class="button-wrapper" data-action="add-predefined-subscription">
+              <span class="icon icon-arrow"></span>
+              <span class="i18n_options_dialog_predefined_confirm"></span>
             </div>
           </div>
         </div>
