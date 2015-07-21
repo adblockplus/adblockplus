@@ -156,25 +156,58 @@
     var glassPane = E("glass-pane");
     var popupMessageReceived = false;
 
+    // Firefox 38+ no longer allows messaging using postMessage so we need
+    // to have a fake top level frame to avoid problems with scripts that try to
+    // communicate with the first-run page
+    var isGecko = ("Components" in window);
+    if (isGecko)
+    {
+      try
+      {
+        var Ci = Components.interfaces;
+        iframe.contentWindow
+          .QueryInterface(Ci.nsIInterfaceRequestor)
+          .getInterface(Ci.nsIDocShell)
+          .setIsBrowserInsideApp(Ci.nsIScriptSecurityManager.UNKNOWN_APP_ID);
+      }
+      catch(ex)
+      {
+        console.error(ex);
+      }
+    }
+
+    function resizePopup(width, height)
+    {
+      iframe.width = width;
+      iframe.height = height;
+      iframe.style.marginTop = -height / 2 + "px";
+      iframe.style.marginLeft = -width / 2 + "px";
+      popupMessageReceived = true;
+      window.removeEventListener("message", popupMessageListener);
+    }
+
     var popupMessageListener = function(event)
     {
       if (!/[.\/]adblockplus\.org$/.test(event.origin))
         return;
 
-      var width = event.data.width;
-      var height = event.data.height;
-      iframe.width = width;
-      iframe.height = height;
-      iframe.style.marginTop = -height/2 + "px";
-      iframe.style.marginLeft = -width/2 + "px";
-      popupMessageReceived = true;
-      window.removeEventListener("message", popupMessageListener);
+      resizePopup(event.data.width, event.data.height);
     };
-    // Firefox requires last parameter to be true to be triggered by unprivileged pages
+    // Firefox requires last parameter to be true to be triggered by
+    // unprivileged pages
     window.addEventListener("message", popupMessageListener, false, true);
 
     var popupLoadListener = function()
     {
+      if (!popupMessageReceived && isGecko)
+      {
+        var rootElement = iframe.contentDocument.documentElement;
+        var width = rootElement.dataset.width;
+        var height = rootElement.dataset.height;
+        if (width && height)
+          resizePopup(width, height);
+      }
+
       if (popupMessageReceived)
       {
         iframe.className = "visible";
