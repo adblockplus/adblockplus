@@ -30,7 +30,6 @@
   var Filter = filterClasses.Filter;
   var BlockingFilter = filterClasses.BlockingFilter;
   var Synchronizer = require("synchronizer").Synchronizer;
-  var filterValidation = require("filterValidation");
 
   var subscriptionClasses = require("subscriptionClasses");
   var Subscription = subscriptionClasses.Subscription;
@@ -183,7 +182,7 @@
         break;
       case "filters.add":
         var filter = Filter.fromText(message.text);
-        var result = filterValidation.parseFilter(message.text);
+        var result = require("filterValidation").parseFilter(message.text);
         if (result.error)
           sendMessage("app", "error", [result.error.toString()], sender.page);
         else if (result.filter)
@@ -205,7 +204,7 @@
         callback(subscription.filters.map(convertFilter));
         break;
       case "filters.importRaw":
-        var result = filterValidation.parseFilters(message.text);
+        var result = require("filterValidation").parseFilters(message.text);
         var errors = [];
         for (var i = 0; i < result.errors.length; i++)
         {
