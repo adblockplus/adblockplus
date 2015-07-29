@@ -73,12 +73,22 @@
         <div id="content-general">
           <div>
             <h1 class="i18n_options_blocking_title"></h1>
-            <div class="flex-container">
+            <div class="hbox">
               <div id="blocking-languages">
-                <p class="option-name">
+                <div class="option-name">
                   <span class="i18n_options_language_title"></span>
-                  <a class="i18n_options_readMore tooltip" target="_blank"></a>
-                </p>
+                  <div class="tooltip">
+                    <span class="i18n_options_readMore"></span>
+                    <div role="tooltip">
+                      <img src="skin/tooltips/block.png" alt="" />
+                      <p class="i18n_options_language_title_tooltip"></p>
+                      <div class="notes">
+                        <p class="i18n_options_language_title_tooltip_notes_1"></p>
+                        <p class="i18n_options_language_title_tooltip_notes_2"></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <ul id="blocking-languages-table" class="table list">
                   <template>
                     <input type="checkbox" class="control" />
@@ -93,14 +103,20 @@
                 </div>
               </div>
               <div id="further-blocking">
-                <p class="option-name">
+                <div class="option-name">
                   <strong class="i18n_options_furtherBlocking_title"></strong>
-                  <a class="i18n_options_readMore tooltip" target="_blank"></a>
-                </p>
+                  <div class="tooltip">
+                    <span class="i18n_options_readMore"></span>
+                    <div role="tooltip" class="flip-vertical">
+                      <img src="skin/tooltips/more.png" alt="" />
+                      <p class="i18n_options_furtherBlocking_title_tooltip"></p>
+                    </div>
+                  </div>
+                </div>
                 <div id="custom-wrapper">
                   <ul id="recommend-list-table" class="table list">
                     <template>
-                      <input type="checkbox" class=control />
+                      <input type="checkbox" class="control" />
                       <span class="display"></span>
                       <span class="popular"></span>
                     </template>
@@ -123,12 +139,20 @@
           </div>
           <div>
             <h1 class="i18n_options_exceptions_title"></h1>
-            <div class="flex-container">
+            <div class="hbox">
               <div id="acceptable-ads">
-                <p class="option-name">
+                <div class="option-name">
                   <strong class="i18n_options_acceptableAds_title"></strong>
-                  <a class="i18n_options_readMore tooltip" target="_blank"></a>
-                </p>
+                  <div class="tooltip">
+                    <span class="i18n_options_readMore"></span>
+                    <div role="tooltip">
+                      <img src="skin/tooltips/acceptable-ads.png" alt="" />
+                      <p class="i18n_options_acceptableAds_title_tooltip_1"></p>
+                      <p class="i18n_options_acceptableAds_title_tooltip_2"></p>
+                      <p class="i18n_options_acceptableAds_title_tooltip_3"></p>
+                    </div>
+                  </div>
+                </div>
                 <ul id="acceptableads-table" class="table list">
                   <template>
                     <input type="checkbox" class="control" />
@@ -137,10 +161,20 @@
                 </ul>
               </div>
               <div id="whitelisting">
-                <p class="option-name">
+                <div class="option-name">
                   <strong class="i18n_options_whitelisted_title"></strong>
-                  <a class="i18n_options_readMore tooltip" target="_blank"></a>
-                </p>
+                  <div class="tooltip">
+                    <span class="i18n_options_readMore"></span>
+                    <div role="tooltip" class="flip-vertical">
+                      <img src="skin/tooltips/whitelisted.png" alt="" />
+                      <p class="i18n_options_whitelisted_title_tooltip_1"></p>
+                      <p class="i18n_options_whitelisted_title_tooltip_2"></p>
+                      <div class="notes">
+                        <p class="i18n_options_whitelisted_title_tooltip_notes"></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <ul id="whitelisting-table" class="table list">
                   <template>
                     <button class="delete control"></button>

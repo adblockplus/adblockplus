@@ -47,6 +47,18 @@
     "description": "Ad blocking list option name in General tab",
     "message": "<strong>Adblocking</strong> for websites in..."
   },
+  "options_language_title_tooltip": {
+    "description": "Top part of tooltip description for 'Adblocking' section in General tab",
+    "message": "The default filter list is based on your browser's language settings. If you live in Germany, your default filter list is German+English. However, if you live in Germany and frequently visit Italian websites, you need to subscribe to the Italian filter list. To maintain optimal performance, it is recommended to select only the language that you need."
+  },
+  "options_language_title_tooltip_notes_1": {
+    "description": "First bottom part of tooltip description for 'Adblocking' section in General tab",
+    "message": "Consider: Sometimes ads appear because your filter lists are not up to date. If this is the case, it’s recommended to manually update all your filter lists. You can do that by going to <strong>Advanced > Update all filter lists</strong>."
+  },
+  "options_language_title_tooltip_notes_2": {
+    "description": "Second bottom part of tooltip description for 'Adblocking' section in General tab",
+    "message": "If you still see ads, please report them in our Adblock Plus sub-forum under <strong>Help > Forum > Filters for Adblock Plus</strong>."
+  },
   "options_language_add": {
     "description": "Add other language button in General Tab",
     "message": "add other website languages"
@@ -54,6 +66,10 @@
   "options_furtherBlocking_title": {
     "description": "Blocking list option name in General tab",
     "message": "Further blocking options"
+  },
+  "options_furtherBlocking_title_tooltip": {
+    "description": "Tooltip description for 'More blocking options' section in General tab",
+    "message": "By default, Adblock Plus blocks all annoying ads, including video ads, animated ads, noisy ads, flashy banners, pop-ups, pop-unders and much more. In addition to ads, Adblock Plus can also block tracking, malware, social media buttons and more to increase your safety and privacy online."
   },
   "options_popular": {
     "description": "Popular label in further blocking options table",
@@ -71,6 +87,18 @@
     "description": "Acceptable ads option name in General tab",
     "message": "Acceptable ads"
   },
+  "options_acceptableAds_title_tooltip_1": {
+    "description": "First part of tooltip description for 'Acceptable Ads' section in General tab",
+    "message": "Since many websites rely on advertising revenue, we encourage the use of noninstrusive advertising."
+  },
+  "options_acceptableAds_title_tooltip_2": {
+    "description": "Second part of tooltip description for 'Acceptable Ads' section in General tab",
+    "message": "The Acceptable Ads initiative, which supports both users and website owners, is a set of strict guidelines that identifies acceptable ads. Ads meeting these criteria are displayed to users."
+  },
+  "options_acceptableAds_title_tooltip_3": {
+    "description": "Third part of tooltip description for 'Acceptable Ads' section in General tab",
+    "message": "You can, however, disable this feature at any time and browse ad-free."
+  },
   "options_acceptableAds_description": {
     "description": "Acceptable ads descriptive name in General tab",
     "message": "Allow some non-intrusive advertising"
@@ -78,6 +106,18 @@
   "options_whitelisted_title": {
     "description": "Whitelisting option name in General tab",
     "message": "Whitelisted websites"
+  },
+  "options_whitelisted_title_tooltip_1": {
+    "description": "First top part of tooltip description for 'Whitelisted domains' section in General tab",
+    "message": "You can allow a website to display ads by adding it to your whitelist."
+  },
+  "options_whitelisted_title_tooltip_2": {
+    "description": "Second top part of tooltip description for 'Whitelisted domains' section in General tab",
+    "message": "This means that Adblock Plus is completely deactivated on the whitelisted site. Ads and other annoyances, such as tracking scripts, may be activated."
+  },
+  "options_whitelisted_title_tooltip_notes": {
+    "description": "Bottom part of tooltip description for 'Whitelisted domains' section in General tab",
+    "message": "Note that this feature is different from whitelisted Acceptable Ads."
   },
   "options_button_add": {
     "description": "Add button label",
