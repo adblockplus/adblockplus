@@ -16,6 +16,8 @@ Directory structure
     to messages sent by UI code.
   * `background.html`, `background.js`: Test implementation of the background
     page, should *not be imported*.
+  * `options.html`, `options.js`: Options page, see below
+  * `subscriptions.xml`: Test subscription data, should *not be imported*
 * `locale` directory: Localized strings, with one directory per locale. The
   Firefox format for locale identifiers is used (xx-YY where xx is the language
   code and YY the optional region code). The localization strings themselves are
