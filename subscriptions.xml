@@ -17,11 +17,6 @@
   - along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<!--
-  Bundling current file in adblockplusui repository is just a temprorary
-  solution until #2677 is fixed
-  -->
-
 <subscriptions>
   <subscription title="EasyList"
                 specialization="English"
@@ -116,36 +111,29 @@
   <subscription title="EasyPrivacy"
                 specialization="Disable Tracking"
                 url="https://easylist-downloads.adblockplus.org/easyprivacy.txt"
-                homepage="https://easylist.adblockplus.org/"
-                popular="true"/>
+                homepage="https://easylist.adblockplus.org/"/>
   <subscription title="malware"
                 specialization="Disable Malware Websites"
                 url="https://easylist-downloads.adblockplus.org/malwaredomains_full.txt"
-                homepage="http://malwaredomains.com/?page_id=2"
-                popular="true"/>
+                homepage="http://malwaredomains.com/?page_id=2"/>
   <subscription title="fanboy"
                 specialization="Disable Social media buttons"
                 url="https://easylist-downloads.adblockplus.org/fanboy-social.txt"
-                homepage="https://easylist.adblockplus.org/"
-                popular="true"/>
+                homepage="https://easylist.adblockplus.org/"/>
   <subscription title="facebook annoyances blocker"
                 specialization="Facebook annoyance"
                 url="https://easylist-downloads.adblockplus.org/fb_annoyances_full.txt"
-                homepage="http://facebook.adblockplus.me/"
-                popular="true"/>
+                homepage="http://facebook.adblockplus.me/"/>
   <subscription title="Pure Video Experience"
                 specialization="Youtube annoyance"
                 url="https://easylist-downloads.adblockplus.org/yt_annoyances_full.txt"
-                homepage="http://youtube.adblockplus.me/"
-                popular="true"/>
+                homepage="http://youtube.adblockplus.me/"/>
   <subscription title="Prebake - Filter Obtrusive Cookie Notices"
                 specialization="Prebake"
                 url="https://raw.githubusercontent.com/liamja/Prebake/master/obtrusive.txt"
-                homepage="http://liamja.github.io/Prebake/"
-                popular="true"/>
+                homepage="http://liamja.github.io/Prebake/"/>
   <subscription title="Spam404"
                 specialization="Spam404"
                 url="https://spam404bl.com/spam404scamlist.txt"
-                homepage="http://www.spam404.com/"
-                popular="true"/>
+                homepage="http://www.spam404.com/"/>
 </subscriptions>

@@ -319,10 +319,10 @@
           recommendation.isAdsType = true;
         }
         else
+        {
           subscription.title = element.getAttribute("specialization");
-        
-        if (element.getAttribute("popular"))
           recommendation.isPopular = true;
+        }
 
         recommendationsMap[subscription.url] = recommendation;
         updateSubscription(subscription);
