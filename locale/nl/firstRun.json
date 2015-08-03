@@ -1,12 +1,12 @@
 {
   "firstRun_acceptableAdsExplanation": {
-    "message": "Wij zouden websites willen aanmoedigen eenvoudige, niet-opdringerige advertenties te gebruiken. Daarom hebben we <a>strikte richtlijnen</a> opgesteld om acceptabele advertenties te identificeren, die worden getoond onder Standaardinstellingen. Als u alsnog alle advertenties wilt blokkeren, kunt u dit in een paar seconden <a>uitschakelen</a>."
+    "message": "We zouden websites willen aanmoedigen eenvoudige, niet-opdringerige advertenties te gebruiken. Daarom hebben we <a>strikte richtlijnen</a> opgesteld om acceptabele advertenties te herkennen die bij gebruik van de standaardinstellingen worden getoond. Als u toch alle advertenties wilt blokkeren, kunt u dit binnen enkele seconden <a>uitschakelen</a>."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Vervelende advertenties zullen nu worden geblokkeerd"
   },
   "firstRun_contributor_credits": {
-    "message": "Bijdrager Credits"
+    "message": "Dankbetuiging aan medewerkers"
   },
   "firstRun_dataCorruptionWarning": {
     "message": "Blijft deze pagina verschijnen? <a>Klik hier!</a>"
@@ -18,40 +18,40 @@
     "message": "Steun ons project"
   },
   "firstRun_feature_malware": {
-    "message": "Malware Blokkering"
+    "message": "Malwareblokkering"
   },
   "firstRun_feature_malware_description": {
-    "message": "Maak het browsen veiliger door het blokkeren van bekende malware domeinen."
+    "message": "Maak het browsen veiliger door bekende malwaredomeinen te blokkeren."
   },
   "firstRun_feature_social": {
-    "message": "Verwijder Social Media knoppen"
+    "message": "Social-mediaknoppen verwijderen"
   },
   "firstRun_feature_social_description": {
-    "message": "Verwijder social media-knoppen (zoals de Facebook \"Like\" knop) automatisch, omdat die op webpagina's verschijnen en uw surfgedrag volgen."
+    "message": "Verwijder automatisch social-mediaknoppen (zoals de ‘Like’-knop van Facebook) die op webpagina’s verschijnen en uw surfgedrag volgen."
   },
   "firstRun_feature_tracking": {
     "message": "Tracking uitschakelen"
   },
   "firstRun_feature_tracking_description": {
-    "message": "Browse privé door 'tracking' uit te schakelen - verberg uw gegevens voor advertentiebedrijven die al uw surfgedrag zouden volgen."
+    "message": "Surf privé door ‘tracking’ uit te schakelen - verberg uw gegevens voor advertentiebedrijven die uw surfgedrag zouden volgen."
   },
   "firstRun_features": {
     "message": "Adblock Plus kan meer doen dan advertenties blokkeren"
   },
   "firstRun_filterlistsReinitializedWarning": {
-    "message": "Het lijkt er op dat een probleem was waardoor alle filters verwijderd werden en het onmogelijk was om een backup terug te zetten. Hierdoor hebben we al uw filters en Acceptabele Advertenties instellingen moeten resetten. Controleer A.U.B. uw instellingen in de <a>Adblock Plus Opties</a>."
+    "message": "Het lijkt erop dat door een probleem alle filters zijn verwijderd, en we konden geen back-up terugzetten. Hierdoor hebben we al uw filters en instellingen voor Acceptabele advertenties moeten herinitialiseren. Controleer uw instellingen in de <a>Adblock Plus-opties</a>."
   },
   "firstRun_legacySafariWarning": {
-    "message": "U gebruikt een oude versie van Safari die niet wordt ondersteund door Adblock Plus. Sommige websites kunnen daardoor onjuist worden weergegeven. Wij raden u aan een update uit te voeren naar Safari versie 6.1.1 of hoger (voor Mac OS X 10.8 Mountain Lion), Safari versie 7.0.1 of hoger (voor Mac OS X 10.9 Mavericks) of de laatste versie van Mozilla Firefox, Google Chrome of Opera te gebruiken."
+    "message": "U gebruikt een oude versie van Safari die niet door Adblock Plus wordt ondersteund. Mogelijk werkt dit niet goed of wordt de gebruikersbeleving benadeeld. We raden aan een update naar Safari 6.1.1 of hoger (op Mac OS X 10.8 Mountain Lion) of Safari 7.0.1 of hoger (op Mac OS X 10.9 Mavericks) uit te voeren, of de nieuwste versie van Mozilla Firefox, Google Chrome of Opera te gebruiken."
   },
   "firstRun_share": {
     "message": "Vertel uw vrienden"
   },
   "firstRun_share_headline": {
-    "message": "<a>Help ons</a> om van het web een betere plek te maken"
+    "message": "<a>Help ons</a> van het web een betere plek te maken"
   },
   "firstRun_title": {
-    "message": "Adblock plus is geïnstalleerd"
+    "message": "Adblock Plus is geïnstalleerd"
   },
   "firstRun_toggle_off": {
     "message": "UIT"
