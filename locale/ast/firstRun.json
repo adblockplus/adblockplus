@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "Los anuncios cafiantes bloquiaránse darréu"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "¿Tienes un smartphone o una tableta?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Consigue Adblock Browser aquí"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Disponible para Android e iOS"
+  },
   "firstRun_dataCorruptionWarning": {
     "message": "¿Sigue apaeciendo esta páxina? <a>¡Calque equí!</a>"
   },

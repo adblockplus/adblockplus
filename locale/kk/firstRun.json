@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "Мазаңызды алатын жарнама блокталатын болады"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Смартфоныңыз немесе планшетіңіз бар ма?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Осында Adblock Browser қолданбасын алыңыз"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Android және iOS үшін қол жетімді"
+  },
   "firstRun_contributor_credits": {
     "message": "Үлес қосқандар"
   },

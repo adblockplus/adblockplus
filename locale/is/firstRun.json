@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "Lokað verður á uppáþrengjandi auglýsingar"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Áttu snjallsíma eða spjaldtölvu?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Náðu í Adblock Browser hér"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Fáanlegur fyrir Android og iOS"
+  },
   "firstRun_contributor_credits": {
     "message": "Stuðningsaðilar"
   },

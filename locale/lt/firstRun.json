@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "Nuo šiol erzinančios reklamos bus užblokuotos"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Įsigijai išmanųjį arba planšetę?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "„Adblock Browser“ rasi čia"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "„Android“ ir „iOS“ versijos"
+  },
   "firstRun_contributor_credits": {
     "message": "Padėkos prisidėjusiems"
   },

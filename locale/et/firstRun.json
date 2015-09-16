@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "Tüütud kuulutused on nüüd blokeeritud"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Kas sul on nutitelefon või tahvelarvuti?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Hankige Adblock Browser siit"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Saadaval Androidile ja iOSile"
+  },
   "firstRun_dataCorruptionWarning": {
     "message": "Kas see leht ilmub ikka? <a>Kliki siia!</a>"
   },

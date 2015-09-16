@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "從現在起，煩人的廣告都將煙消雲散"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "有部智能手機或平版電腦?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "在這裡下載 Adblock Browser"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "適用於 Android 及 iOS"
+  },
   "firstRun_contributor_credits": {
     "message": "貢獻名單"
   },

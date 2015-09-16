@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "Надоевшая реклама теперь будет заблокирована"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Есть смартфон или планшет?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Скачайте Adblock Browser здесь"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Доступен для Android и iOS"
+  },
   "firstRun_contributor_credits": {
     "message": "Пожертвования"
   },

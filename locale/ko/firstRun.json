@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "인터넷 이용을 방해하거나 불법·유해한 광고는 이제 차단될 것입니다"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "스마트폰 또는 태블릿이 있습니까?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "여기에서 Adblock Browser 가져오기"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Android 및 iOS용 사용 가능"
+  },
   "firstRun_contributor_credits": {
     "message": "공헌자 명단"
   },

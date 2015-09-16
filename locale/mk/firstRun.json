@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "Досадните реклами отсега ќе бидат блокирани"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Имате паметен телефон или таблет?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Симнете го Adblock Browser овде"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Достапен за Android и iOS оперативните системи"
+  },
   "firstRun_contributor_credits": {
     "message": "Листа на донатори"
   },

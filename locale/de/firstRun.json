@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "Lästige Werbung wird jetzt blockiert"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Haben Sie ein Smartphone oder ein Tablet?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Erhalten Sie hier Adblock Browser"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Verfügbar für Android und iOS"
+  },
   "firstRun_contributor_credits": {
     "message": "Mitwirkende"
   },

@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "Những quảng cáo phiền phức sẽ bị chặn"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Có một chiếc điện thoại thông minh hoặc một tablet?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Hãy tải Adblock Browser tại đây"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Hỗ trợ Android và iOS"
+  },
   "firstRun_contributor_credits": {
     "message": "Đóng góp các khoản tín dụng"
   },

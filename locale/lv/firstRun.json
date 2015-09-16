@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "Uzmācīgas reklāmas turpmāk tiks bloķētas"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Tev pieder viedtālrunis vai planšetdators?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Dabū Adblock Browser šeit"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Pieejams Android un iOS ierīcēm"
+  },
   "firstRun_contributor_credits": {
     "message": "Ziedotāju saraksts"
   },

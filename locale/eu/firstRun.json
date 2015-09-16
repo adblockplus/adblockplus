@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "Iragarki gogaikarriak blokeatuko dira orain"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Smartphone edo tablet-a duzu?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Eskuratu Adblock Browser hemen"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Android eta iOS-entzat"
+  },
   "firstRun_contributor_credits": {
     "message": "Parte-hartzaileen kredituak"
   },

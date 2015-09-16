@@ -2,6 +2,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "โฆษณาที่น่ารำคาญจะถูกปิดกั้น"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "ได้สมาร์ตโฟนหรือแท็บเล็ต?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "รับ Adblock Browser ที่นี่"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "ใช้ได้สำหรับ Android และ iOS"
+  },
   "firstRun_dataCorruptionWarning": {
     "message": "ไม่ให้หน้านี้แสดงอีกครั้ง <a>คลิกที่นี้</a>"
   },

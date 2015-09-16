@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "Reclamele enervante vor fi blocate acum"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Aveți un smartphone sau o tabletă?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Descărcați Adblock Browser de aici"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Disponibil pentru Android și iOS"
+  },
   "firstRun_contributor_credits": {
     "message": "Contributori"
   },

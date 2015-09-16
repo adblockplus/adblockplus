@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "تبلیغات آزار دهنده در حال حاضر مسدود خواهد شد"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "یک تلفن هوشمند یا تبلت دارید؟"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Adblock Browser را از این‌جا بگیرید"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "برای Android و iOS موجود است"
+  },
   "firstRun_contributor_credits": {
     "message": "اعتبار نویسندگان"
   },

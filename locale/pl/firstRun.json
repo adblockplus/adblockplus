@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "Irytujące reklamy będą teraz blokowane"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Masz smartfona lub tablet?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Pobierz Adblock Browser tutaj"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Dostępne na iOS i Androida"
+  },
   "firstRun_contributor_credits": {
     "message": "Podziękowania dla współtwórców"
   },

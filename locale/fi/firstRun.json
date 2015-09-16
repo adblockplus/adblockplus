@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "Häiritsevät mainokset estetään"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Onko sinulla älypuhelin tai tabletti?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Hanki Adblock Browser täältä"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Saatavilla Androidille ja iOS:lle"
+  },
   "firstRun_contributor_credits": {
     "message": "Avustajat:"
   },

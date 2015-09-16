@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "Վատ գովազդներն այժմ արգելված են"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Ունե՞ք սմարթֆոն կամ պլանշետ:"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Ստացեք Adblock Browser այստեղ"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Մատչելի է Android-ի և iOS-ի համար"
+  },
   "firstRun_contributor_credits": {
     "message": "Ծրագրի հեղինակները"
   },

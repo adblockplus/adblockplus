@@ -1,4 +1,13 @@
 {
+  "firstRun_abbPromotionHeadline": {
+    "message": "আপনার কি একটা স্মার্টফোন বা ট্যাবলেট আছে?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "এখান থেকে Adblock Browser নিয়ে নিন"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Android ও iOS-এর জন্য উপলভ্য"
+  },
   "firstRun_dataCorruptionWarning": {
     "message": "এই পৃষ্ঠাটি কি দেখানো অবিরত রাখা হবে?<a>এখানে ক্লিক করুন!</a>"
   },

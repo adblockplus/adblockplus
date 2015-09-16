@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "Te gjitha Reklamat do te bllokohen"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Ke një telefon inteligjent apo tablet?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Merre Adblock Browser këtu"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Në dispozicion për Android dhe iOS"
+  },
   "firstRun_contributor_credits": {
     "message": "Kredite kontribues"
   },

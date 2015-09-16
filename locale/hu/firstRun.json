@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "A bosszantó hirdetések mostantól blokkolva lesznek"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Van egy okostelefonod vagy tableted?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Szerezd be az Adblock Browsert itt"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Elérhető Android és iOS készülékekhez"
+  },
   "firstRun_contributor_credits": {
     "message": "Hozzájárulók névsora"
   },

@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "Anuncios molestos serán bloqueados"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "¿Tienes un smartphone o una tableta?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Obtén Adblock Browser aquí"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Disponible para Android e iOS"
+  },
   "firstRun_contributor_credits": {
     "message": "Colaboradores"
   },

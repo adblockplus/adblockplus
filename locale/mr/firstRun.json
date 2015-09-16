@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "त्रासदायक जाहिराती आता अवरोधित केले जातील"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "तुमच्याकडे स्मार्टफोन वा टॅब्लेट आहे?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Adblock Browser येथे मिळवा"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Android व iOS करिता उपलब्ध"
+  },
   "firstRun_contributor_credits": {
     "message": "सहयोगी क्रेडिट्स"
   },

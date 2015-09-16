@@ -5,11 +5,20 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "Ahora se bloqueará la publicidad molesta"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "¿Tienes un smartphone o una tableta?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Consigue Adblock Browser aquí"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Disponible para Android e iOS"
+  },
   "firstRun_contributor_credits": {
     "message": "Colaboradores"
   },
   "firstRun_dataCorruptionWarning": {
-    "message": "¿Sigue apareciendo esta página? <a>Pulse aquí</a>"
+    "message": "¿Sigue apareciendo esta página? <a>Haga clic aquí</a>"
   },
   "firstRun_donate": {
     "message": "Donar"

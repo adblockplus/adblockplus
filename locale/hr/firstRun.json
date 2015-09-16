@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "Naporni oglasi će sada biti blokirani"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Imate smartphone ili tablet?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Nabavite Adblock Browser ovdje"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Dostupan za Android i iOS"
+  },
   "firstRun_contributor_credits": {
     "message": "Zasluge doprinositelja"
   },

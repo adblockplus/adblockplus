@@ -1,9 +1,18 @@
 {
   "firstRun_acceptableAdsExplanation": {
-    "message": "Ens agradaria encoratjar els llocs web a utlitzar d'ara en endavant publicitat no intrusiva. És per això que hem establert uns <a>patrons estrictes</a> per identificar els anuncis acceptables, els quals es mostren a sota de les preferències per defecte. Si encara voleu bloquejar tots els anuncis podeu <a>desactivar</a> això en pocs segons."
+    "message": "Ens agradaria encoratjar els llocs web a utilitzar d'ara en endavant publicitat no intrusiva. És per això que hem establert uns <a>patrons estrictes</a> per identificar els anuncis acceptables, els quals es mostren a sota de les preferències per defecte. Si encara voleu bloquejar tots els anuncis podeu <a>desactivar</a> això en pocs segons."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Els anuncis molestos ara es bloquejaran"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Tens un telèfon intel·ligent o tauleta?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Obtingues un Adblock Browser aquí"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Disponible per a Android i iOS"
   },
   "firstRun_contributor_credits": {
     "message": "Reconeiximents als co·laboradors"
@@ -51,7 +60,7 @@
     "message": "<a>Dóneu-nos un cop de mà</a> al fer la xarxa un lloc millor"
   },
   "firstRun_title": {
-    "message": "S'ha instal·lat l'AdBlock Plus"
+    "message": "S'ha instal·lat l'Adblock Plus"
   },
   "firstRun_toggle_off": {
     "message": "DESACTIVAT"

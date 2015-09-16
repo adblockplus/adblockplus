@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "Irriterande annonser blockeras nu"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Har du en smartphone eller en surfplatta?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Skaffa Adblock Browser här"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Finns för Android och iOS"
+  },
   "firstRun_contributor_credits": {
     "message": "Tack till"
   },

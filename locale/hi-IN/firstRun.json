@@ -5,8 +5,17 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "कष्टकारी विज्ञापन अब हटा दिए जायेंगे"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "क्या आपके पास स्मार्टफोन या टैबलेट है?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "यहां से Adblock Browser प्राप्त करें"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Android और iOS के लिए उपलब्ध"
+  },
   "firstRun_dataCorruptionWarning": {
-    "message": "  क्या यह पृष्ट बार बार प्रस्तुत हो रहा है? <a>यहाँ क्लिक करें</a>"
+    "message": "क्या यह पृष्ट बार बार प्रस्तुत हो रहा है? <a>यहाँ क्लिक करें</a>"
   },
   "firstRun_title": {
     "message": "Adblock Plus स्थापित होगया हे."

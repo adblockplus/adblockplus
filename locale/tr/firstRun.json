@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "Rahatsız edici reklamlar artık engellenecek"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Akıllı telefon veya tablet mi aldınız?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Buradan Adblock Browser edinin"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Android ve iOS için mevcut"
+  },
   "firstRun_contributor_credits": {
     "message": "Emeği Geçenler"
   },

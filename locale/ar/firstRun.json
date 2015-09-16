@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "سيتم الآن حجب الإعلانات المزعجة"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "لديك هاتف ذكي أو كمبيوتر لوحي؟"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "احصل على Adblock Browser هنا"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "متوفر لنظامي Android و iOS"
+  },
   "firstRun_contributor_credits": {
     "message": "شكر للمساهمين"
   },

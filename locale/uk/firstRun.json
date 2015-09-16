@@ -5,6 +5,15 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "Надокучлива реклама буде надалі блокуватися"
   },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Маєте смартфон чи планшет?"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Отримайте Adblock Browser тут"
+  },
+  "firstRun_abbButtonSubtitle": {
+    "message": "Доступно для Android та iOS"
+  },
   "firstRun_contributor_credits": {
     "message": "Внески учасників"
   },
