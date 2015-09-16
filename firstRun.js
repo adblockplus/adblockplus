@@ -81,7 +81,7 @@
 
     getDocLink("acceptable_ads_criteria", function(link)
     {
-      setLinks("acceptableAdsExplanation", link, openFilters);
+      setLinks("acceptable-ads-explanation", link, openFilters);
     });
 
     getDocLink("contribute", function(link)
