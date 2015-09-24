@@ -257,6 +257,18 @@ html[dir="rtl"] body[data-tab="help"] #tab-help
   background-position: -31px -18px;
 }
 
+#tab-share:lang(zh),
+#tab-share[hidden]
+{
+  display: none;
+}
+
+#tab-share:lang(zh) + li,
+#tab-share[hidden] + li
+{
+  border-top: none;
+}
+
 #tab-content
 {
   background-color: #FFFFFF;

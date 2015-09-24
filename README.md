@@ -76,3 +76,5 @@ The behavior of this page is affected by a number of URL parameters:
   subscriptions as initiated by clicking on an "abp:subscribe" link
 * `filterError=true`: causes filter validation to fail, showing validation
   errors when adding new filters on the options page
+* `blockedURLs`: a comma-separated list of URLs that should be considered
+  blocked (necessary to test the check for blocked scripts in sharing buttons).

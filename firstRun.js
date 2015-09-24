@@ -19,11 +19,6 @@
 
 (function()
 {
-  function E(id)
-  {
-    return document.getElementById(id);
-  }
-
   // Load subscriptions for features
   var featureSubscriptions = [
     {
@@ -45,15 +40,6 @@
       url: "https://easylist-downloads.adblockplus.org/easyprivacy.txt"
     }
   ];
-
-  function getDocLink(link, callback)
-  {
-    ext.backgroundPage.sendMessage({
-      type: "app.get",
-      what: "doclink",
-      link: link
-    }, callback);
-  }
 
   function onDOMLoaded()
   {
@@ -150,106 +136,16 @@
     }, false);
   }
 
-  function openSharePopup(url)
-  {
-    var iframe = E("share-popup");
-    var glassPane = E("glass-pane");
-    var popupMessageReceived = false;
-
-    // Firefox 38+ no longer allows messaging using postMessage so we need
-    // to have a fake top level frame to avoid problems with scripts that try to
-    // communicate with the first-run page
-    var isGecko = ("Components" in window);
-    if (isGecko)
-    {
-      try
-      {
-        var Ci = Components.interfaces;
-        iframe.contentWindow
-          .QueryInterface(Ci.nsIInterfaceRequestor)
-          .getInterface(Ci.nsIDocShell)
-          .setIsBrowserInsideApp(Ci.nsIScriptSecurityManager.UNKNOWN_APP_ID);
-      }
-      catch(ex)
-      {
-        console.error(ex);
-      }
-    }
-
-    function resizePopup(width, height)
-    {
-      iframe.width = width;
-      iframe.height = height;
-      iframe.style.marginTop = -height / 2 + "px";
-      iframe.style.marginLeft = -width / 2 + "px";
-      popupMessageReceived = true;
-      window.removeEventListener("message", popupMessageListener);
-    }
-
-    var popupMessageListener = function(event)
-    {
-      if (!/[.\/]adblockplus\.org$/.test(event.origin))
-        return;
-
-      resizePopup(event.data.width, event.data.height);
-    };
-    // Firefox requires last parameter to be true to be triggered by
-    // unprivileged pages
-    window.addEventListener("message", popupMessageListener, false, true);
-
-    var popupLoadListener = function()
-    {
-      if (!popupMessageReceived && isGecko)
-      {
-        var rootElement = iframe.contentDocument.documentElement;
-        var width = rootElement.dataset.width;
-        var height = rootElement.dataset.height;
-        if (width && height)
-          resizePopup(width, height);
-      }
-
-      if (popupMessageReceived)
-      {
-        iframe.className = "visible";
-
-        var popupCloseListener = function()
-        {
-          iframe.className = glassPane.className = "";
-          document.removeEventListener("click", popupCloseListener);
-        };
-        document.addEventListener("click", popupCloseListener, false);
-      }
-      else
-      {
-        glassPane.className = "";
-        window.removeEventListener("message", popupMessageListener);
-      }
-
-      iframe.removeEventListener("load", popupLoadListener);
-    };
-    iframe.addEventListener("load", popupLoadListener, false);
-
-    iframe.src = url;
-    glassPane.className = "visible";
-  }
-
   function updateSocialLinks()
   {
     var networks = ["twitter", "facebook", "gplus"];
     networks.forEach(function(network)
     {
       var link = E("share-" + network);
-      var message = {
-        type: "filters.blocked",
-        url: link.getAttribute("data-script"),
-        requestType: "SCRIPT",
-        docDomain: "adblockplus.org",
-        thirdParty: true
-      };
-      ext.backgroundPage.sendMessage(message, function(blocked)
+      checkShareResource(link.getAttribute("data-script"), function(isBlocked)
       {
         // Don't open the share page if the sharing script would be blocked
-        if (blocked)
+        if (isBlocked)
           link.removeEventListener("click", onSocialLinkClick, false);
         else
           link.addEventListener("click", onSocialLinkClick, false);

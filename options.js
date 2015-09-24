@@ -663,35 +663,45 @@
     }
   }
 
-  function updateShareLink()
+  function onShareLinkClick(e)
   {
-    ext.backgroundPage.sendMessage(
+    e.preventDefault();
+
+    getDocLink("share-general", function(link)
     {
-      type: "filters.blocked",
-      url: "https://platform.twitter.com/widgets/",
-      requestType: "SCRIPT",
-      docDomain: "adblockplus.org",
-      thirdParty: true
-    },
-    function(blocked)
-    {
-      // TODO: modify "share" link accordingly
+      openSharePopup(link);
     });
   }
 
-  function E(id)
+  function updateShareLink()
   {
-    return document.getElementById(id);
-  }
+    var shareResources = [
+      "https://facebook.com/plugins/like.php?",
+      "https://platform.twitter.com/widgets/",
+      "https://apis.google.com/se/0/_/+1/fastbutton?"
+    ];
+    var isAnyBlocked = false;
+    var checksRemaining = shareResources.length;
 
-  function getDocLink(link, callback)
-  {
-    ext.backgroundPage.sendMessage(
+    function onResult(isBlocked)
     {
-      type: "app.get",
-      what: "doclink",
-      link: link
-    }, callback);
+      isAnyBlocked |= isBlocked;
+      if (!--checksRemaining)
+      {
+        // Hide the share tab if a script on the share page would be blocked
+        var tab = E("tab-share");
+        if (isAnyBlocked)
+        {
+          tab.hidden = true;
+          tab.removeEventListener("click", onShareLinkClick, false);
+        }
+        else
+          tab.addEventListener("click", onShareLinkClick, false);
+      }
+    }
+
+    for (var i = 0; i < shareResources.length; i++)
+      checkShareResource(shareResources[i], onResult);
   }
 
   ext.onMessage.addListener(function(message)

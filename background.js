@@ -37,7 +37,7 @@
     filterlistsReinitialized: false,
     addSubscription: false,
     filterError: false
-  };  
+  };
   updateFromURL(params);
 
   var modules = {};
