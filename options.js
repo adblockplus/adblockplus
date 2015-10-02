@@ -358,7 +358,7 @@
           var title = dialog.querySelector("h3").textContent;
           var url = dialog.querySelector(".url").textContent;
           addEnableSubscription(url, title);
-          document.body.removeAttribute("data-dialog");
+          closeDialog();
           break;
         case "cancel-custom-filters":
           E("custom-filters").classList.remove("mode-edit");
@@ -367,7 +367,7 @@
           E("whitelisting-textbox").value = "";
           break;
         case "close-dialog":
-          document.body.removeAttribute("data-dialog");
+          closeDialog();
           break;
         case "edit-custom-filters":
           E("custom-filters").classList.add("mode-edit");
@@ -376,7 +376,7 @@
         case "import-subscription":
           var url = E("blockingList-textbox").value;
           addEnableSubscription(url);
-          document.body.removeAttribute("data-dialog");
+          closeDialog();
           break;
         case "open-dialog":
           openDialog(element.getAttribute("data-dialog"));
@@ -417,13 +417,18 @@
         searchStyle.innerHTML = "#all-lang-table li:not([data-search*=\"" + this.value.toLowerCase() + "\"]) { display: none; }";
     }
 
-    function isEnterPressed(e)
+    function getKey(e)
     {
       // e.keyCode has been deprecated so we attempt to use e.key
       if ("key" in e)
-        return e.key == "Enter";
-      return e.keyCode == 13;  // keyCode "13" corresponds to "Enter"
+        return e.key;
+      return getKey.keys[e.keyCode];
     }
+    getKey.keys = {
+      9: "Tab",
+      13: "Enter",
+      27: "Escape"
+    };
 
     // Initialize navigation sidebar
     ext.backgroundPage.sendMessage(
@@ -454,7 +459,7 @@
     E("find-language").addEventListener("keyup", onFindLanguageKeyUp, false);
     E("whitelisting-textbox").addEventListener("keypress", function(e)
     {
-      if (isEnterPressed(e))
+      if (getKey(e) == "Enter")
         addWhitelistedDomain();
     }, false);
 
@@ -478,11 +483,56 @@
       addCustomFilters();
     }, false);
     var customFilterEditButtons = document.querySelectorAll("#custom-filters-edit-wrapper button");
+
+    E("dialog").addEventListener("keydown", function(e)
+    {
+      switch (getKey(e))
+      {
+        case "Escape":
+          closeDialog();
+          break;
+        case "Tab":
+          if (e.shiftKey)
+          {
+            if (e.target.classList.contains("focus-first"))
+            {
+              e.preventDefault();
+              this.querySelector(".focus-last").focus();
+            }
+          }
+          else if (e.target.classList.contains("focus-last"))
+          {
+            e.preventDefault();
+            this.querySelector(".focus-first").focus();
+          }
+          break;
+      }
+    }, false);
   }
 
+  var focusedBeforeDialog = null;
   function openDialog(name)
   {
+    var dialog = E("dialog");
+    dialog.setAttribute("aria-hidden", false);
+    dialog.setAttribute("aria-labelledby", "dialog-title-" + name);
     document.body.setAttribute("data-dialog", name);
+
+    var defaultFocus = document.querySelector("#dialog-content-" + name
+      + " .default-focus");
+    if (!defaultFocus)
+      defaultFocus = dialog.querySelector(".focus-first");
+    focusedBeforeDialog = document.activeElement;
+    defaultFocus.focus();
+  }
+
+  function closeDialog()
+  {
+    var dialog = E("dialog");
+    dialog.setAttribute("aria-hidden", true);
+    dialog.removeAttribute("aria-labelledby");
+    document.body.removeAttribute("data-dialog");
+    focusedBeforeDialog.focus();
   }
 
   function populateLists()

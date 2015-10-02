@@ -479,7 +479,8 @@ div.button
 
 .icon, .table input[type="checkbox"]::before, .table button.delete,
 #content-help a::before, #dialog-close::before,
-#custom-filters-add button::after
+#custom-filters-add button::after,
+#dialog-body button::before
 {
   background-image: url(options-sprite.png);
   display: inline-block;
@@ -509,8 +510,8 @@ div.button
   width: 18px;
 }
 
-.icon-arrow,
-#content-help a::before
+#content-help a::before,
+#dialog-body button::before
 {
   background-position: 0px -42px;
   content: "";
@@ -518,6 +519,8 @@ div.button
   height: 11px;
   vertical-align: middle;
   width: 7px;
+  -moz-margin-end: 12px;
+  -webkit-margin-end: 12px;
 }
 
 .controls
@@ -1000,9 +1003,11 @@ body[data-dialog] #dialog-background
   margin: 4px 24px;
 }
 
-#dialog h3
+#dialog h3,
+#dialog label
 {
   font-size: 14px;
+  font-weight: 600;
   margin: 0px;
 }
 
@@ -1045,22 +1050,18 @@ body[data-dialog] #dialog-background
   padding: 12px 0px;
 }
 
-#dialog .button-wrapper
+#dialog-body button
 {
   background-color: #F5F5F5;
+  border: none;
+  color: #3A7BA6;
+  cursor: pointer;
+  display: block;
+  font-family: inherit;
   margin-top: 8px;
   padding: 10px 16px;
-  cursor: pointer;
-  width: auto;
-}
-
-#dialog .button-wrapper span:not(.icon)
-{
-  color: #3A7BA6;
-  display: inline-block;
-  -moz-margin-start: 15px;
-  -webkit-margin-start: 15px;
-  vertical-align: top;
+  text-align: initial;
+  width: 100%;
 }
 
 #dialog .url
@@ -1083,12 +1084,21 @@ body:not([data-dialog]) #dialog
 
 #other-language .button-add
 {
+  background-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  width: auto;
   -webkit-border-end: 1px solid #CDCDCD;
   -moz-border-end: 1px solid #CDCDCD;
   -webkit-padding-end: 10px;
   -moz-padding-end: 10px;
   -webkit-padding-start: 0px;
   -moz-padding-start: 0px;
+}
+
+#other-language .button-add::before
+{
+  display: none;
 }
 
 #other-language .display

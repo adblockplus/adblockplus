@@ -300,14 +300,14 @@
     </div>
 
     <!-- Dialog -->
-    <div id="dialog">
+    <div id="dialog" role="dialog" aria-hidden="true">
       <header>
         <span id="dialog-title">
           <span id="dialog-title-custom" class="i18n_options_dialog_custom_title"></span>
           <span id="dialog-title-language" class="i18n_options_dialog_language_title"></span>
           <span id="dialog-title-predefined" class="i18n_options_dialog_predefined_title"></span>
         </span>
-        <button id="dialog-close" class="i18n_options_close" data-action="close-dialog"></button>
+        <button id="dialog-close" class="i18n_options_close focus-first" data-action="close-dialog"></button>
       </header>
       <div id="dialog-body" class="content">
         <!-- Add language subscription -->
@@ -321,9 +321,9 @@
             </ul>
           </div>
           <div id="other-language" class="dialog-content-block">
-            <h3 class="i18n_options_dialog_language_other"></h3>
             <div>
-              <input type="search" id="find-language" />
+              <label for="find-language" class="i18n_options_dialog_language_other"></label>
+              <input type="search" id="find-language" class="default-focus" />
             </div>
             <ul id="all-lang-table" class="table list">
               <template>
@@ -338,21 +338,15 @@
         <!-- Add custom subscription -->
         <div id="dialog-content-custom" class="dialog-content">
           <div class="dialog-content-block">
-            <h3 class="i18n_options_dialog_custom_subscription_title"></h3>
             <div>
-              <input id="blockingList-textbox" type="text" placeholder="www.example.com/blockinglist.txt" />
+              <label for="blockingList-textbox" class="i18n_options_dialog_custom_subscription_title"></label>
+              <input id="blockingList-textbox" type="text" class="default-focus" placeholder="www.example.com/blockinglist.txt" />
             </div>
-            <div class="button-wrapper" data-action="import-subscription">
-              <span class="icon icon-arrow"></span>
-              <span class="i18n_options_dialog_custom_import"></span>
-            </div>
+            <button class="i18n_options_dialog_custom_import" data-action="import-subscription"></button>
           </div>
           <div class="dialog-content-block">
             <h3 class="i18n_options_dialog_edit_own_list"></h3>
-            <div class="button-wrapper" data-action="close-dialog,switch-tab,edit-custom-filters" data-tab="advanced">
-              <span class="icon icon-arrow"></span>
-              <span class="i18n_options_dialog_create_own_list"></span>
-            </div>
+            <button class="i18n_options_dialog_create_own_list" data-action="close-dialog,switch-tab,edit-custom-filters" data-tab="advanced"></button>
           </div>
         </div>
         <!-- Add predefined subscription -->
@@ -360,13 +354,12 @@
           <div class="dialog-content-block">
             <h3></h3>
             <div class="url"></div>
-            <div class="button-wrapper" data-action="add-predefined-subscription">
-              <span class="icon icon-arrow"></span>
-              <span class="i18n_options_dialog_predefined_confirm"></span>
-            </div>
+            <button class="i18n_options_dialog_predefined_confirm default-focus" data-action="add-predefined-subscription"></button>
           </div>
         </div>
       </div>
+      <!-- Placeholder element to determine when to wrap focus around -->
+      <span class="focus-last" tabindex="0"></span>
     </div>
   </body>
 </html>
