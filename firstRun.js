@@ -155,6 +155,9 @@
 
   function onSocialLinkClick(event)
   {
+    if (window.matchMedia("(max-width: 970px)").matches)
+      return;
+
     event.preventDefault();
 
     getDocLink(event.target.id, function(link)

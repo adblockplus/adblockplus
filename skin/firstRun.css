@@ -16,21 +16,21 @@
  */
 
 @font-face {
-  font-family: 'CreteRound';
+  font-family: "CreteRound";
   font-style: normal;
   src: url(fonts/CreteRound-Regular.otf);
-  src: local ('Ø'),
-  /*local ('Ø') forces using no local font called CreteRound*/
-  url(fonts/CreteRound-Regular.otf) format('otf');
+  src: local ("Ø"),
+  /*local ("Ø") forces using no local font called CreteRound*/
+  url(fonts/CreteRound-Regular.otf) format("otf");
 }
 
 @font-face {
-  font-family: 'CreteRound';
+  font-family: "CreteRound";
   font-style: italic;
   src: url(fonts/CreteRound-Italic.otf);
-  src: local ('Ø'),
-  /*local ('Ø') forces using no local font called CreteRound*/
-  url(fonts/CreteRound-Italic.otf) format('otf');
+  src: local ("Ø"),
+  /*local ("Ø") forces using no local font called CreteRound*/
+  url(fonts/CreteRound-Italic.otf) format("otf");
 }
 
 body
@@ -79,7 +79,7 @@ header
   background-image: url(background.png);
   background-repeat: repeat-x;
   width: 100%;
-  padding: 25px 0 0 0;
+  padding-top: 25px;
 }
 
 header h1
@@ -89,7 +89,7 @@ header h1
   color: #57ab5b;
   text-align: center;
   margin: 21px auto;
-  padding: 16px 0 14px 0;
+  padding: 16px 0px;
   border: 1px #57ab5b;
   border-style: dashed none;
   /* border parallel fix - 957px is the value
@@ -99,7 +99,9 @@ header h1
   max-width: 957px;
 }
 
-h1,h2,h3
+h1,
+h2,
+h3
 {
  font-family: CreteRound, Helvetica, Arial, sans-serif;
 }
@@ -120,7 +122,8 @@ h3
   font-size: 22px;
   color: #7F776B;
   font-weight: normal;
-  margin: 0 0 10px 0;
+  margin-top: 0px;
+  margin-bottom: 10px;
   padding: 0;
   line-height: 24px;
 }
@@ -142,12 +145,14 @@ section
   max-width: 960px;
   background-image: url(background.png);
   padding: 40px 100px;
+  box-sizing: border-box;
 }
 
 #general
 {
-  padding: 40px 0px;
   display: table;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 #general > div
@@ -230,26 +235,9 @@ section
   box-shadow: 0px 0px 5px 1px #5D5D5D;
 }
 
-@media (max-width: 960px)
-{
-  #general
-  {
-    display: block;
-  }
-
-  #general > div
-  {
-    display: block;
-    width: auto;
-    padding: 10px 0px;
-    margin: 0px 50px;
-    border-width: 1px 0 0;
-  }
-}
-
 section > p
 {
-  margin: 15px 0 0 0;
+  margin-top: 15px;
 }
 
 #logo
@@ -262,13 +250,7 @@ section > p
 
 #can-do-more
 {
-  padding: 40px 0px 0px 0px;
   border-bottom: 4px solid #968D81;
-}
-
-#can-do-more > h2
-{
-  margin: 0 100px;
 }
 
 .feature-malware-image
@@ -291,21 +273,18 @@ section > p
 
 #can-do-more-content
 {
-  margin: 30px 100px 20px 100px;
+  margin-top: 30px;
 }
 
 #can-do-more #features
 {
   border-spacing: 10px;
-  margin: 0px;
-  padding: 0px;
 }
 
-#can-do-more .feature:not([hidden])
+#can-do-more .feature
 {
-  display: block;
   list-style-type: none;
-  padding: 30px 0;
+  padding-top: 30px;
   padding-bottom: 20px;
   border-top: 1px dashed #c0bebb;
 }
@@ -313,14 +292,13 @@ section > p
 #can-do-more .feature-image, #can-do-more .feature-description
 {
   display: inline-block;
-  *display: inline; /* IE6 inline-block fix */
-  *zoom: 1;
   vertical-align: top;
 }
 
 #can-do-more .feature-description
 {
-  margin: 0px 0px 0 20px;
+  -webkit-margin-start: 20px;
+  -moz-margin-start: 20px;
   width: 625px;
   max-width: 85%;
 }
@@ -329,37 +307,38 @@ section > p
 {
   width: 480px;
   max-width: 100%;
-  margin: 0 40px 0 0;
+  -webkit-margin-end: 40px;
+  -moz-margin-end: 40px;
   display: inline-block;
 }
 
 #can-do-more .feature-description-textblock > span
 {
-  margin: 15px 0 0 0;
+  margin-top: 15px;
 }
 
 #can-do-more .feature-image
 {
   width: 59px;
   height: 59px;
-  margin: 8px 0 10px 20px;
+  margin: 10px 0px;
+  -webkit-margin-start: 20px;
+  -moz-margin-start: 20px;
 }
 
 #share
 {
   background-image: url(background-share.png);
-  padding: 50px 100px 40px 100px;
-  max-width: 760px;
   text-align: center;
   font-family: CreteRound, Helvetica, Arial, sans-serif;
 }
 
 #share h2
 {
-  color: #fff;
-  margin: 0 0 30px 0;
+  margin-bottom: 30px;
 }
 
+#share h2,
 #share h2 > a
 {
   color: #fff;
@@ -387,7 +366,7 @@ section > p
 
 #donate-block span, #share-block span
 {
-  margin: 10px 20px 0px 20px;
+  margin: 10px 20px;
 }
 
 #donate-block, #share-block
@@ -415,7 +394,7 @@ section > p
 
 .share-buttons
 {
-  margin: 6px 0 0 0;
+  margin-top: 6px;
   cursor: pointer;
   vertical-align: top;
   /* because inline block creates
@@ -557,7 +536,8 @@ section > p
   display: inline-block;
   vertical-align: top;
   height: 22px;
-  margin: 32px 0px 7px 0px;
+  margin-top: 32px;
+  margin-bottom: 7px;
   border-radius: 9999px;
   border: 1px solid #999;
   overflow: hidden;
@@ -589,8 +569,9 @@ section > p
 
 .toggle-on
 {
-  padding: 0px 30px 0px 10px;
-  color: rgba(255,255,255, 0.8);
+  padding-left: 10px;
+  padding-right: 30px;
+  color: rgba(255,255,255,0.8);
   text-shadow: 1px 1px rgba(0,0,0,0.2);
   box-shadow: inset 2px 2px 6px rgba(0,0,0,0.2);
   background: rgb(69,163,31);
@@ -598,7 +579,8 @@ section > p
 
 .toggle-off
 {
-  padding: 0px 10px 0px 30px;
+  padding-left: 30px;
+  padding-right: 10px;
   color: rgba(0,0,0,0.6);
   text-shadow: 1px 1px rgba(255,255,255,0.2);
   background: #cfcfcf;
@@ -637,7 +619,8 @@ section > p
 {
   height: 21px;
   display: inline-block;
-  margin: 15px 0px 2px 0px;
+  margin-top: 15px;
+  margin-bottom: 2px;
   font-size: 16px;
   color: #003366;
   cursor: pointer;
@@ -657,4 +640,60 @@ footer
   margin: 0 auto 30px;
   max-width: 960px;
   text-align: center;
+}
+
+@media (max-width: 970px)
+{
+  header
+  {
+    background-size: 100px 57px;
+  }
+
+  #logo
+  {
+    width: 64px;
+    height: 64px;
+  }
+
+  section
+  {
+    padding: 40px 20px;
+  }
+
+  #general,
+  #general > div
+  {
+    display: block;
+  }
+
+  #general > div
+  {
+    width: auto;
+    padding: 10px 0px;
+    border-width: 1px 0px 0px;
+  }
+
+  #general > div,
+  #can-do-more > h2,
+  #can-do-more-content
+  {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  #can-do-more,
+  #can-do-more .feature h3
+  {
+    text-align: center;
+  }
+
+  #can-do-more .feature-description-textblock
+  {
+    text-align: start;
+  }
+
+  .toggle
+  {
+    margin-top: 14px;
+  }
 }
