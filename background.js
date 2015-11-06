@@ -63,7 +63,7 @@
     Prefs: {
       "subscriptions_exceptionsurl": "https://easylist-downloads.adblockplus.org/exceptionrules.txt"
     }
-  }
+  };
 
   modules.subscriptionClasses = {
     Subscription: function(url)
@@ -164,9 +164,8 @@
 
   modules.filterValidation = 
   {
-    parseFilter: function(text) 
+    parseFilter: function(text)
     {
-      
       if (params.filterError)
         return {error: "Invalid filter"};
       return {filter: modules.filterClasses.Filter.fromText(text)};
@@ -196,6 +195,12 @@
         else
           return null;
       }
+    }
+  };
+
+  modules.cssRules = {
+    CSSRules: {
+      getRulesForDomain: function(domain) { }
     }
   };
 
@@ -246,7 +251,7 @@
 
   var filters = [
     "@@||alternate.de^$document",
-    "@@||der.postillion.com^$document", 
+    "@@||der.postillion.com^$document",
     "@@||taz.de^$document",
     "@@||amazon.de^$document",
     "||biglemon.am/bg_poster/banner.jpg",
@@ -281,7 +286,7 @@
 
   global.seenDataCorruption = params.seenDataCorruption;
   global.filterlistsReinitialized = params.filterlistsReinitialized;
-  
+
   if (params.addSubscription)
   {
     // We don't know how long it will take for the page to fully load

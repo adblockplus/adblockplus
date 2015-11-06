@@ -25,10 +25,12 @@
   var FilterStorage = require("filterStorage").FilterStorage;
   var FilterNotifier = require("filterNotifier").FilterNotifier;
   var defaultMatcher = require("matcher").defaultMatcher;
-  
+  var CSSRules = require("cssRules").CSSRules;
+
   var filterClasses = require("filterClasses");
   var Filter = filterClasses.Filter;
   var BlockingFilter = filterClasses.BlockingFilter;
+  var RegExpFilter = filterClasses.RegExpFilter;
   var Synchronizer = require("synchronizer").Synchronizer;
 
   var subscriptionClasses = require("subscriptionClasses");
@@ -194,13 +196,36 @@
         callback(filter instanceof BlockingFilter);
         break;
       case "filters.get":
+        if (message.what == "cssproperties")
+        {
+          var filters = [];
+          var isFrameWhitelisted = require("whitelisting").isFrameWhitelisted;
+
+          if (!isFrameWhitelisted(sender.page, sender.frame,
+                                  RegExpFilter.typeMap.DOCUMENT |
+                                  RegExpFilter.typeMap.ELEMHIDE))
+          {
+            filters = CSSRules.getRulesForDomain(sender.frame.url.hostname);
+            filters = filters.map(function(filter)
+            {
+              return {
+                prefix: filter.selectorPrefix,
+                suffix: filter.selectorSuffix,
+                regexp: filter.regexpString
+              };
+            });
+          }
+          callback(filters);
+          break;
+        }
+
         var subscription = Subscription.fromURL(message.subscriptionUrl);
         if (!subscription)
         {
           callback([]);
           break;
         }
-        
+
         callback(subscription.filters.map(convertFilter));
         break;
       case "filters.importRaw":
