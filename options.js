@@ -210,7 +210,7 @@
             if (subscriptionUrl in recommendationsMap)
             {
               var recommendation = recommendationsMap[subscriptionUrl];
-              if (recommendation.isAdsType)
+              if (recommendation.type == "ads")
               {
                 if (subscription.disabled == false)
                 {
@@ -257,9 +257,9 @@
         if (subscriptionUrl in recommendationsMap)
         {
           var recommendation = recommendationsMap[subscriptionUrl];
-          if (recommendation.isPopular)
+          if (recommendation.type != "ads")
             collection = collections.popular;
-          else if (recommendation.isAdsType && subscription.disabled == false)
+          else if (subscription.disabled == false)
             collection = collections.langs;
           else
             collection = collections.allLangs;
@@ -309,19 +309,17 @@
         subscription.homepage = null;
         subscription.lastSuccess = null;
         var recommendation = Object.create(null);
-        recommendation.isAdsType = false;
-        recommendation.isPopular = false;
+        recommendation.type = element.getAttribute("type");
         var prefix = element.getAttribute("prefixes");
         if (prefix)
         {
-          var prefix = element.getAttribute("prefixes").replace(/,/g, "_");
+          prefix = prefix.replace(/\W/g, "_");
           subscription.title = ext.i18n.getMessage("options_language_" + prefix);
-          recommendation.isAdsType = true;
         }
         else
         {
-          subscription.title = element.getAttribute("specialization");
-          recommendation.isPopular = true;
+          var type = recommendation.type.replace(/\W/g, "_");
+          subscription.title = ext.i18n.getMessage("common_feature_" + type + "_title");
         }
 
         recommendationsMap[subscription.url] = recommendation;

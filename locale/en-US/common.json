@@ -1,0 +1,18 @@
+{
+  "common_feature_anti_adblock_title": {
+    "description": "Feature title for anti-adblock blocking filter list",
+    "message": "Hide Adblock Warning Messages"
+  },
+  "common_feature_malware_title": {
+    "description": "Feature title for anti-malware filter list",
+    "message": "Block Malware"
+  },
+  "common_feature_privacy_title": {
+    "description": "Feature title for privacy filter list",
+    "message": "Disable Tracking"
+  },
+  "common_feature_social_title": {
+    "description": "Feature title for social media blocking filter list",
+    "message": "Remove Social Media Buttons"
+  }
+}

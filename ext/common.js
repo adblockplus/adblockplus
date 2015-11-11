@@ -141,7 +141,7 @@
     return [text, placeholders];
   };
 
-  var readCatalog = function(locale)
+  var readCatalog = function(locale, catalogFile)
   {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "locale/" + locale + "/" + catalogFile, false);
@@ -190,7 +190,9 @@
         if (locales.length == 0)
           return "";
 
-        readCatalog(locales.shift());
+        var locale = locales.shift();
+        readCatalog(locale, "common.json");
+        readCatalog(locale, catalogFile);
       }
     }
   };
