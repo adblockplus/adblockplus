@@ -155,7 +155,7 @@ section
   padding-right: 0px;
 }
 
-#general > div
+#general > .block
 {
   display: table-cell;
   width: 50%;
@@ -167,7 +167,7 @@ section
   border-inline-start-width: 1px;
 }
 
-#general > div:first-child
+#general > .block:first-child
 {
   border: none;
 }
@@ -364,38 +364,30 @@ section > p
   border-radius: 30px;
 }
 
-#donate-block span, #share-block span
+#share > .block
 {
-  margin: 10px 20px;
-}
-
-#donate-block, #share-block
-{
-  min-width: 250px;
   display: inline-block;
   vertical-align: top;
-  padding: 5px 0 5px 0;
+  width: 49%;
+  padding: 5px 0px;
   border: 1px dashed #37506d;
   border-style: none dashed;
 }
 
-#donate-block
+#share > .block:last-child
 {
-  width: 50%;
-}
-
-#share-block
-{
-  width: 49%;
-
   -webkit-border-start-style: none;
   -moz-border-start-style: none;
+}
+
+#share > .block > span
+{
+  margin: 10px 20px;
 }
 
 .share-buttons
 {
   margin-top: 6px;
-  cursor: pointer;
   vertical-align: top;
   /* because inline block creates
    * space if not captured with
@@ -661,24 +653,32 @@ footer
   }
 
   #general,
-  #general > div
+  #general > .block,
+  #share > .block
   {
     display: block;
   }
 
-  #general > div
+  #general > .block
   {
     width: auto;
+    margin-left: 20px;
+    margin-right: 20px;
     padding: 10px 0px;
     border-width: 1px 0px 0px;
   }
 
-  #general > div,
-  #can-do-more > h2,
-  #can-do-more-content
+  #share > .block
   {
-    margin-left: 20px;
-    margin-right: 20px;
+    width: auto;
+    padding: 20px 0px;
+    border-style: dashed none none;
+  }
+
+  #donate,
+  .share-buttons
+  {
+    margin-top: 10px;
   }
   
   #can-do-more,
