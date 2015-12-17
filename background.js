@@ -175,7 +175,9 @@
       if (params.filterError)
         return {errors: ["Invalid filter"]};
       return {
-        filters: text.split("\n").map(modules.filterClasses.Filter.fromText),
+        filters: text.split("\n")
+          .filter(function(filter) {return !!filter;})
+          .map(modules.filterClasses.Filter.fromText),
         errors: []
       };
     }
