@@ -103,6 +103,14 @@
     "description": "Acceptable ads descriptive name in General tab",
     "message": "Allow some non-intrusive advertising"
   },
+  "options_whitelisted_add": {
+    "description": "Button label for adding whitelisted website",
+    "message": "add website"
+  },
+  "options_whitelisted_empty": {
+    "description": "Text shown when list of whitelisted websites is empty",
+    "message": "There are no websites in your whitelist."
+  },
   "options_whitelisted_title": {
     "description": "Whitelisting option name in General tab",
     "message": "Whitelisted websites"
@@ -166,6 +174,10 @@
   "options_blockingList_update": {
     "description": "Update button in Advanced tab",
     "message": "Update all blocking lists"
+  },
+  "options_customFilters_empty": {
+    "description": "Text shown when list of custom filters is empty",
+    "message": "There are no custom filters."
   },
   "options_customFilters_title": {
     "description": "Custom filters option name in Advanced tab",
@@ -259,9 +271,17 @@
     "description": "Table headline in add language modal dialog",
     "message": "Added languages"
   },
+  "options_dialog_language_added_empty": {
+    "description": "Text shown when list of added languages is empty",
+    "message": "There are no languages."
+  },
   "options_dialog_language_other": {
     "description": "Table headline in add language modal dialog",
     "message": "Other languages"
+  },
+  "options_dialog_language_other_empty": {
+    "description": "Text shown when list of available languages is empty",
+    "message": "There are no available languages."
   },
   "options_language_en": {
     "description": "Language name shown in add language modal dialog",

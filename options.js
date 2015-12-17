@@ -30,6 +30,20 @@
     this.items = [];
   }
 
+  Collection.prototype._setEmpty = function(table, text)
+  {
+    var placeholder = table.querySelector(".empty-placeholder");
+    if (text && !placeholder)
+    {
+      placeholder = document.createElement("li");
+      placeholder.className = "empty-placeholder";
+      placeholder.textContent = ext.i18n.getMessage(text);
+      table.appendChild(placeholder);
+    }
+    else if (placeholder)
+      table.removeChild(placeholder);
+  }
+
   Collection.prototype.addItems = function() 
   {
     var length = Array.prototype.push.apply(this.items, arguments);
@@ -65,6 +79,7 @@
           control.checked = item.disabled == false;
         }
 
+        this._setEmpty(table, null);
         if (table.hasChildNodes())
           table.insertBefore(listItem, table.childNodes[this.items.indexOf(item)]);
         else
@@ -81,25 +96,27 @@
       return;
 
     this.items.splice(index, 1);
-    var access = (item.url || item.text).replace(/'/g, "\\'");
     for (var i = 0; i < this.details.length; i++)
     {
       var table = E(this.details[i].id);
-      var element = table.querySelector("[data-access='" + access + "']");
+      var element = table.childNodes[index];
       element.parentElement.removeChild(element);
+      if (this.items.length == 0)
+        this._setEmpty(table, this.details[i].emptyText);
     }
   };
 
   Collection.prototype.clearAll = function()
   {
+    this.items = [];
     for (var i = 0; i < this.details.length; i++)
     {
       var table = E(this.details[i].id);
       var template = table.querySelector("template");
       table.innerHTML = "";
       table.appendChild(template);
+      this._setEmpty(table, this.details[i].emptyText);
     }
-    this.items.length = 0;
   };
 
   function onToggleSubscriptionClick(e)
@@ -108,11 +125,10 @@
     var subscriptionUrl = e.target.parentNode.getAttribute("data-access");
     if (!e.target.checked)
     {
-       ext.backgroundPage.sendMessage(
-        {
-          type: "subscriptions.remove",
-          url: subscriptionUrl
-        });
+      ext.backgroundPage.sendMessage({
+        type: "subscriptions.remove",
+        url: subscriptionUrl
+      });
     }
     else
       addEnableSubscription(subscriptionUrl);
@@ -146,44 +162,49 @@
   [
     {
       id: "blocking-languages-table",
+      emptyText: "options_dialog_language_added_empty",
       onClick: onToggleSubscriptionClick
     },
     {
-      id: "blocking-languages-dialog-table"
+      id: "blocking-languages-dialog-table",
+      emptyText: "options_dialog_language_added_empty"
     }
   ]);
   collections.allLangs = new Collection(
   [
     {
-      id: "all-lang-table", 
+      id: "all-lang-table",
+      emptyText: "options_dialog_language_other_empty",
       onClick: onAddLanguageSubscriptionClick
     }
   ]);
   collections.acceptableAds = new Collection(
   [
     {
-      id: "acceptableads-table", 
+      id: "acceptableads-table",
       onClick: onToggleSubscriptionClick
     }
   ]);
   collections.custom = new Collection(
   [
     {
-      id: "custom-list-table", 
+      id: "custom-list-table",
       onClick: onToggleSubscriptionClick
     }
   ]);
   collections.whitelist = new Collection(
   [
     {
-      id: "whitelisting-table", 
+      id: "whitelisting-table",
+      emptyText: "options_whitelisted_empty",
       onClick: onRemoveFilterClick
     }
   ]);
   collections.customFilters = new Collection(
   [
     {
-      id: "custom-filters-table"
+      id: "custom-filters-table",
+      emptyText: "options_customFilters_empty"
     }
   ]);
 
@@ -363,6 +384,7 @@
           break;
         case "cancel-domain-exception":
           E("whitelisting-textbox").value = "";
+          document.querySelector("#whitelisting .controls").classList.remove("mode-edit");
           break;
         case "close-dialog":
           closeDialog();
@@ -370,6 +392,10 @@
         case "edit-custom-filters":
           E("custom-filters").classList.add("mode-edit");
           editCustomFilters();
+          break;
+        case "edit-domain-exception":
+          document.querySelector("#whitelisting .controls").classList.add("mode-edit");
+          E("whitelisting-textbox").focus();
           break;
         case "import-subscription":
           var url = E("blockingList-textbox").value;
@@ -601,6 +627,7 @@
     }
 
     domain.value = "";
+    document.querySelector("#whitelisting .controls").classList.remove("mode-edit");
   }
 
   function editCustomFilters()

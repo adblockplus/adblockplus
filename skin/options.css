@@ -344,12 +344,9 @@ div.button
   flex: 1;
 }
 
-.table.list li:nth-child(odd)
-{
-  background-color: #F5F5F5;
-}
-
-.table.cols li:nth-child(even)
+.table.list li:nth-child(odd),
+.table.cols li:nth-child(even),
+.table li.empty-placeholder
 {
   background-color: #F5F5F5;
 }
@@ -583,6 +580,12 @@ div.button
 {
   -moz-padding-start: 12px;
   -webkit-padding-start: 12px;
+}
+
+#whitelisting .controls.mode-edit > button,
+#whitelisting .controls:not(.mode-edit) > div
+{
+  display: none;
 }
 
 #whitelisting .controls input[type="text"]
