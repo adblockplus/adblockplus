@@ -312,42 +312,44 @@
 
   function loadRecommendations()
   {
-    var request = new XMLHttpRequest();
-    request.open("GET", "subscriptions.xml", false);
-    request.addEventListener("load", function()
-    {
-      var list = document.getElementById("subscriptionSelector");
-      var docElem = request.responseXML.documentElement;
-      var elements = docElem.getElementsByTagName("subscription");
-      for (var i = 0; i < elements.length; i++)
+    fetch("subscriptions.xml")
+      .then(function(response)
       {
-        var element = elements[i];
-        var subscription = Object.create(null);
-        subscription.title = element.getAttribute("title");
-        subscription.url = element.getAttribute("url");
-        subscription.disabled = null;
-        subscription.downloadStatus = null;
-        subscription.homepage = null;
-        subscription.lastSuccess = null;
-        var recommendation = Object.create(null);
-        recommendation.type = element.getAttribute("type");
-        var prefix = element.getAttribute("prefixes");
-        if (prefix)
+        return response.text();
+      })
+      .then(function(text)
+      {
+        var list = document.getElementById("subscriptionSelector");
+        var doc = new DOMParser().parseFromString(text, "application/xml");
+        var elements = doc.documentElement.getElementsByTagName("subscription");
+        for (var i = 0; i < elements.length; i++)
         {
-          prefix = prefix.replace(/\W/g, "_");
-          subscription.title = ext.i18n.getMessage("options_language_" + prefix);
-        }
-        else
-        {
-          var type = recommendation.type.replace(/\W/g, "_");
-          subscription.title = ext.i18n.getMessage("common_feature_" + type + "_title");
-        }
+          var element = elements[i];
+          var subscription = Object.create(null);
+          subscription.title = element.getAttribute("title");
+          subscription.url = element.getAttribute("url");
+          subscription.disabled = null;
+          subscription.downloadStatus = null;
+          subscription.homepage = null;
+          subscription.lastSuccess = null;
+          var recommendation = Object.create(null);
+          recommendation.type = element.getAttribute("type");
+          var prefix = element.getAttribute("prefixes");
+          if (prefix)
+          {
+            prefix = prefix.replace(/\W/g, "_");
+            subscription.title = ext.i18n.getMessage("options_language_" + prefix);
+          }
+          else
+          {
+            var type = recommendation.type.replace(/\W/g, "_");
+            subscription.title = ext.i18n.getMessage("common_feature_" + type + "_title");
+          }
 
-        recommendationsMap[subscription.url] = recommendation;
-        updateSubscription(subscription);
-      }
-    }, false);
-    request.send(null);
+          recommendationsMap[subscription.url] = recommendation;
+          updateSubscription(subscription);
+        }
+      });
   }
 
   function onClick(e)
