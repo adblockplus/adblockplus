@@ -84,4 +84,17 @@
     if (callback)
       callback();
   };
+
+  global.ext.devtools = {
+    onCreated: {
+      addListener: function(listener)
+      {
+        window.addEventListener("message", function(event)
+        {
+          if (event.data.type == "devtools")
+            listener(new ext.Page(event.source));
+        });
+      }
+    }
+  };
 })(this);

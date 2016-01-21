@@ -305,4 +305,81 @@
       }, "*");
     }, 1000);
   }
+
+  ext.devtools.onCreated.addListener(function(panel)
+  {
+    // blocked request
+    panel.sendMessage({
+      type: "add-record",
+      request: {
+        url: "http://adserver.example.com/ad_banner.png",
+        type: "IMAGE",
+        docDomain: "example.com"
+      },
+      filter: {
+        text: "/ad_banner*$domain=example.com",
+        whitelisted: false,
+        userDefined: false,
+        subscription: "EasyList"
+      }
+    });
+
+    // whitelisted request
+    panel.sendMessage({
+      type: "add-record",
+      request: {
+        url: "http://example.com/looks_like_an_ad_but_isnt_one.html",
+        type: "SUBDOCUMENT",
+        docDomain: "example.com"
+      },
+      filter: {
+        text: "@@||example.com/looks_like_an_ad_but_isnt_one.html",
+        whitelisted: true,
+        userDefined: false,
+        subscription: "EasyList"
+      }
+    });
+
+    // request with long URL and no filter matches
+    panel.sendMessage({
+      type: "add-record",
+      request: {
+        url: "https://this.url.has.a.long.domain/and_a_long_path_maybe_not_long_enough_so_i_keep_typing?there=are&a=couple&of=parameters&as=well&and=even&some=more",
+        type: "XMLHTTPREQUEST",
+        docDomain: "example.com"
+      },
+      filter: null
+    });
+
+    // matching element hiding filter
+    panel.sendMessage({
+      type: "add-record",
+      request: {
+        type: "ELEMHIDE",
+        docDomain: "example.com"
+      },
+      filter: {
+        text: "example.com##.ad_banner",
+        whitelisted: false,
+        userDefined: false,
+        subscription: "EasyList"
+      }
+    });
+
+    // user-defined filter
+    panel.sendMessage({
+      type: "add-record",
+      request: {
+        url: "http://example.com/some-annoying-popup",
+        type: "POPUP",
+        docDomain: "example.com"
+      },
+      filter: {
+        text: "||example.com/some-annoying-popup$popup",
+        whitelisted: false,
+        userDefined: true,
+        subscription: null
+      }
+    });
+  });
 })(this);

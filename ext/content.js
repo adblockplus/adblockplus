@@ -45,23 +45,28 @@
   window.addEventListener("message", loadHandler, false);
 
   global.ext.backgroundPage = {
+    _sendRawMessage: function(message)
+    {
+      if (messageQueue)
+        messageQueue.push(message);
+      else
+        backgroundFrame.contentWindow.postMessage(message, "*");
+    },
     sendMessage: function(message, responseCallback)
     {
-      var rawMessage = {
+      var messageId = ++maxMessageId;
+
+      this._sendRawMessage({
         type: "message",
-        messageId: ++maxMessageId,
+        messageId: messageId,
         payload: message
-      };
-      if (messageQueue)
-        messageQueue.push(rawMessage);
-      else
-        backgroundFrame.contentWindow.postMessage(rawMessage, "*");
+      });
 
       if (responseCallback)
       {
         var callbackWrapper = function(event)
         {
-          if (event.data.type == "response" && event.data.messageId == rawMessage.messageId)
+          if (event.data.type == "response" && event.data.messageId == messageId)
           {
             window.removeEventListener("message", callbackWrapper, false);
             responseCallback(event.data.payload);
