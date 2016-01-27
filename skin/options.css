@@ -165,7 +165,7 @@ button[role="checkbox"][aria-checked="true"]
 
 .hbox > div
 {
-  flex: 1;
+  width: 400px;
 }
 
 .tabs li
@@ -353,14 +353,19 @@ div.button
 .table li
 {
   display: flex;
-  padding: 14px 0px;
+  padding: 12px 0px;
   -webkit-padding-start: 16px;
   -moz-padding-start: 16px;
+  border-radius: 3px;
 }
 
 .table.list li .display
 {
   flex: 1;
+  line-height: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .table.list li:nth-child(odd),
@@ -396,27 +401,6 @@ div.button
 {
   -webkit-padding-start: 38px;
   -moz-padding-start: 38px;
-}
-
-.table::-webkit-scrollbar,
-#custom-wrapper::-webkit-scrollbar
-{
-  -webkit-padding-end: 10px;
-  width: 5px;
-}
-
-.table::-webkit-scrollbar-thumb,
-#custom-wrapper::-webkit-scrollbar-thumb
-{
-  background-color: #CDCDCD;
-  border-radius: 5px;
-  padding: 0px 40px;
-}
-
-.table::-webkit-scrollbar-thumb:hover,
-#custom-wrapper::-webkit-scrollbar-thumb:hover
-{
-  background-color: #A1A1A1;
 }
 
 .table input[type="checkbox"]
@@ -580,8 +564,8 @@ div.button
 #blocking-languages,
 #acceptable-ads
 {
-  -moz-padding-end: 40px;
-  -webkit-padding-end: 40px;
+  -moz-margin-end: 40px;
+  -webkit-margin-end: 40px;
 }
 
 #custom-wrapper
@@ -959,14 +943,14 @@ div[role="tooltip"] .notes p
 #dialog-background
 {
   display: none;
-  background-color: white;
-  position: absolute;
-  opacity: 0.7;
+  position: fixed;
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
   z-index: 2;
+  background-color: white;
+  opacity: 0.7;
 }
 
 body[data-dialog] #dialog-background
@@ -976,24 +960,24 @@ body[data-dialog] #dialog-background
 
 #dialog
 {
-  background-color: #FFFFFF;
-  border: 2px solid #4D9D4B;
-  border-radius: 3px;
-  margin: auto;
-  position:absolute;
-  top:100px;
+  position: fixed;
+  top: 100px;
   left: 0px;
   right: 0px;
   z-index: 2;
   width: 400px;
+  margin: auto;
+  border-radius: 3px;
+  border: 2px solid #4D9D4B;
+  background-color: #FFFFFF;
 }
 
 #dialog header
 {
-  background-color: #4D9D4B;
   display: flex;
-  height: 25px;
+  min-height: 25px;
   padding: 10px;
+  background-color: #4D9D4B;
 }
 
 #dialog-close
@@ -1047,9 +1031,8 @@ body[data-dialog] #dialog-background
   width: 100%;
 }
 
-#dialog #other-language .table
+#dialog #dialog-content-language .table
 {
-  height: 200px;
   overflow: auto;
 }
 
@@ -1102,6 +1085,18 @@ body:not([data-dialog="predefined"]) #dialog-content-predefined,
 body:not([data-dialog]) #dialog
 {
   display: none;
+}
+
+#dialog-content-language .dialog-content-block
+{
+  display: flex;
+  flex-direction: column;
+  height: 120px;
+}
+
+#dialog-content-language #other-language
+{
+  height: 200px;
 }
 
 #other-language .button-add
