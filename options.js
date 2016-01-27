@@ -23,6 +23,7 @@
   var recommendationsMap = Object.create(null);
   var filtersMap = Object.create(null);
   var collections = Object.create(null);
+  var maxLabelId = 0;
 
   function Collection(details)
   {
@@ -64,19 +65,19 @@
       for (var i = 0; i < arguments.length; i++) 
       {
         var item = arguments[i];
-        var text = item.title || item.url || item.text;
         var listItem = document.createElement("li");
         listItem.appendChild(document.importNode(template.content, true));
         listItem.setAttribute("data-access", item.url || item.text);
-        listItem.querySelector(".display").textContent = text;
-        if (text)
-          listItem.setAttribute("data-search", text.toLowerCase());
 
+        var labelId = "label-" + (++maxLabelId);
+        listItem.querySelector(".display").setAttribute("id", labelId);
         var control = listItem.querySelector(".control");
         if (control)
         {
+          // We use aria-labelledby to avoid triggering the control when
+          // interacting with the label
+          control.setAttribute("aria-labelledby", labelId);
           control.addEventListener("click", this.details[j].onClick, false);
-          control.checked = item.disabled == false;
         }
 
         this._setEmpty(table, null);
@@ -84,6 +85,7 @@
           table.insertBefore(listItem, table.childNodes[this.items.indexOf(item)]);
         else
           table.appendChild(listItem);
+        this.updateItem(item);
       }
     }
     return length;
@@ -100,9 +102,50 @@
     {
       var table = E(this.details[i].id);
       var element = table.childNodes[index];
+
+      // Element gets removed so make sure to handle focus appropriately
+      var control = element.querySelector(".control");
+      if (control && control == document.activeElement)
+      {
+        if (!focusNextElement(element.parentElement, control))
+        {
+          // Fall back to next focusable element within same tab or dialog
+          var focusableElement = element.parentElement;
+          while (focusableElement)
+          {
+            if (focusableElement.classList.contains("tab-content")
+                || focusableElement.classList.contains("dialog-content"))
+              break;
+
+            focusableElement = focusableElement.parentElement;
+          }
+          focusNextElement(focusableElement || document, control);
+        }
+      }
+
       element.parentElement.removeChild(element);
       if (this.items.length == 0)
         this._setEmpty(table, this.details[i].emptyText);
+    }
+  };
+
+  Collection.prototype.updateItem = function(item)
+  {
+    var access = (item.url || item.text).replace(/'/g, "\\'");
+    for (var i = 0; i < this.details.length; i++)
+    {
+      var table = E(this.details[i].id);
+      var element = table.querySelector("[data-access='" + access + "']");
+      if (!element)
+        continue;
+
+      var text = item.title || item.url || item.text;
+      element.querySelector(".display").textContent = text;
+      if (text)
+        element.setAttribute("data-search", text.toLowerCase());
+      var control = element.querySelector(".control[role='checkbox']");
+      if (control)
+        control.setAttribute("aria-checked", item.disabled == false);
     }
   };
 
@@ -119,11 +162,27 @@
     }
   };
 
+  function focusNextElement(container, currentElement)
+  {
+    var focusables = container.querySelectorAll("a, button, input, .control");
+    focusables = Array.prototype.slice.call(focusables);
+    var index = focusables.indexOf(currentElement);
+    index += (index == focusables.length - 1) ? -1 : 1;
+
+    var nextElement = focusables[index];
+    if (!nextElement)
+      return false;
+
+    nextElement.focus();
+    return true;
+  }
+
   function onToggleSubscriptionClick(e)
   {
     e.preventDefault();
-    var subscriptionUrl = e.target.parentNode.getAttribute("data-access");
-    if (!e.target.checked)
+    var checkbox = e.target;
+    var subscriptionUrl = checkbox.parentElement.getAttribute("data-access");
+    if (checkbox.getAttribute("aria-checked") == "true")
     {
       ext.backgroundPage.sendMessage({
         type: "subscriptions.remove",
@@ -220,30 +279,21 @@
       {
         function onObjectChanged()
         {
-          var access = (subscriptionUrl || subscription.text).replace(/'/g, "\\'");
-          var elements = document.querySelectorAll("[data-access='" + access + "']");
-          for (var i = 0; i < elements.length; i++)
+          for (var i in collections)
+            collections[i].updateItem(subscription);
+
+          var recommendation = recommendationsMap[subscriptionUrl];
+          if (recommendation && recommendation.type == "ads")
           {
-            var element = elements[i];
-            var control = element.querySelector(".control");
-            if (control.localName == "input")
-              control.checked = subscription.disabled == false;
-            if (subscriptionUrl in recommendationsMap)
+            if (subscription.disabled == false)
             {
-              var recommendation = recommendationsMap[subscriptionUrl];
-              if (recommendation.type == "ads")
-              {
-                if (subscription.disabled == false)
-                {
-                  collections.allLangs.removeItem(subscription);
-                  collections.langs.addItems(subscription);
-                }
-                else
-                {
-                  collections.allLangs.addItems(subscription);
-                  collections.langs.removeItem(subscription);
-                }
-              }
+              collections.allLangs.removeItem(subscription);
+              collections.langs.addItems(subscription);
+            }
+            else
+            {
+              collections.allLangs.addItems(subscription);
+              collections.langs.removeItem(subscription);
             }
           }
         }

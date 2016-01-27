@@ -92,6 +92,25 @@ input[type="text"], input[type="search"]
   box-sizing: border-box;
 }
 
+button[role="checkbox"]
+{
+  vertical-align: top;
+  width: 18px;
+  height: 18px;
+  margin-top: 0px;
+  -moz-margin-end: 20px;
+  -webkit-margin-end: 20px;
+  padding: 0px;
+  border: none;
+  background-color: transparent;
+  background-position: -51px 0px;
+}
+
+button[role="checkbox"][aria-checked="true"]
+{
+  background-position: -68px 0px;
+}
+
 .option-name
 {
   display: flex;
@@ -269,7 +288,7 @@ html[dir="rtl"] body[data-tab="help"] #tab-help
   border-top: none;
 }
 
-#tab-content
+#content
 {
   background-color: #FFFFFF;
   border: 1px solid #CDCDCD;
@@ -279,7 +298,7 @@ html[dir="rtl"] body[data-tab="help"] #tab-help
   padding: 0px 60px 40px 60px;
 }
 
-#tab-content h1
+#content h1
 {
   border-bottom: 1px solid #CDCDCD;
   margin: 0px;
@@ -474,7 +493,7 @@ div.button
   padding-bottom: 10px;
 }
 
-.icon, .table input[type="checkbox"]::before, .table button.delete,
+.icon, .table button[role="checkbox"], .table button.delete,
 #content-help a::before, #dialog-close::before,
 #custom-filters-add button::after,
 #dialog-body button::before

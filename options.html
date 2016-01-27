@@ -71,12 +71,12 @@
         </footer>
       </div>
     </div>
-    <div id="tab-content">
+    <div id="content">
       <div id="content-wrapper">
         <div id="dialog-background"></div>
 
         <!-- General tab content -->
-        <div id="content-general">
+        <div id="content-general" class="tab-content">
           <div>
             <h1 class="i18n_options_blocking_title"></h1>
             <div class="hbox">
@@ -97,7 +97,7 @@
                 </div>
                 <ul id="blocking-languages-table" class="table list">
                   <template>
-                    <input type="checkbox" class="control" />
+                    <button role="checkbox" class="control"></button>
                     <span class="display"></span>
                   </template>
                 </ul>
@@ -122,14 +122,14 @@
                 <div id="custom-wrapper">
                   <ul id="recommend-list-table" class="table list">
                     <template>
-                      <input type="checkbox" class="control" />
+                      <button role="checkbox" class="control"></button>
                       <span class="display"></span>
                       <span class="popular"></span>
                     </template>
                   </ul>
                   <ul id="custom-list-table" class="table list">
                     <template>
-                      <input type="checkbox" class="control" />
+                      <button role="checkbox" class="control"></button>
                       <span class="display"></span>
                     </template>
                   </ul>
@@ -161,7 +161,7 @@
                 </div>
                 <ul id="acceptableads-table" class="table list">
                   <template>
-                    <input type="checkbox" class="control" />
+                    <button role="checkbox" class="control"></button>
                     <span class="display"></span>
                   </template>
                 </ul>
@@ -211,12 +211,14 @@
         </div>
 
         <!-- Advanced tab content -->
-        <div id="content-advanced">
+        <div id="content-advanced" class="tab-content">
           <div>
             <h1><span class="i18n_options_tweaks_title"></span><a class="i18n_options_readMore tooltip" href="#"></a></h1>
             <ul class="table" style="width: auto;">
               <li>
-                <input type="checkbox" id="easylist"/><span id="block-element-explanation" class="i18n_options_tweaks_blockElement"></span></li>
+                <button role="checkbox" id="easylist"></button>
+                <span id="block-element-explanation" class="i18n_options_tweaks_blockElement"></span>
+              </li>
             </ul>
           </div>
           <div>
@@ -281,7 +283,7 @@
         </div>
 
         <!-- Help tab content -->
-        <div id="content-help">
+        <div id="content-help" class="tab-content">
           <h1 class="i18n_options_faq_title"></h1>
           <p class="i18n_options_faq_description"></p>
           <p>
