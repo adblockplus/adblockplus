@@ -21,6 +21,7 @@ import SocketServer
 
 PORT = ("127.0.0.1", 5000)
 
+SocketServer.TCPServer.allow_reuse_address = True
 httpd = SocketServer.TCPServer(PORT, SimpleHTTPServer.SimpleHTTPRequestHandler)
 
 if __name__ == "__main__":
