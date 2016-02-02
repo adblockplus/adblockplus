@@ -199,11 +199,11 @@
         if (message.what == "cssproperties")
         {
           var filters = [];
-          var isFrameWhitelisted = require("whitelisting").isFrameWhitelisted;
+          var checkWhitelisted = require("whitelisting").checkWhitelisted;
 
-          if (!isFrameWhitelisted(sender.page, sender.frame,
-                                  RegExpFilter.typeMap.DOCUMENT |
-                                  RegExpFilter.typeMap.ELEMHIDE))
+          if (!checkWhitelisted(sender.page, sender.frame,
+                                RegExpFilter.typeMap.DOCUMENT |
+                                RegExpFilter.typeMap.ELEMHIDE))
           {
             filters = CSSRules.getRulesForDomain(sender.frame.url.hostname);
             filters = filters.map(function(filter)
