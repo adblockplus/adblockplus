@@ -17,17 +17,24 @@
 
 "use strict";
 
-function generateFilter(request)
+function generateFilter(request, domainSpecific)
 {
   var filter = request.url.replace(/^[\w\-]+:\/+(?:www\.)?/, "||");
+  var options = [];
 
   if (request.type == "POPUP")
   {
-    filter += "$popup";
+    options.push("popup");
 
     if (request.url == "about:blank")
-      filter += ",domain=" + request.docDomain;
+      domainSpecific = true;
   }
+
+  if (domainSpecific)
+    options.push("domain=" + request.docDomain);
+
+  if (options.length > 0)
+    filter += "$" + options.join(",");
 
   return filter;
 }
@@ -96,13 +103,19 @@ function createRecord(request, filter, template)
     }
 
     if (!filter.whitelisted && request.type != "ELEMHIDE")
-      actionWrapper.appendChild(createActionButton("add", "Add exception", "@@" + generateFilter(request)));
+      actionWrapper.appendChild(createActionButton(
+        "add", "Add exception", "@@" + generateFilter(request, false)
+      ));
 
     if (filter.userDefined)
-      actionWrapper.appendChild(createActionButton("remove", "Remove rule", filter.text));
+      actionWrapper.appendChild(createActionButton(
+        "remove", "Remove rule", filter.text
+      ));
   }
   else
-    actionWrapper.appendChild(createActionButton("add", "Block item", generateFilter(request)));
+    actionWrapper.appendChild(createActionButton(
+      "add", "Block item", generateFilter(request, request.specificOnly)
+    ));
 
   return row;
 }
