@@ -36,7 +36,8 @@
     seenDataCorruption: false,
     filterlistsReinitialized: false,
     addSubscription: false,
-    filterError: false
+    filterError: false,
+    downloadStatus: "synchronize_ok"
   };
   updateFromURL(params);
 
@@ -71,7 +72,9 @@
       this.url = url;
       this.title = "Subscription " + url;
       this.disabled = false;
-      this.lastDownload = 1234;
+      this._lastDownload = 1234;
+      this.homepage = "https://easylist.adblockplus.org/";
+      this.downloadStatus = params.downloadStatus;
     },
 
     SpecialSubscription: function(url)
@@ -83,12 +86,28 @@
   };
   modules.subscriptionClasses.Subscription.fromURL = function(url)
   {
+    if (url in knownSubscriptions)
+      return knownSubscriptions[url];
+
     if (/^https?:\/\//.test(url))
       return new modules.subscriptionClasses.Subscription(url);
     else
       return new modules.subscriptionClasses.SpecialSubscription(url);
   };
   modules.subscriptionClasses.DownloadableSubscription = modules.subscriptionClasses.Subscription;
+
+  modules.subscriptionClasses.Subscription.prototype =
+  {
+    get lastDownload()
+    {
+      return this._lastDownload;
+    },
+    set lastDownload(value)
+    {
+      this._lastDownload = value;
+      modules.filterNotifier.FilterNotifier.triggerListeners("subscription.lastDownload", this);
+    }
+  };
 
   modules.filterStorage = {
     FilterStorage: {
@@ -184,7 +203,23 @@
   };
 
   modules.synchronizer = {
-    Synchronizer: {}
+    Synchronizer: {
+      _downloading: false,
+      execute: function(subscription, manual) 
+      {
+        subscription.lastDownload = 0;
+        modules.synchronizer.Synchronizer._downloading = true;
+        setTimeout(function()
+        {
+          modules.synchronizer.Synchronizer._downloading = false;
+          subscription.lastDownload = Date.now() / 1000;
+        }, 500);
+      },
+      isExecuting: function(url)
+      {
+        return modules.synchronizer.Synchronizer._downloading;
+      }
+    }
   };
 
   modules.matcher = {

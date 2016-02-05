@@ -65,21 +65,30 @@ ext.i18n.setElementText = function(element, stringName, arguments)
 // Loads i18n strings
 function loadI18nStrings()
 {
-  var nodes = document.querySelectorAll("[class^='i18n_']");
-  for(var i = 0; i < nodes.length; i++)
+  function addI18nStringsToElements(containerElement)
   {
-    var node = nodes[i];
-    var arguments = JSON.parse("[" + node.textContent + "]");
-    if (arguments.length == 0)
-      arguments = null;
+    var elements = containerElement.querySelectorAll("[class^='i18n_']");
+    for(var i = 0; i < elements.length; i++)
+    {
+      var node = elements[i];
+      var arguments = JSON.parse("[" + node.textContent + "]");
+      if (arguments.length == 0)
+        arguments = null;
 
-    var className = node.className;
-    if (className instanceof SVGAnimatedString)
-      className = className.animVal;
-    var stringName = className.split(/\s/)[0].substring(5);
+      var className = node.className;
+      if (className instanceof SVGAnimatedString)
+        className = className.animVal;
+      var stringName = className.split(/\s/)[0].substring(5);
 
-    ext.i18n.setElementText(node, stringName, arguments);
+      ext.i18n.setElementText(node, stringName, arguments);
+    }
   }
+  addI18nStringsToElements(document);
+  // Content of Template is not rendered on runtime so we need to add
+  // translation strings for each Template documentFragment content individually 
+  var templates = document.querySelectorAll("template");
+  for (var i = 0; i < templates.length; i++)
+    addI18nStringsToElements(templates[i].content);
 }
 
 // Provides a more readable string of the current date and time
@@ -93,6 +102,21 @@ function i18n_timeDateStrings(when)
     return [timeString];
   else
     return [timeString, d.toLocaleDateString()];
+}
+
+// Formats date string to ["YYYY-MM-DD", "mm:ss"] format
+function i18n_formatDateTime(when)
+{
+  var date = new Date(when);
+  var dateParts = [date.getFullYear(), date.getMonth() + 1, date.getDate(),
+                  date.getHours(), date.getMinutes()];
+
+  var dateParts = dateParts.map(function(datePart)
+  {
+    return datePart < 10 ? "0" + datePart : datePart;
+  });
+
+  return [dateParts.splice(0, 3).join("-"), dateParts.join(":")];
 }
 
 // Fill in the strings as soon as possible

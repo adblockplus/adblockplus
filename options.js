@@ -24,6 +24,14 @@
   var filtersMap = Object.create(null);
   var collections = Object.create(null);
   var maxLabelId = 0;
+  var getMessage = ext.i18n.getMessage;
+  var filterErrors =
+  {
+    "synchronize_invalid_url": "options_filterList_lastDownload_invalidURL",
+    "synchronize_connection_error": "options_filterList_lastDownload_connectionError",
+    "synchronize_invalid_data": "options_filterList_lastDownload_invalidData",
+    "synchronize_checksum_mismatch": "options_filterList_lastDownload_checksumMismatch"
+  };
 
   function Collection(details)
   {
@@ -38,12 +46,21 @@
     {
       placeholder = document.createElement("li");
       placeholder.className = "empty-placeholder";
-      placeholder.textContent = ext.i18n.getMessage(text);
+      placeholder.textContent = getMessage(text);
       table.appendChild(placeholder);
     }
     else if (placeholder)
       table.removeChild(placeholder);
   }
+
+  Collection.prototype._createElementQuery = function(item)
+  {
+    var access = (item.url || item.text).replace(/'/g, "\\'");
+    return function(container)
+    {
+      return container.querySelector("[data-access='" + access + "']");
+    };
+  };
 
   Collection.prototype.addItems = function() 
   {
@@ -82,7 +99,10 @@
 
         this._setEmpty(table, null);
         if (table.hasChildNodes())
-          table.insertBefore(listItem, table.childNodes[this.items.indexOf(item)]);
+        {
+          table.insertBefore(listItem, 
+              table.childNodes[this.items.indexOf(item)]);
+        }
         else
           table.appendChild(listItem);
         this.updateItem(item);
@@ -98,10 +118,11 @@
       return;
 
     this.items.splice(index, 1);
+    var getListElement = this._createElementQuery(item);
     for (var i = 0; i < this.details.length; i++)
     {
       var table = E(this.details[i].id);
-      var element = table.childNodes[index];
+      var element = getListElement(table);
 
       // Element gets removed so make sure to handle focus appropriately
       var control = element.querySelector(".control");
@@ -139,13 +160,56 @@
       if (!element)
         continue;
 
-      var text = item.title || item.url || item.text;
-      element.querySelector(".display").textContent = text;
-      if (text)
-        element.setAttribute("data-search", text.toLowerCase());
+      var title = item.title || item.url || item.text;
+      element.querySelector(".display").textContent = title;
+      if (title)
+        element.setAttribute("data-search", title.toLowerCase());
       var control = element.querySelector(".control[role='checkbox']");
       if (control)
         control.setAttribute("aria-checked", item.disabled == false);
+
+      var downloadStatus = item.downloadStatus;
+      var dateElement = element.querySelector(".date");
+      var timeElement = element.querySelector(".time");
+      if(dateElement && timeElement)
+      {
+        var message = element.querySelector(".message");
+        ext.backgroundPage.sendMessage(
+        {
+          type: "subscriptions.isDownloading",
+          url: item.url
+        },
+        function(isDownloading)
+        {
+          if (isDownloading)
+          {
+            var text = getMessage("options_filterList_lastDownload_inProgress");
+            message.textContent = text;
+            element.classList.add("show-message");
+          }
+          else if (downloadStatus && downloadStatus != "synchronize_ok")
+          {
+            if (downloadStatus in filterErrors)
+              message.textContent = getMessage(filterErrors[downloadStatus]);
+            else
+              message.textContent = item.downloadStatus;
+            element.classList.add("show-message");
+          }
+          else if (item.lastDownload > 0)
+          {
+            var dateTime = i18n_formatDateTime(item.lastDownload * 1000);
+            dateElement.textContent = dateTime[0];
+            timeElement.textContent = dateTime[1];
+            element.classList.remove("show-message");
+          }
+        });
+      }
+      var websiteElement = element.querySelector(".context-menu .website");
+      var sourceElement = element.querySelector(".context-menu .source");
+      if (websiteElement && item.homepage)
+        websiteElement.setAttribute("href", item.homepage);
+      if (sourceElement)
+        sourceElement.setAttribute("href", item.url);
     }
   };
 
@@ -155,9 +219,14 @@
     for (var i = 0; i < this.details.length; i++)
     {
       var table = E(this.details[i].id);
-      var template = table.querySelector("template");
-      table.innerHTML = "";
-      table.appendChild(template);
+      var element = table.firstChild;
+      while (element)
+      {
+        if (element.tagName == "LI" && !element.classList.contains("static"))
+          table.removeChild(element);
+        element = element.nextElementSibling;
+      }
+
       this._setEmpty(table, this.details[i].emptyText);
     }
   };
@@ -177,12 +246,11 @@
     return true;
   }
 
-  function onToggleSubscriptionClick(e)
+  function toggleRemoveSubscription(e)
   {
     e.preventDefault();
-    var checkbox = e.target;
-    var subscriptionUrl = checkbox.parentElement.getAttribute("data-access");
-    if (checkbox.getAttribute("aria-checked") == "true")
+    var subscriptionUrl = findParentData(e.target, "access", false);
+    if (e.target.getAttribute("aria-checked") == "true")
     {
       ext.backgroundPage.sendMessage({
         type: "subscriptions.remove",
@@ -193,16 +261,28 @@
       addEnableSubscription(subscriptionUrl);
   }
 
+  function toggleDisableSubscription(e)
+  {
+    e.preventDefault();
+    var subscriptionUrl = findParentData(e.target, "access", false);
+    ext.backgroundPage.sendMessage(
+    {
+      type: "subscriptions.toggle",
+      keepInstalled: true,
+      url: subscriptionUrl
+    });
+  }
+
   function onAddLanguageSubscriptionClick(e)
   {
     e.preventDefault();
-    var url = this.parentNode.getAttribute("data-access");
+    var url = findParentData(this, "access", false);
     addEnableSubscription(url);
   }
 
   function onRemoveFilterClick()
   {
-    var filter = this.parentNode.getAttribute("data-access");
+    var filter = findParentData(this, "access", false);
     ext.backgroundPage.sendMessage(
     {
       type: "filters.remove",
@@ -214,7 +294,7 @@
   [
     {
       id: "recommend-list-table",
-      onClick: onToggleSubscriptionClick
+      onClick: toggleRemoveSubscription
     }
   ]);
   collections.langs = new Collection(
@@ -222,7 +302,7 @@
     {
       id: "blocking-languages-table",
       emptyText: "options_dialog_language_added_empty",
-      onClick: onToggleSubscriptionClick
+      onClick: toggleRemoveSubscription
     },
     {
       id: "blocking-languages-dialog-table",
@@ -241,14 +321,14 @@
   [
     {
       id: "acceptableads-table",
-      onClick: onToggleSubscriptionClick
+      onClick: toggleRemoveSubscription
     }
   ]);
   collections.custom = new Collection(
   [
     {
       id: "custom-list-table",
-      onClick: onToggleSubscriptionClick
+      onClick: toggleRemoveSubscription
     }
   ]);
   collections.whitelist = new Collection(
@@ -266,23 +346,23 @@
       emptyText: "options_customFilters_empty"
     }
   ]);
-
-  function updateSubscription(subscription)
-  {
-    var subscriptionUrl = subscription.url;
-    var knownSubscription = subscriptionsMap[subscriptionUrl];
-    if (knownSubscription)
-      knownSubscription.disabled = subscription.disabled;
-    else
+  collections.filterLists = new Collection(
+  [
     {
-      getAcceptableAdsURL(function(acceptableAdsUrl)
-      {
-        function onObjectChanged()
-        {
-          for (var i in collections)
-            collections[i].updateItem(subscription);
+      id: "all-filter-lists-table",
+      onClick: toggleDisableSubscription
+    }
+  ]);
 
-          var recommendation = recommendationsMap[subscriptionUrl];
+  function observeSubscription(subscription)
+  {
+    function onObjectChanged(change)
+    {
+      for (var i = 0; i < change.length; i++)
+      {
+        if (change[i].name == "disabled")
+        {
+          var recommendation = recommendationsMap[subscription.url];
           if (recommendation && recommendation.type == "ads")
           {
             if (subscription.disabled == false)
@@ -297,33 +377,57 @@
             }
           }
         }
+        for (var i in collections)
+          collections[i].updateItem(subscription);
+      }
+    }
 
-        if (!Object.observe)
+    if (!Object.observe)
+    {
+      ["disabled", "lastDownload"].forEach(function(property)
+      {
+        subscription["$" + property] = subscription[property];
+        Object.defineProperty(subscription, property,
         {
-          // Currently only "disabled" property of subscription used for observation
-          // but with Advanced tab implementation we should also add more properties.
-          ["disabled"].forEach(function(property)
+          get: function()
           {
-            subscription["$" + property] = subscription[property];
-            Object.defineProperty(subscription, property,
+            return this["$" + property];
+          },
+          set: function(newValue)
+          {
+            var oldValue = this["$" + property];
+            if (oldValue != newValue)
             {
-              get: function()
-              {
-                return this["$" + property];
-              },
-              set: function(value)
-              {
-                this["$" + property] = value;
-                onObjectChanged();
-              }
-            });
-          });
-        }
-        else
-        {
-          Object.observe(subscription, onObjectChanged);
-        }
+              this["$" + property] = newValue;
+              var change = Object.create(null);
+              change.name = property;
+              onObjectChanged([change]);
+            }
+          }
+        });
+      });
+    }
+    else
+    {
+      Object.observe(subscription, onObjectChanged);
+    }
+  }
 
+  function updateSubscription(subscription)
+  {
+    var subscriptionUrl = subscription.url;
+    var knownSubscription = subscriptionsMap[subscriptionUrl];
+    if (knownSubscription)
+    {
+      for (var property in subscription)
+        if (property != "title")
+          knownSubscription[property] = subscription[property];
+    }
+    else
+    {
+      observeSubscription(subscription);
+      getAcceptableAdsURL(function(acceptableAdsUrl)
+      {
         var collection = null;
         if (subscriptionUrl in recommendationsMap)
         {
@@ -381,19 +485,18 @@
           subscription.disabled = null;
           subscription.downloadStatus = null;
           subscription.homepage = null;
-          subscription.lastSuccess = null;
           var recommendation = Object.create(null);
           recommendation.type = element.getAttribute("type");
           var prefix = element.getAttribute("prefixes");
           if (prefix)
           {
             prefix = prefix.replace(/\W/g, "_");
-            subscription.title = ext.i18n.getMessage("options_language_" + prefix);
+            subscription.title = getMessage("options_language_" + prefix);
           }
           else
           {
             var type = recommendation.type.replace(/\W/g, "_");
-            subscription.title = ext.i18n.getMessage("common_feature_" + type + "_title");
+            subscription.title = getMessage("common_feature_" + type + "_title");
           }
 
           recommendationsMap[subscription.url] = recommendation;
@@ -402,8 +505,24 @@
       });
   }
 
+  function findParentData(element, dataName, returnElement)
+  {
+    while (element)
+    {
+      if (element.hasAttribute("data-" + dataName))
+        return returnElement ? element : element.getAttribute("data-" + dataName);
+
+      element = element.parentElement;
+    }
+    return null;
+  }
+
   function onClick(e)
   {
+    var context = document.querySelector(".show-context-menu");
+    if (context)
+      context.classList.remove("show-context-menu");
+
     var element = e.target;
     while (true)
     {
@@ -469,21 +588,38 @@
           document.body.setAttribute("data-tab",
             element.getAttribute("data-tab"));
           break;
+        case "update-all-subscriptions":
+          ext.backgroundPage.sendMessage(
+          {
+            type: "subscriptions.update"
+          });
+          break;
+        case "open-context-menu":
+          var listItem = findParentData(element, "access", true);
+          if (listItem != context)
+            listItem.classList.add("show-context-menu");
+          break;
+        case "update-subscription":
+          ext.backgroundPage.sendMessage(
+          {
+            type: "subscriptions.update",
+            url: findParentData(element, "access", false)
+          });
+          break;
+        case "remove-subscription":
+          ext.backgroundPage.sendMessage(
+          {
+            type: "subscriptions.remove",
+            url: findParentData(element, "access", false)
+          });
+          break;
       }
     }
   }
 
   function onDOMLoaded()
   {
-    var recommendationTemplate = document.querySelector("#recommend-list-table template");
-    var popularText = ext.i18n.getMessage("options_popular");
-    recommendationTemplate.content.querySelector(".popular").textContent = popularText;
-    var languagesTemplate = document.querySelector("#all-lang-table template");
-    var buttonText = ext.i18n.getMessage("options_button_add");
-    languagesTemplate.content.querySelector(".button-add span").textContent = buttonText;
-
     populateLists();
-
     function onFindLanguageKeyUp()
     {
       var searchStyle = E("search-style");
@@ -530,7 +666,7 @@
 
     // Initialize interactive UI elements
     document.body.addEventListener("click", onClick, false);
-    var placeholderValue  = ext.i18n.getMessage("options_dialog_language_find");
+    var placeholderValue  = getMessage("options_dialog_language_find");
     E("find-language").setAttribute("placeholder", placeholderValue);
     E("find-language").addEventListener("keyup", onFindLanguageKeyUp, false);
     E("whitelisting-textbox").addEventListener("keypress", function(e)
@@ -541,7 +677,7 @@
 
     // Advanced tab
     var filterTextbox = document.querySelector("#custom-filters-add input");
-    placeholderValue = ext.i18n.getMessage("options_customFilters_textbox_placeholder");
+    placeholderValue = getMessage("options_customFilters_textbox_placeholder");
     filterTextbox.setAttribute("placeholder", placeholderValue);
     function addCustomFilters()
     {
@@ -649,7 +785,7 @@
       var subscription = Object.create(null);
       subscription.url = acceptableAdsUrl;
       subscription.disabled = true;
-      subscription.title = ext.i18n.getMessage("options_acceptableAds_description");
+      subscription.title = getMessage("options_acceptableAds_description");
       updateSubscription(subscription);
 
       // Load user subscriptions
@@ -755,14 +891,27 @@
     switch (action)
     {
       case "added":
+        updateSubscription(subscription);
+        updateShareLink();
+
+        var knownSubscription = subscriptionsMap[subscription.url];
+        if (knownSubscription)
+          collections.filterLists.addItems(knownSubscription);
+        else
+          collections.filterLists.addItems(subscription);
+        break;
       case "disabled":
         updateSubscription(subscription);
         updateShareLink();
+        break;
+      case "lastDownload":
+        updateSubscription(subscription);
         break;
       case "homepage":
         // TODO: NYI
         break;
       case "removed":
+        var knownSubscription = subscriptionsMap[subscription.url];
         getAcceptableAdsURL(function(acceptableAdsUrl)
         {
           if (subscription.url == acceptableAdsUrl)
@@ -772,7 +921,6 @@
           }
           else
           {
-            var knownSubscription = subscriptionsMap[subscription.url];
             if (subscription.url in recommendationsMap)
               knownSubscription.disabled = true;
             else
@@ -782,6 +930,7 @@
             }
           }
           updateShareLink();
+          collections.filterLists.removeItem(knownSubscription);
         });
         break;
       case "title":
@@ -871,7 +1020,7 @@
   ext.backgroundPage.sendMessage(
   {
     type: "subscriptions.listen",
-    filter: ["added", "disabled", "homepage", "removed", "title"]
+    filter: ["added", "disabled", "homepage", "lastDownload", "removed", "title"]
   });
 
   window.addEventListener("DOMContentLoaded", onDOMLoaded, false);

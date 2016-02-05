@@ -47,7 +47,7 @@
   }
 
   var convertSubscription = convertObject.bind(null, ["disabled",
-    "downloadStatus", "homepage", "lastSuccess", "title", "url"]);
+    "downloadStatus", "homepage", "lastDownload", "title", "url"]);
   var convertFilter = convertObject.bind(null, ["text"]);
 
   var changeListeners = null;
@@ -333,8 +333,17 @@
         break;
       case "subscriptions.toggle":
         var subscription = Subscription.fromURL(message.url);
-        if (subscription.url in FilterStorage.knownSubscriptions && !subscription.disabled)
-          FilterStorage.removeSubscription(subscription);
+        if (subscription.url in FilterStorage.knownSubscriptions)
+        {
+          if (subscription.disabled || message.keepInstalled)
+          {
+            subscription.disabled = !subscription.disabled;
+            FilterNotifier.triggerListeners("subscription.disabled",
+                                            subscription);
+          }
+          else
+            FilterStorage.removeSubscription(subscription);
+        }
         else
         {
           subscription.disabled = false;
@@ -344,6 +353,19 @@
           if (!subscription.lastDownload)
             Synchronizer.execute(subscription);
         }
+        break;
+      case "subscriptions.update":
+        var subscriptions = message.url ? [Subscription.fromURL(message.url)] : 
+                            FilterStorage.subscriptions;
+        for (var i = 0; i < subscriptions.length; i++)
+        {
+          var subscription = subscriptions[i];
+          if (subscription instanceof DownloadableSubscription)
+            Synchronizer.execute(subscription, true);
+        }
+        break;
+      case "subscriptions.isDownloading":
+        callback(Synchronizer.isExecuting(message.url));
         break;
     }
   });

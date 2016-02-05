@@ -76,8 +76,8 @@
     "message": "popular"
   },
   "options_furtherBlocking_add": {
-    "description": "Button name for adding other blocking list in General tab",
-    "message": "add other blocking list"
+    "description": "Button name for adding other filter list in General tab",
+    "message": "add other filter list"
   },
   "options_exceptions_title": {
     "description": "Exceptions section name in General tab",
@@ -136,16 +136,16 @@
     "message": "cancel"
   },
   "options_tweaks_title": {
-    "description": "Tweaks section name in Advanced tab",
+    "description": "Section title in Advanced tab",
     "message": "Tweaks"
   },
   "options_tweaks_blockElement": {
     "description": "Show block Element option in Advanced tab",
     "message": "Show <a>Block Element</a> right-click menu item"
   },
-  "options_blockingList_title": {
-    "description": "Blocking list section title in Advanced tab",
-    "message": "Blocking list"
+  "options_filterList_title": {
+    "description": "Section title in Advanced tab",
+    "message": "Filter lists"
   },
   "options_tab_overview": {
     "description": "Tab name in Advanced tab",
@@ -153,31 +153,71 @@
   },
   "options_tab_ownList": {
     "description": "Tab name in Advanced tab",
-    "message": "Edit or create own blocking list"
+    "message": "Edit or create own filter list"
   },
-  "options_tableCol_name": {
+  "options_column_name": {
     "description": "Name of column of subscription list table in Advanced tab",
     "message": "Name"
   },
-  "options_tableCol_description": {
+  "options_column_date": {
     "description": "Name of column of subscription list table in Advanced tab",
-    "message": "Description"
+    "message": "Last update"
   },
-  "options_tableCol_date": {
-    "description": "Name of column of subscription list table in Advanced tab",
-    "message": "Date"
-  },
-  "options_blockingList_add": {
+  "options_filterList_add": {
     "description": "Import button in Advanced tab",
-    "message": "add/import other blocking list"
+    "message": "add/import other filter list"
   },
-  "options_blockingList_update": {
+  "options_filterList_update": {
     "description": "Update button in Advanced tab",
-    "message": "Update all blocking lists"
+    "message": "update all filter lists"
   },
   "options_customFilters_empty": {
     "description": "Text shown when list of custom filters is empty",
     "message": "There are no custom filters."
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "description": "Error message in advanced tab",
+    "message": "Failed, not a valid address"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "description": "Error message in advanced tab",
+    "message": "Failed, download failure"
+  },
+  "options_filterList_lastDownload_invalidData": {
+    "description": "Error message in advanced tab",
+    "message": "Failed, not a valid filter list"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "description": "Error message in advanced tab",
+    "message": "Failed, checksum mismatch"
+  },
+  "options_filterList_lastDownload_inProgress": {
+    "description": "Progress message in advanced tab",
+    "message": "Downloading…"
+  },
+  "options_filterList_updateNow": {
+    "description": "Context menu item in advanced tab, appears after click on subscription",
+    "message": "update now"
+  },
+  "options_filterList_website": {
+    "description": "Context menu item in advanced tab, appears after click on subscription",
+    "message": "website"
+  },
+  "options_filterList_source": {
+    "description": "Context menu item in advanced tab, appears after click on subscription",
+    "message": "source"
+  },
+  "options_filterList_delete": {
+    "description": "Context menu item in advanced tab, appears after click on subscription",
+    "message": "delete"
+  },
+  "options_filterList_own_list": {
+    "description": "Name of custom subscription entry in filter list section in Advanced tab",
+    "message": "Own filter list"
+  },
+  "options_filterList_edit_own_list": {
+    "description": "Entry in filter list section in Advanced tab",
+    "message": "edit your filter list"
   },
   "options_customFilters_title": {
     "description": "Custom filters option name in Advanced tab",
@@ -205,7 +245,7 @@
   },
   "options_faq_description": {
     "description": "FAQ section description in Help tab",
-    "message": "You only need to refresh your blocking list in \"Advanced\" very often, but there are also other known problems."
+    "message": "You only need to refresh your filter list in \"Advanced\" very often, but there are also other known problems."
   },
   "options_forum_title": {
     "description": "Forum section name in Help tab",
@@ -229,15 +269,15 @@
   },
   "options_dialog_predefined_confirm": {
     "description": "Confirming to add a predefined subscription when asked in a dialog",
-    "message": "Yes, use this blocking list"
+    "message": "Yes, use this filter list"
   },
   "options_dialog_predefined_title": {
     "description": "Dialog title for adding a predefined subscription",
-    "message": "Do you really want to use this blocking list?"
+    "message": "Do you really want to use this filter list?"
   },
   "options_dialog_custom_title": {
     "description": "Title of custom subscription modal dialog",
-    "message": "Add other blocking list"
+    "message": "Add other filter list"
   },
   "options_close": {
     "description": "Close modal button",
@@ -249,11 +289,11 @@
   },
   "options_dialog_custom_import": {
     "description": "Button in add custom subscription modal dialog",
-    "message": "import blocking list with this URL"
+    "message": "import filter list with this URL"
   },
   "options_dialog_edit_own_list": {
-    "description": "Edit own blocking list section name in custom subscription modal dialog",
-    "message": "edit own blocking list"
+    "description": "Edit own filter list section name in custom subscription modal dialog",
+    "message": "edit own filter list"
   },
   "options_dialog_create_own_list": {
     "description": "Button in custom subscription modal dialog",

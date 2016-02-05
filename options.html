@@ -43,7 +43,7 @@
               <a class="i18n_options_tab_general"></a>
               <span class="icon"></span>
             </li>
-            <li id="tab-advanced" data-action="switch-tab" data-tab="advanced">
+            <li id="tab-advanced" data-action="switch-tab" data-tab="advanced-allFilterLists">
               <a class="i18n_options_tab_advanced"></a>
               <span class="icon"></span>
             </li>
@@ -124,7 +124,7 @@
                     <template>
                       <button role="checkbox" class="control"></button>
                       <span class="display"></span>
-                      <span class="popular"></span>
+                      <span class="i18n_options_popular popular"></span>
                     </template>
                   </ul>
                   <ul id="custom-list-table" class="table list">
@@ -213,8 +213,11 @@
         <!-- Advanced tab content -->
         <div id="content-advanced" class="tab-content">
           <div>
-            <h1><span class="i18n_options_tweaks_title"></span><a class="i18n_options_readMore tooltip" href="#"></a></h1>
-            <ul class="table" style="width: auto;">
+            <h1>
+              <span class="i18n_options_tweaks_title"></span>
+              <a class="i18n_options_readMore tooltip"></a>
+            </h1>
+            <ul class="table">
               <li>
                 <button role="checkbox" id="easylist"></button>
                 <span id="block-element-explanation" class="i18n_options_tweaks_blockElement"></span>
@@ -222,31 +225,63 @@
             </ul>
           </div>
           <div>
-            <h1><span class="i18n_options_blockingList_title"></span><a class="i18n_options_readMore tooltip" href="#" target="_blank"></a></h1>
-            <ul id="blocking-list-tabs" class="tabs horizontal">
-              <li class="i18n_options_tab_overview active" data-show="blocking-list-overview"></li><li class="i18n_options_tab_ownList" data-show="custom-filters"></li>
+            <h1>
+              <span class="i18n_options_filterList_title"></span>
+              <a class="i18n_options_readMore tooltip"></a>
+            </h1>
+            <ul class="tabs horizontal">
+              <li class="i18n_options_tab_overview active" data-action="switch-tab" data-tab="advanced-allFilterLists"></li>
+              <li class="i18n_options_tab_ownList" data-action="switch-tab" data-tab="advanced-customFilters"></li>
             </ul>
-            <div id="blocking-list">
-              <div id="blocking-list-overview">
-                <ul class="table cols" style="width: auto;">
-                  <li class="col-name"><span class="i18n_options_tableCol_name"></span><span class="i18n_options_tableCol_description"></span><span class="i18n_options_tableCol_date"></span></li>
-                  <li><input type="checkbox" id="easylist"/><span>Easylist</span><span>Adblocking english sites</span><span>15 March 14 - 10:31</span></li>
-                  <li><input type="checkbox" id="easylist+de"/><span>Easylist Germany + Easylist</span><span>Adblocking english + german sites</span><span>15 March 14 - 10:31</span></li>
-                  <li><input type="checkbox" id="annoyance-fb"/><span>Facebook annoyance blocker</span><span>Blocks Facebook annoyances</span><span>15 March 14 - 10:31</span></li>
-                  <li><input type="checkbox" id="annoyance-youtube"/><span>Facebook annoyance blocker</span><span>Blocks Facebook annoyances</span><span>15 March 14 - 10:31</span></li>
-                  <li><input type="checkbox" id="own-list"/><span>Own blocking list</span><span>Your own blocking list</span><span><a href="#">edit your blocking list</a></span></li>
+            <div id="filter-lists">
+              <div id="all-filter-lists">
+                <div class="table-header">
+                  <h3 class="i18n_options_column_name"></h3>
+                  <h3 class="i18n_options_column_date"></h3>
+                </div>
+                <ul class="table cols" id="all-filter-lists-table">
+                  <template>
+                    <button role="checkbox" class="control"></button>
+                    <div>
+                      <span data-action="open-context-menu" class="display"></span>
+                      <div data-action="open-context-menu" class="arrow">
+                        <div class="context-menu">
+                          <div class="content">
+                            <a class="i18n_options_filterList_updateNow update-subscription" data-action="update-subscription"></a>
+                            <a class="i18n_options_filterList_website website" target="_blank"></a>
+                            <a class="i18n_options_filterList_source source" target="_blank"></a>
+                            <a class="i18n_options_filterList_delete delete" data-action="remove-subscription"></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="date"></span>
+                    <span class="time"></span>
+                    <span class="message"></span>
+                  </template>
+                  <li class="static">
+                    <button role="checkbox" class="control" aria-checked="true" disabled="true"></button>
+                    <div>
+                      <span class="i18n_options_filterList_own_list"></span>
+                    </div>
+                    <span data-action="switch-tab,edit-custom-filters" data-tab="advanced-customFilters">
+                      <a class="i18n_options_filterList_edit_own_list"></a>
+                    </span>
+                  </li>
                 </ul>
                 <div class="controls">
-                  <button>
-                    <span class="icon icon-add"></span><span class="i18n_options_blockingList_add"></span>
+                  <button data-action="open-dialog" data-dialog="custom">
+                    <span class="icon icon-add"></span>
+                    <span class="i18n_options_filterList_add"></span>
                   </button>
-                  <button>
-                    <span class="icon icon-update"></span><span class="i18n_options_blockingList_update"></span>
+                  <button data-action="update-all-subscriptions">
+                    <span class="icon icon-update"></span>
+                    <span class="i18n_options_filterList_update"></span>
                   </button>
                 </div>
               </div>
               <div id="custom-filters">
-                <h2 id="custom-filters-header" class="i18n_options_customFilters_title"></h2>
+                <h3 id="custom-filters-header" class="i18n_options_customFilters_title"></h3>
                 <div id="custom-filters-wrapper">
                   <div id="custom-filters-list-wrapper">
                     <ul id="custom-filters-table" class="table list">
@@ -334,7 +369,7 @@
             <ul id="all-lang-table" class="table list">
               <template>
                 <button class="button-add control">
-                  +<span></span>
+                  +<span class="i18n_options_button_add"></span>
                 </button>
                 <span class="display"></span>
               </template>
@@ -352,7 +387,7 @@
           </div>
           <div class="dialog-content-block">
             <h3 class="i18n_options_dialog_edit_own_list"></h3>
-            <button class="i18n_options_dialog_create_own_list" data-action="close-dialog,switch-tab,edit-custom-filters" data-tab="advanced"></button>
+            <button class="i18n_options_dialog_create_own_list" data-action="close-dialog,switch-tab,edit-custom-filters" data-tab="advanced-customFilters"></button>
           </div>
         </div>
         <!-- Add predefined subscription -->
