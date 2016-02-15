@@ -44,6 +44,14 @@ Various aspects of the pages can be tested by setting parameters in the URL. The
 only universal parameter is `locale`, e.g. `?locale=es-AR`. This parameter
 overrides browser's locale which will be used by default.
 
+Translations
+------------
+
+Translations for the strings in this project are managed using the online
+[Crowdin platform][crowdin]. To synchronise with Crowdin you can use the build
+script. To get a list of the possible commands type `./build.py -t generic` at
+the command line. (You will also need the Crowdin API key for the project.)
+
 firstRun.html
 -------------
 
@@ -80,3 +88,6 @@ The behavior of this page is affected by a number of URL parameters:
   blocked (necessary to test the check for blocked scripts in sharing buttons).
 * `downloadStatus`: Sets downloadStatus parameter for filter lists, can be used
   to trigger various filter list download errors
+
+
+[crowdin]: https://crowdin.com
