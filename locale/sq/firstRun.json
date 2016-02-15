@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Në dispozicion për Android dhe iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Merre Adblock Browser këtu"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Ke një telefon inteligjent apo tablet?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "Ne do të donim tju inkurajonim të përdorit faqet e internetit të drejtpërdrejtë,pa reklama. Kjo është arsyeja pse ne kemi krijuar <a> udhëzime strikte </a> për të identifikuar reklama pranueshme, të cilat janë paraqitur në default settings. Nëse ju ende i doni të bllokoni çdo reklame ju mund <a> çaktivizoni </a> në pak sekonda."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Te gjitha Reklamat do te bllokohen"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "Ke një telefon inteligjent apo tablet?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Merre Adblock Browser këtu"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Në dispozicion për Android dhe iOS"
   },
   "firstRun_contributor_credits": {
     "message": "Kredite kontribues"

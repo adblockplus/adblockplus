@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Tersedia untuk Android dan iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Dapatkan Adblock Browser di sini"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Memiliki telefon pintar atau tablet?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "Kami ingin menggalakkan Laman sesawang untuk menggunakan pengiklanan yang jelas dan tidak mengganggu. Itulah sebabnya mengapa kita mewujudkan <a>garis panduan yang ketat</a> untuk mengenalpasti iklan yang boleh diterima, yang ditunjukkan di bawah tetapan lalai. Jika anda masih mahu menyekat setiap iklan anda boleh <a>mematikan</a> ini dalam beberapa saat."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Iklan yang mengganggu kini akan disekat"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "Memiliki telefon pintar atau tablet?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Dapatkan Adblock Browser di sini"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Tersedia untuk Android dan iOS"
   },
   "firstRun_contributor_credits": {
     "message": "Kredit kepada penyumbang"

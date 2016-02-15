@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Disponibile per Android e iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Scarica Adblock Browser qui"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Hai uno smartphone o un tablet?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "Vorremmo incoraggiare i siti web ad utilizzare pubblicità semplici e discrete. Ecco perché sono state stabilite <a>severe linee guida</a> per identificare pubblicità accettabili, che saranno visualizzate con le impostazioni predefinite. Per bloccare comunque tutte le pubblicità è possibile <a>disattivare</a> l'opzione rapidamente"
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Le pubblicità fastidiose verranno bloccate"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "Hai uno smartphone o un tablet?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Scarica Adblock Browser qui"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Disponibile per Android e iOS"
   },
   "firstRun_contributor_credits": {
     "message": "Lista dei collaboratori"

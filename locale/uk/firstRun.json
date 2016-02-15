@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Доступно для Android та iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Отримайте Adblock Browser тут"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Маєте смартфон чи планшет?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "Ми хотіли б заохотити веб-сайти використовувати просту, ненав'язливу рекламу. Ось чому ми створили <a>суворі принципи</a> для ідентифікації прийнятної реклами, які по замовчуванню будуть показуватись. Якщо Ви все ж бажаєте заблокувати всю рекламу, то ви можете <a>вимкнути</a> це за декілька секунд."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Надокучлива реклама буде надалі блокуватися"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "Маєте смартфон чи планшет?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Отримайте Adblock Browser тут"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Доступно для Android та iOS"
   },
   "firstRun_contributor_credits": {
     "message": "Внески учасників"

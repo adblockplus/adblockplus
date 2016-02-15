@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "برای Android و iOS موجود است"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Adblock Browser را از این‌جا بگیرید"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "یک تلفن هوشمند یا تبلت دارید؟"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "من می خواهم وب سایت ها را تشویق کنم تا از تبلیغات درست و حسابی بدون مزاحمت استفاده کنند. این دلیل ساختن <a> دستورالعمل های دقیق </a> است تا بتواند تبلیغات قابل قبول را بپذیرد و آن ها را به شما نشان دهد ، تبلیغاتی که در شرایط استاندارد صدق کنند. اگر شما می خواهید هر تبلیغی را از هر صفحه ای مسدود کنید می توانید آن را در عرض چند ثانیه <a>غیر فعال</a> کنید."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "تبلیغات آزار دهنده در حال حاضر مسدود خواهد شد"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "یک تلفن هوشمند یا تبلت دارید؟"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Adblock Browser را از این‌جا بگیرید"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "برای Android و iOS موجود است"
   },
   "firstRun_contributor_credits": {
     "message": "اعتبار نویسندگان"

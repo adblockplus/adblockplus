@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Finns för Android och iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Skaffa Adblock Browser här"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Har du en smartphone eller en surfplatta?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "Vi vill uppmuntra webbplatser att använda enkel, diskret reklam. Det är därför vi har fastställt <a>strikta riktlinjer</a> för att identifiera acceptabla annonser, som visas under standardinställningar. Om du fortfarande vill blockera alla annonser kan du <a>inaktivera</a> detta inom ett par sekunder."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Irriterande annonser blockeras nu"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "Har du en smartphone eller en surfplatta?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Skaffa Adblock Browser här"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Finns för Android och iOS"
   },
   "firstRun_contributor_credits": {
     "message": "Tack till"

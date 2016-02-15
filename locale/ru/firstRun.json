@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Доступен для Android и iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Скачайте Adblock Browser здесь"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Есть смартфон или планшет?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "Мы хотели бы призвать веб-сайты использовать простую, ненавязчивую рекламу. Вот почему мы установили <a>строгие принципы</a> для определения приемлемых объявлений, которые разрешены в  настройках по умолчанию. Если вы все еще хотите блокировать каждое объявление вы можете <a>Отключить</a> это в течение нескольких секунд."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Надоевшая реклама теперь будет заблокирована"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "Есть смартфон или планшет?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Скачайте Adblock Browser здесь"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Доступен для Android и iOS"
   },
   "firstRun_contributor_credits": {
     "message": "Пожертвования"

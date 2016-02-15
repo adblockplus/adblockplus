@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Предлага се за Android и iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Вземи Adblock Browser оттук"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Имаш смартфон или таблет?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "Искаме да насърчим сайтовете да ползват конкретна, ненатрапчива реклама. Ето защо въведохме <a>строги правила</a> за разпознаване на приемливи реклами, които се показват с настройките по подразбиране. И ако все пак желаете да блокирате всички да можете <a>да ги забраните</a> за няколко секунди."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Блокира досадните реклами"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "Имаш смартфон или таблет?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Вземи Adblock Browser оттук"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Предлага се за Android и iOS"
   },
   "firstRun_contributor_credits": {
     "message": "Сътрудници"

@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Hỗ trợ Android và iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Hãy tải Adblock Browser tại đây"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Có một chiếc điện thoại thông minh hoặc một tablet?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "Chúng tôi khuyến khích các trang mạng dùng những quảng cáo minh bạch, không phiền nhiễu. Đó là lí do tại sao chúng tôi gây dựng <a>hướng dẫn chặt chẽ</a> để xác định các quảng cáo được chấp nhận, hiện dưới mức thiết lập mặc định. Nếu bạn vẫn muốn chặn mọi quảng cáo, bạn có thể <a>vô hiệu</a> điều này trong một vài giây."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Những quảng cáo phiền phức sẽ bị chặn"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "Có một chiếc điện thoại thông minh hoặc một tablet?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Hãy tải Adblock Browser tại đây"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Hỗ trợ Android và iOS"
   },
   "firstRun_contributor_credits": {
     "message": "Đóng góp các khoản tín dụng"

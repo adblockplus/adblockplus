@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Beschikbaar voor Android en iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Ontvang hier de Adblock Browser"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Heb je een smartphone of tablet?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "We zouden websites willen aanmoedigen eenvoudige, niet-opdringerige advertenties te gebruiken. Daarom hebben we <a>strikte richtlijnen</a> opgesteld om acceptabele advertenties te herkennen die bij gebruik van de standaardinstellingen worden getoond. Als u toch alle advertenties wilt blokkeren, kunt u dit binnen enkele seconden <a>uitschakelen</a>."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Vervelende advertenties zullen nu worden geblokkeerd"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "Heb je een smartphone of tablet?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Ontvang hier de Adblock Browser"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Beschikbaar voor Android en iOS"
   },
   "firstRun_contributor_credits": {
     "message": "Dankbetuiging aan medewerkers"

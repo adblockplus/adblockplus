@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Tilgængelig på Android og iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Få Adblock Browser her"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Har du en smartphone eller en tablet?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "Vi vil gerne tilskynde websider til at bruge enkel, diskret annoncering. Derfor har vi indført <a>strenge retningslinjer</a> for at identificere de acceptable annoncer, der vises med standardindstillingerne. Hvis du stadig vil blokere alle annoncer, kan du let <a>deaktivere</a> dette."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Generende annoncer bliver nu blokeret"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "Har du en smartphone eller en tablet?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Få Adblock Browser her"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Tilgængelig på Android og iOS"
   },
   "firstRun_contributor_credits": {
     "message": "Tak til"

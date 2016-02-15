@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Android және iOS үшін қол жетімді"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Осында Adblock Browser қолданбасын алыңыз"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Смартфоныңыз немесе планшетіңіз бар ма?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "Біз вебсайттарды тура, мазаңызды алмайтын жарнаманы қолдануын қалаймыз. Сондықтан біз жарамды жарнаманы анықтаудың <a>қатаң нұсқаулығын</a> орнаттық, ол жарнамма бастапқы баптаулармен көрсетілетін болады. Егер сіз сонда да барлық жарнаманы <a>блоктағыңыз</a> келсе, осыны тез арада сөндіре аласыз."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Мазаңызды алатын жарнама блокталатын болады"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "Смартфоныңыз немесе планшетіңіз бар ма?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Осында Adblock Browser қолданбасын алыңыз"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Android және iOS үшін қол жетімді"
   },
   "firstRun_contributor_credits": {
     "message": "Үлес қосқандар"
@@ -61,11 +61,5 @@
   },
   "firstRun_title": {
     "message": "Adblock Plus орнатылды"
-  },
-  "firstRun_toggle_off": {
-    "message": "OFF"
-  },
-  "firstRun_toggle_on": {
-    "message": "ON"
   }
 }

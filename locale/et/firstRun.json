@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Saadaval Androidile ja iOSile"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Hankige Adblock Browser siit"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Kas sul on nutitelefon või tahvelarvuti?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "Sooviksime julgustada veebilehti kasutama otsekoheseid, mittehäirivaid reklaame. Sellepärast on meil <a>ranged eeskirjad</a>, et tuvastada lubatavaid reklaame, mida kuvatakse vaikimise sätete all. Kui sa ikka soovid kõik reklaamid blokeerida, saad sa selle paari sekundi pärast <a>välja lülitada</a>."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Tüütud kuulutused on nüüd blokeeritud"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "Kas sul on nutitelefon või tahvelarvuti?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Hankige Adblock Browser siit"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Saadaval Androidile ja iOSile"
   },
   "firstRun_dataCorruptionWarning": {
     "message": "Kas see leht ilmub ikka? <a>Kliki siia!</a>"

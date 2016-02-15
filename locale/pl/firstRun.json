@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Dostępne na iOS i Androida"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Pobierz Adblock Browser tutaj"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Masz smartfona lub tablet?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "Chcielibyśmy zachęcić witryny do używania prostych, dyskretnych reklam. Dlatego mamy zdefiniowane<a> ścisłe wytyczne </ a>określające akceptowalne reklamy wyświetlane na podstawie tych ustawień. Jeśli chcesz blokować każdą reklamę, możesz tę funkcję <a> wyłączyć </ a> w ciągu kilku sekund."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Irytujące reklamy będą teraz blokowane"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "Masz smartfona lub tablet?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Pobierz Adblock Browser tutaj"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Dostępne na iOS i Androida"
   },
   "firstRun_contributor_credits": {
     "message": "Podziękowania dla współtwórców"

@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Tersedia untuk Android dan iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Dapatkan Adblock Browser di sini"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Punya smartphone atau tablet?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "Kami ingin mendorong situs web untuk menggunakan iklan yang tanpa basa-basi dan tidak mengganggu. Itulah sebabnya kami telah menetapkan <a>panduan ketat</a> untuk mengidentifikasi iklan mana saja yang diizinkan, yang akan ditampilkan dengan pengaturan baku. Jika Anda masih ingin mencekal semua iklan, Anda dapat <a>menonaktifkan</a> fitur ini dalam beberapa detik."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Iklan yang mengganggu kini akan dicekal"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "Punya smartphone atau tablet?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Dapatkan Adblock Browser di sini"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Tersedia untuk Android dan iOS"
   },
   "firstRun_contributor_credits": {
     "message": "Daftar Kontributor"

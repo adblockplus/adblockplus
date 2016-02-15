@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "זמין עבור Android ו-iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "הורד את Adblock Browser כאן"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "יש לך טלפון חכם או טאבלט?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "אנחנו רוצים לעודד אתרים להשתמש בפרסום פשוט ולא בולט. זאת מדוע ביססנו <a>קווים מנחים נוקשים</a> כדי לזהות מודעות מתקבלות, אשר מופיעות בהגדרות ברירת המחדל. אם ברצונכם  לחסום בכל זאת את כל המודעות ניתן <a>לנטרל</a> זאת במספר שניות."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "מודעות מציקות ייחסמו מעכשיו"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "יש לך טלפון חכם או טאבלט?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "הורד את Adblock Browser כאן"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "זמין עבור Android ו-iOS"
   },
   "firstRun_contributor_credits": {
     "message": "קרדיטים לתורמים"

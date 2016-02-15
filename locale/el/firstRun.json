@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Διαθέσιμος για Android και iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Κάντε λήψη του Adblock Browser εδώ"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Έχετε smartphone ή tablet;"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "Θα θέλαμε να ενθαρρύνουμε τις ιστοσελίδες να χρησιμοποιούν ξεκάθαρες, διακριτικές διαφημίσεις. Γι' αυτό το λόγο έχουμε ορίσει <a>αυστηρές κατευθυντήριες γραμμές</a> για τον προσδιορισμό των αποδεκτών διαφημίσεων, οι οποίες εμφανίζονται στις προεπιλεγμένες ρυθμίσεις. Εάν εξακολουθείτε να θέλετε να αποκλείσετε όλες τις διαφημίσεις μπορείτε να <a>απενεργοποιήσετε</a> αυτήν την επιλογή σε λίγα δευτερόλεπτα."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Οι ενοχλητικές διαφημίσεις τώρα θα αποκλειστούν"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "Έχετε smartphone ή tablet;"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Κάντε λήψη του Adblock Browser εδώ"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Διαθέσιμος για Android και iOS"
   },
   "firstRun_contributor_credits": {
     "message": "Μνεία συντελεστών"

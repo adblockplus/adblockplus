@@ -1,15 +1,15 @@
 {
-  "firstRun_acceptableAdsHeadline": {
-    "message": "எரிச்சலூட்டும் விளம்பரங்கள் இப்போது தடைசெய்யப்படும்"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "ஸ்மார்ட்ஃபோன் அல்லது டேப்ளெட் வைத்திருக்கிறீர்களா?"
+  "firstRun_abbButtonSubtitle": {
+    "message": "ஆண்ட்ராய்டு மற்றும் iOS-க்குக் கிடைக்கிறது"
   },
   "firstRun_abbButtonTitle": {
     "message": "Adblock Browser-ஐ இங்கே பெற்றிடுங்கள்"
   },
-  "firstRun_abbButtonSubtitle": {
-    "message": "ஆண்ட்ராய்டு மற்றும் iOS-க்குக் கிடைக்கிறது"
+  "firstRun_abbPromotionHeadline": {
+    "message": "ஸ்மார்ட்ஃபோன் அல்லது டேப்ளெட் வைத்திருக்கிறீர்களா?"
+  },
+  "firstRun_acceptableAdsHeadline": {
+    "message": "எரிச்சலூட்டும் விளம்பரங்கள் இப்போது தடைசெய்யப்படும்"
   },
   "firstRun_contributor_credits": {
     "message": "பங்களிப்பாளர் கிரெடிட்கள்"

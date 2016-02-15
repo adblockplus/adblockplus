@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Disponible para Android e iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Consigue Adblock Browser aquí"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "¿Tienes un smartphone o una tableta?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "Nos gustaría fomentar el uso de una publicidad más directa y menos agresiva en los sitios web. Por eso hemos establecido unas <a>directrices estrictas</a> para identificar la publicidad aceptable, que se muestra en modo predeterminado. Si sigue queriendo bloquear toda la publicidad puede <a>desactivar</a> este modo en unos pocos segundos."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Ahora se bloqueará la publicidad molesta"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "¿Tienes un smartphone o una tableta?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Consigue Adblock Browser aquí"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Disponible para Android e iOS"
   },
   "firstRun_contributor_credits": {
     "message": "Colaboradores"

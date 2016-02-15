@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Android ve iOS için mevcut"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Buradan Adblock Browser edinin"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Akıllı telefon veya tablet mi aldınız?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "Siteleri basit ve rahatsız etmeyen reklamlar yayınlamaya teşvik ediyoruz. Bu yüzden varsayılan ayarlar altında gösterilen, makul reklamları tanımlayan <a>sıkı kuralları</a> kabul ettik. Yine de tüm reklamları engellemek istiyorsanız <a>devre dışı bırakma</a> işini birkaç saniye içinde yapabilirsiniz."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Rahatsız edici reklamlar artık engellenecek"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "Akıllı telefon veya tablet mi aldınız?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Buradan Adblock Browser edinin"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Android ve iOS için mevcut"
   },
   "firstRun_contributor_credits": {
     "message": "Emeği Geçenler"

@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Podporuje systémy Android a iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Stiahnite si Adblock Browser tu"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Máte smartfón alebo tablet?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "Radi by sme povzbudili webové stránky aby používali jednoduché a nevtieravé inzercie. To je dôvod, prečo sme zaviedli <a>prísne pravidlá</a> na identifikáciu prijateľné reklamy, ktoré sú uvedené v časti predvolené nastavenie. Ak si napriek tomu chcete blokovať každú reklamu môžete <a>vypnúť</a> toto za pár sekúnd."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Otravné reklamy budú teraz blokované"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "Máte smartfón alebo tablet?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Stiahnite si Adblock Browser tu"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Podporuje systémy Android a iOS"
   },
   "firstRun_contributor_credits": {
     "message": "Zásluhy autorov"
@@ -61,11 +61,5 @@
   },
   "firstRun_title": {
     "message": "Adblock Plus bol nainštalovaný"
-  },
-  "firstRun_toggle_off": {
-    "message": "OFF"
-  },
-  "firstRun_toggle_on": {
-    "message": "ON"
   }
 }

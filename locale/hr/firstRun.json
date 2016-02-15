@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Dostupan za Android i iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Nabavite Adblock Browser ovdje"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Imate smartphone ili tablet?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "Želimo podupirati web stranice da koriste pošteno, nenametljivo reklamiranje. Zato smo uspostavili <a>točne smjernice</a> za prepoznavanje reklama, koje su prikazane prema uobičajenim postavkama. Ako još uvijek želite blokirati svaku reklamu to možete <a>onemogućiti</a> za nekoliko sekuondis."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Naporni oglasi će sada biti blokirani"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "Imate smartphone ili tablet?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Nabavite Adblock Browser ovdje"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Dostupan za Android i iOS"
   },
   "firstRun_contributor_credits": {
     "message": "Zasluge doprinositelja"

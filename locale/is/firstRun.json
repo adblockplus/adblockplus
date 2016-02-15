@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Fáanlegur fyrir Android og iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Náðu í Adblock Browser hér"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Áttu snjallsíma eða spjaldtölvu?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "Við viljum hvetja vefsvæði til að nota einfaldar auglýsingar, sem eru ekki uppáþrengjandi. Þess vegna höfum við sett fram <a>ákveðnar reglur</a> til að skilgreina ásættanlegar auglýsingar, sem eru birtar með venjulegum stillingum. Ef þú vilt loka á allar auglýsingar geturðu gert þetta <a>óvirkt</a> á einfaldan hátt."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Lokað verður á uppáþrengjandi auglýsingar"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "Áttu snjallsíma eða spjaldtölvu?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Náðu í Adblock Browser hér"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Fáanlegur fyrir Android og iOS"
   },
   "firstRun_contributor_credits": {
     "message": "Stuðningsaðilar"

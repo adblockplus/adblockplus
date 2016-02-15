@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "適用於 Android 及 iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "在這裡下載 Adblock Browser"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "有部智能手機或平版電腦?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "我們想鼓勵網站改採簡樸且不過於搶眼的廣告。這也是我們之所以建立<a>嚴格的規範</a>來辨識非侵入式廣告的原因，這種類型的廣告預設會顯示出來。若您仍想阻擋所有的廣告，可以輕鬆地<a>停用此功能</a> 。"
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "從現在起，煩人的廣告都將煙消雲散"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "有部智能手機或平版電腦?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "在這裡下載 Adblock Browser"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "適用於 Android 及 iOS"
   },
   "firstRun_contributor_credits": {
     "message": "貢獻名單"

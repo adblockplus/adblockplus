@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Disponibil pentru Android și iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Descărcați Adblock Browser de aici"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Aveți un smartphone sau o tabletă?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "Dorim să încurajăm site-urile web în a utiliza publicitate simplă, discretă. De aceea ne-am stabilit <a>reguli de orientare stricte</a> pentru a identifica anunțurile acceptabile, care sunt permise de către setările implicite. Dacă totuși doriți să bloca toată publicitatea, puteți <a>dezactiva</a> aceste permisiuni în câteva secunde."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Reclamele enervante vor fi blocate acum"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "Aveți un smartphone sau o tabletă?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Descărcați Adblock Browser de aici"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Disponibil pentru Android și iOS"
   },
   "firstRun_contributor_credits": {
     "message": "Contributori"
@@ -61,11 +61,5 @@
   },
   "firstRun_title": {
     "message": "Adblock Plus a fost instalat"
-  },
-  "firstRun_toggle_off": {
-    "message": "OFF"
-  },
-  "firstRun_toggle_on": {
-    "message": "ON"
   }
 }

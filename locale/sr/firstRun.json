@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Доступан за Android и iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Преузмите Adblock Browser овде"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Имате паметни телефон или теблет?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "Желели бисмо да охрабримо сајтове да користе фер и ненападно оглашавање, и зато смо покренули <a>стриктан правилник</a> у циљу препознавања прихватљивих огласа који је могуће видети под подразумеваним поставкама. Ако и даље желите да блокирате све огласе, можете <a>онемогућити</a> ову опцију."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Досадне рекламе ће сада бити блокиране"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "Имате паметни телефон или теблет?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Преузмите Adblock Browser овде"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Доступан за Android и iOS"
   },
   "firstRun_contributor_credits": {
     "message": "Кредитовани сарадници"

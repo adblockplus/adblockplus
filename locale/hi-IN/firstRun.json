@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Android और iOS के लिए उपलब्ध"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "यहां से Adblock Browser प्राप्त करें"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "क्या आपके पास स्मार्टफोन या टैबलेट है?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "हम वेबसाइटों को सीधा, विनीत विज्ञापन का उपयोग करने के लिए प्रोत्साहित करना चाहते हैं। यही कारण से हमने स्वीकार्य विज्ञापनों की पहचान करने के लिए <a>सख्त दिशा निर्देशों</a> की स्थापना की है, जो डिफ़ॉल्ट सेटिंग्स के अंतर्गत दिखाए गए हैं। यदि आप अभी भी हर विज्ञापन ब्लॉक करना चाहते हैं आप उन्हें कुछही सेकंड में <a>अक्षम</a> कर सकते हैं।"
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "कष्टकारी विज्ञापन अब हटा दिए जायेंगे"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "क्या आपके पास स्मार्टफोन या टैबलेट है?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "यहां से Adblock Browser प्राप्त करें"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Android और iOS के लिए उपलब्ध"
   },
   "firstRun_dataCorruptionWarning": {
     "message": "क्या यह पृष्ट बार बार प्रस्तुत हो रहा है? <a>यहाँ क्लिक करें</a>"

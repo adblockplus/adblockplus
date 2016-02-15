@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Dostupný pro Android a iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Získejte Adblock Browser zde"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Máte smartphone nebo tablet?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "Rádi bychom podpořili webové stránky v používání jasné neobtěžující reklamy. Proto jsme zavedli <a>přísná pravidla</a> k určení přijatelných reklam, které se pak ve výchozím nastavení zobrazují . Pokud přesto chcete blokovat veškerou reklamu, můžete toto během chvilky <a>zakázat</a>."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Otravné reklamy budou nyní blokovány"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "Máte smartphone nebo tablet?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Získejte Adblock Browser zde"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Dostupný pro Android a iOS"
   },
   "firstRun_contributor_credits": {
     "message": "Zásluhy přispěvatelů"

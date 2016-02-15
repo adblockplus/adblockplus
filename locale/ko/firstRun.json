@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Android 및 iOS용 사용 가능"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "여기에서 Adblock Browser 가져오기"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "스마트폰 또는 태블릿이 있습니까?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "우리는 비침입적이며 이용자 친화적인 광고 방식을 채택한 웹사이트를 격려하고자 합니다. 특정 광고를 허용하기 위한 <a>광고 허용 지침</a>을 수립하였으며, 기본 설정으로 그러한 광고는 화면에 표시됩니다. 모든 광고를 차단하려면 이 기능의 <a>사용을 중지</a>할 수 있습니다."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "인터넷 이용을 방해하거나 불법·유해한 광고는 이제 차단될 것입니다"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "스마트폰 또는 태블릿이 있습니까?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "여기에서 Adblock Browser 가져오기"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Android 및 iOS용 사용 가능"
   },
   "firstRun_contributor_credits": {
     "message": "공헌자 명단"

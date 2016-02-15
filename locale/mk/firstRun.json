@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Достапен за Android и iOS оперативните системи"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Симнете го Adblock Browser овде"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Имате паметен телефон или таблет?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "Би сакале да ги поттикниме веб-страните да користат помалку збунувачки и помалку интрузивни реклами. Затоа направивме <a>збир строги правила</a> за да препознаеме прифатливи реклами, кои се прикажани по прв пат. Ќе можете да го <a>исклучите</a> тоа за неколку секунди."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Досадните реклами отсега ќе бидат блокирани"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "Имате паметен телефон или таблет?"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Симнете го Adblock Browser овде"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "Достапен за Android и iOS оперативните системи"
   },
   "firstRun_contributor_credits": {
     "message": "Листа на донатори"

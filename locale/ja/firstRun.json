@@ -1,18 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "AndroidとiOSで利用可能"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Adblock Browserをここから入手"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "スマートフォンやタブレットを入手しましたか？"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "我々はウェブサイトが簡素で控えめな広告を使用するよう後押ししたいと考えています。そのため控えめな広告を区別するための<a>厳格なガイドライン</a>を策定し、デフォルトで許可するようにしました。すべての広告をブロックしたい場合は数秒で控えめな広告の許可を<a>無効にする</a>ことができます 。"
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "迷惑な広告はブロックされます"
-  },
-  "firstRun_abbPromotionHeadline": {
-    "message": "スマートフォンやタブレットを入手しましたか？"
-  },
-  "firstRun_abbButtonTitle": {
-    "message": "Adblock Browserをここから入手"
-  },
-  "firstRun_abbButtonSubtitle": {
-    "message": "AndroidとiOSで利用可能"
   },
   "firstRun_contributor_credits": {
     "message": "貢献した人"
@@ -61,11 +61,5 @@
   },
   "firstRun_title": {
     "message": "Adblock Plus がインストールされました"
-  },
-  "firstRun_toggle_off": {
-    "message": "OFF"
-  },
-  "firstRun_toggle_on": {
-    "message": "ON"
   }
 }
