@@ -183,7 +183,6 @@
           ext.showOptions();
         break;
       case "filters.add":
-        var filter = Filter.fromText(message.text);
         var result = require("filterValidation").parseFilter(message.text);
         if (result.error)
           sendMessage("app", "error", [result.error.toString()], sender.page);
