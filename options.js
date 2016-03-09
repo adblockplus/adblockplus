@@ -517,6 +517,17 @@
     return null;
   }
 
+  function sendMessageHandleErrors(message, onSuccess)
+  {
+    ext.backgroundPage.sendMessage(message, function(errors)
+    {
+      if (errors.length > 0)
+        alert(errors.join("\n"));
+      else if (onSuccess)
+        onSuccess();
+    });
+  }
+
   function onClick(e)
   {
     var context = document.querySelector(".show-context-menu");
@@ -577,12 +588,15 @@
           openDialog(element.getAttribute("data-dialog"));
           break;
         case "save-custom-filters":
-          ext.backgroundPage.sendMessage(
+          sendMessageHandleErrors(
           {
             type: "filters.importRaw",
             text: E("custom-filters-raw").value
+          },
+          function()
+          {
+            E("custom-filters").classList.remove("mode-edit");
           });
-          E("custom-filters").classList.remove("mode-edit");
           break;
         case "switch-tab":
           document.body.setAttribute("data-tab",
@@ -682,12 +696,15 @@
     function addCustomFilters()
     {
       var filterText = filterTextbox.value;
-      ext.backgroundPage.sendMessage(
+      sendMessageHandleErrors(
       {
         type: "filters.add",
         text: filterText
+      },
+      function()
+      {
+        filterTextbox.value = "";
       });
-      filterTextbox.value = "";
     }
     E("custom-filters-add").addEventListener("submit", function(e)
     {
@@ -807,7 +824,7 @@
     var domain = E("whitelisting-textbox");
     if (domain.value)
     {
-      ext.backgroundPage.sendMessage(
+      sendMessageHandleErrors(
       {
         type: "filters.add",
         text: "@@||" + domain.value.toLowerCase() + "^$document"
@@ -992,10 +1009,6 @@
           dialog.querySelector("h3").textContent = subscription.title || "";
           dialog.querySelector(".url").textContent = subscription.url;
           openDialog("predefined");
-        }
-        else if (message.action == "error")
-        {
-          alert(message.args.join("\n"));
         }
         break;
       case "filters.listen":

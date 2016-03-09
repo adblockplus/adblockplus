@@ -184,10 +184,12 @@
         break;
       case "filters.add":
         var result = require("filterValidation").parseFilter(message.text);
+        var errors = [];
         if (result.error)
-          sendMessage("app", "error", [result.error.toString()], sender.page);
+          errors.push(result.error.toString());
         else if (result.filter)
           FilterStorage.addFilter(result.filter);
+        callback(errors);
         break;
       case "filters.blocked":
         var filter = defaultMatcher.matchesAny(message.url, message.requestType,
@@ -237,11 +239,9 @@
             errors.push(error.toString());
         }
 
+        callback(errors);
         if (errors.length > 0)
-        {
-          sendMessage("app", "error", errors, sender.page);
           return;
-        }
 
         var seenFilter = Object.create(null);
         for (var i = 0; i < result.filters.length; i++)
