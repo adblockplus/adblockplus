@@ -174,12 +174,14 @@
     {
       this.text = text;
       this.disabled = false;
-    }
+    },
+    RegExpFilter: function() {}
   };
   modules.filterClasses.Filter.fromText = function(text)
   {
     return new modules.filterClasses.Filter(text);
   };
+  modules.filterClasses.RegExpFilter.typeMap = Object.create(null);
 
   modules.filterValidation = 
   {

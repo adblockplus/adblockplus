@@ -192,8 +192,9 @@
         callback(errors);
         break;
       case "filters.blocked":
-        var filter = defaultMatcher.matchesAny(message.url, message.requestType,
-          message.docDomain, message.thirdParty);
+        var filter = defaultMatcher.matchesAny(message.url,
+          RegExpFilter.typeMap[message.requestType], message.docDomain,
+          message.thirdParty);
         callback(filter instanceof BlockingFilter);
         break;
       case "filters.get":
