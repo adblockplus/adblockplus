@@ -65,8 +65,8 @@ The behavior of this page is affected by a number of URL parameters:
 * `platform`, `platformVersion`, `application`, `applicationVersion`: sets
   application parameters that are normally determined by Adblock Plus. Using
   `?platform=safari&platformVersion=5.0` should trigger a warning.
-* `seenDataCorruption`, `filterlistsReinitialized`: setting these parameters to
-  `true` should trigger warnings referring to issues detected by Adblock Plus.
+* `filterlistsReinitialized`: setting these parameters to `true` should
+  trigger warnings referring to issues detected by Adblock Plus.
 * `blockedURLs`: a comma-separated list of URLs that should be considered
   blocked (necessary to test the check for blocked scripts in sharing buttons).
 

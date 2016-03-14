@@ -80,16 +80,6 @@
       what: "issues"
     }, function(issues)
     {
-      // Show warning if data corruption was detected
-      if (issues.seenDataCorruption)
-      {
-        E("dataCorruptionWarning").removeAttribute("hidden");
-        getDocLink("knownIssuesChrome_filterstorage", function(link)
-        {
-          setLinks("dataCorruptionWarning", link);
-        });
-      }
-
       // Show warning if filterlists settings were reinitialized
       if (issues.filterlistsReinitialized)
       {

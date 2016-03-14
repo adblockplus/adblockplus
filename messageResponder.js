@@ -143,10 +143,10 @@
       case "app.get":
         if (message.what == "issues")
         {
+          var subscriptionInit = require("subscriptionInit");
           var info = require("info");
           callback({
-            seenDataCorruption: "seenDataCorruption" in global ? global.seenDataCorruption : false,
-            filterlistsReinitialized: "filterlistsReinitialized" in global ? global.filterlistsReinitialized : false,
+            filterlistsReinitialized: subscriptionInit ? subscriptionInit.reinitialized : false,
             legacySafariVersion: (info.platform == "safari" && (
                 Services.vc.compare(info.platformVersion, "6.0") < 0 ||   // beforeload breaks websites in Safari 5
                 Services.vc.compare(info.platformVersion, "6.1") == 0 ||  // extensions are broken in 6.1 and 7.0

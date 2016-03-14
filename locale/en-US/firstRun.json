@@ -17,9 +17,6 @@
   "firstRun_contributor_credits": {
     "message": "Contributor Credits"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "Does this page keep showing up? <a>Click here!</a>"
-  },
   "firstRun_donate": {
     "message": "donate"
   },
