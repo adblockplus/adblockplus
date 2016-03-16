@@ -73,10 +73,20 @@
       try
       {
         var Ci = Components.interfaces;
-        iframe.contentWindow
+        var docShell = iframe.contentWindow
           .QueryInterface(Ci.nsIInterfaceRequestor)
-          .getInterface(Ci.nsIDocShell)
-          .setIsBrowserInsideApp(Ci.nsIScriptSecurityManager.UNKNOWN_APP_ID);
+          .getInterface(Ci.nsIDocShell);
+
+        if (typeof docShell.frameType != "undefined")
+        {
+          // Gecko 47+
+          docShell.frameType = docShell.FRAME_TYPE_BROWSER;
+        }
+        else
+        {
+          // Legacy branch
+          docShell.setIsBrowserInsideApp(Ci.nsIScriptSecurityManager.UNKNOWN_APP_ID);
+        }
       }
       catch(ex)
       {
