@@ -143,7 +143,16 @@
       case "app.get":
         if (message.what == "issues")
         {
-          var subscriptionInit = require("subscriptionInit");
+          var subscriptionInit;
+          try
+          {
+            subscriptionInit = require("subscriptionInit");
+          }
+          catch (e)
+          {
+            // Expected exception, this module doesn't exist on Firefox
+          }
+
           var info = require("info");
           callback({
             filterlistsReinitialized: subscriptionInit ? subscriptionInit.reinitialized : false,
@@ -355,7 +364,7 @@
         }
         break;
       case "subscriptions.update":
-        var subscriptions = message.url ? [Subscription.fromURL(message.url)] : 
+        var subscriptions = message.url ? [Subscription.fromURL(message.url)] :
                             FilterStorage.subscriptions;
         for (var i = 0; i < subscriptions.length; i++)
         {
