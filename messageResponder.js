@@ -137,14 +137,6 @@
 
     switch (message.type)
     {
-      case "add-subscription":
-        ext.showOptions(function()
-        {
-          var subscription = Subscription.fromURL(message.url);
-          subscription.title = message.title;
-          onFilterChange("addSubscription", subscription);
-        });
-        break;
       case "app.get":
         if (message.what == "issues")
         {
@@ -327,22 +319,27 @@
           Prefs[message.key] = !Prefs[message.key];
         break;
       case "subscriptions.add":
-        if (message.url in FilterStorage.knownSubscriptions)
-          return;
-
         var subscription = Subscription.fromURL(message.url);
-        if (!subscription)
-          return;
-
-        subscription.disabled = false;
         if ("title" in message)
           subscription.title = message.title;
         if ("homepage" in message)
           subscription.homepage = message.homepage;
-        FilterStorage.addSubscription(subscription);
 
-        if (subscription instanceof DownloadableSubscription && !subscription.lastDownload)
-          Synchronizer.execute(subscription);
+        if (message.confirm)
+        {
+          ext.showOptions(function()
+          {
+            onFilterChange("addSubscription", subscription);
+          });
+        }
+        else
+        {
+          subscription.disabled = false;
+          FilterStorage.addSubscription(subscription);
+
+          if (subscription instanceof DownloadableSubscription && !subscription.lastDownload)
+            Synchronizer.execute(subscription);
+        }
         break;
       case "subscriptions.get":
         var subscriptions = FilterStorage.subscriptions.filter(function(s)

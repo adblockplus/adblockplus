@@ -384,7 +384,8 @@
         payload: {
           title: "Custom subscription",
           url: "http://example.com/custom.txt",
-          type: "add-subscription"
+          confirm: true,
+          type: "subscriptions.add"
         }
       }, "*");
     }, 1000);
