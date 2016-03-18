@@ -141,7 +141,19 @@
   },
   "options_tweaks_blockElement": {
     "description": "Show block Element option in Advanced tab",
-    "message": "Show <a>Block Element</a> right-click menu item"
+    "message": "Show Block Element right-click menu item"
+  },
+  "options_tweaks_showDevToolsPanel": {
+    "description": "Show developer tools panel option in Advanced tab",
+    "message": "Show 'Adblock Plus' panel in the developer tools"
+  },
+  "options_tweaks_showNotifications": {
+    "description": "Notification opt-out option in Advanced tab",
+    "message": "Show useful notifications"
+  },
+  "options_tweaks_safariContentBlocker": {
+    "description": "Switch between classic and Safari's Content Blocking",
+    "message": "Use Safari's native Content Blocking (experimental)"
   },
   "options_filterList_title": {
     "description": "Section title in Advanced tab",
@@ -221,11 +233,11 @@
   },
   "options_customFilters_title": {
     "description": "Custom filters option name in Advanced tab",
-    "message": "Blocking rules"
+    "message": "Filter rules"
   },
   "options_customFilters_textbox_placeholder": {
     "description": "Adding custom filter textbox placeholder text in Advanced tab",
-    "message": "add your blocking rule here"
+    "message": "add your filter rule here"
   },
   "options_customFilter_edit": {
     "description": "Label for editing custom filter in Advanced tab",
@@ -297,7 +309,7 @@
   },
   "options_dialog_create_own_list": {
     "description": "Button in custom subscription modal dialog",
-    "message": "create own blocking rules"
+    "message": "create own filter rules"
   },
    "options_dialog_language_title": {
     "description": "Button in gerenal tab",

@@ -217,13 +217,26 @@
               <span class="i18n_options_tweaks_title"></span>
               <a class="i18n_options_readMore tooltip"></a>
             </h1>
-            <ul class="table">
-              <li>
-                <button role="checkbox" id="easylist"></button>
-                <span id="block-element-explanation" class="i18n_options_tweaks_blockElement"></span>
+            <ul id="tweaks" class="table">
+              <li data-pref="shouldShowBlockElementMenu">
+                <button role="checkbox" data-action="toggle-pref"></button>
+                <span class="i18n_options_tweaks_blockElement"></span>
+              </li>
+              <li data-pref="show_devtools_panel">
+                <button role="checkbox" data-action="toggle-pref"></button>
+                <span class="i18n_options_tweaks_showDevToolsPanel"></span>
+              </li>
+              <li data-pref="notifications_ignoredcategories">
+                <button role="checkbox" data-action="toggle-pref"></button>
+                <span class="i18n_options_tweaks_showNotifications"></span>
+              </li>
+              <li data-pref="safari_contentblocker">
+                <button role="checkbox" data-action="toggle-pref"></button>
+                <span class="i18n_options_tweaks_safariContentBlocker"></span>
               </li>
             </ul>
           </div>
+
           <div>
             <h1>
               <span class="i18n_options_filterList_title"></span>

@@ -26,6 +26,7 @@
   var FilterNotifier = require("filterNotifier").FilterNotifier;
   var defaultMatcher = require("matcher").defaultMatcher;
   var CSSRules = require("cssRules").CSSRules;
+  var NotificationStorage = require("notification").Notification;
 
   var filterClasses = require("filterClasses");
   var Filter = filterClasses.Filter;
@@ -33,6 +34,7 @@
   var RegExpFilter = filterClasses.RegExpFilter;
   var Synchronizer = require("synchronizer").Synchronizer;
 
+  var info = require("info");
   var subscriptionClasses = require("subscriptionClasses");
   var Subscription = subscriptionClasses.Subscription;
   var DownloadableSubscription = subscriptionClasses.DownloadableSubscription;
@@ -54,6 +56,7 @@
   var messageTypes = {
     "app": "app.listen",
     "filter": "filters.listen",
+    "pref": "prefs.listen",
     "subscription": "subscriptions.listen"
   };
 
@@ -107,27 +110,29 @@
     sendMessage(type, action, args);
   }
 
+  function onPrefChange(name)
+  {
+    sendMessage("pref", name, [Prefs[name]]);
+  }
+
   global.ext.onMessage.addListener(function(message, sender, callback)
   {
     var listenerFilters = null;
-    switch (message.type)
+    if (/\.listen$/.test(message.type))
     {
-      case "app.listen":
-      case "filters.listen":
-      case "subscriptions.listen":
-        if (!changeListeners)
-        {
-          changeListeners = new global.ext.PageMap();
-          FilterNotifier.addListener(onFilterChange);
-        }
+      if (!changeListeners)
+      {
+        changeListeners = new global.ext.PageMap();
+        FilterNotifier.addListener(onFilterChange);
+        Prefs.onChanged.addListener(onPrefChange);
+      }
 
-        listenerFilters = changeListeners.get(sender.page);
-        if (!listenerFilters)
-        {
-          listenerFilters = Object.create(null);
-          changeListeners.set(sender.page, listenerFilters);
-        }
-        break;
+      listenerFilters = changeListeners.get(sender.page);
+      if (!listenerFilters)
+      {
+        listenerFilters = Object.create(null);
+        changeListeners.set(sender.page, listenerFilters);
+      }
     }
 
     switch (message.type)
@@ -153,7 +158,6 @@
             // Expected exception, this module doesn't exist on Firefox
           }
 
-          var info = require("info");
           callback({
             filterlistsReinitialized: subscriptionInit ? subscriptionInit.reinitialized : false,
             legacySafariVersion: (info.platform == "safari" && (
@@ -176,7 +180,16 @@
         }
         else if (message.what == "addonVersion")
         {
-          callback(require("info").addonVersion);
+          callback(info.addonVersion);
+        }
+        else if (message.what == "features")
+        {
+          callback({
+            devToolsPanel: info.platform == "chromium",
+            safariContentBlocker: "safari" in global
+                && "extension" in global.safari
+                && "setContentBlocker" in global.safari.extension
+          });
         }
         else
           callback(null);
@@ -297,6 +310,18 @@
         break;
       case "prefs.get":
         callback(Prefs[message.key]);
+        break;
+      case "prefs.listen":
+        if (message.filter)
+          listenerFilters.pref = message.filter;
+        else
+          delete listenerFilters.pref;
+        break;
+      case "prefs.toggle":
+        if (message.key == "notifications_ignoredcategories")
+          NotificationStorage.toggleIgnoreCategory("*");
+        else
+          Prefs[message.key] = !Prefs[message.key];
         break;
       case "subscriptions.add":
         if (message.url in FilterStorage.knownSubscriptions)

@@ -602,6 +602,13 @@
           document.body.setAttribute("data-tab",
             element.getAttribute("data-tab"));
           break;
+        case "toggle-pref":
+          ext.backgroundPage.sendMessage(
+          {
+            type: "prefs.toggle",
+            key: findParentData(element, "pref", false)
+          });
+          break;
         case "update-all-subscriptions":
           ext.backgroundPage.sendMessage(
           {
@@ -690,6 +697,29 @@
     }, false);
 
     // Advanced tab
+    var tweaks = document.querySelectorAll("#tweaks li[data-pref]");
+    tweaks = Array.prototype.map.call(tweaks, function(checkbox)
+    {
+      return checkbox.getAttribute("data-pref");
+    });
+    tweaks.forEach(function(key)
+    {
+      getPref(key, function(value)
+      {
+        onPrefMessage(key, value);
+      });
+    });
+    ext.backgroundPage.sendMessage(
+    {
+      type: "app.get",
+      what: "features"
+    },
+    function(features)
+    {
+      hidePref("show_devtools_panel", !features.devToolsPanel);
+      hidePref("safari_contentblocker", !features.safariContentBlocker);
+    });
+
     var filterTextbox = document.querySelector("#custom-filters-add input");
     placeholderValue = getMessage("options_customFilters_textbox_placeholder");
     filterTextbox.setAttribute("placeholder", placeholderValue);
@@ -846,17 +876,12 @@
 
   function getAcceptableAdsURL(callback)
   {
-    ext.backgroundPage.sendMessage(
-    {
-      type: "prefs.get",
-      key: "subscriptions_exceptionsurl"
-    },
-    function(value)
+    getPref("subscriptions_exceptionsurl", function(value)
     {
       getAcceptableAdsURL = function(callback)
       {
         callback(value);
-      }
+      };
       getAcceptableAdsURL(callback);
     });
   }
@@ -956,6 +981,58 @@
     }
   }
 
+  function hidePref(key, value)
+  {
+    var element = document.querySelector("[data-pref='" + key + "']");
+    if (element)
+      element.setAttribute("aria-hidden", value);
+  }
+
+  function getPref(key, callback)
+  {
+    var checkPref = getPref.checks[key] || getPref.checkNone;
+    checkPref(function(isActive)
+    {
+      if (!isActive)
+      {
+        hidePref(key, !isActive);
+        return;
+      }
+
+      ext.backgroundPage.sendMessage(
+      {
+        type: "prefs.get",
+        key: key
+      }, callback);
+    });
+  }
+
+  getPref.checkNone = function(callback)
+  {
+    callback(true);
+  };
+
+  getPref.checks =
+  {
+    notifications_ignoredcategories: function(callback)
+    {
+      getPref("notifications_showui", callback);
+    }
+  };
+
+  function onPrefMessage(key, value)
+  {
+    var checkbox = document.querySelector("[data-pref='" + key + "'] button[role='checkbox']");
+    if (checkbox)
+    {
+      if (key == "notifications_ignoredcategories")
+        value = (value.indexOf("*") == -1);
+      checkbox.setAttribute("aria-checked", value);
+    }
+    else if (key == "notifications_showui")
+      hidePref("notifications_ignoredcategories", !value);
+  }
+
   function onShareLinkClick(e)
   {
     e.preventDefault();
@@ -1014,6 +1091,9 @@
       case "filters.listen":
         onFilterMessage(message.action, message.args[0]);
         break;
+      case "prefs.listen":
+        onPrefMessage(message.action, message.args[0]);
+        break;
       case "subscriptions.listen":
         onSubscriptionMessage(message.action, message.args[0]);
         break;
@@ -1032,8 +1112,16 @@
   });
   ext.backgroundPage.sendMessage(
   {
+    type: "prefs.listen",
+    filter: ["notifications_ignoredcategories", "notifications_showui",
+        "safari_contentblocker", "show_devtools_panel",
+        "shouldShowBlockElementMenu"]
+  });
+  ext.backgroundPage.sendMessage(
+  {
     type: "subscriptions.listen",
-    filter: ["added", "disabled", "homepage", "lastDownload", "removed", "title"]
+    filter: ["added", "disabled", "homepage", "lastDownload", "removed",
+        "title"]
   });
 
   window.addEventListener("DOMContentLoaded", onDOMLoaded, false);

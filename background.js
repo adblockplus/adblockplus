@@ -17,6 +17,35 @@
 
 (function(global)
 {
+  function Notifier()
+  {
+    this._listeners = [];
+  }
+  Notifier.prototype = {
+    _listeners: null,
+
+    addListener: function(listener)
+    {
+      if (this._listeners.indexOf(listener) < 0)
+        this._listeners.push(listener);
+    },
+
+    removeListener: function(listener)
+    {
+      var index = this._listeners.indexOf(listener);
+      if (index >= 0)
+        this._listeners.splice(index, 1);
+    },
+
+    triggerListeners: function()
+    {
+      var args = Array.prototype.slice.apply(arguments);
+      var listeners = this._listeners.slice();
+      for (var i = 0; i < listeners.length; i++)
+        listeners[i].apply(null, args);
+    }
+  };
+
   function updateFromURL(data)
   {
     if (window.location.search)
@@ -37,7 +66,9 @@
     filterlistsReinitialized: false,
     addSubscription: false,
     filterError: false,
-    downloadStatus: "synchronize_ok"
+    downloadStatus: "synchronize_ok",
+    showNotificationUI: false,
+    safariContentBlocker: false
   };
   updateFromURL(params);
 
@@ -62,7 +93,45 @@
 
   modules.prefs = {
     Prefs: {
-      "subscriptions_exceptionsurl": "https://easylist-downloads.adblockplus.org/exceptionrules.txt"
+      onChanged: new Notifier()
+    }
+  };
+  var prefs = {
+    notifications_ignoredcategories: (params.showNotificationUI) ? ["*"] : [],
+    notifications_showui: params.showNotificationUI,
+    safari_contentblocker: false,
+    shouldShowBlockElementMenu: true,
+    show_devtools_panel: true,
+    subscriptions_exceptionsurl: "https://easylist-downloads.adblockplus.org/exceptionrules.txt"
+  };
+  Object.keys(prefs).forEach(function(key)
+  {
+    Object.defineProperty(modules.prefs.Prefs, key, {
+      get: function()
+      {
+        return prefs[key];
+      },
+      set: function(value)
+      {
+        prefs[key] = value;
+        modules.prefs.Prefs.onChanged.triggerListeners(key);
+        return prefs[key];
+      }
+    });
+  });
+
+  modules.notification = {
+    Notification: {
+      toggleIgnoreCategory: function(category)
+      {
+        var categories = prefs.notifications_ignoredcategories;
+        var index = categories.indexOf(category);
+        if (index == -1)
+          categories.push(category);
+        else
+          categories.splice(index, 1);
+        modules.prefs.Prefs.notifications_ignoredcategories = categories;
+      }
     }
   };
 
@@ -243,30 +312,8 @@
     }
   };
 
-  var notifierListeners = [];
   modules.filterNotifier = {
-    FilterNotifier: {
-      addListener: function(listener)
-      {
-        if (notifierListeners.indexOf(listener) < 0)
-          notifierListeners.push(listener);
-      },
-
-      removeListener: function(listener)
-      {
-        var index = notifierListeners.indexOf(listener);
-        if (index >= 0)
-          notifierListeners.splice(index, 1);
-      },
-
-      triggerListeners: function()
-      {
-        var args = Array.prototype.slice.apply(arguments);
-        var listeners = notifierListeners.slice();
-        for (var i = 0; i < listeners.length; i++)
-          listeners[i].apply(null, args);
-      }
-    }
+    FilterNotifier: new Notifier()
   };
 
   modules.info = {
@@ -419,4 +466,13 @@
       }
     });
   });
+
+  if (params.safariContentBlocker)
+  {
+    global.safari = {
+      extension: {
+        setContentBlocker: function() {}
+      }
+    };
+  }
 })(this);

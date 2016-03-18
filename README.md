@@ -86,8 +86,11 @@ The behavior of this page is affected by a number of URL parameters:
   errors when adding new filters on the options page
 * `blockedURLs`: a comma-separated list of URLs that should be considered
   blocked (necessary to test the check for blocked scripts in sharing buttons).
-* `downloadStatus`: Sets downloadStatus parameter for filter lists, can be used
+* `downloadStatus`: sets downloadStatus parameter for filter lists, can be used
   to trigger various filter list download errors
+* `platform=chromium`: shows the opt-out for the developer tools panel
+* `safariContentBlocker=true`: sets Safari content blocker mock API
+* `showNotificationUI=true`: simulates user having opted-out of notifications
 
 
 [crowdin]: https://crowdin.com
