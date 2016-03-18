@@ -591,7 +591,8 @@
           sendMessageHandleErrors(
           {
             type: "filters.importRaw",
-            text: E("custom-filters-raw").value
+            text: E("custom-filters-raw").value,
+            removeExisting: true
           },
           function()
           {

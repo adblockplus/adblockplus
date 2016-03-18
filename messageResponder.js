@@ -274,6 +274,9 @@
           seenFilter[filter.text] = null;
         }
 
+        if (!message.removeExisting)
+          return;
+
         for (var i = 0; i < FilterStorage.subscriptions.length; i++)
         {
           var subscription = FilterStorage.subscriptions[i];
