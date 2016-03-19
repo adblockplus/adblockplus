@@ -52,7 +52,8 @@
     "downloadStatus", "homepage", "lastDownload", "title", "url"]);
   var convertFilter = convertObject.bind(null, ["text"]);
 
-  var changeListeners = null;
+  var changeListeners = new global.ext.PageMap();
+  var listenedPreferences = [];
   var messageTypes = {
     "app": "app.listen",
     "filter": "filters.listen",
@@ -60,13 +61,14 @@
     "subscription": "subscriptions.listen"
   };
 
-  function sendMessage(type, action, args, page)
+  function sendMessage(type, action, args)
   {
-    var pages = page ? [page] : changeListeners.keys();
+    var pages = changeListeners.keys();
     for (var i = 0; i < pages.length; i++)
     {
       var filters = changeListeners.get(pages[i]);
-      if (filters[type] && filters[type].indexOf(action) >= 0)
+      var actions = filters[type];
+      if (actions && actions.indexOf(action) != -1)
       {
         pages[i].sendMessage({
           type:  messageTypes[type],
@@ -79,62 +81,50 @@
 
   function onFilterChange(action)
   {
-    if (action == "load")
-      action = "filter.loaded";
-
-    var parts = action.split(".", 2);
     var type;
-    if (parts.length == 1)
+    if (action == "load")
     {
-      type = "app";
-      action = parts[0];
+      type = "filter";
+      action = "loaded";
     }
     else
     {
+      var parts = action.split(".");
       type = parts[0];
       action = parts[1];
     }
 
-    if (!messageTypes.hasOwnProperty(type))
+    if (!(type in messageTypes))
       return;
 
-    var args = Array.prototype.slice.call(arguments, 1).map(function(arg)
+    var args = [];
+    for (var i = 1; i < arguments.length; i++)
     {
+      var arg = arguments[i];
       if (arg instanceof Subscription)
-        return convertSubscription(arg);
+        args.push(convertSubscription(arg));
       else if (arg instanceof Filter)
-        return convertFilter(arg);
+        args.push(convertFilter(arg));
       else
-        return arg;
-    });
+        args.push(arg);
+    }
+
     sendMessage(type, action, args);
   }
 
-  function onPrefChange(name)
+  function getListenerFilters(page)
   {
-    sendMessage("pref", name, [Prefs[name]]);
+    var listenerFilters = changeListeners.get(page);
+    if (!listenerFilters)
+    {
+      listenerFilters = Object.create(null);
+      changeListeners.set(page, listenerFilters);
+    }
+    return listenerFilters;
   }
 
   global.ext.onMessage.addListener(function(message, sender, callback)
   {
-    var listenerFilters = null;
-    if (/\.listen$/.test(message.type))
-    {
-      if (!changeListeners)
-      {
-        changeListeners = new global.ext.PageMap();
-        FilterNotifier.addListener(onFilterChange);
-        Prefs.onChanged.addListener(onPrefChange);
-      }
-
-      listenerFilters = changeListeners.get(sender.page);
-      if (!listenerFilters)
-      {
-        listenerFilters = Object.create(null);
-        changeListeners.set(sender.page, listenerFilters);
-      }
-    }
-
     switch (message.type)
     {
       case "app.get":
@@ -187,6 +177,7 @@
           callback(null);
         break;
       case "app.listen":
+        var listenerFilters = getListenerFilters(sender.page);
         if (message.filter)
           listenerFilters.app = message.filter;
         else
@@ -287,8 +278,12 @@
         }
         break;
       case "filters.listen":
+        var listenerFilters = getListenerFilters(sender.page);
         if (message.filter)
+        {
+          FilterNotifier.addListener(onFilterChange);
           listenerFilters.filter = message.filter;
+        }
         else
           delete listenerFilters.filter;
         break;
@@ -307,8 +302,22 @@
         callback(Prefs[message.key]);
         break;
       case "prefs.listen":
+        var listenerFilters = getListenerFilters(sender.page);
         if (message.filter)
+        {
+          message.filter.forEach(function(preference)
+          {
+            if (listenedPreferences.indexOf(preference) == -1)
+            {
+              listenedPreferences.push(preference);
+              Prefs.on(preference, function()
+              {
+                sendMessage("pref", preference, [Prefs[preference]]);
+              });
+            }
+          });
           listenerFilters.pref = message.filter;
+        }
         else
           delete listenerFilters.pref;
         break;
@@ -329,7 +338,7 @@
         {
           ext.showOptions(function()
           {
-            onFilterChange("addSubscription", subscription);
+            sendMessage("app", "addSubscription", [convertSubscription(subscription)]);
           });
         }
         else
@@ -355,8 +364,12 @@
         callback(subscriptions.map(convertSubscription));
         break;
       case "subscriptions.listen":
+        var listenerFilters = getListenerFilters(sender.page);
         if (message.filter)
+        {
+          FilterNotifier.addListener(onFilterChange);
           listenerFilters.subscription = message.filter;
+        }
         else
           delete listenerFilters.subscription;
         break;

@@ -17,32 +17,59 @@
 
 (function(global)
 {
+  function EventEmitter()
+  {
+    this._listeners = Object.create(null);
+  }
+  EventEmitter.prototype = {
+    on: function(name, listener)
+    {
+      if (name in this._listeners)
+        this._listeners[name].push(listener);
+      else
+        this._listeners[name] = [listener];
+    },
+    off: function(name, listener)
+    {
+      var listeners = this._listeners[name];
+      if (listeners)
+      {
+        var idx = listeners.indexOf(listener);
+        if (idx != -1)
+          listeners.splice(idx, 1);
+      }
+    },
+    emit: function(name)
+    {
+      var listeners = this._listeners[name];
+      if (listeners)
+      {
+        for (var i = 0; i < listeners.length; i++)
+          listeners[i].apply(null, Array.prototype.slice.call(arguments, 1));
+      }
+    }
+  };
+
   function Notifier()
   {
-    this._listeners = [];
+    this._eventEmitter = new EventEmitter();
   }
   Notifier.prototype = {
-    _listeners: null,
-
     addListener: function(listener)
     {
-      if (this._listeners.indexOf(listener) < 0)
-        this._listeners.push(listener);
+      var listeners = this._eventEmitter._listeners[""];
+      if (!listeners || listener.indexOf(listener) == -1)
+        this._eventEmitter.on("", listener);
     },
-
     removeListener: function(listener)
     {
-      var index = this._listeners.indexOf(listener);
-      if (index >= 0)
-        this._listeners.splice(index, 1);
+      this._eventEmitter.off("", listener);
     },
-
     triggerListeners: function()
     {
       var args = Array.prototype.slice.apply(arguments);
-      var listeners = this._listeners.slice();
-      for (var i = 0; i < listeners.length; i++)
-        listeners[i].apply(null, args);
+      args.unshift("");
+      this._eventEmitter.emit.apply(this._eventEmitter, args);
     }
   };
 
@@ -91,11 +118,7 @@
     }
   };
 
-  modules.prefs = {
-    Prefs: {
-      onChanged: new Notifier()
-    }
-  };
+  modules.prefs = {Prefs: new EventEmitter()};
   var prefs = {
     notifications_ignoredcategories: (params.showNotificationUI) ? ["*"] : [],
     notifications_showui: params.showNotificationUI,
@@ -114,8 +137,7 @@
       set: function(value)
       {
         prefs[key] = value;
-        modules.prefs.Prefs.onChanged.triggerListeners(key);
-        return prefs[key];
+        modules.prefs.Prefs.emit(key);
       }
     });
   });
