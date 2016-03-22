@@ -1104,7 +1104,7 @@
   ext.backgroundPage.sendMessage(
   {
     type: "app.listen",
-    filter: ["addSubscription", "error"]
+    filter: ["addSubscription"]
   });
   ext.backgroundPage.sendMessage(
   {
