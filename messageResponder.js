@@ -54,6 +54,7 @@
 
   var changeListeners = new global.ext.PageMap();
   var listenedPreferences = [];
+  var listenedFilterChanges = [];
   var messageTypes = {
     "app": "app.listen",
     "filter": "filters.listen",
@@ -61,44 +62,14 @@
     "subscription": "subscriptions.listen"
   };
 
-  function sendMessage(type, action, args)
+  function sendMessage(type, action)
   {
     var pages = changeListeners.keys();
-    for (var i = 0; i < pages.length; i++)
-    {
-      var filters = changeListeners.get(pages[i]);
-      var actions = filters[type];
-      if (actions && actions.indexOf(action) != -1)
-      {
-        pages[i].sendMessage({
-          type:  messageTypes[type],
-          action: action,
-          args: args
-        });
-      }
-    }
-  }
-
-  function onFilterChange(action)
-  {
-    var type;
-    if (action == "load")
-    {
-      type = "filter";
-      action = "loaded";
-    }
-    else
-    {
-      var parts = action.split(".");
-      type = parts[0];
-      action = parts[1];
-    }
-
-    if (!(type in messageTypes))
+    if (pages.length == 0)
       return;
 
     var args = [];
-    for (var i = 1; i < arguments.length; i++)
+    for (var i = 2; i < arguments.length; i++)
     {
       var arg = arguments[i];
       if (arg instanceof Subscription)
@@ -109,7 +80,44 @@
         args.push(arg);
     }
 
-    sendMessage(type, action, args);
+    for (var j = 0; j < pages.length; j++)
+    {
+      var page = pages[j];
+      var filters = changeListeners.get(page);
+      var actions = filters[type];
+      if (actions && actions.indexOf(action) != -1)
+      {
+        page.sendMessage({
+          type: messageTypes[type],
+          action: action,
+          args: args
+        });
+      }
+    }
+  }
+
+  function addFilterListeners(type, actions)
+  {
+    actions.forEach(function(action)
+    {
+      var name;
+      if (type == "filter" && action == "loaded")
+        name = "load";
+      else
+        name = type + "." + action;
+
+      if (listenedFilterChanges.indexOf(name) == -1)
+      {
+        listenedFilterChanges.push(name);
+        FilterNotifier.on(name, function()
+        {
+          var args = [type, action];
+          for (var i = 0; i < arguments.length; i++)
+            args.push(arguments[i]);
+          sendMessage.apply(null, args);
+        });
+      }
+    });
   }
 
   function getListenerFilters(page)
@@ -177,11 +185,7 @@
           callback(null);
         break;
       case "app.listen":
-        var listenerFilters = getListenerFilters(sender.page);
-        if (message.filter)
-          listenerFilters.app = message.filter;
-        else
-          delete listenerFilters.app;
+        getListenerFilters(sender.page).app = message.filter;
         break;
       case "app.open":
         if (message.what == "options")
@@ -278,14 +282,8 @@
         }
         break;
       case "filters.listen":
-        var listenerFilters = getListenerFilters(sender.page);
-        if (message.filter)
-        {
-          FilterNotifier.addListener(onFilterChange);
-          listenerFilters.filter = message.filter;
-        }
-        else
-          delete listenerFilters.filter;
+        getListenerFilters(sender.page).filter = message.filter;
+        addFilterListeners("filter", message.filter);
         break;
       case "filters.remove":
         var filter = Filter.fromText(message.text);
@@ -302,24 +300,18 @@
         callback(Prefs[message.key]);
         break;
       case "prefs.listen":
-        var listenerFilters = getListenerFilters(sender.page);
-        if (message.filter)
+        getListenerFilters(sender.page).pref = message.filter;
+        message.filter.forEach(function(preference)
         {
-          message.filter.forEach(function(preference)
+          if (listenedPreferences.indexOf(preference) == -1)
           {
-            if (listenedPreferences.indexOf(preference) == -1)
+            listenedPreferences.push(preference);
+            Prefs.on(preference, function()
             {
-              listenedPreferences.push(preference);
-              Prefs.on(preference, function()
-              {
-                sendMessage("pref", preference, [Prefs[preference]]);
-              });
-            }
-          });
-          listenerFilters.pref = message.filter;
-        }
-        else
-          delete listenerFilters.pref;
+              sendMessage("pref", preference, Prefs[preference]);
+            });
+          }
+        });
         break;
       case "prefs.toggle":
         if (message.key == "notifications_ignoredcategories")
@@ -338,7 +330,7 @@
         {
           ext.showOptions(function()
           {
-            sendMessage("app", "addSubscription", [convertSubscription(subscription)]);
+            sendMessage("app", "addSubscription", subscription);
           });
         }
         else
@@ -364,14 +356,8 @@
         callback(subscriptions.map(convertSubscription));
         break;
       case "subscriptions.listen":
-        var listenerFilters = getListenerFilters(sender.page);
-        if (message.filter)
-        {
-          FilterNotifier.addListener(onFilterChange);
-          listenerFilters.subscription = message.filter;
-        }
-        else
-          delete listenerFilters.subscription;
+        getListenerFilters(sender.page).subscription = message.filter;
+        addFilterListeners("subscription", message.filter);
         break;
       case "subscriptions.remove":
         var subscription = Subscription.fromURL(message.url);
@@ -383,11 +369,7 @@
         if (subscription.url in FilterStorage.knownSubscriptions)
         {
           if (subscription.disabled || message.keepInstalled)
-          {
             subscription.disabled = !subscription.disabled;
-            FilterNotifier.triggerListeners("subscription.disabled",
-                                            subscription);
-          }
           else
             FilterStorage.removeSubscription(subscription);
         }

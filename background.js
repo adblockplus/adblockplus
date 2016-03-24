@@ -50,29 +50,6 @@
     }
   };
 
-  function Notifier()
-  {
-    this._eventEmitter = new EventEmitter();
-  }
-  Notifier.prototype = {
-    addListener: function(listener)
-    {
-      var listeners = this._eventEmitter._listeners[""];
-      if (!listeners || listener.indexOf(listener) == -1)
-        this._eventEmitter.on("", listener);
-    },
-    removeListener: function(listener)
-    {
-      this._eventEmitter.off("", listener);
-    },
-    triggerListeners: function()
-    {
-      var args = Array.prototype.slice.apply(arguments);
-      args.unshift("");
-      this._eventEmitter.emit.apply(this._eventEmitter, args);
-    }
-  };
-
   function updateFromURL(data)
   {
     if (window.location.search)
@@ -162,7 +139,7 @@
     {
       this.url = url;
       this.title = "Subscription " + url;
-      this.disabled = false;
+      this._disabled = false;
       this._lastDownload = 1234;
       this.homepage = "https://easylist.adblockplus.org/";
       this.downloadStatus = params.downloadStatus;
@@ -189,6 +166,15 @@
 
   modules.subscriptionClasses.Subscription.prototype =
   {
+    get disabled()
+    {
+      return this._disabled;
+    },
+    set disabled(value)
+    {
+      this._disabled = value;
+      modules.filterNotifier.FilterNotifier.emit("subscription.disabled", this);
+    },
     get lastDownload()
     {
       return this._lastDownload;
@@ -196,9 +182,10 @@
     set lastDownload(value)
     {
       this._lastDownload = value;
-      modules.filterNotifier.FilterNotifier.triggerListeners("subscription.lastDownload", this);
+      modules.filterNotifier.FilterNotifier.emit("subscription.lastDownload", this);
     }
   };
+
 
   modules.filterStorage = {
     FilterStorage: {
@@ -220,7 +207,7 @@
         if (!(subscription.url in modules.filterStorage.FilterStorage.knownSubscriptions))
         {
           knownSubscriptions[subscription.url] = modules.subscriptionClasses.Subscription.fromURL(subscription.url);
-          modules.filterNotifier.FilterNotifier.triggerListeners("subscription.added", subscription);
+          modules.filterNotifier.FilterNotifier.emit("subscription.added", subscription);
         }
       },
 
@@ -229,7 +216,7 @@
         if (subscription.url in modules.filterStorage.FilterStorage.knownSubscriptions)
         {
           delete knownSubscriptions[subscription.url];
-          modules.filterNotifier.FilterNotifier.triggerListeners("subscription.removed", subscription);
+          modules.filterNotifier.FilterNotifier.emit("subscription.removed", subscription);
         }
       },
 
@@ -241,7 +228,7 @@
             return;
         }
         customSubscription.filters.push(filter);
-        modules.filterNotifier.FilterNotifier.triggerListeners("filter.added", filter);
+        modules.filterNotifier.FilterNotifier.emit("filter.added", filter);
       },
 
       removeFilter: function(filter)
@@ -251,7 +238,7 @@
           if (customSubscription.filters[i].text == filter.text)
           {
             customSubscription.filters.splice(i, 1);
-            modules.filterNotifier.FilterNotifier.triggerListeners("filter.removed", filter);
+            modules.filterNotifier.FilterNotifier.emit("filter.removed", filter);
             return;
           }
         }
@@ -335,7 +322,7 @@
   };
 
   modules.filterNotifier = {
-    FilterNotifier: new Notifier()
+    FilterNotifier: new EventEmitter()
   };
 
   modules.info = {
