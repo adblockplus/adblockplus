@@ -40,6 +40,22 @@
   var DownloadableSubscription = subscriptionClasses.DownloadableSubscription;
   var SpecialSubscription = subscriptionClasses.SpecialSubscription;
 
+  // Some modules doesn't exist on Firefox. Moreover,
+  // require() throws an exception on Firefox in that case.
+  // However, try/catch causes the whole function to to be
+  // deoptimized on V8. So we wrap it into another function.
+  function tryRequire(module)
+  {
+    try
+    {
+      return require(module);
+    }
+    catch (e)
+    {
+      return null;
+    }
+  }
+
   function convertObject(keys, obj)
   {
     var result = {};
@@ -138,16 +154,7 @@
       case "app.get":
         if (message.what == "issues")
         {
-          var subscriptionInit;
-          try
-          {
-            subscriptionInit = require("subscriptionInit");
-          }
-          catch (e)
-          {
-            // Expected exception, this module doesn't exist on Firefox
-          }
-
+          var subscriptionInit = tryRequire("subscriptionInit");
           callback({
             filterlistsReinitialized: subscriptionInit ? subscriptionInit.reinitialized : false,
             legacySafariVersion: (info.platform == "safari" && (
