@@ -175,10 +175,6 @@
 
           callback({locale: Utils.appLocale, bidiDir: bidiDir});
         }
-        else if (message.what == "addonVersion")
-        {
-          callback(info.addonVersion);
-        }
         else if (message.what == "features")
         {
           callback({
@@ -189,7 +185,7 @@
           });
         }
         else
-          callback(null);
+          callback(info[message.what]);
         break;
       case "app.listen":
         getListenerFilters(sender.page).app = message.filter;
