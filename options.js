@@ -1079,7 +1079,7 @@
   {
     switch (message.type)
     {
-      case "app.listen":
+      case "app.respond":
         if (message.action == "addSubscription")
         {
           var subscription = message.args[0];
@@ -1089,13 +1089,13 @@
           openDialog("predefined");
         }
         break;
-      case "filters.listen":
+      case "filters.respond":
         onFilterMessage(message.action, message.args[0]);
         break;
-      case "prefs.listen":
+      case "prefs.respond":
         onPrefMessage(message.action, message.args[0]);
         break;
-      case "subscriptions.listen":
+      case "subscriptions.respond":
         onSubscriptionMessage(message.action, message.args[0]);
         break;
     }

@@ -72,10 +72,10 @@
   var listenedPreferences = Object.create(null);
   var listenedFilterChanges = Object.create(null);
   var messageTypes = {
-    "app": "app.listen",
-    "filter": "filters.listen",
-    "pref": "prefs.listen",
-    "subscription": "subscriptions.listen"
+    "app": "app.respond",
+    "filter": "filters.respond",
+    "pref": "prefs.respond",
+    "subscription": "subscriptions.respond"
   };
 
   function sendMessage(type, action)

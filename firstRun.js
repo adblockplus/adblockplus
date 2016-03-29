@@ -98,7 +98,7 @@
 
     ext.onMessage.addListener(function(message)
     {
-      if (message.type == "subscriptions.listen")
+      if (message.type == "subscriptions.respond")
       {
         updateToggleButtons();
         updateSocialLinks();
