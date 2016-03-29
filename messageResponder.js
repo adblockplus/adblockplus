@@ -69,8 +69,8 @@
   var convertFilter = convertObject.bind(null, ["text"]);
 
   var changeListeners = new global.ext.PageMap();
-  var listenedPreferences = [];
-  var listenedFilterChanges = [];
+  var listenedPreferences = Object.create(null);
+  var listenedFilterChanges = Object.create(null);
   var messageTypes = {
     "app": "app.listen",
     "filter": "filters.listen",
@@ -122,9 +122,9 @@
       else
         name = type + "." + action;
 
-      if (listenedFilterChanges.indexOf(name) == -1)
+      if (!(name in listenedFilterChanges))
       {
-        listenedFilterChanges.push(name);
+        listenedFilterChanges[name] = null;
         FilterNotifier.on(name, function()
         {
           var args = [type, action];
@@ -310,9 +310,9 @@
         getListenerFilters(sender.page).pref = message.filter;
         message.filter.forEach(function(preference)
         {
-          if (listenedPreferences.indexOf(preference) == -1)
+          if (!(preference in listenedPreferences))
           {
-            listenedPreferences.push(preference);
+            listenedPreferences[preference] = null;
             Prefs.on(preference, function()
             {
               sendMessage("pref", preference, Prefs[preference]);
