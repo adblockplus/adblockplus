@@ -98,7 +98,7 @@
                 <ul id="blocking-languages-table" class="table list">
                   <template>
                     <button role="checkbox" class="control"></button>
-                    <span class="display"></span>
+                    <label class="display"></label>
                   </template>
                 </ul>
                 <div class="controls">
@@ -123,14 +123,14 @@
                   <ul id="recommend-list-table" class="table list">
                     <template>
                       <button role="checkbox" class="control"></button>
-                      <span class="display"></span>
+                      <label class="display"></label>
                       <span class="i18n_options_popular popular"></span>
                     </template>
                   </ul>
                   <ul id="custom-list-table" class="table list">
                     <template>
                       <button role="checkbox" class="control"></button>
-                      <span class="display"></span>
+                      <label class="display"></label>
                     </template>
                   </ul>
                 </div>
@@ -162,7 +162,7 @@
                 <ul id="acceptableads-table" class="table list">
                   <template>
                     <button role="checkbox" class="control"></button>
-                    <span class="display"></span>
+                    <label class="display"></label>
                   </template>
                 </ul>
               </div>
@@ -184,7 +184,7 @@
                 <ul id="whitelisting-table" class="table list">
                   <template>
                     <button class="delete control"></button>
-                    <span class="display"></span>
+                    <label class="display"></label>
                   </template>
                 </ul>
                 <div class="controls">
@@ -219,20 +219,28 @@
             </h1>
             <ul id="tweaks" class="table">
               <li data-pref="shouldShowBlockElementMenu">
-                <button role="checkbox" data-action="toggle-pref"></button>
-                <span class="i18n_options_tweaks_blockElement"></span>
+                <label>
+                  <button role="checkbox" data-action="toggle-pref"></button>
+                  <span class="i18n_options_tweaks_blockElement"></span>
+                </label>
               </li>
               <li data-pref="show_devtools_panel">
-                <button role="checkbox" data-action="toggle-pref"></button>
-                <span class="i18n_options_tweaks_showDevToolsPanel"></span>
+                <label>
+                  <button role="checkbox" data-action="toggle-pref"></button>
+                  <span class="i18n_options_tweaks_showDevToolsPanel"></span>
+                </label>
               </li>
               <li data-pref="notifications_ignoredcategories">
-                <button role="checkbox" data-action="toggle-pref"></button>
-                <span class="i18n_options_tweaks_showNotifications"></span>
+                <label>
+                  <button role="checkbox" data-action="toggle-pref"></button>
+                  <span class="i18n_options_tweaks_showNotifications"></span>
+                </label>
               </li>
               <li data-pref="safari_contentblocker">
-                <button role="checkbox" data-action="toggle-pref"></button>
-                <span class="i18n_options_tweaks_safariContentBlocker"></span>
+                <label>
+                  <button role="checkbox" data-action="toggle-pref"></button>
+                  <span class="i18n_options_tweaks_safariContentBlocker"></span>
+                </label>
                 <span id="restart-safari" class="i18n_options_tweaks_restartSafari"></span>
               </li>
             </ul>
@@ -257,7 +265,7 @@
                   <template>
                     <button role="checkbox" class="control"></button>
                     <div>
-                      <span data-action="open-context-menu" class="display"></span>
+                      <label data-action="open-context-menu" class="display"></label>
                       <div data-action="open-context-menu" class="arrow">
                         <div class="context-menu">
                           <div class="content">
@@ -300,7 +308,7 @@
                   <div id="custom-filters-list-wrapper">
                     <ul id="custom-filters-table" class="table list">
                       <template>
-                        <span class="display"></span>
+                        <label class="display"></label>
                       </template>
                     </ul>
                     <form id="custom-filters-add" class="controls">
@@ -371,7 +379,7 @@
             <h3 class="i18n_options_dialog_language_added"></h3>
             <ul id="blocking-languages-dialog-table" class="table list">
               <template>
-                <span class="display"></span>
+                <label class="display"></label>
               </template>
             </ul>
           </div>
@@ -385,7 +393,7 @@
                 <button class="button-add control">
                   +<span class="i18n_options_button_add"></span>
                 </button>
-                <span class="display"></span>
+                <label class="display"></label>
               </template>
             </ul>
           </div>

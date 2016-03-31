@@ -87,14 +87,22 @@
         listItem.setAttribute("data-access", item.url || item.text);
 
         var labelId = "label-" + (++maxLabelId);
-        listItem.querySelector(".display").setAttribute("id", labelId);
+        var label = listItem.querySelector(".display");
+        label.setAttribute("id", labelId);
+
         var control = listItem.querySelector(".control");
         if (control)
         {
-          // We use aria-labelledby to avoid triggering the control when
-          // interacting with the label
           control.setAttribute("aria-labelledby", labelId);
           control.addEventListener("click", this.details[j].onClick, false);
+
+          var role = control.getAttribute("role");
+          if (role == "checkbox" && !label.hasAttribute("data-action"))
+          {
+            var controlId = "control-" + maxLabelId;
+            control.setAttribute("id", controlId);
+            label.setAttribute("for", controlId);
+          }
         }
 
         this._setEmpty(table, null);
