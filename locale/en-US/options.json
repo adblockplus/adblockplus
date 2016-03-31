@@ -155,6 +155,10 @@
     "description": "Switch between classic and Safari's Content Blocking",
     "message": "Use Safari's native Content Blocking (experimental)"
   },
+  "options_tweaks_restartSafari": {
+    "description": "Shown next to the option for Safai Content Blockers if disabled in order to indicate that a restart is required",
+    "message": "Please restart Safari"
+  },
   "options_filterList_title": {
     "description": "Section title in Advanced tab",
     "message": "Filter lists"

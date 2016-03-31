@@ -707,7 +707,7 @@
     {
       getPref(key, function(value)
       {
-        onPrefMessage(key, value);
+        onPrefMessage(key, value, true);
       });
     });
     ext.backgroundPage.sendMessage(
@@ -718,7 +718,14 @@
     function(features)
     {
       hidePref("show_devtools_panel", !features.devToolsPanel);
-      hidePref("safari_contentblocker", !features.safariContentBlocker);
+
+      // Only show option to switch between Safari Content Blockers
+      // and event based blocking if both are available.
+      hidePref("safari_contentblocker", !(
+        features.safariContentBlocker &&
+        "canLoad" in safari.self.tab &&
+        "onbeforeload" in Element.prototype
+      ));
     });
 
     var filterTextbox = document.querySelector("#custom-filters-add input");
@@ -1021,17 +1028,26 @@
     }
   };
 
-  function onPrefMessage(key, value)
+  function onPrefMessage(key, value, initial)
   {
+    switch (key)
+    {
+      case "notifications_ignoredcategories":
+        value = value.indexOf("*") == -1;
+        break;
+
+      case "notifications_showui":
+        hidePref("notifications_ignoredcategories", !value);
+        break;
+
+      case "safari_contentblocker":
+        E("restart-safari").setAttribute("aria-hidden", value || initial);
+        break;
+    }
+
     var checkbox = document.querySelector("[data-pref='" + key + "'] button[role='checkbox']");
     if (checkbox)
-    {
-      if (key == "notifications_ignoredcategories")
-        value = (value.indexOf("*") == -1);
       checkbox.setAttribute("aria-checked", value);
-    }
-    else if (key == "notifications_showui")
-      hidePref("notifications_ignoredcategories", !value);
   }
 
   function onShareLinkClick(e)
@@ -1093,7 +1109,7 @@
         onFilterMessage(message.action, message.args[0]);
         break;
       case "prefs.respond":
-        onPrefMessage(message.action, message.args[0]);
+        onPrefMessage(message.action, message.args[0], false);
         break;
       case "subscriptions.respond":
         onSubscriptionMessage(message.action, message.args[0]);

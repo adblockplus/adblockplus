@@ -617,6 +617,14 @@ button[role="checkbox"],
   padding-bottom: 0px;
 }
 
+#restart-safari
+{
+  -moz-margin-start: 20px;
+  -webkit-margin-start: 20px;
+  color: red;
+  font-weight: 600;
+}
+
 #filter-lists > div
 {
   display: none;
