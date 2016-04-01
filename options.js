@@ -168,7 +168,11 @@
       if (!element)
         continue;
 
-      var title = item.title || item.url || item.text;
+      var title = null;
+      if (this.details[i].useOriginalTitle)
+        title = item.originalTitle;
+      if (!title)
+        title = item.title || item.url || item.text;
       element.querySelector(".display").textContent = title;
       if (title)
         element.setAttribute("data-search", title.toLowerCase());
@@ -358,7 +362,8 @@
   [
     {
       id: "all-filter-lists-table",
-      onClick: toggleDisableSubscription
+      onClick: toggleDisableSubscription,
+      useOriginalTitle: true
     }
   ]);
 
@@ -488,7 +493,7 @@
         {
           var element = elements[i];
           var subscription = Object.create(null);
-          subscription.title = element.getAttribute("title");
+          subscription.originalTitle = element.getAttribute("title");
           subscription.url = element.getAttribute("url");
           subscription.disabled = null;
           subscription.downloadStatus = null;
