@@ -140,8 +140,8 @@
     "message": "Tweaks"
   },
   "options_tweaks_blockElement": {
-    "description": "Show block Element option in Advanced tab",
-    "message": "Show Block Element right-click menu item"
+    "description": "Show 'Block element' option in Advanced tab",
+    "message": "Show 'Block element' right-click menu item"
   },
   "options_tweaks_showDevToolsPanel": {
     "description": "Show developer tools panel option in Advanced tab",
