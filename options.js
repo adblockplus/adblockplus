@@ -1110,13 +1110,18 @@
     switch (message.type)
     {
       case "app.respond":
-        if (message.action == "addSubscription")
+        switch (message.action)
         {
-          var subscription = message.args[0];
-          var dialog = E("dialog-content-predefined");
-          dialog.querySelector("h3").textContent = subscription.title || "";
-          dialog.querySelector(".url").textContent = subscription.url;
-          openDialog("predefined");
+          case "addSubscription":
+            var subscription = message.args[0];
+            var dialog = E("dialog-content-predefined");
+            dialog.querySelector("h3").textContent = subscription.title || "";
+            dialog.querySelector(".url").textContent = subscription.url;
+            openDialog("predefined");
+            break;
+          case "focusSection":
+            document.body.setAttribute("data-tab", message.args[0]);
+            break;
         }
         break;
       case "filters.respond":
@@ -1134,7 +1139,7 @@
   ext.backgroundPage.sendMessage(
   {
     type: "app.listen",
-    filter: ["addSubscription"]
+    filter: ["addSubscription", "focusSection"]
   });
   ext.backgroundPage.sendMessage(
   {
