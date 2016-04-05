@@ -287,8 +287,10 @@
       _downloading: false,
       execute: function(subscription, manual) 
       {
-        subscription.lastDownload = 0;
         modules.synchronizer.Synchronizer._downloading = true;
+        modules.filterNotifier.FilterNotifier.emit(
+          "subscription.downloading", subscription
+        );
         setTimeout(function()
         {
           modules.synchronizer.Synchronizer._downloading = false;

@@ -64,8 +64,14 @@
     return result;
   }
 
-  var convertSubscription = convertObject.bind(null, ["disabled",
-    "downloadStatus", "homepage", "lastDownload", "title", "url"]);
+  function convertSubscription(subscription)
+  {
+    var obj = convertObject(["disabled", "downloadStatus", "homepage",
+                             "lastDownload", "title", "url"], subscription);
+    obj.isDownloading = Synchronizer.isExecuting(subscription.url);
+    return obj;
+  }
+
   var convertFilter = convertObject.bind(null, ["text"]);
 
   var changeListeners = new global.ext.PageMap();
@@ -395,9 +401,6 @@
           if (subscription instanceof DownloadableSubscription)
             Synchronizer.execute(subscription, true);
         }
-        break;
-      case "subscriptions.isDownloading":
-        callback(Synchronizer.isExecuting(message.url));
         break;
     }
   });

@@ -180,42 +180,35 @@
       if (control)
         control.setAttribute("aria-checked", item.disabled == false);
 
-      var downloadStatus = item.downloadStatus;
       var dateElement = element.querySelector(".date");
       var timeElement = element.querySelector(".time");
-      if(dateElement && timeElement)
+      if (dateElement && timeElement)
       {
         var message = element.querySelector(".message");
-        ext.backgroundPage.sendMessage(
+        if (item.isDownloading)
         {
-          type: "subscriptions.isDownloading",
-          url: item.url
-        },
-        function(isDownloading)
+          var text = getMessage("options_filterList_lastDownload_inProgress");
+          message.textContent = text;
+          element.classList.add("show-message");
+        }
+        else if (item.downloadStatus != "synchronize_ok")
         {
-          if (isDownloading)
-          {
-            var text = getMessage("options_filterList_lastDownload_inProgress");
-            message.textContent = text;
-            element.classList.add("show-message");
-          }
-          else if (downloadStatus && downloadStatus != "synchronize_ok")
-          {
-            if (downloadStatus in filterErrors)
-              message.textContent = getMessage(filterErrors[downloadStatus]);
-            else
-              message.textContent = item.downloadStatus;
-            element.classList.add("show-message");
-          }
-          else if (item.lastDownload > 0)
-          {
-            var dateTime = i18n_formatDateTime(item.lastDownload * 1000);
-            dateElement.textContent = dateTime[0];
-            timeElement.textContent = dateTime[1];
-            element.classList.remove("show-message");
-          }
-        });
+          var error = filterErrors[item.downloadStatus];
+          if (error)
+            message.textContent = getMessage(error);
+          else
+            message.textContent = item.downloadStatus;
+          element.classList.add("show-message");
+        }
+        else if (item.lastDownload > 0)
+        {
+          var dateTime = i18n_formatDateTime(item.lastDownload * 1000);
+          dateElement.textContent = dateTime[0];
+          timeElement.textContent = dateTime[1];
+          element.classList.remove("show-message");
+        }
       }
+
       var websiteElement = element.querySelector(".context-menu .website");
       var sourceElement = element.querySelector(".context-menu .source");
       if (websiteElement && item.homepage)
@@ -398,24 +391,21 @@
 
     if (!Object.observe)
     {
-      ["disabled", "lastDownload"].forEach(function(property)
+      Object.keys(subscription).forEach(function(property)
       {
-        subscription["$" + property] = subscription[property];
+        var value = subscription[property];
         Object.defineProperty(subscription, property,
         {
           get: function()
           {
-            return this["$" + property];
+            return value;
           },
           set: function(newValue)
           {
-            var oldValue = this["$" + property];
-            if (oldValue != newValue)
+            if (value != newValue)
             {
-              this["$" + property] = newValue;
-              var change = Object.create(null);
-              change.name = property;
-              onObjectChanged([change]);
+              value = newValue;
+              onObjectChanged([{name: property}]);
             }
           }
         });
@@ -969,6 +959,8 @@
         updateShareLink();
         break;
       case "lastDownload":
+      case "downloadStatus":
+      case "downloading":
         updateSubscription(subscription);
         break;
       case "homepage":
@@ -1157,7 +1149,7 @@
   {
     type: "subscriptions.listen",
     filter: ["added", "disabled", "homepage", "lastDownload", "removed",
-        "title"]
+        "title", "downloadStatus", "downloading"]
   });
 
   window.addEventListener("DOMContentLoaded", onDOMLoaded, false);
