@@ -390,9 +390,10 @@
             }
           }
         }
-        for (var i in collections)
-          collections[i].updateItem(subscription);
       }
+
+      for (var name in collections)
+        collections[name].updateItem(subscription);
     }
 
     if (!Object.observe)
