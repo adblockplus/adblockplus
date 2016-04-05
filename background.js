@@ -138,7 +138,6 @@
     Subscription: function(url)
     {
       this.url = url;
-      this.title = "Subscription " + url;
       this._disabled = false;
       this._lastDownload = 1234;
       this.homepage = "https://easylist.adblockplus.org/";

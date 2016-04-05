@@ -424,8 +424,12 @@
     if (knownSubscription)
     {
       for (var property in subscription)
-        if (property != "title")
+      {
+        if (property == "title" && subscriptionUrl in recommendationsMap)
+          knownSubscription.originalTitle = subscription.title;
+        else
           knownSubscription[property] = subscription[property];
+      }
     }
     else
     {
@@ -958,14 +962,6 @@
         updateSubscription(subscription);
         updateShareLink();
         break;
-      case "lastDownload":
-      case "downloadStatus":
-      case "downloading":
-        updateSubscription(subscription);
-        break;
-      case "homepage":
-        // TODO: NYI
-        break;
       case "removed":
         var knownSubscription = subscriptionsMap[subscription.url];
         getAcceptableAdsURL(function(acceptableAdsUrl)
@@ -989,8 +985,8 @@
           collections.filterLists.removeItem(knownSubscription);
         });
         break;
-      case "title":
-        // TODO: NYI
+      default:
+        updateSubscription(subscription);
         break;
     }
   }
