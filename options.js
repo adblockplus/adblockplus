@@ -23,6 +23,7 @@
   var recommendationsMap = Object.create(null);
   var filtersMap = Object.create(null);
   var collections = Object.create(null);
+  var acceptableAdsUrl = null;
   var maxLabelId = 0;
   var getMessage = ext.i18n.getMessage;
   var filterErrors =
@@ -62,6 +63,16 @@
     };
   };
 
+  Collection.prototype._getItemTitle = function(item, i)
+  {
+    var title = null;
+    if (this.details[i].useOriginalTitle)
+      title = item.originalTitle;
+    if (!title)
+      title = item.title || item.url || item.text;
+    return title;
+  };
+
   Collection.prototype.addItems = function() 
   {
     var length = Array.prototype.push.apply(this.items, arguments);
@@ -70,10 +81,19 @@
 
     this.items.sort(function(a, b)
     {
-      var aValue = (a.title || a.text || a.url).toLowerCase();
-      var bValue = (b.title || b.text || b.url).toLowerCase();
-      return aValue.localeCompare(bValue);
-    });
+      // Make sure that Acceptable Ads is always last, since it cannot be
+      // disabled, but only be removed. That way it's grouped together with
+      // the "Own filter list" which cannot be disabled either at the bottom
+      // of the filter lists in the Advanced tab.
+      if (a.url == acceptableAdsUrl)
+        return 1;
+      if (b.url == acceptableAdsUrl)
+        return -1;
+
+      var aTitle = this._getItemTitle(a, 0).toLowerCase();
+      var bTitle = this._getItemTitle(b, 0).toLowerCase();
+      return aTitle.localeCompare(bTitle);
+    }.bind(this));
 
     for (var j = 0; j < this.details.length; j++) 
     {
@@ -168,17 +188,18 @@
       if (!element)
         continue;
 
-      var title = null;
-      if (this.details[i].useOriginalTitle)
-        title = item.originalTitle;
-      if (!title)
-        title = item.title || item.url || item.text;
+      var title = this._getItemTitle(item, i);
       element.querySelector(".display").textContent = title;
       if (title)
         element.setAttribute("data-search", title.toLowerCase());
       var control = element.querySelector(".control[role='checkbox']");
       if (control)
+      {
         control.setAttribute("aria-checked", item.disabled == false);
+        if (item.url == acceptableAdsUrl && this.details[i].onClick ==
+                                            toggleDisableSubscription)
+          control.setAttribute("disabled", true);
+      }
 
       var dateElement = element.querySelector(".date");
       var timeElement = element.querySelector(".time");
@@ -440,27 +461,25 @@
     else
     {
       observeSubscription(subscription);
-      getAcceptableAdsURL(function(acceptableAdsUrl)
-      {
-        var collection = null;
-        if (subscriptionUrl in recommendationsMap)
-        {
-          var recommendation = recommendationsMap[subscriptionUrl];
-          if (recommendation.type != "ads")
-            collection = collections.popular;
-          else if (subscription.disabled == false)
-            collection = collections.langs;
-          else
-            collection = collections.allLangs;
-        }
-        else if (subscriptionUrl == acceptableAdsUrl)
-          collection = collections.acceptableAds;
-        else
-          collection = collections.custom;
 
-        collection.addItems(subscription);
-        subscriptionsMap[subscriptionUrl] = subscription;
-      });
+      var collection;
+      if (subscriptionUrl in recommendationsMap)
+      {
+        var recommendation = recommendationsMap[subscriptionUrl];
+        if (recommendation.type != "ads")
+          collection = collections.popular;
+        else if (subscription.disabled == false)
+          collection = collections.langs;
+        else
+          collection = collections.allLangs;
+      }
+      else if (subscriptionUrl == acceptableAdsUrl)
+        collection = collections.acceptableAds;
+      else
+        collection = collections.custom;
+
+      collection.addItems(subscription);
+      subscriptionsMap[subscriptionUrl] = subscription;
     }
   }
 
@@ -849,13 +868,19 @@
       }
     });
     loadRecommendations();
-    getAcceptableAdsURL(function(acceptableAdsUrl)
+    ext.backgroundPage.sendMessage(
     {
-      var subscription = Object.create(null);
-      subscription.url = acceptableAdsUrl;
-      subscription.disabled = true;
-      subscription.title = getMessage("options_acceptableAds_description");
-      updateSubscription(subscription);
+      type: "prefs.get",
+      key: "subscriptions_exceptionsurl"
+    },
+    function(url)
+    {
+      acceptableAdsUrl = url;
+      updateSubscription({
+        url: acceptableAdsUrl,
+        disabled: true,
+        title: getMessage("options_acceptableAds_description")
+      });
 
       // Load user subscriptions
       ext.backgroundPage.sendMessage(
@@ -894,18 +919,6 @@
     for (var i = 0; i < customFilterItems.length; i++)
       filterTexts.push(customFilterItems[i].text);
     E("custom-filters-raw").value = filterTexts.join("\n");
-  }
-
-  function getAcceptableAdsURL(callback)
-  {
-    getPref("subscriptions_exceptionsurl", function(value)
-    {
-      getAcceptableAdsURL = function(callback)
-      {
-        callback(value);
-      };
-      getAcceptableAdsURL(callback);
-    });
   }
 
   function addEnableSubscription(url, title, homepage)
@@ -970,26 +983,23 @@
         break;
       case "removed":
         var knownSubscription = subscriptionsMap[subscription.url];
-        getAcceptableAdsURL(function(acceptableAdsUrl)
+        if (subscription.url == acceptableAdsUrl)
         {
-          if (subscription.url == acceptableAdsUrl)
-          {
-            subscription.disabled = true;
-            updateSubscription(subscription);
-          }
+          subscription.disabled = true;
+          updateSubscription(subscription);
+        }
+        else
+        {
+          if (subscription.url in recommendationsMap)
+            knownSubscription.disabled = true;
           else
           {
-            if (subscription.url in recommendationsMap)
-              knownSubscription.disabled = true;
-            else
-            {
-              collections.custom.removeItem(knownSubscription);
-              delete subscriptionsMap[subscription.url];
-            }
+            collections.custom.removeItem(knownSubscription);
+            delete subscriptionsMap[subscription.url];
           }
-          updateShareLink();
-          collections.filterLists.removeItem(knownSubscription);
-        });
+        }
+        updateShareLink();
+        collections.filterLists.removeItem(knownSubscription);
         break;
       default:
         updateSubscription(subscription);
