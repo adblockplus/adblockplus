@@ -1200,11 +1200,11 @@ body[data-dialog] #dialog-background
 
 #dialog-close::before
 {
-  background-position: -9px -32px;
+  background-position: -10px -33px;
   content: "";
   cursor: pointer;
-  height: 12px;
-  width: 12px;
+  height: 8px;
+  width: 8px;
   vertical-align: middle;
   -moz-margin-end: 6px;
   -webkit-margin-end: 6px;
