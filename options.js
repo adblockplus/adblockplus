@@ -65,12 +65,11 @@
 
   Collection.prototype._getItemTitle = function(item, i)
   {
-    var title = null;
-    if (this.details[i].useOriginalTitle)
-      title = item.originalTitle;
-    if (!title)
-      title = item.title || item.url || item.text;
-    return title;
+    if (item.url == acceptableAdsUrl)
+      return getMessage("options_acceptableAds_description");
+    if (this.details[i].useOriginalTitle && item.originalTitle)
+      return item.originalTitle;
+    return item.title || item.url || item.text;
   };
 
   Collection.prototype.addItems = function() 
@@ -878,8 +877,7 @@
       acceptableAdsUrl = url;
       updateSubscription({
         url: acceptableAdsUrl,
-        disabled: true,
-        title: getMessage("options_acceptableAds_description")
+        disabled: true
       });
 
       // Load user subscriptions
