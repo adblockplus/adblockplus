@@ -210,9 +210,15 @@
       }
 
       var websiteElement = element.querySelector(".context-menu .website");
+      if (websiteElement)
+      {
+        if (item.homepage)
+          websiteElement.setAttribute("href", item.homepage);
+        else
+          websiteElement.setAttribute("aria-hidden", true);
+      }
+
       var sourceElement = element.querySelector(".context-menu .source");
-      if (websiteElement && item.homepage)
-        websiteElement.setAttribute("href", item.homepage);
       if (sourceElement)
         sourceElement.setAttribute("href", item.url);
     }
