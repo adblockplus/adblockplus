@@ -25,6 +25,6 @@ SocketServer.TCPServer.allow_reuse_address = True
 httpd = SocketServer.TCPServer(PORT, SimpleHTTPServer.SimpleHTTPRequestHandler)
 
 if __name__ == "__main__":
-  print "Starting web server at http://%s:%i/" % PORT
-  os.chdir(os.path.dirname(__file__))
-  httpd.serve_forever()
+    print "Starting web server at http://%s:%i/" % PORT
+    os.chdir(os.path.dirname(__file__))
+    httpd.serve_forever()
