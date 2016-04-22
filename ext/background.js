@@ -78,8 +78,8 @@
 
   global.ext.showOptions = function(callback)
   {
-    if (top.location.href.indexOf("options.html") == -1)
-      window.open("options.html", "_blank");
+    if (top.location.href.indexOf("new-options.html") == -1)
+      window.open("new-options.html", "_blank");
 
     if (callback)
       callback();

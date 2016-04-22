@@ -16,7 +16,7 @@ Directory structure
     to messages sent by UI code.
   * `background.html`, `background.js`: Test implementation of the background
     page, should *not be imported*.
-  * `options.html`, `options.js`: Options page, see below
+  * `new-options.html`, `new-options.js`: Options page, see below
   * `subscriptions.xml`: Test subscription data, should *not be imported*
 * `locale` directory: Localized strings, with one directory per locale. The
   Firefox format for locale identifiers is used (xx-YY where xx is the language
@@ -60,7 +60,8 @@ whenever changes are applied automatically to user's Adblock Plus configuration.
 This will usually happen when the user first installs Adblock Plus (initial
 setup), but it can also happen in case the user's settings get lost.
 
-The behavior of this page is affected by a number of URL parameters:
+To aid testing, the behavior of this page is affected by a number of URL
+parameters:
 
 * `platform`, `platformVersion`, `application`, `applicationVersion`: sets
   application parameters that are normally determined by Adblock Plus. Using
@@ -70,13 +71,14 @@ The behavior of this page is affected by a number of URL parameters:
 * `blockedURLs`: a comma-separated list of URLs that should be considered
   blocked (necessary to test the check for blocked scripts in sharing buttons).
 
-options.html
+new-options.html
 ------------
 
-This is the implementation of the Adblock Plus options page which is the primary
-UI for changing settings and for managing filter lists.
+This is the new implementation of the Adblock Plus options page which will be
+the primary UI for changing settings and for managing filter lists.
 
-The behavior of this page is affected by a number of URL parameters:
+To aid testing, the behavior of this page is affected by a number of URL
+parameters:
 
 * `addonVersion`: sets addon version application parameter that is used for
   creating the link to the version-specific release notes
