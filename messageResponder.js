@@ -235,7 +235,8 @@
               return {
                 prefix: filter.selectorPrefix,
                 suffix: filter.selectorSuffix,
-                regexp: filter.regexpString
+                regexp: filter.regexpString,
+                text: filter.text
               };
             });
           }
