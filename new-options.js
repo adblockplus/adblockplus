@@ -52,7 +52,7 @@
     }
     else if (placeholder)
       table.removeChild(placeholder);
-  }
+  };
 
   Collection.prototype._createElementQuery = function(item)
   {
@@ -72,7 +72,7 @@
     return item.title || item.url || item.text;
   };
 
-  Collection.prototype.addItems = function() 
+  Collection.prototype.addItems = function()
   {
     var length = Array.prototype.push.apply(this.items, arguments);
     if (length == 0)
@@ -94,11 +94,11 @@
       return aTitle.localeCompare(bTitle);
     }.bind(this));
 
-    for (var j = 0; j < this.details.length; j++) 
+    for (var j = 0; j < this.details.length; j++)
     {
       var table = E(this.details[j].id);
       var template = table.querySelector("template");
-      for (var i = 0; i < arguments.length; i++) 
+      for (var i = 0; i < arguments.length; i++)
       {
         var item = arguments[i];
         var listItem = document.createElement("li");
@@ -127,7 +127,7 @@
         this._setEmpty(table, null);
         if (table.hasChildNodes())
         {
-          table.insertBefore(listItem, 
+          table.insertBefore(listItem,
               table.childNodes[this.items.indexOf(item)]);
         }
         else
@@ -858,7 +858,7 @@
         {
           type: "filters.get",
           subscriptionUrl: subscriptions[i].url
-        }, 
+        },
         function(filters)
         {
           for (var i = 0; i < filters.length; i++)
@@ -885,7 +885,7 @@
       {
         type: "subscriptions.get",
         downloadable: true
-      }, 
+      },
       function(subscriptions)
       {
         for (var i = 0; i < subscriptions.length; i++)
@@ -924,9 +924,9 @@
     var messageType = null;
     var knownSubscription = subscriptionsMap[url];
     if (knownSubscription && knownSubscription.disabled == true)
-      messageType = "subscriptions.toggle"
+      messageType = "subscriptions.toggle";
     else
-      messageType = "subscriptions.add"
+      messageType = "subscriptions.add";
 
     var message = {
       type: messageType,
@@ -1070,10 +1070,7 @@
   {
     e.preventDefault();
 
-    getDocLink("share-general", function(link)
-    {
-      openSharePopup(link);
-    });
+    getDocLink("share-general", openSharePopup);
   }
 
   function updateShareLink()
