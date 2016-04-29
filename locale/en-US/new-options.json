@@ -163,6 +163,18 @@
     "description": "Section title in Advanced tab",
     "message": "Filter lists"
   },
+  "options_filterList_title_tooltip": {
+    "description": "First top part of tooltip description for 'Filter lists' section in Advanced tab",
+    "message": "You can create or add filter lists here."
+  },
+  "options_filterList_title_tooltip_notes_1": {
+    "description": "First bottom part of tooltip description for 'Filter lists' section in Advanced tab",
+    "message": "Filter lists are the heart of Adblock Plus, providing its functionality. In order for any feature of Adblock Plus to take effect, at least one filter list needs to be activated. These filter lists are not owned by Adblock Plus, but created by international volunteers, who also create the filter rules. A few of these filter lists are mentioned as examples in Adblock Plus."
+  },
+  "options_filterList_title_tooltip_notes_2": {
+    "description": "Second bottom part of tooltip description for 'Filter lists' section in Advanced tab",
+    "message": "Adblock Plus provides free hosting for popular filter lists. If you would like to create or maintain a filter list which is not yet provided by Adblock Plus, we would be more than happy to assist you with the hosting. Contact us at <strong>Help > Forum > Filters for Adblock Plus</strong>."
+  },
   "options_tab_overview": {
     "description": "Tab name in Advanced tab",
     "message": "Overview"
@@ -239,20 +251,24 @@
     "description": "Custom filters option name in Advanced tab",
     "message": "Filter rules"
   },
+  "options_customFilters_title_tooltip": {
+    "description": "Text of tooltip description for 'Filter rules' section in Advanced tab",
+    "message": "Learn how to write your own filter rules to define elements that should be blocked. See tutorials and the syntax description at <strong>adblockplus.org/filters</strong>"
+  },
   "options_customFilters_textbox_placeholder": {
     "description": "Adding custom filter textbox placeholder text in Advanced tab",
     "message": "add your filter rule here"
   },
   "options_customFilter_edit": {
-    "description": "Label for editing custom filter in Advanced tab",
-    "message": "edit rules"
+    "description": "Label below single input view of user's filter list in Advanced tab",
+    "message": "edit filter rules"
   },
-  "options_customFilter_list": {
-    "description": "Label for editing custom filter in Advanced tab",
-    "message": "list view"
+  "options_customFilter_cancel": {
+    "description": "Label below raw view of user's filter list in Advanced tab",
+    "message": "cancel"
   },
   "options_customFilter_save": {
-    "description": "Label for editing custom filter in Advanced tab",
+    "description": "Label below raw view of user's filter list in Advanced tab",
     "message": "save"
   },
   "options_faq_title": {

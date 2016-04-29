@@ -213,10 +213,7 @@
         <!-- Advanced tab content -->
         <div id="content-advanced" class="tab-content">
           <div>
-            <h1>
-              <span class="i18n_options_tweaks_title"></span>
-              <a class="i18n_options_readMore tooltip"></a>
-            </h1>
+            <h1 class="i18n_options_tweaks_title"></h1>
             <ul id="tweaks" class="table">
               <li data-pref="shouldShowBlockElementMenu">
                 <label>
@@ -249,7 +246,16 @@
           <div>
             <h1>
               <span class="i18n_options_filterList_title"></span>
-              <a class="i18n_options_readMore tooltip"></a>
+              <div class="tooltip">
+                <span class="i18n_options_readMore"></span>
+                <div role="tooltip">
+                  <p class="i18n_options_filterList_title_tooltip"></p>
+                  <div class="notes">
+                    <p class="i18n_options_filterList_title_tooltip_notes_1"></p>
+                    <p class="i18n_options_filterList_title_tooltip_notes_2"></p>
+                  </div>
+                </div>
+              </div>
             </h1>
             <ul class="tabs horizontal">
               <li class="i18n_options_tab_overview active" data-action="switch-tab" data-tab="advanced-allFilterLists"></li>
@@ -258,8 +264,8 @@
             <div id="filter-lists">
               <div id="all-filter-lists">
                 <div class="table-header">
-                  <h3 class="i18n_options_column_name"></h3>
-                  <h3 class="i18n_options_column_date"></h3>
+                  <h2 class="i18n_options_column_name"></h2>
+                  <h2 class="i18n_options_column_date"></h2>
                 </div>
                 <ul class="table cols" id="all-filter-lists-table">
                   <template>
@@ -282,9 +288,9 @@
                     <span class="message"></span>
                   </template>
                   <li class="static">
-                    <button role="checkbox" class="control" aria-checked="true" disabled="true"></button>
+                    <button id="own-list" role="checkbox" class="control" aria-checked="true" disabled="true"></button>
                     <div>
-                      <label class="i18n_options_filterList_own_list"></label>
+                      <label for="own-list" class="i18n_options_filterList_own_list"></label>
                     </div>
                     <span data-action="switch-tab,edit-custom-filters" data-tab="advanced-customFilters">
                       <a class="i18n_options_filterList_edit_own_list"></a>
@@ -303,7 +309,15 @@
                 </div>
               </div>
               <div id="custom-filters">
-                <h3 id="custom-filters-header" class="i18n_options_customFilters_title"></h3>
+                <h2 id="custom-filters-header">
+                  <span class="i18n_options_customFilters_title"></span>
+                  <div class="tooltip">
+                    <span class="i18n_options_readMore"></span>
+                    <div role="tooltip">
+                      <p class="i18n_options_customFilters_title_tooltip"></p>
+                    </div>
+                  </div>
+                </h2>
                 <div id="custom-filters-wrapper">
                   <div id="custom-filters-list-wrapper">
                     <ul id="custom-filters-table" class="table list">
@@ -324,13 +338,13 @@
                     <span class="i18n_options_customFilter_edit"></span>
                   </button>
                   <div id="custom-filters-raw-controls">
-                    <button data-action="cancel-custom-filters">
-                      <span class="icon icon-edit"></span>
-                      <span class="i18n_options_customFilter_list"></span>
-                    </button>
                     <button id="custom-filters-raw-save" data-action="save-custom-filters">
-                      <span class="icon icon-edit"></span>
+                      <span class="icon icon-save"></span>
                       <span class="i18n_options_customFilter_save"></span>
+                    </button>
+                    <button data-action="cancel-custom-filters">
+                    <span class="icon icon-cancel"></span>
+                      <span class="i18n_options_customFilter_cancel"></span>
                     </button>
                   </div>
                 </div>
