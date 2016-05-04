@@ -386,100 +386,62 @@
     }
   ]);
 
-  function observeSubscription(subscription)
+  function updateLanguageCollections(subscription)
   {
-    function onObjectChanged(change)
+    var recommendation = recommendationsMap[subscription.url];
+
+    if (recommendation && recommendation.type == "ads")
     {
-      for (var i = 0; i < change.length; i++)
+      if (subscription.disabled)
       {
-        if (change[i].name == "disabled")
-        {
-          var recommendation = recommendationsMap[subscription.url];
-          if (recommendation && recommendation.type == "ads")
-          {
-            if (subscription.disabled == false)
-            {
-              collections.allLangs.removeItem(subscription);
-              collections.langs.addItems(subscription);
-            }
-            else
-            {
-              collections.allLangs.addItems(subscription);
-              collections.langs.removeItem(subscription);
-            }
-          }
-        }
+        collections.allLangs.addItems(subscription);
+        collections.langs.removeItem(subscription);
       }
-
-      for (var name in collections)
-        collections[name].updateItem(subscription);
-    }
-
-    if (!Object.observe)
-    {
-      Object.keys(subscription).forEach(function(property)
+      else
       {
-        var value = subscription[property];
-        Object.defineProperty(subscription, property,
-        {
-          get: function()
-          {
-            return value;
-          },
-          set: function(newValue)
-          {
-            if (value != newValue)
-            {
-              value = newValue;
-              onObjectChanged([{name: property}]);
-            }
-          }
-        });
-      });
+        collections.allLangs.removeItem(subscription);
+        collections.langs.addItems(subscription);
+      }
     }
-    else
+  }
+
+  function addSubscription(subscription)
+  {
+    var collection;
+    if (subscription.url in recommendationsMap)
     {
-      Object.observe(subscription, onObjectChanged);
+      var recommendation = recommendationsMap[subscription.url];
+      if (recommendation.type != "ads")
+        collection = collections.popular;
+      else if (subscription.disabled == false)
+        collection = collections.langs;
+      else
+        collection = collections.allLangs;
     }
+    else if (subscription.url == acceptableAdsUrl)
+      collection = collections.acceptableAds;
+    else
+      collection = collections.custom;
+
+    collection.addItems(subscription);
+    subscriptionsMap[subscription.url] = subscription;
   }
 
   function updateSubscription(subscription)
   {
-    var subscriptionUrl = subscription.url;
-    var knownSubscription = subscriptionsMap[subscriptionUrl];
-    if (knownSubscription)
+    var knownSubscription = subscriptionsMap[subscription.url];
+    for (var property in subscription)
     {
-      for (var property in subscription)
-      {
-        if (property == "title" && subscriptionUrl in recommendationsMap)
-          knownSubscription.originalTitle = subscription.title;
-        else
-          knownSubscription[property] = subscription[property];
-      }
-    }
-    else
-    {
-      observeSubscription(subscription);
-
-      var collection;
-      if (subscriptionUrl in recommendationsMap)
-      {
-        var recommendation = recommendationsMap[subscriptionUrl];
-        if (recommendation.type != "ads")
-          collection = collections.popular;
-        else if (subscription.disabled == false)
-          collection = collections.langs;
-        else
-          collection = collections.allLangs;
-      }
-      else if (subscriptionUrl == acceptableAdsUrl)
-        collection = collections.acceptableAds;
+      if (property == "title" && subscription.url in recommendationsMap)
+        knownSubscription.originalTitle = subscription.title;
       else
-        collection = collections.custom;
-
-      collection.addItems(subscription);
-      subscriptionsMap[subscriptionUrl] = subscription;
+        knownSubscription[property] = subscription[property];
     }
+
+    for (var name in collections)
+      collections[name].updateItem(knownSubscription);
+
+    return knownSubscription;
   }
 
   function updateFilter(filter)
@@ -532,7 +494,7 @@
           }
 
           recommendationsMap[subscription.url] = recommendation;
-          updateSubscription(subscription);
+          addSubscription(subscription);
         }
       });
   }
@@ -875,7 +837,7 @@
     function(url)
     {
       acceptableAdsUrl = url;
-      updateSubscription({
+      addSubscription({
         url: acceptableAdsUrl,
         disabled: true
       });
@@ -965,44 +927,45 @@
   {
     switch (action)
     {
-      case "added":
-        updateSubscription(subscription);
-        updateShareLink();
-
-        var knownSubscription = subscriptionsMap[subscription.url];
-        if (knownSubscription)
-          collections.filterLists.addItems(knownSubscription);
-        else
-          collections.filterLists.addItems(subscription);
-        break;
       case "disabled":
+        subscription = updateSubscription(subscription);
+        updateLanguageCollections(subscription);
+        break;
+      case "downloading":
+      case "downloadStatus":
+      case "homepage":
+      case "lastDownload":
+      case "title":
         updateSubscription(subscription);
-        updateShareLink();
+        break;
+      case "added":
+        if (subscription.url in subscriptionsMap)
+          subscription = updateSubscription(subscription);
+        else
+          addSubscription(subscription);
+
+        collections.filterLists.addItems(subscription);
+        updateLanguageCollections(subscription);
         break;
       case "removed":
         var knownSubscription = subscriptionsMap[subscription.url];
-        if (subscription.url == acceptableAdsUrl)
+
+        if (subscription.url == acceptableAdsUrl ||
+            subscription.url in recommendationsMap)
         {
           subscription.disabled = true;
-          updateSubscription(subscription);
+          onSubscriptionMessage("disabled", subscription);
         }
         else
         {
-          if (subscription.url in recommendationsMap)
-            knownSubscription.disabled = true;
-          else
-          {
-            collections.custom.removeItem(knownSubscription);
-            delete subscriptionsMap[subscription.url];
-          }
+          collections.custom.removeItem(knownSubscription);
+          delete subscriptionsMap[subscription.url];
         }
-        updateShareLink();
         collections.filterLists.removeItem(knownSubscription);
         break;
-      default:
-        updateSubscription(subscription);
-        break;
     }
+
+    updateShareLink();
   }
 
   function hidePref(key, value)
