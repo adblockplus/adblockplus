@@ -83,17 +83,9 @@
               <div id="blocking-languages">
                 <div class="option-name">
                   <span class="i18n_options_language_title"></span>
-                  <div class="tooltip">
-                    <span class="i18n_options_readMore"></span>
-                    <div role="tooltip">
-                      <img src="skin/tooltips/block.png" alt="" />
-                      <p class="i18n_options_language_title_tooltip"></p>
-                      <div class="notes">
-                        <p class="i18n_options_language_title_tooltip_notes_1"></p>
-                        <p class="i18n_options_language_title_tooltip_notes_2"></p>
-                      </div>
-                    </div>
-                  </div>
+                  <span class="i18n_options_readMore"
+                      data-tooltip="options_language_title_tooltip"
+                      data-tooltip-image="skin/tooltips/block.png"></span>
                 </div>
                 <ul id="blocking-languages-table" class="table list">
                   <template>
@@ -110,20 +102,21 @@
               </div>
               <div id="further-blocking">
                 <div class="option-name">
-                  <strong class="i18n_options_furtherBlocking_title"></strong>
-                  <div class="tooltip">
-                    <span class="i18n_options_readMore"></span>
-                    <div role="tooltip" class="flip-vertical">
-                      <img src="skin/tooltips/more.png" alt="" />
-                      <p class="i18n_options_furtherBlocking_title_tooltip"></p>
-                    </div>
-                  </div>
+                  <strong class="i18n_options_more_title"></strong>
+                  <span class="i18n_options_readMore"
+                      data-tooltip="options_more_title_tooltip"
+                      data-tooltip-image="skin/tooltips/more.png"
+                      data-tooltip-flip="horizontal"></span>
                 </div>
                 <div id="custom-wrapper">
                   <ul id="recommend-list-table" class="table list">
                     <template>
                       <button role="checkbox" class="control"></button>
-                      <label class="display"></label>
+                      <div class="fill">
+                        <label class="display"
+                            data-tooltip="options_more_%value%_tooltip"
+                            data-tooltip-native></label>
+                      </div>
                       <span class="i18n_options_popular popular"></span>
                     </template>
                   </ul>
@@ -137,7 +130,7 @@
                 <div class="controls">
                   <button data-action="open-dialog" data-dialog="custom">
                     <span class="icon icon-add"></span>
-                    <span class="i18n_options_furtherBlocking_add"><span>
+                    <span class="i18n_options_more_add"><span>
                   </button>
                 </div>
               </div>
@@ -149,15 +142,9 @@
               <div id="acceptable-ads">
                 <div class="option-name">
                   <strong class="i18n_options_acceptableAds_title"></strong>
-                  <div class="tooltip">
-                    <span class="i18n_options_readMore"></span>
-                    <div role="tooltip">
-                      <img src="skin/tooltips/acceptable-ads.png" alt="" />
-                      <p class="i18n_options_acceptableAds_title_tooltip_1"></p>
-                      <p class="i18n_options_acceptableAds_title_tooltip_2"></p>
-                      <p class="i18n_options_acceptableAds_title_tooltip_3"></p>
-                    </div>
-                  </div>
+                  <span class="i18n_options_readMore"
+                      data-tooltip="options_acceptableAds_title_tooltip"
+                      data-tooltip-image="skin/tooltips/acceptable-ads.png"></span>
                 </div>
                 <ul id="acceptableads-table" class="table list">
                   <template>
@@ -169,17 +156,10 @@
               <div id="whitelisting">
                 <div class="option-name">
                   <strong class="i18n_options_whitelisted_title"></strong>
-                  <div class="tooltip">
-                    <span class="i18n_options_readMore"></span>
-                    <div role="tooltip" class="flip-vertical">
-                      <img src="skin/tooltips/whitelisted.png" alt="" />
-                      <p class="i18n_options_whitelisted_title_tooltip_1"></p>
-                      <p class="i18n_options_whitelisted_title_tooltip_2"></p>
-                      <div class="notes">
-                        <p class="i18n_options_whitelisted_title_tooltip_notes"></p>
-                      </div>
-                    </div>
-                  </div>
+                  <span class="i18n_options_readMore"
+                      data-tooltip="options_whitelisted_title_tooltip"
+                      data-tooltip-image="skin/tooltips/whitelisted.png"
+                      data-tooltip-flip="horizontal"></span>
                 </div>
                 <ul id="whitelisting-table" class="table list">
                   <template>
@@ -246,16 +226,8 @@
           <div>
             <h1>
               <span class="i18n_options_filterList_title"></span>
-              <div class="tooltip">
-                <span class="i18n_options_readMore"></span>
-                <div role="tooltip">
-                  <p class="i18n_options_filterList_title_tooltip"></p>
-                  <div class="notes">
-                    <p class="i18n_options_filterList_title_tooltip_notes_1"></p>
-                    <p class="i18n_options_filterList_title_tooltip_notes_2"></p>
-                  </div>
-                </div>
-              </div>
+              <span class="i18n_options_readMore"
+                  data-tooltip="options_filterList_title_tooltip"></span>
             </h1>
             <ul class="tabs horizontal">
               <li class="i18n_options_tab_overview active" data-action="switch-tab" data-tab="advanced-allFilterLists"></li>
@@ -311,12 +283,8 @@
               <div id="custom-filters">
                 <h2 id="custom-filters-header">
                   <span class="i18n_options_customFilters_title"></span>
-                  <div class="tooltip">
-                    <span class="i18n_options_readMore"></span>
-                    <div role="tooltip">
-                      <p class="i18n_options_customFilters_title_tooltip"></p>
-                    </div>
-                  </div>
+                  <span class="i18n_options_readMore"
+                    data-tooltip="options_customFilters_title_tooltip"></span>
                 </h2>
                 <div id="custom-filters-wrapper">
                   <div id="custom-filters-list-wrapper">

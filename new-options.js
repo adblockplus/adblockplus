@@ -20,7 +20,6 @@
 (function()
 {
   var subscriptionsMap = Object.create(null);
-  var recommendationsMap = Object.create(null);
   var filtersMap = Object.create(null);
   var collections = Object.create(null);
   var acceptableAdsUrl = null;
@@ -108,6 +107,12 @@
         var labelId = "label-" + (++maxLabelId);
         var label = listItem.querySelector(".display");
         label.setAttribute("id", labelId);
+        if (item.recommended && label.hasAttribute("data-tooltip"))
+        {
+          var tooltipId = label.getAttribute("data-tooltip");
+          tooltipId = tooltipId.replace("%value%", item.recommended);
+          label.setAttribute("data-tooltip", tooltipId);
+        }
 
         var control = listItem.querySelector(".control");
         if (control)
@@ -388,9 +393,7 @@
 
   function updateLanguageCollections(subscription)
   {
-    var recommendation = recommendationsMap[subscription.url];
-
-    if (recommendation && recommendation.type == "ads")
+    if (subscription.recommended == "ads")
     {
       if (subscription.disabled)
       {
@@ -408,10 +411,9 @@
   function addSubscription(subscription)
   {
     var collection;
-    if (subscription.url in recommendationsMap)
+    if (subscription.recommended)
     {
-      var recommendation = recommendationsMap[subscription.url];
-      if (recommendation.type != "ads")
+      if (subscription.recommended != "ads")
         collection = collections.popular;
       else if (subscription.disabled == false)
         collection = collections.langs;
@@ -425,6 +427,7 @@
 
     collection.addItems(subscription);
     subscriptionsMap[subscription.url] = subscription;
+    updateTooltips();
   }
 
   function updateSubscription(subscription)
@@ -432,7 +435,7 @@
     var knownSubscription = subscriptionsMap[subscription.url];
     for (var property in subscription)
     {
-      if (property == "title" && subscription.url in recommendationsMap)
+      if (property == "title" && subscription.recommended)
         knownSubscription.originalTitle = subscription.title;
       else
         knownSubscription[property] = subscription[property];
@@ -473,14 +476,16 @@
         for (var i = 0; i < elements.length; i++)
         {
           var element = elements[i];
-          var subscription = Object.create(null);
-          subscription.originalTitle = element.getAttribute("title");
-          subscription.url = element.getAttribute("url");
-          subscription.disabled = null;
-          subscription.downloadStatus = null;
-          subscription.homepage = null;
-          var recommendation = Object.create(null);
-          recommendation.type = element.getAttribute("type");
+          var type = element.getAttribute("type");
+          var subscription = {
+            disabled: null,
+            downloadStatus: null,
+            homepage: null,
+            originalTitle: element.getAttribute("title"),
+            recommended: type,
+            url: element.getAttribute("url")
+          };
+
           var prefix = element.getAttribute("prefixes");
           if (prefix)
           {
@@ -489,11 +494,10 @@
           }
           else
           {
-            var type = recommendation.type.replace(/\W/g, "_");
+            type = type.replace(/\W/g, "_");
             subscription.title = getMessage("common_feature_" + type + "_title");
           }
 
-          recommendationsMap[subscription.url] = recommendation;
           addSubscription(subscription);
         }
       });
@@ -679,6 +683,7 @@
     });
 
     updateShareLink();
+    updateTooltips();
 
     // Initialize interactive UI elements
     document.body.addEventListener("click", onClick, false);
@@ -800,7 +805,6 @@
   {
     subscriptionsMap = Object.create(null);
     filtersMap = Object.create(null);
-    recommendationsMap = Object.create(null);
 
     // Empty collections and lists
     for (var property in collections)
@@ -950,8 +954,7 @@
       case "removed":
         var knownSubscription = subscriptionsMap[subscription.url];
 
-        if (subscription.url == acceptableAdsUrl ||
-            subscription.url in recommendationsMap)
+        if (subscription.url == acceptableAdsUrl || subscription.recommended)
         {
           subscription.disabled = true;
           onSubscriptionMessage("disabled", subscription);
@@ -1065,6 +1068,84 @@
 
     for (var i = 0; i < shareResources.length; i++)
       checkShareResource(shareResources[i], onResult);
+  }
+
+  function getMessages(id)
+  {
+    var messages = [];
+    for (var i = 1; true; i++)
+    {
+      var message = ext.i18n.getMessage(id + "_" + i);
+      if (!message)
+        break;
+
+      messages.push(message);
+    }
+    return messages;
+  }
+
+  function updateTooltips()
+  {
+    var anchors = document.querySelectorAll(":not(.tooltip) > [data-tooltip]");
+    for (var i = 0; i < anchors.length; i++)
+    {
+      var anchor = anchors[i];
+      var id = anchor.getAttribute("data-tooltip");
+
+      var wrapper = document.createElement("div");
+      wrapper.className = "tooltip";
+      anchor.parentNode.replaceChild(wrapper, anchor);
+      wrapper.appendChild(anchor);
+
+      var topTexts = getMessages(id);
+      var bottomTexts = getMessages(id + "_notes");
+
+      // We have to use native tooltips to avoid issues when attaching a tooltip
+      // to an element in a scrollable list or otherwise it might get cut off
+      if (anchor.hasAttribute("data-tooltip-native"))
+      {
+        var title = topTexts.concat(bottomTexts).join("\n\n");
+        anchor.setAttribute("title", title);
+        continue;
+      }
+
+      var tooltip = document.createElement("div");
+      tooltip.setAttribute("role", "tooltip");
+
+      var flip = anchor.getAttribute("data-tooltip-flip");
+      if (flip)
+        tooltip.className = "flip-" + flip;
+
+      var imageSource = anchor.getAttribute("data-tooltip-image");
+      if (imageSource)
+      {
+        var image = document.createElement("img");
+        image.src = imageSource;
+        image.alt = "";
+        tooltip.appendChild(image);
+      }
+
+      for (var j = 0; j < topTexts.length; j++)
+      {
+        var paragraph = document.createElement("p");
+        paragraph.innerHTML = topTexts[j];
+        tooltip.appendChild(paragraph);
+      }
+      if (bottomTexts.length > 0)
+      {
+        var notes = document.createElement("div");
+        notes.className = "notes";
+        for (var j = 0; j < bottomTexts.length; j++)
+        {
+          var paragraph = document.createElement("p");
+          paragraph.innerHTML = bottomTexts[j];
+          notes.appendChild(paragraph);
+        }
+        tooltip.appendChild(notes);
+      }
+
+      wrapper.appendChild(tooltip);
+    }
   }
 
   ext.onMessage.addListener(function(message)

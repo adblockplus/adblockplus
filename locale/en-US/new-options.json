@@ -47,7 +47,7 @@
     "description": "Ad blocking list option name in General tab",
     "message": "<strong>Adblocking</strong> for websites in..."
   },
-  "options_language_title_tooltip": {
+  "options_language_title_tooltip_1": {
     "description": "Top part of tooltip description for 'Adblocking' section in General tab",
     "message": "The default filter list is based on your browser's language settings. If you live in Germany, your default filter list is German+English. However, if you live in Germany and frequently visit Italian websites, you need to subscribe to the Italian filter list. To maintain optimal performance, it is recommended to select only the language that you need."
   },
@@ -63,11 +63,11 @@
     "description": "Add other language button in General Tab",
     "message": "add other website languages"
   },
-  "options_furtherBlocking_title": {
+  "options_more_title": {
     "description": "Blocking list option name in General tab",
-    "message": "Further blocking options"
+    "message": "More blocking options"
   },
-  "options_furtherBlocking_title_tooltip": {
+  "options_more_title_tooltip_1": {
     "description": "Tooltip description for 'More blocking options' section in General tab",
     "message": "By default, Adblock Plus blocks all annoying ads, including video ads, animated ads, noisy ads, flashy banners, pop-ups, pop-unders and much more. In addition to ads, Adblock Plus can also block tracking, malware, social media buttons and more to increase your safety and privacy online."
   },
@@ -75,9 +75,33 @@
     "description": "Popular label in further blocking options table",
     "message": "popular"
   },
-  "options_furtherBlocking_add": {
+  "options_more_add": {
     "description": "Button name for adding other filter list in General tab",
     "message": "add other filter list"
+  },
+  "options_more_anti-adblock_tooltip_1": {
+    "message": "The Adblock Warning Removal List removes obtrusive messages and warnings targeted to users who use an adblocker."
+  },
+  "options_more_malware_tooltip_1": {
+    "message": "Increase your protection against malware, viruses, Trojan horses, worms, spyware, adware and more."
+  },
+  "options_more_malware_tooltip_2": {
+    "message": "If your computer is slow at startup or riddled with pop-ups, it may be infected with malware. Computers infected with malware are vulnerable to all kinds of cyber attacks, including stolen identity. Infected computers can also be used to send spam emails or attack other computers or servers, stealing passwords, social security numbers, personal documents and credit card information."
+  },
+  "options_more_privacy_tooltip_1": {
+    "message": "Adblock Plus can disable tracking (e.g. from ad agencies) to further protect your privacy on the web."
+  },
+  "options_more_privacy_tooltip_2": {
+    "message": "Companies such as ad agencies are tracking your online activity and browsing history every time you surf the web. According to Stanford University research, Adblock Plus is the most efficient solution available against third-party tracking companies."
+  },
+  "options_more_privacy_tooltip_notes_1": {
+    "message": "Note that this feature may conflict with Acceptable Ads, which allows some nonintrusive ads to be displayed, as well as the tracking that is needed to measure the performance of those ads. This is necessary because some websites only earn revenue from ads if their impact can be measured."
+  },
+  "options_more_social_tooltip_1": {
+    "message": "Adblock Plus can disable social media buttons on websites, ensuring that social networks can’t create a profile based on the websites you visit."
+  },
+  "options_more_social_tooltip_2": {
+    "message": "Buttons used to share content on social media platforms such as Facebook, Twitter, Google Plus and others are placed on almost every website that you visit. Even if you don't click them, these buttons send requests to the servers of the social network which use information to create a profile based on your browsing habits."
   },
   "options_exceptions_title": {
     "description": "Exceptions section name in General tab",
@@ -123,7 +147,7 @@
     "description": "Second top part of tooltip description for 'Whitelisted domains' section in General tab",
     "message": "This means that Adblock Plus is completely deactivated on the whitelisted site. Ads and other annoyances, such as tracking scripts, may be activated."
   },
-  "options_whitelisted_title_tooltip_notes": {
+  "options_whitelisted_title_tooltip_notes_1": {
     "description": "Bottom part of tooltip description for 'Whitelisted domains' section in General tab",
     "message": "Note that this feature is different from whitelisted Acceptable Ads."
   },
@@ -163,7 +187,7 @@
     "description": "Section title in Advanced tab",
     "message": "Filter lists"
   },
-  "options_filterList_title_tooltip": {
+  "options_filterList_title_tooltip_1": {
     "description": "First top part of tooltip description for 'Filter lists' section in Advanced tab",
     "message": "You can create or add filter lists here."
   },
@@ -251,7 +275,7 @@
     "description": "Custom filters option name in Advanced tab",
     "message": "Filter rules"
   },
-  "options_customFilters_title_tooltip": {
+  "options_customFilters_title_tooltip_1": {
     "description": "Text of tooltip description for 'Filter rules' section in Advanced tab",
     "message": "Learn how to write your own filter rules to define elements that should be blocked. See tutorials and the syntax description at <strong>adblockplus.org/filters</strong>"
   },

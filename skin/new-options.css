@@ -371,7 +371,8 @@ div.button
   border-bottom: 1px solid #CDCDCD;
 }
 
-.table.list li .display
+.table.list li .display,
+.fill
 {
   flex: 1;
   line-height: 16px;
@@ -950,8 +951,8 @@ div[role="tooltip"]
   z-index: 1;
 }
 
-html[dir="ltr"] div[role="tooltip"].flip-vertical,
-html[dir="rtl"] div[role="tooltip"]:not(.flip-vertical)
+html[dir="ltr"] div[role="tooltip"].flip-horizontal,
+html[dir="rtl"] div[role="tooltip"]:not(.flip-horizontal)
 {
   left: inherit;
   right: -20px;
@@ -1068,8 +1069,8 @@ div.context-menu > div a:last-child
   background-position: -71px -34px;
 }
 
-html[dir="ltr"] div[role="tooltip"].flip-vertical::before,
-html[dir="rtl"] div[role="tooltip"]:not(.flip-vertical)::before
+html[dir="ltr"] div[role="tooltip"].flip-horizontal::before,
+html[dir="rtl"] div[role="tooltip"]:not(.flip-horizontal)::before
 {
   left: inherit;
   right: 30px;
