@@ -89,8 +89,9 @@
                 </div>
                 <ul id="blocking-languages-table" class="table list">
                   <template>
-                    <button role="checkbox" class="control"></button>
+                    <button data-action="toggle-disable-subscription" role="checkbox" class="control" title="options_control_toggle_title"></button>
                     <label class="display"></label>
+                    <button data-action="remove-subscription" class="delete control" title="options_control_remove_title"></button>
                   </template>
                 </ul>
                 <div class="controls">
@@ -111,19 +112,19 @@
                 <div id="custom-wrapper">
                   <ul id="recommend-list-table" class="table list">
                     <template>
-                      <button role="checkbox" class="control"></button>
+                      <button data-action="toggle-remove-subscription" role="checkbox" class="control"></button>
                       <div class="fill">
                         <label class="display"
                             data-tooltip="options_more_%value%_tooltip"
                             data-tooltip-native></label>
                       </div>
-                      <span class="i18n_options_popular popular"></span>
                     </template>
                   </ul>
                   <ul id="custom-list-table" class="table list">
                     <template>
-                      <button role="checkbox" class="control"></button>
+                      <button data-action="toggle-disable-subscription" role="checkbox" class="control" title="options_control_toggle_title"></button>
                       <label class="display"></label>
+                      <button data-action="remove-subscription" class="delete control" title="options_control_remove_title"></button>
                     </template>
                   </ul>
                 </div>
@@ -148,7 +149,7 @@
                 </div>
                 <ul id="acceptableads-table" class="table list">
                   <template>
-                    <button role="checkbox" class="control"></button>
+                    <button data-action="toggle-remove-subscription" role="checkbox" class="control"></button>
                     <label class="display"></label>
                   </template>
                 </ul>
@@ -163,8 +164,8 @@
                 </div>
                 <ul id="whitelisting-table" class="table list">
                   <template>
-                    <button class="delete control"></button>
                     <label class="display"></label>
+                    <button data-action="remove-filter" class="delete control" title="options_control_remove_title"></button>
                   </template>
                 </ul>
                 <div class="controls">
@@ -241,7 +242,7 @@
                 </div>
                 <ul class="table cols" id="all-filter-lists-table">
                   <template>
-                    <button role="checkbox" class="control"></button>
+                    <button data-action="toggle-disable-subscription" role="checkbox" class="control"></button>
                     <div>
                       <label data-action="open-context-menu" class="display"></label>
                       <div data-action="open-context-menu" class="arrow">
@@ -372,7 +373,7 @@
             </div>
             <ul id="all-lang-table" class="table list">
               <template>
-                <button class="button-add control">
+                <button data-action="add-language-subscription" class="button-add control">
                   +<span class="i18n_options_button_add"></span>
                 </button>
                 <label class="display"></label>

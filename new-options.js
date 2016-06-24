@@ -23,7 +23,6 @@
   var filtersMap = Object.create(null);
   var collections = Object.create(null);
   var acceptableAdsUrl = null;
-  var maxLabelId = 0;
   var getMessage = ext.i18n.getMessage;
   var filterErrors =
   {
@@ -102,11 +101,11 @@
         var item = arguments[i];
         var listItem = document.createElement("li");
         listItem.appendChild(document.importNode(template.content, true));
+        listItem.setAttribute("aria-label", this._getItemTitle(item, j));
         listItem.setAttribute("data-access", item.url || item.text);
+        listItem.setAttribute("role", "section");
 
-        var labelId = "label-" + (++maxLabelId);
         var label = listItem.querySelector(".display");
-        label.setAttribute("id", labelId);
         if (item.recommended && label.hasAttribute("data-tooltip"))
         {
           var tooltipId = label.getAttribute("data-tooltip");
@@ -114,18 +113,13 @@
           label.setAttribute("data-tooltip", tooltipId);
         }
 
-        var control = listItem.querySelector(".control");
-        if (control)
+        var controls = listItem.querySelectorAll(".control");
+        for (var k = 0; k < controls.length; k++)
         {
-          control.setAttribute("aria-labelledby", labelId);
-          control.addEventListener("click", this.details[j].onClick, false);
-
-          var role = control.getAttribute("role");
-          if (role == "checkbox" && !label.hasAttribute("data-action"))
+          if (controls[k].hasAttribute("title"))
           {
-            var controlId = "control-" + maxLabelId;
-            control.setAttribute("id", controlId);
-            label.setAttribute("for", controlId);
+            var titleValue = getMessage(controls[k].getAttribute("title"));
+            controls[k].setAttribute("title", titleValue)
           }
         }
 
@@ -194,14 +188,14 @@
 
       var title = this._getItemTitle(item, i);
       element.querySelector(".display").textContent = title;
-      if (title)
+      element.setAttribute("aria-label", title);
+      if (this.details[i].searchable)
         element.setAttribute("data-search", title.toLowerCase());
       var control = element.querySelector(".control[role='checkbox']");
       if (control)
       {
         control.setAttribute("aria-checked", item.disabled == false);
-        if (item.url == acceptableAdsUrl && this.details[i].onClick ==
-                                            toggleDisableSubscription)
+        if (item.url == acceptableAdsUrl && this == collections.filterLists)
           control.setAttribute("disabled", true);
       }
 
@@ -282,63 +276,17 @@
     return true;
   }
 
-  function toggleRemoveSubscription(e)
-  {
-    e.preventDefault();
-    var subscriptionUrl = findParentData(e.target, "access", false);
-    if (e.target.getAttribute("aria-checked") == "true")
-    {
-      ext.backgroundPage.sendMessage({
-        type: "subscriptions.remove",
-        url: subscriptionUrl
-      });
-    }
-    else
-      addEnableSubscription(subscriptionUrl);
-  }
-
-  function toggleDisableSubscription(e)
-  {
-    e.preventDefault();
-    var subscriptionUrl = findParentData(e.target, "access", false);
-    ext.backgroundPage.sendMessage(
-    {
-      type: "subscriptions.toggle",
-      keepInstalled: true,
-      url: subscriptionUrl
-    });
-  }
-
-  function onAddLanguageSubscriptionClick(e)
-  {
-    e.preventDefault();
-    var url = findParentData(this, "access", false);
-    addEnableSubscription(url);
-  }
-
-  function onRemoveFilterClick()
-  {
-    var filter = findParentData(this, "access", false);
-    ext.backgroundPage.sendMessage(
-    {
-      type: "filters.remove",
-      text: filter
-    });
-  }
-
   collections.popular = new Collection(
   [
     {
-      id: "recommend-list-table",
-      onClick: toggleRemoveSubscription
+      id: "recommend-list-table"
     }
   ]);
   collections.langs = new Collection(
   [
     {
       id: "blocking-languages-table",
-      emptyText: "options_dialog_language_added_empty",
-      onClick: toggleRemoveSubscription
+      emptyText: "options_dialog_language_added_empty"
     },
     {
       id: "blocking-languages-dialog-table",
@@ -350,29 +298,26 @@
     {
       id: "all-lang-table",
       emptyText: "options_dialog_language_other_empty",
-      onClick: onAddLanguageSubscriptionClick
+      searchable: true
     }
   ]);
   collections.acceptableAds = new Collection(
   [
     {
-      id: "acceptableads-table",
-      onClick: toggleRemoveSubscription
+      id: "acceptableads-table"
     }
   ]);
   collections.custom = new Collection(
   [
     {
-      id: "custom-list-table",
-      onClick: toggleRemoveSubscription
+      id: "custom-list-table"
     }
   ]);
   collections.whitelist = new Collection(
   [
     {
       id: "whitelisting-table",
-      emptyText: "options_whitelisted_empty",
-      onClick: onRemoveFilterClick
+      emptyText: "options_whitelisted_empty"
     }
   ]);
   collections.customFilters = new Collection(
@@ -386,7 +331,6 @@
   [
     {
       id: "all-filter-lists-table",
-      onClick: toggleDisableSubscription,
       useOriginalTitle: true
     }
   ]);
@@ -631,6 +575,36 @@
           {
             type: "subscriptions.remove",
             url: findParentData(element, "access", false)
+          });
+          break;
+        case "toggle-remove-subscription":
+          var subscriptionUrl = findParentData(element, "access", false);
+          if (element.getAttribute("aria-checked") == "true")
+          {
+            ext.backgroundPage.sendMessage({
+              type: "subscriptions.remove",
+              url: subscriptionUrl
+            });
+          }
+          else
+            addEnableSubscription(subscriptionUrl);
+          break;
+        case "toggle-disable-subscription":
+          ext.backgroundPage.sendMessage(
+          {
+            type: "subscriptions.toggle",
+            keepInstalled: true,
+            url: findParentData(element, "access", false)
+          });
+          break;
+        case "add-language-subscription":
+          addEnableSubscription(findParentData(element, "access", false));
+          break;
+        case "remove-filter":
+          ext.backgroundPage.sendMessage(
+          {
+            type: "filters.remove",
+            text: findParentData(element, "access", false)
           });
           break;
       }
@@ -953,7 +927,6 @@
         break;
       case "removed":
         var knownSubscription = subscriptionsMap[subscription.url];
-
         if (subscription.url == acceptableAdsUrl || subscription.recommended)
         {
           subscription.disabled = true;

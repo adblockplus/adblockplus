@@ -35,6 +35,14 @@
     "description": "Button in navigation sidebar to support Adblock Plus",
     "message": "Support us"
   },
+  "options_control_toggle_title": {
+    "description": "Title of toggle controls",
+    "message": "toggle"
+  },
+  "options_control_remove_title": {
+    "description": "Title of remove controls",
+    "message": "remove"
+  },
   "options_readMore": {
     "description": "Read more element that shows tooltip with description",
     "message": "read more"
@@ -70,10 +78,6 @@
   "options_more_title_tooltip_1": {
     "description": "Tooltip description for 'More blocking options' section in General tab",
     "message": "By default, Adblock Plus blocks all annoying ads, including video ads, animated ads, noisy ads, flashy banners, pop-ups, pop-unders and much more. In addition to ads, Adblock Plus can also block tracking, malware, social media buttons and more to increase your safety and privacy online."
-  },
-  "options_popular": {
-    "description": "Popular label in further blocking options table",
-    "message": "popular"
   },
   "options_more_add": {
     "description": "Button name for adding other filter list in General tab",

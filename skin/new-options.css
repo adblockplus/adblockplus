@@ -102,7 +102,6 @@ textarea
 
 button[role="checkbox"]
 {
-  vertical-align: top;
   width: 18px;
   height: 18px;
   margin-top: 0px;
@@ -359,9 +358,8 @@ div.button
 .table li
 {
   display: flex;
-  padding: 12px 0px;
-  -webkit-padding-start: 16px;
-  -moz-padding-start: 16px;
+  align-items: center;
+  padding: 12px 16px;
   border-radius: 3px;
 }
 
@@ -414,20 +412,17 @@ button[disabled="true"]
 .table button.delete
 {
   background-color: transparent;
-  background-position: -10px -33px;
+  background-position: -50px -51px;
   border: 0px;
-  margin-top: 5px;
-  -moz-margin-end: 20px;
-  -webkit-margin-end: 20px;
+  height: 10px;
   padding: 0px;
+  cursor: pointer;
+  width: 10px;
 }
 
-.table .popular
+.table button.delete:hover
 {
-  color: #1E8728;
-  font-size: 12px;
-  -moz-padding-end: 12px;
-  -webkit-padding-end: 12px;
+  background-position: -61px -51px;
 }
 
 .tabs.horizontal
@@ -506,8 +501,7 @@ button[role="checkbox"],
 }
 
 .icon-enter,
-#custom-filters-add button::after,
-.table button.delete
+#custom-filters-add button::after
 {
   height: 8px;
   width: 8px;
@@ -703,10 +697,9 @@ body[data-tab="advanced-customFilters"] #content-advanced [data-tab="advanced-cu
   font-weight: 600;
 }
 
-#all-filter-lists .table li
+#all-filter-lists .table
 {
-  padding-left: 16px;
-  padding-right: 16px;
+  display: inline-block;
 }
 
 #all-filter-lists .table li > div
