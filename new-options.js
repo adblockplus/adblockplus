@@ -470,6 +470,22 @@
     });
   }
 
+  function openDocLink(id)
+  {
+    getDocLink(id, function(link)
+    {
+      if (id == "share-general")
+        openSharePopup(link);
+      else
+        location.href = link;
+    });
+  }
+
+  function switchTab(id)
+  {
+    location.hash = id;
+  }
+
   function onClick(e)
   {
     var context = document.querySelector(".show-context-menu");
@@ -488,6 +504,7 @@
       element = element.parentElement;
     }
 
+    var element = findParentData(e.target, "action", true);
     var actions = element.getAttribute("data-action").split(",");
     for (var i = 0; i < actions.length; i++)
     {
@@ -527,7 +544,12 @@
           closeDialog();
           break;
         case "open-dialog":
-          openDialog(element.getAttribute("data-dialog"));
+          var dialog = findParentData(element, "dialog", false);
+          openDialog(dialog);
+          break;
+        case "open-doclink":
+          var doclink = findParentData(element, "doclink", false);
+          openDocLink(doclink);
           break;
         case "save-custom-filters":
           sendMessageHandleErrors(
@@ -542,8 +564,8 @@
           });
           break;
         case "switch-tab":
-          document.body.setAttribute("data-tab",
-            element.getAttribute("data-tab"));
+          var tabId = findParentData(e.target, "tab", false);
+          switchTab(tabId);
           break;
         case "toggle-pref":
           ext.backgroundPage.sendMessage(
@@ -611,6 +633,122 @@
     }
   }
 
+  function getKey(e)
+  {
+    // e.keyCode has been deprecated so we attempt to use e.key
+    if ("key" in e)
+      return e.key;
+    return getKey.keys[e.keyCode];
+  }
+  getKey.keys = {
+    9: "Tab",
+    13: "Enter",
+    27: "Escape",
+    37: "ArrowLeft",
+    38: "ArrowUp",
+    39: "ArrowRight",
+    40: "ArrowDown"
+  };
+
+  function onKeyUp(e)
+  {
+    var key = getKey(e);
+    var element = document.activeElement;
+    if (!key || !element)
+      return;
+
+    var container = findParentData(element, "action", true);
+    if (!container || !container.hasAttribute("data-keys"))
+      return;
+
+    var keys = container.getAttribute("data-keys").split(" ");
+    if (keys.indexOf(key) < 0)
+      return;
+
+    switch (container.getAttribute("data-action"))
+    {
+      case "add-domain-exception":
+        addWhitelistedDomain();
+        break;
+      case "open-doclink":
+        var doclink = findParentData(element, "doclink", false);
+        openDocLink(doclink);
+        break;
+      case "switch-tab":
+        if (key == "Enter")
+        {
+          var tabId = findParentData(element, "tab", false);
+          switchTab(tabId);
+        }
+        else if (element.hasAttribute("aria-selected"))
+        {
+          if (key == "ArrowLeft" || key == "ArrowUp")
+          {
+            element = element.previousElementSibling
+                || container.lastElementChild;
+          }
+          else if (key == "ArrowRight" || key == "ArrowDown")
+          {
+            element = element.nextElementSibling
+                || container.firstElementChild;
+          }
+
+          var tabId = findParentData(element, "tab", false);
+          switchTab(tabId);
+        }
+        break;
+    }
+  }
+
+  function selectTabItem(tabId, container, focus)
+  {
+    // Show tab content
+    document.body.setAttribute("data-tab", tabId);
+
+    // Select tab
+    var tabList = container.querySelector("[role='tablist']");
+    if (!tabList)
+      return null;
+
+    var previousTab = tabList.querySelector("[aria-selected]");
+    previousTab.removeAttribute("aria-selected");
+    previousTab.setAttribute("tabindex", -1);
+
+    var tab = tabList.querySelector("li[data-tab='" + tabId + "']");
+    tab.setAttribute("aria-selected", true);
+    tab.setAttribute("tabindex", 0);
+
+    var tabContentId = tab.getAttribute("aria-controls");
+    var tabContent = document.getElementById(tabContentId);
+
+    // Select sub tabs
+    if (tab.hasAttribute("data-subtab"))
+      selectTabItem(tab.getAttribute("data-subtab"), tabContent, false);
+
+    if (tab && focus)
+      tab.focus();
+
+    return tabContent;
+  }
+
+  function onHashChange()
+  {
+    var hash = location.hash.substr(1);
+    if (!hash)
+      return;
+
+    // Select tab and parent tabs
+    var tabIds = hash.split("-");
+    var tabContent = document.body;
+    for (var i = 0; i < tabIds.length; i++)
+    {
+      var tabId = tabIds.slice(0, i + 1).join("-");
+      tabContent = selectTabItem(tabId, tabContent, true);
+      if (!tabContent)
+        break;
+    }
+  }
+
   function onDOMLoaded()
   {
     populateLists();
@@ -622,19 +760,6 @@
       else
         searchStyle.innerHTML = "#all-lang-table li:not([data-search*=\"" + this.value.toLowerCase() + "\"]) { display: none; }";
     }
-
-    function getKey(e)
-    {
-      // e.keyCode has been deprecated so we attempt to use e.key
-      if ("key" in e)
-        return e.key;
-      return getKey.keys[e.keyCode];
-    }
-    getKey.keys = {
-      9: "Tab",
-      13: "Enter",
-      27: "Escape"
-    };
 
     // Initialize navigation sidebar
     ext.backgroundPage.sendMessage(
@@ -651,16 +776,12 @@
       E("link-version").setAttribute("href", link);
     });
 
-    getDocLink("contribute", function(link)
-    {
-      document.querySelector("#tab-contribute a").setAttribute("href", link);
-    });
-
     updateShareLink();
     updateTooltips();
 
     // Initialize interactive UI elements
     document.body.addEventListener("click", onClick, false);
+    document.body.addEventListener("keyup", onKeyUp, false);
     var placeholderValue  = getMessage("options_dialog_language_find");
     E("find-language").setAttribute("placeholder", placeholderValue);
     E("find-language").addEventListener("keyup", onFindLanguageKeyUp, false);
@@ -748,6 +869,8 @@
           break;
       }
     }, false);
+
+    onHashChange();
   }
 
   var focusedBeforeDialog = null;
@@ -1005,13 +1128,6 @@
       checkbox.setAttribute("aria-checked", value);
   }
 
-  function onShareLinkClick(e)
-  {
-    e.preventDefault();
-
-    getDocLink("share-general", openSharePopup);
-  }
-
   function updateShareLink()
   {
     var shareResources = [
@@ -1028,14 +1144,7 @@
       if (!--checksRemaining)
       {
         // Hide the share tab if a script on the share page would be blocked
-        var tab = E("tab-share");
-        if (isAnyBlocked)
-        {
-          tab.hidden = true;
-          tab.removeEventListener("click", onShareLinkClick, false);
-        }
-        else
-          tab.addEventListener("click", onShareLinkClick, false);
+        E("tab-share").hidden = isAnyBlocked;
       }
     }
 
@@ -1177,4 +1286,5 @@
   });
 
   window.addEventListener("DOMContentLoaded", onDOMLoaded, false);
+  window.addEventListener("hashchange", onHashChange, false);
 })();

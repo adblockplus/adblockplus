@@ -198,39 +198,43 @@ button[role="checkbox"][aria-checked="true"]
 
 .tabs.vertical li
 {
+  height: 46px;
+  margin-top: -1px;
+  -moz-margin-end: -1px;
+  -webkit-margin-end: -1px;
+  -moz-margin-start: -1px;
+  -webkit-margin-start: -1px;
   border-color: #CDCDCD transparent;
   border-style: solid;
   border-width: 1px;
   font-size: 16px;
   font-weight: 300;
   line-height: 1em;
-  margin-top: -1px;
-  padding: 14px 20px;
 }
 
-body[data-tab|="general"] #tab-general,
-body[data-tab|="advanced"] #tab-advanced,
-body[data-tab|="help"] #tab-help
+.tabs.vertical li a,
+.tabs.vertical li span,
+.tabs.vertical li::after
 {
-  background-color: #FFFFFF;
+  margin: auto 20px;
+}
+
+.tabs li[role="tab"]:focus
+{
+  outline: none;
+  text-shadow: 0px 0px 1px #888;
+}
+
+.tabs li[role="tab"][aria-selected]
+{
   border-radius: 3px 0px 0px 3px;
-  border-width: 1px;
-  font-weight: 600;
   -moz-border-start-color: #CDCDCD;
   -webkit-border-start-color: #CDCDCD;
-  -moz-margin-end: -1px;
-  -webkit-margin-end: -1px;
-  -moz-margin-start: -1px;
-  -webkit-margin-start: -1px;
-  -moz-padding-end: 21px;
-  -webkit-padding-end: 21px;
-  -moz-padding-start: 21px;
-  -webkit-padding-start: 21px;
+  font-weight: 600;
+  background-color: #FFF;
 }
 
-html[dir="rtl"] body[data-tab|="general"] #tab-general,
-html[dir="rtl"] body[data-tab|="advanced"] #tab-advanced,
-html[dir="rtl"] body[data-tab|="help"] #tab-help
+html[dir="rtl"] .tabs li[role="tab"][aria-selected]
 {
   border-radius: 0px 3px 3px 0px;
 }
@@ -251,33 +255,40 @@ html[dir="rtl"] body[data-tab|="help"] #tab-help
   border-bottom: none;
 }
 
-#nav-sidebar ul li .icon
+#nav-sidebar ul li span
 {
-  height: 14px;
-  width: 14px;
+  width: 100%;
 }
 
-#tab-general .icon
+#nav-sidebar ul li::after
+{
+  content: "";
+  min-width: 14px;
+  height: 14px;
+  background-image: url(options-sprite.png);
+}
+
+#tab-general::after
 {
   background-position: -16px -18px;
 }
 
-#tab-advanced .icon
+#tab-advanced::after
 {
   background-position: -46px -18px;
 }
 
-#tab-help .icon
+#tab-help::after
 {
   background-position: -1px -18px;
 }
 
-#tab-share .icon
+#tab-share::after
 {
   background-position: -61px -18px;
 }
 
-#tab-contribute .icon
+#tab-contribute::after
 {
   background-position: -31px -18px;
 }

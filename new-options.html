@@ -37,35 +37,41 @@
           <p class="i18n_options_page_header_1"></p>
           <h1 class="i18n_options_page_header_2"></h1>
         </header>
+
         <nav>
-          <ul class="tabs vertical">
-            <li id="tab-general" data-action="switch-tab" data-tab="general" class="active">
-              <a class="i18n_options_tab_general"></a>
-              <span class="icon"></span>
+          <ul id="nav-tablist" class="tabs vertical"
+              role="tablist" data-action="switch-tab"
+              data-keys="ArrowLeft ArrowUp ArrowRight ArrowDown">
+            <li id="tab-general" role="tab" data-tab="general"
+                aria-selected="true" aria-controls="content-general"
+                tabindex="0">
+              <span class="i18n_options_tab_general"></span>
             </li>
-            <li id="tab-advanced" data-action="switch-tab" data-tab="advanced-allFilterLists">
-              <a class="i18n_options_tab_advanced"></a>
-              <span class="icon"></span>
+            <li id="tab-advanced" role="tab" data-tab="advanced"
+                data-subtab="advanced-allFilterLists"
+                aria-controls="content-advanced" tabindex="-1">
+              <span class="i18n_options_tab_advanced"></span>
             </li>
-            <li id="tab-help" data-action="switch-tab" data-tab="help">
-              <a class="i18n_options_tab_help"></a>
-              <span class="icon"></span>
+            <li id="tab-help" role="tab" data-tab="help"
+                aria-controls="content-help" tabindex="-1">
+              <span class="i18n_options_tab_help"></span>
             </li>
           </ul>
         </nav>
+
         <a id="link-version">
           <span class="i18n_options_version"></span>
           <span id="abp-version"></span>
         </a>
+
         <footer>
-          <ul class="tabs vertical bottom">
-            <li id="tab-share">
-              <a class="i18n_options_tab_share"></a>
-              <span class="icon"></span>
+          <ul class="tabs vertical bottom" data-action="open-doclink"
+              data-keys="Enter">
+            <li id="tab-share" data-doclink="share-general" tabindex="0">
+              <span class="i18n_options_tab_share"></span>
             </li>
-            <li id="tab-contribute">
-              <a class="i18n_options_tab_contribute"></a>
-              <span class="icon"></span>
+            <li id="tab-contribute" data-doclink="contribute" tabindex="0">
+              <span class="i18n_options_tab_contribute"></span>
             </li>
           </ul>
         </footer>
@@ -76,7 +82,7 @@
         <div id="dialog-background"></div>
 
         <!-- General tab content -->
-        <div id="content-general" class="tab-content">
+        <div id="content-general" role="tabpanel" aria-labelledby="tab-general">
           <div>
             <h1 class="i18n_options_blocking_title"></h1>
             <div class="hbox">
@@ -192,7 +198,8 @@
         </div>
 
         <!-- Advanced tab content -->
-        <div id="content-advanced" class="tab-content">
+        <div id="content-advanced" role="tabpanel"
+            aria-labelledby="tab-advanced">
           <div>
             <h1 class="i18n_options_tweaks_title"></h1>
             <ul id="tweaks" class="table">
@@ -230,12 +237,20 @@
               <span class="i18n_options_readMore"
                   data-tooltip="options_filterList_title_tooltip"></span>
             </h1>
-            <ul class="tabs horizontal">
-              <li class="i18n_options_tab_overview active" data-action="switch-tab" data-tab="advanced-allFilterLists"></li>
-              <li class="i18n_options_tab_ownList" data-action="switch-tab" data-tab="advanced-customFilters"></li>
+            <ul class="tabs horizontal" role="tablist" data-action="switch-tab"
+                data-keys="ArrowLeft ArrowUp ArrowRight ArrowDown">
+              <li id="tab-allFilterLists"
+                  class="i18n_options_tab_overview active"
+                  role="tab" data-tab="advanced-allFilterLists"
+                  aria-selected="true" aria-controls="all-filter-lists"
+                  tabindex="0"></li>
+              <li id="tab-customFilters" class="i18n_options_tab_ownList"
+                  role="tab" data-tab="advanced-customFilters"
+                  aria-controls="custom-filters" tabindex="-1"></li>
             </ul>
             <div id="filter-lists">
-              <div id="all-filter-lists">
+              <div id="all-filter-lists" role="tabpanel"
+                  aria-labelledby="tab-allFilterLists">
                 <div class="table-header">
                   <h2 class="i18n_options_column_name"></h2>
                   <h2 class="i18n_options_column_date"></h2>
@@ -281,7 +296,8 @@
                   </button>
                 </div>
               </div>
-              <div id="custom-filters">
+              <div id="custom-filters" role="tabpanel"
+                  aria-labelledby="tab-customFilters">
                 <h2 id="custom-filters-header">
                   <span class="i18n_options_customFilters_title"></span>
                   <span class="i18n_options_readMore"
@@ -323,7 +339,7 @@
         </div>
 
         <!-- Help tab content -->
-        <div id="content-help" class="tab-content">
+        <div id="content-help" role="tabpanel" aria-labelledby="tab-help">
           <h1 class="i18n_options_faq_title"></h1>
           <p class="i18n_options_faq_description"></p>
           <p>
