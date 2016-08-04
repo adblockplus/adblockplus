@@ -66,7 +66,6 @@
 
   var params = {
     blockedURLs: "",
-    seenDataCorruption: false,
     filterlistsReinitialized: false,
     addSubscription: false,
     filterError: false,
@@ -336,6 +335,10 @@
   };
   updateFromURL(modules.info);
 
+  modules.subscriptionInit = {
+    reinitialized: params.filterlistsReinitialized
+  };
+
   global.Services = {
     vc: {
       compare: function(v1, v2)
@@ -379,9 +382,6 @@
   for (var subscriptionUrl of subscriptions)
     knownSubscriptions[subscriptionUrl] = modules.subscriptionClasses.Subscription.fromURL(subscriptionUrl);
   var customSubscription = knownSubscriptions["~user~786254"];
-
-  global.seenDataCorruption = params.seenDataCorruption;
-  global.filterlistsReinitialized = params.filterlistsReinitialized;
 
   if (params.addSubscription)
   {
