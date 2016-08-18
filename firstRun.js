@@ -19,28 +19,6 @@
 
 (function()
 {
-  // Load subscriptions for features
-  var featureSubscriptions = [
-    {
-      feature: "malware",
-      homepage: "http://malwaredomains.com/",
-      title: "Malware Domains",
-      url: "https://easylist-downloads.adblockplus.org/malwaredomains_full.txt"
-    },
-    {
-      feature: "social",
-      homepage: "https://www.fanboy.co.nz/",
-      title: "Fanboy's Social Blocking List",
-      url: "https://easylist-downloads.adblockplus.org/fanboy-social.txt"
-    },
-    {
-      feature: "tracking",
-      homepage: "https://easylist.adblockplus.org/",
-      title: "EasyPrivacy",
-      url: "https://easylist-downloads.adblockplus.org/easyprivacy.txt"
-    }
-  ];
-
   function onDOMLoaded()
   {
     // Set up logo image
@@ -91,16 +69,12 @@
         E("legacySafariWarning").removeAttribute("hidden");
     });
 
-    // Set up feature buttons linked to subscriptions
-    featureSubscriptions.forEach(initToggleSubscriptionButton);
-    updateToggleButtons();
     updateSocialLinks();
 
     ext.onMessage.addListener(function(message)
     {
       if (message.type == "subscriptions.respond")
       {
-        updateToggleButtons();
         updateSocialLinks();
       }
     });
@@ -108,22 +82,6 @@
       type: "subscriptions.listen",
       filter: ["added", "removed", "updated", "disabled"]
     });
-  }
-
-  function initToggleSubscriptionButton(featureSubscription)
-  {
-    var feature = featureSubscription.feature;
-
-    var element = E("toggle-" + feature);
-    element.addEventListener("click", function(event)
-    {
-      ext.backgroundPage.sendMessage({
-        type: "subscriptions.toggle",
-        url: featureSubscription.url,
-        title: featureSubscription.title,
-        homepage: featureSubscription.homepage
-      });
-    }, false);
   }
 
   function updateSocialLinks()
@@ -184,34 +142,6 @@
   function openFilters()
   {
     ext.backgroundPage.sendMessage({type: "app.open", what: "options"});
-  }
-
-  function updateToggleButtons()
-  {
-    ext.backgroundPage.sendMessage({
-      type: "subscriptions.get",
-      downloadable: true,
-      ignoreDisabled: true
-    }, function(subscriptions)
-    {
-      var known = Object.create(null);
-      for (var i = 0; i < subscriptions.length; i++)
-        known[subscriptions[i].url] = true;
-      for (var i = 0; i < featureSubscriptions.length; i++)
-      {
-        var featureSubscription = featureSubscriptions[i];
-        updateToggleButton(featureSubscription.feature, featureSubscription.url in known);
-      }
-    });
-  }
-
-  function updateToggleButton(feature, isEnabled)
-  {
-    var button = E("toggle-" + feature);
-    if (isEnabled)
-      button.classList.remove("off");
-    else
-      button.classList.add("off");
   }
 
   document.addEventListener("DOMContentLoaded", onDOMLoaded, false);

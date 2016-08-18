@@ -23,27 +23,6 @@
   "firstRun_donate_label": {
     "message": "Support our project"
   },
-  "firstRun_feature_malware": {
-    "message": "Malware Blocking"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "Make your browsing more secure by blocking known malware domains."
-  },
-  "firstRun_feature_social": {
-    "message": "Remove Social Media Buttons"
-  },
-  "firstRun_feature_social_description": {
-    "message": "Automatically rid your browsing experience of social media buttons, such as the Facebook Like, which appear on web pages and track your behavior."
-  },
-  "firstRun_feature_tracking": {
-    "message": "Disable Tracking"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "Browse privately by disabling tracking - hiding your tracks from ad companies that would track your every move."
-  },
-  "firstRun_features": {
-    "message": "Adblock Plus can do more than block ads"
-  },
   "firstRun_filterlistsReinitializedWarning": {
     "message": "It seems that an issue caused all filters to be removed and we were unable to restore a backup. Therefore we had to reset your filters and Acceptable Ads settings. Please check your filter lists and Acceptable Ads settings in the <a>Adblock Plus options</a>."
   },
@@ -58,11 +37,5 @@
   },
   "firstRun_title": {
     "message": "Adblock Plus has been installed"
-  },
-  "firstRun_toggle_off": {
-    "message": "OFF"
-  },
-  "firstRun_toggle_on": {
-    "message": "ON"
   }
 }
