@@ -70,12 +70,12 @@
     return item.title || item.url || item.text;
   };
 
-  Collection.prototype.addItems = function()
+  Collection.prototype.addItem = function(item)
   {
-    var length = Array.prototype.push.apply(this.items, arguments);
-    if (length == 0)
+    if (this.items.indexOf(item) >= 0)
       return;
 
+    this.items.push(item);
     this.items.sort(function(a, b)
     {
       // Make sure that Acceptable Ads is always last, since it cannot be
@@ -96,43 +96,39 @@
     {
       var table = E(this.details[j].id);
       var template = table.querySelector("template");
-      for (var i = 0; i < arguments.length; i++)
+      var listItem = document.createElement("li");
+      listItem.appendChild(document.importNode(template.content, true));
+      listItem.setAttribute("aria-label", this._getItemTitle(item, j));
+      listItem.setAttribute("data-access", item.url || item.text);
+      listItem.setAttribute("role", "section");
+
+      var label = listItem.querySelector(".display");
+      if (item.recommended && label.hasAttribute("data-tooltip"))
       {
-        var item = arguments[i];
-        var listItem = document.createElement("li");
-        listItem.appendChild(document.importNode(template.content, true));
-        listItem.setAttribute("aria-label", this._getItemTitle(item, j));
-        listItem.setAttribute("data-access", item.url || item.text);
-        listItem.setAttribute("role", "section");
-
-        var label = listItem.querySelector(".display");
-        if (item.recommended && label.hasAttribute("data-tooltip"))
-        {
-          var tooltipId = label.getAttribute("data-tooltip");
-          tooltipId = tooltipId.replace("%value%", item.recommended);
-          label.setAttribute("data-tooltip", tooltipId);
-        }
-
-        var controls = listItem.querySelectorAll(".control");
-        for (var k = 0; k < controls.length; k++)
-        {
-          if (controls[k].hasAttribute("title"))
-          {
-            var titleValue = getMessage(controls[k].getAttribute("title"));
-            controls[k].setAttribute("title", titleValue)
-          }
-        }
-
-        this._setEmpty(table, null);
-        if (table.hasChildNodes())
-        {
-          table.insertBefore(listItem,
-              table.childNodes[this.items.indexOf(item)]);
-        }
-        else
-          table.appendChild(listItem);
-        this.updateItem(item);
+        var tooltipId = label.getAttribute("data-tooltip");
+        tooltipId = tooltipId.replace("%value%", item.recommended);
+        label.setAttribute("data-tooltip", tooltipId);
       }
+
+      var controls = listItem.querySelectorAll(".control");
+      for (var k = 0; k < controls.length; k++)
+      {
+        if (controls[k].hasAttribute("title"))
+        {
+          var titleValue = getMessage(controls[k].getAttribute("title"));
+          controls[k].setAttribute("title", titleValue)
+        }
+      }
+
+      this._setEmpty(table, null);
+      if (table.hasChildNodes())
+      {
+        table.insertBefore(listItem,
+            table.childNodes[this.items.indexOf(item)]);
+      }
+      else
+        table.appendChild(listItem);
+      this.updateItem(item);
     }
     return length;
   };
@@ -335,19 +331,19 @@
     }
   ]);
 
-  function updateLanguageCollections(subscription)
+  function toggleShowLanguage(subscription)
   {
     if (subscription.recommended == "ads")
     {
       if (subscription.disabled)
       {
-        collections.allLangs.addItems(subscription);
+        collections.allLangs.addItem(subscription);
         collections.langs.removeItem(subscription);
       }
       else
       {
         collections.allLangs.removeItem(subscription);
-        collections.langs.addItems(subscription);
+        collections.langs.addItem(subscription);
       }
     }
   }
@@ -369,26 +365,18 @@
     else
       collection = collections.custom;
 
-    collection.addItems(subscription);
+    collection.addItem(subscription);
     subscriptionsMap[subscription.url] = subscription;
+    toggleShowLanguage(subscription);
     updateTooltips();
   }
 
   function updateSubscription(subscription)
   {
-    var knownSubscription = subscriptionsMap[subscription.url];
-    for (var property in subscription)
-    {
-      if (property == "title" && subscription.recommended)
-        knownSubscription.originalTitle = subscription.title;
-      else
-        knownSubscription[property] = subscription[property];
-    }
-
     for (var name in collections)
-      collections[name].updateItem(knownSubscription);
+      collections[name].updateItem(subscription);
 
-    return knownSubscription;
+    toggleShowLanguage(subscription);
   }
 
   function updateFilter(filter)
@@ -397,10 +385,10 @@
     if (match && !filtersMap[filter.text])
     {
       filter.title = match[1];
-      collections.whitelist.addItems(filter);
+      collections.whitelist.addItem(filter);
     }
     else
-      collections.customFilters.addItems(filter);
+      collections.customFilters.addItem(filter);
 
     filtersMap[filter.text] = filter;
   }
@@ -422,7 +410,7 @@
           var element = elements[i];
           var type = element.getAttribute("type");
           var subscription = {
-            disabled: null,
+            disabled: true,
             downloadStatus: null,
             homepage: null,
             originalTitle: element.getAttribute("title"),
@@ -1026,11 +1014,22 @@
 
   function onSubscriptionMessage(action, subscription)
   {
+    if (subscription.url in subscriptionsMap)
+    {
+      var knownSubscription = subscriptionsMap[subscription.url];
+      for (var property in subscription)
+      {
+        if (property == "title" && knownSubscription.recommended)
+          knownSubscription.originalTitle = subscription.title;
+        else
+          knownSubscription[property] = subscription[property];
+      }
+      subscription = knownSubscription;
+    }
     switch (action)
     {
       case "disabled":
-        subscription = updateSubscription(subscription);
-        updateLanguageCollections(subscription);
+        updateSubscription(subscription);
         break;
       case "downloading":
       case "downloadStatus":
@@ -1041,15 +1040,13 @@
         break;
       case "added":
         if (subscription.url in subscriptionsMap)
-          subscription = updateSubscription(subscription);
+          updateSubscription(subscription);
         else
           addSubscription(subscription);
 
-        collections.filterLists.addItems(subscription);
-        updateLanguageCollections(subscription);
+        collections.filterLists.addItem(subscription);
         break;
       case "removed":
-        var knownSubscription = subscriptionsMap[subscription.url];
         if (subscription.url == acceptableAdsUrl || subscription.recommended)
         {
           subscription.disabled = true;
@@ -1057,10 +1054,10 @@
         }
         else
         {
-          collections.custom.removeItem(knownSubscription);
+          collections.custom.removeItem(subscription);
           delete subscriptionsMap[subscription.url];
         }
-        collections.filterLists.removeItem(knownSubscription);
+        collections.filterLists.removeItem(subscription);
         break;
     }
 
