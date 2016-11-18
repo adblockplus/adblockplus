@@ -116,6 +116,7 @@ header::-webkit-scrollbar
 #items[data-filter-type=PING]           tr:not([data-type=PING]),
 #items[data-filter-type=POPUP]          tr:not([data-type=POPUP]),
 #items[data-filter-type=ELEMHIDE]       tr:not([data-type=ELEMHIDE]),
+#items[data-filter-type=WEBSOCKET]      tr:not([data-type=WEBSOCKET]),
 #items[data-filter-type=OTHER]          tr:not([data-type=OTHER])
 {
   display: none;
