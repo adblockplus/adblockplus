@@ -25,7 +25,7 @@
   var FilterStorage = require("filterStorage").FilterStorage;
   var FilterNotifier = require("filterNotifier").FilterNotifier;
   var defaultMatcher = require("matcher").defaultMatcher;
-  var CSSRules = require("cssRules").CSSRules;
+  var ElemHideEmulation = require("elemHideEmulation").ElemHideEmulation;
   var NotificationStorage = require("notification").Notification;
 
   var filterClasses = require("filterClasses");
@@ -220,7 +220,7 @@
         callback(filter instanceof BlockingFilter);
         break;
       case "filters.get":
-        if (message.what == "cssproperties")
+        if (message.what == "elemhideemulation")
         {
           var filters = [];
           var checkWhitelisted = require("whitelisting").checkWhitelisted;
@@ -229,13 +229,12 @@
                                 RegExpFilter.typeMap.DOCUMENT |
                                 RegExpFilter.typeMap.ELEMHIDE))
           {
-            filters = CSSRules.getRulesForDomain(sender.frame.url.hostname);
+            var hostname = sender.frame.url.hostname;
+            filters = ElemHideEmulation.getRulesForDomain(hostname);
             filters = filters.map(function(filter)
             {
               return {
-                prefix: filter.selectorPrefix,
-                suffix: filter.selectorSuffix,
-                regexp: filter.regexpString,
+                selector: filter.selector,
                 text: filter.text
               };
             });

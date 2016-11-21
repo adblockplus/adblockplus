@@ -315,8 +315,8 @@
     }
   };
 
-  modules.cssRules = {
-    CSSRules: {
+  modules.elemHideEmulation = {
+    ElemHideEmulation: {
       getRulesForDomain: function(domain) { }
     }
   };
