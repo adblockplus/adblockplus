@@ -316,9 +316,7 @@
   };
 
   modules.elemHideEmulation = {
-    ElemHideEmulation: {
-      getRulesForDomain: function(domain) { }
-    }
+    ElemHideEmulation: {}
   };
 
   modules.filterNotifier = {
