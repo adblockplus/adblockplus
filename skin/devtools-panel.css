@@ -207,3 +207,8 @@ footer
   text-decoration: underline;
   cursor: pointer;
 }
+
+.filtered-by-search
+{
+  display: none;
+}

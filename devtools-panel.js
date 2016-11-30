@@ -17,6 +17,8 @@
 
 "use strict";
 
+var lastFilterQuery = null;
+
 function generateFilter(request, domainSpecific)
 {
   var filter = request.url.replace(/^[\w\-]+:\/+(?:www\.)?/, "||");
@@ -117,7 +119,47 @@ function createRecord(request, filter, template)
       "add", "Block item", generateFilter(request, request.specificOnly)
     ));
 
+  if (lastFilterQuery && shouldFilterRow(row, lastFilterQuery))
+    row.classList.add("filtered-by-search");
+
   return row;
+}
+
+function shouldFilterRow(row, query)
+{
+  var elementsToSearch = [
+    row.getElementsByClassName("url"),
+    row.getElementsByClassName("filter"),
+    row.getElementsByClassName("origin"),
+    row.getElementsByClassName("type")
+  ];
+
+  for (var elements of elementsToSearch)
+  {
+    for (var element of elements)
+    {
+      if (element.innerText.search(query) != -1)
+        return false;
+    }
+  }
+  return true;
+}
+
+function performSearch(table, query)
+{
+  for (var row of table.rows)
+  {
+    if (shouldFilterRow(row, query))
+      row.classList.add("filtered-by-search");
+    else
+      row.classList.remove("filtered-by-search");
+  }
+}
+
+function cancelSearch(table)
+{
+  for (var row of table.rows)
+    row.classList.remove("filtered-by-search");
 }
 
 document.addEventListener("DOMContentLoaded", function()
@@ -166,6 +208,21 @@ document.addEventListener("DOMContentLoaded", function()
       case "reset":
         table.innerHTML = "";
         container.classList.remove("has-changes");
+        break;
+    }
+  });
+
+  window.addEventListener("message", function(event)
+  {
+    switch(event.data.type)
+    {
+      case "performSearch":
+        performSearch(table, event.data.queryString);
+        lastFilterQuery = event.data.queryString;
+        break;
+      case "cancelSearch":
+        cancelSearch(table);
+        lastFilterQuery = null;
         break;
     }
   });
