@@ -74,7 +74,7 @@ function createRecord(request, filter, template)
   {
     urlElement.textContent = request.url;
 
-    if ("openResource" in ext.devtools.panels && request.type != "POPUP")
+    if (request.type != "POPUP")
     {
       urlElement.classList.add("resourceLink");
       urlElement.addEventListener("click", function()
