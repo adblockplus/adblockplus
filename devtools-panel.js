@@ -226,4 +226,10 @@ document.addEventListener("DOMContentLoaded", function()
         break;
     }
   });
+
+  // Since Chrome 54 the themeName is accessible, for earlier versions we must
+  // assume the default theme is being used.
+  // https://bugs.chromium.org/p/chromium/issues/detail?id=608869
+  let theme = chrome.devtools.panels.themeName || "default";
+  document.body.classList.add(theme);
 }, false);
