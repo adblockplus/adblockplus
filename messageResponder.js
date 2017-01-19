@@ -15,31 +15,27 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-(function(global)
+"use strict";
+
 {
-  if (!global.ext)
-    global.ext = require("ext_background");
+  var ext = ext || require("ext_background");
 
-  var port = require("messaging").port;
-  var Prefs = require("prefs").Prefs;
-  var Utils = require("utils").Utils;
-  var FilterStorage = require("filterStorage").FilterStorage;
-  var FilterNotifier = require("filterNotifier").FilterNotifier;
-  var defaultMatcher = require("matcher").defaultMatcher;
-  var ElemHideEmulation = require("elemHideEmulation").ElemHideEmulation;
-  var NotificationStorage = require("notification").Notification;
+  const {port} = require("messaging");
+  const {Prefs} = require("prefs");
+  const {Utils} = require("utils");
+  const {FilterStorage} = require("filterStorage");
+  const {FilterNotifier} = require("filterNotifier");
+  const {defaultMatcher} = require("matcher");
+  const {ElemHideEmulation} = require("elemHideEmulation");
+  const {Notification: NotificationStorage} = require("notification");
 
-  var filterClasses = require("filterClasses");
-  var Filter = filterClasses.Filter;
-  var BlockingFilter = filterClasses.BlockingFilter;
-  var RegExpFilter = filterClasses.RegExpFilter;
-  var Synchronizer = require("synchronizer").Synchronizer;
+  const {Filter, BlockingFilter, RegExpFilter} = require("filterClasses");
+  const {Synchronizer} = require("synchronizer");
 
-  var info = require("info");
-  var subscriptionClasses = require("subscriptionClasses");
-  var Subscription = subscriptionClasses.Subscription;
-  var DownloadableSubscription = subscriptionClasses.DownloadableSubscription;
-  var SpecialSubscription = subscriptionClasses.SpecialSubscription;
+  const info = require("info");
+  const {Subscription,
+         DownloadableSubscription,
+         SpecialSubscription} = require("subscriptionClasses");
 
   // Some modules doesn't exist on Firefox. Moreover,
   // require() throws an exception on Firefox in that case.
@@ -59,10 +55,9 @@
 
   function convertObject(keys, obj)
   {
-    var result = {};
-    for (var i = 0; i < keys.length; i++)
+    let result = {};
+    for (let key of keys)
     {
-      var key = keys[i];
       if (key in obj)
         result[key] = obj[key];
     }
@@ -71,18 +66,18 @@
 
   function convertSubscription(subscription)
   {
-    var obj = convertObject(["disabled", "downloadStatus", "homepage",
+    let obj = convertObject(["disabled", "downloadStatus", "homepage",
                              "lastDownload", "title", "url"], subscription);
     obj.isDownloading = Synchronizer.isExecuting(subscription.url);
     return obj;
   }
 
-  var convertFilter = convertObject.bind(null, ["text"]);
+  let convertFilter = convertObject.bind(null, ["text"]);
 
-  var changeListeners = new global.ext.PageMap();
-  var listenedPreferences = Object.create(null);
-  var listenedFilterChanges = Object.create(null);
-  var messageTypes = {
+  let changeListeners = new ext.PageMap();
+  let listenedPreferences = Object.create(null);
+  let listenedFilterChanges = Object.create(null);
+  let messageTypes = {
     "app": "app.respond",
     "filter": "filters.respond",
     "pref": "prefs.respond",
@@ -91,14 +86,14 @@
 
   function sendMessage(type, action)
   {
-    var pages = changeListeners.keys();
+    let pages = changeListeners.keys();
     if (pages.length == 0)
       return;
 
-    var args = [];
-    for (var i = 2; i < arguments.length; i++)
+    let args = [];
+    for (let i = 2; i < arguments.length; i++)
     {
-      var arg = arguments[i];
+      let arg = arguments[i];
       if (arg instanceof Subscription)
         args.push(convertSubscription(arg));
       else if (arg instanceof Filter)
@@ -107,11 +102,10 @@
         args.push(arg);
     }
 
-    for (var j = 0; j < pages.length; j++)
+    for (let page of pages)
     {
-      var page = pages[j];
-      var filters = changeListeners.get(page);
-      var actions = filters[type];
+      let filters = changeListeners.get(page);
+      let actions = filters[type];
       if (actions && actions.indexOf(action) != -1)
       {
         page.sendMessage({
@@ -125,9 +119,9 @@
 
   function addFilterListeners(type, actions)
   {
-    actions.forEach(function(action)
+    for (let action of actions)
     {
-      var name;
+      let name;
       if (type == "filter" && action == "loaded")
         name = "load";
       else
@@ -138,18 +132,18 @@
         listenedFilterChanges[name] = null;
         FilterNotifier.on(name, function()
         {
-          var args = [type, action];
-          for (var i = 0; i < arguments.length; i++)
-            args.push(arguments[i]);
+          let args = [type, action];
+          for (let arg of arguments)
+            args.push(arg);
           sendMessage.apply(null, args);
         });
       }
-    });
+    }
   }
 
   function getListenerFilters(page)
   {
-    var listenerFilters = changeListeners.get(page);
+    let listenerFilters = changeListeners.get(page);
     if (!listenerFilters)
     {
       listenerFilters = Object.create(null);
@@ -162,7 +156,7 @@
   {
     if (message.what == "issues")
     {
-      var subscriptionInit = tryRequire("subscriptionInit");
+      let subscriptionInit = tryRequire("subscriptionInit");
       return {
         filterlistsReinitialized: subscriptionInit ? subscriptionInit.reinitialized : false,
         legacySafariVersion: (info.platform == "safari" && (
@@ -177,7 +171,7 @@
 
     if (message.what == "localeInfo")
     {
-      var bidiDir;
+      let bidiDir;
       if ("chromeRegistry" in Utils)
         bidiDir = Utils.chromeRegistry.isLocaleRTL("adblockplus") ? "rtl" : "ltr";
       else
@@ -212,8 +206,8 @@
 
   port.on("filters.add", (message, sender) =>
   {
-    var result = require("filterValidation").parseFilter(message.text);
-    var errors = [];
+    let result = require("filterValidation").parseFilter(message.text);
+    let errors = [];
     if (result.error)
       errors.push(result.error.toString());
     else if (result.filter)
@@ -224,7 +218,7 @@
 
   port.on("filters.blocked", (message, sender) =>
   {
-    var filter = defaultMatcher.matchesAny(message.url,
+    let filter = defaultMatcher.matchesAny(message.url,
       RegExpFilter.typeMap[message.requestType], message.docDomain,
       message.thirdParty);
 
@@ -235,16 +229,16 @@
   {
     if (message.what == "elemhideemulation")
     {
-      var filters = [];
-      var checkWhitelisted = require("whitelisting").checkWhitelisted;
+      let filters = [];
+      const {checkWhitelisted} = require("whitelisting");
 
       if (Prefs.enabled && !checkWhitelisted(sender.page, sender.frame,
                             RegExpFilter.typeMap.DOCUMENT |
                             RegExpFilter.typeMap.ELEMHIDE))
       {
-        var hostname = sender.frame.url.hostname;
+        let hostname = sender.frame.url.hostname;
         filters = ElemHideEmulation.getRulesForDomain(hostname);
-        filters = filters.map(function(filter)
+        filters = filters.map(filter =>
         {
           return {
             selector: filter.selector,
@@ -255,7 +249,7 @@
       return filters;
     }
 
-    var subscription = Subscription.fromURL(message.subscriptionUrl);
+    let subscription = Subscription.fromURL(message.subscriptionUrl);
     if (!subscription)
       return [];
 
@@ -264,11 +258,10 @@
 
   port.on("filters.importRaw", (message, sender) =>
   {
-    var result = require("filterValidation").parseFilters(message.text);
-    var errors = [];
-    for (var i = 0; i < result.errors.length; i++)
+    let result = require("filterValidation").parseFilters(message.text);
+    let errors = [];
+    for (let error of result.errors)
     {
-      var error = result.errors[i];
       if (error.type != "unexpected-filter-list-header")
         errors.push(error.toString());
     }
@@ -276,10 +269,9 @@
     if (errors.length > 0)
       return errors;
 
-    var seenFilter = Object.create(null);
-    for (var i = 0; i < result.filters.length; i++)
+    let seenFilter = Object.create(null);
+    for (let filter of result.filters)
     {
-      var filter = result.filters[i];
       FilterStorage.addFilter(filter);
       seenFilter[filter.text] = null;
     }
@@ -287,15 +279,14 @@
     if (!message.removeExisting)
       return errors;
 
-    for (var i = 0; i < FilterStorage.subscriptions.length; i++)
+    for (let subscription of FilterStorage.subscriptions)
     {
-      var subscription = FilterStorage.subscriptions[i];
       if (!(subscription instanceof SpecialSubscription))
         continue;
 
-      for (var j = subscription.filters.length - 1; j >= 0; j--)
+      for (let j = subscription.filters.length - 1; j >= 0; j--)
       {
-        var filter = subscription.filters[j];
+        let filter = subscription.filters[j];
         if (/^@@\|\|([^\/:]+)\^\$document$/.test(filter.text))
           continue;
 
@@ -315,8 +306,8 @@
 
   port.on("filters.remove", (message, sender) =>
   {
-    var filter = Filter.fromText(message.text);
-    var subscription = null;
+    let filter = Filter.fromText(message.text);
+    let subscription = null;
     if (message.subscriptionUrl)
       subscription = Subscription.fromURL(message.subscriptionUrl);
 
@@ -334,17 +325,17 @@
   port.on("prefs.listen", (message, sender) =>
   {
     getListenerFilters(sender.page).pref = message.filter;
-    message.filter.forEach(function(preference)
+    for (let preference of message.filter)
     {
       if (!(preference in listenedPreferences))
       {
         listenedPreferences[preference] = null;
-        Prefs.on(preference, function()
+        Prefs.on(preference, () =>
         {
           sendMessage("pref", preference, Prefs[preference]);
         });
       }
-    });
+    }
   });
 
   port.on("prefs.toggle", (message, sender) =>
@@ -357,7 +348,7 @@
 
   port.on("subscriptions.add", (message, sender) =>
   {
-    var subscription = Subscription.fromURL(message.url);
+    let subscription = Subscription.fromURL(message.url);
     if ("title" in message)
       subscription.title = message.title;
     if ("homepage" in message)
@@ -365,7 +356,7 @@
 
     if (message.confirm)
     {
-      ext.showOptions(function()
+      ext.showOptions(() =>
       {
         sendMessage("app", "addSubscription", subscription);
       });
@@ -382,7 +373,7 @@
 
   port.on("subscriptions.get", (message, sender) =>
   {
-    var subscriptions = FilterStorage.subscriptions.filter(function(s)
+    let subscriptions = FilterStorage.subscriptions.filter(s =>
     {
       if (message.ignoreDisabled && s.disabled)
         return false;
@@ -404,14 +395,14 @@
 
   port.on("subscriptions.remove", (message, sender) =>
   {
-    var subscription = Subscription.fromURL(message.url);
+    let subscription = Subscription.fromURL(message.url);
     if (subscription.url in FilterStorage.knownSubscriptions)
       FilterStorage.removeSubscription(subscription);
   });
 
   port.on("subscriptions.toggle", (message, sender) =>
   {
-    var subscription = Subscription.fromURL(message.url);
+    let subscription = Subscription.fromURL(message.url);
     if (subscription.url in FilterStorage.knownSubscriptions)
     {
       if (subscription.disabled || message.keepInstalled)
@@ -432,13 +423,12 @@
 
   port.on("subscriptions.update", (message, sender) =>
   {
-    var subscriptions = message.url ? [Subscription.fromURL(message.url)] :
+    let subscriptions = message.url ? [Subscription.fromURL(message.url)] :
                         FilterStorage.subscriptions;
-    for (var i = 0; i < subscriptions.length; i++)
+    for (let subscription of subscriptions)
     {
-      var subscription = subscriptions[i];
       if (subscription instanceof DownloadableSubscription)
         Synchronizer.execute(subscription, true);
     }
   });
-})(this);
+}
