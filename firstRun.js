@@ -64,9 +64,6 @@
         E("filterlistsReinitializedWarning").removeAttribute("hidden");
         setLinks("filterlistsReinitializedWarning", openFilters);
       }
-
-      if (issues.legacySafariVersion)
-        E("legacySafariWarning").removeAttribute("hidden");
     });
 
     updateSocialLinks();

@@ -800,14 +800,6 @@
     function(features)
     {
       hidePref("show_devtools_panel", !features.devToolsPanel);
-
-      // Only show option to switch between Safari Content Blockers
-      // and event based blocking if both are available.
-      hidePref("safari_contentblocker", !(
-        features.safariContentBlocker &&
-        "canLoad" in safari.self.tab &&
-        "onbeforeload" in Element.prototype
-      ));
     });
 
     var filterTextbox = document.querySelector("#custom-filters-add input");
@@ -1114,10 +1106,6 @@
       case "notifications_showui":
         hidePref("notifications_ignoredcategories", !value);
         break;
-
-      case "safari_contentblocker":
-        E("restart-safari").setAttribute("aria-hidden", value || initial);
-        break;
     }
 
     var checkbox = document.querySelector("[data-pref='" + key + "'] button[role='checkbox']");
@@ -1272,8 +1260,7 @@
   {
     type: "prefs.listen",
     filter: ["notifications_ignoredcategories", "notifications_showui",
-        "safari_contentblocker", "show_devtools_panel",
-        "shouldShowBlockElementMenu"]
+        "show_devtools_panel", "shouldShowBlockElementMenu"]
   });
   ext.backgroundPage.sendMessage(
   {

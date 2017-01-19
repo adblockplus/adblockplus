@@ -158,11 +158,7 @@
     {
       let subscriptionInit = tryRequire("subscriptionInit");
       return {
-        filterlistsReinitialized: subscriptionInit ? subscriptionInit.reinitialized : false,
-        legacySafariVersion: (info.platform == "safari" && (
-            Services.vc.compare(info.platformVersion, "6.0") < 0 ||   // beforeload breaks websites in Safari 5
-            Services.vc.compare(info.platformVersion, "6.1") == 0 ||  // extensions are broken in 6.1 and 7.0
-            Services.vc.compare(info.platformVersion, "7.0") == 0))
+        filterlistsReinitialized: subscriptionInit ? subscriptionInit.reinitialized : false
       };
     }
 
@@ -183,10 +179,7 @@
     if (message.what == "features")
     {
       return {
-        devToolsPanel: info.platform == "chromium",
-        safariContentBlocker: "safari" in global
-            && "extension" in global.safari
-            && "setContentBlocker" in global.safari.extension
+        devToolsPanel: info.platform == "chromium"
       };
     }
 

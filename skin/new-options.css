@@ -668,14 +668,6 @@ button[role="checkbox"],
   Advanced tab content
 */
 
-#restart-safari
-{
-  -moz-margin-start: 20px;
-  -webkit-margin-start: 20px;
-  color: red;
-  font-weight: 600;
-}
-
 #filter-lists > div,
 #all-filter-lists li.show-message .date,
 #all-filter-lists li.show-message .time,

@@ -33,7 +33,7 @@ Directory structure
 Testing
 -------
 
-In Firefox and Safari the HTML pages can be opened directly from the file system
+In Firefox the HTML pages can be opened directly from the file system
 and should be fully functional. Due to security restrictions in Chrome, there
 you need to pass in the `--allow-file-access-from-files` command line flag when
 starting the application. Alternatively, you can run `test_server.py` (requires
@@ -64,8 +64,7 @@ To aid testing, the behavior of this page is affected by a number of URL
 parameters:
 
 * `platform`, `platformVersion`, `application`, `applicationVersion`: sets
-  application parameters that are normally determined by Adblock Plus. Using
-  `?platform=safari&platformVersion=5.0` should trigger a warning.
+  application parameters that are normally determined by Adblock Plus.
 * `filterlistsReinitialized`: setting these parameters to `true` should
   trigger warnings referring to issues detected by Adblock Plus.
 * `blockedURLs`: a comma-separated list of URLs that should be considered
@@ -91,7 +90,6 @@ parameters:
 * `downloadStatus`: sets downloadStatus parameter for filter lists, can be used
   to trigger various filter list download errors
 * `platform=chromium`: shows the opt-out for the developer tools panel
-* `safariContentBlocker=true`: sets Safari content blocker mock API
 * `showNotificationUI=true`: simulates user having opted-out of notifications
 
 

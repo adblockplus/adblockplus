@@ -70,8 +70,7 @@
     addSubscription: false,
     filterError: false,
     downloadStatus: "synchronize_ok",
-    showNotificationUI: false,
-    safariContentBlocker: false
+    showNotificationUI: false
   };
   updateFromURL(params);
 
@@ -98,7 +97,6 @@
   var prefs = {
     notifications_ignoredcategories: (params.showNotificationUI) ? ["*"] : [],
     notifications_showui: params.showNotificationUI,
-    safari_contentblocker: false,
     shouldShowBlockElementMenu: true,
     show_devtools_panel: true,
     subscriptions_exceptionsurl: "https://easylist-downloads.adblockplus.org/exceptionrules.txt"
@@ -522,13 +520,4 @@
       }
     });
   });
-
-  if (params.safariContentBlocker)
-  {
-    global.safari = {
-      extension: {
-        setContentBlocker: function() {}
-      }
-    };
-  }
 })(this);
