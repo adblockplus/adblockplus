@@ -20,6 +20,7 @@
   if (!global.ext)
     global.ext = require("ext_background");
 
+  var port = require("messaging").port;
   var Prefs = require("prefs").Prefs;
   var Utils = require("utils").Utils;
   var FilterStorage = require("filterStorage").FilterStorage;
@@ -157,255 +158,287 @@
     return listenerFilters;
   }
 
-  global.ext.onMessage.addListener(function(message, sender, callback)
+  port.on("app.get", (message, sender) =>
   {
-    switch (message.type)
+    if (message.what == "issues")
     {
-      case "app.get":
-        if (message.what == "issues")
+      var subscriptionInit = tryRequire("subscriptionInit");
+      return {
+        filterlistsReinitialized: subscriptionInit ? subscriptionInit.reinitialized : false,
+        legacySafariVersion: (info.platform == "safari" && (
+            Services.vc.compare(info.platformVersion, "6.0") < 0 ||   // beforeload breaks websites in Safari 5
+            Services.vc.compare(info.platformVersion, "6.1") == 0 ||  // extensions are broken in 6.1 and 7.0
+            Services.vc.compare(info.platformVersion, "7.0") == 0))
+      };
+    }
+
+    if (message.what == "doclink")
+      return Utils.getDocLink(message.link);
+
+    if (message.what == "localeInfo")
+    {
+      var bidiDir;
+      if ("chromeRegistry" in Utils)
+        bidiDir = Utils.chromeRegistry.isLocaleRTL("adblockplus") ? "rtl" : "ltr";
+      else
+        bidiDir = ext.i18n.getMessage("@@bidi_dir");
+
+      return {locale: Utils.appLocale, bidiDir: bidiDir};
+    }
+
+    if (message.what == "features")
+    {
+      return {
+        devToolsPanel: info.platform == "chromium",
+        safariContentBlocker: "safari" in global
+            && "extension" in global.safari
+            && "setContentBlocker" in global.safari.extension
+      };
+    }
+
+    return info[message.what];
+  });
+
+  port.on("app.listen", (message, sender) =>
+  {
+    getListenerFilters(sender.page).app = message.filter;
+  });
+
+  port.on("app.open", (message, sender) =>
+  {
+    if (message.what == "options")
+      ext.showOptions();
+  });
+
+  port.on("filters.add", (message, sender) =>
+  {
+    var result = require("filterValidation").parseFilter(message.text);
+    var errors = [];
+    if (result.error)
+      errors.push(result.error.toString());
+    else if (result.filter)
+      FilterStorage.addFilter(result.filter);
+
+    return errors;
+  });
+
+  port.on("filters.blocked", (message, sender) =>
+  {
+    var filter = defaultMatcher.matchesAny(message.url,
+      RegExpFilter.typeMap[message.requestType], message.docDomain,
+      message.thirdParty);
+
+    return filter instanceof BlockingFilter;
+  });
+
+  port.on("filters.get", (message, sender) =>
+  {
+    if (message.what == "elemhideemulation")
+    {
+      var filters = [];
+      var checkWhitelisted = require("whitelisting").checkWhitelisted;
+
+      if (Prefs.enabled && !checkWhitelisted(sender.page, sender.frame,
+                            RegExpFilter.typeMap.DOCUMENT |
+                            RegExpFilter.typeMap.ELEMHIDE))
+      {
+        var hostname = sender.frame.url.hostname;
+        filters = ElemHideEmulation.getRulesForDomain(hostname);
+        filters = filters.map(function(filter)
         {
-          var subscriptionInit = tryRequire("subscriptionInit");
-          callback({
-            filterlistsReinitialized: subscriptionInit ? subscriptionInit.reinitialized : false,
-            legacySafariVersion: (info.platform == "safari" && (
-                Services.vc.compare(info.platformVersion, "6.0") < 0 ||   // beforeload breaks websites in Safari 5
-                Services.vc.compare(info.platformVersion, "6.1") == 0 ||  // extensions are broken in 6.1 and 7.0
-                Services.vc.compare(info.platformVersion, "7.0") == 0))
-          });
-        }
-        else if (message.what == "doclink")
-          callback(Utils.getDocLink(message.link));
-        else if (message.what == "localeInfo")
-        {
-          var bidiDir;
-          if ("chromeRegistry" in Utils)
-            bidiDir = Utils.chromeRegistry.isLocaleRTL("adblockplus") ? "rtl" : "ltr";
-          else
-            bidiDir = ext.i18n.getMessage("@@bidi_dir");
+          return {
+            selector: filter.selector,
+            text: filter.text
+          };
+        });
+      }
+      return filters;
+    }
 
-          callback({locale: Utils.appLocale, bidiDir: bidiDir});
-        }
-        else if (message.what == "features")
-        {
-          callback({
-            devToolsPanel: info.platform == "chromium",
-            safariContentBlocker: "safari" in global
-                && "extension" in global.safari
-                && "setContentBlocker" in global.safari.extension
-          });
-        }
-        else
-          callback(info[message.what]);
-        break;
-      case "app.listen":
-        getListenerFilters(sender.page).app = message.filter;
-        break;
-      case "app.open":
-        if (message.what == "options")
-          ext.showOptions();
-        break;
-      case "filters.add":
-        var result = require("filterValidation").parseFilter(message.text);
-        var errors = [];
-        if (result.error)
-          errors.push(result.error.toString());
-        else if (result.filter)
-          FilterStorage.addFilter(result.filter);
-        callback(errors);
-        break;
-      case "filters.blocked":
-        var filter = defaultMatcher.matchesAny(message.url,
-          RegExpFilter.typeMap[message.requestType], message.docDomain,
-          message.thirdParty);
-        callback(filter instanceof BlockingFilter);
-        break;
-      case "filters.get":
-        if (message.what == "elemhideemulation")
-        {
-          var filters = [];
-          var checkWhitelisted = require("whitelisting").checkWhitelisted;
+    var subscription = Subscription.fromURL(message.subscriptionUrl);
+    if (!subscription)
+      return [];
 
-          if (Prefs.enabled && !checkWhitelisted(sender.page, sender.frame,
-                                RegExpFilter.typeMap.DOCUMENT |
-                                RegExpFilter.typeMap.ELEMHIDE))
-          {
-            var hostname = sender.frame.url.hostname;
-            filters = ElemHideEmulation.getRulesForDomain(hostname);
-            filters = filters.map(function(filter)
-            {
-              return {
-                selector: filter.selector,
-                text: filter.text
-              };
-            });
-          }
-          callback(filters);
-          break;
-        }
+    return subscription.filters.map(convertFilter);
+  });
 
-        var subscription = Subscription.fromURL(message.subscriptionUrl);
-        if (!subscription)
-        {
-          callback([]);
-          break;
-        }
+  port.on("filters.importRaw", (message, sender) =>
+  {
+    var result = require("filterValidation").parseFilters(message.text);
+    var errors = [];
+    for (var i = 0; i < result.errors.length; i++)
+    {
+      var error = result.errors[i];
+      if (error.type != "unexpected-filter-list-header")
+        errors.push(error.toString());
+    }
 
-        callback(subscription.filters.map(convertFilter));
-        break;
-      case "filters.importRaw":
-        var result = require("filterValidation").parseFilters(message.text);
-        var errors = [];
-        for (var i = 0; i < result.errors.length; i++)
-        {
-          var error = result.errors[i];
-          if (error.type != "unexpected-filter-list-header")
-            errors.push(error.toString());
-        }
+    if (errors.length > 0)
+      return errors;
 
-        callback(errors);
-        if (errors.length > 0)
-          return;
+    var seenFilter = Object.create(null);
+    for (var i = 0; i < result.filters.length; i++)
+    {
+      var filter = result.filters[i];
+      FilterStorage.addFilter(filter);
+      seenFilter[filter.text] = null;
+    }
 
-        var seenFilter = Object.create(null);
-        for (var i = 0; i < result.filters.length; i++)
-        {
-          var filter = result.filters[i];
-          FilterStorage.addFilter(filter);
-          seenFilter[filter.text] = null;
-        }
+    if (!message.removeExisting)
+      return errors;
 
-        if (!message.removeExisting)
-          return;
+    for (var i = 0; i < FilterStorage.subscriptions.length; i++)
+    {
+      var subscription = FilterStorage.subscriptions[i];
+      if (!(subscription instanceof SpecialSubscription))
+        continue;
 
-        for (var i = 0; i < FilterStorage.subscriptions.length; i++)
-        {
-          var subscription = FilterStorage.subscriptions[i];
-          if (!(subscription instanceof SpecialSubscription))
-            continue;
+      for (var j = subscription.filters.length - 1; j >= 0; j--)
+      {
+        var filter = subscription.filters[j];
+        if (/^@@\|\|([^\/:]+)\^\$document$/.test(filter.text))
+          continue;
 
-          for (var j = subscription.filters.length - 1; j >= 0; j--)
-          {
-            var filter = subscription.filters[j];
-            if (/^@@\|\|([^\/:]+)\^\$document$/.test(filter.text))
-              continue;
-
-            if (!(filter.text in seenFilter))
-              FilterStorage.removeFilter(filter);
-          }
-        }
-        break;
-      case "filters.listen":
-        getListenerFilters(sender.page).filter = message.filter;
-        addFilterListeners("filter", message.filter);
-        break;
-      case "filters.remove":
-        var filter = Filter.fromText(message.text);
-        var subscription = null;
-        if (message.subscriptionUrl)
-          subscription = Subscription.fromURL(message.subscriptionUrl);
-
-        if (!subscription)
+        if (!(filter.text in seenFilter))
           FilterStorage.removeFilter(filter);
-        else
-          FilterStorage.removeFilter(filter, subscription, message.index);
-        break;
-      case "prefs.get":
-        callback(Prefs[message.key]);
-        break;
-      case "prefs.listen":
-        getListenerFilters(sender.page).pref = message.filter;
-        message.filter.forEach(function(preference)
-        {
-          if (!(preference in listenedPreferences))
-          {
-            listenedPreferences[preference] = null;
-            Prefs.on(preference, function()
-            {
-              sendMessage("pref", preference, Prefs[preference]);
-            });
-          }
-        });
-        break;
-      case "prefs.toggle":
-        if (message.key == "notifications_ignoredcategories")
-          NotificationStorage.toggleIgnoreCategory("*");
-        else
-          Prefs[message.key] = !Prefs[message.key];
-        break;
-      case "subscriptions.add":
-        var subscription = Subscription.fromURL(message.url);
-        if ("title" in message)
-          subscription.title = message.title;
-        if ("homepage" in message)
-          subscription.homepage = message.homepage;
+      }
+    }
 
-        if (message.confirm)
-        {
-          ext.showOptions(function()
-          {
-            sendMessage("app", "addSubscription", subscription);
-          });
-        }
-        else
-        {
-          subscription.disabled = false;
-          FilterStorage.addSubscription(subscription);
+    return errors;
+  });
 
-          if (subscription instanceof DownloadableSubscription && !subscription.lastDownload)
-            Synchronizer.execute(subscription);
-        }
-        break;
-      case "subscriptions.get":
-        var subscriptions = FilterStorage.subscriptions.filter(function(s)
+  port.on("filters.listen", (message, sender) =>
+  {
+    getListenerFilters(sender.page).filter = message.filter;
+    addFilterListeners("filter", message.filter);
+  });
+
+  port.on("filters.remove", (message, sender) =>
+  {
+    var filter = Filter.fromText(message.text);
+    var subscription = null;
+    if (message.subscriptionUrl)
+      subscription = Subscription.fromURL(message.subscriptionUrl);
+
+    if (!subscription)
+      FilterStorage.removeFilter(filter);
+    else
+      FilterStorage.removeFilter(filter, subscription, message.index);
+  });
+
+  port.on("prefs.get", (message, sender) =>
+  {
+    return Prefs[message.key];
+  });
+
+  port.on("prefs.listen", (message, sender) =>
+  {
+    getListenerFilters(sender.page).pref = message.filter;
+    message.filter.forEach(function(preference)
+    {
+      if (!(preference in listenedPreferences))
+      {
+        listenedPreferences[preference] = null;
+        Prefs.on(preference, function()
         {
-          if (message.ignoreDisabled && s.disabled)
-            return false;
-          if (s instanceof DownloadableSubscription && message.downloadable)
-            return true;
-          if (s instanceof SpecialSubscription && message.special)
-            return true;
-          return false;
+          sendMessage("pref", preference, Prefs[preference]);
         });
-        callback(subscriptions.map(convertSubscription));
-        break;
-      case "subscriptions.listen":
-        getListenerFilters(sender.page).subscription = message.filter;
-        addFilterListeners("subscription", message.filter);
-        break;
-      case "subscriptions.remove":
-        var subscription = Subscription.fromURL(message.url);
-        if (subscription.url in FilterStorage.knownSubscriptions)
-          FilterStorage.removeSubscription(subscription);
-        break;
-      case "subscriptions.toggle":
-        var subscription = Subscription.fromURL(message.url);
-        if (subscription.url in FilterStorage.knownSubscriptions)
-        {
-          if (subscription.disabled || message.keepInstalled)
-            subscription.disabled = !subscription.disabled;
-          else
-            FilterStorage.removeSubscription(subscription);
-        }
-        else
-        {
-          subscription.disabled = false;
-          subscription.title = message.title;
-          subscription.homepage = message.homepage;
-          FilterStorage.addSubscription(subscription);
-          if (!subscription.lastDownload)
-            Synchronizer.execute(subscription);
-        }
-        break;
-      case "subscriptions.update":
-        var subscriptions = message.url ? [Subscription.fromURL(message.url)] :
-                            FilterStorage.subscriptions;
-        for (var i = 0; i < subscriptions.length; i++)
-        {
-          var subscription = subscriptions[i];
-          if (subscription instanceof DownloadableSubscription)
-            Synchronizer.execute(subscription, true);
-        }
-        break;
+      }
+    });
+  });
+
+  port.on("prefs.toggle", (message, sender) =>
+  {
+    if (message.key == "notifications_ignoredcategories")
+      NotificationStorage.toggleIgnoreCategory("*");
+    else
+      Prefs[message.key] = !Prefs[message.key];
+  });
+
+  port.on("subscriptions.add", (message, sender) =>
+  {
+    var subscription = Subscription.fromURL(message.url);
+    if ("title" in message)
+      subscription.title = message.title;
+    if ("homepage" in message)
+      subscription.homepage = message.homepage;
+
+    if (message.confirm)
+    {
+      ext.showOptions(function()
+      {
+        sendMessage("app", "addSubscription", subscription);
+      });
+    }
+    else
+    {
+      subscription.disabled = false;
+      FilterStorage.addSubscription(subscription);
+
+      if (subscription instanceof DownloadableSubscription && !subscription.lastDownload)
+        Synchronizer.execute(subscription);
+    }
+  });
+
+  port.on("subscriptions.get", (message, sender) =>
+  {
+    var subscriptions = FilterStorage.subscriptions.filter(function(s)
+    {
+      if (message.ignoreDisabled && s.disabled)
+        return false;
+      if (s instanceof DownloadableSubscription && message.downloadable)
+        return true;
+      if (s instanceof SpecialSubscription && message.special)
+        return true;
+      return false;
+    });
+
+    return subscriptions.map(convertSubscription);
+  });
+
+  port.on("subscriptions.listen", (message, sender) =>
+  {
+    getListenerFilters(sender.page).subscription = message.filter;
+    addFilterListeners("subscription", message.filter);
+  });
+
+  port.on("subscriptions.remove", (message, sender) =>
+  {
+    var subscription = Subscription.fromURL(message.url);
+    if (subscription.url in FilterStorage.knownSubscriptions)
+      FilterStorage.removeSubscription(subscription);
+  });
+
+  port.on("subscriptions.toggle", (message, sender) =>
+  {
+    var subscription = Subscription.fromURL(message.url);
+    if (subscription.url in FilterStorage.knownSubscriptions)
+    {
+      if (subscription.disabled || message.keepInstalled)
+        subscription.disabled = !subscription.disabled;
+      else
+        FilterStorage.removeSubscription(subscription);
+    }
+    else
+    {
+      subscription.disabled = false;
+      subscription.title = message.title;
+      subscription.homepage = message.homepage;
+      FilterStorage.addSubscription(subscription);
+      if (!subscription.lastDownload)
+        Synchronizer.execute(subscription);
+    }
+  });
+
+  port.on("subscriptions.update", (message, sender) =>
+  {
+    var subscriptions = message.url ? [Subscription.fromURL(message.url)] :
+                        FilterStorage.subscriptions;
+    for (var i = 0; i < subscriptions.length; i++)
+    {
+      var subscription = subscriptions[i];
+      if (subscription instanceof DownloadableSubscription)
+        Synchronizer.execute(subscription, true);
     }
   });
 })(this);

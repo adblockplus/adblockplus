@@ -337,6 +337,53 @@
     reinitialized: params.filterlistsReinitialized
   };
 
+  modules.messaging = {
+    port: new EventEmitter()
+  };
+
+  window.addEventListener("message", event =>
+  {
+    if (event.data.type != "message")
+      return;
+    let message = event.data.payload;
+    let messageId = event.data.messageId;
+    let sender = {
+      page: new ext.Page(event.source)
+    };
+
+    let listeners = modules.messaging.port._listeners[message.type];
+    if (!listeners)
+      return;
+
+    function reply(message)
+    {
+      event.source.postMessage({
+        type: "response",
+        messageId: messageId,
+        payload: message
+      }, "*");
+    }
+
+    for (let listener of listeners)
+    {
+      let response = listener(message, sender);
+      if (response && typeof response.then == "function")
+      {
+        response.then(
+          reply,
+          reason => {
+            console.error(reason);
+            reply(undefined);
+          }
+        );
+      }
+      else if (typeof response != "undefined")
+      {
+        reply(response);
+      }
+    }
+  });
+
   global.Services = {
     vc: {
       compare: function(v1, v2)
