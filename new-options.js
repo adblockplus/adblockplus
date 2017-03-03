@@ -825,6 +825,57 @@
     }, false);
     var customFilterEditButtons = document.querySelectorAll("#custom-filters-edit-wrapper button");
 
+    // Help tab
+    getDocLink("faq", function(link)
+    {
+      E("link-faq").setAttribute("href", link);
+    });
+    getDocLink("social_twitter", function(link)
+    {
+      E("link-twitter").setAttribute("href", link);
+    });
+    getDocLink("social_facebook", function(link)
+    {
+      E("link-facebook").setAttribute("href", link);
+    });
+    getDocLink("social_gplus", function(link)
+    {
+      E("link-gplus").setAttribute("href", link);
+    });
+    getDocLink("social_renren", function(link)
+    {
+      E("link-renren").setAttribute("href", link);
+    });
+    getDocLink("social_weibo", function(link)
+    {
+      E("link-weibo").setAttribute("href", link);
+    });
+
+    // Set forum link
+    ext.backgroundPage.sendMessage(
+    {
+      type: "app.get",
+      what: "platform"
+    },
+    function(platform)
+    {
+      ext.backgroundPage.sendMessage(
+      {
+        type: "app.get",
+        what: "application"
+      },
+      function(application)
+      {
+        if (platform == "chromium" && application != "opera")
+          application = "chrome";
+
+        getDocLink(application + "_support", function(link)
+        {
+          E("link-forum").setAttribute("href", link);
+        });
+      });
+    });
+
     E("dialog").addEventListener("keydown", function(e)
     {
       switch (getKey(e))

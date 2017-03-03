@@ -1143,6 +1143,12 @@ div[role="tooltip"] .notes p
   -webkit-margin-end: 6px;
 }
 
+#share-general:lang(zh),
+#share-chinese:not(zh)
+{
+  display: none;
+}
+
 /*
   Dialog
 */
