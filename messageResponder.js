@@ -17,8 +17,9 @@
 
 "use strict";
 
+(function(global)
 {
-  var ext = ext || require("ext_background");
+  let ext = global.ext || require("ext_background");
 
   const {port} = require("messaging");
   const {Prefs} = require("prefs");
@@ -424,4 +425,4 @@
         Synchronizer.execute(subscription, true);
     }
   });
-}
+})(this);
