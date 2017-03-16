@@ -15,22 +15,27 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/* globals checkShareResource, getDocLink, i18nFormatDateTime, openSharePopup,
+           E */
+
 "use strict";
 
-(function()
 {
-  var subscriptionsMap = Object.create(null);
-  var filtersMap = Object.create(null);
-  var collections = Object.create(null);
-  var acceptableAdsUrl = null;
-  var getMessage = ext.i18n.getMessage;
-  var filterErrors =
-  {
-    "synchronize_invalid_url": "options_filterList_lastDownload_invalidURL",
-    "synchronize_connection_error": "options_filterList_lastDownload_connectionError",
-    "synchronize_invalid_data": "options_filterList_lastDownload_invalidData",
-    "synchronize_checksum_mismatch": "options_filterList_lastDownload_checksumMismatch"
-  };
+  let subscriptionsMap = Object.create(null);
+  let filtersMap = Object.create(null);
+  let collections = Object.create(null);
+  let acceptableAdsUrl = null;
+  let {getMessage} = ext.i18n;
+  let filterErrors = new Map([
+    ["synchronize_invalid_url",
+     "options_filterList_lastDownload_invalidURL"],
+    ["synchronize_connection_error",
+     "options_filterList_lastDownload_connectionError"],
+    ["synchronize_invalid_data",
+     "options_filterList_lastDownload_invalidData"],
+    ["synchronize_checksum_mismatch",
+     "options_filterList_lastDownload_checksumMismatch"]
+  ]);
 
   function Collection(details)
   {
@@ -40,7 +45,7 @@
 
   Collection.prototype._setEmpty = function(table, text)
   {
-    var placeholder = table.querySelector(".empty-placeholder");
+    let placeholder = table.querySelector(".empty-placeholder");
     if (text && !placeholder)
     {
       placeholder = document.createElement("li");
@@ -54,7 +59,7 @@
 
   Collection.prototype._createElementQuery = function(item)
   {
-    var access = (item.url || item.text).replace(/'/g, "\\'");
+    let access = (item.url || item.text).replace(/'/g, "\\'");
     return function(container)
     {
       return container.querySelector("[data-access='" + access + "']");
@@ -76,7 +81,7 @@
       return;
 
     this.items.push(item);
-    this.items.sort(function(a, b)
+    this.items.sort((a, b) =>
     {
       // Make sure that Acceptable Ads is always last, since it cannot be
       // disabled, but only be removed. That way it's grouped together with
@@ -87,36 +92,35 @@
       if (b.url == acceptableAdsUrl)
         return -1;
 
-      var aTitle = this._getItemTitle(a, 0).toLowerCase();
-      var bTitle = this._getItemTitle(b, 0).toLowerCase();
+      let aTitle = this._getItemTitle(a, 0).toLowerCase();
+      let bTitle = this._getItemTitle(b, 0).toLowerCase();
       return aTitle.localeCompare(bTitle);
-    }.bind(this));
+    });
 
-    for (var j = 0; j < this.details.length; j++)
+    for (let j = 0; j < this.details.length; j++)
     {
-      var table = E(this.details[j].id);
-      var template = table.querySelector("template");
-      var listItem = document.createElement("li");
+      let table = E(this.details[j].id);
+      let template = table.querySelector("template");
+      let listItem = document.createElement("li");
       listItem.appendChild(document.importNode(template.content, true));
       listItem.setAttribute("aria-label", this._getItemTitle(item, j));
       listItem.setAttribute("data-access", item.url || item.text);
       listItem.setAttribute("role", "section");
 
-      var label = listItem.querySelector(".display");
+      let label = listItem.querySelector(".display");
       if (item.recommended && label.hasAttribute("data-tooltip"))
       {
-        var tooltipId = label.getAttribute("data-tooltip");
+        let tooltipId = label.getAttribute("data-tooltip");
         tooltipId = tooltipId.replace("%value%", item.recommended);
         label.setAttribute("data-tooltip", tooltipId);
       }
 
-      var controls = listItem.querySelectorAll(".control");
-      for (var k = 0; k < controls.length; k++)
+      for (let control of listItem.querySelectorAll(".control"))
       {
-        if (controls[k].hasAttribute("title"))
+        if (control.hasAttribute("title"))
         {
-          var titleValue = getMessage(controls[k].getAttribute("title"));
-          controls[k].setAttribute("title", titleValue)
+          let titleValue = getMessage(control.getAttribute("title"));
+          control.setAttribute("title", titleValue);
         }
       }
 
@@ -135,29 +139,29 @@
 
   Collection.prototype.removeItem = function(item)
   {
-    var index = this.items.indexOf(item);
+    let index = this.items.indexOf(item);
     if (index == -1)
       return;
 
     this.items.splice(index, 1);
-    var getListElement = this._createElementQuery(item);
-    for (var i = 0; i < this.details.length; i++)
+    let getListElement = this._createElementQuery(item);
+    for (let detail of this.details)
     {
-      var table = E(this.details[i].id);
-      var element = getListElement(table);
+      let table = E(detail.id);
+      let element = getListElement(table);
 
       // Element gets removed so make sure to handle focus appropriately
-      var control = element.querySelector(".control");
+      let control = element.querySelector(".control");
       if (control && control == document.activeElement)
       {
         if (!focusNextElement(element.parentElement, control))
         {
           // Fall back to next focusable element within same tab or dialog
-          var focusableElement = element.parentElement;
+          let focusableElement = element.parentElement;
           while (focusableElement)
           {
-            if (focusableElement.classList.contains("tab-content")
-                || focusableElement.classList.contains("dialog-content"))
+            if (focusableElement.classList.contains("tab-content") ||
+                focusableElement.classList.contains("dialog-content"))
               break;
 
             focusableElement = focusableElement.parentElement;
@@ -168,26 +172,26 @@
 
       element.parentElement.removeChild(element);
       if (this.items.length == 0)
-        this._setEmpty(table, this.details[i].emptyText);
+        this._setEmpty(table, detail.emptyText);
     }
   };
 
   Collection.prototype.updateItem = function(item)
   {
-    var access = (item.url || item.text).replace(/'/g, "\\'");
-    for (var i = 0; i < this.details.length; i++)
+    let access = (item.url || item.text).replace(/'/g, "\\'");
+    for (let i = 0; i < this.details.length; i++)
     {
-      var table = E(this.details[i].id);
-      var element = table.querySelector("[data-access='" + access + "']");
+      let table = E(this.details[i].id);
+      let element = table.querySelector("[data-access='" + access + "']");
       if (!element)
         continue;
 
-      var title = this._getItemTitle(item, i);
+      let title = this._getItemTitle(item, i);
       element.querySelector(".display").textContent = title;
       element.setAttribute("aria-label", title);
       if (this.details[i].searchable)
         element.setAttribute("data-search", title.toLowerCase());
-      var control = element.querySelector(".control[role='checkbox']");
+      let control = element.querySelector(".control[role='checkbox']");
       if (control)
       {
         control.setAttribute("aria-checked", item.disabled == false);
@@ -195,20 +199,20 @@
           control.setAttribute("disabled", true);
       }
 
-      var dateElement = element.querySelector(".date");
-      var timeElement = element.querySelector(".time");
+      let dateElement = element.querySelector(".date");
+      let timeElement = element.querySelector(".time");
       if (dateElement && timeElement)
       {
-        var message = element.querySelector(".message");
+        let message = element.querySelector(".message");
         if (item.isDownloading)
         {
-          var text = getMessage("options_filterList_lastDownload_inProgress");
+          let text = getMessage("options_filterList_lastDownload_inProgress");
           message.textContent = text;
           element.classList.add("show-message");
         }
         else if (item.downloadStatus != "synchronize_ok")
         {
-          var error = filterErrors[item.downloadStatus];
+          let error = filterErrors.get(item.downloadStatus);
           if (error)
             message.textContent = getMessage(error);
           else
@@ -217,14 +221,14 @@
         }
         else if (item.lastDownload > 0)
         {
-          var dateTime = i18n_formatDateTime(item.lastDownload * 1000);
+          let dateTime = i18nFormatDateTime(item.lastDownload * 1000);
           dateElement.textContent = dateTime[0];
           timeElement.textContent = dateTime[1];
           element.classList.remove("show-message");
         }
       }
 
-      var websiteElement = element.querySelector(".context-menu .website");
+      let websiteElement = element.querySelector(".context-menu .website");
       if (websiteElement)
       {
         if (item.homepage)
@@ -233,7 +237,7 @@
           websiteElement.setAttribute("aria-hidden", true);
       }
 
-      var sourceElement = element.querySelector(".context-menu .source");
+      let sourceElement = element.querySelector(".context-menu .source");
       if (sourceElement)
         sourceElement.setAttribute("href", item.url);
     }
@@ -242,10 +246,10 @@
   Collection.prototype.clearAll = function()
   {
     this.items = [];
-    for (var i = 0; i < this.details.length; i++)
+    for (let detail of this.details)
     {
-      var table = E(this.details[i].id);
-      var element = table.firstChild;
+      let table = E(detail.id);
+      let element = table.firstChild;
       while (element)
       {
         if (element.tagName == "LI" && !element.classList.contains("static"))
@@ -253,18 +257,18 @@
         element = element.nextElementSibling;
       }
 
-      this._setEmpty(table, this.details[i].emptyText);
+      this._setEmpty(table, detail.emptyText);
     }
   };
 
   function focusNextElement(container, currentElement)
   {
-    var focusables = container.querySelectorAll("a, button, input, .control");
+    let focusables = container.querySelectorAll("a, button, input, .control");
     focusables = Array.prototype.slice.call(focusables);
-    var index = focusables.indexOf(currentElement);
+    let index = focusables.indexOf(currentElement);
     index += (index == focusables.length - 1) ? -1 : 1;
 
-    var nextElement = focusables[index];
+    let nextElement = focusables[index];
     if (!nextElement)
       return false;
 
@@ -272,14 +276,12 @@
     return true;
   }
 
-  collections.popular = new Collection(
-  [
+  collections.popular = new Collection([
     {
       id: "recommend-list-table"
     }
   ]);
-  collections.langs = new Collection(
-  [
+  collections.langs = new Collection([
     {
       id: "blocking-languages-table",
       emptyText: "options_dialog_language_added_empty"
@@ -289,42 +291,36 @@
       emptyText: "options_dialog_language_added_empty"
     }
   ]);
-  collections.allLangs = new Collection(
-  [
+  collections.allLangs = new Collection([
     {
       id: "all-lang-table",
       emptyText: "options_dialog_language_other_empty",
       searchable: true
     }
   ]);
-  collections.acceptableAds = new Collection(
-  [
+  collections.acceptableAds = new Collection([
     {
       id: "acceptableads-table"
     }
   ]);
-  collections.custom = new Collection(
-  [
+  collections.custom = new Collection([
     {
       id: "custom-list-table"
     }
   ]);
-  collections.whitelist = new Collection(
-  [
+  collections.whitelist = new Collection([
     {
       id: "whitelisting-table",
       emptyText: "options_whitelisted_empty"
     }
   ]);
-  collections.customFilters = new Collection(
-  [
+  collections.customFilters = new Collection([
     {
       id: "custom-filters-table",
       emptyText: "options_customFilters_empty"
     }
   ]);
-  collections.filterLists = new Collection(
-  [
+  collections.filterLists = new Collection([
     {
       id: "all-filter-lists-table",
       useOriginalTitle: true
@@ -350,7 +346,7 @@
 
   function addSubscription(subscription)
   {
-    var collection;
+    let collection;
     if (subscription.recommended)
     {
       if (subscription.recommended != "ads")
@@ -373,7 +369,7 @@
 
   function updateSubscription(subscription)
   {
-    for (var name in collections)
+    for (let name in collections)
       collections[name].updateItem(subscription);
 
     toggleShowLanguage(subscription);
@@ -381,7 +377,7 @@
 
   function updateFilter(filter)
   {
-    var match = filter.text.match(/^@@\|\|([^\/:]+)\^\$document$/);
+    let match = filter.text.match(/^@@\|\|([^/:]+)\^\$document$/);
     if (match && !filtersMap[filter.text])
     {
       filter.title = match[1];
@@ -396,20 +392,18 @@
   function loadRecommendations()
   {
     fetch("subscriptions.xml")
-      .then(function(response)
+      .then((response) =>
       {
         return response.text();
       })
-      .then(function(text)
+      .then((text) =>
       {
-        var list = document.getElementById("subscriptionSelector");
-        var doc = new DOMParser().parseFromString(text, "application/xml");
-        var elements = doc.documentElement.getElementsByTagName("subscription");
-        for (var i = 0; i < elements.length; i++)
+        let doc = new DOMParser().parseFromString(text, "application/xml");
+        let elements = doc.documentElement.getElementsByTagName("subscription");
+        for (let element of elements)
         {
-          var element = elements[i];
-          var type = element.getAttribute("type");
-          var subscription = {
+          let type = element.getAttribute("type");
+          let subscription = {
             disabled: true,
             downloadStatus: null,
             homepage: null,
@@ -418,7 +412,7 @@
             url: element.getAttribute("url")
           };
 
-          var prefix = element.getAttribute("prefixes");
+          let prefix = element.getAttribute("prefixes");
           if (prefix)
           {
             prefix = prefix.replace(/\W/g, "_");
@@ -427,7 +421,8 @@
           else
           {
             type = type.replace(/\W/g, "_");
-            subscription.title = getMessage("common_feature_" + type + "_title");
+            subscription.title = getMessage("common_feature_" +
+                                            type + "_title");
           }
 
           addSubscription(subscription);
@@ -440,7 +435,11 @@
     while (element)
     {
       if (element.hasAttribute("data-" + dataName))
-        return returnElement ? element : element.getAttribute("data-" + dataName);
+      {
+        if (returnElement)
+          return element;
+        return element.getAttribute("data-" + dataName);
+      }
 
       element = element.parentElement;
     }
@@ -449,7 +448,7 @@
 
   function sendMessageHandleErrors(message, onSuccess)
   {
-    ext.backgroundPage.sendMessage(message, function(errors)
+    ext.backgroundPage.sendMessage(message, (errors) =>
     {
       if (errors.length > 0)
         alert(errors.join("\n"));
@@ -460,7 +459,7 @@
 
   function openDocLink(id)
   {
-    getDocLink(id, function(link)
+    getDocLink(id, (link) =>
     {
       if (id == "share-general")
         openSharePopup(link);
@@ -476,44 +475,37 @@
 
   function onClick(e)
   {
-    var context = document.querySelector(".show-context-menu");
+    let context = document.querySelector(".show-context-menu");
     if (context)
       context.classList.remove("show-context-menu");
 
-    var element = e.target;
-    while (true)
+    let element = findParentData(e.target, "action", true);
+    if (!element)
+      return;
+
+    let actions = element.getAttribute("data-action").split(",");
+    for (let action of actions)
     {
-      if (!element)
-        return;
-
-      if (element.hasAttribute("data-action"))
-        break;
-
-      element = element.parentElement;
-    }
-
-    var element = findParentData(e.target, "action", true);
-    var actions = element.getAttribute("data-action").split(",");
-    for (var i = 0; i < actions.length; i++)
-    {
-      switch (actions[i])
+      switch (action)
       {
         case "add-domain-exception":
           addWhitelistedDomain();
           break;
-        case "add-predefined-subscription":
-          var dialog = E("dialog-content-predefined");
-          var title = dialog.querySelector("h3").textContent;
-          var url = dialog.querySelector(".url").textContent;
+        case "add-predefined-subscription": {
+          let dialog = E("dialog-content-predefined");
+          let title = dialog.querySelector("h3").textContent;
+          let url = dialog.querySelector(".url").textContent;
           addEnableSubscription(url, title);
           closeDialog();
           break;
+        }
         case "cancel-custom-filters":
           E("custom-filters").classList.remove("mode-edit");
           break;
         case "cancel-domain-exception":
           E("whitelisting-textbox").value = "";
-          document.querySelector("#whitelisting .controls").classList.remove("mode-edit");
+          document.querySelector("#whitelisting .controls").classList
+            .remove("mode-edit");
           break;
         case "close-dialog":
           closeDialog();
@@ -523,72 +515,73 @@
           editCustomFilters();
           break;
         case "edit-domain-exception":
-          document.querySelector("#whitelisting .controls").classList.add("mode-edit");
+          document.querySelector("#whitelisting .controls").classList
+            .add("mode-edit");
           E("whitelisting-textbox").focus();
           break;
-        case "import-subscription":
-          var url = E("blockingList-textbox").value;
+        case "import-subscription": {
+          let url = E("blockingList-textbox").value;
           addEnableSubscription(url);
           closeDialog();
           break;
-        case "open-dialog":
-          var dialog = findParentData(element, "dialog", false);
+        }
+        case "open-dialog": {
+          let dialog = findParentData(element, "dialog", false);
           openDialog(dialog);
           break;
-        case "open-doclink":
-          var doclink = findParentData(element, "doclink", false);
+        }
+        case "open-doclink": {
+          let doclink = findParentData(element, "doclink", false);
           openDocLink(doclink);
           break;
+        }
         case "save-custom-filters":
-          sendMessageHandleErrors(
-          {
+          sendMessageHandleErrors({
             type: "filters.importRaw",
             text: E("custom-filters-raw").value,
             removeExisting: true
           },
-          function()
+          () =>
           {
             E("custom-filters").classList.remove("mode-edit");
           });
           break;
-        case "switch-tab":
-          var tabId = findParentData(e.target, "tab", false);
+        case "switch-tab": {
+          let tabId = findParentData(e.target, "tab", false);
           switchTab(tabId);
           break;
+        }
         case "toggle-pref":
-          ext.backgroundPage.sendMessage(
-          {
+          ext.backgroundPage.sendMessage({
             type: "prefs.toggle",
             key: findParentData(element, "pref", false)
           });
           break;
         case "update-all-subscriptions":
-          ext.backgroundPage.sendMessage(
-          {
+          ext.backgroundPage.sendMessage({
             type: "subscriptions.update"
           });
           break;
-        case "open-context-menu":
-          var listItem = findParentData(element, "access", true);
+        case "open-context-menu": {
+          let listItem = findParentData(element, "access", true);
           if (listItem != context)
             listItem.classList.add("show-context-menu");
           break;
+        }
         case "update-subscription":
-          ext.backgroundPage.sendMessage(
-          {
+          ext.backgroundPage.sendMessage({
             type: "subscriptions.update",
             url: findParentData(element, "access", false)
           });
           break;
         case "remove-subscription":
-          ext.backgroundPage.sendMessage(
-          {
+          ext.backgroundPage.sendMessage({
             type: "subscriptions.remove",
             url: findParentData(element, "access", false)
           });
           break;
-        case "toggle-remove-subscription":
-          var subscriptionUrl = findParentData(element, "access", false);
+        case "toggle-remove-subscription": {
+          let subscriptionUrl = findParentData(element, "access", false);
           if (element.getAttribute("aria-checked") == "true")
           {
             ext.backgroundPage.sendMessage({
@@ -599,9 +592,9 @@
           else
             addEnableSubscription(subscriptionUrl);
           break;
+        }
         case "toggle-disable-subscription":
-          ext.backgroundPage.sendMessage(
-          {
+          ext.backgroundPage.sendMessage({
             type: "subscriptions.toggle",
             keepInstalled: true,
             url: findParentData(element, "access", false)
@@ -611,8 +604,7 @@
           addEnableSubscription(findParentData(element, "access", false));
           break;
         case "remove-filter":
-          ext.backgroundPage.sendMessage(
-          {
+          ext.backgroundPage.sendMessage({
             type: "filters.remove",
             text: findParentData(element, "access", false)
           });
@@ -640,16 +632,16 @@
 
   function onKeyUp(e)
   {
-    var key = getKey(e);
-    var element = document.activeElement;
+    let key = getKey(e);
+    let element = document.activeElement;
     if (!key || !element)
       return;
 
-    var container = findParentData(element, "action", true);
+    let container = findParentData(element, "action", true);
     if (!container || !container.hasAttribute("data-keys"))
       return;
 
-    var keys = container.getAttribute("data-keys").split(" ");
+    let keys = container.getAttribute("data-keys").split(" ");
     if (keys.indexOf(key) < 0)
       return;
 
@@ -659,29 +651,29 @@
         addWhitelistedDomain();
         break;
       case "open-doclink":
-        var doclink = findParentData(element, "doclink", false);
+        let doclink = findParentData(element, "doclink", false);
         openDocLink(doclink);
         break;
       case "switch-tab":
         if (key == "Enter")
         {
-          var tabId = findParentData(element, "tab", false);
+          let tabId = findParentData(element, "tab", false);
           switchTab(tabId);
         }
         else if (element.hasAttribute("aria-selected"))
         {
           if (key == "ArrowLeft" || key == "ArrowUp")
           {
-            element = element.previousElementSibling
-                || container.lastElementChild;
+            element = element.previousElementSibling ||
+                container.lastElementChild;
           }
           else if (key == "ArrowRight" || key == "ArrowDown")
           {
-            element = element.nextElementSibling
-                || container.firstElementChild;
+            element = element.nextElementSibling ||
+                container.firstElementChild;
           }
 
-          var tabId = findParentData(element, "tab", false);
+          let tabId = findParentData(element, "tab", false);
           switchTab(tabId);
         }
         break;
@@ -694,20 +686,20 @@
     document.body.setAttribute("data-tab", tabId);
 
     // Select tab
-    var tabList = container.querySelector("[role='tablist']");
+    let tabList = container.querySelector("[role='tablist']");
     if (!tabList)
       return null;
 
-    var previousTab = tabList.querySelector("[aria-selected]");
+    let previousTab = tabList.querySelector("[aria-selected]");
     previousTab.removeAttribute("aria-selected");
     previousTab.setAttribute("tabindex", -1);
 
-    var tab = tabList.querySelector("li[data-tab='" + tabId + "']");
+    let tab = tabList.querySelector("li[data-tab='" + tabId + "']");
     tab.setAttribute("aria-selected", true);
     tab.setAttribute("tabindex", 0);
 
-    var tabContentId = tab.getAttribute("aria-controls");
-    var tabContent = document.getElementById(tabContentId);
+    let tabContentId = tab.getAttribute("aria-controls");
+    let tabContent = document.getElementById(tabContentId);
 
     // Select sub tabs
     if (tab.hasAttribute("data-subtab"))
@@ -721,16 +713,16 @@
 
   function onHashChange()
   {
-    var hash = location.hash.substr(1);
+    let hash = location.hash.substr(1);
     if (!hash)
       return;
 
     // Select tab and parent tabs
-    var tabIds = hash.split("-");
-    var tabContent = document.body;
-    for (var i = 0; i < tabIds.length; i++)
+    let tabIds = hash.split("-");
+    let tabContent = document.body;
+    for (let i = 0; i < tabIds.length; i++)
     {
-      var tabId = tabIds.slice(0, i + 1).join("-");
+      let tabId = tabIds.slice(0, i + 1).join("-");
       tabContent = selectTabItem(tabId, tabContent, true);
       if (!tabContent)
         break;
@@ -742,24 +734,26 @@
     populateLists();
     function onFindLanguageKeyUp()
     {
-      var searchStyle = E("search-style");
+      let searchStyle = E("search-style");
       if (!this.value)
         searchStyle.innerHTML = "";
       else
-        searchStyle.innerHTML = "#all-lang-table li:not([data-search*=\"" + this.value.toLowerCase() + "\"]) { display: none; }";
+      {
+        searchStyle.innerHTML = "#all-lang-table li:not([data-search*=\"" +
+          this.value.toLowerCase() + "\"]) { display: none; }";
+      }
     }
 
     // Initialize navigation sidebar
-    ext.backgroundPage.sendMessage(
-    {
+    ext.backgroundPage.sendMessage({
       type: "app.get",
       what: "addonVersion"
     },
-    function(addonVersion)
+    (addonVersion) =>
     {
       E("abp-version").textContent = addonVersion;
     });
-    getDocLink("releases", function(link)
+    getDocLink("releases", (link) =>
     {
       E("link-version").setAttribute("href", link);
     });
@@ -770,106 +764,101 @@
     // Initialize interactive UI elements
     document.body.addEventListener("click", onClick, false);
     document.body.addEventListener("keyup", onKeyUp, false);
-    var placeholderValue  = getMessage("options_dialog_language_find");
+    let placeholderValue = getMessage("options_dialog_language_find");
     E("find-language").setAttribute("placeholder", placeholderValue);
     E("find-language").addEventListener("keyup", onFindLanguageKeyUp, false);
-    E("whitelisting-textbox").addEventListener("keypress", function(e)
+    E("whitelisting-textbox").addEventListener("keypress", (e) =>
     {
       if (getKey(e) == "Enter")
         addWhitelistedDomain();
     }, false);
 
     // Advanced tab
-    var tweaks = document.querySelectorAll("#tweaks li[data-pref]");
-    tweaks = Array.prototype.map.call(tweaks, function(checkbox)
+    let tweaks = document.querySelectorAll("#tweaks li[data-pref]");
+    tweaks = Array.prototype.map.call(tweaks, (checkbox) =>
     {
       return checkbox.getAttribute("data-pref");
     });
-    tweaks.forEach(function(key)
+    for (let key of tweaks)
     {
-      getPref(key, function(value)
+      getPref(key, (value) =>
       {
         onPrefMessage(key, value, true);
       });
-    });
-    ext.backgroundPage.sendMessage(
-    {
+    }
+    ext.backgroundPage.sendMessage({
       type: "app.get",
       what: "features"
     },
-    function(features)
+    (features) =>
     {
       hidePref("show_devtools_panel", !features.devToolsPanel);
     });
 
-    var filterTextbox = document.querySelector("#custom-filters-add input");
+    let filterTextbox = document.querySelector("#custom-filters-add input");
     placeholderValue = getMessage("options_customFilters_textbox_placeholder");
     filterTextbox.setAttribute("placeholder", placeholderValue);
     function addCustomFilters()
     {
-      var filterText = filterTextbox.value;
-      sendMessageHandleErrors(
-      {
+      let filterText = filterTextbox.value;
+      sendMessageHandleErrors({
         type: "filters.add",
         text: filterText
       },
-      function()
+      () =>
       {
         filterTextbox.value = "";
       });
     }
-    E("custom-filters-add").addEventListener("submit", function(e)
+    E("custom-filters-add").addEventListener("submit", (e) =>
     {
       e.preventDefault();
       addCustomFilters();
     }, false);
-    var customFilterEditButtons = document.querySelectorAll("#custom-filters-edit-wrapper button");
 
     // Help tab
-    getDocLink("faq", function(link)
+    getDocLink("faq", (link) =>
     {
       E("link-faq").setAttribute("href", link);
     });
-    getDocLink("social_twitter", function(link)
+    getDocLink("social_twitter", (link) =>
     {
       E("link-twitter").setAttribute("href", link);
     });
-    getDocLink("social_facebook", function(link)
+    getDocLink("social_facebook", (link) =>
     {
       E("link-facebook").setAttribute("href", link);
     });
-    getDocLink("social_gplus", function(link)
+    getDocLink("social_gplus", (link) =>
     {
       E("link-gplus").setAttribute("href", link);
     });
-    getDocLink("social_renren", function(link)
+    getDocLink("social_renren", (link) =>
     {
       E("link-renren").setAttribute("href", link);
     });
-    getDocLink("social_weibo", function(link)
+    getDocLink("social_weibo", (link) =>
     {
       E("link-weibo").setAttribute("href", link);
     });
 
     // Set forum link
-    ext.backgroundPage.sendMessage(
-    {
+    ext.backgroundPage.sendMessage({
       type: "app.get",
       what: "platform"
     },
-    function(platform)
+    (platform) =>
     {
-      ext.backgroundPage.sendMessage(
-      {
+      ext.backgroundPage.sendMessage({
         type: "app.get",
         what: "application"
       },
-      function(application)
+      (application) =>
       {
         if (platform == "chromium" && application != "opera")
           application = "chrome";
 
-        getDocLink(application + "_support", function(link)
+        getDocLink(application + "_support", (link) =>
         {
           E("link-forum").setAttribute("href", link);
         });
@@ -904,16 +893,17 @@
     onHashChange();
   }
 
-  var focusedBeforeDialog = null;
+  let focusedBeforeDialog = null;
   function openDialog(name)
   {
-    var dialog = E("dialog");
+    let dialog = E("dialog");
     dialog.setAttribute("aria-hidden", false);
     dialog.setAttribute("aria-labelledby", "dialog-title-" + name);
     document.body.setAttribute("data-dialog", name);
 
-    var defaultFocus = document.querySelector("#dialog-content-" + name
-      + " .default-focus");
+    let defaultFocus = document.querySelector(
+      "#dialog-content-" + name + " .default-focus"
+    );
     if (!defaultFocus)
       defaultFocus = dialog.querySelector(".focus-first");
     focusedBeforeDialog = document.activeElement;
@@ -922,7 +912,7 @@
 
   function closeDialog()
   {
-    var dialog = E("dialog");
+    let dialog = E("dialog");
     dialog.setAttribute("aria-hidden", true);
     dialog.removeAttribute("aria-labelledby");
     document.body.removeAttribute("data-dialog");
@@ -935,38 +925,35 @@
     filtersMap = Object.create(null);
 
     // Empty collections and lists
-    for (var property in collections)
+    for (let property in collections)
       collections[property].clearAll();
 
-    ext.backgroundPage.sendMessage(
-    {
+    ext.backgroundPage.sendMessage({
       type: "subscriptions.get",
       special: true
     },
-    function(subscriptions)
+    (subscriptions) =>
     {
       // Load filters
-      for (var i = 0; i < subscriptions.length; i++)
+      for (let subscription of subscriptions)
       {
-        ext.backgroundPage.sendMessage(
-        {
+        ext.backgroundPage.sendMessage({
           type: "filters.get",
-          subscriptionUrl: subscriptions[i].url
+          subscriptionUrl: subscription.url
         },
-        function(filters)
+        (filters) =>
         {
-          for (var i = 0; i < filters.length; i++)
-            updateFilter(filters[i]);
+          for (let filter of filters)
+            updateFilter(filter);
         });
       }
     });
     loadRecommendations();
-    ext.backgroundPage.sendMessage(
-    {
+    ext.backgroundPage.sendMessage({
       type: "prefs.get",
       key: "subscriptions_exceptionsurl"
     },
-    function(url)
+    (url) =>
     {
       acceptableAdsUrl = url;
       addSubscription({
@@ -975,56 +962,54 @@
       });
 
       // Load user subscriptions
-      ext.backgroundPage.sendMessage(
-      {
+      ext.backgroundPage.sendMessage({
         type: "subscriptions.get",
         downloadable: true
       },
-      function(subscriptions)
+      (subscriptions) =>
       {
-        for (var i = 0; i < subscriptions.length; i++)
-          onSubscriptionMessage("added", subscriptions[i]);
+        for (let subscription of subscriptions)
+          onSubscriptionMessage("added", subscription);
       });
     });
   }
 
   function addWhitelistedDomain()
   {
-    var domain = E("whitelisting-textbox");
+    let domain = E("whitelisting-textbox");
     if (domain.value)
     {
-      sendMessageHandleErrors(
-      {
+      sendMessageHandleErrors({
         type: "filters.add",
         text: "@@||" + domain.value.toLowerCase() + "^$document"
       });
     }
 
     domain.value = "";
-    document.querySelector("#whitelisting .controls").classList.remove("mode-edit");
+    document.querySelector("#whitelisting .controls")
+      .classList.remove("mode-edit");
   }
 
   function editCustomFilters()
   {
-    var customFilterItems = collections.customFilters.items;
-    var filterTexts = [];
-    for (var i = 0; i < customFilterItems.length; i++)
-      filterTexts.push(customFilterItems[i].text);
+    let filterTexts = [];
+    for (let customFilterItem of collections.customFilters.items)
+      filterTexts.push(customFilterItem.text);
     E("custom-filters-raw").value = filterTexts.join("\n");
   }
 
   function addEnableSubscription(url, title, homepage)
   {
-    var messageType = null;
-    var knownSubscription = subscriptionsMap[url];
+    let messageType = null;
+    let knownSubscription = subscriptionsMap[url];
     if (knownSubscription && knownSubscription.disabled == true)
       messageType = "subscriptions.toggle";
     else
       messageType = "subscriptions.add";
 
-    var message = {
+    let message = {
       type: messageType,
-      url: url
+      url
     };
     if (title)
       message.title = title;
@@ -1046,7 +1031,7 @@
         populateLists();
         break;
       case "removed":
-        var knownFilter = filtersMap[filter.text];
+        let knownFilter = filtersMap[filter.text];
         collections.whitelist.removeItem(knownFilter);
         collections.customFilters.removeItem(knownFilter);
         delete filtersMap[filter.text];
@@ -1059,8 +1044,8 @@
   {
     if (subscription.url in subscriptionsMap)
     {
-      var knownSubscription = subscriptionsMap[subscription.url];
-      for (var property in subscription)
+      let knownSubscription = subscriptionsMap[subscription.url];
+      for (let property in subscription)
       {
         if (property == "title" && knownSubscription.recommended)
           knownSubscription.originalTitle = subscription.title;
@@ -1109,15 +1094,15 @@
 
   function hidePref(key, value)
   {
-    var element = document.querySelector("[data-pref='" + key + "']");
+    let element = document.querySelector("[data-pref='" + key + "']");
     if (element)
       element.setAttribute("aria-hidden", value);
   }
 
   function getPref(key, callback)
   {
-    var checkPref = getPref.checks[key] || getPref.checkNone;
-    checkPref(function(isActive)
+    let checkPref = getPref.checks[key] || getPref.checkNone;
+    checkPref((isActive) =>
     {
       if (!isActive)
       {
@@ -1125,10 +1110,9 @@
         return;
       }
 
-      ext.backgroundPage.sendMessage(
-      {
+      ext.backgroundPage.sendMessage({
         type: "prefs.get",
-        key: key
+        key
       }, callback);
     });
   }
@@ -1140,7 +1124,7 @@
 
   getPref.checks =
   {
-    notifications_ignoredcategories: function(callback)
+    notifications_ignoredcategories(callback)
     {
       getPref("notifications_showui", callback);
     }
@@ -1159,20 +1143,22 @@
         break;
     }
 
-    var checkbox = document.querySelector("[data-pref='" + key + "'] button[role='checkbox']");
+    let checkbox = document.querySelector(
+      "[data-pref='" + key + "'] button[role='checkbox']"
+    );
     if (checkbox)
       checkbox.setAttribute("aria-checked", value);
   }
 
   function updateShareLink()
   {
-    var shareResources = [
+    let shareResources = [
       "https://facebook.com/plugins/like.php?",
       "https://platform.twitter.com/widgets/",
       "https://apis.google.com/se/0/_/+1/fastbutton?"
     ];
-    var isAnyBlocked = false;
-    var checksRemaining = shareResources.length;
+    let isAnyBlocked = false;
+    let checksRemaining = shareResources.length;
 
     function onResult(isBlocked)
     {
@@ -1184,16 +1170,16 @@
       }
     }
 
-    for (var i = 0; i < shareResources.length; i++)
-      checkShareResource(shareResources[i], onResult);
+    for (let sharedResource of shareResources)
+      checkShareResource(sharedResource, onResult);
   }
 
   function getMessages(id)
   {
-    var messages = [];
-    for (var i = 1; true; i++)
+    let messages = [];
+    for (let i = 1; true; i++)
     {
-      var message = ext.i18n.getMessage(id + "_" + i);
+      let message = ext.i18n.getMessage(id + "_" + i);
       if (!message)
         break;
 
@@ -1204,59 +1190,58 @@
 
   function updateTooltips()
   {
-    var anchors = document.querySelectorAll(":not(.tooltip) > [data-tooltip]");
-    for (var i = 0; i < anchors.length; i++)
+    let anchors = document.querySelectorAll(":not(.tooltip) > [data-tooltip]");
+    for (let anchor of anchors)
     {
-      var anchor = anchors[i];
-      var id = anchor.getAttribute("data-tooltip");
+      let id = anchor.getAttribute("data-tooltip");
 
-      var wrapper = document.createElement("div");
+      let wrapper = document.createElement("div");
       wrapper.className = "tooltip";
       anchor.parentNode.replaceChild(wrapper, anchor);
       wrapper.appendChild(anchor);
 
-      var topTexts = getMessages(id);
-      var bottomTexts = getMessages(id + "_notes");
+      let topTexts = getMessages(id);
+      let bottomTexts = getMessages(id + "_notes");
 
       // We have to use native tooltips to avoid issues when attaching a tooltip
       // to an element in a scrollable list or otherwise it might get cut off
       if (anchor.hasAttribute("data-tooltip-native"))
       {
-        var title = topTexts.concat(bottomTexts).join("\n\n");
+        let title = topTexts.concat(bottomTexts).join("\n\n");
         anchor.setAttribute("title", title);
         continue;
       }
 
-      var tooltip = document.createElement("div");
+      let tooltip = document.createElement("div");
       tooltip.setAttribute("role", "tooltip");
 
-      var flip = anchor.getAttribute("data-tooltip-flip");
+      let flip = anchor.getAttribute("data-tooltip-flip");
       if (flip)
         tooltip.className = "flip-" + flip;
 
-      var imageSource = anchor.getAttribute("data-tooltip-image");
+      let imageSource = anchor.getAttribute("data-tooltip-image");
       if (imageSource)
       {
-        var image = document.createElement("img");
+        let image = document.createElement("img");
         image.src = imageSource;
         image.alt = "";
         tooltip.appendChild(image);
       }
 
-      for (var j = 0; j < topTexts.length; j++)
+      for (let topText of topTexts)
       {
-        var paragraph = document.createElement("p");
-        paragraph.innerHTML = topTexts[j];
+        let paragraph = document.createElement("p");
+        paragraph.innerHTML = topText;
         tooltip.appendChild(paragraph);
       }
       if (bottomTexts.length > 0)
       {
-        var notes = document.createElement("div");
+        let notes = document.createElement("div");
         notes.className = "notes";
-        for (var j = 0; j < bottomTexts.length; j++)
+        for (let bottomText of bottomTexts)
         {
-          var paragraph = document.createElement("p");
-          paragraph.innerHTML = bottomTexts[j];
+          let paragraph = document.createElement("p");
+          paragraph.innerHTML = bottomText;
           notes.appendChild(paragraph);
         }
         tooltip.appendChild(notes);
@@ -1266,7 +1251,7 @@
     }
   }
 
-  ext.onMessage.addListener(function(message)
+  ext.onMessage.addListener((message) =>
   {
     switch (message.type)
     {
@@ -1274,8 +1259,8 @@
         switch (message.action)
         {
           case "addSubscription":
-            var subscription = message.args[0];
-            var dialog = E("dialog-content-predefined");
+            let subscription = message.args[0];
+            let dialog = E("dialog-content-predefined");
             dialog.querySelector("h3").textContent = subscription.title || "";
             dialog.querySelector(".url").textContent = subscription.url;
             openDialog("predefined");
@@ -1297,29 +1282,25 @@
     }
   });
 
-  ext.backgroundPage.sendMessage(
-  {
+  ext.backgroundPage.sendMessage({
     type: "app.listen",
     filter: ["addSubscription", "focusSection"]
   });
-  ext.backgroundPage.sendMessage(
-  {
+  ext.backgroundPage.sendMessage({
     type: "filters.listen",
     filter: ["added", "loaded", "removed"]
   });
-  ext.backgroundPage.sendMessage(
-  {
+  ext.backgroundPage.sendMessage({
     type: "prefs.listen",
     filter: ["notifications_ignoredcategories", "notifications_showui",
-        "show_devtools_panel", "shouldShowBlockElementMenu"]
+             "show_devtools_panel", "shouldShowBlockElementMenu"]
   });
-  ext.backgroundPage.sendMessage(
-  {
+  ext.backgroundPage.sendMessage({
     type: "subscriptions.listen",
     filter: ["added", "disabled", "homepage", "lastDownload", "removed",
-        "title", "downloadStatus", "downloading"]
+             "title", "downloadStatus", "downloading"]
   });
 
   window.addEventListener("DOMContentLoaded", onDOMLoaded, false);
   window.addEventListener("hashchange", onHashChange, false);
-})();
+}

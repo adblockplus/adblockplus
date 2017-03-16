@@ -15,6 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/* globals checkShareResource, getDocLink, openSharePopup, E */
+
 "use strict";
 
 (function()
@@ -22,9 +24,9 @@
   function onDOMLoaded()
   {
     // Set up logo image
-    var logo = E("logo");
+    let logo = E("logo");
     logo.src = "skin/abp-128.png";
-    var errorCallback = function()
+    let errorCallback = function()
     {
       logo.removeEventListener("error", errorCallback, false);
       // We are probably in Chrome/Opera/Safari, the image has a different path.
@@ -33,22 +35,22 @@
     logo.addEventListener("error", errorCallback, false);
 
     // Set up URLs
-    getDocLink("donate", function(link)
+    getDocLink("donate", (link) =>
     {
       E("donate").href = link;
     });
 
-    getDocLink("contributors", function(link)
+    getDocLink("contributors", (link) =>
     {
       E("contributors").href = link;
     });
 
-    getDocLink("acceptable_ads_criteria", function(link)
+    getDocLink("acceptable_ads_criteria", (link) =>
     {
       setLinks("acceptable-ads-explanation", link, openFilters);
     });
 
-    getDocLink("contribute", function(link)
+    getDocLink("contribute", (link) =>
     {
       setLinks("share-headline", link);
     });
@@ -56,7 +58,7 @@
     ext.backgroundPage.sendMessage({
       type: "app.get",
       what: "issues"
-    }, function(issues)
+    }, (issues) =>
     {
       // Show warning if filterlists settings were reinitialized
       if (issues.filterlistsReinitialized)
@@ -68,7 +70,7 @@
 
     updateSocialLinks();
 
-    ext.onMessage.addListener(function(message)
+    ext.onMessage.addListener((message) =>
     {
       if (message.type == "subscriptions.respond")
       {
@@ -83,11 +85,10 @@
 
   function updateSocialLinks()
   {
-    var networks = ["twitter", "facebook", "gplus"];
-    networks.forEach(function(network)
+    for (let network of ["twitter", "facebook", "gplus"])
     {
-      var link = E("share-" + network);
-      checkShareResource(link.getAttribute("data-script"), function(isBlocked)
+      let link = E("share-" + network);
+      checkShareResource(link.getAttribute("data-script"), (isBlocked) =>
       {
         // Don't open the share page if the sharing script would be blocked
         if (isBlocked)
@@ -95,7 +96,7 @@
         else
           link.addEventListener("click", onSocialLinkClick, false);
       });
-    });
+    }
   }
 
   function onSocialLinkClick(event)
@@ -105,33 +106,33 @@
 
     event.preventDefault();
 
-    getDocLink(event.target.id, function(link)
+    getDocLink(event.target.id, (link) =>
     {
       openSharePopup(link);
     });
   }
 
-  function setLinks(id)
+  function setLinks(id, ...args)
   {
-    var element = E(id);
+    let element = E(id);
     if (!element)
     {
       return;
     }
 
-    var links = element.getElementsByTagName("a");
+    let links = element.getElementsByTagName("a");
 
-    for (var i = 0; i < links.length; i++)
+    for (let i = 0; i < links.length; i++)
     {
-      if (typeof arguments[i + 1] == "string")
+      if (typeof args[i] == "string")
       {
-        links[i].href = arguments[i + 1];
+        links[i].href = args[i];
         links[i].setAttribute("target", "_blank");
       }
-      else if (typeof arguments[i + 1] == "function")
+      else if (typeof args[i] == "function")
       {
         links[i].href = "javascript:void(0);";
-        links[i].addEventListener("click", arguments[i + 1], false);
+        links[i].addEventListener("click", args[i], false);
       }
     }
   }
@@ -142,4 +143,4 @@
   }
 
   document.addEventListener("DOMContentLoaded", onDOMLoaded, false);
-})();
+}());

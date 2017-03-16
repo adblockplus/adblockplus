@@ -15,10 +15,12 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-(function(global)
+"use strict";
+
+(function()
 {
-  if (!global.ext)
-    global.ext = {};
+  if (typeof ext == "undefined")
+    window.ext = {};
 
   function Page(source)
   {
@@ -26,7 +28,7 @@
   }
   Page.prototype =
   {
-    sendMessage: function(message)
+    sendMessage(message)
     {
       this._source.postMessage({
         type: "message",
@@ -36,38 +38,37 @@
     }
   };
 
-  global.ext.Page = Page;
+  window.ext.Page = Page;
 
   /* Message passing */
 
-  global.ext.onMessage =
+  window.ext.onMessage =
   {
-    addListener: function(listener)
+    addListener(listener)
     {
       listener._extWrapper = function(event)
       {
         if (event.data.type != "message")
           return;
 
-        var message = event.data.payload;
-        var messageId = event.data.messageId;
-        var sender = {
+        let {messageId} = event.data;
+        let sender = {
           page: new Page(event.source)
         };
-        var callback = function(message)
+        let callback = function(message)
         {
           event.source.postMessage({
             type: "response",
-            messageId: messageId,
+            messageId,
             payload: message
           }, "*");
         };
-        listener(message, sender, callback);
+        listener(event.data.payload, sender, callback);
       };
       window.addEventListener("message", listener._extWrapper, false);
     },
 
-    removeListener: function(listener)
+    removeListener(listener)
     {
       if ("_extWrapper" in listener)
         window.removeEventListener("message", listener._extWrapper, false);
@@ -76,16 +77,16 @@
 
   /* I18n */
 
-  var getLocaleCandidates = function(selectedLocale)
+  let getLocaleCandidates = function(selectedLocale)
   {
-    var candidates = [];
-    var defaultLocale = "en-US";
+    let candidates = [];
+    let defaultLocale = "en-US";
 
     // e.g. "ja-jp-mac" -> "ja-JP", note that the part after the second
     // dash is dropped, since we only support language and region
-    var parts = selectedLocale.split("-");
-    var language = parts[0];
-    var region = (parts[1] || "").toUpperCase();
+    let parts = selectedLocale.split("-");
+    let language = parts[0];
+    let region = (parts[1] || "").toUpperCase();
 
     if (region)
       candidates.push(language + "-" + region);
@@ -98,39 +99,40 @@
     return candidates;
   };
 
-  var initCatalog = function(uiLocale)
+  let initCatalog = function(uiLocale)
   {
-    var bidiDir = /^(ar|fa|he|ug|ur)(-|$)/.test(uiLocale) ? "rtl" : "ltr";
-    var catalog = Object.create(null);
+    let bidiDir = /^(ar|fa|he|ug|ur)(-|$)/.test(uiLocale) ? "rtl" : "ltr";
+    let catalog = Object.create(null);
 
     catalog["@@ui_locale"] = [uiLocale.replace(/-/g, "_"), []];
-    catalog["@@bidi_dir" ] = [bidiDir,  []];
+    catalog["@@bidi_dir"] = [bidiDir, []];
 
     return catalog;
   };
 
-  var selectedLocale = window.navigator.language;
-  var match = /[?&]locale=([\w\-]+)/.exec(window.location.search);
+  let selectedLocale = window.navigator.language;
+  let match = /[?&]locale=([\w-]+)/.exec(window.location.search);
   if (match)
     selectedLocale = match[1];
 
-  var locales = getLocaleCandidates(selectedLocale);
-  var catalog = initCatalog(locales[0]);
-  var catalogFile = window.location.pathname.replace(/.*\//, "").replace(/\..*/, "") + ".json";
+  let locales = getLocaleCandidates(selectedLocale);
+  let catalog = initCatalog(locales[0]);
+  let catalogFile = window.location.pathname.replace(/.*\//, "")
+    .replace(/\..*/, "") + ".json";
 
-  var replacePlaceholder = function(text, placeholder, content)
+  let replacePlaceholder = function(text, placeholder, content)
   {
     return text.split("$" + placeholder + "$").join(content || "");
   };
 
-  var parseMessage = function(rawMessage)
+  let parseMessage = function(rawMessage)
   {
-    var text = rawMessage.message;
-    var placeholders = [];
+    let text = rawMessage.message;
+    let placeholders = [];
 
-    for (var placeholder in rawMessage.placeholders)
+    for (let placeholder in rawMessage.placeholders)
     {
-      var content = rawMessage.placeholders[placeholder].content;
+      let {content} = rawMessage.placeholders[placeholder];
 
       if (/^\$\d+$/.test(content))
         placeholders[parseInt(content.substr(1), 10) - 1] = placeholder;
@@ -141,10 +143,10 @@
     return [text, placeholders];
   };
 
-  var readCatalog = function(locale, catalogFile)
+  let readCatalog = function(locale, file)
   {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "locale/" + locale + "/" + catalogFile, false);
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "locale/" + locale + "/" + file, false);
     xhr.overrideMimeType("text/plain");
 
     try
@@ -159,29 +161,29 @@
     if (xhr.status != 200 && xhr.status != 0)
       return;
 
-    var rawCatalog = JSON.parse(xhr.responseText);
-    for (var msgId in rawCatalog)
+    let rawCatalog = JSON.parse(xhr.responseText);
+    for (let msgId in rawCatalog)
     {
       if (!(msgId in catalog))
         catalog[msgId] = parseMessage(rawCatalog[msgId]);
     }
   };
 
-  global.ext.i18n = {
-    getMessage: function(msgId, substitutions)
+  window.ext.i18n = {
+    getMessage(msgId, substitutions)
     {
       while (true)
       {
-        var message = catalog[msgId];
+        let message = catalog[msgId];
         if (message)
         {
-          var text = message[0];
-          var placeholders = message[1];
+          let text = message[0];
+          let placeholders = message[1];
 
           if (!(substitutions instanceof Array))
             substitutions = [substitutions];
 
-          for (var i = 0; i < placeholders.length; i++)
+          for (let i = 0; i < placeholders.length; i++)
             text = replacePlaceholder(text, placeholders[i], substitutions[i]);
 
           return text;
@@ -190,10 +192,10 @@
         if (locales.length == 0)
           return "";
 
-        var locale = locales.shift();
+        let locale = locales.shift();
         readCatalog(locale, "common.json");
         readCatalog(locale, catalogFile);
       }
     }
   };
-})(this);
+}());

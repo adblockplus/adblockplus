@@ -15,58 +15,64 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-(function(global)
-{
-  if (!global.ext)
-    global.ext = {};
+"use strict";
 
-  var backgroundFrame = document.createElement("iframe");
-  backgroundFrame.setAttribute("src", "background.html" + window.location.search);
+(function()
+{
+  if (typeof ext == "undefined")
+    window.ext = {};
+
+  let backgroundFrame = document.createElement("iframe");
+  backgroundFrame.setAttribute("src",
+                               "background.html" + window.location.search);
   backgroundFrame.style.display = "none";
-  window.addEventListener("DOMContentLoaded", function()
+  window.addEventListener("DOMContentLoaded", () =>
   {
     document.body.appendChild(backgroundFrame);
   }, false);
 
-  var messageQueue = [];
-  var maxMessageId = -1;
-  var loadHandler = function(event)
+  let messageQueue = [];
+  let maxMessageId = -1;
+  let loadHandler = (event) =>
   {
     if (event.data.type == "backgroundPageLoaded")
     {
-      var queue = messageQueue;
+      let queue = messageQueue;
       messageQueue = null;
       if (queue)
-        for (var i = 0; i < queue.length; i++)
-          backgroundFrame.contentWindow.postMessage(queue[i], "*");
+      {
+        for (let message of queue)
+          backgroundFrame.contentWindow.postMessage(message, "*");
+      }
       window.removeEventListener("message", loadHandler, false);
     }
-  }
+  };
   window.addEventListener("message", loadHandler, false);
 
-  global.ext.backgroundPage = {
-    _sendRawMessage: function(message)
+  ext.backgroundPage = {
+    _sendRawMessage(message)
     {
       if (messageQueue)
         messageQueue.push(message);
       else
         backgroundFrame.contentWindow.postMessage(message, "*");
     },
-    sendMessage: function(message, responseCallback)
+    sendMessage(message, responseCallback)
     {
-      var messageId = ++maxMessageId;
+      let messageId = ++maxMessageId;
 
       this._sendRawMessage({
         type: "message",
-        messageId: messageId,
+        messageId,
         payload: message
       });
 
       if (responseCallback)
       {
-        var callbackWrapper = function(event)
+        let callbackWrapper = function(event)
         {
-          if (event.data.type == "response" && event.data.messageId == messageId)
+          if (event.data.type == "response" &&
+              event.data.messageId == messageId)
           {
             window.removeEventListener("message", callbackWrapper, false);
             responseCallback(event.data.payload);
@@ -76,4 +82,4 @@
       }
     }
   };
-})(this);
+}());

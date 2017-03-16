@@ -15,17 +15,19 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-(function(global)
-{
-  if (!global.ext)
-    global.ext = {};
+"use strict";
 
-  window.addEventListener("load", function()
+(function()
+{
+  if (typeof ext == "undefined")
+    window.ext = {};
+
+  window.addEventListener("load", () =>
   {
     parent.postMessage({
       type: "backgroundPageLoaded"
     }, "*");
-  }, false)
+  }, false);
 
   function PageMap()
   {
@@ -33,27 +35,27 @@
     this._values = [];
   }
   PageMap.prototype = {
-    keys: function()
+    keys()
     {
-      return this._keys.map(function(source)
+      return this._keys.map((source) =>
       {
-        return new global.ext.Page(source);
+        return new window.ext.Page(source);
       });
     },
 
-    get: function(page)
+    get(page)
     {
       return this._values[this._keys.indexOf(page._source)];
     },
 
-    set: function(page, value)
+    set(page, value)
     {
-      var index = this._keys.indexOf(page._source);
+      let index = this._keys.indexOf(page._source);
       if (index < 0)
       {
         index = this._keys.push(page._source) - 1;
 
-        var callback = function()
+        let callback = function()
         {
           page._source.removeEventListener("unload", callback, false);
           this.delete(page);
@@ -63,9 +65,9 @@
       this._values[index] = value;
     },
 
-    delete: function(page)
+    delete(page)
     {
-      var index = this._keys.indexOf(page._source);
+      let index = this._keys.indexOf(page._source);
       if (index >= 0)
       {
         this._keys.splice(index, 1);
@@ -74,9 +76,9 @@
     }
   };
 
-  global.ext.PageMap = PageMap;
+  window.ext.PageMap = PageMap;
 
-  global.ext.showOptions = function(callback)
+  window.ext.showOptions = function(callback)
   {
     if (top.location.href.indexOf("new-options.html") == -1)
       window.open("new-options.html", "_blank");
@@ -85,11 +87,11 @@
       callback();
   };
 
-  global.ext.devtools = {
+  window.ext.devtools = {
     onCreated: {
-      addListener: function(listener)
+      addListener(listener)
       {
-        window.addEventListener("message", function(event)
+        window.addEventListener("message", (event) =>
         {
           if (event.data.type == "devtools")
             listener(new ext.Page(event.source));
@@ -97,4 +99,4 @@
       }
     }
   };
-})(this);
+}());

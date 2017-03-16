@@ -94,3 +94,14 @@ parameters:
 
 
 [crowdin]: https://crowdin.com
+
+Linting
+-------
+
+You can lint the code using [ESLint](http://eslint.org).
+
+    eslint *.js lib ext
+
+You will need to set up ESLint and our configuration first, see
+[eslint-config-eyeo](https://hg.adblockplus.org/codingtools/file/tip/eslint-config-eyeo)
+for more information.

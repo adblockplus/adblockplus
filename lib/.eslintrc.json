@@ -1,0 +1,8 @@
+{
+  "env": {
+    "commonjs": true
+  },
+  "globals": {
+    "Cu": true
+  }
+}

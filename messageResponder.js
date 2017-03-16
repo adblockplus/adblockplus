@@ -15,6 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/* globals require */
+
 "use strict";
 
 (function(global)
@@ -78,29 +80,28 @@
   let changeListeners = new ext.PageMap();
   let listenedPreferences = Object.create(null);
   let listenedFilterChanges = Object.create(null);
-  let messageTypes = {
-    "app": "app.respond",
-    "filter": "filters.respond",
-    "pref": "prefs.respond",
-    "subscription": "subscriptions.respond"
-  };
+  let messageTypes = new Map([
+    ["app", "app.respond"],
+    ["filter", "filters.respond"],
+    ["pref", "prefs.respond"],
+    ["subscription", "subscriptions.respond"]
+  ]);
 
-  function sendMessage(type, action)
+  function sendMessage(type, action, ...args)
   {
     let pages = changeListeners.keys();
     if (pages.length == 0)
       return;
 
-    let args = [];
-    for (let i = 2; i < arguments.length; i++)
+    let convertedArgs = [];
+    for (let arg of args)
     {
-      let arg = arguments[i];
       if (arg instanceof Subscription)
-        args.push(convertSubscription(arg));
+        convertedArgs.push(convertSubscription(arg));
       else if (arg instanceof Filter)
-        args.push(convertFilter(arg));
+        convertedArgs.push(convertFilter(arg));
       else
-        args.push(arg);
+        convertedArgs.push(arg);
     }
 
     for (let page of pages)
@@ -110,9 +111,9 @@
       if (actions && actions.indexOf(action) != -1)
       {
         page.sendMessage({
-          type: messageTypes[type],
-          action: action,
-          args: args
+          type: messageTypes.get(type),
+          action,
+          args: convertedArgs
         });
       }
     }
@@ -131,12 +132,9 @@
       if (!(name in listenedFilterChanges))
       {
         listenedFilterChanges[name] = null;
-        FilterNotifier.on(name, function()
+        FilterNotifier.on(name, (...args) =>
         {
-          let args = [type, action];
-          for (let arg of arguments)
-            args.push(arg);
-          sendMessage.apply(null, args);
+          sendMessage(type, action, ...args);
         });
       }
     }
@@ -158,9 +156,8 @@
     if (message.what == "issues")
     {
       let subscriptionInit = tryRequire("subscriptionInit");
-      return {
-        filterlistsReinitialized: subscriptionInit ? subscriptionInit.reinitialized : false
-      };
+      let result = subscriptionInit ? subscriptionInit.reinitialized : false;
+      return {filterlistsReinitialized: result};
     }
 
     if (message.what == "doclink")
@@ -170,11 +167,14 @@
     {
       let bidiDir;
       if ("chromeRegistry" in Utils)
-        bidiDir = Utils.chromeRegistry.isLocaleRTL("adblockplus") ? "rtl" : "ltr";
+      {
+        let isRtl = Utils.chromeRegistry.isLocaleRTL("adblockplus");
+        bidiDir = isRtl ? "rtl" : "ltr";
+      }
       else
         bidiDir = ext.i18n.getMessage("@@bidi_dir");
 
-      return {locale: Utils.appLocale, bidiDir: bidiDir};
+      return {locale: Utils.appLocale, bidiDir};
     }
 
     if (message.what == "features")
@@ -230,9 +230,9 @@
                             RegExpFilter.typeMap.DOCUMENT |
                             RegExpFilter.typeMap.ELEMHIDE))
       {
-        let hostname = sender.frame.url.hostname;
+        let {hostname} = sender.frame.url;
         filters = ElemHideEmulation.getRulesForDomain(hostname);
-        filters = filters.map(filter =>
+        filters = filters.map((filter) =>
         {
           return {
             selector: filter.selector,
@@ -281,7 +281,7 @@
       for (let j = subscription.filters.length - 1; j >= 0; j--)
       {
         let filter = subscription.filters[j];
-        if (/^@@\|\|([^\/:]+)\^\$document$/.test(filter.text))
+        if (/^@@\|\|([^/:]+)\^\$document$/.test(filter.text))
           continue;
 
         if (!(filter.text in seenFilter))
@@ -360,14 +360,15 @@
       subscription.disabled = false;
       FilterStorage.addSubscription(subscription);
 
-      if (subscription instanceof DownloadableSubscription && !subscription.lastDownload)
+      if (subscription instanceof DownloadableSubscription &&
+          !subscription.lastDownload)
         Synchronizer.execute(subscription);
     }
   });
 
   port.on("subscriptions.get", (message, sender) =>
   {
-    let subscriptions = FilterStorage.subscriptions.filter(s =>
+    let subscriptions = FilterStorage.subscriptions.filter((s) =>
     {
       if (message.ignoreDisabled && s.disabled)
         return false;
@@ -417,8 +418,10 @@
 
   port.on("subscriptions.update", (message, sender) =>
   {
-    let subscriptions = message.url ? [Subscription.fromURL(message.url)] :
-                        FilterStorage.subscriptions;
+    let {subscriptions} = FilterStorage;
+    if (message.url)
+      subscriptions = [Subscription.fromURL(message.url)];
+
     for (let subscription of subscriptions)
     {
       if (subscription instanceof DownloadableSubscription)

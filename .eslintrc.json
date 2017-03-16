@@ -1,0 +1,11 @@
+{
+  "extends": "eslint-config-eyeo",
+  "root": true,
+  "env": {
+    "browser": true,
+    "webextensions": true
+  },
+  "globals": {
+    "ext": true
+  }
+}

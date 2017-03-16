@@ -17,12 +17,12 @@
 
 "use strict";
 
-var lastFilterQuery = null;
+let lastFilterQuery = null;
 
 function generateFilter(request, domainSpecific)
 {
-  var filter = request.url.replace(/^[\w\-]+:\/+(?:www\.)?/, "||");
-  var options = [];
+  let filter = request.url.replace(/^[\w-]+:\/+(?:www\.)?/, "||");
+  let options = [];
 
   if (request.type == "POPUP")
   {
@@ -43,12 +43,12 @@ function generateFilter(request, domainSpecific)
 
 function createActionButton(action, label, filter)
 {
-  var button = document.createElement("span");
+  let button = document.createElement("span");
 
   button.textContent = label;
   button.classList.add("action");
 
-  button.addEventListener("click", function()
+  button.addEventListener("click", () =>
   {
     ext.backgroundPage.sendMessage({
       type: "filters." + action,
@@ -61,14 +61,14 @@ function createActionButton(action, label, filter)
 
 function createRecord(request, filter, template)
 {
-  var row = document.importNode(template, true);
+  let row = document.importNode(template, true);
   row.dataset.type = request.type;
 
   row.querySelector(".domain").textContent = request.docDomain;
   row.querySelector(".type").textContent = request.type;
 
-  var urlElement = row.querySelector(".url");
-  var actionWrapper = row.querySelector(".action-wrapper");
+  let urlElement = row.querySelector(".url");
+  let actionWrapper = row.querySelector(".action-wrapper");
 
   if (request.url)
   {
@@ -77,7 +77,7 @@ function createRecord(request, filter, template)
     if (request.type != "POPUP")
     {
       urlElement.classList.add("resourceLink");
-      urlElement.addEventListener("click", function()
+      urlElement.addEventListener("click", () =>
       {
         ext.devtools.panels.openResource(request.url);
       }, false);
@@ -86,8 +86,8 @@ function createRecord(request, filter, template)
 
   if (filter)
   {
-    var filterElement = row.querySelector(".filter");
-    var originElement = row.querySelector(".origin");
+    let filterElement = row.querySelector(".filter");
+    let originElement = row.querySelector(".origin");
 
     filterElement.textContent = filter.text;
     row.dataset.state = filter.whitelisted ? "whitelisted" : "blocked";
@@ -105,19 +105,25 @@ function createRecord(request, filter, template)
     }
 
     if (!filter.whitelisted && request.type != "ELEMHIDE")
+    {
       actionWrapper.appendChild(createActionButton(
         "add", "Add exception", "@@" + generateFilter(request, false)
       ));
+    }
 
     if (filter.userDefined)
+    {
       actionWrapper.appendChild(createActionButton(
         "remove", "Remove rule", filter.text
       ));
+    }
   }
   else
+  {
     actionWrapper.appendChild(createActionButton(
       "add", "Block item", generateFilter(request, request.specificOnly)
     ));
+  }
 
   if (lastFilterQuery && shouldFilterRow(row, lastFilterQuery))
     row.classList.add("filtered-by-search");
@@ -127,16 +133,16 @@ function createRecord(request, filter, template)
 
 function shouldFilterRow(row, query)
 {
-  var elementsToSearch = [
+  let elementsToSearch = [
     row.getElementsByClassName("url"),
     row.getElementsByClassName("filter"),
     row.getElementsByClassName("origin"),
     row.getElementsByClassName("type")
   ];
 
-  for (var elements of elementsToSearch)
+  for (let elements of elementsToSearch)
   {
-    for (var element of elements)
+    for (let element of elements)
     {
       if (element.innerText.search(query) != -1)
         return false;
@@ -147,7 +153,7 @@ function shouldFilterRow(row, query)
 
 function performSearch(table, query)
 {
-  for (var row of table.rows)
+  for (let row of table.rows)
   {
     if (shouldFilterRow(row, query))
       row.classList.add("filtered-by-search");
@@ -158,49 +164,50 @@ function performSearch(table, query)
 
 function cancelSearch(table)
 {
-  for (var row of table.rows)
+  for (let row of table.rows)
     row.classList.remove("filtered-by-search");
 }
 
-document.addEventListener("DOMContentLoaded", function()
+document.addEventListener("DOMContentLoaded", () =>
 {
-  var container = document.getElementById("items");
-  var table = container.querySelector("tbody");
-  var template = document.querySelector("template").content.firstElementChild;
+  let container = document.getElementById("items");
+  let table = container.querySelector("tbody");
+  let template = document.querySelector("template").content.firstElementChild;
 
-  document.getElementById("reload").addEventListener("click", function()
+  document.getElementById("reload").addEventListener("click", () =>
   {
     ext.devtools.inspectedWindow.reload();
   }, false);
 
-  document.getElementById("filter-state").addEventListener("change", function(event)
+  document.getElementById("filter-state").addEventListener("change", (event) =>
   {
     container.dataset.filterState = event.target.value;
   }, false);
 
-  document.getElementById("filter-type").addEventListener("change", function(event)
+  document.getElementById("filter-type").addEventListener("change", (event) =>
   {
     container.dataset.filterType = event.target.value;
   }, false);
 
-  ext.onMessage.addListener(function(message)
+  ext.onMessage.addListener((message) =>
   {
     switch (message.type)
     {
       case "add-record":
-        table.appendChild(createRecord(message.request, message.filter, template));
+        table.appendChild(createRecord(message.request, message.filter,
+                                       template));
         break;
 
       case "update-record":
-        var oldRow = table.getElementsByTagName("tr")[message.index];
-        var newRow = createRecord(message.request, message.filter, template);
+        let oldRow = table.getElementsByTagName("tr")[message.index];
+        let newRow = createRecord(message.request, message.filter, template);
         oldRow.parentNode.replaceChild(newRow, oldRow);
         newRow.classList.add("changed");
         container.classList.add("has-changes");
         break;
 
       case "remove-record":
-        var row = table.getElementsByTagName("tr")[message.index];
+        let row = table.getElementsByTagName("tr")[message.index];
         row.parentNode.removeChild(row);
         container.classList.add("has-changes");
         break;
@@ -212,9 +219,9 @@ document.addEventListener("DOMContentLoaded", function()
     }
   });
 
-  window.addEventListener("message", function(event)
+  window.addEventListener("message", (event) =>
   {
-    switch(event.data.type)
+    switch (event.data.type)
     {
       case "performSearch":
         performSearch(table, event.data.queryString);

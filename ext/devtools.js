@@ -17,20 +17,17 @@
 
 "use strict";
 
-(function(global)
-{
-  if (!global.ext)
-    global.ext = {};
+if (typeof ext == "undefined")
+  window.ext = {};
 
-  global.ext.devtools = {
-    panels: {
-      openResource: function() {}
-    },
+window.ext.devtools = {
+  panels: {
+    openResource() {}
+  },
 
-    inspectedWindow: {
-      reload: function() {}
-    }
-  };
+  inspectedWindow: {
+    reload() {}
+  }
+};
 
-  global.ext.backgroundPage._sendRawMessage({type: "devtools"});
-})(this);
+window.ext.backgroundPage._sendRawMessage({type: "devtools"});
