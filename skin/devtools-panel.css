@@ -142,6 +142,7 @@ body.dark #items tr[data-state=whitelisted]
 #items[data-filter-type=POPUP]          tr:not([data-type=POPUP]),
 #items[data-filter-type=ELEMHIDE]       tr:not([data-type=ELEMHIDE]),
 #items[data-filter-type=WEBSOCKET]      tr:not([data-type=WEBSOCKET]),
+#items[data-filter-type=WEBRTC]         tr:not([data-type=WEBRTC]),
 #items[data-filter-type=OTHER]          tr:not([data-type=OTHER])
 {
   display: none;
