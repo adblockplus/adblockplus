@@ -25,6 +25,7 @@
   let filtersMap = Object.create(null);
   let collections = Object.create(null);
   let acceptableAdsUrl = null;
+  let isCustomFiltersLoaded = false;
   let {getMessage} = ext.i18n;
   let filterErrors = new Map([
     ["synchronize_invalid_url",
@@ -473,143 +474,145 @@
     location.hash = id;
   }
 
+  function execAction(action, element)
+  {
+    switch (action)
+    {
+      case "add-domain-exception":
+        addWhitelistedDomain();
+        break;
+      case "add-language-subscription":
+        addEnableSubscription(findParentData(element, "access", false));
+        break;
+      case "add-predefined-subscription": {
+        let dialog = E("dialog-content-predefined");
+        let title = dialog.querySelector("h3").textContent;
+        let url = dialog.querySelector(".url").textContent;
+        addEnableSubscription(url, title);
+        closeDialog();
+        break;
+      }
+      case "cancel-custom-filters":
+        E("custom-filters").classList.remove("mode-edit");
+        break;
+      case "cancel-domain-exception":
+        E("whitelisting-textbox").value = "";
+        document.querySelector("#whitelisting .controls").classList
+          .remove("mode-edit");
+        break;
+      case "close-dialog":
+        closeDialog();
+        break;
+      case "edit-custom-filters":
+        editCustomFilters();
+        break;
+      case "edit-domain-exception":
+        document.querySelector("#whitelisting .controls").classList
+          .add("mode-edit");
+        E("whitelisting-textbox").focus();
+        break;
+      case "import-subscription": {
+        let url = E("blockingList-textbox").value;
+        addEnableSubscription(url);
+        closeDialog();
+        break;
+      }
+      case "open-context-menu": {
+        let listItem = findParentData(element, "access", true);
+        if (listItem && !listItem.classList.contains("show-context-menu"))
+          listItem.classList.add("show-context-menu");
+        break;
+      }
+      case "open-dialog": {
+        let dialog = findParentData(element, "dialog", false);
+        openDialog(dialog);
+        break;
+      }
+      case "open-doclink": {
+        let doclink = findParentData(element, "doclink", false);
+        openDocLink(doclink);
+        break;
+      }
+      case "remove-filter":
+        ext.backgroundPage.sendMessage({
+          type: "filters.remove",
+          text: findParentData(element, "access", false)
+        });
+        break;
+      case "remove-subscription":
+        ext.backgroundPage.sendMessage({
+          type: "subscriptions.remove",
+          url: findParentData(element, "access", false)
+        });
+        break;
+      case "save-custom-filters":
+        sendMessageHandleErrors({
+          type: "filters.importRaw",
+          text: E("custom-filters-raw").value,
+          removeExisting: true
+        },
+        () =>
+        {
+          E("custom-filters").classList.remove("mode-edit");
+        });
+        break;
+      case "switch-tab":
+        let tabId = findParentData(element, "tab", false);
+        switchTab(tabId);
+        break;
+      case "toggle-disable-subscription":
+        ext.backgroundPage.sendMessage({
+          type: "subscriptions.toggle",
+          keepInstalled: true,
+          url: findParentData(element, "access", false)
+        });
+        break;
+      case "toggle-pref":
+        ext.backgroundPage.sendMessage({
+          type: "prefs.toggle",
+          key: findParentData(element, "pref", false)
+        });
+        break;
+      case "toggle-remove-subscription":
+        let subscriptionUrl = findParentData(element, "access", false);
+        if (element.getAttribute("aria-checked") == "true")
+        {
+          ext.backgroundPage.sendMessage({
+            type: "subscriptions.remove",
+            url: subscriptionUrl
+          });
+        }
+        else
+          addEnableSubscription(subscriptionUrl);
+        break;
+      case "update-all-subscriptions":
+        ext.backgroundPage.sendMessage({
+          type: "subscriptions.update"
+        });
+        break;
+      case "update-subscription":
+        ext.backgroundPage.sendMessage({
+          type: "subscriptions.update",
+          url: findParentData(element, "access", false)
+        });
+        break;
+    }
+  }
+
   function onClick(e)
   {
     let context = document.querySelector(".show-context-menu");
     if (context)
       context.classList.remove("show-context-menu");
 
-    let element = findParentData(e.target, "action", true);
-    if (!element)
+    let actions = findParentData(e.target, "action", false);
+    if (!actions)
       return;
 
-    let actions = element.getAttribute("data-action").split(",");
+    actions = actions.split(",");
     for (let action of actions)
     {
-      switch (action)
-      {
-        case "add-domain-exception":
-          addWhitelistedDomain();
-          break;
-        case "add-predefined-subscription": {
-          let dialog = E("dialog-content-predefined");
-          let title = dialog.querySelector("h3").textContent;
-          let url = dialog.querySelector(".url").textContent;
-          addEnableSubscription(url, title);
-          closeDialog();
-          break;
-        }
-        case "cancel-custom-filters":
-          E("custom-filters").classList.remove("mode-edit");
-          break;
-        case "cancel-domain-exception":
-          E("whitelisting-textbox").value = "";
-          document.querySelector("#whitelisting .controls").classList
-            .remove("mode-edit");
-          break;
-        case "close-dialog":
-          closeDialog();
-          break;
-        case "edit-custom-filters":
-          E("custom-filters").classList.add("mode-edit");
-          editCustomFilters();
-          break;
-        case "edit-domain-exception":
-          document.querySelector("#whitelisting .controls").classList
-            .add("mode-edit");
-          E("whitelisting-textbox").focus();
-          break;
-        case "import-subscription": {
-          let url = E("blockingList-textbox").value;
-          addEnableSubscription(url);
-          closeDialog();
-          break;
-        }
-        case "open-dialog": {
-          let dialog = findParentData(element, "dialog", false);
-          openDialog(dialog);
-          break;
-        }
-        case "open-doclink": {
-          let doclink = findParentData(element, "doclink", false);
-          openDocLink(doclink);
-          break;
-        }
-        case "save-custom-filters":
-          sendMessageHandleErrors({
-            type: "filters.importRaw",
-            text: E("custom-filters-raw").value,
-            removeExisting: true
-          },
-          () =>
-          {
-            E("custom-filters").classList.remove("mode-edit");
-          });
-          break;
-        case "switch-tab": {
-          let tabId = findParentData(e.target, "tab", false);
-          switchTab(tabId);
-          break;
-        }
-        case "toggle-pref":
-          ext.backgroundPage.sendMessage({
-            type: "prefs.toggle",
-            key: findParentData(element, "pref", false)
-          });
-          break;
-        case "update-all-subscriptions":
-          ext.backgroundPage.sendMessage({
-            type: "subscriptions.update"
-          });
-          break;
-        case "open-context-menu": {
-          let listItem = findParentData(element, "access", true);
-          if (listItem != context)
-            listItem.classList.add("show-context-menu");
-          break;
-        }
-        case "update-subscription":
-          ext.backgroundPage.sendMessage({
-            type: "subscriptions.update",
-            url: findParentData(element, "access", false)
-          });
-          break;
-        case "remove-subscription":
-          ext.backgroundPage.sendMessage({
-            type: "subscriptions.remove",
-            url: findParentData(element, "access", false)
-          });
-          break;
-        case "toggle-remove-subscription": {
-          let subscriptionUrl = findParentData(element, "access", false);
-          if (element.getAttribute("aria-checked") == "true")
-          {
-            ext.backgroundPage.sendMessage({
-              type: "subscriptions.remove",
-              url: subscriptionUrl
-            });
-          }
-          else
-            addEnableSubscription(subscriptionUrl);
-          break;
-        }
-        case "toggle-disable-subscription":
-          ext.backgroundPage.sendMessage({
-            type: "subscriptions.toggle",
-            keepInstalled: true,
-            url: findParentData(element, "access", false)
-          });
-          break;
-        case "add-language-subscription":
-          addEnableSubscription(findParentData(element, "access", false));
-          break;
-        case "remove-filter":
-          ext.backgroundPage.sendMessage({
-            type: "filters.remove",
-            text: findParentData(element, "access", false)
-          });
-          break;
-      }
+      execAction(action, e.target);
     }
   }
 
@@ -645,38 +648,18 @@
     if (keys.indexOf(key) < 0)
       return;
 
-    switch (container.getAttribute("data-action"))
+    if (element.getAttribute("role") == "tab")
     {
-      case "add-domain-exception":
-        addWhitelistedDomain();
-        break;
-      case "open-doclink":
-        let doclink = findParentData(element, "doclink", false);
-        openDocLink(doclink);
-        break;
-      case "switch-tab":
-        if (key == "Enter")
-        {
-          let tabId = findParentData(element, "tab", false);
-          switchTab(tabId);
-        }
-        else if (element.hasAttribute("aria-selected"))
-        {
-          if (key == "ArrowLeft" || key == "ArrowUp")
-          {
-            element = element.previousElementSibling ||
-                container.lastElementChild;
-          }
-          else if (key == "ArrowRight" || key == "ArrowDown")
-          {
-            element = element.nextElementSibling ||
-                container.firstElementChild;
-          }
+      if (key == "ArrowLeft" || key == "ArrowUp")
+        element = element.previousElementSibling || container.lastElementChild;
+      else if (key == "ArrowRight" || key == "ArrowDown")
+        element = element.nextElementSibling || container.firstElementChild;
+    }
 
-          let tabId = findParentData(element, "tab", false);
-          switchTab(tabId);
-        }
-        break;
+    let actions = container.getAttribute("data-action").split(",");
+    for (let action of actions)
+    {
+      execAction(action, element);
     }
   }
 
@@ -945,6 +928,8 @@
         {
           for (let filter of filters)
             updateFilter(filter);
+
+          isCustomFiltersLoaded = true;
         });
       }
     });
@@ -992,6 +977,13 @@
 
   function editCustomFilters()
   {
+    if (!isCustomFiltersLoaded)
+    {
+      console.error("Custom filters are not loaded");
+      return;
+    }
+
+    E("custom-filters").classList.add("mode-edit");
     let filterTexts = [];
     for (let customFilterItem of collections.customFilters.items)
       filterTexts.push(customFilterItem.text);
