@@ -12,15 +12,19 @@
     "message": "Adblock <strong>Plus</strong>"
   },
   "options_tab_general": {
-    "description": "Name in sidebar for General tab",
+    "description": "Sidebar tab label",
     "message": "General"
   },
+  "options_tab_whitelist": {
+    "description": "Sidebar tab label and main heading inside corresponding tab",
+    "message": "Whitelisted websites"
+  },
   "options_tab_advanced": {
-    "description": "Name in sidebar for Advanced tab",
+    "description": "Sidebar tab label",
     "message": "Advanced"
   },
   "options_tab_help": {
-    "description": "Name in sidebar for Help tab",
+    "description": "Sidebar tab label",
     "message": "Help"
   },
   "options_version": {
@@ -61,7 +65,7 @@
   },
   "options_language_title_tooltip_notes_1": {
     "description": "First bottom part of tooltip description for 'Adblocking' section in General tab",
-    "message": "Consider: Sometimes ads appear because your filter lists are not up to date. If this is the case, it’s recommended to manually update all your filter lists. You can do that by going to <strong>Advanced > Update all filter lists</strong>."
+    "message": "Consider: Sometimes ads appear because your filter lists are not up to date. If this is the case, it's recommended to manually update all your filter lists. You can do that by going to <strong>Advanced > Update all filter lists</strong>."
   },
   "options_language_title_tooltip_notes_2": {
     "description": "Second bottom part of tooltip description for 'Adblocking' section in General tab",
@@ -102,7 +106,7 @@
     "message": "Note that this feature may conflict with Acceptable Ads, which allows some nonintrusive ads to be displayed, as well as the tracking that is needed to measure the performance of those ads. This is necessary because some websites only earn revenue from ads if their impact can be measured."
   },
   "options_more_social_tooltip_1": {
-    "message": "Adblock Plus can disable social media buttons on websites, ensuring that social networks can’t create a profile based on the websites you visit."
+    "message": "Adblock Plus can disable social media buttons on websites, ensuring that social networks can't create a profile based on the websites you visit."
   },
   "options_more_social_tooltip_2": {
     "message": "Buttons used to share content on social media platforms such as Facebook, Twitter, Google Plus and others are placed on almost every website that you visit. Even if you don't click them, these buttons send requests to the servers of the social network which use information to create a profile based on your browsing habits."
@@ -131,37 +135,43 @@
     "description": "Acceptable ads descriptive name in General tab",
     "message": "Allow some non-intrusive advertising"
   },
-  "options_whitelisted_add": {
-    "description": "Button label for adding whitelisted website",
-    "message": "add website"
+  "options_whitelist_description": {
+    "description": "Whitelist tab description",
+    "message": "You've turned off ad blocking on these websites. You will see ads on these websites."
   },
-  "options_whitelisted_empty": {
-    "description": "Text shown when list of whitelisted websites is empty",
-    "message": "There are no websites in your whitelist."
+  "options_whitelist_add": {
+    "description": "Add whitelisted domain button",
+    "message": "Add website"
   },
-  "options_whitelisted_title": {
-    "description": "Whitelisting option name in General tab",
-    "message": "Whitelisted websites"
+  "options_whitelist_placeholder_example": {
+    "description": "Empty Whitelist input placeholder prefix",
+    "message": "e.g. $domain$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
   },
-  "options_whitelisted_title_tooltip_1": {
-    "description": "First top part of tooltip description for 'Whitelisted domains' section in General tab",
-    "message": "You can allow a website to display ads by adding it to your whitelist."
+  "options_whitelist_empty_1": {
+    "description": "Empty Whitelist placeholder",
+    "message": "You aren't whitelisting any websites yet."
   },
-  "options_whitelisted_title_tooltip_2": {
-    "description": "Second top part of tooltip description for 'Whitelisted domains' section in General tab",
-    "message": "This means that Adblock Plus is completely deactivated on the whitelisted site. Ads and other annoyances, such as tracking scripts, may be activated."
+  "options_whitelist_empty_2": {
+    "description": "Empty Whitelist placeholder",
+    "message": "Websites you trust and want to allow ads on will be shown here."
   },
-  "options_whitelisted_title_tooltip_notes_1": {
-    "description": "Bottom part of tooltip description for 'Whitelisted domains' section in General tab",
-    "message": "Note that this feature is different from whitelisted Acceptable Ads."
+  "options_whitelist_duplicate": {
+    "description": "Duplicate hostname warning of whitelist text input",
+    "message": "Website is already whitelisted"
+  },
+  "options_whitelist_description": {
+    "description": "Section description in whitelisted tab",
+    "message": "You've turned off ad blocking on these websites. You will see ads on these websites."
   },
   "options_button_add": {
     "description": "Add button label",
     "message": "add"
-  },
-  "options_button_cancel": {
-    "description": "Cancel button label",
-    "message": "cancel"
   },
   "options_tweaks_title": {
     "description": "Section title in Advanced tab",

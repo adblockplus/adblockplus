@@ -37,6 +37,7 @@
     ["synchronize_checksum_mismatch",
      "options_filterList_lastDownload_checksumMismatch"]
   ]);
+  const timestampUI = Symbol();
 
   function Collection(details)
   {
@@ -44,18 +45,25 @@
     this.items = [];
   }
 
-  Collection.prototype._setEmpty = function(table, text)
+  Collection.prototype._setEmpty = function(table, texts)
   {
-    let placeholder = table.querySelector(".empty-placeholder");
-    if (text && !placeholder)
+    let placeholders = table.querySelectorAll(".empty-placeholder");
+
+    if (texts && placeholders.length == 0)
     {
-      placeholder = document.createElement("li");
-      placeholder.className = "empty-placeholder";
-      placeholder.textContent = getMessage(text);
-      table.appendChild(placeholder);
+      for (let text of texts)
+      {
+        let placeholder = document.createElement("li");
+        placeholder.className = "empty-placeholder";
+        placeholder.textContent = getMessage(text);
+        table.appendChild(placeholder);
+      }
     }
-    else if (placeholder)
-      table.removeChild(placeholder);
+    else if (placeholders.length > 0)
+    {
+      for (let placeholder of placeholders)
+        table.removeChild(placeholder);
+    }
   };
 
   Collection.prototype._createElementQuery = function(item)
@@ -76,12 +84,8 @@
     return item.title || item.url || item.text;
   };
 
-  Collection.prototype.addItem = function(item)
+  Collection.prototype._sortItems = function()
   {
-    if (this.items.indexOf(item) >= 0)
-      return;
-
-    this.items.push(item);
     this.items.sort((a, b) =>
     {
       // Make sure that Acceptable Ads is always last, since it cannot be
@@ -93,11 +97,26 @@
       if (b.url == acceptableAdsUrl)
         return -1;
 
+      // Make sure that newly added entries always appear on top in descending
+      // chronological order
+      let aTimestamp = a[timestampUI] || 0;
+      let bTimestamp = b[timestampUI] || 0;
+      if (aTimestamp || bTimestamp)
+        return bTimestamp - aTimestamp;
+
       let aTitle = this._getItemTitle(a, 0).toLowerCase();
       let bTitle = this._getItemTitle(b, 0).toLowerCase();
       return aTitle.localeCompare(bTitle);
     });
+  };
 
+  Collection.prototype.addItem = function(item)
+  {
+    if (this.items.indexOf(item) >= 0)
+      return;
+
+    this.items.push(item);
+    this._sortItems();
     for (let j = 0; j < this.details.length; j++)
     {
       let table = E(this.details[j].id);
@@ -179,6 +198,8 @@
 
   Collection.prototype.updateItem = function(item)
   {
+    let oldIndex = this.items.indexOf(item);
+    this._sortItems();
     let access = (item.url || item.text).replace(/'/g, "\\'");
     for (let i = 0; i < this.details.length; i++)
     {
@@ -197,7 +218,7 @@
       {
         control.setAttribute("aria-checked", item.disabled == false);
         if (item.url == acceptableAdsUrl && this == collections.filterLists)
-          control.setAttribute("disabled", true);
+          control.disabled = true;
       }
 
       let dateElement = element.querySelector(".date");
@@ -241,6 +262,10 @@
       let sourceElement = element.querySelector(".context-menu .source");
       if (sourceElement)
         sourceElement.setAttribute("href", item.url);
+
+      let newIndex = this.items.indexOf(item);
+      if (oldIndex != newIndex)
+        table.insertBefore(element, table.childNodes[newIndex]);
     }
   };
 
@@ -285,17 +310,17 @@
   collections.langs = new Collection([
     {
       id: "blocking-languages-table",
-      emptyText: "options_dialog_language_added_empty"
+      emptyText: ["options_dialog_language_added_empty"]
     },
     {
       id: "blocking-languages-dialog-table",
-      emptyText: "options_dialog_language_added_empty"
+      emptyText: ["options_dialog_language_added_empty"]
     }
   ]);
   collections.allLangs = new Collection([
     {
       id: "all-lang-table",
-      emptyText: "options_dialog_language_other_empty",
+      emptyText: ["options_dialog_language_other_empty"],
       searchable: true
     }
   ]);
@@ -312,13 +337,13 @@
   collections.whitelist = new Collection([
     {
       id: "whitelisting-table",
-      emptyText: "options_whitelisted_empty"
+      emptyText: ["options_whitelist_empty_1", "options_whitelist_empty_2"]
     }
   ]);
   collections.customFilters = new Collection([
     {
       id: "custom-filters-table",
-      emptyText: "options_customFilters_empty"
+      emptyText: ["options_customFilters_empty"]
     }
   ]);
   collections.filterLists = new Collection([
@@ -495,21 +520,11 @@
       case "cancel-custom-filters":
         E("custom-filters").classList.remove("mode-edit");
         break;
-      case "cancel-domain-exception":
-        E("whitelisting-textbox").value = "";
-        document.querySelector("#whitelisting .controls").classList
-          .remove("mode-edit");
-        break;
       case "close-dialog":
         closeDialog();
         break;
       case "edit-custom-filters":
         editCustomFilters();
-        break;
-      case "edit-domain-exception":
-        document.querySelector("#whitelisting .controls").classList
-          .add("mode-edit");
-        E("whitelisting-textbox").focus();
         break;
       case "import-subscription": {
         let url = E("blockingList-textbox").value;
@@ -750,10 +765,12 @@
     let placeholderValue = getMessage("options_dialog_language_find");
     E("find-language").setAttribute("placeholder", placeholderValue);
     E("find-language").addEventListener("keyup", onFindLanguageKeyUp, false);
-    E("whitelisting-textbox").addEventListener("keypress", (e) =>
+    let exampleValue = getMessage("options_whitelist_placeholder_example", 
+      ["www.example.com"]);
+    E("whitelisting-textbox").setAttribute("placeholder", exampleValue);
+    E("whitelisting-textbox").addEventListener("keyup", (e) =>
     {
-      if (getKey(e) == "Enter")
-        addWhitelistedDomain();
+      E("whitelisting-add-button").disabled = !e.target.value;
     }, false);
 
     // Advanced tab
@@ -962,6 +979,16 @@
   function addWhitelistedDomain()
   {
     let domain = E("whitelisting-textbox");
+    for (let whitelistItem of collections.whitelist.items)
+    {
+      if (whitelistItem.title == domain.value)
+      {
+        whitelistItem[timestampUI] = Date.now();
+        collections.whitelist.updateItem(whitelistItem);
+        domain.value = "";
+        break;
+      }
+    }
     if (domain.value)
     {
       sendMessageHandleErrors({
@@ -971,8 +998,7 @@
     }
 
     domain.value = "";
-    document.querySelector("#whitelisting .controls")
-      .classList.remove("mode-edit");
+    E("whitelisting-add-button").disabled = true;
   }
 
   function editCustomFilters()
@@ -1016,6 +1042,7 @@
     switch (action)
     {
       case "added":
+        filter[timestampUI] = Date.now();
         updateFilter(filter);
         updateShareLink();
         break;

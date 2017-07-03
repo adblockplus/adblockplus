@@ -347,6 +347,7 @@ html[dir="rtl"] .tabs li[role="tab"][aria-selected]
 
 body[data-tab|="general"] #content-general,
 body[data-tab|="advanced"] #content-advanced,
+body[data-tab|="whitelist"] #content-whitelist,
 body[data-tab|="help"] #content-help
 {
   display: block;
@@ -414,7 +415,7 @@ div.button
   border-top: 1px solid #CDCDCD;
 }
 
-button[disabled="true"]
+button[role="checkbox"][disabled]
 {
   border-radius: 2px;
   background-color: #ccc;
@@ -511,7 +512,6 @@ button[role="checkbox"],
   background-position: -12px -62px;
 }
 
-.icon-enter,
 #custom-filters-add button::after
 {
   height: 8px;
@@ -610,53 +610,7 @@ button[role="checkbox"],
   width: 100%;
 }
 
-#whitelisting .controls.mode-edit > button,
-#whitelisting .controls:not(.mode-edit) > div
-{
-  display: none;
-}
-
-#whitelisting .controls input[type="text"]
-{
-  border: 0px;
-  border-bottom: 1px solid #A1A1A1;
-  -moz-padding-end: 25px;
-  -webkit-padding-end: 25px;
-  -moz-margin-start: 14px;
-  -webkit-margin-start: 14px;
-  outline: 0px;
-  padding-bottom: 5px;
-  vertical-align: text-bottom;
-  width: 100%;
-}
-
-#whitelisting .controls .button-add span
-{
-  -moz-margin-start: 5px;
-  -webkit-margin-start: 5px;
-}
-
-#whitelisting .button-add
-{
-  -moz-margin-start: 32px;
-  -webkit-margin-start: 32px;
-}
-
-#whitelisting-add-button + span
-{
-  flex: 1;
-}
-
-.icon-enter
-{
-  background-position: -19px -33px;
-  position: absolute;
-  bottom: 9px;
-  -moz-margin-start: -20px;
-  -webkit-margin-start: -20px;
-}
-
-.button-add, .cancel-button
+.button-add
 {
   background-color: transparent;
   border: 0px;

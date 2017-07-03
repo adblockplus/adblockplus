@@ -47,6 +47,11 @@
                 tabindex="0">
               <span class="i18n_options_tab_general"></span>
             </li>
+            <li id="tab-whitelist" role="tab" data-tab="whitelist"
+                aria-controls="content-whitelist"
+                tabindex="-1">
+              <span class="i18n_options_tab_whitelist"></span>
+            </li>
             <li id="tab-advanced" role="tab" data-tab="advanced"
                 data-subtab="advanced-allFilterLists"
                 aria-controls="content-advanced" tabindex="-1">
@@ -160,41 +165,31 @@
                   </template>
                 </ul>
               </div>
-              <div id="whitelisting">
-                <div class="option-name">
-                  <strong class="i18n_options_whitelisted_title"></strong>
-                  <span class="i18n_options_readMore"
-                      data-tooltip="options_whitelisted_title_tooltip"
-                      data-tooltip-image="skin/tooltips/whitelisted.png"
-                      data-tooltip-flip="horizontal"></span>
-                </div>
-                <ul id="whitelisting-table" class="table list">
-                  <template>
-                    <label class="display"></label>
-                    <button data-action="remove-filter" class="delete control" title="options_control_remove_title"></button>
-                  </template>
-                </ul>
-                <div class="controls">
-                  <button data-action="edit-domain-exception">
-                    <span class="icon icon-add"></span>
-                    <span class="i18n_options_whitelisted_add"></span>
-                  </button>
-                  <div>
-                    <span class="icon icon-add" data-action="add-domain-exception"></span>
-                    <input type="text" id="whitelisting-textbox" placeholder="www.example.com" />
-                    <span class="icon icon-enter" data-action="add-domain-exception"></span>
-                  </div>
-                  <div>
-                    <button id="whitelisting-add-button" class="button-add" data-action="add-domain-exception">
-                      +<span class="i18n_options_button_add"></span>
-                    </button>
-                    <span></span>
-                    <button class="i18n_options_button_cancel cancel-button" data-action="cancel-domain-exception"></button>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
+        </div>
+
+        <!-- Whitelist tab content -->
+        <div id="content-whitelist" role="tabpanel" aria-labelledby="tab-whitelist">
+          <h1 class="i18n_options_tab_whitelist"></h1>
+          <p class="i18n_options_whitelist_description"></p>
+          <form>
+            <input id="whitelisting-textbox" type="text">
+            <button id="whitelisting-add-button"
+                    type="submit" 
+                    data-action="add-domain-exception" 
+                    class="i18n_options_whitelist_add" disabled>
+            </button>
+            <div id="whitelisting-validation"></div>
+          </form>
+          <ul id="whitelisting-table" class="table list">
+            <template>
+              <label class="display"></label>
+              <button data-action="remove-filter" class="delete control" 
+                      title="options_control_remove_title">
+              </button>
+            </template>
+          </ul>
         </div>
 
         <!-- Advanced tab content -->
