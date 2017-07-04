@@ -71,6 +71,8 @@
   {
     let obj = convertObject(["disabled", "downloadStatus", "homepage",
                              "lastDownload", "title", "url"], subscription);
+    if (subscription instanceof SpecialSubscription)
+      obj.filters = subscription.filters.map(convertFilter);
     obj.isDownloading = Synchronizer.isExecuting(subscription.url);
     return obj;
   }
