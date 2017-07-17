@@ -27,6 +27,7 @@
   let acceptableAdsUrl = null;
   let isCustomFiltersLoaded = false;
   let {getMessage} = ext.i18n;
+  let customFilters = [];
   let filterErrors = new Map([
     ["synchronize_invalid_url",
      "options_filterList_lastDownload_invalidURL"],
@@ -38,6 +39,11 @@
      "options_filterList_lastDownload_checksumMismatch"]
   ]);
   const timestampUI = Symbol();
+  const whitelistedDomainRegexp = /^@@\|\|([^/:]+)\^\$document$/;
+  // Period of time in milliseconds
+  const minuteInMs = 60000;
+  const hourInMs = 3600000;
+  const fullDayInMs = 86400000;
 
   function Collection(details)
   {
@@ -119,7 +125,8 @@
     this._sortItems();
     for (let j = 0; j < this.details.length; j++)
     {
-      let table = E(this.details[j].id);
+      let detail = this.details[j];
+      let table = E(detail.id);
       let template = table.querySelector("template");
       let listItem = document.createElement("li");
       listItem.appendChild(document.importNode(template.content, true));
@@ -145,13 +152,11 @@
       }
 
       this._setEmpty(table, null);
-      if (table.hasChildNodes())
-      {
-        table.insertBefore(listItem,
-            table.childNodes[this.items.indexOf(item)]);
-      }
+      if (table.children.length > 0)
+        table.insertBefore(listItem, table.children[this.items.indexOf(item)]);
       else
         table.appendChild(listItem);
+
       this.updateItem(item);
     }
     return length;
@@ -221,9 +226,8 @@
           control.disabled = true;
       }
 
-      let dateElement = element.querySelector(".date");
-      let timeElement = element.querySelector(".time");
-      if (dateElement && timeElement)
+      let lastUpdateElement = element.querySelector(".last-update");
+      if (lastUpdateElement)
       {
         let message = element.querySelector(".message");
         if (item.isDownloading)
@@ -243,9 +247,33 @@
         }
         else if (item.lastDownload > 0)
         {
-          let dateTime = i18nFormatDateTime(item.lastDownload * 1000);
-          dateElement.textContent = dateTime[0];
-          timeElement.textContent = dateTime[1];
+          let lastUpdate = item.lastDownload * 1000;
+          let sinceUpdate = Date.now() - lastUpdate;
+          if (sinceUpdate > fullDayInMs)
+          {
+            let lastUpdateDate = new Date(item.lastDownload * 1000);
+            let monthName = lastUpdateDate.toLocaleString(undefined,
+              {month: "short"});
+            let day = lastUpdateDate.getDate();
+            day = day < 10 ? "0" + day : day;
+            lastUpdateElement.textContent = day + " " + monthName + " " +
+              lastUpdateDate.getFullYear();
+          }
+          else if (sinceUpdate > hourInMs)
+          {
+            lastUpdateElement.textContent =
+              getMessage("options_filterList_hours");
+          }
+          else if (sinceUpdate > minuteInMs)
+          {
+            lastUpdateElement.textContent =
+              getMessage("options_filterList_minutes");
+          }
+          else
+          {
+            lastUpdateElement.textContent =
+              getMessage("options_filterList_now");
+          }
           element.classList.remove("show-message");
         }
       }
@@ -340,12 +368,6 @@
       emptyText: ["options_whitelist_empty_1", "options_whitelist_empty_2"]
     }
   ]);
-  collections.customFilters = new Collection([
-    {
-      id: "custom-filters-table",
-      emptyText: ["options_customFilters_empty"]
-    }
-  ]);
   collections.filterLists = new Collection([
     {
       id: "all-filter-lists-table",
@@ -403,16 +425,35 @@
 
   function updateFilter(filter)
   {
-    let match = filter.text.match(/^@@\|\|([^/:]+)\^\$document$/);
+    let match = filter.text.match(whitelistedDomainRegexp);
     if (match && !filtersMap[filter.text])
     {
       filter.title = match[1];
       collections.whitelist.addItem(filter);
     }
     else
-      collections.customFilters.addItem(filter);
+    {
+      customFilters.push(filter.text);
+      if (isCustomFiltersLoaded)
+        updateCustomFiltersUi();
+    }
 
     filtersMap[filter.text] = filter;
+  }
+
+  function removeCustomFilter(text)
+  {
+    let index = customFilters.indexOf(text);
+    if (index >= 0)
+      customFilters.splice(index, 1);
+
+    updateCustomFiltersUi();
+  }
+
+  function updateCustomFiltersUi()
+  {
+    let customFiltersListElement = E("custom-filters-raw");
+    customFiltersListElement.value = customFilters.join("\n");
   }
 
   function loadRecommendations()
@@ -518,13 +559,13 @@
         break;
       }
       case "cancel-custom-filters":
-        E("custom-filters").classList.remove("mode-edit");
+        setCustomFiltersView("read");
         break;
       case "close-dialog":
         closeDialog();
         break;
       case "edit-custom-filters":
-        editCustomFilters();
+        setCustomFiltersView("write");
         break;
       case "import-subscription": {
         let url = E("blockingList-textbox").value;
@@ -568,7 +609,7 @@
         },
         () =>
         {
-          E("custom-filters").classList.remove("mode-edit");
+          setCustomFiltersView("read");
         });
         break;
       case "switch-tab":
@@ -612,6 +653,27 @@
         });
         break;
     }
+  }
+
+  function setCustomFiltersView(mode)
+  {
+    let customFiltersElement = E("custom-filters-raw");
+    updateCustomFiltersUi();
+    if (mode == "read")
+    {
+      customFiltersElement.disabled = true;
+      if (!customFiltersElement.value)
+      {
+        setCustomFiltersView("empty");
+        return;
+      }
+    }
+    else if (mode == "write")
+    {
+      customFiltersElement.disabled = false;
+    }
+
+    E("custom-filters").dataset.mode = mode;
   }
 
   function onClick(e)
@@ -699,10 +761,6 @@
     let tabContentId = tab.getAttribute("aria-controls");
     let tabContent = document.getElementById(tabContentId);
 
-    // Select sub tabs
-    if (tab.hasAttribute("data-subtab"))
-      selectTabItem(tab.getAttribute("data-subtab"), tabContent, false);
-
     if (tab && focus)
       tab.focus();
 
@@ -765,7 +823,7 @@
     let placeholderValue = getMessage("options_dialog_language_find");
     E("find-language").setAttribute("placeholder", placeholderValue);
     E("find-language").addEventListener("keyup", onFindLanguageKeyUp, false);
-    let exampleValue = getMessage("options_whitelist_placeholder_example", 
+    let exampleValue = getMessage("options_whitelist_placeholder_example",
       ["www.example.com"]);
     E("whitelisting-textbox").setAttribute("placeholder", exampleValue);
     E("whitelisting-textbox").addEventListener("keyup", (e) =>
@@ -774,12 +832,12 @@
     }, false);
 
     // Advanced tab
-    let tweaks = document.querySelectorAll("#tweaks li[data-pref]");
-    tweaks = Array.prototype.map.call(tweaks, (checkbox) =>
+    let customize = document.querySelectorAll("#customize li[data-pref]");
+    customize = Array.prototype.map.call(customize, (checkbox) =>
     {
       return checkbox.getAttribute("data-pref");
     });
-    for (let key of tweaks)
+    for (let key of customize)
     {
       getPref(key, (value) =>
       {
@@ -795,26 +853,18 @@
       hidePref("show_devtools_panel", !features.devToolsPanel);
     });
 
-    let filterTextbox = document.querySelector("#custom-filters-add input");
-    placeholderValue = getMessage("options_customFilters_textbox_placeholder");
-    filterTextbox.setAttribute("placeholder", placeholderValue);
-    function addCustomFilters()
+    getDocLink("filterdoc", (link) =>
     {
-      let filterText = filterTextbox.value;
-      sendMessageHandleErrors({
-        type: "filters.add",
-        text: filterText
-      },
-      () =>
-      {
-        filterTextbox.value = "";
-      });
-    }
-    E("custom-filters-add").addEventListener("submit", (e) =>
+      E("link-filters").setAttribute("href", link);
+    });
+
+    getDocLink("subscriptions", (link) =>
     {
-      e.preventDefault();
-      addCustomFilters();
-    }, false);
+      setLinks("filter-lists-description", link);
+    });
+
+    E("custom-filters-raw").setAttribute("placeholder",
+      getMessage("options_customFilters_edit_placeholder", ["/ads/track/*"]));
 
     // Help tab
     getDocLink("faq", (link) =>
@@ -947,6 +997,7 @@
             updateFilter(filter);
 
           isCustomFiltersLoaded = true;
+          setCustomFiltersView("read");
         });
       }
     });
@@ -1001,21 +1052,6 @@
     E("whitelisting-add-button").disabled = true;
   }
 
-  function editCustomFilters()
-  {
-    if (!isCustomFiltersLoaded)
-    {
-      console.error("Custom filters are not loaded");
-      return;
-    }
-
-    E("custom-filters").classList.add("mode-edit");
-    let filterTexts = [];
-    for (let customFilterItem of collections.customFilters.items)
-      filterTexts.push(customFilterItem.text);
-    E("custom-filters-raw").value = filterTexts.join("\n");
-  }
-
   function addEnableSubscription(url, title, homepage)
   {
     let messageType = null;
@@ -1051,8 +1087,11 @@
         break;
       case "removed":
         let knownFilter = filtersMap[filter.text];
-        collections.whitelist.removeItem(knownFilter);
-        collections.customFilters.removeItem(knownFilter);
+        if (whitelistedDomainRegexp.test(knownFilter.text))
+          collections.whitelist.removeItem(knownFilter);
+        else
+          removeCustomFilter(filter.text);
+
         delete filtersMap[filter.text];
         updateShareLink();
         break;

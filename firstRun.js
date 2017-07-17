@@ -112,31 +112,6 @@
     });
   }
 
-  function setLinks(id, ...args)
-  {
-    let element = E(id);
-    if (!element)
-    {
-      return;
-    }
-
-    let links = element.getElementsByTagName("a");
-
-    for (let i = 0; i < links.length; i++)
-    {
-      if (typeof args[i] == "string")
-      {
-        links[i].href = args[i];
-        links[i].setAttribute("target", "_blank");
-      }
-      else if (typeof args[i] == "function")
-      {
-        links[i].href = "javascript:void(0);";
-        links[i].addEventListener("click", args[i], false);
-      }
-    }
-  }
-
   function openFilters()
   {
     ext.backgroundPage.sendMessage({type: "app.open", what: "options"});

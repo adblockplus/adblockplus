@@ -53,7 +53,6 @@
               <span class="i18n_options_tab_whitelist"></span>
             </li>
             <li id="tab-advanced" role="tab" data-tab="advanced"
-                data-subtab="advanced-allFilterLists"
                 aria-controls="content-advanced" tabindex="-1">
               <span class="i18n_options_tab_advanced"></span>
             </li>
@@ -196,135 +195,119 @@
         <div id="content-advanced" role="tabpanel"
             aria-labelledby="tab-advanced">
           <div>
-            <h1 class="i18n_options_tweaks_title"></h1>
-            <ul id="tweaks" class="table">
-              <li data-pref="shouldShowBlockElementMenu">
-                <label>
-                  <button role="checkbox" data-action="toggle-pref"></button>
-                  <span class="i18n_options_tweaks_blockElement"></span>
-                </label>
-              </li>
-              <li data-pref="show_devtools_panel">
-                <label>
-                  <button role="checkbox" data-action="toggle-pref"></button>
-                  <span class="i18n_options_tweaks_showDevToolsPanel"></span>
-                </label>
-              </li>
-              <li data-pref="notifications_ignoredcategories">
-                <label>
-                  <button role="checkbox" data-action="toggle-pref"></button>
-                  <span class="i18n_options_tweaks_showNotifications"></span>
-                </label>
-              </li>
-            </ul>
+            <h1 class="i18n_options_tab_advanced"></h1>
+            <p class="i18n_options_advanced_description"></p>
+            <section>
+              <h2 class="i18n_options_customize_header"></h2>
+              <ul id="customize" class="table">
+                <li data-pref="shouldShowBlockElementMenu">
+                  <label>
+                    <button role="checkbox" data-action="toggle-pref"></button>
+                    <span class="i18n_options_customize_blockElement"></span>
+                    <span class="i18n_options_readMore"
+                      data-tooltip="options_customize_blockElement_tooltip"></span>
+                  </label>
+                </li>
+                <li data-pref="show_devtools_panel">
+                  <label>
+                    <button role="checkbox" data-action="toggle-pref"></button>
+                    <span class="i18n_options_customize_showDevToolsPanel"></span>
+                    <span class="i18n_options_readMore"
+                      data-tooltip="options_customize_showDevToolsPanel_tooltip"></span>
+                  </label>
+                </li>
+                <li data-pref="notifications_ignoredcategories">
+                  <label>
+                    <button role="checkbox" data-action="toggle-pref"></button>
+                    <span class="i18n_options_customize_showNotifications"></span>
+                    <span class="i18n_options_readMore"
+                      data-tooltip="options_customize_showNotifications_tooltip"></span>
+                  </label>
+                </li>
+              </ul>
+            </section>
           </div>
 
-          <div>
-            <h1>
-              <span class="i18n_options_filterList_title"></span>
-              <span class="i18n_options_readMore"
-                  data-tooltip="options_filterList_title_tooltip"></span>
-            </h1>
-            <ul class="tabs horizontal" role="tablist" data-action="switch-tab"
-                data-keys="ArrowLeft ArrowUp ArrowRight ArrowDown">
-              <li id="tab-allFilterLists"
-                  class="i18n_options_tab_overview active"
-                  role="tab" data-tab="advanced-allFilterLists"
-                  aria-selected="true" aria-controls="all-filter-lists"
-                  tabindex="0"></li>
-              <li id="tab-customFilters" class="i18n_options_tab_ownList"
-                  role="tab" data-tab="advanced-customFilters"
-                  aria-controls="custom-filters" tabindex="-1"></li>
-            </ul>
-            <div id="filter-lists">
-              <div id="all-filter-lists" role="tabpanel"
-                  aria-labelledby="tab-allFilterLists">
-                <div class="table-header">
-                  <h2 class="i18n_options_column_name"></h2>
-                  <h2 class="i18n_options_column_date"></h2>
+          <section>
+            <h1 class="i18n_options_filterList_title"></h1>
+            <p id="filter-lists-description" class="i18n_options_filterList_description"></p>
+
+            <div id="all-filter-lists-table-header">
+              <h2 class="i18n_options_filterList_column_status"></h2>
+              <h2 class="i18n_options_filterList_column_name"></h2>
+              <h2 class="i18n_options_filterList_column_update"></h2>
+            </div>
+            <ul class="table cols" id="all-filter-lists-table">
+              <template>
+                <button data-action="remove-subscription" class="control delete"></button>
+                <button data-action="toggle-disable-subscription" role="checkbox" class="control">
+                </button>
+                <div class="state">
+                  <span class="i18n_options_filterList_state_active" id="state-active"></span>
+                  <span class="i18n_options_filterList_state_disabled" id="state-disabled"></span>
                 </div>
-                <ul class="table cols" id="all-filter-lists-table">
-                  <template>
-                    <button data-action="toggle-disable-subscription" role="checkbox" class="control"></button>
-                    <div>
-                      <label data-action="open-context-menu" class="display"></label>
-                      <div data-action="open-context-menu" class="arrow">
-                        <div class="context-menu">
-                          <div class="content">
-                            <a class="i18n_options_filterList_updateNow update-subscription" data-action="update-subscription"></a>
-                            <a class="i18n_options_filterList_website website" target="_blank"></a>
-                            <a class="i18n_options_filterList_source source" target="_blank"></a>
-                            <a class="i18n_options_filterList_delete delete" data-action="remove-subscription"></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <span class="date"></span>
-                    <span class="time"></span>
-                    <span class="message"></span>
-                  </template>
-                  <li class="static">
-                    <button id="own-list" role="checkbox" class="control" aria-checked="true" disabled="true"></button>
-                    <div>
-                      <label for="own-list" class="i18n_options_filterList_own_list"></label>
-                    </div>
-                    <span>
-                      <a class="i18n_options_filterList_edit_own_list"
-                          href="#advanced-customFilters"></a>
-                    </span>
-                  </li>
-                </ul>
-                <div class="controls">
-                  <button data-action="open-dialog" data-dialog="custom">
-                    <span class="icon icon-add"></span>
-                    <span class="i18n_options_filterList_add"></span>
-                  </button>
-                  <button data-action="update-all-subscriptions">
-                    <span class="icon icon-update"></span>
-                    <span class="i18n_options_filterList_update"></span>
-                  </button>
+                <div>
+                  <label class="display"></label>
                 </div>
-              </div>
-              <div id="custom-filters" role="tabpanel"
-                  aria-labelledby="tab-customFilters">
-                <h2 id="custom-filters-header">
-                  <span class="i18n_options_customFilters_title"></span>
-                  <span class="i18n_options_readMore"
-                    data-tooltip="options_customFilters_title_tooltip"></span>
-                </h2>
-                <div id="custom-filters-wrapper">
-                  <div id="custom-filters-list-wrapper">
-                    <ul id="custom-filters-table" class="table list">
-                      <template>
-                        <label class="display"></label>
-                      </template>
+                <span class="last-update"></span>
+                <span class="message"></span>
+                <a data-action="open-context-menu" class="arrow"></a>
+                <div role="menubar" class="context-menu-wrapper">
+                  <div class="context-menu">
+                    <ul class="content" role="menu">
+                      <li role="menuitem">
+                        <a class="i18n_options_filterList_updateNow update-subscription" data-action="update-subscription"></a>
+                      </li>
+                      <li role="menuitem">
+                        <a class="i18n_options_filterList_website website" target="_blank"></a>
+                      </li>
+                      <li role="menuitem">
+                        <a class="i18n_options_filterList_source source" target="_blank"></a>
+                      </li>
+                      <li role="menuitem">
+                        <a class="i18n_options_filterList_delete delete" data-action="remove-subscription"></a>
+                      </li>
                     </ul>
-                    <form id="custom-filters-add" class="controls">
-                      <input type="text"/>
-                      <button class="i18n_options_button_add" type="submit"></button>
-                    </form>
-                  </div>
-                  <textarea id="custom-filters-raw"></textarea>
-                </div>
-                <div id="custom-filters-edit-wrapper" class="controls">
-                  <button id="custom-filters-show-edit" data-action="edit-custom-filters">
-                    <span class="icon icon-edit"></span>
-                    <span class="i18n_options_customFilter_edit"></span>
-                  </button>
-                  <div id="custom-filters-raw-controls">
-                    <button id="custom-filters-raw-save" data-action="save-custom-filters">
-                      <span class="icon icon-save"></span>
-                      <span class="i18n_options_customFilter_save"></span>
-                    </button>
-                    <button data-action="cancel-custom-filters">
-                    <span class="icon icon-cancel"></span>
-                      <span class="i18n_options_customFilter_cancel"></span>
-                    </button>
                   </div>
                 </div>
+              </template>
+            </ul>
+            <div class="controls">
+              <button data-action="open-dialog" data-dialog="custom">
+                <span class="icon icon-add"></span>
+                <span class="i18n_options_filterList_add"></span>
+              </button>
+              <button data-action="update-all-subscriptions">
+                <span class="icon icon-update"></span>
+                <span class="i18n_options_filterList_update"></span>
+              </button>
+            </div>
+          </section>
+
+          <section>
+            <h1 class="i18n_options_customFilters_title"></h1>
+            <p class="i18n_options_customFilters_description"></p>
+            <h2 class="i18n_options_customFilters_widget_title"></h2>
+            <div id="custom-filters">
+              <div id="empty-custom-filters">
+                <p class="i18n_options_customFilters_tip"></p>
+                <button class="i18n_options_customFilters_start" data-action="edit-custom-filters">
+                </button>
+                <p>
+                  <a class="i18n_options_customFilters_learn" id="link-filters" target="_blank"></a>
+                </p>
+              </div>
+              <textarea id="custom-filters-raw" rows="15"></textarea>
+              <button id="custom-filters-edit" class="i18n_options_customFilter_edit" data-action="edit-custom-filters">
+              </button>
+              <div id="custom-filters-raw-controls">
+                <button class="i18n_options_customFilter_save" data-action="save-custom-filters">
+                </button>
+                <button class="i18n_options_customFilter_cancel" data-action="cancel-custom-filters">
+                </button>
               </div>
             </div>
-          </div>
+          </section>
         </div>
 
         <!-- Help tab content -->
@@ -403,7 +386,7 @@
           </div>
           <div class="dialog-content-block">
             <h3 class="i18n_options_dialog_edit_own_list"></h3>
-            <button class="i18n_options_dialog_create_own_list" data-action="close-dialog,switch-tab,edit-custom-filters" data-tab="advanced-customFilters"></button>
+            <button class="i18n_options_dialog_create_own_list" data-action="close-dialog,switch-tab,edit-custom-filters" data-tab="advanced"></button>
           </div>
         </div>
         <!-- Add predefined subscription -->

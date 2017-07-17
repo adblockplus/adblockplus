@@ -20,7 +20,7 @@
     "message": "Whitelisted websites"
   },
   "options_tab_advanced": {
-    "description": "Sidebar tab label",
+    "description": "Sidebar tab label and main heading inside corresponding tab",
     "message": "Advanced"
   },
   "options_tab_help": {
@@ -173,53 +173,77 @@
     "description": "Add button label",
     "message": "add"
   },
-  "options_tweaks_title": {
-    "description": "Section title in Advanced tab",
-    "message": "Tweaks"
+  "options_advanced_description": {
+    "description": "Advanced tab description",
+    "message": "Customize Adblock Plus, add or remove filter lists, create and maintain your own filter lists"
   },
-  "options_tweaks_blockElement": {
-    "description": "Show 'Block element' option in Advanced tab",
+  "options_customize_header": {
+    "description": "Section title in Advanced tab",
+    "message": "Customize on-page actions"
+  },
+  "options_customize_blockElement": {
+    "description": "Option label of customize section in Advanced tab",
     "message": "Show 'Block element' right-click menu item"
   },
-  "options_tweaks_showDevToolsPanel": {
-    "description": "Show developer tools panel option in Advanced tab",
+  "options_customize_blockElement_tooltip_1": {
+    "description": "Tooltip text for Show 'Block element' option item of customize section in Advanced tab",
+    "message": "Temporarily block annoying items on a webpage, e.g. images or animated slideshows."
+  },
+  "options_customize_showDevToolsPanel": {
+    "description": "Option label of customize section in Advanced tab",
     "message": "Show 'Adblock Plus' panel in the developer tools"
   },
-  "options_tweaks_showNotifications": {
-    "description": "Notification opt-out option in Advanced tab",
+  "options_customize_showDevToolsPanel_tooltip_1": {
+    "description": "Tooltip text for Show 'Adblock Plus' panel option item of customize section in Advanced tab",
+    "message": "View blocked and whitelisted items from your browser's developer tools panel."
+  },
+  "options_customize_showNotifications": {
+    "description": "Option label of customize section in Advanced tab",
     "message": "Show useful notifications"
+  },
+  "options_customize_showNotifications_tooltip_1": {
+    "description": "Tooltip text for Show notifications option item of customize section in Advanced tab",
+    "message": "Turn off all notifications from Adblock Plus."
   },
   "options_filterList_title": {
     "description": "Section title in Advanced tab",
     "message": "Filter lists"
   },
-  "options_filterList_title_tooltip_1": {
-    "description": "First top part of tooltip description for 'Filter lists' section in Advanced tab",
-    "message": "You can create or add filter lists here."
+  "options_filterList_description": {
+    "description": "Filter lists section description in Advanced tab",
+    "message": "Each Adblock Plus setting functions because of a filter list. Below are the corresponding filter lists to all your Adblock Plus settings. You can also add additional filters created and maintained by our trusted community. <a>Learn more</a>."
   },
-  "options_filterList_title_tooltip_notes_1": {
-    "description": "First bottom part of tooltip description for 'Filter lists' section in Advanced tab",
-    "message": "Filter lists are the heart of Adblock Plus, providing its functionality. In order for any feature of Adblock Plus to take effect, at least one filter list needs to be activated. These filter lists are not owned by Adblock Plus, but created by international volunteers, who also create the filter rules. A few of these filter lists are mentioned as examples in Adblock Plus."
+  "options_filterList_column_status": {
+    "description": "Column name of filter list table in Advanced tab",
+    "message": "Status"
   },
-  "options_filterList_title_tooltip_notes_2": {
-    "description": "Second bottom part of tooltip description for 'Filter lists' section in Advanced tab",
-    "message": "Adblock Plus provides free hosting for popular filter lists. If you would like to create or maintain a filter list which is not yet provided by Adblock Plus, we would be more than happy to assist you with the hosting. Contact us at <strong>Help > Forum > Filters for Adblock Plus</strong>."
+  "options_filterList_column_name": {
+    "description": "Column name of filter list table in Advanced tab",
+    "message": "Filter lists"
   },
-  "options_tab_overview": {
-    "description": "Tab name in Advanced tab",
-    "message": "Overview"
-  },
-  "options_tab_ownList": {
-    "description": "Tab name in Advanced tab",
-    "message": "Edit or create own filter list"
-  },
-  "options_column_name": {
-    "description": "Name of column of subscription list table in Advanced tab",
-    "message": "Name"
-  },
-  "options_column_date": {
-    "description": "Name of column of subscription list table in Advanced tab",
+  "options_filterList_column_update": {
+    "description": "Column name of filter list table in Advanced tab",
     "message": "Last update"
+  },
+  "options_filterList_state_active": {
+    "description": "State of filter list in Advanced tab",
+    "message": "Active"
+  },
+  "options_filterList_state_disabled": {
+    "description": "State of filter list in Advanced tab",
+    "message": "Disabled"
+  },
+  "options_filterList_now": {
+    "description": "Text inside 'Last update' column in Advanced tab",
+    "message": "Just now"
+  },
+  "options_filterList_minutes": {
+    "description": "Text inside 'Last update' column in Advanced tab",
+    "message": "minutes ago"
+  },
+  "options_filterList_hours": {
+    "description": "Text inside 'Last update' column in Advanced tab",
+    "message": "hours ago"
   },
   "options_filterList_add": {
     "description": "Import button in Advanced tab",
@@ -229,9 +253,39 @@
     "description": "Update button in Advanced tab",
     "message": "update all filter lists"
   },
-  "options_customFilters_empty": {
-    "description": "Text shown when list of custom filters is empty",
-    "message": "There are no custom filters."
+  "options_customFilters_title": {
+    "description": "Section title in Advanced tab",
+    "message": "Create and edit your filter list"
+  },
+  "options_customFilters_description": {
+    "description": "Custom filter lists section description in Advanced tab",
+    "message": "Write your own custom filters to further control what content Adblock PLus allows or blocks."
+  },
+  "options_customFilters_widget_title": {
+    "description": "Custom filter widget title in Advanced tab",
+    "message": "My filter list"
+  },
+  "options_customFilters_tip": {
+    "description": "Custom filter widget(empty) hint text in Advanced tab",
+    "message": "Filters you create will show up here."
+  },
+  "options_customFilters_start": {
+    "description": "Custom filter widget(empty) button text in Advanced tab",
+    "message": "Start writing my filter list"
+  },
+  "options_customFilters_learn": {
+    "description": "Custom filter widget(empty) link text in Advanced tab",
+    "message": "Learn how to write filter lists"
+  },
+  "options_customFilters_edit_placeholder": {
+    "description": "Custom filter widget(empty) placeholder text in Advanced tab",
+    "message": "e.g. $filter$",
+    "placeholders": {
+      "filter": {
+        "content": "$1",
+        "example": "/ads/track/*"
+      }
+    }
   },
   "options_filterList_lastDownload_invalidURL": {
     "description": "Error message in advanced tab",
@@ -251,7 +305,7 @@
   },
   "options_filterList_lastDownload_inProgress": {
     "description": "Progress message in advanced tab",
-    "message": "Downloading…"
+    "message": "Updating"
   },
   "options_filterList_updateNow": {
     "description": "Context menu item in advanced tab, appears after click on subscription",
@@ -269,37 +323,17 @@
     "description": "Context menu item in advanced tab, appears after click on subscription",
     "message": "delete"
   },
-  "options_filterList_own_list": {
-    "description": "Name of custom subscription entry in filter list section in Advanced tab",
-    "message": "Own filter list"
-  },
-  "options_filterList_edit_own_list": {
-    "description": "Entry in filter list section in Advanced tab",
-    "message": "edit your filter list"
-  },
-  "options_customFilters_title": {
-    "description": "Custom filters option name in Advanced tab",
-    "message": "Filter rules"
-  },
-  "options_customFilters_title_tooltip_1": {
-    "description": "Text of tooltip description for 'Filter rules' section in Advanced tab",
-    "message": "Learn how to write your own filter rules to define elements that should be blocked. See tutorials and the syntax description at <strong>adblockplus.org/filters</strong>"
-  },
-  "options_customFilters_textbox_placeholder": {
-    "description": "Adding custom filter textbox placeholder text in Advanced tab",
-    "message": "add your filter rule here"
-  },
   "options_customFilter_edit": {
     "description": "Label below single input view of user's filter list in Advanced tab",
-    "message": "edit filter rules"
+    "message": "Edit filters"
   },
   "options_customFilter_cancel": {
     "description": "Label below raw view of user's filter list in Advanced tab",
-    "message": "cancel"
+    "message": "Cancel"
   },
   "options_customFilter_save": {
     "description": "Label below raw view of user's filter list in Advanced tab",
-    "message": "save"
+    "message": "Save"
   },
   "options_faq_title": {
     "description": "FAQ section name in Help tab and link label in same section",
