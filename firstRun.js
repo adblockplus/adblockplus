@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* globals checkShareResource, getDocLink, openSharePopup, E */
+/* globals checkShareResource, getDocLink, openSharePopup, setLinks, E */
 
 "use strict";
 

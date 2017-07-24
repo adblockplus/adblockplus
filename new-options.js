@@ -16,7 +16,7 @@
  */
 
 /* globals checkShareResource, getDocLink, i18nFormatDateTime, openSharePopup,
-           E */
+           setLinks, E */
 
 "use strict";
 
