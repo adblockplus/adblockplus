@@ -42,6 +42,13 @@
     SpecialSubscription
   } = require("subscriptionClasses");
 
+  port.on("types.get", (message, sender) =>
+  {
+    let filterTypes = Array.from(require("requestBlocker").filterTypes);
+    filterTypes.push(...filterTypes.splice(filterTypes.indexOf("OTHER"), 1));
+    return filterTypes;
+  });
+
   // Some modules doesn't exist on Firefox. Moreover,
   // require() throws an exception on Firefox in that case.
   // However, try/catch causes the whole function to to be

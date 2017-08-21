@@ -19,6 +19,23 @@
 
 let lastFilterQuery = null;
 
+ext.backgroundPage.sendMessage({type: "types.get"},
+  (filterTypes) =>
+  {
+    let filterTypesElem = document.getElementById("filter-type");
+    let filterStyleElem = document.createElement("style");
+    for (let type of filterTypes)
+    {
+      filterStyleElem.innerHTML +=
+        `#items[data-filter-type=${type}] tr:not([data-type=${type}])` +
+        "{display: none;}";
+      let optionNode = document.createElement("option");
+      optionNode.appendChild(document.createTextNode(type));
+      filterTypesElem.appendChild(optionNode);
+    }
+    document.body.appendChild(filterStyleElem);
+  });
+
 function generateFilter(request, domainSpecific)
 {
   let filter = request.url.replace(/^[\w-]+:\/+(?:www\.)?/, "||");

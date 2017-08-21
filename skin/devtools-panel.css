@@ -130,20 +130,7 @@ body.dark #items tr[data-state=whitelisted]
 }
 
 #items[data-filter-state=blocked]       tr:not([data-state=blocked]),
-#items[data-filter-state=whitelisted]   tr:not([data-state=whitelisted]),
-#items[data-filter-type=SUBDOCUMENT]    tr:not([data-type=SUBDOCUMENT]),
-#items[data-filter-type=IMAGE]          tr:not([data-type=IMAGE]),
-#items[data-filter-type=STYLESHEET]     tr:not([data-type=STYLESHEET]),
-#items[data-filter-type=SCRIPT]         tr:not([data-type=SCRIPT]),
-#items[data-filter-type=OBJECT]         tr:not([data-type=OBJECT]),
-#items[data-filter-type=XMLHTTPREQUEST] tr:not([data-type=XMLHTTPREQUEST]),
-#items[data-filter-type=FONT]           tr:not([data-type=FONT]),
-#items[data-filter-type=PING]           tr:not([data-type=PING]),
-#items[data-filter-type=POPUP]          tr:not([data-type=POPUP]),
-#items[data-filter-type=ELEMHIDE]       tr:not([data-type=ELEMHIDE]),
-#items[data-filter-type=WEBSOCKET]      tr:not([data-type=WEBSOCKET]),
-#items[data-filter-type=WEBRTC]         tr:not([data-type=WEBRTC]),
-#items[data-filter-type=OTHER]          tr:not([data-type=OTHER])
+#items[data-filter-state=whitelisted]   tr:not([data-state=whitelisted])
 {
   display: none;
 }
