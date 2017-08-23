@@ -473,7 +473,7 @@
     knownSubscriptions[subscriptionUrl] =
       modules.subscriptionClasses.Subscription.fromURL(subscriptionUrl);
   }
-  let customSubscription = knownSubscriptions["~user~786254"];
+  let customSubscription = knownSubscriptions["~user~78625"];
 
   if (params.addSubscription)
   {
