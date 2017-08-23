@@ -39,10 +39,6 @@
     "description": "Button in navigation sidebar to support Adblock Plus",
     "message": "Support us"
   },
-  "options_control_toggle_title": {
-    "description": "Title of toggle controls",
-    "message": "toggle"
-  },
   "options_control_remove_title": {
     "description": "Title of remove controls",
     "message": "remove"
@@ -51,89 +47,93 @@
     "description": "Read more element that shows tooltip with description",
     "message": "read more"
   },
-  "options_blocking_title": {
-    "description": "Blocking section name in General tab",
-    "message": "Blocking"
+  "options_general_description": {
+    "description": "General tab description",
+    "message": "Determine what Adblock Plus shows and hides on websites"
   },
-  "options_language_title": {
-    "description": "Ad blocking list option name in General tab",
-    "message": "<strong>Adblocking</strong> for websites in..."
+  "options_privacy_header": {
+    "description": "Section title in General tab",
+    "message": "PRIVACY & SECURITY"
   },
-  "options_language_title_tooltip_1": {
-    "description": "Top part of tooltip description for 'Adblocking' section in General tab",
-    "message": "The default filter list is based on your browser's language settings. If you live in Germany, your default filter list is German+English. However, if you live in Germany and frequently visit Italian websites, you need to subscribe to the Italian filter list. To maintain optimal performance, it is recommended to select only the language that you need."
+  "options_protection_privacy_tooltip": {
+    "description": "Tooltip for 'Disable tracking' option in General tab",
+    "message": "Protect your personal data by removing all forms of tracking from the Internet including information collectors."
   },
-  "options_language_title_tooltip_notes_1": {
-    "description": "First bottom part of tooltip description for 'Adblocking' section in General tab",
-    "message": "Consider: Sometimes ads appear because your filter lists are not up to date. If this is the case, it's recommended to manually update all your filter lists. You can do that by going to <strong>Advanced > Update all filter lists</strong>."
+  "options_protection_social_tooltip": {
+    "description": "Tooltip for 'Remove Social Media Buttons' option in General tab",
+    "message": "The social media buttons (or icons) on the websites that you visit allow social media networks to build a profile of you based on your browsing habits - even when you don't click on them. Hide these buttons to protect your profile."
   },
-  "options_language_title_tooltip_notes_2": {
-    "description": "Second bottom part of tooltip description for 'Adblocking' section in General tab",
-    "message": "If you still see ads, please report them in our Adblock Plus sub-forum under <strong>Help > Forum > Filters for Adblock Plus</strong>."
+  "options_acceptableAds_header": {
+    "description": "Section title in General tab",
+    "message": "Acceptable Ads"
+  },
+  "options_acceptableAds_description": {
+    "description": "Acceptable Ads section description in General tab",
+    "message": "Acceptable Ads are nonintrusive ads. They are the middle ground between ad blocking and supporting online content because they generate revenue for website owners."
+  },
+  "options_acceptableAds_ads_label": {
+    "description": "Acceptable Ads section option label in General tab",
+    "message": "Allow some nonintrusive ads"
+  },
+  "options_acceptableAds_ads_description_1": {
+    "description": "Acceptable Ads section 'Allow some nonintrusive ads' option description in General tab",
+    "message": "Nonintrusive ads are not annoying and do not interfere with the content you are viewing. These ads collect some information about your browsing habits to provide you with more relevant ads. <a>Read more about the nonintrusive ad criteria</a>"
+  },
+  "options_acceptableAds_ads_description_2": {
+    "description": "Acceptable Ads section 'Allow some nonintrusive ads' option description in General tab",
+    "message": "<strong>Note:</strong> The ads collect data about your browsing habits <strong>not</strong> Adblock Plus."
+  },
+  "options_acceptableAds_privacy_label": {
+    "description": "Acceptable Ads section option label in General tab",
+    "message": "Allow only nonintrusive ads that are privacy-friendly"
+  },
+  "options_acceptableAds_privacy_description": {
+    "description": "Acceptable Ads section 'Allow only nonintrusive ads that are privacy-friendly ' option description in General tab",
+    "message": "These ads do not collect personal user information. Ads may be less relevant as a result."
+  },
+  "options_acceptableAds_dnt_notification": {
+    "description": "Acceptable Ads section's notification (being shown if Do Not Track is not enabled) in General tab",
+    "message": "<strong>Note:</strong> You have <strong>Do Not Track (DNT)</strong> disabled in your Chrome settings. For this feature to work properly, please enable <strong>DNT</strong> in your browser preferences. <a>Find out how to turn on DNT</a>."
+  },
+  "options_acceptableAds_none_label": {
+    "description": "Acceptable Ads section option label in General tab",
+    "message": "Block all ads"
+  },
+  "options_language_header": {
+    "description": "Section title in General tab",
+    "message": "Language"
+  },
+  "options_language_description": {
+    "description": "Language section description in General tab",
+    "message": "Optimize Adblock Plus for the language(s) you typically browse websites in."
+  },
+  "options_language_empty": {
+    "description": "Language section language list empty text in General tab",
+    "message": "You don't have any language specific filters."
+  },
+  "options_language_change": {
+    "description": "Language section language list single entry text in General tab",
+    "message": "change"
+  },
+  "options_language_tip": {
+    "description": "Language section tip in General tab",
+    "message": "<strong>TIP:</strong> Only select the languages you need. Selecting more will slow down the ad blocker and therefore your browsing speed."
+  },
+  "options_more_filters_header": {
+    "description": "Section title in General tab",
+    "message": "More filters"
+  },
+  "options_more_filters_description": {
+    "description": "More filters section description in General tab",
+    "message": "These are additional filters you previously added to Adblock Plus."
+  },
+  "options_more_filters_note": {
+    "description": "More filters section note in General tab",
+    "message": "<strong>Note:</strong> These filters are managed by third party authors. Adblock Plus is not responsible for them."
   },
   "options_language_add": {
     "description": "Add other language button in General Tab",
-    "message": "add other website languages"
-  },
-  "options_more_title": {
-    "description": "Blocking list option name in General tab",
-    "message": "More blocking options"
-  },
-  "options_more_title_tooltip_1": {
-    "description": "Tooltip description for 'More blocking options' section in General tab",
-    "message": "By default, Adblock Plus blocks all annoying ads, including video ads, animated ads, noisy ads, flashy banners, pop-ups, pop-unders and much more. In addition to ads, Adblock Plus can also block tracking, malware, social media buttons and more to increase your safety and privacy online."
-  },
-  "options_more_add": {
-    "description": "Button name for adding other filter list in General tab",
-    "message": "add other filter list"
-  },
-  "options_more_anti-adblock_tooltip_1": {
-    "message": "The Adblock Warning Removal List removes obtrusive messages and warnings targeted to users who use an adblocker."
-  },
-  "options_more_malware_tooltip_1": {
-    "message": "Increase your protection against malware, viruses, Trojan horses, worms, spyware, adware and more."
-  },
-  "options_more_malware_tooltip_2": {
-    "message": "If your computer is slow at startup or riddled with pop-ups, it may be infected with malware. Computers infected with malware are vulnerable to all kinds of cyber attacks, including stolen identity. Infected computers can also be used to send spam emails or attack other computers or servers, stealing passwords, social security numbers, personal documents and credit card information."
-  },
-  "options_more_privacy_tooltip_1": {
-    "message": "Adblock Plus can disable tracking (e.g. from ad agencies) to further protect your privacy on the web."
-  },
-  "options_more_privacy_tooltip_2": {
-    "message": "Companies such as ad agencies are tracking your online activity and browsing history every time you surf the web. According to Stanford University research, Adblock Plus is the most efficient solution available against third-party tracking companies."
-  },
-  "options_more_privacy_tooltip_notes_1": {
-    "message": "Note that this feature may conflict with Acceptable Ads, which allows some nonintrusive ads to be displayed, as well as the tracking that is needed to measure the performance of those ads. This is necessary because some websites only earn revenue from ads if their impact can be measured."
-  },
-  "options_more_social_tooltip_1": {
-    "message": "Adblock Plus can disable social media buttons on websites, ensuring that social networks can't create a profile based on the websites you visit."
-  },
-  "options_more_social_tooltip_2": {
-    "message": "Buttons used to share content on social media platforms such as Facebook, Twitter, Google Plus and others are placed on almost every website that you visit. Even if you don't click them, these buttons send requests to the servers of the social network which use information to create a profile based on your browsing habits."
-  },
-  "options_exceptions_title": {
-    "description": "Exceptions section name in General tab",
-    "message": "Exceptions"
-  },
-  "options_acceptableAds_title": {
-    "description": "Acceptable ads option name in General tab",
-    "message": "Acceptable ads"
-  },
-  "options_acceptableAds_title_tooltip_1": {
-    "description": "First part of tooltip description for 'Acceptable Ads' section in General tab",
-    "message": "Since many websites rely on advertising revenue, we encourage the use of noninstrusive advertising."
-  },
-  "options_acceptableAds_title_tooltip_2": {
-    "description": "Second part of tooltip description for 'Acceptable Ads' section in General tab",
-    "message": "The Acceptable Ads initiative, which supports both users and website owners, is a set of strict guidelines that identifies acceptable ads. Ads meeting these criteria are displayed to users."
-  },
-  "options_acceptableAds_title_tooltip_3": {
-    "description": "Third part of tooltip description for 'Acceptable Ads' section in General tab",
-    "message": "You can, however, disable this feature at any time and browse ad-free."
-  },
-  "options_acceptableAds_description": {
-    "description": "Acceptable ads descriptive name in General tab",
-    "message": "Allow some non-intrusive advertising"
+    "message": "+ add a language"
   },
   "options_whitelist_description": {
     "description": "Whitelist tab description",
@@ -185,7 +185,7 @@
     "description": "Option label of customize section in Advanced tab",
     "message": "Show 'Block element' right-click menu item"
   },
-  "options_customize_blockElement_tooltip_1": {
+  "options_customize_blockElement_tooltip": {
     "description": "Tooltip text for Show 'Block element' option item of customize section in Advanced tab",
     "message": "Temporarily block annoying items on a webpage, e.g. images or animated slideshows."
   },
@@ -193,7 +193,7 @@
     "description": "Option label of customize section in Advanced tab",
     "message": "Show 'Adblock Plus' panel in the developer tools"
   },
-  "options_customize_showDevToolsPanel_tooltip_1": {
+  "options_customize_showDevToolsPanel_tooltip": {
     "description": "Tooltip text for Show 'Adblock Plus' panel option item of customize section in Advanced tab",
     "message": "View blocked and whitelisted items from your browser's developer tools panel."
   },
@@ -201,7 +201,7 @@
     "description": "Option label of customize section in Advanced tab",
     "message": "Show useful notifications"
   },
-  "options_customize_showNotifications_tooltip_1": {
+  "options_customize_showNotifications_tooltip": {
     "description": "Tooltip text for Show notifications option item of customize section in Advanced tab",
     "message": "Turn off all notifications from Adblock Plus."
   },
@@ -396,8 +396,8 @@
     "message": "create own filter rules"
   },
    "options_dialog_language_title": {
-    "description": "Button in gerenal tab",
-    "message": "Add other website language"
+    "description": "Title of lanugage modal dialog",
+    "message": "Select a language"
   },
   "options_dialog_language_find": {
     "description": "Placeholder text in add language modal dialog",
@@ -406,10 +406,6 @@
   "options_dialog_language_added": {
     "description": "Table headline in add language modal dialog",
     "message": "Added languages"
-  },
-  "options_dialog_language_added_empty": {
-    "description": "Text shown when list of added languages is empty",
-    "message": "There are no languages."
   },
   "options_dialog_language_other": {
     "description": "Table headline in add language modal dialog",

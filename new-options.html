@@ -22,7 +22,6 @@
     <title class="i18n_options_page_title"></title>
     <link rel="stylesheet" href="skin/common.css">
     <link rel="stylesheet" href="skin/new-options.css">
-    <style id="search-style"></style>
     <script src="ext/common.js"></script>
     <script src="ext/content.js"></script>
     <script src="common.js"></script>
@@ -87,85 +86,70 @@
 
         <!-- General tab content -->
         <div id="content-general" role="tabpanel" aria-labelledby="tab-general">
-          <div>
-            <h1 class="i18n_options_blocking_title"></h1>
-            <div class="hbox">
-              <div id="blocking-languages">
-                <div class="option-name">
-                  <span class="i18n_options_language_title"></span>
-                  <span class="i18n_options_readMore"
-                      data-tooltip="options_language_title_tooltip"
-                      data-tooltip-image="skin/tooltips/block.png"></span>
-                </div>
-                <ul id="blocking-languages-table" class="table list">
-                  <template>
-                    <button data-action="toggle-disable-subscription" role="checkbox" class="control" title="options_control_toggle_title"></button>
-                    <label class="display"></label>
-                    <button data-action="remove-subscription" class="delete control" title="options_control_remove_title"></button>
-                  </template>
-                </ul>
-                <div class="controls">
-                  <button data-action="open-dialog" data-dialog="language">
-                    <span class="icon icon-add"></span>
-                    <span class="i18n_options_language_add"></span>
-                  </button>
-                </div>
+          <h1 class="i18n_options_tab_general"></h1>
+          <p class="i18n_options_general_description"></p>
+          <section>
+            <h2 class="i18n_options_privacy_header"></h2>
+            <ul id="recommend-protection-list-table" class="table list">
+              <template>
+                <button data-action="toggle-remove-subscription" role="checkbox" class="control"></button>
+                <label class="display"></label>
+                <span class="i18n_options_readMore" data-tooltip="options_protection_%value%_tooltip"></span>
+              </template>
+            </ul>
+          </section>
+          <section>
+            <h2 class="i18n_options_acceptableAds_header"></h2>
+            <p class="i18n_options_acceptableAds_description"></p>
+            <form id="acceptable-ads">
+              <div>
+                <input data-action="switch-acceptable-ads" type="radio" name="acceptable-ads" value="ads">
+                <label class="i18n_options_acceptableAds_ads_label"></label>
+                <p id="enable-aa-description" class="i18n_options_acceptableAds_ads_description_1"></p>
+                <p class="i18n_options_acceptableAds_ads_description_2"></p>
               </div>
-              <div id="further-blocking">
-                <div class="option-name">
-                  <strong class="i18n_options_more_title"></strong>
-                  <span class="i18n_options_readMore"
-                      data-tooltip="options_more_title_tooltip"
-                      data-tooltip-image="skin/tooltips/more.png"
-                      data-tooltip-flip="horizontal"></span>
-                </div>
-                <div id="custom-wrapper">
-                  <ul id="recommend-list-table" class="table list">
-                    <template>
-                      <button data-action="toggle-remove-subscription" role="checkbox" class="control"></button>
-                      <div class="fill">
-                        <label class="display"
-                            data-tooltip="options_more_%value%_tooltip"
-                            data-tooltip-native></label>
-                      </div>
-                    </template>
-                  </ul>
-                  <ul id="custom-list-table" class="table list">
-                    <template>
-                      <button data-action="toggle-disable-subscription" role="checkbox" class="control" title="options_control_toggle_title"></button>
-                      <label class="display"></label>
-                      <button data-action="remove-subscription" class="delete control" title="options_control_remove_title"></button>
-                    </template>
-                  </ul>
-                </div>
-                <div class="controls">
-                  <button data-action="open-dialog" data-dialog="custom">
-                    <span class="icon icon-add"></span>
-                    <span class="i18n_options_more_add"><span>
-                  </button>
-                </div>
+              <div>
+                <input data-action="switch-acceptable-ads" type="radio" name="acceptable-ads" value="privacy">
+                <label class="i18n_options_acceptableAds_privacy_label"></label>
+                <p class="i18n_options_acceptableAds_privacy_description"></p>
+                <p id="dnt" class="i18n_options_acceptableAds_dnt_notification"></p>
+              </div>
+              <div>
+                <input data-action="switch-acceptable-ads" type="radio" name="acceptable-ads" value="none">
+                <label class="i18n_options_acceptableAds_none_label"></label>
+              </div>
+            </form>
+          </section>
+          <section>
+            <h2 class="i18n_options_language_header"></h2>
+            <p class="i18n_options_language_description"></p>
+            <div id="blocking-languages">
+              <ul id="blocking-languages-table" class="table list">
+                <template>
+                  <label class="display"></label>
+                  <button data-single="hidden" data-action="remove-subscription" class="delete control" title="options_control_remove_title"></button>
+                  <button data-single="visible" data-action="open-dialog" data-dialog="language-change" class="i18n_options_language_change"></button>
+                </template>
+              </ul>
+              <div class="controls">
+                <button data-action="open-dialog" data-dialog="language-add">
+                  <span class="i18n_options_language_add"></span>
+                </button>
               </div>
             </div>
-          </div>
-          <div>
-            <h1 class="i18n_options_exceptions_title"></h1>
-            <div class="hbox">
-              <div id="acceptable-ads">
-                <div class="option-name">
-                  <strong class="i18n_options_acceptableAds_title"></strong>
-                  <span class="i18n_options_readMore"
-                      data-tooltip="options_acceptableAds_title_tooltip"
-                      data-tooltip-image="skin/tooltips/acceptable-ads.png"></span>
-                </div>
-                <ul id="acceptableads-table" class="table list">
-                  <template>
-                    <button data-action="toggle-remove-subscription" role="checkbox" class="control"></button>
-                    <label class="display"></label>
-                  </template>
-                </ul>
-              </div>
-            </div>
-          </div>
+            <p class="i18n_options_language_tip"></p>
+          </section>
+          <section>
+            <h2 class="i18n_options_more_filters_header"></h2>
+            <p class="i18n_options_more_filters_description"></p>
+            <ul id="custom-list-table" class="table list">
+              <template>
+                <label class="display"></label>
+                <button data-action="remove-subscription" class="delete control" title="options_control_remove_title"></button>
+              </template>
+            </ul>
+            <p class="i18n_options_more_filters_note"></p>
+          </section>
         </div>
 
         <!-- Whitelist tab content -->
@@ -344,36 +328,25 @@
       <header>
         <span id="dialog-title">
           <span id="dialog-title-custom" class="i18n_options_dialog_custom_title"></span>
-          <span id="dialog-title-language" class="i18n_options_dialog_language_title"></span>
+          <span id="dialog-title-language-add" class="i18n_options_dialog_language_title"></span>
+          <span id="dialog-title-language-change" class="i18n_options_dialog_language_title"></span>
           <span id="dialog-title-predefined" class="i18n_options_dialog_predefined_title"></span>
         </span>
         <button id="dialog-close" class="i18n_options_close focus-first" data-action="close-dialog"></button>
       </header>
       <div id="dialog-body" class="content">
         <!-- Add language subscription -->
-        <div id="dialog-content-language" class="dialog-content">
-          <div class="dialog-content-block">
-            <h3 class="i18n_options_dialog_language_added"></h3>
-            <ul id="blocking-languages-dialog-table" class="table list">
-              <template>
+        <div id="dialog-content-language-add" class="dialog-content">
+          <ul id="all-lang-table-add" class="table list">
+            <template>
+              <button data-action="add-language-subscription,close-dialog" class="control add" role="checkbox">
                 <label class="display"></label>
-              </template>
-            </ul>
-          </div>
-          <div id="other-language" class="dialog-content-block">
-            <div>
-              <label for="find-language" class="i18n_options_dialog_language_other"></label>
-              <input type="search" id="find-language" class="default-focus" />
-            </div>
-            <ul id="all-lang-table" class="table list">
-              <template>
-                <button data-action="add-language-subscription" class="button-add control">
-                  +<span class="i18n_options_button_add"></span>
-                </button>
+              </button>
+              <button data-action="change-language-subscription,close-dialog" class="control change" role="checkbox">
                 <label class="display"></label>
-              </template>
-            </ul>
-          </div>
+              </button>
+            </template>
+          </ul>
         </div>
         <!-- Add custom subscription -->
         <div id="dialog-content-custom" class="dialog-content">

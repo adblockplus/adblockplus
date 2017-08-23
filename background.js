@@ -102,7 +102,8 @@
     notifications_showui: params.showNotificationUI,
     shouldShowBlockElementMenu: true,
     show_devtools_panel: true,
-    subscriptions_exceptionsurl: "https://easylist-downloads.adblockplus.org/exceptionrules.txt"
+    subscriptions_exceptionsurl: "https://easylist-downloads.adblockplus.org/exceptionrules.txt",
+    subscriptions_exceptionsurl_privacy: "https://easylist-downloads.adblockplus.org/exceptionrules-privacy.txt"
   };
   for (let key of Object.keys(prefs))
   {
@@ -141,6 +142,15 @@
     this._lastDownload = 1234;
     this.homepage = "https://easylist.adblockplus.org/";
     this.downloadStatus = params.downloadStatus;
+
+    if (subscriptions[this.url] && subscriptions[this.url].title)
+    {
+      this.title = subscriptions[this.url].title;
+    }
+    if (this.url == prefs.subscriptions_exceptionsurl_privacy)
+    {
+      this.title = "Allow only nonintrusive ads that are privacy-friendly";
+    }
   }
   Subscription.prototype =
   {
@@ -438,14 +448,27 @@
   ];
   let knownFilters = filters.map(modules.filterClasses.Filter.fromText);
 
-  let subscriptions = [
-    "https://easylist-downloads.adblockplus.org/easylistgermany+easylist.txt",
-    "https://easylist-downloads.adblockplus.org/exceptionrules.txt",
-    "https://easylist-downloads.adblockplus.org/fanboy-social.txt",
-    "~user~786254"
-  ];
+  let subscriptions = {
+    "https://easylist-downloads.adblockplus.org/easylistgermany+easylist.txt": {
+      title: "EasyList Germany+EasyList"
+    },
+    "https://easylist-downloads.adblockplus.org/exceptionrules.txt": {
+      title: "Allow non-intrusive advertising"
+    },
+    "https://easylist-downloads.adblockplus.org/fanboy-social.txt": {
+      title: "Fanboy's Social Blocking List",
+      type: "social"
+    },
+    "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt": {
+      title: "Adblock Warning Removal List"
+    },
+    "~user~78625": {
+      title: "My filter list"
+    }
+  };
+
   let knownSubscriptions = Object.create(null);
-  for (let subscriptionUrl of subscriptions)
+  for (let subscriptionUrl in subscriptions)
   {
     knownSubscriptions[subscriptionUrl] =
       modules.subscriptionClasses.Subscription.fromURL(subscriptionUrl);

@@ -100,7 +100,8 @@ textarea
   box-sizing: border-box;
 }
 
-button[role="checkbox"]
+button[role="checkbox"],
+#dialog-body .table button[role="checkbox"]
 {
   width: 18px;
   height: 18px;
@@ -113,23 +114,10 @@ button[role="checkbox"]
   background-position: -51px 0px;
 }
 
-button[role="checkbox"][aria-checked="true"]
+button[role="checkbox"][aria-checked="true"],
+#dialog-body .table button[role="checkbox"][aria-checked="true"]
 {
   background-position: -68px 0px;
-}
-
-.option-name
-{
-  display: flex;
-  margin-bottom: 16px;
-}
-
-.option-name > :first-child
-{
-  flex: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 #nav-sidebar
@@ -161,17 +149,6 @@ button[role="checkbox"][aria-checked="true"]
 {
   margin: 0px;
   padding: 8px 0px 16px 0px;
-}
-
-.hbox
-{
-  display: flex;
-  flex-direction: row;
-}
-
-.hbox > div
-{
-  width: 400px;
 }
 
 .tabs li
@@ -375,14 +352,12 @@ div.button
   border-radius: 3px;
 }
 
-.table.list,
-#custom-wrapper
+.table.list
 {
   border-bottom: 1px solid #CDCDCD;
 }
 
-.table.list li .display,
-.fill
+.table.list li .display
 {
   flex: 1;
   line-height: 16px;
@@ -397,11 +372,20 @@ div.button
   padding-bottom: 6px;
 }
 
-.table.list li:nth-of-type(odd),
-.table.cols li:nth-of-type(odd):not([role="menuitem"]),
-.table li.empty-placeholder
+  .table li.empty-placeholder
 {
   background-color: #F5F5F5;
+}
+
+.table li [data-single="visible"],
+.table li:first-of-type:last-of-type [data-single="hidden"]
+{
+  display: none;
+}
+
+.table li:first-of-type:last-of-type [data-single="visible"]
+{
+  display: block;
 }
 
 .table label
@@ -439,10 +423,10 @@ button[role="checkbox"][disabled]
 
 .icon,
 button[role="checkbox"],
+#dialog-body .table button[role="checkbox"],
 .table button.delete,
 #content-help a::before,
 #dialog-close::before,
-#dialog-body button::before,
 #all-filter-lists-table .arrow,
 .context-menu .content a::before
 {
@@ -482,8 +466,7 @@ button[role="checkbox"],
   width: 12px;
 }
 
-#content-help a::before,
-#dialog-body button::before
+#content-help a::before
 {
   background-position: 0px -42px;
   content: "";
@@ -537,11 +520,7 @@ button[role="checkbox"],
   General tab content
 */
 
-#acceptableads-table,
-#recommend-list-table,
-#blocking-languages-dialog-table,
-#custom-wrapper .table,
-#all-lang-table
+#blocking-languages-dialog-table
 {
   border-bottom: none;
 }
@@ -553,18 +532,53 @@ button[role="checkbox"],
   -webkit-margin-end: 40px;
 }
 
-#custom-wrapper
+#whitelisting .controls.mode-edit > button,
+#whitelisting .controls:not(.mode-edit) > div
 {
-  height: 290px;
-  overflow: auto;
+  display: none;
 }
 
-#custom-wrapper .table
+#whitelisting .controls input[type="text"]
 {
+  border: 0px;
+  border-bottom: 1px solid #A1A1A1;
+  -moz-padding-end: 25px;
+  -webkit-padding-end: 25px;
+  -moz-margin-start: 14px;
+  -webkit-margin-start: 14px;
+  outline: 0px;
+  padding-bottom: 5px;
+  vertical-align: text-bottom;
   width: 100%;
 }
 
-.button-add
+#whitelisting .controls .button-add span
+{
+  -moz-margin-start: 5px;
+  -webkit-margin-start: 5px;
+}
+
+#whitelisting .button-add
+{
+  -moz-margin-start: 32px;
+  -webkit-margin-start: 32px;
+}
+
+#whitelisting-add-button + span
+{
+  flex: 1;
+}
+
+.icon-enter
+{
+  background-position: -19px -33px;
+  position: absolute;
+  bottom: 9px;
+  -moz-margin-start: -20px;
+  -webkit-margin-start: -20px;
+}
+
+.button-add, .cancel-button
 {
   background-color: transparent;
   border: 0px;
@@ -582,7 +596,8 @@ button[role="checkbox"],
 #custom-filters[data-mode="empty"] #custom-filters-raw,
 #custom-filters:not([data-mode="write"]) #custom-filters-raw-controls,
 #custom-filters:not([data-mode="read"]) #custom-filters-edit,
-.state span
+.state span,
+#acceptable-ads:not(.show-dnt-notification) #dnt
 {
   display: none;
 }
@@ -728,13 +743,6 @@ div[role="tooltip"]
   z-index: 1;
 }
 
-html[dir="ltr"] div[role="tooltip"].flip-horizontal,
-html[dir="rtl"] div[role="tooltip"]:not(.flip-horizontal)
-{
-  left: inherit;
-  right: -20px;
-}
-
 .tooltip:not(:hover) > div[role="tooltip"],
 div[role="tooltip"]:hover
 {
@@ -844,13 +852,6 @@ div.context-menu > div a:last-child
 .context-menu .delete::before
 {
   background-position: -71px -34px;
-}
-
-html[dir="ltr"] div[role="tooltip"].flip-horizontal::before,
-html[dir="rtl"] div[role="tooltip"]:not(.flip-horizontal)::before
-{
-  left: inherit;
-  right: 30px;
 }
 
 div[role="tooltip"] img
@@ -1024,11 +1025,6 @@ body[data-dialog] #dialog-background
   width: 100%;
 }
 
-#dialog #dialog-content-language .table
-{
-  overflow: auto;
-}
-
 #dialog .section:not(:first-child)
 {
   margin-top: 24px;
@@ -1071,48 +1067,14 @@ body[data-dialog] #dialog-background
 
 body:not([data-dialog="custom"]) #dialog-title-custom,
 body:not([data-dialog="custom"]) #dialog-content-custom,
-body:not([data-dialog="language"]) #dialog-title-language,
-body:not([data-dialog="language"]) #dialog-content-language,
+body:not([data-dialog="language-add"]) #dialog-title-language-add,
+body:not([data-dialog="language-change"]) #dialog-title-language-change,
+body:not([data-dialog="language-add"]):not([data-dialog="language-change"]) #dialog-content-language-add,
+body:not([data-dialog="language-add"]) #dialog-body button.add,
+body:not([data-dialog="language-change"]) #dialog-body button.change,
 body:not([data-dialog="predefined"]) #dialog-title-predefined,
 body:not([data-dialog="predefined"]) #dialog-content-predefined,
 body:not([data-dialog]) #dialog
 {
   display: none;
-}
-
-#dialog-content-language .dialog-content-block
-{
-  display: flex;
-  flex-direction: column;
-  height: 120px;
-}
-
-#dialog-content-language #other-language
-{
-  height: 200px;
-}
-
-#other-language .button-add
-{
-  background-color: transparent;
-  margin: 0px;
-  padding: 0px;
-  width: auto;
-  -webkit-border-end: 1px solid #CDCDCD;
-  -moz-border-end: 1px solid #CDCDCD;
-  -webkit-padding-end: 10px;
-  -moz-padding-end: 10px;
-  -webkit-padding-start: 0px;
-  -moz-padding-start: 0px;
-}
-
-#other-language .button-add::before
-{
-  display: none;
-}
-
-#other-language .display
-{
-  -webkit-margin-start: 10px;
-  -moz-margin-start: 10px;
 }
