@@ -165,10 +165,6 @@
     "description": "Duplicate hostname warning of whitelist text input",
     "message": "Website is already whitelisted"
   },
-  "options_whitelist_description": {
-    "description": "Section description in whitelisted tab",
-    "message": "You've turned off ad blocking on these websites. You will see ads on these websites."
-  },
   "options_button_add": {
     "description": "Add button label",
     "message": "add"
@@ -422,6 +418,20 @@
   "options_dialog_language_other_empty": {
     "description": "Text shown when list of available languages is empty",
     "message": "There are no available languages."
+  },
+  "options_whitelist_notification": {
+    "description": "Notification that is shown after a new website is whitelisted",
+    "message": "\"$website$\" has been whitelisted.",
+    "placeholders": {
+      "website": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "options_notification_hide": {
+    "description": "Hidden text attached to the close button for screen readers of Notification",
+    "message": "Close notification"
   },
   "options_language_en": {
     "description": "Language name shown in add language modal dialog",

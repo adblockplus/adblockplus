@@ -515,6 +515,22 @@ button[role="checkbox"],
   vertical-align: top;
 }
 
+/* 
+  Used for translatable screen reader only conten.
+  e.g.: Use instead of aria-label to avoid complex attribute value translation
+*/
+.sr-only
+{
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0px;
+  border: 0px;
+}
+
 /*
   General tab content
 */
@@ -1093,4 +1109,55 @@ body:not([data-dialog="predefined"]) #dialog-content-predefined,
 body:not([data-dialog]) #dialog
 {
   display: none;
+}
+
+/*
+  Notification
+*/
+
+#notification
+{
+  position: fixed;
+  top: 0rem;
+  left: 0rem;
+  display: flex;
+  padding: 1rem 1.9rem;
+  width: 100%;
+  box-sizing: border-box;
+  opacity: 0.8;
+  font-size: 1rem;
+  color: #099CD0;
+  background-color: #E1F2FA;
+}
+
+#notification strong
+{
+  flex: 1;
+  text-align: center;
+}
+
+#hide-notification
+{
+  border: 0rem;
+  padding: 0rem;
+  margin: 0rem 1rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#hide-notification::after
+{
+  content: "";
+  display: block;
+  height: 1rem;
+  width: 1rem;
+  border: 0rem;
+  background-color: #099DD1;
+  -webkit-mask: url(delete.svg);
+  mask: url(delete.svg);
+}
+
+#hide-notification:hover::after
+{
+  background-color: #5CBCE1;
 }

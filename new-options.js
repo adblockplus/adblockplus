@@ -432,6 +432,11 @@
     {
       filter.title = match[1];
       collections.whitelist.addItem(filter);
+      if (isCustomFiltersLoaded)
+      {
+        let text = getMessage("options_whitelist_notification", [filter.title]);
+        showNotification(text);
+      }
     }
     else
     {
@@ -584,6 +589,9 @@
         break;
       case "edit-custom-filters":
         setCustomFiltersView("write");
+        break;
+      case "hide-notification":
+        hideNotification();
         break;
       case "import-subscription": {
         let url = E("blockingList-textbox").value;
@@ -973,6 +981,19 @@
     dialog.removeAttribute("aria-labelledby");
     document.body.removeAttribute("data-dialog");
     focusedBeforeDialog.focus();
+  }
+
+  function showNotification(text)
+  {
+    E("notification").setAttribute("aria-hidden", false);
+    E("notification-text").textContent = text;
+    setTimeout(hideNotification, 3000);
+  }
+
+  function hideNotification()
+  {
+    E("notification").setAttribute("aria-hidden", true);
+    E("notification-text").textContent = "";
   }
 
   function setAcceptableAds()
