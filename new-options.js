@@ -530,10 +530,7 @@
   {
     getDocLink(id, (link) =>
     {
-      if (id == "share-general")
-        openSharePopup(link);
-      else
-        location.href = link;
+      location.href = link;
     });
   }
 
@@ -891,52 +888,37 @@
       getMessage("options_customFilters_edit_placeholder", ["/ads/track/*"]));
 
     // Help tab
-    getDocLink("faq", (link) =>
+    getDocLink("adblock_plus_report_issue", (link) =>
     {
-      E("link-faq").setAttribute("href", link);
+      setLinks("report-issue", link);
+    });
+    getDocLink("adblock_plus_report_ad", (link) =>
+    {
+      setLinks("report-ad", link);
+    });
+    getDocLink("adblock_plus_report_bug", (link) =>
+    {
+      setLinks("report-bug", link);
+    });
+    getDocLink("reporter_other_link", (link) =>
+    {
+      setLinks("report-forum", link);
     });
     getDocLink("social_twitter", (link) =>
     {
-      E("link-twitter").setAttribute("href", link);
+      E("twitter").setAttribute("href", link);
     });
     getDocLink("social_facebook", (link) =>
     {
-      E("link-facebook").setAttribute("href", link);
+      E("facebook").setAttribute("href", link);
     });
     getDocLink("social_gplus", (link) =>
     {
-      E("link-gplus").setAttribute("href", link);
-    });
-    getDocLink("social_renren", (link) =>
-    {
-      E("link-renren").setAttribute("href", link);
+      E("google-plus").setAttribute("href", link);
     });
     getDocLink("social_weibo", (link) =>
     {
-      E("link-weibo").setAttribute("href", link);
-    });
-
-    // Set forum link
-    ext.backgroundPage.sendMessage({
-      type: "app.get",
-      what: "platform"
-    },
-    (platform) =>
-    {
-      ext.backgroundPage.sendMessage({
-        type: "app.get",
-        what: "application"
-      },
-      (application) =>
-      {
-        if (platform == "chromium" && application != "opera")
-          application = "chrome";
-
-        getDocLink(application + "_support", (link) =>
-        {
-          E("link-forum").setAttribute("href", link);
-        });
-      });
+      E("weibo").setAttribute("href", link);
     });
 
     E("dialog").addEventListener("keydown", function(e)

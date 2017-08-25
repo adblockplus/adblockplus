@@ -425,7 +425,6 @@ button[role="checkbox"][disabled]
 button[role="checkbox"],
 #dialog-body .table button[role="checkbox"],
 .table button.delete,
-#content-help a::before,
 #dialog-close::before,
 #all-filter-lists-table .arrow,
 .context-menu .content a::before
@@ -466,7 +465,7 @@ button[role="checkbox"],
   width: 12px;
 }
 
-#content-help a::before
+#dialog-body button::before
 {
   background-position: 0px -42px;
   content: "";
@@ -898,37 +897,54 @@ div[role="tooltip"] .notes p
   Help tab content
 */
 
-#content-help
-{
-  counter-reset: section;
-}
-
-#content-help h1::before
-{
-  counter-increment: section;
-  content: counter(section) ". ";
-}
-
-#content-help a
-{
-  color: #3A7BA6;
-  display: inline-block;
-  text-decoration: none;
-  -moz-margin-end: 16px;
-  -webkit-margin-end: 16px;
-  vertical-align: top;
-}
-
-#content-help a::before
-{
-  -moz-margin-end: 6px;
-  -webkit-margin-end: 6px;
-}
-
-#share-general:lang(zh),
-#share-chinese:not(zh)
+html:not([lang="zh"]) #social-chinese,
+html[lang="zh"] #social-general
 {
   display: none;
+}
+
+#social ul
+{
+  list-style: none;
+}
+
+#social ul li
+{
+  display: inline-block;
+}
+
+#social ul li a
+{
+  display: block;
+  text-align: center;
+}
+
+#social ul li a::before
+{
+  display: block;
+  margin: 0em auto;
+  width: 2.5rem;
+  height: 2.5rem;
+  content: "";
+  background-color: #099DD1;
+}
+
+#twitter::before
+{
+  -webkit-mask: url("social/twitter.svg");
+  mask: url("social/twitter.svg");
+}
+
+#facebook::before
+{
+  -webkit-mask: url("social/facebook.svg");
+  mask: url("social/facebook.svg");
+}
+
+#google-plus::before
+{
+  -webkit-mask: url("social/googleplus.svg");
+  mask: url("social/googleplus.svg");
 }
 
 /*

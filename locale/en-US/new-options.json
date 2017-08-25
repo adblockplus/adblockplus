@@ -335,33 +335,41 @@
     "description": "Label below raw view of user's filter list in Advanced tab",
     "message": "Save"
   },
-  "options_faq_title": {
-    "description": "FAQ section name in Help tab and link label in same section",
-    "message": "Frequently asked questions"
+  "options_help_description": {
+    "description": "Help tab description",
+    "message": "Find help or get in touch with us"
   },
-  "options_faq_description": {
-    "description": "FAQ section description in Help tab",
-    "message": "You only need to refresh your filter list in \"Advanced\" very often, but there are also other known problems."
+  "options_support_title": {
+    "description": "Section title in Help tab",
+    "message": "Support"
   },
-  "options_forum_title": {
-    "description": "Forum section name in Help tab",
-    "message": "Forum"
+  "options_report_issue": {
+    "description": "'Support' section list item in Help tab",
+    "message": "Think content or functionality is being incorrectly blocked by us? <a>Report incorrectly blocked items here</a>"
   },
-  "options_forum_description": {
-    "description": "Forum section description in Help tab",
-    "message": "If the frequently asked questions helped you can reach us in our forum."
+  "options_report_ad": {
+    "description": "'Support' section list item in Help tab",
+    "message": "See an ad that you think shouldn't be there? <a>Report an ad</a>"
   },
-  "options_forum_link": {
-    "description": "Forum section link in Help tab",
-    "message": "Adblock Plus support forum"
+  "options_report_bug": {
+    "description": "'Support' section list item in Help tab",
+    "message": "Found a bug? <a>Send us a bug report</a>"
   },
-  "options_media_title": {
-    "description": "Social media Section name in Help tab",
-    "message": "Social media"
+  "options_report_forum": {
+    "description": "'Support' section list item in Help tab",
+    "message": "Want support from our community? <a>Go to the Forum</a>"
   },
-  "options_media_description": {
-    "description": "Social media section description in Help tab",
-    "message": "If there are major problems with Adblock Plus which affects all of our users, we tell you in our social media channels."
+  "options_social_title": {
+    "description": "'Section' title in Help tab",
+    "message": "Get in touch"
+  },
+  "options_social_description": {
+    "description": "'Get in touch' section description in Help tab",
+    "message": "Have a question or a new idea? We're here to help."
+  },
+  "options_email": {
+    "description": "Email label in Help tab",
+    "message": "Email:"
   },
   "options_dialog_predefined_confirm": {
     "description": "Confirming to add a predefined subscription when asked in a dialog",
