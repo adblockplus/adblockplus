@@ -3,13 +3,9 @@
     "description": "Options page title",
     "message": "Adblock Plus Options"
   },
-  "options_page_header_1": {
+  "options_page_title": {
     "description": "Page title in navigation sidebar",
-    "message": "Options"
-  },
-  "options_page_header_2": {
-    "description": "Name of extension in navigation sidebar",
-    "message": "Adblock <strong>Plus</strong>"
+    "message": "Settings"
   },
   "options_tab_general": {
     "description": "Sidebar tab label",
@@ -27,17 +23,13 @@
     "description": "Sidebar tab label",
     "message": "Help"
   },
-  "options_version": {
-    "description": "Version label in navigation sidebar",
-    "message": "Version"
+  "options_footer_contribute": {
+    "description": "Sidebar button label",
+    "message": "Contribute"
   },
-  "options_tab_share": {
-    "description": "Share button in navigation sidebar",
-    "message": "Share"
-  },
-  "options_tab_contribute": {
-    "description": "Button in navigation sidebar to support Adblock Plus",
-    "message": "Support us"
+  "options_footer_about": {
+    "description": "Sidebar button label",
+    "message": "About Adblock Plus"
   },
   "options_control_remove_title": {
     "description": "Title of remove controls",
@@ -366,6 +358,24 @@
   "options_email": {
     "description": "Email label in Help tab",
     "message": "Email:"
+  },
+  "options_dialog_about_title": {
+    "description": "Title of about ABP dialog",
+    "message": "About Adblock Plus"
+  },
+  "options_dialog_about_version": {
+    "description": "Version information in 'about Adblock Plus' modal dialog ",
+    "message": "Version number $version$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "2.6.7"
+      }
+    }
+  },
+  "options_dialog_about_copyright": {
+    "description": "Copyright information in 'about Adblock Plus' modal dialog ",
+    "message": "Copyright © 2017 eyeo GmbH. Adblock Plus is a registered ® trademark of eyeo GmbH."
   },
   "options_dialog_predefined_confirm": {
     "description": "Confirming to add a predefined subscription when asked in a dialog",

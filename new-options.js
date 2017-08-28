@@ -531,14 +531,6 @@
     });
   }
 
-  function openDocLink(id)
-  {
-    getDocLink(id, (link) =>
-    {
-      location.href = link;
-    });
-  }
-
   function switchTab(id)
   {
     location.hash = id;
@@ -610,11 +602,6 @@
         openDialog(dialog);
         break;
       }
-      case "open-doclink": {
-        let doclink = findParentData(element, "doclink", false);
-        openDocLink(doclink);
-        break;
-      }
       case "remove-filter":
         ext.backgroundPage.sendMessage({
           type: "filters.remove",
@@ -651,8 +638,7 @@
         });
         break;
       case "switch-tab":
-        let tabId = findParentData(element, "tab", false);
-        switchTab(tabId);
+        switchTab(element.getAttribute("href").substr(1));
         break;
       case "toggle-disable-subscription":
         ext.backgroundPage.sendMessage({
@@ -765,10 +751,12 @@
 
     if (element.getAttribute("role") == "tab")
     {
+      let parent = element.parentElement;
       if (key == "ArrowLeft" || key == "ArrowUp")
-        element = element.previousElementSibling || container.lastElementChild;
+        parent = parent.previousElementSibling || container.lastElementChild;
       else if (key == "ArrowRight" || key == "ArrowDown")
-        element = element.nextElementSibling || container.firstElementChild;
+        parent = parent.nextElementSibling || container.firstElementChild;
+      element = parent.firstElementChild;
     }
 
     let actions = container.getAttribute("data-action").split(",");
@@ -792,7 +780,7 @@
     previousTab.removeAttribute("aria-selected");
     previousTab.setAttribute("tabindex", -1);
 
-    let tab = tabList.querySelector("li[data-tab='" + tabId + "']");
+    let tab = tabList.querySelector("a[href='#" + tabId + "']");
     tab.setAttribute("aria-selected", true);
     tab.setAttribute("tabindex", 0);
 
@@ -834,14 +822,10 @@
     },
     (addonVersion) =>
     {
-      E("abp-version").textContent = addonVersion;
-    });
-    getDocLink("releases", (link) =>
-    {
-      E("link-version").setAttribute("href", link);
+      E("abp-version").textContent = getMessage("options_dialog_about_version",
+        [addonVersion]);
     });
 
-    updateShareLink();
     updateTooltips();
 
     // Initialize interactive UI elements
@@ -855,6 +839,11 @@
       E("whitelisting-add-button").disabled = !e.target.value;
     }, false);
 
+
+    getDocLink("contribute", (link) =>
+    {
+      E("contribute").href = link;
+    });
     getDocLink("acceptable_ads_criteria", (link) =>
     {
       setLinks("enable-aa-description", link);
@@ -1139,7 +1128,6 @@
       case "added":
         filter[timestampUI] = Date.now();
         updateFilter(filter);
-        updateShareLink();
         break;
       case "loaded":
         populateLists();
@@ -1152,7 +1140,6 @@
           removeCustomFilter(filter.text);
 
         delete filtersMap[filter.text];
-        updateShareLink();
         break;
     }
   }
@@ -1216,7 +1203,6 @@
         break;
     }
 
-    updateShareLink();
   }
 
   function hidePref(key, value)
@@ -1275,30 +1261,6 @@
     );
     if (checkbox)
       checkbox.setAttribute("aria-checked", value);
-  }
-
-  function updateShareLink()
-  {
-    let shareResources = [
-      "https://facebook.com/plugins/like.php?",
-      "https://platform.twitter.com/widgets/",
-      "https://apis.google.com/se/0/_/+1/fastbutton?"
-    ];
-    let isAnyBlocked = false;
-    let checksRemaining = shareResources.length;
-
-    function onResult(isBlocked)
-    {
-      isAnyBlocked |= isBlocked;
-      if (!--checksRemaining)
-      {
-        // Hide the share tab if a script on the share page would be blocked
-        E("tab-share").hidden = isAnyBlocked;
-      }
-    }
-
-    for (let sharedResource of shareResources)
-      checkShareResource(sharedResource, onResult);
   }
 
   function updateTooltips()
