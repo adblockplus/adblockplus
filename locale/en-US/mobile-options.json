@@ -1,0 +1,68 @@
+{
+  "mops_acceptableAds_description": {
+    "description": "Label for enabling Acceptable Ads",
+    "message": "Allow some non-intrusive advertising"
+  },
+  "mops_acceptableAds_more": {
+    "description": "Link for Acceptable Ads setting",
+    "message": "Learn more"
+  },
+  "mops_action_cancel": {
+    "description": "Label for cancelling adding a new filter list",
+    "message": "Cancel"
+  },
+  "mops_enabled_label": {
+    "description": "Label for whitelisting domain",
+    "message": "Enable Adblock Plus on <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "description": "Error for omitting filter list title when adding a new filter list",
+    "message": "Please enter a title"
+  },
+  "mops_error_url": {
+    "description": "Error for omitting filter list URL when adding a new filter list",
+    "message": "Please enter a URL link"
+  },
+  "mops_filterlist_add": {
+    "description": "Label for initiating adding a new filter list",
+    "message": "+ Add a filter list"
+  },
+  "mops_filterlist_add_action": {
+    "description": "Label for finishing adding a new filter list",
+    "message": "Add filter list"
+  },
+  "mops_filterlist_add_url": {
+    "description": "Label for initiating adding a new filter list manually",
+    "message": "+ Add a custom filter list"
+  },
+  "mops_header": {
+    "description": "Mobile options page title",
+    "message": "Adblock Plus settings"
+  },
+  "mops_subscribe_header": {
+    "description": "Label for finishing adding a new filter list manually",
+    "message": "Add a custom filter list"
+  },
+  "mops_subscribe_title": {
+    "description": "Label of filter list title form input field",
+    "message": "Filter list name"
+  },
+  "mops_subscribe_url": {
+    "description": "Label of filter list URL form input field",
+    "message": "Filter list URL"
+  },
+  "mops_subscriptions_header": {
+    "description": "Title of filter list section",
+    "message": "Filter subscriptions"
+  },
+  "mops_title": {
+    "description": "Mobile options page title",
+    "message": "Adblock Plus settings"
+  }
+}

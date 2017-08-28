@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+  - This file is part of Adblock Plus <https://adblockplus.org/>,
+  - Copyright (C) 2006-present eyeo GmbH
+  -
+  - Adblock Plus is free software: you can redistribute it and/or modify
+  - it under the terms of the GNU General Public License version 3 as
+  - published by the Free Software Foundation.
+  -
+  - Adblock Plus is distributed in the hope that it will be useful,
+  - but WITHOUT ANY WARRANTY; without even the implied warranty of
+  - MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  - GNU General Public License for more details.
+  -
+  - You should have received a copy of the GNU General Public License
+  - along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+<html>
+  <head>
+    <title class="i18n_mops_title"></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="skin/mobile-options.css">
+    <script src="ext/common.js"></script>
+    <script src="ext/content.js"></script>
+    <script src="common.js"></script>
+    <script src="i18n.js"></script>
+    <script src="mobile-options.js" defer></script>
+  </head>
+  <body>
+
+    <main>
+      <h1 class="i18n_mops_title"></h1>
+
+      <p id="enabled-container" class="toggle-container" hidden>
+        <span>
+          <label id="enabled-label" for="enabled"></label>
+        </span>
+        <input id="enabled" type="checkbox" data-action="toggle-enabled">
+        <label class="toggle-image" for="enabled"></label>
+      </p>
+
+      <h2 class="i18n_mops_subscriptions_header"></h2>
+
+      <ul id="subscriptions-installed"></ul>
+      <button class="i18n_mops_filterlist_add"
+          data-action="open-dialog" data-dialog="recommended">
+      </button>
+
+      <p class="toggle-container">
+        <span>
+          <label class="i18n_mops_acceptableAds_description checkbox"
+              for="acceptableAds">
+          </label>
+          <a id="acceptableAds-more" class="i18n_mops_acceptableAds_more"></a>
+        </span>
+        <input id="acceptableAds" type="checkbox">
+        <label class="toggle-image" for="acceptableAds"></label>
+      </p>
+    </main>
+
+    <div id="dialog" data-action="close-dialog">
+      <div id="dialog-recommended" role="dialog">
+        <ul id="subscriptions-recommended"></ul>
+
+        <button class="i18n_mops_filterlist_add_url"
+            data-action="open-dialog" data-dialog="subscribe">
+        </button>
+      </div>
+
+      <div id="dialog-subscribe" role="dialog">
+        <form>
+          <h2 class="i18n_mops_subscribe_header"></h2>
+          <p>
+            <input name="title" type="text">
+            <label class="i18n_mops_subscribe_title"></label>
+            <span class="i18n_mops_error_title error" data-error="title"></span>
+          </p>
+
+          <p>
+            <input name="url" type="text">
+            <label class="i18n_mops_subscribe_url"></label>
+            <span class="i18n_mops_error_url error" data-error="url"></span>
+          </p>
+
+          <button type="submit"
+              class="i18n_mops_filterlist_add_action primary">
+          </button>
+
+          <button type="reset" class="i18n_mops_action_cancel secondary"
+              data-action="close-dialog">
+          </button>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>

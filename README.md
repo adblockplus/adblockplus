@@ -70,6 +70,19 @@ parameters:
 * `blockedURLs`: a comma-separated list of URLs that should be considered
   blocked (necessary to test the check for blocked scripts in sharing buttons).
 
+mobile-options.html
+------------
+
+This is a web extension implementation of the Adblock Plus for Firefox Mobile
+options page.
+
+To aid testing, the behavior of this page is affected by a number of URL
+parameters:
+
+* `addSubscription=true`: this parameter should trigger a dialog for adding
+  subscriptions as initiated by clicking on an "abp:subscribe" link
+* `showPageOptions=true`: shows page-specific options
+
 new-options.html
 ------------
 

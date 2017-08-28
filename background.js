@@ -73,7 +73,8 @@
     addSubscription: false,
     filterError: false,
     downloadStatus: "synchronize_ok",
-    showNotificationUI: false
+    showNotificationUI: false,
+    showPageOptions: false
   };
   updateFromURL(params);
 
@@ -135,6 +136,33 @@
     }
   };
 
+  let subscriptionServer = "https://easylist-downloads.adblockplus.org";
+  let subscriptionDetails = {
+    [`${subscriptionServer}/easylistgermany+easylist.txt`]: {
+      title: "EasyList Germany+EasyList",
+      installed: true
+    },
+    [`${subscriptionServer}/exceptionrules.txt`]: {
+      title: "Allow non-intrusive advertising",
+      installed: true
+    },
+    [`${subscriptionServer}/exceptionrules-privacy.txt`]: {
+      title: "Allow only nonintrusive ads that are privacy-friendly"
+    },
+    [`${subscriptionServer}/fanboy-social.txt`]: {
+      title: "Fanboy's Social Blocking List",
+      installed: true
+    },
+    [`${subscriptionServer}/antiadblockfilters.txt`]: {
+      title: "Adblock Warning Removal List",
+      installed: true,
+      disabled: true
+    },
+    "~user~786254": {
+      installed: true
+    }
+  };
+
   function Subscription(url)
   {
     this.url = url;
@@ -143,13 +171,11 @@
     this.homepage = "https://easylist.adblockplus.org/";
     this.downloadStatus = params.downloadStatus;
 
-    if (subscriptions[this.url] && subscriptions[this.url].title)
+    let details = subscriptionDetails[this.url];
+    if (details)
     {
-      this.title = subscriptions[this.url].title;
-    }
-    if (this.url == prefs.subscriptions_exceptionsurl_privacy)
-    {
-      this.title = "Allow only nonintrusive ads that are privacy-friendly";
+      this.disabled = !!details.disabled;
+      this.title = details.title || "";
     }
   }
   Subscription.prototype =
@@ -171,7 +197,7 @@
     {
       this._lastDownload = value;
       modules.filterNotifier.FilterNotifier.emit("subscription.lastDownload",
-                                                 this);
+        this);
     }
   };
   Subscription.fromURL = function(url)
@@ -225,7 +251,7 @@
         {
           knownSubscriptions[subscription.url] = fromURL(subscription.url);
           modules.filterNotifier.FilterNotifier.emit("subscription.added",
-                                                     subscription);
+            subscription);
         }
       },
 
@@ -237,7 +263,7 @@
         {
           delete knownSubscriptions[subscription.url];
           modules.filterNotifier.FilterNotifier.emit("subscription.removed",
-                                                     subscription);
+            subscription);
         }
       },
 
@@ -260,7 +286,7 @@
           {
             customSubscription.filters.splice(i, 1);
             modules.filterNotifier.FilterNotifier.emit("filter.removed",
-                                                       filter);
+              filter);
             return;
           }
         }
@@ -448,32 +474,16 @@
   ];
   let knownFilters = filters.map(modules.filterClasses.Filter.fromText);
 
-  let subscriptions = {
-    "https://easylist-downloads.adblockplus.org/easylistgermany+easylist.txt": {
-      title: "EasyList Germany+EasyList"
-    },
-    "https://easylist-downloads.adblockplus.org/exceptionrules.txt": {
-      title: "Allow non-intrusive advertising"
-    },
-    "https://easylist-downloads.adblockplus.org/fanboy-social.txt": {
-      title: "Fanboy's Social Blocking List",
-      type: "social"
-    },
-    "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt": {
-      title: "Adblock Warning Removal List"
-    },
-    "~user~78625": {
-      title: "My filter list"
-    }
-  };
-
   let knownSubscriptions = Object.create(null);
-  for (let subscriptionUrl in subscriptions)
+  for (let url in subscriptionDetails)
   {
-    knownSubscriptions[subscriptionUrl] =
-      modules.subscriptionClasses.Subscription.fromURL(subscriptionUrl);
+    if (!subscriptionDetails[url].installed)
+      continue;
+
+    knownSubscriptions[url] =
+      modules.subscriptionClasses.Subscription.fromURL(url);
   }
-  let customSubscription = knownSubscriptions["~user~78625"];
+  let customSubscription = knownSubscriptions["~user~786254"];
 
   if (params.addSubscription)
   {
@@ -488,6 +498,32 @@
           url: "http://example.com/custom.txt",
           confirm: true,
           type: "subscriptions.add"
+        }
+      }, "*");
+    }, 1000);
+  }
+
+  if (params.showPageOptions)
+  {
+    // We don't know how long it will take for the page to fully load
+    // so we'll post the message after one second
+    setTimeout(() =>
+    {
+      let host = "example.com";
+      let isWhitelisted = customSubscription.filters
+        .some((filter) => filter.text == `@@||${host}^$document`);
+      window.postMessage({
+        type: "message",
+        payload: {
+          type: "app.open",
+          what: "options",
+          action: "showPageOptions",
+          args: [
+            {
+              host,
+              whitelisted: isWhitelisted
+            }
+          ]
         }
       }, "*");
     }, 1000);

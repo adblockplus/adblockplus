@@ -1,0 +1,373 @@
+/*
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-present eyeo GmbH
+ *
+ * Adblock Plus is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Adblock Plus is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@font-face
+{
+  font-family: "Source Sans Pro";
+  font-weight: 300;
+  font-style: normal;
+  src: url("fonts/Source-Sans-Pro/300.woff2") format("woff2");
+}
+
+@font-face
+{
+  font-family: "Source Sans Pro";
+  font-weight: 400;
+  font-style: normal;
+  src: url("fonts/Source-Sans-Pro/400.woff2") format("woff2");
+}
+
+@font-face
+{
+  font-family: "Source Sans Pro";
+  font-weight: 700;
+  font-style: normal;
+  src: url("fonts/Source-Sans-Pro/700.woff2") format("woff2");
+  ;
+}
+
+body,
+input
+{
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 14px;
+}
+
+body
+{
+  text-align: center;
+  color: #494949;
+}
+
+main,
+[role="dialog"]
+{
+  text-align: start;
+}
+
+main
+{
+  padding: 20px 45px;
+}
+
+h1
+{
+  position: relative;
+  font-size: 1em;
+  line-height: 20px;
+  color: #000;
+}
+
+h1::before
+{
+  position: absolute;
+  left: -25px;
+  width: 20px;
+  height: 20px;
+  background: url(mobile/abp-logo.svg) 0/20px;
+  content: "";
+}
+
+html[dir="rtl"] h1::before
+{
+  left: auto;
+  right: -25px;
+}
+
+h2
+{
+  font-size: 1em;
+}
+
+a:link,
+a:visited
+{
+  text-decoration: none;
+  color: #099DD1;
+}
+
+[hidden]
+{
+  display: none !important;
+}
+
+#acceptableAds-more
+{
+  white-space: nowrap;
+}
+
+/* Lists */
+
+ul
+{
+  margin: 0;
+  padding: 0;
+}
+
+ul > li
+{
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 46px;
+  padding: 5px 10px;
+  border: 1px solid #BBBBBB;
+  border-bottom: none;
+  list-style: none;
+}
+
+ul > li > span
+{
+  flex: auto;
+  padding: 10px;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+/* Form elements */
+
+input[type="text"]
+{
+  min-width: 220px;
+  padding: 5px 0;
+  border: 0;
+  border-bottom: 1px solid #BBBBBB;
+}
+
+input[type="text"]::placeholder
+{
+  color: #BBBBBB;
+  opacity: 1; /* Firefox sets opacity so we need to override it */
+}
+
+input[type="text"]:focus::placeholder
+{
+  color: transparent;
+}
+
+input[type="text"]:not(:focus):placeholder-shown ~ label,
+input[type="text"]:not(:placeholder-shown) ~ .error
+{
+  visibility: hidden
+}
+
+.toggle-container
+{
+  display: flex;
+}
+
+.toggle-container > span
+{
+  flex: auto;
+}
+
+.toggle-container input
+{
+  display: none;
+}
+
+.toggle-image
+{
+  display: inline-block;
+  flex-shrink: 0;
+  width: 36px;
+  height: 21px;
+  background-image: url(mobile/toggle.png);
+}
+
+input:checked + .toggle-image
+{
+  background-position: 0 -22px;
+}
+
+button
+{
+  width: 100%;
+  height: 46px; /* equal to height of list item */
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #099DD1;
+  background: none;
+}
+
+button.primary,
+button.secondary
+{
+  height: auto;
+  margin: 5px 0;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 2px;
+}
+
+button.primary
+{
+  color: #FFF;
+  border-color: #099DD1;
+  background-color: #099DD1;
+}
+
+button.secondary
+{
+  border-color: #BBBBBB;
+}
+
+button.remove
+{
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background-color: #099DD1;
+  mask: url(mobile/trash.svg) center/19px no-repeat;
+}
+
+ul + button
+{
+  width: 100%;
+  padding: 0 20px; /* based on margin and padding of list item */
+  border: 1px solid #BBBBBB;
+  text-align: start;
+}
+
+/* Dialogs */
+
+#dialog
+{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 101;
+}
+
+[role="dialog"]
+{
+  max-width: 25em;
+  padding: 0;
+  border: 1px solid #BBBBBB;
+  background-color: #FFF;
+}
+
+[role="dialog"] h2
+{
+  margin: 0;
+}
+
+[role="dialog"] form
+{
+  padding: 20px;
+}
+
+[role="dialog"] p
+{
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+}
+
+[role="dialog"] label
+{
+  order: 1;
+  display: block;
+  margin: 5px 0;
+  font-size: 10px;
+}
+
+[role="dialog"] input[type="text"]
+{
+  order: 2;
+}
+
+[role="dialog"] .error
+{
+  order: 3;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #C11D26;
+}
+
+[role="dialog"]:not([data-error]) .error,
+#dialog-subscribe:not([data-error="title"]) .error[data-error="title"],
+#dialog-subscribe:not([data-error="url"]) .error[data-error="url"]
+{
+  visibility: hidden;
+}
+
+#dialog-subscribe[data-error="title"] [name="title"]:placeholder-shown,
+#dialog-subscribe[data-error="url"] [name="url"]:placeholder-shown
+{
+  border-color: #C11D26;
+}
+
+body:not([data-dialog]) #dialog,
+body:not([data-dialog="recommended"]) #dialog-recommended,
+body:not([data-dialog="subscribe"]) #dialog-subscribe
+{
+  display: none;
+}
+
+#dialog-recommended
+{
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+}
+
+#dialog-recommended ul
+{
+  width: auto;
+  margin: 0;
+  overflow-y: auto;
+}
+
+#dialog-recommended ul li
+{
+  border: none;
+}
+
+#dialog-recommended ul li.installed
+{
+  color: #BBBBBB;
+}
+
+#dialog-recommended ul li::before
+{
+  flex-shrink: 0;
+  width: 13px;
+  height: 11px;
+  margin: 10px;
+  content: "";
+}
+
+#dialog-recommended ul li.installed::before
+{
+  background-color: #BBBBBB;
+  mask: url(mobile/checkmark.svg) center/cover no-repeat;
+}
+
+#dialog-recommended > button
+{
+  border-width: 1px 0 0 0;
+  text-align: center;
+}
