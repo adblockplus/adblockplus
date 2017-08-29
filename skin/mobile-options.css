@@ -186,12 +186,12 @@ input[type="text"]:not(:placeholder-shown) ~ .error
   flex-shrink: 0;
   width: 36px;
   height: 21px;
-  background-image: url(mobile/toggle.png);
+  background-image: url(mobile/toggle.svg#off);
 }
 
 input:checked + .toggle-image
 {
-  background-position: 0 -22px;
+  background-image: url(mobile/toggle.svg#on);
 }
 
 button
