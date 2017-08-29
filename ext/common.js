@@ -99,24 +99,13 @@
     return candidates;
   };
 
-  let initCatalog = function(uiLocale)
-  {
-    let bidiDir = /^(ar|fa|he|ug|ur)(-|$)/.test(uiLocale) ? "rtl" : "ltr";
-    let catalog = Object.create(null);
-
-    catalog["@@ui_locale"] = [uiLocale.replace(/-/g, "_"), []];
-    catalog["@@bidi_dir"] = [bidiDir, []];
-
-    return catalog;
-  };
-
   let selectedLocale = window.navigator.language;
   let match = /[?&]locale=([\w-]+)/.exec(window.location.search);
   if (match)
     selectedLocale = match[1];
 
   let locales = getLocaleCandidates(selectedLocale);
-  let catalog = initCatalog(locales[0]);
+  let catalog = Object.create(null);
   let catalogFile = window.location.pathname.replace(/.*\//, "")
     .replace(/\..*/, "") + ".json";
 
@@ -170,6 +159,7 @@
   };
 
   window.ext.i18n = {
+    locale: locales[0],
     getMessage(msgId, substitutions)
     {
       while (true)

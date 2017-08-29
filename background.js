@@ -92,7 +92,11 @@
       },
       get appLocale()
       {
-        return parent.ext.i18n.getMessage("@@ui_locale").replace(/_/g, "-");
+        return parent.ext.i18n.locale.replace(/_/g, "-");
+      },
+      get readingDirection()
+      {
+        return /^(?:ar|fa|he|ug|ur)\b/.test(this.appLocale) ? "rtl" : "ltr";
       }
     }
   };

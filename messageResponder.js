@@ -176,7 +176,7 @@
         bidiDir = isRtl ? "rtl" : "ltr";
       }
       else
-        bidiDir = ext.i18n.getMessage("@@bidi_dir");
+        bidiDir = Utils.readingDirection;
 
       return {locale: Utils.appLocale, bidiDir};
     }
