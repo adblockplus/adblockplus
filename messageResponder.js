@@ -347,9 +347,9 @@
   port.on("prefs.toggle", (message, sender) =>
   {
     if (message.key == "notifications_ignoredcategories")
-      NotificationStorage.toggleIgnoreCategory("*");
-    else
-      Prefs[message.key] = !Prefs[message.key];
+      return NotificationStorage.toggleIgnoreCategory("*");
+
+    return Prefs[message.key] = !Prefs[message.key];
   });
 
   port.on("subscriptions.add", (message, sender) =>
