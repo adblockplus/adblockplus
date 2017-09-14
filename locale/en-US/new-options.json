@@ -35,10 +35,6 @@
     "description": "Title of remove controls",
     "message": "remove"
   },
-  "options_readMore": {
-    "description": "Read more element that shows tooltip with description",
-    "message": "read more"
-  },
   "options_general_description": {
     "description": "General tab description",
     "message": "Determine what Adblock Plus shows and hides on websites"
@@ -235,7 +231,7 @@
   },
   "options_filterList_add": {
     "description": "Import button in Advanced tab",
-    "message": "add/import other filter list"
+    "message": "+ Add a new filter list"
   },
   "options_filterList_update": {
     "description": "Update button in Advanced tab",
@@ -375,7 +371,11 @@
   },
   "options_dialog_about_copyright": {
     "description": "Copyright information in 'about Adblock Plus' modal dialog ",
-    "message": "Copyright © 2017 eyeo GmbH. Adblock Plus is a registered ® trademark of eyeo GmbH."
+    "message": "Copyright © 2017 eyeo GmbH."
+  },
+  "options_dialog_about_trademark": {
+    "description": "Trademark information in 'about Adblock Plus' modal dialog ",
+    "message": "Adblock Plus is a registered ® trademark of eyeo GmbH."
   },
   "options_dialog_predefined_confirm": {
     "description": "Confirming to add a predefined subscription when asked in a dialog",
@@ -387,7 +387,7 @@
   },
   "options_dialog_custom_title": {
     "description": "Title of custom subscription modal dialog",
-    "message": "Add other filter list"
+    "message": "Add a filter list"
   },
   "options_close": {
     "description": "Close modal button",
@@ -395,19 +395,15 @@
   },
   "options_dialog_custom_subscription_title": {
     "description": "Add custom subscription modal import hint message",
-    "message": "Via URL/Link"
+    "message": "Filter list location"
   },
   "options_dialog_custom_import": {
     "description": "Button in add custom subscription modal dialog",
-    "message": "import filter list with this URL"
+    "message": "Add filter list"
   },
   "options_dialog_edit_own_list": {
     "description": "Edit own filter list section name in custom subscription modal dialog",
     "message": "edit own filter list"
-  },
-  "options_dialog_create_own_list": {
-    "description": "Button in custom subscription modal dialog",
-    "message": "create own filter rules"
   },
    "options_dialog_language_title": {
     "description": "Title of lanugage modal dialog",

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <view id="off" viewBox="0 0 36 21"/>
+  <g fill="none" fill-rule="evenodd">
+    <rect width="27" height="12" x="9" y="4.5" rx="5" fill="#9B9B9B"/>
+    <circle cx="10.5" cy="10.5" r="10.5" fill="#F1F1F1"/>
+    <circle cx="10.5" cy="10.5" r="10" stroke="#E1E0E1"/>
+  </g>
+
+  <view id="on" viewBox="0 21 36 21"/>
+  <g fill="none" fill-rule="evenodd">
+    <rect width="27" height="12" y="25.5" rx="5" fill="#92D3E9" transform="matrix(-1 0 0 1 27 0)"/>
+    <circle cx="25.5" cy="31.5" r="10.5" fill="#099CD0" transform="matrix(-1 0 0 1 51 0)"/>
+  </g>
+</svg>
