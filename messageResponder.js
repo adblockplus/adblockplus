@@ -173,7 +173,9 @@
     if (message.what == "features")
     {
       return {
-        devToolsPanel: info.platform == "chromium"
+        devToolsPanel: info.platform == "chromium" ||
+                       info.application == "firefox" &&
+                       parseInt(info.applicationVersion, 10) >= 54
       };
     }
 

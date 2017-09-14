@@ -446,15 +446,6 @@
     }
   });
 
-  window.Services = {
-    vc: {
-      compare(v1, v2)
-      {
-        return parseFloat(v1) - parseFloat(v2);
-      }
-    }
-  };
-
   let filters = [
     "@@||alternate.de^$document",
     "@@||der.postillion.com^$document",
