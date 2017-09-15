@@ -127,28 +127,66 @@
 
   /* Actions */
 
-  function setSubscription({disabled, title, url}, shouldAdd)
+  function setFilter({disabled, text}, action)
   {
-    if (disabled)
+    if (!whitelistFilter || text != whitelistFilter)
       return;
+
+    get("#enabled").checked = (action == "remove" || disabled);
+  }
+
+  function setSubscription(subscription, action)
+  {
+    let {disabled, filters, title, url} = subscription;
+    if (disabled)
+    {
+      action = "remove";
+    }
+
+    // Handle custom subscription
+    if (/^~user/.test(url))
+    {
+      for (let filter of filters)
+      {
+        setFilter(filter, action);
+      }
+      return;
+    }
 
     promisedAcceptableAdsUrl.then((acceptableAdsUrl) =>
     {
+      // Update Acceptable Ads
       if (url == acceptableAdsUrl)
       {
-        get(`#${idAcceptableAds}`).checked = true;
+        get(`#${idAcceptableAds}`).checked = (action != "remove");
         return;
       }
 
       let listInstalled = get("#subscriptions-installed");
       let installed = get(`[data-url="${url}"]`, listInstalled);
 
-      if (installed)
+      // Remove subscription
+      if (action == "remove")
+      {
+        if (installed)
+        {
+          installed.parentNode.removeChild(installed);
+        }
+
+        let recommended = get(`#${idRecommended} [data-url="${url}"]`);
+        if (recommended)
+        {
+          recommended.classList.remove("installed");
+        }
+      }
+      // Update subscription
+      else if (installed)
       {
         let titleElement = get("span", installed);
         titleElement.textContent = title || url;
       }
-      else if (shouldAdd)
+      // Add subscription
+      else if (action == "add")
       {
         let element = create(listInstalled, "li", null, {"data-url": url});
         create(element, "span", title || url);
@@ -161,30 +199,6 @@
         {
           recommended.classList.add("installed");
         }
-      }
-    });
-  }
-
-  function removeSubscription(url)
-  {
-    promisedAcceptableAdsUrl.then((acceptableAdsUrl) =>
-    {
-      if (url == acceptableAdsUrl)
-      {
-        get(`#${idAcceptableAds}`).checked = false;
-        return;
-      }
-
-      let installed = get(`#subscriptions-installed [data-url="${url}"]`);
-      if (installed)
-      {
-        installed.parentNode.removeChild(installed);
-      }
-
-      let recommended = get(`#${idRecommended} [data-url="${url}"]`);
-      if (recommended)
-      {
-        recommended.classList.remove("installed");
       }
     });
   }
@@ -245,7 +259,7 @@
           if (subscription.disabled)
             continue;
 
-          setSubscription(subscription, true);
+          setSubscription(subscription, "add");
         }
       })
       .catch((err) => console.error(err));
@@ -372,11 +386,8 @@
         break;
       }
       case "filters.respond": {
-        let [filter] = msg.args;
-        if (!whitelistFilter || filter.text != whitelistFilter)
-          break;
-
-        get("#enabled").checked = (msg.action == "removed");
+        let action = (msg.action == "added") ? "add" : "remove";
+        setFilter(msg.args[0], action);
         break;
       }
       case "subscriptions.respond": {
@@ -384,25 +395,16 @@
         switch (msg.action)
         {
           case "added":
-            setSubscription(subscription, true);
-            break;
           case "disabled":
-            if (subscription.disabled)
-            {
-              removeSubscription(subscription.url);
-            }
-            else
-            {
-              setSubscription(subscription, true);
-            }
+            setSubscription(subscription, "add");
             break;
           case "removed":
-            removeSubscription(subscription.url);
+            setSubscription(subscription, "remove");
             break;
           case "title":
             // We're also receiving these messages for subscriptions that are
             // not installed so we shouldn't add those by accident
-            setSubscription(subscription, false);
+            setSubscription(subscription, "update");
             break;
         }
         break;
