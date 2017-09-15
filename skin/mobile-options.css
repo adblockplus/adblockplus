@@ -197,7 +197,6 @@ input:checked + .toggle-image
 button
 {
   width: 100%;
-  height: 46px; /* equal to height of list item */
   border: none;
   font-weight: 600;
   text-transform: uppercase;
@@ -238,8 +237,10 @@ button.remove
 
 ul + button
 {
+  flex-shrink: 0;
   width: 100%;
-  padding: 0 20px; /* based on margin and padding of list item */
+  min-height: 46px; /* equal to min-height of list item */
+  padding: 15px 20px; /* based on margin and padding of list item */
   border: 1px solid #BBBBBB;
   text-align: start;
 }
