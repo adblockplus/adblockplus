@@ -352,9 +352,9 @@
       emptyText: ["options_dialog_language_other_empty"]
     }
   ]);
-  collections.custom = new Collection([
+  collections.more = new Collection([
     {
-      id: "custom-list-table"
+      id: "more-list-table"
     }
   ]);
   collections.whitelist = new Collection([
@@ -372,12 +372,13 @@
 
   function addSubscription(subscription)
   {
+    let disabled = subscription.disabled;
     let collection = null;
     if (subscription.recommended)
     {
       if (subscription.recommended == "ads")
       {
-        if (subscription.disabled == false)
+        if (disabled == false)
           collection = collections.langs;
 
         collections.allLangs.addItem(subscription);
@@ -387,9 +388,9 @@
         collection = collections.protection;
       }
     }
-    else if (!isAcceptableAds(subscription.url))
+    else if (!isAcceptableAds(subscription.url) && disabled == false)
     {
-      collection = collections.custom;
+      collection = collections.more;
     }
 
     if (collection)
@@ -415,12 +416,12 @@
     {
       if (subscription.disabled == false)
       {
-        collections.custom.addItem(subscription);
+        collections.more.addItem(subscription);
         updateTooltips();
       }
       else
       {
-        collections.custom.removeItem(subscription);
+        collections.more.removeItem(subscription);
       }
     }
   }
@@ -1196,7 +1197,7 @@
           }
           else
           {
-            collections.custom.removeItem(subscription);
+            collections.more.removeItem(subscription);
           }
         }
         collections.filterLists.removeItem(subscription);
