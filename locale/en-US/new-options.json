@@ -433,6 +433,50 @@
     "description": "Text shown when list of available languages is empty",
     "message": "There are no available languages."
   },
+  "options_dialog_tracking_title": {
+    "description": "Title of tracking modal dialog",
+    "message": "Allow tracking on Acceptable Ads?"
+  },
+  "options_dialog_tracking_notification_1": {
+    "description": "Text in 'Allow tracking on Acceptable Ads' dialog",
+    "message": "You currently allow Acceptable Ads to be shown."
+  },
+  "options_dialog_tracking_notification_2": {
+    "description": "Text in 'Allow tracking on Acceptable Ads' dialog",
+    "message": "These ads are respectful and do not interfere with content that you view."
+  },
+  "options_dialog_tracking_notification_3": {
+    "description": "Text in 'Allow tracking on Acceptable Ads' dialog",
+    "message": "Some of these ads require tracking to show you more relevant ads."
+  },
+  "options_dialog_tracking_notification_4": {
+    "description": "Text in 'Allow tracking on Acceptable Ads' dialog",
+    "message": "Click <strong>YES</strong> to continue seeing relevant nonintrusive ads."
+  },
+  "options_dialog_tracking_allow": {
+    "description": "Button text in 'Allow tracking on Acceptable Ads' dialog",
+    "message": "Yes, allow relevant ads"
+  },
+  "options_dialog_tracking_disallow": {
+    "description": "Button text in 'Allow tracking on Acceptable Ads' dialog",
+    "message": "No, turn off tracking"
+  },
+  "options_dialog_tracking_note_title": {
+    "description": "Text preceding list of notes in 'Allow tracking on Acceptable Ads' dialog",
+    "message": "Note:"
+  },
+  "options_dialog_tracking_note_1": {
+    "description": "Text in 'Allow tracking on Acceptable Ads' dialog",
+    "message": "Adblock Plus cannot guarantee that all tracking is disabled."
+  },
+  "options_dialog_tracking_note_2": {
+    "description": "Text in 'Allow tracking on Acceptable Ads' dialog",
+    "message": "Ads shown are chosen by the website you visit, not Adblock Plus."
+  },
+  "options_dialog_tracking_note_3": {
+    "description": "Text in 'Allow tracking on Acceptable Ads' dialog",
+    "message": "Adblock Plus never tracks your data."
+  },
   "options_whitelist_notification": {
     "description": "Notification that is shown after a new website is whitelisted",
     "message": "\"$website$\" has been whitelisted.",

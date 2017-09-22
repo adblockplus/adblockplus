@@ -372,7 +372,7 @@
 
   function addSubscription(subscription)
   {
-    let disabled = subscription.disabled;
+    let {disabled} = subscription;
     let collection = null;
     if (subscription.recommended)
     {
@@ -627,7 +627,7 @@
         });
         break;
       case "switch-acceptable-ads":
-        let {value} = element;
+        let value = element.value || element.dataset.value;
         ext.backgroundPage.sendMessage({
           type: value == "privacy" ? "subscriptions.add" :
             "subscriptions.remove",
@@ -857,7 +857,6 @@
       E("whitelisting-add-button").disabled = !e.target.value;
     }, false);
 
-
     getDocLink("contribute", (link) =>
     {
       E("contribute").href = link;
@@ -1026,6 +1025,23 @@
     return url == acceptableAdsUrl || url == acceptableAdsPrivacyUrl;
   }
 
+  function hasPrivacyConflict()
+  {
+    let acceptableAdsList = subscriptionsMap[acceptableAdsUrl];
+    let privacyList = null;
+    for (let url in subscriptionsMap)
+    {
+      let subscription = subscriptionsMap[url];
+      if (subscription.recommended == "privacy")
+      {
+        privacyList = subscription;
+        break;
+      }
+    }
+    return acceptableAdsList && acceptableAdsList.disabled == false &&
+      privacyList && privacyList.disabled == false;
+  }
+
   function populateLists()
   {
     subscriptionsMap = Object.create(null);
@@ -1189,13 +1205,24 @@
         updateSubscription(subscription);
         break;
       case "added":
-        if (subscription.url in subscriptionsMap)
+        let {url, recommended} = subscription;
+        if (url in subscriptionsMap)
           updateSubscription(subscription);
         else
           addSubscription(subscription);
 
-        if (isAcceptableAds(subscription.url))
+        if (isAcceptableAds(url))
           setAcceptableAds();
+
+        if ((url == acceptableAdsUrl || recommended == "privacy") &&
+          hasPrivacyConflict())
+        {
+          getPref("ui_warn_tracking", (showTrackingWarning) =>
+          {
+            if (showTrackingWarning)
+              openDialog("tracking");
+          });
+        }
 
         collections.filterLists.addItem(subscription);
         break;
@@ -1220,7 +1247,6 @@
         collections.filterLists.removeItem(subscription);
         break;
     }
-
   }
 
   function hidePref(key, value)
@@ -1346,7 +1372,8 @@
   ext.backgroundPage.sendMessage({
     type: "prefs.listen",
     filter: ["notifications_ignoredcategories", "notifications_showui",
-             "show_devtools_panel", "shouldShowBlockElementMenu"]
+             "show_devtools_panel", "shouldShowBlockElementMenu",
+             "ui_warn_tracking"]
   });
   ext.backgroundPage.sendMessage({
     type: "subscriptions.listen",

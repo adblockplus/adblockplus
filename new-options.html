@@ -336,6 +336,7 @@
           <h3 id="dialog-title-language-add" class="i18n_options_dialog_language_title"></h3>
           <h3 id="dialog-title-language-change" class="i18n_options_dialog_language_title"></h3>
           <h3 id="dialog-title-predefined" class="i18n_options_dialog_predefined_title"></h3>
+          <h3 id="dialog-title-tracking" class="i18n_options_dialog_tracking_title"></h3>
         </span>
         <button id="dialog-close" data-action="close-dialog"></button>
       </header>
@@ -389,6 +390,27 @@
             <h3></h3>
             <div class="url"></div>
             <button class="i18n_options_dialog_predefined_confirm default-focus primary" data-action="add-predefined-subscription"></button>
+          </div>
+        </div>
+        <!-- Acceptable Ads tracking notification -->
+        <div id="dialog-content-tracking" class="dialog-content">
+          <div class="dialog-content-block">
+            <div id="tracking-notification">
+              <p class="i18n_options_dialog_tracking_notification_1"></p>
+              <p class="i18n_options_dialog_tracking_notification_2"></p>
+              <p class="i18n_options_dialog_tracking_notification_3"></p>
+              <p class="i18n_options_dialog_tracking_notification_4"></p>
+            </div>
+            <h3 class="i18n_options_dialog_tracking_note_title"></h3>
+            <ul>
+              <li class="i18n_options_dialog_tracking_note_1"></li>
+              <li class="i18n_options_dialog_tracking_note_2"></li>
+              <li class="i18n_options_dialog_tracking_note_3"></li>
+            </ul>
+            <p class="side-controls wrap">
+              <button class="i18n_options_dialog_tracking_allow primary default-focus" data-pref="ui_warn_tracking" data-action="toggle-pref,close-dialog"></button>
+              <button class="i18n_options_dialog_tracking_disallow secondary" data-pref="ui_warn_tracking" data-value="privacy" data-action="switch-acceptable-ads,toggle-pref,close-dialog"></button>
+            </p>
           </div>
         </div>
       </div>
