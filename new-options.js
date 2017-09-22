@@ -677,6 +677,23 @@
           url: findParentData(element, "access", false)
         });
         break;
+      case "validate-import-subscription":
+        let form = findParentData(element, "validation", true);
+        if (!form)
+          return;
+
+        if (form.checkValidity())
+        {
+          addEnableSubscription(E("import-list-url").value,
+            E("import-list-title").value);
+          form.reset();
+          closeDialog();
+        }
+        else
+        {
+          form.querySelector(":invalid").focus();
+        }
+        break;
     }
   }
 

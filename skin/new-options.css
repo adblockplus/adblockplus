@@ -93,6 +93,7 @@ ul
 }
 
 input[type="text"],
+input[type="url"],
 textarea,
 main
 {
@@ -275,6 +276,127 @@ button.list:hover
 {
   box-shadow: inset 0 0 0 3px #099CD0;
   border-color: #099CD0;
+}
+
+.side-controls:not(.wrap)
+{
+  margin: 0.8rem 0rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.side-controls button
+{
+  margin: 0rem;
+  -moz-margin-start: 1rem;
+  -webkit-margin-start: 1rem;
+}
+
+.side-controls.wrap button
+{
+  margin: 0.8rem 0rem;
+  -moz-margin-start: auto;
+  -webkit-margin-start: auto;
+}
+
+/*
+  Forms
+ */
+
+.floating-input
+{
+  position: relative;
+  padding-top: 0.7rem;
+  margin: 1.8rem 0rem 0.5rem 0rem;
+}
+
+.floating-input input
+{
+  border-color: #CDCDCD;
+  border-width: 0px 0px 1px 0px;
+  outline: none;
+  font-size: 1.3rem;
+  padding: 5px;
+  width: 100%;
+}
+
+.floating-input input:placeholder-shown ~ label,
+.floating-input input + label,
+.floating-input input:focus + label
+{
+  position: absolute;
+  top: 0.9rem;
+  left: 0.3rem;
+  font-size: 1.3rem;
+}
+
+.floating-input input + label,
+.floating-input input:focus + label
+{
+  top: -0.5rem;
+  font-size: 0.9rem;
+}
+
+html[dir="rtl"] .floating-input input:placeholder-shown ~ label,
+html[dir="rtl"] .floating-input input ~ label,
+html[dir="rtl"] .floating-input input:focus ~ label
+{
+  right: 0.3rem;
+  left: auto;
+}
+
+[data-validation] .floating-input input:focus:invalid
+{
+  border-color: #C11D27;
+}
+
+[data-validation] .floating-input input:focus:invalid ~ .attention::before,
+[data-validation] .floating-input input:focus:valid ~ .attention::before
+{
+  content: "";
+  position: absolute;
+  display: block;
+  margin: 0.5rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  border: 0rem;
+  top: 0.5rem;
+  right: 0rem;
+}
+
+html[dir="rtl"] [data-validation] .floating-input input:focus:invalid ~ .attention::before,
+html[dir="rtl"] [data-validation] .floating-input input:focus:valid ~ .attention::before
+{
+  left: 0rem;
+  right: auto;
+}
+
+[data-validation] .floating-input input:focus:invalid ~ .attention::before
+{
+  background-color: #C11D27;
+  -webkit-mask: url(icons/attention.svg);
+  mask: url(icons/attention.svg);
+}
+
+[data-validation] .floating-input input:focus:valid ~ .attention::before
+{
+  top: 0.8rem;
+  background-color: green;
+  -webkit-mask: url(icons/checkmark.svg);
+  mask: url(icons/checkmark.svg);
+}
+
+[data-validation] .floating-input input ~ .error-msg
+{
+  margin-top: 0.5rem;
+  color: #C11D27;
+  display: block;
+  visibility: hidden;
+}
+
+[data-validation] .floating-input input:focus:invalid ~ .error-msg
+{
+  visibility: visible;
 }
 
 /*
@@ -861,13 +983,6 @@ button[role="checkbox"]:not(.toggle)
   margin-bottom: 1.5rem;
 }
 
-.side-controls button
-{
-   margin: 0.8rem 0rem;
-  -moz-margin-start: auto;
-  -webkit-margin-start: auto;
-}
-
 #custom-filters h3
 {
   margin: 0rem;
@@ -884,18 +999,6 @@ button[role="checkbox"]:not(.toggle)
 {
   outline: none;
   border: 2px solid #099CD0;
-}
-
-#custom-filters-raw-controls
-{
-  display: flex;
-  justify-content: flex-end;
-}
-
-#custom-filters-raw-controls button
-{
-  -moz-margin-start: 1rem;
-  -webkit-margin-start: 1rem;
 }
 
 #empty-custom-filters
@@ -1224,12 +1327,6 @@ body[data-dialog] #dialog-background
   margin: 1rem 1.8rem;
 }
 
-#dialog-body button
-{
-  -moz-margin-start: auto;
-  -webkit-margin-start: auto;
-}
-
 [data-dialog="language-change"] .dialog-content,
 [data-dialog="language-add"] .dialog-content
 {
@@ -1256,19 +1353,9 @@ body[data-dialog] #dialog-background
   margin-bottom: 2rem;
 }
 
-#dialog label
+[data-dialog="import"] .side-controls
 {
-  font-size: 0.9rem;
-  margin: 0px;
-}
-
-#dialog input[type="text"]
-{
-  border-color: #CDCDCD;
-  border-width: 0px 0px 1px 0px;
-  font-size: 1.3rem;
-  padding: 5px;
-  width: 100%;
+  margin-top: 2.45rem;
 }
 
 #dialog .table
@@ -1302,8 +1389,8 @@ body[data-dialog] #dialog-background
 
 body:not([data-dialog="about"]) #dialog-title-about,
 body:not([data-dialog="about"]) #dialog-content-about,
-body:not([data-dialog="custom"]) #dialog-title-custom,
-body:not([data-dialog="custom"]) #dialog-content-custom,
+body:not([data-dialog="import"]) #dialog-title-import,
+body:not([data-dialog="import"]) #dialog-content-import,
 body:not([data-dialog="language-add"]) #dialog-title-language-add,
 body:not([data-dialog="language-change"]) #dialog-title-language-change,
 body:not([data-dialog="language-add"]):not([data-dialog="language-change"]) #dialog-content-language-add,

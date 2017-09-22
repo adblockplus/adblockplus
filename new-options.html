@@ -253,8 +253,8 @@
               </div>
             </template>
           </ul>
-          <div class="side-controls">
-            <button class="i18n_options_filterList_add primary" data-action="open-dialog" data-dialog="custom"></button>
+          <div class="side-controls wrap">
+            <button class="i18n_options_filterList_add primary" data-action="open-dialog" data-dialog="import"></button>
             <button id="update" class="i18n_options_filterList_update secondary" data-action="update-all-subscriptions"></button>            
           </div>
         </section>
@@ -275,10 +275,10 @@
               </p>
             </div>
             <textarea id="custom-filters-raw" rows="15"></textarea>
-            <div class="side-controls">
+            <div class="side-controls wrap">
               <button id="custom-filters-edit" class="i18n_options_customFilter_edit secondary" data-action="edit-custom-filters">
               </button>
-              <div id="custom-filters-raw-controls">
+              <div class="side-controls" id="custom-filters-raw-controls">
                 <button class="i18n_options_customFilter_cancel secondary" data-action="cancel-custom-filters"></button>
                 <button class="i18n_options_customFilter_save primary" data-action="save-custom-filters"></button>
               </div>
@@ -332,7 +332,7 @@
       <header>
         <span id="dialog-title">
           <h3 id="dialog-title-about" class="i18n_options_dialog_about_title"></h3>
-          <h3 id="dialog-title-custom" class="i18n_options_dialog_custom_title"></h3>
+          <h3 id="dialog-title-import" class="i18n_options_dialog_import_title"></h3>
           <h3 id="dialog-title-language-add" class="i18n_options_dialog_language_title"></h3>
           <h3 id="dialog-title-language-change" class="i18n_options_dialog_language_title"></h3>
           <h3 id="dialog-title-predefined" class="i18n_options_dialog_predefined_title"></h3>
@@ -362,15 +362,26 @@
             </template>
           </ul>
         </div>
-        <!-- Add custom subscription -->
-        <div id="dialog-content-custom" class="dialog-content">
-          <div>
-            <label for="blockingList-textbox" class="i18n_options_dialog_custom_subscription_title"></label>
-            <input id="blockingList-textbox" type="text" class="default-focus" placeholder="https://website.com/filterlist.txt" />
-          </div>
-          <p>
-            <button class="i18n_options_dialog_custom_import primary" data-action="import-subscription"></button>
-          </p>
+        <!-- Add import subscription -->
+        <div id="dialog-content-import" class="dialog-content">
+          <form data-validation="custom" novalidate>
+            <p class="floating-input">
+              <input placeholder=" " id="import-list-title" type="text" class="default-focus" required />
+              <label for="import-list-title" class="i18n_options_dialog_import_subscription_title"></label>
+              <span class="attention"></span>
+              <span class="i18n_options_dialog_import_subscription_title_error error-msg"></span>
+            </p>
+            <p class="floating-input">
+              <input placeholder=" " id="import-list-url" type="url" class="default-focus" required/>
+              <label for="import-list-url" class="i18n_options_dialog_import_subscription_location"></label>
+              <span class="attention"></span>
+              <span class="i18n_options_dialog_import_subscription_location_error error-msg"></span>
+            </p>
+            <p class="side-controls">
+              <button class="i18n_options_customFilter_cancel secondary" type="reset" data-action="close-dialog"></button>
+              <button type="button" class="i18n_options_dialog_import_title primary" data-action="validate-import-subscription"></button>
+            </p>
+          </form>
         </div>
         <!-- Add predefined subscription -->
         <div id="dialog-content-predefined" class="dialog-content">
