@@ -49,22 +49,6 @@
     return filterTypes;
   });
 
-  // Some modules doesn't exist on Firefox. Moreover,
-  // require() throws an exception on Firefox in that case.
-  // However, try/catch causes the whole function to to be
-  // deoptimized on V8. So we wrap it into another function.
-  function tryRequire(module)
-  {
-    try
-    {
-      return require(module);
-    }
-    catch (e)
-    {
-      return null;
-    }
-  }
-
   function convertObject(keys, obj)
   {
     let result = {};
@@ -166,7 +150,7 @@
   {
     if (message.what == "issues")
     {
-      let subscriptionInit = tryRequire("subscriptionInit");
+      let subscriptionInit = require("subscriptionInit");
       let result = subscriptionInit ? subscriptionInit.reinitialized : false;
       return {filterlistsReinitialized: result};
     }
