@@ -21,8 +21,6 @@
 
 (function(global)
 {
-  let ext = global.ext || require("ext_background");
-
   const {port} = require("messaging");
   const {Prefs} = require("prefs");
   const {Utils} = require("utils");
