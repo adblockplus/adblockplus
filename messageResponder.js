@@ -154,7 +154,15 @@
     }
 
     if (message.what == "doclink")
-      return Utils.getDocLink(message.link);
+    {
+      let {application} = info;
+      if (info.platform == "chromium" && application != "opera")
+        application = "chrome";
+      else if (info.platform == "gecko")
+        application = "firefox";
+
+      return Utils.getDocLink(message.link.replace("{browser}", application));
+    }
 
     if (message.what == "localeInfo")
     {

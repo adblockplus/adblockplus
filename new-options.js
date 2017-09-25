@@ -865,6 +865,10 @@
     {
       setLinks("enable-aa-description", link);
     });
+    getDocLink("adblock_plus_{browser}_dnt", url =>
+    {
+      setLinks("dnt", url);
+    });
 
     // Advanced tab
     let customize = document.querySelectorAll("#customize li[data-pref]");
@@ -914,9 +918,9 @@
     {
       setLinks("report-bug", link);
     });
-    getDocLink("reporter_other_link", (link) =>
+    getDocLink("{browser}_support", url =>
     {
-      setLinks("report-forum", link);
+      setLinks("visit-forum", url);
     });
     getDocLink("social_twitter", (link) =>
     {
