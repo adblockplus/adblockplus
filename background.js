@@ -376,10 +376,6 @@
     }
   };
 
-  modules.elemHideEmulation = {
-    ElemHideEmulation: {}
-  };
-
   modules.filterNotifier = {
     FilterNotifier: new EventEmitter()
   };

@@ -27,7 +27,6 @@
   const {FilterStorage} = require("filterStorage");
   const {FilterNotifier} = require("filterNotifier");
   const {defaultMatcher} = require("matcher");
-  const {ElemHideEmulation} = require("elemHideEmulation");
   const {Notification: NotificationStorage} = require("notification");
 
   const {Filter, BlockingFilter, RegExpFilter} = require("filterClasses");
@@ -232,28 +231,6 @@
 
   port.on("filters.get", (message, sender) =>
   {
-    if (message.what == "elemhideemulation")
-    {
-      let filters = [];
-      const {checkWhitelisted} = require("whitelisting");
-
-      let isWhitelisted = checkWhitelisted(sender.page, sender.frame,
-        RegExpFilter.typeMap.DOCUMENT | RegExpFilter.typeMap.ELEMHIDE);
-      if (Prefs.enabled && !isWhitelisted)
-      {
-        let {hostname} = sender.frame.url;
-        filters = ElemHideEmulation.getRulesForDomain(hostname);
-        filters = filters.map((filter) =>
-        {
-          return {
-            selector: filter.selector,
-            text: filter.text
-          };
-        });
-      }
-      return filters;
-    }
-
     let subscription = Subscription.fromURL(message.subscriptionUrl);
     if (!subscription)
       return [];
