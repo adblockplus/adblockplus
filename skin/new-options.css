@@ -158,12 +158,17 @@ button[role="checkbox"]
   padding: 0px;
   border: 0px;
   background-color: transparent;
-  background-position: -51px 0px;
+}
+
+button[role="checkbox"]:not(.toggle)
+{
+  background-image: url(icons/checkbox.png);
+  display: inline-block;
 }
 
 button[role="checkbox"][aria-checked="true"]:not(.toggle)
 {
-  background-position: -68px 0px;
+  background-position: 0px 18px;
 }
 
 button[role="checkbox"][disabled]
@@ -233,12 +238,6 @@ button.gear:hover::before,
 button.delete:hover::before
 {
   background-color: #5CBCE1;
-}
-
-button.gear:hover,
-button.delete:hover
-{
-  background-position: -61px -51px;
 }
 
 button.link,
@@ -682,6 +681,11 @@ ul.list
   margin: 0rem 0rem 1.3rem 0rem;
 }
 
+.list li [role="checkbox"]
+{
+  flex-shrink: 0;
+}
+
 .table li:first-of-type
 {
   border-top: 1px solid #CDCDCD;
@@ -882,12 +886,6 @@ li .display
   background-color: #099DD1;
   -webkit-mask: url(icons/tooltip.svg);
   mask: url(icons/tooltip.svg);
-}
-
-button[role="checkbox"]:not(.toggle)
-{
-  background-image: url(options-sprite.png);
-  display: inline-block;
 }
 
 /* 
