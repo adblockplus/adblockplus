@@ -109,7 +109,7 @@
     show_devtools_panel: true,
     ui_warn_tracking: true,
     subscriptions_exceptionsurl: "https://easylist-downloads.adblockplus.org/exceptionrules.txt",
-    subscriptions_exceptionsurl_privacy: "https://easylist-downloads.adblockplus.org/exceptionrules-privacy.txt"
+    subscriptions_exceptionsurl_privacy: "https://easylist-downloads.adblockplus.org/exceptionrules-privacy-friendly.txt"
   };
   for (let key of Object.keys(prefs))
   {
@@ -151,7 +151,7 @@
       title: "Allow non-intrusive advertising",
       installed: true
     },
-    [`${subscriptionServer}/exceptionrules-privacy.txt`]: {
+    [`${subscriptionServer}/exceptionrules-privacy-friendly.txt`]: {
       title: "Allow only nonintrusive ads that are privacy-friendly"
     },
     [`${subscriptionServer}/fanboy-social.txt`]: {
