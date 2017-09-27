@@ -53,6 +53,7 @@ body
 {
   background-color: #F3F3F3;
   display: flex;
+  justify-content: center;
   margin: 1.2rem 0.3rem;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.25rem;
@@ -419,7 +420,6 @@ html[dir="rtl"] [data-validation] .floating-input input:focus:valid ~ .attention
   top: 1.2rem;
   bottom: 0rem;
   height: auto;
-  position: fixed;
 }
 
 #sidebar header
@@ -509,8 +509,6 @@ li a[role="tab"][aria-selected]
 
 #sidebar footer
 {
-  bottom: 0px;
-  position: absolute;
   width: 100%;
 }
 
@@ -519,6 +517,21 @@ li a[role="tab"][aria-selected]
   display: flex;
   justify-content: center;
   margin: 1.2rem 0rem;
+}
+
+/* This is a stopgap solution of footer overlapping tabs on low resolutions */
+@media (min-height: 37rem)
+{
+  #sidebar .fixed
+  {
+    position: fixed;
+  }
+
+  #sidebar footer
+  {
+    bottom: 0px;
+    position: absolute;
+  }
 }
 
 /*
