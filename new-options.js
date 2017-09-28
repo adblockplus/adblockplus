@@ -52,24 +52,28 @@
     this.items = [];
   }
 
-  Collection.prototype._setEmpty = function(table, texts)
+  Collection.prototype._setEmpty = function(table, detail, removeEmpty)
   {
-    let placeholders = table.querySelectorAll(".empty-placeholder");
-
-    if (texts && placeholders.length == 0)
+    if (removeEmpty)
     {
-      for (let text of texts)
+      let placeholders = table.querySelectorAll(".empty-placeholder");
+      for (let placeholder of placeholders)
+        table.removeChild(placeholder);
+
+      execAction(detail.removeEmptyAction, table);
+    }
+    else
+    {
+      let {emptyTexts = []} = detail;
+      for (let text of emptyTexts)
       {
         let placeholder = document.createElement("li");
         placeholder.className = "empty-placeholder";
         placeholder.textContent = getMessage(text);
         table.appendChild(placeholder);
       }
-    }
-    else if (placeholders.length > 0)
-    {
-      for (let placeholder of placeholders)
-        table.removeChild(placeholder);
+
+      execAction(detail.setEmptyAction, table);
     }
   };
 
@@ -153,7 +157,7 @@
         }
       }
 
-      this._setEmpty(table, null);
+      this._setEmpty(table, detail, true);
       if (table.children.length > 0)
         table.insertBefore(listItem, table.children[this.items.indexOf(item)]);
       else
@@ -199,7 +203,7 @@
 
       element.parentElement.removeChild(element);
       if (this.items.length == 0)
-        this._setEmpty(table, detail.emptyText);
+        this._setEmpty(table, detail);
     }
   };
 
@@ -316,7 +320,7 @@
         element = element.nextElementSibling;
       }
 
-      this._setEmpty(table, detail.emptyText);
+      this._setEmpty(table, detail);
     }
   };
 
@@ -343,24 +347,26 @@
   collections.langs = new Collection([
     {
       id: "blocking-languages-table",
-      emptyText: ["options_language_empty"]
+      emptyTexts: ["options_language_empty"]
     }
   ]);
   collections.allLangs = new Collection([
     {
       id: "all-lang-table-add",
-      emptyText: ["options_dialog_language_other_empty"]
+      emptyTexts: ["options_dialog_language_other_empty"]
     }
   ]);
   collections.more = new Collection([
     {
-      id: "more-list-table"
+      id: "more-list-table",
+      setEmptyAction: "hide-more-filters-section",
+      removeEmptyAction: "show-more-filters-section"
     }
   ]);
   collections.whitelist = new Collection([
     {
       id: "whitelisting-table",
-      emptyText: ["options_whitelist_empty_1", "options_whitelist_empty_2"]
+      emptyTexts: ["options_whitelist_empty_1", "options_whitelist_empty_2"]
     }
   ]);
   collections.filterLists = new Collection([
@@ -583,6 +589,9 @@
       case "edit-custom-filters":
         setCustomFiltersView("write");
         break;
+      case "hide-more-filters-section":
+        E("more-filters").setAttribute("aria-hidden", true);
+        break;
       case "hide-notification":
         hideNotification();
         break;
@@ -625,6 +634,9 @@
         {
           setCustomFiltersView("read");
         });
+        break;
+      case "show-more-filters-section":
+        E("more-filters").setAttribute("aria-hidden", false);
         break;
       case "switch-acceptable-ads":
         let value = element.value || element.dataset.value;
