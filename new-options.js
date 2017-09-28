@@ -455,6 +455,15 @@
     filtersMap[filter.text] = filter;
   }
 
+  function loadCustomFilters(filters)
+  {
+    for (let filter of filters)
+      updateFilter(filter);
+
+    setCustomFiltersView("read");
+    isCustomFiltersLoaded = true;
+  }
+
   function removeCustomFilter(text)
   {
     let index = customFilters.indexOf(text);
@@ -1067,6 +1076,7 @@
     for (let property in collections)
       collections[property].clearAll();
 
+    setCustomFiltersView("empty");
     ext.backgroundPage.sendMessage({
       type: "subscriptions.get",
       special: true
@@ -1082,11 +1092,7 @@
         },
         (filters) =>
         {
-          for (let filter of filters)
-            updateFilter(filter);
-
-          isCustomFiltersLoaded = true;
-          setCustomFiltersView("read");
+          loadCustomFilters(filters);
         });
       }
     });
@@ -1222,7 +1228,13 @@
         break;
       case "added":
         let {url, recommended} = subscription;
-        if (url in subscriptionsMap)
+        // Handle custom subscription
+        if (/^~user/.test(url))
+        {
+          loadCustomFilters(subscription.filters);
+          return;
+        }
+        else if (url in subscriptionsMap)
           updateSubscription(subscription);
         else
           addSubscription(subscription);
