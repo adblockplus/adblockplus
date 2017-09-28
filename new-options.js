@@ -1104,10 +1104,6 @@
     (url) =>
     {
       acceptableAdsUrl = url;
-      addSubscription({
-        url: acceptableAdsUrl,
-        disabled: true
-      });
 
       ext.backgroundPage.sendMessage({
         type: "prefs.get",
@@ -1126,6 +1122,8 @@
         {
           for (let subscription of subscriptions)
             onSubscriptionMessage("added", subscription);
+
+          setAcceptableAds();
         });
       });
     });
