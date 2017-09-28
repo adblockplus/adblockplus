@@ -227,8 +227,8 @@
       element.setAttribute("aria-label", title);
       if (this.details[i].searchable)
         element.setAttribute("data-search", title.toLowerCase());
-      let control = element.querySelector(".control[role='checkbox']");
-      if (control)
+      let controls = element.querySelectorAll(".control[role='checkbox']");
+      for (let control of controls)
       {
         control.setAttribute("aria-checked", item.disabled == false);
         if (isAcceptableAds(item.url) && this == collections.filterLists)

@@ -351,7 +351,7 @@ html[dir="rtl"] .floating-input input:focus ~ label
 }
 
 [data-validation] .floating-input input:focus:invalid ~ .attention::before,
-[data-validation] .floating-input input:focus:valid ~ .attention::before
+[data-validation] .floating-input input:valid ~ .attention::before
 {
   content: "";
   position: absolute;
@@ -365,7 +365,7 @@ html[dir="rtl"] .floating-input input:focus ~ label
 }
 
 html[dir="rtl"] [data-validation] .floating-input input:focus:invalid ~ .attention::before,
-html[dir="rtl"] [data-validation] .floating-input input:focus:valid ~ .attention::before
+html[dir="rtl"] [data-validation] .floating-input input:valid ~ .attention::before
 {
   left: 0rem;
   right: auto;
@@ -378,7 +378,7 @@ html[dir="rtl"] [data-validation] .floating-input input:focus:valid ~ .attention
   mask: url(icons/attention.svg);
 }
 
-[data-validation] .floating-input input:focus:valid ~ .attention::before
+[data-validation] .floating-input input:valid ~ .attention::before
 {
   top: 0.8rem;
   background-color: green;
@@ -1150,6 +1150,7 @@ html[dir="rtl"] .context-menu::before
   padding: 1rem 0rem;
   color: #099CD0;
   font-size: 1.1rem;
+  font-weight: 700;
   text-transform: none;
 }
 
