@@ -80,8 +80,8 @@
 
   window.ext.showOptions = function(callback)
   {
-    if (!/\/(?:mobile|new)-options\.html/.test(top.location.href))
-      window.open("new-options.html", "_blank");
+    if (!/\/(?:mobile-)?options\.html/.test(top.location.href))
+      window.open("options.html", "_blank");
 
     if (callback)
       callback();
