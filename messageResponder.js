@@ -143,6 +143,20 @@
     return listenerFilters;
   }
 
+  function addSubscription(subscription, properties)
+  {
+    subscription.disabled = false;
+    if ("title" in properties)
+      subscription.title = properties.title;
+    if ("homepage" in properties)
+      subscription.homepage = properties.homepage;
+
+    FilterStorage.addSubscription(subscription);
+    if (subscription instanceof DownloadableSubscription &&
+        !subscription.lastDownload)
+      Synchronizer.execute(subscription);
+  }
+
   port.on("app.get", (message, sender) =>
   {
     if (message.what == "issues")
@@ -331,13 +345,13 @@
   port.on("subscriptions.add", (message, sender) =>
   {
     let subscription = Subscription.fromURL(message.url);
-    if ("title" in message)
-      subscription.title = message.title;
-    if ("homepage" in message)
-      subscription.homepage = message.homepage;
-
     if (message.confirm)
     {
+      if ("title" in message)
+        subscription.title = message.title;
+      if ("homepage" in message)
+        subscription.homepage = message.homepage;
+
       ext.showOptions(() =>
       {
         sendMessage("app", "addSubscription", subscription);
@@ -345,12 +359,7 @@
     }
     else
     {
-      subscription.disabled = false;
-      FilterStorage.addSubscription(subscription);
-
-      if (subscription instanceof DownloadableSubscription &&
-          !subscription.lastDownload)
-        Synchronizer.execute(subscription);
+      addSubscription(subscription, message);
     }
   });
 
@@ -395,12 +404,7 @@
     }
     else
     {
-      subscription.disabled = false;
-      subscription.title = message.title;
-      subscription.homepage = message.homepage;
-      FilterStorage.addSubscription(subscription);
-      if (!subscription.lastDownload)
-        Synchronizer.execute(subscription);
+      addSubscription(subscription, message);
     }
   });
 
