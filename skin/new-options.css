@@ -588,6 +588,11 @@ section h2,
   margin: 0rem;
 }
 
+section h2
+{
+  text-transform: uppercase;
+}
+
 section,
 .section
 {
@@ -884,10 +889,9 @@ li .display
   margin: 0rem;
   -moz-margin-end: 1rem;
   -webkit-margin-end: 1rem;
-  
-  line-height: 1.3rem;
+  line-height: 1.5rem;
   text-decoration: none;
-  cursor: default;
+  cursor: help;
 }
 
 .tooltip::before

@@ -41,7 +41,7 @@
   },
   "options_privacy_header": {
     "description": "Section title in General tab",
-    "message": "PRIVACY & SECURITY"
+    "message": "Privacy & security"
   },
   "options_protection_privacy_tooltip": {
     "description": "Tooltip for 'Disable tracking' option in General tab",
