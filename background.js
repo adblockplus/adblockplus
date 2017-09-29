@@ -107,7 +107,6 @@
     notifications_showui: params.showNotificationUI,
     shouldShowBlockElementMenu: true,
     show_devtools_panel: true,
-    ui_warn_tracking: true,
     subscriptions_exceptionsurl: "https://easylist-downloads.adblockplus.org/exceptionrules.txt",
     subscriptions_exceptionsurl_privacy: "https://easylist-downloads.adblockplus.org/exceptionrules-privacy-friendly.txt"
   };

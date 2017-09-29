@@ -1355,8 +1355,7 @@ body[data-dialog] #dialog-background
   margin: 1.5rem auto 1.8rem auto;
 }
 
-[data-dialog="about"] p,
-#tracking-notification p
+[data-dialog="about"] p
 {
   margin: 0.5rem 0rem;
 }
@@ -1411,8 +1410,6 @@ body:not([data-dialog="language-add"]) #dialog-body button.add,
 body:not([data-dialog="language-change"]) #dialog-body button.change,
 body:not([data-dialog="predefined"]) #dialog-title-predefined,
 body:not([data-dialog="predefined"]) #dialog-content-predefined,
-body:not([data-dialog="tracking"]) #dialog-title-tracking,
-body:not([data-dialog="tracking"]) #dialog-content-tracking,
 body:not([data-dialog]) #dialog
 {
   display: none;

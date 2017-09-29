@@ -1050,23 +1050,6 @@
     return url == acceptableAdsUrl || url == acceptableAdsPrivacyUrl;
   }
 
-  function hasPrivacyConflict()
-  {
-    let acceptableAdsList = subscriptionsMap[acceptableAdsUrl];
-    let privacyList = null;
-    for (let url in subscriptionsMap)
-    {
-      let subscription = subscriptionsMap[url];
-      if (subscription.recommended == "privacy")
-      {
-        privacyList = subscription;
-        break;
-      }
-    }
-    return acceptableAdsList && acceptableAdsList.disabled == false &&
-      privacyList && privacyList.disabled == false;
-  }
-
   function populateLists()
   {
     subscriptionsMap = Object.create(null);
@@ -1240,16 +1223,6 @@
         if (isAcceptableAds(url))
           setAcceptableAds();
 
-        if ((url == acceptableAdsUrl || recommended == "privacy") &&
-          hasPrivacyConflict())
-        {
-          getPref("ui_warn_tracking", (showTrackingWarning) =>
-          {
-            if (showTrackingWarning)
-              openDialog("tracking");
-          });
-        }
-
         collections.filterLists.addItem(subscription);
         break;
       case "removed":
@@ -1398,8 +1371,7 @@
   ext.backgroundPage.sendMessage({
     type: "prefs.listen",
     filter: ["notifications_ignoredcategories", "notifications_showui",
-             "show_devtools_panel", "shouldShowBlockElementMenu",
-             "ui_warn_tracking"]
+             "show_devtools_panel", "shouldShowBlockElementMenu"]
   });
   ext.backgroundPage.sendMessage({
     type: "subscriptions.listen",
