@@ -3,7 +3,4 @@ basename = adblockplusui
 
 [locales]
 base_path = locale
-name_format = BCP-47
-file_format = chrome-json
-target_platforms = chrome firefox
-default_locale = en-US
+default_locale = en_US
