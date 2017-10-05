@@ -39,6 +39,8 @@
     SpecialSubscription
   } = require("subscriptionClasses");
 
+  const {showOptions} = require("options");
+
   port.on("types.get", (message, sender) =>
   {
     let filterTypes = Array.from(require("requestBlocker").filterTypes);
@@ -212,7 +214,7 @@
   {
     if (message.what == "options")
     {
-      ext.showOptions(() =>
+      showOptions(() =>
       {
         if (!message.action)
           return;
@@ -352,7 +354,7 @@
       if ("homepage" in message)
         subscription.homepage = message.homepage;
 
-      ext.showOptions(() =>
+      showOptions(() =>
       {
         sendMessage("app", "addSubscription", subscription);
       });

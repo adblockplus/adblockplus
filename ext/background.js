@@ -78,15 +78,6 @@
 
   window.ext.PageMap = PageMap;
 
-  window.ext.showOptions = function(callback)
-  {
-    if (!/\/(?:mobile-)?options\.html/.test(top.location.href))
-      window.open("options.html", "_blank");
-
-    if (callback)
-      callback();
-  };
-
   window.ext.devtools = {
     onCreated: {
       addListener(listener)

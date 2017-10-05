@@ -397,6 +397,17 @@
     port: new EventEmitter()
   };
 
+  modules.options = {
+    showOptions(callback)
+    {
+      if (!/\/(mobile-)?options\.html\b/.test(top.location.href))
+        window.open("options.html", "_blank");
+
+      if (callback)
+        callback();
+    }
+  };
+
   window.addEventListener("message", (event) =>
   {
     if (event.data.type != "message")
