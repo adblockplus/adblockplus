@@ -16,7 +16,7 @@ Directory structure
     to messages sent by UI code.
   * `background.html`, `background.js`: Test implementation of the background
     page, should *not be imported*.
-  * `options.html`, `options.js`: Options page, see below
+  * `desktop-options.html`, `desktop-options.js`: Options page, see below
   * `subscriptions.xml`: Test subscription data, should *not be imported*
 * `locale` directory: Localized strings, with one directory per locale. The
   Firefox format for locale identifiers is used (xx-YY where xx is the language
@@ -83,7 +83,7 @@ parameters:
   subscriptions as initiated by clicking on an "abp:subscribe" link
 * `showPageOptions=true`: shows page-specific options
 
-options.html
+desktop-options.html
 ------------
 
 This is the implementation of the Adblock Plus options page which is

@@ -400,8 +400,8 @@
   modules.options = {
     showOptions(callback)
     {
-      if (!/\/(mobile-)?options\.html\b/.test(top.location.href))
-        window.open("options.html", "_blank");
+      if (!/\/(?:mobile|desktop)-options\.html\b/.test(top.location.href))
+        window.open("desktop-options.html", "_blank");
 
       if (callback)
         callback();
