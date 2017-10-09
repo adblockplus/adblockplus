@@ -140,6 +140,16 @@
     }
   };
 
+  modules.notificationHelper = {
+    getActiveNotification()
+    {
+    },
+    shouldDisplay()
+    {
+      return true;
+    }
+  };
+
   let subscriptionServer = "https://easylist-downloads.adblockplus.org";
   let subscriptionDetails = {
     [`${subscriptionServer}/easylistgermany+easylist.txt`]: {

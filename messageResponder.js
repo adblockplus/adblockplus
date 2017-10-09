@@ -28,6 +28,7 @@
   const {FilterNotifier} = require("filterNotifier");
   const {defaultMatcher} = require("matcher");
   const {Notification: NotificationStorage} = require("notification");
+  const {getActiveNotification, shouldDisplay} = require("notificationHelper");
 
   const {Filter, BlockingFilter, RegExpFilter} = require("filterClasses");
   const {Synchronizer} = require("synchronizer");
@@ -342,6 +343,20 @@
       return NotificationStorage.toggleIgnoreCategory("*");
 
     return Prefs[message.key] = !Prefs[message.key];
+  });
+
+  port.on("notifications.get", (message, sender) =>
+  {
+    let notification = getActiveNotification();
+
+    if (!notification ||
+        "displayMethod" in message &&
+        !shouldDisplay(message.displayMethod, notification.type))
+      return;
+
+    let texts = NotificationStorage.getLocalizedTexts(notification,
+                                                      message.locale);
+    return Object.assign({texts}, notification);
   });
 
   port.on("subscriptions.add", (message, sender) =>
