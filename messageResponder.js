@@ -337,6 +337,14 @@
     }
   });
 
+  port.on("prefs.set", (message, sender) =>
+  {
+    if (message.key == "notifications_ignoredcategories")
+      return NotificationStorage.toggleIgnoreCategory("*", !!message.value);
+
+    return Prefs[message.key] = message.value;
+  });
+
   port.on("prefs.toggle", (message, sender) =>
   {
     if (message.key == "notifications_ignoredcategories")
