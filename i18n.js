@@ -17,10 +17,6 @@
 
 "use strict";
 
-// This variable should no longer be necessary once options.js in Chrome
-// accesses ext.i18n directly.
-let {i18n} = ext;
-
 // Getting UI locale cannot be done synchronously on Firefox,
 // requires messaging the background page. For Chrome and Safari,
 // we could get the UI locale here, but would need to duplicate
@@ -37,31 +33,33 @@ ext.backgroundPage.sendMessage(
   }
 );
 
-// Inserts i18n strings into matching elements. Any inner HTML already
-// in the element is parsed as JSON and used as parameters to
-// substitute into placeholders in the i18n message.
-ext.i18n.setElementText = function(element, stringName, args)
-{
-  function processString(str, currentElement)
+ext.i18n = {
+  // Inserts i18n strings into matching elements. Any inner HTML already
+  // in the element is parsed as JSON and used as parameters to
+  // substitute into placeholders in the i18n message.
+  setElementText(element, stringName, args)
   {
-    let match = /^(.*?)<(a|strong)>(.*?)<\/\2>(.*)$/.exec(str);
-    if (match)
+    function processString(str, currentElement)
     {
-      processString(match[1], currentElement);
+      let match = /^(.*?)<(a|strong)>(.*?)<\/\2>(.*)$/.exec(str);
+      if (match)
+      {
+        processString(match[1], currentElement);
 
-      let e = document.createElement(match[2]);
-      processString(match[3], e);
-      currentElement.appendChild(e);
+        let e = document.createElement(match[2]);
+        processString(match[3], e);
+        currentElement.appendChild(e);
 
-      processString(match[4], currentElement);
+        processString(match[4], currentElement);
+      }
+      else
+        currentElement.appendChild(document.createTextNode(str));
     }
-    else
-      currentElement.appendChild(document.createTextNode(str));
-  }
 
-  while (element.lastChild)
-    element.removeChild(element.lastChild);
-  processString(ext.i18n.getMessage(stringName, args), element);
+    while (element.lastChild)
+      element.removeChild(element.lastChild);
+    processString(chrome.i18n.getMessage(stringName, args), element);
+  }
 };
 
 // Loads i18n strings

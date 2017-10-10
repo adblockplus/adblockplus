@@ -92,7 +92,7 @@
       },
       get appLocale()
       {
-        return parent.ext.i18n.locale.replace(/_/g, "-");
+        return chrome.i18n.getUILanguage();
       },
       get readingDirection()
       {

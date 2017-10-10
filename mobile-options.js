@@ -20,7 +20,7 @@
 "use strict";
 
 {
-  const {getMessage} = ext.i18n;
+  const {getMessage} = chrome.i18n;
 
   const dialogSubscribe = "subscribe";
   const idAcceptableAds = "acceptableAds";

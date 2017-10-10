@@ -27,7 +27,7 @@
   let acceptableAdsUrl = null;
   let acceptableAdsPrivacyUrl = null;
   let isCustomFiltersLoaded = false;
-  let {getMessage} = ext.i18n;
+  let {getMessage} = chrome.i18n;
   let customFilters = [];
   let filterErrors = new Map([
     ["synchronize_invalid_url",

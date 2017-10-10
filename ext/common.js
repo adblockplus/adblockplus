@@ -19,6 +19,9 @@
 
 (function()
 {
+  if (typeof chrome == "undefined")
+    window.chrome = {};
+
   if (typeof ext == "undefined")
     window.ext = {};
 
@@ -158,8 +161,11 @@
     }
   };
 
-  window.ext.i18n = {
-    locale: locales[0],
+  chrome.i18n = {
+    getUILanguage()
+    {
+      return locales[0].replace(/_/g, "-");
+    },
     getMessage(msgId, substitutions)
     {
       while (true)
