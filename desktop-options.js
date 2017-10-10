@@ -88,6 +88,8 @@
 
   Collection.prototype._getItemTitle = function(item, i)
   {
+    if (this.details[i].useSpecialization && item.specialization)
+      return item.specialization;
     if (this.details[i].useOriginalTitle && item.originalTitle)
       return item.originalTitle;
     return item.title || item.url || item.text;
@@ -347,13 +349,15 @@
   collections.langs = new Collection([
     {
       id: "blocking-languages-table",
-      emptyTexts: ["options_language_empty"]
+      emptyTexts: ["options_language_empty"],
+      useSpecialization: true
     }
   ]);
   collections.allLangs = new Collection([
     {
       id: "all-lang-table-add",
-      emptyTexts: ["options_dialog_language_other_empty"]
+      emptyTexts: ["options_dialog_language_other_empty"],
+      useSpecialization: true
     }
   ]);
   collections.more = new Collection([
@@ -497,6 +501,7 @@
             disabled: true,
             downloadStatus: null,
             homepage: null,
+            specialization: element.getAttribute("specialization"),
             originalTitle: element.getAttribute("title"),
             recommended: type,
             url: element.getAttribute("url")
