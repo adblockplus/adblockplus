@@ -455,10 +455,6 @@
     "description": "Language name shown in add language modal dialog",
     "message": "Indonesian"
   },
-  "options_language_vi": {
-    "description": "Language name shown in add language modal dialog",
-    "message": "Vietnamese"
-  },
   "options_language_bg": {
     "description": "Language name shown in add language modal dialog",
     "message": "Bulgarian"
@@ -490,10 +486,6 @@
   "options_language_lt": {
     "description": "Language name shown in add language modal dialog",
     "message": "Lithuanian"
-  },
-  "options_language_es": {
-    "description": "Language name shown in add language modal dialog",
-    "message": "Spanish"
   },
   "options_language_lv": {
     "description": "Language name shown in add language modal dialog",
