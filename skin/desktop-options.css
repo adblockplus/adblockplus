@@ -54,6 +54,8 @@ body
   background-color: #F3F3F3;
   display: flex;
   justify-content: center;
+  /* We force vertical scrollbars to keep the content centered */
+  overflow-y: scroll;
   margin: 1.2rem 0.3rem;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.25rem;
