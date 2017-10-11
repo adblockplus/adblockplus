@@ -55,7 +55,7 @@
       setLinks("share-headline", link);
     });
 
-    ext.backgroundPage.sendMessage({
+    chrome.runtime.sendMessage({
       type: "app.get",
       what: "issues"
     }, (issues) =>
@@ -77,7 +77,7 @@
         updateSocialLinks();
       }
     });
-    ext.backgroundPage.sendMessage({
+    chrome.runtime.sendMessage({
       type: "subscriptions.listen",
       filter: ["added", "removed", "updated", "disabled"]
     });
@@ -114,7 +114,7 @@
 
   function openFilters()
   {
-    ext.backgroundPage.sendMessage({type: "app.open", what: "options"});
+    chrome.runtime.sendMessage({type: "app.open", what: "options"});
   }
 
   document.addEventListener("DOMContentLoaded", onDOMLoaded, false);

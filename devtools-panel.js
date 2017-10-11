@@ -19,7 +19,7 @@
 
 let lastFilterQuery = null;
 
-ext.backgroundPage.sendMessage({type: "types.get"},
+chrome.runtime.sendMessage({type: "types.get"},
   (filterTypes) =>
   {
     let filterTypesElem = document.getElementById("filter-type");
@@ -67,7 +67,7 @@ function createActionButton(action, label, filter)
 
   button.addEventListener("click", () =>
   {
-    ext.backgroundPage.sendMessage({
+    chrome.runtime.sendMessage({
       type: "filters." + action,
       text: filter
     });

@@ -26,7 +26,7 @@ function E(id)
 
 function getDocLink(link, callback)
 {
-  ext.backgroundPage.sendMessage({
+  chrome.runtime.sendMessage({
     type: "app.get",
     what: "doclink",
     link
@@ -60,7 +60,7 @@ function setLinks(id, ...args)
 
 function checkShareResource(url, callback)
 {
-  ext.backgroundPage.sendMessage({
+  chrome.runtime.sendMessage({
     type: "filters.blocked",
     url,
     requestType: "SCRIPT",

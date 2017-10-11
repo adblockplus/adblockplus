@@ -543,7 +543,7 @@
 
   function sendMessageHandleErrors(message, onSuccess)
   {
-    ext.backgroundPage.sendMessage(message, (errors) =>
+    chrome.runtime.sendMessage(message, (errors) =>
     {
       if (errors.length > 0)
         alert(errors.join("\n"));
@@ -585,11 +585,11 @@
           let subscriptionType = subscription.recommended;
           if (subscriptionType == "ads" && subscription.disabled == false)
           {
-            ext.backgroundPage.sendMessage({
+            chrome.runtime.sendMessage({
               type: "subscriptions.remove",
               url: subscription.url
             });
-            ext.backgroundPage.sendMessage({
+            chrome.runtime.sendMessage({
               type: "subscriptions.add",
               url: findParentData(element, "access", false)
             });
@@ -627,13 +627,13 @@
         break;
       }
       case "remove-filter":
-        ext.backgroundPage.sendMessage({
+        chrome.runtime.sendMessage({
           type: "filters.remove",
           text: findParentData(element, "access", false)
         });
         break;
       case "remove-subscription":
-        ext.backgroundPage.sendMessage({
+        chrome.runtime.sendMessage({
           type: "subscriptions.remove",
           url: findParentData(element, "access", false)
         });
@@ -654,12 +654,12 @@
         break;
       case "switch-acceptable-ads":
         let value = element.value || element.dataset.value;
-        ext.backgroundPage.sendMessage({
+        chrome.runtime.sendMessage({
           type: value == "privacy" ? "subscriptions.add" :
             "subscriptions.remove",
           url: acceptableAdsPrivacyUrl
         });
-        ext.backgroundPage.sendMessage({
+        chrome.runtime.sendMessage({
           type: value == "ads" ? "subscriptions.add" : "subscriptions.remove",
           url: acceptableAdsUrl
         });
@@ -668,14 +668,14 @@
         switchTab(element.getAttribute("href").substr(1));
         break;
       case "toggle-disable-subscription":
-        ext.backgroundPage.sendMessage({
+        chrome.runtime.sendMessage({
           type: "subscriptions.toggle",
           keepInstalled: true,
           url: findParentData(element, "access", false)
         });
         break;
       case "toggle-pref":
-        ext.backgroundPage.sendMessage({
+        chrome.runtime.sendMessage({
           type: "prefs.toggle",
           key: findParentData(element, "pref", false)
         });
@@ -684,7 +684,7 @@
         let subscriptionUrl = findParentData(element, "access", false);
         if (element.getAttribute("aria-checked") == "true")
         {
-          ext.backgroundPage.sendMessage({
+          chrome.runtime.sendMessage({
             type: "subscriptions.remove",
             url: subscriptionUrl
           });
@@ -693,12 +693,12 @@
           addEnableSubscription(subscriptionUrl);
         break;
       case "update-all-subscriptions":
-        ext.backgroundPage.sendMessage({
+        chrome.runtime.sendMessage({
           type: "subscriptions.update"
         });
         break;
       case "update-subscription":
-        ext.backgroundPage.sendMessage({
+        chrome.runtime.sendMessage({
           type: "subscriptions.update",
           url: findParentData(element, "access", false)
         });
@@ -860,7 +860,7 @@
     populateLists();
 
     // Initialize navigation sidebar
-    ext.backgroundPage.sendMessage({
+    chrome.runtime.sendMessage({
       type: "app.get",
       what: "addonVersion"
     },
@@ -909,7 +909,7 @@
         onPrefMessage(key, value, true);
       });
     }
-    ext.backgroundPage.sendMessage({
+    chrome.runtime.sendMessage({
       type: "app.get",
       what: "features"
     },
@@ -1065,7 +1065,7 @@
       collections[property].clearAll();
 
     setCustomFiltersView("empty");
-    ext.backgroundPage.sendMessage({
+    chrome.runtime.sendMessage({
       type: "subscriptions.get",
       special: true
     },
@@ -1074,7 +1074,7 @@
       // Load filters
       for (let subscription of subscriptions)
       {
-        ext.backgroundPage.sendMessage({
+        chrome.runtime.sendMessage({
           type: "filters.get",
           subscriptionUrl: subscription.url
         },
@@ -1085,7 +1085,7 @@
       }
     });
     loadRecommendations();
-    ext.backgroundPage.sendMessage({
+    chrome.runtime.sendMessage({
       type: "prefs.get",
       key: "subscriptions_exceptionsurl"
     },
@@ -1093,7 +1093,7 @@
     {
       acceptableAdsUrl = url;
 
-      ext.backgroundPage.sendMessage({
+      chrome.runtime.sendMessage({
         type: "prefs.get",
         key: "subscriptions_exceptionsurl_privacy"
       },
@@ -1102,7 +1102,7 @@
         acceptableAdsPrivacyUrl = urlPrivacy;
 
         // Load user subscriptions
-        ext.backgroundPage.sendMessage({
+        chrome.runtime.sendMessage({
           type: "subscriptions.get",
           downloadable: true
         },
@@ -1160,7 +1160,7 @@
     if (homepage)
       message.homepage = homepage;
 
-    ext.backgroundPage.sendMessage(message);
+    chrome.runtime.sendMessage(message);
   }
 
   function onFilterMessage(action, filter)
@@ -1271,7 +1271,7 @@
         return;
       }
 
-      ext.backgroundPage.sendMessage({
+      chrome.runtime.sendMessage({
         type: "prefs.get",
         key
       }, callback);
@@ -1365,20 +1365,20 @@
     }
   });
 
-  ext.backgroundPage.sendMessage({
+  chrome.runtime.sendMessage({
     type: "app.listen",
     filter: ["addSubscription", "focusSection"]
   });
-  ext.backgroundPage.sendMessage({
+  chrome.runtime.sendMessage({
     type: "filters.listen",
     filter: ["added", "loaded", "removed"]
   });
-  ext.backgroundPage.sendMessage({
+  chrome.runtime.sendMessage({
     type: "prefs.listen",
     filter: ["notifications_ignoredcategories", "notifications_showui",
              "show_devtools_panel", "shouldShowBlockElementMenu"]
   });
-  ext.backgroundPage.sendMessage({
+  chrome.runtime.sendMessage({
     type: "subscriptions.listen",
     filter: ["added", "disabled", "homepage", "lastDownload", "removed",
              "title", "downloadStatus", "downloading"]

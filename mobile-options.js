@@ -76,7 +76,7 @@
   {
     return new Promise((resolve, reject) =>
     {
-      ext.backgroundPage.sendMessage(
+      chrome.runtime.sendMessage(
         {type: "subscriptions.get", downloadable: true},
         resolve
       );
@@ -87,7 +87,7 @@
   {
     return new Promise((resolve, reject) =>
     {
-      ext.backgroundPage.sendMessage(
+      chrome.runtime.sendMessage(
         {type: "prefs.get", key: "subscriptions_exceptionsurl"},
         resolve
       );
@@ -117,12 +117,12 @@
 
   function installSubscription(url, title)
   {
-    ext.backgroundPage.sendMessage({type: "subscriptions.add", url, title});
+    chrome.runtime.sendMessage({type: "subscriptions.add", url, title});
   }
 
   function uninstallSubscription(url)
   {
-    ext.backgroundPage.sendMessage({type: "subscriptions.remove", url});
+    chrome.runtime.sendMessage({type: "subscriptions.remove", url});
   }
 
   /* Actions */
@@ -290,7 +290,7 @@
   {
     if (whitelistFilter)
     {
-      ext.backgroundPage.sendMessage(
+      chrome.runtime.sendMessage(
         {
           type: (toggle.checked) ? "filters.remove" : "filters.add",
           text: whitelistFilter
@@ -413,17 +413,17 @@
   }
   ext.onMessage.addListener(onMessage);
 
-  ext.backgroundPage.sendMessage({
+  chrome.runtime.sendMessage({
     type: "app.listen",
     filter: ["addSubscription", "showPageOptions"]
   });
 
-  ext.backgroundPage.sendMessage({
+  chrome.runtime.sendMessage({
     type: "filters.listen",
     filter: ["added", "removed"]
   });
 
-  ext.backgroundPage.sendMessage({
+  chrome.runtime.sendMessage({
     type: "subscriptions.listen",
     filter: ["added", "disabled", "removed", "title"]
   });

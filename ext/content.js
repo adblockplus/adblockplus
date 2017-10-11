@@ -29,7 +29,7 @@
   window.addEventListener("DOMContentLoaded", () =>
   {
     document.body.appendChild(backgroundFrame);
-  }, false);
+  });
 
   let messageQueue = [];
   let maxMessageId = -1;
@@ -44,10 +44,10 @@
         for (let message of queue)
           backgroundFrame.contentWindow.postMessage(message, "*");
       }
-      window.removeEventListener("message", loadHandler, false);
+      window.removeEventListener("message", loadHandler);
     }
   };
-  window.addEventListener("message", loadHandler, false);
+  window.addEventListener("message", loadHandler);
 
   ext.backgroundPage = {
     _sendRawMessage(message)
@@ -56,30 +56,36 @@
         messageQueue.push(message);
       else
         backgroundFrame.contentWindow.postMessage(message, "*");
-    },
-    sendMessage(message, responseCallback)
+    }
+  };
+
+  /* Polyfills */
+
+  if (!("runtime" in chrome))
+    chrome.runtime = {};
+
+  chrome.runtime.sendMessage = (message, responseCallback) =>
+  {
+    let messageId = ++maxMessageId;
+
+    ext.backgroundPage._sendRawMessage({
+      type: "message",
+      messageId,
+      payload: message
+    });
+
+    if (responseCallback)
     {
-      let messageId = ++maxMessageId;
-
-      this._sendRawMessage({
-        type: "message",
-        messageId,
-        payload: message
-      });
-
-      if (responseCallback)
+      let callbackWrapper = event =>
       {
-        let callbackWrapper = function(event)
+        if (event.data.type == "response" && event.data.messageId == messageId)
         {
-          if (event.data.type == "response" &&
-              event.data.messageId == messageId)
-          {
-            window.removeEventListener("message", callbackWrapper, false);
-            responseCallback(event.data.payload);
-          }
-        };
-        window.addEventListener("message", callbackWrapper, false);
-      }
+          window.removeEventListener("message", callbackWrapper);
+          responseCallback(event.data.payload);
+        }
+      };
+
+      window.addEventListener("message", callbackWrapper);
     }
   };
 }());

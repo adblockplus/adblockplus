@@ -21,7 +21,7 @@
 // requires messaging the background page. For Chrome and Safari,
 // we could get the UI locale here, but would need to duplicate
 // the logic implemented in Utils.appLocale.
-ext.backgroundPage.sendMessage(
+chrome.runtime.sendMessage(
   {
     type: "app.get",
     what: "localeInfo"
