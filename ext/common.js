@@ -83,16 +83,16 @@
   let getLocaleCandidates = function(selectedLocale)
   {
     let candidates = [];
-    let defaultLocale = "en-US";
+    let defaultLocale = "en_US";
 
-    // e.g. "ja-jp-mac" -> "ja-JP", note that the part after the second
+    // e.g. "ja-jp-mac" -> "ja_JP", note that the part after the second
     // dash is dropped, since we only support language and region
     let parts = selectedLocale.split("-");
     let language = parts[0];
     let region = (parts[1] || "").toUpperCase();
 
     if (region)
-      candidates.push(language + "-" + region);
+      candidates.push(language + "_" + region);
 
     candidates.push(language);
 
