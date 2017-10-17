@@ -19,7 +19,7 @@
 
 let lastFilterQuery = null;
 
-chrome.runtime.sendMessage({type: "types.get"},
+browser.runtime.sendMessage({type: "types.get"},
   (filterTypes) =>
   {
     let filterTypesElem = document.getElementById("filter-type");
@@ -67,7 +67,7 @@ function createActionButton(action, label, filter)
 
   button.addEventListener("click", () =>
   {
-    chrome.runtime.sendMessage({
+    browser.runtime.sendMessage({
       type: "filters." + action,
       text: filter
     });
@@ -254,6 +254,6 @@ document.addEventListener("DOMContentLoaded", () =>
   // Since Chrome 54 the themeName is accessible, for earlier versions we must
   // assume the default theme is being used.
   // https://bugs.chromium.org/p/chromium/issues/detail?id=608869
-  let theme = chrome.devtools.panels.themeName || "default";
+  let theme = browser.devtools.panels.themeName || "default";
   document.body.classList.add(theme);
 }, false);

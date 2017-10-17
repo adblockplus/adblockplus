@@ -27,7 +27,7 @@
   let acceptableAdsUrl = null;
   let acceptableAdsPrivacyUrl = null;
   let isCustomFiltersLoaded = false;
-  let {getMessage} = chrome.i18n;
+  let {getMessage} = browser.i18n;
   let customFilters = [];
   let filterErrors = new Map([
     ["synchronize_invalid_url",
@@ -543,7 +543,7 @@
 
   function sendMessageHandleErrors(message, onSuccess)
   {
-    chrome.runtime.sendMessage(message, (errors) =>
+    browser.runtime.sendMessage(message, (errors) =>
     {
       if (errors.length > 0)
         alert(errors.join("\n"));
@@ -585,11 +585,11 @@
           let subscriptionType = subscription.recommended;
           if (subscriptionType == "ads" && subscription.disabled == false)
           {
-            chrome.runtime.sendMessage({
+            browser.runtime.sendMessage({
               type: "subscriptions.remove",
               url: subscription.url
             });
-            chrome.runtime.sendMessage({
+            browser.runtime.sendMessage({
               type: "subscriptions.add",
               url: findParentData(element, "access", false)
             });
@@ -627,13 +627,13 @@
         break;
       }
       case "remove-filter":
-        chrome.runtime.sendMessage({
+        browser.runtime.sendMessage({
           type: "filters.remove",
           text: findParentData(element, "access", false)
         });
         break;
       case "remove-subscription":
-        chrome.runtime.sendMessage({
+        browser.runtime.sendMessage({
           type: "subscriptions.remove",
           url: findParentData(element, "access", false)
         });
@@ -654,12 +654,12 @@
         break;
       case "switch-acceptable-ads":
         let value = element.value || element.dataset.value;
-        chrome.runtime.sendMessage({
+        browser.runtime.sendMessage({
           type: value == "privacy" ? "subscriptions.add" :
             "subscriptions.remove",
           url: acceptableAdsPrivacyUrl
         });
-        chrome.runtime.sendMessage({
+        browser.runtime.sendMessage({
           type: value == "ads" ? "subscriptions.add" : "subscriptions.remove",
           url: acceptableAdsUrl
         });
@@ -668,14 +668,14 @@
         switchTab(element.getAttribute("href").substr(1));
         break;
       case "toggle-disable-subscription":
-        chrome.runtime.sendMessage({
+        browser.runtime.sendMessage({
           type: "subscriptions.toggle",
           keepInstalled: true,
           url: findParentData(element, "access", false)
         });
         break;
       case "toggle-pref":
-        chrome.runtime.sendMessage({
+        browser.runtime.sendMessage({
           type: "prefs.toggle",
           key: findParentData(element, "pref", false)
         });
@@ -684,7 +684,7 @@
         let subscriptionUrl = findParentData(element, "access", false);
         if (element.getAttribute("aria-checked") == "true")
         {
-          chrome.runtime.sendMessage({
+          browser.runtime.sendMessage({
             type: "subscriptions.remove",
             url: subscriptionUrl
           });
@@ -693,12 +693,12 @@
           addEnableSubscription(subscriptionUrl);
         break;
       case "update-all-subscriptions":
-        chrome.runtime.sendMessage({
+        browser.runtime.sendMessage({
           type: "subscriptions.update"
         });
         break;
       case "update-subscription":
-        chrome.runtime.sendMessage({
+        browser.runtime.sendMessage({
           type: "subscriptions.update",
           url: findParentData(element, "access", false)
         });
@@ -860,7 +860,7 @@
     populateLists();
 
     // Initialize navigation sidebar
-    chrome.runtime.sendMessage({
+    browser.runtime.sendMessage({
       type: "app.get",
       what: "addonVersion"
     },
@@ -909,7 +909,7 @@
         onPrefMessage(key, value, true);
       });
     }
-    chrome.runtime.sendMessage({
+    browser.runtime.sendMessage({
       type: "app.get",
       what: "features"
     },
@@ -1065,7 +1065,7 @@
       collections[property].clearAll();
 
     setCustomFiltersView("empty");
-    chrome.runtime.sendMessage({
+    browser.runtime.sendMessage({
       type: "subscriptions.get",
       special: true
     },
@@ -1074,7 +1074,7 @@
       // Load filters
       for (let subscription of subscriptions)
       {
-        chrome.runtime.sendMessage({
+        browser.runtime.sendMessage({
           type: "filters.get",
           subscriptionUrl: subscription.url
         },
@@ -1085,7 +1085,7 @@
       }
     });
     loadRecommendations();
-    chrome.runtime.sendMessage({
+    browser.runtime.sendMessage({
       type: "prefs.get",
       key: "subscriptions_exceptionsurl"
     },
@@ -1093,7 +1093,7 @@
     {
       acceptableAdsUrl = url;
 
-      chrome.runtime.sendMessage({
+      browser.runtime.sendMessage({
         type: "prefs.get",
         key: "subscriptions_exceptionsurl_privacy"
       },
@@ -1102,7 +1102,7 @@
         acceptableAdsPrivacyUrl = urlPrivacy;
 
         // Load user subscriptions
-        chrome.runtime.sendMessage({
+        browser.runtime.sendMessage({
           type: "subscriptions.get",
           downloadable: true
         },
@@ -1160,7 +1160,7 @@
     if (homepage)
       message.homepage = homepage;
 
-    chrome.runtime.sendMessage(message);
+    browser.runtime.sendMessage(message);
   }
 
   function onFilterMessage(action, filter)
@@ -1271,7 +1271,7 @@
         return;
       }
 
-      chrome.runtime.sendMessage({
+      browser.runtime.sendMessage({
         type: "prefs.get",
         key
       }, callback);
@@ -1365,20 +1365,20 @@
     }
   });
 
-  chrome.runtime.sendMessage({
+  browser.runtime.sendMessage({
     type: "app.listen",
     filter: ["addSubscription", "focusSection"]
   });
-  chrome.runtime.sendMessage({
+  browser.runtime.sendMessage({
     type: "filters.listen",
     filter: ["added", "loaded", "removed"]
   });
-  chrome.runtime.sendMessage({
+  browser.runtime.sendMessage({
     type: "prefs.listen",
     filter: ["notifications_ignoredcategories", "notifications_showui",
              "show_devtools_panel", "shouldShowBlockElementMenu"]
   });
-  chrome.runtime.sendMessage({
+  browser.runtime.sendMessage({
     type: "subscriptions.listen",
     filter: ["added", "disabled", "homepage", "lastDownload", "removed",
              "title", "downloadStatus", "downloading"]

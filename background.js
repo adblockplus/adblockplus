@@ -92,7 +92,7 @@
       },
       get appLocale()
       {
-        return chrome.i18n.getUILanguage();
+        return browser.i18n.getUILanguage();
       },
       get readingDirection()
       {

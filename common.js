@@ -26,7 +26,7 @@ function E(id)
 
 function getDocLink(link, callback)
 {
-  chrome.runtime.sendMessage({
+  browser.runtime.sendMessage({
     type: "app.get",
     what: "doclink",
     link
@@ -60,7 +60,7 @@ function setLinks(id, ...args)
 
 function checkShareResource(url, callback)
 {
-  chrome.runtime.sendMessage({
+  browser.runtime.sendMessage({
     type: "filters.blocked",
     url,
     requestType: "SCRIPT",

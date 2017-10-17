@@ -20,7 +20,7 @@
 "use strict";
 
 {
-  const {getMessage} = chrome.i18n;
+  const {getMessage} = browser.i18n;
 
   const dialogSubscribe = "subscribe";
   const idAcceptableAds = "acceptableAds";
@@ -76,7 +76,7 @@
   {
     return new Promise((resolve, reject) =>
     {
-      chrome.runtime.sendMessage(
+      browser.runtime.sendMessage(
         {type: "subscriptions.get", downloadable: true},
         resolve
       );
@@ -87,7 +87,7 @@
   {
     return new Promise((resolve, reject) =>
     {
-      chrome.runtime.sendMessage(
+      browser.runtime.sendMessage(
         {type: "prefs.get", key: "subscriptions_exceptionsurl"},
         resolve
       );
@@ -117,12 +117,12 @@
 
   function installSubscription(url, title)
   {
-    chrome.runtime.sendMessage({type: "subscriptions.add", url, title});
+    browser.runtime.sendMessage({type: "subscriptions.add", url, title});
   }
 
   function uninstallSubscription(url)
   {
-    chrome.runtime.sendMessage({type: "subscriptions.remove", url});
+    browser.runtime.sendMessage({type: "subscriptions.remove", url});
   }
 
   /* Actions */
@@ -290,7 +290,7 @@
   {
     if (whitelistFilter)
     {
-      chrome.runtime.sendMessage(
+      browser.runtime.sendMessage(
         {
           type: (toggle.checked) ? "filters.remove" : "filters.add",
           text: whitelistFilter
@@ -413,17 +413,17 @@
   }
   ext.onMessage.addListener(onMessage);
 
-  chrome.runtime.sendMessage({
+  browser.runtime.sendMessage({
     type: "app.listen",
     filter: ["addSubscription", "showPageOptions"]
   });
 
-  chrome.runtime.sendMessage({
+  browser.runtime.sendMessage({
     type: "filters.listen",
     filter: ["added", "removed"]
   });
 
-  chrome.runtime.sendMessage({
+  browser.runtime.sendMessage({
     type: "subscriptions.listen",
     filter: ["added", "disabled", "removed", "title"]
   });

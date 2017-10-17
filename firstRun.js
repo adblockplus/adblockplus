@@ -55,7 +55,7 @@
       setLinks("share-headline", link);
     });
 
-    chrome.runtime.sendMessage({
+    browser.runtime.sendMessage({
       type: "app.get",
       what: "issues"
     }, (issues) =>
@@ -77,7 +77,7 @@
         updateSocialLinks();
       }
     });
-    chrome.runtime.sendMessage({
+    browser.runtime.sendMessage({
       type: "subscriptions.listen",
       filter: ["added", "removed", "updated", "disabled"]
     });
@@ -114,7 +114,7 @@
 
   function openFilters()
   {
-    chrome.runtime.sendMessage({type: "app.open", what: "options"});
+    browser.runtime.sendMessage({type: "app.open", what: "options"});
   }
 
   document.addEventListener("DOMContentLoaded", onDOMLoaded, false);

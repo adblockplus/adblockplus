@@ -61,10 +61,10 @@
 
   /* Polyfills */
 
-  if (!("runtime" in chrome))
-    chrome.runtime = {};
+  if (!("runtime" in browser))
+    browser.runtime = {};
 
-  chrome.runtime.sendMessage = (message, responseCallback) =>
+  browser.runtime.sendMessage = (message, responseCallback) =>
   {
     let messageId = ++maxMessageId;
 
