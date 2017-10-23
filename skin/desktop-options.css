@@ -174,7 +174,8 @@ button[role="checkbox"][aria-checked="true"]:not(.toggle)
   background-position: 0px 18px;
 }
 
-button[role="checkbox"][disabled]
+button[role="checkbox"][disabled],
+button[role="checkbox"][aria-disabled="true"]
 {
   border-radius: 2px;
   background-color: #ccc;
@@ -622,41 +623,33 @@ section.cols > *:last-child
   Acceptable ads
  */
 
-#acceptable-ads
-{
-  background-color: #F3F3F3;
-}
-
-#acceptable-ads > div
+#acceptable-ads ul
 {
   position: relative;
-  padding: 1.5rem;
-  padding-left: 3.3rem;
-  padding-right: 0.9rem;
-  border: 1px solid #CDCDCD;
-  border-width: 0px 1px 1px 1px;
+  padding-left: 2rem;
+  list-style: none;
 }
 
-#acceptable-ads > div:first-of-type
+html[dir="rtl"] #acceptable-ads ul
 {
-  border-top: 1px solid #CDCDCD;
+  padding-left: 0rem;
+  padding-right: 2rem;
 }
 
-#acceptable-ads > div > p:last-of-type
-{
-  margin-bottom: 0rem; 
-}
-
-#acceptable-ads > div input
+#acceptable-ads button
 {
   position: absolute;
+  margin-top: 0.3rem;
   left: 0rem;
-  margin: 0.25rem 0.9rem;
-  width: 1.3rem;
-  height: 1.3rem;
 }
 
-#acceptable-ads > div label
+html[dir="rtl"] button
+{
+  left: auto;
+  right: 0rem;
+}
+
+#acceptable-ads label
 {
   font-weight: 700;
   font-size: 1.375rem;

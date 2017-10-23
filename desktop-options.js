@@ -559,6 +559,9 @@
 
   function execAction(action, element)
   {
+    if (element.getAttribute("aria-disabled") == "true")
+      return;
+
     switch (action)
     {
       case "add-domain-exception":
@@ -654,14 +657,31 @@
         break;
       case "switch-acceptable-ads":
         let value = element.value || element.dataset.value;
+        // User check the checkbox
+        let shouldCheck = element.getAttribute("aria-checked") != "true";
+        let installAcceptableAds = false;
+        let installAcceptableAdsPrivacy = false;
+        // Acceptable Ads checkbox clicked
+        if (value == "ads")
+        {
+          installAcceptableAds = shouldCheck;
+        }
+        // Privacy Friendly Acceptable Ads checkbox clicked
+        else
+        {
+          installAcceptableAdsPrivacy = shouldCheck;
+          installAcceptableAds = !shouldCheck;
+        }
+
         browser.runtime.sendMessage({
-          type: value == "privacy" ? "subscriptions.add" :
+          type: installAcceptableAds ? "subscriptions.add" :
             "subscriptions.remove",
-          url: acceptableAdsPrivacyUrl
+          url: acceptableAdsUrl
         });
         browser.runtime.sendMessage({
-          type: value == "ads" ? "subscriptions.add" : "subscriptions.remove",
-          url: acceptableAdsUrl
+          type: installAcceptableAdsPrivacy ? "subscriptions.add" :
+            "subscriptions.remove",
+          url: acceptableAdsPrivacyUrl
         });
         break;
       case "switch-tab":
@@ -889,7 +909,11 @@
     });
     getDocLink("acceptable_ads_criteria", (link) =>
     {
-      setLinks("enable-aa-description", link);
+      setLinks("enable-acceptable-ads-description", link);
+    });
+    getDocLink("privacy_friendly_ads", (link) =>
+    {
+      E("enable-acceptable-ads-privacy-description").href = link;
     });
     getDocLink("adblock_plus_{browser}_dnt", url =>
     {
@@ -1034,20 +1058,33 @@
 
   function setAcceptableAds()
   {
-    let option = "none";
-    document.forms["acceptable-ads"].classList.remove("show-dnt-notification");
+    let acceptableAdsForm = E("acceptable-ads");
+    let acceptableAds = E("acceptable-ads-allow");
+    let acceptableAdsPrivacy = E("acceptable-ads-privacy-allow");
+    acceptableAdsForm.classList.remove("show-dnt-notification");
+    acceptableAds.setAttribute("aria-checked", false);
+    acceptableAdsPrivacy.setAttribute("aria-checked", false);
+    acceptableAdsPrivacy.setAttribute("tabindex", 0);
     if (acceptableAdsUrl in subscriptionsMap)
     {
-      option = "ads";
+      acceptableAds.setAttribute("aria-checked", true);
+      acceptableAdsPrivacy.setAttribute("aria-disabled", false);
     }
     else if (acceptableAdsPrivacyUrl in subscriptionsMap)
     {
-      option = "privacy";
+      acceptableAds.setAttribute("aria-checked", true);
+      acceptableAdsPrivacy.setAttribute("aria-checked", true);
+      acceptableAdsPrivacy.setAttribute("aria-disabled", false);
 
-      if (!navigator.doNotTrack)
-        document.forms["acceptable-ads"].classList.add("show-dnt-notification");
+      if (navigator.doNotTrack != 1)
+        acceptableAdsForm.classList.add("show-dnt-notification");
     }
-    document.forms["acceptable-ads"]["acceptable-ads"].value = option;
+    else
+    {
+      // Using aria-disabled in order to keep the focus
+      acceptableAdsPrivacy.setAttribute("aria-disabled", true);
+      acceptableAdsPrivacy.setAttribute("tabindex", -1);
+    }
   }
 
   function isAcceptableAds(url)

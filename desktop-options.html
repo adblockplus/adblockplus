@@ -97,22 +97,24 @@
             <p class="i18n_options_acceptableAds_description"></p>
           </header>
           <form id="acceptable-ads">
-            <div>
-              <input data-action="switch-acceptable-ads" type="radio" name="acceptable-ads" value="ads">
-              <label class="i18n_options_acceptableAds_ads_label"></label>
-              <p id="enable-aa-description" class="i18n_options_acceptableAds_ads_description_1"></p>
-              <p class="i18n_options_acceptableAds_ads_description_2"></p>
-            </div>
-            <div>
-              <input data-action="switch-acceptable-ads" type="radio" name="acceptable-ads" value="privacy">
-              <label class="i18n_options_acceptableAds_privacy_label"></label>
-              <p class="i18n_options_acceptableAds_privacy_description"></p>
-              <p id="dnt" class="i18n_options_acceptableAds_dnt_notification"></p>
-            </div>
-            <div>
-              <input data-action="switch-acceptable-ads" type="radio" name="acceptable-ads" value="none">
-              <label class="i18n_options_acceptableAds_none_label"></label>
-            </div>
+            <ul>
+              <li>
+                <button id="acceptable-ads-allow" data-action="switch-acceptable-ads" type="button" role="checkbox" name="acceptable-ads" value="ads"></button>
+                <label for="acceptable-ads-allow" class="i18n_options_acceptableAds_ads_label"></label>
+                <p id="enable-acceptable-ads-description" class="i18n_options_acceptableAds_ads_description_1"></p>
+                <p class="i18n_options_acceptableAds_ads_description_2"></p>
+              </li>
+              <ul>
+                <li>
+                  <button id="acceptable-ads-privacy-allow" data-action="switch-acceptable-ads" type="button" role="checkbox" name="acceptable-ads" value="privacy"></button>
+                  <label for="acceptable-ads-privacy-allow" class="i18n_options_acceptableAds_privacy_label"></label>
+                  <p>
+                    <a id="enable-acceptable-ads-privacy-description" class="i18n_options_acceptableAds_privacy_description"></a>
+                  </p>
+                  <p id="dnt" class="i18n_options_acceptableAds_dnt_notification"></p>
+                </li>
+              </ul>
+            </ul>
           </form>
         </section>
         <section class="cols">
