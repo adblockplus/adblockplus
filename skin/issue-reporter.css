@@ -195,6 +195,13 @@ html[dir="rtl"] #typeSelectorGroup > p
   border-width: 0px;
 }
 
+#showDataValue
+{
+  flex-grow: 1;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
 footer
 {
   display: flex;
@@ -302,4 +309,28 @@ input[type="checkbox"]:checked,
 input[type="radio"]:checked
 {
   background-position: 0px 18px;
+}
+
+.modal:not([hidden])
+{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalContent
+{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: #FFFFFF;
+  border: 1px solid #CDCDCD;
+  padding: 2rem;
 }

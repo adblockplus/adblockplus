@@ -299,19 +299,42 @@ function initCommentPage()
             .setAttribute("data-invisible", value.length <= 1000);
   });
 
+  let showDataOverlay = document.getElementById("showDataOverlay");
   document.getElementById("showData").addEventListener("click", event =>
   {
     event.preventDefault();
 
-    // window.open() won't open data: URIs in Chrome
-    browser.tabs.getCurrent().then(tab =>
+    showDataOverlay.hidden = false;
+
+    let element = document.getElementById("showDataValue");
+    element.value = serializeReportData();
+    element.focus();
+  });
+
+  document.getElementById("showDataClose").addEventListener("click", event =>
+  {
+    showDataOverlay.hidden = true;
+    document.getElementById("showData").focus();
+  });
+
+  showDataOverlay.addEventListener("keydown", event =>
+  {
+    if (event.key == "Enter" || event.key == "Escape")
     {
-      browser.tabs.create({
-        url: "data:text/xml;charset=utf-8," +
-             encodeURIComponent(serializeReportData()),
-        openerTabId: tab.id
-      });
-    });
+      // Stop propagation to prevent higher level event handler from processing
+      // this event.
+      event.stopPropagation();
+      document.getElementById("showDataClose").click();
+    }
+  });
+
+  showDataOverlay.addEventListener("click", event =>
+  {
+    if (event.eventPhase == event.AT_TARGET)
+    {
+      // User clicked outside overlay content
+      document.getElementById("showDataClose").click();
+    }
   });
 
   emailField.focus();
