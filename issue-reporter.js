@@ -19,12 +19,13 @@
 
 window.ext = {};
 
-let reportData = new DOMParser().parseFromString("<report></report>", "text/xml");
+let reportData = new DOMParser().parseFromString("<report></report>",
+                                                 "text/xml");
 
 let pages = {
-  "typeSelectorPage": [initTypeSelector, leaveTypeSelector],
-  "commentPage": [initCommentPage, leaveCommentPage],
-  "sendPage": [initSendPage, leaveSendPage]
+  typeSelectorPage: [initTypeSelector, leaveTypeSelector],
+  commentPage: [initCommentPage, leaveCommentPage],
+  sendPage: [initSendPage, leaveSendPage]
 };
 
 document.addEventListener("DOMContentLoaded", () =>
@@ -42,9 +43,9 @@ document.addEventListener("DOMContentLoaded", () =>
 
   document.addEventListener("keydown", event =>
   {
-    let blacklistedElements = new Set(["textarea", "button", "a"])
+    let blacklisted = new Set(["textarea", "button", "a"]);
 
-    if (event.key == "Enter" && !blacklistedElements.has(event.target.localName))
+    if (event.key == "Enter" && !blacklisted.has(event.target.localName))
       document.getElementById("continue").click();
     else if (event.key == "Escape")
       document.getElementById("cancel").click();
@@ -82,7 +83,7 @@ function setCurrentPage(pageId)
 
 function censorURL(url)
 {
-  return url.replace(/([?;&\/#][^?;&\/#]+?=)[^?;&\/#]+/g, "$1*");
+  return url.replace(/([?;&/#][^?;&/#]+?=)[^?;&/#]+/g, "$1*");
 }
 
 function encodeHTML(str)
@@ -95,7 +96,7 @@ function serializeReportData()
   let result = new XMLSerializer().serializeToString(reportData);
 
   // Insert line breaks before each new tag
-  result = result.replace(/(<[^\/]([^"<>]*|"[^"]*")*>)/g, "\n$1");
+  result = result.replace(/(<[^/]([^"<>]*|"[^"]*")*>)/g, "\n$1");
   result = result.replace(/^\n+/, "");
   return result;
 }
@@ -190,8 +191,12 @@ function retrieveSubscriptions()
       let subscriptionElement = reportData.createElement("subscription");
       subscriptionElement.setAttribute("id", subscription.url);
       if (subscription.lastDownload)
-        subscriptionElement.setAttribute("lastDownloadAttempt", subscription.lastDownload - now);
-      subscriptionElement.setAttribute("downloadStatus", subscription.downloadStatus);
+      {
+        subscriptionElement.setAttribute("lastDownloadAttempt",
+                                         subscription.lastDownload - now);
+      }
+      subscriptionElement.setAttribute("downloadStatus",
+                                       subscription.downloadStatus);
       element.appendChild(subscriptionElement);
     }
     reportData.documentElement.appendChild(element);
@@ -248,15 +253,17 @@ function leaveTypeSelector()
 function initCommentPage()
 {
   let continueButton = document.getElementById("continue");
+  let label = browser.i18n.getMessage("issueReporter_sendButton_label");
+  continueButton.textContent = label;
   continueButton.disabled = true;
-  continueButton.textContent = browser.i18n.getMessage("issueReporter_sendButton_label");
 
   let emailElement = reportData.createElement("email");
   let emailField = document.getElementById("email");
   let anonymousSubmissionField = document.getElementById("anonymousSubmission");
   let validateEmail = () =>
   {
-    document.getElementById("anonymousSubmissionWarning").setAttribute("data-invisible", !anonymousSubmissionField.checked);
+    document.getElementById("anonymousSubmissionWarning")
+            .setAttribute("data-invisible", !anonymousSubmissionField.checked);
     if (anonymousSubmissionField.checked)
     {
       emailField.value = "";
@@ -288,7 +295,8 @@ function initCommentPage()
     commentElement.textContent = value.substr(0, 1000);
     if (value)
       reportData.documentElement.appendChild(commentElement);
-    document.getElementById("commentLengthWarning").setAttribute("data-invisible", value.length <= 1000);
+    document.getElementById("commentLengthWarning")
+            .setAttribute("data-invisible", value.length <= 1000);
   });
 
   document.getElementById("showData").addEventListener("click", event =>
@@ -299,10 +307,11 @@ function initCommentPage()
     browser.tabs.getCurrent().then(tab =>
     {
       browser.tabs.create({
-        url: "data:text/xml;charset=utf-8," + encodeURIComponent(serializeReportData()),
+        url: "data:text/xml;charset=utf-8," +
+             encodeURIComponent(serializeReportData()),
         openerTabId: tab.id
       });
-    })
+    });
   });
 
   emailField.focus();
@@ -318,7 +327,8 @@ function initSendPage()
   document.getElementById("cancel").hidden = true;
 
   let continueButton = document.getElementById("continue");
-  continueButton.textContent = browser.i18n.getMessage("issueReporter_doneButton_label");
+  let label = browser.i18n.getMessage("issueReporter_doneButton_label");
+  continueButton.textContent = label;
   continueButton.disabled = true;
 
   let uuid = new Uint16Array(8);
@@ -333,21 +343,24 @@ function initSendPage()
     while (component.length < 4)
       component = "0" + component;
     uuidString += component;
-    if (i >= 1 && i<= 4)
+    if (i >= 1 && i <= 4)
       uuidString += "-";
   }
 
   let params = new URLSearchParams({
     version: 1,
     guid: uuidString,
-    lang: reportData.getElementsByTagName("adblock-plus")[0].getAttribute("locale")
+    lang: reportData.getElementsByTagName("adblock-plus")[0]
+                    .getAttribute("locale")
   });
   let url = "https://reports.adblockplus.org/submitReport?" + params;
 
   let reportSent = event =>
   {
     let success = false;
-    let errorMessage = browser.i18n.getMessage("filters_subscription_lastDownload_connectionError");
+    let errorMessage = browser.i18n.getMessage(
+      "filters_subscription_lastDownload_connectionError"
+    );
     try
     {
       success = request.status == 200;
@@ -387,9 +400,9 @@ function initSendPage()
         type: "app.get",
         what: "doclink",
         link: "reporter_connect_issue"
-      }).then(url =>
+      }).then(supportUrl =>
       {
-        link.href = url;
+        link.href = supportUrl;
       });
 
 
@@ -408,7 +421,8 @@ function initSendPage()
     document.getElementById("sendingProgressContainer").hidden = true;
 
     let resultFrame = document.getElementById("result");
-    resultFrame.setAttribute("src", "data:text/html;charset=utf-8," + encodeURIComponent(result));
+    resultFrame.setAttribute("src", "data:text/html;charset=utf-8," +
+                                    encodeURIComponent(result));
     resultFrame.hidden = false;
 
     document.getElementById("continue").disabled = false;
@@ -425,7 +439,6 @@ function initSendPage()
     if (!event.lengthComputable)
       return;
 
-    let progress = Math.round(event.loaded / event.total * 100);
     if (event.loaded > 0)
     {
       let progress = document.getElementById("sendingProgress");
