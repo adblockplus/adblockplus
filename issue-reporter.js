@@ -91,6 +91,11 @@ function encodeHTML(str)
   return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
 
+function capitalize(str)
+{
+  return str[0].toUpperCase() + str.slice(1);
+}
+
 function serializeReportData()
 {
   let result = new XMLSerializer().serializeToString(reportData);
@@ -129,7 +134,7 @@ function retrieveApplicationInfo()
     what: "application"
   }).then(application =>
   {
-    element.setAttribute("name", application);
+    element.setAttribute("name", capitalize(application));
     return browser.runtime.sendMessage({
       type: "app.get",
       what: "applicationVersion"
@@ -137,6 +142,7 @@ function retrieveApplicationInfo()
   }).then(applicationVersion =>
   {
     element.setAttribute("version", applicationVersion);
+    element.setAttribute("vendor", navigator.vendor);
     element.setAttribute("userAgent", navigator.userAgent);
     reportData.documentElement.appendChild(element);
   });
@@ -150,7 +156,7 @@ function retrievePlatformInfo()
     what: "platform"
   }).then(platform =>
   {
-    element.setAttribute("name", platform);
+    element.setAttribute("name", capitalize(platform));
     return browser.runtime.sendMessage({
       type: "app.get",
       what: "platformVersion"
