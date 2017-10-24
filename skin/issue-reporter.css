@@ -1,3 +1,32 @@
+@font-face
+{
+  font-family: "Source Sans Pro";
+  src: url(fonts/SourceSansPro-Light.woff);
+  /* local("Ø") forces using no local font called Source Sans Pro */
+  src: local("Ø"), url(fonts/SourceSansPro-Light.woff) format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face
+{
+  font-family: "Source Sans Pro";
+  src: url(fonts/SourceSansPro-Regular.woff);
+  /* local("Ø") forces using no local font called Source Sans Pro */
+  src: local("Ø"), url(fonts/SourceSansPro-Regular.woff) format("woff");
+  font-style: normal;
+}
+
+@font-face
+{
+  font-family: "Source Sans Pro";
+  src: url(fonts/SourceSansPro-bold.woff);
+  /* local("Ø") forces using no local font called Source Sans Pro */
+  src: local("Ø"), url(fonts/SourceSansPro-bold.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
 html
 {
   font-size: 16px;
@@ -9,7 +38,7 @@ body
   flex-direction: column;
   align-items: center;
   margin: 1.2rem 0.3rem;
-  font-family: Segoe UI, Arial, sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 1.25rem;
   color: #494949;
   background-color: #F3F3F3;
