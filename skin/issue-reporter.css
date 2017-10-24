@@ -1,3 +1,8 @@
+html
+{
+  font-size: 16px;
+}
+
 body
 {
   display: flex;
@@ -29,6 +34,11 @@ header
   flex-shrink: 0;
   align-items: flex-end;
   margin-bottom: 2rem;
+}
+
+#logo
+{
+  width: 4rem;
 }
 
 header > .title
