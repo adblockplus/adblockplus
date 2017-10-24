@@ -227,8 +227,7 @@ function initDataCollector()
     setCurrentPage("typeSelectorPage");
   }).catch(e =>
   {
-    if (!e.name && e.message)
-      e = e.message;
+    console.error(e);
     alert(e);
     window.close();
   });
