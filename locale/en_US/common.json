@@ -9,10 +9,10 @@
   },
   "common_feature_privacy_title": {
     "description": "Feature title for privacy filter list",
-    "message": "Disable Tracking"
+    "message": "Block additional tracking"
   },
   "common_feature_social_title": {
     "description": "Feature title for social media blocking filter list",
-    "message": "Remove Social Media Buttons"
+    "message": "Block social media icons tracking"
   }
 }

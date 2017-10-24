@@ -376,6 +376,7 @@
   collections.filterLists = new Collection([
     {
       id: "all-filter-lists-table",
+      emptyTexts: ["options_filterList_empty"],
       useOriginalTitle: true
     }
   ]);
@@ -903,6 +904,7 @@
       E("whitelisting-add-button").disabled = !e.target.value;
     }, false);
 
+    // General tab
     getDocLink("contribute", (link) =>
     {
       E("contribute").href = link;
@@ -918,6 +920,12 @@
     getDocLink("adblock_plus_{browser}_dnt", url =>
     {
       setLinks("dnt", url);
+    });
+
+    // Whitelisted tab
+    getDocLink("whitelist", (link) =>
+    {
+      E("whitelist-learn-more").href = link;
     });
 
     // Advanced tab
@@ -949,7 +957,7 @@
 
     getDocLink("subscriptions", (link) =>
     {
-      setLinks("filter-lists-description", link);
+      E("filter-lists-learn-more").setAttribute("href", link);
     });
 
     E("custom-filters-raw").setAttribute("placeholder",
