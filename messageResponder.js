@@ -30,7 +30,9 @@
   const {Notification: NotificationStorage} = require("notification");
   const {getActiveNotification, shouldDisplay} = require("notificationHelper");
 
-  const {Filter, BlockingFilter, RegExpFilter} = require("filterClasses");
+  const {
+    Filter, ActiveFilter, BlockingFilter, RegExpFilter
+  } = require("filterClasses");
   const {Synchronizer} = require("synchronizer");
 
   const info = require("info");
@@ -63,7 +65,9 @@
   function convertSubscription(subscription)
   {
     let obj = convertObject(["disabled", "downloadStatus", "homepage",
-                             "lastDownload", "title", "url"], subscription);
+                             "version", "lastDownload", "lastSuccess",
+                             "softExpiration", "expires", "title",
+                             "url"], subscription);
     if (subscription instanceof SpecialSubscription)
       obj.filters = subscription.filters.map(convertFilter);
     obj.isDownloading = Synchronizer.isExecuting(subscription.url);
@@ -401,7 +405,17 @@
       return false;
     });
 
-    return subscriptions.map(convertSubscription);
+    return subscriptions.map((s) =>
+    {
+      let result = convertSubscription(s);
+      if (message.disabledFilters)
+      {
+        result.disabledFilters = s.filters
+                      .filter((f) => f instanceof ActiveFilter && f.disabled)
+                      .map((f) => f.text);
+      }
+      return result;
+    });
   });
 
   port.on("subscriptions.listen", (message, sender) =>

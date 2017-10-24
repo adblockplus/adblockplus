@@ -184,7 +184,8 @@ function retrieveSubscriptions()
   return browser.runtime.sendMessage({
     type: "subscriptions.get",
     ignoreDisabled: true,
-    downloadable: true
+    downloadable: true,
+    disabledFilters: true
   }).then(subscriptions =>
   {
     let element = reportData.createElement("subscriptions");
@@ -196,13 +197,32 @@ function retrieveSubscriptions()
       let now = Math.round(Date.now() / 1000);
       let subscriptionElement = reportData.createElement("subscription");
       subscriptionElement.setAttribute("id", subscription.url);
+      if (subscription.version)
+        subscriptionElement.setAttribute("version", subscription.version);
       if (subscription.lastDownload)
       {
         subscriptionElement.setAttribute("lastDownloadAttempt",
                                          subscription.lastDownload - now);
       }
+      if (subscription.lastSuccess)
+      {
+        subscriptionElement.setAttribute("lastDownloadSuccess",
+                                         subscription.lastSuccess - now);
+      }
+      if (subscription.softExpiration)
+      {
+        subscriptionElement.setAttribute("softExpiration",
+                                         subscription.softExpiration - now);
+      }
+      if (subscription.expires)
+      {
+        subscriptionElement.setAttribute("hardExpiration",
+                                         subscription.expires - now);
+      }
       subscriptionElement.setAttribute("downloadStatus",
                                        subscription.downloadStatus);
+      subscriptionElement.setAttribute("disabledFilters",
+                                       subscription.disabledFilters.length);
       element.appendChild(subscriptionElement);
     }
     reportData.documentElement.appendChild(element);
