@@ -661,6 +661,19 @@ html[dir="rtl"] button
   border: 1px solid #099CD0;
 }
 
+.new
+{
+  display: inline-block;
+  margin: 0rem 0.5rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.2rem;
+  background-color: #099CD0;
+  color: #FFF;
+  line-height: 100%;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
 /*
   Tables
  */
