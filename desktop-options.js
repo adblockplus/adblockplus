@@ -508,13 +508,7 @@
             url: element.getAttribute("url")
           };
 
-          let prefix = element.getAttribute("prefixes");
-          if (prefix)
-          {
-            prefix = prefix.replace(/\W/g, "_");
-            subscription.title = getMessage("options_language_" + prefix);
-          }
-          else
+          if (subscription.recommended != "ads")
           {
             type = type.replace(/\W/g, "_");
             subscription.title = getMessage("common_feature_" +
