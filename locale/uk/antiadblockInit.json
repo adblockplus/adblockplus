@@ -1,0 +1,8 @@
+{
+  "notification_antiadblock_message": {
+    "message": "Цей сайт відомий тим, що показує цільові повідомлення користувачам Adblock Plus. Ви хочете, щоб Adblock Plus приховав цільові повідомлення?"
+  },
+  "notification_antiadblock_title": {
+    "message": "Приховати цільові повідомлення?"
+  }
+}

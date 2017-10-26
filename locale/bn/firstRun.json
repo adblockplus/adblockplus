@@ -8,19 +8,31 @@
   "firstRun_abbPromotionHeadline": {
     "message": "আপনার কি একটা স্মার্টফোন বা ট্যাবলেট আছে?"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "এই পৃষ্ঠাটি কি দেখানো অবিরত রাখা হবে?<a>এখানে ক্লিক করুন!</a>"
+  "firstRun_acceptableAdsExplanation": {
+    "message": "আমরা ওয়েবসাইটকে সহজবোধ্য, অ-অনধিকারমূলক বিজ্ঞাপন ব্যবহার করতে উত্সাহিত করতে চাই। এ কারণেই আমরা গ্রহণযোগ্য বিজ্ঞাপন চিহ্নিত করতে <a>নিয়মনীতি</a> প্রতিষ্ঠিত করেছি, যা ডিফল্ট সেটিংসের অধীনে প্রদর্শন করা হয়। আপনি যদি সবগুলি বিজ্ঞাপন অবরুদ্ধ করতে চান, আপনি কয়েক সেকেন্ডে এটি <a>নিষ্ক্রিয়</a> করতে পারেন।"
   },
-  "firstRun_feature_social": {
-    "message": "সামাজিক মিডিয়ার বোতাম সরান"
+  "firstRun_acceptableAdsHeadline": {
+    "message": "বিরক্তিকর বিজ্ঞাপনগুলি এখন থেকে বন্ধ করা হবে"
+  },
+  "firstRun_contributor_credits": {
+    "message": "অবদানকারী কৃতিত্ব"
+  },
+  "firstRun_donate": {
+    "message": "দান করুন"
+  },
+  "firstRun_donate_label": {
+    "message": "আমাদের প্রকল্প সমর্থন করুন"
+  },
+  "firstRun_filterlistsReinitializedWarning": {
+    "message": "মনে হচ্ছে একটি সমস্যার কারণে সব ছাঁকনি মুছে গেছে এবং আমরা ব্যাকআপ পুনরুদ্ধার করতে পারিনি। তাই আমাদের আপনার ছাঁকনি এবং গ্রহণযোগ্য বিজ্ঞাপন সেটিংস পুনরায় স্থাপন করতে হবে। দয়া করে <a>Adblock Plus বিকল্পগুলিতে</a> আপনার ছাঁকনির তালিকা এবং গ্রহণযোগ্য বিজ্ঞাপন সেটিং পরীক্ষা করুন।"
+  },
+  "firstRun_share": {
+    "message": "আপনার বন্ধুদের বলুন"
+  },
+  "firstRun_share_headline": {
+    "message": "ওয়েবকে আরো ভালো স্থান করে গড়ে তুলতে <a>আমাদের সাহায্য করুন</a>"
   },
   "firstRun_title": {
     "message": "Adblock Plus ইনস্টল করা হয়েছে"
-  },
-  "firstRun_toggle_off": {
-    "message": "বন্ধ"
-  },
-  "firstRun_toggle_on": {
-    "message": "চালু"
   }
 }

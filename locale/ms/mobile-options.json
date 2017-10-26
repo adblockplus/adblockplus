@@ -1,0 +1,11 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Benarkan iklan yang tidak mengganggu"
+  },
+  "mops_action_cancel": {
+    "message": "Batal"
+  },
+  "mops_subscriptions_header": {
+    "message": "Langganan penapis"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Anonym innsending"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "Vi vil ikke kunne svare deg, og det vil sannsynligvis gjøre at rapporten får lavere prioritet."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Skriv inn kommentar"
+  },
+  "issueReporter_comment_description": {
+    "message": "I tekstfeltet nedenfor kan du skrive en kommentar som kan hjelpe oss til å forstå problemet. Dette er valgfritt, men anbefalt hvis problemet ikke åpenbart. Du kan også se på rapportdataene før de sendes."
+  },
+  "issueReporter_comment_label": {
+    "message": "Kommentar (valgfritt):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "Kommentaren din er lengre enn 1000 tegn. Kun de første 1000 tegnene vil bli inkludert i rapporten."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Rapporten er lagret. Du kan få tilgang til den på følgende internettadresse:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Vennligst vent på at Adblock Plus samler inn de nødvendige data."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Velkommen til problemrapportereren"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Fullfør"
+  },
+  "issueReporter_email_description": {
+    "message": "Vi oppfordrer deg til å oppgi en gyldig e-postadresse, slik at vi kan kontakte deg hvis vi har spørsmål angående denne rapporten. Det vil også gjøre at vi kan gjenkjenne dine bidrag, og prioritere dem høyere."
+  },
+  "issueReporter_email_label": {
+    "message": "E-post:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "Et forsøk på å sende inn rapporten feilet, med feilkoden \"?1?\". Vennligst kontrollér at du har internettilgang, og prøv på nytt. Hvis problemet vedvarer kan du be om hjelp i [link]Adblock Plus forum[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Velg dette alternativet hvis et reklameelement vises, selv om Adblock Plus er aktivert."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus blokkerer ikke et reklameelement"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Velg dette alternativet hvis siden mangler viktig innhold, vises feil eller ikke fungerer sånn det skal. Du kan finne ut om Adblock Plus er roten til problemet ved å deaktivere Adblock Plus midlertidig."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus blokkerer for mye"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "Problemet du rapporterte inn er allerede kjent for oss. Mer informasjon:"
+  },
+  "issueReporter_page_title": {
+    "message": "Problemrapporterer"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Personvern"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Send rapport"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Send rapport"
+  },
+  "issueReporter_sending": {
+    "message": "Vennligst vent mens Adblock Plus sender inn din rapport."
+  },
+  "issueReporter_showData_label": {
+    "message": "Vis rapportdata"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Dette vinduet vil veilede deg gjennom de nødvendige stegene som trengs for å sende inn en problemrapport til Adblock Plus. Velg først hvilket type problem du har på denne siden:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Velg type problem"
+  }
+}

@@ -14,16 +14,7 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "Los anuncios cafiantes bloquiaránse darréu"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "¿Sigue apaeciendo esta páxina? <a>¡Calque equí!</a>"
-  },
   "firstRun_title": {
     "message": "Instalóse Adblock Plus"
-  },
-  "firstRun_toggle_off": {
-    "message": "DESACTIVÁU"
-  },
-  "firstRun_toggle_on": {
-    "message": "ACTIVÁU"
   }
 }

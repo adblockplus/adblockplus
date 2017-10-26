@@ -1,0 +1,11 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "控えめな広告を許可"
+  },
+  "mops_action_cancel": {
+    "message": "キャンセル"
+  },
+  "mops_subscriptions_header": {
+    "message": "購読しているフィルタ"
+  }
+}

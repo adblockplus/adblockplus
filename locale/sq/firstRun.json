@@ -17,41 +17,14 @@
   "firstRun_contributor_credits": {
     "message": "Kredite kontribues"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "Kjo Faqe del gjithmone? <a>Klikoni Ketu</a>"
-  },
   "firstRun_donate": {
     "message": "dhuro"
   },
   "firstRun_donate_label": {
     "message": "Mbeshtet Projektet Tona"
   },
-  "firstRun_feature_malware": {
-    "message": "Malware u Bllokua"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "Bëni shfletimin tuaj më të sigurt duke bllokuar domains dhe njohur malware."
-  },
-  "firstRun_feature_social": {
-    "message": "Hiq Butonat e Rrjeteve sociale"
-  },
-  "firstRun_feature_social_description": {
-    "message": "Automatikisht shpejtoj përvojën tuaj në shfletim të butonat sociale media, të tilla si Facebook Like, të cilat paraqiten në faqet e internetit dhe të pista sjelljen tuaj."
-  },
-  "firstRun_feature_tracking": {
-    "message": "Caktivizo Gjurmimin"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "Shfleto privatisht duke caktivizuar gjurmimin - fshehur gjurmët tuaj nga kompanitë që duan te marrin çdo lëvizje tuaj."
-  },
-  "firstRun_features": {
-    "message": "Adblock Plus mund te beje me shume sesa te bllokoje ads"
-  },
   "firstRun_filterlistsReinitializedWarning": {
     "message": "Duket se dicka ka shkaktuar heqjen e te gjitha filtrave dhe ne ishim ne gjendje ti benim nje backup.\nPrandaj ne kishim rivendosur filtrat tuaj ne Acceptable Ads settings.Ju lutem kontrolloni listen e filtrave tuaj dhe Acceptable Ads settings ne <a>Adblock Plus options</a>."
-  },
-  "firstRun_legacySafariWarning": {
-    "message": "Ju jeni duke përdorur një version të vjetër të Safari i cili nuk është i mbështetur nga Adblock Plus. Ajo mund të mos punojnë si duhet, ose të pengojë përdoruesit per nje përvojë me te mire në disa nga faqet e internetit. Ne rekomandojmë që të dyja përditësimit për Safari 6.1.1 ose më të lartë (në OS X 10.8 Mountain Lion), ose Safari 7.0.1 ose më e lartë (më OS X 10.9 Mavericks), ose për të përdorur versionin e fundit të Mozilla Firefox, Google Chrome ose Opera."
   },
   "firstRun_share": {
     "message": "Tregoji Shokve"
@@ -61,11 +34,5 @@
   },
   "firstRun_title": {
     "message": "Adblock Plus u instalua"
-  },
-  "firstRun_toggle_off": {
-    "message": "Fikur"
-  },
-  "firstRun_toggle_on": {
-    "message": "Ndezur"
   }
 }

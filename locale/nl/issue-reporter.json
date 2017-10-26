@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Anonieme bijdrage"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "We zullen geen contact met u kunnen opnemen en het rapport waarschijnlijk een lagere prioriteit geven."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Opmerking toevoegen"
+  },
+  "issueReporter_comment_description": {
+    "message": "In het onderstaande tekstveld kunt u een opmerking toevoegen om ons te helpen het probleem te begrijpen. Deze stap is optioneel maar wordt aanbevolen als het probleem niet evident is. U kunt de rapportgegevens ook nakijken voordat u het rapport verstuurt."
+  },
+  "issueReporter_comment_label": {
+    "message": "Opmerking (optioneel):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "De lengte van uw opmerking overschrijdt 1000 tekens. Alleen de eerste 1000 tekens worden verzonden."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Uw rapport is opgeslagen. U kunt het vinden op het volgende adres:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Wacht even terwijl Adblock Plus de benodigde gegevens verzamelt."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Welkom bij de probleemrapportage"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Gereed"
+  },
+  "issueReporter_email_description": {
+    "message": "We raden u aan een geldig e-mailadres in te voeren, zodat we contact met u kunnen opnemen als er vragen zijn over uw rapport. Hierdoor kunnen we uw bijdragen ook herkennen en een hogere prioriteit geven."
+  },
+  "issueReporter_email_label": {
+    "message": "E-mailadres:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "De poging om het rapport te verzenden is mislukt met foutcode ‘?1?’. Controleer uw internetverbinding en probeer het opnieuw. Als het probleem aanhoudt, vraag dan om hulp op het [link]Adblock Plus-forum[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Selecteer deze optie als een advertentie wordt weergegeven, ondanks het feit dat Adblock Plus is ingeschakeld."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus blokkeert een advertentie niet"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Selecteer deze optie als de pagina belangrijke inhoudt niet weergeeft, onjuist wordt weergegeven of niet goed werkt. U kunt bepalen of Adblock Plus de oorzaak hiervan is door het tijdelijk uit te schakelen."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus blokkeert te veel"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "Het door u gemelde probleem is waarschijnlijk al bekend. Meer informatie:"
+  },
+  "issueReporter_page_title": {
+    "message": "Probleemrapportage"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Privacybeleid"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Rapport verzenden"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Rapport verzenden"
+  },
+  "issueReporter_sending": {
+    "message": "Wacht even terwijl Adblock Plus uw rapport indient."
+  },
+  "issueReporter_showData_label": {
+    "message": "Rapportgegevens tonen"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Dit venster leidt u door de benodigde stappen voor het indienen van een Adblock Plus-probleemrapport. Selecteer eerst het probleemtype dat u op deze pagina ervaart:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Probleemtype selecteren"
+  }
+}

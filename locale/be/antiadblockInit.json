@@ -1,0 +1,8 @@
+{
+  "notification_antiadblock_message": {
+    "message": "Вядома, што гэты сайт паказвае карыстальнікам Adblock Plus мэтавыя паведамленні. Хочаце каб Adblock Plus хаваў іх?"
+  },
+  "notification_antiadblock_title": {
+    "message": "Хаваць мэтавыя паведамленні?"
+  }
+}

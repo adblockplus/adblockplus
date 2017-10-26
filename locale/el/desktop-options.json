@@ -1,0 +1,41 @@
+{
+  "options_acceptableAds_header": {
+    "message": "Αποδεκτές διαφημίσεις"
+  },
+  "options_customFilter_cancel": {
+    "message": "Ακύρωση"
+  },
+  "options_customize_showNotifications": {
+    "message": "Εμφάνιση χρήσιμων ειδοποιήσεων"
+  },
+  "options_filterList_column_name": {
+    "message": "Λίστες φίλτρων"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Απέτυχε, απόκλιση στον έλεγχο checksum"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Απέτυχε, σφάλμα κατά τη λήψη"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Απέτυχε, μη έγκυρη διεύθυνση"
+  },
+  "options_filterList_title": {
+    "message": "Λίστες φίλτρων"
+  },
+  "options_page_title": {
+    "message": "Ρυθμίσεις"
+  },
+  "options_support_title": {
+    "message": "Υποστήριξη"
+  },
+  "options_tab_general": {
+    "message": "Γενικά"
+  },
+  "options_tab_help": {
+    "message": "Βοήθεια"
+  },
+  "options_tab_whitelist": {
+    "message": "Λίστα επιτρεπόμενων ιστοσελίδων"
+  }
+}

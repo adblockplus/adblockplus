@@ -1,0 +1,11 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Atļaut dažas neuzbāzīgas reklāmas"
+  },
+  "mops_action_cancel": {
+    "message": "Atcelt"
+  },
+  "mops_subscriptions_header": {
+    "message": "Filtra abonementi"
+  }
+}

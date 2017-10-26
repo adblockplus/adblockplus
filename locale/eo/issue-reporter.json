@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Anonima sendado"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "Ni ne povas turni nin al vi denove kaj ni donos verŝajne pli malaltan prioritaton al via raporto."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Enigi komenton"
+  },
+  "issueReporter_comment_description": {
+    "message": "La tekstokampo malsupre ebligas al vi enigi komenton por helpi al ni kompreni la problemon. Ĉi tiu paŝo estas laŭvola, sed rekomendata, se la problemo ne estas evidenta. Vi povas ankaŭ kontroli la raportodatumojn, antaŭ ol ĝi estas forsendata."
+  },
+  "issueReporter_comment_label": {
+    "message": "Komento (laŭvole):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "Via komento havas pli ol 1000 signojn. Nur la unuaj 1000 signoj estos sendataj:"
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Via raporto estas konservita. Vi povas atingi ĝin ĉe sekvonta adreso:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Bonvolu atendi kelkajn momentojn dum Adblock Plus akiras la necesajn datumojn."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Bonvenon al la problemraportilo"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Preta"
+  },
+  "issueReporter_email_description": {
+    "message": "Ni rekomendas al vi enigi validan retpoŝtan adreson, por ke ni povu kontakti vin, se estos demandoj pri via raporto. Tio ankaŭ ebligas al ni agnoski viajn kontribuojn kaj doni pli altan prioritaton al ili."
+  },
+  "issueReporter_email_label": {
+    "message": "Retpoŝto:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "Provo por sendi la raporton malsukcesis kun erarkodo \"?1?\". Bonvolu certiĝu, ke vi estas konektita al la interreto kaj provu denove. Se la problemo pluekzistas, bonvolu peti pri helpo en la [link]forumo de Adblock Plus[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Elektu ĉi tiun opcion, se reklamo estas vidigata, kvankam Adblock Plus estas ebligita."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus ne blokas reklamon"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Elektu ĉi tiun opcion, se la paĝo malhavas gravan enhavon, ne estas vidigata korekte abo malsukcesas korekte funkcii. Vi povas determini, ĉu Adblock Plus estas la kaŭzo de la problemo malebligante ĝin provizore."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus blokas tro multe"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "La problemo, kiun vi raportis, eble estas jam konata. Pliaj informoj:"
+  },
+  "issueReporter_page_title": {
+    "message": "Problemraportilo"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Reguloj de privateco"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Sendi raporton"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Sendi raporton"
+  },
+  "issueReporter_sending": {
+    "message": "Bonvolu atendi, dum Adblock Plus sendas vian raporton."
+  },
+  "issueReporter_showData_label": {
+    "message": "Montri raportodatumojn"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Ĉi tiu fenestro gvidos vin tra la paŝoj, kiuj estas bezonataj por sendi la problemraporton de Adblock Plus. Unue bonvolu elekti la problemtipon, kiun vi renkontis sur ĉi tiu paĝo:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Elekti problemtipon"
+  }
+}

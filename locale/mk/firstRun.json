@@ -17,41 +17,14 @@
   "firstRun_contributor_credits": {
     "message": "Листа на донатори"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "Дали оваа страна постојано се појавува? <a>Притиснете овде!</a>"
-  },
   "firstRun_donate": {
     "message": "донирај"
   },
   "firstRun_donate_label": {
     "message": "Поддржи го нашиот проект"
   },
-  "firstRun_feature_malware": {
-    "message": "Блокирање на штетни реклами"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "Го прави вашиот пребарувач посигурен така што ги блокира познатите домени на вируси."
-  },
-  "firstRun_feature_social": {
-    "message": "Тргни ги копчињата „лајк“ или „сподели“ на другите страни"
-  },
-  "firstRun_feature_social_description": {
-    "message": "Автоматски ги елиминира рекламите кои се појавуваат со цел да ве натераат да ја „лајкните“ страната или слично."
-  },
-  "firstRun_feature_tracking": {
-    "message": "Исклучи следење"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "Пребарувај приватно со тоа што нема да бидеш следен - ќе ги тргниме рекламите кои го следат Вашето однесување."
-  },
-  "firstRun_features": {
-    "message": "Adblock Plus може да прави повеќе од блокирање на реклами"
-  },
   "firstRun_filterlistsReinitializedWarning": {
     "message": "Изгледа дека поради проблем вашите филтери беа ресетирани. Не бевме мо можност да пронајдеме резервна копија, и затоа ве молиме рачно да ги проверите филтерите во <a>Нагодувањата на Adblock Plus</a>."
-  },
-  "firstRun_legacySafariWarning": {
-    "message": "Користите стара верзија на Сафари која не е поддржана од Adblock Plus. Овој приклучок можеби нема да работи како што очекувате и може да го уништи корисничкиот интерфејс на некои сајтови. Строго е препорачано да го наградите пребарувачот на верзија 6.1.1 или повисоко (на OS X 10.8), 7.0.1 и нагоре (на OS X 10.9) или да користите Firefox, Chrome или Opera."
   },
   "firstRun_share": {
     "message": "Кажи им на пријателите"
@@ -61,11 +34,5 @@
   },
   "firstRun_title": {
     "message": "AdBlock Plus е успешно инсталиран"
-  },
-  "firstRun_toggle_off": {
-    "message": "ИСКЛУЧЕНО"
-  },
-  "firstRun_toggle_on": {
-    "message": "ВКЛУЧЕНО"
   }
 }

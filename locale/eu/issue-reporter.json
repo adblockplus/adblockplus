@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Bidalketa anonimoa"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "Ezin izango gara zurekin kontatuan jarri eta ziurrenez lehentasun gutxiago emango diogu txosten honi."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Sartu iruzkina"
+  },
+  "issueReporter_comment_description": {
+    "message": "Beheko testu eremuak guk arazoa hobeto ulertzeko iruzkin bat sartzea baimentzen dizu. Hau aukerazkoa da baina gomendagarria arazoa begi-bistakoa ez bada. Gainera, txostenaren informazioa gainbegiratu dezakezu bidali aurretik."
+  },
+  "issueReporter_comment_label": {
+    "message": "Iruzkina (aukerazkoa):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "Iruzkinak 1000 karaktere baino gehiago ditu. Lehen 1000 karaktereak bidaliko dira soilik."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Zure txostena gorde egin da. Honako helbidean eskuratu dezakezu:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Mesedez itxaron Adblock Plusek beharrezko informazioa jaso bitartean."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Ongi etorri arazoen txosten bidalketara"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Eginda"
+  },
+  "issueReporter_email_description": {
+    "message": "Eposta helbide zuzen bat idaztea aholkatzen dizugu, zurekin kontaktuan jarri ahal izateko galderarik badugu. Zure parte hartze orokorra antzeman eta lehentasunez tratatzea baimentzen digu ere."
+  },
+  "issueReporter_email_label": {
+    "message": "EPosta:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "Txostena bidaltzeko saiakerak huts egin du hurrengo errore kodearekin \"?1?\". Mesedez egiaztatu Internetera konektatuta zaudela eta saia zaitez berriro. Arazoa ez bada konpontzen eskatu laguntza [link]Adblock Plus forum[/link] foroan."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Aukeratu hau publizitatea agertzen bada Adblock Plus gaituta egonda ere."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plusek ez du iragarki bat blokeatzen"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Aukeratu hau orrian informazio garrantzitsua falta bada, gaizki ikusten bada edo ez badabil behar bezala . Adblock Plus une batez desgaituz erruduna den egiaztatu dezakezu."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus gehigarria behar baino gehiago blokeatzen ari da"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "Aipatu duzun arazoa ziur aski ezaguna da jada. Informazio gehiago:"
+  },
+  "issueReporter_page_title": {
+    "message": "Arazo txostena"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Pribatutasun politika"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Txostena bidali"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Bidali txostena"
+  },
+  "issueReporter_sending": {
+    "message": "Mesedez itxaron Adblock Plus zure txostena bidaltzen duen bitartean."
+  },
+  "issueReporter_showData_label": {
+    "message": "Erakutsi txostenaren informazioa"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Leiho honek Adblock Plus arazo txosten bat bidaltzeko beharrezkoak diren urratsetan zehar gidatuko zaitu. Hasteko, mesedez aukeratu orri honetan pairatzen duzun arazo mota aukeratu:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Aukeratu arazo mota"
+  }
+}

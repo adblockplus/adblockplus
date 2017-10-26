@@ -1,0 +1,50 @@
+{
+  "options_acceptableAds_header": {
+    "message": "Anuncios Aceptables"
+  },
+  "options_customFilter_cancel": {
+    "message": "Cancelar"
+  },
+  "options_customize_showNotifications": {
+    "message": "Mostrar avisos útiles"
+  },
+  "options_dialog_about_title": {
+    "message": "Acerca de Adblock Plus"
+  },
+  "options_email": {
+    "message": "Correo electrónico:"
+  },
+  "options_filterList_column_name": {
+    "message": "Listas de filtros"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Falló, comprobación(checksum) no concuerda"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Falló, La descarga ha fracasado"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Falló, no es una dirección valida"
+  },
+  "options_filterList_title": {
+    "message": "Listas de filtros"
+  },
+  "options_footer_about": {
+    "message": "Acerca de Adblock Plus"
+  },
+  "options_footer_contribute": {
+    "message": "Contribuir"
+  },
+  "options_page_title": {
+    "message": "Ajustes"
+  },
+  "options_support_title": {
+    "message": "Soporte"
+  },
+  "options_tab_help": {
+    "message": "Ayuda"
+  },
+  "options_tab_whitelist": {
+    "message": "Sitios web en lista blanca"
+  }
+}

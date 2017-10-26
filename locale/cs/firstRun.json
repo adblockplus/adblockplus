@@ -17,55 +17,22 @@
   "firstRun_contributor_credits": {
     "message": "Zásluhy přispěvatelů"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "Neustále se Vám tato stránka znovu zobrazuje? <a>Klikněte zde!</a>"
-  },
   "firstRun_donate": {
     "message": "přispějte"
   },
   "firstRun_donate_label": {
     "message": "Podpořte náš projekt"
   },
-  "firstRun_feature_malware": {
-    "message": "Blokování malware"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "Blokováním známých malwarových domén učiňte Vaše prohlížení webu bezpečnějším."
-  },
-  "firstRun_feature_social": {
-    "message": "Odstranit tlačítka sociálních médií"
-  },
-  "firstRun_feature_social_description": {
-    "message": "Automaticky zbavte své surfování od tlačítek sociálních médií, jako například Facebook \"To se mi líbí\", která se objevují na webových stránkách a sledují Vaše chování."
-  },
-  "firstRun_feature_tracking": {
-    "message": "Zakázat sledování"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "Zakázáním sledování si zachovejte soukromí při prohlížení - zakryjte své stopy před reklamními společnostmi, které by jinak sladovali každičký Váš pohyb."
-  },
-  "firstRun_features": {
-    "message": "Adblock Plus toho umí více než jen blokovat reklamy"
-  },
   "firstRun_filterlistsReinitializedWarning": {
     "message": "Zdá se, že nastal problém, který způsobil smazání všech filtrů a nebyli jsme schopni je obnovit ze zálohy. Museli jsme tudíž Vaše filtry a nastavení Přijatelných reklam resetovat. Prosím zkontrolujte si své nastavení seznamů filtrů a Přijatelných reklam v <a>předvolbách Adblocku Plus</a>."
-  },
-  "firstRun_legacySafariWarning": {
-    "message": "Používáte starou verzi Safari, která není podporovaná Adblockem Plus. Nemusí to tak správně fungovat nebo to může zhoršit použitelnost na některých webových stránkách. Důrazně doporučujeme buď aktualizovat na Safari 6.1.1 či vyšší (v OS X 10.8 Mountain Lion), nebo Safari 7.0.1 či vyšší (v OS X 10.9 Mavericks), nebo používat nejnovější verzi Mozilla Firefoxu, Google Chrome či Opery."
   },
   "firstRun_share": {
     "message": "Řekněte svým přátelům"
   },
   "firstRun_share_headline": {
-    "message": "<a>Pomožte nám</a> učinit web lepším"
+    "message": "<a>Pomozte nám</a> učinit web lepším"
   },
   "firstRun_title": {
     "message": "Adblock Plus byl nainstalován"
-  },
-  "firstRun_toggle_off": {
-    "message": "VYPNUTO"
-  },
-  "firstRun_toggle_on": {
-    "message": "ZAPNUTO"
   }
 }

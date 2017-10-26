@@ -1,0 +1,17 @@
+{
+  "options_customFilter_cancel": {
+    "message": "Annulearje"
+  },
+  "options_email": {
+    "message": "E-mail:"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Mislearre, checksum komt net oerien"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Mislearre, ynlaadprobleem"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Mislearre, gjin jildich adres"
+  }
+}

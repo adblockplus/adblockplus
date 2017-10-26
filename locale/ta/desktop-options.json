@@ -1,0 +1,23 @@
+{
+  "options_customFilter_cancel": {
+    "message": "ரத்து செய்"
+  },
+  "options_filterList_column_name": {
+    "message": "வடிகட்டி பட்டியல்கள்"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "தோல்வியடைந்தது, பதிவிறக்கம் தோல்வி"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "தோல்வி, செல்லத்தக்க இல்லை  முகவரி"
+  },
+  "options_filterList_title": {
+    "message": "வடிகட்டி பட்டியல்கள்"
+  },
+  "options_tab_general": {
+    "message": "பொது"
+  },
+  "options_tab_whitelist": {
+    "message": "அனுமதிக்கப்பட்ட வலைத்தளங்கள்"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Soumission anonyme"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "Nous ne serons pas en mesure de vous recontacter et votre signalement ne sera probablement pas traité prioritairement."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Commentaire"
+  },
+  "issueReporter_comment_description": {
+    "message": "Le champ ci-dessous vous permet de saisir un commentaire pour nous aider à comprendre le problème. Cette étape est facultative mais recommandée si le problème n'est pas évident à détecter. Vous pouvez également revoir les données du signalement avant l'envoi."
+  },
+  "issueReporter_comment_label": {
+    "message": "Commentaire (facultatif) :"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "Votre commentaire comporte plus de 1000 caractères. Seuls les 1000 premiers caractères seront envoyés."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Votre signalement a été envoyé. Vous pouvez y accéder à l'adresse suivante :"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Veuillez patienter quelques instants pendant qu'Adblock Plus réunit les données nécessaires."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Bienvenue dans l'assistant de signalement de problèmes"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Terminé"
+  },
+  "issueReporter_email_description": {
+    "message": "Nous vous encourageons à saisir un courriel valide afin que nous puissions vous contacter pour toute question concernant votre signalement. Cela nous permettra également de reconnaître vos contributions et de les traiter prioritairement."
+  },
+  "issueReporter_email_label": {
+    "message": "Courriel :"
+  },
+  "issueReporter_errorMessage": {
+    "message": "Une tentative d'envoi du signalement a échoué avec le code erreur « ?1? ». Veuillez vérifier que vous êtes bien connecté à Internet et réessayer. Si le problème persiste, veuillez demander assistance dans le [link]forum d'Adblock Plus[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Choisissez cette option si une publicité est tout de même affichée bien qu'Adblock Plus soit activée."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus ne bloque pas une publicité"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Choisissez cette option si le contenu de la page est sévèrement tronqué, est mal affiché ou ne fonctionne pas correctement. Vous pouvez vérifier si Adblock Plus en est la cause en la désactivant temporairement."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus bloque trop"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "Le problème que vous signalez est probablement déjà connu. Davantage d'informations :"
+  },
+  "issueReporter_page_title": {
+    "message": "Signalement de problèmes"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Politique de confidentialité"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Envoyer le signalement"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Envoyer le signalement"
+  },
+  "issueReporter_sending": {
+    "message": "Veuillez patienter pendant qu'Adblock Plus soumet votre signalement."
+  },
+  "issueReporter_showData_label": {
+    "message": "Afficher les données du signalement"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Cette fenêtre vous guidera à travers les étapes nécessaires à la soumission d'un problème Adblock Plus. Dans un premier temps, veuillez choisir le type de problème rencontré sur cette page :"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Choisir le type de problème"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "options_acceptableAds_header": {
+    "message": "허용하는 광고"
+  },
+  "options_customFilter_cancel": {
+    "message": "취소"
+  },
+  "options_customize_showNotifications": {
+    "message": "유용한 알림 표시"
+  },
+  "options_dialog_about_title": {
+    "message": "애드블록 플러스 정보"
+  },
+  "options_email": {
+    "message": "메일 주소:"
+  },
+  "options_filterList_column_name": {
+    "message": "구독 필터"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "실패함 : 검사합 불일치"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "실패함 : 다운로드 실패"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "실패함 : 올바르지 않은 주소"
+  },
+  "options_filterList_title": {
+    "message": "구독 필터"
+  },
+  "options_footer_about": {
+    "message": "애드블록 플러스 정보"
+  },
+  "options_footer_contribute": {
+    "message": "공헌"
+  },
+  "options_page_title": {
+    "message": "설정"
+  },
+  "options_support_title": {
+    "message": "지원"
+  },
+  "options_tab_general": {
+    "message": "일반"
+  },
+  "options_tab_help": {
+    "message": "도움말"
+  },
+  "options_tab_whitelist": {
+    "message": "허용 목록에 추가된 웹사이트"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Salli osa ei-häiritsevästä mainonnasta"
+  },
+  "mops_action_cancel": {
+    "message": "Peruuta"
+  },
+  "mops_subscriptions_header": {
+    "message": "Suodatintilaukset"
+  }
+}

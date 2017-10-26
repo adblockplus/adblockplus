@@ -1,0 +1,44 @@
+{
+  "options_acceptableAds_header": {
+    "message": "Hyväksytyt mainokset"
+  },
+  "options_customFilter_cancel": {
+    "message": "Peruuta"
+  },
+  "options_customize_showNotifications": {
+    "message": "Näytä hyödylliset ilmoitukset"
+  },
+  "options_email": {
+    "message": "Sähköposti:"
+  },
+  "options_filterList_column_name": {
+    "message": "Suodatinlistat"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Epäonnistui, tarkistussumma ei täsmää"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Epäonnistui, latausvirhe"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Epäonnistui, kelvoton osoite"
+  },
+  "options_filterList_title": {
+    "message": "Suodatinlistat"
+  },
+  "options_page_title": {
+    "message": "Asetukset"
+  },
+  "options_support_title": {
+    "message": "Tuki"
+  },
+  "options_tab_general": {
+    "message": "Yleiset"
+  },
+  "options_tab_help": {
+    "message": "Ohjeet"
+  },
+  "options_tab_whitelist": {
+    "message": "Sallitut sivustot"
+  }
+}

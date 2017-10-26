@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "নামবিহীন জমা"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "আমরা আপনার কাছে ফিরে আসতে সক্ষম না এবং সম্ভাবত রিপোর্টের অগ্রাধিকার কম দেয়া হবে।"
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "মন্তব্য লিখুন"
+  },
+  "issueReporter_comment_description": {
+    "message": "নিচের লেখার ক্ষেত্রটি আপনাকে মন্তব্য লিখতে দিবে যা আমাদের সমস্যাটি বুঝতে সাহায্য করবে। এই ধাপটি ঐচ্ছিক কিন্তু সুপারিশকৃত যদি সমস্যাটি প্রকট হয়। এছাড়া আপনি এটি প্রেরণ করা পূর্বে প্রতিবেদনের উপাত্ত পর্যালোচনা করতে পারেন।"
+  },
+  "issueReporter_comment_label": {
+    "message": "মন্তব্য (ঐচ্ছিক):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "আপনার মন্তব্যের দৈর্ঘ্য ১০০০ অক্ষর অতিক্রম করেছেন। শুধুমাত্র প্রথম ১০০০ অক্ষর প্রেরণ করা হবে।"
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "আপনার প্রতিবেদন সংরক্ষণ করা হয়েছে। আপনি এটি নিচের ঠিকানায় দেখতে পারেন:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "অনুগ্রহপূর্বক কিছুক্ষণ অপেক্ষা করুন Adblock Plus প্রয়োজনীয় তথ্য সংরক্ষণ করছে।"
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "ইস্যু রিপোর্টারে স্বাগতম"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "সম্পন্ন"
+  },
+  "issueReporter_email_description": {
+    "message": "আমরা আপনাকে একটি বৈধ ই-মেইল ঠিকানা প্রবেশ করাতে উত্সাহিত করছি তাহলে আমরা আপনার সাথে যোগাযোগ করতে পারবো যদি আপনার রিপোর্ট সম্পর্কে কোন প্রশ্ন থাকে। ছাড়াও এটি আমাদের আপনার অবদান স্বীকৃতি এবং তাঁদের উচ্চ অগ্রাধিকার দিতে মঞ্জুরি দেয়।"
+  },
+  "issueReporter_email_label": {
+    "message": "ইমেইল:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "ত্রুটি কোড \"?1?\" সহ রিপোর্ট প্রেরণ করার চেষ্টা ব্যর্থ হয়েছে। অনুগ্রহ করে নিশ্চিত করুন আপনার ইন্টারনেট সংযোগ আছে এবং পুনঃচেষ্টা করুন। যদি সমস্যাটি থেকে যায়, তাহলে দয়া করে [link]Adblock Plus ফোরামে[/link] সহায়তার অনুরোধ করুন।"
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "এই অপশন নির্বাচন করুন যদি Adblock Plus সক্রিয় থাকা সত্ত্বেও বিজ্ঞাপন প্রদর্শিত হয়।"
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus বিজ্ঞাপন অবরুদ্ধ করেনি"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "এই অপশনটি নির্বাচন করুন যদি পাতাটিতে গুরুত্বপূর্ণ বিষয়বস্তুর অভাব, ভুলভাবে প্রদর্শন করা বা সঠিকরূপে চালাতে ব্যর্থ হয়। এই সমস্যা Adblock Plus-এর কারণে হয়েছি কিনা তা আপনি এটি সাময়িকভাবে নিষ্ক্রিয় করে নির্ধারণ করতে পারবেন।"
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "অ্যাডব্লক প্লাস অনেক বেশি অবরুদ্ধ করেছে"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "আপনার রিপোর্টকৃত সমস্যাটি হয়তো ইতিমধ্যে জানা। আরও তথ্য:"
+  },
+  "issueReporter_page_title": {
+    "message": "ইস্যু রিপোর্টার"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "গোপনীয়তার নীতি"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "প্রতিবেদন পাঠান"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "প্রতিবেদন পাঠান"
+  },
+  "issueReporter_sending": {
+    "message": "Adblock প্লাস আপনার প্রতিবেদন দাখিল করা পর্যন্ত দয়া করে অপেক্ষা করুন।"
+  },
+  "issueReporter_showData_label": {
+    "message": "রিপোর্টের ডাটা দেখান"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "এই উইন্ডোটি Adblock Plus এর ইস্যু রিপোর্ট করতে প্রয়োজনীয় প্রদক্ষেপগুলোর নির্দেশনা দিবে। প্রথমে, আপনি এই পাতায় যেই ধরণের ইস্যুর সম্মুখিন হচ্ছেন অনুগ্রহপূর্বক তার ধরণ নির্বাচন করুন:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "ইস্যুর ধরণ নির্ধারণ করুন"
+  }
+}

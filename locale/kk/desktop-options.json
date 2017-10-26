@@ -1,0 +1,20 @@
+{
+  "options_acceptableAds_header": {
+    "message": "Мазасыз жарнама"
+  },
+  "options_customFilter_cancel": {
+    "message": "Бас тарту"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Қате, тексеру сомасы сәйкес емес"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Қате, жүктеу мүмкін емес"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Қате, дұрыс адрес емес"
+  },
+  "options_tab_whitelist": {
+    "message": "Рұқсат берілген домендер тізімі"
+  }
+}

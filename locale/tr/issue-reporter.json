@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Anonim gönder"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "Size geri dönemeyiz ve muhtemelen rapor önceliği düşük olarak ayarlanır."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Yorum ekle"
+  },
+  "issueReporter_comment_description": {
+    "message": "Aşağıdaki metin alanı sorunu anlamamız için yorum yazmanıza olanak tanır. Bu adım isteğe bağlıdır ancak sorun açık değilse tavsiye edilir. Ayrıca bildirimi göndermeden önce gözden geçirebilirsiniz."
+  },
+  "issueReporter_comment_label": {
+    "message": "Yorum (isteğe bağlı):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "Yorumunuzun uzunluğu 1000 karakteri aşıyor. Sadece ilk 1000 karakter gönderilecek."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Bildiriminiz kaydedildi ve ona aşağıdaki adresten ulaşabilirsiniz:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Adblock Plus eklentisinin gerekli bilgileri toplaması için lütfen biraz bekleyin."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Sorun bildiriciye hoş geldiniz"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Bitir"
+  },
+  "issueReporter_email_description": {
+    "message": "Sizi, raporunuz hakkında sorularımız olursa sizinle iletişime geçebilmemiz için geçerli bir e-posta adresi girmeye teşvik ediyoruz. Bu aynı zamanda katılımlarınızı hatırlamamızı ve önceliklerini yüksek olarak ayarlamamızı sağlar."
+  },
+  "issueReporter_email_label": {
+    "message": "E-posta:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "Hata bildirimi gönderme girişiminiz \"?1?\" hata koduyla başarısız oldu. Lütfen internete bağlı olduğunuzdan emin olun ve yeniden deneyin. Sorun devam ederse lütfen [link]Adblock Plus forumunda[/link] yardım isteyin."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Adblock Plus devrede olmasına rağmen reklamın biri görünüyorsa bu seçeneği seçin."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus reklamın birini engellemiyor"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Sayfanın önemli içeriği hiç görünmüyorsa, yanlış görünüyorsa veya sayfa düzgün işlemiyorsa bu seçeneği seçin. Sorun kaynağının Adblock Plus olup olmadığını eklentiyi geçici olarak devre dışı bırakıp belirleyebilirsiniz."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus çok fazla engelleme yapıyor"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "Bildirdiğiniz sorun büyük olasılıkla biliniyor. Daha fazla bilgi:"
+  },
+  "issueReporter_page_title": {
+    "message": "Sorun bildirici"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Gizlilik politikası"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Bildirimi gönder"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Bildirimi gönder"
+  },
+  "issueReporter_sending": {
+    "message": "Lüftfen Adblock Plus bildirimi gönderirken bekleyin."
+  },
+  "issueReporter_showData_label": {
+    "message": "Bildirim verisini göster"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Bu pencere Adblock Plus sorun bildirimi göndermek için gerekli adımların atılmasında size rehberlik edecek. Önce bu sayfada ne tür sorun yaşadığınızı seçin:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Sorun türünü seçin"
+  }
+}

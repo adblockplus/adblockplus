@@ -1,0 +1,8 @@
+{
+  "notification_antiadblock_message": {
+    "message": "ไซต์นี้ได้มีการแสดงข้อความปลายทางให้แก่ผู้ใช้ Adblock Plus คุณต้องการให้ Adblock Plus ซ่อนข้อความปลายทางหรือไม่?"
+  },
+  "notification_antiadblock_title": {
+    "message": "ซ่อนข้อความปลายทาง"
+  }
+}

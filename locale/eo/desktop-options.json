@@ -1,0 +1,23 @@
+{
+  "options_acceptableAds_header": {
+    "message": "Akcepteblaj Reklamoj"
+  },
+  "options_customFilter_cancel": {
+    "message": "Nuligi"
+  },
+  "options_email": {
+    "message": "Retpoŝto:"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Malsukcesis, kontrolsuma miskongruo"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Malsukcesis, elŝuta eraro"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Malsukcesis, tio ne estas valida adreso"
+  },
+  "options_tab_whitelist": {
+    "message": "Paĝoj listigitaj je blanka listo"
+  }
+}

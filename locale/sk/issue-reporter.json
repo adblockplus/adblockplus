@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Anonymný návrh"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "Nebudeme schopný sa k Vás kontaktovať a vašej správe pravdepodobne priradíme nižšiu prioritu."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Vložiť komentár"
+  },
+  "issueReporter_comment_description": {
+    "message": "Textové pole nižšie vám umožňuje vložiť komentár pre vysvetlenie daného problému. Tento krok je nepovinný, ale odporúčame ho ak problém nie je jasný. Môžete tiež posúdiť správu skôr, než ju odošlete."
+  },
+  "issueReporter_comment_label": {
+    "message": "Komentár (nepovinné):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "Dĺžka váško komentára prevyšuje 1000 znakov. Bude odoslaných len prvých 1000 znakov."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Vaša správa bola uložená. Môžete ju sprístupniť na tejto adrese:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Počkajte, prosím, kým Adblock Plus získa požadované údaje."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Vitajte v hlásení problémov"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Hotovo"
+  },
+  "issueReporter_email_description": {
+    "message": "Odporúčame vám zadať platnú e-mailovú adresu, aby sme vás mohli kontaktovať, ak sa vyskytnú otázky o vašej správe. Taktiež nám to umožní rozpoznať vaše príspevky a pripísať im vyššiu prioritu."
+  },
+  "issueReporter_email_label": {
+    "message": "Email:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "Pokus o zaslanie správy zlyhal s kódom chyby \"?1?\". Presvedčte sa, či ste pripojený na internet a skúste to znova. Ak problém pretrváva, požiadajte o pomoc na [link]fórume Adblock Plus[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Vyberte túto možnosť ak sa reklamy zobrazujú napriek zapnutému Adblock Plus."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus neblokuje reklamy"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Túto možnosť vyberte, ak stránka postráda dôležitý obsah, nesprávne sa zobrazuje alebo zlyháva funkčnosť. Môžete určiť, či je Adblock Plus príčinou problému jeho dočasným vypnutím."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus blokuje priveľa"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "Problém, ktorý ste ohlásili je pravdepodobne známy. Viac informácií:"
+  },
+  "issueReporter_page_title": {
+    "message": "Hlásenie problémov"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Zásady ochrany súkromia"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Poslať správu"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Poslať správu"
+  },
+  "issueReporter_sending": {
+    "message": "Počkajte, prosím, kým Adblock Plus potvrdí vašu správu."
+  },
+  "issueReporter_showData_label": {
+    "message": "Zobraziť údaje správy"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Toto okno Vás prevedie krokmi potrebnými pre podanie hlásenia o chybe Adblock Plus. Najprv zvoľte typ problému, ktorý ste zistili na tejto stránke:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Zvoľte typ problému"
+  }
+}

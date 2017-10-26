@@ -1,0 +1,8 @@
+{
+  "notification_antiadblock_message": {
+    "message": "此网站已知会对 Adblock Plus 用户显示针对性的信息。您想让 Adblock Plus 隐藏针对性的信息吗？"
+  },
+  "notification_antiadblock_title": {
+    "message": "隐藏针对性的信息？"
+  }
+}

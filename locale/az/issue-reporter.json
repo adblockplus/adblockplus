@@ -1,0 +1,77 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Anonim göndəriş"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "Sizinlə əlaqə saxlaya bilməyəcəyik və raportu çox vacib qiymətləndirə bilməyəcəyik."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Qeyd əlavə et"
+  },
+  "issueReporter_comment_description": {
+    "message": "Aşağıdakı hissəyə qeydlərinizi yazaraq problemi yaxşı izah edə bilərsiniz. Bu mərhələ istəyə bağlıdır, amma problem ciddidirsə qeyd etməyiniz məsləhət bilinir. Raportu göndərməmişdən əvvəl onun məzmununa nəzər sala bilərsiniz."
+  },
+  "issueReporter_comment_label": {
+    "message": "Qeyd (seçimə bağlı):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "Daxil etdiyiniz qeyd mətni 1000 hərfi keçir. Yalnız ilk 1000 - i göndəriləcək."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Raportunuz yadda saxlandı. Ona aşağıdakı ünvandan keçə bilərsiniz:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Lütfən Adblock Plus lazımi məlumatı toplayanadək gözləyin."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Problem xəbərçisinə xoş gəldiniz"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Oldu"
+  },
+  "issueReporter_email_description": {
+    "message": "Raport haqqında sualımız olarkən sizinlə əlaqə saxlaya biləcəyimiz e-ünvan daxil etməyinizi xahiş edirik. Bu qatqılarınıza prioritetlik verməyimizə və onlara görə sizxatırlmağımıza kömək edəcək."
+  },
+  "issueReporter_errorMessage": {
+    "message": "Raport göndərmə cəhdi \"?1?\" xəta səbəbi ilə uğursuz alındı. Lütfən internet əlaqənizi yoxlayın və yenidən cəhd edin. Problem hələ də qalırsa [link]Adblock Plus forum[/link] - dən kömək alın."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Adblock Plus aktiv olmasına rəğmən reklam yenə görünürsə bu bəndi seçin."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus reklamı blok etmir"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Səhifə vacib məzmunu əskildirsə, yalnış göstərirsə, düzgün işləmirsə bu bölməni seçin. Problemin səbəbini öyrənmək üçün Adblock Plus' su müvəqqəti olaraq deaktiv edin."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus aşırı çox blok edir"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "Bildirdiyiniz problemin səbəbi bilinir. Ətraflı:"
+  },
+  "issueReporter_page_title": {
+    "message": "Problem xəbərçisi"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Gizlilik siyasəti"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Raportu göndər"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Raport göndər"
+  },
+  "issueReporter_sending": {
+    "message": "Lütfən Adblock Plus raportunuzu göndərənədək gözləyin."
+  },
+  "issueReporter_showData_label": {
+    "message": "Raport məzmununu göstər"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Bu pəncərə sizi Adblock Plus' un problemini göndərənədək sizə yardımçi olacaq. Birinci, lütfən qarşılaşdığınız problemin növünü seçin:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Problem növünü seçin"
+  }
+}

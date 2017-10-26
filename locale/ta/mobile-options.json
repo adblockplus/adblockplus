@@ -1,0 +1,11 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Allow some non-intrusive advertising"
+  },
+  "mops_action_cancel": {
+    "message": "ரத்து செய்"
+  },
+  "mops_subscriptions_header": {
+    "message": "வடிகட்டி சந்தாக்கள்"
+  }
+}

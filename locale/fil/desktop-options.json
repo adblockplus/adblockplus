@@ -1,0 +1,14 @@
+{
+  "options_customFilter_cancel": {
+    "message": "I-cancel"
+  },
+  "options_filterList_column_name": {
+    "message": "Listahan ng mga Filter"
+  },
+  "options_filterList_title": {
+    "message": "Listahan ng mga Filter"
+  },
+  "options_tab_general": {
+    "message": "Pangkalahatan"
+  }
+}

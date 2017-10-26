@@ -1,0 +1,11 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "कुछ बिना हस्तक्षेप करने वाले विज्ञापन की अनुमति दें"
+  },
+  "mops_action_cancel": {
+    "message": "रद्द करें"
+  },
+  "mops_subscriptions_header": {
+    "message": "फ़िल्टर सदस्यताएँ"
+  }
+}

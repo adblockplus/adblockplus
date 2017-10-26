@@ -1,0 +1,11 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Povolit některé nerušivé reklamy"
+  },
+  "mops_action_cancel": {
+    "message": "Zrušit"
+  },
+  "mops_subscriptions_header": {
+    "message": "Odebírané sady cizích filtrů"
+  }
+}

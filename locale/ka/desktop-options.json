@@ -1,0 +1,17 @@
+{
+  "options_customFilter_cancel": {
+    "message": "გაუქმება"
+  },
+  "options_filterList_column_name": {
+    "message": "ფილტრის წესები"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "ჩამოტვირთვა წარუმატებელია"
+  },
+  "options_filterList_title": {
+    "message": "ფილტრის წესები"
+  },
+  "options_tab_whitelist": {
+    "message": "დაშვებული ვებ-საიტები"
+  }
+}

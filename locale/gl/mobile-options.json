@@ -1,0 +1,11 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Permitir publicidade non invasiva"
+  },
+  "mops_action_cancel": {
+    "message": "Cancelar"
+  },
+  "mops_subscriptions_header": {
+    "message": "Suscricións aos filtros"
+  }
+}

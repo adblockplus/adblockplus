@@ -1,0 +1,8 @@
+{
+  "notification_antiadblock_message": {
+    "message": "Ezen az oldalon célzott üzeneteket jelenítenek meg az Adblock Plus felhasználóinak. Szeretné, ha az Adblock Plus elrejtené ezeket az üzeneteket?"
+  },
+  "notification_antiadblock_title": {
+    "message": "Célzott üzenetek elrejtése"
+  }
+}

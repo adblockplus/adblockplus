@@ -14,9 +14,6 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "कष्टकारी विज्ञापन अब हटा दिए जायेंगे"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "क्या यह पृष्ट बार बार प्रस्तुत हो रहा है? <a>यहाँ क्लिक करें</a>"
-  },
   "firstRun_title": {
     "message": "Adblock Plus स्थापित होगया हे."
   }

@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "ارسال ناشناس"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "ما قادر نخواهیم بود که دوباره بیاییم و احتمالاً این گزارش را در اولویت های پایین تر قرار می دهیم."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "وارد کردن نظر"
+  },
+  "issueReporter_comment_description": {
+    "message": "جعبه متن زیر به شما اجازه می دهد که نظر خود را برای کمک به درک ما در مورد مشکل وارد کنید. این مورد اختیاری می باشد ولی در صورتی که مشکل آشکار نیست توصیه می شود. شما همچنین می توانید قبل از ارسال گزارش داده ها را بررسی کنید."
+  },
+  "issueReporter_comment_label": {
+    "message": "نظر (اختیاری):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "حد اکثر طول نظر 1000 حرف می باشد. فقط 1000 حرف اولی فرستاده می شود."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "گزارش شما ذخیره شد. شما می توانید در نشانی زیر به آن دسترسی پیدا کنید:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "لطفا برای چند لحظه صبر کنید تا فوق تبلیغ شکن داده های درخواستی شما را جمع آوری کند."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "به گزارشگر اشکالات خوش آمدید"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "انجام شد"
+  },
+  "issueReporter_email_description": {
+    "message": "ما شما را تشویق می کنیم که یک آدرس ایمیل معتبر از خود وارد کنید تا اگر سوالی بود ما بتوانیم در آینده با شما ارتباط برقرار کنیم در مورد گزارش شما. این به ما اجازه می دهد که میزان همکاری شما را بسنجیم و اولویت کار شما به مراحل بالاتر برسد."
+  },
+  "issueReporter_email_label": {
+    "message": "پست الکترونیکی:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "تلاش برای ارسال گزارش شکست خورد، شماره خطا \"?1?\". لطفا مطمئن شوید که به اینترنت متصل هستید و مجددا سعی کنید. اگر مشکل همچنان ادامه دارد می توانید در [link]تالار گفتمان فوق تبلیغ شکن[/link] در خواست کمک کنید."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "اگر تبلیغات همچنان مشاهده می شوند با وجود این که فوق تبلیغ شکن فعال است این گزینه را انتخاب کنید"
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "فوق تبلیغ شکن هیچ تبلیغی را مسدود نمی کند."
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "اگر صفحه خالی از محتوای مهم می شود یا نادرست نمایش داده می شود یا موفق به عملکرد درست نیست این گزینه را انتخاب کنید."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "فوق تبلیغ شکن بیش از حد موارد را مسدود می کند."
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "گزارشی که شما ارسال کردید هم اکنون شناخته شده است. اطلاعات بیشتر:"
+  },
+  "issueReporter_page_title": {
+    "message": "گزارش گر اشکالات"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "سیاست حفظ اسرار"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "ارسال گزارش"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "ارسال گزارش"
+  },
+  "issueReporter_sending": {
+    "message": "لطفا صبر کنید تا فوق تبلیغ شکن گزارش شما را ارسال کند."
+  },
+  "issueReporter_showData_label": {
+    "message": "نمایش داده های گزارش"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "این پنجره شما را برای ارائه یک گزارش خطا فوق تبلیغ شکن راهنمایی می کند. ابتدا نوع مشکلی را که در این صفحه با آن روبرو هستید را انتخاب کنید:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "انتخاب نوع اشکال"
+  }
+}

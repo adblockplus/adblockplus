@@ -17,41 +17,14 @@
   "firstRun_contributor_credits": {
     "message": "Emeği Geçenler"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "Bu sayfa sürekli gösteriliyor mu? <a>Buraya tıklayın!</a>"
-  },
   "firstRun_donate": {
     "message": "bağış yapın"
   },
   "firstRun_donate_label": {
     "message": "Projemize destek verin"
   },
-  "firstRun_feature_malware": {
-    "message": "Zararlı Yazılım Engelleme"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "Bilinen kötü amaçlı yazılıma sahip alan adlarını engelleyerek gezintinizi daha güvenli hale getirin."
-  },
-  "firstRun_feature_social": {
-    "message": "Sosyal Medya Düğmelerini Kaldır"
-  },
-  "firstRun_feature_social_description": {
-    "message": "Sayfalarda çıkan ve davranışlarınızı takip eden Facebook'un \"Beğen\" düğmesi gibi sosyal medya düğmelerinden kurtulun."
-  },
-  "firstRun_feature_tracking": {
-    "message": "İzlenmeyi Devre Dışı Bırak"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "Her hareketinizi izleyen reklam şirketlerin adımlarınızı gizleyin. İnternette izlenmeyi devre dışı bırakarak gezin."
-  },
-  "firstRun_features": {
-    "message": "Adblock Plus reklamları engellemekten daha fazlasını yapabilir"
-  },
   "firstRun_filterlistsReinitializedWarning": {
     "message": "Görünüşe göre bir sorun tüm filtrelerinizin kaldırılmasına neden olmuş ve yedeği geri yükleyemiyoruz. Bu yüzden filtrelerinizi ve Kabul Edilebilir Reklamlar ayarlarınızı sıfırlamamız gerekiyordu. Lütfen <a>Adblock Plus seçenekleri</a> bölümünde filtre listelerinizi ve Kabul Edilebilir Reklamlar ayarlarınızı denetleyin."
-  },
-  "firstRun_legacySafariWarning": {
-    "message": "Safari'nin Adblock Plus tarafından desteklenmeyen eski bir sürümünü kullanıyorsunuz. Uygulama doğru şekilde çalışmayabilir veya bazı internet sitelerinde kullanıcı deneyimini olumsuz etkileyebilir. Sürümünüzü Safari 6.1.1 veya daha yüksek  (OS X 10.8 Mountain Lion için), ya da Safari 7.0.1 veya daha yüksek (OS X 10.9 Mavericks için) bir sürüme yükseltmenizi, veya Mozilla Firefox, Google  Chrome ya da Opera'nın en son sürümünü kullanmanızı önemle tavsiye ederiz."
   },
   "firstRun_share": {
     "message": "Arkadaşlarınıza bahsedin"
@@ -61,11 +34,5 @@
   },
   "firstRun_title": {
     "message": "Adblock Plus yüklendi"
-  },
-  "firstRun_toggle_off": {
-    "message": "KAPALI"
-  },
-  "firstRun_toggle_on": {
-    "message": "AÇIK"
   }
 }

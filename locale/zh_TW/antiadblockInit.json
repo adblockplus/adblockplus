@@ -1,0 +1,8 @@
+{
+  "notification_antiadblock_message": {
+    "message": "已知此網站會對 Adblock Plus 用戶顯示針對性的訊息。您希望 Adblock Plus 隱藏它們嗎？"
+  },
+  "notification_antiadblock_title": {
+    "message": "隱藏針對性的訊息？"
+  }
+}

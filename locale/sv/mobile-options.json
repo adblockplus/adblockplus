@@ -1,0 +1,11 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Tillåt viss icke-störande reklam"
+  },
+  "mops_action_cancel": {
+    "message": "Avbryt"
+  },
+  "mops_subscriptions_header": {
+    "message": "Filterprenumerationer"
+  }
+}

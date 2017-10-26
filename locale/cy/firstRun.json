@@ -1,4 +1,13 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Ar gael ar gyfer Android ac iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Lawrlwythwch Porwr Adblock yma"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Oes gennych ffôn clyfar neu dabled?"
+  },
   "firstRun_acceptableAdsExplanation": {
     "message": "Hoffem annog gwefannau i ddefnyddio hysbysebion syml, anymwthiol. Dyna pam rydym wedi sefydlu <a>canllawiau llym</a> i adnabod hysbysebion derbyniol, ac fe'u dangosir yn ddiofyn. Os hoffech rwystro'r holl hysbysebion gallwch <a>annalluogi</a> hyn mewn eiliadau."
   },
@@ -6,10 +15,7 @@
     "message": "Caiff hysbysebion diflas eu rhwystro o hyn ymlaen"
   },
   "firstRun_contributor_credits": {
-    "message": "Clodydd i'r Cyfranwyr"
-  },
-  "firstRun_dataCorruptionWarning": {
-    "message": "Ydy'r dudalen hon yn ymddangos drwy'r amser? <a>Cliciwch yma!</a>"
+    "message": "Clodydd y Cyfranwyr"
   },
   "firstRun_donate": {
     "message": "rhoddi"
@@ -17,32 +23,8 @@
   "firstRun_donate_label": {
     "message": "Cefnogwch ein prosiect"
   },
-  "firstRun_feature_malware": {
-    "message": "Rhwystro meddalwedd maleisus"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "Gwnewch bori'n fwy diogel drwy rwystro parthau sy'n arwain at feddalwedd maleisus."
-  },
-  "firstRun_feature_social": {
-    "message": "Dileu botymau cyfryngau cymdeithasol"
-  },
-  "firstRun_feature_social_description": {
-    "message": "Gallwch gael gwared ar fotymau cyfryngau cymdeithasol yn ddiofyn, fel y Facebook Like, sy'n ymddangos ar dudalennau'r we ac yn tracio'ch ymddygiad."
-  },
-  "firstRun_feature_tracking": {
-    "message": "Analluogi tracio"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "Porwch yn breifat drwy analluogi tracio - cuddio'ch camau oddi wrth gwmniau hysbysebu fyddai'n tracio pob dim."
-  },
-  "firstRun_features": {
-    "message": "Gall Adblock Plus wneud mwy na rhwystro hysbysebion"
-  },
   "firstRun_filterlistsReinitializedWarning": {
     "message": "Mae'n ymddangos bod nam wedi achosi i bob hidlydd gael ei ddileu ac ni allwn adfer copi wrth gefn. Felly bu'n rhaid i ni ailosod eich hidlyddion a gosodiadau Hysbysebion Derbyniol. Gwiriwch eich rhestri hidlo a gosodiadau Hysbysebion Derbyniol yng <a> ngosodiadau Adblock Plus</a>."
-  },
-  "firstRun_legacySafariWarning": {
-    "message": "Mae'n ymddangos eich bod yn defnyddio hen fersiwn o Safari nad yw Adblock Plus yn ei gefnogi. Efallai na fydd yn gweithio'n iawn neu'n ymharu ar brofiad y defnyddiwr ar rai wefannau. Rydym yn argymell naill ai diweddaru i Safari 6.1.1 neu'n uwch (ar OS X 10.8 Mountain Lion), neu Safari 7.0.1 neu'n uwch (ar OS X 10.9 Mavericks), neu ddefnyddio fersiwn diweddaraf Mozilla Firefox, Google Chrome neu Opera."
   },
   "firstRun_share": {
     "message": "Dywedwch wrth eich ffrindiau"
@@ -52,11 +34,5 @@
   },
   "firstRun_title": {
     "message": "Mae Adblock Plus wedi'i osod"
-  },
-  "firstRun_toggle_off": {
-    "message": "I FFWRDD"
-  },
-  "firstRun_toggle_on": {
-    "message": "YMLAEN"
   }
 }

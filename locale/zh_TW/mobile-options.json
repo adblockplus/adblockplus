@@ -1,0 +1,11 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "允許部分非侵入式廣告"
+  },
+  "mops_action_cancel": {
+    "message": "取消"
+  },
+  "mops_subscriptions_header": {
+    "message": "過濾條件集"
+  }
+}

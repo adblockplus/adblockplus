@@ -1,0 +1,8 @@
+{
+  "notification_antiadblock_message": {
+    "message": "Webgune honek Adblock Plus erabiltzaileei zuzendutako mezuak erakusten dituela dakigu. Adblock Plusek mezu hauek ezkutatzea nahi duzu?"
+  },
+  "notification_antiadblock_title": {
+    "message": "Ezkutatu zuzendutako mezuak?"
+  }
+}

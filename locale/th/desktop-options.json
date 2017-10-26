@@ -1,0 +1,41 @@
+{
+  "options_acceptableAds_header": {
+    "message": "โฆษณาที่รับได้"
+  },
+  "options_customFilter_cancel": {
+    "message": "ยกเลิก"
+  },
+  "options_customize_showNotifications": {
+    "message": "แสดงการแจ้งเตือนที่เป็นประโยชน์"
+  },
+  "options_filterList_column_name": {
+    "message": "รายชื่อตัวกรอง"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "ล้มเหลว checksum จับผิดคู่"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "ล้มเหลว การดาวน์โหลดล้มเหลว"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "ล้มเหลว ไม่มีที่อยู่ที่ถูกต้อง"
+  },
+  "options_filterList_title": {
+    "message": "รายชื่อตัวกรอง"
+  },
+  "options_page_title": {
+    "message": "การตั้งค่า"
+  },
+  "options_support_title": {
+    "message": "การสนับสนุน"
+  },
+  "options_tab_general": {
+    "message": "ทั่วไป"
+  },
+  "options_tab_help": {
+    "message": "วิธีใช้"
+  },
+  "options_tab_whitelist": {
+    "message": "เว็บไซต์ที่อนุญาต"
+  }
+}

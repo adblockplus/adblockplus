@@ -17,38 +17,14 @@
   "firstRun_contributor_credits": {
     "message": "Ծրագրի հեղինակները"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "Արդյոք այս էջը ցուցադրվում է? <a>Սեղմեք այստեղ!</a>"
-  },
   "firstRun_donate": {
     "message": "նվիրաբերել"
   },
   "firstRun_donate_label": {
     "message": "Օգնեք մեր ծրագրին"
   },
-  "firstRun_feature_malware": {
-    "message": "Վիրուսի արգելում"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "Անվտանգ դարձնել Ձեր համակարգիչն արգելելով վիրուս-դոմենները։"
-  },
-  "firstRun_feature_social": {
-    "message": "Հեռացնել սոց․ ցանցերի կոճակները"
-  },
-  "firstRun_feature_social_description": {
-    "message": "Ավտոմատ արագացնել աշխատանքը արգելափակելով սոց․ ցանցերի կոճակները, օրինակ՝ Facebook Like, որը գալիս է կայքերում և հետևում Ձեզ։"
-  },
-  "firstRun_feature_tracking": {
-    "message": "Անջատել թրեքինգը"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "Այցելեք ինտերնետ անանուն՝ թաքցնելով Ձեր տվյալները, որոնցից օգտվում են որոշ կազմակերպություններ։"
-  },
-  "firstRun_features": {
-    "message": "Adblock Plus ավելին կարող է անել"
-  },
-  "firstRun_legacySafariWarning": {
-    "message": "Դուք օգտագործում եք Safari հին տարբերակ, որտեղ Adblock Plus չի աշխատում կամ վատ է աշխատում։ Մենք խորհուրդ ենք տեղադրել Safari 6.1.1 կամ ավելի բարձր տարբերակ (OS X 10.8 Mountain Lion-ում) կամ Safari 7.0.1 և բարձր (OS X 10.9 Mavericks-ում), իսկ եթե ոչ օգտագործեք Mozilla Firefox, Google Chrome կամ Opera։"
+  "firstRun_filterlistsReinitializedWarning": {
+    "message": "Näyttää siltä, ​​ettäkysymys aiheutti kaikki suodattimet poistetaan ja emme voineet palauttaa varmuuskopion . Siksi meidän piti palauttaa suodattimet ja hyväksyttävä ilmoitusten asetuksia . Tarkista suodatinluettelot ja hyväksyttävä mainokset asetukset<a> Adblock Plus vaihtoehtoja </a> ."
   },
   "firstRun_share": {
     "message": "Պատմեք ընկերներին"
@@ -58,11 +34,5 @@
   },
   "firstRun_title": {
     "message": "Վերջ! կարող էք օգտվել Adblock-ից"
-  },
-  "firstRun_toggle_off": {
-    "message": "ԱՆՋ"
-  },
-  "firstRun_toggle_on": {
-    "message": "ՄԻԱՑ"
   }
 }

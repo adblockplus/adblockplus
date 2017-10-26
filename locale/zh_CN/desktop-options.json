@@ -1,0 +1,260 @@
+{
+  "options_acceptableAds_description": {
+    "message": "可接受广告是指非侵入式广告。他们介于广告和在线支持内容之间，因为他们可以为网站所有者带来收入。"
+  },
+  "options_acceptableAds_header": {
+    "message": "可接受的广告"
+  },
+  "options_advanced_description": {
+    "message": "自定义 Adblock Plus， 添加或删除过滤列表、 创建和维护您自己的过滤列表"
+  },
+  "options_close": {
+    "message": "关闭"
+  },
+  "options_control_remove_title": {
+    "message": "移除"
+  },
+  "options_customFilter_cancel": {
+    "message": "取消"
+  },
+  "options_customFilter_edit": {
+    "message": "编辑过滤规则"
+  },
+  "options_customFilter_save": {
+    "message": "保存"
+  },
+  "options_customFilters_edit_placeholder": {
+    "message": "例如 $filter$",
+    "placeholders": {
+      "filter": {
+        "content": "$1",
+        "example": "/ads/track/*"
+      }
+    }
+  },
+  "options_customFilters_learn": {
+    "message": "了解如何编写过滤规则列表"
+  },
+  "options_customFilters_start": {
+    "message": "开始编写我的过滤规则列表"
+  },
+  "options_customFilters_tip": {
+    "message": "您创建的过滤规则将在这里显示。"
+  },
+  "options_customFilters_title": {
+    "message": "创建并编辑您的过滤规则列表"
+  },
+  "options_customFilters_widget_title": {
+    "message": "我的过滤规则列表"
+  },
+  "options_customize_blockElement": {
+    "message": "右键菜单中显示“屏蔽元素”选项"
+  },
+  "options_customize_blockElement_tooltip": {
+    "message": "暂时屏蔽网页上的烦人内容，例如某个图像或动画。"
+  },
+  "options_customize_header": {
+    "message": "自定义页面操作"
+  },
+  "options_customize_showDevToolsPanel_tooltip": {
+    "message": "从浏览器的开发者工具面板查看阻止列表和白名单列表。"
+  },
+  "options_customize_showNotifications": {
+    "message": "显示有用的通知"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "关闭Adblock Plus的所有通知。"
+  },
+  "options_dialog_about_title": {
+    "message": "关于 Adblock Plus"
+  },
+  "options_dialog_about_version": {
+    "message": "版本编号 $version$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "2.6.7"
+      }
+    }
+  },
+  "options_dialog_import_subscription_location": {
+    "message": "过滤规则列表网址"
+  },
+  "options_dialog_import_subscription_location_error": {
+    "message": "请输入有效的网址"
+  },
+  "options_dialog_import_subscription_title": {
+    "message": "过滤规则列表名称"
+  },
+  "options_dialog_import_subscription_title_error": {
+    "message": "请填写所有字段"
+  },
+  "options_dialog_import_title": {
+    "message": "添加一个过滤规则列表"
+  },
+  "options_dialog_language_other_empty": {
+    "message": "没有可用的语言。"
+  },
+  "options_dialog_language_title": {
+    "message": "选择一个语言"
+  },
+  "options_dialog_predefined_confirm": {
+    "message": "是，使用此过滤规则列表"
+  },
+  "options_email": {
+    "message": "电子邮件："
+  },
+  "options_filterList_add": {
+    "message": "+ 添加新的过滤规则列表"
+  },
+  "options_filterList_column_name": {
+    "message": "过滤规则列表"
+  },
+  "options_filterList_column_status": {
+    "message": "状态"
+  },
+  "options_filterList_hours": {
+    "message": "小时前"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "失败，检验和不匹配"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "失败，下载失败"
+  },
+  "options_filterList_lastDownload_inProgress": {
+    "message": "正在更新"
+  },
+  "options_filterList_lastDownload_invalidData": {
+    "message": "失败，不是有效的过滤规则列表"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "失败，不是有效地址"
+  },
+  "options_filterList_minutes": {
+    "message": "分钟前"
+  },
+  "options_filterList_now": {
+    "message": "刚刚"
+  },
+  "options_filterList_source": {
+    "message": "来源"
+  },
+  "options_filterList_state_active": {
+    "message": "激活"
+  },
+  "options_filterList_state_disabled": {
+    "message": "已禁用"
+  },
+  "options_filterList_title": {
+    "message": "过滤规则列表"
+  },
+  "options_filterList_update": {
+    "message": "更新所有过滤规则列表"
+  },
+  "options_filterList_updateNow": {
+    "message": "立即更新"
+  },
+  "options_filterList_website": {
+    "message": "网站"
+  },
+  "options_footer_about": {
+    "message": "关于 Adblock Plus"
+  },
+  "options_footer_contribute": {
+    "message": "协助"
+  },
+  "options_general_description": {
+    "message": "决定 Adblock Plus 在网站上的显示和隐藏"
+  },
+  "options_help_description": {
+    "message": "与我们取得联系或查找帮助"
+  },
+  "options_language_add": {
+    "message": "+ 添加一种语言"
+  },
+  "options_language_change": {
+    "message": "更改"
+  },
+  "options_language_description": {
+    "message": "选择您经常浏览的网站语言以优化 Adblock Plus 的效果。"
+  },
+  "options_language_header": {
+    "message": "语言"
+  },
+  "options_more_filters_description": {
+    "message": "这些是您以前添加到 Adblock Plus 的过滤规则。"
+  },
+  "options_more_filters_header": {
+    "message": "更多过滤规则"
+  },
+  "options_notification_hide": {
+    "message": "关闭通知"
+  },
+  "options_page_title": {
+    "message": "设置"
+  },
+  "options_privacy_header": {
+    "message": "隐私和安全"
+  },
+  "options_protection_privacy_tooltip": {
+    "message": "删除所有形式的信息收集跟踪器以保护您在互联网上的个人数据。"
+  },
+  "options_report_ad": {
+    "message": "发现您认为不该出现的广告了吗？<a>报告广告</a>"
+  },
+  "options_report_bug": {
+    "message": "发现了 bug？<a>向我们发送缺陷报告</a>"
+  },
+  "options_report_forum": {
+    "message": "想从我们的社区获取支持吗？<a>访问论坛</a>"
+  },
+  "options_report_issue": {
+    "message": "认为有内容或功能被我们误阻止了？<a>请在这里报告被误阻止的项目</a>"
+  },
+  "options_social_description": {
+    "message": "有任何问题或想法吗？我们会在这里提供帮助。"
+  },
+  "options_social_title": {
+    "message": "取得联系"
+  },
+  "options_support_title": {
+    "message": "支持"
+  },
+  "options_tab_advanced": {
+    "message": "高级"
+  },
+  "options_tab_general": {
+    "message": "常规"
+  },
+  "options_tab_help": {
+    "message": "帮助"
+  },
+  "options_tab_whitelist": {
+    "message": "白名单网站"
+  },
+  "options_whitelist_add": {
+    "message": "添加网站"
+  },
+  "options_whitelist_empty_2": {
+    "message": "指定您信任并且希望显示广告的网站。"
+  },
+  "options_whitelist_notification": {
+    "message": "已将“$website$”列入白名单。",
+    "placeholders": {
+      "website": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "options_whitelist_placeholder_example": {
+    "message": "例如 $domain$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  }
+}

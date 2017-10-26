@@ -1,0 +1,98 @@
+{
+  "options_acceptableAds_description": {
+    "message": "الإعلانات المقبولة هي الإعلانات غير الإقتحامية. هي الحل الوسط بين منع الإعلانات و دعم المحتوى عبر الانترنت لانه ما يصنع العائد على مالكي المواقع الإلكترونية."
+  },
+  "options_acceptableAds_header": {
+    "message": "إعلان مقبولة"
+  },
+  "options_advanced_description": {
+    "message": "تخصيص آدبلوك بلس, أضف أو أزل قائمة فلاتر, أنشىء وَ عَدِّل قائمة الفلاتر خاصتك"
+  },
+  "options_close": {
+    "message": "أغلِقْ"
+  },
+  "options_control_remove_title": {
+    "message": "أزِلْ"
+  },
+  "options_customFilter_cancel": {
+    "message": "إلغاء"
+  },
+  "options_customFilter_edit": {
+    "message": "عَدِّلْ الفلتر"
+  },
+  "options_customFilter_save": {
+    "message": "إحفظ"
+  },
+  "options_customFilters_edit_placeholder": {
+    "message": "مثال $filter$",
+    "placeholders": {
+      "filter": {
+        "content": "$1",
+        "example": "/ads/track/*"
+      }
+    }
+  },
+  "options_customFilters_learn": {
+    "message": "تعلّم كيف تكتب قائمة فلاتر"
+  },
+  "options_customFilters_start": {
+    "message": "ابدء كتابة قائمة الفلاتر خاصتك"
+  },
+  "options_customFilters_tip": {
+    "message": "الفلاتر التي أنشأتها ستظهر هنا."
+  },
+  "options_customFilters_title": {
+    "message": "أنشىء و عدّل قائمة الفلاتر خاصتك"
+  },
+  "options_customFilters_widget_title": {
+    "message": "قائمة الفلاتر خاصتي"
+  },
+  "options_customize_blockElement": {
+    "message": "اظهر 'حجب العنصر' غرض قائمة الضغطة اليمين"
+  },
+  "options_customize_showNotifications": {
+    "message": "أظهر الأشعارات الهامة"
+  },
+  "options_dialog_about_title": {
+    "message": "حول آدبلوك بلس"
+  },
+  "options_email": {
+    "message": "الب&ريد الإلكتروني:"
+  },
+  "options_filterList_column_name": {
+    "message": "قوائم المرشحات"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "فشل الأمر، عدم تطابق المجموع الإختباري"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "فشل الأمر، بسبب فشل التحميل"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "فشل الأمر، العنوان ليس صحيح"
+  },
+  "options_filterList_title": {
+    "message": "قوائم المرشحات"
+  },
+  "options_footer_about": {
+    "message": "حول آدبلوك بلس"
+  },
+  "options_footer_contribute": {
+    "message": "المساهمة"
+  },
+  "options_page_title": {
+    "message": "إعدادات"
+  },
+  "options_support_title": {
+    "message": "الدعم"
+  },
+  "options_tab_general": {
+    "message": "عام"
+  },
+  "options_tab_help": {
+    "message": "تعليمات"
+  },
+  "options_tab_whitelist": {
+    "message": "قائمة المواقع المسموحة"
+  }
+}

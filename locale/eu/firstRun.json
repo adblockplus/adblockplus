@@ -1,6 +1,6 @@
 {
   "firstRun_abbButtonSubtitle": {
-    "message": "Android eta iOS-entzat"
+    "message": "Android eta iOS-entzat eskuragarri"
   },
   "firstRun_abbButtonTitle": {
     "message": "Eskuratu Adblock Browser hemen"
@@ -17,41 +17,14 @@
   "firstRun_contributor_credits": {
     "message": "Parte-hartzaileen kredituak"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "Orri hau behin eta berriro agertzen dela? <a>Egin klik hemen!</a>"
-  },
   "firstRun_donate": {
     "message": "diruz lagundu"
   },
   "firstRun_donate_label": {
     "message": "Babestu gure proiektua"
   },
-  "firstRun_feature_malware": {
-    "message": "Programa kaltegarriak geldiarazi"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "Malware domeinuak blokeatuz zure nabigazioa ziurragoa egin."
-  },
-  "firstRun_feature_social": {
-    "message": "Kendu gizarte-sareetako botoiak"
-  },
-  "firstRun_feature_social_description": {
-    "message": "Automatikoki kendu gizarte sare botoiak webguneetatik, Facebook Like kasu, zure nondik norakoak gordetzen dituzten webguneetan agertu ohi dira."
-  },
-  "firstRun_feature_tracking": {
-    "message": "Ezgaitu jarraipena"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "Jarraitzea blokeatuz pribatuki nabigatu - Zure nondik norakoak  dena jakin nahi duten publizitate konpainiei ezkutatuz."
-  },
-  "firstRun_features": {
-    "message": "Adblock Plus iragarkiak blokeatzea baino gehiago egin dezake"
-  },
   "firstRun_filterlistsReinitializedWarning": {
     "message": "Badirudi arazoren baten erruz iragazki guztiak ezabatu direla eta ezin izan dugu segurtasun kopia berreskuratu. Ondorioz zure iragazkiak berrezarri behar izan ditugu, baita iragarki onargarrien ezarpenak. Mesedez egiaztatu zure iragazki zerrenda eta iragarki onargarrien ezarpenak <a>Adblock Plus aukerak</a> atalean."
-  },
-  "firstRun_legacySafariWarning": {
-    "message": "Adblock Plus-ekin bateragarria ez den Safari nabigatzailearen bertsio zahar bat erabiltzen ari zara. Agian ez da behar bezala ibiliko, edo webgune batzuen erabilera oztopatuko du. Mesedez Safari 6.11 edo berriagoa den bertsio batetara eguneratu (Mac OS X 10.8 Mountain Lion bertsiotik aurrera eskuragarri dago) edo Safari 7.0.1 (OS X 10.9 Mavericks bertsioan), edo erabili Mozilla Firefox, Google Chrome edo Opera nabigatzaileen azken bertsioa."
   },
   "firstRun_share": {
     "message": "Esan zure lagunei"
@@ -61,11 +34,5 @@
   },
   "firstRun_title": {
     "message": "Adblock Plus instalatu da"
-  },
-  "firstRun_toggle_off": {
-    "message": "EZGAITUA"
-  },
-  "firstRun_toggle_on": {
-    "message": "GAITUA"
   }
 }

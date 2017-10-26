@@ -1,0 +1,11 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Թույլատրել որոշ չկպչուն գովազդ"
+  },
+  "mops_action_cancel": {
+    "message": "Չեղարկել"
+  },
+  "mops_subscriptions_header": {
+    "message": "Բաժանորդագրված ֆիլտրեր"
+  }
+}

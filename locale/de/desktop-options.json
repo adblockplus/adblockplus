@@ -1,0 +1,50 @@
+{
+  "options_acceptableAds_header": {
+    "message": "Akzeptable Werbung"
+  },
+  "options_customFilter_cancel": {
+    "message": "Abbrechen"
+  },
+  "options_customize_showNotifications": {
+    "message": "Zeige nützliche Benachrichtigungen"
+  },
+  "options_dialog_about_title": {
+    "message": "Über Adblock Plus"
+  },
+  "options_filterList_column_name": {
+    "message": "Filterlisten"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Fehler, Prüfsumme ist falsch, möglicherweise ein Übertragungsfehler"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Fehler, Download fehlgeschlagen"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Fehler, ungültige Adresse"
+  },
+  "options_filterList_title": {
+    "message": "Filterlisten"
+  },
+  "options_footer_about": {
+    "message": "Über Adblock Plus"
+  },
+  "options_footer_contribute": {
+    "message": "Mitwirken"
+  },
+  "options_page_title": {
+    "message": "Einstellungen"
+  },
+  "options_support_title": {
+    "message": "Unterstützung"
+  },
+  "options_tab_general": {
+    "message": "Allgemein"
+  },
+  "options_tab_help": {
+    "message": "Hilfe"
+  },
+  "options_tab_whitelist": {
+    "message": "Zur Whitelist hinzugefügte Websites"
+  }
+}

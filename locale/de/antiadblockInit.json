@@ -1,0 +1,8 @@
+{
+  "notification_antiadblock_message": {
+    "message": "Diese Seite hat in der Vergangenheit Adblock Plus-Nutzern gezielt Nachrichten angezeigt. Soll Adblock Plus Nachrichten dieser Art verstecken?"
+  },
+  "notification_antiadblock_title": {
+    "message": "Gezielte Nachrichten ausblenden?"
+  }
+}

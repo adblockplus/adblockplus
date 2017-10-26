@@ -1,0 +1,62 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Anonymous submission"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "We won't be able to come back to you and will likely prioritize the report lower."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Enter comment"
+  },
+  "issueReporter_comment_label": {
+    "message": "Comment (optional):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "The length of your comment exceeds 1000 characters. Only the first 1000 characters will be sent."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Your report has been saved. You can access it at the following address:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Please wait a few moments while Adblock Plus gathers the required data."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Welcome to the issue reporter"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Done"
+  },
+  "issueReporter_email_label": {
+    "message": "Email:"
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus doesn't block an advertisement"
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus is blocking too much"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "The issue you reported is probably already known. More information:"
+  },
+  "issueReporter_page_title": {
+    "message": "Issue reporter"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Privacy policy"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Send report"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Send report"
+  },
+  "issueReporter_sending": {
+    "message": "Please wait while Adblock Plus is submitting your report."
+  },
+  "issueReporter_showData_label": {
+    "message": "Show report data"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Select issue type"
+  }
+}

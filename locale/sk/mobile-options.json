@@ -1,0 +1,53 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Povoliť niektoré nevtieravé reklamy"
+  },
+  "mops_acceptableAds_more": {
+    "message": "Dozvedieť sa viac"
+  },
+  "mops_action_cancel": {
+    "message": "Zrušiť"
+  },
+  "mops_enabled_label": {
+    "message": "Zapnúť Adblock Plus na <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "Zadajte názov"
+  },
+  "mops_error_url": {
+    "message": "Zadajte odkaz na adresu URL"
+  },
+  "mops_filterlist_add": {
+    "message": "+ Pridať zoznam filtrov"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Pridať zoznam filtrov"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ Pridať vlastný zoznam filtrov"
+  },
+  "mops_header": {
+    "message": "Adblock Plus nastavenia"
+  },
+  "mops_subscribe_header": {
+    "message": "Pridať vlastný zoznam filtrov"
+  },
+  "mops_subscribe_title": {
+    "message": "Názov zoznamu filtra"
+  },
+  "mops_subscribe_url": {
+    "message": "Adresa URL zoznamu filtrov"
+  },
+  "mops_subscriptions_header": {
+    "message": "Odbery filtrov"
+  },
+  "mops_title": {
+    "message": "Adblock Plus nastavenia"
+  }
+}

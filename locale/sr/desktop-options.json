@@ -1,0 +1,44 @@
+{
+  "options_acceptableAds_header": {
+    "message": "Прихватљиви огласи"
+  },
+  "options_customFilter_cancel": {
+    "message": "Откажи"
+  },
+  "options_customize_showNotifications": {
+    "message": "Приказуј корисна обавештења"
+  },
+  "options_email": {
+    "message": "И-мејл:"
+  },
+  "options_filterList_column_name": {
+    "message": "Спискови филтера"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Грешка: неслагање контролног збира"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Грешка при преузимању"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Грешка: неисправна адреса"
+  },
+  "options_filterList_title": {
+    "message": "Спискови филтера"
+  },
+  "options_page_title": {
+    "message": "Поставке"
+  },
+  "options_support_title": {
+    "message": "Подршка"
+  },
+  "options_tab_general": {
+    "message": "Опште"
+  },
+  "options_tab_help": {
+    "message": "Помоћ"
+  },
+  "options_tab_whitelist": {
+    "message": "Дозвољени сајтови"
+  }
+}

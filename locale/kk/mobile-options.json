@@ -1,0 +1,11 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Зиянкес емес кейбір жарнаманы іске қосу"
+  },
+  "mops_action_cancel": {
+    "message": "Бас тарту"
+  },
+  "mops_subscriptions_header": {
+    "message": "Фильтрлерге жазылулар"
+  }
+}

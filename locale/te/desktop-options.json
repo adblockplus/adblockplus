@@ -1,0 +1,14 @@
+{
+  "options_customFilter_cancel": {
+    "message": "రద్దు చేయు"
+  },
+  "options_filterList_column_name": {
+    "message": "జాబితాలని వడకొట్టు"
+  },
+  "options_filterList_title": {
+    "message": "జాబితాలని వడకొట్టు"
+  },
+  "options_tab_general": {
+    "message": "సాధారణం"
+  }
+}

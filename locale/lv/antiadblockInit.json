@@ -1,0 +1,8 @@
+{
+  "notification_antiadblock_message": {
+    "message": "Šī vietne ir zināma, lai parādītu mērķtiecīgas ziņas Adblock Plus lietotājiem. Vai jūs vēlaties, Adblock Plus slēpt mērķtiecīgas ziņas?"
+  },
+  "notification_antiadblock_title": {
+    "message": "slēpt mērķtiecīgas ziņas?"
+  }
+}

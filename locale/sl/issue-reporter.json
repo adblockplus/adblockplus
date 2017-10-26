@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Anonimna oddaja"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "Kontakta z vami ne bomo mogli vzpostaviti. Prioriteto poročilu pa bomo verjetno znižali."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Vnesite komentar"
+  },
+  "issueReporter_comment_description": {
+    "message": "Spodnje polje z besedilom omogoča vnos komentarja, ki nam pomaga razumeti težavo. To je neobvezno, vendar priporočamo, če težava ni očitna. Pred pošiljanjem si lahko še enkrat ogledate podatke poročila."
+  },
+  "issueReporter_comment_label": {
+    "message": "Komentar (neobvezno):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "Dolžina vašega komentarja presega 1000 znakov. Poslanih bo le prvih 1000 znakov."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Vaše poročilo je shranjeno. Do njega lahko dostopate na naslednjem naslovu:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Počakajte nekaj trenutkov, da Adblock Plus zbere potrebne podatke."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Dobrodošli v poročevalca težav"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Končaj"
+  },
+  "issueReporter_email_description": {
+    "message": "Priporočamo, da vnesete veljaven e-poštni naslov, tako da se na vas lahko obrnemo, če bodo obstajala vprašanja glede poročila. Prav tako nam omogoča prepoznati vaše prispevke in tako določiti prioriteto višje."
+  },
+  "issueReporter_email_label": {
+    "message": "E-pošta:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "Poskus pošiljanja poročila je bil neuspešen s kodo napake \"?1?\". Zagotovite, da ste povezani v splet in poskusite znova. Če težave ni konec, poiščite pomoč na [link]forumu Adblock Plus[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Izberite to možnost, če je oglas prikazan kljub temu, da je Adblock Plus omogočen."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus ne blokira oglasa"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Izberite to možnost, če strani manjka pomembna vsebina, če se prikaže nepravilno ali ne deluje pravilno. Določite lahko, ali je Adblock Plus kriv težav, tako da ga začasno izključite."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus blokira preveč stvari"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "Težava, ki ste jo javili, je najbrž že znana. Več podatkov:"
+  },
+  "issueReporter_page_title": {
+    "message": "Poročevalec težav"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Politika zasebnosti"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Pošlji poročilo"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Pošlji poročilo"
+  },
+  "issueReporter_sending": {
+    "message": "Počakajte, dokler Adblock Plus pošilja vaše poročilo."
+  },
+  "issueReporter_showData_label": {
+    "message": "Pokaži podatke poročila"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "To okno vas vodi po korakih do oddaje poročila o težavi z Adblock Plus. Najprej izberite vrsto težave, s katero ste se srečali na tej strani:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Izberite vrsto težave"
+  }
+}

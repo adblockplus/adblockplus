@@ -8,41 +8,14 @@
   "firstRun_contributor_credits": {
     "message": "Dźakprajenje sobuskutkowacym"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "Pokazuje so tuta strona dale? <a>Klikńće tu!</a>"
-  },
   "firstRun_donate": {
     "message": "darić"
   },
   "firstRun_donate_label": {
     "message": "Podpěrajće naš projekt"
   },
-  "firstRun_feature_malware": {
-    "message": "Škódnu softwaru blokować"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "Čińće swoje přehladowanje wěsćiše blokujo znate domeny złomyslneje softwary."
-  },
-  "firstRun_feature_social": {
-    "message": "Tłóčatka za socialne medije wotstronić"
-  },
-  "firstRun_feature_social_description": {
-    "message": "Wotstrońće swoju přehladowansku aktiwitu z tłóčatkow socialnych medijow, kaž na př. tłóčatka \"Lubi so mi\" na Facebooku, kotrež so na webstronach jewja a waše zadźerženje slěduja."
-  },
-  "firstRun_feature_tracking": {
-    "message": "Slědowanje znjemóžnić"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "Přehladujće priwatnje znjemóžnjejo slědowanje resp. chowajo swoje slědy před wabjenskimi předewzaćemi, kotrež bychu rady kóždy z wašich pohibow slědowali."
-  },
-  "firstRun_features": {
-    "message": "Adblock Plus móže wjace činić hač wabjenje blokować"
-  },
   "firstRun_filterlistsReinitializedWarning": {
     "message": "Zda so, zo problem je zawinował, zo wšě filtry su so wotstronili a my njemóžachmy zawěsćenje wobnowić. Tohodla dyrbjachmy waše filtry a nastajenja za akceptabelne wabjenje wróćo stajić. Prošu přepruwujće swoje filtrowe lisćiny a nastajenja za akceptabelne wabjenje w <a>nastajenjach Adblock Plus</a>."
-  },
-  "firstRun_legacySafariWarning": {
-    "message": "Wužiwaće staru wersiju Safari, kotraž se přez Adblock Plus njepodpěruje. Wón njebudźe snano korektnje fungować abo wužiwarske dožiwjenje na wěstach websydłach kazyć. Poručujemy wuraznje, zo pak aktualizujeće na Safari 6.1.1 abo wyši (k dispoziciji za Mac OS X 10.8 Lion) abo na Safari 7.0.1 abo wyši (na OS X 10.9 Mavericks) pak wužiwaće najnowšu wersiju Mozilla Firefox, Google Chrome abo Opera."
   },
   "firstRun_share": {
     "message": "Informujće swojich přećelow"
@@ -52,11 +25,5 @@
   },
   "firstRun_title": {
     "message": "Adblock Plus je so instalował"
-  },
-  "firstRun_toggle_off": {
-    "message": "WUPINJENY"
-  },
-  "firstRun_toggle_on": {
-    "message": "ZAPINJENY"
   }
 }

@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Anonīms iesniegums"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "Mēs nevarēsim ar Jums sazināties un visdrīzāk piešķirsim Jūsu ziņojumam zemāku prioritāti."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Pievienojiet komentāru"
+  },
+  "issueReporter_comment_description": {
+    "message": "Teksta laukums ļauj Jums ierakstīt komentāru, lai palīdzētu mums saprast problēmu. Šis solis nav obligāts, bet ir rekomendēts, ja problēma nav acīmredzama. Jūs arī varat pārskatīt ziņojuma datus, pirms nosūtīšanas."
+  },
+  "issueReporter_comment_label": {
+    "message": "Komentārs (nav obligāti):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "Jūsu komentāra garums pārsniedz 1000 simbolus. Tikai pirmie 1000 simboli tiks nosūtīti."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Jūsu ziņojums ir saglabāts. Jūs tam varat piekļūt sekojošajā adresē:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Uzgaidiet pāris mirkļus, kamēr Adblock Plus apkopo nepieciešamos datus."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Laipni lūdzu problēmu ziņotājā"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Gatavs"
+  },
+  "issueReporter_email_description": {
+    "message": "Mēs aicinām Jūs ievadīt derīgu e-pasta adresi, lai mēs varētu ar Jums kontaktēties, ja radīsies papildus jautājumi par Jūsu ziņojumu. Tā palīdzēs mums arī atpazīt Jūsu ieguldījumu un piešķirt tam augstāku prioritāti."
+  },
+  "issueReporter_email_label": {
+    "message": "E-pasts:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "Mēģinājums sūtīt ziņojumu neizdevās. Kļūdas kods \"?1?\". Lūdzu pārliecinieties, ka Jums ir savienojums ar internetu un mēģiniet vēlreiz. Ja problēma atkārtojas, lūdzu prasiet palīdzību [link]Adblock Plus forumā[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Izvēlaties šo opciju ja reklāma tiek attēlota neskatoties uz to ka Adblock Plus ir ieslēgts."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus nebloķē reklāmu"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Izvēlaties šo opciju, ja lai trūkst svarīga saturam tā tiek nepareizi attēlota vai nefunkcionē pareizi. Jūs varat noteikt vai to izraisa Adblock Plus, to īslaicīgi atslēdzot."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus bloķē pārāk daudz"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "Jūsu nosūtītais problēma iespējams jau ir zināma. Vairāk informācija:"
+  },
+  "issueReporter_page_title": {
+    "message": "Problēmu ziņotājs"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Privātuma politika"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Sūtīt ziņojumu"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Sūtīt ziņojumu"
+  },
+  "issueReporter_sending": {
+    "message": "Lūdzu uzgaidiet kamēr Adblock Plus sūta Jūsu ziņojumu."
+  },
+  "issueReporter_showData_label": {
+    "message": "Rādīt ziņojuma datus"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Šis log Jūs vedīs cauri nepieciešamajiem soļiem, lai nosūtītu Adblock Plus problēmu ziņojumu. Vispirms, lūdzu izvēlieties tipu problēmai, ko Jūs pieredzat šajā lapā:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Izvēlieties problēmas tipu"
+  }
+}

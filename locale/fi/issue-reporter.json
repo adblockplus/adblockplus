@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Lähetä nimettömänä"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "Sinuun ei voida ottaa yhteyttä ja todennäköisesti priorisoimme raportin alemmas."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Lisää kommentti"
+  },
+  "issueReporter_comment_description": {
+    "message": "Alla olevaan tekstikenttään voit syöttää kommentin (englanniksi) helpottaaksesi meitä ymmärtämään ongelman. Tämä vaihe on valinnainen mutta suositeltava, jos ongelma ei ole ilmiselvä. Voit myös käydä läpi raportin tiedot ennen sen lähettämistä."
+  },
+  "issueReporter_comment_label": {
+    "message": "Kommentti (valinnainen):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "Kommentin pituus ylittää 1000 merkkiä. Vain ensimmäiset 1000 merkkiä lähetetään."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Raporttisi on tallennettu. Se löytyy tästä osoitteesta:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Odota hetki, kun Adblock Plus kerää tarvittavia tietoja."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Tervetuloa ongelman raportoijaan"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Valmis"
+  },
+  "issueReporter_email_description": {
+    "message": "On suositeltavaa antaa toimiva sähköpostiosoite, jotta sinuun voidaan ottaa yhteyttä raporttiin liittyvissä kysymyksissä. Sen avulla voimme myös antaa tunnustusta panoksestasi ja priorisoida sitä korkeammalle."
+  },
+  "issueReporter_email_label": {
+    "message": "Sähköposti:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "Raportin lähettäminen epäonnistui virhekoodilla \"?1?\". Varmista, että olet yhteydessä Internetiin ja yritä uudelleen. Mikäli ongelma ei katoa, pyydä apua [link]Adblock Plus foorumilta[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Valitse tämä vaihtoehto, jos mainos näkyy vaikka Adblock Plus on käytössä."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus ei estä mainosta"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Valitse tämä vaihtoehto, jos sivulta puuttuu olennaista sisältöä tai se näkyy väärin. Voit päätellä onko Adblock Plus syy ongelmaan ottamalla sen väliaikaisesti pois kaytöstä."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus estää liikaa"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "Raportoimasi ongelma on todennäköisesti jo tiedossa. Lisätietoa:"
+  },
+  "issueReporter_page_title": {
+    "message": "Ongelman raportointi"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Yksityisyyskäytäntö"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Lähetä raportti"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Lähettää..."
+  },
+  "issueReporter_sending": {
+    "message": "Odota, Adblock Plus lähettää raporttia."
+  },
+  "issueReporter_showData_label": {
+    "message": "Näytä raportin tiedot"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Tämä ikkuna ohjaa sinut Adblock Plus -ongelmaraportin lähettämiseen tarvittavien vaiheiden läpi. Kerro ensin, millaisen ongelman olet kohdannut tällä sivulla:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Valitse ongelman tyyppi"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "options_customFilter_cancel": {
+    "message": "Откажи"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Неуспешно, кодовите за проверка не се совпаѓаат"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Неуспешно преземање"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Неуспешно, адресата не е валидна"
+  }
+}

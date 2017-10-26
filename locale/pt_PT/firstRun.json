@@ -17,41 +17,14 @@
   "firstRun_contributor_credits": {
     "message": "Créditos"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "Esta página continua a aparecer? <a>Clique aqui!</a>"
-  },
   "firstRun_donate": {
     "message": "donativos"
   },
   "firstRun_donate_label": {
     "message": "Ajude o nosso projeto"
   },
-  "firstRun_feature_malware": {
-    "message": "Bloqueio de malware"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "Melhore a navegação web bloqueando os domínios duvidosos."
-  },
-  "firstRun_feature_social": {
-    "message": "Remover botões sociais"
-  },
-  "firstRun_feature_social_description": {
-    "message": "Remova os botões das redes sociais, tais como o Facebook Like, que aparecem nas páginas web e que monitorizam o seu comportamento."
-  },
-  "firstRun_feature_tracking": {
-    "message": "Desativar monitorização"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "Navegue na web desativando a monitorização. Oculte o seu registo de navegação das companhias que monitorizam os seus movimentos."
-  },
-  "firstRun_features": {
-    "message": "O Adblock Plus pode fazer mais do que bloquear publicidade"
-  },
   "firstRun_filterlistsReinitializedWarning": {
     "message": "Parece que ocorreu um erro que causou a remoção de todos os filtros e nós não conseguimos restaurar a cópia de segurança. Neste sentido, os filtros e as definições de anúncios aceitáveis foram reiniciados, Analise os seus filtros e os anúncios aceitáveis nas definições do <a>Adblock Plus.</a>."
-  },
-  "firstRun_legacySafariWarning": {
-    "message": "Você está a utilizar uma versão do Safari que não é suportada pelo Adblock Plus. A aplicação pode não funcionar corretamente e prejudicar a navegação em alguns sítios web. Deve atualizar para o Safari 6.1.1 ou mais recente (disponível para o Mac OS X 10.8 Mountain Lion), para a versão 7.0.1 ou mais recente (disponível no OS x 10.9 Mavericks) ou utilizar uma versão recente dos navegadores Mozilla Firefox, Google Chrome ou Opera."
   },
   "firstRun_share": {
     "message": "Publicite o programa"
@@ -61,11 +34,5 @@
   },
   "firstRun_title": {
     "message": "O Adblock Plus foi instalado"
-  },
-  "firstRun_toggle_off": {
-    "message": "Desligado"
-  },
-  "firstRun_toggle_on": {
-    "message": "Ligado"
   }
 }

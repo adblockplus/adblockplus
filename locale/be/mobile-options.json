@@ -1,0 +1,53 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Дазволіць недакучлівую рэкламу"
+  },
+  "mops_acceptableAds_more": {
+    "message": "Даведацца больш"
+  },
+  "mops_action_cancel": {
+    "message": "Скасаваць"
+  },
+  "mops_enabled_label": {
+    "message": "Уключыць Adblock Plus для <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "Увядзіце назву"
+  },
+  "mops_error_url": {
+    "message": "Увядзіце спасылку"
+  },
+  "mops_filterlist_add": {
+    "message": "+ Дадаць спіс фільтраў"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Дадаць спіс фільтраў"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ Дадаць уласны спіс фільтраў"
+  },
+  "mops_header": {
+    "message": "Налады Adblock Plus"
+  },
+  "mops_subscribe_header": {
+    "message": "Дадаць уласны спіс фільтраў"
+  },
+  "mops_subscribe_title": {
+    "message": "Назва спіса фільтраў"
+  },
+  "mops_subscribe_url": {
+    "message": "URL-адрас спіса фільтраў"
+  },
+  "mops_subscriptions_header": {
+    "message": "Падпіскі на фільтры"
+  },
+  "mops_title": {
+    "message": "Налады Adblock Plus"
+  }
+}

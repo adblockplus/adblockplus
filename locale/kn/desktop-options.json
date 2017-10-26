@@ -1,0 +1,26 @@
+{
+  "options_customFilter_cancel": {
+    "message": "ರದ್ದು"
+  },
+  "options_filterList_column_name": {
+    "message": "ಫಿಲ್ಟರ್ ಪಟ್ಟಿಗಳನ್ನು"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "ವಿಫಲವಾಗಿದೆ, ಪ್ರತಿನಿಧಿಗಳನ್ನು ಅಸಾಮರಸ್ಯವು"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "ವಿಫಲವಾಗಿದೆ, ಡೌನ್ಲೋಡ್ ವೈಫಲ್ಯ"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "ವಿಫಲವಾಗಿದೆ, ಮಾನ್ಯ ವಿಳಾಸ"
+  },
+  "options_filterList_title": {
+    "message": "ಫಿಲ್ಟರ್ ಪಟ್ಟಿಗಳನ್ನು"
+  },
+  "options_page_title": {
+    "message": "ಸೆಟ್ಟಿಂಗ್ ಗಳು"
+  },
+  "options_tab_general": {
+    "message": "ಜನರಲ್"
+  }
+}

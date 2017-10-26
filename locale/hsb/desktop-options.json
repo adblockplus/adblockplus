@@ -1,0 +1,17 @@
+{
+  "options_customFilter_cancel": {
+    "message": "Přetorhnyć"
+  },
+  "options_email": {
+    "message": "E-mejl:"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Njeporadźiło, wopačna kontrolna suma"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Njeporadźiło, sćahowanski zmylk"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Njeporadźiło, žana płaćiwa adresa"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "options_customFilter_cancel": {
+    "message": "Poništiti"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Nije uspjelo, nepodudarnost checksum-a"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Nije uspjelo, download neuspjeh"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Neuspjeh, adresa nije validna"
+  },
+  "options_page_title": {
+    "message": "Postavke"
+  }
+}

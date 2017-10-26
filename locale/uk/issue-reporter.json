@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Анонімне подання"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "Ми не будемо мати можливість повернутися до вас і, швидше за все, пріоритети звіту нижчий."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Ввести коментар"
+  },
+  "issueReporter_comment_description": {
+    "message": "Нижче ви можете ввести коментар щоб допомогти нам зрозуміти проблему. Цей крок необов’язковий, проте рекомендований коли проблема не очевидна. Ви можете також переглянути свій коментар перед надсиланням."
+  },
+  "issueReporter_comment_label": {
+    "message": "Коментар (необов’язково):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "Довжина коментаря перевищує 1000 символів. Будуть послані лише перші 1000 символів."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Звіт було записано. Ви можете переглянути його за посиланням:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Заждіть, Adblock Plus збирає потрібні дані"
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Ласкаво просимо до звітувача про проблеми"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Гаразд"
+  },
+  "issueReporter_email_description": {
+    "message": "Ми рекомендуємо Вам ввести адресу електронної пошти, щоб ми могли зв'язатися з вами, якщо виникнуть питання з приводу звіту. Це також дозволить нам розпізнати ваші внески та зробити їх більш пріоритетними."
+  },
+  "issueReporter_email_label": {
+    "message": "Електронна пошта:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "Помилка відправки звіту: «?1?». Упевніться що ви під’єднані до інтернету та спробуйте ще раз. Якщо проблема не зникає, будь ласка пошукайте допомоги на [link]форумі Adblock Plus[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Виберіть цей варіант якщо реклама показується попри те що Adblock Plus увімкнено."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus не блокує рекламу"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Виберіть цей варіант якщо на сторінці відсутня частина вмісту, або якщо вона показується чи функціонує неправильно. Ви можете перевірити, чи був Adblock Plus причиною - тимчасово його вимкнувши."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus блокує забагато"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "Проблема про яку ви повідомили вже відома. Детальніше:"
+  },
+  "issueReporter_page_title": {
+    "message": "Повідомити про проблему"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Політика приватності"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Надіслати звіт"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Надіслати звіт"
+  },
+  "issueReporter_sending": {
+    "message": "Заждіть доки Adblock Plus надсилає ваш звіт."
+  },
+  "issueReporter_showData_label": {
+    "message": "Показати дані звіту"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Це вікно проведе вас по кроках надсилання звіту про проблему з Adblock Plus. Спершу, виберіть тип проблеми з якою ви зіткнулись на цій сторінці:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Виберіть тип проблеми"
+  }
+}

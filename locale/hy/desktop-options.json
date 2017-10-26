@@ -1,0 +1,20 @@
+{
+  "options_customFilter_cancel": {
+    "message": "Չեղարկել"
+  },
+  "options_email": {
+    "message": "Email՝"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Անհաջող."
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Անհաջող. Բեռնման սխալ"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Անհաջող. Սխալ հասցե"
+  },
+  "options_page_title": {
+    "message": "Կարգավորել"
+  }
+}

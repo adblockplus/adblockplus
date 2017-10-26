@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "익명 전송"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "우리가 당신에 게 돌아올 수 없을 고 가능성이 보고서 낮은 우선 순위를 지정 합니다."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "보고 내용 입력"
+  },
+  "issueReporter_comment_description": {
+    "message": "모든 언어로 입력 가능 + 페이지 전체 URL : 평소 사용하거나 설명하기 쉬운 언어로 보고할 내용을 입력하십시오. 그런 후 주소 표시줄의 페이지 전체 URL을 복사해 입력한 내용 아래에 반드시 붙여넣으십시오."
+  },
+  "issueReporter_comment_label": {
+    "message": "보고 내용 (필수 항목) :"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "설명의 길이가 1000자를 초과하여 1000자까지만 전송됩니다."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "보고서가 서버에 저장되었고, 다음 주소로 보고서를 확인할 수 있습니다. 필터 유지자가 보고를 접수하면 보고서의 Status 항목에는 unknown 대신에 처리 결과가 표시됩니다."
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "필요한 자료를 수집하는 동안 잠시만 기다려주십시오."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "문제 보고 마법사를 이용해주셔서 고맙습니다!"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "실행"
+  },
+  "issueReporter_email_description": {
+    "message": "전자우편 주소를 입력할 것을 권장합니다. 만약 보고된 문제에 대해 문의해야 할 때 연락을 할 수 있기 때문입니다."
+  },
+  "issueReporter_email_label": {
+    "message": "메일 주소:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "오류 코드 \"?1?\"에 의해 보고 전송을 실패했습니다. 인터넷이 접속되었는지 확인한 후 다시 시도하십시오. 만약 문제가 계속해서 발생한다면 [link]애드블록 플러스 포럼[/link]에 도움을 요청하십시오."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "애드블록 플러스를 사용함에도 불구하고 광고가 보이면 이 옵션을 선택하십시오."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "애드블록 플러스가 광고를 차단 안 함"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "중요한 콘텐츠 누락, 웹 페이지가 잘못 표시됨, 오작동 등 차단 오류가 있으면 이 옵션을 선택하십시오. 애드블록 플러스의 사용을 임시로 중지하여 애드블록 플러스가 문제의 원인인지 먼저 확인하십시오."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "애드블록 플러스가 콘텐츠를 과도하게 차단함"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "보고한 문제는 다른 사용자들에 의해 이미 많이 보고되었습니다. 더 많은 정보 :"
+  },
+  "issueReporter_page_title": {
+    "message": "문제 보고 마법사"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "개인 정보 보호 정책"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "보고서 전송"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "보고서 전송"
+  },
+  "issueReporter_sending": {
+    "message": "보고서를 제출하는 동안 잠시만 기다려주십시오."
+  },
+  "issueReporter_showData_label": {
+    "message": "보고할 자료 보기"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "문제 보고 마법사는 애드블록 플러스의 문제를 필터 유지자에게 보고하기 위해 필요한 단계를 안내합니다. 먼저 현재 페이지의 문제 유형을 선택하십시오."
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "문제 유형 선택"
+  }
+}

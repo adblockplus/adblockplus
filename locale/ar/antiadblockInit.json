@@ -1,0 +1,8 @@
+{
+  "notification_antiadblock_message": {
+    "message": "يعرف هذا الموقع بإظهاره رسائل موجهة إلى المستخدمي آدبلوك بلس. هل تريد أن يخفي آدبلوك بلس هذه الرسائل المستهدفة؟"
+  },
+  "notification_antiadblock_title": {
+    "message": "إخفاء الرسائل المستهدفة؟"
+  }
+}

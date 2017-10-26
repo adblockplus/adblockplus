@@ -1,0 +1,11 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Дозволити деяку ненав'язливу рекламу"
+  },
+  "mops_action_cancel": {
+    "message": "Скасувати"
+  },
+  "mops_subscriptions_header": {
+    "message": "Підписки на фільтри"
+  }
+}

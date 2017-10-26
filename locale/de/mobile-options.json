@@ -1,0 +1,11 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Einige nicht aufdringliche Werbung zulassen"
+  },
+  "mops_action_cancel": {
+    "message": "Abbrechen"
+  },
+  "mops_subscriptions_header": {
+    "message": "Filterabonnements"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "issueReporter_commentPage_heading": {
+    "message": "Вметни коментар"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Ве молиме почекајте додека Adblock Plus не ги собере потребните податоци."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Добредојдовте во репортерот за грешки"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Готово"
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Одбери ја опцијата доколку е прикажана реклама и покрај тоа што Adblock Plus е вклучен."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus не блокира реклама"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Одбери ја опцијава доколку на страницата недостасува важна содржина, прикажува неточно или не функционира соодветно. Ќе можеш да воочиш дали Adblock Plus е причината за проблемот така што ќе го исклучиш привремено."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus блокира премногу"
+  },
+  "issueReporter_page_title": {
+    "message": "Репортер за грешки"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Политика за приватност"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Овој прозорец ќе Ве води преку чекорите потребни за пријавување на проблем со Adblock Plus. Прво, одберете го видот на проблем кој го имате на оваа страна:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Одбери вид на проблем"
+  }
+}

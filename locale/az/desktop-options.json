@@ -1,0 +1,17 @@
+{
+  "options_customFilter_cancel": {
+    "message": "Ləğv et"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Baş tutmadı, rəqəmsal cəm uyğunlaşmadı"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Baş tutmadı yükləmə uğursuz oldu"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Baş tutmadı ünvan düzgün deyil"
+  },
+  "options_page_title": {
+    "message": "Tənzimləmələr"
+  }
+}

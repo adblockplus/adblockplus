@@ -1,0 +1,44 @@
+{
+  "options_acceptableAds_header": {
+    "message": "Прийнятна реклама"
+  },
+  "options_customFilter_cancel": {
+    "message": "Скасувати"
+  },
+  "options_customize_showNotifications": {
+    "message": "Показувати корисні повідомлення"
+  },
+  "options_email": {
+    "message": "Електронна пошта:"
+  },
+  "options_filterList_column_name": {
+    "message": "Списки фільтрів"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Помилка, не збіглась контрольна сума"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Помилка, неможливо викачати"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Помилка, невірна адреса"
+  },
+  "options_filterList_title": {
+    "message": "Списки фільтрів"
+  },
+  "options_page_title": {
+    "message": "Налаштування"
+  },
+  "options_support_title": {
+    "message": "Підтримка"
+  },
+  "options_tab_general": {
+    "message": "Загальні"
+  },
+  "options_tab_help": {
+    "message": "Допомога"
+  },
+  "options_tab_whitelist": {
+    "message": "Дозволені веб-сайти"
+  }
+}

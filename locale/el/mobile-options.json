@@ -1,0 +1,11 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Να επιτρέπονται μερικές μη-παρεμβατικές διαφημίσεις"
+  },
+  "mops_action_cancel": {
+    "message": "Ακύρωση"
+  },
+  "mops_subscriptions_header": {
+    "message": "Συνδρομές φίλτρων"
+  }
+}

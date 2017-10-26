@@ -9,63 +9,30 @@
     "message": "¿Tienes un smartphone o una tableta?"
   },
   "firstRun_acceptableAdsExplanation": {
-    "message": "Nos gustaría fomentar el uso de una publicidad más directa y menos intrusiva por parte de los sitios web. Por eso hemos establecido unas <a>estrictas directivas </a> para identificar la publicidad aceptable, que se muestra en modo predeterminado. Si sigue queriendo bloquear toda la publicidad puede <a>desactivar</a> este modo en unos pocos segundos."
+    "message": "Nos gustaría fomentar el uso de una publicidad más directa y menos agresiva en los sitios web. Por eso hemos establecido unas <a>directrices estrictas</a> para identificar la publicidad aceptable, que se muestra en modo predeterminado. Si aun quieres bloquear toda la publicidad puedes <a>desactivar</a> este modo en unos pocos segundos."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Ahora se bloqueará la publicidad molesta"
   },
   "firstRun_contributor_credits": {
-    "message": "Colaboradores"
-  },
-  "firstRun_dataCorruptionWarning": {
-    "message": "¿Esta página sigue apareciendo? <a>¡Haga clic aquí!</a>"
+    "message": "Créditos del contribuyente"
   },
   "firstRun_donate": {
-    "message": "Donar"
+    "message": "donar"
   },
   "firstRun_donate_label": {
     "message": "Apoye nuestro proyecto"
   },
-  "firstRun_feature_malware": {
-    "message": "Bloqueo de malware"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "Navegue con más seguridad bloqueando dominios identificados como malware."
-  },
-  "firstRun_feature_social": {
-    "message": "Eliminar botones de redes sociales"
-  },
-  "firstRun_feature_social_description": {
-    "message": "Elimine automáticamente de su navegación los botones de redes sociales, como los \"Me gusta\" de Facebook, incluidos en las paginas web y que rastrean sus hábitos."
-  },
-  "firstRun_feature_tracking": {
-    "message": "Desactivar el rastreo"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "Navegue de forma privada desactivando el rastreo - ocultando su rastro a las empresas de publicidad que espían cada uno de sus movimientos."
-  },
-  "firstRun_features": {
-    "message": "Adblock Plus puede hacer más cosas que bloquear publicidad"
-  },
   "firstRun_filterlistsReinitializedWarning": {
     "message": "Parece que un problema provocó que se eliminasen todos los filtros y no se pudo restaurar una copia de seguridad. Por ello ha sido necesario reiniciar los filtros y la configuración de Anuncios Aceptables. Por favor, revise sus listas de filtros y la configuración de Anuncios Aceptables en <a>Opciones de Adblock Plus</a>."
-  },
-  "firstRun_legacySafariWarning": {
-    "message": "Está utilizando una versión antigua de Safari no soportada por Adblock Plus, por lo que podría funcionar incorrectamente o afectar a su experiencia de usuario en algunos sitios web. Le recomendamos actualizar a Safari 6.1.1 o posterior (para Mac OS X 10.8 Mountain Lion), o a Safari 7.0.1 o superior (para Mac OS X 10.9 Mavericks), o usar la última versión de Mozilla Firefox, Google Chrome u Opera."
   },
   "firstRun_share": {
     "message": "Dile a tus amigos"
   },
   "firstRun_share_headline": {
-    "message": "<a>Ayúdanos</a> a hacer de esta web un mejor lugar"
+    "message": "<a>Danos una mano</a> en hacer la web un lugar mejor"
   },
   "firstRun_title": {
     "message": "Adblock Plus ha sido instalado"
-  },
-  "firstRun_toggle_off": {
-    "message": "DESACTIVAR"
-  },
-  "firstRun_toggle_on": {
-    "message": "ACTIVAR"
   }
 }

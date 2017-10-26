@@ -1,0 +1,8 @@
+{
+  "notification_antiadblock_message": {
+    "message": "Kjo faqe ka qenë i njohur për të treguar mesazhe në shënjestër për përdoruesit Adblock Plus. A doni Adblock Plus për të fshehur mesazhet në shënjestër?"
+  },
+  "notification_antiadblock_title": {
+    "message": "Fshih mesazhe në shënjestër?"
+  }
+}

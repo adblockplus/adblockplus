@@ -1,0 +1,53 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Zezwalaj na nie natrętne reklamy"
+  },
+  "mops_acceptableAds_more": {
+    "message": "Więcej…"
+  },
+  "mops_action_cancel": {
+    "message": "Anuluj"
+  },
+  "mops_enabled_label": {
+    "message": "Włącz Adblock Plus na <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "Podaj tytuł"
+  },
+  "mops_error_url": {
+    "message": "Podaj adres URL"
+  },
+  "mops_filterlist_add": {
+    "message": "Dodaj zestaw filtrów"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Dodaj zestaw filtrów"
+  },
+  "mops_filterlist_add_url": {
+    "message": "Dodaj własny zestaw filtrów"
+  },
+  "mops_header": {
+    "message": "Ustawienia Adblock Plusa"
+  },
+  "mops_subscribe_header": {
+    "message": "Dodaj własny zestaw filtrów"
+  },
+  "mops_subscribe_title": {
+    "message": "Nazwa listy"
+  },
+  "mops_subscribe_url": {
+    "message": "Adres URL listy"
+  },
+  "mops_subscriptions_header": {
+    "message": "Zestawy filtrów"
+  },
+  "mops_title": {
+    "message": "Ustawienia Adblock Plusa"
+  }
+}

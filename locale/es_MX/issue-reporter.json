@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Envío Anónimo"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "No podremos comunicarnos contigo y es probable que le demos una prioridad inferior a tu informe."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Comentar"
+  },
+  "issueReporter_comment_description": {
+    "message": "El campo de texto a continuación le permite escribir un comentario para ayudarnos a entender el problema. Este paso es opcional pero recomendado si el problema no es obvio. Puede tambien revisar el reporte de datos antes de que sea enviado."
+  },
+  "issueReporter_comment_label": {
+    "message": "Comentario (opcional):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "El tamaño de su comentario excede los 1000 caracteres. Solo los primeros 1000 caracteres seran enviados."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Su reporte ha sido salvado. Puede acceder al mismo en la siguiente direccion:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Por favor espere un momento mientras Adblock Plus reúne los datos necesarios."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Bienvenido al reportero de problemas"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Terminado"
+  },
+  "issueReporter_email_description": {
+    "message": "Te sugerimos que ingreses una dirección válida de correo electrónico para que podamos contactarte si hay preguntas sobre tu informe. También nos permitirá reconocer tus contribuciones y darles mayor prioridad."
+  },
+  "issueReporter_email_label": {
+    "message": "Correo electrónico:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "Un intento de enviar el reporte ha fallado con el código de error \"?1?\". Por favor asegúrese de que se encuentra conectado a internet y vuelva a intentarlo. Si el problema persiste por favor solicite asistencia en el [link]Foro de Adblock Plus[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Seleccione esta opción si una publicidad continua mostrándose a pesar que Adblock Plus se encuentra activado."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus no bloquea una publicidad"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Seleccione esta opción si la página carece de contenido importante, muestra incorrectamente o falla al funcionar como debe. Puede determinar si Adblock Plus es el causante del problema desactivándolo temporalmente."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus está bloqueando demasiado"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "El problema que ha reportado probablemente ya sea conocido. Mas información:"
+  },
+  "issueReporter_page_title": {
+    "message": "Reportero de problemas"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Política de Privacidad"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Enviar reporte"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Enviar reporte"
+  },
+  "issueReporter_sending": {
+    "message": "Por favor espere mientras Adblock Plus envía su reporte."
+  },
+  "issueReporter_showData_label": {
+    "message": "Mostrar datos del reporte"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Esta ventana lo guiará por pasos, necesarios para el envio de un reporte de problemas de Adblock Plus. Primero, por favor seleccione el tipo de problema que esta experimentando en esta página:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Elija tipo de problema"
+  }
+}

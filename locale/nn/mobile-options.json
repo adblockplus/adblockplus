@@ -1,0 +1,11 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Tillat enkelte ikke-påtrengende annonser"
+  },
+  "mops_action_cancel": {
+    "message": "Avbryt"
+  },
+  "mops_subscriptions_header": {
+    "message": "Filter abonnement"
+  }
+}

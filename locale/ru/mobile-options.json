@@ -1,0 +1,53 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Разрешить некоторую ненавязчивую рекламу"
+  },
+  "mops_acceptableAds_more": {
+    "message": "Узнать больше"
+  },
+  "mops_action_cancel": {
+    "message": "Отменить"
+  },
+  "mops_enabled_label": {
+    "message": "Включить Adblock Plus на <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "Пожалуйста, введите название"
+  },
+  "mops_error_url": {
+    "message": "Пожалуйста, введите URL"
+  },
+  "mops_filterlist_add": {
+    "message": "+ Добавить список фильтров"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Добавить список фильтров"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ Добавить собственный список фильтров"
+  },
+  "mops_header": {
+    "message": "Настройки Adblock Plus"
+  },
+  "mops_subscribe_header": {
+    "message": "Добавить собственный список фильтров"
+  },
+  "mops_subscribe_title": {
+    "message": "Имя списка фильтров"
+  },
+  "mops_subscribe_url": {
+    "message": "URL списка фильтров"
+  },
+  "mops_subscriptions_header": {
+    "message": "Подписки"
+  },
+  "mops_title": {
+    "message": "Настройки Adblock Plus"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Anonym Bydrage"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "We kinnen dy gjin kommentaar jaan en sille wierskynlik in leage prioriteit oan dyn rapport jaan."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Kommentaar"
+  },
+  "issueReporter_comment_description": {
+    "message": "It tekstfjild hjirûnder jout de mooglikheid om kommentaar te jaan. Dizze stap is opsjoneel, mar oanrikkemandearre as it in frjemd probleem is. Jo kinne ek de gegevens besjen eardat it ferstjoerd wurd."
+  },
+  "issueReporter_comment_label": {
+    "message": "Kommentaar (opsjoneel):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "De lingte fan jo kommentaar hat mear as 1000 karakters. Allinnich de earste 1000 karakters sille ferstjoerd wurde."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Jo rapport is bewarre. Jo kinne it besjen op it folgjende adres:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "In amerijke wylst Adblock Plus de nedige gegevens sammelt."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Wolkom by de probleemrapportearder"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Klear"
+  },
+  "issueReporter_email_description": {
+    "message": "It soe moai wêze ast in goed mail adres kist opjaan sa dat wy kontakt my die kinne opnimme as der fragen binne oer dyn rapport. It jout ús ek de mooglikheid om minsken te werkennen en mear prioriteit te jaan."
+  },
+  "issueReporter_email_label": {
+    "message": "E-mail:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "It is net slagge om it rapport te ferstjoeren, flaterkoade \"?1?\". Wês wis dat jo ferbûn binne mei it ynternet en probearje nochris. As it probleem bliuwt freegje dan assistinsje yn it [link]Adblock Plus foarum[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Selektearje dizze opsje as in advertinsje toant wurd wylst Adblock Plus ynskeakele is."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus blokkearret in advertinsje net"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Selektearje dizze opsje as de side wichtige ynhâld mist, net goed toant wurd of net goed funksjonearret. Jo kinne útfine oft Adblock Plus de oarsaak is fan it probleem troch it tydlik út te skeakeljen."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus blokkearret te folle"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "It probleem dat jo rapportearre hawwe is miskien al bekend. Mear ynformaasje:"
+  },
+  "issueReporter_page_title": {
+    "message": "Probleemrapportearder"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Privacybelied"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Ferstjoer rapport"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Ferstjoer rapport"
+  },
+  "issueReporter_sending": {
+    "message": "Wachtsje wylst Adblock Plus jo rapport ynstjoerd."
+  },
+  "issueReporter_showData_label": {
+    "message": "Toan rapportgegevens"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Dit finster sil jo begeliede troch de stappen nedich foar it yntsjinjen fan in Adblock Plus probleemrapport. Earst, selektearje it type probleem wat jo tsjinkommen binne op dizze side:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Selektearje probleemtype"
+  }
+}

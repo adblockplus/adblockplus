@@ -1,0 +1,116 @@
+{
+  "options_acceptableAds_header": {
+    "message": "Quảng cáo được chấp nhận"
+  },
+  "options_advanced_description": {
+    "message": "Tuỳ biến Adblock Plus, thêm hoặc xoá danh sách bộ lọc, tạo và duy trì danh sách bộ lọc của riêng bạn"
+  },
+  "options_close": {
+    "message": "đóng"
+  },
+  "options_control_remove_title": {
+    "message": "xoá"
+  },
+  "options_customFilter_cancel": {
+    "message": "Hủy bỏ"
+  },
+  "options_customFilter_edit": {
+    "message": "Sửa bộ lọc"
+  },
+  "options_customFilter_save": {
+    "message": "Lưu"
+  },
+  "options_customFilters_widget_title": {
+    "message": "Danh sách bộ lọc của tôi"
+  },
+  "options_customize_showNotifications": {
+    "message": "Hiện thông báo hữu ích"
+  },
+  "options_dialog_about_title": {
+    "message": "Về Adblock Plus"
+  },
+  "options_dialog_language_other_empty": {
+    "message": "Hiện không có ngôn ngữ có sẵn."
+  },
+  "options_dialog_language_title": {
+    "message": "Chọn ngôn ngữ"
+  },
+  "options_email": {
+    "message": "Email:"
+  },
+  "options_filterList_column_name": {
+    "message": "Danh sách các bộ lọc"
+  },
+  "options_filterList_column_status": {
+    "message": "Trạng thái"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Thất bại, mã kiểm tra không phù hợp"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Thất bại, tải xuống thất bại"
+  },
+  "options_filterList_lastDownload_inProgress": {
+    "message": "Đang cập nhật"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Thất bại, không phải là địa chỉ hợp lệ"
+  },
+  "options_filterList_minutes": {
+    "message": "phút trước"
+  },
+  "options_filterList_now": {
+    "message": "Mới đây"
+  },
+  "options_filterList_source": {
+    "message": "nguồn"
+  },
+  "options_filterList_state_active": {
+    "message": "Đang hoạt động"
+  },
+  "options_filterList_state_disabled": {
+    "message": "Bị vô hiệu hóa"
+  },
+  "options_filterList_title": {
+    "message": "Danh sách các bộ lọc"
+  },
+  "options_filterList_updateNow": {
+    "message": "cập nhật ngay"
+  },
+  "options_filterList_website": {
+    "message": "trang web"
+  },
+  "options_footer_about": {
+    "message": "Về Adblock Plus"
+  },
+  "options_footer_contribute": {
+    "message": "Đóng góp"
+  },
+  "options_language_change": {
+    "message": "thay đổi"
+  },
+  "options_language_header": {
+    "message": "Ngôn ngữ"
+  },
+  "options_more_filters_header": {
+    "message": "Thêm bộ lọc"
+  },
+  "options_page_title": {
+    "message": "Cài đặt"
+  },
+  "options_privacy_header": {
+    "message": "Riêng tư & bảo mật"
+  },
+  "options_support_title": {
+    "message": "Hỗ trợ"
+  },
+  "options_tab_general": {
+    "message": "Tổng quan"
+  },
+  "options_tab_help": {
+    "message": "Trợ giúp"
+  },
+  "options_tab_whitelist": {
+    "message": "Danh sách trang web không gây hại"
+  }
+}

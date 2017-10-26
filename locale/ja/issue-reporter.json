@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "匿名で報告"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "匿名で報告の際は報告者を個別に識別できないので優先度が下がります。"
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "コメントを入力"
+  },
+  "issueReporter_comment_description": {
+    "message": "症状、再現手順、原因特定の根拠、発生開始時期、正常時との違い、画面上の位置等をコメントに記入"
+  },
+  "issueReporter_comment_label": {
+    "message": "コメント (的確に記述すれば良い対応が期待できます):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "コメントが 1000 文字を超えているので、先頭から 1000 文字だけ送信します"
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "あなたの不具合報告は保存されました。次のアドレスでアクセスできます:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Adblock Plus が必要なデータを集めています。しばらくお待ちください。"
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "不具合報告へようこそ"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "完了"
+  },
+  "issueReporter_email_description": {
+    "message": "メールアドレスを入力すると調査中の不明な点を問い合わせたり、報告者毎に優先度に上げた対応が可能になります。"
+  },
+  "issueReporter_email_label": {
+    "message": "Email:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "不具合報告の送信がエラーコード \"?1?\" で失敗しました。インターネットに接続されているか確認し再試行してください。問題が解決しない場合は [link]Adblock Plus フォーラム[/link] で助けを求めてください。"
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Adblock Plus が有効でも広告が表示される場合はこの選択肢。"
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus が広告をブロックしていない"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "あるべきコンテンツがない、表示がおかしい、フィルタが適切に機能してない場合はこの選択肢。 (ヒント: Adblock Plus を一時的に無効にすれば、原因に Adblock Plus が関わっているか確認できます)"
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus のブロックが過剰"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "恐らく、あなたの報告した不具合は既知の問題です。詳細:"
+  },
+  "issueReporter_page_title": {
+    "message": "不具合報告"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "プライバシー・ポリシー"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "不具合報告を送信"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "不具合報告を送信"
+  },
+  "issueReporter_sending": {
+    "message": "Adblock Plus が不具合報告を送信する間、しばらくお待ちください"
+  },
+  "issueReporter_showData_label": {
+    "message": "不具合報告データを表示"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "このウィンドウで不具合の報告に必要なステップをご案内します。まず最初に、遭遇した不具合の種別を選択してください:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "不具合種別を選択"
+  }
+}

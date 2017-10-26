@@ -1,0 +1,32 @@
+{
+  "options_customFilter_cancel": {
+    "message": "Batal"
+  },
+  "options_email": {
+    "message": "E-mel:"
+  },
+  "options_filterList_column_name": {
+    "message": "Senarai penapis"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Gagal, checksum tidak sepadan"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Gagal, kegagalan memuat-turun"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Gagal, bukan alamat yang sah"
+  },
+  "options_filterList_title": {
+    "message": "Senarai penapis"
+  },
+  "options_page_title": {
+    "message": "Tetapan"
+  },
+  "options_tab_general": {
+    "message": "Umum"
+  },
+  "options_tab_whitelist": {
+    "message": "Laman web yang disenarai putih"
+  }
+}

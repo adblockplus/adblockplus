@@ -17,41 +17,14 @@
   "firstRun_contributor_credits": {
     "message": "Crédits des contributeurs"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "Cette page s'affiche-t-elle encore ? <a>Cliquez ici !</a>"
-  },
   "firstRun_donate": {
     "message": "Faire un don"
   },
   "firstRun_donate_label": {
     "message": "Soutenir notre projet"
   },
-  "firstRun_feature_malware": {
-    "message": "Blocage des logiciels malveillants"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "Rendre votre navigation plus sécurisée en bloquant les domaines malveillants connus."
-  },
-  "firstRun_feature_social": {
-    "message": "Supprimer les boutons des réseaux sociaux"
-  },
-  "firstRun_feature_social_description": {
-    "message": "Se débarrasser automatiquement des boutons de réseaux sociaux tels que les « J'aime » Facebook qui apparaissent sur les pages Web et suivent votre comportement."
-  },
-  "firstRun_feature_tracking": {
-    "message": "Désactiver l'espionnage"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "Naviguer incognito en désactivant le suivi, en masquant vos traces aux publicistes qui traqueraient vos faits et gestes."
-  },
-  "firstRun_features": {
-    "message": "Pour terminer l'installation, choisissez un niveau de protection de votre vie privée"
-  },
   "firstRun_filterlistsReinitializedWarning": {
     "message": "Il semblerait qu'à cause d'un problème, tous les filtres aient été supprimés et que nous n'ayons été en mesure de rétablir une sauvegarde. C'est pourquoi nous avons été contraints de réinitialiser vos filtres et les paramètres des publicités acceptables. Veuillez vérifier vos listes de filtres et les paramètres de publicités acceptables dans les <a>options d'Adblock Plus</a>."
-  },
-  "firstRun_legacySafariWarning": {
-    "message": "Vous utilisez une vieille version de Safari incompatible avec Adblock Plus. Elle pourra ne pas bien fonctionner ou nuire à l'expérience utilisateur sur certains sites Web. Nous recommandons fortement de mettre à jour Safari, soit vers la version 6.1.1 ou supérieure (sur OS X 10.8 Mountain Lion), soit vers la version 7.0.1 ou supérieure (sur OS X 10.9 Mavericks) ou d'utiliser la dernière version de Mozilla Firefox, Google Chrome ou Opera."
   },
   "firstRun_share": {
     "message": "Parlez-en à vos amis"
@@ -61,11 +34,5 @@
   },
   "firstRun_title": {
     "message": "Adblock Plus a été installée"
-  },
-  "firstRun_toggle_off": {
-    "message": "INACTIF"
-  },
-  "firstRun_toggle_on": {
-    "message": "ACTIF"
   }
 }

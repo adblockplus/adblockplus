@@ -1,0 +1,104 @@
+{
+  "options_acceptableAds_header": {
+    "message": "Akseptable annonser"
+  },
+  "options_close": {
+    "message": "lukk"
+  },
+  "options_control_remove_title": {
+    "message": "fjern"
+  },
+  "options_customFilter_cancel": {
+    "message": "Avbryt"
+  },
+  "options_customFilter_edit": {
+    "message": "Rediger filter"
+  },
+  "options_customFilter_save": {
+    "message": "Lagre"
+  },
+  "options_customFilters_edit_placeholder": {
+    "message": "f.eks $filter$",
+    "placeholders": {
+      "filter": {
+        "content": "$1",
+        "example": "/ads/track/*"
+      }
+    }
+  },
+  "options_customize_showNotifications": {
+    "message": "Vis nyttige varsler"
+  },
+  "options_dialog_about_title": {
+    "message": "Om Adblock Plus"
+  },
+  "options_email": {
+    "message": "E-post:"
+  },
+  "options_filterList_column_name": {
+    "message": "Filterlister"
+  },
+  "options_filterList_column_status": {
+    "message": "Status"
+  },
+  "options_filterList_hours": {
+    "message": "timer siden"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Mislyktes, kontrollsummen stemmer ikke"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Feilet, nedlastingsfeil"
+  },
+  "options_filterList_lastDownload_inProgress": {
+    "message": "Oppdaterer"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Feilet, ikke en gyldig adresse"
+  },
+  "options_filterList_minutes": {
+    "message": "minutter siden"
+  },
+  "options_filterList_title": {
+    "message": "Filterlister"
+  },
+  "options_footer_about": {
+    "message": "Om Adblock Plus"
+  },
+  "options_footer_contribute": {
+    "message": "Bidra"
+  },
+  "options_language_header": {
+    "message": "Språk"
+  },
+  "options_more_filters_header": {
+    "message": "Flere filtre"
+  },
+  "options_page_title": {
+    "message": "Innstillinger"
+  },
+  "options_social_description": {
+    "message": "Har du et spørsmål eller en ny idé? Vi er her for å hjelpe."
+  },
+  "options_social_title": {
+    "message": "Ta kontakt"
+  },
+  "options_support_title": {
+    "message": "Støtte"
+  },
+  "options_tab_advanced": {
+    "message": "Avansert"
+  },
+  "options_tab_general": {
+    "message": "Generelt"
+  },
+  "options_tab_help": {
+    "message": "Hjelp"
+  },
+  "options_tab_whitelist": {
+    "message": "Hvitelistede nettsteder"
+  },
+  "options_whitelist_add": {
+    "message": "Legg til nettsted"
+  }
+}

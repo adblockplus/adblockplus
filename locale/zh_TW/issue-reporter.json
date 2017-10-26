@@ -1,0 +1,77 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "以匿名方式提交"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "我們將無法聯絡您，且此報告的優先權可能會相對較低。"
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "輸入註解"
+  },
+  "issueReporter_comment_description": {
+    "message": "下面的文字方塊可以讓您輸入額外的註解，以幫助我們更了解問題所在。這個步驟不是必須的，但若問題不太明顯時還是建議您這麼做。在回報之前您也可以檢視報告資料。"
+  },
+  "issueReporter_comment_label": {
+    "message": "備註 (選用):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "您輸入的註解超過 1000 個字元。只有前 1000 個字元會被傳送。"
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "報告已儲存。您可以在下列網址存取:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "請稍候，Adblock Plus 正在蒐集必要的資料。"
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "歡迎使用錯誤回報器"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "完成"
+  },
+  "issueReporter_email_description": {
+    "message": "建議您輸入有效的電子郵件位址，如此我們才能在有疑問時連絡您。這也會用來辨識您所提交的報告，並提高其優先權。"
+  },
+  "issueReporter_errorMessage": {
+    "message": "嘗試傳送報告失敗，錯誤碼 \"?1?\"。請確定您已連上網路後再試一次。若依舊失敗，請到 [link]Adblock Plus 討論區[/link] 尋求協助。"
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "選擇此選項表示雖然已啟用 Adblock Plus，但廣告依然顯示在網頁中。"
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus 沒有擋掉廣告"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "選擇此選項表示網頁缺少了主要內容、顯示錯誤或功能異常。您可以暫時停用 Adblock Plus 後再試一次，若停用後問題消失，則很可能就是 Adblock Plus 的問題。"
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus 擋了太多東西"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "您回報的錯誤已重複。檢視更多資訊:"
+  },
+  "issueReporter_page_title": {
+    "message": "錯誤回報器"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "隱私權政策"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "傳送報告"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "傳送報告"
+  },
+  "issueReporter_sending": {
+    "message": "請稍候，Adblock Plus 正在傳送您的報告。"
+  },
+  "issueReporter_showData_label": {
+    "message": "顯示報告資料"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "本視窗會一步步指導您傳送一份 Adblock Plus 錯誤報告。首先，請選擇您在此頁面碰到的錯誤類型："
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "選擇問題類型"
+  }
+}

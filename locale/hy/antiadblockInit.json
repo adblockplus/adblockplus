@@ -1,0 +1,8 @@
+{
+  "notification_antiadblock_message": {
+    "message": "Այս կայքը ցուցադրում է նամակներ Adblock Plus-ի օգտվողներին։ Ուզո՞ւմ եք թաքցնել դրանք։"
+  },
+  "notification_antiadblock_title": {
+    "message": "Թաքցնե՞լ նամակները"
+  }
+}

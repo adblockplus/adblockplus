@@ -1,0 +1,11 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Leyfa auglýsingar sem eru ekki uppáþrengjandi"
+  },
+  "mops_action_cancel": {
+    "message": "Hætta við"
+  },
+  "mops_subscriptions_header": {
+    "message": "Síu áskriftir"
+  }
+}

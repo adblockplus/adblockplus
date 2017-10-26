@@ -1,0 +1,14 @@
+{
+  "common_feature_anti_adblock_title": {
+    "message": "Не паказваць папярэджанні Adblock"
+  },
+  "common_feature_malware_title": {
+    "message": "Блакаванне шкоднага ПЗ"
+  },
+  "common_feature_privacy_title": {
+    "message": "Блакаванне дадатковага адсочвання"
+  },
+  "common_feature_social_title": {
+    "message": "Блакаванне адсочвання праз значкі сацсетак"
+  }
+}

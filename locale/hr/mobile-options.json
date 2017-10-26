@@ -1,0 +1,41 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Dopusti neke nenametljive reklame"
+  },
+  "mops_acceptableAds_more": {
+    "message": "Saznajte više"
+  },
+  "mops_action_cancel": {
+    "message": "Poništi"
+  },
+  "mops_enabled_label": {
+    "message": "Omogući Adblock Plus na <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "Molimo unesite naslov"
+  },
+  "mops_error_url": {
+    "message": "Molimo unesite URL poveznicu"
+  },
+  "mops_filterlist_add": {
+    "message": "+ Dodaj popis filtera"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Dodaj popis filtera"
+  },
+  "mops_header": {
+    "message": "Adblock Plus postavke"
+  },
+  "mops_subscriptions_header": {
+    "message": "Pretplate filtera"
+  },
+  "mops_title": {
+    "message": "Adblock Plus postavke"
+  }
+}

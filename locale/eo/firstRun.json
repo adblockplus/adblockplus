@@ -8,41 +8,14 @@
   "firstRun_contributor_credits": {
     "message": "Danko al kontribuintoj"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "Ĉu la paĝo estas plumontrata? <a>Klaku ĉi tie!</a>"
-  },
   "firstRun_donate": {
     "message": "donaci"
   },
   "firstRun_donate_label": {
     "message": "Subtenu nian projekton"
   },
-  "firstRun_feature_malware": {
-    "message": "Bloki fiprogramaron"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "Faru vian retumadon pli sekura blokante konatajn domajnojn de fiprogramaro."
-  },
-  "firstRun_feature_social": {
-    "message": "Forigi butonojn de sociaj aŭdvidaĵoj"
-  },
-  "firstRun_feature_social_description": {
-    "message": "Aŭtomate forigi vian retan agadon faritan pere de butonoj de sociaj medioj, kiel la butono \"Ŝati\" en Fejsbuko, kiuj aperas en retpaĝoj kaj spuras vian konduton."
-  },
-  "firstRun_feature_tracking": {
-    "message": "Malebligi spuradon"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "Retumu private malebligante spuradon resp. kaŝante viajn spurojn antaŭ reklamfirmaoj, kiuj volonte spurus ĉiun el viaj movoj."
-  },
-  "firstRun_features": {
-    "message": "Adblock Plus povas fari pli multe ol bloki reklamon"
-  },
   "firstRun_filterlistsReinitializedWarning": {
     "message": "Ŝajnas, ke problemo kaŭzis, ke ĉiuj filtroj estas forigitaj kaj ni ne\npovis restaŭri la sekurkopion. Tial ni devis remeti la agordojn por\nakceptebla reklamo. Bonvolu kontroli viajn filtrilajn listojn kaj\nagordojn por akceptebla reklamo en la <a>agordoj de Adblock Plus</a>."
-  },
-  "firstRun_legacySafariWarning": {
-    "message": "Vi uzas malnovan version de Safari, kiun Adblock Plus ne subtenas. Eble ĝi ne korekte funkcios aŭ ĝenas la travivaĵon de uzanto sur kelkaj retejoj. Ni eksplicite rekomendas aŭ ĝisdatigi al Safari 6.1.1 aŭ pli alta versio (estas je dispono por Mac OS X 10.8 Mountain Lion) aŭ Safari 7.0.1 aŭ pli alta versio (estas je dispono por OS X 10.9 Mavericks) aŭ uzi la plej novan version de Mozilla Firefox, Google Chrome aŭ Opera."
   },
   "firstRun_share": {
     "message": "Informu viajn amikojn"
@@ -52,11 +25,5 @@
   },
   "firstRun_title": {
     "message": "Adblock Plus instaliĝis"
-  },
-  "firstRun_toggle_off": {
-    "message": "Malŝaltita"
-  },
-  "firstRun_toggle_on": {
-    "message": "Ŝaltita"
   }
 }

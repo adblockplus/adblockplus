@@ -17,41 +17,14 @@
   "firstRun_contributor_credits": {
     "message": "Tack till"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "Fortsätter denna sida att visas? <a>Klicka här!</a>"
-  },
   "firstRun_donate": {
     "message": "donera"
   },
   "firstRun_donate_label": {
     "message": "Stöd vårt projekt"
   },
-  "firstRun_feature_malware": {
-    "message": "Malwareblockering"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "Göra din surfning säkrare genom att blockera kända skadliga domäner."
-  },
-  "firstRun_feature_social": {
-    "message": "Ta bort knappar för Sociala Medier"
-  },
-  "firstRun_feature_social_description": {
-    "message": "Förbättrar automatiskt din webbupplevelse genom borttagning av sociala medier knappar, såsom Facebook Gilla, som visas på webbsidor och spåra ditt beteende."
-  },
-  "firstRun_feature_tracking": {
-    "message": "Inaktivera Spårning"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "Surfa privat genom att inaktivera spårning - dölj dina spår från reklamföretag som vill spåra dina rörelser."
-  },
-  "firstRun_features": {
-    "message": "Adblock Plus kan göra mer än att blockera reklam"
-  },
   "firstRun_filterlistsReinitializedWarning": {
     "message": "Det verkar som ett problem har orsakat att alla filter har tagits bort och det gick inte att återställa en säkerhetskopia. Vi var därför tvunga att att återställa dina Filter och Acceptabla Annonser inställningar. Vänligen kontrollera dina Filterlistor och Acceptabla Annonser inställningar i <a>Adblock Plus alternativ</a>."
-  },
-  "firstRun_legacySafariWarning": {
-    "message": "Du använder en äldre version av Safari som inte stödjs av Adblock Plus. Adblock Plus kanske inte fungerar korrekt eller försämrar användarupplevelsen på vissa hemsidor. Vi rekommenderar starkt att antingen uppdatera till Safari 6.1.1 eller högre (tillgänglig på OS X 10.8 Mountain Lion), Safari 7.0.1 eller högre (tillgänglig på OS X 10.9 Mavericks), eller att använda den senaste versionen av Mozilla Firefox, Google Chrome eller Opera."
   },
   "firstRun_share": {
     "message": "Berätta för dina vänner"
@@ -61,11 +34,5 @@
   },
   "firstRun_title": {
     "message": "Adblock Plus har installerats"
-  },
-  "firstRun_toggle_off": {
-    "message": "AV"
-  },
-  "firstRun_toggle_on": {
-    "message": "PÅ"
   }
 }

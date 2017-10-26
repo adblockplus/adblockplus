@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Отправить анонимно"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "Мы не сможем связаться с вами и, вероятно, уделим меньше внимания Вашему сообщению."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Комментарий"
+  },
+  "issueReporter_comment_description": {
+    "message": "Внизу вы можете добавить комментарий, чтобы помочь нам понять проблему. Это не обязательно, но рекомендуется для неочевидных проблем. Также вы можете проверить данные сообщения, прежде чем оно будет отправлено."
+  },
+  "issueReporter_comment_label": {
+    "message": "Комментарий (необязательно):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "Длина комментария превышает 1000 символов. Только первые 1000 символов будут отправлены."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Сообщение отправлено и сохранено. Вы можете просмотреть его по следующей ссылке:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Пожалуйста, подождите несколько секунд, пока Adblock Plus собирает нужные данные."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Добро пожаловать в мастер отправки отчётов"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Готово"
+  },
+  "issueReporter_email_description": {
+    "message": "Мы рекомендуем ввести e-mail адрес, по которому мы могли бы связаться в случае вопросов по вашему сообщению. Это также позволит нам обрабатывать его в предпочтительном порядке, если были качественные предыдущие сообщения."
+  },
+  "issueReporter_email_label": {
+    "message": "E-mail:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "Ошибка отправки сообщения: «?1?». Пожалуйста, удостоверьтесь, что ваше соединение с сетью Интернет работает, и попробуйте еще раз. Если проблема остается, обратитесь в [link]форум Adblock Plus[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Если несмотря на то, что Adblock Plus включен, на странице отображается реклама, то следует выбрать этот вариант."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus не блокирует рекламу"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Если на странице отсутствуют важные части содержимого, а также если она отображается или функционирует неправильно, то следует выбрать этот вариант. Вы можете проверить, является ли Adblock Plus источником проблемы, временно отключив его."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus блокирует слишком многое"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "Возможно, что проблема, о которой вы сообщили, уже известна. Дополнительная информация:"
+  },
+  "issueReporter_page_title": {
+    "message": "Сообщить о проблеме"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Политика конфиденциальности"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Отправить сообщение"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Отправка сообщения"
+  },
+  "issueReporter_sending": {
+    "message": "Пожалуйста, подождите, пока Adblock Plus отправляет ваше сообщение."
+  },
+  "issueReporter_showData_label": {
+    "message": "Показать данные сообщения"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Мастер поможет вам отправить сообщение о проблеме с Adblock Plus. Пожалуйста, укажите на этой странице тип проблемы, с которой вы столкнулись:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Выбор типа проблемы"
+  }
+}

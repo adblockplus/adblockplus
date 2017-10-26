@@ -1,0 +1,53 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Cho phép vài quảng cáo không quấy rối"
+  },
+  "mops_acceptableAds_more": {
+    "message": "Tìm hiểu thêm"
+  },
+  "mops_action_cancel": {
+    "message": "Hủy bỏ"
+  },
+  "mops_enabled_label": {
+    "message": "Bật Adblock Plus trên <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "Hãy nhập một tiêu đề"
+  },
+  "mops_error_url": {
+    "message": "Hãy nhập một liên kết URL"
+  },
+  "mops_filterlist_add": {
+    "message": "+ Thêm một danh sách bộ lọc"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Thêm danh sách bộ lọc"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ Thêm một danh sách bộ lọc tuỳ chỉnh"
+  },
+  "mops_header": {
+    "message": "Thiết lập Adblock Plus"
+  },
+  "mops_subscribe_header": {
+    "message": "Thêm một danh sách bộ lọc tuỳ chỉnh"
+  },
+  "mops_subscribe_title": {
+    "message": "Tên danh sách bộ lọc"
+  },
+  "mops_subscribe_url": {
+    "message": "URL danh sách bộ lọc"
+  },
+  "mops_subscriptions_header": {
+    "message": "Đăng ký bộ lọc"
+  },
+  "mops_title": {
+    "message": "Thiết lập Adblock Plus"
+  }
+}

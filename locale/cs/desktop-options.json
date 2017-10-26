@@ -1,0 +1,44 @@
+{
+  "options_acceptableAds_header": {
+    "message": "Přijatelné reklamy"
+  },
+  "options_customFilter_cancel": {
+    "message": "Zrušit"
+  },
+  "options_customize_showNotifications": {
+    "message": "Zobrazovat užitečná upozornění"
+  },
+  "options_email": {
+    "message": "E-mail:"
+  },
+  "options_filterList_column_name": {
+    "message": "Seznamy filtrů"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Chyba, neodpovídá kontrolní součet"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Chyba, nepodařilo se stáhnout soubor"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Chyba, toto je nekorektní adresa."
+  },
+  "options_filterList_title": {
+    "message": "Seznamy filtrů"
+  },
+  "options_page_title": {
+    "message": "Nastavení"
+  },
+  "options_support_title": {
+    "message": "Podpora"
+  },
+  "options_tab_general": {
+    "message": "Obecné"
+  },
+  "options_tab_help": {
+    "message": "Pomoc"
+  },
+  "options_tab_whitelist": {
+    "message": "Neblokované stránky"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "اجازه دادن به تبلیغات ناخواسته"
+  },
+  "mops_action_cancel": {
+    "message": "لغو"
+  },
+  "mops_subscriptions_header": {
+    "message": "فیلتر زیرنوشت ها"
+  }
+}

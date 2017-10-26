@@ -1,0 +1,53 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Rahatsız etmeyen bazı reklamlara izin ver"
+  },
+  "mops_acceptableAds_more": {
+    "message": "Daha fazla bilgi al"
+  },
+  "mops_action_cancel": {
+    "message": "Vazgeç"
+  },
+  "mops_enabled_label": {
+    "message": "<strong>$domain$</strong> sitesinde Adblock Plus kullanılsın",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "Lütfen başlık girin"
+  },
+  "mops_error_url": {
+    "message": "Lütfen URL bağlantısı girin"
+  },
+  "mops_filterlist_add": {
+    "message": "+ Süzme listesi ekle"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Süzme listesi ekle"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ Özelleştirilmiş süzme listesi ekle"
+  },
+  "mops_header": {
+    "message": "Adblock Plus ayarları"
+  },
+  "mops_subscribe_header": {
+    "message": "Özelleştirilmiş süzme listesi ekle"
+  },
+  "mops_subscribe_title": {
+    "message": "Süzgeç listesi adı"
+  },
+  "mops_subscribe_url": {
+    "message": "Süzme listesi URL'si"
+  },
+  "mops_subscriptions_header": {
+    "message": "Süzgeç abonelikleri"
+  },
+  "mops_title": {
+    "message": "Adblock Plus ayarları"
+  }
+}

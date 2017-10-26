@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "અનામિક સબમિશન"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "અમે તમને પાછા આવવા માટે સમર્થ હશો નહીં અને સંભવિતપણે રિપોર્ટને ઓછો કરશે."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "ટિપ્પણી દાખલ કરો"
+  },
+  "issueReporter_comment_description": {
+    "message": "નીચે આપેલી ટેક્સ્ટ ફીલ્ડ તમને સમસ્યાને સમજવામાં સહાય માટે ટિપ્પણી દાખલ કરવાની પરવાનગી આપે છે. આ પગલું વૈકલ્પિક છે પરંતુ સમસ્યા સ્પષ્ટ ન હોય તો આગ્રહણીય છે. તમે મોકલવામાં આવે તે પહેલાં રિપોર્ટ ડેટાની સમીક્ષા પણ કરી શકો છો."
+  },
+  "issueReporter_comment_label": {
+    "message": "ટિપ્પણી (વૈકલ્પિક):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "તમારી ટિપ્પણીની લંબાઈ 1000 અક્ષરોથી વધી જાય છે માત્ર પ્રથમ 1000 અક્ષરો મોકલવામાં આવશે."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "તમારી રિપોર્ટ સાચવવામાં આવી છે. તમે તેને નીચેના સરનામા પર ઍક્સેસ કરી શકો છો:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "કૃપા કરીને થોડી ક્ષણો રાહ જુઓ જ્યારે એડબ્લોક પ્લસ આવશ્યક ડેટા એકઠી કરે છે."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "ઇશ્યૂ રિપોર્ટરમાં આપનું સ્વાગત છે"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "પૂર્ણ થયું"
+  },
+  "issueReporter_email_description": {
+    "message": "અમે તમને એક માન્ય ઇમેઇલ સરનામું દાખલ કરવા પ્રોત્સાહિત કરીએ છીએ જેથી તમારી રિપોર્ટ વિશે કોઈ પ્રશ્નો હોય તો અમે તમારો સંપર્ક કરી શકીએ. તે અમને તમારા યોગદાનને ઓળખી કાઢવા અને તેમને વધુ ઉચ્ચ બનાવવા માટે પરવાનગી આપશે."
+  },
+  "issueReporter_email_label": {
+    "message": "ઇમેઇલ:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "રિપોર્ટ મોકલવાનો પ્રયાસ ભૂલ કોડ \"? 1?\" માં નિષ્ફળ થયો. કૃપા કરીને ખાતરી કરો કે તમે ઇન્ટરનેટથી કનેક્ટેડ છો અને ફરીથી પ્રયાસ કરો. જો સમસ્યા યથાવત રહે તો કૃપા કરીને [link] એડબ્લોક પ્લસ ફોરમ [/ link] માં સહાયની વિનંતી કરો."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "એડબ્લોક પ્લસ સક્ષમ હોવા છતાં કોઈ જાહેરાત પ્રદર્શિત થાય તો આ વિકલ્પ પસંદ કરો."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "એડબ્લોક પ્લસ કોઈ જાહેરાતને અવરોધિત કરતી નથી"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "આ વિકલ્પને પસંદ કરો જો પૃષ્ઠમાં મહત્વપૂર્ણ સામગ્રી ન હોય તો, ખોટી રીતે પ્રદર્શિત કરે છે અથવા યોગ્ય રીતે કામ કરવામાં નિષ્ફળ જાય છે. તમે નક્કી કરી શકો છો કે એડબ્લોક પ્લસ એ અસ્થાયી રૂપે તે નિષ્ક્રિય કરીને સમસ્યાનું કારણ છે."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "એડબ્લોક પ્લસ ખૂબ અવરોધિત છે"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "તમે જે સમસ્યાની જાણ કરો છો તે પહેલેથી જ જાણીતું છે. વધુ મહિતી:"
+  },
+  "issueReporter_page_title": {
+    "message": "ઇશ્યૂ રિપોર્ટર"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "ગોપનીયતા નીતિ"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "રિપોર્ટ મોકલો"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "રિપોર્ટ મોકલો"
+  },
+  "issueReporter_sending": {
+    "message": "એડબ્લોક પ્લસ તમારી રિપોર્ટ સબમિટ કરે ત્યાં સુધી કૃપા કરીને રાહ જુઓ."
+  },
+  "issueReporter_showData_label": {
+    "message": "રિપોર્ટ ડેટા બતાવો"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "આ વિંડો એડબ્લોક પ્લસ ઇશ્યૂ રિપોર્ટની રજૂઆત માટે આવશ્યક પગલાંથી તમને માર્ગદર્શન આપશે. પ્રથમ, કૃપા કરીને તમે આ પૃષ્ઠ પર જે સમસ્યા અનુભવી રહ્યા છો તેનો પ્રકાર પસંદ કરો:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "સમસ્યા પ્રકાર પસંદ કરો"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "ზოგიერთი რეკლამის დაშვება"
+  },
+  "mops_action_cancel": {
+    "message": "გაუქმება"
+  },
+  "mops_subscriptions_header": {
+    "message": "ფილტრის გამოწერა"
+  }
+}

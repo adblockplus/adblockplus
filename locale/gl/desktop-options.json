@@ -1,0 +1,26 @@
+{
+  "options_acceptableAds_header": {
+    "message": "Anuncios aceptables"
+  },
+  "options_customFilter_cancel": {
+    "message": "Cancelar"
+  },
+  "options_email": {
+    "message": "E-mail:"
+  },
+  "options_filterList_column_name": {
+    "message": "Listaxes de filtros"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Erro: a proba do \"checksum\" seica non cadrou ben"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Erro: fallo na descarga"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Erro: enderezo non válido"
+  },
+  "options_filterList_title": {
+    "message": "Listaxes de filtros"
+  }
+}

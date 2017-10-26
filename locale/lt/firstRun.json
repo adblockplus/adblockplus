@@ -17,41 +17,14 @@
   "firstRun_contributor_credits": {
     "message": "Padėkos prisidėjusiems"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "Ar šis puslapis pastoviai rodomas? <a>Paspauskite čia</a>"
-  },
   "firstRun_donate": {
     "message": "paaukoti"
   },
   "firstRun_donate_label": {
     "message": "Paremkite mūsų projektą"
   },
-  "firstRun_feature_malware": {
-    "message": "Kenkėjiškų programų blokavimas"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "Padarykite savo naršymą saugesniu užblokuodami žinomas kenkėjiškas svetaines."
-  },
-  "firstRun_feature_social": {
-    "message": "Pašalinti socialinių puslapių mygtukus"
-  },
-  "firstRun_feature_social_description": {
-    "message": "Automatiškai pašalinkite socialinių tinklų mygtukus, tokius kaip „Facebook Like“, kurie seka jūsų elgesį."
-  },
-  "firstRun_feature_tracking": {
-    "message": "Išjungti sekimą"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "Išjunkite sekimą ir paverskite savo naršymą privačiu - paslėpkite savo pėdsakus nuo reklamos įmonių kurios galbūt seka kiekvieną jūsų žingsnį."
-  },
-  "firstRun_features": {
-    "message": "Adblock Plus gali daugiau nei tik blokuoti reklamas"
-  },
   "firstRun_filterlistsReinitializedWarning": {
     "message": "Dėl klaidos visi filtrai buvo pašalinti, todėl mes negalime atkurti atsarginės kopijos. Taip pat filtrai ir priimtinų reklamų nustatymai nustatyti iš naujo. Prašome pasitikrinti jūsų filtrų sąrašus ir priimtinų reklamų nustatymus<a>Adblock Plus nustatymuose</a>."
-  },
-  "firstRun_legacySafariWarning": {
-    "message": "Jūs naudojate seną Safari versiją, kurios Adblock Plus nepalaiko. Adblock plus gali veikti netinkamai ar sukelti problemų. Rekomenduojame naudoti Safari 6.1.1 ar naujesnę versiją (prieinama Mac OS X 10.9 Mavericks) arba naudokite naujausią Mozilla Firefox, Google Chrome ar Opera."
   },
   "firstRun_share": {
     "message": "Papasakokite savo draugams"
@@ -61,11 +34,5 @@
   },
   "firstRun_title": {
     "message": "AdBlock Plus sėkmingai įdiegta"
-  },
-  "firstRun_toggle_off": {
-    "message": "IŠJ."
-  },
-  "firstRun_toggle_on": {
-    "message": "Įj."
   }
 }

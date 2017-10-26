@@ -1,0 +1,44 @@
+{
+  "options_acceptableAds_header": {
+    "message": "Sprejemljivi oglasi"
+  },
+  "options_customFilter_cancel": {
+    "message": "Prekliči"
+  },
+  "options_customize_showNotifications": {
+    "message": "Prikaži koristno  obvestila"
+  },
+  "options_email": {
+    "message": "E-pošta:"
+  },
+  "options_filterList_column_name": {
+    "message": "Seznami filtrov"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Neuspešno, kontrolna vsota se ne ujema"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Neuspešno, napaka prenosa"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Neuspešno, ni veljaven naslov"
+  },
+  "options_filterList_title": {
+    "message": "Seznami filtrov"
+  },
+  "options_page_title": {
+    "message": "Nastavitve"
+  },
+  "options_support_title": {
+    "message": "Podpora"
+  },
+  "options_tab_general": {
+    "message": "Splošno"
+  },
+  "options_tab_help": {
+    "message": "Pomoč"
+  },
+  "options_tab_whitelist": {
+    "message": "Dovoljene spletne strani"
+  }
+}

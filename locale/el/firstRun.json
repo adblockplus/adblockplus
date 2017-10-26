@@ -17,41 +17,14 @@
   "firstRun_contributor_credits": {
     "message": "Μνεία συντελεστών"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "Αυτή η σελίδα συνεχίζει να εμφανίζεται; <a>Κάντε κλικ εδώ!</a>"
-  },
   "firstRun_donate": {
     "message": "δωρίστε"
   },
   "firstRun_donate_label": {
     "message": "Υποστηρίξτε το έργο μας"
   },
-  "firstRun_feature_malware": {
-    "message": "Φραγή κακόβουλου λογισμικού"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "Κάνετε την περιήγηση σας πιο ασφαλή φράσσοντας γνωστές διευθύνσεις κακόβουλου λογισμικού."
-  },
-  "firstRun_feature_social": {
-    "message": "Αφαίρεση κουμπιών μέσων κοινωνικής δικτύωσης"
-  },
-  "firstRun_feature_social_description": {
-    "message": "Απαλλάξετε αυτομάτως την περιήγησή σας από κουμπιά των μέσων κοινωνικής δικτύωσης, όπως το Like του Facebook, που εμφανίζονται σε ιστοσελίδες και παρακολουθούν τη συμπεριφορά σας."
-  },
-  "firstRun_feature_tracking": {
-    "message": "Απενεργοποίηση της παρακολούθησης"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "Περιηγηθείτε ιδιωτικά απενεργοποιώντας την παρακολούθηση - αποκρύπτοντας τα ίχνη σας από εταιρείες διαφημίσεων που μπορούν να παρακολουθούν κάθε κίνησή σας."
-  },
-  "firstRun_features": {
-    "message": "Το Adblock Plus μπορεί να κάνει περισσότερα από το φιλτράρισμα διαφημίσεων"
-  },
   "firstRun_filterlistsReinitializedWarning": {
     "message": "Φαίνεται πως ένα ζήτημα προκάλεσε την αφαίρεση όλων των φίλτρων και δεν μπορέσαμε να επαναφέρουμε ένα αντίγραφο ασφαλείας. Γι' αυτό έπρεπε να επαναφέρουμε τα αρχικά σας φίλτρα και τις ρυθμίσεις Αποδεκτών Διαφημίσεων. Παρακαλώ ελέγξτε τις λίστες φίλτρων σας και τις ρυθμίσεις Αποδεκτών Διαφημίσεων στις <a>επιλογές του Adblock Plus</a>."
-  },
-  "firstRun_legacySafariWarning": {
-    "message": "Χρησιμοποιείτε μια παλιά έκδοση του Safari,  η οποία δεν υποστηρίζεται από το Adblock Plus. Μπορεί να μην λειτουργεί σωστά ή να αλλοιώσει την εμπειρία χρήστη σε ορισμένες ιστοσελίδες. Σας συνιστούμε είτε να ενημερώσετε την έκδοση του φυλλομετρητή σε Safari 6.1.1 ή νεότερη (σε Mac OS X 10.8 Mountain Lion), ή σε Safari 7.0.1 ή νεότερη (σε OS X 10.9 Mavericks) ή να χρησιμοποιήσετε την τελευταία έκδοση του Mozilla Firefox, Google Chrome ή Opera."
   },
   "firstRun_share": {
     "message": "Πείτε το στους φίλους σας"
@@ -61,11 +34,5 @@
   },
   "firstRun_title": {
     "message": "Το Adblock Plus έχει εγκατασταθεί"
-  },
-  "firstRun_toggle_off": {
-    "message": "Ανενεργό"
-  },
-  "firstRun_toggle_on": {
-    "message": "Ενεργό"
   }
 }

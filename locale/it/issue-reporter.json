@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Segnalazione anonima"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "Nota: è impossibile rispondere a segnalazioni anonime alle quali viene probabilmente dato un ordine di priorità inferiore"
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Invio di un commento"
+  },
+  "issueReporter_comment_description": {
+    "message": "È possibile digitare nel relativo campo di testo qui sotto un commento per comprendere meglio il problema segnalato. Questo passo è opzionale ma raccomandato se il problema non è ovvio. È inoltre possibile visualizzare i dati della segnalazione prima di inviarla"
+  },
+  "issueReporter_comment_label": {
+    "message": "Commento (opzionale):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "La lunghezza massima del testo del commento è di 1000 caratteri; quelli eccedenti non verranno inviati"
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Segnalazione inviata correttamente, per visualizzarne i dati fare clic sul seguente link:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Attendere mentre vengono raccolti i dati necessari per la segnalazione di Adblock Plus di problemi in una pagina web"
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Benvenuti alla configurazione guidata per segnalare problemi in una pagina web"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Fatto"
+  },
+  "issueReporter_email_description": {
+    "message": "Inserire un indirizzo e-mail valido per poter essere ricontattati in caso di domande su questa segnalazione, per riconoscerne i contributi e per aumentare l'ordine di priorità"
+  },
+  "issueReporter_email_label": {
+    "message": "Indirizzo e-mail:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "Il tentativo di inviare la segnalazione non è riuscito a causa del seguente errore: \"?1?\". Accertarsi di essere collegati ad internet e riprovare. Se il problema persiste inviare una richiesta di assistenza nel [link]forum di Adblock Plus[/link]"
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Selezionare questa opzione se nella pagina web vengono visualizzati banner e/o pubblicità nonostante Adblock Plus sia attiva"
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus non sta bloccando alcun elemento"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Selezionare questa opzione se nella pagina web manca parte del contenuto importante, se la pagina web viene visualizzata non correttamente oppure se non funziona come dovrebbe. È possibile determinare se sia Adblock Plus la causa del problema disattivando temporaneamente l'estensione"
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus sta bloccando troppi elementi"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "Problema segnalato precedentemente noto. Ulteriori informazioni:"
+  },
+  "issueReporter_page_title": {
+    "message": "Configurazione guidata per segnalare problemi in una pagina web"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Informativa sulla privacy"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Invia la segnalazione"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Invio della segnalazione"
+  },
+  "issueReporter_sending": {
+    "message": "Attendere mentre la segnalazione di Adblock Plus viene inviata"
+  },
+  "issueReporter_showData_label": {
+    "message": "Mostra i dati della segnalazione"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "La configurazione guidata permette passo a passo di raccogliere ed inviare i dati necessari per effettuare la segnalazione di Adblock Plus di problemi in una pagina web. Come primo passo, selezionare il tipo di problema che si è verificato"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Selezione del problema"
+  }
+}

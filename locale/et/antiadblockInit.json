@@ -1,0 +1,8 @@
+{
+  "notification_antiadblock_message": {
+    "message": "See sait on teadaolevalt näidanud Adblock Plusi kasutajatele suunatud sõnumeid. Kas tahad, et Adblock need suunatud sõnumid peidaks?"
+  },
+  "notification_antiadblock_title": {
+    "message": "Peida suunatud sõnumid?"
+  }
+}

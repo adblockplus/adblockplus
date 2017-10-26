@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "ส่งโดยไม่ระบุตัวตน"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "เราจะไม่ส่งกลับมาให้คุณและให้ความสำคัญกับรายงานนี้เป็นขั้นต่ำ"
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "ใส่ความคิดเห็น"
+  },
+  "issueReporter_comment_description": {
+    "message": "ช่องว่างนี้ให้คุณใส่ความคิดเห็นเพื่อช่วยให้เราเข้าใจปัญหา ใส่หรือไม่ใส่ก็ได้ คุณสามารถทบทวนรายงานอีกครั้งก่อนส่งได้"
+  },
+  "issueReporter_comment_label": {
+    "message": "ความคิดเห็น (ไม่ใส่ก็ได้):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "ความคิดเห็นยาวเกิน 1000 อักขระ ส่งได้แค่ 1000 อักขระแรกเท่านั้น"
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "รายงานได้รับการบันทึกแล้ว คุณเข้าดูได้ตามที่อยู่ต่อไปนี้:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "กรุณารอสักครู่ระหว่างที่ Adblock Plus กำลังรวบรวมข้อมูล"
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "ยินดีต้อนรับสู่การรายงานปัญหา"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "เสร็จสิ้น"
+  },
+  "issueReporter_email_description": {
+    "message": "เรากระตุ้นให้คุณใช้ที่อยู่อีเมลที่ใช้งานได้จริง เพื่อที่เราจะได้ติดต่อคุณเผื่อมีคำถามในภายหลังเกี่ยวกับรายงานของคุณ มันยังช่วยให้เราสามารถเข้าใจสิ่งที่คุณมีส่วนร่วมและให้ความสำคัญเป็นอย่างสูง"
+  },
+  "issueReporter_email_label": {
+    "message": "อีเมล:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "การส่งรายงานผิดพลาด รหัส \"?1?\" กรุณาเชื่อมต่อกับอินเทอร์เน็ตและลองอีกครั้ง หากปัญหายังมีอยู่กรุณาขอความช่วยเหลือที่ [link]Adblock Plus forum[/link]"
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "เลือกตัวเลือกนี้ถ้ายังมีโฆษณาอยู่แม้ว่าใช้งาน Adblock Plus แล้ว"
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus ไม่บล็อกโฆษณา"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "เลือกตัวเลือกนี้ ถ้าหน้าเพจไม่มีเนื้อหาที่สำคัญ แสดงผลผิดหรือทำงานผิด คุณสามารถทดสอบว่า Adblock Plus เป็นต้นเหตุของปัญหาหรือไม่ โดยการทดลองปิดการใช้งานไว้ชั่วคราว"
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus มีการบล็อกมากเกินไป"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "ปัญหาที่คุณรายงานมีวิธีแก้ไขอยู่แล้ว ข้อมูลเพิ่มเติม:"
+  },
+  "issueReporter_page_title": {
+    "message": "รายงานปัญหา"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "ความเป็นส่วนตัว"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "ส่งรายงาน"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "ส่งรายงาน"
+  },
+  "issueReporter_sending": {
+    "message": "Adblock Plus กำลังส่งรายงาน กรุณารอ"
+  },
+  "issueReporter_showData_label": {
+    "message": "แสดงข้อมูลรายงาน"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "หน้าต่างนี้จะนำทางไปยังขั้นตอนที่ต้องการในการส่งรายงานปัญหาของ Adblock Plus กรุณาเลือกชนิดของปัญหาที่คุณพบในหน้านี้:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "เลือกชนิดของปัญหา"
+  }
+}

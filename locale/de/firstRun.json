@@ -17,41 +17,14 @@
   "firstRun_contributor_credits": {
     "message": "Mitwirkende"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "Wird diese Seite immer wieder angezeigt? <a>Bitte hier klicken!</a>"
-  },
   "firstRun_donate": {
     "message": "Spenden"
   },
   "firstRun_donate_label": {
     "message": "Unterstützen Sie unser Projekt"
   },
-  "firstRun_feature_malware": {
-    "message": "Malware-Blockierung"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "Sicheres Surfen durch Blockieren von infizierten Webseiten."
-  },
-  "firstRun_feature_social": {
-    "message": "Social Media-Knöpfe entfernen"
-  },
-  "firstRun_feature_social_description": {
-    "message": "Entfernt Social-Media-Buttons (z.B. den Facebook-Like) die auf Webseiten erscheinen und Ihr Surfverhalten aufzeichnen."
-  },
-  "firstRun_feature_tracking": {
-    "message": "Tracking verhindern"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "Privates Surfen durch Deaktivierung der Tracker - Versteckt Ihr Surfverhalten vor Werbefirmen, die Sie sonst ausspionieren würden."
-  },
-  "firstRun_features": {
-    "message": "Adblock Plus kann mehr als nur Werbung blockieren"
-  },
   "firstRun_filterlistsReinitializedWarning": {
     "message": "Es scheint, als ob aufgrund eines Problems alle Filter entfernt wurden und wir keine Sicherung wiederherstellen konnten. Deshalb wurden alle Ihre Filter sowie Ihre Einstellungen für akzeptable Werbung zurückgesetzt. Überprüfen Sie bitte Ihre Filterliste und Ihre Einstellungen für akzeptable Werbung in den <a>Adblock Plus Optionen</a>."
-  },
-  "firstRun_legacySafariWarning": {
-    "message": "Sie verwenden eine ältere Version von Safari, die nicht von Adblock Plus unterstützt wird. Es kann sein, dass Adblock Plus damit nicht richtig funktioniert oder dass bestimmte Websites nicht richtig dargestellt werden. Wir empfehlen deshalb dringend, entweder ein Upgrade auf Safari 6.1.1 oder höher (auf OS X 10.8 Mountain Lion) oder auf Safari 7.0.1 oder höher (auf OS X 10.9 Mavericks) durchzuführen oder die neueste Version von Mozilla Firefox, Google Chrome oder Opera zu verwenden."
   },
   "firstRun_share": {
     "message": "Weiterempfehlen"
@@ -61,11 +34,5 @@
   },
   "firstRun_title": {
     "message": "Adblock Plus wurde installiert"
-  },
-  "firstRun_toggle_off": {
-    "message": "AUS"
-  },
-  "firstRun_toggle_on": {
-    "message": "AN"
   }
 }

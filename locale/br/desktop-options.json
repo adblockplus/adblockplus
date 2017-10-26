@@ -1,0 +1,14 @@
+{
+  "options_customFilter_cancel": {
+    "message": "Nullañ"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Fazi, n'eo ket ar memes checksum"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Fazi, pellgargañ torret"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Fazi, n'eo ket ur chomlec'h"
+  }
+}

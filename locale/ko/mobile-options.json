@@ -1,0 +1,11 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "비침입형 광고 허용"
+  },
+  "mops_action_cancel": {
+    "message": "취소"
+  },
+  "mops_subscriptions_header": {
+    "message": "구독 필터"
+  }
+}

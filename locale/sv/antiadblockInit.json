@@ -1,0 +1,8 @@
+{
+  "notification_antiadblock_message": {
+    "message": "Denna webbplats har varit känt för att visa riktade budskap till Adblock Plus användare. Vill du Adblock Plus att dölja riktade budskap?"
+  },
+  "notification_antiadblock_title": {
+    "message": "Göm riktade budskap?"
+  }
+}

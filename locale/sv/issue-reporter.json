@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Skicka in anonymt"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "Vi kommer inte att kunna kontakta er och er rapport kan få en lägre prioritering."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Ange kommentar"
+  },
+  "issueReporter_comment_description": {
+    "message": "Textfältet nedan låter dig ange en kommentar för att hjälpa oss förstå problemet. Detta steg är valfritt, men rekommenderas om problemet inte är tydligt. Du kan även granska rapportdatan innan den skickas."
+  },
+  "issueReporter_comment_label": {
+    "message": "Kommentar (valfritt):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "Längden på din kommentar överskrider 1 000 tecken. Endast de första 1 000 tecknen kommer att skickas."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Din rapport har sparats. Du kan nå den på följande adress:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Var vänlig vänta några ögonblick medan Adblock Plus samlar in nödvändig data."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Välkommen till problemrapportören"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Klar"
+  },
+  "issueReporter_email_description": {
+    "message": "Vi uppmanar dig att ange en giltig e-postadress så att vi kan kontakta dig om det finns frågor om er rapport. Det tillåter oss att erkänna era bidrag och prioritera dem högre."
+  },
+  "issueReporter_email_label": {
+    "message": "E-Post:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "Det gick inte att skicka rapporten. Felkod: \"?1?\". Var vänlig säkerställ att du är ansluten till Internet och försök sedan igen. Om problemet kvarstår, vänligen begär hjälp i [link]Adblock Plus webbforum[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Välj detta alternativ om en annons visas trots att Adblock Plus är aktiverat."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus blockerar inte en annons"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Välj detta alternativ om sidan saknar viktigt innehåll, visas på ett felaktigt sätt eller inte fungerar som den skall. Du kan ta reda på huruvida Adblock Plus är orsaken till problemet genom att tillfälligtvis inaktivera det."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus blockerar alltför mycket"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "Problemet du rapporterade är antagligen redan känt. Mer information:"
+  },
+  "issueReporter_page_title": {
+    "message": "Rapportera problem"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Sekretesspolicy"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Skicka rapport"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Skicka rapport"
+  },
+  "issueReporter_sending": {
+    "message": "Var vänlig vänta medan Adblock Plus skickar ing din rapport."
+  },
+  "issueReporter_showData_label": {
+    "message": "Visa rapportdata"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Denna dialog kommer att guida dig igenom alla steg som krävs för att skicka in en problemrapport för Adblock Plus. Först och främst måste du välja den typ av problem som du upplever på denna sida:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Välj problemtyp"
+  }
+}

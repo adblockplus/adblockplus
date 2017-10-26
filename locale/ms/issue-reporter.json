@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Penyerahan tanpa nama"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "Kita tidak akan dapat kembali kepada anda dan mungkin akan mengutamakan laporan yang lebih rendah."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Masukkan komen"
+  },
+  "issueReporter_comment_description": {
+    "message": "Bahagian di bawah membenarkan anda memasukkan komen untuk membantu kami memahami isu tersebut. Langkah ini adalah optional tetapi disyorkan jika masalah tersebut tidak jelas. Anda juga boleh memeriksa data laporan sebelum menghantarnya."
+  },
+  "issueReporter_comment_label": {
+    "message": "Komen(optional)"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "Panjang komen anda melebihi 1000 huruf. Hanya 1000 huruf pertama sahaja akan dihantar."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Laporan anda telah disimpan. Anda boleh mengaksesnya di alamat berikut:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Sila tunggu sebentar sementara Adblock Plus mengumpul data yang diperlukan."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Selamat datang ke pelapor isu"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Selesai"
+  },
+  "issueReporter_email_description": {
+    "message": "Kami menggalakkan anda memasukkan alamat email yang sah supaya kami boleh menghubungi anda jika ada pertanyaan tentang laporan anda. Ia juga akan membolehkan kita untuk mengiktiraf sumbangan anda dan memberi keutamaan kepada mereka dengan lebih tinggi."
+  },
+  "issueReporter_email_label": {
+    "message": "E-mel:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "Cubaan untuk menghantar laporan gagal dengan kod error \"?1?\". Sila pastikan internet anda berfungsi dan cuba lagi. Jika masalah berterusan sila minta bantuan di [link]Adblock Plus forum[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Pilih pilihan ini jika iklan dipaparkan walaupun Adblock Plus telah diaktifkan."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus tidak menyekat iklan"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Pilih pilihan ini jika laman tersebut kekurangan isi penting, salah paparannya atau gagal berfungsi dengan betul. Anda boleh menentukan sama ada Adblock Plus ialah penyebab masalah tersebut dengan menyahaktifkannya buat sementara waktu."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Terlalu banyak disekat Adblock Plus"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "Isu yang dilaporkan kemungkinan telah dikenalpasti. Maklumat lanjut:"
+  },
+  "issueReporter_page_title": {
+    "message": "Pelapor isu"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Polisi privasi"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Hantar laporan"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Hantar laporan"
+  },
+  "issueReporter_sending": {
+    "message": "Sila tunggu sementara Adblock Plus menghantar laporan anda."
+  },
+  "issueReporter_showData_label": {
+    "message": "Tunjuk data laporan"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Tingkap ini akan membimbing anda dengan langkah-langkah yang diperlukan untuk mengemukakan laporan isu Adblock Plus. Pertama sekali, sila pilih jenis isu yang dialami pada laman ini:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Pilih jenis isu"
+  }
+}

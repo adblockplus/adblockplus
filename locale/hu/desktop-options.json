@@ -1,0 +1,44 @@
+{
+  "options_acceptableAds_header": {
+    "message": "Elfogadható hirdetések"
+  },
+  "options_customFilter_cancel": {
+    "message": "Mégse"
+  },
+  "options_customize_showNotifications": {
+    "message": "Hasznos értesítések megjelenítése"
+  },
+  "options_filterList_column_name": {
+    "message": "Szűrő lista"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Sikertelen, érvénytelen ellenőrző összeg"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Sikertelen, letöltési hiba"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Sikertelen, érvénytelen cím"
+  },
+  "options_filterList_title": {
+    "message": "Szűrő lista"
+  },
+  "options_footer_contribute": {
+    "message": "Hozzájárulás"
+  },
+  "options_page_title": {
+    "message": "Beállítások"
+  },
+  "options_support_title": {
+    "message": "Támogatás"
+  },
+  "options_tab_general": {
+    "message": "Általános"
+  },
+  "options_tab_help": {
+    "message": "Súgó"
+  },
+  "options_tab_whitelist": {
+    "message": "Kivételezett weboldalak"
+  }
+}

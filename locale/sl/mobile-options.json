@@ -1,0 +1,11 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Dovoli nekatere nevsiljive oglase"
+  },
+  "mops_action_cancel": {
+    "message": "Prekliči"
+  },
+  "mops_subscriptions_header": {
+    "message": "Naročnine na filtre"
+  }
+}

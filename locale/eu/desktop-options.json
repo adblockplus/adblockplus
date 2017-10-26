@@ -1,0 +1,32 @@
+{
+  "options_acceptableAds_header": {
+    "message": "Iragarki Onargarriak"
+  },
+  "options_customFilter_cancel": {
+    "message": "Utzi bertan behera"
+  },
+  "options_email": {
+    "message": "E-Posta:"
+  },
+  "options_filterList_column_name": {
+    "message": "Iragazki zerrendak"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Errorea; kontrol-baturak ez datoz bat"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Huts egin du; deskarga errorea"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Huts egin du; ez da helbide baliagarria"
+  },
+  "options_filterList_title": {
+    "message": "Iragazki zerrendak"
+  },
+  "options_page_title": {
+    "message": "Ezarpenak"
+  },
+  "options_tab_whitelist": {
+    "message": "Zerrenda zuriko webguneak"
+  }
+}

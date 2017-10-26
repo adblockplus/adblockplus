@@ -17,41 +17,14 @@
   "firstRun_contributor_credits": {
     "message": "공헌자 명단"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "이 페이지를 계속해서 보시겠습니까? <a>여기 클릭!</a>"
-  },
   "firstRun_donate": {
     "message": "기부"
   },
   "firstRun_donate_label": {
     "message": "프로젝트 지원"
   },
-  "firstRun_feature_malware": {
-    "message": "맬웨어 차단"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "널리 알려진 맬웨어 도메인을 차단함으로써 웹을 더 안전하게 이용합니다."
-  },
-  "firstRun_feature_social": {
-    "message": "사회관계망 서비스 버튼 제거"
-  },
-  "firstRun_feature_social_description": {
-    "message": "웹페이지상에 인터넷 사용 행태를 추적하는 사회관계망 서비스 버튼을 자동으로 제거해줍니다."
-  },
-  "firstRun_feature_tracking": {
-    "message": "추적 차단"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "광고 회사가 수집하는 사용자 추적 정보를  유출되지 않게 하여 개인 정보를 보호합니다."
-  },
-  "firstRun_features": {
-    "message": "애드블록 플러스는 광고 차단 이외 다양한 기능이 있습니다"
-  },
   "firstRun_filterlistsReinitializedWarning": {
     "message": "문제가 발생하여 모든 필터가 제거되고, 백업을 복원할 수 없습니다. 그러므로 사용자 필터와 허용 광고 설정을 초기화했어야 합니다. <a>애드블록 플러스 옵션</a>에서 구독필터와 허용 광고 설정을 확인하십시오."
-  },
-  "firstRun_legacySafariWarning": {
-    "message": "애드블록 플러스에서 지원하지 않는 구버전 사파리를 사용하고 있습니다. 그래서 일부 사이트에서 정상적인 작동을 하지 않거나 사용자 경험에 손상을 줄 수 있습니다. 사파리 6.6.1 이상(OS X 10.8 Mountain Lion), 또는 사파리 7.0.1 이상(OS X 10.9 Mavericks) 또는 모질라 파이어폭, 구글 크롬, 오페라의 최신 버전을 사용할 것을 권장합니다."
   },
   "firstRun_share": {
     "message": "홍보"
@@ -61,11 +34,5 @@
   },
   "firstRun_title": {
     "message": "애드블록 플러스가 설치되었습니다."
-  },
-  "firstRun_toggle_off": {
-    "message": "끄기"
-  },
-  "firstRun_toggle_on": {
-    "message": "켜기"
   }
 }

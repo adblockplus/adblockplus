@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "تقرير بدون هوية"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "لن نكون قادرين على الرجوع إليك و لن نعطي للتقرير أهمية كبيرة."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "أضف تعليق"
+  },
+  "issueReporter_comment_description": {
+    "message": "يسمح لك الحقل التالي بإدخال تعليق ليساعدنا في فهم المشكلة. هذه الخطوة إختيارية ولكننا نصح بها إن لم تكن المشكلة واضحة. تستطيع أيضا مراجعة بيانات التقرير قبل إرساله."
+  },
+  "issueReporter_comment_label": {
+    "message": "التعليق (إختياري):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "طول التعليق يتجاوز 1000 حرف. سيتم إرسال أول 1000 حرف فقط."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "تم حفظ تقريرك. ستستطيع الوصول إليه عن طريق العنوان التالي:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "من فضلك الإنتظر قليلا ريثما يجمع آدبلوك بلس المعلومات المطلوبة."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "أهلا بك في مبلغ المشاكل"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "تمّ"
+  },
+  "issueReporter_email_description": {
+    "message": "نحن نشجعك لإدخال بريد إلكتروني صحيح لكي نتمكن من الاتصال بك بخصوص تقريرك إذا كانت هناك أسئلة. أيضا يسمح لنا بالتعرف على مساهمتك و إعطائها أولوية."
+  },
+  "issueReporter_email_label": {
+    "message": "البريد الإلكتروني:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "فشل إرسال التقرير بسبب الخطأ \"?1?\". الرجاء التأكد من صحة اتصالك بالإنترنت ثم أعاد المحاولة. إن استمرت المشكلة الرجاء طلب المساعدة على [link]منتديات آدبلوك بلس[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "اختر هذا الخيار إن كان أحد الإعلانات ظاهرا رغم أن آدبلوك بلس مفعل"
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "آدبلوك بلس لا يقوم بحجب أحد الإعلانات"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "اختر هذا الخيار ان كان محتوى مهم ناقص من الصفحة أو كانت الصفحة تظهر بشكل خاطئ أو لا تعمل بشكل جيد. إن لم يكن باستطاعتك تحديد إن كان آدبلوك بلس هو سبب المشكلة جرب تعطيله مؤقتاً"
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "آدبلوك بلس يحجب أكثر من اللازم"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "المشكلة التي قمت بالإبلاغ عنه معروفة مسبقاً. للمزيد من المعلومات:"
+  },
+  "issueReporter_page_title": {
+    "message": "مبلغ المشاكل"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "سياسة الخصوصية"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "إرسال التقرير"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "إرسال التقرير"
+  },
+  "issueReporter_sending": {
+    "message": "الرجاء الإنتظار ريثما يقوم آدبلوك بلس بإرسال تقرير."
+  },
+  "issueReporter_showData_label": {
+    "message": "إظهار بيانات التقرير"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "هذه النافذة ستقودك خلال الخطوات المطلوبة لإرسال تبليغ بمشكلة في آدبلوك بلس. في البداية عليك إختيار نوع المشكلة التي تواجهها من هذه الصفحة:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "إختر نوع المشكلة"
+  }
+}

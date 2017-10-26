@@ -1,0 +1,35 @@
+{
+  "options_acceptableAds_header": {
+    "message": "સ્વીકાર્ય જાહેરાતો"
+  },
+  "options_customFilter_cancel": {
+    "message": "રદ"
+  },
+  "options_customize_showNotifications": {
+    "message": "ઉપયોગી અને સૂચનાઓ બતાવો"
+  },
+  "options_filterList_column_name": {
+    "message": "ફિલ્ટરની લીસ્ટ"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "નિષ્ફળ, checksum મેળ ખાતી નથી"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "નિષ્ફળ થયું, ડાઉનલોડ નિષ્ફળ થયું"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "નિષ્ફળ થયું, માન્ય સરનામું નથી"
+  },
+  "options_filterList_title": {
+    "message": "ફિલ્ટરની લીસ્ટ"
+  },
+  "options_support_title": {
+    "message": "આધાર"
+  },
+  "options_tab_general": {
+    "message": "સામાન્ય"
+  },
+  "options_tab_help": {
+    "message": "મદદ"
+  }
+}

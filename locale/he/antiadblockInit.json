@@ -1,0 +1,8 @@
+{
+  "notification_antiadblock_message": {
+    "message": "אתר זה ידוע בהצגת הודעות מכוונות למשתמשי Adblock Plus. האם ברצונכם ש-Adblock Plus יסתיר הודעות מוכוונות?"
+  },
+  "notification_antiadblock_title": {
+    "message": "הסתרת הודעות מוכוונות?"
+  }
+}

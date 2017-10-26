@@ -14,35 +14,11 @@
   "firstRun_contributor_credits": {
     "message": "Lista saradnika"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "Da li se ova stranica stalno pojavljuje? <a>Kliknite ovdje!</a>"
-  },
   "firstRun_donate": {
     "message": "doniraj"
   },
   "firstRun_donate_label": {
     "message": "Podržite naš projekat"
-  },
-  "firstRun_feature_malware": {
-    "message": "Blokiranje Malwarea"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "Učinite vaše surfanje sigurnijim blokiranjem poznatih malware domena."
-  },
-  "firstRun_feature_social": {
-    "message": "Ukloni dugmad za socijalne mreže"
-  },
-  "firstRun_feature_social_description": {
-    "message": "Automatski uklonite dugmad socijalnih mreža, kao što je Facebook Like, koja se prikazuju na web stranicama i prate vaše navike."
-  },
-  "firstRun_feature_tracking": {
-    "message": "Onemogući praćenje"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "Surfajte privatno tako što ćete onemogućiti praćenje - skrivanjem vaših tragova od reklamnih kompanija koje bi vas pratile još više."
-  },
-  "firstRun_features": {
-    "message": "Adblock Plus može uraditi mnogo više od samog bokiranja reklama"
   },
   "firstRun_share": {
     "message": "Preporučite nas prijateljima"
@@ -52,11 +28,5 @@
   },
   "firstRun_title": {
     "message": "Adblock Plus je instaliran"
-  },
-  "firstRun_toggle_off": {
-    "message": "ISKLJUČENO"
-  },
-  "firstRun_toggle_on": {
-    "message": "UKLJUČENO"
   }
 }

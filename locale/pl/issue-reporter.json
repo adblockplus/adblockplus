@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Wyślij anonimowo"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "Nie będziemy w stanie się z tobą skontaktować, co może spowodować nadanie raportowi niższego priorytetu."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Dodaj objaśnienie"
+  },
+  "issueReporter_comment_description": {
+    "message": "W poniższym polu tekstowym możesz podać objaśnienie, które pomoże nam zrozumieć problem. Jest to opcjonalne, ale zalecane, jeśli problem nie jest oczywisty. Możesz również sprawdzić dane zawarte w zgłoszeniu przed jego wysłaniem."
+  },
+  "issueReporter_comment_label": {
+    "message": "Objaśnienia (opcjonalne):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "Treść objaśnienia przekroczyła dopuszczalny limit 1000 znaków. Zostanie wysłane tylko pierwsze 1000 znaków."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Zgłoszenie zostało zapisane. Możesz zobaczyć je pod następującym adresem:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Poczekaj chwilę, aż Adblock Plus zbierze wymagane dane."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Witamy w reporterze problemów"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Gotowe"
+  },
+  "issueReporter_email_description": {
+    "message": "Zachęcamy do podania prawidłowego adresu e-mail, abyśmy mogli skontaktować się z tobą w przypadku, gdy może to ułatwić rozwiązanie problemu. Pozwoli to również rozpoznać naszych współpracowników i nadać ich raportom wyższy priorytet."
+  },
+  "issueReporter_email_label": {
+    "message": "Email:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "Próba wysłania zgłoszenia nie powiodła się z powodu „?1?”. Sprawdź połączenie z Internetem i ponów próbę. Jeśli problem będzie nadal występował, poproś o pomoc na [link]forum Adblock Plusa[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Wybierz tę opcję, jeśli reklama jest wyświetlana pomimo tego, że Adblock Plus jest włączony."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus nie blokuje reklam"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Wybierz tę opcję, jeśli strona nie zawiera ważnych treści, jest wyświetlana nieprawidłowo lub działa niepoprawnie. Możesz określić, czy Adblock Plus jest przyczyną problemu, wyłączając go chwilowo."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus zbyt dużo blokuje"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "Prawdopodobnie zgłaszany problem jest już znany. Więcej informacji:"
+  },
+  "issueReporter_page_title": {
+    "message": "Reporter problemów"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Zasady ochrony prywatności"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Wyślij zgłoszenie"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Wyślij zgłoszenie"
+  },
+  "issueReporter_sending": {
+    "message": "Wysyłanie zgłoszenia… Proszę czekać."
+  },
+  "issueReporter_showData_label": {
+    "message": "Wyświetl dane zgłoszenia"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Tutaj możesz wykonać czynności niezbędne do wysłania zgłoszenia problemu związanego z Adblock Plusem. Najpierw wybierz typ problemu, jaki występuje na tej stronie:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Wybierz typ problemu"
+  }
+}

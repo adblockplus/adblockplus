@@ -1,0 +1,35 @@
+{
+  "options_customFilter_cancel": {
+    "message": "Avbryt"
+  },
+  "options_dialog_about_title": {
+    "message": "Om Adblock Plus"
+  },
+  "options_email": {
+    "message": "E-post:"
+  },
+  "options_filterList_column_name": {
+    "message": "Filterlister"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Feilet, checksum feil"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Feilet, nedlastningsfeil"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Feilet, ikke en gyldig adresse"
+  },
+  "options_filterList_title": {
+    "message": "Filterlister"
+  },
+  "options_footer_about": {
+    "message": "Om Adblock Plus"
+  },
+  "options_footer_contribute": {
+    "message": "Bidra"
+  },
+  "options_page_title": {
+    "message": "Innstillingar"
+  }
+}

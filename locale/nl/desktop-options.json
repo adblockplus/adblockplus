@@ -1,0 +1,251 @@
+{
+  "options_acceptableAds_description": {
+    "message": "Acceptabele advertenties zijn niet-opdringerige advertenties. Ze zijn de middenweg tussen advertentieblokkering en het steunen van online-inhoud, omdat ze inkomsten voor website-eigenaars genereren."
+  },
+  "options_acceptableAds_header": {
+    "message": "Acceptabele advertenties"
+  },
+  "options_advanced_description": {
+    "message": "Adblock Plus aanpassen, filterlijsten toevoegen of verwijderen, uw eigen filterlijsten maken en beheren"
+  },
+  "options_close": {
+    "message": "sluiten"
+  },
+  "options_control_remove_title": {
+    "message": "verwijderen"
+  },
+  "options_customFilter_cancel": {
+    "message": "Annuleren"
+  },
+  "options_customFilter_edit": {
+    "message": "Filters bewerken"
+  },
+  "options_customFilter_save": {
+    "message": "Opslaan"
+  },
+  "options_customFilters_edit_placeholder": {
+    "message": "bv. $filter$",
+    "placeholders": {
+      "filter": {
+        "content": "$1",
+        "example": "/ads/track/*"
+      }
+    }
+  },
+  "options_customFilters_learn": {
+    "message": "Info over het schrijven van filterlijsten"
+  },
+  "options_customFilters_start": {
+    "message": "Beginnen met schrijven van mijn filterlijst"
+  },
+  "options_customFilters_tip": {
+    "message": "Hier verschijnen filters die u maakt."
+  },
+  "options_customFilters_title": {
+    "message": "Uw filterlijst maken en bewerken"
+  },
+  "options_customFilters_widget_title": {
+    "message": "Mijn filterlijst"
+  },
+  "options_customize_blockElement": {
+    "message": "Menu-item 'Element blokkeren' in contextmenu tonen"
+  },
+  "options_customize_blockElement_tooltip": {
+    "message": "Storende items op een webpagina tijdelijk blokkeren, zoals afbeeldingen of bewegende diavoorstellingen."
+  },
+  "options_customize_header": {
+    "message": "Op-pagina-acties aanpassen"
+  },
+  "options_customize_showDevToolsPanel_tooltip": {
+    "message": "Geblokkeerde en items op witte lijst van het paneel ontwikkelaarshulpmiddelen van uw browser bekijken."
+  },
+  "options_customize_showNotifications": {
+    "message": "Nuttige meldingen tonen"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Alle meldingen van Adblock Plus uitschakelen."
+  },
+  "options_dialog_about_title": {
+    "message": "Over Adblock Plus"
+  },
+  "options_dialog_about_version": {
+    "message": "Versienummer $version$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "2.6.7"
+      }
+    }
+  },
+  "options_dialog_import_subscription_location": {
+    "message": "URL van filterlijst"
+  },
+  "options_dialog_import_subscription_location_error": {
+    "message": "Voer een geldige URL in"
+  },
+  "options_dialog_import_subscription_title": {
+    "message": "Naam van filterlijst"
+  },
+  "options_dialog_import_subscription_title_error": {
+    "message": "Vul het veld in"
+  },
+  "options_dialog_import_title": {
+    "message": "Een filterlijst toevoegen"
+  },
+  "options_dialog_language_other_empty": {
+    "message": "Er zijn geen beschikbare talen."
+  },
+  "options_dialog_language_title": {
+    "message": "Een taal selecteren"
+  },
+  "options_dialog_predefined_confirm": {
+    "message": "Ja, deze filterlijst gebruiken"
+  },
+  "options_email": {
+    "message": "E-mailadres:"
+  },
+  "options_filterList_add": {
+    "message": "+ Een nieuwe filterlijst toevoegen"
+  },
+  "options_filterList_column_name": {
+    "message": "Filterlijsten"
+  },
+  "options_filterList_hours": {
+    "message": "uur geleden"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Mislukt, onjuiste checksum"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Mislukt, fout bij downloaden"
+  },
+  "options_filterList_lastDownload_inProgress": {
+    "message": "Bijwerken"
+  },
+  "options_filterList_lastDownload_invalidData": {
+    "message": "Mislukt, geen geldige filterlijst"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Mislukt, geen geldig adres"
+  },
+  "options_filterList_minutes": {
+    "message": "minuten geleden"
+  },
+  "options_filterList_now": {
+    "message": "zojuist"
+  },
+  "options_filterList_source": {
+    "message": "bron"
+  },
+  "options_filterList_state_active": {
+    "message": "Actief"
+  },
+  "options_filterList_state_disabled": {
+    "message": "Uitgeschakeld"
+  },
+  "options_filterList_title": {
+    "message": "Filterlijsten"
+  },
+  "options_filterList_update": {
+    "message": "alle filterlijsten bijwerken"
+  },
+  "options_filterList_updateNow": {
+    "message": "nu bijwerken"
+  },
+  "options_footer_about": {
+    "message": "Over Adblock Plus"
+  },
+  "options_footer_contribute": {
+    "message": "Bijdragen"
+  },
+  "options_general_description": {
+    "message": "Bepalen wat Adblock Plus op websites toont en verbergt"
+  },
+  "options_help_description": {
+    "message": "Hulp zoeken of contact met ons opnemen"
+  },
+  "options_language_add": {
+    "message": "+ een taal toevoegen"
+  },
+  "options_language_change": {
+    "message": "wijzigen"
+  },
+  "options_language_description": {
+    "message": "Adblock Plus optimaliseren voor de taal/talen waarin u websites doorgaans bekijkt."
+  },
+  "options_language_header": {
+    "message": "Taal"
+  },
+  "options_more_filters_description": {
+    "message": "Dit zijn extra filters die u eerder aan Adblock Plus hebt toegevoegd."
+  },
+  "options_more_filters_header": {
+    "message": "Meer filters"
+  },
+  "options_notification_hide": {
+    "message": "Melding sluiten"
+  },
+  "options_page_title": {
+    "message": "Instellingen"
+  },
+  "options_privacy_header": {
+    "message": "Privacy en beveiliging"
+  },
+  "options_protection_privacy_tooltip": {
+    "message": "Bescherm uw persoonlijke gegevens door alle vormen van tracking, waaronder informatieverzamelaars, vanaf het internet te verwijderen."
+  },
+  "options_report_ad": {
+    "message": "Ziet u een advertentie die er volgens u niet hoort te zijn? <a>Rapporteer een advertentie</a>"
+  },
+  "options_report_bug": {
+    "message": "Een bug gevonden? <a>Stuur ons een bugrapport</a>"
+  },
+  "options_report_forum": {
+    "message": "Ondersteuning van onze gemeenschap nodig? <a>Ga naar het forum</a>"
+  },
+  "options_report_issue": {
+    "message": "Denkt u dat inhoud of functionaliteit ten onrechte door ons wordt geblokkeerd? <a>Meld hier onterecht geblokkeerde items</a>"
+  },
+  "options_social_description": {
+    "message": "Hebt u een vraag of een nieuw idee? We zijn er om te helpen."
+  },
+  "options_social_title": {
+    "message": "Contact opnemen"
+  },
+  "options_support_title": {
+    "message": "Ondersteuning"
+  },
+  "options_tab_advanced": {
+    "message": "Geavanceerd"
+  },
+  "options_tab_general": {
+    "message": "Algemeen"
+  },
+  "options_tab_whitelist": {
+    "message": "Websites op witte lijst"
+  },
+  "options_whitelist_add": {
+    "message": "Website toevoegen"
+  },
+  "options_whitelist_empty_2": {
+    "message": "Hier worden websites getoond die u vertrouwt en waarop u advertenties wilt toestaan."
+  },
+  "options_whitelist_notification": {
+    "message": "'$website$' is op de witte lijst geplaatst.",
+    "placeholders": {
+      "website": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "options_whitelist_placeholder_example": {
+    "message": "bv. $domain$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  }
+}

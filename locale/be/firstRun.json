@@ -1,0 +1,38 @@
+{
+  "firstRun_abbButtonSubtitle": {
+    "message": "Даступны для Android і iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Спампаваць Adblock Browser"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Маеце смартфон або планшэт?"
+  },
+  "firstRun_acceptableAdsExplanation": {
+    "message": "Мы б хацелі заахвоціць сайты ужываць простую, недакучлівую рэкламу. Таму былі створаны <a>строгія ўказанні</a> паводле якіх, некаторая рэклама па змаўчанні дапушчальная. Калі вы хочаце блакаваць усю рэкламу, гэтую функцыю можна лёгка <a>адключыць</a>."
+  },
+  "firstRun_acceptableAdsHeadline": {
+    "message": "Надакучлівая рэклама цяпер будзе блакавацца"
+  },
+  "firstRun_contributor_credits": {
+    "message": "Ахвярадаўцы"
+  },
+  "firstRun_donate": {
+    "message": "ахвяраваць"
+  },
+  "firstRun_donate_label": {
+    "message": "Падтрымаць наш праект"
+  },
+  "firstRun_filterlistsReinitializedWarning": {
+    "message": "Падобна на тое, што ў выніку памылкі былі выдалены ўсе фільтры і іх немагчыма аднавіць з рэзервовай копіі. З гэтай прычыны былі скінуты налады фільтраў і недакучлівай рэкламы. Праверце вашы спісы фільтраў і параметры для недакучлівай рэкламы ў <a>наладах Adblock Plus</a>."
+  },
+  "firstRun_share": {
+    "message": "Расказаць сябрам"
+  },
+  "firstRun_share_headline": {
+    "message": "<a>Памажыце нам</a> ў імкненні зрабіць інтэрнэт лепшым месцам"
+  },
+  "firstRun_title": {
+    "message": "Adblock Plus усталяваны"
+  }
+}

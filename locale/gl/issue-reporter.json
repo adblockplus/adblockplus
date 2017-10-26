@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Informe anónimo"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "Non poderemos responderche, polo que lle daremos unha prioridade máis baixa."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Comentar"
+  },
+  "issueReporter_comment_description": {
+    "message": "O campo de texto xusto debaixo permíteche comentar o problema. Este paso é opcional pero o recomendamos se o problema non che é claro. Poderás revisar os datos do informe antes de envialo."
+  },
+  "issueReporter_comment_label": {
+    "message": "Comentario (opcional):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "O teu comentario ten mais de 1000 caracteres, e só os primeiros 1000 serán enviados."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "O teu informe foi gardado. Podes acceder a él no seguinte enderezo:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Agarda un intre mentres Adblock Plus reúne os datos necesarios."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Benvido ao Xerador de Informes de Problemas"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Feito"
+  },
+  "issueReporter_email_description": {
+    "message": "Recomenámosche que poñas un e-mail válido, para que deste xeito poidamos contactar contigo se temos algunha pregunta sobre o teu informe. Isto tamén nos permite recoñecer as túas contribucións e darlles unha prioridade mais alta."
+  },
+  "issueReporter_email_label": {
+    "message": "E-mail:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "O intento de envio fallou co código de erro \"?1?\". Por favor asegurate que estás conectado a Internet e volta a intentalo. Se segue o problema, pide axuda na [link]conferencia do Adblock Plus[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Escolla esta opción se aparece publicidade aínda a pesar de estar activado o Adblock Plus."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "O Adblock Plus non está a bloquear ningún elemento"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Selecciona esta opción se a páxina non ten contido importante, se ésta amósase incorrectamente ou non funciona correctamente. Podes determinar se Adblock Plus é a causa do problema desactivándoo temporalmente."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Seica o Adblock Plus está a bloquear de máis"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "O problema do que informas é coñecido. Máis información:"
+  },
+  "issueReporter_page_title": {
+    "message": "Xerador de informes de problemas"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Política de privacidade"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Mandar o informe"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Mandar o informe"
+  },
+  "issueReporter_sending": {
+    "message": "Agarda namentres o Adblock Plus manda o teu informe."
+  },
+  "issueReporter_showData_label": {
+    "message": "Amosar os datos do informe"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Esta xanela vaiche guiar a través dos pasos necesarios para a presentación dun informe de problema no Adblock Plus. Primeiro, selecciona o tipo de problema que atopaches nesta páxina:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Selecciona o tipo de problema"
+  }
+}

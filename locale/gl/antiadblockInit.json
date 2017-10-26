@@ -1,0 +1,8 @@
+{
+  "notification_antiadblock_message": {
+    "message": "Este sitio é coñecido por amosar mensaxes dirixidas ós usuarios do Adblock Plus. Queres que o Adblock plus agoche estas mensaxes dirixidas?"
+  },
+  "notification_antiadblock_title": {
+    "message": "Agochar mensaxes dirixidas?"
+  }
+}

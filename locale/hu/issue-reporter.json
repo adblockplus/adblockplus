@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Névtelen beküldendő"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "Nem fogunk tudni kapcsolatba lépni Önnel, és valószínű, hogy a jelentése alacsonyabb prioritást kap."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Megjegyzés hozzáadása"
+  },
+  "issueReporter_comment_description": {
+    "message": "Az alábbi szöveges mezőbe beírhat egy megjegyzést, ami segíthet megérteni a problémát. Ez a lépés kihagyható, de ajánlott, ha a probléma nem egyértelmű. A jelentés elküldése előtt még lesz lehetősége átnézni a megadott adatokat."
+  },
+  "issueReporter_comment_label": {
+    "message": "Megjegyzés (nem kötelező):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "A megjegyzés hossza meghaladja az 1000 karaktert. Csak az első 1000 karakter lesz elküldve."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Az Ön jelentése el lett mentve. Az alábbi címen érheti el a későbbiekben:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Kérem várjon pár pillanatot, amíg az Adblock Plus összegyűjti a szükséges adatokat."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Üdvözli a hibajelentő"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Befejezés"
+  },
+  "issueReporter_email_description": {
+    "message": "Javasoljuk, hogy érvényes e-mail címet adjon meg, így fel tudjuk venni Önnel a kapcsolatot, ha kérdés merül fel a jelentésével kapcsolatban. Ezzel azt is lehetővé teszi, hogy felismerjük az Ön hozzájárulásait, és azok magasabb prioritást kapjanak."
+  },
+  "issueReporter_email_label": {
+    "message": "Email:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "A jelentés elküldése közben hiba történt, melynek kódja: \"?1?\". Kérem ellenőrizze, hogy megfelelően csatlakozik-e az Internethez és próbálja újra. Ha a probléma nem szűnik meg, kérem kérjen segítséget az [link]Adblock Plus fórumon[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Válassza ezt a lehetőséget, ha hirdetések jelennek meg az oldalon annak ellenére, hogy az Adblock Plus engedélyezve van."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Az Adblock Plus nem tiltott le egy hirdetést"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Válassza ezt a lehetőséget, ha a webhelyről hiányoznak lényeges tartalmak, rosszul jelenik meg, vagy hibásan működik. Úgy bizonyosodhat meg arról, hogy az Adblock Plus okozza a problémát, ha ideiglenesen letiltja azt."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Az Adblock Plus túl sok mindent letilt"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "Az Ön által bejelentett hiba már ismert. További információk:"
+  },
+  "issueReporter_page_title": {
+    "message": "Hibajelentő"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Adatvédelmi elvek"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Jelentés küldése"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Jelentés küldése"
+  },
+  "issueReporter_sending": {
+    "message": "Kérem várjon, amíg az Adblock Plus elküldi a jelentését."
+  },
+  "issueReporter_showData_label": {
+    "message": "Jelentés adatainak megtekintése"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Ez az ablak végigvezeti az Adblock Plus hiba bejelentési lépésein. Először kérem válassza ki a webhelyen jelentkező hiba jellegét:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Vállasszon típust"
+  }
+}

@@ -17,41 +17,14 @@
   "firstRun_contributor_credits": {
     "message": "貢献した人"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "このページが何度も再表示される場合は <a>ここを参照！</a>"
-  },
   "firstRun_donate": {
     "message": "寄付"
   },
   "firstRun_donate_label": {
     "message": "プロジェクトを支援"
   },
-  "firstRun_feature_malware": {
-    "message": "マルウェアをブロック"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "既知のマルウェア配布ドメインをブロックすることで、より安全なブラウジングを可能にします。"
-  },
-  "firstRun_feature_social": {
-    "message": "ソーシャルメディアのボタンを消す"
-  },
-  "firstRun_feature_social_description": {
-    "message": "Web ページに設置されていてユーザーの行動を追跡するソーシャルメディアボタン（例えば Facebook の「いいね！」）を自動的に取り除きます。 "
-  },
-  "firstRun_feature_tracking": {
-    "message": "トラッキングを無効化"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "追跡を無効化してプライバシーを確保しつつブラウジング - あなたのあらゆる動静を追跡する広告会社から足跡を隠します。"
-  },
-  "firstRun_features": {
-    "message": "Adblock Plus は単に広告をブロックするだけではありません"
-  },
   "firstRun_filterlistsReinitializedWarning": {
     "message": "すべてのフィルタが削除されてしまう問題が発生したようです。バックアップから復元することができず、お使いのフィルタと控えめな広告の設定をリセットする必要がありました。 <a>Adblock Plus のオプション</a>から、お使いのフィルタリストと控えめな広告の設定を確認してください。"
-  },
-  "firstRun_legacySafariWarning": {
-    "message": "Adblock Plus がサポートしていない古いバージョンの Safari を利用しているため、正常に動作しなかったりユーザー体験を損なう Web サイトがあるかもしれません。Mac OS X 10.8 Mountain Lion なら Safari 6.1.1 以降、Mac OS X 10.9 Mavericks なら Safari 7.0.1 以降に更新するか、Mozilla Firefox／Google Chrome／Opera いずれか最新版の利用を強く推奨します。"
   },
   "firstRun_share": {
     "message": "友達に教える"

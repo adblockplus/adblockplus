@@ -1,0 +1,20 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Izinkan beberapa iklan yang tidak mengganggu"
+  },
+  "mops_acceptableAds_more": {
+    "message": "Pelajari lebih lanjut"
+  },
+  "mops_action_cancel": {
+    "message": "Batal"
+  },
+  "mops_header": {
+    "message": "Pengaturan Adblock Plus"
+  },
+  "mops_subscriptions_header": {
+    "message": "Penyaring langganan"
+  },
+  "mops_title": {
+    "message": "Pengaturan Adblock Plus"
+  }
+}

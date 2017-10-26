@@ -1,0 +1,32 @@
+{
+  "options_customFilter_cancel": {
+    "message": "لغو"
+  },
+  "options_customize_showNotifications": {
+    "message": "نمایش اعلان های مفید"
+  },
+  "options_filterList_column_name": {
+    "message": "لیست فیلتر"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "ناموفق, عدم تطابق کنترلی"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "ناموفق، فرآیند دریافت شکست خورد"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "ناموفق، نشانی معتبر نیست"
+  },
+  "options_filterList_title": {
+    "message": "لیست فیلتر"
+  },
+  "options_page_title": {
+    "message": "تنظیمات"
+  },
+  "options_tab_general": {
+    "message": "صفحه اصلی"
+  },
+  "options_tab_whitelist": {
+    "message": "فهرست سفید پایگاهها (که تبلیغات مسدود نشه)"
+  }
+}

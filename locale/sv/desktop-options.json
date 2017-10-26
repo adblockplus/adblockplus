@@ -1,0 +1,47 @@
+{
+  "options_acceptableAds_header": {
+    "message": "Godtagbara annonser"
+  },
+  "options_customFilter_cancel": {
+    "message": "Avbryt"
+  },
+  "options_customize_showNotifications": {
+    "message": "Visa användbara notifieringar"
+  },
+  "options_dialog_about_title": {
+    "message": "Om Adblock Plus"
+  },
+  "options_email": {
+    "message": "E-Post:"
+  },
+  "options_filterList_column_name": {
+    "message": "Filterlistor"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Fel kontrollsumma"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Fel vid hämtning"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Ogiltig adress"
+  },
+  "options_filterList_title": {
+    "message": "Filterlistor"
+  },
+  "options_footer_about": {
+    "message": "Om Adblock Plus"
+  },
+  "options_page_title": {
+    "message": "Inställningar"
+  },
+  "options_tab_general": {
+    "message": "Allmänt"
+  },
+  "options_tab_help": {
+    "message": "Hjälp"
+  },
+  "options_tab_whitelist": {
+    "message": "Vitlistade webbplatser"
+  }
+}

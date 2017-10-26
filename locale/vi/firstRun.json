@@ -17,41 +17,14 @@
   "firstRun_contributor_credits": {
     "message": "Đóng góp các khoản tín dụng"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "Có phải trang này luôn hiển thị? <a>Bấm vào đây</a>"
-  },
   "firstRun_donate": {
     "message": "ủng hộ"
   },
   "firstRun_donate_label": {
     "message": "Hỗ trợ dự án của chúng tôi"
   },
-  "firstRun_feature_malware": {
-    "message": "Chặn phần mềm độc hại"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "Làm cho trình duyệt an toàn hơn bằng cách chặn các tên miền chứa phần mềm độc hại."
-  },
-  "firstRun_feature_social": {
-    "message": "Loại bỏ các nút bấm Phương tiện Mạng xã hội"
-  },
-  "firstRun_feature_social_description": {
-    "message": "Tự động loại bỏ lịch duyệt của các nút truyền thông mạng xã hội, như là nút Thích Facebook, xuất hiện trên trang mạng và theo dõi hành vi của bạn."
-  },
-  "firstRun_feature_tracking": {
-    "message": "Vô hiệu hóa theo dõi"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "Duyệt riêng tư bằng cách vô hiệu theo dõi - ẩn theo dõi của bạn từ các công ty quảng cáo theo dõi từng bước của bạn."
-  },
-  "firstRun_features": {
-    "message": "Adblock Plus không chỉ có thể chặn quảng cáo"
-  },
   "firstRun_filterlistsReinitializedWarning": {
     "message": "Có vẻ như là một vấn đề gây ra tất cả các bộ lọc phải được loại bỏ và chúng tôi không thể khôi phục lại một bản sao lưu. Vì vậy chúng tôi đã phải thiết lập lại các bộ lọc của bạn và thiết lập danh mục chấp nhận được. Hãy kiểm tra danh sách bộ lọc của bạn và các thiết lập danh mục được chấp nhận trong các <a>tùy chọn Adblock Plus</a>."
-  },
-  "firstRun_legacySafariWarning": {
-    "message": "Bạn đang dùng một phiên bản cũ của Safari không được hỗ trợ bởi Adblock Plus. Nó có thể không hoạt động chính xác hoặc làm giảm trải nghiệm của người dùng trên một số trang mạng. Chúng tôi rất khuyến khích cập nhật lên Safari 6.1.1 hoặc cao hơn (trên OS X 10.8 Mountain Lion), hoặc Safari 7.0.1 hoặc cao hơn (trên OS X 10.9 Mavericks), hoặc dùng phiên bản mới nhất của Mozilla Firefox, Google Chrome hoặc Opera."
   },
   "firstRun_share": {
     "message": "Nói với bạn bè của bạn"
@@ -61,11 +34,5 @@
   },
   "firstRun_title": {
     "message": "Adblock Plus đã được cài đặt"
-  },
-  "firstRun_toggle_off": {
-    "message": "TẮT"
-  },
-  "firstRun_toggle_on": {
-    "message": "BẬT"
   }
 }

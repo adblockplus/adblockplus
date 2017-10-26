@@ -1,0 +1,53 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Permite publicitatea neinvazivă"
+  },
+  "mops_acceptableAds_more": {
+    "message": "Aflaţi mai multe"
+  },
+  "mops_action_cancel": {
+    "message": "Anulează"
+  },
+  "mops_enabled_label": {
+    "message": "Activează Adblock Plus pe <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "Te rugăm să introduci un titlu"
+  },
+  "mops_error_url": {
+    "message": "Vă rugăm să introduceți un URL"
+  },
+  "mops_filterlist_add": {
+    "message": "+ Adaugă o listă de filtre"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Adaugă o listă de filtre"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ Adaugă o listă de filtre personalizate"
+  },
+  "mops_header": {
+    "message": "Opţiuni Adblock Plus"
+  },
+  "mops_subscribe_header": {
+    "message": "Adaugă o listă de filtre personalizate"
+  },
+  "mops_subscribe_title": {
+    "message": "Numele listei de filtre"
+  },
+  "mops_subscribe_url": {
+    "message": "Adresa listei de filtre"
+  },
+  "mops_subscriptions_header": {
+    "message": "Abonamente filtre"
+  },
+  "mops_title": {
+    "message": "Opţiuni Adblock Plus"
+  }
+}

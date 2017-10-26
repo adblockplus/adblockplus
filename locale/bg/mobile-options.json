@@ -1,0 +1,53 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Позволяване на определени ненатрапчиви реклами"
+  },
+  "mops_acceptableAds_more": {
+    "message": "Повече"
+  },
+  "mops_action_cancel": {
+    "message": "Отказ"
+  },
+  "mops_enabled_label": {
+    "message": "Разреши Adblock Plus за <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "Въведете име на филтъра"
+  },
+  "mops_error_url": {
+    "message": "Въведете адрес на филтъра"
+  },
+  "mops_filterlist_add": {
+    "message": "+ Добави филтър"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Добавяне на филтър"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ Добави собствен филтър"
+  },
+  "mops_header": {
+    "message": "Настройки на Adblock Plus"
+  },
+  "mops_subscribe_header": {
+    "message": "Добавяне на собствен филтър"
+  },
+  "mops_subscribe_title": {
+    "message": "Име на филтъра"
+  },
+  "mops_subscribe_url": {
+    "message": "Адрес на филтъра"
+  },
+  "mops_subscriptions_header": {
+    "message": "Абониране за филтри"
+  },
+  "mops_title": {
+    "message": "Настройки на Adblock Plus"
+  }
+}

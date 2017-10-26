@@ -1,0 +1,8 @@
+{
+  "notification_antiadblock_message": {
+    "message": "Questo sito è noto per mostrare messaggi mirati agli utenti di Adblock Plus. Vuoi che Adblock Plus nasconda i messaggi mirati (pubblicità)?"
+  },
+  "notification_antiadblock_title": {
+    "message": "Nascondere messaggi mirati?"
+  }
+}

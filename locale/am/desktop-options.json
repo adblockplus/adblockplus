@@ -1,0 +1,14 @@
+{
+  "options_customFilter_cancel": {
+    "message": "ይቅር"
+  },
+  "options_filterList_column_name": {
+    "message": "የማጣሪያ ዝርዝር"
+  },
+  "options_filterList_title": {
+    "message": "የማጣሪያ ዝርዝር"
+  },
+  "options_tab_general": {
+    "message": "አጠቃላይ"
+  }
+}

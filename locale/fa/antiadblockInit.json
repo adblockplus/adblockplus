@@ -1,0 +1,8 @@
+{
+  "notification_antiadblock_message": {
+    "message": "این سایت پیام های هدفمند برای کاربران Adblock Plus نشان می دهد. آیا مایلید که Adblock Plus پیام های هدفمند را از دید شما مخفی کند؟"
+  },
+  "notification_antiadblock_title": {
+    "message": "آیا مایلید پیام های هدفمند برای کاربران Adblock Plus را مخفی نمایید؟"
+  }
+}

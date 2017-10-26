@@ -1,0 +1,53 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Leisti neįkyrias reklamas"
+  },
+  "mops_acceptableAds_more": {
+    "message": "Sužinoti daugiau"
+  },
+  "mops_action_cancel": {
+    "message": "Atsisakyti"
+  },
+  "mops_enabled_label": {
+    "message": "Įjungti Adblock Plus <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "Įveskite pavadinimą"
+  },
+  "mops_error_url": {
+    "message": "Įveskite URL nuorodą"
+  },
+  "mops_filterlist_add": {
+    "message": "+ Pridėti filtrų sąrašą"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Pridėti filtrų sąrašą"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ Pridėti pasirinktinį filtrų sąrašą"
+  },
+  "mops_header": {
+    "message": "Adblock Plus nustatymai"
+  },
+  "mops_subscribe_header": {
+    "message": "Pridėti pasirinktinį filtrų sąrašą"
+  },
+  "mops_subscribe_title": {
+    "message": "Sąrašo pavadinimas"
+  },
+  "mops_subscribe_url": {
+    "message": "Sąrašo url"
+  },
+  "mops_subscriptions_header": {
+    "message": "Sąrašų prenumeratos"
+  },
+  "mops_title": {
+    "message": "Adblock Plus nustatymai"
+  }
+}

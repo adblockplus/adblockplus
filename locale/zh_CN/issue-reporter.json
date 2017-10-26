@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "匿名提交"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "我们将无法回复你，并且报告可能被放在较低的优先级次序。"
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "输入注释"
+  },
+  "issueReporter_comment_description": {
+    "message": "以下文本区允许您输入一些注释来帮助我们更好地理解该问题。 该步骤虽然是可选的，但是如果问题不是那么显而易见的话，我们 推荐您输入一些注释。您可以在发送之前再检查一下报告的数据。"
+  },
+  "issueReporter_comment_label": {
+    "message": "注释（可选）："
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "您输入的注释长度超过 1000 个字符。只有前 1000 个字符会被发送出去。"
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "您的报告已被保存。您可以通过如下地址访问："
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Adblock Plus 正在收集所需数据，请稍等片刻。"
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "欢迎使用问题报告系统"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "完成"
+  },
+  "issueReporter_email_description": {
+    "message": "我们鼓励您输入一个有效的电子邮件地址，以便在我们对你的报告有疑问时可以与您联系。它还能使我们能认出你的贡献，并帮助确定它们的优先次序。"
+  },
+  "issueReporter_email_label": {
+    "message": "电子邮箱"
+  },
+  "issueReporter_errorMessage": {
+    "message": "发送报告失败，错误码 \"?1?\"。请确保您已连接互联网并重试。 如果问题依旧，请到 [link]Adblock Plus 论坛[/link]寻求帮助。"
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "如果 Adblock Plus 处于启用状态但仍然有广告出现，请选择此选项。"
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus 没有屏蔽广告"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "如果页面缺失了重要内容、显示不正常或者功能不正常，请选择此选项。 您可以通过临时禁用 Adblock Plus 来检测问题是否为 Adblock Plus 所致。"
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus 屏蔽了太多元素"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "您提交的问题可能是个已知问题。详情见："
+  },
+  "issueReporter_page_title": {
+    "message": "问题报告"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "隐私策略"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "发送报告"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "发送报告"
+  },
+  "issueReporter_sending": {
+    "message": "Adblock Plus 正在提交您的报告，请稍等。"
+  },
+  "issueReporter_showData_label": {
+    "message": "显示报告数据"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "本窗口将通过一系列步骤引导您提交 Adblock Plus 问题报告。 首先，请在本页选择您遇到的问题类型："
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "选择问题类型"
+  }
+}

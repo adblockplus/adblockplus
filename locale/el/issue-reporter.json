@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Ανώνυμη υποβολή"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "Δεν θα μπορέσουμε να επικοινωνήσουμε μαζί σας και πιθανώς η αναφορά σας να θεωρηθεί χαμηλής προτεραιότητας."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Εισαγωγή σχολίου"
+  },
+  "issueReporter_comment_description": {
+    "message": "Το πεδίο κειμένου παρακάτω σας επιτρέπει να εισάγετε κάποιο σχόλιο το οποίο θα μας βοηθήσει να κατανοήσουμε το ζήτημα που αντιμετωπίζετε. Το παρόν βήμα είναι προαιρετικό αλλά προτείνεται να συμπληρωθεί αν το πρόβλημα δεν είναι προφανές. Μπορείτε να αναθεωρήσετε την αναφορά πριν την αποστείλετε."
+  },
+  "issueReporter_comment_label": {
+    "message": "Σχόλιο (προαιρετικό):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "Το μέγεθος του σχολίου υπερβαίνει τους 1000 χαρακτήρες. Μόνο οι πρώτοι 1000 θα αποσταλούν."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Η αναφορά σας έχει αποθηκευτεί. Πρόσβαση σε αυτήν έχετε από την ακόλουθη διεύθυνση:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Παρακαλώ περιμένετε καθώς το Adblock Plus συλλέγει τα απαραίτητα δεδομένα."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Καλώς ήρθατε στον βοηθό αναφοράς ζητήματος"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Τέλος"
+  },
+  "issueReporter_email_description": {
+    "message": "Σας συνιστούμε να εισάγετε μια έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου, ώστε να επικοινωνήσουμε μαζί σας εάν υπάρχουν ερωτήσεις σχετικά με την αναφορά σας. Θα μας επιτρέψει επίσης, να αναγνωρίζουμε τις συνεισφορές σας και να τις δώσουμε υψηλότερη προτεραιότητα."
+  },
+  "issueReporter_email_label": {
+    "message": "Email:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "Η προσπάθεια αποστολής της αναφοράς απέτυχε με κωδικό λάθους \"?1?\". Παρακαλώ βεβαιωθείτε ότι έχετε πρόσβαση στο ίντερνετ και προσπαθήστε ξανά. Εάν το πρόβλημα παραμείνει, παρακαλώ ζητήστε βοήθεια στο [link]forum του Adblock Plus[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Επιλέξτε αυτό αν μια διαφήμιση εμφανίζεται παρόλο που το Adblock Plus είναι ενεργοποιημένο."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Το Adblock Plus δεν φράζει μια διαφήμιση"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Επιλέξτε αυτό, αν η σελίδα στερείται βασικό περιεχόμενο, εμφανίζεται λαθεμένα ή δεν λειτουργεί σωστά. Για να διαγνώσετε αν το Adblock Plus είναι η αιτία του προβλήματός σας, απενεργοποιήστε το προσωρινά."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Το Adblock Plus φράζει πάρα πολλά στοιχεία"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "Το ζήτημα που αναφέρατε είναι πιθανώς ήδη γνωστό. Περισσότερες πληροφορίες:"
+  },
+  "issueReporter_page_title": {
+    "message": "Αναφορά ζητήματος"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Πολιτική απορρήτου"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Αποστολή αναφοράς"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Αποστολή αναφοράς"
+  },
+  "issueReporter_sending": {
+    "message": "Παρακαλώ περιμένετε καθώς το Adblock Plus υποβάλει την αναφορά."
+  },
+  "issueReporter_showData_label": {
+    "message": "Εμφάνιση δεδομένων αναφοράς"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Σε αυτό το παράθυρο θα βρείτε βοήθεια για τα βήματα που πρέπει να ακολουθηθούν ώστε να υποβληθεί μια αναφορά για κάποιο ζήτημα που αντιμετωπίζετε σχετικά με το Adblock Plus. Παρακαλώ πρώτα επιλέξτε τον τύπο του ζητήματος που αντιμετωπίζετε σε αυτή την σελίδα:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Τύπος ζητήματος"
+  }
+}

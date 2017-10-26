@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Пошаљи анонимно"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "Нећемо моћи да вас контактирамо. Приоритет вашег извештаја ће вероватно бити низак."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Унесите коментар"
+  },
+  "issueReporter_comment_description": {
+    "message": "Доње поље за текст омогућава вам да додате коментар, како бисте нам помогли да лакше схватимо проблем. Овај корак је произвољан али је пожељан, ако проблем није лако уочљив. Можете и да још једном прегледате извештај пре него што га пошаљете."
+  },
+  "issueReporter_comment_label": {
+    "message": "Коментар (необавезно):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "Дужина вашег коментара прелази 1000 знакова. Само првих 1000 знакова ће бити послато."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Ваш извештај је сачуван. Можете му приступити на следећој адреси:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Сачекајте неколико тренутака док Adblock Plus прибави потребне податке."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Добро дошли у одељак за пријаву грешака"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Готово"
+  },
+  "issueReporter_email_description": {
+    "message": "Молимо вас да унесете исправну е-адресу да бисмо могли да вас контактирамо ако имамо питања у вези са вашим извештајем. Тиме ће и ваши извештаји имати већи приоритет."
+  },
+  "issueReporter_email_label": {
+    "message": "Е-адреса:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "Покушај слања извештаја није успео - грешка „?1?”. Уверите се да сте повезани са Интернетом, па покушајте поново. Ако проблем и даље постоји, помоћ потражите на [link]форуму Adblock Plus-а[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Изаберите ову опцију ако је оглас приказан иако је Adblock Plus омогућен."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus не блокира огласе"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Изаберите ову опцију ако страници недостају неки битни садржаји, погрешно изгледа или не ради како треба. Пробајте да привремено онемогућите Adblock Plus, па проверите да ли је онда све у реду."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus блокира превише"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "Проблем који сте пријавили је вероватно већ познат. Више информација:"
+  },
+  "issueReporter_page_title": {
+    "message": "Пријава грешака"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Политика приватности"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Пошаљи извештај"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Пошаљи извештај"
+  },
+  "issueReporter_sending": {
+    "message": "Сачекајте док Adblock Plus не пошаље ваш извештај."
+  },
+  "issueReporter_showData_label": {
+    "message": "Прикажи податке у извештају"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Овај прозор ће Вас водити кроз кораке за решавање проблема у Adblock Plus-у и њихово пријављивање. За почетак, изаберите врсту проблема на који сте наишли на овој страници:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Изаберите тип проблема"
+  }
+}

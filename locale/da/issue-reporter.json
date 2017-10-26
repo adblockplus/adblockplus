@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Anonym indsendelse"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "Vi kan ikke kontakte dig, rapporten prioriteres lavere."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Indsæt kommentar"
+  },
+  "issueReporter_comment_description": {
+    "message": "I tekstfeltet kan du beskrive problemet nærmere. Det er valgfrit, men vil hjælpe med at forstå problemet bedre. Du kan også gennemse rapporten før du sender den."
+  },
+  "issueReporter_comment_label": {
+    "message": "Kommentar (valgfri):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "Teksten overstiger 1000 tegn. Kun de første 1000 tegn bliver sendt."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Rapporten er gemt. Den kan ses på følgende adresse:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Vent et øjeblik mens Adblock Plus indsamler data."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Velkommen til Rapporter problem"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Færdig"
+  },
+  "issueReporter_email_description": {
+    "message": "Vi opfordrer dig til at angive en gyldig mailadresse, så vi kan kontakte dig, hvis der er spørgsmål til rapporten. Det tillader også genkendelse af dit bidrag for højere prioritet."
+  },
+  "issueReporter_email_label": {
+    "message": "Email:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "Afsendelse af rapporten fejlede med kode \"?1?\". Kontroller din internetforbindelse og prøv igen. Hvis problemet fortsætter så søg hjælp i [link]Adblock Plus forum[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Vælges hvis en annonce vises selv om Adblock Plus er aktiveret."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus blokerer ikke annonce"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Vælges hvis siden mangler vigtigt indhold, vises forkert eller ikke fungerer rigtigt. Du kan se om problemet skyldes Adblock Plus ved at deaktivere det midlertidigt."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus blokerer for meget"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "Det rapporterede problem er sandsynligvis kendt. Mere information:"
+  },
+  "issueReporter_page_title": {
+    "message": "Rapporter problem"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Privatlivspolitik"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Send rapport"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Send rapport"
+  },
+  "issueReporter_sending": {
+    "message": "Vent mens Adblock Plus sender rapporten."
+  },
+  "issueReporter_showData_label": {
+    "message": "Vis rapportdata"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Dette vindue vil føre dig gennem de trin der kræves for at rapportere et Adblock Plus problem. Vælg først hvilken problemtype du oplever på denne side:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Vælg problemtype"
+  }
+}

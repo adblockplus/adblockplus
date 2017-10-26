@@ -1,0 +1,11 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "السماح لب&عض الإعلانات الغير متطفّلة"
+  },
+  "mops_action_cancel": {
+    "message": "إلغاء"
+  },
+  "mops_subscriptions_header": {
+    "message": "إشتراكات الفلاتر"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Permitir cierta publicidad no intrusiva"
+  },
+  "mops_acceptableAds_more": {
+    "message": "Más información"
+  },
+  "mops_action_cancel": {
+    "message": "Cancelar"
+  },
+  "mops_enabled_label": {
+    "message": "Activar Adblock Plus en <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "Por favor, introduce un título"
+  },
+  "mops_error_url": {
+    "message": "Por favor, introduce un enlace de URL"
+  },
+  "mops_filterlist_add": {
+    "message": "+ Añade una lista de filtros"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Añadir lista de filtros"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ Añade una lista de filtros personalizada"
+  },
+  "mops_header": {
+    "message": "Ajustes de Adblock Plus"
+  },
+  "mops_subscribe_header": {
+    "message": "Añade una lista de filtros personalizada"
+  },
+  "mops_subscribe_title": {
+    "message": "Nombre de la lista de filtros"
+  },
+  "mops_subscribe_url": {
+    "message": "URL de la lista de filtros"
+  },
+  "mops_subscriptions_header": {
+    "message": "Suscripciones de filtros"
+  },
+  "mops_title": {
+    "message": "Ajustes de Adblock Plus"
+  }
+}

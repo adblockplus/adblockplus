@@ -1,0 +1,11 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Дозволи ненаметљиве рекламе"
+  },
+  "mops_action_cancel": {
+    "message": "Откажи"
+  },
+  "mops_subscriptions_header": {
+    "message": "Претплате на филтере"
+  }
+}

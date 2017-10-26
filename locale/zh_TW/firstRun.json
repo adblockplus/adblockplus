@@ -17,41 +17,14 @@
   "firstRun_contributor_credits": {
     "message": "貢獻名單"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "這個頁面一直跳出來嗎？ <a>請看這裡！</a>"
-  },
   "firstRun_donate": {
     "message": "贊助"
   },
   "firstRun_donate_label": {
     "message": "支援我們的專案"
   },
-  "firstRun_feature_malware": {
-    "message": "惡意軟體過濾"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "過濾惡意網域可使您的瀏覽過程更加安全。"
-  },
-  "firstRun_feature_social": {
-    "message": "移除社交媒體按鈕"
-  },
-  "firstRun_feature_social_description": {
-    "message": "自動擺脫如 Facebook Like 這類出現在網頁上追蹤您瀏覽習慣的社交按鈕。"
-  },
-  "firstRun_feature_tracking": {
-    "message": "停用追蹤"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "阻止追蹤功能才能達到真正的隱密瀏覽 - 此功能可以擺脫想監視您一舉一動的廣告商。"
-  },
-  "firstRun_features": {
-    "message": "Adblock Plus 不只可以過濾廣告"
-  },
   "firstRun_filterlistsReinitializedWarning": {
     "message": "有一個問題已刪除了所有的廣告過濾器，我們也無法還原備份。因此我們得重新設置您的廣告過濾器和可接受的廣告設置。請在<a>Adblock Plus 選項</a>裡檢查您的廣告過濾器名單和可接受的廣告設置。"
-  },
-  "firstRun_legacySafariWarning": {
-    "message": "您正在使用 Adblock Plus 所不支援的舊版 Safari。這可能影響使用者體驗或導致功能失常。我們強烈建議將 Safari 更新至 6.1.1 以上版本 (OS X 10.8 Mountain Lion 系統)，或更新至 Safari 7.0.1 (OS X 10.9 Mavericks 系統) 以上版本，或可考慮改用最新版的 Mozilla Firefox, Google Chrome 或 Opera。"
   },
   "firstRun_share": {
     "message": "告訴您的朋友"
@@ -61,11 +34,5 @@
   },
   "firstRun_title": {
     "message": "Adblock Plus 已安裝完成"
-  },
-  "firstRun_toggle_off": {
-    "message": "關閉"
-  },
-  "firstRun_toggle_on": {
-    "message": "開啟"
   }
 }

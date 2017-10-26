@@ -1,0 +1,50 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Autoriser certaines publicités non-intrusives"
+  },
+  "mops_acceptableAds_more": {
+    "message": "En savoir plus"
+  },
+  "mops_action_cancel": {
+    "message": "Annuler"
+  },
+  "mops_enabled_label": {
+    "message": "Activer Adblock Plus sur <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "Veuillez entrer un titre"
+  },
+  "mops_error_url": {
+    "message": "Veuillez entrer une URL"
+  },
+  "mops_filterlist_add": {
+    "message": "+ Ajouter une liste de filtres"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Ajouter une liste de filtres"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ Ajouter une liste de filtres personnalisés"
+  },
+  "mops_header": {
+    "message": "Paramètres d’Adblock Plus"
+  },
+  "mops_subscribe_header": {
+    "message": "Ajouter une liste de filtres personnalisés"
+  },
+  "mops_subscribe_title": {
+    "message": "Nom du filtre"
+  },
+  "mops_subscriptions_header": {
+    "message": "Abonnements à des filtres"
+  },
+  "mops_title": {
+    "message": "Paramètres d’Adblock Plus"
+  }
+}

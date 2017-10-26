@@ -1,0 +1,143 @@
+{
+  "options_close": {
+    "message": "tutup"
+  },
+  "options_customFilter_cancel": {
+    "message": "Batal"
+  },
+  "options_customFilter_edit": {
+    "message": "Ubah Filter"
+  },
+  "options_customFilter_save": {
+    "message": "Simpan"
+  },
+  "options_customFilters_learn": {
+    "message": "Belajar bagaimana menulis daftar filter"
+  },
+  "options_customFilters_start": {
+    "message": "Mulai menulis daftar filter"
+  },
+  "options_customize_showNotifications": {
+    "message": "Tampilkan pemberitahuan yang berguna"
+  },
+  "options_dialog_about_title": {
+    "message": "Tentang Adblock Plus"
+  },
+  "options_dialog_about_version": {
+    "message": "Versi nomor $version$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "2.6.7"
+      }
+    }
+  },
+  "options_dialog_language_title": {
+    "message": "Pilih Bahasa"
+  },
+  "options_dialog_predefined_confirm": {
+    "message": "Ya, gunakan saringan ini"
+  },
+  "options_email": {
+    "message": "Surel:"
+  },
+  "options_filterList_column_name": {
+    "message": "Daftar penyaring"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Gagal, checksum tidak cocok"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Gagal, kesalahan pengunduhan"
+  },
+  "options_filterList_lastDownload_inProgress": {
+    "message": "Memperbarui"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Gagal, alamat tidak sah"
+  },
+  "options_filterList_now": {
+    "message": "Baru saja"
+  },
+  "options_filterList_source": {
+    "message": "sumber"
+  },
+  "options_filterList_title": {
+    "message": "Daftar penyaring"
+  },
+  "options_filterList_update": {
+    "message": "memperbarui Daftar Tapis"
+  },
+  "options_filterList_updateNow": {
+    "message": "perbaharui sekarang"
+  },
+  "options_filterList_website": {
+    "message": "situs web"
+  },
+  "options_footer_about": {
+    "message": "Tentang Adblock Plus"
+  },
+  "options_help_description": {
+    "message": "Menemukan bantuan atau menghubungi kami"
+  },
+  "options_language_add": {
+    "message": "+ Tambahkan bahasa"
+  },
+  "options_language_change": {
+    "message": "ubah"
+  },
+  "options_language_header": {
+    "message": "Bahasa"
+  },
+  "options_more_filters_header": {
+    "message": "Filter lain"
+  },
+  "options_notification_hide": {
+    "message": "Tutup pemberitahuan"
+  },
+  "options_page_title": {
+    "message": "Pengaturan"
+  },
+  "options_privacy_header": {
+    "message": "Privasi & keamanan"
+  },
+  "options_report_bug": {
+    "message": "Menemukan bug? <a>Kirimkan laporan bug</a>"
+  },
+  "options_social_title": {
+    "message": "Menghubungi"
+  },
+  "options_support_title": {
+    "message": "Dukungan"
+  },
+  "options_tab_advanced": {
+    "message": "Tingkat Lanjut"
+  },
+  "options_tab_general": {
+    "message": "Umum"
+  },
+  "options_tab_help": {
+    "message": "Bantuan"
+  },
+  "options_tab_whitelist": {
+    "message": "Situs dalam daftar putih/aman"
+  },
+  "options_whitelist_notification": {
+    "message": "\"$website$\" telah masuk daftar putih.",
+    "placeholders": {
+      "website": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "options_whitelist_placeholder_example": {
+    "message": "misalnya $domain$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "options_acceptableAds_description": {
+    "message": "Prijateľné reklamy nie sú rušivé reklamy. Jeú to stredná cesta medzi blokovaním reklám a podporou obsahu online, pretože vytvárajú príjmy pre vlastníkov webových stránok."
+  },
+  "options_acceptableAds_header": {
+    "message": "Prijateľné reklamy"
+  },
+  "options_advanced_description": {
+    "message": "Prispôsobiť Adblock Plus, pridať alebo odstrániť zoznamy filtrov, vytvoriť a udržiavať vlastné zoznamy filtrov"
+  },
+  "options_close": {
+    "message": "zatvoriť"
+  },
+  "options_control_remove_title": {
+    "message": "odstrániť"
+  },
+  "options_customFilter_cancel": {
+    "message": "Zrušiť"
+  },
+  "options_customFilter_edit": {
+    "message": "Upraviť filtre"
+  },
+  "options_customFilter_save": {
+    "message": "Uložiť"
+  },
+  "options_customFilters_edit_placeholder": {
+    "message": "napr. $filter$",
+    "placeholders": {
+      "filter": {
+        "content": "$1",
+        "example": "/ads/track/*"
+      }
+    }
+  },
+  "options_customFilters_learn": {
+    "message": "Prečítajte si, ako písať zoznamy filtrov"
+  },
+  "options_customFilters_start": {
+    "message": "Začnite písať zoznam filtra"
+  },
+  "options_customFilters_tip": {
+    "message": "Filtre, ktoré vytvoríte, sa zobrazia tu."
+  },
+  "options_customFilters_title": {
+    "message": "Vytvorte a upravte zoznam filtrov"
+  },
+  "options_customFilters_widget_title": {
+    "message": "Môj zoznam filtrov"
+  },
+  "options_customize_showNotifications": {
+    "message": "Zobraziť užitočné upozornenia"
+  },
+  "options_dialog_about_title": {
+    "message": "O Adblock Plus"
+  },
+  "options_dialog_import_subscription_location": {
+    "message": "Adresa URL zoznamu filtrov"
+  },
+  "options_dialog_import_subscription_title": {
+    "message": "Názov zoznamu filtra"
+  },
+  "options_filterList_column_name": {
+    "message": "Zoznamy filtrov"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Zlyhalo, chybné prispôsobenie kontrolného súčtu"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Zlyhanie, sťahovanie neúspešné"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Zlyhanie, neplatná adresa"
+  },
+  "options_filterList_title": {
+    "message": "Zoznamy filtrov"
+  },
+  "options_footer_about": {
+    "message": "O Adblock Plus"
+  },
+  "options_footer_contribute": {
+    "message": "Pridajte sa"
+  },
+  "options_page_title": {
+    "message": "Nastavenia"
+  },
+  "options_support_title": {
+    "message": "Podpora"
+  },
+  "options_tab_general": {
+    "message": "Všeobecné"
+  },
+  "options_tab_help": {
+    "message": "Pomoc"
+  }
+}

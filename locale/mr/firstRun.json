@@ -17,38 +17,11 @@
   "firstRun_contributor_credits": {
     "message": "सहयोगी क्रेडिट्स"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "हे पृष्ठ दर्शवण्यास ठेवा का?<a>येथे क्लिक करा!</a>"
-  },
   "firstRun_donate": {
     "message": "दान"
   },
   "firstRun_donate_label": {
     "message": "आमच्या प्रकल्प समर्थन"
-  },
-  "firstRun_feature_malware": {
-    "message": "मालवेअर बंदी"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "ज्ञात मालवेअर डोमेन रोखून आपल्या ब्राउझिंग अधिक सुरक्षित बनवा."
-  },
-  "firstRun_feature_social": {
-    "message": "सामाजिक मीडिया बटणे काढा"
-  },
-  "firstRun_feature_social_description": {
-    "message": "स्वयंचलितपणे वेब पृष्ठे दिसून अशा Facebook सारखे सामाजिक मीडिया बटणे, आपल्या ब्राउझिंग अनुभव सुटका आणि आपल्या वर्तणुकीचा माग."
-  },
-  "firstRun_feature_tracking": {
-    "message": "ट्रॅकिंग अक्षम"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "आपल्या प्रत्येक पाउल ट्रॅक असे जाहिरात कंपन्यांकडून आपल्या ट्रॅक लपवत - ट्रॅकिंग अक्षम करून खाजगीरित्या ब्राउझ करा."
-  },
-  "firstRun_features": {
-    "message": "Adblock प्लस ब्लॉक जाहिराती पेक्षा अधिक करू शकता"
-  },
-  "firstRun_legacySafariWarning": {
-    "message": "आपण Adblock प्लस समर्थित नाही जे सफारी ची जुनी आवृत्ती वापरत आहात. हे योग्यरितीने कार्य किंवा काही वेबसाइटवर वापरकर्ता अनुभव अपाय नसते. आम्ही जोरदार सफारी एकतर सुधारणा शिफारस 6.1.1 किंवा उच्च, किंवा सफारी (OS X 10.8 माउंटन सिंह वर) 7.0.1 किंवा उच्च (OS X चे 10,9 Mavericks वर), किंवा फायरफॉक्स, Google Chrome किंवा नवीनतम आवृत्ती वापरण्यासाठी ऑपेरा."
   },
   "firstRun_share": {
     "message": "आपल्या मित्रांना कळवा"
@@ -58,11 +31,5 @@
   },
   "firstRun_title": {
     "message": "Adblock प्लस स्थापित करण्यात आले आहे"
-  },
-  "firstRun_toggle_off": {
-    "message": "बंद"
-  },
-  "firstRun_toggle_on": {
-    "message": "चालू"
   }
 }

@@ -1,0 +1,8 @@
+{
+  "notification_antiadblock_message": {
+    "message": "이 사이트는 애드블록 플러스 사용자에게 표적 메시지를 보여주는 것으로 알려져 있습니다. 애드블록 플러스로 표적 메시지를 숨기겠습니까?"
+  },
+  "notification_antiadblock_title": {
+    "message": "표적 메시지를 숨기겠습니까?"
+  }
+}

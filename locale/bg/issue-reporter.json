@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Предай анонимно"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "Иначе няма да сме в състояние да се свържем с вас и вероятно приоритетът на доклада ви ще бъде понижен."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Въвеждане на коментар"
+  },
+  "issueReporter_comment_description": {
+    "message": "Полето по-долу е за коментар, който ще ни помогне да разберем неизправността. Стъпката е по-избор, но е препоръчителна, ако случаят е неочевиден. Можете също да прегледате докладваните данни, преди изпращане."
+  },
+  "issueReporter_comment_label": {
+    "message": "Коментар (по избор):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "Дължината на коментара надвишава 1000 знака. Само първите 1000 знака ще бъдат изпратени."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Докладът е записан. Ще го откриете на следния адрес:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Моля, изчакайте няколко секунди, докато Adblock Plus събере необходимите данни."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Добре дошли в докладчика на неизправност"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Готово"
+  },
+  "issueReporter_email_description": {
+    "message": "Съветваме ви да въведете действителен адрес за е-поща, за да се свържем, ако възникнат въпроси. Също така ще можем да удостоверим вашия принос и дадем по-висок приоритет на доклада."
+  },
+  "issueReporter_email_label": {
+    "message": "Е-поща:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "Опитът за изпращане на доклада се провали с код на грешка „?1?“. Моля, уверете се, че сте свързани с интернет и повторете. Ако това продължи, моля потърсете помощ във [link]форума на Adblock Plus[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Изберете настройката когато се изобразява реклама, въпреки включването на Adblock Plus."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus не блокира реклама"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Изберете настройката когато липсва важно съдържание; то се изобразява неправилно; или функционира неправилно в страницата. Бихте могли да определите дали се причинява от Adblock Plus, като временно го изключите."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus блокира прекалено"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "Докладваната неизправност вероятно е вече позната. За повече информация:"
+  },
+  "issueReporter_page_title": {
+    "message": "Докладчик на неизправност"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Политика на поверителност"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Изпрати доклада"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Изпращане на доклада"
+  },
+  "issueReporter_sending": {
+    "message": "Моля, изчакайте докато Adblock Plus изпрати доклада."
+  },
+  "issueReporter_showData_label": {
+    "message": "Покажи докладваните данни"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Прозорецът ще ви преведе през необходимите стъпки за предаване на доклад за неизправност в Adblock Plus. Първо, на тази страница, моля, изберете вида на срещаната неизправност:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Избор на неизправност"
+  }
+}

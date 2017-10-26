@@ -17,41 +17,14 @@
   "firstRun_contributor_credits": {
     "message": "Zasluge sodelavcev"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "Se vam ta stran še vedno prikazuje? <a>Kliknite tukaj!</a>"
-  },
   "firstRun_donate": {
     "message": "prispevajte"
   },
   "firstRun_donate_label": {
     "message": "Podprite naš projekt"
   },
-  "firstRun_feature_malware": {
-    "message": "Blokiranje zlonamernih spletnih mest"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "Brskajte po spletu varneje, tako da blokirate znane domene z zlonamerno programsko opremo."
-  },
-  "firstRun_feature_social": {
-    "message": "Odstranitev vtičnikov družabnih omrežij"
-  },
-  "firstRun_feature_social_description": {
-    "message": "Med brskanjem se samodejno izognite vtičnikom družabnih omrežij, kot je Facebookov \"Všeč mi je\", ki se pojavljajo na spletnih straneh in sledijo vašim navadam brskanja."
-  },
-  "firstRun_feature_tracking": {
-    "message": "Onemogočite sledenje"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "Brskajte zasebno z onemogočanjem sledenja - skrijte svoje sledi pred oglaševalcem, ki vam lahko sledijo na vsakem koraku."
-  },
-  "firstRun_features": {
-    "message": "Adblock Plus zmore več kot le blokirati oglase"
-  },
   "firstRun_filterlistsReinitializedWarning": {
     "message": "Očitno so bili zaradi težave vsi filtri odstranjeni in varnostne kopije ni bilo mogoče obnoviti. Zato smo ponastavili vaše nastavitve filtrov in dovoljenih oglasov. Prosimo, preverite svoj seznam filtrov in nastavitve dovoljenih oglasov v <a>nastavitvah za Adblock Plus</a>."
-  },
-  "firstRun_legacySafariWarning": {
-    "message": "Uporabljate staro različico Safarija, ki je Adblock Plus ne podpira. Morda ne bo pravilno deloval ali bo poslabšal uporabniško izkušnjo na nekaterih spletnih straneh. Močno priporočamo, da nadgradite na Safari 6.1.1 ali novejšega (na OS X 10.8 Mountain Lion), Safari 7.0.1 ali novejšega (na OS X 10.9 Mavericks), ali da uporabljate najnovejšo različico Mozille Firefox, Google Chroma ali Opere."
   },
   "firstRun_share": {
     "message": "Povejte svojim prijateljem"
@@ -61,11 +34,5 @@
   },
   "firstRun_title": {
     "message": "Adblock Plus je bil nameščen"
-  },
-  "firstRun_toggle_off": {
-    "message": "IZKLOP"
-  },
-  "firstRun_toggle_on": {
-    "message": "VKLOP"
   }
 }

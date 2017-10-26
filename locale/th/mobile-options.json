@@ -1,0 +1,53 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "อนุญาตให้มีโฆษณาบางอย่างที่ไม่ต้องการรบกวน"
+  },
+  "mops_acceptableAds_more": {
+    "message": "เรียนรู้เพิ่มเติม"
+  },
+  "mops_action_cancel": {
+    "message": "ยกเลิก"
+  },
+  "mops_enabled_label": {
+    "message": "เปิดใช้งาน Adblock Plus ใน <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "โปรดระบุชื่อเรื่อง"
+  },
+  "mops_error_url": {
+    "message": "โปรดระบุลิงค์ URL"
+  },
+  "mops_filterlist_add": {
+    "message": "+ เพิ่มรายการตัวกรอง"
+  },
+  "mops_filterlist_add_action": {
+    "message": "เพิ่มรายการตัวกรอง"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ เพิ่มรายการตัวกรองแบบกำหนดเอง"
+  },
+  "mops_header": {
+    "message": "การตั้งค่า Adblock Plus"
+  },
+  "mops_subscribe_header": {
+    "message": "เพิ่มรายการตัวกรองแบบกำหนดเอง"
+  },
+  "mops_subscribe_title": {
+    "message": "ชื่อรายการตัวกรอง"
+  },
+  "mops_subscribe_url": {
+    "message": "URL รายการตัวกรอง"
+  },
+  "mops_subscriptions_header": {
+    "message": "นามข้างท้ายตัวกรอง"
+  },
+  "mops_title": {
+    "message": "การตั้งค่า Adblock Plus"
+  }
+}

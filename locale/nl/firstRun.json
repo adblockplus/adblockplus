@@ -3,10 +3,10 @@
     "message": "Beschikbaar voor Android en iOS"
   },
   "firstRun_abbButtonTitle": {
-    "message": "Ontvang hier de Adblock Browser"
+    "message": "Download Adblock Browser hier"
   },
   "firstRun_abbPromotionHeadline": {
-    "message": "Heb je een smartphone of tablet?"
+    "message": "Hebt u een smartphone of tablet?"
   },
   "firstRun_acceptableAdsExplanation": {
     "message": "We zouden websites willen aanmoedigen eenvoudige, niet-opdringerige advertenties te gebruiken. Daarom hebben we <a>strikte richtlijnen</a> opgesteld om acceptabele advertenties te herkennen die bij gebruik van de standaardinstellingen worden getoond. Als u toch alle advertenties wilt blokkeren, kunt u dit binnen enkele seconden <a>uitschakelen</a>."
@@ -17,41 +17,14 @@
   "firstRun_contributor_credits": {
     "message": "Dankbetuiging aan medewerkers"
   },
-  "firstRun_dataCorruptionWarning": {
-    "message": "Blijft deze pagina verschijnen? <a>Klik hier!</a>"
-  },
   "firstRun_donate": {
     "message": "doneren"
   },
   "firstRun_donate_label": {
     "message": "Steun ons project"
   },
-  "firstRun_feature_malware": {
-    "message": "Malwareblokkering"
-  },
-  "firstRun_feature_malware_description": {
-    "message": "Maak het browsen veiliger door bekende malwaredomeinen te blokkeren."
-  },
-  "firstRun_feature_social": {
-    "message": "Social-mediaknoppen verwijderen"
-  },
-  "firstRun_feature_social_description": {
-    "message": "Verwijder automatisch social-mediaknoppen (zoals de ‘Like’-knop van Facebook) die op webpagina’s verschijnen en uw surfgedrag volgen."
-  },
-  "firstRun_feature_tracking": {
-    "message": "Tracking uitschakelen"
-  },
-  "firstRun_feature_tracking_description": {
-    "message": "Surf privé door ‘tracking’ uit te schakelen - verberg uw gegevens voor advertentiebedrijven die uw surfgedrag zouden volgen."
-  },
-  "firstRun_features": {
-    "message": "Adblock Plus kan meer doen dan advertenties blokkeren"
-  },
   "firstRun_filterlistsReinitializedWarning": {
     "message": "Het lijkt erop dat door een probleem alle filters zijn verwijderd, en we konden geen back-up terugzetten. Hierdoor hebben we al uw filters en instellingen voor Acceptabele advertenties moeten herinitialiseren. Controleer uw instellingen in de <a>Adblock Plus-opties</a>."
-  },
-  "firstRun_legacySafariWarning": {
-    "message": "U gebruikt een oude versie van Safari die niet door Adblock Plus wordt ondersteund. Mogelijk werkt dit niet goed of wordt de gebruikersbeleving benadeeld. We raden aan een update naar Safari 6.1.1 of hoger (op Mac OS X 10.8 Mountain Lion) of Safari 7.0.1 of hoger (op Mac OS X 10.9 Mavericks) uit te voeren, of de nieuwste versie van Mozilla Firefox, Google Chrome of Opera te gebruiken."
   },
   "firstRun_share": {
     "message": "Vertel uw vrienden"
@@ -61,11 +34,5 @@
   },
   "firstRun_title": {
     "message": "Adblock Plus is geïnstalleerd"
-  },
-  "firstRun_toggle_off": {
-    "message": "UIT"
-  },
-  "firstRun_toggle_on": {
-    "message": "AAN"
   }
 }

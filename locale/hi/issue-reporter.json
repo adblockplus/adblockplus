@@ -1,0 +1,50 @@
+{
+  "issueReporter_commentPage_heading": {
+    "message": "टिप्पणी दर्ज करें"
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "आपकी रिपोर्ट सहेजी गई है। आप इसे निम्नलिखित पते पर पहुँच प्राप्त कर सकते हैं:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "कृपया कुछ पल प्रतीक्षा करें जब तक Adblock प्लस आवश्यक डेटा इकट्ठा कर रहा हो।"
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "मुद्दा रिपोर्टर में स्वागत है"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "संपन्न"
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "यदि Adblock प्लस सक्षम किया जा रहा होने के बावजूद एक विज्ञापन प्रदर्शित किया जाता है इस विकल्प का चयन करें।"
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "एडब्लॉक प्लस कोई विज्ञापन को ब्लॉक नही करता हैं"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "इस विकल्प का चयन करें, अगर पृष्ठ में महत्वपूर्ण सामग्री का अभाव है या गलत तरीके से प्रदर्शित करता है अथवा ठीक से कार्य करने के लिए विफल रहता है । समस्या का कारण Adblock प्लस है की नही, यह Adblock प्लस को अस्थायी रूप से अक्षम करने से है यह निर्धारित कर सकते हैं।"
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock प्लस बहुत ज्यादा अवरुद्ध कर रहा है"
+  },
+  "issueReporter_page_title": {
+    "message": "मुद्दा रिपोर्टर"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "गोपनीयता नीति"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "रिपोर्ट भेजें"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "रिपोर्ट भेजें"
+  },
+  "issueReporter_showData_label": {
+    "message": "रिपोर्ट डेटा दिखाएँ"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "यह विंडो आपको Adblock प्लस मुद्दा रिपोर्ट को जमा करने के लिए मार्गदर्शन करेगा। पहले, कृपया किस तरह के मुद्दों का आप इस पृष्ठ पर सामना कर रहे हैं का चयन करें:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "समस्या प्रकार का चयन करें"
+  }
+}

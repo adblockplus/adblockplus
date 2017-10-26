@@ -1,0 +1,80 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Анонимды жіберу"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "Біз сізге кері хабарласа алмаймыз, және есептемеңізді маңыздылығы төмендеу деп санауымыз мүмкін."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Түсіндірмені енгізу"
+  },
+  "issueReporter_comment_description": {
+    "message": "Төмендегі мәтін өрісіне мәселені түсіндіретін түсіндірмені жаза аласыз. Бұл қадам тиісті емес, бірақ мәселе күрделі болса, көмегі тиеді. Жіберу алдында мәліметті тексере аласыз."
+  },
+  "issueReporter_comment_label": {
+    "message": "Түсіндірме (тиісті емес):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "Түсіндірмеңіздің ұзындығы 1000 таңбадан асты. Тек алғашқы 1000 таңба жіберіледі."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Хабарламаңыз сақталды. Оны келесі адрестен көре аласыз:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "Adblock Plus керек ақпаратты жинағанша, күте тұрыңыз."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "Мәселелер туралы хабарлауға қош келдіңіз"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Дайын"
+  },
+  "issueReporter_email_description": {
+    "message": "Біз сізден шын эл. пошта адресін енгізуді сұраймыз, өйткені есептемеңіз жөнінде сұрақтар бар болса, біз сізге хабарласа алатын боламыз. Сонымен бірге қосқан үлесіңізді танып, оның маңыздылығын көтере алуға жол ашады."
+  },
+  "issueReporter_email_label": {
+    "message": "Эл. пошта:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "Хабарламаны жіберу талабы \"?1?\" қате кодымен аяқталды. Интернетпен байланысыңызды тексеріп, қайталаңыз. Егер ол көмектеспесе, [link]Adblock Plus форумынан[/link] көмек сұраңыз."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Егер Adblock Plus қосулы тұрса, ал жарнама сонда да көрсетілсе, бұл опцияны таңдаңыз."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus жарнаманы блоктамайды"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Парақта маңызды құрама жоқ болса, қате көрсетілсе не дұрыс істемесе, бұл опцияны таңдаңыз. Ол мәселе Adblock Plus салдарынан пайда болатынын тексеру үшін, оны уақытша сөндіріңіз."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus тым көп блоктайды"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "Сіз хабарлаған мәселе белгілі сияқты. Көбірек біліңіз:"
+  },
+  "issueReporter_page_title": {
+    "message": "Хабарлаушы"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Жекелік саясаты"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Хабарламаны жіберу"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Хабарламаны жіберу"
+  },
+  "issueReporter_sending": {
+    "message": "Adblock Plus хабарламаңызды жібергенше күте тұрыңыз."
+  },
+  "issueReporter_showData_label": {
+    "message": "Хабарлама мәліметін көрсету"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Бұл терезе сізге Adblock Plus мәселесі туралы хабарламаны дайындауға көмектеседі. Біріншіден, бұл парақта кездескен мәселе түрін таңдаңыз:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Мәселе түрін таңдаңыз"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "options_customFilter_cancel": {
+    "message": "අවලංගු කරන්න"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "අසාර්ථක විය, පරීක්ෂාකිරීම් ගණනය වෙනස්ය"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "අසාර්ථක විය, බාගතකිරීම අසාර්ථකයි"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "අසාර්ථකයි, වලංගු ලිපිනයක් නාෙවේ"
+  }
+}

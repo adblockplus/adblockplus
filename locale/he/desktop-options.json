@@ -1,0 +1,53 @@
+{
+  "options_acceptableAds_header": {
+    "message": "פרסומות מקובלות"
+  },
+  "options_customFilter_cancel": {
+    "message": "ביטול"
+  },
+  "options_customize_showNotifications": {
+    "message": "הצגת התראות שימושיות"
+  },
+  "options_dialog_about_title": {
+    "message": "אודות Adblock Plus"
+  },
+  "options_email": {
+    "message": "דוא\"ל:"
+  },
+  "options_filterList_column_name": {
+    "message": "רשימות המסננים"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "נכשל, ביקורת הסיכום לתקינות לא התאימה בצורה טובה"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "נכשל, ההורדה נכשלה"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "נכשל, הכתובת שגויה"
+  },
+  "options_filterList_title": {
+    "message": "רשימות המסננים"
+  },
+  "options_footer_about": {
+    "message": "אודות Adblock Plus"
+  },
+  "options_footer_contribute": {
+    "message": "תרומה"
+  },
+  "options_page_title": {
+    "message": "הגדרות"
+  },
+  "options_support_title": {
+    "message": "תמיכה"
+  },
+  "options_tab_general": {
+    "message": "כללי"
+  },
+  "options_tab_help": {
+    "message": "עזרה"
+  },
+  "options_tab_whitelist": {
+    "message": "אתרים ברשימה המותרת"
+  }
+}

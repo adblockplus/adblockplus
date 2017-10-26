@@ -1,0 +1,38 @@
+{
+  "options_acceptableAds_header": {
+    "message": "Accepterede annoncer"
+  },
+  "options_customFilter_cancel": {
+    "message": "Annuller"
+  },
+  "options_customize_showNotifications": {
+    "message": "Vis nyttige notifikationer"
+  },
+  "options_filterList_column_name": {
+    "message": "Filterlister"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "Fejlede, checksum matcher ikke"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "Fejlede, hentningsfejl"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "Fejlede, ikke en gyldig adresse"
+  },
+  "options_filterList_title": {
+    "message": "Filterlister"
+  },
+  "options_page_title": {
+    "message": "Indstillinger"
+  },
+  "options_tab_general": {
+    "message": "Generelt"
+  },
+  "options_tab_help": {
+    "message": "Hjælp"
+  },
+  "options_tab_whitelist": {
+    "message": "Hvidlistede websteder"
+  }
+}

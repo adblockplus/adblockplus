@@ -1,0 +1,185 @@
+{
+  "options_acceptableAds_header": {
+    "message": "গ্রহণযোগ্য বিজ্ঞাপন"
+  },
+  "options_close": {
+    "message": "বন্ধ করুন"
+  },
+  "options_control_remove_title": {
+    "message": "সরান"
+  },
+  "options_customFilter_cancel": {
+    "message": "বাতিল"
+  },
+  "options_customFilter_edit": {
+    "message": "ফিল্টার সম্পাদনা করুন"
+  },
+  "options_customFilter_save": {
+    "message": "সংরক্ষণ করুন"
+  },
+  "options_customFilters_edit_placeholder": {
+    "message": "যেমন: $filter$",
+    "placeholders": {
+      "filter": {
+        "content": "$1",
+        "example": "/ads/track/*"
+      }
+    }
+  },
+  "options_customFilters_widget_title": {
+    "message": "আমার ফিল্টারের তালিকা"
+  },
+  "options_customize_blockElement": {
+    "message": "ডান-ক্লিক মেনু আইটেমে 'উপাদান অবরুদ্ধ করুন' প্রদর্শন করান"
+  },
+  "options_customize_showNotifications": {
+    "message": "দরকারী বিজ্ঞপ্তি দেখান"
+  },
+  "options_dialog_about_title": {
+    "message": "অ্যাডব্লক প্লাস সম্পর্কে"
+  },
+  "options_dialog_about_version": {
+    "message": "সংস্করণ নম্বর $version$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "2.6.7"
+      }
+    }
+  },
+  "options_dialog_import_subscription_location_error": {
+    "message": "একটি বৈধ URL প্রবেশ করান"
+  },
+  "options_dialog_import_subscription_title": {
+    "message": "ছাঁকন তালিকার নাম"
+  },
+  "options_dialog_language_other_empty": {
+    "message": "এখানে কোন উপলব্ধ ভাষা নেই।"
+  },
+  "options_dialog_language_title": {
+    "message": "একটি ভাষা নির্বাচন করুন"
+  },
+  "options_dialog_predefined_confirm": {
+    "message": "হ্যাঁ, এই ফিল্টার তালিকা ব্যবহার করুন"
+  },
+  "options_email": {
+    "message": "ইমেইল:"
+  },
+  "options_filterList_add": {
+    "message": "+ নতুন ফিল্টার তালিকা যুক্ত করুন"
+  },
+  "options_filterList_column_name": {
+    "message": "ফিল্টারের তালিকা"
+  },
+  "options_filterList_column_status": {
+    "message": "অবস্থা"
+  },
+  "options_filterList_hours": {
+    "message": "ঘণ্টা আগে"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "ব্যর্থ, ত্রুটিনির্ধারক মেলেনি"
+  },
+  "options_filterList_lastDownload_connectionError": {
+    "message": "ব্যর্থ, নামানো ব্যর্থতা"
+  },
+  "options_filterList_lastDownload_inProgress": {
+    "message": "হালনাগাদ হচ্ছে"
+  },
+  "options_filterList_lastDownload_invalidData": {
+    "message": "ব্যর্থ, একটি বৈধ ছাঁকন তালিকা নয়"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "ব্যর্থ, যুক্তিযুক্ত ঠিকানা নয়"
+  },
+  "options_filterList_minutes": {
+    "message": "মিনিট আগে"
+  },
+  "options_filterList_now": {
+    "message": "এই মাত্র"
+  },
+  "options_filterList_source": {
+    "message": "উৎস"
+  },
+  "options_filterList_state_active": {
+    "message": "সক্রিয়"
+  },
+  "options_filterList_state_disabled": {
+    "message": "নিষ্ক্রিয়"
+  },
+  "options_filterList_title": {
+    "message": "ফিল্টারের তালিকা"
+  },
+  "options_filterList_update": {
+    "message": "সকল ছাঁকন তালিকা হালনাগাদ করুন"
+  },
+  "options_filterList_updateNow": {
+    "message": "এখন হালনাগাদ করুন"
+  },
+  "options_filterList_website": {
+    "message": "ওয়েবসাইট"
+  },
+  "options_footer_about": {
+    "message": "অ্যাডব্লক প্লাস সম্পর্কে"
+  },
+  "options_footer_contribute": {
+    "message": "অবদান"
+  },
+  "options_language_add": {
+    "message": "+ একটি ভাষা যোগ করুন"
+  },
+  "options_language_change": {
+    "message": "পরিবর্তন করুন"
+  },
+  "options_language_header": {
+    "message": "ভাষা"
+  },
+  "options_more_filters_header": {
+    "message": "আরো ফিল্টার"
+  },
+  "options_notification_hide": {
+    "message": "বিজ্ঞপ্তি বন্ধ করুন"
+  },
+  "options_page_title": {
+    "message": "সেটিংস"
+  },
+  "options_privacy_header": {
+    "message": "গোপনীয়তা ও সুরক্ষা"
+  },
+  "options_support_title": {
+    "message": "সমর্থন"
+  },
+  "options_tab_advanced": {
+    "message": "উন্নত"
+  },
+  "options_tab_general": {
+    "message": "সাধারণ"
+  },
+  "options_tab_help": {
+    "message": "সাহায্য"
+  },
+  "options_tab_whitelist": {
+    "message": "সাদাতালিকাভুক্ত ওয়েবসাইট"
+  },
+  "options_whitelist_add": {
+    "message": "ওয়েবসাইট যুক্ত করুন"
+  },
+  "options_whitelist_notification": {
+    "message": "\"$website$\" সাদাতালিকাভুক্ত করা হয়েছে।",
+    "placeholders": {
+      "website": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "options_whitelist_placeholder_example": {
+    "message": "যেমন: $domain$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  }
+}

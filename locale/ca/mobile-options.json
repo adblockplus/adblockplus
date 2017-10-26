@@ -1,0 +1,53 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Permet la publicitat no intrusiva"
+  },
+  "mops_acceptableAds_more": {
+    "message": "Més informació"
+  },
+  "mops_action_cancel": {
+    "message": "Cancel·la"
+  },
+  "mops_enabled_label": {
+    "message": "Activa l'Adblock Plus a <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "Introduïu un títol"
+  },
+  "mops_error_url": {
+    "message": "Introduïu una adreça URL"
+  },
+  "mops_filterlist_add": {
+    "message": "+ Afegeix una llista de filtres"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Afegiu una llista de filtres"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ Afegeix una llista de filtres personalitzada"
+  },
+  "mops_header": {
+    "message": "Configuració de l'Adblock Plus"
+  },
+  "mops_subscribe_header": {
+    "message": "Afegiu una llista de filtres personalitzada"
+  },
+  "mops_subscribe_title": {
+    "message": "Nom de la llista de filtres"
+  },
+  "mops_subscribe_url": {
+    "message": "URL de la llista de filtres"
+  },
+  "mops_subscriptions_header": {
+    "message": "Subscripció de filtres"
+  },
+  "mops_title": {
+    "message": "Configuració de l'Adblock Plus"
+  }
+}
