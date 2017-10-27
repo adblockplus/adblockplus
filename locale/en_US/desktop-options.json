@@ -89,7 +89,7 @@
   },
   "options_acceptableAds_dnt_notification": {
     "description": "Acceptable Ads section's notification (being shown if Do Not Track is not enabled) in General tab",
-    "message": "<strong>Note:</strong> You have <strong>Do Not Track (DNT)</strong> disabled in your Chrome settings. For this feature to work properly, please enable <strong>DNT</strong> in your browser preferences. <a>Find out how to enable DNT</a>."
+    "message": "<strong>Note:</strong> You have <strong>Do Not Track (DNT)</strong> disabled in your browser settings. For this feature to work properly, please enable <strong>DNT</strong> in your browser preferences. <a>Find out how to enable DNT</a>."
   },
   "options_language_header": {
     "description": "Section title in General tab",
