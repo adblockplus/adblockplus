@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () =>
 {
   document.getElementById("cancel").addEventListener("click", () =>
   {
-    window.close();
+    closeMe();
   });
 
   document.getElementById("continue").addEventListener("click", () =>
@@ -62,6 +62,14 @@ document.addEventListener("DOMContentLoaded", () =>
 
   initDataCollector();
 });
+
+function closeMe()
+{
+  browser.runtime.sendMessage({
+    type: "app.get",
+    what: "senderId"
+  }).then(tabId => browser.tabs.remove(tabId));
+}
 
 function getCurrentPage()
 {
@@ -249,7 +257,7 @@ function initDataCollector()
   {
     console.error(e);
     alert(e);
-    window.close();
+    closeMe();
   });
 }
 
@@ -499,5 +507,5 @@ function initSendPage()
 
 function leaveSendPage()
 {
-  window.close();
+  closeMe();
 }

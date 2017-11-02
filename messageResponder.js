@@ -207,6 +207,9 @@
       };
     }
 
+    if (message.what == "senderId")
+      return sender.page.id;
+
     return info[message.what];
   });
 
