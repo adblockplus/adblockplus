@@ -403,12 +403,19 @@ function initSendPage()
       uuidString += "-";
   }
 
-  let params = new URLSearchParams({
-    version: 1,
-    guid: uuidString,
-    lang: reportData.getElementsByTagName("adblock-plus")[0]
-                    .getAttribute("locale")
-  });
+  // Passing a sequence to URLSearchParams() constructor only works starting
+  // with Firefox 53, add values "manually" for now.
+  let params = new URLSearchParams();
+  for (let [param, value] of [
+    ["version", 1],
+    ["guid", uuidString],
+    ["lang", reportData.getElementsByTagName("adblock-plus")[0]
+                       .getAttribute("locale")]
+  ])
+  {
+    params.append(param, value);
+  }
+
   let url = "https://reports.adblockplus.org/submitReport?" + params;
 
   let reportSent = event =>
