@@ -1,1 +1,7 @@
-<svg id="c7a84ece-d790-40f5-a9a3-952827e82ab7" data-name="artwork" xmlns="http://www.w3.org/2000/svg" viewBox="10 10 30 30"><title>checkmark</title><polygon points="20.49 31.17 13.29 23.98 14.71 22.56 20.49 28.34 33.29 15.54 34.71 16.95 20.49 31.17"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg">
+  <view id="default" viewBox="10 10 30 30"/>
+  <polygon points="20.49 31.17 13.29 23.98 14.71 22.56 20.49 28.34 33.29 15.54 34.71 16.95 20.49 31.17" fill="#BBB"/>
+
+  <view id="approved" viewBox="10 40 30 30"/>
+  <polygon points="20.49 31.17 13.29 23.98 14.71 22.56 20.49 28.34 33.29 15.54 34.71 16.95 20.49 31.17" transform="translate(0, 30)" fill="#008000"/>
+</svg>

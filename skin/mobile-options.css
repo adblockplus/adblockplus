@@ -232,7 +232,7 @@ button.remove
   height: 36px;
   padding: 0;
   background-color: #099DD1;
-  mask: url(mobile/trash.svg) center/19px no-repeat;
+  mask: url(mobile/trash.svg#default) center/19px no-repeat;
 }
 
 ul + button
@@ -364,7 +364,7 @@ body:not([data-dialog="subscribe"]) #dialog-subscribe
 #dialog-recommended ul li.installed::before
 {
   background-color: #BBBBBB;
-  mask: url(mobile/checkmark.svg) center/cover no-repeat;
+  mask: url(mobile/checkmark.svg#default) center/cover no-repeat;
 }
 
 #dialog-recommended > button

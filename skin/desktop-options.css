@@ -210,14 +210,22 @@ button[role="checkbox"][disabled].toggle
 
 button.delete::before
 {
-  -webkit-mask: url(icons/trash.svg);
-  mask: url(icons/trash.svg);
+  background-image: url(icons/trash.svg#default);
+}
+
+button.delete:hover::before
+{
+  background-image: url(icons/trash.svg#hover);
 }
 
 button.gear::before
 {
-  -webkit-mask: url(icons/gear.svg);
-  mask: url(icons/gear.svg);
+  background-image: url(icons/gear.svg#default);
+}
+
+button.gear:hover::before
+{
+  background-image: url(icons/gear.svg#hover);
 }
 
 button.gear,
@@ -235,13 +243,6 @@ button.delete::before
   display: block;
   height: 1.9rem;
   width: 1.9rem;
-  background-color: #099DD1;
-}
-
-button.gear:hover::before,
-button.delete:hover::before
-{
-  background-color: #5CBCE1;
 }
 
 button.link,
@@ -376,17 +377,13 @@ html[dir="rtl"] [data-validation] .floating-input input:valid ~ .attention::befo
 
 [data-validation] .floating-input input:focus:invalid ~ .attention::before
 {
-  background-color: #C11D27;
-  -webkit-mask: url(icons/attention.svg);
-  mask: url(icons/attention.svg);
+  background-image: url(icons/attention.svg);
 }
 
 [data-validation] .floating-input input:valid ~ .attention::before
 {
   top: 0.8rem;
-  background-color: green;
-  -webkit-mask: url(icons/checkmark.svg);
-  mask: url(icons/checkmark.svg);
+  background-image: url(icons/checkmark.svg#approved);
 }
 
 [data-validation] .floating-input input ~ .error-msg
@@ -873,9 +870,7 @@ li .display
   content: "";
   width: 1.3rem;
   height: 1.3rem;
-  background-color: #BBB;
-  -webkit-mask: url(icons/checkmark.svg);
-  mask: url(icons/checkmark.svg);
+  background-image: url(icons/checkmark.svg#default);
   margin: 0rem;
 }
 
@@ -908,9 +903,7 @@ li .display
   width: 1.3rem;
   height: 1.3rem;
   display: block;
-  background-color: #099DD1;
-  -webkit-mask: url(icons/tooltip.svg);
-  mask: url(icons/tooltip.svg);
+  background-image: url(icons/tooltip.svg);
 }
 
 /* 
@@ -1178,32 +1171,27 @@ html[dir="rtl"] .context-menu::before
   content: "";
   height: 1.5rem;
   width: 1.5rem;
-  background-color: #099DD1;
   margin: 0rem 1.1rem;
 }
 
 .context-menu .update-subscription::before
 {
-  -webkit-mask: url(icons/reload.svg);
-  mask: url(icons/reload.svg);
+  background-image: url(icons/reload.svg);
 }
 
 .context-menu .website::before
 {
-  -webkit-mask: url(icons/globe.svg);
-  mask: url(icons/globe.svg);
+  background-image: url(icons/globe.svg);
 }
 
 .context-menu .source::before
 {
-  -webkit-mask: url(icons/code.svg);
-  mask: url(icons/code.svg);
+  background-image: url(icons/code.svg);
 }
 
 .context-menu .delete::before
 {
-  -webkit-mask: url(icons/trash.svg);
-  mask: url(icons/trash.svg);
+  background-image: url(icons/trash.svg#default);
 }
 
 /*
@@ -1242,25 +1230,21 @@ html[lang="zh"] #social-general
   width: 2.5rem;
   height: 2.5rem;
   content: "";
-  background-color: #099DD1;
 }
 
 #twitter::before
 {
-  -webkit-mask: url("social/twitter.svg");
-  mask: url("social/twitter.svg");
+  background-image: url("social/twitter.svg");
 }
 
 #facebook::before
 {
-  -webkit-mask: url("social/facebook.svg");
-  mask: url("social/facebook.svg");
+  background-image: url("social/facebook.svg");
 }
 
 #google-plus::before
 {
-  -webkit-mask: url("social/googleplus.svg");
-  mask: url("social/googleplus.svg");
+  background-image: url("social/googleplus.svg");
 }
 
 /*
@@ -1330,14 +1314,12 @@ body[data-dialog] #dialog-background
   height: 1rem;
   width: 1rem;
   border: 0rem;
-  background-color: #FFF;
-  -webkit-mask: url(icons/delete.svg);
-  mask: url(icons/delete.svg);
+  background-image: url(icons/delete.svg#primary);
 }
 
 #dialog-close:hover::before
 {
-  background-color: #000;
+  background-image: url(icons/delete.svg#primary-hover);
 }
 
 #dialog #dialog-body
@@ -1459,10 +1441,10 @@ body:not([data-dialog]) #dialog
 
 #hide-notification::after
 {
-  background-color: #099DD1;
+  background-image: url(icons/delete.svg#secondary);
 }
 
 #hide-notification:hover::after
 {
-  background-color: #5CBCE1;
+  background-image: url(icons/delete.svg#secondary-hover);
 }
