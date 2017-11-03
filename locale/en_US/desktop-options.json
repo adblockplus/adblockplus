@@ -75,17 +75,9 @@
     "description": "Acceptable Ads section 'Allow some nonintrusive ads' option description in General tab",
     "message": "Acceptable Ads are not annoying and do not interfere with the content you are viewing. <a>Read more about the Acceptable Ads criteria</a>"
   },
-  "options_acceptableAds_ads_description_2": {
-    "description": "Acceptable Ads section 'Allow some nonintrusive ads' option description in General tab",
-    "message": "<strong>Note:</strong> The advertisers collect data about your browsing habits <strong>not</strong> Adblock Plus."
-  },
   "options_acceptableAds_privacy_label": {
     "description": "Acceptable Ads section option label in General tab",
-    "message": "Only allow Acceptable Ads that are privacy-friendly"
-  },
-  "options_acceptableAds_privacy_description": {
-    "description": "Acceptable Ads section 'Allow only nonintrusive ads that are privacy-friendly ' option description in General tab",
-    "message": "These ads do not collect personal user information and, therefore, may be less relevant."
+    "message": "Only allow ads without third-party tracking"
   },
   "options_acceptableAds_dnt_notification": {
     "description": "Acceptable Ads section's notification (being shown if Do Not Track is not enabled) in General tab",
