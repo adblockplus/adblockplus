@@ -1,4 +1,7 @@
 {
+  "options_acceptableAds_ads_label": {
+    "message": "Tillat akseptable reklamer"
+  },
   "options_customFilter_cancel": {
     "message": "Avbryt"
   },
@@ -23,11 +26,17 @@
   "options_filterList_title": {
     "message": "Filterlister"
   },
+  "options_filterList_updateNow": {
+    "message": "oppdater nå"
+  },
   "options_footer_about": {
     "message": "Om Adblock Plus"
   },
   "options_footer_contribute": {
     "message": "Bidra"
+  },
+  "options_language_header": {
+    "message": "Språk"
   },
   "options_page_title": {
     "message": "Innstillingar"

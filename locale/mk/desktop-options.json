@@ -1,6 +1,12 @@
 {
+  "options_close": {
+    "message": "затвори"
+  },
   "options_customFilter_cancel": {
     "message": "Откажи"
+  },
+  "options_filterList_column_status": {
+    "message": "Состојба"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Неуспешно, кодовите за проверка не се совпаѓаат"
@@ -10,5 +16,8 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Неуспешно, адресата не е валидна"
+  },
+  "options_filterList_state_disabled": {
+    "message": "Исклучено"
   }
 }

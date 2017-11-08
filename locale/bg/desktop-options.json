@@ -1,4 +1,7 @@
 {
+  "options_acceptableAds_ads_label": {
+    "message": "Позволи Приемливи реклами"
+  },
   "options_acceptableAds_header": {
     "message": "Приемливи реклами"
   },
@@ -10,6 +13,9 @@
   },
   "options_customFilter_cancel": {
     "message": "Отказ"
+  },
+  "options_customFilter_edit": {
+    "message": "Редактирай филтрите"
   },
   "options_customFilter_save": {
     "message": "Запиши"
@@ -23,11 +29,38 @@
       }
     }
   },
+  "options_customFilters_learn": {
+    "message": "Повече за писането на филтри"
+  },
+  "options_customFilters_tip": {
+    "message": "Създадените от вас филтри ще се покажат тук."
+  },
+  "options_customFilters_title": {
+    "message": "Създаване и редактиране на филтрите"
+  },
+  "options_customize_blockElement": {
+    "message": "Показвай „Блокирай елемента“ в контекстното меню"
+  },
+  "options_customize_showDevToolsPanel": {
+    "message": "Показвай панел „Adblock Plus“ към инструментите за разработка"
+  },
   "options_customize_showNotifications": {
     "message": "Показвай полезни уведомявания"
   },
+  "options_dialog_about_copyright": {
+    "message": "Авторски права © eyeo GmbH, $currentYear$ г.",
+    "placeholders": {
+      "currentYear": {
+        "content": "2017",
+        "example": "2017"
+      }
+    }
+  },
   "options_dialog_about_title": {
     "message": "За Adblock Plus"
+  },
+  "options_dialog_about_trademark": {
+    "message": "Всички права запазени. Adblock Plus® е запазена търговска марка на eyeo GmbH."
   },
   "options_dialog_about_version": {
     "message": "Версия $version$",
@@ -38,8 +71,20 @@
       }
     }
   },
+  "options_dialog_import_subscription_location": {
+    "message": "Адрес на филтъра"
+  },
+  "options_dialog_import_subscription_title": {
+    "message": "Име на филтъра"
+  },
+  "options_dialog_import_title": {
+    "message": "Добавяне на филтър"
+  },
   "options_email": {
     "message": "Е-поща:"
+  },
+  "options_filterList_add": {
+    "message": "+ Добави нов филтър"
   },
   "options_filterList_column_name": {
     "message": "Филтър"
@@ -65,14 +110,26 @@
   "options_filterList_now": {
     "message": "току-що"
   },
+  "options_filterList_source": {
+    "message": "източник"
+  },
+  "options_filterList_state_disabled": {
+    "message": "Забранен"
+  },
   "options_filterList_title": {
     "message": "Филтри"
+  },
+  "options_filterList_updateNow": {
+    "message": "обнови"
+  },
+  "options_filterList_website": {
+    "message": "сайт"
   },
   "options_footer_about": {
     "message": "За Adblock Plus"
   },
   "options_footer_contribute": {
-    "message": "Допринеси"
+    "message": "Помогни"
   },
   "options_language_add": {
     "message": "+ добави език"
@@ -83,8 +140,26 @@
   "options_language_header": {
     "message": "Език"
   },
+  "options_learn_more": {
+    "message": "Повече"
+  },
+  "options_more_filters_header": {
+    "message": "Още филтри"
+  },
   "options_page_title": {
     "message": "Настройки"
+  },
+  "options_privacy_header": {
+    "message": "Поверителност и сигурност"
+  },
+  "options_protection_privacy_tooltip": {
+    "message": "Защита на личните ви данни чрез премахване на всички видове проследяване, в т.ч. събирачите на информация."
+  },
+  "options_protection_social_tooltip": {
+    "message": "Бутоните на социалните мрежи в сайтовете, които посещавате позволяват на социалните мрежи да съставят ваш профил според навиците ви на сърфиране, дори когато не ги натискате. Скриването им ще ви предпази от това."
+  },
+  "options_report_bug": {
+    "message": "Открихте грешка? <a>Изпратете ни доклад за грешка</a>"
   },
   "options_support_title": {
     "message": "Поддръжка"

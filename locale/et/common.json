@@ -1,5 +1,14 @@
 {
+  "common_feature_anti_adblock_title": {
+    "message": "Peida reklaamide blokeerija hoiatusteated"
+  },
   "common_feature_malware_title": {
     "message": "Blokeeri pahavara"
+  },
+  "common_feature_privacy_title": {
+    "message": "Blokeeri täiendav jälgimine"
+  },
+  "common_feature_social_title": {
+    "message": "Blokeeri sotsiaalvõrgustike ikoonide jälgimine"
   }
 }

@@ -2,6 +2,9 @@
   "options_acceptableAds_header": {
     "message": "Iragarki Onargarriak"
   },
+  "options_close": {
+    "message": "itxi"
+  },
   "options_customFilter_cancel": {
     "message": "Utzi bertan behera"
   },
@@ -10,6 +13,9 @@
   },
   "options_filterList_column_name": {
     "message": "Iragazki zerrendak"
+  },
+  "options_filterList_column_status": {
+    "message": "Egoera"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Errorea; kontrol-baturak ez datoz bat"
@@ -20,8 +26,17 @@
   "options_filterList_lastDownload_invalidURL": {
     "message": "Huts egin du; ez da helbide baliagarria"
   },
+  "options_filterList_state_disabled": {
+    "message": "Ezgaitua"
+  },
   "options_filterList_title": {
     "message": "Iragazki zerrendak"
+  },
+  "options_filterList_updateNow": {
+    "message": "eguneratu orain"
+  },
+  "options_language_header": {
+    "message": "Hizkuntza"
   },
   "options_page_title": {
     "message": "Ezarpenak"

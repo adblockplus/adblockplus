@@ -1,9 +1,21 @@
 {
+  "options_acceptableAds_ads_description_1": {
+    "message": "Els anuncis acceptables no són molests i no interfereixen amb el contingut que esteu visualitzant. <a>Obtén més informació sobre els criteris d'anuncis acceptables</a>"
+  },
+  "options_acceptableAds_ads_label": {
+    "message": "Permet els anuncis acceptables"
+  },
   "options_acceptableAds_description": {
     "message": "Els anuncis acceptables són anuncis no intrusius. Estan entre el bloqueig d'anuncis i el suport als continguts en línia, ja que generen ingressos per als propietaris del lloc web."
   },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>Nota:</strong> Teniu el mode <strong>no vull ser rastrejat (DNT)</strong> desactivat a la configuració del vostre navegador. Perquè aquesta funció funcioni correctament, activeu <strong>DNT</strong> a les preferències del vostre navegador. <a>Esbrina com activar DNT</a>."
+  },
   "options_acceptableAds_header": {
     "message": "Anuncis acceptables"
+  },
+  "options_acceptableAds_privacy_label": {
+    "message": "Permet només anuncis sense seguiment de tercers"
   },
   "options_advanced_description": {
     "message": "Personalitzeu l'Adblock Plus, afegiu o elimineu les llistes de filtres, creeu i mantingueu les vostres pròpies llistes de filtres"
@@ -22,6 +34,9 @@
   },
   "options_customFilter_save": {
     "message": "Desa"
+  },
+  "options_customFilters_description": {
+    "message": "Escriviu els vostres propis filtres personalitzats per controlar més el contingut que l'Adblock Plus permet o bloqueja."
   },
   "options_customFilters_edit_placeholder": {
     "message": "p. e. $filter$",
@@ -56,6 +71,9 @@
   "options_customize_header": {
     "message": "Personalitza accions a la pàgina"
   },
+  "options_customize_showDevToolsPanel": {
+    "message": "Mostra el quadre «Adblock Plus» a les eines de desenvolupador"
+  },
   "options_customize_showDevToolsPanel_tooltip": {
     "message": "Mostra els elements bloquejats i el de la llista blanca del tauler d'eines del desenvolupador del navegador."
   },
@@ -65,8 +83,20 @@
   "options_customize_showNotifications_tooltip": {
     "message": "Desactiva totes les notificacions d'Adblock Plus."
   },
+  "options_dialog_about_copyright": {
+    "message": "Drets d'autor © $currentYear$ eyeo GmbH.",
+    "placeholders": {
+      "currentYear": {
+        "content": "2017",
+        "example": "2017"
+      }
+    }
+  },
   "options_dialog_about_title": {
     "message": "Quant a l'Adblock Plus"
+  },
+  "options_dialog_about_trademark": {
+    "message": "Tots els drets reservats. Adblock Plus ® és una marca registrada d'eyeo GmbH."
   },
   "options_dialog_about_version": {
     "message": "Número de versió $version$",
@@ -101,6 +131,9 @@
   "options_dialog_predefined_confirm": {
     "message": "Sí, utilitza aquesta llista de filtres"
   },
+  "options_dialog_predefined_title": {
+    "message": "Esteu segur que voleu afegir aquesta llista de filtres?"
+  },
   "options_email": {
     "message": "Correu:"
   },
@@ -112,6 +145,15 @@
   },
   "options_filterList_column_status": {
     "message": "Estat"
+  },
+  "options_filterList_column_update": {
+    "message": "Darrera actualització"
+  },
+  "options_filterList_description": {
+    "message": "Cada configuració d'Adblock Plus funciona a causa d'una llista de filtres. A sota hi ha les llistes de filtres que corresponen a tota la configuració de Adblock Plus. També podeu afegir filtres addicionals creats i mantinguts per la nostra comunitat de confiança."
+  },
+  "options_filterList_empty": {
+    "message": "No heu afegit cap llista de filtres a Adblock Plus. Les llistes de filtres que afegiu es mostraran aquí."
   },
   "options_filterList_hours": {
     "message": "fa %d hores"
@@ -179,14 +221,29 @@
   "options_language_description": {
     "message": "Optimitza l'Adblock Plus per l'idioma(es) amb el qual normalment navegueu per pàgines web."
   },
+  "options_language_empty": {
+    "message": "No teniu cap filtre específic d'idioma."
+  },
   "options_language_header": {
     "message": "Idioma"
+  },
+  "options_language_tip": {
+    "message": "<strong>TIP:</strong> Només seleccioneu els idiomes que necessiteu. Si seleccioneu més, es retardarà el bloqueig d'anuncis i, per tant, la vostra velocitat de navegació."
+  },
+  "options_learn_more": {
+    "message": "Més informació"
   },
   "options_more_filters_description": {
     "message": "Aquests són els filtres addicionals que heu afegit prèviament a l'Adblock Plus."
   },
   "options_more_filters_header": {
     "message": "Més filtres"
+  },
+  "options_more_filters_note": {
+    "message": "<strong>Nota:</strong> Només heu d'utilitzar llistes de filtres de tercers dels autors que confieu."
+  },
+  "options_new_label": {
+    "message": "Nou"
   },
   "options_notification_hide": {
     "message": "Tanca la notificació"
@@ -199,6 +256,9 @@
   },
   "options_protection_privacy_tooltip": {
     "message": "Protegiu les vostres dades personals eliminant totes les formes de seguiment d'Internet, incloent els col·leccionistes d'informació."
+  },
+  "options_protection_social_tooltip": {
+    "message": "Les icones de les xarxes socials dels llocs web que visiteu permeten que les xarxes de xarxes socials construeixin un perfil segons els vostres hàbits de navegació, fins i tot quan no feu clic a ells. Ocultar aquestes icones pot protegir el vostre perfil."
   },
   "options_report_ad": {
     "message": "Veieu un anunci que creieu que no hauria d'estar? <a>Informeu d'un anunci</a>"
@@ -235,6 +295,12 @@
   },
   "options_whitelist_add": {
     "message": "Afegeix un lloc web"
+  },
+  "options_whitelist_description": {
+    "message": "Heu desactivat el bloqueig d'anuncis en aquests llocs web i, per tant, veurà anuncis en ells."
+  },
+  "options_whitelist_empty_1": {
+    "message": "No teniu cap lloc web a la llista blanca."
   },
   "options_whitelist_empty_2": {
     "message": "Els llocs web en què confieu i desitgeu permetre que apareguin anuncis apareixeran aquí."

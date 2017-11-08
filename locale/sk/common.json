@@ -4,5 +4,11 @@
   },
   "common_feature_malware_title": {
     "message": "Blokovať Malware"
+  },
+  "common_feature_privacy_title": {
+    "message": "Zablokujte ďalšie sledovanie"
+  },
+  "common_feature_social_title": {
+    "message": "Blokovanie sledovania ikon sociálnych médií"
   }
 }

@@ -8,6 +8,12 @@
   "options_filterList_title": {
     "message": "Listahan ng mga Filter"
   },
+  "options_filterList_updateNow": {
+    "message": "i-update ngayon"
+  },
+  "options_language_header": {
+    "message": "Lengwahe"
+  },
   "options_tab_general": {
     "message": "Pangkalahatan"
   }

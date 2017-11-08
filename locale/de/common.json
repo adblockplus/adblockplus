@@ -1,0 +1,14 @@
+{
+  "common_feature_anti_adblock_title": {
+    "message": "Adblock-Warnmeldungen verstecken"
+  },
+  "common_feature_malware_title": {
+    "message": "Blockieren von Malware"
+  },
+  "common_feature_privacy_title": {
+    "message": "Blockieren von zusätzlichem Tracking"
+  },
+  "common_feature_social_title": {
+    "message": "Blockieren von Tracking mittels Social-Media-Symbolen"
+  }
+}

@@ -2,10 +2,31 @@
   "mops_acceptableAds_description": {
     "message": "Povolit některé nerušivé reklamy"
   },
+  "mops_acceptableAds_more": {
+    "message": "Více informací"
+  },
   "mops_action_cancel": {
-    "message": "Zrušit"
+    "message": "ZRUŠIT"
+  },
+  "mops_filterlist_add": {
+    "message": "Přidat seznam filtrů"
+  },
+  "mops_filterlist_add_action": {
+    "message": "PŘIDAT SEZNAM FILTRŮ"
+  },
+  "mops_header": {
+    "message": "Adblock Plus Nastavení"
+  },
+  "mops_subscribe_title": {
+    "message": "Název seznamu filtrů"
+  },
+  "mops_subscribe_url": {
+    "message": "Adresa URL seznamu filtrů"
   },
   "mops_subscriptions_header": {
     "message": "Odebírané sady cizích filtrů"
+  },
+  "mops_title": {
+    "message": "Adblock Plus Nastavení"
   }
 }

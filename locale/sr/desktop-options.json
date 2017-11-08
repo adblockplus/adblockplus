@@ -2,6 +2,9 @@
   "options_acceptableAds_header": {
     "message": "Прихватљиви огласи"
   },
+  "options_close": {
+    "message": "затвори"
+  },
   "options_customFilter_cancel": {
     "message": "Откажи"
   },
@@ -14,6 +17,9 @@
   "options_filterList_column_name": {
     "message": "Спискови филтера"
   },
+  "options_filterList_column_status": {
+    "message": "Стање"
+  },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Грешка: неслагање контролног збира"
   },
@@ -23,8 +29,17 @@
   "options_filterList_lastDownload_invalidURL": {
     "message": "Грешка: неисправна адреса"
   },
+  "options_filterList_state_disabled": {
+    "message": "Онемогућено"
+  },
   "options_filterList_title": {
     "message": "Спискови филтера"
+  },
+  "options_filterList_updateNow": {
+    "message": "ажурирај"
+  },
+  "options_language_header": {
+    "message": "Језик"
   },
   "options_page_title": {
     "message": "Поставке"

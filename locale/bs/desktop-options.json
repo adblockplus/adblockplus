@@ -1,6 +1,12 @@
 {
+  "options_close": {
+    "message": "zatvori"
+  },
   "options_customFilter_cancel": {
     "message": "Poništiti"
+  },
+  "options_filterList_column_status": {
+    "message": "Status"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Nije uspjelo, nepodudarnost checksum-a"
@@ -10,6 +16,12 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Neuspjeh, adresa nije validna"
+  },
+  "options_filterList_state_disabled": {
+    "message": "Onemogućeno"
+  },
+  "options_language_header": {
+    "message": "Jezik"
   },
   "options_page_title": {
     "message": "Postavke"

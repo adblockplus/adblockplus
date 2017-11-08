@@ -4,5 +4,11 @@
   },
   "common_feature_malware_title": {
     "message": "Block Malware"
+  },
+  "common_feature_privacy_title": {
+    "message": "Block additional tracking"
+  },
+  "common_feature_social_title": {
+    "message": "Block social media icons tracking"
   }
 }

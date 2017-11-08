@@ -33,7 +33,7 @@
     "message": "Nous vous encourageons à saisir un courriel valide afin que nous puissions vous contacter pour toute question concernant votre signalement. Cela nous permettra également de reconnaître vos contributions et de les traiter prioritairement."
   },
   "issueReporter_email_label": {
-    "message": "Courriel :"
+    "message": "E-mail :"
   },
   "issueReporter_errorMessage": {
     "message": "Une tentative d'envoi du signalement a échoué avec le code erreur « ?1? ». Veuillez vérifier que vous êtes bien connecté à Internet et réessayer. Si le problème persiste, veuillez demander assistance dans le [link]forum d'Adblock Plus[/link]."

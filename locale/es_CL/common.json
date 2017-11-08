@@ -4,5 +4,11 @@
   },
   "common_feature_malware_title": {
     "message": "Bloquear malware"
+  },
+  "common_feature_privacy_title": {
+    "message": "Bloquear seguimiento adicional"
+  },
+  "common_feature_social_title": {
+    "message": "Bloquear el seguimiento de iconos de redes sociales"
   }
 }

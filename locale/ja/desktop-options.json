@@ -1,15 +1,135 @@
 {
+  "options_acceptableAds_ads_description_1": {
+    "message": "控えめな広告は、迷惑ではなく、表示するコンテンツの邪魔になりません。<a>控えめな広告の基準について詳細を読む</a>"
+  },
+  "options_acceptableAds_ads_label": {
+    "message": "控えめな広告の許可"
+  },
+  "options_acceptableAds_description": {
+    "message": "控えめな広告とは控え目な（非侵入型の）広告の事を指します。これはウェブサイトのオーナーに収益をもたらすことになるので、広告ブロックとオンライン コンテンツへのサポートとの間の妥協点的な存在となります。"
+  },
   "options_acceptableAds_header": {
     "message": "控えめな広告"
+  },
+  "options_advanced_description": {
+    "message": "Adblock Plus のカスタマイズ、フィルターリストの追加または削除、自分用のフィルターリスト作成またはメンテナンスを行います。"
+  },
+  "options_close": {
+    "message": "閉じる"
+  },
+  "options_control_remove_title": {
+    "message": "削除"
   },
   "options_customFilter_cancel": {
     "message": "キャンセル"
   },
+  "options_customFilter_save": {
+    "message": "保存"
+  },
+  "options_customFilters_description": {
+    "message": "自分用のカスタムフィルターを作って、Adblock Plus が許可またはブロックするコンテンツを詳細に管理します。"
+  },
+  "options_customFilters_edit_placeholder": {
+    "message": "例: $filter$",
+    "placeholders": {
+      "filter": {
+        "content": "$1",
+        "example": "/ads/track/*"
+      }
+    }
+  },
+  "options_customFilters_learn": {
+    "message": "フィルターリストの作成方法を学ぶ"
+  },
+  "options_customFilters_start": {
+    "message": "マイ フィルターリストの作成を開始する"
+  },
+  "options_customFilters_tip": {
+    "message": "自分で作成したフィルターはここに表示されます。"
+  },
+  "options_customFilters_title": {
+    "message": "自分のフィルターリストを作成して編集する"
+  },
+  "options_customFilters_widget_title": {
+    "message": "マイ フィルターリスト"
+  },
+  "options_customize_blockElement": {
+    "message": "右クリックでメニュー項目、[要素のブロック] を表示させます"
+  },
+  "options_customize_blockElement_tooltip": {
+    "message": "ウェブページで気障りな項目を一時的にブロックします（画像またはアニメーション表示のスライドショーなど）。"
+  },
+  "options_customize_header": {
+    "message": "ページでのアクションをカスタマイズ"
+  },
+  "options_customize_showDevToolsPanel": {
+    "message": "開発者ツールの [Adblock Plus] パネルを表示させます"
+  },
+  "options_customize_showDevToolsPanel_tooltip": {
+    "message": "ブラウザーの開発者ツールのパネルでブロック済みまたはホワイトリストに登録された項目を閲覧します。"
+  },
   "options_customize_showNotifications": {
     "message": "有用な通知を表示"
   },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Adblock Plus からすべての通知をオフにします。"
+  },
+  "options_dialog_about_title": {
+    "message": "Adblock Plus について"
+  },
+  "options_dialog_about_trademark": {
+    "message": "全著作権所有。Adblock Plus® は eyeo GmbH の登録商標 です。"
+  },
+  "options_dialog_about_version": {
+    "message": "バージョン番号 $version$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "2.6.7"
+      }
+    }
+  },
+  "options_dialog_import_subscription_location": {
+    "message": "フィルターリストの URL"
+  },
+  "options_dialog_import_subscription_location_error": {
+    "message": "有効な URL を入力してください"
+  },
+  "options_dialog_import_subscription_title": {
+    "message": "フィルターリスト名"
+  },
+  "options_dialog_import_title": {
+    "message": "フィルターリストを追加"
+  },
+  "options_dialog_language_title": {
+    "message": "言語の選択"
+  },
+  "options_dialog_predefined_title": {
+    "message": "個のフィルターリストを追加しますか？"
+  },
+  "options_email": {
+    "message": "Eメール:"
+  },
+  "options_filterList_add": {
+    "message": "新規フィルターリストを追加"
+  },
   "options_filterList_column_name": {
-    "message": "フィルタリスト"
+    "message": "フィルターリスト"
+  },
+  "options_filterList_column_status": {
+    "message": "ステータス"
+  },
+  "options_filterList_column_update": {
+    "message": "最終更新日時"
+  },
+  "options_filterList_description": {
+    "message": "Adblock Plus 設定はそれぞれフィルターリストによって機能します。以下はユーザー設定された Adblock Plus 設定に対応するフィルターリストです。当社の既知のコミュニティによって作成・メンテナンスされている追加フィルターを加えることも出来ます。"
+  },
+  "options_filterList_empty": {
+    "message": "Adblock Plus にフィルターリストが全く追加されていません。追加されたフィルターリストはここに表示されます。"
+  },
+  "options_filterList_hours": {
+    "message": "時間前"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "更新失敗: チェックサム不一致"
@@ -17,25 +137,160 @@
   "options_filterList_lastDownload_connectionError": {
     "message": "更新失敗: 接続エラー"
   },
+  "options_filterList_lastDownload_inProgress": {
+    "message": "更新中"
+  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "更新失敗: アドレス無効"
   },
+  "options_filterList_minutes": {
+    "message": "分前"
+  },
+  "options_filterList_now": {
+    "message": "たった今"
+  },
+  "options_filterList_source": {
+    "message": "ソース"
+  },
+  "options_filterList_state_active": {
+    "message": "アクティブ"
+  },
+  "options_filterList_state_disabled": {
+    "message": "無効"
+  },
   "options_filterList_title": {
-    "message": "フィルタリスト"
+    "message": "フィルターリスト"
+  },
+  "options_filterList_update": {
+    "message": "すべてのフィルターリストを更新"
+  },
+  "options_filterList_updateNow": {
+    "message": "今すぐ更新"
+  },
+  "options_filterList_website": {
+    "message": "ウェブサイト"
+  },
+  "options_footer_about": {
+    "message": "Adblock Plus について"
+  },
+  "options_footer_contribute": {
+    "message": "ご寄付のお願い"
+  },
+  "options_general_description": {
+    "message": "Adblock Plus がウェブサイトで表示・非表示にするものを特定します"
+  },
+  "options_help_description": {
+    "message": "ヘルフ゜を見るか、当社までお問い合わせください"
+  },
+  "options_language_add": {
+    "message": "言語の追加"
+  },
+  "options_language_change": {
+    "message": "変更"
+  },
+  "options_language_description": {
+    "message": "ウェブサイトを閲覧する通常の言語で Adblock Plus を最適化。"
+  },
+  "options_language_empty": {
+    "message": "言語特定のフィルターが設定されていません。"
+  },
+  "options_language_header": {
+    "message": "言語"
+  },
+  "options_language_tip": {
+    "message": "<strong>コツ:</strong>必要な言語だけを選択してください。言語を多く選択するほど広告ブロッカーが遅くなるので、閲覧にかかるスピードも遅くなります。"
+  },
+  "options_learn_more": {
+    "message": "詳細を読む"
+  },
+  "options_more_filters_description": {
+    "message": "これらのフィルターはこれまでに Adblock Plus に追加されたことのあるフィルターです。"
+  },
+  "options_more_filters_header": {
+    "message": "その他のフィルター"
+  },
+  "options_more_filters_note": {
+    "message": "<strong>注記:</strong>信頼できる作者が提供するサードパーティのフィルターリストのみを使用するようにしてください。"
+  },
+  "options_new_label": {
+    "message": "新規"
+  },
+  "options_notification_hide": {
+    "message": "通知を閉じる"
   },
   "options_page_title": {
     "message": "設定"
   },
+  "options_privacy_header": {
+    "message": "プライバシー & セキュリティー"
+  },
+  "options_protection_privacy_tooltip": {
+    "message": "情報コレクタなどのインターネットでのあらゆる形態によるトラッキングを除去することで、個人情報を保護します。"
+  },
+  "options_protection_social_tooltip": {
+    "message": "閲覧したウェブサイトにあるソーシャルメディア アイコンでは、このをクリックしない場合でも、ユーザーの習慣的な閲覧履歴に基づいてプロファイルを構築します。このようなアイコン を非表示して、自分のプロファイルを守ることができます。"
+  },
+  "options_report_ad": {
+    "message": "ここにあるべきではないと思われる広告が表示される場合<a>広告を報告する</a>"
+  },
+  "options_report_bug": {
+    "message": "バグがあった場合<a>バグ報告を送信</a>してください"
+  },
+  "options_report_forum": {
+    "message": "当社コミュニティのサポートを得るには<a>フォーラムに行く</a>"
+  },
+  "options_report_issue": {
+    "message": "コンテンツまたは機能が当社によって間違ってブロックされている場合間違ってブロックされた項目をここ<a>から報告する</a>"
+  },
+  "options_social_description": {
+    "message": "当社へのご質問やご提案について是非お役立てください。"
+  },
+  "options_social_title": {
+    "message": "お問い合わせ"
+  },
   "options_support_title": {
     "message": "サポート"
   },
+  "options_tab_advanced": {
+    "message": "詳細設定"
+  },
   "options_tab_general": {
-    "message": "一般"
+    "message": "全般"
   },
   "options_tab_help": {
-    "message": "ヘルプ"
+    "message": "ヘルフ゜"
   },
   "options_tab_whitelist": {
-    "message": "ホワイトリスト登録されたウェブサイト"
+    "message": "ホワイトリストに登録されているウェブサイト"
+  },
+  "options_whitelist_add": {
+    "message": "ウェブサイトの追加"
+  },
+  "options_whitelist_description": {
+    "message": "これらウェブサイトでは広告ブロッカーがオフになっているので、広告が表示されます。"
+  },
+  "options_whitelist_empty_1": {
+    "message": "ホワイトリストに登録されているウェブサイトがありません。"
+  },
+  "options_whitelist_empty_2": {
+    "message": "信頼出来て広告を許可できるウェブサイトはここに表示されます。"
+  },
+  "options_whitelist_notification": {
+    "message": "$website$ がホワイトリストに登録されました。",
+    "placeholders": {
+      "website": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "options_whitelist_placeholder_example": {
+    "message": "例: $domain$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
   }
 }

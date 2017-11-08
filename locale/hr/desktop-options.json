@@ -1,4 +1,7 @@
 {
+  "options_acceptableAds_ads_label": {
+    "message": "Dopusti prihvatljive oglase"
+  },
   "options_acceptableAds_header": {
     "message": "Prihvatljive reklame"
   },
@@ -34,6 +37,9 @@
   },
   "options_customFilters_tip": {
     "message": "Filteri koje napravite će se pojaviti ovdje."
+  },
+  "options_customFilters_title": {
+    "message": "Napravi i uredi svoju filter listu"
   },
   "options_customFilters_widget_title": {
     "message": "Moj popis filtera"
@@ -71,6 +77,12 @@
   "options_filterList_column_name": {
     "message": "Popisi filtera"
   },
+  "options_filterList_column_status": {
+    "message": "Status"
+  },
+  "options_filterList_hours": {
+    "message": "Prije %d sati."
+  },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Neuspješno, neusklađenost checksum-a."
   },
@@ -82,6 +94,9 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Neuspješno, neispravna adresa"
+  },
+  "options_filterList_minutes": {
+    "message": "Prije %d minuta."
   },
   "options_filterList_now": {
     "message": "Upravo sada"
@@ -125,6 +140,12 @@
   "options_language_header": {
     "message": "Jezik"
   },
+  "options_learn_more": {
+    "message": "Saznajte više"
+  },
+  "options_new_label": {
+    "message": "Novi"
+  },
   "options_notification_hide": {
     "message": "Zatvori obavijest"
   },
@@ -133,6 +154,24 @@
   },
   "options_privacy_header": {
     "message": "Privatnost i sigurnost"
+  },
+  "options_protection_privacy_tooltip": {
+    "message": "Zaštitite osobne podatke uklanjanjem svih oblika praćenja na internetu uključujući informacije kolektora."
+  },
+  "options_report_ad": {
+    "message": "Vidjeli ste oglas za koji mislite da ne bi trebao biti tu? <a>Prijavi oglas</a>"
+  },
+  "options_report_bug": {
+    "message": "Pronašli ste grešku? <a>Pošaljite nam je ovdje</a>"
+  },
+  "options_report_forum": {
+    "message": "Želite li podršku naše zajednice? <a>Idite na forum</a>"
+  },
+  "options_report_issue": {
+    "message": "Mislite li da smo sadržaj ili funkcionalnost nepravilno blokirali? <a>Prijavi nepravilno blokirane stavke ovdje</a>"
+  },
+  "options_social_description": {
+    "message": "Imate pitanje ili nešto novo? Ovdje smo da pomognemo."
   },
   "options_social_title": {
     "message": "Javite se"
@@ -154,6 +193,12 @@
   },
   "options_whitelist_add": {
     "message": "Dodaj web stranicu"
+  },
+  "options_whitelist_description": {
+    "message": "Isključili ste blokiranje oglasa na ovim stranicama te ćete stoga vidjeti reklama na njima."
+  },
+  "options_whitelist_empty_2": {
+    "message": "Web stranice koje smatrate pouzdanima i na njima želite omogućiti oglase bit će prikazane ovdje."
   },
   "options_whitelist_notification": {
     "message": "\"$website$\" je dodano u iznimke.",

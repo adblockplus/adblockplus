@@ -6,7 +6,7 @@
     "message": "Tìm hiểu thêm"
   },
   "mops_action_cancel": {
-    "message": "Hủy bỏ"
+    "message": "HỦY"
   },
   "mops_enabled_label": {
     "message": "Bật Adblock Plus trên <strong>$domain$</strong>",
@@ -24,30 +24,30 @@
     "message": "Hãy nhập một liên kết URL"
   },
   "mops_filterlist_add": {
-    "message": "+ Thêm một danh sách bộ lọc"
+    "message": "Thêm một danh sách lọc"
   },
   "mops_filterlist_add_action": {
-    "message": "Thêm danh sách bộ lọc"
+    "message": "THÊM DANH SÁCH LỌC"
   },
   "mops_filterlist_add_url": {
     "message": "+ Thêm một danh sách bộ lọc tuỳ chỉnh"
   },
   "mops_header": {
-    "message": "Thiết lập Adblock Plus"
+    "message": "Adblock Plus Thiết đặt"
   },
   "mops_subscribe_header": {
     "message": "Thêm một danh sách bộ lọc tuỳ chỉnh"
   },
   "mops_subscribe_title": {
-    "message": "Tên danh sách bộ lọc"
+    "message": "Tên danh sách lọc"
   },
   "mops_subscribe_url": {
-    "message": "URL danh sách bộ lọc"
+    "message": "URL danh sách lọc"
   },
   "mops_subscriptions_header": {
     "message": "Đăng ký bộ lọc"
   },
   "mops_title": {
-    "message": "Thiết lập Adblock Plus"
+    "message": "Adblock Plus Thiết đặt"
   }
 }

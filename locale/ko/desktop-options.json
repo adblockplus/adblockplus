@@ -1,21 +1,135 @@
 {
+  "options_acceptableAds_ads_description_1": {
+    "message": "허용되는 광고는 짜증을 유발하거나 사용자의 콘텐츠 감상을 방해하지 않습니다. <a>허용되는 광고 기준에 대한 더 자세한 내용 보기</a>"
+  },
+  "options_acceptableAds_ads_label": {
+    "message": "허용되는 광고 허용"
+  },
+  "options_acceptableAds_description": {
+    "message": "허용되는 광고는 유해한 광고가 아닙니다. 광고 차단과 온라인 콘텐츠 지원 사이의 중간 지점에 위치하는 광고로서 웹 사이트 소유자의 이익을 창출하는 광고를 의미합니다."
+  },
   "options_acceptableAds_header": {
-    "message": "허용하는 광고"
+    "message": "허용되는 광고"
+  },
+  "options_advanced_description": {
+    "message": "Adblock Plus 사용자 설정, 필터 목록 추가 또는 제거, 사용자 자체 필터 목록 유지"
+  },
+  "options_close": {
+    "message": "닫기"
+  },
+  "options_control_remove_title": {
+    "message": "제거"
   },
   "options_customFilter_cancel": {
     "message": "취소"
   },
+  "options_customFilter_save": {
+    "message": "저장"
+  },
+  "options_customFilters_description": {
+    "message": "Adblock Plus가 허용하거나 차단할 콘텐츠를 추가로 제어하려면 사용자 설정 필터를 작성하십시오."
+  },
+  "options_customFilters_learn": {
+    "message": "필터 목록 작성하는 방법 알아보기"
+  },
+  "options_customFilters_start": {
+    "message": "내 필터 목록 작성 시작"
+  },
+  "options_customFilters_tip": {
+    "message": "사용자가 생성한 필터가 이곳에 표시됩니다."
+  },
+  "options_customFilters_title": {
+    "message": "사용자 필터 목록 생성 및 수정"
+  },
+  "options_customFilters_widget_title": {
+    "message": "내 필터 목록"
+  },
+  "options_customize_blockElement": {
+    "message": "‘차단 요소’ 우클릭 메뉴 항목 보기"
+  },
+  "options_customize_blockElement_tooltip": {
+    "message": "웹페이지에서 방해가 되는 항목을 일시적으로 차단합니다. 예: 이미지 또는 애니메이션 슬라이드쇼"
+  },
+  "options_customize_header": {
+    "message": "온페이지 액션 사용자 설정"
+  },
+  "options_customize_showDevToolsPanel": {
+    "message": "개발자 도구 패널에서 'Adblock Plus’ 패널을 표시합니다."
+  },
+  "options_customize_showDevToolsPanel_tooltip": {
+    "message": "브라우저의 개발자 도구 패널에서 차단된 항목과 허용된 항목을 확인합니다."
+  },
   "options_customize_showNotifications": {
     "message": "유용한 알림 표시"
   },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Adblock Plus의 모든 알림 끄기"
+  },
+  "options_dialog_about_copyright": {
+    "message": "Copyright © $currentYear$ eyeo GmbH 저작권 소유.",
+    "placeholders": {
+      "currentYear": {
+        "content": "2017",
+        "example": "2017"
+      }
+    }
+  },
   "options_dialog_about_title": {
-    "message": "애드블록 플러스 정보"
+    "message": "Adblock Plus 정보"
+  },
+  "options_dialog_about_trademark": {
+    "message": "Adblock Plus®은 eyeo GmbH의 등록 상표입니다."
+  },
+  "options_dialog_about_version": {
+    "message": "버전 번호 $version$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "2.6.7"
+      }
+    }
+  },
+  "options_dialog_import_subscription_location": {
+    "message": "필터 목록 URL"
+  },
+  "options_dialog_import_subscription_location_error": {
+    "message": "유효한 URL을 입력하세요"
+  },
+  "options_dialog_import_subscription_title": {
+    "message": "필터 목록 이름"
+  },
+  "options_dialog_import_title": {
+    "message": "필터 목록 추가"
+  },
+  "options_dialog_language_title": {
+    "message": "언어 선택"
+  },
+  "options_dialog_predefined_title": {
+    "message": "이 필터 목록을 추가하길 원하십니까?"
   },
   "options_email": {
-    "message": "메일 주소:"
+    "message": "이메일:"
+  },
+  "options_filterList_add": {
+    "message": "새 필터 목록 추가"
   },
   "options_filterList_column_name": {
-    "message": "구독 필터"
+    "message": "필터 목록"
+  },
+  "options_filterList_column_status": {
+    "message": "상태"
+  },
+  "options_filterList_column_update": {
+    "message": "마지막 업데이트"
+  },
+  "options_filterList_description": {
+    "message": "필터 목록 때문에 각 Adblock Plus 설정이 작동합니다. 다음은 사용자의 모든 Adblock Plus 설정에 해당하는 필터 목록입니다. 신뢰할 수 있는 커뮤니티에서 생성되고 관리되는 추가적인 필터를 추가할 수도 있습니다."
+  },
+  "options_filterList_empty": {
+    "message": "Adblock Plus에 아무 필터 목록도 추가하지 않았습니다. 사용자가 추가한 필터 목록이 여기에 표시됩니다."
+  },
+  "options_filterList_hours": {
+    "message": "시간 전"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "실패함 : 검사합 불일치"
@@ -23,23 +137,119 @@
   "options_filterList_lastDownload_connectionError": {
     "message": "실패함 : 다운로드 실패"
   },
+  "options_filterList_lastDownload_inProgress": {
+    "message": "업데이트중"
+  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "실패함 : 올바르지 않은 주소"
   },
+  "options_filterList_minutes": {
+    "message": "분 전"
+  },
+  "options_filterList_now": {
+    "message": "지금"
+  },
+  "options_filterList_source": {
+    "message": "소스"
+  },
+  "options_filterList_state_active": {
+    "message": "활성화"
+  },
+  "options_filterList_state_disabled": {
+    "message": "비활성화"
+  },
   "options_filterList_title": {
-    "message": "구독 필터"
+    "message": "필터 목록"
+  },
+  "options_filterList_update": {
+    "message": "모든 필터 목록 업데이트"
+  },
+  "options_filterList_updateNow": {
+    "message": "지금 업데이트"
+  },
+  "options_filterList_website": {
+    "message": "웹사이트"
   },
   "options_footer_about": {
-    "message": "애드블록 플러스 정보"
+    "message": "Adblock Plus 정보"
   },
   "options_footer_contribute": {
     "message": "공헌"
   },
+  "options_general_description": {
+    "message": "Adblock Plus가 웹사이트에서 표시하고 숨길 내용을 선택하세요"
+  },
+  "options_help_description": {
+    "message": "도움말을 참조하시거나 저희에게 연락주십시오"
+  },
+  "options_language_add": {
+    "message": "언어 추가"
+  },
+  "options_language_change": {
+    "message": "변경"
+  },
+  "options_language_description": {
+    "message": "웹 사이트 브라우징에 일반적으로 사용하는 언어로 Adblock Plus를 맞춤 설정하십시오."
+  },
+  "options_language_empty": {
+    "message": "특정 언어 필터가 없습니다."
+  },
+  "options_language_header": {
+    "message": "언어"
+  },
+  "options_language_tip": {
+    "message": "<strong>팁:</strong> 필요한 언어만 선택하십시오. 더 많은 언어를 선택하면 광고 차단 프로그램의 속도 저하로 인해 브라우징의 속도가 느려질 수 있습니다."
+  },
+  "options_learn_more": {
+    "message": "더 알아보기"
+  },
+  "options_more_filters_description": {
+    "message": "이전에 Adblock Plus에 추가한 추가적인 필터입니다."
+  },
+  "options_more_filters_header": {
+    "message": "더 많은 필터"
+  },
+  "options_more_filters_note": {
+    "message": "<strong>참고:</strong> 반드시 신뢰할 수 있는 작성자의 제삼자 필터 목록만을 사용해야 합니다."
+  },
+  "options_new_label": {
+    "message": "신규"
+  },
   "options_page_title": {
     "message": "설정"
   },
+  "options_privacy_header": {
+    "message": "개인 정보 보호 및 보안"
+  },
+  "options_protection_privacy_tooltip": {
+    "message": "정보 수집을 포함하여 인터넷에서 이루어지는 모든 종류의 추적을 제거함으로써 사용자의 개인 데이터를 보호하세요."
+  },
+  "options_protection_social_tooltip": {
+    "message": "방문한 웹사이트의 소셜 미디어 아이콘을 통해 소셜 미디어 네트워크는 사용자의 브라우징 습관을 바탕으로 사용자의 프로필을 구축합니다. 사용자가 클릭하지 않아도 이 작업은 진행됩니다. 이러한 아이콘을 숨김으로써 사용자의 프로필을 보호할 수 있습니다."
+  },
+  "options_report_ad": {
+    "message": "숨겨야 할 광고가 표시되고 있습니까? <a>광고 신고하기</a>"
+  },
+  "options_report_bug": {
+    "message": "버그를 찾으셨습니까? <a>버그 리포트 보내기</a>"
+  },
+  "options_report_forum": {
+    "message": "커뮤니티의 지원이 필요하십니까? <a>포럼으로 가기</a>"
+  },
+  "options_report_issue": {
+    "message": "콘텐츠 또는 기능이 저희로 인해 잘못 차단되었습니까? <a>이곳에서 잘못 차단된 항목을 신고하기</a>"
+  },
+  "options_social_description": {
+    "message": "질문이나 새로운 아이디어가 있습니까? 기꺼이 도와드리겠습니다."
+  },
+  "options_social_title": {
+    "message": "연락하기"
+  },
   "options_support_title": {
     "message": "지원"
+  },
+  "options_tab_advanced": {
+    "message": "고급"
   },
   "options_tab_general": {
     "message": "일반"
@@ -49,5 +259,26 @@
   },
   "options_tab_whitelist": {
     "message": "허용 목록에 추가된 웹사이트"
+  },
+  "options_whitelist_add": {
+    "message": "웹사이트 추가"
+  },
+  "options_whitelist_description": {
+    "message": "이러한 웹 사이트에서 광고 차단 기능을 비활성화하면 광고가 표시됩니다."
+  },
+  "options_whitelist_empty_1": {
+    "message": "허용된 웹사이트가 없습니다."
+  },
+  "options_whitelist_empty_2": {
+    "message": "신뢰할 수 있고 광고를 허용하고자 하는 웹사이트가 이곳에 표시됩니다."
+  },
+  "options_whitelist_notification": {
+    "message": "$website$ 이(가) 허용되었습니다.",
+    "placeholders": {
+      "website": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
   }
 }

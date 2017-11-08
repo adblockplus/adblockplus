@@ -24,7 +24,7 @@
     "message": "โปรดระบุลิงค์ URL"
   },
   "mops_filterlist_add": {
-    "message": "+ เพิ่มรายการตัวกรอง"
+    "message": "เพิ่มรายการตัวกรอง"
   },
   "mops_filterlist_add_action": {
     "message": "เพิ่มรายการตัวกรอง"
@@ -33,7 +33,7 @@
     "message": "+ เพิ่มรายการตัวกรองแบบกำหนดเอง"
   },
   "mops_header": {
-    "message": "การตั้งค่า Adblock Plus"
+    "message": "Adblock Plus การตั้งค่า"
   },
   "mops_subscribe_header": {
     "message": "เพิ่มรายการตัวกรองแบบกำหนดเอง"
@@ -42,12 +42,12 @@
     "message": "ชื่อรายการตัวกรอง"
   },
   "mops_subscribe_url": {
-    "message": "URL รายการตัวกรอง"
+    "message": "URL ของรายการตัวกรอง"
   },
   "mops_subscriptions_header": {
     "message": "นามข้างท้ายตัวกรอง"
   },
   "mops_title": {
-    "message": "การตั้งค่า Adblock Plus"
+    "message": "Adblock Plus การตั้งค่า"
   }
 }

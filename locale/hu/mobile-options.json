@@ -2,10 +2,52 @@
   "mops_acceptableAds_description": {
     "message": "Néhány nem tolakodó hirdetés engedélyezése"
   },
+  "mops_acceptableAds_more": {
+    "message": "Mi ez?"
+  },
   "mops_action_cancel": {
     "message": "Mégse"
   },
+  "mops_enabled_label": {
+    "message": "Adblock Plus engedélyezése itt: <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "Adjon meg egy címet"
+  },
+  "mops_error_url": {
+    "message": "Adjon meg egy URL-t"
+  },
+  "mops_filterlist_add": {
+    "message": "+ Szűrőlista hozzáadása"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Szűrőlista hozzáadása"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ Egyéni szűrőlista hozzáadása"
+  },
+  "mops_header": {
+    "message": "Adblock Plus-beállítások"
+  },
+  "mops_subscribe_header": {
+    "message": "Egyéni szűrőlista hozzáadása"
+  },
+  "mops_subscribe_title": {
+    "message": "Szűrőlista neve"
+  },
+  "mops_subscribe_url": {
+    "message": "Szűrőlista URL-je"
+  },
   "mops_subscriptions_header": {
     "message": "Külső szűrők"
+  },
+  "mops_title": {
+    "message": "Adblock Plus-beállítások"
   }
 }

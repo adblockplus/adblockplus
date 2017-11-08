@@ -3,7 +3,7 @@
     "message": "允许一些非侵入式广告"
   },
   "mops_acceptableAds_more": {
-    "message": "了解更多"
+    "message": "了解详情"
   },
   "mops_action_cancel": {
     "message": "取消"
@@ -24,10 +24,10 @@
     "message": "请输入一个网址链接"
   },
   "mops_filterlist_add": {
-    "message": "+ 添加过滤规则列表"
+    "message": "+ 添加过滤列表"
   },
   "mops_filterlist_add_action": {
-    "message": "添加过滤规则列表"
+    "message": "添加过滤列表"
   },
   "mops_filterlist_add_url": {
     "message": "+ 添加自定义过滤规则列表"
@@ -39,10 +39,10 @@
     "message": "添加自定义过滤规则列表"
   },
   "mops_subscribe_title": {
-    "message": "过滤规则列表名称"
+    "message": "过滤列表名称"
   },
   "mops_subscribe_url": {
-    "message": "过滤规则列表网址"
+    "message": "过滤列表 URL"
   },
   "mops_subscriptions_header": {
     "message": "过滤规则订阅组"

@@ -6,13 +6,13 @@
     "message": "Nie będziemy w stanie się z tobą skontaktować, co może spowodować nadanie raportowi niższego priorytetu."
   },
   "issueReporter_commentPage_heading": {
-    "message": "Dodaj objaśnienie"
+    "message": "Dodaj komentarz"
   },
   "issueReporter_comment_description": {
-    "message": "W poniższym polu tekstowym możesz podać objaśnienie, które pomoże nam zrozumieć problem. Jest to opcjonalne, ale zalecane, jeśli problem nie jest oczywisty. Możesz również sprawdzić dane zawarte w zgłoszeniu przed jego wysłaniem."
+    "message": "W poniższym polu tekstowym możesz dodać komentarz, który pomoże nam zrozumieć problem. Jest to opcjonalne, ale zalecane, jeśli problem nie jest oczywisty. Możesz również sprawdzić dane zawarte w zgłoszeniu przed jego wysłaniem."
   },
   "issueReporter_comment_label": {
-    "message": "Objaśnienia (opcjonalne):"
+    "message": "Komentarz (opcjonalne):"
   },
   "issueReporter_comment_lengthWarning": {
     "message": "Treść objaśnienia przekroczyła dopuszczalny limit 1000 znaków. Zostanie wysłane tylko pierwsze 1000 znaków."
@@ -30,13 +30,13 @@
     "message": "Gotowe"
   },
   "issueReporter_email_description": {
-    "message": "Zachęcamy do podania prawidłowego adresu e-mail, abyśmy mogli skontaktować się z tobą w przypadku, gdy może to ułatwić rozwiązanie problemu. Pozwoli to również rozpoznać naszych współpracowników i nadać ich raportom wyższy priorytet."
+    "message": "Zachęcamy do podania prawidłowego adresu e-mail, abyśmy mogli skontaktować się z tobą w przypadku, gdy może to ułatwić rozwiązanie problemu. Umożliwi nam to również rozpoznać twoje opinie i sugestie i nadać im wyższy priorytet."
   },
   "issueReporter_email_label": {
-    "message": "Email:"
+    "message": "E-mail:"
   },
   "issueReporter_errorMessage": {
-    "message": "Próba wysłania zgłoszenia nie powiodła się z powodu „?1?”. Sprawdź połączenie z Internetem i ponów próbę. Jeśli problem będzie nadal występował, poproś o pomoc na [link]forum Adblock Plusa[/link]."
+    "message": "Próba wysłania zgłoszenia nie powiodła się z powodu „?1?”. Sprawdź połączenie z internetem i ponów próbę. Jeśli problem będzie nadal występował, poproś o pomoc na [link]forum Adblock Plusa[/link]."
   },
   "issueReporter_falseNegative_description": {
     "message": "Wybierz tę opcję, jeśli reklama jest wyświetlana pomimo tego, że Adblock Plus jest włączony."

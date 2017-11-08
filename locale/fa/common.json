@@ -1,0 +1,14 @@
+{
+  "common_feature_anti_adblock_title": {
+    "message": "مخفی کردن پیام‌های هشدار Adblock"
+  },
+  "common_feature_malware_title": {
+    "message": "مسدود کردن بدافزار"
+  },
+  "common_feature_privacy_title": {
+    "message": "ردیابی اضافی را مسدود کنید"
+  },
+  "common_feature_social_title": {
+    "message": "مسدود کردن ردیابی آیکون‌های رسانه‌های اجتماعی"
+  }
+}

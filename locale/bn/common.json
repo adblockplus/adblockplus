@@ -4,5 +4,11 @@
   },
   "common_feature_malware_title": {
     "message": "ম্যালওয়্যার অবরুদ্ধ করুন"
+  },
+  "common_feature_privacy_title": {
+    "message": "অতিরিক্ত অনুসরণ বন্ধ করুন"
+  },
+  "common_feature_social_title": {
+    "message": "সামাজিক মিডিয়া আইকনগুলির অনুসরণ বন্ধ করুন"
   }
 }

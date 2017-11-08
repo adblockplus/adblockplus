@@ -2,10 +2,31 @@
   "mops_acceptableAds_description": {
     "message": "允許部分非侵入式廣告"
   },
+  "mops_acceptableAds_more": {
+    "message": "了解詳情"
+  },
   "mops_action_cancel": {
     "message": "取消"
   },
+  "mops_filterlist_add": {
+    "message": "添加過濾列表"
+  },
+  "mops_filterlist_add_action": {
+    "message": "添加過濾列表"
+  },
+  "mops_header": {
+    "message": "Adblock Plus 設置"
+  },
+  "mops_subscribe_title": {
+    "message": "過濾列表名稱"
+  },
+  "mops_subscribe_url": {
+    "message": "過濾列表 URL"
+  },
   "mops_subscriptions_header": {
     "message": "過濾條件集"
+  },
+  "mops_title": {
+    "message": "Adblock Plus 設置"
   }
 }

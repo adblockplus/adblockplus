@@ -2,8 +2,14 @@
   "mops_acceptableAds_description": {
     "message": "Tillåt viss icke-störande reklam"
   },
+  "mops_acceptableAds_more": {
+    "message": "Läs mer"
+  },
   "mops_action_cancel": {
     "message": "Avbryt"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Lägg till filterlista"
   },
   "mops_subscriptions_header": {
     "message": "Filterprenumerationer"

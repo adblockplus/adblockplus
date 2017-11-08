@@ -4,5 +4,11 @@
   },
   "common_feature_malware_title": {
     "message": "Bloquer les logiciels malveillants"
+  },
+  "common_feature_privacy_title": {
+    "message": "Bloquer le traçage supplémentaire"
+  },
+  "common_feature_social_title": {
+    "message": "Bloquer le tracking par les icônes des médias sociaux"
   }
 }

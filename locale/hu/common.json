@@ -1,0 +1,14 @@
+{
+  "common_feature_anti_adblock_title": {
+    "message": "Adblock-figyelmeztetések elrejtése"
+  },
+  "common_feature_malware_title": {
+    "message": "Kártékony szoftverek blokkolása"
+  },
+  "common_feature_privacy_title": {
+    "message": "További követés tiltása"
+  },
+  "common_feature_social_title": {
+    "message": "Közösségimédia-ikonok követésének tiltása"
+  }
+}

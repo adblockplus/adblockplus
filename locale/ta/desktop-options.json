@@ -1,9 +1,15 @@
 {
+  "options_close": {
+    "message": "மூட"
+  },
   "options_customFilter_cancel": {
     "message": "ரத்து செய்"
   },
   "options_filterList_column_name": {
     "message": "வடிகட்டி பட்டியல்கள்"
+  },
+  "options_filterList_column_status": {
+    "message": "நிலைம"
   },
   "options_filterList_lastDownload_connectionError": {
     "message": "தோல்வியடைந்தது, பதிவிறக்கம் தோல்வி"
@@ -11,8 +17,14 @@
   "options_filterList_lastDownload_invalidURL": {
     "message": "தோல்வி, செல்லத்தக்க இல்லை  முகவரி"
   },
+  "options_filterList_state_disabled": {
+    "message": "முடக்கப்பட்டத"
+  },
   "options_filterList_title": {
     "message": "வடிகட்டி பட்டியல்கள்"
+  },
+  "options_filterList_updateNow": {
+    "message": "இப்போது புதுப்பிக்கவும்"
   },
   "options_tab_general": {
     "message": "பொது"

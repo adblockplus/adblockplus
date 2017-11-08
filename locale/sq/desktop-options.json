@@ -1,9 +1,15 @@
 {
+  "options_close": {
+    "message": "mbylle"
+  },
   "options_customFilter_cancel": {
     "message": "Anulo"
   },
   "options_email": {
     "message": "Posta:"
+  },
+  "options_filterList_column_status": {
+    "message": "Gjendja"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Deshtoi,mosperputhje checksumi"
@@ -13,5 +19,8 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Deshtoi,nje adrese e pavlefshme"
+  },
+  "options_filterList_state_disabled": {
+    "message": "Qkyqur"
   }
 }

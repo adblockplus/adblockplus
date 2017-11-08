@@ -2,10 +2,31 @@
   "mops_acceptableAds_description": {
     "message": "控えめな広告を許可"
   },
+  "mops_acceptableAds_more": {
+    "message": "詳細を読む"
+  },
   "mops_action_cancel": {
     "message": "キャンセル"
   },
+  "mops_filterlist_add": {
+    "message": "フィルターリストを追加"
+  },
+  "mops_filterlist_add_action": {
+    "message": "フィルターリストを追加"
+  },
+  "mops_header": {
+    "message": "Adblock Plus 設定"
+  },
+  "mops_subscribe_title": {
+    "message": "フィルターリスト名"
+  },
+  "mops_subscribe_url": {
+    "message": "フィルターリストの URL"
+  },
   "mops_subscriptions_header": {
     "message": "購読しているフィルタ"
+  },
+  "mops_title": {
+    "message": "Adblock Plus 設定"
   }
 }

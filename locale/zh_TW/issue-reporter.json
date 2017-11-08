@@ -32,6 +32,9 @@
   "issueReporter_email_description": {
     "message": "建議您輸入有效的電子郵件位址，如此我們才能在有疑問時連絡您。這也會用來辨識您所提交的報告，並提高其優先權。"
   },
+  "issueReporter_email_label": {
+    "message": "電子郵件："
+  },
   "issueReporter_errorMessage": {
     "message": "嘗試傳送報告失敗，錯誤碼 \"?1?\"。請確定您已連上網路後再試一次。若依舊失敗，請到 [link]Adblock Plus 討論區[/link] 尋求協助。"
   },

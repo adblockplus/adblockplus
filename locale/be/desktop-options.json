@@ -1,9 +1,24 @@
 {
+  "options_acceptableAds_ads_description_1": {
+    "message": "Дапушчальна рэклама не дакучае і не мяшае прагляду зместу старонкі. <a>Больш падрабязна пра крытэрыі дапушчальнай рэкламы</a>"
+  },
+  "options_acceptableAds_ads_label": {
+    "message": "Дазволіць дапушчальную рэкламу"
+  },
   "options_acceptableAds_description": {
-    "message": "Дазваляецца недакучлівая рэклама. Гэта кампраміс паміж блакаваннем рэкламы і падтрымкай інтэрнэт-кантэнту, таму што яна дазваляе зарабляць ўладальнікам сайтаў."
+    "message": "Дапушчальная рэклама — кампраміс паміж блакаваннем рэкламы і падтрымкай інтэрнэт-кантэнту, таму што яна дазваляе зарабляць ўладальнікам сайтаў."
+  },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>Заўвага:</strong> Параметр <strong>Адключыць адсочванне (DNT)</strong> ў наладах браўзера адключаны. Каб функцыя працавала правільна, уключыце <strong>DNT</strong> ў наладах браўзера. <a>Даведайцеся, як уключыць DNT</a>."
   },
   "options_acceptableAds_header": {
     "message": "Дапушчальная рэклама"
+  },
+  "options_acceptableAds_privacy_label": {
+    "message": "Толькі рэкламу, без адсочвання для пабочных кампаній"
+  },
+  "options_advanced_description": {
+    "message": "Наладзьце Adblock Plus, дадавайце або выдаляйце спісы фільтраў, стварайце і карыстайцеся ўласнымі спісамі фільтраў"
   },
   "options_close": {
     "message": "закрыць"
@@ -19,6 +34,9 @@
   },
   "options_customFilter_save": {
     "message": "Захаваць"
+  },
+  "options_customFilters_description": {
+    "message": "Пішыце ўласныя фільтры, каб дадаткова вызначыць змест, які Adblock Plus будзе паказваць або хаваць."
   },
   "options_customFilters_edit_placeholder": {
     "message": "напр. $filter$",
@@ -49,6 +67,18 @@
   },
   "options_customize_blockElement_tooltip": {
     "message": "Часова блакаваць дакучлівыя элементы на старонцы, напрыклад выявы або анімаваныя паказы слайдаў."
+  },
+  "options_customize_header": {
+    "message": "Дзеянні на старонках"
+  },
+  "options_customize_showDevToolsPanel": {
+    "message": "Паказваць панэль «Adblock Plus» у інструментах распрацоўшчыка"
+  },
+  "options_customize_showDevToolsPanel_tooltip": {
+    "message": "Прагляд заблакаваных і дазволеных элементаў праз панэль распрацоўшчыка вашага браўзера."
+  },
+  "options_customize_showNotifications": {
+    "message": "Паказваць карысныя апавяшчэнні"
   },
   "options_customize_showNotifications_tooltip": {
     "message": "Выключыць усе апавяшчэнні Adblock Plus."
@@ -119,6 +149,12 @@
   "options_filterList_column_update": {
     "message": "Апошняе абнаўленне"
   },
+  "options_filterList_description": {
+    "message": "Усе налады Adblock Plus функцыянуюць згодна са спісам фільтраў. Спісы ніжэй, адпавядаюць усім вашым наладам Adblock Plus. Таксама вы можаце ўжываць дадатковыя фільтры, якія створаны і падтрымліваюцца нашай даверанай супольнасцю."
+  },
+  "options_filterList_empty": {
+    "message": "Тут будуць паказвацца дададзеныя вамі спісы фільтраў. Пакуль што, вы не дадалі ў Adblock Plus ніводнага спіса фільтраў."
+  },
   "options_filterList_hours": {
     "message": "гадзін таму"
   },
@@ -170,20 +206,41 @@
   "options_footer_contribute": {
     "message": "Паспрыяць"
   },
+  "options_general_description": {
+    "message": "Вызначыць, што паказвае і хавае Adblock Plus на сайтах"
+  },
+  "options_help_description": {
+    "message": "Звярніцеся па дапамогу або звяжыцеся з намі"
+  },
   "options_language_add": {
     "message": "+ дадаць мову"
   },
   "options_language_change": {
     "message": "змяніць"
   },
+  "options_language_description": {
+    "message": "Аптымізуйце Adblock Plus для мовы (некалькіх моў), на якой вы звычайна аглядаеце сайты."
+  },
+  "options_language_empty": {
+    "message": "Няма фільтраў з улікам пэўнай мовы."
+  },
   "options_language_header": {
     "message": "Мова"
+  },
+  "options_language_tip": {
+    "message": "<strong>Парада:</strong> Выбірайце толькі патрэбныя вам мовы. Вялікая колькасць можа запаволіць блакіроўшчык рэкламы, а значыць і хуткасць браўзера."
   },
   "options_learn_more": {
     "message": "Даведацца больш"
   },
+  "options_more_filters_description": {
+    "message": "Гэта дадатковыя фільтры, якія вы раней дадалі ў Adblock Plus."
+  },
   "options_more_filters_header": {
     "message": "Яшчэ фільтры"
+  },
+  "options_more_filters_note": {
+    "message": "<strong>Заўвага:</strong> Карыстайцеся фільтрамі толькі тых пабочных распрацоўшчыкаў, якім вы давяраеце."
   },
   "options_new_label": {
     "message": "Новае"
@@ -197,11 +254,26 @@
   "options_privacy_header": {
     "message": "Канфідэнцыяльнасць і бяспека"
   },
+  "options_protection_privacy_tooltip": {
+    "message": "Абараніце свае асабовыя дадзеныя праз выдаленне ўсіх форм адсочвання ў інтэрнэце, у тым ліку збіральнікаў звестак."
+  },
+  "options_protection_social_tooltip": {
+    "message": "Значкі сацыяльных сетак на наведаных сайтах, нават калі вы не націскаеце на іх, дазваляюць сайтам сацыяльных сетак ствараць асабовы профіль, абапіраючыся на вашы звычкі і прагледжаныя старонкі. Блакаванне гэтых значкоў можа абараніць ваш профіль."
+  },
+  "options_report_ad": {
+    "message": "Убачылі рэкламу, якой не павінна быць? <a>Паведаміце нам</a>"
+  },
   "options_report_bug": {
     "message": "Знайшлі памылку? <a>Дашліце нам справаздачу</a>"
   },
   "options_report_forum": {
     "message": "Хочаце атрымаць дапамогу супольнасці?? <a>Заходзьце на форум</a>"
+  },
+  "options_report_issue": {
+    "message": "Мяркуеце, што змест ці функцыянальныя магчымасці сайту блакуюцца ў вас памылкова?? <a>Паведаміце пра памылковыя выпадкі сюды</a>"
+  },
+  "options_social_description": {
+    "message": "Маеце пытанне або новую ідэю? Мы тут, каб дапамагчы."
   },
   "options_social_title": {
     "message": "Сувязь"

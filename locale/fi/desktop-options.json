@@ -2,6 +2,9 @@
   "options_acceptableAds_header": {
     "message": "Hyväksytyt mainokset"
   },
+  "options_close": {
+    "message": "sulje"
+  },
   "options_customFilter_cancel": {
     "message": "Peruuta"
   },
@@ -14,6 +17,9 @@
   "options_filterList_column_name": {
     "message": "Suodatinlistat"
   },
+  "options_filterList_column_status": {
+    "message": "Tila"
+  },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Epäonnistui, tarkistussumma ei täsmää"
   },
@@ -23,8 +29,17 @@
   "options_filterList_lastDownload_invalidURL": {
     "message": "Epäonnistui, kelvoton osoite"
   },
+  "options_filterList_state_disabled": {
+    "message": "Ei käytössä"
+  },
   "options_filterList_title": {
     "message": "Suodatinlistat"
+  },
+  "options_filterList_updateNow": {
+    "message": "päivitä nyt"
+  },
+  "options_language_header": {
+    "message": "Kieli"
   },
   "options_page_title": {
     "message": "Asetukset"

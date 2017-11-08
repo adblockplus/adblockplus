@@ -2,14 +2,23 @@
   "options_acceptableAds_header": {
     "message": "Accepterede annoncer"
   },
+  "options_close": {
+    "message": "luk"
+  },
   "options_customFilter_cancel": {
     "message": "Annuller"
   },
   "options_customize_showNotifications": {
     "message": "Vis nyttige notifikationer"
   },
+  "options_email": {
+    "message": "Email:"
+  },
   "options_filterList_column_name": {
     "message": "Filterlister"
+  },
+  "options_filterList_column_status": {
+    "message": "Status"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Fejlede, checksum matcher ikke"
@@ -20,11 +29,23 @@
   "options_filterList_lastDownload_invalidURL": {
     "message": "Fejlede, ikke en gyldig adresse"
   },
+  "options_filterList_state_disabled": {
+    "message": "Deaktiveret"
+  },
   "options_filterList_title": {
     "message": "Filterlister"
   },
+  "options_filterList_updateNow": {
+    "message": "opdater nu"
+  },
+  "options_language_header": {
+    "message": "Sprog"
+  },
   "options_page_title": {
     "message": "Indstillinger"
+  },
+  "options_support_title": {
+    "message": "Support"
   },
   "options_tab_general": {
     "message": "Generelt"

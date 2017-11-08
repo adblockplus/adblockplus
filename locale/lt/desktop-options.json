@@ -1,9 +1,21 @@
 {
+  "options_acceptableAds_ads_description_1": {
+    "message": "Priimtinos reklamos yra tokios kurios nesikerta su jūsų žiūrimu turiniu. <a>Daugiau apie neįkyrių reklamų kriterijus galite sužinoti čia</a>"
+  },
+  "options_acceptableAds_ads_label": {
+    "message": "Leisti neįkyrias reklamas"
+  },
   "options_acceptableAds_description": {
     "message": "Priimtini skelbimai yra neįkyrūs skelbimai. Tai aukso vidurys tarp reklamų blokavimo ir interneto turinio pajamų gavimo palaikymas."
   },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>Pastaba:</strong> Jūs nustatymuose išjungėte <strong>Do Not Track (DNT)</strong>. Norint jog ši parinktis tinkamai veiktų įjunkite <strong>DNT</strong>. <a>Apie DNT daugiau galite sužinoti čia</a>."
+  },
   "options_acceptableAds_header": {
     "message": "Priimtinos reklamos"
+  },
+  "options_acceptableAds_privacy_label": {
+    "message": "Leisti tik tas reklamas kuriose nėra trečiųjų šalių sekimo"
   },
   "options_advanced_description": {
     "message": "Derinkite Adblock Plus, pridėkite ar pašalinkite sąrašus, kurkite ir prižiūrėkite savo sąrašus"
@@ -22,6 +34,9 @@
   },
   "options_customFilter_save": {
     "message": "Išsaugoti"
+  },
+  "options_customFilters_description": {
+    "message": "Kurti savo sąrašus ir valdyti ką ir kur Adblock Plus blokuos ar neblokuos."
   },
   "options_customFilters_edit_placeholder": {
     "message": "pvz. $filter$",
@@ -56,6 +71,9 @@
   "options_customize_header": {
     "message": "Derinti „puslapyje“ veiksmus"
   },
+  "options_customize_showDevToolsPanel": {
+    "message": "Rodyti „Adblock Plus“ valdymo pultą kūrėjo įrankiuose"
+  },
   "options_customize_showDevToolsPanel_tooltip": {
     "message": "Peržiūrėkite užblokuotus ir neblokuojamus elementus iš kūrėjo įrankinės."
   },
@@ -65,8 +83,20 @@
   "options_customize_showNotifications_tooltip": {
     "message": "Išjungti visus Adblock Plus pranešimus."
   },
+  "options_dialog_about_copyright": {
+    "message": "Autorinės teisės © $currentYear$ eyeo GmbH.",
+    "placeholders": {
+      "currentYear": {
+        "content": "2017",
+        "example": "2017"
+      }
+    }
+  },
   "options_dialog_about_title": {
     "message": "Apie Adblock Plus"
+  },
+  "options_dialog_about_trademark": {
+    "message": "Visos teisės saugomos. Adblock Plus® yra registruotas eyeo GmbH prekės ženklas."
   },
   "options_dialog_about_version": {
     "message": "Versija $version$",
@@ -101,6 +131,9 @@
   "options_dialog_predefined_confirm": {
     "message": "Taip, naudoti šį sąrašą"
   },
+  "options_dialog_predefined_title": {
+    "message": "Ar tikrai norite pridėti šį filtrų sąrašą?"
+  },
   "options_email": {
     "message": "El. paštas:"
   },
@@ -112,6 +145,15 @@
   },
   "options_filterList_column_status": {
     "message": "Būsena"
+  },
+  "options_filterList_column_update": {
+    "message": "Paskutinis atnaujinimas"
+  },
+  "options_filterList_description": {
+    "message": "Kiekvienas Adblock Plus nustatymas veikia filtrų sąrašo dėka. Žemiau yra filtrų sąrašai kurie atitinka visus jūsų Adblock Plus nustatymus. Taipogi galite pridėti papildomus sąrašus sukurtus ir palaikomus mūsų patikimos bendruomenės."
+  },
+  "options_filterList_empty": {
+    "message": "Jūs į Adblock Plus nepridėjote jokių sąrašų. Pridėti sąrašai bus rodomi čia."
   },
   "options_filterList_hours": {
     "message": "valandas"
@@ -179,14 +221,29 @@
   "options_language_description": {
     "message": "Optimizuoti Adblock Plus tai kalbai(-oms) kurių tinklapius naršote."
   },
+  "options_language_empty": {
+    "message": "Neturite konkrečios kalbos sąrašų."
+  },
   "options_language_header": {
     "message": "Kalba"
+  },
+  "options_language_tip": {
+    "message": "<strong>PATARIMAS:</strong> Pasirinkite tik reikiamas kalbas. Jei pasirinksite per daug tai tik sulėtins jūsų naršymą."
+  },
+  "options_learn_more": {
+    "message": "Sužinoti daugiau"
   },
   "options_more_filters_description": {
     "message": "Tai yra papildomi sąrašai kuriuos anksčiau pridėjote į Adblock Plus."
   },
   "options_more_filters_header": {
     "message": "Daugiau filtrų"
+  },
+  "options_more_filters_note": {
+    "message": "<strong>Pastaba:</strong> Trečiųjų šalių sąrašus turėtumėte naudoti tik iš patikimų autorių."
+  },
+  "options_new_label": {
+    "message": "Nauji"
   },
   "options_notification_hide": {
     "message": "Uždaryti pranešimą"
@@ -199,6 +256,9 @@
   },
   "options_protection_privacy_tooltip": {
     "message": "Apsaugokite savo asmeninius duomenis pašalindami visas sekimo formas, įskaitant ir informacijos rinkėjus."
+  },
+  "options_protection_social_tooltip": {
+    "message": "Socialinių tinklų piktogramos lankomuose puslapiuose leidžia socialiniams tinklams sukurti jūsų naršymo įpročių profilį - net jei jūs nepaspaudžiate ant jų. Paslėpus jas galite apsaugoti savo privatumą."
   },
   "options_report_ad": {
     "message": "Matote reklamą kurio neturėtų būti? <a>Praneškite apie reklamą</a>"
@@ -235,6 +295,12 @@
   },
   "options_whitelist_add": {
     "message": "Pridėti svetainę"
+  },
+  "options_whitelist_description": {
+    "message": "Jūs išjungėte reklamų blokavimą šiuose puslapiuose ir matote reklamas juose."
+  },
+  "options_whitelist_empty_1": {
+    "message": "Neturi puslapių baltąjame sąraše."
   },
   "options_whitelist_empty_2": {
     "message": "Tinklapiai kuriais pasitikite ir norite juose matyti reklamą, bus rodomi čia."

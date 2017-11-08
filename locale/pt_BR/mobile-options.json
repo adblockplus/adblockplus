@@ -3,10 +3,10 @@
     "message": "Permitir algumas propagandas não-invasivas"
   },
   "mops_acceptableAds_more": {
-    "message": "Saber mais"
+    "message": "Saiba mais"
   },
   "mops_action_cancel": {
-    "message": "Cancelar"
+    "message": "CANCELAR"
   },
   "mops_enabled_label": {
     "message": "Ativar Adblock Plus no <strong>$domain$</strong>",
@@ -27,13 +27,13 @@
     "message": "+ Adicionar uma lista de filtros"
   },
   "mops_filterlist_add_action": {
-    "message": "Adicionar uma lista de filtros"
+    "message": "ADICIONAR LISTA DE FILTROS"
   },
   "mops_filterlist_add_url": {
     "message": "+ Adicionar uma lista de filtros personalizada"
   },
   "mops_header": {
-    "message": "Definições do Adblock Plus"
+    "message": "Adblock Plus Definições"
   },
   "mops_subscribe_header": {
     "message": "Adicionar uma lista de filtros personalizada"
@@ -48,6 +48,6 @@
     "message": "Inscrições de filtros"
   },
   "mops_title": {
-    "message": "Definições do Adblock Plus"
+    "message": "Adblock Plus Definições"
   }
 }

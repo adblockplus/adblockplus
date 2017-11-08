@@ -6,7 +6,7 @@
     "message": "Узнать больше"
   },
   "mops_action_cancel": {
-    "message": "Отменить"
+    "message": "ОТМЕНА"
   },
   "mops_enabled_label": {
     "message": "Включить Adblock Plus на <strong>$domain$</strong>",
@@ -33,7 +33,7 @@
     "message": "+ Добавить собственный список фильтров"
   },
   "mops_header": {
-    "message": "Настройки Adblock Plus"
+    "message": "Adblock Plus Настройки"
   },
   "mops_subscribe_header": {
     "message": "Добавить собственный список фильтров"

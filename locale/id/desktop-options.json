@@ -11,6 +11,15 @@
   "options_customFilter_save": {
     "message": "Simpan"
   },
+  "options_customFilters_edit_placeholder": {
+    "message": "misalnya $filter$",
+    "placeholders": {
+      "filter": {
+        "content": "$1",
+        "example": "/ads/track/*"
+      }
+    }
+  },
   "options_customFilters_learn": {
     "message": "Belajar bagaimana menulis daftar filter"
   },
@@ -44,6 +53,9 @@
   "options_filterList_column_name": {
     "message": "Daftar penyaring"
   },
+  "options_filterList_column_status": {
+    "message": "Status"
+  },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Gagal, checksum tidak cocok"
   },
@@ -61,6 +73,9 @@
   },
   "options_filterList_source": {
     "message": "sumber"
+  },
+  "options_filterList_state_disabled": {
+    "message": "Dinonaktifkan"
   },
   "options_filterList_title": {
     "message": "Daftar penyaring"
@@ -88,6 +103,9 @@
   },
   "options_language_header": {
     "message": "Bahasa"
+  },
+  "options_learn_more": {
+    "message": "Pelajari lebih lanjut"
   },
   "options_more_filters_header": {
     "message": "Filter lain"

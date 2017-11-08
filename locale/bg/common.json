@@ -4,5 +4,11 @@
   },
   "common_feature_malware_title": {
     "message": "Блокира злонамерения софтуер"
+  },
+  "common_feature_privacy_title": {
+    "message": "Блокира допълнителното проследяване"
+  },
+  "common_feature_social_title": {
+    "message": "Блокира проследяването чрез бутоните на социалните мрежи"
   }
 }

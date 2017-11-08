@@ -33,7 +33,7 @@
     "message": "We raden u aan een geldig e-mailadres in te voeren, zodat we contact met u kunnen opnemen als er vragen zijn over uw rapport. Hierdoor kunnen we uw bijdragen ook herkennen en een hogere prioriteit geven."
   },
   "issueReporter_email_label": {
-    "message": "E-mailadres:"
+    "message": "E-mail:"
   },
   "issueReporter_errorMessage": {
     "message": "De poging om het rapport te verzenden is mislukt met foutcode ‘?1?’. Controleer uw internetverbinding en probeer het opnieuw. Als het probleem aanhoudt, vraag dan om hulp op het [link]Adblock Plus-forum[/link]."

@@ -4,5 +4,11 @@
   },
   "common_feature_malware_title": {
     "message": "Kötücül Yazılımı Engelle"
+  },
+  "common_feature_privacy_title": {
+    "message": "Diğer takipleri engelleyin"
+  },
+  "common_feature_social_title": {
+    "message": "Sosyal medya simgelerinin takibini engelleyin"
   }
 }

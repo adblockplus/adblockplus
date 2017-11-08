@@ -1,9 +1,15 @@
 {
+  "options_close": {
+    "message": "sluten"
+  },
   "options_customFilter_cancel": {
     "message": "Annulearje"
   },
   "options_email": {
     "message": "E-mail:"
+  },
+  "options_filterList_column_status": {
+    "message": "Steat"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Mislearre, checksum komt net oerien"
@@ -13,5 +19,8 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Mislearre, gjin jildich adres"
+  },
+  "options_filterList_state_disabled": {
+    "message": "Útskeakele"
   }
 }

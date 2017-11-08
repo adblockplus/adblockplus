@@ -24,7 +24,7 @@
     "message": "Wspomóż rozwój projektu"
   },
   "firstRun_filterlistsReinitializedWarning": {
-    "message": "Wygląda na to, że w wyniku błędu wszystkie filtry zostały usunięte i nie udało się ich przywrócić z kopii zapasowej, dlatego twoje filtry i ustawienia akceptowalnych reklam zostały zresetowane. Sprawdź swoje listy filtrów i ustawienia akceptowalnych reklam w <a>opcjach Adblock Plusa</a>."
+    "message": "Wygląda na to, że w wyniku błędu wszystkie filtry zostały usunięte i nie udało się ich przywrócić z kopii zapasowej, dlatego twoje filtry i ustawienia akceptowalnych reklam zostały zresetowane. Sprawdź swoje zestawy filtrów i ustawienia akceptowalnych reklam w <a>opcjach Adblock Plusa</a>."
   },
   "firstRun_share": {
     "message": "Powiadom znajomych o Adblock Plusie"

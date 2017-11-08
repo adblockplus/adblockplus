@@ -4,5 +4,11 @@
   },
   "common_feature_malware_title": {
     "message": "屏蔽恶意软件"
+  },
+  "common_feature_privacy_title": {
+    "message": "禁用其他跟踪"
+  },
+  "common_feature_social_title": {
+    "message": "禁止社交媒体图标跟踪"
   }
 }

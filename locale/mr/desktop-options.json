@@ -1,4 +1,7 @@
 {
+  "options_close": {
+    "message": "बंद करा"
+  },
   "options_customFilter_cancel": {
     "message": "रद्द करा"
   },
@@ -10,6 +13,9 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "अयशस्वी, वैध पत्ता नाही"
+  },
+  "options_language_header": {
+    "message": "भाष"
   },
   "options_page_title": {
     "message": "सेटिंग्ज"

@@ -2,10 +2,31 @@
   "mops_acceptableAds_description": {
     "message": "السماح لب&عض الإعلانات الغير متطفّلة"
   },
+  "mops_acceptableAds_more": {
+    "message": "تعرف على المزيد"
+  },
   "mops_action_cancel": {
     "message": "إلغاء"
   },
+  "mops_filterlist_add": {
+    "message": "+ إضافة قائمة عوامل تصفية"
+  },
+  "mops_filterlist_add_action": {
+    "message": "إضافة قائمة عوامل تصفية"
+  },
+  "mops_header": {
+    "message": "Adblock Plus إعدادات"
+  },
+  "mops_subscribe_title": {
+    "message": "اسم قائمة عوامل تصفية"
+  },
+  "mops_subscribe_url": {
+    "message": "رابط URL لقائمة عوامل تصفية"
+  },
   "mops_subscriptions_header": {
     "message": "إشتراكات الفلاتر"
+  },
+  "mops_title": {
+    "message": "Adblock Plus إعدادات"
   }
 }

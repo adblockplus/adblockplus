@@ -1,0 +1,35 @@
+{
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Tuzna tudrigt"
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Sekcem awennit"
+  },
+  "issueReporter_comment_label": {
+    "message": "Awennit (afrayan):"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Immed"
+  },
+  "issueReporter_email_label": {
+    "message": "Imayl:"
+  },
+  "issueReporter_page_title": {
+    "message": "Amazan n wugur"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "Tasertit tabaḍnit"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Azen ugur"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Azen ugur"
+  },
+  "issueReporter_showData_label": {
+    "message": "Sken isefka n uneqqis"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Fren anaw n wugur"
+  }
+}

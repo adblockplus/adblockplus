@@ -9,13 +9,13 @@
     "message": "コメントを入力"
   },
   "issueReporter_comment_description": {
-    "message": "症状、再現手順、原因特定の根拠、発生開始時期、正常時との違い、画面上の位置等をコメントに記入"
+    "message": "以下のテキストフィールドに、私たちが問題を理解するのを助けるためのコメントを入力できます。この手順は省略できますが、問題が明らかではない場合には推奨されます。また送信前にレポートデータを確認できます。"
   },
   "issueReporter_comment_label": {
-    "message": "コメント (的確に記述すれば良い対応が期待できます):"
+    "message": "コメント (省略可):"
   },
   "issueReporter_comment_lengthWarning": {
-    "message": "コメントが 1000 文字を超えているので、先頭から 1000 文字だけ送信します"
+    "message": "コメントが 1000 文字を超えています。先頭から 1000 文字だけが送信されます。"
   },
   "issueReporter_confirmationMessage": {
     "message": "あなたの不具合報告は保存されました。次のアドレスでアクセスできます:"
@@ -33,7 +33,7 @@
     "message": "メールアドレスを入力すると調査中の不明な点を問い合わせたり、報告者毎に優先度に上げた対応が可能になります。"
   },
   "issueReporter_email_label": {
-    "message": "Email:"
+    "message": "Eメール:"
   },
   "issueReporter_errorMessage": {
     "message": "不具合報告の送信がエラーコード \"?1?\" で失敗しました。インターネットに接続されているか確認し再試行してください。問題が解決しない場合は [link]Adblock Plus フォーラム[/link] で助けを求めてください。"

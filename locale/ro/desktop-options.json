@@ -1,9 +1,21 @@
 {
+  "options_acceptableAds_ads_description_1": {
+    "message": "Publicitatea acceptabilă nu este enervantă şi nu interferează cu conţinutul vizionat. <a>Citeste mai multe despre criteriile Reclamelor acceptabile</a>"
+  },
+  "options_acceptableAds_ads_label": {
+    "message": "Permite anunţurile acceptabile"
+  },
   "options_acceptableAds_description": {
     "message": "Publicitatea acceptabilă este formată din anunţuri neinvazive. Ele sunt o cale de mijloc între publicitatea blocată şi sprijinirea conţinutului web online, pentru că generează venituri pentru proprietarii de site-uri."
   },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>Notă:</strong> <strong>Nu mă urmări (DNT)</strong> este dezactivată în setările browser-ului. Pentru ca această setare să poată lucra în mod corespunzător, vă rugăm să activaţi <strong>DNT</strong> în preferinţele browser-ului. <a>Afla cum se activează DNT</a>."
+  },
   "options_acceptableAds_header": {
     "message": "Reclame acceptabile"
+  },
+  "options_acceptableAds_privacy_label": {
+    "message": "Permite doar reclame fara tracking"
   },
   "options_advanced_description": {
     "message": "Personalizează Adblock Plus, adaugă sau elimină liste de filtre, crează şi întreţine propriile liste de filtre"
@@ -22,6 +34,9 @@
   },
   "options_customFilter_save": {
     "message": "Salvează"
+  },
+  "options_customFilters_description": {
+    "message": "Scrie propriile filtre personalizate pentru a controla ce conţinut permite sau blochează Adblock PLus."
   },
   "options_customFilters_edit_placeholder": {
     "message": "exemplu $filter$",
@@ -56,6 +71,9 @@
   "options_customize_header": {
     "message": "Personalizează acţiunile pe pagină"
   },
+  "options_customize_showDevToolsPanel": {
+    "message": "Arată panoul \"Adblock Plus\" în developer tools"
+  },
   "options_customize_showDevToolsPanel_tooltip": {
     "message": "Vezi elementele blocate şi permise în panoul de instrumente asociat browserului."
   },
@@ -65,8 +83,20 @@
   "options_customize_showNotifications_tooltip": {
     "message": "Dezactivează toate notificările din Adblock Plus."
   },
+  "options_dialog_about_copyright": {
+    "message": "Copyright © $currentYear$ eyeo GmbH.",
+    "placeholders": {
+      "currentYear": {
+        "content": "2017",
+        "example": "2017"
+      }
+    }
+  },
   "options_dialog_about_title": {
     "message": "Despre Adblock Plus"
+  },
+  "options_dialog_about_trademark": {
+    "message": "Toate drepturile rezervate. Adblock Plus® este o marcă înregistrată a eyeo GmbH."
   },
   "options_dialog_about_version": {
     "message": "$version$ numărul de versiune",
@@ -101,6 +131,9 @@
   "options_dialog_predefined_confirm": {
     "message": "Da, foloseşte această listă de filtre"
   },
+  "options_dialog_predefined_title": {
+    "message": "Doriţi într-adevăr să utilizaţi această listă de filtre?"
+  },
   "options_email": {
     "message": "Email:"
   },
@@ -112,6 +145,15 @@
   },
   "options_filterList_column_status": {
     "message": "Status"
+  },
+  "options_filterList_column_update": {
+    "message": "Ultima actualizare"
+  },
+  "options_filterList_description": {
+    "message": "Orice setare Adblock Plus funcţionează datorită unei liste de filtre. Mai jos sunt liste de filtre corespunzătoare tuturor setărilor Adblock Plus. Puteţi adăuga filtre suplimentare create şi întreţinute de către comunitatea noastră de încredere. Aflaţi mai multe."
+  },
+  "options_filterList_empty": {
+    "message": "Nu aţi adăugat nicio listă de filtre la Adblock Plus. Listele adăugate vor fi listate aici."
   },
   "options_filterList_hours": {
     "message": "ore în urmă"
@@ -179,14 +221,29 @@
   "options_language_description": {
     "message": "Optimizaţi Adblock Plus pentru limba (limbile) folosite de obicei pentru a naviga pe site-uri."
   },
+  "options_language_empty": {
+    "message": "Nu există filtre specifice limbii folosite."
+  },
   "options_language_header": {
     "message": "Limbă"
+  },
+  "options_language_tip": {
+    "message": "<strong>Sfat:</strong> Selectaţi doar limbile de care aveţi nevoie. Selectarea prea multor limbi va încetini viteza de blocare şi, prin urmare, viteza de navigare."
+  },
+  "options_learn_more": {
+    "message": "Aflaţi mai multe"
   },
   "options_more_filters_description": {
     "message": "Acestea sunt filtrele suplimentare pe care le-aţi adăugat anterior la Adblock Plus."
   },
   "options_more_filters_header": {
     "message": "Mai multe filtre"
+  },
+  "options_more_filters_note": {
+    "message": "<strong>Notă:</strong> Ar trebui să utilizaţi numai liste de filtre create de autori în care aveţi încredere."
+  },
+  "options_new_label": {
+    "message": "Nou"
   },
   "options_notification_hide": {
     "message": "Închideţi această notificare"
@@ -199,6 +256,9 @@
   },
   "options_protection_privacy_tooltip": {
     "message": "Protejează datele cu caracter personal prin eliminarea tuturor formelor de urmărire în Internet, inclusiv colectarea datelor."
+  },
+  "options_protection_social_tooltip": {
+    "message": "Butoanele de social media (sau icoane) pe site-urile pe care le vizitaţi permit reţelelor sociale să vă construiască un profil bazat pe obiceiurile de navigare - chiar şi atunci când nu faceţi clic pe ele. Ascunde aceste butoane pentru a vă proteja profilul."
   },
   "options_report_ad": {
     "message": "Vezi un anunţ care crezi că n-ar trebui să fie acolo? <a>Raportează un anunţ</a>"
@@ -235,6 +295,12 @@
   },
   "options_whitelist_add": {
     "message": "Adaugă site"
+  },
+  "options_whitelist_description": {
+    "message": "Aţi dezactivat blocarea publicităţii pe aceste site-uri. Veţi vedea reclamele pe aceste site-uri."
+  },
+  "options_whitelist_empty_1": {
+    "message": "Nu aţi adăugat niciun site la whitelist."
   },
   "options_whitelist_empty_2": {
     "message": "Site-urile în care aveţi încredere şi le permiteţi reclamele vor fi indicate aici."

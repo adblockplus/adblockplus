@@ -2,10 +2,31 @@
   "mops_acceptableAds_description": {
     "message": "Να επιτρέπονται μερικές μη-παρεμβατικές διαφημίσεις"
   },
+  "mops_acceptableAds_more": {
+    "message": "Μάθετε περισσότερα"
+  },
   "mops_action_cancel": {
-    "message": "Ακύρωση"
+    "message": "ΑΚΥΡΩΣΗ"
+  },
+  "mops_filterlist_add": {
+    "message": "Προσθήκη λίστας φίλτρων"
+  },
+  "mops_filterlist_add_action": {
+    "message": "ΠΡΟΣΘΗΚΗ ΛΙΣΤΑΣ ΦΙΛΤΡΩΝ"
+  },
+  "mops_header": {
+    "message": "Adblock Plus Ρυθμίσεις"
+  },
+  "mops_subscribe_title": {
+    "message": "Όνομα λίστας φίλτρων"
+  },
+  "mops_subscribe_url": {
+    "message": "Διεύθυνση URL λίστας φίλτρων"
   },
   "mops_subscriptions_header": {
     "message": "Συνδρομές φίλτρων"
+  },
+  "mops_title": {
+    "message": "Adblock Plus Ρυθμίσεις"
   }
 }

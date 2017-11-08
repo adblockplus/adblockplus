@@ -2,10 +2,31 @@
   "mops_acceptableAds_description": {
     "message": "비침입형 광고 허용"
   },
+  "mops_acceptableAds_more": {
+    "message": "더 알아보기"
+  },
   "mops_action_cancel": {
     "message": "취소"
   },
+  "mops_filterlist_add": {
+    "message": "필터 목록 추가"
+  },
+  "mops_filterlist_add_action": {
+    "message": "필터 목록 추가"
+  },
+  "mops_header": {
+    "message": "Adblock Plus 설정"
+  },
+  "mops_subscribe_title": {
+    "message": "필터 목록 이름"
+  },
+  "mops_subscribe_url": {
+    "message": "필터 목록 URL"
+  },
   "mops_subscriptions_header": {
     "message": "구독 필터"
+  },
+  "mops_title": {
+    "message": "Adblock Plus 설정"
   }
 }

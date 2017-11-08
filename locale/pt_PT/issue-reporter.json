@@ -33,7 +33,7 @@
     "message": "Deve indicar um endereço eletrónico válido para que o possamos contactar, caso precisemos de ajuda para resolver o erro reportado no relatório. O endereço permite-nos também verificar os contributos e criar uma hierarquia."
   },
   "issueReporter_email_label": {
-    "message": "Email:"
+    "message": "E-mail:"
   },
   "issueReporter_errorMessage": {
     "message": "O envio do relatório falhou com o código de erro \"?1?\". Por favor certifique-se que está ligado à Internet e tente novamente. Se o problema persistir, aceda ao [link]fórum do Adblock Plus[/link]."

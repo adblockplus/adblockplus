@@ -8,6 +8,15 @@
   "mops_action_cancel": {
     "message": "বাতিল"
   },
+  "mops_enabled_label": {
+    "message": "<strong>$domain$</strong>-এ অ্যাডব্লক প্লাস সক্রিয় করুন",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
   "mops_error_title": {
     "message": "দয়া করে একটি শিরোনাম লিখুন"
   },
@@ -28,6 +37,12 @@
   },
   "mops_subscribe_header": {
     "message": "একটি স্ব ফিল্টার তালিকা যুক্ত করুন"
+  },
+  "mops_subscribe_title": {
+    "message": "ছাঁকন তালিকার নাম"
+  },
+  "mops_subscribe_url": {
+    "message": "ছাঁকন তালিকার URL"
   },
   "mops_subscriptions_header": {
     "message": "ছাঁকনি সদস্যতাসমূহ"

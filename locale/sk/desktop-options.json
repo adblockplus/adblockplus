@@ -1,6 +1,15 @@
 {
+  "options_acceptableAds_ads_description_1": {
+    "message": "Prijateľné reklamy nie sú otravné a nezasahujú do obsahu, ktorý prezeráte. <a> Viac informácií o kritériách prijateľných reklám </a>"
+  },
+  "options_acceptableAds_ads_label": {
+    "message": "Povoliť prijateľné reklamy"
+  },
   "options_acceptableAds_description": {
     "message": "Prijateľné reklamy nie sú rušivé reklamy. Jeú to stredná cesta medzi blokovaním reklám a podporou obsahu online, pretože vytvárajú príjmy pre vlastníkov webových stránok."
+  },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>Poznámka:</strong> Máte vypnuté <strong>Nesledovať (DNT)</strong> v nastavení vášho prehliadača. Ak má táto funkcia pracovať správne, povoľte <strong>DNT</strong> v predvoľbách prehliadača. <a>Zistite ako zapnúť DNT</a>.\n \nContext | Request Context."
   },
   "options_acceptableAds_header": {
     "message": "Prijateľné reklamy"
@@ -22,6 +31,9 @@
   },
   "options_customFilter_save": {
     "message": "Uložiť"
+  },
+  "options_customFilters_description": {
+    "message": "Napíšte svoje vlastné filtre, aby ste mohli ďalej riadiť obsah, ktorý Adblock Plus umožňuje alebo blokuje."
   },
   "options_customFilters_edit_placeholder": {
     "message": "napr. $filter$",
@@ -47,20 +59,101 @@
   "options_customFilters_widget_title": {
     "message": "Môj zoznam filtrov"
   },
+  "options_customize_blockElement": {
+    "message": "Zobrazovať v kontextovej ponuke položku 'Blokovať prvok'"
+  },
+  "options_customize_blockElement_tooltip": {
+    "message": "Dočasne blokovať obťažujúce položky na webovej stránke, napríklad obrázky alebo animované prezentácie."
+  },
+  "options_customize_header": {
+    "message": "Prispôsobte si akcie na stránke"
+  },
+  "options_customize_showDevToolsPanel": {
+    "message": "Zobraziť panel \"Adblock Plus\" v nástrojoch pre vývojárov"
+  },
+  "options_customize_showDevToolsPanel_tooltip": {
+    "message": "Zobraziť položky zablokované a označené bielou listinou z panelu nástrojov pre vývojárov v prehliadači."
+  },
   "options_customize_showNotifications": {
     "message": "Zobraziť užitočné upozornenia"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Vypnite všetky upozornenia z Adblock Plus."
+  },
+  "options_dialog_about_copyright": {
+    "message": "Autorské práva © $currentYear$ eyeo GmbH.",
+    "placeholders": {
+      "currentYear": {
+        "content": "2017",
+        "example": "2017"
+      }
+    }
   },
   "options_dialog_about_title": {
     "message": "O Adblock Plus"
   },
+  "options_dialog_about_trademark": {
+    "message": "Všetky práva vyhradené. Adblock Plus® je registrovaná ochranná známka spoločnosti eyeo GmbH."
+  },
+  "options_dialog_about_version": {
+    "message": "Číslo verzie $version$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "2.6.7"
+      }
+    }
+  },
   "options_dialog_import_subscription_location": {
     "message": "Adresa URL zoznamu filtrov"
+  },
+  "options_dialog_import_subscription_location_error": {
+    "message": "Zadajte platnú adresu URL"
   },
   "options_dialog_import_subscription_title": {
     "message": "Názov zoznamu filtra"
   },
+  "options_dialog_import_subscription_title_error": {
+    "message": "Vyplňte pole"
+  },
+  "options_dialog_import_title": {
+    "message": "Pridajte zoznam filtrov"
+  },
+  "options_dialog_language_other_empty": {
+    "message": "Nie sú k dispozícii žiadne jazyky."
+  },
+  "options_dialog_language_title": {
+    "message": "Vyberte jazyk"
+  },
+  "options_dialog_predefined_confirm": {
+    "message": "Áno, použite tento zoznam filtrov"
+  },
+  "options_dialog_predefined_title": {
+    "message": "Naozaj chcete pridať tento zoznam filtrov?"
+  },
+  "options_email": {
+    "message": "Email:"
+  },
+  "options_filterList_add": {
+    "message": "+ Pridajte nový zoznam filtrov"
+  },
   "options_filterList_column_name": {
     "message": "Zoznamy filtrov"
+  },
+  "options_filterList_column_status": {
+    "message": "Stav"
+  },
+  "options_filterList_column_update": {
+    "message": "Naposledy aktualizovaný"
+  },
+  "options_filterList_description": {
+    "message": "Každé nastavenie Adblock Plus funguje kvôli zoznamu filtrov. Nižšie sú uvedené zoznamy filtrov, ktoré zodpovedajú všetkým vašim nastaveniam Adblock Plus. Môžete tiež pridať ďalšie filtre vytvorené a udržiavané našou dôveryhodnou komunitou."
+  },
+  "options_filterList_empty": {
+    "message": "Do Adblock Plus ste nepridali žiadne zoznamy filtrov. Tu sa zobrazia zoznamy filtrov, ktoré pridáte."
+  },
+  "options_filterList_hours": {
+    "message": "pred %d hodinami"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Zlyhalo, chybné prispôsobenie kontrolného súčtu"
@@ -68,11 +161,41 @@
   "options_filterList_lastDownload_connectionError": {
     "message": "Zlyhanie, sťahovanie neúspešné"
   },
+  "options_filterList_lastDownload_inProgress": {
+    "message": "Aktualizácia"
+  },
+  "options_filterList_lastDownload_invalidData": {
+    "message": "Zlyhanie, nie je platný zoznam filtrov"
+  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Zlyhanie, neplatná adresa"
   },
+  "options_filterList_minutes": {
+    "message": "pred %d minútami"
+  },
+  "options_filterList_now": {
+    "message": "Práve teraz"
+  },
+  "options_filterList_source": {
+    "message": "zdroj"
+  },
+  "options_filterList_state_active": {
+    "message": "Aktívny"
+  },
+  "options_filterList_state_disabled": {
+    "message": "Vypnutý"
+  },
   "options_filterList_title": {
     "message": "Zoznamy filtrov"
+  },
+  "options_filterList_update": {
+    "message": "aktualizovať všetky zoznamy filtrov"
+  },
+  "options_filterList_updateNow": {
+    "message": "teraz aktualizovať"
+  },
+  "options_filterList_website": {
+    "message": "webová stránka"
   },
   "options_footer_about": {
     "message": "O Adblock Plus"
@@ -80,16 +203,121 @@
   "options_footer_contribute": {
     "message": "Pridajte sa"
   },
+  "options_general_description": {
+    "message": "Určte, čo Adblock Plus zobrazuje a skrýva na webových stránkach"
+  },
+  "options_help_description": {
+    "message": "Nájdite pomoc alebo nás kontaktujte"
+  },
+  "options_language_add": {
+    "message": "+ pridajte jazyk"
+  },
+  "options_language_change": {
+    "message": "zmeniť"
+  },
+  "options_language_description": {
+    "message": "Optimalizujte program Adblock Plus pre jazyk(y), ktorým obvykle prehliadate webové stránky."
+  },
+  "options_language_empty": {
+    "message": "Nemáte žiadne filtre špecifické pre daný jazyk."
+  },
+  "options_language_header": {
+    "message": "Jazyk"
+  },
+  "options_language_tip": {
+    "message": "<strong>TIP:</strong>Vyberte iba požadované jazyky. Ak vyberiete viac, spomalíte blokovanie reklamy, a teda rýchlosť prehliadania."
+  },
+  "options_learn_more": {
+    "message": "Dozvedieť sa viac"
+  },
+  "options_more_filters_description": {
+    "message": "Ide o ďalšie filtre, ktoré ste predtým pridali do Adblock Plus."
+  },
+  "options_more_filters_header": {
+    "message": "Ďalšie filtre"
+  },
+  "options_more_filters_note": {
+    "message": "<strong> Poznámka: </strong> Zoznam filtrovv tretích strán by ste mali používať iba od autorov, ktorým dôverujete."
+  },
+  "options_new_label": {
+    "message": "Nový"
+  },
+  "options_notification_hide": {
+    "message": "Zatvorte oznámenie"
+  },
   "options_page_title": {
     "message": "Nastavenia"
   },
+  "options_privacy_header": {
+    "message": "Ochrana súkromia a bezpečnosť"
+  },
+  "options_protection_privacy_tooltip": {
+    "message": "Chráňte svoje osobné údaje odstránením všetkých foriem sledovania z internetu, vrátane zberačov informácií."
+  },
+  "options_protection_social_tooltip": {
+    "message": "Ikony sociálnych médií na navštívených webových stránkach umožňujú sociálnym sieťam vytvoriť si profil na základe vašich zvykov prehliadania - aj keď na ne nekliknete. Skrytie týchto ikon môže chrániť váš profil."
+  },
+  "options_report_ad": {
+    "message": "Vidíte reklamu, o ktorej si myslíte, že by tam nemala byť?<a> Nahlásenie reklamy </a>"
+  },
+  "options_report_bug": {
+    "message": "Bola nájdená chyba?<a> Pošlite nám správu o chybe </a>"
+  },
+  "options_report_forum": {
+    "message": "Chcete podporiť našu komunitu?<a> Prejdite na fórum </a>"
+  },
+  "options_report_issue": {
+    "message": "Myslíte si, že obsah alebo funkčnosť je nami nesprávne blokovaný?<a> Nahláste nesprávne blokované položky tu </a>"
+  },
+  "options_social_description": {
+    "message": "Máte otázku alebo nový nápad? Sme tu, aby sme vám pomohli."
+  },
+  "options_social_title": {
+    "message": "Spojte sa s nami"
+  },
   "options_support_title": {
     "message": "Podpora"
+  },
+  "options_tab_advanced": {
+    "message": "Pokročilé"
   },
   "options_tab_general": {
     "message": "Všeobecné"
   },
   "options_tab_help": {
     "message": "Pomoc"
+  },
+  "options_tab_whitelist": {
+    "message": "Webové stránky s povolenými adresami"
+  },
+  "options_whitelist_add": {
+    "message": "Pridať webovú stránku"
+  },
+  "options_whitelist_description": {
+    "message": "Blokovanie reklám ste zakázali na týchto webových stránkach, a preto sa na nich zobrazia reklamy."
+  },
+  "options_whitelist_empty_1": {
+    "message": "Nemáte žiadne webové stránky na bielom zozname."
+  },
+  "options_whitelist_empty_2": {
+    "message": "Webové stránky, ktorým dôverujete a ktorým chcete povoliť reklamy, sa zobrazia tu."
+  },
+  "options_whitelist_notification": {
+    "message": "\"$website$\" bola zaradená na bielu listinu.",
+    "placeholders": {
+      "website": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "options_whitelist_placeholder_example": {
+    "message": "napr. $domain$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
   }
 }

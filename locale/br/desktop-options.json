@@ -1,6 +1,15 @@
 {
+  "options_close": {
+    "message": "serriñ"
+  },
   "options_customFilter_cancel": {
     "message": "Nullañ"
+  },
+  "options_filterList_column_name": {
+    "message": "Filter lists"
+  },
+  "options_filterList_column_status": {
+    "message": "Stad"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Fazi, n'eo ket ar memes checksum"
@@ -10,5 +19,11 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Fazi, n'eo ket ur chomlec'h"
+  },
+  "options_filterList_state_disabled": {
+    "message": "Marvaat"
+  },
+  "options_filterList_title": {
+    "message": "Filter lists"
   }
 }

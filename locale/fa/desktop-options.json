@@ -1,12 +1,30 @@
 {
+  "options_close": {
+    "message": "بستن"
+  },
+  "options_control_remove_title": {
+    "message": "حذف"
+  },
   "options_customFilter_cancel": {
     "message": "لغو"
+  },
+  "options_customFilter_edit": {
+    "message": "ویرایش فیلترها"
+  },
+  "options_customFilter_save": {
+    "message": "ذخیره"
   },
   "options_customize_showNotifications": {
     "message": "نمایش اعلان های مفید"
   },
+  "options_email": {
+    "message": "ایمیل:"
+  },
   "options_filterList_column_name": {
     "message": "لیست فیلتر"
+  },
+  "options_filterList_column_status": {
+    "message": "وضعیت"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "ناموفق, عدم تطابق کنترلی"
@@ -17,8 +35,14 @@
   "options_filterList_lastDownload_invalidURL": {
     "message": "ناموفق، نشانی معتبر نیست"
   },
+  "options_filterList_state_disabled": {
+    "message": "غیر فعال"
+  },
   "options_filterList_title": {
     "message": "لیست فیلتر"
+  },
+  "options_filterList_updateNow": {
+    "message": "آپدیت کن"
   },
   "options_page_title": {
     "message": "تنظیمات"

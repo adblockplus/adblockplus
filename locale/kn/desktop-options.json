@@ -5,6 +5,9 @@
   "options_filterList_column_name": {
     "message": "ಫಿಲ್ಟರ್ ಪಟ್ಟಿಗಳನ್ನು"
   },
+  "options_filterList_column_status": {
+    "message": "ಸ್ಟೇಟಸ"
+  },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "ವಿಫಲವಾಗಿದೆ, ಪ್ರತಿನಿಧಿಗಳನ್ನು ಅಸಾಮರಸ್ಯವು"
   },
@@ -16,6 +19,12 @@
   },
   "options_filterList_title": {
     "message": "ಫಿಲ್ಟರ್ ಪಟ್ಟಿಗಳನ್ನು"
+  },
+  "options_filterList_updateNow": {
+    "message": "ಈಗ ನವೀಕರಿಸಿ"
+  },
+  "options_language_header": {
+    "message": "ಭಾಷ"
   },
   "options_page_title": {
     "message": "ಸೆಟ್ಟಿಂಗ್ ಗಳು"

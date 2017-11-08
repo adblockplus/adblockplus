@@ -3,10 +3,10 @@
     "message": "Permetti alcune pubblicità non inopportune"
   },
   "mops_acceptableAds_more": {
-    "message": "Per saperne di più"
+    "message": "Scopri maggiori informazioni"
   },
   "mops_action_cancel": {
-    "message": "Annulla"
+    "message": "ANNULLARE"
   },
   "mops_enabled_label": {
     "message": "Abilitare Adblock Plus su <strong>$domain$</strong>",
@@ -24,30 +24,30 @@
     "message": "Inserire un URL"
   },
   "mops_filterlist_add": {
-    "message": "+ Aggiungere una lista di filtri"
+    "message": "+ Aggiungere un elenco di filtri"
   },
   "mops_filterlist_add_action": {
-    "message": "Aggiungere una lista di filtri"
+    "message": "AGGIUNGERE UN ELENCO DI FILTRI"
   },
   "mops_filterlist_add_url": {
     "message": "+ Aggiungi un elenco di filtri personalizzati"
   },
   "mops_header": {
-    "message": "Opzioni di Adblock Plus"
+    "message": "Adblock Plus Impostazioni"
   },
   "mops_subscribe_header": {
     "message": "Aggiungi un elenco di filtri personalizzati"
   },
   "mops_subscribe_title": {
-    "message": "Nome lista di filtri"
+    "message": "Nome dell'elenco di filtri"
   },
   "mops_subscribe_url": {
-    "message": "Indirizzo web lista di filtri"
+    "message": "URL dell'elenco di filtri"
   },
   "mops_subscriptions_header": {
     "message": "Sottoscrizioni di filtri"
   },
   "mops_title": {
-    "message": "Opzioni di Adblock Plus"
+    "message": "Adblock Plus Impostazioni"
   }
 }

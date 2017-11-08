@@ -4,5 +4,11 @@
   },
   "common_feature_malware_title": {
     "message": "Blochează Malware"
+  },
+  "common_feature_privacy_title": {
+    "message": "Blochează tracking"
+  },
+  "common_feature_social_title": {
+    "message": "Blochează tracking pe reţelele sociale"
   }
 }

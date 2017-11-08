@@ -1,9 +1,21 @@
 {
+  "options_acceptableAds_ads_description_1": {
+    "message": "Acceptabele advertenties zijn niet vervelend en geven geen verstoring met de inhoud die u bekijkt. <a>Lees meer over de criteria voor Acceptabele advertenties</a>"
+  },
+  "options_acceptableAds_ads_label": {
+    "message": "Acceptabele advertenties toestaan"
+  },
   "options_acceptableAds_description": {
     "message": "Acceptabele advertenties zijn niet-opdringerige advertenties. Ze zijn de middenweg tussen advertentieblokkering en het steunen van online-inhoud, omdat ze inkomsten voor website-eigenaars genereren."
   },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>Opmerking:</strong> u hebt <strong>Do Not Track (DNT)</strong> uitgeschakeld in uw browserinstellingen. Schakel <strong>DNT</strong> in in uw browservoorkeuren om deze functie goed te laten werken. <a>Lees hoe u DNT kunt inschakelen</a>."
+  },
   "options_acceptableAds_header": {
     "message": "Acceptabele advertenties"
+  },
+  "options_acceptableAds_privacy_label": {
+    "message": "Alleen advertenties zonder tracking door derden toestaan"
   },
   "options_advanced_description": {
     "message": "Adblock Plus aanpassen, filterlijsten toevoegen of verwijderen, uw eigen filterlijsten maken en beheren"
@@ -23,6 +35,9 @@
   "options_customFilter_save": {
     "message": "Opslaan"
   },
+  "options_customFilters_description": {
+    "message": "Schrijf uw eigen aangepaste filters om verder te bepalen welke inhoud Adblock Plus toestaat of blokkeert."
+  },
   "options_customFilters_edit_placeholder": {
     "message": "bv. $filter$",
     "placeholders": {
@@ -36,7 +51,7 @@
     "message": "Info over het schrijven van filterlijsten"
   },
   "options_customFilters_start": {
-    "message": "Beginnen met schrijven van mijn filterlijst"
+    "message": "Beginnen met het schrijven van mijn filterlijst"
   },
   "options_customFilters_tip": {
     "message": "Hier verschijnen filters die u maakt."
@@ -48,25 +63,40 @@
     "message": "Mijn filterlijst"
   },
   "options_customize_blockElement": {
-    "message": "Menu-item 'Element blokkeren' in contextmenu tonen"
+    "message": "Menu-item ‘Element blokkeren’ in contextmenu tonen"
   },
   "options_customize_blockElement_tooltip": {
-    "message": "Storende items op een webpagina tijdelijk blokkeren, zoals afbeeldingen of bewegende diavoorstellingen."
+    "message": "Storende items op een webpagina, zoals afbeeldingen of bewegende diavoorstellingen, tijdelijk blokkeren"
   },
   "options_customize_header": {
-    "message": "Op-pagina-acties aanpassen"
+    "message": "Acties-op-pagina aanpassen"
+  },
+  "options_customize_showDevToolsPanel": {
+    "message": "Paneel ‘Adblock Plus’ in ontwikkelaarshulpmiddelen tonen"
   },
   "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Geblokkeerde en items op witte lijst van het paneel ontwikkelaarshulpmiddelen van uw browser bekijken."
+    "message": "Geblokkeerde en items op witte lijst van het paneel ontwikkelaarshulpmiddelen van uw browser bekijken"
   },
   "options_customize_showNotifications": {
     "message": "Nuttige meldingen tonen"
   },
   "options_customize_showNotifications_tooltip": {
-    "message": "Alle meldingen van Adblock Plus uitschakelen."
+    "message": "Alle meldingen van Adblock Plus uitschakelen"
+  },
+  "options_dialog_about_copyright": {
+    "message": "Copyright © $currentYear$ eyeo GmbH.",
+    "placeholders": {
+      "currentYear": {
+        "content": "2017",
+        "example": "2017"
+      }
+    }
   },
   "options_dialog_about_title": {
     "message": "Over Adblock Plus"
+  },
+  "options_dialog_about_trademark": {
+    "message": "Alle rechten voorbehouden. Adblock Plus® is een geregistreerd handelsmerk van eyeo GmbH."
   },
   "options_dialog_about_version": {
     "message": "Versienummer $version$",
@@ -101,20 +131,35 @@
   "options_dialog_predefined_confirm": {
     "message": "Ja, deze filterlijst gebruiken"
   },
+  "options_dialog_predefined_title": {
+    "message": "Weet u zeker dat u deze filterlijst wilt toevoegen?"
+  },
   "options_email": {
-    "message": "E-mailadres:"
+    "message": "E-mail:"
   },
   "options_filterList_add": {
-    "message": "+ Een nieuwe filterlijst toevoegen"
+    "message": "+ Nieuwe filterlijst toevoegen"
   },
   "options_filterList_column_name": {
     "message": "Filterlijsten"
   },
+  "options_filterList_column_status": {
+    "message": "Status"
+  },
+  "options_filterList_column_update": {
+    "message": "Laatst bijgewerkt"
+  },
+  "options_filterList_description": {
+    "message": "Elke Adblock Plus-instelling functioneert vanwege een filterlijst. Hieronder staan de filterlijsten die met al uw Adblock Plus-instellingen overeenkomen. U kunt ook extra filters toevoegen die door onze vertrouwde gemeenschap worden gemaakt en onderhouden."
+  },
+  "options_filterList_empty": {
+    "message": "U hebt geen filterlijsten aan Adblock Plus toegevoegd. Filterlijsten die u toevoegt worden hier getoond."
+  },
   "options_filterList_hours": {
-    "message": "uur geleden"
+    "message": "uren geleden"
   },
   "options_filterList_lastDownload_checksumMismatch": {
-    "message": "Mislukt, onjuiste checksum"
+    "message": "Mislukt, ongeldige controlesom"
   },
   "options_filterList_lastDownload_connectionError": {
     "message": "Mislukt, fout bij downloaden"
@@ -132,7 +177,7 @@
     "message": "minuten geleden"
   },
   "options_filterList_now": {
-    "message": "zojuist"
+    "message": "Zojuist"
   },
   "options_filterList_source": {
     "message": "bron"
@@ -151,6 +196,9 @@
   },
   "options_filterList_updateNow": {
     "message": "nu bijwerken"
+  },
+  "options_filterList_website": {
+    "message": "website"
   },
   "options_footer_about": {
     "message": "Over Adblock Plus"
@@ -173,14 +221,29 @@
   "options_language_description": {
     "message": "Adblock Plus optimaliseren voor de taal/talen waarin u websites doorgaans bekijkt."
   },
+  "options_language_empty": {
+    "message": "U hebt geen taalspecifieke filters."
+  },
   "options_language_header": {
     "message": "Taal"
+  },
+  "options_language_tip": {
+    "message": "<strong>TIP:</strong> selecteer alleen de talen die u nodig hebt. Het selecteren van meer talen vertraagt de adblocker en daarmee uw surfsnelheid."
+  },
+  "options_learn_more": {
+    "message": "Meer info"
   },
   "options_more_filters_description": {
     "message": "Dit zijn extra filters die u eerder aan Adblock Plus hebt toegevoegd."
   },
   "options_more_filters_header": {
     "message": "Meer filters"
+  },
+  "options_more_filters_note": {
+    "message": "<strong>Opmerking:</strong> u dient alleen filterlijsten van derden te gebruiken van auteurs die u vertrouwt."
+  },
+  "options_new_label": {
+    "message": "Nieuw"
   },
   "options_notification_hide": {
     "message": "Melding sluiten"
@@ -193,6 +256,9 @@
   },
   "options_protection_privacy_tooltip": {
     "message": "Bescherm uw persoonlijke gegevens door alle vormen van tracking, waaronder informatieverzamelaars, vanaf het internet te verwijderen."
+  },
+  "options_protection_social_tooltip": {
+    "message": "Via de sociale-mediapictogrammen op de websites die u bezoekt, kunnen sociale-medianetwerken een profiel van u opbouwen op basis van uw surfgedrag - zelfs wanneer u hier niet op klikt. Het verbergen van deze knoppen kan uw profiel beschermen."
   },
   "options_report_ad": {
     "message": "Ziet u een advertentie die er volgens u niet hoort te zijn? <a>Rapporteer een advertentie</a>"
@@ -221,17 +287,26 @@
   "options_tab_general": {
     "message": "Algemeen"
   },
+  "options_tab_help": {
+    "message": "Help"
+  },
   "options_tab_whitelist": {
     "message": "Websites op witte lijst"
   },
   "options_whitelist_add": {
     "message": "Website toevoegen"
   },
+  "options_whitelist_description": {
+    "message": "U hebt het blokkeren van advertenties op de volgende websites uitgeschakeld, waardoor u er advertenties op ziet."
+  },
+  "options_whitelist_empty_1": {
+    "message": "U hebt geen websites op de witte lijst."
+  },
   "options_whitelist_empty_2": {
     "message": "Hier worden websites getoond die u vertrouwt en waarop u advertenties wilt toestaan."
   },
   "options_whitelist_notification": {
-    "message": "'$website$' is op de witte lijst geplaatst.",
+    "message": "‘$website$’ is op de witte lijst geplaatst.",
     "placeholders": {
       "website": {
         "content": "$1",

@@ -29,8 +29,20 @@
   "mops_filterlist_add_action": {
     "message": "Dodaj popis filtera"
   },
+  "mops_filterlist_add_url": {
+    "message": "+ Dodaj svoj popis filtera"
+  },
   "mops_header": {
     "message": "Adblock Plus postavke"
+  },
+  "mops_subscribe_header": {
+    "message": "Dodaj svoj popis filtera"
+  },
+  "mops_subscribe_title": {
+    "message": "Naziv popisa filtera"
+  },
+  "mops_subscribe_url": {
+    "message": "URL popisa filtra"
   },
   "mops_subscriptions_header": {
     "message": "Pretplate filtera"

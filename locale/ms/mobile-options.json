@@ -2,10 +2,31 @@
   "mops_acceptableAds_description": {
     "message": "Benarkan iklan yang tidak mengganggu"
   },
+  "mops_acceptableAds_more": {
+    "message": "Ketahui lebih lanjut"
+  },
   "mops_action_cancel": {
-    "message": "Batal"
+    "message": "BATALKAN"
+  },
+  "mops_filterlist_add": {
+    "message": "Tambah senarai penapis"
+  },
+  "mops_filterlist_add_action": {
+    "message": "TAMBAH SENARAI PENAPIS"
+  },
+  "mops_header": {
+    "message": "Adblock Plus Tetapan"
+  },
+  "mops_subscribe_title": {
+    "message": "Nama senarai penapis"
+  },
+  "mops_subscribe_url": {
+    "message": "URL senarai penapis"
   },
   "mops_subscriptions_header": {
     "message": "Langganan penapis"
+  },
+  "mops_title": {
+    "message": "Adblock Plus Tetapan"
   }
 }

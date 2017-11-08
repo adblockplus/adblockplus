@@ -1,9 +1,15 @@
 {
+  "options_close": {
+    "message": "loka"
+  },
   "options_customFilter_cancel": {
     "message": "Hætta við"
   },
   "options_email": {
     "message": "Tölvupóstfang:"
+  },
+  "options_filterList_column_status": {
+    "message": "Staða"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Mistókst, prófsumma stemmir ekki"
@@ -13,5 +19,8 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Mistókst, ekki gilt netfang"
+  },
+  "options_filterList_state_disabled": {
+    "message": "Óvirkt"
   }
 }

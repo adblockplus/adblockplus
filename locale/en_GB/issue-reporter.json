@@ -8,6 +8,9 @@
   "issueReporter_commentPage_heading": {
     "message": "Enter comment"
   },
+  "issueReporter_comment_description": {
+    "message": "The text field below allows you to enter a comment to help us understand the issue. This step is optional but recommended if the problem isn't obvious. You can also review the report data before it is sent."
+  },
   "issueReporter_comment_label": {
     "message": "Comment (optional):"
   },
@@ -26,11 +29,23 @@
   "issueReporter_doneButton_label": {
     "message": "Done"
   },
+  "issueReporter_email_description": {
+    "message": "We encourage you to enter a valid email address so that we can contact you if there are questions about your report. It will also allow us to recognize your contributions and to prioritize them higher."
+  },
   "issueReporter_email_label": {
     "message": "Email:"
   },
+  "issueReporter_errorMessage": {
+    "message": "An attempt to send the report failed with error code \"?1?\". Please ensure you are connected to the Internet and retry. If the problem persists please request assistance in the [link]Adblock Plus forum[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Select this option if an advertisement is displayed despite Adblock Plus being enabled."
+  },
   "issueReporter_falseNegative_label": {
     "message": "Adblock Plus doesn't block an advertisement"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Select this option if the page lacks important content, displays incorrectly or fails to function properly. You can determine whether Adblock Plus is the cause of the problem by disabling it temporarily."
   },
   "issueReporter_falsePositive_label": {
     "message": "Adblock Plus is blocking too much"
@@ -55,6 +70,9 @@
   },
   "issueReporter_showData_label": {
     "message": "Show report data"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "This window will guide you through the steps required for the submission of an Adblock Plus issue report. First, please select the type of issue that you are experiencing on this page:"
   },
   "issueReporter_typeSelector_heading": {
     "message": "Select issue type"

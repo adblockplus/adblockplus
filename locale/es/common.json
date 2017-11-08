@@ -3,6 +3,12 @@
     "message": "Ocultar mensajes de advertencia de Adblock"
   },
   "common_feature_malware_title": {
-    "message": "Bloquear malware"
+    "message": "Bloquear \"malware\""
+  },
+  "common_feature_privacy_title": {
+    "message": "Bloquear el seguimiento adicional"
+  },
+  "common_feature_social_title": {
+    "message": "Bloquear el seguimiento de los iconos de medios sociales"
   }
 }

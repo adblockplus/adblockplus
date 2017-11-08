@@ -1,12 +1,24 @@
 {
+  "options_acceptableAds_ads_description_1": {
+    "message": "可接受广告不会令人烦恼，也不会干扰您正在查看的内容。<a>阅读更多关于可接受广告的标准</a>"
+  },
+  "options_acceptableAds_ads_label": {
+    "message": "允许可接受广告"
+  },
   "options_acceptableAds_description": {
-    "message": "可接受广告是指非侵入式广告。他们介于广告和在线支持内容之间，因为他们可以为网站所有者带来收入。"
+    "message": "可接受的广告是非侵入式广告。由於它们为网站所有者创造了收入，因此它们处于广告屏蔽和支持在线内容之间的中间位置。"
+  },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>注意：</strong><strong>请勿跟踪 (DNT)</strong>选项在浏览器设置中已被禁用。为了本功能正常工作，请在您的浏览器首选项中启用 <strong>DNT</strong>。<a>查看启用DNT的方法</a>。"
   },
   "options_acceptableAds_header": {
-    "message": "可接受的广告"
+    "message": "可接受广告"
+  },
+  "options_acceptableAds_privacy_label": {
+    "message": "只允许没有第三方跟踪的广告"
   },
   "options_advanced_description": {
-    "message": "自定义 Adblock Plus， 添加或删除过滤列表、 创建和维护您自己的过滤列表"
+    "message": "自定义 Adblock Plus、添加或移除过滤列表、创建和维护您自己的过滤列表"
   },
   "options_close": {
     "message": "关闭"
@@ -23,6 +35,9 @@
   "options_customFilter_save": {
     "message": "保存"
   },
+  "options_customFilters_description": {
+    "message": "编写自己的自定义过滤器，以进一步控制 Adblock Plus 允许或屏蔽的内容。"
+  },
   "options_customFilters_edit_placeholder": {
     "message": "例如 $filter$",
     "placeholders": {
@@ -33,43 +48,58 @@
     }
   },
   "options_customFilters_learn": {
-    "message": "了解如何编写过滤规则列表"
+    "message": "了解如何编写过滤列表"
   },
   "options_customFilters_start": {
-    "message": "开始编写我的过滤规则列表"
+    "message": "开始编写我的过滤列表"
   },
   "options_customFilters_tip": {
-    "message": "您创建的过滤规则将在这里显示。"
+    "message": "您创建的过滤器将显示在此处。"
   },
   "options_customFilters_title": {
-    "message": "创建并编辑您的过滤规则列表"
+    "message": "创建和编辑您的过滤列表"
   },
   "options_customFilters_widget_title": {
-    "message": "我的过滤规则列表"
+    "message": "我的过滤列表"
   },
   "options_customize_blockElement": {
-    "message": "右键菜单中显示“屏蔽元素”选项"
+    "message": "显示“块元素”右键单击菜单项"
   },
   "options_customize_blockElement_tooltip": {
-    "message": "暂时屏蔽网页上的烦人内容，例如某个图像或动画。"
+    "message": "暂时屏蔽网页上的烦人项目，例如：图片或动画幻灯片。"
   },
   "options_customize_header": {
     "message": "自定义页面操作"
   },
+  "options_customize_showDevToolsPanel": {
+    "message": "在开发人员工具中显示“Adblock Plus”面板"
+  },
   "options_customize_showDevToolsPanel_tooltip": {
-    "message": "从浏览器的开发者工具面板查看阻止列表和白名单列表。"
+    "message": "从浏览器的开发人员工具面板中查看已被屏蔽和列入白名单的项目。"
   },
   "options_customize_showNotifications": {
     "message": "显示有用的通知"
   },
   "options_customize_showNotifications_tooltip": {
-    "message": "关闭Adblock Plus的所有通知。"
+    "message": "关闭 Adblock Plus 的所有通知。"
+  },
+  "options_dialog_about_copyright": {
+    "message": "版权所有 © $currentYear$ eyeo GmbH。",
+    "placeholders": {
+      "currentYear": {
+        "content": "2017",
+        "example": "2017"
+      }
+    }
   },
   "options_dialog_about_title": {
     "message": "关于 Adblock Plus"
   },
+  "options_dialog_about_trademark": {
+    "message": "保留所有权利。Adblock Plus® 是 eyeo GmbH 的注册 商标。"
+  },
   "options_dialog_about_version": {
-    "message": "版本编号 $version$",
+    "message": "版本号 $version$",
     "placeholders": {
       "version": {
         "content": "$1",
@@ -78,40 +108,52 @@
     }
   },
   "options_dialog_import_subscription_location": {
-    "message": "过滤规则列表网址"
+    "message": "过滤列表 URL"
   },
   "options_dialog_import_subscription_location_error": {
-    "message": "请输入有效的网址"
+    "message": "输入有效的 URL"
   },
   "options_dialog_import_subscription_title": {
-    "message": "过滤规则列表名称"
+    "message": "过滤列表名称"
   },
   "options_dialog_import_subscription_title_error": {
     "message": "请填写所有字段"
   },
   "options_dialog_import_title": {
-    "message": "添加一个过滤规则列表"
+    "message": "添加过滤列表"
   },
   "options_dialog_language_other_empty": {
     "message": "没有可用的语言。"
   },
   "options_dialog_language_title": {
-    "message": "选择一个语言"
+    "message": "选择语言"
   },
   "options_dialog_predefined_confirm": {
     "message": "是，使用此过滤规则列表"
+  },
+  "options_dialog_predefined_title": {
+    "message": "您确定要添加此过滤列表吗？"
   },
   "options_email": {
     "message": "电子邮件："
   },
   "options_filterList_add": {
-    "message": "+ 添加新的过滤规则列表"
+    "message": "+ 添加一个新的过滤列表"
   },
   "options_filterList_column_name": {
-    "message": "过滤规则列表"
+    "message": "过滤列表"
   },
   "options_filterList_column_status": {
     "message": "状态"
+  },
+  "options_filterList_column_update": {
+    "message": "最近更新时间"
+  },
+  "options_filterList_description": {
+    "message": "每个 Adblock Plus 设置由于过滤列表而起作用。以下是与所有 Adblock Plus 设置相对应的过滤列表。您还可以添加由我们信任的社区创建和维护的其他过滤器。"
+  },
+  "options_filterList_empty": {
+    "message": "您尚未向 Adblock Plus 添加过滤列表。您添加的过滤列表将显示在此处。"
   },
   "options_filterList_hours": {
     "message": "小时前"
@@ -132,28 +174,28 @@
     "message": "失败，不是有效地址"
   },
   "options_filterList_minutes": {
-    "message": "分钟前"
+    "message": "几分钟前"
   },
   "options_filterList_now": {
-    "message": "刚刚"
+    "message": "刚才"
   },
   "options_filterList_source": {
     "message": "来源"
   },
   "options_filterList_state_active": {
-    "message": "激活"
+    "message": "活跃"
   },
   "options_filterList_state_disabled": {
-    "message": "已禁用"
+    "message": "被禁用"
   },
   "options_filterList_title": {
-    "message": "过滤规则列表"
+    "message": "过滤列表"
   },
   "options_filterList_update": {
-    "message": "更新所有过滤规则列表"
+    "message": "更新所有过滤列表"
   },
   "options_filterList_updateNow": {
-    "message": "立即更新"
+    "message": "现在更新"
   },
   "options_filterList_website": {
     "message": "网站"
@@ -165,28 +207,43 @@
     "message": "协助"
   },
   "options_general_description": {
-    "message": "决定 Adblock Plus 在网站上的显示和隐藏"
+    "message": "确定 Adblock Plus 在网站上显示和隐藏的内容"
   },
   "options_help_description": {
-    "message": "与我们取得联系或查找帮助"
+    "message": "寻求帮助或联系我们"
   },
   "options_language_add": {
-    "message": "+ 添加一种语言"
+    "message": "+ 添加语言"
   },
   "options_language_change": {
     "message": "更改"
   },
   "options_language_description": {
-    "message": "选择您经常浏览的网站语言以优化 Adblock Plus 的效果。"
+    "message": "为您平日浏览网站的语言优化 Adblock Plus。"
+  },
+  "options_language_empty": {
+    "message": "您没有任何特定语言的过滤器。"
   },
   "options_language_header": {
     "message": "语言"
   },
+  "options_language_tip": {
+    "message": "<strong>提示：</strong>只选择您需要的语言。选择更多会减慢广告拦截器的速度，因此会降低浏览速度。"
+  },
+  "options_learn_more": {
+    "message": "了解详情"
+  },
   "options_more_filters_description": {
-    "message": "这些是您以前添加到 Adblock Plus 的过滤规则。"
+    "message": "这些是您以前添加到 Adblock Plus 的其他过滤器。"
   },
   "options_more_filters_header": {
-    "message": "更多过滤规则"
+    "message": "更多过滤器"
+  },
+  "options_more_filters_note": {
+    "message": "<strong>注意：</strong>您应该只使用来自您信任的作者的第三方过滤器列表。"
+  },
+  "options_new_label": {
+    "message": "新"
   },
   "options_notification_hide": {
     "message": "关闭通知"
@@ -195,28 +252,31 @@
     "message": "设置"
   },
   "options_privacy_header": {
-    "message": "隐私和安全"
+    "message": "隐私与安全"
   },
   "options_protection_privacy_tooltip": {
-    "message": "删除所有形式的信息收集跟踪器以保护您在互联网上的个人数据。"
+    "message": "通过从互联网中移除所有形式的跟踪（包括信息收集者）来保护您的个人信息。"
+  },
+  "options_protection_social_tooltip": {
+    "message": "您访问的网站上的社交媒体图标允许社交媒体网络根据您的浏览习惯建立您的个人资料记录——即使您没有点击它们。隐藏这些图标可以保护您的个人资料。"
   },
   "options_report_ad": {
-    "message": "发现您认为不该出现的广告了吗？<a>报告广告</a>"
+    "message": "看到您认为不应该出现的广告？<a>举报广告</a>"
   },
   "options_report_bug": {
-    "message": "发现了 bug？<a>向我们发送缺陷报告</a>"
+    "message": "发现错误？<a>向我们发送错误报告</a>"
   },
   "options_report_forum": {
-    "message": "想从我们的社区获取支持吗？<a>访问论坛</a>"
+    "message": "想要我们社区的支持？<a>前往论坛</a>"
   },
   "options_report_issue": {
-    "message": "认为有内容或功能被我们误阻止了？<a>请在这里报告被误阻止的项目</a>"
+    "message": "认为内容或功能被我们错误地屏蔽？<a>在这里报告被错误地屏蔽的项目</a>"
   },
   "options_social_description": {
-    "message": "有任何问题或想法吗？我们会在这里提供帮助。"
+    "message": "有问题还是新想法？我们来帮忙。"
   },
   "options_social_title": {
-    "message": "取得联系"
+    "message": "保持联系"
   },
   "options_support_title": {
     "message": "支持"
@@ -225,7 +285,7 @@
     "message": "高级"
   },
   "options_tab_general": {
-    "message": "常规"
+    "message": "一般"
   },
   "options_tab_help": {
     "message": "帮助"
@@ -236,11 +296,17 @@
   "options_whitelist_add": {
     "message": "添加网站"
   },
+  "options_whitelist_description": {
+    "message": "您已关闭这些网站上的广告屏蔽功能，因此会在这些网站上看到广告。"
+  },
+  "options_whitelist_empty_1": {
+    "message": "您没有任何列入白名单的网站。"
+  },
   "options_whitelist_empty_2": {
-    "message": "指定您信任并且希望显示广告的网站。"
+    "message": "您信任的网站并希望允许广告在此显示。"
   },
   "options_whitelist_notification": {
-    "message": "已将“$website$”列入白名单。",
+    "message": "$website$ 已被列入白名单。",
     "placeholders": {
       "website": {
         "content": "$1",

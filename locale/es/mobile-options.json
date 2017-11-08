@@ -6,7 +6,7 @@
     "message": "Más información"
   },
   "mops_action_cancel": {
-    "message": "Cancelar"
+    "message": "CANCELAR"
   },
   "mops_enabled_label": {
     "message": "Activar Adblock Plus en <strong>$domain$</strong>",
@@ -24,16 +24,16 @@
     "message": "Por favor, introduce un enlace de URL"
   },
   "mops_filterlist_add": {
-    "message": "+ Añade una lista de filtros"
+    "message": "+ Añadir una lista de filtros"
   },
   "mops_filterlist_add_action": {
-    "message": "Añadir lista de filtros"
+    "message": "AÑADIR LISTA DE FILTROS"
   },
   "mops_filterlist_add_url": {
     "message": "+ Añade una lista de filtros personalizada"
   },
   "mops_header": {
-    "message": "Ajustes de Adblock Plus"
+    "message": "Adblock Plus Ajustes"
   },
   "mops_subscribe_header": {
     "message": "Añade una lista de filtros personalizada"
@@ -42,12 +42,12 @@
     "message": "Nombre de la lista de filtros"
   },
   "mops_subscribe_url": {
-    "message": "URL de la lista de filtros"
+    "message": "Dirección URL de la lista de filtros"
   },
   "mops_subscriptions_header": {
     "message": "Suscripciones de filtros"
   },
   "mops_title": {
-    "message": "Ajustes de Adblock Plus"
+    "message": "Adblock Plus Ajustes"
   }
 }

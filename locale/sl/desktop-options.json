@@ -2,6 +2,9 @@
   "options_acceptableAds_header": {
     "message": "Sprejemljivi oglasi"
   },
+  "options_close": {
+    "message": "zapri"
+  },
   "options_customFilter_cancel": {
     "message": "Prekliči"
   },
@@ -14,6 +17,9 @@
   "options_filterList_column_name": {
     "message": "Seznami filtrov"
   },
+  "options_filterList_column_status": {
+    "message": "Stanje"
+  },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Neuspešno, kontrolna vsota se ne ujema"
   },
@@ -23,8 +29,17 @@
   "options_filterList_lastDownload_invalidURL": {
     "message": "Neuspešno, ni veljaven naslov"
   },
+  "options_filterList_state_disabled": {
+    "message": "Onemogočeno"
+  },
   "options_filterList_title": {
     "message": "Seznami filtrov"
+  },
+  "options_filterList_updateNow": {
+    "message": "posodobi"
+  },
+  "options_language_header": {
+    "message": "Jezik"
   },
   "options_page_title": {
     "message": "Nastavitve"

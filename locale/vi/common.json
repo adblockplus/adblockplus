@@ -4,5 +4,11 @@
   },
   "common_feature_malware_title": {
     "message": "Chặn phần mềm độc hại"
+  },
+  "common_feature_privacy_title": {
+    "message": "Chặn theo dõi bổ sung"
+  },
+  "common_feature_social_title": {
+    "message": "Chặn các biểu tượng theo dõi mạng xã hội"
   }
 }

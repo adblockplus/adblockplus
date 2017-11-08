@@ -1,12 +1,153 @@
 {
+  "options_acceptableAds_ads_description_1": {
+    "message": "Iklan yang boleh diterima tidak menjengkelkan dan tidak mengganggu kandungan yang anda lihat. <a>Baca lebih lanjut mengenai kriteria Iklan yang boleh diterima</a>"
+  },
+  "options_acceptableAds_ads_label": {
+    "message": "Benarkan Iklan yang boleh diterima"
+  },
+  "options_acceptableAds_description": {
+    "message": "Iklan yang boleh diterima adalah iklan yang tidak mengganggu. Mereka adalah alasan tengah antara penyekatan iklan dan penyokongan kandungan dalam talian kerana mereka menjana pendapatan untuk pemilik laman web."
+  },
+  "options_acceptableAds_header": {
+    "message": "IKLAN YANG BOLEH DITERIMA"
+  },
+  "options_acceptableAds_privacy_label": {
+    "message": "Hanya benarkan iklan yang tiada pengesanan oleh pihak ketiga"
+  },
+  "options_advanced_description": {
+    "message": "Peribadikan Adblock Plus, tambah atau keluarkan senarai penapis, buat dan kekalkan senarai penapis anda sendiri"
+  },
+  "options_close": {
+    "message": "TUTUP"
+  },
+  "options_control_remove_title": {
+    "message": "Keluarkan"
+  },
   "options_customFilter_cancel": {
-    "message": "Batal"
+    "message": "BATALKAN"
+  },
+  "options_customFilter_edit": {
+    "message": "Edit penapis"
+  },
+  "options_customFilter_save": {
+    "message": "SIMPAN"
+  },
+  "options_customFilters_description": {
+    "message": "Tulis penapis tersuai anda sendiri untuk Selanjutnya mengawal apa yang dibenarkan atau disekat oleh Adblock Plus."
+  },
+  "options_customFilters_edit_placeholder": {
+    "message": "cth. $filter$",
+    "placeholders": {
+      "filter": {
+        "content": "$1",
+        "example": "/ads/track/*"
+      }
+    }
+  },
+  "options_customFilters_learn": {
+    "message": "Ketahui cara menulis senarai penapis"
+  },
+  "options_customFilters_start": {
+    "message": "Mula menulis senarai penapis saya"
+  },
+  "options_customFilters_tip": {
+    "message": "Penapis yang anda buat akan muncul di sini."
+  },
+  "options_customFilters_title": {
+    "message": "BUAT AND EDIT SENARAI PENAPIS ANDA"
+  },
+  "options_customFilters_widget_title": {
+    "message": "Senarai penapis saya"
+  },
+  "options_customize_blockElement": {
+    "message": "Paparkan item 'Halang elemen' pada butang klik kanan"
+  },
+  "options_customize_blockElement_tooltip": {
+    "message": "Sekat item yang menjengkelkan pada laman web buat sementara, contohnya imej atau tayangan slaid animasi."
+  },
+  "options_customize_header": {
+    "message": "PERIBADIKAN TINDAKAN PADA LAMAN WEB"
+  },
+  "options_customize_showDevToolsPanel": {
+    "message": "Tunjukkan panel ‘Adblock Plus’ dalam alat pemaju"
+  },
+  "options_customize_showDevToolsPanel_tooltip": {
+    "message": "Lihat item yang disekat dan disenarai putih dari panel alat pemaju pelayar anda."
+  },
+  "options_customize_showNotifications": {
+    "message": "Papar notifikasi berguna"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Matikan semua pemberitahuan dari Adblock Plus."
+  },
+  "options_dialog_about_copyright": {
+    "message": "Hak cipta © $currentYear$ eyeo GmbH.",
+    "placeholders": {
+      "currentYear": {
+        "content": "2017",
+        "example": "2017"
+      }
+    }
+  },
+  "options_dialog_about_title": {
+    "message": "Mengenai Adblock Plus"
+  },
+  "options_dialog_about_trademark": {
+    "message": "Hak cipta terpelihara. Adblock Plus® adalah tanda dagangan berdaftar eyeo GmbH."
+  },
+  "options_dialog_about_version": {
+    "message": "Nombor versi $version$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "2.6.7"
+      }
+    }
+  },
+  "options_dialog_import_subscription_location": {
+    "message": "URL senarai penapis"
+  },
+  "options_dialog_import_subscription_location_error": {
+    "message": "Masukkan URL yang sah"
+  },
+  "options_dialog_import_subscription_title": {
+    "message": "Nama senarai penapis"
+  },
+  "options_dialog_import_title": {
+    "message": "Tambah senarai penapis"
+  },
+  "options_dialog_language_title": {
+    "message": "Pilih bahasa"
+  },
+  "options_dialog_predefined_confirm": {
+    "message": "Ya, gunakan senarai penapis ini"
+  },
+  "options_dialog_predefined_title": {
+    "message": "Adakah anda pasti mahu menambah senarai penapis ini?"
   },
   "options_email": {
     "message": "E-mel:"
   },
+  "options_filterList_add": {
+    "message": "TAMBAH SENARAI PENAPIS BARU"
+  },
   "options_filterList_column_name": {
     "message": "Senarai penapis"
+  },
+  "options_filterList_column_status": {
+    "message": "Status"
+  },
+  "options_filterList_column_update": {
+    "message": "Kali terakhir dikemas kini"
+  },
+  "options_filterList_description": {
+    "message": "Setiap tetapan Adblock Plus berfungsi kerana senarai penapis. Di bawah adalah senarai penapis yang sesuai dengan semua tetapan Adblock Plus anda. Anda juga boleh menambah penapis tambahan yang dibuat dan dikekalkan oleh komuniti dipercayai kami."
+  },
+  "options_filterList_empty": {
+    "message": "Anda belum menambah sebarang senarai penapis untuk Adblock Plus. Senarai penapis yang anda tambahkan akan ditunjukkan di sini."
+  },
+  "options_filterList_hours": {
+    "message": "jam yang lalu"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Gagal, checksum tidak sepadan"
@@ -14,19 +155,163 @@
   "options_filterList_lastDownload_connectionError": {
     "message": "Gagal, kegagalan memuat-turun"
   },
+  "options_filterList_lastDownload_inProgress": {
+    "message": "Mengemas kini"
+  },
+  "options_filterList_lastDownload_invalidData": {
+    "message": "Gagal, bukan senarai penapis yang sah"
+  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Gagal, bukan alamat yang sah"
+  },
+  "options_filterList_minutes": {
+    "message": "minit yang lalu"
+  },
+  "options_filterList_now": {
+    "message": "Tadi"
+  },
+  "options_filterList_source": {
+    "message": "Sumber"
+  },
+  "options_filterList_state_active": {
+    "message": "Aktif"
+  },
+  "options_filterList_state_disabled": {
+    "message": "Dilumpuhkan"
   },
   "options_filterList_title": {
     "message": "Senarai penapis"
   },
+  "options_filterList_update": {
+    "message": "KEMASKINI SEMUA SENARAI PENAPIS"
+  },
+  "options_filterList_updateNow": {
+    "message": "Mengemas kini sekarang"
+  },
+  "options_filterList_website": {
+    "message": "Laman web"
+  },
+  "options_footer_about": {
+    "message": "Mengenai Adblock Plus"
+  },
+  "options_footer_contribute": {
+    "message": "MENYUMBANG"
+  },
+  "options_general_description": {
+    "message": "Tentukan apa yang ditunjukkan dan disembunyikan oleh Adblock Plus di laman web"
+  },
+  "options_help_description": {
+    "message": "Cari bantuan atau berhubung dengan kami"
+  },
+  "options_language_add": {
+    "message": "TAMBAH BAHASA"
+  },
+  "options_language_change": {
+    "message": "UBAH"
+  },
+  "options_language_description": {
+    "message": "Optimalkan Adblock Plus untuk bahasa yang anda biasanya guna untuk melayari laman web."
+  },
+  "options_language_empty": {
+    "message": "Anda tidak mempunyai sebarang penapis khusus bahasa."
+  },
+  "options_language_header": {
+    "message": "Bahasa"
+  },
+  "options_language_tip": {
+    "message": "<strong>PETUA:</strong> Hanya pilih bahasa yang anda perlukan. Memilih lebih banyak akan melambatkan penyekat iklan dan, oleh itu, kelajuan pelayaran anda."
+  },
+  "options_learn_more": {
+    "message": "Ketahui lebih lanjut"
+  },
+  "options_more_filters_description": {
+    "message": "Ini adalah penapis tambahan yang telah anda tambahkan pada Adblock Plus."
+  },
+  "options_more_filters_header": {
+    "message": "Lebih banyak penapis"
+  },
+  "options_more_filters_note": {
+    "message": "<strong>Perhatian:</strong> Anda harus menggunakan senarai penapis pihak ketiga daripada pengarang yang anda percayai sahaja."
+  },
+  "options_new_label": {
+    "message": "BARU"
+  },
+  "options_notification_hide": {
+    "message": "Tutup notifikasi"
+  },
   "options_page_title": {
     "message": "Tetapan"
   },
+  "options_privacy_header": {
+    "message": "PRIVASI & KESELAMATAN"
+  },
+  "options_protection_privacy_tooltip": {
+    "message": "Melindungi data peribadi anda dengan mengeluarkan semua bentuk penjejakan dari Internet termasuk pengumpul maklumat."
+  },
+  "options_protection_social_tooltip": {
+    "message": "Ikon media sosial di laman web yang anda lawati membolehkan rangkaian media sosial untuk membina profil anda berdasarkan tabiat pelayaran anda - walaupun anda tidak klik pada mereka. Menyembunyikan ikon ini boleh melindungi profil anda."
+  },
+  "options_report_ad": {
+    "message": "Lihat iklan yang anda rasa tidak patut berada di sana? <a>Laporkan iklan</a>"
+  },
+  "options_report_bug": {
+    "message": "Menemui bug? <a>Hantar laporan bug kepada kami</a>"
+  },
+  "options_report_forum": {
+    "message": "Mahu sokongan daripada komuniti kami? <a>Pergi ke Forum</a>"
+  },
+  "options_report_issue": {
+    "message": "Fikirkan kandungan atau fungsi salah disekat oleh kami? <a>Laporkan item yang salah disekat di sini</a>"
+  },
+  "options_social_description": {
+    "message": "Ada soalan atau idea baru? Kami di sini untuk membantu."
+  },
+  "options_social_title": {
+    "message": "Dapatkan berhubung"
+  },
+  "options_support_title": {
+    "message": "Sokongan"
+  },
+  "options_tab_advanced": {
+    "message": "Lanjutan"
+  },
   "options_tab_general": {
-    "message": "Umum"
+    "message": "Am"
+  },
+  "options_tab_help": {
+    "message": "Bantu"
   },
   "options_tab_whitelist": {
-    "message": "Laman web yang disenarai putih"
+    "message": "Laman web senarai putih"
+  },
+  "options_whitelist_add": {
+    "message": "TAMBAH LAMAN WEB"
+  },
+  "options_whitelist_description": {
+    "message": "Anda telah mematikan penyekatan iklan di laman web ini dan, oleh itu, akan melihat iklan di laman web ini."
+  },
+  "options_whitelist_empty_1": {
+    "message": "Anda tidak mempunyai laman web yang disenarai putih."
+  },
+  "options_whitelist_empty_2": {
+    "message": "Laman web yang anda percayai dan ingin membenarkan iklan akan dipaparkan di sini."
+  },
+  "options_whitelist_notification": {
+    "message": "$website$ Telah disenarai putih.",
+    "placeholders": {
+      "website": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "options_whitelist_placeholder_example": {
+    "message": "cth. $domain$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
   }
 }

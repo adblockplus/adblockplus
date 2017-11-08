@@ -1,0 +1,53 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "Acceptar publicitad betg fastidiusa"
+  },
+  "mops_acceptableAds_more": {
+    "message": "Ulteriuras infurmaziuns"
+  },
+  "mops_action_cancel": {
+    "message": "Interrumper"
+  },
+  "mops_enabled_label": {
+    "message": "Activar Adblock Plus en <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "Endatar p. pl. in titel"
+  },
+  "mops_error_url": {
+    "message": "Endatar p. pl. ina colliaziun d'URL"
+  },
+  "mops_filterlist_add": {
+    "message": "+ Agiuntar ina glista da filters"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Agiuntar ina glista da filters"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ Agiuntar ina glista da filters persunalisà"
+  },
+  "mops_header": {
+    "message": "Parameters dad Adblock Plus"
+  },
+  "mops_subscribe_header": {
+    "message": "Agiuntar ina glista da filters persunalisà"
+  },
+  "mops_subscribe_title": {
+    "message": "Num dalla glista de filters"
+  },
+  "mops_subscribe_url": {
+    "message": "URL dalla glista de filters"
+  },
+  "mops_subscriptions_header": {
+    "message": "Subscripziuns dals filters"
+  },
+  "mops_title": {
+    "message": "Parameters dad Adblock Plus"
+  }
+}

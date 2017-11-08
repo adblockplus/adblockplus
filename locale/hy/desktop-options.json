@@ -1,9 +1,15 @@
 {
+  "options_close": {
+    "message": "փակել"
+  },
   "options_customFilter_cancel": {
     "message": "Չեղարկել"
   },
   "options_email": {
-    "message": "Email՝"
+    "message": "Էլ. փոստ՝"
+  },
+  "options_filterList_column_status": {
+    "message": "Վիճակը"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Անհաջող."
@@ -13,6 +19,12 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Անհաջող. Սխալ հասցե"
+  },
+  "options_filterList_state_disabled": {
+    "message": "Անջատված"
+  },
+  "options_language_header": {
+    "message": "Լեզու"
   },
   "options_page_title": {
     "message": "Կարգավորել"

@@ -1,4 +1,7 @@
 {
+  "options_close": {
+    "message": "അടക്കുക"
+  },
   "options_customFilter_cancel": {
     "message": "റദ്ദാക്കുക"
   },
@@ -11,8 +14,14 @@
   "options_filterList_lastDownload_invalidURL": {
     "message": "പരാജയപ്പെട്ടിരിക്കുന്നു, ഇതൊരു സാധുവായ വിലാസം അല്ല"
   },
+  "options_filterList_state_disabled": {
+    "message": "പ്രവര്‍ത്തനരഹിത"
+  },
   "options_filterList_title": {
     "message": "പട്ടികകള്‍ അരിക്കുക"
+  },
+  "options_filterList_updateNow": {
+    "message": "ഇപ്പോള്‍ത്തന്നെ പുതുക്കുക"
   },
   "options_tab_general": {
     "message": "പലവക"

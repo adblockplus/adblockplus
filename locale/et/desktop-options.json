@@ -1,4 +1,22 @@
 {
+  "options_acceptableAds_ads_description_1": {
+    "message": "Lubatavad reklaamid ei ole tüütud ega sega vaatatavat sisu. <a>Loe Lubatavate reklaamide tingimuste kohta lähemalt</a>"
+  },
+  "options_acceptableAds_ads_label": {
+    "message": "Luba Lubatavad reklaamid"
+  },
+  "options_acceptableAds_description": {
+    "message": "Lubatavad reklaamid on mitte-pealetükkivad reklaamid. Need on kompromissiks reklaamide blokeerimise ja veebisisu toetamise vahel, sest need toovad veebisaitide omanikele tulu."
+  },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>Pane tähele:</strong> Sinu veebilehitseja sätetes on <strong>Ära jälgi (DNT)</strong> keelatud. Selle funktsiooni korralikuks töötamiseks palun luba oma veebilehitseja eelistustes <strong>DNT</strong>. <a>Uuri järele, kuidas DNT lubada</a>."
+  },
+  "options_acceptableAds_header": {
+    "message": "Lubatavad reklaamid"
+  },
+  "options_acceptableAds_privacy_label": {
+    "message": "Luba ainult kolmanda osapoole jälitamiseta reklaamid"
+  },
   "options_advanced_description": {
     "message": "Seadista Adblock Plusi, lisa või eemalda filtrite nimekirju, loo või halda oma enda filtrite nimekirju"
   },
@@ -16,6 +34,9 @@
   },
   "options_customFilter_save": {
     "message": "Salvesta"
+  },
+  "options_customFilters_description": {
+    "message": "Kirjuta oma kohandatud filtrid, et veelgi täpsemini juhtida, millist sisu Adblock Plus lubab või blokeerib."
   },
   "options_customFilters_edit_placeholder": {
     "message": "nt. $filter$",
@@ -50,6 +71,9 @@
   "options_customize_header": {
     "message": "Kohanda lehekülgedel olevaid tegevusi"
   },
+  "options_customize_showDevToolsPanel": {
+    "message": "Näita arendaja tööriistades paneeli 'Adblock Plus'"
+  },
   "options_customize_showDevToolsPanel_tooltip": {
     "message": "Vaata blokeeritud ja lubatud elemente oma veebilehitseja arendaja tööriistade paneelil."
   },
@@ -59,8 +83,20 @@
   "options_customize_showNotifications_tooltip": {
     "message": "Lülita välja kõik Adblock Plusi teavitused."
   },
+  "options_dialog_about_copyright": {
+    "message": "Autoriõigus © $currentYear$ eyeo GmbH.",
+    "placeholders": {
+      "currentYear": {
+        "content": "2017",
+        "example": "2017"
+      }
+    }
+  },
   "options_dialog_about_title": {
     "message": "Adblock Plusi teave"
+  },
+  "options_dialog_about_trademark": {
+    "message": "Kõik õigused kaitstud. Adblock Plus® on ettevõtte eyeo GmbH registreeritud kaubamärk."
   },
   "options_dialog_about_version": {
     "message": "Versioon $version$",
@@ -95,6 +131,9 @@
   "options_dialog_predefined_confirm": {
     "message": "Jah, kasuta seda filtrite nimekirja"
   },
+  "options_dialog_predefined_title": {
+    "message": "Kas oled kindel, et tahad selle filtrite nimekirja lisada?"
+  },
   "options_email": {
     "message": "E-post:"
   },
@@ -106,6 +145,15 @@
   },
   "options_filterList_column_status": {
     "message": "Olek"
+  },
+  "options_filterList_column_update": {
+    "message": "Viimati uuendatud"
+  },
+  "options_filterList_description": {
+    "message": "Iga Adblock Plusi säte töötab filtrite nimekirja pärast. All on kõigile sinu Adblock Plusi sätetele vastavad filtrite nimekirjad. Lisada saad ka meie usaldusväärse kogukonna loodud ja hallatud täiendavaid filtreid."
+  },
+  "options_filterList_empty": {
+    "message": "Sa pole Adblock Plusi lisanud ühtegi filtrite nimekirja. Lisatavad filtrite nimekirjad kuvatakse siin."
   },
   "options_filterList_hours": {
     "message": "tundide eest"
@@ -173,14 +221,29 @@
   "options_language_description": {
     "message": "Optimeeri Adblock Plus tavaliselt sirvitavate veebisaitide keel(t)e jaoks."
   },
+  "options_language_empty": {
+    "message": "Sul pole ühtki keelepõhist filtrit."
+  },
   "options_language_header": {
     "message": "Keel"
+  },
+  "options_language_tip": {
+    "message": "<strong>VIHJE:</strong> Vali ainult vajalikud keeled. Rohkemate valimine aeglustab reklaamide blokeerijat ja seega su veebilehitsemise kiirust."
+  },
+  "options_learn_more": {
+    "message": "Loe lisa"
   },
   "options_more_filters_description": {
     "message": "Need on eelnevalt lisatud Adblock Plusi lisafiltrid."
   },
   "options_more_filters_header": {
     "message": "Veel filtreid"
+  },
+  "options_more_filters_note": {
+    "message": "<strong>Pane tähele:</strong> Sa peaksid lisama ainult usaldatavatelt autoritelt pärit kolmanda osapoole filtrite nimekirju."
+  },
+  "options_new_label": {
+    "message": "Uus"
   },
   "options_notification_hide": {
     "message": "Sulge teade"
@@ -193,6 +256,9 @@
   },
   "options_protection_privacy_tooltip": {
     "message": "Kaitse oma isiklikke andmeid, eemaldades internetist kõik jälgimise viisid, sealhulgas teabe kogujad."
+  },
+  "options_protection_social_tooltip": {
+    "message": "Sotsiaalvõrgustike ikoonid külastatavatel veebisaitidel võimaldavad sotsiaalmeedia võrgustikel koostada sinu sirvimisharjumustel põhineva profiili - isegi kui sa neil ei klõpsa. Nende ikoonide peitmine võib su profiili kaitsta."
   },
   "options_report_ad": {
     "message": "Näed reklaami, mis sinu arvates ei tohiks seal olla? <a>Teavita reklaamist</a>"
@@ -219,7 +285,7 @@
     "message": "Täpsemad"
   },
   "options_tab_general": {
-    "message": "Üldine"
+    "message": "Üldised"
   },
   "options_tab_help": {
     "message": "Abi"
@@ -229,6 +295,12 @@
   },
   "options_whitelist_add": {
     "message": "Lisa veebisait"
+  },
+  "options_whitelist_description": {
+    "message": "Oled nendel veebisaitidel reklaamide blokeerimise keelanud ja seega näed neil reklaame."
+  },
+  "options_whitelist_empty_1": {
+    "message": "Lubatud veebisaitide nimekirjas pole ühtki kirjet."
   },
   "options_whitelist_empty_2": {
     "message": "Siin näidatakse veebisaite, mida sa usaldad ja lubad neil reklaame näidata."

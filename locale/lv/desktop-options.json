@@ -1,4 +1,7 @@
 {
+  "options_close": {
+    "message": "aizvērt"
+  },
   "options_customFilter_cancel": {
     "message": "Atcelt"
   },
@@ -7,6 +10,9 @@
   },
   "options_filterList_column_name": {
     "message": "Filtru saraksts"
+  },
+  "options_filterList_column_status": {
+    "message": "Statuss"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Neizdevās, kontrolsummas neatbilstība"
@@ -17,8 +23,14 @@
   "options_filterList_lastDownload_invalidURL": {
     "message": "Neizdevās, nav derīga adrese"
   },
+  "options_filterList_state_disabled": {
+    "message": "Atspējots"
+  },
   "options_filterList_title": {
     "message": "Filtru saraksts"
+  },
+  "options_filterList_updateNow": {
+    "message": "atjaunināt tagad"
   },
   "options_tab_general": {
     "message": "Vispārīgi"

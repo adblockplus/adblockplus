@@ -8,6 +8,9 @@
   "options_filterList_title": {
     "message": "జాబితాలని వడకొట్టు"
   },
+  "options_filterList_updateNow": {
+    "message": "ఇప్పుడు నవీనీకరించు"
+  },
   "options_tab_general": {
     "message": "సాధారణం"
   }

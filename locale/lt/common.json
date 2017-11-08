@@ -4,5 +4,11 @@
   },
   "common_feature_malware_title": {
     "message": "Blokuoti kenkėjiškas programas"
+  },
+  "common_feature_privacy_title": {
+    "message": "Blokuoti papildomą sekimą"
+  },
+  "common_feature_social_title": {
+    "message": "Blokuoti socialinių tinklų sekimą piktogramomis"
   }
 }

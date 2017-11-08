@@ -4,5 +4,11 @@
   },
   "common_feature_malware_title": {
     "message": "ป้องกันมัลแวร์"
+  },
+  "common_feature_privacy_title": {
+    "message": "บล็อคการติดตามเพิ่มเติม"
+  },
+  "common_feature_social_title": {
+    "message": "บล็อคการติดตามไอคอนของโซเชียลมีเดีย"
   }
 }

@@ -14,11 +14,17 @@
   "firstRun_acceptableAdsHeadline": {
     "message": "Tüütud kuulutused on nüüd blokeeritud"
   },
+  "firstRun_contributor_credits": {
+    "message": "Kaasaaitajate tunnustused"
+  },
   "firstRun_donate": {
     "message": "anneta"
   },
   "firstRun_donate_label": {
     "message": "Toeta meie projekti"
+  },
+  "firstRun_filterlistsReinitializedWarning": {
+    "message": "Tundub, et mingi probleem põhjustas kõigi filtrite eemaldamise ja me ei suutnud varukoopiat taastada. Seetõttu pidime sinu filtrid ja Lubatavate reklaamide sätted lähtestama. Palun kontrolli <a>Adblock Plusi sätetes</a> oma filtrite nimekirju ja Lubatavate reklaamide sätteid."
   },
   "firstRun_share": {
     "message": "Räägi oma sõpradele"

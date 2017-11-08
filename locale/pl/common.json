@@ -4,5 +4,11 @@
   },
   "common_feature_malware_title": {
     "message": "Blokowanie szkodliwego oprogramowania"
+  },
+  "common_feature_privacy_title": {
+    "message": "Blokuj dodatkowe mechanizmy śledzenia"
+  },
+  "common_feature_social_title": {
+    "message": "Blokuj śledzenie przez ikony mediów społecznościowych"
   }
 }

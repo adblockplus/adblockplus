@@ -2,8 +2,17 @@
   "options_acceptableAds_header": {
     "message": "Hysbysebion derbyniol"
   },
+  "options_close": {
+    "message": "cau"
+  },
   "options_customFilter_cancel": {
     "message": "Yn ôl"
+  },
+  "options_email": {
+    "message": "Ebost:"
+  },
+  "options_filterList_column_status": {
+    "message": "Statws"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Methwyd, prawfswm anghywir"
@@ -13,6 +22,9 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Methwyd, cyfeiriad annilys"
+  },
+  "options_filterList_state_disabled": {
+    "message": "Analluogwyd"
   },
   "options_tab_whitelist": {
     "message": "Gwefannau a wenrestrwyd"
