@@ -84,19 +84,24 @@ function createRecord(request, filter, template)
   row.querySelector(".domain").textContent = request.docDomain;
   row.querySelector(".type").textContent = request.type;
 
-  let urlElement = row.querySelector(".url");
+  let urlElement = row.querySelector(".resource-link");
   let actionWrapper = row.querySelector(".action-wrapper");
 
   if (request.url)
   {
     urlElement.textContent = request.url;
+    urlElement.setAttribute("href", request.url);
 
-    if (request.type != "POPUP")
+    // Firefox 57 doesn't support the openResource API.
+    if (request.type != "POPUP" && "openResource" in ext.devtools.panels)
     {
-      urlElement.classList.add("resourceLink");
-      urlElement.addEventListener("click", () =>
+      urlElement.addEventListener("click", event =>
       {
-        ext.devtools.panels.openResource(request.url);
+        if (event.button == 0)
+        {
+          ext.devtools.panels.openResource(request.url);
+          event.preventDefault();
+        }
       }, false);
     }
   }

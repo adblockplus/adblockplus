@@ -174,12 +174,12 @@ tr:not(:hover) .action
   width: 100%;
 }
 
-.resourceLink
-{
-  cursor: pointer;
+.resource-link {
+  text-decoration: none;
+  color: #303942;
 }
 
-.resourceLink:hover {
+.resource-link:hover {
   text-decoration: underline;
 }
 
