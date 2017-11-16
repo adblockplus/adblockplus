@@ -56,28 +56,29 @@ body
   justify-content: center;
   /* We force vertical scrollbars to keep the content centered */
   overflow-y: scroll;
-  margin: 1.2rem 0.3rem;
+  margin: 1rem 0.3rem;
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 1.25rem;
-  color: #494949;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #4A4A4A;
 }
 
 h1
 {
   font-size: 3rem;
   font-weight: 300;
+  line-height: 3rem;
 }
 
 h2
 {
-  font-size: 1.375rem;
+  font-size: 1.125rem;
   font-weight: 700;
 }
 
 a
 {
-  color: #099CD0;
-  text-decoration: none;
+  color: #077CA6;
 }
 
 a:hover
@@ -106,6 +107,21 @@ main
 }
 
 /*
+  Normalization
+ */
+
+input,
+button
+{
+  font-family: inherit;
+}
+
+button
+{
+  border-radius: 0rem;
+}
+
+/*
   Buttons and links
  */
 
@@ -113,9 +129,9 @@ button,
 .button
 {
   display: block;
-  padding: 0.8rem 1.2rem;
+  padding: 0.6rem 0.8rem;
   background-color: transparent;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
@@ -127,7 +143,7 @@ button.primary,
 {
   border: 0px;
   color: #FFF;
-  background-color: #099CD0;
+  background-color: #077CA6;
 }
 
 button.primary:not([disabled]):hover,
@@ -144,20 +160,20 @@ button.primary[disabled]
 button.secondary,
 .button.secondary
 {
-  border: 1px solid #099CD0;
-  color: #099CD0;
+  border: 2px solid #077CA6;
+  color: #077CA6;
 }
 
 button.secondary:hover,
 .button.secondary:hover
 {
-  box-shadow: inset 0 0 0 2px #099CD0;
+  box-shadow: inset 0 0 0 1px #077CA6;
 }
 
 button[role="checkbox"]
 {
-  width: 18px;
-  height: 18px;
+  width: 1.2rem;
+  height: 1.2rem;
   padding: 0px;
   border: 0px;
   background-color: transparent;
@@ -165,13 +181,13 @@ button[role="checkbox"]
 
 button[role="checkbox"]:not(.toggle)
 {
-  background-image: url(icons/checkbox.png);
+  background-image: url(icons/checkbox.svg#off);
   display: inline-block;
 }
 
 button[role="checkbox"][aria-checked="true"]:not(.toggle)
 {
-  background-position: 0px 18px;
+  background-image: url(icons/checkbox.svg#on);
 }
 
 button[role="checkbox"][disabled],
@@ -199,8 +215,9 @@ button[role="checkbox"][aria-checked="true"].toggle
 button[role="checkbox"].toggle
 {
   background-position: initial;
-  width: 2.25rem;
-  height: 1.3rem;
+  width: 1.9rem;
+  height: 1rem;
+  vertical-align: middle;
 }
 
 button[role="checkbox"][disabled].toggle
@@ -241,23 +258,27 @@ button.delete::before
 {
   content: "";
   display: block;
-  height: 1.9rem;
-  width: 1.9rem;
+  height: 1rem;
+  width: 1rem;
+  border: 0.2rem solid transparent;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 button.link,
 button.list
 {
-  color: #099CD0;
+  color: #077CA6;
 }
 
 button.link
 {
   border: 0px;
   background-color: transparent;
-  font-weight: 300;
+  font-weight: 400;
   font-family: inherit;
   text-transform: none;
+  text-decoration: underline;
   padding: 0.2rem;
 }
 
@@ -270,7 +291,7 @@ button.list
 {
   border-style: solid;;
   border-color: #CDCDCD;
-  border-width: 0px 1px 1px 1px;
+  border-width: 1px;
   width: 100%;
   background-color: #E1F2FA;
   text-align: initial;
@@ -278,8 +299,8 @@ button.list
 
 button.list:hover
 {
-  box-shadow: inset 0 0 0 3px #099CD0;
-  border-color: #099CD0;
+  box-shadow: inset 0 0 0 3px #077CA6;
+  border-color: #077CA6;
 }
 
 .side-controls:not(.wrap)
@@ -319,7 +340,7 @@ button.list:hover
   border-color: #CDCDCD;
   border-width: 0px 0px 1px 0px;
   outline: none;
-  font-size: 1.3rem;
+  font-size: 1rem;
   padding: 5px;
   width: 100%;
 }
@@ -331,7 +352,7 @@ button.list:hover
   position: absolute;
   top: 0.9rem;
   left: 0.3rem;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 .floating-input input + label,
@@ -364,7 +385,7 @@ html[dir="rtl"] .floating-input input:focus ~ label
   height: 1.5rem;
   width: 1.5rem;
   border: 0rem;
-  top: 0.5rem;
+  top: 0.3rem;
   right: 0rem;
 }
 
@@ -382,7 +403,7 @@ html[dir="rtl"] [data-validation] .floating-input input:valid ~ .attention::befo
 
 [data-validation] .floating-input input:valid ~ .attention::before
 {
-  top: 0.8rem;
+  top: 0.5rem;
   background-image: url(icons/checkmark.svg#approved);
 }
 
@@ -448,6 +469,7 @@ html[dir="rtl"] #sidebar header
 {
   margin: 0rem;
   font-size: 2.4rem;
+  line-height: 2.6rem;
 }
 
 html[dir="rtl"] #sidebar header
@@ -473,7 +495,7 @@ html[dir="rtl"] #sidebar header
   margin: 0rem;
   padding: 0rem;
   position: relative;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 [role="tablist"] li a
@@ -516,7 +538,7 @@ li a[role="tab"][aria-selected]
 {
   display: flex;
   justify-content: center;
-  margin: 1.2rem 0rem;
+  margin: 1rem 0rem;
 }
 
 /* This is a stopgap solution of footer overlapping tabs on low resolutions */
@@ -550,7 +572,7 @@ main
 {
   background-color: #FFFFFF;
   border: 1px solid #CDCDCD;
-  max-width: 46.3rem;
+  width: 46.3rem;
   padding: 0px 0rem 1.4rem 0rem;
 }
 
@@ -571,7 +593,7 @@ main p
 [role="tabpanel"] > section,
 [role="tabpanel"] > .section
 {
-  padding: 2rem;
+  padding: 1.4rem 2rem;
   border-top: 1px solid #CDCDCD;
 }
 
@@ -623,14 +645,14 @@ section.cols > *:last-child
 #acceptable-ads ul
 {
   position: relative;
-  padding-left: 2rem;
+  padding-left: 2.2rem;
   list-style: none;
 }
 
 html[dir="rtl"] #acceptable-ads ul
 {
   padding-left: 0rem;
-  padding-right: 2rem;
+  padding-right: 2.2rem;
 }
 
 #acceptable-ads button
@@ -649,25 +671,26 @@ html[dir="rtl"] button
 #acceptable-ads label
 {
   font-weight: 700;
-  font-size: 1.375rem;
+  font-size: 1rem;
+  -moz-margin-end: 0.5rem;
+  -webkit-margin-end: 0.5rem;
 }
 
 #dnt
 {
   padding: 0.8rem;
-  border: 1px solid #099CD0;
+  border: 1px solid #077CA6;
 }
 
 .new
 {
   display: inline-block;
-  margin: 0rem 0.5rem;
-  padding: 0.3rem 0.6rem;
+  padding: 0.2rem 0.5rem;
   border-radius: 0.2rem;
-  background-color: #099CD0;
+  background-color: #077CA6;
   color: #FFF;
   line-height: 100%;
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
 }
 
@@ -701,7 +724,7 @@ ul.list
 .list li
 {
   padding: 0rem;
-  margin: 0rem 0rem 1.3rem 0rem;
+  margin-bottom: 0.8rem;
 }
 
 .list li [role="checkbox"]
@@ -716,8 +739,13 @@ ul.list
 
 .table.list li
 {
-  padding: 0.5rem 1.1rem;
+  padding: 0.5rem 1rem;
   margin: 0rem;
+}
+
+.table.list.bottom-control li:last-of-type
+{
+  border-bottom: 0px;
 }
 
 li .display
@@ -728,11 +756,12 @@ li .display
 .table.list li .display
 {
   flex: 1;
+  margin: 0rem;
 }
 
 .table.list li.empty-placeholder
 {
-  padding: 1.3em 1.9em;
+  padding: 1rem 1.4rem;
 }
 
 .table.list li.empty-placeholder:not(:last-of-type)
@@ -740,15 +769,11 @@ li .display
   border-bottom: 0px;
 }
 
-#blocking-languages-table .display
-{
-  font-weight: 700;
-}
-
 .table.list button.link
 {
   font-weight: 700;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 .table:not(.list):not(.cols) li
@@ -773,43 +798,48 @@ li .display
   display: flex;
 }
 
-.col4 > *
+.col5 > *
 {
   display: inline-block;
 }
 
-.col4
+.col5
 {
-  margin: 0rem 0.9rem;
+  margin: 0rem 1rem;
 }
 
-.th .col4:nth-of-type(1),
-.table .col4:nth-of-type(1)
+.th .col5:nth-of-type(1),
+.table .col5:nth-of-type(1)
 {
-  flex: 2;
+  flex: 4;
 }
 
-.th .col4:nth-of-type(2),
-.table .col4:nth-of-type(2)
+.th .col5:nth-of-type(2),
+.table .col5:nth-of-type(2)
 {
-  flex: 3;
+  flex: 8;
 }
 
-.th .col4:nth-of-type(3),
-.table .col4:nth-of-type(3)
+.th .col5:nth-of-type(3),
+.table .col5:nth-of-type(3)
 {
-  flex: 2;
+  flex: 4;
 }
 
-.th .col4:nth-of-type(4),
-.table .col4:nth-of-type(4)
+.th .col5:nth-of-type(4),
+.table .col5:nth-of-type(4)
 {
   flex: 1;
 }
 
-.table.cols
+.th .col5:nth-of-type(5),
+.table .col5:nth-of-type(5)
 {
-  font-size: 1.1rem;
+  flex: 1;
+  -moz-margin-start: 0;
+  -webkit-margin-start: 0;
+  -moz-margin-end: 1.8rem;
+  -webkit-margin-end: 1.8rem;
 }
 
 .table.cols .display
@@ -879,6 +909,7 @@ li .display
   flex: none;
   margin: 0rem 0.8rem;
   text-transform: none;
+  font-weight: 400;
 }
 
 /*
@@ -900,8 +931,8 @@ li .display
 .tooltip::before
 {
   content: "";
-  width: 1.3rem;
-  height: 1.3rem;
+  width: 1.1rem;
+  height: 1.1rem;
   display: block;
   background-image: url(icons/tooltip.svg);
 }
@@ -951,9 +982,10 @@ li .display
 #content-whitelist form input
 {
   flex: 1;
+  height: 100%;
   padding: 0.5rem 1rem;
-  font-size: 1.25rem;
-  border: 2px solid #099CD0;
+  font-size: 1rem;
+  border: 2px solid #077CA6;
 }
 
 #content-whitelist form button
@@ -964,6 +996,8 @@ li .display
 
 #whitelisting-table li
 {
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
   border-left: 0rem;
   border-right: 0rem; 
 }
@@ -1014,7 +1048,7 @@ li .display
 #custom-filters-raw:focus
 {
   outline: none;
-  border: 2px solid #099CD0;
+  border: 2px solid #077CA6;
 }
 
 #empty-custom-filters
@@ -1037,7 +1071,7 @@ li [role="menubar"]
   right: -1rem;
   margin-top: 1rem;
   opacity: 1;
-  padding: 1.3rem;
+  padding: 0.2rem 1rem;
   position: absolute;
   -webkit-transition: opacity 200ms ease-in-out 400ms,
     visibility 0ms linear 400ms;
@@ -1057,7 +1091,7 @@ html[dir="rtl"] [role="tooltip"]
 [role="tooltip"],
 .context-menu .content
 {
-  border: 1px solid #099CD0;
+  border: 1px solid #077CA6;
   border-radius: 3px;
   background-color: #FFFFFF;
 }
@@ -1075,8 +1109,8 @@ html[dir="rtl"] [role="tooltip"]
 .context-menu
 {
   position: absolute;
-  right: 3rem;
-  top: -3rem;
+  right: 2.5rem;
+  top: -2.7rem;
   z-index: 1;
   visibility: hidden;
 }
@@ -1084,7 +1118,7 @@ html[dir="rtl"] [role="tooltip"]
 html[dir="rtl"] .context-menu
 {
   right: auto;
-  left: 3rem;
+  left: 2.5rem;
 }
 
 .context-menu .content
@@ -1112,7 +1146,7 @@ li.show-context-menu .context-menu
 {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid #099CD0;
+  border-bottom: 10px solid #077CA6;
   top: -10px;
   right: 15px;
 }
@@ -1125,7 +1159,7 @@ html[dir="rtl"] [role="tooltip"]::before
 
 .context-menu::before
 {
-  border-left: 10px solid #099CD0;
+  border-left: 10px solid #077CA6;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   top: 22px;
@@ -1135,7 +1169,7 @@ html[dir="rtl"] [role="tooltip"]::before
 html[dir="rtl"] .context-menu::before
 {
   border-left: 0rem;
-  border-right: 10px solid #099CD0;
+  border-right: 10px solid #077CA6;
   right: auto;
   left: -0.5rem;
 }
@@ -1152,11 +1186,13 @@ html[dir="rtl"] .context-menu::before
   width: 100%;
   display: flex;
   border: 0rem;
-  padding: 1rem 0rem;
-  color: #099CD0;
-  font-size: 1.1rem;
-  font-weight: 700;
+  padding: 0.7rem 0rem;
+  color: #077CA6;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 400;
   text-transform: none;
+  text-decoration: none;
 }
 
 .context-menu li[role="menuitem"] > *:hover,
@@ -1169,9 +1205,10 @@ html[dir="rtl"] .context-menu::before
 .context-menu li[role="menuitem"] > *::before
 {
   content: "";
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1rem;
+  width: 1rem;
   margin: 0rem 1.1rem;
+  border: 0rem;
 }
 
 .context-menu .update-subscription::before
@@ -1221,6 +1258,7 @@ html[lang="zh"] #social-general
 {
   display: block;
   text-align: center;
+  text-decoration: none;
 }
 
 #social ul li a::before
@@ -1286,13 +1324,13 @@ body[data-dialog] #dialog-background
 {
   display: flex;
   padding: 0.7rem 1.5rem;
-  background-color: #099CD0;
+  background-color: #077CA6;
 }
 
 #dialog header h3
 {
   margin: 0rem;
-  font-size: 1.375rem;
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -1352,11 +1390,6 @@ body[data-dialog] #dialog-background
 [data-dialog="about"] p
 {
   margin: 0.5rem 0rem;
-}
-
-#abp-version
-{
-  margin-bottom: 2rem;
 }
 
 [data-dialog="import"] .side-controls
@@ -1424,7 +1457,7 @@ body:not([data-dialog]) #dialog
   box-sizing: border-box;
   opacity: 0.8;
   font-size: 1rem;
-  color: #099CD0;
+  color: #077CA6;
   background-color: #E1F2FA;
 }
 
