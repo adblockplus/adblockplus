@@ -181,13 +181,14 @@ button[role="checkbox"]
 
 button[role="checkbox"]:not(.toggle)
 {
-  background-image: url(icons/checkbox.svg#off);
+  /* Using ?query as a workaround to chromium bug #643716 */
+  background-image: url(icons/checkbox.svg?off#off);
   display: inline-block;
 }
 
 button[role="checkbox"][aria-checked="true"]:not(.toggle)
 {
-  background-image: url(icons/checkbox.svg#on);
+  background-image: url(icons/checkbox.svg?on#on);
 }
 
 button[role="checkbox"][disabled],
@@ -199,17 +200,17 @@ button[role="checkbox"][aria-disabled="true"]
 
 button[role="checkbox"].toggle
 {
-  background: url(icons/toggle.svg#on);
+  background-image: url(icons/toggle.svg?on#on);
 }
 
 button[role="checkbox"][aria-checked="false"].toggle
 {
-  background: url(icons/toggle.svg#off);
+  background-image: url(icons/toggle.svg?off#off);
 }
 
 button[role="checkbox"][aria-checked="true"].toggle
 {
-  background: url(icons/toggle.svg#on);
+  background-image: url(icons/toggle.svg?on#on);
 }
 
 button[role="checkbox"].toggle
@@ -227,22 +228,22 @@ button[role="checkbox"][disabled].toggle
 
 button.delete::before
 {
-  background-image: url(icons/trash.svg#default);
+  background-image: url(icons/trash.svg?default#default);
 }
 
 button.delete:hover::before
 {
-  background-image: url(icons/trash.svg#hover);
+  background-image: url(icons/trash.svg?hover#hover);
 }
 
 button.gear::before
 {
-  background-image: url(icons/gear.svg#default);
+  background-image: url(icons/gear.svg?default#default);
 }
 
 button.gear:hover::before
 {
-  background-image: url(icons/gear.svg#hover);
+  background-image: url(icons/gear.svg?hover#hover);
 }
 
 button.gear,
@@ -404,7 +405,7 @@ html[dir="rtl"] [data-validation] .floating-input input:valid ~ .attention::befo
 [data-validation] .floating-input input:valid ~ .attention::before
 {
   top: 0.5rem;
-  background-image: url(icons/checkmark.svg#approved);
+  background-image: url(icons/checkmark.svg?approved#approved);
 }
 
 [data-validation] .floating-input input ~ .error-msg
@@ -900,7 +901,7 @@ li .display
   content: "";
   width: 1.3rem;
   height: 1.3rem;
-  background-image: url(icons/checkmark.svg#default);
+  background-image: url(icons/checkmark.svg?default#default);
   margin: 0rem;
 }
 
@@ -1228,7 +1229,7 @@ html[dir="rtl"] .context-menu::before
 
 .context-menu .delete::before
 {
-  background-image: url(icons/trash.svg#default);
+  background-image: url(icons/trash.svg?default#default);
 }
 
 /*
@@ -1352,12 +1353,12 @@ body[data-dialog] #dialog-background
   height: 1rem;
   width: 1rem;
   border: 0rem;
-  background-image: url(icons/delete.svg#primary);
+  background-image: url(icons/delete.svg?primary#primary);
 }
 
 #dialog-close:hover::before
 {
-  background-image: url(icons/delete.svg#primary-hover);
+  background-image: url(icons/delete.svg?primary-hover#primary-hover);
 }
 
 #dialog #dialog-body
@@ -1474,10 +1475,10 @@ body:not([data-dialog]) #dialog
 
 #hide-notification::after
 {
-  background-image: url(icons/delete.svg#secondary);
+  background-image: url(icons/delete.svg?secondary#secondary);
 }
 
 #hide-notification:hover::after
 {
-  background-image: url(icons/delete.svg#secondary-hover);
+  background-image: url(icons/delete.svg?secondary-hover#secondary-hover);
 }
