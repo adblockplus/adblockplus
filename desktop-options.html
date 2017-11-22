@@ -97,6 +97,15 @@
             <p class="i18n_options_acceptableAds_description"></p>
           </header>
           <form id="acceptable-ads">
+            <div id="tracking-warning">
+              <button id="hide-tracking-warning" type="button" data-pref="ui_warn_tracking" data-action="toggle-pref">
+                <span class="i18n_options_notification_hide sr-only"></span>
+              </button>
+              <p id="tracking-warning-1"></p>
+              <p class="i18n_options_tracking_warning_2"></p>
+              <p id="tracking-warning-3"></p>
+              <button class="i18n_options_tracking_warning_acknowledgment link" type="button" data-pref="ui_warn_tracking" data-action="toggle-pref"></button>
+            </div>
             <ul>
               <li>
                 <button id="acceptable-ads-allow" data-action="switch-acceptable-ads" type="button" role="checkbox" name="acceptable-ads" value="ads"></button>

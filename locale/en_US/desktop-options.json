@@ -67,6 +67,38 @@
     "description": "Acceptable Ads section description in General tab",
     "message": "Acceptable Ads are nonintrusive ads. They are the middle ground between ad blocking and supporting online content because they generate revenue for website owners."
   },
+  "options_tracking_warning_1": {
+    "description": "Text of the tracking notification (being shown when both 'Acceptable Ads' and 'EasyPrivacy' are enabled) in General tab",
+    "message": "We noticed you have both '<strong>$tracking$</strong>' and '<strong>$acceptableAds$</strong>' enabled.",
+    "placeholders": {
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      },
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "description": "Text of the tracking notification (being shown when both 'Acceptable Ads' and 'EasyPrivacy' are enabled) in General tab",
+    "message": "We want you to know that in order for advertisers to show you more relevant ads, there <strong>may</strong> be some tracking with Acceptable Ads."
+  },
+  "options_tracking_warning_3": {
+    "description": "Text of the tracking notification (being shown when both 'Acceptable Ads' and 'EasyPrivacy' are enabled) in General tab",
+    "message": "If you prefer extra privacy, select the '<strong>$acceptableAdsPrivacy$</strong>' checkbox below.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "description": "Text in the tracking notification (being shown when both 'Acceptable Ads' and 'EasyPrivacy' are enabled) in General tab",
+    "message": "OK, got it"
+  },
   "options_acceptableAds_ads_label": {
     "description": "Acceptable Ads section option label in General tab",
     "message": "Allow Acceptable Ads"

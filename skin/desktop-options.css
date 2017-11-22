@@ -643,6 +643,40 @@ section.cols > *:last-child
   Acceptable ads
  */
 
+#tracking-warning
+{
+  position: relative;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border: 2px solid #ffd7a3;
+  background-color: #fefbe3;
+}
+
+#acceptable-ads:not(.show-warning) #tracking-warning
+{
+  display: none;
+}
+
+#hide-tracking-warning
+{
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+html[dir="rtl"] #hide-tracking-warning
+{
+  left: 1rem;
+  right: auto;
+}
+
+#tracking-warning .link
+{
+  color: inherit;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
 #acceptable-ads ul
 {
   position: relative;
@@ -656,7 +690,7 @@ html[dir="rtl"] #acceptable-ads ul
   padding-right: 2.2rem;
 }
 
-#acceptable-ads button
+#acceptable-ads ul button
 {
   position: absolute;
   margin-top: 0.3rem;
@@ -939,7 +973,7 @@ li .display
 }
 
 /* 
-  Used for translatable screen reader only conten.
+  Used for translatable screen reader only content.
   e.g.: Use instead of aria-label to avoid complex attribute value translation
 */
 .sr-only
@@ -1336,7 +1370,8 @@ body[data-dialog] #dialog-background
 }
 
 #dialog-close,
-#hide-notification
+#hide-notification,
+#hide-tracking-warning
 {
   border: 0rem;
   padding: 0rem;
@@ -1346,7 +1381,8 @@ body[data-dialog] #dialog-background
 }
 
 #dialog-close::before,
-#hide-notification::after
+#hide-notification::after,
+#hide-tracking-warning::after
 {
   content: "";
   display: block;
@@ -1478,7 +1514,17 @@ body:not([data-dialog]) #dialog
   background-image: url(icons/delete.svg?secondary#secondary);
 }
 
+#hide-tracking-warning::after
+{
+  background-image: url(icons/delete.svg?tertiary#tertiary);
+}
+
 #hide-notification:hover::after
 {
   background-image: url(icons/delete.svg?secondary-hover#secondary-hover);
+}
+
+#hide-tracking-warning:hover::after
+{
+  background-image: url(icons/delete.svg?tertiary-hover#tertiary-hover);
 }

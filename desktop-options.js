@@ -28,6 +28,7 @@
   let acceptableAdsPrivacyUrl = null;
   let isCustomFiltersLoaded = false;
   let {getMessage} = browser.i18n;
+  let {setElementText} = ext.i18n;
   let customFilters = [];
   let filterErrors = new Map([
     ["synchronize_invalid_url",
@@ -907,6 +908,12 @@
     {
       setLinks("enable-acceptable-ads-description", link);
     });
+    setElementText(E("tracking-warning-1"), "options_tracking_warning_1", 
+      [getMessage("common_feature_privacy_title"),
+      getMessage("options_acceptableAds_ads_label")]);
+    setElementText(E("tracking-warning-3"), "options_tracking_warning_3", 
+      [getMessage("options_acceptableAds_privacy_label")]);
+
     getDocLink("privacy_friendly_ads", (link) =>
     {
       E("enable-acceptable-ads-privacy-description").href = link;
@@ -1094,6 +1101,23 @@
     return url == acceptableAdsUrl || url == acceptableAdsPrivacyUrl;
   }
 
+  function hasPrivacyConflict()
+  {
+    let acceptableAdsList = subscriptionsMap[acceptableAdsUrl];
+    let privacyList = null;
+    for (let url in subscriptionsMap)
+    {
+      let subscription = subscriptionsMap[url];
+      if (subscription.recommended == "privacy")
+      {
+        privacyList = subscription;
+        break;
+      }
+    }
+    return acceptableAdsList && acceptableAdsList.disabled == false &&
+      privacyList && privacyList.disabled == false;
+  }
+
   function populateLists()
   {
     subscriptionsMap = Object.create(null);
@@ -1267,6 +1291,16 @@
         if (isAcceptableAds(url))
           setAcceptableAds();
 
+        if ((url == acceptableAdsUrl || recommended == "privacy") &&
+          hasPrivacyConflict())
+        {
+          getPref("ui_warn_tracking", (showTrackingWarning) =>
+          {
+            if (showTrackingWarning)
+              E("acceptable-ads").classList.add("show-warning");
+          });
+        }
+
         collections.filterLists.addItem(subscription);
         break;
       case "removed":
@@ -1340,6 +1374,10 @@
 
       case "notifications_showui":
         hidePref("notifications_ignoredcategories", !value);
+        break;
+      case "ui_warn_tracking":
+        let showWarning = (value && hasPrivacyConflict());
+        E("acceptable-ads").classList.toggle("show-warning", showWarning);
         break;
     }
 
@@ -1415,7 +1453,8 @@
   browser.runtime.sendMessage({
     type: "prefs.listen",
     filter: ["notifications_ignoredcategories", "notifications_showui",
-             "show_devtools_panel", "shouldShowBlockElementMenu"]
+             "show_devtools_panel", "shouldShowBlockElementMenu",
+             "ui_warn_tracking"]
   });
   browser.runtime.sendMessage({
     type: "subscriptions.listen",
