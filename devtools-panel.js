@@ -156,7 +156,7 @@ function createRecord(request, filter, template)
 function shouldFilterRow(row, query)
 {
   let elementsToSearch = [
-    row.getElementsByClassName("url"),
+    row.getElementsByClassName("resource-link"),
     row.getElementsByClassName("filter"),
     row.getElementsByClassName("origin"),
     row.getElementsByClassName("type")
