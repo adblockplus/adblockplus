@@ -965,14 +965,6 @@
       getMessage("options_customFilters_edit_placeholder", ["/ads/track/*"]));
 
     // Help tab
-    getDocLink("adblock_plus_report_issue", (link) =>
-    {
-      setLinks("report-issue", link);
-    });
-    getDocLink("adblock_plus_report_ad", (link) =>
-    {
-      setLinks("report-ad", link);
-    });
     getDocLink("adblock_plus_report_bug", (link) =>
     {
       setLinks("report-bug", link);

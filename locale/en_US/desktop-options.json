@@ -347,14 +347,6 @@
     "description": "Section title in Help tab",
     "message": "Support"
   },
-  "options_report_issue": {
-    "description": "'Support' section list item in Help tab",
-    "message": "Think content or functionality is being incorrectly blocked by us? <a>Report incorrectly blocked items here</a>"
-  },
-  "options_report_ad": {
-    "description": "'Support' section list item in Help tab",
-    "message": "See an ad that you think shouldn't be there? <a>Report an ad</a>"
-  },
   "options_report_bug": {
     "description": "'Support' section list item in Help tab",
     "message": "Found a bug? <a>Send us a bug report</a>"
