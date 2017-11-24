@@ -59,7 +59,7 @@ body
   margin: 1rem 0.3rem;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
-  line-height: 1.5rem;
+  line-height: 1.3rem;
   color: #4A4A4A;
 }
 
@@ -89,6 +89,12 @@ a:hover
 ul
 {
   margin: 0rem;
+}
+
+main h3
+{
+  margin-top: 0rem;
+  margin-bottom: 0.5rem;
 }
 
 [aria-hidden="true"]
@@ -223,7 +229,7 @@ button[role="checkbox"].toggle
 
 button[role="checkbox"][disabled].toggle
 {
-  background-image: none;
+  background: none;
 }
 
 button.delete::before
@@ -320,7 +326,7 @@ button.list:hover
 
 .side-controls.wrap button
 {
-  margin: 0.8rem 0rem;
+  margin: 0.6rem 0rem;
   -moz-margin-start: auto;
   -webkit-margin-start: auto;
 }
@@ -459,6 +465,7 @@ html[dir="rtl"] #sidebar header
 {
   margin: 0rem;
   font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 #sidebar header h1 strong
@@ -469,7 +476,7 @@ html[dir="rtl"] #sidebar header
 #sidebar header p
 {
   margin: 0rem;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   line-height: 2.6rem;
 }
 
@@ -514,12 +521,6 @@ html[dir="rtl"] #sidebar header
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-}
-
-[role="tablist"] a[role="tab"]:focus
-{
-  outline: none;
-  text-shadow: 0px 0px 1px #888;
 }
 
 li a[role="tab"][aria-selected]
@@ -838,7 +839,7 @@ li .display
   display: inline-block;
 }
 
-.col5
+.cols .col5
 {
   margin: 0rem 1rem;
 }
@@ -884,7 +885,7 @@ li .display
 
 .table.cols li
 {
-  padding: 0.9rem 0rem;
+  padding: 0.5rem 0rem;
 }
 
 .table.cols .state
@@ -1065,19 +1066,14 @@ li .display
 
 #all-filter-lists-table
 {
-  margin-bottom: 1.5rem;
-}
-
-#custom-filters h3
-{
-  margin: 0rem;
+  margin-bottom: 0.8rem;
 }
 
 #custom-filters-raw
 {
   width: 100%;
   height: 23.6rem;
-  padding: 0.8rem 1.3rem; 
+  padding: 0.8rem; 
 }
 
 #custom-filters-raw:focus
