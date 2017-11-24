@@ -1118,6 +1118,22 @@
       privacyList && privacyList.disabled == false;
   }
 
+  function setPrivacyConflict()
+  {
+    let acceptableAdsForm = E("acceptable-ads");
+    if (hasPrivacyConflict())
+    {
+      getPref("ui_warn_tracking", (showTrackingWarning) =>
+      {
+        acceptableAdsForm.classList.toggle("show-warning", showTrackingWarning);
+      });
+    }
+    else
+    {
+      acceptableAdsForm.classList.remove("show-warning");
+    }
+  }
+
   function populateLists()
   {
     subscriptionsMap = Object.create(null);
@@ -1267,6 +1283,7 @@
     {
       case "disabled":
         updateSubscription(subscription);
+        setPrivacyConflict();
         break;
       case "downloading":
       case "downloadStatus":
@@ -1291,17 +1308,8 @@
         if (isAcceptableAds(url))
           setAcceptableAds();
 
-        if ((url == acceptableAdsUrl || recommended == "privacy") &&
-          hasPrivacyConflict())
-        {
-          getPref("ui_warn_tracking", (showTrackingWarning) =>
-          {
-            if (showTrackingWarning)
-              E("acceptable-ads").classList.add("show-warning");
-          });
-        }
-
         collections.filterLists.addItem(subscription);
+        setPrivacyConflict();
         break;
       case "removed":
         if (subscription.recommended)
@@ -1321,7 +1329,9 @@
             collections.more.removeItem(subscription);
           }
         }
+
         collections.filterLists.removeItem(subscription);
+        setPrivacyConflict();
         break;
     }
   }
@@ -1376,8 +1386,7 @@
         hidePref("notifications_ignoredcategories", !value);
         break;
       case "ui_warn_tracking":
-        let showWarning = (value && hasPrivacyConflict());
-        E("acceptable-ads").classList.toggle("show-warning", showWarning);
+        setPrivacyConflict();
         break;
     }
 
