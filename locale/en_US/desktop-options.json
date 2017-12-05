@@ -69,7 +69,7 @@
   },
   "options_tracking_warning_1": {
     "description": "Text of the tracking notification (being shown when both 'Acceptable Ads' and 'EasyPrivacy' are enabled) in General tab",
-    "message": "We noticed you have both '<strong>$tracking$</strong>' and '<strong>$acceptableAds$</strong>' enabled.",
+    "message": "We noticed you have both <strong>$tracking$</strong> and <strong>$acceptableAds$</strong> enabled.",
     "placeholders": {
       "tracking": {
         "content": "$1",
@@ -87,7 +87,7 @@
   },
   "options_tracking_warning_3": {
     "description": "Text of the tracking notification (being shown when both 'Acceptable Ads' and 'EasyPrivacy' are enabled) in General tab",
-    "message": "If you prefer extra privacy, select the '<strong>$acceptableAdsPrivacy$</strong>' checkbox below.",
+    "message": "If you prefer extra privacy, select the <strong>$acceptableAdsPrivacy$</strong> checkbox below.",
     "placeholders": {
       "acceptableAdsPrivacy": {
         "content": "$1",
