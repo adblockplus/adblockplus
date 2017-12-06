@@ -293,6 +293,34 @@
   "options_tab_whitelist": {
     "message": "Tinklapiai baltajame sąraše"
   },
+  "options_tracking_warning_1": {
+    "message": "Pastebėjome jog pas jus įjungta ir <strong>$tracking$</strong> ir <strong>$acceptableAds$</strong>.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "Norime pranešti jog norint parodyti jums aktualesnius skelbimus Priimtinuose skelbimuose <strong>gali</strong> būti šiek tiek stebėjimo."
+  },
+  "options_tracking_warning_3": {
+    "message": "Jei pageidaujate papildomo saugumo, žemiau pažymėkite <strong>$acceptableAdsPrivacy$</strong>.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "Gerai, supratau"
+  },
   "options_whitelist_add": {
     "message": "Pridėti svetainę"
   },

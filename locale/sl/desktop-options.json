@@ -55,5 +55,33 @@
   },
   "options_tab_whitelist": {
     "message": "Dovoljene spletne strani"
+  },
+  "options_tracking_warning_1": {
+    "message": "Opatili smo, da imate omogočena tako <strong>$tracking$</strong> kot <strong>$acceptableAds$</strong>.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "Upoštevajte, da če želite od oglaševalcev videti ustreznejše oglase, je <strong>lahko</strong> pri sprejemljivih oglasih prisotnega nekaj sledenja."
+  },
+  "options_tracking_warning_3": {
+    "message": "Če imate rajši zasebnost, spodaj označite polje <strong>$acceptableAdsPrivacy$</strong>.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "V redu, razumem"
   }
 }

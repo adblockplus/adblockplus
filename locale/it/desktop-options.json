@@ -293,6 +293,34 @@
   "options_tab_whitelist": {
     "message": "Siti sulla lista bianca"
   },
+  "options_tracking_warning_1": {
+    "message": "Abbiamo notato che hai sia <strong>$tracking$</strong> e <strong>$acceptableAds$</strong> abilitate.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "Vogliamo farvi sapere che, al fine per gli inserzionisti di mostrare annunci più pertinenti, ci <strong>può</strong> essere qualche tracciamento con annunci accettabili."
+  },
+  "options_tracking_warning_3": {
+    "message": "Se si preferisce privacy extra, selezionare la casella di controllo <strong>$acceptableAdsPrivacy$</strong> qui sotto.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "Ok, capito"
+  },
   "options_whitelist_add": {
     "message": "AGGIUNGERE UN SITO"
   },

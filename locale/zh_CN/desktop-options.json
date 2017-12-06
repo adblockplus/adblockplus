@@ -293,6 +293,34 @@
   "options_tab_whitelist": {
     "message": "白名单网站"
   },
+  "options_tracking_warning_1": {
+    "message": "我们注意到您同时启用了<strong>$tracking$</strong>和<strong>$acceptableAds$</strong>。",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "我们想告知您，为了让广告商向您展示更有相关性的广告，可接受广告<strong>可能</strong>准许某些跟踪型的广告。"
+  },
+  "options_tracking_warning_3": {
+    "message": "如果您更偏好隐私，选择下方的<strong>$acceptableAdsPrivacy$</strong>复选框。",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "好的，知道了"
+  },
   "options_whitelist_add": {
     "message": "添加网站"
   },

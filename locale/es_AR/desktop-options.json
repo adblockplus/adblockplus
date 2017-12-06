@@ -290,6 +290,34 @@
   "options_tab_whitelist": {
     "message": "Sitios web aceptados"
   },
+  "options_tracking_warning_1": {
+    "message": "Hemos detectado que tienes activadas las opciones <strong>$tracking$</strong> y <strong>$acceptableAds$</strong>.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "Queremos que sepas que para que los anunciantes puedan mostrarte publicidad de mayor relevancia, <strong>tal vez</strong> haya algún tipo de seguimiento con los Anuncios Aceptables."
+  },
+  "options_tracking_warning_3": {
+    "message": "Si prefieres privacidad extra, selecciona la casilla <strong>$acceptableAdsPrivacy$</strong> a continuación.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "Bien, entiendo"
+  },
   "options_whitelist_add": {
     "message": "Añadir página web"
   },

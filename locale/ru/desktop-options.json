@@ -293,6 +293,34 @@
   "options_tab_whitelist": {
     "message": "Белый список сайтов"
   },
+  "options_tracking_warning_1": {
+    "message": "Похоже, что вы включили и функцию <strong>$tracking$</strong>, и <strong>$acceptableAds$</strong>.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "Вам следует знать, что допустимая реклама <strong>может</strong> применять отслеживание ваших передвижений, чтобы показывать наиболее интересные предложения."
+  },
+  "options_tracking_warning_3": {
+    "message": "Если вы предпочитаете более высокий уровень конфиденциальности, пометьте ниже флажком <strong>$acceptableAdsPrivacy$</strong>.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "Все ясно"
+  },
   "options_whitelist_add": {
     "message": "ДОБАВИТЬ САЙТ"
   },

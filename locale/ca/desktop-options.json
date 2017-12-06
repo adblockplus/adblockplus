@@ -293,6 +293,34 @@
   "options_tab_whitelist": {
     "message": "Llista blanca"
   },
+  "options_tracking_warning_1": {
+    "message": "Hem detectat que teniu ambdós opcions <strong>$tracking$</strong> i <strong>$acceptableAds$</strong> activades.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "Volem que sàpiga que per tal que els anunciants mostrin anuncis més rellevants, <strong>és possible</strong> que hi hagi algun seguiment amb anuncis acceptables."
+  },
+  "options_tracking_warning_3": {
+    "message": "Si preferiu més privadesa, seleccioneu la casella de verificació <strong>$acceptableAdsPrivacy$</strong> a continuació.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "Entesos"
+  },
   "options_whitelist_add": {
     "message": "Afegeix un lloc web"
   },

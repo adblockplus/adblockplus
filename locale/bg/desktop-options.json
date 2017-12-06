@@ -176,6 +176,9 @@
   "options_tab_whitelist": {
     "message": "Изключения"
   },
+  "options_tracking_warning_acknowledgment": {
+    "message": "ДА, ясно"
+  },
   "options_whitelist_placeholder_example": {
     "message": "например $domain$",
     "placeholders": {

@@ -275,6 +275,34 @@
   "options_tab_whitelist": {
     "message": "مواقع الويب المدرجة في القوائم البيضاء"
   },
+  "options_tracking_warning_1": {
+    "message": "لاحظنا أنه لديك على حد سواء <strong>$tracking$</strong> و <strong>$acceptableAds$</strong> مفعلة.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "نريدك أن تعرف أنه حتى يتمكن المعلنون من عرض إعلانات ملائمة أكثر، <strong>قد</strong> يكون هناك بعض التتبع مع الإعلانات المقبولة."
+  },
+  "options_tracking_warning_3": {
+    "message": "إذا كنت تفضل خصوصية إضافية، حدد <strong>$acceptableAdsPrivacy$</strong> خانة الاختيار أدناه.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "حسناً، فهمت"
+  },
   "options_whitelist_add": {
     "message": "إضافة موقع ويب"
   },

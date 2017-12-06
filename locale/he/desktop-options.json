@@ -67,5 +67,33 @@
   },
   "options_tab_whitelist": {
     "message": "אתרים ברשימה המותרת"
+  },
+  "options_tracking_warning_1": {
+    "message": "שמנו לב ששתי האפשרויות <strong>$tracking$</strong> ו <strong>$acceptableAds$</strong> מאופשרות.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "אנחנו רוצים שתדע שכדי שמפרסמים יציגו לך מודעות ענייניות, <strong>עשוי</strong> להיות מעקב מסוים עם מודעות מקובלות."
+  },
+  "options_tracking_warning_3": {
+    "message": "אם אתה מעדיף פרטיות נוספת, בחר בתיבת הסימון <strong>$acceptableAdsPrivacy$</strong> להלן.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "בסדר, הבנתי"
   }
 }

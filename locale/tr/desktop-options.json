@@ -287,6 +287,34 @@
   "options_tab_whitelist": {
     "message": "Güvenilir listesindeki web siteleri"
   },
+  "options_tracking_warning_1": {
+    "message": "Her ikisinin de devrede olduğu anlaşılıyor: <strong>$tracking$</strong> ve <strong>$acceptableAds$</strong>.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "Reklamcıların size daha uygun reklam gösterebilmeleri amacıyla, Kabul Edilebilir Reklamlar'dan bazıları sizi takip ediyor <strong>olabilir</strong>."
+  },
+  "options_tracking_warning_3": {
+    "message": "Daha fazla gizlilik istiyorsanız aşağıdaki <strong>$acceptableAdsPrivacy$</strong> kutucuğunu işaretleyin.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "Tamam, anladım"
+  },
   "options_whitelist_add": {
     "message": "WEB SİTESİ EKLEYİN"
   },

@@ -266,6 +266,34 @@
   "options_tab_whitelist": {
     "message": "Kivételezett weboldalak"
   },
+  "options_tracking_warning_1": {
+    "message": "Észrevettük, hogy mind a <strong>$tracking$</strong> és <strong>$acceptableAds$</strong> engedélyezve van.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "Azt szeretnénk, ha tudnád, hogy ahhoz, hogy a hirdetők relevánsabb hirdetéseket mutathassanak, az <strong>lehet</strong> követni az elfogadható hirdetéseket."
+  },
+  "options_tracking_warning_3": {
+    "message": "Ha további adatvédelmet szeretne, jelölje be az alábbi <strong>$acceptableAdsPrivacy$</strong> jelölőnégyzetet.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "Ok, értem"
+  },
   "options_whitelist_add": {
     "message": "Weboldal hozzáadása"
   },

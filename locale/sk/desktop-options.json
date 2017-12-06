@@ -290,6 +290,34 @@
   "options_tab_whitelist": {
     "message": "Webové stránky s povolenými adresami"
   },
+  "options_tracking_warning_1": {
+    "message": "Všimli sme si, že máte zapnuté oboje <strong>$tracking$</strong> a <strong>$acceptableAds$</strong>.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "Chceme, aby ste vedeli, že aby inzerenti mohli zobrazovať relevantnejšie reklamy, môže byť <strong>možné</strong> nejaké sledovanie s prijateľnými reklamami."
+  },
+  "options_tracking_warning_3": {
+    "message": "Ak uprednostňujete dodatočné súkromie, vyberte položku <strong>$acceptableAdsPrivacy$</strong> nižšie.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "OK, mám to"
+  },
   "options_whitelist_add": {
     "message": "Pridať webovú stránku"
   },

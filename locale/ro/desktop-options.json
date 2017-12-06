@@ -293,6 +293,34 @@
   "options_tab_whitelist": {
     "message": "Site-uri neblocate"
   },
+  "options_tracking_warning_1": {
+    "message": "Am observat ca aveţi atât <strong>$tracking$</strong> cât şi <strong>$acceptableAds$</strong> activate.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "Vrem să ştiţi că pentru ca agenţii de publicitate să vă arate anunţuri mai relevante, <strong>poate</strong> exista tracking cu anunţurile acceptabile."
+  },
+  "options_tracking_warning_3": {
+    "message": "Dacă preferaţi confidenţialitate suplimentară, selectaţi caseta de selectare <strong>$acceptableAdsPrivacy$</strong> de mai jos.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "Ok, am înțeles"
+  },
   "options_whitelist_add": {
     "message": "Adaugă site"
   },

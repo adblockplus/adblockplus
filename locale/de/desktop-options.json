@@ -293,6 +293,34 @@
   "options_tab_whitelist": {
     "message": "Websites auf der Whitelist"
   },
+  "options_tracking_warning_1": {
+    "message": "Es scheint, dass du sowohl <strong>$tracking$</strong> als auch <strong>$acceptableAds$</strong> aktiviert hast.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "Du solltest wissen, dass auch Acceptable Ads Tracking benutzen <strong>könnten</strong>, um dir möglichst relevante Werbung anzuzeigen."
+  },
+  "options_tracking_warning_3": {
+    "message": "Falls du lieber mehr Privatsphäre haben willst, kreuze unten das Kontrollkästchen <strong>$acceptableAdsPrivacy$</strong> an.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "Alles klar"
+  },
   "options_whitelist_add": {
     "message": "WEBSITE HINZUFÜGEN"
   },

@@ -290,6 +290,9 @@
   "options_tab_whitelist": {
     "message": "Danh sách trang web không gây hại"
   },
+  "options_tracking_warning_acknowledgment": {
+    "message": "Ok, đã hiểu"
+  },
   "options_whitelist_add": {
     "message": "THÊM TRANG WEB"
   },

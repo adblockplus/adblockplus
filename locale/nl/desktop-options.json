@@ -293,6 +293,34 @@
   "options_tab_whitelist": {
     "message": "Websites op witte lijst"
   },
+  "options_tracking_warning_1": {
+    "message": "We hebben gemerkt dat u zowel <strong>$tracking$</strong> als <strong>$acceptableAds$</strong> hebt ingeschakeld.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "U moet weten dat er bij Acceptabele advertenties <strong>mogelijk</strong> tracking plaatsvindt, zodat adverteerders meer relevante advertenties kunnen tonen."
+  },
+  "options_tracking_warning_3": {
+    "message": "Als u de voorkeur geeft aan extra privacy, selecteer dan het onderstaande vakje <strong>$acceptableAdsPrivacy$</strong>.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "OK, begrepen"
+  },
   "options_whitelist_add": {
     "message": "Website toevoegen"
   },
