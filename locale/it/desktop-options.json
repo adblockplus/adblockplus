@@ -248,6 +248,9 @@
   "options_notification_hide": {
     "message": "Chiudi questa notifica"
   },
+  "options_page_document_title": {
+    "message": "Impostazioni"
+  },
   "options_page_title": {
     "message": "Impostazioni"
   },

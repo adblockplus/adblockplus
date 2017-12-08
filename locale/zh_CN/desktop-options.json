@@ -248,6 +248,9 @@
   "options_notification_hide": {
     "message": "关闭通知"
   },
+  "options_page_document_title": {
+    "message": "设置"
+  },
   "options_page_title": {
     "message": "设置"
   },

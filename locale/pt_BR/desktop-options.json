@@ -248,6 +248,9 @@
   "options_notification_hide": {
     "message": "Fechar notificação"
   },
+  "options_page_document_title": {
+    "message": "Definições"
+  },
   "options_page_title": {
     "message": "Definições"
   },

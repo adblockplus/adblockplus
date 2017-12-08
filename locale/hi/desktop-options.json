@@ -32,6 +32,9 @@
   "options_language_header": {
     "message": "भाष"
   },
+  "options_page_document_title": {
+    "message": "सेटिंग्स"
+  },
   "options_page_title": {
     "message": "सेटिंग्स"
   },

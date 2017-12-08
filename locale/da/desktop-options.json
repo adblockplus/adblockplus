@@ -41,6 +41,9 @@
   "options_language_header": {
     "message": "Sprog"
   },
+  "options_page_document_title": {
+    "message": "Indstillinger"
+  },
   "options_page_title": {
     "message": "Indstillinger"
   },

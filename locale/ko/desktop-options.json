@@ -215,6 +215,9 @@
   "options_new_label": {
     "message": "신규"
   },
+  "options_page_document_title": {
+    "message": "설정"
+  },
   "options_page_title": {
     "message": "설정"
   },

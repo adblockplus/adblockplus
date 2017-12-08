@@ -23,6 +23,9 @@
   "options_language_header": {
     "message": "Jezik"
   },
+  "options_page_document_title": {
+    "message": "Postavke"
+  },
   "options_page_title": {
     "message": "Postavke"
   }

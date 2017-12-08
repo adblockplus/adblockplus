@@ -248,6 +248,9 @@
   "options_notification_hide": {
     "message": "বিজ্ঞপ্তি বন্ধ করুন"
   },
+  "options_page_document_title": {
+    "message": "সেটিংস"
+  },
   "options_page_title": {
     "message": "সেটিংস"
   },

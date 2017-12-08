@@ -38,6 +38,9 @@
   "options_language_header": {
     "message": "Språk"
   },
+  "options_page_document_title": {
+    "message": "Innstillingar"
+  },
   "options_page_title": {
     "message": "Innstillingar"
   }

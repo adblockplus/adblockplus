@@ -41,6 +41,9 @@
   "options_language_header": {
     "message": "Мова"
   },
+  "options_page_document_title": {
+    "message": "Налаштування"
+  },
   "options_page_title": {
     "message": "Налаштування"
   },

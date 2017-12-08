@@ -248,6 +248,9 @@
   "options_notification_hide": {
     "message": "Tanca la notificació"
   },
+  "options_page_document_title": {
+    "message": "Opcions d'Adblock Plus"
+  },
   "options_page_title": {
     "message": "Configuració"
   },

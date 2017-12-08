@@ -149,6 +149,9 @@
   "options_notification_hide": {
     "message": "Zatvori obavijest"
   },
+  "options_page_document_title": {
+    "message": "Postavke"
+  },
   "options_page_title": {
     "message": "Postavke"
   },

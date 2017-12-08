@@ -26,6 +26,9 @@
   "options_language_header": {
     "message": "Լեզու"
   },
+  "options_page_document_title": {
+    "message": "Կարգավորել"
+  },
   "options_page_title": {
     "message": "Կարգավորել"
   }

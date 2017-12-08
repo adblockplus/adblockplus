@@ -41,6 +41,9 @@
   "options_language_header": {
     "message": "Kieli"
   },
+  "options_page_document_title": {
+    "message": "Asetukset"
+  },
   "options_page_title": {
     "message": "Asetukset"
   },

@@ -146,6 +146,9 @@
   "options_more_filters_header": {
     "message": "Още филтри"
   },
+  "options_page_document_title": {
+    "message": "Настройки на Adblock Plus"
+  },
   "options_page_title": {
     "message": "Настройки"
   },

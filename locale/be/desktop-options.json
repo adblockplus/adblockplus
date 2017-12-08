@@ -248,6 +248,9 @@
   "options_notification_hide": {
     "message": "Закрыць апавяшчэнне"
   },
+  "options_page_document_title": {
+    "message": "Налады"
+  },
   "options_page_title": {
     "message": "Налады"
   },

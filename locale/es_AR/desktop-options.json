@@ -245,6 +245,9 @@
   "options_notification_hide": {
     "message": "Cerrar la notificación"
   },
+  "options_page_document_title": {
+    "message": "Configuración"
+  },
   "options_page_title": {
     "message": "Configuración"
   },

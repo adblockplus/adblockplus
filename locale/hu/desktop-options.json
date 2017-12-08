@@ -221,6 +221,9 @@
   "options_notification_hide": {
     "message": "Értesítés bezárása"
   },
+  "options_page_document_title": {
+    "message": "Beállítások"
+  },
   "options_page_title": {
     "message": "Beállítások"
   },

@@ -53,6 +53,9 @@
   "options_language_header": {
     "message": "שפה"
   },
+  "options_page_document_title": {
+    "message": "הגדרות"
+  },
   "options_page_title": {
     "message": "הגדרות"
   },

@@ -248,6 +248,9 @@
   "options_notification_hide": {
     "message": "Sulge teade"
   },
+  "options_page_document_title": {
+    "message": "Adblock Plusi sätted"
+  },
   "options_page_title": {
     "message": "Seaded"
   },

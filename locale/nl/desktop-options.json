@@ -248,6 +248,9 @@
   "options_notification_hide": {
     "message": "Melding sluiten"
   },
+  "options_page_document_title": {
+    "message": "Adblock Plus-opties"
+  },
   "options_page_title": {
     "message": "Instellingen"
   },

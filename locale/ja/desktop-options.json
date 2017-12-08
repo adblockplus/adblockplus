@@ -218,6 +218,9 @@
   "options_notification_hide": {
     "message": "通知を閉じる"
   },
+  "options_page_document_title": {
+    "message": "設定"
+  },
   "options_page_title": {
     "message": "設定"
   },

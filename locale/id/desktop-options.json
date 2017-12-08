@@ -113,6 +113,9 @@
   "options_notification_hide": {
     "message": "Tutup pemberitahuan"
   },
+  "options_page_document_title": {
+    "message": "Pengaturan"
+  },
   "options_page_title": {
     "message": "Pengaturan"
   },

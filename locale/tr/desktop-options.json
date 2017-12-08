@@ -242,6 +242,9 @@
   "options_notification_hide": {
     "message": "Uyarıyı kapat"
   },
+  "options_page_document_title": {
+    "message": "Adblock Plus Seçenekleri"
+  },
   "options_page_title": {
     "message": "Ayarları"
   },

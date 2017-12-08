@@ -38,6 +38,9 @@
   "options_language_header": {
     "message": "Hizkuntza"
   },
+  "options_page_document_title": {
+    "message": "Ezarpenak"
+  },
   "options_page_title": {
     "message": "Ezarpenak"
   },

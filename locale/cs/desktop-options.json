@@ -239,6 +239,9 @@
   "options_notification_hide": {
     "message": "Uzavřít oznámení"
   },
+  "options_page_document_title": {
+    "message": "Nastavení"
+  },
   "options_page_title": {
     "message": "Nastavení"
   },

@@ -248,6 +248,9 @@
   "options_notification_hide": {
     "message": "Închideţi această notificare"
   },
+  "options_page_document_title": {
+    "message": "Setări"
+  },
   "options_page_title": {
     "message": "Setări"
   },

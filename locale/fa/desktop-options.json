@@ -44,6 +44,9 @@
   "options_filterList_updateNow": {
     "message": "آپدیت کن"
   },
+  "options_page_document_title": {
+    "message": "تنظیمات"
+  },
   "options_page_title": {
     "message": "تنظیمات"
   },

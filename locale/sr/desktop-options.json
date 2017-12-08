@@ -41,6 +41,9 @@
   "options_language_header": {
     "message": "Језик"
   },
+  "options_page_document_title": {
+    "message": "Поставке"
+  },
   "options_page_title": {
     "message": "Поставке"
   },

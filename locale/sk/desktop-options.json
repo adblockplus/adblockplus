@@ -245,6 +245,9 @@
   "options_notification_hide": {
     "message": "Zatvorte oznámenie"
   },
+  "options_page_document_title": {
+    "message": "Nastavenia"
+  },
   "options_page_title": {
     "message": "Nastavenia"
   },

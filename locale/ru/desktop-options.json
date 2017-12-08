@@ -248,6 +248,9 @@
   "options_notification_hide": {
     "message": "Закрыть уведомление"
   },
+  "options_page_document_title": {
+    "message": "Настройки"
+  },
   "options_page_title": {
     "message": "Настройки"
   },

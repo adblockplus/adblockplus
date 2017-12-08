@@ -248,6 +248,9 @@
   "options_notification_hide": {
     "message": "Benachrichtigung schließen"
   },
+  "options_page_document_title": {
+    "message": "Einstellungen"
+  },
   "options_page_title": {
     "message": "Einstellungen"
   },

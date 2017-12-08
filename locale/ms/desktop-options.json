@@ -239,6 +239,9 @@
   "options_notification_hide": {
     "message": "Tutup notifikasi"
   },
+  "options_page_document_title": {
+    "message": "Tetapan"
+  },
   "options_page_title": {
     "message": "Tetapan"
   },
