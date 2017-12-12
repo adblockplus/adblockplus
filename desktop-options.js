@@ -1397,7 +1397,7 @@
       let id = anchor.getAttribute("data-tooltip");
 
       let wrapper = document.createElement("div");
-      wrapper.className = "tooltip";
+      wrapper.className = "icon tooltip";
       anchor.parentNode.replaceChild(wrapper, anchor);
       wrapper.appendChild(anchor);
 

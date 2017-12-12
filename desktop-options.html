@@ -85,7 +85,7 @@
           <h2 class="i18n_options_privacy_header"></h2>
           <ul class="list" id="recommend-protection-list-table">
             <template>
-              <button data-action="toggle-remove-subscription" role="checkbox" class="control"></button>
+              <button data-action="toggle-remove-subscription" role="checkbox" class="control icon"></button>
               <label class="display"></label>
               <span data-tooltip="options_protection_%value%_tooltip"></span>
             </template>
@@ -98,7 +98,7 @@
           </header>
           <form id="acceptable-ads">
             <div id="tracking-warning">
-              <button id="hide-tracking-warning" type="button" data-pref="ui_warn_tracking" data-action="toggle-pref">
+              <button id="hide-tracking-warning" class="icon close tertiary" type="button" data-pref="ui_warn_tracking" data-action="toggle-pref">
                 <span class="i18n_options_notification_hide sr-only"></span>
               </button>
               <p id="tracking-warning-1"></p>
@@ -108,13 +108,13 @@
             </div>
             <ul>
               <li>
-                <button id="acceptable-ads-allow" data-action="switch-acceptable-ads" type="button" role="checkbox" name="acceptable-ads" value="ads"></button>
+                <button id="acceptable-ads-allow" class="icon" data-action="switch-acceptable-ads" type="button" role="checkbox" name="acceptable-ads" value="ads"></button>
                 <label for="acceptable-ads-allow" class="i18n_options_acceptableAds_ads_label"></label>
                 <p id="enable-acceptable-ads-description" class="i18n_options_acceptableAds_ads_description_1"></p>
               </li>
               <ul>
                 <li>
-                  <button id="acceptable-ads-privacy-allow" data-action="switch-acceptable-ads" type="button" role="checkbox" name="acceptable-ads" value="privacy"></button>
+                  <button id="acceptable-ads-privacy-allow" class="icon" data-action="switch-acceptable-ads" type="button" role="checkbox" name="acceptable-ads" value="privacy"></button>
                   <label for="acceptable-ads-privacy-allow" class="i18n_options_acceptableAds_privacy_label"></label>
                   <span class="i18n_options_new_label new"></span>
                   <p>
@@ -135,7 +135,7 @@
             <ul id="blocking-languages-table" class="table list bottom-control">
               <template>
                 <label class="display"></label>
-                <button data-single="hidden" data-action="remove-subscription" class="delete control" title="options_control_remove_title"></button>
+                <button data-single="hidden" data-action="remove-subscription" class="icon delete control" title="options_control_remove_title"></button>
                 <button data-single="visible" data-action="open-dialog" data-dialog="language-change" class="i18n_options_language_change link"></button>
               </template>
             </ul>
@@ -180,7 +180,7 @@
         <ul id="whitelisting-table" class="table list">
           <template>
             <label class="display"></label>
-            <button data-action="remove-filter" class="delete control" 
+            <button data-action="remove-filter" class="icon delete control" 
                     title="options_control_remove_title">
             </button>
           </template>
@@ -198,17 +198,17 @@
           <h2 class="i18n_options_customize_header"></h2>
           <ul id="customize" class="list">
             <li data-pref="shouldShowBlockElementMenu">
-              <button role="checkbox" data-action="toggle-pref"></button>
+              <button class="icon" role="checkbox" data-action="toggle-pref"></button>
               <span class="i18n_options_customize_blockElement display"></span>
               <span data-tooltip="options_customize_blockElement_tooltip"></span>
             </li>
             <li data-pref="show_devtools_panel">
-              <button role="checkbox" data-action="toggle-pref"></button>
+              <button class="icon" role="checkbox" data-action="toggle-pref"></button>
               <span class="i18n_options_customize_showDevToolsPanel display"></span>
               <span data-tooltip="options_customize_showDevToolsPanel_tooltip"></span>
             </li>
             <li data-pref="notifications_ignoredcategories">
-              <button role="checkbox" data-action="toggle-pref"></button>
+              <button class="icon" role="checkbox" data-action="toggle-pref"></button>
               <span class="i18n_options_customize_showNotifications display"></span>
               <span data-tooltip="options_customize_showNotifications_tooltip"></span>
             </li>
@@ -234,7 +234,7 @@
           <ul class="table cols" id="all-filter-lists-table">
             <template>
               <div class="col5">
-                <button data-action="toggle-disable-subscription" role="checkbox" class="control toggle">
+                <button data-action="toggle-disable-subscription" role="checkbox" class="control icon toggle">
                 </button>
                 <div class="state">
                   <span class="i18n_options_filterList_state_active" id="state-active"></span>
@@ -249,28 +249,28 @@
                 <span class="message"></span>
               </div>
               <div class="col5">
-                <button data-action="open-context-menu" class="gear"></button>
+                <button data-action="open-context-menu" class="icon gear"></button>
                 <div role="menubar" class="context-menu-wrapper">
                   <div class="context-menu">
                     <ul class="content" role="menu">
                       <li role="menuitem">
-                        <button class="i18n_options_filterList_updateNow update-subscription" data-action="update-subscription"></button>
+                        <button class="i18n_options_filterList_updateNow icon update-subscription" data-action="update-subscription"></button>
                       </li>
                       <li role="menuitem">
-                        <a class="i18n_options_filterList_website website" target="_blank"></a>
+                        <a class="i18n_options_filterList_website icon website" target="_blank"></a>
                       </li>
                       <li role="menuitem">
-                        <a class="i18n_options_filterList_source source" target="_blank"></a>
+                        <a class="i18n_options_filterList_source icon source" target="_blank"></a>
                       </li>
                       <li role="menuitem">
-                        <button class="i18n_options_control_remove_title delete" data-action="remove-subscription"></button>
+                        <button class="i18n_options_control_remove_title icon delete" data-action="remove-subscription"></button>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
               <div class="col5">
-                <button data-action="remove-subscription" class="control delete"></button>
+                <button data-action="remove-subscription" class="control icon delete"></button>
               </div>
             </template>
           </ul>
@@ -332,9 +332,9 @@
           </header>
           <div id="social">
             <ul id="social-general">
-              <li><a id="twitter" target="_blank">Twitter</a></li>
-              <li><a id="facebook" target="_blank">Facebook</a></li>
-              <li><a id="google-plus" target="_blank">Google Plus</a></li>
+              <li><a id="twitter" class="icon" target="_blank">Twitter</a></li>
+              <li><a id="facebook" class="icon" target="_blank">Facebook</a></li>
+              <li><a id="google-plus" class="icon" target="_blank">Google Plus</a></li>
             </ul>
             <ul id="social-chinese">
               <li><a id="weibo" target="_blank">Weibo</a></li>
@@ -354,7 +354,7 @@
           <h3 id="dialog-title-language-change" class="i18n_options_dialog_language_title"></h3>
           <h3 id="dialog-title-predefined" class="i18n_options_dialog_predefined_title"></h3>
         </span>
-        <button id="dialog-close" data-action="close-dialog"></button>
+        <button class="icon close primary" data-action="close-dialog"></button>
       </header>
       <div id="dialog-body" class="content">
         <!-- About Adblock Plus -->
@@ -370,10 +370,10 @@
         <div id="dialog-content-language-add" class="dialog-content">
           <ul id="all-lang-table-add" class="table list default-focus">
             <template>
-              <button data-action="add-language-subscription,close-dialog" class="control add" role="checkbox">
+              <button data-action="add-language-subscription,close-dialog" class="control icon add" role="checkbox">
                 <label class="display"></label>
               </button>
-              <button data-action="change-language-subscription,close-dialog" class="control change" role="checkbox">
+              <button data-action="change-language-subscription,close-dialog" class="control icon change" role="checkbox">
                 <label class="display"></label>
               </button>
             </template>
@@ -385,13 +385,13 @@
             <p class="floating-input">
               <input placeholder=" " id="import-list-title" type="text" class="default-focus" required />
               <label for="import-list-title" class="i18n_options_dialog_import_subscription_title"></label>
-              <span class="attention"></span>
+              <span class="icon attention"></span>
               <span class="i18n_options_dialog_import_subscription_title_error error-msg"></span>
             </p>
             <p class="floating-input">
               <input placeholder=" " id="import-list-url" type="url" required/>
               <label for="import-list-url" class="i18n_options_dialog_import_subscription_location"></label>
-              <span class="attention"></span>
+              <span class="icon attention"></span>
               <span class="i18n_options_dialog_import_subscription_location_error error-msg"></span>
             </p>
             <p class="side-controls">
@@ -415,7 +415,7 @@
      <!-- Notification -->
     <div id="notification" aria-hidden="true" aria-live="polite">
       <strong id="notification-text"></strong>
-      <button id="hide-notification" data-action="hide-notification">
+      <button class="icon close secondary" data-action="hide-notification">
         <span class="i18n_options_notification_hide sr-only"></span>
       </button>
     </div>
