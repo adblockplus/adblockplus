@@ -765,8 +765,8 @@ section.cols > *:last-child
 #hide-tracking-warning
 {
   position: absolute;
-  right: 1rem;
-  top: 1rem;
+  right: 0.8rem;
+  top: 0.8rem;
 }
 
 html[dir="rtl"] #hide-tracking-warning
