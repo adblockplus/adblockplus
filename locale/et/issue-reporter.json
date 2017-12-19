@@ -9,7 +9,7 @@
     "message": "Kommenteeri"
   },
   "issueReporter_comment_description": {
-    "message": "Järgnevasse tekstivälja saad lisada oma kommentaari, et aidata meil probleemist aru saada. See ei ole kohustuslik, kuid on soovitatav kui probleem ei ole selgelt arusaadav. Sa võid samuti üle vaadata aruande andmed enne kui need ära saadetakse."
+    "message": "Järgnevasse tekstivälja saad lisada oma kommentaari, et aidata meil probleemist aru saada. See ei ole kohustuslik, kuid on soovitatav, kui probleem ei ole selgelt arusaadav. Sa saad ka enne aruande saatmist andmed üle vaadata."
   },
   "issueReporter_comment_label": {
     "message": "Kommentaar (valikuline):"
@@ -21,7 +21,7 @@
     "message": "Su teade on salvestatud. Sa võid sellele ligi pääseda järgneval aadressil:"
   },
   "issueReporter_dataCollector_description": {
-    "message": "Palun oota mõni hetk kuni Adblock Plus kogub vajalikke andmeid."
+    "message": "Palun oota mõni hetk, kuni Adblock Plus kogub vajalikke andmeid."
   },
   "issueReporter_dataCollector_heading": {
     "message": "Tere tulemast kasutama probleemidest teatamise abivahendit"
@@ -30,7 +30,7 @@
     "message": "Valmis"
   },
   "issueReporter_email_description": {
-    "message": "Me soovitame sul sisestada oma kehtiva meiliaadressi, et saaksime küsimuste tekkimisel antud teate kohta sinuga ühendust võtta. Samuti aitab see suurendada sinu teadete prioriteeti."
+    "message": "Me soovitame sul sisestada oma kehtiva meiliaadressi, et saaksime küsimuste tekkimisel antud teate kohta sinuga ühendust võtta. Samuti aitab see meil su panuseid tunnustada ja nende teadete prioriteeti suurendada."
   },
   "issueReporter_email_label": {
     "message": "E-post:"
@@ -39,13 +39,13 @@
     "message": "Teate saatmine ebaõnnestus. Veakood \"?1?\". Palun kontrolli, et su internetiühendus töötab ja proovi uuesti. Kui see probleem kordub, siis küsi abi [link]Adblock Plus foorumist[/link]."
   },
   "issueReporter_falseNegative_description": {
-    "message": "Vali see variant juhul kui reklaami kuvatakse hoolimata sellest, et Adblock Plus on lubatud."
+    "message": "Vali see variant juhul, kui reklaami kuvatakse hoolimata sellest, et Adblock Plus on lubatud."
   },
   "issueReporter_falseNegative_label": {
     "message": "Adblock Plus ei blokeeri reklaami"
   },
   "issueReporter_falsePositive_description": {
-    "message": "Vali see variant juhul kui lehel on kaduma läinud oluline sisu, lehte kuvatakse valesti või kui see ei tööta korralikult. Et teha kindlaks, kas Adblock Plus on selle probleemi põhjustaja, võid ta ajutiselt ära keelata."
+    "message": "Vali see variant juhul, kui lehel on kaduma läinud oluline sisu, lehte kuvatakse valesti või kui see ei tööta korralikult. Et teha kindlaks, kas Adblock Plus on selle probleemi põhjustaja, võid ta ajutiselt ära keelata."
   },
   "issueReporter_falsePositive_label": {
     "message": "Adblock Plus blokeerib liiga palju"
@@ -66,7 +66,7 @@
     "message": "Saada teade"
   },
   "issueReporter_sending": {
-    "message": "Palun oota kuni Adblock Plus edastab teadet."
+    "message": "Palun oota, kuni Adblock Plus edastab teadet."
   },
   "issueReporter_showData_label": {
     "message": "Näita teate andmeid"

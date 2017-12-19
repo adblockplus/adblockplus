@@ -3,10 +3,10 @@
     "message": "Enkele niet-opdringerige advertenties toestaan"
   },
   "mops_acceptableAds_more": {
-    "message": "Meer informatie"
+    "message": "Meer info"
   },
   "mops_action_cancel": {
-    "message": "ANNULEER"
+    "message": "Annuleren"
   },
   "mops_enabled_label": {
     "message": "Adblock Plus inschakelen op <strong>$domain$</strong>",
@@ -24,30 +24,30 @@
     "message": "Voer een URL in"
   },
   "mops_filterlist_add": {
-    "message": "+ Voeg een filterlijst toe"
+    "message": "+ Een filterlijst toevoegen"
   },
   "mops_filterlist_add_action": {
-    "message": "VOEG FILTERLIJST TOE"
+    "message": "Filterlijst toevoegen"
   },
   "mops_filterlist_add_url": {
     "message": "+ Een eigen filterlijst toevoegen"
   },
   "mops_header": {
-    "message": "Adblock Plus Instellingen"
+    "message": "Adblock Plus-instellingen"
   },
   "mops_subscribe_header": {
     "message": "Een eigen filterlijst toevoegen"
   },
   "mops_subscribe_title": {
-    "message": "Naam filterlijst"
+    "message": "Naam van filterlijst"
   },
   "mops_subscribe_url": {
-    "message": "URL Filterlijst"
+    "message": "URL van filterlijst"
   },
   "mops_subscriptions_header": {
     "message": "Filterabonnementen"
   },
   "mops_title": {
-    "message": "Adblock Plus Instellingen"
+    "message": "Adblock Plus-instellingen"
   }
 }

@@ -1,6 +1,6 @@
 {
   "mops_acceptableAds_description": {
-    "message": "السماح لب&عض الإعلانات الغير متطفّلة"
+    "message": "السماح لبعض الإعلانات الغير متطفّلة"
   },
   "mops_acceptableAds_more": {
     "message": "تعرف على المزيد"
@@ -8,14 +8,35 @@
   "mops_action_cancel": {
     "message": "إلغاء"
   },
+  "mops_enabled_label": {
+    "message": "تمكين Adblock Plus على <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "يرجى إدخال العنوان"
+  },
+  "mops_error_url": {
+    "message": "الرجاء إدخال رابط URL"
+  },
   "mops_filterlist_add": {
     "message": "+ إضافة قائمة عوامل تصفية"
   },
   "mops_filterlist_add_action": {
     "message": "إضافة قائمة عوامل تصفية"
   },
+  "mops_filterlist_add_url": {
+    "message": "+ إضافة قائمة تصفية مخصصة"
+  },
   "mops_header": {
     "message": "Adblock Plus إعدادات"
+  },
+  "mops_subscribe_header": {
+    "message": "إضافة قائمة تصفية مخصصة"
   },
   "mops_subscribe_title": {
     "message": "اسم قائمة عوامل تصفية"

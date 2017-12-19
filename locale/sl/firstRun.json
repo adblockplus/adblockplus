@@ -6,7 +6,7 @@
     "message": "Pridobite si tukaj Adblock Browser"
   },
   "firstRun_abbPromotionHeadline": {
-    "message": "Imate pametni telefon ali tabli"
+    "message": "Imate pametni telefon ali tablico?"
   },
   "firstRun_acceptableAdsExplanation": {
     "message": "Želimo spodbujati uporabo preprostih, nevsiljivih oglasov na spletnih straneh. Zato smo vpeljali <a>stroge kriterije</a> prepoznavanja sprejemljivih oglasov, ki so privzeto prikazani. Če vseeno želite blokirati vse oglase, jih lahko <a>onemogočite</a> v nekaj sekundah."
@@ -15,7 +15,7 @@
     "message": "Nadležni oglasi bodo zdaj blokirani"
   },
   "firstRun_contributor_credits": {
-    "message": "Zasluge sodelavcev"
+    "message": "Zasluge prispevajočih"
   },
   "firstRun_donate": {
     "message": "prispevajte"

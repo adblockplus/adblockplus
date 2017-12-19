@@ -263,17 +263,11 @@
   "options_protection_social_tooltip": {
     "message": "Le icone per i social media sui siti che visiti consentono alle reti di social media di creare un profilo su di te basato sulle tue abitudini di navigazione, anche quando non clicchi su di essi. Nascondere queste icone può proteggere il tuo profilo."
   },
-  "options_report_ad": {
-    "message": "Hai visto una pubblicità che pensi non dovrebbe esserci? <a>Segnala una pubblicità</a>"
-  },
   "options_report_bug": {
     "message": "Hai trovato un bug? <a>Inviaci un bug report</a>"
   },
   "options_report_forum": {
     "message": "Hai bisogno di supporto dalla nostra community? <a>Vai al Forum</a>"
-  },
-  "options_report_issue": {
-    "message": "Pensi che il contenuto o la funzionalità siano stati bloccati in maniera non corretta da parte nostra? <a>Segnala elementi bloccati in maniera non corretta qui</a>"
   },
   "options_social_description": {
     "message": "Hai una domanda o una nuova idea? Siamo qui per aiutarti."

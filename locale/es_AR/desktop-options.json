@@ -14,6 +14,9 @@
   "options_acceptableAds_header": {
     "message": "Publicidades aceptables"
   },
+  "options_acceptableAds_privacy_label": {
+    "message": "Sólo permitir anuncios sin seguimiento de terceros"
+  },
   "options_advanced_description": {
     "message": "Personaliza Adblock Plus, añade o elimina listas de filtros, crea y mantén tus propias listas de filtros"
   },
@@ -260,17 +263,11 @@
   "options_protection_social_tooltip": {
     "message": "Los iconos de medios sociales en las páginas web que visitas permiten que las redes de medios sociales construyan un perfil tuyo en base a tus hábitos de navegación, incluso cuando no haces clic en ellos. Ocultar estos iconos puede proteger tu perfil."
   },
-  "options_report_ad": {
-    "message": "¿Ves algún anuncio que crees que no debería aparecer? <a>Informa sobre un anuncio</a>"
-  },
   "options_report_bug": {
     "message": "¿Encontraste un error? <a>Envíanos un informe de error</a>"
   },
   "options_report_forum": {
     "message": "¿Deseas obtener ayuda de nuestra comunidad? <a>Accede al foro</a>"
-  },
-  "options_report_issue": {
-    "message": "¿Crees que estamos bloqueando incorrectamente contenido o funcionalidad? <a>Informa sobre elementos bloqueados incorrectamente aquí</a>"
   },
   "options_social_description": {
     "message": "¿Tienes alguna pregunta o idea nueva? Estamos aquí para ayudarte."

@@ -263,17 +263,11 @@
   "options_protection_social_tooltip": {
     "message": "Les icônes des médias sociaux sur les sites web que vous consultez permettent aux réseaux de médias sociaux de construire votre profil en fonction de vos habitudes de navigation, même si vous ne cliquez pas dessus. En masquant ces icônes, vous pouvez protéger votre profil."
   },
-  "options_report_ad": {
-    "message": "Vous voyez une publicité alors que vous pensez qu’elle ne devrait pas s’y trouver ? <a>Signalez une publicité</a>"
-  },
   "options_report_bug": {
     "message": "Vous avez trouvé un bogue ? <a>Envoyez-nous un rapport de bogue</a>"
   },
   "options_report_forum": {
     "message": "Vous voulez le soutien de notre communauté ? <a>Accédez au Forum</a>"
-  },
-  "options_report_issue": {
-    "message": "Vous pensez qu’un contenu ou une fonctionnalité est bloqué par erreur par Adblock Plus ? <a>Signalez ici les éléments bloqués par erreur</a>"
   },
   "options_social_description": {
     "message": "Vous avez une question ou une idée ? Nous sommes là pour vous aider."

@@ -219,7 +219,7 @@
     "message": "wijzigen"
   },
   "options_language_description": {
-    "message": "Adblock Plus optimaliseren voor de taal/talen waarin u websites doorgaans bekijkt."
+    "message": "Optimaliseer Adblock Plus voor de taal/talen waarin u websites doorgaans bekijkt."
   },
   "options_language_empty": {
     "message": "U hebt geen taalspecifieke filters."
@@ -263,17 +263,11 @@
   "options_protection_social_tooltip": {
     "message": "Via de sociale-mediapictogrammen op de websites die u bezoekt, kunnen sociale-medianetwerken een profiel van u opbouwen op basis van uw surfgedrag - zelfs wanneer u hier niet op klikt. Het verbergen van deze knoppen kan uw profiel beschermen."
   },
-  "options_report_ad": {
-    "message": "Ziet u een advertentie die er volgens u niet hoort te zijn? <a>Rapporteer een advertentie</a>"
-  },
   "options_report_bug": {
     "message": "Een bug gevonden? <a>Stuur ons een bugrapport</a>"
   },
   "options_report_forum": {
     "message": "Ondersteuning van onze gemeenschap nodig? <a>Ga naar het forum</a>"
-  },
-  "options_report_issue": {
-    "message": "Denkt u dat inhoud of functionaliteit ten onrechte door ons wordt geblokkeerd? <a>Meld hier onterecht geblokkeerde items</a>"
   },
   "options_social_description": {
     "message": "Hebt u een vraag of een nieuw idee? We zijn er om te helpen."

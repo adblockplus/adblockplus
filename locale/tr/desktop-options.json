@@ -3,34 +3,40 @@
     "message": "Kabul edilebilir reklamlar, can sıkıcı olmayan ve görüntülemekte olduğunuz içeriğe müdahale etmeyen reklamlardır. <a>Kabul edilebilir reklamlar ölçütleri hakkında daha fazla bilgi alın</a>"
   },
   "options_acceptableAds_ads_label": {
-    "message": "Kabul edilebilir reklamlar izin verin"
+    "message": "Kabul edilebilir reklamlara izin ver"
   },
   "options_acceptableAds_description": {
-    "message": "Kabul edilebilir reklamlar zorla girmeyen reklamlardır. Bunlar web sitesi sahipleri için gelir kaynağı niteliğinde oldukları için, reklam engelleme ile çevrimiçi içeriği destekleme arasında orta gruptaki reklamlardır."
+    "message": "Kabul edilebilir reklamlar, rahatsız etmeyen reklamlardır. Bu tür reklamlar, reklamları tamamen engellemekle çevrim içi içeriği desteklemek arasında bir arayoldur, çünkü site sahiplerinin gelir elde etmelerini sağlarlar."
+  },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>Açıklama:</strong> Tarayıcı ayarlarınızda <strong>Do Not Track (DNT)</strong> seçeneği devre dışı olarak ayarlı. Bu özelliğin düzgün çalışmasını sağlamak için lütfen tarayıcı tercihlerinizde <strong>DNT</strong> özelliğini devreye alın. <a>DNT'yi nasıl devreye alabileceğinizi öğrenin</a>."
   },
   "options_acceptableAds_header": {
-    "message": "KABUL EDİLEBİLİR REKLAMLAR"
+    "message": "Kabul edilebilir reklamlar"
+  },
+  "options_acceptableAds_privacy_label": {
+    "message": "Üçüncü taraf takibi olmayan reklamlara izin ver"
   },
   "options_advanced_description": {
-    "message": "Adblock Plus'ı özelleştirin, filtre listeleri ekleyin veya kaldırın, kendi filtre listelerinizi oluşturun ve saklayın"
+    "message": "Adblock Plus'ı özelleştirin; süzme listeleri ekleyin veya çıkarın; kendi süzme listelerinizi oluşturun veya düzenleyin"
   },
   "options_close": {
-    "message": "KAPAT"
+    "message": "kapat"
   },
   "options_control_remove_title": {
-    "message": "Kaldır"
+    "message": "kaldır"
   },
   "options_customFilter_cancel": {
-    "message": "İPTAL ET"
+    "message": "Vazgeç"
   },
   "options_customFilter_edit": {
     "message": "Süzgeçleri düzenle"
   },
   "options_customFilter_save": {
-    "message": "KAYDET"
+    "message": "Kaydet"
   },
   "options_customFilters_description": {
-    "message": "Adblock Plus'ın izin vereceği veya engelleyeceği içeriklere ilişkin daha fazla kontrol için kendi özel filtrelerinizi yazın."
+    "message": "Adblock Plus'ın izin vereceği veya engelleyeceği içeriklere ilişkin daha fazla kontrol için kendi özel süzgeçlerinizi yazın."
   },
   "options_customFilters_edit_placeholder": {
     "message": "örn. $filter$",
@@ -42,43 +48,43 @@
     }
   },
   "options_customFilters_learn": {
-    "message": "Filtre listesinin nasıl yazılacağını öğrenin"
+    "message": "Süzgeç listesinin nasıl yazılacağını öğrenin"
   },
   "options_customFilters_start": {
-    "message": "Filtre listemi yazmaya başla"
+    "message": "Kendi süzme listeni yazmaya başla"
   },
   "options_customFilters_tip": {
-    "message": "Oluşturduğunuz filtreler burada gösterilecektir."
+    "message": "Oluşturduğunuz süzgeçler burada belirecek."
   },
   "options_customFilters_title": {
-    "message": "FİLTRE LİSTENİZİ OLUŞTURUN VE DÜZENLEYİN"
+    "message": "Süzgeç listenizi oluşturun ve düzenleyin"
   },
   "options_customFilters_widget_title": {
-    "message": "Filtre listem"
+    "message": "Süzgeç listelerim"
   },
   "options_customize_blockElement": {
     "message": "Sağ tıklama menüsünde 'Öğeyi engelle' seçeneğini göster"
   },
   "options_customize_blockElement_tooltip": {
-    "message": "Bir web sayfasındaki resim veya animasyonlu slayt gösterileri gibi can sıkıcı öğeleri geçici olarak engelleyin."
+    "message": "Sayfadaki can sıkıcı öğeleri geçici olarak engelle (örn. resimler veya canlandırılmış sunumlar)."
   },
   "options_customize_header": {
-    "message": "SAYFA EYLEMLERİNİ ÖZELLEŞTİRİN"
+    "message": "Sayfa eylemlerini özelleştir"
   },
   "options_customize_showDevToolsPanel": {
     "message": "Geliştirici araçlarında 'Adblock Plus' panelini göster"
   },
   "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Tarayıcınızın geliştirici araçları panelinden engellenen ve güvenilir listesine alınan öğeleri görüntüleyin."
+    "message": "Tarayıcınızın geliştirici araçları panelinde engellenen veya beyaz listeye alınan öğeleri göster."
   },
   "options_customize_showNotifications": {
     "message": "Yararlı bildirimlerini göster"
   },
   "options_customize_showNotifications_tooltip": {
-    "message": "Adblock Plus'tan gelen tüm bildirimleri kapatın."
+    "message": "Tüm Adblock Plus bildirimlerini devre dışı bırak."
   },
   "options_dialog_about_copyright": {
-    "message": "Copyright © $currentYear$ eyeo GmbH.",
+    "message": "Telif Hakkı © $currentYear$ eyeo GmbH.",
     "placeholders": {
       "currentYear": {
         "content": "2017",
@@ -102,19 +108,19 @@
     }
   },
   "options_dialog_import_subscription_location": {
-    "message": "Filtre listesi URL'si"
+    "message": "Süzme listesi URL'si"
   },
   "options_dialog_import_subscription_location_error": {
     "message": "Geçerli bir URL girin"
   },
   "options_dialog_import_subscription_title": {
-    "message": "Filtre listesi adı"
+    "message": "Süzgeç listesi adı"
   },
   "options_dialog_import_subscription_title_error": {
     "message": "Lütfen sahayı doldurun"
   },
   "options_dialog_import_title": {
-    "message": "Filtre listesi ekleyin"
+    "message": "Süzgeç listesi ekle"
   },
   "options_dialog_language_other_empty": {
     "message": "Kullanılabilir bir dil yok."
@@ -132,10 +138,10 @@
     "message": "E-posta:"
   },
   "options_filterList_add": {
-    "message": "+ YENİ FİLTRE LİSTESİ EKLEYİN"
+    "message": "+ Yeni süzgeç listesi ekle"
   },
   "options_filterList_column_name": {
-    "message": "Filtre listeleri"
+    "message": "Süzgeç listeleri"
   },
   "options_filterList_column_status": {
     "message": "Durum"
@@ -147,25 +153,25 @@
     "message": "Her bir Adblock Plus ayarı bir süzme listesine bağlı çalışır. Aşağıda, Adblock Plus ayarlarınıza karşılık gelen filtre listeleri. Güvenilir topluluğumuz tarafından oluşturulan ve saklanan ilave filtreler de ekleyebilirsiniz."
   },
   "options_filterList_empty": {
-    "message": "Adblock Plus'a hiçbir filtre listesi eklemediniz. Eklediğiniz filtre listeleri burada gösterilecektir."
+    "message": "Adblock Plus'a hiçbir süzme listesi eklemediniz. Eklediğiniz süzme listeleri burada gösterilecektir."
   },
   "options_filterList_hours": {
     "message": "saat önce"
   },
   "options_filterList_lastDownload_checksumMismatch": {
-    "message": "Olmadı. Sağlama yapılamadı"
+    "message": "Başarısız. Sağlama yapılamadı."
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Olmadı. İndirmede sorun var."
+    "message": "Başarısız. İndirmede sorun var."
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Güncelleniyor"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "Başarısız: Geçerli bir süzgeç listesi değil"
+    "message": "Başarısız. Geçerli bir süzgeç listesi değil."
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "Olmadı. Bu geçerli bir adres değil."
+    "message": "Başarısız. Bu geçerli bir adres değil."
   },
   "options_filterList_minutes": {
     "message": "dakika önce"
@@ -174,70 +180,70 @@
     "message": "Şimdi"
   },
   "options_filterList_source": {
-    "message": "Kaynak"
+    "message": "kaynak"
   },
   "options_filterList_state_active": {
-    "message": "Aktif"
+    "message": "Etkin"
   },
   "options_filterList_state_disabled": {
     "message": "Devre dışı"
   },
   "options_filterList_title": {
-    "message": "Filtre listeleri"
+    "message": "Süzgeç listeleri"
   },
   "options_filterList_update": {
-    "message": "TÜM FİLTRE LİSTELERİNİ GÜNCELLEYİN"
+    "message": "tüm süzgeç listelerini güncelle"
   },
   "options_filterList_updateNow": {
-    "message": "Şimdi güncelle"
+    "message": "şimdi güncelle"
   },
   "options_filterList_website": {
-    "message": "Web sitesi"
+    "message": "site"
   },
   "options_footer_about": {
     "message": "Adblock Plus Hakkında"
   },
   "options_footer_contribute": {
-    "message": "Katkıda Bulun"
+    "message": "Katkıda bulun"
   },
   "options_general_description": {
-    "message": "Adblock Plus'ın web sitelerinde göstereceği ve gizleyeceği reklamları belirleyin"
+    "message": "Adblock Plus'ın sayfalarda ne gösterip ne gizleyeceğini belirleyin"
   },
   "options_help_description": {
-    "message": "Yardım bulun ya da bizimle iletişime geçin"
+    "message": "Yardıma veya bize ulaşın"
   },
   "options_language_add": {
-    "message": "+ DİL EKLEYİN"
+    "message": "+ dil ekle"
   },
   "options_language_change": {
-    "message": "DEĞİŞTİR"
+    "message": "değiştir"
   },
   "options_language_description": {
-    "message": "Adblock Plus'ı genellikle hangi dildeki/dillerdeki web sitelerinde geziniyorsanız, ona göre optimize edin."
+    "message": "Adblock Plus'u ziyaret ettiğiniz sitelerin dillerine göre en iyi hâle getirin."
   },
   "options_language_empty": {
-    "message": "Dile özel filtre söz konusu değildir."
+    "message": "Henüz herhangi bir dile özel süzgeç listeniz yok."
   },
   "options_language_header": {
     "message": "Dil"
   },
   "options_language_tip": {
-    "message": "<strong>İPUCU:</strong> Yalnızca ihtiyaç duyduğunuz dilleri seçin. Çok fazla dil seçimi yapılması reklam engelleyicinin yavaşlamasına ve bu yüzden gezinme hızınızın düşmesine neden olacaktır."
+    "message": "<strong>İPUCU:</strong> Sadece ihtiyaç duyduğunuz dilleri seçin. Daha fazla dil seçmek reklam engelleyiciyi, dolayısıyla tarama hızınızı azaltacak."
   },
   "options_learn_more": {
     "message": "Daha fazla bilgi"
   },
   "options_more_filters_description": {
-    "message": "Bunlar, Adblock Plus'a daha önce eklemiş olduğunuz ilave filtrelerdir."
+    "message": "Bunlar Adblock Plus'a daha önce eklediğiniz ek süzgeçler."
   },
   "options_more_filters_header": {
-    "message": "Daha fazla filtre"
+    "message": "Daha fazla süzgeç"
   },
   "options_more_filters_note": {
-    "message": "<strong>Not:</strong> Yalnızca güvendiğiniz geliştiricilerden üçüncü taraf filtre listelerini kullanmalısınız."
+    "message": "<strong>Not:</strong> Yalnızca güvendiğiniz geliştiricilerin üçüncü taraf süzme listelerini kullanmalısınız."
   },
   "options_new_label": {
-    "message": "YENİ"
+    "message": "Yeni"
   },
   "options_notification_hide": {
     "message": "Uyarıyı kapat"
@@ -246,34 +252,28 @@
     "message": "Adblock Plus Seçenekleri"
   },
   "options_page_title": {
-    "message": "Ayarları"
+    "message": "Ayarlar"
   },
   "options_privacy_header": {
-    "message": "GİZLİLİK ve GÜVENLİK"
+    "message": "Gizlilik ve güvenlik"
   },
   "options_protection_privacy_tooltip": {
-    "message": "Bilgi toplayıcılar dahil, İnternet yoluyla her türlü takibi ortadan kaldırarak kişisel verilerinizi koruma altına alın."
+    "message": "Bilgi toplayıcılar da dahil olmak üzere, internette yer alan her tür takipçiyi engelleyerek kişisel verilerinizi koruyun."
   },
   "options_protection_social_tooltip": {
-    "message": "Ziyaret ettiğiniz web sitelerindeki sosyal medya simgeleri - siz bunlara tıklamasanız bile - sosyal medya ağlarının internet'te gezinme alışkanlıklarınıza göre size ait bir profil oluşturmasına olanak sağlar. Bu simgelerin gizlenmesi profilinizin korunmasına yardımcı olabilir."
-  },
-  "options_report_ad": {
-    "message": "Burada olmaması gerektiğini düşündüğünüz bir reklam mı görüyorsunuz? <a>Bir reklam bildirin</a>"
+    "message": "Ziyaret ettiğiniz sayfalarda yer alan sosyal medya düğmeleri (veya simgeleri) tarama alışkanlıklarınızı temel alarak sizin bir \"resminizi\" oluşturur. Kimliğinizi korumak için bu düğmeleri gizleyin."
   },
   "options_report_bug": {
-    "message": "Bir hata mı tespit ettiniz? <a>Bize hata raporu gönderin</a>"
+    "message": "Hataya mı rastladınız? <a>Sorunu bize bildirin.</a>"
   },
   "options_report_forum": {
-    "message": "Topluluğumuzdan destek mi almak istiyorsunuz? <a>Forum'a gidin</a>"
-  },
-  "options_report_issue": {
-    "message": "İçeriğin ya da işlevin bizim tarafımızdan hatalı şekilde engellendiğini mi düşünüyorsunuz? <a>Hatalı şekilde engellenen öğeleri burada bildirin</a>"
+    "message": "Topluluktan yardım mı almak istiyorsunuz? <a>Foruma bakın.</a>"
   },
   "options_social_description": {
-    "message": "Sorunuz veya yeni bir fikriniz mi var? Size yardım etmek için buradayız."
+    "message": "Sorunuz veya fikriniz mi var? Yardım etmek için buradayız."
   },
   "options_social_title": {
-    "message": "İletişime geçin"
+    "message": "Temas kur"
   },
   "options_support_title": {
     "message": "Destek"
@@ -288,7 +288,7 @@
     "message": "Yardım"
   },
   "options_tab_whitelist": {
-    "message": "Güvenilir listesindeki web siteleri"
+    "message": "Beyaz listedeki siteler"
   },
   "options_tracking_warning_1": {
     "message": "Her ikisinin de devrede olduğu anlaşılıyor: <strong>$tracking$</strong> ve <strong>$acceptableAds$</strong>.",
@@ -319,19 +319,19 @@
     "message": "Tamam, anladım"
   },
   "options_whitelist_add": {
-    "message": "WEB SİTESİ EKLEYİN"
+    "message": "Site ekle"
   },
   "options_whitelist_description": {
-    "message": "Bu web sitelerinden reklam engellemeyi kapattığınız için, bu siteleri ziyaret ettiğinizde reklamlar göreceksiniz."
+    "message": "Bu sitelerde reklam engellemeyi devre dışı bıraktınız. Bu sitelerde reklamlar göreceksiniz."
   },
   "options_whitelist_empty_1": {
-    "message": "Hiçbir güvenilir listesindeki web sitesi mevcut değil."
+    "message": "Beyaz listeye aldığınız hiçbir site yok."
   },
   "options_whitelist_empty_2": {
-    "message": "Burada, güvendiğiniz ve içerdiği reklamlara izin vermek istediğiniz web siteleri gösterilecektir."
+    "message": "Güvendiğiniz ve reklam gösterme izni verdiğiniz siteler burada gösterilecek."
   },
   "options_whitelist_notification": {
-    "message": "$website$ güvenilir listesine alındı.",
+    "message": "$website$ beyaz listeye eklendi.",
     "placeholders": {
       "website": {
         "content": "$1",

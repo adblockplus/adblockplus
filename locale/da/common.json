@@ -1,0 +1,14 @@
+{
+  "common_feature_anti_adblock_title": {
+    "message": "Skjul Adblock advarselsmeddelelser"
+  },
+  "common_feature_malware_title": {
+    "message": "Bloker Malware"
+  },
+  "common_feature_privacy_title": {
+    "message": "Bloker yderligere sporing"
+  },
+  "common_feature_social_title": {
+    "message": "Bloker sociale medier ikon sporing"
+  }
+}

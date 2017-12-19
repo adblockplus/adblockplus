@@ -8,6 +8,9 @@
   "options_acceptableAds_description": {
     "message": "الإعلانات المقبولة هي إعلانات غير تطفلية. إنها نقطة الوسط بين حجب الإعلانات ودعم المحتوى الإلكتروني عبر الإنترنت لأنها تدر أرباحًا على مالكي موقع الويب."
   },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>ملاحظة:</strong> لديك <strong>ميزة عدم التعقب (DNT)</strong> معطّلة في إعدادات المتصفّح. لكي تعمل هذه الميزة بشكل صحيح، الرجاء تمكين <strong>DNT</strong> في تفضيلات المتصفّح. <a>تعرف على كيفية تشغيل DNT</a>."
+  },
   "options_acceptableAds_header": {
     "message": "الإعلان المقبول"
   },
@@ -113,11 +116,20 @@
   "options_dialog_import_subscription_title": {
     "message": "اسم قائمة عوامل تصفية"
   },
+  "options_dialog_import_subscription_title_error": {
+    "message": "من فضلك, املأ هذا الحقل"
+  },
   "options_dialog_import_title": {
     "message": "إضافة قائمة عوامل تصفية"
   },
+  "options_dialog_language_other_empty": {
+    "message": "لا يوجد لغات متوفرة."
+  },
   "options_dialog_language_title": {
     "message": "حدد لغة"
+  },
+  "options_dialog_predefined_confirm": {
+    "message": "نعم, استخدم قائمة التصفية هذة"
   },
   "options_dialog_predefined_title": {
     "message": "هل أنت بالتأكيد تريد إضافة قائمة عوامل التصفية هذه؟"
@@ -154,6 +166,9 @@
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "تحديث"
+  },
+  "options_filterList_lastDownload_invalidData": {
+    "message": "فشل الأمر، قائمة التصفية غير صحيحة"
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "فشل الأمر، العنوان ليس صحيح"
@@ -230,6 +245,9 @@
   "options_new_label": {
     "message": "جديد"
   },
+  "options_notification_hide": {
+    "message": "أغلق هذا التنبيه"
+  },
   "options_page_document_title": {
     "message": "إعدادات"
   },
@@ -245,17 +263,11 @@
   "options_protection_social_tooltip": {
     "message": "تتيح رموز مواقع التواصل الاجتماعي التي تظهر في مواقع الويب لك زيارة شبكات مواقع التواصل الاجتماعي لإنشاء بروفايل شخصي لك استنادًا إلى عاداتك في التصفح - حتى عندما لا تنقر فوق تلك الأزرار أو الرموز. يمكن حماية بروفايلك الشخصي من خلال إخفاء تلك الرموز."
   },
-  "options_report_ad": {
-    "message": "هل شاهدت إعلانًا تعتقد أنه ينبغي ألا يظهر هنا؟ <a>الإبلاغ عن إعلان</a>"
-  },
   "options_report_bug": {
     "message": "هل وجدت خطأ برمجيًا؟ <a>أرسل لنا تقريرًا بالخطأ البرمجي</a>"
   },
   "options_report_forum": {
     "message": "هل تريد الدعم من مجتمعنا؟ <a>الانتقال إلى المنتدى</a>"
-  },
-  "options_report_issue": {
-    "message": "هل تفكر في المحتوى أو الوظائف التي نحجبها الآن بالخطأ؟ <a>أبلغ هنا عن الأشياء التي تم حجبها بالخطأ</a>"
   },
   "options_social_description": {
     "message": "هل لديك سؤال أو فكرة جديدة؟ نحن هنا لنساعدك."

@@ -1,4 +1,7 @@
 {
+  "options_acceptableAds_ads_description_1": {
+    "message": "Приемливите реклами не досаждат и не закриват разглежданото съдържание. <a>Прочетете кои са критериите за Приемливи реклами</a>"
+  },
   "options_acceptableAds_ads_label": {
     "message": "Позволи Приемливи реклами"
   },
@@ -15,7 +18,7 @@
     "message": "Отказ"
   },
   "options_customFilter_edit": {
-    "message": "Редактирай филтрите"
+    "message": "Редактирай"
   },
   "options_customFilter_save": {
     "message": "Запиши"
@@ -36,16 +39,28 @@
     "message": "Създадените от вас филтри ще се покажат тук."
   },
   "options_customFilters_title": {
-    "message": "Създаване и редактиране на филтрите"
+    "message": "Създаване и редактиране"
   },
   "options_customize_blockElement": {
     "message": "Показвай „Блокирай елемента“ в контекстното меню"
   },
+  "options_customize_blockElement_tooltip": {
+    "message": "Временно блокиране на досадни елементи в страницата, т.е. картини или анимирани слайдове."
+  },
+  "options_customize_header": {
+    "message": "Нагласяване според страницата"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "Показвай панел „Adblock Plus“ към инструментите за разработка"
   },
+  "options_customize_showDevToolsPanel_tooltip": {
+    "message": "Преглед на блокирани и изключени елементи през панел в инструментите за разработка на браузъра."
+  },
   "options_customize_showNotifications": {
     "message": "Показвай полезни уведомявания"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Изключване на уведомяването в Adblock Plus."
   },
   "options_dialog_about_copyright": {
     "message": "Авторски права © eyeo GmbH, $currentYear$ г.",
@@ -74,11 +89,29 @@
   "options_dialog_import_subscription_location": {
     "message": "Адрес на филтъра"
   },
+  "options_dialog_import_subscription_location_error": {
+    "message": "Въведете действителен адрес"
+  },
   "options_dialog_import_subscription_title": {
     "message": "Име на филтъра"
   },
+  "options_dialog_import_subscription_title_error": {
+    "message": "Моля, попълнете полето"
+  },
   "options_dialog_import_title": {
     "message": "Добавяне на филтър"
+  },
+  "options_dialog_language_other_empty": {
+    "message": "Няма налични езици."
+  },
+  "options_dialog_language_title": {
+    "message": "Избор на език"
+  },
+  "options_dialog_predefined_confirm": {
+    "message": "Да, ползвай филтъра"
+  },
+  "options_dialog_predefined_title": {
+    "message": "Сигурен ли сте, че ще ползвате филтъра?"
   },
   "options_email": {
     "message": "Е-поща:"
@@ -91,6 +124,12 @@
   },
   "options_filterList_column_status": {
     "message": "Състояние"
+  },
+  "options_filterList_column_update": {
+    "message": "Обновен"
+  },
+  "options_filterList_hours": {
+    "message": "преди $hours$ часа"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Провалено — несъвпадаща контролна сума!"
@@ -107,17 +146,26 @@
   "options_filterList_lastDownload_invalidURL": {
     "message": "Провалено — недействителен адрес!"
   },
+  "options_filterList_minutes": {
+    "message": "преди $minutes$ минути"
+  },
   "options_filterList_now": {
     "message": "току-що"
   },
   "options_filterList_source": {
     "message": "източник"
   },
+  "options_filterList_state_active": {
+    "message": "Разрешен"
+  },
   "options_filterList_state_disabled": {
     "message": "Забранен"
   },
   "options_filterList_title": {
     "message": "Филтри"
+  },
+  "options_filterList_update": {
+    "message": "обнови всички"
   },
   "options_filterList_updateNow": {
     "message": "обнови"
@@ -137,14 +185,23 @@
   "options_language_change": {
     "message": "промени"
   },
+  "options_language_empty": {
+    "message": "Нямате езикозависещи филтри."
+  },
   "options_language_header": {
     "message": "Език"
+  },
+  "options_language_tip": {
+    "message": "<strong>СЪВЕТ:</strong> Изберете само нужните ви езици. Изборът на повече забавя блокера на реклами, и с това — скоростта на сърфиране."
   },
   "options_learn_more": {
     "message": "Повече"
   },
   "options_more_filters_header": {
     "message": "Още филтри"
+  },
+  "options_notification_hide": {
+    "message": "Затвори уведомяването"
   },
   "options_page_document_title": {
     "message": "Настройки на Adblock Plus"
@@ -159,7 +216,7 @@
     "message": "Защита на личните ви данни чрез премахване на всички видове проследяване, в т.ч. събирачите на информация."
   },
   "options_protection_social_tooltip": {
-    "message": "Бутоните на социалните мрежи в сайтовете, които посещавате позволяват на социалните мрежи да съставят ваш профил според навиците ви на сърфиране, дори когато не ги натискате. Скриването им ще ви предпази от това."
+    "message": "Социалните бутони позволяват на социалните мрежи да съставят, според посетените от вас сайтове, профил на вашите навици на сърфиране, дори когато не ги натискате. Скриването им ще ви предпази от това."
   },
   "options_report_bug": {
     "message": "Открихте грешка? <a>Изпратете ни доклад за грешка</a>"
@@ -181,6 +238,24 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "ДА, ясно"
+  },
+  "options_whitelist_add": {
+    "message": "Добави сайт"
+  },
+  "options_whitelist_empty_1": {
+    "message": "Нямате изключени сайтове."
+  },
+  "options_whitelist_empty_2": {
+    "message": "Тук са доверените сайтове и тези, в които позволявате показването на реклама."
+  },
+  "options_whitelist_notification": {
+    "message": "„$website$“ е изключен.",
+    "placeholders": {
+      "website": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
   },
   "options_whitelist_placeholder_example": {
     "message": "например $domain$",

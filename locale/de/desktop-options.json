@@ -138,7 +138,7 @@
     "message": "E-Mail:"
   },
   "options_filterList_add": {
-    "message": "NEUE FILTERLISTE HINZUFÜGEN"
+    "message": "+ NEUE FILTERLISTE HINZUFÜGEN"
   },
   "options_filterList_column_name": {
     "message": "Filterlisten"
@@ -213,7 +213,7 @@
     "message": "Finde Hilfe oder nimm Kontakt mit uns auf"
   },
   "options_language_add": {
-    "message": "SPRACHE HINZUFÜGEN"
+    "message": "+ SPRACHE HINZUFÜGEN"
   },
   "options_language_change": {
     "message": "ÄNDERN"
@@ -263,17 +263,11 @@
   "options_protection_social_tooltip": {
     "message": "Die Social-Media-Symbole auf den Websites, die du besuchst, ermöglicht es den Social-Media-Netzwerken, ein Profil basierend auf deinen Surfgewohnheiten zu erstellen - selbst, wenn du sie nicht anklickst. Wenn du diese Symbole ausblendest, kannst du dein Profil schützen."
   },
-  "options_report_ad": {
-    "message": "Siehst du eine Anzeige, die nicht da sein sollte? <a>Eine Anzeige melden</a>"
-  },
   "options_report_bug": {
     "message": "Hast du einen Fehler gefunden? <a>Sende uns einen Fehlerbericht</a>"
   },
   "options_report_forum": {
     "message": "Brauchst du Unterstützung unserer Community? <a>Besuche das Forum</a>"
-  },
-  "options_report_issue": {
-    "message": "Vermutest du, dass Inhalte oder Funktionalitäten von uns fälschlicherweise geblockt werden? <a>Melde fälschlich geblockte Elemente hier</a>"
   },
   "options_social_description": {
     "message": "Hast du eine Frage oder eine neue Idee? Wir sind hier, um zu helfen."

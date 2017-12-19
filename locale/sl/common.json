@@ -1,0 +1,14 @@
+{
+  "common_feature_anti_adblock_title": {
+    "message": "Skrij Adblockova opozorilna sporočila"
+  },
+  "common_feature_malware_title": {
+    "message": "Blokiraj zlonam. programe"
+  },
+  "common_feature_privacy_title": {
+    "message": "Blokiraj dodatno sledenje"
+  },
+  "common_feature_social_title": {
+    "message": "Blokiraj sledenje ikon družbenih omrežij"
+  }
+}

@@ -1,11 +1,53 @@
 {
   "mops_acceptableAds_description": {
-    "message": "אפשור קצת פרסום לא פולשני"
+    "message": "התר במידה פרסום בלתי-פולשני"
+  },
+  "mops_acceptableAds_more": {
+    "message": "למד עוד"
   },
   "mops_action_cancel": {
     "message": "ביטול"
   },
+  "mops_enabled_label": {
+    "message": "אפשר את Adblock Plus על <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "אנא הכנס כותרת"
+  },
+  "mops_error_url": {
+    "message": "אנא הכנס קישור כתובת"
+  },
+  "mops_filterlist_add": {
+    "message": "+ הוסף רשימת מסננים"
+  },
+  "mops_filterlist_add_action": {
+    "message": "הוסף רשימת מסננים"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ הוסף רשימת מסננים מותאמת אישית"
+  },
+  "mops_header": {
+    "message": "הגדרות Adblock Plus"
+  },
+  "mops_subscribe_header": {
+    "message": "הוסף רשימת מסננים מותאמת אישית"
+  },
+  "mops_subscribe_title": {
+    "message": "שם רשימת המסננים"
+  },
+  "mops_subscribe_url": {
+    "message": "כתובת רשימת המסננים"
+  },
   "mops_subscriptions_header": {
-    "message": "הרשמות מסננים"
+    "message": "מנויי מסננים"
+  },
+  "mops_title": {
+    "message": "הגדרות Adblock Plus"
   }
 }

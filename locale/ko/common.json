@@ -1,4 +1,10 @@
 {
+  "common_feature_anti_adblock_title": {
+    "message": "Adblock 경고 메시지 숨기기"
+  },
+  "common_feature_malware_title": {
+    "message": "악성코드 차단"
+  },
   "common_feature_privacy_title": {
     "message": "추가적인 추적 차단"
   },

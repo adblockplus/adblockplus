@@ -3,13 +3,13 @@
     "message": "Anonimna oddaja"
   },
   "issueReporter_anonymousSubmission_warning": {
-    "message": "Kontakta z vami ne bomo mogli vzpostaviti. Prioriteto poročilu pa bomo verjetno znižali."
+    "message": "Stika z vami ne bomo mogli vzpostaviti. Prednost poročilu pa bomo verjetno znižali."
   },
   "issueReporter_commentPage_heading": {
     "message": "Vnesite komentar"
   },
   "issueReporter_comment_description": {
-    "message": "Spodnje polje z besedilom omogoča vnos komentarja, ki nam pomaga razumeti težavo. To je neobvezno, vendar priporočamo, če težava ni očitna. Pred pošiljanjem si lahko še enkrat ogledate podatke poročila."
+    "message": "Spodnje besedilno polje omogoča vnos komentarja, ki nam pomaga razumeti težavo. To je neobvezno, vendar vnos priporočamo, če težava ni očitna. Pred pošiljanjem si lahko še enkrat ogledate podatke poročila."
   },
   "issueReporter_comment_label": {
     "message": "Komentar (neobvezno):"
@@ -24,13 +24,13 @@
     "message": "Počakajte nekaj trenutkov, da Adblock Plus zbere potrebne podatke."
   },
   "issueReporter_dataCollector_heading": {
-    "message": "Dobrodošli v poročevalca težav"
+    "message": "Dobrodošli v poročevalcu težav"
   },
   "issueReporter_doneButton_label": {
     "message": "Končaj"
   },
   "issueReporter_email_description": {
-    "message": "Priporočamo, da vnesete veljaven e-poštni naslov, tako da se na vas lahko obrnemo, če bodo obstajala vprašanja glede poročila. Prav tako nam omogoča prepoznati vaše prispevke in tako določiti prioriteto višje."
+    "message": "Priporočamo, da vnesete veljaven e-poštni naslov, tako da se na vas lahko obrnemo, če bodo obstajala vprašanja glede poročila. Prav tako nam omogoča prepoznati vaše prispevke in tako določiti višjo prednost."
   },
   "issueReporter_email_label": {
     "message": "E-pošta:"
@@ -72,7 +72,7 @@
     "message": "Pokaži podatke poročila"
   },
   "issueReporter_typeSelector_description": {
-    "message": "To okno vas vodi po korakih do oddaje poročila o težavi z Adblock Plus. Najprej izberite vrsto težave, s katero ste se srečali na tej strani:"
+    "message": "To okno vas vodi po korakih do oddaje poročila o težavi z dodatkom Adblock Plus. Najprej izberite vrsto težave, s katero ste se srečali na tej strani:"
   },
   "issueReporter_typeSelector_heading": {
     "message": "Izberite vrsto težave"

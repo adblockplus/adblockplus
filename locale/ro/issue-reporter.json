@@ -1,15 +1,15 @@
 {
   "issueReporter_anonymousSubmission_label": {
-    "message": "Prezentare anonima"
+    "message": "Prezentare anonimă"
   },
   "issueReporter_anonymousSubmission_warning": {
-    "message": "Nu vom fi capabili sa venim inapoi la tine si sa acordam probabil raportul inferior."
+    "message": "Nu vom putea să te contactăm aşa că vom prioritatea semnalării va fi mai mică."
   },
   "issueReporter_commentPage_heading": {
     "message": "Introducere comentariu"
   },
   "issueReporter_comment_description": {
-    "message": "Puteți introduce aici e explicație detaliată care ne poate ajuta să înțelegem mai bine problema (opțional, însă recomandat)."
+    "message": "Puteți introduce aici o explicație detaliată care ne poate ajuta să înțelegem mai bine problema (opțional, însă recomandat)."
   },
   "issueReporter_comment_label": {
     "message": "Comentariu (opțional):"
@@ -27,7 +27,7 @@
     "message": "Bine ați venit la programul de raportat probleme"
   },
   "issueReporter_doneButton_label": {
-    "message": "Terminat"
+    "message": "Efectuat"
   },
   "issueReporter_email_description": {
     "message": "Vă recomandăm să introduceți o adresă validă de email pentru a vă putea contacta cu posibile întrebări despre acest raport. De asemenea, acest lucru ne ajută la recunoașterea contribuțiilor dumneavoastră și la prioritizarea mai bună a acestora."
@@ -57,13 +57,13 @@
     "message": "Raportare problemă"
   },
   "issueReporter_privacyPolicy": {
-    "message": "Politica de confidențialitate"
+    "message": "Politică de confidenţialitate"
   },
   "issueReporter_sendButton_label": {
-    "message": "Trimite raportare"
+    "message": "Trimite raport"
   },
   "issueReporter_sendPage_heading": {
-    "message": "Trimite raportarea"
+    "message": "Trimite raport"
   },
   "issueReporter_sending": {
     "message": "Așteptați până când Adblock Plus trimite datele."

@@ -129,7 +129,7 @@
     "message": "E-mel:"
   },
   "options_filterList_add": {
-    "message": "TAMBAH SENARAI PENAPIS BARU"
+    "message": "+ TAMBAH SENARAI PENAPIS BARU"
   },
   "options_filterList_column_name": {
     "message": "Senarai penapis"
@@ -204,7 +204,7 @@
     "message": "Cari bantuan atau berhubung dengan kami"
   },
   "options_language_add": {
-    "message": "TAMBAH BAHASA"
+    "message": "+ TAMBAH BAHASA"
   },
   "options_language_change": {
     "message": "UBAH"
@@ -254,17 +254,11 @@
   "options_protection_social_tooltip": {
     "message": "Ikon media sosial di laman web yang anda lawati membolehkan rangkaian media sosial untuk membina profil anda berdasarkan tabiat pelayaran anda - walaupun anda tidak klik pada mereka. Menyembunyikan ikon ini boleh melindungi profil anda."
   },
-  "options_report_ad": {
-    "message": "Lihat iklan yang anda rasa tidak patut berada di sana? <a>Laporkan iklan</a>"
-  },
   "options_report_bug": {
     "message": "Menemui bug? <a>Hantar laporan bug kepada kami</a>"
   },
   "options_report_forum": {
     "message": "Mahu sokongan daripada komuniti kami? <a>Pergi ke Forum</a>"
-  },
-  "options_report_issue": {
-    "message": "Fikirkan kandungan atau fungsi salah disekat oleh kami? <a>Laporkan item yang salah disekat di sini</a>"
   },
   "options_social_description": {
     "message": "Ada soalan atau idea baru? Kami di sini untuk membantu."

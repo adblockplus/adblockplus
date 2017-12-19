@@ -1,4 +1,7 @@
 {
+  "options_acceptableAds_ads_description_1": {
+    "message": "Az elfogadható hirdetések nem bosszantanak, és nem zavarják a megtekintett tartalmat. <a>További információ az elfogadható hirdetési feltételekről</a>"
+  },
   "options_acceptableAds_ads_label": {
     "message": "Elfogadható hirdetések engedélyezése"
   },
@@ -10,6 +13,9 @@
   },
   "options_acceptableAds_header": {
     "message": "Elfogadható hirdetések"
+  },
+  "options_acceptableAds_privacy_label": {
+    "message": "Csak akkor engedélyezheti a hirdetéseket, ha harmadik fél nem követ"
   },
   "options_advanced_description": {
     "message": "Az Adblock Plus testreszabása, szűrőlisták hozzáadása és eltávolítása, saját szűrőlisták létrehozása és karbantartása"
@@ -29,6 +35,9 @@
   "options_customFilter_save": {
     "message": "Mentés"
   },
+  "options_customFilters_description": {
+    "message": "Írja be saját egyéni szűrőit, hogy ellenőrizze, hogy az Adblock Plus által engedélyezett vagy blokkolt tartalmak."
+  },
   "options_customFilters_edit_placeholder": {
     "message": "Pl. $filter$",
     "placeholders": {
@@ -37,6 +46,9 @@
         "example": "/ads/track/*"
       }
     }
+  },
+  "options_customFilters_learn": {
+    "message": "Tudja meg, hogyan írhat szűrőlistákat"
   },
   "options_customFilters_start": {
     "message": "Saját szűrőlista elkezdése"
@@ -56,6 +68,9 @@
   "options_customize_blockElement_tooltip": {
     "message": "Zavaró elemek, pl. képek vagy animált diavetítések ideiglenes blokkolása egy weboldalon."
   },
+  "options_customize_header": {
+    "message": "Az oldalon végrehajtott műveletek testreszabása"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "„Adblock Plus” panel megjelenítése a fejlesztői eszközökben"
   },
@@ -67,6 +82,15 @@
   },
   "options_customize_showNotifications_tooltip": {
     "message": "Az Adblock Plus összes értesítésének letiltása."
+  },
+  "options_dialog_about_copyright": {
+    "message": "Copyright © $currentYear$ eyeo GmbH.",
+    "placeholders": {
+      "currentYear": {
+        "content": "2017",
+        "example": "2017"
+      }
+    }
   },
   "options_dialog_about_title": {
     "message": "Az Adblock Plus névjegye"
@@ -185,6 +209,9 @@
   "options_general_description": {
     "message": "Az Adblock Plus által elrejtett és megjelenített elemek meghatározása"
   },
+  "options_help_description": {
+    "message": "Súgó vagy kapcsolatfelvétel"
+  },
   "options_language_add": {
     "message": "+ Nyelv hozzáadása"
   },
@@ -236,17 +263,11 @@
   "options_protection_social_tooltip": {
     "message": "A meglátogatott weboldalakon lévő közösségimédia-ikonok lehetővé teszik a közösségi hálózatoknak egy profil felépítését a böngészési szokásai alapján – még akkor is, ha nem kattint rájuk. Az elrejtésük megvédheti a profilját."
   },
-  "options_report_ad": {
-    "message": "Lát egy hirdetést, amiről azt gondolja, hogy nem kellene megjelennie? <a>Hirdetés jelentése</a>"
-  },
   "options_report_bug": {
     "message": "Hibát talált? <a>Küldjön hibajelentést nekünk</a>"
   },
   "options_report_forum": {
     "message": "Szeretne támogatást a közösségtől? <a>Irány a fórum</a>"
-  },
-  "options_report_issue": {
-    "message": "Úgy gondolja, hogy hibásan blokkolunk egy tartalmat vagy funkciót? <a>Jelentse a hibásan blokkolt elemeket itt</a>"
   },
   "options_social_description": {
     "message": "Kérdése vagy új ötlete van? Azért vagyunk itt, hogy segítsünk."

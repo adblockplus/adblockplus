@@ -8,8 +8,14 @@
   "options_acceptableAds_description": {
     "message": "โฆษณาที่ยอมรับได้คือโฆษณาที่ไม่คุกคาม มีทางสายกลางระหว่างการบล็อคโฆษณาทั้งหมดกับการสนับสนุนคอนเทนต์ออนไลน์เพราะสิ่งเหล่านี้ช่วยสร้างรายได้ให้กับเจ้าของเว็บไซต์"
   },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>หมายเหตุ:</strong> คุณได้ปิด <strong>ห้ามติดตาม(DNT)</strong>ในการตั้งค่าของเบราเซอร์ เพื่อให้คุณสมบัตินี้ทำงานอย่างถูกต้อง โปรดเปิดใช้ <strong>ห้ามติดตาม</strong>ในการตั้งค่าเบราเซอร์ของคุณ <a>ค้นหาวิธีการเปิดใช้ ห้ามติดตาม</a>"
+  },
   "options_acceptableAds_header": {
     "message": "โฆษณาที่ยอมรับได้"
+  },
+  "options_acceptableAds_privacy_label": {
+    "message": "อนุญาตเฉพาะโฆษณาที่ไม่มีการติดตามจากภายนอก"
   },
   "options_advanced_description": {
     "message": "ปรับแต่ง Adblock Plus, เพิ่มหรือลบรายการตัวกรอง, สร้างและจัดการรายการตัวกรองของคุณเอง"
@@ -110,8 +116,14 @@
   "options_dialog_import_subscription_title": {
     "message": "ชื่อรายการตัวกรอง"
   },
+  "options_dialog_import_subscription_title_error": {
+    "message": "โปรดระบุข้อมูลลงในช่อง"
+  },
   "options_dialog_import_title": {
     "message": "เพิ่มรายการตัวกรอง"
+  },
+  "options_dialog_language_other_empty": {
+    "message": "ขณะนี้ไม่มีภาษาเหลือแล้ว"
   },
   "options_dialog_language_title": {
     "message": "เลือกภาษา"
@@ -126,7 +138,7 @@
     "message": "อีเมล:"
   },
   "options_filterList_add": {
-    "message": "เพิ่มรายการตัวกรองใหม่"
+    "message": "+ เพิ่มรายการตัวกรองใหม่"
   },
   "options_filterList_column_name": {
     "message": "รายการตัวกรอง"
@@ -154,6 +166,9 @@
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "กำลังอัพเดต"
+  },
+  "options_filterList_lastDownload_invalidData": {
+    "message": "ล้มเหลว, ไม่ใช่รายการตัวกรองที่ถูกต้อง"
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "ล้มเหลว ไม่มีที่อยู่ที่ถูกต้อง"
@@ -198,7 +213,7 @@
     "message": "ขอความช่วยเหลือหรือติดต่อเรา"
   },
   "options_language_add": {
-    "message": "เพิ่มภาษา"
+    "message": "+ เพิ่มภาษา"
   },
   "options_language_change": {
     "message": "เปลี่ยน"
@@ -230,6 +245,9 @@
   "options_new_label": {
     "message": "ใหม่"
   },
+  "options_notification_hide": {
+    "message": "ปิดการแจ้งเตือน"
+  },
   "options_page_document_title": {
     "message": "การตั้งค่า"
   },
@@ -245,17 +263,11 @@
   "options_protection_social_tooltip": {
     "message": "ไอคอนของโซเชียลมีเดียบนเว็บไซต์ที่คุณเข้าทำให้เครือข่ายโซเชียลมีเดียสามารถสร้างโปรไฟล์ของคุณตามพฤติกรรมการท่องเว็บของคุณได้ แม้ว่าคุณจะไม่ได้คลิไอคอนเหล่านั้น การซ่อนไอคอนเหล่านี้สามารถปกป้องโปรไฟล์ของคุณได้"
   },
-  "options_report_ad": {
-    "message": "เห็นโฆษณาที่คุณคิดว่าไม่ควรปรากฏหรือไม่? <a>แจ้งบล็อคโฆษณา</a>"
-  },
   "options_report_bug": {
     "message": "พบบั๊กใช่หรือไม่? <a>แจ้งบั๊กกับเรา</a>"
   },
   "options_report_forum": {
     "message": "ต้องการสนับสนุนจากชุมชนของเรา? <a>ไปที่ฟอรัม</a>"
-  },
-  "options_report_issue": {
-    "message": "คิดว่ามีคอนเทนต์หรือฟังก์ชั่นใช้งานที่เราบล็อคอย่างไม่ถูกต้องหรือไม่? <a>แจ้งสิ่งที่ถูกบล็อคอย่างไม่ถูกต้องได้ที่นี่</a>"
   },
   "options_social_description": {
     "message": "มีคำถามหรือไม่ไอเดียใหม่ใช่หรือไม่? เราพร้อมช่วยเหลือคุณ"

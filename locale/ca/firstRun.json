@@ -3,22 +3,22 @@
     "message": "Disponible per a Android i iOS"
   },
   "firstRun_abbButtonTitle": {
-    "message": "Obtingues un Adblock Browser aquí"
+    "message": "Obtén l'Adblock Browser aquí"
   },
   "firstRun_abbPromotionHeadline": {
-    "message": "Tens un telèfon intel·ligent o tauleta?"
+    "message": "Teniu un telèfon intel·ligent o tauleta?"
   },
   "firstRun_acceptableAdsExplanation": {
     "message": "Ens agradaria encoratjar els llocs web a utilitzar d'ara en endavant publicitat no intrusiva. És per això que hem establert uns <a>patrons estrictes</a> per identificar els anuncis acceptables, els quals es mostren a sota de les preferències per defecte. Si encara voleu bloquejar tots els anuncis podeu <a>desactivar</a> això en pocs segons."
   },
   "firstRun_acceptableAdsHeadline": {
-    "message": "Els anuncis molestos ara es bloquejaran"
+    "message": "Els anuncis molestos seran bloquejats"
   },
   "firstRun_contributor_credits": {
-    "message": "Reconeiximents als co·laboradors"
+    "message": "Reconeiximent als co·laboradors"
   },
   "firstRun_donate": {
-    "message": "Feu un donatiu"
+    "message": "fes una donació"
   },
   "firstRun_donate_label": {
     "message": "Recolzeu el nostre projecte"
@@ -27,10 +27,10 @@
     "message": "Sembla que un problema ha causat que tots els filtres es suprimeixin, però hem pogut restaurar una còpia de seguretat. Durant aquest procés, també s'ha restaurat els filtres i la configuració d'anuncis acceptable. Verifiqueu que la configuració actual és la desitjada, mitjançant les <a>«Preferències del filtre»</a> de l'Adblock Plus."
   },
   "firstRun_share": {
-    "message": "Digueu-ho a les vostres amistats"
+    "message": "Digueu-ho als vostres amics"
   },
   "firstRun_share_headline": {
-    "message": "<a>Dóneu-nos un cop de mà</a> al fer la xarxa un lloc millor"
+    "message": "<a>Dóneu-nos un cop de mà</a> per fer la xarxa un lloc millor"
   },
   "firstRun_title": {
     "message": "S'ha instal·lat l'Adblock Plus"

@@ -1,6 +1,6 @@
 {
   "options_acceptableAds_ads_description_1": {
-    "message": "Lubatavad reklaamid ei ole tüütud ega sega vaatatavat sisu. <a>Loe Lubatavate reklaamide tingimuste kohta lähemalt</a>"
+    "message": "Lubatavad reklaamid ei ole tüütud ega sega vaadatavat sisu. <a>Loe Lubatavate reklaamide tingimuste kohta lähemalt</a>"
   },
   "options_acceptableAds_ads_label": {
     "message": "Luba Lubatavad reklaamid"
@@ -9,7 +9,7 @@
     "message": "Lubatavad reklaamid on mitte-pealetükkivad reklaamid. Need on kompromissiks reklaamide blokeerimise ja veebisisu toetamise vahel, sest need toovad veebisaitide omanikele tulu."
   },
   "options_acceptableAds_dnt_notification": {
-    "message": "<strong>Pane tähele:</strong> Sinu veebilehitseja sätetes on <strong>Ära jälgi (DNT)</strong> keelatud. Selle funktsiooni korralikuks töötamiseks palun luba oma veebilehitseja eelistustes <strong>DNT</strong>. <a>Uuri järele, kuidas DNT lubada</a>."
+    "message": "<strong>Pane tähele:</strong> Sinu veebilehitseja sätetes on <strong>Jälgimisvastane kaitse (DNT)</strong> keelatud. Selle funktsiooni korralikuks töötamiseks palun luba oma veebilehitseja eelistustes <strong>DNT</strong>. <a>Uuri järele, kuidas DNT lubada</a>."
   },
   "options_acceptableAds_header": {
     "message": "Lubatavad reklaamid"
@@ -66,7 +66,7 @@
     "message": "Näita paremklõpsu menüüs 'Blokeeri element'"
   },
   "options_customize_blockElement_tooltip": {
-    "message": "Ajutiselt blokeeri veebilehel tüütud elemendid, nt, pildid või animeeritud esitlused."
+    "message": "Ajutiselt blokeeri veebilehel tüütud elemendid, nt. pildid või animeeritud esitlused."
   },
   "options_customize_header": {
     "message": "Kohanda lehekülgedel olevaid tegevusi"
@@ -252,7 +252,7 @@
     "message": "Adblock Plusi sätted"
   },
   "options_page_title": {
-    "message": "Seaded"
+    "message": "Sätted"
   },
   "options_privacy_header": {
     "message": "Privaatsus & turvalisus"
@@ -263,17 +263,11 @@
   "options_protection_social_tooltip": {
     "message": "Sotsiaalvõrgustike ikoonid külastatavatel veebisaitidel võimaldavad sotsiaalmeedia võrgustikel koostada sinu sirvimisharjumustel põhineva profiili - isegi kui sa neil ei klõpsa. Nende ikoonide peitmine võib su profiili kaitsta."
   },
-  "options_report_ad": {
-    "message": "Näed reklaami, mis sinu arvates ei tohiks seal olla? <a>Teavita reklaamist</a>"
-  },
   "options_report_bug": {
     "message": "Leidsid vea? <a>Saada meile vearaport</a>"
   },
   "options_report_forum": {
     "message": "Tahad meie kogukonnalt abi? <a>Mine foorumisse</a>"
-  },
-  "options_report_issue": {
-    "message": "Arvad, et sisu või funktsionaalsus on meie poolt valesti blokeeritud? <a>Saada valesti blokeeritud elementide raport</a>"
   },
   "options_social_description": {
     "message": "On sul küsimus või uus idee? Me oleme siin, et aidata."

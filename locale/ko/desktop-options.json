@@ -23,11 +23,23 @@
   "options_customFilter_cancel": {
     "message": "취소"
   },
+  "options_customFilter_edit": {
+    "message": "필터 편집"
+  },
   "options_customFilter_save": {
     "message": "저장"
   },
   "options_customFilters_description": {
     "message": "Adblock Plus가 허용하거나 차단할 콘텐츠를 추가로 제어하려면 사용자 설정 필터를 작성하십시오."
+  },
+  "options_customFilters_edit_placeholder": {
+    "message": "예: $filter$",
+    "placeholders": {
+      "filter": {
+        "content": "$1",
+        "example": "/ads/track/*"
+      }
+    }
   },
   "options_customFilters_learn": {
     "message": "필터 목록 작성하는 방법 알아보기"
@@ -104,6 +116,9 @@
   "options_dialog_language_title": {
     "message": "언어 선택"
   },
+  "options_dialog_predefined_confirm": {
+    "message": "예, 이 필터 목록을 사용합니다"
+  },
   "options_dialog_predefined_title": {
     "message": "이 필터 목록을 추가하길 원하십니까?"
   },
@@ -111,7 +126,7 @@
     "message": "이메일:"
   },
   "options_filterList_add": {
-    "message": "새 필터 목록 추가"
+    "message": "+ 새 필터 목록 추가"
   },
   "options_filterList_column_name": {
     "message": "필터 목록"
@@ -183,7 +198,7 @@
     "message": "도움말을 참조하시거나 저희에게 연락주십시오"
   },
   "options_language_add": {
-    "message": "언어 추가"
+    "message": "+ 언어 추가"
   },
   "options_language_change": {
     "message": "변경"
@@ -215,6 +230,9 @@
   "options_new_label": {
     "message": "신규"
   },
+  "options_notification_hide": {
+    "message": "알림 닫기"
+  },
   "options_page_document_title": {
     "message": "설정"
   },
@@ -230,17 +248,11 @@
   "options_protection_social_tooltip": {
     "message": "방문한 웹사이트의 소셜 미디어 아이콘을 통해 소셜 미디어 네트워크는 사용자의 브라우징 습관을 바탕으로 사용자의 프로필을 구축합니다. 사용자가 클릭하지 않아도 이 작업은 진행됩니다. 이러한 아이콘을 숨김으로써 사용자의 프로필을 보호할 수 있습니다."
   },
-  "options_report_ad": {
-    "message": "숨겨야 할 광고가 표시되고 있습니까? <a>광고 신고하기</a>"
-  },
   "options_report_bug": {
     "message": "버그를 찾으셨습니까? <a>버그 리포트 보내기</a>"
   },
   "options_report_forum": {
     "message": "커뮤니티의 지원이 필요하십니까? <a>포럼으로 가기</a>"
-  },
-  "options_report_issue": {
-    "message": "콘텐츠 또는 기능이 저희로 인해 잘못 차단되었습니까? <a>이곳에서 잘못 차단된 항목을 신고하기</a>"
   },
   "options_social_description": {
     "message": "질문이나 새로운 아이디어가 있습니까? 기꺼이 도와드리겠습니다."
@@ -281,6 +293,15 @@
       "website": {
         "content": "$1",
         "example": "example.com"
+      }
+    }
+  },
+  "options_whitelist_placeholder_example": {
+    "message": "예: $domain$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "www.example.com"
       }
     }
   }

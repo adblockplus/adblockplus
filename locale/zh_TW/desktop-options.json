@@ -123,7 +123,7 @@
     "message": "電子郵件："
   },
   "options_filterList_add": {
-    "message": "添加一個新的過濾列表"
+    "message": "+ 添加一個新的過濾列表"
   },
   "options_filterList_column_name": {
     "message": "過濾列表"
@@ -195,7 +195,7 @@
     "message": "尋求幫助或聯繫我們"
   },
   "options_language_add": {
-    "message": "添加語言"
+    "message": "+ 添加語言"
   },
   "options_language_change": {
     "message": "更改"
@@ -242,17 +242,11 @@
   "options_protection_social_tooltip": {
     "message": "您訪問的網站上的社交媒體圖示允許社交媒體網路根據您的瀏覽習慣建立您的個人資料記錄——即使您沒有點擊它們。隱藏這些圖示可以保護您的個人資料。"
   },
-  "options_report_ad": {
-    "message": "看到您認為不應該出現的廣告？<a>舉報廣告</a>"
-  },
   "options_report_bug": {
     "message": "發現錯誤？<a>向我們發送錯誤報告</a>"
   },
   "options_report_forum": {
     "message": "想要我們社區的支持？<a>前往論壇</a>"
-  },
-  "options_report_issue": {
-    "message": "認為內容或功能被我們錯誤地屏蔽？<a>在這里報告被錯誤地屏蔽的項目</a>"
   },
   "options_social_description": {
     "message": "有問題還是新想法？我們來幫忙。"

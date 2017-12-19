@@ -111,7 +111,7 @@
     "message": "Eメール:"
   },
   "options_filterList_add": {
-    "message": "新規フィルターリストを追加"
+    "message": "+ 新規フィルターリストを追加"
   },
   "options_filterList_column_name": {
     "message": "フィルターリスト"
@@ -180,16 +180,16 @@
     "message": "Adblock Plus がウェブサイトで表示・非表示にするものを特定します"
   },
   "options_help_description": {
-    "message": "ヘルフ゜を見るか、当社までお問い合わせください"
+    "message": "ヘルプを見るか、当社までお問い合わせください"
   },
   "options_language_add": {
-    "message": "言語の追加"
+    "message": "+ 言語の追加"
   },
   "options_language_change": {
     "message": "変更"
   },
   "options_language_description": {
-    "message": "ウェブサイトを閲覧する通常の言語で Adblock Plus を最適化。"
+    "message": "あなたがよく閲覧するウェブサイトの言語に合わせて Adblock Plus を最適化。"
   },
   "options_language_empty": {
     "message": "言語特定のフィルターが設定されていません。"
@@ -233,17 +233,11 @@
   "options_protection_social_tooltip": {
     "message": "閲覧したウェブサイトにあるソーシャルメディア アイコンでは、このをクリックしない場合でも、ユーザーの習慣的な閲覧履歴に基づいてプロファイルを構築します。このようなアイコン を非表示して、自分のプロファイルを守ることができます。"
   },
-  "options_report_ad": {
-    "message": "ここにあるべきではないと思われる広告が表示される場合<a>広告を報告する</a>"
-  },
   "options_report_bug": {
     "message": "バグがあった場合<a>バグ報告を送信</a>してください"
   },
   "options_report_forum": {
     "message": "当社コミュニティのサポートを得るには<a>フォーラムに行く</a>"
-  },
-  "options_report_issue": {
-    "message": "コンテンツまたは機能が当社によって間違ってブロックされている場合間違ってブロックされた項目をここ<a>から報告する</a>"
   },
   "options_social_description": {
     "message": "当社へのご質問やご提案について是非お役立てください。"
@@ -261,7 +255,7 @@
     "message": "全般"
   },
   "options_tab_help": {
-    "message": "ヘルフ゜"
+    "message": "ヘルプ"
   },
   "options_tab_whitelist": {
     "message": "ホワイトリストに登録されているウェブサイト"

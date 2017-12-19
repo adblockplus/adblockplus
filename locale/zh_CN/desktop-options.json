@@ -263,17 +263,11 @@
   "options_protection_social_tooltip": {
     "message": "您访问的网站上的社交媒体图标允许社交媒体网络根据您的浏览习惯建立您的个人资料记录——即使您没有点击它们。隐藏这些图标可以保护您的个人资料。"
   },
-  "options_report_ad": {
-    "message": "看到您认为不应该出现的广告？<a>举报广告</a>"
-  },
   "options_report_bug": {
     "message": "发现错误？<a>向我们发送错误报告</a>"
   },
   "options_report_forum": {
     "message": "想要我们社区的支持？<a>前往论坛</a>"
-  },
-  "options_report_issue": {
-    "message": "认为内容或功能被我们错误地屏蔽？<a>在这里报告被错误地屏蔽的项目</a>"
   },
   "options_social_description": {
     "message": "有问题还是新想法？我们来帮忙。"

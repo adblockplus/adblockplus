@@ -27,7 +27,7 @@
     "message": "Sorun bildiriciye hoş geldiniz"
   },
   "issueReporter_doneButton_label": {
-    "message": "Bitir"
+    "message": "Bitti"
   },
   "issueReporter_email_description": {
     "message": "Sizi, raporunuz hakkında sorularımız olursa sizinle iletişime geçebilmemiz için geçerli bir e-posta adresi girmeye teşvik ediyoruz. Bu aynı zamanda katılımlarınızı hatırlamamızı ve önceliklerini yüksek olarak ayarlamamızı sağlar."
@@ -66,7 +66,7 @@
     "message": "Bildirimi gönder"
   },
   "issueReporter_sending": {
-    "message": "Lüftfen Adblock Plus bildirimi gönderirken bekleyin."
+    "message": "Lütfen Adblock Plus bildirimi gönderirken bekleyin."
   },
   "issueReporter_showData_label": {
     "message": "Bildirim verisini göster"

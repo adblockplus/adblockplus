@@ -129,7 +129,7 @@
     "message": "E-mail:"
   },
   "options_filterList_add": {
-    "message": "PŘIDAT NOVÝ SEZNAM FILTRŮ"
+    "message": "+ PŘIDAT NOVÝ SEZNAM FILTRŮ"
   },
   "options_filterList_column_name": {
     "message": "Seznamy filtrů"
@@ -204,7 +204,7 @@
     "message": "Vyhledejte si nápovědu nebo nás kontaktujte"
   },
   "options_language_add": {
-    "message": "PŘIDAT JAZYK"
+    "message": "+ PŘIDAT JAZYK"
   },
   "options_language_change": {
     "message": "ZMĚNIT"
@@ -254,17 +254,11 @@
   "options_protection_social_tooltip": {
     "message": "Ikony sociálních médií na vámi navštívených webových stránkách sociálním sítím umožňují, aby si na základě vašich zvyků procházení vytvořily profil - a to i když na ně neklikáte. Skrytím těchto ikon lze chránit váš profil."
   },
-  "options_report_ad": {
-    "message": "Vidíte reklamu, o které si myslíte, že by tam neměla být? <a>Nahlásit reklamu</a>"
-  },
   "options_report_bug": {
     "message": "Našli jste chybu? <a>Zašlete nám zprávu o chybě</a>"
   },
   "options_report_forum": {
     "message": "Chcete podpořit naši komunitu? <a>Přejít na fórum</a>"
-  },
-  "options_report_issue": {
-    "message": "Myslíte si, že obsah nebo funkčnost blokujeme nesprávně? <a>Zde můžete nahlásit nesprávně blokované položky</a>"
   },
   "options_social_description": {
     "message": "Máte dotaz nebo nový nápad? Jsme tu pro vás."

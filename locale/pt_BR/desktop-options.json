@@ -138,7 +138,7 @@
     "message": "E-mail:"
   },
   "options_filterList_add": {
-    "message": "+ ADICIONAR UMA NOVA LISTA DE FILTROS"
+    "message": "+ Adicionar uma nova lista de filtros"
   },
   "options_filterList_column_name": {
     "message": "Listas de filtros"
@@ -213,7 +213,7 @@
     "message": "Encontre ajuda ou entre em contato conosco"
   },
   "options_language_add": {
-    "message": "ADICIONAR UM IDIOMA"
+    "message": "+ ADICIONAR UM IDIOMA"
   },
   "options_language_change": {
     "message": "ALTERAR"
@@ -263,17 +263,11 @@
   "options_protection_social_tooltip": {
     "message": "Os ícones das redes sociais nos sites que visita permitem que o sistema das redes sociais crie um perfil com base nos seus hábitos de navegação - mesmo quando não clica neles. Ocultar estes ícones pode proteger o seu perfil."
   },
-  "options_report_ad": {
-    "message": "Viu um anúncio que acha que não devia estar aqui? <a>Comunique um erro</a>"
-  },
   "options_report_bug": {
     "message": "Encontrou um erro? <a>Envie um relatório de erros</a>"
   },
   "options_report_forum": {
     "message": "Quer ajuda da nossa comunidade? <a>Aceda ao Fórum</a>"
-  },
-  "options_report_issue": {
-    "message": "Acha que conteúdo ou funcionalidades estão sendo incorretamente bloqueados por nós? <a>Comunique itens incorretamente bloqueados aquí</a>"
   },
   "options_social_description": {
     "message": "Tem uma pergunta ou sugestão? Estamos aqui para ajudar."

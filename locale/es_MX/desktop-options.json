@@ -12,7 +12,7 @@
     "message": "<strong>Nota:</strong> Tienes desactivada la función <strong>No realizar seguimiento (DNT)</strong> en los ajustes de tu navegador. Para que esta funcione correctamente, activa <strong>DNT</strong> en las preferencias de tu navegador. <a>Descubre cómo activar DNT</a>"
   },
   "options_acceptableAds_header": {
-    "message": "ANUNCIOS ACEPTABLES"
+    "message": "Anuncios Aceptables"
   },
   "options_acceptableAds_privacy_label": {
     "message": "Permitir solo anuncios sin seguimiento por parte de terceros"
@@ -27,7 +27,7 @@
     "message": "Eliminar"
   },
   "options_customFilter_cancel": {
-    "message": "CANCELAR"
+    "message": "Cancelar"
   },
   "options_customFilter_edit": {
     "message": "Editar filtros"
@@ -138,7 +138,7 @@
     "message": "Correo electrónico:"
   },
   "options_filterList_add": {
-    "message": "+ AGREGAR UNA NUEVA LISTA DE FILTROS"
+    "message": "+ Agregar una nueva lista de filtros"
   },
   "options_filterList_column_name": {
     "message": "Listas de filtros"
@@ -204,7 +204,7 @@
     "message": "Acerca de Adblock Plus"
   },
   "options_footer_contribute": {
-    "message": "CONTRIBUIR"
+    "message": "Contribuir"
   },
   "options_general_description": {
     "message": "Determina qué muestra y oculta Adblock Plus en páginas web"
@@ -213,7 +213,7 @@
     "message": "Encuentra ayuda o contacta con nosotros"
   },
   "options_language_add": {
-    "message": "+ AGREGAR UN IDIOMA"
+    "message": "+ Agregar un idioma"
   },
   "options_language_change": {
     "message": "CAMBIAR"
@@ -263,17 +263,11 @@
   "options_protection_social_tooltip": {
     "message": "Los íconos de redes sociales en las páginas web que visitas permiten que las redes sociales construyan un perfil tuyo en base a tus hábitos de navegación, incluso cuando no haces clic en ellos. Ocultar estos íconos puede proteger tu perfil."
   },
-  "options_report_ad": {
-    "message": "¿Ves algún anuncio que crees que no debería aparecer? <a>Informa sobre un anuncio</a>"
-  },
   "options_report_bug": {
     "message": "¿Encontraste un error? <a>Envíanos un informe de error</a>"
   },
   "options_report_forum": {
     "message": "¿Deseas obtener ayuda de nuestra comunidad? <a>Accede al foro</a>"
-  },
-  "options_report_issue": {
-    "message": "¿Crees que estamos bloqueando incorrectamente contenido o funcionalidad? <a>Informa sobre elementos bloqueados incorrectamente aquí</a>"
   },
   "options_social_description": {
     "message": "¿Tienes alguna pregunta o idea nueva? Estamos aquí para ayudarte."

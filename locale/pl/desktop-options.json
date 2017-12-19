@@ -15,7 +15,7 @@
     "message": "Akceptowalne reklamy"
   },
   "options_acceptableAds_privacy_label": {
-    "message": "Zezwalać jedynie na reklamy nie śledzone przez podmioty zewnętrzne"
+    "message": "Zezwalaj tylko na reklamy bez śledzenia przez podmioty zewnętrzne"
   },
   "options_advanced_description": {
     "message": "Dostosuj Adblock Plus, dodaj lub usuń zestawy filtrów, twórz i utrzymuj własne zestawy filtrów"
@@ -263,17 +263,11 @@
   "options_protection_social_tooltip": {
     "message": "Ikony mediów społecznościowych znajdujące się w odwiedzanych witrynach internetowych umożliwiaj sieciom mediów społecznościowych na budowanie Twojego profilu w oparciu o Twoje nawyki przeglądania – nawet, jeśli ich nie klikasz. Ukrycie tych ikon może ochronić Twój profil."
   },
-  "options_report_ad": {
-    "message": "Widzisz reklamę, która według ciebie nie powinna tam być? <a>Zgłoś ją</a>"
-  },
   "options_report_bug": {
     "message": "Widzisz błąd? <a>Wyślij do nas zgłoszenie</a>"
   },
   "options_report_forum": {
     "message": "Potrzebujesz pomocy od naszej społeczności? <a>Przejdź do forum</a>"
-  },
-  "options_report_issue": {
-    "message": "Sądzisz, że treści lub funkcjonalności są niepoprawnie przez nas blokowane? <a>Zgłoś niepoprawnie blokowane elementy tutaj</a>"
   },
   "options_social_description": {
     "message": "Masz pytanie lub nowy pomysł? Jesteśmy tutaj po to, aby pomóc."

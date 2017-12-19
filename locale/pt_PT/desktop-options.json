@@ -263,17 +263,11 @@
   "options_protection_social_tooltip": {
     "message": "Os ícones das redes sociais nos sites Web que visita permitem que as redes das redes sociais criem um perfil seu com base nos seus hábitos de navegação - mesmo quando não clica neles. Ocultar estes ícones pode proteger o seu perfil."
   },
-  "options_report_ad": {
-    "message": "Viu um anúncio que considera que não devia estar aqui? <a>Comunique um erro</a>"
-  },
   "options_report_bug": {
     "message": "Encontrou um erro? <a>Envie um relatório de erros</a>"
   },
   "options_report_forum": {
     "message": "Quer ajuda da nossa comunidade? <a>Aceda ao Fórum</a>"
-  },
-  "options_report_issue": {
-    "message": "Considera que conteúdo ou funcionalidades estão a ser incorretamente bloqueadas por nós? <a>Comunique itens incorretamente bloqueados aquí</a>"
   },
   "options_social_description": {
     "message": "Tem uma questão ou nova ideia? Estamos aqui para ajudar."

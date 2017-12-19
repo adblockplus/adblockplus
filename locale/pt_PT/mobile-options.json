@@ -9,7 +9,7 @@
     "message": "CANCELAR"
   },
   "mops_enabled_label": {
-    "message": "Habilitar o Adblock Plus no <strong>$domain$</strong>",
+    "message": "Ativar o Adblock Plus no <strong>$domain$</strong>",
     "placeholders": {
       "domain": {
         "content": "$1",
@@ -21,7 +21,7 @@
     "message": "Introduza um título, por favor"
   },
   "mops_error_url": {
-    "message": "Por favor, introduza um URL"
+    "message": "Introduza um URL, por favor"
   },
   "mops_filterlist_add": {
     "message": "+ Adicionar uma lista de filtros"

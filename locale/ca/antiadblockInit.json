@@ -1,8 +1,8 @@
 {
   "notification_antiadblock_message": {
-    "message": "Aquest lloc ha estat conegut per mostrar missatges dirigides als usuaris Adblock Plus. Voleu Adblock Plus per ocultar missatges apuntats?"
+    "message": "S'ha detectat que aquest lloc mostra missatges orientats als usuaris d'Adblock Plus. Voleu que Adblock Plus oculti missatges orientats?"
   },
   "notification_antiadblock_title": {
-    "message": "Amagar missatges apuntats?"
+    "message": "Voleu amagar els missatges orientats?"
   }
 }

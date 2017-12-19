@@ -1,6 +1,6 @@
 {
   "options_acceptableAds_ads_description_1": {
-    "message": "Los anuncios aceptables no son molestos y no interfieren con el contenido que estás viendo. <a>Leer más sobre los criterios de Anuncios Aceptables</a>"
+    "message": "Los anuncios aceptables no son molestos y no interfieren con el contenido que estás viendo. <a>Lee más acerca de los criterios de Anuncios Aceptables</a>"
   },
   "options_acceptableAds_ads_label": {
     "message": "Permitir anuncios aceptables"
@@ -48,7 +48,7 @@
     }
   },
   "options_customFilters_learn": {
-    "message": "Aprender a escribir listas de filtros"
+    "message": "Aprende a escribir listas de filtros"
   },
   "options_customFilters_start": {
     "message": "Comenzar a escribir mi lista de filtros"
@@ -150,7 +150,7 @@
     "message": "Última actualización"
   },
   "options_filterList_description": {
-    "message": "Cada función de ajustes de Adblock Plus va sujeto a una lista de filtros. Abajo están las listas de filtros que corresponden a todos tus ajustes de Adblock Plus. Puedes agregar también filtros adicionales creados y mantenidos por nuestra comunidad de confianza."
+    "message": "Cada función de ajustes de Adblock Plus va sujeta a una lista de filtros. Abajo están las listas de filtros que corresponden a todos tus ajustes de Adblock Plus. Puedes agregar también filtros adicionales creados y mantenidos por nuestra comunidad de confianza."
   },
   "options_filterList_empty": {
     "message": "No ha agregado ninguna lista de filtros a Adblock Plus. Las listas de filtros que agregues se mostrarán aquí."
@@ -263,17 +263,11 @@
   "options_protection_social_tooltip": {
     "message": "Los botones de redes sociales en los sitios web que visitas permiten que las redes sociales construyan un perfil de ti basado en tus hábitos de navegación - incluso cuando no has hecho clic en ellos. Ocultando estos botones puedes proteger tu perfil."
   },
-  "options_report_ad": {
-    "message": "¿Ves un anuncio que crees que no debería estar allí? <a>Reportar un anuncio</a>"
-  },
   "options_report_bug": {
     "message": "¿Encontraste un error? <a>Envíanos un informe de error</a>"
   },
   "options_report_forum": {
     "message": "¿Quieres soporte desde nuestra comunidad? <a>Ir al Foro</a>"
-  },
-  "options_report_issue": {
-    "message": "¿Crees que hay contenido o funciones que están siendo bloqueadas incorrectamente por nosotros? <a>Reporta los elementos incorrectamente bloqueados aquí</a>"
   },
   "options_social_description": {
     "message": "¿Tienes una pregunta o una nueva idea? Estamos aquí para ayudar."

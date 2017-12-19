@@ -12,10 +12,10 @@
     "message": "Gostamos de incentivar os sítios web de publicidade a utilizar anúncios não intrusivos. Foi por essa razão que estabelecemos <a>políticas restritas</a> para identificar os anúncios aceitáveis e que são mostrados em definições padrão. No entanto, se você quiser bloquear todos os anúncios, pode <a>desativar</a> essa opção facilmente."
   },
   "firstRun_acceptableAdsHeadline": {
-    "message": "A publicidade será bloqueada"
+    "message": "Os anúncios irritantes serão agora bloqueados"
   },
   "firstRun_contributor_credits": {
-    "message": "Créditos"
+    "message": "Créditos de colaboradores"
   },
   "firstRun_donate": {
     "message": "donativos"

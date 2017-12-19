@@ -1,0 +1,14 @@
+{
+  "common_feature_anti_adblock_title": {
+    "message": "הסתר הודעות אזהרה של Adblock"
+  },
+  "common_feature_malware_title": {
+    "message": "חסום נוזקה"
+  },
+  "common_feature_privacy_title": {
+    "message": "חסום מעקב נוסף"
+  },
+  "common_feature_social_title": {
+    "message": "חסום מעקב של צלמיות מדיה חברתית"
+  }
+}

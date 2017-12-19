@@ -6,7 +6,7 @@
     "message": "Daha fazla bilgi"
   },
   "mops_action_cancel": {
-    "message": "İPTAL ET"
+    "message": "Vazgeç"
   },
   "mops_enabled_label": {
     "message": "<strong>$domain$</strong> sitesinde Adblock Plus kullanılsın",
@@ -24,30 +24,30 @@
     "message": "Lütfen URL bağlantısı girin"
   },
   "mops_filterlist_add": {
-    "message": "+ Filtre listesi ekleyin"
+    "message": "+ Süzme listesi ekle"
   },
   "mops_filterlist_add_action": {
-    "message": "FİLTRE LİSTESİ EKLEYİN"
+    "message": "Süzme listesi ekle"
   },
   "mops_filterlist_add_url": {
     "message": "+ Özelleştirilmiş süzme listesi ekle"
   },
   "mops_header": {
-    "message": "Adblock Plus Ayarları"
+    "message": "Adblock Plus ayarları"
   },
   "mops_subscribe_header": {
     "message": "Özelleştirilmiş süzme listesi ekle"
   },
   "mops_subscribe_title": {
-    "message": "Filtre listesi adı"
+    "message": "Süzgeç listesi adı"
   },
   "mops_subscribe_url": {
-    "message": "Filtre listesi URL'si"
+    "message": "Süzme listesi URL'si"
   },
   "mops_subscriptions_header": {
     "message": "Süzgeç abonelikleri"
   },
   "mops_title": {
-    "message": "Adblock Plus Ayarları"
+    "message": "Adblock Plus ayarları"
   }
 }

@@ -135,7 +135,7 @@
     "message": "Email:"
   },
   "options_filterList_add": {
-    "message": "THÊM MỘT DANH SÁCH LỌC MỚI"
+    "message": "+ THÊM MỘT DANH SÁCH LỌC MỚI"
   },
   "options_filterList_column_name": {
     "message": "Danh sách lọc"
@@ -210,7 +210,7 @@
     "message": "Tìm kiếm trợ giúp hoặc liên hệ với chúng tôi"
   },
   "options_language_add": {
-    "message": "THÊM NGÔN NGỮ"
+    "message": "+ THÊM NGÔN NGỮ"
   },
   "options_language_change": {
     "message": "THAY ĐỔI"
@@ -260,17 +260,11 @@
   "options_protection_social_tooltip": {
     "message": "Các biểu tượng mạng xã hội trên các trang web mà bạn ghé thăm cho phép các mạng xã hội tạo ra hồ sơ về bạn dựa trên những thói quen duyệt web của bạn - ngay cả khi bạn không bấm vào chúng. Ẩn những biểu tượng này đi có thể bảo vệ hồ sơ của bạn."
   },
-  "options_report_ad": {
-    "message": "Xem một quảng cáo mà bạn cho rằng không được có tại đó? <a>Báo cáo một quảng cáo</a>"
-  },
   "options_report_bug": {
     "message": "Tìm thấy lỗi? <a>Gửi cho chúng tôi báo cáo lỗi</a>"
   },
   "options_report_forum": {
     "message": "Muốn có hỗ trợ từ cộng đồng của chúng tôi? <a>Đi tới Diễn đàn</a>"
-  },
-  "options_report_issue": {
-    "message": "Suy nghĩ nội dung hoặc chức năng đang bị chúng tôi chặn không đúng? <a>Báo cáo các mục bị chặn không đúng ở đây</a>"
   },
   "options_social_description": {
     "message": "Có thắc mắc hay ý tưởng mới? Chúng tôi luôn có mặt để hỗ trợ."

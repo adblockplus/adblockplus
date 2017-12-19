@@ -14,6 +14,9 @@
   "options_acceptableAds_header": {
     "message": "Prijateľné reklamy"
   },
+  "options_acceptableAds_privacy_label": {
+    "message": "Povolené iba reklamy bez sledovania treťou stranou"
+  },
   "options_advanced_description": {
     "message": "Prispôsobiť Adblock Plus, pridať alebo odstrániť zoznamy filtrov, vytvoriť a udržiavať vlastné zoznamy filtrov"
   },
@@ -260,17 +263,11 @@
   "options_protection_social_tooltip": {
     "message": "Ikony sociálnych médií na navštívených webových stránkach umožňujú sociálnym sieťam vytvoriť si profil na základe vašich zvykov prehliadania - aj keď na ne nekliknete. Skrytie týchto ikon môže chrániť váš profil."
   },
-  "options_report_ad": {
-    "message": "Vidíte reklamu, o ktorej si myslíte, že by tam nemala byť?<a> Nahlásenie reklamy </a>"
-  },
   "options_report_bug": {
     "message": "Bola nájdená chyba?<a> Pošlite nám správu o chybe </a>"
   },
   "options_report_forum": {
     "message": "Chcete podporiť našu komunitu?<a> Prejdite na fórum </a>"
-  },
-  "options_report_issue": {
-    "message": "Myslíte si, že obsah alebo funkčnosť je nami nesprávne blokovaný?<a> Nahláste nesprávne blokované položky tu </a>"
   },
   "options_social_description": {
     "message": "Máte otázku alebo nový nápad? Sme tu, aby sme vám pomohli."

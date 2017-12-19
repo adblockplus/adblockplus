@@ -263,17 +263,11 @@
   "options_protection_social_tooltip": {
     "message": "Socialinių tinklų piktogramos lankomuose puslapiuose leidžia socialiniams tinklams sukurti jūsų naršymo įpročių profilį - net jei jūs nepaspaudžiate ant jų. Paslėpus jas galite apsaugoti savo privatumą."
   },
-  "options_report_ad": {
-    "message": "Matote reklamą kurio neturėtų būti? <a>Praneškite apie reklamą</a>"
-  },
   "options_report_bug": {
     "message": "Radote klaidą? <a>Praneškite mums apie klaidą</a>"
   },
   "options_report_forum": {
     "message": "Norite palaikymo iš mūsų bendruomenės? <a>Aplankykite forumą</a>"
-  },
-  "options_report_issue": {
-    "message": "Manote jog kažkas be reikalo užblokuota ar kažkas neveikia? <a>Praneškite apie netinkamą blokavimą čia</a>"
   },
   "options_social_description": {
     "message": "Turite klausimą ar naują idėją? Mes pasiruošę jums padėti."

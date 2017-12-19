@@ -9,7 +9,7 @@
     "message": "Aveți un smartphone sau o tabletă?"
   },
   "firstRun_acceptableAdsExplanation": {
-    "message": "Dorim să încurajăm site-urile web în a utiliza publicitate simplă, discretă. De aceea ne-am stabilit <a>reguli de orientare stricte</a> pentru a identifica anunțurile acceptabile, care sunt permise de către setările implicite. Dacă totuși doriți să bloca toată publicitatea, puteți <a>dezactiva</a> aceste permisiuni în câteva secunde."
+    "message": "Dorim să încurajăm site-urile web în a utiliza publicitate simplă, discretă. De aceea ne-am stabilit <a>reguli de orientare stricte</a> pentru a identifica anunțurile acceptabile, care sunt permise de către setările implicite. Dacă totuși doriți să blocați toată publicitatea, puteți <a>dezactiva</a> aceste permisiuni în câteva secunde."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Reclamele enervante vor fi blocate acum"
@@ -18,7 +18,7 @@
     "message": "Contributori"
   },
   "firstRun_donate": {
-    "message": "Donaţii"
+    "message": "donaţi"
   },
   "firstRun_donate_label": {
     "message": "Ajutați proiectul"

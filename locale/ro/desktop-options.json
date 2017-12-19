@@ -213,7 +213,7 @@
     "message": "Găseşte ajutor sau pune-te în contact cu noi"
   },
   "options_language_add": {
-    "message": "+ adaugă un limbaj"
+    "message": "+ adaugă o limbă"
   },
   "options_language_change": {
     "message": "modifică"
@@ -263,17 +263,11 @@
   "options_protection_social_tooltip": {
     "message": "Butoanele de social media (sau icoane) pe site-urile pe care le vizitaţi permit reţelelor sociale să vă construiască un profil bazat pe obiceiurile de navigare - chiar şi atunci când nu faceţi clic pe ele. Ascunde aceste butoane pentru a vă proteja profilul."
   },
-  "options_report_ad": {
-    "message": "Vezi un anunţ care crezi că n-ar trebui să fie acolo? <a>Raportează un anunţ</a>"
-  },
   "options_report_bug": {
     "message": "Ai descoperit o eroare? <a>Trimite-ne un raport</a>"
   },
   "options_report_forum": {
     "message": "Vrei sprijin de la comunitatea noastră? <a>Du-te la Forum</a>"
-  },
-  "options_report_issue": {
-    "message": "Crezi că vreun conţinut sau funcţionalitate este incorect blocată? <a>Raportează elementele incorect blocate aici</a>"
   },
   "options_social_description": {
     "message": "Ai o întrebare sau o idee? Suntem aici pentru a ajuta."

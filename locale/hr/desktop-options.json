@@ -161,17 +161,11 @@
   "options_protection_privacy_tooltip": {
     "message": "Zaštitite osobne podatke uklanjanjem svih oblika praćenja na internetu uključujući informacije kolektora."
   },
-  "options_report_ad": {
-    "message": "Vidjeli ste oglas za koji mislite da ne bi trebao biti tu? <a>Prijavi oglas</a>"
-  },
   "options_report_bug": {
     "message": "Pronašli ste grešku? <a>Pošaljite nam je ovdje</a>"
   },
   "options_report_forum": {
     "message": "Želite li podršku naše zajednice? <a>Idite na forum</a>"
-  },
-  "options_report_issue": {
-    "message": "Mislite li da smo sadržaj ili funkcionalnost nepravilno blokirali? <a>Prijavi nepravilno blokirane stavke ovdje</a>"
   },
   "options_social_description": {
     "message": "Imate pitanje ili nešto novo? Ovdje smo da pomognemo."

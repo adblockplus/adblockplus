@@ -1,4 +1,10 @@
 {
+  "common_feature_anti_adblock_title": {
+    "message": "اخفاء رسائل تحذير ادبلوك"
+  },
+  "common_feature_malware_title": {
+    "message": "منع البرامج الضارة"
+  },
   "common_feature_privacy_title": {
     "message": "حجب أنواع التعقب الإضافية"
   },

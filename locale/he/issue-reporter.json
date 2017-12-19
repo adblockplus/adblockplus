@@ -1,80 +1,80 @@
 {
   "issueReporter_anonymousSubmission_label": {
-    "message": "הגשה אנונימית"
+    "message": "הגשה אלמונית"
   },
   "issueReporter_anonymousSubmission_warning": {
-    "message": "לא נוכל לחזור אליך, וסביר שנתעדף את הדוח בצורה נמוכה יותר."
+    "message": "לא נוכל לחזור אליך וסביר שנתעדף את הדיווח בצורה נמוכה יותר."
   },
   "issueReporter_commentPage_heading": {
-    "message": "הזנת תגובה"
+    "message": "הכנס הערה"
   },
   "issueReporter_comment_description": {
-    "message": "שדה הטקסט שמתחת מאפשר הזנת תגובה כדי לסייע לנו בהבנת הבעיה. צעד זה איננו בגדר חובה אך מומלץ אם הבעיה איננה מובנת מאליה. ניתן גם לסקור את נתוני הדיווח לפני שהוא נשלח."
+    "message": "שדה הטקסט שמתחת מאפשר לך להכניס הערה כדי לעזור לנו בהבנת הסוגייה. צעד זה אינו חובה אך מומלץ אם הבעיה אינה מובנת מאליה. אתה יכול גם לסקור את נתוני הדיווח לפני שליחתם."
   },
   "issueReporter_comment_label": {
     "message": "הערה (לא חובה):"
   },
   "issueReporter_comment_lengthWarning": {
-    "message": "אורך ההודעה חרג מ-1000 תווים. רק 1000 התווים הראשונים ישלחו."
+    "message": "האורך של הערתך חרג מ-1000 תווים. רק 1000 התווים הראשונים ישלחו."
   },
   "issueReporter_confirmationMessage": {
-    "message": "הדיווח שלכם נשמר. ניתן לגשת אליו בכתובת הבאה:"
+    "message": "הדיווח שלך נשמר. ניתן להשיג גישה אליו בכתובת הבאה:"
   },
   "issueReporter_dataCollector_description": {
-    "message": "אנא המתינו מספר רגעים עד אשר Adblock Plus יאסוף את המידע הדרוש."
+    "message": "אנא המתן מספר רגעים בזמן ש-Adblock Plus אוסף את הנתונים הדרושים."
   },
   "issueReporter_dataCollector_heading": {
-    "message": "ברוכים הבאים למדווח הבעיות"
+    "message": "ברוך הבא אל מדווח הסוגיות"
   },
   "issueReporter_doneButton_label": {
-    "message": "סיום"
+    "message": "בוצע"
   },
   "issueReporter_email_description": {
-    "message": "אנו ממליצים להזין כתובת דוא\"ל תקפה, כך שנוכל ליצור איתך קשר אם קיימות שאלות לגבי הדוח שלך. כמו כן, כתובתך תאפשר לנו לזהות את תרומותייך ולתעדף אותן בצורה גבוהה יותר."
+    "message": "אנו ממליצים להזין כתובת דוא\"ל תקפה כך שנוכל ליצור איתך קשר אם קיימות שאלות לגבי הדיווח שלך. כמו כן, כתובתך תאפשר לנו לזהות את תרומותיך ולתעדף אותן בצורה גבוהה יותר."
   },
   "issueReporter_email_label": {
     "message": "דוא\"ל:"
   },
   "issueReporter_errorMessage": {
-    "message": "נכשל ניסיון השליחה של הדיווח עם קוד השגיאה \"?1?\". אנא וודאו שאתם מחוברים לאינטרנט ונסו שוב. אם הבעיה נמשכת, אנא בקשו סיוע ב[link]פורום Adblock Plus[/link]LL."
+    "message": "ניסיון לשלוח את הדיווח נכשל עם קוד השגיאה \"?1?\". אנא וודא שאתה מחובר לאינטרנט ונסה שוב. אם הבעיה נמשכת, אנא בקש סיוע ב[link]פורום Adblock Plus[/link]."
   },
   "issueReporter_falseNegative_description": {
-    "message": "בחירת אפשרות זו אם מוצגת פרסומת למרות ש-Adblock Plus מאפשר."
+    "message": "בחר אפשרות זו אם מודעה מוצגת על אף ש-Adblock Plus מאופשר."
   },
   "issueReporter_falseNegative_label": {
-    "message": "Adblock Plus איננו חוסם פרסומות"
+    "message": "Adblock Plus אינו חוסם מודעה"
   },
   "issueReporter_falsePositive_description": {
-    "message": "בחר באפשרות זו אם חסר בעמוד תוכן חשוב או שמוצג בצורה לא נכונה או כושל לתפקד כראוי. ניתן לקבוע האם Adblock Plus הוא הגורם לבעיה על ידי נטרולו זמנית."
+    "message": "בחר אפשרות זו אם חסר בעמוד תוכן חשוב או שהוא מציג בצורה לא נכונה או שהוא נכשל לתפקד כראוי. אתה יכול לקבוע אם Adblock Plus הוא הגורם לבעיה ע\"י השבתה זמנית שלו."
   },
   "issueReporter_falsePositive_label": {
     "message": "Adblock Plus חוסם יותר מדי"
   },
   "issueReporter_knownIssueMessage": {
-    "message": "הבעיה שדווחה קרוב לוודאי שידועה כבר. מידע נוסף:"
+    "message": "הסוגייה שדיווחת קרוב לוודאי שידועה כבר. מידע נוסף:"
   },
   "issueReporter_page_title": {
-    "message": "מדווח הבעיות"
+    "message": "מדווח הסוגיות"
   },
   "issueReporter_privacyPolicy": {
-    "message": "הצהרת פרטיות"
+    "message": "מדיניות פרטיות"
   },
   "issueReporter_sendButton_label": {
-    "message": "שליחת דיווח"
+    "message": "שלח דיווח"
   },
   "issueReporter_sendPage_heading": {
     "message": "שליחת דיווח"
   },
   "issueReporter_sending": {
-    "message": "אנא המתינו בזמן ש-Adblock Plus מזין את הדיווח שלכם."
+    "message": "אנא המתן בזמן ש-Adblock Plus מגיש את הדיווח שלך."
   },
   "issueReporter_showData_label": {
-    "message": "הצגת מידע של הדיווח"
+    "message": "הראה נתוני דיווח"
   },
   "issueReporter_typeSelector_description": {
-    "message": "חלון זה ידריך אתכם דרך הצעדים הדרושים להזנת דיווח בעיה עבור Adblock Plus. ראשית, אנא בחרו את סוג הבעיה אשר אתם חווים בעמוד זה:"
+    "message": "חלון זה ידריך אותך דרך הצעדים הדרושים להגשה של דיווח סוגיית Adblock Plus. ראשית, אנא בחר את סוג הסוגייה שאתה חווה בעמוד זה:"
   },
   "issueReporter_typeSelector_heading": {
-    "message": "בחירת סוג הבעיה"
+    "message": "בחירת סוג סוגייה"
   }
 }

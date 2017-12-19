@@ -9,7 +9,7 @@
     "message": "Kas sul on nutitelefon või tahvelarvuti?"
   },
   "firstRun_acceptableAdsExplanation": {
-    "message": "Sooviksime julgustada veebilehti kasutama otsekoheseid, mittehäirivaid reklaame. Sellepärast on meil <a>ranged eeskirjad</a>, et tuvastada lubatavaid reklaame, mida kuvatakse vaikimise sätete all. Kui sa ikka soovid kõik reklaamid blokeerida, saad sa selle paari sekundi pärast <a>välja lülitada</a>."
+    "message": "Sooviksime julgustada veebilehti kasutama otsekoheseid, mittehäirivaid reklaame. Sellepärast on meil <a>ranged eeskirjad</a>, et tuvastada lubatavaid reklaame, mida vaikimisi sättena näidatakse. Kui sa ikka soovid blokeerida kõik reklaamid, saad sa selle paari sekundi pärast <a>välja lülitada</a>."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Tüütud kuulutused on nüüd blokeeritud"
