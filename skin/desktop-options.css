@@ -539,7 +539,7 @@ html[dir="rtl"] [data-validation] .floating-input input:valid ~ .attention::befo
 #sidebar .fixed,
 [role="tablist"]
 {
-  width: 13.2rem;
+  width: 14.3rem;
 }
 
 #sidebar
@@ -580,7 +580,7 @@ html[dir="rtl"] #sidebar header
 #sidebar header p
 {
   margin: 0rem;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   line-height: 2.6rem;
 }
 
