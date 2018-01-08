@@ -86,7 +86,7 @@
           <ul class="list" id="recommend-protection-list-table">
             <template>
               <button data-action="toggle-remove-subscription" role="checkbox" class="control icon"></button>
-              <label class="display"></label>
+              <span data-display="title"></span>
               <span data-tooltip="options_protection_%value%_tooltip"></span>
             </template>
           </ul>
@@ -134,7 +134,12 @@
           <div id="blocking-languages">
             <ul id="blocking-languages-table" class="table list bottom-control">
               <template>
-                <label class="display"></label>
+                <span>
+                  <span data-display="title"></span>
+                  <span class="dimmed">
+                    (<span data-display="originalTitle"></span>)
+                  </span>
+                </span>
                 <button data-single="hidden" data-action="remove-subscription" class="icon delete control" title="options_control_remove_title"></button>
                 <button data-single="visible" data-action="open-dialog" data-dialog="language-change" class="i18n_options_language_change link"></button>
               </template>
@@ -151,7 +156,7 @@
           <div>
             <ul id="more-list-table" class="table list">
               <template>
-                <label class="display"></label>
+                <span data-display="title"></span>
                 <button data-action="remove-subscription" class="i18n_options_control_remove_title link control" title="options_control_remove_title"></button>
               </template>
             </ul>
@@ -179,7 +184,7 @@
         </form>
         <ul id="whitelisting-table" class="table list">
           <template>
-            <label class="display"></label>
+            <span data-display="title"></span>
             <button data-action="remove-filter" class="icon delete control" 
                     title="options_control_remove_title">
             </button>
@@ -199,17 +204,17 @@
           <ul id="customize" class="list">
             <li data-pref="shouldShowBlockElementMenu">
               <button class="icon" role="checkbox" data-action="toggle-pref"></button>
-              <span class="i18n_options_customize_blockElement display"></span>
+              <span class="i18n_options_customize_blockElement" data-display="title"></span>
               <span data-tooltip="options_customize_blockElement_tooltip"></span>
             </li>
             <li data-pref="show_devtools_panel">
               <button class="icon" role="checkbox" data-action="toggle-pref"></button>
-              <span class="i18n_options_customize_showDevToolsPanel display"></span>
+              <span class="i18n_options_customize_showDevToolsPanel" data-display="title"></span>
               <span data-tooltip="options_customize_showDevToolsPanel_tooltip"></span>
             </li>
             <li data-pref="notifications_ignoredcategories">
               <button class="icon" role="checkbox" data-action="toggle-pref"></button>
-              <span class="i18n_options_customize_showNotifications display"></span>
+              <span class="i18n_options_customize_showNotifications" data-display="title"></span>
               <span data-tooltip="options_customize_showNotifications_tooltip"></span>
             </li>
           </ul>
@@ -242,7 +247,7 @@
                 </div>
               </div>
               <div class="col5">
-                <label class="display"></label>
+                <span data-display="originalTitle"></span>
               </div>
               <div class="col5">
                 <span class="last-update"></span>
@@ -371,10 +376,20 @@
           <ul id="all-lang-table-add" class="table list default-focus">
             <template>
               <button data-action="add-language-subscription,close-dialog" class="control icon add" role="checkbox">
-                <label class="display"></label>
+                <span>
+                  <span data-display="title"></span>
+                  <span class="dimmed">
+                    (<span data-display="originalTitle"></span>)
+                  </span>
+                </span>
               </button>
               <button data-action="change-language-subscription,close-dialog" class="control icon change" role="checkbox">
-                <label class="display"></label>
+                <span>
+                  <span data-display="title"></span>
+                  <span class="dimmed">
+                    (<span data-display="originalTitle"></span>)
+                  </span>
+                </span>
               </button>
             </template>
           </ul>

@@ -147,6 +147,10 @@
     "description": "More filters section note in General tab",
     "message": "<strong>Note:</strong> You should only use third party filter lists from authors that you trust."
   },
+  "options_english": {
+    "description": "Language section text inside 'Language' table and 'Select language' dialog in General tab",
+    "message": "English"
+  },
   "options_language_add": {
     "description": "Add other language button in General Tab",
     "message": "+ add a language"

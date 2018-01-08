@@ -89,10 +89,8 @@
 
   Collection.prototype._getItemTitle = function(item, i)
   {
-    if (this.details[i].useSpecialization && item.specialization)
-      return item.specialization;
-    if (this.details[i].useOriginalTitle && item.originalTitle)
-      return item.originalTitle;
+    if (this.details[i].getTitleFunction)
+      return this.details[i].getTitleFunction(item);
     return item.title || item.url || item.text;
   };
 
@@ -223,9 +221,14 @@
         continue;
 
       let title = this._getItemTitle(item, i);
-      let displays = element.querySelectorAll(".display");
+      let displays = element.querySelectorAll("[data-display]");
       for (let j = 0; j < displays.length; j++)
-        displays[j].textContent = title;
+      {
+        if (item[displays[j].dataset.display])
+          displays[j].textContent = item[displays[j].dataset.display];
+        else
+          displays[j].textContent = title;
+      }
 
       element.setAttribute("aria-label", title);
       if (this.details[i].searchable)
@@ -351,14 +354,14 @@
     {
       id: "blocking-languages-table",
       emptyTexts: ["options_language_empty"],
-      useSpecialization: true
+      getTitleFunction: getLanguageTitle
     }
   ]);
   collections.allLangs = new Collection([
     {
       id: "all-lang-table-add",
       emptyTexts: ["options_dialog_language_other_empty"],
-      useSpecialization: true
+      getTitleFunction: getLanguageTitle
     }
   ]);
   collections.more = new Collection([
@@ -377,8 +380,7 @@
   collections.filterLists = new Collection([
     {
       id: "all-filter-lists-table",
-      emptyTexts: ["options_filterList_empty"],
-      useOriginalTitle: true
+      emptyTexts: ["options_filterList_empty"]
     }
   ]);
 
@@ -483,6 +485,14 @@
   {
     let customFiltersListElement = E("custom-filters-raw");
     customFiltersListElement.value = customFilters.join("\n");
+  }
+
+  function getLanguageTitle(item)
+  {
+    let title = item.specialization;
+    if (item.originalTitle && item.originalTitle.indexOf("+EasyList") > -1)
+      title += " + " + getMessage("options_english");
+    return title;
   }
 
   function loadRecommendations()

@@ -887,12 +887,12 @@ ul.list
   border-bottom: 0px;
 }
 
-li .display
+.list li > span
 {
   margin: 0rem 1rem;
 }
 
-.table.list li .display
+.table.list li > span
 {
   flex: 1;
   margin: 0rem;
@@ -982,7 +982,7 @@ li .display
   -webkit-margin-end: 1.8rem;
 }
 
-.table.cols .display
+.table.cols > span
 {
   margin: 0rem;
 }
@@ -1030,12 +1030,13 @@ li .display
   background-color: #E1F2FA;
 }
 
-#dialog .table.list li button[aria-checked="true"]
+#dialog .table.list li button[aria-checked="true"],
+.table.list li .dimmed
 {
   color: #BBB;
 }
 
-#dialog .table.list li button .display
+#dialog .table.list li button > span
 {
   flex: none;
   margin: 0rem 0.8rem;
