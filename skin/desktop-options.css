@@ -225,15 +225,39 @@ button.list:hover
 .side-controls button
 {
   margin: 0rem;
-  -moz-margin-start: 1rem;
-  -webkit-margin-start: 1rem;
+}
+
+/*
+  Due to Edge adoption as new target browser
+  we cannot use -moz/webkit-margin-start
+  or -moz/webkit-margin-end because
+  these lack Edge support.
+  Yet we need to preserve html direction
+  and potential UI that might swap right to left.
+*/
+html:not([dir="rtl"]) .side-controls button
+{
+  margin-left: 1rem;
+}
+
+html[dir="rtl"] .side-controls button
+{
+  margin-right: 1rem;
 }
 
 .side-controls.wrap button
 {
   margin: 0.6rem 0rem;
-  -moz-margin-start: auto;
-  -webkit-margin-start: auto;
+}
+
+html:not([dir="rtl"]) .side-controls.wrap button
+{
+  margin-left: auto;
+}
+
+html[dir="rtl"] .side-controls.wrap button
+{
+  margin-right: auto;
 }
 
 /*
@@ -544,7 +568,7 @@ html[dir="rtl"] [data-validation] .floating-input input:valid ~ .attention::befo
 
 #sidebar
 {
-  flex-shrink: 0; 
+  flex-shrink: 0;
 }
 
 #sidebar .fixed
@@ -615,10 +639,8 @@ html[dir="rtl"] #sidebar header
   display: flex;
   margin-top: -1px;
   padding: 1rem 0.8rem;
-  -moz-margin-end: -1px;
-  -webkit-margin-end: -1px;
-  -moz-margin-start: -1px;
-  -webkit-margin-start: -1px;
+  margin-left: -1px;
+  margin-right: -1px;
   border-color: #CDCDCD transparent;
   border-style: solid;
   border-width: 1px;
@@ -629,10 +651,18 @@ html[dir="rtl"] #sidebar header
 
 li a[role="tab"][aria-selected]
 {
-  -moz-border-start-color: #CDCDCD;
-  -webkit-border-start-color: #CDCDCD;
   font-weight: 700;
   background-color: #FFF;
+}
+
+html:not([dir="rtl"]) li a[role="tab"][aria-selected]
+{
+  border-left-color: #CDCDCD;
+}
+
+html[dir="rtl"] li a[role="tab"][aria-selected]
+{
+  border-right-color: #CDCDCD;
 }
 
 #sidebar footer
@@ -660,6 +690,7 @@ li a[role="tab"][aria-selected]
     bottom: 0px;
     position: absolute;
   }
+
 }
 
 /*
@@ -735,8 +766,16 @@ section.cols
 section.cols > *:first-child
 {
   flex: 1;
-  -moz-margin-end: 2rem;
-  -webkit-margin-end: 2rem;
+}
+
+html:not([dir="rtl"]) section.cols > *:first-child
+{
+  margin-right: 2rem;
+}
+
+html[dir="rtl"] section.cols > *:first-child
+{
+  margin-left: 2rem;
 }
 
 section.cols > *:last-child
@@ -811,8 +850,16 @@ html[dir="rtl"] button
 {
   font-weight: 700;
   font-size: 1rem;
-  -moz-margin-end: 0.5rem;
-  -webkit-margin-end: 0.5rem;
+}
+
+html:not([dir="rtl"]) #acceptable-ads label
+{
+  margin-right: 0.5rem;
+}
+
+html[dir="rtl"] #acceptable-ads label
+{
+  margin-left: 0.5rem;
 }
 
 #dnt
@@ -976,10 +1023,20 @@ ul.list
 .table .col5:nth-of-type(5)
 {
   flex: 1;
-  -moz-margin-start: 0;
-  -webkit-margin-start: 0;
-  -moz-margin-end: 1.8rem;
-  -webkit-margin-end: 1.8rem;
+}
+
+html:not([dir="rtl"]) .th .col5:nth-of-type(5),
+html:not([dir="rtl"]) .table .col5:nth-of-type(5)
+{
+  margin-left: 0;
+  margin-right: 1.8rem;
+}
+
+html[dir="rtl"] .th .col5:nth-of-type(5),
+html[dir="rtl"] .table .col5:nth-of-type(5)
+{
+  margin-right: 0;
+  margin-left: 1.8rem;
 }
 
 .table.cols > span
@@ -992,10 +1049,14 @@ ul.list
   padding: 0.5rem 0rem;
 }
 
-.table.cols .state
+html:not([dir="rtl"]) .table.cols .state
 {
-  -moz-margin-start: 1rem;
-  -webkit-margin-start: 1rem;
+  margin-left: 1rem;
+}
+
+html[dir="rtl"] .table.cols .state
+{
+  margin-right: 1rem;
 }
 
 .table.cols .gear
@@ -1052,11 +1113,19 @@ ul.list
 {
   position: relative;
   margin: 0rem;
-  -moz-margin-end: 1rem;
-  -webkit-margin-end: 1rem;
   line-height: 1.5rem;
   text-decoration: none;
   cursor: help;
+}
+
+html:not([dir="rtl"]) .tooltip
+{
+  margin-right: 1rem;
+}
+
+html[dir="rtl"] .tooltip
+{
+  margin-left: 1rem;
 }
 
 /* 
@@ -1110,10 +1179,14 @@ ul.list
   border: 2px solid #077CA6;
 }
 
-#content-whitelist form button
+html:not([dir="rtl"]) #content-whitelist form button
 {
-  -moz-margin-start: 0.7rem;
-  -webkit-margin-start: 0.7rem;
+  margin-left: 0.7rem;
+}
+
+html[dir="rtl"] #content-whitelist form button
+{
+  margin-right: 0.7rem;
 }
 
 #whitelisting-table li
@@ -1346,8 +1419,16 @@ html[lang="zh"] #social-general
 #social ul li
 {
   display: inline-block;
-  -moz-margin-end: 1rem;
-  -webkit-margin-end: 1rem;
+}
+
+html:not([dir="rtl"]) #social ul li
+{
+  margin-right: 1rem;
+}
+
+html[dir="rtl"] #social ul li
+{
+  margin-left: 1rem;
 }
 
 #social ul li a

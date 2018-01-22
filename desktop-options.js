@@ -533,18 +533,12 @@
 
   function findParentData(element, dataName, returnElement)
   {
-    while (element)
-    {
-      if (element.hasAttribute("data-" + dataName))
-      {
-        if (returnElement)
-          return element;
-        return element.getAttribute("data-" + dataName);
-      }
-
-      element = element.parentElement;
-    }
-    return null;
+    element = element.closest(`[data-${dataName}]`);
+    if (!element)
+      return null;
+    if (returnElement)
+      return element;
+    return element.getAttribute(`data-${dataName}`);
   }
 
   function sendMessageHandleErrors(message, onSuccess)
@@ -918,10 +912,10 @@
     {
       setLinks("enable-acceptable-ads-description", link);
     });
-    setElementText(E("tracking-warning-1"), "options_tracking_warning_1", 
+    setElementText(E("tracking-warning-1"), "options_tracking_warning_1",
       [getMessage("common_feature_privacy_title"),
-      getMessage("options_acceptableAds_ads_label")]);
-    setElementText(E("tracking-warning-3"), "options_tracking_warning_3", 
+       getMessage("options_acceptableAds_ads_label")]);
+    setElementText(E("tracking-warning-3"), "options_tracking_warning_3",
       [getMessage("options_acceptableAds_privacy_label")]);
 
     getDocLink("privacy_friendly_ads", (link) =>
@@ -1295,7 +1289,7 @@
         updateSubscription(subscription);
         break;
       case "added":
-        let {url, recommended} = subscription;
+        let {url} = subscription;
         // Handle custom subscription
         if (/^~user/.test(url))
         {
