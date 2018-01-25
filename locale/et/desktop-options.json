@@ -137,6 +137,9 @@
   "options_email": {
     "message": "E-post:"
   },
+  "options_english": {
+    "message": "Inglise keel"
+  },
   "options_filterList_add": {
     "message": "+ Lisa uus filtrite nimekiri"
   },

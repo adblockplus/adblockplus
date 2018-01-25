@@ -137,6 +137,9 @@
   "options_email": {
     "message": "E-mail:"
   },
+  "options_english": {
+    "message": "angol"
+  },
   "options_filterList_add": {
     "message": "+ Új szűrőlista hozzáadása"
   },

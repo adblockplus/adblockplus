@@ -137,6 +137,9 @@
   "options_email": {
     "message": "Indirizzo e-mail:"
   },
+  "options_english": {
+    "message": "Inglese"
+  },
   "options_filterList_add": {
     "message": "+ AGGIUNGERE NUOVO ELENCO DI FILTRI"
   },

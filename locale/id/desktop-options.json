@@ -50,6 +50,9 @@
   "options_email": {
     "message": "Surel:"
   },
+  "options_english": {
+    "message": "Bahasa Inggris"
+  },
   "options_filterList_column_name": {
     "message": "Daftar penyaring"
   },

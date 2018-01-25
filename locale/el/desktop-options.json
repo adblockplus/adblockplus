@@ -122,6 +122,9 @@
   "options_email": {
     "message": "Email:"
   },
+  "options_english": {
+    "message": "αγγλικά"
+  },
   "options_filterList_add": {
     "message": "+ ΠΡΟΣΘΗΚΗ ΝΕΑΣ ΛΙΣΤΑΣ ΦΙΛΤΡΩΝ"
   },

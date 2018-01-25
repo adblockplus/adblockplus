@@ -8,6 +8,9 @@
   "options_email": {
     "message": "E-pasts:"
   },
+  "options_english": {
+    "message": "angļu valoda"
+  },
   "options_filterList_column_name": {
     "message": "Filtru saraksts"
   },

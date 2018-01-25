@@ -14,6 +14,9 @@
   "options_email": {
     "message": "Sähköposti:"
   },
+  "options_english": {
+    "message": "englanti"
+  },
   "options_filterList_column_name": {
     "message": "Suodatinlistat"
   },

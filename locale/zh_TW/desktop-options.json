@@ -122,6 +122,9 @@
   "options_email": {
     "message": "電子郵件："
   },
+  "options_english": {
+    "message": "英語"
+  },
   "options_filterList_add": {
     "message": "+ 添加一個新的過濾列表"
   },

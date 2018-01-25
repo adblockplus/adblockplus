@@ -137,6 +137,9 @@
   "options_email": {
     "message": "Email:"
   },
+  "options_english": {
+    "message": "Engleză"
+  },
   "options_filterList_add": {
     "message": "+ Adaugă o nouă listă de filtre"
   },

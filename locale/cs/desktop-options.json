@@ -128,6 +128,9 @@
   "options_email": {
     "message": "E-mail:"
   },
+  "options_english": {
+    "message": "angličtina"
+  },
   "options_filterList_add": {
     "message": "+ PŘIDAT NOVÝ SEZNAM FILTRŮ"
   },

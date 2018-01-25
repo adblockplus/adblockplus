@@ -137,6 +137,9 @@
   "options_email": {
     "message": "电子邮件："
   },
+  "options_english": {
+    "message": "英語"
+  },
   "options_filterList_add": {
     "message": "+ 添加一个新的过滤列表"
   },

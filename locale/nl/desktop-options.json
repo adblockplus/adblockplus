@@ -137,6 +137,9 @@
   "options_email": {
     "message": "E-mail:"
   },
+  "options_english": {
+    "message": "Engels"
+  },
   "options_filterList_add": {
     "message": "+ Nieuwe filterlijst toevoegen"
   },

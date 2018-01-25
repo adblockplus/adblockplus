@@ -137,6 +137,9 @@
   "options_email": {
     "message": "El. paštas:"
   },
+  "options_english": {
+    "message": "anglų kalba"
+  },
   "options_filterList_add": {
     "message": "+ Pridėti naują sąrašą"
   },

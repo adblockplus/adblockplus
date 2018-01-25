@@ -116,6 +116,9 @@
   "options_email": {
     "message": "Е-поща:"
   },
+  "options_english": {
+    "message": "англи́йски"
+  },
   "options_filterList_add": {
     "message": "+ Добави нов филтър"
   },

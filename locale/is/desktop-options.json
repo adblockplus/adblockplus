@@ -8,6 +8,9 @@
   "options_email": {
     "message": "Tölvupóstfang:"
   },
+  "options_english": {
+    "message": "enska"
+  },
   "options_filterList_column_status": {
     "message": "Staða"
   },

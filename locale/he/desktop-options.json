@@ -137,6 +137,9 @@
   "options_email": {
     "message": "דוא\"ל:"
   },
+  "options_english": {
+    "message": "אַנְגְּלִית"
+  },
   "options_filterList_add": {
     "message": "+ הוסף רשימת מסננים חדשה"
   },

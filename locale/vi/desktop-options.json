@@ -134,6 +134,9 @@
   "options_email": {
     "message": "Email:"
   },
+  "options_english": {
+    "message": "Tiếng Anh"
+  },
   "options_filterList_add": {
     "message": "+ THÊM MỘT DANH SÁCH LỌC MỚI"
   },

@@ -125,6 +125,9 @@
   "options_email": {
     "message": "이메일:"
   },
+  "options_english": {
+    "message": "영어"
+  },
   "options_filterList_add": {
     "message": "+ 새 필터 목록 추가"
   },

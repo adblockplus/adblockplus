@@ -110,6 +110,9 @@
   "options_email": {
     "message": "Eメール:"
   },
+  "options_english": {
+    "message": "英語"
+  },
   "options_filterList_add": {
     "message": "+ 新規フィルターリストを追加"
   },

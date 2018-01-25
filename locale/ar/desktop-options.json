@@ -137,6 +137,9 @@
   "options_email": {
     "message": "البريد الإلكتروني:"
   },
+  "options_english": {
+    "message": "إِنْكِلِيزِيّ"
+  },
   "options_filterList_add": {
     "message": "+ أضف قائمة عوامل تصفية جديدة"
   },
