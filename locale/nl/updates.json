@@ -1,0 +1,23 @@
+{
+  "updates_status": {
+    "message": "Update voltooid"
+  },
+  "updates_heading": {
+    "message": "Adblock Plus is bijgewerkt!"
+  },
+  "updates_subheading": {
+    "message": "Wat is er nieuw?"
+  },
+  "updates_optionsPageNews": {
+    "message": "Gloednieuwe pagina voor Instellingen - vernieuwd en gerestyled met meer privacy en veiligheidsopties - het is dus eenvoudiger om Adblock Plus aan te passen net zoals u het wilt. <a>Bekijk het zelf.</a>"
+  },
+  "updates_blockAds": {
+    "message": "De Open Source Rebellen Alliantie creëerde nieuwe blokkeringsfilters waarmee u verborgen advertenties doet verdwijnen op websites zoals Facebook, wat er ook maar gebeurt."
+  },
+  "updates_phone": {
+    "message": "Maar wacht! Wat met uw telefoon?"
+  },
+  "updates_adblockBrowser": {
+    "message": "Als u de controle wilt overnemen over uw bureaublad kunt u advertenties blokkeren en ook uw privacy en veiligheid op uw mobiele telefoon verbeteren. Download de <a>Adblock Browser App hieronder</a>"
+  }
+}

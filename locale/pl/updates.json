@@ -1,0 +1,23 @@
+{
+  "updates_status": {
+    "message": "Aktualizacja ukończona"
+  },
+  "updates_heading": {
+    "message": "Rozszerzenie Adblock Plus zostało zaktualizowane!"
+  },
+  "updates_subheading": {
+    "message": "Co nowego?"
+  },
+  "updates_optionsPageNews": {
+    "message": "Całkiem nowa strona ustawień — ulepszona i przebudowana z większą liczbą opcji prywatności i zabezpieczeń — aby dostosowanie Adblock Plus było jeszcze łatwiejsze. <a>Przekonaj się.</a>"
+  },
+  "updates_blockAds": {
+    "message": "Nowe filtry blokujące utworzone przez Sojusz Rebeliantów Open Source pozwalają odstrzelić ukryte reklamy w witrynach, takich jak Facebook, nawet jeśli Imperium skontratakuje!"
+  },
+  "updates_phone": {
+    "message": "Ale zaczekaj! A co z Twoim telefonem?"
+  },
+  "updates_adblockBrowser": {
+    "message": "Jeśli sterujesz wszystkim z komputera, możesz blokować reklamy, dbając o prywatność i bezpieczeństwo, także na telefonie. Pobierz <a>aplikację Adblock Browser poniżej</a>"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "updates_status": {
+    "message": "Atualização concluída"
+  },
+  "updates_heading": {
+    "message": "O Adblock Plus foi atualizado!"
+  },
+  "updates_subheading": {
+    "message": "Quais são as novidades?"
+  },
+  "updates_optionsPageNews": {
+    "message": "Nova página Definições - renovada e remodelada com mais opções de privacidade e segurança - então agora é mais fácil personalizar o Adblock Plus como quiser. <a>Veja você mesmo.</a>"
+  },
+  "updates_blockAds": {
+    "message": "A Aliança Rebelde de Código Aberto criou novos filtros de bloqueio que permitem ocultar anúncios em sites Web como o Facebook, mesmo se o Império contra-atacar."
+  },
+  "updates_phone": {
+    "message": "Mas espere! E o seu telefone?"
+  },
+  "updates_adblockBrowser": {
+    "message": "Se você estiver assumindo o controle no computador, pode também bloquear anúncios e melhorar sua privacidade e segurança no celular. Obtenha o <a>Adblock Browser aplicaçao abaixo</a>"
+  }
+}

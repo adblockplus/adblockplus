@@ -1,0 +1,23 @@
+{
+  "updates_status": {
+    "message": "Mise à jour terminée"
+  },
+  "updates_heading": {
+    "message": "Adblock Plus a été mis à jour !"
+  },
+  "updates_subheading": {
+    "message": "Quoi de neuf ?"
+  },
+  "updates_optionsPageNews": {
+    "message": "Page des paramètres totalement nouvelle - remaniée et relookée, avec plus d’options de protection de la vie privée et de sécurité - pour qu’il soit plus facile de personnaliser Adblock Plus exactement comme vous voulez. <a>Voyez par vous-même.</a>"
+  },
+  "updates_blockAds": {
+    "message": "L’Alliance Rebelle Open Source a créé de nouveaux filtres de blocage qui vous permettent d’éliminer les pubs déguisées sur les sites web comme Facebook, même si l'Empire contre-attaque."
+  },
+  "updates_phone": {
+    "message": "Mais ce n’est pas tout ! Et votre téléphone ?"
+  },
+  "updates_adblockBrowser": {
+    "message": "Si vous prenez le contrôle sur votre PC, vous voudrez aussi bloquer les pubs et améliorer votre confidentialité et votre sécurité sur votre mobile. Téléchargez <a>l’appli Adblock Browser ci-dessous</a>"
+  }
+}

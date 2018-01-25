@@ -1,0 +1,23 @@
+{
+  "updates_status": {
+    "message": "アップデート完了"
+  },
+  "updates_heading": {
+    "message": "Adblock Plus がアップデートされました！"
+  },
+  "updates_subheading": {
+    "message": "更新内容"
+  },
+  "updates_optionsPageNews": {
+    "message": "設定のページが新しくなりました - プライバシーとセキュリティのオプション追加、およびデザインの刷新と、スタイルの変更により、Adblock Plusを思い通りに、より簡単に カスタマイズできるようになりました。<a>今すぐチェックしてみましょう。</a>"
+  },
+  "updates_blockAds": {
+    "message": "オープンソース反乱同盟軍は、帝国が逆襲しても、Facebook などのウェブサイト上の隠された広告も削除できる、新たなブロックフィルターを作成しました。"
+  },
+  "updates_phone": {
+    "message": "でも、まだ安心できません！携帯はどうでしょうか？"
+  },
+  "updates_adblockBrowser": {
+    "message": "デスクトップ上の広告管理に取り組んでいるのなら、携帯の広告もブロックし、プライバシーとセキュリティも改善できるはずです。<a>下から Adblock Browser アプリを入手</a>しましょう"
+  }
+}

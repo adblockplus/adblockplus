@@ -1,0 +1,23 @@
+{
+  "updates_status": {
+    "message": "Aktualisierung abgeschlossen"
+  },
+  "updates_heading": {
+    "message": "Adblock Plus wurde aktualisiert!"
+  },
+  "updates_subheading": {
+    "message": "Was ist neu?"
+  },
+  "updates_optionsPageNews": {
+    "message": "Brandneue Einstellungsseite – komplett überarbeitet, mit neuem Stil und mehr Datenschutz- und Sicherheitsoptionen. So kannst du Adblock Plus leichter an deine Anforderungen anpassen. <a>Wirf selbst einen Blick darauf!</a>"
+  },
+  "updates_blockAds": {
+    "message": "Neue Blockierungs-Technologie! Es gibt jetzt mehr Möglichkeiten als je zuvor, neue Filter zum Blockieren zu erstellen mit denen du versteckte Anzeigen auf Websites wie Facebook entfernen kannst, selbst wenn das Imperium zurückschlägt."
+  },
+  "updates_phone": {
+    "message": "Aber warte! Was ist mit deinem Handy?"
+  },
+  "updates_adblockBrowser": {
+    "message": "Wenn du die Kontrolle über deinen Desktop übernimmst, kannst du auch auf mobilen Geräten Werbung blockieren und deine Privatsphäre und Sicherheit verbessern. Hol dir die <a>Adblock Browser App unten</a>"
+  }
+}
