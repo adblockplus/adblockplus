@@ -19,6 +19,8 @@ Directory structure
   * `desktop-options.html`, `desktop-options.js`: Options page, see below
   * `subscriptions.xml`: Test subscription data, should *not be imported*
   * `polyfill.js`: Browser API polyfills, should *not be imported*
+* `lib` directory: Modules to be used on the background page to expose
+  UI-related functionality.
 * `locale` directory: Localized strings, with one directory per locale. The
   Firefox format for locale identifiers is used (xx-YY where xx is the language
   code and YY the optional region code). The localization strings themselves are
