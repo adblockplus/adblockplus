@@ -1,0 +1,16 @@
+{
+  "name": "adblockplusui",
+  "private": true,
+  "description": "Adblock Plus UI",
+  "scripts": {
+    "lint": "npm run lint:js",
+    "lint:js": "eslint ./*.js ./lib/*.js ./ext/*.js",
+    "prepare": "python2 ensure_dependencies.py",
+    "start": "http-server"
+  },
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "eslint-config-eyeo": "^2.0.0",
+    "http-server": "^0.11.1"
+  }
+}

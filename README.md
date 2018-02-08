@@ -6,6 +6,17 @@ Adblock Plus products like Adblock Plus for Firefox. Their functionality can be
 tested within this repository, even though they might not work exactly the same
 as they will do in the final product.
 
+Installing dependencies
+-----------------------
+
+Both [python 2](https://www.python.org/downloads/) and [node](https://nodejs.org/en/), as well as [npm](https://www.npmjs.com), are required to contribute to this repository.
+
+If you are installing `node` in ArchLinux, please remember to install `npm` too.
+
+After cloning this repository, enter into its folder and run: `npm install`.
+
+This should create and populate, both `./node_modules` folder and the `./buildtools` one.
+
 Directory structure
 -------------------
 
@@ -39,13 +50,34 @@ Testing
 In Firefox the HTML pages can be opened directly from the file system
 and should be fully functional. Due to security restrictions in Chrome, there
 you need to pass in the `--allow-file-access-from-files` command line flag when
-starting the application. Alternatively, you can run `test_server.py` (requires
-Python 2.7) and open the HTML pages under URLs like
-`http://127.0.0.1:5000/firstRun.html`.
+starting the application. Alternatively, you can run `npm start` and open
+the HTML pages under URL shown shown in the terminal (example: http://127.0.0.1:8080).
 
-Various aspects of the pages can be tested by setting parameters in the URL. The
-only universal parameter is `locale`, e.g. `?locale=es-AR`. This parameter
+You can pass along to underlying [http-server](https://www.npmjs.com/package/http-server)
+program any arguments via `--` as in:
+```sh
+npm start -- -p 5000 -c-1
+```
+
+Various aspects of the pages can be tested by setting parameters in the URL.
+The only universal parameter is `locale`, e.g. `?locale=es-AR`. This parameter
 overrides browser's locale which will be used by default.
+
+Linting
+-------
+
+You can lint all options via `npm run lint`.
+
+You can also run specific target linting via `npm run lint:js` or, once available, via `npm run lint:css`.
+
+Remember, both `eslint` and `stylelint` can help fixing issues via `--fix` flag.
+
+You can try as example via [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
+which should be provided automatically when you install `npm`.
+
+```sh
+npx stylelint --fix skin/real-file-name.css
+```
 
 Translations
 ------------
@@ -110,14 +142,3 @@ parameters:
 
 
 [crowdin]: https://crowdin.com
-
-Linting
--------
-
-You can lint the code using [ESLint](http://eslint.org).
-
-    eslint *.js lib ext
-
-You will need to set up ESLint and our configuration first, see
-[eslint-config-eyeo](https://hg.adblockplus.org/codingtools/file/tip/eslint-config-eyeo)
-for more information.
