@@ -1207,11 +1207,13 @@
         break;
       }
     }
-    if (domain.value)
+    const value = domain.value.trim();
+    if (value)
     {
+      const host = /^https?:\/\//i.test(value) ? new URL(value).host : value;
       sendMessageHandleErrors({
         type: "filters.add",
-        text: "@@||" + domain.value.toLowerCase() + "^$document"
+        text: "@@||" + host.toLowerCase() + "^$document"
       });
     }
 
