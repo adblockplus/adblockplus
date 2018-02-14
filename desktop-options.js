@@ -1081,7 +1081,9 @@
       acceptableAdsPrivacy.setAttribute("aria-checked", true);
       acceptableAdsPrivacy.setAttribute("aria-disabled", false);
 
-      if (navigator.doNotTrack != 1)
+      // Edge uses window instead of navigator.
+      // Prefer navigator first since it's the standard.
+      if ((navigator.doNotTrack || window.doNotTrack) != 1)
         acceptableAdsForm.classList.add("show-dnt-notification");
     }
     else
