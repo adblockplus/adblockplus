@@ -15,35 +15,6 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-@font-face
-{
-  font-family: "Source Sans Pro";
-  src: url(fonts/SourceSansPro-Light.woff);
-  /* local("Ø") forces using no local font called Source Sans Pro */
-  src: local("Ø"), url(fonts/SourceSansPro-Light.woff) format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face
-{
-  font-family: "Source Sans Pro";
-  src: url(fonts/SourceSansPro-Regular.woff);
-  /* local("Ø") forces using no local font called Source Sans Pro */
-  src: local("Ø"), url(fonts/SourceSansPro-Regular.woff) format("woff");
-  font-style: normal;
-}
-
-@font-face
-{
-  font-family: "Source Sans Pro";
-  src: url(fonts/SourceSansPro-bold.woff);
-  /* local("Ø") forces using no local font called Source Sans Pro */
-  src: local("Ø"), url(fonts/SourceSansPro-bold.woff) format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
 html
 {
   font-size: 16px;
@@ -97,7 +68,7 @@ header > .title
 {
   margin: 0rem;
   font-size: 1.5rem;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 .title > h1 > strong

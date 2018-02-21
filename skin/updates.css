@@ -1,22 +1,19 @@
-@font-face
-{
-  font-family: "Source Sans Pro";
-  font-style: normal;
-  font-weight: 400;
-  font-stretch: normal;
-  src: local ("Ø"),
-  url(fonts/SourceSansPro-Regular.woff) format("woff");
-}
-
-@font-face
-{
-  font-family: "Source Sans Pro";
-  font-style: bold;
-  font-weight: 600;
-  font-stretch: normal;
-  src: local ("Ø"),
-  url(fonts/SourceSansPro-bold.woff) format("woff");
-}
+/*
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-present eyeo GmbH
+ *
+ * Adblock Plus is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Adblock Plus is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 html
 {
@@ -175,7 +172,7 @@ html[dir="rtl"] .feature-entry img
 #block-ads-text > strong
 {
   text-decoration: line-through;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 .store-buttons

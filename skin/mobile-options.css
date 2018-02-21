@@ -15,31 +15,6 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-@font-face
-{
-  font-family: "Source Sans Pro";
-  font-weight: 300;
-  font-style: normal;
-  src: url("fonts/Source-Sans-Pro/300.woff2") format("woff2");
-}
-
-@font-face
-{
-  font-family: "Source Sans Pro";
-  font-weight: 400;
-  font-style: normal;
-  src: url("fonts/Source-Sans-Pro/400.woff2") format("woff2");
-}
-
-@font-face
-{
-  font-family: "Source Sans Pro";
-  font-weight: 700;
-  font-style: normal;
-  src: url("fonts/Source-Sans-Pro/700.woff2") format("woff2");
-  ;
-}
-
 body,
 input
 {
@@ -198,7 +173,7 @@ button
 {
   width: 100%;
   border: none;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   color: #099DD1;
   background: none;

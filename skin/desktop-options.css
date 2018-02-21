@@ -15,35 +15,6 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-@font-face
-{
-  font-family: "Source Sans Pro";
-  src: url(fonts/SourceSansPro-Light.woff);
-  /* local("Ø") forces using no local font called Source Sans Pro */
-  src: local("Ø"), url(fonts/SourceSansPro-Light.woff) format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face
-{
-  font-family: "Source Sans Pro";
-  src: url(fonts/SourceSansPro-Regular.woff);
-  /* local("Ø") forces using no local font called Source Sans Pro */
-  src: local("Ø"), url(fonts/SourceSansPro-Regular.woff) format("woff");
-  font-style: normal;
-}
-
-@font-face
-{
-  font-family: "Source Sans Pro";
-  src: url(fonts/SourceSansPro-bold.woff);
-  /* local("Ø") forces using no local font called Source Sans Pro */
-  src: local("Ø"), url(fonts/SourceSansPro-bold.woff) format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
 html
 {
   font-size: 16px;
@@ -990,15 +961,17 @@ ul.list
   vertical-align: middle;
 }
 
-.cols .col5
+.cols .col5,
+.th .col5
 {
   margin: 0rem 1rem;
+  align-self: center;
 }
 
 .th .col5:nth-of-type(1),
 .table .col5:nth-of-type(1)
 {
-  flex: 4;
+  flex: 5;
 }
 
 .th .col5:nth-of-type(2),
@@ -1049,14 +1022,10 @@ html[dir="rtl"] .table .col5:nth-of-type(5)
   padding: 0.5rem 0rem;
 }
 
-html:not([dir="rtl"]) .table.cols .state
+.table.cols .toggle
 {
-  margin-left: 1rem;
-}
-
-html[dir="rtl"] .table.cols .state
-{
-  margin-right: 1rem;
+  -moz-margin-end: 0.5rem;
+  -webkit-margin-end: 0.5rem;
 }
 
 .table.cols .gear
