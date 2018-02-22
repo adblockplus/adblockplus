@@ -1,4 +1,10 @@
 {
+  "common_feature_anti_adblock_title": {
+    "message": "Adblock に対する警告メッセージを隠す"
+  },
+  "common_feature_malware_title": {
+    "message": "マルウェアのブロック"
+  },
   "common_feature_privacy_title": {
     "message": "トラッキングの追加ブロック"
   },

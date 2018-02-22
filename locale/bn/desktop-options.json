@@ -137,6 +137,9 @@
   "options_email": {
     "message": "ইমেইল:"
   },
+  "options_english": {
+    "message": "ইংরেজি"
+  },
   "options_filterList_add": {
     "message": "+ নতুন ফিল্টার তালিকা যুক্ত করুন"
   },
@@ -289,6 +292,34 @@
   },
   "options_tab_whitelist": {
     "message": "সাদাতালিকাভুক্ত ওয়েবসাইট"
+  },
+  "options_tracking_warning_1": {
+    "message": "আমরা লক্ষ্য করেছি যে আপনার <strong>$tracking$</strong> ও <strong>$acceptableAds$</strong> সক্রিয় করা আছে।",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "আমরা আপনাকে জানাতে চাই যে আপনাকে আরো গ্রহণযোগ্য বিজ্ঞাপন দেখাতে, গ্রহণযযোগ্য বিজ্ঞাপণের সাথে কিছু অনুসরণ <strong>থাকতে</strong> পারে।"
+  },
+  "options_tracking_warning_3": {
+    "message": "যদি আপনি অতিরিক্ত গোপনীয়তা চান, তবে <strong>$acceptableAdsPrivacy$</strong> বাক্সটি টিক দিন।",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "আচ্ছা, বুঝেছি"
   },
   "options_whitelist_add": {
     "message": "ওয়েবসাইট যুক্ত করুন"

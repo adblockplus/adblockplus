@@ -2,10 +2,52 @@
   "mops_acceptableAds_description": {
     "message": "Atļaut dažas neuzbāzīgas reklāmas"
   },
+  "mops_acceptableAds_more": {
+    "message": "Uzzināt vairāk"
+  },
   "mops_action_cancel": {
     "message": "Atcelt"
   },
+  "mops_enabled_label": {
+    "message": "Ieslēgt Adblock Plus <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "Ievadiet nosaukumu"
+  },
+  "mops_error_url": {
+    "message": "Ievadiet URL"
+  },
+  "mops_filterlist_add": {
+    "message": "+ Pievienot filtru sarakstu"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Pievienot filtru sarakstu"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ Pievienot savu filtru sarakstu"
+  },
+  "mops_header": {
+    "message": "Adblock Plus iestatījumi"
+  },
+  "mops_subscribe_header": {
+    "message": "Pievienot savu filtru sarakstu"
+  },
+  "mops_subscribe_title": {
+    "message": "Filtru saraksta nosaukums"
+  },
+  "mops_subscribe_url": {
+    "message": "Filtru saraksta URL"
+  },
   "mops_subscriptions_header": {
     "message": "Filtra abonementi"
+  },
+  "mops_title": {
+    "message": "Adblock Plus iestatījumi"
   }
 }

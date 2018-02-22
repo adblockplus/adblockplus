@@ -1,0 +1,14 @@
+{
+  "common_feature_anti_adblock_title": {
+    "message": "Приховувати попередження про використання блокувальника реклами"
+  },
+  "common_feature_malware_title": {
+    "message": "Блокувати шкідливі програми"
+  },
+  "common_feature_privacy_title": {
+    "message": "Блокувати додаткове відстеження"
+  },
+  "common_feature_social_title": {
+    "message": "Блокувати відстеження через значки соціальних мереж"
+  }
+}

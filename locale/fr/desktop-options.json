@@ -15,7 +15,7 @@
     "message": "PUBLICITÉ ACCEPTABLE"
   },
   "options_acceptableAds_privacy_label": {
-    "message": "Autoriser seulement les pubs sans traçage tiers"
+    "message": "Autoriser seulement les annonces sans traçage tiers"
   },
   "options_advanced_description": {
     "message": "Personnalisez Adblock Plus, ajoutez ou supprimez des listes de filtres, créez et maintenez vos propres listes de filtres"
@@ -30,7 +30,7 @@
     "message": "ANNULER"
   },
   "options_customFilter_edit": {
-    "message": "Modifier le filtre"
+    "message": "Modifier les filtres"
   },
   "options_customFilter_save": {
     "message": "ENREGISTRER"
@@ -162,7 +162,7 @@
     "message": "Il y a heures"
   },
   "options_filterList_lastDownload_checksumMismatch": {
-    "message": "Échec, le checksum ne correspond pas !"
+    "message": "Échec, le checksum ne correspond pas"
   },
   "options_filterList_lastDownload_connectionError": {
     "message": "Échec, erreur lors du téléchargement !"

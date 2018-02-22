@@ -1,0 +1,23 @@
+{
+  "updates_adblockBrowser": {
+    "message": "Četudi imate nadzor na namizju, lahko blokirate oglase in izboljšate svojo zasebnost in varnost tudi na prenosnih napravah. <a>Spodaj si prenesite program Adblock Browser</a>."
+  },
+  "updates_blockAds": {
+    "message": "Odprtokodno zavezništvo upornikov je ustvarilo nove filtre, ki vam omogočajo uničiti skrite oglase na spletnih straneh, kot je Facebook, četudi imperij udari nazaj."
+  },
+  "updates_heading": {
+    "message": "Adblock Plus je bil posodobljen!"
+  },
+  "updates_optionsPageNews": {
+    "message": "Popolnoma nova stran nastavitev - prenovljena z več možnostmi zasebnosti in varnosti - za enostavnejšo <a>prilagoditev Adblock Plusa po svoji želji</a>."
+  },
+  "updates_phone": {
+    "message": "Ampak kaj pa vaš telefon?"
+  },
+  "updates_status": {
+    "message": "Posodobitev je končana."
+  },
+  "updates_subheading": {
+    "message": "Novosti"
+  }
+}

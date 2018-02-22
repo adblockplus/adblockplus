@@ -137,6 +137,9 @@
   "options_email": {
     "message": "E-pošta:"
   },
+  "options_english": {
+    "message": "Angleščina"
+  },
   "options_filterList_add": {
     "message": "+ Dodaj nov seznam filtrov"
   },

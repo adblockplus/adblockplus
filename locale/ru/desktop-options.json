@@ -36,10 +36,10 @@
     "message": "СОХРАНИТЬ"
   },
   "options_customFilters_description": {
-    "message": "Пишите свои собственные фильтры для дополнительного контроля над тем, что Adblock Plus разрешает, а что — блокирует."
+    "message": "Пишите свои собственные фильтры для большего контроля над тем, что показывает или скрывает Adblock Plus."
   },
   "options_customFilters_edit_placeholder": {
-    "message": "например $filter$",
+    "message": "например, $filter$",
     "placeholders": {
       "filter": {
         "content": "$1",
@@ -137,6 +137,9 @@
   "options_email": {
     "message": "Электронная почта:"
   },
+  "options_english": {
+    "message": "Английский"
+  },
   "options_filterList_add": {
     "message": "+ Добавить новый список фильтров"
   },
@@ -159,7 +162,7 @@
     "message": "часа(-ов) назад"
   },
   "options_filterList_lastDownload_checksumMismatch": {
-    "message": "Ошибка: проверочная сумма не совпадает, возможно произошла ошибка загрузки"
+    "message": "Ошибка: проверочная сумма не совпадает"
   },
   "options_filterList_lastDownload_connectionError": {
     "message": "Ошибка: невозможно загрузить"
@@ -340,7 +343,7 @@
     }
   },
   "options_whitelist_placeholder_example": {
-    "message": "например $domain$",
+    "message": "например, $domain$",
     "placeholders": {
       "domain": {
         "content": "$1",

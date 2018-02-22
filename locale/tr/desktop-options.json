@@ -137,6 +137,9 @@
   "options_email": {
     "message": "E-posta:"
   },
+  "options_english": {
+    "message": "İngilizce"
+  },
   "options_filterList_add": {
     "message": "+ Yeni süzgeç listesi ekle"
   },

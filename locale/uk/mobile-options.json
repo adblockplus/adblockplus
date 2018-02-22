@@ -2,10 +2,52 @@
   "mops_acceptableAds_description": {
     "message": "Дозволити деяку ненав'язливу рекламу"
   },
+  "mops_acceptableAds_more": {
+    "message": "Дізнатися більше"
+  },
   "mops_action_cancel": {
     "message": "Скасувати"
   },
+  "mops_enabled_label": {
+    "message": "Включити Adblock Plus <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "Будь ласка, введіть назву"
+  },
+  "mops_error_url": {
+    "message": "Будь ласка, введіть URL"
+  },
+  "mops_filterlist_add": {
+    "message": "+ Додати список фільтрів"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Додати список фільтрів"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ Додати власний список фільтрів"
+  },
+  "mops_header": {
+    "message": "Налаштування Adblock Plus"
+  },
+  "mops_subscribe_header": {
+    "message": "Додати власний список фільтрів"
+  },
+  "mops_subscribe_title": {
+    "message": "Ім'я списку фільтрів"
+  },
+  "mops_subscribe_url": {
+    "message": "URL списку фільтрів"
+  },
   "mops_subscriptions_header": {
     "message": "Підписки на фільтри"
+  },
+  "mops_title": {
+    "message": "Налаштування Adblock Plus"
   }
 }

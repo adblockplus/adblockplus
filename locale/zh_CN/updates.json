@@ -1,23 +1,23 @@
 {
-  "updates_status": {
-    "message": "更新完成"
-  },
-  "updates_heading": {
-    "message": "Adblock Plus 已完成更新！"
-  },
-  "updates_subheading": {
-    "message": "有哪些新功能？"
-  },
-  "updates_optionsPageNews": {
-    "message": "全新的设置页面 - 改进和重新设计跟以前比，Adblock Plus有更多的隐私和安全性选项-所以您可以根据需要轻松自定义它。<a>亲自体验吧。</a>"
+  "updates_adblockBrowser": {
+    "message": "如果在电脑上进行控制，您也可以拦截移动设备上的广告，并提高移动设备的隐私和安全性。获取下面的 <a>Adblock 浏览器应用程序</a>"
   },
   "updates_blockAds": {
     "message": "开源反抗联盟创建了新的拦截过滤器，即使在Facebook等帝国反击的情况下，也可以屏蔽其上的广告。"
   },
+  "updates_heading": {
+    "message": "Adblock Plus 已完成更新！"
+  },
+  "updates_optionsPageNews": {
+    "message": "全新的设置页面 - 改进和重新设计跟以前比，Adblock Plus有更多的隐私和安全性选项-<a>所以您可以根据需要轻松自定义它</a>。"
+  },
   "updates_phone": {
     "message": "等等！您的手机呢？"
   },
-  "updates_adblockBrowser": {
-    "message": "如果在电脑上进行控制，您也可以拦截移动设备上的广告，并提高移动设备的隐私和安全性。获取下面的 <a>Adblock 浏览器应用程序</a>"
+  "updates_status": {
+    "message": "更新完成"
+  },
+  "updates_subheading": {
+    "message": "有哪些新功能？"
   }
 }

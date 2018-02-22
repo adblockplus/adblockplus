@@ -137,6 +137,9 @@
   "options_email": {
     "message": "Email:"
   },
+  "options_english": {
+    "message": "Engelsk"
+  },
   "options_filterList_add": {
     "message": "+ Tilføj en ny filterliste"
   },
@@ -289,6 +292,34 @@
   },
   "options_tab_whitelist": {
     "message": "Hvidlistede websteder"
+  },
+  "options_tracking_warning_1": {
+    "message": "Vi har bemærket, at du har både <strong>$tracking$</strong> og <strong>$acceptableAds$</strong> aktiveret.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "Vi ønsker du skal vide at for annoncører kan vise dig mere relevante annoncer, der <strong>kan</strong> der være tracking med Acceptable annoncer."
+  },
+  "options_tracking_warning_3": {
+    "message": "Hvis du foretrækker ekstra beskyttelse af personlige oplysninger, skal du vælge <strong>$acceptableAdsPrivacy$</strong> afkrydsningsfeltet nedenfor.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "OK, forstået"
   },
   "options_whitelist_add": {
     "message": "Tilføj hjemmeside"

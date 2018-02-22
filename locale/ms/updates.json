@@ -1,23 +1,23 @@
 {
-  "updates_status": {
-    "message": "Kemas kini lengkap"
-  },
-  "updates_heading": {
-    "message": "Adblock Plus telah dikemas kini!"
-  },
-  "updates_subheading": {
-    "message": "Apa yang baru?"
-  },
-  "updates_optionsPageNews": {
-    "message": "Halaman Tetapan serba baharu - diolah semula dan diperbaharui gayanya dengan lebih banyak pilihan privasi dan keselamatan - menjadikannya lebih mudah untuk menyuaikan Adblock Plus mengikut keinginan anda sendiri. <a>Cuba lihat sendiri.</a>"
+  "updates_adblockBrowser": {
+    "message": "Jika anda mengambil kawalan pada desktop, anda boleh menyekat iklan dan meningkatkan privasi dan keselamatan anda di telefon bimbit juga. Dapatkan <a>Apl Adblock Browser di bawah</a>"
   },
   "updates_blockAds": {
     "message": "Perikatan Sumber Terbuka mencipta penapis penyekatan baru yang membolehkan anda menyembunyikan iklan di laman web seperti Facebook, walaupun Empayar menyerang kembali."
   },
+  "updates_heading": {
+    "message": "Adblock Plus telah dikemas kini!"
+  },
+  "updates_optionsPageNews": {
+    "message": "Halaman Tetapan serba baharu - diolah semula dan diperbaharui gayanya dengan lebih banyak pilihan privasi dan keselamatan - menjadikannya lebih mudah untuk <a>menyuaikan Adblock Plus mengikut keinginan anda sendiri</a>."
+  },
   "updates_phone": {
     "message": "Tapi tunggu! Bagaimana pula dengan telefon anda?"
   },
-  "updates_adblockBrowser": {
-    "message": "Jika anda mengambil kawalan pada desktop, anda boleh menyekat iklan dan meningkatkan privasi dan keselamatan anda di telefon bimbit juga. Dapatkan <a>Apl Adblock Browser di bawah</a>"
+  "updates_status": {
+    "message": "Kemas kini lengkap"
+  },
+  "updates_subheading": {
+    "message": "Apa yang baru?"
   }
 }

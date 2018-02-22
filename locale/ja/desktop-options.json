@@ -8,8 +8,14 @@
   "options_acceptableAds_description": {
     "message": "控えめな広告とは控え目な（非侵入型の）広告の事を指します。これはウェブサイトのオーナーに収益をもたらすことになるので、広告ブロックとオンライン コンテンツへのサポートとの間の妥協点的な存在となります。"
   },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>注:</strong> ブラウザ設定で<strong>Do Not Track (DNT)</strong> が無効になっています。この機能を正常に動作させるには、ブラウザ設定で <strong>DNT</strong> を有効にしてください。<a>DNT を有効にする方法を確認する</a>"
+  },
   "options_acceptableAds_header": {
     "message": "控えめな広告"
+  },
+  "options_acceptableAds_privacy_label": {
+    "message": "第三者のトラッキングがない広告のみを許可します"
   },
   "options_advanced_description": {
     "message": "Adblock Plus のカスタマイズ、フィルターリストの追加または削除、自分用のフィルターリスト作成またはメンテナンスを行います。"
@@ -22,6 +28,9 @@
   },
   "options_customFilter_cancel": {
     "message": "キャンセル"
+  },
+  "options_customFilter_edit": {
+    "message": "フィルターの編集"
   },
   "options_customFilter_save": {
     "message": "保存"
@@ -74,6 +83,15 @@
   "options_customize_showNotifications_tooltip": {
     "message": "Adblock Plus からすべての通知をオフにします。"
   },
+  "options_dialog_about_copyright": {
+    "message": "Copyright © $currentYear$ eyeo GmbH.",
+    "placeholders": {
+      "currentYear": {
+        "content": "2017",
+        "example": "2017"
+      }
+    }
+  },
   "options_dialog_about_title": {
     "message": "Adblock Plus について"
   },
@@ -98,11 +116,20 @@
   "options_dialog_import_subscription_title": {
     "message": "フィルターリスト名"
   },
+  "options_dialog_import_subscription_title_error": {
+    "message": "この項目に入力してください"
+  },
   "options_dialog_import_title": {
     "message": "フィルターリストを追加"
   },
+  "options_dialog_language_other_empty": {
+    "message": "利用可能な言語がありません。"
+  },
   "options_dialog_language_title": {
     "message": "言語の選択"
+  },
+  "options_dialog_predefined_confirm": {
+    "message": "はい、このフィルターリストを使用します"
   },
   "options_dialog_predefined_title": {
     "message": "個のフィルターリストを追加しますか？"
@@ -142,6 +169,9 @@
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "更新中"
+  },
+  "options_filterList_lastDownload_invalidData": {
+    "message": "更新失敗: フィルターリスト無効"
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "更新失敗: アドレス無効"
@@ -262,6 +292,34 @@
   },
   "options_tab_whitelist": {
     "message": "ホワイトリストに登録されているウェブサイト"
+  },
+  "options_tracking_warning_1": {
+    "message": "<strong>$tracking$</strong> と <strong>$acceptableAds$</strong> の両方が有効になっています。",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "より関連した広告を表示するために、広告主は控えめな広告で多少のトラッキングをする<strong>かもしれない</strong>ことを、あなたに知っておいてほしいと思います。"
+  },
+  "options_tracking_warning_3": {
+    "message": "更なるプライバシーを求める場合、以下の <strong>$acceptableAdsPrivacy$</strong> チェックボックスを選択してください。",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "OK, わかりました"
   },
   "options_whitelist_add": {
     "message": "ウェブサイトの追加"

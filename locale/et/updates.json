@@ -1,0 +1,20 @@
+{
+  "updates_adblockBrowser": {
+    "message": "Kui võtad kontrolli töölaua arvutis, saad reklaamid blokeerida ning oma privaatsust ja turvalisust täiustada ka mobiilis. Hangi <a>allpool rakendus Adblock Browser</a>."
+  },
+  "updates_heading": {
+    "message": "Adblock Plus on uuendatud!"
+  },
+  "updates_optionsPageNews": {
+    "message": "Täiesti uus sätete leht - uue kujunduse ja välimusega ning rohkemate privaatsuse ja turvalisuse sätetega - seega <a>Adblock Plusi oma soovide järgi kohandamine</a> on lihtsam."
+  },
+  "updates_phone": {
+    "message": "Oota! Aga telefon?"
+  },
+  "updates_status": {
+    "message": "Uuendamine valmis"
+  },
+  "updates_subheading": {
+    "message": "Mis on uut?"
+  }
+}

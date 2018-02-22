@@ -8,14 +8,35 @@
   "mops_action_cancel": {
     "message": "キャンセル"
   },
+  "mops_enabled_label": {
+    "message": "<strong>$domain$</strong> で Adblock Plus を有効にする",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "タイトルを入力してください"
+  },
+  "mops_error_url": {
+    "message": "URL を入力してください"
+  },
   "mops_filterlist_add": {
     "message": "+ フィルターリストを追加"
   },
   "mops_filterlist_add_action": {
     "message": "フィルターリストを追加"
   },
+  "mops_filterlist_add_url": {
+    "message": "+ カスタムフィルターリストを追加"
+  },
   "mops_header": {
     "message": "Adblock Plus 設定"
+  },
+  "mops_subscribe_header": {
+    "message": "カスタムフィルターリストを追加"
   },
   "mops_subscribe_title": {
     "message": "フィルターリスト名"

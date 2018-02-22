@@ -1,23 +1,23 @@
 {
-  "updates_status": {
-    "message": "Update voltooid"
+  "updates_adblockBrowser": {
+    "message": "Als u de controle hebt op uw desktop, kunt u ook op uw mobiele apparaat advertenties blokkeren en uw privacy en beveiliging verbeteren. Download de <a>Adblock Browser-app hieronder</a>."
+  },
+  "updates_blockAds": {
+    "message": "De Open Source Rebel Alliance heeft nieuwe blokkeringsfilters gemaakt waarmee u verborgen advertenties op websites zoals Facebook kunt laten verdwijnen, zelfs als het imperium terugslaat."
   },
   "updates_heading": {
     "message": "Adblock Plus is bijgewerkt!"
   },
-  "updates_subheading": {
-    "message": "Wat is er nieuw?"
-  },
   "updates_optionsPageNews": {
-    "message": "Gloednieuwe pagina voor Instellingen - vernieuwd en gerestyled met meer privacy en veiligheidsopties - het is dus eenvoudiger om Adblock Plus aan te passen net zoals u het wilt. <a>Bekijk het zelf.</a>"
-  },
-  "updates_blockAds": {
-    "message": "De Open Source Rebellen Alliantie creëerde nieuwe blokkeringsfilters waarmee u verborgen advertenties doet verdwijnen op websites zoals Facebook, wat er ook maar gebeurt."
+    "message": "Gloednieuwe pagina voor Instellingen - vernieuwd en gerestyled met meer opties voor privacy en beveiliging - zodat het makkelijker is om <a>Adblock Plus naar wens aan te passen</a>."
   },
   "updates_phone": {
-    "message": "Maar wacht! Wat met uw telefoon?"
+    "message": "Maar wacht! Hoe zit het met uw telefoon?"
   },
-  "updates_adblockBrowser": {
-    "message": "Als u de controle wilt overnemen over uw bureaublad kunt u advertenties blokkeren en ook uw privacy en veiligheid op uw mobiele telefoon verbeteren. Download de <a>Adblock Browser App hieronder</a>"
+  "updates_status": {
+    "message": "Update voltooid"
+  },
+  "updates_subheading": {
+    "message": "Wat is er nieuw?"
   }
 }

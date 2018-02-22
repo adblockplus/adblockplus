@@ -137,6 +137,9 @@
   "options_email": {
     "message": "Электронная пошта:"
   },
+  "options_english": {
+    "message": "Англійская"
+  },
   "options_filterList_add": {
     "message": "+ Дадаць новы спіс фільтраў"
   },

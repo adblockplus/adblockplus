@@ -2,10 +2,52 @@
   "mops_acceptableAds_description": {
     "message": "Baimendu publizitate ez intrusiboa"
   },
+  "mops_acceptableAds_more": {
+    "message": "Ikasi gehiago"
+  },
   "mops_action_cancel": {
     "message": "Utzi bertan behera"
   },
+  "mops_enabled_label": {
+    "message": "Gaitu Adblock Plus <strong>$domain$</strong> domeinuan",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "Mesedez sartu izenburu bat"
+  },
+  "mops_error_url": {
+    "message": "Sartu URL esteka bat"
+  },
+  "mops_filterlist_add": {
+    "message": "+ Gehitu irazki zerrenda bat"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Gehitu irazki zerrenda"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ Gehitu iragazki zerrenda pertsonala"
+  },
+  "mops_header": {
+    "message": "Adblock Plus ezarpenak"
+  },
+  "mops_subscribe_header": {
+    "message": "Gehitu iragazki zerrenda pertsonala"
+  },
+  "mops_subscribe_title": {
+    "message": "Iragazki zerrendaren izena"
+  },
+  "mops_subscribe_url": {
+    "message": "Iragazki zerrendaren URLa"
+  },
   "mops_subscriptions_header": {
     "message": "Iragazki harpidetzak"
+  },
+  "mops_title": {
+    "message": "Adblock Plus ezarpenak"
   }
 }

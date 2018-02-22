@@ -1,0 +1,14 @@
+{
+  "common_feature_anti_adblock_title": {
+    "message": "Ezkutatu Adblock abisuak"
+  },
+  "common_feature_malware_title": {
+    "message": "Blokeatu malwarea"
+  },
+  "common_feature_privacy_title": {
+    "message": "Blokeatu jarraipen gehigarria"
+  },
+  "common_feature_social_title": {
+    "message": "Blokeatu gizarte-sare ikonoen jarraipena"
+  }
+}

@@ -1,23 +1,23 @@
 {
-  "updates_status": {
-    "message": "Güncelleme tamamlandı"
-  },
-  "updates_heading": {
-    "message": "Adblock Plus güncellendi!"
-  },
-  "updates_subheading": {
-    "message": "Yenilikler"
-  },
-  "updates_optionsPageNews": {
-    "message": "Yeni Ayarlar sayfası - daha fazla gizlilik ve güvenlik seçenekleriyle yenilendi ve yeniden tasarlandı - bu sayede Adblock Plus'ı istediğiniz gibi özelleştirmek artık çok daha kolay. <a>Kendiniz için keşfedin.</a>"
+  "updates_adblockBrowser": {
+    "message": "Masaüstü bilgisayarda kontrol sizdeyse, mobil cihazlarda da reklamları engelleyebilir ve gizliliğinizi ve güvenliğinizi daha iyi bir seviyeye taşıyabilirsiniz. <a>Aşağıdaki Adblock Browser Uygulaması</a>'nı edinin"
   },
   "updates_blockAds": {
     "message": "İmparatora rağmen, İsyancı Açık Kaynak Topluluğu, Facebook gibi web sitelerindeki gizli reklamları yok etmenize olanak sağlayan yeni bir engelleme filtresi oluşturdu."
   },
+  "updates_heading": {
+    "message": "Adblock Plus güncellendi!"
+  },
+  "updates_optionsPageNews": {
+    "message": "Yeni Ayarlar sayfası - daha fazla gizlilik ve güvenlik seçenekleriyle yenilendi ve yeniden tasarlandı - bu sayede <a>Adblock Plus'ı istediğiniz gibi özelleştirmek</a> artık çok daha kolay."
+  },
   "updates_phone": {
     "message": "Ama durun! Peki ya telefonunuz?"
   },
-  "updates_adblockBrowser": {
-    "message": "Masaüstü bilgisayarda kontrol sizdeyse, mobil cihazlarda da reklamları engelleyebilir ve gizliliğinizi ve güvenliğinizi daha iyi bir seviyeye taşıyabilirsiniz. <a>Aşağıdaki Adblock Browser Uygulaması</a>'nı edinin"
+  "updates_status": {
+    "message": "Güncelleme tamamlandı"
+  },
+  "updates_subheading": {
+    "message": "Yenilikler"
   }
 }

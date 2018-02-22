@@ -9,7 +9,7 @@
     "message": "Imate smartphone ili tablet?"
   },
   "firstRun_acceptableAdsExplanation": {
-    "message": "Želimo podupirati web stranice da koriste pošteno, nenametljivo reklamiranje. Zato smo uspostavili <a>točne smjernice</a> za prepoznavanje reklama, koje su prikazane prema uobičajenim postavkama. Ako još uvijek želite blokirati svaku reklamu to možete <a>onemogućiti</a> u nekoliko sekundi."
+    "message": "Želimo podupirati web stranice da koriste pošteno, nenametljivo oglašavanje. Zato smo uspostavili <a>točne smjernice</a> za prepoznavanje reklama, koje su prikazane prema uobičajenim postavkama. Ako još uvijek želite blokirati svaki oglas to možete <a>onemogućiti</a> u nekoliko sekundi."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Naporni oglasi će sada biti blokirani"

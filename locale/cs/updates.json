@@ -1,23 +1,23 @@
 {
-  "updates_status": {
-    "message": "Aktualizace dokončena"
-  },
-  "updates_heading": {
-    "message": "Aplikace Adblock Plus byla aktualizována"
-  },
-  "updates_subheading": {
-    "message": "Co je nového?"
-  },
-  "updates_optionsPageNews": {
-    "message": "Zbrusu nová stránka nastavení - upravená a obnovená s dalšími možnostmi ochrany osobních údajů a zabezpečení - takže je aplikaci Adblock Plus nyní snadnější si přizpůsobit dle vlastních potřeb. <a>Přesvědčte se sami.</a>"
+  "updates_adblockBrowser": {
+    "message": "Máte-li pod kontrolou počítač, můžete zablokovat reklamy a zlepšit ochranu soukromí a bezpečnost i na mobilních zařízeních. Získejte <a>aplikace Adblock Browser níže</a>"
   },
   "updates_blockAds": {
     "message": "Rebel Alliance komunity Open Source vytvořila nové blokovací filtry, které umožňují zbavit se skryté reklamy na webových stránkách, jako je např. Facebook, a to i v případě, že Empire udeří znovu."
   },
+  "updates_heading": {
+    "message": "Aplikace Adblock Plus byla aktualizována"
+  },
+  "updates_optionsPageNews": {
+    "message": "Zbrusu nová stránka nastavení - upravená a obnovená s dalšími možnostmi ochrany osobních údajů a zabezpečení - takže je aplikaci <a>Adblock Plus nyní snadnější si přizpůsobit dle vlastních potřeb</a>."
+  },
   "updates_phone": {
     "message": "Počkejte však! A co váš telefon?"
   },
-  "updates_adblockBrowser": {
-    "message": "Máte-li pod kontrolou počítač, můžete zablokovat reklamy a zlepšit ochranu soukromí a bezpečnost i na mobilních zařízeních. Získejte <a>aplikace Adblock Browser níže</a>"
+  "updates_status": {
+    "message": "Aktualizace dokončena"
+  },
+  "updates_subheading": {
+    "message": "Co je nového?"
   }
 }

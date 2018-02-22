@@ -1,0 +1,23 @@
+{
+  "updates_adblockBrowser": {
+    "message": "Ha számítógépen már átvette az irányítást, blokkolhatja a reklámokat, és növelheti biztonságát és az adatai védelmét mobilon is. Töltse le az <a>Adblock Browser alkalmazást lentebb</a>."
+  },
+  "updates_blockAds": {
+    "message": "A nyílt forráskódú lázadó szövetség új blokkoló szűrőket hozott létre, amelyek lehetővé teszik rejtett hirdetések robbanását a Facebookon, például a Birodalom visszaszorításakor."
+  },
+  "updates_heading": {
+    "message": "Az Adblock Plus frissítve!"
+  },
+  "updates_optionsPageNews": {
+    "message": "Vadonatúj Beállítások lap – átalakítva és átformázva még több adatvédelmi és biztonsági beállítással, hogy könnyebb legyen <a>olyanra alakítani az Adblock Plus, amilyenre szeretné</a>."
+  },
+  "updates_phone": {
+    "message": "Várjon csak! Mi a helyzet a telefonjával?"
+  },
+  "updates_status": {
+    "message": "A frissítés befejezve"
+  },
+  "updates_subheading": {
+    "message": "Újdonságok"
+  }
+}

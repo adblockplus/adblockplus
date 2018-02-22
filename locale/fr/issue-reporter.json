@@ -6,7 +6,7 @@
     "message": "Nous ne serons pas en mesure de vous recontacter et votre signalement ne sera probablement pas traité prioritairement."
   },
   "issueReporter_commentPage_heading": {
-    "message": "Commentaire"
+    "message": "Entrez un commentaire"
   },
   "issueReporter_comment_description": {
     "message": "Le champ ci-dessous vous permet de saisir un commentaire pour nous aider à comprendre le problème. Cette étape est facultative mais recommandée si le problème n'est pas évident à détecter. Vous pouvez également revoir les données du signalement avant l'envoi."
@@ -45,7 +45,7 @@
     "message": "Adblock Plus ne bloque pas une publicité"
   },
   "issueReporter_falsePositive_description": {
-    "message": "Choisissez cette option si le contenu de la page est sévèrement tronqué, est mal affiché ou ne fonctionne pas correctement. Vous pouvez vérifier si Adblock Plus en est la cause en la désactivant temporairement."
+    "message": "Choisissez cette option si la page manque de contenu important, est mal affiché ou ne fonctionne pas correctement. Vous pouvez vérifier si Adblock Plus en est la cause en la désactivant temporairement."
   },
   "issueReporter_falsePositive_label": {
     "message": "Adblock Plus bloque trop"

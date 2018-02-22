@@ -1,23 +1,23 @@
 {
-  "updates_status": {
-    "message": "Atualização concluída"
-  },
-  "updates_heading": {
-    "message": "O Adblock Plus foi atualizado!"
-  },
-  "updates_subheading": {
-    "message": "Quais são as novidades?"
-  },
-  "updates_optionsPageNews": {
-    "message": "Página Definições totalmente nova - renovada e remodelada com mais opções de segurança e privacidade. É mais fácil personalizar o Adblock Plus como pretende. <a>Veja por si próprio.</a>"
+  "updates_adblockBrowser": {
+    "message": "Se estiver a assumir o controlo no computador, também pode bloquear anúncios e melhorar a sua privacidade e segurança no telemóvel. Obtenha a <a>Adblock Browser aplicaçao abaixo</a>"
   },
   "updates_blockAds": {
     "message": "A Aliança Rebelde do Código Aberto criou novos filtros de bloqueio que permitem ocultar anúncios em sites Web como o Facebook, mesmo se o Império contra-atacar."
   },
+  "updates_heading": {
+    "message": "O Adblock Plus foi atualizado!"
+  },
+  "updates_optionsPageNews": {
+    "message": "Página Definições totalmente nova - renovada e remodelada com mais opções de segurança e privacidade. É mais fácil <a>personalizar o Adblock Plus como pretende</a>."
+  },
   "updates_phone": {
     "message": "Mas espere! E o seu telefone?"
   },
-  "updates_adblockBrowser": {
-    "message": "Se estiver a assumir o controlo no computador, também pode bloquear anúncios e melhorar a sua privacidade e segurança no telemóvel. Obtenha a <a>Adblock Browser aplicaçao abaixo</a>"
+  "updates_status": {
+    "message": "Atualização concluída"
+  },
+  "updates_subheading": {
+    "message": "Quais são as novidades?"
   }
 }

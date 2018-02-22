@@ -1,23 +1,23 @@
 {
-  "updates_status": {
-    "message": "اكتمل التحديث"
-  },
-  "updates_heading": {
-    "message": "تم تحديث Adblock Plus!"
-  },
-  "updates_subheading": {
-    "message": "ما الجديد؟"
-  },
-  "updates_optionsPageNews": {
-    "message": "صفحة الإعدادات الجديدة للعلامة التجارية - وتصميم جديد مع مزيدٍ من خيارات الخصوصية والأمان - ولذلك من السهل تخصيص Adblock Plus حسبما تريده. <a>تحقق من ذلك بنفسك.</a>"
+  "updates_adblockBrowser": {
+    "message": "إذا أحكمت سيطرتك على سطح المكتب، فستستطيع حجب الإعلانات وتحسين الخصوصية والأمان على الهاتف الجوال أيضًا. احصل على <a>تطبيق Adblock Browser أدناه</a>"
   },
   "updates_blockAds": {
     "message": "أنشأ تحالف متمردي المصادر المفتوحة عوامل تصفية جديدة للحجب وهي تتيح لك تدمير الإعلانات المخفية على مواقع الويب مثل الفيس بوك حتى إذا عاود الإمبراطور الهجوم."
   },
+  "updates_heading": {
+    "message": "تم تحديث Adblock Plus!"
+  },
+  "updates_optionsPageNews": {
+    "message": "صفحة الإعدادات الجديدة للعلامة التجارية - وتصميم جديد مع مزيدٍ من خيارات الخصوصية والأمان - ولذلك من السهل <a>تخصيص Adblock Plus حسبما تريده</a>."
+  },
   "updates_phone": {
     "message": "ولكن تمهل! ماذا عن هاتفك؟"
   },
-  "updates_adblockBrowser": {
-    "message": "إذا أحكمت سيطرتك على سطح المكتب، فستستطيع حجب الإعلانات وتحسين الخصوصية والأمان على الهاتف الجوال أيضًا. احصل على <a>تطبيق Adblock Browser أدناه</a>"
+  "updates_status": {
+    "message": "اكتمل التحديث"
+  },
+  "updates_subheading": {
+    "message": "ما الجديد؟"
   }
 }

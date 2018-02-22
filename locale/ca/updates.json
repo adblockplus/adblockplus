@@ -1,0 +1,23 @@
+{
+  "updates_adblockBrowser": {
+    "message": "Si ja controleu el bloqueig d'anuncis des de l'escriptori, podreu fer-ho també al vostre mòbil i millorar tant la privacitat com la seguretat. Baixeu l'aplicació <a>Adblock Browser més avall</a>."
+  },
+  "updates_blockAds": {
+    "message": "L'aliança rebel de codi obert ha creat nous filtres de bloqueig que us permeten destruir anuncis ocults en pàgines com Facebook, fins i tot si l'imperi contraataca."
+  },
+  "updates_heading": {
+    "message": "S'ha actualitzat l'Adblock Plus!"
+  },
+  "updates_optionsPageNews": {
+    "message": "Nova pàgina de configuració: modernitzada i renovada amb més opcions de privadesa i seguretat, perquè sigui més fàcil <a>personalitzar l'Adblock Plus al vostre gust</a>."
+  },
+  "updates_phone": {
+    "message": "Espereu! Què passa amb el vostre telèfon?"
+  },
+  "updates_status": {
+    "message": "Actualització completada"
+  },
+  "updates_subheading": {
+    "message": "Novetats"
+  }
+}

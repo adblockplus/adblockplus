@@ -1,12 +1,21 @@
 {
   "options_acceptableAds_ads_description_1": {
-    "message": "Приемливите реклами не досаждат и не закриват разглежданото съдържание. <a>Прочетете кои са критериите за Приемливи реклами</a>"
+    "message": "Приемливите реклами не досаждат и не закриват разглежданото съдържание. <a>Повече за критериите на Приемливи реклами</a>"
   },
   "options_acceptableAds_ads_label": {
     "message": "Позволи Приемливи реклами"
   },
+  "options_acceptableAds_description": {
+    "message": "Приемливите реклами са ненатрапчиви. Заемат място по средата между блокираната реклама и спонсорското съдържание, защото генерират приходи за собствениците на сайта."
+  },
   "options_acceptableAds_header": {
     "message": "Приемливи реклами"
+  },
+  "options_acceptableAds_privacy_label": {
+    "message": "Позволи само реклами без проследяване от трета страна"
+  },
+  "options_advanced_description": {
+    "message": "Нагласяване на Adblock Plus, добавяне или премахване на филтри, създаване и поддържане на собствени филтри."
   },
   "options_close": {
     "message": "затвори"
@@ -33,13 +42,19 @@
     }
   },
   "options_customFilters_learn": {
-    "message": "Повече за писането на филтри"
+    "message": "Как да напишем собствен филтър"
+  },
+  "options_customFilters_start": {
+    "message": "Напиши собствен филтър"
   },
   "options_customFilters_tip": {
-    "message": "Създадените от вас филтри ще се покажат тук."
+    "message": "Тук са създадените от вас филтри."
   },
   "options_customFilters_title": {
-    "message": "Създаване и редактиране"
+    "message": "Създаване и редактиране на филтри"
+  },
+  "options_customFilters_widget_title": {
+    "message": "Собствен филтър"
   },
   "options_customize_blockElement": {
     "message": "Показвай „Блокирай елемента“ в контекстното меню"
@@ -48,7 +63,7 @@
     "message": "Временно блокиране на досадни елементи в страницата, т.е. картини или анимирани слайдове."
   },
   "options_customize_header": {
-    "message": "Нагласяване според страницата"
+    "message": "Действия за страницата"
   },
   "options_customize_showDevToolsPanel": {
     "message": "Показвай панел „Adblock Plus“ към инструментите за разработка"
@@ -129,7 +144,7 @@
     "message": "Състояние"
   },
   "options_filterList_column_update": {
-    "message": "Обновен"
+    "message": "Обновяване"
   },
   "options_filterList_hours": {
     "message": "преди $hours$ часа"
@@ -180,7 +195,7 @@
     "message": "За Adblock Plus"
   },
   "options_footer_contribute": {
-    "message": "Помогни"
+    "message": "Съдействай"
   },
   "options_language_add": {
     "message": "+ добави език"
@@ -195,13 +210,16 @@
     "message": "Език"
   },
   "options_language_tip": {
-    "message": "<strong>СЪВЕТ:</strong> Изберете само нужните ви езици. Изборът на повече забавя блокера на реклами, и с това — скоростта на сърфиране."
+    "message": "<strong>СЪВЕТ:</strong> Изберете само нужните езици. Изборът на повече забавя блокера на реклами, и с това — скоростта на сърфиране."
   },
   "options_learn_more": {
     "message": "Повече"
   },
   "options_more_filters_header": {
     "message": "Още филтри"
+  },
+  "options_new_label": {
+    "message": "Ново"
   },
   "options_notification_hide": {
     "message": "Затвори уведомяването"
@@ -223,6 +241,9 @@
   },
   "options_report_bug": {
     "message": "Открихте грешка? <a>Изпратете ни доклад за грешка</a>"
+  },
+  "options_social_title": {
+    "message": "Връзка с нас"
   },
   "options_support_title": {
     "message": "Поддръжка"
@@ -249,7 +270,7 @@
     "message": "Нямате изключени сайтове."
   },
   "options_whitelist_empty_2": {
-    "message": "Тук са доверените сайтове и тези, в които позволявате показването на реклама."
+    "message": "Тук са доверените и сайтовете, на които сте позволил да показват реклама."
   },
   "options_whitelist_notification": {
     "message": "„$website$“ е изключен.",
