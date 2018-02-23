@@ -30,6 +30,10 @@ Directory structure
   * `desktop-options.html`, `desktop-options.js`: Options page, see below
   * `subscriptions.xml`: Test subscription data, should *not be imported*
   * `polyfill.js`: Browser API polyfills, should *not be imported*
+* `js` directory: new CommonJS modules/entry-points bundled to produce
+  top level pages. As example, `js/desktop-options.js` produces
+  `./desktop-options.js` [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
+  deployed within the extension.
 * `lib` directory: Modules to be used on the background page to expose
   UI-related functionality.
 * `locale` directory: Localized strings, with one directory per locale. The
@@ -78,6 +82,60 @@ which should be provided automatically when you install `npm`.
 ```sh
 npx stylelint --fix skin/real-file-name.css
 ```
+
+Bundling
+--------
+
+As it is for the `desktop-options.js` case, bundling is done via `package.json`
+script entries.
+
+A dedicated script entry, such `bundle:desktop-options`,
+should perform the following operations:
+
+  * ensure source code passes linting
+  * ensure the bundle won't affect future linting operations
+  * ensure `browserify` uses `--node` and `--no-bundle-external` flags
+  * point at the entry point, and output in the top level folder
+
+Accordingly, this is what happens with the `bundle:desktop-options`:
+
+```sh
+# the && operator ensure each step is executed only
+# if the previous one didn't produce an error
+eslint ./js/**/*.js &&
+# browserify doesn't offer a way to prefix with text
+# the file is hence created with eslint disabled and a warning
+echo '/* eslint-disable */// BUNDLED FILE' > ./desktop-options.js &&
+# browserify take an entry point and bundle all its required files
+# outputting the result into ./desktop-options.js
+browserify --node --no-bundle-external js/desktop-options.js >> ./desktop-options.js
+```
+
+For a new bundle, i.e. `mobile-options.js`, simply use the same procedure
+but swap the `desktop-options` file/script name with `mobile-options`.
+
+The main `bundle` script should include each sub-bundle operation.
+
+Watching
+--------
+
+While developing, it is convenient to bundle automatically
+each time a source file is changed.
+
+As a team, we agreed on restructuring JS code inside the js folder,
+so that is watched, and each bundled created, every time there is a changes.
+
+Similarly done for bundles, watches follow the following convention:
+
+a named script entry such `watch:desktop-option` that
+points at the following command:
+
+```sh
+watch 'npm run bundle:desktop-options' ./js
+```
+
+The main `watch` script should include each sub-watch operation.
+
 
 Translations
 ------------
