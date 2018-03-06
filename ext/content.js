@@ -74,18 +74,26 @@
       payload: message
     });
 
+    let resolvePromise = null;
+    let callbackWrapper = event =>
+    {
+      if (event.data.type == "response" && event.data.messageId == messageId)
+      {
+        window.removeEventListener("message", callbackWrapper);
+        resolvePromise(event.data.payload);
+      }
+    };
+    window.addEventListener("message", callbackWrapper);
     if (responseCallback)
     {
-      let callbackWrapper = event =>
+      resolvePromise = responseCallback;
+    }
+    else
+    {
+      return new Promise((resolve, reject) =>
       {
-        if (event.data.type == "response" && event.data.messageId == messageId)
-        {
-          window.removeEventListener("message", callbackWrapper);
-          responseCallback(event.data.payload);
-        }
-      };
-
-      window.addEventListener("message", callbackWrapper);
+        resolvePromise = resolve;
+      });
     }
   };
 }());

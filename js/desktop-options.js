@@ -468,7 +468,6 @@ function loadCustomFilters(filters)
     updateFilter(filter);
 
   setCustomFiltersView("read");
-  isCustomFiltersLoaded = true;
 }
 
 function removeCustomFilter(text)
@@ -1147,18 +1146,12 @@ function populateLists()
   },
   (subscriptions) =>
   {
-    // Load filters
-    for (let subscription of subscriptions)
+    let customFilterPromises = subscriptions.map(getSubscriptionFilters);
+    Promise.all(customFilterPromises).then((filters) =>
     {
-      browser.runtime.sendMessage({
-        type: "filters.get",
-        subscriptionUrl: subscription.url
-      },
-      (filters) =>
-      {
-        loadCustomFilters(filters);
-      });
-    }
+      loadCustomFilters([].concat(...filters));
+      isCustomFiltersLoaded = true;
+    });
   });
   loadRecommendations();
   browser.runtime.sendMessage({
@@ -1333,6 +1326,13 @@ function onSubscriptionMessage(action, subscription)
       setPrivacyConflict();
       break;
   }
+}
+
+function getSubscriptionFilters(subscription)
+{
+  return browser.runtime.sendMessage({
+    type: "filters.get",
+    subscriptionUrl: subscription.url});
 }
 
 function hidePref(key, value)
