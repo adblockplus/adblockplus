@@ -90,31 +90,17 @@ As it is for the `desktop-options.js` case, bundling is done via `package.json`
 script entries.
 
 A dedicated script entry, such `bundle:desktop-options.js`,
-should perform the following operations:
+should simply use the `bash:js` script, passing along
+the source file and the target.
 
-  * ensure source code passes linting
-  * ensure the bundle won't affect future linting operations
-  * ensure `browserify` uses `--node` and `--no-bundle-external` flags
-  * point at the entry point, and output in the top level folder
-
-Accordingly, this is what happens with the `bundle:desktop-options.js`:
-
-```sh
-# the && operator ensure each step is executed only
-# if the previous one didn't produce an error
-eslint ./js/**/*.js &&
-# browserify doesn't offer a way to prefix with text
-# the file is hence created with eslint disabled and a warning
-echo '/* eslint-disable */// BUNDLED FILE' > ./desktop-options.js &&
-# browserify take an entry point and bundle all its required files
-# outputting the result into ./desktop-options.js
-browserify --node --no-bundle-external js/desktop-options.js >> ./desktop-options.js
+```js
+{
+  // example of a new bundle for the ./js/source.js file
+  "bundle:target.js": "npm run bash:js ./js/source.js ./target.js"
+}
 ```
 
-For a new bundle, i.e. `mobile-options.js`, simply use the same procedure
-but swap the `desktop-options.js` file/script name with `mobile-options.js`.
-
-The main `bundle` script should include each sub-bundle operation.
+The main `bundle` script should include each sub-bundle operation too.
 
 Bundling CSS
 ------------
@@ -123,10 +109,21 @@ As it is for the `desktop-options.css` case, bundling is done via `package.json`
 script entries.
 
 A dedicated script entry, such `bundle:desktop-options.css`,
-should point at the entry scss point, and output in the _skin_ folder;
+should simply use the `bash:css` script, passing along
+the source file and the target.
+
+```js
+{
+  // example of a new bundle for the ./css/source.scss file
+  "bundle:target.css": "npm run bash:css ./css/source.scss ./skin/target.css"
+}
+```
 
 In case there are dependencies, please ensure these are
 imported via `@import "dep.scss"` and not via `url(...)` syntax.
+
+As it is for JS bundles, the main `bundle` script should include each
+CSS bundle too.
 
 Watching
 --------
