@@ -49,6 +49,9 @@ function generateFilter(request, domainSpecific)
       domainSpecific = true;
   }
 
+  if (request.type == "CSP")
+    options.push("csp");
+
   if (domainSpecific)
     options.push("domain=" + request.docDomain);
 
