@@ -7,10 +7,12 @@
     "lint:js": "eslint ./*.js ./lib/*.js ./ext/*.js",
     "prepare": "python2 ensure_dependencies.py",
     "start": "http-server & npm run watch",
-    "bundle": "npm run bundle:desktop-options",
-    "bundle:desktop-options": "eslint ./js/**/*.js && echo '/* eslint-disable */// BUNDLED FILE'>./desktop-options.js && browserify --node --no-bundle-external js/desktop-options.js >> ./desktop-options.js",
-    "watch": "npm run watch:desktop-options",
-    "watch:desktop-options": "watch 'npm run bundle:desktop-options' ./js",
+    "bundle": "npm run bundle:desktop-options.js && npm run bundle:desktop-options.css",
+    "bundle:desktop-options.css": "node-sass --output skin css/desktop-options.scss",
+    "bundle:desktop-options.js": "eslint ./js/**/*.js && echo '/* eslint-disable */// BUNDLED FILE'>./desktop-options.js && browserify --node --no-bundle-external js/desktop-options.js >> ./desktop-options.js",
+    "watch": "npm run watch:desktop-options.js & npm run watch:desktop-options.css",
+    "watch:desktop-options.css": "watch 'npm run bundle:desktop-options.css' ./css",
+    "watch:desktop-options.js": "watch 'npm run bundle:desktop-options.js' ./js",
     "postinstall": "npm run bundle"
   },
   "devDependencies": {
@@ -18,6 +20,7 @@
     "eslint": "^4.16.0",
     "eslint-config-eyeo": "^2.0.0",
     "http-server": "^0.11.1",
+    "node-sass": "^4.7.2",
     "watch": "^1.0.2"
   }
 }

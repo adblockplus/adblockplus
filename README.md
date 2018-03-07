@@ -83,13 +83,13 @@ which should be provided automatically when you install `npm`.
 npx stylelint --fix skin/real-file-name.css
 ```
 
-Bundling
---------
+Bundling JS
+-----------
 
 As it is for the `desktop-options.js` case, bundling is done via `package.json`
 script entries.
 
-A dedicated script entry, such `bundle:desktop-options`,
+A dedicated script entry, such `bundle:desktop-options.js`,
 should perform the following operations:
 
   * ensure source code passes linting
@@ -97,7 +97,7 @@ should perform the following operations:
   * ensure `browserify` uses `--node` and `--no-bundle-external` flags
   * point at the entry point, and output in the top level folder
 
-Accordingly, this is what happens with the `bundle:desktop-options`:
+Accordingly, this is what happens with the `bundle:desktop-options.js`:
 
 ```sh
 # the && operator ensure each step is executed only
@@ -112,9 +112,21 @@ browserify --node --no-bundle-external js/desktop-options.js >> ./desktop-option
 ```
 
 For a new bundle, i.e. `mobile-options.js`, simply use the same procedure
-but swap the `desktop-options` file/script name with `mobile-options`.
+but swap the `desktop-options.js` file/script name with `mobile-options.js`.
 
 The main `bundle` script should include each sub-bundle operation.
+
+Bundling CSS
+------------
+
+As it is for the `desktop-options.css` case, bundling is done via `package.json`
+script entries.
+
+A dedicated script entry, such `bundle:desktop-options.css`,
+should point at the entry scss point, and output in the _skin_ folder;
+
+In case there are dependencies, please ensure these are
+imported via `@import "dep.scss"` and not via `url(...)` syntax.
 
 Watching
 --------
