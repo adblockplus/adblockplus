@@ -115,6 +115,12 @@ button,
   cursor: pointer;
 }
 
+button:disabled,
+button[aria-disabled="true"]
+{
+  cursor: default;
+}
+
 /* Ignore .icon to avoid overriding "specific" (primary, secondary) styles */
 button.primary:not(.icon),
 .button.primary:not(.icon)
@@ -280,6 +286,11 @@ button[role="checkbox"].icon:not(.toggle)::before
 button[role="checkbox"][aria-checked="true"].icon:not(.toggle)::before
 {
   background-image: url(icons/checkbox.svg?on#on);
+}
+
+button[role="checkbox"][aria-checked="true"].icon:disabled:not(.toggle)::before
+{
+  background-image: url(icons/checkbox.svg?on-disabled#on-disabled);
 }
 
 button[role="checkbox"].icon.toggle::before
@@ -1071,6 +1082,11 @@ html[dir="rtl"] .table .col5:nth-of-type(5)
   margin: 0rem 0.8rem;
   text-transform: none;
   font-weight: 400;
+}
+
+li.preconfigured [data-hide="preconfigured"]
+{
+  display: none !important;
 }
 
 /*

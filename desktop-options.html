@@ -86,7 +86,7 @@
           <h2 class="i18n_options_privacy_header"></h2>
           <ul class="list" id="recommend-protection-list-table">
             <template>
-              <button data-action="toggle-remove-subscription" role="checkbox" class="control icon"></button>
+              <button data-action="toggle-remove-subscription" data-disable="preconfigured" role="checkbox" class="control icon"></button>
               <span data-display="title"></span>
               <span data-tooltip="options_protection_%value%_tooltip"></span>
             </template>
@@ -141,8 +141,8 @@
                     (<span data-display="originalTitle"></span>)
                   </span>
                 </span>
-                <button data-single="hidden" data-action="remove-subscription" class="icon delete control" title="options_control_remove_title"></button>
-                <button data-single="visible" data-action="open-dialog" data-dialog="language-change" class="i18n_options_language_change link"></button>
+                <button data-single="hidden" data-hide="preconfigured" data-action="remove-subscription" class="icon delete control" title="options_control_remove_title"></button>
+                <button data-single="visible" data-hide="preconfigured" data-action="open-dialog" data-dialog="language-change" class="i18n_options_language_change link"></button>
               </template>
             </ul>
             <button class="i18n_options_language_add list" data-action="open-dialog" data-dialog="language-add"></button>
@@ -158,7 +158,7 @@
             <ul id="more-list-table" class="table list">
               <template>
                 <span data-display="title"></span>
-                <button data-action="remove-subscription" class="i18n_options_control_remove_title link control" title="options_control_remove_title"></button>
+                <button data-hide="preconfigured" data-action="remove-subscription" class="i18n_options_control_remove_title link control" title="options_control_remove_title"></button>
               </template>
             </ul>
             <p class="i18n_options_more_filters_note"></p>
@@ -269,14 +269,14 @@
                         <a class="i18n_options_filterList_source icon source" target="_blank"></a>
                       </li>
                       <li role="menuitem">
-                        <button class="i18n_options_control_remove_title icon delete" data-action="remove-subscription"></button>
+                        <button class="i18n_options_control_remove_title icon delete" data-hide="preconfigured" data-action="remove-subscription"></button>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
               <div class="col5">
-                <button data-action="remove-subscription" class="control icon delete"></button>
+                <button data-hide="preconfigured" data-action="remove-subscription" class="control icon delete"></button>
               </div>
             </template>
           </ul>

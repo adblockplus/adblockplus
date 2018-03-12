@@ -68,6 +68,7 @@
   }
 
   let params = {
+    additionalSubscriptions: "",
     blockedURLs: "",
     filterlistsReinitialized: false,
     addSubscription: false,
@@ -77,6 +78,13 @@
     showPageOptions: false
   };
   updateFromURL(params);
+
+  const subscriptionServer = "https://easylist-downloads.adblockplus.org";
+  const easyListGermany = `${subscriptionServer}/easylistgermany+easylist.txt`;
+  const acceptableAds = `${subscriptionServer}/exceptionrules.txt`;
+  const acceptableAdsPrivacyFriendly =
+    `${subscriptionServer}/exceptionrules-privacy-friendly.txt`;
+  const redirectLink = "https://adblockplus.org/redirect?link=";
 
   let modules = {};
   window.require = function(module)
@@ -88,7 +96,7 @@
     Utils: {
       getDocLink(link)
       {
-        return "https://adblockplus.org/redirect?link=" + encodeURIComponent(link);
+        return `${redirectLink}${encodeURIComponent(link)}`;
       },
       get appLocale()
       {
@@ -103,13 +111,14 @@
 
   modules.prefs = {Prefs: new EventEmitter()};
   let prefs = {
-    notifications_ignoredcategories: (params.showNotificationUI) ? ["*"] : [],
+    notifications_ignoredcategories: params.showNotificationUI ? ["*"] : [],
     notifications_showui: params.showNotificationUI,
     shouldShowBlockElementMenu: true,
     show_devtools_panel: true,
     ui_warn_tracking: true,
-    subscriptions_exceptionsurl: "https://easylist-downloads.adblockplus.org/exceptionrules.txt",
-    subscriptions_exceptionsurl_privacy: "https://easylist-downloads.adblockplus.org/exceptionrules-privacy-friendly.txt"
+    additional_subscriptions: params.additionalSubscriptions.split(","),
+    subscriptions_exceptionsurl: acceptableAds,
+    subscriptions_exceptionsurl_privacy: acceptableAdsPrivacyFriendly
   };
   for (let key of Object.keys(prefs))
   {
@@ -151,17 +160,16 @@
     }
   };
 
-  let subscriptionServer = "https://easylist-downloads.adblockplus.org";
   let subscriptionDetails = {
-    [`${subscriptionServer}/easylistgermany+easylist.txt`]: {
+    [easyListGermany]: {
       title: "EasyList Germany+EasyList",
       installed: true
     },
-    [`${subscriptionServer}/exceptionrules.txt`]: {
+    [acceptableAds]: {
       title: "Allow non-intrusive advertising",
       installed: true
     },
-    [`${subscriptionServer}/exceptionrules-privacy-friendly.txt`]: {
+    [acceptableAdsPrivacyFriendly]: {
       title: "Allow only nonintrusive ads that are privacy-friendly"
     },
     [`${subscriptionServer}/fanboy-social.txt`]: {

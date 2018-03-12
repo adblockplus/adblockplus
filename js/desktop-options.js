@@ -26,6 +26,7 @@ let collections = Object.create(null);
 let acceptableAdsUrl = null;
 let acceptableAdsPrivacyUrl = null;
 let isCustomFiltersLoaded = false;
+let additionalSubscriptions = [];
 let {getMessage} = browser.i18n;
 let {setElementText} = ext.i18n;
 let customFilters = [];
@@ -237,7 +238,17 @@ Collection.prototype.updateItem = function(item)
     {
       control.setAttribute("aria-checked", item.disabled == false);
       if (isAcceptableAds(item.url) && this == collections.filterLists)
+      {
         control.disabled = true;
+      }
+    }
+    if (additionalSubscriptions.includes(item.url))
+    {
+      element.classList.add("preconfigured");
+      let disablePreconfigures =
+        element.querySelectorAll("[data-disable~='preconfigured']");
+      for (let disablePreconfigure of disablePreconfigures)
+        disablePreconfigure.disabled = true;
     }
 
     let lastUpdateElement = element.querySelector(".last-update");
@@ -1170,17 +1181,22 @@ function populateLists()
     {
       acceptableAdsPrivacyUrl = urlPrivacy;
 
-      // Load user subscriptions
-      browser.runtime.sendMessage({
-        type: "subscriptions.get",
-        downloadable: true
-      },
-      (subscriptions) =>
+      getPref("additional_subscriptions", (subscriptionUrls) =>
       {
-        for (let subscription of subscriptions)
-          onSubscriptionMessage("added", subscription);
+        additionalSubscriptions = subscriptionUrls;
 
-        setAcceptableAds();
+        // Load user subscriptions
+        browser.runtime.sendMessage({
+          type: "subscriptions.get",
+          downloadable: true
+        },
+        (subscriptions) =>
+        {
+          for (let subscription of subscriptions)
+            onSubscriptionMessage("added", subscription);
+
+          setAcceptableAds();
+        });
       });
     });
   });
