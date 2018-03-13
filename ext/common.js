@@ -74,4 +74,42 @@
         window.removeEventListener("message", listener._extWrapper, false);
     }
   };
+
+  class Port
+  {
+    constructor(name)
+    {
+      this._name = name;
+    }
+
+    get name()
+    {
+      return this._name;
+    }
+
+    get onDisconnect()
+    {
+      return {
+        addListener() {}
+      };
+    }
+
+    get onMessage()
+    {
+      let name = this._name;
+      return {
+        addListener(listener)
+        {
+          window.addEventListener("message", (event) =>
+          {
+            if (event.data.type != "port" || event.data.name != name)
+              return;
+
+            listener(event.data.payload);
+          });
+        }
+      };
+    }
+  }
+  window.ext._Port = Port;
 }());

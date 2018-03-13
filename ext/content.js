@@ -59,7 +59,7 @@
     }
   };
 
-  /* Polyfills */
+  /* Message passing */
 
   if (!("runtime" in browser))
     browser.runtime = {};
@@ -95,6 +95,23 @@
       });
     }
   };
+
+  function postMessage(msg)
+  {
+    ext.backgroundPage._sendRawMessage({
+      type: "port",
+      name: this._name,
+      payload: msg
+    });
+  }
+  ext._Port.prototype.postMessage = postMessage;
+
+  function connect({name})
+  {
+    ext.backgroundPage._sendRawMessage({type: "connect", name});
+    return new ext._Port(name);
+  }
+  browser.runtime.connect = connect;
 
   if (!("tabs" in browser))
     browser.tabs = new Map([[0, {url: "example.com"}]]);

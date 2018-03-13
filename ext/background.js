@@ -29,55 +29,6 @@
     }, "*");
   }, false);
 
-  function PageMap()
-  {
-    this._keys = [];
-    this._values = [];
-  }
-  PageMap.prototype = {
-    keys()
-    {
-      return this._keys.map((source) =>
-      {
-        return new window.ext.Page(source);
-      });
-    },
-
-    get(page)
-    {
-      return this._values[this._keys.indexOf(page._source)];
-    },
-
-    set(page, value)
-    {
-      let index = this._keys.indexOf(page._source);
-      if (index < 0)
-      {
-        index = this._keys.push(page._source) - 1;
-
-        let callback = function()
-        {
-          page._source.removeEventListener("unload", callback, false);
-          this.delete(page);
-        }.bind(this);
-        page._source.addEventListener("unload", callback, false);
-      }
-      this._values[index] = value;
-    },
-
-    delete(page)
-    {
-      let index = this._keys.indexOf(page._source);
-      if (index >= 0)
-      {
-        this._keys.splice(index, 1);
-        this._values.splice(index, 1);
-      }
-    }
-  };
-
-  window.ext.PageMap = PageMap;
-
   window.ext.devtools = {
     onCreated: {
       addListener(listener)
@@ -90,4 +41,31 @@
       }
     }
   };
+
+  /* Message passing */
+
+  if (!("runtime" in browser))
+    browser.runtime = {};
+
+  function postMessage(msg)
+  {
+    parent.postMessage({
+      type: "port",
+      name: this._name,
+      payload: msg
+    }, "*");
+  }
+  ext._Port.prototype.postMessage = postMessage;
+
+  function onConnect(listener)
+  {
+    window.addEventListener("message", (event) =>
+    {
+      if (event.data.type != "connect")
+        return;
+
+      listener(new ext._Port(event.data.name));
+    });
+  }
+  window.browser.runtime.onConnect = {addListener: onConnect};
 }());

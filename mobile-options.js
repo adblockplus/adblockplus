@@ -411,19 +411,21 @@
       }
     }
   }
-  ext.onMessage.addListener(onMessage);
 
-  browser.runtime.sendMessage({
+  let port = browser.runtime.connect({name: "ui"});
+  port.onMessage.addListener(onMessage);
+
+  port.postMessage({
     type: "app.listen",
     filter: ["addSubscription", "showPageOptions"]
   });
 
-  browser.runtime.sendMessage({
+  port.postMessage({
     type: "filters.listen",
     filter: ["added", "removed"]
   });
 
-  browser.runtime.sendMessage({
+  port.postMessage({
     type: "subscriptions.listen",
     filter: ["added", "disabled", "removed", "title"]
   });

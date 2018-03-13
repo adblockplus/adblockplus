@@ -70,14 +70,17 @@
 
     updateSocialLinks();
 
-    ext.onMessage.addListener((message) =>
+    let port = browser.runtime.connect({name: "ui"});
+
+    port.onMessage.addListener((message) =>
     {
       if (message.type == "subscriptions.respond")
       {
         updateSocialLinks();
       }
     });
-    browser.runtime.sendMessage({
+
+    port.postMessage({
       type: "subscriptions.listen",
       filter: ["added", "removed", "updated", "disabled"]
     });

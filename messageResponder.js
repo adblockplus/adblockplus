@@ -76,7 +76,7 @@
 
   let convertFilter = convertObject.bind(null, ["text"]);
 
-  let changeListeners = new ext.PageMap();
+  let uiPorts = new Map();
   let listenedPreferences = Object.create(null);
   let listenedFilterChanges = Object.create(null);
   let messageTypes = new Map([
@@ -88,8 +88,7 @@
 
   function sendMessage(type, action, ...args)
   {
-    let pages = changeListeners.keys();
-    if (pages.length == 0)
+    if (uiPorts.size == 0)
       return;
 
     let convertedArgs = [];
@@ -103,13 +102,12 @@
         convertedArgs.push(arg);
     }
 
-    for (let page of pages)
+    for (let [uiPort, filters] of uiPorts)
     {
-      let filters = changeListeners.get(page);
-      let actions = filters[type];
+      let actions = filters.get(type);
       if (actions && actions.indexOf(action) != -1)
       {
-        page.sendMessage({
+        uiPort.postMessage({
           type: messageTypes.get(type),
           action,
           args: convertedArgs
@@ -131,23 +129,12 @@
       if (!(name in listenedFilterChanges))
       {
         listenedFilterChanges[name] = null;
-        FilterNotifier.on(name, (...args) =>
+        FilterNotifier.on(name, (item) =>
         {
-          sendMessage(type, action, ...args);
+          sendMessage(type, action, item);
         });
       }
     }
-  }
-
-  function getListenerFilters(page)
-  {
-    let listenerFilters = changeListeners.get(page);
-    if (!listenerFilters)
-    {
-      listenerFilters = Object.create(null);
-      changeListeners.set(page, listenerFilters);
-    }
-    return listenerFilters;
   }
 
   function addSubscription(subscription, properties)
@@ -211,11 +198,6 @@
       return sender.page.id;
 
     return info[message.what];
-  });
-
-  port.on("app.listen", (message, sender) =>
-  {
-    getListenerFilters(sender.page).app = message.filter;
   });
 
   port.on("app.open", (message, sender) =>
@@ -304,12 +286,6 @@
     return errors;
   });
 
-  port.on("filters.listen", (message, sender) =>
-  {
-    getListenerFilters(sender.page).filter = message.filter;
-    addFilterListeners("filter", message.filter);
-  });
-
   port.on("filters.remove", (message, sender) =>
   {
     let filter = Filter.fromText(message.text);
@@ -326,22 +302,6 @@
   port.on("prefs.get", (message, sender) =>
   {
     return Prefs[message.key];
-  });
-
-  port.on("prefs.listen", (message, sender) =>
-  {
-    getListenerFilters(sender.page).pref = message.filter;
-    for (let preference of message.filter)
-    {
-      if (!(preference in listenedPreferences))
-      {
-        listenedPreferences[preference] = null;
-        Prefs.on(preference, () =>
-        {
-          sendMessage("pref", preference, Prefs[preference]);
-        });
-      }
-    }
   });
 
   port.on("prefs.set", (message, sender) =>
@@ -421,12 +381,6 @@
     });
   });
 
-  port.on("subscriptions.listen", (message, sender) =>
-  {
-    getListenerFilters(sender.page).subscription = message.filter;
-    addFilterListeners("subscription", message.filter);
-  });
-
   port.on("subscriptions.remove", (message, sender) =>
   {
     let subscription = Subscription.fromURL(message.url);
@@ -462,4 +416,64 @@
         Synchronizer.execute(subscription, true);
     }
   });
+
+  function listen(type, filters, newFilter)
+  {
+    switch (type)
+    {
+      case "app":
+        filters.set("app", newFilter);
+        break;
+      case "filters":
+        filters.set("filter", newFilter);
+        addFilterListeners("filter", newFilter);
+        break;
+      case "prefs":
+        filters.set("pref", newFilter);
+        for (let preference of newFilter)
+        {
+          if (!(preference in listenedPreferences))
+          {
+            listenedPreferences[preference] = null;
+            Prefs.on(preference, () =>
+            {
+              sendMessage("pref", preference, Prefs[preference]);
+            });
+          }
+        }
+        break;
+      case "subscriptions":
+        filters.set("subscription", newFilter);
+        addFilterListeners("subscription", newFilter);
+        break;
+    }
+  }
+
+  function onConnect(uiPort)
+  {
+    if (uiPort.name != "ui")
+      return;
+
+    let filters = new Map();
+    uiPorts.set(uiPort, filters);
+
+    uiPort.onDisconnect.addListener(() =>
+    {
+      uiPorts.delete(uiPort);
+    });
+
+    uiPort.onMessage.addListener((message) =>
+    {
+      let [type, action] = message.type.split(".", 2);
+
+      // For now we're only using long-lived connections for handling
+      // "*.listen" messages to tackle #6440
+      if (action == "listen")
+      {
+        listen(type, filters, message.filter);
+      }
+    });
+  }
+
+  browser.runtime.onConnect.addListener(onConnect);
 })(this);

@@ -1435,7 +1435,9 @@ function updateTooltips()
   }
 }
 
-ext.onMessage.addListener((message) =>
+let port = browser.runtime.connect({name: "ui"});
+
+port.onMessage.addListener((message) =>
 {
   switch (message.type)
   {
@@ -1466,21 +1468,21 @@ ext.onMessage.addListener((message) =>
   }
 });
 
-browser.runtime.sendMessage({
+port.postMessage({
   type: "app.listen",
   filter: ["addSubscription", "focusSection"]
 });
-browser.runtime.sendMessage({
+port.postMessage({
   type: "filters.listen",
   filter: ["added", "loaded", "removed"]
 });
-browser.runtime.sendMessage({
+port.postMessage({
   type: "prefs.listen",
   filter: ["notifications_ignoredcategories", "notifications_showui",
            "show_devtools_panel", "shouldShowBlockElementMenu",
            "ui_warn_tracking"]
 });
-browser.runtime.sendMessage({
+port.postMessage({
   type: "subscriptions.listen",
   filter: ["added", "disabled", "homepage", "lastDownload", "removed",
            "title", "downloadStatus", "downloading"]
