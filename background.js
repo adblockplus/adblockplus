@@ -163,6 +163,7 @@
   let subscriptionDetails = {
     [easyListGermany]: {
       title: "EasyList Germany+EasyList",
+      filters: ["-ad-banner.", "-ad-big.", "-ad-bottom-", "-ad-button-"],
       installed: true
     },
     [acceptableAds]: {
@@ -191,6 +192,7 @@
     this.url = url;
     this._disabled = false;
     this._lastDownload = 1234;
+    this.filters = [];
     this.homepage = "https://easylist.adblockplus.org/";
     this.downloadStatus = params.downloadStatus;
 
@@ -199,6 +201,7 @@
     {
       this.disabled = !!details.disabled;
       this.title = details.title || "";
+      this.filters = this.filters.concat(details.filters);
     }
   }
   Subscription.prototype =
@@ -324,6 +327,10 @@
   }
   Filter.fromText = (text) => new Filter(text);
 
+  function ActiveFilter()
+  {
+  }
+
   function BlockingFilter()
   {
   }
@@ -334,6 +341,7 @@
   RegExpFilter.typeMap = Object.create(null);
 
   modules.filterClasses = {
+    ActiveFilter,
     BlockingFilter,
     Filter,
     RegExpFilter

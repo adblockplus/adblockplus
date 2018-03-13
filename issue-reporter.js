@@ -17,8 +17,6 @@
 
 "use strict";
 
-window.ext = {};
-
 let reportData = new DOMParser().parseFromString("<report></report>",
                                                  "text/xml");
 

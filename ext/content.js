@@ -67,7 +67,6 @@
   browser.runtime.sendMessage = (message, responseCallback) =>
   {
     let messageId = ++maxMessageId;
-
     ext.backgroundPage._sendRawMessage({
       type: "message",
       messageId,
@@ -95,5 +94,16 @@
         resolvePromise = resolve;
       });
     }
+  };
+
+  if (!("tabs" in browser))
+    browser.tabs = new Map([[0, {url: "example.com"}]]);
+
+  browser.tabs.get = (...args) =>
+  {
+    // Extend browser.tabs.get()
+    const result = Map.prototype.get.apply(browser.tabs, args);
+    return (result ? Promise.resolve(result) :
+      Promise.reject(new Error("Tab cannot be found")));
   };
 }());
