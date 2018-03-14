@@ -1,0 +1,3 @@
+node_modules/
+^desktop-options.js
+skin/desktop-options.css
