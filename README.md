@@ -17,6 +17,8 @@ After cloning this repository, enter into its folder and run: `npm install`.
 
 This should create and populate, both `./node_modules` folder and the `./buildtools` one.
 
+**Note:** [devDependencies](https://docs.npmjs.com/files/package.json#devdependencies) are not preinstalled during extension build, use [dependencies](https://docs.npmjs.com/files/package.json#dependencies) instead.
+
 Directory structure
 -------------------
 

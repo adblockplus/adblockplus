@@ -17,7 +17,7 @@
     "watch:desktop-options.js": "watch 'npm run bundle:desktop-options.js' ./js",
     "postinstall": "npm run bundle"
   },
-  "devDependencies": {
+  "dependencies": {
     "browserify": "^16.1.0",
     "eslint": "^4.16.0",
     "eslint-config-eyeo": "^2.0.0",
