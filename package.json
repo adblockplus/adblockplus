@@ -5,6 +5,8 @@
   "scripts": {
     "bash:js": "eslint ./js/**/*.js && bash -c 'echo \"/* eslint-disable */$(browserify --node --no-bundle-external $0)\">$1'",
     "bash:css": "node-sass --output $1 $0",
+    "bashForTest:js": "mkdir -p smoke && bash -c 'cp -R ./tests/{locale,background.html,$0.*} ./smoke'",
+    "bundleTest:js": "bash -c 'echo \"/* eslint-disable */$(browserify --node ./tests/$0.js)\">./smoke/$0.js'",
     "lint": "npm run lint:js",
     "lint:js": "eslint ./*.js ./lib/*.js ./ext/*.js",
     "prepare": "python2 ensure_dependencies.py",
@@ -15,13 +17,17 @@
     "watch": "npm run watch:desktop-options.js & npm run watch:desktop-options.css",
     "watch:desktop-options.css": "watch 'npm run bundle:desktop-options.css' ./css",
     "watch:desktop-options.js": "watch 'npm run bundle:desktop-options.js' ./js",
+    "test": "npm run test:io-element.js && http-server",
+    "test:io-element.js": "npm run bashForTest:js io-element && npm run bundleTest:js io-element",
     "postinstall": "npm run bundle"
   },
   "dependencies": {
     "browserify": "^16.1.0",
+    "document-register-element": "^1.7.2",
     "eslint": "^4.16.0",
     "eslint-config-eyeo": "^2.0.0",
     "http-server": "^0.11.1",
+    "hyperhtml-element": "^1.5.0",
     "node-sass": "^4.7.2",
     "watch": "^1.0.2"
   }

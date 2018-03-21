@@ -69,6 +69,18 @@ Various aspects of the pages can be tested by setting parameters in the URL.
 The only universal parameter is `locale`, e.g. `?locale=es-AR`. This parameter
 overrides browser's locale which will be used by default.
 
+Smoke Testing UI
+----------------
+
+The `./tests` folder contains essential files to test our Custom Elements
+in isolation. As it is done for the `io-element` one, you need to add
+at least an `io-element.js` test file and its `io-element.html` related page.
+
+A package script entry such `"test:io-element.js"` should bundle the
+resulting page/component inside the `./smoke` folder.
+
+Please read how it's done for `io-element` to know more.
+
 Linting
 -------
 
