@@ -28,7 +28,8 @@
   const {FilterNotifier} = require("filterNotifier");
   const {defaultMatcher} = require("matcher");
   const {Notification: NotificationStorage} = require("notification");
-  const {getActiveNotification, shouldDisplay} = require("notificationHelper");
+  const {getActiveNotification, shouldDisplay,
+         notificationClicked} = require("notificationHelper");
 
   const {
     Filter, ActiveFilter, BlockingFilter, RegExpFilter
@@ -332,6 +333,11 @@
     let texts = NotificationStorage.getLocalizedTexts(notification,
                                                       message.locale);
     return Object.assign({texts}, notification);
+  });
+
+  port.on("notifications.clicked", (message, sender) =>
+  {
+    notificationClicked();
   });
 
   port.on("subscriptions.add", (message, sender) =>
