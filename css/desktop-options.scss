@@ -538,6 +538,23 @@ html[dir="rtl"] [data-validation] .floating-input input:valid ~ .attention::befo
 }
 
 /*
+  Animations
+*/
+
+.highlight-animate
+{
+  animation: highlight 1s 3;
+}
+
+@keyframes highlight
+{
+  0% { background-color: transparent }
+  30% { background-color: #ffd7a3 }
+  70% { background-color: #ffd7a3 }
+  100% { background-color: transparent }
+}
+
+/*
   Sidebar
  */
 

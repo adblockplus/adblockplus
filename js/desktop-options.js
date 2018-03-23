@@ -1353,9 +1353,14 @@ function getSubscriptionFilters(subscription)
 
 function hidePref(key, value)
 {
-  let element = document.querySelector("[data-pref='" + key + "']");
+  const element = getPrefElement(key);
   if (element)
     element.setAttribute("aria-hidden", value);
+}
+
+function getPrefElement(key)
+{
+  return document.querySelector("[data-pref='" + key + "']");
 }
 
 function getPref(key, callback)
@@ -1452,7 +1457,16 @@ port.onMessage.addListener((message) =>
           openDialog("predefined");
           break;
         case "focusSection":
-          document.body.setAttribute("data-tab", message.args[0]);
+          let section = message.args[0];
+          if (section == "notifications")
+          {
+            section = "advanced";
+            const elem = getPrefElement("notifications_ignoredcategories");
+            elem.classList.add("highlight-animate");
+            elem.querySelector("button").focus();
+          }
+
+          selectTabItem(section, document.body, false);
           break;
       }
       break;
