@@ -238,9 +238,7 @@ Collection.prototype.updateItem = function(item)
     {
       control.setAttribute("aria-checked", item.disabled == false);
       if (isAcceptableAds(item.url) && this == collections.filterLists)
-      {
-        control.disabled = true;
-      }
+        control.disabled = !item.disabled;
     }
     if (additionalSubscriptions.includes(item.url))
     {
@@ -1079,12 +1077,14 @@ function setAcceptableAds()
   acceptableAds.setAttribute("aria-checked", false);
   acceptableAdsPrivacy.setAttribute("aria-checked", false);
   acceptableAdsPrivacy.setAttribute("tabindex", 0);
-  if (acceptableAdsUrl in subscriptionsMap)
+  if (acceptableAdsUrl in subscriptionsMap &&
+      !subscriptionsMap[acceptableAdsUrl].disabled)
   {
     acceptableAds.setAttribute("aria-checked", true);
     acceptableAdsPrivacy.setAttribute("aria-disabled", false);
   }
-  else if (acceptableAdsPrivacyUrl in subscriptionsMap)
+  else if (acceptableAdsPrivacyUrl in subscriptionsMap &&
+          !subscriptionsMap[acceptableAdsPrivacyUrl].disabled)
   {
     acceptableAds.setAttribute("aria-checked", true);
     acceptableAdsPrivacy.setAttribute("aria-checked", true);
@@ -1291,6 +1291,9 @@ function onSubscriptionMessage(action, subscription)
   {
     case "disabled":
       updateSubscription(subscription);
+      if (isAcceptableAds(subscription.url))
+        setAcceptableAds();
+
       setPrivacyConflict();
       break;
     case "downloading":
