@@ -1,0 +1,99 @@
+/*
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-present eyeo GmbH
+ *
+ * Adblock Plus is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Adblock Plus is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+io-list-box
+{
+  min-width: 340px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+io-list-box,
+io-list-box button,
+io-list-box [role="listbox"],
+io-list-box [role="option"]
+{
+  padding: 0;
+  margin: 0;
+  color: #4a4a4a;
+  background: #ffffff;
+  text-align: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+io-list-box button,
+io-list-box [role="listbox"]
+{
+  box-sizing: inherit;
+  width: 100%;
+  border: 1px solid #bcbcbc;
+  cursor: pointer;
+}
+
+io-list-box button,
+io-list-box [role="option"]
+{
+  padding: 8px 32px;
+}
+
+io-list-box button[aria-expanded="false"]
+{
+  text-transform: uppercase;
+  color: #059cd0;
+  background: #e9f6fc;
+}
+
+io-list-box button:focus
+{
+  outline: none;
+}
+
+io-list-box [role="listbox"]
+{
+  position: absolute;
+  max-height: 310px;
+  bottom: 100%;
+  overflow: auto;
+  border: 1px solid #9b9b9b;
+  margin-bottom: -1px;
+}
+
+io-list-box [role="option"][aria-disabled="true"],
+io-list-box [role="option"][aria-disabled="true"].hover
+{
+  background: #eeeeee;
+  cursor: default;
+}
+
+io-list-box [role="option"].hover
+{
+  background: #e1f2fa;
+}
+
+io-list-box [role="option"][aria-selected="true"]
+{
+  background-image: url(icons/checkmark.svg?default#default);
+  background-repeat: no-repeat;
+  background-position: 8px center;
+  background-size: 20px 20px;
+}
+
+html[dir="rtl"] io-list-box [role="option"][aria-selected="true"]
+{
+  background-position: calc(100% - 8px) center;
+}

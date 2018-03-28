@@ -46,3 +46,21 @@ to be able to test a single component too.
 ## test on browsers
 Simply run `npm start` and reach `localhost:XXXX/tests` folder
 with all target browsers you need to verify the component.
+
+
+## Integration / UI tests
+Once there is a `smoke/comp-name.html` and also
+a `tests/comp-name.nightmare.js` that exports
+a list of `tests` as array, you can use
+`./tests/ui comp-name` to run all of them.
+
+**example**
+
+```sh
+npm run test:io-list-box.js
+./tests/ui io-list-box
+```
+
+Feel free to learn more about
+[Nightmare browser automation library](https://github.com/segmentio/nightmare#nightmare)
+and its API.

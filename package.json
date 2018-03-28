@@ -9,6 +9,7 @@
     "postinstall": "npm run bundle",
     "prepare": "python2 ensure_dependencies.py",
     "start": "http-server & npm run watch",
+    "test": "npm run $ test",
     "watch": "npm run $ watch"
   },
   "$": {
@@ -30,6 +31,13 @@
         "echo \"/* eslint-disable */$(browserify --node --no-bundle-external $1)\">$2"
       ],
       "test": {
+        "component": {
+          "css": "$ create.test.css $1",
+          "js": [
+            "$ create.test.js $1",
+            "$ bundle.test $1"
+          ]
+        },
         "css": "node-sass ./css/$1.scss ./smoke/css/$1.css",
         "js": [
           "mkdir -p smoke",
@@ -58,22 +66,14 @@
           "$ bundle.test io-highlighter"
         ]
       },
-      "io-steps": {
-        "css": "$ create.test.css io-steps",
-        "js": [
-          "$ create.test.js io-steps",
-          "$ bundle.test io-steps"
-        ]
-      },
-      "io-toggle": {
-        "css": "$ create.test.css io-toggle",
-        "js": [
-          "$ create.test.js io-toggle",
-          "$ bundle.test io-toggle"
-        ]
-      }
+      "io-list-box": "$ create.test.component io-list-box",
+      "io-steps": "$ create.test.component io-steps",
+      "io-toggle": "$ create.test.component io-toggle"
     },
-    "watch": "watch 'npm run bundle' ./css ./js"
+    "watch": {
+      "bundle": "watch 'npm run bundle' ./css ./js",
+      "test": "watch 'npm run test' ./css ./js"
+    }
   },
   "dependencies": {
     "browserify": "^16.2.2",
@@ -86,5 +86,8 @@
     "node-sass": "^4.9.0",
     "npm-dollar": "^0.1.0",
     "watch": "^1.0.2"
+  },
+  "devDependencies": {
+    "nightmare": "^3.0.1"
   }
 }
