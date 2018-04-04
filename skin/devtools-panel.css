@@ -28,6 +28,11 @@ html
   overflow: hidden;
 }
 
+a
+{
+  color: inherit;
+}
+
 body
 {
   margin: 0;
@@ -176,7 +181,6 @@ tr:not(:hover) .action
 
 .resource-link {
   text-decoration: none;
-  color: #303942;
 }
 
 .resource-link:hover {
