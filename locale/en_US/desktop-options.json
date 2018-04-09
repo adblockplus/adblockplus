@@ -415,14 +415,6 @@
     "description": "Close modal button",
     "message": "close"
   },
-  "options_dialog_import_subscription_title": {
-    "description": "Input label in 'Add a filter list' dialog",
-    "message": "Filter list name"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "description": "Error message of 'Filter list name' input in 'Add a filter list' dialog",
-    "message": "Please fill out the field"
-  },
   "options_dialog_import_subscription_location": {
     "description": "Input label in 'Add a filter list' dialog",
     "message": "Filter list URL"
@@ -431,7 +423,7 @@
     "description": "Error message of 'Filter list URL' input in 'Add a filter list' dialog",
     "message": "Enter a valid URL"
   },
-   "options_dialog_language_title": {
+  "options_dialog_language_title": {
     "description": "Title of lanugage modal dialog",
     "message": "Select a language"
   },

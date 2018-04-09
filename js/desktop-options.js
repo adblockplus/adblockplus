@@ -737,8 +737,7 @@ function execAction(action, element)
 
       if (form.checkValidity())
       {
-        addEnableSubscription(E("import-list-url").value,
-          E("import-list-title").value);
+        addEnableSubscription(E("import-list-url").value);
         form.reset();
         closeDialog();
       }
