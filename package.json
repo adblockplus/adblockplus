@@ -19,8 +19,9 @@
     "watch": "npm run watch:desktop-options.js & npm run watch:desktop-options.css",
     "watch:desktop-options.css": "watch 'npm run bundle:desktop-options.css' ./css",
     "watch:desktop-options.js": "watch 'npm run bundle:desktop-options.js' ./js",
-    "test": "npm run test:io-element && npm run test:io-steps && npm run test:io-toggle && http-server",
+    "test": "npm run test:io-element && npm run test:io-highlighter && npm run test:io-steps && npm run test:io-toggle && http-server",
     "test:io-element": "npm run bashForTest:js io-element && npm run bundleTest:js io-element",
+    "test:io-highlighter": "npm run bashForTest:js io-highlighter && npm run bundleTest:js io-highlighter && npm run bashForTest:css io-highlighter && cp -R ./skin/icons smoke/css &&  cp ./tests/image.base64.txt ./smoke",
     "test:io-steps": "npm run bashForTest:js io-steps && npm run bundleTest:js io-steps && npm run bashForTest:css io-steps",
     "test:io-toggle": "npm run bashForTest:js io-toggle && npm run bundleTest:js io-toggle && npm run bashForTest:css io-toggle",
     "postinstall": "npm run bundle"
