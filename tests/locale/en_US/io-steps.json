@@ -1,0 +1,11 @@
+{
+  "name": {
+    "message": "Your name"
+  },
+  "surname": {
+    "message": "Your surname"
+  },
+  "age": {
+    "message": "Your age"
+  }
+}

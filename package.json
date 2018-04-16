@@ -5,6 +5,7 @@
   "scripts": {
     "bash:js": "eslint ./js/**/*.js && bash -c 'echo \"/* eslint-disable */$(browserify --node --no-bundle-external $0)\">$1'",
     "bash:css": "bash -c 'node-sass ./css/$0.scss ./skin/$0.css'",
+    "bashForTest:css": "bash -c 'node-sass ./css/$0.scss ./smoke/css/$0.css'",
     "bashForTest:js": "mkdir -p smoke && bash -c 'cp -R ./tests/{locale,background.html,$0.*} ./smoke'",
     "bundleTest:js": "bash -c 'echo \"/* eslint-disable */$(browserify --node ./tests/$0.js)\">./smoke/$0.js'",
     "lint": "npm run lint:js",
@@ -17,9 +18,10 @@
     "watch": "npm run watch:desktop-options.js & npm run watch:desktop-options.css",
     "watch:desktop-options.css": "watch 'npm run bundle:desktop-options.css' ./css",
     "watch:desktop-options.js": "watch 'npm run bundle:desktop-options.js' ./js",
-    "test": "npm run test:io-element && npm run test:io-toggle && http-server",
+    "test": "npm run test:io-element && npm run test:io-steps && npm run test:io-toggle && http-server",
     "test:io-element": "npm run bashForTest:js io-element && npm run bundleTest:js io-element",
-    "test:io-toggle": "npm run bashForTest:js io-toggle && npm run bundleTest:js io-toggle && npm run bash:css io-toggle",
+    "test:io-steps": "npm run bashForTest:js io-steps && npm run bundleTest:js io-steps && npm run bashForTest:css io-steps",
+    "test:io-toggle": "npm run bashForTest:js io-toggle && npm run bundleTest:js io-toggle && npm run bashForTest:css io-toggle",
     "postinstall": "npm run bundle"
   },
   "dependencies": {
@@ -28,6 +30,7 @@
     "eslint": "^4.16.0",
     "eslint-config-eyeo": "^2.0.0",
     "http-server": "^0.11.1",
+    "hyperhtml": "^2.9.0",
     "hyperhtml-element": "^1.5.0",
     "node-sass": "^4.7.2",
     "watch": "^1.0.2"
