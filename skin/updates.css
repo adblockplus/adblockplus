@@ -221,7 +221,7 @@ html[dir="rtl"] .applestore-button
 {
   #container
   {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 }
 
