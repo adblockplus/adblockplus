@@ -17,6 +17,21 @@
   "firstRun_contributor_credits": {
     "message": "شكر للمساهمين"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "يواجه بعض المستخدمين مشكلة، حيث تفتح هذه الصفحة في كل مرة يتم فيها تشغيل المتصفح. يمكن حل هذه المشكلة عن طريق إلغاء تثبيت Adblock Plus وإعادة تثبيته:"
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "إذا كنت لا تزال بحاجة إلى المساعدة، تواصل معنا عن طريق support@adblockplus.org أو قم بزيارة <a>مركز المساعدة</a> الخاص بنا."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "افتح علامة التبويب الخاصة بالإضافات في متصفحك."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "إبحث عن إضافة Adblock Plus وقم بإزالته."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "قم بإعادة تثبيت Adblock Plus عن طريق <a>adblockplus.org</a>."
+  },
   "firstRun_donate": {
     "message": "تبرع"
   },

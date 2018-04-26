@@ -17,6 +17,21 @@
   "firstRun_contributor_credits": {
     "message": "Créditos de colaboradores"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "Alguns usuários estão a ter um problema em que esta página abre cada vez que o navegador é iniciado. Este problema pode ser resolvido desinstalando e reinstalando o Adblock Plus:"
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "Se precisar de ajuda, entre em contato connosco através do email support@adblockplus.org ou visite a nossa <a>Central de Ajuda</a>."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "Abra a página de Extensões do seu navegador."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "Localize o Adblock Plus e remova-o."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "Reinstale o Adblock Plus desde a página <a>adblockplus.org</a>."
+  },
   "firstRun_donate": {
     "message": "donativos"
   },

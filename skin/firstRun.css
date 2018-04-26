@@ -384,10 +384,27 @@ section > p
 
 .warning
 {
-  font-size: 160%;
+  font-size: 120%;
   border: 3px dashed red;
-  text-align: center;
   line-height: 1.3em;
+}
+
+.warning p
+{
+  margin: 0;
+}
+
+.warning li
+{
+  margin-top: 0.4em;
+  list-style-type: inherit;
+}
+
+.warning .note
+{
+  margin-top: 2em;
+  text-align: center;
+  font-size: 0.7em;
 }
 
 #social ul

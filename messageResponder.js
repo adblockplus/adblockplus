@@ -157,8 +157,10 @@
     if (message.what == "issues")
     {
       let subscriptionInit = require("subscriptionInit");
-      let result = subscriptionInit ? subscriptionInit.reinitialized : false;
-      return {filterlistsReinitialized: result};
+      return {
+        dataCorrupted: subscriptionInit.isDataCorrupted(),
+        filterlistsReinitialized: subscriptionInit.isReinitialized()
+      };
     }
 
     if (message.what == "doclink")

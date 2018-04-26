@@ -60,8 +60,22 @@
       what: "issues"
     }, (issues) =>
     {
+
+      // Show warning if we detected some data corruption
+      if (issues.dataCorrupted)
+      {
+        E("datacorrupted-warning").removeAttribute("hidden");
+        getDocLink("adblock_plus", (link) =>
+        {
+          setLinks("datacorrupted-reinstall", link);
+        });
+        getDocLink("help_center", (link) =>
+        {
+          setLinks("datacorrupted-support", link);
+        });
+      }
       // Show warning if filterlists settings were reinitialized
-      if (issues.filterlistsReinitialized)
+      else if (issues.filterlistsReinitialized)
       {
         E("filterlistsReinitializedWarning").removeAttribute("hidden");
         setLinks("filterlistsReinitializedWarning", openFilters);

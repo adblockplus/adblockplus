@@ -17,6 +17,21 @@
   "firstRun_contributor_credits": {
     "message": "贡献者记录"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "部分用户在每次启动浏览器的时候都会遇到此页面打开的问题。此问题可以通过卸载后重新安装Adblock Plus来解决："
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "如果您仍然需要帮助，请通过support@adblockplus.org与我们联系，或访问我们的<a>帮助中心</a>。"
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "打开浏览器的扩展选项。"
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "找到Adblock Plus并将其删除。"
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "从<a>adblockplus.org</a>上面重新安装Adblock Plus。"
+  },
   "firstRun_donate": {
     "message": "捐赠"
   },

@@ -17,6 +17,21 @@
   "firstRun_contributor_credits": {
     "message": "Dankbetuiging aan medewerkers"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "Sommige gebruikers ondervinden een probleem waarbij deze pagina telkens wordt geopend wanneer de browser wordt gestart. Dit probleem kan worden opgelost door Adblock Plus te verwijderen en opnieuw te installeren."
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "Als je hulp nodig hebt, neem dan contact met ons op via support@adblockplus.org of bezoek on <a>Helpcentrum</a>."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "Open het tabblad \"Extensies\"."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "Lokaliseer Adblock Plus en verwijder het."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "Installeer Adblock Plus opnieuw vanaf <a>adblockplus.org</a>."
+  },
   "firstRun_donate": {
     "message": "doneren"
   },

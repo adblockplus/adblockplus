@@ -17,6 +17,21 @@
   "firstRun_contributor_credits": {
     "message": "Список разработчиков"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "У некоторых пользователей эта страница открывается при каждом запуске браузера. Эту проблему можно решить с помощью удаления и переустановки Adblock Plus."
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "Если Вам требуется дальнейшая помощь, Вы можете связаться с нами по адресу support@adblockplus.org или посетить сайт <a>Help Center</a>."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "Откройте вкладку \"Расширения\" в Вашем браузере."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "Найдите там Adblock Plus и удалите его."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "Установите Adblock Plus с сайта <a>adblockplus.org</a>."
+  },
   "firstRun_donate": {
     "message": "пожертвовать"
   },

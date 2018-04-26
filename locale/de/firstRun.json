@@ -17,6 +17,21 @@
   "firstRun_contributor_credits": {
     "message": "Mitwirkende"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "Aufgrund eines Problems wird diese Seite für manche Benutzer bei jedem Start des Browsers angezeigt. Dieses Problem kann behoben werden, indem Adblock Plus entfernt und erneut installiert wird."
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "Falls du weitere Hilfe benötigst, kontaktiere uns unter support@adblockplus.org oder besuche unser <a>Help Center</a>."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "Öffne den Reiter Erweiterungen in deinem Browser."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "Suche Adblock Plus und entferne die Erweiterung."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "Installiere Adblock Plus erneut über <a>adblockplus.org</a>."
+  },
   "firstRun_donate": {
     "message": "Spenden"
   },

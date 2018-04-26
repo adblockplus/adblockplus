@@ -70,6 +70,7 @@
   let params = {
     additionalSubscriptions: "",
     blockedURLs: "",
+    dataCorrupted: false,
     filterlistsReinitialized: false,
     addSubscription: false,
     filterError: false,
@@ -417,7 +418,8 @@
   updateFromURL(modules.info);
 
   modules.subscriptionInit = {
-    reinitialized: params.filterlistsReinitialized
+    isDataCorrupted: () => params.dataCorrupted,
+    isReinitialized: () => params.filterlistsReinitialized
   };
 
   modules.messaging = {
