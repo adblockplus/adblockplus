@@ -6,6 +6,8 @@
     "webextensions": true
   },
   "globals": {
-    "ext": true
+    "ext": true,
+    "require": true,
+    "module": true
   }
 }

@@ -4,7 +4,7 @@
   "description": "Adblock Plus UI",
   "scripts": {
     "bash:js": "eslint ./js/**/*.js && bash -c 'echo \"/* eslint-disable */$(browserify --node --no-bundle-external $0)\">$1'",
-    "bash:css": "node-sass --output $1 $0",
+    "bash:css": "bash -c 'node-sass ./css/$0.scss ./skin/$0.css'",
     "bashForTest:js": "mkdir -p smoke && bash -c 'cp -R ./tests/{locale,background.html,$0.*} ./smoke'",
     "bundleTest:js": "bash -c 'echo \"/* eslint-disable */$(browserify --node ./tests/$0.js)\">./smoke/$0.js'",
     "lint": "npm run lint:js",
@@ -12,13 +12,14 @@
     "prepare": "python2 ensure_dependencies.py",
     "start": "http-server & npm run watch",
     "bundle": "npm run bundle:desktop-options.js && npm run bundle:desktop-options.css",
-    "bundle:desktop-options.css": "npm run bash:css ./css/desktop-options.scss ./skin/desktop-options.css",
+    "bundle:desktop-options.css": "npm run bash:css desktop-options",
     "bundle:desktop-options.js": "npm run bash:js ./js/desktop-options.js ./desktop-options.js",
     "watch": "npm run watch:desktop-options.js & npm run watch:desktop-options.css",
     "watch:desktop-options.css": "watch 'npm run bundle:desktop-options.css' ./css",
     "watch:desktop-options.js": "watch 'npm run bundle:desktop-options.js' ./js",
-    "test": "npm run test:io-element.js && http-server",
-    "test:io-element.js": "npm run bashForTest:js io-element && npm run bundleTest:js io-element",
+    "test": "npm run test:io-element && npm run test:io-toggle && http-server",
+    "test:io-element": "npm run bashForTest:js io-element && npm run bundleTest:js io-element",
+    "test:io-toggle": "npm run bashForTest:js io-toggle && npm run bundleTest:js io-toggle && npm run bash:css io-toggle",
     "postinstall": "npm run bundle"
   },
   "dependencies": {
