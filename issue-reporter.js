@@ -17,10 +17,10 @@
 
 "use strict";
 
-let reportData = new DOMParser().parseFromString("<report></report>",
+const reportData = new DOMParser().parseFromString("<report></report>",
                                                  "text/xml");
 
-let pages = {
+const pages = {
   typeSelectorPage: [initTypeSelector, leaveTypeSelector],
   commentPage: [initCommentPage, leaveCommentPage],
   sendPage: [initSendPage, leaveSendPage]
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () =>
 
   document.addEventListener("keydown", event =>
   {
-    let blacklisted = new Set(["textarea", "button", "a"]);
+    const blacklisted = new Set(["textarea", "button", "a"]);
 
     if (event.key == "Enter" && !blacklisted.has(event.target.localName))
       document.getElementById("continue").click();
@@ -79,7 +79,7 @@ function setCurrentPage(pageId)
   if (!pages.hasOwnProperty(pageId))
     return;
 
-  let previousPage = document.querySelector(".page:not([hidden])");
+  const previousPage = document.querySelector(".page:not([hidden])");
   if (previousPage)
     previousPage.hidden = true;
 
@@ -114,7 +114,7 @@ function serializeReportData()
 
 function retrieveAddonInfo()
 {
-  let element = reportData.createElement("adblock-plus");
+  const element = reportData.createElement("adblock-plus");
   return browser.runtime.sendMessage({
     type: "app.get",
     what: "addonVersion"
@@ -134,7 +134,7 @@ function retrieveAddonInfo()
 
 function retrieveApplicationInfo()
 {
-  let element = reportData.createElement("application");
+  const element = reportData.createElement("application");
   return browser.runtime.sendMessage({
     type: "app.get",
     what: "application"
@@ -156,7 +156,7 @@ function retrieveApplicationInfo()
 
 function retrievePlatformInfo()
 {
-  let element = reportData.createElement("platform");
+  const element = reportData.createElement("platform");
   return browser.runtime.sendMessage({
     type: "app.get",
     what: "platform"
@@ -178,7 +178,7 @@ function retrieveTabURL(tabId)
 {
   return browser.tabs.get(tabId).then(tab =>
   {
-    let element = reportData.createElement("window");
+    const element = reportData.createElement("window");
     if (tab.url)
       element.setAttribute("url", censorURL(tab.url));
     reportData.documentElement.appendChild(element);
@@ -194,14 +194,14 @@ function retrieveSubscriptions()
     disabledFilters: true
   }).then(subscriptions =>
   {
-    let element = reportData.createElement("subscriptions");
-    for (let subscription of subscriptions)
+    const element = reportData.createElement("subscriptions");
+    for (const subscription of subscriptions)
     {
       if (!/^(http|https|ftp):/.test(subscription.url))
         continue;
 
-      let now = Math.round(Date.now() / 1000);
-      let subscriptionElement = reportData.createElement("subscription");
+      const now = Math.round(Date.now() / 1000);
+      const subscriptionElement = reportData.createElement("subscription");
       subscriptionElement.setAttribute("id", subscription.url);
       if (subscription.version)
         subscriptionElement.setAttribute("version", subscription.version);
@@ -239,8 +239,8 @@ function initDataCollector()
 {
   Promise.resolve().then(() =>
   {
-    let tabId = parseInt(location.search.replace(/^\?/, ""), 10) || 0;
-    let handlers = [
+    const tabId = parseInt(location.search.replace(/^\?/, ""), 10) || 0;
+    const handlers = [
       retrieveAddonInfo(),
       retrieveApplicationInfo(),
       retrievePlatformInfo(),
@@ -264,7 +264,7 @@ function initTypeSelector()
   document.getElementById("typeFalsePositive").focus();
 
 
-  for (let checkbox of document.querySelectorAll("input[name='type']"))
+  for (const checkbox of document.querySelectorAll("input[name='type']"))
   {
     checkbox.addEventListener("click", () =>
     {
@@ -276,22 +276,23 @@ function initTypeSelector()
 
 function leaveTypeSelector()
 {
-  let checkbox = document.querySelector("input[name='type']:checked");
+  const checkbox = document.querySelector("input[name='type']:checked");
   reportData.documentElement.setAttribute("type", checkbox.value);
   setCurrentPage("commentPage");
 }
 
 function initCommentPage()
 {
-  let continueButton = document.getElementById("continue");
-  let label = browser.i18n.getMessage("issueReporter_sendButton_label");
+  const continueButton = document.getElementById("continue");
+  const label = browser.i18n.getMessage("issueReporter_sendButton_label");
   continueButton.textContent = label;
   continueButton.disabled = true;
 
-  let emailElement = reportData.createElement("email");
-  let emailField = document.getElementById("email");
-  let anonymousSubmissionField = document.getElementById("anonymousSubmission");
-  let validateEmail = () =>
+  const emailElement = reportData.createElement("email");
+  const emailField = document.getElementById("email");
+  const anonymousSubmissionField =
+          document.getElementById("anonymousSubmission");
+  const validateEmail = () =>
   {
     document.getElementById("anonymousSubmissionWarning")
             .setAttribute("data-invisible", !anonymousSubmissionField.checked);
@@ -307,7 +308,7 @@ function initCommentPage()
     {
       emailField.disabled = false;
 
-      let value = emailField.value.trim();
+      const value = emailField.value.trim();
       emailElement.textContent = value;
       reportData.documentElement.appendChild(emailElement);
       continueButton.disabled = value == "" || !emailField.validity.valid;
@@ -316,13 +317,13 @@ function initCommentPage()
   emailField.addEventListener("input", validateEmail);
   anonymousSubmissionField.addEventListener("click", validateEmail);
 
-  let commentElement = reportData.createElement("comment");
+  const commentElement = reportData.createElement("comment");
   document.getElementById("comment").addEventListener("input", event =>
   {
     if (commentElement.parentNode)
       commentElement.parentNode.removeChild(commentElement);
 
-    let value = event.target.value.trim();
+    const value = event.target.value.trim();
     commentElement.textContent = value.substr(0, 1000);
     if (value)
       reportData.documentElement.appendChild(commentElement);
@@ -330,14 +331,14 @@ function initCommentPage()
             .setAttribute("data-invisible", value.length <= 1000);
   });
 
-  let showDataOverlay = document.getElementById("showDataOverlay");
+  const showDataOverlay = document.getElementById("showDataOverlay");
   document.getElementById("showData").addEventListener("click", event =>
   {
     event.preventDefault();
 
     showDataOverlay.hidden = false;
 
-    let element = document.getElementById("showDataValue");
+    const element = document.getElementById("showDataValue");
     element.value = serializeReportData();
     element.focus();
   });
@@ -380,12 +381,12 @@ function initSendPage()
 {
   document.getElementById("cancel").hidden = true;
 
-  let continueButton = document.getElementById("continue");
-  let label = browser.i18n.getMessage("issueReporter_doneButton_label");
+  const continueButton = document.getElementById("continue");
+  const label = browser.i18n.getMessage("issueReporter_doneButton_label");
   continueButton.textContent = label;
   continueButton.disabled = true;
 
-  let uuid = new Uint16Array(8);
+  const uuid = new Uint16Array(8);
   window.crypto.getRandomValues(uuid);
   uuid[3] = uuid[3] & 0x0FFF | 0x4000;  // version 4
   uuid[4] = uuid[4] & 0x3FFF | 0x8000;  // variant 1
@@ -403,8 +404,8 @@ function initSendPage()
 
   // Passing a sequence to URLSearchParams() constructor only works starting
   // with Firefox 53, add values "manually" for now.
-  let params = new URLSearchParams();
-  for (let [param, value] of [
+  const params = new URLSearchParams();
+  for (const [param, value] of [
     ["version", 1],
     ["guid", uuidString],
     ["lang", reportData.getElementsByTagName("adblock-plus")[0]
@@ -414,9 +415,9 @@ function initSendPage()
     params.append(param, value);
   }
 
-  let url = "https://reports.adblockplus.org/submitReport?" + params;
+  const url = "https://reports.adblockplus.org/submitReport?" + params;
 
-  let reportSent = event =>
+  const reportSent = event =>
   {
     let success = false;
     let errorMessage = browser.i18n.getMessage(
@@ -445,17 +446,17 @@ function initSendPage()
 
     if (!success)
     {
-      let errorElement = document.getElementById("error");
-      let template = browser.i18n.getMessage("issueReporter_errorMessage").replace(/[\r\n\s]+/g, " ");
+      const errorElement = document.getElementById("error");
+      const template = browser.i18n.getMessage("issueReporter_errorMessage").replace(/[\r\n\s]+/g, " ");
 
-      let [, beforeLink, linkText, afterLink] = /(.*)\[link\](.*)\[\/link\](.*)/.exec(template) || [null, "", template, ""];
-      beforeLink = beforeLink.replace(/\?1\?/g, errorMessage);
-      afterLink = afterLink.replace(/\?1\?/g, errorMessage);
+      const [, beforeLink, linkText, afterLink] = /(.*)\[link\](.*)\[\/link\](.*)/.exec(template) || [null, "", template, ""];
+      const beforeLinkError = beforeLink.replace(/\?1\?/g, errorMessage);
+      const afterLinkError = afterLink.replace(/\?1\?/g, errorMessage);
 
       while (errorElement.firstChild)
         errorElement.removeChild(errorElement.firstChild);
 
-      let link = document.createElement("a");
+      const link = document.createElement("a");
       link.textContent = linkText;
       browser.runtime.sendMessage({
         type: "app.get",
@@ -467,9 +468,9 @@ function initSendPage()
       });
 
 
-      errorElement.appendChild(document.createTextNode(beforeLink));
+      errorElement.appendChild(document.createTextNode(beforeLinkError));
       errorElement.appendChild(link);
-      errorElement.appendChild(document.createTextNode(afterLink));
+      errorElement.appendChild(document.createTextNode(afterLinkError));
 
       errorElement.hidden = false;
     }
@@ -481,7 +482,7 @@ function initSendPage()
     document.getElementById("sendReportMessage").hidden = true;
     document.getElementById("sendingProgressContainer").hidden = true;
 
-    let resultFrame = document.getElementById("result");
+    const resultFrame = document.getElementById("result");
     resultFrame.setAttribute("src", "data:text/html;charset=utf-8," +
                                     encodeURIComponent(result));
     resultFrame.hidden = false;
@@ -489,7 +490,7 @@ function initSendPage()
     document.getElementById("continue").disabled = false;
   };
 
-  let request = new XMLHttpRequest();
+  const request = new XMLHttpRequest();
   request.open("POST", url);
   request.setRequestHeader("Content-Type", "text/xml");
   request.setRequestHeader("X-Adblock-Plus", "1");
@@ -502,7 +503,7 @@ function initSendPage()
 
     if (event.loaded > 0)
     {
-      let progress = document.getElementById("sendingProgress");
+      const progress = document.getElementById("sendingProgress");
       progress.max = event.total;
       progress.value = event.loaded;
     }

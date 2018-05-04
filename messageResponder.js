@@ -47,15 +47,15 @@
 
   port.on("types.get", (message, sender) =>
   {
-    let filterTypes = Array.from(require("requestBlocker").filterTypes);
+    const filterTypes = Array.from(require("requestBlocker").filterTypes);
     filterTypes.push(...filterTypes.splice(filterTypes.indexOf("OTHER"), 1));
     return filterTypes;
   });
 
   function convertObject(keys, obj)
   {
-    let result = {};
-    for (let key of keys)
+    const result = {};
+    for (const key of keys)
     {
       if (key in obj)
         result[key] = obj[key];
@@ -65,22 +65,22 @@
 
   function convertSubscription(subscription)
   {
-    let obj = convertObject(["disabled", "downloadStatus", "homepage",
-                             "version", "lastDownload", "lastSuccess",
-                             "softExpiration", "expires", "title",
-                             "url"], subscription);
+    const obj = convertObject(["disabled", "downloadStatus", "homepage",
+                               "version", "lastDownload", "lastSuccess",
+                               "softExpiration", "expires", "title",
+                               "url"], subscription);
     if (subscription instanceof SpecialSubscription)
       obj.filters = subscription.filters.map(convertFilter);
     obj.isDownloading = Synchronizer.isExecuting(subscription.url);
     return obj;
   }
 
-  let convertFilter = convertObject.bind(null, ["text"]);
+  const convertFilter = convertObject.bind(null, ["text"]);
 
-  let uiPorts = new Map();
-  let listenedPreferences = Object.create(null);
-  let listenedFilterChanges = Object.create(null);
-  let messageTypes = new Map([
+  const uiPorts = new Map();
+  const listenedPreferences = Object.create(null);
+  const listenedFilterChanges = Object.create(null);
+  const messageTypes = new Map([
     ["app", "app.respond"],
     ["filter", "filters.respond"],
     ["pref", "prefs.respond"],
@@ -92,8 +92,8 @@
     if (uiPorts.size == 0)
       return;
 
-    let convertedArgs = [];
-    for (let arg of args)
+    const convertedArgs = [];
+    for (const arg of args)
     {
       if (arg instanceof Subscription)
         convertedArgs.push(convertSubscription(arg));
@@ -103,9 +103,9 @@
         convertedArgs.push(arg);
     }
 
-    for (let [uiPort, filters] of uiPorts)
+    for (const [uiPort, filters] of uiPorts)
     {
-      let actions = filters.get(type);
+      const actions = filters.get(type);
       if (actions && actions.indexOf(action) != -1)
       {
         uiPort.postMessage({
@@ -119,7 +119,7 @@
 
   function addFilterListeners(type, actions)
   {
-    for (let action of actions)
+    for (const action of actions)
     {
       let name;
       if (type == "filter" && action == "loaded")
@@ -156,7 +156,7 @@
   {
     if (message.what == "issues")
     {
-      let subscriptionInit = require("subscriptionInit");
+      const subscriptionInit = require("subscriptionInit");
       return {
         dataCorrupted: subscriptionInit.isDataCorrupted(),
         filterlistsReinitialized: subscriptionInit.isReinitialized()
@@ -179,7 +179,7 @@
       let bidiDir;
       if ("chromeRegistry" in Utils)
       {
-        let isRtl = Utils.chromeRegistry.isLocaleRTL("adblockplus");
+        const isRtl = Utils.chromeRegistry.isLocaleRTL("adblockplus");
         bidiDir = isRtl ? "rtl" : "ltr";
       }
       else
@@ -219,8 +219,8 @@
 
   port.on("filters.add", (message, sender) =>
   {
-    let result = require("filterValidation").parseFilter(message.text);
-    let errors = [];
+    const result = require("filterValidation").parseFilter(message.text);
+    const errors = [];
     if (result.error)
       errors.push(result.error.toString());
     else if (result.filter)
@@ -231,7 +231,7 @@
 
   port.on("filters.blocked", (message, sender) =>
   {
-    let filter = defaultMatcher.matchesAny(message.url,
+    const filter = defaultMatcher.matchesAny(message.url,
       RegExpFilter.typeMap[message.requestType], message.docDomain,
       message.thirdParty);
 
@@ -240,7 +240,7 @@
 
   port.on("filters.get", (message, sender) =>
   {
-    let subscription = Subscription.fromURL(message.subscriptionUrl);
+    const subscription = Subscription.fromURL(message.subscriptionUrl);
     if (!subscription)
       return [];
 
@@ -249,9 +249,9 @@
 
   port.on("filters.importRaw", (message, sender) =>
   {
-    let result = require("filterValidation").parseFilters(message.text);
-    let errors = [];
-    for (let error of result.errors)
+    const result = require("filterValidation").parseFilters(message.text);
+    const errors = [];
+    for (const error of result.errors)
     {
       if (error.type != "unexpected-filter-list-header")
         errors.push(error.toString());
@@ -260,8 +260,8 @@
     if (errors.length > 0)
       return errors;
 
-    let seenFilter = Object.create(null);
-    for (let filter of result.filters)
+    const seenFilter = Object.create(null);
+    for (const filter of result.filters)
     {
       FilterStorage.addFilter(filter);
       seenFilter[filter.text] = null;
@@ -270,14 +270,14 @@
     if (!message.removeExisting)
       return errors;
 
-    for (let subscription of FilterStorage.subscriptions)
+    for (const subscription of FilterStorage.subscriptions)
     {
       if (!(subscription instanceof SpecialSubscription))
         continue;
 
       for (let j = subscription.filters.length - 1; j >= 0; j--)
       {
-        let filter = subscription.filters[j];
+        const filter = subscription.filters[j];
         if (/^@@\|\|([^/:]+)\^\$document$/.test(filter.text))
           continue;
 
@@ -291,7 +291,7 @@
 
   port.on("filters.remove", (message, sender) =>
   {
-    let filter = Filter.fromText(message.text);
+    const filter = Filter.fromText(message.text);
     let subscription = null;
     if (message.subscriptionUrl)
       subscription = Subscription.fromURL(message.subscriptionUrl);
@@ -325,14 +325,14 @@
 
   port.on("notifications.get", (message, sender) =>
   {
-    let notification = getActiveNotification();
+    const notification = getActiveNotification();
 
     if (!notification ||
         "displayMethod" in message &&
         !shouldDisplay(message.displayMethod, notification.type))
       return;
 
-    let texts = NotificationStorage.getLocalizedTexts(notification,
+    const texts = NotificationStorage.getLocalizedTexts(notification,
                                                       message.locale);
     return Object.assign({texts}, notification);
   });
@@ -344,7 +344,7 @@
 
   port.on("subscriptions.add", (message, sender) =>
   {
-    let subscription = Subscription.fromURL(message.url);
+    const subscription = Subscription.fromURL(message.url);
     if (message.confirm)
     {
       if ("title" in message)
@@ -365,7 +365,7 @@
 
   port.on("subscriptions.get", (message, sender) =>
   {
-    let subscriptions = FilterStorage.subscriptions.filter((s) =>
+    const subscriptions = FilterStorage.subscriptions.filter((s) =>
     {
       if (message.ignoreDisabled && s.disabled)
         return false;
@@ -378,7 +378,7 @@
 
     return subscriptions.map((s) =>
     {
-      let result = convertSubscription(s);
+      const result = convertSubscription(s);
       if (message.disabledFilters)
       {
         result.disabledFilters = s.filters
@@ -391,14 +391,14 @@
 
   port.on("subscriptions.remove", (message, sender) =>
   {
-    let subscription = Subscription.fromURL(message.url);
+    const subscription = Subscription.fromURL(message.url);
     if (subscription.url in FilterStorage.knownSubscriptions)
       FilterStorage.removeSubscription(subscription);
   });
 
   port.on("subscriptions.toggle", (message, sender) =>
   {
-    let subscription = Subscription.fromURL(message.url);
+    const subscription = Subscription.fromURL(message.url);
     if (subscription.url in FilterStorage.knownSubscriptions)
     {
       if (subscription.disabled || message.keepInstalled)
@@ -418,7 +418,7 @@
     if (message.url)
       subscriptions = [Subscription.fromURL(message.url)];
 
-    for (let subscription of subscriptions)
+    for (const subscription of subscriptions)
     {
       if (subscription instanceof DownloadableSubscription)
         Synchronizer.execute(subscription, true);
@@ -438,7 +438,7 @@
         break;
       case "prefs":
         filters.set("pref", newFilter);
-        for (let preference of newFilter)
+        for (const preference of newFilter)
         {
           if (!(preference in listenedPreferences))
           {
@@ -462,7 +462,7 @@
     if (uiPort.name != "ui")
       return;
 
-    let filters = new Map();
+    const filters = new Map();
     uiPorts.set(uiPort, filters);
 
     uiPort.onDisconnect.addListener(() =>
@@ -472,7 +472,7 @@
 
     uiPort.onMessage.addListener((message) =>
     {
-      let [type, action] = message.type.split(".", 2);
+      const [type, action] = message.type.split(".", 2);
 
       // For now we're only using long-lived connections for handling
       // "*.listen" messages to tackle #6440

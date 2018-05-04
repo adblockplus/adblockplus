@@ -51,11 +51,11 @@
         if (event.data.type != "message")
           return;
 
-        let {messageId} = event.data;
-        let sender = {
+        const {messageId} = event.data;
+        const sender = {
           page: new Page(event.source)
         };
-        let callback = function(message)
+        const callback = function(message)
         {
           event.source.postMessage({
             type: "response",
@@ -96,7 +96,7 @@
 
     get onMessage()
     {
-      let name = this._name;
+      const name = this._name;
       return {
         addListener(listener)
         {

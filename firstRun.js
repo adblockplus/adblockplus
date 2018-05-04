@@ -24,9 +24,9 @@
   function onDOMLoaded()
   {
     // Set up logo image
-    let logo = E("logo");
+    const logo = E("logo");
     logo.src = "skin/abp-128.png";
-    let errorCallback = function()
+    const errorCallback = function()
     {
       logo.removeEventListener("error", errorCallback, false);
       // We are probably in Chrome/Opera/Safari, the image has a different path.
@@ -60,7 +60,6 @@
       what: "issues"
     }, (issues) =>
     {
-
       // Show warning if we detected some data corruption
       if (issues.dataCorrupted)
       {
@@ -84,7 +83,7 @@
 
     updateSocialLinks();
 
-    let port = browser.runtime.connect({name: "ui"});
+    const port = browser.runtime.connect({name: "ui"});
 
     port.onMessage.addListener((message) =>
     {
@@ -102,9 +101,9 @@
 
   function updateSocialLinks()
   {
-    for (let network of ["twitter", "facebook", "gplus"])
+    for (const network of ["twitter", "facebook", "gplus"])
     {
-      let link = E("share-" + network);
+      const link = E("share-" + network);
       checkShareResource(link.getAttribute("data-script"), (isBlocked) =>
       {
         // Don't open the share page if the sharing script would be blocked

@@ -41,12 +41,12 @@ ext.i18n = {
   {
     function processString(str, currentElement)
     {
-      let match = /^(.*?)<(a|strong)>(.*?)<\/\2>(.*)$/.exec(str);
+      const match = /^(.*?)<(a|strong)>(.*?)<\/\2>(.*)$/.exec(str);
       if (match)
       {
         processString(match[1], currentElement);
 
-        let e = document.createElement(match[2]);
+        const e = document.createElement(match[2]);
         processString(match[3], e);
         currentElement.appendChild(e);
 
@@ -67,8 +67,8 @@ function loadI18nStrings()
 {
   function addI18nStringsToElements(containerElement)
   {
-    let elements = containerElement.querySelectorAll("[class^='i18n_']");
-    for (let node of elements)
+    const elements = containerElement.querySelectorAll("[class^='i18n_']");
+    for (const node of elements)
     {
       let args = JSON.parse("[" + node.textContent + "]");
       if (args.length == 0)
@@ -77,7 +77,7 @@ function loadI18nStrings()
       let {className} = node;
       if (className instanceof SVGAnimatedString)
         className = className.animVal;
-      let stringName = className.split(/\s/)[0].substring(5);
+      const stringName = className.split(/\s/)[0].substring(5);
 
       ext.i18n.setElementText(node, stringName, args);
     }
@@ -86,17 +86,17 @@ function loadI18nStrings()
   // Content of Template is not rendered on runtime so we need to add
   // translation strings for each Template documentFragment content
   // individually.
-  for (let template of document.querySelectorAll("template"))
+  for (const template of document.querySelectorAll("template"))
     addI18nStringsToElements(template.content);
 }
 
 // Provides a more readable string of the current date and time
 function i18nTimeDateStrings(when)
 {
-  let d = new Date(when);
-  let timeString = d.toLocaleTimeString();
+  const d = new Date(when);
+  const timeString = d.toLocaleTimeString();
 
-  let now = new Date();
+  const now = new Date();
   if (d.toDateString() == now.toDateString())
     return [timeString];
   return [timeString, d.toLocaleDateString()];
@@ -105,7 +105,7 @@ function i18nTimeDateStrings(when)
 // Formats date string to ["YYYY-MM-DD", "mm:ss"] format
 function i18nFormatDateTime(when)
 {
-  let date = new Date(when);
+  const date = new Date(when);
   let dateParts = [date.getFullYear(), date.getMonth() + 1, date.getDate(),
                    date.getHours(), date.getMinutes()];
 

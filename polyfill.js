@@ -23,16 +23,16 @@
 
   /* I18n */
 
-  let getLocaleCandidates = function(selectedLocale)
+  const getLocaleCandidates = function(selectedLocale)
   {
-    let candidates = [];
-    let defaultLocale = "en_US";
+    const candidates = [];
+    const defaultLocale = "en_US";
 
     // e.g. "ja-jp-mac" -> "ja_JP", note that the part after the second
     // dash is dropped, since we only support language and region
-    let parts = selectedLocale.split("-");
-    let language = parts[0];
-    let region = (parts[1] || "").toUpperCase();
+    const parts = selectedLocale.split("-");
+    const language = parts[0];
+    const region = (parts[1] || "").toUpperCase();
 
     if (region)
       candidates.push(language + "_" + region);
@@ -46,28 +46,28 @@
   };
 
   let selectedLocale = window.navigator.language;
-  let match = /[?&]locale=([\w-]+)/.exec(window.location.search);
+  const match = /[?&]locale=([\w-]+)/.exec(window.location.search);
   if (match)
     selectedLocale = match[1];
 
-  let locales = getLocaleCandidates(selectedLocale);
-  let catalog = Object.create(null);
-  let catalogFile = window.location.pathname.replace(/.*\//, "")
+  const locales = getLocaleCandidates(selectedLocale);
+  const catalog = Object.create(null);
+  const catalogFile = window.location.pathname.replace(/.*\//, "")
     .replace(/\..*/, "") + ".json";
 
-  let replacePlaceholder = function(text, placeholder, content)
+  const replacePlaceholder = function(text, placeholder, content)
   {
     return text.split("$" + placeholder + "$").join(content || "");
   };
 
-  let parseMessage = function(rawMessage)
+  const parseMessage = function(rawMessage)
   {
     let text = rawMessage.message;
-    let placeholders = [];
+    const placeholders = [];
 
-    for (let placeholder in rawMessage.placeholders)
+    for (const placeholder in rawMessage.placeholders)
     {
-      let {content} = rawMessage.placeholders[placeholder];
+      const {content} = rawMessage.placeholders[placeholder];
 
       if (/^\$\d+$/.test(content))
         placeholders[parseInt(content.substr(1), 10) - 1] = placeholder;
@@ -78,9 +78,9 @@
     return [text, placeholders];
   };
 
-  let readCatalog = function(locale, file)
+  const readCatalog = function(locale, file)
   {
-    let xhr = new XMLHttpRequest();
+    const xhr = new XMLHttpRequest();
     xhr.open("GET", "locale/" + locale + "/" + file, false);
     xhr.overrideMimeType("text/plain");
 
@@ -96,8 +96,8 @@
     if (xhr.status != 200 && xhr.status != 0)
       return;
 
-    let rawCatalog = JSON.parse(xhr.responseText);
-    for (let msgId in rawCatalog)
+    const rawCatalog = JSON.parse(xhr.responseText);
+    for (const msgId in rawCatalog)
     {
       if (!(msgId in catalog))
         catalog[msgId] = parseMessage(rawCatalog[msgId]);
@@ -113,11 +113,11 @@
     {
       while (true)
       {
-        let message = catalog[msgId];
+        const message = catalog[msgId];
         if (message)
         {
           let text = message[0];
-          let placeholders = message[1];
+          const placeholders = message[1];
 
           if (!(substitutions instanceof Array))
             substitutions = [substitutions];
@@ -131,7 +131,7 @@
         if (locales.length == 0)
           return "";
 
-        let locale = locales.shift();
+        const locale = locales.shift();
         readCatalog(locale, "common.json");
         readCatalog(locale, catalogFile);
       }
@@ -141,7 +141,7 @@
   // Workaround since HTMLCollection, NodeList, StyleSheetList, and CSSRuleList
   // didn't have iterator support before Chrome 51.
   // https://bugs.chromium.org/p/chromium/issues/detail?id=401699
-  for (let object of [HTMLCollection, NodeList, StyleSheetList, CSSRuleList])
+  for (const object of [HTMLCollection, NodeList, StyleSheetList, CSSRuleList])
   {
     if (!(Symbol.iterator in object.prototype))
       object.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator];

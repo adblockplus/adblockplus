@@ -23,7 +23,7 @@
 {
   function onDOMLoaded()
   {
-    let optionsPageLink = document.querySelector("#options-page-news > a");
+    const optionsPageLink = document.querySelector("#options-page-news > a");
     optionsPageLink.addEventListener("click", () =>
     {
       browser.runtime.sendMessage(

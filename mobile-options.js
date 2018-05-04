@@ -25,8 +25,8 @@
   const dialogSubscribe = "subscribe";
   const idAcceptableAds = "acceptableAds";
   const idRecommended = "subscriptions-recommended";
+  const promisedAcceptableAdsUrl = getAcceptableAdsUrl();
   let whitelistFilter = null;
-  let promisedAcceptableAdsUrl = getAcceptableAdsUrl();
 
   /* Utility functions */
 
@@ -42,7 +42,7 @@
 
   function create(parent, tagName, content, attributes, onclick)
   {
-    let element = document.createElement(tagName);
+    const element = document.createElement(tagName);
 
     if (typeof content == "string")
     {
@@ -51,7 +51,7 @@
 
     if (attributes)
     {
-      for (let name in attributes)
+      for (const name in attributes)
       {
         element.setAttribute(name, attributes[name]);
       }
@@ -100,8 +100,8 @@
       .then((response) => response.text())
       .then((text) =>
       {
-        let doc = new DOMParser().parseFromString(text, "application/xml");
-        let elements = Array.from(doc.getElementsByTagName("subscription"));
+        const doc = new DOMParser().parseFromString(text, "application/xml");
+        const elements = Array.from(doc.getElementsByTagName("subscription"));
 
         return elements
           .filter((element) => element.getAttribute("type") == "ads")
@@ -137,7 +137,7 @@
 
   function setSubscription(subscription, action)
   {
-    let {disabled, filters, title, url} = subscription;
+    const {disabled, filters, title, url} = subscription;
     if (disabled)
     {
       action = "remove";
@@ -146,7 +146,7 @@
     // Handle custom subscription
     if (/^~user/.test(url))
     {
-      for (let filter of filters)
+      for (const filter of filters)
       {
         setFilter(filter, action);
       }
@@ -162,8 +162,8 @@
         return;
       }
 
-      let listInstalled = get("#subscriptions-installed");
-      let installed = get(`[data-url="${url}"]`, listInstalled);
+      const listInstalled = get("#subscriptions-installed");
+      const installed = get(`[data-url="${url}"]`, listInstalled);
 
       // Remove subscription
       if (action == "remove")
@@ -173,7 +173,7 @@
           installed.parentNode.removeChild(installed);
         }
 
-        let recommended = get(`#${idRecommended} [data-url="${url}"]`);
+        const recommended = get(`#${idRecommended} [data-url="${url}"]`);
         if (recommended)
         {
           recommended.classList.remove("installed");
@@ -182,19 +182,19 @@
       // Update subscription
       else if (installed)
       {
-        let titleElement = get("span", installed);
+        const titleElement = get("span", installed);
         titleElement.textContent = title || url;
       }
       // Add subscription
       else if (action == "add")
       {
-        let element = create(listInstalled, "li", null, {"data-url": url});
+        const element = create(listInstalled, "li", null, {"data-url": url});
         create(element, "span", title || url);
         create(element, "button", null, {class: "remove"},
           () => uninstallSubscription(url)
         );
 
-        let recommended = get(`#${idRecommended} [data-url="${url}"]`);
+        const recommended = get(`#${idRecommended} [data-url="${url}"]`);
         if (recommended)
         {
           recommended.classList.add("installed");
@@ -211,10 +211,10 @@
       return;
     }
 
-    let fields = getAll(`#dialog-${id} input`);
-    for (let field of fields)
+    const fields = getAll(`#dialog-${id} input`);
+    for (const field of fields)
     {
-      let {name} = field;
+      const {name} = field;
       field.value = (options && name in options) ? options[name] : "";
     }
     setError(id, null);
@@ -224,7 +224,7 @@
 
   function setError(dialogId, fieldName)
   {
-    let dialog = get(`#dialog-${dialogId}`);
+    const dialog = get(`#dialog-${dialogId}`);
     if (fieldName)
     {
       dialog.dataset.error = fieldName;
@@ -240,8 +240,8 @@
     Promise.all([getInstalled(), getRecommendedAds()])
       .then(([installed, recommended]) =>
       {
-        let listRecommended = get(`#${idRecommended}`);
-        for (let {title, url} of recommended)
+        const listRecommended = get(`#${idRecommended}`);
+        for (const {title, url} of recommended)
         {
           create(listRecommended, "li", title, {"data-url": url},
             (ev) =>
@@ -254,7 +254,7 @@
           );
         }
 
-        for (let subscription of installed)
+        for (const subscription of installed)
         {
           if (subscription.disabled)
             continue;
@@ -331,9 +331,9 @@
 
   function onSubmit(ev)
   {
-    let fields = ev.target.elements;
-    let title = fields.title.value;
-    let url = fields.url.value;
+    const fields = ev.target.elements;
+    const title = fields.title.value;
+    const url = fields.url.value;
 
     if (!title)
     {
@@ -361,14 +361,14 @@
         switch (msg.action)
         {
           case "addSubscription":
-            let [subscription] = msg.args;
+            const [subscription] = msg.args;
             setDialog(dialogSubscribe, {
               title: subscription.title,
               url: subscription.url
             });
             break;
           case "showPageOptions":
-            let [{host, whitelisted}] = msg.args;
+            const [{host, whitelisted}] = msg.args;
             whitelistFilter = `@@||${host}^$document`;
 
             ext.i18n.setElementText(
@@ -377,7 +377,7 @@
               [host]
             );
 
-            let toggle = get("#enabled");
+            const toggle = get("#enabled");
             toggle.checked = !whitelisted;
 
             get("#enabled-container").hidden = false;
@@ -386,12 +386,12 @@
         break;
       }
       case "filters.respond": {
-        let action = (msg.action == "added") ? "add" : "remove";
+        const action = (msg.action == "added") ? "add" : "remove";
         setFilter(msg.args[0], action);
         break;
       }
       case "subscriptions.respond": {
-        let [subscription] = msg.args;
+        const [subscription] = msg.args;
         switch (msg.action)
         {
           case "added":
@@ -412,7 +412,7 @@
     }
   }
 
-  let port = browser.runtime.connect({name: "ui"});
+  const port = browser.runtime.connect({name: "ui"});
   port.onMessage.addListener(onMessage);
 
   port.postMessage({

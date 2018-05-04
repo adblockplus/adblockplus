@@ -22,7 +22,7 @@
   if (typeof ext == "undefined")
     window.ext = {};
 
-  let backgroundFrame = document.createElement("iframe");
+  const backgroundFrame = document.createElement("iframe");
   backgroundFrame.setAttribute("src",
                                "background.html" + window.location.search);
   backgroundFrame.style.display = "none";
@@ -33,15 +33,15 @@
 
   let messageQueue = [];
   let maxMessageId = -1;
-  let loadHandler = (event) =>
+  const loadHandler = (event) =>
   {
     if (event.data.type == "backgroundPageLoaded")
     {
-      let queue = messageQueue;
+      const queue = messageQueue;
       messageQueue = null;
       if (queue)
       {
-        for (let message of queue)
+        for (const message of queue)
           backgroundFrame.contentWindow.postMessage(message, "*");
       }
       window.removeEventListener("message", loadHandler);
@@ -66,7 +66,7 @@
 
   browser.runtime.sendMessage = (message, responseCallback) =>
   {
-    let messageId = ++maxMessageId;
+    const messageId = ++maxMessageId;
     ext.backgroundPage._sendRawMessage({
       type: "message",
       messageId,
@@ -74,7 +74,7 @@
     });
 
     let resolvePromise = null;
-    let callbackWrapper = event =>
+    const callbackWrapper = event =>
     {
       if (event.data.type == "response" && event.data.messageId == messageId)
       {
