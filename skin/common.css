@@ -57,3 +57,19 @@
   -webkit-transition-duration: 0.15s;
   transition-duration: 0.15s;
 }
+
+/* 
+  Used for translatable screen reader only content.
+  e.g.: Use instead of aria-label to avoid complex attribute value translation
+*/
+.sr-only
+{
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0px;
+  border: 0px;
+}

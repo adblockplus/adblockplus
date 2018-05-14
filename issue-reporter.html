@@ -24,11 +24,19 @@
     <script src="ext/content.js"></script>
     <script src="issue-reporter.js"></script>
     <script src="i18n.js"></script>
+    <link rel="stylesheet" type="text/css" href="skin/common.css">
     <link rel="stylesheet" type="text/css" href="skin/fonts.css">
     <link rel="stylesheet" type="text/css" href="skin/issue-reporter.css">
     <title class="i18n_issueReporter_page_title"></title>
   </head>
   <body>
+    <!-- Notification -->
+    <div id="notification">
+      <span id="notification-text" class="i18n_issueReporter_data_gathering_tab"></span>
+      <button class="icon close tertiary" id="hide-notification">
+        <span class="i18n_issueReporter_notification_hide sr-only"></span>
+      </button>
+    </div>
     <header>
       <img id="logo" alt="Adblock Plus logo" src="skin/abp-logo.svg">
       <div class="title">
@@ -81,7 +89,9 @@
         <label for="comment" class="i18n_issueReporter_comment_label"></label>
         <textarea id="comment"></textarea>
         <p id="commentLengthWarning" data-invisible="true" class="i18n_issueReporter_comment_lengthWarning"></p>
-        <a href="#" id="showData" class="i18n_issueReporter_showData_label"></a>
+        <p>
+            <button id="showData" class="i18n_issueReporter_showData_label link" disabled></button>
+        </p>
       </div>
 
       <div class="page" id="sendPage" hidden>
@@ -110,6 +120,7 @@
       <a id="privacyPolicy" target="_blank" class="i18n_issueReporter_privacyPolicy"></a>
       <button id="cancel" class="i18n_cancel secondary"></button>
       <button id="continue" class="i18n_continue primary" disabled></button>
+      <button id="send" class="i18n_issueReporter_sendButton_label primary" disabled></button>
     </footer>
   </body>
 </html>
