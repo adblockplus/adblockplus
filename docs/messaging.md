@@ -80,6 +80,7 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
   - `ltr`
   - `rtl`
 - **string** locale
+  - [RFC2616](https://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.10)
 
 **number** senderId (if "what" is `senderId`)
 
