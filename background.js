@@ -636,5 +636,22 @@
         subscription: null
       }
     });
+
+    // rewrite
+    panel.sendMessage({
+      type: "add-record",
+      request: {
+        url: "http://example.com/some-annoying-popup",
+        type: "OTHER",
+        docDomain: "example.com",
+        rewrittenUrl: "http://example.com/some-annoying-popup?nopopup"
+      },
+      filter: {
+        text: "/(example\\.com\\/some-annoying-popup\\)$/$rewrite=$1?nopopup",
+        whitelisted: false,
+        userDefined: true,
+        subscription: null
+      }
+    });
   });
 }());

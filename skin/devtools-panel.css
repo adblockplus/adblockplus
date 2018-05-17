@@ -179,11 +179,15 @@ tr:not(:hover) .action
   width: 100%;
 }
 
-.resource-link {
+.rewritten-url > a,
+.resource-link
+{
   text-decoration: none;
 }
 
-.resource-link:hover {
+.rewritten-url > a:hover,
+.resource-link:hover
+{
   text-decoration: underline;
 }
 
