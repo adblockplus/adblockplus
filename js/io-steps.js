@@ -58,10 +58,19 @@ class IOSteps extends IOElement
     return this._enabled;
   }
 
+  // return true or false accordingly if an index/step
+  // has been already completed.
+  getCompleted(index)
+  {
+    return index < this._enabled;
+  }
+
   // set an index completed state
   // by default, completed is true
   setCompleted(index, completed = true)
   {
+    if (index < 0)
+      index = this.children.length + index;
     this.children[index].classList.toggle("completed", completed);
     if (
       completed &&
@@ -80,9 +89,10 @@ class IOSteps extends IOElement
   {
     event.preventDefault();
     event.stopPropagation();
+    const indexOf = Array.prototype.indexOf;
     this.dispatchEvent(new CustomEvent("step:click", {
       bubbles: true,
-      detail: Array.prototype.call(this.children, event.currentTarget)
+      detail: indexOf.call(this.children, event.currentTarget)
     }));
   }
 

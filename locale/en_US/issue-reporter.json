@@ -2,35 +2,35 @@
   "issueReporter_page_title": {
     "message": "Issue reporter"
   },
-  "issueReporter_dataCollector_heading": {
-    "message": "Welcome to the issue reporter"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Please wait a few moments while Adblock Plus gathers the required data."
-  },
   "issueReporter_typeSelector_heading": {
-    "message": "Select issue type"
+    "message": "What type of issue are you experiencing?"
   },
   "issueReporter_typeSelector_description": {
-    "message": "This window will guide you through the steps required for the submission of an Adblock Plus issue report. First, please select the type of issue that you are experiencing on this page:"
+    "message": "Please select an issue:"
   },
   "issueReporter_falsePositive_label": {
-    "message": "Adblock Plus is blocking too much"
+    "message": "The page I'm trying to view is broken"
   },
   "issueReporter_falsePositive_description": {
-    "message": "Select this option if the page lacks important content, displays incorrectly or fails to function properly. You can determine whether Adblock Plus is the cause of the problem by disabling it temporarily."
+    "message": "The page displays incorrectly, fails to function or seems to be missing important content."
   },
   "issueReporter_falseNegative_label": {
-    "message": "Adblock Plus doesn't block an advertisement"
+    "message": "I still see ads"
   },
   "issueReporter_falseNegative_description": {
-    "message": "Select this option if an advertisement is displayed despite Adblock Plus being enabled."
+    "message": "Adblock Plus is enabled, but I still see an ad or ads."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Highlight issue"
+  },
+  "issueReporter_highlighter_description": {
+    "message": "Use the tools to highlight each ad or hide sensitive info on the screenshot. Highlighting ads will help us fix the issue faster."
   },
   "issueReporter_commentPage_heading": {
-    "message": "Enter comment"
+    "message": "Leave a comment"
   },
   "issueReporter_email_description": {
-    "message": "We encourage you to enter a valid email address so that we can contact you if there are questions about your report. It will also allow us to recognize your contributions and to prioritize them higher."
+    "message": "It's helpful to enter a valid email address. This allows us to contact you to fix difficult issues like malware. Keep in mind that it's not mandatory to enter an email address, and your address will never be shared."
   },
   "issueReporter_email_label": {
     "message": "Email:"
@@ -42,16 +42,13 @@
     "message": "We won't be able to come back to you and will likely prioritize the report lower."
   },
   "issueReporter_comment_description": {
-    "message": "The text field below allows you to enter a comment to help us understand the issue. This step is optional but recommended if the problem isn't obvious. You can also review the report data before it is sent."
+    "message": "Please help us better understand the issue by leaving a comment below."
   },
   "issueReporter_comment_label": {
     "message": "Comment (optional):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "The length of your comment exceeds 1000 characters. Only the first 1000 characters will be sent."
-  },
   "issueReporter_showData_label": {
-    "message": "Show report data"
+    "message": "Click this link to review the report data before sending"
   },
   "issueReporter_sendButton_label": {
     "message": "Send report"
@@ -67,6 +64,15 @@
   },
   "issueReporter_sending": {
     "message": "Please wait while Adblock Plus is submitting your report."
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Select issue"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Mark issue"
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "Details"
   },
   "issueReporter_doneButton_label": {
     "message": "Done"

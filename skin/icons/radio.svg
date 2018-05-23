@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <view id="normal" viewBox="0 0 17 17"/>
+  <circle cx="8.5" cy="8.5" r="7.5" fill="none" stroke="#9B9B9B"/>
+  <view id="hover" viewBox="0 17 17 17"/>
+  <circle cx="8.5" cy="8.5" r="7.5" fill="none" stroke="#077CA6" transform="translate(0, 17)"/>
+  <view id="selected" viewBox="0 34 17 17"/>
+  <g fill="none" fill-rule="evenodd" transform="translate(1, 35)">
+    <circle cx="7.5" cy="7.5" r="7.5" stroke="#077CA6"/>
+    <circle cx="7.5" cy="7.5" r="4.321" fill="#077CA6"/>
+  </g>
+</svg>

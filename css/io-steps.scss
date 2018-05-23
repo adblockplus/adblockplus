@@ -30,7 +30,7 @@ io-steps::before
   position: absolute;
   z-index: -1;
   content: ' ';
-  top: calc(0.6rem + 12px);
+  top: 12px;
   width: 100%;
   height: 1px;
   font-size: 1px;
@@ -38,10 +38,21 @@ io-steps::before
   background-color: #bcbcbc;
 }
 
+html:not([dir="rtl"]) io-steps button,
 io-steps button
 {
+  margin: initial;
+  padding: initial;
+}
+
+io-steps button
+{
+  min-width: 80px;
   border: 0;
   outline: none;
+  font-size: small;
+  font-weight: initial;
+  text-transform: inherit;
   color: #077ca7;
   background: #f3f3f3;
 }
@@ -52,6 +63,7 @@ io-steps button::before
   width: 24px;
   height: 24px;
   margin: auto;
+  margin-bottom: 8px;
   content: attr(data-value);
   font-weight: normal;
   font-size: 0.8rem;
