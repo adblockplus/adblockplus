@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "Bloquear el seguimiento de los íconos de redes sociales"
+  },
+  "common_notification_hide": {
+    "message": "Cerrar notificación"
   }
 }

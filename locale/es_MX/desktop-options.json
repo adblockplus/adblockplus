@@ -113,12 +113,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Ingresa una dirección URL válida"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "Nombre de la lista de filtros"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "Por favor, completa el campo"
-  },
   "options_dialog_import_title": {
     "message": "Agregar una lista de filtros"
   },
@@ -248,9 +242,6 @@
   "options_new_label": {
     "message": "NUEVO"
   },
-  "options_notification_hide": {
-    "message": "Cerrar notificación"
-  },
   "options_page_document_title": {
     "message": "Ajustes"
   },
@@ -261,7 +252,7 @@
     "message": "PRIVACIDAD Y SEGURIDAD"
   },
   "options_protection_privacy_tooltip": {
-    "message": "Protege tus datos personales mediante la eliminación de todas las formas de seguimiento en internet, incluidos los recopiladores de datos."
+    "message": "Protege tu privacidad de entidades conocidas que pueden rastrear tu actividad en línea en los sitios web que visitas."
   },
   "options_protection_social_tooltip": {
     "message": "Los íconos de redes sociales en las páginas web que visitas permiten que las redes sociales construyan un perfil tuyo en base a tus hábitos de navegación, incluso cuando no haces clic en ellos. Ocultar estos íconos puede proteger tu perfil."

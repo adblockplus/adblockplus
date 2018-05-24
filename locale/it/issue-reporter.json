@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "Benvenuti alla configurazione guidata per segnalare problemi in una pagina web"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Nota:</strong> Viene aperta temporaneamente una scheda aggiuntiva in modo che la pagina su cui ti trovi non venga influenzata dalla Segnalazione dei problemi."
+  },
   "issueReporter_doneButton_label": {
     "message": "Fatto"
   },

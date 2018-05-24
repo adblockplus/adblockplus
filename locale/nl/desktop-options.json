@@ -113,12 +113,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Voer een geldige URL in"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "Naam van filterlijst"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "Vul het veld in"
-  },
   "options_dialog_import_title": {
     "message": "Een filterlijst toevoegen"
   },
@@ -248,9 +242,6 @@
   "options_new_label": {
     "message": "Nieuw"
   },
-  "options_notification_hide": {
-    "message": "Melding sluiten"
-  },
   "options_page_document_title": {
     "message": "Adblock Plus-opties"
   },
@@ -261,7 +252,7 @@
     "message": "Privacy en beveiliging"
   },
   "options_protection_privacy_tooltip": {
-    "message": "Bescherm uw persoonlijke gegevens door alle vormen van tracking, waaronder informatieverzamelaars, vanaf het internet te verwijderen."
+    "message": "Bescherm uw privacy tegen bekende entiteiten die uw online activiteit kunnen volgen op websites die u bezoekt."
   },
   "options_protection_social_tooltip": {
     "message": "Via de sociale-mediapictogrammen op de websites die u bezoekt, kunnen sociale-medianetwerken een profiel van u opbouwen op basis van uw surfgedrag - zelfs wanneer u hier niet op klikt. Het verbergen van deze knoppen kan uw profiel beschermen."

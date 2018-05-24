@@ -110,9 +110,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Masukkan URL yang sah"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "Nama senarai penapis"
-  },
   "options_dialog_import_title": {
     "message": "Tambah senarai penapis"
   },
@@ -236,9 +233,6 @@
   "options_new_label": {
     "message": "BARU"
   },
-  "options_notification_hide": {
-    "message": "Tutup notifikasi"
-  },
   "options_page_document_title": {
     "message": "Tetapan"
   },
@@ -249,7 +243,7 @@
     "message": "PRIVASI & KESELAMATAN"
   },
   "options_protection_privacy_tooltip": {
-    "message": "Melindungi data peribadi anda dengan mengeluarkan semua bentuk penjejakan dari Internet termasuk pengumpul maklumat."
+    "message": "Lindungi privasi anda dari entiti yang dikenali yang mungkin menjejaki aktiviti anda dalam talian melalui laman web yang anda lawati."
   },
   "options_protection_social_tooltip": {
     "message": "Ikon media sosial di laman web yang anda lawati membolehkan rangkaian media sosial untuk membina profil anda berdasarkan tabiat pelayaran anda - walaupun anda tidak klik pada mereka. Menyembunyikan ikon ini boleh melindungi profil anda."

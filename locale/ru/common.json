@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "Блокировать отслеживание через значки социальных сетей"
+  },
+  "common_notification_hide": {
+    "message": "Закрыть уведомление"
   }
 }

@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "Bloquer le tracking par les icônes des médias sociaux"
+  },
+  "common_notification_hide": {
+    "message": "Fermer la notification"
   }
 }

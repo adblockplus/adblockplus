@@ -17,6 +17,21 @@
   "firstRun_contributor_credits": {
     "message": "Lista współtwórców"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "Niektórzy użytkownicy mają problemy podczas otwierania tej strony przy każdym uruchomieniu przeglądarki. Problem można rozwiązać poprzez odinstalowanie i ponowne zainstalowanie Adblock Plus:"
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "Aby uzyskać dalszą pomoc, skontaktuj się z nami pod adresem: support@adblockplus.org lub odwiedź nasze <a>Centrum pomocy</a>."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "Otwórz kartę rozszerzeń przeglądarki."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "Znajdź rozszerzenie Adblock Plus i usuń je."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "Zainstaluj Adblock Plus z witryny <a>adblockplus.org</a>."
+  },
   "firstRun_donate": {
     "message": "Przekaż darowiznę"
   },

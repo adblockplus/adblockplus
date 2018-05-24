@@ -113,12 +113,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Gib eine gültige URL ein"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "Name der Filterliste"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "Bitte fülle dieses Feld aus"
-  },
   "options_dialog_import_title": {
     "message": "Filterliste hinzufügen"
   },
@@ -248,9 +242,6 @@
   "options_new_label": {
     "message": "NEU"
   },
-  "options_notification_hide": {
-    "message": "Benachrichtigung schließen"
-  },
   "options_page_document_title": {
     "message": "Einstellungen"
   },
@@ -261,7 +252,7 @@
     "message": "DATENSCHUTZ UND SICHERHEIT"
   },
   "options_protection_privacy_tooltip": {
-    "message": "Schütze deine persönlichen Daten, indem du alle Formen des Trackings aus dem Internet, einschließlich von Informationssammlern, beseitigst."
+    "message": "Schütze deine Privatsphäre vor bekannten Unternehmen, die deine Online-Aktivität auf den von dir besuchten Websites verfolgen könnten."
   },
   "options_protection_social_tooltip": {
     "message": "Die Social-Media-Symbole auf den Websites, die du besuchst, ermöglicht es den Social-Media-Netzwerken, ein Profil basierend auf deinen Surfgewohnheiten zu erstellen - selbst, wenn du sie nicht anklickst. Wenn du diese Symbole ausblendest, kannst du dein Profil schützen."

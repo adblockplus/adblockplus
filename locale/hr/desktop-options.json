@@ -113,12 +113,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Unesite valjani URL"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "Naziv popisa filtera"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "Molimo vas da ispunite polje"
-  },
   "options_dialog_import_title": {
     "message": "Dodaj popis filtra"
   },
@@ -217,9 +211,6 @@
   },
   "options_new_label": {
     "message": "Novi"
-  },
-  "options_notification_hide": {
-    "message": "Zatvori obavijest"
   },
   "options_page_document_title": {
     "message": "Adblock Plus postavke"

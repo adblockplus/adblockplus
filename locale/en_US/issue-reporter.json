@@ -79,9 +79,5 @@
   },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Note:</strong> An additional tab will temporarily open so the page you are on won't be affected by the Issue Reporter."
-  },
-  "issueReporter_notification_hide": {
-    "description": "Hidden text attached to the close button for screen readers of Notification",
-    "message": "Close notification"
   }
 }

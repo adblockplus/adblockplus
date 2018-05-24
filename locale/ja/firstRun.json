@@ -17,6 +17,18 @@
   "firstRun_contributor_credits": {
     "message": "貢献した人"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "一部のユーザーで、ブラウザが起動するたびにこのページが開く問題が発生しています。この問題は、Adblock Plusをアンインストールして再インストールすることで解決できます："
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "それでもサポートが必要な場合は、support@adblockplus.orgにお問い合わせになるか、<a>ヘルプセンター</a>をご覧ください。"
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "ブラウザの「拡張機能」タブを開きます。"
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "Adblock Plusを見つけて削除します。"
+  },
   "firstRun_donate": {
     "message": "寄付"
   },

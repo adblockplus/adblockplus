@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "소셜 미디어 아이콘 추적 차단"
+  },
+  "common_notification_hide": {
+    "message": "알림 닫기"
   }
 }

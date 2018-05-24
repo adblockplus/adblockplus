@@ -113,12 +113,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Inserisci una URL valida"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "Nome dell'elenco di filtri"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "Compilare questo campo"
-  },
   "options_dialog_import_title": {
     "message": "Aggiungere un elenco di filtri"
   },
@@ -248,9 +242,6 @@
   "options_new_label": {
     "message": "NUOVO"
   },
-  "options_notification_hide": {
-    "message": "Chiudi questa notifica"
-  },
   "options_page_document_title": {
     "message": "Impostazioni"
   },
@@ -261,7 +252,7 @@
     "message": "PRIVACY E SICUREZZA"
   },
   "options_protection_privacy_tooltip": {
-    "message": "Proteggi i tuoi dati personali rimuovendo tutte le forme di tracciamento da internet, complessi i raccoglitori di informazioni."
+    "message": "Proteggi la tua privacy da enti noti che possono tracciare la tua attività online sui siti che visiti."
   },
   "options_protection_social_tooltip": {
     "message": "Le icone per i social media sui siti che visiti consentono alle reti di social media di creare un profilo su di te basato sulle tue abitudini di navigazione, anche quando non clicchi su di essi. Nascondere queste icone può proteggere il tuo profilo."

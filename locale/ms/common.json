@@ -4,5 +4,8 @@
   },
   "common_feature_social_title": {
     "message": "Sekat pengesanan ikon media sosial"
+  },
+  "common_notification_hide": {
+    "message": "Tutup notifikasi"
   }
 }

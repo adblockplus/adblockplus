@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "أهلا بك في مبلغ المشاكل"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>ملاحظة:</strong>سيتم فتح علامة تبويب إضافية مؤقتًا بحيث لن تتأثر الصفحة التي تزورها بالمُبلّغ عن المشكلة."
+  },
   "issueReporter_doneButton_label": {
     "message": "تمّ"
   },

@@ -113,12 +113,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "הכנס כתובת תקפה"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "שם רשימת המסננים"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "אנא מלא את השדה"
-  },
   "options_dialog_import_title": {
     "message": "הוסף רשימת מסננים"
   },
@@ -247,9 +241,6 @@
   },
   "options_new_label": {
     "message": "חדש"
-  },
-  "options_notification_hide": {
-    "message": "סגור התראה"
   },
   "options_page_document_title": {
     "message": "אפשרויות Adblock Plus"

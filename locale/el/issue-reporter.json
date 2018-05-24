@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "Καλώς ήρθατε στον βοηθό αναφοράς ζητήματος"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Σημείωση:</strong> Μια πρόσθετη καρτέλα θα ανοίξει προσωρινά, οπότε η σελίδα όπου βρίσκεστε δεν θα επηρεαστεί από τον Αναφορέα Έκδοσης."
+  },
   "issueReporter_doneButton_label": {
     "message": "Τέλος"
   },

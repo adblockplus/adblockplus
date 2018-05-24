@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "Bem-vindo à comunicação de erros"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Nota:</strong> é aberto temporariamente um separador adicional para que a página em que está não seja afetada pelo Relatório de Problemas."
+  },
   "issueReporter_doneButton_label": {
     "message": "Feito"
   },

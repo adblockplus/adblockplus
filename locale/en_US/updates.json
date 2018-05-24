@@ -1,5 +1,5 @@
 {
-  "updates_status" : {
+  "updates_status": {
     "message": "Update complete"
   },
   "updates_heading": {
@@ -18,6 +18,6 @@
     "message": "But wait! What about your phone?"
   },
   "updates_adblockBrowser": {
-    "message": "If you are taking control on desktop, you can block ads and improve your privacy and security on mobile too. Get the <a>Adblock Browser App below</a>." 
+    "message": "If you are taking control on desktop, you can block ads and improve your privacy and security on mobile too. Get the <a>Adblock Browser App below</a>."
   }
 }

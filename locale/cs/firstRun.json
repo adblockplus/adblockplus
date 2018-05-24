@@ -17,6 +17,21 @@
   "firstRun_contributor_credits": {
     "message": "Zásluhy přispěvatelů"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "Někteří uživatelé se setkávají s problémem, kdy se při každém spuštění prohlížeče otevře tato stránka. Tento problém lze vyřešit odinstalací a opakovanou instalací aplikace Adblock Plus:"
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "Pokud i nadále potřebujete pomoc, kontaktujte nás na adrese support@adblockplus.org nebo navštivte naše <a>Help Center</a>."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "Otevřete kartu Rozšíření prohlížeče."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "Vyhledejte položku Adblock Plus a odstraňte ji."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "Znovu nainstalujte Adblock Plus z <a>adblockplus.org</a>."
+  },
   "firstRun_donate": {
     "message": "přispějte"
   },

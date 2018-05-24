@@ -113,12 +113,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "กรอก URL ที่ถูกต้อง"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "ชื่อรายการตัวกรอง"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "โปรดระบุข้อมูลลงในช่อง"
-  },
   "options_dialog_import_title": {
     "message": "เพิ่มรายการตัวกรอง"
   },
@@ -245,9 +239,6 @@
   "options_new_label": {
     "message": "ใหม่"
   },
-  "options_notification_hide": {
-    "message": "ปิดการแจ้งเตือน"
-  },
   "options_page_document_title": {
     "message": "การตั้งค่า"
   },
@@ -258,7 +249,7 @@
     "message": "ความเป็นส่วนตัวและความปลอดภัย"
   },
   "options_protection_privacy_tooltip": {
-    "message": "ป้องกันข้อมูลส่วนบุคคลของคุณโดยการลบการติดตามทุกรูปแบบจากอินเตอร์เน็ตรวมถึงการรวบรวมข้อมูลด้วย"
+    "message": "ปกป้องความเป็นส่วนตัวของคุณจากผู้ที่อาจสะกดรอยกิจกรรมออนไลน์ของคุณจากเว็บไซต์ที่คุณเข้าชม"
   },
   "options_protection_social_tooltip": {
     "message": "ไอคอนของโซเชียลมีเดียบนเว็บไซต์ที่คุณเข้าทำให้เครือข่ายโซเชียลมีเดียสามารถสร้างโปรไฟล์ของคุณตามพฤติกรรมการท่องเว็บของคุณได้ แม้ว่าคุณจะไม่ได้คลิไอคอนเหล่านั้น การซ่อนไอคอนเหล่านี้สามารถปกป้องโปรไฟล์ของคุณได้"

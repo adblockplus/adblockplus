@@ -113,12 +113,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "输入有效的 URL"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "过滤列表名称"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "请填写所有字段"
-  },
   "options_dialog_import_title": {
     "message": "添加过滤列表"
   },
@@ -248,9 +242,6 @@
   "options_new_label": {
     "message": "新"
   },
-  "options_notification_hide": {
-    "message": "关闭通知"
-  },
   "options_page_document_title": {
     "message": "设置"
   },
@@ -261,7 +252,7 @@
     "message": "隐私与安全"
   },
   "options_protection_privacy_tooltip": {
-    "message": "通过从互联网中移除所有形式的跟踪（包括信息收集者）来保护您的个人信息。"
+    "message": "保护您的隐私，防止已知实体在您访问的各种网站上跟踪您的在线活动。"
   },
   "options_protection_social_tooltip": {
     "message": "您访问的网站上的社交媒体图标允许社交媒体网络根据您的浏览习惯建立您的个人资料记录——即使您没有点击它们。隐藏这些图标可以保护您的个人资料。"

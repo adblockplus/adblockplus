@@ -113,12 +113,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Angiv en gyldig URL-adresse"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "Filterliste navn"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "Udfyld venligst feltet"
-  },
   "options_dialog_import_title": {
     "message": "Tilføj en filterliste"
   },
@@ -247,9 +241,6 @@
   },
   "options_new_label": {
     "message": "Ny"
-  },
-  "options_notification_hide": {
-    "message": "Luk meddelelse"
   },
   "options_page_document_title": {
     "message": "Indstillinger"

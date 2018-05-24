@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "Добро пожаловать в мастер отправки отчётов"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Примечание:</strong> Временно откроется дополнительная закладка, поэтому страница, на которой вы находитесь, не попадет в Журнал ошибок."
+  },
   "issueReporter_doneButton_label": {
     "message": "Готово"
   },

@@ -113,12 +113,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Sisesta sobiv aadress"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "Filtrite nimekirja nimi"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "Palun täida see väli"
-  },
   "options_dialog_import_title": {
     "message": "Filtrite nimekirja lisamine"
   },
@@ -247,9 +241,6 @@
   },
   "options_new_label": {
     "message": "Uus"
-  },
-  "options_notification_hide": {
-    "message": "Sulge teade"
   },
   "options_page_document_title": {
     "message": "Adblock Plusi sätted"

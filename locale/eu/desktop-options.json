@@ -53,12 +53,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Sartu baliozko URL bat"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "Iragazki zerrendaren izena"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "Bete eremua mesedez"
-  },
   "options_dialog_import_title": {
     "message": "Gehitu irazki zerrenda bat"
   },
@@ -142,9 +136,6 @@
   },
   "options_new_label": {
     "message": "Berria"
-  },
-  "options_notification_hide": {
-    "message": "Itxi jakinarazpena"
   },
   "options_page_document_title": {
     "message": "Ezarpenak"

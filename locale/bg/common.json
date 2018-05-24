@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "Блокирай проследяването чрез социални бутони"
+  },
+  "common_notification_hide": {
+    "message": "Затвори уведомяването"
   }
 }

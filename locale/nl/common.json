@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "Tracking via sociale-mediapictogrammen blokkeren"
+  },
+  "common_notification_hide": {
+    "message": "Melding sluiten"
   }
 }

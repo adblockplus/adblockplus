@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "Block social media icons tracking"
+  },
+  "common_notification_hide": {
+    "message": "Close notification"
   }
 }

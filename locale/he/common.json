@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "חסום מעקב של צלמיות מדיה חברתית"
+  },
+  "common_notification_hide": {
+    "message": "סגור התראה"
   }
 }

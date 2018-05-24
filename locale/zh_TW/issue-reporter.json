@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "歡迎使用錯誤回報器"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>注意：</strong>將會暫時打開另一個標籤，因此您所在的頁面不會受到問題報告程式的影響。"
+  },
   "issueReporter_doneButton_label": {
     "message": "完成"
   },

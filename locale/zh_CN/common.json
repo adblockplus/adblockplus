@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "禁止社交媒体图标跟踪"
+  },
+  "common_notification_hide": {
+    "message": "关闭通知"
   }
 }

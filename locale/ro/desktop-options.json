@@ -113,12 +113,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Introduceți un URL valid"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "Numele listei de filtre"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "Vă rugăm să completaţi câmpul"
-  },
   "options_dialog_import_title": {
     "message": "Adaugă o listă de filtre"
   },
@@ -247,9 +241,6 @@
   },
   "options_new_label": {
     "message": "Nou"
-  },
-  "options_notification_hide": {
-    "message": "Închideţi această notificare"
   },
   "options_page_document_title": {
     "message": "Setări"

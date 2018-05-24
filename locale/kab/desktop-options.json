@@ -59,9 +59,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Sekcem URL tameɣtut"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "Isem n tebdart n imsizdigen"
-  },
   "options_dialog_import_title": {
     "message": "Rnu tabdart n imsizdigen"
   },
@@ -160,9 +157,6 @@
   },
   "options_new_label": {
     "message": "Amaynut"
-  },
-  "options_notification_hide": {
-    "message": "Fren alɣu"
   },
   "options_page_document_title": {
     "message": "Iɣewwaṛen"

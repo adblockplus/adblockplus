@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "문제 보고 마법사를 이용해주셔서 고맙습니다!"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>참고:</strong> 추가 탭이 일시적으로 열리므로 귀하가 방문 중인 페이지는 이슈 리포터의 영향을 받지 않습니다."
+  },
   "issueReporter_doneButton_label": {
     "message": "실행"
   },

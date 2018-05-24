@@ -17,6 +17,21 @@
   "firstRun_contributor_credits": {
     "message": "รายชื่อผู้ให้การสนับสนุน"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "ผู้ใช้บางรายมีปัญหาจากการที่หน้าเพจนี้เปิดขึ้นมาทุกครั้งที่เปิดใช้งานเบราว์เซอร์ ปัญหานี้สามารถแก้ไขได้ด้วยการถอนการติดตั้งและทำการติดตั้ง Adblock Plus เข้าไปใหม่:"
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "หากคุณยังต้องการความช่วยเหลือ โปรดติดต่อเราที่ support@adblockplus.org หรือเข้าไปที่ <a>Help Center</a> ของเรา"
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "เปิดแถบ Extensions ในเบราว์เซอร์ของคุณ"
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "ค้นหา Adblock Plus แล้วลบออก"
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "ติดตั้ง Adblock Plus เข้าไปใหม่จาก <a>adblockplus.org</a>"
+  },
   "firstRun_donate": {
     "message": "บริจาค"
   },

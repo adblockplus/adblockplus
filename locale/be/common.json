@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "Блакаванне адсочвання праз значкі сацсетак"
+  },
+  "common_notification_hide": {
+    "message": "Закрыць апавяшчэнне"
   }
 }

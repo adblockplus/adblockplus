@@ -113,12 +113,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Ввести дійсну URL"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "Ім'я списку фільтрів"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "Будь ласка, заповніть поле"
-  },
   "options_dialog_import_title": {
     "message": "Додати список фільтрів"
   },
@@ -247,9 +241,6 @@
   },
   "options_new_label": {
     "message": "Нове"
-  },
-  "options_notification_hide": {
-    "message": "Закрити повідомлення"
   },
   "options_page_document_title": {
     "message": "Налаштування"

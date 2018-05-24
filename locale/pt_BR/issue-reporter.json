@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "Bem-vindo ao relatório de erro"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Nota:</strong> abre temporariamente uma guia adicional para que a página em que você está não seja afetada pelo Relatório de Problemas."
+  },
   "issueReporter_doneButton_label": {
     "message": "Concluído"
   },
