@@ -19,6 +19,7 @@
 
 const reportData = new DOMParser().parseFromString("<report></report>",
                                                  "text/xml");
+const emailElement = reportData.createElement("email");
 
 const pages = {
   typeSelectorPage: [initTypeSelector, leaveTypeSelector],
@@ -345,7 +346,6 @@ function leaveTypeSelector()
 function validateCommentsPage()
 {
   const sendButton = document.getElementById("send");
-  const emailElement = reportData.createElement("email");
   const emailField = document.getElementById("email");
   const anonymousSubmissionField = document.
     getElementById("anonymousSubmission");
