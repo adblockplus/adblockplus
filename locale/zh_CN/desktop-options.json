@@ -6,7 +6,7 @@
     "message": "允许可接受广告"
   },
   "options_acceptableAds_description": {
-    "message": "可接受的广告是非侵入式广告。由於它们为网站所有者创造了收入，因此它们处于广告屏蔽和支持在线内容之间的中间位置。"
+    "message": "可接受的广告是非侵入式广告。由于它们为网站所有者创造了收入，因此它们处于广告屏蔽和支持在线内容之间的中间位置。"
   },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>注意：</strong><strong>请勿跟踪 (DNT)</strong>选项在浏览器设置中已被禁用。为了本功能正常工作，请在您的浏览器首选项中启用 <strong>DNT</strong>。<a>查看启用DNT的方法</a>。"
@@ -132,7 +132,7 @@
     "message": "电子邮件："
   },
   "options_english": {
-    "message": "英語"
+    "message": "英语"
   },
   "options_filterList_add": {
     "message": "+ 添加一个新的过滤列表"
@@ -153,7 +153,7 @@
     "message": "您尚未向 Adblock Plus 添加过滤列表。您添加的过滤列表将显示在此处。"
   },
   "options_filterList_hours": {
-    "message": "小时前"
+    "message": "几小时以前"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "失败，检验和不匹配"

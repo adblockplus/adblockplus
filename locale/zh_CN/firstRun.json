@@ -6,7 +6,7 @@
     "message": "在此获取 Adblock 浏览器"
   },
   "firstRun_abbPromotionHeadline": {
-    "message": "有智能手机还是平板电脑？"
+    "message": "有一部智能手机或平板电脑？"
   },
   "firstRun_acceptableAdsExplanation": {
     "message": "我们想鼓励网站使用简单、不使人反感的广告。这也是为什么我们建立了一个<a>严格的指导方针</a>来确定可接受的广告，并在默认设置下展示它们。如果您仍想屏蔽所有广告，您可以轻松地<a>禁用</a>这项功能。"
@@ -45,7 +45,7 @@
     "message": "告诉你的朋友"
   },
   "firstRun_share_headline": {
-    "message": "<a>给我们一点支持</a>，让网络变得更加美好"
+    "message": "<a>给我们一点帮助</a>，让网络变得更加美好"
   },
   "firstRun_title": {
     "message": "Adblock Plus 已安装"
