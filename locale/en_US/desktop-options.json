@@ -53,7 +53,7 @@
   },
   "options_protection_privacy_tooltip": {
     "description": "Tooltip for 'Block additional tracking' option in General tab",
-    "message": "Protect your personal data by removing all forms of tracking from the Internet including information collectors."
+    "message": "Protect your privacy from known entities that may track your online activity across websites you visit."
   },
   "options_protection_social_tooltip": {
     "description": "Tooltip for 'Block social media icons tracking' option in General tab",
