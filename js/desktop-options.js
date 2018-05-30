@@ -22,15 +22,16 @@
 
 let subscriptionsMap = Object.create(null);
 let filtersMap = Object.create(null);
-let collections = Object.create(null);
 let acceptableAdsUrl = null;
 let acceptableAdsPrivacyUrl = null;
 let isCustomFiltersLoaded = false;
 let additionalSubscriptions = [];
-let {getMessage} = browser.i18n;
-let {setElementText} = ext.i18n;
-let customFilters = [];
-let filterErrors = new Map([
+
+const collections = Object.create(null);
+const {getMessage} = browser.i18n;
+const {setElementText} = ext.i18n;
+const customFilters = [];
+const filterErrors = new Map([
   ["synchronize_invalid_url",
    "options_filterList_lastDownload_invalidURL"],
   ["synchronize_connection_error",
@@ -57,18 +58,18 @@ Collection.prototype._setEmpty = function(table, detail, removeEmpty)
 {
   if (removeEmpty)
   {
-    let placeholders = table.querySelectorAll(".empty-placeholder");
-    for (let placeholder of placeholders)
+    const placeholders = table.querySelectorAll(".empty-placeholder");
+    for (const placeholder of placeholders)
       table.removeChild(placeholder);
 
     execAction(detail.removeEmptyAction, table);
   }
   else
   {
-    let {emptyTexts = []} = detail;
-    for (let text of emptyTexts)
+    const {emptyTexts = []} = detail;
+    for (const text of emptyTexts)
     {
-      let placeholder = document.createElement("li");
+      const placeholder = document.createElement("li");
       placeholder.className = "empty-placeholder";
       placeholder.textContent = getMessage(text);
       table.appendChild(placeholder);
@@ -80,7 +81,7 @@ Collection.prototype._setEmpty = function(table, detail, removeEmpty)
 
 Collection.prototype._createElementQuery = function(item)
 {
-  let access = (item.url || item.text).replace(/'/g, "\\'");
+  const access = (item.url || item.text).replace(/'/g, "\\'");
   return function(container)
   {
     return container.querySelector("[data-access='" + access + "']");
@@ -109,13 +110,13 @@ Collection.prototype._sortItems = function()
 
     // Make sure that newly added entries always appear on top in descending
     // chronological order
-    let aTimestamp = a[timestampUI] || 0;
-    let bTimestamp = b[timestampUI] || 0;
+    const aTimestamp = a[timestampUI] || 0;
+    const bTimestamp = b[timestampUI] || 0;
     if (aTimestamp || bTimestamp)
       return bTimestamp - aTimestamp;
 
-    let aTitle = this._getItemTitle(a, 0).toLowerCase();
-    let bTitle = this._getItemTitle(b, 0).toLowerCase();
+    const aTitle = this._getItemTitle(a, 0).toLowerCase();
+    const bTitle = this._getItemTitle(b, 0).toLowerCase();
     return aTitle.localeCompare(bTitle);
   });
 };
@@ -129,16 +130,16 @@ Collection.prototype.addItem = function(item)
   this._sortItems();
   for (let j = 0; j < this.details.length; j++)
   {
-    let detail = this.details[j];
-    let table = E(detail.id);
-    let template = table.querySelector("template");
-    let listItem = document.createElement("li");
+    const detail = this.details[j];
+    const table = E(detail.id);
+    const template = table.querySelector("template");
+    const listItem = document.createElement("li");
     listItem.appendChild(document.importNode(template.content, true));
     listItem.setAttribute("aria-label", this._getItemTitle(item, j));
     listItem.setAttribute("data-access", item.url || item.text);
     listItem.setAttribute("role", "section");
 
-    let tooltip = listItem.querySelector("[data-tooltip]");
+    const tooltip = listItem.querySelector("[data-tooltip]");
     if (tooltip)
     {
       let tooltipId = tooltip.getAttribute("data-tooltip");
@@ -149,11 +150,11 @@ Collection.prototype.addItem = function(item)
       }
     }
 
-    for (let control of listItem.querySelectorAll(".control"))
+    for (const control of listItem.querySelectorAll(".control"))
     {
       if (control.hasAttribute("title"))
       {
-        let titleValue = getMessage(control.getAttribute("title"));
+        const titleValue = getMessage(control.getAttribute("title"));
         control.setAttribute("title", titleValue);
       }
     }
@@ -171,19 +172,19 @@ Collection.prototype.addItem = function(item)
 
 Collection.prototype.removeItem = function(item)
 {
-  let index = this.items.indexOf(item);
+  const index = this.items.indexOf(item);
   if (index == -1)
     return;
 
   this.items.splice(index, 1);
-  let getListElement = this._createElementQuery(item);
-  for (let detail of this.details)
+  const getListElement = this._createElementQuery(item);
+  for (const detail of this.details)
   {
-    let table = E(detail.id);
-    let element = getListElement(table);
+    const table = E(detail.id);
+    const element = getListElement(table);
 
     // Element gets removed so make sure to handle focus appropriately
-    let control = element.querySelector(".control");
+    const control = element.querySelector(".control");
     if (control && control == document.activeElement)
     {
       if (!focusNextElement(element.parentElement, control))
@@ -210,18 +211,18 @@ Collection.prototype.removeItem = function(item)
 
 Collection.prototype.updateItem = function(item)
 {
-  let oldIndex = this.items.indexOf(item);
+  const oldIndex = this.items.indexOf(item);
   this._sortItems();
-  let access = (item.url || item.text).replace(/'/g, "\\'");
+  const access = (item.url || item.text).replace(/'/g, "\\'");
   for (let i = 0; i < this.details.length; i++)
   {
-    let table = E(this.details[i].id);
-    let element = table.querySelector("[data-access='" + access + "']");
+    const table = E(this.details[i].id);
+    const element = table.querySelector("[data-access='" + access + "']");
     if (!element)
       continue;
 
-    let title = this._getItemTitle(item, i);
-    let displays = element.querySelectorAll("[data-display]");
+    const title = this._getItemTitle(item, i);
+    const displays = element.querySelectorAll("[data-display]");
     for (let j = 0; j < displays.length; j++)
     {
       if (item[displays[j].dataset.display])
@@ -233,8 +234,8 @@ Collection.prototype.updateItem = function(item)
     element.setAttribute("aria-label", title);
     if (this.details[i].searchable)
       element.setAttribute("data-search", title.toLowerCase());
-    let controls = element.querySelectorAll(".control[role='checkbox']");
-    for (let control of controls)
+    const controls = element.querySelectorAll(".control[role='checkbox']");
+    for (const control of controls)
     {
       control.setAttribute("aria-checked", item.disabled == false);
       if (isAcceptableAds(item.url) && this == collections.filterLists)
@@ -243,25 +244,25 @@ Collection.prototype.updateItem = function(item)
     if (additionalSubscriptions.includes(item.url))
     {
       element.classList.add("preconfigured");
-      let disablePreconfigures =
+      const disablePreconfigures =
         element.querySelectorAll("[data-disable~='preconfigured']");
-      for (let disablePreconfigure of disablePreconfigures)
+      for (const disablePreconfigure of disablePreconfigures)
         disablePreconfigure.disabled = true;
     }
 
-    let lastUpdateElement = element.querySelector(".last-update");
+    const lastUpdateElement = element.querySelector(".last-update");
     if (lastUpdateElement)
     {
-      let message = element.querySelector(".message");
+      const message = element.querySelector(".message");
       if (item.isDownloading)
       {
-        let text = getMessage("options_filterList_lastDownload_inProgress");
+        const text = getMessage("options_filterList_lastDownload_inProgress");
         message.textContent = text;
         element.classList.add("show-message");
       }
       else if (item.downloadStatus != "synchronize_ok")
       {
-        let error = filterErrors.get(item.downloadStatus);
+        const error = filterErrors.get(item.downloadStatus);
         if (error)
           message.textContent = getMessage(error);
         else
@@ -270,12 +271,12 @@ Collection.prototype.updateItem = function(item)
       }
       else if (item.lastDownload > 0)
       {
-        let lastUpdate = item.lastDownload * 1000;
-        let sinceUpdate = Date.now() - lastUpdate;
+        const lastUpdate = item.lastDownload * 1000;
+        const sinceUpdate = Date.now() - lastUpdate;
         if (sinceUpdate > fullDayInMs)
         {
-          let lastUpdateDate = new Date(item.lastDownload * 1000);
-          let monthName = lastUpdateDate.toLocaleString(undefined,
+          const lastUpdateDate = new Date(item.lastDownload * 1000);
+          const monthName = lastUpdateDate.toLocaleString(undefined,
             {month: "short"});
           let day = lastUpdateDate.getDate();
           day = day < 10 ? "0" + day : day;
@@ -301,7 +302,7 @@ Collection.prototype.updateItem = function(item)
       }
     }
 
-    let websiteElement = element.querySelector(".context-menu .website");
+    const websiteElement = element.querySelector(".context-menu .website");
     if (websiteElement)
     {
       if (item.homepage)
@@ -310,11 +311,11 @@ Collection.prototype.updateItem = function(item)
         websiteElement.setAttribute("aria-hidden", true);
     }
 
-    let sourceElement = element.querySelector(".context-menu .source");
+    const sourceElement = element.querySelector(".context-menu .source");
     if (sourceElement)
       sourceElement.setAttribute("href", item.url);
 
-    let newIndex = this.items.indexOf(item);
+    const newIndex = this.items.indexOf(item);
     if (oldIndex != newIndex)
       table.insertBefore(element, table.childNodes[newIndex]);
   }
@@ -323,9 +324,9 @@ Collection.prototype.updateItem = function(item)
 Collection.prototype.clearAll = function()
 {
   this.items = [];
-  for (let detail of this.details)
+  for (const detail of this.details)
   {
-    let table = E(detail.id);
+    const table = E(detail.id);
     let element = table.firstChild;
     while (element)
     {
@@ -345,7 +346,7 @@ function focusNextElement(container, currentElement)
   let index = focusables.indexOf(currentElement);
   index += (index == focusables.length - 1) ? -1 : 1;
 
-  let nextElement = focusables[index];
+  const nextElement = focusables[index];
   if (!nextElement)
     return false;
 
@@ -394,7 +395,7 @@ collections.filterLists = new Collection([
 
 function addSubscription(subscription)
 {
-  let {disabled} = subscription;
+  const {disabled} = subscription;
   let collection = null;
   if (subscription.recommended)
   {
@@ -424,7 +425,7 @@ function addSubscription(subscription)
 
 function updateSubscription(subscription)
 {
-  for (let name in collections)
+  for (const name in collections)
     collections[name].updateItem(subscription);
 
   if (subscription.recommended == "ads")
@@ -450,14 +451,14 @@ function updateSubscription(subscription)
 
 function updateFilter(filter)
 {
-  let match = filter.text.match(whitelistedDomainRegexp);
+  const match = filter.text.match(whitelistedDomainRegexp);
   if (match && !filtersMap[filter.text])
   {
     filter.title = match[1];
     collections.whitelist.addItem(filter);
     if (isCustomFiltersLoaded)
     {
-      let text = getMessage("options_whitelist_notification", [filter.title]);
+      const text = getMessage("options_whitelist_notification", [filter.title]);
       showNotification(text);
     }
   }
@@ -473,7 +474,7 @@ function updateFilter(filter)
 
 function loadCustomFilters(filters)
 {
-  for (let filter of filters)
+  for (const filter of filters)
     updateFilter(filter);
 
   setCustomFiltersView("read");
@@ -481,7 +482,7 @@ function loadCustomFilters(filters)
 
 function removeCustomFilter(text)
 {
-  let index = customFilters.indexOf(text);
+  const index = customFilters.indexOf(text);
   if (index >= 0)
     customFilters.splice(index, 1);
 
@@ -490,7 +491,7 @@ function removeCustomFilter(text)
 
 function updateCustomFiltersUi()
 {
-  let customFiltersListElement = E("custom-filters-raw");
+  const customFiltersListElement = E("custom-filters-raw");
   customFiltersListElement.value = customFilters.join("\n");
 }
 
@@ -511,12 +512,12 @@ function loadRecommendations()
     })
     .then((text) =>
     {
-      let doc = new DOMParser().parseFromString(text, "application/xml");
-      let elements = doc.documentElement.getElementsByTagName("subscription");
-      for (let element of elements)
+      const doc = new DOMParser().parseFromString(text, "application/xml");
+      const elements = doc.documentElement.getElementsByTagName("subscription");
+      for (const element of elements)
       {
         let type = element.getAttribute("type");
-        let subscription = {
+        const subscription = {
           disabled: true,
           downloadStatus: null,
           homepage: null,
@@ -578,9 +579,9 @@ function execAction(action, element)
       addEnableSubscription(findParentData(element, "access", false));
       break;
     case "add-predefined-subscription": {
-      let dialog = E("dialog-content-predefined");
-      let title = dialog.querySelector("h3").textContent;
-      let url = dialog.querySelector(".url").textContent;
+      const dialog = E("dialog-content-predefined");
+      const title = dialog.querySelector("h3").textContent;
+      const url = dialog.querySelector(".url").textContent;
       addEnableSubscription(url, title);
       closeDialog();
       break;
@@ -589,10 +590,10 @@ function execAction(action, element)
       setCustomFiltersView("read");
       break;
     case "change-language-subscription":
-      for (let key in subscriptionsMap)
+      for (const key in subscriptionsMap)
       {
-        let subscription = subscriptionsMap[key];
-        let subscriptionType = subscription.recommended;
+        const subscription = subscriptionsMap[key];
+        const subscriptionType = subscription.recommended;
         if (subscriptionType == "ads" && subscription.disabled == false)
         {
           browser.runtime.sendMessage({
@@ -620,19 +621,19 @@ function execAction(action, element)
       hideNotification();
       break;
     case "import-subscription": {
-      let url = E("blockingList-textbox").value;
+      const url = E("blockingList-textbox").value;
       addEnableSubscription(url);
       closeDialog();
       break;
     }
     case "open-context-menu": {
-      let listItem = findParentData(element, "access", true);
+      const listItem = findParentData(element, "access", true);
       if (listItem && !listItem.classList.contains("show-context-menu"))
         listItem.classList.add("show-context-menu");
       break;
     }
     case "open-dialog": {
-      let dialog = findParentData(element, "dialog", false);
+      const dialog = findParentData(element, "dialog", false);
       openDialog(dialog);
       break;
     }
@@ -663,9 +664,9 @@ function execAction(action, element)
       E("more-filters").setAttribute("aria-hidden", false);
       break;
     case "switch-acceptable-ads":
-      let value = element.value || element.dataset.value;
+      const value = element.value || element.dataset.value;
       // User check the checkbox
-      let shouldCheck = element.getAttribute("aria-checked") != "true";
+      const shouldCheck = element.getAttribute("aria-checked") != "true";
       let installAcceptableAds = false;
       let installAcceptableAdsPrivacy = false;
       // Acceptable Ads checkbox clicked
@@ -708,7 +709,7 @@ function execAction(action, element)
       });
       break;
     case "toggle-remove-subscription":
-      let subscriptionUrl = findParentData(element, "access", false);
+      const subscriptionUrl = findParentData(element, "access", false);
       if (element.getAttribute("aria-checked") == "true")
       {
         browser.runtime.sendMessage({
@@ -731,7 +732,7 @@ function execAction(action, element)
       });
       break;
     case "validate-import-subscription":
-      let form = findParentData(element, "validation", true);
+      const form = findParentData(element, "validation", true);
       if (!form)
         return;
 
@@ -751,7 +752,7 @@ function execAction(action, element)
 
 function setCustomFiltersView(mode)
 {
-  let customFiltersElement = E("custom-filters-raw");
+  const customFiltersElement = E("custom-filters-raw");
   updateCustomFiltersUi();
   if (mode == "read")
   {
@@ -772,7 +773,7 @@ function setCustomFiltersView(mode)
 
 function onClick(e)
 {
-  let context = document.querySelector(".show-context-menu");
+  const context = document.querySelector(".show-context-menu");
   if (context)
     context.classList.remove("show-context-menu");
 
@@ -781,7 +782,7 @@ function onClick(e)
     return;
 
   actions = actions.split(",");
-  for (let action of actions)
+  for (const action of actions)
   {
     execAction(action, e.target);
   }
@@ -806,16 +807,16 @@ getKey.keys = {
 
 function onKeyUp(e)
 {
-  let key = getKey(e);
+  const key = getKey(e);
   let element = document.activeElement;
   if (!key || !element)
     return;
 
-  let container = findParentData(element, "action", true);
+  const container = findParentData(element, "action", true);
   if (!container || !container.hasAttribute("data-keys"))
     return;
 
-  let keys = container.getAttribute("data-keys").split(" ");
+  const keys = container.getAttribute("data-keys").split(" ");
   if (keys.indexOf(key) < 0)
     return;
 
@@ -829,8 +830,8 @@ function onKeyUp(e)
     element = parent.firstElementChild;
   }
 
-  let actions = container.getAttribute("data-action").split(",");
-  for (let action of actions)
+  const actions = container.getAttribute("data-action").split(",");
+  for (const action of actions)
   {
     execAction(action, element);
   }
@@ -842,20 +843,20 @@ function selectTabItem(tabId, container, focus)
   document.body.setAttribute("data-tab", tabId);
 
   // Select tab
-  let tabList = container.querySelector("[role='tablist']");
+  const tabList = container.querySelector("[role='tablist']");
   if (!tabList)
     return null;
 
-  let previousTab = tabList.querySelector("[aria-selected]");
+  const previousTab = tabList.querySelector("[aria-selected]");
   previousTab.removeAttribute("aria-selected");
   previousTab.setAttribute("tabindex", -1);
 
-  let tab = tabList.querySelector("a[href='#" + tabId + "']");
+  const tab = tabList.querySelector("a[href='#" + tabId + "']");
   tab.setAttribute("aria-selected", true);
   tab.setAttribute("tabindex", 0);
 
-  let tabContentId = tab.getAttribute("aria-controls");
-  let tabContent = document.getElementById(tabContentId);
+  const tabContentId = tab.getAttribute("aria-controls");
+  const tabContent = document.getElementById(tabContentId);
 
   if (tab && focus)
     tab.focus();
@@ -865,16 +866,16 @@ function selectTabItem(tabId, container, focus)
 
 function onHashChange()
 {
-  let hash = location.hash.substr(1);
+  const hash = location.hash.substr(1);
   if (!hash)
     return;
 
   // Select tab and parent tabs
-  let tabIds = hash.split("-");
+  const tabIds = hash.split("-");
   let tabContent = document.body;
   for (let i = 0; i < tabIds.length; i++)
   {
-    let tabId = tabIds.slice(0, i + 1).join("-");
+    const tabId = tabIds.slice(0, i + 1).join("-");
     tabContent = selectTabItem(tabId, tabContent, true);
     if (!tabContent)
       break;
@@ -901,7 +902,7 @@ function onDOMLoaded()
   // Initialize interactive UI elements
   document.body.addEventListener("click", onClick, false);
   document.body.addEventListener("keyup", onKeyUp, false);
-  let exampleValue = getMessage("options_whitelist_placeholder_example",
+  const exampleValue = getMessage("options_whitelist_placeholder_example",
     ["www.example.com"]);
   E("whitelisting-textbox").setAttribute("placeholder", exampleValue);
   E("whitelisting-textbox").addEventListener("keyup", (e) =>
@@ -945,7 +946,7 @@ function onDOMLoaded()
   {
     return checkbox.getAttribute("data-pref");
   });
-  for (let key of customize)
+  for (const key of customize)
   {
     getPref(key, (value) =>
     {
@@ -1031,7 +1032,7 @@ function onDOMLoaded()
 let focusedBeforeDialog = null;
 function openDialog(name)
 {
-  let dialog = E("dialog");
+  const dialog = E("dialog");
   dialog.setAttribute("aria-hidden", false);
   dialog.setAttribute("aria-labelledby", "dialog-title-" + name);
   document.body.setAttribute("data-dialog", name);
@@ -1047,7 +1048,7 @@ function openDialog(name)
 
 function closeDialog()
 {
-  let dialog = E("dialog");
+  const dialog = E("dialog");
   dialog.setAttribute("aria-hidden", true);
   dialog.removeAttribute("aria-labelledby");
   document.body.removeAttribute("data-dialog");
@@ -1069,9 +1070,9 @@ function hideNotification()
 
 function setAcceptableAds()
 {
-  let acceptableAdsForm = E("acceptable-ads");
-  let acceptableAds = E("acceptable-ads-allow");
-  let acceptableAdsPrivacy = E("acceptable-ads-privacy-allow");
+  const acceptableAdsForm = E("acceptable-ads");
+  const acceptableAds = E("acceptable-ads-allow");
+  const acceptableAdsPrivacy = E("acceptable-ads-privacy-allow");
   acceptableAdsForm.classList.remove("show-dnt-notification");
   acceptableAds.setAttribute("aria-checked", false);
   acceptableAdsPrivacy.setAttribute("aria-checked", false);
@@ -1109,11 +1110,11 @@ function isAcceptableAds(url)
 
 function hasPrivacyConflict()
 {
-  let acceptableAdsList = subscriptionsMap[acceptableAdsUrl];
+  const acceptableAdsList = subscriptionsMap[acceptableAdsUrl];
   let privacyList = null;
-  for (let url in subscriptionsMap)
+  for (const url in subscriptionsMap)
   {
-    let subscription = subscriptionsMap[url];
+    const subscription = subscriptionsMap[url];
     if (subscription.recommended == "privacy")
     {
       privacyList = subscription;
@@ -1126,7 +1127,7 @@ function hasPrivacyConflict()
 
 function setPrivacyConflict()
 {
-  let acceptableAdsForm = E("acceptable-ads");
+  const acceptableAdsForm = E("acceptable-ads");
   if (hasPrivacyConflict())
   {
     getPref("ui_warn_tracking", (showTrackingWarning) =>
@@ -1146,7 +1147,7 @@ function populateLists()
   filtersMap = Object.create(null);
 
   // Empty collections and lists
-  for (let property in collections)
+  for (const property in collections)
     collections[property].clearAll();
 
   setCustomFiltersView("empty");
@@ -1156,7 +1157,7 @@ function populateLists()
   },
   (subscriptions) =>
   {
-    let customFilterPromises = subscriptions.map(getSubscriptionFilters);
+    const customFilterPromises = subscriptions.map(getSubscriptionFilters);
     Promise.all(customFilterPromises).then((filters) =>
     {
       loadCustomFilters([].concat(...filters));
@@ -1191,7 +1192,7 @@ function populateLists()
         },
         (subscriptions) =>
         {
-          for (let subscription of subscriptions)
+          for (const subscription of subscriptions)
             onSubscriptionMessage("added", subscription);
 
           setAcceptableAds();
@@ -1203,8 +1204,8 @@ function populateLists()
 
 function addWhitelistedDomain()
 {
-  let domain = E("whitelisting-textbox");
-  for (let whitelistItem of collections.whitelist.items)
+  const domain = E("whitelisting-textbox");
+  for (const whitelistItem of collections.whitelist.items)
   {
     if (whitelistItem.title == domain.value)
     {
@@ -1231,13 +1232,13 @@ function addWhitelistedDomain()
 function addEnableSubscription(url, title, homepage)
 {
   let messageType = null;
-  let knownSubscription = subscriptionsMap[url];
+  const knownSubscription = subscriptionsMap[url];
   if (knownSubscription && knownSubscription.disabled == true)
     messageType = "subscriptions.toggle";
   else
     messageType = "subscriptions.add";
 
-  let message = {
+  const message = {
     type: messageType,
     url
   };
@@ -1261,7 +1262,7 @@ function onFilterMessage(action, filter)
       populateLists();
       break;
     case "removed":
-      let knownFilter = filtersMap[filter.text];
+      const knownFilter = filtersMap[filter.text];
       if (whitelistedDomainRegexp.test(knownFilter.text))
         collections.whitelist.removeItem(knownFilter);
       else
@@ -1276,8 +1277,8 @@ function onSubscriptionMessage(action, subscription)
 {
   if (subscription.url in subscriptionsMap)
   {
-    let knownSubscription = subscriptionsMap[subscription.url];
-    for (let property in subscription)
+    const knownSubscription = subscriptionsMap[subscription.url];
+    for (const property in subscription)
     {
       if (property == "title" && knownSubscription.recommended)
         knownSubscription.originalTitle = subscription.title;
@@ -1303,7 +1304,7 @@ function onSubscriptionMessage(action, subscription)
       updateSubscription(subscription);
       break;
     case "added":
-      let {url} = subscription;
+      const {url} = subscription;
       // Handle custom subscription
       if (/^~user/.test(url))
       {
@@ -1367,7 +1368,7 @@ function getPrefElement(key)
 
 function getPref(key, callback)
 {
-  let checkPref = getPref.checks[key] || getPref.checkNone;
+  const checkPref = getPref.checks[key] || getPref.checkNone;
   checkPref((isActive) =>
   {
     if (!isActive)
@@ -1412,7 +1413,7 @@ function onPrefMessage(key, value, initial)
       break;
   }
 
-  let checkbox = document.querySelector(
+  const checkbox = document.querySelector(
     "[data-pref='" + key + "'] button[role='checkbox']"
   );
   if (checkbox)
@@ -1421,20 +1422,20 @@ function onPrefMessage(key, value, initial)
 
 function updateTooltips()
 {
-  let anchors = document.querySelectorAll(":not(.tooltip) > [data-tooltip]");
-  for (let anchor of anchors)
+  const anchors = document.querySelectorAll(":not(.tooltip) > [data-tooltip]");
+  for (const anchor of anchors)
   {
-    let id = anchor.getAttribute("data-tooltip");
+    const id = anchor.getAttribute("data-tooltip");
 
-    let wrapper = document.createElement("div");
+    const wrapper = document.createElement("div");
     wrapper.className = "icon tooltip";
     anchor.parentNode.replaceChild(wrapper, anchor);
     wrapper.appendChild(anchor);
 
-    let tooltip = document.createElement("div");
+    const tooltip = document.createElement("div");
     tooltip.setAttribute("role", "tooltip");
 
-    let paragraph = document.createElement("p");
+    const paragraph = document.createElement("p");
     paragraph.textContent = getMessage(id);
     tooltip.appendChild(paragraph);
 
@@ -1442,7 +1443,7 @@ function updateTooltips()
   }
 }
 
-let port = browser.runtime.connect({name: "ui"});
+const port = browser.runtime.connect({name: "ui"});
 
 port.onMessage.addListener((message) =>
 {
@@ -1452,8 +1453,8 @@ port.onMessage.addListener((message) =>
       switch (message.action)
       {
         case "addSubscription":
-          let subscription = message.args[0];
-          let dialog = E("dialog-content-predefined");
+          const subscription = message.args[0];
+          const dialog = E("dialog-content-predefined");
           dialog.querySelector("h3").textContent = subscription.title || "";
           dialog.querySelector(".url").textContent = subscription.url;
           openDialog("predefined");

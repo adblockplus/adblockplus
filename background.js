@@ -33,20 +33,20 @@
     },
     off(name, listener)
     {
-      let listeners = this._listeners[name];
+      const listeners = this._listeners[name];
       if (listeners)
       {
-        let idx = listeners.indexOf(listener);
+        const idx = listeners.indexOf(listener);
         if (idx != -1)
           listeners.splice(idx, 1);
       }
     },
     emit(name, ...args)
     {
-      let listeners = this._listeners[name];
+      const listeners = this._listeners[name];
       if (listeners)
       {
-        for (let listener of listeners)
+        for (const listener of listeners)
           listener(...args);
       }
     }
@@ -56,18 +56,18 @@
   {
     if (window.location.search)
     {
-      let params = window.location.search.substr(1).split("&");
+      const params = window.location.search.substr(1).split("&");
 
-      for (let param of params)
+      for (const param of params)
       {
-        let parts = param.split("=", 2);
+        const parts = param.split("=", 2);
         if (parts.length == 2 && parts[0] in data)
           data[parts[0]] = decodeURIComponent(parts[1]);
       }
     }
   }
 
-  let params = {
+  const params = {
     additionalSubscriptions: "",
     blockedURLs: "",
     dataCorrupted: false,
@@ -87,7 +87,7 @@
     `${subscriptionServer}/exceptionrules-privacy-friendly.txt`;
   const redirectLink = "https://adblockplus.org/redirect?link=";
 
-  let modules = {};
+  const modules = {};
   window.require = function(module)
   {
     return modules[module];
@@ -111,7 +111,7 @@
   };
 
   modules.prefs = {Prefs: new EventEmitter()};
-  let prefs = {
+  const prefs = {
     notifications_ignoredcategories: params.showNotificationUI ? ["*"] : [],
     notifications_showui: params.showNotificationUI,
     shouldShowBlockElementMenu: true,
@@ -121,7 +121,7 @@
     subscriptions_exceptionsurl: acceptableAds,
     subscriptions_exceptionsurl_privacy: acceptableAdsPrivacyFriendly
   };
-  for (let key of Object.keys(prefs))
+  for (const key of Object.keys(prefs))
   {
     Object.defineProperty(modules.prefs.Prefs, key, {
       get()
@@ -140,8 +140,8 @@
     Notification: {
       toggleIgnoreCategory(category)
       {
-        let categories = prefs.notifications_ignoredcategories;
-        let index = categories.indexOf(category);
+        const categories = prefs.notifications_ignoredcategories;
+        const index = categories.indexOf(category);
         if (index == -1)
           categories.push(category);
         else
@@ -161,7 +161,7 @@
     }
   };
 
-  let subscriptionDetails = {
+  const subscriptionDetails = {
     [easyListGermany]: {
       title: "EasyList Germany+EasyList",
       filters: ["-ad-banner.", "-ad-big.", "-ad-bottom-", "-ad-button-"],
@@ -197,7 +197,7 @@
     this.homepage = "https://easylist.adblockplus.org/";
     this.downloadStatus = params.downloadStatus;
 
-    let details = subscriptionDetails[this.url];
+    const details = subscriptionDetails[this.url];
     if (details)
     {
       this.disabled = !!details.disabled;
@@ -254,8 +254,9 @@
     FilterStorage: {
       get subscriptions()
       {
-        let subscriptions = [];
-        for (let url in modules.filterStorage.FilterStorage.knownSubscriptions)
+        const subscriptions = [];
+        const {knownSubscriptions} = modules.filterStorage.FilterStorage;
+        for (const url in knownSubscriptions)
         {
           subscriptions.push(
             modules.filterStorage.FilterStorage.knownSubscriptions[url]
@@ -271,8 +272,8 @@
 
       addSubscription(subscription)
       {
-        let {fromURL} = Subscription;
-        let {FilterStorage} = modules.filterStorage;
+        const {fromURL} = Subscription;
+        const {FilterStorage} = modules.filterStorage;
 
         if (!(subscription.url in FilterStorage.knownSubscriptions))
         {
@@ -284,7 +285,7 @@
 
       removeSubscription(subscription)
       {
-        let {FilterStorage} = modules.filterStorage;
+        const {FilterStorage} = modules.filterStorage;
 
         if (subscription.url in FilterStorage.knownSubscriptions)
         {
@@ -296,7 +297,7 @@
 
       addFilter(filter)
       {
-        for (let customFilter of customSubscription.filters)
+        for (const customFilter of customSubscription.filters)
         {
           if (customFilter.text == filter.text)
             return;
@@ -395,7 +396,7 @@
     defaultMatcher: {
       matchesAny(url, requestType, docDomain, thirdParty)
       {
-        let blocked = params.blockedURLs.split(",");
+        const blocked = params.blockedURLs.split(",");
         if (blocked.indexOf(url) >= 0)
           return new modules.filterClasses.BlockingFilter();
         return null;
@@ -441,13 +442,13 @@
   {
     if (event.data.type != "message")
       return;
-    let message = event.data.payload;
-    let {messageId} = event.data;
-    let sender = {
+    const message = event.data.payload;
+    const {messageId} = event.data;
+    const sender = {
       page: new ext.Page(event.source)
     };
 
-    let listeners = modules.messaging.port._listeners[message.type];
+    const listeners = modules.messaging.port._listeners[message.type];
     if (!listeners)
       return;
 
@@ -460,9 +461,9 @@
       }, "*");
     }
 
-    for (let listener of listeners)
+    for (const listener of listeners)
     {
-      let response = listener(message, sender);
+      const response = listener(message, sender);
       if (response && typeof response.then == "function")
       {
         response.then(
@@ -481,7 +482,7 @@
     }
   });
 
-  let filters = [
+  const filters = [
     "@@||alternate.de^$document",
     "@@||der.postillion.com^$document",
     "@@||taz.de^$document",
@@ -503,10 +504,10 @@
     "###ad-bereich2-08",
     "###ad-bereich2-skyscrapper"
   ];
-  let knownFilters = filters.map(modules.filterClasses.Filter.fromText);
+  const knownFilters = filters.map(modules.filterClasses.Filter.fromText);
 
-  let knownSubscriptions = Object.create(null);
-  for (let url in subscriptionDetails)
+  const knownSubscriptions = Object.create(null);
+  for (const url in subscriptionDetails)
   {
     if (!subscriptionDetails[url].installed)
       continue;
@@ -514,7 +515,7 @@
     knownSubscriptions[url] =
       modules.subscriptionClasses.Subscription.fromURL(url);
   }
-  let customSubscription = knownSubscriptions["~user~786254"];
+  const customSubscription = knownSubscriptions["~user~786254"];
 
   if (params.addSubscription)
   {
@@ -540,8 +541,8 @@
     // so we'll post the message after one second
     setTimeout(() =>
     {
-      let host = "example.com";
-      let isWhitelisted = customSubscription.filters
+      const host = "example.com";
+      const isWhitelisted = customSubscription.filters
         .some((filter) => filter.text == `@@||${host}^$document`);
       window.postMessage({
         type: "message",

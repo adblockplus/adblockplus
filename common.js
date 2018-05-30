@@ -35,13 +35,13 @@ function getDocLink(link, callback)
 
 function setLinks(id, ...args)
 {
-  let element = E(id);
+  const element = E(id);
   if (!element)
   {
     return;
   }
 
-  let links = element.getElementsByTagName("a");
+  const links = element.getElementsByTagName("a");
 
   for (let i = 0; i < links.length; i++)
   {
@@ -91,13 +91,13 @@ function openSharePopup(url)
   // Firefox 38+ no longer allows messaging using postMessage so we need
   // to have a fake top level frame to avoid problems with scripts that try to
   // communicate with the first-run page
-  let isGecko = ("Components" in window);
+  const isGecko = ("Components" in window);
   if (isGecko)
   {
     try
     {
-      let Ci = Components.interfaces;
-      let docShell = iframe.contentWindow
+      const Ci = Components.interfaces;
+      const docShell = iframe.contentWindow
         .QueryInterface(Ci.nsIInterfaceRequestor)
         .getInterface(Ci.nsIDocShell);
 
@@ -131,7 +131,7 @@ function openSharePopup(url)
     window.removeEventListener("message", popupMessageListener);
   }
 
-  let popupMessageListener = function(event)
+  const popupMessageListener = function(event)
   {
     if (!/[./]adblockplus\.org$/.test(event.origin) ||
         !("width" in event.data) || !("height" in event.data))
@@ -143,12 +143,12 @@ function openSharePopup(url)
   // unprivileged pages
   window.addEventListener("message", popupMessageListener, false, true);
 
-  let popupLoadListener = function()
+  const popupLoadListener = function()
   {
     if (!popupMessageReceived && isGecko)
     {
-      let rootElement = iframe.contentDocument.documentElement;
-      let {width, height} = rootElement.dataset;
+      const rootElement = iframe.contentDocument.documentElement;
+      const {width, height} = rootElement.dataset;
       if (width && height)
         resizePopup(width, height);
     }
@@ -157,7 +157,7 @@ function openSharePopup(url)
     {
       iframe.className = "visible";
 
-      let popupCloseListener = function()
+      const popupCloseListener = function()
       {
         iframe.className = glassPane.className = "";
         document.removeEventListener("click", popupCloseListener);
