@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "حجب تعقب رموز مواقع التواصل الاجتماعي"
+  },
+  "common_notification_hide": {
+    "message": "أغلق هذا التنبيه"
   }
 }

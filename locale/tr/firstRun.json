@@ -17,6 +17,21 @@
   "firstRun_contributor_credits": {
     "message": "Emeği Geçenler"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "Bazı kullanıcıların yaşadığı sorun, tarayıcılarını her başlattıkları zaman bu sayfanın açılmasıdır. Bu sorun, Adblock Plus kaldırılıp yeniden yüklenerek çözülebilir:"
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "Eğer yine de yardıma ihtiyacınız olursa, bizimle support@adblockplus.org adresi üzerinden iletişime geçebilir veya <a>Yardım Merkezi</a>’mizi ziyaret edebilirsiniz."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "Tarayıcınızın uzantılar sekmesini açın."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "Adblock Plus’ı bulup kaldırın."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "Adblock Plus’ı <a>adblockplus.org</a> adresinden yeniden yükleyin."
+  },
   "firstRun_donate": {
     "message": "bağış yapın"
   },

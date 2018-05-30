@@ -113,12 +113,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Introduce una dirección URL válida"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "Nombre de la lista de filtros"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "Por favor, completa el campo"
-  },
   "options_dialog_import_title": {
     "message": "Añadir una lista de filtros"
   },
@@ -247,9 +241,6 @@
   },
   "options_new_label": {
     "message": "NUEVO"
-  },
-  "options_notification_hide": {
-    "message": "Cerrar la notificación"
   },
   "options_page_document_title": {
     "message": "Configuración"

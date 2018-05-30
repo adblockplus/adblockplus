@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "Blokuj śledzenie przez ikony mediów społecznościowych"
+  },
+  "common_notification_hide": {
+    "message": "Zamknij powiadomienie"
   }
 }

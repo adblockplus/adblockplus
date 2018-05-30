@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "Willkommen zum Fehlerberichts-Assistenten"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Hinweis:</strong> Es öffnet sich kurzzeitig eine zusätzliche Registerkarte, so dass die Seite, auf der du dich befindest, nicht durch den Problemmelder beeinträchtigt wird."
+  },
   "issueReporter_doneButton_label": {
     "message": "Fertigstellen"
   },

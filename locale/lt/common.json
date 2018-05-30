@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "Blokuoti socialinių tinklų sekimą piktogramomis"
+  },
+  "common_notification_hide": {
+    "message": "Uždaryti pranešimą"
   }
 }

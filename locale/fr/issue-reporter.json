@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "Bienvenue dans l'assistant de signalement de problèmes"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Remarque\u00A0:</strong> Un onglet supplémentaire s'ouvrira temporairement de façon à ce que la page sur laquelle vous vous trouvez ne soit pas affectée par le signaleur de problèmes."
+  },
   "issueReporter_doneButton_label": {
     "message": "Terminé"
   },

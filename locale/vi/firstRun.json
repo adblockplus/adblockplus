@@ -17,6 +17,21 @@
   "firstRun_contributor_credits": {
     "message": "Đóng góp các khoản tín dụng"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "Một số người dùng gặp sự cố khi trang này mở ra mỗi khi trình duyệt của họ khởi chạy. Có thể giải quyết vấn đề này bằng cách gỡ cài đặt và cài đặt lại Adblock Plus:"
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "Nếu bạn vẫn cần trợ giúp, hãy liên hệ với chúng tôi tại support@adblockplus.org hoặc truy cập <a>Trung tâm trợ giúp</a> của chúng tôi."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "Mở thẻ Mở rộng trình duyệt của bạn."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "Xác định vị trí Adblock Plus và xóa nó."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "Gỡ cài đặt Adblock Plus khỏi <a>adblockplus.org</a>."
+  },
   "firstRun_donate": {
     "message": "ủng hộ"
   },

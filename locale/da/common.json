@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "Bloker sociale medier ikon sporing"
+  },
+  "common_notification_hide": {
+    "message": "Luk meddelelse"
   }
 }

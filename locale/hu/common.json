@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "Közösségimédia-ikonok követésének tiltása"
+  },
+  "common_notification_hide": {
+    "message": "Értesítés bezárása"
   }
 }

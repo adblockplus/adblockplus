@@ -113,12 +113,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "أدخل رابط URL صحيحًا"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "اسم قائمة عوامل تصفية"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "من فضلك, املأ هذا الحقل"
-  },
   "options_dialog_import_title": {
     "message": "إضافة قائمة عوامل تصفية"
   },
@@ -248,9 +242,6 @@
   "options_new_label": {
     "message": "جديد"
   },
-  "options_notification_hide": {
-    "message": "أغلق هذا التنبيه"
-  },
   "options_page_document_title": {
     "message": "إعدادات"
   },
@@ -261,7 +252,7 @@
     "message": "الخصوصية والأمان"
   },
   "options_protection_privacy_tooltip": {
-    "message": "احرص على حماية بياناتك الشخصية عن طريق إزالة كل أنواع التعقب من الإنترنت بما في ذلك وظائف جمع المعلومات."
+    "message": "احرص على حماية خصوصيتك من الجهات المعلومة التي قد تتعقب نشاطك على الإنترنت عبر المواقع الإلكتروني التي تزورها."
   },
   "options_protection_social_tooltip": {
     "message": "تتيح رموز مواقع التواصل الاجتماعي التي تظهر في مواقع الويب لك زيارة شبكات مواقع التواصل الاجتماعي لإنشاء بروفايل شخصي لك استنادًا إلى عاداتك في التصفح - حتى عندما لا تنقر فوق تلك الأزرار أو الرموز. يمكن حماية بروفايلك الشخصي من خلال إخفاء تلك الرموز."

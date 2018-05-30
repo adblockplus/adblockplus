@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "Sorun bildiriciye hoş geldiniz"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Not:</strong> Bulunduğunuz sayfanın Sorun Bildiricisi tarafından etkilenmemesi için, geçici olarak ek bir sekme açılacaktır."
+  },
   "issueReporter_doneButton_label": {
     "message": "Bitti"
   },

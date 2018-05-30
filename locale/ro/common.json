@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "Blochează tracking pe reţelele sociale"
+  },
+  "common_notification_hide": {
+    "message": "Închideţi această notificare"
   }
 }

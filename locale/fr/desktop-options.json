@@ -113,12 +113,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Saisissez une URL valide"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "Nom de la liste de filtres"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "Veuillez remplir le champ"
-  },
   "options_dialog_import_title": {
     "message": "Ajouter une liste de filtres"
   },
@@ -248,9 +242,6 @@
   "options_new_label": {
     "message": "NOUVEAU"
   },
-  "options_notification_hide": {
-    "message": "Fermer la notification"
-  },
   "options_page_document_title": {
     "message": "Paramètres"
   },
@@ -261,7 +252,7 @@
     "message": "CONFIDENTIALITÉ & SÉCURITÉ"
   },
   "options_protection_privacy_tooltip": {
-    "message": "Protégez vos données personnelles en supprimant toutes les formes de traçage d’Internet, y compris les collecteurs d’informations."
+    "message": "Protégez vos données confidentielles contre les entités connues qui sont susceptibles de suivre vos activités en ligne sur les différents sites Internet que vous consultez."
   },
   "options_protection_social_tooltip": {
     "message": "Les icônes des médias sociaux sur les sites web que vous consultez permettent aux réseaux de médias sociaux de construire votre profil en fonction de vos habitudes de navigation, même si vous ne cliquez pas dessus. En masquant ces icônes, vous pouvez protéger votre profil."

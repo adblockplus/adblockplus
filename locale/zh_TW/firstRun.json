@@ -17,6 +17,21 @@
   "firstRun_contributor_credits": {
     "message": "貢獻名單"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "部分使用者在每次啟動流覽器時都會遇到此頁面打開的問題。此問題可以透過卸載並重新安裝 Adblock Plus 來解決："
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "如果您仍然需要幫助，請透過 support@adblockplus.org 與我們聯繫，或訪問我們的<a>幫助中心</a>。"
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "打開流覽器的擴展標籤。"
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "找到 Adblock Plus 並將其刪除。"
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "從 <a>adblockplus.org</a> 上面重新安裝 Adblock Plus。"
+  },
   "firstRun_donate": {
     "message": "贊助"
   },

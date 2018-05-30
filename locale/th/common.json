@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "บล็อคการติดตามไอคอนของโซเชียลมีเดีย"
+  },
+  "common_notification_hide": {
+    "message": "ปิดการแจ้งเตือน"
   }
 }

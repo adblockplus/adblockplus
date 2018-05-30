@@ -113,12 +113,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Zadajte platnú adresu URL"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "Názov zoznamu filtra"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "Vyplňte pole"
-  },
   "options_dialog_import_title": {
     "message": "Pridajte zoznam filtrov"
   },
@@ -244,9 +238,6 @@
   },
   "options_new_label": {
     "message": "Nový"
-  },
-  "options_notification_hide": {
-    "message": "Zatvorte oznámenie"
   },
   "options_page_document_title": {
     "message": "Nastavenia"

@@ -113,12 +113,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "একটি বৈধ URL প্রবেশ করান"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "ছাঁকন তালিকার নাম"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "অনুগ্রহ করে ঘরটি ভরাট করুন"
-  },
   "options_dialog_import_title": {
     "message": "একটি ফিল্টার তালিকা যুক্ত করুন"
   },
@@ -247,9 +241,6 @@
   },
   "options_new_label": {
     "message": "নতুন"
-  },
-  "options_notification_hide": {
-    "message": "বিজ্ঞপ্তি বন্ধ করুন"
   },
   "options_page_document_title": {
     "message": "সেটিংস"

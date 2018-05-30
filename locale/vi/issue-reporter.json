@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "Chào mừng đến với trình báo cáo vấn đề"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Lưu ý:</strong> Một thẻ bổ sung sẽ tạm thời mở ra để trang bạn đang truy cập sẽ không bị ảnh hưởng bởi Trình báo cáo sự cố."
+  },
   "issueReporter_doneButton_label": {
     "message": "Xong"
   },

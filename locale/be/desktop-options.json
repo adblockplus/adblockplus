@@ -113,12 +113,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Увядзіце сапраўдны URL-адрас"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "Назва спіса фільтраў"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "Запоўніце гэтае поле"
-  },
   "options_dialog_import_title": {
     "message": "Дадаць спіс фільтраў"
   },
@@ -247,9 +241,6 @@
   },
   "options_new_label": {
     "message": "Новае"
-  },
-  "options_notification_hide": {
-    "message": "Закрыць апавяшчэнне"
   },
   "options_page_document_title": {
     "message": "Налады"

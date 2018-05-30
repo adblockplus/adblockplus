@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "Bloqueja les icones de seguiment de les xarxes socials"
+  },
+  "common_notification_hide": {
+    "message": "Tanca la notificació"
   }
 }

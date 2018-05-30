@@ -17,6 +17,21 @@
   "firstRun_contributor_credits": {
     "message": "공헌자 명단"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "일부 사용자에게서 브라우저가 시작될 때마다 이 페이지가 열리는 문제가 발생할 수 있습니다. Adblock Plus를 제거하고 다시 설치하여 이 문제를 해결할 수 있습니다:"
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "추가적인 도움이 필요하신 경우, support@adblockplus.org 주소로 연락해주시거나 <a>도움말 센터</a>를 방문하십시오."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "브라우저의 확장 탭을 엽니다."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "Adblock Plus를 찾아 제거합니다."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "<a>adblockplus.org</a>에서 Adblock Plus를 다시 설치합니다"
+  },
   "firstRun_donate": {
     "message": "기부"
   },

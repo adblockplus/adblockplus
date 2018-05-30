@@ -110,12 +110,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Nhập một URL hợp lệ"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "Tên danh sách lọc"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "Vui lòng điền vào trường"
-  },
   "options_dialog_import_title": {
     "message": "Thêm một danh sách lọc"
   },
@@ -245,9 +239,6 @@
   "options_new_label": {
     "message": "MỚI"
   },
-  "options_notification_hide": {
-    "message": "Đóng thông báo"
-  },
   "options_page_document_title": {
     "message": "Thiết đặt"
   },
@@ -258,7 +249,7 @@
     "message": "RIÊNG TƯ & BẢO MẬT"
   },
   "options_protection_privacy_tooltip": {
-    "message": "Bảo vệ dữ liệu cá nhân của bạn bằng cách loại bỏ tất cả các hình thức theo dõi từ Internet bao gồm các bộ thu thập thông tin."
+    "message": "Bảo vệ quyền riêng tư của bạn khỏi các thực thể đã biết mà có thể theo dõi hoạt động trực tuyến của bạn trên các trang web bạn truy cập."
   },
   "options_protection_social_tooltip": {
     "message": "Các biểu tượng mạng xã hội trên các trang web mà bạn ghé thăm cho phép các mạng xã hội tạo ra hồ sơ về bạn dựa trên những thói quen duyệt web của bạn - ngay cả khi bạn không bấm vào chúng. Ẩn những biểu tượng này đi có thể bảo vệ hồ sơ của bạn."

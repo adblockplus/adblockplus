@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "Bloccare il tracciamento delle icone per i social media"
+  },
+  "common_notification_hide": {
+    "message": "Chiudi questa notifica"
   }
 }

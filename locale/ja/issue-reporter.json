@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "不具合報告へようこそ"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>注記：</strong> 追加タブが一時的に開くため、現在開いているページはIssue Reporterによる影響を受けません。"
+  },
   "issueReporter_doneButton_label": {
     "message": "完了"
   },

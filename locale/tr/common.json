@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "Sosyal medya simgeleri ile takibi engelle"
+  },
+  "common_notification_hide": {
+    "message": "Uyarıyı kapat"
   }
 }

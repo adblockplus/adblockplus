@@ -14,5 +14,9 @@
   "common_feature_social_title": {
     "description": "Feature title for social media blocking filter list",
     "message": "Block social media icons tracking"
+  },
+  "common_notification_hide": {
+    "description": "Hidden text attached to the close button for screen readers of Notification",
+    "message": "Close notification"
   }
 }

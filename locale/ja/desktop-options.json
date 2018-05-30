@@ -113,12 +113,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "有効な URL を入力してください"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "フィルターリスト名"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "この項目に入力してください"
-  },
   "options_dialog_import_title": {
     "message": "フィルターリストを追加"
   },
@@ -248,9 +242,6 @@
   "options_new_label": {
     "message": "新規"
   },
-  "options_notification_hide": {
-    "message": "通知を閉じる"
-  },
   "options_page_document_title": {
     "message": "設定"
   },
@@ -261,7 +252,7 @@
     "message": "プライバシー & セキュリティー"
   },
   "options_protection_privacy_tooltip": {
-    "message": "情報コレクタなどのインターネットでのあらゆる形態によるトラッキングを除去することで、個人情報を保護します。"
+    "message": "訪問したウェブサイトでのオンライン活動が追跡される可能性がある既知の団体からプライバシーを保護します。"
   },
   "options_protection_social_tooltip": {
     "message": "閲覧したウェブサイトにあるソーシャルメディア アイコンでは、このをクリックしない場合でも、ユーザーの習慣的な閲覧履歴に基づいてプロファイルを構築します。このようなアイコン を非表示して、自分のプロファイルを守ることができます。"

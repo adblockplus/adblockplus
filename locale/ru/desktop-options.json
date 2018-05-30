@@ -113,12 +113,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Ввести действительную URL"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "Имя списка фильтров"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "Пожалуйста, заполните поле"
-  },
   "options_dialog_import_title": {
     "message": "Добавить список фильтров"
   },
@@ -248,9 +242,6 @@
   "options_new_label": {
     "message": "НОВИНКА"
   },
-  "options_notification_hide": {
-    "message": "Закрыть уведомление"
-  },
   "options_page_document_title": {
     "message": "Настройки"
   },
@@ -261,7 +252,7 @@
     "message": "КОНФИДЕНЦИАЛЬНОСТЬ И БЕЗОПАСНОСТЬ"
   },
   "options_protection_privacy_tooltip": {
-    "message": "Защититесь от отслеживания Ваших передвижений по Интернету, заблокировав сборщики информации."
+    "message": "Защищайте свою приватность от известных структур, которые могут отслеживать вашу онлайн активность по сайтам, которые вы посещаете."
   },
   "options_protection_social_tooltip": {
     "message": "Значки социальных сетей на посещаемых сайтах позволяют социальным сетям формировать ваш профиль на основании ваших привычек просмотра ресурсов сети – даже если вы их не нажимаете. Скрытие этих значков поможет защитить ваш профиль."

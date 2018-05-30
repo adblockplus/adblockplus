@@ -113,12 +113,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Wprowadź prawidłowy adres URL"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "Nazwa zestawu filtrów"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "Proszę wypełnić to pole"
-  },
   "options_dialog_import_title": {
     "message": "Dodaj zestaw filtrów"
   },
@@ -245,9 +239,6 @@
   "options_new_label": {
     "message": "Nowy"
   },
-  "options_notification_hide": {
-    "message": "Zamknij powiadomienie"
-  },
   "options_page_document_title": {
     "message": "Ustawienia"
   },
@@ -258,7 +249,7 @@
     "message": "Prywatność i bezpieczeństwo"
   },
   "options_protection_privacy_tooltip": {
-    "message": "Chroń swoje dane osobiste, usuwając wszystkie formy śledzenia w Internecie, w tym zbieranie informacji."
+    "message": "Chroń swoją prywatność przed znanymi jednostkami, które mogą śledzić Twoje działania w odwiedzanych witrynach internetowych."
   },
   "options_protection_social_tooltip": {
     "message": "Ikony mediów społecznościowych znajdujące się w odwiedzanych witrynach internetowych umożliwiaj sieciom mediów społecznościowych na budowanie Twojego profilu w oparciu o Twoje nawyki przeglądania – nawet, jeśli ich nie klikasz. Ukrycie tych ikon może ochronić Twój profil."
@@ -331,7 +322,7 @@
     "message": "Tutaj będą wyświetlane zaufane strony, na których mogą być wyświetlane reklamy."
   },
   "options_whitelist_notification": {
-    "message": " Witryna „$website$” została dodana do listy dozwolonych.",
+    "message": "Witryna „$website$” została dodana do listy dozwolonych.",
     "placeholders": {
       "website": {
         "content": "$1",

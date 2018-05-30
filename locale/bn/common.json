@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "সামাজিক মিডিয়া আইকনগুলির অনুসরণ বন্ধ করুন"
+  },
+  "common_notification_hide": {
+    "message": "বিজ্ঞপ্তি বন্ধ করুন"
   }
 }

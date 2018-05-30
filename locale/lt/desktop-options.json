@@ -113,12 +113,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Įveskite tinkamą url"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "Sąrašo pavadinimas"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "Užpildykite lauką"
-  },
   "options_dialog_import_title": {
     "message": "Pridėti filtrų sąrašą"
   },
@@ -247,9 +241,6 @@
   },
   "options_new_label": {
     "message": "Nauji"
-  },
-  "options_notification_hide": {
-    "message": "Uždaryti pranešimą"
   },
   "options_page_document_title": {
     "message": "Nustatymai"

@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "Blokovanie sledovania ikon sociálnych médií"
+  },
+  "common_notification_hide": {
+    "message": "Zatvorte oznámenie"
   }
 }

@@ -113,12 +113,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Geçerli bir URL girin"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "Süzgeç listesi adı"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "Lütfen sahayı doldurun"
-  },
   "options_dialog_import_title": {
     "message": "Süzgeç listesi ekle"
   },
@@ -248,9 +242,6 @@
   "options_new_label": {
     "message": "Yeni"
   },
-  "options_notification_hide": {
-    "message": "Uyarıyı kapat"
-  },
   "options_page_document_title": {
     "message": "Adblock Plus Seçenekleri"
   },
@@ -261,7 +252,7 @@
     "message": "Gizlilik ve güvenlik"
   },
   "options_protection_privacy_tooltip": {
-    "message": "Bilgi toplayıcılar da dahil olmak üzere, internette yer alan her tür takipçiyi engelleyerek kişisel verilerinizi koruyun."
+    "message": "Gizliliğinizi, ziyaret ettiğiniz web sitelerinde çevrimiçi faaliyetlerinizin izlenebilirliğini engelleyerek koruyun."
   },
   "options_protection_social_tooltip": {
     "message": "Ziyaret ettiğiniz sayfalarda yer alan sosyal medya düğmeleri (veya simgeleri) tarama alışkanlıklarınızı temel alarak sizin bir \"resminizi\" oluşturur. Kimliğinizi korumak için bu düğmeleri gizleyin."

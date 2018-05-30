@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "ยินดีต้อนรับสู่การรายงานปัญหา"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>หมายเหตุ:</strong> จะมีแถบเปิดเพิ่มขึ้นมาชั่วคราวเพื่อไม่ให้ส่งผลกระทบต่อหน้าเพจที่คุณกำลังเปิดอยู่เนื่องจาก Issue Reporter"
+  },
   "issueReporter_doneButton_label": {
     "message": "เสร็จสิ้น"
   },

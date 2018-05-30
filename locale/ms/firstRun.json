@@ -17,6 +17,21 @@
   "firstRun_contributor_credits": {
     "message": "Kredit kepada penyumbang"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "Sesetengah pengguna mengalami isu di mana halaman ini terbuka setiap kali pelayar dilancarkan. Isu ini boleh diselesaikan dengan menyahpasang dan memasang semula Adblock Plus:"
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "Jika anda masih memerlukan bantuan, hubungi kami di support@adblockplus.org atau lawati <a>Help Center</a> kami."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "Buka tab Extension pelayar anda."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "Cari Adblock Plus dan buangkan ia."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "Pasang semula Adblock Plus dari <a>adblockplus.org</a>."
+  },
   "firstRun_donate": {
     "message": "Derma"
   },

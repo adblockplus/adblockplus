@@ -107,9 +107,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "輸入有效的 URL"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "過濾列表名稱"
-  },
   "options_dialog_import_title": {
     "message": "添加過濾列表"
   },
@@ -240,7 +237,7 @@
     "message": "隱私與安全"
   },
   "options_protection_privacy_tooltip": {
-    "message": "通過從互聯網中移除所有形式的跟踪（包括信息收集者）來保護您的個人信息。"
+    "message": "保護您的隱私，防止已知實體在您訪問的各種網站上跟蹤您的線上活動。"
   },
   "options_protection_social_tooltip": {
     "message": "您訪問的網站上的社交媒體圖示允許社交媒體網路根據您的瀏覽習慣建立您的個人資料記錄——即使您沒有點擊它們。隱藏這些圖示可以保護您的個人資料。"

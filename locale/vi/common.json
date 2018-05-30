@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "Chặn các biểu tượng theo dõi mạng xã hội"
+  },
+  "common_notification_hide": {
+    "message": "Đóng thông báo"
   }
 }

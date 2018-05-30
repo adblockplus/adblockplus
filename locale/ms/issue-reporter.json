@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "Selamat datang ke pelapor isu"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Nota:</strong> Satu tab tambahan akan terbuka secara sementara supaya laman yang anda buka tidak terjejas oleh Pelapor Isu."
+  },
   "issueReporter_doneButton_label": {
     "message": "Selesai"
   },

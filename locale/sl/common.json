@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "Blokiraj sledenje ikon družbenih omrežij"
+  },
+  "common_notification_hide": {
+    "message": "Zapri obvestilo"
   }
 }

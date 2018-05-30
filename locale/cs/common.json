@@ -4,5 +4,8 @@
   },
   "common_feature_social_title": {
     "message": "Blokování sledování ikon sociálních médií"
+  },
+  "common_notification_hide": {
+    "message": "Uzavřít oznámení"
   }
 }

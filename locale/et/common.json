@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "Blokeeri sotsiaalvõrgustike ikoonide jälgimine"
+  },
+  "common_notification_hide": {
+    "message": "Sulge teade"
   }
 }

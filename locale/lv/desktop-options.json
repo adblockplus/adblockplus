@@ -107,12 +107,6 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Ievadiet derīgu URL"
   },
-  "options_dialog_import_subscription_title": {
-    "message": "Filtru saraksta nosaukums"
-  },
-  "options_dialog_import_subscription_title_error": {
-    "message": "Lūdzu, aizpildiet lauku"
-  },
   "options_dialog_import_title": {
     "message": "Pievienot filtru sarakstu"
   },
@@ -217,9 +211,6 @@
   },
   "options_new_label": {
     "message": "Jauns"
-  },
-  "options_notification_hide": {
-    "message": "Aizvērt paziņojumu"
   },
   "options_page_document_title": {
     "message": "Adblock Plus opcijas"

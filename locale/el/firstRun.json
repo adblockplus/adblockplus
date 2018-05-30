@@ -17,6 +17,21 @@
   "firstRun_contributor_credits": {
     "message": "Μνεία συντελεστών"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "Ορισμένοι χρήστες αντιμετωπίζουν ένα πρόβλημα όπου αυτή η σελίδα ανοίγει κάθε φορά που εκκινείται το πρόγραμμα περιήγησης. Αυτό το ζήτημα μπορεί να επιλυθεί με την απεγκατάσταση και την επανεγκατάσταση του Adblock Plus:"
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "Εάν εξακολουθείτε να χρειάζεστε βοήθεια, επικοινωνήστε μαζί μας στη διεύθυνση support@adblockplus.org ή επισκεφτείτε το <a>Help Center</a>."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "Ανοίξτε την καρτέλα Επεκτάσεις του προγράμματος περιήγησης."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "Εντοπίστε το Adblock Plus και αφαιρέστε το."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "Επανεγκαταστήστε το Adblock Plus από το <a>adblockplus.org</a> ."
+  },
   "firstRun_donate": {
     "message": "δωρίστε"
   },
