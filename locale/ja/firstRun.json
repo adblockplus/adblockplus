@@ -29,6 +29,9 @@
   "firstRun_dataCorruptedWarning_step2": {
     "message": "Adblock Plusを見つけて削除します。"
   },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "<a>adblockplus.org</a> から Adblock Plus を再インストールしてください。"
+  },
   "firstRun_donate": {
     "message": "寄付"
   },

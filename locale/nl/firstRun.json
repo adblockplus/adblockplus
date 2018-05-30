@@ -9,7 +9,7 @@
     "message": "Hebt u een smartphone of tablet?"
   },
   "firstRun_acceptableAdsExplanation": {
-    "message": "We zouden websites willen aanmoedigen eenvoudige, niet-opdringerige advertenties te gebruiken. Daarom hebben we <a>strikte richtlijnen</a> opgesteld om acceptabele advertenties te herkennen die bij gebruik van de standaardinstellingen worden getoond. Als u toch alle advertenties wilt blokkeren, kunt u dit binnen enkele seconden <a>uitschakelen</a>."
+    "message": "We willen websites graag aanmoedigen eenvoudige, niet-opdringerige advertenties te gebruiken. Daarom hebben we <a>strenge richtlijnen</a> opgesteld om acceptabele advertenties te herkennen, die bij gebruik van de standaardinstellingen worden getoond. Als u toch alle advertenties wilt blokkeren, kunt u dit binnen enkele seconden <a>uitschakelen</a>."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Vervelende advertenties zullen nu worden geblokkeerd"
@@ -21,13 +21,13 @@
     "message": "Sommige gebruikers ondervinden een probleem waarbij deze pagina telkens wordt geopend wanneer de browser wordt gestart. Dit probleem kan worden opgelost door Adblock Plus te verwijderen en opnieuw te installeren."
   },
   "firstRun_dataCorruptedWarning_note": {
-    "message": "Als je hulp nodig hebt, neem dan contact met ons op via support@adblockplus.org of bezoek on <a>Helpcentrum</a>."
+    "message": "Als u nog steeds hulp nodig hebt, neem dan contact met ons op via support@adblockplus.org of bezoek ons <a>Helpcentrum</a>."
   },
   "firstRun_dataCorruptedWarning_step1": {
-    "message": "Open het tabblad \"Extensies\"."
+    "message": "Open het tabblad ‘Extensies’ van uw browser."
   },
   "firstRun_dataCorruptedWarning_step2": {
-    "message": "Lokaliseer Adblock Plus en verwijder het."
+    "message": "Zoek naar Adblock Plus en verwijder het."
   },
   "firstRun_dataCorruptedWarning_step3": {
     "message": "Installeer Adblock Plus opnieuw vanaf <a>adblockplus.org</a>."

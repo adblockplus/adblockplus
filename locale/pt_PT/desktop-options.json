@@ -117,7 +117,7 @@
     "message": "Adicionar uma lista de filtros"
   },
   "options_dialog_language_other_empty": {
-    "message": "Não há línguas disponíveis."
+    "message": "Não existem idiomas disponíveis."
   },
   "options_dialog_language_title": {
     "message": "Selecionar um idioma"
@@ -130,6 +130,9 @@
   },
   "options_email": {
     "message": "E-mail:"
+  },
+  "options_english": {
+    "message": "Inglês"
   },
   "options_filterList_add": {
     "message": "+ Adicionar uma nova lista de filtros"
@@ -207,7 +210,7 @@
     "message": "Encontre ajuda ou entre em contacto connosco"
   },
   "options_language_add": {
-    "message": "+ ADICIONAR UM IDIOMA"
+    "message": "+ adicionar idioma"
   },
   "options_language_change": {
     "message": "ALTERAR"
@@ -240,7 +243,7 @@
     "message": "NOVIDADE"
   },
   "options_page_document_title": {
-    "message": "Definições"
+    "message": "Opções Adblock Plus"
   },
   "options_page_title": {
     "message": "Definições"
@@ -249,7 +252,7 @@
     "message": "PRIVACIDADE E SEGURANÇA"
   },
   "options_protection_privacy_tooltip": {
-    "message": "Proteja a sua privacidade de entidades conhecidas que podem monitorizar a sua atividade online nos sites Web que visita."
+    "message": "Proteja a sua privacidade de entidades conhecidas que podem monitorizar a sua atividade em linha nos sítios Web que visita."
   },
   "options_protection_social_tooltip": {
     "message": "Os ícones das redes sociais nos sites Web que visita permitem que as redes das redes sociais criem um perfil seu com base nos seus hábitos de navegação - mesmo quando não clica neles. Ocultar estes ícones pode proteger o seu perfil."
@@ -280,6 +283,9 @@
   },
   "options_tab_whitelist": {
     "message": "Sites Web na lista branca"
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "Ok, percebi"
   },
   "options_whitelist_add": {
     "message": "ADICIONAR SITE WEB"

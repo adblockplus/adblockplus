@@ -27,7 +27,7 @@
     "message": "Welkom bij de probleemrapportage"
   },
   "issueReporter_data_gathering_tab": {
-    "message": "<strong>Note:</strong> Er wordt tijdelijk een extra tabblad geopend zodat de pagina waarop u zich bevindt niet wordt beïnvloed door de Issue Reporter."
+    "message": "<strong>Opmerking:</strong> er wordt tijdelijk een extra tabblad geopend, zodat de pagina waarop u zich bevindt niet door de probleemrapportage wordt beïnvloed."
   },
   "issueReporter_doneButton_label": {
     "message": "Gereed"

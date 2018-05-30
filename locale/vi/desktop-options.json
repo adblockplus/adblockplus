@@ -281,6 +281,15 @@
   "options_tab_whitelist": {
     "message": "Danh sách trang web không gây hại"
   },
+  "options_tracking_warning_3": {
+    "message": "Nếu bạn thích sự riêng tư hơn, hãy chọn ô <strong>$acceptableAdsPrivacy$</strong> bên dưới.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
   "options_tracking_warning_acknowledgment": {
     "message": "Ok, đã hiểu"
   },

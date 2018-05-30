@@ -30,7 +30,7 @@
     "message": "إلغاء"
   },
   "options_customFilter_edit": {
-    "message": "عَدِّلْ الفلتر"
+    "message": "عدل الفلاتر"
   },
   "options_customFilter_save": {
     "message": "حفظ"
@@ -123,7 +123,7 @@
     "message": "حدد لغة"
   },
   "options_dialog_predefined_confirm": {
-    "message": "نعم, استخدم قائمة التصفية هذة"
+    "message": "نعم، استخدم قائمة الفلاتر هذه"
   },
   "options_dialog_predefined_title": {
     "message": "هل أنت بالتأكيد تريد إضافة قائمة عوامل التصفية هذه؟"
@@ -132,7 +132,7 @@
     "message": "البريد الإلكتروني:"
   },
   "options_english": {
-    "message": "إِنْكِلِيزِيّ"
+    "message": "الإنجليزية"
   },
   "options_filterList_add": {
     "message": "+ أضف قائمة عوامل تصفية جديدة"
@@ -165,7 +165,7 @@
     "message": "تحديث"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "فشل الأمر، قائمة التصفية غير صحيحة"
+    "message": "فشل الأمر، قائمة الفلاتر غير صحيحة"
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "فشل الأمر، العنوان ليس صحيح"

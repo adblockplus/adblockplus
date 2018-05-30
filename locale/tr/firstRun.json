@@ -24,7 +24,7 @@
     "message": "Eğer yine de yardıma ihtiyacınız olursa, bizimle support@adblockplus.org adresi üzerinden iletişime geçebilir veya <a>Yardım Merkezi</a>’mizi ziyaret edebilirsiniz."
   },
   "firstRun_dataCorruptedWarning_step1": {
-    "message": "Tarayıcınızın uzantılar sekmesini açın."
+    "message": "Tarayıcınızın \"Uzantılar\" sekmesini açın."
   },
   "firstRun_dataCorruptedWarning_step2": {
     "message": "Adblock Plus’ı bulup kaldırın."

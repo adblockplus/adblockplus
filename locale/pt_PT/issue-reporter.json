@@ -30,7 +30,7 @@
     "message": "<strong>Nota:</strong> é aberto temporariamente um separador adicional para que a página em que está não seja afetada pelo Relatório de Problemas."
   },
   "issueReporter_doneButton_label": {
-    "message": "Feito"
+    "message": "Concluído"
   },
   "issueReporter_email_description": {
     "message": "Deve indicar um endereço eletrónico válido para que o possamos contactar, caso precisemos de ajuda para resolver o erro reportado no relatório. O endereço permite-nos também verificar os contributos e criar uma hierarquia."
@@ -39,13 +39,13 @@
     "message": "E-mail:"
   },
   "issueReporter_errorMessage": {
-    "message": "O envio do relatório falhou com o código de erro \"?1?\". Por favor certifique-se que está ligado à Internet e tente novamente. Se o problema persistir, aceda ao [link]fórum do Adblock Plus[/link]."
+    "message": "O envio do relatório falhou com o código de erro \"?1?\". Por favor, certifique-se que está ligado à Internet e tente novamente. Se o problema persistir, aceda ao [link]fórum do Adblock Plus[/link]."
   },
   "issueReporter_falseNegative_description": {
     "message": "Selecione esta opção se o anúncio é exibido e o Adblock Plus está ativo."
   },
   "issueReporter_falseNegative_label": {
-    "message": "O Adblock Plus não bloqueia um anúncio"
+    "message": "O Adblock Plus não bloqueia uma publicidade"
   },
   "issueReporter_falsePositive_description": {
     "message": "Selecione esta opção se a página não mostra ou mostra incorretamente o conteúdo importante ou se não funciona corretamente. Pode verificar se o Adblock Plus é o causador do problema destivando-o temporariamente."
@@ -78,6 +78,6 @@
     "message": "Esta janela guiá-lo-à através dos passos necessários para submeter o relatório de erros. Em primeiro lugar, selecione o tipo de erro que está a ocorrer nesta página:"
   },
   "issueReporter_typeSelector_heading": {
-    "message": "Seleccione o tipo de problema"
+    "message": "Selecione o tipo de problema"
   }
 }
