@@ -1,0 +1,23 @@
+{
+  "updates_adblockBrowser": {
+    "message": "אם אתה לוקח שליטה על שולחן העבודה, אתה יכול לחסום פרסומות ולשפר את הפרטיות והאבטחה גם בנייד. השג את <a>יישום Adblock Browser למטה</a>."
+  },
+  "updates_blockAds": {
+    "message": "Open Source Rebel Alliance יצר מסנני חסימה חדשים שנותנים לך להעיף פרסומות מוסתרות באתרים כמו Facebook, אפילו אם האימפריה מכה חזרה."
+  },
+  "updates_heading": {
+    "message": "Adblock Plus עודכן!"
+  },
+  "updates_optionsPageNews": {
+    "message": "עמוד הגדרות חדש לגמרי - משופץ מחדש ומסוגנן מחדש עם יותר אפשרויות של פרטיות ואבטחה כך שזה קל יותר <a>להתאים אישית את Adblock Plus בדיוק כפי שאתה רוצה אותו</a>."
+  },
+  "updates_phone": {
+    "message": "חכה! מה לגבי הטלפון שלך?"
+  },
+  "updates_status": {
+    "message": "עדכון הושלם"
+  },
+  "updates_subheading": {
+    "message": "מה חדש?"
+  }
+}

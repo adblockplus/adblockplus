@@ -1,0 +1,17 @@
+{
+  "common_feature_anti_adblock_title": {
+    "message": "Agochar mensaxes de advertencia de Adblock"
+  },
+  "common_feature_malware_title": {
+    "message": "Bloquear sóftware malicioso"
+  },
+  "common_feature_privacy_title": {
+    "message": "Bloquear o rastrexamento adicional"
+  },
+  "common_feature_social_title": {
+    "message": "Bloquear as iconas de seguimento das redes sociais"
+  },
+  "common_notification_hide": {
+    "message": "Pechar notificación"
+  }
+}

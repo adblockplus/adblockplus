@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "Velkommen til problemrapportereren"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Merk:</strong> En ny fane vil bli åpnet midlertidig slik at siden du er på ikke blir påvirket av Problemrapportereren."
+  },
   "issueReporter_doneButton_label": {
     "message": "Fullfør"
   },

@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "Bienvenido al creador de informes de errores"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Nota:</strong> Se abrirá temporalmente una pestaña adicional, así la página en la que te encuentras no será afectada por el Reportador de Problemas."
+  },
   "issueReporter_doneButton_label": {
     "message": "Listo"
   },

@@ -1,6 +1,6 @@
 {
   "firstRun_abbButtonSubtitle": {
-    "message": "זמין עבור Android ו-iOS"
+    "message": "זמין עבור Android ו־iOS"
   },
   "firstRun_abbButtonTitle": {
     "message": "השג את Adblock Browser כאן"
@@ -9,13 +9,28 @@
     "message": "יש לך טלפון חכם או מחשב לוח?"
   },
   "firstRun_acceptableAdsExplanation": {
-    "message": "אנחנו רוצים לעודד אתרים להשתמש בפרסום פשוט ולא בולט. זאת מדוע ביססנו <a>קווים מנחים נוקשים</a> כדי לזהות מודעות מתקבלות, אשר מופיעות בהגדרות ברירת המחדל. אם ברצונכם  לחסום בכל זאת את כל המודעות ניתן <a>לנטרל</a> זאת במספר שניות."
+    "message": "אנחנו מעודדים אתרים להשתמש בפרסום ישר ובלתי־פולשני. זו הסיבה שייסדנו <a>קווים מנחים נוקשים</a> כדי לזהות פרסומות מקובלות, אשר מופיעות תחת הגדרות ברירת מחדל. אם אתה עדין רוצה לחסום כל פרסומת שהיא אתה יכול <a>להשבית</a> זאת במספר שניות."
   },
   "firstRun_acceptableAdsHeadline": {
-    "message": "מודעות מציקות ייחסמו מעכשיו"
+    "message": "פרסומות מציקות ייחסמו כעת"
   },
   "firstRun_contributor_credits": {
-    "message": "קרדיטים לתורמים"
+    "message": "קרדיטי תורמים"
+  },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "מספר משתמשים חווים סוגייה שבה דף זה נפתח בכל פעם שהדפדפן שלהם מופעל. סוגייה זו יכולה להיפתר ע\"י הסרה והתקנה מחדש של Adblock Plus:"
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "אם אתה עדין צריך עזרה, צור איתנו קשר בכתובת support@adblockplus.org או בקר ב<a>מרכז העזרה</a> שלנו."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "פתח את לשונית ההרחבות של הדפדפן שלך."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "אתר את Adblock Plus והסר אותו."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "התקן מחדש את Adblock Plus מתוך <a>adblockplus.org</a>."
   },
   "firstRun_donate": {
     "message": "תרום"
@@ -24,13 +39,13 @@
     "message": "תמוך במיזם שלנו"
   },
   "firstRun_filterlistsReinitializedWarning": {
-    "message": "נראה שישנה סוגייה שגרמה לכל המסננים להיות מוסרים ולא יכולנו לשחזר גיבוי. לכן נאלצנו לאפס את המסננים ואת הגדרות המודעות המקובלות. אנא בדוק את רשימת המסננים והגדרות המודעות המקובלות ב <a>Adblock Plus אפשרויות</a>."
+    "message": "נראה שישנה סוגייה שגרמה לכל המסננים להיות מוסרים ולא יכולנו לשחזר גיבוי. לכן נאלצנו לאפס את המסננים ואת הגדרות הפרסומות המקובלות. אנא בדוק את רשימת המסננים והגדרות הפרסומות המקובלות ב <a>Adblock Plus אפשרויות</a>."
   },
   "firstRun_share": {
     "message": "ספר לחבריך"
   },
   "firstRun_share_headline": {
-    "message": "<a>תנו לנו יד</a> בהפיכת הרשת למקום טוב יותר"
+    "message": "<a>תן לנו יד</a> בהפיכת הרשת למקום טוב יותר"
   },
   "firstRun_title": {
     "message": "Adblock Plus הותקן"

@@ -1,0 +1,23 @@
+{
+  "updates_adblockBrowser": {
+    "message": "Om du tar kontroll på datorn, kan du blockera annonser och förbättra din integritet och säkerhet på mobilen också. Skaffa appen <a>Adblock Browser App nedan</a>."
+  },
+  "updates_blockAds": {
+    "message": "The Open Source Rebel Alliance har skapat nya blockerande filter som låter dig spränga dolda annonser på webbsidor som Facebook, även om imperiet slår tillbaka."
+  },
+  "updates_heading": {
+    "message": "Adblock Plus har uppdaterats!"
+  },
+  "updates_optionsPageNews": {
+    "message": "Helt ny Inställningssida - ändrad och omdesignad med mer sekretess -och säkerhetsval - so det blir enklare att <a>skräddarsy Adblock Plus precis som du vill ha det</a>."
+  },
+  "updates_phone": {
+    "message": "Men vänta! Din telefon då?"
+  },
+  "updates_status": {
+    "message": "Uppdateringen slutförd"
+  },
+  "updates_subheading": {
+    "message": "Vad är nytt?"
+  }
+}

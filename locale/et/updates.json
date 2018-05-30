@@ -2,6 +2,9 @@
   "updates_adblockBrowser": {
     "message": "Kui võtad kontrolli töölaua arvutis, saad reklaamid blokeerida ning oma privaatsust ja turvalisust täiustada ka mobiilis. Hangi <a>allpool rakendus Adblock Browser</a>."
   },
+  "updates_blockAds": {
+    "message": "Avatud lähtekoodiga Mässuliste liit on loonud uued blokeerimise filtrid, mis laseb teil puhandada varjatud reklaami veebilehtedel nagu Facebook, isegi kui impeerium lööb tagasi."
+  },
   "updates_heading": {
     "message": "Adblock Plus on uuendatud!"
   },

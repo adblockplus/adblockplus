@@ -17,6 +17,21 @@
   "firstRun_contributor_credits": {
     "message": "Внески учасників"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "У деяких користувачів виникає проблема, коли ця сторінка відкривається щоразу, коли запускається веб-переглядач. Це питання можна вирішити, видаляючи та перевстановлюючи Adblock Plus:"
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "Якщо вам все ще потрібна допомога, зв'яжіться з нами за адресою support@adblockplus.org або відвідайте наш <a>довідковий центр</a>."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "Відкрийте вкладку \"Розширення\" у браузері."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "Знайдіть Adblock Plus і видаліть його."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "Перевстановіть Adblock Plus з <a>adblockplus.org</a>."
+  },
   "firstRun_donate": {
     "message": "пожертва"
   },

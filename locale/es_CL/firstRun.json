@@ -9,13 +9,28 @@
     "message": "¿Tienes un Teléfono Inteligente o una tableta?"
   },
   "firstRun_acceptableAdsExplanation": {
-    "message": "Nos gustaría fomentar el uso de una publicidad más directa y menos agresiva en los sitios web. Por eso hemos establecido unas <a>directrices estrictas</a> para identificar la publicidad aceptable, que se muestra en modo predeterminado. Si aun quieres bloquear toda la publicidad puedes <a>desactivar</a> este modo en unos pocos segundos."
+    "message": "Nos gustaría fomentar el uso de una publicidad más directa y menos agresiva en los sitios web. Por eso hemos establecido unas <a>directrices estrictas</a> para identificar la publicidad aceptable, que se muestra en modo predeterminado. Si aún quieres bloquear toda la publicidad, puedes <a>desactivar</a> este modo en unos pocos segundos."
   },
   "firstRun_acceptableAdsHeadline": {
     "message": "Ahora se bloqueará la publicidad molesta"
   },
   "firstRun_contributor_credits": {
     "message": "Créditos del contribuyente"
+  },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "Algunos usuarios están experimentando un problema donde esta página se abre cada vez que el navegador es ejecutado. Este problema puede ser resuelto desinstalando y reinstalando Adblock Plus:"
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "Si aún necesitas ayuda, contáctanos en support@adblockplus.org o visita nuestro <a>Centro de Ayuda</a>."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "Abrir la pestaña de Extensiones de tu navegador."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "Localizar Adblock Plus y removerlo."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "Reinstalar Adblock Plus desde <a>adblockplus.org</a>."
   },
   "firstRun_donate": {
     "message": "donar"

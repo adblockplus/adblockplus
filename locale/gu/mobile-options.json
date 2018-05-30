@@ -2,10 +2,52 @@
   "mops_acceptableAds_description": {
     "message": "કેટલાક બિન-કર્કશ જાહેરાત માટે પરવાનગી આપે છે"
   },
+  "mops_acceptableAds_more": {
+    "message": "વધુ શીખો"
+  },
   "mops_action_cancel": {
     "message": "રદ"
   },
+  "mops_enabled_label": {
+    "message": "<strong>$domain$</strong> પર એડબ્લૉક પ્લસને સક્ષમ કરો",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "કૃપા કરી એક શીર્ષક દાખલ કરો"
+  },
+  "mops_error_url": {
+    "message": "કૃપા કરીને URL લિંક દાખલ કરો"
+  },
+  "mops_filterlist_add": {
+    "message": "+ એક ફિલ્ટર સૂચિ ઉમેરો"
+  },
+  "mops_filterlist_add_action": {
+    "message": "+ એક ફિલ્ટર સૂચિ ઉમેરો"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ કસ્ટમ ફિલ્ટર સૂચિ ઉમેરો"
+  },
+  "mops_header": {
+    "message": "એડબ્લોક પ્લસ સેટિંગ્સ"
+  },
+  "mops_subscribe_header": {
+    "message": "કસ્ટમ ફિલ્ટર સૂચિ ઉમેરો"
+  },
+  "mops_subscribe_title": {
+    "message": "ફિલ્ટર યાદી નામ"
+  },
+  "mops_subscribe_url": {
+    "message": "ફિલ્ટર સૂચિ URL"
+  },
   "mops_subscriptions_header": {
     "message": "ફિલ્ટર ઉમેદવારી"
+  },
+  "mops_title": {
+    "message": "એડબ્લોક પ્લસ સેટિંગ્સ"
   }
 }

@@ -1,21 +1,21 @@
 {
   "options_acceptableAds_ads_description_1": {
-    "message": "מודעות מקובלות אינן מציקות ואינן מתנגשות עם התוכן שאתה רואה. <a>קרא עוד אודות קנה-המידה של המודעות המקובלות</a>"
+    "message": "פרסומות מקובלות אינן מציקות ואינן מתנגשות עם התוכן שאתה רואה. <a>קרא עוד אודות קנה־המידה של הפרסומות המקובלות</a>"
   },
   "options_acceptableAds_ads_label": {
-    "message": "התר מודעות מקובלות"
+    "message": "התר פרסומות מקובלות"
   },
   "options_acceptableAds_description": {
-    "message": "מודעות מקובלות הן אינן מודעות פולשניות. הן הקרקע האמצעית בין חסימת מודעות לבין תמיכה בתוכן מקוון מאחר שהן מחוללות רווח לבעלי האתרים."
+    "message": "פרסומות מקובלות הן אינן פרסומות פולשניות. הן הקרקע האמצעית בין חסימת פרסומות לבין תמיכה בתוכן מקוון מאחר שהן מחוללות רווח לבעלי האתרים."
   },
   "options_acceptableAds_dnt_notification": {
-    "message": "<strong>הערה:</strong> האפשרות <strong>אל תעקוב (DNT)</strong> מושבתת בהגדרות הדפדפן שלך. כדי שמאפיין זה יעבוד כראוי, אנא אפשר את <strong>אל תעקוב</strong> הגדרות הדפדפן שלך. <a>גלה כיצד לאפשר אל תעקוב</a>."
+    "message": "<strong>הערה:</strong> האפשרות <strong>אל תעקוב (DNT)</strong> מושבתת בהגדרות הדפדפן שלך. כדי שמאפיין זה יעבוד כראוי, אנא אפשר את <strong>אל תעקוב</strong> בהגדרות הדפדפן שלך. <a>גלה כיצד לאפשר אל תעקוב</a>."
   },
   "options_acceptableAds_header": {
-    "message": "מודעות מקובלות"
+    "message": "פרסומות מקובלות"
   },
   "options_acceptableAds_privacy_label": {
-    "message": "התר רק מודעות ללא מעקב צד-שלישי"
+    "message": "התר רק פרסומות ללא מעקב צד־שלישי"
   },
   "options_advanced_description": {
     "message": "התאם אישית את Adblock Plus, הוסף או הסר רשימות מסננים, צור ותחזק את רשימות המסננים שלך"
@@ -81,7 +81,7 @@
     "message": "הראה התראות שימושיות"
   },
   "options_customize_showNotifications_tooltip": {
-    "message": "כבה את כל ההתראות מ-Adblock Plus."
+    "message": "כבה את כל ההתראות מ־Adblock Plus."
   },
   "options_dialog_about_copyright": {
     "message": ".eyeo GmbH $currentYear$ © זכויות יוצרים",
@@ -132,7 +132,7 @@
     "message": "דוא\"ל:"
   },
   "options_english": {
-    "message": "אַנְגְּלִית"
+    "message": "אנגלית"
   },
   "options_filterList_add": {
     "message": "+ הוסף רשימת מסננים חדשה"
@@ -141,7 +141,7 @@
     "message": "רשימות מסננים"
   },
   "options_filterList_column_status": {
-    "message": "מצב"
+    "message": "מעמד"
   },
   "options_filterList_column_update": {
     "message": "עודכן לאחרונה"
@@ -153,7 +153,7 @@
     "message": "לא הוספת רשימות מסננים כלשהן אל Adblock Plus. רשימות מסננים שאתה מוסיף יופיעו כאן."
   },
   "options_filterList_hours": {
-    "message": "לפני שעות"
+    "message": "שעות קודם לכן"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "נכשל, ביקורת סיכום לא מתאימה"
@@ -171,7 +171,7 @@
     "message": "נכשל, כתובת לא תקפה"
   },
   "options_filterList_minutes": {
-    "message": "לפני דקות"
+    "message": "דקות קודם לכן"
   },
   "options_filterList_now": {
     "message": "זה עתה"
@@ -225,7 +225,7 @@
     "message": "שפה"
   },
   "options_language_tip": {
-    "message": "<strong>עצה:</strong> בחר רק את השפות שאתה צריך. בחירת יותר שפות תאט את חוסם המודעות, ולכן גם את מהירות הגלישה שלך."
+    "message": "<strong>עצה:</strong> בחר רק את השפות שאתה צריך. בחירת יותר שפות תאט את חוסם הפרסומות, ולכן גם את מהירות הגלישה שלך."
   },
   "options_learn_more": {
     "message": "למד עוד"
@@ -252,7 +252,7 @@
     "message": "פרטיות ואבטחה"
   },
   "options_protection_privacy_tooltip": {
-    "message": "הגן על נתוניך האישיים ע\"י הסרת כל צורות המעקב מהאינטרנט כולל אספני מידע."
+    "message": "הגן על פרטיותך מפני ישויות ידועות אשר עלולות לעקוב אחר פעילותך המקוונת ברחבי האתרים בהם אתה מבקר."
   },
   "options_protection_social_tooltip": {
     "message": "צלמיות המדיה החברתית באתרים שאתה מבקר בהם מתירות לרשתות מדיה חברתית לבנות פרופיל שלך על סמך הרגלי גלישתך - אפילו אם אתה לא לוחץ עליהן. הסתרת צלמיות אלו יכולה להגן על הפרופיל שלך."
@@ -264,7 +264,7 @@
     "message": "רוצה תמיכה מהקהילה שלנו? <a>לך אל הפורום</a>"
   },
   "options_social_description": {
-    "message": "יש שאלה או רעיון חדש? אנחנו כאן כדי לעזור."
+    "message": "יש לך שאלה או רעיון חדש? אנחנו כאן כדי לעזור."
   },
   "options_social_title": {
     "message": "שמור על קשר"
@@ -282,10 +282,10 @@
     "message": "עזרה"
   },
   "options_tab_whitelist": {
-    "message": "אתרים ברשימה המותרת"
+    "message": "אתרים ברשימה הלבנה"
   },
   "options_tracking_warning_1": {
-    "message": "שמנו לב ששתי האפשרויות <strong>$tracking$</strong> ו <strong>$acceptableAds$</strong> מאופשרות.",
+    "message": "שמנו לב ששתי האפשרויות <strong>$tracking$</strong> ו־<strong>$acceptableAds$</strong> מאופשרות.",
     "placeholders": {
       "acceptableAds": {
         "content": "$2",
@@ -298,7 +298,7 @@
     }
   },
   "options_tracking_warning_2": {
-    "message": "אנחנו רוצים שתדע שכדי שמפרסמים יציגו לך מודעות ענייניות, <strong>עשוי</strong> להיות מעקב מסוים עם מודעות מקובלות."
+    "message": "אנחנו רוצים שתדע שכדי שמפרסמים יציגו לך פרסומות ענייניות, <strong>עשוי</strong> להיות מעקב מסוים עם פרסומות מקובלות."
   },
   "options_tracking_warning_3": {
     "message": "אם אתה מעדיף פרטיות נוספת, בחר בתיבת הסימון <strong>$acceptableAdsPrivacy$</strong> להלן.",
@@ -316,13 +316,13 @@
     "message": "הוסף אתר"
   },
   "options_whitelist_description": {
-    "message": "כיבית חסימת מודעות באתרים אלו, ולכן תראה בהם מודעות."
+    "message": "כיבית חסימת פרסומות באתרים אלו, ולכן תראה בהם פרסומות."
   },
   "options_whitelist_empty_1": {
     "message": "אין לך אתרים כלשהם ברשימה הלבנה."
   },
   "options_whitelist_empty_2": {
-    "message": "אתרים שאתה בוטח בהם ורוצה להתיר בהם מודעות יופיעו כאן."
+    "message": "אתרים שאתה בוטח בהם ורוצה להתיר בהם פרסומות יופיעו כאן."
   },
   "options_whitelist_notification": {
     "message": "$website$ התווסף לרשימה הלבנה.",

@@ -17,6 +17,21 @@
   "firstRun_contributor_credits": {
     "message": "Спіс распрацоўшчыкаў"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "У некаторых карыстальнікаў гэта старонка адкрываецца пры кожным запуску браўзера. Праблему можа вырашыць выдаленне і паўторнае ўсталяванне Adblock Plus:"
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "Калі вам усё яшчэ патрэбна дапамога, можна напісаць на пошту падтрымкі support@adblockplus.org ці наведаць <a>Даведачны цэнтр (англ.)</a>."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "Адкрыйце ў браўзеры ўкладку «Пашырэнні»."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "Знайдзіце там Adblock Plus і выдаліце яго."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "Усталюйце Adblock Plus з сайта <a>adblockplus.org</a>."
+  },
   "firstRun_donate": {
     "message": "ахвяраваць"
   },

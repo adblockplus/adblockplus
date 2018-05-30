@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "Üdvözli a hibajelentő"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Megjegyzés:</strong> Egy további lap ideiglenesen megnyílik, így az oldal, amelyen tartózkodik, nem érinti a kiadói jelentéstevő."
+  },
   "issueReporter_doneButton_label": {
     "message": "Befejezés"
   },

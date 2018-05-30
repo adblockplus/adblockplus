@@ -1,18 +1,141 @@
 {
+  "options_acceptableAds_ads_description_1": {
+    "message": "સ્વીકાર્ય જાહેરાતો નકામી નથી અને તમે જોઈ રહ્યાં છો તે સામગ્રીમાં દખલ ન કરો <a> સ્વીકાર્ય જાહેરાત માનકો વિશે વધુ વાંચો </a>"
+  },
+  "options_acceptableAds_ads_label": {
+    "message": "સ્વીકાર્ય જાહેરાતોને મંજૂરી આપો"
+  },
+  "options_acceptableAds_description": {
+    "message": "સ્વીકાર્ય જાહેરાતો બિન કર્કશ જાહેરાતો છે તેઓ જાહેરાત અવરોધિત અને સહાયક ઑનલાઇન સામગ્રી વચ્ચે મધ્યમ જમીન છે કારણ કે તેઓ વેબસાઇટ માલિકો માટે આવક પેદા કરે છે."
+  },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>નૉૅધ;</strong>તમારી પાસે છે<strong>ટ્રેક કરશો નહીં (ડીએનટી)</strong>તમારી બ્રાઉઝર સેટિંગ્સમાં અક્ષમ કરેલું છે આ સુવિધાને યોગ્ય રીતે કામ કરવા માટે, કૃપા કરીને સક્ષમ કરો <strong>ડીએનટી</strong>તમારા બ્રાઉઝર પસંદગીઓમાં <a>ડીએનટી ને કેવી રીતે સક્ષમ કરવું તે શોધો</a>."
+  },
   "options_acceptableAds_header": {
     "message": "સ્વીકાર્ય જાહેરાતો"
+  },
+  "options_acceptableAds_privacy_label": {
+    "message": "માત્ર તૃતીય-પક્ષ ટ્રૅકિંગ વગર જાહેરાતોને મંજૂરી આપો"
+  },
+  "options_advanced_description": {
+    "message": "એડબ્લોક પ્લસને કસ્ટમાઇઝ કરો, ફિલ્ટર યાદીઓ ઍડ કરો અથવા દૂર કરો, તમારી પોતાની ફિલ્ટર યાદીઓ બનાવો અને જાળવો"
   },
   "options_close": {
     "message": "બંધ"
   },
+  "options_control_remove_title": {
+    "message": "દુર કરો"
+  },
   "options_customFilter_cancel": {
     "message": "રદ"
+  },
+  "options_customFilter_edit": {
+    "message": "ફિલ્ટર્સ સંપાદિત કરો"
+  },
+  "options_customFilter_save": {
+    "message": "સાચવો"
+  },
+  "options_customFilters_description": {
+    "message": "સામગ્રી એડબ્લોક પ્લસ દ્વારા પરવાનગી આપે છે અથવા બ્લોકો શું નિયંત્રિત કરવા માટે તમારા પોતાના કસ્ટમ ફિલ્ટર્સ લખો."
+  },
+  "options_customFilters_edit_placeholder": {
+    "message": "ઉદાહરણ $filter$",
+    "placeholders": {
+      "filter": {
+        "content": "$1",
+        "example": "/ads/track/*"
+      }
+    }
+  },
+  "options_customFilters_learn": {
+    "message": "ફિલ્ટર યાદીઓ કેવી રીતે લખવા તે જાણો"
+  },
+  "options_customFilters_start": {
+    "message": "મારી ફિલ્ટર સૂચિ લખવાનું પ્રારંભ કરો"
+  },
+  "options_customFilters_tip": {
+    "message": "તમે બનાવો છો તે ફિલ્ટર્સ અહીં દેખાશે."
+  },
+  "options_customFilters_title": {
+    "message": "તમારી ફિલ્ટર સૂચિ બનાવો અને સંપાદિત કરો"
+  },
+  "options_customFilters_widget_title": {
+    "message": "મારી ફિલ્ટર સૂચિ"
+  },
+  "options_customize_blockElement": {
+    "message": "'બ્લોક તત્વ' રાઇટ-ક્લિક મેનુ આઇટમ બતાવો"
+  },
+  "options_customize_blockElement_tooltip": {
+    "message": "વેબપેજ પર કામચલાઉ વસ્તુઓને અસ્થાયી ધોરણે બ્લૉક કરો, દા.ત. છબીઓ અથવા એનિમેટેડ સ્લાઇડશૉઝ."
+  },
+  "options_customize_header": {
+    "message": "ઑન-પૃષ્ઠ ક્રિયાઓ કસ્ટમાઇઝ કરો"
+  },
+  "options_customize_showDevToolsPanel": {
+    "message": "વિકાસકર્તા સાધનોમાં 'એડબ્લોક પ્લસ' પેનલ દર્શાવો"
+  },
+  "options_customize_showDevToolsPanel_tooltip": {
+    "message": "તમારા બ્રાઉઝરનાં વિકાસકર્તા ટૂલ્સ પેનલમાંથી અવરોધિત અને વ્હાઇટલિસ્ટ કરેલ આઇટમ્સ જુઓ."
   },
   "options_customize_showNotifications": {
     "message": "ઉપયોગી અને સૂચનાઓ બતાવો"
   },
+  "options_customize_showNotifications_tooltip": {
+    "message": "એડબ્લોક પ્લસથી બધી સૂચનાઓ બંધ કરો."
+  },
+  "options_dialog_about_copyright": {
+    "message": "કૉપિરાઇટ © $currentYear$ eyeo GmbH.",
+    "placeholders": {
+      "currentYear": {
+        "content": "2017",
+        "example": "2017"
+      }
+    }
+  },
+  "options_dialog_about_title": {
+    "message": "એડબ્લોક પ્લસ વિશે"
+  },
+  "options_dialog_about_trademark": {
+    "message": "બધા હકો અમારી પાસે રાખેલા છે. એડબ્લોક પ્લસ® eyeo GmbH રજિસ્ટર્ડ ટ્રેડમાર્ક છે."
+  },
+  "options_dialog_about_version": {
+    "message": "સંસ્કરણ નંબર $version$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "2.6.7"
+      }
+    }
+  },
+  "options_dialog_import_subscription_location": {
+    "message": "ફિલ્ટર સૂચિ URL"
+  },
+  "options_dialog_import_subscription_location_error": {
+    "message": "એક માન્ય URL દાખલ કરો"
+  },
+  "options_dialog_import_title": {
+    "message": "એક ફિલ્ટર સૂચિ ઉમેરો"
+  },
+  "options_dialog_language_other_empty": {
+    "message": "ત્યાં કોઈ ઉપલબ્ધ ભાષાઓ નથી."
+  },
+  "options_dialog_language_title": {
+    "message": "કોઈ ભાષા પસંદ કરો"
+  },
+  "options_dialog_predefined_confirm": {
+    "message": "હા, આ ફિલ્ટર સૂચિનો ઉપયોગ કરો"
+  },
+  "options_dialog_predefined_title": {
+    "message": "શું તમે ખરેખર આ ફિલ્ટર સૂચિને ઉમેરવા માંગો છો?"
+  },
   "options_email": {
     "message": "ઇમેઇલ:"
+  },
+  "options_english": {
+    "message": "અંગ્રેજી"
+  },
+  "options_filterList_add": {
+    "message": "+ નવી ફિલ્ટર સૂચિ ઉમેરો"
   },
   "options_filterList_column_name": {
     "message": "ફિલ્ટરની લીસ્ટ"
@@ -20,14 +143,44 @@
   "options_filterList_column_status": {
     "message": "સ્થિત"
   },
+  "options_filterList_column_update": {
+    "message": "છેલ્લે અપડેટ કર્યું"
+  },
+  "options_filterList_description": {
+    "message": "દરેક એડબ્લોક પ્લસ સેટિંગ વિધેયો કારણ કે એક ફિલ્ટર યાદી. નીચે તમારા એડબ્લોક પ્લસ સેટિંગ્સને અનુરૂપ ફિલ્ટર યાદીઓ છે. અમારા વિશ્વસનીય સમુદાય દ્વારા બનાવવામાં અને જાળવવામાં આવેલા વધારાના ફિલ્ડ્સને તમે પણ ઉમેરી શકો છો."
+  },
+  "options_filterList_empty": {
+    "message": "તમે ઍડબ્લૉક પ્લસમાં કોઈપણ ફિલ્ટર યાદીઓ ઉમેર્યા નથી. ફિલ્ટર યાદીઓ તમે ઉમેરે છે અહીં બતાવવામાં આવશે."
+  },
+  "options_filterList_hours": {
+    "message": "કલાકો પહેલા"
+  },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "નિષ્ફળ, checksum મેળ ખાતી નથી"
   },
   "options_filterList_lastDownload_connectionError": {
     "message": "નિષ્ફળ થયું, ડાઉનલોડ નિષ્ફળ થયું"
   },
+  "options_filterList_lastDownload_inProgress": {
+    "message": "અપડેટ કરી રહ્યું છે"
+  },
+  "options_filterList_lastDownload_invalidData": {
+    "message": "નિષ્ફળ થયું, માન્ય ફિલ્ટર સૂચિ નથી"
+  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "નિષ્ફળ થયું, માન્ય સરનામું નથી"
+  },
+  "options_filterList_minutes": {
+    "message": "મીનીટ પહેલા"
+  },
+  "options_filterList_now": {
+    "message": "હમણાજ"
+  },
+  "options_filterList_source": {
+    "message": "સ્રોત"
+  },
+  "options_filterList_state_active": {
+    "message": "સક્રિય"
   },
   "options_filterList_state_disabled": {
     "message": "અક્ષમ"
@@ -35,16 +188,155 @@
   "options_filterList_title": {
     "message": "ફિલ્ટરની લીસ્ટ"
   },
+  "options_filterList_update": {
+    "message": "તમામ ફિલ્ટર યાદીઓને અપડેટ કરો"
+  },
   "options_filterList_updateNow": {
     "message": "અપડેટ કરો"
   },
+  "options_filterList_website": {
+    "message": "વેબસાઇટ"
+  },
+  "options_footer_about": {
+    "message": "એડબ્લોક પ્લસ વિશે"
+  },
+  "options_footer_contribute": {
+    "message": "ફાળો આપો"
+  },
+  "options_general_description": {
+    "message": "વેબસાઇટ્સ પર એડબ્લોક પ્લસ શો અને છુપાવે છે તે નક્કી કરો"
+  },
+  "options_help_description": {
+    "message": "મદદ શોધો અથવા અમારો સંપર્ક કરો"
+  },
+  "options_language_add": {
+    "message": "+ એક ભાષા ઉમેરો"
+  },
+  "options_language_change": {
+    "message": "ફેરફાર"
+  },
+  "options_language_description": {
+    "message": "ભાષા (ઓ) માટે એડબ્લૉક પ્લસ ઑપ્ટિમાઇઝ કરો તમે સામાન્ય રીતે વેબસાઇટ્સને બ્રાઉઝ કરો છો."
+  },
+  "options_language_empty": {
+    "message": "તમારી પાસે કોઈપણ ભાષા-વિશિષ્ટ ફિલ્ટર્સ નથી."
+  },
+  "options_language_header": {
+    "message": "ભાષા"
+  },
+  "options_language_tip": {
+    "message": "<strong>સંકેત:</strong>માત્ર તમને જરૂરી ભાષાઓ પસંદ કરો વધુ પસંદ કરવાથી જાહેરાત અવરોધક ધીમું હશે અને, તેથી, તમારી બ્રાઉઝિંગ ગતિ."
+  },
+  "options_learn_more": {
+    "message": "વધુ શીખો"
+  },
+  "options_more_filters_description": {
+    "message": "આ એડબ્લૉકલ પ્લસમાં અગાઉ ઉમેરાયેલા વધારાના ફિલ્ટર્સ છે."
+  },
+  "options_more_filters_header": {
+    "message": "વધુ ફિલ્ટર્સ"
+  },
+  "options_more_filters_note": {
+    "message": "<strong>નૉૅધ:</strong>તમારે ફક્ત લેખકોની તૃતીય પક્ષ ફિલ્ટર સૂચિનો ઉપયોગ કરવો જોઈએ જે તમે વિશ્વાસ કરો છો."
+  },
+  "options_new_label": {
+    "message": "નવું"
+  },
+  "options_page_document_title": {
+    "message": "એડબ્લોક પ્લસ વિકલ્પો"
+  },
+  "options_page_title": {
+    "message": "સેટિંગ્સ"
+  },
+  "options_privacy_header": {
+    "message": "ગોપનીયતા અને સુરક્ષા"
+  },
+  "options_protection_social_tooltip": {
+    "message": "તમે મુલાકાત લો છો તે વેબસાઇટ્સ પરની સોશિયલ મીડિયા ચિહ્નો સામાજિક મીડિયા નેટવર્ક્સને તમારી બ્રાઉઝિંગ ધુમ્રપાન પર આધારિત તમારી પ્રોફાઇલ બનાવવા માટે આવે છે - ત્યારે પણ તમે તેમના પર ક્લિક ન કરો ત્યારે. આ ચિહ્નોને છુપાવી તમારી પ્રોફાઇલને સુરક્ષિત કરી શકે છે."
+  },
+  "options_report_bug": {
+    "message": "ભૂલ મળી?<a>અમને બગ રિપોર્ટ મોકલો</a>"
+  },
+  "options_report_forum": {
+    "message": "અમારા સમુદાય તરફથી સપોર્ટ જોઈએ છે? <a>ફોરમ પર જાઓ</a>"
+  },
+  "options_social_description": {
+    "message": "પ્રશ્ન અથવા નવો વિચાર છે? અમે મદદ કરવા માટે અહીં છીએ."
+  },
+  "options_social_title": {
+    "message": "સંપર્કમાં રહેવા"
+  },
   "options_support_title": {
     "message": "આધાર"
+  },
+  "options_tab_advanced": {
+    "message": "અદ્યતન"
   },
   "options_tab_general": {
     "message": "સામાન્ય"
   },
   "options_tab_help": {
     "message": "મદદ"
+  },
+  "options_tab_whitelist": {
+    "message": "વ્હાઇટલિસ્ટ વેબસાઇટ્સ"
+  },
+  "options_tracking_warning_1": {
+    "message": "અમે નોંધ્યું છે કે તમારી પાસે બંને છે<strong>$tracking$</strong>અને<strong>$acceptableAds$</strong>સક્ષમ.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "અમે તમને જણાવવા માગીએ છીએ કે જાહેરાતકર્તાઓ તમને વધુ સંબંધિત જાહેરાતો બતાવવા માટે ક્રમમાં આવે છે, ત્યાં <strong> શકે છે </strong> સ્વીકાર્ય જાહેરાતો સાથે કેટલાક ટ્રેકિંગ હોઈ શકે છે."
+  },
+  "options_tracking_warning_3": {
+    "message": "જો તમે વધારાની ગોપનીયતા પસંદ કરો છો, તો પસંદ કરો<strong>$acceptableAdsPrivacy$</strong> ચેકબૉક્સ નીચે.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "બરાબર, મળ્યું"
+  },
+  "options_whitelist_add": {
+    "message": "વેબસાઇટ ઉમેરો"
+  },
+  "options_whitelist_description": {
+    "message": "તમે આ વેબસાઇટ્સ પર જાહેરાત અવરોધિત કરવાનું ચાલુ કર્યું છે અને તેથી, તેમના પરની જાહેરાતો જોવા મળશે."
+  },
+  "options_whitelist_empty_1": {
+    "message": "તમારી પાસે કોઈપણ વ્હાઇટલિસ્ટ વેબસાઇટ્સ નથી."
+  },
+  "options_whitelist_empty_2": {
+    "message": "તમે જે વેબસાઇટ્સ પર વિશ્વાસ કરો છો અને જાહેરાતોને પરવાનગી આપવા માંગો છો તે અહીં બતાવવામાં આવશે."
+  },
+  "options_whitelist_notification": {
+    "message": "$website$ વ્હાઇટલિસ્ટેડ કરવામાં આવ્યું છે.",
+    "placeholders": {
+      "website": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "options_whitelist_placeholder_example": {
+    "message": "ઉદાહરણ માટે $domain$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
   }
 }

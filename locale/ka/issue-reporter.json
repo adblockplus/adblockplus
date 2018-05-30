@@ -1,8 +1,83 @@
 {
+  "issueReporter_anonymousSubmission_label": {
+    "message": "გადაგზავნა ვინაობის გაუცხადებლად"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "ჩვენ ვერ შევძლებთ თქვენთან დაკავშირებას და შესაბამისად, ნაკლები ყურადღება მიექცევა თქვენს მოხსენებას."
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "შეიყვანეთ შენიშვნა"
+  },
+  "issueReporter_comment_description": {
+    "message": "ქვემოთ მოცემულ ველში შეგიძლიათ დაამატოთ შენიშვნა, ხარვეზის უკეთ აღსაწერად. სავალდებულო არაა, თუმცა სასურველია, თუ ხარვეზი არაა ადვილად შესამჩნევი. ასევე, შეგიძლიათ გადახედოთ მოხსენების მონაცემებს, გადაგზავნამდე."
+  },
+  "issueReporter_comment_label": {
+    "message": "შენიშვნა (არასავალდებულო):"
+  },
+  "issueReporter_comment_lengthWarning": {
+    "message": "თქვენი კომენტარი აჭარბებს 1000 სიმბოლოს. მხოლოდ, პირველი 1000 სიმბოლო გადაიგზავნება."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "თქვენი მოხსენება შენახულია. მასზე წვდომისთვის გამოიყენეთ შემდეგი მისამართი:"
+  },
+  "issueReporter_dataCollector_description": {
+    "message": "გთხოვთ, მოითმინოთ რამდენიმე წამი, სანამ Adblock Plus შეაგროვებს საჭირო მონაცემებს."
+  },
+  "issueReporter_dataCollector_heading": {
+    "message": "მოგესალმებით, ხარვეზის მომხსენებლის გვერდზე"
+  },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>შენიშვნა:</strong> დროებით გაიხსნება დამატებითი ახალი ჩანართი, ასე რომ, გვერდს რომელსაც სტუმრობთ, არაფერი შეეხება ხარვეზების მომხსენებლის გამოყენებისას."
+  },
   "issueReporter_doneButton_label": {
     "message": "მზადაა"
   },
+  "issueReporter_email_description": {
+    "message": "ჩვენ გირჩევთ მიუთითოთ მოქმედი ელფოსტის მისამართი, რომ შევძლოთ თქვენთან დაკავშირება კითხვების არსებობის შემთხვევაში თქვენს საკითხთან დაკავშირებით. ასევე, ეს საშუალებას მოგვცემს გამოვარჩიოთ თქვენ მიერ შეტანილი წვლილი და მეტი ყურადღება გამოვიჩინოთ."
+  },
+  "issueReporter_email_label": {
+    "message": "ელფოსტა:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "მოხსენების გაგზავნა ვერ მოხერხდა შეცდომის გამო: \"?1?\". გთხოვთ, დარწმუნდეთ რომ დაკავშირებული ხართ ინტერნეტთან და სცადეთ ხელახლა. თუ ხარვეზი არ გამოსწორდება, დახმარებისთვის ეწვიეთ [link]Adblock Plus ფორუმს[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "მიუთითეთ ეს, თუ რეკლამა ჩანს მიუხედავად იმისა, რომ Adblock Plus ჩართულია."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Adblock Plus არ ზღუდავს რეკლამას"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "მიუთითეთ ეს, თუ გვერდზე შეზღუდულია მნიშვნელოვანი შიგთავსი, გამოსახულია არასწორად ან ვერ მუშაობს გამართულად. შეგიძლიათ დაადგინოთ Adblock Plus იწვევს თუ არა ამ ხარვეზს, მისი დროებით გამორთვით."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Adblock Plus ზღუდავს ზედმეტად"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "ხარვეზი, რომლის შესახებაც მოგვახსენეთ, შესაძლოა უკვე აღმოფხვრილი იყოს. ვრცლად, იხილეთ:"
+  },
+  "issueReporter_page_title": {
+    "message": "ხარვეზის მომხსენებელი"
+  },
   "issueReporter_privacyPolicy": {
-    "message": "კონფიდენციალურობის პოლიტიკა"
+    "message": "პირადულობის დაცვის დებულება"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "მოხსენების გაგზავნა"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "მოხსენების გაგზავნა"
+  },
+  "issueReporter_sending": {
+    "message": "გთხოვთ, მოითმინოთ, სანამ Adblock Plus გადააგზავნის თქვენს მოხსენებას."
+  },
+  "issueReporter_showData_label": {
+    "message": "მოხსენების მონაცემების ჩვენება"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "ეს ფანჯარა გაგიძღვებათ Adblock Plus-სთან დაკავშირებული ხარვეზების შესახებ მოხსენებების გასაგზავნად. თავდაპირველად, მიუთითეთ, თუ რა სახის ხარვეზს გადააწყდით ამ გვერდზე:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "მიუთითეთ, რა სახის ხარვეზია"
   }
 }

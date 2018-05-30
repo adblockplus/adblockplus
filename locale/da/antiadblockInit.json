@@ -1,8 +1,8 @@
 {
   "notification_antiadblock_message": {
-    "message": "Denne side er kendt for målrettede beskeder til Adblock Plus brugere. Skal Adblock Plus skjule disse beskeder ?"
+    "message": "Denne side er kendt for målrettede meddelelser til Adblock Plus-brugere. Skal Adblock Plus skjule disse meddelelser?"
   },
   "notification_antiadblock_title": {
-    "message": "Skjul målrettede beskeder ?"
+    "message": "Skjul målrettede meddelelser?"
   }
 }

@@ -1,9 +1,18 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Dispoñible para Android e iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Obtén aquí Adblock Browser"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Tes unha tablet ou teléfono intelixente?"
+  },
   "firstRun_acceptableAdsExplanation": {
-    "message": "Queremos animar ás páxinas web para que empreguen a publicidade dun xeito mais directo e non invasivo. É polo que fixemos unhas <a>regras moi estrictas</a> co fin de identificar a publicidade aceptable, a cal é mostrada coas opcións por defecto. Se aínda queres bloquear tódala publicidade, podes <a>desactivar</a> isto deseguido."
+    "message": "Queremos animar ás páxinas web para que empreguen a publicidade dun xeito mais directo e non invasivo. É polo que fixemos unhas <a>regras moi estritas</a> co fin de identificar a publicidade aceptable, que se mostra coas opcións predefinidas. Se aínda queres bloquear toda a publicidade, podes <a>desactivar</a> isto nuns segundos."
   },
   "firstRun_acceptableAdsHeadline": {
-    "message": "A partir de agora os anuncios anoxantes seranche bloqueados"
+    "message": "A partir de agora bloquearanse os anuncios molestos"
   },
   "firstRun_contributor_credits": {
     "message": "Coa colaboración de..."
@@ -12,18 +21,18 @@
     "message": "fai unha doazón"
   },
   "firstRun_donate_label": {
-    "message": "Apoia ó noso proxecto"
+    "message": "Apoia o noso proxecto"
   },
   "firstRun_filterlistsReinitializedWarning": {
-    "message": "Semella que un problema facía que tódolos filtros fosen borrados e imposibles de restaurar. Polo tanto, tivemos que resetear os filtros e a configuración da \"Publicidade Aceptable\". Por favor bótalle un ollo á tua lista de filtros e á configuración de \"Publicidade Aceptable\" nas  <a>opcións do Adblock Plus</a>."
+    "message": "Semella que un problema provocaba que todos os filtros fosen eliminados e imposibles de restaurar. Por tanto, tivemos que restablecer os teus filtros e a configuración dos Anuncios aceptables. Por favor, bótalle un ollo á tua listaxe de filtros e aos axustes de Anuncios aceptables nas <a>opcións de Adblock Plus</a>."
   },
   "firstRun_share": {
-    "message": "Cóntalle ós teus amigos"
+    "message": "Díllelo ás túas amizades"
   },
   "firstRun_share_headline": {
     "message": "<a>Bótanos unha man</a> para facer da rede un sitio mellor"
   },
   "firstRun_title": {
-    "message": "O Adblock Plus foiche instalado"
+    "message": "Adblock Plus foi instalado"
   }
 }

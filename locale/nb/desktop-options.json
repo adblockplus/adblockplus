@@ -80,14 +80,23 @@
   "options_language_header": {
     "message": "Språk"
   },
+  "options_learn_more": {
+    "message": "Få mer informasjon"
+  },
   "options_more_filters_header": {
     "message": "Flere filtre"
+  },
+  "options_new_label": {
+    "message": "Ny"
   },
   "options_page_document_title": {
     "message": "Innstillinger"
   },
   "options_page_title": {
     "message": "Innstillinger"
+  },
+  "options_privacy_header": {
+    "message": "Personvern & sikkerhet"
   },
   "options_social_description": {
     "message": "Har du et spørsmål eller en ny idé? Vi er her for å hjelpe."
@@ -110,8 +119,29 @@
   "options_tab_whitelist": {
     "message": "Hvitelistede nettsteder"
   },
+  "options_tracking_warning_acknowledgment": {
+    "message": "Ok, skjønner"
+  },
   "options_whitelist_add": {
     "message": "Legg til nettsted"
+  },
+  "options_whitelist_description": {
+    "message": "Du har slått av blokkering av annonser på disse nettstedene, og vil derfor se annonser på dem."
+  },
+  "options_whitelist_empty_1": {
+    "message": "Du har ingen hvitelistede nettsteder."
+  },
+  "options_whitelist_empty_2": {
+    "message": "Nettsteder du stoler på og ønsker å tillate annonser på vil bli vist her."
+  },
+  "options_whitelist_notification": {
+    "message": "\"$website$\" har blitt hvitelistet.",
+    "placeholders": {
+      "website": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
   },
   "options_whitelist_placeholder_example": {
     "message": "f.eks $domain$",

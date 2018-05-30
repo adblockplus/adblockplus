@@ -17,6 +17,21 @@
   "firstRun_contributor_credits": {
     "message": "Contributori"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "Unii utilizatori se confruntă cu problema deschiderii acestei pagine de fiecare datã când browser-ul este deschis. Această problemă poate fi rezolvatã prin dezinstalarea şi reinstalarea Adblock Plus:"
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "Dacă încă mai aveţi nevoie de ajutor, contactaţi-ne la support@adblockplus.org sau vizitaţi <a>centrul de ajutor</a>."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "Deschideți pagina de extensii din browser-ul dumneavoastră."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "Localizaţi Adblock Plus şi dezinstalaţi-l."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "Reinstalaţi Adblock Plus de pe site-ul <a>adblockplus.org</a>."
+  },
   "firstRun_donate": {
     "message": "donaţi"
   },

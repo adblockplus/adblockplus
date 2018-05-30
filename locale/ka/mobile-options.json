@@ -1,11 +1,53 @@
 {
   "mops_acceptableAds_description": {
-    "message": "ზოგიერთი რეკლამის დაშვება"
+    "message": "ზოგიერთი არაგამაღიზიანებელი რეკლამის დაშვება"
+  },
+  "mops_acceptableAds_more": {
+    "message": "ვრცლად"
   },
   "mops_action_cancel": {
     "message": "გაუქმება"
   },
+  "mops_enabled_label": {
+    "message": "Adblock Plus-ის ჩართვა საიტზე <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "გთხოვთ, მიუთითოთ სახელი"
+  },
+  "mops_error_url": {
+    "message": "გთხოვთ, მიუთითოთ URL ბმული"
+  },
+  "mops_filterlist_add": {
+    "message": "+ ფილტრის დამატება"
+  },
+  "mops_filterlist_add_action": {
+    "message": "ფილტრის დამატება"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ საკუთარი ფილტრის დამატება"
+  },
+  "mops_header": {
+    "message": "Adblock Plus-ის პარამეტრები"
+  },
+  "mops_subscribe_header": {
+    "message": "საკუთარი ფილტრის დამატება"
+  },
+  "mops_subscribe_title": {
+    "message": "ფილტრის დასახელება"
+  },
+  "mops_subscribe_url": {
+    "message": "ფილტრის URL ბმული"
+  },
   "mops_subscriptions_header": {
     "message": "ფილტრის გამოწერა"
+  },
+  "mops_title": {
+    "message": "Adblock Plus-ის პარამეტრები"
   }
 }

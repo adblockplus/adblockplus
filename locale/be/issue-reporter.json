@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "Вітаем у майстры стварэння справаздач"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Нататка:</strong> Часова адкрыецца дадатковая ўкладка, таму праблемная старонка не паўплывае на адпраўку справаздачы."
+  },
   "issueReporter_doneButton_label": {
     "message": "Гатова"
   },

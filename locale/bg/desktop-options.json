@@ -1,12 +1,15 @@
 {
   "options_acceptableAds_ads_description_1": {
-    "message": "Приемливите реклами не досаждат и не закриват разглежданото съдържание. <a>Повече за критериите на Приемливи реклами</a>"
+    "message": "Приемливи реклами не досаждат и не пречат на съдържанието. <a>Прочети повече за приемливо реклами критерии</a>"
   },
   "options_acceptableAds_ads_label": {
     "message": "Позволи Приемливи реклами"
   },
   "options_acceptableAds_description": {
-    "message": "Приемливите реклами са ненатрапчиви. Заемат място по средата между блокираната реклама и спонсорското съдържание, защото генерират приходи за собствениците на сайта."
+    "message": "Приемливите реклами са ненатрапчиви. Нещо средно между блокирана реклама и спонсорско съдържание, защото генерират приходи за собствениците на сайта."
+  },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>Забележка:</strong> <strong>Искай неследене (DNT)</strong> е забранена във вашия браузър. За правилна работа на функцията, моля, разрешете <strong>DNT</strong> в настройките на браузъра. <a>Как да разрешите DNT</a>."
   },
   "options_acceptableAds_header": {
     "message": "Приемливи реклами"
@@ -31,6 +34,9 @@
   },
   "options_customFilter_save": {
     "message": "Запиши"
+  },
+  "options_customFilters_description": {
+    "message": "Написани от вас собствени филтри за последващ контрол над позволеното или блокирано съдържание от Adblock Plus."
   },
   "options_customFilters_edit_placeholder": {
     "message": "например $filter$",
@@ -126,7 +132,7 @@
     "message": "Е-поща:"
   },
   "options_english": {
-    "message": "англи́йски"
+    "message": "английски"
   },
   "options_filterList_add": {
     "message": "+ Добави нов филтър"
@@ -140,8 +146,14 @@
   "options_filterList_column_update": {
     "message": "Обновяване"
   },
+  "options_filterList_description": {
+    "message": "Зад всяка настройка в Adblock Plus стои филтър. По-долу са филтрите, отговарящи за всяка от настройките на вашия Adblock Plus. Можете да добавите допълнителни филтри, създадени и поддържани от доверената ни общност."
+  },
+  "options_filterList_empty": {
+    "message": "Няма добавени филтри към Adblock Plus. Тези които добавите ще се покажат тук."
+  },
   "options_filterList_hours": {
-    "message": "преди $hours$ часа"
+    "message": "преди часа"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Провалено — несъвпадаща контролна сума!"
@@ -159,7 +171,7 @@
     "message": "Провалено — недействителен адрес!"
   },
   "options_filterList_minutes": {
-    "message": "преди $minutes$ минути"
+    "message": "преди минути"
   },
   "options_filterList_now": {
     "message": "току-що"
@@ -191,11 +203,20 @@
   "options_footer_contribute": {
     "message": "Съдействай"
   },
+  "options_general_description": {
+    "message": "Определяне какво Adblock Plus показва и скрива в сайтовете"
+  },
+  "options_help_description": {
+    "message": "Намиране на помощ или свързване с нас"
+  },
   "options_language_add": {
     "message": "+ добави език"
   },
   "options_language_change": {
     "message": "промени"
+  },
+  "options_language_description": {
+    "message": "Фина настройка в Adblock Plus за езиците на най-често разглежданите от вас сайтове."
   },
   "options_language_empty": {
     "message": "Нямате езикозависещи филтри."
@@ -209,8 +230,14 @@
   "options_learn_more": {
     "message": "Повече"
   },
+  "options_more_filters_description": {
+    "message": "Добавените от вас допълнителни филтри към Adblock Plus."
+  },
   "options_more_filters_header": {
     "message": "Още филтри"
+  },
+  "options_more_filters_note": {
+    "message": "<strong>Забележка:</strong> Ползвайте филтри от трета страна само от автори, на които доверявате."
   },
   "options_new_label": {
     "message": "Ново"
@@ -225,13 +252,19 @@
     "message": "Поверителност и сигурност"
   },
   "options_protection_privacy_tooltip": {
-    "message": "Защита на личните ви данни чрез премахване на всички видове проследяване, в т.ч. събирачите на информация."
+    "message": "Защита на личните данни от компании, за които е известно, че проследяват вашата активност в мрежата през посещаваните от вас сайтове."
   },
   "options_protection_social_tooltip": {
-    "message": "Социалните бутони позволяват на социалните мрежи да съставят, според посетените от вас сайтове, профил на вашите навици на сърфиране, дори когато не ги натискате. Скриването им ще ви предпази от това."
+    "message": "Социалните бутони позволяват на социалните мрежи да съставят, според посетените сайтове, профил на вашите навици на сърфиране, дори когато не ги натискате. Скриването им ви предпазва от това."
   },
   "options_report_bug": {
     "message": "Открихте грешка? <a>Изпратете ни доклад за грешка</a>"
+  },
+  "options_report_forum": {
+    "message": "Трябва ви поддръжка от общността? <a>Преминете към форума</a>"
+  },
+  "options_social_description": {
+    "message": "Имате въпрос или предложение? Тук сме, за да ви помогнем."
   },
   "options_social_title": {
     "message": "Връзка с нас"
@@ -251,11 +284,39 @@
   "options_tab_whitelist": {
     "message": "Изключения"
   },
+  "options_tracking_warning_1": {
+    "message": "При вас както <strong>$tracking$</strong>, така и <strong>$acceptableAds$</strong> е разрешена.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "Добре е да знаете, че за показ на по-подходящи реклами от рекламодателите, при Приемливи реклами <strong>може</strong> да има определено проследяване."
+  },
+  "options_tracking_warning_3": {
+    "message": "Ако предпочитате екстра неприкосновеност, поставете отметка пред <strong>$acceptableAdsPrivacy$</strong> по-долу.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
   "options_tracking_warning_acknowledgment": {
     "message": "ДА, ясно"
   },
   "options_whitelist_add": {
     "message": "Добави сайт"
+  },
+  "options_whitelist_description": {
+    "message": "Блокирането е изключено за сайтовете и следователно в тях ще виждате реклами."
   },
   "options_whitelist_empty_1": {
     "message": "Нямате изключени сайтове."

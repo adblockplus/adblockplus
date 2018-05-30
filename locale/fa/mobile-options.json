@@ -2,8 +2,29 @@
   "mops_acceptableAds_description": {
     "message": "اجازه دادن به تبلیغات ناخواسته"
   },
+  "mops_acceptableAds_more": {
+    "message": "اطلاعات بیشتر"
+  },
   "mops_action_cancel": {
     "message": "لغو"
+  },
+  "mops_enabled_label": {
+    "message": "Adblock Plus را در <strong>$domain$</strong> فعال کنید",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "لطفا عنوان را وارد کنید"
+  },
+  "mops_error_url": {
+    "message": "لطفا آدرس URL را وارد کنید"
+  },
+  "mops_filterlist_add": {
+    "message": "+ یک لیست فیلتر اضافه کنید"
   },
   "mops_subscriptions_header": {
     "message": "فیلتر زیرنوشت ها"

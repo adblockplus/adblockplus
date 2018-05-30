@@ -1,0 +1,17 @@
+{
+  "common_feature_anti_adblock_title": {
+    "message": "Skjul Adblock Advarsler"
+  },
+  "common_feature_malware_title": {
+    "message": "Blokker Malware"
+  },
+  "common_feature_privacy_title": {
+    "message": "Blokker ytterligere sporing"
+  },
+  "common_feature_social_title": {
+    "message": "Blokker sporing av ikoner for sosiale medier"
+  },
+  "common_notification_hide": {
+    "message": "Lukk påminnelse"
+  }
+}

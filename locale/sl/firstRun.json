@@ -17,6 +17,21 @@
   "firstRun_contributor_credits": {
     "message": "Zasluge prispevajočih"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "Nekateri uporabniki naletijo na težavo, kjer se ta stran odpre vsakič, ko zaženejo brskalnik. To težavo lahko odpravite z odstranitvijo in ponovno namestitvijo dodatka Adblock Plus:"
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "Če še vedno potrebujete pomoč, nam pišite na support@adblockplus.org ali obiščite naše <a>središče za pomoč</a>."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "Odprite zavihek brskalnika z razširitvami."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "Poiščite Adblock Plus in ga odstranite."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "Ponovno namestite Adblock Plus iz <a>adblockplus.org</a>."
+  },
   "firstRun_donate": {
     "message": "prispevajte"
   },
