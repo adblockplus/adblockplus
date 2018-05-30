@@ -1,0 +1,93 @@
+/*
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-present eyeo GmbH
+ *
+ * Adblock Plus is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Adblock Plus is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+io-steps
+{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+/* this element is used only to decorate via horizontal line */
+io-steps::before
+{
+  position: absolute;
+  z-index: -1;
+  content: ' ';
+  top: calc(0.6rem + 12px);
+  width: 100%;
+  height: 1px;
+  font-size: 1px;
+  line-height: 1px;
+  background-color: #bcbcbc;
+}
+
+io-steps button
+{
+  border: 0;
+  outline: none;
+  color: #077ca7;
+  background: #f3f3f3;
+}
+
+io-steps button::before
+{
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: auto;
+  content: attr(data-value);
+  font-weight: normal;
+  font-size: 0.8rem;
+  line-height: 24px;
+  color: #fafbfd;
+  background-color: #077ca7;
+  border-radius: 12px;
+}
+
+io-steps button:disabled::before
+{
+  background-color: #9b9b9b;
+}
+
+io-steps button:disabled
+{
+  color: #d8d8d8;
+}
+
+io-steps button.completed::before
+{
+  content: '✔';
+  animation: io-steps-completed 0.3s ease-in-out;
+}
+
+@keyframes io-steps-completed
+{
+  0%
+  {
+    content: ' ';
+  }
+
+  30%
+  {
+    content: '✔';
+    font-size: 0;
+    transform: scale(.50);
+  }
+}
