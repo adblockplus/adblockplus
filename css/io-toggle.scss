@@ -1,0 +1,93 @@
+/*
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-present eyeo GmbH
+ *
+ * Adblock Plus is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Adblock Plus is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+io-toggle
+{
+  --width: 30px;
+  --height: 8px;
+  --translateY: -4px;
+  --translateX: 14px;
+  display: inline-block;
+  width: var(--width);
+  height: var(--height);
+  border-radius: 4px;
+  background-color: #9b9b9b;
+  transition: background .2s ease-out;
+  will-change: background;
+  cursor: pointer;
+}
+
+io-toggle[checked]
+{
+  background-color: #92d3ea;
+}
+
+io-toggle[disabled]
+{
+  opacity: 0.5;
+  cursor: default;
+}
+
+io-toggle button
+{
+  width: calc(var(--height) * 2);
+  height: calc(var(--height) * 2);
+  padding: 0;
+  border: 2px solid #e1e0e1;
+  border-radius: var(--height);
+  transition: border .2s ease-out, box-shadow .2s ease-out,
+              transform .2s ease-out, width .2s ease-out;
+  will-change: border, box-shadow, transform, width;
+  transform: translateY(var(--translateY));
+  outline: none;
+  cursor: pointer;
+}
+
+io-toggle button[aria-checked="false"]
+{
+  background-color: #f1f1f1;
+  box-shadow: 0 1px 2px 0 #e5d1d1;
+}
+
+io-toggle button[aria-checked="false"]:hover
+{
+  box-shadow: 0 2px 4px 0 #d3b0b0;
+}
+
+io-toggle button[aria-checked="true"]
+{
+  background-color: #059cd0;
+  border: 2px solid #059cd0;
+  box-shadow: 0 1px 2px 0 #a6cede;
+  transform: translateY(var(--translateY)) translateX(var(--translateX));
+}
+
+io-toggle button[aria-checked="true"]:hover
+{
+  box-shadow: 0 2px 4px 0 #a6cede;
+}
+
+io-toggle button:focus,
+io-toggle button[aria-checked="true"]:focus
+{
+  border: 2px solid #87bffe;
+}
+
+body[dir="rtl"] io-toggle button[aria-checked="true"]
+{
+  transform: translateY(var(--translateY)) translateX(calc(var(--translateX) * -1));
+}
