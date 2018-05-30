@@ -25,7 +25,7 @@ body
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1.2rem 0.3rem;
+  margin: 0rem;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.25rem;
   color: #494949;
@@ -51,6 +51,7 @@ header
   flex-shrink: 0;
   align-items: flex-end;
   margin-bottom: 2rem;
+  margin-top: 1.2rem;
 }
 
 #logo
@@ -220,19 +221,19 @@ html[dir="rtl"] button
   margin-right: 0.5rem;
 }
 
-button.primary
+button.primary:not(.icon)
 {
   border: 0px;
   color: #FFF;
   background-color: #099CD0;
 }
 
-button.primary:not([disabled]):hover
+button.primary:not([disabled]):not(.icon):hover
 {
   box-shadow: inset 0 0 0 3px #005D80;
 }
 
-button.primary[disabled]
+button.primary[disabled]:not(.icon)
 {
   background-color: #5CBCE1;
 }
@@ -246,6 +247,30 @@ button.secondary
 button.secondary:hover
 {
   box-shadow: inset 0 0 0 2px #099CD0;
+}
+
+button.link
+{
+  border: 0px;
+  background-color: transparent;
+  padding: 0.2rem;
+  font-weight: 400;
+  font-family: inherit;
+  text-transform: none;
+  text-decoration: underline;
+  color: #077CA6;
+}
+
+button.link:hover
+{
+  color: #5CBCE1;
+}
+
+button.link:disabled,
+button.link:disabled:hover
+{
+  cursor: default;
+  color: #ccc;
 }
 
 input[type="text"],
@@ -304,4 +329,69 @@ input[type="radio"]:checked
   background-color: #FFFFFF;
   border: 1px solid #CDCDCD;
   padding: 2rem;
+}
+
+[aria-hidden="true"]
+{
+  display: none !important;
+}
+
+#notification
+{
+  display: flex;
+  padding: 1rem 1.9rem;
+  width: 100%;
+  box-sizing: border-box;
+  opacity: 0.8;
+  font-size: 1rem;
+  color: #4A4A4A;
+  background-color: #d8d8d8;
+}
+
+#notification-text
+{
+  flex: 1;
+  text-align: center;
+}
+
+.icon
+{
+  border: 0px;
+  padding: 0px;
+  background-color: transparent;
+}
+
+.icon:hover
+{
+  box-shadow: none;
+}
+
+.icon::before
+{
+  content: "";
+  display: block;
+  border: 0.2rem solid transparent;
+  background-repeat: no-repeat;
+}
+
+.close.icon::before
+{
+  height: 1rem;
+  width: 1rem;
+}
+
+.icon.close.tertiary::before
+{
+  background-image: url(icons/delete.svg?tertiary#tertiary);
+}
+
+.icon.close.tertiary:hover::before
+{
+  background-image: url(icons/delete.svg?tertiary-hover#tertiary-hover);
+}
+
+body[data-page="commentPage"] #continue,
+body:not([data-page="commentPage"]) #send
+{
+  display: none;
 }

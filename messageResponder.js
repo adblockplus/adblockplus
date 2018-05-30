@@ -30,6 +30,7 @@
   const {Notification: NotificationStorage} = require("notification");
   const {getActiveNotification, shouldDisplay,
          notificationClicked} = require("notificationHelper");
+  const {HitLogger} = require("hitLogger");
 
   const {
     Filter, ActiveFilter, BlockingFilter, RegExpFilter
@@ -40,7 +41,8 @@
   const {
     Subscription,
     DownloadableSubscription,
-    SpecialSubscription
+    SpecialSubscription,
+    RegularSubscription
   } = require("subscriptionClasses");
 
   const {showOptions} = require("options");
@@ -84,6 +86,7 @@
     ["app", "app.respond"],
     ["filter", "filters.respond"],
     ["pref", "prefs.respond"],
+    ["requests", "requests.respond"],
     ["subscription", "subscriptions.respond"]
   ]);
 
@@ -115,6 +118,44 @@
         });
       }
     }
+  }
+
+  function includeActiveRemoteSubscriptions(s)
+  {
+    if (s.disabled || !(s instanceof RegularSubscription))
+      return false;
+    if (s instanceof DownloadableSubscription &&
+        !/^(http|https|ftp):/i.test(s.url))
+      return false;
+    return true;
+  }
+
+  function addRequestListeners(dataCollectionTabId, issueReporterTabId)
+  {
+    const logRequest = (request, filter) =>
+    {
+      let subscriptions = [];
+      if (filter)
+      {
+        subscriptions = filter.subscriptions.
+                        filter(includeActiveRemoteSubscriptions).
+                        map(s => s.url);
+        filter = convertFilter(filter);
+      }
+      request = convertObject(["url", "type", "docDomain", "thirdParty"],
+                              request);
+      sendMessage("requests", "hits", request, filter, subscriptions);
+    };
+    const removeTabListeners = (tabId) =>
+    {
+      if (tabId == dataCollectionTabId || tabId == issueReporterTabId)
+      {
+        HitLogger.removeListener(dataCollectionTabId, logRequest);
+        browser.tabs.onRemoved.removeListener(removeTabListeners);
+      }
+    };
+    HitLogger.addListener(dataCollectionTabId, logRequest);
+    browser.tabs.onRemoved.addListener(removeTabListeners);
   }
 
   function addFilterListeners(type, actions)
@@ -425,7 +466,7 @@
     }
   });
 
-  function listen(type, filters, newFilter)
+  function listen(type, filters, newFilter, message, senderTabId)
   {
     switch (type)
     {
@@ -454,6 +495,10 @@
         filters.set("subscription", newFilter);
         addFilterListeners("subscription", newFilter);
         break;
+      case "requests":
+        filters.set("requests", newFilter);
+        addRequestListeners(message.tabId, senderTabId);
+        break;
     }
   }
 
@@ -478,7 +523,7 @@
       // "*.listen" messages to tackle #6440
       if (action == "listen")
       {
-        listen(type, filters, message.filter);
+        listen(type, filters, message.filter, message, uiPort.sender.tab.id);
       }
     });
   }

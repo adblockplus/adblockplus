@@ -26,6 +26,10 @@ const pages = {
   sendPage: [initSendPage, leaveSendPage]
 };
 
+let dataGatheringTabId = null;
+let isMinimumTimeMet = false;
+const port = browser.runtime.connect({name: "ui"});
+
 document.addEventListener("DOMContentLoaded", () =>
 {
   document.getElementById("cancel").addEventListener("click", () =>
@@ -39,6 +43,12 @@ document.addEventListener("DOMContentLoaded", () =>
       pages[getCurrentPage()][1]();
   });
 
+  document.getElementById("send").addEventListener("click", () =>
+  {
+    if (!document.getElementById("send").disabled)
+      pages[getCurrentPage()][1]();
+  });
+
   document.addEventListener("keydown", event =>
   {
     const blacklisted = new Set(["textarea", "button", "a"]);
@@ -47,6 +57,11 @@ document.addEventListener("DOMContentLoaded", () =>
       document.getElementById("continue").click();
     else if (event.key == "Escape")
       document.getElementById("cancel").click();
+  });
+
+  document.getElementById("hide-notification").addEventListener("click", () =>
+  {
+    document.getElementById("notification").setAttribute("aria-hidden", true);
   });
 
   browser.runtime.sendMessage({
@@ -63,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () =>
 
 function closeMe()
 {
+  closeRequestsCollectingTab();
   browser.runtime.sendMessage({
     type: "app.get",
     what: "senderId"
@@ -84,6 +100,7 @@ function setCurrentPage(pageId)
     previousPage.hidden = true;
 
   document.getElementById(pageId).hidden = false;
+  document.body.dataset.page = pageId;
   pages[pageId][0]();
 }
 
@@ -235,6 +252,49 @@ function retrieveSubscriptions()
   });
 }
 
+function collectRequests(tabId)
+{
+  reportData.documentElement.appendChild(reportData.createElement("requests"));
+  reportData.documentElement.appendChild(reportData.createElement("filters"));
+  return browser.tabs.get(tabId).then(tab =>
+  {
+    return browser.tabs.create({active: false, url: tab.url});
+  }).then((tab) =>
+  {
+    dataGatheringTabId = tab.id;
+    port.postMessage({
+      type: "requests.listen",
+      filter: ["hits"],
+      tabId: dataGatheringTabId
+    });
+
+    function minimumTimeMet()
+    {
+      if (isMinimumTimeMet)
+        return;
+
+      isMinimumTimeMet = true;
+      document.getElementById("showData").disabled = false;
+      validateCommentsPage();
+    }
+    browser.tabs.onUpdated.addListener((updatedTabId, changeInfo) =>
+    {
+      if (updatedTabId == dataGatheringTabId && changeInfo.status == "complete")
+        minimumTimeMet();
+    });
+    window.setTimeout(minimumTimeMet, 5000);
+    window.addEventListener("beforeunload", (event) =>
+    {
+      closeRequestsCollectingTab();
+    });
+  });
+}
+
+function closeRequestsCollectingTab()
+{
+  return browser.tabs.remove(dataGatheringTabId);
+}
+
 function initDataCollector()
 {
   Promise.resolve().then(() =>
@@ -245,6 +305,7 @@ function initDataCollector()
       retrieveApplicationInfo(),
       retrievePlatformInfo(),
       retrieveTabURL(tabId),
+      collectRequests(tabId),
       retrieveSubscriptions()
     ];
     return Promise.all(handlers);
@@ -281,41 +342,42 @@ function leaveTypeSelector()
   setCurrentPage("commentPage");
 }
 
-function initCommentPage()
+function validateCommentsPage()
 {
-  const continueButton = document.getElementById("continue");
-  const label = browser.i18n.getMessage("issueReporter_sendButton_label");
-  continueButton.textContent = label;
-  continueButton.disabled = true;
-
+  const sendButton = document.getElementById("send");
   const emailElement = reportData.createElement("email");
   const emailField = document.getElementById("email");
-  const anonymousSubmissionField =
-          document.getElementById("anonymousSubmission");
-  const validateEmail = () =>
+  const anonymousSubmissionField = document.
+    getElementById("anonymousSubmission");
+  document.getElementById("anonymousSubmissionWarning")
+          .setAttribute("data-invisible", !anonymousSubmissionField.checked);
+  if (anonymousSubmissionField.checked)
   {
-    document.getElementById("anonymousSubmissionWarning")
-            .setAttribute("data-invisible", !anonymousSubmissionField.checked);
-    if (anonymousSubmissionField.checked)
-    {
-      emailField.value = "";
-      emailField.disabled = true;
-      continueButton.disabled = false;
-      if (emailElement.parentNode)
-        emailElement.parentNode.removeChild(emailElement);
-    }
-    else
-    {
-      emailField.disabled = false;
+    emailField.value = "";
+    emailField.disabled = true;
+    sendButton.disabled = !isMinimumTimeMet;
+    if (emailElement.parentNode)
+      emailElement.parentNode.removeChild(emailElement);
+  }
+  else
+  {
+    emailField.disabled = false;
 
-      const value = emailField.value.trim();
-      emailElement.textContent = value;
-      reportData.documentElement.appendChild(emailElement);
-      continueButton.disabled = value == "" || !emailField.validity.valid;
-    }
-  };
-  emailField.addEventListener("input", validateEmail);
-  anonymousSubmissionField.addEventListener("click", validateEmail);
+    const value = emailField.value.trim();
+    emailElement.textContent = value;
+    reportData.documentElement.appendChild(emailElement);
+    sendButton.disabled = (value == "" || !emailField.validity.valid ||
+      !isMinimumTimeMet);
+  }
+}
+
+function initCommentPage()
+{
+  const anonymousSubmissionField = document.
+    getElementById("anonymousSubmission");
+  const emailField = document.getElementById("email");
+  emailField.addEventListener("input", validateCommentsPage);
+  anonymousSubmissionField.addEventListener("click", validateCommentsPage);
 
   const commentElement = reportData.createElement("comment");
   document.getElementById("comment").addEventListener("input", event =>
@@ -335,12 +397,15 @@ function initCommentPage()
   document.getElementById("showData").addEventListener("click", event =>
   {
     event.preventDefault();
+    const openDataOverlay = () =>
+    {
+      showDataOverlay.hidden = false;
 
-    showDataOverlay.hidden = false;
-
-    const element = document.getElementById("showDataValue");
-    element.value = serializeReportData();
-    element.focus();
+      const element = document.getElementById("showDataValue");
+      element.value = serializeReportData();
+      element.focus();
+    };
+    closeRequestsCollectingTab().then(openDataOverlay).catch(openDataOverlay);
   });
 
   document.getElementById("showDataClose").addEventListener("click", event =>
@@ -379,6 +444,7 @@ function leaveCommentPage()
 
 function initSendPage()
 {
+  closeRequestsCollectingTab();
   document.getElementById("cancel").hidden = true;
 
   const continueButton = document.getElementById("continue");
@@ -515,3 +581,62 @@ function leaveSendPage()
 {
   closeMe();
 }
+
+port.onMessage.addListener((message) =>
+{
+  switch (message.type)
+  {
+    case "requests.respond":
+      switch (message.action)
+      {
+        case "hits":
+          const [request, filter, subscriptions] = message.args;
+          const requestsElem = reportData.querySelector("requests");
+          const filtersElem = reportData.querySelector("filters");
+          // ELEMHIDE hitLog request doesn't contain url
+          if (request.url)
+          {
+            const existingRequest = reportData.
+                                  querySelector(`[location="${request.url}"]`);
+            if (existingRequest)
+            {
+              const countNum = parseInt(existingRequest.getAttribute("count"),
+                                      10);
+              existingRequest.setAttribute("count", countNum + 1);
+            }
+            else
+            {
+              const requestElem = reportData.createElement("request");
+              requestElem.setAttribute("location", censorURL(request.url));
+              requestElem.setAttribute("type", request.type);
+              requestElem.setAttribute("docDomain", request.docDomain);
+              requestElem.setAttribute("thirdParty", request.thirdParty);
+              requestElem.setAttribute("count", 1);
+              requestsElem.appendChild(requestElem);
+            }
+          }
+          if (filter)
+          {
+            const existingFilter = reportData.
+                                 querySelector(`[text='${filter.text}']`);
+            if (existingFilter)
+            {
+              const countNum = parseInt(existingFilter.getAttribute("hitCount"),
+                                      10);
+              existingFilter.setAttribute("hitCount", countNum + 1);
+            }
+            else
+            {
+              let filterElem = reportData.createElement("filter");
+              filterElem.setAttribute("text", filter.text);
+              filterElem.setAttribute("subscriptions", subscriptions.join(" "));
+              filterElem.setAttribute("hitCount", 1);
+              filtersElem.appendChild(filterElem);
+            }
+          }
+          break;
+      }
+      break;
+  }
+});
+
