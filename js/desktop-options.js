@@ -48,6 +48,13 @@ const minuteInMs = 60000;
 const hourInMs = 3600000;
 const fullDayInMs = 86400000;
 
+const promisedLocaleInfo = browser.runtime.sendMessage({type: "app.get",
+  what: "localeInfo"});
+const promisedDateFormat = promisedLocaleInfo.then((addonLocale) =>
+{
+  return new Intl.DateTimeFormat(addonLocale.locale);
+});
+
 function Collection(details)
 {
   this.details = details;
@@ -276,12 +283,10 @@ Collection.prototype.updateItem = function(item)
         if (sinceUpdate > fullDayInMs)
         {
           const lastUpdateDate = new Date(item.lastDownload * 1000);
-          const monthName = lastUpdateDate.toLocaleString(undefined,
-            {month: "short"});
-          let day = lastUpdateDate.getDate();
-          day = day < 10 ? "0" + day : day;
-          lastUpdateElement.textContent = day + " " + monthName + " " +
-            lastUpdateDate.getFullYear();
+          promisedDateFormat.then((dateFormat) =>
+          {
+            lastUpdateElement.textContent = dateFormat.format(lastUpdateDate);
+          });
         }
         else if (sinceUpdate > hourInMs)
         {
