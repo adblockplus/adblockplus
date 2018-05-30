@@ -10,5 +10,8 @@
   },
   "common_feature_social_title": {
     "message": "مسدود کردن ردیابی آیکون‌های رسانه‌های اجتماعی"
+  },
+  "common_notification_hide": {
+    "message": "بستن اعلان"
   }
 }

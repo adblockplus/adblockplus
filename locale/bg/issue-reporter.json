@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "Добре дошли в докладчика на неизправност"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Забележка:</strong> Временно ще бъде отворен допълнителен раздел, така че Докладчикът на неизправност няма да засегне страницата, на която сте в момента."
+  },
   "issueReporter_doneButton_label": {
     "message": "Готово"
   },

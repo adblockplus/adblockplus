@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "Tere tulemast kasutama probleemidest teatamise abivahendit"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Pane tähele:</strong> Ajutiselt avaneb lisakaart, et probleemidest teataja ei mõjutaks lehte, kus parasjagu oled."
+  },
   "issueReporter_doneButton_label": {
     "message": "Valmis"
   },

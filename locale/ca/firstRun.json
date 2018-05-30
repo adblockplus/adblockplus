@@ -17,6 +17,21 @@
   "firstRun_contributor_credits": {
     "message": "Reconeiximent als co·laboradors"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "Alguns usuaris experimenten un problema en què aquesta pàgina s'obre cada vegada que s'executa el seu navegador. Aquest problema es pot resoldre desinstal·lant i reinstal·lant Adblock Plus:"
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "Si encara necessiteu ajuda, contacteu amb nosaltres a support@adblockplus.org o visiteu el nostre <a>Centre d'ajuda</a>."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "Obriu la pestanya Extensions del navegador."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "Localitzeu l'Adblock Plus i suprimiu-lo."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "Torneu a instal·lar l'Adblock Plus des d'<a>adblockplus.org</a>."
+  },
   "firstRun_donate": {
     "message": "fes una donació"
   },

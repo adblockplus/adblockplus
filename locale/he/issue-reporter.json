@@ -12,19 +12,22 @@
     "message": "שדה הטקסט שמתחת מאפשר לך להכניס הערה כדי לעזור לנו בהבנת הסוגייה. צעד זה אינו חובה אך מומלץ אם הבעיה אינה מובנת מאליה. אתה יכול גם לסקור את נתוני הדיווח לפני שליחתם."
   },
   "issueReporter_comment_label": {
-    "message": "הערה (לא חובה):"
+    "message": "הערה (רשותי):"
   },
   "issueReporter_comment_lengthWarning": {
-    "message": "האורך של הערתך חרג מ-1000 תווים. רק 1000 התווים הראשונים ישלחו."
+    "message": "האורך של הערתך חרג מ־1000 תווים. רק 1000 התווים הראשונים יישלחו."
   },
   "issueReporter_confirmationMessage": {
     "message": "הדיווח שלך נשמר. ניתן להשיג גישה אליו בכתובת הבאה:"
   },
   "issueReporter_dataCollector_description": {
-    "message": "אנא המתן מספר רגעים בזמן ש-Adblock Plus אוסף את הנתונים הדרושים."
+    "message": "אנא המתן מספר רגעים בזמן ש־Adblock Plus אוסף את הנתונים הדרושים."
   },
   "issueReporter_dataCollector_heading": {
     "message": "ברוך הבא אל מדווח הסוגיות"
+  },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>הערה:</strong> לשונית נוספת תיפתח באופן זמני כך שהעמוד שאתה עליו לא יושפע ממדווח הסוגיות."
   },
   "issueReporter_doneButton_label": {
     "message": "בוצע"
@@ -39,19 +42,19 @@
     "message": "ניסיון לשלוח את הדיווח נכשל עם קוד השגיאה \"?1?\". אנא וודא שאתה מחובר לאינטרנט ונסה שוב. אם הבעיה נמשכת, אנא בקש סיוע ב[link]פורום Adblock Plus[/link]."
   },
   "issueReporter_falseNegative_description": {
-    "message": "בחר אפשרות זו אם מודעה מוצגת על אף ש-Adblock Plus מאופשר."
+    "message": "בחר אפשרות זו אם פרסומת מוצגת על אף ש־Adblock Plus מאופשר."
   },
   "issueReporter_falseNegative_label": {
-    "message": "Adblock Plus אינו חוסם מודעה"
+    "message": "Adblock Plus אינו חוסם פרסומות"
   },
   "issueReporter_falsePositive_description": {
-    "message": "בחר אפשרות זו אם חסר בעמוד תוכן חשוב או שהוא מציג בצורה לא נכונה או שהוא נכשל לתפקד כראוי. אתה יכול לקבוע אם Adblock Plus הוא הגורם לבעיה ע\"י השבתה זמנית שלו."
+    "message": "בחר אפשרות זו אם חסר בעמוד תוכן חשוב או שהוא מוצג בצורה לא נכונה או שהוא נכשל לתפקד כראוי. אתה יכול לקבוע אם Adblock Plus הוא הגורם לבעיה ע\"י השבתה זמנית שלו."
   },
   "issueReporter_falsePositive_label": {
     "message": "Adblock Plus חוסם יותר מדי"
   },
   "issueReporter_knownIssueMessage": {
-    "message": "הסוגייה שדיווחת קרוב לוודאי שידועה כבר. מידע נוסף:"
+    "message": "הסוגייה שדיווחת עליה כנראה ידועה כבר. מידע נוסף:"
   },
   "issueReporter_page_title": {
     "message": "מדווח הסוגיות"
@@ -66,7 +69,7 @@
     "message": "שליחת דיווח"
   },
   "issueReporter_sending": {
-    "message": "אנא המתן בזמן ש-Adblock Plus מגיש את הדיווח שלך."
+    "message": "אנא המתן בזמן ש־Adblock Plus מגיש את הדיווח שלך."
   },
   "issueReporter_showData_label": {
     "message": "הראה נתוני דיווח"

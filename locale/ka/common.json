@@ -1,0 +1,17 @@
+{
+  "common_feature_anti_adblock_title": {
+    "message": "Adblock-ის გაფრთხილებების დამალვა"
+  },
+  "common_feature_malware_title": {
+    "message": "მავნე პროგრამების საიტების შეზღუდვა"
+  },
+  "common_feature_privacy_title": {
+    "message": "სხვა მეთვალყურეების შეზღუდვა"
+  },
+  "common_feature_social_title": {
+    "message": "სოციალური ქსელების მეთვალყურე ხატულების შეზღუდვა"
+  },
+  "common_notification_hide": {
+    "message": "შეტყობინების დახურვა"
+  }
+}

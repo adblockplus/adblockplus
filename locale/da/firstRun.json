@@ -3,19 +3,34 @@
     "message": "Tilgængelig på Android og iOS"
   },
   "firstRun_abbButtonTitle": {
-    "message": "Få Adblock Browser her"
+    "message": "Hent Adblock Browser her"
   },
   "firstRun_abbPromotionHeadline": {
     "message": "Har du en smartphone eller en tablet?"
   },
   "firstRun_acceptableAdsExplanation": {
-    "message": "Vi vil gerne tilskynde websider til at bruge enkel, diskret annoncering. Derfor har vi indført <a>strenge retningslinjer</a> for at identificere de acceptable annoncer, der vises med standardindstillingerne. Hvis du stadig vil blokere alle annoncer, kan du let <a>deaktivere</a> dette."
+    "message": "Vi vil gerne tilskynde websteder til at bruge enkel, diskret annoncering. Derfor har vi indført <a>strenge retningslinjer</a> for at identificere de acceptable annoncer, der vises med standardindstillingerne. Hvis du stadig vil blokere alle annoncer, er det nemt at <a>deaktivere</a> denne funktion."
   },
   "firstRun_acceptableAdsHeadline": {
-    "message": "Generende annoncer bliver nu blokeret"
+    "message": "Irriterende annoncer bliver nu blokeret"
   },
   "firstRun_contributor_credits": {
     "message": "Tak til"
+  },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "Nogle brugere oplever et problem, hvor denne side vises hver gang de åbner deres browser. Dette problem kan løses ved at afinstallere og geninstallere Adblock Plus:"
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "Hvis du stadig har brug for hjælp, bedes du kontakte os på support@adblockplus.org eller besøge siden <a>Hjælp</a>."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "Åbn fanebladet Udvidelser i din browser."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "Find Adblock Plus, og fjern udvidelsen."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "Geninstallér Adblock Plus via <a>adblockplus.org</a>."
   },
   "firstRun_donate": {
     "message": "donér"
@@ -24,7 +39,7 @@
     "message": "Støt projektet"
   },
   "firstRun_filterlistsReinitializedWarning": {
-    "message": "Et problem har tilsyneladende fjernet alle filtre og det var ikke muligt at gendanne en backup. Dine filtre og indstillinger for upåtrængende annoncer er derfor blevet nulstillet. Kontroller dine filtre m.m. i <a>Adblock Plus præferencer</a>."
+    "message": "Et problem har tilsyneladende fjernet alle filtre, og det var ikke muligt at gendanne en sikkerhedskopi. Dine filtre og indstillinger for acceptable annoncer er derfor blevet nulstillet. Kontrollér dine filterlister og indstillinger for acceptable annoncer under <a>Adblock Plus-indstillinger</a>."
   },
   "firstRun_share": {
     "message": "Fortæl det til vennerne"
@@ -33,6 +48,6 @@
     "message": "<a>Giv en hånd</a> med at gøre internettet til et bedre sted"
   },
   "firstRun_title": {
-    "message": "Adblock Plus blev installeret"
+    "message": "Adblock Plus er nu installeret"
   }
 }

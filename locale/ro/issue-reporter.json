@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "Bine ați venit la programul de raportat probleme"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Notã:</strong> Un tab va fi temporar deschis astfel încât pagina pe care sunteţi nu va fi afectatã de Issue Reporter."
+  },
   "issueReporter_doneButton_label": {
     "message": "Efectuat"
   },

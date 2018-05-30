@@ -1,6 +1,6 @@
 {
   "mops_acceptableAds_description": {
-    "message": "התר במידה פרסום בלתי-פולשני"
+    "message": "התר מעט פרסום בלתי־פולשני"
   },
   "mops_acceptableAds_more": {
     "message": "למד עוד"
@@ -9,7 +9,7 @@
     "message": "ביטול"
   },
   "mops_enabled_label": {
-    "message": "אפשר את Adblock Plus על <strong>$domain$</strong>",
+    "message": "אפשר את Adblock Plus ב־<strong>$domain$</strong>",
     "placeholders": {
       "domain": {
         "content": "$1",
@@ -39,10 +39,10 @@
     "message": "הוסף רשימת מסננים מותאמת אישית"
   },
   "mops_subscribe_title": {
-    "message": "שם רשימת המסננים"
+    "message": "שם רשימת מסננים"
   },
   "mops_subscribe_url": {
-    "message": "כתובת רשימת המסננים"
+    "message": "כתובת רשימת מסננים"
   },
   "mops_subscriptions_header": {
     "message": "מנויי מסננים"

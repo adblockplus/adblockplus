@@ -1,21 +1,21 @@
 {
   "options_acceptableAds_ads_description_1": {
-    "message": "Acceptable annoncer er ikke irriterende og forstyrrer ikke det indhold, du får vist. <a>Læs mere om Acceptable annonce kriterier</a>"
+    "message": "Acceptable annoncer er ikke irriterende og forstyrrer ikke det indhold, du får vist. <a>Få flere oplysninger om kriterierne for acceptable annoncer</a>"
   },
   "options_acceptableAds_ads_label": {
-    "message": "Tillad Acceptable annoncer"
+    "message": "Tillad acceptable annoncer"
   },
   "options_acceptableAds_description": {
-    "message": "Acceptable annoncer er ikke påtrængende annoncer. De er den gyldne middelvej mellem ad blokering og støtte online-indhold, fordi de skaber indtægter for hjemmesideejere."
+    "message": "Acceptable annoncer er ikke-påtrængende annoncer. De er den gyldne middelvej mellem blokering af annoncer og støtte af online-indhold, fordi de genererer indtægter for webstedsejere."
   },
   "options_acceptableAds_dnt_notification": {
-    "message": "<strong>Bemærk:</strong> Du har <strong>Spor Mig Ikke (DNT)</strong> deaktiveret i dine browserindstillinger. For at denne funktion skal fungere korrekt, skal du aktivere <strong>DNT</strong> i dine browserindstillinger. <a>Find ud af, hvordan du aktiverer DNT</a>."
+    "message": "<strong>Bemærk:</strong> Du har <strong>Spor Mig Ikke (DNT)</strong> deaktiveret i dine browser-indstillinger. For at denne funktion skal fungere korrekt, skal du aktivere <strong>DNT</strong> i dine browser-indstillinger. <a>Find ud af, hvordan du aktiverer DNT</a>."
   },
   "options_acceptableAds_header": {
-    "message": "Accepterede annoncer"
+    "message": "Acceptable annoncer"
   },
   "options_acceptableAds_privacy_label": {
-    "message": "Tillad kun annoncer uden tredje-parts sporing"
+    "message": "Tillad kun annoncer uden tredjepartssporing"
   },
   "options_advanced_description": {
     "message": "Tilpas Adblock Plus, tilføj eller fjern filterlister, opret og vedligehold dine egne filterlister"
@@ -36,7 +36,7 @@
     "message": "Gem"
   },
   "options_customFilters_description": {
-    "message": "Skriv dine egne brugerdefinerede filtre til yderligere kontrol af indhold Adblock Plus tillader eller blokerer."
+    "message": "Skriv dine egne brugerdefinerede filtre til yderligere kontrol af indhold, som Adblock Plus tillader eller blokerer."
   },
   "options_customFilters_edit_placeholder": {
     "message": "f.eks. $filter$",
@@ -69,22 +69,22 @@
     "message": "Bloker midlertidigt irriterende elementer på en webside, f.eks. billeder eller animerede slideshows."
   },
   "options_customize_header": {
-    "message": "Tilpas aktioner på siden"
+    "message": "Tilpas websidehandlinger"
   },
   "options_customize_showDevToolsPanel": {
-    "message": "Vis 'Adblock Plus' panel i udviklingsværktøjer"
+    "message": "Vis Adblock Plus-panel i udviklingsværktøjer"
   },
   "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Se blokerede og whitelistede elementer fra din browser i udvikler værktøjspanelet."
+    "message": "Se blokerede og tilladte elementer i din browsers udviklerværktøjspanel."
   },
   "options_customize_showNotifications": {
-    "message": "Vis nyttige notifikationer"
+    "message": "Vis nyttige meddelelser"
   },
   "options_customize_showNotifications_tooltip": {
-    "message": "Deaktiver alle meddelelser fra Adblock Plus."
+    "message": "Deaktivér alle meddelelser fra Adblock Plus."
   },
   "options_dialog_about_copyright": {
-    "message": "Ophavsret © $currentYear$ eyeo GmbH.",
+    "message": "Copyright © $currentYear$ eyeo GmbH.",
     "placeholders": {
       "currentYear": {
         "content": "2017",
@@ -99,7 +99,7 @@
     "message": "Alle rettigheder forbeholdes. Adblock Plus® er et registreret varemærke tilhørende eyeo GmbH."
   },
   "options_dialog_about_version": {
-    "message": "Version nummer $version$",
+    "message": "Versionsnummer $version$",
     "placeholders": {
       "version": {
         "content": "$1",
@@ -108,7 +108,7 @@
     }
   },
   "options_dialog_import_subscription_location": {
-    "message": "Filtrerliste URL"
+    "message": "Filtrerlistens URL-adresse"
   },
   "options_dialog_import_subscription_location_error": {
     "message": "Angiv en gyldig URL-adresse"
@@ -126,10 +126,10 @@
     "message": "Ja, brug denne filterliste"
   },
   "options_dialog_predefined_title": {
-    "message": "Er du sikker på du vil tilføje denne filterliste?"
+    "message": "Er du sikker på, at du vil tilføje denne filterliste?"
   },
   "options_email": {
-    "message": "Email:"
+    "message": "E-mail:"
   },
   "options_english": {
     "message": "Engelsk"
@@ -144,31 +144,31 @@
     "message": "Status"
   },
   "options_filterList_column_update": {
-    "message": "Sidst opdateret"
+    "message": "Senest opdateret"
   },
   "options_filterList_description": {
-    "message": "Hver Adblock Plus indstilling virker på grund af en filterliste. Nedenfor er de filterlister, der svarer til alle dine Adblock Plus indstillinger. Du kan også tilføje ekstra filtre oprettet og vedligeholdt af vores betroede fællesskab."
+    "message": "Hver Adblock Plus-indstilling virker på grund af en filterliste. Nedenfor er de filterlister, der svarer til alle dine Adblock Plus-indstillinger. Du kan også tilføje ekstra filtre oprettet og vedligeholdt af vores betroede fællesskab."
   },
   "options_filterList_empty": {
-    "message": "Du har ikke tilføjet nogen filterlister til Adblock Plus. Filtrerlister du tilføjer bliver vist her."
+    "message": "Du har ikke tilføjet nogen filterlister til Adblock Plus. Filtrerlister, du tilføjer, bliver vist her."
   },
   "options_filterList_hours": {
     "message": "timer siden"
   },
   "options_filterList_lastDownload_checksumMismatch": {
-    "message": "Fejlede, checksum matcher ikke"
+    "message": "Der opstod en fejl: Kontrolsum matcher ikke"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Fejlede, hentningsfejl"
+    "message": "Der opstod en fejl: Download mislykket"
   },
   "options_filterList_lastDownload_inProgress": {
-    "message": "Opdatering"
+    "message": "Opdaterer"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "Mislykkedes, ikke en gyldig filterliste"
+    "message": "Der opstod en fejl: Ikke en gyldig filterliste"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "Fejlede, ikke en gyldig adresse"
+    "message": "Der opstod en fejl: Ikke en gyldig adresse"
   },
   "options_filterList_minutes": {
     "message": "minutter siden"
@@ -180,7 +180,7 @@
     "message": "kilde"
   },
   "options_filterList_state_active": {
-    "message": "Aktive"
+    "message": "Aktiv"
   },
   "options_filterList_state_disabled": {
     "message": "Deaktiveret"
@@ -195,28 +195,28 @@
     "message": "opdater nu"
   },
   "options_filterList_website": {
-    "message": "hjemmeside"
+    "message": "websted"
   },
   "options_footer_about": {
     "message": "Om Adblock Plus"
   },
   "options_footer_contribute": {
-    "message": "Bidrag"
+    "message": "Støt"
   },
   "options_general_description": {
-    "message": "Bestem hvad Adblock Plus viser og skjuler på hjemmesider"
+    "message": "Angiv, hvad Adblock Plus skal vise og skjule på websteder"
   },
   "options_help_description": {
-    "message": "Find hjælp eller kom i kontakt med os"
+    "message": "Få hjælp eller kontakt os"
   },
   "options_language_add": {
     "message": "+ Tilføj et sprog"
   },
   "options_language_change": {
-    "message": "ændre"
+    "message": "skift"
   },
   "options_language_description": {
-    "message": "Optimer Adblock Plus for det eller de sprog, du typisk gennemser hjemmesider i."
+    "message": "Optimér Adblock Plus for det eller de sprog, som fremgår af de websteder, du typisk besøger."
   },
   "options_language_empty": {
     "message": "Du har ikke nogen sprogspecifikke filtre."
@@ -225,37 +225,37 @@
     "message": "Sprog"
   },
   "options_language_tip": {
-    "message": "<strong>TIP:</strong> Vælg kun de sprog, du har brug for. At vælge flere vil forsinke ad blocker og derfor din browser hastighed."
+    "message": "<strong>TIP:</strong> Vælg kun de sprog, du har brug for. Valg af flere sprog vil forsinke blokering af annoncer og derfor din browser-hastighed."
   },
   "options_learn_more": {
-    "message": "Lær mere"
+    "message": "Flere oplysninger"
   },
   "options_more_filters_description": {
-    "message": "Disse er ekstra filtre du tidligere har føjet til Adblock Plus."
+    "message": "Disse er ekstra filtre, du tidligere har føjet til Adblock Plus."
   },
   "options_more_filters_header": {
     "message": "Flere filtre"
   },
   "options_more_filters_note": {
-    "message": "<strong>Bemærk:</strong> Du bør kun bruge tredjeparts filterlister fra forfattere, som du har tillid til."
+    "message": "<strong>Bemærk:</strong> Du bør kun bruge tredjepartsfilterlister fra udgivere, som du har tillid til."
   },
   "options_new_label": {
     "message": "Ny"
   },
   "options_page_document_title": {
-    "message": "Indstillinger"
+    "message": "Adblock Plus-indstillinger"
   },
   "options_page_title": {
     "message": "Indstillinger"
   },
   "options_privacy_header": {
-    "message": "Privatliv og sikkerhed"
+    "message": "Fortrolighed og sikkerhed"
   },
   "options_protection_privacy_tooltip": {
-    "message": "Beskyt dine personlige data ved at fjerne alle former for sporing fra internettet, herunder informations samlere."
+    "message": "Beskyt dine personlige oplysninger ved at fjerne alle former for sporing på internettet, herunder informationsindsamling."
   },
   "options_protection_social_tooltip": {
-    "message": "Sociale medie ikoner på de websteder, du besøger giver sociale medienetværk mulighed for at opbygge en profil af dig baseret på dine browsing vaner - selv når du ikke klikker på dem. Skjul af disse ikoner kan beskytte din profil."
+    "message": "Ikoner fra sociale medier på websteder, du besøger, giver sociale medienetværk mulighed for at opbygge en profil af dig baseret på dine internet-vaner - selv når du ikke klikker på dem. Hvis du vælger at skjule disse ikoner, kan du beskytte din profil."
   },
   "options_report_bug": {
     "message": "Fundet en fejl? <a>Send os en fejlrapport</a>"
@@ -267,7 +267,7 @@
     "message": "Har du et spørgsmål eller en ny idé? Vi er her for at hjælpe."
   },
   "options_social_title": {
-    "message": "Kom i kontakt"
+    "message": "Kontakt os"
   },
   "options_support_title": {
     "message": "Support"
@@ -282,7 +282,7 @@
     "message": "Hjælp"
   },
   "options_tab_whitelist": {
-    "message": "Hvidlistede websteder"
+    "message": "Tilladte websteder"
   },
   "options_tracking_warning_1": {
     "message": "Vi har bemærket, at du har både <strong>$tracking$</strong> og <strong>$acceptableAds$</strong> aktiveret.",
@@ -298,10 +298,10 @@
     }
   },
   "options_tracking_warning_2": {
-    "message": "Vi ønsker du skal vide at for annoncører kan vise dig mere relevante annoncer, der <strong>kan</strong> der være tracking med Acceptable annoncer."
+    "message": "Du skal vide, at hvis annoncører skal være i stand til at vise dig mere relevante annoncer, <strong>kan</strong> der forekomme en vis sporing med Acceptable annoncer."
   },
   "options_tracking_warning_3": {
-    "message": "Hvis du foretrækker ekstra beskyttelse af personlige oplysninger, skal du vælge <strong>$acceptableAdsPrivacy$</strong> afkrydsningsfeltet nedenfor.",
+    "message": "Hvis du foretrækker ekstra beskyttelse af personlige oplysninger, skal du markere afkrydsningsfeltet <strong>$acceptableAdsPrivacy$</strong> nedenfor.",
     "placeholders": {
       "acceptableAdsPrivacy": {
         "content": "$1",
@@ -313,19 +313,19 @@
     "message": "OK, forstået"
   },
   "options_whitelist_add": {
-    "message": "Tilføj hjemmeside"
+    "message": "Tilføj websted"
   },
   "options_whitelist_description": {
-    "message": "Du har slukket ad blokering på disse hjemmesider, og vil derfor se annoncer på dem."
+    "message": "Du har deaktiveret blokering af annoncer på disse websteder og vil derfor se annoncer på dem."
   },
   "options_whitelist_empty_1": {
-    "message": "Du har ikke nogen whitelistede hjemmesider."
+    "message": "Du har ikke nogen tilladte websteder."
   },
   "options_whitelist_empty_2": {
-    "message": "Hjemmesider du har tillid til og ønsker at tillade annoncer på vil blive vist her."
+    "message": "Websteder, som du har tillid til og ønsker at tillade annoncer på, vil blive vist her."
   },
   "options_whitelist_notification": {
-    "message": "\"$website$\" er blevet whitelistet.",
+    "message": "\"$website$\" er blevet tilladt.",
     "placeholders": {
       "website": {
         "content": "$1",

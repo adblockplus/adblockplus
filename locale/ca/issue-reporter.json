@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "Us donem la benvinguda a l'avisador d'errors"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Nota:</strong> S'obrirà una pestanya addicional de forma temporal perquè la pàgina en qüestió no es vegi afectada per l'avisador d'incidències."
+  },
   "issueReporter_doneButton_label": {
     "message": "Fet"
   },

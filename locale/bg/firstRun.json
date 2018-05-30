@@ -17,6 +17,21 @@
   "firstRun_contributor_credits": {
     "message": "Признания за сътрудниците"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "Някои потребители срещат проблем, че тази страница се отваря с всяко пускане на браузъра. Същият може да бъде разрешен чрез премахване и повторно инсталиране на Adblock Plus:"
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "Ако все още имате нужда от помощ, свържете се с нас на support@adblockplus.org или посетете нашите <a>Помощен център</a>."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "Отворете раздел Разширения на браузъра."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "Намерете Adblock Plus и го премахнете."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "Инсталлирайте повторно Adblock Plus от <a>adblockplus.org</a>."
+  },
   "firstRun_donate": {
     "message": "дари"
   },

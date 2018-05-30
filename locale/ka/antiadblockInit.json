@@ -1,0 +1,8 @@
+{
+  "notification_antiadblock_message": {
+    "message": "ეს საიტი ცნობილია, რომ Adblock Plus-ის მომხმარებლებს მიზნობრივ შეტყობინებებს უჩვენებს. გსურთ დამალოს Adblock Plus-მა ეს მიზნობრივი შეტყობინებები?"
+  },
+  "notification_antiadblock_title": {
+    "message": "გსურთ მიზნობრივი შეტყობინებების დამალვა?"
+  }
+}

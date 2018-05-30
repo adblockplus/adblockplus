@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "Vitajte v hlásení problémov"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Poznámka:</strong> Ďalšia karta sa dočasne otvorí, takže stránka na ktorej sa nachádzate, nebude ovplyvňovaná Reportérom výstrah."
+  },
   "issueReporter_doneButton_label": {
     "message": "Hotovo"
   },

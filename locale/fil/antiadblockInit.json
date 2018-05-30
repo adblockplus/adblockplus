@@ -1,0 +1,8 @@
+{
+  "notification_antiadblock_message": {
+    "message": "Ang site na ito ay kilala sa pagpapakita ng mga naka-target na mensahe sa mga gumagamit ng Adblock Plus. Gusto mo bang itago ang mga naka-target na mensahe gamit ang Adblock Plus?"
+  },
+  "notification_antiadblock_title": {
+    "message": "Itago ang mga naka-target na mensahe?"
+  }
+}

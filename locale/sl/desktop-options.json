@@ -1,6 +1,6 @@
 {
   "options_acceptableAds_ads_description_1": {
-    "message": "Sprejemljivi oglasi niso nadležni in ne posegajo v vsebino, ki si jo ogledujete.<a>Preberite več o merilih za sprejemljive oglase.</a>"
+    "message": "Sprejemljivi oglasi niso nadležni in ne posegajo v vsebino, ki si jo ogledujete. <a>Preberite več o merilih za sprejemljive oglase.</a>"
   },
   "options_acceptableAds_ads_label": {
     "message": "Dovoli sprejemljive oglase"
@@ -183,7 +183,7 @@
     "message": "Dejaven"
   },
   "options_filterList_state_disabled": {
-    "message": "Onemogočeno"
+    "message": "Onemogočen"
   },
   "options_filterList_title": {
     "message": "Seznami filtrov"
@@ -240,7 +240,7 @@
     "message": "<strong>Opomba:</strong> Uporabljajte samo sezname filtrov tretjih oseb od avtorjev, ki jim zaupate."
   },
   "options_new_label": {
-    "message": "Nov"
+    "message": "Novo"
   },
   "options_page_document_title": {
     "message": "Nastavitve"
@@ -267,7 +267,7 @@
     "message": "Imate vprašanje ali novo idejo? Tukaj smo, da vam pomagamo."
   },
   "options_social_title": {
-    "message": "Naveži stik"
+    "message": "Navežite stik"
   },
   "options_support_title": {
     "message": "Podpora"

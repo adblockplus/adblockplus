@@ -17,6 +17,21 @@
   "firstRun_contributor_credits": {
     "message": "Kaasaaitajate tunnustused"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "Osad kasutajad kogevad viga, kus see leht avaneb igal veebilehitseja käivitumisel. Selle vea saab lahendada Adblock Plusi eemaldades ja uuesti installides:"
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "Kui sul on endiselt abi vaja, võta meiega ühendust meiliaadressil support@adblockplus.org või külasta meie <a>Abikeskust</a>."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "Ava oma veebilehitseja Laienduste kaart."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "Leia Adblock Plus ja eemalda see."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "Installi Adblock Plus uuesti saidilt <a>adblockplus.org</a>."
+  },
   "firstRun_donate": {
     "message": "anneta"
   },

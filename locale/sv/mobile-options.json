@@ -8,10 +8,46 @@
   "mops_action_cancel": {
     "message": "Avbryt"
   },
+  "mops_enabled_label": {
+    "message": "Aktivera Adblock Plus på <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "Ange en titel"
+  },
+  "mops_error_url": {
+    "message": "Ange en URL-länk"
+  },
+  "mops_filterlist_add": {
+    "message": "+ Lägg till en filterlista"
+  },
   "mops_filterlist_add_action": {
     "message": "Lägg till filterlista"
   },
+  "mops_filterlist_add_url": {
+    "message": "+ Lägg till en anpassad filterlista"
+  },
+  "mops_header": {
+    "message": "Adblock Plus-inställningar"
+  },
+  "mops_subscribe_header": {
+    "message": "Lägg till en anpassad filterlista"
+  },
+  "mops_subscribe_title": {
+    "message": "Filterlistans namn"
+  },
+  "mops_subscribe_url": {
+    "message": "Filterlistans URL"
+  },
   "mops_subscriptions_header": {
     "message": "Filterprenumerationer"
+  },
+  "mops_title": {
+    "message": "Adblock Plus-inställningar"
   }
 }

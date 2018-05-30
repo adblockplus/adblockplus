@@ -1,9 +1,9 @@
 {
   "mops_acceptableAds_description": {
-    "message": "Tillad upåtrængende annoncering delvist"
+    "message": "Tillad ikke-påtrængende annoncering delvist"
   },
   "mops_acceptableAds_more": {
-    "message": "Lær mere"
+    "message": "Flere oplysninger"
   },
   "mops_action_cancel": {
     "message": "Annuller"
@@ -33,21 +33,21 @@
     "message": "+ Tilføj en brugerdefineret filterliste"
   },
   "mops_header": {
-    "message": "Adblock Plus indstillinger"
+    "message": "Adblock Plus-indstillinger"
   },
   "mops_subscribe_header": {
-    "message": "Tilføje en brugerdefineret filterliste"
+    "message": "Tilføj en brugerdefineret filterliste"
   },
   "mops_subscribe_title": {
-    "message": "Filterliste navn"
+    "message": "Filterlistens navn"
   },
   "mops_subscribe_url": {
-    "message": "Filtrerliste URL"
+    "message": "Filtrerlistens URL-adresse"
   },
   "mops_subscriptions_header": {
     "message": "Filterabonnementer"
   },
   "mops_title": {
-    "message": "Adblock Plus indstillinger"
+    "message": "Adblock Plus-indstillinger"
   }
 }

@@ -17,6 +17,21 @@
   "firstRun_contributor_credits": {
     "message": "Hozzájárulók névsora"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "Egyes felhasználók olyan problémát tapasztalnak, ahol ez az oldal minden alkalommal megnyílik, amikor böngészőjük elindul. A probléma megoldható az Adblock Plus eltávolításával és újratelepítésével:"
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "Ha még mindig segítségre van szüksége, vegye fel velünk a kapcsolatot a support@adblockplus.org címen vagy keresse fel a <a>Segítség Központ</a> címet."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "Nyissa meg a böngésző Bővítmények lapját."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "Keresse meg az Adblock Plus programot, és távolítsa el."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "Telepítse újra az Adblock Plus-ot az <a>adblockplus.org</a>-ból."
+  },
   "firstRun_donate": {
     "message": "adományozás"
   },

@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "Dobrodošli v poročevalcu težav"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Opomba:</strong> Začasno se bo odprl dodaten zavihek, da poročevalec težav ne bo prizadel strani, ki jo imate odprto."
+  },
   "issueReporter_doneButton_label": {
     "message": "Končaj"
   },

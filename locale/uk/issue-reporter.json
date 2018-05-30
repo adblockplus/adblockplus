@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "Ласкаво просимо до звітувача про проблеми"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Примітка:</strong> Тимчасово відкриється додаткова закладка, тому сторінка, на якій ви знаходитеся, не потрапить у Журнал помилок."
+  },
   "issueReporter_doneButton_label": {
     "message": "Гаразд"
   },

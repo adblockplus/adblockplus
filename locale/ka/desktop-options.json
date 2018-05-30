@@ -1,18 +1,186 @@
 {
+  "options_acceptableAds_ads_description_1": {
+    "message": "მისაღები რეკლამები არაა მომაბეზრებელი და არ ფარავს იმ შიგთავსს, რომელსაც ნახულობთ. <a>იხილეთ ვრცლად, მისაღები რეკლამების გასაზღვრის წესის შესახებ</a>"
+  },
+  "options_acceptableAds_ads_label": {
+    "message": "მისაღები რეკლამების დაშვება"
+  },
+  "options_acceptableAds_description": {
+    "message": "მისაღები რეკლამები არაა გამაღიზიანებელი. ესაა ერთგვარი ოქროს შუალედი რეკლამების შეზღუდვასა და ვებშიგთავსის მხარდაჭერას შორის, ვინაიდან სწორედ მისი საშუალებით იღებენ შემოსავალს ვებსაიტების მფლობელები."
+  },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>შენიშვნა:</strong> თქვენ გამორთული გაქვთ <strong>არ მითვალთვალო (Do Not Track - შემოკ. DNT)</strong> მოთხოვნა თქვენი ბრაუზერის პარამეტრებიდან. ამ შესაძლებლობამ რომ სათანადოდ იმუშაოს, გთხოვთ, ჩართოთ <strong>DNT</strong>. <a>იხილეთ, როგორ უნდა ჩაირთოს DNT</a>."
+  },
+  "options_acceptableAds_header": {
+    "message": "მისაღები რეკლამები"
+  },
+  "options_acceptableAds_privacy_label": {
+    "message": "მხოლოდ არამეთვალყურე რეკლამების დაშვება"
+  },
+  "options_advanced_description": {
+    "message": "მოირგეთ Adblock Plus, დაამატეთ ან მოაცილეთ მზა ფილტრები, ასევე შექმენით და ჩაასწორეთ საკუთარი ფილტრები"
+  },
   "options_close": {
     "message": "დახურვა"
+  },
+  "options_control_remove_title": {
+    "message": "წაშლა"
   },
   "options_customFilter_cancel": {
     "message": "გაუქმება"
   },
+  "options_customFilter_edit": {
+    "message": "ფილტრების ჩასწორება"
+  },
+  "options_customFilter_save": {
+    "message": "შენახვა"
+  },
+  "options_customFilters_description": {
+    "message": "შექმენით საკუთარი ფილტრები, Adblock Plus-ით სასურველი შიგთავსის შეზღუდვისა და დაშვებისთვის."
+  },
+  "options_customFilters_edit_placeholder": {
+    "message": "მაგ. $filter$",
+    "placeholders": {
+      "filter": {
+        "content": "$1",
+        "example": "/ads/track/*"
+      }
+    }
+  },
+  "options_customFilters_learn": {
+    "message": "იხილეთ ვრცლად, როგორ იქმნება ფილტრები"
+  },
+  "options_customFilters_start": {
+    "message": "დაიწყეთ ფილტრის შექმნა"
+  },
+  "options_customFilters_tip": {
+    "message": "თქვენ მიერ შექმნილი ფილტრები აქ გამოჩნდება."
+  },
+  "options_customFilters_title": {
+    "message": "შექმენით და ჩაასწორეთ თქვენი ფილტრი"
+  },
+  "options_customFilters_widget_title": {
+    "message": "ჩემი ფილტრი"
+  },
+  "options_customize_blockElement": {
+    "message": "მარჯვენა წკაპით 'ელემენტის შეზღუდვის' შესაძლებლობა"
+  },
+  "options_customize_blockElement_tooltip": {
+    "message": "ვებგვერდზე მომაბეზრებელი შიგთავსის დროებით შეზღუდვა, მაგ. სურათებისა და მოძრავი სლაიდების."
+  },
+  "options_customize_header": {
+    "message": "ვებგვერდზე მოქმედებების განსაზღვრა"
+  },
+  "options_customize_showDevToolsPanel": {
+    "message": "'Adblock Plus'-ის არე შემმუშავებლის ხელსაწყოებში"
+  },
+  "options_customize_showDevToolsPanel_tooltip": {
+    "message": "შეზღუდული და დაშვებული ელემენტები, თქვენი ბრაუზერის შემმუშავებლის ხელსაწყოების არიდან."
+  },
+  "options_customize_showNotifications": {
+    "message": "საჭირო შეტყობინებების ჩვენება"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Adblock Plus-ის ყველა შეტყობინების გათიშვა."
+  },
+  "options_dialog_about_copyright": {
+    "message": "მფლობელი © $currentYear$ eyeo GmbH.",
+    "placeholders": {
+      "currentYear": {
+        "content": "2017",
+        "example": "2017"
+      }
+    }
+  },
+  "options_dialog_about_title": {
+    "message": "Adblock Plus-ის შესახებ"
+  },
+  "options_dialog_about_trademark": {
+    "message": "ყველა უფლება დაცულია. Adblock Plus® წარმოადგენს eyeo GmbH-ის კუთვნილ სავაჭრო ნიშანს."
+  },
+  "options_dialog_about_version": {
+    "message": "ვერსიის ნომერი $version$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "2.6.7"
+      }
+    }
+  },
+  "options_dialog_import_subscription_location": {
+    "message": "ფილტრის URL ბმული"
+  },
+  "options_dialog_import_subscription_location_error": {
+    "message": "შეიყვანეთ მართებული URL ბმული"
+  },
+  "options_dialog_import_title": {
+    "message": "ფილტრის დამატება"
+  },
+  "options_dialog_language_other_empty": {
+    "message": "ხელმისაწვდომი ენები არაა."
+  },
+  "options_dialog_language_title": {
+    "message": "ენის არჩევა"
+  },
+  "options_dialog_predefined_confirm": {
+    "message": "დიახ, მსურს ამ ფილტრის გამოყენება"
+  },
+  "options_dialog_predefined_title": {
+    "message": "ნამდვილად გსურთ ამ ფილტრის დამატება?"
+  },
+  "options_email": {
+    "message": "ელფოსტა:"
+  },
+  "options_english": {
+    "message": "ინგლისური"
+  },
+  "options_filterList_add": {
+    "message": "+ ახალი ფილტრის დამატება"
+  },
   "options_filterList_column_name": {
-    "message": "ფილტრის წესები"
+    "message": "ფილტრები"
   },
   "options_filterList_column_status": {
-    "message": "სტატუსი"
+    "message": "მდგომარეობა"
+  },
+  "options_filterList_column_update": {
+    "message": "ბოლო განახლება"
+  },
+  "options_filterList_description": {
+    "message": "Adblock Plus-ის თითოეული პარამეტრი მუშაობს ფილტრის წესების მიხედვით. ქვემოთ მოცემული ფილტრის წესები შეესაბამება Adblock Plus-ის პარამეტრებს. ასევე, თქვენ შეგიძლიათ დაამატოთ სანდო ჯგუფების მიერ შექმნილი და დამუშავებული ფილტრები."
+  },
+  "options_filterList_empty": {
+    "message": "თქვენ ჯერ არ დაგიმატებიათ ფილტრები Adblock Plus-ზე. თქვენ მიერ დამატებული ფილტრები გამოჩნდება აქ."
+  },
+  "options_filterList_hours": {
+    "message": "საათის წინ"
+  },
+  "options_filterList_lastDownload_checksumMismatch": {
+    "message": "შეცდომა, სადარჯამი არ ემთხვევა"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "ჩამოტვირთვა წარუმატებელია"
+    "message": "შეცდომა, ჩამოტვირთვა ვერ მოხერხდა"
+  },
+  "options_filterList_lastDownload_inProgress": {
+    "message": "ახლდება"
+  },
+  "options_filterList_lastDownload_invalidData": {
+    "message": "შეცდომა, არამართებული ფილტრის წესები"
+  },
+  "options_filterList_lastDownload_invalidURL": {
+    "message": "შეცდომა, არამართებული მისამართი"
+  },
+  "options_filterList_minutes": {
+    "message": "წუთის წინ"
+  },
+  "options_filterList_now": {
+    "message": "ახლახანს"
+  },
+  "options_filterList_source": {
+    "message": "წყარო"
+  },
+  "options_filterList_state_active": {
+    "message": "მოქმედი"
   },
   "options_filterList_state_disabled": {
     "message": "გამორთული"
@@ -20,10 +188,158 @@
   "options_filterList_title": {
     "message": "ფილტრის წესები"
   },
+  "options_filterList_update": {
+    "message": "ყველა ფილტრის წესების განახლება"
+  },
   "options_filterList_updateNow": {
     "message": "აქტუალიზირება"
   },
+  "options_filterList_website": {
+    "message": "ვებსაიტი"
+  },
+  "options_footer_about": {
+    "message": "Adblock Plus-ის შესახებ"
+  },
+  "options_footer_contribute": {
+    "message": "წვლილის შეტანა"
+  },
+  "options_general_description": {
+    "message": "იხილეთ, თუ რას ზღუდავს და აჩვენებს Adblock Plus ვებსაიტებზე"
+  },
+  "options_help_description": {
+    "message": "მიიღეთ დახმარება ან გამოგვეხმაურეთ"
+  },
+  "options_language_add": {
+    "message": "+ ენის დამატება"
+  },
+  "options_language_change": {
+    "message": "შეცვლა"
+  },
+  "options_language_description": {
+    "message": "Adblock Plus-ის იმ ენებისთვის მორგება, რომელთაც, უმთავრესად იყენებთ გვერდების მოსანახულებლად."
+  },
+  "options_language_empty": {
+    "message": "თქვენ არ გაქვთ ენებზე მორგებული ფილტრები მითითებული."
+  },
+  "options_language_header": {
+    "message": "ენა"
+  },
+  "options_language_tip": {
+    "message": "<strong>რჩევა:</strong> მხოლოდ ის ენები მიუთითეთ, რომლებიც გესაჭიროებათ. ბევრი ენის მითითება, მეტად დატვირთავს რეკლამების შემზღუდავს და შეამცირებს გვერდების მონახულების სიჩქარეს."
+  },
+  "options_learn_more": {
+    "message": "იხილეთ ვრცლად"
+  },
+  "options_more_filters_description": {
+    "message": "ეს, Adblock Plus-ზე თქვენ მიერ ადრე დამატებული ფილტრებია."
+  },
+  "options_more_filters_header": {
+    "message": "სხვა ფილტრები"
+  },
+  "options_more_filters_note": {
+    "message": "<strong>შენიშვნა:</strong> მხოლოდ ის ფილტრები უნდა გამოიყენოთ, რომელთა შემქმნელიც სანდოა."
+  },
+  "options_new_label": {
+    "message": "ახალი"
+  },
+  "options_page_document_title": {
+    "message": "AdBlock Plus-ის პარამეტრები"
+  },
+  "options_page_title": {
+    "message": "პარამეტრები"
+  },
+  "options_privacy_header": {
+    "message": "პირადულობა და უსაფრთხოება"
+  },
+  "options_protection_privacy_tooltip": {
+    "message": "პირადულობის დაცვა ცნობილი მეთვალყურეებისგან, რომლებიც თვალს ადევნებს თქვენს მოქმედებებს ვებსაიტების მონახულებისას."
+  },
+  "options_protection_social_tooltip": {
+    "message": "ვებსაიტებზე არსებული სოციალური ქსელების ხატულები, საშუალებას აძლევს ამ სოციალურ ქსელებს, შეისწავლონ და შეადგინონ თქვენი პიროვნული დახასიათება, მონახულებული გვერდების საფუძველზე - მიუხედავად იმისა, დააწკაპებთ თუ არა ამ ღილაკებზე. ამ ხატულების დამალვა, დაიცავს თქვენს პირადულობას."
+  },
+  "options_report_bug": {
+    "message": "ხარვეზი აღმოაჩინეთ? <a>მოგვახსენეთ ამის შესახებ</a>"
+  },
+  "options_report_forum": {
+    "message": "გსურთ მხარი დაუჭიროთ ჩვენს ერთობას? <a>ეწვიეთ ფორუმს</a>"
+  },
+  "options_social_description": {
+    "message": "კითხვა გაქვთ ან აზრის გამოთქმა გსურთ? მზად ვართ, მოგისმინოთ."
+  },
+  "options_social_title": {
+    "message": "გამოგვეხმაურეთ"
+  },
+  "options_support_title": {
+    "message": "მხარდაჭერა"
+  },
+  "options_tab_advanced": {
+    "message": "დამატებით"
+  },
+  "options_tab_general": {
+    "message": "ზოგადი"
+  },
+  "options_tab_help": {
+    "message": "დახმარება"
+  },
   "options_tab_whitelist": {
-    "message": "დაშვებული ვებ-საიტები"
+    "message": "გამონაკლისი ვებსაიტები"
+  },
+  "options_tracking_warning_1": {
+    "message": "როგორც ჩანს, თქვენ ჩართული გაქვთ ორივე: <strong>$tracking$</strong> და <strong>$acceptableAds$</strong>.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "ამასთან გაითვალისწინეთ, რომ რეკლამის შემქმნელების მიერ, თქვენთვის უფრო გამოსადეგი შიგთავსის შემოთავაზებისთის, მისაღებ რეკლამებთან ერთად, <strong>შესაძლოა</strong> ცალკეული მეთვალყურე საშუალებებიც დაიშვას."
+  },
+  "options_tracking_warning_3": {
+    "message": "თუ გსურთ პირადი მონაცემების კიდევ უფრო მეტად დაცვა, ქვემოთ მონიშნეთ <strong>$acceptableAdsPrivacy$</strong> უჯრა.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "კარგი, გასაგებია"
+  },
+  "options_whitelist_add": {
+    "message": "ვებსაიტის დამატება"
+  },
+  "options_whitelist_description": {
+    "message": "თქვენ გამორთული გაქვთ რეკლამების შეზღუდვა ამ ვებსაიტებზე, შესაბამისად, მათი მონახულებისას რეკლამებსაც იხილავთ."
+  },
+  "options_whitelist_empty_1": {
+    "message": "თქვენ არ გაქვთ საიტები დამატებული გამონაკლისებში."
+  },
+  "options_whitelist_empty_2": {
+    "message": "ვებსაიტები რომელთაც ენდობით და გსურთ მათი რეკლამების ხილვა."
+  },
+  "options_whitelist_notification": {
+    "message": "\"$website$\" დამატებულია გამონაკლისებში.",
+    "placeholders": {
+      "website": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "options_whitelist_placeholder_example": {
+    "message": "მაგ. $domain$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
   }
 }

@@ -131,6 +131,9 @@
   "options_email": {
     "message": "Email:"
   },
+  "options_english": {
+    "message": "Angličtina"
+  },
   "options_filterList_add": {
     "message": "+ Pridajte nový zoznam filtrov"
   },

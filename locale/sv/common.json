@@ -1,0 +1,14 @@
+{
+  "common_feature_anti_adblock_title": {
+    "message": "Dölj Adblock Varningsmeddelanden"
+  },
+  "common_feature_malware_title": {
+    "message": "Blockera skadliga program"
+  },
+  "common_feature_privacy_title": {
+    "message": "Blockera ytterligare spårning"
+  },
+  "common_feature_social_title": {
+    "message": "Blockera spårning via sociala medieikoner"
+  }
+}

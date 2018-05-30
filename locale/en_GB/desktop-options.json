@@ -131,6 +131,9 @@
   "options_email": {
     "message": "Email:"
   },
+  "options_english": {
+    "message": "English"
+  },
   "options_filterList_add": {
     "message": "+ Add a new filter list"
   },
