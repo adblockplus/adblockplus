@@ -110,6 +110,13 @@
         }
       };
     }
+
+    get sender()
+    {
+      return {
+        tab: {id: -1}
+      };
+    }
   }
   window.ext._Port = Port;
 }());
