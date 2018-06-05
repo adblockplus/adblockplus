@@ -4,69 +4,32 @@
   "description": "Adblock Plus UI",
   "scripts": {
     "$": "npm-dollar",
-    "build": "npm run $ build",
     "bundle": "npm run $ bundle",
     "lint": "npm run $ lint",
     "postinstall": "npm run bundle",
     "prepare": "python2 ensure_dependencies.py",
     "start": "http-server & npm run watch",
-    "test": "npm run $ test",
-    "watch": "npm run $ watch",
-    "csv-export": "node build/csv-exporter/main.js -e",
-    "csv-import": "node build/csv-exporter/main.js -i"
+    "watch": "npm run $ watch"
   },
   "$": {
-    "build": {
-      "popup": [
-        "$ bundle.popup",
-        "cd ../adblockpluschrome",
-        "SKIP_DEPENDENCY_UPDATES=true ./build.py devenv -t chrome",
-        "cd -"
-      ]
-    },
     "bundle": {
       "desktop-options": {
         "css": "$ create.css desktop-options",
         "js": "$ create.js ./js/desktop-options.js ./desktop-options.js"
       },
-      "first-run": {
-        "css": [
-          "$ create.css first-run",
-          "$ create.css web"
-        ],
-        "js": "$ create.js ./js/first-run.js ./first-run.js"
-      },
-      "issue-reporter": {
-        "css": "$ create.css issue-reporter",
-        "js": "$ create.js ./js/issue-reporter.js ./issue-reporter.js"
-      },
-      "popup": "$ create.bundle popup",
       "test": [
-        [
-          "if [ ! -z $1 ]; then",
-          " echo \"/* eslint-disable */$(browserify --node ./tests/$1.js)\">./smoke/$1.js;",
-          "fi"
-        ]
+        "if [ ! -z $1 ]; then",
+        " echo \"/* eslint-disable */$(browserify --node ./tests/$1.js)\">./smoke/$1.js;",
+        "fi"
       ]
     },
     "create": {
-      "bundle": {
-        "css": "$ create.css $1",
-        "js": "$ create.js ./js/$1.js ./$1.js"
-      },
       "css": "node-sass ./css/$1.scss ./skin/$1.css",
       "js": [
-        "!prod eslint ./js/**/*.js",
-        "echo \"/* eslint-disable */$(browserify --node $1)\">$2"
+        "eslint ./js/**/*.js",
+        "echo \"/* eslint-disable */$(browserify --node --no-bundle-external $1)\">$2"
       ],
       "test": {
-        "component": {
-          "css": "$ create.test.css $1",
-          "js": [
-            "$ create.test.js $1",
-            "$ bundle.test $1"
-          ]
-        },
         "css": "node-sass ./css/$1.scss ./smoke/css/$1.css",
         "js": [
           "mkdir -p smoke",
@@ -75,8 +38,7 @@
       }
     },
     "lint": {
-      "css": "stylelint ./css/*.scss",
-      "js": "eslint ./*.js ./js/*.js ./lib/*.js ./ext/*.js ./build/*.js"
+      "js": "eslint ./*.js ./lib/*.js ./ext/*.js"
     },
     "test": {
       "io-element": {
@@ -85,7 +47,6 @@
           "$ bundle.test io-element"
         ]
       },
-      "io-filter-search": "$ create.test.component io-filter-search",
       "io-highlighter": {
         "css": [
           "$ create.test.css io-highlighter",
@@ -97,18 +58,22 @@
           "$ bundle.test io-highlighter"
         ]
       },
-      "io-list-box": "$ create.test.component io-list-box",
-      "io-popout": "$ create.test.component io-popout",
-      "io-scrollbar": "$ create.test.component io-scrollbar",
-      "io-steps": "$ create.test.component io-steps",
-      "io-toggle": "$ create.test.component io-toggle",
-      "io-big-toggle": "$ create.test.component io-big-toggle"
+      "io-steps": {
+        "css": "$ create.test.css io-steps",
+        "js": [
+          "$ create.test.js io-steps",
+          "$ bundle.test io-steps"
+        ]
+      },
+      "io-toggle": {
+        "css": "$ create.test.css io-toggle",
+        "js": [
+          "$ create.test.js io-toggle",
+          "$ bundle.test io-toggle"
+        ]
+      }
     },
-    "watch": {
-      "build": "watch 'npm run build' ./css ./js",
-      "bundle": "watch 'npm run bundle' ./css ./js",
-      "test": "watch 'npm run test' ./css ./js"
-    }
+    "watch": "watch 'npm run bundle' ./css ./js"
   },
   "dependencies": {
     "browserify": "^16.2.2",
@@ -124,9 +89,10 @@
     "eslint-config-eyeo": "^2.1.0",
     "glob": "^7.1.2",
     "http-server": "^0.11.1",
-    "nightmare": "^3.0.1",
-    "stylelint": "^9.5.0",
-    "stylelint-config-eyeo": "^1.0.2",
+    "hyperhtml": "^2.10.5",
+    "hyperhtml-element": "^1.8.1",
+    "node-sass": "^4.9.0",
+    "npm-dollar": "^0.1.0",
     "watch": "^1.0.2"
   }
 }

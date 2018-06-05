@@ -2,12 +2,5 @@ node_modules/
 screenshots/
 smoke/
 skin/desktop-options.css
-skin/first-run.css
-skin/issue-reporter.css
-skin/popup.css
-skin/web.css
-desktop-options.js
-first-run.js
-issue-reporter.js
-popup.js
 package-lock.json
+
