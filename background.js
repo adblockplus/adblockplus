@@ -178,6 +178,12 @@
       title: "Fanboy's Social Blocking List",
       installed: true
     },
+    [`${subscriptionServer}/abp-filters-anti-cv.txt`]: {
+      title: "ABP Anti-Circumvention list",
+      installed: true,
+      disabled: false,
+      recommended: "circumvention"
+    },
     [`${subscriptionServer}/antiadblockfilters.txt`]: {
       title: "Adblock Warning Removal List",
       installed: true,

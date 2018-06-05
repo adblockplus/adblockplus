@@ -359,6 +359,11 @@ function focusNextElement(container, currentElement)
   return true;
 }
 
+collections.cv = new Collection([
+  {
+    id: "anti-cv-table"
+  }
+]);
 collections.protection = new Collection([
   {
     id: "recommend-protection-list-table"
@@ -400,23 +405,27 @@ collections.filterLists = new Collection([
 
 function addSubscription(subscription)
 {
-  const {disabled} = subscription;
+  const {disabled, recommended, url} = subscription;
   let collection = null;
-  if (subscription.recommended)
+  if (recommended)
   {
-    if (subscription.recommended == "ads")
+    if (recommended == "ads")
     {
       if (disabled == false)
         collection = collections.langs;
 
       collections.allLangs.addItem(subscription);
     }
+    else if (recommended == "circumvention")
+    {
+      collection = collections.cv;
+    }
     else
     {
       collection = collections.protection;
     }
   }
-  else if (!isAcceptableAds(subscription.url) && disabled == false)
+  else if (!isAcceptableAds(url) && disabled == false)
   {
     collection = collections.more;
   }
@@ -424,7 +433,7 @@ function addSubscription(subscription)
   if (collection)
     collection.addItem(subscription);
 
-  subscriptionsMap[subscription.url] = subscription;
+  subscriptionsMap[url] = subscription;
   updateTooltips();
 }
 
@@ -532,7 +541,8 @@ function loadRecommendations()
           url: element.getAttribute("url")
         };
 
-        if (subscription.recommended != "ads")
+        if (subscription.recommended != "ads" &&
+            subscription.recommended != "circumvention")
         {
           type = type.replace(/\W/g, "_");
           subscription.title = getMessage("common_feature_" +

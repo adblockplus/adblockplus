@@ -440,5 +440,17 @@
         "example": "example.com"
       }
     }
+  },
+  "options_anti_cv_header": {
+    "description": "Text for the section about anti CV",
+    "message": "Anti-Circumvention"
+  },
+  "options_anti_cv_title": {
+    "description": "Title for the Anti-Circumvention list",
+    "message": "ABP Anti-Circumvention Filter List"
+  },
+  "options_anti_cv_tooltip": {
+    "description": "Tooltip for the anti circumvention list",
+    "message": "This filter list works against circumvention (i.e. techniques to force ads on ad-blocking users). These filters address circumventing ads as well as related tracking."
   }
 }

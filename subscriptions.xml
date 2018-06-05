@@ -137,6 +137,13 @@
                 prefixes="ru,uk"
                 author="Lain_13, dimisa"
                 type="ads"/>
+  <subscription title="ABP filters"
+                specialization="Anti Circumvention, English"
+                url="https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt"
+                homepage="https://github.com/abp-filters/abp-filters-anti-cv"
+                prefixes="en"
+                author="eyeo GmbH"
+                type="circumvention"/>
   <subscription title="EasyPrivacy"
                 specialization="privacy protection"
                 url="https://easylist-downloads.adblockplus.org/easyprivacy.txt"
