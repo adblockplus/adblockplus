@@ -3,28 +3,77 @@
   "private": true,
   "description": "Adblock Plus UI",
   "scripts": {
-    "bash:js": "npm run bash:lint && bash -c 'echo \"/* eslint-disable */$(browserify --node --no-bundle-external $0)\">$1'",
-    "bash:css": "bash -c 'node-sass ./css/$0.scss ./skin/$0.css'",
-    "bash:lint": "if [ \"$npm_config_only\" != \"production\" ] && [ \"$npm_config_production\" = \"\" ]; then eslint ./js/**/*.js; fi",
-    "bashForTest:css": "bash -c 'node-sass ./css/$0.scss ./smoke/css/$0.css'",
-    "bashForTest:js": "mkdir -p smoke && bash -c 'cp -R ./tests/{locale,background.html,$0.*} ./smoke'",
-    "bundleTest:js": "bash -c 'echo \"/* eslint-disable */$(browserify --node ./tests/$0.js)\">./smoke/$0.js'",
-    "lint": "npm run lint:js",
-    "lint:js": "eslint ./*.js ./lib/*.js ./ext/*.js",
+    "$": "npm-dollar",
+    "bundle": "npm run $ bundle",
+    "lint": "npm run $ lint",
+    "postinstall": "npm run bundle",
     "prepare": "python2 ensure_dependencies.py",
     "start": "http-server & npm run watch",
-    "bundle": "npm run bundle:desktop-options.js && npm run bundle:desktop-options.css",
-    "bundle:desktop-options.css": "npm run bash:css desktop-options",
-    "bundle:desktop-options.js": "npm run bash:js ./js/desktop-options.js ./desktop-options.js",
-    "watch": "npm run watch:desktop-options.js & npm run watch:desktop-options.css",
-    "watch:desktop-options.css": "watch 'npm run bundle:desktop-options.css' ./css",
-    "watch:desktop-options.js": "watch 'npm run bundle:desktop-options.js' ./js",
-    "test": "npm run test:io-element && npm run test:io-highlighter && npm run test:io-steps && npm run test:io-toggle && http-server",
-    "test:io-element": "npm run bashForTest:js io-element && npm run bundleTest:js io-element",
-    "test:io-highlighter": "npm run bashForTest:js io-highlighter && npm run bundleTest:js io-highlighter && npm run bashForTest:css io-highlighter && cp -R ./skin/icons smoke/css &&  cp ./tests/image.base64.txt ./smoke",
-    "test:io-steps": "npm run bashForTest:js io-steps && npm run bundleTest:js io-steps && npm run bashForTest:css io-steps",
-    "test:io-toggle": "npm run bashForTest:js io-toggle && npm run bundleTest:js io-toggle && npm run bashForTest:css io-toggle",
-    "postinstall": "npm run bundle"
+    "watch": "npm run $ watch"
+  },
+  "$": {
+    "bundle": {
+      "desktop-options": {
+        "css": "$ create.css desktop-options",
+        "js": "$ create.js ./js/desktop-options.js ./desktop-options.js"
+      },
+      "test": [
+        "if [ ! -z $1 ]; then",
+        " echo \"/* eslint-disable */$(browserify --node ./tests/$1.js)\">./smoke/$1.js;",
+        "fi"
+      ]
+    },
+    "create": {
+      "css": "node-sass ./css/$1.scss ./skin/$1.css",
+      "js": [
+        "eslint ./js/**/*.js",
+        "echo \"/* eslint-disable */$(browserify --node --no-bundle-external $1)\">$2"
+      ],
+      "test": {
+        "css": "node-sass ./css/$1.scss ./smoke/css/$1.css",
+        "js": [
+          "mkdir -p smoke",
+          "cp -R ./tests/{locale,background.html,$1.*} ./smoke"
+        ]
+      }
+    },
+    "lint": {
+      "js": "eslint ./*.js ./lib/*.js ./ext/*.js"
+    },
+    "test": {
+      "io-element": {
+        "js": [
+          "$ create.test.js io-element",
+          "$ bundle.test io-element"
+        ]
+      },
+      "io-highlighter": {
+        "css": [
+          "$ create.test.css io-highlighter",
+          "cp -R ./skin/icons smoke/css",
+          "cp ./tests/image.base64.txt ./smoke"
+        ],
+        "js": [
+          "$ create.test.js io-highlighter",
+          "$ bundle.test io-highlighter"
+        ]
+      },
+      "io-steps": {
+        "css": "$ create.test.css io-steps",
+        "js": [
+          "$ create.test.js io-steps",
+          "$ bundle.test io-steps"
+        ]
+      },
+      "io-toggle": {
+        "css": "$ create.test.css io-toggle",
+        "js": [
+          "$ create.test.js io-toggle",
+          "$ bundle.test io-toggle"
+        ]
+      }
+    },
+    "watch": "watch 'npm run bundle' ./css ./js"
   },
   "dependencies": {
     "browserify": "^16.2.2",
@@ -35,6 +84,7 @@
     "hyperhtml": "^2.10.5",
     "hyperhtml-element": "^1.8.1",
     "node-sass": "^4.9.0",
+    "npm-dollar": "^0.1.0",
     "watch": "^1.0.2"
   }
 }

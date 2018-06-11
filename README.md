@@ -86,7 +86,7 @@ Linting
 
 You can lint all options via `npm run lint`.
 
-You can also run specific target linting via `npm run lint:js` or, once available, via `npm run lint:css`.
+You can also run specific target linting via `npm run $ lint.js` or, once available, via `npm run $ lint.css`.
 
 Remember, both `eslint` and `stylelint` can help fixing issues via `--fix` flag.
 
@@ -97,47 +97,28 @@ which should be provided automatically when you install `npm`.
 npx stylelint --fix skin/real-file-name.css
 ```
 
-Bundling JS
------------
+Bundling JS or CSS
+------------------
 
-As it is for the `desktop-options.js` case, bundling is done via `package.json`
-script entries.
+As it is for the `desktop-options` case, bundling is done via `package.json`
+script entries handled by `$` namespace and shortcut.
 
-A dedicated script entry, such `bundle:desktop-options.js`,
-should simply use the `bash:js` script, passing along
-the source file and the target.
+Such shortcut gives us easy access to all scripts
+defined within the `$` entry, and normalized per macOS / Linux / Windows envs.
 
 ```js
-{
-  // example of a new bundle for the ./js/source.js file
-  "bundle:target.js": "npm run bash:js ./js/source.js ./target.js"
+"bundle": {
+  "desktop-options": {
+    "js": [
+      "eslint js/desktop-options.js",
+      "$ create.js js/desktop-options.js desktop-options.js"
+    ],
+    "css": "$ create.css desktop-options"
+  }
 }
 ```
 
-The main `bundle` script should include each sub-bundle operation too.
-
-Bundling CSS
-------------
-
-As it is for the `desktop-options.css` case, bundling is done via `package.json`
-script entries.
-
-A dedicated script entry, such `bundle:desktop-options.css`,
-should simply use the `bash:css` script, passing along
-the source file and the target.
-
-```js
-{
-  // example of a new bundle for the ./css/source.scss file
-  "bundle:target.css": "npm run bash:css ./css/source.scss ./skin/target.css"
-}
-```
-
-In case there are dependencies, please ensure these are
-imported via `@import "dep.scss"` and not via `url(...)` syntax.
-
-As it is for JS bundles, the main `bundle` script should include each
-CSS bundle too.
+When omitted, all properties will be executed so that `npm run $ bundle.desktop-options` will pass through `.js` and `.css`.
 
 Watching
 --------
@@ -145,20 +126,10 @@ Watching
 While developing, it is convenient to bundle automatically
 each time a source file is changed.
 
-As a team, we agreed on restructuring JS code inside the js folder,
+As a team, we agreed on restructuring JS and CSS code inside the js folder,
 so that is watched, and each bundled created, every time there is a changes.
 
-Similarly done for bundles, watches follow the following convention:
-
-a named script entry such `watch:desktop-option` that
-points at the following command:
-
-```sh
-watch 'npm run bundle:desktop-options' ./js
-```
-
-The main `watch` script should include each sub-watch operation.
-
+Simply `npm run watch` to start watching for all changes.
 
 Translations
 ------------
@@ -187,7 +158,7 @@ parameters:
   blocked (necessary to test the check for blocked scripts in sharing buttons).
 
 mobile-options.html
-------------
+-------------------
 
 This is a web extension implementation of the Adblock Plus for Firefox Mobile
 options page.
@@ -200,7 +171,7 @@ parameters:
 * `showPageOptions=true`: shows page-specific options
 
 desktop-options.html
-------------
+--------------------
 
 This is the implementation of the Adblock Plus options page which is
 the primary UI for changing settings and for managing filter lists.
