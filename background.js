@@ -229,8 +229,8 @@
   };
   Subscription.fromURL = function(url)
   {
-    if (url in knownSubscriptions)
-      return knownSubscriptions[url];
+    if (knownSubscriptions.has(url))
+      return knownSubscriptions.get(url);
 
     if (/^https?:\/\//.test(url))
       return new modules.subscriptionClasses.Subscription(url);
@@ -254,15 +254,7 @@
     FilterStorage: {
       get subscriptions()
       {
-        const subscriptions = [];
-        const {knownSubscriptions} = modules.filterStorage.FilterStorage;
-        for (const url in knownSubscriptions)
-        {
-          subscriptions.push(
-            modules.filterStorage.FilterStorage.knownSubscriptions[url]
-          );
-        }
-        return subscriptions;
+        return Array.from(knownSubscriptions.values());
       },
 
       get knownSubscriptions()
@@ -273,11 +265,10 @@
       addSubscription(subscription)
       {
         const {fromURL} = Subscription;
-        const {FilterStorage} = modules.filterStorage;
 
-        if (!(subscription.url in FilterStorage.knownSubscriptions))
+        if (!knownSubscriptions.has(subscription.url))
         {
-          knownSubscriptions[subscription.url] = fromURL(subscription.url);
+          knownSubscriptions.set(subscription.url, fromURL(subscription.url));
           modules.filterNotifier.FilterNotifier.emit("subscription.added",
             subscription);
         }
@@ -285,11 +276,9 @@
 
       removeSubscription(subscription)
       {
-        const {FilterStorage} = modules.filterStorage;
-
-        if (subscription.url in FilterStorage.knownSubscriptions)
+        if (knownSubscriptions.has(subscription.url))
         {
-          delete knownSubscriptions[subscription.url];
+          knownSubscriptions.delete(subscription.url);
           modules.filterNotifier.FilterNotifier.emit("subscription.removed",
             subscription);
         }
@@ -506,16 +495,18 @@
   ];
   const knownFilters = filters.map(modules.filterClasses.Filter.fromText);
 
-  const knownSubscriptions = Object.create(null);
+  const knownSubscriptions = new Map();
   for (const url in subscriptionDetails)
   {
     if (!subscriptionDetails[url].installed)
       continue;
 
-    knownSubscriptions[url] =
-      modules.subscriptionClasses.Subscription.fromURL(url);
+    knownSubscriptions.set(
+      url,
+      modules.subscriptionClasses.Subscription.fromURL(url)
+    );
   }
-  const customSubscription = knownSubscriptions["~user~786254"];
+  const customSubscription = knownSubscriptions.get("~user~786254");
 
   if (params.addSubscription)
   {
