@@ -16,7 +16,7 @@
  */
 
 /* globals checkShareResource, getDocLink, i18nFormatDateTime, openSharePopup,
-           setLinks, E */
+  E */
 
 "use strict";
 
@@ -29,7 +29,7 @@ let additionalSubscriptions = [];
 
 const collections = Object.create(null);
 const {getMessage} = browser.i18n;
-const {setElementText} = ext.i18n;
+const {setElementLinks, setElementText} = ext.i18n;
 const customFilters = [];
 const filterErrors = new Map([
   ["synchronize_invalid_url",
@@ -932,7 +932,7 @@ function onDOMLoaded()
   });
   getDocLink("acceptable_ads_criteria", (link) =>
   {
-    setLinks("enable-acceptable-ads-description", link);
+    setElementLinks("enable-acceptable-ads-description", link);
   });
   setElementText(E("tracking-warning-1"), "options_tracking_warning_1",
     [getMessage("common_feature_privacy_title"),
@@ -946,7 +946,7 @@ function onDOMLoaded()
   });
   getDocLink("adblock_plus_{browser}_dnt", url =>
   {
-    setLinks("dnt", url);
+    setElementLinks("dnt", url);
   });
 
   // Whitelisted tab
@@ -993,11 +993,11 @@ function onDOMLoaded()
   // Help tab
   getDocLink("adblock_plus_report_bug", (link) =>
   {
-    setLinks("report-bug", link);
+    setElementLinks("report-bug", link);
   });
   getDocLink("{browser}_support", url =>
   {
-    setLinks("visit-forum", url);
+    setElementLinks("visit-forum", url);
   });
   getDocLink("social_twitter", (link) =>
   {

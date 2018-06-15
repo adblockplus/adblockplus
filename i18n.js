@@ -33,7 +33,61 @@ browser.runtime.sendMessage(
   }
 );
 
+function assignAction(elements, action)
+{
+  for (const element of elements)
+  {
+    switch (typeof action)
+    {
+      case "string":
+        element.href = action;
+        element.target = "_blank";
+        break;
+      case "function":
+        element.href = "#";
+        element.addEventListener("click", action);
+        break;
+    }
+  }
+}
+
+function* getRemainingLinks(parent)
+{
+  const links = parent.querySelectorAll("a:not([data-i18n-index])");
+  for (const link of links)
+  {
+    yield link;
+  }
+}
+
 ext.i18n = {
+  setElementLinks(elementId, ...actions)
+  {
+    const element = document.getElementById(elementId);
+    const remainingLinks = getRemainingLinks(element);
+
+    for (let i = 0; i < actions.length; i++)
+    {
+      // Assign action to links with matching index
+      const links = element.querySelectorAll(`a[data-i18n-index='${i}']`);
+      if (links.length)
+      {
+        assignAction(links, actions[i]);
+        continue;
+      }
+
+      // Assign action to non-indexed link in the order they appear
+      // Note that this behavior is deprecated and only exists
+      // for backwards compatibility
+      // https://issues.adblockplus.org/ticket/6743
+      const link = remainingLinks.next();
+      if (link.done)
+        continue;
+
+      assignAction([link.value], actions[i]);
+    }
+  },
+
   // Inserts i18n strings into matching elements. Any inner HTML already
   // in the element is parsed as JSON and used as parameters to
   // substitute into placeholders in the i18n message.
@@ -41,16 +95,21 @@ ext.i18n = {
   {
     function processString(str, currentElement)
     {
-      const match = /^(.*?)<(a|strong)>(.*?)<\/\2>(.*)$/.exec(str);
+      const match = /^(.*?)<(a|strong)(\d)?>(.*?)<\/\2\3>(.*)$/.exec(str);
       if (match)
       {
-        processString(match[1], currentElement);
+        const [, before, name, index, innerText, after] = match;
+        processString(before, currentElement);
 
-        const e = document.createElement(match[2]);
-        processString(match[3], e);
+        const e = document.createElement(name);
+        if (typeof index != "undefined")
+        {
+          e.dataset.i18nIndex = index;
+        }
+        processString(innerText, e);
         currentElement.appendChild(e);
 
-        processString(match[4], currentElement);
+        processString(after, currentElement);
       }
       else
         currentElement.appendChild(document.createTextNode(str));
