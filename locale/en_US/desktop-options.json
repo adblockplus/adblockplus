@@ -197,6 +197,10 @@
     "description": "Tooltip text for Show 'Block element' option item of customize section in Advanced tab",
     "message": "Temporarily block annoying items on a webpage, e.g. images or animated slideshows."
   },
+  "options_customize_iconStats": {
+    "description": "Option label of customize section in Advanced tab",
+    "message": "Show number of ads blocked in icon"
+  },
   "options_customize_showDevToolsPanel": {
     "description": "Option label of customize section in Advanced tab",
     "message": "Show 'Adblock Plus' panel in developer tools"
