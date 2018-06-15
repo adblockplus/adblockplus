@@ -48,7 +48,7 @@
       }
     },
     "lint": {
-      "js": "eslint ./*.js ./lib/*.js ./ext/*.js"
+      "js": "eslint ./*.js ./js/*.js ./lib/*.js ./ext/*.js"
     },
     "test": {
       "io-element": {
