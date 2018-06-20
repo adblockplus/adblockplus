@@ -139,6 +139,21 @@ Translations for the strings in this project are managed using the online
 script. To get a list of the possible commands type `./build.py help` at
 the command line. (You will also need the Crowdin API key for the project.)
 
+Translations CSV exporter
+-------------------------
+
+Translation agencies are using CSVs for translating the strings. CSV exporter
+helps keeping that files in sync with the project. To learn more about the
+script usage run `node build/csv-export.js -h`.
+
+Format of the exported CSV files:
+
+| Filename     | StringID | Description          | Placeholders                |     en_US      | af         | am   | ... |
+|--------------|----------|----------------------|-----------------------------|----------------|------------|------|-----|
+| options.json | cancel   | Cancel button label  |                             |  Cancel        | Kanselleer | ይቅር | ... |
+| options.json | domain   | Domain input example | {"domain":{"content":"$1"}} |  e.g. $domain$ |            |      | ... |
+
+
 firstRun.html
 -------------
 
