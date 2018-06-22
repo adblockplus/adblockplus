@@ -979,6 +979,7 @@ function onDOMLoaded()
 
   getDocLink("filterdoc", (link) =>
   {
+    setElementLinks("custom-filters-description", link);
     E("link-filters").setAttribute("href", link);
   });
 
