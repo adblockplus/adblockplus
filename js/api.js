@@ -15,18 +15,21 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* 
-  Used for translatable screen reader only content.
-  e.g.: Use instead of aria-label to avoid complex attribute value translation
-*/
-.sr-only
+"use strict";
+
+function send(type, args)
 {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0px;
-  border: 0px;
+  args = Object.assign({}, {type}, args);
+  return browser.runtime.sendMessage(args);
 }
+
+const app = {
+  get: (what) => send("app.get", {what}),
+  open: (what) => send("app.open", {what})
+};
+module.exports.app = app;
+
+const doclinks = {
+  get: (link) => send("app.get", {what: "doclink", link})
+};
+module.exports.doclinks = doclinks;

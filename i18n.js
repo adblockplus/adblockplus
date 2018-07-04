@@ -45,7 +45,11 @@ function assignAction(elements, action)
         break;
       case "function":
         element.href = "#";
-        element.addEventListener("click", action);
+        element.addEventListener("click", (ev) =>
+        {
+          ev.preventDefault();
+          action();
+        });
         break;
     }
   }
@@ -126,8 +130,8 @@ function loadI18nStrings()
 {
   function addI18nStringsToElements(containerElement)
   {
-    const elements = containerElement.querySelectorAll("[class^='i18n_']");
-    for (const node of elements)
+    const nodesContent = containerElement.querySelectorAll("[class^='i18n_']");
+    for (const node of nodesContent)
     {
       let args = JSON.parse("[" + node.textContent + "]");
       if (args.length == 0)
@@ -139,6 +143,13 @@ function loadI18nStrings()
       const stringName = className.split(/\s/)[0].substring(5);
 
       ext.i18n.setElementText(node, stringName, args);
+    }
+
+    // Resolve texts for alt attributes
+    const nodesAlt = containerElement.querySelectorAll("[data-i18n-alt]");
+    for (const element of nodesAlt)
+    {
+      element.alt = browser.i18n.getMessage(element.dataset.i18nAlt);
     }
   }
   addI18nStringsToElements(document);

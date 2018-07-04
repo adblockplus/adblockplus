@@ -2,6 +2,8 @@ node_modules/
 screenshots/
 smoke/
 desktop-options.js
+first-run.js
 skin/desktop-options.css
+skin/first-run.css
+skin/web.css
 package-lock.json
-

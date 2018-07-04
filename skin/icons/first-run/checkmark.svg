@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90">
+  <defs>
+    <style>
+      path
+      {
+        fill: none;
+        stroke: #c70d2c;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <path d="M63.23 1H26.77L1 26.77v36.46L26.77 89h36.46L89 63.23V26.77L63.23 1z"/>
+  <path d="M59.4 31.15L38.73 47.4l-9.81-5.47-5.04 3.97 14.76 14.76 27.48-26.6-6.72-2.91z"/>
+</svg>
