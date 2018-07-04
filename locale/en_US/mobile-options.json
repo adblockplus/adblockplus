@@ -21,10 +21,6 @@
       }
     }
   },
-  "mops_error_title": {
-    "description": "Error for omitting filter list title when adding a new filter list",
-    "message": "Please enter a title"
-  },
   "mops_error_url": {
     "description": "Error for omitting filter list URL when adding a new filter list",
     "message": "Enter a valid URL"

@@ -1444,8 +1444,15 @@ port.onMessage.addListener((message) =>
         case "addSubscription":
           const subscription = message.args[0];
           const dialog = E("dialog-content-predefined");
-          dialog.querySelector("h3").textContent = subscription.title || "";
-          dialog.querySelector(".url").textContent = subscription.url;
+
+          let {title, url} = subscription;
+          if (!title || title == url)
+          {
+            title = "";
+          }
+
+          dialog.querySelector("h3").textContent = title;
+          dialog.querySelector(".url").textContent = url;
           openDialog("predefined");
           break;
         case "focusSection":

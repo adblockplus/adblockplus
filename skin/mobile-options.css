@@ -283,14 +283,18 @@ ul + button
   color: #C11D26;
 }
 
+#dialog-subscribe [name="title"]:placeholder-shown,
+#dialog-subscribe [name="title"]:placeholder-shown ~ *
+{
+  display: none;
+}
+
 [role="dialog"]:not([data-error]) .error,
-#dialog-subscribe:not([data-error="title"]) .error[data-error="title"],
 #dialog-subscribe:not([data-error="url"]) .error[data-error="url"]
 {
   visibility: hidden;
 }
 
-#dialog-subscribe[data-error="title"] [name="title"]:placeholder-shown,
 #dialog-subscribe[data-error="url"] [name="url"]:placeholder-shown
 {
   border-color: #C11D26;

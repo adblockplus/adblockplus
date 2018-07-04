@@ -181,8 +181,9 @@ options page.
 To aid testing, the behavior of this page is affected by a number of URL
 parameters:
 
-* `addSubscription=true`: this parameter should trigger a dialog for adding
-  subscriptions as initiated by clicking on an "abp:subscribe" link
+* `addSubscription=true`: triggers a dialog for adding
+  subscriptions as initiated by clicking on an "abp:subscribe" link (use
+  `title-none` or `title-url` as its value for links that don't include a title)
 * `showPageOptions=true`: shows page-specific options
 
 desktop-options.html
@@ -196,8 +197,9 @@ parameters:
 
 * `addonVersion`: sets addon version application parameter that is used for
   creating the link to the version-specific release notes
-* `addSubscription=true`: this parameter should trigger a dialog for adding
-  subscriptions as initiated by clicking on an "abp:subscribe" link
+* `addSubscription=true`: triggers a dialog for adding
+  subscriptions as initiated by clicking on an "abp:subscribe" link (use
+  `title-none` or `title-url` as its value for links that don't include a title)
 * `additionalSubscriptions`: A comma-separated list of subscription URLs that
   simulates scenario of persistent filter lists preinstalled by administrators.
 * `filterError=true`: causes filter validation to fail, showing validation
