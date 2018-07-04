@@ -1,7 +1,4 @@
 {
-  "firstRun_about": {
-    "message": "About"
-  },
   "firstRun_browser_description": {
     "message": "From the team behind Adblock Plus, the most popular ad blocker for desktop browsers, Adblock Browser is now available for your Android and iOS devices."
   },
@@ -13,9 +10,6 @@
   },
   "firstRun_browser_title": {
     "message": "Adblock Browser app"
-  },
-  "firstRun_contribute": {
-    "message": "Contribute"
   },
   "firstRun_control_description": {
     "message": "By default, you may see some nonintrusive ads that adhere to <a0>strict criteria</a0>. We identify these ads as Acceptable Ads. Prefer to block all ads? <a1>Turn off Acceptable Ads</a1> in your <a2>Settings</a2>."
@@ -29,27 +23,6 @@
   "firstRun_fair_title": {
     "message": "Fair use"
   },
-  "firstRun_features": {
-    "message": "Features"
-  },
-  "firstRun_footer_acceptableAds": {
-    "message": "Acceptable Ads"
-  },
-  "firstRun_footer_admins": {
-    "message": "For admins"
-  },
-  "firstRun_footer_announcements": {
-    "message": "Announcements"
-  },
-  "firstRun_footer_blog": {
-    "message": "Blog"
-  },
-  "firstRun_footer_code": {
-    "message": "Source Code"
-  },
-  "firstRun_footer_community": {
-    "message": "Community"
-  },
   "firstRun_footer_copyright": {
     "message": "Copyright © $year$ All rights reserved. Adblock Plus® is a registered trademark of <a0>eyeo GmbH</a0>.",
     "placeholders": {
@@ -58,45 +31,6 @@
         "example": "1984"
       }
     }
-  },
-  "firstRun_footer_devbuilds": {
-    "message": "Development builds"
-  },
-  "firstRun_footer_development": {
-    "message": "Development"
-  },
-  "firstRun_footer_documentation": {
-    "message": "Documentation"
-  },
-  "firstRun_footer_forum": {
-    "message": "Forum"
-  },
-  "firstRun_footer_jobs": {
-    "message": "Jobs"
-  },
-  "firstRun_footer_legal": {
-    "message": "Legal notice"
-  },
-  "firstRun_footer_privacy": {
-    "message": "Privacy policy"
-  },
-  "firstRun_footer_resources": {
-    "message": "Resources"
-  },
-  "firstRun_footer_roadmap": {
-    "message": "Roadmap"
-  },
-  "firstRun_footer_social": {
-    "message": "Follow Us On"
-  },
-  "firstRun_footer_terms": {
-    "message": "Terms of use"
-  },
-  "firstRun_footer_tools": {
-    "message": "Tools"
-  },
-  "firstRun_report": {
-    "message": "Report an issue"
   },
   "firstRun_subtitle": {
     "message": "You just took control of your browser."
