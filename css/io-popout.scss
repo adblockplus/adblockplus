@@ -1,0 +1,246 @@
+/*
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-present eyeo GmbH
+ *
+ * Adblock Plus is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Adblock Plus is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+io-popout
+{
+  --background-color: #FFF;
+  --border: 1px solid #077CA6;
+  --icon-size-inner: 1.1rem;
+  --icon-size-outer: 1.5rem;
+  --pointer-size: 10px;
+  --pointer-offset-out: calc(var(--pointer-size) / -2 - 1px);
+  --pointer-offset-start: calc(var(--icon-size-outer) +
+    var(--pointer-offset-out));
+  --content-offset-out: calc(-0.5 * var(--icon-size-outer));
+  --content-offset-start: calc(1.5 * var(--icon-size-outer));
+}
+
+/*
+ * This component is not keyboard-accessible yet but we need it to be focusable
+ * to detect when we can close it
+ */
+io-popout:focus
+{
+  outline: none;
+}
+
+/* Prevent pre-rendered content to show up before component has loaded */
+io-popout > :not(.wrapper)
+{
+  display: none;
+}
+
+/*******************************************************************************
+ * Anchor
+ ******************************************************************************/
+
+io-popout > .wrapper
+{
+  display: inline-block;
+  position: relative;
+}
+
+io-popout > .wrapper::before
+{
+  width: var(--icon-size-inner);
+  height: var(--icon-size-inner);
+  cursor: pointer;
+}
+
+io-popout > .wrapper.menubar::before
+{
+  background-image: url(icons/gear.svg?default#default);
+}
+
+io-popout > .wrapper.tooltip::before
+{
+  background-image: url(icons/tooltip.svg);
+}
+
+/*******************************************************************************
+ * Anchor pointer
+ ******************************************************************************/
+
+io-popout > .wrapper > [role]::before
+{
+  display: block;
+  position: absolute;
+  z-index: 2;
+  width: var(--pointer-size);
+  height: var(--pointer-size);
+  border: var(--border);
+  border-bottom: none;
+  border-right: none;
+  background-color: var(--background-color);
+  content: "";
+}
+
+io-popout[expanded=""] > .wrapper > [role]::before,
+io-popout[expanded="above"] > .wrapper > [role]::before,
+io-popout[expanded="below"] > .wrapper > [role]::before
+{
+  right: var(--pointer-offset-start);
+}
+
+html[dir="rtl"] io-popout[expanded=""] > .wrapper > [role]::before,
+html[dir="rtl"] io-popout[expanded="above"] > .wrapper > [role]::before,
+html[dir="rtl"] io-popout[expanded="below"] > .wrapper > [role]::before
+{
+  left: var(--pointer-offset-start);
+  right: auto;
+}
+
+io-popout[expanded=""] > .wrapper > [role]::before,
+io-popout[expanded="below"] > .wrapper > [role]::before
+{
+  top: var(--pointer-offset-out);
+  transform: rotate(45deg);
+}
+
+io-popout[expanded="above"] > .wrapper > [role]::before
+{
+  bottom: var(--pointer-offset-out);
+  transform: rotate(-135deg);
+}
+
+io-popout[expanded="start"] > .wrapper > [role]::before
+{
+  z-index: 1;
+  top: var(--pointer-offset-start);
+  right: var(--pointer-offset-out);
+  transform: rotate(135deg);
+}
+
+html[dir="rtl"] io-popout[expanded="start"] > .wrapper > [role]::before
+{
+  left: var(--pointer-offset-out);
+  right: auto;
+  transform: rotate(-45deg);
+}
+
+/*******************************************************************************
+ * Content
+ ******************************************************************************/
+
+io-popout > .wrapper > [role]
+{
+  position: absolute;
+  z-index: 1;
+  line-height: 1.5rem;
+  border: var(--border);
+  border-radius: 3px;
+  background-color: var(--background-color);
+  cursor: default;
+}
+
+io-popout [aria-hidden="true"]
+{
+  display: none;
+}
+
+io-popout[expanded=""] > .wrapper > [role],
+io-popout[expanded="above"] > .wrapper > [role],
+io-popout[expanded="below"] > .wrapper > [role]
+{
+  right: var(--content-offset-out);
+}
+
+html[dir="rtl"] io-popout[expanded=""] > .wrapper > [role],
+html[dir="rtl"] io-popout[expanded="above"] > .wrapper > [role],
+html[dir="rtl"] io-popout[expanded="below"] > .wrapper > [role]
+{
+  left: var(--content-offset-out);
+  right: auto;
+}
+
+io-popout[expanded=""] > .wrapper > [role],
+io-popout[expanded="below"] > .wrapper > [role]
+{
+  top: var(--content-offset-start);
+}
+
+io-popout[expanded="above"] > .wrapper > [role]
+{
+  bottom: var(--content-offset-start);
+}
+
+io-popout[expanded="start"] > .wrapper > [role]
+{
+  top: var(--content-offset-out);
+  right: var(--content-offset-start);
+}
+
+html[dir="rtl"] io-popout[expanded="start"] > .wrapper > [role]
+{
+  left: var(--content-offset-start);
+  right: auto;
+}
+
+io-popout > .wrapper > [role="menubar"]
+{
+  width: 12.2rem;
+}
+
+io-popout > .wrapper > [role="tooltip"],
+{
+  width: 15rem;
+}
+
+/*
+ * We need to ensure that any content overlays the anchor pointer or otherwise
+ * its inner half becomes visible when the content's background color changes
+ */
+io-popout > .wrapper > [role] *
+{
+  z-index: 3;
+}
+
+io-popout .close
+{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+html[dir="rtl"] io-popout .close
+{
+  left: 10px;
+  right: auto;
+}
+
+io-popout .close:focus
+{
+  outline: none;
+}
+
+io-popout p
+{
+  padding: 0.2rem 1rem;
+}
+
+io-popout [role="tooltip"] p
+{
+  /* Approximated to achieve a total tooltip height of 12.5em without
+  hiding overflowing anchor pointer */
+  max-height: 9em;
+  overflow-y: auto;
+}
+
+io-popout .close + *
+{
+  margin-top: 2em;
+}

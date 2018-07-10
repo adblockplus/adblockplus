@@ -80,6 +80,7 @@
         ]
       },
       "io-list-box": "$ create.test.component io-list-box",
+      "io-popout": "$ create.test.component io-popout",
       "io-steps": "$ create.test.component io-steps",
       "io-toggle": "$ create.test.component io-toggle"
     },
@@ -95,7 +96,7 @@
     "eslint-config-eyeo": "^2.0.0",
     "http-server": "^0.11.1",
     "hyperhtml": "^2.10.8",
-    "hyperhtml-element": "^1.8.1",
+    "hyperhtml-element": "^2.0.0",
     "node-sass": "^4.9.0",
     "npm-dollar": "^0.1.3",
     "watch": "^1.0.2",

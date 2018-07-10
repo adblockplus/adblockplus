@@ -20,6 +20,8 @@
 
 "use strict";
 
+require("./io-popout");
+
 let subscriptionsMap = Object.create(null);
 let filtersMap = Object.create(null);
 let acceptableAdsUrl = null;
@@ -146,14 +148,14 @@ Collection.prototype.addItem = function(item)
     listItem.setAttribute("data-access", item.url || item.text);
     listItem.setAttribute("role", "section");
 
-    const tooltip = listItem.querySelector("[data-tooltip]");
+    const tooltip = listItem.querySelector("io-popout[type='tooltip']");
     if (tooltip)
     {
-      let tooltipId = tooltip.getAttribute("data-tooltip");
+      let tooltipId = tooltip.getAttribute("i18n-body");
       tooltipId = tooltipId.replace("%value%", item.recommended);
       if (getMessage(tooltipId))
       {
-        tooltip.setAttribute("data-tooltip", tooltipId);
+        tooltip.setAttribute("i18n-body", tooltipId);
       }
     }
 
@@ -307,7 +309,7 @@ Collection.prototype.updateItem = function(item)
       }
     }
 
-    const websiteElement = element.querySelector(".context-menu .website");
+    const websiteElement = element.querySelector("io-popout .website");
     if (websiteElement)
     {
       if (item.homepage)
@@ -316,7 +318,7 @@ Collection.prototype.updateItem = function(item)
         websiteElement.setAttribute("aria-hidden", true);
     }
 
-    const sourceElement = element.querySelector(".context-menu .source");
+    const sourceElement = element.querySelector("io-popout .source");
     if (sourceElement)
       sourceElement.setAttribute("href", item.url);
 
@@ -434,7 +436,6 @@ function addSubscription(subscription)
     collection.addItem(subscription);
 
   subscriptionsMap[url] = subscription;
-  updateTooltips();
 }
 
 function updateSubscription(subscription)
@@ -454,7 +455,6 @@ function updateSubscription(subscription)
     if (subscription.disabled == false)
     {
       collections.more.addItem(subscription);
-      updateTooltips();
     }
     else
     {
@@ -641,12 +641,6 @@ function execAction(action, element)
       closeDialog();
       break;
     }
-    case "open-context-menu": {
-      const listItem = findParentData(element, "access", true);
-      if (listItem && !listItem.classList.contains("show-context-menu"))
-        listItem.classList.add("show-context-menu");
-      break;
-    }
     case "open-dialog": {
       const dialog = findParentData(element, "dialog", false);
       openDialog(dialog);
@@ -788,10 +782,6 @@ function setCustomFiltersView(mode)
 
 function onClick(e)
 {
-  const context = document.querySelector(".show-context-menu");
-  if (context)
-    context.classList.remove("show-context-menu");
-
   let actions = findParentData(e.target, "action", false);
   if (!actions)
     return;
@@ -911,8 +901,6 @@ function onDOMLoaded()
     E("abp-version").textContent = getMessage("options_dialog_about_version",
       [addonVersion]);
   });
-
-  updateTooltips();
 
   // Initialize interactive UI elements
   document.body.addEventListener("click", onClick, false);
@@ -1407,29 +1395,6 @@ function onPrefMessage(key, value, initial)
   );
   if (checkbox)
     checkbox.setAttribute("aria-checked", value);
-}
-
-function updateTooltips()
-{
-  const anchors = document.querySelectorAll(":not(.tooltip) > [data-tooltip]");
-  for (const anchor of anchors)
-  {
-    const id = anchor.getAttribute("data-tooltip");
-
-    const wrapper = document.createElement("div");
-    wrapper.className = "icon tooltip";
-    anchor.parentNode.replaceChild(wrapper, anchor);
-    wrapper.appendChild(anchor);
-
-    const tooltip = document.createElement("div");
-    tooltip.setAttribute("role", "tooltip");
-
-    const paragraph = document.createElement("p");
-    paragraph.textContent = getMessage(id);
-    tooltip.appendChild(paragraph);
-
-    wrapper.appendChild(tooltip);
-  }
 }
 
 const port = browser.runtime.connect({name: "ui"});
