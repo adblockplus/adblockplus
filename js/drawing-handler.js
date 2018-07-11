@@ -292,7 +292,7 @@ function getCoordinates(event)
     !isNaN(el.offsetLeft) &&
     !isNaN(el.offsetTop)
   );
-  return {x: event.clientX - x, y: event.clientY - y};
+  return {x: event.pageX - x, y: event.pageY - y};
 }
 
 // helper to retrieve absolute page coordinates
