@@ -4,6 +4,7 @@
   "description": "Adblock Plus UI",
   "scripts": {
     "$": "npm-dollar",
+    "build": "npm run $ build",
     "bundle": "npm run $ bundle",
     "lint": "npm run $ lint",
     "postinstall": "npm run bundle",
@@ -13,6 +14,14 @@
     "watch": "npm run $ watch"
   },
   "$": {
+    "build": {
+      "popup": [
+        "$ bundle.popup",
+        "cd ../adblockpluschrome",
+        "SKIP_DEPENDENCY_UPDATES=true ./build.py devenv -t chrome",
+        "cd -"
+      ]
+    },
     "bundle": {
       "desktop-options": {
         "css": "$ create.css desktop-options",
@@ -29,6 +38,7 @@
         "css": "$ create.css issue-reporter",
         "js": "$ create.js ./js/issue-reporter.js ./issue-reporter.js"
       },
+      "popup": "$ create.bundle popup",
       "test": [
         [
           "if [ ! -z $1 ]; then",
@@ -38,6 +48,10 @@
       ]
     },
     "create": {
+      "bundle": {
+        "css": "$ create.css $1",
+        "js": "$ create.js ./js/$1.js ./$1.js"
+      },
       "css": "node-sass ./css/$1.scss ./skin/$1.css",
       "js": [
         "eslint ./js/**/*.js",
@@ -86,6 +100,7 @@
       "io-big-toggle": "$ create.test.component io-big-toggle"
     },
     "watch": {
+      "build": "watch 'npm run build' ./css ./js",
       "bundle": "watch 'npm run bundle' ./css ./js",
       "test": "watch 'npm run test' ./css ./js"
     }

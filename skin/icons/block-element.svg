@@ -1,0 +1,39 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <view id="normal" viewBox="0 0 12 12"/>
+  <g stroke="#585858" fill="none">
+    <circle cx="6" cy="6" r="5.5"/>
+    <path d="M10 2l-8 8"/>
+  </g>
+  <view id="hover" viewBox="0 12 12 12"/>
+  <defs>
+    <circle id="path-1" cx="6" cy="6" r="6"></circle>
+    <circle id="path-2" cx="6" cy="6" r="5"></circle>
+  </defs>
+  <g id="V5" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0, 12)">
+    <g id="1b" transform="translate(-222.000000, -338.000000)">
+      <g id="Group" transform="translate(25.000000, 23.000000)">
+        <g id="Stats" transform="translate(0.000000, 161.000000)">
+          <g id="Group-11" transform="translate(17.000000, 144.000000)">
+            <g id="Group-8" transform="translate(30.000000, 8.000000)">
+              <g transform="translate(150.000000, 0.000000)" id="Group-5">
+                <g>
+                  <g id="iconBlockElementHover" transform="translate(0.000000, 2.000000)">
+                    <g id="Oval-2">
+                      <use fill="#0797E1" fill-rule="evenodd" xlink:href="#path-1"></use>
+                      <circle stroke="#0797E1" stroke-width="1" cx="6" cy="6" r="5.5"></circle>
+                    </g>
+                    <g id="Oval-2">
+                      <use fill="#0797E1" fill-rule="evenodd" xlink:href="#path-2"></use>
+                      <circle stroke="#FFFFFF" stroke-width="1" cx="6" cy="6" r="4.5"></circle>
+                    </g>
+                    <path d="M9.5,2.5 L2.70972879,9.29027121" id="Path-2" stroke="#FFFFFF"></path>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

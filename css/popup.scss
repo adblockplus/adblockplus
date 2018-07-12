@@ -1,0 +1,535 @@
+/*
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-present eyeo GmbH
+ *
+ * Adblock Plus is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Adblock Plus is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+ @import "./light.scss";
+ @import "./io-big-toggle.scss";
+
+:root
+{
+  --height-adjusted-by: 35px;
+  --border-width-thick-doubled: calc(2 * var(--border-width-thick));
+  --border-width-thin-negative: calc(-1 * var(--border-width-thin));
+  --margin-primary-half: calc(var(--margin-primary) / 2);
+}
+
+*, *::before, *::after
+{
+  box-sizing: border-box;
+}
+
+html, body, h1, h2
+{
+  margin: 0;
+}
+
+body.nohtml #block-element,
+body.disabled #stats-page,
+body.ignore #page-info
+{
+  display: none;
+}
+
+html, body
+{
+  padding: 0;
+  background-color: var(--background-color-primary);
+}
+
+body
+{
+  width: 340px;
+  color: var(--color-primary);
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-size: var(--font-size-primary);
+}
+
+button
+{
+  cursor: pointer;
+  border: 0;
+  appearance: none;
+  color: var(--color-link);
+}
+
+button[disabled]
+{
+  cursor: default;
+}
+
+header, main > *, footer
+{
+  padding: var(--padding-primary);
+}
+
+header
+{
+  padding-bottom: var(--padding-primary);
+}
+
+header .top,
+#page-status > div:not(.refresh-info),
+footer
+{
+  display: flex;
+  flex-direction: row;
+}
+
+header h1
+{
+  flex-grow: 1;
+  color: var(--color-secondary);
+  font-size: var(--font-size-big);
+  background-image: url(abp-logo.svg);
+  background-size: 24px;
+  background-repeat: no-repeat;
+}
+
+html:not([dir="rtl"]) header h1
+{
+  padding-left: 30px;
+  background-position: left center;
+}
+
+html[dir="rtl"] header h1
+{
+  padding-right: 30px;
+  background-position: right center;
+}
+
+header .notification::before
+{
+  content: "";
+  display: block;
+  overflow: hidden;
+  height: var(--border-width-thick-doubled);
+  margin-left: var(--border-width-thin-negative);
+  margin-right: var(--border-width-thin-negative);
+  border: 0;
+  border-radius: var(--border-radius-primary);
+  border-top-color: var(--border-top-color);
+  border-top-style: var(--border-style-primary);
+  border-top-width: var(--border-width-thick);
+}
+
+header .notification.critical::before
+{
+  --border-top-color: var(--color-critical);
+}
+
+header .notification.information::before
+{
+  --border-top-color: var(--color-info);
+}
+
+header .notification,
+main .card
+{
+  border-color: var(--border-color-primary);
+  border-radius: var(--border-radius-primary);
+  border-style: var(--border-style-primary);
+  border-width: var(--border-width-thin);
+  box-shadow: var(--box-shadow-primary);
+}
+
+header .notification
+{
+  border-top: 0;
+  margin-top: var(--margin-primary);
+  margin-bottom: var(--margin-primary-half);
+}
+
+header .notification > div
+{
+  padding: var(--padding-primary);
+}
+
+header .notification h3
+{
+  margin: 0;
+  color: var(--color-secondary);
+  font-size: var(--font-size-primary);
+}
+
+header .notification h3::before
+{
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-position: center;
+  background-size: 16px;
+  background-repeat: no-repeat;
+}
+
+html:not([dir="rtl"]) header .notification h3
+{
+  padding-left: 24px;
+}
+
+html:not([dir="rtl"]) header .notification h3::before
+{
+  margin-left: -24px;
+}
+
+html[dir="rtl"] header .notification h3
+{
+  padding-right: 24px;
+}
+
+html[dir="rtl"] header .notification h3::before
+{
+  margin-right: -24px;
+}
+
+header .notification.critical h3::before
+{
+  background-image: url(icons/critical.svg);
+}
+
+header .notification.information h3::before
+{
+  background-image: url(icons/info.svg);
+}
+
+header .notification hr
+{
+  border: 0;
+  height: var(--border-width-thin);
+  background: var(--border-color-primary);
+}
+
+header .notification button
+{
+  display: block;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: var(--font-size-primary);
+}
+
+header .notification hr + button
+{
+  margin-top: var(--margin-primary-half);
+  margin-bottom: var(--margin-primary-half);
+}
+
+#options
+{
+  min-width: var(--font-size-big);
+  border: 0;
+  background-size: var(--font-size-big);
+  background-image: url(icons/options.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in;
+}
+
+#options:hover
+{
+  opacity: 1;
+}
+
+.refresh-info
+{
+  display: block;
+  padding: var(--margin-primary-half);
+  font-size: var(--font-size-primary);
+  border-radius: var(--border-radius-primary);
+  border-color: var(--border-color-primary);
+  border-style: var(--border-style-primary);
+  border-width: var(--border-width-thin);
+  overflow: hidden;
+  transform: scale3d(1, 1, 1) translateY(4px);
+  transition: transform 0.3s ease-out;
+  will-change: transform;
+}
+
+.refresh-info[hidden]
+{
+  padding: 0;
+  border: 0;
+  height: 0;
+  transform: scale3d(1, 0, 1) translateY(0);
+}
+
+#page-status
+{
+  height: var(--page-status-height, auto);
+  transition: height 0.3s ease-out;
+  will-change: height;
+}
+
+.refresh #page-status
+{
+  height: calc(var(--page-status-height) + var(--height-adjusted-by));
+}
+
+#page-status .details
+{
+  width: 240px;
+}
+
+#page-status io-big-toggle
+{
+  margin: var(--margin-primary-half);
+}
+
+body.disabled #page-status .details
+{
+  opacity: 0.5;
+}
+
+#blocking-domain
+{
+  margin: var(--margin-primary-half) 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+a, a:hover, a:visited, a:active
+{
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+main h2
+{
+  color: var(--color-secondary);
+  font-size: var(--font-size-medium);
+}
+
+#page-info
+{
+  height: var(--page-info-height, auto);
+  background-color: var(--background-color-secondary);
+  transition: height 0.3s ease-out;
+  will-change: height;
+  overflow: hidden;
+}
+
+#page-info #block-element-container,
+#page-info.blocking #default-container
+{
+  display: none;
+}
+
+#page-info.blocking #block-element-container,
+#page-info #default-container
+{
+  display: block;
+}
+
+.refresh #page-info
+{
+  height: calc(var(--page-info-height) - var(--height-adjusted-by));
+}
+
+#page-info > div
+{
+  transform: scale3d(1, 1, 1);
+  transition: transform  0.3s ease-out;
+  will-change: transform;
+}
+
+.refresh #page-info > div
+{
+  filter: blur(5px);
+  opacity: 0.9;
+  transform: scale3d(0.8, 0.8, 0.8) translateY(-30px);
+  pointer-events: none;
+}
+
+main .card
+{
+  padding: var(--padding-primary);
+  margin-top: var(--margin-primary-half);
+  background-color: var(--background-color-primary);
+}
+
+main .card strong
+{
+  color: var(--color-secondary);
+}
+
+main .options
+{
+  display: flex;
+  padding-top: var(--padding-primary);
+}
+
+main .options button
+{
+  flex-grow: 1;
+  text-align: center;
+  padding: var(--padding-secondary);
+  border: 0;
+  font-size: var(--font-size-small);
+  color: var(--color-primary);
+  background-color: transparent;
+  transition: color 0.3s ease-in;
+}
+
+main .options #block-element-cancel
+{
+  flex-grow: 0;
+  margin: auto;
+}
+
+#block-element-cancel .block
+{
+  margin-left: var(--margin-primary);
+  margin-right: var(--margin-primary);
+}
+
+html:not([dir="rtl"]) main .options button
+{
+
+  border-left-color: var(--border-color-primary);
+  border-left-style: var(--border-style-primary);
+  border-left-width: var(--border-width-thin);
+}
+
+html:not([dir="rtl"]) main .options button:last-child
+{
+  border-right-color: var(--border-color-primary);
+  border-right-style: var(--border-style-primary);
+  border-right-width: var(--border-width-thin);
+}
+
+html[dir="rtl"] main .options button
+{
+
+  border-right-color: var(--border-color-primary);
+  border-right-style: var(--border-style-primary);
+  border-right-width: var(--border-width-thin);
+}
+
+html[dir="rtl"] main .options button:last-child
+{
+  border-left-color: var(--border-color-primary);
+  border-left-style: var(--border-style-primary);
+  border-left-width: var(--border-width-thin);
+}
+
+main .options button .report::before,
+main .options button .block::before
+{
+  content: "";
+  display: inline-block;
+  background-repeat: no-repeat;
+}
+
+html:not([dir="rtl"]) main .options button .report::before,
+html:not([dir="rtl"]) main .options button .block::before
+{
+  margin-right: var(--margin-primary-half);
+}
+
+html[dir="rtl"] main .options button .report::before,
+html[dir="rtl"] main .options button .block::before
+{
+  margin-left: var(--margin-primary-half);
+}
+
+main .options button .report::before
+{
+  width: 13px;
+  height: 11px;
+  background-size: 13px 11px;
+  background-image: url(icons/report-issue.svg?normal#normal);
+}
+
+main .options button .block::before
+{
+  width: 12px;
+  height: 12px;
+  background-size: 12px 12px;
+  background-image: url(icons/block-element.svg?normal#normal);
+  transform: translateY(1);
+}
+
+main .options button[disabled]
+{
+  opacity: 0.5;
+}
+
+main .options button:not([disabled]):hover .report::before
+{
+  background-image: url(icons/report-issue.svg?hover#hover);
+}
+
+body:not(.disabled) main .options button:hover .block::before
+{
+  background-image: url(icons/block-element.svg?hover#hover);
+}
+
+body:not(.disabled) main .options button:hover,
+body:not(.disabled) main .options button:focus
+{
+  color: var(--color-info);
+}
+
+main > *, footer
+{
+  border-top-color: var(--border-color-primary);
+  border-top-style: var(--border-style-primary);
+  border-top-width: var(--border-width-thin);
+}
+
+#block-element-info
+{
+  text-align: center;
+}
+
+#block-element-info > strong
+{
+  display: block;
+  margin-bottom: var(--margin-primary-half);
+}
+
+footer > span
+{
+  flex-grow: 1;
+}
+
+footer > button
+{
+  margin-left: var(--margin-primary-half);
+  margin-right: var(--margin-primary-half);
+  background-size: var(--font-size-primary);
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in;
+}
+
+footer > button:hover
+{
+  opacity: 1;
+}
+
+footer > button.apple
+{
+  background-image: url(icons/apple.svg);
+}
+
+footer > button.android
+{
+  background-image: url(icons/android.svg);
+}
