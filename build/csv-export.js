@@ -80,6 +80,10 @@ function csvFromJsonFileObjects(fileObjects)
   for (const fileName of fileNames)
   {
     const strings = dataTreeObj[fileName][defaultLocale];
+    // Skip files that doesn't exist for default language
+    if (!strings)
+      continue;
+
     for (const stringID of Object.keys(strings))
     {
       const fileObj = dataTreeObj[fileName];
