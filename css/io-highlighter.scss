@@ -25,8 +25,8 @@ io-highlighter *::after
 
 io-highlighter
 {
-  position: relative;
   display: block;
+  position: relative;
   border: 1px solid #979797;
 }
 
@@ -40,19 +40,19 @@ io-highlighter .options
 {
   width: 95px;
   padding: 12px;
+  border-right: 1px solid #979797;
   color: #4A4A4A;
   background-color: #f1f1f1;
-  border-right: 1px solid #979797;
 }
 
 io-highlighter canvas
 {
-  flex-grow: 1;
-  user-select: none;
-  touch-action: none;
-  pointer-events: none;
   width: 100%;
   height: 100%;
+  user-select: none;
+  pointer-events: none;
+  flex-grow: 1;
+  touch-action: none;
 }
 
 io-highlighter[drawing] canvas
@@ -85,16 +85,16 @@ io-highlighter .options .hide
 {
   width: 70px;
   min-height: 70px;
+  margin-bottom: 12px;
   padding: 0;
   padding-top: 40px;
-  margin-bottom: 12px;
-  font-size: 0.7rem;
   border-width: 0;
   border-radius: 12px;
   outline: none;
   color: inherit;
-  background-position: center 12px;
   background-repeat: no-repeat;
+  background-position: center 12px;
+  font-size: 0.7rem;
   word-break: break-all;
 }
 
@@ -107,18 +107,18 @@ io-highlighter[drawing="hide"] .options .hide
 
 io-highlighter .closer
 {
-  position: absolute;
   display: block;
+  position: absolute;
   width: 24px;
   height: 24px;
-  cursor: pointer;
   border-radius: 24px;
-  transform: translateX(-12px) translateY(-12px);
   background-color: #4a4a4a;
+  cursor: pointer;
+  transform: translateX(-12px) translateY(-12px);
 }
 
 io-highlighter .closer img
 {
-  margin: 6px;
   width: 12px;
+  margin: 6px;
 }

@@ -23,8 +23,9 @@ io-popout
   --icon-size-outer: 1.5rem;
   --pointer-size: 10px;
   --pointer-offset-out: calc(var(--pointer-size) / -2 - 1px);
-  --pointer-offset-start: calc(var(--icon-size-outer) +
-    var(--pointer-offset-out));
+  --pointer-offset-start: calc(
+    var(--icon-size-outer) + var(--pointer-offset-out)
+  );
   --content-offset-out: calc(-0.5 * var(--icon-size-outer));
   --content-offset-start: calc(1.5 * var(--icon-size-outer));
 }
@@ -83,8 +84,8 @@ io-popout > .wrapper > [role]::before
   width: var(--pointer-size);
   height: var(--pointer-size);
   border: var(--border);
-  border-bottom: none;
   border-right: none;
+  border-bottom: none;
   background-color: var(--background-color);
   content: "";
 }
@@ -100,8 +101,8 @@ html[dir="rtl"] io-popout[expanded=""] > .wrapper > [role]::before,
 html[dir="rtl"] io-popout[expanded="above"] > .wrapper > [role]::before,
 html[dir="rtl"] io-popout[expanded="below"] > .wrapper > [role]::before
 {
-  left: var(--pointer-offset-start);
   right: auto;
+  left: var(--pointer-offset-start);
 }
 
 io-popout[expanded=""] > .wrapper > [role]::before,
@@ -127,8 +128,8 @@ io-popout[expanded="start"] > .wrapper > [role]::before
 
 html[dir="rtl"] io-popout[expanded="start"] > .wrapper > [role]::before
 {
-  left: var(--pointer-offset-out);
   right: auto;
+  left: var(--pointer-offset-out);
   transform: rotate(-45deg);
 }
 
@@ -140,10 +141,10 @@ io-popout > .wrapper > [role]
 {
   position: absolute;
   z-index: 1;
-  line-height: 1.5rem;
   border: var(--border);
   border-radius: 3px;
   background-color: var(--background-color);
+  line-height: 1.5rem;
   cursor: default;
 }
 
@@ -163,8 +164,8 @@ html[dir="rtl"] io-popout[expanded=""] > .wrapper > [role],
 html[dir="rtl"] io-popout[expanded="above"] > .wrapper > [role],
 html[dir="rtl"] io-popout[expanded="below"] > .wrapper > [role]
 {
-  left: var(--content-offset-out);
   right: auto;
+  left: var(--content-offset-out);
 }
 
 io-popout[expanded=""] > .wrapper > [role],
@@ -186,8 +187,8 @@ io-popout[expanded="start"] > .wrapper > [role]
 
 html[dir="rtl"] io-popout[expanded="start"] > .wrapper > [role]
 {
-  left: var(--content-offset-start);
   right: auto;
+  left: var(--content-offset-start);
 }
 
 io-popout > .wrapper > [role="menubar"]
@@ -218,8 +219,8 @@ io-popout .close
 
 html[dir="rtl"] io-popout .close
 {
-  left: 10px;
   right: auto;
+  left: 10px;
 }
 
 io-popout .close:focus
@@ -234,10 +235,10 @@ io-popout p
 
 io-popout [role="tooltip"] p
 {
+  overflow-y: auto;
   /* Approximated to achieve a total tooltip height of 12.5em without
   hiding overflowing anchor pointer */
   max-height: 9em;
-  overflow-y: auto;
 }
 
 io-popout .close + *

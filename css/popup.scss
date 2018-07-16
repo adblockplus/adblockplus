@@ -15,8 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
- @import "./light.scss";
- @import "./io-big-toggle.scss";
+@import "./light.scss";
+@import "./io-big-toggle.scss";
 
 :root
 {
@@ -26,12 +26,17 @@
   --margin-primary-half: calc(var(--margin-primary) / 2);
 }
 
-*, *::before, *::after
+*,
+*::before,
+*::after
 {
   box-sizing: border-box;
 }
 
-html, body, h1, h2
+html,
+body,
+h1,
+h2
 {
   margin: 0;
 }
@@ -43,7 +48,8 @@ body.ignore #page-info
   display: none;
 }
 
-html, body
+html,
+body
 {
   padding: 0;
   background-color: var(--background-color-primary);
@@ -59,10 +65,10 @@ body
 
 button
 {
-  cursor: pointer;
   border: 0;
-  appearance: none;
   color: var(--color-link);
+  cursor: pointer;
+  appearance: none;
 }
 
 button[disabled]
@@ -70,7 +76,9 @@ button[disabled]
   cursor: default;
 }
 
-header, main > *, footer
+header,
+main > *,
+footer
 {
   padding: var(--padding-primary);
 }
@@ -90,12 +98,12 @@ footer
 
 header h1
 {
-  flex-grow: 1;
   color: var(--color-secondary);
-  font-size: var(--font-size-big);
   background-image: url(abp-logo.svg);
-  background-size: 24px;
   background-repeat: no-repeat;
+  background-size: 24px;
+  font-size: var(--font-size-big);
+  flex-grow: 1;
 }
 
 html:not([dir="rtl"]) header h1
@@ -112,17 +120,17 @@ html[dir="rtl"] header h1
 
 header .notification::before
 {
-  content: "";
   display: block;
   overflow: hidden;
   height: var(--border-width-thick-doubled);
-  margin-left: var(--border-width-thin-negative);
   margin-right: var(--border-width-thin-negative);
+  margin-left: var(--border-width-thin-negative);
   border: 0;
+  border-top: var(--border-width-thick)
+    var(--border-style-primary)
+    var(--border-top-color);
   border-radius: var(--border-radius-primary);
-  border-top-color: var(--border-top-color);
-  border-top-style: var(--border-style-primary);
-  border-top-width: var(--border-width-thick);
+  content: "";
 }
 
 header .notification.critical::before
@@ -138,18 +146,18 @@ header .notification.information::before
 header .notification,
 main .card
 {
+  border-width: var(--border-width-thin);
+  border-style: var(--border-style-primary);
   border-color: var(--border-color-primary);
   border-radius: var(--border-radius-primary);
-  border-style: var(--border-style-primary);
-  border-width: var(--border-width-thin);
   box-shadow: var(--box-shadow-primary);
 }
 
 header .notification
 {
-  border-top: 0;
   margin-top: var(--margin-primary);
   margin-bottom: var(--margin-primary-half);
+  border-top: 0;
 }
 
 header .notification > div
@@ -166,14 +174,14 @@ header .notification h3
 
 header .notification h3::before
 {
-  content: "";
-  position: absolute;
   display: inline-block;
+  position: absolute;
   width: 16px;
   height: 16px;
+  background-repeat: no-repeat;
   background-position: center;
   background-size: 16px;
-  background-repeat: no-repeat;
+  content: "";
 }
 
 html:not([dir="rtl"]) header .notification h3
@@ -208,16 +216,16 @@ header .notification.information h3::before
 
 header .notification hr
 {
-  border: 0;
   height: var(--border-width-thin);
+  border: 0;
   background: var(--border-color-primary);
 }
 
 header .notification button
 {
   display: block;
-  padding-left: 0;
   padding-right: 0;
+  padding-left: 0;
   font-size: var(--font-size-primary);
 }
 
@@ -231,11 +239,11 @@ header .notification hr + button
 {
   min-width: var(--font-size-big);
   border: 0;
-  background-size: var(--font-size-big);
+  opacity: 0.5;
   background-image: url(icons/options.svg);
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.5;
+  background-size: var(--font-size-big);
   transition: opacity 0.3s ease-in;
 }
 
@@ -247,23 +255,23 @@ header .notification hr + button
 .refresh-info
 {
   display: block;
-  padding: var(--margin-primary-half);
-  font-size: var(--font-size-primary);
-  border-radius: var(--border-radius-primary);
-  border-color: var(--border-color-primary);
-  border-style: var(--border-style-primary);
-  border-width: var(--border-width-thin);
   overflow: hidden;
-  transform: scale3d(1, 1, 1) translateY(4px);
+  padding: var(--margin-primary-half);
+  border-width: var(--border-width-thin);
+  border-style: var(--border-style-primary);
+  border-color: var(--border-color-primary);
+  border-radius: var(--border-radius-primary);
+  font-size: var(--font-size-primary);
   transition: transform 0.3s ease-out;
+  transform: scale3d(1, 1, 1) translateY(4px);
   will-change: transform;
 }
 
 .refresh-info[hidden]
 {
+  height: 0;
   padding: 0;
   border: 0;
-  height: 0;
   transform: scale3d(1, 0, 1) translateY(0);
 }
 
@@ -296,13 +304,16 @@ body.disabled #page-status .details
 
 #blocking-domain
 {
+  overflow: hidden;
   margin: var(--margin-primary-half) 0;
   white-space: nowrap;
   text-overflow: ellipsis;
-  overflow: hidden;
 }
 
-a, a:hover, a:visited, a:active
+a,
+a:hover,
+a:visited,
+a:active
 {
   color: var(--color-link);
   text-decoration: none;
@@ -316,11 +327,11 @@ main h2
 
 #page-info
 {
+  overflow: hidden;
   height: var(--page-info-height, auto);
   background-color: var(--background-color-secondary);
   transition: height 0.3s ease-out;
   will-change: height;
-  overflow: hidden;
 }
 
 #page-info #block-element-container,
@@ -342,23 +353,23 @@ main h2
 
 #page-info > div
 {
-  transform: scale3d(1, 1, 1);
   transition: transform  0.3s ease-out;
+  transform: scale3d(1, 1, 1);
   will-change: transform;
 }
 
 .refresh #page-info > div
 {
-  filter: blur(5px);
   opacity: 0.9;
   transform: scale3d(0.8, 0.8, 0.8) translateY(-30px);
   pointer-events: none;
+  filter: blur(5px);
 }
 
 main .card
 {
-  padding: var(--padding-primary);
   margin-top: var(--margin-primary-half);
+  padding: var(--padding-primary);
   background-color: var(--background-color-primary);
 }
 
@@ -375,64 +386,62 @@ main .options
 
 main .options button
 {
-  flex-grow: 1;
-  text-align: center;
   padding: var(--padding-secondary);
   border: 0;
-  font-size: var(--font-size-small);
   color: var(--color-primary);
   background-color: transparent;
+  font-size: var(--font-size-small);
+  text-align: center;
   transition: color 0.3s ease-in;
+  flex-grow: 1;
 }
 
 main .options #block-element-cancel
 {
-  flex-grow: 0;
   margin: auto;
+  flex-grow: 0;
 }
 
 #block-element-cancel .block
 {
-  margin-left: var(--margin-primary);
   margin-right: var(--margin-primary);
+  margin-left: var(--margin-primary);
 }
 
 html:not([dir="rtl"]) main .options button
 {
-
-  border-left-color: var(--border-color-primary);
-  border-left-style: var(--border-style-primary);
-  border-left-width: var(--border-width-thin);
+  border-left: var(--border-width-thin)
+    var(--border-style-primary)
+    var(--border-color-primary);
 }
 
 html:not([dir="rtl"]) main .options button:last-child
 {
-  border-right-color: var(--border-color-primary);
-  border-right-style: var(--border-style-primary);
-  border-right-width: var(--border-width-thin);
+  border-right: var(--border-width-thin)
+    var(--border-style-primary)
+    var(--border-color-primary);
 }
 
 html[dir="rtl"] main .options button
 {
-
-  border-right-color: var(--border-color-primary);
-  border-right-style: var(--border-style-primary);
-  border-right-width: var(--border-width-thin);
+  border-right: var(--border-width-thin)
+    var(--border-style-primary)
+    var(--border-color-primary);
 }
 
 html[dir="rtl"] main .options button:last-child
 {
-  border-left-color: var(--border-color-primary);
-  border-left-style: var(--border-style-primary);
-  border-left-width: var(--border-width-thin);
+  border-left: var(--border-width-thin)
+    var(--border-style-primary)
+    var(--border-color-primary);
 }
 
 main .options button .report::before,
 main .options button .block::before
 {
-  content: "";
   display: inline-block;
   background-repeat: no-repeat;
+  content: "";
 }
 
 html:not([dir="rtl"]) main .options button .report::before,
@@ -451,16 +460,16 @@ main .options button .report::before
 {
   width: 13px;
   height: 11px;
-  background-size: 13px 11px;
   background-image: url(icons/report-issue.svg?normal#normal);
+  background-size: 13px 11px;
 }
 
 main .options button .block::before
 {
   width: 12px;
   height: 12px;
-  background-size: 12px 12px;
   background-image: url(icons/block-element.svg?normal#normal);
+  background-size: 12px 12px;
   transform: translateY(1);
 }
 
@@ -485,11 +494,12 @@ body:not(.disabled) main .options button:focus
   color: var(--color-info);
 }
 
-main > *, footer
+main > *,
+footer
 {
-  border-top-color: var(--border-color-primary);
-  border-top-style: var(--border-style-primary);
-  border-top-width: var(--border-width-thin);
+  border-top: var(--border-width-thin)
+    var(--border-style-primary)
+    var(--border-color-primary);
 }
 
 #block-element-info
@@ -510,12 +520,12 @@ footer > span
 
 footer > button
 {
-  margin-left: var(--margin-primary-half);
   margin-right: var(--margin-primary-half);
-  background-size: var(--font-size-primary);
+  margin-left: var(--margin-primary-half);
+  opacity: 0.5;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.5;
+  background-size: var(--font-size-primary);
   transition: opacity 0.3s ease-in;
 }
 

@@ -28,12 +28,12 @@ body
 {
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin: 0rem;
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 1.25rem;
   color: #494949;
   background-color: #F3F3F3;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.25rem;
+  align-items: center;
 }
 
 header,
@@ -47,9 +47,9 @@ header
 {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  margin-bottom: 2rem;
   margin-top: 1.2rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
 }
 
 header > .logo
@@ -74,9 +74,9 @@ header > .logo
 .title > h1
 {
   margin: 0;
-  line-height: 1.2rem;
   font-size: 1.2rem;
   font-weight: 300;
+  line-height: 1.2rem;
 }
 
 .title > h1 > strong
@@ -99,20 +99,20 @@ header io-steps
 
 main
 {
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   padding: 1.4rem;
-  background-color: #FFFFFF;
   border: 1px solid #CDCDCD;
+  background-color: #FFF;
+  flex-grow: 1;
 }
 
 .page:not([hidden])
 {
   display: flex;
-  flex-grow: 1;
   flex-direction: column;
+  flex-grow: 1;
 }
 
 .page > p
@@ -122,8 +122,8 @@ main
 
 main h1
 {
-  padding: 0;
   margin: 0;
+  padding: 0;
   font-size: 1.5rem;
 }
 
@@ -164,34 +164,34 @@ html[dir="rtl"] #typeSelectorGroup > p
 
 #comment
 {
-  flex-grow: 1;
   min-height: 2em;
+  flex-grow: 1;
 }
 
 #sendingProgressContainer:not([hidden])
 {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   margin-top: 2rem;
+  justify-content: center;
 }
 
 #result
 {
-  flex-grow: 1;
   border-width: 0px;
+  flex-grow: 1;
 }
 
 #showDataValue
 {
-  flex-grow: 1;
+  overflow: auto;
   box-sizing: border-box;
   width: 100%;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
   padding: 20px;
   border: 1px solid #CCC;
   font-size: 1rem;
-  overflow: auto;
+  flex-grow: 1;
 }
 
 footer
@@ -204,10 +204,10 @@ footer
 
 #privacyPolicy
 {
-  flex-grow: 1;
-  align-self: center;
   font-size: 1.125rem;
   font-weight: 700;
+  flex-grow: 1;
+  align-self: center;
 }
 
 /*
@@ -270,14 +270,14 @@ button.secondary:hover
 
 button.link
 {
-  border: 0px;
-  background-color: transparent;
   padding: 0.2rem;
-  font-weight: 400;
-  font-family: inherit;
-  text-transform: none;
-  text-decoration: underline;
+  border: 0px;
   color: #077CA6;
+  background-color: transparent;
+  font-family: inherit;
+  font-weight: 400;
+  text-decoration: underline;
+  text-transform: none;
 }
 
 button.link:hover
@@ -288,16 +288,16 @@ button.link:hover
 button.link:disabled,
 button.link:disabled:hover
 {
-  cursor: default;
   color: #ccc;
+  cursor: default;
 }
 
 input[type="text"],
 input[type="email"],
 textarea
 {
-  font-size: 1.25rem;
   border: 2px solid #099CD0;
+  font-size: 1.25rem;
 }
 
 input[type="email"]:invalid
@@ -308,16 +308,16 @@ input[type="email"]:invalid
 input[type="checkbox"],
 input[type="radio"]
 {
+  display: inline-block;
   width: 18px;
   height: 18px;
-  padding: 0px;
   margin: 0px 3px;
+  padding: 0px;
   border: 0px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   background-color: transparent;
   background-repeat: no-repeat;
-  display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 input[type="checkbox"]
@@ -350,23 +350,23 @@ input[type="radio"]:checked
   display: flex;
   flex-direction: column;
   position: fixed;
-  left: 0;
   top: 0;
   right: 0;
   bottom: 0;
+  left: 0;
   padding: 5rem;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modalContent
 {
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  background-color: #FFFFFF;
-  border: 1px solid #CDCDCD;
   padding: 2rem;
+  border: 1px solid #CDCDCD;
+  background-color: #FFF;
+  flex-grow: 1;
+  align-items: flex-end;
 }
 
 [aria-hidden="true"]
@@ -377,25 +377,25 @@ input[type="radio"]:checked
 #notification
 {
   display: flex;
-  padding: 2px;
-  width: 100%;
   box-sizing: border-box;
+  width: 100%;
+  padding: 2px;
   opacity: 0.8;
-  font-size: 1rem;
   color: #4A4A4A;
   background-color: #d8d8d8;
+  font-size: 1rem;
 }
 
 #notification-text
 {
-  flex: 1;
   text-align: center;
+  flex: 1;
 }
 
 .icon
 {
-  border: 0px;
   padding: 0px;
+  border: 0px;
   background-color: transparent;
 }
 
@@ -406,16 +406,16 @@ input[type="radio"]:checked
 
 .icon::before
 {
-  content: "";
   display: block;
   border: 0.2rem solid transparent;
   background-repeat: no-repeat;
+  content: "";
 }
 
 .close.icon::before
 {
-  height: 1rem;
   width: 1rem;
+  height: 1rem;
 }
 
 .icon.close.tertiary::before

@@ -26,9 +26,9 @@ io-toggle
   height: var(--height);
   border-radius: 4px;
   background-color: #9b9b9b;
+  cursor: pointer;
   transition: background 0.2s ease-out;
   will-change: background;
-  cursor: pointer;
 }
 
 html[dir="rtl"] io-toggle
@@ -54,12 +54,14 @@ io-toggle button
   padding: 0;
   border: 2px solid #e1e0e1;
   border-radius: var(--height);
-  transition: border 0.2s ease-out, box-shadow 0.2s ease-out,
-              transform 0.2s ease-out, width 0.2s ease-out;
-  will-change: border, box-shadow, transform, width;
-  transform: translateY(var(--translateY));
   outline: none;
   cursor: pointer;
+  transition: border 0.2s ease-out,
+    box-shadow 0.2s ease-out,
+    transform 0.2s ease-out,
+    width 0.2s ease-out;
+  transform: translateY(var(--translateY));
+  will-change: border, box-shadow, transform, width;
 }
 
 io-toggle button[aria-checked="false"]
@@ -75,8 +77,8 @@ io-toggle button[aria-checked="false"]:hover
 
 io-toggle button[aria-checked="true"]
 {
-  background-color: #059cd0;
   border: 2px solid #059cd0;
+  background-color: #059cd0;
   box-shadow: 0 1px 2px 0 #a6cede;
   transform: translateY(var(--translateY)) translateX(var(--translateX));
 }

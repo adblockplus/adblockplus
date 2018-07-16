@@ -33,16 +33,16 @@ io-popout li
 
 .table.cols io-popout li > *
 {
-  width: 100%;
   display: flex;
-  border: 0rem;
+  width: 100%;
   padding: 0.7rem 0rem;
+  border: 0rem;
   color: #077CA6;
-  align-items: center;
   font-size: 1rem;
   font-weight: 400;
-  text-transform: none;
   text-decoration: none;
+  text-transform: none;
+  align-items: center;
 }
 
 io-popout li > *:hover,
@@ -54,8 +54,8 @@ io-popout li > *:focus
 
 io-popout li .icon::before
 {
-  height: var(--icon-size-inner);
   width: var(--icon-size-inner);
+  height: var(--icon-size-inner);
   margin: 0 var(--icon-size-inner);
   border: none;
 }
