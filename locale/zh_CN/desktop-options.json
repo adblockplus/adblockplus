@@ -78,7 +78,7 @@
     "message": "暂时屏蔽网页上的烦人项目，例如：图片或动画幻灯片。"
   },
   "options_customize_header": {
-    "message": "自定义页面操作"
+    "message": "自定义"
   },
   "options_customize_showDevToolsPanel": {
     "message": "在开发人员工具中显示“Adblock Plus”面板"
@@ -90,7 +90,7 @@
     "message": "显示有用的通知"
   },
   "options_customize_showNotifications_tooltip": {
-    "message": "关闭 Adblock Plus 的所有通知。"
+    "message": "允许来自 Adblock Plus 的通知（总是显示与关键性能问题有关的通知）。"
   },
   "options_dialog_about_copyright": {
     "message": "版权所有 © $currentYear$ eyeo GmbH。",

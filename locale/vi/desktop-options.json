@@ -65,9 +65,6 @@
   "options_customize_blockElement_tooltip": {
     "message": "Tạm thời chặn những thành phần gây khó chịu trên một trang web, ví dụ các hình ảnh hay hoạt hình."
   },
-  "options_customize_header": {
-    "message": "TÙY CHỈNH HÀNH ĐỘNG TRÊN TRANG"
-  },
   "options_customize_showDevToolsPanel": {
     "message": "Hiển thị bảng điều khiển ‘Adblock Plus’ trong các công cụ của nhà phát triển"
   },
@@ -76,9 +73,6 @@
   },
   "options_customize_showNotifications": {
     "message": "Hiện thông báo hữu ích"
-  },
-  "options_customize_showNotifications_tooltip": {
-    "message": "Tắt tất cả thông báo từ Adblock Plus."
   },
   "options_dialog_about_copyright": {
     "message": "Bản quyền © $currentYear$ eyeo GmbH.",

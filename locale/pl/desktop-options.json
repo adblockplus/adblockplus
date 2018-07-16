@@ -78,7 +78,7 @@
     "message": "Tymczasowe blokowanie irytujących elementów na stronie np. obrazków lub animowanych pokazów slajdów."
   },
   "options_customize_header": {
-    "message": "Dostosowywanie działań na stronie"
+    "message": "Dostosowania"
   },
   "options_customize_showDevToolsPanel": {
     "message": "Wyświetlaj panel „Adblock Plus” w narzędziach dla deweloperów"
@@ -90,7 +90,7 @@
     "message": "Wyświetlaj użyteczne powiadomienia"
   },
   "options_customize_showNotifications_tooltip": {
-    "message": "Wyłącz wszystkie powiadomienia od Adblock Plusa."
+    "message": "Zezwalaj na powiadomienia Adblock Plus (powiadomienia powiązane z krytycznymi problemami dotyczącymi wydajności będą zawsze wyświetlane)."
   },
   "options_dialog_about_copyright": {
     "message": "Copyright © $currentYear$ eyeo GmbH.",

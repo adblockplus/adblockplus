@@ -21,7 +21,7 @@
     "message": "Por favor, introduce un título"
   },
   "mops_error_url": {
-    "message": "Por favor, introduce un enlace de URL"
+    "message": "Introducir una dirección URL válida"
   },
   "mops_filterlist_add": {
     "message": "+ Añadir una lista de filtros"

@@ -68,9 +68,6 @@
   "options_customize_blockElement_tooltip": {
     "message": "Temporarily block annoying items on a webpage, e.g. images or animated slideshows."
   },
-  "options_customize_header": {
-    "message": "Customize on-page actions"
-  },
   "options_customize_showDevToolsPanel": {
     "message": "Show 'Adblock Plus' panel in developer tools"
   },
@@ -79,9 +76,6 @@
   },
   "options_customize_showNotifications": {
     "message": "Show useful notifications"
-  },
-  "options_customize_showNotifications_tooltip": {
-    "message": "Turn off all notifications from Adblock Plus."
   },
   "options_dialog_about_copyright": {
     "message": "Copyright © $currentYear$ eyeo GmbH.",

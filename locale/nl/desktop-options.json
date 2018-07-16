@@ -77,9 +77,6 @@
   "options_customize_blockElement_tooltip": {
     "message": "Storende items op een webpagina, zoals afbeeldingen of bewegende diavoorstellingen, tijdelijk blokkeren"
   },
-  "options_customize_header": {
-    "message": "Acties-op-pagina aanpassen"
-  },
   "options_customize_showDevToolsPanel": {
     "message": "Paneel ‘Adblock Plus’ in ontwikkelaarshulpmiddelen tonen"
   },
@@ -88,9 +85,6 @@
   },
   "options_customize_showNotifications": {
     "message": "Nuttige meldingen tonen"
-  },
-  "options_customize_showNotifications_tooltip": {
-    "message": "Alle meldingen van Adblock Plus uitschakelen"
   },
   "options_dialog_about_copyright": {
     "message": "Copyright © $currentYear$ eyeo GmbH.",

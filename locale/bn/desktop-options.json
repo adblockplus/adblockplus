@@ -68,9 +68,6 @@
   "options_customize_blockElement_tooltip": {
     "message": "অস্থায়ীভাবে একটি ওয়েবপৃষ্ঠার বিরক্তিকর আইটেম অবরুদ্ধ করে, যেমন চিত্র বা অ্যানিমেশন স্লাইডশো।"
   },
-  "options_customize_header": {
-    "message": "পাতার কর্ম স্ব-নির্ধারণ করুন"
-  },
   "options_customize_showDevToolsPanel": {
     "message": "বিকাশকারী সরঞ্জামে 'Adblock Plus' প্যানেল দেখান"
   },
@@ -79,9 +76,6 @@
   },
   "options_customize_showNotifications": {
     "message": "দরকারী বিজ্ঞপ্তি দেখান"
-  },
-  "options_customize_showNotifications_tooltip": {
-    "message": "অ্যাডব্লক প্লাস থেকে সকল বিজ্ঞপ্তি বন্ধ করুন।"
   },
   "options_dialog_about_copyright": {
     "message": "কপিরাইট © $currentYear$ eyeo GmbH",

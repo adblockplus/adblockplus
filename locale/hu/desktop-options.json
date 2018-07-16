@@ -77,9 +77,6 @@
   "options_customize_blockElement_tooltip": {
     "message": "Zavaró elemek, pl. képek vagy animált diavetítések ideiglenes blokkolása egy weboldalon."
   },
-  "options_customize_header": {
-    "message": "Az oldalon végrehajtott műveletek testreszabása"
-  },
   "options_customize_showDevToolsPanel": {
     "message": "„Adblock Plus” panel megjelenítése a fejlesztői eszközökben"
   },
@@ -88,9 +85,6 @@
   },
   "options_customize_showNotifications": {
     "message": "Hasznos értesítések megjelenítése"
-  },
-  "options_customize_showNotifications_tooltip": {
-    "message": "Az Adblock Plus összes értesítésének letiltása."
   },
   "options_dialog_about_copyright": {
     "message": "Copyright © $currentYear$ eyeo GmbH.",

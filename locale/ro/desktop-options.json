@@ -68,9 +68,6 @@
   "options_customize_blockElement_tooltip": {
     "message": "Blochează temporar elementele enervante pe o pagină de web, de exemplu imagini sau slideshow-uri animate."
   },
-  "options_customize_header": {
-    "message": "Personalizează acţiunile pe pagină"
-  },
   "options_customize_showDevToolsPanel": {
     "message": "Arată panoul \"Adblock Plus\" în developer tools"
   },
@@ -79,9 +76,6 @@
   },
   "options_customize_showNotifications": {
     "message": "Arată notificări utile"
-  },
-  "options_customize_showNotifications_tooltip": {
-    "message": "Dezactivează toate notificările din Adblock Plus."
   },
   "options_dialog_about_copyright": {
     "message": "Copyright © $currentYear$ eyeo GmbH.",

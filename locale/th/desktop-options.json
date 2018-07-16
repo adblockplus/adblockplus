@@ -68,9 +68,6 @@
   "options_customize_blockElement_tooltip": {
     "message": "บล็อคองค์ประกอบที่น่ารำคาญบนหน้าเว็บเป็นการชั่วคราว เช่น รูปภาพหรือสไลด์โชว์เคลื่อนไหว"
   },
-  "options_customize_header": {
-    "message": "ปรับแต่งคำสั่งบนหน้าเว็บ"
-  },
   "options_customize_showDevToolsPanel": {
     "message": "แสดงแผง 'Adblock Plus' ในเครื่องมือผู้พัฒนา"
   },
@@ -79,9 +76,6 @@
   },
   "options_customize_showNotifications": {
     "message": "แสดงการแจ้งเตือนที่เป็นประโยชน์"
-  },
-  "options_customize_showNotifications_tooltip": {
-    "message": "ปิดการแจ้งเตือนทั้งหมดจาก Adblock Plus"
   },
   "options_dialog_about_copyright": {
     "message": "Copyright © $currentYear$ eyeo GmbH.",

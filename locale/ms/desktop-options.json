@@ -65,9 +65,6 @@
   "options_customize_blockElement_tooltip": {
     "message": "Sekat item yang menjengkelkan pada laman web buat sementara, contohnya imej atau tayangan slaid animasi."
   },
-  "options_customize_header": {
-    "message": "PERIBADIKAN TINDAKAN PADA LAMAN WEB"
-  },
   "options_customize_showDevToolsPanel": {
     "message": "Tunjukkan panel ‘Adblock Plus’ dalam alat pemaju"
   },
@@ -76,9 +73,6 @@
   },
   "options_customize_showNotifications": {
     "message": "Papar notifikasi berguna"
-  },
-  "options_customize_showNotifications_tooltip": {
-    "message": "Matikan semua pemberitahuan dari Adblock Plus."
   },
   "options_dialog_about_copyright": {
     "message": "Hak cipta © $currentYear$ eyeo GmbH.",

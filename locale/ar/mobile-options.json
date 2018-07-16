@@ -20,9 +20,6 @@
   "mops_error_title": {
     "message": "يرجى إدخال العنوان"
   },
-  "mops_error_url": {
-    "message": "الرجاء إدخال رابط URL"
-  },
   "mops_filterlist_add": {
     "message": "+ إضافة قائمة عوامل تصفية"
   },

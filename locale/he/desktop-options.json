@@ -77,9 +77,6 @@
   "options_customize_blockElement_tooltip": {
     "message": "חסום באופן זמני פריטים מציקים באתר. לדוגמה, תמונות או מצגות מונפשות."
   },
-  "options_customize_header": {
-    "message": "התאם אישית פעולות עמוד"
-  },
   "options_customize_showDevToolsPanel": {
     "message": "הראה חלונית 'Adblock Plus' במצב מפתחים"
   },
@@ -88,9 +85,6 @@
   },
   "options_customize_showNotifications": {
     "message": "הראה התראות שימושיות"
-  },
-  "options_customize_showNotifications_tooltip": {
-    "message": "כבה את כל ההתראות מ־Adblock Plus."
   },
   "options_dialog_about_copyright": {
     "message": ".eyeo GmbH $currentYear$ © זכויות יוצרים",

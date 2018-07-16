@@ -68,9 +68,6 @@
   "options_customize_blockElement_tooltip": {
     "message": "Тимчасове блокування дратівливих елементів на сайті, наприклад, зображень або анімаційних слайд-шоу."
   },
-  "options_customize_header": {
-    "message": "Налаштування Дій На Сторінці"
-  },
   "options_customize_showDevToolsPanel": {
     "message": "Показувати панель «Adblock Plus» в інструментах розробника"
   },
@@ -79,9 +76,6 @@
   },
   "options_customize_showNotifications": {
     "message": "Показувати корисні повідомлення"
-  },
-  "options_customize_showNotifications_tooltip": {
-    "message": "Вимкнення усіх повідомлень від Adblock Plus."
   },
   "options_dialog_about_copyright": {
     "message": "Авторське право © $currentYear$ eyeo GmbH.",

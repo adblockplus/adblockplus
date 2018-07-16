@@ -78,7 +78,7 @@
     "message": "Bloquea temporalmente los elementos molestos en una página web (p. ej., imágenes o presentaciones de diapositivas animadas)."
   },
   "options_customize_header": {
-    "message": "PERSONALIZAR ACCIONES EN PÁGINA"
+    "message": "Personalización"
   },
   "options_customize_showDevToolsPanel": {
     "message": "Mostrar el panel de \"Adblock Plus\" en herramientas del desarrollador"
@@ -90,7 +90,7 @@
     "message": "Mostrar avisos útiles"
   },
   "options_customize_showNotifications_tooltip": {
-    "message": "Desactiva todas las notificaciones de Adblock Plus."
+    "message": "Permitir notificaciones de Adblock Plus (las notificaciones relacionadas con problemas de rendimiento críticos se mostrarán siempre)."
   },
   "options_dialog_about_copyright": {
     "message": "Copyright © $currentYear$ eyeo GmbH.",

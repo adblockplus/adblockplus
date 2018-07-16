@@ -62,9 +62,6 @@
   "options_customize_blockElement_tooltip": {
     "message": "웹페이지에서 방해가 되는 항목을 일시적으로 차단합니다. 예: 이미지 또는 애니메이션 슬라이드쇼"
   },
-  "options_customize_header": {
-    "message": "온페이지 액션 사용자 설정"
-  },
   "options_customize_showDevToolsPanel": {
     "message": "개발자 도구 패널에서 'Adblock Plus’ 패널을 표시합니다."
   },
@@ -73,9 +70,6 @@
   },
   "options_customize_showNotifications": {
     "message": "유용한 알림 표시"
-  },
-  "options_customize_showNotifications_tooltip": {
-    "message": "Adblock Plus의 모든 알림 끄기"
   },
   "options_dialog_about_copyright": {
     "message": "Copyright © $currentYear$ eyeo GmbH 저작권 소유.",

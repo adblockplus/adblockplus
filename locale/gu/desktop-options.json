@@ -68,9 +68,6 @@
   "options_customize_blockElement_tooltip": {
     "message": "વેબપેજ પર કામચલાઉ વસ્તુઓને અસ્થાયી ધોરણે બ્લૉક કરો, દા.ત. છબીઓ અથવા એનિમેટેડ સ્લાઇડશૉઝ."
   },
-  "options_customize_header": {
-    "message": "ઑન-પૃષ્ઠ ક્રિયાઓ કસ્ટમાઇઝ કરો"
-  },
   "options_customize_showDevToolsPanel": {
     "message": "વિકાસકર્તા સાધનોમાં 'એડબ્લોક પ્લસ' પેનલ દર્શાવો"
   },
@@ -79,9 +76,6 @@
   },
   "options_customize_showNotifications": {
     "message": "ઉપયોગી અને સૂચનાઓ બતાવો"
-  },
-  "options_customize_showNotifications_tooltip": {
-    "message": "એડબ્લોક પ્લસથી બધી સૂચનાઓ બંધ કરો."
   },
   "options_dialog_about_copyright": {
     "message": "કૉપિરાઇટ © $currentYear$ eyeo GmbH.",

@@ -77,9 +77,6 @@
   "options_customize_blockElement_tooltip": {
     "message": "Bloqueja temporalment elements molestos en una pàgina web, p. e. imatges o presentacions de diapositives animades."
   },
-  "options_customize_header": {
-    "message": "Personalitza accions a la pàgina"
-  },
   "options_customize_showDevToolsPanel": {
     "message": "Mostra el quadre «Adblock Plus» a les eines de desenvolupador"
   },
@@ -88,9 +85,6 @@
   },
   "options_customize_showNotifications": {
     "message": "Mostra les notificacions útils"
-  },
-  "options_customize_showNotifications_tooltip": {
-    "message": "Desactiva totes les notificacions d'Adblock Plus."
   },
   "options_dialog_about_copyright": {
     "message": "Drets d'autor © $currentYear$ eyeo GmbH.",

@@ -21,7 +21,7 @@
     "message": "请输入一个标题"
   },
   "mops_error_url": {
-    "message": "请输入一个网址链接"
+    "message": "输入有效的 URL"
   },
   "mops_filterlist_add": {
     "message": "+ 添加过滤列表"
