@@ -20,7 +20,10 @@
 
 "use strict";
 
+require("./io-list-box");
 require("./io-popout");
+
+const {$} = require("./dom");
 
 let subscriptionsMap = Object.create(null);
 let filtersMap = Object.create(null);
@@ -142,7 +145,7 @@ Collection.prototype.addItem = function(item)
   for (let j = 0; j < this.details.length; j++)
   {
     const detail = this.details[j];
-    const table = E(detail.id);
+    const table = $(`#${detail.id}`);
     const template = table.querySelector("template");
     const listItem = document.createElement("li");
     listItem.appendChild(document.importNode(template.content, true));
@@ -191,7 +194,7 @@ Collection.prototype.removeItem = function(item)
   const getListElement = this._createElementQuery(item);
   for (const detail of this.details)
   {
-    const table = E(detail.id);
+    const table = $(`#${detail.id}`);
     const element = getListElement(table);
 
     // Element gets removed so make sure to handle focus appropriately
@@ -227,7 +230,7 @@ Collection.prototype.updateItem = function(item)
   const access = (item.url || item.text).replace(/'/g, "\\'");
   for (let i = 0; i < this.details.length; i++)
   {
-    const table = E(this.details[i].id);
+    const table = $(`#${this.details[i].id}`);
     const element = table.querySelector("[data-access='" + access + "']");
     if (!element)
       continue;
@@ -335,7 +338,7 @@ Collection.prototype.clearAll = function()
   this.items = [];
   for (const detail of this.details)
   {
-    const table = E(detail.id);
+    const table = $(`#${detail.id}`);
     let element = table.firstChild;
     while (element)
     {
@@ -512,7 +515,7 @@ function removeCustomFilter(text)
 
 function updateCustomFiltersUi()
 {
-  const customFiltersListElement = E("custom-filters-raw");
+  const customFiltersListElement = $("#custom-filters-raw");
   customFiltersListElement.value = customFilters.join("\n");
 }
 
@@ -603,7 +606,7 @@ function execAction(action, element)
       addEnableSubscription(findParentData(element, "access", false));
       break;
     case "add-predefined-subscription": {
-      const dialog = E("dialog-content-predefined");
+      const dialog = $("#dialog-content-predefined");
       const title = dialog.querySelector("h3").textContent;
       const url = dialog.querySelector(".url").textContent;
       addEnableSubscription(url, title);
@@ -614,23 +617,7 @@ function execAction(action, element)
       setCustomFiltersView("read");
       break;
     case "change-language-subscription":
-      for (const key in subscriptionsMap)
-      {
-        const subscription = subscriptionsMap[key];
-        const subscriptionType = subscription.recommended;
-        if (subscriptionType == "ads" && subscription.disabled == false)
-        {
-          browser.runtime.sendMessage({
-            type: "subscriptions.remove",
-            url: subscription.url
-          });
-          browser.runtime.sendMessage({
-            type: "subscriptions.add",
-            url: findParentData(element, "access", false)
-          });
-          break;
-        }
-      }
+      changeLanguageSubscription(findParentData(element, "access", false));
       break;
     case "close-dialog":
       closeDialog();
@@ -639,13 +626,13 @@ function execAction(action, element)
       setCustomFiltersView("write");
       break;
     case "hide-more-filters-section":
-      E("more-filters").setAttribute("aria-hidden", true);
+      $("#more-filters").setAttribute("aria-hidden", true);
       break;
     case "hide-notification":
       hideNotification();
       break;
     case "import-subscription": {
-      const url = E("blockingList-textbox").value;
+      const url = $("#blockingList-textbox").value;
       addEnableSubscription(url);
       closeDialog();
       break;
@@ -655,6 +642,11 @@ function execAction(action, element)
       openDialog(dialog);
       break;
     }
+    case "open-list-box":
+      const ioListBox = $("io-list-box");
+      ioListBox.change = true;
+      $("button", ioListBox).focus();
+      break;
     case "remove-filter":
       browser.runtime.sendMessage({
         type: "filters.remove",
@@ -670,7 +662,7 @@ function execAction(action, element)
     case "save-custom-filters":
       sendMessageHandleErrors({
         type: "filters.importRaw",
-        text: E("custom-filters-raw").value,
+        text: $("#custom-filters-raw").value,
         removeExisting: true
       },
       () =>
@@ -679,7 +671,7 @@ function execAction(action, element)
       });
       break;
     case "show-more-filters-section":
-      E("more-filters").setAttribute("aria-hidden", false);
+      $("#more-filters").setAttribute("aria-hidden", false);
       break;
     case "switch-acceptable-ads":
       const value = element.value || element.dataset.value;
@@ -756,7 +748,7 @@ function execAction(action, element)
 
       if (form.checkValidity())
       {
-        addEnableSubscription(E("import-list-url").value);
+        addEnableSubscription($("#import-list-url").value);
         form.reset();
         closeDialog();
       }
@@ -768,9 +760,30 @@ function execAction(action, element)
   }
 }
 
+function changeLanguageSubscription(url)
+{
+  for (const key in subscriptionsMap)
+  {
+    const subscription = subscriptionsMap[key];
+    const subscriptionType = subscription.recommended;
+    if (subscriptionType == "ads" && subscription.disabled == false)
+    {
+      browser.runtime.sendMessage({
+        type: "subscriptions.remove",
+        url: subscription.url
+      });
+      browser.runtime.sendMessage({
+        type: "subscriptions.add",
+        url
+      });
+      break;
+    }
+  }
+}
+
 function setCustomFiltersView(mode)
 {
-  const customFiltersElement = E("custom-filters-raw");
+  const customFiltersElement = $("#custom-filters-raw");
   updateCustomFiltersUi();
   if (mode == "read")
   {
@@ -786,7 +799,7 @@ function setCustomFiltersView(mode)
     customFiltersElement.disabled = false;
   }
 
-  E("custom-filters").dataset.mode = mode;
+  $("#custom-filters").dataset.mode = mode;
 }
 
 function onClick(e)
@@ -896,9 +909,32 @@ function onHashChange()
   }
 }
 
+function setupIoListBox()
+{
+  const ioListBox = $("io-list-box");
+  ioListBox.getItemTitle = getLanguageTitle;
+  ioListBox.placeholder = getMessage("options_dialog_language_title");
+  ioListBox.items = collections.allLangs.items;
+  ioListBox.addEventListener("close", (event) =>
+  {
+    ioListBox.change = false;
+  });
+  ioListBox.addEventListener("change", (event) =>
+  {
+    const item = event.detail;
+    if (ioListBox.change)
+      changeLanguageSubscription(item.url);
+    else
+    {
+      item.disabled = !item.disabled;
+      addEnableSubscription(item.url, item.originalTitle, item.homepage);
+    }
+  });
+}
+
 function onDOMLoaded()
 {
-  populateLists();
+  populateLists().then(setupIoListBox);
 
   // Initialize navigation sidebar
   browser.runtime.sendMessage({
@@ -906,7 +942,7 @@ function onDOMLoaded()
     what: "addonVersion"
   }).then(addonVersion =>
   {
-    E("abp-version").textContent = getMessage("options_dialog_about_version",
+    $("#abp-version").textContent = getMessage("options_dialog_about_version",
       [addonVersion]);
   });
 
@@ -915,30 +951,30 @@ function onDOMLoaded()
   document.body.addEventListener("keyup", onKeyUp, false);
   const exampleValue = getMessage("options_whitelist_placeholder_example",
     ["www.example.com"]);
-  E("whitelisting-textbox").setAttribute("placeholder", exampleValue);
-  E("whitelisting-textbox").addEventListener("keyup", (e) =>
+  $("#whitelisting-textbox").setAttribute("placeholder", exampleValue);
+  $("#whitelisting-textbox").addEventListener("keyup", (e) =>
   {
-    E("whitelisting-add-button").disabled = !e.target.value;
+    $("#whitelisting-add-button").disabled = !e.target.value;
   }, false);
 
   // General tab
   getDocLink("contribute").then(link =>
   {
-    E("contribute").href = link;
+    $("#contribute").href = link;
   });
   getDocLink("acceptable_ads_criteria").then(link =>
   {
     setElementLinks("enable-acceptable-ads-description", link);
   });
-  setElementText(E("tracking-warning-1"), "options_tracking_warning_1",
+  setElementText($("#tracking-warning-1"), "options_tracking_warning_1",
     [getMessage("common_feature_privacy_title"),
      getMessage("options_acceptableAds_ads_label")]);
-  setElementText(E("tracking-warning-3"), "options_tracking_warning_3",
+  setElementText($("#tracking-warning-3"), "options_tracking_warning_3",
     [getMessage("options_acceptableAds_privacy_label")]);
 
   getDocLink("privacy_friendly_ads").then(link =>
   {
-    E("enable-acceptable-ads-privacy-description").href = link;
+    $("#enable-acceptable-ads-privacy-description").href = link;
   });
   getDocLink("adblock_plus_{browser}_dnt").then(url =>
   {
@@ -948,7 +984,7 @@ function onDOMLoaded()
   // Whitelisted tab
   getDocLink("whitelist").then(link =>
   {
-    E("whitelist-learn-more").href = link;
+    $("#whitelist-learn-more").href = link;
   });
 
   // Advanced tab
@@ -975,15 +1011,15 @@ function onDOMLoaded()
   getDocLink("filterdoc").then(link =>
   {
     setElementLinks("custom-filters-description", link);
-    E("link-filters").setAttribute("href", link);
+    $("#link-filters").setAttribute("href", link);
   });
 
   getDocLink("subscriptions").then(link =>
   {
-    E("filter-lists-learn-more").setAttribute("href", link);
+    $("#filter-lists-learn-more").setAttribute("href", link);
   });
 
-  E("custom-filters-raw").setAttribute("placeholder",
+  $("#custom-filters-raw").setAttribute("placeholder",
     getMessage("options_customFilters_edit_placeholder", ["/ads/track/*"]));
 
   // Help tab
@@ -997,22 +1033,22 @@ function onDOMLoaded()
   });
   getDocLink("social_twitter").then(link =>
   {
-    E("twitter").setAttribute("href", link);
+    $("#twitter").setAttribute("href", link);
   });
   getDocLink("social_facebook").then(link =>
   {
-    E("facebook").setAttribute("href", link);
+    $("#facebook").setAttribute("href", link);
   });
   getDocLink("social_gplus").then(link =>
   {
-    E("google-plus").setAttribute("href", link);
+    $("#google-plus").setAttribute("href", link);
   });
   getDocLink("social_weibo").then(link =>
   {
-    E("weibo").setAttribute("href", link);
+    $("#weibo").setAttribute("href", link);
   });
 
-  E("dialog").addEventListener("keydown", function(e)
+  $("#dialog").addEventListener("keydown", function(e)
   {
     switch (getKey(e))
     {
@@ -1043,7 +1079,7 @@ function onDOMLoaded()
 let focusedBeforeDialog = null;
 function openDialog(name)
 {
-  const dialog = E("dialog");
+  const dialog = $("#dialog");
   dialog.setAttribute("aria-hidden", false);
   dialog.setAttribute("aria-labelledby", "dialog-title-" + name);
   document.body.setAttribute("data-dialog", name);
@@ -1059,7 +1095,7 @@ function openDialog(name)
 
 function closeDialog()
 {
-  const dialog = E("dialog");
+  const dialog = $("#dialog");
   dialog.setAttribute("aria-hidden", true);
   dialog.removeAttribute("aria-labelledby");
   document.body.removeAttribute("data-dialog");
@@ -1068,22 +1104,22 @@ function closeDialog()
 
 function showNotification(text)
 {
-  E("notification").setAttribute("aria-hidden", false);
-  E("notification-text").textContent = text;
+  $("#notification").setAttribute("aria-hidden", false);
+  $("#notification-text").textContent = text;
   setTimeout(hideNotification, 3000);
 }
 
 function hideNotification()
 {
-  E("notification").setAttribute("aria-hidden", true);
-  E("notification-text").textContent = "";
+  $("#notification").setAttribute("aria-hidden", true);
+  $("#notification-text").textContent = "";
 }
 
 function setAcceptableAds()
 {
-  const acceptableAdsForm = E("acceptable-ads");
-  const acceptableAds = E("acceptable-ads-allow");
-  const acceptableAdsPrivacy = E("acceptable-ads-privacy-allow");
+  const acceptableAdsForm = $("#acceptable-ads");
+  const acceptableAds = $("#acceptable-ads-allow");
+  const acceptableAdsPrivacy = $("#acceptable-ads-privacy-allow");
   acceptableAdsForm.classList.remove("show-dnt-notification");
   acceptableAds.setAttribute("aria-checked", false);
   acceptableAdsPrivacy.setAttribute("aria-checked", false);
@@ -1138,7 +1174,7 @@ function hasPrivacyConflict()
 
 function setPrivacyConflict()
 {
-  const acceptableAdsForm = E("acceptable-ads");
+  const acceptableAdsForm = $("#acceptable-ads");
   if (hasPrivacyConflict())
   {
     getPref("ui_warn_tracking").then(showTrackingWarning =>
@@ -1154,64 +1190,75 @@ function setPrivacyConflict()
 
 function populateLists()
 {
-  subscriptionsMap = Object.create(null);
-  filtersMap = Object.create(null);
-
-  // Empty collections and lists
-  for (const property in collections)
-    collections[property].clearAll();
-
-  setCustomFiltersView("empty");
-  browser.runtime.sendMessage({
-    type: "subscriptions.get",
-    special: true
-  }).then(subscriptions =>
+  return new Promise(resolve =>
   {
-    const customFilterPromises = subscriptions.map(getSubscriptionFilters);
-    Promise.all(customFilterPromises).then((filters) =>
+    let todo = 2;
+    const done = () =>
     {
-      loadCustomFilters([].concat(...filters));
-      isCustomFiltersLoaded = true;
-    });
-  });
+      if (!--todo)
+        resolve();
+    };
 
-  browser.runtime.sendMessage({
-    type: "prefs.get",
-    key: "subscriptions_exceptionsurl"
-  }).then(url =>
-  {
-    acceptableAdsUrl = url;
+    subscriptionsMap = Object.create(null);
+    filtersMap = Object.create(null);
 
-    return browser.runtime.sendMessage({
-      type: "prefs.get",
-      key: "subscriptions_exceptionsurl_privacy"
-    });
-  }).then(urlPrivacy =>
-  {
-    acceptableAdsPrivacyUrl = urlPrivacy;
+    // Empty collections and lists
+    for (const property in collections)
+      collections[property].clearAll();
 
-    return getPref("additional_subscriptions");
-  }).then(subscriptionUrls =>
-  {
-    additionalSubscriptions = subscriptionUrls;
-
-    // Load user subscriptions
-    return browser.runtime.sendMessage({
+    setCustomFiltersView("empty");
+    browser.runtime.sendMessage({
       type: "subscriptions.get",
-      downloadable: true
+      special: true
+    }).then(subscriptions =>
+    {
+      const customFilterPromises = subscriptions.map(getSubscriptionFilters);
+      Promise.all(customFilterPromises).then((filters) =>
+      {
+        loadCustomFilters([].concat(...filters));
+        isCustomFiltersLoaded = true;
+      }).then(done);
     });
-  }).then(subscriptions =>
-  {
-    for (const subscription of subscriptions)
-      onSubscriptionMessage("added", subscription);
 
-    setAcceptableAds();
+    browser.runtime.sendMessage({
+      type: "prefs.get",
+      key: "subscriptions_exceptionsurl"
+    }).then(url =>
+    {
+      acceptableAdsUrl = url;
+
+      return browser.runtime.sendMessage({
+        type: "prefs.get",
+        key: "subscriptions_exceptionsurl_privacy"
+      });
+    }).then(urlPrivacy =>
+    {
+      acceptableAdsPrivacyUrl = urlPrivacy;
+
+      return getPref("additional_subscriptions");
+    }).then(subscriptionUrls =>
+    {
+      additionalSubscriptions = subscriptionUrls;
+
+      // Load user subscriptions
+      return browser.runtime.sendMessage({
+        type: "subscriptions.get",
+        downloadable: true
+      });
+    }).then(subscriptions =>
+    {
+      for (const subscription of subscriptions)
+        onSubscriptionMessage("added", subscription);
+
+      setAcceptableAds();
+      done();
+    });
   });
 }
 
 function addWhitelistedDomain()
 {
-  const domain = E("whitelisting-textbox");
+  const domain = $("#whitelisting-textbox");
   for (const whitelistItem of collections.whitelist.items)
   {
     if (whitelistItem.title == domain.value)
@@ -1233,7 +1280,7 @@ function addWhitelistedDomain()
   }
 
   domain.value = "";
-  E("whitelisting-add-button").disabled = true;
+  $("#whitelisting-add-button").disabled = true;
 }
 
 function addEnableSubscription(url, title, homepage)
@@ -1417,7 +1464,7 @@ port.onMessage.addListener((message) =>
       {
         case "addSubscription":
           const subscription = message.args[0];
-          const dialog = E("dialog-content-predefined");
+          const dialog = $("#dialog-content-predefined");
 
           let {title, url} = subscription;
           if (!title || title == url)
