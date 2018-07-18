@@ -17,6 +17,7 @@
 
 @import "io-popout.scss";
 @import "io-popout-fixes.scss";
+@import "io-list-box.scss";
 
 html
 {
@@ -1131,6 +1132,11 @@ html[dir="rtl"] .tooltip
 /*
   General tab content
 */
+
+#blocking-languages li button[data-single]
+{
+  padding: 0;
+}
 
 #blocking-languages-dialog-table
 {
