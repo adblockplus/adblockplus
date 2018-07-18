@@ -433,14 +433,14 @@
   port.on("subscriptions.remove", (message, sender) =>
   {
     const subscription = Subscription.fromURL(message.url);
-    if (subscription.url in FilterStorage.knownSubscriptions)
+    if (FilterStorage.knownSubscriptions.has(subscription.url))
       FilterStorage.removeSubscription(subscription);
   });
 
   port.on("subscriptions.toggle", (message, sender) =>
   {
     const subscription = Subscription.fromURL(message.url);
-    if (subscription.url in FilterStorage.knownSubscriptions)
+    if (FilterStorage.knownSubscriptions.has(subscription.url))
     {
       if (subscription.disabled || message.keepInstalled)
         subscription.disabled = !subscription.disabled;
