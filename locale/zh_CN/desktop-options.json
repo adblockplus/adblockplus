@@ -20,6 +20,15 @@
   "options_advanced_description": {
     "message": "自定义 Adblock Plus、添加或移除过滤列表、创建和维护您自己的过滤列表"
   },
+  "options_anti_cv_header": {
+    "message": "反规避"
+  },
+  "options_anti_cv_title": {
+    "message": "ABP 反规避过滤器列表"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "此过滤器列表可以防止规避（即在广告拦截用户上强制投放广告的技术）。这些过滤器可以解决规避广告以及跟踪相关的问题。"
+  },
   "options_close": {
     "message": "关闭"
   },

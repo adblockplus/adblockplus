@@ -20,6 +20,15 @@
   "options_advanced_description": {
     "message": "Personalizza Adblock Plus, aggiungi o rimuovi gli elenchi di filtri, crea e mantieni i tuoi elenchi di filtri"
   },
+  "options_anti_cv_header": {
+    "message": "Anti circonvenzione"
+  },
+  "options_anti_cv_title": {
+    "message": "Elenco di filtri anti circonvenzione di ABP"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "Questi filtri consentono di prevenire la circonvenzione, ovvero le tecniche atte a forzare la distribuzione di annunci agli utenti che hanno installato un software per il blocco degli annunci. Questi filtri consentono di gestire la circonvenzione degli annunci e il relativo monitoraggio."
+  },
   "options_close": {
     "message": "CHIUDERE"
   },

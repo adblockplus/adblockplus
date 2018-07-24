@@ -20,6 +20,15 @@
   "options_advanced_description": {
     "message": "Personalize o Adblock Plus, adicione ou remova listas de filtros, crie e mantenha as suas próprias listas de filtros"
   },
+  "options_anti_cv_header": {
+    "message": "Anticircunvenção"
+  },
+  "options_anti_cv_title": {
+    "message": "Lista ABP de filtros anticircunvenção"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "Esta lista de filtros trabalha contra a circunvenção (ou seja, técnicas para forçar anúncios para usuários que estão bloqueando os anúncios). Estes filtros contornam anúncios circunventores, bem como o rastreamento associado a essa prática."
+  },
   "options_close": {
     "message": "FECHAR"
   },

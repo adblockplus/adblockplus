@@ -20,6 +20,15 @@
   "options_advanced_description": {
     "message": "Passe Adblock Plus an, füge Filterlisten hinzu oder entferne sie, erstelle und pflege eigene Filterlisten"
   },
+  "options_anti_cv_header": {
+    "message": "Umgehungsschutz"
+  },
+  "options_anti_cv_title": {
+    "message": "ABP-Filterliste für Umgehungsschutz"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "Diese Filterliste wirkt der Umgehung entgegen (d. h. Techniken zur Erzwingung von Werbungen für werbeblockierende Benutzer). Dieser Filter berücksichtigt die Umgehung der Blockierung von Werbung und ein damit verbundenes Tracking."
+  },
   "options_close": {
     "message": "SCHLIESSEN"
   },
