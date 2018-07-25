@@ -68,8 +68,8 @@ button
 {
   border: 0;
   color: var(--color-link);
+  background: none;
   cursor: pointer;
-  appearance: none;
 }
 
 button[disabled]
@@ -245,7 +245,7 @@ header .notification hr + button
   background-repeat: no-repeat;
   background-position: center;
   background-size: var(--font-size-big);
-  transition: opacity 0.3s ease-in;
+  transition: opacity 0.1s ease-in;
 }
 
 #options:hover
@@ -530,13 +530,14 @@ footer > span
 
 footer > button
 {
+  width: var(--font-size-primary);
   margin-right: var(--margin-primary-half);
   margin-left: var(--margin-primary-half);
   opacity: 0.5;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: var(--font-size-primary);
-  transition: opacity 0.3s ease-in;
+  background-size: contain;
+  transition: opacity 0.1s ease-in;
 }
 
 footer > button:hover
