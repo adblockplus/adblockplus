@@ -479,5 +479,8 @@
   "options_anti_cv_tooltip": {
     "description": "Tooltip for the anti circumvention list",
     "message": "This filter list works against circumvention (i.e. techniques to force ads on ad-blocking users). These filters address circumventing ads as well as related tracking."
+  },
+  "options_filter_list_rule": {
+    "message": "Filter rule"
   }
 }

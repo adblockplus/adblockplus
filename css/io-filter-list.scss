@@ -1,0 +1,247 @@
+/*
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-present eyeo GmbH
+ *
+ * Adblock Plus is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Adblock Plus is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@import "./io-checkbox.scss";
+@import "./io-toggle.scss";
+
+/*
+  The component depends on its style and it will look for the
+  --io-filter-list property to ensure the CSS has been loaded.
+  The property is also named like the component on purpose,
+  to be sure its an own property, not something inherited.
+*/
+io-filter-list
+{
+  --io-filter-list: ready;
+  width: 100%;
+  padding: 0;
+}
+
+io-filter-list,
+io-filter-list *,
+io-filter-list *::before,
+io-filter-list *::after
+{
+  box-sizing: border-box;
+}
+
+io-filter-list table
+{
+  color: #505050;
+  background-color: #fff;
+}
+
+io-filter-list table
+{
+  width: 100%;
+  border: 1px solid #bcbcbc;
+  user-select: none;
+}
+
+io-filter-list thead tr,
+io-filter-list td
+{
+  border-bottom: 1px solid #bcbcbc;
+}
+
+io-filter-list tr.empty td,
+io-filter-list tr:last-child td
+{
+  border-bottom: 0;
+}
+
+/* necessary to have scrollable tbody */
+io-filter-list thead,
+io-filter-list tbody
+{
+  display: block;
+}
+
+io-filter-list tr
+{
+  display: flex;
+}
+
+io-filter-list tbody
+{
+  overflow: hidden;
+  height: 300px;
+}
+
+io-filter-list th,
+io-filter-list td
+{
+  min-width: 24px;
+  padding: 4px 8px;
+  text-align: center;
+}
+
+io-filter-list th
+{
+  padding: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease-in;
+}
+
+io-filter-list th:hover
+{
+  background-color: #f6f6f6;
+}
+
+io-filter-list tbody tr
+{
+  height: var(--row-height, auto);
+  outline: none;
+}
+
+io-filter-list tbody tr.odd.selected,
+io-filter-list tbody tr.selected
+{
+  background-color: #f6f6f6;
+}
+
+io-filter-list [data-column="rule"]
+{
+  width: var(--rule-width, auto);
+  white-space: nowrap;
+  flex-grow: 1;
+}
+
+io-filter-list [data-column="rule"] .content
+{
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+io-filter-list [data-column="rule"] .saved
+{
+  animation-name: saved-animation;
+  animation-duration: 0.2s;
+}
+
+io-filter-list [data-column="rule"] .content:focus
+{
+  text-overflow: initial;
+}
+
+html:not([dir="rtl"]) io-filter-list [data-column="rule"]
+{
+  text-align: left;
+}
+
+html[dir="rtl"] io-filter-list [data-column="rule"]
+{
+  text-align: right;
+}
+
+io-filter-list [data-column="status"],
+io-filter-list [data-column="selected"],
+io-filter-list [data-column="warning"]
+{
+  width: 72px;
+}
+
+io-filter-list [data-column="warning"] img
+{
+  width: 1em;
+  height: 1em;
+}
+
+io-filter-list td[data-column="warning"] img
+{
+  opacity: 0.5;
+}
+
+io-filter-list thead th:not([data-column="selected"])::after
+{
+  display: inline-block;
+  position: absolute;
+  padding: 4px;
+  opacity: 0.3;
+  font-size: 0.7em;
+  line-height: 1rem;
+}
+
+io-filter-list thead th[data-column="status"]::after
+{
+  position: initial;
+}
+
+io-filter-list thead th:not([data-column="selected"])::after
+{
+  content: "▲";
+}
+
+io-filter-list thead[data-dir="desc"] th:not([data-column="selected"])::after
+{
+  content: "▼";
+}
+
+io-filter-list thead[data-sort="status"] th[data-column="status"]::after,
+io-filter-list thead[data-sort="rule"] th[data-column="rule"]::after,
+io-filter-list thead[data-sort="warning"] th[data-column="warning"]::after
+{
+  opacity: 1;
+}
+
+io-filter-list table
+{
+  position: relative;
+}
+
+io-filter-list io-scrollbar
+{
+  position: absolute;
+  top: 46px;
+  bottom: 8px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+
+io-filter-list:hover io-scrollbar
+{
+  opacity: 1;
+}
+
+html:not([dir="rtl"]) io-filter-list io-scrollbar
+{
+  right: 12px;
+}
+
+html[dir="rtl"] io-filter-list io-scrollbar
+{
+  left: 12px;
+}
+
+io-filter-list io-toggle
+{
+  margin-top: 2px;
+  vertical-align: top;
+}
+
+@keyframes saved-animation
+{
+  from
+  {
+    background: #bcffbc;
+  }
+
+  to
+  {
+    background: default;
+  }
+}

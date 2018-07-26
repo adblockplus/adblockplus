@@ -84,6 +84,24 @@ resulting page/component inside the `./smoke` folder.
 
 Please read how it's done for `io-element` to know more.
 
+Styled Components
+-----------------
+
+If a component depends in its CSS style in order to properly setup,
+it can use the `this.isStyled()` method if the following convention is used:
+
+```css
+/* generic component CSS root definition */
+io-generic-component
+{
+  --io-generic-component: ready;
+}
+```
+
+Only once that file and its property has been parsed the call to `this.isStyled()` returns true
+and you can delay initialization until such property is known.
+
+
 Linting
 -------
 
