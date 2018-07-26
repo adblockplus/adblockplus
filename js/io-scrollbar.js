@@ -100,7 +100,7 @@ class IOScrollbar extends IOElement
 
   get position()
   {
-    return this.state.position;
+    return this.state.position || 0;
   }
 
   set position(value)
@@ -108,6 +108,12 @@ class IOScrollbar extends IOElement
     if (!this._elSize)
       return;
     setPosition.call(this, value);
+  }
+
+  // read-only: the amount of positions covered by the slider
+  get range()
+  {
+    return this._elSize - this._sliderSize;
   }
 
   get size()
@@ -188,6 +194,8 @@ class IOScrollbar extends IOElement
 
 IOScrollbar.define("io-scrollbar");
 
+module.exports = IOScrollbar;
+
 function setPosition(value)
 {
   this.setState({
@@ -195,7 +203,7 @@ function setPosition(value)
       0,
       Math.min(
         parseFloat(value),
-        this._elSize - this._sliderSize
+        this.range
       )
     )
   });

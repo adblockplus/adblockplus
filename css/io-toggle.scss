@@ -28,6 +28,7 @@ io-toggle
   background-color: #9b9b9b;
   cursor: pointer;
   transition: background 0.2s ease-out;
+  transform: translateY(calc(var(--translateY) * -1));
   will-change: background;
 }
 

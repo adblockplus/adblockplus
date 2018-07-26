@@ -119,6 +119,17 @@ class IOElement extends HyperHTMLElement
   // whenever an element is created, render its content once
   created() { this.render(); }
 
+  // based on a `--component-name: ready;` convention
+  // under the `component-name {}` related stylesheet,
+  // this method returns true only if such stylesheet
+  // has been already loaded.
+  isStyled()
+  {
+    const computed = window.getComputedStyle(this, null);
+    const property = "--" + this.nodeName.toLowerCase();
+    return computed.getPropertyValue(property).trim() === "ready";
+  }
+
   // by default, render is a no-op
   render() {}
 
