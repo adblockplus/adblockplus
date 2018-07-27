@@ -20,6 +20,15 @@
   "options_advanced_description": {
     "message": "Dostosuj Adblock Plus, dodaj lub usuń zestawy filtrów, twórz i utrzymuj własne zestawy filtrów"
   },
+  "options_anti_cv_header": {
+    "message": "Środki przeciwdziałające obchodzeniu ustawień"
+  },
+  "options_anti_cv_title": {
+    "message": "Lista filtrów ABP przeciwdziałających obchodzeniu ustawień"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "Ta lista filtrów zapobiega obchodzeniu ustawień (tj. technikom wymuszania wyświetlania reklam użytkownikom je blokującym). Te filtry są skierowane na reklamy obchodzące ustawienia oraz powiązane z nimi śledzenie."
+  },
   "options_close": {
     "message": "Zamknij"
   },

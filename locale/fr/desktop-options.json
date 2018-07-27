@@ -20,6 +20,15 @@
   "options_advanced_description": {
     "message": "Personnalisez Adblock Plus, ajoutez ou supprimez des listes de filtres, créez et maintenez vos propres listes de filtres"
   },
+  "options_anti_cv_header": {
+    "message": "Anticontournement"
+  },
+  "options_anti_cv_title": {
+    "message": "Liste de filtres anticontournement ABP"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "Cette liste de filtres est efficace contre le contournement (les techniques utilisées pour forcer l’affichage de publicités sur les écrans des personnes utilisant des services de blocage publicitaire). Ces filtres ciblent le contournement et le suivi qui s’y rapporte."
+  },
   "options_close": {
     "message": "FERMER"
   },

@@ -20,6 +20,15 @@
   "options_advanced_description": {
     "message": "Adblock Plus'ı özelleştirin; süzme listeleri ekleyin veya çıkarın; kendi süzme listelerinizi oluşturun veya düzenleyin"
   },
+  "options_anti_cv_header": {
+    "message": "Dolandırıcılık Önleme"
+  },
+  "options_anti_cv_title": {
+    "message": "ABP Dolandırıcılık Önleme Filtre Listesi"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "Bu filtre listesi, dolandırıcılığa (yani reklamları engelleyen kullanıcılarında reklamları zorlama tekniklerine) karşı çalışır. Bu filtreler dolandırıcılık reklamlarını ve ilgili izlemeleri belirler ve müdahale eder."
+  },
   "options_close": {
     "message": "kapat"
   },
