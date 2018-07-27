@@ -26,6 +26,9 @@
   "issueReporter_dataCollector_heading": {
     "message": "Wolkom by de probleemrapportearder"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Opmerking:</strong> der wurdt tydlik in ekstra ljepblêd iepene, sadat de side wêrop jo jo binne net troch de probleemrapportaazje beynfloede wurdt."
+  },
   "issueReporter_doneButton_label": {
     "message": "Klear"
   },

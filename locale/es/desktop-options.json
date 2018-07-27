@@ -27,7 +27,7 @@
     "message": "Lista de filtros antielusión de ABP"
   },
   "options_anti_cv_tooltip": {
-    "message": "Esta lista de filtros protege los sitios web de cualquier práctica de elusión (es decir, técnicas para forzar anuncios en aquellos usuarios que cuenten con bloqueo de anuncios). Estos filtros abordan tanto los anuncios de elusión como el seguimiento relacionado."
+    "message": "Esta lista de filtros funciona contra cualquier práctica de elusión en sitios web (es decir, técnicas para forzar anuncios en aquellos usuarios que cuenten con bloqueo de anuncios). Estos filtros abordan tanto los anuncios que eluden el bloqueo como el seguimiento relacionado."
   },
   "options_close": {
     "message": "CERRAR"

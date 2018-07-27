@@ -117,7 +117,7 @@
     "message": "เพิ่มรายการตัวกรอง"
   },
   "options_dialog_language_other_empty": {
-    "message": "ขณะนี้ไม่มีภาษาเหลือแล้ว"
+    "message": "ไม่มีภาษาที่รองรับแล้ว"
   },
   "options_dialog_language_title": {
     "message": "เลือกภาษา"
@@ -153,19 +153,19 @@
     "message": "ชั่วโมงที่ผ่านมา"
   },
   "options_filterList_lastDownload_checksumMismatch": {
-    "message": "ล้มเหลว checksum จับผิดคู่"
+    "message": "ความถูกต้องของไฟล์ดาวน์โหลดผิดพลาด"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "ล้มเหลว การดาวน์โหลดล้มเหลว"
+    "message": "การดาวน์โหลดล้มเหลว"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "กำลังอัพเดต"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "ล้มเหลว, ไม่ใช่รายการตัวกรองที่ถูกต้อง"
+    "message": "ตัวกรองไม่ถูกต้อง"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "ล้มเหลว ไม่มีที่อยู่ที่ถูกต้อง"
+    "message": "ที่อยู่ผิดพลาด"
   },
   "options_filterList_minutes": {
     "message": "นาทีที่ผ่านมา"

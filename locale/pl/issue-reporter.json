@@ -27,7 +27,7 @@
     "message": "Witamy w reporterze problemów"
   },
   "issueReporter_data_gathering_tab": {
-    "message": "<strong>Uwaga:</strong> Otworzy się dodatkowa karta, więc narzędzie zgłaszania problemów Issue Reporter nie wpłynie na wyświetlanie aktualnie przeglądanej strony."
+    "message": "<strong>Uwaga:</strong> Otworzy się dodatkowa karta, więc narzędzie zgłaszania problemów nie wpłynie na wyświetlanie aktualnie przeglądanej strony."
   },
   "issueReporter_doneButton_label": {
     "message": "Gotowe"

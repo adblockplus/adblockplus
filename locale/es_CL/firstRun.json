@@ -36,7 +36,7 @@
     "message": "donar"
   },
   "firstRun_donate_label": {
-    "message": "Apoye nuestro proyecto"
+    "message": "Apoya nuestro proyecto"
   },
   "firstRun_filterlistsReinitializedWarning": {
     "message": "Parece que un problema provocó que se eliminasen todos los filtros y no se pudo restaurar una copia de seguridad. Por ello ha sido necesario reiniciar los filtros y la configuración de Anuncios Aceptables. Por favor, revise sus listas de filtros y la configuración de Anuncios Aceptables en <a>Opciones de Adblock Plus</a>."

@@ -20,6 +20,15 @@
   "options_advanced_description": {
     "message": "Adblock Plus aanpassen, filterlijsten toevoegen of verwijderen, uw eigen filterlijsten maken en beheren"
   },
+  "options_anti_cv_header": {
+    "message": "Anti-omzeiling"
+  },
+  "options_anti_cv_title": {
+    "message": "ABP-filterlijst voor anti-omzeiling"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "Deze filterlijst werkt tegen omzeiling (d.w.z. technieken om advertenties te forceren bij advertentieblokkerende gebruikers). Deze filters gaan zowel het omzeilen van advertentieblokkering als gerelateerde tracking tegen."
+  },
   "options_close": {
     "message": "sluiten"
   },
@@ -316,7 +325,7 @@
     "message": "Website toevoegen"
   },
   "options_whitelist_description": {
-    "message": "U hebt het blokkeren van advertenties op de volgende websites uitgeschakeld, waardoor u er advertenties op ziet."
+    "message": "U hebt het blokkeren van advertenties op deze websites uitgeschakeld, waardoor u er advertenties op ziet."
   },
   "options_whitelist_empty_1": {
     "message": "U hebt geen websites op de witte lijst."

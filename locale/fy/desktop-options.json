@@ -1,15 +1,168 @@
 {
+  "options_acceptableAds_ads_description_1": {
+    "message": "Akseptabele advertinsjes binne net ferfelend en jouwe gjin fersteuring mei de ynhâld dy't jo besjogge. <a>Lês mear oer de kritearia foar Akseptabele advertinsjes</a>"
+  },
+  "options_acceptableAds_ads_label": {
+    "message": "Akseptabele advertinsjes tastean"
+  },
+  "options_acceptableAds_description": {
+    "message": "Akseptabele advertinsjes binne net-opdringerige advertinsjes. Se binne it middenpaad tusken advertinsjeblokkearring en it stypjen fan online-ynhâld, omdat se ynkomsten foar website-eigeners generearje."
+  },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>Opmerking:</strong> jo hawwe <strong>Do Not Track (DNT)</strong> útskeakele yn jo browserynstellingen. Skeakelje <strong>DNT</strong> yn yn jo browserfoarkarren om dizze funksje goed wurkje te litt. <a>Lês hoe't jo DNT ynskeakelje kinne</a>."
+  },
+  "options_acceptableAds_header": {
+    "message": "Akseptabele advertinsjes"
+  },
+  "options_acceptableAds_privacy_label": {
+    "message": "Allinnich advertinsjes sûnder tracking troch tredden tastean"
+  },
+  "options_advanced_description": {
+    "message": "Adblock Plus oanpasse, filterlisten tafoegje of fuortsmiten, jo eigen filterlisten meitsje en beheare"
+  },
+  "options_anti_cv_header": {
+    "message": "Untwykbeskerming"
+  },
+  "options_anti_cv_title": {
+    "message": "ABP-filterlist foar ûntwykbeskerming"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "Dizze filterlist wurket de ûntwiking tsjin (byg. techniken foar it ôftwingen fan advertinsjes foar advertinsjeblokkearrende brûkers). Dizze filters rjochtsje harren op de ûntwiking fan reklame en ek it relatearre folgjen."
+  },
   "options_close": {
     "message": "sluten"
+  },
+  "options_control_remove_title": {
+    "message": "fuortsmite"
   },
   "options_customFilter_cancel": {
     "message": "Annulearje"
   },
+  "options_customFilter_edit": {
+    "message": "Filters bewurkje"
+  },
+  "options_customFilter_save": {
+    "message": "Bewarje"
+  },
+  "options_customFilters_description": {
+    "message": "Skriuw jo eigen oanpaste filters om fierder te bepalen hokker ynhâld Adblock Plus tastiet of blokkearret."
+  },
+  "options_customFilters_edit_placeholder": {
+    "message": "byg. $filter$",
+    "placeholders": {
+      "filter": {
+        "content": "$1",
+        "example": "/ads/track/*"
+      }
+    }
+  },
+  "options_customFilters_learn": {
+    "message": "Ynfo oer it skriuwen fan filterlisten"
+  },
+  "options_customFilters_start": {
+    "message": "Begjinne mei it skriuwen fan myn filterlist"
+  },
+  "options_customFilters_tip": {
+    "message": "Hjir ferskine filters dy't jo meitsje."
+  },
+  "options_customFilters_title": {
+    "message": "Jo filterlist meitsje en bewurkje"
+  },
+  "options_customFilters_widget_title": {
+    "message": "Myn filterlist"
+  },
+  "options_customize_blockElement": {
+    "message": "Menu-item ‘Elemint blokkearje’ yn kontekstmenu toane"
+  },
+  "options_customize_blockElement_tooltip": {
+    "message": "Steurende items op in webside, lykas ôfbyldingen of bewegende diafoarstellingen, tydlik blokkearje."
+  },
+  "options_customize_header": {
+    "message": "Aksjes-op-side oanpasse"
+  },
+  "options_customize_showDevToolsPanel": {
+    "message": "Paniel ‘Adblock Plus’ yn ûntwikkelershelpmiddelen toane"
+  },
+  "options_customize_showDevToolsPanel_tooltip": {
+    "message": "Blokkearre en items op wite list fan it paniel ûntwikkelershelpmiddelen fan jo browser besjen"
+  },
+  "options_customize_showNotifications": {
+    "message": "Nuttige meldingen toane"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Alle meldingen fan Adblock Plus útskeakelje."
+  },
+  "options_dialog_about_copyright": {
+    "message": "Copyright © $currentYear$ eyeo GmbH.",
+    "placeholders": {
+      "currentYear": {
+        "content": "2017",
+        "example": "2017"
+      }
+    }
+  },
+  "options_dialog_about_title": {
+    "message": "Oer Adblock Plus"
+  },
+  "options_dialog_about_trademark": {
+    "message": "Alle rjochten foarbehâlden. Adblock Plus® is in registrearre hannelsmerk fan eyeo GmbH."
+  },
+  "options_dialog_about_version": {
+    "message": "Ferzjenûmer $version$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "2.6.7"
+      }
+    }
+  },
+  "options_dialog_import_subscription_location": {
+    "message": "URL fan filterlist"
+  },
+  "options_dialog_import_subscription_location_error": {
+    "message": "Fier in jildige URL yn"
+  },
+  "options_dialog_import_title": {
+    "message": "In filterlist tafoegje"
+  },
+  "options_dialog_language_other_empty": {
+    "message": "Der binne gjin beskikbere talen."
+  },
+  "options_dialog_language_title": {
+    "message": "In taal selektearje"
+  },
+  "options_dialog_predefined_confirm": {
+    "message": "Ja, dizze filterlist brûke"
+  },
+  "options_dialog_predefined_title": {
+    "message": "Binne jo wis dat jo dizze filterlist tafoegje wolle?"
+  },
   "options_email": {
     "message": "E-mail:"
   },
+  "options_english": {
+    "message": "Ingelsk"
+  },
+  "options_filterList_add": {
+    "message": "+ Nije filterlist tafoegje"
+  },
+  "options_filterList_column_name": {
+    "message": "Filterlisten"
+  },
   "options_filterList_column_status": {
     "message": "Steat"
+  },
+  "options_filterList_column_update": {
+    "message": "Lêst bywurke"
+  },
+  "options_filterList_description": {
+    "message": "Elke Adblock Plus-ynstelling funksjonearret fanwegen in filterlist. Hjirûnder stean de filterlisten dy't mei al jo Adblock Plus-ynstellingen oerienkomme. Jo kinne ek ekstra filters tafoegje dy't troch ús fertroude mienskip makke en ûnderhâlden wurde."
+  },
+  "options_filterList_empty": {
+    "message": "Jo hawwe gjin filterlisten oan Adblock Plus tafoege. Filterlisten dy't jo tafoegje wurde hjir toand."
+  },
+  "options_filterList_hours": {
+    "message": "oeren lyn"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Mislearre, checksum komt net oerien"
@@ -17,10 +170,185 @@
   "options_filterList_lastDownload_connectionError": {
     "message": "Mislearre, ynlaadprobleem"
   },
+  "options_filterList_lastDownload_inProgress": {
+    "message": "Fernije"
+  },
+  "options_filterList_lastDownload_invalidData": {
+    "message": "Mislearre, gjin jildige filterlist"
+  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Mislearre, gjin jildich adres"
   },
+  "options_filterList_minutes": {
+    "message": "minuten lyn"
+  },
+  "options_filterList_now": {
+    "message": "Sakrekt"
+  },
+  "options_filterList_source": {
+    "message": "boarne"
+  },
+  "options_filterList_state_active": {
+    "message": "Aktyf"
+  },
   "options_filterList_state_disabled": {
     "message": "Útskeakele"
+  },
+  "options_filterList_title": {
+    "message": "Filterlisten"
+  },
+  "options_filterList_update": {
+    "message": "alle filterlisten bywurkje"
+  },
+  "options_filterList_updateNow": {
+    "message": "no bywurkje"
+  },
+  "options_filterList_website": {
+    "message": "website"
+  },
+  "options_footer_about": {
+    "message": "Oer Adblock Plus"
+  },
+  "options_footer_contribute": {
+    "message": "Meiwurkje"
+  },
+  "options_general_description": {
+    "message": "Bepale wat Adblock Plus op websites toant en ferstoppet"
+  },
+  "options_help_description": {
+    "message": "Help sykje of kontakt mei ús opnimme"
+  },
+  "options_language_add": {
+    "message": "+ in taal tafoegje"
+  },
+  "options_language_change": {
+    "message": "wizigje"
+  },
+  "options_language_description": {
+    "message": "Optimalisearje Adblock Plus foar de taal/talen wêryn't jo websites trochgeans besjogge."
+  },
+  "options_language_empty": {
+    "message": "Jo hawwe gjin taalspesifike filters."
+  },
+  "options_language_header": {
+    "message": "Taal"
+  },
+  "options_language_tip": {
+    "message": "<strong>TIP:</strong> selektearje allinnich de talen dy't jo nedich hawwe. It selektearjen fan mear talen fertraget de adblocker en dêrmei uw sneupsnelheid."
+  },
+  "options_learn_more": {
+    "message": "Mear ynfo"
+  },
+  "options_more_filters_description": {
+    "message": "Dit binne ekstra filters dy't jo earder oan Adblock Plus tafoege hawwe."
+  },
+  "options_more_filters_header": {
+    "message": "Mear filters"
+  },
+  "options_more_filters_note": {
+    "message": "<strong>Opmerking:</strong> jo moatte allinnich filterlisten fan tredden brûke fan auteurs dy't jo fertrouwe."
+  },
+  "options_new_label": {
+    "message": "Nij"
+  },
+  "options_page_document_title": {
+    "message": "Adblock Plus-opsjes"
+  },
+  "options_page_title": {
+    "message": "Ynstellingen"
+  },
+  "options_privacy_header": {
+    "message": "Privacy en befeiliging"
+  },
+  "options_protection_privacy_tooltip": {
+    "message": "Beskermje jo privacy tsjin bekende entiteiten dy't jo online-aktiviteit op websites dy't jo besykje folgje kinne."
+  },
+  "options_protection_social_tooltip": {
+    "message": "Fia de sosjale-mediapiktogrammen op de websites dy't jo besykje, kinne sosjale-medianetwurken in profyl fan jo opboue op basis fan jo sneupgedrach - sels wannear't jo hjir net op klikke. It ferstopjen fan dizze knoppen kin jo profyl beskermje."
+  },
+  "options_report_bug": {
+    "message": "In bug fûn? <a>Stjoer ús in bugrapport</a>"
+  },
+  "options_report_forum": {
+    "message": "Stipe fan ús mienskip nedich? <a>Gean nei it foarum</a>"
+  },
+  "options_social_description": {
+    "message": "Hawwe jo in fraach of in nij idee? Wy binne der om te helpen."
+  },
+  "options_social_title": {
+    "message": "Kontakt opnimme"
+  },
+  "options_support_title": {
+    "message": "Stipe"
+  },
+  "options_tab_advanced": {
+    "message": "Avansearre"
+  },
+  "options_tab_general": {
+    "message": "Algemien"
+  },
+  "options_tab_help": {
+    "message": "Help"
+  },
+  "options_tab_whitelist": {
+    "message": "Websites op wite list"
+  },
+  "options_tracking_warning_1": {
+    "message": "Wy hawwe murken dat jo sawol <strong>$tracking$</strong> as <strong>$acceptableAds$</strong> ynskeakele hawwe.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "Jo moatte witte dat der by Akseptabele advertinsjes <strong>mooglik</strong> tracking bart, sadat advertearders mear relevante advertinsjes toane kinne."
+  },
+  "options_tracking_warning_3": {
+    "message": "As jo de foarkar jouwe oan ekstra privacy, selektearje dan it ûndersteande fekje <strong>$acceptableAdsPrivacy$</strong>.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "OK, begrepen"
+  },
+  "options_whitelist_add": {
+    "message": "Website tafoegje"
+  },
+  "options_whitelist_description": {
+    "message": "Jo hawwe it blokkearjen fan advertinsjes op de folgjende websites útskeakele, wêrtroch jo der advertinsjes op sjogge."
+  },
+  "options_whitelist_empty_1": {
+    "message": "Jo hawwe gjin websites op de wite list."
+  },
+  "options_whitelist_empty_2": {
+    "message": "Hjir wurde websites toand dy't jo fertrouwe en wêrop jo advertinsjes tastean wolle."
+  },
+  "options_whitelist_notification": {
+    "message": "‘$website$’ is op de wite list pleatst.",
+    "placeholders": {
+      "website": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "options_whitelist_placeholder_example": {
+    "message": "byg. $domain$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
   }
 }

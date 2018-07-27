@@ -2,6 +2,9 @@
   "options_acceptableAds_ads_description_1": {
     "message": "آگهی های قابل قبول آزار دهنده نیستند و با محتوایی که مشاهده می کنید تداخل نکنید. <a> درباره معیارهای قابل قبول تبلیغات بیشتر بدانید </a>"
   },
+  "options_acceptableAds_ads_label": {
+    "message": "به تبلیغات قابل قبول اجازه دهید "
+  },
   "options_close": {
     "message": "بستن"
   },
@@ -20,14 +23,62 @@
   "options_customize_showNotifications": {
     "message": "نمایش اعلان های مفید"
   },
+  "options_dialog_about_title": {
+    "message": "درباره Adblock Plus"
+  },
+  "options_dialog_about_trademark": {
+    "message": "کلیه حقوق محفوظ است. Adblock Plus® یک علامت تجاری ثبت شده eyeo GmbH است."
+  },
+  "options_dialog_about_version": {
+    "message": " شماره نسخه $version$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "2.6.7"
+      }
+    }
+  },
+  "options_dialog_import_subscription_location": {
+    "message": "لیست فیلتر URL"
+  },
+  "options_dialog_import_subscription_location_error": {
+    "message": "یک URL معتبر وارد کنید"
+  },
+  "options_dialog_import_title": {
+    "message": "یک لیست فیلتر اضافه کنید"
+  },
+  "options_dialog_language_other_empty": {
+    "message": "زبان‌های در دسترس وجود ندارد."
+  },
+  "options_dialog_language_title": {
+    "message": "انتخاب زبان"
+  },
+  "options_dialog_predefined_confirm": {
+    "message": "بله، از این لیست فیلتر استفاده کنید"
+  },
+  "options_dialog_predefined_title": {
+    "message": "آیا مطمئنید که می‌خواهید این لیست فیلتر را اضافه کنید؟"
+  },
   "options_email": {
     "message": "ایمیل:"
+  },
+  "options_english": {
+    "message": "فارسی __ ترجمه شده: توسط میثم مقدم نیا"
+  },
+  "options_filterList_add": {
+    "message": "+ یک لیست فیلتر جدید اضافه کنید"
   },
   "options_filterList_column_name": {
     "message": "لیست فیلتر"
   },
   "options_filterList_column_status": {
     "message": "وضعیت"
+  },
+  "options_filterList_column_update": {
+    "message": "آخرین به روز رسانی"
+  },
+  "options_filterList_empty": {
+    "message": "شما هیچ لیست فیلتر را برای Adblock Plus اضافه نکرد‌ه‌اید. فیلترهای لیستی که اضافه می‌کنید در اینجا نشان داده می‌شوند."
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "ناموفق, عدم تطابق کنترلی"
@@ -47,16 +98,58 @@
   "options_filterList_updateNow": {
     "message": "آپدیت کن"
   },
+  "options_language_add": {
+    "message": "+ اضافه کردن زبان"
+  },
+  "options_language_change": {
+    "message": "تغییر دادن"
+  },
+  "options_language_description": {
+    "message": "بهینه سازی Adblock Plus برای زبان(ها) که معمولا وب سایت‌های خود را در آن مرور می‌کنید."
+  },
+  "options_language_empty": {
+    "message": "شما هیچ فیلتر خاصی برای زبان ندارید."
+  },
+  "options_language_header": {
+    "message": "زبان"
+  },
+  "options_language_tip": {
+    "message": "<strong>نکته:</strong> فقط زبان‌هایی را که لازم دارید انتخاب کنید. انتخاب بیشتر باعث کاهش سرعت مسدود کننده تبلیغات و مرورگر شما می‌شود."
+  },
+  "options_learn_more": {
+    "message": "بیشتر بدانید"
+  },
+  "options_more_filters_header": {
+    "message": "فیلتر‌های بیشتر"
+  },
+  "options_new_label": {
+    "message": "جدید"
+  },
   "options_page_document_title": {
     "message": "تنظیمات"
   },
   "options_page_title": {
     "message": "تنظیمات"
   },
+  "options_privacy_header": {
+    "message": "حریم خصوصی و امنیت"
+  },
   "options_tab_general": {
     "message": "صفحه اصلی"
   },
   "options_tab_whitelist": {
     "message": "فهرست سفید پایگاهها (که تبلیغات مسدود نشه)"
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "باشه فهمیدم"
+  },
+  "options_whitelist_add": {
+    "message": "اضافه کردن وب سایت"
+  },
+  "options_whitelist_description": {
+    "message": "شما مسدود کردن تبلیغات در این وبسایت‌ها را غیرفعال کرده و بنابراین تبلیغات آن‌ها را مشاهده خواهید کرد."
+  },
+  "options_whitelist_empty_1": {
+    "message": "شما هیچ وب سایت لیست سفیدی ندارید"
   }
 }

@@ -1,29 +1,53 @@
 {
+  "firstRun_abbButtonSubtitle": {
+    "message": "Beskikber foar Android en iOS"
+  },
+  "firstRun_abbButtonTitle": {
+    "message": "Download Adblock Browser hjir"
+  },
+  "firstRun_abbPromotionHeadline": {
+    "message": "Hawwe jo in snoadfoan of tablet?"
+  },
   "firstRun_acceptableAdsExplanation": {
-    "message": "Wy wolle graach dat websiden simpele net skreauwende advertinsjes brûke. Derom hawwe wy <a>stringe regels</a> om akseptabele advertinsjes te werkennen.  Dit stiet ûnder standert settings. Ast noch steeds alle advertinsjes blokkeare wolst, dan kist dat <a>Út sette</a> yn in pear sekonden."
+    "message": "Wy wolle graach dat websiden simpele net skreauwende advertinsjes brûke. Derom hawwe wy <a>stringe regels</a> om akseptabele advertinsjes te werkennen. Dit stiet ûnder standert ynstellingen. As jo noch hieltyd alle advertinsjes blokkearje wolle, dan kinne jo dat yn in pear sekonden <a>Utskeakelje</a>."
   },
   "firstRun_acceptableAdsHeadline": {
-    "message": "ferfelende advertinsjes wurde no tsjin hâlden"
+    "message": "Ferfelende advertinsjes wurde no blokkearre"
   },
   "firstRun_contributor_credits": {
-    "message": "Meiwurker Nammen"
+    "message": "Tank oan meiwurkers"
+  },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "Guon brûkers ûnderfine in probleem wêrby dizze side hieltyd iepene wurdt wannear de browser start wurdt. Dit probleem kin oplost wurde troch Adblock Plus fuort te smiten en opnij te ynstallearjen:"
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "As jo noch hieltyd help nedich hawwe, nim dan kontakt mei ús op fia support@adblockplus.org of besykje ús <a>Helpsintrum</a>."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "Iepenje it ljepblêd ‘Utwreidingen’ fan jo browser."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "Sykje nei Adblock Plus en smyt it fuort."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "Ynstallearje Adblock Plus opnij fan <a>adblockplus.org</a> ôf."
   },
   "firstRun_donate": {
-    "message": "Donneare"
+    "message": "donearje"
   },
   "firstRun_donate_label": {
-    "message": "Support ús projekt"
+    "message": "Stypje ús projekt"
   },
   "firstRun_filterlistsReinitializedWarning": {
-    "message": "It liket der op dat der in probleem wie wer troch alle filters fuorthelle wurden en it ûnmooglik wie om in backup werom te setten. Hjirfoar hawwe wie jo filters en Akseptabele Advertinsjes opnij ynstelt.  Kontrolear jo ynstellingen in de <a>Adblock Plus Opties</a>."
+    "message": "It liket der op dat der in probleem wie wêrtroch alle filters fuortsmiten binne en it ûnmooglik wie om in reservekopy werom te setten. Hjirtroch hawwe wy jo filters en Akseptabele Advertinsjes opnij ynsteld. Kontrolearje jo ynstellingen yn de <a>Adblock Plus-opsjes</a>."
   },
   "firstRun_share": {
-    "message": "sis it tsjin freonen"
+    "message": "Fertel it jo freonen"
   },
   "firstRun_share_headline": {
-    "message": "<a>Jou ús in hantsje</a>  om it web in moaiere plak te meitsjen"
+    "message": "<a>Help ús</a> fan it web in better plak te meitsjen"
   },
   "firstRun_title": {
-    "message": "Adblock is no ynstalleare"
+    "message": "Adblock is ynstallearre"
   }
 }

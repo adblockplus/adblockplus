@@ -20,6 +20,15 @@
   "options_advanced_description": {
     "message": "Prilagodite Adblock Plus, dodajte ali odstranite sezname filtrov, ustvarite in vzdržujte svoje sezname filtrov"
   },
+  "options_anti_cv_header": {
+    "message": "Preprečevanje izogibanja blokiranja"
+  },
+  "options_anti_cv_title": {
+    "message": "ABP-jev seznam filtrov proti izogibanju blokiranja"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "Ta seznam filtrov deluje proti izogibanju (tehnikam za vsiljevanje oglasov navkljub uporabniškemu blokiranju). Ti filtri obravnavajo oglase, ki se izognejo blokiranju, kot tudi z njimi povezano sledenje."
+  },
   "options_close": {
     "message": "zapri"
   },

@@ -17,6 +17,21 @@
   "firstRun_contributor_credits": {
     "message": "اعتبار نویسندگان"
   },
+  "firstRun_dataCorruptedWarning_intro": {
+    "message": "برخی از کاربران در حال تجربه یک مسئله‌ای هستند که این صفحه هر بار که مرورگر خود را راه اندازی می‌کنند، باز می‌شود. این مشکل را می‌توان با حذف و نصب مجدد Adblock Plus حل کرد:"
+  },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "اگر هنوز به کمک نیاز دارید، با ما در support@adblockplus.org تماس بگیرید یا از <a> مرکز راهنمایی ما </a> بازدید کنید."
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "زبانه Extensions مرورگر خود را باز کنید."
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "تعیین محل Adblock Plus و حذف آن."
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "Adblock Plus را از <a>adblockplus.org</a> دوباره نصب کنید."
+  },
   "firstRun_donate": {
     "message": "کمک مالی"
   },
