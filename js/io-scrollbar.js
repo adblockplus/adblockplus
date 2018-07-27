@@ -95,7 +95,7 @@ class IOScrollbar extends IOElement
     this.setState({direction: value});
     this.setAttribute("direction", value);
     // trigger eventual size recalculation
-    setSize.call(this, this.size);
+    sizeChange.call(this);
   }
 
   get position()
@@ -105,6 +105,8 @@ class IOScrollbar extends IOElement
 
   set position(value)
   {
+    if (!this._elSize)
+      return;
     setPosition.call(this, value);
   }
 
@@ -115,7 +117,8 @@ class IOScrollbar extends IOElement
 
   set size(value)
   {
-    setSize.call(this, value);
+    this.setState({size: parseInt(value, 10)});
+    sizeChange.call(this);
   }
 
   onmousedown(event)
@@ -134,6 +137,7 @@ class IOScrollbar extends IOElement
     doc.addEventListener("mousemove", this, true);
     doc.addEventListener("mouseup", this, true);
     // also prevents selection like a native scrollbar would
+    // (this is specially needed for Firefox and Edge)
     doc.addEventListener("selectstart", stop, true);
   }
 
@@ -186,8 +190,6 @@ IOScrollbar.define("io-scrollbar");
 
 function setPosition(value)
 {
-  if (!this._elSize)
-    return;
   this.setState({
     position: Math.max(
       0,
@@ -203,9 +205,8 @@ function setPosition(value)
   );
 }
 
-function setSize(value)
+function sizeChange()
 {
-  this.setState({size: parseInt(value, 10)});
   if (this.direction === "horizontal")
     this._elSize = this.clientWidth;
   else if (this.direction === "vertical")
@@ -219,9 +220,8 @@ function setSize(value)
     this._sliderSize = Math.max(this._sliderSize, this.clientWidth);
   this.style.setProperty("--slider-size", this._sliderSize + "px");
   // trigger eventual position recalculation
-  // which is useful only when size changes
-  // so that if it was off its container
-  // it will be set back
+  // once this._elSize change
+  // set again the style to re-position the scroller
   setPosition.call(this, this.position);
 }
 
