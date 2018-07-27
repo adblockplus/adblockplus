@@ -17,6 +17,18 @@
   "firstRun_contributor_credits": {
     "message": "অবদানকারী কৃতিত্ব"
   },
+  "firstRun_dataCorruptedWarning_note": {
+    "message": "আপনার সাহায্যের দরকার হলে যোগাযোগ করুন support@adblockplus.org ঠিকানায়, বা আমাদের <a>সহায়তা কেন্দ্র</a> দেখুন।"
+  },
+  "firstRun_dataCorruptedWarning_step1": {
+    "message": "আপনার ব্রাউজারের এক্সটেনশনের ট্যাব খুলুন।"
+  },
+  "firstRun_dataCorruptedWarning_step2": {
+    "message": "Adblock প্লাস চিহ্নিত করুন এবং এটি অপসারণ করুন।"
+  },
+  "firstRun_dataCorruptedWarning_step3": {
+    "message": "<a>adblockplus.org</a> থেকে Adblock প্লাস পুনঃইনস্টল করুন।"
+  },
   "firstRun_donate": {
     "message": "দান করুন"
   },

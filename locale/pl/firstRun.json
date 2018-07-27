@@ -18,7 +18,7 @@
     "message": "Lista współtwórców"
   },
   "firstRun_dataCorruptedWarning_intro": {
-    "message": "Niektórzy użytkownicy mają problemy podczas otwierania tej strony przy każdym uruchomieniu przeglądarki. Problem można rozwiązać poprzez odinstalowanie i ponowne zainstalowanie Adblock Plus:"
+    "message": "Niektórzy użytkownicy mają problemy podczas otwierania tej strony przy każdym uruchomieniu przeglądarki. Problem można rozwiązać poprzez odinstalowanie i ponowne zainstalowanie Adblock Plusa:"
   },
   "firstRun_dataCorruptedWarning_note": {
     "message": "Aby uzyskać dalszą pomoc, skontaktuj się z nami pod adresem: support@adblockplus.org lub odwiedź nasze <a>Centrum pomocy</a>."
@@ -30,7 +30,7 @@
     "message": "Znajdź rozszerzenie Adblock Plus i usuń je."
   },
   "firstRun_dataCorruptedWarning_step3": {
-    "message": "Zainstaluj Adblock Plus z witryny <a>adblockplus.org</a>."
+    "message": "Zainstaluj ponownie Adblock Plus z witryny <a>adblockplus.org</a>."
   },
   "firstRun_donate": {
     "message": "Przekaż darowiznę"

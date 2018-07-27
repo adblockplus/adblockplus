@@ -1,8 +1,17 @@
 {
+  "common_feature_anti_adblock_title": {
+    "message": "隱藏 Adblock 警告訊息"
+  },
+  "common_feature_malware_title": {
+    "message": "阻擋惡意軟體"
+  },
   "common_feature_privacy_title": {
     "message": "禁用其他跟踪"
   },
   "common_feature_social_title": {
     "message": "禁止社交媒體圖示跟踪"
+  },
+  "common_notification_hide": {
+    "message": "關閉通知"
   }
 }

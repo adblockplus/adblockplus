@@ -20,6 +20,15 @@
   "options_advanced_description": {
     "message": "Personalizar Adblock Plus, agregar o eliminar listas de filtros, crear y mantener tus propias listas de filtros"
   },
+  "options_anti_cv_header": {
+    "message": "Anti-Elusión"
+  },
+  "options_anti_cv_title": {
+    "message": "Lista de filtros Anti-Elusión de ABP"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "Esta lista de filtros funciona contra la elusión (p. ej. técnicas para forzar anuncios en usuarios que bloquean anuncios). Estos filtros abordan los anuncios de elusión así como el seguimiento relacionado."
+  },
   "options_close": {
     "message": "cerrar"
   },

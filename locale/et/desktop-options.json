@@ -20,6 +20,15 @@
   "options_advanced_description": {
     "message": "Seadista Adblock Plusi, lisa või eemalda filtrite nimekirju, loo või halda oma enda filtrite nimekirju"
   },
+  "options_anti_cv_header": {
+    "message": "Möödahiilimisvastased"
+  },
+  "options_anti_cv_title": {
+    "message": "ABP möödahiilimisvastaste filtrite loend"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "See filtrite loend töötab möödahiilimiste vastu (nt. viisid reklaamide pealesurumiseks reklaame blokeerivatele kasutajatele). Need filtrid on suunatud nii kõrvalehiilivatele reklaamidele kui nendega seotud jälgimisele."
+  },
   "options_close": {
     "message": "sulge"
   },

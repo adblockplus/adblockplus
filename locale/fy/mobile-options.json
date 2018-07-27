@@ -1,8 +1,53 @@
 {
+  "mops_acceptableAds_description": {
+    "message": "Inkelde net-opdringerige advertinsjes tastean"
+  },
+  "mops_acceptableAds_more": {
+    "message": "Mear ynfo"
+  },
   "mops_action_cancel": {
     "message": "Annulearje"
   },
+  "mops_enabled_label": {
+    "message": "Adblock Plus ynskeakelje op <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_title": {
+    "message": "Fier in titel yn"
+  },
+  "mops_error_url": {
+    "message": "Fier in URL yn"
+  },
+  "mops_filterlist_add": {
+    "message": "+ In filterlist tafoegje"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Filterlist tafoegje"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ In eigen filterlist tafoegje"
+  },
+  "mops_header": {
+    "message": "Adblock Plus-ynstellingen"
+  },
+  "mops_subscribe_header": {
+    "message": "In eigen filterlist tafoegje"
+  },
+  "mops_subscribe_title": {
+    "message": "Namme fan filterlist"
+  },
+  "mops_subscribe_url": {
+    "message": "URL fan filterlist"
+  },
   "mops_subscriptions_header": {
     "message": "Filterabonneminten"
+  },
+  "mops_title": {
+    "message": "Adblock Plus-ynstellingen"
   }
 }

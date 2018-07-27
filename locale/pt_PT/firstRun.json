@@ -42,7 +42,7 @@
     "message": "Parece que ocorreu um erro que causou a remoção de todos os filtros e nós não conseguimos restaurar a cópia de segurança. Neste sentido, os filtros e as definições de anúncios aceitáveis foram reiniciados, Analise os seus filtros e os anúncios aceitáveis nas definições do <a>Adblock Plus.</a>."
   },
   "firstRun_share": {
-    "message": "Publicite o programa"
+    "message": "Divulgue o programa"
   },
   "firstRun_share_headline": {
     "message": "<a>Ajude-nos</a> a melhorar a web"

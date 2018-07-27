@@ -21,13 +21,13 @@
     "message": "Dostosuj Adblock Plus, dodaj lub usuń zestawy filtrów, twórz i utrzymuj własne zestawy filtrów"
   },
   "options_anti_cv_header": {
-    "message": "Środki przeciwdziałające obchodzeniu ustawień"
+    "message": "Omijanie blokowania"
   },
   "options_anti_cv_title": {
-    "message": "Lista filtrów ABP przeciwdziałających obchodzeniu ustawień"
+    "message": "Zestaw filtrów ABP przeciwdziałających omijaniu blokowania"
   },
   "options_anti_cv_tooltip": {
-    "message": "Ta lista filtrów zapobiega obchodzeniu ustawień (tj. technikom wymuszania wyświetlania reklam użytkownikom je blokującym). Te filtry są skierowane na reklamy obchodzące ustawienia oraz powiązane z nimi śledzenie."
+    "message": "Filtry znajdujące się w tym zestawie przeciwdziałają omijaniu blokowania – technikom wymuszającym wyświetlanie reklam użytkownikom blokującym reklamy. Filtry te identyfikują i zakłócają omijanie blokowania oraz powiązane z nimi śledzenie."
   },
   "options_close": {
     "message": "Zamknij"
@@ -261,7 +261,7 @@
     "message": "Prywatność i bezpieczeństwo"
   },
   "options_protection_privacy_tooltip": {
-    "message": "Chroń swoją prywatność przed znanymi jednostkami, które mogą śledzić Twoje działania w odwiedzanych witrynach internetowych."
+    "message": "Chroń swoją prywatność przed znanymi elementami, które mogą śledzić Twoją aktywność na odwiedzanych witrynach."
   },
   "options_protection_social_tooltip": {
     "message": "Ikony mediów społecznościowych znajdujące się w odwiedzanych witrynach internetowych umożliwiaj sieciom mediów społecznościowych na budowanie Twojego profilu w oparciu o Twoje nawyki przeglądania – nawet, jeśli ich nie klikasz. Ukrycie tych ikon może ochronić Twój profil."
@@ -310,7 +310,7 @@
     "message": "Aby reklamodawcy mogli wyświetlać bardziej trafne reklamy <strong>może</strong> istnieć pewne śledzenie realizowane za pomocą akceptowalne reklam."
   },
   "options_tracking_warning_3": {
-    "message": "Jeśli wolisz dodatkową prywatność, zaznacz poniżej opcję <strong>$acceptableAdsPrivacy$</strong>.",
+    "message": "Jeśli preferujesz dodatkową prywatność, zaznacz poniżej opcję <strong>$acceptableAdsPrivacy$</strong>.",
     "placeholders": {
       "acceptableAdsPrivacy": {
         "content": "$1",

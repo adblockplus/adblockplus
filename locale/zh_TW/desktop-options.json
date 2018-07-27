@@ -12,7 +12,7 @@
     "message": "可接受廣告"
   },
   "options_acceptableAds_privacy_label": {
-    "message": "只允許沒有第三方跟踪的廣告"
+    "message": "只允許沒有第三方追蹤的廣告"
   },
   "options_advanced_description": {
     "message": "自定義 Adblock Plus、添加或移除過濾列表、創建和維護您自己的過濾列表"
@@ -25,6 +25,9 @@
   },
   "options_customFilter_cancel": {
     "message": "取消"
+  },
+  "options_customFilter_edit": {
+    "message": "編輯過濾條件"
   },
   "options_customFilter_save": {
     "message": "保存"
@@ -110,8 +113,14 @@
   "options_dialog_import_title": {
     "message": "添加過濾列表"
   },
+  "options_dialog_language_other_empty": {
+    "message": "沒有可用的語言。"
+  },
   "options_dialog_language_title": {
     "message": "選擇語言"
+  },
+  "options_dialog_predefined_confirm": {
+    "message": "是，使用此過濾條件列表"
   },
   "options_dialog_predefined_title": {
     "message": "您確定要添加此過濾列表嗎？"
@@ -151,6 +160,9 @@
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "正在更新"
+  },
+  "options_filterList_lastDownload_invalidData": {
+    "message": "失敗，無效的過濾條件列表"
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "失敗，無效的位址"
@@ -228,7 +240,7 @@
     "message": "新"
   },
   "options_page_document_title": {
-    "message": "設置"
+    "message": "Adblock Plus 選項"
   },
   "options_page_title": {
     "message": "設置"
@@ -237,7 +249,7 @@
     "message": "隱私與安全"
   },
   "options_protection_privacy_tooltip": {
-    "message": "保護您的隱私，防止已知實體在您訪問的各種網站上跟蹤您的線上活動。"
+    "message": "保護您的隱私，防止已知實體在您訪問的各種網站上追蹤您的線上活動。"
   },
   "options_protection_social_tooltip": {
     "message": "您訪問的網站上的社交媒體圖示允許社交媒體網路根據您的瀏覽習慣建立您的個人資料記錄——即使您沒有點擊它們。隱藏這些圖示可以保護您的個人資料。"
@@ -268,6 +280,9 @@
   },
   "options_tab_whitelist": {
     "message": "白名單網站"
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "好的，知道了"
   },
   "options_whitelist_add": {
     "message": "添加網站"

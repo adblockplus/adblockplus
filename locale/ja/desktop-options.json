@@ -20,6 +20,15 @@
   "options_advanced_description": {
     "message": "Adblock Plus のカスタマイズ、フィルターリストの追加または削除、自分用のフィルターリスト作成またはメンテナンスを行います。"
   },
+  "options_anti_cv_header": {
+    "message": "回避対策"
+  },
+  "options_anti_cv_title": {
+    "message": "ABP 回避対策フィルタリスト"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "このフィルタリストは、ブロック回避（広告ブロック使用者に広告を強制表示する技術）に対して機能します。これらのフィルタはブロックを回避する広告や関連するトラッキングに対処します。"
+  },
   "options_close": {
     "message": "閉じる"
   },

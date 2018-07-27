@@ -20,6 +20,15 @@
   "options_advanced_description": {
     "message": "Tilpas Adblock Plus, tilføj eller fjern filterlister, opret og vedligehold dine egne filterlister"
   },
+  "options_anti_cv_header": {
+    "message": "Anti-omgåelse"
+  },
+  "options_anti_cv_title": {
+    "message": "ABP Anti-omgåelse filterliste"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "Denne filterliste virker mod omgåelse (Dvs. teknikker til at tvinge annoncer på ad-blokerede brugere). Disse filtre vedrører omgåelse af annoncer samt relateret sporing."
+  },
   "options_close": {
     "message": "luk"
   },

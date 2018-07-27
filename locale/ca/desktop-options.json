@@ -20,6 +20,15 @@
   "options_advanced_description": {
     "message": "Personalitzeu l'Adblock Plus, afegiu o elimineu les llistes de filtres, creeu i mantingueu les vostres pròpies llistes de filtres"
   },
+  "options_anti_cv_header": {
+    "message": "Antielusió"
+  },
+  "options_anti_cv_title": {
+    "message": "Llista de filtres antielusió d'ABP"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "Aquesta llista de filtres funciona contra qualsevol pràctica d'elusió en llocs web (és a dir, tècniques per forçar anuncis en aquells usuaris que compten amb bloquejador d'anuncis). Aquests filtres aborden tant els anuncis que eludeixen el bloqueig com el seguiment relacionat."
+  },
   "options_close": {
     "message": "tanca"
   },

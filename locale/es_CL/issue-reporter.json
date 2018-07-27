@@ -78,6 +78,6 @@
     "message": "Esta ventana le dará los pasos necesarios para la presentación del informe de Adblock Plus en cuestión. Primero, por favor seleccione el tipo de problema que está experimentando en esta página:"
   },
   "issueReporter_typeSelector_heading": {
-    "message": "Elegir el tipo de error"
+    "message": "Selecciona el tipo de problema"
   }
 }

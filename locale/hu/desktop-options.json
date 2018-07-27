@@ -20,6 +20,15 @@
   "options_advanced_description": {
     "message": "Az Adblock Plus testreszabása, szűrőlisták hozzáadása és eltávolítása, saját szűrőlisták létrehozása és karbantartása"
   },
+  "options_anti_cv_header": {
+    "message": "Kijátszásellenesség"
+  },
+  "options_anti_cv_title": {
+    "message": "ABP Kijátszásellenesség szűrőlista"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "Ez a szűrőlista a kijátszás ellen működik (pl. a hirdetések blokkolását célzó felhasználók hirdetéseinek kényszerítésére szolgáló technikák). Ezek a szűrők megkerülik a hirdetések kijátszását, valamint a kapcsolódó követést."
+  },
   "options_close": {
     "message": "bezárás"
   },

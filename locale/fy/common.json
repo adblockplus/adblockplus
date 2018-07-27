@@ -1,0 +1,17 @@
+{
+  "common_feature_anti_adblock_title": {
+    "message": "Adblock-warskôgngsberjochten ferstopje"
+  },
+  "common_feature_malware_title": {
+    "message": "Malware blokkearje"
+  },
+  "common_feature_privacy_title": {
+    "message": "Oanfoljende tracking blokkearje"
+  },
+  "common_feature_social_title": {
+    "message": "Tracking fia sosjale-mediapiktogrammen blokkearje"
+  },
+  "common_notification_hide": {
+    "message": "Melding slute"
+  }
+}

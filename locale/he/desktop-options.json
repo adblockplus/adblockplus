@@ -20,6 +20,15 @@
   "options_advanced_description": {
     "message": "התאם אישית את Adblock Plus, הוסף או הסר רשימות מסננים, צור ותחזק את רשימות המסננים שלך"
   },
+  "options_anti_cv_header": {
+    "message": "נגד־עקיפה"
+  },
+  "options_anti_cv_title": {
+    "message": "רשימת מסנני נגד־עקיפה של ABP"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "רשימת מסננים זו עובדת נגד עקיפה (למשל טכניקות לכפות פרסומות על משתמשים אשר חוסמים פרסומות). מסננים אלו מטפלים בפרסומות עוקפות וגם במעקב קשור."
+  },
   "options_close": {
     "message": "סגור"
   },

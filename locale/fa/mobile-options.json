@@ -26,7 +26,28 @@
   "mops_filterlist_add": {
     "message": "+ یک لیست فیلتر اضافه کنید"
   },
+  "mops_filterlist_add_action": {
+    "message": "اضافه کردن لیست فیلتر"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ یک لیست فیلتر سفارشی اضافه کنید"
+  },
+  "mops_header": {
+    "message": "Adblock Plus تنظیمات"
+  },
+  "mops_subscribe_header": {
+    "message": "یک لیست فیلتر سفارشی اضافه کنید"
+  },
+  "mops_subscribe_title": {
+    "message": "نام لیست فیلتر"
+  },
+  "mops_subscribe_url": {
+    "message": "URL لیست فیلتر"
+  },
   "mops_subscriptions_header": {
     "message": "فیلتر زیرنوشت ها"
+  },
+  "mops_title": {
+    "message": " تنظیمات Adblock Plus "
   }
 }
