@@ -1,0 +1,69 @@
+/*
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-present eyeo GmbH
+ *
+ * Adblock Plus is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Adblock Plus is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+io-scrollbar
+{
+  /*
+    related to the container height, as in ░▓░░░░░░░░░░░
+    or width, in case it's a vertical scrollbar
+  */
+  --size: 12px;
+  overflow: hidden;
+  cursor: default;
+  user-select: none;
+}
+
+io-scrollbar,
+io-scrollbar > .slider
+{
+  display: block;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+io-scrollbar > .slider
+{
+  margin: 0;
+  border: 1px solid #979797;
+  background-color: #d8d8d8;
+  font-size: 0;
+  line-height: 0;
+}
+
+io-scrollbar[direction="horizontal"]
+{
+  height: var(--size);
+}
+
+io-scrollbar[direction="vertical"]
+{
+  width: var(--size);
+}
+
+io-scrollbar[direction="horizontal"] > .slider
+{
+  width: var(--slider-size, var(--size));
+  height: 100%;
+  transform: translateX(var(--position, 0));
+}
+
+io-scrollbar[direction="vertical"] > .slider
+{
+  width: 100%;
+  height: var(--slider-size, var(--size));
+  transform: translateY(var(--position, 0));
+}
