@@ -91,5 +91,8 @@
   },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Note:</strong> An additional tab will temporarily open so the page you are on won't be affected by the Issue Reporter."
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "processing"
   }
 }
