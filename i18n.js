@@ -167,13 +167,6 @@ function loadI18nStrings()
         element.setAttribute(attr, browser.i18n.getMessage(stringName));
       }
     }
-
-    // Resolve texts for alt attributes
-    const nodesAlt = containerElement.querySelectorAll("[data-i18n-alt]");
-    for (const element of nodesAlt)
-    {
-      element.alt = browser.i18n.getMessage(element.dataset.i18nAlt);
-    }
   }
 
   resolveStringNames(document);
