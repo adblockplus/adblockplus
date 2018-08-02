@@ -142,16 +142,20 @@ the command line. (You will also need the Crowdin API key for the project.)
 Translations CSV exporter
 -------------------------
 
-Translation agencies are using CSVs for translating the strings. CSV exporter
-helps keeping that files in sync with the project. To learn more about the
-script usage run `node build/csv-export.js -h`.
+Translation agencies are using CSVs for translating priority language strings.
+CSV exporter helps keeping that files in sync with the project. 
+
+- `npm run csv-export -- [HASH]` - Uses old commit hash to create a CSV file
+  with the source string differences
+- `npm run csv-import -- [FILEPATH]` - Imports translations from the CSV file
 
 Format of the exported CSV files:
 
-| Filename     | StringID | Description          | Placeholders                |     en_US      | af         | am   | ... |
-|--------------|----------|----------------------|-----------------------------|----------------|------------|------|-----|
-| options.json | cancel   | Cancel button label  |                             |  Cancel        | Kanselleer | ይቅር | ... |
-| options.json | domain   | Domain input example | {"domain":{"content":"$1"}} |  e.g. $domain$ |            |      | ... |
+| Type     | Filename             | StringID                      | Description              | Placeholders                | en_US         | af         | am  | ... |
+|----------|----------------------|-------------------------------|--------------------------|-----------------------------|---------------|------------|-----|-----|
+| Modified | desktop-options.json | options_customFilter_cancel   | Label in Advanced tab    |                             | Cancel        | Kanselleer | ይቅር |     |
+| Added    | desktop-options.json | options_whitelist_placeholder | Input placeholder prefix | {"domain":{"content":"$1"}} | e.g. $domain$ |            |     |     |
+|          |                      |                               |                          |                             |               |            |     |     |
 
 
 firstRun.html
