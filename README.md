@@ -151,12 +151,10 @@ CSV exporter helps keeping that files in sync with the project.
 
 Format of the exported CSV files:
 
-| Type     | Filename             | StringID                      | Description              | Placeholders                | en_US         | af         | am  | ... |
-|----------|----------------------|-------------------------------|--------------------------|-----------------------------|---------------|------------|-----|-----|
-| Modified | desktop-options.json | options_customFilter_cancel   | Label in Advanced tab    |                             | Cancel        | Kanselleer | ይቅር |     |
-| Added    | desktop-options.json | options_whitelist_placeholder | Input placeholder prefix | {"domain":{"content":"$1"}} | e.g. $domain$ |            |     |     |
-|          |                      |                               |                          |                             |               |            |     |     |
-
+| Type     | Filename     | StringID | Description          | Placeholders                | en_US         | af         | am  | ... |
+|----------|--------------|----------|----------------------|-----------------------------|---------------|------------|-----|-----|
+| Modified | options.json | cancel   | Cancel button label  |                             | Cancel        | Kanselleer | ይቅር | ... |
+| Added    | options.json | domain   | Domain input example | {"domain":{"content":"$1"}} | e.g. $domain$ |            |     | ... |
 
 firstRun.html
 -------------
