@@ -461,6 +461,11 @@ function updateSubscription(subscription)
       collections.more.removeItem(subscription);
     }
   }
+
+  if (!(subscription.url in subscriptionsMap))
+  {
+    subscriptionsMap[subscription.url] = subscription;
+  }
 }
 
 function updateFilter(filter)
