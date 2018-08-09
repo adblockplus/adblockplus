@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Pärast hüpikakna sulgemist klõpsake (või paremklõpsake) mõnel lehe elemendil."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Keelatud</strong> sellel saidil"
+  },
+  "easy_create_filter": {
+    "message": "Blokeeri element"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Kasutusel</strong> sellel saidil"
+  },
+  "options_short": {
+    "message": "Sätted"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Lõpeta teadete näitamine"
+  },
+  "stats_label_page": {
+    "message": "Sellel lehel <strong>$number$</strong>",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "Kokku <strong>$number$</strong>",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Näita loendurit ikoonil"
+  },
+  "stats_title": {
+    "message": "Blokeeritud reklaame"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "ამ სარკმლის დახურვისთანავე, დააწკაპეთ (ან მარჯვენა წკაპი) ელემენტზე მოცემულ გვერდზე."
+  },
+  "disabled_for_site": {
+    "message": "<strong>გამორთულია</strong> ამ საიტზე"
+  },
+  "easy_create_filter": {
+    "message": "ელემენტის შეზღუდვა"
+  },
+  "enabled_for_site": {
+    "message": "<strong>ჩართულია</strong> ამ საიტზე"
+  },
+  "options_short": {
+    "message": "პარამეტრები"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "შეტყობინებების შეწყვეტა"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> ამ გვერდზე",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> ჯამში",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "რიცხვის ჩვენება ხატულაზე"
+  },
+  "stats_title": {
+    "message": "შეზღუდული რეკლამები"
+  }
+}

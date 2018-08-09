@@ -1,0 +1,39 @@
+{
+  "clickhide_instructions": {
+    "message": "ഈ പോപ്പപ്പ് ക്ലോസ് ചെയ്ത ശേഷം താളിലെ എലമെന്റില്‍ ക്ലിക്കോ റൈറ്റ് ക്ലിക്കോ ചെയ്യുക."
+  },
+  "disabled_for_site": {
+    "message": "ഈ സൈറ്റില്‍ <strong>ഡിസേബിള്‍</strong> ചെയ്തിരിക്കുന്നു"
+  },
+  "easy_create_filter": {
+    "message": "എലമെന്റ് തടയുക"
+  },
+  "enabled_for_site": {
+    "message": "ഈ സൈറ്റില്‍ <strong>സജീവം</strong>"
+  },
+  "options_short": {
+    "message": "സൗകര്യങ്ങള്‍"
+  },
+  "stats_label_page": {
+    "message": "ഈ താളില്‍ <strong>$number$</strong>",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "മൊത്തം <strong>$number$</strong>",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "ഐക്കണില്‍ സംഖ്യ കാണിക്കുക"
+  },
+  "stats_title": {
+    "message": "തടഞ്ഞ പരസ്യങ്ങള്‍"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "След затваряне на изскачащия прозорец, щракнете (може и с десния бутон) върху елемент в страницата."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Забранено</strong> за сайта"
+  },
+  "easy_create_filter": {
+    "message": "Блокирай елемента"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Разрешено</strong> за сайта"
+  },
+  "options_short": {
+    "message": "Настройки"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Спри показването на известия"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> — в страницата",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> — общо",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Отброявай блокираните в иконата"
+  },
+  "stats_title": {
+    "message": "Блокирани реклами"
+  }
+}

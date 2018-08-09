@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Despois de pechar esta ventá emerxente, preme (ou co botón dereito) nun elemento da páxina."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Desactivado</strong> neste sitio"
+  },
+  "easy_create_filter": {
+    "message": "Bloquear elemento"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Activado</strong> neste sitio"
+  },
+  "options_short": {
+    "message": "Opcións"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Deixar de mostrar notificacións"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> nesta páxina",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> en total",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Mostrar o número na icona"
+  },
+  "stats_title": {
+    "message": "Anuncios bloqueados"
+  }
+}

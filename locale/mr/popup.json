@@ -1,0 +1,20 @@
+{
+  "clickhide_instructions": {
+    "message": "हि पॉपअप बंद केल्यावर, पृष्ठावरील घटकावर टिचकी (किंवा उजवी-टिचकी) मारा."
+  },
+  "disabled_for_site": {
+    "message": "या स्थानी <strong>अक्षम</strong> आहे"
+  },
+  "easy_create_filter": {
+    "message": "घटक रोखा"
+  },
+  "enabled_for_site": {
+    "message": "या स्थानी <strong>सक्षम</strong> आहे"
+  },
+  "options_short": {
+    "message": "पर्याय"
+  },
+  "stats_title": {
+    "message": "जाहिराती रोखल्या"
+  }
+}

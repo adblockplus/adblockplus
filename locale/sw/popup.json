@@ -1,0 +1,17 @@
+{
+  "clickhide_instructions": {
+    "message": "baada ya kufunga dukizi hii , click (au haki-click ) kipengele kwenye ukurasa huu."
+  },
+  "disabled_for_site": {
+    "message": "<strong>walemavu</strong> kwenye tovuti hii"
+  },
+  "easy_create_filter": {
+    "message": "kuzuia kipengele"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Kuwezeshwa</strong> kwenye tovuti hii"
+  },
+  "options_short": {
+    "message": "chaguzi"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "এই পপআপটি বন্ধ করার পরে, পাতার (অথবা ডান-ক্লিক করে) একটি উপাদানে ক্লিক করুন।"
+  },
+  "disabled_for_site": {
+    "message": "এই সাইটে <strong>নিষ্ক্রিয় করা আছে</strong>"
+  },
+  "easy_create_filter": {
+    "message": "উপাদান অবরুদ্ধ করুন"
+  },
+  "enabled_for_site": {
+    "message": "এই সাইটে <strong>সক্রিয় করা আছে</strong>"
+  },
+  "options_short": {
+    "message": "বিকল্পসমূহ"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "বিজ্ঞপ্তি দেখানো বন্ধ করুন"
+  },
+  "stats_label_page": {
+    "message": "এই পৃষ্ঠায় <strong>$number$টি</strong>",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "সর্বমোট <strong>$number$টি</strong>",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "আইকনে সংখ্যা দেখান"
+  },
+  "stats_title": {
+    "message": "বিজ্ঞাপন অবরুদ্ধ হয়েছে"
+  }
+}

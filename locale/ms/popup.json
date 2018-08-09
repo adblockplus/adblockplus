@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Setelah menutup tetingkap ini, klik (atau klik butang kanan) pada sesuatu unsur atas laman."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Dinyahaktifkan</strong> pada laman web ini"
+  },
+  "easy_create_filter": {
+    "message": "Halang elemen"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Dinyahaktifkan</strong> pada laman web ini"
+  },
+  "options_short": {
+    "message": "Tetapan"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Hentikan paparan pemberitahuan"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> pada halaman ini",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> secara keseluruhan",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Paparkan nombor dalam ikon"
+  },
+  "stats_title": {
+    "message": "Iklan disekat"
+  }
+}

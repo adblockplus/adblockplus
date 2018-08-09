@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Užvėrus šį iššokantį langą, paspauskite (arba dešiniu mygtuku) ant elemento esančio puslapyje."
+  },
+  "disabled_for_site": {
+    "message": "Šiame puslapyje <strong>išjungta</strong>"
+  },
+  "easy_create_filter": {
+    "message": "Blokuoti elementą"
+  },
+  "enabled_for_site": {
+    "message": "Šiame puslapyje <strong>įjungta</strong>"
+  },
+  "options_short": {
+    "message": "Parinktys"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Neberodyti pranešimų"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> šiame puslapyje",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> iš viso",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Piktogramoje rodyti skaičių"
+  },
+  "stats_title": {
+    "message": "Reklamos užblokuotos"
+  }
+}

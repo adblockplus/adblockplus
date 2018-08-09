@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Bu açılır pencereyi kapattıktan sonra, sayfadaki bir öğeye farenin sol veya sağ tuşuyla tıklayın."
+  },
+  "disabled_for_site": {
+    "message": "Bu sitede <strong>devre dışı</strong>"
+  },
+  "easy_create_filter": {
+    "message": "Öğe engelle"
+  },
+  "enabled_for_site": {
+    "message": "Bu sitede <strong>etkin</strong>"
+  },
+  "options_short": {
+    "message": "Seçenekler"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Bildirimleri göstermeyi durdur"
+  },
+  "stats_label_page": {
+    "message": "Bu sayfada <strong>$number$</strong>",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "Toplamda <strong>$number$</strong>",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Simgede sayıyı göster"
+  },
+  "stats_title": {
+    "message": "Engellenen reklamlar"
+  }
+}

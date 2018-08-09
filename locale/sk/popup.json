@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Po zatvorení tohto okna, kliknite (alebo kliknite pravým tlačidlom myši) na prvok na stránke."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Zakázané</strong> na tejto stránke"
+  },
+  "easy_create_filter": {
+    "message": "Blokovať prvok"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Povolené</strong> na tejto stránke"
+  },
+  "options_short": {
+    "message": "Možnosti"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Prestať zobrazovať upozornenia"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> na tejto stránke",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> dokopy",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Zobraziť počet v ikone"
+  },
+  "stats_title": {
+    "message": "Blokované reklamy"
+  }
+}

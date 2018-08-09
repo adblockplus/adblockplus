@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Po zamknięciu tego okna kliknij niechciany element lewym lub prawym przyciskiem."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Wyłączony</strong> na tej witrynie"
+  },
+  "easy_create_filter": {
+    "message": "Blokuj element"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Włączony</strong> na tej witrynie"
+  },
+  "options_short": {
+    "message": "Opcje"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Nie wyświetlaj powiadomień"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> na tej stronie",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> w sumie",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Wyświetlaj liczbę na ikonie"
+  },
+  "stats_title": {
+    "message": "Zablokowane reklamy"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "આ પોપઅપને બંધ કર્યા પછી, પૃષ્ઠ પર એક ઘટક (અથવા જમણું ક્લિક કરો) પર ક્લિક કરો."
+  },
+  "disabled_for_site": {
+    "message": "આં સાઈટ પર <strong>ડિસેબલ</strong> કરો"
+  },
+  "easy_create_filter": {
+    "message": "બ્લોક એલિમેન્ટ"
+  },
+  "enabled_for_site": {
+    "message": "આં સાઈટ પર <strong>ઇનેબલ</strong> કરો"
+  },
+  "options_short": {
+    "message": "ઓપ્શન્સ"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "સૂચનાઓ દર્શાવવાનું રોકો"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> આ પેજ પર",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> કુલ",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "આઇકોનમાં નંબર દેખાડો"
+  },
+  "stats_title": {
+    "message": "એડ્સ બ્લોક કરી"
+  }
+}

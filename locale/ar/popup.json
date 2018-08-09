@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "بعد إغلاق هذه النافذة، اضغط (أو اضغط بالزر الأيمن) على أحد العناصر في الصفحة."
+  },
+  "disabled_for_site": {
+    "message": "<strong>معطل</strong> في هذا الموقع"
+  },
+  "easy_create_filter": {
+    "message": "حجب العنصر"
+  },
+  "enabled_for_site": {
+    "message": "<strong>مفعّل</strong> في هذا الموقع"
+  },
+  "options_short": {
+    "message": "الخيارات"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "إيقاف عرض الإشعارات"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> على هذه الصفحة",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> اجمالي",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "عرض الرقم في الصورة المرمزة"
+  },
+  "stats_title": {
+    "message": "الإعلانات المحجوبة"
+  }
+}

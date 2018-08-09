@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "இந்த விழிதிரை மூடிய பின், பக்கத்தில் உள்ள உறுப்பின் மேல் சொடுக்கவும். (அல்லது வலது விசையை சொடுக்கவும்.)"
+  },
+  "disabled_for_site": {
+    "message": "இந்த தளத்தில் <strong> முடக்கப்பட்டுள்ளது</strong>"
+  },
+  "easy_create_filter": {
+    "message": "உறுப்பை தடு"
+  },
+  "enabled_for_site": {
+    "message": "இந்த தளத்தில் <strong> செயல்படுகிறது</strong>"
+  },
+  "options_short": {
+    "message": "தேர்வுகள்"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "அறிவிப்புகளை நிறுத்து"
+  },
+  "stats_label_page": {
+    "message": "இந்தப் பக்கத்தில் <strong>$number$</strong>",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "மொத்தம் <strong>$number$</strong>",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "படவுருவில் எண்ணை காட்டு"
+  },
+  "stats_title": {
+    "message": "தடுக்கப்பட்ட விளம்பரங்கள்"
+  }
+}

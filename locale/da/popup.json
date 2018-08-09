@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Luk dette pop op-vindue, og klik (eller højreklik) derefter på et element på siden."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Deaktiveret</strong> på dette websted"
+  },
+  "easy_create_filter": {
+    "message": "Blokér element"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Aktiveret</strong> på dette websted"
+  },
+  "options_short": {
+    "message": "Indstillinger"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Vis ikke meddelelser"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> på denne side",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> i alt",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Vis antal i ikon"
+  },
+  "stats_title": {
+    "message": "Blokerede annoncer"
+  }
+}

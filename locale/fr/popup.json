@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Après avoir fermé ce pop-up, cliquez (ou cliquez-droit) sur un élément de la page."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Désactivé</strong> sur ce site"
+  },
+  "easy_create_filter": {
+    "message": "Bloquer l'élément"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Activé</strong> sur ce site"
+  },
+  "options_short": {
+    "message": "Options"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Cesser d'afficher les notifications"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> sur cette page",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> au total",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Afficher le nombre sur l'icône"
+  },
+  "stats_title": {
+    "message": "Publicités bloquées"
+  }
+}

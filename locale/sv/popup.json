@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "När denna popup stängs, klicka (eller högerklicka) ett objekt på sidan."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Avaktiverat</strong> på denna webbplats"
+  },
+  "easy_create_filter": {
+    "message": "Blockera objekt"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Aktiverat</strong> på denna webbplats"
+  },
+  "options_short": {
+    "message": "Inställningar"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Sluta visa notifieringar"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> på den här sidan",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> totalt",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Visa nummer vid ikon"
+  },
+  "stats_title": {
+    "message": "Annonser blockerade"
+  }
+}

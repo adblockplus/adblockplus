@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Després de tancar aquesta finestra emergent, feu clic (o feu clic amb el botó dret) en un element de la pàgina."
+  },
+  "disabled_for_site": {
+    "message": "S'ha <strong>desactivat</strong> per a aquest lloc"
+  },
+  "easy_create_filter": {
+    "message": "Bloqueja l'element"
+  },
+  "enabled_for_site": {
+    "message": "S'ha <strong>activat</strong> en aquest lloc"
+  },
+  "options_short": {
+    "message": "Opcions"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "No mostris més notificacions"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> en aquesta pàgina",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> en total",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Mostra el número a la icona"
+  },
+  "stats_title": {
+    "message": "Anuncis bloquejats"
+  }
+}

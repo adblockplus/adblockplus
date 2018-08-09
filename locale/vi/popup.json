@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Sau khi đóng của sổ này, hãy ấn chuột (hoặc ấn chuột phải) vào đối tượng mà bạn cần khóa trên trang."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Quảng cáo đã loại bỏ</strong> trên trang này"
+  },
+  "easy_create_filter": {
+    "message": "Chặn phần tử"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Đã bật</strong> trên trang này"
+  },
+  "options_short": {
+    "message": "Tùy chỉnh"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Dừng hiện thông báo"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> quảng cáo đã chặn trên trang này",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> trên tổng số",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Hiện số quảng cáo đã chặn trên icon"
+  },
+  "stats_title": {
+    "message": "Quảng cáo đã bị chặn"
+  }
+}
