@@ -1,0 +1,14 @@
+{
+  "add": {
+    "message": "Thêm"
+  },
+  "add_filters_msg": {
+    "message": "Thêm bộ lọc?"
+  },
+  "block_element": {
+    "message": "Chặn phần từ"
+  },
+  "loading": {
+    "message": "Đang tải..."
+  }
+}

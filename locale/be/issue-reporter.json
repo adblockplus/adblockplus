@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "Працягнуць"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "Памылка: не атрымалася спампаваць"
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "Адправіць ананімна"
   },

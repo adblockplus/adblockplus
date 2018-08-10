@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "Жалғастыру"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "Қате, жүктеу мүмкін емес"
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "Анонимды жіберу"
   },

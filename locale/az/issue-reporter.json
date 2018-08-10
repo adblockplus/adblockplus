@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "İrəli"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "Baş tutmadı, yükləmə uğursuz oldu"
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "Anonim göndəriş"
   },

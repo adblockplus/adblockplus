@@ -1,0 +1,11 @@
+{
+  "description": {
+    "message": "Adblock Plus 是拥有超过 5 亿次下载的全球最受欢迎的广告拦截软件之一。"
+  },
+  "name": {
+    "message": "Adblock Plus"
+  },
+  "name_devbuild": {
+    "message": "Adblock Plus 开发版"
+  }
+}

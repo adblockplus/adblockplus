@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "Uz priekšu"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "Neizdevās, lejupielāde neizdevās"
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "Anonīms iesniegums"
   },

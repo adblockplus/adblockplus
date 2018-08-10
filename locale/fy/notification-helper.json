@@ -1,0 +1,20 @@
+{
+  "notification_configure": {
+    "message": "Meldingsynstellingen konfigurearje"
+  },
+  "notification_open_all": {
+    "message": "Alle keppelingen fan dizze melding iepenje"
+  },
+  "notification_with_buttons": {
+    "message": "Klik op ‘OK’ om alle keppelingen yn dizze melding te iepenjen."
+  },
+  "notification_without_buttons": {
+    "message": "Klik op de melding om alle keppelingen deryn te iepenjen."
+  },
+  "overlay_notification_button_no": {
+    "message": "Nee"
+  },
+  "overlay_notification_button_yes": {
+    "message": "Ja"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "notification_configure": {
+    "message": "配置通知设置"
+  },
+  "notification_open_all": {
+    "message": "打开此通知中的所有链接"
+  },
+  "notification_with_buttons": {
+    "message": "单击 \"确定\" 以打开此通知中的所有链接。"
+  },
+  "notification_without_buttons": {
+    "message": "点击通知打开它上面的所有链接。"
+  },
+  "overlay_notification_button_no": {
+    "message": "否"
+  },
+  "overlay_notification_button_yes": {
+    "message": "是"
+  }
+}

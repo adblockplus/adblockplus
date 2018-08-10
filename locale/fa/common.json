@@ -1,4 +1,7 @@
 {
+  "cancel": {
+    "message": "لغو"
+  },
   "common_feature_anti_adblock_title": {
     "message": "مخفی کردن پیام‌های هشدار Adblock"
   },

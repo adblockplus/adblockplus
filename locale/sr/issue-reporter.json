@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "Настави"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "Грешка при преузимању"
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "Пошаљи анонимно"
   },

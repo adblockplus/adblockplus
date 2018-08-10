@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "ادامه"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "ناموفق، فرآیند دریافت شکست خورد"
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "ارسال ناشناس"
   },

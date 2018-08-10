@@ -1,0 +1,20 @@
+{
+  "notification_configure": {
+    "message": "Подеси поставке обавештавања"
+  },
+  "notification_open_all": {
+    "message": "Отвори све везе из овог обавештења"
+  },
+  "notification_with_buttons": {
+    "message": "Кликните на „У реду“ да бисте отворили све везе у овом обавештењу."
+  },
+  "notification_without_buttons": {
+    "message": "Кликните на обавештење да бисте отворили све везе у њему."
+  },
+  "overlay_notification_button_no": {
+    "message": "Не"
+  },
+  "overlay_notification_button_yes": {
+    "message": "Да"
+  }
+}

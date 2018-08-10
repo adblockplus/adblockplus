@@ -1,0 +1,14 @@
+{
+  "add": {
+    "message": "დამატება"
+  },
+  "add_filters_msg": {
+    "message": "დაემატოს ფილტრ(ებ)ი?"
+  },
+  "block_element": {
+    "message": "ელემენტის შეზღუდვა"
+  },
+  "loading": {
+    "message": "იტვირთება..."
+  }
+}

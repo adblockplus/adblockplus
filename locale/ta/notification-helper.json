@@ -1,0 +1,20 @@
+{
+  "notification_configure": {
+    "message": "அறிவிக்கை அமைப்புகளை உள்ளமைக்க"
+  },
+  "notification_open_all": {
+    "message": "இந்த அறிவிப்பின் அனைத்து இணைப்புகளையும் திற"
+  },
+  "notification_with_buttons": {
+    "message": "இந்த அறிவிப்பில் உள்ள எல்லா இணைப்புகளையும் திறக்க, 'சரி'யை சொடுக்கவும்."
+  },
+  "notification_without_buttons": {
+    "message": "இதில் உள்ள எல்லா இணைப்புகளையும் திறக்க \"அறிவிப்பை\" சொடுக்கவும்."
+  },
+  "overlay_notification_button_no": {
+    "message": "இல்லை"
+  },
+  "overlay_notification_button_yes": {
+    "message": "ஆம்"
+  }
+}

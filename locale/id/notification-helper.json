@@ -1,0 +1,20 @@
+{
+  "notification_configure": {
+    "message": "Atur pengaturan pemberitahuan"
+  },
+  "notification_open_all": {
+    "message": "Buka semua tautan dari pemberitahuan ini"
+  },
+  "notification_with_buttons": {
+    "message": "Klik 'OK' untuk membuka semua link pada pemberitahuan ini."
+  },
+  "notification_without_buttons": {
+    "message": "Klik pada pemberitahuan untuk membuka semua link di dalamnya."
+  },
+  "overlay_notification_button_no": {
+    "message": "Tidak"
+  },
+  "overlay_notification_button_yes": {
+    "message": "Ya"
+  }
+}

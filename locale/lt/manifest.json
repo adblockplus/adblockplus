@@ -1,0 +1,11 @@
+{
+  "description": {
+    "message": "Naudojamas daugiau nei 500 milijonų įrenginių, „Adblock Plus“ yra populiariausias reklamos blokavimo įrankis."
+  },
+  "name": {
+    "message": "Adblock Plus"
+  },
+  "name_devbuild": {
+    "message": "Adblock Plus vystomasis leidimas"
+  }
+}

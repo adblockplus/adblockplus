@@ -1,4 +1,7 @@
 {
+  "cancel": {
+    "message": "Odustani"
+  },
   "common_feature_anti_adblock_title": {
     "message": "Sakrij poruke upozorenja Adblocka"
   },

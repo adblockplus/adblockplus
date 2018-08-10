@@ -1,0 +1,14 @@
+{
+  "add": {
+    "message": "जोड़ें"
+  },
+  "add_filters_msg": {
+    "message": "फ़िल्टर(ो) को जोडिए?"
+  },
+  "block_element": {
+    "message": "तत्वों को प्रतिबंधित करें"
+  },
+  "loading": {
+    "message": "लोड हो रहा है..."
+  }
+}

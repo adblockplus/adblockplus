@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "Devam et"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "Başarısız. İndirmede sorun var."
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "Anonim gönder"
   },

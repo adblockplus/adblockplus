@@ -1,0 +1,11 @@
+{
+  "description": {
+    "message": "Понад 500 мільйонів завантажень. Adblock Plus є одним з найбільш популярних блокувальників реклами в світі."
+  },
+  "name": {
+    "message": "Adblock Plus"
+  },
+  "name_devbuild": {
+    "message": "Adblock Plus (тестова збiрка)"
+  }
+}

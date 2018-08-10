@@ -1,0 +1,14 @@
+{
+  "add": {
+    "message": "Додај"
+  },
+  "add_filters_msg": {
+    "message": "Додавање филтера"
+  },
+  "block_element": {
+    "message": "Блокирај елемент"
+  },
+  "loading": {
+    "message": "Учитавам..."
+  }
+}

@@ -1,4 +1,7 @@
 {
+  "cancel": {
+    "message": "Anulează"
+  },
   "common_feature_anti_adblock_title": {
     "message": "Ascunde mesajele de avertizare Adblock"
   },

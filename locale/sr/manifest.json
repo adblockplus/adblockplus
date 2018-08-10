@@ -1,0 +1,11 @@
+{
+  "description": {
+    "message": "Са преко 500 милиона преузимања, Adblock Plus је један од најпопуларнијих блокатора реклама на свету."
+  },
+  "name": {
+    "message": "Adblock Plus"
+  },
+  "name_devbuild": {
+    "message": "Развојна верзија Adblock Plus-а"
+  }
+}

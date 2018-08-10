@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "Daŭrigi"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "Malsukcesis, elŝuta eraro"
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "Anonima sendado"
   },

@@ -1,0 +1,17 @@
+{
+  "add": {
+    "description": "This is the label for the 'Add' buttons.",
+    "message": "Add"
+  },
+  "add_filters_msg": {
+    "message": "Add filter(s)?"
+  },
+  "block_element": {
+    "description": "Context menu item that adds a filter which blocks the selected element",
+    "message": "Block element"
+  },
+  "loading": {
+    "description": "Placeholder text displayed when something is still loading",
+    "message": "Loading..."
+  }
+}

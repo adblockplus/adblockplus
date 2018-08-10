@@ -1,0 +1,36 @@
+{
+  "filter_elemhideemulation_nodomain": {
+    "message": "확장된 요소 숨김 필터에 지정된 활성 도메인이 없음"
+  },
+  "filter_invalid_csp": {
+    "message": "잘못된 보안 정책 컨텐츠"
+  },
+  "filter_invalid_domain": {
+    "message": "잘못된 (혹은 비어 있는) 도메인이 지정되었습니다"
+  },
+  "filter_invalid_regexp": {
+    "message": "잘못된 정규 표현식"
+  },
+  "filter_unknown_option": {
+    "message": "알 수 없는 필터 옵션"
+  },
+  "invalid_css_selector": {
+    "message": "$selector$은/는 유효한 CSS 선택이 아닙니다",
+    "placeholders": {
+      "selector": {
+        "content": "$1"
+      }
+    }
+  },
+  "line": {
+    "message": "$number$번째 줄",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "unexpected_filter_list_header": {
+    "message": "여기에서 필터 목록 헤더가 허용되지 않습니다"
+  }
+}

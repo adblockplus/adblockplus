@@ -1,0 +1,33 @@
+{
+  "filter_elemhideemulation_nodomain": {
+    "message": "বর্ধিত উপাদান লুকানোর ছাঁকনির জন্য কোনও সক্রিয় ডোমেইন নির্দিষ্ট করা নেই"
+  },
+  "filter_invalid_domain": {
+    "message": "অকার্যকর (বা ফাঁকা) ডোমেইন নির্দিষ্ট করা হয়েছে"
+  },
+  "filter_invalid_regexp": {
+    "message": "অকার্যকর নিয়মিত অভিব্যক্তি"
+  },
+  "filter_unknown_option": {
+    "message": "অজানা ফিল্টার অপশন"
+  },
+  "invalid_css_selector": {
+    "message": "$selector$ একটি বৈধ CSS নির্বাচক নয়",
+    "placeholders": {
+      "selector": {
+        "content": "$1"
+      }
+    }
+  },
+  "line": {
+    "message": "$number$ নং লাইন",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "unexpected_filter_list_header": {
+    "message": "ফিল্টার তালিকার শীর্ষচরণ এখানে অনুমোদিত নয়"
+  }
+}

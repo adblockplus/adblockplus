@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "Vazhdo"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "Deshtoi,gabim shkarkimi"
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "Publikime anonime"
   },

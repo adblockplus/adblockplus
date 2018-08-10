@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "Продолжи"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "Неуспешно преземање"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Вметни коментар"
   },

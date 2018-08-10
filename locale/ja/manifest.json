@@ -1,0 +1,11 @@
+{
+  "description": {
+    "message": "Adblock Plus は、5億回以上ダウンロードされた、世界で最も人気のある広告ブロッカーのひとつです。"
+  },
+  "name": {
+    "message": "Adblock Plus"
+  },
+  "name_devbuild": {
+    "message": "Adblock Plus 開発版"
+  }
+}

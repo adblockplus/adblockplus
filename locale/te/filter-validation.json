@@ -1,0 +1,10 @@
+{
+  "line": {
+    "message": "గీత $number$",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  }
+}

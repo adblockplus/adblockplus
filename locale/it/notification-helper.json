@@ -1,0 +1,20 @@
+{
+  "notification_configure": {
+    "message": "Configura le impostazioni di notifica"
+  },
+  "notification_open_all": {
+    "message": "Apri tutti i collegamenti da questa notifica"
+  },
+  "notification_with_buttons": {
+    "message": "Clic 'OK' per aprire tutti i collegamenti in questa notifica."
+  },
+  "notification_without_buttons": {
+    "message": "Clic sulla notifica per aprire tutti i link contenuti."
+  },
+  "overlay_notification_button_no": {
+    "message": "No"
+  },
+  "overlay_notification_button_yes": {
+    "message": "Sì"
+  }
+}

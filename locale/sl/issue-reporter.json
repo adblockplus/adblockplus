@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "Nadaljuj"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "Neuspešno, napaka pri prenosu"
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "Anonimna oddaja"
   },

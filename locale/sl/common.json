@@ -1,4 +1,7 @@
 {
+  "cancel": {
+    "message": "Prekliči"
+  },
   "common_feature_anti_adblock_title": {
     "message": "Skrij Adblockova opozorilna sporočila"
   },

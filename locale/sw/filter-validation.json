@@ -1,0 +1,18 @@
+{
+  "invalid_css_selector": {
+    "message": "$selector$ si halali CSS selector",
+    "placeholders": {
+      "selector": {
+        "content": "$1"
+      }
+    }
+  },
+  "line": {
+    "message": "mstari $number$",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  }
+}

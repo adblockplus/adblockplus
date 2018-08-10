@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "തുടരുക"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "പരാജയം, ഡൌണ്‍ലോഡ് പരാജയപ്പെട്ടിരിക്കുന്നു"
+  },
   "issueReporter_doneButton_label": {
     "message": "കഴിഞ്ഞിരിക്കുന്നു"
   },

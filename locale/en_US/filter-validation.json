@@ -1,0 +1,38 @@
+{
+  "filter_elemhideemulation_nodomain": {
+    "message": "No active domain specified for extended element hiding filter"
+  },
+  "filter_invalid_csp": {
+    "message": "Invalid Content Security Policy"
+  },
+  "filter_invalid_domain": {
+    "message": "Invalid (or empty) domain specified"
+  },
+  "filter_invalid_regexp": {
+    "message": "Invalid regular expression"
+  },
+  "filter_unknown_option": {
+    "message": "Unknown filter option"
+  },
+  "invalid_css_selector": {
+    "message": "$selector$ is not a valid CSS selector",
+    "placeholders": {
+      "selector": {
+        "content": "$1"
+      }
+    }
+  },
+  "line": {
+    "description": "Prepended to error messages to indicate the line number (e.g. \"Line 42: Some error on this line\")",
+    "message": "Line $number$",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "unexpected_filter_list_header": {
+    "description": "Error message shown when the user attempts to add a custom filter that has the format of a header (e.g. \"[Adblock Plus 2.0]\") which are only allowed in filter lists",
+    "message": "Filter list headers aren't allowed here"
+  }
+}

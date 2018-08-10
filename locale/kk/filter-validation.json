@@ -1,0 +1,8 @@
+{
+  "filter_invalid_regexp": {
+    "message": "Жарамсыз тұрақты өрнек"
+  },
+  "filter_unknown_option": {
+    "message": "Белгісіз фильтр опциясы"
+  }
+}

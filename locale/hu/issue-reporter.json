@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "Tovább"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "Sikertelen, letöltési hiba"
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "Névtelen beküldendő"
   },

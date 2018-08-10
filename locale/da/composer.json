@@ -1,0 +1,14 @@
+{
+  "add": {
+    "message": "Tilføj"
+  },
+  "add_filters_msg": {
+    "message": "Tilføj filter/filtre?"
+  },
+  "block_element": {
+    "message": "Blokér element"
+  },
+  "loading": {
+    "message": "Indlæser..."
+  }
+}

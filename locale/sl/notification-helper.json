@@ -1,0 +1,20 @@
+{
+  "notification_configure": {
+    "message": "Konfigurirajte nastavitve obveščanja"
+  },
+  "notification_open_all": {
+    "message": "Odprite vse povezave iz tega obvestila"
+  },
+  "notification_with_buttons": {
+    "message": "Klinite \"OK\", da odprete vse povezave v tem obvestilu."
+  },
+  "notification_without_buttons": {
+    "message": "Kliknite na obvestilo, da odprete vse povezave v njem."
+  },
+  "overlay_notification_button_no": {
+    "message": "Ne"
+  },
+  "overlay_notification_button_yes": {
+    "message": "Da"
+  }
+}

@@ -1,4 +1,7 @@
 {
+  "cancel": {
+    "message": "გაუქმება"
+  },
   "common_feature_anti_adblock_title": {
     "message": "Adblock-ის გაფრთხილებების დამალვა"
   },

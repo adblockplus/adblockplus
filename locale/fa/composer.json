@@ -1,0 +1,14 @@
+{
+  "add": {
+    "message": "اضافه کردن"
+  },
+  "add_filters_msg": {
+    "message": "اضافه کردن فیلتر (ها) ؟"
+  },
+  "block_element": {
+    "message": "مسدود کردن این عنصر"
+  },
+  "loading": {
+    "message": "بارگذاری..."
+  }
+}

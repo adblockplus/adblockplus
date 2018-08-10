@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "続行"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "更新失敗: ダウンロード失敗"
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "匿名で報告"
   },

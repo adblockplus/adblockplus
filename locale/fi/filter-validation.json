@@ -1,0 +1,36 @@
+{
+  "filter_elemhideemulation_nodomain": {
+    "message": "Aktiivista verkkotunnusta ei ole määritetty laajennetun elementin piilotussuodattimelle"
+  },
+  "filter_invalid_csp": {
+    "message": "Virheellinen sisältöturvapolitiikka"
+  },
+  "filter_invalid_domain": {
+    "message": "Väärä (tai tyhjä) verkkotunnus"
+  },
+  "filter_invalid_regexp": {
+    "message": "Virheellinen normaali-ilmaus"
+  },
+  "filter_unknown_option": {
+    "message": "Tuntematon suodatusvaihtoehto"
+  },
+  "invalid_css_selector": {
+    "message": "$selector$ ei ole kelvollinen CSS-valitsin",
+    "placeholders": {
+      "selector": {
+        "content": "$1"
+      }
+    }
+  },
+  "line": {
+    "message": "Rivi $number$",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "unexpected_filter_list_header": {
+    "message": "Suodatinlistan otsikot eivät ole sallittuja tässä"
+  }
+}

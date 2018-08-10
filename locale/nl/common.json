@@ -1,4 +1,7 @@
 {
+  "cancel": {
+    "message": "Annuleren"
+  },
   "common_feature_anti_adblock_title": {
     "message": "Adblock-waarschuwingsberichten verbergen"
   },

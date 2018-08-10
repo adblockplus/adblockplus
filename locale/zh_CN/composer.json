@@ -1,0 +1,14 @@
+{
+  "add": {
+    "message": "添加"
+  },
+  "add_filters_msg": {
+    "message": "添加过滤规则？"
+  },
+  "block_element": {
+    "message": "拦截元素"
+  },
+  "loading": {
+    "message": "加载中……"
+  }
+}

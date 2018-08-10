@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "Jätka"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "Nurjus, allalaadimise viga"
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "Anonüümne esitamine"
   },

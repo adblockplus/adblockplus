@@ -1,0 +1,36 @@
+{
+  "filter_elemhideemulation_nodomain": {
+    "message": "Tidak ada domain aktif yang digunakan untuk saringan penyembunyian elemen yang diperpanjang"
+  },
+  "filter_invalid_csp": {
+    "message": "Kebijakan Keamanan Konten Tidak Valid"
+  },
+  "filter_invalid_domain": {
+    "message": "Domain yang ditetapkan tidak valid (atau kosong)"
+  },
+  "filter_invalid_regexp": {
+    "message": "Kalimat biasa yang tidak valid"
+  },
+  "filter_unknown_option": {
+    "message": "Opsi filter yang tidak diketahui"
+  },
+  "invalid_css_selector": {
+    "message": "$selector$ bukan selector CSS yang benar",
+    "placeholders": {
+      "selector": {
+        "content": "$1"
+      }
+    }
+  },
+  "line": {
+    "message": "Baris $number$",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "unexpected_filter_list_header": {
+    "message": "Daftar saringan header tidak diperbolehkan disini"
+  }
+}

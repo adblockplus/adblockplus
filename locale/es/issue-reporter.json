@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "Continuar"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "Error: error de descarga"
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "Envío anónimo"
   },

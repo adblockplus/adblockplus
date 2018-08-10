@@ -1,0 +1,33 @@
+{
+  "filter_elemhideemulation_nodomain": {
+    "message": "Nav aktīva domēna norādītais paplašinātā elements neizcelt filtrs"
+  },
+  "filter_invalid_domain": {
+    "message": "Norādīts nederīgs (vai tukšs) domēns"
+  },
+  "filter_invalid_regexp": {
+    "message": "Nederīga regulārā izteiksme"
+  },
+  "filter_unknown_option": {
+    "message": "Nezināma filtra opcija"
+  },
+  "invalid_css_selector": {
+    "message": "$selector$ nav derīgs CSS selektors",
+    "placeholders": {
+      "selector": {
+        "content": "$1"
+      }
+    }
+  },
+  "line": {
+    "message": "Līnijas $number$",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "unexpected_filter_list_header": {
+    "message": "Filtra saraksta galvenes šeit nav atļautas"
+  }
+}

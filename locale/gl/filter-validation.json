@@ -1,0 +1,36 @@
+{
+  "filter_elemhideemulation_nodomain": {
+    "message": "Non se especificou ningún dominio activo para o filtro de ocultación de elementos estendidos"
+  },
+  "filter_invalid_csp": {
+    "message": "Contido non válido para a política de seguranza"
+  },
+  "filter_invalid_domain": {
+    "message": "Dominio especificado non válido (ou baleiro)"
+  },
+  "filter_invalid_regexp": {
+    "message": "Expresión regular non válida"
+  },
+  "filter_unknown_option": {
+    "message": "Opción de filtrado descoñecida"
+  },
+  "invalid_css_selector": {
+    "message": "$selector$ non é un selector CSS válido",
+    "placeholders": {
+      "selector": {
+        "content": "$1"
+      }
+    }
+  },
+  "line": {
+    "message": "Liña $number$",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "unexpected_filter_list_header": {
+    "message": "Aquí non se permiten as cabeceiras das listaxes de filtros"
+  }
+}
