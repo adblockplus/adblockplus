@@ -36,6 +36,12 @@ body
   align-items: center;
 }
 
+input,
+button
+{
+  font-family: inherit;
+}
+
 header,
 main,
 footer
@@ -127,16 +133,26 @@ main h1
   font-size: 1.5rem;
 }
 
-#typeSelectorGroup input[type="radio"]
+#typeSelectorGroup
 {
-  transform: translateY(2px);
+  font-size: 1rem;
+}
+
+#typeSelectorGroup > label
+{
+  font-weight: 700;
 }
 
 #typeSelectorGroup > p
 {
   margin-top: 0.5em;
   margin-bottom: 1em;
-  font-size: 80%;
+  font-size: 0.9rem;
+}
+
+#typeSelectorGroup > p:first-of-type
+{
+  margin-bottom: 30px;
 }
 
 html:not([dir="rtl"]) #typeSelectorGroup > p
@@ -157,9 +173,9 @@ html[dir="rtl"] #typeSelectorGroup > p
 #anonymousSubmissionWarning,
 #error
 {
-  margin-top: 0.5em;
+  margin-top: 0.3em;
+  margin-bottom: 1em;
   color: #C00000;
-  font-size: 80%;
 }
 
 #comment
@@ -200,14 +216,24 @@ footer
   flex-direction: row;
   box-sizing: border-box;
   margin-top: 2rem;
+  padding-bottom: 16px;
+}
+
+footer > div
+{
+  flex-grow: 1;
+  align-self: flex-end;
 }
 
 #privacyPolicy
 {
-  font-size: 1.125rem;
-  font-weight: 700;
-  flex-grow: 1;
-  align-self: center;
+  font-size: 1rem;
+}
+
+#privacyPolicy,
+#privacyPolicy:visited
+{
+  color: #077ca7;
 }
 
 /*
@@ -245,7 +271,7 @@ button.primary:not(.icon)
 {
   border: 0px;
   color: #FFF;
-  background-color: #099CD0;
+  background-color: #077ca7;
 }
 
 button.primary:not([disabled]):not(.icon):hover
@@ -260,13 +286,13 @@ button.primary[disabled]:not(.icon)
 
 button.secondary
 {
-  border: 1px solid #099CD0;
-  color: #099CD0;
+  border: 1px solid #077ca7;
+  color: #077ca7;
 }
 
 button.secondary:hover
 {
-  box-shadow: inset 0 0 0 2px #099CD0;
+  box-shadow: inset 0 0 0 2px #077ca7;
 }
 
 button.link
@@ -275,7 +301,6 @@ button.link
   border: 0px;
   color: #077CA6;
   background-color: transparent;
-  font-family: inherit;
   font-weight: 400;
   text-decoration: underline;
   text-transform: none;
@@ -297,7 +322,7 @@ input[type="text"],
 input[type="email"],
 textarea
 {
-  border: 2px solid #099CD0;
+  border: 2px solid #077ca7;
   font-size: 1.25rem;
 }
 
@@ -432,4 +457,21 @@ input[type="radio"]:checked
 body[data-page="commentPage"] #continue
 {
   display: none;
+}
+
+#commentPage > label
+{
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+#anonymousSubmissionContainer
+{
+  font-size: 0.9rem;
+}
+
+#typeSelectorGroup input[type="radio"],
+#anonymousSubmission
+{
+  vertical-align: top;
 }
