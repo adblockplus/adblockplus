@@ -1,18 +1,125 @@
-image: node:8
+image: python:2
 
 before_script:
+  - apt-get update -yqq
+  - apt-get install apt-transport-https
+  - curl -sL https://deb.nodesource.com/setup_8.x | bash -
+  - apt-get update -yqq
+  - apt-get install -yqq nodejs
   - npm install
 
 stages:
   - lint
   - test
+  - build
+  - pages
 
 lint:
   stage: lint
   script:
     - npm run lint
+  only:
+    variables:
+      - $CI_PROJECT_NAME == 'adblockplusui'
 
 test:
   stage: test
   script:
     - npm run test
+  only:
+    variables:
+      - $CI_PROJECT_NAME == 'adblockplusui'
+
+build:
+  stage: build
+  script:
+    # Clone adblockpluschrome
+    - git clone ${CI_REPOSITORY_URL/adblockplusui.git/adblockpluschrome.git}
+    - cd adblockpluschrome
+    # If adblockpluschrome has a matching branch check it out first
+    - if [ $(git rev-parse --quiet --verify origin/$CI_COMMIT_REF_NAME) ]; then git reset --hard origin/$CI_COMMIT_REF_NAME; fi
+    - git status
+    # Tweak dependencies to use the right repositories i.e. eyeo/adblockplus/abp/*
+    - export REPOSITORY_ROOT_URL_ESCAPED=$(echo ${CI_REPOSITORY_URL/adblockplusui.git/} | sed -e 's/[\/&]/\\&/g') 
+    # Tweak dependencies to automagically use the current UI version
+    - sed -i -E "s/(_root = hg:[^ ]+ git:)([^ ]+)/\1$REPOSITORY_ROOT_URL_ESCAPED/g" dependencies
+    - sed -i -E "s/(adblockplusui = adblockplusui hg:[[:alnum:]]{12} git:)([[:alnum:]]{7})/\1${CI_COMMIT_SHA:0:8}/g" dependencies
+    - cat dependencies
+    - pip install cryptography==2.2.2 Jinja2==2.10 tox==3.0.0 PyYAML==3.12 urllib3==1.22
+    # Finally build abp
+    - python build.py build -t gecko -b ${CI_COMMIT_SHA:0:8} adblockplus.xpi
+  artifacts:
+    paths:
+      - adblockpluschrome/*.xpi
+  variables:
+    GIT_STRATEGY: none
+  only:
+    refs:
+      - /^release-[0-9]{4}-[0-9]+$/
+    variables:
+      - $CI_PROJECT_NAME == 'adblockplusui'
+
+pages:
+  stage: pages
+  script:
+    - pip install python-gitlab requests Jinja2==2.10
+    - mkdir -p public
+    - |
+      python -c "import gitlab;
+      import jinja2;
+
+      gitlab = gitlab.Gitlab(
+        url='https://gitlab.com',
+        private_token='$PRIVATE_TOKEN_ABPUI');
+      project = gitlab.projects.get('eyeo/adblockplus/abpui/adblockplusui');
+
+      jobs = [];
+      for pipeline in project.pipelines.list(per_page=100, status='success'):
+          for job in pipeline.jobs.list(all=True):
+              if job.attributes['name'] == 'build':
+                  if job.attributes['commit']:
+                    short_id = job.attributes['commit']['short_id']
+                    created_at = job.attributes['commit']['created_at']
+                  else:
+                    short_id = 'n/a'
+                    created_at = 'n/a'
+                    
+                  jobs.append((
+                    job.id,
+                    job.attributes['web_url'],
+                    job.attributes['ref'],
+                    short_id,
+                    created_at,
+                  ));
+
+      env = jinja2.Environment();
+      template = env.from_string('''<html>
+      <head><title>ABP UI Nightlies</title></head>
+      <body>
+      <h1>ABP UI Nightlies</h1>
+      <p>
+        To enable installation of an unsigned extension got to
+        <i>about:config</i> and disable <i>xpinstall.signatures.required</i>
+      </p>
+      {%- for id, url, ref, commit, date in jobs %}
+      <p>
+          Job: <a href='{{ url }}'>{{ id }}</a>
+          Ref: <a href='https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/commit/{{ commit }}'>{{ ref }} ({{ commit }})</a>
+          Date: {{ date }}
+          Extension: <a href='https://gitlab.com/api/v4/projects/eyeo%2fadblockplus%2fabpui%2fadblockplusui/jobs/{{ id }}/artifacts/adblockpluschrome/adblockplus.xpi'>adblockplus.xpi</a>
+      </p>
+      {%- endfor %}
+      </body>
+      </html>
+      ''');
+
+      with open('public/index.html', 'w+') as out:
+          out.write(template.render(jobs=jobs));"
+  artifacts:
+    paths:
+      - public/
+  only:
+    refs:
+      - /^release-[0-9]{4}-[0-9]+$/
+    variables:
+      - $CI_PROJECT_NAME == 'adblockplusui-nightlies'
