@@ -85,6 +85,7 @@
           "$ bundle.test io-element"
         ]
       },
+      "io-filter-search": "$ create.test.component io-filter-search",
       "io-highlighter": {
         "css": [
           "$ create.test.css io-highlighter",
