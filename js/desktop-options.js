@@ -56,6 +56,7 @@ const promisedDateFormat = promisedLocaleInfo.then((addonLocale) =>
 {
   return new Intl.DateTimeFormat(addonLocale.locale);
 });
+const promisedRecommendationsLoaded = loadRecommendations();
 
 function Collection(details)
 {
@@ -524,7 +525,7 @@ function getLanguageTitle(item)
 
 function loadRecommendations()
 {
-  fetch("subscriptions.xml")
+  return fetch("subscriptions.xml")
     .then((response) =>
     {
       return response.text();
@@ -1173,7 +1174,7 @@ function populateLists()
       isCustomFiltersLoaded = true;
     });
   });
-  loadRecommendations();
+
   browser.runtime.sendMessage({
     type: "prefs.get",
     key: "subscriptions_exceptionsurl"
@@ -1284,76 +1285,82 @@ function onFilterMessage(action, filter)
 
 function onSubscriptionMessage(action, subscription)
 {
-  if (subscription.url in subscriptionsMap)
+  // Ensure that recommendations have already been loaded so that we can
+  // identify and handle recommended filter lists accordingly (see #6838)
+  promisedRecommendationsLoaded.then(() =>
   {
-    const knownSubscription = subscriptionsMap[subscription.url];
-    for (const property in subscription)
+    if (subscription.url in subscriptionsMap)
     {
-      if (property == "title" && knownSubscription.recommended)
-        knownSubscription.originalTitle = subscription.title;
-      else
-        knownSubscription[property] = subscription[property];
+      const knownSubscription = subscriptionsMap[subscription.url];
+      for (const property in subscription)
+      {
+        if (property == "title" && knownSubscription.recommended)
+          knownSubscription.originalTitle = subscription.title;
+        else
+          knownSubscription[property] = subscription[property];
+      }
+      subscription = knownSubscription;
     }
-    subscription = knownSubscription;
-  }
-  switch (action)
-  {
-    case "disabled":
-      updateSubscription(subscription);
-      if (isAcceptableAds(subscription.url))
-        setAcceptableAds();
 
-      setPrivacyConflict();
-      break;
-    case "downloading":
-    case "downloadStatus":
-    case "homepage":
-    case "lastDownload":
-    case "title":
-      updateSubscription(subscription);
-      break;
-    case "added":
-      const {url} = subscription;
-      // Handle custom subscription
-      if (/^~user/.test(url))
-      {
-        loadCustomFilters(subscription.filters);
-        return;
-      }
-      else if (url in subscriptionsMap)
+    switch (action)
+    {
+      case "disabled":
         updateSubscription(subscription);
-      else
-        addSubscription(subscription);
-
-      if (isAcceptableAds(url))
-        setAcceptableAds();
-
-      collections.filterLists.addItem(subscription);
-      setPrivacyConflict();
-      break;
-    case "removed":
-      if (subscription.recommended)
-      {
-        subscription.disabled = true;
-        onSubscriptionMessage("disabled", subscription);
-      }
-      else
-      {
-        delete subscriptionsMap[subscription.url];
         if (isAcceptableAds(subscription.url))
-        {
           setAcceptableAds();
+
+        setPrivacyConflict();
+        break;
+      case "downloading":
+      case "downloadStatus":
+      case "homepage":
+      case "lastDownload":
+      case "title":
+        updateSubscription(subscription);
+        break;
+      case "added":
+        const {url} = subscription;
+        // Handle custom subscription
+        if (/^~user/.test(url))
+        {
+          loadCustomFilters(subscription.filters);
+          return;
+        }
+        else if (url in subscriptionsMap)
+          updateSubscription(subscription);
+        else
+          addSubscription(subscription);
+
+        if (isAcceptableAds(url))
+          setAcceptableAds();
+
+        collections.filterLists.addItem(subscription);
+        setPrivacyConflict();
+        break;
+      case "removed":
+        if (subscription.recommended)
+        {
+          subscription.disabled = true;
+          onSubscriptionMessage("disabled", subscription);
         }
         else
         {
-          collections.more.removeItem(subscription);
+          delete subscriptionsMap[subscription.url];
+          if (isAcceptableAds(subscription.url))
+          {
+            setAcceptableAds();
+          }
+          else
+          {
+            collections.more.removeItem(subscription);
+          }
         }
-      }
 
-      collections.filterLists.removeItem(subscription);
-      setPrivacyConflict();
-      break;
-  }
+        collections.filterLists.removeItem(subscription);
+        setPrivacyConflict();
+        break;
+    }
+  });
 }
 
 function getSubscriptionFilters(subscription)
@@ -1476,5 +1483,5 @@ port.postMessage({
            "title", "downloadStatus", "downloading"]
 });
 
-window.addEventListener("DOMContentLoaded", onDOMLoaded, false);
+onDOMLoaded();
 window.addEventListener("hashchange", onHashChange, false);
