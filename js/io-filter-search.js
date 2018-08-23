@@ -21,24 +21,40 @@ const IOElement = require("./io-element");
 
 const {$} = require("./dom");
 
+const {boolean} = IOElement.utils;
+
 // this component simply emits filter:add
 // and filter:show events
 class IOFilterSearch extends IOElement
 {
-  static get observedAttributes() { return ["filters"]; }
+  static get observedAttributes() { return ["disabled", "filters"]; }
 
-  get defaultState() { return {cannotAdd: true, filters: []}; }
+  get defaultState() { return {filterExists: true, filters: []}; }
+
+  get disabled() { return this.hasAttribute("disabled"); }
+
+  set disabled(value)
+  {
+    boolean.attribute(this, "disabled", value);
+    this.render();
+  }
 
   get filters() { return this.state.filters; }
-
-  get value() { return $("input", this).value; }
-
-  set value(text) { $("input", this).value = text || ""; }
 
   // filters are never modified or copied
   // but used to find out if one could be added
   // or if the component in charge should show the found one
   set filters(value) { this.setState({filters: value || []}); }
+
+  get value() { return $("input", this).value; }
+
+  set value(text)
+  {
+    $("input", this).value = text || "";
+    this.setState({
+      filterExists: text ? this.state.filters.some(hasValue, text) : false
+    });
+  }
 
   created()
   {
@@ -51,8 +67,6 @@ class IOFilterSearch extends IOElement
   onclick()
   {
     dispatch.call(this, "filter:add", this.value);
-    this.value = "";
-    this.setState({cannotAdd: true});
   }
 
   onkeydown(event)
@@ -81,21 +95,25 @@ class IOFilterSearch extends IOElement
     {
       this._timer = 0;
       const {value} = this;
-      const cannotAdd = this.state.filters.some(hasValue, value);
-      this.setState({cannotAdd});
-      if (cannotAdd)
+      const filterExists = this.state.filters.some(hasValue, value);
+      this.setState({filterExists});
+      if (filterExists)
         dispatch.call(this, "filter:show", value);
     }, 100);
   }
 
   render()
   {
+    const {disabled} = this;
     this.html`
     <input
       placeholder="${this._placeholder}"
       onkeydown="${this}" onkeyup="${this}"
+      disabled="${disabled}"
     >
-    <button onclick="${this}" disabled="${this.state.cannotAdd}">
+    <button
+      onclick="${this}"
+      disabled="${disabled || this.state.filterExists}">
       + ${{i18n: "add"}}
     </button>`;
   }
