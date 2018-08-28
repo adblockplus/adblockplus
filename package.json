@@ -3,8 +3,9 @@
   "private": true,
   "description": "Adblock Plus UI",
   "scripts": {
-    "bash:js": "eslint ./js/**/*.js && bash -c 'echo \"/* eslint-disable */$(browserify --node --no-bundle-external $0)\">$1'",
+    "bash:js": "npm run bash:lint && bash -c 'echo \"/* eslint-disable */$(browserify --node --no-bundle-external $0)\">$1'",
     "bash:css": "bash -c 'node-sass ./css/$0.scss ./skin/$0.css'",
+    "bash:lint": "if [ \"$npm_config_only\" != \"production\" ] && [ \"$npm_config_production\" = \"\" ]; then eslint ./js/**/*.js; fi",
     "bashForTest:css": "bash -c 'node-sass ./css/$0.scss ./smoke/css/$0.css'",
     "bashForTest:js": "mkdir -p smoke && bash -c 'cp -R ./tests/{locale,background.html,$0.*} ./smoke'",
     "bundleTest:js": "bash -c 'echo \"/* eslint-disable */$(browserify --node ./tests/$0.js)\">./smoke/$0.js'",
@@ -27,12 +28,14 @@
   "dependencies": {
     "browserify": "^16.1.0",
     "document-register-element": "^1.7.2",
+    "hyperhtml": "^2.9.0",
+    "hyperhtml-element": "^1.5.0",
+    "node-sass": "^4.7.2"
+  },
+  "devDependencies": {
     "eslint": "^4.16.0",
     "eslint-config-eyeo": "^2.0.0",
     "http-server": "^0.11.1",
-    "hyperhtml": "^2.9.0",
-    "hyperhtml-element": "^1.5.0",
-    "node-sass": "^4.7.2",
     "watch": "^1.0.2"
   }
 }
