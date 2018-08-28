@@ -1,0 +1,59 @@
+{
+  "firstRun_browser_description": {
+    "message": "Adblock 浏览器 由 Adblock Plus 团队开发，是桌面浏览器最受欢迎的广告拦截软件，目前已推出可用于 Android 和 iOS 设备的软件。"
+  },
+  "firstRun_browser_store_android": {
+    "message": "Android 应用可从 Google Play 下载"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "可从 iTunes App Store 下载"
+  },
+  "firstRun_browser_title": {
+    "message": "Adblock 浏览器 应用程序"
+  },
+  "firstRun_control_description": {
+    "message": "默认情况下，您可能会看到一些符合<a0>严格标准</a0>的非侵入式广告。我们将这些广告确定为可接受广告。想拦截所有广告？在<a2>设置</a2><a1>中关闭“可接受广告”</a1>"
+  },
+  "firstRun_control_title": {
+    "message": "一切尽在掌控"
+  },
+  "firstRun_fair_description": {
+    "message": "我们建议您合理使用 Adblock Plus，并选择将网站列入白名单。根据您使用的过滤器，您了解并接受可能会发生无意的结果（例如：拦截网站上的内容）。有关使用 Adblock Plus 的更多信息，请参阅<a0>使用条款</a0>。"
+  },
+  "firstRun_fair_title": {
+    "message": "合理使用"
+  },
+  "firstRun_footer_copyright": {
+    "message": "版权所有© $year$ 保留所有权利。Adblock Plus® 是 <a0>eyeo GmbH</a0> 的注册商标。",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
+  "firstRun_subtitle": {
+    "message": "您已经成功控制您的浏览器"
+  },
+  "firstRun_title": {
+    "message": "安装成功！"
+  },
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "部分用户在每次启动浏览器的时候都会遇到此页面打开的问题。此问题可以通过卸载后重新安装Adblock Plus来解决："
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "如果您仍然需要帮助，请通过 <a0>support@adblockplus.org</a0>与我们联系，或访问我们的 <a1>帮助中心</a1>."
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "打开浏览器的扩展选项。"
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "找到Adblock Plus并将其删除。"
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "从<a>adblockplus.org</a>上面重新安装Adblock Plus。"
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "似乎有问题导致了所有过滤器被移除，我们无法恢复备份。因此，我们必须重置您的过滤器和“可接受广告”设置。请在 <a>Adblock Plus 选项</a>中查看过滤器列表和“可接受广告”设置。"
+  }
+}

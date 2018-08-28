@@ -45,7 +45,7 @@
     "message": "SPEICHERN"
   },
   "options_customFilters_description": {
-    "message": "Schreibe deine eigenen Filter, um zu kontrollieren, welche Inhalte Adblock Plus zulässt oder blockiert."
+    "message": "Erstelle deine eigenen Filter, um zu kontrollieren, welche Inhalte Adblock Plus blockiert. <a0>Erfahre, wie man Filter erstellt</a0>"
   },
   "options_customFilters_edit_placeholder": {
     "message": "z.B. $filter$",
@@ -57,10 +57,10 @@
     }
   },
   "options_customFilters_learn": {
-    "message": "Erfahre, wie man Filterlisten schreibt"
+    "message": "Erfahre, wie man Filter erstellt"
   },
   "options_customFilters_start": {
-    "message": "Anfangen meine Filterliste zu schreiben"
+    "message": "Anfangen meine Filterliste zu erstellen"
   },
   "options_customFilters_tip": {
     "message": "Von dir erstellte Filter werden hier angezeigt."
@@ -79,6 +79,9 @@
   },
   "options_customize_header": {
     "message": "Anpassungen"
+  },
+  "options_customize_iconStats": {
+    "message": "Anzahl der blockierten Anzeigen im Symbol in der Werkzeugleiste anzeigen"
   },
   "options_customize_showDevToolsPanel": {
     "message": "Anzeigen des „Adblock Plus\"-Panels unter Entwicklertools"

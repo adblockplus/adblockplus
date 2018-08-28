@@ -12,10 +12,10 @@
     "message": "No podremos comunicar con usted y es probable que le demos una prioridad inferior a su informe."
   },
   "issueReporter_commentPage_heading": {
-    "message": "Comentario"
+    "message": "Dejar un comentario"
   },
   "issueReporter_comment_description": {
-    "message": "El campo de texto de la parte inferior le permite introducir un comentario para ayudarnos comprender el problema. Es algo opcional, pero recomendable si el problema no resulta evidente. Puede revisar los datos del informe antes de que se envíen."
+    "message": "Ayúdanos a comprender mejor el problema. Para ello, déjanos un comentario a continuación."
   },
   "issueReporter_comment_label": {
     "message": "Comentario (opcional):"
@@ -35,11 +35,14 @@
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Nota:</strong> Se abrirá una pestaña temporal adicional para que el generador de informes de problemas no afecte a la página en la que te encuentras actualmente."
   },
+  "issueReporter_detailsButton_label": {
+    "message": "Detalles"
+  },
   "issueReporter_doneButton_label": {
     "message": "Hecho"
   },
   "issueReporter_email_description": {
-    "message": "Le recomendamos que introduzca una dirección válida de correo electrónico para que podamos contactar si surgen dudas sobre tu informe. También nos permitirá reconocer tus contribuciones y darles mayor prioridad."
+    "message": "Introduce una dirección de correo electrónico válida. Nos será de gran utilidad. De este modo, podremos ponernos en contacto contigo y solucionar así los problemas más complicados, como el \"malware\". Recuerda que no estás obligado a introducir una dirección de correo electrónico y que nunca la compartiremos con otras personas."
   },
   "issueReporter_email_label": {
     "message": "Correo electrónico:"
@@ -48,19 +51,28 @@
     "message": "Un intento de enviar el informe produjo un fallo con código de error \"?1?\". Por favor, asegúrese de que está conectado a Internet y vuelva a intentarlo. Si el problema persiste por favor pida ayuda en el [link]foro de Adblock Plus[/link]."
   },
   "issueReporter_falseNegative_description": {
-    "message": "Seleccione esta opción si se muestra un anuncio a pesar de que Adblock Plus está activado."
+    "message": "He activado Adblock Plus, pero siguen apareciendo anuncios."
   },
   "issueReporter_falseNegative_label": {
-    "message": "Adblock Plus no bloquea un anuncio"
+    "message": "Siguen apareciendo anuncios"
   },
   "issueReporter_falsePositive_description": {
-    "message": "Seleccione esta opción si en la página falta contenido importante, se muestra incorrectamente o no funciona adecuadamente. Puede confirmar si el problema lo está provocando Adblock Plus desactivándolo temporalmente."
+    "message": "La página no se muestra correctamente, no funciona correctamente o parece que falta contenido importante."
   },
   "issueReporter_falsePositive_label": {
-    "message": "Adblock Plus está bloqueando demasiado"
+    "message": "La página que intento visualizar está rota"
+  },
+  "issueReporter_highlighter_description": {
+    "message": "Utiliza las herramientas para destacar los anuncios u ocultar la información confidencial que aparezca en la captura de pantalla. Destacar los anuncios nos ayudará a solucionar el problema con mayor rapidez."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Destacar problema"
   },
   "issueReporter_knownIssueMessage": {
     "message": "El problema del que informó probablemente ya fuera conocido. Más información:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Marcar problema"
   },
   "issueReporter_page_title": {
     "message": "Creador de informes de errores"
@@ -74,6 +86,9 @@
   "issueReporter_screenshot_highlight": {
     "message": "Resaltar"
   },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Seleccionar problema"
+  },
   "issueReporter_sendButton_label": {
     "message": "Enviar informe"
   },
@@ -84,12 +99,12 @@
     "message": "Por favor, espere mientras Adblock Plus envía su informe."
   },
   "issueReporter_showData_label": {
-    "message": "Mostrar datos del informe"
+    "message": "Hacer clic en este enlace para revisar los datos del informe antes de enviarlo"
   },
   "issueReporter_typeSelector_description": {
-    "message": "Esta ventana le guiará en el proceso necesario para enviar un informe de fallo de Adblock Plus. Primero, seleccione el tipo de problema que ha detectado en esta página:"
+    "message": "Selecciona un problema:"
   },
   "issueReporter_typeSelector_heading": {
-    "message": "Elegir tipo error"
+    "message": "¿De qué tipo de problema se trata?"
   }
 }

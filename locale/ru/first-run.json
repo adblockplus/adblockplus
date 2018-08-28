@@ -1,0 +1,59 @@
+{
+  "firstRun_browser_description": {
+    "message": "Создатели Adblock Plus – самого популярного блокиратора рекламы для браузеров настольных компьютеров теперь предлагают Adblock Browser для устройств с системами Android и iOS."
+  },
+  "firstRun_browser_store_android": {
+    "message": "Приложение Android в Google Play"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "Уже доступно в iTunes App Store"
+  },
+  "firstRun_browser_title": {
+    "message": "Приложение Adblock Browser"
+  },
+  "firstRun_control_description": {
+    "message": "По умолчанию вы можете видеть неназойливую рекламу, которая регламентируется <a0>жесткими критериями</a0>. Мы определяем такую рекламу как допустимую. Хотите блокировать любую рекламу? <a1>Отключите допустимую рекламу</a1> в <a2>Настройках</a2>."
+  },
+  "firstRun_control_title": {
+    "message": "Теперь контролируете вы"
+  },
+  "firstRun_fair_description": {
+    "message": "Мы рекомендуем добросовестно пользоваться приложением Adblock Plus и опцией добавления веб-сайтов в белый список. Учитывая применяемые вами фильтры, вы понимаете и принимаете возможность получения неожиданных результатов (например, блокировка контента на веб-сайте). Для получения дополнительной информации о добросовестном использовании приложения Adblock Plus см. <a0>Условия использования</a0>."
+  },
+  "firstRun_fair_title": {
+    "message": "Добросовестное использование"
+  },
+  "firstRun_footer_copyright": {
+    "message": "Авторское право © $year$ Все права защищены. Adblock Plus® является зарегистрированной торговой маркой компании <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
+  "firstRun_subtitle": {
+    "message": "Вы получили возможность управлять своим браузером"
+  },
+  "firstRun_title": {
+    "message": "Установка выполнена успешно!"
+  },
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "У некоторых пользователей эта страница открывается при каждом запуске браузера. Эту проблему можно решить с помощью удаления и переустановки Adblock Plus:"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "Если Вам требуется дальнейшая помощь, Вы можете связаться с нами по адресу <a0>support@adblockplus.org</a0> или посетить сайт <a1>Help Center</a1>."
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "Откройте вкладку \"Расширения\" в Вашем браузере."
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Найдите там Adblock Plus и удалите его."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "Установите Adblock Plus с сайта <a>adblockplus.org</a>."
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "Похоже, что проблема привела к удалению всех фильтров, и мы не смогли восстановить данные из резервной копии. Поэтому нам пришлось сбросить фильтры и настройки допустимой рекламы. Проверьте списки фильтров и настройки допустимой рекламы в <a>параметрах Adblock Plus</a>."
+  }
+}

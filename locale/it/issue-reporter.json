@@ -12,10 +12,10 @@
     "message": "Nota: è impossibile rispondere a segnalazioni anonime alle quali viene probabilmente dato un ordine di priorità inferiore"
   },
   "issueReporter_commentPage_heading": {
-    "message": "Invio di un commento"
+    "message": "Lascia un commento"
   },
   "issueReporter_comment_description": {
-    "message": "È possibile digitare nel relativo campo di testo qui sotto un commento per comprendere meglio il problema segnalato. Questo passo è opzionale ma raccomandato se il problema non è ovvio. È inoltre possibile visualizzare i dati della segnalazione prima di inviarla"
+    "message": "Aiutaci a comprendere meglio il problema lasciando un commento qui sotto."
   },
   "issueReporter_comment_label": {
     "message": "Commento (opzionale):"
@@ -35,11 +35,14 @@
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Nota:</strong> Viene aperta temporaneamente una scheda aggiuntiva in modo che la pagina su cui ti trovi non venga influenzata dalla Segnalazione dei problemi."
   },
+  "issueReporter_detailsButton_label": {
+    "message": "Dettagli"
+  },
   "issueReporter_doneButton_label": {
     "message": "Fatto"
   },
   "issueReporter_email_description": {
-    "message": "Inserire un indirizzo e-mail valido per poter essere ricontattati in caso di domande su questa segnalazione, per riconoscerne i contributi e per aumentare l'ordine di priorità"
+    "message": "È consigliabile inserire un indirizzo e-mail valido. In questo modo possiamo contattarti per risolvere problemi complessi come ad esempio il malware. Ricorda: non è fondamentale inserire un indirizzo e-mail, che non condivideremo mai."
   },
   "issueReporter_email_label": {
     "message": "Indirizzo e-mail:"
@@ -48,19 +51,28 @@
     "message": "Il tentativo di inviare la segnalazione non è riuscito a causa del seguente errore: \"?1?\". Accertarsi di essere collegati ad internet e riprovare. Se il problema persiste inviare una richiesta di assistenza nel [link]forum di Adblock Plus[/link]"
   },
   "issueReporter_falseNegative_description": {
-    "message": "Selezionare questa opzione se nella pagina web vengono visualizzati banner e/o pubblicità nonostante Adblock Plus sia attiva"
+    "message": "Adblock Plus è abilitato ma continuo a visualizzare gli annunci."
   },
   "issueReporter_falseNegative_label": {
-    "message": "Adblock Plus non sta bloccando alcun elemento"
+    "message": "Continuo a visualizzare gli annunci"
   },
   "issueReporter_falsePositive_description": {
-    "message": "Selezionare questa opzione se nella pagina web manca parte del contenuto importante, se la pagina web viene visualizzata non correttamente oppure se non funziona come dovrebbe. È possibile determinare se sia Adblock Plus la causa del problema disattivando temporaneamente l'estensione"
+    "message": "La pagina viene visualizzata in maniera erronea, non funziona o sembra priva di contenuti importanti."
   },
   "issueReporter_falsePositive_label": {
-    "message": "Adblock Plus sta bloccando troppi elementi"
+    "message": "La pagina che sto cercando di visualizzare è danneggiata"
+  },
+  "issueReporter_highlighter_description": {
+    "message": "Utilizza gli strumenti per evidenziare ciascun annuncio o nascondere le informazioni sensibili nella schermata. L'evidenziazione degli annunci consente di risolvere più rapidamente il problema."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Evidenzia problema"
   },
   "issueReporter_knownIssueMessage": {
     "message": "Problema segnalato precedentemente noto. Ulteriori informazioni:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Contrassegna problema"
   },
   "issueReporter_page_title": {
     "message": "Configurazione guidata per segnalare problemi in una pagina web"
@@ -74,6 +86,9 @@
   "issueReporter_screenshot_highlight": {
     "message": "Evidenzia"
   },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Seleziona problema"
+  },
   "issueReporter_sendButton_label": {
     "message": "Invia la segnalazione"
   },
@@ -84,12 +99,12 @@
     "message": "Attendere mentre la segnalazione di Adblock Plus viene inviata"
   },
   "issueReporter_showData_label": {
-    "message": "Mostra i dati della segnalazione"
+    "message": "Facendo clic su questo collegamento potrai rivedere i dati del rapporto prima dell'invio"
   },
   "issueReporter_typeSelector_description": {
-    "message": "La configurazione guidata permette passo a passo di raccogliere ed inviare i dati necessari per effettuare la segnalazione di Adblock Plus di problemi in una pagina web. Come primo passo, selezionare il tipo di problema che si è verificato"
+    "message": "Seleziona un problema:"
   },
   "issueReporter_typeSelector_heading": {
-    "message": "Selezione del problema"
+    "message": "Quale tipo di problema hai riscontrato?"
   }
 }
