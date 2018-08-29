@@ -32,35 +32,37 @@ port.onMessage.addListener((message) =>
       {
         case "hits":
           const [request, filter, subscriptions] = message.args;
-          const requestsElem = reportData.querySelector("requests");
+          const requestsContainerElem = reportData.querySelector("requests");
           const filtersElem = reportData.querySelector("filters");
           // ELEMHIDE hitLog request doesn't contain url
           if (request.url)
           {
-            const existingRequest = reportData.
-                                  querySelector(`[location="${request.url}"]`);
-            if (existingRequest)
+            let requestElem = reportData
+                                .querySelector(`[location="${request.url}"]`);
+            if (requestElem)
             {
               const countNum = parseInt(
-                existingRequest.getAttribute("count"), 10
+                requestElem.getAttribute("count"), 10
               );
-              existingRequest.setAttribute("count", countNum + 1);
+              requestElem.setAttribute("count", countNum + 1);
             }
             else
             {
-              const requestElem = reportData.createElement("request");
+              requestElem = reportData.createElement("request");
               requestElem.setAttribute("location", censorURL(request.url));
               requestElem.setAttribute("type", request.type);
               requestElem.setAttribute("docDomain", request.docDomain);
               requestElem.setAttribute("thirdParty", request.thirdParty);
               requestElem.setAttribute("count", 1);
-              requestsElem.appendChild(requestElem);
+              requestsContainerElem.appendChild(requestElem);
             }
+            if (filter)
+              requestElem.setAttribute("filter", filter.text);
           }
           if (filter)
           {
-            const existingFilter = reportData.
-                                 querySelector(`[text='${filter.text}']`);
+            const existingFilter = reportData
+                                    .querySelector(`[text='${filter.text}']`);
             if (existingFilter)
             {
               const countNum = parseInt(existingFilter.getAttribute("hitCount"),
@@ -283,6 +285,40 @@ function censorURL(url)
 {
   return url.replace(/([?;&/#][^?;&/#]+?=)[^?;&/#]+/g, "$1*");
 }
+
+function setReportType(event)
+{
+  reportData.documentElement.setAttribute("type", event.target.value);
+}
+
+for (const typeElement of document.querySelectorAll("#typeSelectorGroup input"))
+{
+  typeElement.addEventListener("change", setReportType);
+}
+
+let commentElement = null;
+document.querySelector("#comment").addEventListener("input", (event) =>
+{
+  const comment = event.target.value;
+  if (!comment)
+  {
+    if (commentElement)
+    {
+      commentElement.parentNode.removeChild(commentElement);
+      commentElement = null;
+    }
+  }
+  else if (commentElement)
+  {
+    commentElement.textContent = comment;
+  }
+  else
+  {
+    commentElement = reportData.createElement("comment");
+    commentElement.textContent = comment;
+    reportData.documentElement.appendChild(commentElement);
+  }
+});
 
 const anonSubmissionField = document.querySelector("#anonymousSubmission");
 const emailField = document.querySelector("#email");
