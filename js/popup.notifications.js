@@ -58,7 +58,9 @@ window.addEventListener(
     const notifier = wire()`
     <div class="${"notification " + notification.type}">
       <div>
-        <h3>${notification.texts.title}</h3>
+        <h3 hidden="${!notification.texts.title}">
+          ${notification.texts.title}
+        </h3>
         <p id="notification-message"></p>
         <hr>
         <button onclick="${dismiss}">
@@ -66,7 +68,7 @@ window.addEventListener(
         </button>
         <button
           data-pref="notifications_ignoredcategories"
-          hidden="${notification.type == "critical"}"
+          hidden="${/^(?:critical|relentless)$/.test(notification.type)}"
           onclick="${dismiss}">
           ${{i18n: "overlay_notification_closing_button_optout"}}
         </button>
