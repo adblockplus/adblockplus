@@ -19,13 +19,14 @@ io-filter-search
 {
   display: flex;
   flex-direction: row;
-  height: 32px;
+  height: 48px;
 }
 
 io-filter-search > input
 {
   padding: 0 8px;
-  border: 1px solid #9b9b9b;
+  border: 1px solid #bcbcbc;
+  font-size: inherit;
   flex-grow: 1;
 }
 
@@ -35,6 +36,7 @@ io-filter-search > button
   border: 0;
   color: #fff;
   background-color: #3a97b9;
+  font-weight: 400;
   text-transform: uppercase;
 }
 
