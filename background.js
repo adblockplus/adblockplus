@@ -220,7 +220,7 @@
     set disabled(value)
     {
       this._disabled = value;
-      modules.filterNotifier.FilterNotifier.emit("subscription.disabled", this);
+      modules.filterNotifier.filterNotifier.emit("subscription.disabled", this);
     },
     get lastDownload()
     {
@@ -229,7 +229,7 @@
     set lastDownload(value)
     {
       this._lastDownload = value;
-      modules.filterNotifier.FilterNotifier.emit("subscription.lastDownload",
+      modules.filterNotifier.filterNotifier.emit("subscription.lastDownload",
         this);
     }
   };
@@ -275,7 +275,7 @@
         if (!knownSubscriptions.has(subscription.url))
         {
           knownSubscriptions.set(subscription.url, fromURL(subscription.url));
-          modules.filterNotifier.FilterNotifier.emit("subscription.added",
+          modules.filterNotifier.filterNotifier.emit("subscription.added",
             subscription);
         }
       },
@@ -285,7 +285,7 @@
         if (knownSubscriptions.has(subscription.url))
         {
           knownSubscriptions.delete(subscription.url);
-          modules.filterNotifier.FilterNotifier.emit("subscription.removed",
+          modules.filterNotifier.filterNotifier.emit("subscription.removed",
             subscription);
         }
       },
@@ -298,7 +298,7 @@
             return;
         }
         customSubscription.filters.push(filter);
-        modules.filterNotifier.FilterNotifier.emit("filter.added", filter);
+        modules.filterNotifier.filterNotifier.emit("filter.added", filter);
       },
 
       removeFilter(filter)
@@ -308,7 +308,7 @@
           if (customSubscription.filters[i].text == filter.text)
           {
             customSubscription.filters.splice(i, 1);
-            modules.filterNotifier.FilterNotifier.emit("filter.removed",
+            modules.filterNotifier.filterNotifier.emit("filter.removed",
               filter);
             return;
           }
@@ -371,7 +371,7 @@
       execute(subscription, manual)
       {
         modules.synchronizer.Synchronizer._downloading = true;
-        modules.filterNotifier.FilterNotifier.emit(
+        modules.filterNotifier.filterNotifier.emit(
           "subscription.downloading", subscription
         );
         setTimeout(() =>
@@ -400,7 +400,7 @@
   };
 
   modules.filterNotifier = {
-    FilterNotifier: new EventEmitter()
+    filterNotifier: new EventEmitter()
   };
 
   modules.info = {
