@@ -1,4 +1,7 @@
 {
+  "add": {
+    "message": "เพิ่ม"
+  },
   "cancel": {
     "message": "ยกเลิก"
   },

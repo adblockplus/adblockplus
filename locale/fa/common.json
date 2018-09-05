@@ -1,4 +1,7 @@
 {
+  "add": {
+    "message": "اضافه کردن"
+  },
   "cancel": {
     "message": "لغو"
   },

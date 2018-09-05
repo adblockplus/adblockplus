@@ -1,4 +1,7 @@
 {
+  "add": {
+    "message": "Voeg by"
+  },
   "cancel": {
     "message": "Kanselleer"
   },

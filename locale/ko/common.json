@@ -1,4 +1,7 @@
 {
+  "add": {
+    "message": "추가"
+  },
   "cancel": {
     "message": "취소"
   },

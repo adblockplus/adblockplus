@@ -1,4 +1,7 @@
 {
+  "add": {
+    "message": "新增"
+  },
   "cancel": {
     "message": "取消"
   },

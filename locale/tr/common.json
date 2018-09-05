@@ -1,4 +1,7 @@
 {
+  "add": {
+    "message": "Ekle"
+  },
   "cancel": {
     "message": "Vazgeç"
   },

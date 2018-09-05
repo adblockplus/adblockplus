@@ -1,4 +1,7 @@
 {
+  "add": {
+    "message": "Bæta við"
+  },
   "cancel": {
     "message": "Hætta við"
   }

@@ -1,4 +1,7 @@
 {
+  "add": {
+    "message": "Tilføj"
+  },
   "cancel": {
     "message": "Annullér"
   },

@@ -1,4 +1,7 @@
 {
+  "add": {
+    "message": "जोड़ें"
+  },
   "cancel": {
     "message": "रद्द करें"
   }

@@ -1,4 +1,7 @@
 {
+  "add": {
+    "message": "Engadir"
+  },
   "cancel": {
     "message": "Cancelar"
   },
