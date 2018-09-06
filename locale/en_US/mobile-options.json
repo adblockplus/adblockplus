@@ -1,7 +1,7 @@
 {
   "mops_acceptableAds_description": {
     "description": "Label for enabling Acceptable Ads",
-    "message": "Allow some non-intrusive advertising"
+    "message": "Allow some nonintrusive advertising."
   },
   "mops_acceptableAds_more": {
     "description": "Link for Acceptable Ads setting",
