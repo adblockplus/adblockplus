@@ -17,6 +17,8 @@
 
 "use strict";
 
+const {getMessage} = browser.i18n;
+
 let lastFilterQuery = null;
 
 browser.runtime.sendMessage({type: "types.get"})
@@ -61,11 +63,11 @@ function generateFilter(request, domainSpecific)
   return filter;
 }
 
-function createActionButton(action, label, filter)
+function createActionButton(action, stringId, filter)
 {
   const button = document.createElement("span");
 
-  button.textContent = label;
+  button.textContent = getMessage(stringId);
   button.classList.add("action");
 
   button.addEventListener("click", () =>
@@ -87,18 +89,19 @@ function createRecord(request, filter, template)
   row.querySelector(".domain").textContent = request.docDomain;
   row.querySelector(".type").textContent = request.type;
 
-  const urlElement = row.querySelector(".resource-link");
+  const urlElement = row.querySelector("[data-i18n='devtools_request_url']");
   const actionWrapper = row.querySelector(".action-wrapper");
 
   if (request.url)
   {
-    urlElement.textContent = request.url;
-    urlElement.setAttribute("href", request.url);
+    const originalUrl = urlElement.querySelector("[data-i18n-index='0']");
+    originalUrl.textContent = request.url;
+    originalUrl.setAttribute("href", request.url);
 
     // Firefox 57 doesn't support the openResource API.
     if (request.type != "POPUP" && "openResource" in ext.devtools.panels)
     {
-      urlElement.addEventListener("click", event =>
+      originalUrl.addEventListener("click", event =>
       {
         if (event.button == 0)
         {
@@ -107,14 +110,22 @@ function createRecord(request, filter, template)
         }
       }, false);
     }
-  }
 
-  if (request.rewrittenUrl)
+    if (request.rewrittenUrl)
+    {
+      const rewrittenUrl = urlElement.querySelector("[data-i18n-index='1'");
+      rewrittenUrl.textContent = request.rewrittenUrl;
+      rewrittenUrl.setAttribute("href", request.rewrittenUrl);
+    }
+    else
+    {
+      urlElement.innerHTML = "";
+      urlElement.appendChild(originalUrl);
+    }
+  }
+  else
   {
-    const rewrittenUrl = row.querySelector(".rewritten-url > a");
-    rewrittenUrl.textContent = request.rewrittenUrl;
-    rewrittenUrl.setAttribute("href", request.rewrittenUrl);
-    row.querySelector(".rewritten-url").removeAttribute("hidden");
+    urlElement.innerHTML = "&nbsp;";
   }
 
   if (filter)
@@ -130,9 +141,9 @@ function createRecord(request, filter, template)
     else
     {
       if (filter.userDefined)
-        originElement.textContent = "user-defined";
+        originElement.textContent = getMessage("devtools_filter_origin_custom");
       else
-        originElement.textContent = "unnamed subscription";
+        originElement.textContent = getMessage("devtools_filter_origin_none");
 
       originElement.classList.add("unnamed");
     }
@@ -140,21 +151,22 @@ function createRecord(request, filter, template)
     if (!filter.whitelisted && request.type != "ELEMHIDE")
     {
       actionWrapper.appendChild(createActionButton(
-        "add", "Add exception", "@@" + generateFilter(request, false)
+        "add", "devtools_action_unblock", "@@" + generateFilter(request, false)
       ));
     }
 
     if (filter.userDefined)
     {
       actionWrapper.appendChild(createActionButton(
-        "remove", "Remove rule", filter.text
+        "remove", "devtools_action_remove", filter.text
       ));
     }
   }
   else
   {
     actionWrapper.appendChild(createActionButton(
-      "add", "Block item", generateFilter(request, request.specificOnly)
+      "add", "devtools_action_block",
+      generateFilter(request, request.specificOnly)
     ));
   }
 
@@ -207,10 +219,11 @@ document.addEventListener("DOMContentLoaded", () =>
   const table = container.querySelector("tbody");
   const template = document.querySelector("template").content.firstElementChild;
 
-  document.getElementById("reload").addEventListener("click", () =>
-  {
-    ext.devtools.inspectedWindow.reload();
-  }, false);
+  document.querySelector("[data-i18n='devtools_footer'] > a")
+    .addEventListener("click", () =>
+    {
+      ext.devtools.inspectedWindow.reload();
+    }, false);
 
   document.getElementById("filter-state").addEventListener("change", (event) =>
   {
@@ -270,6 +283,6 @@ document.addEventListener("DOMContentLoaded", () =>
   // Since Chrome 54 the themeName is accessible, for earlier versions we must
   // assume the default theme is being used.
   // https://bugs.chromium.org/p/chromium/issues/detail?id=608869
-  const theme = browser.devtools.panels.themeName || "default";
+  const theme = ext.devtools.panels.themeName || "default";
   document.body.classList.add(theme);
 }, false);

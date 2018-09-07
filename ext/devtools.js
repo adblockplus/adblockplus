@@ -22,11 +22,11 @@ if (typeof ext == "undefined")
 
 window.ext.devtools = {
   panels: {
-    openResource() {}
+    openResource: (url) => window.open(url)
   },
 
   inspectedWindow: {
-    reload() {}
+    reload: () => location.reload()
   }
 };
 

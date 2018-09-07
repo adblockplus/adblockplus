@@ -503,7 +503,12 @@
     "###ad-bereich1-08",
     "###ad-bereich1-superbanner",
     "###ad-bereich2-08",
-    "###ad-bereich2-skyscrapper"
+    "###ad-bereich2-skyscrapper",
+    "/ad_banner*$domain=example.com",
+    "@@||example.com/looks_like_an_ad_but_isnt_one.html",
+    "example.com##.ad_banner",
+    "||example.com/some-annoying-popup$popup",
+    "/(example\\.com\\/some-annoying-popup\\)$/$rewrite=$1?nopopup"
   ];
 
   const knownSubscriptions = new Map();
@@ -575,11 +580,9 @@
     }, 1000);
   }
 
-  ext.devtools.onCreated.addListener((panel) =>
-  {
+  const records = [
     // blocked request
-    panel.sendMessage({
-      type: "add-record",
+    {
       request: {
         url: "http://adserver.example.com/ad_banner.png",
         type: "IMAGE",
@@ -591,11 +594,9 @@
         userDefined: false,
         subscription: "EasyList"
       }
-    });
-
+    },
     // whitelisted request
-    panel.sendMessage({
-      type: "add-record",
+    {
       request: {
         url: "http://example.com/looks_like_an_ad_but_isnt_one.html",
         type: "SUBDOCUMENT",
@@ -607,22 +608,18 @@
         userDefined: false,
         subscription: "EasyList"
       }
-    });
-
+    },
     // request with long URL and no filter matches
-    panel.sendMessage({
-      type: "add-record",
+    {
       request: {
         url: "https://this.url.has.a.long.domain/and_a_long_path_maybe_not_long_enough_so_i_keep_typing?there=are&a=couple&of=parameters&as=well&and=even&some=more",
         type: "XMLHTTPREQUEST",
         docDomain: "example.com"
       },
       filter: null
-    });
-
+    },
     // matching element hiding filter
-    panel.sendMessage({
-      type: "add-record",
+    {
       request: {
         type: "ELEMHIDE",
         docDomain: "example.com"
@@ -633,11 +630,9 @@
         userDefined: false,
         subscription: "EasyList"
       }
-    });
-
+    },
     // user-defined filter
-    panel.sendMessage({
-      type: "add-record",
+    {
       request: {
         url: "http://example.com/some-annoying-popup",
         type: "POPUP",
@@ -649,11 +644,9 @@
         userDefined: true,
         subscription: null
       }
-    });
-
+    },
     // rewrite
-    panel.sendMessage({
-      type: "add-record",
+    {
       request: {
         url: "http://example.com/some-annoying-popup",
         type: "OTHER",
@@ -666,6 +659,87 @@
         userDefined: true,
         subscription: null
       }
-    });
+    }
+  ];
+
+  ext.devtools.onCreated.addListener((panel) =>
+  {
+    function getRecords(filter)
+    {
+      return records.filter((record) =>
+      {
+        const {url} = record.request;
+        if (!url)
+          return false;
+
+        const pattern = url.replace(/^[\w-]+:\/+(?:www\.)?/, "");
+        return filter.text.indexOf(pattern) > -1;
+      });
+    }
+
+    function removeRecord(filter)
+    {
+      for (const record of getRecords(filter))
+      {
+        const idx = records.indexOf(record);
+        panel.sendMessage({
+          type: "remove-record",
+          index: idx
+        });
+        records.splice(idx, 1);
+      }
+    }
+
+    function updateRecord(filter)
+    {
+      for (const record of getRecords(filter))
+      {
+        record.filter = filter;
+        panel.sendMessage({
+          type: "update-record",
+          index: records.indexOf(record),
+          filter: record.filter,
+          request: record.request
+        });
+      }
+    }
+
+    modules.filterNotifier.FilterNotifier.on("filter.added", updateRecord);
+    modules.filterNotifier.FilterNotifier.on("filter.removed", removeRecord);
+
+    for (const {filter, request} of records)
+    {
+      panel.sendMessage({
+        type: "add-record",
+        filter, request
+      });
+    }
   });
+
+  modules.requestBlocker = {
+    filterTypes: new Set([
+      "BACKGROUND",
+      "CSP",
+      "DOCUMENT",
+      "DTD",
+      "ELEMHIDE",
+      "FONT",
+      "GENERICBLOCK",
+      "GENERICHIDE",
+      "IMAGE",
+      "MEDIA",
+      "OBJECT",
+      "OBJECT_SUBREQUEST",
+      "OTHER",
+      "PING",
+      "POPUP",
+      "SCRIPT",
+      "STYLESHEET",
+      "SUBDOCUMENT",
+      "WEBRTC",
+      "WEBSOCKET",
+      "XBL",
+      "XMLHTTPREQUEST"
+    ])
+  };
 }());
