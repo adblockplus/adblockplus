@@ -966,6 +966,8 @@ function onDOMLoaded()
   {
     setElementLinks("enable-acceptable-ads-description", link);
   });
+  setElementText($("#copyright"), "options_dialog_about_copyright",
+    [new Date().getFullYear()]);
   setElementText($("#tracking-warning-1"), "options_tracking_warning_1",
     [getMessage("common_feature_privacy_title"),
      getMessage("options_acceptableAds_ads_label")]);
