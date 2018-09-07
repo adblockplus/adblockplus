@@ -95,23 +95,34 @@ ext.i18n = {
   // Inserts i18n strings into matching elements. Any inner HTML already
   // in the element is parsed as JSON and used as parameters to
   // substitute into placeholders in the i18n message.
-  setElementText(element, stringName, args)
+  setElementText(element, stringName, args, children = [])
   {
     function processString(str, currentElement)
     {
-      const match = /^(.*?)<(a|strong)(\d)?>(.*?)<\/\2\3>(.*)$/.exec(str);
+      const match = /^(.*?)<(a|slot|strong)(\d)?>(.*?)<\/\2\3>(.*)$/.exec(str);
       if (match)
       {
         const [, before, name, index, innerText, after] = match;
         processString(before, currentElement);
 
-        const e = document.createElement(name);
-        if (typeof index != "undefined")
+        if (name == "slot")
         {
-          e.dataset.i18nIndex = index;
+          const e = children[index];
+          if (e)
+          {
+            currentElement.appendChild(e);
+          }
         }
-        processString(innerText, e);
-        currentElement.appendChild(e);
+        else
+        {
+          const e = document.createElement(name);
+          if (typeof index != "undefined")
+          {
+            e.dataset.i18nIndex = index;
+          }
+          processString(innerText, e);
+          currentElement.appendChild(e);
+        }
 
         processString(after, currentElement);
       }
@@ -151,7 +162,8 @@ function loadI18nStrings()
       const elements = container.querySelectorAll("[data-i18n]");
       for (const element of elements)
       {
-        ext.i18n.setElementText(element, element.dataset.i18n);
+        const children = Array.from(element.children);
+        ext.i18n.setElementText(element, element.dataset.i18n, null, children);
       }
     }
 

@@ -1,0 +1,70 @@
+{
+  "devtools_action_block": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/28aba213f76265253786a9ed64fdba1377644352/spec/abp/devtools-panel.md#block-item",
+    "message": "Block item"
+  },
+  "devtools_action_remove": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/28aba213f76265253786a9ed64fdba1377644352/spec/abp/devtools-panel.md#remove-rule",
+    "message": "Remove rule"
+  },
+  "devtools_action_unblock": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/28aba213f76265253786a9ed64fdba1377644352/spec/abp/devtools-panel.md#add-exception",
+    "message": "Add exception"
+  },
+  "devtools_filter_origin_custom": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/28aba213f76265253786a9ed64fdba1377644352/spec/abp/devtools-panel.md#filter-column",
+    "message": "user-defined"
+  },
+  "devtools_filter_origin_none": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/28aba213f76265253786a9ed64fdba1377644352/spec/abp/devtools-panel.md#filter-column",
+    "message": "unnamed subscription"
+  },
+  "devtools_filter_subtitle": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/28aba213f76265253786a9ed64fdba1377644352/spec/abp/devtools-panel.md#filter-column",
+    "message": "Origin"
+  },
+  "devtools_filter_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/28aba213f76265253786a9ed64fdba1377644352/spec/abp/devtools-panel.md#filter-column",
+    "message": "Filter"
+  },
+  "devtools_footer": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/28aba213f76265253786a9ed64fdba1377644352/spec/abp/devtools-panel.md#footer",
+    "message": "<a0>Reload</a0> page to see effect of filter changes"
+  },
+  "devtools_header": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/28aba213f76265253786a9ed64fdba1377644352/spec/abp/devtools-panel.md#header e.g. Show all items of any type; Show blocked items of IMAGE type",
+    "message": "Show <slot0></slot0> items of <slot1></slot1> type"
+  },
+  "devtools_header_state_all": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/28aba213f76265253786a9ed64fdba1377644352/spec/abp/devtools-panel.md#status-dropdown",
+    "message": "all"
+  },
+  "devtools_header_state_blocked": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/28aba213f76265253786a9ed64fdba1377644352/spec/abp/devtools-panel.md#status-dropdown",
+    "message": "blocked"
+  },
+  "devtools_header_state_whitelisted": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/28aba213f76265253786a9ed64fdba1377644352/spec/abp/devtools-panel.md#status-dropdown",
+    "message": "whitelisted"
+  },
+  "devtools_header_type_any": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/28aba213f76265253786a9ed64fdba1377644352/spec/abp/devtools-panel.md#content-type-dropdown",
+    "message": "any"
+  },
+  "devtools_request_subtitle": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/28aba213f76265253786a9ed64fdba1377644352/spec/abp/devtools-panel.md#request-column",
+    "message": "Document domain"
+  },
+  "devtools_request_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/28aba213f76265253786a9ed64fdba1377644352/spec/abp/devtools-panel.md#request-column",
+    "message": "Request"
+  },
+  "devtools_request_url": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/28aba213f76265253786a9ed64fdba1377644352/spec/abp/devtools-panel.md#request-column e.g. http://example.com/foo rewritten to http://example.com/bar",
+    "message": "<a0></a0> rewritten to <a1></a1>"
+  },
+  "devtools_type_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/28aba213f76265253786a9ed64fdba1377644352/spec/abp/devtools-panel.md#type-column",
+    "message": "Type"
+  }
+}

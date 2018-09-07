@@ -245,7 +245,7 @@ footer
   transition: margin-bottom 0.5s;
 }
 
-#reload
+footer > a
 {
   color: #00f;
   text-decoration: underline;
