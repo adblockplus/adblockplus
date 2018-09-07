@@ -4,19 +4,42 @@
   "description": "Adblock Plus UI",
   "scripts": {
     "$": "npm-dollar",
+    "build": "npm run $ build",
     "bundle": "npm run $ bundle",
     "lint": "npm run $ lint",
     "postinstall": "npm run bundle",
     "start": "http-server & npm run watch",
+    "test": "npm run $ test",
     "watch": "npm run $ watch",
-    "test": "npm run $ test"
+    "csv-export": "node build/csv-exporter/main.js -e",
+    "csv-import": "node build/csv-exporter/main.js -i"
   },
   "$": {
+    "build": {
+      "popup": [
+        "$ bundle.popup",
+        "cd ../adblockpluschrome",
+        "SKIP_DEPENDENCY_UPDATES=true ./build.py devenv -t chrome",
+        "cd -"
+      ]
+    },
     "bundle": {
       "desktop-options": {
         "css": "$ create.css desktop-options",
         "js": "$ create.js ./js/desktop-options.js ./desktop-options.js"
       },
+      "first-run": {
+        "css": [
+          "$ create.css first-run",
+          "$ create.css web"
+        ],
+        "js": "$ create.js ./js/first-run.js ./first-run.js"
+      },
+      "issue-reporter": {
+        "css": "$ create.css issue-reporter",
+        "js": "$ create.js ./js/issue-reporter.js ./issue-reporter.js"
+      },
+      "popup": "$ create.bundle popup",
       "test": [
         [
           "if [ ! -z $1 ]; then",
@@ -26,12 +49,23 @@
       ]
     },
     "create": {
+      "bundle": {
+        "css": "$ create.css $1",
+        "js": "$ create.js ./js/$1.js ./$1.js"
+      },
       "css": "node-sass ./css/$1.scss ./skin/$1.css",
       "js": [
-        "eslint ./js/**/*.js",
-        "echo \"/* eslint-disable */$(browserify --node --no-bundle-external $1)\">$2"
+        "!prod eslint ./js/**/*.js",
+        "echo \"/* eslint-disable */$(browserify --node $1)\">$2"
       ],
       "test": {
+        "component": {
+          "css": "$ create.test.css $1",
+          "js": [
+            "$ create.test.js $1",
+            "$ bundle.test $1"
+          ]
+        },
         "css": "node-sass ./css/$1.scss ./smoke/css/$1.css",
         "js": [
           "mkdir -p smoke",
@@ -59,6 +93,7 @@
           "$ bundle.test io-element"
         ]
       },
+      "io-filter-search": "$ create.test.component io-filter-search",
       "io-highlighter": {
         "css": [
           "$ create.test.css io-highlighter",
@@ -70,22 +105,18 @@
           "$ bundle.test io-highlighter"
         ]
       },
-      "io-steps": {
-        "css": "$ create.test.css io-steps",
-        "js": [
-          "$ create.test.js io-steps",
-          "$ bundle.test io-steps"
-        ]
-      },
-      "io-toggle": {
-        "css": "$ create.test.css io-toggle",
-        "js": [
-          "$ create.test.js io-toggle",
-          "$ bundle.test io-toggle"
-        ]
-      }
+      "io-list-box": "$ create.test.component io-list-box",
+      "io-popout": "$ create.test.component io-popout",
+      "io-scrollbar": "$ create.test.component io-scrollbar",
+      "io-steps": "$ create.test.component io-steps",
+      "io-toggle": "$ create.test.component io-toggle",
+      "io-big-toggle": "$ create.test.component io-big-toggle"
     },
-    "watch": "watch 'npm run bundle' ./css ./js"
+    "watch": {
+      "build": "watch 'npm run build' ./css ./js",
+      "bundle": "watch 'npm run bundle' ./css ./js",
+      "test": "watch 'npm run test' ./css ./js"
+    }
   },
   "dependencies": {
     "browserify": "^16.2.2",
