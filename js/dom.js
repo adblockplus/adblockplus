@@ -22,6 +22,45 @@ module.exports = {
   $$: (selector, container = document) => container.querySelectorAll(selector),
   // helper to format as indented string any HTML/XML node
   asIndentedString,
+
+  // basic copy and paste clipboard utility
+  clipboard: {
+    // warning: Firefox needs a proper event to work
+    //          such click or mousedown or similar.
+    copy(text)
+    {
+      const selection = document.getSelection();
+      const selected = selection.rangeCount > 0 ?
+                        selection.getRangeAt(0) : null;
+      const el = document.createElement("textarea");
+      el.value = text;
+      el.setAttribute("readonly", "");
+      el.style.cssText = "position:fixed;top:-999px";
+      document.body.appendChild(el).select();
+      document.execCommand("copy");
+      document.body.removeChild(el);
+      if (selected)
+      {
+        selection.removeAllRanges();
+        // simply putting back selected doesn't work anymore
+        const range = document.createRange();
+        range.setStart(selected.startContainer, selected.startOffset);
+        range.setEnd(selected.endContainer, selected.endOffset);
+        selection.addRange(range);
+      }
+    },
+    // optionally accepts a `paste` DOM event
+    // it uses global clipboardData, if available, otherwise.
+    // i.e. input.onpaste = event => console.log(dom.clipboard.paste(event));
+    paste(event)
+    {
+      if (!event)
+        event = window;
+      const clipboardData = event.clipboardData || window.clipboardData;
+      return clipboardData ? clipboardData.getData("text") : "";
+    }
+  },
+
   // helper to provide the relative coordinates
   // to the closest positioned containing element
   relativeCoordinates(event)
