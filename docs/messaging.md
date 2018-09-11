@@ -166,12 +166,12 @@ If filter includes `showPageOptions`:
 
 **Arguments**
 
-- **string[]** filter (see also `filter.*` events in [`FilterNotifier`][filternotifier])
+- **string[]** filter (see also `filter.*` events in [`filterNotifier`][filternotifier])
   - `loaded`
 
 **Response**
 
-See [`FilterNotifier`][filternotifier].
+See [`filterNotifier`][filternotifier].
 
 #### filters.remove
 
@@ -270,11 +270,11 @@ See [`FilterNotifier`][filternotifier].
 
 **Arguments**
 
-- **string[]** filter (see also [`FilterNotifier`][filternotifier])
+- **string[]** filter (see also [`filterNotifier`][filternotifier])
 
 **Response**
 
-See [`FilterNotifier`][filternotifier].
+See [`filterNotifier`][filternotifier].
 
 #### subscriptions.remove
 

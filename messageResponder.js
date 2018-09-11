@@ -25,7 +25,7 @@
   const {Prefs} = require("prefs");
   const {Utils} = require("utils");
   const {FilterStorage} = require("filterStorage");
-  const {FilterNotifier} = require("filterNotifier");
+  const {filterNotifier} = require("filterNotifier");
   const {defaultMatcher} = require("matcher");
   const {Notification: NotificationStorage} = require("notification");
   const {getActiveNotification, shouldDisplay,
@@ -171,7 +171,7 @@
       if (!(name in listenedFilterChanges))
       {
         listenedFilterChanges[name] = null;
-        FilterNotifier.on(name, (item) =>
+        filterNotifier.on(name, (item) =>
         {
           sendMessage(type, action, item);
         });
