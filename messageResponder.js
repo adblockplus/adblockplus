@@ -137,7 +137,7 @@
       let subscriptions = [];
       if (filter)
       {
-        subscriptions = filter.subscriptions.
+        subscriptions = Array.from(filter.subscriptions).
                         filter(includeActiveRemoteSubscriptions).
                         map(s => s.url);
         filter = convertFilter(filter);
