@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "无效的正则表达式"
   },
+  "filter_snippet_nodomain": {
+    "message": "没有为代码片段过滤器指定活动域"
+  },
   "filter_unknown_option": {
     "message": "未知的过滤规则"
   },
