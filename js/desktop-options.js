@@ -1383,34 +1383,11 @@ function getPrefElement(key)
 
 function getPref(key, callback)
 {
-  const checkPref = getPref.checks[key] || getPref.checkNone;
-  checkPref((isActive) =>
-  {
-    if (!isActive)
-    {
-      hidePref(key, !isActive);
-      return;
-    }
-
-    browser.runtime.sendMessage({
-      type: "prefs.get",
-      key
-    }, callback);
-  });
+  browser.runtime.sendMessage({
+    type: "prefs.get",
+    key
+  }, callback);
 }
-
-getPref.checkNone = function(callback)
-{
-  callback(true);
-};
-
-getPref.checks =
-{
-  notifications_ignoredcategories(callback)
-  {
-    getPref("notifications_showui", callback);
-  }
-};
 
 function onPrefMessage(key, value, initial)
 {
@@ -1418,10 +1395,6 @@ function onPrefMessage(key, value, initial)
   {
     case "notifications_ignoredcategories":
       value = value.indexOf("*") == -1;
-      break;
-
-    case "notifications_showui":
-      hidePref("notifications_ignoredcategories", !value);
       break;
     case "ui_warn_tracking":
       setPrivacyConflict();
