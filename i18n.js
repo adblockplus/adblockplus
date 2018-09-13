@@ -17,6 +17,8 @@
 
 "use strict";
 
+const i18nAttributes = ["alt", "placeholder", "title", "value"];
+
 // Getting UI locale cannot be done synchronously on Firefox,
 // requires messaging the background page. For Chrome and Safari,
 // we could get the UI locale here, but would need to duplicate
@@ -125,24 +127,45 @@ ext.i18n = {
   }
 };
 
-// Loads i18n strings
 function loadI18nStrings()
 {
-  function addI18nStringsToElements(containerElement)
+  function resolveStringNames(container)
   {
-    const nodesContent = containerElement.querySelectorAll("[class^='i18n_']");
-    for (const node of nodesContent)
+    // Deprecated, use data-i18n attribute instead
     {
-      let args = JSON.parse("[" + node.textContent + "]");
-      if (args.length == 0)
-        args = null;
+      const elements = container.querySelectorAll("[class^='i18n_']");
+      for (const element of elements)
+      {
+        let args = JSON.parse("[" + element.textContent + "]");
+        if (args.length == 0)
+          args = null;
 
-      let {className} = node;
-      if (className instanceof SVGAnimatedString)
-        className = className.animVal;
-      const stringName = className.split(/\s/)[0].substring(5);
+        let {className} = element;
+        if (className instanceof SVGAnimatedString)
+          className = className.animVal;
+        const stringName = className.split(/\s/)[0].substring(5);
 
-      ext.i18n.setElementText(node, stringName, args);
+        ext.i18n.setElementText(element, stringName, args);
+      }
+    }
+
+    {
+      const elements = container.querySelectorAll("[data-i18n]");
+      for (const element of elements)
+      {
+        ext.i18n.setElementText(element, element.dataset.i18n);
+      }
+    }
+
+    // Resolve texts for translatable attributes
+    for (const attr of i18nAttributes)
+    {
+      const elements = container.querySelectorAll(`[data-i18n-${attr}`);
+      for (const element of elements)
+      {
+        const stringName = element.getAttribute(`data-i18n-${attr}`);
+        element.setAttribute(attr, browser.i18n.getMessage(stringName));
+      }
     }
 
     // Resolve texts for alt attributes
@@ -152,12 +175,13 @@ function loadI18nStrings()
       element.alt = browser.i18n.getMessage(element.dataset.i18nAlt);
     }
   }
-  addI18nStringsToElements(document);
+
+  resolveStringNames(document);
   // Content of Template is not rendered on runtime so we need to add
   // translation strings for each Template documentFragment content
   // individually.
   for (const template of document.querySelectorAll("template"))
-    addI18nStringsToElements(template.content);
+    resolveStringNames(template.content);
 }
 
 // Provides a more readable string of the current date and time
