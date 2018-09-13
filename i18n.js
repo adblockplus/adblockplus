@@ -160,7 +160,7 @@ function loadI18nStrings()
     // Resolve texts for translatable attributes
     for (const attr of i18nAttributes)
     {
-      const elements = container.querySelectorAll(`[data-i18n-${attr}`);
+      const elements = container.querySelectorAll(`[data-i18n-${attr}]`);
       for (const element of elements)
       {
         const stringName = element.getAttribute(`data-i18n-${attr}`);
