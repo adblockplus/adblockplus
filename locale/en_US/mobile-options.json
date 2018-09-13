@@ -27,7 +27,7 @@
   },
   "mops_error_url": {
     "description": "Error for omitting filter list URL when adding a new filter list",
-    "message": "Please enter a URL link"
+    "message": "Enter a valid URL"
   },
   "mops_filterlist_add": {
     "description": "Label for initiating adding a new filter list",
