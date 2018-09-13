@@ -33,6 +33,12 @@
   box-sizing: border-box;
 }
 
+[hidden],
+[aria-hidden="true"]
+{
+  display: none !important;
+}
+
 html,
 body,
 h1,
@@ -121,6 +127,7 @@ html[dir="rtl"] header h1
 
 header .notification::before
 {
+  --border-top-color: var(--border-color-primary);
   display: block;
   overflow: hidden;
   height: var(--border-width-thick-doubled);
@@ -166,6 +173,11 @@ header .notification > div
   padding: var(--padding-primary);
 }
 
+header .notification h3[hidden] + p
+{
+  margin-top: 0;
+}
+
 header .notification h3
 {
   margin: 0;
@@ -185,22 +197,26 @@ header .notification h3::before
   content: "";
 }
 
-html:not([dir="rtl"]) header .notification h3
+html:not([dir="rtl"]) header .notification.critical h3,
+html:not([dir="rtl"]) header .notification.information h3
 {
   padding-left: 24px;
 }
 
-html:not([dir="rtl"]) header .notification h3::before
+html:not([dir="rtl"]) header .notification.critical h3::before,
+html:not([dir="rtl"]) header .notification.information h3::before
 {
   margin-left: -24px;
 }
 
-html[dir="rtl"] header .notification h3
+html[dir="rtl"] header .notification.critical h3,
+html[dir="rtl"] header .notification.information h3
 {
   padding-right: 24px;
 }
 
-html[dir="rtl"] header .notification h3::before
+html[dir="rtl"] header .notification.critical h3::before,
+html[dir="rtl"] header .notification.information h3::before
 {
   margin-right: -24px;
 }
@@ -230,10 +246,9 @@ header .notification button
   font-size: var(--font-size-primary);
 }
 
-header .notification hr + button
+header .notification button
 {
   margin-top: var(--margin-primary-half);
-  margin-bottom: var(--margin-primary-half);
 }
 
 #options
