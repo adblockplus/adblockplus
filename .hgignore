@@ -1,4 +1,5 @@
 node_modules/
+screenshots/
 smoke/
 ^desktop-options.js
 skin/desktop-options.css

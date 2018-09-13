@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--
+  - This file is part of Adblock Plus <https://adblockplus.org/>,
+  - Copyright (C) 2006-present eyeo GmbH
+  -
+  - Adblock Plus is free software: you can redistribute it and/or modify
+  - it under the terms of the GNU General Public License version 3 as
+  - published by the Free Software Foundation.
+  -
+  - Adblock Plus is distributed in the hope that it will be useful,
+  - but WITHOUT ANY WARRANTY; without even the implied warranty of
+  - MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  - GNU General Public License for more details.
+  -
+  - You should have received a copy of the GNU General Public License
+  - along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test io-toggle.js</title>
+    <link rel="stylesheet" href="../skin/common.css">
+    <link rel="stylesheet" href="../skin/fonts.css">
+    <link rel="stylesheet" href="../skin/desktop-options.css">
+    <link rel="stylesheet" href="../smoke/css/io-list-box.css">
+    <style>
+    body
+    {
+      padding-top: 300px;
+    }
+    </style>
+    <script defer src="../polyfill.js"></script>
+    <script defer src="../ext/common.js"></script>
+    <script defer src="../ext/content.js"></script>
+    <script defer src="../common.js"></script>
+    <script defer src="../i18n.js"></script>
+    <script defer src="./io-list-box.js"></script>
+  </head>
+  <body style="background:white;">
+    <io-list-box
+      onchange="console.log(event)"
+      placeholder="popup opened"
+    >+ Add Languages</io-list-box>
+    <script>
+    document.querySelector("io-list-box").items = [
+      {
+        "disabled": true,
+        "downloadStatus": null,
+        "homepage": null,
+        "value": "Bahasa Indonesia",
+        "originalTitle": "ABPindo+EasyList",
+        "recommended": "ads",
+        "url": "https://easylist-downloads.adblockplus.org/abpindo+easylist.txt"
+      },
+      {
+        "disabled": true,
+        "downloadStatus": null,
+        "homepage": null,
+        "value": "čeština, slovenčina",
+        "originalTitle": "EasyList Czech and Slovak+EasyList",
+        "recommended": "ads",
+        "url": "https://easylist-downloads.adblockplus.org/easylistczechslovak+easylist.txt"
+      },
+      {
+        "disabled": false,
+        "downloadStatus": "synchronize_ok",
+        "homepage": "https://easylist.adblockplus.org/",
+        "value": "Deutsch",
+        "originalTitle": "EasyList Germany+EasyList",
+        "recommended": "ads",
+        "url": "https://easylist-downloads.adblockplus.org/easylistgermany+easylist.txt",
+        "lastDownload": 1234,
+        "isDownloading": false
+      },
+      {
+        "disabled": true,
+        "downloadStatus": null,
+        "homepage": null,
+        "value": "English",
+        "originalTitle": "EasyList",
+        "recommended": "ads",
+        "url": "https://easylist-downloads.adblockplus.org/easylist.txt"
+      },
+      {
+        "disabled": true,
+        "downloadStatus": null,
+        "homepage": null,
+        "value": "español",
+        "originalTitle": "EasyList Spanish+EasyList",
+        "recommended": "ads",
+        "url": "https://easylist-downloads.adblockplus.org/easylistspanish+easylist.txt"
+      },
+      {
+        "disabled": true,
+        "downloadStatus": null,
+        "homepage": null,
+        "value": "français",
+        "originalTitle": "Liste FR+EasyList",
+        "recommended": "ads",
+        "url": "https://easylist-downloads.adblockplus.org/liste_fr+easylist.txt"
+      },
+      {
+        "disabled": true,
+        "downloadStatus": null,
+        "homepage": null,
+        "value": "italiano",
+        "originalTitle": "EasyList Italy+EasyList",
+        "recommended": "ads",
+        "url": "https://easylist-downloads.adblockplus.org/easylistitaly+easylist.txt"
+      },
+      {
+        "disabled": true,
+        "downloadStatus": null,
+        "homepage": null,
+        "value": "latviešu valoda",
+        "originalTitle": "Latvian List+EasyList",
+        "recommended": "ads",
+        "url": "https://easylist-downloads.adblockplus.org/latvianlist+easylist.txt"
+      },
+      {
+        "disabled": true,
+        "downloadStatus": null,
+        "homepage": null,
+        "value": "lietuvių kalba",
+        "originalTitle": "EasyList Lithuania+EasyList",
+        "recommended": "ads",
+        "url": "https://easylist-downloads.adblockplus.org/easylistlithuania+easylist.txt"
+      },
+      {
+        "disabled": true,
+        "downloadStatus": null,
+        "homepage": null,
+        "value": "Nederlands",
+        "originalTitle": "EasyList Dutch+EasyList",
+        "recommended": "ads",
+        "url": "https://easylist-downloads.adblockplus.org/easylistdutch+easylist.txt"
+      },
+      {
+        "disabled": true,
+        "downloadStatus": null,
+        "homepage": null,
+        "value": "românesc",
+        "originalTitle": "ROList+EasyList",
+        "recommended": "ads",
+        "url": "https://easylist-downloads.adblockplus.org/rolist+easylist.txt"
+      },
+      {
+        "disabled": true,
+        "downloadStatus": null,
+        "homepage": null,
+        "value": "Việt",
+        "originalTitle": "ABPVN List+EasyList",
+        "recommended": "ads",
+        "url": "https://easylist-downloads.adblockplus.org/abpvn+easylist.txt"
+      },
+      {
+        "disabled": true,
+        "downloadStatus": null,
+        "homepage": null,
+        "value": "български",
+        "originalTitle": "Bulgarian list+EasyList",
+        "recommended": "ads",
+        "url": "https://easylist-downloads.adblockplus.org/bulgarian_list+easylist.txt"
+      },
+      {
+        "disabled": true,
+        "downloadStatus": null,
+        "homepage": null,
+        "value": "русский, українська",
+        "originalTitle": "RuAdList+EasyList",
+        "recommended": "ads",
+        "url": "https://easylist-downloads.adblockplus.org/ruadlist+easylist.txt"
+      },
+      {
+        "disabled": true,
+        "downloadStatus": null,
+        "homepage": null,
+        "value": "עברית",
+        "originalTitle": "EasyList Hebrew+EasyList",
+        "recommended": "ads",
+        "url": "https://easylist-downloads.adblockplus.org/israellist+easylist.txt"
+      },
+      {
+        "disabled": true,
+        "downloadStatus": null,
+        "homepage": null,
+        "value": "العربية",
+        "originalTitle": "Liste AR+Liste FR+EasyList",
+        "recommended": "ads",
+        "url": "https://easylist-downloads.adblockplus.org/liste_ar+liste_fr+easylist.txt"
+      },
+      {
+        "disabled": true,
+        "downloadStatus": null,
+        "homepage": null,
+        "value": "中文",
+        "originalTitle": "EasyList China+EasyList",
+        "recommended": "ads",
+        "url": "https://easylist-downloads.adblockplus.org/easylistchina+easylist.txt"
+      }
+    ];
+    </script>
+  </body>
+</html>
