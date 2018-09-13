@@ -20,9 +20,6 @@
   "mops_error_title": {
     "message": "タイトルを入力してください"
   },
-  "mops_error_url": {
-    "message": "URL を入力してください"
-  },
   "mops_filterlist_add": {
     "message": "+ フィルターリストを追加"
   },

@@ -77,9 +77,6 @@
   "options_customize_blockElement_tooltip": {
     "message": "Ajutiselt blokeeri veebilehel tüütud elemendid, nt. pildid või animeeritud esitlused."
   },
-  "options_customize_header": {
-    "message": "Kohanda lehekülgedel olevaid tegevusi"
-  },
   "options_customize_showDevToolsPanel": {
     "message": "Näita arendaja tööriistades paneeli 'Adblock Plus'"
   },
@@ -88,9 +85,6 @@
   },
   "options_customize_showNotifications": {
     "message": "Näita kasulikke teateid"
-  },
-  "options_customize_showNotifications_tooltip": {
-    "message": "Lülita välja kõik Adblock Plusi teavitused."
   },
   "options_dialog_about_copyright": {
     "message": "Autoriõigus © $currentYear$ eyeo GmbH.",

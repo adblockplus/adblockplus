@@ -20,9 +20,6 @@
   "mops_error_title": {
     "message": "โปรดระบุชื่อเรื่อง"
   },
-  "mops_error_url": {
-    "message": "โปรดระบุลิงค์ URL"
-  },
   "mops_filterlist_add": {
     "message": "+ เพิ่มรายการตัวกรอง"
   },

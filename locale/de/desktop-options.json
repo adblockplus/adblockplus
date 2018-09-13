@@ -78,7 +78,7 @@
     "message": "Temporäres Blockieren von störenden Elementen auf einer Webseite, z. B Bilder oder animierte Diashows."
   },
   "options_customize_header": {
-    "message": "ANPASSEN VON ON-PAGE-AKTIONEN"
+    "message": "Anpassungen"
   },
   "options_customize_showDevToolsPanel": {
     "message": "Anzeigen des „Adblock Plus\"-Panels unter Entwicklertools"
@@ -90,7 +90,7 @@
     "message": "Zeige nützliche Benachrichtigungen"
   },
   "options_customize_showNotifications_tooltip": {
-    "message": "Deaktiviere alle Benachrichtigungen von Adblock Plus."
+    "message": "Benachrichtigungen von Adblock Plus zulassen (Benachrichtigungen in Bezug auf kritische Leistungsprobleme werden immer angezeigt.)"
   },
   "options_dialog_about_copyright": {
     "message": "Copyright © $currentYear$ eyeo GmbH.",

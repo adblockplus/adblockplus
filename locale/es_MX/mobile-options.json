@@ -20,9 +20,6 @@
   "mops_error_title": {
     "message": "Por favor, ingresa un título"
   },
-  "mops_error_url": {
-    "message": "Por favor, ingresa una dirección URL"
-  },
   "mops_filterlist_add": {
     "message": "+ Agregar una lista de filtros"
   },

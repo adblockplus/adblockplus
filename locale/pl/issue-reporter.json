@@ -62,6 +62,12 @@
   "issueReporter_privacyPolicy": {
     "message": "Zasady ochrony prywatności"
   },
+  "issueReporter_screenshot_hide": {
+    "message": "Ukryj"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "Wyróżnij"
+  },
   "issueReporter_sendButton_label": {
     "message": "Wyślij zgłoszenie"
   },

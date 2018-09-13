@@ -77,9 +77,6 @@
   "options_customize_blockElement_tooltip": {
     "message": "ウェブページで気障りな項目を一時的にブロックします（画像またはアニメーション表示のスライドショーなど）。"
   },
-  "options_customize_header": {
-    "message": "ページでのアクションをカスタマイズ"
-  },
   "options_customize_showDevToolsPanel": {
     "message": "開発者ツールの [Adblock Plus] パネルを表示させます"
   },
@@ -88,9 +85,6 @@
   },
   "options_customize_showNotifications": {
     "message": "有用な通知を表示"
-  },
-  "options_customize_showNotifications_tooltip": {
-    "message": "Adblock Plus からすべての通知をオフにします。"
   },
   "options_dialog_about_copyright": {
     "message": "Copyright © $currentYear$ eyeo GmbH.",

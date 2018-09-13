@@ -21,7 +21,7 @@
     "message": "Lütfen başlık girin"
   },
   "mops_error_url": {
-    "message": "Lütfen URL bağlantısı girin"
+    "message": "Geçerli bir URL girin"
   },
   "mops_filterlist_add": {
     "message": "+ Süzme listesi ekle"

@@ -21,7 +21,7 @@
     "message": "Veuillez entrer un titre"
   },
   "mops_error_url": {
-    "message": "Veuillez entrer une URL"
+    "message": "Saisir une URL valide"
   },
   "mops_filterlist_add": {
     "message": "+ Ajouter une liste de filtres"

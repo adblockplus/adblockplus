@@ -68,9 +68,6 @@
   "options_customize_blockElement_tooltip": {
     "message": "Временно блокиране на досадни елементи в страницата, т.е. картини или анимирани слайдове."
   },
-  "options_customize_header": {
-    "message": "Действия за страницата"
-  },
   "options_customize_showDevToolsPanel": {
     "message": "Показвай панел „Adblock Plus“ към инструментите за разработка"
   },
@@ -79,9 +76,6 @@
   },
   "options_customize_showNotifications": {
     "message": "Показвай полезни уведомявания"
-  },
-  "options_customize_showNotifications_tooltip": {
-    "message": "Изключване на уведомяването в Adblock Plus."
   },
   "options_dialog_about_copyright": {
     "message": "Авторски права © eyeo GmbH, $currentYear$ г.",

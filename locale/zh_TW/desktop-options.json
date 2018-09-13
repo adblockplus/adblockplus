@@ -65,9 +65,6 @@
   "options_customize_blockElement_tooltip": {
     "message": "暫時屏蔽網頁上的煩人項目，例如：圖片或動畫幻燈片。"
   },
-  "options_customize_header": {
-    "message": "自定義頁面操作"
-  },
   "options_customize_showDevToolsPanel": {
     "message": "在開發人員工具中顯示“Adblock Plus”面板"
   },
@@ -76,9 +73,6 @@
   },
   "options_customize_showNotifications": {
     "message": "顯示有用的通知"
-  },
-  "options_customize_showNotifications_tooltip": {
-    "message": "關閉 Adblock Plus 的所有通知。"
   },
   "options_dialog_about_copyright": {
     "message": "版權所有 © $currentYear$ eyeo GmbH。",

@@ -68,9 +68,6 @@
   "options_customize_blockElement_tooltip": {
     "message": "Privremeno blokiraj nametljive stavke na web stranici, npr. slike ili animirane prezentacije."
   },
-  "options_customize_header": {
-    "message": "Prilagodi radnje na stranici"
-  },
   "options_customize_showDevToolsPanel": {
     "message": "Prikaži 'Adblock Plus' panel u alatima razvijatelja"
   },
@@ -79,9 +76,6 @@
   },
   "options_customize_showNotifications": {
     "message": "Prikaži korisne obavijesti"
-  },
-  "options_customize_showNotifications_tooltip": {
-    "message": "Isključi sve obavijesti iz Adblock Plusa."
   },
   "options_dialog_about_copyright": {
     "message": "Autorsko pravo © $currentYear$ eyeo GmbH.",

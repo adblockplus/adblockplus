@@ -21,7 +21,7 @@
     "message": "Bitte gib einen Titel ein"
   },
   "mops_error_url": {
-    "message": "Bitte gib eine URL ein"
+    "message": "Gib eine gültige URL ein."
   },
   "mops_filterlist_add": {
     "message": "+ Filterliste hinzufügen"

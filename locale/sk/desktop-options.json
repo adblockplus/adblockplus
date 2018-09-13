@@ -68,9 +68,6 @@
   "options_customize_blockElement_tooltip": {
     "message": "Dočasne blokovať obťažujúce položky na webovej stránke, napríklad obrázky alebo animované prezentácie."
   },
-  "options_customize_header": {
-    "message": "Prispôsobte si akcie na stránke"
-  },
   "options_customize_showDevToolsPanel": {
     "message": "Zobraziť panel \"Adblock Plus\" v nástrojoch pre vývojárov"
   },
@@ -79,9 +76,6 @@
   },
   "options_customize_showNotifications": {
     "message": "Zobraziť užitočné upozornenia"
-  },
-  "options_customize_showNotifications_tooltip": {
-    "message": "Vypnite všetky upozornenia z Adblock Plus."
   },
   "options_dialog_about_copyright": {
     "message": "Autorské práva © $currentYear$ eyeo GmbH.",

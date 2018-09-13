@@ -65,17 +65,11 @@
   "options_customize_blockElement_tooltip": {
     "message": "Īslaicīgi bloķēt tīmekļlapā esošos vienumus, piemēram, attēlus vai animētas slaidrādes."
   },
-  "options_customize_header": {
-    "message": "Pielāgot darbības lapā"
-  },
   "options_customize_showDevToolsPanel": {
     "message": "Rādīt 'Adblock plus' paneli izstrādātāju rīkos"
   },
   "options_customize_showNotifications": {
     "message": "Rādīt noderīgus paziņojumus"
-  },
-  "options_customize_showNotifications_tooltip": {
-    "message": "Izslēgt visus Adblock Plus paziņojumus."
   },
   "options_dialog_about_copyright": {
     "message": "Autortiesības © $currentYear$ eyeo GmbH.",

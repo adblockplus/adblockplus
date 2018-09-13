@@ -78,7 +78,7 @@
     "message": "Sayfadaki can sıkıcı öğeleri geçici olarak engelle (örn. resimler veya canlandırılmış sunumlar)."
   },
   "options_customize_header": {
-    "message": "Sayfa eylemlerini özelleştir"
+    "message": "Özelleştirmeler"
   },
   "options_customize_showDevToolsPanel": {
     "message": "Geliştirici araçlarında 'Adblock Plus' panelini göster"
@@ -90,7 +90,7 @@
     "message": "Yararlı bildirimlerini göster"
   },
   "options_customize_showNotifications_tooltip": {
-    "message": "Tüm Adblock Plus bildirimlerini devre dışı bırak."
+    "message": "Adblock Plus’tan gelen tüm bildirimlere izin ver (kritik performans sorunlarıyla ilgili bildirimler her zaman gösterilir)."
   },
   "options_dialog_about_copyright": {
     "message": "Telif Hakkı © $currentYear$ eyeo GmbH.",

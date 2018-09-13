@@ -21,7 +21,7 @@
     "message": "Пожалуйста, введите название"
   },
   "mops_error_url": {
-    "message": "Пожалуйста, введите URL"
+    "message": "Ввести действительную URL"
   },
   "mops_filterlist_add": {
     "message": "+ Добавить список фильтров"

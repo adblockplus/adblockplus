@@ -68,9 +68,6 @@
   "options_customize_blockElement_tooltip": {
     "message": "Laikinai puslapyje blokuoti įkyrius elementus, pvz. paveikslėlius ar skaidres."
   },
-  "options_customize_header": {
-    "message": "Derinti „puslapyje“ veiksmus"
-  },
   "options_customize_showDevToolsPanel": {
     "message": "Rodyti „Adblock Plus“ valdymo pultą kūrėjo įrankiuose"
   },
@@ -79,9 +76,6 @@
   },
   "options_customize_showNotifications": {
     "message": "Rodyti naudingus pranešimus"
-  },
-  "options_customize_showNotifications_tooltip": {
-    "message": "Išjungti visus Adblock Plus pranešimus."
   },
   "options_dialog_about_copyright": {
     "message": "Autorinės teisės © $currentYear$ eyeo GmbH.",

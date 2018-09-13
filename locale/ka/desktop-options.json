@@ -77,9 +77,6 @@
   "options_customize_blockElement_tooltip": {
     "message": "ვებგვერდზე მომაბეზრებელი შიგთავსის დროებით შეზღუდვა, მაგ. სურათებისა და მოძრავი სლაიდების."
   },
-  "options_customize_header": {
-    "message": "ვებგვერდზე მოქმედებების განსაზღვრა"
-  },
   "options_customize_showDevToolsPanel": {
     "message": "'Adblock Plus'-ის არე შემმუშავებლის ხელსაწყოებში"
   },
@@ -88,9 +85,6 @@
   },
   "options_customize_showNotifications": {
     "message": "საჭირო შეტყობინებების ჩვენება"
-  },
-  "options_customize_showNotifications_tooltip": {
-    "message": "Adblock Plus-ის ყველა შეტყობინების გათიშვა."
   },
   "options_dialog_about_copyright": {
     "message": "მფლობელი © $currentYear$ eyeo GmbH.",

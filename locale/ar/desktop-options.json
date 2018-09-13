@@ -77,9 +77,6 @@
   "options_customize_blockElement_tooltip": {
     "message": "حجب العناصر المزعجة مؤقتًا في إحدى صفحات الويب، مثل الصور أو عروض شرائح الرسوم المتحركة."
   },
-  "options_customize_header": {
-    "message": "تخصيص الإجراءات التي تتم في الصفحة حسب تفضيلاتك الشخصية"
-  },
   "options_customize_showDevToolsPanel": {
     "message": "عرض لوحة 'Adblock Plus' في أدوات المطور"
   },
@@ -88,9 +85,6 @@
   },
   "options_customize_showNotifications": {
     "message": "أظهر الأشعارات الهامة"
-  },
-  "options_customize_showNotifications_tooltip": {
-    "message": "أوقف تشغيل كل الإخطارات من Adblock Plus."
   },
   "options_dialog_about_copyright": {
     "message": "حقوق النشر © $currentYear$ eyeo GmbH.",

@@ -62,9 +62,6 @@
   "options_customize_blockElement_tooltip": {
     "message": "Αποκλείστε προσωρινά ενοχλητικά στοιχεία σε μια ιστοσελίδα, π.χ. εικόνες ή κινούμενες προβολές εικόνων."
   },
-  "options_customize_header": {
-    "message": "ΠΡΟΣΑΡΜΟΓΗ ΕΝΕΡΓΕΙΩΝ ΣΕ ΣΕΛΙΔΑ"
-  },
   "options_customize_showDevToolsPanel": {
     "message": "Εμφάνιση του πίνακα \"Adblock Plus\" στα εργαλεία ανάπτυξης"
   },
@@ -73,9 +70,6 @@
   },
   "options_customize_showNotifications": {
     "message": "Εμφάνιση χρήσιμων ειδοποιήσεων"
-  },
-  "options_customize_showNotifications_tooltip": {
-    "message": "Απενεργοποίηση όλων των ειδοποιήσεων από το Adblock Plus."
   },
   "options_dialog_about_copyright": {
     "message": "Πνευματικά δικαιώματα © $currentYear$ eyeo GmbH.",
