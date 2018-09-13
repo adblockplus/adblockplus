@@ -106,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () =>
         {
           showDataOverlay.hidden = false;
 
+          reportWithScreenshot(xmlReport, {screenshot: $("io-highlighter")});
           const element = $("#showDataValue");
           element.textContent = serializeReportData(xmlReport);
           element.focus();
@@ -164,9 +165,11 @@ function serializeReportData(xmlReport)
 function reportWithScreenshot(xmlReport, stepsData)
 {
   const {edited, data} = stepsData.screenshot;
-  const element = xmlReport.createElement("screenshot");
+  const element = $("screenshot", xmlReport.documentElement) ||
+                  xmlReport.createElement("screenshot");
   element.setAttribute("edited", edited);
-  element.textContent = data;
+  const proc = browser.i18n.getMessage("issueReporter_processing_screenshot");
+  element.textContent = data || `data:image/png;base64,...${proc}...`;
   xmlReport.documentElement.appendChild(element);
   return xmlReport;
 }
