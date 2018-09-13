@@ -211,7 +211,7 @@
   },
   "options_customize_showNotifications_tooltip": {
     "description": "Tooltip text for Show notifications option item of customize section in Advanced tab",
-    "message": "Turn off all notifications from Adblock Plus."
+    "message": "Allow notifications from Adblock Plus (notifications related to critical performance issues will always be shown)."
   },
   "options_filterList_title": {
     "description": "Section title in Advanced tab",
