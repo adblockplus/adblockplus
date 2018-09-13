@@ -1342,28 +1342,27 @@ body[data-dialog] #dialog-background
   margin: 1rem 1.8rem;
 }
 
-[data-dialog="language-change"] .dialog-content,
-[data-dialog="language-add"] .dialog-content
+#dialog-content-language-add
 {
   margin: 0rem;
 }
 
-[data-dialog="about"] .dialog-content
+#dialog-content-about
 {
   text-align: center;
 }
 
-[data-dialog="about"] .content button
+#dialog-content-about button
 {
   margin: 1.5rem auto 1.8rem;
 }
 
-[data-dialog="about"] p
+#dialog-content-about p
 {
   margin: 0.5rem 0rem;
 }
 
-[data-dialog="import"] .side-controls
+#dialog-content-import .side-controls
 {
   margin-top: 2.45rem;
 }
