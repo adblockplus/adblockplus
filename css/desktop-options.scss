@@ -1544,6 +1544,11 @@ body[data-dialog] #dialog-background
   word-wrap: break-word;
 }
 
+#dialog-content-predefined h3:empty
+{
+  display: none;
+}
+
 body:not([data-dialog="about"]) #dialog-title-about,
 body:not([data-dialog="about"]) #dialog-content-about,
 body:not([data-dialog="import"]) #dialog-title-import,

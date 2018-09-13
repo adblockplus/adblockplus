@@ -528,11 +528,26 @@
     // so we'll post the message after one second
     setTimeout(() =>
     {
+      const url = "http://example.com/custom.txt";
+
+      let title = "Custom subscription";
+      switch (params.addSubscription)
+      {
+        case "title-none":
+          title = null;
+          break;
+        // The extension falls back to the given URL
+        // when the link doesn't specify a title
+        // https://hg.adblockplus.org/adblockpluschrome/file/56f54c897e3a/subscriptionLink.postload.js#l86
+        case "title-url":
+          title = url;
+          break;
+      }
+
       window.postMessage({
         type: "message",
         payload: {
-          title: "Custom subscription",
-          url: "http://example.com/custom.txt",
+          title, url,
           confirm: true,
           type: "subscriptions.add"
         }

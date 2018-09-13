@@ -335,11 +335,7 @@
     const title = fields.title.value;
     const url = fields.url.value;
 
-    if (!title)
-    {
-      setError(dialogSubscribe, "title");
-    }
-    else if (!url)
+    if (!url)
     {
       setError(dialogSubscribe, "url");
     }
@@ -362,10 +358,14 @@
         {
           case "addSubscription":
             const [subscription] = msg.args;
-            setDialog(dialogSubscribe, {
-              title: subscription.title,
-              url: subscription.url
-            });
+
+            let {title, url} = subscription;
+            if (!title || title == url)
+            {
+              title = "";
+            }
+
+            setDialog(dialogSubscribe, {title, url});
             break;
           case "showPageOptions":
             const [{host, whitelisted}] = msg.args;
