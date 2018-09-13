@@ -67,12 +67,12 @@ getTab.then(tab =>
 .then(tab =>
 {
   const hostname = new URL(tab.url).hostname.replace(/^www\./, "");
-  document.getElementById("blocking-domain").textContent = hostname;
-  document.getElementById("issue-reporter").addEventListener(
+  $("#blocking-domain").textContent = hostname;
+  $("#issue-reporter").addEventListener(
     "click", () => reportIssue(tab)
   );
   // drop the text content but keep it as aria-label
-  const options = document.getElementById("options");
+  const options = $("#options");
   options.setAttribute("aria-label", options.textContent);
   options.textContent = "";
   options.addEventListener("click", () =>
@@ -123,7 +123,7 @@ function gotoMobile(event)
 
 function updateStats(tab)
 {
-  const statsPage = document.getElementById("stats-page");
+  const statsPage = $("#stats-page");
   browser.runtime.sendMessage({
     type: "stats.getBlockedPerPage",
     tab
@@ -134,7 +134,7 @@ function updateStats(tab)
                             [blockedPage.toLocaleString()]);
   });
 
-  const statsTotal = document.getElementById("stats-total");
+  const statsTotal = $("#stats-total");
   getPref("blocked_total", blockedTotal =>
   {
     ext.i18n.setElementText(statsTotal, "stats_label_total",

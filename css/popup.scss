@@ -43,7 +43,8 @@ h2
 
 body.nohtml #block-element,
 body.disabled #stats-page,
-body.ignore #page-info
+body.ignore #page-status,
+body.ignore #default-container .options
 {
   display: none;
 }
@@ -481,6 +482,15 @@ main .options button[disabled]
 main .options button:not([disabled]):hover .report::before
 {
   background-image: url(icons/report-issue.svg?hover#hover);
+}
+
+/* creates a gap between bold numbers and text (both rtl and ltr) */
+#stats-page strong::after,
+#stats-total strong::after
+{
+  display: inline-block;
+  margin: 4px;
+  content: "";
 }
 
 body:not(.disabled) main .options button:hover .block::before
