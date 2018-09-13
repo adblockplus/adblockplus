@@ -1483,9 +1483,14 @@ port.postMessage({
 });
 port.postMessage({
   type: "prefs.listen",
-  filter: ["notifications_ignoredcategories", "notifications_showui",
-           "show_devtools_panel", "shouldShowBlockElementMenu",
-           "ui_warn_tracking"]
+  filter: [
+    "notifications_ignoredcategories",
+    "notifications_showui",
+    "shouldShowBlockElementMenu",
+    "show_devtools_panel",
+    "show_statsinicon",
+    "ui_warn_tracking"
+  ]
 });
 port.postMessage({
   type: "subscriptions.listen",

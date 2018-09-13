@@ -116,6 +116,7 @@
     notifications_showui: params.showNotificationUI,
     shouldShowBlockElementMenu: true,
     show_devtools_panel: true,
+    show_statsinicon: true,
     ui_warn_tracking: true,
     additional_subscriptions: params.additionalSubscriptions.split(","),
     subscriptions_exceptionsurl: acceptableAds,
