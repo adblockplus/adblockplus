@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Po zaključku tega popup kliknite (ali desni klik) element na strani."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Omogočeno</strong> na tej strani"
+  },
+  "easy_create_filter": {
+    "message": "Blokiraj element"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Omogočeno</strong> na tej strani"
+  },
+  "options_short": {
+    "message": "Možnosti"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Ustavi prikazovanje obvestil"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> na tej strani",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> skupaj",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Pokaži število v ikoni"
+  },
+  "stats_title": {
+    "message": "Blokiranih oglasov"
+  }
+}

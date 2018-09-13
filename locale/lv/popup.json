@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Pēc šī uznirstošā loga aizvēršanas, noklikšķiniet (vai noklikšķiniet ar labo pogu) uz elementa šajā lapā."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Izslēgts</strong> šajā lapā"
+  },
+  "easy_create_filter": {
+    "message": "Bloķēt elementu"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Ieslēgts</strong> šajā lapā"
+  },
+  "options_short": {
+    "message": "Iespējas"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Pārtraukt rādīt paziņojumus"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> šajā lapā",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> pavisam",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Parādīt skaitli ikonā"
+  },
+  "stats_title": {
+    "message": "Bloķētās reklāmas"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "このポップアップが閉じた後にページ上の要素をクリック(または右クリック)してください。"
+  },
+  "disabled_for_site": {
+    "message": "このサイトで<strong>無効</strong>"
+  },
+  "easy_create_filter": {
+    "message": "要素をブロック"
+  },
+  "enabled_for_site": {
+    "message": "このサイトで<strong>有効</strong>"
+  },
+  "options_short": {
+    "message": "オプション"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "通知の表示を停止"
+  },
+  "stats_label_page": {
+    "message": "このページ内で <strong>$number$</strong>",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "これまでの累計で  <strong>$number$</strong>",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "アイコン上に数字を表示"
+  },
+  "stats_title": {
+    "message": "ブロックした広告"
+  }
+}

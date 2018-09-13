@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "După închiderea acestui pop-up, clic (sau clic-dreapta) pe un element de pe pagină."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Dezactivat</strong> pe acest site"
+  },
+  "easy_create_filter": {
+    "message": "Blochează elementul"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Activat</strong> pe acest site"
+  },
+  "options_short": {
+    "message": "Opţiuni"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Opreşte afişarea notificărilor"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> pe această pagină",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> în total",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Arată numerele în pictograma"
+  },
+  "stats_title": {
+    "message": "Reclame blocate"
+  }
+}

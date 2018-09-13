@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "לאחר סגירת חלון קופץ זה, לחץ (או לחץ לחיצה ימנית) על יסוד בעמוד זה."
+  },
+  "disabled_for_site": {
+    "message": "<strong>מושבת</strong> באתר זה"
+  },
+  "easy_create_filter": {
+    "message": "חסום יסוד"
+  },
+  "enabled_for_site": {
+    "message": "<strong>מאופשר</strong> באתר זה"
+  },
+  "options_short": {
+    "message": "אפשרויות"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "הפסק להראות התראות"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> בעמוד זה",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> בסך הכל",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "הראה מספרים בצלמית"
+  },
+  "stats_title": {
+    "message": "פרסומות חסומות"
+  }
+}

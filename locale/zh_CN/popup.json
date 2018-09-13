@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "本弹窗自动关闭后，请点击（或右击）当前页面上的一个元素。"
+  },
+  "disabled_for_site": {
+    "message": "在当前网站上 <strong>禁用</strong>"
+  },
+  "easy_create_filter": {
+    "message": "拦截元素"
+  },
+  "enabled_for_site": {
+    "message": "在当前网站上 <strong>启用</strong>"
+  },
+  "options_short": {
+    "message": "设置"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "不再显示通知"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> 在此页上",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "总计 <strong>$number$</strong> 条",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "在图标上显示数量"
+  },
+  "stats_title": {
+    "message": "已拦截广告数"
+  }
+}

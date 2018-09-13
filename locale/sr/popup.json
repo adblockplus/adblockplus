@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Након што затворите овај искачући прозор, притисните левим или десним тастером миша на елемент на овој страници."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Онемогући</strong> на овом сајту"
+  },
+  "easy_create_filter": {
+    "message": "Блокирај елемент"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Омогући</strong> на овом сајту"
+  },
+  "options_short": {
+    "message": "Опције"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Не приказуј обавештења"
+  },
+  "stats_label_page": {
+    "message": "На овој страници: <strong>$number$</strong>",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "Укупно: <strong>$number$</strong>",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Прикажи број на икони"
+  },
+  "stats_title": {
+    "message": "Блокирани огласи"
+  }
+}

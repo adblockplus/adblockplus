@@ -1,0 +1,39 @@
+{
+  "clickhide_instructions": {
+    "message": "Pagkatapos isara itong pop-up, pindutin ang kaliwang mouse button (o kanang mouse button) ang element ng pahinang ito."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Hindi Maaari</strong> sa site na ito"
+  },
+  "easy_create_filter": {
+    "message": "Ihinto ang element"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Gumagana</strong> sa site na ito"
+  },
+  "options_short": {
+    "message": "Mga pagpipilian"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> sa pahinang ito",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> sa kabuuan",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Ipakita ang mga numero sa icon"
+  },
+  "stats_title": {
+    "message": "Napigilan ang mga ads"
+  }
+}

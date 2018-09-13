@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Miután bezártad ezt a buborékot, kattints egy elemre az oldalon.."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Kikapcsolva</strong> ezen a weboldalon"
+  },
+  "easy_create_filter": {
+    "message": "Elem blokkolása"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Engedélyezve</strong> ezen a weboldalon"
+  },
+  "options_short": {
+    "message": "Beállítások"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Ne jelenjenek meg értesítések"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> ezen az oldalon",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> összesen",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Blokkolt reklámok számának kijelzése az ikonon"
+  },
+  "stats_title": {
+    "message": "Blokkolt reklámok:"
+  }
+}

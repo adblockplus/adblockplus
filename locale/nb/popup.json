@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Klikk (eller høyreklikk) på et element på siden etter at du har lukket dette vinduet."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Deaktivert</strong> på dette nettstedet"
+  },
+  "easy_create_filter": {
+    "message": "Blokkér element"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Aktivert</strong> på dette nettstedet"
+  },
+  "options_short": {
+    "message": "Alternativer"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Ikke vis flere varsler"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> på denne siden",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> totalt",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Vis tall i ikonet"
+  },
+  "stats_title": {
+    "message": "Blokkerte annonser"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "इस पॉपअप को बंद करने के बाद पृष्ठ के किसी एक अंग पर क्लिक (अथवा दाएं क्लिक) करे।"
+  },
+  "disabled_for_site": {
+    "message": "इस साइट पर <strong>इस्तेमाल न करे</strong>"
+  },
+  "easy_create_filter": {
+    "message": "तत्वों को प्रतिबंधित करें"
+  },
+  "enabled_for_site": {
+    "message": "इस साईट पर <strong>इस्तमाल हो रहा है </strong>"
+  },
+  "options_short": {
+    "message": "विकल्प"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "नोटिफिकेशन दिखाना बंद करें"
+  },
+  "stats_label_page": {
+    "message": "इस पृष्ठ पर <strong>$number$</strong>",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "कुल <strong>$number$</strong>",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "आइकॉन में अंक दर्शाएँ"
+  },
+  "stats_title": {
+    "message": "प्रचार अवरुद्ध किये गए"
+  }
+}

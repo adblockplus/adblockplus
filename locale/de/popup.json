@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Nachdem dieses Fenster geschlossen ist, klicken Sie ein Element auf der Seite an, welches Sie blockieren wollen."
+  },
+  "disabled_for_site": {
+    "message": "Auf dieser Seite <strong>deaktiviert</strong>"
+  },
+  "easy_create_filter": {
+    "message": "Element blockieren"
+  },
+  "enabled_for_site": {
+    "message": "Auf dieser Seite <strong>aktiviert</strong>"
+  },
+  "options_short": {
+    "message": "Optionen"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Benachrichtigungen unterdrücken"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> auf dieser Seite",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> insgesamt",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Anzahl im Symbol anzeigen"
+  },
+  "stats_title": {
+    "message": "Blockierte Werbeanzeigen"
+  }
+}

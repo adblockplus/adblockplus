@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Μετά το κλείσιμο αυτού του αναδυόμενου παραθύρου, κάντε κλικ (ή δεξί κλικ) σε ένα στοιχείο στη σελίδα."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Απενεργοποιημένο</strong> σε αυτή την σελίδα"
+  },
+  "easy_create_filter": {
+    "message": "Φραγή στοιχείου"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Ενεργοποιημένο</strong> σε αυτή την σελίδα"
+  },
+  "options_short": {
+    "message": "Επιλογές"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Διακοπή εμφάνισης ειδοποιήσεων"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> σε αυτή την σελίδα",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> συνολικά",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Εμφάνιση του αριθμού στο εικονίδιο"
+  },
+  "stats_title": {
+    "message": "Φραγμένες διαφημίσεις"
+  }
+}

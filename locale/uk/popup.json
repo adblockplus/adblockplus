@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Після закриття цього спливаючого вікна клацніть по елементу сторінки лівою чи правою кнопкою миші."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Вимкнено</strong> на цьому сайті"
+  },
+  "easy_create_filter": {
+    "message": "Заблокувати елемент"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Увімкнено</strong> на цьому сайті"
+  },
+  "options_short": {
+    "message": "Налаштування"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Заборонити показ повідомлень"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> на цій сторінці",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> всього",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Показувати число у значку"
+  },
+  "stats_title": {
+    "message": "Статистика блокування"
+  }
+}

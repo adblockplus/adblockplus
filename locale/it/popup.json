@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Dopo la chiusura di questo pop-up, cliccate (o clic destro) su un elemento sulla pagina."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Disattivato</strong> su questo sito"
+  },
+  "easy_create_filter": {
+    "message": "Blocca Elemento"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Attivato</strong> su questo sito"
+  },
+  "options_short": {
+    "message": "Opzioni"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Interrompere la visualizzazione delle notifiche"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> in questa pagina",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> in totale",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Visualizza il numero nell'icona"
+  },
+  "stats_title": {
+    "message": "Annunci bloccati"
+  }
+}

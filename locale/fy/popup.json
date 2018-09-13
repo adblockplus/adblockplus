@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Klik (of klik mei de rjochtermûsknop) nei it sluten fan dizze pop-up op in elemint op de side."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Utskeakele</strong> op dizze website"
+  },
+  "easy_create_filter": {
+    "message": "Elemint blokkearje"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Ynskeakele</strong> op dizze website"
+  },
+  "options_short": {
+    "message": "Opsjes"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Toanen fan meldingen stopje"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> op dizze side",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> yn totaal",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Oantal yn piktogram toane"
+  },
+  "stats_title": {
+    "message": "Blokkearre advertinsjes"
+  }
+}

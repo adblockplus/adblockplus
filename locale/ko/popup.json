@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "이 팝업을 닫은 후 웹 페이지에서 HTML 요소를 클릭하십시오."
+  },
+  "disabled_for_site": {
+    "message": "이 사이트에서 <strong>광고 차단을 사용 중지</strong> 합니다."
+  },
+  "easy_create_filter": {
+    "message": "항목 차단"
+  },
+  "enabled_for_site": {
+    "message": "이 사이트에서 <strong>광고 차단을 사용</strong>합니다"
+  },
+  "options_short": {
+    "message": "설정"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "알림 표시를 중지합니다"
+  },
+  "stats_label_page": {
+    "message": "이 페이지에서 <strong>$number$</strong> 개",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "총 <strong>$number$</strong> 개",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "아이콘에 차단된 광고 개수 표시"
+  },
+  "stats_title": {
+    "message": "차단된 광고"
+  }
+}

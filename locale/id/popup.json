@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Setelah menutup munculan ini , klik (atau klik kanan) elemen pada halaman web."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Nonaktifkan</strong> pada situs ini"
+  },
+  "easy_create_filter": {
+    "message": "Blokir elemen"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Diaktifkan</strong> pada situs ini"
+  },
+  "options_short": {
+    "message": "Pilihan"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Hentikan menampilkan pemberitahuan"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> pada halaman ini",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> totalnya",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Tampilkan angka didalam ikon"
+  },
+  "stats_title": {
+    "message": "Iklan terblokir"
+  }
+}

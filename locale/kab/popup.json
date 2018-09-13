@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Ticki yemmed usfaylu-agi udhim, sit ɣef (neɣ s tqeffalt teyeffus) ɣef uferdis deg usebter."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Insa </strong> ɣef usmel-agi"
+  },
+  "easy_create_filter": {
+    "message": "Sewḥel aferid"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Irmed</strong> ɣef usmel-agi"
+  },
+  "options_short": {
+    "message": "Iɣewwaṛen"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Seḥbes askan n yilɣa"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> ɣef usebter-agi",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> s umata",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Sken uṭṭun ɣef tignit"
+  },
+  "stats_title": {
+    "message": "Adellel iweḥlen"
+  }
+}

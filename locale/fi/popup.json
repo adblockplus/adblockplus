@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Tämän ikkunan sulkemisen jälkeen klikkaa (tai oikea klikkaa) elementtiä jonka haluat estää."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Poistettu</strong> tältä sivulta"
+  },
+  "easy_create_filter": {
+    "message": "Estä elementti"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Käytössä</strong> tällä sivulla"
+  },
+  "options_short": {
+    "message": "Asetukset"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Lopeta ilmoitusten näyttäminen"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> tällä sivulla",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> yhteensä",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Näytä numerot kuvakkeessa"
+  },
+  "stats_title": {
+    "message": "Mainokset estetty"
+  }
+}

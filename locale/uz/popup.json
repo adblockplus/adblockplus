@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "Бу қалқиб чиқувчи ойнани ёпгандан кейин, саҳифадаги элемент устида сичқончанинг ўнг ёки чап тугмасини босинг."
+  },
+  "disabled_for_site": {
+    "message": "Бу сайтда <strong>фаолсизлантирилган</strong>"
+  },
+  "easy_create_filter": {
+    "message": "Элементни блоклаш"
+  },
+  "enabled_for_site": {
+    "message": "Бу сайтда <strong>ёқилган</strong>"
+  },
+  "options_short": {
+    "message": "Параметрлар"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Билдиришномалар кўрсатилмасин"
+  },
+  "stats_label_page": {
+    "message": "Бу саҳифада: <strong>$number$</strong>",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "Жами: <strong>$number$</strong>",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Иконкада рақам кўрсатилсин"
+  },
+  "stats_title": {
+    "message": "Блокланган рекламалар"
+  }
+}

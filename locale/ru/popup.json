@@ -1,0 +1,42 @@
+{
+  "clickhide_instructions": {
+    "message": "После закрытия этого всплывающего окна, щёлкните на элементе левой или правой кнопкой мыши."
+  },
+  "disabled_for_site": {
+    "message": "<strong>Отключен</strong> на этом сайте"
+  },
+  "easy_create_filter": {
+    "message": "Заблокировать элемент"
+  },
+  "enabled_for_site": {
+    "message": "<strong>Включён</strong> на этом сайте"
+  },
+  "options_short": {
+    "message": "Настройки"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Запретить показ уведомлений"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> на этой странице",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> всего",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_show_iconnumber": {
+    "message": "Показывать число в значке"
+  },
+  "stats_title": {
+    "message": "Статистика блокирования"
+  }
+}
