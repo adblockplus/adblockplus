@@ -187,7 +187,7 @@
   },
   "options_customize_header": {
     "description": "Section title in Advanced tab",
-    "message": "Customize on-page actions"
+    "message": "Customizations"
   },
   "options_customize_blockElement": {
     "description": "Option label of customize section in Advanced tab",
