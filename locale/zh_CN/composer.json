@@ -1,7 +1,4 @@
 {
-  "add": {
-    "message": "添加"
-  },
   "add_filters_msg": {
     "message": "添加过滤规则？"
   },
