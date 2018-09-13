@@ -1,21 +1,42 @@
 {
+  "click_element_to_block_it": {
+    "message": "Sayfada engellemek istediğiniz ögenin üzerine tıklayın."
+  },
   "clickhide_instructions": {
-    "message": "Bu açılır pencereyi kapattıktan sonra, sayfadaki bir öğeye farenin sol veya sağ tuşuyla tıklayın."
+    "message": "Bu talimatları kapattıktan sonra, sayfadaki bir ögeye tıklayın (veya sağ tıkayın)."
   },
   "disabled_for_site": {
     "message": "Bu sitede <strong>devre dışı</strong>"
   },
   "easy_create_filter": {
-    "message": "Öğe engelle"
+    "message": "Ögeyi engelle"
   },
   "enabled_for_site": {
     "message": "Bu sitede <strong>etkin</strong>"
   },
+  "options_refresh": {
+    "message": "Yenile"
+  },
   "options_short": {
     "message": "Seçenekler"
   },
+  "overlay_notification_closing_button_hide": {
+    "message": "Kapat"
+  },
   "overlay_notification_closing_button_optout": {
-    "message": "Bildirimleri göstermeyi durdur"
+    "message": "Bildirimleri gösterme"
+  },
+  "promote_abp_module": {
+    "message": "Adblock Plus’ın mobil versiyonunu denemek ister misiniz?"
+  },
+  "refresh_to_take_effect": {
+    "message": "Değişiklikleri etkinleştirmek için <strong>Yenile</strong> seçeneğine tıklayın."
+  },
+  "sendReport": {
+    "message": "Sorun bildir"
+  },
+  "stats_header": {
+    "message": "Engellenen ögelerin sayısı"
   },
   "stats_label_page": {
     "message": "Bu sayfada <strong>$number$</strong>",
@@ -34,9 +55,12 @@
     }
   },
   "stats_show_iconnumber": {
-    "message": "Simgede sayıyı göster"
+    "message": "Sayıyı simgede göster"
   },
   "stats_title": {
     "message": "Engellenen reklamlar"
+  },
+  "status_header": {
+    "message": "Aşağıdaki adreste reklamları engelle:"
   }
 }

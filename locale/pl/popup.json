@@ -1,21 +1,42 @@
 {
+  "click_element_to_block_it": {
+    "message": "Kliknij element strony, aby go zablokować."
+  },
   "clickhide_instructions": {
-    "message": "Po zamknięciu tego okna kliknij niechciany element lewym lub prawym przyciskiem."
+    "message": "Po zamknięciu tego wyskakującego okienka kliknij (lub kliknij prawym przyciskiem myszy) dowolny element strony."
   },
   "disabled_for_site": {
-    "message": "<strong>Wyłączony</strong> na tej witrynie"
+    "message": "<strong>Wyłączony</strong> w tej witrynie"
   },
   "easy_create_filter": {
-    "message": "Blokuj element"
+    "message": "Zablokuj element"
   },
   "enabled_for_site": {
-    "message": "<strong>Włączony</strong> na tej witrynie"
+    "message": "<strong>Włączony</strong> w tej witrynie"
+  },
+  "options_refresh": {
+    "message": "Odśwież"
   },
   "options_short": {
     "message": "Opcje"
   },
+  "overlay_notification_closing_button_hide": {
+    "message": "Zamknij"
+  },
   "overlay_notification_closing_button_optout": {
-    "message": "Nie wyświetlaj powiadomień"
+    "message": "Przestań wyświetlać powiadomienia"
+  },
+  "promote_abp_module": {
+    "message": "Interesuje Cię Adblock Plus dla urządzeń przenośnych?"
+  },
+  "refresh_to_take_effect": {
+    "message": "Kliknij <strong>Odśwież</strong>, aby zmiany zostały wprowadzone."
+  },
+  "sendReport": {
+    "message": "Zgłoś problem"
+  },
+  "stats_header": {
+    "message": "Liczba zablokowanych elementów"
   },
   "stats_label_page": {
     "message": "<strong>$number$</strong> na tej stronie",
@@ -26,7 +47,7 @@
     }
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> w sumie",
+    "message": "<strong>$number$</strong> łącznie",
     "placeholders": {
       "number": {
         "content": "$1"
@@ -34,9 +55,12 @@
     }
   },
   "stats_show_iconnumber": {
-    "message": "Wyświetlaj liczbę na ikonie"
+    "message": "Pokaż liczbę na ikonie"
   },
   "stats_title": {
-    "message": "Zablokowane reklamy"
+    "message": "Reklamy zablokowane"
+  },
+  "status_header": {
+    "message": "Blokuje reklamy w:"
   }
 }

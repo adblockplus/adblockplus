@@ -1,21 +1,42 @@
 {
+  "click_element_to_block_it": {
+    "message": "Klicke auf ein Element auf der Seite, um es zu blockieren."
+  },
   "clickhide_instructions": {
-    "message": "Nachdem dieses Fenster geschlossen ist, klicken Sie ein Element auf der Seite an, welches Sie blockieren wollen."
+    "message": "Nachdem dieses Fenster geschlossen ist, klicke (oder rechtsklicke) auf ein Element auf der Seite."
   },
   "disabled_for_site": {
-    "message": "Auf dieser Seite <strong>deaktiviert</strong>"
+    "message": "<strong>Deaktiviert</strong> auf dieser Seite"
   },
   "easy_create_filter": {
     "message": "Element blockieren"
   },
   "enabled_for_site": {
-    "message": "Auf dieser Seite <strong>aktiviert</strong>"
+    "message": "<strong>Aktiviert</strong> auf dieser Seite"
+  },
+  "options_refresh": {
+    "message": "Aktualisieren"
   },
   "options_short": {
     "message": "Optionen"
   },
+  "overlay_notification_closing_button_hide": {
+    "message": "Schließen"
+  },
   "overlay_notification_closing_button_optout": {
-    "message": "Benachrichtigungen unterdrücken"
+    "message": "Keine Benachrichtigungen mehr anzeigen"
+  },
+  "promote_abp_module": {
+    "message": "Hast du Interesse an Adblock Plus fürs Handy?"
+  },
+  "refresh_to_take_effect": {
+    "message": "Klicke auf <strong>Aktualisieren</strong>, damit die Änderungen wirksam werden."
+  },
+  "sendReport": {
+    "message": "Problem melden"
+  },
+  "stats_header": {
+    "message": "Anzahl blockierter Elemente"
   },
   "stats_label_page": {
     "message": "<strong>$number$</strong> auf dieser Seite",
@@ -26,7 +47,7 @@
     }
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> insgesamt",
+    "message": "<strong>$number$</strong> gesamt",
     "placeholders": {
       "number": {
         "content": "$1"
@@ -34,9 +55,12 @@
     }
   },
   "stats_show_iconnumber": {
-    "message": "Anzahl im Symbol anzeigen"
+    "message": "Anzahl in Symbol anzeigen"
   },
   "stats_title": {
-    "message": "Blockierte Werbeanzeigen"
+    "message": "Blockierte Werbung"
+  },
+  "status_header": {
+    "message": "Werbung blockieren auf:"
   }
 }

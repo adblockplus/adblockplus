@@ -1,24 +1,45 @@
 {
+  "click_element_to_block_it": {
+    "message": "单击页面上的一个元素以拦截它。"
+  },
   "clickhide_instructions": {
-    "message": "本弹窗自动关闭后，请点击（或右击）当前页面上的一个元素。"
+    "message": "关闭此弹出窗口后，单击（或右键单击）页面上的一个元素。"
   },
   "disabled_for_site": {
-    "message": "在当前网站上 <strong>禁用</strong>"
+    "message": "在此网站上的<strong>已停用</strong>"
   },
   "easy_create_filter": {
     "message": "拦截元素"
   },
   "enabled_for_site": {
-    "message": "在当前网站上 <strong>启用</strong>"
+    "message": "在此网站上的<strong>已启用</strong>"
+  },
+  "options_refresh": {
+    "message": "刷新"
   },
   "options_short": {
-    "message": "设置"
+    "message": "选项"
+  },
+  "overlay_notification_closing_button_hide": {
+    "message": "关闭"
   },
   "overlay_notification_closing_button_optout": {
-    "message": "不再显示通知"
+    "message": "停止显示通知"
+  },
+  "promote_abp_module": {
+    "message": "对移动设备上的 Adblock Plus 感兴趣？"
+  },
+  "refresh_to_take_effect": {
+    "message": "单击<strong>刷新</strong>以使更改生效。"
+  },
+  "sendReport": {
+    "message": "报告问题"
+  },
+  "stats_header": {
+    "message": "被拦截的项目数"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> 在此页上",
+    "message": "在此页面上 <strong>$number$</strong>",
     "placeholders": {
       "number": {
         "content": "$1"
@@ -26,7 +47,7 @@
     }
   },
   "stats_label_total": {
-    "message": "总计 <strong>$number$</strong> 条",
+    "message": "总计 <strong>$number$</strong>",
     "placeholders": {
       "number": {
         "content": "$1"
@@ -34,9 +55,12 @@
     }
   },
   "stats_show_iconnumber": {
-    "message": "在图标上显示数量"
+    "message": "在图标中显示数字"
   },
   "stats_title": {
-    "message": "已拦截广告数"
+    "message": "广告被拦截"
+  },
+  "status_header": {
+    "message": "拦截广告于："
   }
 }
