@@ -45,7 +45,7 @@
     "message": "Kaydet"
   },
   "options_customFilters_description": {
-    "message": "Adblock Plus'ın izin vereceği veya engelleyeceği içeriklere ilişkin daha fazla kontrol için kendi özel süzgeçlerinizi yazın."
+    "message": "Adblock Plus'ın engelleyeceği içeriklere ilişkin daha fazla kontrol için kendi filtrelerinizi oluşturun. <a0>Filtrelerin nasıl oluşturulacağını öğrenin</a0>"
   },
   "options_customFilters_edit_placeholder": {
     "message": "örn. $filter$",
@@ -57,10 +57,10 @@
     }
   },
   "options_customFilters_learn": {
-    "message": "Süzgeç listesinin nasıl yazılacağını öğrenin"
+    "message": "Filtrelerin nasıl oluşturulacağını öğrenin"
   },
   "options_customFilters_start": {
-    "message": "Kendi süzme listeni yazmaya başla"
+    "message": "Filtre listemi oluşturmaya başla"
   },
   "options_customFilters_tip": {
     "message": "Oluşturduğunuz süzgeçler burada belirecek."
@@ -79,6 +79,9 @@
   },
   "options_customize_header": {
     "message": "Özelleştirmeler"
+  },
+  "options_customize_iconStats": {
+    "message": "Simge halinde engellenen reklam sayısını göster"
   },
   "options_customize_showDevToolsPanel": {
     "message": "Geliştirici araçlarında 'Adblock Plus' panelini göster"

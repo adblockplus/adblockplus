@@ -45,7 +45,7 @@
     "message": "ENREGISTRER"
   },
   "options_customFilters_description": {
-    "message": "Créez vos propres filtres sur mesure pour contrôler encore mieux le contenu autorisé ou bloqué par Adblock Plus."
+    "message": "Créez vos propres filtres pour contrôler encore mieux le contenu autorisé ou bloqué par Adblock Plus. <a0>Apprendre comment créer des filtres</a0>"
   },
   "options_customFilters_edit_placeholder": {
     "message": "par exemple: $filter$",
@@ -57,7 +57,7 @@
     }
   },
   "options_customFilters_learn": {
-    "message": "Apprenez à écrire des listes de filtres"
+    "message": "Apprendre comment créer des filtres"
   },
   "options_customFilters_start": {
     "message": "Commencer à créer ma liste de filtres"
@@ -79,6 +79,9 @@
   },
   "options_customize_header": {
     "message": "Personnalisation"
+  },
+  "options_customize_iconStats": {
+    "message": "Afficher le nombre de publicités bloquées dans l’icône"
   },
   "options_customize_showDevToolsPanel": {
     "message": "Afficher le panneau « Adblock Plus » dans les outils pour développeur"

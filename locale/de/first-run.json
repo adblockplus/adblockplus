@@ -1,0 +1,59 @@
+{
+  "firstRun_browser_description": {
+    "message": "Adblock Browser ist jetzt für Android- und iOS-Geräte verfügbar und stammt von dem Team hinter Adblock Plus, dem beliebtesten Anzeigenblocker für Desktopbrowser."
+  },
+  "firstRun_browser_store_android": {
+    "message": "Android-App in Google Play erhältlich"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "Im iTunes App Store erhältlich"
+  },
+  "firstRun_browser_title": {
+    "message": "Adblock Browser App"
+  },
+  "firstRun_control_description": {
+    "message": "Standardmäßig siehst du unaufdringliche Anzeigen, die <a0>strenge Kriterien</a0> einhalten. Wir nennen diese Anzeigen Acceptable Ads. Du möchtest sämtliche Anzeigen ausblenden? <a1>Deaktiviere Acceptable Ads</a1> in deinen <a2>Einstellungen</a2>."
+  },
+  "firstRun_control_title": {
+    "message": "Du hast die Kontrolle"
+  },
+  "firstRun_fair_description": {
+    "message": "Wir ermutigen dich, Adblock Plus sowie die Whitelist-Option für Websites angemessen zu nutzen. Abhängig von den Filtern, die du verwendest, akzeptierst du, dass unbeabsichtigte Ergebnisse auftreten können (z. B. blockierte Inhalte einer Website). Lies die <a0>Nutzungsbedingungen</a0> für weitere Informationen zur angemessenen Nutzung von Adblock Plus."
+  },
+  "firstRun_fair_title": {
+    "message": "Angemessene Nutzung"
+  },
+  "firstRun_footer_copyright": {
+    "message": "Copyright © $year$ Alle Rechte vorbehalten. Adblock Plus® ist eine eingetragene Marke der <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
+  "firstRun_subtitle": {
+    "message": "Du hast gerade die Kontrolle über deinen Browser übernommen"
+  },
+  "firstRun_title": {
+    "message": "Installation erfolgreich!"
+  },
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "Aufgrund eines Problems wird diese Seite für manche Benutzer bei jedem Start des Browsers angezeigt. Dieses Problem kann behoben werden, indem Adblock Plus entfernt und erneut installiert wird:"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "Falls du weitere Hilfe benötigst, kontaktiere uns unter <a0>support@adblockplus.org</a0> oder besuche unser <a1>Help Center</a1>."
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "Öffne den Reiter Erweiterungen in deinem Browser."
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Suche Adblock Plus und entferne die Erweiterung."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "Installiere Adblock Plus erneut über <a>adblockplus.org</a>."
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "Scheinbar hat ein Problem dazu geführt, dass alle Filter entfernt wurden und wir ein Backup nicht wiederherstellen konnten. Deshalb mussten wir deine Filter und die Einstellungen für Acceptable Ads zurücksetzen. Bitte überprüfe deine Filterliste und Einstellungen für Acceptable Ads in den <a>Adblock Plus-Optionen</a>."
+  }
+}

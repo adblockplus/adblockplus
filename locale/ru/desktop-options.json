@@ -45,7 +45,7 @@
     "message": "СОХРАНИТЬ"
   },
   "options_customFilters_description": {
-    "message": "Пишите свои собственные фильтры для большего контроля над тем, что показывает или скрывает Adblock Plus."
+    "message": "Создавайте свои собственные фильтры для более глубоко контроля над тем, какое содержимое Adblock Plus блокирует. <a0>Узнайте, как создавать фильтры</a0>"
   },
   "options_customFilters_edit_placeholder": {
     "message": "например, $filter$",
@@ -57,10 +57,10 @@
     }
   },
   "options_customFilters_learn": {
-    "message": "Узнайте, как составлять списки фильтров"
+    "message": "Узнайте, как создавать фильтры"
   },
   "options_customFilters_start": {
-    "message": "Начать составление моего списка фильтров"
+    "message": "Начать создание списка фильтров"
   },
   "options_customFilters_tip": {
     "message": "Здесь показаны созданные вами фильтры."
@@ -79,6 +79,9 @@
   },
   "options_customize_header": {
     "message": "Настройки"
+  },
+  "options_customize_iconStats": {
+    "message": "Отображать на значке количество заблокированных рекламных объявлений"
   },
   "options_customize_showDevToolsPanel": {
     "message": "Показывать панель «Adblock Plus» в инструментах разработчика"

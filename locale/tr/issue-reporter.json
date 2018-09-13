@@ -12,10 +12,10 @@
     "message": "Size geri dönemeyiz ve muhtemelen rapor önceliği düşük olarak ayarlanır."
   },
   "issueReporter_commentPage_heading": {
-    "message": "Yorum ekle"
+    "message": "Yorum bırak"
   },
   "issueReporter_comment_description": {
-    "message": "Aşağıdaki metin alanı sorunu anlamamız için yorum yazmanıza olanak tanır. Bu adım isteğe bağlıdır ancak sorun açık değilse tavsiye edilir. Ayrıca bildirimi göndermeden önce gözden geçirebilirsiniz."
+    "message": "Lütfen aşağıya bir yorum bırakarak sorunu daha iyi anlamamıza yardımcı olun."
   },
   "issueReporter_comment_label": {
     "message": "Yorum (isteğe bağlı):"
@@ -35,11 +35,14 @@
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Not:</strong> Bulunduğunuz sayfanın Sorun Bildiricisi tarafından etkilenmemesi için, geçici olarak ek bir sekme açılacaktır."
   },
+  "issueReporter_detailsButton_label": {
+    "message": "Ayrıntılar"
+  },
   "issueReporter_doneButton_label": {
     "message": "Bitti"
   },
   "issueReporter_email_description": {
-    "message": "Sizi, raporunuz hakkında sorularımız olursa sizinle iletişime geçebilmemiz için geçerli bir e-posta adresi girmeye teşvik ediyoruz. Bu aynı zamanda katılımlarınızı hatırlamamızı ve önceliklerini yüksek olarak ayarlamamızı sağlar."
+    "message": "Geçerli bir e-posta adresi girilmesi faydalı olacaktır. Bu, kötü amaçlı yazılım gibi zorlu sorunları çözmek amacıyla sizinle iletişim kurmamızı sağlar. E-posta adresi girilmesinin zorunlu olmadığını ve adresinizin hiçbir şekilde paylaşılmayacağını unutmayın."
   },
   "issueReporter_email_label": {
     "message": "E-posta:"
@@ -48,19 +51,28 @@
     "message": "Hata bildirimi gönderme girişiminiz \"?1?\" hata koduyla başarısız oldu. Lütfen internete bağlı olduğunuzdan emin olun ve yeniden deneyin. Sorun devam ederse lütfen [link]Adblock Plus forumunda[/link] yardım isteyin."
   },
   "issueReporter_falseNegative_description": {
-    "message": "Adblock Plus devrede olmasına rağmen reklamın biri görünüyorsa bu seçeneği seçin."
+    "message": "Adblock Plus etkinleştirildi, ancak hala bir ya da daha fazla reklam görüyorum."
   },
   "issueReporter_falseNegative_label": {
-    "message": "Adblock Plus reklamın birini engellemiyor"
+    "message": "Hala reklamları görüyorum"
   },
   "issueReporter_falsePositive_description": {
-    "message": "Sayfanın önemli içeriği hiç görünmüyorsa, yanlış görünüyorsa veya sayfa düzgün işlemiyorsa bu seçeneği seçin. Sorun kaynağının Adblock Plus olup olmadığını eklentiyi geçici olarak devre dışı bırakıp belirleyebilirsiniz."
+    "message": "Sayfa düzgün görüntülenmiyor, çalışmıyor ya da önemli içerikler eksik gibi görünüyor."
   },
   "issueReporter_falsePositive_label": {
-    "message": "Adblock Plus çok fazla engelleme yapıyor"
+    "message": "Görüntülemeye çalıştığım sayfa bozulmuş"
+  },
+  "issueReporter_highlighter_description": {
+    "message": "Ekran görüntüsünde reklamları belirtmek veya hassas bilgileri gizlemek için araçları kullanın. Reklamların belirtilmesi, sorunun daha hızlı çözülmesi konusunda bize yardımcı olacaktır."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Sorunu belirt"
   },
   "issueReporter_knownIssueMessage": {
     "message": "Bildirdiğiniz sorun büyük olasılıkla biliniyor. Daha fazla bilgi:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Sorunu işaretle"
   },
   "issueReporter_page_title": {
     "message": "Sorun bildirici"
@@ -74,6 +86,9 @@
   "issueReporter_screenshot_highlight": {
     "message": "Vurgula"
   },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Sorunu seç"
+  },
   "issueReporter_sendButton_label": {
     "message": "Bildirimi gönder"
   },
@@ -84,12 +99,12 @@
     "message": "Lütfen Adblock Plus bildirimi gönderirken bekleyin."
   },
   "issueReporter_showData_label": {
-    "message": "Bildirim verisini göster"
+    "message": "Göndermeden önce rapor verilerini gözden geçirmek için bu bağlantıya tıklayın"
   },
   "issueReporter_typeSelector_description": {
-    "message": "Bu pencere Adblock Plus sorun bildirimi göndermek için gerekli adımların atılmasında size rehberlik edecek. Önce bu sayfada ne tür sorun yaşadığınızı seçin:"
+    "message": "Lütfen bir sorun seçin:"
   },
   "issueReporter_typeSelector_heading": {
-    "message": "Sorun türünü seçin"
+    "message": "Ne tür bir sorun yaşıyorsunuz?"
   }
 }

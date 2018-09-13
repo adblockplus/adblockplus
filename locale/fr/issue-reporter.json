@@ -12,10 +12,10 @@
     "message": "Nous ne serons pas en mesure de vous recontacter et votre signalement ne sera probablement pas traité prioritairement."
   },
   "issueReporter_commentPage_heading": {
-    "message": "Entrez un commentaire"
+    "message": "Laisser un commentaire"
   },
   "issueReporter_comment_description": {
-    "message": "Le champ ci-dessous vous permet de saisir un commentaire pour nous aider à comprendre le problème. Cette étape est facultative mais recommandée si le problème n'est pas évident à détecter. Vous pouvez également revoir les données du signalement avant l'envoi."
+    "message": "Merci de bien vouloir nous aider à mieux comprendre le problème en laissant un commentaire ci-dessous."
   },
   "issueReporter_comment_label": {
     "message": "Commentaire (facultatif) :"
@@ -35,11 +35,14 @@
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Remarque :</strong> Un onglet supplémentaire s'ouvrira temporairement de façon à ce que la page sur laquelle vous vous trouvez ne soit pas affectée par le signaleur de problèmes."
   },
+  "issueReporter_detailsButton_label": {
+    "message": "Détails"
+  },
   "issueReporter_doneButton_label": {
     "message": "Terminé"
   },
   "issueReporter_email_description": {
-    "message": "Nous vous encourageons à saisir un courriel valide afin que nous puissions vous contacter pour toute question concernant votre signalement. Cela nous permettra également de reconnaître vos contributions et de les traiter prioritairement."
+    "message": "Si vous saisissez votre adresse mail cela nous aidera. Nous pourrons alors vous contacter pour résoudre les problèmes difficiles comme le malware. N’oubliez pas qu’il n’est pas obligatoire de saisir une adresse e-mail et que votre adresse ne sera jamais partagée avec des tiers."
   },
   "issueReporter_email_label": {
     "message": "E-mail :"
@@ -48,19 +51,28 @@
     "message": "Une tentative d'envoi du signalement a échoué avec le code erreur « ?1? ». Veuillez vérifier que vous êtes bien connecté à Internet et réessayer. Si le problème persiste, veuillez demander assistance dans le [link]forum d'Adblock Plus[/link]."
   },
   "issueReporter_falseNegative_description": {
-    "message": "Choisissez cette option si une publicité est tout de même affichée bien qu'Adblock Plus soit activée."
+    "message": "Adblock Plus est activé, mais je continue à voir une ou des publicités."
   },
   "issueReporter_falseNegative_label": {
-    "message": "Adblock Plus ne bloque pas une publicité"
+    "message": "Je vois encore des publicités"
   },
   "issueReporter_falsePositive_description": {
-    "message": "Choisissez cette option si la page manque de contenu important, est mal affiché ou ne fonctionne pas correctement. Vous pouvez vérifier si Adblock Plus en est la cause en la désactivant temporairement."
+    "message": "La page ne s'affiche pas correctement, ne fonctionne pas ou il manque un contenu important."
   },
   "issueReporter_falsePositive_label": {
-    "message": "Adblock Plus bloque trop"
+    "message": "Le lien vers la page que j’essaie d'afficher est brisé"
+  },
+  "issueReporter_highlighter_description": {
+    "message": "Utilisez les outils pour surligner chaque publicité ou masquer les informations sensibles sur la copie d’écran. Si vous surlignez les publicités, nous pourrons résoudre le problème plus rapidement."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Souligner le problème"
   },
   "issueReporter_knownIssueMessage": {
     "message": "Le problème que vous signalez est probablement déjà connu. Davantage d'informations :"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Marquer le problème"
   },
   "issueReporter_page_title": {
     "message": "Signalement de problèmes"
@@ -74,6 +86,9 @@
   "issueReporter_screenshot_highlight": {
     "message": "Mettre en surbrillance"
   },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Sélectionner le problème"
+  },
   "issueReporter_sendButton_label": {
     "message": "Envoyer le signalement"
   },
@@ -84,12 +99,12 @@
     "message": "Veuillez patienter pendant qu'Adblock Plus soumet votre signalement."
   },
   "issueReporter_showData_label": {
-    "message": "Afficher les données du signalement"
+    "message": "Cliquez sur ce lien pour examiner les données contenues dans le rapport avant de l’envoyer"
   },
   "issueReporter_typeSelector_description": {
-    "message": "Cette fenêtre vous guidera à travers les étapes nécessaires à la soumission d'un problème Adblock Plus. Dans un premier temps, veuillez choisir le type de problème rencontré sur cette page :"
+    "message": "Sélectionnez un problème :"
   },
   "issueReporter_typeSelector_heading": {
-    "message": "Choisir le type de problème"
+    "message": "Quel type de problème rencontrez-vous ?"
   }
 }

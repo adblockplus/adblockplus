@@ -45,7 +45,7 @@
     "message": "Zapisz"
   },
   "options_customFilters_description": {
-    "message": "Utwórz własne niestandardowe filtry, aby jeszcze lepiej kontrolować wyświetlanie zawartości przez Adblock Plus."
+    "message": "Utwórz własne niestandardowe filtry, aby jeszcze lepiej kontrolować blokowanie zawartości przez Adblock Plus. <a0>Dowiedz się, jak tworzyć filtry</a0>"
   },
   "options_customFilters_edit_placeholder": {
     "message": "np. $filter$",
@@ -57,10 +57,10 @@
     }
   },
   "options_customFilters_learn": {
-    "message": "Dowiedz się, jak tworzyć zestawy filtrów"
+    "message": "Dowiedz się, jak tworzyć filtry"
   },
   "options_customFilters_start": {
-    "message": "Zacznij tworzyć zestaw filtrów"
+    "message": "Zacznij tworzyć listę filtrów"
   },
   "options_customFilters_tip": {
     "message": "Tworzone filtry pojawią się tutaj."
@@ -79,6 +79,9 @@
   },
   "options_customize_header": {
     "message": "Dostosowania"
+  },
+  "options_customize_iconStats": {
+    "message": "Wyświetlaj liczbę zablokowanych reklam na ikonie"
   },
   "options_customize_showDevToolsPanel": {
     "message": "Wyświetlaj panel „Adblock Plus” w narzędziach dla deweloperów"

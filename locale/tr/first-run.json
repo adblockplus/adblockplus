@@ -1,0 +1,59 @@
+{
+  "firstRun_browser_description": {
+    "message": "Adblock Plus'ın arkasındaki ekip tarafından sunulan, masaüstü tarayıcılar için en popüler reklam engelleyici olan Adblock Browser, şimdi Android ve iOS cihazlarınız için de kullanılabilir."
+  },
+  "firstRun_browser_store_android": {
+    "message": "Google Play'de Android uygulaması"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "iTunes App Store'dan temin edilebilir"
+  },
+  "firstRun_browser_title": {
+    "message": "Adblock Browser Uygulaması"
+  },
+  "firstRun_control_description": {
+    "message": "Varsayılan olarak, <a0>sıkı ölçütlere</a0> uygun bazı zorla girmeyen reklamları görebilirsiniz</a0>. Biz bu reklamları Kabul Edilebilir Reklamlar olarak tanımlıyoruz. Bütün reklamları engellemek mi istiyorsunuz? </a1> <a2>Ayarlar</a2> dan <a1>Kabul Edilebilir Reklamları kapatın."
+  },
+  "firstRun_control_title": {
+    "message": "Kontrol sizde"
+  },
+  "firstRun_fair_description": {
+    "message": "Güvenilir listesindeki web siteleri seçeneği ve Adblock Plus adil kullanımı konusunda sizi teşvik ediyoruz. Kullandığınız filtrelere bağlı olarak, istem dışı meydana gelebilecek sonuçları (örn. bir web sitesinde engellenen içerik) anlamış ve kabul etmiş olursunuz. Adblock Plus adil kullanımı hakkında daha fazla bilgi için, <a0>Kullanım Şartları<a0> bölümüne bakınız."
+  },
+  "firstRun_fair_title": {
+    "message": "Adil kullanim"
+  },
+  "firstRun_footer_copyright": {
+    "message": "Copyright © $year$ Tüm hakları saklıdır. Adblock Plus®, <a0>eyeo GmbH</a0>'nin tescilli ticari markasıdır.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
+  "firstRun_subtitle": {
+    "message": "Tarayıcınız artık kontrol altında"
+  },
+  "firstRun_title": {
+    "message": "Kurulum başarili!"
+  },
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "Bazı kullanıcıların yaşadığı sorun, tarayıcılarını her başlattıkları zaman bu sayfanın açılmasıdır. Bu sorun, Adblock Plus kaldırılıp yeniden yüklenerek çözülebilir:"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "Eğer yine de yardıma ihtiyacınız olursa, bizimle <a0>support@adblockplus.org</a0> adresi üzerinden iletişime geçebilir veya <a1>Yardım Merkezi</a1>’mizi ziyaret edebilirsiniz."
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "Tarayıcınızın uzantılar sekmesini açın."
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Adblock Plus’ı bulup kaldırın."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "Adblock Plus’ı <a>adblockplus.org</a> adresinden yeniden yükleyin."
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "Öyle görülüyor ki; tüm filtrelerin kaldırılmasına neden olan bir sorun var ve bir yedekleme yüklenemedi. Bu yüzden filtrelerinizi ve Kabul Edilebilir Reklam ayarlarınızı sıfırlamamız gerekiyor. Lütfen filtre listelerinizi ve <a>Adblock Plus seçenekleri</a>'nde Kabul Edilebilir Reklam ayarlarınızı kontrol edin."
+  }
+}

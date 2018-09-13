@@ -45,7 +45,7 @@
     "message": "保存"
   },
   "options_customFilters_description": {
-    "message": "编写自己的自定义过滤器，以进一步控制 Adblock Plus 允许或屏蔽的内容。"
+    "message": "创建自己的过滤器，以进一步控制 Adblock Plus拦截的内容。<a0>了解如何创建过滤器</a0>"
   },
   "options_customFilters_edit_placeholder": {
     "message": "例如 $filter$",
@@ -57,10 +57,10 @@
     }
   },
   "options_customFilters_learn": {
-    "message": "了解如何编写过滤列表"
+    "message": "了解如何创建过滤器"
   },
   "options_customFilters_start": {
-    "message": "开始编写我的过滤列表"
+    "message": "开始创建我的过滤器列表"
   },
   "options_customFilters_tip": {
     "message": "您创建的过滤器将显示在此处。"
@@ -79,6 +79,9 @@
   },
   "options_customize_header": {
     "message": "自定义"
+  },
+  "options_customize_iconStats": {
+    "message": "在图标中显示拦截的广告数量"
   },
   "options_customize_showDevToolsPanel": {
     "message": "在开发人员工具中显示“Adblock Plus”面板"
