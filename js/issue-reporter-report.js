@@ -23,6 +23,65 @@ let dataGatheringTabId = null;
 let isMinimumTimeMet = false;
 const port = browser.runtime.connect({name: "ui"});
 
+port.onMessage.addListener((message) =>
+{
+  switch (message.type)
+  {
+    case "requests.respond":
+      switch (message.action)
+      {
+        case "hits":
+          const [request, filter, subscriptions] = message.args;
+          const requestsElem = reportData.querySelector("requests");
+          const filtersElem = reportData.querySelector("filters");
+          // ELEMHIDE hitLog request doesn't contain url
+          if (request.url)
+          {
+            const existingRequest = reportData.
+                                  querySelector(`[location="${request.url}"]`);
+            if (existingRequest)
+            {
+              const countNum = parseInt(
+                existingRequest.getAttribute("count"), 10
+              );
+              existingRequest.setAttribute("count", countNum + 1);
+            }
+            else
+            {
+              const requestElem = reportData.createElement("request");
+              requestElem.setAttribute("location", censorURL(request.url));
+              requestElem.setAttribute("type", request.type);
+              requestElem.setAttribute("docDomain", request.docDomain);
+              requestElem.setAttribute("thirdParty", request.thirdParty);
+              requestElem.setAttribute("count", 1);
+              requestsElem.appendChild(requestElem);
+            }
+          }
+          if (filter)
+          {
+            const existingFilter = reportData.
+                                 querySelector(`[text='${filter.text}']`);
+            if (existingFilter)
+            {
+              const countNum = parseInt(existingFilter.getAttribute("hitCount"),
+                                      10);
+              existingFilter.setAttribute("hitCount", countNum + 1);
+            }
+            else
+            {
+              const filterElem = reportData.createElement("filter");
+              filterElem.setAttribute("text", filter.text);
+              filterElem.setAttribute("subscriptions", subscriptions.join(" "));
+              filterElem.setAttribute("hitCount", 1);
+              filtersElem.appendChild(filterElem);
+            }
+          }
+          break;
+      }
+      break;
+  }
+});
+
 module.exports = {
   closeRequestsCollectingTab,
   collectData()
