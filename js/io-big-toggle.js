@@ -17,58 +17,42 @@
 
 "use strict";
 
-const IOElement = require("./io-element");
-const {boolean} = IOElement.utils;
+const IOToggle = require("./io-toggle");
+const {boolean} = IOToggle.utils;
 
-class IOToggle extends IOElement
+class IOBigToggle extends IOToggle
 {
-  // action, checked, and disabled should be reflected down the button
   static get observedAttributes()
   {
-    return ["action", "checked", "disabled"];
+    return super.observedAttributes.concat("refresh");
   }
 
-  created()
+  get refresh()
   {
-    this.addEventListener("click", this);
-    this.render();
+    return this.hasAttribute("refresh");
   }
 
-  get checked()
+  set refresh(value)
   {
-    return this.hasAttribute("checked");
-  }
-
-  set checked(value)
-  {
-    boolean.attribute(this, "checked", value);
-    this.render();
-  }
-
-  get disabled()
-  {
-    return this.hasAttribute("disabled");
-  }
-
-  set disabled(value)
-  {
-    boolean.attribute(this, "disabled", value);
+    boolean.attribute(this, "refresh", value);
   }
 
   onclick(event)
   {
     if (!this.disabled)
     {
-      this.checked = !this.checked;
-      if (this.ownerDocument.activeElement !== this.child)
+      if (this.refresh)
       {
-        this.child.focus();
+        this.dispatchEvent(new CustomEvent("refresh", {
+          bubbles: true,
+          cancelable: true,
+          detail: this.checked
+        }));
       }
-      this.dispatchEvent(new CustomEvent("change", {
-        bubbles: true,
-        cancelable: true,
-        detail: this.checked
-      }));
+      else
+      {
+        super.onclick(event);
+      }
     }
   }
 
@@ -81,10 +65,10 @@ class IOToggle extends IOElement
       data-action="${this.action}"
       aria-checked="${this.checked}"
       aria-disabled="${this.disabled}"
-    />`;
+    >
+      <span>${{i18n: "options_refresh"}}</span>
+    </button>`;
   }
 }
 
-IOToggle.define("io-toggle");
-
-module.exports = IOToggle;
+IOBigToggle.define("io-big-toggle");

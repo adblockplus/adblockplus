@@ -82,7 +82,8 @@
       "io-list-box": "$ create.test.component io-list-box",
       "io-popout": "$ create.test.component io-popout",
       "io-steps": "$ create.test.component io-steps",
-      "io-toggle": "$ create.test.component io-toggle"
+      "io-toggle": "$ create.test.component io-toggle",
+      "io-big-toggle": "$ create.test.component io-big-toggle"
     },
     "watch": {
       "bundle": "watch 'npm run bundle' ./css ./js",
