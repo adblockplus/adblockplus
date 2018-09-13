@@ -142,9 +142,13 @@ function collectRequests(tabId)
   });
 }
 
+let closedRequestsCollectingTab;
 function closeRequestsCollectingTab()
 {
-  return browser.tabs.remove(dataGatheringTabId);
+  if (!closedRequestsCollectingTab)
+    closedRequestsCollectingTab = browser.tabs.remove(dataGatheringTabId);
+
+  return closedRequestsCollectingTab;
 }
 
 function retrieveAddonInfo()

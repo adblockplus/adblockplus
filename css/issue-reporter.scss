@@ -228,6 +228,7 @@ button
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 html:not([dir="rtl"]) button
