@@ -17,9 +17,9 @@
 
 io-list-box
 {
-  min-width: 340px;
-  box-sizing: border-box;
   position: relative;
+  box-sizing: border-box;
+  min-width: 340px;
 }
 
 io-list-box,
@@ -27,13 +27,13 @@ io-list-box button,
 io-list-box [role="listbox"],
 io-list-box [role="option"]
 {
-  padding: 0;
   margin: 0;
+  padding: 0;
   color: #4a4a4a;
-  background: #ffffff;
-  text-align: inherit;
+  background: #fff;
   font-family: inherit;
   font-size: inherit;
+  text-align: inherit;
 }
 
 io-list-box button,
@@ -53,9 +53,9 @@ io-list-box [role="option"]
 
 io-list-box button[aria-expanded="false"]
 {
-  text-transform: uppercase;
   color: #059cd0;
   background: #e9f6fc;
+  text-transform: uppercase;
 }
 
 io-list-box button:focus
@@ -65,18 +65,18 @@ io-list-box button:focus
 
 io-list-box [role="listbox"]
 {
-  position: absolute;
-  max-height: 310px;
-  bottom: 100%;
   overflow: auto;
-  border: 1px solid #9b9b9b;
+  position: absolute;
+  bottom: 100%;
+  max-height: 310px;
   margin-bottom: -1px;
+  border: 1px solid #9b9b9b;
 }
 
 io-list-box [role="option"][aria-disabled="true"],
 io-list-box [role="option"][aria-disabled="true"].hover
 {
-  background: #eeeeee;
+  background: #eee;
   cursor: default;
 }
 

@@ -34,10 +34,10 @@ io-big-toggle
   margin: 0;
   border-radius: 8px;
   background-color: var(--background-color-ternary, #e4e4e4);
-  transition: background 0.2s ease-out;
-  will-change: background;
   cursor: pointer;
+  transition: background 0.2s ease-out;
   transform: translateY(calc(var(--height) / 2));
+  will-change: background;
 }
 
 html[dir="rtl"] io-big-toggle
@@ -58,14 +58,16 @@ io-big-toggle button
   padding: 0;
   border: 2px solid transparent;
   border-radius: var(--height);
-  transition: border 0.2s ease-out, box-shadow 0.2s ease-out,
-              transform 0.2s ease-out, width 0.2s ease-out;
-  will-change: border, box-shadow, transform, width;
-  transform: translateY(var(--translateY));
   outline: none;
-  cursor: pointer;
-  font-weight: normal;
+  font-weight: 400;
   text-transform: initial;
+  cursor: pointer;
+  transition: border 0.2s ease-out,
+    box-shadow 0.2s ease-out,
+    transform 0.2s ease-out,
+    width 0.2s ease-out;
+  transform: translateY(var(--translateY));
+  will-change: border, box-shadow, transform, width;
 }
 
 io-big-toggle button
@@ -76,8 +78,8 @@ io-big-toggle button
 
 io-big-toggle button[aria-checked="false"]
 {
-  background-image: url(icons/iconOff.svg);
   background-color: var(--color-critical, #ca0000);
+  background-image: url(icons/iconOff.svg);
   box-shadow: 0 1px 2px 0 #e5d1d1;
 }
 
@@ -88,9 +90,9 @@ io-big-toggle button[aria-checked="false"]:hover
 
 io-big-toggle button[aria-checked="true"]
 {
-  background-image: url(icons/iconOn.svg);
-  background-color: var(--color-info, #0797e1);
   border: 2px solid #059cd0;
+  background-color: var(--color-info, #0797e1);
+  background-image: url(icons/iconOn.svg);
   box-shadow: 0 1px 2px 0 #a6cede;
   transform: translateY(var(--translateY)) translateX(var(--translateX));
 }
@@ -121,11 +123,11 @@ html[dir="rtl"] io-big-toggle[refresh] button
 io-big-toggle button > span
 {
   display: none;
-  color: var(--color-ternary, #fdfafa);
-  max-width: 100%;
   overflow: hidden;
-  text-overflow: ellipsis;
+  max-width: 100%;
+  color: var(--color-ternary, #fdfafa);
   white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 io-big-toggle[refresh] button > span

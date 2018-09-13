@@ -73,6 +73,7 @@
       }
     },
     "lint": {
+      "css": "stylelint ./css/*.scss",
       "js": "eslint ./*.js ./js/*.js ./lib/*.js ./ext/*.js"
     },
     "test": {
@@ -114,6 +115,8 @@
     "hyperhtml-element": "^2.0.2",
     "node-sass": "^4.9.2",
     "npm-dollar": "^0.1.3",
+    "stylelint": "^9.3.0",
+    "stylelint-config-eyeo": "^1.0.2",
     "watch": "^1.0.2",
     "website-defaults": "github:adblockplus/website-defaults#255e4f1"
   },
