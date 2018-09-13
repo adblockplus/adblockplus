@@ -1,7 +1,4 @@
 {
-  "add": {
-    "message": "Добавить"
-  },
   "add_filters_msg": {
     "message": "Добавить фильтр(ы)?"
   },
