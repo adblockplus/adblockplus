@@ -1,4 +1,8 @@
 {
+  "add": {
+    "description": "This is the label for the 'Add' buttons.",
+    "message": "Add"
+  },
   "cancel": {
     "description": "Cancel button label",
     "message": "Cancel"
