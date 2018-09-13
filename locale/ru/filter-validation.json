@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "Недопустимое регулярное выражение"
   },
+  "filter_snippet_nodomain": {
+    "message": "Не указан активный домен для фрагментного фильтра"
+  },
   "filter_unknown_option": {
     "message": "Неизвестная опция фильтра"
   },

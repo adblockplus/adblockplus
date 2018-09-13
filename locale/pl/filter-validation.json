@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "Nieprawidłowe wyrażenie regularne"
   },
+  "filter_snippet_nodomain": {
+    "message": "Nie określono aktywnej domeny dla filtra fragmentów kodu"
+  },
   "filter_unknown_option": {
     "message": "Nieznana opcja filtra"
   },

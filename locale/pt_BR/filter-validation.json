@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "Expressão regular inválida"
   },
+  "filter_snippet_nodomain": {
+    "message": "Nenhum domínio ativo especificado para filtro de snippet"
+  },
   "filter_unknown_option": {
     "message": "Opção de filtro desconhecido"
   },
