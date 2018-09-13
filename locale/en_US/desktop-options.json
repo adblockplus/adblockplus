@@ -275,7 +275,7 @@
   },
   "options_customFilters_description": {
     "description": "Custom filter lists section description in Advanced tab",
-    "message": "Write your own custom filters to further control what content Adblock Plus allows or blocks."
+    "message": "Create your own filters to further control what content Adblock Plus blocks. <a0>Learn how to create filters</a0>"
   },
   "options_customFilters_widget_title": {
     "description": "Custom filter widget title in Advanced tab",
@@ -287,11 +287,11 @@
   },
   "options_customFilters_start": {
     "description": "Custom filter widget(empty) button text in Advanced tab",
-    "message": "Start writing my filter list"
+    "message": "Start creating my filter list"
   },
   "options_customFilters_learn": {
     "description": "Custom filter widget(empty) link text in Advanced tab",
-    "message": "Learn how to write filter lists"
+    "message": "Learn how to create filters"
   },
   "options_customFilters_edit_placeholder": {
     "description": "Custom filter widget(empty) placeholder text in Advanced tab",
