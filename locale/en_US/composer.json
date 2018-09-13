@@ -1,8 +1,4 @@
 {
-  "add": {
-    "description": "This is the label for the 'Add' buttons.",
-    "message": "Add"
-  },
   "add_filters_msg": {
     "message": "Add filter(s)?"
   },

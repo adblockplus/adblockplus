@@ -1,4 +1,7 @@
 {
+  "add": {
+    "message": "Thêm"
+  },
   "cancel": {
     "message": "Hủy bỏ"
   },

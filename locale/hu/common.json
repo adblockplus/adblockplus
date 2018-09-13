@@ -1,4 +1,7 @@
 {
+  "add": {
+    "message": "Hozzáadás"
+  },
   "cancel": {
     "message": "Mégse"
   },

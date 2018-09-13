@@ -1,4 +1,7 @@
 {
+  "add": {
+    "message": "Hinzufügen"
+  },
   "cancel": {
     "message": "Abbrechen"
   },
