@@ -1,0 +1,14 @@
+{
+  "add": {
+    "message": "Agregar"
+  },
+  "add_filters_msg": {
+    "message": "¿Agregar filtro(s)?"
+  },
+  "block_element": {
+    "message": "Bloquear Elemento"
+  },
+  "loading": {
+    "message": "Cargando..."
+  }
+}

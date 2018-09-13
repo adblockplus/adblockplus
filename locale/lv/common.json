@@ -1,4 +1,7 @@
 {
+  "cancel": {
+    "message": "Atcelt"
+  },
   "common_notification_hide": {
     "message": "Aizvērt paziņojumu"
   }

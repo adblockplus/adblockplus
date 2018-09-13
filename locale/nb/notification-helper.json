@@ -1,0 +1,20 @@
+{
+  "notification_configure": {
+    "message": "Tilpass varslingsinnstillinger"
+  },
+  "notification_open_all": {
+    "message": "Åpne alle koblinger fra denne meldingen"
+  },
+  "notification_with_buttons": {
+    "message": "Trykk på \"OK\" for å åpne alle koblingene i denne meldingen."
+  },
+  "notification_without_buttons": {
+    "message": "Trykk på varselet for å åpne alle koblingene."
+  },
+  "overlay_notification_button_no": {
+    "message": "Nei"
+  },
+  "overlay_notification_button_yes": {
+    "message": "Ja"
+  }
+}

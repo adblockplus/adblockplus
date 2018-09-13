@@ -1,0 +1,11 @@
+{
+  "add": {
+    "message": "ጨምር"
+  },
+  "add_filters_msg": {
+    "message": "ማጣሪያ(ዎች) ጨምር?"
+  },
+  "block_element": {
+    "message": "ይሄንን አካል ከልክል"
+  }
+}

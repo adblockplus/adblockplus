@@ -1,0 +1,20 @@
+{
+  "notification_configure": {
+    "message": "Määritä ilmoitusasetukset"
+  },
+  "notification_open_all": {
+    "message": "Avata kaikki linkit tästä ilmoituksesta"
+  },
+  "notification_with_buttons": {
+    "message": "Valitse 'OK', jos haluat avata kaikki linkit tässä ilmoituksessa."
+  },
+  "notification_without_buttons": {
+    "message": "Napsauttamalla ilmoitusta voit avata kaikki linkit siitä."
+  },
+  "overlay_notification_button_no": {
+    "message": "Ei"
+  },
+  "overlay_notification_button_yes": {
+    "message": "Kyllä"
+  }
+}

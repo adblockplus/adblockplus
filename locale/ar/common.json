@@ -1,4 +1,7 @@
 {
+  "cancel": {
+    "message": "إلغاء"
+  },
   "common_feature_anti_adblock_title": {
     "message": "اخفاء رسائل تحذير ادبلوك"
   },

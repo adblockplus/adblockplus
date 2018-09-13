@@ -1,0 +1,36 @@
+{
+  "filter_elemhideemulation_nodomain": {
+    "message": "לא צוין תחום פעיל עבור יסוד מורחב של מסנן הסתרה"
+  },
+  "filter_invalid_csp": {
+    "message": "מדיניות אבטחה של תוכן לא תקף"
+  },
+  "filter_invalid_domain": {
+    "message": "תחום לא תקף (או ריק) צוין"
+  },
+  "filter_invalid_regexp": {
+    "message": "ביטוי רגיל לא תקף"
+  },
+  "filter_unknown_option": {
+    "message": "אפשרות מסנן לא ידועה"
+  },
+  "invalid_css_selector": {
+    "message": "$selector$ איננו בורר CSS תקף",
+    "placeholders": {
+      "selector": {
+        "content": "$1"
+      }
+    }
+  },
+  "line": {
+    "message": "שורה $number$",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "unexpected_filter_list_header": {
+    "message": "כותרות רשימת מסננים אינן מותרות כאן"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "add": {
+    "message": "أضف"
+  },
+  "add_filters_msg": {
+    "message": "إضافة فلتر\\فلاتر؟"
+  },
+  "block_element": {
+    "message": "حجب العنصر"
+  },
+  "loading": {
+    "message": "جار التحميل..."
+  }
+}

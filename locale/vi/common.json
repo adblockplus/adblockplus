@@ -1,4 +1,7 @@
 {
+  "cancel": {
+    "message": "Hủy bỏ"
+  },
   "common_feature_anti_adblock_title": {
     "message": "Ẩn thông báo cảnh báo chặn quảng cáo"
   },

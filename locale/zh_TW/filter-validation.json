@@ -1,0 +1,33 @@
+{
+  "filter_elemhideemulation_nodomain": {
+    "message": "沒有為擴展元素隱藏規則指定活躍域名"
+  },
+  "filter_invalid_domain": {
+    "message": "無效(或空) 的網域被指定"
+  },
+  "filter_invalid_regexp": {
+    "message": "無效的正規表示法"
+  },
+  "filter_unknown_option": {
+    "message": "未知的篩選器選項"
+  },
+  "invalid_css_selector": {
+    "message": "$selector$不是一個有效的CSS選擇器",
+    "placeholders": {
+      "selector": {
+        "content": "$1"
+      }
+    }
+  },
+  "line": {
+    "message": "行$number$",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "unexpected_filter_list_header": {
+    "message": "這裡不允許過濾器列表標題"
+  }
+}

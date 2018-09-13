@@ -1,0 +1,14 @@
+{
+  "add": {
+    "message": "เพิ่ม"
+  },
+  "add_filters_msg": {
+    "message": "เพิ่มตัวกรองหรือไม่?"
+  },
+  "block_element": {
+    "message": "ปิดกั้นองค์ประกอบ"
+  },
+  "loading": {
+    "message": "กำลังโหลด..."
+  }
+}

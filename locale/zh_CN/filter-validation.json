@@ -1,0 +1,36 @@
+{
+  "filter_elemhideemulation_nodomain": {
+    "message": "没有为扩展元素隐藏规则指定有效域名"
+  },
+  "filter_invalid_csp": {
+    "message": "无效的内容安全策略（CSP）"
+  },
+  "filter_invalid_domain": {
+    "message": "指定的域名无效或者为空"
+  },
+  "filter_invalid_regexp": {
+    "message": "无效的正则表达式"
+  },
+  "filter_unknown_option": {
+    "message": "未知的过滤规则"
+  },
+  "invalid_css_selector": {
+    "message": "$selector$ 不是有效的 CSS 选择器",
+    "placeholders": {
+      "selector": {
+        "content": "$1"
+      }
+    }
+  },
+  "line": {
+    "message": "第 $number$ 行",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "unexpected_filter_list_header": {
+    "message": "这里不允许过滤列表标题"
+  }
+}

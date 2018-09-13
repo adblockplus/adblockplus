@@ -1,4 +1,7 @@
 {
+  "cancel": {
+    "message": "Cancelar"
+  },
   "common_feature_anti_adblock_title": {
     "message": "Ocultar mensagens de aviso do Adblock"
   },

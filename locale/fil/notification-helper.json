@@ -1,0 +1,20 @@
+{
+  "notification_configure": {
+    "message": "I-configure ang mga setting ng notification"
+  },
+  "notification_open_all": {
+    "message": "Buksan ang lahat ng mga link mula sa notification na ito"
+  },
+  "notification_with_buttons": {
+    "message": "Pindutin ang 'OK' para mabuksan ang lahat ng links sa notifikasyon na ito."
+  },
+  "notification_without_buttons": {
+    "message": "Pindutin ang notification para mabuksan ang mga links."
+  },
+  "overlay_notification_button_no": {
+    "message": "Hindi"
+  },
+  "overlay_notification_button_yes": {
+    "message": "Oo"
+  }
+}

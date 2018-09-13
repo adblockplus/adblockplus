@@ -1,0 +1,36 @@
+{
+  "filter_elemhideemulation_nodomain": {
+    "message": "No s'ha especificat cap domini actiu per al filtre d'ocultació d'element estès"
+  },
+  "filter_invalid_csp": {
+    "message": "Política de seguretat de contingut no vàlida"
+  },
+  "filter_invalid_domain": {
+    "message": "S'ha especificat un domini no vàlid (o buit)"
+  },
+  "filter_invalid_regexp": {
+    "message": "Expressió regular no vàlida"
+  },
+  "filter_unknown_option": {
+    "message": "Opció de filtrat desconegut"
+  },
+  "invalid_css_selector": {
+    "message": "$selector$ no és un selector CSS vàlid",
+    "placeholders": {
+      "selector": {
+        "content": "$1"
+      }
+    }
+  },
+  "line": {
+    "message": "Línia $number$",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "unexpected_filter_list_header": {
+    "message": "Els encapçalaments de la llista de filtres no es permeten aquí"
+  }
+}

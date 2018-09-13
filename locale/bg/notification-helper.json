@@ -1,0 +1,20 @@
+{
+  "notification_configure": {
+    "message": "Конфигуриране на настройките на известяване"
+  },
+  "notification_open_all": {
+    "message": "Отваряй всички препратки от известието"
+  },
+  "notification_with_buttons": {
+    "message": "Натиснете „ДА“ за отваряне на всички препратки от известието."
+  },
+  "notification_without_buttons": {
+    "message": "Щракнете по известие за отваряне на съдържащите се препратки."
+  },
+  "overlay_notification_button_no": {
+    "message": "Не"
+  },
+  "overlay_notification_button_yes": {
+    "message": "Да"
+  }
+}

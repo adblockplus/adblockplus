@@ -1,4 +1,7 @@
 {
+  "cancel": {
+    "message": "בטל"
+  },
   "common_feature_anti_adblock_title": {
     "message": "הסתר הודעות אזהרה של Adblock"
   },

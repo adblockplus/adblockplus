@@ -1,4 +1,7 @@
 {
+  "cancel": {
+    "message": "Annullér"
+  },
   "common_feature_anti_adblock_title": {
     "message": "Skjul Adblock-advarselsmeddelelser"
   },

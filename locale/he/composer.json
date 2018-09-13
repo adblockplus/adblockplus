@@ -1,0 +1,14 @@
+{
+  "add": {
+    "message": "הוסף"
+  },
+  "add_filters_msg": {
+    "message": "להוסיף מסנן(ים)?"
+  },
+  "block_element": {
+    "message": "חסום יסוד"
+  },
+  "loading": {
+    "message": "טוען..."
+  }
+}

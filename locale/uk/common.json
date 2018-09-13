@@ -1,4 +1,7 @@
 {
+  "cancel": {
+    "message": "Скасувати"
+  },
   "common_feature_anti_adblock_title": {
     "message": "Приховувати попередження про використання блокувальника реклами"
   },

@@ -1,0 +1,14 @@
+{
+  "add": {
+    "message": "Lisää"
+  },
+  "add_filters_msg": {
+    "message": "Lisää suodatin\\suodattimia?"
+  },
+  "block_element": {
+    "message": "Estä elementti"
+  },
+  "loading": {
+    "message": "Ladataan..."
+  }
+}

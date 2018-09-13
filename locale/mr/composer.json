@@ -1,0 +1,14 @@
+{
+  "add": {
+    "message": "जोडा"
+  },
+  "add_filters_msg": {
+    "message": "गाळणी जोडायची?"
+  },
+  "block_element": {
+    "message": "घटक रोखा"
+  },
+  "loading": {
+    "message": "आणत आहे..."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "description": {
+    "message": "500 milyon üzerinde indirilmeyle, Adblock Plus dünyanın en meşhur reklam engelleyicilerinden biridir."
+  },
+  "name": {
+    "message": "Adblock Plus"
+  },
+  "name_devbuild": {
+    "message": "Adblock Plus geliştirme sürümü"
+  }
+}

@@ -1,4 +1,7 @@
 {
+  "cancel": {
+    "message": "取消"
+  },
   "common_feature_anti_adblock_title": {
     "message": "隐藏 Adblock 警告消息"
   },

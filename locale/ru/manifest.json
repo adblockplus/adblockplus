@@ -1,0 +1,11 @@
+{
+  "description": {
+    "message": "Более 500 миллионов загрузок, Adblock Plus один из наиболее популярных блокировщиков рекламы в мире."
+  },
+  "name": {
+    "message": "Блокировщик рекламы Adblock Plus"
+  },
+  "name_devbuild": {
+    "message": "Adblock Plus (тестовая сборка)"
+  }
+}

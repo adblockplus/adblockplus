@@ -1,0 +1,14 @@
+{
+  "add": {
+    "message": "যুক্ত করুন"
+  },
+  "add_filters_msg": {
+    "message": "ফিল্টার(সমূহ) যুক্ত করবেন?"
+  },
+  "block_element": {
+    "message": "উপাদান অবরুদ্ধ করুন"
+  },
+  "loading": {
+    "message": "লোড করা হচ্ছে..."
+  }
+}

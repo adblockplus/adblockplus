@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "Parhau"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "Methwyd, gwall lawrlwytho"
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "Cyflwyniad dienw"
   },

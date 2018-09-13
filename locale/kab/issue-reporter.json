@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "Kemmel"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "Icceḍ, asider ur yeddi ara"
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "Tuzna tudrigt"
   },

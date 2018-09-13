@@ -1,0 +1,20 @@
+{
+  "notification_configure": {
+    "message": "Налады апавяшчэнняў"
+  },
+  "notification_open_all": {
+    "message": "Адкрыць усе спасылкі з гэтага апавяшчэння"
+  },
+  "notification_with_buttons": {
+    "message": "Націсніце «OK», каб адкрыць усе спасылкі з гэтага апавяшчэння."
+  },
+  "notification_without_buttons": {
+    "message": "Націсніце на апавяшчэнне, каб адкрыць усе размешчаныя ў ім спасылкі."
+  },
+  "overlay_notification_button_no": {
+    "message": "Не"
+  },
+  "overlay_notification_button_yes": {
+    "message": "Так"
+  }
+}

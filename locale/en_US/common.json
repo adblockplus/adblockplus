@@ -1,4 +1,8 @@
 {
+  "cancel": {
+    "description": "Cancel button label",
+    "message": "Cancel"
+  },
   "common_feature_anti_adblock_title": {
     "description": "Feature title for anti-adblock blocking filter list",
     "message": "Hide Adblock Warning Messages"

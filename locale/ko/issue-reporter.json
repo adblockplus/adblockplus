@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "다음"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "실패함 : 다운로드 실패"
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "익명 전송"
   },

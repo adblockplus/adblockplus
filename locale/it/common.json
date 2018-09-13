@@ -1,4 +1,7 @@
 {
+  "cancel": {
+    "message": "Annulla"
+  },
   "common_feature_anti_adblock_title": {
     "message": "Nascondere i messaggi di avviso di Adblock"
   },

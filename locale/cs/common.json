@@ -1,4 +1,7 @@
 {
+  "cancel": {
+    "message": "Zrušit"
+  },
   "common_feature_privacy_title": {
     "message": "Blokovat dodatečné sledování"
   },

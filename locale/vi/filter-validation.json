@@ -1,0 +1,36 @@
+{
+  "filter_elemhideemulation_nodomain": {
+    "message": "Miền chưa được xác định để chặn phần tử"
+  },
+  "filter_invalid_csp": {
+    "message": "Không hợp lệ"
+  },
+  "filter_invalid_domain": {
+    "message": "Tên miền được chỉ định không hợp lệ (hoặc trống rỗng)"
+  },
+  "filter_invalid_regexp": {
+    "message": "Không hợp lệ"
+  },
+  "filter_unknown_option": {
+    "message": "Bộ lọc tùy chọn không rõ"
+  },
+  "invalid_css_selector": {
+    "message": "$selector$ is not a valid CSS selector",
+    "placeholders": {
+      "selector": {
+        "content": "$1"
+      }
+    }
+  },
+  "line": {
+    "message": "Dòng $number$",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "unexpected_filter_list_header": {
+    "message": "Tiêu đề danh sách bộ lọc không được phép tại đây"
+  }
+}

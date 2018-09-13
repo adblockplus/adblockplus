@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "Lanjut"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "Gagal, kesalahan pengunduhan"
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "Penyerahan anonim"
   },

@@ -1,0 +1,20 @@
+{
+  "notification_configure": {
+    "message": "Configurar as opcións de notificación"
+  },
+  "notification_open_all": {
+    "message": "Abrir todas as ligazóns desta notificación"
+  },
+  "notification_with_buttons": {
+    "message": "Preme \"Aceptar\" para abrir todas as ligazóns desta notificación."
+  },
+  "notification_without_buttons": {
+    "message": "Preme na notificación para abrir todas as súas ligazóns."
+  },
+  "overlay_notification_button_no": {
+    "message": "Non"
+  },
+  "overlay_notification_button_yes": {
+    "message": "Si"
+  }
+}

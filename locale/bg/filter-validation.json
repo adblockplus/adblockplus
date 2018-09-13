@@ -1,0 +1,36 @@
+{
+  "filter_elemhideemulation_nodomain": {
+    "message": "Незададен действен домейн към правилото за скриване"
+  },
+  "filter_invalid_csp": {
+    "message": "Недействителна политика за сигурност на съдържанието"
+  },
+  "filter_invalid_domain": {
+    "message": "Недействително зададен (или празен) домейн"
+  },
+  "filter_invalid_regexp": {
+    "message": "Недействителен регулярен израз"
+  },
+  "filter_unknown_option": {
+    "message": "Неизвестна настройка на филтъра"
+  },
+  "invalid_css_selector": {
+    "message": "Недействителен селектор на каскаден лист със стилове [CSS]: $selector$",
+    "placeholders": {
+      "selector": {
+        "content": "$1"
+      }
+    }
+  },
+  "line": {
+    "message": "Ред $number$",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "unexpected_filter_list_header": {
+    "message": "Непозволени заглавия на филтри"
+  }
+}

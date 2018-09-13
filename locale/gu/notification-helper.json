@@ -1,0 +1,20 @@
+{
+  "notification_configure": {
+    "message": "સૂચના સેટિંગ્સને ગોઠવો"
+  },
+  "notification_open_all": {
+    "message": "આ સૂચનાથી તમામ લિંક્સ ખોલો"
+  },
+  "notification_with_buttons": {
+    "message": "આ નોટીફીકેશનમાં બધી લીંક ખોલવા 'ઓકે' પર ક્લિક કરો."
+  },
+  "notification_without_buttons": {
+    "message": "નોટીફીકેશનમાં બધી લીંક ખોલવા તેનાં પર ક્લિક કરો."
+  },
+  "overlay_notification_button_no": {
+    "message": "ના"
+  },
+  "overlay_notification_button_yes": {
+    "message": "હા"
+  }
+}

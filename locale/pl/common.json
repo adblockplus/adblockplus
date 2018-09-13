@@ -1,4 +1,7 @@
 {
+  "cancel": {
+    "message": "Anuluj"
+  },
   "common_feature_anti_adblock_title": {
     "message": "Ukrywanie komunikatów ostrzegawczych Adblocka"
   },

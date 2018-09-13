@@ -1,39 +1,10 @@
 {
-  "issueReporter_page_title": {
-    "message": "Issue reporter"
+  "continue": {
+    "description": "Continue button label",
+    "message": "Continue"
   },
-  "issueReporter_typeSelector_heading": {
-    "message": "What type of issue are you experiencing?"
-  },
-  "issueReporter_typeSelector_description": {
-    "message": "Please select an issue:"
-  },
-  "issueReporter_falsePositive_label": {
-    "message": "The page I'm trying to view is broken"
-  },
-  "issueReporter_falsePositive_description": {
-    "message": "The page displays incorrectly, fails to function or seems to be missing important content."
-  },
-  "issueReporter_falseNegative_label": {
-    "message": "I still see ads"
-  },
-  "issueReporter_falseNegative_description": {
-    "message": "Adblock Plus is enabled, but I still see an ad or ads."
-  },
-  "issueReporter_highlighter_heading": {
-    "message": "Highlight issue"
-  },
-  "issueReporter_highlighter_description": {
-    "message": "Use the tools to highlight each ad or hide sensitive info on the screenshot. Highlighting ads will help us fix the issue faster."
-  },
-  "issueReporter_commentPage_heading": {
-    "message": "Leave a comment"
-  },
-  "issueReporter_email_description": {
-    "message": "It's helpful to enter a valid email address. This allows us to contact you to fix difficult issues like malware. Keep in mind that it's not mandatory to enter an email address, and your address will never be shared."
-  },
-  "issueReporter_email_label": {
-    "message": "Email:"
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "Failed, download failure"
   },
   "issueReporter_anonymousSubmission_label": {
     "message": "Anonymous submission"
@@ -41,35 +12,20 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "We won't be able to come back to you and will likely prioritize the report lower."
   },
+  "issueReporter_commentPage_heading": {
+    "message": "Leave a comment"
+  },
   "issueReporter_comment_description": {
     "message": "Please help us better understand the issue by leaving a comment below."
   },
   "issueReporter_comment_label": {
     "message": "Comment (optional):"
   },
-  "issueReporter_showData_label": {
-    "message": "Click this link to review the report data before sending"
+  "issueReporter_confirmationMessage": {
+    "message": "Your report has been saved. You can access it at the following address:"
   },
-  "issueReporter_sendButton_label": {
-    "message": "Send report"
-  },
-  "issueReporter_sendPage_heading": {
-    "message": "Send report"
-  },
-  "issueReporter_screenshot_highlight": {
-    "message": "Highlight"
-  },
-  "issueReporter_screenshot_hide": {
-    "message": "Hide"
-  },
-  "issueReporter_sending": {
-    "message": "Please wait while Adblock Plus is submitting your report."
-  },
-  "issueReporter_selectIssueButton_label": {
-    "message": "Select issue"
-  },
-  "issueReporter_markIssueButton_label": {
-    "message": "Mark issue"
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Note:</strong> An additional tab will temporarily open so the page you are on won't be affected by the Issue Reporter."
   },
   "issueReporter_detailsButton_label": {
     "message": "Details"
@@ -77,22 +33,73 @@
   "issueReporter_doneButton_label": {
     "message": "Done"
   },
-  "issueReporter_confirmationMessage": {
-    "message": "Your report has been saved. You can access it at the following address:"
+  "issueReporter_email_description": {
+    "message": "It's helpful to enter a valid email address. This allows us to contact you to fix difficult issues like malware. Keep in mind that it's not mandatory to enter an email address, and your address will never be shared."
   },
-  "issueReporter_knownIssueMessage": {
-    "message": "The issue you reported is probably already known. More information:"
+  "issueReporter_email_label": {
+    "message": "Email:"
   },
   "issueReporter_errorMessage": {
     "message": "An attempt to send the report failed with error code \"?1?\". Please ensure you are connected to the Internet and retry. If the problem persists please request assistance in the [link]Adblock Plus forum[/link]."
   },
+  "issueReporter_falseNegative_description": {
+    "message": "Adblock Plus is enabled, but I still see an ad or ads."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "I still see ads"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "The page displays incorrectly, fails to function or seems to be missing important content."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "The page I'm trying to view is broken"
+  },
+  "issueReporter_highlighter_description": {
+    "message": "Use the tools to highlight each ad or hide sensitive info on the screenshot. Highlighting ads will help us fix the issue faster."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Highlight issue"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "The issue you reported is probably already known. More information:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Mark issue"
+  },
+  "issueReporter_page_title": {
+    "message": "Issue reporter"
+  },
   "issueReporter_privacyPolicy": {
     "message": "Privacy policy"
   },
-  "issueReporter_data_gathering_tab": {
-    "message": "<strong>Note:</strong> An additional tab will temporarily open so the page you are on won't be affected by the Issue Reporter."
-  },
   "issueReporter_processing_screenshot": {
     "message": "processing"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Hide"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "Highlight"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Select issue"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "Send report"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "Send report"
+  },
+  "issueReporter_sending": {
+    "message": "Please wait while Adblock Plus is submitting your report."
+  },
+  "issueReporter_showData_label": {
+    "message": "Click this link to review the report data before sending"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Please select an issue:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "What type of issue are you experiencing?"
   }
 }

@@ -1,0 +1,14 @@
+{
+  "add": {
+    "message": "추가"
+  },
+  "add_filters_msg": {
+    "message": "새 필터를 추가하시겠습니까?"
+  },
+  "block_element": {
+    "message": "이 요소 숨기기"
+  },
+  "loading": {
+    "message": "로드 중입니다..."
+  }
+}

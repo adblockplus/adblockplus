@@ -1,4 +1,7 @@
 {
+  "cancel": {
+    "message": "বাতিল"
+  },
   "common_feature_anti_adblock_title": {
     "message": "Adblock সতর্কীকরণ বার্তাগুলি আড়াল করুন"
   },

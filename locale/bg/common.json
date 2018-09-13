@@ -1,4 +1,7 @@
 {
+  "cancel": {
+    "message": "Отказ"
+  },
   "common_feature_anti_adblock_title": {
     "message": "Скривай съобщенията за инсталиран блокер"
   },

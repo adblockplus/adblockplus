@@ -1,0 +1,33 @@
+{
+  "filter_elemhideemulation_nodomain": {
+    "message": "فلٹر چھپانے والے عنصر کے لئے کوئی فعال ڈومین متعین نہیں ہے۔"
+  },
+  "filter_invalid_csp": {
+    "message": "غلط مواد کی سیکیورٹی پالیسی"
+  },
+  "filter_invalid_domain": {
+    "message": "غلط (یا خالی) ڈومین متعین کیا گیا ہے"
+  },
+  "filter_invalid_regexp": {
+    "message": "غیر مستقل اظہار"
+  },
+  "filter_unknown_option": {
+    "message": "نامعلوم فلٹر کے اختیارات"
+  },
+  "invalid_css_selector": {
+    "message": "$selector$ صحیح CSS سلیکٹر نہیں ہے",
+    "placeholders": {
+      "selector": {
+        "content": "$1"
+      }
+    }
+  },
+  "line": {
+    "message": "لائن$number$",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  }
+}

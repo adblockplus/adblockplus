@@ -1,4 +1,7 @@
 {
+  "cancel": {
+    "message": "취소"
+  },
   "common_feature_anti_adblock_title": {
     "message": "Adblock 경고 메시지 숨기기"
   },

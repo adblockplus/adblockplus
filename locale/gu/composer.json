@@ -1,0 +1,14 @@
+{
+  "add": {
+    "message": "ઊમેરો"
+  },
+  "add_filters_msg": {
+    "message": "ફિલ્ટર ઉમેરવા છે?"
+  },
+  "block_element": {
+    "message": "અવરોધિત તત્વ"
+  },
+  "loading": {
+    "message": "લોડ કરી રહ્યું છે..."
+  }
+}

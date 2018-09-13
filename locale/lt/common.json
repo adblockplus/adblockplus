@@ -1,4 +1,7 @@
 {
+  "cancel": {
+    "message": "Atsisakyti"
+  },
   "common_feature_anti_adblock_title": {
     "message": "Slėpti Adblock įspėjimo pranešimus"
   },

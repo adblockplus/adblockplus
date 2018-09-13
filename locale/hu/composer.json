@@ -1,0 +1,14 @@
+{
+  "add": {
+    "message": "Hozzáadás"
+  },
+  "add_filters_msg": {
+    "message": "Szűrő(k) hozzáadása?"
+  },
+  "block_element": {
+    "message": "Elem blokkolása"
+  },
+  "loading": {
+    "message": "Betöltés…"
+  }
+}

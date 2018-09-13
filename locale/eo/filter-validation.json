@@ -1,0 +1,8 @@
+{
+  "filter_invalid_regexp": {
+    "message": "Malkorekta regula esprimo"
+  },
+  "filter_unknown_option": {
+    "message": "Nekonata filtrila opcio"
+  }
+}

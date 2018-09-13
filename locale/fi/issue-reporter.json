@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "Jatka"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "Epäonnistui, latausvirhe"
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "Lähetä nimettömänä"
   },

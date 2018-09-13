@@ -1,4 +1,7 @@
 {
+  "cancel": {
+    "message": "Ακύρωση"
+  },
   "common_feature_privacy_title": {
     "message": "Αποκλεισμός επιπρόσθετης παρακολούθησης"
   },

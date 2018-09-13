@@ -1,0 +1,16 @@
+{
+  "filter_invalid_regexp": {
+    "message": "Սխալ կանոնավոր արտահայտություն"
+  },
+  "filter_unknown_option": {
+    "message": "Չճանաչված ֆիլտր"
+  },
+  "line": {
+    "message": "Տող $number$",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  }
+}

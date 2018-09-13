@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "Далі"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "Помилка, неможливо викачати"
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "Анонімне подання"
   },

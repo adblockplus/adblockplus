@@ -1,0 +1,20 @@
+{
+  "notification_configure": {
+    "message": "Bildirişlərin ayarlarını seç"
+  },
+  "notification_open_all": {
+    "message": "Bu bildirişə aid bütün keçidləri aç"
+  },
+  "notification_with_buttons": {
+    "message": "Bu bildirişə aid bütün keçidləri açmaq üçün 'OK' düyməsini basın."
+  },
+  "notification_without_buttons": {
+    "message": "Bütün keçidləri açmaq üçün, bildirişin üzərinə klik edin."
+  },
+  "overlay_notification_button_no": {
+    "message": "Xeyr"
+  },
+  "overlay_notification_button_yes": {
+    "message": "Bəli"
+  }
+}

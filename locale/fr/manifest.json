@@ -1,0 +1,11 @@
+{
+  "description": {
+    "message": "Avec plus de 500 millions de téléchargements, Adblock Plus est l'un des bloqueurs de publicités le plus populaire au monde."
+  },
+  "name": {
+    "message": "Adblock Plus"
+  },
+  "name_devbuild": {
+    "message": "Version de développement d'Adblock Plus"
+  }
+}

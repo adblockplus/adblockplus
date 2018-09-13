@@ -1,0 +1,8 @@
+{
+  "notification_with_buttons": {
+    "message": "Bonyeza 'OK' kufungua viungo vyote katika taarifa hii."
+  },
+  "notification_without_buttons": {
+    "message": "Bonyeza kwenye taarifa ya kufungua viungo vyote ndani yake."
+  }
+}

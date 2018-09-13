@@ -1,4 +1,7 @@
 {
+  "cancel": {
+    "message": "રદ"
+  },
   "common_feature_anti_adblock_title": {
     "message": "એડબ્લોક ચેતવણી સંદેશાઓ છુપાવો"
   },

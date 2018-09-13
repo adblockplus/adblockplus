@@ -1,0 +1,20 @@
+{
+  "notification_configure": {
+    "message": "پیکربندی تنظیمات اعلان"
+  },
+  "notification_open_all": {
+    "message": "باز کردن همه لینک های این هشدار"
+  },
+  "notification_with_buttons": {
+    "message": "برای باز شدن همه لینک های این هشدار ، روی OK کلیک کنید."
+  },
+  "notification_without_buttons": {
+    "message": "برای باز شدن همه لینک های داخلش ، روی هشدار کلیک کنید."
+  },
+  "overlay_notification_button_no": {
+    "message": "خیر"
+  },
+  "overlay_notification_button_yes": {
+    "message": "بله"
+  }
+}

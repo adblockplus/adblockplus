@@ -1,0 +1,20 @@
+{
+  "notification_configure": {
+    "message": "বিজ্ঞপ্তি সেটিংস ঠিক করুন"
+  },
+  "notification_open_all": {
+    "message": "এই বিজ্ঞপ্তি থেকে সমস্ত লিঙ্ক খুলুন"
+  },
+  "notification_with_buttons": {
+    "message": "এই বিজ্ঞপ্তিতে সব লিঙ্ক খোলার জন্য 'ঠিক আছে' ক্লিক করুন।"
+  },
+  "notification_without_buttons": {
+    "message": "এটিতে সকল লিংক খোলার জন্য বিজ্ঞপ্তিতে ক্লিক করুন।"
+  },
+  "overlay_notification_button_no": {
+    "message": "না"
+  },
+  "overlay_notification_button_yes": {
+    "message": "হ্যাঁ"
+  }
+}

@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "जारी रखें"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "विफल रहा, विफलता को डाउनलोड करें"
+  },
   "issueReporter_commentPage_heading": {
     "message": "टिप्पणी दर्ज करें"
   },

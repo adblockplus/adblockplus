@@ -1,0 +1,20 @@
+{
+  "notification_configure": {
+    "message": "Konfigurér meddelelsesindstillinger"
+  },
+  "notification_open_all": {
+    "message": "Åbn alle links i denne meddelelse"
+  },
+  "notification_with_buttons": {
+    "message": "Klik på OK for åbne alle links i denne meddelelse."
+  },
+  "notification_without_buttons": {
+    "message": "Klik på meddelelsen for at åbne alle links i den."
+  },
+  "overlay_notification_button_no": {
+    "message": "Nej"
+  },
+  "overlay_notification_button_yes": {
+    "message": "Ja"
+  }
+}

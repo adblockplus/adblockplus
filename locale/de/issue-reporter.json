@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "Fortsetzen"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "Fehler, Download fehlgeschlagen"
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "Anonymer Beitrag"
   },

@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "ચાલુ રાખો"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "નિષ્ફળ થયું, ડાઉનલોડ નિષ્ફળ થયું"
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "અનામિક સબમિશન"
   },

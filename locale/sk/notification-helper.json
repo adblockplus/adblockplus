@@ -1,0 +1,20 @@
+{
+  "notification_configure": {
+    "message": "Konfigurovať nastavenia upozornení"
+  },
+  "notification_open_all": {
+    "message": "Otvoriť všetky odkazy z tohto upozornenia"
+  },
+  "notification_with_buttons": {
+    "message": "Stlačte 'OK' pre otvorenie všetkých odkazov v tomto upozornení."
+  },
+  "notification_without_buttons": {
+    "message": "Kliknite na upozornenie pre otvorenie všetkých odkazov v ňom."
+  },
+  "overlay_notification_button_no": {
+    "message": "Nie"
+  },
+  "overlay_notification_button_yes": {
+    "message": "Áno"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "notification_configure": {
+    "message": "የማስታወሻ ምርጫዎትን ይለውጡ"
+  },
+  "notification_open_all": {
+    "message": "በዚህ ማስታወሻ ውስጥ ያሉ አገናኞች ሁሉ ይክፈቱ"
+  },
+  "notification_with_buttons": {
+    "message": "OK'ን ይጫኑ በዚህ ማስታወሻ ውስጥ ያሉ አገናኞች ሁሉ ለመክፈት።"
+  },
+  "notification_without_buttons": {
+    "message": "በውስጡ ያሉ አገናኞች ሁሉ ለመክፈት ማስታወሻውን ይጫኑት።"
+  }
+}

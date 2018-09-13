@@ -1,0 +1,36 @@
+{
+  "filter_elemhideemulation_nodomain": {
+    "message": "विस्तारित घटक लपवण्याच्या गाळणीसाठी सक्रीय डोमेन निर्धारित केलेले नाहीत"
+  },
+  "filter_invalid_csp": {
+    "message": "अवैध मजकूर सुरक्षा धोरण"
+  },
+  "filter_invalid_domain": {
+    "message": "अवैध (किंवा रिक्त) डोमेन निर्धारित"
+  },
+  "filter_invalid_regexp": {
+    "message": "अवैध सामान्य अविर्भाव"
+  },
+  "filter_unknown_option": {
+    "message": "अज्ञात गाळणी पर्याय"
+  },
+  "invalid_css_selector": {
+    "message": "$selector$ हा वैध CSS Selector नाही",
+    "placeholders": {
+      "selector": {
+        "content": "$1"
+      }
+    }
+  },
+  "line": {
+    "message": "ओळ $number$",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "unexpected_filter_list_header": {
+    "message": "गाळणी यादी मधील हेडर ला यथे परवानगी नाही"
+  }
+}

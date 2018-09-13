@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "Continua"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "Error en la baixada"
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "Enviament de forma anònima"
   },

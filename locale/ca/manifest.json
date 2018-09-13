@@ -1,0 +1,11 @@
+{
+  "description": {
+    "message": "Amb més de 500 milions de baixades, l'Adblock Plus és un dels bloquejadors d'anuncis més populars del món."
+  },
+  "name": {
+    "message": "Adblock Plus"
+  },
+  "name_devbuild": {
+    "message": "Adblock Plus (versió en desenvolupament)"
+  }
+}

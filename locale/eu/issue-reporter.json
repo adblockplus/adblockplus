@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "Jarraitu"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "Huts egin du; deskarga errorea"
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "Bidalketa anonimoa"
   },

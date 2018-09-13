@@ -1,4 +1,10 @@
 {
+  "continue": {
+    "message": "Շարունակել"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "Բեռնման րնթացքում առաջացել են խնդիրներ"
+  },
   "issueReporter_anonymousSubmission_label": {
     "message": "Անհայտ ֆիլտեր"
   },

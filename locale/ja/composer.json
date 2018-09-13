@@ -1,0 +1,14 @@
+{
+  "add": {
+    "message": "追加"
+  },
+  "add_filters_msg": {
+    "message": "フィルタを追加しますか?"
+  },
+  "block_element": {
+    "message": "要素をブロック"
+  },
+  "loading": {
+    "message": "読み込み中..."
+  }
+}
