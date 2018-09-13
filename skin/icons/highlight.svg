@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="29" height="28">
+  <view id="off" viewBox="0 0 29 28"/>
+  <defs>
+    <rect id="highlight-a-off" width="29" height="28"/>
+    <mask id="highlight-b-off" width="29" height="28" x="0" y="0" fill="#FFF">
+      <use xlink:href="#highlight-a-off"/>
+    </mask>
+  </defs>
+  <use fill="none" fill-rule="evenodd" stroke="#4A4A4A" stroke-dasharray="5" stroke-width="4" mask="url(#highlight-b-off)" xlink:href="#highlight-a-off"/>
+
+  <view id="on" viewBox="29 0 29 28"/>
+  <defs>
+    <rect id="highlight-a-on" width="29" height="28" transform="translate(29 0)"/>
+    <mask id="highlight-b-on" width="29" height="28" x="0" y="0" fill="#FFF">
+      <use xlink:href="#highlight-a-on"/>
+    </mask>
+  </defs>
+  <use fill="none" fill-rule="evenodd" stroke="#FFF" stroke-dasharray="5" stroke-width="4" mask="url(#highlight-b-on)" xlink:href="#highlight-a-on"/>
+</svg>

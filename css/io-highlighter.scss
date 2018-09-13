@@ -1,0 +1,122 @@
+/*
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-present eyeo GmbH
+ *
+ * Adblock Plus is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Adblock Plus is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+io-highlighter,
+io-highlighter *::before,
+io-highlighter *::after
+{
+  box-sizing: border-box;
+}
+
+io-highlighter
+{
+  position: relative;
+  display: block;
+  border: 1px solid #979797;
+}
+
+io-highlighter .split
+{
+  display: flex;
+  height: 100%;
+}
+
+io-highlighter .options
+{
+  padding: 12px;
+  color: #4A4A4A;
+  background-color: #f1f1f1;
+  border-right: 1px solid #979797;
+}
+
+io-highlighter canvas
+{
+  flex-grow: 1;
+  user-select: none;
+  touch-action: none;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+
+io-highlighter[drawing] canvas
+{
+  pointer-events: all;
+}
+
+io-highlighter .options .highlight
+{
+  background-image: url(icons/highlight.svg?off#off);
+}
+
+io-highlighter[drawing="highlight"] .options .highlight
+{
+  background-image: url(icons/highlight.svg?on#on);
+}
+
+io-highlighter .options .hide
+{
+  background-image: url(icons/hide.svg?off#off);
+}
+
+io-highlighter[drawing="hide"] .options .hide
+{
+  background-image: url(icons/hide.svg?on#on);
+}
+
+io-highlighter .options .highlight,
+io-highlighter .options .hide
+{
+  width: 70px;
+  min-height: 70px;
+  padding: 0;
+  padding-top: 40px;
+  margin-bottom: 12px;
+  font-size: 0.7rem;
+  border-width: 0;
+  border-radius: 12px;
+  outline: none;
+  color: inherit;
+  background-position: center 12px;
+  background-repeat: no-repeat;
+  word-break: break-all;
+}
+
+io-highlighter[drawing="highlight"] .options .highlight,
+io-highlighter[drawing="hide"] .options .hide
+{
+  color: #FFF;
+  background-color: #9b9b9b;
+}
+
+io-highlighter .closer
+{
+  position: absolute;
+  display: block;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  border-radius: 24px;
+  transform: translateX(-12px) translateY(-12px);
+  background-color: #4a4a4a;
+}
+
+io-highlighter .closer img
+{
+  margin: 6px;
+  width: 12px;
+}

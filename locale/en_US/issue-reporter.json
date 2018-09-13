@@ -59,6 +59,12 @@
   "issueReporter_sendPage_heading": {
     "message": "Send report"
   },
+  "issueReporter_screenshot_highlight": {
+    "message": "Highlight"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Hide"
+  },
   "issueReporter_sending": {
     "message": "Please wait while Adblock Plus is submitting your report."
   },

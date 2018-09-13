@@ -69,6 +69,18 @@ const DOMUtils = {
       }
       return !!value;
     }
+  },
+
+  event: {
+    // returns true if it's a left click or a touch event.
+    // The left mouse button value is 0 and this
+    // is compatible with pointers/touch events
+    // where `button` might not be there.
+    isLeftClick(event)
+    {
+      const re = /^(?:click|mouse|touch|pointer)/;
+      return re.test(event.type) && !event.button;
+    }
   }
 };
 
