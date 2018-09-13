@@ -66,11 +66,8 @@ getTab.then(tab =>
 })
 .then(tab =>
 {
-  const url = new URL(tab.url);
-  document.getElementById("blocking-domain").textContent = [
-    url.protocol,
-    url.hostname
-  ].join("//");
+  const hostname = new URL(tab.url).hostname.replace(/^www\./, "");
+  document.getElementById("blocking-domain").textContent = hostname;
   document.getElementById("issue-reporter").addEventListener(
     "click", () => reportIssue(tab)
   );
