@@ -122,12 +122,22 @@ function capitalize(str)
 
 function serializeReportData()
 {
-  let result = new XMLSerializer().serializeToString(reportData);
+  const xslt = new DOMParser().parseFromString(`
+    <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+      <xsl:output omit-xml-declaration="yes" indent="yes"/>
+      <xsl:template match="node()|@*">
+        <xsl:copy>
+          <xsl:apply-templates select="node()|@*"/>
+        </xsl:copy>
+      </xsl:template>
+    </xsl:stylesheet>
+  `, "application/xml");
 
-  // Insert line breaks before each new tag
-  result = result.replace(/(<[^/]([^"<>]*|"[^"]*")*>)/g, "\n$1");
-  result = result.replace(/^\n+/, "");
-  return result;
+  const xsltProcessor = new XSLTProcessor();
+  xsltProcessor.importStylesheet(xslt);
+
+  const xml = xsltProcessor.transformToDocument(reportData);
+  return new XMLSerializer().serializeToString(xml);
 }
 
 function retrieveAddonInfo()
@@ -402,7 +412,7 @@ function initCommentPage()
       showDataOverlay.hidden = false;
 
       const element = document.getElementById("showDataValue");
-      element.value = serializeReportData();
+      element.textContent = serializeReportData();
       element.focus();
     };
     closeRequestsCollectingTab().then(openDataOverlay).catch(openDataOverlay);

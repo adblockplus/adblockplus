@@ -170,8 +170,13 @@ html[dir="rtl"] #typeSelectorGroup > p
 #showDataValue
 {
   flex-grow: 1;
+  box-sizing: border-box;
   width: 100%;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
+  padding: 20px;
+  border: 1px solid #CCC;
+  font-size: 1rem;
+  overflow: auto;
 }
 
 footer
