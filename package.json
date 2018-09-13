@@ -11,7 +11,9 @@
     "prepare": "python2 ensure_dependencies.py",
     "start": "http-server & npm run watch",
     "test": "npm run $ test",
-    "watch": "npm run $ watch"
+    "watch": "npm run $ watch",
+    "csv-export": "node build/csv-exporter/main.js -e",
+    "csv-import": "node build/csv-exporter/main.js -i"
   },
   "$": {
     "build": {
