@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* globals checkShareResource, getDocLink, openSharePopup, setLinks, E */
+/* globals checkShareResource, getDocLink, openSharePopup, E */
 
 "use strict";
 
@@ -47,12 +47,12 @@
 
     getDocLink("acceptable_ads_criteria", (link) =>
     {
-      setLinks("acceptable-ads-explanation", link, openFilters);
+      ext.i18n.setElementLinks("acceptable-ads-explanation", link, openFilters);
     });
 
     getDocLink("contribute", (link) =>
     {
-      setLinks("share-headline", link);
+      ext.i18n.setElementLinks("share-headline", link);
     });
 
     browser.runtime.sendMessage({
@@ -66,18 +66,18 @@
         E("datacorrupted-warning").removeAttribute("hidden");
         getDocLink("adblock_plus", (link) =>
         {
-          setLinks("datacorrupted-reinstall", link);
+          ext.i18n.setElementLinks("datacorrupted-reinstall", link);
         });
         getDocLink("help_center", (link) =>
         {
-          setLinks("datacorrupted-support", link);
+          ext.i18n.setElementLinks("datacorrupted-support", link);
         });
       }
       // Show warning if filterlists settings were reinitialized
       else if (issues.filterlistsReinitialized)
       {
         E("filterlistsReinitializedWarning").removeAttribute("hidden");
-        setLinks("filterlistsReinitializedWarning", openFilters);
+        ext.i18n.setElementLinks("filterlistsReinitializedWarning", openFilters);
       }
     });
 

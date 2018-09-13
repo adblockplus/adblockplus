@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* globals getDocLink, setLinks, E */
+/* globals getDocLink, E */
 
 "use strict";
 
@@ -43,7 +43,7 @@
     });
     getDocLink("adblock_browser_website", (url) =>
     {
-      setLinks("adblock-browser-text", url);
+      ext.i18n.setElementLinks("adblock-browser-text", url);
     });
   }
   document.addEventListener("DOMContentLoaded", onDOMLoaded, false);
