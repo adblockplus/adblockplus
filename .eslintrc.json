@@ -14,7 +14,7 @@
     // @link https://issues.adblockplus.org/ticket/6581
     // As long as issue 6581 is under discussion, ABP UI
     // decided to put an end to all debates and use
-    // the `prefer-const` rule with no exceptions.
-    "prefer-const": 2
+    // the `prefer-const` rule.
+    "prefer-const": ["error", {"destructuring": "all"}]
   }
 }

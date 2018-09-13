@@ -637,7 +637,7 @@ port.onMessage.addListener((message) =>
             }
             else
             {
-              let filterElem = reportData.createElement("filter");
+              const filterElem = reportData.createElement("filter");
               filterElem.setAttribute("text", filter.text);
               filterElem.setAttribute("subscriptions", subscriptions.join(" "));
               filterElem.setAttribute("hitCount", 1);

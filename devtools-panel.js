@@ -111,7 +111,7 @@ function createRecord(request, filter, template)
 
   if (request.rewrittenUrl)
   {
-    let rewrittenUrl = row.querySelector(".rewritten-url > a");
+    const rewrittenUrl = row.querySelector(".rewritten-url > a");
     rewrittenUrl.textContent = request.rewrittenUrl;
     rewrittenUrl.setAttribute("href", request.rewrittenUrl);
     row.querySelector(".rewritten-url").removeAttribute("hidden");
