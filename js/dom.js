@@ -19,5 +19,23 @@
 
 module.exports = {
   $: (selector, container = document) => container.querySelector(selector),
-  $$: (selector, container = document) => container.querySelectorAll(selector)
+  $$: (selector, container = document) => container.querySelectorAll(selector),
+  // helper to provide the relative coordinates
+  // to the closest positioned containing element
+  relativeCoordinates(event)
+  {
+    let el = event.currentTarget;
+    let x = 0;
+    let y = 0;
+    do
+    {
+      x += el.offsetLeft - el.scrollLeft;
+      y += el.offsetTop - el.scrollTop;
+    } while (
+      (el = el.offsetParent) &&
+      !isNaN(el.offsetLeft) &&
+      !isNaN(el.offsetTop)
+    );
+    return {x: event.pageX - x, y: event.pageY - y};
+  }
 };

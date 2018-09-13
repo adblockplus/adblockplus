@@ -18,6 +18,7 @@
 "use strict";
 
 const {wire, utils} = require("./io-element");
+const {relativeCoordinates} = require("./dom");
 
 // use native rIC where available, fallback to setTimeout otherwise
 const requestIdleCallback = window.requestIdleCallback || setTimeout;
@@ -174,7 +175,7 @@ module.exports = class DrawingHandler
     // react only if not drawing already
     stop(event);
     this.drawing = true;
-    const start = getCoordinates(event);
+    const start = relativeCoordinates(event);
     // set current rect to speed up coordinates updates
     this.rect = {
       type: this.mode,
@@ -264,7 +265,7 @@ module.exports = class DrawingHandler
   // update current rectangle size
   updateRect(event)
   {
-    const coords = getCoordinates(event);
+    const coords = relativeCoordinates(event);
     this.rect.width = coords.x - this.rect.x;
     this.rect.height = coords.y - this.rect.y;
   }
@@ -275,24 +276,6 @@ function notifyColorDepthChanges(value, max)
   const info = {detail: {value, max}};
   const ioHighlighter = this.canvas.closest("io-highlighter");
   ioHighlighter.dispatchEvent(new CustomEvent("changecolordepth", info));
-}
-
-// helper to retrieve absolute coordinates
-function getCoordinates(event)
-{
-  let el = event.currentTarget;
-  let x = 0;
-  let y = 0;
-  do
-  {
-    x += el.offsetLeft - el.scrollLeft;
-    y += el.offsetTop - el.scrollTop;
-  } while (
-    (el = el.offsetParent) &&
-    !isNaN(el.offsetLeft) &&
-    !isNaN(el.offsetTop)
-  );
-  return {x: event.pageX - x, y: event.pageY - y};
 }
 
 // helper to retrieve absolute page coordinates
