@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <view id="normal" viewBox="0 0 13 11"/>
+  <g fill="none">
+    <path stroke="#585858" stroke-linecap="round" stroke-linejoin="round" d="M6.5.5l6 10h-12z"/>
+    <path fill="#585858" d="M6 7h1v-3h-1z"/>
+    <path fill="#585858" d="M6 9h1v-1h-1z"/>
+  </g>
+  <view id="hover" viewBox="0 11 13 11"/>
+  <g fill="none" transform="translate(0, 11)">
+    <path stroke="#07ABEF" fill="#07ABEF" stroke-linecap="round" stroke-linejoin="round" d="M6.5.5l6 10h-12z"/>
+    <path fill="#fff" d="M6 7h1v-3h-1z"/>
+    <path fill="#fff" d="M6 9h1v-1h-1z"/>
+  </g>
+</svg>

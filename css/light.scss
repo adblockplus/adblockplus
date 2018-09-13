@@ -14,10 +14,11 @@
   --color-primary: #585858;
   --color-link: #0797e1;
   --color-info: #0797e1;
-  --font-size-big: 13pt;
-  --font-size-medium: 12pt;
-  --font-size-primary: 11pt;
-  --font-size-small: 10pt;
+  --font-size-big: 17px;
+  --font-size-medium: 16px;
+  --font-size-primary: 13px;
+  --font-size-small: 12px;
   --margin-primary: 16px;
   --padding-primary: 16px;
+  --padding-secondary: calc(var(--padding-primary) / 2);
 }

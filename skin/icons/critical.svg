@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>iconCritical</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="V5" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="00b" transform="translate(-57.000000, -119.000000)" fill="#CA0000">
+            <g id="Group" transform="translate(25.000000, 23.000000)">
+                <g id="Group-10" transform="translate(16.000000, 80.000000)">
+                    <g id="Group-12" transform="translate(16.000000, 16.000000)">
+                        <path d="M8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 Z M8,11 C7.44771525,11 7,11.4477153 7,12 C7,12.5522847 7.44771525,13 8,13 C8.55228475,13 9,12.5522847 9,12 C9,11.4477153 8.55228475,11 8,11 Z M8,3 C7.44771525,3 7,3.44771525 7,4 L7,8 C7,8.55228475 7.44771525,9 8,9 C8.55228475,9 9,8.55228475 9,8 L9,4 C9,3.44771525 8.55228475,3 8,3 Z" id="iconCritical"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

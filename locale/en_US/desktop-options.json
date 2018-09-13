@@ -7,10 +7,6 @@
     "description": "Page title in navigation sidebar",
     "message": "Settings"
   },
-  "options_refresh": {
-    "description": "refresh text in the main toggle",
-    "message": "Refresh"
-  },
   "options_tab_general": {
     "description": "Sidebar tab label",
     "message": "General"
