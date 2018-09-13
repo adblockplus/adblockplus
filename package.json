@@ -27,16 +27,14 @@
     "postinstall": "npm run bundle"
   },
   "dependencies": {
-    "browserify": "^16.1.0",
-    "document-register-element": "^1.7.2",
-    "hyperhtml": "^2.9.0",
-    "hyperhtml-element": "^1.5.0",
-    "node-sass": "^4.7.2"
-  },
-  "devDependencies": {
-    "eslint": "^4.16.0",
+    "browserify": "^16.2.2",
+    "document-register-element": "^1.9.0",
+    "eslint": "^4.19.1",
     "eslint-config-eyeo": "^2.0.0",
     "http-server": "^0.11.1",
+    "hyperhtml": "^2.10.5",
+    "hyperhtml-element": "^1.8.1",
+    "node-sass": "^4.9.0",
     "watch": "^1.0.2"
   }
 }
