@@ -19,11 +19,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <script src="polyfill.js"></script>
-    <script src="ext/common.js"></script>
-    <script src="ext/content.js"></script>
-    <script src="issue-reporter.js"></script>
-    <script src="i18n.js"></script>
+    <script defer src="polyfill.js"></script>
+    <script defer src="ext/common.js"></script>
+    <script defer src="ext/content.js"></script>
+    <script defer src="i18n.js"></script>
+    <script defer src="issue-reporter.js"></script>
     <link rel="stylesheet" type="text/css" href="skin/common.css">
     <link rel="stylesheet" type="text/css" href="skin/fonts.css">
     <link rel="stylesheet" type="text/css" href="skin/issue-reporter.css">
@@ -38,26 +38,26 @@
       </button>
     </div>
     <header>
-      <img id="logo" alt="Adblock Plus logo" src="skin/abp-logo.svg">
-      <div class="title">
-        <h1>
-          Adblock <strong>Plus</strong>
-        </h1>
-        <p class="i18n_issueReporter_page_title"></p>
+      <div class="logo">
+        <img id="logo" alt="" src="skin/abp-logo.svg">
+        <div class="title">
+          <h1>
+            Adblock <strong>Plus</strong>
+          </h1>
+          <p class="i18n_issueReporter_page_title"></p>
+        </div>
       </div>
+      <io-steps i18n-labels="
+        issueReporter_selectIssueButton_label
+        issueReporter_markIssueButton_label
+        issueReporter_detailsButton_label
+        issueReporter_doneButton_label
+      "></io-steps>
     </header>
 
     <main>
-      <div class="page" id="dataCollectorPage">
-        <h1 class="i18n_issueReporter_dataCollector_heading"></h1>
-        <p class="i18n_issueReporter_dataCollector_description"></p>
 
-        <div id="dataCollectorProgressContainer">
-          <progress id="dataCollectorProgress"></progress>
-        </div>
-      </div>
-
-      <div class="page" id="typeSelectorPage" hidden>
+      <div class="page" id="typeSelectorPage">
         <h1 class="i18n_issueReporter_typeSelector_heading"></h1>
         <p class="i18n_issueReporter_typeSelector_description"></p>
         <div id="typeSelectorGroup">
@@ -70,6 +70,10 @@
         </div>
       </div>
 
+      <div class="page" id="highlighterPage" hidden>
+        <h1 class="i18n_issueReporter_highlighter_heading"></h1>
+        <p class="i18n_issueReporter_highlighter_description"></p>
+      </div>
       <div class="page" id="commentPage" hidden>
         <h1 class="i18n_issueReporter_commentPage_heading"></h1>
 
@@ -84,11 +88,9 @@
           <div id="anonymousSubmissionWarning" data-invisible="true" class="i18n_issueReporter_anonymousSubmission_warning"></div>
         </div>
 
-        <p class="i18n_issueReporter_comment_description"></p>
-
         <label for="comment" class="i18n_issueReporter_comment_label"></label>
+        <p class="i18n_issueReporter_comment_description"></p>
         <textarea id="comment"></textarea>
-        <p id="commentLengthWarning" data-invisible="true" class="i18n_issueReporter_comment_lengthWarning"></p>
         <p>
             <button id="showData" class="i18n_issueReporter_showData_label link" disabled></button>
         </p>
@@ -120,7 +122,7 @@
       <a id="privacyPolicy" target="_blank" class="i18n_issueReporter_privacyPolicy"></a>
       <button id="cancel" class="i18n_cancel secondary"></button>
       <button id="continue" class="i18n_continue primary" disabled></button>
-      <button id="send" class="i18n_issueReporter_sendButton_label primary" disabled></button>
+      <button id="send" class="i18n_issueReporter_sendButton_label primary" disabled hidden></button>
     </footer>
   </body>
 </html>

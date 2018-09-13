@@ -16,6 +16,7 @@
  */
 
 io-highlighter,
+io-highlighter *,
 io-highlighter *::before,
 io-highlighter *::after
 {
@@ -37,6 +38,7 @@ io-highlighter .split
 
 io-highlighter .options
 {
+  width: 95px;
   padding: 12px;
   color: #4A4A4A;
   background-color: #f1f1f1;

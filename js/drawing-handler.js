@@ -38,6 +38,11 @@ module.exports = class DrawingHandler
     canvas.width = canvasRect.width;
     canvas.height = canvasRect.height;
 
+    // define a ratio that will produce an image with at least
+    // 800px (maxSize) width and multiply by the device pixel ratio
+    // to preserve the image quality on HiDPi screens.
+    this.ratio = (maxSize / canvas.width) * (window.devicePixelRatio || 1);
+
     // it also needs to intercept all events
     if ("onpointerup" in canvas)
     {
@@ -69,29 +74,38 @@ module.exports = class DrawingHandler
   changeColorDepth(image)
   {
     this.clear();
-    const startW = image.naturalWidth;
-    const startH = image.naturalHeight;
-    const ratioW = Math.min(this.canvas.width, this.maxSize) / startW;
-    const ratioH = Math.min(this.canvas.height, this.maxSize) / startH;
-    const ratio = Math.min(ratioW, ratioH);
-    const endW = startW * ratio;
-    const endH = startH * ratio;
-    this.ctx.drawImage(image,
-                      0, 0, startW, startH,
-                      0, 0, endW, endH);
-    this.imageData = this.ctx.getImageData(
-                      0, 0, this.canvas.width, this.canvas.height);
+    const {naturalWidth, naturalHeight} = image;
+    const canvasWidth = this.canvas.width * this.ratio;
+    const canvasHeight = (canvasWidth * naturalHeight) / naturalWidth;
+    // resize the canvas to the displayed image size
+    // to preserve HiDPi pixels
+    this.canvas.width = canvasWidth;
+    this.canvas.height = canvasHeight;
+    // force its computed size in normal CSS pixels
+    this.canvas.style.width = Math.round(canvasWidth / this.ratio) + "px";
+    this.canvas.style.height = Math.round(canvasHeight / this.ratio) + "px";
+    // draw resized image accordingly with new dimensions
+    this.ctx.drawImage(image, 0, 0, naturalWidth, naturalHeight,
+                              0, 0, canvasWidth, canvasHeight);
+    // collect all info to process the iamge data
+    this.imageData = this.ctx.getImageData(0, 0, canvasWidth, canvasHeight);
     const data = this.imageData.data;
+    const length = data.length;
     const mapping = [0x00, 0x55, 0xAA, 0xFF];
+    // don't loop all pixels at once, assuming devices
+    // capable of HiDPi images have also enough power
+    // to handle all those pixels.
+    const avoidBlocking = Math.round(5000 * this.ratio);
     return new Promise(resolve =>
     {
       const remap = i =>
       {
-        for (; i < data.length; i++)
+        for (; i < length; i++)
         {
           data[i] = mapping[data[i] >> 6];
-          if (i > 0 && i % 5000 == 0)
+          if (i > 0 && i % avoidBlocking == 0)
           {
+            notifyColorDepthChanges.call(this, i, length);
             // faster when possible, otherwise less intrusive
             // than a promise based on setTimeout as in legacy code
             return requestIdleCallback(() =>
@@ -101,6 +115,7 @@ module.exports = class DrawingHandler
             });
           }
         }
+        notifyColorDepthChanges.call(this, i, length);
         resolve();
       };
       remap(0);
@@ -113,12 +128,12 @@ module.exports = class DrawingHandler
     if (!this.ctx)
     {
       this.ctx = this.canvas.getContext("2d");
-      this.ctx.lineJoin = "round";
-      this.ctx.lineWidth = 4;
-      this.ctx.strokeStyle = "rgb(208, 1, 27)";
-      this.ctx.fillStyle = "rgb(0, 0, 0)";
     }
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    this.ctx.lineJoin = "round";
+    this.ctx.strokeStyle = "rgb(208, 1, 27)";
+    this.ctx.fillStyle = "rgb(0, 0, 0)";
+    this.ctx.lineWidth = 4 * this.ratio;
   }
 
   // draw the image during or after it's being processed
@@ -134,10 +149,10 @@ module.exports = class DrawingHandler
     {
       const method = `${rect.type}Rect`;
       this.ctx[method](
-        rect.x,
-        rect.y,
-        rect.width,
-        rect.height
+        rect.x * this.ratio,
+        rect.y * this.ratio,
+        rect.width * this.ratio,
+        rect.height * this.ratio
       );
     }
   }
@@ -254,6 +269,13 @@ module.exports = class DrawingHandler
     this.rect.height = coords.y - this.rect.y;
   }
 };
+
+function notifyColorDepthChanges(value, max)
+{
+  const info = {detail: {value, max}};
+  const ioHighlighter = this.canvas.closest("io-highlighter");
+  ioHighlighter.dispatchEvent(new CustomEvent("changecolordepth", info));
+}
 
 // helper to retrieve absolute coordinates
 function getCoordinates(event)

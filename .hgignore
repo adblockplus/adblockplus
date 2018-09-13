@@ -1,9 +1,11 @@
 node_modules/
 screenshots/
 smoke/
-^desktop-options.js
-^first-run.js
 skin/desktop-options.css
+skin/issue-reporter.css
 skin/first-run.css
 skin/web.css
+^issue-reporter.js
+^desktop-options.js
+^first-run.js
 ^package-lock.json
