@@ -15,8 +15,6 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* globals Components */
-
 "use strict";
 
 function E(id)
@@ -26,129 +24,9 @@ function E(id)
 
 function getDocLink(link, callback)
 {
-  browser.runtime.sendMessage({
+  return browser.runtime.sendMessage({
     type: "app.get",
     what: "doclink",
     link
   }, callback);
-}
-
-function checkShareResource(url, callback)
-{
-  browser.runtime.sendMessage({
-    type: "filters.blocked",
-    url,
-    requestType: "SCRIPT",
-    docDomain: "adblockplus.org",
-    thirdParty: true
-  }, callback);
-}
-
-function openSharePopup(url)
-{
-  let glassPane = E("glass-pane");
-  if (!glassPane)
-  {
-    glassPane = document.createElement("div");
-    glassPane.setAttribute("id", "glass-pane");
-    document.body.appendChild(glassPane);
-  }
-
-  let iframe = E("share-popup");
-  if (!iframe)
-  {
-    iframe = document.createElement("iframe");
-    iframe.setAttribute("id", "share-popup");
-    iframe.setAttribute("scrolling", "no");
-    glassPane.appendChild(iframe);
-  }
-
-  // Firefox 38+ no longer allows messaging using postMessage so we need
-  // to have a fake top level frame to avoid problems with scripts that try to
-  // communicate with the first-run page
-  const isGecko = ("Components" in window);
-  if (isGecko)
-  {
-    try
-    {
-      const Ci = Components.interfaces;
-      const docShell = iframe.contentWindow
-        .QueryInterface(Ci.nsIInterfaceRequestor)
-        .getInterface(Ci.nsIDocShell);
-
-      if (typeof docShell.frameType != "undefined")
-      {
-        // Gecko 47+
-        docShell.frameType = docShell.FRAME_TYPE_BROWSER;
-      }
-      else
-      {
-        // Legacy branch
-        docShell.setIsBrowserInsideApp(
-          Ci.nsIScriptSecurityManager.UNKNOWN_APP_ID
-        );
-      }
-    }
-    catch (ex)
-    {
-      console.error(ex);
-    }
-  }
-
-  let popupMessageReceived = false;
-  function resizePopup(width, height)
-  {
-    iframe.width = width;
-    iframe.height = height;
-    iframe.style.marginTop = -height / 2 + "px";
-    iframe.style.marginLeft = -width / 2 + "px";
-    popupMessageReceived = true;
-    window.removeEventListener("message", popupMessageListener);
-  }
-
-  const popupMessageListener = function(event)
-  {
-    if (!/[./]adblockplus\.org$/.test(event.origin) ||
-        !("width" in event.data) || !("height" in event.data))
-      return;
-
-    resizePopup(event.data.width, event.data.height);
-  };
-  // Firefox requires last parameter to be true to be triggered by
-  // unprivileged pages
-  window.addEventListener("message", popupMessageListener, false, true);
-
-  const popupLoadListener = function()
-  {
-    if (!popupMessageReceived && isGecko)
-    {
-      const rootElement = iframe.contentDocument.documentElement;
-      const {width, height} = rootElement.dataset;
-      if (width && height)
-        resizePopup(width, height);
-    }
-
-    if (popupMessageReceived)
-    {
-      iframe.className = "visible";
-
-      const popupCloseListener = function()
-      {
-        iframe.className = glassPane.className = "";
-        document.removeEventListener("click", popupCloseListener);
-      };
-      document.addEventListener("click", popupCloseListener, false);
-    }
-    else
-    {
-      glassPane.className = "";
-      window.removeEventListener("message", popupMessageListener);
-    }
-
-    iframe.removeEventListener("load", popupLoadListener);
-  };
-  iframe.addEventListener("load", popupLoadListener, false);
-
-  iframe.src = url;
-  glassPane.className = "visible";
 }

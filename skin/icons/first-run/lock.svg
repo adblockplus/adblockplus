@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90">
+  <defs>
+    <style>
+      path
+      {
+        fill: none;
+        stroke: #c70d2c;
+        stroke-width: 2px;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <path d="M27 31V19.32A18.22 18.22 0 0 1 45 1a18.22 18.22 0 0 1 18 18.32V31"/>
+  <path stroke-linejoin="round" fill="none" stroke="#c70d2c" stroke-width="2" d="M9 31h72v58H9z"/>
+  <path stroke-miterlimit="10" fill="none" stroke="#c70d2c" stroke-width="2" d="M9 80h72"/>
+  <path d="M52 51.11a7 7 0 1 0-10.5 6.15v7.18a3.5 3.5 0 1 0 7 0v-7.18a7.12 7.12 0 0 0 3.5-6.15z"/>
+</svg>

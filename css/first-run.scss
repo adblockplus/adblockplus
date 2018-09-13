@@ -1,0 +1,121 @@
+/*
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-present eyeo GmbH
+ *
+ * Adblock Plus is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Adblock Plus is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#installation-status
+{
+  padding: 20px;
+  text-align: center;
+  background-color: #ECECEC;
+}
+
+#installation-status > h1
+{
+  font-size: 2em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#installation-status > img
+{
+  width: 60px;
+  height: 60px;
+}
+
+#installation-status > p
+{
+  font-weight: 300;
+}
+
+section
+{
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+section > header > img
+{
+  width: 70px;
+  height: 70px;
+}
+
+section > header > h2
+{
+  text-transform: uppercase;
+}
+
+section > p
+{
+  font-weight: 300;
+}
+
+.store-buttons
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+.store-button > img
+{
+  height: 40px;
+}
+
+#warnings > section
+{
+  padding: 30px;
+  border: 1px solid #d0021b;
+}
+
+#warnings > section > p:first-child
+{
+  margin-top: 0;
+}
+
+#warnings > section > p:last-child
+{
+  margin-bottom: 0;
+}
+
+body[data-warnings] > main > header,
+body:not([data-warnings~="dataCorrupted"]) [data-warning="dataCorrupted"],
+body:not([data-warnings~="reinitialized"]) [data-warning="reinitialized"]
+{
+  display: none;
+}
+
+@media (max-width: 992px)
+{
+  section
+  {
+    margin: 0;
+  }
+
+  #warnings section
+  {
+    margin-top: 50px;
+  }
+
+  #content .one-third
+  {
+    padding: 50px 0;
+    border-bottom: 1px solid #d3d3d3;
+  }
+
+  #content .one-third:last-child
+  {
+    border-bottom: none;
+  }
+}

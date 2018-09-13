@@ -18,6 +18,13 @@
         "css": "$ create.css desktop-options",
         "js": "$ create.js ./js/desktop-options.js ./desktop-options.js"
       },
+      "first-run": {
+        "css": [
+          "$ create.css first-run",
+          "$ create.css web"
+        ],
+        "js": "$ create.js ./js/first-run.js ./first-run.js"
+      },
       "test": [
         [
           "if [ ! -z $1 ]; then",
@@ -87,7 +94,8 @@
     "hyperhtml-element": "^1.8.1",
     "node-sass": "^4.9.0",
     "npm-dollar": "^0.1.3",
-    "watch": "^1.0.2"
+    "watch": "^1.0.2",
+    "website-defaults": "github:adblockplus/website-defaults#255e4f1"
   },
   "devDependencies": {
     "csv": "^3.1.0",

@@ -1,0 +1,130 @@
+{
+  "firstRun_about": {
+    "message": "About"
+  },
+  "firstRun_browser_description": {
+    "message": "From the team behind Adblock Plus, the most popular ad blocker for desktop browsers, Adblock Browser is now available for your Android and iOS devices."
+  },
+  "firstRun_browser_store_android": {
+    "message": "Android app on Google Play"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "Available on the iTunes App Store"
+  },
+  "firstRun_browser_title": {
+    "message": "Adblock Browser app"
+  },
+  "firstRun_contribute": {
+    "message": "Contribute"
+  },
+  "firstRun_control_description": {
+    "message": "By default, you may see some nonintrusive ads that adhere to <a0>strict criteria</a0>. We identify these ads as Acceptable Ads. Prefer to block all ads? <a1>Turn off Acceptable Ads</a1> in your <a2>Settings</a2>."
+  },
+  "firstRun_control_title": {
+    "message": "You're in control"
+  },
+  "firstRun_fair_description": {
+    "message": "We encourage you to make fair use of Adblock Plus and the option to whitelist websites. Depending on the filters you use, you understand and accept that unintentional results might occur (e.g. blocked content on a website). Refer to the <a0>Terms of Use</a0> for more information about fair use of Adblock Plus."
+  },
+  "firstRun_fair_title": {
+    "message": "Fair use"
+  },
+  "firstRun_features": {
+    "message": "Features"
+  },
+  "firstRun_footer_acceptableAds": {
+    "message": "Acceptable Ads"
+  },
+  "firstRun_footer_admins": {
+    "message": "For admins"
+  },
+  "firstRun_footer_announcements": {
+    "message": "Announcements"
+  },
+  "firstRun_footer_blog": {
+    "message": "Blog"
+  },
+  "firstRun_footer_code": {
+    "message": "Source Code"
+  },
+  "firstRun_footer_community": {
+    "message": "Community"
+  },
+  "firstRun_footer_copyright": {
+    "message": "Copyright © $year$ All rights reserved. Adblock Plus® is a registered trademark of <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
+  "firstRun_footer_devbuilds": {
+    "message": "Development builds"
+  },
+  "firstRun_footer_development": {
+    "message": "Development"
+  },
+  "firstRun_footer_documentation": {
+    "message": "Documentation"
+  },
+  "firstRun_footer_forum": {
+    "message": "Forum"
+  },
+  "firstRun_footer_jobs": {
+    "message": "Jobs"
+  },
+  "firstRun_footer_legal": {
+    "message": "Legal notice"
+  },
+  "firstRun_footer_privacy": {
+    "message": "Privacy policy"
+  },
+  "firstRun_footer_resources": {
+    "message": "Resources"
+  },
+  "firstRun_footer_roadmap": {
+    "message": "Roadmap"
+  },
+  "firstRun_footer_social": {
+    "message": "Follow Us On"
+  },
+  "firstRun_footer_terms": {
+    "message": "Terms of use"
+  },
+  "firstRun_footer_tools": {
+    "message": "Tools"
+  },
+  "firstRun_report": {
+    "message": "Report an issue"
+  },
+  "firstRun_subtitle": {
+    "message": "You just took control of your browser."
+  },
+  "firstRun_title": {
+    "message": "Installation Successful!"
+  },
+  "firstRun_warning_dataCorrupted_intro": {
+    "description": "Text shown at beginning of warning being shown when data corruption was detected",
+    "message": "Some users are experiencing an issue where this page opens each time their browser is launched. This issue can be resolved by uninstalling and reinstalling Adblock Plus:"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "description": "Footnote at the end of warning being shown when data corruption was detected",
+    "message": "If you still need help, contact us at <a0>support@adblockplus.org</a0> or visit our <a1>Help Center</a1>."
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "description": "First step of instructions in warning being shown when data corruption was detected",
+    "message": "Open your browser's Extensions tab."
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "description": "Second step of instructions in warning being shown when data corruption was detected",
+    "message": "Locate Adblock Plus and remove it."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "description": "Third step of instructions in warning being shown when data corruption was detected",
+    "message": "Reinstall Adblock Plus from <a>adblockplus.org</a>."
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "It seems that an issue caused all filters to be removed and we were unable to restore a backup. Therefore we had to reset your filters and Acceptable Ads settings. Please check your filter lists and Acceptable Ads settings in the <a>Adblock Plus options</a>."
+  }
+}
