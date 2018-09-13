@@ -88,7 +88,7 @@
             <template>
               <button data-action="toggle-remove-subscription" data-disable="preconfigured" role="checkbox" class="control icon"></button>
               <span data-display="title"></span>
-              <span data-tooltip="options_protection_%value%_tooltip"></span>
+              <io-popout type="tooltip" i18n-body="options_protection_%value%_tooltip"></io-popout>
             </template>
           </ul>
         </section>
@@ -154,7 +154,7 @@
             <template>
               <button data-action="toggle-remove-subscription" data-disable="preconfigured" role="checkbox" class="control icon"></button>
               <span class="i18n_options_anti_cv_title"></span>
-              <span data-tooltip="options_anti_cv_tooltip"></span>
+              <io-popout type="tooltip" i18n-body="options_anti_cv_tooltip"></io-popout>
               <span class="i18n_options_new_label new"></span>
             </template>
           </ul>
@@ -220,17 +220,17 @@
             <li data-pref="shouldShowBlockElementMenu">
               <button class="icon" role="checkbox" data-action="toggle-pref"></button>
               <span class="i18n_options_customize_blockElement" data-display="title"></span>
-              <span data-tooltip="options_customize_blockElement_tooltip"></span>
+              <io-popout type="tooltip" i18n-body="options_customize_blockElement_tooltip"></io-popout>
             </li>
             <li data-pref="show_devtools_panel">
               <button class="icon" role="checkbox" data-action="toggle-pref"></button>
               <span class="i18n_options_customize_showDevToolsPanel" data-display="title"></span>
-              <span data-tooltip="options_customize_showDevToolsPanel_tooltip"></span>
+              <io-popout type="tooltip" i18n-body="options_customize_showDevToolsPanel_tooltip"></io-popout>
             </li>
             <li data-pref="notifications_ignoredcategories">
               <button class="icon" role="checkbox" data-action="toggle-pref"></button>
               <span class="i18n_options_customize_showNotifications" data-display="title"></span>
-              <span data-tooltip="options_customize_showNotifications_tooltip"></span>
+              <io-popout type="tooltip" i18n-body="options_customize_showNotifications_tooltip"></io-popout>
             </li>
           </ul>
         </section>
@@ -268,25 +268,22 @@
                 <span class="message"></span>
               </div>
               <div class="col5">
-                <button data-action="open-context-menu" class="icon gear"></button>
-                <div role="menubar" class="context-menu-wrapper">
-                  <div class="context-menu">
-                    <ul class="content" role="menu">
-                      <li role="menuitem">
-                        <button class="i18n_options_filterList_updateNow icon update-subscription" data-action="update-subscription"></button>
-                      </li>
-                      <li role="menuitem">
-                        <a class="i18n_options_filterList_website icon website" target="_blank"></a>
-                      </li>
-                      <li role="menuitem">
-                        <a class="i18n_options_filterList_source icon source" target="_blank"></a>
-                      </li>
-                      <li role="menuitem">
-                        <button class="i18n_options_control_remove_title icon delete" data-hide="preconfigured" data-action="remove-subscription"></button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                <io-popout type="menubar">
+                  <ul class="content" role="menu">
+                    <li role="menuitem">
+                      <button class="i18n_options_filterList_updateNow icon update-subscription" data-action="update-subscription"></button>
+                    </li>
+                    <li role="menuitem">
+                      <a class="i18n_options_filterList_website icon website" target="_blank"></a>
+                    </li>
+                    <li role="menuitem">
+                      <a class="i18n_options_filterList_source icon source" target="_blank"></a>
+                    </li>
+                    <li role="menuitem">
+                      <button class="i18n_options_control_remove_title icon delete" data-hide="preconfigured" data-action="remove-subscription"></button>
+                    </li>
+                  </ul>
+                </io-popout>
               </div>
               <div class="col5">
                 <button data-hide="preconfigured" data-action="remove-subscription" class="control icon delete"></button>

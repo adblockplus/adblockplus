@@ -1,0 +1,61 @@
+/*
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-present eyeo GmbH
+ *
+ * Adblock Plus is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Adblock Plus is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+io-popout ul
+{
+  padding: 0;
+}
+
+io-popout li
+{
+  list-style: none;
+}
+
+.table.cols io-popout li
+{
+  padding: 0;
+  border: 0;
+}
+
+.table.cols io-popout li > *
+{
+  width: 100%;
+  display: flex;
+  border: 0rem;
+  padding: 0.7rem 0rem;
+  color: #077CA6;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: none;
+  text-decoration: none;
+}
+
+io-popout li > *:hover,
+io-popout li > *:focus
+{
+  background-color: #E1F2FA;
+  cursor: pointer;
+}
+
+io-popout li .icon::before
+{
+  height: var(--icon-size-inner);
+  width: var(--icon-size-inner);
+  margin: 0 var(--icon-size-inner);
+  border: none;
+}

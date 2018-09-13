@@ -15,6 +15,9 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+@import "io-popout.scss";
+@import "io-popout-fixes.scss";
+
 html
 {
   font-size: 16px;
@@ -352,22 +355,22 @@ button[role="checkbox"][disabled].icon.toggle::before
   background-image: url(icons/checkmark.svg?approved#approved);
 }
 
-.context-menu .icon.update-subscription::before
+.icon.update-subscription::before
 {
   background-image: url(icons/reload.svg);
 }
 
-.context-menu .icon.website::before
+.icon.website::before
 {
   background-image: url(icons/globe.svg);
 }
 
-.context-menu .icon.source::before
+.icon.source::before
 {
   background-image: url(icons/code.svg);
 }
 
-.context-menu .icon.delete::before
+.icon.delete::before
 {
   background-image: url(icons/trash.svg?default#default);
 }
@@ -406,17 +409,6 @@ button[role="checkbox"][disabled].icon.toggle::before
 .icon.close.tertiary:hover::before
 {
   background-image: url(icons/delete.svg?tertiary-hover#tertiary-hover);
-}
-
-.tooltip::before
-{
-  width: 1.1rem;
-  height: 1.1rem;
-}
-
-.icon.tooltip::before
-{
-  background-image: url(icons/tooltip.svg);
 }
 
 #dialog .table.list li button.icon::before
@@ -1230,159 +1222,6 @@ html[dir="rtl"] #content-whitelist form button
 {
   padding: 1.5rem;
   border: 1px solid #CDCDCD;
-}
-
-/*
-  Context menu
- */
-
-li [role="menubar"]
-{
-  position: relative;
-}
-
-[role="tooltip"]
-{
-  right: -0.8rem;
-  margin-top: 0.8rem;
-  opacity: 1;
-  padding: 0.2rem 1rem;
-  position: absolute;
-  -webkit-transition: opacity 200ms ease-in-out 400ms,
-    visibility 0ms linear 400ms;
-  transition: opacity 200ms ease-in-out 400ms,
-    visibility 0ms linear 400ms;
-  visibility: visible;
-  width: 15rem;
-  z-index: 1;
-}
-
-html[dir="rtl"] [role="tooltip"]
-{
-  right: auto;
-  left: -0.8rem;
-}
-
-[role="tooltip"],
-.context-menu .content
-{
-  border: 1px solid #077CA6;
-  border-radius: 3px;
-  background-color: #FFFFFF;
-}
-
-
-.tooltip:not(:hover) > [role="tooltip"],
-[role="tooltip"]:hover
-{
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition-delay: 0ms;
-  transition-delay: 0ms;
-}
-
-.context-menu
-{
-  position: absolute;
-  right: 2.5rem;
-  top: -2rem;
-  z-index: 1;
-  visibility: hidden;
-}
-
-html[dir="rtl"] .context-menu
-{
-  right: auto;
-  left: 2.5rem;
-}
-
-.context-menu .content
-{
-  padding: 0rem;
-  position: relative;
-  cursor: default;
-}
-
-li.show-context-menu .context-menu
-{
-  visibility: visible;
-}
-
-[role="tooltip"]::before,
-.context-menu::before
-{
-  content: "";
-  width: 0rem;
-  height: 0rem;
-  position: absolute;
-}
-
-[role="tooltip"]::before
-{
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid #077CA6;
-  top: -10px;
-  right: 15px;
-}
-
-html[dir="rtl"] [role="tooltip"]::before
-{
-  right: auto;
-  left: 15px;
-}
-
-.context-menu::before
-{
-  border-left: 10px solid #077CA6;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  top: 22px;
-  right: -0.5rem;
-}
-
-html[dir="rtl"] .context-menu::before
-{
-  border-left: 0rem;
-  border-right: 10px solid #077CA6;
-  right: auto;
-  left: -0.5rem;
-}
-
-.context-menu li[role="menuitem"]
-{
-  width: 12.2rem;
-  border: 0rem;
-  padding: 0rem;
-}
-
-.context-menu li[role="menuitem"] > *
-{
-  width: 100%;
-  display: flex;
-  border: 0rem;
-  padding: 0.7rem 0rem;
-  color: #077CA6;
-  align-items: center;
-  font-size: 1rem;
-  font-weight: 400;
-  text-transform: none;
-  text-decoration: none;
-}
-
-.context-menu li[role="menuitem"] > *:hover,
-.context-menu li[role="menuitem"] > *:focus
-{
-  background-color: #E1F2FA;
-  cursor: pointer;
-}
-
-.context-menu li[role="menuitem"] .icon::before
-{
-  height: 1rem;
-  width: 1rem;
-  margin: 0rem 1.1rem;
-  border: 0rem;
 }
 
 /*
