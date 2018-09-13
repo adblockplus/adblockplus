@@ -1,24 +1,45 @@
 {
+  "click_element_to_block_it": {
+    "message": "Clicca su un elemento della pagina per bloccarlo."
+  },
   "clickhide_instructions": {
-    "message": "Dopo la chiusura di questo pop-up, cliccate (o clic destro) su un elemento sulla pagina."
+    "message": "Dopo aver chiuso questa finestra a comparsa, clicca (o fai clic con il tasto destro) su un elemento della pagina."
   },
   "disabled_for_site": {
     "message": "<strong>Disattivato</strong> su questo sito"
   },
   "easy_create_filter": {
-    "message": "Blocca Elemento"
+    "message": "Blocca elemento"
   },
   "enabled_for_site": {
     "message": "<strong>Attivato</strong> su questo sito"
   },
+  "options_refresh": {
+    "message": "Aggiorna"
+  },
   "options_short": {
     "message": "Opzioni"
   },
+  "overlay_notification_closing_button_hide": {
+    "message": "Chiudi"
+  },
   "overlay_notification_closing_button_optout": {
-    "message": "Interrompere la visualizzazione delle notifiche"
+    "message": "Non mostrare più notifiche"
+  },
+  "promote_abp_module": {
+    "message": "Sei interessato ad Adblock Plus per cellulare?"
+  },
+  "refresh_to_take_effect": {
+    "message": "Clicca su <strong>Aggiorna</strong> affinché le modifiche siano applicate."
+  },
+  "sendReport": {
+    "message": "Segnala un problema"
+  },
+  "stats_header": {
+    "message": "Numero di elementi bloccati"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> in questa pagina",
+    "message": "<strong>$number$</strong> su questa pagina",
     "placeholders": {
       "number": {
         "content": "$1"
@@ -34,9 +55,12 @@
     }
   },
   "stats_show_iconnumber": {
-    "message": "Visualizza il numero nell'icona"
+    "message": "Mostra il numero nell'icona"
   },
   "stats_title": {
-    "message": "Annunci bloccati"
+    "message": "Pubblicità bloccate"
+  },
+  "status_header": {
+    "message": "Blocco pubblicità attivo:"
   }
 }

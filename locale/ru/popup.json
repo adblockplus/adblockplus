@@ -1,6 +1,9 @@
 {
+  "click_element_to_block_it": {
+    "message": "Нажмите на элемент на странице, чтобы заблокировать его."
+  },
   "clickhide_instructions": {
-    "message": "После закрытия этого всплывающего окна, щёлкните на элементе левой или правой кнопкой мыши."
+    "message": "После закрытия этого всплывающего окна выберите элемент на странице (левой или правой кнопкой мыши)."
   },
   "disabled_for_site": {
     "message": "<strong>Отключен</strong> на этом сайте"
@@ -9,13 +12,31 @@
     "message": "Заблокировать элемент"
   },
   "enabled_for_site": {
-    "message": "<strong>Включён</strong> на этом сайте"
+    "message": "<strong>Включен</strong> на этом сайте"
+  },
+  "options_refresh": {
+    "message": "Обновить"
   },
   "options_short": {
     "message": "Настройки"
   },
+  "overlay_notification_closing_button_hide": {
+    "message": "Закрыть"
+  },
   "overlay_notification_closing_button_optout": {
     "message": "Запретить показ уведомлений"
+  },
+  "promote_abp_module": {
+    "message": "Интересует Adblock Plus для мобильного устройства?"
+  },
+  "refresh_to_take_effect": {
+    "message": "Нажмите <strong>Обновить</strong>, чтобы изменения вступили в силу."
+  },
+  "sendReport": {
+    "message": "Сообщить об ошибке"
+  },
+  "stats_header": {
+    "message": "Число заблокированных объектов"
   },
   "stats_label_page": {
     "message": "<strong>$number$</strong> на этой странице",
@@ -37,6 +58,9 @@
     "message": "Показывать число в значке"
   },
   "stats_title": {
-    "message": "Статистика блокирования"
+    "message": "Заблокированная реклама"
+  },
+  "status_header": {
+    "message": "Заблокируйте рекламу на:"
   }
 }
