@@ -6,7 +6,6 @@ before_script:
   - curl -sL https://deb.nodesource.com/setup_8.x | bash -
   - apt-get update -yqq
   - apt-get install -yqq nodejs
-  - npm install
 
 stages:
   - lint
@@ -17,6 +16,10 @@ stages:
 lint:
   stage: lint
   script:
+    # enable unsafe-perm to avoid problems with running npm as root
+    # see adblockplusui#193
+    - export npm_config_unsafe_perm=true
+    - npm install
     - npm run lint
   only:
     variables:
@@ -25,6 +28,10 @@ lint:
 test:
   stage: test
   script:
+    # enable unsafe-perm to avoid problems with running npm as root
+    # see adblockplusui#193
+    - export npm_config_unsafe_perm=true
+    - npm install
     - npm run test
   only:
     variables:
@@ -33,6 +40,9 @@ test:
 build:
   stage: build
   script:
+    # enable unsafe-perm to avoid problems with running npm as root
+    # see adblockplusui#193
+    - export npm_config_unsafe_perm=true
     # Clone adblockpluschrome
     - git clone ${CI_REPOSITORY_URL/adblockplusui.git/adblockpluschrome.git}
     - cd adblockpluschrome
@@ -99,7 +109,7 @@ pages:
       <h1>ABP UI Nightlies</h1>
       <p>
         To enable installation of an unsigned extension got to
-        <i>about:config</i> and disable <i>xpinstall.signatures.required</i>
+        <i>about:config</i> and disable <i>xpinstall.signatures.required</i>, see <a href='https://support.mozilla.org/en-US/kb/add-on-signing-in-firefox?as=u&utm_source=inproduct#w_what-are-my-options-if-i-want-to-use-an-unsigned-add-on-advanced-users'>here</a>.
       </p>
       {%- for id, url, ref, commit, date in jobs %}
       <p>
