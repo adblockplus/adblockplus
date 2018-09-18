@@ -77,9 +77,22 @@
     return obj;
   }
 
-  const convertFilter = convertObject.bind(null, ["text"]);
-  const convertFilterText = (text) => convertFilter({text});
+  // pollute a converted filter object with `isSlow` detail
+  // there are 3 kind of slow filters
+  //  1. filter instanceof RegExpFilter && defaultMatcher.isSlowFilter(filter)
+  //  2. filter instanceof ElemHideEmulationFilter
+  //  3. filter instanceof SnippetFilter
+  // for the time being, we want to simply expose the first kind
+  // since there's nothing users can do to avoid others being slow
+  function convertFilter(filter)
+  {
+    const obj = convertObject(["text"], filter);
+    obj.isSlow = filter instanceof RegExpFilter &&
+                  defaultMatcher.isSlowFilter(filter);
+    return obj;
+  }
 
+  const convertFilterText = (text) => convertFilter({text});
   const uiPorts = new Map();
   const listenedPreferences = Object.create(null);
   const listenedFilterChanges = Object.create(null);
