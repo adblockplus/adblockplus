@@ -268,7 +268,7 @@ Collection.prototype.updateItem = function(item)
     if (lastUpdateElement)
     {
       const message = element.querySelector(".message");
-      if (item.isDownloading)
+      if (item.downloading)
       {
         const text = getMessage("options_filterList_lastDownload_inProgress");
         message.textContent = text;
