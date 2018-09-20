@@ -3,26 +3,13 @@
     "description": "https://gitlab.com/eyeo/specs/spec/blob/bubble_ui/spec/abp/bubble-ui.md#index",
     "message": "Block ads on:"
   },
-  "clickhide_instructions": {
-    "description": "Instructions shown in popup UI before it disapears, when \"Block element\" action is executed",
-    "message": "After closing this popup, click (or right-click) an element on the page."
-  },
   "click_element_to_block_it": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/bubble_ui/spec/abp/bubble-ui.md#block-element",
     "message": "Click an element on the page to block it."
   },
-  "disabled_for_site":
-  {
-    "description": "Popup balloon label to disable blocking",
-    "message": "<strong>Disabled</strong> on this site"
-  },
   "easy_create_filter": {
     "description": "Action in popup UI to add a filter which blocks an element selected from the current page",
     "message": "Block element"
-  },
-  "enabled_for_site": {
-    "description": "Popup balloon label to enable blocking",
-    "message": "<strong>Enabled</strong> on this site"
   },
   "options_refresh": {
     "description": "refresh text in the main toggle",
@@ -69,14 +56,6 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "description": "Toggle for displaying the number of blocked ads in the icon.",
-    "message": "Show number in icon"
-  },
-  "stats_title": {
-    "description": "Title for the stats section in the popup.",
-    "message": "Ads blocked"
   },
   "sendReport": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/bubble_ui/spec/abp/bubble-ui.md#report-issue",
