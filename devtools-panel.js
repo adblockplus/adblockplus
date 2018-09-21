@@ -81,6 +81,19 @@ function createActionButton(action, stringId, filter)
   return button;
 }
 
+function onUrlClick(event)
+{
+  if (event.button != 0)
+    return;
+
+  // Firefox 57 doesn't support the openResource API.
+  if (!("openResource" in browser.devtools.panels))
+    return;
+
+  browser.devtools.panels.openResource(event.target.href);
+  event.preventDefault();
+}
+
 function createRecord(request, filter, template)
 {
   const row = document.importNode(template, true);
@@ -98,17 +111,9 @@ function createRecord(request, filter, template)
     originalUrl.textContent = request.url;
     originalUrl.setAttribute("href", request.url);
 
-    // Firefox 57 doesn't support the openResource API.
-    if (request.type != "POPUP" && "openResource" in ext.devtools.panels)
+    if (request.type != "POPUP")
     {
-      originalUrl.addEventListener("click", event =>
-      {
-        if (event.button == 0)
-        {
-          ext.devtools.panels.openResource(request.url);
-          event.preventDefault();
-        }
-      }, false);
+      originalUrl.addEventListener("click", onUrlClick);
     }
 
     if (request.rewrittenUrl)
@@ -116,6 +121,7 @@ function createRecord(request, filter, template)
       const rewrittenUrl = urlElement.querySelector("[data-i18n-index='1'");
       rewrittenUrl.textContent = request.rewrittenUrl;
       rewrittenUrl.setAttribute("href", request.rewrittenUrl);
+      rewrittenUrl.addEventListener("click", onUrlClick);
     }
     else
     {
