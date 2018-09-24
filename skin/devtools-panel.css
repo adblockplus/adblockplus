@@ -17,15 +17,15 @@
 
 *
 {
-  font-family: 'Lucida Grande', 'Segoe UI', Ubuntu, Tahoma, Arial, sans-serif;
-  font-size: 11px;
   box-sizing: border-box;
+  font-family: "Lucida Grande", "Segoe UI", Ubuntu, Tahoma, Arial, sans-serif;
+  font-size: 11px;
 }
 
 html
 {
-  height: 100%;
   overflow: hidden;
+  height: 100%;
 }
 
 a
@@ -35,21 +35,21 @@ a
 
 body
 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   margin: 0;
   color: #303942;
-  display: flex;
-  height: 100%;
-  flex-direction: column;
 }
 
 body.default
 {
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 body.dark
 {
-  color: #ffffff;
+  color: #fff;
 }
 
 table
@@ -68,8 +68,8 @@ table *
 td
 {
   padding: 3px;
-  white-space: nowrap;
   border-left: 1px solid #cdcdcd;
+  white-space: nowrap;
 }
 
 td:first-child
@@ -133,7 +133,7 @@ body.dark #items table
 
 #items tr[data-state=blocked]
 {
-  color: red;
+  color: #f00;
 }
 
 body.dark #items tr[data-state=blocked]
@@ -143,7 +143,7 @@ body.dark #items tr[data-state=blocked]
 
 #items tr[data-state=whitelisted]
 {
-  color: green;
+  color: #080;
 }
 
 body.dark #items tr[data-state=whitelisted]
@@ -157,16 +157,18 @@ body.dark #items tr[data-state=whitelisted]
   display: none;
 }
 
-.changed, .unnamed
+.changed,
+.unnamed
 {
   font-style: italic
 }
 
-.request-wrapper, .filter-wrapper
+.request-wrapper,
+.filter-wrapper
 {
   display: flex;
-  height: 100%;
   flex-direction: column;
+  height: 100%;
 }
 
 tr:not(:hover) .action
@@ -199,23 +201,27 @@ tr:not(:hover) .action
 
 .action
 {
-  background: #555;
-  color: white;
-  font-style: normal;
-  border-radius: 7px;
-  padding: 2px 6px;
+  flex-shrink: 0;
   margin: auto;
   margin-left: 5px;
+  padding: 2px 6px;
+  border-radius: 7px;
+  font-style: 400;
+  color: #fff;
+  background: #555;
   cursor: pointer;
-  flex-shrink: 0;
 }
 
-.filter-wrapper, .filter, .origin, .domain
+.filter-wrapper,
+.filter,
+.origin,
+.domain
 {
   flex-grow: 1;
 }
 
-.domain, .origin,
+.domain,
+.origin,
 .changed .request-wrapper,
 .changed .filter-wrapper,
 .changed .type
@@ -241,7 +247,7 @@ footer
 
 #reload
 {
-  color: blue;
+  color: #00f;
   text-decoration: underline;
   cursor: pointer;
 }
