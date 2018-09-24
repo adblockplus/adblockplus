@@ -36,15 +36,15 @@ body
 
 .column
 {
-  height: 100vh;
   display: flex;
+  flex: 1;
+  height: 100vh;
   align-items: center;
   justify-content: center;
-  flex: 1;
 }
 
- #graphic-column,
- .graphic-column
+#graphic-column,
+.graphic-column
 {
   background-color: #8DC446;
 }
@@ -63,7 +63,7 @@ body
 
 #optionsPageLink
 {
-  color: red;
+  color: #F00;
 }
 
 /* Needed in order to achieve standard behavior 
@@ -84,7 +84,8 @@ html[dir="rtl"] #content header
   margin: 0 5em 2em 0;
 }
 
-#content header p {
+#content header p
+{
   margin: 0;
   opacity: 0.5;
   font-weight: 400;
@@ -141,7 +142,7 @@ html[dir="rtl"] .custom-feature-entry h2
 
 .version-details
 {
-  margin: 0 1em 0 1em;
+  margin: 0 1em;
 }
 
 .version-details h2
@@ -158,9 +159,9 @@ html[dir="rtl"] .custom-feature-entry h2
 
 .feature-entry img
 {
+  display: block;
   width: 50px;
   height: 50px;
-  display: block;
   margin: 0 1em 0 0;
 }
 
@@ -188,12 +189,12 @@ html[dir="rtl"] .store-buttons
 
 .store-button
 {
+  float: left;
   display: block;
   height: 58px;
+  margin-bottom: 1em;
   border-radius: 6px;
   background-color: #000;
-  float: left;
-  margin-bottom: 1em;
 }
 
 html[dir="rtl"] .store-button
@@ -239,6 +240,6 @@ html[dir="rtl"] .applestore-button
 
   html[dir="rtl"] .applestore-button
   {
-    margin: 0 0 1em 0;
+    margin: 0 0 1em;
   }
 }
