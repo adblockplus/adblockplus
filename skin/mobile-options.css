@@ -100,7 +100,7 @@ ul > li
   box-sizing: border-box;
   min-height: 46px;
   padding: 5px 10px;
-  border: 1px solid #BBBBBB;
+  border: 1px solid #BBB;
   border-bottom: none;
   list-style: none;
 }
@@ -108,9 +108,9 @@ ul > li
 ul > li > span
 {
   flex: auto;
+  overflow: hidden;
   padding: 10px;
   word-wrap: break-word;
-  overflow: hidden;
 }
 
 /* Form elements */
@@ -120,12 +120,12 @@ input[type="text"]
   min-width: 220px;
   padding: 5px 0;
   border: 0;
-  border-bottom: 1px solid #BBBBBB;
+  border-bottom: 1px solid #BBB;
 }
 
 input[type="text"]::placeholder
 {
-  color: #BBBBBB;
+  color: #BBB;
   opacity: 1; /* Firefox sets opacity so we need to override it */
 }
 
@@ -191,14 +191,14 @@ button.secondary
 
 button.primary
 {
-  color: #FFF;
   border-color: #099DD1;
+  color: #FFF;
   background-color: #099DD1;
 }
 
 button.secondary
 {
-  border-color: #BBBBBB;
+  border-color: #BBB;
 }
 
 button.remove
@@ -216,7 +216,7 @@ ul + button
   width: 100%;
   min-height: 46px; /* equal to min-height of list item */
   padding: 15px 20px; /* based on margin and padding of list item */
-  border: 1px solid #BBBBBB;
+  border: 1px solid #BBB;
   text-align: start;
 }
 
@@ -228,20 +228,20 @@ ul + button
   align-items: flex-start;
   justify-content: center;
   position: fixed;
+  z-index: 101;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 20px;
   background: rgba(0, 0, 0, 0.7);
-  z-index: 101;
 }
 
 [role="dialog"]
 {
   max-width: 25em;
   padding: 0;
-  border: 1px solid #BBBBBB;
+  border: 1px solid #BBB;
   background-color: #FFF;
 }
 
@@ -316,9 +316,9 @@ body:not([data-dialog="subscribe"]) #dialog-subscribe
 
 #dialog-recommended ul
 {
+  overflow-y: auto;
   width: auto;
   margin: 0;
-  overflow-y: auto;
 }
 
 #dialog-recommended ul li
@@ -328,7 +328,7 @@ body:not([data-dialog="subscribe"]) #dialog-subscribe
 
 #dialog-recommended ul li.installed
 {
-  color: #BBBBBB;
+  color: #BBB;
 }
 
 #dialog-recommended ul li::before
@@ -342,12 +342,12 @@ body:not([data-dialog="subscribe"]) #dialog-subscribe
 
 #dialog-recommended ul li.installed::before
 {
-  background-color: #BBBBBB;
+  background-color: #BBB;
   mask: url(mobile/checkmark.svg) center/cover no-repeat;
 }
 
 #dialog-recommended > button
 {
-  border-width: 1px 0 0 0;
+  border-width: 1px 0 0;
   text-align: center;
 }

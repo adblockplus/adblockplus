@@ -37,7 +37,7 @@
       }
     },
     "lint": {
-      "css": "stylelint ./css/*.scss",
+      "css": "stylelint ./css/*.scss ./skin/*.css --ignore-path .gitignore",
       "js": "eslint './*.js' './js/**/*.js' './lib/**/*.js' './ext/**/*.js' './build/**/*.js'"
     },
     "test": {
