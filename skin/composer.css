@@ -1,0 +1,75 @@
+/*
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-present eyeo GmbH
+ *
+ * Adblock Plus is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Adblock Plus is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+*
+{
+  box-sizing: border-box;
+}
+
+html
+{
+  height: 100%;
+}
+
+body
+{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0px;
+  padding: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}
+
+#title,
+#filters
+{
+  margin-bottom: 3px;
+}
+
+#title > *
+{
+  vertical-align: middle;
+}
+
+#title > img
+{
+  width: 32px;
+  height: 32px;
+  margin-right: 5px;
+}
+
+#title,
+#buttons
+{
+  flex-shrink: 0;
+}
+
+#filters
+{
+  flex-grow: 1;
+  width: 100%;
+  white-space: pre;
+  word-wrap: normal;
+  resize: none;
+}
+
+#buttons
+{
+  text-align: right;
+}

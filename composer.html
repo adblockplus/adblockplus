@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+  - This file is part of Adblock Plus <https://adblockplus.org/>,
+  - Copyright (C) 2006-present eyeo GmbH
+  -
+  - Adblock Plus is free software: you can redistribute it and/or modify
+  - it under the terms of the GNU General Public License version 3 as
+  - published by the Free Software Foundation.
+  -
+  - Adblock Plus is distributed in the hope that it will be useful,
+  - but WITHOUT ANY WARRANTY; without even the implied warranty of
+  - MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  - GNU General Public License for more details.
+  -
+  - You should have received a copy of the GNU General Public License
+  - along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title data-i18n="block_element"></title>
+    <link rel="stylesheet" type="text/css" href="skin/composer.css">
+    <script src="polyfill.js"></script>
+    <script src="ext/common.js"></script>
+    <script src="ext/content.js"></script>
+    <script src="i18n.js"></script>
+    <script src="composer.js"></script>
+  </head>
+  <body>
+
+    <div id="title">
+      <img src="skin/abp-logo.svg">
+      <span class="i18n_add_filters_msg"></span>
+    </div>
+
+    <textarea id="filters" class="i18n_loading" disabled></textarea>
+
+    <div id="buttons">
+      <button id="addButton" class="i18n_add" disabled></button>
+      <button id="cancelButton" class="i18n_cancel"></button>
+    </div>
+
+  </body>
+</html>
