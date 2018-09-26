@@ -20,20 +20,14 @@
   "issueReporter_comment_label": {
     "message": "Megjegyzés (nem kötelező):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "A megjegyzés hossza meghaladja az 1000 karaktert. Csak az első 1000 karakter lesz elküldve."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Az Ön jelentése el lett mentve. Az alábbi címen érheti el a későbbiekben:"
   },
-  "issueReporter_dataCollector_description": {
-    "message": "Kérem várjon pár pillanatot, amíg az Adblock Plus összegyűjti a szükséges adatokat."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Üdvözli a hibajelentő"
-  },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Megjegyzés:</strong> Egy további lap ideiglenesen megnyílik, így az oldal, amelyen tartózkodik, nem érinti a kiadói jelentéstevő."
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "Részletek"
   },
   "issueReporter_doneButton_label": {
     "message": "Befejezés"
@@ -59,14 +53,35 @@
   "issueReporter_falsePositive_label": {
     "message": "Az Adblock Plus túl sok mindent letilt"
   },
+  "issueReporter_highlighter_description": {
+    "message": "Az eszközök segítségével kiemelheti az egyes hirdetéseket, vagy elrejtheti az érzékeny információkat a képernyőképen. A hirdetések kiemelése segít gyorsabban megoldani a problémát."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Probléma kiemelése"
+  },
   "issueReporter_knownIssueMessage": {
     "message": "Az Ön által bejelentett hiba már ismert. További információk:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Probléma kijelölés"
   },
   "issueReporter_page_title": {
     "message": "Hibajelentő"
   },
   "issueReporter_privacyPolicy": {
     "message": "Adatvédelmi elvek"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "feldolgozás"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Elrejt"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "Kiemelés"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Probléma kiválasztása"
   },
   "issueReporter_sendButton_label": {
     "message": "Jelentés küldése"

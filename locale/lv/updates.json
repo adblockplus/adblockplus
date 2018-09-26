@@ -1,6 +1,18 @@
 {
+  "updates_adblockBrowser": {
+    "message": "Ja kontrolējat datoru, varat bloķēt reklāmas un uzlabot savu konfidencialitāti un drošību arī mobilajās ierīcēs. Iegūt <a>Adblock Browser lietotni</a>."
+  },
+  "updates_blockAds": {
+    "message": "Atvērtā koda dumpinieku alianse izveidoja jaunus bloķējošos filtrus, kas ļauj slēpt reklāmas tādās vietnēs kā Facebook, pat ja Impērija dos atbildes triecienu."
+  },
   "updates_heading": {
     "message": "Adblock Plus ir atjaunināts!"
+  },
+  "updates_optionsPageNews": {
+    "message": "Jauna iestatījumu lapa - pārveidota un atjaunota ar vairāk konfidencialitātes un drošības iespējām, tāpēc ir vieglāk <a>pielāgot Adblock Plus savām vajadzībām</a>."
+  },
+  "updates_phone": {
+    "message": "Pagaidiet, bet kā tad ar telefonu?"
   },
   "updates_status": {
     "message": "Atjaunināšana pabeigta"

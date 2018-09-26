@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Sylw (dewisol):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Mae hyd eich sylw dros 1000 nod. Dim ond y 1000 nod cyntaf caiff ei anfon."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Cadwyd eich adroddiad. Gallwch fynd ato drwy'r cyfeiriad canlynol:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Arhoswch ychydig eiliadau tra bod Adblock Plus yn casglu'r data sydd ei angen."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Croeso i'r teclyn adrodd namau"
   },
   "issueReporter_doneButton_label": {
     "message": "Gorffen"

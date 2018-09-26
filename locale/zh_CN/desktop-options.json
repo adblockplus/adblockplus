@@ -209,6 +209,14 @@
   "options_filterList_website": {
     "message": "网站"
   },
+  "options_filters_search_or_add": {
+    "message": "搜索/添加筛选器 (如 $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
+  },
   "options_footer_about": {
     "message": "关于 Adblock Plus"
   },

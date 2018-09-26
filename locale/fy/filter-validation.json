@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "Unjildige reguliere ekspresje"
   },
+  "filter_snippet_nodomain": {
+    "message": "Gjin aktyf domein opjûn foar snippetfilter"
+  },
   "filter_unknown_option": {
     "message": "Unbekende filteropsje"
   },

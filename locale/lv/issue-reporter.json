@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Komentārs (nav obligāti):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Jūsu komentāra garums pārsniedz 1000 simbolus. Tikai pirmie 1000 simboli tiks nosūtīti."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Jūsu ziņojums ir saglabāts. Jūs tam varat piekļūt sekojošajā adresē:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Uzgaidiet pāris mirkļus, kamēr Adblock Plus apkopo nepieciešamos datus."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Laipni lūdzu problēmu ziņotājā"
   },
   "issueReporter_doneButton_label": {
     "message": "Gatavs"
@@ -56,6 +47,12 @@
   "issueReporter_falsePositive_label": {
     "message": "Adblock Plus bloķē pārāk daudz"
   },
+  "issueReporter_highlighter_description": {
+    "message": "Izmantojiet rīkus, lai ekrānuzņēmumā iezīmētu katru reklāmu vai paslēptu privāto informāciju. Reklāmu iezīmēšana palīdzēs mums ātrāk atrisināt problēmu."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Iezīmēt problēmu"
+  },
   "issueReporter_knownIssueMessage": {
     "message": "Jūsu nosūtītais problēma iespējams jau ir zināma. Vairāk informācija:"
   },
@@ -64,6 +61,15 @@
   },
   "issueReporter_privacyPolicy": {
     "message": "Privātuma politika"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "apstrādā"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Slēpt"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "Iezīmēt"
   },
   "issueReporter_sendButton_label": {
     "message": "Sūtīt ziņojumu"

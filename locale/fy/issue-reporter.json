@@ -20,20 +20,14 @@
   "issueReporter_comment_label": {
     "message": "Kommentaar (opsjoneel):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "De lingte fan jo kommentaar hat mear as 1000 karakters. Allinnich de earste 1000 karakters sille ferstjoerd wurde."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Jo rapport is bewarre. Jo kinne it besjen op it folgjende adres:"
   },
-  "issueReporter_dataCollector_description": {
-    "message": "In amerijke wylst Adblock Plus de nedige gegevens sammelt."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Wolkom by de probleemrapportearder"
-  },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Opmerking:</strong> der wurdt tydlik in ekstra ljepblêd iepene, sadat de side wêrop jo jo binne net troch de probleemrapportaazje beynfloede wurdt."
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "Details"
   },
   "issueReporter_doneButton_label": {
     "message": "Klear"
@@ -59,14 +53,35 @@
   "issueReporter_falsePositive_label": {
     "message": "Adblock Plus blokkearret te folle"
   },
+  "issueReporter_highlighter_description": {
+    "message": "Brûk de helpmiddelen om elke advertinsje te markearjen of gefoelige ynfo op de skermôfbylding te ferstopjen. Troch it markearjen fan advertinsjes kinne wy it probleem flugger oplosse."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Probleem markearje"
+  },
   "issueReporter_knownIssueMessage": {
     "message": "It probleem dat jo rapportearre hawwe is miskien al bekend. Mear ynformaasje:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Probleem markearje"
   },
   "issueReporter_page_title": {
     "message": "Probleemrapportearder"
   },
   "issueReporter_privacyPolicy": {
     "message": "Privacybelied"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "ferwurkje"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Ferstopje"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "Markearje"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Probleem selektearje"
   },
   "issueReporter_sendButton_label": {
     "message": "Ferstjoer rapport"

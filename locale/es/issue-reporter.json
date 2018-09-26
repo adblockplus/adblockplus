@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Comentario (opcional):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "La longitud se su comentario supera los 1.000 caracteres. Sólo se enviarán los 1.000 primeros."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Su informe ha sido guardado. Puede acceder a él en la siguiente dirección:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Por favor espere un momento mientras Adblock Plus reúne los datos necesarios."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Bienvenido al creador de informes de errores"
   },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Nota:</strong> Se abrirá una pestaña temporal adicional para que el generador de informes de problemas no afecte a la página en la que te encuentras actualmente."

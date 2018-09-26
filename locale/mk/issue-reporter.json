@@ -8,12 +8,6 @@
   "issueReporter_commentPage_heading": {
     "message": "Вметни коментар"
   },
-  "issueReporter_dataCollector_description": {
-    "message": "Ве молиме почекајте додека Adblock Plus не ги собере потребните податоци."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Добредојдовте во репортерот за грешки"
-  },
   "issueReporter_doneButton_label": {
     "message": "Готово"
   },

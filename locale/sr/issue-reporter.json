@@ -3,84 +3,102 @@
     "message": "Настави"
   },
   "filters_subscription_lastDownload_connectionError": {
-    "message": "Грешка при преузимању"
+    "message": "Дошло је до грешке при преузимању"
   },
   "issueReporter_anonymousSubmission_label": {
-    "message": "Пошаљи анонимно"
+    "message": "Анонимно подношење"
   },
   "issueReporter_anonymousSubmission_warning": {
-    "message": "Нећемо моћи да вас контактирамо. Приоритет вашег извештаја ће вероватно бити низак."
+    "message": "Нећемо моћи да вам се обратимо и вероватно ћемо дати нижи приоритет извештају."
   },
   "issueReporter_commentPage_heading": {
-    "message": "Унесите коментар"
+    "message": "Остављање коментара"
   },
   "issueReporter_comment_description": {
-    "message": "Доње поље за текст омогућава вам да додате коментар, како бисте нам помогли да лакше схватимо проблем. Овај корак је произвољан али је пожељан, ако проблем није лако уочљив. Можете и да још једном прегледате извештај пре него што га пошаљете."
+    "message": "Помозите нам да боље разумемо проблем остављајући коментар испод."
   },
   "issueReporter_comment_label": {
-    "message": "Коментар (необавезно):"
-  },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Дужина вашег коментара прелази 1000 знакова. Само првих 1000 знакова ће бити послато."
+    "message": "Коментар (опционално):"
   },
   "issueReporter_confirmationMessage": {
     "message": "Ваш извештај је сачуван. Можете му приступити на следећој адреси:"
   },
-  "issueReporter_dataCollector_description": {
-    "message": "Сачекајте неколико тренутака док Adblock Plus прибави потребне податке."
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Напомена:</strong> Додатна картица ће се привремено отворити, тако да на страницу на којој се налазите неће утицати Извештач проблема."
   },
-  "issueReporter_dataCollector_heading": {
-    "message": "Добро дошли у одељак за пријаву грешака"
+  "issueReporter_detailsButton_label": {
+    "message": "Детаљи"
   },
   "issueReporter_doneButton_label": {
     "message": "Готово"
   },
   "issueReporter_email_description": {
-    "message": "Молимо вас да унесете исправну е-адресу да бисмо могли да вас контактирамо ако имамо питања у вези са вашим извештајем. Тиме ће и ваши извештаји имати већи приоритет."
+    "message": "Корисно је унети важећу имејл-адресу. Ово нам омогућава да вам се обратимо како бисмо решили тешке проблеме попут малвера. Имајте на уму да није обавезно унети имејл-адресу и да ваша адреса никада неће да се подели."
   },
   "issueReporter_email_label": {
-    "message": "Е-адреса:"
+    "message": "Имејл:"
   },
   "issueReporter_errorMessage": {
-    "message": "Покушај слања извештаја није успео - грешка „?1?”. Уверите се да сте повезани са Интернетом, па покушајте поново. Ако проблем и даље постоји, помоћ потражите на [link]форуму Adblock Plus-а[/link]."
+    "message": "Покушај слања извештаја није успео — грешка „?1?”. Уверите се да сте повезани са интернетом, па покушајте поново. Ако опет дође до проблема, потражите помоћ на [link]форуму Adblock Plus-а[/link]."
   },
   "issueReporter_falseNegative_description": {
-    "message": "Изаберите ову опцију ако је оглас приказан иако је Adblock Plus омогућен."
+    "message": "Adblock Plus је омогућен, али и даље видим оглас или више њих."
   },
   "issueReporter_falseNegative_label": {
-    "message": "Adblock Plus не блокира огласе"
+    "message": "И даље видим огласе"
   },
   "issueReporter_falsePositive_description": {
-    "message": "Изаберите ову опцију ако страници недостају неки битни садржаји, погрешно изгледа или не ради како треба. Пробајте да привремено онемогућите Adblock Plus, па проверите да ли је онда све у реду."
+    "message": "Страница се неисправно приказује, не функционише или изгледа да јој недостаје важан садржај."
   },
   "issueReporter_falsePositive_label": {
-    "message": "Adblock Plus блокира превише"
+    "message": "Страница коју покушавам да видим је покварена"
+  },
+  "issueReporter_highlighter_description": {
+    "message": "Користите алатке да бисте истакнули сваки оглас или сакрили осетљиве информације на снимку екрана. Истицање огласа ће нам помоћи да брже решимо проблем."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Истицање проблема"
   },
   "issueReporter_knownIssueMessage": {
-    "message": "Проблем који сте пријавили је вероватно већ познат. Више информација:"
+    "message": "Проблем који сте пријавили вероватно је већ познат. Више информација:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Означавање проблема"
   },
   "issueReporter_page_title": {
-    "message": "Пријава грешака"
+    "message": "Извештач проблема"
   },
   "issueReporter_privacyPolicy": {
     "message": "Политика приватности"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "обрађујем"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Сакриј"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "Истакни"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Избор проблема"
   },
   "issueReporter_sendButton_label": {
     "message": "Пошаљи извештај"
   },
   "issueReporter_sendPage_heading": {
-    "message": "Пошаљи извештај"
+    "message": "Слање извештаја"
   },
   "issueReporter_sending": {
     "message": "Сачекајте док Adblock Plus не пошаље ваш извештај."
   },
   "issueReporter_showData_label": {
-    "message": "Прикажи податке у извештају"
+    "message": "Кликните на ову везу да бисте прегледали податке о извештају пре слања"
   },
   "issueReporter_typeSelector_description": {
-    "message": "Овај прозор ће Вас водити кроз кораке за решавање проблема у Adblock Plus-у и њихово пријављивање. За почетак, изаберите врсту проблема на који сте наишли на овој страници:"
+    "message": "Изаберите проблем:"
   },
   "issueReporter_typeSelector_heading": {
-    "message": "Изаберите тип проблема"
+    "message": "На какав тип проблема наилазите?"
   }
 }

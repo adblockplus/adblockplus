@@ -12,34 +12,28 @@
     "message": "Мы не зможам з вамі звязацца, таму можа стацца так, што справаздачы нададуць ніжэйшы прыярытэт."
   },
   "issueReporter_commentPage_heading": {
-    "message": "Дадайце каментарый"
+    "message": "Пакінуць каментарый"
   },
   "issueReporter_comment_description": {
-    "message": "У поле знізу можна дадаць каментарый, каб памагчы нам зразумець праблему. Гэты пункт неабавязковы, аднак рэкамендаваны для невідавочных праблем. Таксама вы можаце да адпраўкі праглядзець усе звесткі, якія дасылаюцца ў справаздачы."
+    "message": "Пакіньце каментарый, гэта дапаможа нам лепей зразумець праблему."
   },
   "issueReporter_comment_label": {
     "message": "Каментарый (неабавязкова):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Даўжыня вашага каментарыя перавышае ліміт у 1000 сімвалаў. Будзе адпраўлена толькі першая тысяча сімвалаў."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Справаздача захавана. Вы можаце праглядзець яе, калі пяройдзеце па наступнай спасылцы:"
   },
-  "issueReporter_dataCollector_description": {
-    "message": "Крыху пачакайце пакуль Adblock Plus збірае неабходныя звесткі."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Вітаем у майстры стварэння справаздач"
-  },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Нататка:</strong> Часова адкрыецца дадатковая ўкладка, таму праблемная старонка не паўплывае на адпраўку справаздачы."
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "Звесткі"
   },
   "issueReporter_doneButton_label": {
     "message": "Гатова"
   },
   "issueReporter_email_description": {
-    "message": "Рэкамендуем увесці сапраўдны адрас электроннай пошты, каб мы маглі звязацца з вамі для вырашэння пытанняў па вашай справаздачы. Таксама ён дазволіць вызначыць ваш папярэдні ўнёсак і надасць справаздачы вышэйшы прыярытэт."
+    "message": "Рэкамендуем увесці сапраўдны адрас электроннай пошты. Мы можам звязацца з вамі, каб развязаць складаныя пытанні, напрыклад звязаныя са шкодным праграмным забеспячэннем. Памятайце, што вам неабавязкова ўводзіць адрас электроннай пошты і, што мы не перадаём яго пабочным асобам."
   },
   "issueReporter_email_label": {
     "message": "Электронная пошта:"
@@ -48,25 +42,46 @@
     "message": "Не атрымалася адправіць справаздачу. Код памылкі: «?1?». Пераканайцеся, што вы падлучаныя да Інтэрнэту і паспрабуйце зноў. Калі праблема не знікне, звярніцеся па дапамогу на [link]форум Adblock Plus[/link]."
   },
   "issueReporter_falseNegative_description": {
-    "message": "Выберыце гэты варыянт, калі пры ўключаным Adblock Plus на старонцы ўсё адно паказваецца рэклама."
+    "message": "Adblock Plus уключаны, але рэклама паказваецца."
   },
   "issueReporter_falseNegative_label": {
-    "message": "Adblock Plus не блакуе рэкламу"
+    "message": "Рэклама паказваецца"
   },
   "issueReporter_falsePositive_description": {
-    "message": "Выберыце гэты варыянт, калі на старонцы не хапае часткі неабходнага змесціва ці яно паказана няправільна. Часова адключыўшы Adblock Plus, можна вызначыць ці ён з'яўляецца прычынай праблемы."
+    "message": "На старонцы не хапае часткі неабходнага змесціва ці яно паказана няправільна."
   },
   "issueReporter_falsePositive_label": {
-    "message": "Adblock Plus блакуе лішняе"
+    "message": "Старонка паказваецца часткова"
+  },
+  "issueReporter_highlighter_description": {
+    "message": "Скарыстайцеся прыладамі, каб вылучыць усе рэкламныя аб'явы ці схаваць прыватныя звесткі на здымку экрана. Вылучэнне элементаў дапаможа нам хутчэй выправіць праблему."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Вылучыце праблему"
   },
   "issueReporter_knownIssueMessage": {
     "message": "Магчыма, праблема, пра якую вы паведамілі, ўжо вядомая. Дадатковая інфармацыя:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Пазначыць праблему"
   },
   "issueReporter_page_title": {
     "message": "Паведаміць аб праблеме"
   },
   "issueReporter_privacyPolicy": {
     "message": "Палітыка канфідэнцыяльнасці"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "апрацоўка"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Схаваць"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "Вылучыць"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Выбраць праблему"
   },
   "issueReporter_sendButton_label": {
     "message": "Адправіць справаздачу"
@@ -78,12 +93,12 @@
     "message": "Adblock Plus адпраўляе вашу справаздачу. Пачакайце."
   },
   "issueReporter_showData_label": {
-    "message": "Паказаць змесціва справаздачы"
+    "message": "Націсніце сюды, каб паглядзець змесціва справаздачы"
   },
   "issueReporter_typeSelector_description": {
-    "message": "Майстар дапаможа вам стварыць справаздачу. Спачатку выберыце тып знойдзенай на старонцы праблемы:"
+    "message": "Выберыце тып праблемы:"
   },
   "issueReporter_typeSelector_heading": {
-    "message": "Выберыце тып праблемы"
+    "message": "З якой праблемай вы сутыкнуліся?"
   }
 }

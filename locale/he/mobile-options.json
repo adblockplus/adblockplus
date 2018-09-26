@@ -17,8 +17,8 @@
       }
     }
   },
-  "mops_error_title": {
-    "message": "אנא הכנס כותרת"
+  "mops_error_url": {
+    "message": "הכנס כתובת תקפה"
   },
   "mops_filterlist_add": {
     "message": "+ הוסף רשימת מסננים"

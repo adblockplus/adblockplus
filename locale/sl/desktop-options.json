@@ -77,6 +77,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "Začasno blokiraj nadležne predmete spletni strani, npr. slike ali animirane predstavitve."
   },
+  "options_customize_header": {
+    "message": "Prilagajanje"
+  },
+  "options_customize_iconStats": {
+    "message": "V ikoni prikaži število blokiranih oglasov"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "Prikaži ploščo 'Adblock Plus' v orodjih za razvijalce"
   },
@@ -85,6 +91,9 @@
   },
   "options_customize_showNotifications": {
     "message": "Prikaži koristno  obvestila"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Dovoli obvestila dodatka Adblock Plus (obvestila o kritičnih težavah glede zmogljivosti bodo vedno prikazana)."
   },
   "options_dialog_about_copyright": {
     "message": "Avtorske pravice © $currentYear$ eyeo GmbH.",
@@ -199,6 +208,14 @@
   },
   "options_filterList_website": {
     "message": "spletna stran"
+  },
+  "options_filters_search_or_add": {
+    "message": "Iskanje/dodajanje filtra (npr. $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
   },
   "options_footer_about": {
     "message": "O dodatku Adblock Plus"

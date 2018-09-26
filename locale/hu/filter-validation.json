@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "Érvénytelen reguláris kifejezés"
   },
+  "filter_snippet_nodomain": {
+    "message": "Nincs aktív kiválasztott domain a kódrészlet szűrőben"
+  },
   "filter_unknown_option": {
     "message": "Ismeretlen szűrőlehetőség"
   },

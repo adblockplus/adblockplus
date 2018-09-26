@@ -1,0 +1,59 @@
+{
+  "firstRun_browser_description": {
+    "message": "De la echipa din spatele Adblock Plus, cel mai popular ad blocker pentru browsere desktop, Adblock Browser este acum disponibil pentru dispozitivele Android si iOS."
+  },
+  "firstRun_browser_store_android": {
+    "message": "Android app de pe Google Play"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "Disponibil pe iTunes App Store"
+  },
+  "firstRun_browser_title": {
+    "message": "Adblock Browser"
+  },
+  "firstRun_control_description": {
+    "message": "În mod implicit, puteţi vedea unele reclame neagasante care aderă la <a0>criterii stricte</a0>. Vom identifica aceste anunţuri ca anunţurile acceptabile. Preferi să blochezi toate anunţurile? <a1>stopaţi anunţurile acceptabile</a1> în <a2>setările</a2> tale."
+  },
+  "firstRun_control_title": {
+    "message": "Aveţi pe deplin controlul"
+  },
+  "firstRun_fair_description": {
+    "message": "Vă recomandăm să utilizati corect Adblock Plus şi opţiunea de a debloca unele site-uri web. În funcţie de filtrele pe care le utilizati, veţi înţelege şi accepta că rezultatele neintenţionate ar putea apărea (ex. blocate de conţinut de pe un site web). Consultaţi pentru mai multe informaţii despre utilizarea corectă a Adblock Plus de <a0>termeni de utilizare</a0>."
+  },
+  "firstRun_fair_title": {
+    "message": "Utilizare corectã"
+  },
+  "firstRun_footer_copyright": {
+    "message": "Copyright © $year$ toate drepturile rezervate. Adblock Plus® este o marcă înregistrată a <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
+  "firstRun_subtitle": {
+    "message": "Aveţi pe deplin controlul browser-ului dvs."
+  },
+  "firstRun_title": {
+    "message": "Instalare reusita!"
+  },
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "Unii utilizatori se confruntă cu problema deschiderii acestei pagini de fiecare datã când browser-ul este deschis. Această problemă poate fi rezolvatã prin dezinstalarea şi reinstalarea Adblock Plus:"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "Dacă încă mai aveţi nevoie de ajutor, contactaţi-ne la <a0>support@adblockplus.org</a0> sau vizitaţi <a1>centrul de ajutor</a1>."
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "Deschideți pagina de extensii din browser-ul dumneavoastră."
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Localizaţi Adblock Plus şi dezinstalaţi-l."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "Reinstalaţi Adblock Plus de pe site-ul <a>adblockplus.org</a>."
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "Se pare că din cauza unor probleme toate filtrele au fost eliminate şi a fost imposibil să le recuperăm. Prin urmare, am resetat filtrele şi setările pentru publicitate acceptabilă. Vă rugăm să verificaţi listele de filtre şi setările pentru publicitate acceptabilă în <a>Opţiuni pentru Adblock Plus</a>."
+  }
+}

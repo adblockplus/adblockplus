@@ -17,8 +17,8 @@
       }
     }
   },
-  "mops_error_title": {
-    "message": "Adjon meg egy címet"
+  "mops_error_url": {
+    "message": "Adj meg egy érvényes URL-t"
   },
   "mops_filterlist_add": {
     "message": "+ Szűrőlista hozzáadása"

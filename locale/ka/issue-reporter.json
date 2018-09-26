@@ -20,20 +20,14 @@
   "issueReporter_comment_label": {
     "message": "შენიშვნა (არასავალდებულო):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "თქვენი კომენტარი აჭარბებს 1000 სიმბოლოს. მხოლოდ, პირველი 1000 სიმბოლო გადაიგზავნება."
-  },
   "issueReporter_confirmationMessage": {
     "message": "თქვენი მოხსენება შენახულია. მასზე წვდომისთვის გამოიყენეთ შემდეგი მისამართი:"
   },
-  "issueReporter_dataCollector_description": {
-    "message": "გთხოვთ, მოითმინოთ რამდენიმე წამი, სანამ Adblock Plus შეაგროვებს საჭირო მონაცემებს."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "მოგესალმებით, ხარვეზის მომხსენებლის გვერდზე"
-  },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>შენიშვნა:</strong> დროებით იხსნება დამატებითი ახალი ჩანართი, ასე რომ გვერდს რომელსაც სტუმრობთ, არაფერი ეხება ხარვეზების მომხსენებლის გამოყენებისას."
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "შინაარსი"
   },
   "issueReporter_doneButton_label": {
     "message": "მზადაა"
@@ -59,14 +53,35 @@
   "issueReporter_falsePositive_label": {
     "message": "Adblock Plus ზღუდავს ზედმეტად"
   },
+  "issueReporter_highlighter_description": {
+    "message": "გამოიყენეთ ხელსაწყო თითოეული რეკლამის მისათითებლად ან პირადი მონაცემების დასამალად გადაღებული სურათიდან. რეკლამების მითითება საშუალებას მოგვცემს, სწრაფადვე გამოვასწოროთ ხარვეზი."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "ხარვეზის მითითება"
+  },
   "issueReporter_knownIssueMessage": {
     "message": "ხარვეზი, რომლის შესახებაც მოგვახსენეთ, შესაძლოა უკვე აღმოფხვრილი იყოს. ვრცლად, იხილეთ:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "ხარვეზის მონიშვნა"
   },
   "issueReporter_page_title": {
     "message": "ხარვეზის მომხსენებელი"
   },
   "issueReporter_privacyPolicy": {
     "message": "პირადულობის დაცვის დებულება"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "დამუშავება"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "დამალვა"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "მითითება"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "ხარვეზის არჩევა"
   },
   "issueReporter_sendButton_label": {
     "message": "მოხსენების გაგზავნა"

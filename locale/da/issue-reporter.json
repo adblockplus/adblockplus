@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Kommentar (valgfri):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Teksten overstiger 1000 tegn. Kun de første 1000 tegn bliver sendt."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Rapporten er gemt. Den kan ses på følgende adresse:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Vent et øjeblik, mens Adblock Plus indsamler data."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Velkommen til Rapportér problem"
   },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Bemærk:</strong> Et ekstra faneblad vises midlertidigt, så den besøgte side ikke påvirkes af funktionen Rapportér problem."

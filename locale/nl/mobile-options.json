@@ -17,8 +17,8 @@
       }
     }
   },
-  "mops_error_title": {
-    "message": "Voer een titel in"
+  "mops_error_url": {
+    "message": "Voer een geldige URL in"
   },
   "mops_filterlist_add": {
     "message": "+ Een filterlijst toevoegen"

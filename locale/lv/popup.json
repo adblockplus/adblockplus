@@ -1,4 +1,7 @@
 {
+  "click_element_to_block_it": {
+    "message": "Noklikšķiniet uz lapas elementa, lai to bloķētu."
+  },
   "clickhide_instructions": {
     "message": "Pēc šī uznirstošā loga aizvēršanas, noklikšķiniet (vai noklikšķiniet ar labo pogu) uz elementa šajā lapā."
   },
@@ -11,11 +14,29 @@
   "enabled_for_site": {
     "message": "<strong>Ieslēgts</strong> šajā lapā"
   },
+  "options_refresh": {
+    "message": "Atsvaidzināt"
+  },
   "options_short": {
     "message": "Iespējas"
   },
+  "overlay_notification_closing_button_hide": {
+    "message": "Aizvērt"
+  },
   "overlay_notification_closing_button_optout": {
     "message": "Pārtraukt rādīt paziņojumus"
+  },
+  "promote_abp_module": {
+    "message": "Interesē Adblock Plus mobilajā ierīcē?"
+  },
+  "refresh_to_take_effect": {
+    "message": "Noklikšķiniet <strong>Atsvaidzināt</strong>, lai izmaiņas stātos spēkā."
+  },
+  "sendReport": {
+    "message": "Ziņot par problēmu"
+  },
+  "stats_header": {
+    "message": "Bloķēto elementu skaits"
   },
   "stats_label_page": {
     "message": "<strong>$number$</strong> šajā lapā",
@@ -34,9 +55,12 @@
     }
   },
   "stats_show_iconnumber": {
-    "message": "Parādīt skaitli ikonā"
+    "message": "Rādīt skaitli ikonā"
   },
   "stats_title": {
     "message": "Bloķētās reklāmas"
+  },
+  "status_header": {
+    "message": "Bloķēt reklāmas:"
   }
 }

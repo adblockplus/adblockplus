@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Kommentti (valinnainen):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Kommentin pituus ylittää 1000 merkkiä. Vain ensimmäiset 1000 merkkiä lähetetään."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Raporttisi on tallennettu. Se löytyy tästä osoitteesta:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Odota hetki, kun Adblock Plus kerää tarvittavia tietoja."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Tervetuloa ongelman raportoijaan"
   },
   "issueReporter_doneButton_label": {
     "message": "Valmis"

@@ -14,6 +14,9 @@
   "options_short": {
     "message": "Inställningar"
   },
+  "overlay_notification_closing_button_hide": {
+    "message": "Stäng"
+  },
   "overlay_notification_closing_button_optout": {
     "message": "Sluta visa notifieringar"
   },

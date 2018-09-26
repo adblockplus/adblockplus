@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Komentář (nepovinný)"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Váš komentář přesahuje 1000 znaků. Pouze prvních 1000 znaků bude odesláno."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Vaše hlášení bylo odesláno. Můžete si prohlédnou hlášení na následující adrese:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Počkejte prosím zatímco Adblock Plus sbírá potřebná data."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Vítejte v nástroji na oznamování problémů"
   },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Poznámka:</strong> Dočasně se otevře další karta, takže stránka, na které se právě nacházíte, nebude funkcí hlášení problémů (Issue Reporter) nijak ovlivněna."

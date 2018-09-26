@@ -1,15 +1,15 @@
 {
   "notification_configure": {
-    "message": "Configura opciones de notificación"
+    "message": "Configura ajustes de notificación"
   },
   "notification_open_all": {
     "message": "Abrir todos los enlaces de esta notificación"
   },
   "notification_with_buttons": {
-    "message": "Haz click en 'OK' para abrir todos los enlaces en esta notificación."
+    "message": "Haz clic en 'OK' para abrir todos los enlaces en esta notificación."
   },
   "notification_without_buttons": {
-    "message": "Haz click en la notificación para abrir todos los enlaces en él."
+    "message": "Haz clic en la notificación para abrir todos los enlaces en él."
   },
   "overlay_notification_button_no": {
     "message": "No"

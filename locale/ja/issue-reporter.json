@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "コメント (省略可):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "コメントが 1000 文字を超えています。先頭から 1000 文字だけが送信されます。"
-  },
   "issueReporter_confirmationMessage": {
     "message": "あなたの不具合報告は保存されました。次のアドレスでアクセスできます:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Adblock Plus が必要なデータを集めています。しばらくお待ちください。"
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "不具合報告へようこそ"
   },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>注記：</strong> 追加タブが一時的に開くため、現在開いているページはIssue Reporterによる影響を受けません。"

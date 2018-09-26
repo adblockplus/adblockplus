@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "注释（可选）："
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "您输入的注释长度超过 1000 个字符。只有前 1000 个字符会被发送出去。"
-  },
   "issueReporter_confirmationMessage": {
     "message": "您的报告已被保存。您可以通过如下地址访问："
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Adblock Plus 正在收集所需数据，请稍等片刻。"
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "欢迎使用问题报告系统"
   },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>注意：</strong>将会暂时打开一个附加选项卡，因此您所在的页面不会受到问题报告器的影响。"
@@ -79,6 +70,9 @@
   },
   "issueReporter_privacyPolicy": {
     "message": "隐私策略"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "处理中"
   },
   "issueReporter_screenshot_hide": {
     "message": "隐藏"

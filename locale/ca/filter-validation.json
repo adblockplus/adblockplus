@@ -1,6 +1,6 @@
 {
   "filter_elemhideemulation_nodomain": {
-    "message": "No s'ha especificat cap domini actiu per al filtre d'ocultació d'element estès"
+    "message": "No s'ha especificat cap domini actiu per al filtre estès d'ocultació d'elements"
   },
   "filter_invalid_csp": {
     "message": "Política de seguretat de contingut no vàlida"
@@ -10,6 +10,9 @@
   },
   "filter_invalid_regexp": {
     "message": "Expressió regular no vàlida"
+  },
+  "filter_snippet_nodomain": {
+    "message": "No s'ha especificat cap domini actiu per al filtre de fragments"
   },
   "filter_unknown_option": {
     "message": "Opció de filtrat desconegut"

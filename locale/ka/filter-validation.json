@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "არამართებული რეგულარული გამოსახულება"
   },
+  "filter_snippet_nodomain": {
+    "message": "მოქმედი დომენი არაა მითითებული ცალკეული ფილტრისთვის"
+  },
   "filter_unknown_option": {
     "message": "ფილტრის უცნობი პარამეტრი"
   },

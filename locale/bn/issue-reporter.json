@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "মন্তব্য (ঐচ্ছিক):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "আপনার মন্তব্যের দৈর্ঘ্য ১০০০ অক্ষর অতিক্রম করেছেন। শুধুমাত্র প্রথম ১০০০ অক্ষর প্রেরণ করা হবে।"
-  },
   "issueReporter_confirmationMessage": {
     "message": "আপনার প্রতিবেদন সংরক্ষণ করা হয়েছে। আপনি এটি নিচের ঠিকানায় দেখতে পারেন:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "অনুগ্রহপূর্বক কিছুক্ষণ অপেক্ষা করুন Adblock Plus প্রয়োজনীয় তথ্য সংরক্ষণ করছে।"
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "ইস্যু রিপোর্টারে স্বাগতম"
   },
   "issueReporter_doneButton_label": {
     "message": "সম্পন্ন"

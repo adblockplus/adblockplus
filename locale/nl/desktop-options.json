@@ -27,7 +27,7 @@
     "message": "ABP-filterlijst voor anti-omzeiling"
   },
   "options_anti_cv_tooltip": {
-    "message": "Deze filterlijst werkt tegen omzeiling (d.w.z. technieken om advertenties te forceren bij advertentieblokkerende gebruikers). Deze filters gaan zowel het omzeilen van advertentieblokkering als gerelateerde tracking tegen."
+    "message": "Deze filterlijst werkt tegen omzeiling (d.w.z. technieken om advertenties op te dringen aan gebruikers die advertenties blokkeren). Deze filters gaan zowel het omzeilen van advertentieblokkering als gerelateerde tracking tegen."
   },
   "options_close": {
     "message": "sluiten"
@@ -45,7 +45,7 @@
     "message": "Opslaan"
   },
   "options_customFilters_description": {
-    "message": "Schrijf uw eigen aangepaste filters om verder te bepalen welke inhoud Adblock Plus toestaat of blokkeert."
+    "message": "Schrijf uw eigen aangepaste filters om verder te bepalen welke inhoud Adblock Plus toestaat of blokkeert. <a0>Info over het schrijven van filters</a0>"
   },
   "options_customFilters_edit_placeholder": {
     "message": "bv. $filter$",
@@ -57,7 +57,7 @@
     }
   },
   "options_customFilters_learn": {
-    "message": "Info over het schrijven van filterlijsten"
+    "message": "Info over het schrijven van filters"
   },
   "options_customFilters_start": {
     "message": "Beginnen met het schrijven van mijn filterlijst"
@@ -77,6 +77,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "Storende items op een webpagina, zoals afbeeldingen of bewegende diavoorstellingen, tijdelijk blokkeren"
   },
+  "options_customize_header": {
+    "message": "Aanpassingen"
+  },
+  "options_customize_iconStats": {
+    "message": "Aantal geblokkeerde advertenties in pictogram tonen"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "Paneel ‘Adblock Plus’ in ontwikkelaarshulpmiddelen tonen"
   },
@@ -85,6 +91,9 @@
   },
   "options_customize_showNotifications": {
     "message": "Nuttige meldingen tonen"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Meldingen van Adblock Plus toestaan (meldingen gerelateerd aan kritieke prestatieproblemen worden altijd getoond)."
   },
   "options_dialog_about_copyright": {
     "message": "Copyright © $currentYear$ eyeo GmbH.",
@@ -199,6 +208,14 @@
   },
   "options_filterList_website": {
     "message": "website"
+  },
+  "options_filters_search_or_add": {
+    "message": "Filter zoeken / toevoegen (bv. $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
   },
   "options_footer_about": {
     "message": "Over Adblock Plus"

@@ -20,6 +20,15 @@
   "options_advanced_description": {
     "message": "Personalizează Adblock Plus, adaugă sau elimină liste de filtre, crează şi întreţine propriile liste de filtre"
   },
+  "options_anti_cv_header": {
+    "message": "Anti-Truc"
+  },
+  "options_anti_cv_title": {
+    "message": "ABP Lista Anti-Trucuri "
+  },
+  "options_anti_cv_tooltip": {
+    "message": "Această listă de filtre împotriva trucurilor (adică tehnici pentru a forţa anunţuri pentru utilizatorii de adblockers). Aceste filtre rezolvă astfel de reclame precum si tracking-ul aferent"
+  },
   "options_close": {
     "message": "închide"
   },
@@ -68,6 +77,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "Blochează temporar elementele enervante pe o pagină de web, de exemplu imagini sau slideshow-uri animate."
   },
+  "options_customize_header": {
+    "message": "Personalizari"
+  },
+  "options_customize_iconStats": {
+    "message": "Arată numărul de anunţuri blocate în icon"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "Arată panoul \"Adblock Plus\" în developer tools"
   },
@@ -76,6 +91,9 @@
   },
   "options_customize_showNotifications": {
     "message": "Arată notificări utile"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Permiteţi notificări în Adblock Plus (notificări legate de probleme critice de performanţă vor fi afişate totdeauna)."
   },
   "options_dialog_about_copyright": {
     "message": "Copyright © $currentYear$ eyeo GmbH.",
@@ -190,6 +208,14 @@
   },
   "options_filterList_website": {
     "message": "website"
+  },
+  "options_filters_search_or_add": {
+    "message": "Căutare / Adauga filtru (ex. $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
   },
   "options_footer_about": {
     "message": "Despre Adblock Plus"

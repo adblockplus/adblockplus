@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Komentar (opcionalny)"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Dłujkosć wašogo komentara pśekšaca 1000 znamuškow. Jano prědne 1000 znamuškow budu se słaś."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Waša rozpšawa jo se składowała. Móžośo ju pód slědujuceju adresu namakaś:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Pšosym pócakajśo chylku, mjaztym až Adblock Plus wótwołujo trěbne daty."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Witajśo do rozpšawniskego asistenta za problemy"
   },
   "issueReporter_doneButton_label": {
     "message": "Dokóńcony"

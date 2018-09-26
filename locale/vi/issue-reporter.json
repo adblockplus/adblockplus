@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Bình luận (phụ):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Độ dài bình luận của bạn vượt qua 1000 kí tự. Chỉ 1000 kí tự đầu tiên sẽ được gửi đi."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Báo cáo của bạn đã được lưu. Bạn có thể truy cập nó tại địa chỉ sau:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Vui lòng đợi một lát trong khi Adblock Plus thu thập dữ liệu cần thiết."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Chào mừng đến với trình báo cáo vấn đề"
   },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Lưu ý:</strong> Một thẻ bổ sung sẽ tạm thời mở ra để trang bạn đang truy cập sẽ không bị ảnh hưởng bởi Trình báo cáo sự cố."

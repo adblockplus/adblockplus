@@ -20,23 +20,11 @@
   "issueReporter_comment_label": {
     "message": "Kommentar (optional):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Ihr Kommentar ist länger als 1000 Zeichen. Nur die ersten 1000 Zeichen werden gesendet."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Ihr Bericht wurde gespeichert. Sie können Ihn unter der folgenden Adresse aufrufen:"
   },
-  "issueReporter_dataCollector_description": {
-    "message": "Bitte warten Sie einige Augenblicke, während Adblock Plus die benötigten Daten sammelt."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Willkommen zum Fehlerberichts-Assistenten"
-  },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Hinweis:</strong> Es öffnet sich kurzzeitig ein zusätzlicher Tab, sodass die Seite, auf der du dich befindest, nicht durch den Fehlermelder beeinträchtigt wird."
-  },
-  "issueReporter_detailsButton_label": {
-    "message": "Details"
   },
   "issueReporter_doneButton_label": {
     "message": "Fertigstellen"

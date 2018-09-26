@@ -77,6 +77,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "Часова блакаваць дакучлівыя элементы на старонцы, напрыклад выявы або анімаваныя паказы слайдаў."
   },
+  "options_customize_header": {
+    "message": "Налады"
+  },
+  "options_customize_iconStats": {
+    "message": "Паказваць на значку колькасць заблакаваных рэкламных аб'яў"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "Паказваць панэль «Adblock Plus» у інструментах распрацоўшчыка"
   },
@@ -85,6 +91,9 @@
   },
   "options_customize_showNotifications": {
     "message": "Паказваць карысныя апавяшчэнні"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Дазволіць апавяшчэнні ад Adblock Plus (апавяшчэнні, звязаныя з праблемамі, крытычнымі для прадукцыйнасці, будуць паказвацца заўсёды)."
   },
   "options_dialog_about_copyright": {
     "message": "Аўтарскае права © $currentYear$ eyeo GmbH.",
@@ -199,6 +208,14 @@
   },
   "options_filterList_website": {
     "message": "сайт"
+  },
+  "options_filters_search_or_add": {
+    "message": "Пошук / дадаванне фільтра (напр. $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
   },
   "options_footer_about": {
     "message": "Пра Adblock Plus"

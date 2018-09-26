@@ -15,31 +15,25 @@
     "message": "Kommenteeri"
   },
   "issueReporter_comment_description": {
-    "message": "Järgnevasse tekstivälja saad lisada oma kommentaari, et aidata meil probleemist aru saada. See ei ole kohustuslik, kuid on soovitatav, kui probleem ei ole selgelt arusaadav. Sa saad ka enne aruande saatmist andmed üle vaadata."
+    "message": "Palun aita meil probleemist paremini aru saada, jättes allpool kommentaari."
   },
   "issueReporter_comment_label": {
     "message": "Kommentaar (valikuline):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Kommentaari pikkus ületab 1000 tähemärki. Ära saadetakse ainult esimesed 1000 tähemärki."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Su teade on salvestatud. Sa võid sellele ligi pääseda järgneval aadressil:"
   },
-  "issueReporter_dataCollector_description": {
-    "message": "Palun oota mõni hetk, kuni Adblock Plus kogub vajalikke andmeid."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Tere tulemast kasutama probleemidest teatamise abivahendit"
-  },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Pane tähele:</strong> Ajutiselt avaneb lisakaart, et probleemidest teataja ei mõjutaks lehte, kus parasjagu oled."
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "Üksikasjad"
   },
   "issueReporter_doneButton_label": {
     "message": "Valmis"
   },
   "issueReporter_email_description": {
-    "message": "Me soovitame sul sisestada oma kehtiva meiliaadressi, et saaksime küsimuste tekkimisel antud teate kohta sinuga ühendust võtta. Samuti aitab see meil su panuseid tunnustada ja nende teadete prioriteeti suurendada."
+    "message": "Me soovitame sul sisestada oma kehtiva meiliaadressi. See võimaldab meil keeruliste probleemide, näiteks pahavara, korral sinuga ühendust võtta. Pea meeles, et meiliaadressi sisestamine pole kohustuslik ja seda ei jagata kunagi."
   },
   "issueReporter_email_label": {
     "message": "E-post:"
@@ -48,16 +42,22 @@
     "message": "Teate saatmine ebaõnnestus. Veakood \"?1?\". Palun kontrolli, et su internetiühendus töötab ja proovi uuesti. Kui see probleem kordub, siis küsi abi [link]Adblock Plus foorumist[/link]."
   },
   "issueReporter_falseNegative_description": {
-    "message": "Vali see variant juhul, kui reklaami kuvatakse hoolimata sellest, et Adblock Plus on lubatud."
+    "message": "Adblock Plus on lubatud, kuid ma näen endiselt reklaami."
   },
   "issueReporter_falseNegative_label": {
     "message": "Adblock Plus ei blokeeri reklaami"
   },
   "issueReporter_falsePositive_description": {
-    "message": "Vali see variant juhul, kui lehel on kaduma läinud oluline sisu, lehte kuvatakse valesti või kui see ei tööta korralikult. Et teha kindlaks, kas Adblock Plus on selle probleemi põhjustaja, võid ta ajutiselt ära keelata."
+    "message": "Lehel on kaduma läinud oluline sisu, lehte kuvatakse valesti või ei tööta see korralikult."
   },
   "issueReporter_falsePositive_label": {
-    "message": "Adblock Plus blokeerib liiga palju"
+    "message": "Vaadatav leht on katki"
+  },
+  "issueReporter_highlighter_description": {
+    "message": "Kasuta tööriistu, et iga reklaami esile tõsta või ekraanipildil isiklikke andmeid peita. Reklaamide esiletõstmine aitab meil probleemi kiiremini parandada."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Probleemi esiletõst"
   },
   "issueReporter_knownIssueMessage": {
     "message": "Seda probleemi tõenäoliselt juba teatakse. Rohkem infot:"
@@ -67,6 +67,15 @@
   },
   "issueReporter_privacyPolicy": {
     "message": "Privaatsus"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Peida"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "Tõsta esile"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Vali probleem"
   },
   "issueReporter_sendButton_label": {
     "message": "Saada teade"

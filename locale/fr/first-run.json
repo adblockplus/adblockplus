@@ -1,6 +1,6 @@
 {
   "firstRun_browser_description": {
-    "message": "L’équipe qui a créé Adblock Plus, le logiciel bloqueur de pubs le plus vendu pour les navigateurs de bureau vous propose maintenant Adblock Browser pour vos appareils Android et iOS."
+    "message": "De la part de l’équipe qui est derrière Adblock Plus, le bloqueur de pubs le plus populaire pour les navigateurs de bureau, Adblock Browser est maintenant disponible pour vos appareils Android et iOS."
   },
   "firstRun_browser_store_android": {
     "message": "Appli Android sur Google Play"
@@ -33,7 +33,7 @@
     }
   },
   "firstRun_subtitle": {
-    "message": "Vous venez de prendre le contrôle de votre navigateur"
+    "message": "Vous venez de prendre le contrôle de votre navigateur."
   },
   "firstRun_title": {
     "message": "Installation réussie !"

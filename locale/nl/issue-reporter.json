@@ -20,26 +20,20 @@
   "issueReporter_comment_label": {
     "message": "Opmerking (optioneel):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "De lengte van uw opmerking overschrijdt 1000 tekens. Alleen de eerste 1000 tekens worden verzonden."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Uw rapport is opgeslagen. U kunt het vinden op het volgende adres:"
   },
-  "issueReporter_dataCollector_description": {
-    "message": "Wacht even terwijl Adblock Plus de benodigde gegevens verzamelt."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Welkom bij de probleemrapportage"
-  },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Opmerking:</strong> er wordt tijdelijk een extra tabblad geopend, zodat de pagina waarop u zich bevindt niet door de probleemrapportage wordt beïnvloed."
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "Details"
   },
   "issueReporter_doneButton_label": {
     "message": "Gereed"
   },
   "issueReporter_email_description": {
-    "message": "We raden u aan een geldig e-mailadres in te voeren, zodat we contact met u kunnen opnemen als er vragen zijn over uw rapport. Hierdoor kunnen we uw bijdragen ook herkennen en een hogere prioriteit geven."
+    "message": "Het is handig om een geldig e-mailadres in te voeren. Hierdoor kunnen we contact met u opnemen om moeilijke problemen zoals malware op te lossen. Houd in gedachten dat het niet verplicht is om een e-mailadres in te voeren, en dat uw adres nooit zal worden gedeeld."
   },
   "issueReporter_email_label": {
     "message": "E-mail:"
@@ -48,25 +42,46 @@
     "message": "Een poging om het rapport te verzenden is mislukt met foutcode ‘?1?’. Controleer uw internetverbinding en probeer het opnieuw. Als het probleem aanhoudt, vraag dan om hulp in het [link]Adblock Plus-forum[/link]."
   },
   "issueReporter_falseNegative_description": {
-    "message": "Selecteer deze optie als een advertentie wordt weergegeven, ondanks het feit dat Adblock Plus is ingeschakeld."
+    "message": "Adblock Plus is ingeschakeld, maar ik zie nog steeds een of meer advertenties."
   },
   "issueReporter_falseNegative_label": {
-    "message": "Adblock Plus blokkeert een advertentie niet"
+    "message": "Ik zie nog steeds advertenties"
   },
   "issueReporter_falsePositive_description": {
-    "message": "Selecteer deze optie als de pagina belangrijke inhoud niet weergeeft, onjuist wordt weergegeven of niet goed werkt. U kunt vaststellen of Adblock Plus de oorzaak van het probleem is door het tijdelijk uit te schakelen."
+    "message": "Deze pagina wordt niet goed weergegeven, functioneert niet of lijkt belangrijke inhoud te missen."
   },
   "issueReporter_falsePositive_label": {
-    "message": "Adblock Plus blokkeert te veel"
+    "message": "De pagina die ik probeer te bekijken werkt niet"
+  },
+  "issueReporter_highlighter_description": {
+    "message": "Gebruik de hulpmiddelen om elke advertentie te markeren of gevoelige info op de schermafbeelding te verbergen. Door het markeren van advertenties kunnen we het probleem sneller oplossen."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Probleem markeren"
   },
   "issueReporter_knownIssueMessage": {
     "message": "Het door u gemelde probleem is waarschijnlijk al bekend. Meer informatie:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Probleem markeren"
   },
   "issueReporter_page_title": {
     "message": "Probleemrapportage"
   },
   "issueReporter_privacyPolicy": {
     "message": "Privacybeleid"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "verwerken"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Verbergen"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "Markeren"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Probleem selecteren"
   },
   "issueReporter_sendButton_label": {
     "message": "Rapport verzenden"
@@ -78,12 +93,12 @@
     "message": "Wacht even terwijl Adblock Plus uw rapport indient."
   },
   "issueReporter_showData_label": {
-    "message": "Rapportgegevens tonen"
+    "message": "Klik op deze koppeling om de rapportgegevens te bekijken voordat ze worden verzonden"
   },
   "issueReporter_typeSelector_description": {
-    "message": "Dit venster leidt u door de benodigde stappen voor het indienen van een Adblock Plus-probleemrapport. Selecteer eerst het probleemtype dat u op deze pagina ervaart:"
+    "message": "Selecteer een probleem:"
   },
   "issueReporter_typeSelector_heading": {
-    "message": "Probleemtype selecteren"
+    "message": "Welk type probleem ondervindt u?"
   }
 }

@@ -20,20 +20,14 @@
   "issueReporter_comment_label": {
     "message": "Коментар (необов’язково):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Довжина коментаря перевищує 1000 символів. Будуть послані лише перші 1000 символів."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Звіт було записано. Ви можете переглянути його за посиланням:"
   },
-  "issueReporter_dataCollector_description": {
-    "message": "Заждіть, Adblock Plus збирає потрібні дані"
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Ласкаво просимо до звітувача про проблеми"
-  },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Примітка:</strong> Тимчасово відкриється додаткова закладка, тому сторінка, на якій ви знаходитеся, не потрапить у Журнал помилок."
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "Подробиці"
   },
   "issueReporter_doneButton_label": {
     "message": "Гаразд"
@@ -59,14 +53,35 @@
   "issueReporter_falsePositive_label": {
     "message": "Adblock Plus блокує забагато"
   },
+  "issueReporter_highlighter_description": {
+    "message": "Використовуйте інструменти для виділення кожної реклами або приховування конфіденційної інформації на знімку екрана. Виділення реклами дозволить нам швидше усунути проблему."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Виділіть проблему"
+  },
   "issueReporter_knownIssueMessage": {
     "message": "Проблема про яку ви повідомили вже відома. Детальніше:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Відмітити проблему"
   },
   "issueReporter_page_title": {
     "message": "Повідомити про проблему"
   },
   "issueReporter_privacyPolicy": {
     "message": "Політика приватності"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "обробка"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Приховати"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "Виділити"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Вибрати проблему"
   },
   "issueReporter_sendButton_label": {
     "message": "Надіслати звіт"

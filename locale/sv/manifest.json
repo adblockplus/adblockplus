@@ -2,9 +2,6 @@
   "description": {
     "message": "Med över 500 miljoner nedladdningar är Adblock Plus en av världens mest populära annonsblockerare."
   },
-  "name": {
-    "message": "Adblock Plus"
-  },
   "name_devbuild": {
     "message": "Adblock Plus utvecklingsversion"
   }

@@ -1,0 +1,59 @@
+{
+  "firstRun_browser_description": {
+    "message": "Del equipo que está detrás de Adblock Plus, el bloqueador de anuncios mas popular para navegadores de escritorio, Adblock Browser está ahora disponible para tus dispositivos Android e iOS."
+  },
+  "firstRun_browser_store_android": {
+    "message": "Aplicación Android en Google Play"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "Disponible en el App Store de iTunes"
+  },
+  "firstRun_browser_title": {
+    "message": "Aplicación Adblock Browser"
+  },
+  "firstRun_control_description": {
+    "message": "De forma predeterminada, podrías ver algunos anuncios no intrusivos que se adhieren a <a0>criterios estrictos</a0>. Identificamos estos anuncios como anuncios aceptables. ¿Prefieres bloquear todos los anuncios? <a1>Desactiva los anuncios aceptables</a1> en tus <a2>Ajustes</a2>."
+  },
+  "firstRun_control_title": {
+    "message": "Tú tienes el control"
+  },
+  "firstRun_fair_description": {
+    "message": "Te animamos a hacer un uso justo de Adblock Plus y la opción para lista blanca de sitios web. Dependiendo de los filtros que usas, debes entender y aceptar que pueden ocurrir resultados no intencionales (e.j. contenido bloqueado en un sitio web). Consulta los <a0>Términos de uso</a0> para más información sobre el uso justo de Adblock Plus."
+  },
+  "firstRun_fair_title": {
+    "message": "Uso justo"
+  },
+  "firstRun_footer_copyright": {
+    "message": "Copyright © $year$ Todos los derechos reservados. Adblock Plus® es una marca registrada de <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
+  "firstRun_subtitle": {
+    "message": "Acabas de tomar el control de tu navegador."
+  },
+  "firstRun_title": {
+    "message": "¡Instalación Exitosa!"
+  },
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "Algunos usuarios están experimentando un problema donde esta página se abre cada vez que el navegador es ejecutado. Este problema puede ser resuelto desinstalando y reinstalando Adblock Plus:"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "Si aún necesitas ayuda, contáctanos en <a0>support@adblockplus.org</a0> o visita nuestro <a1>Centro de Ayuda</a1>."
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "Abre la pestaña de Extensiones de tu navegador."
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Localiza Adblock Plus y remuevelo."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "Reinstalar Adblock Plus desde <a>adblockplus.org</a>."
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "Parece que un problema causo que se todos los filtros se removieran y no pudimos restaurar una copia de seguridad. Por lo tanto tuvimos que reiniciar tus filtros y los ajustes de Anuncios Aceptables. Por favor comprueba tus listas de filtros y los ajustes de Anuncios Aceptables en las <a>Opciones de Adblock Plus</a>."
+  }
+}

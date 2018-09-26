@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Komentar (opcionalny):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Dołhosć wašeho komentar překročuje 1000 znamješkow. Jenož prěnje 1000 znamješkow budu so słać."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Waša zdźělenka je so składowała. Móžeš pod slědowacej adresu na njo přistup měć:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Prošu počakńće, mjeztym zo Adblock Plus trěbne daty hromadźi."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Witajće do problemoweho rozprawnika"
   },
   "issueReporter_doneButton_label": {
     "message": "Hotowo"

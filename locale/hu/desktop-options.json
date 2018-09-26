@@ -77,6 +77,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "Zavaró elemek, pl. képek vagy animált diavetítések ideiglenes blokkolása egy weboldalon."
   },
+  "options_customize_header": {
+    "message": "Testreszabás"
+  },
+  "options_customize_iconStats": {
+    "message": "Blokkolt ikon hirdetések számának megjelenítése"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "„Adblock Plus” panel megjelenítése a fejlesztői eszközökben"
   },
@@ -85,6 +91,9 @@
   },
   "options_customize_showNotifications": {
     "message": "Hasznos értesítések megjelenítése"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Értesítések engedélyezése az Adblock Plus-tól (a kritikus teljesítményre vonatkozó értesítések mindig megjelennek)."
   },
   "options_dialog_about_copyright": {
     "message": "Copyright © $currentYear$ eyeo GmbH.",
@@ -156,10 +165,10 @@
     "message": "Még nem vett fel szűrőlistákat az Adblock Plusba. A felvett szűrőlisták itt fognak megjelenni."
   },
   "options_filterList_hours": {
-    "message": "órákkal ezelőtt"
+    "message": "órával ezelőtt"
   },
   "options_filterList_lastDownload_checksumMismatch": {
-    "message": "Sikertelen, érvénytelen ellenőrző összeg"
+    "message": "Sikertelen, érvénytelen ellenőrzőösszeg"
   },
   "options_filterList_lastDownload_connectionError": {
     "message": "Sikertelen, letöltési hiba"
@@ -174,7 +183,7 @@
     "message": "Sikertelen, érvénytelen cím"
   },
   "options_filterList_minutes": {
-    "message": "percekkel ezelőtt"
+    "message": "perccel ezelőtt"
   },
   "options_filterList_now": {
     "message": "Épp most"
@@ -200,11 +209,19 @@
   "options_filterList_website": {
     "message": "weboldal"
   },
+  "options_filters_search_or_add": {
+    "message": "Keresés / szűrő hozzáadás (pl. $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
+  },
   "options_footer_about": {
     "message": "Névjegy"
   },
   "options_footer_contribute": {
-    "message": "Hozzájárulás"
+    "message": "Közreműködés"
   },
   "options_general_description": {
     "message": "Az Adblock Plus által elrejtett és megjelenített elemek meghatározása"
@@ -276,7 +293,7 @@
     "message": "Támogatás"
   },
   "options_tab_advanced": {
-    "message": "Haladó"
+    "message": "Speciális"
   },
   "options_tab_general": {
     "message": "Általános"
@@ -285,7 +302,7 @@
     "message": "Súgó"
   },
   "options_tab_whitelist": {
-    "message": "Kivételezett weboldalak"
+    "message": "Fehérlistán lévő oldalak"
   },
   "options_tracking_warning_1": {
     "message": "Észrevettük, hogy mind a <strong>$tracking$</strong> és <strong>$acceptableAds$</strong> engedélyezve van.",

@@ -20,6 +20,15 @@
   "options_advanced_description": {
     "message": "Derinkite Adblock Plus, pridėkite ar pašalinkite sąrašus, kurkite ir prižiūrėkite savo sąrašus"
   },
+  "options_anti_cv_header": {
+    "message": "Anti-apribojimai"
+  },
+  "options_anti_cv_title": {
+    "message": "ABP anti-apribojimų filtrų sąrašas"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "Šis sąrašas nukreiptas prieš apribojimus (t.y. būdus parodyti reklamą žmonėm naudojantiem reklamų blokavimo įrankius). Šie filtrai kovoja su tokiom reklamos ir tom kurios susiję su sekimu."
+  },
   "options_close": {
     "message": "užverti"
   },
@@ -36,7 +45,7 @@
     "message": "Išsaugoti"
   },
   "options_customFilters_description": {
-    "message": "Kurti savo sąrašus ir valdyti ką ir kur Adblock Plus blokuos ar neblokuos."
+    "message": "Kurkite savo filtrus ir galėsite kontroliuoti kokį turinį Adblock Plus blokuoja. <a0>Sužinokite kaip kurti filtrus</a0>"
   },
   "options_customFilters_edit_placeholder": {
     "message": "pvz. $filter$",
@@ -68,6 +77,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "Laikinai puslapyje blokuoti įkyrius elementus, pvz. paveikslėlius ar skaidres."
   },
+  "options_customize_header": {
+    "message": "Derinimas"
+  },
+  "options_customize_iconStats": {
+    "message": "Piktogramoje rodyti kiek reklamų užblokuota"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "Rodyti „Adblock Plus“ valdymo pultą kūrėjo įrankiuose"
   },
@@ -76,6 +91,9 @@
   },
   "options_customize_showNotifications": {
     "message": "Rodyti naudingus pranešimus"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Leisti Adblock Plus pranešimus (pranešimai susiję su kritinėmis greitaveikos bėdomis bus rodomi visada)."
   },
   "options_dialog_about_copyright": {
     "message": "Autorinės teisės © $currentYear$ eyeo GmbH.",
@@ -190,6 +208,14 @@
   },
   "options_filterList_website": {
     "message": "tinklapis"
+  },
+  "options_filters_search_or_add": {
+    "message": "Ieškoti / pridėti filtrą (pvz. $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
   },
   "options_footer_about": {
     "message": "Apie Adblock Plus"

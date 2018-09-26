@@ -11,8 +11,14 @@
   "enabled_for_site": {
     "message": "<strong>Разрешено</strong> за сайта"
   },
+  "options_refresh": {
+    "message": "Опресни"
+  },
   "options_short": {
     "message": "Настройки"
+  },
+  "overlay_notification_closing_button_hide": {
+    "message": "Затвори"
   },
   "overlay_notification_closing_button_optout": {
     "message": "Спри показването на известия"

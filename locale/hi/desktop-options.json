@@ -6,7 +6,7 @@
     "message": "रद्द करें"
   },
   "options_filterList_column_name": {
-    "message": "फिल्टरों कि सूची"
+    "message": "फिल्टरों कि सूची "
   },
   "options_filterList_column_status": {
     "message": "स्थित"
@@ -18,16 +18,16 @@
     "message": "विफल रहा, डाउनलोड विफलता"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "विफल रहा, एक मान्य पता नहीं"
+    "message": "विफल रहा, एक मान्य पता नहीं "
   },
   "options_filterList_state_disabled": {
     "message": "अक्षम"
   },
   "options_filterList_title": {
-    "message": "फिल्टरों कि सूची"
+    "message": "फिल्टरों कि सूची "
   },
   "options_filterList_updateNow": {
-    "message": "अपडेट करें"
+    "message": "अपडेट करें "
   },
   "options_language_header": {
     "message": "भाष"
@@ -39,6 +39,6 @@
     "message": "सेटिंग्स"
   },
   "options_tab_general": {
-    "message": "सामान्य"
+    "message": "सामान्य "
   }
 }

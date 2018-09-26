@@ -20,20 +20,14 @@
   "issueReporter_comment_label": {
     "message": "Komentar (neobvezno):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Dolžina vašega komentarja presega 1000 znakov. Poslanih bo le prvih 1000 znakov."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Vaše poročilo je shranjeno. Do njega lahko dostopate na naslednjem naslovu:"
   },
-  "issueReporter_dataCollector_description": {
-    "message": "Počakajte nekaj trenutkov, da Adblock Plus zbere potrebne podatke."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Dobrodošli v poročevalcu težav"
-  },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Opomba:</strong> Začasno se bo odprl dodaten zavihek, da poročevalec težav ne bo prizadel strani, ki jo imate odprto."
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "Podrobnosti"
   },
   "issueReporter_doneButton_label": {
     "message": "Končaj"
@@ -59,14 +53,35 @@
   "issueReporter_falsePositive_label": {
     "message": "Adblock Plus blokira preveč stvari"
   },
+  "issueReporter_highlighter_description": {
+    "message": "Uporabite orodja za označevanje vsakega oglasa ali skrivanje občutljivih podatkov na sliki strani. Označevanje oglasov nam bo pomagalo pri hitrejšemu reševanju težave."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Označi težavo"
+  },
   "issueReporter_knownIssueMessage": {
     "message": "Težava, ki ste jo javili, je najbrž že znana. Več podatkov:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Zaznamuj težavo"
   },
   "issueReporter_page_title": {
     "message": "Poročevalec težav"
   },
   "issueReporter_privacyPolicy": {
     "message": "Politika zasebnosti"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "Obdelovanje"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Skrij"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "Označi"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Izberi težavo"
   },
   "issueReporter_sendButton_label": {
     "message": "Pošlji poročilo"

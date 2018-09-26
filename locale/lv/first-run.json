@@ -1,0 +1,29 @@
+{
+  "firstRun_browser_title": {
+    "message": "Adblock Browser lietotne"
+  },
+  "firstRun_footer_copyright": {
+    "message": "Copyright © $year$. Visas tiesības paturētas. Adblock Plus® ir <a0>eyeo GmbH</a0> reģistrēta preču zīme.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "Daži lietotāji saskaras ar problēmu, ka šī lapa tiek atvērta katrā pārlūka palaišanas reizē. Šo problēmu var atrisināt pārinstalējot Adblock Plus:"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "Ja nepieciešama palīdzība, sazinieties ar <a0>support@adblockplus.org</a0> vai apmeklējiet <a1>Palīdzības centrs</a1>."
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "Atveriet pārlūka paplašinājumu cilni."
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Atrodiet Adblock Plus un noņemiet to."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "Pārinstalējiet Adblock Plus no <a>adblockplus.org</a>."
+  }
+}

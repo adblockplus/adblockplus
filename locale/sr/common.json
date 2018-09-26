@@ -6,6 +6,18 @@
     "message": "Откажи"
   },
   "common_feature_anti_adblock_title": {
-    "message": "Сакриј Адблок Поруке Упозорења"
+    "message": "Сакриј поруке упозорења Adblock-а"
+  },
+  "common_feature_malware_title": {
+    "message": "Блокирај малвер"
+  },
+  "common_feature_privacy_title": {
+    "message": "Блокирај додатно праћење"
+  },
+  "common_feature_social_title": {
+    "message": "Блокирај праћење икона друштвених медија"
+  },
+  "common_notification_hide": {
+    "message": "Затворите обавештење"
   }
 }

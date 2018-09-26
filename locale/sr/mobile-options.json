@@ -1,11 +1,50 @@
 {
   "mops_acceptableAds_description": {
-    "message": "Дозволи ненаметљиве рекламе"
+    "message": "Дозволи нека ненаметљива оглашавања"
+  },
+  "mops_acceptableAds_more": {
+    "message": "Сазнајте више"
   },
   "mops_action_cancel": {
     "message": "Откажи"
   },
+  "mops_enabled_label": {
+    "message": "Омогући Adblock Plus на домену <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_url": {
+    "message": "Унесите важећу URL адресу"
+  },
+  "mops_filterlist_add": {
+    "message": "+ Додај листу филтера"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Додај листу филтера"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ Додај прилагођену листу филтера"
+  },
+  "mops_header": {
+    "message": "Поставке Adblock Plus-а"
+  },
+  "mops_subscribe_header": {
+    "message": "Додај прилагођену листу филтера"
+  },
+  "mops_subscribe_title": {
+    "message": "Име листе филтера"
+  },
+  "mops_subscribe_url": {
+    "message": "URL адреса листе филтера"
+  },
   "mops_subscriptions_header": {
-    "message": "Претплате на филтере"
+    "message": "Претплате на филтер"
+  },
+  "mops_title": {
+    "message": "Поставке Adblock Plus-а"
   }
 }

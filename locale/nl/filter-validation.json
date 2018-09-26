@@ -3,13 +3,16 @@
     "message": "Geen actief domein opgegeven voor uitgebreide elementverbergende filter"
   },
   "filter_invalid_csp": {
-    "message": "Ongeldig inhoudbeveiligingsbeleid"
+    "message": "Ongeldig inhoudsbeveiligingsbeleid"
   },
   "filter_invalid_domain": {
     "message": "Ongeldig (of leeg) domein opgegeven"
   },
   "filter_invalid_regexp": {
     "message": "Ongeldige reguliere expressie"
+  },
+  "filter_snippet_nodomain": {
+    "message": "Geen actief domein opgegeven voor snippetfilter"
   },
   "filter_unknown_option": {
     "message": "Onbekende filteroptie"

@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Qeyd (seçimə bağlı):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Daxil etdiyiniz qeyd mətni 1000 hərfi keçir. Yalnız ilk 1000 - i göndəriləcək."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Raportunuz yadda saxlandı. Ona aşağıdakı ünvandan keçə bilərsiniz:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Lütfən Adblock Plus lazımi məlumatı toplayanadək gözləyin."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Problem xəbərçisinə xoş gəldiniz"
   },
   "issueReporter_doneButton_label": {
     "message": "Oldu"

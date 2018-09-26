@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Kommentar (valgfritt):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Kommentaren din er lengre enn 1000 tegn. Kun de første 1000 tegnene vil bli inkludert i rapporten."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Rapporten er lagret. Du kan få tilgang til den på følgende internettadresse:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Vennligst vent på at Adblock Plus samler inn de nødvendige data."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Velkommen til problemrapportereren"
   },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Merk:</strong> En ny fane vil bli åpnet midlertidig slik at siden du er på ikke blir påvirket av Problemrapportereren."

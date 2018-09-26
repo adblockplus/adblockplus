@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Athugasemd (valfrjálst):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Lengdin á athugasemd er yfir 1000 stafir. Aðeins verða sendir fyrstu 1000 stafirnir."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Búið er að vista skýrsluna. Þú getur séð hana á eftirfarandi veffangi:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Bíddu aðeins á meðan Adblock Plus tekur saman nauðsynleg gögn."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Velkominn í tilkynna vandamál"
   },
   "issueReporter_doneButton_label": {
     "message": "Ljúka"

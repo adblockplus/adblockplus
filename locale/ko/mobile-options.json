@@ -17,9 +17,6 @@
       }
     }
   },
-  "mops_error_title": {
-    "message": "제목을 입력하세요"
-  },
   "mops_filterlist_add": {
     "message": "+ 필터 목록 추가"
   },

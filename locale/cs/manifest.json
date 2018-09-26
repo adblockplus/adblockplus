@@ -2,9 +2,6 @@
   "description": {
     "message": "Více než 500 milionů stažení, Adblock Plus je jedním z nejvíce používaných programu na blokování reklamy."
   },
-  "name": {
-    "message": "Adblock Plus"
-  },
   "name_devbuild": {
     "message": "Vývojové sestavení Adblock Plus"
   }

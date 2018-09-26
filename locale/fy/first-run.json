@@ -1,0 +1,59 @@
+{
+  "firstRun_browser_description": {
+    "message": "Adblock Browser, fan it team efter Adblock Plus, de meast populêre adblocker foar desktopbrowsers, is no beskikber foar jo Android- en iOS-apparaten."
+  },
+  "firstRun_browser_store_android": {
+    "message": "Android app-op Google Play"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "Beskikber yn de iTunes App Store"
+  },
+  "firstRun_browser_title": {
+    "message": "Adblock Browser-app"
+  },
+  "firstRun_control_description": {
+    "message": "Standerr kinne jo inkelde net-opdringerige advertinsjes sjen dy't oan <a0>strange kritearia</a0> foldogge. Dizze advertinsjes werkenne wy as Akseptabele advertinsjes. Leaver alle advertinsjes blokkearje? <a1>Set Akseptabele advertinsjes út</a1> yn jo <a2>Ynstellingen</a2>."
+  },
+  "firstRun_control_title": {
+    "message": "Jo binne de baas"
+  },
+  "firstRun_fair_description": {
+    "message": "We moedigje jo oan om earlik gebrûk te meitsjen fan Adblock Plus en de opsjes foar it whitelisten fan websites. Ofhinklik fan de filters dy't jo brûke, begripe en akseptearje jo dat der net-bedoelde resultaten barre kinne (lykas blokkearre ynhâld op in website). Wend jo ta de <a0>Brûksbetingsten</a0> foar mear ynformaasje oer earlik gebrûk fan Adblock Plus."
+  },
+  "firstRun_fair_title": {
+    "message": "Earlik gebrûk"
+  },
+  "firstRun_footer_copyright": {
+    "message": "Copyright © $year$ Alle rjochten foarbehâlden. Adblock Plus® is in registrearre hannelsmerk fan <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
+  "firstRun_subtitle": {
+    "message": "Jo hawwe sakrekt de kontrôle oer jo browser oernommen."
+  },
+  "firstRun_title": {
+    "message": "Ynstallaasje slagge!"
+  },
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "Guon brûkers ûnderfine in probleem wêrby dizze side hieltyd iepene wurdt wannear de browser start wurdt. Dit probleem kin oplost wurde troch Adblock Plus fuort te smiten en opnij te ynstallearjen:"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "As jo noch hieltyd help nedich hawwe, nim dan kontakt mei ús op fia <a0>support@adblockplus.org</a0> of besykje ús <a1>Helpsintrum</a1>."
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "Iepenje it ljepblêd Utwreidingen fan jo browser."
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Sykje nei Adblock Plus en smyt it fuort."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "Ynstallearje Adblock Plus opnij fan <a>adblockplus.org</a> ôf."
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "It liket der op dat troch in probleem alle filters fuortsmiten binne, en wy koene gjin reservekopy weromsette. Hjirtroch hawwe wy al jo filters en ynstellingen foar Akseptabele advertinsjes opnij inisjalisearje moatte. Kontrolearje jo filterlisten en ynstellingen foar Akseptabele advertinsjes yn de <a>Adblock Plus-opsjes</a>."
+  }
+}

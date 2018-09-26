@@ -20,17 +20,11 @@
   "issueReporter_comment_label": {
     "message": "Kommentar (valfritt):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Längden på din kommentar överskrider 1 000 tecken. Endast de första 1 000 tecknen kommer att skickas."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Din rapport har sparats. Du kan nå den på följande adress:"
   },
-  "issueReporter_dataCollector_description": {
-    "message": "Var vänlig vänta några ögonblick medan Adblock Plus samlar in nödvändig data."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Välkommen till problemrapportören"
+  "issueReporter_detailsButton_label": {
+    "message": "Detaljer"
   },
   "issueReporter_doneButton_label": {
     "message": "Klar"
@@ -64,6 +58,9 @@
   },
   "issueReporter_privacyPolicy": {
     "message": "Sekretesspolicy"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Dölj"
   },
   "issueReporter_sendButton_label": {
     "message": "Skicka rapport"

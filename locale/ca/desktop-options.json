@@ -45,7 +45,7 @@
     "message": "Desa"
   },
   "options_customFilters_description": {
-    "message": "Escriviu els vostres propis filtres personalitzats per controlar més el contingut que l'Adblock Plus permet o bloqueja."
+    "message": "Creeu els vostres propis filtres per a un major control sobre què contingut bloqueja l'Adblock Plus. <a0>Més informació de com crear filtres</a0>"
   },
   "options_customFilters_edit_placeholder": {
     "message": "p. e. $filter$",
@@ -57,10 +57,10 @@
     }
   },
   "options_customFilters_learn": {
-    "message": "Esbrina com escriure llistes de filtres"
+    "message": "Més informació de com crear filtres"
   },
   "options_customFilters_start": {
-    "message": "Comença a escriure la meva llista de filtres"
+    "message": "Començar a crear la meva llista de filtres"
   },
   "options_customFilters_tip": {
     "message": "Els filtres que creeu es mostraran aquí."
@@ -77,6 +77,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "Bloqueja temporalment elements molestos en una pàgina web, p. e. imatges o presentacions de diapositives animades."
   },
+  "options_customize_header": {
+    "message": "Personalitzacions"
+  },
+  "options_customize_iconStats": {
+    "message": "Mostra el número d'anuncis bloquejats a la icona"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "Mostra el quadre «Adblock Plus» a les eines de desenvolupador"
   },
@@ -85,6 +91,9 @@
   },
   "options_customize_showNotifications": {
     "message": "Mostra les notificacions útils"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Permet notificacions d'Adblock Plus (les notificacions relacionades amb problemes de rendiment crítics es mostraran sempre)."
   },
   "options_dialog_about_copyright": {
     "message": "Drets d'autor © $currentYear$ eyeo GmbH.",
@@ -199,6 +208,14 @@
   },
   "options_filterList_website": {
     "message": "lloc web"
+  },
+  "options_filters_search_or_add": {
+    "message": "Cerca / afegeix un filtre (p. ex. $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
   },
   "options_footer_about": {
     "message": "Quant a l'Adblock Plus"

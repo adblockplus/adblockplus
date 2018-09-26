@@ -1,10 +1,4 @@
 {
-  "add": {
-    "message": "Add"
-  },
-  "cancel": {
-    "message": "Cancel"
-  },
   "common_feature_anti_adblock_title": {
     "message": "Hide Adblock Warning Messages"
   },

@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "تعبير منطقي غير صحيح"
   },
+  "filter_snippet_nodomain": {
+    "message": "لا يوجد أي نطاق نشط محدد للفلتر قُصاصة"
+  },
   "filter_unknown_option": {
     "message": "خيار فلتر غير معروف"
   },
