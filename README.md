@@ -19,6 +19,11 @@ This should create and populate, both `./node_modules` folder and the `./buildto
 
 **Note:** [devDependencies](https://docs.npmjs.com/files/package.json#devdependencies) are not preinstalled during extension build, use [dependencies](https://docs.npmjs.com/files/package.json#dependencies) instead.
 
+Nightlies
+---------
+
+Nightly builds for feature and release [branches](https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/wikis/development-workflow#naming-schemes) can be found [here](https://wspee.gitlab.io/adblockplusui-nightlies/). See [#119 - ABP UI Nightlies](https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/issues/119) for more information.
+
 Directory structure
 -------------------
 
