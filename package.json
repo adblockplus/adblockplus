@@ -15,15 +15,17 @@
     "csv-import": "node build/csv-exporter/main.js -i"
   },
   "$": {
-    "dev-build": [[
-      "cd ../adblockpluschrome;",
-      "git pull --rebase origin $(git rev-parse --abbrev-ref HEAD);",
-      "cd adblockpluscore;",
-      "git pull --rebase origin $(git rev-parse --abbrev-ref HEAD);",
-      "cd ../;",
-      "SKIP_DEPENDENCY_UPDATES=true ./build.py devenv -t chrome;",
-      "cd ../adblockplusui;"
-    ]],
+    "dev-build": [
+      [
+        "cd ../adblockpluschrome;",
+        "git pull --rebase origin $(git rev-parse --abbrev-ref HEAD);",
+        "cd adblockpluscore;",
+        "git pull --rebase origin $(git rev-parse --abbrev-ref HEAD);",
+        "cd ../;",
+        "SKIP_DEPENDENCY_UPDATES=true ./build.py devenv -t chrome;",
+        "cd ../adblockplusui;"
+      ]
+    ],
     "bundle": {
       "desktop-options": {
         "css": "$ create.css desktop-options",
@@ -88,6 +90,8 @@
       ]
     },
     "test": {
+      "icons": "cp -R ./skin/icons ./smoke",
+      "io-checkbox": "$ create.test.component io-checkbox",
       "io-element": {
         "js": [
           "$ create.test.js io-element",
