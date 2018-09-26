@@ -1484,4 +1484,8 @@ port.postMessage({
 });
 
 onDOMLoaded();
+
+// We must call port.disconnect because of this Microsoft Edge bug:
+// https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/19011773/
+window.addEventListener("unload", () => port.disconnect());
 window.addEventListener("hashchange", onHashChange, false);
