@@ -17,9 +17,6 @@
       }
     }
   },
-  "mops_error_title": {
-    "message": "Podaj tytuł"
-  },
   "mops_error_url": {
     "message": "Wprowadź prawidłowy adres URL"
   },

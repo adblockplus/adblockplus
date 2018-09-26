@@ -3,7 +3,7 @@
     "message": "Продолжить"
   },
   "filters_subscription_lastDownload_connectionError": {
-    "message": "Ошибка, загрузка невозможна"
+    "message": "Ошибка, загрузка не удалась"
   },
   "issueReporter_anonymousSubmission_label": {
     "message": "Отправить анонимно"
@@ -20,20 +20,11 @@
   "issueReporter_comment_label": {
     "message": "Комментарий (необязательно):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Длина комментария превышает 1000 символов. Только первые 1000 символов будут отправлены."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Сообщение отправлено и сохранено. Вы можете просмотреть его по следующей ссылке:"
   },
-  "issueReporter_dataCollector_description": {
-    "message": "Пожалуйста, подождите несколько секунд, пока Adblock Plus собирает нужные данные."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Добро пожаловать в мастер отправки отчётов"
-  },
   "issueReporter_data_gathering_tab": {
-    "message": "<strong>Примечание:</strong> Временно откроется дополнительная закладка, поэтому страница, на которой вы находитесь, не попадет в Журнал ошибок."
+    "message": "<strong>Примечание:</strong> Дополнительная вкладка будет временно открыта, чтобы Журнал ошибок не нарушал работу Вашей текущей страницы."
   },
   "issueReporter_detailsButton_label": {
     "message": "Сведения"
@@ -42,7 +33,7 @@
     "message": "Готово"
   },
   "issueReporter_email_description": {
-    "message": "Рекомендуется указать действительный адрес электронной почты. Мы сможем связаться с вами для решения сложных проблем, таких как вредоносные программы. Помните, что указывать адрес электронной почты необязательно и он не будет передан другим лицам."
+    "message": "Рекомендуется указать действующий адрес электронной почты. Мы сможем связаться с вами для решения сложных проблем, таких как вредоносные программы. Помните, что указывать адрес электронной почты необязательно, и он не будет передан другим лицам."
   },
   "issueReporter_email_label": {
     "message": "E-mail:"
@@ -54,7 +45,7 @@
     "message": "Adblock Plus работает, но я по-прежнему вижу рекламу."
   },
   "issueReporter_falseNegative_label": {
-    "message": "Реклама по-прежнему отображается"
+    "message": "Я всё ещё вижу рекламу"
   },
   "issueReporter_falsePositive_description": {
     "message": "Страница отображается неправильно, не работает или на ней отсутствует важное содержимое."
@@ -79,6 +70,9 @@
   },
   "issueReporter_privacyPolicy": {
     "message": "Политика конфиденциальности"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "обработка"
   },
   "issueReporter_screenshot_hide": {
     "message": "Скрыть"

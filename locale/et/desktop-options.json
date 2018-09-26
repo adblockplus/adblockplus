@@ -77,6 +77,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "Ajutiselt blokeeri veebilehel tüütud elemendid, nt. pildid või animeeritud esitlused."
   },
+  "options_customize_header": {
+    "message": "Kohandamised"
+  },
+  "options_customize_iconStats": {
+    "message": "Näita ikoonil blokeeritud reklaamide arvu"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "Näita arendaja tööriistades paneeli 'Adblock Plus'"
   },
@@ -85,6 +91,9 @@
   },
   "options_customize_showNotifications": {
     "message": "Näita kasulikke teateid"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Luba Adblock Plusi teavitused (kriitiliste jõudlusprobleemidega seotud teatisi näidatakse alati)."
   },
   "options_dialog_about_copyright": {
     "message": "Autoriõigus © $currentYear$ eyeo GmbH.",
@@ -199,6 +208,14 @@
   },
   "options_filterList_website": {
     "message": "veebisait"
+  },
+  "options_filters_search_or_add": {
+    "message": "Otsi / lisa filtrit (nt. $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
   },
   "options_footer_about": {
     "message": "Adblock Plusi teave"

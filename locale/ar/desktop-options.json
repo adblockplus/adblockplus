@@ -77,6 +77,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "حجب العناصر المزعجة مؤقتًا في إحدى صفحات الويب، مثل الصور أو عروض شرائح الرسوم المتحركة."
   },
+  "options_customize_header": {
+    "message": "تخصيص"
+  },
+  "options_customize_iconStats": {
+    "message": "عرض عدد الإعلانات التي تم حجبها على الأيقونة"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "عرض لوحة 'Adblock Plus' في أدوات المطور"
   },
@@ -85,6 +91,9 @@
   },
   "options_customize_showNotifications": {
     "message": "أظهر الأشعارات الهامة"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "السماح بالإشعارات من Adblock Plus (الإشعارات المتعلقة بمشاكل الأداء الهامة ستظهر دائمًا)."
   },
   "options_dialog_about_copyright": {
     "message": "حقوق النشر © $currentYear$ eyeo GmbH.",
@@ -199,6 +208,14 @@
   },
   "options_filterList_website": {
     "message": "مواقع الويب"
+  },
+  "options_filters_search_or_add": {
+    "message": "بحث / إضافة فلتر (مثال $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
   },
   "options_footer_about": {
     "message": "نبذة عن Adblock Plus"

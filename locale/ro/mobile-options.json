@@ -17,8 +17,8 @@
       }
     }
   },
-  "mops_error_title": {
-    "message": "Te rugăm să introduci un titlu"
+  "mops_error_url": {
+    "message": "Introduceți un URL valid"
   },
   "mops_filterlist_add": {
     "message": "+ Adaugă o listă de filtre"

@@ -17,8 +17,8 @@
       }
     }
   },
-  "mops_error_title": {
-    "message": "Introduïu un títol"
+  "mops_error_url": {
+    "message": "Introduïu una URL vàlida"
   },
   "mops_filterlist_add": {
     "message": "+ Afegeix una llista de filtres"

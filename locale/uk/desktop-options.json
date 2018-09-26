@@ -20,6 +20,15 @@
   "options_advanced_description": {
     "message": "Встановіть Adblock Plus, додайте або видаліть списки фільтрів, створюйте та адмініструйте власні списки фільтрів"
   },
+  "options_anti_cv_header": {
+    "message": "Боротьба з обходом блокування"
+  },
+  "options_anti_cv_title": {
+    "message": "Протиобхідний список фільтрів ABP"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "Даний список фільтрів дозволяє боротися з обходами (тобто методами просування реклами користувачам, які блокують її). Ці фільтри поширюються на рекламу, впроваджувану за допомогою обходу, а також на відповідні служби відстеження."
+  },
   "options_close": {
     "message": "закрити"
   },
@@ -68,6 +77,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "Тимчасове блокування дратівливих елементів на сайті, наприклад, зображень або анімаційних слайд-шоу."
   },
+  "options_customize_header": {
+    "message": "Налаштування"
+  },
+  "options_customize_iconStats": {
+    "message": "Відображати на значку кількість заблокованих рекламних оголошень"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "Показувати панель «Adblock Plus» в інструментах розробника"
   },
@@ -76,6 +91,9 @@
   },
   "options_customize_showNotifications": {
     "message": "Показувати корисні повідомлення"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Дозволити повідомлення від Adblock Plus (повідомлення, пов'язані з критичними проблемами продуктивності, завжди відображатимуться)."
   },
   "options_dialog_about_copyright": {
     "message": "Авторське право © $currentYear$ eyeo GmbH.",
@@ -190,6 +208,14 @@
   },
   "options_filterList_website": {
     "message": "сайт"
+  },
+  "options_filters_search_or_add": {
+    "message": "Фильтр пошуку / додавання (наприклад, $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
   },
   "options_footer_about": {
     "message": "Про Adblock Plus"

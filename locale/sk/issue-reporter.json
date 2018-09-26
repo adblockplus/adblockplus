@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Komentár (nepovinné):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Dĺžka váško komentára prevyšuje 1000 znakov. Bude odoslaných len prvých 1000 znakov."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Vaša správa bola uložená. Môžete ju sprístupniť na tejto adrese:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Počkajte, prosím, kým Adblock Plus získa požadované údaje."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Vitajte v hlásení problémov"
   },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Poznámka:</strong> Ďalšia karta sa dočasne otvorí, takže stránka na ktorej sa nachádzate, nebude ovplyvňovaná Reportérom výstrah."

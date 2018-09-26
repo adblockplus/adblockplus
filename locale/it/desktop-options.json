@@ -209,6 +209,14 @@
   "options_filterList_website": {
     "message": "Sito"
   },
+  "options_filters_search_or_add": {
+    "message": "Ricerca / Aggiungi filtro (ad es. $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
+  },
   "options_footer_about": {
     "message": "Informazioni su Adblock Plus"
   },

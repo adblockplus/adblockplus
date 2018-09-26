@@ -17,9 +17,6 @@
       }
     }
   },
-  "mops_error_title": {
-    "message": "Por favor, ingresa un título"
-  },
   "mops_filterlist_add": {
     "message": "+ Agregar una lista de filtros"
   },

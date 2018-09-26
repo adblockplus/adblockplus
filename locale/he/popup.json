@@ -1,6 +1,9 @@
 {
+  "click_element_to_block_it": {
+    "message": "לחץ על יסוד בעמוד כדי לחסום אותו."
+  },
   "clickhide_instructions": {
-    "message": "לאחר סגירת חלון קופץ זה, לחץ (או לחץ לחיצה ימנית) על יסוד בעמוד זה."
+    "message": "לאחר סגירת חלון קופץ זה, לחץ (או לחץ לחיצה ימנית) על יסוד בעמוד."
   },
   "disabled_for_site": {
     "message": "<strong>מושבת</strong> באתר זה"
@@ -11,11 +14,29 @@
   "enabled_for_site": {
     "message": "<strong>מאופשר</strong> באתר זה"
   },
+  "options_refresh": {
+    "message": "רענן"
+  },
   "options_short": {
     "message": "אפשרויות"
   },
+  "overlay_notification_closing_button_hide": {
+    "message": "סגור"
+  },
   "overlay_notification_closing_button_optout": {
     "message": "הפסק להראות התראות"
+  },
+  "promote_abp_module": {
+    "message": "מעוניין ב־Adblock Plus בנייד?"
+  },
+  "refresh_to_take_effect": {
+    "message": "לחץ על <strong>רענן</strong> כדי שהשינויים ייכנסו לתוקף."
+  },
+  "sendReport": {
+    "message": "דווח על סוגייה"
+  },
+  "stats_header": {
+    "message": "מספר של פריטים חסומים"
   },
   "stats_label_page": {
     "message": "<strong>$number$</strong> בעמוד זה",
@@ -34,9 +55,12 @@
     }
   },
   "stats_show_iconnumber": {
-    "message": "הראה מספרים בצלמית"
+    "message": "הראה מספר בצלמית"
   },
   "stats_title": {
     "message": "פרסומות חסומות"
+  },
+  "status_header": {
+    "message": "חסום פרסומות ב:"
   }
 }

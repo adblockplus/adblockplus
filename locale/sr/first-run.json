@@ -1,0 +1,23 @@
+{
+  "firstRun_browser_store_android": {
+    "message": "Android апликација на Google Play-у"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "Доступно на iTunes App Store-у"
+  },
+  "firstRun_browser_title": {
+    "message": "Апликација Adblock Browser"
+  },
+  "firstRun_control_title": {
+    "message": "Ви сте под контролом"
+  },
+  "firstRun_fair_title": {
+    "message": "Поштено коришћење"
+  },
+  "firstRun_title": {
+    "message": "Инсталација је успешна."
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Пронађите Adblock Plus и уклоните га."
+  }
+}

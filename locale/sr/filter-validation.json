@@ -1,21 +1,24 @@
 {
   "filter_elemhideemulation_nodomain": {
-    "message": "Нема активних домена наведених за проширени елемент који крију филтер"
+    "message": "Није наведен активан домен у проширеном филтеру за скривање елемената"
   },
   "filter_invalid_csp": {
-    "message": "Неважећа безбедносна политика садржаја"
+    "message": "Неважећа политика безбедности садржаја"
   },
   "filter_invalid_domain": {
-    "message": "Неважећи (или празан) домен је наведен"
+    "message": "Наведен је неважећи (или празан) домен"
   },
   "filter_invalid_regexp": {
     "message": "Неважећи регуларни израз"
+  },
+  "filter_snippet_nodomain": {
+    "message": "Није наведен активан домен за филтер исечака"
   },
   "filter_unknown_option": {
     "message": "Непозната опција филтера"
   },
   "invalid_css_selector": {
-    "message": "$selector$ није исправан CSS бирач",
+    "message": "$selector$ није важећи CSS бирач",
     "placeholders": {
       "selector": {
         "content": "$1"
@@ -31,6 +34,6 @@
     }
   },
   "unexpected_filter_list_header": {
-    "message": "Заглавља списка филтера овде нису дозвољена"
+    "message": "Заглавља листа филтера овде нису дозвољена"
   }
 }

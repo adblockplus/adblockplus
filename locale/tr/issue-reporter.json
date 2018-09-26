@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Yorum (isteğe bağlı):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Yorumunuzun uzunluğu 1000 karakteri aşıyor. Sadece ilk 1000 karakter gönderilecek."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Bildiriminiz kaydedildi ve ona aşağıdaki adresten ulaşabilirsiniz:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Adblock Plus eklentisinin gerekli bilgileri toplaması için lütfen biraz bekleyin."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Sorun bildiriciye hoş geldiniz"
   },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Not:</strong> Bulunduğunuz sayfanın Sorun Bildiricisi tarafından etkilenmemesi için, geçici olarak ek bir sekme açılacaktır."
@@ -39,7 +30,7 @@
     "message": "Ayrıntılar"
   },
   "issueReporter_doneButton_label": {
-    "message": "Bitti"
+    "message": "Bitir"
   },
   "issueReporter_email_description": {
     "message": "Geçerli bir e-posta adresi girilmesi faydalı olacaktır. Bu, kötü amaçlı yazılım gibi zorlu sorunları çözmek amacıyla sizinle iletişim kurmamızı sağlar. E-posta adresi girilmesinin zorunlu olmadığını ve adresinizin hiçbir şekilde paylaşılmayacağını unutmayın."
@@ -51,10 +42,10 @@
     "message": "Hata bildirimi gönderme girişiminiz \"?1?\" hata koduyla başarısız oldu. Lütfen internete bağlı olduğunuzdan emin olun ve yeniden deneyin. Sorun devam ederse lütfen [link]Adblock Plus forumunda[/link] yardım isteyin."
   },
   "issueReporter_falseNegative_description": {
-    "message": "Adblock Plus etkinleştirildi, ancak hala bir ya da daha fazla reklam görüyorum."
+    "message": "Adblock Plus etkinleştirildi, ancak hâlâ bir ya da daha fazla reklam görüyorum."
   },
   "issueReporter_falseNegative_label": {
-    "message": "Hala reklamları görüyorum"
+    "message": "Hâlâ reklamları görüyorum"
   },
   "issueReporter_falsePositive_description": {
     "message": "Sayfa düzgün görüntülenmiyor, çalışmıyor ya da önemli içerikler eksik gibi görünüyor."
@@ -79,6 +70,9 @@
   },
   "issueReporter_privacyPolicy": {
     "message": "Gizlilik politikası"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "işleniyor"
   },
   "issueReporter_screenshot_hide": {
     "message": "Gizle"

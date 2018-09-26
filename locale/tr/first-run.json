@@ -1,6 +1,6 @@
 {
   "firstRun_browser_description": {
-    "message": "Adblock Plus'ın arkasındaki ekip tarafından sunulan, masaüstü tarayıcılar için en popüler reklam engelleyici olan Adblock Browser, şimdi Android ve iOS cihazlarınız için de kullanılabilir."
+    "message": "Adblock Plus'ın arkasındaki takım tarafından sunulan, masaüstü tarayıcılar için en popüler reklam engelleyici olan Adblock Browser, şimdi Android ve iOS cihazlarınız için de kullanılabilir."
   },
   "firstRun_browser_store_android": {
     "message": "Google Play'de Android uygulaması"
@@ -9,7 +9,7 @@
     "message": "iTunes App Store'dan temin edilebilir"
   },
   "firstRun_browser_title": {
-    "message": "Adblock Browser Uygulaması"
+    "message": "Adblock Browser uygulaması"
   },
   "firstRun_control_description": {
     "message": "Varsayılan olarak, <a0>sıkı ölçütlere</a0> uygun bazı zorla girmeyen reklamları görebilirsiniz</a0>. Biz bu reklamları Kabul Edilebilir Reklamlar olarak tanımlıyoruz. Bütün reklamları engellemek mi istiyorsunuz? </a1> <a2>Ayarlar</a2> dan <a1>Kabul Edilebilir Reklamları kapatın."

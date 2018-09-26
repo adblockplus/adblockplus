@@ -20,17 +20,14 @@
   "issueReporter_comment_label": {
     "message": "Komentaras (nebūtinas):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Jūsų komentaras ilgesnis nei 1000 simbolių. Bus išsiųsti tik pirmi 1000 simbolių."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Jūsų pranešimas išsaugotas. Jį pasiekti galite šiuo adresu:"
   },
-  "issueReporter_dataCollector_description": {
-    "message": "Palaukite kelias akimirkas, kol Adblock Plus surinks reikalingus duomenis."
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Pastaba:</strong> Laikinai bus atverta nauja kortelė, kad puslapis kuriame esate nebūtų paveiktas pranešėjo."
   },
-  "issueReporter_dataCollector_heading": {
-    "message": "Sveiki atvykę į klaidų pranešėją"
+  "issueReporter_detailsButton_label": {
+    "message": "Detalės"
   },
   "issueReporter_doneButton_label": {
     "message": "Baigti"
@@ -56,14 +53,35 @@
   "issueReporter_falsePositive_label": {
     "message": "Adblock Plus blokuoja per daug"
   },
+  "issueReporter_highlighter_description": {
+    "message": "Naudokite įrankius norėdami pažymėti reklamą arba paslėpti neviešą informaciją. Pažymėjus reklamą mes greičiau ją sutvarkysime."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Pažymėti problemą"
+  },
   "issueReporter_knownIssueMessage": {
     "message": "Pranešta klaida turbūt žinoma. Daugiau informacijos:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Pažymėti problemą"
   },
   "issueReporter_page_title": {
     "message": "Klaidos pranešimas"
   },
   "issueReporter_privacyPolicy": {
     "message": "Privatumo politika"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "vykdoma"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Slėpti"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "Paryškinti"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Pasirinkite problemą"
   },
   "issueReporter_sendButton_label": {
     "message": "Siųsti pranešimą"

@@ -1,6 +1,6 @@
 {
   "options_acceptableAds_ads_description_1": {
-    "message": "მისაღები რეკლამები არაა მომაბეზრებელი და არ ფარავს იმ შიგთავსს, რომელსაც ნახულობთ. <a>იხილეთ ვრცლად, მისაღები რეკლამების გასაზღვრის წესის შესახებ</a>"
+    "message": "მისაღები რეკლამები არაა მომაბეზრებელი და არ ფარავს იმ შიგთავსს, რომელსაც ნახულობთ. <a>იხილეთ ვრცლად, მისაღები რეკლამების განსაზღვრის წესის შესახებ</a>"
   },
   "options_acceptableAds_ads_label": {
     "message": "მისაღები რეკლამების დაშვება"
@@ -77,6 +77,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "ვებგვერდზე მომაბეზრებელი შიგთავსის დროებით შეზღუდვა, მაგ. სურათებისა და მოძრავი სლაიდების."
   },
+  "options_customize_header": {
+    "message": "მორგება"
+  },
+  "options_customize_iconStats": {
+    "message": "შეზღუდული რეკლამების რაოდენობის ჩვენება ხატულაზე"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "'Adblock Plus'-ის არე შემმუშავებლის ხელსაწყოებში"
   },
@@ -85,6 +91,9 @@
   },
   "options_customize_showNotifications": {
     "message": "საჭირო შეტყობინებების ჩვენება"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "შეტყობინებების დაშვება Adblock Plus-ისგან (წარმადობასთან დაკავშირებული მნიშვნელოვანი შეტყობინებები ყოველთვის გამოჩნდება)."
   },
   "options_dialog_about_copyright": {
     "message": "მფლობელი © $currentYear$ eyeo GmbH.",
@@ -111,10 +120,10 @@
     }
   },
   "options_dialog_import_subscription_location": {
-    "message": "ფილტრის URL ბმული"
+    "message": "ფილტრის URL-ბმული"
   },
   "options_dialog_import_subscription_location_error": {
-    "message": "შეიყვანეთ მართებული URL ბმული"
+    "message": "შეიყვანეთ მართებული URL-ბმული"
   },
   "options_dialog_import_title": {
     "message": "ფილტრის დამატება"
@@ -199,6 +208,14 @@
   },
   "options_filterList_website": {
     "message": "ვებსაიტი"
+  },
+  "options_filters_search_or_add": {
+    "message": "ძიება / ფილტრის დამატება (მაგ. $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
   },
   "options_footer_about": {
     "message": "Adblock Plus-ის შესახებ"

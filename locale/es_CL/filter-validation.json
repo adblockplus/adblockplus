@@ -1,6 +1,6 @@
 {
   "filter_elemhideemulation_nodomain": {
-    "message": "No se ha especificado ningún dominio activo para el filtro de ocultar elementos extendidos"
+    "message": "No se ha especificado dominio activo para el filtro de ocultar elementos extendidos"
   },
   "filter_invalid_csp": {
     "message": "Política de seguridad de contenido no válida"
@@ -10,6 +10,9 @@
   },
   "filter_invalid_regexp": {
     "message": "Expresión regular inválida"
+  },
+  "filter_snippet_nodomain": {
+    "message": "No se ha especificado dominio activo para el filtro de fragmentos"
   },
   "filter_unknown_option": {
     "message": "Opción de filtrado desconocida"

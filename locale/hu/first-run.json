@@ -1,0 +1,56 @@
+{
+  "firstRun_browser_description": {
+    "message": "Az Adblock Plus, a legnépszerűbb hirdetések blokkolója az asztali böngészők számára az Adblock Browser most elérhető az Android és az iOS eszközök számára."
+  },
+  "firstRun_browser_store_android": {
+    "message": "Android app a Google Playen"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "Elérhető az iTunes App Store-ban"
+  },
+  "firstRun_browser_title": {
+    "message": "Adblock Browser app"
+  },
+  "firstRun_control_description": {
+    "message": "Alapértelmezés szerint egyes <a0>szigorú kritériumoknak</a0> megfelelő, nem behatoló hirdetéseket láthat. A hirdetéseket elfogadható hirdetésekként azonosítjuk. Szeretne blokkolni az összes hirdetést? <a1>Kapcsolja ki az elfogadható hirdetéseket</a1> a <a2>Beállítások</a2> között."
+  },
+  "firstRun_control_title": {
+    "message": "Te irányítod"
+  },
+  "firstRun_fair_title": {
+    "message": "Igazságos használat"
+  },
+  "firstRun_footer_copyright": {
+    "message": "Copyright © $year$ Minden jog fenntartva. Adblock Plus® egy bejegyzett <a0>eyeo GmbH</a0> védjegye.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
+  "firstRun_subtitle": {
+    "message": "Csak átvetted az irányítást a böngésződben."
+  },
+  "firstRun_title": {
+    "message": "A telepítés sikeres!"
+  },
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "Egyes felhasználók olyan problémát tapasztalnak, ahol ez az oldal minden alkalommal megnyílik, amikor böngészőjük elindul. A probléma megoldható az Adblock Plus eltávolításával és újratelepítésével:"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "Ha még mindig segítségre van szüksége, vegye fel velünk a kapcsolatot a <a0>support@adblockplus.org</a0> címen vagy keresse fel a <a1>Segítség Központot</a1>."
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "Nyissa meg a böngésző Bővítmények lapját."
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Keresse meg az Adblock Plus programot, és távolítsa el."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "Telepítse újra az Adblock Plus-t a <a>adblockplus.org</a> oldalról."
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "Úgy tűnik, hogy egy hiba miatt minden szűrőt eltávolítottak, és nem tudtuk visszaállítani a biztonsági másolatot. Ezért vissza kellett állítanunk a szűrőket és az elfogadható hirdetések beállításait. Kérjük, ellenőrizze a szűrési listáit és az elfogadható hirdetések beállításait az <a>Adblock Plus beállításaiban</a>."
+  }
+}

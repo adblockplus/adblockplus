@@ -17,6 +17,9 @@
   "options_advanced_description": {
     "message": "Pielāgojiet Adblock Plus, pievienojiet vai noņemiet filtru sarakstus, izveidojiet un pārvaldiet savus filtru sarakstus"
   },
+  "options_anti_cv_title": {
+    "message": "ABP pretapiešanas filtru saraksts"
+  },
   "options_close": {
     "message": "aizvērt"
   },
@@ -64,6 +67,9 @@
   },
   "options_customize_blockElement_tooltip": {
     "message": "Īslaicīgi bloķēt tīmekļlapā esošos vienumus, piemēram, attēlus vai animētas slaidrādes."
+  },
+  "options_customize_iconStats": {
+    "message": "Rādīt ikonā bloķēto reklāmu skaitu"
   },
   "options_customize_showDevToolsPanel": {
     "message": "Rādīt 'Adblock plus' paneli izstrādātāju rīkos"
@@ -161,6 +167,9 @@
   "options_filterList_source": {
     "message": "saturs"
   },
+  "options_filterList_state_active": {
+    "message": "Aktīvs"
+  },
   "options_filterList_state_disabled": {
     "message": "Atspējots"
   },
@@ -191,17 +200,29 @@
   "options_language_add": {
     "message": "+ pievienot valodu"
   },
+  "options_language_change": {
+    "message": "mainīt"
+  },
   "options_language_description": {
     "message": "Optimizējiet Adblock Plus valodām, kurās parasti pārlūkojat tīmekļvietnes."
   },
   "options_language_header": {
     "message": "Valoda"
   },
+  "options_language_tip": {
+    "message": "<strong>PADOMS:</strong> Izvēlieties tikai nepieciešamās valodas. Izvēloties vairāk, tiek palēnināts reklāmu bloķētājs un pārlūkošanas ātrums."
+  },
   "options_learn_more": {
     "message": "Uzzināt vairāk"
   },
+  "options_more_filters_description": {
+    "message": "Šie ir papildu filtri, ko iepriekš pievienojāt Adblock Plus."
+  },
   "options_more_filters_header": {
     "message": "Vairāk filtru"
+  },
+  "options_more_filters_note": {
+    "message": "<strong>Piezīme:</strong> Izmantojiet tikai uzticamu autoru trešās puses filtru sarakstus."
   },
   "options_new_label": {
     "message": "Jauns"
@@ -217,6 +238,9 @@
   },
   "options_protection_privacy_tooltip": {
     "message": "Aizsargājiet savus personas datus, noņemot visus veidus izsekošanai no interneta, tostarp informācijas savācējus."
+  },
+  "options_report_bug": {
+    "message": "Atradāt kļūdu? Nosūtiet mums<a>ziņojumu par kļūdu</a>"
   },
   "options_report_forum": {
     "message": "Nepieciešams atbalsts no mūsu kopienas? <a>Apmeklēt forumu</a>"
@@ -250,6 +274,9 @@
   },
   "options_whitelist_empty_1": {
     "message": "Baltajā sarakstā nav nevienas vietnes."
+  },
+  "options_whitelist_empty_2": {
+    "message": "Tīmekļvietnes kurām jūs uzticaties un atļaujat rādīt reklāmas."
   },
   "options_whitelist_notification": {
     "message": "\"$website$\" iekļauta baltajā sarakstā.",

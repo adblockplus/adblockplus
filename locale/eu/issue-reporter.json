@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Iruzkina (aukerazkoa):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Iruzkinak 1000 karaktere baino gehiago ditu. Lehen 1000 karaktereak bidaliko dira soilik."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Zure txostena gorde egin da. Honako helbidean eskuratu dezakezu:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Mesedez itxaron Adblock Plusek beharrezko informazioa jaso bitartean."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Ongi etorri arazoen txosten bidalketara"
   },
   "issueReporter_doneButton_label": {
     "message": "Eginda"

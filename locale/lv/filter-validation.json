@@ -2,6 +2,9 @@
   "filter_elemhideemulation_nodomain": {
     "message": "Nav aktīva domēna norādītais paplašinātā elements neizcelt filtrs"
   },
+  "filter_invalid_csp": {
+    "message": "Nederīga satura drošības politika"
+  },
   "filter_invalid_domain": {
     "message": "Norādīts nederīgs (vai tukšs) domēns"
   },

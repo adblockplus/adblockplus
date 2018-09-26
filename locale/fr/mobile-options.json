@@ -17,9 +17,6 @@
       }
     }
   },
-  "mops_error_title": {
-    "message": "Veuillez entrer un titre"
-  },
   "mops_error_url": {
     "message": "Saisir une URL valide"
   },

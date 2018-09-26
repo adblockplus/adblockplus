@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Commento (opzionale):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "La lunghezza massima del testo del commento è di 1000 caratteri; quelli eccedenti non verranno inviati"
-  },
   "issueReporter_confirmationMessage": {
     "message": "Segnalazione inviata correttamente, per visualizzarne i dati fare clic sul seguente link:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Attendere mentre vengono raccolti i dati necessari per la segnalazione di Adblock Plus di problemi in una pagina web"
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Benvenuti alla configurazione guidata per segnalare problemi in una pagina web"
   },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Nota:</strong> Viene aperta temporaneamente una scheda aggiuntiva in modo che la pagina su cui ti trovi non venga influenzata dalla Segnalazione dei problemi."
@@ -79,6 +70,9 @@
   },
   "issueReporter_privacyPolicy": {
     "message": "Informativa sulla privacy"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "Elaborazione in corso"
   },
   "issueReporter_screenshot_hide": {
     "message": "Nascondi"

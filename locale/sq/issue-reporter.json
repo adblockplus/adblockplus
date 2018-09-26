@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Koment (fakultative):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Gjatesia e komentit tuaj i kapercent 1000 karaktere. Vetem 1000 karakteret e para do te dergohen se bashku me raportin."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Raporti juaj eshte ruajtur. Ju mund ta shikoni ate ne kete adrese:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Ju lutem prisni disa momente deri sa Adblock Plus te mbledhe te gjitha te dhenat e nevojshme."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Mire se vini ne raportuesin e problemeve"
   },
   "issueReporter_doneButton_label": {
     "message": "U krye"

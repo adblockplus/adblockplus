@@ -80,6 +80,9 @@
   "options_customize_header": {
     "message": "Aksjes-op-side oanpasse"
   },
+  "options_customize_iconStats": {
+    "message": "Oantal blokkearre advertinsjes yn piktogram toane"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "Paniel ‘Adblock Plus’ yn ûntwikkelershelpmiddelen toane"
   },
@@ -205,6 +208,14 @@
   },
   "options_filterList_website": {
     "message": "website"
+  },
+  "options_filters_search_or_add": {
+    "message": "Filter sykje / tafoegje (byg. $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
   },
   "options_footer_about": {
     "message": "Oer Adblock Plus"

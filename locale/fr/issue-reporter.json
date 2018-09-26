@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Commentaire (facultatif) :"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Votre commentaire comporte plus de 1000 caractères. Seuls les 1000 premiers caractères seront envoyés."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Votre signalement a été envoyé. Vous pouvez y accéder à l'adresse suivante :"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Veuillez patienter quelques instants pendant qu'Adblock Plus réunit les données nécessaires."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Bienvenue dans l'assistant de signalement de problèmes"
   },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Remarque :</strong> Un onglet supplémentaire s'ouvrira temporairement de façon à ce que la page sur laquelle vous vous trouvez ne soit pas affectée par le signaleur de problèmes."
@@ -63,10 +54,10 @@
     "message": "Le lien vers la page que j’essaie d'afficher est brisé"
   },
   "issueReporter_highlighter_description": {
-    "message": "Utilisez les outils pour surligner chaque publicité ou masquer les informations sensibles sur la copie d’écran. Si vous surlignez les publicités, nous pourrons résoudre le problème plus rapidement."
+    "message": "Utilisez les outils pour mettre en surbrillance chaque publicité ou masquer les informations sensibles sur la copie d’écran. Mettre en surbrillance les publicités nous aidera à résoudre le problème plus rapidement."
   },
   "issueReporter_highlighter_heading": {
-    "message": "Souligner le problème"
+    "message": "Mettre en surbrillance le problème"
   },
   "issueReporter_knownIssueMessage": {
     "message": "Le problème que vous signalez est probablement déjà connu. Davantage d'informations :"
@@ -79,6 +70,9 @@
   },
   "issueReporter_privacyPolicy": {
     "message": "Politique de confidentialité"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "en traitement"
   },
   "issueReporter_screenshot_hide": {
     "message": "Masquer"

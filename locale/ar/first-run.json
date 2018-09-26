@@ -1,0 +1,59 @@
+{
+  "firstRun_browser_description": {
+    "message": "من الفريق اللذي هو خلف Adblock Plus، مانع الإعلانات الأكثر شيوعًا لمتصفحات على سطح المكتب، Adblock Browser هو الآن متاح لأجهزة Android و iOS."
+  },
+  "firstRun_browser_store_android": {
+    "message": "تطبيق آندرويد على متجر جوجل"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "متوفر على متجر أبل آي تيونز"
+  },
+  "firstRun_browser_title": {
+    "message": "تطبيق Adblock Browser"
+  },
+  "firstRun_control_description": {
+    "message": "بشكل افتراضي، قد تشاهد بعض الإعلانات غير تطفلية التي تلتزم بـ <a0>معايير صارمة</a0>. هذه الإعلانات نسميها الإعلانات المقبولة. هل تفضل أن تحجب كل الإعلانات؟ <a1>إيقاف الإعلانات المقبولة</a1> في <a2>الإعدادات</a2>."
+  },
+  "firstRun_control_title": {
+    "message": "انت تتحكم"
+  },
+  "firstRun_fair_description": {
+    "message": "نحن نشجعك على الاستخدام العادل لـ Adblock Plus وخيار إضافة المواقع إلى القائمة البيضاء. إستنادًا إلى الفلاتر التي تستخدمها ، فإنك تفهم وتقبل أن نتائج غير متعمدة قد تحدث (مثلا حجب المحتوى على موقع ويب). ارجع إلى <a0> شروط الاستخدام</a0> لمزيد من المعلومات حول الاستخدام العادل لـ Adblock Plus."
+  },
+  "firstRun_fair_title": {
+    "message": "إستخدام عادل"
+  },
+  "firstRun_footer_copyright": {
+    "message": "حقوق الطبع والنشر © $year$ جميع الحقوق محفوظة. Adblock Plus® هو علامة تجارية مسجلة لـ <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
+  "firstRun_subtitle": {
+    "message": "لقد اتخذت للتو السيطرة على المتصفح الخاص بك."
+  },
+  "firstRun_title": {
+    "message": "تم التثبيت بنجاح!"
+  },
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "يواجه بعض المستخدمين مشكلة حيث قد فتح هذه الصفحة في كل مرة يتم فيها تشغيل المتصفح. يمكن حل هذه المشكلة عن طريق إلغاء تثبيت Adblock Plus ثم إعادة تثبيته:"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "إذا كنت لا تزال بحاجة إلى المساعدة ، إتصل بنا على <a0>support@adblockplus.org</a0> أو قم بزيارة <a1>مركز المساعدة</a1>."
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "إفتح علامة التبويب الخاصة بالإضافات في متصفحك."
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "إبحث عن Adblock Plus وقم بإزالته."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "إعادة تثبيت Adblock Plus من <a>adblockplus.org</a>."
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "يبدو أن حدث مشكلة تسببت في إزالة جميع الفلاتر ولم نتمكن من إستعادة النسخة الإحتياطية. لذلك إضطررنا إلى إعادة تعيين الفلاتر الإفتراضية وإعدادات الإعلانات المقبولة. يرجى التحقق من قوائم الفلاتر وإعدادات الإعلانات المقبولة في <a>خيارات Adblock Plus</a>."
+  }
+}

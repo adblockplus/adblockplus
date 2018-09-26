@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Մեկնաբանություն (պարտադիր չէ)՝"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Մեկնաբանության երկարությունը գերազանցում է 1000 սիմվոլ: Միայն առաջին 1000 սիմվոլը կուղարկվի:"
-  },
   "issueReporter_confirmationMessage": {
     "message": "Ձեր զեկույցը պահպանվել է: Դուք կարող եք մուտք գործել այն հետեւյալ հասցեով՝"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Սպասեք մինչև Adblock Plus-ը հավաքի անհրաժեշտ տվյալներ…"
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Բարի գալուստ պրոբլեմների հետևման համակարգ"
   },
   "issueReporter_doneButton_label": {
     "message": "Պատրաստ է"

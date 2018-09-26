@@ -1,0 +1,26 @@
+{
+  "firstRun_subtitle": {
+    "message": "Sa just võtsid kontrolli oma veebilehitseja üle."
+  },
+  "firstRun_title": {
+    "message": "Paigaldamine edukas!"
+  },
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "Osad kasutajad kogevad viga, kus see leht avaneb igal veebilehitseja käivitumisel. Selle vea saab lahendada Adblock Plusi eemaldades ja uuesti installides:"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "Kui sul on endiselt abi vaja, võta meiega ühendust meiliaadressil <a0>support@adblockplus.org</a0> või külasta meie <a1>Abikeskust</a1>."
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "Ava oma veebilehitseja Laienduste kaart."
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Leia Adblock Plus ja eemalda see."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "Installi Adblock Plus uuesti saidilt <a>adblockplus.org</a>."
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "Tundub, et mingi probleem põhjustas kõigi filtrite eemaldamise ja me ei suutnud varukoopiat taastada. Seetõttu pidime sinu filtrid ja Lubatavate reklaamide sätted lähtestama. Palun kontrolli <a>Adblock Plusi sätetes</a> oma filtrite nimekirju ja Lubatavate reklaamide sätteid."
+  }
+}

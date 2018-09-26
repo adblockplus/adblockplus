@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Kommentaar (opsioneel):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Die lengte van jou kommentaar oorskry 1000 karakters. Slegs die eerste 1000 karakters sal gestuur word."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Jou verslag is gestoor. Jy kan toegang tot dit by die volgende adres:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Wag asseblief 'n paar oomblikke terwyl Adblock Plus die vereiste data versamel."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Welkom by die kwessie verslaggewer"
   },
   "issueReporter_doneButton_label": {
     "message": "Gedoen"

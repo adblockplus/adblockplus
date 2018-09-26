@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "نظر (اختیاری):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "حد اکثر طول نظر 1000 حرف می باشد. فقط 1000 حرف اولی فرستاده می شود."
-  },
   "issueReporter_confirmationMessage": {
     "message": "گزارش شما ذخیره شد. شما می توانید در نشانی زیر به آن دسترسی پیدا کنید:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "لطفا برای چند لحظه صبر کنید تا فوق تبلیغ شکن داده های درخواستی شما را جمع آوری کند."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "به گزارشگر اشکالات خوش آمدید"
   },
   "issueReporter_doneButton_label": {
     "message": "انجام شد"

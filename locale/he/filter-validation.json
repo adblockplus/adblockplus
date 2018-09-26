@@ -1,15 +1,18 @@
 {
   "filter_elemhideemulation_nodomain": {
-    "message": "לא צוין תחום פעיל עבור יסוד מורחב של מסנן הסתרה"
+    "message": "לא צויין תחום פעיל עבור יסוד מורחב של מסנן הסתרה"
   },
   "filter_invalid_csp": {
     "message": "מדיניות אבטחה של תוכן לא תקף"
   },
   "filter_invalid_domain": {
-    "message": "תחום לא תקף (או ריק) צוין"
+    "message": "תחום לא תקף (או ריק) צויין"
   },
   "filter_invalid_regexp": {
     "message": "ביטוי רגיל לא תקף"
+  },
+  "filter_snippet_nodomain": {
+    "message": "לא צויין תחום פעיל עבור מסנן תגזירים"
   },
   "filter_unknown_option": {
     "message": "אפשרות מסנן לא ידועה"

@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "Няправільны рэгулярны выраз"
   },
+  "filter_snippet_nodomain": {
+    "message": "Не ўказаны дамен для фільтра фрагментаў кода"
+  },
   "filter_unknown_option": {
     "message": "Невядомы параметр фільтра"
   },
@@ -31,6 +34,6 @@
     }
   },
   "unexpected_filter_list_header": {
-    "message": "Загалоўкі для спісаў фільтраў тут не дазволеныя"
+    "message": "Загалоўкі для спіса фільтраў тут не дазволеныя"
   }
 }

@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Komen(optional)"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Panjang komen anda melebihi 1000 huruf. Hanya 1000 huruf pertama sahaja akan dihantar."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Laporan anda telah disimpan. Anda boleh mengaksesnya di alamat berikut:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Sila tunggu sebentar sementara Adblock Plus mengumpul data yang diperlukan."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Selamat datang ke pelapor isu"
   },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Nota:</strong> Satu tab tambahan akan terbuka secara sementara supaya laman yang anda buka tidak terjejas oleh Pelapor Isu."

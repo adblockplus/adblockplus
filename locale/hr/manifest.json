@@ -2,9 +2,6 @@
   "description": {
     "message": "S više od 500 milijuna preuzimanja, Adblock Plus je jedan od napopularnijih servisa za blokiranje oglasa na svijetu."
   },
-  "name": {
-    "message": "Adblock Plus"
-  },
   "name_devbuild": {
     "message": "Adblock Plus razvojna inačica"
   }

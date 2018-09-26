@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Comentário (opcional):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "O tamanho do seu comentário excedeu 1000 caracteres. Apenas os primeiros 1000 caracteres serão enviadas."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Seu relatório foi salvo. Você pode acessá-lo no seguinte endereço:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Por favor, aguarde um momento enquanto Adblock Plus coleta os dados necessários."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Bem-vindo ao relatório de erro"
   },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Nota:</strong> abre temporariamente uma guia adicional para que a página em que você está não seja afetada pelo Relatório de Problemas."
@@ -79,6 +70,9 @@
   },
   "issueReporter_privacyPolicy": {
     "message": "Política de privacidade"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "processando"
   },
   "issueReporter_screenshot_hide": {
     "message": "Ocultar"

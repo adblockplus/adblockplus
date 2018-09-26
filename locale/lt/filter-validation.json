@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "Netinkama reguliarioji išraiška"
   },
+  "filter_snippet_nodomain": {
+    "message": "Filtro fragmente nenurodytas aktyvus domenas"
+  },
   "filter_unknown_option": {
     "message": "Nežinoma filtro parinktis"
   },

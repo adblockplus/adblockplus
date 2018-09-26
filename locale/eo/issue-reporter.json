@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Komento (laŭvole):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Via komento havas pli ol 1000 signojn. Nur la unuaj 1000 signoj estos sendataj:"
-  },
   "issueReporter_confirmationMessage": {
     "message": "Via raporto estas konservita. Vi povas atingi ĝin ĉe sekvonta adreso:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Bonvolu atendi kelkajn momentojn dum Adblock Plus akiras la necesajn datumojn."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Bonvenon al la problemraportilo"
   },
   "issueReporter_doneButton_label": {
     "message": "Preta"

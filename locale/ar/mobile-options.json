@@ -17,8 +17,8 @@
       }
     }
   },
-  "mops_error_title": {
-    "message": "يرجى إدخال العنوان"
+  "mops_error_url": {
+    "message": "أدخل عنوان URL صحيح"
   },
   "mops_filterlist_add": {
     "message": "+ إضافة قائمة عوامل تصفية"
@@ -27,13 +27,13 @@
     "message": "إضافة قائمة عوامل تصفية"
   },
   "mops_filterlist_add_url": {
-    "message": "+ إضافة قائمة تصفية مخصصة"
+    "message": "+ إضافة قائمة فلاتر مخصصة"
   },
   "mops_header": {
     "message": "Adblock Plus إعدادات"
   },
   "mops_subscribe_header": {
-    "message": "إضافة قائمة تصفية مخصصة"
+    "message": "إضافة قائمة فلاتر مخصصة"
   },
   "mops_subscribe_title": {
     "message": "اسم قائمة عوامل تصفية"

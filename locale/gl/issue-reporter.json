@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Comentario (opcional):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "O teu comentario ten mais de 1000 caracteres, e só os primeiros 1000 serán enviados."
-  },
   "issueReporter_confirmationMessage": {
     "message": "O teu informe foi gardado. Podes acceder a él no seguinte enderezo:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Agarda un intre mentres Adblock Plus reúne os datos necesarios."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Benvido ao Xerador de Informes de Problemas"
   },
   "issueReporter_doneButton_label": {
     "message": "Feito"

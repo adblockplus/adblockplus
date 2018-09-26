@@ -1,4 +1,7 @@
 {
+  "click_element_to_block_it": {
+    "message": "Натисніть на елемент на сторінці, щоб заблокувати його."
+  },
   "clickhide_instructions": {
     "message": "Після закриття цього спливаючого вікна клацніть по елементу сторінки лівою чи правою кнопкою миші."
   },
@@ -11,11 +14,29 @@
   "enabled_for_site": {
     "message": "<strong>Увімкнено</strong> на цьому сайті"
   },
+  "options_refresh": {
+    "message": "Оновити"
+  },
   "options_short": {
     "message": "Налаштування"
   },
+  "overlay_notification_closing_button_hide": {
+    "message": "Закрити"
+  },
   "overlay_notification_closing_button_optout": {
     "message": "Заборонити показ повідомлень"
+  },
+  "promote_abp_module": {
+    "message": "Цікавить Adblock Plus для мобільного пристрою?"
+  },
+  "refresh_to_take_effect": {
+    "message": "Натисніть <strong>Оновити</strong>, щоб зміни набули чинності."
+  },
+  "sendReport": {
+    "message": "Повідомити про помилку"
+  },
+  "stats_header": {
+    "message": "Кількість заблокованих об'єктів"
   },
   "stats_label_page": {
     "message": "<strong>$number$</strong> на цій сторінці",
@@ -38,5 +59,8 @@
   },
   "stats_title": {
     "message": "Статистика блокування"
+  },
+  "status_header": {
+    "message": "Заблокуйте рекламу на:"
   }
 }

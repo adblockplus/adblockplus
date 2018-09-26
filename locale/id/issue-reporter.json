@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Komentar (pilihan):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Panjang komentar Anda melebihi 1000 karakter. Hanya 1000 karakter pertama yang akan dikirim."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Laporan Anda telah disimpan. Anda dapat mengaksesnya pada alamat berikut:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Silakan tunggu beberapa saat selagi Adblock Plus mengumpulkan data yang diperlukan."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Selamat datang di pelapor permasalahan"
   },
   "issueReporter_doneButton_label": {
     "message": "Selesai"

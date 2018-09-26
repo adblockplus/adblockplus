@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "ટિપ્પણી (વૈકલ્પિક):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "તમારી ટિપ્પણીની લંબાઈ 1000 અક્ષરોથી વધી જાય છે માત્ર પ્રથમ 1000 અક્ષરો મોકલવામાં આવશે."
-  },
   "issueReporter_confirmationMessage": {
     "message": "તમારી રિપોર્ટ સાચવવામાં આવી છે. તમે તેને નીચેના સરનામા પર ઍક્સેસ કરી શકો છો:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "કૃપા કરીને થોડી ક્ષણો રાહ જુઓ જ્યારે એડબ્લોક પ્લસ આવશ્યક ડેટા એકઠી કરે છે."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "ઇશ્યૂ રિપોર્ટરમાં આપનું સ્વાગત છે"
   },
   "issueReporter_doneButton_label": {
     "message": "પૂર્ણ થયું"

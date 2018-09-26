@@ -20,6 +20,15 @@
   "options_advanced_description": {
     "message": "Нагласяване на Adblock Plus, добавяне или премахване на филтри, създаване и поддържане на собствени филтри."
   },
+  "options_anti_cv_header": {
+    "message": "Противозаобикаляне"
+  },
+  "options_anti_cv_title": {
+    "message": "Противозаобикалящ филтър на ABP"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "Филтърът се ползва срещу заобикаляне (т.е. техники за натрапване на реклами на потребители на блокери). Тези филтри се справят със заобикалящите реклами, както и свързаното с тях проследяване."
+  },
   "options_close": {
     "message": "затвори"
   },
@@ -67,6 +76,9 @@
   },
   "options_customize_blockElement_tooltip": {
     "message": "Временно блокиране на досадни елементи в страницата, т.е. картини или анимирани слайдове."
+  },
+  "options_customize_header": {
+    "message": "Нагласяване"
   },
   "options_customize_showDevToolsPanel": {
     "message": "Показвай панел „Adblock Plus“ към инструментите за разработка"

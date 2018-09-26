@@ -12,7 +12,7 @@
     "message": "Geçersiz düzenli ifade"
   },
   "filter_snippet_nodomain": {
-    "message": "Kod parçacığı filtresi için belirtilmiş aktif etki alanı yok"
+    "message": "Kod parçacığı filtresi için belirtilmiş etkin etki alanı yok"
   },
   "filter_unknown_option": {
     "message": "Bilinmeyen süzme seçeneği"

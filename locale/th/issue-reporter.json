@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "ความคิดเห็น (ไม่ใส่ก็ได้):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "ความคิดเห็นยาวเกิน 1000 อักขระ ส่งได้แค่ 1000 อักขระแรกเท่านั้น"
-  },
   "issueReporter_confirmationMessage": {
     "message": "รายงานได้รับการบันทึกแล้ว คุณเข้าดูได้ตามที่อยู่ต่อไปนี้:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "กรุณารอสักครู่ระหว่างที่ Adblock Plus กำลังรวบรวมข้อมูล"
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "ยินดีต้อนรับสู่การรายงานปัญหา"
   },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>หมายเหตุ:</strong> จะมีแถบเปิดเพิ่มขึ้นมาชั่วคราวเพื่อไม่ให้ส่งผลกระทบต่อหน้าเพจที่คุณกำลังเปิดอยู่เนื่องจาก Issue Reporter"

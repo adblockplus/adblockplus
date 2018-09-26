@@ -5,6 +5,15 @@
   "cancel": {
     "message": "Atcelt"
   },
+  "common_feature_malware_title": {
+    "message": "Bloķēt ļaunatūru"
+  },
+  "common_feature_privacy_title": {
+    "message": "Bloķēt papildu izsekošanu"
+  },
+  "common_feature_social_title": {
+    "message": "Bloķēt sociālo mediju ikonu izsekošanu"
+  },
   "common_notification_hide": {
     "message": "Aizvērt paziņojumu"
   }

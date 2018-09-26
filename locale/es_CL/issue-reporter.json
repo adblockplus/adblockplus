@@ -20,20 +20,14 @@
   "issueReporter_comment_label": {
     "message": "Comentario (opcional):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "La longitud de su comentario supera los 1.000 caracteres. Sólo se enviarán los 1.000 primeros."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Su informe ha sido guardado. Puede acceder a él en la siguiente dirección:"
   },
-  "issueReporter_dataCollector_description": {
-    "message": "Favor espere un momento mientras Adblock Plus reúne los datos necesarios."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Bienvenido al creador de informes de errores"
-  },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Nota:</strong> Se abrirá temporalmente una pestaña adicional, así la página en la que te encuentras no será afectada por el Reportador de Problemas."
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "Detalles"
   },
   "issueReporter_doneButton_label": {
     "message": "Listo"
@@ -59,14 +53,35 @@
   "issueReporter_falsePositive_label": {
     "message": "Adblock Plus está bloqueando demasiado"
   },
+  "issueReporter_highlighter_description": {
+    "message": "Utiliza las herramientas para destacar cada anuncio u ocultar información sensible en la captura de pantalla. Destacando anuncios nos ayudará a solucionar el problema más rapido."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Destacar el problema"
+  },
   "issueReporter_knownIssueMessage": {
     "message": "El problema que reporto probablemente ya es conocido. Más información:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Marca el problema"
   },
   "issueReporter_page_title": {
     "message": "Reportar un error"
   },
   "issueReporter_privacyPolicy": {
     "message": "Política de privacidad"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "procesando"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Ocultar"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "Destacar"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Selecciona el problema"
   },
   "issueReporter_sendButton_label": {
     "message": "Enviar reporte"

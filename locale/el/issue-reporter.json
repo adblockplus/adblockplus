@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Σχόλιο (προαιρετικό):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Το μέγεθος του σχολίου υπερβαίνει τους 1000 χαρακτήρες. Μόνο οι πρώτοι 1000 θα αποσταλούν."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Η αναφορά σας έχει αποθηκευτεί. Πρόσβαση σε αυτήν έχετε από την ακόλουθη διεύθυνση:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Παρακαλώ περιμένετε καθώς το Adblock Plus συλλέγει τα απαραίτητα δεδομένα."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Καλώς ήρθατε στον βοηθό αναφοράς ζητήματος"
   },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Σημείωση:</strong> Μια πρόσθετη καρτέλα θα ανοίξει προσωρινά, οπότε η σελίδα όπου βρίσκεστε δεν θα επηρεαστεί από τον Αναφορέα Έκδοσης."

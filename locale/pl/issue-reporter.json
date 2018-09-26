@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Komentarz (opcjonalne):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Treść objaśnienia przekroczyła dopuszczalny limit 1000 znaków. Zostanie wysłane tylko pierwsze 1000 znaków."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Zgłoszenie zostało zapisane. Możesz zobaczyć je pod następującym adresem:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Poczekaj chwilę, aż Adblock Plus zbierze wymagane dane."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Witamy w reporterze problemów"
   },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Uwaga:</strong> Otworzy się dodatkowa karta, więc narzędzie zgłaszania problemów nie wpłynie na wyświetlanie aktualnie przeglądanej strony."

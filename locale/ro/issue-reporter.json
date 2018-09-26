@@ -20,20 +20,14 @@
   "issueReporter_comment_label": {
     "message": "Comentariu (opțional):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Comentariul are mai mult de 1000 de litere. Doar primele 1000 vor fi trimise."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Raportarea a fost salvată și poate fi accesată la adresa următoare:"
   },
-  "issueReporter_dataCollector_description": {
-    "message": "Așteptați un moment până ce Adblock Plus adună datele necesare."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Bine ați venit la programul de raportat probleme"
-  },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Notã:</strong> Un tab va fi temporar deschis astfel încât pagina pe care sunteţi nu va fi afectatã de Issue Reporter."
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "Detalii"
   },
   "issueReporter_doneButton_label": {
     "message": "Efectuat"
@@ -59,14 +53,35 @@
   "issueReporter_falsePositive_label": {
     "message": "Adblock Plus blochează prea mult"
   },
+  "issueReporter_highlighter_description": {
+    "message": "Folositi uneltele pentru a evidentia sau ascunde date sensibile pe screenshot. Marcând reclamele ne va ajuta sa rezolvam mai repede problema."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Evidentiaza problema"
+  },
   "issueReporter_knownIssueMessage": {
     "message": "Problema pe care o aveți este probabil cunoscută. Detalii:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Evidentiaza problema"
   },
   "issueReporter_page_title": {
     "message": "Raportare problemă"
   },
   "issueReporter_privacyPolicy": {
     "message": "Politică de confidenţialitate"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "Procesare"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Ascunde"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "Evidentiaza"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Alegeți tipul problemei"
   },
   "issueReporter_sendButton_label": {
     "message": "Trimite raport"

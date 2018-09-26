@@ -17,9 +17,6 @@
       }
     }
   },
-  "mops_error_title": {
-    "message": "Въведете име на филтъра"
-  },
   "mops_filterlist_add": {
     "message": "+ Добави филтър"
   },

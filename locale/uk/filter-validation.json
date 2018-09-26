@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "Неправильний регулярний вираз"
   },
+  "filter_snippet_nodomain": {
+    "message": "Не вказано активний домен для фрагментного фільтра"
+  },
   "filter_unknown_option": {
     "message": "Невідома опція фільтра"
   },

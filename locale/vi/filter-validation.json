@@ -14,14 +14,6 @@
   "filter_unknown_option": {
     "message": "Bộ lọc tùy chọn không rõ"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ is not a valid CSS selector",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
     "message": "Dòng $number$",
     "placeholders": {

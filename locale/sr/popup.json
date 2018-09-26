@@ -1,21 +1,42 @@
 {
+  "click_element_to_block_it": {
+    "message": "Кликните на елемент на страници да бисте га блокирали."
+  },
   "clickhide_instructions": {
-    "message": "Након што затворите овај искачући прозор, притисните левим или десним тастером миша на елемент на овој страници."
+    "message": "Након што затворите овај искачући прозор, кликните левим или десним тастером миша на елемент на овој страници."
   },
   "disabled_for_site": {
-    "message": "<strong>Онемогући</strong> на овом сајту"
+    "message": "<strong>Онемогућено</strong> на овом сајту"
   },
   "easy_create_filter": {
     "message": "Блокирај елемент"
   },
   "enabled_for_site": {
-    "message": "<strong>Омогући</strong> на овом сајту"
+    "message": "<strong>Омогућено</strong> на овом сајту"
+  },
+  "options_refresh": {
+    "message": "Освежи"
   },
   "options_short": {
     "message": "Опције"
   },
+  "overlay_notification_closing_button_hide": {
+    "message": "Затвори"
+  },
   "overlay_notification_closing_button_optout": {
     "message": "Не приказуј обавештења"
+  },
+  "promote_abp_module": {
+    "message": "Заинтересовани за Adblock Plus на мобилном?"
+  },
+  "refresh_to_take_effect": {
+    "message": "Кликните на <strong>Освежи</strong> да би промене ступиле на снагу."
+  },
+  "sendReport": {
+    "message": "Пријави проблем"
+  },
+  "stats_header": {
+    "message": "Број блокираних ставки"
   },
   "stats_label_page": {
     "message": "На овој страници: <strong>$number$</strong>",
@@ -34,9 +55,12 @@
     }
   },
   "stats_show_iconnumber": {
-    "message": "Прикажи број на икони"
+    "message": "Број на икони"
   },
   "stats_title": {
-    "message": "Блокирани огласи"
+    "message": "Блокирано огласа"
+  },
+  "status_header": {
+    "message": "Блокирај огласе на домену:"
   }
 }

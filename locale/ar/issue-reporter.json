@@ -20,20 +20,14 @@
   "issueReporter_comment_label": {
     "message": "التعليق (إختياري):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "طول التعليق يتجاوز 1000 حرف. سيتم إرسال أول 1000 حرف فقط."
-  },
   "issueReporter_confirmationMessage": {
     "message": "تم حفظ تقريرك. ستستطيع الوصول إليه عن طريق العنوان التالي:"
   },
-  "issueReporter_dataCollector_description": {
-    "message": "من فضلك الإنتظر قليلا ريثما يجمع آدبلوك بلس المعلومات المطلوبة."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "أهلا بك في مبلغ المشاكل"
-  },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>ملاحظة:</strong>سيتم فتح علامة تبويب إضافية مؤقتًا بحيث لن تتأثر الصفحة التي تزورها بالمُبلّغ عن المشكلة."
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "تفاصيل"
   },
   "issueReporter_doneButton_label": {
     "message": "تمّ"
@@ -59,14 +53,35 @@
   "issueReporter_falsePositive_label": {
     "message": "آدبلوك بلس يحجب أكثر من اللازم"
   },
+  "issueReporter_highlighter_description": {
+    "message": "إستخدم الأدوات لتظليل كل إعلان أو إخفاء معلومات حساسة على لقطة الشاشة. تظليل الإعلانات سيساعدنا في حل المشكلة بشكل أسرع."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "تظليل المشكلة"
+  },
   "issueReporter_knownIssueMessage": {
     "message": "المشكلة التي قمت بالإبلاغ عنه معروفة مسبقاً. للمزيد من المعلومات:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "وَسْم المشكل"
   },
   "issueReporter_page_title": {
     "message": "مبلغ المشاكل"
   },
   "issueReporter_privacyPolicy": {
     "message": "سياسة الخصوصية"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "معالجة"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "إخفاء"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "تظليل"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "حدد المشكلة"
   },
   "issueReporter_sendButton_label": {
     "message": "إرسال التقرير"

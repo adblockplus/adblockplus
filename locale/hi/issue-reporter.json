@@ -11,12 +11,6 @@
   "issueReporter_confirmationMessage": {
     "message": "आपकी रिपोर्ट सहेजी गई है। आप इसे निम्नलिखित पते पर पहुँच प्राप्त कर सकते हैं:"
   },
-  "issueReporter_dataCollector_description": {
-    "message": "कृपया कुछ पल प्रतीक्षा करें जब तक Adblock प्लस आवश्यक डेटा इकट्ठा कर रहा हो।"
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "मुद्दा रिपोर्टर में स्वागत है"
-  },
   "issueReporter_doneButton_label": {
     "message": "संपन्न"
   },

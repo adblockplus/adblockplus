@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Түсіндірме (тиісті емес):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Түсіндірмеңіздің ұзындығы 1000 таңбадан асты. Тек алғашқы 1000 таңба жіберіледі."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Хабарламаңыз сақталды. Оны келесі адрестен көре аласыз:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Adblock Plus керек ақпаратты жинағанша, күте тұрыңыз."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Мәселелер туралы хабарлауға қош келдіңіз"
   },
   "issueReporter_doneButton_label": {
     "message": "Дайын"

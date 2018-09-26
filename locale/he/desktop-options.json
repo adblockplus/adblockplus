@@ -45,7 +45,7 @@
     "message": "שמור"
   },
   "options_customFilters_description": {
-    "message": "כתוב את המסננים המותאמים אישית שלך כדי לשלוט עוד יותר איזה תוכן Adblock Plus מתיר או חוסם."
+    "message": "צור את המסננים שלך כדי לשלוט עוד יותר איזה תוכן Adblock Plus חוסם.<a0>למד כיצד ליצור מסננים</a0>"
   },
   "options_customFilters_edit_placeholder": {
     "message": "לדוגמה $filter$",
@@ -77,6 +77,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "חסום באופן זמני פריטים מציקים באתר. לדוגמה, תמונות או מצגות מונפשות."
   },
+  "options_customize_header": {
+    "message": "התאמות אישיות"
+  },
+  "options_customize_iconStats": {
+    "message": "הראה מספר של פרסומות חסומות בצלמית"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "הראה חלונית 'Adblock Plus' במצב מפתחים"
   },
@@ -85,6 +91,9 @@
   },
   "options_customize_showNotifications": {
     "message": "הראה התראות שימושיות"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "התר התראות מאת Adblock Plus (התראות הקשורות לסוגיות של ביצועים מכריעים תמיד ייראו)."
   },
   "options_dialog_about_copyright": {
     "message": ".eyeo GmbH $currentYear$ © זכויות יוצרים",
@@ -199,6 +208,14 @@
   },
   "options_filterList_website": {
     "message": "אתר"
+  },
+  "options_filters_search_or_add": {
+    "message": "חפש או הוסף מסנן (למשל $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
   },
   "options_footer_about": {
     "message": "אודות Adblock Plus"

@@ -20,17 +20,8 @@
   "issueReporter_comment_label": {
     "message": "Komentar (neobavezno):"
   },
-  "issueReporter_comment_lengthWarning": {
-    "message": "Duljina vašeg komentara je veća od 1000 znakova. Samo prvih 1000 znakova biti će poslano."
-  },
   "issueReporter_confirmationMessage": {
     "message": "Vaše izvješće je spremljeno. Možete mu pristupiti na sljedećoj adresi:"
-  },
-  "issueReporter_dataCollector_description": {
-    "message": "Pričekajte nekoliko minuta dok Adblock Plus prikuplja potrebne podatke."
-  },
-  "issueReporter_dataCollector_heading": {
-    "message": "Dobrodošli u izvještaj problema"
   },
   "issueReporter_doneButton_label": {
     "message": "Gotovo"

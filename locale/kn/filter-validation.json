@@ -1,12 +1,4 @@
 {
-  "invalid_css_selector": {
-    "message": "$selector$ is not a valid CSS selector",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
     "message": "ಲೈನ್ $number$",
     "placeholders": {

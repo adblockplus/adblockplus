@@ -1,6 +1,6 @@
 {
   "filter_elemhideemulation_nodomain": {
-    "message": "Ni določene aktivne domene za razširjeni element skrivanja filtra"
+    "message": "Za razširjen filter skrivanja elementov ni navedene dejavne domene"
   },
   "filter_invalid_csp": {
     "message": "Neveljavna politika varnosti vsebine"
@@ -10,6 +10,9 @@
   },
   "filter_invalid_regexp": {
     "message": "Neveljaven regularni izraz"
+  },
+  "filter_snippet_nodomain": {
+    "message": "Za filter izrezkov ni navedene dejavne domene"
   },
   "filter_unknown_option": {
     "message": "Neznana možnost filtra"

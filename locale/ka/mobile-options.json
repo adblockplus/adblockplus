@@ -17,8 +17,8 @@
       }
     }
   },
-  "mops_error_title": {
-    "message": "გთხოვთ, მიუთითოთ სახელი"
+  "mops_error_url": {
+    "message": "შეიყვანეთ მართებული URL-ბმული"
   },
   "mops_filterlist_add": {
     "message": "+ ფილტრის დამატება"
@@ -39,7 +39,7 @@
     "message": "ფილტრის დასახელება"
   },
   "mops_subscribe_url": {
-    "message": "ფილტრის URL ბმული"
+    "message": "ფილტრის URL-ბმული"
   },
   "mops_subscriptions_header": {
     "message": "ფილტრის გამოწერა"
