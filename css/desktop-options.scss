@@ -328,17 +328,6 @@ button[role="checkbox"][disabled].icon.toggle::before
   background-image: url(icons/trash.svg?hover#hover);
 }
 
-.icon.gear::before
-{
-  background-image: url(icons/gear.svg?default#default);
-}
-
-.icon.gear:hover::before
-{
-  background-image: url(icons/gear.svg?hover#hover);
-}
-
-.icon.gear::before,
 .icon.delete::before
 {
   width: 1rem;
@@ -1053,11 +1042,6 @@ html[dir="rtl"] .table .col5:nth-of-type(5)
 {
   -moz-margin-end: 0.5rem;
   -webkit-margin-end: 0.5rem;
-}
-
-.table.cols .gear
-{
-  margin: 0rem;
 }
 
 #dialog .table.list li
