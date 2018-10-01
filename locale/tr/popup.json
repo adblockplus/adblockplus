@@ -15,7 +15,7 @@
     "message": "Bu sitede <strong>etkin</strong>"
   },
   "options_refresh": {
-    "message": "Yenile"
+    "message": "Tazele"
   },
   "options_short": {
     "message": "Seçenekler"
@@ -30,7 +30,7 @@
     "message": "Adblock Plus’ın mobil versiyonunu denemek ister misiniz?"
   },
   "refresh_to_take_effect": {
-    "message": "Değişiklikleri etkinleştirmek için <strong>Yenile</strong> seçeneğine tıklayın."
+    "message": "Değişiklikleri etkinleştirmek için <strong>Tazele</strong>'ye tıklayın."
   },
   "sendReport": {
     "message": "Sorun bildir"

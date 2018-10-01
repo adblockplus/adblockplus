@@ -17,6 +17,9 @@
   "firstRun_control_title": {
     "message": "Te irányítod"
   },
+  "firstRun_fair_description": {
+    "message": "Arra ösztönözünk, hogy tisztességesen használják az Adblock Plus-ot, és engedélyezzék a webhelyek fehérlista engedélyezését. A használt szűrők függvényében megértetted és elfogadod, hogy nem szándékolt eredmények keletkezhetnek (például a webhelyen letiltott tartalom). Tekintsd meg a <a0>Használati feltételeket</a0> az Adblock Plus tisztességes használatáról."
+  },
   "firstRun_fair_title": {
     "message": "Igazságos használat"
   },

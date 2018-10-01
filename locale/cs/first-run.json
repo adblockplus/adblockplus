@@ -1,0 +1,20 @@
+{
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "Někteří uživatelé se setkávají s problémem, kdy se při každém spuštění prohlížeče otevře tato stránka. Tento problém lze vyřešit odinstalací a opakovanou instalací aplikace Adblock Plus:"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "Pokud i nadále potřebujete pomoc, kontaktujte nás na adrese <a0>support@adblockplus.org</a0> nebo navštivte naše <a1>Help Center</a1>."
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "Otevřete kartu Rozšíření prohlížeče."
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Vyhledejte položku Adblock Plus a odstraňte ji."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "Znovu nainstalujte Adblock Plus z <a>adblockplus.org</a>."
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "Zdá se, že nastal problém, který způsobil smazání všech filtrů a nebyli jsme schopni je obnovit ze zálohy. Museli jsme tudíž Vaše filtry a nastavení Přijatelných reklam resetovat. Prosím zkontrolujte si své nastavení seznamů filtrů a Přijatelných reklam v <a>předvolbách Adblocku Plus</a>."
+  }
+}

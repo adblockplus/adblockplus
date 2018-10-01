@@ -24,7 +24,7 @@
     "message": "Adil kullanim"
   },
   "firstRun_footer_copyright": {
-    "message": "Copyright © $year$ Tüm hakları saklıdır. Adblock Plus®, <a0>eyeo GmbH</a0>'nin tescilli ticari markasıdır.",
+    "message": "Telif hakkı. © $year$ Tüm hakları saklıdır. Adblock Plus®, <a0>eyeo GmbH</a0>'nin tescilli ticari markasıdır.",
     "placeholders": {
       "year": {
         "content": "$1",
@@ -33,19 +33,19 @@
     }
   },
   "firstRun_subtitle": {
-    "message": "Tarayıcınız artık kontrol altında"
+    "message": "Tarayıcınız artık kontrol altında."
   },
   "firstRun_title": {
-    "message": "Kurulum başarili!"
+    "message": "Kurulum başarılı!"
   },
   "firstRun_warning_dataCorrupted_intro": {
     "message": "Bazı kullanıcıların yaşadığı sorun, tarayıcılarını her başlattıkları zaman bu sayfanın açılmasıdır. Bu sorun, Adblock Plus kaldırılıp yeniden yüklenerek çözülebilir:"
   },
   "firstRun_warning_dataCorrupted_note": {
-    "message": "Eğer yine de yardıma ihtiyacınız olursa, bizimle <a0>support@adblockplus.org</a0> adresi üzerinden iletişime geçebilir veya <a1>Yardım Merkezi</a1>’mizi ziyaret edebilirsiniz."
+    "message": "Eğer yine de yardıma ihtiyacınız olursa, bizimle <a0>support@adblockplus.org</a0> adresi üzerinden iletişime geçebilir veya <a1>Yardım Merkezi</a1>’mızı ziyaret edebilirsiniz."
   },
   "firstRun_warning_dataCorrupted_step1": {
-    "message": "Tarayıcınızın uzantılar sekmesini açın."
+    "message": "Tarayıcınızın eklentiler sekmesini açın."
   },
   "firstRun_warning_dataCorrupted_step2": {
     "message": "Adblock Plus’ı bulup kaldırın."
@@ -54,6 +54,6 @@
     "message": "Adblock Plus’ı <a>adblockplus.org</a> adresinden yeniden yükleyin."
   },
   "firstRun_warning_reinitialized": {
-    "message": "Öyle görülüyor ki; tüm filtrelerin kaldırılmasına neden olan bir sorun var ve bir yedekleme yüklenemedi. Bu yüzden filtrelerinizi ve Kabul Edilebilir Reklam ayarlarınızı sıfırlamamız gerekiyor. Lütfen filtre listelerinizi ve <a>Adblock Plus seçenekleri</a>'nde Kabul Edilebilir Reklam ayarlarınızı kontrol edin."
+    "message": "Öyle görülüyor ki tüm süzgeçlerin kaldırılmasına neden olan bir sorun var ve bir yedekleme yüklenemedi. Bu yüzden süzgeçlerinizi ve Kabul Edilebilir Reklam ayarlarınızı sıfırlamamız gerekiyor. Lütfen süzgeç listelerinizi ve <a>Adblock Plus seçeneklerinde</a> Kabul Edilebilir Reklam ayarlarınızı kontrol edin."
   }
 }

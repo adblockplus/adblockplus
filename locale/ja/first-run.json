@@ -1,0 +1,20 @@
+{
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "一部のユーザーで、ブラウザが起動するたびにこのページが開く問題が発生しています。この問題は、Adblock Plusをアンインストールして再インストールすることで解決できます："
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "それでもサポートが必要な場合は、<a0>support@adblockplus.org</a0>にお問い合わせになるか、<a1>ヘルプセンター</a1>をご覧ください。"
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "ブラウザの「拡張機能」タブを開きます。"
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Adblock Plusを見つけて削除します。"
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "<a>adblockplus.org</a> から Adblock Plus を再インストールしてください。"
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "すべてのフィルタが削除されてしまう問題が発生したようです。バックアップから復元することができず、お使いのフィルタと控えめな広告の設定をリセットする必要がありました。 <a>Adblock Plus のオプション</a>から、お使いのフィルタリストと控えめな広告の設定を確認してください。"
+  }
+}
