@@ -30,8 +30,6 @@ Directory structure
 * Top-level files:
   * `firstRun.html` and `firstRun.js`: First-run page, see below
   * `i18n.js`: Localization functions, should be included by all pages.
-  * `messageResponder.js`: Script to be used on the background page to respond
-    to messages sent by UI code.
   * `background.html`, `background.js`: Test implementation of the background
     page, should *not be imported*.
   * `desktop-options.html`, `desktop-options.js`: Options page, see below
