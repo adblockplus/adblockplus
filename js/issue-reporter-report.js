@@ -99,7 +99,8 @@ module.exports = {
       retrievePlatformInfo(),
       retrieveTabURL(tabId),
       collectRequests(tabId),
-      retrieveSubscriptions()
+      retrieveSubscriptions(),
+      retrieveLanguage(tabId)
     ]).then(() => reportData);
   }
 };
@@ -192,6 +193,20 @@ function retrieveApplicationInfo()
     element.setAttribute("vendor", navigator.vendor);
     element.setAttribute("userAgent", navigator.userAgent);
     reportData.documentElement.appendChild(element);
+  });
+}
+
+function retrieveLanguage(tabId)
+{
+  const element = reportData.createElement("detectedLanguage");
+  return new Promise(resolve =>
+  {
+    browser.tabs.detectLanguage(tabId, language =>
+    {
+      element.setAttribute("value", language);
+      reportData.documentElement.appendChild(element);
+      resolve();
+    });
   });
 }
 
