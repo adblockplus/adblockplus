@@ -20,6 +20,8 @@
 module.exports = {
   $: (selector, container = document) => container.querySelector(selector),
   $$: (selector, container = document) => container.querySelectorAll(selector),
+  // helper to format as indented string any HTML/XML node
+  asIndentedString,
   // helper to provide the relative coordinates
   // to the closest positioned containing element
   relativeCoordinates(event)
@@ -39,3 +41,40 @@ module.exports = {
     return {x: event.pageX - x, y: event.pageY - y};
   }
 };
+
+function asIndentedString(element, indentation = 0)
+{
+  // only the first time it's called
+  if (!indentation)
+  {
+    // get the top meaningful element to parse
+    if (element.nodeType === 9)
+      element = element.documentElement;
+    // accept only elements
+    if (element.nodeType !== 1)
+      throw new Error("Unable to serialize " + element);
+    // avoid original XML pollution at first iteration
+    element = element.cloneNode(true);
+  }
+  const before = "  ".repeat(indentation + 1);
+  const after = "  ".repeat(indentation);
+  const doc = element.ownerDocument;
+  const children = element.children;
+  const length = children.length;
+  for (let i = 0; i < length; i++)
+  {
+    const child = children[i];
+    element.insertBefore(doc.createTextNode(`\n${before}`), child);
+    asIndentedString(child, indentation + 1);
+    if ((i + 1) === length)
+      element.appendChild(doc.createTextNode(`\n${after}`));
+  }
+  // inner calls don't need to bother serialization
+  if (indentation)
+    return "";
+  // easiest way to recognize an HTML element from an XML one
+  if (/^https?:\/\/www\.w3\.org\/1999\/xhtml$/.test(element.namespaceURI))
+    return element.outerHTML;
+  // all other elements should use XML serializer
+  return new XMLSerializer().serializeToString(element);
+}
