@@ -30,16 +30,13 @@ class IOSteps extends IOElement
 
   created()
   {
-    // amount of enabled lables, starts from at least one
-    this._enabled = 0;
-    // all the labels, passed as list
-    this.labels = [];
+    reset.call(this);
   }
 
   attributeChangedCallback()
   {
     // reset setup
-    this.created();
+    reset.call(this);
     // attributes can have spaces or new lines too
     for (const label of this.i18nLabels.split(/[\n ]+/))
     {
@@ -113,6 +110,14 @@ function getButton(label, index)
       disabled="${index > this._enabled}"
       data-value="${index + 1}"
     >${label}</button>`;
+}
+
+function reset()
+{
+  // amount of enabled lables, starts from at least one
+  this._enabled = 0;
+  // all the labels, passed as list
+  this.labels = [];
 }
 
 IOSteps.define("io-steps");
