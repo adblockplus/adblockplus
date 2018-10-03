@@ -118,7 +118,10 @@ function gotoMobile(event)
 {
   event.preventDefault();
   event.stopPropagation();
-  browser.tabs.create({url: event.currentTarget.dataset.link});
+  browser.tabs
+    .create({url: event.currentTarget.dataset.link})
+    // force closing popup which is not happening in Firefox
+    .then(() => window.close());
 }
 
 function updateStats(tab)
