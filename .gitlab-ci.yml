@@ -6,6 +6,13 @@ before_script:
   - curl -sL https://deb.nodesource.com/setup_8.x | bash -
   - apt-get update -yqq
   - apt-get install -yqq nodejs
+  - npm install -g install-peerdeps
+  # enable unsafe-perm to avoid problems with running npm as root
+  # see adblockplusui#193
+  - export npm_config_unsafe_perm=true
+  # peer dependencies need to be installed explicitly see adblockplusui#211
+  - install-peerdeps stylelint-config-eyeo@1.0.2
+  - install-peerdeps ajv-keywords@3.2.0
 
 stages:
   - lint
@@ -16,9 +23,6 @@ stages:
 lint:
   stage: lint
   script:
-    # enable unsafe-perm to avoid problems with running npm as root
-    # see adblockplusui#193
-    - export npm_config_unsafe_perm=true
     - npm install
     - npm run lint
   only:
@@ -28,9 +32,6 @@ lint:
 test:
   stage: test
   script:
-    # enable unsafe-perm to avoid problems with running npm as root
-    # see adblockplusui#193
-    - export npm_config_unsafe_perm=true
     - npm install
     - npm run test
   only:
@@ -40,9 +41,6 @@ test:
 build:
   stage: build
   script:
-    # enable unsafe-perm to avoid problems with running npm as root
-    # see adblockplusui#193
-    - export npm_config_unsafe_perm=true
     # Clone adblockpluschrome
     - git clone ${CI_REPOSITORY_URL/adblockplusui.git/adblockpluschrome.git}
     - cd adblockpluschrome
