@@ -46,7 +46,7 @@ build:
     - cd adblockpluschrome
     # If adblockpluschrome has a matching branch check it out first
     - if [ $(git rev-parse --quiet --verify origin/$CI_COMMIT_REF_NAME) ]; then git reset --hard origin/$CI_COMMIT_REF_NAME; fi
-    - git status
+    - git log HEAD^..
     # Tweak dependencies to use the right repositories i.e. eyeo/adblockplus/abp/*
     - export REPOSITORY_ROOT_URL_ESCAPED=$(echo ${CI_REPOSITORY_URL/adblockplusui.git/} | sed -e 's/[\/&]/\\&/g') 
     # Tweak dependencies to automagically use the current UI version
