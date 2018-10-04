@@ -55,10 +55,12 @@ build:
     - cat dependencies
     - pip install cryptography==2.2.2 Jinja2==2.10 tox==3.0.0 PyYAML==3.12 urllib3==1.22
     # Finally build abp
-    - python build.py build -t gecko -b ${CI_COMMIT_SHA:0:8} adblockplus.xpi
+    - python build.py build -t gecko -b ${CI_COMMIT_SHA:0:8} adblockplus-firefox.xpi
+    - python build.py build -t chrome -b ${CI_COMMIT_SHA:0:8} adblockplus-chrome.zip
   artifacts:
     paths:
-      - adblockpluschrome/*.xpi
+      - adblockpluschrome/adblockplus-firefox.xpi
+      - adblockpluschrome/adblockplus-chrome.zip
   variables:
     GIT_STRATEGY: none
   only:
@@ -107,15 +109,18 @@ pages:
       <body>
       <h1>ABP UI Nightlies</h1>
       <p>
-        To enable installation of an unsigned extension got to
+        To install the Firefox version (adblockplus-firefox.xpi) you first need to enable installation of an unsigned extension got to
         <i>about:config</i> and disable <i>xpinstall.signatures.required</i>, see <a href='https://support.mozilla.org/en-US/kb/add-on-signing-in-firefox?as=u&utm_source=inproduct#w_what-are-my-options-if-i-want-to-use-an-unsigned-add-on-advanced-users'>here</a>.
+      </p>
+      <p>
+        To install the Chrome version (adblockplus-chrome.zip) you need unpack the zip archive somewhere, then go to <i>chrome://extensions/</i> enable <i>Developer mode</i> and then load the unpacked extension from the folder you unpacked it to previously.
       </p>
       {%- for id, url, ref, commit, date in jobs %}
       <p>
           Job: <a href='{{ url }}'>{{ id }}</a>
           Ref: <a href='https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/commit/{{ commit }}'>{{ ref }} ({{ commit }})</a>
           Date: {{ date }}
-          Extension: <a href='https://gitlab.com/api/v4/projects/eyeo%2fadblockplus%2fabpui%2fadblockplusui/jobs/{{ id }}/artifacts/adblockpluschrome/adblockplus.xpi'>adblockplus.xpi</a>
+          Extension: <a href='https://gitlab.com/api/v4/projects/eyeo%2fadblockplus%2fabpui%2fadblockplusui/jobs/{{ id }}/artifacts/adblockpluschrome/adblockplus-firefox.xpi'>adblockplus-firefox.xpi</a> / <a href='https://gitlab.com/api/v4/projects/eyeo%2fadblockplus%2fabpui%2fadblockplusui/jobs/{{ id }}/artifacts/adblockpluschrome/adblockplus-chrome.zip'>adblockplus-chrome.zip (Chrome)</a>
       </p>
       {%- endfor %}
       </body>
