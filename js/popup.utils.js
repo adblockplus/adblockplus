@@ -35,7 +35,10 @@ function reportIssue(tab)
   browser.tabs.create({
     active: false,
     url: browser.runtime.getURL("/issue-reporter.html?" + tab.id)
-  });
+  }).then(
+    // force closing popup which is not happening in Firefox
+    () => window.close()
+  );
 }
 
 function setPref(key, value, callback)
