@@ -77,8 +77,13 @@ getTab.then(tab =>
   options.textContent = "";
   options.addEventListener("click", () =>
   {
-    browser.runtime.sendMessage({type: "app.open", what: "options"});
-    window.close();
+    browser.runtime.sendMessage(
+      {type: "app.open", what: "options"}
+    ).then(
+      // force closing popup which is not happening in Firefox
+      // @link https://issues.adblockplus.org/ticket/7017
+      () => window.close()
+    );
   });
   setupToggle(tab);
   updateStats(tab);
@@ -120,8 +125,11 @@ function gotoMobile(event)
   event.stopPropagation();
   browser.tabs
     .create({url: event.currentTarget.dataset.link})
-    // force closing popup which is not happening in Firefox
-    .then(() => window.close());
+    .then(
+      // force closing popup which is not happening in Firefox
+      // @link https://issues.adblockplus.org/ticket/7017
+      () => window.close()
+    );
 }
 
 function updateStats(tab)
