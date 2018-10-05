@@ -144,16 +144,19 @@ function closeMe()
 
 function serializeReportData(xmlReport)
 {
-  const xslt = new DOMParser().parseFromString(`
-    <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  const xslt = new DOMParser().parseFromString(
+    `<xsl:stylesheet
+      version="1.0"
+      xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
       <xsl:output omit-xml-declaration="yes" indent="yes"/>
       <xsl:template match="node()|@*">
         <xsl:copy>
           <xsl:apply-templates select="node()|@*"/>
         </xsl:copy>
       </xsl:template>
-    </xsl:stylesheet>
-  `, "application/xml");
+    </xsl:stylesheet>`,
+    "application/xml"
+  );
 
   const xsltProcessor = new XSLTProcessor();
   xsltProcessor.importStylesheet(xslt);
