@@ -19,7 +19,7 @@
 
 const stepsManager = require("./issue-reporter-steps-manager");
 const report = require("./issue-reporter-report");
-const {$} = require("./dom");
+const {$, asIndentedString} = require("./dom");
 
 document.addEventListener("DOMContentLoaded", () =>
 {
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () =>
 
           reportWithScreenshot(xmlReport, {screenshot: $("io-highlighter")});
           const element = $("#showDataValue");
-          element.textContent = serializeReportData(xmlReport);
+          element.textContent = asIndentedString(xmlReport);
           element.focus();
         });
       }
@@ -140,29 +140,6 @@ function closeMe()
       what: "senderId"
     }).then(tabId => browser.tabs.remove(tabId));
   }
-}
-
-function serializeReportData(xmlReport)
-{
-  const xslt = new DOMParser().parseFromString(
-    `<xsl:stylesheet
-      version="1.0"
-      xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-      <xsl:output omit-xml-declaration="yes" indent="yes"/>
-      <xsl:template match="node()|@*">
-        <xsl:copy>
-          <xsl:apply-templates select="node()|@*"/>
-        </xsl:copy>
-      </xsl:template>
-    </xsl:stylesheet>`,
-    "application/xml"
-  );
-
-  const xsltProcessor = new XSLTProcessor();
-  xsltProcessor.importStylesheet(xslt);
-
-  const xml = xsltProcessor.transformToDocument(xmlReport);
-  return new XMLSerializer().serializeToString(xml);
 }
 
 function reportWithScreenshot(xmlReport, stepsData)
@@ -316,7 +293,7 @@ function sendReport(reportData)
       progress.value = 50 + (50 * event.loaded) / event.total;
     }
   });
-  request.send(serializeReportData(reportData));
+  request.send(asIndentedString(reportData));
 }
 
 function encodeHTML(str)
