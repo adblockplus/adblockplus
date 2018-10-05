@@ -1,0 +1,20 @@
+{
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "Sesetengah pengguna mengalami isu di mana halaman ini terbuka setiap kali pelayar dilancarkan. Isu ini boleh diselesaikan dengan menyahpasang dan memasang semula Adblock Plus:"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "Jika anda masih memerlukan bantuan, hubungi kami di <a0>support@adblockplus.org</a0> atau lawati <a1>Help Center</a1> kami."
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "Buka tab Extension pelayar anda."
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Cari Adblock Plus dan buangkan ia."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "Pasang semula Adblock Plus dari <a>adblockplus.org</a>."
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "Terdapat isu yang menyebabkan semua penapisan telah ditanggalkan dan kami tidak dapat memasukkan semula maklumat sokongan. Dengan itu kami perlu melaras semula penapisan serta tetapan Iklan Yang Diterima. Sila periksa senarai penapisan dan tetapan Iklan Yang Diterima di dalam <a>Pilihan Adblock Plus</a>."
+  }
+}

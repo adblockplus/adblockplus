@@ -1,0 +1,20 @@
+{
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "ผู้ใช้บางรายมีปัญหาจากการที่หน้าเพจนี้เปิดขึ้นมาทุกครั้งที่เปิดใช้งานเบราว์เซอร์ ปัญหานี้สามารถแก้ไขได้ด้วยการถอนการติดตั้งและทำการติดตั้ง Adblock Plus เข้าไปใหม่:"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "หากคุณยังต้องการความช่วยเหลือ โปรดติดต่อเราที่ <a0>support@adblockplus.org</a0> หรือเข้าไปที่ <a1>Help Center</a1> ของเรา"
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "เปิดแถบ Extensions ในเบราว์เซอร์ของคุณ"
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "ค้นหา Adblock Plus แล้วลบออก"
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "ติดตั้ง Adblock Plus เข้าไปใหม่จาก <a>adblockplus.org</a>"
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "ดูเหมือนว่าปัญหาจะเกิดจากตัวกรองทั้งหมดถูกลบออกไปแล้วไม่สามารถคืนค่าจากตัวสำรองข้อมูลได้ ดังนั้นเรามีตัวรีเซ็ตตัวกรองที่ได้รับการยอมรับ กรุณาตรวจสอบรายการตัวกรองโฆษณาของคุณืั้ <a>ตัวเลือก Adblock Plus</a>"
+  }
+}

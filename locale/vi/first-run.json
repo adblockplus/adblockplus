@@ -1,0 +1,20 @@
+{
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "Một số người dùng gặp sự cố khi trang này mở ra mỗi khi trình duyệt của họ khởi chạy. Có thể giải quyết vấn đề này bằng cách gỡ cài đặt và cài đặt lại Adblock Plus:"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "Nếu bạn vẫn cần trợ giúp, hãy liên hệ với chúng tôi tại <a0>support@adblockplus.org</a0> hoặc truy cập <a1>Trung tâm trợ giúp</a1> của chúng tôi."
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "Mở thẻ Mở rộng trình duyệt của bạn."
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Xác định vị trí Adblock Plus và xóa nó."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "Gỡ cài đặt Adblock Plus khỏi <a>adblockplus.org</a>."
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "Có vẻ như là một vấn đề gây ra tất cả các bộ lọc phải được loại bỏ và chúng tôi không thể khôi phục lại một bản sao lưu. Vì vậy chúng tôi đã phải thiết lập lại các bộ lọc của bạn và thiết lập danh mục chấp nhận được. Hãy kiểm tra danh sách bộ lọc của bạn và các thiết lập danh mục được chấp nhận trong các <a>tùy chọn Adblock Plus</a>."
+  }
+}

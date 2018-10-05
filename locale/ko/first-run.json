@@ -1,0 +1,20 @@
+{
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "일부 사용자에게서 브라우저가 시작될 때마다 이 페이지가 열리는 문제가 발생할 수 있습니다. Adblock Plus를 제거하고 다시 설치하여 이 문제를 해결할 수 있습니다:"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "추가적인 도움이 필요하신 경우, <a0>support@adblockplus.org</a0> 주소로 연락해주시거나 <a1>도움말 센터</a1>를 방문하십시오."
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "브라우저의 확장 탭을 엽니다."
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Adblock Plus를 찾아 제거합니다."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "<a>adblockplus.org</a>에서 Adblock Plus를 다시 설치합니다"
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "문제가 발생하여 모든 필터가 제거되고, 백업을 복원할 수 없습니다. 그러므로 사용자 필터와 허용 광고 설정을 초기화했어야 합니다. <a>애드블록 플러스 옵션</a>에서 구독필터와 허용 광고 설정을 확인하십시오."
+  }
+}

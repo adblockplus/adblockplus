@@ -1,0 +1,20 @@
+{
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "部分使用者在每次啟動流覽器時都會遇到此頁面打開的問題。此問題可以透過卸載並重新安裝 Adblock Plus 來解決："
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "如果您仍然需要幫助，請透過 <a0>support@adblockplus.org</a0> 與我們聯繫，或訪問我們的<a1>幫助中心</a1>。"
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "打開流覽器的擴展標籤。"
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "找到 Adblock Plus 並將其刪除。"
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "從 <a>adblockplus.org</a> 上面重新安裝 Adblock Plus。"
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "有一個問題已刪除了所有的廣告過濾器，我們也無法還原備份。因此我們得重新設置您的廣告過濾器和可接受的廣告設置。請在<a>Adblock Plus 選項</a>裡檢查您的廣告過濾器名單和可接受的廣告設置。"
+  }
+}

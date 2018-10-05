@@ -1,0 +1,20 @@
+{
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "Alguns usuários estão a ter um problema em que esta página abre cada vez que o navegador é iniciado. Este problema pode ser resolvido desinstalando e reinstalando o Adblock Plus:"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "Se precisar de ajuda, entre em contato connosco através do email <a0>support@adblockplus.org</a0> ou visite a nossa <a1>Central de Ajuda</a1>."
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "Abra a página de Extensões do seu navegador."
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Localize o Adblock Plus e remova-o."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "Reinstale o Adblock Plus desde a página <a>adblockplus.org</a>."
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "Parece que ocorreu um erro que causou a remoção de todos os filtros e nós não conseguimos restaurar a cópia de segurança. Neste sentido, os filtros e as definições de anúncios aceitáveis foram reiniciados, Analise os seus filtros e os anúncios aceitáveis nas definições do <a>Adblock Plus.</a>."
+  }
+}
