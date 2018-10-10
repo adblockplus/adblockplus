@@ -41,17 +41,52 @@ test:
 build:
   stage: build
   script:
+    # Since adblockplusui exists before we run build.py we need to call
+    # npm install explicitly
+    - npm install
+    # We cannot upload artifacts from outside the build folder so we need to
+    # add a hirachy level to make space for adblockpluschrome
+    - cd ..
+    - mkdir adblockplusui.new
+    - mv adblockplusui adblockplusui.new/
+    - mv adblockplusui.new adblockplusui
+    - cd adblockplusui
+    # gitlab uses a custom template when cloning repositories so we need to
+    # create .git/info/exclude, which is needed by ensure_dependencies.py,
+    # ourselves
+    - mkdir -p adblockplusui/.git/info && touch adblockplusui/.git/info/exclude
     # Clone adblockpluschrome
     - git clone ${CI_REPOSITORY_URL/adblockplusui.git/adblockpluschrome.git}
+    - ln -s `pwd`/adblockplusui adblockpluschrome
     - cd adblockpluschrome
-    # If adblockpluschrome has a matching branch check it out first
-    - if [ $(git rev-parse --quiet --verify origin/$CI_COMMIT_REF_NAME) ]; then git reset --hard origin/$CI_COMMIT_REF_NAME; fi
-    - git log HEAD^..
+    # If adblockpluschrome has a matching branch (e.g.
+    # adblockplusui@release-YYYY-N => adblockpluschrome@release-YYYY-N) use
+    # the matching branch instead of master
+    - |
+      IFS=$'\n';
+      for HEADS in $(git --git-dir ../adblockplusui/.git log --pretty=format:%D origin/master..HEAD | sed "/^$/d"); do
+        IFS=$', ';
+        for HEAD in $HEADS; do
+          # Skip special ref HEAD since it will always be present
+          if [[ $HEAD == *"HEAD"* ]]; then
+            continue;
+          fi
+          # Strip ref e.g. ref/branch => branch
+          export HEAD=$(echo $HEAD | sed "s/[^\/]\+\///g");
+          if [ $(git rev-parse --quiet --verify origin/$HEAD) ]; then
+            git reset --hard origin/$HEAD;
+            break 2;
+          fi
+        done
+      done
+    # Include resulting HEAD in debug output
+    - git log --oneline HEAD^..
     # Tweak dependencies to use the right repositories i.e. eyeo/adblockplus/abp/*
-    - export REPOSITORY_ROOT_URL_ESCAPED=$(echo ${CI_REPOSITORY_URL/adblockplusui.git/} | sed -e 's/[\/&]/\\&/g') 
+    - export REPOSITORY_ROOT_URL_ESCAPED=$(echo ${CI_REPOSITORY_URL/adblockplusui.git/} | sed -e 's/[\/&]/\\&/g')
     # Tweak dependencies to automagically use the current UI version
     - sed -i -E "s/(_root = hg:[^ ]+ git:)([^ ]+)/\1$REPOSITORY_ROOT_URL_ESCAPED/g" dependencies
     - sed -i -E "s/(adblockplusui = adblockplusui hg:[[:alnum:]]{12} git:)([[:alnum:]]{7})/\1${CI_COMMIT_SHA:0:8}/g" dependencies
+    # Include resulting dependencies in debug output
     - cat dependencies
     - pip install cryptography==2.2.2 Jinja2==2.10 tox==3.0.0 PyYAML==3.12 urllib3==1.22
     # Finally build abp
@@ -61,8 +96,6 @@ build:
     paths:
       - adblockpluschrome/adblockplus-firefox.xpi
       - adblockpluschrome/adblockplus-chrome.zip
-  variables:
-    GIT_STRATEGY: none
   only:
     refs:
       - /^release-[0-9]{4}-[0-9]+(\.[0-9]+)?$/
@@ -94,7 +127,7 @@ pages:
                   else:
                     short_id = 'n/a'
                     created_at = 'n/a'
-                    
+
                   jobs.append((
                     job.id,
                     job.attributes['web_url'],
