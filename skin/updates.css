@@ -119,7 +119,7 @@ html[dir="rtl"] .custom-feature-entry h2
   position: relative;
   width: 560px;
   height: 460px;
-  background-image: url(./updates/base-graphic.svg);
+  background-image: url(icons/updates/base-graphic.svg);
   background-repeat: no-repeat;
   background-size: cover;
 }
