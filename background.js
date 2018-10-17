@@ -704,8 +704,8 @@
       }
     }
 
-    modules.filterNotifier.FilterNotifier.on("filter.added", updateRecord);
-    modules.filterNotifier.FilterNotifier.on("filter.removed", removeRecord);
+    modules.filterNotifier.filterNotifier.on("filter.added", updateRecord);
+    modules.filterNotifier.filterNotifier.on("filter.removed", removeRecord);
 
     for (const {filter, request} of records)
     {
