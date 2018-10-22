@@ -259,9 +259,9 @@
 
   modules.filterStorage = {
     FilterStorage: {
-      get subscriptions()
+      *subscriptions()
       {
-        return Array.from(knownSubscriptions.values());
+        yield* this.knownSubscriptions.values();
       },
 
       get knownSubscriptions()
