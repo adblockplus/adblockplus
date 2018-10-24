@@ -319,8 +319,7 @@ Collection.prototype.updateItem = function(item)
     {
       if (item.homepage)
         websiteElement.setAttribute("href", item.homepage);
-      else
-        websiteElement.setAttribute("aria-hidden", true);
+      websiteElement.setAttribute("aria-hidden", !item.homepage);
     }
 
     const sourceElement = element.querySelector("io-popout .source");
