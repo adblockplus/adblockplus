@@ -104,6 +104,7 @@
       },
       "io-filter-search": "$ create.test.component io-filter-search",
       "io-filter-list": "$ create.test.component io-filter-list",
+      "io-filter-table": "$ create.test.component io-filter-table",
       "io-highlighter": {
         "css": [
           "$ create.test.css io-highlighter",

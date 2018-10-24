@@ -17,6 +17,7 @@
 
 @import "./io-checkbox.scss";
 @import "./io-toggle.scss";
+@import "./io-scrollbar.scss";
 
 /*
   The component depends on its style and it will look for the
@@ -24,6 +25,7 @@
   The property is also named like the component on purpose,
   to be sure its an own property, not something inherited.
 */
+
 io-filter-list
 {
   --io-filter-list: ready;
@@ -92,9 +94,16 @@ io-filter-list td
 
 io-filter-list th
 {
+  display: flex;
   padding: 8px;
   cursor: pointer;
   transition: background 0.2s ease-in;
+  align-items: center;
+}
+
+io-filter-list th:not([data-column="rule"])
+{
+  justify-content: center;
 }
 
 io-filter-list th:hover
@@ -169,16 +178,11 @@ io-filter-list td[data-column="warning"] img
 io-filter-list thead th:not([data-column="selected"])::after
 {
   display: inline-block;
-  position: absolute;
+  width: 24px;
   padding: 4px;
   opacity: 0.3;
   font-size: 0.7em;
   line-height: 1rem;
-}
-
-io-filter-list thead th[data-column="status"]::after
-{
-  position: initial;
 }
 
 io-filter-list thead th:not([data-column="selected"])::after
