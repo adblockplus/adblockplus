@@ -146,7 +146,7 @@ class IOFilterList extends IOElement
       const {position, range} = this.scrollbar;
       const {scrollHeight} = this.state;
       this.setState({
-        scrollTop: scrollHeight * position / range
+        scrollTop: getScrollTop(scrollHeight * position / range)
       });
     });
     this.addEventListener(
@@ -163,14 +163,10 @@ class IOFilterList extends IOElement
         }
         const {scrollHeight, scrollTop} = this.state;
         this.setState({
-          scrollTop: Math.max(
-            0,
-            Math.min(scrollHeight, scrollTop + event.deltaY)
-          )
+          scrollTop: getScrollTop(scrollTop + event.deltaY, scrollHeight)
         });
         // update the scrollbar position accordingly
-        const {range} = this.scrollbar;
-        this.scrollbar.position = this.state.scrollTop * range / scrollHeight;
+        updateScrollbarPosition.call(this);
       },
       {passive: false}
     );
@@ -186,12 +182,12 @@ class IOFilterList extends IOElement
     if (index < 0)
       console.error("invalid filter", row);
     else
+    {
       this.setState({
-        scrollTop: Math.min(
-          scrollHeight,
-          index * rowHeight
-        )
+        scrollTop: getScrollTop(index * rowHeight, scrollHeight)
       });
+      updateScrollbarPosition.call(this);
+    }
   }
 
   onload()
@@ -436,9 +432,12 @@ class IOFilterList extends IOElement
         list[count++] = i < length ? this.state.filters[i++] : null;
       }
     }
+    const {length} = this.filters;
     this.html`<table cellpadding="0" cellspacing="0">
       <thead onclick="${this}" data-call="onheaderclick">
-        <th data-column="selected"><io-checkbox /></th>
+        <th data-column="selected">
+          <io-checkbox checked=${!!length && this.selected.size === length} />
+        </th>
         <th data-column="status"></th>
         <th data-column="rule">${{i18n: "options_filter_list_rule"}}</th>
         <th data-column="warning">${
@@ -575,7 +574,7 @@ function focusTheNextFilterIfAny(tr)
     if (next.offsetTop > viewHeight)
     {
       this.setState({
-        scrollTop: scrollTop + rowHeight
+        scrollTop: getScrollTop(scrollTop + rowHeight)
       });
     }
     // focus its content field
@@ -597,6 +596,17 @@ function getFilter(event)
   const el = event.currentTarget;
   const div = $('td[data-column="rule"] > .content', el.closest("tr"));
   return div.data;
+}
+
+// ensure the number is always between 0 and a positive number
+// specially handy when filters are erased and the viewHeight
+// is higher than scrollHeight and other cases too
+function getScrollTop(value, scrollHeight)
+{
+  return Math.max(
+    0,
+    Math.min(scrollHeight || Infinity, value)
+  );
 }
 
 function getWarning(filter)
@@ -670,4 +680,11 @@ function setupPort()
       }
     }
   });
+}
+
+function updateScrollbarPosition()
+{
+  const {scrollbar, state} = this;
+  const {scrollHeight, scrollTop} = state;
+  scrollbar.position = scrollTop * scrollbar.range / scrollHeight;
 }

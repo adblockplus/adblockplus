@@ -1,1 +1,14 @@
-{}
+{
+  "copy_selected": {
+    "description": "Copy selected items button label",
+    "message": "Copy selected"
+  },
+  "delete": {
+    "description": "Delete button label",
+    "message": "Delete"
+  },
+  "filter_action_failed": {
+    "description": "One or more filters could not be saved or updated.",
+    "message": "Something went wrong. Please try again."
+  }
+}

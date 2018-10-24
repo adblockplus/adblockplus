@@ -7,6 +7,14 @@
     "description": "Cancel button label",
     "message": "Cancel"
   },
+  "copy_selected": {
+    "description": "Copy selected items button label",
+    "message": "Copy selected"
+  },
+  "delete": {
+    "description": "Delete button label",
+    "message": "Delete"
+  },
   "common_feature_anti_adblock_title": {
     "description": "Feature title for anti-adblock blocking filter list",
     "message": "Hide Adblock Warning Messages"
@@ -26,5 +34,9 @@
   "common_notification_hide": {
     "description": "Hidden text attached to the close button for screen readers of Notification",
     "message": "Close notification"
+  },
+  "filter_action_failed": {
+    "description": "One or more filters could not be saved or updated.",
+    "message": "Something went wrong. Please try again."
   }
 }
