@@ -26,6 +26,12 @@ module.exports = {
   // to the closest positioned containing element
   relativeCoordinates(event)
   {
+    // good old way that will work properly in older browsers too
+    // mandatory for Chrome 49, still better than manual fallback
+    // in all other browsers that provide such functionality
+    if ("layerX" in event && "layerY" in event)
+      return {x: event.layerX, y: event.layerY};
+    // fallback when layerX/Y will be removed (since deprecated)
     let el = event.currentTarget;
     let x = 0;
     let y = 0;
