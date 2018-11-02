@@ -75,6 +75,9 @@
   "issueReporter_processing_screenshot": {
     "message": "processing"
   },
+  "issueReporter_screenreader_warning": {
+    "message": "To help us better understand the issue, a screenshot is required when submitting an issue report. Depending on the website you're currently on, the screenshot might contain personal information. If you're uncomfortable submitting a screenshot, please email your issue to <a0>support@adblockplus.org</a0>."
+  },
   "issueReporter_screenshot_hide": {
     "message": "Hide"
   },
