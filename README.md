@@ -185,6 +185,14 @@ Format of the exported CSV files:
 | Modified | options.json | cancel   | Cancel button label  |                             | Cancel        | Kanselleer | ይቅር | ... |
 | Added    | options.json | domain   | Domain input example | {"domain":{"content":"$1"}} | e.g. $domain$ |            |     | ... |
 
+Fonts generation
+----------------
+
+`npm run fonts-gen` - Generates font subsets and css file with `@font-face`
+  and `:lang()` rules using unicode ranges extracted from extension locales.
+
+See `build/font-generation/config.js` for the script configuration.
+
 firstRun.html
 -------------
 

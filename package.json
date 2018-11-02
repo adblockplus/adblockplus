@@ -6,6 +6,7 @@
     "$": "npm-dollar",
     "dev-build": "npm run $ bundle && npm run $ dev-build",
     "bundle": "npm run $ bundle",
+    "fonts-gen": "node build/font-generation/index.js",
     "lint": "npm run $ lint",
     "postinstall": "npm run bundle",
     "start": "http-server & npm run watch",
@@ -131,6 +132,7 @@
     "browserify": "^16.2.2",
     "document-register-element": "^1.11.0",
     "hyperhtml-element": "^3.1.0",
+    "local-range": "^0.0.4",
     "node-sass": "^4.9.3",
     "npm-dollar": "^2.1.0",
     "website-defaults": "github:adblockplus/website-defaults#255e4f1"
