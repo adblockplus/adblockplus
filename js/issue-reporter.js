@@ -23,6 +23,11 @@ const {$, asIndentedString} = require("./dom");
 
 document.addEventListener("DOMContentLoaded", () =>
 {
+  ext.i18n.setElementLinks(
+    "sr-warning",
+    "mailto:support@adblockplus.org"
+  );
+
   const cancelButton = $("#cancel");
   cancelButton.addEventListener("click", closeMe);
   $("#hide-notification").addEventListener("click", () =>
