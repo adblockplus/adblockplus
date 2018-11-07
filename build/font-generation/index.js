@@ -21,7 +21,7 @@ const localRange = require("local-range");
 const fs = require("fs");
 const path = require("path");
 const {localesDir, inputDir, outputDir, fontToLocalesMap,
-       fontFile} = require("./config");
+       fontFile, sharedCharacters} = require("./config");
 const {generateFontFace, license, generateLangRule} = require("./css");
 const {promisify} = require("util");
 const {ensureDir, cammelToSentence, getLastDir} = require("./utils");
@@ -37,6 +37,7 @@ const glob = promisify(require("glob").glob);
 function getUnicodeRange(include)
 {
   const options = {
+    chars: sharedCharacters,
     folder: path.resolve(localesDir),
     include
   };
