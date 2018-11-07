@@ -25,6 +25,8 @@ const outputDir = "./build/font-generation/output";
 const fontFile = `${outputDir}/font.css`;
 // Input directory containing source fonts
 const inputDir = "./build/font-generation/fonts";
+// Common characters shared across fonts
+const sharedCharacters = "@.,!?";
 
 // determines which font to use for specific locales
 const fontToLocalesMap = {
@@ -40,4 +42,5 @@ const fontToLocalesMap = {
                         "vi"]
 };
 
-module.exports = {localesDir, inputDir, outputDir, fontToLocalesMap, fontFile};
+module.exports = {localesDir, inputDir, outputDir, fontToLocalesMap, fontFile,
+  sharedCharacters};
