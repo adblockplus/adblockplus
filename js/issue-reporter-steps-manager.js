@@ -94,9 +94,18 @@ const managers = [
       const ioHighlighter = document.querySelector("io-highlighter");
       ioHighlighter.changeDepth.then(() =>
       {
-        resolve({screenshot: {
-          edited: ioHighlighter.edited,
-          data: ioHighlighter.toDataURL()}
+        resolve({
+          screenshot:
+          {
+            get edited()
+            {
+              return ioHighlighter.edited;
+            },
+            get data()
+            {
+              return ioHighlighter.toDataURL();
+            }
+          }
         });
       });
     });
