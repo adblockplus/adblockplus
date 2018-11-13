@@ -20,6 +20,7 @@
 module.exports = {
   $: (selector, container = document) => container.querySelector(selector),
   $$: (selector, container = document) => container.querySelectorAll(selector),
+
   // helper to format as indented string any HTML/XML node
   asIndentedString,
 
