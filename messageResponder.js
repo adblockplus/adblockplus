@@ -311,7 +311,7 @@
     if (!message.removeExisting)
       return errors;
 
-    for (const subscription of FilterStorage.subscriptions)
+    for (const subscription of FilterStorage.subscriptions())
     {
       if (!(subscription instanceof SpecialSubscription))
         continue;
@@ -406,28 +406,28 @@
 
   port.on("subscriptions.get", (message, sender) =>
   {
-    const subscriptions = FilterStorage.subscriptions.filter((s) =>
+    const subscriptions = [];
+    for (const s of FilterStorage.subscriptions())
     {
       if (message.ignoreDisabled && s.disabled)
-        return false;
-      if (s instanceof DownloadableSubscription && message.downloadable)
-        return true;
-      if (s instanceof SpecialSubscription && message.special)
-        return true;
-      return false;
-    });
+        continue;
 
-    return subscriptions.map((s) =>
-    {
-      const result = convertSubscription(s);
+      if (message.downloadable && !(s instanceof DownloadableSubscription))
+        continue;
+
+      if (message.special && !(s instanceof SpecialSubscription))
+        continue;
+
+      const subscription = convertSubscription(s);
       if (message.disabledFilters)
       {
-        result.disabledFilters = s.filters
-                      .filter((f) => f instanceof ActiveFilter && f.disabled)
-                      .map((f) => f.text);
+        subscription.disabledFilters = s.filters
+          .filter((f) => f instanceof ActiveFilter && f.disabled)
+          .map((f) => f.text);
       }
-      return result;
-    });
+      subscriptions.push(subscription);
+    }
+    return subscriptions;
   });
 
   port.on("subscriptions.remove", (message, sender) =>
