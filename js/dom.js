@@ -17,6 +17,18 @@
 
 "use strict";
 
+let browserName = "unknown";
+
+// Firefox only, which is exactly the one
+// we are looking for in order to patch events' layerX
+if (browser.runtime.getBrowserInfo)
+{
+  browser.runtime.getBrowserInfo().then(info =>
+  {
+    browserName = info.name.toLowerCase();
+  });
+}
+
 module.exports = {
   $: (selector, container = document) => container.querySelector(selector),
   $$: (selector, container = document) => container.querySelectorAll(selector),
@@ -69,10 +81,16 @@ module.exports = {
     // good old way that will work properly in older browsers too
     // mandatory for Chrome 49, still better than manual fallback
     // in all other browsers that provide such functionality
-    if ("layerX" in event && "layerY" in event)
-      return {x: event.layerX, y: event.layerY};
-    // fallback when layerX/Y will be removed (since deprecated)
     let el = event.currentTarget;
+    if ("layerX" in event && "layerY" in event)
+    {
+      let {layerX} = event;
+      // see https://issues.adblockplus.org/ticket/7134
+      if (browserName === "firefox")
+        layerX -= el.offsetLeft;
+      return {x: layerX, y: event.layerY};
+    }
+    // fallback when layerX/Y will be removed (since deprecated)
     let x = 0;
     let y = 0;
     do
