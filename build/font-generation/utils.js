@@ -49,7 +49,6 @@ const cammelToSentence = (text) =>
 const getLastDir = (filePath) =>
 {
   return path.basename(path.dirname(filePath));
-}
+};
 
 module.exports = {ensureDir, cammelToSentence, getLastDir};
-
