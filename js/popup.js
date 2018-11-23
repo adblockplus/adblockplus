@@ -22,6 +22,7 @@ require("./popup.notifications.js");
 
 const setupToggle = require("./popup.toggle.js");
 const setupBlock = require("./popup.blockelement.js");
+const {activeTab} = require("./popup.utils.js");
 const {$, $$} = require("./dom");
 
 const {

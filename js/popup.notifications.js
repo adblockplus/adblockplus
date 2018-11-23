@@ -17,26 +17,26 @@
 
 "use strict";
 
-const {getDocLinks, setPref} = require("./popup.utils.js");
+const {activeTab, getDocLinks, setPref} = require("./popup.utils.js");
 const {wire} = require("./io-element");
 const {$} = require("./dom");
 
-window.addEventListener(
-  "load", () =>
+activeTab
+  .then((tab) =>
   {
-    browser.runtime.sendMessage({
+    return browser.runtime.sendMessage({
       type: "notifications.get",
-      displayMethod: "popup"
-    }).then(notification =>
-    {
-      if (notification)
-        window.dispatchEvent(
-          new CustomEvent("extension:notification", {detail: notification})
-        );
+      displayMethod: "popup",
+      url: tab.url
     });
-  },
-  {once: true}
-);
+  })
+  .then((notification) =>
+  {
+    if (notification)
+      window.dispatchEvent(
+        new CustomEvent("extension:notification", {detail: notification})
+      );
+  });
 
 // Using an event to make testing as easy as possible.
 /* @example
