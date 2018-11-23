@@ -1,5 +1,19 @@
 "use strict";
 
+// create the tab object once at the right time
+const activeTab = new Promise(
+  resolve =>
+  {
+    document.addEventListener("DOMContentLoaded", () =>
+    {
+      browser.tabs.query({active: true, lastFocusedWindow: true}, tabs =>
+      {
+        resolve({id: tabs[0].id, url: tabs[0].url});
+      });
+    }, {once: true});
+  }
+);
+
 function getDocLinks(notification)
 {
   if (!notification.links)
@@ -80,6 +94,7 @@ function whenPageReady(tab)
 }
 
 module.exports = {
+  activeTab,
   getDocLinks,
   getPref,
   isPageWhitelisted,
