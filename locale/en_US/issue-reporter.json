@@ -30,6 +30,9 @@
   "issueReporter_detailsButton_label": {
     "message": "Details"
   },
+  "issueReporter_closeButton_label": {
+    "message": "Close"
+  },
   "issueReporter_doneButton_label": {
     "message": "Done"
   },

@@ -51,10 +51,11 @@ document.addEventListener("DOMContentLoaded", () =>
         .then(() => stepsManager({screenshot}));
     });
 
-  $("#send").addEventListener("click", event =>
+  $("#send").addEventListener("click", function sendAll(event)
   {
     const sendButton = event.currentTarget;
     const lastStep = $("io-steps button:last-child");
+    sendButton.removeEventListener("click", sendAll);
     sendButton.disabled = true;
     lastStep.disabled = false;
     lastStep.click();
@@ -83,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () =>
       cancelButton.hidden = true;
       sendReport(reportWithScreenshot(...results));
       sendButton.textContent =
-        browser.i18n.getMessage("issueReporter_doneButton_label");
+        browser.i18n.getMessage("issueReporter_closeButton_label");
       $("io-steps").setCompleted(-1, true);
     });
   });
@@ -265,6 +266,12 @@ function sendReport(reportData)
     resultFrame.hidden = false;
 
     document.getElementById("continue").disabled = false;
+
+    if (success)
+    {
+      $("#send").disabled = false;
+      $("#send").addEventListener("click", closeMe);
+    }
   };
 
   const request = new XMLHttpRequest();
