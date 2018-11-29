@@ -21,7 +21,7 @@ const IOElement = require("./io-element");
 const IOFilterList = require("./io-filter-list");
 const IOFilterSearch = require("./io-filter-search");
 
-const {$, clipboard} = require("./dom");
+const {clipboard} = require("./dom");
 
 const {bind, wire} = IOElement;
 
@@ -157,11 +157,12 @@ class IOFilterTable extends IOElement
   onFilterAdd(event)
   {
     const unknown = new WeakSet();
+    const filtersBefore = this.filters;
     const filters = event.detail
                     .split(/(?:\r\n|\n)/)
                     .map(text =>
                     {
-                      let value = this.filters.find(
+                      let value = filtersBefore.find(
                         filter => filter.text === text
                       );
                       if (!value)
@@ -179,12 +180,22 @@ class IOFilterTable extends IOElement
     {
       if (!errors.length)
       {
-        for (const filter of filters)
+        // this is false only when the extension sets filters right away,
+        // as example the first time custom filters are created.
+        // in that case, the order should be the one the extension decided.
+        if (filtersBefore === this.filters)
         {
-          if (!unknown.has(filter))
-            this.filters.splice(this.filters.indexOf(filter), 1);
-          this.filters.unshift(filter);
+          for (const filter of filters)
+          {
+            if (!unknown.has(filter))
+              this.filters.splice(this.filters.indexOf(filter), 1);
+            this.filters.unshift(filter);
+          }
         }
+        // needed in case there were no filters whatsoever
+        // and the table never got a chance to initialize
+        // will be more like a no-op if already initialized
+        this.render();
         updateList(this.list);
         this.list.scrollTo(this.filters[0]);
         this.search.value = "";
@@ -205,15 +216,20 @@ class IOFilterTable extends IOElement
   {
     const {disabled} = this;
     const {filters, match, ready} = this.state;
-    if (!ready)
+    if (!ready || !filters.length)
       return;
-    // simply update inner components
-    // no need to render any html in here
+
+    // update inner components setting filters
+    // only if necessary
     this.search.disabled = disabled;
-    this.search.filters = filters;
     this.search.match = match;
+    if (this.search.filters !== filters)
+      this.search.filters = filters;
+
     this.list.disabled = disabled;
-    this.list.filters = filters;
+    if (this.list.filters !== filters)
+      this.list.filters = filters;
+
     this.renderFooter();
   }
 

@@ -59,7 +59,7 @@
       },
       "css": "node-sass ./css/$1.scss ./skin/$1.css",
       "js": [
-        "!prod eslint ./js/**/*.js",
+        "eslint ./js/**/*.js",
         "echo \"/* eslint-disable */$(browserify --node $1)\">$2"
       ],
       "test": {

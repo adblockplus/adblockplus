@@ -270,7 +270,7 @@
   },
   "options_filterList_state_disabled": {
     "description": "State of filter list in Advanced tab",
-    "message": "Disabled"
+    "message": "Inactive"
   },
   "options_filterList_now": {
     "description": "Text inside 'Last update' column in Advanced tab",
@@ -294,37 +294,15 @@
   },
   "options_customFilters_title": {
     "description": "Section title in Advanced tab",
-    "message": "Create and edit your filter list"
+    "message": "Your custom filters"
   },
   "options_customFilters_description": {
     "description": "Custom filter lists section description in Advanced tab",
-    "message": "Create your own filters to further control what content Adblock Plus blocks. <a0>Learn how to create filters</a0>"
+    "message": "Create and maintain your own filters to further control what content Adblock Plus allows or blocks. <a0>Learn how to write filters</a0>"
   },
   "options_customFilters_widget_title": {
     "description": "Custom filter widget title in Advanced tab",
     "message": "My filter list"
-  },
-  "options_customFilters_tip": {
-    "description": "Custom filter widget(empty) hint text in Advanced tab",
-    "message": "Filters you create will show up here."
-  },
-  "options_customFilters_start": {
-    "description": "Custom filter widget(empty) button text in Advanced tab",
-    "message": "Start creating my filter list"
-  },
-  "options_customFilters_learn": {
-    "description": "Custom filter widget(empty) link text in Advanced tab",
-    "message": "Learn how to create filters"
-  },
-  "options_customFilters_edit_placeholder": {
-    "description": "Custom filter widget(empty) placeholder text in Advanced tab",
-    "message": "e.g. $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
   },
   "options_filterList_lastDownload_invalidURL": {
     "description": "Error message in advanced tab",
@@ -358,17 +336,9 @@
     "description": "Context menu item in advanced tab, appears after click on subscription",
     "message": "source"
   },
-  "options_customFilter_edit": {
-    "description": "Label below single input view of user's filter list in Advanced tab",
-    "message": "Edit filters"
-  },
   "options_customFilter_cancel": {
     "description": "Label below raw view of user's filter list in Advanced tab",
     "message": "Cancel"
-  },
-  "options_customFilter_save": {
-    "description": "Label below raw view of user's filter list in Advanced tab",
-    "message": "Save"
   },
   "options_help_description": {
     "description": "Help tab description",

@@ -22,7 +22,11 @@ io-filter-table
 {
   display: flex;
   flex-direction: column;
-  min-width: 700px;
+}
+
+io-filter-table[disabled]
+{
+  opacity: 0.6;
 }
 
 io-filter-table > io-filter-search

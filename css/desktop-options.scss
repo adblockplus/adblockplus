@@ -15,9 +15,11 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+@import "io-filter-table.scss";
+@import "io-list-box.scss";
 @import "io-popout.scss";
 @import "io-popout-fixes.scss";
-@import "io-list-box.scss";
+@import "io-toggle.scss";
 
 html
 {
@@ -1176,12 +1178,53 @@ html[dir="rtl"] #content-whitelist form button
   Advanced tab content
 */
 
+#custom-filters
+{
+  margin-top: 3rem;
+}
+
+#custom-filters h3
+{
+  font-size: 1.125rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+#custom-filters .io-filter-table-title
+{
+  font-weight: 600;
+}
+
+#custom-filters span:not(.io-filter-table-title)
+{
+  margin: 0.5rem;
+}
+
+html:not([dir="rtl"]) #custom-filters .io-filter-table-title
+{
+  margin-right: 2rem;
+}
+
+html[dir="rtl"] #custom-filters .io-filter-table-title
+{
+  margin-left: 2rem;
+}
+
+/* spans after the toggle are shown/hidden accordingly to the toggle state */
+#custom-filters io-toggle.io-filter-table-state:not([checked]) + span,
+#custom-filters io-toggle.io-filter-table-state[checked] + span + span
+{
+  display: none;
+}
+
+#custom-filters .io-filter-table-active,
+#custom-filters .io-filter-table-inactive
+{
+  color: #077CA6;
+}
+
 #all-filter-lists-table li.show-message .last-update,
 #all-filter-lists-table li:not(.show-message) .message,
-#custom-filters:not([data-mode="empty"]) #empty-custom-filters,
-#custom-filters[data-mode="empty"] #custom-filters-raw,
-#custom-filters:not([data-mode="write"]) #custom-filters-raw-controls,
-#custom-filters:not([data-mode="read"]) #custom-filters-edit,
 .state span,
 #acceptable-ads:not(.show-dnt-notification) #dnt
 {
@@ -1207,25 +1250,6 @@ html[dir="rtl"] #content-whitelist form button
 #all-filter-lists-table
 {
   margin-bottom: 0.8rem;
-}
-
-#custom-filters-raw
-{
-  width: 100%;
-  height: 23.6rem;
-  padding: 0.8rem;
-}
-
-#custom-filters-raw:focus
-{
-  border: 2px solid #077CA6;
-  outline: none;
-}
-
-#empty-custom-filters
-{
-  padding: 1.5rem;
-  border: 1px solid #CDCDCD;
 }
 
 /*

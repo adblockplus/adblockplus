@@ -20,10 +20,13 @@
 
 "use strict";
 
+require("./io-filter-table");
 require("./io-list-box");
 require("./io-popout");
+require("./io-toggle");
 
 const {$} = require("./dom");
+const port = browser.runtime.connect({name: "ui"});
 
 let subscriptionsMap = Object.create(null);
 let filtersMap = Object.create(null);
@@ -488,8 +491,6 @@ function updateFilter(filter)
   else
   {
     customFilters.push(filter.text);
-    if (isCustomFiltersLoaded)
-      updateCustomFiltersUi();
   }
 
   filtersMap[filter.text] = filter;
@@ -500,7 +501,17 @@ function loadCustomFilters(filters)
   for (const filter of filters)
     updateFilter(filter);
 
-  setCustomFiltersView("read");
+  const cfTable = $("#custom-filters io-filter-table");
+  cfTable.filters = filters.filter(({text}) => customFilters.includes(text));
+  const toggle = $("#custom-filters io-toggle.io-filter-table-state");
+  cfTable.disabled = !toggle.checked;
+  toggle.addEventListener("change", toggleFiltersTable);
+}
+
+function toggleFiltersTable(event)
+{
+  const cfTable = $("#custom-filters io-filter-table");
+  cfTable.disabled = !event.currentTarget.checked;
 }
 
 function removeCustomFilter(text)
@@ -508,14 +519,6 @@ function removeCustomFilter(text)
   const index = customFilters.indexOf(text);
   if (index >= 0)
     customFilters.splice(index, 1);
-
-  updateCustomFiltersUi();
-}
-
-function updateCustomFiltersUi()
-{
-  const customFiltersListElement = $("#custom-filters-raw");
-  customFiltersListElement.value = customFilters.join("\n");
 }
 
 function getLanguageTitle(item)
@@ -612,17 +615,11 @@ function execAction(action, element)
       closeDialog();
       break;
     }
-    case "cancel-custom-filters":
-      setCustomFiltersView("read");
-      break;
     case "change-language-subscription":
       changeLanguageSubscription(findParentData(element, "access", false));
       break;
     case "close-dialog":
       closeDialog();
-      break;
-    case "edit-custom-filters":
-      setCustomFiltersView("write");
       break;
     case "hide-more-filters-section":
       $("#more-filters").setAttribute("aria-hidden", true);
@@ -656,17 +653,6 @@ function execAction(action, element)
       browser.runtime.sendMessage({
         type: "subscriptions.remove",
         url: findParentData(element, "access", false)
-      });
-      break;
-    case "save-custom-filters":
-      sendMessageHandleErrors({
-        type: "filters.importRaw",
-        text: $("#custom-filters-raw").value,
-        removeExisting: true
-      },
-      () =>
-      {
-        setCustomFiltersView("read");
       });
       break;
     case "show-more-filters-section":
@@ -778,27 +764,6 @@ function changeLanguageSubscription(url)
       break;
     }
   }
-}
-
-function setCustomFiltersView(mode)
-{
-  const customFiltersElement = $("#custom-filters-raw");
-  updateCustomFiltersUi();
-  if (mode == "read")
-  {
-    customFiltersElement.disabled = true;
-    if (!customFiltersElement.value)
-    {
-      setCustomFiltersView("empty");
-      return;
-    }
-  }
-  else if (mode == "write")
-  {
-    customFiltersElement.disabled = false;
-  }
-
-  $("#custom-filters").dataset.mode = mode;
 }
 
 function onClick(e)
@@ -1012,16 +977,12 @@ function onDOMLoaded()
   getDocLink("filterdoc").then(link =>
   {
     setElementLinks("custom-filters-description", link);
-    $("#link-filters").setAttribute("href", link);
   });
 
   getDocLink("subscriptions").then(link =>
   {
     $("#filter-lists-learn-more").setAttribute("href", link);
   });
-
-  $("#custom-filters-raw").setAttribute("placeholder",
-    getMessage("options_customFilters_edit_placeholder", ["/ads/track/*"]));
 
   // Help tab
   getDocLink("adblock_plus_report_bug").then(link =>
@@ -1207,7 +1168,6 @@ function populateLists()
     for (const property in collections)
       collections[property].clearAll();
 
-    setCustomFiltersView("empty");
     browser.runtime.sendMessage({
       type: "subscriptions.get",
       special: true
@@ -1453,8 +1413,6 @@ function onPrefMessage(key, value, initial)
   if (checkbox)
     checkbox.setAttribute("aria-checked", value);
 }
-
-const port = browser.runtime.connect({name: "ui"});
 
 port.onMessage.addListener((message) =>
 {
