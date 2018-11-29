@@ -293,30 +293,19 @@
           </div>
         </section>
 
-        <section class="cols">
+        <section>
           <header>
             <h2 class="i18n_options_customFilters_title"></h2>
             <p id="custom-filters-description" class="i18n_options_customFilters_description"></p>
           </header>
           <div id="custom-filters">
-            <h3 class="i18n_options_customFilters_widget_title"></h3>
-            <div id="empty-custom-filters">
-              <p class="i18n_options_customFilters_tip"></p>
-              <button class="i18n_options_customFilters_start primary" data-action="edit-custom-filters">
-              </button>
-              <p>
-                <a class="i18n_options_customFilters_learn" id="link-filters" target="_blank"></a>
-              </p>
-            </div>
-            <textarea id="custom-filters-raw" rows="15" spellcheck="false" autocomplete="off"></textarea>
-            <div class="side-controls">
-              <button id="custom-filters-edit" class="i18n_options_customFilter_edit secondary" data-action="edit-custom-filters">
-              </button>
-              <div class="side-controls" id="custom-filters-raw-controls">
-                <button class="i18n_options_customFilter_cancel secondary" data-action="cancel-custom-filters"></button>
-                <button class="i18n_options_customFilter_save primary" data-action="save-custom-filters"></button>
-              </div>
-            </div>
+            <h3>
+              <span class="i18n_options_customFilters_widget_title io-filter-table-title"></span>
+              <io-toggle class="io-filter-table-state" checked></io-toggle>
+              <span class="i18n_options_filterList_state_active io-filter-table-active"></span>
+              <span class="i18n_options_filterList_state_disabled io-filter-table-inactive"></span>
+            </h3>
+            <io-filter-table></io-filter-table>
           </div>
         </section>
       </div>

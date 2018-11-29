@@ -116,6 +116,12 @@ class IOElement extends HyperHTMLElement
     return IOElement.getID(this);
   }
 
+  // returns true only when the component is live and styled
+  get ready()
+  {
+    return !!this.offsetParent && this.isStyled();
+  }
+
   // whenever an element is created, render its content once
   created() { this.render(); }
 

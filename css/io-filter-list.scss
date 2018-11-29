@@ -31,6 +31,22 @@ io-filter-list
   --io-filter-list: ready;
   width: 100%;
   padding: 0;
+  /* used to bootstrap the component once it's visible */
+  animation: -io-filter-list 0.001s;
+}
+
+/* used to bootstrap the component once it's visible */
+@keyframes -io-filter-list
+{
+  from
+  {
+    --io-filter-list: #fff;
+  }
+
+  to
+  {
+    --io-filter-list: #000;
+  }
 }
 
 io-filter-list,
@@ -39,6 +55,12 @@ io-filter-list *::before,
 io-filter-list *::after
 {
   box-sizing: border-box;
+}
+
+io-filter-list[disabled] io-checkbox,
+io-filter-list[disabled] io-toggle,
+{
+  pointer-events: none;
 }
 
 io-filter-list table

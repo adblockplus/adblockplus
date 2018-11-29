@@ -26,10 +26,10 @@ const IOScrollbar = require("./io-scrollbar");
 const {utils, wire} = IOElement;
 
 const {$} = require("./dom");
+const port = browser.runtime.connect({name: "ui"});
 
 const prevFilterText = new WeakMap();
 
-const port = browser.runtime.connect({name: "ui"});
 port.postMessage({
   type: "filters.listen",
   filter: ["disabled"]
@@ -38,6 +38,16 @@ port.postMessage({
 // <io-filter-list disabled />.{filters = [...]}
 class IOFilterList extends IOElement
 {
+  static get booleanAttributes()
+  {
+    return ["disabled"];
+  }
+
+  static get observedAttributes()
+  {
+    return ["filters"];
+  }
+
   get selected()
   {
     return this._selected || (this._selected = new Set());
@@ -71,21 +81,6 @@ class IOFilterList extends IOElement
     };
   }
 
-  static get observedAttributes()
-  {
-    return ["disabled", "filters"];
-  }
-
-  get disabled()
-  {
-    return this.hasAttribute("disabled");
-  }
-
-  set disabled(value)
-  {
-    utils.boolean.attribute(this, "disabled", value);
-  }
-
   get filters()
   {
     return this.state.filters || [];
@@ -93,14 +88,14 @@ class IOFilterList extends IOElement
 
   set filters(value)
   {
+    // if the offsetParent is null, hence the component is not visible, or
     // if the related CSS is not loaded yet, this component cannot bootstrap
     // because its TBODY will never be scrollable so there's no way
     // to calculate its viewport height in pixels
     // in such case, just execute later on until the CSS is parsed
-    if (!this.isStyled())
+    if (!this.ready)
     {
       this._filters = value;
-      window.addEventListener("load", this);
       return;
     }
     this.selected = [];
@@ -139,6 +134,23 @@ class IOFilterList extends IOElement
   created()
   {
     setupPort.call(this);
+
+    // force one off setup whenever the component enters the view
+    if (!this.ready)
+      this.addEventListener(
+        "animationstart",
+        function prepare(event)
+        {
+          this.removeEventListener(event.type, prepare);
+          if (this._filters)
+          {
+            this.filters = this._filters;
+            this._filters = null;
+          }
+        }
+      );
+
+    // the rest of the setup
     this.scrollbar = new IOScrollbar();
     this.scrollbar.direction = "vertical";
     this.scrollbar.addEventListener("scroll", () =>
@@ -188,12 +200,6 @@ class IOFilterList extends IOElement
       });
       updateScrollbarPosition.call(this);
     }
-  }
-
-  onload()
-  {
-    window.removeEventListener("load", this);
-    this.filters = this._filters;
   }
 
   onheaderclick(event)
@@ -407,7 +413,10 @@ class IOFilterList extends IOElement
       tbody.scrollTop = scrollTop % rowHeight;
     }
     // keep growing the fake list until the tbody becomes scrollable
-    else if (!tbody || tbody.scrollHeight <= tbody.clientHeight)
+    else if (
+      !tbody ||
+      (tbody.scrollHeight <= tbody.clientHeight && tbody.clientHeight)
+    )
     {
       this.setState({
         tbody: tbody || $("tbody", this),
