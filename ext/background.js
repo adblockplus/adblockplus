@@ -68,4 +68,11 @@
     });
   }
   window.browser.runtime.onConnect = {addListener: onConnect};
+
+  if (!("tabs" in browser))
+    browser.tabs = {};
+
+  browser.tabs.onRemoved = {
+    addListener() {}
+  };
 }());
