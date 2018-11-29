@@ -19,6 +19,12 @@
 
 (function()
 {
+  function log(...args)
+  {
+    // eslint-disable-next-line no-console
+    console.log("MOCK", ...args);
+  }
+
   if (typeof ext == "undefined")
     window.ext = {};
 
@@ -107,21 +113,128 @@
   }
   browser.runtime.connect = connect;
 
+  const getTab = (url) => ({id: ++tabCounter, url});
+
+  let tabCounter = 0;
+  let activeTab = getTab("https://example.com/");
+  const tabs = new Map([
+    [activeTab.id, activeTab]
+  ]);
+
   if (!("tabs" in browser))
-    browser.tabs = new Map([[0, {url: "http://example.com", id: 0, active: true, lastFocusedWindow: true}]]);
+    browser.tabs = {};
 
-  browser.tabs.get = (...args) =>
+  browser.tabs.captureVisibleTab = (tabId, options, callback) =>
   {
-    // Extend browser.tabs.get()
-    const result = Map.prototype.get.apply(browser.tabs, args);
-    return (result ? Promise.resolve(result) :
-      Promise.reject(new Error("Tab cannot be found")));
+    log(`Take screenshot of tab with ID ${tabId || activeTab.id}`);
+    return fetch("../tests/image.base64.txt")
+      .then(body => body.text())
+      .then(callback);
   };
 
-  browser.tabs.query = (...args) =>
+  browser.tabs.create = (options) =>
   {
-    const result = Map.prototype.get.apply(browser.tabs, [0]);
-    return (result ? Promise.resolve([result]) :
-      Promise.reject(new Error("Tab cannot be found")));
+    const tab = getTab(options.url);
+    tabs.set(tab.id, tab);
+    log(`Created tab '${tab.url}' with ID ${tab.id}`);
+
+    if (options.active)
+    {
+      activeTab = tab;
+      log(`Focused tab with ID ${activeTab.id}`);
+    }
+
+    return Promise.resolve(tab);
   };
+
+  browser.tabs.get = (tabId) =>
+  {
+    const tab = tabs.get(tabId);
+    if (!tab)
+      return Promise.reject(new Error(`Tab with ID ${tabId} cannot be found`));
+
+    return Promise.resolve(tab);
+  };
+
+  browser.tabs.getCurrent = (callback) =>
+  {
+    return Promise.resolve(activeTab).then(callback);
+  };
+
+  browser.tabs.onUpdated = {
+    addListener() {}
+  };
+
+  browser.tabs.remove = (tabId) =>
+  {
+    log(`Closed tab: ${tabs.get(tabId).url}`);
+    tabs.delete(tabId);
+    return Promise.resolve();
+  };
+
+  browser.tabs.update = (tabId, options, callback) =>
+  {
+    if (options.active)
+    {
+      activeTab = tabs.get(tabId);
+      log(`Focused tab with ID ${activeTab.id}`);
+    }
+    return Promise.resolve().then(callback);
+  };
+
+  class MockXmlHttpRequest extends XMLHttpRequest
+  {
+    get responseText()
+    {
+      if (typeof this._responseText === "undefined")
+        return super.responseText;
+
+      return this._responseText;
+    }
+
+    get status()
+    {
+      if (typeof this._status === "undefined")
+        return super.status;
+
+      return this._status;
+    }
+
+    open(method, url, ...args)
+    {
+      super.open(method, url, ...args);
+      this._method = method.toLowerCase();
+      this._url = url;
+    }
+
+    send(body)
+    {
+      // We're only intercepting data that is sent to the server
+      if (this._method !== "post")
+      {
+        super.send(body);
+        return;
+      }
+
+      try
+      {
+        log("Sent request", this._url);
+
+        this._status = 200;
+        this._responseText = `
+          <a download href="data:text/xml;utf-8,${encodeURIComponent(body)}">
+            Download issue report as XML
+          </a>
+        `;
+
+        const event = new CustomEvent("load");
+        this.dispatchEvent(event);
+      }
+      catch (ex)
+      {
+        console.error(ex);
+      }
+    }
+  }
+  window.XMLHttpRequest = MockXmlHttpRequest;
 }());

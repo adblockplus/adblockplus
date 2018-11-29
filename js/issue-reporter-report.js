@@ -90,7 +90,7 @@ module.exports = {
   {
     const tabId = parseInt(location.search.replace(/^\?/, ""), 10);
 
-    if (!tabId)
+    if (!tabId && tabId !== 0)
       return Promise.reject(new Error("invalid tab id"));
 
     return Promise.all([

@@ -250,5 +250,10 @@ parameters:
 * `platform=chromium`: shows the opt-out for the developer tools panel
 * `showNotificationUI=true`: simulates user having opted-out of notifications
 
+issue-reporter.html?1
+---------------------
+
+This is the implementation of the Adblock Plus issue reporter which collects
+data for reporting an issue to adblockplus.org.
 
 [crowdin]: https://crowdin.com
