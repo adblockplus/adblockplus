@@ -24,7 +24,7 @@
   const {port} = require("messaging");
   const {Prefs} = require("prefs");
   const {Utils} = require("utils");
-  const {FilterStorage} = require("filterStorage");
+  const {filterStorage} = require("filterStorage");
   const {filterNotifier} = require("filterNotifier");
   const {defaultMatcher} = require("matcher");
   const {Notification: NotificationStorage} = require("notification");
@@ -187,7 +187,7 @@
     if ("homepage" in properties)
       subscription.homepage = properties.homepage;
 
-    FilterStorage.addSubscription(subscription);
+    filterStorage.addSubscription(subscription);
     if (subscription instanceof DownloadableSubscription &&
         !subscription.lastDownload)
       Synchronizer.execute(subscription);
@@ -265,7 +265,7 @@
     if (result.error)
       errors.push(result.error.toString());
     else if (result.filter)
-      FilterStorage.addFilter(result.filter);
+      filterStorage.addFilter(result.filter);
 
     return errors;
   });
@@ -304,14 +304,14 @@
     const seenFilter = Object.create(null);
     for (const filter of result.filters)
     {
-      FilterStorage.addFilter(filter);
+      filterStorage.addFilter(filter);
       seenFilter[filter.text] = null;
     }
 
     if (!message.removeExisting)
       return errors;
 
-    for (const subscription of FilterStorage.subscriptions())
+    for (const subscription of filterStorage.subscriptions())
     {
       if (!(subscription instanceof SpecialSubscription))
         continue;
@@ -323,7 +323,7 @@
           continue;
 
         if (!(filter.text in seenFilter))
-          FilterStorage.removeFilter(filter);
+          filterStorage.removeFilter(filter);
       }
     }
 
@@ -338,9 +338,9 @@
       subscription = Subscription.fromURL(message.subscriptionUrl);
 
     if (!subscription)
-      FilterStorage.removeFilter(filter);
+      filterStorage.removeFilter(filter);
     else
-      FilterStorage.removeFilter(filter, subscription, message.index);
+      filterStorage.removeFilter(filter, subscription, message.index);
   });
 
   port.on("prefs.get", (message, sender) =>
@@ -407,7 +407,7 @@
   port.on("subscriptions.get", (message, sender) =>
   {
     const subscriptions = [];
-    for (const s of FilterStorage.subscriptions())
+    for (const s of filterStorage.subscriptions())
     {
       if (message.ignoreDisabled && s.disabled)
         continue;
@@ -433,19 +433,19 @@
   port.on("subscriptions.remove", (message, sender) =>
   {
     const subscription = Subscription.fromURL(message.url);
-    if (FilterStorage.knownSubscriptions.has(subscription.url))
-      FilterStorage.removeSubscription(subscription);
+    if (filterStorage.knownSubscriptions.has(subscription.url))
+      filterStorage.removeSubscription(subscription);
   });
 
   port.on("subscriptions.toggle", (message, sender) =>
   {
     const subscription = Subscription.fromURL(message.url);
-    if (FilterStorage.knownSubscriptions.has(subscription.url))
+    if (filterStorage.knownSubscriptions.has(subscription.url))
     {
       if (subscription.disabled || message.keepInstalled)
         subscription.disabled = !subscription.disabled;
       else
-        FilterStorage.removeSubscription(subscription);
+        filterStorage.removeSubscription(subscription);
     }
     else
     {
@@ -455,7 +455,7 @@
 
   port.on("subscriptions.update", (message, sender) =>
   {
-    let {subscriptions} = FilterStorage;
+    let {subscriptions} = filterStorage;
     if (message.url)
       subscriptions = [Subscription.fromURL(message.url)];
 
