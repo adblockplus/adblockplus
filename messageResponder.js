@@ -72,7 +72,7 @@
                                "softExpiration", "expires", "title",
                                "url"], subscription);
     if (subscription instanceof SpecialSubscription)
-      obj.filters = subscription.filters.map(convertFilter);
+      obj.filters = Array.from(subscription.filters()).map(convertFilter);
     obj.isDownloading = Synchronizer.isExecuting(subscription.url);
     return obj;
   }
@@ -285,7 +285,7 @@
     if (!subscription)
       return [];
 
-    return subscription.filters.map(convertFilter);
+    return Array.from(subscription.filters()).map(convertFilter);
   });
 
   port.on("filters.importRaw", (message, sender) =>
@@ -316,9 +316,11 @@
       if (!(subscription instanceof SpecialSubscription))
         continue;
 
-      for (let j = subscription.filters.length - 1; j >= 0; j--)
+      // We have to iterate backwards for now due to
+      // https://issues.adblockplus.org/ticket/7152
+      for (let i = subscription.filterCount; i--;)
       {
-        const filter = subscription.filters[j];
+        const filter = subscription.filterAt(i);
         if (/^@@\|\|([^/:]+)\^\$document$/.test(filter.text))
           continue;
 
@@ -421,7 +423,7 @@
       const subscription = convertSubscription(s);
       if (message.disabledFilters)
       {
-        subscription.disabledFilters = s.filters
+        subscription.disabledFilters = Array.from(s.filters())
           .filter((f) => f instanceof ActiveFilter && f.disabled)
           .map((f) => f.text);
       }
