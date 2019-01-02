@@ -264,7 +264,6 @@ header .notification button
 
 #options
 {
-  flex-shrink: 0;
   width: var(--font-size-big);
   height: var(--font-size-big);
   border: 0;
@@ -272,6 +271,7 @@ header .notification button
   background-image: url(icons/gear.svg?background#background);
   background-repeat: no-repeat;
   transition: opacity 0.1s ease-in;
+  flex-shrink: 0;
 }
 
 #options:hover
