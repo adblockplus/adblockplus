@@ -47,6 +47,11 @@ h2
   margin: 0;
 }
 
+/*
+  explicitly disable Issue Reporter in MS Edge
+  https://issues.adblockplus.org/ticket/7175
+ */
+html[data-platform="edgehtml"] #issue-reporter,
 body.nohtml #block-element,
 body.disabled #stats-page,
 body.ignore #page-status,

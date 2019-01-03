@@ -31,6 +31,17 @@ const {
   whenPageReady
 } = require("./popup.utils.js");
 
+browser.runtime.sendMessage({
+  type: "app.get",
+  what: "platform"
+}).then(platform =>
+{
+  // this won't ever change during ABP lifecycle, which is why
+  // it's set ASAP as data-platform attribute, on the most top element,
+  // instead of being one of the body classes
+  document.documentElement.dataset.platform = platform;
+});
+
 // create the tab object once at the right time
 // and make it available per each getTab.then(...)
 const getTab = new Promise(
