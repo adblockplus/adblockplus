@@ -200,7 +200,7 @@
     this.url = url;
     this._disabled = false;
     this._lastDownload = 1234;
-    this._filters = [];
+    this.filters = [];
     this.homepage = "https://easylist.adblockplus.org/";
     this.downloadStatus = params.downloadStatus;
 
@@ -209,7 +209,7 @@
     {
       this.disabled = !!details.disabled;
       this.title = details.title || "";
-      this._filters = this._filters.concat(details.filters);
+      this.filters = this.filters.concat(details.filters);
     }
   }
   Subscription.prototype =
@@ -232,10 +232,6 @@
       this._lastDownload = value;
       modules.filterNotifier.filterNotifier.emit("subscription.lastDownload",
         this);
-    },
-    *filters()
-    {
-      yield* this._filters;
     }
   };
   Subscription.fromURL = function(url)
@@ -252,39 +248,8 @@
   {
     this.url = url;
     this.disabled = false;
-    this._filters = knownFilters.slice();
+    this.filters = knownFilters.slice();
   }
-  SpecialSubscription.prototype = {
-    get filterCount()
-    {
-      return this._filters.length;
-    },
-    *filters()
-    {
-      yield* this._filters;
-    },
-    addFilter(filter)
-    {
-      this._filters.push(filter);
-    },
-    filterAt(idx)
-    {
-      return this._filters[idx];
-    },
-    removeFilter(filter)
-    {
-      for (let i = 0; i < this._filters.length; i++)
-      {
-        if (this._filters[i].text == filter.text)
-        {
-          this._filters.splice(i, 1);
-          modules.filterNotifier.filterNotifier.emit("filter.removed",
-            filter);
-          return;
-        }
-      }
-    }
-  };
 
   modules.subscriptionClasses = {
     Subscription,
@@ -293,10 +258,10 @@
   };
 
   modules.filterStorage = {
-    filterStorage: {
-      *subscriptions()
+    FilterStorage: {
+      get subscriptions()
       {
-        yield* this.knownSubscriptions.values();
+        return Array.from(knownSubscriptions.values());
       },
 
       get knownSubscriptions()
@@ -328,18 +293,27 @@
 
       addFilter(filter)
       {
-        for (const customFilter of customSubscription.filters())
+        for (const customFilter of customSubscription.filters)
         {
           if (customFilter.text == filter.text)
             return;
         }
-        customSubscription.addFilter(filter);
+        customSubscription.filters.push(filter);
         modules.filterNotifier.filterNotifier.emit("filter.added", filter);
       },
 
       removeFilter(filter)
       {
-        customSubscription.removeFilter(filter);
+        for (let i = 0; i < customSubscription.filters.length; i++)
+        {
+          if (customSubscription.filters[i].text == filter.text)
+          {
+            customSubscription.filters.splice(i, 1);
+            modules.filterNotifier.filterNotifier.emit("filter.removed",
+              filter);
+            return;
+          }
+        }
       }
     }
   };
@@ -587,6 +561,9 @@
     // so we'll post the message after one second
     setTimeout(() =>
     {
+      const host = "example.com";
+      const isWhitelisted = customSubscription.filters
+        .some((filter) => filter.text == `@@||${host}^$document`);
       window.postMessage({
         type: "message",
         payload: {
@@ -595,8 +572,8 @@
           action: "showPageOptions",
           args: [
             {
-              host: "example.com",
-              whitelisted: false
+              host,
+              whitelisted: isWhitelisted
             }
           ]
         }
