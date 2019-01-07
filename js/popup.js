@@ -31,15 +31,27 @@ const {
   whenPageReady
 } = require("./popup.utils.js");
 
-browser.runtime.sendMessage({
-  type: "app.get",
-  what: "platform"
-}).then(platform =>
+// platform and application dataset bootstrap
+Promise.all(
+  // one is used to hide the Issue Reporter due EdgeHTML bug
+  // the Issue Reporter should work once MSEdge ships with Chromium instead
+  browser.runtime.sendMessage({
+    type: "app.get",
+    what: "platform"
+  }),
+  // one is used to hide all Edge specific things (i.e. 3rd parts links)
+  browser.runtime.sendMessage({
+    type: "app.get",
+    what: "application"
+  })
+).then(([platform, application]) =>
 {
   // this won't ever change during ABP lifecycle, which is why
   // it's set ASAP as data-platform attribute, on the most top element,
   // instead of being one of the body classes
-  document.documentElement.dataset.platform = platform;
+  const {dataset} = document.documentElement;
+  dataset.platform = platform;
+  dataset.application = application;
 });
 
 // create the tab object once at the right time

@@ -48,10 +48,16 @@ h2
 }
 
 /*
-  explicitly disable Issue Reporter in MS Edge
+  explicitly disable Issue Reporter in EdgeHTML due bug
   https://issues.adblockplus.org/ticket/7175
  */
 html[data-platform="edgehtml"] #issue-reporter,
+/*
+  explicitly hide footer in Edge (no matter which engine)
+  due MS Store restrictions
+  https://issues.adblockplus.org/ticket/7193
+ */
+html[data-application="edge"] footer,
 body.nohtml #block-element,
 body.disabled #stats-page,
 body.ignore #page-status,
