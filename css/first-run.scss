@@ -91,7 +91,8 @@ section > p
 
 body[data-warnings] > main > header,
 body:not([data-warnings~="dataCorrupted"]) [data-warning="dataCorrupted"],
-body:not([data-warnings~="reinitialized"]) [data-warning="reinitialized"]
+body:not([data-warnings~="reinitialized"]) [data-warning="reinitialized"],
+html[data-application="edge"] #abb-promotion
 {
   display: none;
 }

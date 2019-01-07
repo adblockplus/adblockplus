@@ -105,10 +105,19 @@ function initWarnings()
     });
 }
 
+function initApplication()
+{
+  api.app.get("application").then((application) =>
+  {
+    document.documentElement.dataset.application = application;
+  });
+}
+
 // Translations are resolved on DOMContentLoaded so waiting for DOM by
 // deferring script execution is insufficient
 window.addEventListener("DOMContentLoaded", () =>
 {
   initLinks();
   initWarnings();
+  initApplication();
 });
