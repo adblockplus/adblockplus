@@ -32,7 +32,7 @@ const {
 } = require("./popup.utils.js");
 
 // platform and application dataset bootstrap
-Promise.all(
+Promise.all([
   // one is used to hide the Issue Reporter due EdgeHTML bug
   // the Issue Reporter should work once MSEdge ships with Chromium instead
   browser.runtime.sendMessage({
@@ -44,7 +44,7 @@ Promise.all(
     type: "app.get",
     what: "application"
   })
-).then(([platform, application]) =>
+]).then(([platform, application]) =>
 {
   // this won't ever change during ABP lifecycle, which is why
   // it's set ASAP as data-platform attribute, on the most top element,
