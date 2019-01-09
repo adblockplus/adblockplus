@@ -1,4 +1,13 @@
 {
+  "firstRun_browser_store_android": {
+    "message": "구글 플레이 스토어에 있는 안드로이드 앱"
+  },
+  "firstRun_browser_title": {
+    "message": "Adblock Browser 앱"
+  },
+  "firstRun_title": {
+    "message": "설치 성공!"
+  },
   "firstRun_warning_dataCorrupted_intro": {
     "message": "일부 사용자에게서 브라우저가 시작될 때마다 이 페이지가 열리는 문제가 발생할 수 있습니다. Adblock Plus를 제거하고 다시 설치하여 이 문제를 해결할 수 있습니다:"
   },

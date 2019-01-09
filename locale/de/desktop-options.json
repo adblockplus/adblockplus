@@ -6,7 +6,7 @@
     "message": "Acceptable Ads erlauben?"
   },
   "options_acceptableAds_description": {
-    "message": "Acceptable Ads sind unaufdringliche Anzeigen. Sie bilden den Mittelweg zwischen dem Blocken von Anzeigen und der Unterstützung von Online-Inhalten, da diese Einnahmen für Besitzer von Websites generieren."
+    "message": "Acceptable Ads sind unaufdringliche Anzeigen. Sie bilden den Mittelweg zwischen dem Blockieren von Anzeigen und der Unterstützung von Online-Inhalten, da diese Einnahmen für Besitzer von Websites generieren."
   },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Hinweis:</strong> Du hast <strong>Do Not Track (DNT)</strong> (nicht verfolgen) in deinen Browser-Einstellungen deaktiviert. Damit diese Funktion ordnungsgemäß funktioniert, aktiviere bitte <strong>DNT</strong> in den Einstellungen deines Browsers. <a>Erfahre, wie du DNT aktivierst</a>"
@@ -328,7 +328,7 @@
     "message": "WEBSITE HINZUFÜGEN"
   },
   "options_whitelist_description": {
-    "message": "Du hast das Blocken von Werbung auf diesen Websites deaktiviert und wirst auf ihnen Anzeigen sehen."
+    "message": "Du hast das Blockieren von Werbung auf diesen Websites deaktiviert und wirst auf ihnen Anzeigen sehen."
   },
   "options_whitelist_empty_1": {
     "message": "Du hast keine Websites auf der Whitelist."

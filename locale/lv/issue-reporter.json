@@ -23,6 +23,12 @@
   "issueReporter_confirmationMessage": {
     "message": "Jūsu ziņojums ir saglabāts. Jūs tam varat piekļūt sekojošajā adresē:"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Piezīme:</strong> Jauna cilne tika atvērta, lai Problēmu ziņotājs neietekmētu atvērto lapu."
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "Detaļas"
+  },
   "issueReporter_doneButton_label": {
     "message": "Gatavs"
   },
@@ -42,7 +48,7 @@
     "message": "Adblock Plus nebloķē reklāmu"
   },
   "issueReporter_falsePositive_description": {
-    "message": "Izvēlaties šo opciju, ja lai trūkst svarīga saturam tā tiek nepareizi attēlota vai nefunkcionē pareizi. Jūs varat noteikt vai to izraisa Adblock Plus, to īslaicīgi atslēdzot."
+    "message": "Lapa tiek attēlota nepareizi, nedarbojas vai šķiet, ka tai trūkst svarīga satura."
   },
   "issueReporter_falsePositive_label": {
     "message": "Adblock Plus bloķē pārāk daudz"
@@ -55,6 +61,9 @@
   },
   "issueReporter_knownIssueMessage": {
     "message": "Jūsu nosūtītais problēma iespējams jau ir zināma. Vairāk informācija:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Iezīmēt"
   },
   "issueReporter_page_title": {
     "message": "Problēmu ziņotājs"
@@ -70,6 +79,9 @@
   },
   "issueReporter_screenshot_highlight": {
     "message": "Iezīmēt"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Atlasīt"
   },
   "issueReporter_sendButton_label": {
     "message": "Sūtīt ziņojumu"

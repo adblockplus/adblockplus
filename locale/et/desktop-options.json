@@ -45,7 +45,7 @@
     "message": "Salvesta"
   },
   "options_customFilters_description": {
-    "message": "Kirjuta oma kohandatud filtrid, et veelgi täpsemini juhtida, millist sisu Adblock Plus lubab või blokeerib."
+    "message": "Kirjuta oma kohandatud filtrid, et veelgi täpsemini juhtida, millist sisu Adblock Plus blokeerib. <a0>Õpi filtrite loomist</a0>"
   },
   "options_customFilters_edit_placeholder": {
     "message": "nt. $filter$",

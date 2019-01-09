@@ -71,6 +71,9 @@
   "issueReporter_privacyPolicy": {
     "message": "Política de privacidad"
   },
+  "issueReporter_processing_screenshot": {
+    "message": "procesando"
+  },
   "issueReporter_screenshot_hide": {
     "message": "Ocultar"
   },

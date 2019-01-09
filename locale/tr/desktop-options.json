@@ -210,7 +210,7 @@
     "message": "site"
   },
   "options_filters_search_or_add": {
-    "message": "Süzgeç ara / ekle (ör. $süzgeç$)",
+    "message": "Süzgeç ara / ekle (ör. $filter$)",
     "placeholders": {
       "filter": {
         "content": "/ads/track/*"

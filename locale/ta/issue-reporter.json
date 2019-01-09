@@ -4,5 +4,41 @@
   },
   "filters_subscription_lastDownload_connectionError": {
     "message": "தோல்வியடைந்தது, பதிவிறக்கம் தோல்வி"
+  },
+  "issueReporter_anonymousSubmission_label": {
+    "message": "அநாமதேய சமர்ப்பிப்பு"
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "ஒரு கருத்து தெரிவிக்கவும்"
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "விவரங்கள்"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "முடிந்தது"
+  },
+  "issueReporter_email_label": {
+    "message": "மின்னஞ்சல்:"
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "நான் இன்னும் விளம்பரங்களை பார்கிறேன்"
+  },
+  "issueReporter_privacyPolicy": {
+    "message": "தனியுரிமைக் கொள்கை"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "மறை"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "சிக்கலைத் தேர்ந்தெடு"
+  },
+  "issueReporter_sendButton_label": {
+    "message": "அறிக்கை அனுப்பு"
+  },
+  "issueReporter_sendPage_heading": {
+    "message": "அறிக்கை அனுப்பு"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "தயவுசெய்து ஒரு சிக்கலைத் தேர்ந்தெடு:"
   }
 }

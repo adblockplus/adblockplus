@@ -48,7 +48,7 @@
     "message": "Adblock Plus ne blokira oglasa"
   },
   "issueReporter_falsePositive_description": {
-    "message": "Izberite to možnost, če strani manjka pomembna vsebina, če se prikaže nepravilno ali ne deluje pravilno. Določite lahko, ali je Adblock Plus kriv težav, tako da ga začasno izključite."
+    "message": "Izberite to možnost, če se stran ne prikaže, ne deluje pravilno, al pai ji manjka pomembna vsebina."
   },
   "issueReporter_falsePositive_label": {
     "message": "Adblock Plus blokira preveč stvari"

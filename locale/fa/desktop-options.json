@@ -5,6 +5,12 @@
   "options_acceptableAds_ads_label": {
     "message": "به تبلیغات قابل قبول اجازه دهید "
   },
+  "options_acceptableAds_header": {
+    "message": "تبلیغات قابل‌قبول"
+  },
+  "options_acceptableAds_privacy_label": {
+    "message": "فقط به تبلیغات بدون ردیابی شخص ثالث اجازه بده"
+  },
   "options_close": {
     "message": "بستن"
   },

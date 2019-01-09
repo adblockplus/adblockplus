@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "Kalimat biasa yang tidak valid"
   },
+  "filter_snippet_nodomain": {
+    "message": "Tidak ada domain aktif yang ditetapkan untuk potongan penyaring"
+  },
   "filter_unknown_option": {
     "message": "Opsi filter yang tidak diketahui"
   },

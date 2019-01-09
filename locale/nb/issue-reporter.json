@@ -26,6 +26,9 @@
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Merk:</strong> En ny fane vil bli åpnet midlertidig slik at siden du er på ikke blir påvirket av Problemrapportereren."
   },
+  "issueReporter_detailsButton_label": {
+    "message": "Detaljer"
+  },
   "issueReporter_doneButton_label": {
     "message": "Fullfør"
   },
@@ -50,14 +53,35 @@
   "issueReporter_falsePositive_label": {
     "message": "Adblock Plus blokkerer for mye"
   },
+  "issueReporter_highlighter_description": {
+    "message": "Velg dette verktøyet for å velge hver reklame eller skjule sensitiv informasjon i skjermbildet. Markering av reklame vil hjelpe oss med å rette problemet raskere."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Marker problem"
+  },
   "issueReporter_knownIssueMessage": {
     "message": "Problemet du rapporterte inn er allerede kjent for oss. Mer informasjon:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Marker problem"
   },
   "issueReporter_page_title": {
     "message": "Problemrapporterer"
   },
   "issueReporter_privacyPolicy": {
     "message": "Personvern"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "behandler"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Skjul"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "Marker"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Velg problem"
   },
   "issueReporter_sendButton_label": {
     "message": "Send rapport"

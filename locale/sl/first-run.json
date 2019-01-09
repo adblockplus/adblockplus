@@ -3,10 +3,10 @@
     "message": "Od ekipe dodatka Adblock Plus, najpriljubljenejšega orodja za blokiranje oglasov za namizne brskalnike, je sedaj na voljo tudi brskalnik Adblock Browser za vaše naprave Android in iOS."
   },
   "firstRun_browser_store_android": {
-    "message": "Program za Android na Googlu Play"
+    "message": "Android aplikacija na Google Play"
   },
   "firstRun_browser_store_ios": {
-    "message": "Na voljo v trgovini programov iTunes"
+    "message": "Na voljo v iTunes trgovini aplikacij"
   },
   "firstRun_browser_title": {
     "message": "Program Adblock Browser"
@@ -18,7 +18,7 @@
     "message": "VI imate nadzor"
   },
   "firstRun_fair_description": {
-    "message": "Priporočamo, da primerno uporabljate Adblock Plus in njegovo možnost dodajanja spletnih strani na beli sezam. Glede na filtre, ki jih uporabljate, se strinjate in sprejmete, da se lahko pojavijo nenamerni rezultati (npr. blokirana vsebina na spletni strani). Za več informacij glede primerne uporabe dodatka Adblock Plus se posvetujte s <a0>pogoji uporabe</a0>."
+    "message": "Priporočamo, da primerno uporabljate Adblock Plus in njegovo možnost dodajanja spletnih strani na beli seznam. Glede na filtre, ki jih uporabljate, se strinjate in sprejmete, da se lahko pojavijo nenamerni rezultati (npr. blokirana vsebina na spletni strani). Več informacij glede primerne uporabe dodatka Adblock Plus najdete v <a0>pogojih uporabe</a0>."
   },
   "firstRun_fair_title": {
     "message": "Primerna uporaba"

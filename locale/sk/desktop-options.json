@@ -9,7 +9,7 @@
     "message": "Prijateľné reklamy nie sú rušivé reklamy. Jeú to stredná cesta medzi blokovaním reklám a podporou obsahu online, pretože vytvárajú príjmy pre vlastníkov webových stránok."
   },
   "options_acceptableAds_dnt_notification": {
-    "message": "<strong>Poznámka:</strong> Máte vypnuté <strong>Nesledovať (DNT)</strong> v nastavení vášho prehliadača. Ak má táto funkcia pracovať správne, povoľte <strong>DNT</strong> v predvoľbách prehliadača. <a>Zistite ako zapnúť DNT</a>.\n \nContext | Request Context."
+    "message": "<strong>Poznámka:</strong> Máte vypnuté <strong>Nesledovať (DNT)</strong> v nastavení vášho prehliadača. Ak má táto funkcia pracovať správne, povoľte <strong>DNT</strong> v predvoľbách prehliadača. <a>Zistite ako zapnúť DNT</a>."
   },
   "options_acceptableAds_header": {
     "message": "Prijateľné reklamy"

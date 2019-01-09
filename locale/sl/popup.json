@@ -3,7 +3,7 @@
     "message": "Kliknite element na strani, da ga blokirate."
   },
   "clickhide_instructions": {
-    "message": "Po zaključku tega popup kliknite (ali desni klik) element na strani."
+    "message": "Po zaprtju tega popup-a kliknite (ali desni klik) element na strani."
   },
   "disabled_for_site": {
     "message": "<strong>Omogočeno</strong> na tej strani"

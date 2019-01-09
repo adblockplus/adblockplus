@@ -1,30 +1,92 @@
 {
+  "options_acceptableAds_ads_label": {
+    "message": "ஏற்கக்கூடிய விளம்பரங்களை அனுமதி"
+  },
   "options_close": {
     "message": "மூட"
   },
   "options_customFilter_cancel": {
     "message": "ரத்து செய்"
   },
+  "options_customFilter_edit": {
+    "message": "வடிகட்டிகளை திருத்து"
+  },
+  "options_customFilter_save": {
+    "message": "சேமி"
+  },
+  "options_customize_header": {
+    "message": "தனிப்பயனாக்கல்கள்"
+  },
+  "options_dialog_about_copyright": {
+    "message": "பதிப்புரிமை © $currentYear$ eyeo GmbH.",
+    "placeholders": {
+      "currentYear": {
+        "content": "2017",
+        "example": "2017"
+      }
+    }
+  },
+  "options_dialog_about_title": {
+    "message": "Adblock Plus பற்றி"
+  },
+  "options_dialog_import_subscription_location_error": {
+    "message": "செல்லும் URL உள்ளிடு"
+  },
+  "options_dialog_language_title": {
+    "message": "ஒரு மொழியைத் தேர்ந்தெடு"
+  },
+  "options_dialog_predefined_confirm": {
+    "message": "ஆம், இந்த வடிகட்டிப் பட்டியலை பயன்படுத்து"
+  },
+  "options_email": {
+    "message": "மின்னஞ்சல்:"
+  },
+  "options_english": {
+    "message": "ஆங்கிலம்"
+  },
+  "options_filterList_add": {
+    "message": "+ புதிய வடிகட்டி பட்டியல் சேர்"
+  },
   "options_filterList_column_name": {
     "message": "வடிகட்டி பட்டியல்கள்"
   },
   "options_filterList_column_status": {
-    "message": "நிலைம"
+    "message": "நிலை"
+  },
+  "options_filterList_column_update": {
+    "message": "கடைசியாக புதுப்பிக்கப்பட்டது"
   },
   "options_filterList_lastDownload_connectionError": {
     "message": "தோல்வியடைந்தது, பதிவிறக்கம் தோல்வி"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "தோல்வி, செல்லத்தக்க இல்லை  முகவரி"
+    "message": "தோல்வி, செல்லத்தக்க இல்லை முகவரி"
+  },
+  "options_filterList_minutes": {
+    "message": "நிமிடங்கள் முன்பு"
+  },
+  "options_filterList_now": {
+    "message": "இப்போது"
   },
   "options_filterList_state_disabled": {
-    "message": "முடக்கப்பட்டத"
+    "message": "முடக்கப்பட்டது"
   },
   "options_filterList_title": {
     "message": "வடிகட்டி பட்டியல்கள்"
   },
   "options_filterList_updateNow": {
     "message": "இப்போது புதுப்பிக்கவும்"
+  },
+  "options_filterList_website": {
+    "message": "வலைத்தளம்"
+  },
+  "options_filters_search_or_add": {
+    "message": "தேடு / வடிகட்டி சேர் (எ.கா $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
   },
   "options_tab_general": {
     "message": "பொது"

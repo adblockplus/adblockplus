@@ -1,6 +1,6 @@
 {
   "filter_elemhideemulation_nodomain": {
-    "message": "Intet aktivt domæne er angivet til udvidet skjul elementer-filter"
+    "message": "Intet aktivt domæne angivet for udvidet elementskjulningsfilter"
   },
   "filter_invalid_csp": {
     "message": "Ugyldigt indhold iht. sikkerhedspolitik"
@@ -11,8 +11,11 @@
   "filter_invalid_regexp": {
     "message": "Ugyldigt søgemønster"
   },
+  "filter_snippet_nodomain": {
+    "message": "Intet aktivt domæne angivet for kodestykkefilter"
+  },
   "filter_unknown_option": {
-    "message": "Ukendt filter"
+    "message": "Ukendt filterindstilling"
   },
   "invalid_css_selector": {
     "message": "$selector$ er ikke en gyldig CSS-indikator",

@@ -11,11 +11,23 @@
   "enabled_for_site": {
     "message": "이 사이트에서 <strong>광고 차단을 사용</strong>합니다"
   },
+  "options_refresh": {
+    "message": "갱신"
+  },
   "options_short": {
     "message": "설정"
   },
+  "overlay_notification_closing_button_hide": {
+    "message": "닫기"
+  },
   "overlay_notification_closing_button_optout": {
     "message": "알림 표시를 중지합니다"
+  },
+  "sendReport": {
+    "message": "문제 보고"
+  },
+  "stats_header": {
+    "message": "차단된 광고의 수"
   },
   "stats_label_page": {
     "message": "이 페이지에서 <strong>$number$</strong> 개",
@@ -38,5 +50,8 @@
   },
   "stats_title": {
     "message": "차단된 광고"
+  },
+  "status_header": {
+    "message": "이 사이트에서 광고 차단을 사용합니다"
   }
 }

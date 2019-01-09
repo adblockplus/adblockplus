@@ -1,0 +1,32 @@
+{
+  "firstRun_browser_description": {
+    "message": "Fra gruppen bak Adblock Plus, den mest populære annonse blokkeren for nettlesere på datamaskinen. Adblock Browser er nå tilgjengelig for dine Android eller iOS enheter."
+  },
+  "firstRun_browser_store_android": {
+    "message": "Android applikasjoner fra Google Play"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "Tilgjengelig i iTunes App Store"
+  },
+  "firstRun_browser_title": {
+    "message": "Adblock Browser app"
+  },
+  "firstRun_control_title": {
+    "message": "Du har kontrollen"
+  },
+  "firstRun_subtitle": {
+    "message": "Du tok nettopp kontrollen over din nettleser."
+  },
+  "firstRun_title": {
+    "message": "Vellykket installasjon!"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "Dersom du fortsatt trenger hjelp, kontakt oss på <a0>support@adblockplus.org</a0> eller besøk vårt <a1>Hjelpesenterr</a1>."
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Lokaliser Adblock Plus og fjern den."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "Installer Adblock Plus på nytt fra <a>adblockplus.org</a>."
+  }
+}

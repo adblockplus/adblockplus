@@ -5,6 +5,18 @@
   "cancel": {
     "message": "Batal"
   },
+  "common_feature_anti_adblock_title": {
+    "message": "Sembunyikan Pesan Peringatan Adblock"
+  },
+  "common_feature_malware_title": {
+    "message": "Blokir Malware"
+  },
+  "common_feature_privacy_title": {
+    "message": "Blokir tambahan pelacakan"
+  },
+  "common_feature_social_title": {
+    "message": "Blokir pelacakan ikon sosial media"
+  },
   "common_notification_hide": {
     "message": "Tutup pemberitahuan"
   }

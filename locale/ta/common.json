@@ -4,5 +4,11 @@
   },
   "cancel": {
     "message": "ரத்து செய்"
+  },
+  "common_feature_malware_title": {
+    "message": "தீம்பொருள் தடை"
+  },
+  "common_notification_hide": {
+    "message": "அறிவிப்பை மூடு"
   }
 }

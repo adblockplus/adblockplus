@@ -23,6 +23,9 @@
   "overlay_notification_closing_button_optout": {
     "message": "Спри показването на известия"
   },
+  "sendReport": {
+    "message": "Докладвай недостатък"
+  },
   "stats_label_page": {
     "message": "<strong>$number$</strong> — в страницата",
     "placeholders": {

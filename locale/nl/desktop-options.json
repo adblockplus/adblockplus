@@ -45,7 +45,7 @@
     "message": "Opslaan"
   },
   "options_customFilters_description": {
-    "message": "Schrijf uw eigen aangepaste filters om verder te bepalen welke inhoud Adblock Plus toestaat of blokkeert. <a0>Info over het schrijven van filters</a0>"
+    "message": "Maak uw eigen filters om verder te bepalen welke inhoud Adblock Plus toestaat of blokkeert. <a0>Info over het maken van filters</a0>"
   },
   "options_customFilters_edit_placeholder": {
     "message": "bv. $filter$",
@@ -57,10 +57,10 @@
     }
   },
   "options_customFilters_learn": {
-    "message": "Info over het schrijven van filters"
+    "message": "Info over het maken van filters"
   },
   "options_customFilters_start": {
-    "message": "Beginnen met het schrijven van mijn filterlijst"
+    "message": "Beginnen met het maken van mijn filterlijst"
   },
   "options_customFilters_tip": {
     "message": "Hier verschijnen filters die u maakt."

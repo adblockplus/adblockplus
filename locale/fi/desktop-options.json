@@ -5,8 +5,14 @@
   "options_close": {
     "message": "sulje"
   },
+  "options_control_remove_title": {
+    "message": "poista"
+  },
   "options_customFilter_cancel": {
     "message": "Peruuta"
+  },
+  "options_customFilter_save": {
+    "message": "Tallenna"
   },
   "options_customize_showNotifications": {
     "message": "Näytä hyödylliset ilmoitukset"
@@ -23,14 +29,29 @@
   "options_filterList_column_status": {
     "message": "Tila"
   },
+  "options_filterList_hours": {
+    "message": "tuntia sitten"
+  },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Epäonnistui, tarkistussumma ei täsmää"
   },
   "options_filterList_lastDownload_connectionError": {
     "message": "Epäonnistui, latausvirhe"
   },
+  "options_filterList_lastDownload_inProgress": {
+    "message": "Päivitetään"
+  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Epäonnistui, kelvoton osoite"
+  },
+  "options_filterList_now": {
+    "message": "Juuri nyt"
+  },
+  "options_filterList_source": {
+    "message": "lähde"
+  },
+  "options_filterList_state_active": {
+    "message": "Aktiivinen"
   },
   "options_filterList_state_disabled": {
     "message": "Ei käytössä"
@@ -41,8 +62,20 @@
   "options_filterList_updateNow": {
     "message": "päivitä nyt"
   },
+  "options_filterList_website": {
+    "message": "sivusto"
+  },
   "options_language_header": {
     "message": "Kieli"
+  },
+  "options_learn_more": {
+    "message": "Lue lisää"
+  },
+  "options_more_filters_header": {
+    "message": "Lisää suodattimia"
+  },
+  "options_new_label": {
+    "message": "Uusi"
   },
   "options_page_document_title": {
     "message": "Asetukset"
@@ -50,8 +83,14 @@
   "options_page_title": {
     "message": "Asetukset"
   },
+  "options_privacy_header": {
+    "message": "Yksityisyys & tietoturva"
+  },
   "options_support_title": {
     "message": "Tuki"
+  },
+  "options_tab_advanced": {
+    "message": "Edistynyt"
   },
   "options_tab_general": {
     "message": "Yleiset"
@@ -61,5 +100,11 @@
   },
   "options_tab_whitelist": {
     "message": "Sallitut sivustot"
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "OK, asia selvä"
+  },
+  "options_whitelist_add": {
+    "message": "Lisää sivusto"
   }
 }

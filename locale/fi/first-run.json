@@ -1,0 +1,35 @@
+{
+  "firstRun_browser_store_android": {
+    "message": "Android sovellus Google Play:ssa"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "Saatavilla iTunes sovelluskaupasta"
+  },
+  "firstRun_browser_title": {
+    "message": "Adblock Browser sovellus"
+  },
+  "firstRun_control_title": {
+    "message": "Sinä päätät"
+  },
+  "firstRun_fair_title": {
+    "message": "Reilu käyttö"
+  },
+  "firstRun_footer_copyright": {
+    "message": "Copyright © $year$ Kaikki oikeudet pidätetään Adblock Plus® on rekisteröity <a0>eyeo GmbH</a0> tavaramerkki.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
+  "firstRun_title": {
+    "message": "Asennus onnistui!"
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Paikanna Adblock Plus ja poista se."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "Uudelleenasenna Adblock Plus osoitteesta <a>adblockplus.org</a>."
+  }
+}

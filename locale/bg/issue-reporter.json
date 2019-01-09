@@ -59,11 +59,17 @@
   "issueReporter_knownIssueMessage": {
     "message": "Докладваният недостатък вероятно е вече познат. За повече информация:"
   },
+  "issueReporter_markIssueButton_label": {
+    "message": "Отбележи недостатък"
+  },
   "issueReporter_page_title": {
     "message": "Докладчик на недостатък"
   },
   "issueReporter_privacyPolicy": {
     "message": "Политика на поверителност"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Избери недостатък"
   },
   "issueReporter_sendButton_label": {
     "message": "Изпрати доклада"
