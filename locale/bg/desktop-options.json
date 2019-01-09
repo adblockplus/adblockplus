@@ -80,6 +80,9 @@
   "options_customize_header": {
     "message": "Нагласяване"
   },
+  "options_customize_iconStats": {
+    "message": "Показывай броя блокирани реклами върху иконата"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "Показвай панел „Adblock Plus“ към инструментите за разработка"
   },

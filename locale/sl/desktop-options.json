@@ -90,7 +90,7 @@
     "message": "Pokaži blokirane in dovoljene predmete na plošči orodij za razvijalce vašega brskalnika."
   },
   "options_customize_showNotifications": {
-    "message": "Prikaži koristno  obvestila"
+    "message": "Prikaži koristna obvestila"
   },
   "options_customize_showNotifications_tooltip": {
     "message": "Dovoli obvestila dodatka Adblock Plus (obvestila o kritičnih težavah glede zmogljivosti bodo vedno prikazana)."
@@ -236,10 +236,10 @@
     "message": "spremeni"
   },
   "options_language_description": {
-    "message": "Optmizirajte Adblock Plus za jezike spletnih strani, ki si jih ogledujete."
+    "message": "Optimizirajte Adblock Plus za jezike spletnih strani, po katerih ponavadi brskate."
   },
   "options_language_empty": {
-    "message": "Nimate filtrov za posemezen jezik."
+    "message": "Nimate filtrov za posamezen jezik."
   },
   "options_language_header": {
     "message": "Jezik"
@@ -275,7 +275,7 @@
     "message": "Zaščitite svoje osebne podatke tako, da odstranite vse oblike sledenja z interneta, vključno z zbiralniki informacij."
   },
   "options_protection_social_tooltip": {
-    "message": "Ikone družbenih omrežij na spletnih straneh, ki jih obiščete, družbenim omrežjem omogočajo, da o vas ustvarijo profil glede na vaše navade brskanja - tudi če na njih ne kliknete. Skrivanje teh ikon bo zaščitilo vaš profil."
+    "message": "Ikone družbenih omrežij na spletnih straneh ki jih obiščete, družbenim omrežjem omogočajo, da o vas ustvarijo profil glede na vaše brskalne navade - tudi če nanje ne kliknete. Skrivanje teh ikon pomaga zaščititi vaš profil."
   },
   "options_report_bug": {
     "message": "Ste našli hrošča? <a>Pošiljite nam poročilo o hrošču.</a>"
@@ -305,7 +305,7 @@
     "message": "Dovoljene spletne strani"
   },
   "options_tracking_warning_1": {
-    "message": "Opatili smo, da imate omogočena tako <strong>$tracking$</strong> kot <strong>$acceptableAds$</strong>.",
+    "message": "Opazili smo, da imate omogočena tako <strong>$tracking$</strong> kot <strong>$acceptableAds$</strong>.",
     "placeholders": {
       "acceptableAds": {
         "content": "$2",

@@ -1,0 +1,8 @@
+{
+  "firstRun_browser_title": {
+    "message": "Ап Adblock Browser"
+  },
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "Някои потребители срещат проблем, че тази страница се отваря с всяко пускане на браузъра. Същият може да бъде разрешен чрез премахване и повторно инсталиране на Adblock Plus:"
+  }
+}

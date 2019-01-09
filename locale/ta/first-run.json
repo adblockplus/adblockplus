@@ -1,0 +1,32 @@
+{
+  "firstRun_browser_store_android": {
+    "message": "Google Play இல் Android பயன்பாடு"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "iTunes App Store இல் கிடைக்கிறது"
+  },
+  "firstRun_browser_title": {
+    "message": "Adblock Browser பயன்பாடு"
+  },
+  "firstRun_control_title": {
+    "message": "நீங்கள் கட்டுப்பாட்டில் உள்ளீர்கள்"
+  },
+  "firstRun_fair_title": {
+    "message": "நியாயமான பயன்பாடு"
+  },
+  "firstRun_subtitle": {
+    "message": "நீங்கள் உங்கள் உலாவி கட்டுப்பாட்டை இப்பொழுது எடுத்தீர்கள்."
+  },
+  "firstRun_title": {
+    "message": "நிறுவல் வெற்றி!"
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "உங்கள் உலாவி நீட்டிப்புகள் தாவலை திற."
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Adblock Plus கண்டுபிடி மற்றும் அதை அகற்றவும்."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "Adblock Plus -ஐ <a>adblockplus.org</a> இலிருந்து மறுநிறுவல் செய்யவும்."
+  }
+}

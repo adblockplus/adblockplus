@@ -4,5 +4,20 @@
   },
   "cancel": {
     "message": "Peruuta"
+  },
+  "common_feature_anti_adblock_title": {
+    "message": "Piilota Adblock varoitussanomat"
+  },
+  "common_feature_malware_title": {
+    "message": "Estä haittaohjelmat"
+  },
+  "common_feature_privacy_title": {
+    "message": "Estä muu seuranta"
+  },
+  "common_feature_social_title": {
+    "message": "Estä sosiaalisen median kuvakkeet"
+  },
+  "common_notification_hide": {
+    "message": "Sulje ilmoitus"
   }
 }

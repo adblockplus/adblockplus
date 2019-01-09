@@ -62,6 +62,9 @@
   "issueReporter_knownIssueMessage": {
     "message": "Seda probleemi tõenäoliselt juba teatakse. Rohkem infot:"
   },
+  "issueReporter_markIssueButton_label": {
+    "message": "Märgista viga"
+  },
   "issueReporter_page_title": {
     "message": "Probleemidest teatamine"
   },
@@ -90,9 +93,9 @@
     "message": "Näita teate andmeid"
   },
   "issueReporter_typeSelector_description": {
-    "message": "Antud aknas saab teatada Adblock Plusi probleemidest, tehes läbi vajalikud sammud. Kõigepealt tuleb valida probleemi liik, millega sa antud lehel kokku puutud:"
+    "message": "Palun vali vea tüüp:"
   },
   "issueReporter_typeSelector_heading": {
-    "message": "Vali probleemi liik"
+    "message": "Mis laadi probleemi sul esineb?"
   }
 }

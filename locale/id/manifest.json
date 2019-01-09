@@ -2,6 +2,9 @@
   "description": {
     "message": "Dengan lebih dari 500 juta unduh, Adblock Plus adalah salah satu pemblokir Iklan terpopuler di dunia."
   },
+  "name": {
+    "message": "Adblock Plus"
+  },
   "name_devbuild": {
     "message": "Membangun pengembangan Adblock Plus"
   }

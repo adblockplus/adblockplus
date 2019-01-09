@@ -149,6 +149,9 @@
   "options_filterList_lastDownload_inProgress": {
     "message": "업데이트중"
   },
+  "options_filterList_lastDownload_invalidData": {
+    "message": "실패함: 올바르지 않은 필터"
+  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "실패함 : 올바르지 않은 주소"
   },
@@ -265,6 +268,9 @@
   },
   "options_tab_whitelist": {
     "message": "허용 목록에 추가된 웹사이트"
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "네. 이해했습니다"
   },
   "options_whitelist_add": {
     "message": "웹사이트 추가"

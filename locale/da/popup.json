@@ -1,4 +1,7 @@
 {
+  "click_element_to_block_it": {
+    "message": "Klik på et element på siden for at blokere det."
+  },
   "clickhide_instructions": {
     "message": "Luk dette pop op-vindue, og klik (eller højreklik) derefter på et element på siden."
   },
@@ -11,11 +14,29 @@
   "enabled_for_site": {
     "message": "<strong>Aktiveret</strong> på dette websted"
   },
+  "options_refresh": {
+    "message": "Opdater"
+  },
   "options_short": {
     "message": "Indstillinger"
   },
+  "overlay_notification_closing_button_hide": {
+    "message": "Luk"
+  },
   "overlay_notification_closing_button_optout": {
     "message": "Vis ikke meddelelser"
+  },
+  "promote_abp_module": {
+    "message": "Interesseret i Adblock Plus på mobilen?"
+  },
+  "refresh_to_take_effect": {
+    "message": "Klik på <strong>Opdater</strong> for at ændringerne kan træde i kraft."
+  },
+  "sendReport": {
+    "message": "Rapportér et problem"
+  },
+  "stats_header": {
+    "message": "Antal elementer blokeret"
   },
   "stats_label_page": {
     "message": "<strong>$number$</strong> på denne side",
@@ -38,5 +59,8 @@
   },
   "stats_title": {
     "message": "Blokerede annoncer"
+  },
+  "status_header": {
+    "message": "Blokér annoncer på:"
   }
 }

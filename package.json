@@ -89,8 +89,8 @@
       "css": "stylelint ./css/*.scss ./skin/*.css --ignore-path .gitignore",
       "js": "eslint './*.js' './js/**/*.js' './lib/**/*.js' './ext/**/*.js' './build/**/*.js'",
       "locale": [
-        "echo 'locale-linter/test temporarily ignored' || node build/locale-linter/test",
-        "echo 'locale-linter temporarily ignored' || node build/locale-linter ./locale/**/*.json"
+        "node build/locale-linter/test",
+        "node build/locale-linter ./locale/**/*.json"
       ]
     },
     "test": {

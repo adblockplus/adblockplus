@@ -5,6 +5,9 @@
   "options_acceptableAds_header": {
     "message": "Akseptable annonser"
   },
+  "options_acceptableAds_privacy_label": {
+    "message": "Bare tillat annonser uten tredjeparts sporing"
+  },
   "options_close": {
     "message": "lukk"
   },
@@ -47,11 +50,26 @@
   "options_customFilters_widget_title": {
     "message": "Min filterliste"
   },
+  "options_customize_showDevToolsPanel": {
+    "message": "Vis \"Adblock Plus\"-panelet i utviklerverktøyene"
+  },
   "options_customize_showNotifications": {
     "message": "Vis nyttige varsler"
   },
   "options_dialog_about_title": {
     "message": "Om Adblock Plus"
+  },
+  "options_dialog_about_version": {
+    "message": "Versjonnummer $version$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "2.6.7"
+      }
+    }
+  },
+  "options_dialog_import_subscription_location_error": {
+    "message": "Angi en gyldig URL"
   },
   "options_dialog_import_title": {
     "message": "Legg til en filterliste"
@@ -131,6 +149,14 @@
   "options_filterList_website": {
     "message": "nettside"
   },
+  "options_filters_search_or_add": {
+    "message": "Søk / Legg til filter (f.eks. $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
+  },
   "options_footer_about": {
     "message": "Om Adblock Plus"
   },
@@ -148,6 +174,9 @@
   },
   "options_language_change": {
     "message": "endre"
+  },
+  "options_language_empty": {
+    "message": "Du har ingen språkspesifikke filtre."
   },
   "options_language_header": {
     "message": "Språk"
@@ -169,6 +198,12 @@
   },
   "options_privacy_header": {
     "message": "Personvern & sikkerhet"
+  },
+  "options_report_bug": {
+    "message": "Funnet en feil? <a>Send oss en feilrapport</a>"
+  },
+  "options_report_forum": {
+    "message": "Ønsker du støtte fra vårt fellesskap? <a>Besøk forumet</a>"
   },
   "options_social_description": {
     "message": "Har du et spørsmål eller en ny idé? Vi er her for å hjelpe."

@@ -1,5 +1,11 @@
 {
+  "description": {
+    "message": "Yli 500 miljoonalla latauksella Adblock Plus on yksi maailman tunnetuimmista mainoksenesto-ohjelmista."
+  },
+  "name": {
+    "message": "Adblock Plus"
+  },
   "name_devbuild": {
-    "message": "Adblock Plus kehittäjän versio"
+    "message": "Adblock Plus kehittäjäversio"
   }
 }

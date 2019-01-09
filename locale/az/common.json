@@ -4,5 +4,8 @@
   },
   "cancel": {
     "message": "Ləğv et"
+  },
+  "common_notification_hide": {
+    "message": "Bildirişi bağla"
   }
 }

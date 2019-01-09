@@ -1,11 +1,41 @@
 {
   "mops_acceptableAds_description": {
-    "message": "Allow some non-intrusive advertising"
+    "message": "சில தொல்லைபடுத்தாத விளம்பரங்களை மட்டும் காட்டவும்"
+  },
+  "mops_acceptableAds_more": {
+    "message": "மேலும் அறிக"
   },
   "mops_action_cancel": {
     "message": "ரத்து செய்"
   },
+  "mops_enabled_label": {
+    "message": "<strong>$domain$</strong> இல் Adblock Plus-ஐ இயக்கு",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_url": {
+    "message": "செல்லும் URL உள்ளிடு"
+  },
+  "mops_filterlist_add": {
+    "message": "+ ஒரு வடிகட்டி பட்டியல் சேர்"
+  },
+  "mops_filterlist_add_action": {
+    "message": "வடிகட்டி பட்டியல் சேர்"
+  },
+  "mops_header": {
+    "message": "Adblock Plus அமைப்புகள்"
+  },
+  "mops_subscribe_url": {
+    "message": "வடிகட்டி பட்டியல் URL"
+  },
   "mops_subscriptions_header": {
     "message": "வடிகட்டி சந்தாக்கள்"
+  },
+  "mops_title": {
+    "message": "Adblock Plus அமைப்புகள்"
   }
 }

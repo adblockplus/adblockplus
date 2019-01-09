@@ -11,6 +11,9 @@
   "notification_without_buttons": {
     "message": "Pulse en el aviso para abrir todos los enlaces que contiene."
   },
+  "overlay_notification_button_no": {
+    "message": "No"
+  },
   "overlay_notification_button_yes": {
     "message": "Sí"
   }

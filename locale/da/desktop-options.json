@@ -45,7 +45,7 @@
     "message": "Gem"
   },
   "options_customFilters_description": {
-    "message": "Skriv dine egne brugerdefinerede filtre til yderligere kontrol af indhold, som Adblock Plus tillader eller blokerer."
+    "message": "Opret dine egne brugerdefinerede filtre til yderligere kontrol af indhold, som Adblock Plus tillader eller blokerer. <a0>Se, hvordan du opretter filtre</a0>"
   },
   "options_customFilters_edit_placeholder": {
     "message": "f.eks. $filter$",
@@ -57,10 +57,10 @@
     }
   },
   "options_customFilters_learn": {
-    "message": "Lær at skrive filterlister"
+    "message": "Se, hvordan du opretter filtre"
   },
   "options_customFilters_start": {
-    "message": "Begynd at skrive min filterliste"
+    "message": "Opret din egen filterliste"
   },
   "options_customFilters_tip": {
     "message": "Filtre du opretter vil dukke op her."
@@ -77,6 +77,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "Bloker midlertidigt irriterende elementer på en webside, f.eks. billeder eller animerede slideshows."
   },
+  "options_customize_header": {
+    "message": "Tilpasning"
+  },
+  "options_customize_iconStats": {
+    "message": "Vis antal blokerede annoncer i ikon"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "Vis Adblock Plus-panel i udviklingsværktøjer"
   },
@@ -85,6 +91,9 @@
   },
   "options_customize_showNotifications": {
     "message": "Vis nyttige meddelelser"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Tillad underretninger fra Adblock Plus (underretninger relateret til kritiske fejl vises altid)."
   },
   "options_dialog_about_copyright": {
     "message": "Copyright © $currentYear$ eyeo GmbH.",
@@ -199,6 +208,14 @@
   },
   "options_filterList_website": {
     "message": "websted"
+  },
+  "options_filters_search_or_add": {
+    "message": "Find/tilføj filter (f.eks. $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
   },
   "options_footer_about": {
     "message": "Om Adblock Plus"

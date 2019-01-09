@@ -15,7 +15,7 @@
     "message": "Opmerking toevoegen"
   },
   "issueReporter_comment_description": {
-    "message": "In het onderstaande tekstveld kunt u een opmerking toevoegen om ons te helpen het probleem te begrijpen. Deze stap is optioneel, maar wordt aanbevolen als het probleem niet duidelijk is. U kunt de rapportgegevens ook nakijken voordat u het rapport verstuurt."
+    "message": "Help ons het probleem beter te begrijpen door hieronder een opmerking toe te voegen."
   },
   "issueReporter_comment_label": {
     "message": "Opmerking (optioneel):"
@@ -48,7 +48,7 @@
     "message": "Ik zie nog steeds advertenties"
   },
   "issueReporter_falsePositive_description": {
-    "message": "Deze pagina wordt niet goed weergegeven, functioneert niet of lijkt belangrijke inhoud te missen."
+    "message": "De pagina wordt niet goed weergegeven, functioneert niet of lijkt belangrijke inhoud te missen."
   },
   "issueReporter_falsePositive_label": {
     "message": "De pagina die ik probeer te bekijken werkt niet"

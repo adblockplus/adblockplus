@@ -1,0 +1,17 @@
+{
+  "updates_heading": {
+    "message": "Adblock Plus on päivitetty!"
+  },
+  "updates_optionsPageNews": {
+    "message": "Upouusi asetussivu - uudistettu yksityisyys- ja tietoturva-asetukset - joten on helpompaa <a>mukauttaa Adblock Plus juuri niin kuin haluat</a>."
+  },
+  "updates_phone": {
+    "message": "Mutta odota! Entä puhelimesi?"
+  },
+  "updates_status": {
+    "message": "Päivitys suoritettu"
+  },
+  "updates_subheading": {
+    "message": "Mitä uutta?"
+  }
+}
