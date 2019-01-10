@@ -89,7 +89,8 @@ getTab.then(tab =>
 })
 .then(tab =>
 {
-  const hostname = new URL(tab.url).hostname.replace(/^www\./, "");
+  const {url} = tab;
+  const hostname = url ? new URL(url).hostname.replace(/^www\./, "") : "";
   $("#blocking-domain").textContent = hostname;
   $("#issue-reporter").addEventListener(
     "click", () => reportIssue(tab)
