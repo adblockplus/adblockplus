@@ -3,7 +3,7 @@ image: python:2
 before_script:
   - apt-get update -yqq
   - apt-get install apt-transport-https
-  - curl -sL https://deb.nodesource.com/setup_8.x | bash -
+  - curl -sL https://deb.nodesource.com/setup_10.x | bash -
   - apt-get update -yqq
   - apt-get install -yqq nodejs
   - npm install -g install-peerdeps
