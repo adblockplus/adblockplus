@@ -99,7 +99,7 @@
     "message": ".eyeo GmbH $currentYear$ © זכויות יוצרים",
     "placeholders": {
       "currentYear": {
-        "content": "2017",
+        "content": "$1",
         "example": "2017"
       }
     }

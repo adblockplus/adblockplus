@@ -75,7 +75,7 @@
     "message": "Πνευματικά δικαιώματα © $currentYear$ eyeo GmbH.",
     "placeholders": {
       "currentYear": {
-        "content": "2017",
+        "content": "$1",
         "example": "2017"
       }
     }
