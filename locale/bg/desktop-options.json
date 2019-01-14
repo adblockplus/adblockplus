@@ -96,7 +96,7 @@
     "message": "Авторски права © eyeo GmbH, $currentYear$ г.",
     "placeholders": {
       "currentYear": {
-        "content": "2017",
+        "content": "$1",
         "example": "2017"
       }
     }

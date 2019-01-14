@@ -75,7 +75,7 @@
     "message": "Copyright © $currentYear$ eyeo GmbH 저작권 소유.",
     "placeholders": {
       "currentYear": {
-        "content": "2017",
+        "content": "$1",
         "example": "2017"
       }
     }
