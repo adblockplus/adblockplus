@@ -110,7 +110,7 @@ class IOFilterTable extends IOElement
       errors ?
         errors.join("\n") :
         {i18n: "filter_action_failed"}
-    }}`;
+    }`;
   }
 
   onerrorclick(event)
