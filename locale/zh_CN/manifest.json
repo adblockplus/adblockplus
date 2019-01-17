@@ -5,6 +5,9 @@
   "name": {
     "message": "Adblock Plus"
   },
+  "name_releasebuild": {
+    "message": "Adblock Plus - 的免费广告拦截程序"
+  },
   "name_devbuild": {
     "message": "Adblock Plus 开发版"
   }

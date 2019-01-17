@@ -2,6 +2,9 @@
   "description": {
     "message": "Mit über 500 Millionen Downloads ist Adblock Plus einer der beliebtesten Adblocker der Welt."
   },
+  "name_releasebuild": {
+    "message": "Adblock Plus - kostenloser Adblocker"
+  },
   "name_devbuild": {
     "message": "Adblock Plus (Entwicklungsversion)"
   }

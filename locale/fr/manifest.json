@@ -5,6 +5,9 @@
   "name": {
     "message": "Adblock Plus"
   },
+  "name_releasebuild": {
+    "message": "Adblock Plus - bloqueur de publicités gratuit"
+  },
   "name_devbuild": {
     "message": "Version de développement d'Adblock Plus"
   }
