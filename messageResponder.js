@@ -24,7 +24,7 @@
   const {port} = require("messaging");
   const {Prefs} = require("prefs");
   const {Utils} = require("utils");
-  const {FilterStorage} = require("filterStorage");
+  const {filterStorage} = require("filterStorage");
   const {filterNotifier} = require("filterNotifier");
   const {defaultMatcher} = require("matcher");
   const {Notification: NotificationStorage} = require("notification");
@@ -72,7 +72,7 @@
                                "softExpiration", "expires", "title",
                                "url"], subscription);
     if (subscription instanceof SpecialSubscription)
-      obj.filters = subscription.filters.map(convertFilter);
+      obj.filters = Array.from(subscription.filters()).map(convertFilter);
     obj.isDownloading = Synchronizer.isExecuting(subscription.url);
     return obj;
   }
@@ -187,7 +187,7 @@
     if ("homepage" in properties)
       subscription.homepage = properties.homepage;
 
-    FilterStorage.addSubscription(subscription);
+    filterStorage.addSubscription(subscription);
     if (subscription instanceof DownloadableSubscription &&
         !subscription.lastDownload)
       Synchronizer.execute(subscription);
@@ -295,7 +295,7 @@
     if (!subscription)
       return [];
 
-    return subscription.filters.map(convertFilter);
+    return Array.from(subscription.filters()).map(convertFilter);
   });
 
   port.on("filters.importRaw", (message, sender) =>
@@ -314,26 +314,28 @@
     const seenFilter = Object.create(null);
     for (const filter of result.filters)
     {
-      FilterStorage.addFilter(filter);
+      filterStorage.addFilter(filter);
       seenFilter[filter.text] = null;
     }
 
     if (!message.removeExisting)
       return errors;
 
-    for (const subscription of FilterStorage.subscriptions)
+    for (const subscription of filterStorage.subscriptions())
     {
       if (!(subscription instanceof SpecialSubscription))
         continue;
 
-      for (let j = subscription.filters.length - 1; j >= 0; j--)
+      // We have to iterate backwards for now due to
+      // https://issues.adblockplus.org/ticket/7152
+      for (let i = subscription.filterCount; i--;)
       {
-        const filter = subscription.filters[j];
+        const filter = subscription.filterAt(i);
         if (/^@@\|\|([^/:]+)\^\$document$/.test(filter.text))
           continue;
 
         if (!(filter.text in seenFilter))
-          FilterStorage.removeFilter(filter);
+          filterStorage.removeFilter(filter);
       }
     }
 
@@ -416,46 +418,46 @@
 
   port.on("subscriptions.get", (message, sender) =>
   {
-    const subscriptions = FilterStorage.subscriptions.filter((s) =>
+    const subscriptions = [];
+    for (const s of filterStorage.subscriptions())
     {
       if (message.ignoreDisabled && s.disabled)
-        return false;
-      if (s instanceof DownloadableSubscription && message.downloadable)
-        return true;
-      if (s instanceof SpecialSubscription && message.special)
-        return true;
-      return false;
-    });
+        continue;
 
-    return subscriptions.map((s) =>
-    {
-      const result = convertSubscription(s);
+      if (message.downloadable && !(s instanceof DownloadableSubscription))
+        continue;
+
+      if (message.special && !(s instanceof SpecialSubscription))
+        continue;
+
+      const subscription = convertSubscription(s);
       if (message.disabledFilters)
       {
-        result.disabledFilters = s.filters
-                      .filter((f) => f instanceof ActiveFilter && f.disabled)
-                      .map((f) => f.text);
+        subscription.disabledFilters = Array.from(s.filters())
+          .filter((f) => f instanceof ActiveFilter && f.disabled)
+          .map((f) => f.text);
       }
-      return result;
-    });
+      subscriptions.push(subscription);
+    }
+    return subscriptions;
   });
 
   port.on("subscriptions.remove", (message, sender) =>
   {
     const subscription = Subscription.fromURL(message.url);
-    if (FilterStorage.knownSubscriptions.has(subscription.url))
-      FilterStorage.removeSubscription(subscription);
+    if (filterStorage.knownSubscriptions.has(subscription.url))
+      filterStorage.removeSubscription(subscription);
   });
 
   port.on("subscriptions.toggle", (message, sender) =>
   {
     const subscription = Subscription.fromURL(message.url);
-    if (FilterStorage.knownSubscriptions.has(subscription.url))
+    if (filterStorage.knownSubscriptions.has(subscription.url))
     {
       if (subscription.disabled || message.keepInstalled)
         subscription.disabled = !subscription.disabled;
       else
-        FilterStorage.removeSubscription(subscription);
+        filterStorage.removeSubscription(subscription);
     }
     else
     {
@@ -465,7 +467,7 @@
 
   port.on("subscriptions.update", (message, sender) =>
   {
-    let {subscriptions} = FilterStorage;
+    let {subscriptions} = filterStorage;
     if (message.url)
       subscriptions = [Subscription.fromURL(message.url)];
 
