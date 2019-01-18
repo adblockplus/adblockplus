@@ -212,7 +212,17 @@
       else if (info.platform == "gecko")
         application = "firefox";
 
-      return Utils.getDocLink(message.link.replace("{browser}", application));
+      const link = Utils.getDocLink(
+        message.link.replace("{browser}", application)
+      );
+
+      // Edge 42 does not always return the link as given by Utils.getDocLink,
+      // for some reason .toString() is enough to get it working. This seems
+      // to have been fixed in Edge 44. (See issue 7222.)
+      if (info.platform == "edgehtml")
+        return link.toString();
+
+      return link;
     }
 
     if (message.what == "localeInfo")
