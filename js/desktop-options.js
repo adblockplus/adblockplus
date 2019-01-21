@@ -120,9 +120,9 @@ Collection.prototype._sortItems = function()
     // disabled, but only be removed. That way it's grouped together with
     // the "Own filter list" which cannot be disabled either at the bottom
     // of the filter lists in the Advanced tab.
-    if (isAcceptableAds(a.url))
+    if (a.url && isAcceptableAds(a.url))
       return 1;
-    if (isAcceptableAds(b.url))
+    if (b.url && isAcceptableAds(b.url))
       return -1;
 
     // Make sure that newly added entries always appear on top in descending
