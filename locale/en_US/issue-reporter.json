@@ -21,6 +21,9 @@
   "issueReporter_comment_label": {
     "message": "Comment (optional):"
   },
+  "issueReporter_config_label": {
+    "message": "Include information about my browser configuration, as well as a list of active extensions I'm using."
+  },
   "issueReporter_confirmationMessage": {
     "message": "Your report has been saved. You can access it at the following address:"
   },

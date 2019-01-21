@@ -24,6 +24,15 @@ const reportData = new DOMParser().parseFromString("<report></report>",
 let dataGatheringTabId = null;
 let isMinimumTimeMet = false;
 
+function getOriginalTabId()
+{
+  const tabId = parseInt(location.search.replace(/^\?/, ""), 10);
+  if (!tabId && tabId !== 0)
+    throw new Error("invalid tab id");
+
+  return tabId;
+}
+
 port.onMessage.addListener((message) =>
 {
   switch (message.type)
@@ -89,20 +98,26 @@ module.exports = {
   closeRequestsCollectingTab,
   collectData()
   {
-    const tabId = parseInt(location.search.replace(/^\?/, ""), 10);
-
-    if (!tabId && tabId !== 0)
-      return Promise.reject(new Error("invalid tab id"));
+    let tabId;
+    try
+    {
+      tabId = getOriginalTabId();
+    }
+    catch (ex)
+    {
+      return Promise.reject(ex);
+    }
 
     return Promise.all([
       retrieveAddonInfo(),
       retrieveApplicationInfo(),
       retrievePlatformInfo(),
-      retrieveTabURL(tabId),
+      retrieveWindowInfo(tabId),
       collectRequests(tabId),
       retrieveSubscriptions()
     ]).then(() => reportData);
-  }
+  },
+  updateConfigurationInfo
 };
 
 function collectRequests(tabId)
@@ -199,32 +214,64 @@ function retrieveApplicationInfo()
 function retrievePlatformInfo()
 {
   const element = reportData.createElement("platform");
-  return browser.runtime.sendMessage({
-    type: "app.get",
-    what: "platform"
-  }).then(platform =>
-  {
-    element.setAttribute("name", capitalize(platform));
-    return browser.runtime.sendMessage({
+  const {getBrowserInfo, sendMessage} = browser.runtime;
+  return Promise.all([
+    // Only Firefox supports browser.runtime.getBrowserInfo()
+    (getBrowserInfo) ? getBrowserInfo() : null,
+    sendMessage({
+      type: "app.get",
+      what: "platform"
+    }),
+    sendMessage({
       type: "app.get",
       what: "platformVersion"
-    });
-  }).then(platformVersion =>
+    })
+  ])
+  .then(([browserInfo, platform, platformVersion]) =>
   {
+    if (browserInfo)
+    {
+      element.setAttribute("build", browserInfo.buildID);
+    }
+    element.setAttribute("name", capitalize(platform));
     element.setAttribute("version", platformVersion);
     reportData.documentElement.appendChild(element);
   });
 }
 
-function retrieveTabURL(tabId)
+function retrieveWindowInfo(tabId)
 {
-  return browser.tabs.get(tabId).then(tab =>
-  {
-    const element = reportData.createElement("window");
-    if (tab.url)
-      element.setAttribute("url", censorURL(tab.url));
-    reportData.documentElement.appendChild(element);
-  });
+  return browser.tabs.get(tabId)
+    .then((tab) =>
+    {
+      let openerUrl = null;
+      if (tab.openerTabId)
+      {
+        openerUrl = browser.tabs.get(tab.openerTabId)
+          .then((openerTab) => openerTab.url);
+      }
+
+      const referrerUrl = browser.tabs.executeScript(tabId, {
+        code: "document.referrer"
+      })
+      .then(([referrer]) => referrer);
+
+      return Promise.all([tab.url, openerUrl, referrerUrl]);
+    })
+    .then(([url, openerUrl, referrerUrl]) =>
+    {
+      const element = reportData.createElement("window");
+      if (openerUrl)
+      {
+        element.setAttribute("opener", censorURL(openerUrl));
+      }
+      if (referrerUrl)
+      {
+        element.setAttribute("referrer", censorURL(referrerUrl));
+      }
+      element.setAttribute("url", censorURL(url));
+      reportData.documentElement.appendChild(element);
+    });
 }
 
 function retrieveSubscriptions()
@@ -274,6 +321,238 @@ function retrieveSubscriptions()
       element.appendChild(subscriptionElement);
     }
     reportData.documentElement.appendChild(element);
+  });
+}
+
+function setConfigurationInfo(configInfo)
+{
+  let extensionsContainer = reportData.querySelector("extensions");
+  let optionsContainer = reportData.querySelector("options");
+
+  if (!configInfo)
+  {
+    if (extensionsContainer)
+    {
+      extensionsContainer.parentNode.removeChild(extensionsContainer);
+    }
+    if (optionsContainer)
+    {
+      optionsContainer.parentNode.removeChild(optionsContainer);
+    }
+    return;
+  }
+
+  if (!extensionsContainer)
+  {
+    extensionsContainer = reportData.createElement("extensions");
+    reportData.documentElement.appendChild(extensionsContainer);
+  }
+  if (!optionsContainer)
+  {
+    optionsContainer = reportData.createElement("options");
+    reportData.documentElement.appendChild(optionsContainer);
+  }
+
+  extensionsContainer.innerHTML = "";
+  optionsContainer.innerHTML = "";
+
+  const {extensions, options} = configInfo;
+
+  for (const id in options)
+  {
+    const element = reportData.createElement("option");
+    element.setAttribute("id", id);
+    element.textContent = options[id];
+    optionsContainer.appendChild(element);
+  }
+
+  for (const extension of extensions)
+  {
+    const element = reportData.createElement("extension");
+    element.setAttribute("id", extension.id);
+    element.setAttribute("name", extension.name);
+    element.setAttribute("type", extension.type);
+    if (extension.version)
+    {
+      element.setAttribute("version", extension.version);
+    }
+    extensionsContainer.appendChild(element);
+  }
+}
+
+// Chrome doesn't update the JavaScript context to reflect changes in the
+// extension's permissions so we need to proxy our calls through a frame that
+// loads after we request the necessary permissions
+// https://bugs.chromium.org/p/chromium/issues/detail?id=594703
+function proxyApiCall(apiId, ...args)
+{
+  return new Promise((resolve) =>
+  {
+    const iframe = document.createElement("iframe");
+    iframe.hidden = true;
+    iframe.src = browser.runtime.getURL("proxy.html");
+    iframe.onload = () =>
+    {
+      function callback(...results)
+      {
+        document.body.removeChild(iframe);
+        resolve(results[0]);
+      }
+
+      const api = iframe.contentWindow.chrome || iframe.contentWindow.browser;
+      switch (apiId)
+      {
+        case "contentSettings.cookies":
+          if ("contentSettings" in browser)
+          {
+            // This API is injected at runtime so we can't rely on our
+            // promise polyfill and therefore only support callbacks
+            browser.contentSettings.cookies.get(...args, callback);
+          }
+          else if ("contentSettings" in api)
+          {
+            api.contentSettings.cookies.get(...args, callback);
+          }
+          else
+          {
+            callback(null);
+          }
+          break;
+        case "contentSettings.javascript":
+          if ("contentSettings" in browser)
+          {
+            // This API is injected at runtime so we can't rely on our
+            // promise polyfill and therefore only support callbacks
+            browser.contentSettings.javascript.get(...args, callback);
+          }
+          else if ("contentSettings" in api)
+          {
+            api.contentSettings.javascript.get(...args, callback);
+          }
+          else
+          {
+            callback(null);
+          }
+          break;
+        case "management.getAll":
+          if ("getAll" in browser.management)
+          {
+            // This API is injected at runtime so we can't rely on our
+            // promise polyfill and therefore only support callbacks
+            browser.management.getAll(...args, callback);
+          }
+          else if ("getAll" in api.management)
+          {
+            api.management.getAll(...args, callback);
+          }
+          else
+          {
+            callback(null);
+          }
+          break;
+      }
+    };
+    document.body.appendChild(iframe);
+  });
+}
+
+function retrieveExtensions()
+{
+  return proxyApiCall("management.getAll")
+    .then((installed) =>
+    {
+      const extensions = [];
+
+      for (const extension of installed)
+      {
+        if (!extension.enabled || extension.type != "extension")
+          continue;
+
+        extensions.push({
+          id: extension.id,
+          name: extension.name,
+          type: "extension",
+          version: extension.version
+        });
+      }
+
+      const {plugins} = navigator;
+      for (const plugin of plugins)
+      {
+        extensions.push({
+          id: plugin.filename,
+          name: plugin.name,
+          type: "plugin"
+        });
+      }
+
+      return extensions;
+    })
+    .catch((err) =>
+    {
+      console.error("Could not retrieve list of extensions");
+      return [];
+    });
+}
+
+function retrieveOptions()
+{
+  // Firefox doesn't support browser.contentSettings API
+  if (!("contentSettings" in browser))
+    return Promise.resolve({});
+
+  let tabId;
+  try
+  {
+    tabId = getOriginalTabId();
+  }
+  catch (ex)
+  {
+    return Promise.reject(ex);
+  }
+
+  return browser.tabs.get(tabId)
+    .then((tab) =>
+    {
+      const details = {primaryUrl: tab.url, incognito: tab.incognito};
+
+      return Promise.all([
+        proxyApiCall("contentSettings.cookies", details),
+        proxyApiCall("contentSettings.javascript", details),
+        tab.incognito
+      ]);
+    })
+    .then(([cookies, javascript, incognito]) =>
+    {
+      return {
+        cookieBehavior: cookies.setting == "allow" ||
+          cookies.setting == "session_only",
+        javascript: javascript.setting == "allow",
+        privateBrowsing: incognito
+      };
+    })
+    .catch((err) =>
+    {
+      console.error("Could not retrieve configuration options");
+      return {};
+    });
+}
+
+function updateConfigurationInfo(isAccessible)
+{
+  if (!isAccessible)
+  {
+    setConfigurationInfo(null);
+    return Promise.resolve();
+  }
+
+  return Promise.all([
+    retrieveExtensions(),
+    retrieveOptions()
+  ])
+  .then(([extensions, options]) =>
+  {
+    setConfigurationInfo({extensions, options});
   });
 }
 

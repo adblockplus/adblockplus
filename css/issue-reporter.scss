@@ -198,6 +198,11 @@ html[dir="rtl"] #typeSelectorGroup > p
   flex-grow: 1;
 }
 
+#showData
+{
+  margin: 0;
+}
+
 #showDataValue
 {
   overflow: auto;
@@ -471,8 +476,8 @@ body[data-page="commentPage"] #continue
   font-size: 0.9rem;
 }
 
-#typeSelectorGroup input[type="radio"],
-#anonymousSubmission
+input[type="checkbox"],
+input[type="radio"]
 {
   vertical-align: top;
 }

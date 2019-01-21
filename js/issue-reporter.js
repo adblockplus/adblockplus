@@ -21,6 +21,26 @@ const stepsManager = require("./issue-reporter-steps-manager");
 const report = require("./issue-reporter-report");
 const {$, asIndentedString} = require("./dom");
 
+const optionalPermissions = {
+  permissions: [
+    "contentSettings",
+    "management"
+  ]
+};
+
+function containsPermissions()
+{
+  // Firefox doesn't trigger the promise's catch() but instead throws
+  try
+  {
+    return browser.permissions.contains(optionalPermissions);
+  }
+  catch (ex)
+  {
+    return Promise.reject(ex);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () =>
 {
   ext.i18n.setElementLinks(
@@ -88,6 +108,49 @@ document.addEventListener("DOMContentLoaded", () =>
       $("io-steps").setCompleted(-1, true);
     });
   });
+
+  // We query our permissions here to find out whether the browser supports them
+  containsPermissions()
+    .then(() =>
+    {
+      const includeConfig = $("#includeConfig");
+      includeConfig.addEventListener("change", (event) =>
+      {
+        if (!includeConfig.checked)
+        {
+          report.updateConfigurationInfo(false);
+          return;
+        }
+
+        event.preventDefault();
+
+        browser.permissions.request(optionalPermissions)
+          .then((granted) =>
+          {
+            return report.updateConfigurationInfo(granted)
+              .then(() =>
+              {
+                includeConfig.checked = granted;
+              });
+          })
+          // Catch error here already to ensure permission is removed
+          // even if we are unable to update the report data
+          .catch(console.error)
+          .then(() => browser.permissions.remove(optionalPermissions))
+          .then((success) =>
+          {
+            if (!success)
+              throw new Error("Failed to remove permissions");
+          })
+          .catch(console.error);
+      });
+    })
+    .catch((err) =>
+    {
+      // No need to ask for more data if we won't be able to access it anyway
+      const includeConfig = $("#includeConfigContainer");
+      includeConfig.hidden = true;
+    });
 
   const showDataOverlay = $("#showDataOverlay");
   $("#showData").addEventListener("click", event =>

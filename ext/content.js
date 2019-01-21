@@ -110,6 +110,53 @@
   }
   ext._Port.prototype.postMessage = postMessage;
 
+  // This API is injected at runtime so we can't rely on our promise polyfill
+  // and therefore only support callbacks
+  browser.contentSettings = {
+    cookies: {
+      get(details, callback)
+      {
+        callback({setting: "allow"});
+      }
+    },
+    javascript: {
+      get(details, callback)
+      {
+        callback({setting: "allow"});
+      }
+    }
+  };
+
+  // This API is injected at runtime so we can't rely on our promise polyfill
+  // and therefore only support callbacks
+  browser.management = {
+    getAll(callback)
+    {
+      callback([
+        {
+          enabled: true,
+          id: "cfhdojbkjhnklbpkdaibdccddilifddb",
+          name: "Adblock Plus",
+          type: "extension",
+          version: "3.4"
+        }
+      ]);
+    }
+  };
+
+  browser.permissions = {
+    request(opts)
+    {
+      const granted = confirm(`Grant permissions?\n${opts.permissions}`);
+      return Promise.resolve(granted);
+    },
+
+    remove(opts)
+    {
+      return Promise.resolve(true);
+    }
+  };
+
   function connect({name})
   {
     const id = ++portId;
@@ -119,7 +166,26 @@
   }
   browser.runtime.connect = connect;
 
-  const getTab = (url) => ({id: ++tabCounter, url});
+  function getBrowserInfo()
+  {
+    return Promise.resolve({
+      name: "adblockplusfirefox",
+      buildID: "20161018004015"
+    });
+  }
+  browser.runtime.getBrowserInfo = getBrowserInfo;
+
+  browser.runtime.getURL = (path) => path;
+
+  function getTab(url)
+  {
+    return {
+      id: ++tabCounter,
+      incognito: false,
+      openerTabId: 1,
+      url
+    };
+  }
 
   let tabCounter = 0;
   let activeTab = getTab("https://example.com/");
@@ -151,6 +217,14 @@
 
     return Promise.resolve(tab);
   };
+
+  function executeScript()
+  {
+    return Promise.resolve([
+      "https://example.com/referrer"
+    ]);
+  }
+  browser.tabs.executeScript = executeScript;
 
   browser.tabs.get = (tabId) =>
   {

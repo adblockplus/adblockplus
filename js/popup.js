@@ -55,23 +55,7 @@ Promise.all([
   dataset.application = application;
 });
 
-// create the tab object once at the right time
-// and make it available per each getTab.then(...)
-const getTab = new Promise(
-  resolve =>
-  {
-    document.addEventListener("DOMContentLoaded", () =>
-    {
-      browser.tabs.query({active: true, lastFocusedWindow: true})
-        .then(tabs =>
-        {
-          resolve({id: tabs[0].id, url: tabs[0].url});
-        });
-    });
-  }
-);
-
-getTab.then(tab =>
+activeTab.then(tab =>
 {
   const urlProtocol = tab.url && new URL(tab.url).protocol;
   if (/^https?:$/.test(urlProtocol))
