@@ -94,7 +94,7 @@ class IOFilterTable extends IOElement
   {
     if (event.target.closest("io-checkbox"))
     {
-      this.footer.classList.toggle("visible", !!this.list.selected.size);
+      this.updateFooter();
     }
   }
 
@@ -142,6 +142,7 @@ class IOFilterTable extends IOElement
           () => updateList(this.list),
           (errors) => this.onerror({detail: {errors}})
         );
+        this.updateFooter();
         break;
       case classList.contains("copy"):
         const filters = [];
@@ -199,6 +200,7 @@ class IOFilterTable extends IOElement
         updateList(this.list);
         this.list.scrollTo(this.filters[0]);
         this.search.value = "";
+        this.updateFooter();
       }
       else
       {
@@ -252,6 +254,12 @@ class IOFilterTable extends IOElement
         data-call="onerrorclick"
       ></button>
     `;
+    this.updateFooter();
+  }
+
+  updateFooter()
+  {
+    this.footer.classList.toggle("visible", !!this.filters.length);
   }
 }
 
