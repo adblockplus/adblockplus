@@ -391,18 +391,23 @@ class IOFilterList extends IOElement
   // not when it's clicked
   onchange(event)
   {
-    const td = event.currentTarget.closest("td");
+    const {currentTarget} = event;
+    const td = currentTarget.closest("td");
     if (td.dataset.column === "status")
     {
+      const checkbox = currentTarget.closest("io-toggle");
       const filter = getFilter(event);
-      filter.disabled = !filter.disabled;
+      filter.disabled = !checkbox.checked;
       browser.runtime.sendMessage({
         type: "filters.toggle",
         text: filter.text,
         disabled: filter.disabled
       });
     }
-    this.render();
+    else
+    {
+      this.render();
+    }
   }
 
   postRender(list)
