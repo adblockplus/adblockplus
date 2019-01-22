@@ -108,7 +108,7 @@ class IOFilterSearch extends IOElement
   onclick()
   {
     if (this.value)
-      dispatch.call(this, "filter:add", this.value);
+      addFilter.call(this, this.value);
   }
 
   ondrop(event)
@@ -139,10 +139,16 @@ class IOFilterSearch extends IOElement
   onkeyup()
   {
     const {match, value} = this;
+    // clear on backspace
+    if (!value.length)
+    {
+      this.value = "";
+      return;
+    }
     // no match means don't validate
     // but also multi line (paste on old browsers)
     // shouldn't pass through this logic (filtered later on)
-    if (!match || !value || value.includes("\n"))
+    if (!match || value.includes("\n"))
       return;
     clearTimeout(this._timer);
     // debounce the search to avoid degrading
@@ -159,7 +165,10 @@ class IOFilterSearch extends IOElement
   onpaste(event)
   {
     const clipboardData = event.clipboardData || window.clipboardData;
-    addFilter.call(this, clipboardData.getData("text"));
+    const data = clipboardData.getData("text").trim();
+    // do not automatically paste on single line
+    if (isMultiLine(data))
+      addFilter.call(this, data);
   }
 
   render()
@@ -186,14 +195,34 @@ module.exports = IOFilterSearch;
 
 function addFilter(data)
 {
-  const value = data.trim();
+  let value = data.trim();
   if (!value)
     return;
-  const result = search.call(this, value);
-  if (result.accuracy < 1)
+
+  if (value[0] === "[")
+  {
+    const message = browser.i18n.getMessage("unexpected_filter_list_header");
+    dispatch.call(this, "filter:error", {
+      errors: [message]
+    });
+    value = value.replace(/^\S+/, "").trim();
+    if (!value)
+      return;
+  }
+
+  // in case of multi line don't bother the search
+  if (isMultiLine(value))
+  {
     dispatch.call(this, "filter:add", value);
-  else if (result.accuracy)
-    dispatch.call(this, "filter:match", result);
+  }
+  else
+  {
+    const result = search.call(this, value);
+    if (result.accuracy < 1)
+      dispatch.call(this, "filter:add", value);
+    else if (result.accuracy)
+      dispatch.call(this, "filter:match", result);
+  }
 }
 
 function dispatch(type, detail)
@@ -204,6 +233,11 @@ function dispatch(type, detail)
 function hasValue(filter)
 {
   return filter.text == this;
+}
+
+function isMultiLine(data)
+{
+  return /[\r\n]/.test(data.trim());
 }
 
 function search(value)
