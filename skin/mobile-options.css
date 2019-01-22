@@ -207,7 +207,7 @@ button.remove
   height: 36px;
   padding: 0;
   background-color: #099DD1;
-  mask: url(mobile/trash.svg) center/19px no-repeat;
+  mask: url(icons/mobile/trash.svg) center/19px no-repeat;
 }
 
 ul + button
