@@ -17,11 +17,6 @@
 
 "use strict";
 
-function E(id)
-{
-  return document.getElementById(id);
-}
-
 function getDocLink(link)
 {
   return browser.runtime.sendMessage({

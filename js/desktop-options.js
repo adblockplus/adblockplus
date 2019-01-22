@@ -15,8 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* globals checkShareResource, getDocLink, i18nFormatDateTime, openSharePopup,
-  E */
+/* globals getDocLink */
 
 "use strict";
 
