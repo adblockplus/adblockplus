@@ -56,6 +56,10 @@ class IOFilterTable extends IOElement
       "filter:match",
       event => this.onFilterMatch(event)
     );
+    this.search.addEventListener(
+      "filter:error",
+      event => this.onerror(event)
+    );
     this.list = this.appendChild(new IOFilterList());
     this.footer = this.appendChild(wire()`<div class="footer" />`);
     this.addEventListener("click", this);
@@ -94,12 +98,15 @@ class IOFilterTable extends IOElement
   {
     if (event.target.closest("io-checkbox"))
     {
-      this.updateFooter();
+      cleanErrors.call(this);
     }
   }
 
   onerror(event)
   {
+    // force the footer to be visible since errors are shown there
+    this.updateFooter();
+    this.footer.classList.add("visible");
     const {filter, errors} = event.detail;
     const node = this.querySelector(".footer .error");
     if (filter)
@@ -142,7 +149,7 @@ class IOFilterTable extends IOElement
           () => updateList(this.list),
           (errors) => this.onerror({detail: {errors}})
         );
-        this.updateFooter();
+        cleanErrors.call(this);
         break;
       case classList.contains("copy"):
         const filters = [];
@@ -157,41 +164,24 @@ class IOFilterTable extends IOElement
 
   onFilterAdd(event)
   {
-    const unknown = new WeakSet();
-    const filtersBefore = this.filters;
     const filters = event.detail
                     .split(/(?:\r\n|\n)/)
-                    .map(text =>
-                    {
-                      let value = filtersBefore.find(
-                        filter => filter.text === text
-                      );
-                      if (!value)
-                      {
-                        value = {text};
-                        unknown.add(value);
-                      }
-                      return value;
-                    });
+                    .reverse();
+
     browser.runtime.sendMessage({
       type: "filters.importRaw",
-      text: filters.map(filter => filter.text).join("\n")
+      text: filters.join("\n")
     })
     .then(errors =>
     {
       if (!errors.length)
       {
-        // this is false only when the extension sets filters right away,
-        // as example the first time custom filters are created.
-        // in that case, the order should be the one the extension decided.
-        if (filtersBefore === this.filters)
+        cleanErrors.call(this);
+        for (const text of filters)
         {
-          for (const filter of filters)
-          {
-            if (!unknown.has(filter))
-              this.filters.splice(this.filters.indexOf(filter), 1);
-            this.filters.unshift(filter);
-          }
+          const i = this.filters.findIndex(flt => flt.text === text);
+          const [filter] = i < 0 ? [{text}] : this.filters.splice(i, 1);
+          this.filters.unshift(filter);
         }
         // needed in case there were no filters whatsoever
         // and the table never got a chance to initialize
@@ -232,20 +222,23 @@ class IOFilterTable extends IOElement
     if (this.list.filters !== filters)
       this.list.filters = filters;
 
-    this.renderFooter();
+    this.updateFooter();
   }
 
-  renderFooter()
+  updateFooter()
   {
+    const disabled = !this.list.selected.size;
     bind(this.footer)`
       <button
         class="delete"
         onclick="${this}"
+        disabled="${disabled}"
         data-call="onfooterclick"
       >${{i18n: "delete"}}</button>
       <button
         class="copy"
         onclick="${this}"
+        disabled="${disabled}"
         data-call="onfooterclick"
       >${{i18n: "copy_selected"}}</button>
       <button
@@ -254,16 +247,18 @@ class IOFilterTable extends IOElement
         data-call="onerrorclick"
       ></button>
     `;
-    this.updateFooter();
-  }
-
-  updateFooter()
-  {
-    this.footer.classList.toggle("visible", !!this.filters.length);
   }
 }
 
 IOFilterTable.define("io-filter-table");
+
+function cleanErrors()
+{
+  const error = this.querySelector(".footer .error");
+  if (error)
+    error.textContent = "";
+  this.updateFooter();
+}
 
 function updateList(list)
 {

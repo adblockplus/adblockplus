@@ -48,15 +48,9 @@ io-filter-table > io-filter-list > table
 io-filter-table .footer
 {
   display: flex;
-  visibility: hidden;
   flex-direction: row;
   margin-top: 16px;
   align-items: center;
-}
-
-io-filter-table .footer.visible
-{
-  visibility: visible;
 }
 
 io-filter-table .footer button
@@ -66,6 +60,11 @@ io-filter-table .footer button
   font-weight: 600;
   justify-content: center;
   align-content: center;
+}
+
+io-filter-table .footer button[disabled]
+{
+  visibility: hidden;
 }
 
 io-filter-table .footer button:not(:last-child)

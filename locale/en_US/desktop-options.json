@@ -117,7 +117,7 @@
   },
   "options_filters_search_or_add": {
     "description": "The filter search placeholder.",
-    "message": "Search / add filter (e.g. $filter$)",
+    "message": "Search or add filter(s) (e.g. $filter$)",
     "placeholders": {
       "filter": {
         "content": "/ads/track/*"

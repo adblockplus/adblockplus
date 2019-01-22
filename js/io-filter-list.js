@@ -684,14 +684,14 @@ function setupPort()
   {
     if (message.type === "filters.respond" && message.action === "disabled")
     {
-      const [beFilter, value] = message.args;
-      const filter = this.filters.find(f => f.text === beFilter.text);
-      if (value !== filter.disabled)
+      const {text, disabled} = message.args[0];
+      const filter = this.filters.find(f => f.text === text);
+      if (disabled !== filter.disabled)
       {
         dispatchError.call(this, "filter.disabled", filter);
-        filter.disabled = value;
-        this.render();
+        filter.disabled = disabled;
       }
+      this.render();
     }
   });
 }
