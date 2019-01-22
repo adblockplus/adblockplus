@@ -166,6 +166,7 @@ class IOFilterTable extends IOElement
   {
     const filters = event.detail
                     .split(/(?:\r\n|\n)/)
+                    .map(text => ({text}))
                     .reverse();
 
     browser.runtime.sendMessage({
@@ -194,6 +195,9 @@ class IOFilterTable extends IOElement
       }
       else
       {
+        // force the footer to be visible since errors are shown there
+        this.renderFooter();
+        this.footer.classList.add("visible");
         this.onerror({detail: {errors}});
       }
     });
