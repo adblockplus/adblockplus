@@ -269,6 +269,23 @@ class IOFilterList extends IOElement
     if (!filter)
       return;
 
+    // in case of empty filter, remove it
+    if (!text)
+    {
+      browser.runtime.sendMessage({
+        type: "filters.remove",
+        text: filter.text
+      }).then(errors =>
+      {
+        if (!errors.length)
+        {
+          this.selected.delete(filter);
+          this.render();
+        }
+      });
+      return;
+    }
+
     // update filter and title
     filter.text = text;
     currentTarget.title = text;
@@ -561,6 +578,7 @@ const issues = new WeakMap();
 
 // used to show warnings in the last column
 const warnings = new WeakMap();
+const warning = browser.i18n.getMessage("options_filterList_slow");
 
 // relate either issues or warnings to a filter
 const createImageFor = (weakMap, filter) =>
@@ -570,6 +588,8 @@ const createImageFor = (weakMap, filter) =>
   image.src = `skin/icons/${isIssue ? "error" : "alert"}.svg`;
   if (isIssue)
     image.title = filter.reason;
+  else
+    image.title = warning;
   weakMap.set(filter, image);
   return image;
 };
@@ -617,10 +637,12 @@ function getFilter(event)
 // is higher than scrollHeight and other cases too
 function getScrollTop(value, scrollHeight)
 {
-  return Math.max(
+  const scrollTop = Math.max(
     0,
     Math.min(scrollHeight || Infinity, value)
   );
+  // avoid division by zero gotchas
+  return isNaN(scrollTop) ? 0 : scrollTop;
 }
 
 function getWarning(filter)

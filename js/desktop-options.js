@@ -490,7 +490,7 @@ function updateFilter(filter)
   }
   else
   {
-    customFilters.push(filter.text);
+    customFilters.push(filter);
   }
 
   filtersMap[filter.text] = filter;
@@ -502,7 +502,7 @@ function loadCustomFilters(filters)
     updateFilter(filter);
 
   const cfTable = $("#custom-filters io-filter-table");
-  cfTable.filters = filters.filter(({text}) => customFilters.includes(text));
+  cfTable.filters = customFilters;
   const toggle = $("#custom-filters io-toggle.io-filter-table-state");
   cfTable.disabled = !toggle.checked;
   toggle.addEventListener("change", toggleFiltersTable);
@@ -516,7 +516,7 @@ function toggleFiltersTable(event)
 
 function removeCustomFilter(text)
 {
-  const index = customFilters.indexOf(text);
+  const index = customFilters.findIndex(filter => filter.text === text);
   if (index >= 0)
     customFilters.splice(index, 1);
 }
