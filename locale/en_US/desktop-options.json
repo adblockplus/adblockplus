@@ -292,10 +292,6 @@
     "description": "Update button in Advanced tab",
     "message": "update all filter lists"
   },
-  "options_filterList_slow": {
-    "description": "A slow filter highlighted through the warning icon",
-    "message": "The pattern you entered is too short and, therefore, will slow down Adblock Plus, hindering your browsing experience. Please enter a longer pattern."
-  },
   "options_customFilters_title": {
     "description": "Section title in Advanced tab",
     "message": "Your custom filters"
