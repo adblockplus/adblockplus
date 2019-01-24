@@ -504,15 +504,6 @@ function loadCustomFilters(filters)
 
   const cfTable = $("#custom-filters io-filter-table");
   cfTable.filters = customFilters;
-  const toggle = $("#custom-filters io-toggle.io-filter-table-state");
-  cfTable.disabled = !toggle.checked;
-  toggle.addEventListener("change", toggleFiltersTable);
-}
-
-function toggleFiltersTable(event)
-{
-  const cfTable = $("#custom-filters io-filter-table");
-  cfTable.disabled = !event.currentTarget.checked;
 }
 
 function removeCustomFilter(text)

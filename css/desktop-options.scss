@@ -1195,11 +1195,6 @@ html[dir="rtl"] #content-whitelist form button
   font-weight: 600;
 }
 
-#custom-filters span:not(.io-filter-table-title)
-{
-  margin: 0.5rem;
-}
-
 html:not([dir="rtl"]) #custom-filters .io-filter-table-title
 {
   margin-right: 2rem;
@@ -1208,19 +1203,6 @@ html:not([dir="rtl"]) #custom-filters .io-filter-table-title
 html[dir="rtl"] #custom-filters .io-filter-table-title
 {
   margin-left: 2rem;
-}
-
-/* spans after the toggle are shown/hidden accordingly to the toggle state */
-#custom-filters io-toggle.io-filter-table-state:not([checked]) + span,
-#custom-filters io-toggle.io-filter-table-state[checked] + span + span
-{
-  display: none;
-}
-
-#custom-filters .io-filter-table-active,
-#custom-filters .io-filter-table-inactive
-{
-  color: #077CA6;
 }
 
 #all-filter-lists-table li.show-message .last-update,
