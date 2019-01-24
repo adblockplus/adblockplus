@@ -408,7 +408,8 @@ collections.whitelist = new Collection([
 collections.filterLists = new Collection([
   {
     id: "all-filter-lists-table",
-    emptyTexts: ["options_filterList_empty"]
+    emptyTexts: ["options_filterList_empty"],
+    getTitleFunction: (item) => item.originalTitle || item.title || item.url
   }
 ]);
 
