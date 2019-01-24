@@ -11,6 +11,10 @@
   "filter_invalid_regexp": {
     "message": "Invalid regular expression"
   },
+  "filter_slow": {
+    "description": "A slow filter highlighted through the warning icon",
+    "message": "The pattern you entered is too short and, therefore, will slow down Adblock Plus, hindering your browsing experience. Please enter a longer pattern."
+  },
   "filter_snippet_nodomain": {
     "message": "No active domain specified for snippet filter"
   },
@@ -28,6 +32,6 @@
   },
   "unexpected_filter_list_header": {
     "description": "Error message shown when the user attempts to add a custom filter that has the format of a header (e.g. \"[Adblock Plus 2.0]\") which are only allowed in filter lists",
-    "message": "Filter list headers are only supported in downloadable filter lists."
+    "message": "Filter list headers aren't allowed here"
   }
 }

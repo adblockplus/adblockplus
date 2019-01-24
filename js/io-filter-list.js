@@ -272,6 +272,8 @@ class IOFilterList extends IOElement
     // in case of empty filter, remove it
     if (!text)
     {
+      if (!update)
+        return;
       browser.runtime.sendMessage({
         type: "filters.remove",
         text: filter.text
@@ -283,12 +285,9 @@ class IOFilterList extends IOElement
           this.render();
         }
       });
+      this._filter = null;
       return;
     }
-
-    // update filter and title
-    filter.text = text;
-    currentTarget.title = text;
 
     // store the initial filter value once
     // needed to remove the filter once finished the editing
@@ -306,6 +305,8 @@ class IOFilterList extends IOElement
     // add + remove the filter on Enter / update
     if (update)
     {
+      filter.text = text;
+      currentTarget.title = text;
       // drop any validation action at distance
       this._validating = 0;
       if (this.filters.some(f => f.text === filter.text && f !== filter))
@@ -363,7 +364,10 @@ class IOFilterList extends IOElement
   onblur(event)
   {
     if (this._changingFocus)
+    {
+      this._filter = null;
       return;
+    }
     this.onkeyup(event);
     this._filter = null;
   }
@@ -578,7 +582,7 @@ const issues = new WeakMap();
 
 // used to show warnings in the last column
 const warnings = new WeakMap();
-const warning = browser.i18n.getMessage("options_filterList_slow");
+const warningSlow = browser.i18n.getMessage("filter_slow");
 
 // relate either issues or warnings to a filter
 const createImageFor = (weakMap, filter) =>
@@ -589,7 +593,7 @@ const createImageFor = (weakMap, filter) =>
   if (isIssue)
     image.title = filter.reason;
   else
-    image.title = warning;
+    image.title = warningSlow;
   weakMap.set(filter, image);
   return image;
 };
@@ -708,7 +712,7 @@ function setupPort()
     {
       const {text, disabled} = message.args[0];
       const filter = this.filters.find(f => f.text === text);
-      if (disabled !== filter.disabled)
+      if (filter && disabled !== filter.disabled)
       {
         dispatchError.call(this, "filter.disabled", filter);
         filter.disabled = disabled;
