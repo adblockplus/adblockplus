@@ -56,7 +56,7 @@ function initLinks()
   });
   api.doclinks.get("eyeo").then((url) =>
   {
-    const year = new Date().getFullYear();
+    const year = new Date().getFullYear().toString();
     const notice = document.getElementById("copyright-notice");
     ext.i18n.setElementText(notice, "firstRun_footer_copyright", year);
     ext.i18n.setElementLinks("copyright-notice", url);
