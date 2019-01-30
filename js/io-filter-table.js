@@ -57,6 +57,14 @@ class IOFilterTable extends IOElement
       event => this.onFilterMatch(event)
     );
     this.search.addEventListener(
+      "filter:none",
+      () =>
+      {
+        this.list.selected = [];
+        this.updateFooter();
+      }
+    );
+    this.search.addEventListener(
       "filter:error",
       event => this.onerror(event)
     );
@@ -201,7 +209,11 @@ class IOFilterTable extends IOElement
 
   onFilterMatch(event)
   {
-    this.list.scrollTo(event.detail.filter);
+    const {accuracy, filter, matches} = event.detail;
+    this.list.selected = matches;
+    // scroll either to the exact match or the first close match
+    this.list.scrollTo(accuracy === 1 ? filter : matches[0]);
+    this.updateFooter();
   }
 
   render()
