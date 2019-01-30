@@ -21,6 +21,8 @@ const IOElement = require("./io-element");
 
 const {$} = require("./dom");
 
+const MINIMUM_SEARCH_LENGTH = 3;
+
 // this component simply emits filter:add(text)
 // and filter:match({accuracy, filter}) events
 class IOFilterSearch extends IOElement
@@ -101,6 +103,7 @@ class IOFilterSearch extends IOElement
   {
     const {i18n} = browser;
     this._placeholder = i18n.getMessage("options_filters_search_or_add");
+    this._addingFilter = false;
     this._timer = 0;
     this.render();
   }
@@ -131,6 +134,7 @@ class IOFilterSearch extends IOElement
           addFilter.call(this, value);
         break;
       case "Escape":
+        dispatch.call(this, "filter:none");
         this.value = "";
         break;
     }
@@ -138,27 +142,50 @@ class IOFilterSearch extends IOElement
 
   onkeyup()
   {
-    const {match, value} = this;
-    // clear on backspace
-    if (!value.length)
+    // clear timeout on any action
+    clearTimeout(this._timer);
+
+    // in case it was just added, don't do anything
+    if (this._addingFilter)
     {
-      this.value = "";
+      this._addingFilter = false;
       return;
     }
-    // no match means don't validate
-    // but also multi line (paste on old browsers)
-    // shouldn't pass through this logic (filtered later on)
-    if (!match || value.includes("\n"))
-      return;
-    clearTimeout(this._timer);
-    // debounce the search to avoid degrading
+
+    // debounce the search operations to avoid degrading
     // performance on very long list of filters
     this._timer = setTimeout(() =>
     {
       this._timer = 0;
-      const result = search.call(this, value);
-      if (result.accuracy && match <= result.accuracy)
-        dispatch.call(this, "filter:match", result);
+
+      const {match, value} = this;
+      // clear on backspace
+      if (!value.length)
+      {
+        dispatch.call(this, "filter:none");
+        this.value = "";
+      }
+      // do nothing when the search text is too small
+      // also no match means don't validate
+      // but also multi line (paste on old browsers)
+      // shouldn't pass through this logic (filtered later on)
+      else if (
+        !match ||
+        value.length < MINIMUM_SEARCH_LENGTH ||
+        isMultiLine(value)
+      )
+      {
+        this.setState({filterExists: this.state.filters.some(hasValue, value)});
+        dispatch.call(this, "filter:none");
+      }
+      else
+      {
+        const result = search.call(this, value);
+        if (result.accuracy && match <= result.accuracy)
+          dispatch.call(this, "filter:match", result);
+        else
+          dispatch.call(this, "filter:none");
+      }
     }, 100);
   }
 
@@ -195,6 +222,7 @@ module.exports = IOFilterSearch;
 
 function addFilter(data)
 {
+  dispatch.call(this, "filter:none");
   let value = data.trim();
   if (!value)
     return;
@@ -219,15 +247,21 @@ function addFilter(data)
   {
     const result = search.call(this, value);
     if (result.accuracy < 1)
+    {
+      this._addingFilter = true;
       dispatch.call(this, "filter:add", value);
-    else if (result.accuracy)
+    }
+    else if (result.accuracy && value.length >= MINIMUM_SEARCH_LENGTH)
       dispatch.call(this, "filter:match", result);
   }
 }
 
 function dispatch(type, detail)
 {
-  this.dispatchEvent(new CustomEvent(type, {detail}));
+  // do not bother at all if there are no filters
+  // initialize the table on "filter:add" anyway
+  if (type === "filter:add" || this.filters.length)
+    this.dispatchEvent(new CustomEvent(type, {detail}));
 }
 
 function hasValue(filter)
@@ -244,6 +278,7 @@ function search(value)
 {
   let accuracy = 0;
   let closerFilter = null;
+  const matches = [];
   const searchLength = value.length;
   if (searchLength)
   {
@@ -262,9 +297,9 @@ function search(value)
       {
         if (filter.text === value)
         {
+          matches.push(filter);
           closerFilter = filter;
           accuracy = 1;
-          break;
         }
         continue;
       }
@@ -272,6 +307,7 @@ function search(value)
       // only if the match is not meant to be 1:1
       if (match < 1 && filter.text.includes(value))
       {
+        matches.push(filter);
         const tmpAccuracy = searchLength / filterLength;
         if (accuracy < tmpAccuracy)
         {
@@ -282,5 +318,5 @@ function search(value)
     }
     this.setState({filterExists: accuracy === 1});
   }
-  return {accuracy, filter: closerFilter};
+  return {accuracy, matches, value, filter: closerFilter};
 }
