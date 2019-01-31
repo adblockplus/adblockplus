@@ -72,7 +72,7 @@
                                "softExpiration", "expires", "title",
                                "url"], subscription);
     if (subscription instanceof SpecialSubscription)
-      obj.filters = Array.from(subscription.filters()).map(convertFilter);
+      obj.filters = Array.from(subscription.filters(), convertFilter);
     obj.isDownloading = Synchronizer.isExecuting(subscription.url);
     return obj;
   }
@@ -295,7 +295,7 @@
     if (!subscription)
       return [];
 
-    return Array.from(subscription.filters()).map(convertFilter);
+    return Array.from(subscription.filters(), convertFilter);
   });
 
   port.on("filters.importRaw", (message, sender) =>
@@ -467,9 +467,15 @@
 
   port.on("subscriptions.update", (message, sender) =>
   {
-    let {subscriptions} = filterStorage;
+    let subscriptions;
     if (message.url)
+    {
       subscriptions = [Subscription.fromURL(message.url)];
+    }
+    else
+    {
+      subscriptions = filterStorage.subscriptions();
+    }
 
     for (const subscription of subscriptions)
     {

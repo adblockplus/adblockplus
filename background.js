@@ -209,7 +209,10 @@
     {
       this.disabled = !!details.disabled;
       this.title = details.title || "";
-      this._filters = this._filters.concat(details.filters);
+      if (details.filters)
+      {
+        this._filters.push(...details.filters);
+      }
     }
   }
   Subscription.prototype =
