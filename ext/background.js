@@ -51,7 +51,7 @@
   {
     parent.postMessage({
       type: "port",
-      name: this._name,
+      id: this._id,
       payload: msg
     }, "*");
   }
@@ -64,7 +64,7 @@
       if (event.data.type != "connect")
         return;
 
-      listener(new ext._Port(event.data.name));
+      listener(new ext._Port(event.data.id, event.data.name));
     });
   }
   window.browser.runtime.onConnect = {addListener: onConnect};
