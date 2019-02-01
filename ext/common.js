@@ -77,8 +77,9 @@
 
   class Port
   {
-    constructor(name)
+    constructor(id, name)
     {
+      this._id = id;
       this._name = name;
     }
 
@@ -96,13 +97,13 @@
 
     get onMessage()
     {
-      const name = this._name;
+      const id = this._id;
       return {
         addListener(listener)
         {
           window.addEventListener("message", (event) =>
           {
-            if (event.data.type != "port" || event.data.name != name)
+            if (event.data.type != "port" || event.data.id != id)
               return;
 
             listener(event.data.payload);

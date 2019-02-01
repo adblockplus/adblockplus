@@ -96,11 +96,15 @@
     });
   };
 
+  // We initialize the ID using a random value to avoid
+  // potential conflicts with other IDs
+  let portId = Math.random();
+
   function postMessage(msg)
   {
     ext.backgroundPage._sendRawMessage({
       type: "port",
-      name: this._name,
+      id: this._id,
       payload: msg
     });
   }
@@ -108,8 +112,10 @@
 
   function connect({name})
   {
-    ext.backgroundPage._sendRawMessage({type: "connect", name});
-    return new ext._Port(name);
+    const id = ++portId;
+    const port = new ext._Port(id, name);
+    ext.backgroundPage._sendRawMessage({type: "connect", id, name});
+    return port;
   }
   browser.runtime.connect = connect;
 
