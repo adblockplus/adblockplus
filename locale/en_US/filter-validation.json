@@ -13,7 +13,7 @@
   },
   "filter_slow": {
     "description": "A slow filter highlighted through the warning icon",
-    "message": "The pattern you entered is too short and, therefore, will slow down Adblock Plus, hindering your browsing experience. Please enter a longer pattern."
+    "message": "To ensure a fast filter, please check the length of the pattern and ensure it doesn't contain a regular expression."
   },
   "filter_snippet_nodomain": {
     "message": "No active domain specified for snippet filter"
