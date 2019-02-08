@@ -19,13 +19,25 @@
  * website-defaults includes references to fonts so we need to let it know
  * where they are located in our code
  */
-$path-to-font-files: "../skin/fonts";
 
-@import "node_modules/website-defaults/static/scss/main.scss";
+@import "node_modules/website-defaults/static/scss/variables";
+@import "node_modules/website-defaults/static/scss/utilities/overrides.scss";
+@import "node_modules/website-defaults/static/scss/utilities/colors.scss";
+@import "node_modules/website-defaults/static/scss/utilities/layout.scss";
+@import "node_modules/website-defaults/static/scss/utilities/text.scss";
+@import "node_modules/website-defaults/static/scss/utilities/widths.scss";
+@import "node_modules/website-defaults/static/scss/utilities/lists.scss";
+@import "node_modules/website-defaults/static/scss/reset";
+@import "node_modules/website-defaults/static/scss/base";
+@import "node_modules/website-defaults/static/scss/content";
+@import "node_modules/website-defaults/static/scss/grid";
+@import "node_modules/website-defaults/static/scss/navbar";
+@import "node_modules/website-defaults/static/scss/forms/basic";
+@import "node_modules/website-defaults/static/scss/forms/advanced";
+@import "node_modules/website-defaults/static/scss/forms/buttons";
 
 *
 {
-  font-family: Arial, sans;
   font-size: 16px;
 }
 

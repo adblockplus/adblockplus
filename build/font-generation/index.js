@@ -21,35 +21,53 @@ const localRange = require("local-range");
 const fs = require("fs");
 const path = require("path");
 const {localesDir, inputDir, outputDir, fontToLocalesMap,
-       fontFile, sharedCharacters} = require("./config");
-const {generateFontFace, license, generateLangRule} = require("./css");
+       noLangRuleFont, outputFontFile, sharedCharacters} = require("./config");
+const {generateFontFace, defaultCss, generateLangRule} = require("./css");
 const {promisify} = require("util");
 const {ensureDir, cammelToSentence, getLastDir} = require("./utils");
 const exec = promisify(require("child_process").exec);
 const glob = promisify(require("glob").glob);
 
 /**
+ * Custom filter to use string "messages" and also static placeholders
+ * @param {object} info stringId object
+ * @returns {string} characters for unicode convertion
+ */
+function getText(info)
+{
+  let hardcodedPlaceholders = "";
+  const {message, placeholders} = info;
+  for (const key in placeholders)
+  {
+    const placeholder = placeholders[key];
+    if ("content" in placeholder)
+      hardcodedPlaceholders += placeholder.content.replace(/\$\d/g, "");
+  }
+  return message + hardcodedPlaceholders;
+}
+
+/**
  * Uses local-range(see: https://www.npmjs.com/package/local-range) to generate
  * unicode ranges.
- * @param {Array} include locale directory names
- * @returns {String} unicode ranges
+ * @param {array} include locale directory names
+ * @returns {string} unicode ranges
  */
 function getUnicodeRange(include)
 {
   const options = {
     chars: sharedCharacters,
     folder: path.resolve(localesDir),
-    include
+    include, getText
   };
   return localRange.toSubsetRanges(options);
 }
 
 /**
  * Generate font using fontTools (see: https://github.com/fonttools/fonttools)
- * @param {String} inputFile directory with the font sources
- * @param {String} outputFile font generation directory path
- * @param {Array} locales locale directory names
- * @returns {Array} output file, unicode range and passed locales
+ * @param {string} inputFile directory with the font sources
+ * @param {string} outputFile font generation directory path
+ * @param {array} locales locale directory names
+ * @returns {array} output file, unicode range and passed locales
  */
 function generateFont(inputFile, outputFile, locales)
 {
@@ -86,7 +104,7 @@ glob(`${inputDir}/**/*.*`).then((fonts) =>
 
   Promise.all(fontGenerationPromises).then((generatedFonts) =>
   {
-    let cssFile = license;
+    let cssFile = defaultCss;
     const fontLocales = [];
     for (const [filePath, unicodeRange, locales] of generatedFonts)
     {
@@ -96,15 +114,17 @@ glob(`${inputDir}/**/*.*`).then((fonts) =>
       if (!fontLocales.some(fontLocale => fontLocale.fontName == fontName))
         fontLocales.push({fontName, locales});
 
-      cssFile += generateFontFace(fontName, weight, filePath, unicodeRange);
+      const url = path.relative(path.dirname(outputFontFile), filePath);
+      cssFile += generateFontFace(fontName, weight, url, unicodeRange);
     }
 
     for (const {fontName, locales} of fontLocales)
     {
-      cssFile += generateLangRule(locales, fontName);
+      if (fontName != noLangRuleFont)
+        cssFile += generateLangRule(locales, fontName);
     }
-    fs.writeFileSync(fontFile, cssFile);
+    fs.writeFileSync(outputFontFile, cssFile);
     // eslint-disable-next-line no-console
-    console.log(`${fontFile} is created`);
+    console.log(`${outputFontFile} is created`);
   });
 }).catch(console.error);

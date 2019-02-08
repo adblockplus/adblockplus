@@ -430,13 +430,7 @@
   },
   "options_whitelist_notification": {
     "description": "Notification that is shown after a new website is whitelisted",
-    "message": "\"$website$\" has been whitelisted.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
+    "message": "Website has been whitelisted."
   },
   "options_anti_cv_header": {
     "description": "Text for the section about anti CV",

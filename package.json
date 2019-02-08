@@ -8,7 +8,7 @@
     "bundle": "npm run $ bundle",
     "fonts-gen": "node build/font-generation/index.js",
     "lint": "npm run $ lint",
-    "postinstall": "npm run bundle",
+    "postinstall": "pip install fonttools brotli --user && npm run bundle",
     "start": "http-server & npm run watch",
     "test": "npm run $ test",
     "watch": "npm run $ watch",
@@ -81,7 +81,10 @@
       }
     },
     "crowdin": {
-      "download-translations": "python build.py gettranslations $CROWDIN_API_KEY",
+      "download-translations": [
+        "python build.py gettranslations $CROWDIN_API_KEY",
+        "npm run fonts-gen"
+      ],
       "upload-strings": "python build.py translate $CROWDIN_API_KEY",
       "upload-translations": "python build.py uploadtrans $CROWDIN_API_KEY"
     },

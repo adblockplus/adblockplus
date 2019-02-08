@@ -22,7 +22,7 @@ const path = require("path");
 
 /**
  * Creates directory if one doesn't exists
- * @param {String} dir directory to ensure
+ * @param {string} dir directory to ensure
  */
 const ensureDir = (dir) =>
 {
@@ -33,8 +33,8 @@ const ensureDir = (dir) =>
 
 /**
  * Convert cammelCase text into Sentence Case
- * @param {String} text cammelCase text
- * @returns {String} Sentence Case text
+ * @param {string} text cammelCase text
+ * @returns {string} Sentence Case text
  */
 const cammelToSentence = (text) =>
 {
@@ -43,8 +43,8 @@ const cammelToSentence = (text) =>
 };
 
 /**
- * @param {String} filePath path to the file
- * @returns {String} Directory name where the file is located
+ * @param {string} filePath path to the file
+ * @returns {string} Directory name where the file is located
  */
 const getLastDir = (filePath) =>
 {

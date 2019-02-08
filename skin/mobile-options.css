@@ -221,6 +221,17 @@ ul + button
   text-align: start;
 }
 
+#enabled-container
+{
+  align-items: center;
+}
+
+#enabled-container #enabled-domain
+{
+  display: block;
+  font-style: normal;
+}
+
 /* Dialogs */
 
 #dialog

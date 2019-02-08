@@ -20,14 +20,26 @@
 // Directory where the locales are located
 const localesDir = "./locale";
 // Folder for fonts generation
-const outputDir = "./build/font-generation/output";
-// Path for the font css file generation
-const fontFile = `${outputDir}/font.css`;
+const outputDir = "./skin/fonts";
 // Input directory containing source fonts
 const inputDir = "./build/font-generation/fonts";
+// Path for the font css file generation
+const outputFontFile = `${outputDir}/font.css`;
+// Path for the font css file generation
+const inputFontFile = "./build/font-generation/font.css";
 // Common characters shared across fonts
-const sharedCharacters = "@.,!?";
+const sharedCharacters = `
+Adblock Plus
+Facebook
+Google Plus
+support@adblockplus.org
+Twitter
+Weibo
+1234567890.,'
+`;
 
+// Don't generate Lang rule for current font
+const noLangRuleFont = "Source Sans Pro";
 // determines which font to use for specific locales
 const fontToLocalesMap = {
   "Cairo.ttf": ["ar"],
@@ -42,5 +54,5 @@ const fontToLocalesMap = {
                         "vi"]
 };
 
-module.exports = {localesDir, inputDir, outputDir, fontToLocalesMap, fontFile,
-  sharedCharacters};
+module.exports = {localesDir, inputDir, outputDir, noLangRuleFont,
+  fontToLocalesMap, outputFontFile, inputFontFile, sharedCharacters};

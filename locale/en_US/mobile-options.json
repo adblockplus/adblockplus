@@ -13,13 +13,7 @@
   },
   "mops_enabled_label": {
     "description": "Label for whitelisting domain",
-    "message": "Enable Adblock Plus on <strong>$domain$</strong>",
-    "placeholders": {
-      "domain": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
+    "message": "Block ads on:"
   },
   "mops_error_url": {
     "description": "Error for omitting filter list URL when adding a new filter list",

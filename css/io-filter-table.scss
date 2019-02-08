@@ -110,11 +110,23 @@ io-filter-table .footer .copy::before
 
 io-filter-table .footer .error
 {
+  display: inline;
   border: 0;
   color: #db394b;
   text-transform: none;
   flex-grow: 1;
   white-space: pre;
+}
+
+io-filter-table .footer .error strong
+{
+  border: 1px dashed #bcbcbc;
+  border-radius: 5px;
+  margin: 0 5px;
+  padding: 5px;
+  line-height: 30px;
+  background-color: #F3F3F3;
+  font-family: monospace;
 }
 
 io-filter-table .footer .error:not([data-filter])

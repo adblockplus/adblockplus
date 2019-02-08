@@ -1,0 +1,131 @@
+/*
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-present eyeo GmbH
+ *
+ * Adblock Plus is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Adblock Plus is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* Fallback */
+/* Note: We can't use :root because chrome overwrites fonts on body element */
+body
+{
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+/* Font reset */
+input,
+textarea,
+.reset-font,
+[data-display="originalTitle"]
+{
+  font-family: monospace;
+}
+ 
+@font-face
+{
+  font-family: "Athiti";
+  font-style: normal;
+  font-weight: 300;
+  /* local("Ø") forces using no local font called Source Sans Pro */
+  src: local("Ø"), url("300/Athiti.woff2")
+    format("woff2");
+  unicode-range: U+000A,U+0020-0022,U+0024,U+0027-0029,U+002B-003A,U+003C,U+003E-0049,U+004C,U+004E-0050,U+0052-0055,U+0057,U+0059,U+005B,U+005D,U+0061-0069,U+006B-0070,U+0072-0079,U+00A9,U+00AE,U+0E01-0E02,U+0E04,U+0E06-0E0B,U+0E0D,U+0E0F,U+0E11-0E25,U+0E27-0E2B,U+0E2D,U+0E30-0E39,U+0E40-0E44,U+0E46-0E4C,U+2019;
+}
+@font-face
+{
+  font-family: "Cairo";
+  font-style: normal;
+  font-weight: 300;
+  /* local("Ø") forces using no local font called Source Sans Pro */
+  src: local("Ø"), url("300/Cairo.woff2")
+    format("woff2");
+  unicode-range: U+000A,U+0020-0022,U+0024,U+0027-003A,U+003C,U+003E-0044,U+0046-0048,U+004C,U+004E-0050,U+0052-0055,U+0057,U+0059,U+005B-005D,U+0061-0067,U+0069,U+006B-0070,U+0072-0077,U+0079,U+00A9,U+00AE,U+060C,U+061F,U+0621-063A,U+0640-064B,U+064D-0652;
+}
+@font-face
+{
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 300;
+  /* local("Ø") forces using no local font called Source Sans Pro */
+  src: local("Ø"), url("300/SourceSansPro.woff2")
+    format("woff2");
+  unicode-range: U+000A,U+0020-0022,U+0024-003C,U+003E-005D,U+0061-007A,U+00A0-00A1,U+00A9,U+00AB,U+00AE,U+00B7,U+00BB,U+00BF-00C1,U+00C4-00C5,U+00C7-00CA,U+00CD-00CE,U+00D1,U+00D3-00D6,U+00D8,U+00DA,U+00DC-00F6,U+00F8-00FE,U+0101,U+0103,U+0105,U+0107-0109,U+010C-0111,U+0113,U+0118-011B,U+011D,U+011F,U+0123,U+012A-012B,U+0130-0131,U+0137,U+013C,U+013E,U+0142,U+0144,U+0146,U+0148,U+0151,U+0155,U+0158-0159,U+015B,U+015D-0161,U+0163,U+0165,U+0169,U+016B,U+016D-016F,U+0171,U+0179-017A,U+017C-017E,U+018F,U+0194,U+01A1,U+01AF-01B0,U+0219,U+021B,U+0259,U+0263,U+0323,U+0386,U+0388,U+038C,U+0391-0395,U+0397-039D,U+039F-03A1,U+03A3-03A6,U+03A9,U+03AC-03AF,U+03B1-03C9,U+03CC-03CE,U+0406,U+0408,U+040C,U+0410-044F,U+0451-0454,U+0456-045C,U+045E,U+0493,U+049A-049B,U+04A3,U+04AF,U+04B1-04B3,U+04D9,U+04E9,U+1E0D,U+1E25,U+1E5B,U+1E6D,U+1E92,U+1EA0-1EA5,U+1EA7-1EA9,U+1EAB-1EAD,U+1EAF,U+1EB1,U+1EB5,U+1EB7-1EB8,U+1EBB,U+1EBD,U+1EBF,U+1EC1,U+1EC3,U+1EC5,U+1EC7-1EC9,U+1ECB-1ECD,U+1ECF,U+1ED1,U+1ED3-1ED5,U+1ED7-1EDB,U+1EDD,U+1EDF,U+1EE1,U+1EE3,U+1EE5-1EE9,U+1EEB-1EEF,U+1EF1,U+1EF3,U+2013-2014,U+2018-2019,U+201C-201E,U+2026;
+}
+@font-face
+{
+  font-family: "Athiti";
+  font-style: normal;
+  font-weight: 400;
+  /* local("Ø") forces using no local font called Source Sans Pro */
+  src: local("Ø"), url("400/Athiti.woff2")
+    format("woff2");
+  unicode-range: U+000A,U+0020-0022,U+0024,U+0027-0029,U+002B-003A,U+003C,U+003E-0049,U+004C,U+004E-0050,U+0052-0055,U+0057,U+0059,U+005B,U+005D,U+0061-0069,U+006B-0070,U+0072-0079,U+00A9,U+00AE,U+0E01-0E02,U+0E04,U+0E06-0E0B,U+0E0D,U+0E0F,U+0E11-0E25,U+0E27-0E2B,U+0E2D,U+0E30-0E39,U+0E40-0E44,U+0E46-0E4C,U+2019;
+}
+@font-face
+{
+  font-family: "Cairo";
+  font-style: normal;
+  font-weight: 400;
+  /* local("Ø") forces using no local font called Source Sans Pro */
+  src: local("Ø"), url("400/Cairo.woff2")
+    format("woff2");
+  unicode-range: U+000A,U+0020-0022,U+0024,U+0027-003A,U+003C,U+003E-0044,U+0046-0048,U+004C,U+004E-0050,U+0052-0055,U+0057,U+0059,U+005B-005D,U+0061-0067,U+0069,U+006B-0070,U+0072-0077,U+0079,U+00A9,U+00AE,U+060C,U+061F,U+0621-063A,U+0640-064B,U+064D-0652;
+}
+@font-face
+{
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  /* local("Ø") forces using no local font called Source Sans Pro */
+  src: local("Ø"), url("400/SourceSansPro.woff2")
+    format("woff2");
+  unicode-range: U+000A,U+0020-0022,U+0024-003C,U+003E-005D,U+0061-007A,U+00A0-00A1,U+00A9,U+00AB,U+00AE,U+00B7,U+00BB,U+00BF-00C1,U+00C4-00C5,U+00C7-00CA,U+00CD-00CE,U+00D1,U+00D3-00D6,U+00D8,U+00DA,U+00DC-00F6,U+00F8-00FE,U+0101,U+0103,U+0105,U+0107-0109,U+010C-0111,U+0113,U+0118-011B,U+011D,U+011F,U+0123,U+012A-012B,U+0130-0131,U+0137,U+013C,U+013E,U+0142,U+0144,U+0146,U+0148,U+0151,U+0155,U+0158-0159,U+015B,U+015D-0161,U+0163,U+0165,U+0169,U+016B,U+016D-016F,U+0171,U+0179-017A,U+017C-017E,U+018F,U+0194,U+01A1,U+01AF-01B0,U+0219,U+021B,U+0259,U+0263,U+0323,U+0386,U+0388,U+038C,U+0391-0395,U+0397-039D,U+039F-03A1,U+03A3-03A6,U+03A9,U+03AC-03AF,U+03B1-03C9,U+03CC-03CE,U+0406,U+0408,U+040C,U+0410-044F,U+0451-0454,U+0456-045C,U+045E,U+0493,U+049A-049B,U+04A3,U+04AF,U+04B1-04B3,U+04D9,U+04E9,U+1E0D,U+1E25,U+1E5B,U+1E6D,U+1E92,U+1EA0-1EA5,U+1EA7-1EA9,U+1EAB-1EAD,U+1EAF,U+1EB1,U+1EB5,U+1EB7-1EB8,U+1EBB,U+1EBD,U+1EBF,U+1EC1,U+1EC3,U+1EC5,U+1EC7-1EC9,U+1ECB-1ECD,U+1ECF,U+1ED1,U+1ED3-1ED5,U+1ED7-1EDB,U+1EDD,U+1EDF,U+1EE1,U+1EE3,U+1EE5-1EE9,U+1EEB-1EEF,U+1EF1,U+1EF3,U+2013-2014,U+2018-2019,U+201C-201E,U+2026;
+}
+@font-face
+{
+  font-family: "Athiti";
+  font-style: normal;
+  font-weight: 700;
+  /* local("Ø") forces using no local font called Source Sans Pro */
+  src: local("Ø"), url("700/Athiti.woff2")
+    format("woff2");
+  unicode-range: U+000A,U+0020-0022,U+0024,U+0027-0029,U+002B-003A,U+003C,U+003E-0049,U+004C,U+004E-0050,U+0052-0055,U+0057,U+0059,U+005B,U+005D,U+0061-0069,U+006B-0070,U+0072-0079,U+00A9,U+00AE,U+0E01-0E02,U+0E04,U+0E06-0E0B,U+0E0D,U+0E0F,U+0E11-0E25,U+0E27-0E2B,U+0E2D,U+0E30-0E39,U+0E40-0E44,U+0E46-0E4C,U+2019;
+}
+@font-face
+{
+  font-family: "Cairo";
+  font-style: normal;
+  font-weight: 700;
+  /* local("Ø") forces using no local font called Source Sans Pro */
+  src: local("Ø"), url("700/Cairo.woff2")
+    format("woff2");
+  unicode-range: U+000A,U+0020-0022,U+0024,U+0027-003A,U+003C,U+003E-0044,U+0046-0048,U+004C,U+004E-0050,U+0052-0055,U+0057,U+0059,U+005B-005D,U+0061-0067,U+0069,U+006B-0070,U+0072-0077,U+0079,U+00A9,U+00AE,U+060C,U+061F,U+0621-063A,U+0640-064B,U+064D-0652;
+}
+@font-face
+{
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 700;
+  /* local("Ø") forces using no local font called Source Sans Pro */
+  src: local("Ø"), url("700/SourceSansPro.woff2")
+    format("woff2");
+  unicode-range: U+000A,U+0020-0022,U+0024-003C,U+003E-005D,U+0061-007A,U+00A0-00A1,U+00A9,U+00AB,U+00AE,U+00B7,U+00BB,U+00BF-00C1,U+00C4-00C5,U+00C7-00CA,U+00CD-00CE,U+00D1,U+00D3-00D6,U+00D8,U+00DA,U+00DC-00F6,U+00F8-00FE,U+0101,U+0103,U+0105,U+0107-0109,U+010C-0111,U+0113,U+0118-011B,U+011D,U+011F,U+0123,U+012A-012B,U+0130-0131,U+0137,U+013C,U+013E,U+0142,U+0144,U+0146,U+0148,U+0151,U+0155,U+0158-0159,U+015B,U+015D-0161,U+0163,U+0165,U+0169,U+016B,U+016D-016F,U+0171,U+0179-017A,U+017C-017E,U+018F,U+0194,U+01A1,U+01AF-01B0,U+0219,U+021B,U+0259,U+0263,U+0323,U+0386,U+0388,U+038C,U+0391-0395,U+0397-039D,U+039F-03A1,U+03A3-03A6,U+03A9,U+03AC-03AF,U+03B1-03C9,U+03CC-03CE,U+0406,U+0408,U+040C,U+0410-044F,U+0451-0454,U+0456-045C,U+045E,U+0493,U+049A-049B,U+04A3,U+04AF,U+04B1-04B3,U+04D9,U+04E9,U+1E0D,U+1E25,U+1E5B,U+1E6D,U+1E92,U+1EA0-1EA5,U+1EA7-1EA9,U+1EAB-1EAD,U+1EAF,U+1EB1,U+1EB5,U+1EB7-1EB8,U+1EBB,U+1EBD,U+1EBF,U+1EC1,U+1EC3,U+1EC5,U+1EC7-1EC9,U+1ECB-1ECD,U+1ECF,U+1ED1,U+1ED3-1ED5,U+1ED7-1EDB,U+1EDD,U+1EDF,U+1EE1,U+1EE3,U+1EE5-1EE9,U+1EEB-1EEF,U+1EF1,U+1EF3,U+2013-2014,U+2018-2019,U+201C-201E,U+2026;
+}
+:lang(th) > body
+{
+  font-family: "Athiti";
+}
+:lang(ar) > body
+{
+  font-family: "Cairo";
+}

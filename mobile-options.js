@@ -358,13 +358,7 @@
           case "showPageOptions":
             const [{host, whitelisted}] = msg.args;
             whitelistFilter = `@@||${host}^$document`;
-
-            ext.i18n.setElementText(
-              get("#enabled-label"),
-              "mops_enabled_label",
-              [host]
-            );
-
+            get("#enabled-domain").textContent = host;
             const toggle = get("#enabled");
             toggle.checked = !whitelisted;
 
