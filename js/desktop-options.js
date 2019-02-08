@@ -63,7 +63,7 @@ const promisedLocaleInfo = browser.runtime.sendMessage({type: "app.get",
 const promisedDateFormat = promisedLocaleInfo.then((addonLocale) =>
 {
   return new Intl.DateTimeFormat(addonLocale.locale);
-});
+}).catch(dispatchError);
 const promisedRecommendationsLoaded = loadRecommendations();
 
 function Collection(details)
@@ -282,7 +282,10 @@ Collection.prototype.updateItem = function(item)
       {
         const error = filterErrors.get(item.downloadStatus);
         if (error)
+        {
           message.textContent = getMessage(error);
+          dispatchError(error);
+        }
         else
           message.textContent = item.downloadStatus;
         element.classList.add("show-message");
@@ -487,7 +490,7 @@ function updateFilter(filter)
     if (isCustomFiltersLoaded)
     {
       const text = getMessage("options_whitelist_notification", [filter.title]);
-      showNotification(text);
+      showNotification(text, "info");
     }
   }
   else
@@ -558,7 +561,8 @@ function loadRecommendations()
 
       addSubscription(subscription);
     }
-  });
+  })
+  .catch(dispatchError);
 }
 
 function findParentData(element, dataName, returnElement)
@@ -877,7 +881,7 @@ function setupIoListBox()
 
 function onDOMLoaded()
 {
-  populateLists().then(setupIoListBox);
+  populateLists().then(setupIoListBox).catch(dispatchError);
 
   // Initialize navigation sidebar
   browser.runtime.sendMessage({
@@ -1054,17 +1058,21 @@ function closeDialog()
   focusedBeforeDialog.focus();
 }
 
-function showNotification(text)
+function showNotification(text, kind)
 {
-  $("#notification").setAttribute("aria-hidden", false);
-  $("#notification-text").textContent = text;
-  setTimeout(hideNotification, 3000);
+  const notification = $("#notification");
+  notification.setAttribute("aria-hidden", false);
+  $("#notification-text", notification).textContent = text;
+  notification.classList.add(kind);
+  notification.addEventListener("animationend", hideNotification);
 }
 
 function hideNotification()
 {
-  $("#notification").setAttribute("aria-hidden", true);
-  $("#notification-text").textContent = "";
+  const notification = $("#notification");
+  notification.classList.remove("info", "error");
+  notification.setAttribute("aria-hidden", true);
+  $("#notification-text", notification).textContent = "";
 }
 
 function setAcceptableAds()
@@ -1168,7 +1176,7 @@ function populateLists()
       {
         loadCustomFilters([].concat(...filters));
         isCustomFiltersLoaded = true;
-      }).then(done);
+      }).then(done).catch(dispatchError);
     });
 
     Promise.all([
@@ -1349,7 +1357,7 @@ function onSubscriptionMessage(action, subscription)
         setPrivacyConflict();
         break;
     }
-  });
+  }).catch(dispatchError);
 }
 
 function getSubscriptionFilters(subscription)
@@ -1476,3 +1484,20 @@ onDOMLoaded();
 // https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/19011773/
 window.addEventListener("unload", () => port.disconnect());
 window.addEventListener("hashchange", onHashChange, false);
+
+// Show a generic error message
+window.addEventListener(
+  "error",
+  showNotification.bind(
+    null,
+    browser.i18n.getMessage("options_generic_error"),
+    "error"
+  )
+);
+
+function dispatchError(error)
+{
+  if (error)
+    window.console.error(error);
+  window.dispatchEvent(new CustomEvent("error"));
+}

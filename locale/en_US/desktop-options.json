@@ -423,6 +423,10 @@
     "description": "Text shown when list of available languages is empty",
     "message": "There are no available languages."
   },
+  "options_generic_error": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/40a632fc81fec3799018f5640cf7c8eac68df87f/spec/abp/options-page.md#error-state",
+    "message": "Uh oh! Something went wrong. Please try again."
+  },
   "options_whitelist_notification": {
     "description": "Notification that is shown after a new website is whitelisted",
     "message": "Website has been whitelisted."

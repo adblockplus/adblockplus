@@ -1412,9 +1412,6 @@ body:not([data-dialog]) #dialog
   box-sizing: border-box;
   width: 100%;
   padding: 1rem 1.9rem;
-  opacity: 0.8;
-  color: #077CA6;
-  background-color: #E1F2FA;
   font-size: 1rem;
 }
 
@@ -1422,4 +1419,50 @@ body:not([data-dialog]) #dialog
 {
   text-align: center;
   flex: 1;
+}
+
+#notification.info
+{
+  color: #077CA6;
+  background-color: rgba(225, 242, 250, 0.8);
+}
+
+#notification.error
+{
+  color: #F00;
+  background-color: rgba(235, 199, 203, 0.8);
+}
+
+#notification.error .close
+{
+  display: none;
+}
+
+#notification[aria-hidden="false"]
+{
+  animation: show-notification 3s;
+  will-change: transform;
+}
+
+@keyframes show-notification
+{
+  0%
+  {
+    transform: translateY(-4.8rem);
+  }
+
+  25%
+  {
+    transform: translateY(0);
+  }
+
+  75%
+  {
+    transform: translateY(0);
+  }
+
+  100%
+  {
+    transform: translateY(-4.8rem);
+  }
 }
