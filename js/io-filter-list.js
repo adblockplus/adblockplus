@@ -586,7 +586,7 @@ function getRow(filter, i)
       </td>
       <td data-column="rule">
         <div
-          class="content"
+          class="content reset-font"
           contenteditable="${!this.disabled}"
           title="${filter.text}"
           onpaste="${this}"
