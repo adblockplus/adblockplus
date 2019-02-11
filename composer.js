@@ -15,6 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/* globals getErrorMessage */
+
 "use strict";
 
 let targetPageId = null;
@@ -41,7 +43,10 @@ function addFilters()
   }).then((errors) =>
   {
     if (errors.length > 0)
+    {
+      errors = errors.map(getErrorMessage);
       alert(errors.join("\n"));
+    }
     else
       closeDialog(true);
   });

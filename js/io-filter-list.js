@@ -15,6 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/* globals getErrorMessage */
+
 "use strict";
 
 require("./io-checkbox");
@@ -327,7 +329,7 @@ class IOFilterList extends IOElement
       if (this.filters.some(f => f.text === filter.text && f !== filter))
       {
         const {reason} = filter;
-        filter.reason = browser.i18n.getMessage("filter_duplicated");
+        filter.reason = "filter_duplicated";
 
         // render only if there's something different to show
         if (filter.reason !== reason)
@@ -617,7 +619,6 @@ const issues = new WeakMap();
 
 // used to show warnings in the last column
 const warnings = new WeakMap();
-const warningSlow = browser.i18n.getMessage("filter_slow");
 
 // relate either issues or warnings to a filter
 const createImageForFilter = (weakMap, filter) =>
@@ -625,12 +626,7 @@ const createImageForFilter = (weakMap, filter) =>
   const isIssue = weakMap === issues;
   const image = createImageForType(isIssue);
   if (isIssue)
-  {
-    image.title = filter.reason ||
-      browser.i18n.getMessage("filter_action_failed");
-  }
-  else
-    image.title = warningSlow;
+    image.title = getErrorMessage(filter.reason);
   weakMap.set(filter, image);
   return image;
 };
@@ -701,7 +697,7 @@ function getScrollTop(value, scrollHeight)
 
 function getWarning(filter)
 {
-  if (typeof filter.reason === "string")
+  if (filter.reason)
     return issues.get(filter) || createImageForFilter(issues, filter);
   if (filter.slow)
     return warnings.get(filter) || createImageForFilter(warnings, filter);
@@ -788,7 +784,7 @@ function setupPort()
       const filter = this.filters.find(f => f.text === text);
       if (filter && disabled !== filter.disabled)
       {
-        filter.reason = browser.i18n.getMessage("filter_disabled");
+        filter.reason = "filter_disabled";
         filter.disabled = disabled;
       }
       this.render();

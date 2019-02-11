@@ -15,6 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/* globals getErrorMessage */
+
 "use strict";
 
 const IOElement = require("./io-element");
@@ -118,12 +120,9 @@ class IOFilterTable extends IOElement
     const {errors} = event.detail;
     const footerError = this.querySelector(".footer .error");
 
-    // Show a generic error message not only if we don't know what kind of
-    // error occurred but also if we don't have an error message for it yet
-    const errorMessages = errors.join("\n").trim();
     bind(footerError)`${
-      errorMessages ?
-        errorMessages :
+      errors ?
+        errors.map(getErrorMessage).join("\n") :
         {i18n: "filter_action_failed"}
     }`;
   }

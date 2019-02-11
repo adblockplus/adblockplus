@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* globals getDocLink */
+/* globals getDocLink getErrorMessage */
 
 "use strict";
 
@@ -576,7 +576,10 @@ function sendMessageHandleErrors(message, onSuccess)
   browser.runtime.sendMessage(message).then(errors =>
   {
     if (errors.length > 0)
+    {
+      errors = errors.map(getErrorMessage);
       alert(errors.join("\n"));
+    }
     else if (onSuccess)
       onSuccess();
   });

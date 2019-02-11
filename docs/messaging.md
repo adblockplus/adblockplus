@@ -32,6 +32,9 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
   - [importRaw](#filtersimportraw)
   - [listen](#filterslisten)
   - [remove](#filtersremove)
+  - [replace](#filtersreplace)
+  - [toggle](#filterstoggle)
+  - [validate](#filtersvalidate)
 - prefs
   - [get](#prefsget)
   - [listen](#prefslisten)
@@ -128,7 +131,7 @@ If filter includes `showPageOptions`:
 
 **Response**
 
-**string[]** errors
+**[FilterError](#filtererror)[]** errors
 
 #### filters.get
 
@@ -149,7 +152,7 @@ If filter includes `showPageOptions`:
 
 **Response**
 
-**string[]** errors
+**[FilterError](#filtererror)[]** errors
 
 #### filters.listen
 
@@ -169,6 +172,28 @@ See [`filterNotifier`][filternotifier].
 - **number** [index]
 - **string** [subscriptionUrl]
 - **string** text
+
+#### filters.replace
+
+- **string** new
+- **string** old
+
+**Response**
+
+**[FilterError](#filtererror)[]** errors
+
+#### filters.toggle
+
+- **string** text
+- **boolean** disabled
+
+#### filters.validate
+
+- **string** text
+
+**Response**
+
+**[FilterError](#filtererror)[]** errors
 
 ---
 
@@ -290,6 +315,13 @@ See [`filterNotifier`][filternotifier].
 ### Filter
 
 - **string** text
+
+### FilterError
+
+- **number** [lineno]
+- **string** [reason]
+- **string** [selector]
+- **string** type
 
 ### Subscription
 

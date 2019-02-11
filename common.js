@@ -25,3 +25,13 @@ function getDocLink(link)
     link
   });
 }
+
+function getErrorMessage(error)
+{
+  const message = browser.i18n.getMessage(error.reason, error.selector);
+
+  if (error.lineno)
+    return browser.i18n.getMessage("line", [error.lineno.toString(), message]);
+
+  return message;
+}
