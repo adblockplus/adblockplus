@@ -275,7 +275,7 @@
     if (result.error)
       errors.push(result.error.toString());
     else if (result.filter)
-      FilterStorage.addFilter(result.filter);
+      filterStorage.addFilter(result.filter);
 
     return errors;
   });
@@ -350,9 +350,9 @@
       subscription = Subscription.fromURL(message.subscriptionUrl);
 
     if (!subscription)
-      FilterStorage.removeFilter(filter);
+      filterStorage.removeFilter(filter);
     else
-      FilterStorage.removeFilter(filter, subscription, message.index);
+      filterStorage.removeFilter(filter, subscription, message.index);
   });
 
   port.on("prefs.get", (message, sender) =>
