@@ -264,14 +264,6 @@
     "description": "Empty text of filter list table in Advanced tab",
     "message": "You have not added any filter lists to Adblock Plus. Filter lists you add will be shown here."
   },
-  "options_filterList_state_active": {
-    "description": "State of filter list in Advanced tab",
-    "message": "Active"
-  },
-  "options_filterList_state_disabled": {
-    "description": "State of filter list in Advanced tab",
-    "message": "Inactive"
-  },
   "options_filterList_now": {
     "description": "Text inside 'Last update' column in Advanced tab",
     "message": "Just now"
