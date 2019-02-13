@@ -241,6 +241,7 @@ function addFilter(data)
   // in case of multi line don't bother the search
   if (isMultiLine(value))
   {
+    value = clearMultiLine(value);
     dispatch.call(this, "filter:add", value);
   }
   else
@@ -267,6 +268,14 @@ function dispatch(type, detail)
 function hasValue(filter)
 {
   return filter.text == this;
+}
+
+function clearMultiLine(data)
+{
+  return data.split(/[\r\n]/)
+              .map(text => text.trim())
+              .filter(text => text.length)
+              .join("\n");
 }
 
 function isMultiLine(data)

@@ -116,12 +116,12 @@ class IOFilterTable extends IOElement
     this.updateFooter();
     this.footer.classList.add("visible");
     const {filter, errors} = event.detail;
-    const node = this.querySelector(".footer .error");
+    const footerError = this.querySelector(".footer .error");
     if (filter)
-      node.dataset.filter = filter;
+      footerError.dataset.filter = filter;
     else
-      delete node.dataset.filter;
-    bind(node)`${
+      delete footerError.dataset.filter;
+    bind(footerError)`${
       errors ?
         errors.join("\n") :
         {i18n: "filter_action_failed"}
@@ -266,9 +266,9 @@ IOFilterTable.define("io-filter-table");
 
 function cleanErrors()
 {
-  const error = this.querySelector(".footer .error");
-  if (error)
-    error.textContent = "";
+  const footerError = this.querySelector(".footer .error");
+  if (footerError)
+    bind(footerError)``;
   this.updateFooter();
 }
 
