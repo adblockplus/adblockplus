@@ -477,7 +477,8 @@ class IOFilterList extends IOElement
         <th data-column="rule">${{i18n: "options_filter_list_rule"}}</th>
         <th data-column="warning">${
           // for the header, just return always the same warning icon
-          warnings.get(this) || createImageFor(warnings, this)
+          warnings.get(this) ||
+          warnings.set(this, createImageForType(false)).get(this)
         }</th>
       </thead>
       <tbody>${list.map(getRow, this)}</tbody>
@@ -585,16 +586,22 @@ const warnings = new WeakMap();
 const warningSlow = browser.i18n.getMessage("filter_slow");
 
 // relate either issues or warnings to a filter
-const createImageFor = (weakMap, filter) =>
+const createImageForFilter = (weakMap, filter) =>
 {
   const isIssue = weakMap === issues;
-  const image = new Image();
-  image.src = `skin/icons/${isIssue ? "error" : "alert"}.svg`;
+  const image = createImageForType(isIssue);
   if (isIssue)
     image.title = filter.reason;
   else
     image.title = warningSlow;
   weakMap.set(filter, image);
+  return image;
+};
+
+const createImageForType = (isIssue) =>
+{
+  const image = new Image();
+  image.src = `skin/icons/${isIssue ? "error" : "alert"}.svg`;
   return image;
 };
 
@@ -620,6 +627,12 @@ function focusTheNextFilterIfAny(tr)
     // set back the _changingFocus
     this._changingFocus = false;
   }
+}
+
+function animateAndDrop(target)
+{
+  target.addEventListener("animationend", dropSavedClass);
+  target.classList.add("saved");
 }
 
 function dropSavedClass(event)
@@ -652,31 +665,54 @@ function getScrollTop(value, scrollHeight)
 function getWarning(filter)
 {
   if (filter.reason)
-    return issues.get(filter) || createImageFor(issues, filter);
+    return issues.get(filter) || createImageForFilter(issues, filter);
   if (filter.slow)
-    return warnings.get(filter) || createImageFor(warnings, filter);
+    return warnings.get(filter) || createImageForFilter(warnings, filter);
   return "";
 }
 
 function replaceFilter(filter, currentTarget)
 {
   const {text} = filter;
+  const old = prevFilterText.get(filter);
+  // if same text, no need to bother the extension at all
+  if (old === text)
+  {
+    animateAndDrop(currentTarget);
+    return;
+  }
   browser.runtime.sendMessage({
     type: "filters.replace",
-    old: prevFilterText.get(filter),
-    new: text
+    new: text,
+    old
   }).then(errors =>
   {
     if (errors.length)
     {
       filter.reason = errors[0];
-      this.render();
-      return;
     }
-    prevFilterText.set(filter, text);
-    delete filter.reason;
-    currentTarget.addEventListener("animationend", dropSavedClass);
-    currentTarget.classList.add("saved");
+    else
+    {
+      // see https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/issues/338
+      // until that lands, we remove the filter and add it at the end
+      // of the table so, before rendering, drop the new filter and update
+      // the current known one
+      const {filters} = this;
+      let i = filters.length;
+      let newFilter;
+      while (i--)
+      {
+        newFilter = filters[i];
+        if (newFilter.text === text)
+          break;
+      }
+      filters.splice(i, 1);
+      delete filter.reason;
+      Object.assign(filter, newFilter);
+      prevFilterText.set(filter, text);
+      animateAndDrop(currentTarget);
+    }
+    this.render();
   });
 }
 

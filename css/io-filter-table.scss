@@ -117,6 +117,7 @@ io-filter-table .footer .error
   color: #db394b;
   text-transform: none;
   flex-grow: 1;
+  white-space: pre;
 }
 
 io-filter-table .footer .error:not([data-filter])
