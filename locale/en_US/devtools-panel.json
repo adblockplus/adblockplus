@@ -60,8 +60,18 @@
     "message": "Request"
   },
   "devtools_request_url": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/28aba213f76265253786a9ed64fdba1377644352/spec/abp/devtools-panel.md#request-column e.g. http://example.com/foo rewritten to http://example.com/bar",
-    "message": "<a0></a0> rewritten to <a1></a1>"
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/28aba213f76265253786a9ed64fdba1377644352/spec/abp/devtools-panel.md#request-column",
+    "message": "<a0>$original$</a0> rewritten to <a1>$rewritten$</a1>",
+    "placeholders": {
+      "original": {
+        "content": "$1",
+        "example": "http://example.com/foo"
+      },
+      "rewritten": {
+        "content": "$2",
+        "example": "http://example.com/bar"
+      }
+    }
   },
   "devtools_type_title": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/28aba213f76265253786a9ed64fdba1377644352/spec/abp/devtools-panel.md#type-column",

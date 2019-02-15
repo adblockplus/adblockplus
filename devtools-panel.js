@@ -102,14 +102,16 @@ function createRecord(request, filter, template)
   row.querySelector(".domain").textContent = request.docDomain;
   row.querySelector(".type").textContent = request.type;
 
-  const urlElement = row.querySelector("[data-i18n='devtools_request_url']");
+  const urlElement = row.querySelector(".url");
   const actionWrapper = row.querySelector(".action-wrapper");
 
   if (request.url)
   {
+    ext.i18n.setElementText(urlElement, "devtools_request_url",
+      [request.url, request.rewrittenUrl]);
+
     const originalUrl = urlElement.querySelector("[data-i18n-index='0']");
     originalUrl.classList.add("url");
-    originalUrl.textContent = request.url;
     originalUrl.setAttribute("href", request.url);
     originalUrl.setAttribute("target", "_blank");
 
@@ -122,7 +124,6 @@ function createRecord(request, filter, template)
     {
       const rewrittenUrl = urlElement.querySelector("[data-i18n-index='1'");
       rewrittenUrl.classList.add("url-rewritten");
-      rewrittenUrl.textContent = request.rewrittenUrl;
       rewrittenUrl.setAttribute("href", request.rewrittenUrl);
       rewrittenUrl.addEventListener("click", onUrlClick);
       rewrittenUrl.setAttribute("target", "_blank");
