@@ -363,6 +363,9 @@ class IOFilterList extends IOElement
 
   onblur(event)
   {
+    // needed to avoid ellipsis on overflow hidden
+    // make the filter look like disappeared from the list
+    event.currentTarget.scrollLeft = 0;
     if (this._changingFocus)
     {
       this._filter = null;
