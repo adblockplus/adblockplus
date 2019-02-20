@@ -172,9 +172,7 @@ class IOFilterTable extends IOElement
 
   onFilterAdd(event)
   {
-    const filters = event.detail
-                    .split(/(?:\r\n|\n)/)
-                    .reverse();
+    const filters = event.detail.split(/(?:\r\n|\n)/);
 
     browser.runtime.sendMessage({
       type: "filters.importRaw",
@@ -185,6 +183,7 @@ class IOFilterTable extends IOElement
       if (!errors.length)
       {
         cleanErrors.call(this);
+        filters.reverse();
         for (const text of filters)
         {
           const i = this.filters.findIndex(flt => flt.text === text);
