@@ -975,7 +975,11 @@ function onDOMLoaded()
   });
 
   // Help tab
-  getDocLink("adblock_plus_report_bug").then(link =>
+  getDocLink("help_center_abp_en", (link) =>
+  {
+    setElementLinks("help-center", link);
+  });
+  getDocLink("adblock_plus_report_bug", (link) =>
   {
     setElementLinks("report-bug", link);
   });

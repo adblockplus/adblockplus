@@ -340,6 +340,9 @@
     "description": "Section title in Help tab",
     "message": "Support"
   },
+  "options_help_center": {
+    "message": "Looking for answers to your questions? <a0>Visit our Help Center (English only)</a0>"
+  },
   "options_report_bug": {
     "description": "'Support' section list item in Help tab",
     "message": "Found a bug? <a>Send us a bug report</a>"
