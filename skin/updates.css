@@ -15,16 +15,11 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-html
-{
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
-
 body
 {
   margin: 0;
   padding: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
 #container
