@@ -61,7 +61,7 @@ body
   color: #F00;
 }
 
-/* Needed in order to achieve standard behavior 
+/* Needed in order to achieve standard behavior
 for links, due to lacking href attribute */
 #content a:hover
 {

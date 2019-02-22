@@ -89,7 +89,7 @@
       "upload-translations": "python build.py uploadtrans $CROWDIN_API_KEY"
     },
     "lint": {
-      "css": "stylelint ./css/*.scss ./skin/*.css --ignore-path .gitignore",
+      "css": "stylelint ./build/**/*.css ./css/*.scss ./skin/*.css --ignore-path .gitignore",
       "js": "eslint './*.js' './js/**/*.js' './lib/**/*.js' './ext/**/*.js' './build/**/*.js'",
       "locale": [
         "node build/locale-linter/test",
