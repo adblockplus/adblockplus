@@ -19,5 +19,14 @@
   },
   "common_notification_hide": {
     "message": "Uyarıyı kapat"
+  },
+  "copy_selected": {
+    "message": "Seçileni kopyala"
+  },
+  "delete": {
+    "message": "Sil"
+  },
+  "filter_action_failed": {
+    "message": "Bir hata oluştu. Lütfen tekrar deneyin."
   }
 }

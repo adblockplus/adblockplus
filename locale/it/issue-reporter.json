@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "Nota: è impossibile rispondere a segnalazioni anonime alle quali viene probabilmente dato un ordine di priorità inferiore"
   },
+  "issueReporter_closeButton_label": {
+    "message": "Chiudi"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Lascia un commento"
   },
@@ -73,6 +76,9 @@
   },
   "issueReporter_processing_screenshot": {
     "message": "Elaborazione in corso"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "Per aiutarci a comprendere meglio il problema, inviaci una screenshot insieme a un rapporto dell'inconveniente. A seconda del sito web in cui ti trovi, la screenshot potrebbe contenere informazioni personali. Se preferisci non inviare una screenshot, inviaci informazioni sul tuo problema via email all'indirizzo <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_screenshot_hide": {
     "message": "Nascondi"

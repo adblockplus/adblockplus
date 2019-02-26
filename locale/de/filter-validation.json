@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "Ungültiger regulärer Ausdruck"
   },
+  "filter_slow": {
+    "message": "Bitte überprüfe die Länge des Musters und dass der Filter keinen regulären Ausdruck enthält, um sicherzustellen, dass er schnell angewandt werden kann."
+  },
   "filter_snippet_nodomain": {
     "message": "Keine aktive Domain für den Snippet-Filter angegeben"
   },

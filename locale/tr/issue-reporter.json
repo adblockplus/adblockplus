@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "Size geri dönemeyiz ve muhtemelen rapor önceliği düşük olarak ayarlanır."
   },
+  "issueReporter_closeButton_label": {
+    "message": "Kapat"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Yorum bırak"
   },
@@ -73,6 +76,9 @@
   },
   "issueReporter_processing_screenshot": {
     "message": "işleniyor"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "Sorunu daha iyi anlamamıza yardımcı olmak için, sorun raporu gönderirken bir ekran görüntüsü gerekir. Bulunduğunuz web sitesine bağlı olarak, ekran görüntüsü kişisel bilgiler içerebilir. Bir ekran görüntüsü göndermek için uygun olduğunuzu düşünmüyorsanız, lütfen yaşadığınız sorunu e-posta yoluyla <a0>support@adblockplus.org</a0> adresine gönderin."
   },
   "issueReporter_screenshot_hide": {
     "message": "Gizle"

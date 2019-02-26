@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "Es wird uns nicht möglich sein, sich für Nachfragen an Sie zu wenden, und wir werden Ihrem Bericht möglicherweise eine niedrigere Priorität beimessen."
   },
+  "issueReporter_closeButton_label": {
+    "message": "Schließen"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Kommentar hinterlassen"
   },
@@ -67,6 +70,9 @@
   },
   "issueReporter_privacyPolicy": {
     "message": "Datenschutzerklärung"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "Damit wir das Problem besser verstehen können, ist bei der Übermittlung eines Problemberichtes ein Screenshot erforderlich. Je nach Website, auf der du dich momentan befindest, könnte der Screenshot personenbezogene Informationen enthalten. Wenn du keinen Screenshot übermitteln möchtest, schicke dein Problem bitte an <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_screenshot_hide": {
     "message": "Ausblenden"

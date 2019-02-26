@@ -19,5 +19,14 @@
   },
   "common_notification_hide": {
     "message": "Benachrichtigung schließen"
+  },
+  "copy_selected": {
+    "message": "Auswahl kopieren"
+  },
+  "delete": {
+    "message": "Löschen"
+  },
+  "filter_action_failed": {
+    "message": "Es gibt ein Problem. Bitte versuche es erneut."
   }
 }

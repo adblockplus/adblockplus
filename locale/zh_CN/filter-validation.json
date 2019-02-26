@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "无效的正则表达式"
   },
+  "filter_slow": {
+    "message": "为确保快速过滤，请检查序列长度并确保不包含正则表达式。"
+  },
   "filter_snippet_nodomain": {
     "message": "没有为代码片段过滤器指定活动域"
   },

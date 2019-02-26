@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "Espressione regolare Invalida"
   },
+  "filter_slow": {
+    "message": "Per ottenere un filtro veloce, controlla la lunghezza dello schema e fai in modo che non contenga un'espressione regolare."
+  },
   "filter_snippet_nodomain": {
     "message": "Nessun dominio attivo specificato per il filtro dei frammenti"
   },

@@ -45,7 +45,7 @@
     "message": "SALVAR"
   },
   "options_customFilters_description": {
-    "message": "Crie os seus próprios filtros para controlar o conteúdo Adblock Plus bloqueia. <a0>Saiba como criar filtros</a0>"
+    "message": "Crie ou mantenha seus próprios filtros para controlar de modo avançado qual conteúdo o Adblock Plus deve permitir ou bloquear. <a0>Aprenda a desenvolver filtros</a0>"
   },
   "options_customFilters_edit_placeholder": {
     "message": "p. ex. $filter$",
@@ -66,7 +66,7 @@
     "message": "Os filtros que você criou são apresentados aqui."
   },
   "options_customFilters_title": {
-    "message": "CRIAR E EDITAR A SUA LISTA DE FILTROS"
+    "message": "Seus filtros personalizados"
   },
   "options_customFilters_widget_title": {
     "message": "Minha lista de filtros"
@@ -195,7 +195,7 @@
     "message": "Ativo"
   },
   "options_filterList_state_disabled": {
-    "message": "Desativado"
+    "message": "Inativo"
   },
   "options_filterList_title": {
     "message": "Listas de filtros"
@@ -209,8 +209,11 @@
   "options_filterList_website": {
     "message": "Site"
   },
+  "options_filter_list_rule": {
+    "message": "Filtrar regra"
+  },
   "options_filters_search_or_add": {
-    "message": "Pesquisar / adicionar filtro (e.g. $filter$)",
+    "message": "Pesquisar ou adicionar filtro(s) (por exemplo, $filter$)",
     "placeholders": {
       "filter": {
         "content": "/ads/track/*"

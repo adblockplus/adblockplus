@@ -45,7 +45,7 @@
     "message": "Zapisz"
   },
   "options_customFilters_description": {
-    "message": "Utwórz własne niestandardowe filtry, aby jeszcze lepiej kontrolować blokowanie zawartości przez Adblock Plus. <a0>Dowiedz się, jak tworzyć filtry</a0>"
+    "message": "Utwórz i edytuj własne niestandardowe filtry, aby jeszcze lepiej kontrolować wyświetlanie zawartości przez Adblock Plus. <a0>Dowiedz się, jak tworzyć filtry</a0>"
   },
   "options_customFilters_edit_placeholder": {
     "message": "np. $filter$",
@@ -66,7 +66,7 @@
     "message": "Tworzone filtry pojawią się tutaj."
   },
   "options_customFilters_title": {
-    "message": "Utwórz oraz edytuj swój zestaw filtrów"
+    "message": "Filtry niestandardowe"
   },
   "options_customFilters_widget_title": {
     "message": "Mój zestaw filtrów"
@@ -195,7 +195,7 @@
     "message": "Aktywny"
   },
   "options_filterList_state_disabled": {
-    "message": "Wyłączony"
+    "message": "Nieaktywne"
   },
   "options_filterList_title": {
     "message": "Zestawy filtrów"
@@ -208,6 +208,17 @@
   },
   "options_filterList_website": {
     "message": "Witryna internetowa"
+  },
+  "options_filter_list_rule": {
+    "message": "Reguły filtrowania"
+  },
+  "options_filters_search_or_add": {
+    "message": "Wyszukaj lub dodaj filtry (np. $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
   },
   "options_footer_about": {
     "message": "Adblock Plus — informacje"

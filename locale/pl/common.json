@@ -19,5 +19,14 @@
   },
   "common_notification_hide": {
     "message": "Zamknij powiadomienie"
+  },
+  "copy_selected": {
+    "message": "Wybrano kopiowanie"
+  },
+  "delete": {
+    "message": "Usuń"
+  },
+  "filter_action_failed": {
+    "message": "Wystąpił błąd. Spróbuj ponownie."
   }
 }

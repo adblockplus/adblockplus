@@ -1,0 +1,53 @@
+{
+  "devtools_action_block": {
+    "message": "Blocca elemento"
+  },
+  "devtools_action_remove": {
+    "message": "Rimuovi regola"
+  },
+  "devtools_action_unblock": {
+    "message": "Aggiungi eccezione"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "definito dall'utente"
+  },
+  "devtools_filter_origin_none": {
+    "message": "sottoscrizione senza nome"
+  },
+  "devtools_filter_subtitle": {
+    "message": "Origine"
+  },
+  "devtools_filter_title": {
+    "message": "Filtro"
+  },
+  "devtools_footer": {
+    "message": "<a0>Ricarica</a0> la pagina per visualizzare l'effetto delle modifiche del filtro"
+  },
+  "devtools_header": {
+    "message": "Visualizza <slot0></slot0> l'elemento/gli elementi di tipo <slot1></slot1>"
+  },
+  "devtools_header_state_all": {
+    "message": "tutto"
+  },
+  "devtools_header_state_blocked": {
+    "message": "bloccato"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "nella lista bianca"
+  },
+  "devtools_header_type_any": {
+    "message": "qualunque"
+  },
+  "devtools_request_subtitle": {
+    "message": "Dominio del documento"
+  },
+  "devtools_request_title": {
+    "message": "Richiesta"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0> riscritto in <a1></a1>"
+  },
+  "devtools_type_title": {
+    "message": "Tipo"
+  }
+}

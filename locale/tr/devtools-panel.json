@@ -1,0 +1,53 @@
+{
+  "devtools_action_block": {
+    "message": "Öğeyi engelle"
+  },
+  "devtools_action_remove": {
+    "message": "Kuralı kaldır"
+  },
+  "devtools_action_unblock": {
+    "message": "İstisna ekle"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "kullanıcı tanımlı"
+  },
+  "devtools_filter_origin_none": {
+    "message": "adsız abonelik"
+  },
+  "devtools_filter_subtitle": {
+    "message": "Orijin"
+  },
+  "devtools_filter_title": {
+    "message": "Süzgeç"
+  },
+  "devtools_footer": {
+    "message": "Süzgeç değişikliklerinin etkisini görmek için sayfayı <a0>yeniden yükleyin</a0>"
+  },
+  "devtools_header": {
+    "message": "<slot1></slot1> türündeki <slot0></slot0> öğeleri göster"
+  },
+  "devtools_header_state_all": {
+    "message": "tüm"
+  },
+  "devtools_header_state_blocked": {
+    "message": "engellenen"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "güvenilir listesindeki"
+  },
+  "devtools_header_type_any": {
+    "message": "tüm"
+  },
+  "devtools_request_subtitle": {
+    "message": "Belge etki alanı"
+  },
+  "devtools_request_title": {
+    "message": "Talep"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0>, <a1></a1> olarak yeniden yazıldı"
+  },
+  "devtools_type_title": {
+    "message": "Tür"
+  }
+}

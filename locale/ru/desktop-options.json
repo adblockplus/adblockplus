@@ -45,7 +45,7 @@
     "message": "СОХРАНИТЬ"
   },
   "options_customFilters_description": {
-    "message": "Создавайте свои собственные фильтры для более глубоко контроля над тем, какое содержимое Adblock Plus блокирует. <a0>Узнайте, как создавать фильтры</a0>"
+    "message": "Создавай и редактируй свои собственные фильтры, чтобы еще лучше контролировать, какой контент Adblock Plus разрешает и блокирует. <a0>Узнать, как создавать фильтры</a0>"
   },
   "options_customFilters_edit_placeholder": {
     "message": "например, $filter$",
@@ -66,7 +66,7 @@
     "message": "Здесь показаны созданные вами фильтры."
   },
   "options_customFilters_title": {
-    "message": "Создание и редактирование списка фильтров"
+    "message": "Твои фильтры"
   },
   "options_customFilters_widget_title": {
     "message": "Мой список фильтров"
@@ -195,7 +195,7 @@
     "message": "Активен"
   },
   "options_filterList_state_disabled": {
-    "message": "Отключено"
+    "message": "Неактивный"
   },
   "options_filterList_title": {
     "message": "Списки фильтров"
@@ -209,8 +209,11 @@
   "options_filterList_website": {
     "message": "Сайт"
   },
+  "options_filter_list_rule": {
+    "message": "Правило фильтра"
+  },
   "options_filters_search_or_add": {
-    "message": "Фильтр поиска / добавления (например, $filter$)",
+    "message": "Искать или добавить фильтр(-ы) (напр., $filter$)",
     "placeholders": {
       "filter": {
         "content": "/ads/track/*"

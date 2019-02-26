@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "我们将无法回复你，并且报告可能被放在较低的优先级次序。"
   },
+  "issueReporter_closeButton_label": {
+    "message": "关闭"
+  },
   "issueReporter_commentPage_heading": {
     "message": "发表评论"
   },
@@ -73,6 +76,9 @@
   },
   "issueReporter_processing_screenshot": {
     "message": "处理中"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "为了帮助我们更好地理解问题，提交问题报告时需要屏幕截图。根据您当前使用的网站，屏幕截图可能包含个人信息。如果您对提交屏幕截图感到不舒服，请将您的问题通过电子邮件发送至 <a0>support@adblockplus.org</a0>。"
   },
   "issueReporter_screenshot_hide": {
     "message": "隐藏"

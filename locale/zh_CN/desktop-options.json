@@ -45,7 +45,7 @@
     "message": "保存"
   },
   "options_customFilters_description": {
-    "message": "创建自己的过滤器，以进一步控制 Adblock Plus拦截的内容。<a0>了解如何创建过滤器</a0>"
+    "message": "创建并维护自己的过滤器，以进一步控制 Adblock Plus 允许或拦截的内容。<a0>了解如何编写过滤器</a0>"
   },
   "options_customFilters_edit_placeholder": {
     "message": "例如 $filter$",
@@ -66,7 +66,7 @@
     "message": "您创建的过滤器将显示在此处。"
   },
   "options_customFilters_title": {
-    "message": "创建和编辑您的过滤列表"
+    "message": "您的自定义过滤器"
   },
   "options_customFilters_widget_title": {
     "message": "我的过滤列表"
@@ -195,7 +195,7 @@
     "message": "活跃"
   },
   "options_filterList_state_disabled": {
-    "message": "被禁用"
+    "message": "非活跃"
   },
   "options_filterList_title": {
     "message": "过滤列表"
@@ -209,8 +209,11 @@
   "options_filterList_website": {
     "message": "网站"
   },
+  "options_filter_list_rule": {
+    "message": "过滤规则"
+  },
   "options_filters_search_or_add": {
-    "message": "搜索/添加筛选器 (如 $filter$)",
+    "message": "搜索或添加过滤器（例如$filter$）",
     "placeholders": {
       "filter": {
         "content": "/ads/track/*"
