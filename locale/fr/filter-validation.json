@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "Expression régulière non valide"
   },
+  "filter_slow": {
+    "message": "Pour disposer d’un filtrage rapide, merci de vérifier la longueur du modèle et s’assurer qu’il ne contient pas une expression régulière."
+  },
   "filter_snippet_nodomain": {
     "message": "Aucun domaine actif spécifié pour le filtre de fragments"
   },

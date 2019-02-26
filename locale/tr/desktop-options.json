@@ -45,7 +45,7 @@
     "message": "Kaydet"
   },
   "options_customFilters_description": {
-    "message": "Adblock Plus'ın engelleyeceği içeriklere ilişkin daha fazla kontrol için kendi süzgeçlerinizi oluşturun. <a0>Nasıl süzgeç oluşturulacağını öğrenin</a0>"
+    "message": "Adblock Plus'ın izin vereceği veya engelleyeceği içeriklere ilişkin daha fazla kontrol için kendi süzgeçlerinizi oluşturun ve saklayın. <a0>Nasıl süzgeç yazılacağını öğrenin</a0>"
   },
   "options_customFilters_edit_placeholder": {
     "message": "örn. $filter$",
@@ -66,7 +66,7 @@
     "message": "Oluşturduğunuz süzgeçler burada belirecek."
   },
   "options_customFilters_title": {
-    "message": "Süzgeç listenizi oluşturun ve düzenleyin"
+    "message": "Özel süzgeçleriniz"
   },
   "options_customFilters_widget_title": {
     "message": "Süzgeç listelerim"
@@ -209,8 +209,11 @@
   "options_filterList_website": {
     "message": "site"
   },
+  "options_filter_list_rule": {
+    "message": "Süzgeç kuralı"
+  },
   "options_filters_search_or_add": {
-    "message": "Süzgeç ara / ekle (ör. $filter$)",
+    "message": "Süzgeç ara veya ekle (ör. $filter$)",
     "placeholders": {
       "filter": {
         "content": "/ads/track/*"

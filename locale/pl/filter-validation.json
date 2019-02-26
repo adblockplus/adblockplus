@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "Nieprawidłowe wyrażenie regularne"
   },
+  "filter_slow": {
+    "message": "Aby filtr działał szybko, należy sprawdzić długość wzorca, który nie powinien zawierać wyrażeń regularnych."
+  },
   "filter_snippet_nodomain": {
     "message": "Nie określono aktywnej domeny dla filtra fragmentów kodu"
   },

@@ -1,0 +1,53 @@
+{
+  "devtools_action_block": {
+    "message": "Zablokuj element"
+  },
+  "devtools_action_remove": {
+    "message": "Usuń regułę"
+  },
+  "devtools_action_unblock": {
+    "message": "Dodaj wyjątek"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "zdefiniowany przez użytkownika"
+  },
+  "devtools_filter_origin_none": {
+    "message": "subskrypcja bez nazwy"
+  },
+  "devtools_filter_subtitle": {
+    "message": "Pochodzenie"
+  },
+  "devtools_filter_title": {
+    "message": "Filtr"
+  },
+  "devtools_footer": {
+    "message": "<a0>Załaduj ponownie</a0> stronę, aby zobaczyć efekty zmian w filtrze"
+  },
+  "devtools_header": {
+    "message": "Pokaż <slot0></slot0> elementów typu <slot1></slot1>"
+  },
+  "devtools_header_state_all": {
+    "message": "wszystko"
+  },
+  "devtools_header_state_blocked": {
+    "message": "zablokowane"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "na liście dozwolonych"
+  },
+  "devtools_header_type_any": {
+    "message": "dowolne"
+  },
+  "devtools_request_subtitle": {
+    "message": "Domena dokumentu"
+  },
+  "devtools_request_title": {
+    "message": "Żądanie"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0> przepisany na <a1></a1>"
+  },
+  "devtools_type_title": {
+    "message": "Typ"
+  }
+}

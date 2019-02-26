@@ -1,0 +1,53 @@
+{
+  "devtools_action_block": {
+    "message": "Заблокировать объект"
+  },
+  "devtools_action_remove": {
+    "message": "Удалить правило"
+  },
+  "devtools_action_unblock": {
+    "message": "Добавить исключение"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "определено пользователем"
+  },
+  "devtools_filter_origin_none": {
+    "message": "безымянная подписка"
+  },
+  "devtools_filter_subtitle": {
+    "message": "Источник"
+  },
+  "devtools_filter_title": {
+    "message": "Фильтр"
+  },
+  "devtools_footer": {
+    "message": "<a0>Перезагрузи</a0> страницу, чтобы изменения фильтра вступили в силу"
+  },
+  "devtools_header": {
+    "message": "Показать <slot0></slot0> объекты типа <slot1></slot1>"
+  },
+  "devtools_header_state_all": {
+    "message": "все"
+  },
+  "devtools_header_state_blocked": {
+    "message": "заблокированные"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "разрешенные"
+  },
+  "devtools_header_type_any": {
+    "message": "любые"
+  },
+  "devtools_request_subtitle": {
+    "message": "Домен документа"
+  },
+  "devtools_request_title": {
+    "message": "Запрос"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0> переписано на <a1></a1>"
+  },
+  "devtools_type_title": {
+    "message": "Тип"
+  }
+}

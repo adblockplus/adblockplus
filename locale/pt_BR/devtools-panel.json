@@ -1,0 +1,53 @@
+{
+  "devtools_action_block": {
+    "message": "Bloquear item"
+  },
+  "devtools_action_remove": {
+    "message": "Remover regra"
+  },
+  "devtools_action_unblock": {
+    "message": "Adicionar exceção"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "definido por usuário"
+  },
+  "devtools_filter_origin_none": {
+    "message": "assinatura sem nome"
+  },
+  "devtools_filter_subtitle": {
+    "message": "Origem"
+  },
+  "devtools_filter_title": {
+    "message": "Filtro"
+  },
+  "devtools_footer": {
+    "message": "<a0>Atualize</a0> a página para visualizar os efeitos das alterações de filtro"
+  },
+  "devtools_header": {
+    "message": "Exibir itens <slot0></slot0> do tipo <slot1></slot1>"
+  },
+  "devtools_header_state_all": {
+    "message": "qualquer"
+  },
+  "devtools_header_state_blocked": {
+    "message": "bloqueados"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "permitidos"
+  },
+  "devtools_header_type_any": {
+    "message": "qualquer um"
+  },
+  "devtools_request_subtitle": {
+    "message": "Document domain"
+  },
+  "devtools_request_title": {
+    "message": "Solicitação"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0> substituído por <a1></a1>"
+  },
+  "devtools_type_title": {
+    "message": "Digite"
+  }
+}

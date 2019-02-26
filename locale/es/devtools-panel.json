@@ -1,0 +1,53 @@
+{
+  "devtools_action_block": {
+    "message": "Bloquear elemento"
+  },
+  "devtools_action_remove": {
+    "message": "Eliminar regla"
+  },
+  "devtools_action_unblock": {
+    "message": "Añadir una excepción"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "definida por el usuario"
+  },
+  "devtools_filter_origin_none": {
+    "message": "suscripción sin nombre"
+  },
+  "devtools_filter_subtitle": {
+    "message": "Origen"
+  },
+  "devtools_filter_title": {
+    "message": "Filtro"
+  },
+  "devtools_footer": {
+    "message": "<a0>Actualiza</a0> la página para ver los cambios producidos por el filtro"
+  },
+  "devtools_header": {
+    "message": "Mostrar elementos <slot0></slot0> de tipo <slot1></slot1>"
+  },
+  "devtools_header_state_all": {
+    "message": "cualesquiera"
+  },
+  "devtools_header_state_blocked": {
+    "message": "bloqueados"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "permitidos"
+  },
+  "devtools_header_type_any": {
+    "message": "cualquiera"
+  },
+  "devtools_request_subtitle": {
+    "message": "Dominio del documento"
+  },
+  "devtools_request_title": {
+    "message": "Solicitud"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0> reescrita como <a1></a1>"
+  },
+  "devtools_type_title": {
+    "message": "Tipo"
+  }
+}

@@ -45,7 +45,7 @@
     "message": "SPEICHERN"
   },
   "options_customFilters_description": {
-    "message": "Erstelle deine eigenen Filter, um zu kontrollieren, welche Inhalte Adblock Plus blockiert. <a0>Erfahre, wie man Filter erstellt</a0>"
+    "message": "Erstelle und verwalte deine eigenen Filter, um zu beeinflussen, welche Inhalte Adblock Plus zulässt oder blockiert. <a0>Erfahre, wie man Filter schreibt</a0>"
   },
   "options_customFilters_edit_placeholder": {
     "message": "z.B. $filter$",
@@ -66,7 +66,7 @@
     "message": "Von dir erstellte Filter werden hier angezeigt."
   },
   "options_customFilters_title": {
-    "message": "EIGENE FILTERLISTEN ERSTELLEN UND BEARBEITEN"
+    "message": "Deine benutzerdefinierten Filter"
   },
   "options_customFilters_widget_title": {
     "message": "Meine Filterliste"
@@ -195,7 +195,7 @@
     "message": "Aktiv"
   },
   "options_filterList_state_disabled": {
-    "message": "Deaktiviert"
+    "message": "Inaktiv"
   },
   "options_filterList_title": {
     "message": "Filterlisten"
@@ -208,6 +208,17 @@
   },
   "options_filterList_website": {
     "message": "Website"
+  },
+  "options_filter_list_rule": {
+    "message": "Filterregel"
+  },
+  "options_filters_search_or_add": {
+    "message": "Suchen oder Filter hinzufügen (z. B. $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
   },
   "options_footer_about": {
     "message": "Informationen zu Adblock Plus"

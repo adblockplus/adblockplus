@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "Мы не сможем связаться с вами и, вероятно, уделим меньше внимания Вашему сообщению."
   },
+  "issueReporter_closeButton_label": {
+    "message": "Закрыть"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Оставить комментарий"
   },
@@ -73,6 +76,9 @@
   },
   "issueReporter_processing_screenshot": {
     "message": "обработка"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "Чтобы мы лучше могли понять проблему, при отправки отчета нужно приложить скриншот. В зависимости от сайта, который сейчас открыт, скриншот может содержать личную информацию. Если ты не хочешь прикладывать скриншот, пожалуйста отправь описание проблемы на адрес <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_screenshot_hide": {
     "message": "Скрыть"

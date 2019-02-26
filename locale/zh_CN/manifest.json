@@ -1,14 +1,14 @@
 {
   "description": {
-    "message": "Adblock Plus 是拥有超过 5 亿次下载的全球最受欢迎的广告拦截软件之一。"
+    "message": "下载 Adblock Plus - 世界上最受欢迎的广告拦截程序之一。"
   },
   "name": {
     "message": "Adblock Plus"
   },
-  "name_releasebuild": {
-    "message": "Adblock Plus - 的免费广告拦截程序"
-  },
   "name_devbuild": {
     "message": "Adblock Plus 开发版"
+  },
+  "name_releasebuild": {
+    "message": "Adblock Plus - 的免费广告拦截程序"
   }
 }

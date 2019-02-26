@@ -19,5 +19,14 @@
   },
   "common_notification_hide": {
     "message": "关闭通知"
+  },
+  "copy_selected": {
+    "message": "复制选中项"
+  },
+  "delete": {
+    "message": "删除"
+  },
+  "filter_action_failed": {
+    "message": "出错了。请再试一次。"
   }
 }

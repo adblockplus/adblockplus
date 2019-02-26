@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "Geçersiz düzenli ifade"
   },
+  "filter_slow": {
+    "message": "Hızlı bir süzgeç için, lütfen yöntemin uzunluğunu kontrol edin ve kurallı ifade içermediğinden emin olun."
+  },
   "filter_snippet_nodomain": {
     "message": "Kod parçacığı filtresi için belirtilmiş etkin etki alanı yok"
   },

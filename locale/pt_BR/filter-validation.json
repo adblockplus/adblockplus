@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "Expressão regular inválida"
   },
+  "filter_slow": {
+    "message": "Para garantir um filtro rápido, verifique o comprimento do padrão e certifique-se de ele não contenha uma expressão regular."
+  },
   "filter_snippet_nodomain": {
     "message": "Nenhum domínio ativo especificado para filtro de snippet"
   },

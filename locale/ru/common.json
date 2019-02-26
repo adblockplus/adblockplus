@@ -19,5 +19,14 @@
   },
   "common_notification_hide": {
     "message": "Закрыть уведомление"
+  },
+  "copy_selected": {
+    "message": "Скопировать выбранные"
+  },
+  "delete": {
+    "message": "Удалить"
+  },
+  "filter_action_failed": {
+    "message": "Что-то пошло не так. Попробуй еще раз."
   }
 }

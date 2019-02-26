@@ -1,0 +1,53 @@
+{
+  "devtools_action_block": {
+    "message": "拦截项目"
+  },
+  "devtools_action_remove": {
+    "message": "删除规则"
+  },
+  "devtools_action_unblock": {
+    "message": "添加例外"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "用户定义"
+  },
+  "devtools_filter_origin_none": {
+    "message": "未命名订阅"
+  },
+  "devtools_filter_subtitle": {
+    "message": "来源"
+  },
+  "devtools_filter_title": {
+    "message": "过滤器"
+  },
+  "devtools_footer": {
+    "message": "<a0>重新加载</a0>页面以查看过滤器更改的效果"
+  },
+  "devtools_header": {
+    "message": "显示<slot1></slot1>类型的<slot0></slot0>项目"
+  },
+  "devtools_header_state_all": {
+    "message": "全部"
+  },
+  "devtools_header_state_blocked": {
+    "message": "已拦截"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "已列入白名单"
+  },
+  "devtools_header_type_any": {
+    "message": "任何"
+  },
+  "devtools_request_subtitle": {
+    "message": "文档域"
+  },
+  "devtools_request_title": {
+    "message": "请求"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0>重写为<a1></a1>"
+  },
+  "devtools_type_title": {
+    "message": "类型"
+  }
+}

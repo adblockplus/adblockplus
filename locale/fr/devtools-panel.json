@@ -1,0 +1,53 @@
+{
+  "devtools_action_block": {
+    "message": "Verrouiller un élément"
+  },
+  "devtools_action_remove": {
+    "message": "Supprimer règle"
+  },
+  "devtools_action_unblock": {
+    "message": "Ajouter une exception"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "défini par l’utilisateur"
+  },
+  "devtools_filter_origin_none": {
+    "message": "abonnement anonyme"
+  },
+  "devtools_filter_subtitle": {
+    "message": "Origine"
+  },
+  "devtools_filter_title": {
+    "message": "Filtre"
+  },
+  "devtools_footer": {
+    "message": "<a0>Recharger</a0> la page pour observer l’effet des changements de filtres"
+  },
+  "devtools_header": {
+    "message": "Montrer <slot0></slot0> les éléments de <slot1></slot1> type"
+  },
+  "devtools_header_state_all": {
+    "message": "tous"
+  },
+  "devtools_header_state_blocked": {
+    "message": "bloqué"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "liste blanche"
+  },
+  "devtools_header_type_any": {
+    "message": "tout"
+  },
+  "devtools_request_subtitle": {
+    "message": "Domaine du document"
+  },
+  "devtools_request_title": {
+    "message": "Demande"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0> Réécrit pour <a1></a1>"
+  },
+  "devtools_type_title": {
+    "message": "Type"
+  }
+}

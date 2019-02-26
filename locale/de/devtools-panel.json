@@ -1,0 +1,53 @@
+{
+  "devtools_action_block": {
+    "message": "Element blockieren"
+  },
+  "devtools_action_remove": {
+    "message": "Regel entfernen"
+  },
+  "devtools_action_unblock": {
+    "message": "Ausnahme hinzufügen"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "benutzerdefiniert"
+  },
+  "devtools_filter_origin_none": {
+    "message": "unbenannte Filterliste"
+  },
+  "devtools_filter_subtitle": {
+    "message": "Ursprung"
+  },
+  "devtools_filter_title": {
+    "message": "Filter"
+  },
+  "devtools_footer": {
+    "message": "Seite <a0>neu laden</a0>, um Auswirkung der Filteränderungen zu sehen"
+  },
+  "devtools_header": {
+    "message": "<slot0></slot0> Elemente für <slot1></slot1> Typ anzeigen"
+  },
+  "devtools_header_state_all": {
+    "message": "Alle"
+  },
+  "devtools_header_state_blocked": {
+    "message": "Blockierte"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "Zugelassene"
+  },
+  "devtools_header_type_any": {
+    "message": "beliebigen"
+  },
+  "devtools_request_subtitle": {
+    "message": "Dokumentendomäne"
+  },
+  "devtools_request_title": {
+    "message": "Anfrage"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0> umgeschrieben zu <a1></a1>"
+  },
+  "devtools_type_title": {
+    "message": "Typ"
+  }
+}

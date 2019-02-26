@@ -1,11 +1,11 @@
 {
   "description": {
-    "message": "Ponad 500 milionów pobrań czyni Adblock Plusa jednym z najpopularniejszych na świecie programów do blokowania reklam."
-  },
-  "name_releasebuild": {
-    "message": "Adblock Plus - darmowy adblocker"
+    "message": "Pobierz Adblock Plus — jedno z najpopularniejszych na świecie rozwiązań do blokowania reklam."
   },
   "name_devbuild": {
     "message": "Adblock Plus – wersja rozwojowa"
+  },
+  "name_releasebuild": {
+    "message": "Adblock Plus - darmowy adblocker"
   }
 }
