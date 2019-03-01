@@ -290,7 +290,7 @@
   },
   "options_customFilters_description": {
     "description": "Custom filter lists section description in Advanced tab",
-    "message": "Create and maintain your own filters to further control what content Adblock Plus allows or blocks. <a0>Learn how to write filters</a0>"
+    "message": "Create and maintain your own filters to further control what content Adblock Plus allows or blocks. <a0>Learn how to write filters (English only)</a0>"
   },
   "options_customFilters_widget_title": {
     "description": "Custom filter widget title in Advanced tab",
