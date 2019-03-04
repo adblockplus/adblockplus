@@ -15,6 +15,11 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+html
+{
+  font-size: 16px;
+}
+
 body
 {
   margin: 0;
@@ -34,20 +39,21 @@ body
   display: flex;
   flex: 1;
   height: 100vh;
-  align-items: center;
   justify-content: center;
 }
 
-#graphic-column,
 .graphic-column
 {
+  align-items: center;
+  min-height: 500px;
   background-color: #8DC446;
 }
 
 #content
 {
-  padding: 0 3em;
-  max-width: 760px;
+  overflow: auto;
+  max-width: 1024px;
+  padding: 3em;
 }
 
 #content a
@@ -71,7 +77,7 @@ for links, due to lacking href attribute */
 
 #content header
 {
-  margin: 0 0 2em 5em;
+  margin: 0 0 2rem 5rem;
 }
 
 html[dir="rtl"] #content header
@@ -92,19 +98,14 @@ html[dir="rtl"] #content header
   margin: 0;
 }
 
-.custom-feature-entry
+#content h2
 {
-  margin-top: 2em;
+  margin: 2rem 0 0 5rem;
 }
 
-.custom-feature-entry h2
+html[dir="rtl"] #content h2
 {
-  margin: 0 0 0 3.4em;
-}
-
-html[dir="rtl"] .custom-feature-entry h2
-{
-  margin: 0 3.4em 0 0;
+  margin: 2rem 5em 0 0;
 }
 
 .update-graphic-container
@@ -204,13 +205,13 @@ html[dir="rtl"] .store-button
 
 .applestore-button
 {
-  margin-right: 1em;
+  margin-right: 0.5em;
 }
 
 html[dir="rtl"] .applestore-button
 {
   margin-right: 0;
-  margin-left: 1em;
+  margin-left: 0.5em;
 }
 
 @media(max-width: 960px)
@@ -218,6 +219,11 @@ html[dir="rtl"] .applestore-button
   #container
   {
     flex-direction: column-reverse;
+  }
+
+  .column
+  {
+    height: auto;
   }
 }
 
