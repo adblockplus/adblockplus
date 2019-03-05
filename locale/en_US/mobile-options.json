@@ -21,7 +21,7 @@
   },
   "mops_filterlist_add": {
     "description": "Label for initiating adding a new filter list",
-    "message": "+ Add a filter list"
+    "message": "Add a filter list"
   },
   "mops_filterlist_add_action": {
     "description": "Label for finishing adding a new filter list",
@@ -29,7 +29,7 @@
   },
   "mops_filterlist_add_url": {
     "description": "Label for initiating adding a new filter list manually",
-    "message": "+ Add a custom filter list"
+    "message": "Add a custom filter list"
   },
   "mops_header": {
     "description": "Mobile options page title",

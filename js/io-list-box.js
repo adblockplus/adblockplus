@@ -288,7 +288,7 @@ class IOListBox extends IOElement
       aria-haspopup="${this.id + "popup"}"
       onblur="${this}" onfocus="${this}"
       onkeydown="${this}" onmousedown="${this}"
-    >${this.expanded ? this.placeholder : this._text}</button>
+    >${this.expanded ? this.placeholder : `+ ${this._text}`}</button>
     <ul
       role="listbox"
       tab-index="-1"

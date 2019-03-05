@@ -35,7 +35,7 @@ Google Plus
 support@adblockplus.org
 Twitter
 Weibo
-1234567890.,'
+1234567890.,'+
 `;
 
 // Don't generate Lang rule for current font

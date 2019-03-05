@@ -176,7 +176,7 @@
   },
   "options_language_add": {
     "description": "Add other language button in General Tab",
-    "message": "+ add a language"
+    "message": "Add a language"
   },
   "options_whitelist_description": {
     "description": "Whitelist tab description",
@@ -278,7 +278,7 @@
   },
   "options_filterList_add": {
     "description": "Import button in Advanced tab",
-    "message": "+ Add a new filter list"
+    "message": "Add a new filter list"
   },
   "options_filterList_update": {
     "description": "Update button in Advanced tab",

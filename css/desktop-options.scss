@@ -196,6 +196,11 @@ button.list:hover
   box-shadow: inset 0 0 0 3px #077CA6;
 }
 
+button.add::before
+{
+  content: "+ ";
+}
+
 .side-controls:not(.wrap)
 {
   display: flex;
