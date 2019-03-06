@@ -8,7 +8,7 @@
     "bundle": "npm run $ bundle",
     "fonts-gen": "node build/font-generation/index.js",
     "lint": "npm run $ lint",
-    "postinstall": "pip install fonttools brotli --user && npm run bundle",
+    "postinstall": "pip install fonttools brotli --user && npm run fonts-gen && npm run bundle",
     "start": "http-server & npm run watch",
     "test": "npm run $ test",
     "watch": "npm run $ watch",
@@ -129,7 +129,8 @@
     "watch": {
       "dev-build": "watch 'npm run dev-build' ./css ./js",
       "bundle": "watch 'npm run bundle' ./css ./js",
-      "test": "watch 'npm run test' ./css ./js"
+      "test": "watch 'npm run test' ./css ./js",
+      "fonts-gen": "watch 'npm run fonts-gen' ./locale"
     }
   },
   "dependencies": {

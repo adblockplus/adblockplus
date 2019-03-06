@@ -1,6 +1,7 @@
 node_modules/
 screenshots/
 smoke/
+skin/fonts/
 skin/desktop-options.css
 skin/first-run.css
 skin/issue-reporter.css
@@ -11,3 +12,4 @@ first-run.js
 issue-reporter.js
 popup.js
 package-lock.json
+
