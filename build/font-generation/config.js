@@ -17,6 +17,7 @@
 
 "use strict";
 
+const fs = require("fs");
 // Directory where the locales are located
 const localesDir = "./locale";
 // Folder for fonts generation
@@ -28,15 +29,8 @@ const outputFontFile = `${outputDir}/font.css`;
 // Path for the font css file generation
 const inputFontFile = "./build/font-generation/font.css";
 // Common characters shared across fonts
-const sharedCharacters = `
-Adblock Plus
-Facebook
-Google Plus
-support@adblockplus.org
-Twitter
-Weibo
-1234567890.,'+
-`;
+const sharedCharactersFile = "./build/font-generation/shared-chars.txt";
+const sharedCharacters = fs.readFileSync(sharedCharactersFile, "utf8");
 
 // Don't generate Lang rule for current font
 const noLangRuleFont = "Source Sans Pro";
