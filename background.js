@@ -422,13 +422,12 @@
   };
 
   modules.options = {
-    showOptions(callback)
+    showOptions()
     {
       if (!/\/(?:mobile|desktop)-options\.html\b/.test(top.location.href))
         window.open("desktop-options.html", "_blank");
 
-      if (callback)
-        callback();
+      return Promise.resolve();
     }
   };
 
