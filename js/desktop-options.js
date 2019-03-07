@@ -597,67 +597,67 @@ function switchTab(id)
 function execAction(action, element)
 {
   if (element.getAttribute("aria-disabled") == "true")
-    return;
+    return false;
 
   switch (action)
   {
     case "add-domain-exception":
       addWhitelistedDomain();
-      break;
+      return true;
     case "add-language-subscription":
       addEnableSubscription(findParentData(element, "access", false));
-      break;
+      return true;
     case "add-predefined-subscription": {
       const dialog = $("#dialog-content-predefined");
       const title = dialog.querySelector("h3").textContent;
       const url = dialog.querySelector(".url").textContent;
       addEnableSubscription(url, title);
       closeDialog();
-      break;
+      return true;
     }
     case "change-language-subscription":
       changeLanguageSubscription(findParentData(element, "access", false));
-      break;
+      return true;
     case "close-dialog":
       closeDialog();
-      break;
+      return true;
     case "hide-more-filters-section":
       $("#more-filters").setAttribute("aria-hidden", true);
-      break;
+      return true;
     case "hide-notification":
       hideNotification();
-      break;
+      return true;
     case "import-subscription": {
       const url = $("#blockingList-textbox").value;
       addEnableSubscription(url);
       closeDialog();
-      break;
+      return true;
     }
     case "open-dialog": {
       const dialog = findParentData(element, "dialog", false);
       openDialog(dialog);
-      break;
+      return true;
     }
     case "open-list-box":
       const ioListBox = $("io-list-box");
       ioListBox.change = true;
       $("button", ioListBox).focus();
-      break;
+      return true;
     case "remove-filter":
       browser.runtime.sendMessage({
         type: "filters.remove",
         text: findParentData(element, "access", false)
       });
-      break;
+      return true;
     case "remove-subscription":
       browser.runtime.sendMessage({
         type: "subscriptions.remove",
         url: findParentData(element, "access", false)
       });
-      break;
+      return true;
     case "show-more-filters-section":
       $("#more-filters").setAttribute("aria-hidden", false);
-      break;
+      return true;
     case "switch-acceptable-ads":
       const value = element.value || element.dataset.value;
       // User check the checkbox
@@ -686,23 +686,23 @@ function execAction(action, element)
           "subscriptions.remove",
         url: acceptableAdsPrivacyUrl
       });
-      break;
+      return true;
     case "switch-tab":
       switchTab(element.getAttribute("href").substr(1));
-      break;
+      return true;
     case "toggle-disable-subscription":
       browser.runtime.sendMessage({
         type: "subscriptions.toggle",
         keepInstalled: true,
         url: findParentData(element, "access", false)
       });
-      break;
+      return true;
     case "toggle-pref":
       browser.runtime.sendMessage({
         type: "prefs.toggle",
         key: findParentData(element, "pref", false)
       });
-      break;
+      return true;
     case "toggle-remove-subscription":
       const subscriptionUrl = findParentData(element, "access", false);
       if (element.getAttribute("aria-checked") == "true")
@@ -714,18 +714,18 @@ function execAction(action, element)
       }
       else
         addEnableSubscription(subscriptionUrl);
-      break;
+      return true;
     case "update-all-subscriptions":
       browser.runtime.sendMessage({
         type: "subscriptions.update"
       });
-      break;
+      return true;
     case "update-subscription":
       browser.runtime.sendMessage({
         type: "subscriptions.update",
         url: findParentData(element, "access", false)
       });
-      break;
+      return true;
     case "validate-import-subscription":
       const form = findParentData(element, "validation", true);
       if (!form)
@@ -741,8 +741,23 @@ function execAction(action, element)
       {
         form.querySelector(":invalid").focus();
       }
-      break;
+      return true;
   }
+
+  return false;
+}
+
+function execActions(actions, element)
+{
+  actions = actions.split(",");
+  let foundAction = false;
+
+  for (const action of actions)
+  {
+    foundAction |= execAction(action, element);
+  }
+
+  return !!foundAction;
 }
 
 function changeLanguageSubscription(url)
@@ -768,14 +783,14 @@ function changeLanguageSubscription(url)
 
 function onClick(e)
 {
-  let actions = findParentData(e.target, "action", false);
+  const actions = findParentData(e.target, "action", false);
   if (!actions)
     return;
 
-  actions = actions.split(",");
-  for (const action of actions)
+  const foundAction = execActions(actions, e.target);
+  if (foundAction)
   {
-    execAction(action, e.target);
+    e.preventDefault();
   }
 }
 
@@ -804,10 +819,11 @@ function onKeyUp(e)
     element = parent.firstElementChild;
   }
 
-  const actions = container.getAttribute("data-action").split(",");
-  for (const action of actions)
+  const actions = container.getAttribute("data-action");
+  const foundAction = execActions(actions, element);
+  if (foundAction)
   {
-    execAction(action, element);
+    e.preventDefault();
   }
 }
 
