@@ -20,6 +20,8 @@
 const IOElement = require("./io-element");
 const DrawingHandler = require("./drawing-handler");
 
+const {$} = require("./dom");
+
 const {utils} = IOElement;
 
 // <io-highlighter data-max-size=800 />
@@ -121,7 +123,7 @@ class IOHighlighter extends IOElement
     // through the newly created canvas
     if (!this.drawingHandler)
       this.drawingHandler = new DrawingHandler(
-        this.querySelector("canvas"),
+        $("canvas", this),
         parseInt(this.dataset.maxSize, 10) || 800
       );
   }
@@ -129,7 +131,7 @@ class IOHighlighter extends IOElement
   // shortcut for internal canvas.toDataURL()
   toDataURL()
   {
-    return this.querySelector("canvas").toDataURL();
+    return $("canvas", this).toDataURL();
   }
 }
 

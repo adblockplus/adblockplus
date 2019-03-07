@@ -238,7 +238,7 @@ function sendReport(reportData)
   for (const [param, value] of [
     ["version", 1],
     ["guid", generateUUID()],
-    ["lang", reportData.querySelector("adblock-plus")
+    ["lang", $("adblock-plus", reportData)
                        .getAttribute("locale")]
   ])
   {

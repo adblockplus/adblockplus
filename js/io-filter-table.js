@@ -23,7 +23,7 @@ const IOElement = require("./io-element");
 const IOFilterList = require("./io-filter-list");
 const IOFilterSearch = require("./io-filter-search");
 
-const {clipboard} = require("./dom");
+const {$, clipboard} = require("./dom");
 
 const {bind, wire} = IOElement;
 
@@ -118,7 +118,7 @@ class IOFilterTable extends IOElement
     this.updateFooter();
     this.footer.classList.add("visible");
     const {errors} = event.detail;
-    const footerError = this.querySelector(".footer .error");
+    const footerError = $(".footer .error", this);
 
     bind(footerError)`${
       errors ?
@@ -266,7 +266,7 @@ IOFilterTable.define("io-filter-table");
 
 function cleanErrors()
 {
-  const footerError = this.querySelector(".footer .error");
+  const footerError = $(".footer .error", this);
   if (footerError)
     bind(footerError)``;
   this.updateFooter();

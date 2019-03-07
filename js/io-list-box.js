@@ -21,7 +21,7 @@ const DELAY = 200;
 
 const IOElement = require("./io-element");
 
-const {events} = require("./dom");
+const {$, events} = require("./dom");
 
 // used to create options
 const {wire} = IOElement;
@@ -84,12 +84,12 @@ class IOListBox extends IOElement
   // shortcuts to retrieve sub elements
   get label()
   {
-    return this.querySelector(`#${this.id}label`);
+    return $(`#${this.id}label`, this);
   }
 
   get popup()
   {
-    return this.querySelector(`#${this.id}popup`);
+    return $(`#${this.id}popup`, this);
   }
 
   // component status
@@ -200,7 +200,7 @@ class IOListBox extends IOElement
 
   onkeydown(event)
   {
-    const hovered = this.querySelector(".hover");
+    const hovered = $(".hover", this);
     switch (events.key(event))
     {
       case KeyCode.BACKSPACE:
@@ -333,10 +333,10 @@ function getItem(id)
 function hover(type, item)
 {
   const id = getID(item);
-  const hovered = this.querySelector(".hover");
+  const hovered = $(".hover", this);
   if (hovered)
     hovered.classList.remove("hover");
-  const option = this.querySelector(`#${id}`);
+  const option = $(`#${id}`, this);
   option.classList.add("hover");
   this.label.setAttribute("aria-activedescendant", id);
   const popup = this.popup;

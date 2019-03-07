@@ -25,7 +25,7 @@ require("./io-popout");
 require("./io-toggle");
 
 const api = require("./api");
-const {$, events} = require("./dom");
+const {$, $$, events} = require("./dom");
 
 const {port} = api;
 
@@ -76,7 +76,7 @@ Collection.prototype._setEmpty = function(table, detail, removeEmpty)
 {
   if (removeEmpty)
   {
-    const placeholders = table.querySelectorAll(".empty-placeholder");
+    const placeholders = $$(".empty-placeholder", table);
     for (const placeholder of placeholders)
       table.removeChild(placeholder);
 
@@ -102,7 +102,7 @@ Collection.prototype._createElementQuery = function(item)
   const access = (item.url || item.text).replace(/'/g, "\\'");
   return function(container)
   {
-    return container.querySelector("[data-access='" + access + "']");
+    return $(`[data-access="${access}"]`, container);
   };
 };
 
@@ -150,14 +150,14 @@ Collection.prototype.addItem = function(item)
   {
     const detail = this.details[j];
     const table = $(`#${detail.id}`);
-    const template = table.querySelector("template");
+    const template = $("template", table);
     const listItem = document.createElement("li");
     listItem.appendChild(document.importNode(template.content, true));
     listItem.setAttribute("aria-label", this._getItemTitle(item, j));
     listItem.setAttribute("data-access", item.url || item.text);
     listItem.setAttribute("role", "section");
 
-    const tooltip = listItem.querySelector("io-popout[type='tooltip']");
+    const tooltip = $("io-popout[type='tooltip']", listItem);
     if (tooltip)
     {
       let tooltipId = tooltip.getAttribute("i18n-body");
@@ -168,7 +168,7 @@ Collection.prototype.addItem = function(item)
       }
     }
 
-    for (const control of listItem.querySelectorAll(".control"))
+    for (const control of $$(".control", listItem))
     {
       if (control.hasAttribute("title"))
       {
@@ -202,7 +202,7 @@ Collection.prototype.removeItem = function(item)
     const element = getListElement(table);
 
     // Element gets removed so make sure to handle focus appropriately
-    const control = element.querySelector(".control");
+    const control = $(".control", element);
     if (control && control == document.activeElement)
     {
       if (!focusNextElement(element.parentElement, control))
@@ -235,12 +235,12 @@ Collection.prototype.updateItem = function(item)
   for (let i = 0; i < this.details.length; i++)
   {
     const table = $(`#${this.details[i].id}`);
-    const element = table.querySelector("[data-access='" + access + "']");
+    const element = $(`[data-access="${access}"]`, table);
     if (!element)
       continue;
 
     const title = this._getItemTitle(item, i);
-    const displays = element.querySelectorAll("[data-display]");
+    const displays = $$("[data-display]", element);
     for (let j = 0; j < displays.length; j++)
     {
       if (item[displays[j].dataset.display])
@@ -252,7 +252,7 @@ Collection.prototype.updateItem = function(item)
     element.setAttribute("aria-label", title);
     if (this.details[i].searchable)
       element.setAttribute("data-search", title.toLowerCase());
-    const controls = element.querySelectorAll(".control[role='checkbox']");
+    const controls = $$(".control[role='checkbox']", element);
     for (const control of controls)
     {
       control.setAttribute("aria-checked", item.disabled == false);
@@ -263,15 +263,15 @@ Collection.prototype.updateItem = function(item)
     {
       element.classList.add("preconfigured");
       const disablePreconfigures =
-        element.querySelectorAll("[data-disable~='preconfigured']");
+        $$("[data-disable~='preconfigured']", element);
       for (const disablePreconfigure of disablePreconfigures)
         disablePreconfigure.disabled = true;
     }
 
-    const lastUpdateElement = element.querySelector(".last-update");
+    const lastUpdateElement = $(".last-update", element);
     if (lastUpdateElement)
     {
-      const message = element.querySelector(".message");
+      const message = $(".message", element);
       if (item.downloading)
       {
         const text = getMessage("options_filterList_lastDownload_inProgress");
@@ -321,7 +321,7 @@ Collection.prototype.updateItem = function(item)
       }
     }
 
-    const websiteElement = element.querySelector("io-popout .website");
+    const websiteElement = $("io-popout .website", element);
     if (websiteElement)
     {
       if (item.homepage)
@@ -329,7 +329,7 @@ Collection.prototype.updateItem = function(item)
       websiteElement.setAttribute("aria-hidden", !item.homepage);
     }
 
-    const sourceElement = element.querySelector("io-popout .source");
+    const sourceElement = $("io-popout .source", element);
     if (sourceElement)
       sourceElement.setAttribute("href", item.url);
 
@@ -359,7 +359,7 @@ Collection.prototype.clearAll = function()
 
 function focusNextElement(container, currentElement)
 {
-  let focusables = container.querySelectorAll("a, button, input, .control");
+  let focusables = $$("a, button, input, .control", container);
   focusables = Array.prototype.slice.call(focusables);
   let index = focusables.indexOf(currentElement);
   index += (index == focusables.length - 1) ? -1 : 1;
@@ -609,8 +609,8 @@ function execAction(action, element)
       return true;
     case "add-predefined-subscription": {
       const dialog = $("#dialog-content-predefined");
-      const title = dialog.querySelector("h3").textContent;
-      const url = dialog.querySelector(".url").textContent;
+      const title = $("h3", dialog).textContent;
+      const url = $(".url", dialog).textContent;
       addEnableSubscription(url, title);
       closeDialog();
       return true;
@@ -739,7 +739,7 @@ function execAction(action, element)
       }
       else
       {
-        form.querySelector(":invalid").focus();
+        $(":invalid", form).focus();
       }
       return true;
   }
@@ -833,15 +833,15 @@ function selectTabItem(tabId, container, focus)
   document.body.setAttribute("data-tab", tabId);
 
   // Select tab
-  const tabList = container.querySelector("[role='tablist']");
+  const tabList = $("[role='tablist']", container);
   if (!tabList)
     return null;
 
-  const previousTab = tabList.querySelector("[aria-selected]");
+  const previousTab = $("[aria-selected]", tabList);
   previousTab.removeAttribute("aria-selected");
   previousTab.setAttribute("tabindex", -1);
 
-  const tab = tabList.querySelector("a[href='#" + tabId + "']");
+  const tab = $(`a[href="#${tabId}"]`, tabList);
   tab.setAttribute("aria-selected", true);
   tab.setAttribute("tabindex", 0);
 
@@ -964,7 +964,7 @@ function onDOMLoaded()
   });
 
   // Advanced tab
-  let customize = document.querySelectorAll("#customize li[data-pref]");
+  let customize = $$("#customize li[data-pref]");
   customize = Array.prototype.map.call(customize, (checkbox) =>
   {
     return checkbox.getAttribute("data-pref");
@@ -1033,13 +1033,13 @@ function onDOMLoaded()
           if (e.target.classList.contains("focus-first"))
           {
             e.preventDefault();
-            this.querySelector(".focus-last").focus();
+            $(".focus-last", this).focus();
           }
         }
         else if (e.target.classList.contains("focus-last"))
         {
           e.preventDefault();
-          this.querySelector(".focus-first").focus();
+          $(".focus-first", this).focus();
         }
         break;
     }
@@ -1056,11 +1056,9 @@ function openDialog(name)
   dialog.setAttribute("aria-labelledby", "dialog-title-" + name);
   document.body.setAttribute("data-dialog", name);
 
-  let defaultFocus = document.querySelector(
-    "#dialog-content-" + name + " .default-focus"
-  );
+  let defaultFocus = $(`#dialog-content-${name} .default-focus`);
   if (!defaultFocus)
-    defaultFocus = dialog.querySelector(".focus-first");
+    defaultFocus = $(".focus-first", dialog);
   focusedBeforeDialog = document.activeElement;
   defaultFocus.focus();
 }
@@ -1392,7 +1390,7 @@ function hidePref(key, value)
 
 function getPrefElement(key)
 {
-  return document.querySelector("[data-pref='" + key + "']");
+  return $(`[data-pref="${key}"]`);
 }
 
 function getPref(key)
@@ -1415,9 +1413,7 @@ function onPrefMessage(key, value, initial)
       break;
   }
 
-  const checkbox = document.querySelector(
-    "[data-pref='" + key + "'] button[role='checkbox']"
-  );
+  const checkbox = $(`[data-pref="${key}"] button[role="checkbox"]`);
   if (checkbox)
     checkbox.setAttribute("aria-checked", value);
 }
@@ -1439,8 +1435,8 @@ port.onMessage.addListener((message) =>
             title = "";
           }
 
-          dialog.querySelector("h3").textContent = title;
-          dialog.querySelector(".url").textContent = url;
+          $("h3", dialog).textContent = title;
+          $(".url", dialog).textContent = url;
           openDialog("predefined");
           break;
         case "focusSection":
@@ -1450,7 +1446,7 @@ port.onMessage.addListener((message) =>
             section = "advanced";
             const elem = getPrefElement("notifications_ignoredcategories");
             elem.classList.add("highlight-animate");
-            elem.querySelector("button").focus();
+            $("button", elem).focus();
           }
 
           selectTabItem(section, document.body, false);

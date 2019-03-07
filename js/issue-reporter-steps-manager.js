@@ -22,6 +22,8 @@
 require("./io-steps");
 require("./io-highlighter");
 
+const {$, $$} = require("./dom");
+
 // managers are invoked right away
 // but their initialization might be asynchronous
 const managers = [
@@ -73,15 +75,15 @@ const managers = [
         ioSteps.addEventListener("formvalidated", event =>
         {
           ioSteps.setCompleted(index, event.detail);
-          ioSteps.querySelector("button:last-child").disabled = true;
+          $("button:last-child", ioSteps).disabled = true;
           if (event.detail)
             resolve();
         });
       })
     ]).then(() =>
     {
-      document.querySelector("#continue").hidden = true;
-      document.querySelector("#send").hidden = false;
+      $("#continue").hidden = true;
+      $("#send").hidden = false;
     });
   },
 
@@ -91,7 +93,7 @@ const managers = [
     ioSteps.addEventListener("step:click", function once(event)
     {
       ioSteps.removeEventListener(event.type, once);
-      const ioHighlighter = document.querySelector("io-highlighter");
+      const ioHighlighter = $("io-highlighter");
       ioHighlighter.changeDepth.then(() =>
       {
         resolve({
@@ -114,9 +116,9 @@ const managers = [
 
 module.exports = ({screenshot}) => new Promise(resolve =>
 {
-  const ioSteps = document.querySelector("io-steps");
-  const pages = document.querySelectorAll("main > .page");
-  const btnContinue = document.querySelector("#continue");
+  const ioSteps = $("io-steps");
+  const pages = $$("main > .page");
+  const btnContinue = $("#continue");
   let currentPage = pages[0];
   let index = 0;
   ioSteps.addEventListener(
@@ -153,5 +155,5 @@ module.exports = ({screenshot}) => new Promise(resolve =>
 
 function enableContinue()
 {
-  document.querySelector("#continue").disabled = false;
+  $("#continue").disabled = false;
 }

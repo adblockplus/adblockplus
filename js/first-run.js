@@ -18,10 +18,11 @@
 "use strict";
 
 const api = require("./api");
+const {$$} = require("./dom");
 
 function convertDocLinks()
 {
-  const elements = document.querySelectorAll("[data-doclink]");
+  const elements = $$("[data-doclink]");
   for (const element of elements)
   {
     const {doclink} = element.dataset;

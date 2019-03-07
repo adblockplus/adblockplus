@@ -18,6 +18,7 @@
 "use strict";
 
 const {port} = require("./api");
+const {$, $$} = require("./dom");
 
 const reportData = new DOMParser().parseFromString("<report></report>",
                                                  "text/xml");
@@ -42,13 +43,12 @@ port.onMessage.addListener((message) =>
       {
         case "hits":
           const [request, filter, subscriptions] = message.args;
-          const requestsContainerElem = reportData.querySelector("requests");
-          const filtersElem = reportData.querySelector("filters");
+          const requestsContainerElem = $("requests", reportData);
+          const filtersElem = $("filters", reportData);
           // ELEMHIDE hitLog request doesn't contain url
           if (request.url)
           {
-            let requestElem = reportData
-                                .querySelector(`[location="${request.url}"]`);
+            let requestElem = $(`[location="${request.url}"]`, reportData);
             if (requestElem)
             {
               const countNum = parseInt(
@@ -71,8 +71,7 @@ port.onMessage.addListener((message) =>
           }
           if (filter)
           {
-            const existingFilter = reportData
-                                    .querySelector(`[text='${filter.text}']`);
+            const existingFilter = $(`[text='${filter.text}']`, reportData);
             if (existingFilter)
             {
               const countNum = parseInt(existingFilter.getAttribute("hitCount"),
@@ -143,8 +142,7 @@ function collectRequests(tabId)
 
       isMinimumTimeMet = true;
       document.getElementById("showData").disabled = false;
-      document.querySelector("io-steps")
-              .dispatchEvent(new CustomEvent("requestcollected"));
+      $("io-steps").dispatchEvent(new CustomEvent("requestcollected"));
       validateCommentsPage();
     }
     browser.tabs.onUpdated.addListener((updatedTabId, changeInfo) =>
@@ -326,8 +324,8 @@ function retrieveSubscriptions()
 
 function setConfigurationInfo(configInfo)
 {
-  let extensionsContainer = reportData.querySelector("extensions");
-  let optionsContainer = reportData.querySelector("options");
+  let extensionsContainer = $("extensions", reportData);
+  let optionsContainer = $("options", reportData);
 
   if (!configInfo)
   {
@@ -571,13 +569,13 @@ function setReportType(event)
   reportData.documentElement.setAttribute("type", event.target.value);
 }
 
-for (const typeElement of document.querySelectorAll("#typeSelectorGroup input"))
+for (const typeElement of $$("#typeSelectorGroup input"))
 {
   typeElement.addEventListener("change", setReportType);
 }
 
 let commentElement = null;
-document.querySelector("#comment").addEventListener("input", (event) =>
+$("#comment").addEventListener("input", (event) =>
 {
   const comment = event.target.value;
   if (!comment)
@@ -600,17 +598,19 @@ document.querySelector("#comment").addEventListener("input", (event) =>
   }
 });
 
-const anonSubmissionField = document.querySelector("#anonymousSubmission");
-const emailField = document.querySelector("#email");
+const anonSubmissionField = $("#anonymousSubmission");
+const emailField = $("#email");
 emailField.addEventListener("input", validateCommentsPage);
 anonSubmissionField.addEventListener("click", validateCommentsPage);
 
 const emailElement = reportData.createElement("email");
 function validateCommentsPage()
 {
-  const sendButton = document.querySelector("#send");
-  document.querySelector("#anonymousSubmissionWarning")
-          .setAttribute("data-invisible", !anonSubmissionField.checked);
+  const sendButton = $("#send");
+  $("#anonymousSubmissionWarning").setAttribute(
+    "data-invisible",
+    !anonSubmissionField.checked
+  );
   if (anonSubmissionField.checked)
   {
     emailField.value = "";
@@ -629,7 +629,7 @@ function validateCommentsPage()
     sendButton.disabled = (value == "" || !emailField.validity.valid ||
       !isMinimumTimeMet);
   }
-  document.querySelector("io-steps")
-          .dispatchEvent(new CustomEvent("formvalidated",
-                        {detail: !sendButton.disabled}));
+  $("io-steps").dispatchEvent(
+    new CustomEvent("formvalidated", {detail: !sendButton.disabled})
+  );
 }
