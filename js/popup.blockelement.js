@@ -35,10 +35,8 @@ function setupBlock(tab)
     cancelClickHide(tab);
   });
 
-  browser.tabs.sendMessage(
-    tab.id,
-    {type: "composer.content.getState"},
-    response =>
+  browser.tabs.sendMessage(tab.id, {type: "composer.content.getState"})
+    .then(response =>
     {
       if (response && response.active)
         $("#page-info").classList.add("blocking");

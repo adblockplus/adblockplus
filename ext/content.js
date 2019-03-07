@@ -64,7 +64,7 @@
   if (!("runtime" in browser))
     browser.runtime = {};
 
-  browser.runtime.sendMessage = (message, responseCallback) =>
+  browser.runtime.sendMessage = message =>
   {
     const messageId = ++maxMessageId;
     ext.backgroundPage._sendRawMessage({
@@ -83,17 +83,11 @@
       }
     };
     window.addEventListener("message", callbackWrapper);
-    if (responseCallback)
+
+    return new Promise((resolve, reject) =>
     {
-      resolvePromise = responseCallback;
-    }
-    else
-    {
-      return new Promise((resolve, reject) =>
-      {
-        resolvePromise = resolve;
-      });
-    }
+      resolvePromise = resolve;
+    });
   };
 
   function postMessage(msg)
@@ -114,13 +108,20 @@
   browser.runtime.connect = connect;
 
   if (!("tabs" in browser))
-    browser.tabs = new Map([[0, {url: "example.com"}]]);
+    browser.tabs = new Map([[0, {url: "http://example.com", id: 0, active: true, lastFocusedWindow: true}]]);
 
   browser.tabs.get = (...args) =>
   {
     // Extend browser.tabs.get()
     const result = Map.prototype.get.apply(browser.tabs, args);
     return (result ? Promise.resolve(result) :
+      Promise.reject(new Error("Tab cannot be found")));
+  };
+
+  browser.tabs.query = (...args) =>
+  {
+    const result = Map.prototype.get.apply(browser.tabs, [0]);
+    return (result ? Promise.resolve([result]) :
       Promise.reject(new Error("Tab cannot be found")));
   };
 }());

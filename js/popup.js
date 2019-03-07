@@ -61,10 +61,11 @@ const getTab = new Promise(
   {
     document.addEventListener("DOMContentLoaded", () =>
     {
-      browser.tabs.query({active: true, lastFocusedWindow: true}, tabs =>
-      {
-        resolve({id: tabs[0].id, url: tabs[0].url});
-      });
+      browser.tabs.query({active: true, lastFocusedWindow: true})
+        .then(tabs =>
+        {
+          resolve({id: tabs[0].id, url: tabs[0].url});
+        });
     });
   }
 );
@@ -162,15 +163,14 @@ function updateStats(tab)
   browser.runtime.sendMessage({
     type: "stats.getBlockedPerPage",
     tab
-  },
-  blockedPage =>
+  }).then(blockedPage =>
   {
     ext.i18n.setElementText(statsPage, "stats_label_page",
                             [blockedPage.toLocaleString()]);
   });
 
   const statsTotal = $("#stats-total");
-  getPref("blocked_total", blockedTotal =>
+  getPref("blocked_total").then(blockedTotal =>
   {
     ext.i18n.setElementText(statsTotal, "stats_label_total",
                             [blockedTotal.toLocaleString()]);

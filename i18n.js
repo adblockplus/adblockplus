@@ -27,13 +27,11 @@ browser.runtime.sendMessage(
   {
     type: "app.get",
     what: "localeInfo"
-  },
-  (localeInfo) =>
+  }).then(localeInfo =>
   {
     document.documentElement.lang = localeInfo.locale;
     document.documentElement.dir = localeInfo.bidiDir;
-  }
-);
+  });
 
 function assignAction(elements, action)
 {

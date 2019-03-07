@@ -37,25 +37,12 @@ document.addEventListener("DOMContentLoaded", () =>
     closeMe();
   });
 
-  const manageSteps = new Promise(resolve =>
-  {
-    browser.tabs.captureVisibleTab(
-      null,
-      {format: "png"},
-      screenshot =>
-      {
-        // activate current tab and let the user report
-        browser.tabs.getCurrent((tab) =>
-        {
-          browser.tabs.update(
-            tab.id,
-            {active: true},
-            () => resolve({screenshot})
-          );
-        });
-      }
-    );
-  }).then(stepsManager);
+  const manageSteps = browser.tabs.captureVisibleTab(null, {format: "png"})
+    .then(screenshot =>
+          // activate current tab and let the user report
+          browser.tabs.getCurrent())
+    .then(tab => browser.tabs.update(tab.id, {active: true}))
+    .then(stepsManager);
 
   $("#send").addEventListener("click", event =>
   {

@@ -5,7 +5,7 @@
 ### General
 
 ```js
-browser.runtime.sendMessage({type: name, ...}, (msg) => ...);
+browser.runtime.sendMessage({type: name, ...}).then(msg => ...);
 ```
 
 ### Listeners

@@ -74,24 +74,14 @@
 
   function getInstalled()
   {
-    return new Promise((resolve, reject) =>
-    {
-      browser.runtime.sendMessage(
-        {type: "subscriptions.get", downloadable: true},
-        resolve
-      );
-    });
+    return browser.runtime.sendMessage(
+      {type: "subscriptions.get", downloadable: true});
   }
 
   function getAcceptableAdsUrl()
   {
-    return new Promise((resolve, reject) =>
-    {
-      browser.runtime.sendMessage(
-        {type: "prefs.get", key: "subscriptions_exceptionsurl"},
-        resolve
-      );
-    });
+    return browser.runtime.sendMessage(
+      {type: "prefs.get", key: "subscriptions_exceptionsurl"});
   }
 
   function getRecommendedAds()
@@ -294,16 +284,15 @@
         {
           type: (toggle.checked) ? "filters.remove" : "filters.add",
           text: whitelistFilter
-        },
-        (errors) =>
-        {
-          if (errors.length < 1)
-            return;
-
-          console.error(errors);
-          toggle.checked = !toggle.checked;
         }
-      );
+      ).then(errors =>
+      {
+        if (errors.length < 1)
+          return;
+
+        console.error(errors);
+        toggle.checked = !toggle.checked;
+      });
     }
     else
     {
@@ -434,7 +423,7 @@
 
   populateLists();
 
-  getDocLink("acceptable_ads", (link) =>
+  getDocLink("acceptable_ads").then(link =>
   {
     get("#acceptableAds-more").href = link;
   });

@@ -27,7 +27,7 @@ window.addEventListener(
     browser.runtime.sendMessage({
       type: "notifications.get",
       displayMethod: "popup"
-    }, notification =>
+    }).then(notification =>
     {
       if (notification)
         window.dispatchEvent(
