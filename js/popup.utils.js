@@ -8,26 +8,23 @@ function getDocLinks(notification)
   return Promise.all(
     notification.links.map(link =>
     {
-      return new Promise((resolve, reject) =>
-      {
-        browser.runtime.sendMessage({
-          type: "app.get",
-          what: "doclink",
-          link
-        }, resolve);
+      return browser.runtime.sendMessage({
+        type: "app.get",
+        what: "doclink",
+        link
       });
     })
   );
 }
 
-function getPref(key, callback)
+function getPref(key)
 {
-  browser.runtime.sendMessage({type: "prefs.get", key}, callback);
+  return browser.runtime.sendMessage({type: "prefs.get", key});
 }
 
-function isPageWhitelisted(tab, callback)
+function isPageWhitelisted(tab)
 {
-  browser.runtime.sendMessage({type: "filters.isWhitelisted", tab}, callback);
+  return browser.runtime.sendMessage({type: "filters.isWhitelisted", tab});
 }
 
 function reportIssue(tab)
@@ -42,14 +39,14 @@ function reportIssue(tab)
   );
 }
 
-function setPref(key, value, callback)
+function setPref(key, value)
 {
-  browser.runtime.sendMessage({type: "prefs.set", key, value}, callback);
+  return browser.runtime.sendMessage({type: "prefs.set", key, value});
 }
 
-function togglePref(key, callback)
+function togglePref(key)
 {
-  browser.runtime.sendMessage({type: "prefs.toggle", key}, callback);
+  return browser.runtime.sendMessage({type: "prefs.toggle", key});
 }
 
 function whenPageReady(tab)
@@ -71,8 +68,7 @@ function whenPageReady(tab)
     browser.runtime.sendMessage({
       type: "composer.isPageReady",
       pageId: tab.id
-    },
-    ready =>
+    }).then(ready =>
     {
       if (ready)
       {

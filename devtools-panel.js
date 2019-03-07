@@ -19,8 +19,8 @@
 
 let lastFilterQuery = null;
 
-browser.runtime.sendMessage({type: "types.get"},
-  (filterTypes) =>
+browser.runtime.sendMessage({type: "types.get"})
+  .then(filterTypes =>
   {
     const filterTypesElem = document.getElementById("filter-type");
     const filterStyleElem = document.createElement("style");

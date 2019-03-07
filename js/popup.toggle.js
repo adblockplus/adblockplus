@@ -24,7 +24,7 @@ module.exports = setupToggle;
 
 function setupToggle(tab)
 {
-  isPageWhitelisted(tab, whitelisted =>
+  isPageWhitelisted(tab).then(whitelisted =>
   {
     if (whitelisted)
       whitelistedPage();

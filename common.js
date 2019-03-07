@@ -22,11 +22,11 @@ function E(id)
   return document.getElementById(id);
 }
 
-function getDocLink(link, callback)
+function getDocLink(link)
 {
   return browser.runtime.sendMessage({
     type: "app.get",
     what: "doclink",
     link
-  }, callback);
+  });
 }

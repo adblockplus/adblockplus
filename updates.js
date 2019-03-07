@@ -33,15 +33,15 @@
         }
       );
     });
-    getDocLink("adblock_browser_ios_store", (url) =>
+    getDocLink("adblock_browser_ios_store").then(url =>
     {
       E("adblock-browser-ios-store").href = url;
     });
-    getDocLink("adblock_browser_android_store", (url) =>
+    getDocLink("adblock_browser_android_store").then(url =>
     {
       E("adblock-browser-android-store").href = url;
     });
-    getDocLink("adblock_browser_website", (url) =>
+    getDocLink("adblock_browser_website").then(url =>
     {
       ext.i18n.setElementLinks("adblock-browser-text", url);
     });

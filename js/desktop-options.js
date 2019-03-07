@@ -572,7 +572,7 @@ function findParentData(element, dataName, returnElement)
 
 function sendMessageHandleErrors(message, onSuccess)
 {
-  browser.runtime.sendMessage(message, (errors) =>
+  browser.runtime.sendMessage(message).then(errors =>
   {
     if (errors.length > 0)
       alert(errors.join("\n"));
@@ -901,8 +901,7 @@ function onDOMLoaded()
   browser.runtime.sendMessage({
     type: "app.get",
     what: "addonVersion"
-  },
-  (addonVersion) =>
+  }).then(addonVersion =>
   {
     E("abp-version").textContent = getMessage("options_dialog_about_version",
       [addonVersion]);
@@ -920,11 +919,11 @@ function onDOMLoaded()
   }, false);
 
   // General tab
-  getDocLink("contribute", (link) =>
+  getDocLink("contribute").then(link =>
   {
     E("contribute").href = link;
   });
-  getDocLink("acceptable_ads_criteria", (link) =>
+  getDocLink("acceptable_ads_criteria").then(link =>
   {
     setElementLinks("enable-acceptable-ads-description", link);
   });
@@ -934,17 +933,17 @@ function onDOMLoaded()
   setElementText(E("tracking-warning-3"), "options_tracking_warning_3",
     [getMessage("options_acceptableAds_privacy_label")]);
 
-  getDocLink("privacy_friendly_ads", (link) =>
+  getDocLink("privacy_friendly_ads").then(link =>
   {
     E("enable-acceptable-ads-privacy-description").href = link;
   });
-  getDocLink("adblock_plus_{browser}_dnt", url =>
+  getDocLink("adblock_plus_{browser}_dnt").then(url =>
   {
     setElementLinks("dnt", url);
   });
 
   // Whitelisted tab
-  getDocLink("whitelist", (link) =>
+  getDocLink("whitelist").then(link =>
   {
     E("whitelist-learn-more").href = link;
   });
@@ -957,7 +956,7 @@ function onDOMLoaded()
   });
   for (const key of customize)
   {
-    getPref(key, (value) =>
+    getPref(key).then(value =>
     {
       onPrefMessage(key, value, true);
     });
@@ -965,19 +964,18 @@ function onDOMLoaded()
   browser.runtime.sendMessage({
     type: "app.get",
     what: "features"
-  },
-  (features) =>
+  }).then(features =>
   {
     hidePref("show_devtools_panel", !features.devToolsPanel);
   });
 
-  getDocLink("filterdoc", (link) =>
+  getDocLink("filterdoc").then(link =>
   {
     setElementLinks("custom-filters-description", link);
     E("link-filters").setAttribute("href", link);
   });
 
-  getDocLink("subscriptions", (link) =>
+  getDocLink("subscriptions").then(link =>
   {
     E("filter-lists-learn-more").setAttribute("href", link);
   });
@@ -986,27 +984,27 @@ function onDOMLoaded()
     getMessage("options_customFilters_edit_placeholder", ["/ads/track/*"]));
 
   // Help tab
-  getDocLink("adblock_plus_report_bug", (link) =>
+  getDocLink("adblock_plus_report_bug").then(link =>
   {
     setElementLinks("report-bug", link);
   });
-  getDocLink("{browser}_support", url =>
+  getDocLink("{browser}_support").then(url =>
   {
     setElementLinks("visit-forum", url);
   });
-  getDocLink("social_twitter", (link) =>
+  getDocLink("social_twitter").then(link =>
   {
     E("twitter").setAttribute("href", link);
   });
-  getDocLink("social_facebook", (link) =>
+  getDocLink("social_facebook").then(link =>
   {
     E("facebook").setAttribute("href", link);
   });
-  getDocLink("social_gplus", (link) =>
+  getDocLink("social_gplus").then(link =>
   {
     E("google-plus").setAttribute("href", link);
   });
-  getDocLink("social_weibo", (link) =>
+  getDocLink("social_weibo").then(link =>
   {
     E("weibo").setAttribute("href", link);
   });
@@ -1140,7 +1138,7 @@ function setPrivacyConflict()
   const acceptableAdsForm = E("acceptable-ads");
   if (hasPrivacyConflict())
   {
-    getPref("ui_warn_tracking", (showTrackingWarning) =>
+    getPref("ui_warn_tracking").then(showTrackingWarning =>
     {
       acceptableAdsForm.classList.toggle("show-warning", showTrackingWarning);
     });
@@ -1164,8 +1162,7 @@ function populateLists()
   browser.runtime.sendMessage({
     type: "subscriptions.get",
     special: true
-  },
-  (subscriptions) =>
+  }).then(subscriptions =>
   {
     const customFilterPromises = subscriptions.map(getSubscriptionFilters);
     Promise.all(customFilterPromises).then((filters) =>
@@ -1178,37 +1175,34 @@ function populateLists()
   browser.runtime.sendMessage({
     type: "prefs.get",
     key: "subscriptions_exceptionsurl"
-  },
-  (url) =>
+  }).then(url =>
   {
     acceptableAdsUrl = url;
 
-    browser.runtime.sendMessage({
+    return browser.runtime.sendMessage({
       type: "prefs.get",
       key: "subscriptions_exceptionsurl_privacy"
-    },
-    (urlPrivacy) =>
-    {
-      acceptableAdsPrivacyUrl = urlPrivacy;
-
-      getPref("additional_subscriptions", (subscriptionUrls) =>
-      {
-        additionalSubscriptions = subscriptionUrls;
-
-        // Load user subscriptions
-        browser.runtime.sendMessage({
-          type: "subscriptions.get",
-          downloadable: true
-        },
-        (subscriptions) =>
-        {
-          for (const subscription of subscriptions)
-            onSubscriptionMessage("added", subscription);
-
-          setAcceptableAds();
-        });
-      });
     });
+  }).then(urlPrivacy =>
+  {
+    acceptableAdsPrivacyUrl = urlPrivacy;
+
+    return getPref("additional_subscriptions");
+  }).then(subscriptionUrls =>
+  {
+    additionalSubscriptions = subscriptionUrls;
+
+    // Load user subscriptions
+    return browser.runtime.sendMessage({
+      type: "subscriptions.get",
+      downloadable: true
+    });
+  }).then(subscriptions =>
+  {
+    for (const subscription of subscriptions)
+      onSubscriptionMessage("added", subscription);
+
+    setAcceptableAds();
   });
 }
 
@@ -1382,12 +1376,12 @@ function getPrefElement(key)
   return document.querySelector("[data-pref='" + key + "']");
 }
 
-function getPref(key, callback)
+function getPref(key)
 {
-  browser.runtime.sendMessage({
+  return browser.runtime.sendMessage({
     type: "prefs.get",
     key
-  }, callback);
+  });
 }
 
 function onPrefMessage(key, value, initial)
