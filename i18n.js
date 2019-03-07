@@ -187,31 +187,5 @@ function loadI18nStrings()
     resolveStringNames(template.content);
 }
 
-// Provides a more readable string of the current date and time
-function i18nTimeDateStrings(when)
-{
-  const d = new Date(when);
-  const timeString = d.toLocaleTimeString();
-
-  const now = new Date();
-  if (d.toDateString() == now.toDateString())
-    return [timeString];
-  return [timeString, d.toLocaleDateString()];
-}
-
-// Formats date string to ["YYYY-MM-DD", "mm:ss"] format
-function i18nFormatDateTime(when)
-{
-  const date = new Date(when);
-  let dateParts = [date.getFullYear(), date.getMonth() + 1, date.getDate(),
-                   date.getHours(), date.getMinutes()];
-
-  dateParts = dateParts.map(
-    (datePart) => datePart < 10 ? "0" + datePart : datePart
-  );
-
-  return [dateParts.splice(0, 3).join("-"), dateParts.join(":")];
-}
-
 // Fill in the strings as soon as possible
 window.addEventListener("DOMContentLoaded", loadI18nStrings, true);
