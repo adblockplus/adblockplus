@@ -36,6 +36,11 @@
         ]
       }
     },
+    "crowdin": {
+      "download-translations": "python build.py gettranslations $CROWDIN_API_KEY",
+      "upload-strings": "python build.py translate $CROWDIN_API_KEY",
+      "upload-translations": "python build.py uploadtrans $CROWDIN_API_KEY"
+    },
     "lint": {
       "css": "stylelint ./css/*.scss ./skin/*.css --ignore-path .gitignore",
       "js": "eslint './*.js' './js/**/*.js' './lib/**/*.js' './ext/**/*.js' './build/**/*.js'",
