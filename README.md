@@ -140,9 +140,17 @@ Translations
 ------------
 
 Translations for the strings in this project are managed using the online
-[Crowdin platform][crowdin]. To synchronise with Crowdin you can use the build
-script. To get a list of the possible commands type `./build.py help` at
-the command line. (You will also need the Crowdin API key for the project.)
+[Crowdin platform][crowdin]. To synchronise with Crowdin use commands
+below:
+- `CROWDIN_API_KEY="1111" npm run $ crowdin.upload-strings`
+  - Pushes all master(en_US) files to crowdin
+- `CROWDIN_API_KEY="1111" npm run $ crowdin.download-translations`
+  - Downloads translation updates from the Crowdin
+  - And generate fonts (see [Fonts generation](#fonts-generation))
+- `CROWDIN_API_KEY="1111" npm run $ crowdin.upload-translations`
+  - Pushes the translations to the crowdin
+
+**Note:** Use actual Crowdin project key instead of "1111".
 
 Translations CSV exporter
 -------------------------
