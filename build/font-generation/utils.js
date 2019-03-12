@@ -51,4 +51,13 @@ const getLastDir = (filePath) =>
   return path.basename(path.dirname(filePath));
 };
 
-module.exports = {ensureDir, cammelToSentence, getLastDir};
+/*
+ * Handles rejection in order to exit with non 0 code
+ */
+const errorHandler = (errorMsg) =>
+{
+  console.error(errorMsg);
+  process.exit(1);
+};
+
+module.exports = {ensureDir, cammelToSentence, getLastDir, errorHandler};

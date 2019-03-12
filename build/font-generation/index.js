@@ -24,7 +24,8 @@ const {localesDir, inputDir, outputDir, fontToLocalesMap,
        noLangRuleFont, outputFontFile, sharedCharacters} = require("./config");
 const {generateFontFace, defaultCss, generateLangRule} = require("./css");
 const {promisify} = require("util");
-const {ensureDir, cammelToSentence, getLastDir} = require("./utils");
+const {ensureDir, cammelToSentence, getLastDir,
+       errorHandler} = require("./utils");
 const exec = promisify(require("child_process").exec);
 const glob = promisify(require("glob").glob);
 
@@ -102,7 +103,7 @@ glob(`${inputDir}/**/*.*`).then((fonts) =>
     fontGenerationPromises.push(generateFont(inputFile, outputFile, locales));
   }
 
-  Promise.all(fontGenerationPromises).then((generatedFonts) =>
+  return Promise.all(fontGenerationPromises).then((generatedFonts) =>
   {
     let cssFile = defaultCss;
     const fontLocales = [];
@@ -127,4 +128,4 @@ glob(`${inputDir}/**/*.*`).then((fonts) =>
     // eslint-disable-next-line no-console
     console.log(`${outputFontFile} is created`);
   });
-}).catch(console.error);
+}).catch(errorHandler);
