@@ -239,6 +239,16 @@ class IOFilterList extends IOElement
     dataset.dir = sort.asc ? "asc" : "desc";
   }
 
+  onpaste(event)
+  {
+    event.preventDefault();
+    document.execCommand(
+      "insertText",
+      false,
+      event.clipboardData.getData("text/plain")
+    );
+  }
+
   onkeydown(event)
   {
     const {key} = event;
@@ -559,6 +569,7 @@ function getRow(filter, i)
           class="content"
           contenteditable="${!this.disabled}"
           title="${filter.text}"
+          onpaste="${this}"
           onkeydown="${this}"
           onkeyup="${this}"
           onfocus="${this}"
