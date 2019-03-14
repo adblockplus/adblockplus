@@ -39,10 +39,12 @@ document.addEventListener("DOMContentLoaded", () =>
 
   const manageSteps = browser.tabs.captureVisibleTab(null, {format: "png"})
     .then(screenshot =>
-          // activate current tab and let the user report
-          browser.tabs.getCurrent())
-    .then(tab => browser.tabs.update(tab.id, {active: true}))
-    .then(stepsManager);
+    {
+      // activate current tab and let the user report
+      return browser.tabs.getCurrent()
+        .then(tab => browser.tabs.update(tab.id, {active: true}))
+        .then(() => stepsManager({screenshot}));
+    });
 
   $("#send").addEventListener("click", event =>
   {
