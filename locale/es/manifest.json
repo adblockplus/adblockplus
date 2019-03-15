@@ -2,6 +2,9 @@
   "description": {
     "message": "Descarga Adblock Plus, uno de los bloqueadores de anuncios más famosos del mundo."
   },
+  "name": {
+    "message": "Adblock Plus"
+  },
   "name_devbuild": {
     "message": "Adblock Plus (versión de desarrollo)"
   },

@@ -2,17 +2,8 @@
   "click_element_to_block_it": {
     "message": "Noklikšķiniet uz lapas elementa, lai to bloķētu."
   },
-  "clickhide_instructions": {
-    "message": "Pēc šī uznirstošā loga aizvēršanas, noklikšķiniet (vai noklikšķiniet ar labo pogu) uz elementa šajā lapā."
-  },
-  "disabled_for_site": {
-    "message": "<strong>Izslēgts</strong> šajā lapā"
-  },
   "easy_create_filter": {
     "message": "Bloķēt elementu"
-  },
-  "enabled_for_site": {
-    "message": "<strong>Ieslēgts</strong> šajā lapā"
   },
   "options_refresh": {
     "message": "Atsvaidzināt"
@@ -53,12 +44,6 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Rādīt skaitli ikonā"
-  },
-  "stats_title": {
-    "message": "Bloķētās reklāmas"
   },
   "status_header": {
     "message": "Bloķēt reklāmas:"

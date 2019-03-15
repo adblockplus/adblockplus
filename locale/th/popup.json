@@ -1,15 +1,6 @@
 {
-  "clickhide_instructions": {
-    "message": "หลังจากปิดป๊อปอัพแล้ว ให้คลิก (หรือคลิกขวา) องค์ประกอบบนเพจ"
-  },
-  "disabled_for_site": {
-    "message": "<strong>เปิด</strong>บนเว็บไซต์นี้"
-  },
   "easy_create_filter": {
     "message": "ปิดกั้นองค์ประกอบ"
-  },
-  "enabled_for_site": {
-    "message": "<strong>เปิด</strong>บนเว็บไซต์นี้"
   },
   "options_short": {
     "message": "ตัวเลือก"
@@ -32,11 +23,5 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "แสดงหมายเลขในไอคอน"
-  },
-  "stats_title": {
-    "message": "บล็อกโฆษณา"
   }
 }

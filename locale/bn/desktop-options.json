@@ -29,32 +29,8 @@
   "options_customFilter_cancel": {
     "message": "বাতিল"
   },
-  "options_customFilter_edit": {
-    "message": "ফিল্টার সম্পাদনা করুন"
-  },
-  "options_customFilter_save": {
-    "message": "সংরক্ষণ করুন"
-  },
   "options_customFilters_description": {
     "message": "আরো নিয়ন্ত্রণ করতে আপনার নিজস্ব স্ব-নির্ধারিত ফিল্টার লিখুন।"
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "যেমন: $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "কিভাবে ফিল্টার তালিকা লিখবেন তা শিখুন"
-  },
-  "options_customFilters_start": {
-    "message": "আমার ফিল্টার তালিকা লিখতে শুরু করুন"
-  },
-  "options_customFilters_tip": {
-    "message": "আপনার তৈরি করা ফিল্টার এখানে দেখাবে।"
   },
   "options_customFilters_title": {
     "message": "আপনার ফিল্টার তালিকা তৈরি ও সম্পাদনা করুন"

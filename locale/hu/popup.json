@@ -2,17 +2,8 @@
   "click_element_to_block_it": {
     "message": "Az elem blokkolásához kattintson egy elemre az oldalon."
   },
-  "clickhide_instructions": {
-    "message": "Miután bezártad ezt a buborékot, kattints egy elemre az oldalon.."
-  },
-  "disabled_for_site": {
-    "message": "<strong>Kikapcsolva</strong> ezen a weboldalon"
-  },
   "easy_create_filter": {
     "message": "Elem blokkolása"
-  },
-  "enabled_for_site": {
-    "message": "<strong>Engedélyezve</strong> ezen a weboldalon"
   },
   "options_refresh": {
     "message": "Frissítés"
@@ -53,12 +44,6 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Blokkolt reklámok számának kijelzése az ikonon"
-  },
-  "stats_title": {
-    "message": "Blokkolt reklámok:"
   },
   "status_header": {
     "message": "Blokkolt hirdetések:"

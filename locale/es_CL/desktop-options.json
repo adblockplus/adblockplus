@@ -38,35 +38,11 @@
   "options_customFilter_cancel": {
     "message": "Cancelar"
   },
-  "options_customFilter_edit": {
-    "message": "Editar filtros"
-  },
-  "options_customFilter_save": {
-    "message": "Guardar"
-  },
   "options_customFilters_description": {
-    "message": "Escribir tu propia lista de filtros personalizados para controlar aún más el contenido que Adblock Plus permite o bloquea."
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "e.j. $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Aprende a escribir listas de filtros"
-  },
-  "options_customFilters_start": {
-    "message": "Comenzar a escribir mi lista de filtros"
-  },
-  "options_customFilters_tip": {
-    "message": "Los filtros que has creado se mostrarán aquí."
+    "message": "Crea y mantiene tus propios filtros para controlar aún más qué contenido Adblock Plus permite o bloquea. <a0>Aprende a escribir filtros</a0>"
   },
   "options_customFilters_title": {
-    "message": "Crear y editar tu lista de filtros"
+    "message": "Tus filtros personalizados"
   },
   "options_customFilters_widget_title": {
     "message": "Mi lista de filtros"
@@ -195,7 +171,7 @@
     "message": "Activa"
   },
   "options_filterList_state_disabled": {
-    "message": "Desactivada"
+    "message": "Inactiva"
   },
   "options_filterList_title": {
     "message": "Listas de filtros"
@@ -209,8 +185,11 @@
   "options_filterList_website": {
     "message": "sitio web"
   },
+  "options_filter_list_rule": {
+    "message": "Regla de filtro"
+  },
   "options_filters_search_or_add": {
-    "message": "Buscar / agregar filtro (p.ej. $filter$)",
+    "message": "Buscar o agregar filtro(s) (p. ej. $filter$)",
     "placeholders": {
       "filter": {
         "content": "/ads/track/*"

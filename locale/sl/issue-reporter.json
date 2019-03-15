@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "Stika z vami ne bomo mogli vzpostaviti. Prednost poročilu pa bomo verjetno znižali."
   },
+  "issueReporter_closeButton_label": {
+    "message": "Zapri"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Vnesite komentar"
   },
@@ -48,7 +51,7 @@
     "message": "Adblock Plus ne blokira oglasa"
   },
   "issueReporter_falsePositive_description": {
-    "message": "Izberite to možnost, če se stran ne prikaže, ne deluje pravilno, al pai ji manjka pomembna vsebina."
+    "message": "Izberite to možnost, če se stran ne prikaže, ne deluje pravilno, ali pa ji manjka pomembna vsebina."
   },
   "issueReporter_falsePositive_label": {
     "message": "Adblock Plus blokira preveč stvari"
@@ -73,6 +76,9 @@
   },
   "issueReporter_processing_screenshot": {
     "message": "Obdelovanje"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "Da bomo lahko bolje razumeli vašo težavo, je potreben posnetek zaslona. Odvisno od strani, na kateri se težava pojavi, posnetek zaslona lahko vsebuje osebne informacije. Če posnetka zaslona ne želite oddati, nam o težavi prosim pišite na <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_screenshot_hide": {
     "message": "Skrij"

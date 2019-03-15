@@ -26,32 +26,8 @@
   "options_customFilter_cancel": {
     "message": "BATALKAN"
   },
-  "options_customFilter_edit": {
-    "message": "Edit penapis"
-  },
-  "options_customFilter_save": {
-    "message": "SIMPAN"
-  },
   "options_customFilters_description": {
     "message": "Tulis penapis tersuai anda sendiri untuk Selanjutnya mengawal apa yang dibenarkan atau disekat oleh Adblock Plus."
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "cth. $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Ketahui cara menulis senarai penapis"
-  },
-  "options_customFilters_start": {
-    "message": "Mula menulis senarai penapis saya"
-  },
-  "options_customFilters_tip": {
-    "message": "Penapis yang anda buat akan muncul di sini."
   },
   "options_customFilters_title": {
     "message": "BUAT AND EDIT SENARAI PENAPIS ANDA"

@@ -19,5 +19,14 @@
   },
   "common_notification_hide": {
     "message": "Закрыць апавяшчэнне"
+  },
+  "copy_selected": {
+    "message": "Скапіяваць абраныя"
+  },
+  "delete": {
+    "message": "Выдаліць"
+  },
+  "filter_action_failed": {
+    "message": "Нешта пайшло не так. Паспрабуйце яшчэ раз."
   }
 }

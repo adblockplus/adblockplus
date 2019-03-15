@@ -19,5 +19,14 @@
   },
   "common_notification_hide": {
     "message": "Закрити повідомлення"
+  },
+  "copy_selected": {
+    "message": "Копіювати виділене"
+  },
+  "delete": {
+    "message": "Видалити"
+  },
+  "filter_action_failed": {
+    "message": "Щось пішло не так. Будь ласка, спробуйте ще раз."
   }
 }

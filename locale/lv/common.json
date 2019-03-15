@@ -5,6 +5,9 @@
   "cancel": {
     "message": "Atcelt"
   },
+  "common_feature_anti_adblock_title": {
+    "message": "Slēpt Adblock brīdinājuma ziņojumus"
+  },
   "common_feature_malware_title": {
     "message": "Bloķēt ļaunatūru"
   },

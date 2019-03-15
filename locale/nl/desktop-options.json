@@ -6,7 +6,7 @@
     "message": "Acceptabele advertenties toestaan"
   },
   "options_acceptableAds_description": {
-    "message": "Acceptabele advertenties zijn niet-opdringerige advertenties. Ze zijn de middenweg tussen advertentieblokkering en het steunen van online-inhoud, omdat ze inkomsten voor website-eigenaars genereren."
+    "message": "Acceptabele advertenties zijn niet-opdringerige advertenties. Ze zijn de middenweg tussen advertentieblokkering en het steunen van online-inhoud, omdat ze inkomsten genereren voor website-eigenaren."
   },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Opmerking:</strong> u hebt <strong>Do Not Track (DNT)</strong> uitgeschakeld in uw browserinstellingen. Schakel <strong>DNT</strong> in in uw browservoorkeuren om deze functie goed te laten werken. <a>Lees hoe u DNT kunt inschakelen</a>."
@@ -38,35 +38,11 @@
   "options_customFilter_cancel": {
     "message": "Annuleren"
   },
-  "options_customFilter_edit": {
-    "message": "Filters bewerken"
-  },
-  "options_customFilter_save": {
-    "message": "Opslaan"
-  },
   "options_customFilters_description": {
-    "message": "Maak uw eigen filters om verder te bepalen welke inhoud Adblock Plus toestaat of blokkeert. <a0>Info over het maken van filters</a0>"
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "bv. $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Info over het maken van filters"
-  },
-  "options_customFilters_start": {
-    "message": "Beginnen met het maken van mijn filterlijst"
-  },
-  "options_customFilters_tip": {
-    "message": "Hier verschijnen filters die u maakt."
+    "message": "Maak en onderhoud uw eigen filters om verder te bepalen welke inhoud Adblock Plus toestaat of blokkeert. <a0>Info over het schrijven van filters</a0>"
   },
   "options_customFilters_title": {
-    "message": "Uw filterlijst maken en bewerken"
+    "message": "Uw aangepaste filters"
   },
   "options_customFilters_widget_title": {
     "message": "Mijn filterlijst"
@@ -195,7 +171,7 @@
     "message": "Actief"
   },
   "options_filterList_state_disabled": {
-    "message": "Uitgeschakeld"
+    "message": "Inactief"
   },
   "options_filterList_title": {
     "message": "Filterlijsten"
@@ -209,8 +185,11 @@
   "options_filterList_website": {
     "message": "website"
   },
+  "options_filter_list_rule": {
+    "message": "Filterregel"
+  },
   "options_filters_search_or_add": {
-    "message": "Filter zoeken / toevoegen (bv. $filter$)",
+    "message": "Filter(s) zoeken of toevoegen (bv. $filter$)",
     "placeholders": {
       "filter": {
         "content": "/ads/track/*"

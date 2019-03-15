@@ -1,0 +1,35 @@
+{
+  "continue": {
+    "message": "অব্যাহত ৰাখক"
+  },
+  "filters_subscription_lastDownload_connectionError": {
+    "message": "ব্যৰ্থ হ\\'ল, ডাউনল\\'ড ব্যৰ্থতা"
+  },
+  "issueReporter_anonymousSubmission_label": {
+    "message": "নামবিহীন দাখিলকৰণ"
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "এটা মন্তব্য এৰি যাওক"
+  },
+  "issueReporter_comment_description": {
+    "message": "অনুগ্ৰহ কৰি তলত এটা মন্তব্য এৰি সমস্যাটো ভাল দৰে বুজাত আমাক সহায় কৰক।"
+  },
+  "issueReporter_comment_label": {
+    "message": "মন্তব্য (বৈকল্পিক):"
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "আপোনাৰ অভিযোগ সঞ্চিত কৰা হ\\'ল। আপুনি নিম্নলিখিত ঠিকনাটোত ইয়ালৈ প্ৰৱেশ কৰিব পাৰিব:"
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "বিশদ-বিৱৰণ"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "সম্পন্ন"
+  },
+  "issueReporter_email_label": {
+    "message": "ইমেইল:"
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "মই তথাপিও বিজ্ঞাপন দেখা পাওঁ"
+  }
+}

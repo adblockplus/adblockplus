@@ -1,0 +1,53 @@
+{
+  "devtools_action_block": {
+    "message": "Bloqueja l'element"
+  },
+  "devtools_action_remove": {
+    "message": "Suprimeix la regla"
+  },
+  "devtools_action_unblock": {
+    "message": "Afegeix una excepció"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "definit per l'usuari"
+  },
+  "devtools_filter_origin_none": {
+    "message": "subscripció sense nom"
+  },
+  "devtools_filter_subtitle": {
+    "message": "Origen"
+  },
+  "devtools_filter_title": {
+    "message": "Filtre"
+  },
+  "devtools_footer": {
+    "message": "<a0>Recarrega</a0> la pàgina per veure l'efecte dels canvis del filtre"
+  },
+  "devtools_header": {
+    "message": "Mostra <slot0></slot0> elements de <slot1></slot1> tipus"
+  },
+  "devtools_header_state_all": {
+    "message": "tots"
+  },
+  "devtools_header_state_blocked": {
+    "message": "bloquejat"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "a la llista blanca"
+  },
+  "devtools_header_type_any": {
+    "message": "qualsevol"
+  },
+  "devtools_request_subtitle": {
+    "message": "Domini del document"
+  },
+  "devtools_request_title": {
+    "message": "Sol·licita"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0> reescrit a <a1></a1>"
+  },
+  "devtools_type_title": {
+    "message": "Tipus"
+  }
+}

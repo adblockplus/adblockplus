@@ -38,32 +38,8 @@
   "options_customFilter_cancel": {
     "message": "إلغاء"
   },
-  "options_customFilter_edit": {
-    "message": "عدل الفلاتر"
-  },
-  "options_customFilter_save": {
-    "message": "حفظ"
-  },
   "options_customFilters_description": {
     "message": "اكتب عوامل التصفية المخصصة لديك لزيادة التحكم في المحتوى الذي يسمح Adblock Plus أو يحجبه."
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "مثال $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "تعرف على كيفية كتابة قوائم"
-  },
-  "options_customFilters_start": {
-    "message": "بدء كتابة قوائم عوامل التصفية الخاصة بي"
-  },
-  "options_customFilters_tip": {
-    "message": "ستظهر هنا عوامل التصفية التي تنشأها."
   },
   "options_customFilters_title": {
     "message": "إنشاء وتحرير قوائم عوامل التصفية"

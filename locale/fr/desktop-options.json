@@ -9,7 +9,7 @@
     "message": "Les publicités acceptables sont des publicités discrètes. Elles sont à mi-chemin entre le blocage des publicités et le soutien du contenu en ligne car elles génèrent des revenus pour les propriétaires de sites web."
   },
   "options_acceptableAds_dnt_notification": {
-    "message": "<strong>NB :</strong> Vous avez désactivé <strong>Interdire le suivi (DNT)</strong> dans les paramètres de vos navigateur. Pour que cette fonctionnalité soit efficace, vous devez activer <strong>DNT</strong> dans vos préférences de navigation. <a>Découvrir comment activer DNT</a>"
+    "message": "<strong>NB :</strong> Vous avez désactivé <strong>Interdire le suivi (DNT)</strong> dans les paramètres de votre navigateur. Pour que cette fonctionnalité soit efficace, vous devez activer <strong>DNT</strong> dans les préférences de votre navigateur. <a>Découvrir comment activer DNT</a>."
   },
   "options_acceptableAds_header": {
     "message": "PUBLICITÉ ACCEPTABLE"
@@ -38,32 +38,8 @@
   "options_customFilter_cancel": {
     "message": "ANNULER"
   },
-  "options_customFilter_edit": {
-    "message": "Modifier les filtres"
-  },
-  "options_customFilter_save": {
-    "message": "ENREGISTRER"
-  },
   "options_customFilters_description": {
     "message": "Créer et gérer vos filtres sur mesure pour contrôler encore mieux le contenu autorisé ou bloqué par Adblock Plus. <a0>Apprendre à écrire des listes de filtres</a0>"
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "par exemple: $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Apprendre comment créer des filtres"
-  },
-  "options_customFilters_start": {
-    "message": "Commencer à créer ma liste de filtres"
-  },
-  "options_customFilters_tip": {
-    "message": "Les filtres que vous créez seront affichés ici."
   },
   "options_customFilters_title": {
     "message": "Vos filtres personnalisés"
@@ -308,7 +284,7 @@
     "message": "Sites Web sur liste blanche"
   },
   "options_tracking_warning_1": {
-    "message": "Nous avons remarqué que vous avez les deux options <strong>$tracking$</strong> et <strong>$acceptableAds$</strong> activée.",
+    "message": "Nous avons remarqué que vous avez les deux options <strong>$tracking$</strong> et <strong>$acceptableAds$</strong> activées.",
     "placeholders": {
       "acceptableAds": {
         "content": "$2",

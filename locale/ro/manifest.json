@@ -1,11 +1,14 @@
 {
   "description": {
-    "message": "Cu peste 500 de milioane de descărcări, Adblock Plus este unul dintre cele mai populare ad blocker din lume."
+    "message": "Descarcă Adblock Plus, unul dintre cele mai populare ad blockers din lume."
   },
   "name": {
     "message": "Adblock Plus"
   },
   "name_devbuild": {
     "message": "Versiune de test Adblock Plus"
+  },
+  "name_releasebuild": {
+    "message": "Adblock Plus - ad blocker gratuit"
   }
 }

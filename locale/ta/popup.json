@@ -2,17 +2,8 @@
   "click_element_to_block_it": {
     "message": "அதை தடுப்பதற்கு பக்கத்தில் ஒரு தனிமத்தின் கிளிக் செய்யவும்."
   },
-  "clickhide_instructions": {
-    "message": "இந்த விழிதிரை மூடிய பின், பக்கத்தில் உள்ள உறுப்பின் மேல் சொடுக்கவும். (அல்லது வலது விசையை சொடுக்கவும்.)"
-  },
-  "disabled_for_site": {
-    "message": "இந்த தளத்தில் <strong> முடக்கப்பட்டுள்ளது</strong>"
-  },
   "easy_create_filter": {
     "message": "உறுப்பை தடு"
-  },
-  "enabled_for_site": {
-    "message": "இந்த தளத்தில் <strong> செயல்படுகிறது</strong>"
   },
   "options_refresh": {
     "message": "புதுப்பி"
@@ -47,12 +38,6 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "படவுருவில் எண்ணை காட்டு"
-  },
-  "stats_title": {
-    "message": "தடுக்கப்பட்ட விளம்பரங்கள்"
   },
   "status_header": {
     "message": "இல் விளம்பரங்கள் தடை:"

@@ -1,15 +1,6 @@
 {
-  "clickhide_instructions": {
-    "message": "Laster-leiho hau itxi eta gero, egin klik (edo eskumako klik) orriko elementu batean."
-  },
-  "disabled_for_site": {
-    "message": "<strong>Desgaituta</strong> gune honetan"
-  },
   "easy_create_filter": {
     "message": "Blokeatu elementua"
-  },
-  "enabled_for_site": {
-    "message": "<strong>Gaituta</strong> gune honetan"
   },
   "options_short": {
     "message": "Aukerak"
@@ -32,11 +23,5 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Erakutsi kopurua ikonoan"
-  },
-  "stats_title": {
-    "message": "Blokeatutako iragarkiak"
   }
 }

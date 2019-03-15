@@ -17,6 +17,9 @@
       }
     }
   },
+  "mops_error_url": {
+    "message": "正しいURLを入力してください"
+  },
   "mops_filterlist_add": {
     "message": "+ フィルターリストを追加"
   },

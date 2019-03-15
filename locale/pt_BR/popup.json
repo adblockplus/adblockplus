@@ -2,17 +2,8 @@
   "click_element_to_block_it": {
     "message": "Clique sobre um elemento na página para o bloquear."
   },
-  "clickhide_instructions": {
-    "message": "Depois de fechar este popup, clique com o botão esquerdo (ou o direito) sobre um elemento na página."
-  },
-  "disabled_for_site": {
-    "message": "<strong>Desativado</strong> neste site"
-  },
   "easy_create_filter": {
     "message": "Bloquear elemento"
-  },
-  "enabled_for_site": {
-    "message": "<strong>Ativado</strong> neste site"
   },
   "options_refresh": {
     "message": "Atualizar"
@@ -53,12 +44,6 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Mostrar número no ícone"
-  },
-  "stats_title": {
-    "message": "Anúncios bloqueados"
   },
   "status_header": {
     "message": "Bloqueio de anúncios ativo:"

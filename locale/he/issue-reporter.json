@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "לא נוכל לחזור אליך וסביר שנתעדף את הדיווח בצורה נמוכה יותר."
   },
+  "issueReporter_closeButton_label": {
+    "message": "סגור"
+  },
   "issueReporter_commentPage_heading": {
     "message": "השאר תגובה"
   },
@@ -73,6 +76,9 @@
   },
   "issueReporter_processing_screenshot": {
     "message": "מעבד"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "כדי לעזור לנו להבין בצורה טובה יותר את הסוגייה, צילום מסך נדרש בעת הגשת דיווח סוגייה. על סמך האתר שאתה כרגע נמצא, צילום המסך עשוי להכיל מידע אישי. אם אינך מרגיש בנוח להגיש צילום מסך, אנא שלח בדוא\"ל את הסוגייה שלך אל <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_screenshot_hide": {
     "message": "הסתר"

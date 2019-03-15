@@ -35,30 +35,6 @@
   "options_customFilter_cancel": {
     "message": "Откажи"
   },
-  "options_customFilter_edit": {
-    "message": "Уреди филтере"
-  },
-  "options_customFilter_save": {
-    "message": "Сачувај"
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "нпр. $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Сазнајте како да направите филтере"
-  },
-  "options_customFilters_start": {
-    "message": "Започни прављење моје листе филтера"
-  },
-  "options_customFilters_tip": {
-    "message": "Овде ће се појавити филтери које направите."
-  },
   "options_customFilters_title": {
     "message": "Прављење и уређивање листе филтера"
   },

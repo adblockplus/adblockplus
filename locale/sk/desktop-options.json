@@ -29,32 +29,8 @@
   "options_customFilter_cancel": {
     "message": "Zrušiť"
   },
-  "options_customFilter_edit": {
-    "message": "Upraviť filtre"
-  },
-  "options_customFilter_save": {
-    "message": "Uložiť"
-  },
   "options_customFilters_description": {
     "message": "Napíšte svoje vlastné filtre, aby ste mohli ďalej riadiť obsah, ktorý Adblock Plus umožňuje alebo blokuje."
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "napr. $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Prečítajte si, ako písať zoznamy filtrov"
-  },
-  "options_customFilters_start": {
-    "message": "Začnite písať zoznam filtra"
-  },
-  "options_customFilters_tip": {
-    "message": "Filtre, ktoré vytvoríte, sa zobrazia tu."
   },
   "options_customFilters_title": {
     "message": "Vytvorte a upravte zoznam filtrov"

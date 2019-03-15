@@ -2,17 +2,8 @@
   "click_element_to_block_it": {
     "message": "Klicke auf ein Element auf der Seite, um es zu blockieren."
   },
-  "clickhide_instructions": {
-    "message": "Nachdem dieses Fenster geschlossen ist, klicke (oder rechtsklicke) auf ein Element auf der Seite."
-  },
-  "disabled_for_site": {
-    "message": "<strong>Deaktiviert</strong> auf dieser Seite"
-  },
   "easy_create_filter": {
     "message": "Element blockieren"
-  },
-  "enabled_for_site": {
-    "message": "<strong>Aktiviert</strong> auf dieser Seite"
   },
   "options_refresh": {
     "message": "Aktualisieren"
@@ -53,12 +44,6 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Anzahl in Symbol anzeigen"
-  },
-  "stats_title": {
-    "message": "Blockierte Werbung"
   },
   "status_header": {
     "message": "Werbung blockieren auf:"

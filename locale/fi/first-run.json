@@ -23,8 +23,14 @@
       }
     }
   },
+  "firstRun_subtitle": {
+    "message": "Otit juuri selaimesi hallinnan."
+  },
   "firstRun_title": {
     "message": "Asennus onnistui!"
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "Avaa selaimesi laajennukset -välilehti."
   },
   "firstRun_warning_dataCorrupted_step2": {
     "message": "Paikanna Adblock Plus ja poista se."

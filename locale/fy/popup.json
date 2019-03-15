@@ -2,17 +2,8 @@
   "click_element_to_block_it": {
     "message": "Klik op in elemint op de side om it te blokkearjen."
   },
-  "clickhide_instructions": {
-    "message": "Klik (of klik mei de rjochtermûsknop) nei it sluten fan dizze pop-up op in elemint op de side."
-  },
-  "disabled_for_site": {
-    "message": "<strong>Utskeakele</strong> op dizze website"
-  },
   "easy_create_filter": {
     "message": "Elemint blokkearje"
-  },
-  "enabled_for_site": {
-    "message": "<strong>Ynskeakele</strong> op dizze website"
   },
   "options_refresh": {
     "message": "Fernije"
@@ -53,12 +44,6 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Oantal yn piktogram toane"
-  },
-  "stats_title": {
-    "message": "Blokkearre advertinsjes"
   },
   "status_header": {
     "message": "Advertinsjes blokkearje op:"

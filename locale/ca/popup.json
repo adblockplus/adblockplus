@@ -2,17 +2,8 @@
   "click_element_to_block_it": {
     "message": "Feu clic a un element de la pàgina per bloquejar-lo."
   },
-  "clickhide_instructions": {
-    "message": "Després de tancar aquesta finestra emergent, feu clic (o feu clic amb el botó dret) en un element de la pàgina."
-  },
-  "disabled_for_site": {
-    "message": "S'ha <strong>desactivat</strong> per a aquest lloc"
-  },
   "easy_create_filter": {
     "message": "Bloqueja l'element"
-  },
-  "enabled_for_site": {
-    "message": "S'ha <strong>activat</strong> en aquest lloc"
   },
   "options_refresh": {
     "message": "Refresca"
@@ -53,12 +44,6 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Mostra el número a la icona"
-  },
-  "stats_title": {
-    "message": "Anuncis bloquejats"
   },
   "status_header": {
     "message": "Bloqueja anuncis a:"

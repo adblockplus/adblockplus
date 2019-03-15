@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "Meil ei ole võimalik sinu poole tagasi pöörduda ja tõenäoliselt omistame sellele teatele madamala prioriteedi."
   },
+  "issueReporter_closeButton_label": {
+    "message": "Sulge"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Kommenteeri"
   },
@@ -70,6 +73,9 @@
   },
   "issueReporter_privacyPolicy": {
     "message": "Privaatsus"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "Et aidata meil paremini probleemist eru saada, on veateadet saates vajalik lisada ekraanipilt. Sõltuvalt hetkel külastatavast veebisaidist võib ekraanipilt sisaldada isiklikke andmeid. Kui sa ei soovi ekraanipilti saata, palun saada oma veateade e-postiaadressile <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_screenshot_hide": {
     "message": "Peida"

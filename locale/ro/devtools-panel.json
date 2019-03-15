@@ -1,0 +1,53 @@
+{
+  "devtools_action_block": {
+    "message": "Blochează element"
+  },
+  "devtools_action_remove": {
+    "message": "Elimina regulă"
+  },
+  "devtools_action_unblock": {
+    "message": "Adăugare excepție"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "definit de utilizator"
+  },
+  "devtools_filter_origin_none": {
+    "message": "provenienţă filtru neidentificată"
+  },
+  "devtools_filter_subtitle": {
+    "message": "Origine"
+  },
+  "devtools_filter_title": {
+    "message": "Filtru"
+  },
+  "devtools_footer": {
+    "message": "<a0>reload</a0> pagină pentru a vedea efectul filtrului modificat"
+  },
+  "devtools_header": {
+    "message": "Afişare <slot0></slot0> elemente de tipul <slot1></slot1>"
+  },
+  "devtools_header_state_all": {
+    "message": "toate"
+  },
+  "devtools_header_state_blocked": {
+    "message": "blocat"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "permis"
+  },
+  "devtools_header_type_any": {
+    "message": "orice"
+  },
+  "devtools_request_subtitle": {
+    "message": "Domeniu de document"
+  },
+  "devtools_request_title": {
+    "message": "Cerere"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0> rescrise la <a1></a1>"
+  },
+  "devtools_type_title": {
+    "message": "Tip"
+  }
+}

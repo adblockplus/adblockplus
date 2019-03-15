@@ -38,35 +38,11 @@
   "options_customFilter_cancel": {
     "message": "Отказ"
   },
-  "options_customFilter_edit": {
-    "message": "Редактирай"
-  },
-  "options_customFilter_save": {
-    "message": "Запиши"
-  },
   "options_customFilters_description": {
-    "message": "Написани от вас собствени филтри за последващ контрол над позволеното или блокирано съдържание от Adblock Plus."
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "например $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Как да напишем собствен филтър"
-  },
-  "options_customFilters_start": {
-    "message": "Напиши собствен филтър"
-  },
-  "options_customFilters_tip": {
-    "message": "Тук са създадените от вас филтри."
+    "message": "Създайте и поддържайте собствени филтри за последващ контрол над позволеното или блокирано съдържание от Adblock Plus. <a0>Повече за писането на филтри</a0>"
   },
   "options_customFilters_title": {
-    "message": "Създаване и редактиране на филтри"
+    "message": "Собствени филтри"
   },
   "options_customFilters_widget_title": {
     "message": "Собствен филтър"
@@ -81,16 +57,19 @@
     "message": "Нагласяване"
   },
   "options_customize_iconStats": {
-    "message": "Показывай броя блокирани реклами върху иконата"
+    "message": "Показвай броя блокирани реклами върху иконата"
   },
   "options_customize_showDevToolsPanel": {
-    "message": "Показвай панел „Adblock Plus“ към инструментите за разработка"
+    "message": "Показвай панел „Adblock Plus“ към развойни инструменти"
   },
   "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Преглед на блокирани и изключени елементи през панел в инструментите за разработка на браузъра."
+    "message": "Преглед на блокирани и изключени елементи през панела с развойни инструменти на браузъра."
   },
   "options_customize_showNotifications": {
-    "message": "Показвай полезни уведомявания"
+    "message": "Показвай полезни известия"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Позволяване на известяване от Adblock Plus (това за критични проблеми в производителността ще се показва винаги)."
   },
   "options_dialog_about_copyright": {
     "message": "Авторски права © eyeo GmbH, $currentYear$ г.",
@@ -189,10 +168,10 @@
     "message": "източник"
   },
   "options_filterList_state_active": {
-    "message": "Разрешен"
+    "message": "Действащ"
   },
   "options_filterList_state_disabled": {
-    "message": "Забранен"
+    "message": "Недействащ"
   },
   "options_filterList_title": {
     "message": "Филтри"
@@ -205,6 +184,17 @@
   },
   "options_filterList_website": {
     "message": "сайт"
+  },
+  "options_filter_list_rule": {
+    "message": "Правило за филтър"
+  },
+  "options_filters_search_or_add": {
+    "message": "Търсене или добавяне на филтри (например $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
   },
   "options_footer_about": {
     "message": "За Adblock Plus"
@@ -249,7 +239,7 @@
     "message": "<strong>Забележка:</strong> Ползвайте филтри от трета страна само от автори, на които доверявате."
   },
   "options_new_label": {
-    "message": "Ново"
+    "message": "Нов"
   },
   "options_page_document_title": {
     "message": "Настройки на Adblock Plus"
@@ -294,7 +284,7 @@
     "message": "Изключения"
   },
   "options_tracking_warning_1": {
-    "message": "При вас както <strong>$tracking$</strong>, така и <strong>$acceptableAds$</strong> е разрешена.",
+    "message": "При вас както <strong>$tracking$</strong>, така и <strong>$acceptableAds$</strong> са разрешени.",
     "placeholders": {
       "acceptableAds": {
         "content": "$2",
@@ -307,7 +297,7 @@
     }
   },
   "options_tracking_warning_2": {
-    "message": "Добре е да знаете, че за показ на по-подходящи реклами от рекламодателите, при Приемливи реклами <strong>може</strong> да има определено проследяване."
+    "message": "Добре е да знаете, че за показване на по-подходяща реклама от рекламодателите, при Приемливи реклами <strong>може</strong> да има определено проследяване."
   },
   "options_tracking_warning_3": {
     "message": "Ако предпочитате екстра неприкосновеност, поставете отметка пред <strong>$acceptableAdsPrivacy$</strong> по-долу.",

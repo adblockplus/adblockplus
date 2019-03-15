@@ -23,6 +23,12 @@
   "issueReporter_confirmationMessage": {
     "message": "گزارش شما ذخیره شد. شما می توانید در نشانی زیر به آن دسترسی پیدا کنید:"
   },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>توجه:</strong> یک برگه اضافی به طور موقت باز می شود، بنابراین صفحه ای که شما در آن قرار دارد، توسط گزارشگر موضوع تحت تاثیر قرار نخواهد گرفت."
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "جزئیات"
+  },
   "issueReporter_doneButton_label": {
     "message": "انجام شد"
   },
@@ -47,14 +53,35 @@
   "issueReporter_falsePositive_label": {
     "message": "فوق تبلیغ شکن بیش از حد موارد را مسدود می کند."
   },
+  "issueReporter_highlighter_description": {
+    "message": "از ابزارها برای برجسته کردن هر تبلیغ یا مخفی کردن اطلاعات حساس در تصویر استفاده کنید. تبلیغات برجسته به ما کمک می کند که مسئله را سریع تر حل کنیم."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "موضوع برجسته"
+  },
   "issueReporter_knownIssueMessage": {
     "message": "گزارشی که شما ارسال کردید هم اکنون شناخته شده است. اطلاعات بیشتر:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "علامتگذاری موضوع"
   },
   "issueReporter_page_title": {
     "message": "گزارش گر اشکالات"
   },
   "issueReporter_privacyPolicy": {
     "message": "سیاست حفظ اسرار"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "در حال پردازش"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "مخفی"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "برجسته"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "انتخاب موضوع"
   },
   "issueReporter_sendButton_label": {
     "message": "ارسال گزارش"
@@ -72,6 +99,6 @@
     "message": "این پنجره شما را برای ارائه یک گزارش خطا فوق تبلیغ شکن راهنمایی می کند. ابتدا نوع مشکلی را که در این صفحه با آن روبرو هستید را انتخاب کنید:"
   },
   "issueReporter_typeSelector_heading": {
-    "message": "انتخاب نوع اشکال"
+    "message": "چه نوع مشکلی دارید؟"
   }
 }

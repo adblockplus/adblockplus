@@ -5,27 +5,6 @@
   "options_customFilter_cancel": {
     "message": "Batal"
   },
-  "options_customFilter_edit": {
-    "message": "Ubah Filter"
-  },
-  "options_customFilter_save": {
-    "message": "Simpan"
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "misalnya $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Belajar bagaimana menulis daftar filter"
-  },
-  "options_customFilters_start": {
-    "message": "Mulai menulis daftar filter"
-  },
   "options_customize_showNotifications": {
     "message": "Tampilkan pemberitahuan yang berguna"
   },

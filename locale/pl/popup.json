@@ -2,17 +2,8 @@
   "click_element_to_block_it": {
     "message": "Kliknij element strony, aby go zablokować."
   },
-  "clickhide_instructions": {
-    "message": "Po zamknięciu tego wyskakującego okienka kliknij (lub kliknij prawym przyciskiem myszy) dowolny element strony."
-  },
-  "disabled_for_site": {
-    "message": "<strong>Wyłączony</strong> w tej witrynie"
-  },
   "easy_create_filter": {
     "message": "Zablokuj element"
-  },
-  "enabled_for_site": {
-    "message": "<strong>Włączony</strong> w tej witrynie"
   },
   "options_refresh": {
     "message": "Odśwież"
@@ -53,12 +44,6 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Pokaż liczbę na ikonie"
-  },
-  "stats_title": {
-    "message": "Reklamy zablokowane"
   },
   "status_header": {
     "message": "Blokuje reklamy w:"

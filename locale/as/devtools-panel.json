@@ -1,0 +1,53 @@
+{
+  "devtools_action_block": {
+    "message": "সামগ্ৰী অৱৰুদ্ধ কৰক"
+  },
+  "devtools_action_remove": {
+    "message": "নিয়ম আঁতৰাওক"
+  },
+  "devtools_action_unblock": {
+    "message": "ব্যতিক্ৰম যোগ কৰক"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "ব্যৱহাৰকৰ্তা-নিৰ্ধাৰিত"
+  },
+  "devtools_filter_origin_none": {
+    "message": "নামবিহীন গ্ৰাহকীভুক্তি"
+  },
+  "devtools_filter_subtitle": {
+    "message": "উৎস"
+  },
+  "devtools_filter_title": {
+    "message": "ফিল্টাৰ"
+  },
+  "devtools_footer": {
+    "message": "ফিল্টাৰ সালসলনিৰ প্ৰভাৱ চাবলৈ পৃষ্ঠা <a0>পুনঃল\\'ড কৰক</a0>"
+  },
+  "devtools_header": {
+    "message": "<slot1></slot1> প্ৰকাৰৰ <slot0></slot0> সামগ্ৰী দেখুৱাওক"
+  },
+  "devtools_header_state_all": {
+    "message": "সকলো"
+  },
+  "devtools_header_state_blocked": {
+    "message": "অৱৰুদ্ধ"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "শ্বেতসূচীভুক্ত"
+  },
+  "devtools_header_type_any": {
+    "message": "যিকোনো"
+  },
+  "devtools_request_subtitle": {
+    "message": "নথিপত্রৰ ড\\'মেইন"
+  },
+  "devtools_request_title": {
+    "message": "অনুৰোধ"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0> এওঁলৈ লিখিছে <a1></a1>"
+  },
+  "devtools_type_title": {
+    "message": "প্ৰকাৰ"
+  }
+}

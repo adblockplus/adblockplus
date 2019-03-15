@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "No podrem contestar-lo i segurament, no el prioritzarem."
   },
+  "issueReporter_closeButton_label": {
+    "message": "Tanca"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Deixeu un comentari"
   },
@@ -73,6 +76,9 @@
   },
   "issueReporter_processing_screenshot": {
     "message": "s'està processant"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "Per ajudar-nos a entendre millor el problema, cal una captura de pantalla quan envieu un informe d'error. Depenent del lloc web en què estigueu actualment, la captura de pantalla pot contenir informació personal. Si us trobeu incòmode en presentar una captura de pantalla, envieu un missatge per correu a <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_screenshot_hide": {
     "message": "Amaga"

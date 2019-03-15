@@ -2,17 +2,8 @@
   "click_element_to_block_it": {
     "message": "Kliknite element na strani, da ga blokirate."
   },
-  "clickhide_instructions": {
-    "message": "Po zaprtju tega popup-a kliknite (ali desni klik) element na strani."
-  },
-  "disabled_for_site": {
-    "message": "<strong>Omogočeno</strong> na tej strani"
-  },
   "easy_create_filter": {
     "message": "Blokiraj element"
-  },
-  "enabled_for_site": {
-    "message": "<strong>Omogočeno</strong> na tej strani"
   },
   "options_refresh": {
     "message": "Osveži"
@@ -53,12 +44,6 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Pokaži število v ikoni"
-  },
-  "stats_title": {
-    "message": "Blokiranih oglasov"
   },
   "status_header": {
     "message": "Blokiraj oglase na:"

@@ -19,5 +19,14 @@
   },
   "common_notification_hide": {
     "message": "Melding slute"
+  },
+  "copy_selected": {
+    "message": "Selektearre kopiearje"
+  },
+  "delete": {
+    "message": "Fuortsmite"
+  },
+  "filter_action_failed": {
+    "message": "Der is wat mis gien. Probearje it opnij."
   }
 }

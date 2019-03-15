@@ -1,8 +1,41 @@
 {
+  "firstRun_browser_store_android": {
+    "message": "Ап за Android от Google Play"
+  },
   "firstRun_browser_title": {
     "message": "Ап Adblock Browser"
   },
+  "firstRun_control_title": {
+    "message": "Под ваш контрол"
+  },
+  "firstRun_footer_copyright": {
+    "message": "Авторски права $year$ г. © Всички права запазени. Adblock Plus® е запазена търговска марка на <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
+  "firstRun_subtitle": {
+    "message": "Току-що поставихте своя браузър под ваш контрол."
+  },
+  "firstRun_title": {
+    "message": "Успешно инсталиране!"
+  },
   "firstRun_warning_dataCorrupted_intro": {
-    "message": "Някои потребители срещат проблем, че тази страница се отваря с всяко пускане на браузъра. Същият може да бъде разрешен чрез премахване и повторно инсталиране на Adblock Plus:"
+    "message": "Определени потребители срещат недостатък, при който тази страница се отваря с всяко пускане на браузъра. Същият може да бъде разрешен чрез премахване и повторно инсталиране на Adblock Plus:"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "Ако все още имате нужда от помощ, свържете се с нас на <a0>support@adblockplus.org</a0> или посетете нашия <a1>Помощен център</a1>."
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "Отворете раздел Разширения на браузъра."
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Намерете Adblock Plus и го премахнете."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "Инсталирайте повторно Adblock Plus от <a>adblockplus.org</a>."
   }
 }

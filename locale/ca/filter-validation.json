@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "Expressió regular no vàlida"
   },
+  "filter_slow": {
+    "message": "Per garantir un filtre ràpid, comproveu la longitud del patró i assegureu-vos que no contingui expressions regulars."
+  },
   "filter_snippet_nodomain": {
     "message": "No s'ha especificat cap domini actiu per al filtre de fragments"
   },

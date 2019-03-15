@@ -1,15 +1,6 @@
 {
-  "clickhide_instructions": {
-    "message": "ಈ ಪಾಪ್ಅಪ್ ಮುಚ್ಚುವ ನಂತರ, ಪುಟ ಮೇಲೆ ಕ್ಲಿಕ್ ಮಾಡಿ (ಅಥವಾ ಬಲ ಕ್ಲಿಕ್ ಮಾಡಿ) ಒಂದು ಅಂಶ."
-  },
-  "disabled_for_site": {
-    "message": "<strong>ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ</strong> ಈ ಸೈಟ್"
-  },
   "easy_create_filter": {
     "message": "ಬ್ಲಾಕ್ ಅಂಶ"
-  },
-  "enabled_for_site": {
-    "message": "<strong>ಶಕ್ತಗೊಂಡಿದೆ</strong> ಈ ಸೈಟ್ನಲ್ಲಿ"
   },
   "options_short": {
     "message": "ಆಯ್ಕೆಗಳು"
@@ -29,11 +20,5 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "ಐಕಾನ್ ಸಂಖ್ಯೆ ತೋರಿಸಿ"
-  },
-  "stats_title": {
-    "message": "ಜಾಹೀರಾತುಗಳು ನಿರ್ಬಂಧಿಸಲಾಗಿದೆ"
   }
 }

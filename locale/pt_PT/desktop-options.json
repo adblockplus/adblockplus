@@ -20,6 +20,9 @@
   "options_advanced_description": {
     "message": "Personalize o Adblock Plus, adicione ou remova listas de filtros, crie e mantenha as suas próprias listas de filtros"
   },
+  "options_anti_cv_header": {
+    "message": "Anti-circunvecção"
+  },
   "options_close": {
     "message": "FECHAR"
   },
@@ -29,35 +32,11 @@
   "options_customFilter_cancel": {
     "message": "CANCELAR"
   },
-  "options_customFilter_edit": {
-    "message": "Editar filtros"
-  },
-  "options_customFilter_save": {
-    "message": "GUARDAR"
-  },
   "options_customFilters_description": {
-    "message": "Crie filtros personalizados para um controlo adicional do conteúdo que o Adblock Plus permite ou bloqueia."
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "p. ex. $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Saiba como criar listas de filtros"
-  },
-  "options_customFilters_start": {
-    "message": "Começar a escrever a minha lista de filtros"
-  },
-  "options_customFilters_tip": {
-    "message": "Os filtros que criou são apresentados aqui."
+    "message": "Crie e mantenha os seus próprios filtros para um controlo adicional do conteúdo que o Adblock Plus permite ou bloqueia. <a0>Aprenda como escrever filtros</a0>"
   },
   "options_customFilters_title": {
-    "message": "CRIAR E EDITAR A SUA LISTA DE FILTROS"
+    "message": "Os seus filtros personalizados"
   },
   "options_customFilters_widget_title": {
     "message": "A minha lista de filtros"
@@ -68,6 +47,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "Bloqueie temporariamente itens irritantes numa página Web, p. ex., imagens ou apresentações animadas."
   },
+  "options_customize_header": {
+    "message": "Personalizações"
+  },
+  "options_customize_iconStats": {
+    "message": "Mostrar número de anúncios bloqueados no ícone"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "Mostrar o painel \"Adblock Plus\" nas ferramentas do programador"
   },
@@ -76,6 +61,9 @@
   },
   "options_customize_showNotifications": {
     "message": "Mostrar notificações úteis"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Permitir notificações do Adblock Plus (notificações relacionadas com problemas críticos de desempenho serão mostradas sempre)."
   },
   "options_dialog_about_copyright": {
     "message": "Copyright © $currentYear$ eyeo GmbH.",
@@ -177,7 +165,7 @@
     "message": "Ativo"
   },
   "options_filterList_state_disabled": {
-    "message": "Desativado"
+    "message": "Inativo"
   },
   "options_filterList_title": {
     "message": "Listas de filtros"
@@ -237,7 +225,7 @@
     "message": "NOVIDADE"
   },
   "options_page_document_title": {
-    "message": "Opções Adblock Plus"
+    "message": "Opções do Adblock Plus"
   },
   "options_page_title": {
     "message": "Definições"

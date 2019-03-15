@@ -2,17 +2,8 @@
   "click_element_to_block_it": {
     "message": "单击页面上的一个元素以拦截它。"
   },
-  "clickhide_instructions": {
-    "message": "关闭此弹出窗口后，单击（或右键单击）页面上的一个元素。"
-  },
-  "disabled_for_site": {
-    "message": "在此网站上的<strong>已停用</strong>"
-  },
   "easy_create_filter": {
     "message": "拦截元素"
-  },
-  "enabled_for_site": {
-    "message": "在此网站上的<strong>已启用</strong>"
   },
   "options_refresh": {
     "message": "刷新"
@@ -53,12 +44,6 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "在图标中显示数字"
-  },
-  "stats_title": {
-    "message": "广告被拦截"
   },
   "status_header": {
     "message": "拦截广告于："

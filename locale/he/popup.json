@@ -2,17 +2,8 @@
   "click_element_to_block_it": {
     "message": "לחץ על יסוד בעמוד כדי לחסום אותו."
   },
-  "clickhide_instructions": {
-    "message": "לאחר סגירת חלון קופץ זה, לחץ (או לחץ לחיצה ימנית) על יסוד בעמוד."
-  },
-  "disabled_for_site": {
-    "message": "<strong>מושבת</strong> באתר זה"
-  },
   "easy_create_filter": {
     "message": "חסום יסוד"
-  },
-  "enabled_for_site": {
-    "message": "<strong>מאופשר</strong> באתר זה"
   },
   "options_refresh": {
     "message": "רענן"
@@ -53,12 +44,6 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "הראה מספר בצלמית"
-  },
-  "stats_title": {
-    "message": "פרסומות חסומות"
   },
   "status_header": {
     "message": "חסום פרסומות ב:"

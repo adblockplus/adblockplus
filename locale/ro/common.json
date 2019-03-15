@@ -19,5 +19,14 @@
   },
   "common_notification_hide": {
     "message": "Închideţi această notificare"
+  },
+  "copy_selected": {
+    "message": "Copiază ce este selectat"
+  },
+  "delete": {
+    "message": "Șterge"
+  },
+  "filter_action_failed": {
+    "message": "Ceva n-a mers bine! Vă rugăm să încercați din nou."
   }
 }

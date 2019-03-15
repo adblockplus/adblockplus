@@ -1,0 +1,32 @@
+{
+  "add": {
+    "message": "যোগ কৰক"
+  },
+  "cancel": {
+    "message": "বাতিল"
+  },
+  "common_feature_anti_adblock_title": {
+    "message": "এডব্লকৰ সকীয়নিমূলক বাৰ্তাবোৰ লুকুৱাওক"
+  },
+  "common_feature_malware_title": {
+    "message": "মেলৱেৰ অৱৰুদ্ধ কৰক"
+  },
+  "common_feature_privacy_title": {
+    "message": "অতিৰিক্ত ট্ৰেকিং অৱৰুদ্ধ কৰক"
+  },
+  "common_feature_social_title": {
+    "message": "সংবাদ মাধ্যম আইকন ট্ৰেকিং অৱৰুদ্ধ কৰক"
+  },
+  "common_notification_hide": {
+    "message": "সুচনা বন্ধ কৰক"
+  },
+  "copy_selected": {
+    "message": "চয়নিত প্ৰতিলিপি কৰক"
+  },
+  "delete": {
+    "message": "বিলোপ"
+  },
+  "filter_action_failed": {
+    "message": "কিবা ভুল হৈছে। অনুগ্ৰহ কৰি পুনৰ চেষ্টা কৰক।"
+  }
+}

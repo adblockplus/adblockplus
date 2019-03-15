@@ -2,17 +2,8 @@
   "click_element_to_block_it": {
     "message": "Cliquez sur un élément de la page pour le bloquer."
   },
-  "clickhide_instructions": {
-    "message": "Après avoir fermé ce pop-up, cliquez (ou cliquez-droit) sur un élément de la page."
-  },
-  "disabled_for_site": {
-    "message": "<strong>Désactivé</strong> sur ce site"
-  },
   "easy_create_filter": {
     "message": "Bloquer l’élément"
-  },
-  "enabled_for_site": {
-    "message": "<strong>Activé</strong> sur ce site"
   },
   "options_refresh": {
     "message": "Actualiser"
@@ -33,7 +24,7 @@
     "message": "Cliquez sur <strong>Actualiser</strong> pour appliquer les modifications."
   },
   "sendReport": {
-    "message": "Signaler le problème"
+    "message": "Signaler un problème"
   },
   "stats_header": {
     "message": "Nombre d’éléments bloqués"
@@ -53,12 +44,6 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Afficher le nombre sur l'icône"
-  },
-  "stats_title": {
-    "message": "Publicités bloquées"
   },
   "status_header": {
     "message": "Bloquer les publicités sur :"

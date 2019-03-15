@@ -17,32 +17,8 @@
   "options_customFilter_cancel": {
     "message": "Avbryt"
   },
-  "options_customFilter_edit": {
-    "message": "Rediger filter"
-  },
-  "options_customFilter_save": {
-    "message": "Lagre"
-  },
   "options_customFilters_description": {
     "message": "Lag dine egne tilpassede filter for å kontrollere hvilket innhold Adblock Plus tillater eller blokkerer ytterligere."
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "f.eks $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Lær å lage filterlister"
-  },
-  "options_customFilters_start": {
-    "message": "Begynn å lage min filterliste"
-  },
-  "options_customFilters_tip": {
-    "message": "Filter du lager vil vises her."
   },
   "options_customFilters_title": {
     "message": "Opprett og rediger dine filterlister"

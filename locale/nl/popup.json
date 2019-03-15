@@ -2,17 +2,8 @@
   "click_element_to_block_it": {
     "message": "Klik op een element op de pagina om het te blokkeren."
   },
-  "clickhide_instructions": {
-    "message": "Klik (of klik met de rechtermuisknop) na het sluiten van deze pop-up op een element op de pagina."
-  },
-  "disabled_for_site": {
-    "message": "<strong>Uitgeschakeld</strong> op deze website"
-  },
   "easy_create_filter": {
     "message": "Element blokkeren"
-  },
-  "enabled_for_site": {
-    "message": "<strong>Ingeschakeld</strong> op deze website"
   },
   "options_refresh": {
     "message": "Vernieuwen"
@@ -53,12 +44,6 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Aantal in pictogram tonen"
-  },
-  "stats_title": {
-    "message": "Geblokkeerde advertenties"
   },
   "status_header": {
     "message": "Advertenties blokkeren op:"

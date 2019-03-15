@@ -1,0 +1,53 @@
+{
+  "devtools_action_block": {
+    "message": "Блокирай обекта"
+  },
+  "devtools_action_remove": {
+    "message": "Премахни правилото"
+  },
+  "devtools_action_unblock": {
+    "message": "Добави изключение"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "собствени филтри"
+  },
+  "devtools_filter_origin_none": {
+    "message": "неименувани абонаменти"
+  },
+  "devtools_filter_subtitle": {
+    "message": "Произход"
+  },
+  "devtools_filter_title": {
+    "message": "Филтър"
+  },
+  "devtools_footer": {
+    "message": "<a0>Презаредете</a0> страницата за преглед на промените от филтъра в сила."
+  },
+  "devtools_header": {
+    "message": "Покажи <slot0></slot0> като <slot1></slot1>"
+  },
+  "devtools_header_state_all": {
+    "message": "всички"
+  },
+  "devtools_header_state_blocked": {
+    "message": "блокираните"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "изключените"
+  },
+  "devtools_header_type_any": {
+    "message": "кой да е"
+  },
+  "devtools_request_subtitle": {
+    "message": "Домейн на документа"
+  },
+  "devtools_request_title": {
+    "message": "Заявка"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0> пренаписан като <a1></a1>"
+  },
+  "devtools_type_title": {
+    "message": "Вид"
+  }
+}

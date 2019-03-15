@@ -29,32 +29,8 @@
   "options_customFilter_cancel": {
     "message": "Atcelt"
   },
-  "options_customFilter_edit": {
-    "message": "Rediģēt filtrus"
-  },
-  "options_customFilter_save": {
-    "message": "Saglabāt"
-  },
   "options_customFilters_description": {
     "message": "Izveidojiet savus filtrus, lai kontrolētu to, kādu saturu Adblock Plus atļauj vai bloķē."
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "piemēram, $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Uzzināt kā izveidot filtru sarakstu"
-  },
-  "options_customFilters_start": {
-    "message": "Sākt mana filtru saraksta izveidošanu"
-  },
-  "options_customFilters_tip": {
-    "message": "Šeit tiks rādīti izveidotie filtri."
   },
   "options_customFilters_title": {
     "message": "Izveidot un rediģēt savu filtru sarakstu"

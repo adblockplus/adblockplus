@@ -1,11 +1,14 @@
 {
   "description": {
-    "message": "С над 500 милиона изтегляния, Adblock Plus е един от най-популярните блокери на реклами в света."
+    "message": "Изтеглете Adblock Plus — един от най-популярните блокери на реклами в света."
   },
   "name": {
     "message": "Adblock Plus"
   },
   "name_devbuild": {
     "message": "Развойна копилация на Adblock Plus"
+  },
+  "name_releasebuild": {
+    "message": "Adblock Plus — безплатен блокер на реклами"
   }
 }

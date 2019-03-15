@@ -19,5 +19,14 @@
   },
   "common_notification_hide": {
     "message": "Tanca la notificació"
+  },
+  "copy_selected": {
+    "message": "Copia els seleccionats"
+  },
+  "delete": {
+    "message": "Suprimeix"
+  },
+  "filter_action_failed": {
+    "message": "Quelcom ha fallat. Torneu-ho a provar."
   }
 }

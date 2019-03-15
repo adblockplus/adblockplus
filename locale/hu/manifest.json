@@ -1,11 +1,14 @@
 {
   "description": {
-    "message": "Több mint 500 millió letöltéssel az Adblock Plus a világ egyik legnépszerűbb hirdetésblokkolója."
+    "message": "Töltse le az Adblock Plus-t, a világ egyik legnépszerűbb hirdetési blokkolóját."
   },
   "name": {
     "message": "Adblock Plus"
   },
   "name_devbuild": {
     "message": "Adblock Plus fejlesztői változat"
+  },
+  "name_releasebuild": {
+    "message": "Adblock Plus - ingyenes hirdetés blokkoló"
   }
 }

@@ -2,17 +2,8 @@
   "click_element_to_block_it": {
     "message": "Натисніть на елемент на сторінці, щоб заблокувати його."
   },
-  "clickhide_instructions": {
-    "message": "Після закриття цього спливаючого вікна клацніть по елементу сторінки лівою чи правою кнопкою миші."
-  },
-  "disabled_for_site": {
-    "message": "<strong>Вимкнено</strong> на цьому сайті"
-  },
   "easy_create_filter": {
     "message": "Заблокувати елемент"
-  },
-  "enabled_for_site": {
-    "message": "<strong>Увімкнено</strong> на цьому сайті"
   },
   "options_refresh": {
     "message": "Оновити"
@@ -53,12 +44,6 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Показувати число у значку"
-  },
-  "stats_title": {
-    "message": "Статистика блокування"
   },
   "status_header": {
     "message": "Блокування реклами на:"

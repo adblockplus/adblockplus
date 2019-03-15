@@ -1,0 +1,53 @@
+{
+  "devtools_action_block": {
+    "message": "Item blokkearje"
+  },
+  "devtools_action_remove": {
+    "message": "Rigel fuortsmite"
+  },
+  "devtools_action_unblock": {
+    "message": "Utsûndering tafoegje"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "troch brûker definiearre"
+  },
+  "devtools_filter_origin_none": {
+    "message": "nammeleas abonnemint"
+  },
+  "devtools_filter_subtitle": {
+    "message": "Oersprong"
+  },
+  "devtools_filter_title": {
+    "message": "Filter"
+  },
+  "devtools_footer": {
+    "message": "<a0>Fernij</a0> de side om it effekt fan filterwizigingen te sjen"
+  },
+  "devtools_header": {
+    "message": "Toane: <slot0></slot0> items fan it type <slot1></slot1>"
+  },
+  "devtools_header_state_all": {
+    "message": "alle"
+  },
+  "devtools_header_state_blocked": {
+    "message": "blokkearre"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "tastiene"
+  },
+  "devtools_header_type_any": {
+    "message": "alle"
+  },
+  "devtools_request_subtitle": {
+    "message": "Domein fan dokumint"
+  },
+  "devtools_request_title": {
+    "message": "Oanfraach"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0> omskreaun nei <a1></a1>"
+  },
+  "devtools_type_title": {
+    "message": "Type"
+  }
+}

@@ -17,24 +17,6 @@
   "options_customFilter_cancel": {
     "message": "Utzi bertan behera"
   },
-  "options_customFilter_edit": {
-    "message": "Editatu iragazkiak"
-  },
-  "options_customFilter_save": {
-    "message": "Gorde"
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "adib. $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_tip": {
-    "message": "Sortzen dituzun iragazkiak hemen agertuko dira."
-  },
   "options_customFilters_widget_title": {
     "message": "Nire iragazkien zerrenda"
   },

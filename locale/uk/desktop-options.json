@@ -38,35 +38,11 @@
   "options_customFilter_cancel": {
     "message": "Скасувати"
   },
-  "options_customFilter_edit": {
-    "message": "Змінити фільтри"
-  },
-  "options_customFilter_save": {
-    "message": "Зберегти"
-  },
   "options_customFilters_description": {
-    "message": "Пишіть свої власні фільтри для додаткового контролю над тим, що Adblock Plus дозволяє, а що — блокує."
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "наприклад, $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Дізнайтеся, як складати списки фільтрів"
-  },
-  "options_customFilters_start": {
-    "message": "Почати складання мого списку фільтрів"
-  },
-  "options_customFilters_tip": {
-    "message": "Тут показані створені вами фільтри."
+    "message": "Створюйте та підтримуйте ваші власні фільтри для подальшого контрою над тим, який вміст Adblock Plus дозволятиме, а який — блокуватиме. <a0>Дізнайтеся, як писати фільтри</a0>"
   },
   "options_customFilters_title": {
-    "message": "Створення та редагування списку фільтрів"
+    "message": "Ваші власні фільтри"
   },
   "options_customFilters_widget_title": {
     "message": "Мій список фільтрів"
@@ -195,7 +171,7 @@
     "message": "Активний"
   },
   "options_filterList_state_disabled": {
-    "message": "Вимкнено"
+    "message": "Неактивні"
   },
   "options_filterList_title": {
     "message": "Списки фільтрів"
@@ -209,8 +185,11 @@
   "options_filterList_website": {
     "message": "сайт"
   },
+  "options_filter_list_rule": {
+    "message": "Правило фільтрування"
+  },
   "options_filters_search_or_add": {
-    "message": "Фильтр пошуку / додавання (наприклад, $filter$)",
+    "message": "Пошук або додавання фільтра(-ів) (наприклад, $filter$)",
     "placeholders": {
       "filter": {
         "content": "/ads/track/*"

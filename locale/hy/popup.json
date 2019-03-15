@@ -1,15 +1,6 @@
 {
-  "clickhide_instructions": {
-    "message": "Այս Փոպ-ապը փակելուց հետո սեղմեք( կամ աջկլիկ) տարրի վրա."
-  },
-  "disabled_for_site": {
-    "message": "<strong>Ակտիվ չէ</strong> այս կայքի համար"
-  },
   "easy_create_filter": {
     "message": "Արգելապակել Ելեմենտը"
-  },
-  "enabled_for_site": {
-    "message": "<strong>Ակտիվ է</strong> այս կայքի համար"
   },
   "options_short": {
     "message": "Կարգավորումներ"

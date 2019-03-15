@@ -2,17 +2,8 @@
   "click_element_to_block_it": {
     "message": "Нажмите на элемент на странице, чтобы заблокировать его."
   },
-  "clickhide_instructions": {
-    "message": "После закрытия этого всплывающего окна выберите элемент на странице (левой или правой кнопкой мыши)."
-  },
-  "disabled_for_site": {
-    "message": "<strong>Отключен</strong> на этом сайте"
-  },
   "easy_create_filter": {
     "message": "Заблокировать элемент"
-  },
-  "enabled_for_site": {
-    "message": "<strong>Включен</strong> на этом сайте"
   },
   "options_refresh": {
     "message": "Обновить"
@@ -53,12 +44,6 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Показывать число в значке"
-  },
-  "stats_title": {
-    "message": "Рекламы заблокировано"
   },
   "status_header": {
     "message": "Блокировать рекламу на:"

@@ -1,0 +1,53 @@
+{
+  "devtools_action_block": {
+    "message": "Elem blokkolása"
+  },
+  "devtools_action_remove": {
+    "message": "Szabály törlése"
+  },
+  "devtools_action_unblock": {
+    "message": "Kivétel hozzáadása"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "felhasz. által meghatár."
+  },
+  "devtools_filter_origin_none": {
+    "message": "névtelen előfizetés"
+  },
+  "devtools_filter_subtitle": {
+    "message": "Eredet"
+  },
+  "devtools_filter_title": {
+    "message": "Szűrő"
+  },
+  "devtools_footer": {
+    "message": "Oldal <a0>újratöltése</a0>, hogy lássa a hatást a szűrők változásakor"
+  },
+  "devtools_header": {
+    "message": "Megjelenít <slot0></slot0> elemek szerint <slot1></slot1> típus"
+  },
+  "devtools_header_state_all": {
+    "message": "összes"
+  },
+  "devtools_header_state_blocked": {
+    "message": "blokkolva"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "fehérlistán"
+  },
+  "devtools_header_type_any": {
+    "message": "bármely"
+  },
+  "devtools_request_subtitle": {
+    "message": "Dokumentum domain"
+  },
+  "devtools_request_title": {
+    "message": "Kérelem"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0> újraírva <a1></a1>"
+  },
+  "devtools_type_title": {
+    "message": "Típus"
+  }
+}

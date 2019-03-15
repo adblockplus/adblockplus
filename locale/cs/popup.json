@@ -1,15 +1,6 @@
 {
-  "clickhide_instructions": {
-    "message": "Po zavření tohoto vyskakovacího okna klikněte levým (nebo pravým) tlačítkem myši na prvek na stránce."
-  },
-  "disabled_for_site": {
-    "message": "<strong>Zakázáno</strong> na této stránce"
-  },
   "easy_create_filter": {
     "message": "Blokovat prvek"
-  },
-  "enabled_for_site": {
-    "message": "<strong>Povoleno</strong> na této stránce"
   },
   "options_short": {
     "message": "Možnosti"
@@ -32,11 +23,5 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Zobrazit číslo v ikoně"
-  },
-  "stats_title": {
-    "message": "Blokovaných reklam"
   }
 }

@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "Ongeldige reguliere expressie"
   },
+  "filter_slow": {
+    "message": "Controleer voor een snel filter de lengte van het patroon en zorg ervoor dat dit geen reguliere expressie gebruikt."
+  },
   "filter_snippet_nodomain": {
     "message": "Geen actief domein opgegeven voor snippetfilter"
   },

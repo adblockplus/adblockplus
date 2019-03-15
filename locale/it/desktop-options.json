@@ -38,32 +38,8 @@
   "options_customFilter_cancel": {
     "message": "ANNULLARE"
   },
-  "options_customFilter_edit": {
-    "message": "Modificare i filtri"
-  },
-  "options_customFilter_save": {
-    "message": "SALVARE"
-  },
   "options_customFilters_description": {
     "message": "Crea e gestisci i tuoi filtri per controllare ulteriormente i contenuti consentiti o bloccati da Adblock Plus. <a0>Scopri come scrivere i filtri</a0>"
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "ad esempio $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Scopri come creare i filtri"
-  },
-  "options_customFilters_start": {
-    "message": "Inizia a creare il mio elenco di filtri"
-  },
-  "options_customFilters_tip": {
-    "message": "I filtri che hai creato verranno visualizzati qui."
   },
   "options_customFilters_title": {
     "message": "I tuoi filtri personalizzati"

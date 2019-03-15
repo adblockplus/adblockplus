@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "ჩვენ ვერ შევძლებთ თქვენთან დაკავშირებას და შესაბამისად, ნაკლები ყურადღება მიექცევა თქვენს მოხსენებას."
   },
+  "issueReporter_closeButton_label": {
+    "message": "დახურვა"
+  },
   "issueReporter_commentPage_heading": {
     "message": "დაურთეთ შენიშვნა"
   },
@@ -74,6 +77,9 @@
   "issueReporter_processing_screenshot": {
     "message": "დამუშავება"
   },
+  "issueReporter_screenreader_warning": {
+    "message": "ხარვეზის უკეთ ასახსნელად, საჭიროა ეკრანის სურათის დართვა მოხსენებისთვის. გარკვეული საიტების შემთხვევაში, სურათი შეიძლება პირად მონაცემებსაც შეიცავდეს. თუ თქვენთვის არასასურველია ეკრანის სურათის გადმოგზავნა, გთხოვთ დაგვიკავშირდეთ ელფოსტაზე <a0>support@adblockplus.org</a0>."
+  },
   "issueReporter_screenshot_hide": {
     "message": "დამალვა"
   },
@@ -96,9 +102,9 @@
     "message": "მოხსენების მონაცემების ჩვენება"
   },
   "issueReporter_typeSelector_description": {
-    "message": "ეს ფანჯარა გაგიძღვებათ Adblock Plus-სთან დაკავშირებული ხარვეზების შესახებ მოხსენებების გასაგზავნად. თავდაპირველად, მიუთითეთ, თუ რა სახის ხარვეზს გადააწყდით ამ გვერდზე:"
+    "message": "გთხოვთ, მიუთითოთ ხარვეზი:"
   },
   "issueReporter_typeSelector_heading": {
-    "message": "მიუთითეთ, რა სახის ხარვეზია"
+    "message": "რა სახის ხარვეზს გადააწყდით?"
   }
 }

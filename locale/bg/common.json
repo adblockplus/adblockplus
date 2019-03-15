@@ -18,6 +18,15 @@
     "message": "Блокирай проследяването чрез социални бутони"
   },
   "common_notification_hide": {
-    "message": "Затваряне на уведомяването"
+    "message": "Затваряне на известието"
+  },
+  "copy_selected": {
+    "message": "Копирай избраното"
+  },
+  "delete": {
+    "message": "Изтрий"
+  },
+  "filter_action_failed": {
+    "message": "Нещо се обърка. Моля, опитайте отново."
   }
 }

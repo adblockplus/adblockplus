@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "We zullen geen contact met u kunnen opnemen en het rapport waarschijnlijk een lagere prioriteit geven."
   },
+  "issueReporter_closeButton_label": {
+    "message": "Sluiten"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Opmerking toevoegen"
   },
@@ -73,6 +76,9 @@
   },
   "issueReporter_processing_screenshot": {
     "message": "verwerken"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "Om ons te helpen het probleem beter te begrijpen, is een schermafbeelding nodig bij het indienen van een probleemrapport. Afhankelijk van de website waarop u zich bevindt, kan de schermafbeelding persoonlijke informatie bevatten. Als u liever geen schermafbeelding indient, e-mail dan uw probleem naar <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_screenshot_hide": {
     "message": "Verbergen"

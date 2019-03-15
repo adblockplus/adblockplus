@@ -23,32 +23,8 @@
   "options_customFilter_cancel": {
     "message": "취소"
   },
-  "options_customFilter_edit": {
-    "message": "필터 편집"
-  },
-  "options_customFilter_save": {
-    "message": "저장"
-  },
   "options_customFilters_description": {
     "message": "Adblock Plus가 허용하거나 차단할 콘텐츠를 추가로 제어하려면 사용자 설정 필터를 작성하십시오."
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "예: $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "필터 목록 작성하는 방법 알아보기"
-  },
-  "options_customFilters_start": {
-    "message": "내 필터 목록 작성 시작"
-  },
-  "options_customFilters_tip": {
-    "message": "사용자가 생성한 필터가 이곳에 표시됩니다."
   },
   "options_customFilters_title": {
     "message": "사용자 필터 목록 생성 및 수정"
@@ -61,6 +37,9 @@
   },
   "options_customize_blockElement_tooltip": {
     "message": "웹페이지에서 방해가 되는 항목을 일시적으로 차단합니다. 예: 이미지 또는 애니메이션 슬라이드쇼"
+  },
+  "options_customize_header": {
+    "message": "사용자 설정"
   },
   "options_customize_showDevToolsPanel": {
     "message": "개발자 도구 패널에서 'Adblock Plus’ 패널을 표시합니다."

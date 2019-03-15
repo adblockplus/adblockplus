@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "Érvénytelen reguláris kifejezés"
   },
+  "filter_slow": {
+    "message": "A gyors szűrő biztosítása érdekében, ellenőrizze a minta hosszát, és győződjön meg arról, hogy nem tartalmaz szabályos kifejezést."
+  },
   "filter_snippet_nodomain": {
     "message": "Nincs aktív kiválasztott domain a kódrészlet szűrőben"
   },

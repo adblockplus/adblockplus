@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "Expresie regulată invalidă"
   },
+  "filter_slow": {
+    "message": "Pentru a asigura o filtrare rapidă, verificaţi lungimea filtrului şi că nu conţine o expresie regulată."
+  },
   "filter_snippet_nodomain": {
     "message": "Nici un domeniu activ specificat pentru filtrul de tip snippet"
   },

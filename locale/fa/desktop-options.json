@@ -20,12 +20,6 @@
   "options_customFilter_cancel": {
     "message": "لغو"
   },
-  "options_customFilter_edit": {
-    "message": "ویرایش فیلترها"
-  },
-  "options_customFilter_save": {
-    "message": "ذخیره"
-  },
   "options_customize_showNotifications": {
     "message": "نمایش اعلان های مفید"
   },

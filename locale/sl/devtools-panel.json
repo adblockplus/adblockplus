@@ -1,0 +1,53 @@
+{
+  "devtools_action_block": {
+    "message": "Blokiraj element"
+  },
+  "devtools_action_remove": {
+    "message": "Odstrani pravilo"
+  },
+  "devtools_action_unblock": {
+    "message": "Dodaj izjemo"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "uporabniško definirano"
+  },
+  "devtools_filter_origin_none": {
+    "message": "brezimenska naročnina"
+  },
+  "devtools_filter_subtitle": {
+    "message": "Izvor"
+  },
+  "devtools_filter_title": {
+    "message": "Filter"
+  },
+  "devtools_footer": {
+    "message": "<a0>Osvežite</a0> stran, če želite videti učinek sprememb filtrov"
+  },
+  "devtools_header": {
+    "message": "Prikaži <slot0></slot0> elemente <slot1></slot1> vrste"
+  },
+  "devtools_header_state_all": {
+    "message": "vse"
+  },
+  "devtools_header_state_blocked": {
+    "message": "blokirane"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "dovoljene"
+  },
+  "devtools_header_type_any": {
+    "message": "katerekoli"
+  },
+  "devtools_request_subtitle": {
+    "message": "Domena dokumenta"
+  },
+  "devtools_request_title": {
+    "message": "Zahteva"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0> prepisan v <a1></a1>"
+  },
+  "devtools_type_title": {
+    "message": "Vrsta"
+  }
+}

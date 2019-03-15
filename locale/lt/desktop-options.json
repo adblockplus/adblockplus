@@ -38,32 +38,8 @@
   "options_customFilter_cancel": {
     "message": "Atsisakyti"
   },
-  "options_customFilter_edit": {
-    "message": "Taisyti sąrašus"
-  },
-  "options_customFilter_save": {
-    "message": "Išsaugoti"
-  },
   "options_customFilters_description": {
     "message": "Kurkite savo filtrus ir galėsite kontroliuoti kokį turinį Adblock Plus blokuoja. <a0>Sužinokite kaip kurti filtrus</a0>"
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "pvz. $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Sužinokite kaip kurti sąrašus"
-  },
-  "options_customFilters_start": {
-    "message": "Pradėti kurti savo sąrašą"
-  },
-  "options_customFilters_tip": {
-    "message": "Jūsų sukurti sąrašai bus rodomi čia."
   },
   "options_customFilters_title": {
     "message": "Kurkite ir redaguokite savo sąrašus"

@@ -38,35 +38,11 @@
   "options_customFilter_cancel": {
     "message": "გაუქმება"
   },
-  "options_customFilter_edit": {
-    "message": "ფილტრების ჩასწორება"
-  },
-  "options_customFilter_save": {
-    "message": "შენახვა"
-  },
   "options_customFilters_description": {
-    "message": "შექმენით საკუთარი ფილტრები, Adblock Plus-ით სასურველი შიგთავსის შეზღუდვისა და დაშვებისთვის."
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "მაგ. $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "იხილეთ ვრცლად, როგორ იქმნება ფილტრები"
-  },
-  "options_customFilters_start": {
-    "message": "დაიწყეთ ფილტრის შექმნა"
-  },
-  "options_customFilters_tip": {
-    "message": "თქვენ მიერ შექმნილი ფილტრები აქ გამოჩნდება."
+    "message": "შექმენით და მართეთ საკუთარი ფილტრები, Adblock Plus-ით სასურველი შიგთავსის შეზღუდვისა და დაშვებისთვის. <a0>იხილეთ ვრცლად, თუ როგორ იწერება ფილტრები</a0>"
   },
   "options_customFilters_title": {
-    "message": "შექმენით და ჩაასწორეთ თქვენი ფილტრი"
+    "message": "თქვენი საკუთარი ფილტრები"
   },
   "options_customFilters_widget_title": {
     "message": "ჩემი ფილტრი"
@@ -195,7 +171,7 @@
     "message": "მოქმედი"
   },
   "options_filterList_state_disabled": {
-    "message": "გამორთული"
+    "message": "უმოქმედო"
   },
   "options_filterList_title": {
     "message": "ფილტრის წესები"
@@ -209,8 +185,11 @@
   "options_filterList_website": {
     "message": "ვებსაიტი"
   },
+  "options_filter_list_rule": {
+    "message": "ფილტრის წესი"
+  },
   "options_filters_search_or_add": {
-    "message": "ძიება / ფილტრის დამატება (მაგ. $filter$)",
+    "message": "მოიძიეთ ან დაამატეთ ფილტრ(ებ)ი (მაგ. $filter$)",
     "placeholders": {
       "filter": {
         "content": "/ads/track/*"

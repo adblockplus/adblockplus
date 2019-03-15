@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "We kinnen dy gjin kommentaar jaan en sille wierskynlik in leage prioriteit oan dyn rapport jaan."
   },
+  "issueReporter_closeButton_label": {
+    "message": "Slute"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Kommentaar"
   },
@@ -73,6 +76,9 @@
   },
   "issueReporter_processing_screenshot": {
     "message": "ferwurkje"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "Om ús te helpen it probleem better te begripen, is in skermôfbylding nedich by it yntsjinjen fan in probleemrapport. Ofhinklik fan de website wêrop jo binne, kin de skermôfbylding persoanlike ynformaasje befetsje. As jo leaver gjin skermôfbylding yntsjinje, e-mail dan jo probleem nei <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_screenshot_hide": {
     "message": "Ferstopje"

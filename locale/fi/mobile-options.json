@@ -2,10 +2,40 @@
   "mops_acceptableAds_description": {
     "message": "Salli osa ei-häiritsevästä mainonnasta"
   },
+  "mops_acceptableAds_more": {
+    "message": "Lue lisää"
+  },
   "mops_action_cancel": {
     "message": "Peruuta"
   },
+  "mops_error_url": {
+    "message": "Syötä kelvollinen URL-osoite"
+  },
+  "mops_filterlist_add": {
+    "message": "+ Lisää suodatinlista"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Lisää suodatinlista"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ Lisää mukautettu suodatinlista"
+  },
+  "mops_header": {
+    "message": "Adblock Plus asetukset"
+  },
+  "mops_subscribe_header": {
+    "message": "Lisää mukautettu suodatinlista"
+  },
+  "mops_subscribe_title": {
+    "message": "Suodatinlistan nimi"
+  },
+  "mops_subscribe_url": {
+    "message": "Suodatinlistan URL-osoite"
+  },
   "mops_subscriptions_header": {
     "message": "Suodatintilaukset"
+  },
+  "mops_title": {
+    "message": "Adblock Plus asetukset"
   }
 }

@@ -1,0 +1,53 @@
+{
+  "devtools_action_block": {
+    "message": "Заблокувати елемент"
+  },
+  "devtools_action_remove": {
+    "message": "Видалити правило"
+  },
+  "devtools_action_unblock": {
+    "message": "Додати виняток"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "визначені користувачем"
+  },
+  "devtools_filter_origin_none": {
+    "message": "неназвана підписка"
+  },
+  "devtools_filter_subtitle": {
+    "message": "Походження"
+  },
+  "devtools_filter_title": {
+    "message": "Фільтр"
+  },
+  "devtools_footer": {
+    "message": "<a0>Перезавантажти</a0> сторінку, щоб побачити зміни"
+  },
+  "devtools_header": {
+    "message": "Показати <slot0></slot0> елементів типу <slot1></slot1>"
+  },
+  "devtools_header_state_all": {
+    "message": "всі"
+  },
+  "devtools_header_state_blocked": {
+    "message": "заблоковані"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "в білому списку"
+  },
+  "devtools_header_type_any": {
+    "message": "будь-які"
+  },
+  "devtools_request_subtitle": {
+    "message": "Домен документа"
+  },
+  "devtools_request_title": {
+    "message": "Запит"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0> переписано на <a1></a1>"
+  },
+  "devtools_type_title": {
+    "message": "Тип"
+  }
+}

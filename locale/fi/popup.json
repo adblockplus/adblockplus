@@ -2,17 +2,8 @@
   "click_element_to_block_it": {
     "message": "Klikkaa elementtiä sivustolla estääksesi se."
   },
-  "clickhide_instructions": {
-    "message": "Tämän ikkunan sulkemisen jälkeen klikkaa (tai oikea klikkaa) elementtiä jonka haluat estää."
-  },
-  "disabled_for_site": {
-    "message": "<strong>Poistettu</strong> tältä sivulta"
-  },
   "easy_create_filter": {
     "message": "Estä elementti"
-  },
-  "enabled_for_site": {
-    "message": "<strong>Käytössä</strong> tällä sivulla"
   },
   "options_refresh": {
     "message": "Virkistä"
@@ -53,12 +44,6 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Näytä numerot kuvakkeessa"
-  },
-  "stats_title": {
-    "message": "Mainokset estetty"
   },
   "status_header": {
     "message": "Estä mainoksia:"

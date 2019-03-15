@@ -38,35 +38,11 @@
   "options_customFilter_cancel": {
     "message": "Loobu"
   },
-  "options_customFilter_edit": {
-    "message": "Muuda filtreid"
-  },
-  "options_customFilter_save": {
-    "message": "Salvesta"
-  },
   "options_customFilters_description": {
-    "message": "Kirjuta oma kohandatud filtrid, et veelgi täpsemini juhtida, millist sisu Adblock Plus blokeerib. <a0>Õpi filtrite loomist</a0>"
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "nt. $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Loe, kuidas filtrite nimekirju kirjutada"
-  },
-  "options_customFilters_start": {
-    "message": "Hakka kirjutama oma filtrite nimekirja"
-  },
-  "options_customFilters_tip": {
-    "message": "Sinu loodavad filtrid ilmuvad siia."
+    "message": "Kirjuta ja halda oma filtreid, et veelgi täpsemalt juhtida, millist sisu Adblock Plus lubab või blokeerib. <a0>Õpi filtrite kirjutamist</a0>"
   },
   "options_customFilters_title": {
-    "message": "Loo ja muuda oma filtrite nimekirja"
+    "message": "Sinu kohandatud filtrid"
   },
   "options_customFilters_widget_title": {
     "message": "Minu filtrite nimekiri"
@@ -195,7 +171,7 @@
     "message": "Aktiivne"
   },
   "options_filterList_state_disabled": {
-    "message": "Keelatud"
+    "message": "Mitteaktiivne"
   },
   "options_filterList_title": {
     "message": "Filtrite nimekirjad"
@@ -209,8 +185,11 @@
   "options_filterList_website": {
     "message": "veebisait"
   },
+  "options_filter_list_rule": {
+    "message": "Filtri reegel"
+  },
   "options_filters_search_or_add": {
-    "message": "Otsi / lisa filtrit (nt. $filter$)",
+    "message": "Otsi või lisa filtrit(-eid) (nt. $filter$)",
     "placeholders": {
       "filter": {
         "content": "/ads/track/*"

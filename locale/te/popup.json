@@ -1,15 +1,6 @@
 {
-  "clickhide_instructions": {
-    "message": "ఈ చిరుతలుపుని (పాపప్) మూసివేసిన తర్వాత, పేజీలో ఒక అంశాన్ని నొక్కండి (లేదా కుడి క్లిక్ చేయండి)."
-  },
-  "disabled_for_site": {
-    "message": "ఈ సైట్  లో <strong>ఆపివేయబడింది</strong>"
-  },
   "easy_create_filter": {
     "message": "అంశాన్ని నిరోధించు"
-  },
-  "enabled_for_site": {
-    "message": "ఈ సైట్  లో <strong>ప్రారంభించబడింది</strong>"
   },
   "options_short": {
     "message": "ఐచ్ఛికాలు"
@@ -29,11 +20,5 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "ఐకాన్ లో నెంబర్ చూపించు"
-  },
-  "stats_title": {
-    "message": "ప్రకటనలు బ్లాక్ చేయబడినవి"
   }
 }
