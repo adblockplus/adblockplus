@@ -38,32 +38,8 @@
   "options_customFilter_cancel": {
     "message": "ОТМЕНА"
   },
-  "options_customFilter_edit": {
-    "message": "Изменить фильтры"
-  },
-  "options_customFilter_save": {
-    "message": "СОХРАНИТЬ"
-  },
   "options_customFilters_description": {
     "message": "Создавай и редактируй свои собственные фильтры, чтобы еще лучше контролировать, какой контент Adblock Plus разрешает и блокирует. <a0>Узнать, как создавать фильтры</a0>"
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "например, $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Узнайте, как создавать фильтры"
-  },
-  "options_customFilters_start": {
-    "message": "Начать создание списка фильтров"
-  },
-  "options_customFilters_tip": {
-    "message": "Здесь показаны созданные вами фильтры."
   },
   "options_customFilters_title": {
     "message": "Твои фильтры"

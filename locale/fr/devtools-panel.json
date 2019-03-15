@@ -1,6 +1,6 @@
 {
   "devtools_action_block": {
-    "message": "Verrouiller un élément"
+    "message": "Bloquer un élément"
   },
   "devtools_action_remove": {
     "message": "Supprimer règle"
@@ -46,8 +46,5 @@
   },
   "devtools_request_url": {
     "message": "<a0></a0> Réécrit pour <a1></a1>"
-  },
-  "devtools_type_title": {
-    "message": "Type"
   }
 }

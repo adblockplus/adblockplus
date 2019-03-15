@@ -19,5 +19,14 @@
   },
   "common_notification_hide": {
     "message": "Értesítés bezárása"
+  },
+  "copy_selected": {
+    "message": "Kiválasztott másolása"
+  },
+  "delete": {
+    "message": "Törlés"
+  },
+  "filter_action_failed": {
+    "message": "Hiba történt! Kérjük, próbálja meg újra."
   }
 }

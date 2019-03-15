@@ -8,12 +8,6 @@
   "options_customFilter_cancel": {
     "message": "ரத்து செய்"
   },
-  "options_customFilter_edit": {
-    "message": "வடிகட்டிகளை திருத்து"
-  },
-  "options_customFilter_save": {
-    "message": "சேமி"
-  },
   "options_customize_header": {
     "message": "தனிப்பயனாக்கல்கள்"
   },

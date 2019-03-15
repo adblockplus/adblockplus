@@ -1,6 +1,6 @@
 {
   "filter_elemhideemulation_nodomain": {
-    "message": "Nie podano aktywnej domeny dla rozszerzonego filtru ukrywania elementów"
+    "message": "Nie określono aktywnej domeny dla rozszerzonego filtru ukrywania elementów"
   },
   "filter_invalid_csp": {
     "message": "Nieprawidłowy filtr Content Security Policy (CSP)"
@@ -15,7 +15,7 @@
     "message": "Aby filtr działał szybko, należy sprawdzić długość wzorca, który nie powinien zawierać wyrażeń regularnych."
   },
   "filter_snippet_nodomain": {
-    "message": "Nie określono aktywnej domeny dla filtra fragmentów kodu"
+    "message": "Nie określono aktywnej domeny dla filtra kodu typu snippet"
   },
   "filter_unknown_option": {
     "message": "Nieznana opcja filtra"

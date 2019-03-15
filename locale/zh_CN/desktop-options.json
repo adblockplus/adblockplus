@@ -24,10 +24,10 @@
     "message": "反规避"
   },
   "options_anti_cv_title": {
-    "message": "ABP 反规避过滤器列表"
+    "message": "ABP 反规避过滤列表"
   },
   "options_anti_cv_tooltip": {
-    "message": "此过滤器列表可以防止规避（即在广告拦截用户上强制投放广告的技术）。这些过滤器可以解决规避广告以及跟踪相关的问题。"
+    "message": "此过滤列表可以防止规避（即在广告拦截用户上强制投放广告的技术）。这些过滤器可以解决规避广告以及跟踪相关的问题。"
   },
   "options_close": {
     "message": "关闭"
@@ -38,32 +38,8 @@
   "options_customFilter_cancel": {
     "message": "取消"
   },
-  "options_customFilter_edit": {
-    "message": "编辑过滤规则"
-  },
-  "options_customFilter_save": {
-    "message": "保存"
-  },
   "options_customFilters_description": {
     "message": "创建并维护自己的过滤器，以进一步控制 Adblock Plus 允许或拦截的内容。<a0>了解如何编写过滤器</a0>"
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "例如 $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "了解如何创建过滤器"
-  },
-  "options_customFilters_start": {
-    "message": "开始创建我的过滤器列表"
-  },
-  "options_customFilters_tip": {
-    "message": "您创建的过滤器将显示在此处。"
   },
   "options_customFilters_title": {
     "message": "您的自定义过滤器"
@@ -260,7 +236,7 @@
     "message": "更多过滤器"
   },
   "options_more_filters_note": {
-    "message": "<strong>注意：</strong>您应该只使用来自您信任的作者的第三方过滤器列表。"
+    "message": "<strong>注意：</strong>您应该只使用来自您信任的作者的第三方过滤列表。"
   },
   "options_new_label": {
     "message": "新"

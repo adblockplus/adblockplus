@@ -38,32 +38,8 @@
   "options_customFilter_cancel": {
     "message": "Annuller"
   },
-  "options_customFilter_edit": {
-    "message": "Rediger filtre"
-  },
-  "options_customFilter_save": {
-    "message": "Gem"
-  },
   "options_customFilters_description": {
     "message": "Opret dine egne brugerdefinerede filtre til yderligere kontrol af indhold, som Adblock Plus tillader eller blokerer. <a0>Se, hvordan du opretter filtre</a0>"
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "f.eks. $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Se, hvordan du opretter filtre"
-  },
-  "options_customFilters_start": {
-    "message": "Opret din egen filterliste"
-  },
-  "options_customFilters_tip": {
-    "message": "Filtre du opretter vil dukke op her."
   },
   "options_customFilters_title": {
     "message": "Opret og rediger din filterliste"

@@ -2,17 +2,8 @@
   "click_element_to_block_it": {
     "message": "Lehel elemendi blokeerimiseks klõpsa sellel."
   },
-  "clickhide_instructions": {
-    "message": "Pärast hüpikakna sulgemist klõpsake (või paremklõpsake) mõnel lehe elemendil."
-  },
-  "disabled_for_site": {
-    "message": "<strong>Keelatud</strong> sellel saidil"
-  },
   "easy_create_filter": {
     "message": "Blokeeri element"
-  },
-  "enabled_for_site": {
-    "message": "<strong>Kasutusel</strong> sellel saidil"
   },
   "options_refresh": {
     "message": "Värskenda"
@@ -53,12 +44,6 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Näita ikoonil loendurit"
-  },
-  "stats_title": {
-    "message": "Blokeeritud reklaame"
   },
   "status_header": {
     "message": "Blokeeri reklaamid saidil:"

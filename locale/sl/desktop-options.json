@@ -38,35 +38,11 @@
   "options_customFilter_cancel": {
     "message": "Prekliči"
   },
-  "options_customFilter_edit": {
-    "message": "Uredi filtre"
-  },
-  "options_customFilter_save": {
-    "message": "Shrani"
-  },
   "options_customFilters_description": {
-    "message": "Napišite svoje filtre po meri, da dodatno nadzirate, katero vsebino Adblock Plus blokira ali dovoli."
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "npr. $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Naučite se pisati sezname filtrov"
-  },
-  "options_customFilters_start": {
-    "message": "Začni pisati seznam filtrov"
-  },
-  "options_customFilters_tip": {
-    "message": "Filtri, ki ste jih ustvarili, se bodo prikazali tukaj."
+    "message": "Napišite svoje filtre po meri, s katerimi dodatno nadzirate, katero vsebino Adblock Plus blokira ali dovoli. <a0>Nauči se pisati filtre</a0>"
   },
   "options_customFilters_title": {
-    "message": "Ustvarite in uredite svoj seznam fitrov"
+    "message": "Filtri po meri"
   },
   "options_customFilters_widget_title": {
     "message": "Moj seznam filtrov"
@@ -195,7 +171,7 @@
     "message": "Dejaven"
   },
   "options_filterList_state_disabled": {
-    "message": "Onemogočen"
+    "message": "Neaktiven"
   },
   "options_filterList_title": {
     "message": "Seznami filtrov"
@@ -209,8 +185,11 @@
   "options_filterList_website": {
     "message": "spletna stran"
   },
+  "options_filter_list_rule": {
+    "message": "Pravilo filtra"
+  },
   "options_filters_search_or_add": {
-    "message": "Iskanje/dodajanje filtra (npr. $filter$)",
+    "message": "Išči ali dodaj filter (npr. $filter$)",
     "placeholders": {
       "filter": {
         "content": "/ads/track/*"

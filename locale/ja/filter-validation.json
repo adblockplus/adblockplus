@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "無効な正規表現"
   },
+  "filter_snippet_nodomain": {
+    "message": "CSS プロパティフィルタにドメインが正しく指定されていません"
+  },
   "filter_unknown_option": {
     "message": "不明なフィルター オプション"
   },

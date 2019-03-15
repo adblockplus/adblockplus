@@ -2,17 +2,8 @@
   "click_element_to_block_it": {
     "message": "დააწკაპეთ ელემენტზე მოცემულ გვერდზე მის შესაზღუდად."
   },
-  "clickhide_instructions": {
-    "message": "ამ სარკმლის დახურვისთანავე, დააწკაპეთ (ან მარჯვენა წკაპი) ელემენტზე მოცემულ გვერდზე."
-  },
-  "disabled_for_site": {
-    "message": "<strong>გამორთულია</strong> ამ საიტზე"
-  },
   "easy_create_filter": {
     "message": "ელემენტის შეზღუდვა"
-  },
-  "enabled_for_site": {
-    "message": "<strong>ჩართულია</strong> ამ საიტზე"
   },
   "options_refresh": {
     "message": "განახლება"
@@ -53,12 +44,6 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "რიცხვის ჩვენება ხატულაზე"
-  },
-  "stats_title": {
-    "message": "შეზღუდული რეკლამები"
   },
   "status_header": {
     "message": "რეკლამების შეზღუდვა:"

@@ -29,32 +29,8 @@
   "options_customFilter_cancel": {
     "message": "Odustani"
   },
-  "options_customFilter_edit": {
-    "message": "Uredi filtre"
-  },
-  "options_customFilter_save": {
-    "message": "Spremi"
-  },
   "options_customFilters_description": {
     "message": "Napišite svoj vlastiti prilagođeni filter za dodatnu kontrolu blokiranja ili prikazivanja sadržaja."
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "npr. $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Saznajte kako napisati popise filtra"
-  },
-  "options_customFilters_start": {
-    "message": "Započni pisati vlastiti popis filtra"
-  },
-  "options_customFilters_tip": {
-    "message": "Filtri koje stvorite pojaviti će se ovdje."
   },
   "options_customFilters_title": {
     "message": "Stvorite i uredite vlastiti popis filtra"

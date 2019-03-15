@@ -1,6 +1,6 @@
 {
   "options_acceptableAds_ads_description_1": {
-    "message": "Akceptowalne reklamy nie są irytujące i nie zakłócają wyświetlania zawartości. <a>Przeczytaj więcej o kryteriach akceptowalnych reklam</a>"
+    "message": "Akceptowalne reklamy nie są irytujące i nie zakłócają wyświetlania treści. <a>Przeczytaj więcej o kryteriach akceptowalnych reklam</a>"
   },
   "options_acceptableAds_ads_label": {
     "message": "Zezwalaj na akceptowalne reklamy"
@@ -38,32 +38,8 @@
   "options_customFilter_cancel": {
     "message": "Anuluj"
   },
-  "options_customFilter_edit": {
-    "message": "Edytuj filtry"
-  },
-  "options_customFilter_save": {
-    "message": "Zapisz"
-  },
   "options_customFilters_description": {
     "message": "Utwórz i edytuj własne niestandardowe filtry, aby jeszcze lepiej kontrolować wyświetlanie zawartości przez Adblock Plus. <a0>Dowiedz się, jak tworzyć filtry</a0>"
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "np. $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Dowiedz się, jak tworzyć filtry"
-  },
-  "options_customFilters_start": {
-    "message": "Zacznij tworzyć listę filtrów"
-  },
-  "options_customFilters_tip": {
-    "message": "Tworzone filtry pojawią się tutaj."
   },
   "options_customFilters_title": {
     "message": "Filtry niestandardowe"

@@ -1,15 +1,6 @@
 {
-  "clickhide_instructions": {
-    "message": "Setelah menutup tetingkap ini, klik (atau klik butang kanan) pada sesuatu unsur atas laman."
-  },
-  "disabled_for_site": {
-    "message": "<strong>Dinyahaktifkan</strong> pada laman web ini"
-  },
   "easy_create_filter": {
     "message": "Halang elemen"
-  },
-  "enabled_for_site": {
-    "message": "<strong>Dinyahaktifkan</strong> pada laman web ini"
   },
   "options_short": {
     "message": "Tetapan"
@@ -32,11 +23,5 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Paparkan nombor dalam ikon"
-  },
-  "stats_title": {
-    "message": "Iklan disekat"
   }
 }

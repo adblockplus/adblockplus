@@ -1,11 +1,14 @@
 {
   "description": {
-    "message": "500 მილიონზე მეტი ჩამოტვირთვით, Adblock Plus მსოფლიოში ერთ-ერთი ყველაზე სასურველი რეკლამების შემზღუდავია."
+    "message": "ჩამოტვირთეთ Adblock Plus, მსოფლიოში ერთ-ერთი ყველაზე ცნობილი რეკლამების შემზღუდავი."
   },
   "name": {
     "message": "Adblock Plus"
   },
   "name_devbuild": {
     "message": "Adblock Plus საცდელი ანაწყობი"
+  },
+  "name_releasebuild": {
+    "message": "Adblock Plus - რეკლამების უფასო შემზღუდავი"
   }
 }

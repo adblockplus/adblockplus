@@ -1,21 +1,33 @@
 {
-  "clickhide_instructions": {
-    "message": "このポップアップが閉じた後にページ上の要素をクリック(または右クリック)してください。"
-  },
-  "disabled_for_site": {
-    "message": "このサイトで<strong>無効</strong>"
+  "click_element_to_block_it": {
+    "message": "ページ上の要素をクリックしてブロックします。"
   },
   "easy_create_filter": {
     "message": "要素をブロック"
   },
-  "enabled_for_site": {
-    "message": "このサイトで<strong>有効</strong>"
+  "options_refresh": {
+    "message": "更新"
   },
   "options_short": {
     "message": "オプション"
   },
+  "overlay_notification_closing_button_hide": {
+    "message": "閉じる"
+  },
   "overlay_notification_closing_button_optout": {
     "message": "通知の表示を停止"
+  },
+  "promote_abp_module": {
+    "message": "Adblock Plus モバイルに興味がありますか？"
+  },
+  "refresh_to_take_effect": {
+    "message": "<strong>更新</strong> の変更を反映をクリックします。"
+  },
+  "sendReport": {
+    "message": "問題を報告"
+  },
+  "stats_header": {
+    "message": "ブロックした数"
   },
   "stats_label_page": {
     "message": "このページ内で <strong>$number$</strong>",
@@ -33,10 +45,7 @@
       }
     }
   },
-  "stats_show_iconnumber": {
-    "message": "アイコン上に数字を表示"
-  },
-  "stats_title": {
-    "message": "ブロックした広告"
+  "status_header": {
+    "message": "広告をブロック:"
   }
 }

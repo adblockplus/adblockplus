@@ -15,7 +15,7 @@
     "message": "Indtast kommentar"
   },
   "issueReporter_comment_description": {
-    "message": "I tekstfeltet kan du beskrive problemet nærmere. Det er valgfrit, men vil hjælpe os med at forstå problemet bedre. Du kan også gennemse rapporten, før du sender den."
+    "message": "I tekstfeltet kan du beskrive problemet nærmere. Det er valgfrit, men vil hjælpe os med at forstå problemet bedre."
   },
   "issueReporter_comment_label": {
     "message": "Kommentar (valgfri):"
@@ -26,11 +26,14 @@
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Bemærk:</strong> Et ekstra faneblad vises midlertidigt, så den besøgte side ikke påvirkes af funktionen Rapportér problem."
   },
+  "issueReporter_detailsButton_label": {
+    "message": "Detaljer"
+  },
   "issueReporter_doneButton_label": {
     "message": "Udført"
   },
   "issueReporter_email_description": {
-    "message": "Vi opfordrer dig til at angive en gyldig e-mail-adresse, så vi kan kontakte dig, hvis der er spørgsmål til rapporten. Det tillader også genkendelse af dit bidrag for højere prioritet."
+    "message": "Vi opfordrer dig til at angive en gyldig e-mail-adresse. Dette giver os mulighed for at kontakte dig for hjælpe dig med at udbedre mere omfattende problemer såsom malware. Husk, at det er obligatorisk at indtaste en e-mail-adresse, og den vil aldrig blive delt med tredjeparter."
   },
   "issueReporter_email_label": {
     "message": "E-mail:"
@@ -39,25 +42,46 @@
     "message": "Afsendelse af rapporten fejlede med kode \"?1?\". Kontrollér din internetforbindelse, og prøv igen. Hvis problemet fortsætter, så søg hjælp i [link]Adblock Plus forum[/link]."
   },
   "issueReporter_falseNegative_description": {
-    "message": "Vælg denne indstilling, hvis en annonce vises selv om Adblock Plus er aktiveret."
+    "message": "Adblock Plus er aktiveret, men jeg ser stadig en annonce eller annoncer."
   },
   "issueReporter_falseNegative_label": {
-    "message": "Adblock Plus blokerer ikke en annonce"
+    "message": "Jeg ser stadig annoncer"
   },
   "issueReporter_falsePositive_description": {
-    "message": "Vælg denne indstilling, hvis siden mangler vigtigt indhold, vises forkert eller ikke fungerer korrekt. Du kan se, om problemet skyldes Adblock Plus, ved at deaktivere udvidelsen midlertidigt."
+    "message": "Den webside, jeg besøger, mangler vigtigt indhold, vises forkert eller fungerer ikke korrekt."
   },
   "issueReporter_falsePositive_label": {
-    "message": "Adblock Plus blokerer for mange annoncer"
+    "message": "Den webside, jeg besøger, er fejlbehæftet"
+  },
+  "issueReporter_highlighter_description": {
+    "message": "Anvend værktøjerne til at fremhæve hver annonce eller skjule følsomme oplysninger på skærmkopien. Fremhævning af annoncer vil hjælpe os med hurtigere fejlretning."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Fremhæv problem"
   },
   "issueReporter_knownIssueMessage": {
     "message": "Det rapporterede problem er sandsynligvis kendt. Flere oplysninger:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Fremhæv problem"
   },
   "issueReporter_page_title": {
     "message": "Rapportér problem"
   },
   "issueReporter_privacyPolicy": {
     "message": "Fortrolighedspolitik"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "behandler"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Skjul"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "Fremhæv"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Vælg problem"
   },
   "issueReporter_sendButton_label": {
     "message": "Send rapport"
@@ -69,12 +93,12 @@
     "message": "Vent, mens Adblock Plus sender rapporten."
   },
   "issueReporter_showData_label": {
-    "message": "Vis rapportdata"
+    "message": "Klik på dette link for at gennemgå rapportdata inden afsendelse"
   },
   "issueReporter_typeSelector_description": {
-    "message": "Dette vindue vil føre dig gennem de trin, der kræves for at rapportere et problem med Adblock Plus. Vælg først hvilken problemtype, du oplever på denne side:"
+    "message": "Vælg problemtype:"
   },
   "issueReporter_typeSelector_heading": {
-    "message": "Vælg problemtype"
+    "message": "Hvilken type problem oplever du?"
   }
 }

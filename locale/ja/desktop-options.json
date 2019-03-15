@@ -38,32 +38,8 @@
   "options_customFilter_cancel": {
     "message": "キャンセル"
   },
-  "options_customFilter_edit": {
-    "message": "フィルターの編集"
-  },
-  "options_customFilter_save": {
-    "message": "保存"
-  },
   "options_customFilters_description": {
     "message": "自分用のカスタムフィルターを作って、Adblock Plus が許可またはブロックするコンテンツを詳細に管理します。"
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "例: $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "フィルターリストの作成方法を学ぶ"
-  },
-  "options_customFilters_start": {
-    "message": "マイ フィルターリストの作成を開始する"
-  },
-  "options_customFilters_tip": {
-    "message": "自分で作成したフィルターはここに表示されます。"
   },
   "options_customFilters_title": {
     "message": "自分のフィルターリストを作成して編集する"
@@ -77,6 +53,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "ウェブページで気障りな項目を一時的にブロックします（画像またはアニメーション表示のスライドショーなど）。"
   },
+  "options_customize_header": {
+    "message": "カスタマイズ"
+  },
+  "options_customize_iconStats": {
+    "message": "広告アイコンのブロック数を表示"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "開発者ツールの [Adblock Plus] パネルを表示させます"
   },
@@ -85,6 +67,9 @@
   },
   "options_customize_showNotifications": {
     "message": "有用な通知を表示"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Adblock Plus (重要なパフォーマンス上の問題は常に表示される) からの通知を許可します。"
   },
   "options_dialog_about_copyright": {
     "message": "Copyright © $currentYear$ eyeo GmbH.",

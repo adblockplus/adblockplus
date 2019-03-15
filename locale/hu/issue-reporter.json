@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "Nem fogunk tudni kapcsolatba lépni Önnel, és valószínű, hogy a jelentése alacsonyabb prioritást kap."
   },
+  "issueReporter_closeButton_label": {
+    "message": "Bezárás"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Megjegyzés hozzáadása"
   },

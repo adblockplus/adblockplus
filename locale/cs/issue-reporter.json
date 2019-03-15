@@ -26,6 +26,9 @@
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Poznámka:</strong> Dočasně se otevře další karta, takže stránka, na které se právě nacházíte, nebude funkcí hlášení problémů (Issue Reporter) nijak ovlivněna."
   },
+  "issueReporter_detailsButton_label": {
+    "message": "Podrobnosti"
+  },
   "issueReporter_doneButton_label": {
     "message": "Hotovo"
   },

@@ -38,35 +38,11 @@
   "options_customFilter_cancel": {
     "message": "בטל"
   },
-  "options_customFilter_edit": {
-    "message": "ערוך מסננים"
-  },
-  "options_customFilter_save": {
-    "message": "שמור"
-  },
   "options_customFilters_description": {
-    "message": "צור את המסננים שלך כדי לשלוט עוד יותר איזה תוכן Adblock Plus חוסם.<a0>למד כיצד ליצור מסננים</a0>"
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "לדוגמה $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "למד כיצד לכתוב רשימות מסננים"
-  },
-  "options_customFilters_start": {
-    "message": "התחל לכתוב את רשימת המסננים שלי"
-  },
-  "options_customFilters_tip": {
-    "message": "מסננים שאתה יוצר יופיעו כאן."
+    "message": "צור ותחזק מסננים משלך כדי לשלוט יותר איזה תוכן Adblock Plus מתיר או חוסם. <a0>למד כיצד לכתוב מסננים</a0>"
   },
   "options_customFilters_title": {
-    "message": "צור וערוך את רשימת המסננים שלך"
+    "message": "מסננים מותאמים אישית"
   },
   "options_customFilters_widget_title": {
     "message": "רשימת המסננים שלי"
@@ -195,7 +171,7 @@
     "message": "פעיל"
   },
   "options_filterList_state_disabled": {
-    "message": "מושבת"
+    "message": "לא פעיל"
   },
   "options_filterList_title": {
     "message": "רשימות מסננים"
@@ -208,6 +184,9 @@
   },
   "options_filterList_website": {
     "message": "אתר"
+  },
+  "options_filter_list_rule": {
+    "message": "כלל מסנן"
   },
   "options_filters_search_or_add": {
     "message": "חפש או הוסף מסנן (למשל $filter$)",

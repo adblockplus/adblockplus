@@ -1,15 +1,6 @@
 {
-  "clickhide_instructions": {
-    "message": "આ પોપઅપને બંધ કર્યા પછી, પૃષ્ઠ પર એક ઘટક (અથવા જમણું ક્લિક કરો) પર ક્લિક કરો."
-  },
-  "disabled_for_site": {
-    "message": "આં સાઈટ પર <strong>ડિસેબલ</strong> કરો"
-  },
   "easy_create_filter": {
     "message": "બ્લોક એલિમેન્ટ"
-  },
-  "enabled_for_site": {
-    "message": "આં સાઈટ પર <strong>ઇનેબલ</strong> કરો"
   },
   "options_short": {
     "message": "ઓપ્શન્સ"
@@ -32,11 +23,5 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "આઇકોનમાં નંબર દેખાડો"
-  },
-  "stats_title": {
-    "message": "એડ્સ બ્લોક કરી"
   }
 }

@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "الگوی جستجوی نامعتبر"
   },
+  "filter_snippet_nodomain": {
+    "message": "هیچ دامنه فعال برای فیلتر snippet مشخص نشده است"
+  },
   "filter_unknown_option": {
     "message": "فیلتر ناشناخته"
   },

@@ -12,7 +12,7 @@
     "message": "definido por usuário"
   },
   "devtools_filter_origin_none": {
-    "message": "assinatura sem nome"
+    "message": "inscrição sem nome"
   },
   "devtools_filter_subtitle": {
     "message": "Origem"
@@ -39,7 +39,7 @@
     "message": "qualquer um"
   },
   "devtools_request_subtitle": {
-    "message": "Document domain"
+    "message": "Domínio do documento"
   },
   "devtools_request_title": {
     "message": "Solicitação"
@@ -48,6 +48,6 @@
     "message": "<a0></a0> substituído por <a1></a1>"
   },
   "devtools_type_title": {
-    "message": "Digite"
+    "message": "Tipo"
   }
 }

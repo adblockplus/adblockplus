@@ -26,32 +26,8 @@
   "options_customFilter_cancel": {
     "message": "HỦY"
   },
-  "options_customFilter_edit": {
-    "message": "Sửa bộ lọc"
-  },
-  "options_customFilter_save": {
-    "message": "LƯU"
-  },
   "options_customFilters_description": {
     "message": "Điền các bộ lọc tùy chỉnh của riêng bạn để hạn chế thêm nội dung nào Adblock Plus cho phép hoặc chặn."
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "ví dụ: $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Tìm hiểu cách viết các danh sách lọc"
-  },
-  "options_customFilters_start": {
-    "message": "Bắt đầu viết danh sách lọc của tôi"
-  },
-  "options_customFilters_tip": {
-    "message": "Các bộ lọc bạn tạo sẽ hiển thị ở đây."
   },
   "options_customFilters_title": {
     "message": "TẠO VÀ CHỈNH SỬA DANH SÁCH LỌC CỦA BẠN"

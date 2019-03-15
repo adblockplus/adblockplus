@@ -19,5 +19,14 @@
   },
   "common_notification_hide": {
     "message": "Zapri obvestilo"
+  },
+  "copy_selected": {
+    "message": "Kopiraj izbrane"
+  },
+  "delete": {
+    "message": "Izbriši"
+  },
+  "filter_action_failed": {
+    "message": "Nekaj je šlo narobe. Prosim, poskusite znova."
   }
 }

@@ -38,35 +38,11 @@
   "options_customFilter_cancel": {
     "message": "Cancel·la"
   },
-  "options_customFilter_edit": {
-    "message": "Edita els filtres"
-  },
-  "options_customFilter_save": {
-    "message": "Desa"
-  },
   "options_customFilters_description": {
-    "message": "Creeu els vostres propis filtres per a un major control sobre què contingut bloqueja l'Adblock Plus. <a0>Més informació de com crear filtres</a0>"
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "p. e. $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Més informació de com crear filtres"
-  },
-  "options_customFilters_start": {
-    "message": "Començar a crear la meva llista de filtres"
-  },
-  "options_customFilters_tip": {
-    "message": "Els filtres que creeu es mostraran aquí."
+    "message": "Creeu i mantingueu els vostres propis filtres per continuar controlant el contingut que l'Adblock Plus permet o bloqueja. <a0>Més informació de com escriure filtres</a0>"
   },
   "options_customFilters_title": {
-    "message": "Creeu i editeu la llista de filtres"
+    "message": "Els vostres filtres personalitzats"
   },
   "options_customFilters_widget_title": {
     "message": "La meva llista de filtres"
@@ -195,7 +171,7 @@
     "message": "Activat"
   },
   "options_filterList_state_disabled": {
-    "message": "Desactivat"
+    "message": "Inactiu"
   },
   "options_filterList_title": {
     "message": "Llista de filtres"
@@ -209,8 +185,11 @@
   "options_filterList_website": {
     "message": "lloc web"
   },
+  "options_filter_list_rule": {
+    "message": "Regla de filtre"
+  },
   "options_filters_search_or_add": {
-    "message": "Cerca / afegeix un filtre (p. ex. $filter$)",
+    "message": "Cerca o afegeix filtre(s) (p. ex. $filter$)",
     "placeholders": {
       "filter": {
         "content": "/ads/track/*"

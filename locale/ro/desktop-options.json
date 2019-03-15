@@ -38,35 +38,11 @@
   "options_customFilter_cancel": {
     "message": "Anulează"
   },
-  "options_customFilter_edit": {
-    "message": "Editare filtre"
-  },
-  "options_customFilter_save": {
-    "message": "Salvează"
-  },
   "options_customFilters_description": {
-    "message": "Scrie propriile filtre personalizate pentru a controla ce conţinut permite sau blochează Adblock PLus."
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "exemplu $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Învaţă cum să scrii liste de filtre"
-  },
-  "options_customFilters_start": {
-    "message": "Începeţi să scrieţi propria listă de filtre"
-  },
-  "options_customFilters_tip": {
-    "message": "Filtrele create vor apărea aici."
+    "message": "Scrie propriile filtre personalizate pentru a controla ce conţinut permite sau blocheaza Adblock Plus. <a0>învaţă cum să scrii filtre</a0>"
   },
   "options_customFilters_title": {
-    "message": "Crează şi modifică propria listă de filtre"
+    "message": "Filtrele dvs personalizate"
   },
   "options_customFilters_widget_title": {
     "message": "Lista mea de filtre"
@@ -195,7 +171,7 @@
     "message": "Activ"
   },
   "options_filterList_state_disabled": {
-    "message": "Dezactivat"
+    "message": "Inactiv"
   },
   "options_filterList_title": {
     "message": "Liste de filtre"
@@ -209,8 +185,11 @@
   "options_filterList_website": {
     "message": "website"
   },
+  "options_filter_list_rule": {
+    "message": "Regulă de filtrare"
+  },
   "options_filters_search_or_add": {
-    "message": "Căutare / Adauga filtru (ex. $filter$)",
+    "message": "Caută sau adaugă filtru (ex. $filter$)",
     "placeholders": {
       "filter": {
         "content": "/ads/track/*"

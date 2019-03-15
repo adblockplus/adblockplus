@@ -1,6 +1,6 @@
 {
   "options_acceptableAds_ads_description_1": {
-    "message": "Az elfogadható hirdetések nem bosszantanak, és nem zavarják a megtekintett tartalmat. <a>További információ az elfogadható hirdetési feltételekről</a>"
+    "message": "Az elfogadható hirdetések nem bosszantanak, és nem zavarják a tartalom megtekintését. <a>További információ az elfogadható hirdetési feltételekről</a>"
   },
   "options_acceptableAds_ads_label": {
     "message": "Elfogadható hirdetések engedélyezése"
@@ -21,13 +21,13 @@
     "message": "Az Adblock Plus testreszabása, szűrőlisták hozzáadása és eltávolítása, saját szűrőlisták létrehozása és karbantartása"
   },
   "options_anti_cv_header": {
-    "message": "Kijátszásellenesség"
+    "message": "Megkerülésvédelem"
   },
   "options_anti_cv_title": {
-    "message": "ABP Kijátszásellenesség szűrőlista"
+    "message": "ABP Megkerülésvédelem szűrőlista"
   },
   "options_anti_cv_tooltip": {
-    "message": "Ez a szűrőlista a kijátszás ellen működik (pl. a hirdetések blokkolását célzó felhasználók hirdetéseinek kényszerítésére szolgáló technikák). Ezek a szűrők megkerülik a hirdetések kijátszását, valamint a kapcsolódó követést."
+    "message": "Ez a szűrőlista a megkerülést akadályozza (pl. olyan technikák, amelyek rákényszerítik a reklámokat a felhasználókra, akkor is ha reklámblokkolót használnak). Ezek a szűrők blokkolják ezeket a reklámokat, valamint a hozzájuk kapcsolódó követést is."
   },
   "options_close": {
     "message": "bezárás"
@@ -38,35 +38,11 @@
   "options_customFilter_cancel": {
     "message": "Mégse"
   },
-  "options_customFilter_edit": {
-    "message": "Szűrők szerkesztése"
-  },
-  "options_customFilter_save": {
-    "message": "Mentés"
-  },
   "options_customFilters_description": {
     "message": "Írja be saját egyéni szűrőit, hogy ellenőrizze, hogy az Adblock Plus által engedélyezett vagy blokkolt tartalmak."
   },
-  "options_customFilters_edit_placeholder": {
-    "message": "Pl. $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Tudja meg, hogyan írhat szűrőlistákat"
-  },
-  "options_customFilters_start": {
-    "message": "Saját szűrőlista elkezdése"
-  },
-  "options_customFilters_tip": {
-    "message": "A saját szűrők itt fognak megjelenni."
-  },
   "options_customFilters_title": {
-    "message": "Saját szűrő létrehozása és szerkesztése"
+    "message": "Egyéni szűrők"
   },
   "options_customFilters_widget_title": {
     "message": "Saját szűrőlista"
@@ -195,7 +171,7 @@
     "message": "Aktív"
   },
   "options_filterList_state_disabled": {
-    "message": "Letiltva"
+    "message": "Inaktív"
   },
   "options_filterList_title": {
     "message": "Szűrő lista"
@@ -209,8 +185,11 @@
   "options_filterList_website": {
     "message": "weboldal"
   },
+  "options_filter_list_rule": {
+    "message": "Szűrő szabály"
+  },
   "options_filters_search_or_add": {
-    "message": "Keresés / szűrő hozzáadás (pl. $filter$)",
+    "message": "Keresés vagy szűrő(k) hozzáadása (pl. $filter$)",
     "placeholders": {
       "filter": {
         "content": "/ads/track/*"

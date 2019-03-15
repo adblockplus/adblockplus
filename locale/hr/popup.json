@@ -1,15 +1,6 @@
 {
-  "clickhide_instructions": {
-    "message": "Nakon zatvaranja ovog skočnog prozora, kliknite (ili desni klik miša) na element na ovoj stranici."
-  },
-  "disabled_for_site": {
-    "message": "<strong>Onemogućeno</strong> na ovoj stranici"
-  },
   "easy_create_filter": {
     "message": "Blokiraj element"
-  },
-  "enabled_for_site": {
-    "message": "<strong>Omogućeno</strong> na ovoj stranici"
   },
   "options_short": {
     "message": "Mogućnosti"
@@ -32,11 +23,5 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Prikaži broj na ikoni"
-  },
-  "stats_title": {
-    "message": "Blokirano reklama"
   }
 }

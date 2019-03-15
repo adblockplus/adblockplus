@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "Nu vom putea să te contactăm aşa că vom prioritatea semnalării va fi mai mică."
   },
+  "issueReporter_closeButton_label": {
+    "message": "Închide"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Introducere comentariu"
   },
@@ -73,6 +76,9 @@
   },
   "issueReporter_processing_screenshot": {
     "message": "Procesare"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "Pentru a înţelege mai bine problema, un screenshot este necesar când trimiteți un raport de problemă. În funcţie de site-ul pe care vă aflaţi, captura de ecran ar putea conţine informaţii personale. Daca nu doriţi să trimiteţi o captură de ecran, vă rugăm să trimiteţi detalii la <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_screenshot_hide": {
     "message": "Ascunde"

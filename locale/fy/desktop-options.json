@@ -38,32 +38,8 @@
   "options_customFilter_cancel": {
     "message": "Annulearje"
   },
-  "options_customFilter_edit": {
-    "message": "Filters bewurkje"
-  },
-  "options_customFilter_save": {
-    "message": "Bewarje"
-  },
   "options_customFilters_description": {
     "message": "Skriuw jo eigen oanpaste filters om fierder te bepalen hokker ynhâld Adblock Plus tastiet of blokkearret."
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "byg. $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Ynfo oer it skriuwen fan filterlisten"
-  },
-  "options_customFilters_start": {
-    "message": "Begjinne mei it skriuwen fan myn filterlist"
-  },
-  "options_customFilters_tip": {
-    "message": "Hjir ferskine filters dy't jo meitsje."
   },
   "options_customFilters_title": {
     "message": "Jo filterlist meitsje en bewurkje"
@@ -208,6 +184,9 @@
   },
   "options_filterList_website": {
     "message": "website"
+  },
+  "options_filter_list_rule": {
+    "message": "Filterrigel"
   },
   "options_filters_search_or_add": {
     "message": "Filter sykje / tafoegje (byg. $filter$)",

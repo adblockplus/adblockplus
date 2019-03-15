@@ -1,0 +1,53 @@
+{
+  "devtools_action_block": {
+    "message": "ელემენტის შეზღუდვა"
+  },
+  "devtools_action_remove": {
+    "message": "წესის მოცილება"
+  },
+  "devtools_action_unblock": {
+    "message": "გამონაკლისის დამატება"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "მომხმარებლის მიერ"
+  },
+  "devtools_filter_origin_none": {
+    "message": "უსახელო გამოწერილი სია"
+  },
+  "devtools_filter_subtitle": {
+    "message": "წარმომავლობა"
+  },
+  "devtools_filter_title": {
+    "message": "ფილტრი"
+  },
+  "devtools_footer": {
+    "message": "<a0>გახსენით</a0> გვერდი ხელახლა, ცვლილებების ასახვისთვის"
+  },
+  "devtools_header": {
+    "message": "<slot1></slot1> სახის <slot0></slot0> ერთეულის გამოჩენა"
+  },
+  "devtools_header_state_all": {
+    "message": "ყველა"
+  },
+  "devtools_header_state_blocked": {
+    "message": "შეზღუდული"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "გამონაკლისებში"
+  },
+  "devtools_header_type_any": {
+    "message": "ნებისმიერი"
+  },
+  "devtools_request_subtitle": {
+    "message": "დოკუმენტის მისამართი"
+  },
+  "devtools_request_title": {
+    "message": "მოთხოვნა"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0> გადაეწერა <a1></a1>-ს"
+  },
+  "devtools_type_title": {
+    "message": "სახეობა"
+  }
+}

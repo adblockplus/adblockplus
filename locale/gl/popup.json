@@ -1,15 +1,6 @@
 {
-  "clickhide_instructions": {
-    "message": "Despois de pechar esta ventá emerxente, preme (ou co botón dereito) nun elemento da páxina."
-  },
-  "disabled_for_site": {
-    "message": "<strong>Desactivado</strong> neste sitio"
-  },
   "easy_create_filter": {
     "message": "Bloquear elemento"
-  },
-  "enabled_for_site": {
-    "message": "<strong>Activado</strong> neste sitio"
   },
   "options_short": {
     "message": "Opcións"
@@ -32,11 +23,5 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Mostrar o número na icona"
-  },
-  "stats_title": {
-    "message": "Anuncios bloqueados"
   }
 }

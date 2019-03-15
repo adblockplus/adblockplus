@@ -29,32 +29,8 @@
   "options_customFilter_cancel": {
     "message": "Cancelar"
   },
-  "options_customFilter_edit": {
-    "message": "Editar filtros"
-  },
-  "options_customFilter_save": {
-    "message": "GUARDAR"
-  },
   "options_customFilters_description": {
     "message": "Escribe tus propios filtros personalizados para un mayor control sobre qué contenido permite o bloquea Adblock Plus."
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "p.ej. $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Aprende cómo escribir listas de filtros"
-  },
-  "options_customFilters_start": {
-    "message": "Empezar a escribir mi lista de filtros"
-  },
-  "options_customFilters_tip": {
-    "message": "Los filtros que crees se mostrarán aquí."
   },
   "options_customFilters_title": {
     "message": "CREAR Y EDITAR TU LISTA DE FILTROS"

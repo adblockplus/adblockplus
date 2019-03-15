@@ -1,0 +1,11 @@
+{
+  "add_filters_msg": {
+    "message": "ফিল্টাৰ(বোৰ) যোগ কৰিবনে?"
+  },
+  "block_element": {
+    "message": "উপাদান অৱৰুদ্ধ কৰক"
+  },
+  "loading": {
+    "message": "ল\\'ড হৈ আছে..."
+  }
+}

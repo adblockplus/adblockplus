@@ -1,9 +1,9 @@
 {
   "continue": {
-    "message": "Далі"
+    "message": "Продовжити"
   },
   "filters_subscription_lastDownload_connectionError": {
-    "message": "Помилка, неможливо викачати"
+    "message": "Помилка, неможливо завантажити"
   },
   "issueReporter_anonymousSubmission_label": {
     "message": "Анонімне подання"
@@ -11,8 +11,11 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "Ми не будемо мати можливість повернутися до вас і, швидше за все, пріоритети звіту нижчий."
   },
+  "issueReporter_closeButton_label": {
+    "message": "Закрити"
+  },
   "issueReporter_commentPage_heading": {
-    "message": "Ввести коментар"
+    "message": "Залишити коментар"
   },
   "issueReporter_comment_description": {
     "message": "Нижче ви можете ввести коментар щоб допомогти нам зрозуміти проблему. Цей крок необов’язковий, проте рекомендований коли проблема не очевидна. Ви можете також переглянути свій коментар перед надсиланням."
@@ -30,7 +33,7 @@
     "message": "Подробиці"
   },
   "issueReporter_doneButton_label": {
-    "message": "Гаразд"
+    "message": "Виконано"
   },
   "issueReporter_email_description": {
     "message": "Ми рекомендуємо Вам ввести адресу електронної пошти, щоб ми могли зв'язатися з вами, якщо виникнуть питання з приводу звіту. Це також дозволить нам розпізнати ваші внески та зробити їх більш пріоритетними."
@@ -73,6 +76,9 @@
   },
   "issueReporter_processing_screenshot": {
     "message": "обробка"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "Щоб допомогти нам краще зрозуміти проблему, потрібно додати знімок екрану, під час надсилання звіту. Залежно від відкритого веб-сайту, знімок може містити вашу особисту інформацію. Якщо ви не бажаєте надсилати знімок екрану, будь ласка, напишіть про проблему на нашу пошту <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_screenshot_hide": {
     "message": "Приховати"

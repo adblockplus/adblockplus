@@ -1,15 +1,6 @@
 {
-  "clickhide_instructions": {
-    "message": "Klikk (eller høyreklikk) på et element på siden etter at du har lukket dette vinduet."
-  },
-  "disabled_for_site": {
-    "message": "<strong>Deaktivert</strong> på dette nettstedet"
-  },
   "easy_create_filter": {
     "message": "Blokkér element"
-  },
-  "enabled_for_site": {
-    "message": "<strong>Aktivert</strong> på dette nettstedet"
   },
   "options_short": {
     "message": "Alternativer"
@@ -32,11 +23,5 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Vis tall i ikonet"
-  },
-  "stats_title": {
-    "message": "Blokkerte annonser"
   }
 }

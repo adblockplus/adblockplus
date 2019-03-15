@@ -2,17 +2,8 @@
   "click_element_to_block_it": {
     "message": "أنقر فوق عنصر في الصفحة لحظره."
   },
-  "clickhide_instructions": {
-    "message": "بعد إغلاق هذه النافذة، اضغط (أو اضغط بالزر الأيمن) على أحد العناصر في الصفحة."
-  },
-  "disabled_for_site": {
-    "message": "<strong>معطل</strong> في هذا الموقع"
-  },
   "easy_create_filter": {
     "message": "حجب العنصر"
-  },
-  "enabled_for_site": {
-    "message": "<strong>مفعّل</strong> في هذا الموقع"
   },
   "options_refresh": {
     "message": "تحديث"
@@ -53,12 +44,6 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "عرض الرقم في الصورة المرمزة"
-  },
-  "stats_title": {
-    "message": "الإعلانات المحجوبة"
   },
   "status_header": {
     "message": "حظر الإعلانات على:"

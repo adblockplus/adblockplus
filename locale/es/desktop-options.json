@@ -38,32 +38,8 @@
   "options_customFilter_cancel": {
     "message": "CANCELAR"
   },
-  "options_customFilter_edit": {
-    "message": "Editar filtros"
-  },
-  "options_customFilter_save": {
-    "message": "GUARDAR"
-  },
   "options_customFilters_description": {
     "message": "Crea y mantén tus propios filtros para un mayor control sobre qué contenido bloquea o permite Adblock Plus. <a0>Más información sobre cómo crear filtros</a0>"
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "p.ej. $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Más información sobre cómo crear filtros"
-  },
-  "options_customFilters_start": {
-    "message": "Empezar a crear mi lista de filtros"
-  },
-  "options_customFilters_tip": {
-    "message": "Los filtros que crees se mostrarán aquí."
   },
   "options_customFilters_title": {
     "message": "Tus filtros personalizados"
@@ -348,7 +324,7 @@
     "message": "Las páginas web en las que confías y deseas permitir anuncios se mostrarán aquí."
   },
   "options_whitelist_notification": {
-    "message": "$website$ ha sido añadida a la lista blanca.",
+    "message": "\"$website$\" ha sido añadida a la lista blanca.",
     "placeholders": {
       "website": {
         "content": "$1",

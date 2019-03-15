@@ -1,11 +1,14 @@
 {
   "description": {
-    "message": "Üle 500 miljoni allalaadimisega on Adblock Plus üks maailma populaarsemaid reklaamide blokeerijaid."
+    "message": "Laadi alla Adblock Plus, maailma üks populaarsemaid reklaamide blokeerijaid."
   },
   "name": {
     "message": "Adblock Plus"
   },
   "name_devbuild": {
     "message": "Adblock Plus arendusväljalase"
+  },
+  "name_releasebuild": {
+    "message": "Adblock Plus - tasuta reklaamide blokeerija"
   }
 }

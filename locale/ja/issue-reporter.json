@@ -26,6 +26,9 @@
   "issueReporter_data_gathering_tab": {
     "message": "<strong>注記：</strong> 追加タブが一時的に開くため、現在開いているページはIssue Reporterによる影響を受けません。"
   },
+  "issueReporter_detailsButton_label": {
+    "message": "詳細"
+  },
   "issueReporter_doneButton_label": {
     "message": "完了"
   },
@@ -50,14 +53,35 @@
   "issueReporter_falsePositive_label": {
     "message": "Adblock Plus のブロックが過剰"
   },
+  "issueReporter_highlighter_description": {
+    "message": "ツールを使用して、各広告を強調表示したり、スクリーン ショットでは、機密性の高い情報を非表示にします。広告を強調すると、高速の問題を解決させていただきます。"
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "問題をハイライト表示します。"
+  },
   "issueReporter_knownIssueMessage": {
     "message": "恐らく、あなたの報告した不具合は既知の問題です。詳細:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "問題をマークします。"
   },
   "issueReporter_page_title": {
     "message": "不具合報告"
   },
   "issueReporter_privacyPolicy": {
     "message": "プライバシー・ポリシー"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "処理中"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "非表示"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "ハイライト"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "不具合種別を選択"
   },
   "issueReporter_sendButton_label": {
     "message": "不具合報告を送信"

@@ -1,0 +1,50 @@
+{
+  "mops_acceptableAds_description": {
+    "message": "কিছুমান অ-অনধিকাৰমূলক বিজ্ঞাপনক অনুমতি দিয়ক।"
+  },
+  "mops_acceptableAds_more": {
+    "message": "অধিক জানক"
+  },
+  "mops_action_cancel": {
+    "message": "বাতিল কৰক"
+  },
+  "mops_enabled_label": {
+    "message": "<strong>$domain$</strong>-ত এডব্লক প্লাছ সক্ষম কৰক",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_url": {
+    "message": "এটা বৈধ URL প্ৰবিষ্ট কৰক"
+  },
+  "mops_filterlist_add": {
+    "message": "+ এখন ফিল্টাৰৰ সূচী যোগ কৰক"
+  },
+  "mops_filterlist_add_action": {
+    "message": "ফিল্টাৰৰ সূচী যোগ কৰক"
+  },
+  "mops_filterlist_add_url": {
+    "message": "+ এখন অনুকূলিত ফিল্টাৰৰ সূচী যোগ কৰক"
+  },
+  "mops_header": {
+    "message": "এডব্লক প্লাছৰ ছেটিংছ"
+  },
+  "mops_subscribe_header": {
+    "message": "এখন অনুকূলিত ফিল্টাৰৰ সূচী যোগ কৰক"
+  },
+  "mops_subscribe_title": {
+    "message": "ফিল্টাৰৰ সূচীৰ নাম"
+  },
+  "mops_subscribe_url": {
+    "message": "ফিল্টাৰৰ সূচীৰ URL"
+  },
+  "mops_subscriptions_header": {
+    "message": "ফিল্টাৰৰ গ্ৰাহকীভুক্তিবোৰ"
+  },
+  "mops_title": {
+    "message": "এডব্লক প্লাছৰ ছেটিংছ"
+  }
+}

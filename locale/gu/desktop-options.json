@@ -29,32 +29,8 @@
   "options_customFilter_cancel": {
     "message": "રદ"
   },
-  "options_customFilter_edit": {
-    "message": "ફિલ્ટર્સ સંપાદિત કરો"
-  },
-  "options_customFilter_save": {
-    "message": "સાચવો"
-  },
   "options_customFilters_description": {
     "message": "સામગ્રી એડબ્લોક પ્લસ દ્વારા પરવાનગી આપે છે અથવા બ્લોકો શું નિયંત્રિત કરવા માટે તમારા પોતાના કસ્ટમ ફિલ્ટર્સ લખો."
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "ઉદાહરણ $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "ફિલ્ટર યાદીઓ કેવી રીતે લખવા તે જાણો"
-  },
-  "options_customFilters_start": {
-    "message": "મારી ફિલ્ટર સૂચિ લખવાનું પ્રારંભ કરો"
-  },
-  "options_customFilters_tip": {
-    "message": "તમે બનાવો છો તે ફિલ્ટર્સ અહીં દેખાશે."
   },
   "options_customFilters_title": {
     "message": "તમારી ફિલ્ટર સૂચિ બનાવો અને સંપાદિત કરો"

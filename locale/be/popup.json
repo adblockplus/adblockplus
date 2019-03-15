@@ -2,17 +2,8 @@
   "click_element_to_block_it": {
     "message": "Націсніце на элемент на старонцы, каб заблакаваць яго."
   },
-  "clickhide_instructions": {
-    "message": "Пасля закрыцця гэтага акна, націсніце на элемент сайта левай (або правай) кнопкай мышы."
-  },
-  "disabled_for_site": {
-    "message": "<strong>Адключаны</strong> на гэтым сайце"
-  },
   "easy_create_filter": {
     "message": "Заблакаваць элемент"
-  },
-  "enabled_for_site": {
-    "message": "<strong>Уключаны</strong> на гэтым сайце"
   },
   "options_refresh": {
     "message": "Абнавіць"
@@ -53,12 +44,6 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Паказваць колькасць на значку"
-  },
-  "stats_title": {
-    "message": "Колькасць заблакаваных"
   },
   "status_header": {
     "message": "Блакаванне рэкламы на:"

@@ -1,15 +1,6 @@
 {
-  "clickhide_instructions": {
-    "message": "Bu popap pəncərəni bağlayandan sonra, səhifədə lazım olan elementə klik (sol və ya sağ klik) edin."
-  },
-  "disabled_for_site": {
-    "message": "Bu saytda <strong>söndürülüb</strong>"
-  },
   "easy_create_filter": {
     "message": "Elementi əngəllə"
-  },
-  "enabled_for_site": {
-    "message": "Bu saytda <strong>aktivdir</strong>"
   },
   "options_short": {
     "message": "Ayarlar"
@@ -32,11 +23,5 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Nişanda nömrə göstər"
-  },
-  "stats_title": {
-    "message": "Cəmi blok edilib"
   }
 }

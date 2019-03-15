@@ -1,15 +1,6 @@
 {
-  "clickhide_instructions": {
-    "message": "ይህን መልእክት እንደዘጉ፥ በገጹ ላይ ያለ አካል ላይ ክሊክ (ወይም የቀኝ ክሊክ) ያርጉ።"
-  },
-  "disabled_for_site": {
-    "message": "በዚህ ድር ገጾች ላይ <strong>ጠፍቷል</strong>"
-  },
   "easy_create_filter": {
     "message": "ይህን አካል ይከልክሉ"
-  },
-  "enabled_for_site": {
-    "message": "በዚህ ድር ገጾች ላይ <strong>በርቷል</strong>"
   },
   "options_short": {
     "message": "ምርጫዎች"
@@ -29,11 +20,5 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "ቁጥር ምልክት ላይ አሳይ"
-  },
-  "stats_title": {
-    "message": "የተከለከሉ ማስታወቂያዎች"
   }
 }

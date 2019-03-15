@@ -1,0 +1,53 @@
+{
+  "devtools_action_block": {
+    "message": "חסום פריט"
+  },
+  "devtools_action_remove": {
+    "message": "הסר כלל"
+  },
+  "devtools_action_unblock": {
+    "message": "הוסף חריג"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "מוגדר־משתמש"
+  },
+  "devtools_filter_origin_none": {
+    "message": "מינוי ללא שם"
+  },
+  "devtools_filter_subtitle": {
+    "message": "מוצא"
+  },
+  "devtools_filter_title": {
+    "message": "מסנן"
+  },
+  "devtools_footer": {
+    "message": "<a0>טען מחדש</a0> דף כדי לראות השפעה של שינויי מסנן"
+  },
+  "devtools_header": {
+    "message": "הראה <slot0></slot0> פריטים מתוך <slot1></slot1> סוג"
+  },
+  "devtools_header_state_all": {
+    "message": "הכל"
+  },
+  "devtools_header_state_blocked": {
+    "message": "חסום"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "ברשימה לבנה"
+  },
+  "devtools_header_type_any": {
+    "message": "כלשהו"
+  },
+  "devtools_request_subtitle": {
+    "message": "תחום מסמך"
+  },
+  "devtools_request_title": {
+    "message": "בקשה"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0> שוכתב אל <a1></a1>"
+  },
+  "devtools_type_title": {
+    "message": "סוג"
+  }
+}

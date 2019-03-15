@@ -54,6 +54,6 @@
     "message": "从<a>adblockplus.org</a>上面重新安装Adblock Plus。"
   },
   "firstRun_warning_reinitialized": {
-    "message": "似乎有问题导致了所有过滤器被移除，我们无法恢复备份。因此，我们必须重置您的过滤器和“可接受广告”设置。请在 <a>Adblock Plus 选项</a>中查看过滤器列表和“可接受广告”设置。"
+    "message": "似乎有问题导致了所有过滤器被移除，我们无法恢复备份。因此，我们必须重置您的过滤器和“可接受广告”设置。请在 <a>Adblock Plus 选项</a>中查看过滤列表和“可接受广告”设置。"
   }
 }

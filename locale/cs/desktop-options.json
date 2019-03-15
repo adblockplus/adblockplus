@@ -23,32 +23,8 @@
   "options_customFilter_cancel": {
     "message": "ZRUŠIT"
   },
-  "options_customFilter_edit": {
-    "message": "Upravit filtry"
-  },
-  "options_customFilter_save": {
-    "message": "ULOŽIT"
-  },
   "options_customFilters_description": {
     "message": "Zadejte své vlastní filtry tak, abyste mohli dále řídit obsah, který má Adblock Plus povolit nebo blokovat."
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "např.: $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Naučte se psát seznamy filtrů"
-  },
-  "options_customFilters_start": {
-    "message": "Začněte psát svůj seznam filtrů"
-  },
-  "options_customFilters_tip": {
-    "message": "Zde se zobrazují vámi vytvořené filtry."
   },
   "options_customFilters_title": {
     "message": "VYTVOŘIT A UPRAVIT VLASTNÍ SEZNAM FILTRŮ"
@@ -61,6 +37,9 @@
   },
   "options_customize_blockElement_tooltip": {
     "message": "Dočasně zablokujte nepříjemné položky na webové stránce, například obrázky nebo animované prezentace."
+  },
+  "options_customize_header": {
+    "message": "Přizpůsobení"
   },
   "options_customize_showDevToolsPanel": {
     "message": "V nástrojích pro vývojáře zobrazte panel Adblock Plus"

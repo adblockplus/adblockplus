@@ -19,5 +19,14 @@
   },
   "common_notification_hide": {
     "message": "סגור התראה"
+  },
+  "copy_selected": {
+    "message": "העתק נבחרים"
+  },
+  "delete": {
+    "message": "מחק"
+  },
+  "filter_action_failed": {
+    "message": "משהו השתבש. אנא נסה שוב."
   }
 }

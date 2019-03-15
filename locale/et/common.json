@@ -19,5 +19,14 @@
   },
   "common_notification_hide": {
     "message": "Sulge teade"
+  },
+  "copy_selected": {
+    "message": "Kopeeri valitud"
+  },
+  "delete": {
+    "message": "Kustuta"
+  },
+  "filter_action_failed": {
+    "message": "Midagi läks valesti. Palun proovi uuesti."
   }
 }

@@ -2,17 +2,8 @@
   "click_element_to_block_it": {
     "message": "Norėdami užblokuoti elementą paspauskite ant jo."
   },
-  "clickhide_instructions": {
-    "message": "Užvėrus šį iššokantį langą, paspauskite (arba dešiniu mygtuku) ant elemento esančio puslapyje."
-  },
-  "disabled_for_site": {
-    "message": "Šiame puslapyje <strong>išjungta</strong>"
-  },
   "easy_create_filter": {
     "message": "Blokuoti elementą"
-  },
-  "enabled_for_site": {
-    "message": "Šiame puslapyje <strong>įjungta</strong>"
   },
   "options_refresh": {
     "message": "Atnaujinti"
@@ -53,12 +44,6 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Piktogramoje rodyti skaičių"
-  },
-  "stats_title": {
-    "message": "Reklamos užblokuotos"
   },
   "status_header": {
     "message": "Blokuoti reklamas:"

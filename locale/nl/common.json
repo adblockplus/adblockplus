@@ -19,5 +19,14 @@
   },
   "common_notification_hide": {
     "message": "Melding sluiten"
+  },
+  "copy_selected": {
+    "message": "Geselecteerde kopiëren"
+  },
+  "delete": {
+    "message": "Verwijderen"
+  },
+  "filter_action_failed": {
+    "message": "Er is iets fout gegaan. Probeer het opnieuw."
   }
 }

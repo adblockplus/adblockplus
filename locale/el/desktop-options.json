@@ -26,29 +26,8 @@
   "options_customFilter_cancel": {
     "message": "ΑΚΥΡΩΣΗ"
   },
-  "options_customFilter_save": {
-    "message": "ΑΠΟΘΗΚΕΥΣΗ"
-  },
   "options_customFilters_description": {
     "message": "Γράψτε τα δικά σας προσαρμοσμένα φίλτρα για να ελέγξετε περαιτέρω ποιο περιεχόμενο επιτρέπει ή αποκλείει το Adblock Plus."
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "π.χ. $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Μάθετε πώς να γράφετε λίστες φίλτρων"
-  },
-  "options_customFilters_start": {
-    "message": "Αρχίστε να γράφετε τη λίστα φίλτρων σας"
-  },
-  "options_customFilters_tip": {
-    "message": "Τα φίλτρα που δημιουργείτε θα εμφανίζονται εδώ."
   },
   "options_customFilters_title": {
     "message": "Δημιουργήστε και επεξεργαστείτε σου λίστα φίλτρου"

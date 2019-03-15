@@ -1,0 +1,47 @@
+{
+  "devtools_action_block": {
+    "message": "Blokeeri üksus"
+  },
+  "devtools_action_remove": {
+    "message": "Eemalda reegel"
+  },
+  "devtools_action_unblock": {
+    "message": "Lisa erand"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "kasutajamääratud"
+  },
+  "devtools_filter_origin_none": {
+    "message": "nimetu tellimus"
+  },
+  "devtools_filter_subtitle": {
+    "message": "Allikas"
+  },
+  "devtools_filter_title": {
+    "message": "Filter"
+  },
+  "devtools_footer": {
+    "message": "Filtri muudatuste nägemiseks <a0>laadi leht uuesti</a0>"
+  },
+  "devtools_header": {
+    "message": "Näita <slot0></slot0> üksused tüübiga <slot1></slot1>"
+  },
+  "devtools_header_state_all": {
+    "message": "kõik"
+  },
+  "devtools_header_state_blocked": {
+    "message": "blokeeritud"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "lubatute loendis olevad"
+  },
+  "devtools_header_type_any": {
+    "message": "mis tahes"
+  },
+  "devtools_request_title": {
+    "message": "Päring"
+  },
+  "devtools_type_title": {
+    "message": "Tüüp"
+  }
+}

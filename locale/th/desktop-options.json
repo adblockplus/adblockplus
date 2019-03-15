@@ -29,32 +29,8 @@
   "options_customFilter_cancel": {
     "message": "ยกเลิก"
   },
-  "options_customFilter_edit": {
-    "message": "แก้ไขตัวกรอง"
-  },
-  "options_customFilter_save": {
-    "message": "บันทึก"
-  },
   "options_customFilters_description": {
     "message": "สร้างรายการตัวกรองที่คุณกำหนดเองเพื่อควบคุมเนื้อหาที่ Adblock Plus อนุญาตหรือบล็อคได้มากกว่าเดิม"
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "เช่น $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "เรียนรู้วิธีการเขียนรายการตัวกรอง"
-  },
-  "options_customFilters_start": {
-    "message": "เริ่มเขียนรายการตัวกรองของฉัน"
-  },
-  "options_customFilters_tip": {
-    "message": "ตัวกรองที่คุณสร้างจะแสดงไว้ที่นี่"
   },
   "options_customFilters_title": {
     "message": "สร้างและแก้ไขรายการตัวกรองของคุณ"

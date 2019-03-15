@@ -1,4 +1,40 @@
 {
+  "firstRun_browser_description": {
+    "message": "Adblock Plus、デスクトップ ブラウザー、最も人気のある広告のブロッカーの背後にあるチームから Adblock BrowserーがAndroidと iOS デバイスの登場。"
+  },
+  "firstRun_browser_store_android": {
+    "message": "Google PlayでのAndroidアプリ"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "iTunes App Store で利用可能"
+  },
+  "firstRun_browser_title": {
+    "message": "Adblock Browser アプリ"
+  },
+  "firstRun_control_description": {
+    "message": "既定では、 <a0>の厳格な基準</a0>に準拠するいくつかの非侵入型広告を参照してください可能性があります。我々 は、許容可能な広告としてこれらの広告を識別します。すべての広告をブロックすることを好むか。 <a1>許可される広告</a1> <a2>設定</a2> でオフにします。"
+  },
+  "firstRun_fair_description": {
+    "message": "Adblock Plus およびホワイト リストのウェブサイトにオプションの公正な使用にお勧めします。使用するフィルターによっては、理解し、意図しない結果が (例えばのウェブサイト上でのコンテンツのブロック) を発生することを受け入れます。 <a0>の利用規約</a0> Adblock Plus の公正使用の詳細についてを参照してください。"
+  },
+  "firstRun_fair_title": {
+    "message": "公正な使用"
+  },
+  "firstRun_footer_copyright": {
+    "message": "Copyright © $year$ 全著作権所有 。Adblock Plus® は <a0>eyeo GmbH</a0> の登録商標です。",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
+  "firstRun_subtitle": {
+    "message": "あなたはちょうどあなたのブラウザーの制御を取った。"
+  },
+  "firstRun_title": {
+    "message": "インストールが完了しました！"
+  },
   "firstRun_warning_dataCorrupted_intro": {
     "message": "一部のユーザーで、ブラウザが起動するたびにこのページが開く問題が発生しています。この問題は、Adblock Plusをアンインストールして再インストールすることで解決できます："
   },

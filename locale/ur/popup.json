@@ -1,14 +1,5 @@
 {
-  "clickhide_instructions": {
-    "message": "اس پاپ اپ کو بند کرنے کے بعد، صفحے پر موجود عنصر پر کلک (یا دایاں کلک) کریں۔"
-  },
-  "disabled_for_site": {
-    "message": "<strong>غیر فعال شدہ</strong>اس سائٹ پر"
-  },
   "easy_create_filter": {
     "message": "بلاک عنصر"
-  },
-  "enabled_for_site": {
-    "message": "<strong>بحال ہوگیا</strong> اس سائٹ پر"
   }
 }

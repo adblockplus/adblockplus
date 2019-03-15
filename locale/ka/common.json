@@ -19,5 +19,14 @@
   },
   "common_notification_hide": {
     "message": "შეტყობინების დახურვა"
+  },
+  "copy_selected": {
+    "message": "მონიშნულის ასლი"
+  },
+  "delete": {
+    "message": "წაშლა"
+  },
+  "filter_action_failed": {
+    "message": "რაღაც შეცდომაა. გთხოვთ, სცადოთ მოგვიანებით."
   }
 }

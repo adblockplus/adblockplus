@@ -1,15 +1,6 @@
 {
-  "clickhide_instructions": {
-    "message": "پس از بسته شدن این پنجره، روی بخشی از صفحه کلیک (یا راست کلیک) کن."
-  },
-  "disabled_for_site": {
-    "message": "برای این سایت <strong>غیرفعال شد</strong>"
-  },
   "easy_create_filter": {
     "message": "مسدود کردن این عنصر"
-  },
-  "enabled_for_site": {
-    "message": "برای این سایت <strong>فعال شد</strong>"
   },
   "options_short": {
     "message": "تنظیمات"
@@ -32,11 +23,5 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "نمایش تعداد در آیکون"
-  },
-  "stats_title": {
-    "message": "تبلیغات مسدود شده"
   }
 }

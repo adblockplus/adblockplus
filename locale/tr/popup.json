@@ -2,17 +2,8 @@
   "click_element_to_block_it": {
     "message": "Sayfada engellemek istediğiniz ögenin üzerine tıklayın."
   },
-  "clickhide_instructions": {
-    "message": "Bu talimatları kapattıktan sonra, sayfadaki bir ögeye tıklayın (veya sağ tıkayın)."
-  },
-  "disabled_for_site": {
-    "message": "Bu sitede <strong>devre dışı</strong>"
-  },
   "easy_create_filter": {
     "message": "Ögeyi engelle"
-  },
-  "enabled_for_site": {
-    "message": "Bu sitede <strong>etkin</strong>"
   },
   "options_refresh": {
     "message": "Tazele"
@@ -53,12 +44,6 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Sayıyı simgede göster"
-  },
-  "stats_title": {
-    "message": "Engellenen reklamlar"
   },
   "status_header": {
     "message": "Aşağıdaki adreste reklamları engelle:"

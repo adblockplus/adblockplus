@@ -15,6 +15,6 @@
     "message": "從 <a>adblockplus.org</a> 上面重新安裝 Adblock Plus。"
   },
   "firstRun_warning_reinitialized": {
-    "message": "有一個問題已刪除了所有的廣告過濾器，我們也無法還原備份。因此我們得重新設置您的廣告過濾器和可接受的廣告設置。請在<a>Adblock Plus 選項</a>裡檢查您的廣告過濾器名單和可接受的廣告設置。"
+    "message": "似乎出現了一個問題，導致所有的廣告過濾器被刪除，我們也無法還原備份。因此我們必須重設您的廣告過濾器和可接受的廣告設定。請在<a>Adblock Plus 選項</a>裡檢查您的廣告過濾器名單和可接受的廣告設定。"
   }
 }

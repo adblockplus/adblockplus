@@ -2,17 +2,8 @@
   "click_element_to_block_it": {
     "message": "Clicca su un elemento della pagina per bloccarlo."
   },
-  "clickhide_instructions": {
-    "message": "Dopo aver chiuso questa finestra a comparsa, clicca (o fai clic con il tasto destro) su un elemento della pagina."
-  },
-  "disabled_for_site": {
-    "message": "<strong>Disattivato</strong> su questo sito"
-  },
   "easy_create_filter": {
     "message": "Blocca elemento"
-  },
-  "enabled_for_site": {
-    "message": "<strong>Attivato</strong> su questo sito"
   },
   "options_refresh": {
     "message": "Aggiorna"
@@ -53,12 +44,6 @@
         "content": "$1"
       }
     }
-  },
-  "stats_show_iconnumber": {
-    "message": "Mostra il numero nell'icona"
-  },
-  "stats_title": {
-    "message": "Pubblicità bloccate"
   },
   "status_header": {
     "message": "Blocco pubblicità attivo:"

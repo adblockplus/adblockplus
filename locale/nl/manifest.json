@@ -1,11 +1,14 @@
 {
   "description": {
-    "message": "Met meer dan 500 miljoen downloads is Adblock Plus een van de meest populaire adblockers ter wereld."
+    "message": "Download Adblock Plus, een van de meest populaire adblockers ter wereld."
   },
   "name": {
     "message": "Adblock Plus"
   },
   "name_devbuild": {
     "message": "Adblock Plus-ontwikkelversie"
+  },
+  "name_releasebuild": {
+    "message": "Adblock Plus - gratis adblocker"
   }
 }

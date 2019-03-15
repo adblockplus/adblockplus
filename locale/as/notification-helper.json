@@ -1,0 +1,20 @@
+{
+  "notification_configure": {
+    "message": "সুচনা ছেটিংছ ক\\'নফিগাৰ কৰক"
+  },
+  "notification_open_all": {
+    "message": "এই সুচনাটোৰ পৰা সকলো লিংক খোলক।"
+  },
+  "notification_with_buttons": {
+    "message": "এই সুচনাটোত থকা সকলো লিংক খোলিবলৈ 'ঠিক আছে' ক্লিক কৰক।"
+  },
+  "notification_without_buttons": {
+    "message": "সুচনাটোত থকা সকলো লিংক খোলিবলৈ সেইটোত ক্লিক কৰক।"
+  },
+  "overlay_notification_button_no": {
+    "message": "নহয়"
+  },
+  "overlay_notification_button_yes": {
+    "message": "হয়"
+  }
+}

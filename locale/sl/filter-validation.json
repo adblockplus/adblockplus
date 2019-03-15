@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "Neveljaven regularni izraz"
   },
+  "filter_slow": {
+    "message": "Za zagotavljanje hitrega filtra, prosimo preverite dolžino vzorca in se prepričajte, da ne vsebuje regularnega izraza."
+  },
   "filter_snippet_nodomain": {
     "message": "Za filter izrezkov ni navedene dejavne domene"
   },

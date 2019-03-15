@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "Мы не зможам з вамі звязацца, таму можа стацца так, што справаздачы нададуць ніжэйшы прыярытэт."
   },
+  "issueReporter_closeButton_label": {
+    "message": "Закрыць"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Пакінуць каментарый"
   },
@@ -73,6 +76,9 @@
   },
   "issueReporter_processing_screenshot": {
     "message": "апрацоўка"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "Каб мы лепш маглі зразумець праблему, пры адпраўленні справаздачы трэба прыкласці скрыншот. У залежнасці ад сайта, які зараз адкрыты, скрыншот можа ўтрымваць асабістую інфармацыю. Калі вы не жадаеце прыкладваць скрыншот, калі ласка, адпраўце апісанне праблемы на адрас <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_screenshot_hide": {
     "message": "Схаваць"

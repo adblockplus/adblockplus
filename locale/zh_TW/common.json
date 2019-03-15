@@ -15,9 +15,15 @@
     "message": "禁用其他跟踪"
   },
   "common_feature_social_title": {
-    "message": "禁止社交媒體圖示跟踪"
+    "message": "阻擋社交媒體圖示追蹤"
   },
   "common_notification_hide": {
     "message": "關閉通知"
+  },
+  "delete": {
+    "message": "刪除"
+  },
+  "filter_action_failed": {
+    "message": "發生了一些問題。請重新嘗試。"
   }
 }

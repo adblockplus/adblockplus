@@ -1,15 +1,9 @@
 {
-  "clickhide_instructions": {
-    "message": "След затваряне на изскачащия прозорец, щракнете (може и с десния бутон) върху елемент в страницата."
-  },
-  "disabled_for_site": {
-    "message": "<strong>Забранено</strong> за сайта"
+  "click_element_to_block_it": {
+    "message": "Щракнете по елемент в страницата, който блокирате."
   },
   "easy_create_filter": {
     "message": "Блокирай елемента"
-  },
-  "enabled_for_site": {
-    "message": "<strong>Разрешено</strong> за сайта"
   },
   "options_refresh": {
     "message": "Опресни"
@@ -23,8 +17,17 @@
   "overlay_notification_closing_button_optout": {
     "message": "Спри показването на известия"
   },
+  "promote_abp_module": {
+    "message": "Интересува ви мобилен Adblock Plus?"
+  },
+  "refresh_to_take_effect": {
+    "message": "Натиснете <strong>Опресни</strong> за влизане на промените в сила."
+  },
   "sendReport": {
-    "message": "Докладвай недостатък"
+    "message": "Докладвай недостатъка"
+  },
+  "stats_header": {
+    "message": "Брой блокирани"
   },
   "stats_label_page": {
     "message": "<strong>$number$</strong> — в страницата",
@@ -42,10 +45,7 @@
       }
     }
   },
-  "stats_show_iconnumber": {
-    "message": "Отброявай блокираните в иконата"
-  },
-  "stats_title": {
-    "message": "Блокирани реклами"
+  "status_header": {
+    "message": "Блокирани реклами:"
   }
 }

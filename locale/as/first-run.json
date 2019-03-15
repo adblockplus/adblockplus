@@ -1,0 +1,29 @@
+{
+  "firstRun_browser_store_android": {
+    "message": "গুগ্\\'ল প্লে'ত এণ্ড্ৰইড এপ্প"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "iTunes এপ্প ষ্ট\\'ৰত উপলব্ধ"
+  },
+  "firstRun_browser_title": {
+    "message": "এডব্লক ব্ৰাউজাৰ এপ্প"
+  },
+  "firstRun_control_title": {
+    "message": "আপুনি নিয়ন্ত্ৰণত আছে"
+  },
+  "firstRun_fair_title": {
+    "message": "উচিত ব্যৱহাৰ"
+  },
+  "firstRun_title": {
+    "message": "ইনষ্টলেশ্বন সফল হৈছে!"
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "আপোনাৰ ব্ৰাউজাৰৰ সম্প্রসাৰণবোৰৰ টেব খোলক।"
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "এডব্লক প্লাছ স্থানাংকিত কৰি আঁতৰাই দিয়ক।"
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "<a>adblockplus.org</a>-ৰ পৰা এডব্লক প্লাছ পুনঃইনষ্টল কৰক।"
+  }
+}

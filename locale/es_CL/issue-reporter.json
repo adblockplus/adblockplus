@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "No podremos volver a ti y es probable que le demos una prioridad inferior al reporte."
   },
+  "issueReporter_closeButton_label": {
+    "message": "Cerrar"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Escribir comentario"
   },
@@ -73,6 +76,9 @@
   },
   "issueReporter_processing_screenshot": {
     "message": "procesando"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "Para ayudarnos a entender mejor el problema, se requiere una captura de pantalla al enviar un informe de incidencias. Dependiendo del sitio web en el que estés actualmente, la captura de pantalla podría contener información personal. Si estás incómodo enviando una captura de pantalla, por favor envía tu incidencia en correo electrónico a <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_screenshot_hide": {
     "message": "Ocultar"

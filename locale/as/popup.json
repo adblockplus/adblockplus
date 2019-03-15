@@ -1,0 +1,51 @@
+{
+  "click_element_to_block_it": {
+    "message": "পৃষ্ঠাখনত কোনো এক উপাদান অৱৰুদ্ধ কৰিবলৈ ক্লিক কৰক।"
+  },
+  "easy_create_filter": {
+    "message": "উপাদান অৱৰুদ্ধ কৰক"
+  },
+  "options_refresh": {
+    "message": "সতেজ কৰক"
+  },
+  "options_short": {
+    "message": "বিকল্পবোৰ"
+  },
+  "overlay_notification_closing_button_hide": {
+    "message": "বন্ধ কৰক"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "সুচনাবোৰ দেখুওৱা বন্ধ কৰক"
+  },
+  "promote_abp_module": {
+    "message": "ম\\'বাইলৰ এডব্লক প্লাছত আগ্ৰহ আছে?"
+  },
+  "refresh_to_take_effect": {
+    "message": "সালসলনিবোৰ প্ৰভাৱিত কৰিবলৈ <strong>সতেজ কৰক</strong>-ত ক্লিক কৰক।"
+  },
+  "sendReport": {
+    "message": "সমস্যাৰ অভিযোগ কৰক"
+  },
+  "stats_header": {
+    "message": "সংখ্যক সামগ্ৰী অৱৰুদ্ধ কৰা হৈছে"
+  },
+  "stats_label_page": {
+    "message": "এইখন পৃষ্ঠাত <strong>$number$</strong>টা",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "মুঠ <strong>$number$</strong>টা",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "status_header": {
+    "message": "ইয়াত বিজ্ঞাপন অৱৰুদ্ধ কৰক:"
+  }
+}

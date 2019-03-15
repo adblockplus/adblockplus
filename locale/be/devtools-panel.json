@@ -1,0 +1,53 @@
+{
+  "devtools_action_block": {
+    "message": "Заблакаваць элемент"
+  },
+  "devtools_action_remove": {
+    "message": "Выдаліць правіла"
+  },
+  "devtools_action_unblock": {
+    "message": "Дадаць вынятак"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "вызначана карыстачом"
+  },
+  "devtools_filter_origin_none": {
+    "message": "безназоўная падпіска"
+  },
+  "devtools_filter_subtitle": {
+    "message": "Крыніца"
+  },
+  "devtools_filter_title": {
+    "message": "Фільтр"
+  },
+  "devtools_footer": {
+    "message": "<a0>Перазагрузіце</a0> старонку, каб убачыць эфект фільтра"
+  },
+  "devtools_header": {
+    "message": "Паказаць <slot0></slot0> элементы тыпу <slot1></slot1>"
+  },
+  "devtools_header_state_all": {
+    "message": "усё"
+  },
+  "devtools_header_state_blocked": {
+    "message": "заблакаваныя"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "белы спіс"
+  },
+  "devtools_header_type_any": {
+    "message": "хоць якія"
+  },
+  "devtools_request_subtitle": {
+    "message": "Дамен дакумента"
+  },
+  "devtools_request_title": {
+    "message": "Запыт"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0> перапісана на <a1></a1>"
+  },
+  "devtools_type_title": {
+    "message": "Тып"
+  }
+}

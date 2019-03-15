@@ -14,27 +14,6 @@
   "options_customFilter_cancel": {
     "message": "Sefsex"
   },
-  "options_customFilter_edit": {
-    "message": "Ẓreg imsizdigen"
-  },
-  "options_customFilter_save": {
-    "message": "Sekles"
-  },
-  "options_customFilters_edit_placeholder": {
-    "message": "m.d. $filter$",
-    "placeholders": {
-      "filter": {
-        "content": "$1",
-        "example": "/ads/track/*"
-      }
-    }
-  },
-  "options_customFilters_learn": {
-    "message": "Issin amek ara taruḍ tibdarin n imsizdigen"
-  },
-  "options_customFilters_start": {
-    "message": "Bdu tabdart-iw n imsizdeg"
-  },
   "options_customFilters_widget_title": {
     "message": "Tabdart-iw n imsizdigen"
   },
