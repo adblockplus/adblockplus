@@ -953,7 +953,7 @@ function onDOMLoaded()
   });
   for (const key of customize)
   {
-    getPref(key).then(value =>
+    getPref(key).then((value) =>
     {
       onPrefMessage(key, value, true);
     });
@@ -1131,7 +1131,7 @@ function setPrivacyConflict()
   const acceptableAdsForm = $("#acceptable-ads");
   if (hasPrivacyConflict())
   {
-    getPref("ui_warn_tracking").then(showTrackingWarning =>
+    getPref("ui_warn_tracking").then((showTrackingWarning) =>
     {
       acceptableAdsForm.classList.toggle("show-warning", showTrackingWarning);
     });
@@ -1163,7 +1163,7 @@ function populateLists()
     browser.runtime.sendMessage({
       type: "subscriptions.get",
       special: true
-    }).then(subscriptions =>
+    }).then((subscriptions) =>
     {
       const customFilterPromises = subscriptions.map(getSubscriptionFilters);
       Promise.all(customFilterPromises).then((filters) =>
@@ -1173,33 +1173,27 @@ function populateLists()
       }).then(done);
     });
 
-    browser.runtime.sendMessage({
-      type: "prefs.get",
-      key: "subscriptions_exceptionsurl"
-    }).then(url =>
-    {
-      acceptableAdsUrl = url;
-
-      return browser.runtime.sendMessage({
+    Promise.all([
+      browser.runtime.sendMessage({
+        type: "prefs.get",
+        key: "subscriptions_exceptionsurl"
+      }),
+      browser.runtime.sendMessage({
         type: "prefs.get",
         key: "subscriptions_exceptionsurl_privacy"
-      });
-    }).then(urlPrivacy =>
-    {
-      acceptableAdsPrivacyUrl = urlPrivacy;
-
-      return getPref("additional_subscriptions");
-    }).then(subscriptionUrls =>
-    {
-      additionalSubscriptions = subscriptionUrls;
-
-      // Load user subscriptions
-      return browser.runtime.sendMessage({
+      }),
+      getPref("additional_subscriptions"),
+      browser.runtime.sendMessage({
         type: "subscriptions.get",
         downloadable: true
-      });
-    }).then(subscriptions =>
+      })
+    ])
+    .then(([url, privacyUrl, additionalSubscriptionUrls, subscriptions]) =>
     {
+      acceptableAdsUrl = url;
+      acceptableAdsPrivacyUrl = privacyUrl;
+      additionalSubscriptions = additionalSubscriptionUrls;
+
       for (const subscription of subscriptions)
         onSubscriptionMessage("added", subscription);
 

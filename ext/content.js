@@ -130,12 +130,11 @@
   if (!("tabs" in browser))
     browser.tabs = {};
 
-  browser.tabs.captureVisibleTab = (tabId, options, callback) =>
+  browser.tabs.captureVisibleTab = (tabId, options) =>
   {
     log(`Take screenshot of tab with ID ${tabId || activeTab.id}`);
     return fetch("../tests/image.base64.txt")
-      .then(body => body.text())
-      .then(callback);
+      .then(body => body.text());
   };
 
   browser.tabs.create = (options) =>
@@ -162,10 +161,7 @@
     return Promise.resolve(tab);
   };
 
-  browser.tabs.getCurrent = (callback) =>
-  {
-    return Promise.resolve(activeTab).then(callback);
-  };
+  browser.tabs.getCurrent = () => Promise.resolve(activeTab);
 
   browser.tabs.onUpdated = {
     addListener() {}
@@ -178,14 +174,14 @@
     return Promise.resolve();
   };
 
-  browser.tabs.update = (tabId, options, callback) =>
+  browser.tabs.update = (tabId, options) =>
   {
     if (options.active)
     {
       activeTab = tabs.get(tabId);
       log(`Focused tab with ID ${activeTab.id}`);
     }
-    return Promise.resolve().then(callback);
+    return Promise.resolve();
   };
 
   class MockXmlHttpRequest extends XMLHttpRequest
