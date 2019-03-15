@@ -6,10 +6,11 @@ const activeTab = new Promise(
   {
     document.addEventListener("DOMContentLoaded", () =>
     {
-      browser.tabs.query({active: true, lastFocusedWindow: true}, tabs =>
-      {
-        resolve({id: tabs[0].id, url: tabs[0].url});
-      });
+      browser.tabs.query({active: true, lastFocusedWindow: true})
+        .then((tabs) =>
+        {
+          resolve({id: tabs[0].id, url: tabs[0].url});
+        });
     }, {once: true});
   }
 );
