@@ -20,6 +20,7 @@
 "use strict";
 
 let targetPageId = null;
+const {stripTagsUnsafe} = ext.i18n;
 
 function onKeyDown(event)
 {
@@ -45,7 +46,7 @@ function addFilters()
     if (errors.length > 0)
     {
       errors = errors.map(getErrorMessage);
-      alert(errors.join("\n"));
+      alert(stripTagsUnsafe(errors.join("\n")));
     }
     else
       closeDialog(true);

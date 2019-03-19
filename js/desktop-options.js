@@ -28,6 +28,7 @@ const api = require("./api");
 const {$, $$, events} = require("./dom");
 
 const {port} = api;
+const {stripTagsUnsafe} = ext.i18n;
 
 let subscriptionsMap = Object.create(null);
 let filtersMap = Object.create(null);
@@ -582,7 +583,7 @@ function sendMessageHandleErrors(message, onSuccess)
     if (errors.length > 0)
     {
       errors = errors.map(getErrorMessage);
-      alert(errors.join("\n"));
+      alert(stripTagsUnsafe(errors.join("\n")));
     }
     else if (onSuccess)
       onSuccess();

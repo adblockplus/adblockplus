@@ -92,6 +92,13 @@ ext.i18n = {
     }
   },
 
+  // Used for visual strings cleanup(ex. tags from messages used in alert())
+  // Function is not meant to be used together with `innerHTML`
+  stripTagsUnsafe(text)
+  {
+    return text.replace(/<\/?[^>]+>/g, "");
+  },
+
   // Inserts i18n strings into matching elements. Any inner HTML already
   // in the element is parsed as JSON and used as parameters to
   // substitute into placeholders in the i18n message.

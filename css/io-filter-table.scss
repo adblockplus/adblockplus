@@ -118,14 +118,20 @@ io-filter-table .footer .error
   white-space: pre;
 }
 
+io-filter-table .footer .error ul
+{
+  padding: 0;
+  line-height: 30px;
+  list-style: none;
+}
+
 io-filter-table .footer .error strong
 {
   border: 1px dashed #bcbcbc;
   border-radius: 5px;
-  margin: 0 5px;
   padding: 5px;
-  line-height: 30px;
   background-color: #F3F3F3;
+  color: #000;
   font-family: monospace;
 }
 

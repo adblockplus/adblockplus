@@ -165,10 +165,13 @@ class IOElement extends HyperHTMLElement
 //    return this.html`<div>${{i18n:'about-abp'}}</div>`;
 //  }
 const {setElementText} = ext.i18n;
-IOElement.intent("i18n", id =>
+IOElement.intent("i18n", idOrArgs =>
 {
   const fragment = document.createDocumentFragment();
-  setElementText(fragment, id);
+  if (typeof idOrArgs === "string")
+    setElementText(fragment, idOrArgs);
+  else if (idOrArgs instanceof Array)
+    setElementText(fragment, ...idOrArgs);
   return fragment;
 });
 

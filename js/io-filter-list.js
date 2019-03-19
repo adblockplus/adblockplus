@@ -22,14 +22,13 @@
 require("./io-checkbox");
 require("./io-toggle");
 
+const {port} = require("./api");
+const {$, events} = require("./dom");
 const IOElement = require("./io-element");
 const IOFilterBase = require("./io-filter-base");
 
+const {stripTagsUnsafe} = ext.i18n;
 const {utils, wire} = IOElement;
-
-const {port} = require("./api");
-const {$, events} = require("./dom");
-
 const prevFilterText = new WeakMap();
 
 port.postMessage({
@@ -438,7 +437,7 @@ const createImageForFilter = (weakMap, filter) =>
   const isIssue = weakMap === issues;
   const image = createImageForType(isIssue);
   if (isIssue)
-    image.title = getErrorMessage(filter.reason);
+    image.title = stripTagsUnsafe(getErrorMessage(filter.reason));
   weakMap.set(filter, image);
   return image;
 };

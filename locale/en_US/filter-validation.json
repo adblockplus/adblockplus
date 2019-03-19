@@ -21,6 +21,14 @@
   "filter_unknown_option": {
     "message": "Unknown filter option"
   },
+  "invalid_css_selector": {
+    "message": "<strong>$selector$</strong> is not a valid CSS selector",
+    "placeholders": {
+      "selector": {
+        "content": "$1"
+      }
+    }
+  },
   "line": {
     "description": "Error message with line number indicator",
     "message": "Line $number$: $message$",
