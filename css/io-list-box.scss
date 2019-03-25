@@ -27,7 +27,8 @@ io-list-box
 io-list-box,
 io-list-box button,
 io-list-box [role="listbox"],
-io-list-box [role="option"]
+io-list-box [role="option"],
+io-list-box .group
 {
   margin: 0;
   padding: 0;
@@ -43,15 +44,21 @@ io-list-box [role="listbox"]
 {
   position: absolute;
   box-sizing: inherit;
-  width: 100%;
+  width: var(--width, 100%);
   border: 1px solid #bcbcbc;
   cursor: pointer;
 }
 
-io-list-box button,
+io-list-box .group,
 io-list-box [role="option"]
 {
-  padding: 8px 32px;
+  padding: 0.6rem 32px;
+}
+
+io-list-box button
+{
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #bcbcbc;
 }
 
 io-list-box button[aria-expanded="false"]
@@ -71,13 +78,20 @@ io-list-box [role="listbox"]
   overflow: auto;
   bottom: var(--height, 0);
   max-height: 290px;
-  margin-bottom: -1px;
-  border: 1px solid #9b9b9b;
+  box-shadow: 0 -4px 20px 0 rgba(0,0,0,0.11);
 }
 
 io-list-box [role="option"].hover
 {
   background: #e1f2fa;
+}
+
+io-list-box .group,
+io-list-box [role="option"][aria-disabled="true"],
+io-list-box [role="option"][aria-disabled="true"].hover
+{
+  background-color: #eee;
+  cursor: default;
 }
 
 io-list-box [role="option"][aria-selected="true"]
@@ -88,14 +102,18 @@ io-list-box [role="option"][aria-selected="true"]
   background-size: 20px 20px;
 }
 
-io-list-box [role="option"][aria-disabled="true"],
-io-list-box [role="option"][aria-disabled="true"].hover
+io-list-box [role="combobox"]
 {
-  background: #eee;
-  cursor: default;
+  z-index: 1;
 }
 
 html[dir="rtl"] io-list-box [role="option"][aria-selected="true"]
 {
   background-position: calc(100% - 8px) center;
+}
+
+io-list-box .group
+{
+  font-weight: 600;
+  text-transform: uppercase;
 }

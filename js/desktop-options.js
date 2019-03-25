@@ -65,7 +65,7 @@ const promisedDateFormat = promisedLocaleInfo.then((addonLocale) =>
 {
   return new Intl.DateTimeFormat(addonLocale.locale);
 }).catch(dispatchError);
-const promisedRecommendationsLoaded = loadRecommendations();
+const promisedRecommendations = loadRecommendations();
 
 function Collection(details)
 {
@@ -394,7 +394,7 @@ collections.allLangs = new Collection([
   {
     id: "all-lang-table-add",
     emptyTexts: ["options_dialog_language_other_empty"],
-    getTitleFunction: getLanguageTitle
+    getTitleFunction: getItemTitle
   }
 ]);
 collections.more = new Collection([
@@ -518,17 +518,33 @@ function removeCustomFilter(text)
     customFilters.splice(index, 1);
 }
 
+function getItemTitle(item)
+{
+  const {originalTitle, recommended} = item;
+  let description = "";
+  if (recommended === "ads")
+  {
+    description = getLanguageTitle(item);
+  }
+  else
+  {
+    description = getMessage(`common_feature_${recommended}_title`);
+  }
+  return description ? `${originalTitle} (${description})` : originalTitle;
+}
+
 function getLanguageTitle(item)
 {
-  const langs = item.languages.slice();
+  const langs = item.languages.slice(0);
   const firstLang = langs.shift();
-  let title = langs.reduce((acc, lang) =>
+  const description = langs.reduce((acc, lang) =>
   {
     return getMessage("options_language_join", [acc, languages[lang]]);
   }, languages[firstLang]);
-  if (item.originalTitle && item.originalTitle.indexOf("+EasyList") > -1)
-    title += " + " + getMessage("options_english");
-  return title;
+
+  return /\+EasyList$/.test(item.originalTitle) ?
+          `${description} + ${getMessage("options_english")}` :
+          description;
 }
 
 function loadRecommendations()
@@ -540,6 +556,7 @@ function loadRecommendations()
   {
     languages = languagesData;
 
+    const subscriptions = [];
     for (const recommendation of recommendations)
     {
       let {type} = recommendation;
@@ -560,8 +577,10 @@ function loadRecommendations()
         subscription.title = getMessage(`common_feature_${type}_title`);
       }
 
+      subscriptions.push(subscription);
       addSubscription(subscription);
     }
+    return subscriptions;
   })
   .catch(dispatchError);
 }
@@ -639,9 +658,9 @@ function execAction(action, element)
       openDialog(dialog);
       return true;
     }
-    case "open-list-box":
-      const ioListBox = $("io-list-box");
-      ioListBox.change = true;
+    case "open-languages-box":
+      const ioListBox = $("#languages-box");
+      ioListBox.swap = true;
       $("button", ioListBox).focus();
       return true;
     case "remove-filter":
@@ -852,6 +871,8 @@ function selectTabItem(tabId, container, focus)
   if (tab && focus)
     tab.focus();
 
+  if (tabId === "advanced")
+    setupFiltersBox();
   return tabContent;
 }
 
@@ -873,20 +894,72 @@ function onHashChange()
   }
 }
 
-function setupIoListBox()
+function setupFiltersBox()
 {
-  const ioListBox = $("io-list-box");
+  const ioListBox = $("#filters-box");
+
+  if (!ioListBox.items)
+  {
+    ioListBox.getItemTitle = getItemTitle;
+    ioListBox.addEventListener("change", (event) =>
+    {
+      const item = event.detail;
+      addEnableSubscription(item.url, item.originalTitle, item.homepage);
+    });
+  }
+
+  promisedRecommendations.then(subscriptions =>
+  {
+    ioListBox.items = getListBoxItems(subscriptions);
+  });
+}
+
+function getListBoxItems(subscriptions)
+{
+  const urls = new Set();
+  for (const subscription of collections.filterLists.items)
+    urls.add(subscription.url);
+
+  const groups = {
+    ads: [],
+    others: []
+  };
+
+  for (const subscription of subscriptions)
+  {
+    const {recommended, url} = subscription;
+    const key = recommended === "ads" ? recommended : "others";
+    const label = getItemTitle(subscription);
+    const selected = urls.has(url);
+    const overrides = {unselectable: selected, label, selected};
+    groups[key].push(Object.assign({}, subscription, overrides));
+  }
+
+  // items ordered with groups
+  return [
+    ...groups.others,
+    {
+      type: "ads",
+      group: true,
+      description: browser.i18n.getMessage("options_language_filter_list")
+    },
+    ...groups.ads
+  ];
+}
+
+function setupLanguagesBox()
+{
+  const ioListBox = $("#languages-box");
   ioListBox.getItemTitle = getLanguageTitle;
-  ioListBox.placeholder = getMessage("options_dialog_language_title");
   ioListBox.items = collections.allLangs.items;
   ioListBox.addEventListener("close", (event) =>
   {
-    ioListBox.change = false;
+    ioListBox.swap = false;
   });
   ioListBox.addEventListener("change", (event) =>
   {
     const item = event.detail;
-    if (ioListBox.change)
+    if (ioListBox.swap)
       changeLanguageSubscription(item.url);
     else
     {
@@ -898,7 +971,7 @@ function setupIoListBox()
 
 function onDOMLoaded()
 {
-  populateLists().then(setupIoListBox).catch(dispatchError);
+  populateLists().then(setupLanguagesBox).catch(dispatchError);
 
   // Initialize navigation sidebar
   browser.runtime.sendMessage({
@@ -1299,7 +1372,7 @@ function onSubscriptionMessage(action, subscription)
 {
   // Ensure that recommendations have already been loaded so that we can
   // identify and handle recommended filter lists accordingly (see #6838)
-  promisedRecommendationsLoaded.then(() =>
+  promisedRecommendations.then(() =>
   {
     if (subscription.url in subscriptionsMap)
     {
@@ -1462,6 +1535,7 @@ port.onMessage.addListener((message) =>
       break;
     case "subscriptions.respond":
       onSubscriptionMessage(message.action, message.args[0]);
+      setupFiltersBox();
       break;
   }
 });

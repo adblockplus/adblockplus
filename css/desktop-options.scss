@@ -196,9 +196,25 @@ button.list:hover
   box-shadow: inset 0 0 0 3px #077CA6;
 }
 
+button.add.secondary
+{
+  width: 100%;
+  border: 1px solid #bcbcbc;
+}
+
+button.add.secondary:hover
+{
+  border-color: #077CA6;
+}
+
 button.add::before
 {
   content: "+ ";
+}
+
+#filters-box li[aria-selected="true"]
+{
+  background-color: #e1f2fa;
 }
 
 .side-controls:not(.wrap)
@@ -208,7 +224,7 @@ button.add::before
   justify-content: flex-end;
 }
 
-.side-controls button
+.side-controls > *
 {
   margin: 0rem;
 }
@@ -221,27 +237,27 @@ button.add::before
   Yet we need to preserve html direction
   and potential UI that might swap right to left.
 */
-html:not([dir="rtl"]) .side-controls button
+html:not([dir="rtl"]) .side-controls > *
 {
   margin-left: 1rem;
 }
 
-html[dir="rtl"] .side-controls button
+html[dir="rtl"] .side-controls > *
 {
   margin-right: 1rem;
 }
 
-.side-controls.wrap button
+.side-controls.wrap > *
 {
   margin: 0.6rem 0rem;
 }
 
-html:not([dir="rtl"]) .side-controls.wrap button
+html:not([dir="rtl"]) .side-controls.wrap > *
 {
   margin-left: auto;
 }
 
-html[dir="rtl"] .side-controls.wrap button
+html[dir="rtl"] .side-controls.wrap > *
 {
   margin-right: auto;
 }
@@ -1220,6 +1236,22 @@ html[dir="rtl"] #custom-filters .io-filter-table-title
   margin-left: 2rem;
 }
 
+#update-all-subscriptions button
+{
+  display: initial;
+}
+
+#update-all-subscriptions
+{
+  margin: 2rem auto;
+  text-align: right;
+}
+
+html[dir="rtl"] #update-all-subscriptions
+{
+  text-align: left;
+}
+
 #all-filter-lists-table li.show-message .last-update,
 #all-filter-lists-table li:not(.show-message) .message,
 #acceptable-ads:not(.show-dnt-notification) #dnt
@@ -1341,7 +1373,8 @@ body[data-dialog] #dialog-background
   margin: 0rem;
 }
 
-#dialog-content-about
+#dialog-content-about,
+#filters-box button[role="combobox"]
 {
   text-align: center;
 }

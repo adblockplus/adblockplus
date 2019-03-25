@@ -21,7 +21,7 @@ const DELAY = 200;
 
 const IOElement = require("./io-element");
 
-const {$, events} = require("./dom");
+const {$, $$, events} = require("./dom");
 
 // used to create options
 const {wire} = IOElement;
@@ -42,18 +42,29 @@ const KeyCode = {
   TAB: "Tab"
 };
 
+/*
+  <io-list-box
+    autoclose=boolean to close per each change
+    data-text="i18n entry text when it's closed"
+    data-expanded="optional i18n entry text when it's opened"
+  />
+*/
 class IOListBox extends IOElement
 {
   static get observedAttributes()
   {
-    return ["action", "change", "disabled", "expanded", "items", "placeholder"];
+    return ["action", "swap", "disabled", "expanded", "items"];
+  }
+
+  static get booleanAttributes()
+  {
+    return ["autoclose"];
   }
 
   created()
   {
     this._blurTimer = 0;
     this._bootstrap = true;
-    this._text = browser.i18n.getMessage("options_language_add");
     // in case the component has been addressed and
     // it has already an attached items property
     if (this.hasOwnProperty("items"))
@@ -71,14 +82,14 @@ class IOListBox extends IOElement
     return item.originalTitle;
   }
 
-  get change()
+  get swap()
   {
-    return !!this._change;
+    return !!this._swap;
   }
 
-  set change(value)
+  set swap(value)
   {
-    this._change = !!value;
+    this._swap = !!value;
   }
 
   // shortcuts to retrieve sub elements
@@ -152,6 +163,9 @@ class IOListBox extends IOElement
       this._bootstrap = false;
       for (const item of items)
       {
+        if (item.group)
+          continue;
+
         // if an item is selected
         if (!item.disabled)
         {
@@ -161,8 +175,8 @@ class IOListBox extends IOElement
           return;
         }
       }
-      // if no item was selected, hover the first one
-      hover.call(this, "items", items[0]);
+      // if no item was selected, hover the first one that is not a group
+      hover.call(this, "items", items.find(item => !item.group));
     }
 
     // ensure the list of items reflect the meant style
@@ -247,13 +261,17 @@ class IOListBox extends IOElement
     const el = event.target.closest('[role="option"]');
     if (el)
     {
+      const detail = getItem.call(this, el.id);
+      const {unselectable} = detail;
       if (el.getAttribute("aria-disabled") !== "true")
       {
-        this.dispatchEvent(new CustomEvent("change", {
-          detail: getItem.call(this, el.id)
-        }));
+        this.dispatchEvent(new CustomEvent("change", {detail}));
+        this.render();
       }
-      this.expanded = false;
+      if ((this.swap || this.autoclose) && !unselectable)
+      {
+        this.expanded = false;
+      }
     }
   }
 
@@ -266,46 +284,58 @@ class IOListBox extends IOElement
   {
     const el = event.target.closest('[role="option"]');
     if (el && !el.classList.contains("hover"))
-      hover.call(this, "mouse",
-                  this._items.find(item => getID(item) === el.id));
+    {
+      const item = getItem.call(this, el.id);
+      if (item)
+        hover.call(this, "mouse", item);
+    }
   }
 
   // the view
   render()
   {
-    const {change} = this;
+    const {action, dataset, disabled, expanded, id, swap} = this;
     const enabled = this._items.filter(item => !item.disabled).length;
+    let buttonText = "";
+    if (expanded && dataset.expanded)
+      buttonText = dataset.expanded;
+    else
+      buttonText = dataset.text;
+    const {i18n} = browser;
     this.html`
     <button
       role="combobox"
       aria-readonly="true"
-      id="${this.id + "label"}"
-      disabled="${this.disabled}"
-      data-action="${this.action}"
-      aria-owns="${this.id + "popup"}"
-      aria-disabled="${this.disabled}"
-      aria-expanded="${this.expanded}"
-      aria-haspopup="${this.id + "popup"}"
+      id="${id + "label"}"
+      disabled="${disabled}"
+      data-action="${action}"
+      aria-owns="${id + "popup"}"
+      aria-disabled="${disabled}"
+      aria-expanded="${expanded}"
+      aria-haspopup="${id + "popup"}"
       onblur="${this}" onfocus="${this}"
       onkeydown="${this}" onmousedown="${this}"
-    >${this.expanded ? this.placeholder : `+ ${this._text}`}</button>
+    >${"+ " + i18n.getMessage(buttonText)}</button>
     <ul
       role="listbox"
       tab-index="-1"
-      id="${this.id + "popup"}"
-      aria-labelledby="${this.id + "label"}"
-      hidden="${!this.expanded}"
+      id="${id + "popup"}"
+      aria-labelledby="${id + "label"}"
+      hidden="${!expanded}"
       onclick="${this}" onmouseover="${this}"
     >${this._items.map(item =>
     {
-      const id = getID(item);
-      const selected = !change && !item.disabled;
-      const disabled = selected && enabled === 1;
-      return wire(this, `html:${id}`)`
+      if (item.group)
+        return wire()`<li class="group">${item.description}</li>`;
+
+      const itemID = getID(item);
+      const selected = !swap && !item.disabled;
+      const liDisabled = item.unselectable || (selected && enabled === 1);
+      return wire(this, `html:${itemID}`)`
       <li
-        id="${id}"
+        id="${itemID}"
         role="option"
-        aria-disabled="${change ? !item.disabled : disabled}"
+        aria-disabled="${swap ? !item.disabled : liDisabled}"
         aria-selected="${selected}"
       >${this.getItemTitle(item)}</li>`;
     })}</ul>`;
@@ -313,6 +343,39 @@ class IOListBox extends IOElement
 }
 
 IOListBox.define("io-list-box");
+
+let resizeTimer = 0;
+window.addEventListener("resize", () =>
+{
+  // debounce the potentially heavy resize at 30 FPS rate
+  // which is, at least, twice as slower than standard 60 FPS
+  // scheduled when it comes to requestAnimationFrame
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() =>
+  {
+    resizeTimer = 0;
+    for (const ioListBox of $$("io-list-box"))
+    {
+      // avoid computing the width if there are no items
+      // or if the element is inside an invisible tab
+      // where such width cannot possibly be computed
+      if (!ioListBox.items || isVisible(ioListBox))
+        return;
+
+      ioListBox.style.setProperty("--width", "100%");
+      // theoretically one rAF should be sufficient
+      // https://html.spec.whatwg.org/multipage/webappapis.html#event-loop-processing-model
+      // but some browser needs double rAF needed to ensure layout changes
+      // https://bugs.chromium.org/p/chromium/issues/detail?id=675795
+      // https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/15469349/
+      // https://bugs.webkit.org/show_bug.cgi?id=177484
+      requestAnimationFrame(() =>
+      {
+        requestAnimationFrame(setWidth.bind(ioListBox));
+      });
+    }
+  }, 1000 / 30);
+});
 
 // to retrieve a unique ID per item
 function getID(item)
@@ -326,13 +389,15 @@ function getID(item)
 // to retrieve an item from an option id
 function getItem(id)
 {
-  return this._items.find(item => getID(item) === id);
+  return this._items.find(item => (!item.group && getID(item) === id));
 }
 
 // private helper
 function hover(type, item)
 {
   const id = getID(item);
+  if (!id)
+    return;
   const hovered = $(".hover", this);
   if (hovered)
     hovered.classList.remove("hover");
@@ -363,7 +428,9 @@ function findNext(el, other)
   do
   {
     el = el[other];
-  } while (el && el !== first && !getItem.call(this, el.id).disabled);
+  }
+  // skip disabled items and separators/rows without an ID
+  while (el && el !== first && !isDisabled.call(this, el));
   return el === first ? null : el;
 }
 
@@ -374,4 +441,20 @@ function fixSize()
     this._fixedSize = true;
     this.style.setProperty("--height", this.label.offsetHeight + "px");
   }
+}
+
+function isDisabled(el)
+{
+  return el.id && getItem.call(this, el.id).disabled;
+}
+
+function isVisible(el)
+{
+  const cstyle = window.getComputedStyle(el, null);
+  return cstyle.getPropertyValue("display") !== "none";
+}
+
+function setWidth()
+{
+  this.style.setProperty("--width", this.label.offsetWidth + "px");
 }

@@ -138,10 +138,15 @@
                   </span>
                 </span>
                 <button data-single="hidden" data-hide="preconfigured" data-action="remove-subscription" class="icon delete control" title="options_control_remove_title"></button>
-                <button data-single="visible" data-hide="preconfigured" data-action="open-list-box" data-dialog="language-change" class="i18n_options_language_change link"></button>
+                <button data-single="visible" data-hide="preconfigured" data-action="open-languages-box" data-dialog="language-change" class="i18n_options_language_change link"></button>
               </template>
             </ul>
-            <io-list-box></io-list-box>
+            <io-list-box
+              id="languages-box"
+              data-text="options_language_add"
+              data-expanded="options_dialog_language_title"
+              autoclose
+            ></io-list-box>
             <p class="i18n_options_language_tip"></p>
           </div>
         </section>
@@ -150,7 +155,7 @@
           <ul class="list" id="anti-cv-table">
             <template>
               <button data-action="toggle-remove-subscription" data-disable="preconfigured" role="checkbox" class="control icon"></button>
-              <span class="i18n_options_anti_cv_title"></span>
+              <span class="i18n_common_feature_circumvention_title"></span>
               <io-popout type="tooltip" i18n-body="options_anti_cv_tooltip"></io-popout>
               <span class="i18n_options_new_label new"></span>
             </template>
@@ -239,7 +244,9 @@
               <a id="filter-lists-learn-more" class="i18n_options_learn_more" target="_blank"></a>
             </p>
           </header>
-
+          <div id="update-all-subscriptions">
+            <button id="update" class="i18n_options_filterList_update secondary" data-action="update-all-subscriptions"></button>
+          </div>
           <div id="all-filter-lists-table-header" class="th">
             <h3 class="i18n_options_filterList_column_status col5"></h3>
             <h3 class="i18n_options_filterList_column_name col5"></h3>
@@ -281,8 +288,13 @@
             </template>
           </ul>
           <div class="side-controls wrap">
-            <button class="i18n_options_filterList_add primary add" data-action="open-dialog" data-dialog="import"></button>
-            <button id="update" class="i18n_options_filterList_update secondary" data-action="update-all-subscriptions"></button>            
+            <io-list-box
+              id="filters-box"
+              data-text="options_builtin_filterList_add"
+              data-expanded="options_builtin_filterList_add"
+              autoclose
+            ></io-list-box>
+            <button class="i18n_options_filterList_add add secondary" data-action="open-dialog" data-dialog="import"></button>
           </div>
         </section>
 

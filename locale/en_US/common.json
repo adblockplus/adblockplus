@@ -19,6 +19,10 @@
     "description": "Feature title for anti-adblock blocking filter list",
     "message": "Hide Adblock Warning Messages"
   },
+  "common_feature_circumvention_title": {
+    "description": "Title for the Anti-Circumvention list",
+    "message": "ABP Anti-Circumvention Filter List"
+  },
   "common_feature_malware_title": {
     "description": "Feature title for anti-malware filter list",
     "message": "Block Malware"

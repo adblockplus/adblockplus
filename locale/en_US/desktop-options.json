@@ -178,6 +178,10 @@
     "description": "Add other language button in General Tab",
     "message": "Add a language"
   },
+  "options_language_filter_list": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/dae74279dec45b839455626de2d0d5861d33b016/spec/abp/options-page.md#add-filter-list-modal-window",
+    "message": "Language Filter Lists"
+  },
   "options_whitelist_description": {
     "description": "Whitelist tab description",
     "message": "You've turned off ad blocking on these websites and, therefore, will see ads on them."
@@ -276,9 +280,13 @@
     "description": "Text inside 'Last update' column in Advanced tab",
     "message": "hours ago"
   },
+  "options_builtin_filterList_add": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/fdab34c8f8dbf0d134b9a848fa559c5001c13601/spec/abp/options-page.md#filter-list-buttons",
+    "message": "Add built-in filter lists"
+  },
   "options_filterList_add": {
-    "description": "Import button in Advanced tab",
-    "message": "Add a new filter list"
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/fdab34c8f8dbf0d134b9a848fa559c5001c13601/spec/abp/options-page.md#filter-list-buttons",
+    "message": "Add filter list via URL"
   },
   "options_filterList_update": {
     "description": "Update button in Advanced tab",
@@ -434,10 +442,6 @@
   "options_anti_cv_header": {
     "description": "Text for the section about anti CV",
     "message": "Anti-Circumvention"
-  },
-  "options_anti_cv_title": {
-    "description": "Title for the Anti-Circumvention list",
-    "message": "ABP Anti-Circumvention Filter List"
   },
   "options_anti_cv_tooltip": {
     "description": "Tooltip for the anti circumvention list",
