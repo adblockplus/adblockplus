@@ -8,7 +8,8 @@
     "lint": "npm run $ lint",
     "postinstall": "npm run bundle",
     "start": "http-server & npm run watch",
-    "watch": "npm run $ watch"
+    "watch": "npm run $ watch",
+    "test": "npm run $ test"
   },
   "$": {
     "bundle": {
