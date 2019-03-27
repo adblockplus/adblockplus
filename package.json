@@ -100,10 +100,9 @@
     "eslint-config-eyeo": "^2.1.0",
     "glob": "^7.1.2",
     "http-server": "^0.11.1",
-    "hyperhtml": "^2.10.5",
-    "hyperhtml-element": "^1.8.1",
-    "node-sass": "^4.9.0",
-    "npm-dollar": "^0.1.0",
+    "nightmare": "^3.0.1",
+    "stylelint": "^9.5.0",
+    "stylelint-config-eyeo": "^1.0.2",
     "watch": "^1.0.2"
   }
 }
