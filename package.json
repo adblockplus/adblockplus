@@ -17,9 +17,11 @@
         "js": "$ create.js ./js/desktop-options.js ./desktop-options.js"
       },
       "test": [
-        "if [ ! -z $1 ]; then",
-        " echo \"/* eslint-disable */$(browserify --node ./tests/$1.js)\">./smoke/$1.js;",
-        "fi"
+        [
+          "if [ ! -z $1 ]; then",
+          " echo \"/* eslint-disable */$(browserify --node ./tests/$1.js)\">./smoke/$1.js;",
+          "fi"
+        ]
       ]
     },
     "create": {
