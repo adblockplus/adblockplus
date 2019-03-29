@@ -5,24 +5,3 @@ support@adblockplus.org
 Twitter
 Weibo
 1234567890.,'+
-English
-Bahasa Indonesia, Melayu
-Tiếng Việt
-български
-中文
-čeština, slovenčina
-Nederlands
-Deutsch
-עברית
-italiano
-lietuvių kalba
-polski
-português
-español
-বাংলা (ভারত), ગુજરાતી (ભારત), भारतीय, ਪੰਜਾਬੀ (ਭਾਰਤ)
-한국어
-latviešu valoda
-العربية
-français
-românesc
-русский, українська
