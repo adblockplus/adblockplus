@@ -13,7 +13,9 @@
     "test": "npm run $ test",
     "watch": "npm run $ watch",
     "csv-export": "node build/csv-exporter/main.js -e",
-    "csv-import": "node build/csv-exporter/main.js -i"
+    "csv-import": "node build/csv-exporter/main.js -i",
+    "optimize.svg": "svgo --pretty -i $1",
+    "optimize.png": "pngquant --skip-if-larger --force --ext .png --speed 1 -- $1"
   },
   "$": {
     "dev-build": [
@@ -149,8 +151,10 @@
     "http-server": "^0.11.1",
     "local-range": "^0.1.0",
     "nightmare": "^3.0.1",
+    "pngquant": "^2.0.1",
     "stylelint": "^9.9.0",
     "stylelint-config-eyeo": "^1.0.2",
+    "svgo": "^1.2.0",
     "watch": "^1.0.2"
   }
 }
