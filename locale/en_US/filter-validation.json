@@ -17,14 +17,6 @@
   "filter_unknown_option": {
     "message": "Unknown filter option"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ is not a valid CSS selector",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
     "description": "Prepended to error messages to indicate the line number (e.g. \"Line 42: Some error on this line\")",
     "message": "Line $number$",

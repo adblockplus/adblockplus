@@ -352,10 +352,22 @@
     this.text = text;
     this.disabled = false;
   }
-  Filter.fromText = (text) => new Filter(text);
+  Filter.fromText = (text) =>
+  {
+    if (params.filterError)
+      return new InvalidFilter(text, "filter_invalid_csp");
+    return new Filter(text);
+  };
+  Filter.normalize = (text) => text;
 
   function ActiveFilter()
   {
+  }
+
+  function InvalidFilter(text, reason)
+  {
+    Filter.call(this, text);
+    this.reason = reason;
   }
 
   function BlockingFilter()
@@ -369,30 +381,10 @@
 
   modules.filterClasses = {
     ActiveFilter,
+    InvalidFilter,
     BlockingFilter,
     Filter,
     RegExpFilter
-  };
-
-  modules.filterValidation =
-  {
-    parseFilter(text)
-    {
-      if (params.filterError)
-        return {error: "Invalid filter"};
-      return {filter: modules.filterClasses.Filter.fromText(text)};
-    },
-    parseFilters(text)
-    {
-      if (params.filterError)
-        return {errors: ["Invalid filter"]};
-      return {
-        filters: text.split("\n")
-          .filter((filter) => !!filter)
-          .map(modules.filterClasses.Filter.fromText),
-        errors: []
-      };
-    }
   };
 
   modules.synchronizer = {
