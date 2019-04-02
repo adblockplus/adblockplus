@@ -33,7 +33,7 @@
   const {HitLogger} = require("hitLogger");
 
   const {
-    Filter, ActiveFilter, BlockingFilter, RegExpFilter
+    Filter, ActiveFilter, BlockingFilter, InvalidFilter, RegExpFilter
   } = require("filterClasses");
   const {Synchronizer} = require("synchronizer");
 
@@ -268,16 +268,40 @@
     }
   });
 
+  function parseFilter(text)
+  {
+    let filter = null;
+    let error = null;
+
+    text = Filter.normalize(text);
+    if (text)
+    {
+      if (text[0] == "[")
+      {
+        error = "unexpected_filter_list_header";
+      }
+      else
+      {
+        filter = Filter.fromText(text);
+        if (filter instanceof InvalidFilter)
+          error = filter.reason;
+      }
+    }
+
+    return [filter, error];
+  }
+
   port.on("filters.add", (message, sender) =>
   {
-    const result = require("filterValidation").parseFilter(message.text);
-    const errors = [];
-    if (result.error)
-      errors.push(result.error.toString());
-    else if (result.filter)
-      filterStorage.addFilter(result.filter);
+    const [filter, error] = parseFilter(message.text);
 
-    return errors;
+    if (error)
+      return [browser.i18n.getMessage(error)];
+
+    if (filter)
+      filterStorage.addFilter(filter);
+
+    return [];
   });
 
   port.on("filters.blocked", (message, sender) =>
@@ -300,22 +324,38 @@
 
   port.on("filters.importRaw", (message, sender) =>
   {
-    const result = require("filterValidation").parseFilters(message.text);
+    const filters = [];
     const errors = [];
-    for (const error of result.errors)
+
+    const lines = message.text.split("\n");
+    for (let i = 0; i < lines.length; i++)
     {
-      if (error.type != "unexpected-filter-list-header")
-        errors.push(error.toString());
+      const [filter, error] = parseFilter(lines[i]);
+
+      if (error)
+      {
+        if (error != "unexpected_filter_list_header")
+        {
+          errors.push(
+            browser.i18n.getMessage("line", (i + 1).toLocaleString()) + ": " +
+            browser.i18n.getMessage(error)
+          );
+        }
+      }
+      else if (filter)
+      {
+        filters.push(filter);
+      }
     }
 
     if (errors.length > 0)
       return errors;
 
-    const seenFilter = Object.create(null);
-    for (const filter of result.filters)
+    const addedFilters = new Set();
+    for (const filter of filters)
     {
       filterStorage.addFilter(filter);
-      seenFilter[filter.text] = null;
+      addedFilters.add(filter.text);
     }
 
     if (!message.removeExisting)
@@ -331,10 +371,8 @@
       for (let i = subscription.filterCount; i--;)
       {
         const filter = subscription.filterAt(i);
-        if (/^@@\|\|([^/:]+)\^\$document$/.test(filter.text))
-          continue;
-
-        if (!(filter.text in seenFilter))
+        if (!/^@@\|\|([^/:]+)\^\$document$/.test(filter.text) &&
+            !addedFilters.has(filter.text))
           filterStorage.removeFilter(filter);
       }
     }
