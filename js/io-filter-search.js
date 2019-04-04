@@ -259,9 +259,7 @@ function addFilter(data)
 
 function dispatch(type, detail)
 {
-  // do not bother at all if there are no filters
-  // initialize the table on "filter:add" anyway
-  if (type === "filter:add" || this.filters.length)
+  if (/^filter:(?:add|error)$/.test(type) || this.filters.length)
     this.dispatchEvent(new CustomEvent(type, {detail}));
 }
 
