@@ -207,7 +207,7 @@
     const details = subscriptionDetails[this.url];
     if (details)
     {
-      this.disabled = !!details.disabled;
+      this._disabled = !!details.disabled;
       this.title = details.title || "";
       if (details.filterText)
       {
