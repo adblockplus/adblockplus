@@ -45,10 +45,8 @@
     return candidates;
   };
 
-  let selectedLocale = window.navigator.language;
   const match = /[?&]locale=([\w-]+)/.exec(window.location.search);
-  if (match)
-    selectedLocale = match[1];
+  const selectedLocale = (match) ? match[1] : "en_US";
 
   const locales = getLocaleCandidates(selectedLocale);
   const catalog = Object.create(null);
