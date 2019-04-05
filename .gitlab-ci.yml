@@ -101,6 +101,7 @@ build:
     refs:
       - /^release-[0-9]{4}-[0-9]+(\.[0-9]+)?$/
       - /^feature-[1-9][0-9]*(|-.+)$/
+      - /^compat-\w+-[0-9]{4}-[0-9]+(\.[0-9]+)?$/
     variables:
       - $CI_PROJECT_NAME == 'adblockplusui'
 
@@ -167,6 +168,7 @@ pages:
     refs:
       - /^release-[0-9]{4}-[0-9]+(\.[0-9]+)?$/
       - /^feature-[1-9][0-9]*(|-.+)$/
+      - /^compat-\w+-[0-9]{4}-[0-9]+(\.[0-9]+)?$/
     variables:
       - $CI_PROJECT_NAME == 'adblockplusui-nightlies'
 
