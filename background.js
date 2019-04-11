@@ -165,7 +165,7 @@
   const subscriptionDetails = {
     [easyListGermany]: {
       title: "EasyList Germany+EasyList",
-      filters: ["-ad-banner.", "-ad-big.", "-ad-bottom-", "-ad-button-"],
+      filterText: ["-ad-banner.", "-ad-big.", "-ad-bottom-", "-ad-button-"],
       installed: true
     },
     [acceptableAds]: {
@@ -200,7 +200,7 @@
     this.url = url;
     this._disabled = false;
     this._lastDownload = 1234;
-    this._filters = [];
+    this._filterText = [];
     this.homepage = "https://easylist.adblockplus.org/";
     this.downloadStatus = params.downloadStatus;
 
@@ -209,9 +209,9 @@
     {
       this.disabled = !!details.disabled;
       this.title = details.title || "";
-      if (details.filters)
+      if (details.filterText)
       {
-        this._filters.push(...details.filters);
+        this._filterText = details.filterText.slice();
       }
     }
   }
@@ -236,9 +236,9 @@
       modules.filterNotifier.filterNotifier.emit("subscription.lastDownload",
         this);
     },
-    *filters()
+    *filterText()
     {
-      yield* this._filters;
+      yield* this._filterText;
     }
   };
   Subscription.fromURL = function(url)
@@ -255,34 +255,34 @@
   {
     this.url = url;
     this.disabled = false;
-    this._filters = knownFilters.slice();
+    this._filterText = knownFilterText.slice();
   }
   SpecialSubscription.prototype = {
     get filterCount()
     {
-      return this._filters.length;
+      return this._filterText.length;
     },
-    *filters()
+    *filterText()
     {
-      yield* this._filters;
+      yield* this._filterText;
     },
-    addFilter(filter)
+    addFilterText(filterText)
     {
-      this._filters.push(filter);
+      this._filterText.push(filterText);
     },
-    filterAt(idx)
+    filterTextAt(idx)
     {
-      return this._filters[idx];
+      return this._filterText[idx];
     },
-    removeFilter(filter)
+    removeFilter(filterText)
     {
-      for (let i = 0; i < this._filters.length; i++)
+      for (let i = 0; i < this._filterText.length; i++)
       {
-        if (this._filters[i].text == filter.text)
+        if (this._filterText[i] == filterText)
         {
-          this._filters.splice(i, 1);
+          this._filterText.splice(i, 1);
           modules.filterNotifier.filterNotifier.emit("filter.removed",
-            filter);
+            filterText);
           return;
         }
       }
@@ -331,18 +331,18 @@
 
       addFilter(filter)
       {
-        for (const customFilter of customSubscription.filters())
+        for (const text of customSubscription.filterText())
         {
-          if (customFilter.text == filter.text)
+          if (text == filter.text)
             return;
         }
-        customSubscription.addFilter(filter);
+        customSubscription.addFilterText(filter.text);
         modules.filterNotifier.filterNotifier.emit("filter.added", filter);
       },
 
       removeFilter(filter)
       {
-        customSubscription.removeFilter(filter);
+        customSubscription.removeFilter(filter.text);
       }
     }
   };
@@ -506,7 +506,7 @@
     }
   });
 
-  const filters = [
+  const knownFilterText = [
     "@@||alternate.de^$document",
     "@@||der.postillion.com^$document",
     "@@||taz.de^$document",
@@ -528,7 +528,6 @@
     "###ad-bereich2-08",
     "###ad-bereich2-skyscrapper"
   ];
-  const knownFilters = filters.map(modules.filterClasses.Filter.fromText);
 
   const knownSubscriptions = new Map();
   for (const url in subscriptionDetails)
