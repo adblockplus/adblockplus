@@ -27,6 +27,10 @@ require("./io-toggle");
 
 const api = require("./api");
 const {$, $$, events} = require("./dom");
+const {
+  closeAddFiltersByURL,
+  setupAddFiltersByURL
+} = require("./add-filters-by-url");
 
 const {port} = api;
 const {stripTagsUnsafe} = ext.i18n;
@@ -657,6 +661,9 @@ function execAction(action, element)
       openDialog(dialog);
       return true;
     }
+    case "close-filterlist-by-url":
+      closeAddFiltersByURL();
+      return true;
     case "open-languages-box":
       const ioListBox = $("#languages-box");
       ioListBox.swap = true;
@@ -752,9 +759,9 @@ function execAction(action, element)
 
       if (form.checkValidity())
       {
-        addEnableSubscription($("#import-list-url").value);
+        addEnableSubscription($("#import-list-url", form).value);
         form.reset();
-        closeDialog();
+        closeAddFiltersByURL();
       }
       else
       {
@@ -871,7 +878,10 @@ function selectTabItem(tabId, container, focus)
     tab.focus();
 
   if (tabId === "advanced")
+  {
     setupFiltersBox();
+    setupAddFiltersByURL();
+  }
   return tabContent;
 }
 

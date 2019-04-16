@@ -17,11 +17,9 @@
 
 io-list-box
 {
-  --height: auto;
   display: block;
   position: relative;
   box-sizing: border-box;
-  height: var(--height, auto);
 }
 
 io-list-box,
@@ -42,7 +40,6 @@ io-list-box .group
 io-list-box button,
 io-list-box [role="listbox"]
 {
-  position: absolute;
   box-sizing: inherit;
   width: var(--width, 100%);
   border: 1px solid #bcbcbc;
@@ -76,7 +73,8 @@ io-list-box button:focus
 io-list-box [role="listbox"]
 {
   overflow: auto;
-  bottom: var(--height, 0);
+  position: absolute;
+  bottom: 2.2em;
   max-height: 290px;
   box-shadow: 0 -4px 20px 0 rgba(0,0,0,0.11);
 }

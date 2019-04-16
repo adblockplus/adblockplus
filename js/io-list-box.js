@@ -127,8 +127,8 @@ class IOListBox extends IOElement
     setTimeout(
       () =>
       {
-        // be sure the eleemnt is blurred to re-open on focus
-        if (!value)
+        // be sure the element is blurred to re-open on focus
+        if (!value && this.expanded)
           this.ownerDocument.activeElement.blur();
         this.dispatchEvent(new CustomEvent(value ? "open" : "close"));
       },
@@ -171,16 +171,12 @@ class IOListBox extends IOElement
         {
           // simulate hover it and exit
           hover.call(this, "items", item);
-          fixSize.call(this);
           return;
         }
       }
       // if no item was selected, hover the first one that is not a group
       hover.call(this, "items", items.find(item => !item.group));
     }
-
-    // ensure the list of items reflect the meant style
-    fixSize.call(this);
   }
 
   // events related methods
@@ -432,15 +428,6 @@ function findNext(el, other)
   // skip disabled items and separators/rows without an ID
   while (el && el !== first && !isDisabled.call(this, el));
   return el === first ? null : el;
-}
-
-function fixSize()
-{
-  if (!this._fixedSize)
-  {
-    this._fixedSize = true;
-    this.style.setProperty("--height", this.label.offsetHeight + "px");
-  }
 }
 
 function isDisabled(el)

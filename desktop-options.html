@@ -288,7 +288,23 @@
               data-expanded="options_builtin_filterList_add"
               autoclose
             ></io-list-box>
-            <button data-i18n="options_filterList_add" class="add secondary" data-action="open-dialog" data-dialog="import"></button>
+            <div id="filterlist-by-url-wrap">
+              <div id="filterlist-by-url" aria-hidden="true">
+                <h3 data-i18n="options_filterList_add" class="add secondary"></h3>
+                <form data-validation="custom" novalidate>
+                  <p class="main-input">
+                    <input type="url" data-i18n-placeholder="options_dialog_import_subscription_location" required>
+                    <span data-i18n="options_dialog_import_subscription_location_error" class="error-msg"></span>
+                    <span class="icon attention"></span>
+                  </p>
+                  <p class="side-controls">
+                    <button type="button" data-i18n="options_dialog_import_title" class="primary" data-action="validate-import-subscription"></button>
+                    <button type="reset" data-i18n="options_customFilter_cancel" class="secondary" data-action="close-filterlist-by-url"></button>
+                  </p>
+                </form>
+              </div>
+              <button data-i18n="options_filterList_add" class="add secondary" data-action="open-filterlist-by-url"></button>
+            </div>
           </div>
         </section>
 
@@ -411,21 +427,6 @@
               </button>
             </template>
           </ul>
-        </div>
-        <!-- Add import subscription -->
-        <div id="dialog-content-import" class="dialog-content">
-          <form data-validation="custom" novalidate>
-            <p class="floating-input">
-              <input placeholder=" " id="import-list-url" class="default-focus" type="url" required/>
-              <label for="import-list-url" data-i18n="options_dialog_import_subscription_location"></label>
-              <span class="icon attention"></span>
-              <span data-i18n="options_dialog_import_subscription_location_error" class="error-msg"></span>
-            </p>
-            <p class="side-controls">
-              <button data-i18n="options_customFilter_cancel" class="secondary" type="reset" data-action="close-dialog"></button>
-              <button type="button" data-i18n="options_dialog_import_title" class="primary" data-action="validate-import-subscription"></button>
-            </p>
-          </form>
         </div>
         <!-- Add predefined subscription -->
         <div id="dialog-content-predefined" class="dialog-content">
