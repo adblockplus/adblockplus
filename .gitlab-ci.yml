@@ -101,9 +101,9 @@ build:
       - adblockpluschrome/adblockplus-edge-${CI_COMMIT_SHA:0:8}.zip
   only:
     refs:
-      - /^release-[0-9]{4}-[0-9]+(\.[0-9]+)?$/
+      - /^release-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
       - /^feature-[1-9][0-9]*(|-.+)$/
-      - /^compat-\w+-[0-9]{4}-[0-9]+(\.[0-9]+)?$/
+      - /^compat-\w+-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
     variables:
       - $CI_PROJECT_NAME == 'adblockplusui'
 
@@ -171,9 +171,9 @@ pages:
       - public/
   only:
     refs:
-      - /^release-[0-9]{4}-[0-9]+(\.[0-9]+)?$/
+      - /^release-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
       - /^feature-[1-9][0-9]*(|-.+)$/
-      - /^compat-\w+-[0-9]{4}-[0-9]+(\.[0-9]+)?$/
+      - /^compat-\w+-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
     variables:
       - $CI_PROJECT_NAME == 'adblockplusui-nightlies'
 
