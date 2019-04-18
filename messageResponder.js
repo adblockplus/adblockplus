@@ -476,7 +476,7 @@
       if (message.disabledFilters)
       {
         subscription.disabledFilters =
-          Array.from(subscription.filterText(), Filter.fromText)
+          Array.from(s.filterText(), Filter.fromText)
           .filter((f) => f instanceof ActiveFilter && f.disabled)
           .map((f) => f.text);
       }
