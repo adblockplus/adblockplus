@@ -518,12 +518,12 @@ function updateCustomFiltersUi()
 
 function getLanguageTitle(item)
 {
-  const prefixes = item.prefixes.split(",");
-  const firstPrefix = prefixes.shift();
-  let title = prefixes.reduce((acc, prefix) =>
+  const langs = item.languages.slice();
+  const firstLang = langs.shift();
+  let title = langs.reduce((acc, lang) =>
   {
-    return getMessage("options_language_join", [acc, languages[prefix]]);
-  }, languages[firstPrefix]);
+    return getMessage("options_language_join", [acc, languages[lang]]);
+  }, languages[firstLang]);
   if (item.originalTitle && item.originalTitle.indexOf("+EasyList") > -1)
     title += " + " + getMessage("options_english");
   return title;
@@ -533,32 +533,29 @@ function loadRecommendations()
 {
   return Promise.all([
     fetch("data/languages.json").then((resp) => resp.json()),
-    fetch("subscriptions.xml").then((resp) => resp.text())
-  ]).then(([json, text]) =>
+    fetch("subscriptions.json").then((resp) => resp.json())
+  ]).then(([languagesData, recommendations]) =>
   {
-    languages = json;
+    languages = languagesData;
 
-    const doc = new DOMParser().parseFromString(text, "application/xml");
-    const elements = doc.documentElement.getElementsByTagName("subscription");
-    for (const element of elements)
+    for (const recommendation of recommendations)
     {
-      let type = element.getAttribute("type");
+      let {type} = recommendation;
       const subscription = {
         disabled: true,
         downloadStatus: null,
         homepage: null,
-        originalTitle: element.getAttribute("title"),
-        prefixes: element.getAttribute("prefixes"),
+        originalTitle: recommendation.title,
+        languages: recommendation.languages,
         recommended: type,
-        url: element.getAttribute("url")
+        url: recommendation.url
       };
 
       if (subscription.recommended != "ads" &&
           subscription.recommended != "circumvention")
       {
         type = type.replace(/\W/g, "_");
-        subscription.title = getMessage("common_feature_" +
-                                        type + "_title");
+        subscription.title = getMessage(`common_feature_${type}_title`);
       }
 
       addSubscription(subscription);

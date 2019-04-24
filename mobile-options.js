@@ -86,20 +86,17 @@
 
   function getRecommendedAds()
   {
-    return fetch("subscriptions.xml")
-      .then((response) => response.text())
-      .then((text) =>
+    return fetch("subscriptions.json")
+      .then((response) => response.json())
+      .then((recommendations) =>
       {
-        const doc = new DOMParser().parseFromString(text, "application/xml");
-        const elements = Array.from(doc.getElementsByTagName("subscription"));
-
-        return elements
-          .filter((element) => element.getAttribute("type") == "ads")
-          .map((element) =>
+        return recommendations
+          .filter((recommendation) => recommendation.type == "ads")
+          .map((recommendation) =>
           {
             return {
-              title: element.getAttribute("title"),
-              url: element.getAttribute("url")
+              title: recommendation.title,
+              url: recommendation.url
             };
           });
       });
