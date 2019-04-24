@@ -28,6 +28,7 @@ let acceptableAdsUrl = null;
 let acceptableAdsPrivacyUrl = null;
 let isCustomFiltersLoaded = false;
 let additionalSubscriptions = [];
+let languages = {};
 
 const collections = Object.create(null);
 const {getMessage} = browser.i18n;
@@ -517,7 +518,12 @@ function updateCustomFiltersUi()
 
 function getLanguageTitle(item)
 {
-  let title = item.specialization;
+  const prefixes = item.prefixes.split(",");
+  const firstPrefix = prefixes.shift();
+  let title = prefixes.reduce((acc, prefix) =>
+  {
+    return getMessage("options_language_join", [acc, languages[prefix]]);
+  }, languages[firstPrefix]);
   if (item.originalTitle && item.originalTitle.indexOf("+EasyList") > -1)
     title += " + " + getMessage("options_english");
   return title;
@@ -525,39 +531,39 @@ function getLanguageTitle(item)
 
 function loadRecommendations()
 {
-  return fetch("subscriptions.xml")
-    .then((response) =>
+  return Promise.all([
+    fetch("data/languages.json").then((resp) => resp.json()),
+    fetch("subscriptions.xml").then((resp) => resp.text())
+  ]).then(([json, text]) =>
+  {
+    languages = json;
+
+    const doc = new DOMParser().parseFromString(text, "application/xml");
+    const elements = doc.documentElement.getElementsByTagName("subscription");
+    for (const element of elements)
     {
-      return response.text();
-    })
-    .then((text) =>
-    {
-      const doc = new DOMParser().parseFromString(text, "application/xml");
-      const elements = doc.documentElement.getElementsByTagName("subscription");
-      for (const element of elements)
+      let type = element.getAttribute("type");
+      const subscription = {
+        disabled: true,
+        downloadStatus: null,
+        homepage: null,
+        originalTitle: element.getAttribute("title"),
+        prefixes: element.getAttribute("prefixes"),
+        recommended: type,
+        url: element.getAttribute("url")
+      };
+
+      if (subscription.recommended != "ads" &&
+          subscription.recommended != "circumvention")
       {
-        let type = element.getAttribute("type");
-        const subscription = {
-          disabled: true,
-          downloadStatus: null,
-          homepage: null,
-          specialization: element.getAttribute("specialization"),
-          originalTitle: element.getAttribute("title"),
-          recommended: type,
-          url: element.getAttribute("url")
-        };
-
-        if (subscription.recommended != "ads" &&
-            subscription.recommended != "circumvention")
-        {
-          type = type.replace(/\W/g, "_");
-          subscription.title = getMessage("common_feature_" +
-                                          type + "_title");
-        }
-
-        addSubscription(subscription);
+        type = type.replace(/\W/g, "_");
+        subscription.title = getMessage("common_feature_" +
+                                        type + "_title");
       }
-    });
+
+      addSubscription(subscription);
+    }
+  });
 }
 
 function findParentData(element, dataName, returnElement)

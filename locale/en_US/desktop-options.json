@@ -144,6 +144,20 @@
     "description": "Language section tip in General tab",
     "message": "<strong>TIP:</strong> Only select the languages you need. Selecting more will slow down the ad blocker and, therefore, your browsing speed."
   },
+  "options_language_join": {
+    "description": "Combines language filter list specifications(language names) together, ex: -> https://gitlab.com/eyeo/specs/spec/blob/master/spec/abp/options-page.md#language-drop-down",
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
+  },
   "options_more_filters_header": {
     "description": "Section title in General tab",
     "message": "More filters"
