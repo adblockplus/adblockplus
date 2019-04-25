@@ -35,7 +35,7 @@
   const {
     Filter, ActiveFilter, BlockingFilter, InvalidFilter, RegExpFilter
   } = require("filterClasses");
-  const {Synchronizer} = require("synchronizer");
+  const {synchronizer} = require("synchronizer");
 
   const info = require("info");
   const {
@@ -74,7 +74,7 @@
     if (subscription instanceof SpecialSubscription)
       obj.filters = Array.from(subscription.filterText(), convertFilterText);
 
-    obj.isDownloading = Synchronizer.isExecuting(subscription.url);
+    obj.isDownloading = synchronizer.isExecuting(subscription.url);
     return obj;
   }
 
@@ -192,7 +192,7 @@
     filterStorage.addSubscription(subscription);
     if (subscription instanceof DownloadableSubscription &&
         !subscription.lastDownload)
-      Synchronizer.execute(subscription);
+      synchronizer.execute(subscription);
   }
 
   port.on("app.get", (message, sender) =>
@@ -523,7 +523,7 @@
     for (const subscription of subscriptions)
     {
       if (subscription instanceof DownloadableSubscription)
-        Synchronizer.execute(subscription, true);
+        synchronizer.execute(subscription, true);
     }
   });
 

@@ -388,23 +388,23 @@
   };
 
   modules.synchronizer = {
-    Synchronizer: {
+    synchronizer: {
       _downloading: false,
       execute(subscription, manual)
       {
-        modules.synchronizer.Synchronizer._downloading = true;
+        modules.synchronizer.synchronizer._downloading = true;
         modules.filterNotifier.filterNotifier.emit(
           "subscription.downloading", subscription
         );
         setTimeout(() =>
         {
-          modules.synchronizer.Synchronizer._downloading = false;
+          modules.synchronizer.synchronizer._downloading = false;
           subscription.lastDownload = Date.now() / 1000;
         }, 500);
       },
       isExecuting(url)
       {
-        return modules.synchronizer.Synchronizer._downloading;
+        return modules.synchronizer.synchronizer._downloading;
       }
     }
   };
