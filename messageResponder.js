@@ -139,9 +139,10 @@
       let subscriptions = [];
       if (filter)
       {
-        subscriptions = Array.from(filter.subscriptions()).
-                        filter(includeActiveRemoteSubscriptions).
-                        map(s => s.url);
+        subscriptions = filterStorage.subscriptions(filter.text);
+        subscriptions = Array.from(subscriptions)
+          .filter(includeActiveRemoteSubscriptions)
+          .map(s => s.url);
         filter = convertFilter(filter);
       }
       request = convertObject(["url", "type", "docDomain", "thirdParty"],
