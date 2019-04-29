@@ -141,7 +141,7 @@ class IOFilterTable extends IOElement
 
     bind(footerError)`${
       errors ?
-        this.getErrorMessage(errors) :
+        errors.join("\n") :
         {i18n: "filter_action_failed"}
     }`;
   }
