@@ -370,21 +370,10 @@
     this.reason = reason;
   }
 
-  function BlockingFilter()
-  {
-  }
-
-  function RegExpFilter()
-  {
-  }
-  RegExpFilter.typeMap = Object.create(null);
-
   modules.filterClasses = {
     ActiveFilter,
     InvalidFilter,
-    BlockingFilter,
-    Filter,
-    RegExpFilter
+    Filter
   };
 
   modules.synchronizer = {
@@ -405,18 +394,6 @@
       isExecuting(url)
       {
         return modules.synchronizer.synchronizer._downloading;
-      }
-    }
-  };
-
-  modules.matcher = {
-    defaultMatcher: {
-      matchesAny(url, requestType, docDomain, thirdParty)
-      {
-        const blocked = params.blockedURLs.split(",");
-        if (blocked.indexOf(url) >= 0)
-          return new modules.filterClasses.BlockingFilter();
-        return null;
       }
     }
   };

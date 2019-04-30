@@ -28,7 +28,6 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
   - [open](#appopen)
 - filters
   - [add](#filtersadd)
-  - [blocked](#filtersblocked)
   - [get](#filtersget)
   - [importRaw](#filtersimportraw)
   - [listen](#filterslisten)
@@ -127,19 +126,6 @@ If filter includes `showPageOptions`:
 **Response**
 
 **string[]** errors
-
-#### filters.blocked
-
-**Arguments**
-
-- **string** docDomain
-- **string** requestType (see [`RegExpFilter.typeMap`](https://hg.adblockplus.org/adblockpluscore/file/master/lib/filterClasses.js))
-- **boolean|(null)** thirdParty
-- **string** url
-
-**Response**
-
-**boolean** isBlocked
 
 #### filters.get
 

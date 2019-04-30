@@ -26,14 +26,13 @@
   const {Utils} = require("utils");
   const {filterStorage} = require("filterStorage");
   const {filterNotifier} = require("filterNotifier");
-  const {defaultMatcher} = require("matcher");
   const {Notification: NotificationStorage} = require("notification");
   const {getActiveNotification, shouldDisplay,
          notificationClicked} = require("notificationHelper");
   const {HitLogger} = require("hitLogger");
 
   const {
-    Filter, ActiveFilter, BlockingFilter, InvalidFilter, RegExpFilter
+    Filter, ActiveFilter, InvalidFilter
   } = require("filterClasses");
   const {synchronizer} = require("synchronizer");
 
@@ -305,15 +304,6 @@
       filterStorage.addFilter(filter);
 
     return [];
-  });
-
-  port.on("filters.blocked", (message, sender) =>
-  {
-    const filter = defaultMatcher.matchesAny(message.url,
-      RegExpFilter.typeMap[message.requestType], message.docDomain,
-      message.thirdParty);
-
-    return filter instanceof BlockingFilter;
   });
 
   port.on("filters.get", (message, sender) =>
