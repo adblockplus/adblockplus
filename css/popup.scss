@@ -105,11 +105,6 @@ footer
   padding: var(--padding-primary);
 }
 
-header
-{
-  padding-bottom: var(--padding-primary);
-}
-
 header .top,
 #page-status > div:not(.refresh-info),
 footer
@@ -118,25 +113,27 @@ footer
   flex-direction: row;
 }
 
+header .top
+{
+  align-items: center;
+}
+
 header h1
 {
-  color: var(--color-secondary);
-  background-image: url(icons/abp-logo.svg);
+  color: transparent;
+  background-image: url(icons/abp-full-logo.svg);
   background-repeat: no-repeat;
-  background-size: 24px;
-  font-size: var(--font-size-big);
   flex-grow: 1;
+  user-select: none;
 }
 
 html:not([dir="rtl"]) header h1
 {
-  padding-left: 30px;
   background-position: left center;
 }
 
 html[dir="rtl"] header h1
 {
-  padding-right: 30px;
   background-position: right center;
 }
 

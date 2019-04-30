@@ -571,10 +571,9 @@ html[dir="rtl"] [data-validation] .floating-input input:valid
   height: auto;
 }
 
-#sidebar header
+html[dir="ltr"] #sidebar header
 {
   margin-right: 2rem;
-  text-align: right;
 }
 
 html[dir="rtl"] #sidebar header
@@ -582,23 +581,30 @@ html[dir="rtl"] #sidebar header
   margin-left: 2rem;
 }
 
-#sidebar header h1
+#sidebar header h1,
+#sidebar header p
 {
   margin: 0rem;
-  font-size: 1.5rem;
-  line-height: 2rem;
+  user-select: none;
 }
 
-#sidebar header h1 strong
+#sidebar header h1
 {
-  font-weight: 700;
+  font-size: 0;
+  line-height: 48px;
+  color: transparent;
+  background-image: url(icons/abp-full-logo.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #sidebar header p
 {
-  margin: 0rem;
-  font-size: 1.8rem;
+  margin-top: 30px;
   line-height: 2.6rem;
+  opacity: 0.6;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 html[dir="rtl"] #sidebar header
@@ -606,10 +612,14 @@ html[dir="rtl"] #sidebar header
   text-align: left;
 }
 
-#sidebar-logo
+html[dir="rtl"] #sidebar header p
 {
-  width: 3rem;
-  margin-bottom: 0.7rem;
+  text-align: right;
+}
+
+html[dir="rtl"] #sidebar header h1
+{
+  background-position: center left;
 }
 
 #sidebar nav,
