@@ -245,17 +245,13 @@ class IOListBox extends IOElement
     const el = event.target.closest('[role="option"]');
     if (el)
     {
-      if (this.change)
-      {
-        this.expanded = false;
-      }
       if (el.getAttribute("aria-disabled") !== "true")
       {
         this.dispatchEvent(new CustomEvent("change", {
           detail: getItem.call(this, el.id)
         }));
-        this.render();
       }
+      this.expanded = false;
     }
   }
 
