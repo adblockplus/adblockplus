@@ -21,6 +21,8 @@ const DELAY = 200;
 
 const IOElement = require("./io-element");
 
+const {$$} = require("./dom");
+
 // used to create options
 const {wire} = IOElement;
 
@@ -373,8 +375,39 @@ function fixSize()
   if (!this._fixedSize)
   {
     this._fixedSize = true;
-    const button = this.querySelector("button");
-    this.style.setProperty("--width", button.offsetWidth + "px");
-    this.style.setProperty("--height", button.offsetHeight + "px");
+    this.style.setProperty("--height", this.label.offsetHeight + "px");
+    setWidth.call(this);
   }
 }
+
+function setWidth()
+{
+  this.style.setProperty("--width", this.label.offsetWidth + "px");
+}
+
+let resizeTimer = 0;
+window.addEventListener("resize", () =>
+{
+  // debounce the potentially heavy resize at 30 FPS rate
+  // which is, at least, twice as slower than standard 60 FPS
+  // scheduled when it comes to requestAnimationFrame
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() =>
+  {
+    resizeTimer = 0;
+    for (const ioListBox of $$("io-list-box"))
+    {
+      ioListBox.style.setProperty("--width", "100%");
+      // theoretically one rAF should be sufficient
+      // https://html.spec.whatwg.org/multipage/webappapis.html#event-loop-processing-model
+      // but some browser needs double rAF needed to ensure layout changes
+      // https://bugs.chromium.org/p/chromium/issues/detail?id=675795
+      // https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/15469349/
+      // https://bugs.webkit.org/show_bug.cgi?id=177484
+      requestAnimationFrame(() =>
+      {
+        requestAnimationFrame(setWidth.bind(ioListBox));
+      });
+    }
+  }, 1000 / 30);
+});
