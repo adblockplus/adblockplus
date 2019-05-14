@@ -17,11 +17,12 @@
 
 "use strict";
 
+const {port} = require("./api");
+
 const reportData = new DOMParser().parseFromString("<report></report>",
                                                  "text/xml");
 let dataGatheringTabId = null;
 let isMinimumTimeMet = false;
-const port = browser.runtime.connect({name: "ui"});
 
 port.onMessage.addListener((message) =>
 {
