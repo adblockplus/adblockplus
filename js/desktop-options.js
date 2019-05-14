@@ -25,8 +25,8 @@ require("./io-list-box");
 require("./io-popout");
 require("./io-toggle");
 
+const {port} = require("./api");
 const {$} = require("./dom");
-const port = browser.runtime.connect({name: "ui"});
 
 let subscriptionsMap = Object.create(null);
 let filtersMap = Object.create(null);

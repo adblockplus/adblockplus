@@ -25,8 +25,8 @@ const IOScrollbar = require("./io-scrollbar");
 
 const {utils, wire} = IOElement;
 
+const {port} = require("./api");
 const {$} = require("./dom");
-const port = browser.runtime.connect({name: "ui"});
 
 const prevFilterText = new WeakMap();
 
