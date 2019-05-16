@@ -987,19 +987,19 @@ function onDOMLoaded()
   });
   getDocLink("social_twitter").then(link =>
   {
-    $("#twitter").setAttribute("href", link);
+    $("#social .twitter").setAttribute("href", link);
   });
   getDocLink("social_facebook").then(link =>
   {
-    $("#facebook").setAttribute("href", link);
+    $("#social .facebook").setAttribute("href", link);
   });
   getDocLink("social_gplus").then(link =>
   {
-    $("#google-plus").setAttribute("href", link);
+    $("#social .google-plus").setAttribute("href", link);
   });
   getDocLink("social_weibo").then(link =>
   {
-    $("#weibo").setAttribute("href", link);
+    $("#social .weibo").setAttribute("href", link);
   });
 
   $("#dialog").addEventListener("keydown", function(e)

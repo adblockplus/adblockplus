@@ -424,19 +424,24 @@ button[role="checkbox"][disabled].icon.toggle::before
   margin: 0em auto;
 }
 
-.icon#twitter::before
+.icon.twitter::before
 {
   background-image: url("icons/twitter.svg");
 }
 
-.icon#facebook::before
+.icon.facebook::before
 {
   background-image: url("icons/facebook.svg");
 }
 
-.icon#google-plus::before
+.icon.google-plus::before
 {
   background-image: url("icons/googleplus.svg");
+}
+
+.icon.weibo::before
+{
+  background-image: url("icons/weibo.svg");
 }
 
 /*
@@ -1238,8 +1243,8 @@ html[dir="rtl"] #custom-filters .io-filter-table-title
   Help tab content
 */
 
-html:not([lang="zh"]) #social-chinese,
-html[lang="zh"] #social-general
+html:not([lang^="zh"]) #social-chinese,
+html[lang^="zh"] #social-general
 {
   display: none;
 }
