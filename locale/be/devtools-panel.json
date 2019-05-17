@@ -6,13 +6,13 @@
     "message": "Выдаліць правіла"
   },
   "devtools_action_unblock": {
-    "message": "Дадаць вынятак"
+    "message": "Дадаць выключэнне"
   },
   "devtools_filter_origin_custom": {
-    "message": "вызначана карыстачом"
+    "message": "вызначана карыстальнікам"
   },
   "devtools_filter_origin_none": {
-    "message": "безназоўная падпіска"
+    "message": "падпіска без назвы"
   },
   "devtools_filter_subtitle": {
     "message": "Крыніца"
@@ -21,22 +21,22 @@
     "message": "Фільтр"
   },
   "devtools_footer": {
-    "message": "<a0>Перазагрузіце</a0> старонку, каб убачыць эфект фільтра"
+    "message": "<a0>Перазагрузіце</a0> старонку, каб змены фільтра ўступілі ў сілу"
   },
   "devtools_header": {
     "message": "Паказаць <slot0></slot0> элементы тыпу <slot1></slot1>"
   },
   "devtools_header_state_all": {
-    "message": "усё"
+    "message": "усе"
   },
   "devtools_header_state_blocked": {
     "message": "заблакаваныя"
   },
   "devtools_header_state_whitelisted": {
-    "message": "белы спіс"
+    "message": "дазволеныя"
   },
   "devtools_header_type_any": {
-    "message": "хоць якія"
+    "message": "усе тыпы"
   },
   "devtools_request_subtitle": {
     "message": "Дамен дакумента"

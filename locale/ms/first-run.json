@@ -1,4 +1,43 @@
 {
+  "firstRun_browser_description": {
+    "message": "Daripada pasukan di sebalik Adblock Plus, penyekat iklan paling popular untuk pelayar desktop, Adblock Browser kini boleh didapati di peranti Android dan iOS."
+  },
+  "firstRun_browser_store_android": {
+    "message": "Apl Android di Google Play"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "Tersedia di iTunes App Store"
+  },
+  "firstRun_browser_title": {
+    "message": "Apl Adblock Browser"
+  },
+  "firstRun_control_description": {
+    "message": "Anda mungkin melihat iklan tidak menganggu yang mematuhi <a0>kriteria ketat</a0>. Kami mengenal pasti iklan ini sebagai Iklan yang Boleh Diterima. Lebih suka menyekat semua iklan? <a1>Matikan Iklan yang Boleh Diterima</a1> dalam <a2>Tetapan</a2> anda."
+  },
+  "firstRun_control_title": {
+    "message": "Anda mengawalnya"
+  },
+  "firstRun_fair_description": {
+    "message": "Kami menggalakkan anda untuk menggunakan Adblock Plus secara adil dan membuat pilihan untuk senarai putihkan laman web. Bergantung kepada penapis yang anda guna, anda faham dan terima bahawa sebarang keputusan tidak diingini mungkin berlaku (cth: kandungan yang disekat di laman web). Rujuk <a0>Terma Penggunaan</a0> untuk maklumat lanjut mengenai penggunaan Adblock Plus secara adil."
+  },
+  "firstRun_fair_title": {
+    "message": "Guna dengan baik"
+  },
+  "firstRun_footer_copyright": {
+    "message": "Hak cipta © $year$ Hak cipta terpelihara. Adblock Plus® adalah tanda dagangan berdaftar <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
+  "firstRun_subtitle": {
+    "message": "Anda yang mengawal pelayar anda."
+  },
+  "firstRun_title": {
+    "message": "Berjaya Dipasang!"
+  },
   "firstRun_warning_dataCorrupted_intro": {
     "message": "Sesetengah pengguna mengalami isu di mana halaman ini terbuka setiap kali pelayar dilancarkan. Isu ini boleh diselesaikan dengan menyahpasang dan memasang semula Adblock Plus:"
   },

@@ -19,5 +19,14 @@
   },
   "common_notification_hide": {
     "message": "Aizvērt paziņojumu"
+  },
+  "copy_selected": {
+    "message": "Kopēt atlasīto"
+  },
+  "delete": {
+    "message": "Dzēst"
+  },
+  "filter_action_failed": {
+    "message": "Kaut kas nogāja greizi. Lūdzu, mēģiniet vēlreiz."
   }
 }

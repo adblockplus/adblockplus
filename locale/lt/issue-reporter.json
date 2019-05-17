@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "Mes negalėsime grįžti prie jūsų ir greičiausiai jūsų ataskaitai bus priskirtas žemas prioritetas."
   },
+  "issueReporter_closeButton_label": {
+    "message": "Užverti"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Parašykite komentarą"
   },

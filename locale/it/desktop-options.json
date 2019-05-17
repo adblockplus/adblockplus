@@ -141,7 +141,7 @@
     "message": "Non hai aggiunto alcun elenco di filtri ad Adblock Plus. Gli elenchi di filtri che hai aggiunto vengono visualizzati qui."
   },
   "options_filterList_hours": {
-    "message": "fa ore"
+    "message": "ore fa"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Sincronizzazione non riuscita, checksum non corrispondente"
@@ -159,7 +159,7 @@
     "message": "Sincronizzazione non riuscita, indirizzo web non valido"
   },
   "options_filterList_minutes": {
-    "message": "fa minuti"
+    "message": "minuti fa"
   },
   "options_filterList_now": {
     "message": "Proprio ora"

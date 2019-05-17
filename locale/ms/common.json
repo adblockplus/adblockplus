@@ -5,6 +5,12 @@
   "cancel": {
     "message": "Batal"
   },
+  "common_feature_anti_adblock_title": {
+    "message": "Sembunyikan Mesej Amaran Adblock"
+  },
+  "common_feature_malware_title": {
+    "message": "Sekat Perisian Hasad"
+  },
   "common_feature_privacy_title": {
     "message": "Sekat pengesanan tambahan"
   },
@@ -13,5 +19,14 @@
   },
   "common_notification_hide": {
     "message": "Tutup notifikasi"
+  },
+  "copy_selected": {
+    "message": "Salin"
+  },
+  "delete": {
+    "message": "Padam"
+  },
+  "filter_action_failed": {
+    "message": "Sesuatu telah berlaku. Sila cuba lagi."
   }
 }

@@ -1,12 +1,27 @@
 {
+  "click_element_to_block_it": {
+    "message": "Kliknite na prvok na stránke pre zablokovanie."
+  },
   "easy_create_filter": {
     "message": "Blokovať prvok"
+  },
+  "options_refresh": {
+    "message": "Obnoviť"
   },
   "options_short": {
     "message": "Možnosti"
   },
+  "overlay_notification_closing_button_hide": {
+    "message": "Zavrieť"
+  },
   "overlay_notification_closing_button_optout": {
     "message": "Prestať zobrazovať upozornenia"
+  },
+  "refresh_to_take_effect": {
+    "message": "Kliknite na <strong>Obnoviť</strong> aby sa zmeny prejavili."
+  },
+  "sendReport": {
+    "message": "Nahlásiť problém"
   },
   "stats_label_page": {
     "message": "<strong>$number$</strong> na tejto stránke",

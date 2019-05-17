@@ -7,5 +7,8 @@
   },
   "name_devbuild": {
     "message": "Adblock Plus attīstības programma"
+  },
+  "name_releasebuild": {
+    "message": "Adblock Plus - bezmaksas reklāmbloķētājs"
   }
 }

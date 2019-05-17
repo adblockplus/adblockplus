@@ -19,5 +19,11 @@
   },
   "common_notification_hide": {
     "message": "Uždaryti pranešimą"
+  },
+  "delete": {
+    "message": "Ištrinti"
+  },
+  "filter_action_failed": {
+    "message": "Kažkas nutiko. Bandykite dar kartą."
   }
 }

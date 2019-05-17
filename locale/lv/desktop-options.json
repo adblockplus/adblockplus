@@ -3,7 +3,7 @@
     "message": "Pieļaujamā reklāma nav kaitinoša un netraucē skatāmajam saturam. <a>Uzzināt vairāk par pieļaujamās reklāmas kritērijiem</a>"
   },
   "options_acceptableAds_ads_label": {
-    "message": "Atļaut pielaujamo reklāmu"
+    "message": "Atļaut pieļaujamo reklāmu"
   },
   "options_acceptableAds_description": {
     "message": "Pieļaujamā reklāma ir neuzmācīga reklāma Tas ir kompromiss starp reklāmas bloķēšanu un tiešsaistes satura atbalstīšanu, jo tā rada ieņēmumus vietņu īpašniekiem."
@@ -204,7 +204,7 @@
     "message": "Jauns"
   },
   "options_page_document_title": {
-    "message": "Adblock Plus opcijas"
+    "message": "Adblock Plus iestatījumi"
   },
   "options_page_title": {
     "message": "Iestatījumi"
@@ -216,7 +216,7 @@
     "message": "Aizsargājiet savus personas datus, noņemot visus veidus izsekošanai no interneta, tostarp informācijas savācējus."
   },
   "options_report_bug": {
-    "message": "Atradāt kļūdu? Nosūtiet mums<a>ziņojumu par kļūdu</a>"
+    "message": "Atradāt kļūdu? Nosūtiet mums <a>ziņojumu par kļūdu</a>"
   },
   "options_report_forum": {
     "message": "Nepieciešams atbalsts no mūsu kopienas? <a>Apmeklēt forumu</a>"

@@ -29,6 +29,9 @@
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Hinweis:</strong> Es öffnet sich kurzzeitig ein zusätzlicher Tab, sodass die Seite, auf der du dich befindest, nicht durch den Fehlermelder beeinträchtigt wird."
   },
+  "issueReporter_detailsButton_label": {
+    "message": "Details"
+  },
   "issueReporter_doneButton_label": {
     "message": "Fertigstellen"
   },
@@ -70,6 +73,9 @@
   },
   "issueReporter_privacyPolicy": {
     "message": "Datenschutzerklärung"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "wird verarbeitet"
   },
   "issueReporter_screenreader_warning": {
     "message": "Damit wir das Problem besser verstehen können, ist bei der Übermittlung eines Problemberichtes ein Screenshot erforderlich. Je nach Website, auf der du dich momentan befindest, könnte der Screenshot personenbezogene Informationen enthalten. Wenn du keinen Screenshot übermitteln möchtest, schicke dein Problem bitte an <a0>support@adblockplus.org</a0>."

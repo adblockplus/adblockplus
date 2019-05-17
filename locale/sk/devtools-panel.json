@@ -1,0 +1,11 @@
+{
+  "devtools_action_block": {
+    "message": "Blokovaná položka"
+  },
+  "devtools_action_unblock": {
+    "message": "Pridať výnimku"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "definované používateľom"
+  }
+}

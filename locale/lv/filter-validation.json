@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "Nederīga regulārā izteiksme"
   },
+  "filter_snippet_nodomain": {
+    "message": "Fragmentu filtram nav norādīts aktīvs domēns"
+  },
   "filter_unknown_option": {
     "message": "Nezināma filtra opcija"
   },

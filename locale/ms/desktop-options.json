@@ -8,6 +8,9 @@
   "options_acceptableAds_description": {
     "message": "Iklan yang boleh diterima adalah iklan yang tidak mengganggu. Mereka adalah alasan tengah antara penyekatan iklan dan penyokongan kandungan dalam talian kerana mereka menjana pendapatan untuk pemilik laman web."
   },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>Nota:</strong> <strong>Jangan Kesan/Jejak (DNT)</strong> dinyahdaya dalam tetapan pelayar anda. Untuk membenarkan ciri ini berfungsi dengan baik, sila dayakan <strong>DNT</strong> dalam tetapan pelayar anda. <a>Ketahui cara untuk mendayakan DNT</a>."
+  },
   "options_acceptableAds_header": {
     "message": "IKLAN YANG BOLEH DITERIMA"
   },
@@ -16,6 +19,15 @@
   },
   "options_advanced_description": {
     "message": "Peribadikan Adblock Plus, tambah atau keluarkan senarai penapis, buat dan kekalkan senarai penapis anda sendiri"
+  },
+  "options_anti_cv_header": {
+    "message": "Anti-Pemintasan"
+  },
+  "options_anti_cv_title": {
+    "message": "Senarai Penapis Anti-Pemintasan ABP"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "Senarai penapis ini berfungsi terhadap pemintasan (teknik untuk memaksa memaparkan iklan kepada pengguna penyekat iklan). Penapis ini menyekat iklan pintasan serta penjejak yang berkautan."
   },
   "options_close": {
     "message": "TUTUP"
@@ -41,6 +53,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "Sekat item yang menjengkelkan pada laman web buat sementara, contohnya imej atau tayangan slaid animasi."
   },
+  "options_customize_header": {
+    "message": "Penyesuaian"
+  },
+  "options_customize_iconStats": {
+    "message": "Tunjukkan bilangan iklan yang disekat dalam ikon"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "Tunjukkan panel ‘Adblock Plus’ dalam alat pemaju"
   },
@@ -49,6 +67,9 @@
   },
   "options_customize_showNotifications": {
     "message": "Papar notifikasi berguna"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Benarkan pemberitahuan dari Adblock Plus (pemberitahuan berkaitan masalah prestasi akan sentiasa ditunjukkan)."
   },
   "options_dialog_about_copyright": {
     "message": "Hak cipta © $currentYear$ eyeo GmbH.",
@@ -83,6 +104,9 @@
   "options_dialog_import_title": {
     "message": "Tambah senarai penapis"
   },
+  "options_dialog_language_other_empty": {
+    "message": "Tiada bahasa yang tersedia."
+  },
   "options_dialog_language_title": {
     "message": "Pilih bahasa"
   },
@@ -94,6 +118,9 @@
   },
   "options_email": {
     "message": "E-mel:"
+  },
+  "options_english": {
+    "message": "Bahasa Inggeris"
   },
   "options_filterList_add": {
     "message": "+ TAMBAH SENARAI PENAPIS BARU"
@@ -157,6 +184,17 @@
   },
   "options_filterList_website": {
     "message": "Laman web"
+  },
+  "options_filter_list_rule": {
+    "message": "Peraturan penapis"
+  },
+  "options_filters_search_or_add": {
+    "message": "Cari atau tambah penapis (cth. $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
   },
   "options_footer_about": {
     "message": "Mengenai Adblock Plus"
@@ -244,6 +282,34 @@
   },
   "options_tab_whitelist": {
     "message": "Laman web senarai putih"
+  },
+  "options_tracking_warning_1": {
+    "message": "Kami perasan anda mendayakan <strong>$tracking$</strong> dan <strong>$acceptableAds$</strong>.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "Kami mahu anda tahu bahawa untuk pengiklan menunjukkan anda iklan yang relevan, <strong>kemungkinan</strong> terdapat penjejak dengan Iklan yang Boleh Diterima."
+  },
+  "options_tracking_warning_3": {
+    "message": "Jika anda lebih suka privasi tambahan, pilih <strong>$acceptableAdsPrivacy$</strong> kotak di bawah.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "Ok, faham"
   },
   "options_whitelist_add": {
     "message": "TAMBAH LAMAN WEB"

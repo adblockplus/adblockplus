@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "Chúng tôi không thể trở lại với bạn và sẽ hạ mức ưu tiên của báo cáo của bạn."
   },
+  "issueReporter_closeButton_label": {
+    "message": "Đóng"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Điền bình luận"
   },
@@ -25,6 +28,9 @@
   },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Lưu ý:</strong> Một thẻ bổ sung sẽ tạm thời mở ra để trang bạn đang truy cập sẽ không bị ảnh hưởng bởi Trình báo cáo sự cố."
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "Chi tiết"
   },
   "issueReporter_doneButton_label": {
     "message": "Xong"
@@ -42,7 +48,7 @@
     "message": "Chọn tùy chọn này nếu một quảng cáo vẫn hiển thị cho dù Adblock Plus đang được bật."
   },
   "issueReporter_falseNegative_label": {
-    "message": "Adblock Plus không chặn một quảng cáo"
+    "message": "Tôi vẫn thấy quảng cáo"
   },
   "issueReporter_falsePositive_description": {
     "message": "Chọn tùy chọn này nếu trang thiếu nội dung quan trọng, hiển thị không chính xác hoặc không vận hành đúng. Bạn có thể xác định xem Adblock Plus có phải là nguyên nhân không bằng cách tạm thời vô hiệu hóa nó."
@@ -50,14 +56,29 @@
   "issueReporter_falsePositive_label": {
     "message": "Adblock Plus chặn quá nhiều"
   },
+  "issueReporter_highlighter_heading": {
+    "message": "Tô đậm vấn đề"
+  },
   "issueReporter_knownIssueMessage": {
     "message": "Vấn đề mà bạn báo cáo có thể đã được biết. Thông tin thêm:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Đánh dấu vấn đề"
   },
   "issueReporter_page_title": {
     "message": "Trình báo cáo lỗi"
   },
   "issueReporter_privacyPolicy": {
     "message": "Chính sách riêng tư"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Ẩn"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "Tô đậm"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Chọn vấn đề"
   },
   "issueReporter_sendButton_label": {
     "message": "Gửi báo cáo"
@@ -72,7 +93,7 @@
     "message": "Hiện dữ liệu báo cáo"
   },
   "issueReporter_typeSelector_description": {
-    "message": "Cửa sổ này sẽ hướng dẫn bạn qua các bước cần thiết cho việc gửi lên một báo cáo vấn đề của Adblock Plus. Trước tiên, hãy chọn kiểu vấn đề mà bạn đang gặp trên trang này:"
+    "message": "Vui lòng chọn vấn đề bạn đang gặp phải:"
   },
   "issueReporter_typeSelector_heading": {
     "message": "Chọn kiểu vấn đề"

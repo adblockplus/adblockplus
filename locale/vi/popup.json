@@ -2,14 +2,29 @@
   "easy_create_filter": {
     "message": "Chặn phần tử"
   },
+  "options_refresh": {
+    "message": "Làm mới"
+  },
   "options_short": {
     "message": "Tùy chỉnh"
+  },
+  "overlay_notification_closing_button_hide": {
+    "message": "Đóng"
   },
   "overlay_notification_closing_button_optout": {
     "message": "Dừng hiện thông báo"
   },
+  "promote_abp_module": {
+    "message": "Bạn có hứng thú với Adblock Plus cho di động?"
+  },
+  "refresh_to_take_effect": {
+    "message": "Nhấn vào <strong>Làm mới</strong> để thay đổi có hiệu lực."
+  },
+  "sendReport": {
+    "message": "Báo cáo vấn đề"
+  },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> quảng cáo đã chặn trên trang này",
+    "message": "<strong>$number$</strong> trên trang này",
     "placeholders": {
       "number": {
         "content": "$1"
@@ -23,5 +38,8 @@
         "content": "$1"
       }
     }
+  },
+  "status_header": {
+    "message": "Chặn quảng cáo trên:"
   }
 }

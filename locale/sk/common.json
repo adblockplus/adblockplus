@@ -19,5 +19,11 @@
   },
   "common_notification_hide": {
     "message": "Zatvorte oznámenie"
+  },
+  "delete": {
+    "message": "Odstrániť"
+  },
+  "filter_action_failed": {
+    "message": "Niečo sa pokazilo. Prosím skúste to znova."
   }
 }
