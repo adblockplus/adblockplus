@@ -1,8 +1,14 @@
 {
   "description": {
-    "message": "Được sử dụng trên hơn 500 triệu thiết bị. Adblock Plus là tiện ích chặn quảng cáo phổ biến nhất trên thế giới."
+    "message": "Hãy tải về Adblock Plus, một trong những trình chặn quảng cáo phổ biến nhất thế giới."
+  },
+  "name": {
+    "message": "Adblock Plus"
   },
   "name_devbuild": {
     "message": "Adblock Plus bản phát triển"
+  },
+  "name_releasebuild": {
+    "message": "Adblock Plus - trình chặn quảng cáo miễn phí"
   }
 }

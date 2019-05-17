@@ -185,6 +185,9 @@
   "options_filterList_website": {
     "message": "tinklapis"
   },
+  "options_filter_list_rule": {
+    "message": "Filtrų taisyklė"
+  },
   "options_filters_search_or_add": {
     "message": "Ieškoti / pridėti filtrą (pvz. $filter$)",
     "placeholders": {

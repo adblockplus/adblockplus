@@ -17,6 +17,9 @@
   "devtools_filter_subtitle": {
     "message": "Ursprung"
   },
+  "devtools_filter_title": {
+    "message": "Filter"
+  },
   "devtools_footer": {
     "message": "Seite <a0>neu laden</a0>, um Auswirkung der Filteränderungen zu sehen"
   },

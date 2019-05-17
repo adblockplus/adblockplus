@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "Nebudeme schopný sa k Vás kontaktovať a vašej správe pravdepodobne priradíme nižšiu prioritu."
   },
+  "issueReporter_closeButton_label": {
+    "message": "Zatvoriť"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Vložiť komentár"
   },
@@ -25,6 +28,9 @@
   },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Poznámka:</strong> Ďalšia karta sa dočasne otvorí, takže stránka na ktorej sa nachádzate, nebude ovplyvňovaná Reportérom výstrah."
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "Podrobnosti"
   },
   "issueReporter_doneButton_label": {
     "message": "Hotovo"
@@ -58,6 +64,9 @@
   },
   "issueReporter_privacyPolicy": {
     "message": "Zásady ochrany súkromia"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Skryť"
   },
   "issueReporter_sendButton_label": {
     "message": "Poslať správu"

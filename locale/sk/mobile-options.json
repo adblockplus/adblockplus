@@ -17,6 +17,9 @@
       }
     }
   },
+  "mops_error_url": {
+    "message": "Zadajte platnú adresu URL"
+  },
   "mops_filterlist_add": {
     "message": "+ Pridať zoznam filtrov"
   },

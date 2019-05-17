@@ -18,7 +18,7 @@
     }
   },
   "mops_error_url": {
-    "message": "請輸入 URL 連結"
+    "message": "請輸入網址連結"
   },
   "mops_filterlist_add": {
     "message": "+ 添加過濾列表"
@@ -45,6 +45,6 @@
     "message": "過濾條件集"
   },
   "mops_title": {
-    "message": "Adblock Plus 設置"
+    "message": "Adblock Plus 設定"
   }
 }

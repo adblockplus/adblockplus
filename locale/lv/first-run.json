@@ -1,6 +1,18 @@
 {
+  "firstRun_browser_description": {
+    "message": "No populārākā reklāmbloķētāja datoru pārlūkprogrammām Adblock Plus komandas, tagad ir pieejams arī Adblock Browser Android un iOS ierīcēm."
+  },
+  "firstRun_browser_store_android": {
+    "message": "Android lietotne Google Play"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "Pieejams iTunes App Store"
+  },
   "firstRun_browser_title": {
     "message": "Adblock Browser lietotne"
+  },
+  "firstRun_control_description": {
+    "message": "Pēc noklusējuma var tikt rādītas dažas neuzmācīgas reklāmas, kas atbilst <a0>stingriem kritērijiem</a0>. Mēs identificējam šīs reklāmas kā pieļaujamas. Ja nevēlaties tās redzēt <a1>bloķējiet pieļaujamās reklāmas</a1> <a2>iestatījumos</a2>."
   },
   "firstRun_footer_copyright": {
     "message": "Copyright © $year$. Visas tiesības paturētas. Adblock Plus® ir <a0>eyeo GmbH</a0> reģistrēta preču zīme.",

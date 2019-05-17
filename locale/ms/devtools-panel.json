@@ -1,0 +1,53 @@
+{
+  "devtools_action_block": {
+    "message": "Sekat item"
+  },
+  "devtools_action_remove": {
+    "message": "Keluarkan peraturan"
+  },
+  "devtools_action_unblock": {
+    "message": "Tambah pengecualian"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "takrifan pengguna"
+  },
+  "devtools_filter_origin_none": {
+    "message": "langganan tanpa nama"
+  },
+  "devtools_filter_subtitle": {
+    "message": "Asal"
+  },
+  "devtools_filter_title": {
+    "message": "Penapis"
+  },
+  "devtools_footer": {
+    "message": "<a0>Muat semula</a0> halaman untuk melihat kesan perubahan penapis"
+  },
+  "devtools_header": {
+    "message": "Tunjukkan <slot0></slot0> item daripada <slot1></slot1> jenis"
+  },
+  "devtools_header_state_all": {
+    "message": "semua"
+  },
+  "devtools_header_state_blocked": {
+    "message": "disekat"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "disenarai putih"
+  },
+  "devtools_header_type_any": {
+    "message": "mana-mana"
+  },
+  "devtools_request_subtitle": {
+    "message": "Dokumen domain"
+  },
+  "devtools_request_title": {
+    "message": "Minta"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0> ditulis semula kepada <a1></a1>"
+  },
+  "devtools_type_title": {
+    "message": "Jenis"
+  }
+}

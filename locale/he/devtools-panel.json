@@ -24,13 +24,13 @@
     "message": "<a0>טען מחדש</a0> דף כדי לראות השפעה של שינויי מסנן"
   },
   "devtools_header": {
-    "message": "הראה <slot0></slot0> פריטים מתוך <slot1></slot1> סוג"
+    "message": "הראה <slot0></slot0> פריטים מתוך סוג <slot1></slot1>"
   },
   "devtools_header_state_all": {
     "message": "הכל"
   },
   "devtools_header_state_blocked": {
-    "message": "חסום"
+    "message": "חָסוּם"
   },
   "devtools_header_state_whitelisted": {
     "message": "ברשימה לבנה"

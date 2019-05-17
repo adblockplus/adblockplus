@@ -41,6 +41,9 @@
   "devtools_request_title": {
     "message": "Päring"
   },
+  "devtools_request_url": {
+    "message": "<a0></a0> kirjutati üle kui <a1></a1>"
+  },
   "devtools_type_title": {
     "message": "Tüüp"
   }

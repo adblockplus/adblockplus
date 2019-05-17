@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "Mēs nevarēsim ar Jums sazināties un visdrīzāk piešķirsim Jūsu ziņojumam zemāku prioritāti."
   },
+  "issueReporter_closeButton_label": {
+    "message": "Aizvērt"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Pievienojiet komentāru"
   },
@@ -73,6 +76,9 @@
   },
   "issueReporter_processing_screenshot": {
     "message": "apstrādā"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "Lai palīdzētu mums labāk izprast problēmu, iesniedzot problēmas ziņojumu, nepieciešams ekrānuzņēmums. Atkarībā no vietnes, kurā pašlaik atrodaties, ekrānuzņēmums var saturēt personisku informāciju. Ja nevēlaties iesniegt ekrānuzņēmumu, lūdzu, nosūtiet ziņojumu par problēmu uz <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_screenshot_hide": {
     "message": "Slēpt"

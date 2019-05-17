@@ -18,13 +18,13 @@
     "message": "Tùy chỉnh Adblock Plus, thêm hoặc xóa danh sách lọc, tạo và duy trì các danh sách lọc của riêng bạn"
   },
   "options_close": {
-    "message": "ĐÓNG"
+    "message": "đóng"
   },
   "options_control_remove_title": {
-    "message": "Loại bỏ"
+    "message": "loại bỏ"
   },
   "options_customFilter_cancel": {
-    "message": "HỦY"
+    "message": "Hủy bỏ"
   },
   "options_customFilters_description": {
     "message": "Điền các bộ lọc tùy chỉnh của riêng bạn để hạn chế thêm nội dung nào Adblock Plus cho phép hoặc chặn."
@@ -40,6 +40,9 @@
   },
   "options_customize_blockElement_tooltip": {
     "message": "Tạm thời chặn những thành phần gây khó chịu trên một trang web, ví dụ các hình ảnh hay hoạt hình."
+  },
+  "options_customize_header": {
+    "message": "Tùy biến"
   },
   "options_customize_showDevToolsPanel": {
     "message": "Hiển thị bảng điều khiển ‘Adblock Plus’ trong các công cụ của nhà phát triển"
@@ -102,7 +105,7 @@
     "message": "Tiếng Anh"
   },
   "options_filterList_add": {
-    "message": "+ THÊM MỘT DANH SÁCH LỌC MỚI"
+    "message": "THÊM MỘT DANH SÁCH LỌC MỚI"
   },
   "options_filterList_column_name": {
     "message": "Danh sách lọc"
@@ -177,10 +180,10 @@
     "message": "Tìm kiếm trợ giúp hoặc liên hệ với chúng tôi"
   },
   "options_language_add": {
-    "message": "+ THÊM NGÔN NGỮ"
+    "message": "THÊM NGÔN NGỮ"
   },
   "options_language_change": {
-    "message": "THAY ĐỔI"
+    "message": "thay đổi"
   },
   "options_language_description": {
     "message": "Tối ưu Adblock Plus cho (các) ngôn ngữ mà bạn thường truy cập các trang web."
@@ -216,7 +219,7 @@
     "message": "Thiết đặt"
   },
   "options_privacy_header": {
-    "message": "RIÊNG TƯ & BẢO MẬT"
+    "message": "Riêng tư & bảo mật"
   },
   "options_protection_privacy_tooltip": {
     "message": "Bảo vệ quyền riêng tư của bạn khỏi các thực thể đã biết mà có thể theo dõi hoạt động trực tuyến của bạn trên các trang web bạn truy cập."

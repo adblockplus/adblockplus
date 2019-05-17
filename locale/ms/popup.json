@@ -1,12 +1,33 @@
 {
+  "click_element_to_block_it": {
+    "message": "Klik pada eleman di halaman untuk menyekatnya."
+  },
   "easy_create_filter": {
     "message": "Halang elemen"
+  },
+  "options_refresh": {
+    "message": "Segar semula"
   },
   "options_short": {
     "message": "Tetapan"
   },
+  "overlay_notification_closing_button_hide": {
+    "message": "Tutup"
+  },
   "overlay_notification_closing_button_optout": {
     "message": "Hentikan paparan pemberitahuan"
+  },
+  "promote_abp_module": {
+    "message": "Berminat dengan Adblock Plus di telefon bimbit?"
+  },
+  "refresh_to_take_effect": {
+    "message": "Klik <strong>Segar semula</strong> supaya perubahan dapat dilaksanakan."
+  },
+  "sendReport": {
+    "message": "Laporkan isu"
+  },
+  "stats_header": {
+    "message": "Bilangan item disekat"
   },
   "stats_label_page": {
     "message": "<strong>$number$</strong> pada halaman ini",
@@ -23,5 +44,8 @@
         "content": "$1"
       }
     }
+  },
+  "status_header": {
+    "message": "Sekat iklan di:"
   }
 }

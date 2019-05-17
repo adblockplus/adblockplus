@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "Kita tidak akan dapat kembali kepada anda dan mungkin akan mengutamakan laporan yang lebih rendah."
   },
+  "issueReporter_closeButton_label": {
+    "message": "Tutup"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Masukkan komen"
   },
@@ -25,6 +28,9 @@
   },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Nota:</strong> Satu tab tambahan akan terbuka secara sementara supaya laman yang anda buka tidak terjejas oleh Pelapor Isu."
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "Butiran"
   },
   "issueReporter_doneButton_label": {
     "message": "Selesai"
@@ -50,14 +56,38 @@
   "issueReporter_falsePositive_label": {
     "message": "Terlalu banyak disekat Adblock Plus"
   },
+  "issueReporter_highlighter_description": {
+    "message": "Gunakan alatan untuk menyerlahkan iklan atau sembunyikan maklumat sensitif. Iklan yang diserlahkan membantu kami menyelesaikan masalah lebih pantas."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Serlahkan masalah"
+  },
   "issueReporter_knownIssueMessage": {
     "message": "Isu yang dilaporkan kemungkinan telah dikenalpasti. Maklumat lanjut:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Tandakan masalah"
   },
   "issueReporter_page_title": {
     "message": "Pelapor isu"
   },
   "issueReporter_privacyPolicy": {
     "message": "Polisi privasi"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "memproses"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "Untuk membantu kami memahami masalah itu, tangkap skrin diperlukan semasa menghantar laporan masalah. Bergantung kepada laman web yang anda sedang berada, tangkap skrin mungkin mempunyai maklumat peribadi. Jika anda tidak mahu menghantar tangkap skrin, sila e-mel masalah tersebut ke <a0>support@adblockplus.org</a0>."
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Sembunyi"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "Serlah"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Pilih masalah"
   },
   "issueReporter_sendButton_label": {
     "message": "Hantar laporan"

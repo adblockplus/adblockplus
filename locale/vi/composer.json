@@ -3,9 +3,9 @@
     "message": "Thêm bộ lọc?"
   },
   "block_element": {
-    "message": "Chặn phần từ"
+    "message": "Chặn phần tử"
   },
   "loading": {
-    "message": "Đang tải..."
+    "message": "Đang nạp..."
   }
 }

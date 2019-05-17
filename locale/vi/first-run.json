@@ -1,4 +1,13 @@
 {
+  "firstRun_browser_store_android": {
+    "message": "Ứng dụng Android trên Google Play"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "Có sẵn trên Kho ứng dụng iTunes"
+  },
+  "firstRun_fair_title": {
+    "message": "Sử dụng hợp lý"
+  },
   "firstRun_warning_dataCorrupted_intro": {
     "message": "Một số người dùng gặp sự cố khi trang này mở ra mỗi khi trình duyệt của họ khởi chạy. Có thể giải quyết vấn đề này bằng cách gỡ cài đặt và cài đặt lại Adblock Plus:"
   },

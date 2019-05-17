@@ -39,10 +39,10 @@
     "message": "Annuller"
   },
   "options_customFilters_description": {
-    "message": "Opret dine egne brugerdefinerede filtre til yderligere kontrol af indhold, som Adblock Plus tillader eller blokerer. <a0>Se, hvordan du opretter filtre</a0>"
+    "message": "Opret og vedligehold dine egne brugerdefinerede filtre til yderligere kontrol af indhold, som Adblock Plus tillader eller blokerer. <a0>Se, hvordan du opretter filtre</a0>"
   },
   "options_customFilters_title": {
-    "message": "Opret og rediger din filterliste"
+    "message": "Din brugerdefinerede filtre"
   },
   "options_customFilters_widget_title": {
     "message": "Min filterliste"
@@ -184,6 +184,9 @@
   },
   "options_filterList_website": {
     "message": "websted"
+  },
+  "options_filter_list_rule": {
+    "message": "Filterregel"
   },
   "options_filters_search_or_add": {
     "message": "Find/tilføj filter (f.eks. $filter$)",

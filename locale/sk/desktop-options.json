@@ -44,6 +44,9 @@
   "options_customize_blockElement_tooltip": {
     "message": "Dočasne blokovať obťažujúce položky na webovej stránke, napríklad obrázky alebo animované prezentácie."
   },
+  "options_customize_header": {
+    "message": "Prispôsobenie"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "Zobraziť panel \"Adblock Plus\" v nástrojoch pre vývojárov"
   },
@@ -166,6 +169,9 @@
   },
   "options_filterList_website": {
     "message": "webová stránka"
+  },
+  "options_filter_list_rule": {
+    "message": "Pravidlo filtra"
   },
   "options_footer_about": {
     "message": "O Adblock Plus"

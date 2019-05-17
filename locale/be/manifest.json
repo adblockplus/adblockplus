@@ -1,6 +1,6 @@
 {
   "description": {
-    "message": "Adblock Plus спампавалі больш за 500 мільёнаў разоў, што робіць яго адным з найбольш папулярных блакіроўшчыкаў рэкламы ў свеце."
+    "message": "Спампуйце Adblock Plus — адзін з найбольш папулярных блакіроўшчыкаў рэкламы ў свеце."
   },
   "name": {
     "message": "Adblock Plus"
@@ -9,6 +9,6 @@
     "message": "Adblock Plus (версія для распрацоўшчыкаў)"
   },
   "name_releasebuild": {
-    "message": "Adblock Plus — дармовы блакавальнік рэкламы"
+    "message": "Adblock Plus — бясплатны блакіроўшчык рэкламы"
   }
 }

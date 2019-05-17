@@ -19,5 +19,8 @@
   },
   "common_notification_hide": {
     "message": "Đóng thông báo"
+  },
+  "delete": {
+    "message": "Xoá"
   }
 }

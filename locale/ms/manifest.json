@@ -1,5 +1,14 @@
 {
+  "description": {
+    "message": "Muat turun Adblock Plus, salah satu penyekat iklan paling popular di dunia."
+  },
+  "name": {
+    "message": "Adblock Plus"
+  },
   "name_devbuild": {
     "message": "Versi pemaju Adblock Plus"
+  },
+  "name_releasebuild": {
+    "message": "Adblock Plus - penyekat iklan percuma"
   }
 }
