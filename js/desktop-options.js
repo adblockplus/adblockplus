@@ -993,10 +993,6 @@ function onDOMLoaded()
   {
     $("#social .facebook").setAttribute("href", link);
   });
-  getDocLink("social_gplus").then(link =>
-  {
-    $("#social .google-plus").setAttribute("href", link);
-  });
   getDocLink("social_weibo").then(link =>
   {
     $("#social .weibo").setAttribute("href", link);
