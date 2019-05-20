@@ -360,9 +360,7 @@
   };
   Filter.normalize = (text) => text;
 
-  function ActiveFilter()
-  {
-  }
+  function ActiveFilter() {}
 
   function InvalidFilter(text, reason)
   {
@@ -370,10 +368,13 @@
     this.reason = reason;
   }
 
+  function RegExpFilter() {}
+
   modules.filterClasses = {
     ActiveFilter,
     InvalidFilter,
-    Filter
+    Filter,
+    RegExpFilter
   };
 
   modules.synchronizer = {
@@ -436,6 +437,11 @@
       addListener() {},
       removeListener() {}
     }
+  };
+
+  modules.matcher = {
+    Matcher() {},
+    isSlowFilter: () => false
   };
 
   window.addEventListener("message", (event) =>
