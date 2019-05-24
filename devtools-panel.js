@@ -108,6 +108,7 @@ function createRecord(request, filter, template)
   if (request.url)
   {
     const originalUrl = urlElement.querySelector("[data-i18n-index='0']");
+    originalUrl.classList.add("url");
     originalUrl.textContent = request.url;
     originalUrl.setAttribute("href", request.url);
 
@@ -119,6 +120,7 @@ function createRecord(request, filter, template)
     if (request.rewrittenUrl)
     {
       const rewrittenUrl = urlElement.querySelector("[data-i18n-index='1'");
+      rewrittenUrl.classList.add("url-rewritten");
       rewrittenUrl.textContent = request.rewrittenUrl;
       rewrittenUrl.setAttribute("href", request.rewrittenUrl);
       rewrittenUrl.addEventListener("click", onUrlClick);
@@ -185,10 +187,10 @@ function createRecord(request, filter, template)
 function shouldFilterRow(row, query)
 {
   const elementsToSearch = [
-    row.getElementsByClassName("resource-link"),
     row.getElementsByClassName("filter"),
     row.getElementsByClassName("origin"),
-    row.getElementsByClassName("type")
+    row.getElementsByClassName("type"),
+    row.getElementsByClassName("url")
   ];
 
   for (const elements of elementsToSearch)

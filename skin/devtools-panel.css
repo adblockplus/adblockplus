@@ -181,14 +181,14 @@ tr:not(:hover) .action
   width: 100%;
 }
 
-.rewritten-url > a,
-.resource-link
+.url > a,
+.url-rewritten > a
 {
   text-decoration: none;
 }
 
-.rewritten-url > a:hover,
-.resource-link:hover
+.url > a:hover,
+.url-rewritten > a:hover
 {
   text-decoration: underline;
 }
