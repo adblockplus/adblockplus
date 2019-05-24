@@ -86,20 +86,22 @@
 
   function getRecommendedAds()
   {
-    return fetch("subscriptions.json")
-      .then((response) => response.json())
-      .then((recommendations) =>
-      {
-        return recommendations
-          .filter((recommendation) => recommendation.type == "ads")
-          .map((recommendation) =>
-          {
-            return {
-              title: recommendation.title,
-              url: recommendation.url
-            };
-          });
-      });
+    return browser.runtime.sendMessage({
+      type: "app.get",
+      what: "recommendations"
+    })
+    .then((recommendations) =>
+    {
+      return recommendations
+        .filter((recommendation) => recommendation.type == "ads")
+        .map((recommendation) =>
+        {
+          return {
+            title: recommendation.title,
+            url: recommendation.url
+          };
+        });
+    });
   }
 
   function installSubscription(url, title)

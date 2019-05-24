@@ -25,8 +25,10 @@ require("./io-list-box");
 require("./io-popout");
 require("./io-toggle");
 
-const {port} = require("./api");
+const api = require("./api");
 const {$} = require("./dom");
+
+const {port} = api;
 
 let subscriptionsMap = Object.create(null);
 let filtersMap = Object.create(null);
@@ -530,7 +532,7 @@ function loadRecommendations()
 {
   return Promise.all([
     fetch("data/languages.json").then((resp) => resp.json()),
-    fetch("subscriptions.json").then((resp) => resp.json())
+    api.app.get("recommendations")
   ]).then(([languagesData, recommendations]) =>
   {
     languages = languagesData;

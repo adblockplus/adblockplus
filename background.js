@@ -444,6 +444,33 @@
     isSlowFilter: () => false
   };
 
+  function requireData(filepath)
+  {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", filepath, false);
+
+    try
+    {
+      xhr.send();
+      if (xhr.status !== 200)
+        throw new Error("Unable to fetch file");
+
+      return JSON.parse(xhr.responseText);
+    }
+    catch (ex)
+    {
+      return [];
+    }
+  }
+
+  const sources = requireData("data/subscriptions.json");
+  modules.recommendations = {
+    *recommendations()
+    {
+      yield* sources;
+    }
+  };
+
   window.addEventListener("message", (event) =>
   {
     if (event.data.type != "message")

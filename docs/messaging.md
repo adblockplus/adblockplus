@@ -62,6 +62,7 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
   - `features`
   - `issues`
   - `localeInfo`
+  - `recommendations`
   - `senderId`
 
 **Response**
@@ -80,6 +81,8 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
   - `rtl`
 - **string** locale
   - [RFC2616](https://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.10)
+
+**object[]** recommendations (if "what" is `recommendations`)
 
 **number** senderId (if "what" is `senderId`)
 
