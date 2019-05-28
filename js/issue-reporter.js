@@ -177,13 +177,6 @@ document.addEventListener("DOMContentLoaded", () =>
     showDataOverlay.hidden = true;
     $("#showData").focus();
   });
-
-
-  browser.runtime.sendMessage({
-    type: "app.get",
-    what: "doclink",
-    link: "reporter_privacy"
-  }).then(url => $("#privacyPolicy").href = url);
 });
 
 let notifyClosing = true;

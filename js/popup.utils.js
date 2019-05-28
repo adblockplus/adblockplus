@@ -15,7 +15,7 @@ const activeTab = new Promise(
   }
 );
 
-function getDocLinks(notification)
+function getDoclinks(notification)
 {
   if (!notification.links)
     return Promise.resolve([]);
@@ -96,7 +96,7 @@ function whenPageReady(tab)
 
 module.exports = {
   activeTab,
-  getDocLinks,
+  getDoclinks,
   getPref,
   isPageWhitelisted,
   reportIssue,

@@ -59,9 +59,8 @@
         </nav>
         <footer>
           <p>
-            <a id="contribute" 
-                class="i18n_options_footer_contribute button secondary"
-                target="_blank"></a>
+            <a class="i18n_options_footer_contribute button secondary"
+              data-doclink="contribute"></a>
           </p>
           <p>
             <button class="i18n_options_footer_about link" 
@@ -115,7 +114,7 @@
                   <button id="acceptable-ads-privacy-allow" class="icon" data-action="switch-acceptable-ads" type="button" role="checkbox" name="acceptable-ads" value="privacy"></button>
                   <label for="acceptable-ads-privacy-allow" class="i18n_options_acceptableAds_privacy_label"></label>
                   <p>
-                    <a id="enable-acceptable-ads-privacy-description" class="i18n_options_learn_more" target="_blank"></a>
+                    <a class="i18n_options_learn_more" data-doclink="privacy_friendly_ads"></a>
                   </p>
                   <p id="dnt" class="i18n_options_acceptableAds_dnt_notification"></p>
                 </li>
@@ -184,7 +183,7 @@
           <h1 class="i18n_options_tab_whitelist"></h1>
           <p>
             <span class="i18n_options_whitelist_description"></span>
-            <a id="whitelist-learn-more" class="i18n_options_learn_more" target="_blank"></a>
+            <a class="i18n_options_learn_more" data-doclink="whitelist"></a>
           </p>
         </header>
         <form class="section">
@@ -241,7 +240,7 @@
             <h2 class="i18n_options_filterList_title"></h2>
             <p>
               <span class="i18n_options_filterList_description"></span>
-              <a id="filter-lists-learn-more" class="i18n_options_learn_more" target="_blank"></a>
+              <a class="i18n_options_learn_more" data-doclink="subscriptions"></a>
             </p>
           </header>
           <div id="update-all-subscriptions">
@@ -337,11 +336,23 @@
           </header>
           <div id="social">
             <ul id="social-general">
-              <li><a class="icon twitter" target="_blank">Twitter</a></li>
-              <li><a class="icon facebook" target="_blank">Facebook</a></li>
+              <li>
+                <a class="icon twitter" data-doclink="social_twitter">
+                  Twitter
+                </a>
+              </li>
+              <li>
+                <a class="icon facebook" data-doclink="social_facebook">
+                  Facebook
+                </a>
+              </li>
             </ul>
             <ul id="social-chinese">
-              <li><a class="icon weibo" target="_blank">Weibo</a></li>
+              <li>
+                <a class="icon weibo" data-doclink="social_weibo">
+                  Weibo
+                </a>
+              </li>
             </ul>
           </div>
         </section>

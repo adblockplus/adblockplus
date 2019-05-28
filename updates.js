@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* globals getDocLink */
+/* globals getDoclink */
 
 "use strict";
 
@@ -33,15 +33,7 @@
         }
       );
     });
-    getDocLink("adblock_browser_ios_store").then(url =>
-    {
-      document.getElementById("adblock-browser-ios-store").href = url;
-    });
-    getDocLink("adblock_browser_android_store").then(url =>
-    {
-      document.getElementById("adblock-browser-android-store").href = url;
-    });
-    getDocLink("adblock_browser_website").then(url =>
+    getDoclink("adblock_browser_website").then(url =>
     {
       ext.i18n.setElementLinks("adblock-browser-text", url);
     });

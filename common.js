@@ -17,7 +17,21 @@
 
 "use strict";
 
-function getDocLink(link)
+function convertDoclinks()
+{
+  const links = document.querySelectorAll("a[data-doclink]");
+  for (const link of links)
+  {
+    getDoclink(link.dataset.doclink).then((url) =>
+    {
+      link.target = link.target || "_blank";
+      link.href = url;
+    });
+  }
+}
+window.addEventListener("DOMContentLoaded", convertDoclinks, true);
+
+function getDoclink(link)
 {
   return browser.runtime.sendMessage({
     type: "app.get",

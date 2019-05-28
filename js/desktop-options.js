@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* globals getDocLink getErrorMessage */
+/* globals getDoclink getErrorMessage */
 
 "use strict";
 
@@ -995,11 +995,7 @@ function onDOMLoaded()
   }, false);
 
   // General tab
-  getDocLink("contribute").then(link =>
-  {
-    $("#contribute").href = link;
-  });
-  getDocLink("acceptable_ads_criteria").then(link =>
+  getDoclink("acceptable_ads_criteria").then(link =>
   {
     setElementLinks("enable-acceptable-ads-description", link);
   });
@@ -1022,19 +1018,9 @@ function onDOMLoaded()
   setElementText($("#tracking-warning-3"), "options_tracking_warning_3",
     [getMessage("options_acceptableAds_privacy_label")]);
 
-  getDocLink("privacy_friendly_ads").then(link =>
-  {
-    $("#enable-acceptable-ads-privacy-description").href = link;
-  });
-  getDocLink("adblock_plus_{browser}_dnt").then(url =>
+  getDoclink("adblock_plus_{browser}_dnt").then(url =>
   {
     setElementLinks("dnt", url);
-  });
-
-  // Whitelisted tab
-  getDocLink("whitelist").then(link =>
-  {
-    $("#whitelist-learn-more").href = link;
   });
 
   // Advanced tab
@@ -1058,40 +1044,23 @@ function onDOMLoaded()
     hidePref("show_devtools_panel", !features.devToolsPanel);
   });
 
-  getDocLink("filterdoc").then(link =>
+  getDoclink("filterdoc").then(link =>
   {
     setElementLinks("custom-filters-description", link);
   });
 
-  getDocLink("subscriptions").then(link =>
-  {
-    $("#filter-lists-learn-more").setAttribute("href", link);
-  });
-
   // Help tab
-  getDocLink("help_center_abp_en").then(link =>
+  getDoclink("help_center_abp_en").then(link =>
   {
     setElementLinks("help-center", link);
   });
-  getDocLink("adblock_plus_report_bug").then(link =>
+  getDoclink("adblock_plus_report_bug").then(link =>
   {
     setElementLinks("report-bug", link);
   });
-  getDocLink("{browser}_support").then(url =>
+  getDoclink("{browser}_support").then(url =>
   {
     setElementLinks("visit-forum", url);
-  });
-  getDocLink("social_twitter").then(link =>
-  {
-    $("#social .twitter").setAttribute("href", link);
-  });
-  getDocLink("social_facebook").then(link =>
-  {
-    $("#social .facebook").setAttribute("href", link);
-  });
-  getDocLink("social_weibo").then(link =>
-  {
-    $("#social .weibo").setAttribute("href", link);
   });
 
   $("#dialog").addEventListener("keydown", function(e)

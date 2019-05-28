@@ -18,20 +18,6 @@
 "use strict";
 
 const api = require("./api");
-const {$$} = require("./dom");
-
-function convertDocLinks()
-{
-  const elements = $$("[data-doclink]");
-  for (const element of elements)
-  {
-    const {doclink} = element.dataset;
-    api.doclinks.get(doclink).then((url) =>
-    {
-      element.href = url;
-    });
-  }
-}
 
 function openOptions()
 {
@@ -62,8 +48,6 @@ function initLinks()
     ext.i18n.setElementText(notice, "firstRun_footer_copyright", year);
     ext.i18n.setElementLinks("copyright-notice", url);
   });
-
-  convertDocLinks();
 }
 
 function initWarnings()

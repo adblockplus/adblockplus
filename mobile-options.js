@@ -15,8 +15,6 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* globals getDocLink */
-
 "use strict";
 
 {
@@ -415,11 +413,6 @@
   /* Initialization */
 
   populateLists();
-
-  getDocLink("acceptable_ads").then(link =>
-  {
-    get("#acceptableAds-more").href = link;
-  });
 
   get("#dialog-subscribe [name='title']").setAttribute(
     "placeholder",

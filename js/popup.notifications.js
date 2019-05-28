@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {activeTab, getDocLinks, setPref} = require("./popup.utils.js");
+const {activeTab, getDoclinks, setPref} = require("./popup.utils.js");
 const {wire} = require("./io-element");
 const {$} = require("./dom");
 
@@ -77,7 +77,7 @@ window.addEventListener(
 
     $("header").appendChild(notifier);
 
-    getDocLinks(notification).then(docLinks =>
+    getDoclinks(notification).then(docLinks =>
     {
       const messageElement = $("#notification-message", notifier);
       insertMessage(messageElement, notification.texts.message, docLinks);

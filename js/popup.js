@@ -26,7 +26,7 @@ const {activeTab} = require("./popup.utils.js");
 const {$, $$} = require("./dom");
 
 const {
-  getDocLinks,
+  getDoclinks,
   getPref,
   reportIssue,
   whenPageReady
@@ -113,7 +113,7 @@ function setupFooter()
 {
   // order matters and reflected later on
   // by selecting apple first and android after
-  getDocLinks({links: [
+  getDoclinks({links: [
     "adblock_browser_ios_store",
     "adblock_browser_android_store"
   ]}).then(links =>
