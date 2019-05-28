@@ -147,24 +147,6 @@ function loadI18nStrings()
 {
   function resolveStringNames(container)
   {
-    // Deprecated, use data-i18n attribute instead
-    {
-      const elements = container.querySelectorAll("[class^='i18n_']");
-      for (const element of elements)
-      {
-        let args = JSON.parse("[" + element.textContent + "]");
-        if (args.length == 0)
-          args = null;
-
-        let {className} = element;
-        if (className instanceof SVGAnimatedString)
-          className = className.animVal;
-        const stringName = className.split(/\s/)[0].substring(5);
-
-        ext.i18n.setElementText(element, stringName, args);
-      }
-    }
-
     {
       const elements = container.querySelectorAll("[data-i18n]");
       for (const element of elements)

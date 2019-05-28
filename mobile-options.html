@@ -17,7 +17,7 @@
   -->
 <html>
   <head>
-    <title class="i18n_mops_title"></title>
+    <title data-i18n="mops_title"></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="skin/fonts/font.css">
@@ -32,12 +32,12 @@
   <body>
 
     <main>
-      <h1 class="i18n_mops_title"></h1>
+      <h1 data-i18n="mops_title"></h1>
 
       <p id="enabled-container" class="toggle-container" hidden>
         <span>
           <label id="enabled-label" for="enabled">
-            <strong class="i18n_mops_enabled_label"></strong>
+            <strong data-i18n="mops_enabled_label"></strong>
             <span class="reset-font" id="enabled-domain"></span>
           </label>
         </span>
@@ -45,19 +45,19 @@
         <label class="toggle-image" for="enabled"></label>
       </p>
 
-      <h2 class="i18n_mops_subscriptions_header"></h2>
+      <h2 data-i18n="mops_subscriptions_header"></h2>
 
       <ul class="reset-font" id="subscriptions-installed"></ul>
-      <button class="i18n_mops_filterlist_add add"
+      <button data-i18n="mops_filterlist_add" class="add"
           data-action="open-dialog" data-dialog="recommended">
       </button>
 
       <p class="toggle-container">
         <span>
-          <label class="i18n_mops_acceptableAds_description checkbox"
+          <label data-i18n="mops_acceptableAds_description" class="checkbox"
               for="acceptableAds">
           </label>
-          <a id="acceptableAds-more" class="i18n_mops_acceptableAds_more" data-doclink="acceptable_ads"></a>
+          <a id="acceptableAds-more" data-i18n="mops_acceptableAds_more" data-doclink="acceptable_ads"></a>
         </span>
         <input id="acceptableAds" type="checkbox">
         <label class="toggle-image" for="acceptableAds"></label>
@@ -73,30 +73,32 @@
       <div id="dialog-recommended" role="dialog">
         <ul class="reset-font" id="subscriptions-recommended"></ul>
 
-        <button class="i18n_mops_filterlist_add_url add"
+        <button data-i18n="mops_filterlist_add_url" class="add"
             data-action="open-dialog" data-dialog="subscribe">
         </button>
       </div>
 
       <div id="dialog-subscribe" role="dialog">
         <form>
-          <h2 class="i18n_mops_subscribe_header"></h2>
+          <h2 data-i18n="mops_subscribe_header"></h2>
           <p>
-            <input name="title" type="text">
-            <label class="i18n_mops_subscribe_title"></label>
+            <input name="title" type="text"
+              data-i18n-placeholder="mops_subscribe_title">
+            <label data-i18n="mops_subscribe_title"></label>
           </p>
 
           <p>
-            <input name="url" type="text">
-            <label class="i18n_mops_subscribe_url"></label>
-            <span class="i18n_mops_error_url error" data-error="url"></span>
+            <input name="url" type="text"
+              data-i18n-placeholder="mops_subscribe_url">
+            <label data-i18n="mops_subscribe_url"></label>
+            <span data-i18n="mops_error_url" class="error" data-error="url"></span>
           </p>
 
           <button type="submit"
-              class="i18n_mops_filterlist_add_action primary">
+              data-i18n="mops_filterlist_add_action" class="primary">
           </button>
 
-          <button type="reset" class="i18n_mops_action_cancel secondary"
+          <button type="reset" data-i18n="mops_action_cancel" class="secondary"
               data-action="close-dialog">
           </button>
         </form>

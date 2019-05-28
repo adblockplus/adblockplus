@@ -169,15 +169,6 @@ Collection.prototype.addItem = function(item)
       }
     }
 
-    for (const control of $$(".control", listItem))
-    {
-      if (control.hasAttribute("title"))
-      {
-        const titleValue = getMessage(control.getAttribute("title"));
-        control.setAttribute("title", titleValue);
-      }
-    }
-
     this._setEmpty(table, detail, true);
     if (table.children.length > 0)
       table.insertBefore(listItem, table.children[this.items.indexOf(item)]);
@@ -986,9 +977,6 @@ function onDOMLoaded()
   // Initialize interactive UI elements
   document.body.addEventListener("click", onClick, false);
   document.body.addEventListener("keyup", onKeyUp, false);
-  const exampleValue = getMessage("options_whitelist_placeholder_example",
-    ["www.example.com"]);
-  $("#whitelisting-textbox").setAttribute("placeholder", exampleValue);
   $("#whitelisting-textbox").addEventListener("keyup", (e) =>
   {
     $("#whitelisting-add-button").disabled = !e.target.value;
@@ -999,7 +987,7 @@ function onDOMLoaded()
   {
     setElementLinks("enable-acceptable-ads-description", link);
   });
-  getDocLink("imprint").then((url) =>
+  getDoclink("imprint").then((url) =>
   {
     setElementText(
       $("#copyright"),
@@ -1008,7 +996,7 @@ function onDOMLoaded()
     );
     setElementLinks("copyright", url);
   });
-  getDocLink("privacy").then((url) =>
+  getDoclink("privacy").then((url) =>
   {
     $("#privacy-policy").href = url;
   });

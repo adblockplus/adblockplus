@@ -28,14 +28,14 @@
     <link rel="stylesheet" type="text/css" href="skin/common.css">
     <link rel="stylesheet" type="text/css" href="skin/fonts/font.css">
     <link rel="stylesheet" type="text/css" href="skin/issue-reporter.css">
-    <title class="i18n_issueReporter_page_title"></title>
+    <title data-i18n="issueReporter_page_title"></title>
   </head>
   <body>
     <!-- Notification -->
     <div id="notification">
-      <span id="notification-text" class="i18n_issueReporter_data_gathering_tab"></span>
+      <span id="notification-text" data-i18n="issueReporter_data_gathering_tab"></span>
       <button class="icon close tertiary" id="hide-notification">
-        <span class="i18n_common_notification_hide sr-only"></span>
+        <span data-i18n="common_notification_hide" class="sr-only"></span>
       </button>
     </div>
     <header>
@@ -45,7 +45,7 @@
           <h1>
             Adblock <strong>Plus</strong>
           </h1>
-          <p class="i18n_issueReporter_page_title"></p>
+          <p data-i18n="issueReporter_page_title"></p>
         </div>
       </div>
       <io-steps i18n-labels="
@@ -61,52 +61,52 @@
       <div class="page" id="typeSelectorPage">
         <span id="sr-warning" tabindex="0" class="sr-only" data-i18n="issueReporter_screenreader_warning"></span>
 
-        <h1 class="i18n_issueReporter_typeSelector_heading"></h1>
-        <p class="i18n_issueReporter_typeSelector_description"></p>
+        <h1 data-i18n="issueReporter_typeSelector_heading"></h1>
+        <p data-i18n="issueReporter_typeSelector_description"></p>
         <div id="typeSelectorGroup">
           <input type="radio" id="typeFalsePositive" value="false positive" name="type">
-          <label for="typeFalsePositive" class="i18n_issueReporter_falsePositive_label"></label>
-          <p class="i18n_issueReporter_falsePositive_description"></p>
+          <label for="typeFalsePositive" data-i18n="issueReporter_falsePositive_label"></label>
+          <p data-i18n="issueReporter_falsePositive_description"></p>
           <input type="radio" id="typeFalseNegative" value="false negative" name="type">
-          <label for="typeFalseNegative" class="i18n_issueReporter_falseNegative_label"></label>
-          <p class="i18n_issueReporter_falseNegative_description"></p>
+          <label for="typeFalseNegative" data-i18n="issueReporter_falseNegative_label"></label>
+          <p data-i18n="issueReporter_falseNegative_description"></p>
         </div>
       </div>
 
       <div class="page" id="highlighterPage" hidden>
-        <h1 class="i18n_issueReporter_highlighter_heading"></h1>
-        <p class="i18n_issueReporter_highlighter_description"></p>
+        <h1 data-i18n="issueReporter_highlighter_heading"></h1>
+        <p data-i18n="issueReporter_highlighter_description"></p>
       </div>
       <div class="page" id="commentPage" hidden>
-        <h1 class="i18n_issueReporter_commentPage_heading"></h1>
+        <h1 data-i18n="issueReporter_commentPage_heading"></h1>
 
-        <p class="i18n_issueReporter_email_description"></p>
+        <p data-i18n="issueReporter_email_description"></p>
 
-        <label for="email" class="i18n_issueReporter_email_label"></label>
+        <label for="email" data-i18n="issueReporter_email_label"></label>
         <input type="email" id="email" maxlength="200">
 
         <div id="anonymousSubmissionContainer">
           <input type="checkbox" id="anonymousSubmission">
-          <label for="anonymousSubmission" class="i18n_issueReporter_anonymousSubmission_label"></label>
-          <div id="anonymousSubmissionWarning" data-invisible="true" class="i18n_issueReporter_anonymousSubmission_warning"></div>
+          <label for="anonymousSubmission" data-i18n="issueReporter_anonymousSubmission_label"></label>
+          <div id="anonymousSubmissionWarning" data-invisible="true" data-i18n="issueReporter_anonymousSubmission_warning"></div>
         </div>
 
-        <label for="comment" class="i18n_issueReporter_comment_label"></label>
-        <p class="i18n_issueReporter_comment_description"></p>
+        <label for="comment" data-i18n="issueReporter_comment_label"></label>
+        <p data-i18n="issueReporter_comment_description"></p>
         <textarea id="comment"></textarea>
         <p id="includeConfigContainer">
           <input id="includeConfig" type="checkbox">
           <label for="includeConfig" data-i18n="issueReporter_config_label"></label>
         </p>
         <p>
-          <button id="showData" class="i18n_issueReporter_showData_label link" disabled></button>
+          <button id="showData" data-i18n="issueReporter_showData_label" class="link" disabled></button>
         </p>
       </div>
 
       <div class="page" id="sendPage" hidden>
-        <h1 class="i18n_issueReporter_sendPage_heading"></h1>
+        <h1 data-i18n="issueReporter_sendPage_heading"></h1>
 
-        <p id="sendReportMessage" class="i18n_issueReporter_sending"></p>
+        <p id="sendReportMessage" data-i18n="issueReporter_sending"></p>
 
         <div id="sendingProgressContainer">
           <progress id="sendingProgress"></progress>
@@ -120,18 +120,18 @@
       <div class="modal" id="showDataOverlay" hidden>
         <div class="modalContent">
           <pre id="showDataValue" tabindex="0"></pre>
-          <button id="showDataClose" class="i18n_cancel primary"></button>
+          <button id="showDataClose" data-i18n="cancel" class="primary"></button>
         </div>
       </div>
     </main>
 
     <footer>
       <div>
-        <a id="privacyPolicy" class="i18n_issueReporter_privacyPolicy" data-doclink="reporter_privacy"></a>
+        <a id="privacyPolicy" data-i18n="issueReporter_privacyPolicy" data-doclink="reporter_privacy"></a>
       </div>
-      <button id="cancel" class="i18n_cancel secondary"></button>
-      <button id="continue" class="i18n_continue primary" disabled></button>
-      <button id="send" class="i18n_issueReporter_sendButton_label primary" disabled hidden></button>
+      <button id="cancel" data-i18n="cancel" class="secondary"></button>
+      <button id="continue" data-i18n="continue" class="primary" disabled></button>
+      <button id="send" data-i18n="issueReporter_sendButton_label" class="primary" disabled hidden></button>
     </footer>
   </body>
 </html>

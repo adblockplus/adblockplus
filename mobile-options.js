@@ -15,11 +15,11 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/* globals getDoclink */
+
 "use strict";
 
 {
-  const {getMessage} = browser.i18n;
-
   const dialogSubscribe = "subscribe";
   const idAcceptableAds = "acceptableAds";
   const idRecommended = "subscriptions-recommended";
@@ -414,21 +414,11 @@
 
   populateLists();
 
-  get("#dialog-subscribe [name='title']").setAttribute(
-    "placeholder",
-    getMessage("mops_subscribe_title")
-  );
-
-  get("#dialog-subscribe [name='url']").setAttribute(
-    "placeholder",
-    getMessage("mops_subscribe_url")
-  );
-
-  getDocLink("privacy").then((url) =>
+  getDoclink("privacy").then((url) =>
   {
     get("#privacy-policy").href = url;
   });
-  getDocLink("imprint").then((url) =>
+  getDoclink("imprint").then((url) =>
   {
     get("#imprint").href = url;
   });
