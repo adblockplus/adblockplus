@@ -110,41 +110,12 @@
   }
   ext._Port.prototype.postMessage = postMessage;
 
-  // This API is injected at runtime so we can't rely on our promise polyfill
-  // and therefore only support callbacks
-  browser.contentSettings = {
-    cookies: {
-      get(details, callback)
-      {
-        callback({setting: "allow"});
-      }
-    },
-    javascript: {
-      get(details, callback)
-      {
-        callback({setting: "allow"});
-      }
-    }
-  };
-
-  // This API is injected at runtime so we can't rely on our promise polyfill
-  // and therefore only support callbacks
-  browser.management = {
-    getAll(callback)
-    {
-      callback([
-        {
-          enabled: true,
-          id: "cfhdojbkjhnklbpkdaibdccddilifddb",
-          name: "Adblock Plus",
-          type: "extension",
-          version: "3.4"
-        }
-      ]);
-    }
-  };
-
   browser.permissions = {
+    contains()
+    {
+      return Promise.resolve();
+    },
+
     request(opts)
     {
       const granted = confirm(`Grant permissions?\n${opts.permissions}`);

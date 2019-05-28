@@ -138,6 +138,36 @@
     }
   };
 
+  browser.contentSettings = {
+    cookies: {
+      get(details)
+      {
+        return Promise.resolve({setting: "allow"});
+      }
+    },
+    javascript: {
+      get(details)
+      {
+        return Promise.resolve({setting: "allow"});
+      }
+    }
+  };
+
+  browser.management = {
+    getAll()
+    {
+      return Promise.resolve([
+        {
+          enabled: true,
+          id: "cfhdojbkjhnklbpkdaibdccddilifddb",
+          name: "Adblock Plus",
+          type: "extension",
+          version: "3.4"
+        }
+      ]);
+    }
+  };
+
   // Workaround since HTMLCollection, NodeList, StyleSheetList, and CSSRuleList
   // didn't have iterator support before Chrome 51.
   // https://bugs.chromium.org/p/chromium/issues/detail?id=401699

@@ -397,19 +397,16 @@ function proxyApiCall(apiId, ...args)
         resolve(results[0]);
       }
 
-      const api = iframe.contentWindow.chrome || iframe.contentWindow.browser;
+      // The following APIs are injected at runtime so we can't rely on our
+      // promise polyfill. Therefore we simplify things by proxying calls even
+      // if the API has been made available to us in the same frame.
+      const proxy = iframe.contentWindow.browser;
       switch (apiId)
       {
         case "contentSettings.cookies":
-          if ("contentSettings" in browser)
+          if ("contentSettings" in proxy)
           {
-            // This API is injected at runtime so we can't rely on our
-            // promise polyfill and therefore only support callbacks
-            browser.contentSettings.cookies.get(...args, callback);
-          }
-          else if ("contentSettings" in api)
-          {
-            api.contentSettings.cookies.get(...args, callback);
+            proxy.contentSettings.cookies.get(...args).then(callback);
           }
           else
           {
@@ -417,15 +414,9 @@ function proxyApiCall(apiId, ...args)
           }
           break;
         case "contentSettings.javascript":
-          if ("contentSettings" in browser)
+          if ("contentSettings" in proxy)
           {
-            // This API is injected at runtime so we can't rely on our
-            // promise polyfill and therefore only support callbacks
-            browser.contentSettings.javascript.get(...args, callback);
-          }
-          else if ("contentSettings" in api)
-          {
-            api.contentSettings.javascript.get(...args, callback);
+            proxy.contentSettings.javascript.get(...args).then(callback);
           }
           else
           {
@@ -433,15 +424,9 @@ function proxyApiCall(apiId, ...args)
           }
           break;
         case "management.getAll":
-          if ("getAll" in browser.management)
+          if ("getAll" in proxy.management)
           {
-            // This API is injected at runtime so we can't rely on our
-            // promise polyfill and therefore only support callbacks
-            browser.management.getAll(...args, callback);
-          }
-          else if ("getAll" in api.management)
-          {
-            api.management.getAll(...args, callback);
+            proxy.management.getAll(...args).then(callback);
           }
           else
           {
