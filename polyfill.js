@@ -134,6 +134,7 @@
         const locale = locales.shift();
         readCatalog(locale, "common.json");
         readCatalog(locale, "filter-validation.json");
+        readCatalog(locale, "issue-reporter.json");
         readCatalog(locale, catalogFile);
       }
     }

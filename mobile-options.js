@@ -436,4 +436,13 @@
     "placeholder",
     getMessage("mops_subscribe_url")
   );
+
+  getDocLink("privacy").then((url) =>
+  {
+    get("#privacy-policy").href = url;
+  });
+  getDocLink("imprint").then((url) =>
+  {
+    get("#imprint").href = url;
+  });
 }
