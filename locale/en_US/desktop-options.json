@@ -384,7 +384,7 @@
   },
   "options_dialog_about_copyright": {
     "description": "Copyright information in 'about Adblock Plus' modal dialog",
-    "message": "Copyright © $currentYear$ eyeo GmbH.",
+    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
     "placeholders": {
       "currentYear": {
         "content": "$1",

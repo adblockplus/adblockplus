@@ -24,6 +24,7 @@ input
 
 body
 {
+  margin: 0;
   text-align: center;
   color: #494949;
 }
@@ -350,4 +351,17 @@ body:not([data-dialog="subscribe"]) #dialog-subscribe
 {
   border-width: 1px 0 0;
   text-align: center;
+}
+
+/* Footer */
+
+footer
+{
+  margin-top: 40px;
+}
+
+footer > a:last-child::before
+{
+  margin: 0 10px;
+  content: "\2022";
 }
