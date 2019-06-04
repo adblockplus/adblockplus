@@ -21,7 +21,7 @@ const DELAY = 200;
 
 const IOElement = require("./io-element");
 
-const {$$} = require("./dom");
+const {$, $$} = require("./dom");
 
 // used to create options
 const {wire} = IOElement;
@@ -410,4 +410,10 @@ window.addEventListener("resize", () =>
       });
     }
   }, 1000 / 30);
+});
+
+// re-calculate every time a tab is changed/clicked
+$('[data-action="switch-tab"]').addEventListener("click", () =>
+{
+  window.dispatchEvent(new CustomEvent("resize"));
 });
