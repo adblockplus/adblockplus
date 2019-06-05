@@ -174,6 +174,7 @@ class IOFilterTable extends IOElement
   {
     const filters = event.detail.split(/(?:\r\n|\n)/);
 
+    cleanErrors.call(this);
     browser.runtime.sendMessage({
       type: "filters.importRaw",
       text: filters.join("\n")
@@ -182,7 +183,6 @@ class IOFilterTable extends IOElement
     {
       if (!errors.length)
       {
-        cleanErrors.call(this);
         filters.reverse();
         for (const text of filters)
         {
