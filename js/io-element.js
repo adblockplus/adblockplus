@@ -133,7 +133,8 @@ class IOElement extends HyperHTMLElement
   {
     const computed = window.getComputedStyle(this, null);
     const property = "--" + this.nodeName.toLowerCase();
-    return computed.getPropertyValue(property).trim() === "ready";
+    // in some case Edge returns '#fff' instead of ready
+    return computed.getPropertyValue(property).trim() !== "";
   }
 
   // by default, render is a no-op
