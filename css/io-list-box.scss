@@ -17,7 +17,6 @@
 
 io-list-box
 {
-  --width: 100%;
   --height: auto;
   display: block;
   position: relative;
@@ -44,7 +43,7 @@ io-list-box [role="listbox"]
 {
   position: absolute;
   box-sizing: inherit;
-  width: var(--width, 100%);
+  width: 100%;
   border: 1px solid #bcbcbc;
   cursor: pointer;
 }
