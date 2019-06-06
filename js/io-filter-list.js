@@ -242,11 +242,12 @@ class IOFilterList extends IOElement
   onpaste(event)
   {
     event.preventDefault();
-    document.execCommand(
-      "insertText",
-      false,
-      event.clipboardData.getData("text/plain")
-    );
+
+    const data = event.clipboardData.getData("text/plain");
+    // Filters must be written within a single line so we're ignoring any
+    // subsequent lines in case clipboard data contains multiple lines.
+    const [text] = data.trim().split("\n", 1);
+    document.execCommand("insertText", false, text);
   }
 
   onkeydown(event)
