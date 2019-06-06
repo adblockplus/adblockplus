@@ -69,6 +69,10 @@ class IOFilterTable extends IOElement
       event => this.onerror(event)
     );
     this.list = this.appendChild(new IOFilterList());
+    this.list.addEventListener(
+      "filter:removed",
+      event => this.onFilterRemoved(event)
+    );
     this.footer = this.appendChild(wire()`<div class="footer" />`);
     this.addEventListener("click", this);
     this.addEventListener("error", this);
@@ -212,6 +216,12 @@ class IOFilterTable extends IOElement
     this.list.selected = matches;
     // scroll either to the exact match or the first close match
     this.list.scrollTo(accuracy === 1 ? filter : matches[0]);
+    this.updateFooter();
+  }
+
+  onFilterRemoved()
+  {
+    cleanErrors.call(this);
     this.updateFooter();
   }
 

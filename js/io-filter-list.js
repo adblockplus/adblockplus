@@ -294,6 +294,10 @@ class IOFilterList extends IOElement
         {
           this.selected.delete(filter);
           this.render();
+          this.dispatchEvent(new CustomEvent("filter:removed", {
+            cancelable: false,
+            bubbles: true
+          }));
         }
       });
       this._filter = null;
