@@ -47,6 +47,11 @@ h2
   margin: 0;
 }
 
+body
+{
+  overflow-x: hidden;
+}
+
 /*
   explicitly disable Issue Reporter in EdgeHTML due bug
   https://issues.adblockplus.org/ticket/7175
