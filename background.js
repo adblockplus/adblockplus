@@ -282,7 +282,7 @@
         {
           this._filterText.splice(i, 1);
           modules.filterNotifier.filterNotifier.emit("filter.removed",
-            filterText);
+            Filter.fromText(filterText));
           return;
         }
       }
@@ -347,28 +347,51 @@
     }
   };
 
-  function Filter(text)
+  class Filter
   {
-    this.text = text;
-    this.disabled = false;
+    static fromText(text)
+    {
+      if (params.filterError)
+        return new InvalidFilter(text, "filter_invalid_csp");
+
+      if (text[0] === "!")
+        return new CommentFilter(text);
+
+      return new RegExpFilter(text);
+    }
+
+    static normalize(text)
+    {
+      return text;
+    }
+
+    constructor(text)
+    {
+      this.text = text;
+    }
   }
-  Filter.fromText = (text) =>
-  {
-    if (params.filterError)
-      return new InvalidFilter(text, "filter_invalid_csp");
-    return new Filter(text);
-  };
-  Filter.normalize = (text) => text;
 
-  function ActiveFilter() {}
-
-  function InvalidFilter(text, reason)
+  class ActiveFilter extends Filter
   {
-    Filter.call(this, text);
-    this.reason = reason;
+    constructor(text)
+    {
+      super(text);
+      this.disabled = false;
+    }
   }
 
-  function RegExpFilter() {}
+  class CommentFilter extends Filter {}
+
+  class InvalidFilter extends Filter
+  {
+    constructor(text, reason)
+    {
+      super(text);
+      this.reason = reason;
+    }
+  }
+
+  class RegExpFilter extends ActiveFilter {}
 
   modules.filterClasses = {
     ActiveFilter,
@@ -516,11 +539,18 @@
   });
 
   const knownFilterText = [
+    "! Exception rules",
     "@@||alternate.de^$document",
     "@@||der.postillion.com^$document",
     "@@||taz.de^$document",
     "@@||amazon.de^$document",
+    "@@||example.com/looks_like_an_ad_but_isnt_one.html",
+    "! Blocking rules",
     "||biglemon.am/bg_poster/banner.jpg",
+    "/ad_banner*$domain=example.com",
+    "||example.com/some-annoying-popup$popup",
+    "/(example\\.com\\/some-annoying-popup\\)$/$rewrite=$1?nopopup",
+    "! Hiding rules",
     "winfuture.de###header_logo_link",
     "###WerbungObenRechts10_GesamtDIV",
     "###WerbungObenRechts8_GesamtDIV",
@@ -536,11 +566,7 @@
     "###ad-bereich1-superbanner",
     "###ad-bereich2-08",
     "###ad-bereich2-skyscrapper",
-    "/ad_banner*$domain=example.com",
-    "@@||example.com/looks_like_an_ad_but_isnt_one.html",
-    "example.com##.ad_banner",
-    "||example.com/some-annoying-popup$popup",
-    "/(example\\.com\\/some-annoying-popup\\)$/$rewrite=$1?nopopup"
+    "example.com##.ad_banner"
   ];
 
   const knownSubscriptions = new Map();
