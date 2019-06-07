@@ -227,16 +227,6 @@ function addFilter(data)
   if (!value)
     return;
 
-  const errors = [];
-  if (value[0] === "[")
-  {
-    const message = browser.i18n.getMessage("unexpected_filter_list_header");
-    errors.push(message);
-    value = value.replace(/^.*/, "").trim();
-    if (!value)
-      return;
-  }
-
   // in case of multi line don't bother the search
   if (isMultiLine(value))
   {
@@ -253,11 +243,6 @@ function addFilter(data)
     }
     else if (result.accuracy && value.length >= MINIMUM_SEARCH_LENGTH)
       dispatch.call(this, "filter:match", result);
-  }
-
-  if (errors.length)
-  {
-    dispatch.call(this, "filter:error", {errors});
   }
 }
 

@@ -190,6 +190,12 @@ class IOFilterTable extends IOElement
         filters.reverse();
         for (const text of filters)
         {
+          // We don't treat filter headers like invalid filters,
+          // instead we simply ignore them and don't show any errors
+          // in order to allow pasting complete filter lists
+          if (text[0] === "[")
+            continue;
+
           const i = this.filters.findIndex(flt => flt.text === text);
           const [filter] = i < 0 ? [{text}] : this.filters.splice(i, 1);
           this.filters.unshift(filter);
