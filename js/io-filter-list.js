@@ -567,7 +567,13 @@ function getRow(filter, i)
         />
       </td>
       <td data-column="status">
-        <io-toggle checked="${!filter.disabled}" onchange="${this}" />
+        <!-- Not all filters can be en-/disabled (e.g. comments) -->
+        <io-toggle
+          checked="${!filter.disabled}"
+          disabled="${!("disabled" in filter)}"
+          aria-hidden="${!("disabled" in filter)}"
+          onchange="${this}"
+        />
       </td>
       <td data-column="rule">
         <div
@@ -726,6 +732,7 @@ function replaceFilter(filter, currentTarget)
           break;
       }
       filters.splice(i, 1);
+      delete filter.disabled;
       delete filter.reason;
       Object.assign(filter, newFilter);
       prevFilterText.set(filter, text);
