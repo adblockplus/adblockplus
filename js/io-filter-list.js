@@ -26,7 +26,7 @@ const IOScrollbar = require("./io-scrollbar");
 const {utils, wire} = IOElement;
 
 const {port} = require("./api");
-const {$} = require("./dom");
+const {$, events} = require("./dom");
 
 const prevFilterText = new WeakMap();
 
@@ -269,7 +269,7 @@ class IOFilterList extends IOElement
 
   onkeyup(event)
   {
-    const isEnter = event.key === "Enter";
+    const isEnter = events.key(event) === "Enter";
     const update = isEnter || event.type === "blur";
     const {currentTarget} = event;
     const {title} = currentTarget;

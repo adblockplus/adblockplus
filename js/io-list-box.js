@@ -21,6 +21,8 @@ const DELAY = 200;
 
 const IOElement = require("./io-element");
 
+const {events} = require("./dom");
+
 // used to create options
 const {wire} = IOElement;
 
@@ -199,7 +201,7 @@ class IOListBox extends IOElement
   onkeydown(event)
   {
     const hovered = this.querySelector(".hover");
-    switch (event.key)
+    switch (events.key(event))
     {
       case KeyCode.BACKSPACE:
       case KeyCode.DELETE:
