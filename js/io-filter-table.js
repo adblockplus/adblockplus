@@ -188,6 +188,7 @@ class IOFilterTable extends IOElement
       if (!errors.length)
       {
         filters.reverse();
+        let added = false;
         for (const text of filters)
         {
           // We don't treat filter headers like invalid filters,
@@ -196,17 +197,19 @@ class IOFilterTable extends IOElement
           if (text[0] === "[")
             continue;
 
+          added = true;
           const i = this.filters.findIndex(flt => flt.text === text);
           const [filter] = i < 0 ? [{text}] : this.filters.splice(i, 1);
           this.filters.unshift(filter);
         }
-        // needed in case there were no filters whatsoever
-        // and the table never got a chance to initialize
-        // will be more like a no-op if already initialized
+
+        this.search.value = "";
+        if (!added)
+          return;
+
         this.render();
         updateList(this.list);
         this.list.scrollTo(this.filters[0]);
-        this.search.value = "";
         this.updateFooter();
       }
       else
