@@ -26,7 +26,7 @@ require("./io-popout");
 require("./io-toggle");
 
 const api = require("./api");
-const {$} = require("./dom");
+const {$, events} = require("./dom");
 
 const {port} = api;
 
@@ -773,26 +773,9 @@ function onClick(e)
   }
 }
 
-function getKey(e)
-{
-  // e.keyCode has been deprecated so we attempt to use e.key
-  if ("key" in e)
-    return e.key;
-  return getKey.keys[e.keyCode];
-}
-getKey.keys = {
-  9: "Tab",
-  13: "Enter",
-  27: "Escape",
-  37: "ArrowLeft",
-  38: "ArrowUp",
-  39: "ArrowRight",
-  40: "ArrowDown"
-};
-
 function onKeyUp(e)
 {
-  const key = getKey(e);
+  const key = events.key(e);
   let element = document.activeElement;
   if (!key || !element)
     return;
@@ -1013,7 +996,7 @@ function onDOMLoaded()
 
   $("#dialog").addEventListener("keydown", function(e)
   {
-    switch (getKey(e))
+    switch (events.key(e))
     {
       case "Escape":
         closeDialog();
