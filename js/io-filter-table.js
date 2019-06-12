@@ -125,9 +125,13 @@ class IOFilterTable extends IOElement
       footerError.dataset.filter = filter;
     else
       delete footerError.dataset.filter;
+
+    // Show a generic error message not only if we don't know what kind of
+    // error occurred but also if we don't have an error message for it yet
+    const errorMessages = errors.join("\n").trim();
     bind(footerError)`${
-      errors ?
-        errors.join("\n") :
+      errorMessages ?
+        errorMessages :
         {i18n: "filter_action_failed"}
     }`;
   }
