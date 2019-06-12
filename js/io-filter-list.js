@@ -252,7 +252,7 @@ class IOFilterList extends IOElement
 
   onkeydown(event)
   {
-    const {key} = event;
+    const key = events.key(event);
     if (key === "Enter" || key === "Escape")
     {
       event.preventDefault();
