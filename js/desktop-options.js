@@ -244,10 +244,19 @@ Collection.prototype.updateItem = function(item)
     element.setAttribute("aria-label", title);
     if (this.details[i].searchable)
       element.setAttribute("data-search", title.toLowerCase());
-    const controls = $$(".control[role='checkbox']", element);
+
+    const controls = $$(
+      `.control[role='checkbox'],
+      io-toggle.control`,
+      element
+    );
     for (const control of controls)
     {
-      control.setAttribute("aria-checked", item.disabled == false);
+      const checked = !item.disabled;
+      if (control.matches("io-toggle"))
+        control.checked = checked;
+      else
+        control.setAttribute("aria-checked", checked);
       if (isAcceptableAds(item.url) && this == collections.filterLists)
         control.disabled = !item.disabled;
     }

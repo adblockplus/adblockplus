@@ -18,7 +18,6 @@
 "use strict";
 
 const IOElement = require("./io-element");
-const {boolean} = IOElement.utils;
 
 class IOToggle extends IOElement
 {
@@ -28,31 +27,20 @@ class IOToggle extends IOElement
     return ["action", "checked", "disabled"];
   }
 
+  static get booleanAttributes()
+  {
+    return ["checked", "disabled"];
+  }
+
+  attributeChangedCallback()
+  {
+    this.render();
+  }
+
   created()
   {
     this.addEventListener("click", this);
     this.render();
-  }
-
-  get checked()
-  {
-    return this.hasAttribute("checked");
-  }
-
-  set checked(value)
-  {
-    boolean.attribute(this, "checked", value);
-    this.render();
-  }
-
-  get disabled()
-  {
-    return this.hasAttribute("disabled");
-  }
-
-  set disabled(value)
-  {
-    boolean.attribute(this, "disabled", value);
   }
 
   onclick(event)
@@ -64,7 +52,7 @@ class IOToggle extends IOElement
       {
         this.child.focus();
       }
-      this.dispatchEvent(new CustomEvent("change", {
+      this.firstElementChild.dispatchEvent(new CustomEvent("change", {
         bubbles: true,
         cancelable: true,
         detail: this.checked
