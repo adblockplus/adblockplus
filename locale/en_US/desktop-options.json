@@ -39,13 +39,13 @@
     "description": "Title of remove controls",
     "message": "remove"
   },
-  "options_new_label": {
-    "description": "Label of the new elements",
-    "message": "New"
-  },
   "options_general_description": {
     "description": "General tab description",
     "message": "Determine what Adblock Plus shows and hides on websites"
+  },
+  "options_new_label": {
+    "description": "Label of the new elements. Currently on hold for possible future usage.",
+    "message": "New"
   },
   "options_privacy_header": {
     "description": "Section title in General tab",
@@ -437,14 +437,6 @@
   "options_whitelist_notification": {
     "description": "Notification that is shown after a new website is whitelisted",
     "message": "Website has been whitelisted."
-  },
-  "options_anti_cv_header": {
-    "description": "Text for the section about anti CV",
-    "message": "Anti-Circumvention"
-  },
-  "options_anti_cv_tooltip": {
-    "description": "Tooltip for the anti circumvention list",
-    "message": "This filter list works against circumvention (i.e. techniques to force ads on ad-blocking users). These filters address circumventing ads as well as related tracking."
   },
   "options_filter_list_rule": {
     "message": "Filter rule"

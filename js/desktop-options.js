@@ -373,11 +373,6 @@ function focusNextElement(container, currentElement)
   return true;
 }
 
-collections.cv = new Collection([
-  {
-    id: "anti-cv-table"
-  }
-]);
 collections.protection = new Collection([
   {
     id: "recommend-protection-list-table"
@@ -430,10 +425,6 @@ function addSubscription(subscription)
         collection = collections.langs;
 
       collections.allLangs.addItem(subscription);
-    }
-    else if (recommended == "circumvention")
-    {
-      collection = collections.cv;
     }
     else
     {
