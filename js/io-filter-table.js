@@ -64,10 +64,6 @@ class IOFilterTable extends IOElement
         this.updateFooter();
       }
     );
-    this.search.addEventListener(
-      "filter:error",
-      event => this.onerror(event)
-    );
     this.list = this.appendChild(new IOFilterList());
     this.list.addEventListener(
       "filter:removed",
@@ -119,12 +115,8 @@ class IOFilterTable extends IOElement
     // force the footer to be visible since errors are shown there
     this.updateFooter();
     this.footer.classList.add("visible");
-    const {filter, errors} = event.detail;
+    const {errors} = event.detail;
     const footerError = this.querySelector(".footer .error");
-    if (filter)
-      footerError.dataset.filter = filter;
-    else
-      delete footerError.dataset.filter;
 
     // Show a generic error message not only if we don't know what kind of
     // error occurred but also if we don't have an error message for it yet
@@ -134,15 +126,6 @@ class IOFilterTable extends IOElement
         errorMessages :
         {i18n: "filter_action_failed"}
     }`;
-  }
-
-  onerrorclick(event)
-  {
-    const {filter} = event.currentTarget.dataset;
-    if (filter)
-    {
-      this.list.scrollTo(filter);
-    }
   }
 
   onfooterclick(event)
@@ -275,11 +258,7 @@ class IOFilterTable extends IOElement
         disabled="${disabled}"
         data-call="onfooterclick"
       >${{i18n: "copy_selected"}}</button>
-      <button
-        class="error"
-        onclick="${this}"
-        data-call="onerrorclick"
-      ></button>
+      <button class="error"></button>
     `;
   }
 }

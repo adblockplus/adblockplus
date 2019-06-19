@@ -325,7 +325,16 @@ class IOFilterList extends IOElement
       // drop any validation action at distance
       this._validating = 0;
       if (this.filters.some(f => f.text === filter.text && f !== filter))
-        dispatchError.call(this, "filter.duplicated", filter);
+      {
+        const {reason} = filter;
+        filter.reason = browser.i18n.getMessage("filter_duplicated");
+
+        // render only if there's something different to show
+        if (filter.reason !== reason)
+        {
+          this.render();
+        }
+      }
       else
       {
         replaceFilter.call(this, filter, currentTarget);
@@ -616,7 +625,10 @@ const createImageForFilter = (weakMap, filter) =>
   const isIssue = weakMap === issues;
   const image = createImageForType(isIssue);
   if (isIssue)
-    image.title = filter.reason;
+  {
+    image.title = filter.reason ||
+      browser.i18n.getMessage("filter_action_failed");
+  }
   else
     image.title = warningSlow;
   weakMap.set(filter, image);
@@ -689,7 +701,7 @@ function getScrollTop(value, scrollHeight)
 
 function getWarning(filter)
 {
-  if (filter.reason)
+  if (typeof filter.reason === "string")
     return issues.get(filter) || createImageForFilter(issues, filter);
   if (filter.slow)
     return warnings.get(filter) || createImageForFilter(warnings, filter);
@@ -776,7 +788,7 @@ function setupPort()
       const filter = this.filters.find(f => f.text === text);
       if (filter && disabled !== filter.disabled)
       {
-        dispatchError.call(this, "filter.disabled", filter);
+        filter.reason = browser.i18n.getMessage("filter_disabled");
         filter.disabled = disabled;
       }
       this.render();
