@@ -248,7 +248,7 @@ function addFilter(data)
 
 function dispatch(type, detail)
 {
-  if (/^filter:(?:add|error)$/.test(type) || this.filters.length)
+  if (type === "filter:add" || this.filters.length)
     this.dispatchEvent(new CustomEvent(type, {detail}));
 }
 
