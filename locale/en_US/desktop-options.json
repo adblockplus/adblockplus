@@ -1,4 +1,16 @@
 {
+  "options_aa_opt_out_survey": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/7daa26676865fc640146c8b5ad4146e6a17e171a/spec/abp/options-page.md#acceptable-ads-opt-out-survey",
+    "message": "To help us improve Adblock Plus, mind sharing why you’ve turned off Acceptable Ads?"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/7daa26676865fc640146c8b5ad4146e6a17e171a/spec/abp/options-page.md#acceptable-ads-opt-out-survey",
+    "message": "Go to the survey"
+  },
+  "options_aa_opt_out_survey_no": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/7daa26676865fc640146c8b5ad4146e6a17e171a/spec/abp/options-page.md#acceptable-ads-opt-out-survey",
+    "message": "No, thanks"
+  },
   "options_page_document_title": {
     "description": "Options page title",
     "message": "Adblock Plus Options"

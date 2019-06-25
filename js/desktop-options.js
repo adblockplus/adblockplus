@@ -638,6 +638,9 @@ function execAction(action, element)
     case "hide-more-filters-section":
       $("#more-filters").setAttribute("aria-hidden", true);
       return true;
+    case "hide-acceptable-ads-survey":
+      $("#acceptable-ads-why-not").setAttribute("aria-hidden", true);
+      return false;
     case "hide-notification":
       hideNotification();
       return true;
@@ -1013,6 +1016,10 @@ function onDOMLoaded()
   {
     setElementLinks("dnt", url);
   });
+  getDoclink("acceptable_ads_survey").then(url =>
+  {
+    $("#acceptable-ads-why-not a.primary").href = url;
+  });
 
   // Advanced tab
   let customize = $$("#customize li[data-pref]");
@@ -1128,6 +1135,7 @@ function setAcceptableAds()
   const acceptableAdsForm = $("#acceptable-ads");
   const acceptableAds = $("#acceptable-ads-allow");
   const acceptableAdsPrivacy = $("#acceptable-ads-privacy-allow");
+  const wasSelected = acceptableAds.getAttribute("aria-checked") === "true";
   acceptableAdsForm.classList.remove("show-dnt-notification");
   acceptableAds.setAttribute("aria-checked", false);
   acceptableAdsPrivacy.setAttribute("aria-checked", false);
@@ -1155,6 +1163,17 @@ function setAcceptableAds()
     // Using aria-disabled in order to keep the focus
     acceptableAdsPrivacy.setAttribute("aria-disabled", true);
     acceptableAdsPrivacy.setAttribute("tabindex", -1);
+  }
+
+  const isSelected = acceptableAds.getAttribute("aria-checked") === "true";
+  const aaSurvey = $("#acceptable-ads-why-not");
+  if (isSelected)
+  {
+    aaSurvey.setAttribute("aria-hidden", true);
+  }
+  else if (wasSelected)
+  {
+    aaSurvey.setAttribute("aria-hidden", false);
   }
 }
 

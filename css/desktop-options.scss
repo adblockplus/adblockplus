@@ -870,6 +870,52 @@ html[dir="rtl"] button
   font-weight: 700;
 }
 
+#acceptable-ads #acceptable-ads-why-not
+{
+  --background-color: #FFF;
+  --border-color: #099CD0;
+  position: absolute;
+  z-index: 1;
+  left: -130px;
+  width: 260px;
+  margin-top: 40px;
+  padding: 16px 16px 0;
+  border: 1px solid var(--border-color);
+  background-color: var(--background-color);
+  text-align: center;
+}
+
+#acceptable-ads #acceptable-ads-why-not::before
+{
+  display: block;
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  margin-left: -9px;
+  border: 1px solid var(--border-color);
+  border-right: none;
+  border-bottom: none;
+  background-color: var(--background-color);
+  content: "";
+  transform: rotate(45deg);
+}
+
+#acceptable-ads #acceptable-ads-why-not > a,
+#acceptable-ads #acceptable-ads-why-not > button
+{
+  font-size: 0.9rem;
+}
+
+#acceptable-ads #acceptable-ads-why-not > button
+{
+  position: initial;
+  margin: auto;
+  border: 0;
+  color: #077CA6;
+}
+
 html:not([dir="rtl"]) #acceptable-ads label
 {
   margin-right: 0.5rem;
