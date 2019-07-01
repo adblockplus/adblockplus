@@ -28,6 +28,7 @@ io-popout
   );
   --content-offset-out: calc(-0.5 * var(--icon-size-outer));
   --content-offset-start: calc(1.5 * var(--icon-size-outer));
+  --z-index: 100;
 }
 
 /*
@@ -80,7 +81,7 @@ io-popout > .wrapper > [role]::before
 {
   display: block;
   position: absolute;
-  z-index: 2;
+  z-index: calc(var(--z-index) + 1);
   width: var(--pointer-size);
   height: var(--pointer-size);
   border: var(--border);
@@ -120,7 +121,7 @@ io-popout[expanded="above"] > .wrapper > [role]::before
 
 io-popout[expanded="start"] > .wrapper > [role]::before
 {
-  z-index: 1;
+  z-index: var(--z-index);
   top: var(--pointer-offset-start);
   right: var(--pointer-offset-out);
   transform: rotate(135deg);
@@ -140,7 +141,7 @@ html[dir="rtl"] io-popout[expanded="start"] > .wrapper > [role]::before
 io-popout > .wrapper > [role]
 {
   position: absolute;
-  z-index: 1;
+  z-index: var(--z-index);
   border: var(--border);
   border-radius: 3px;
   background-color: var(--background-color);
@@ -196,7 +197,7 @@ io-popout > .wrapper > [role="menubar"]
   width: 12.2rem;
 }
 
-io-popout > .wrapper > [role="tooltip"],
+io-popout > .wrapper > [role="tooltip"]
 {
   width: 15rem;
 }
@@ -207,7 +208,7 @@ io-popout > .wrapper > [role="tooltip"],
  */
 io-popout > .wrapper > [role] *
 {
-  z-index: 3;
+  z-index: calc(var(--z-index) + 2);
 }
 
 io-popout .close
