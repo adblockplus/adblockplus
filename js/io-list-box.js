@@ -259,10 +259,7 @@ class IOListBox extends IOElement
 
   onmousedown(event)
   {
-    if (this.expanded)
-    {
-      this.expanded = false;
-    }
+    this.expanded = !this.expanded;
   }
 
   onmouseover(event)
