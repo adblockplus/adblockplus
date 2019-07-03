@@ -1,15 +1,36 @@
 {
+  "click_element_to_block_it": {
+    "message": "點擊頁面上的一個元素以過濾它。"
+  },
   "easy_create_filter": {
     "message": "過濾網頁元素"
+  },
+  "options_refresh": {
+    "message": "重新整理"
   },
   "options_short": {
     "message": "選項"
   },
+  "overlay_notification_closing_button_hide": {
+    "message": "關閉"
+  },
   "overlay_notification_closing_button_optout": {
     "message": "停止顯示通知"
   },
+  "promote_abp_module": {
+    "message": "您對手機設備上的 Adblock Plus 感興趣嗎？"
+  },
+  "refresh_to_take_effect": {
+    "message": "點擊 <strong>重新整理</strong> 讓變更生效。"
+  },
+  "sendReport": {
+    "message": "回報問題"
+  },
+  "stats_header": {
+    "message": "被過濾的項目數量"
+  },
   "stats_label_page": {
-    "message": "本頁有 <strong>$number$</strong>  項被過濾",
+    "message": "在這 <strong>$number$</strong> 頁面上",
     "placeholders": {
       "number": {
         "content": "$1"
@@ -23,5 +44,8 @@
         "content": "$1"
       }
     }
+  },
+  "status_header": {
+    "message": "過濾廣告於："
   }
 }

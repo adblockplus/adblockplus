@@ -72,7 +72,7 @@
     "message": "允许来自 Adblock Plus 的通知（总是显示与关键性能问题有关的通知）。"
   },
   "options_dialog_about_copyright": {
-    "message": "版权所有 © $currentYear$ eyeo GmbH。",
+    "message": "版权所有 © $currentYear$ <a0>eyeo GmbH</a0>。",
     "placeholders": {
       "currentYear": {
         "content": "$1",

@@ -72,7 +72,7 @@
     "message": "Leisti Adblock Plus pranešimus (pranešimai susiję su kritinėmis greitaveikos bėdomis bus rodomi visada)."
   },
   "options_dialog_about_copyright": {
-    "message": "Autorinės teisės © $currentYear$ eyeo GmbH.",
+    "message": "Autorinės teisės © $currentYear$ <a0>eyeo GmbH</a0>.",
     "placeholders": {
       "currentYear": {
         "content": "$1",

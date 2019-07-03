@@ -51,7 +51,7 @@
     "message": "유용한 알림 표시"
   },
   "options_dialog_about_copyright": {
-    "message": "Copyright © $currentYear$ eyeo GmbH 저작권 소유.",
+    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0> 저작권 소유.",
     "placeholders": {
       "currentYear": {
         "content": "$1",

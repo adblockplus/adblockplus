@@ -72,7 +72,7 @@
     "message": "Zezwalaj na powiadomienia Adblock Plus (powiadomienia powiązane z krytycznymi problemami dotyczącymi wydajności będą zawsze wyświetlane)."
   },
   "options_dialog_about_copyright": {
-    "message": "Copyright © $currentYear$ eyeo GmbH.",
+    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
     "placeholders": {
       "currentYear": {
         "content": "$1",

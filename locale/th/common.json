@@ -19,5 +19,14 @@
   },
   "common_notification_hide": {
     "message": "ปิดการแจ้งเตือน"
+  },
+  "copy_selected": {
+    "message": "คัดลอกสิ่งที่เลือกไว้"
+  },
+  "delete": {
+    "message": "ลบ"
+  },
+  "filter_action_failed": {
+    "message": "มีบางอย่างผิดพลาดขึ้น กรุณาลองใหม่อีกครั้ง"
   }
 }

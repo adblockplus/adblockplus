@@ -72,7 +72,7 @@
     "message": "התר התראות מאת Adblock Plus (התראות הקשורות לסוגיות של ביצועים מכריעים תמיד ייראו)."
   },
   "options_dialog_about_copyright": {
-    "message": ".eyeo GmbH $currentYear$ © זכויות יוצרים",
+    "message": ".<a0>eyeo GmbH</a0> $currentYear$ © זכויות יוצרים",
     "placeholders": {
       "currentYear": {
         "content": "$1",

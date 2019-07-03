@@ -57,7 +57,7 @@
     "message": "Zobraziť užitočné upozornenia"
   },
   "options_dialog_about_copyright": {
-    "message": "Autorské práva © $currentYear$ eyeo GmbH.",
+    "message": "Autorské práva © $currentYear$ <a0>eyeo GmbH</a0>.",
     "placeholders": {
       "currentYear": {
         "content": "$1",

@@ -48,13 +48,13 @@
     "message": "Izberite to možnost, če je oglas prikazan kljub temu, da je Adblock Plus omogočen."
   },
   "issueReporter_falseNegative_label": {
-    "message": "Adblock Plus ne blokira oglasa"
+    "message": "Še vedno vidim oglase"
   },
   "issueReporter_falsePositive_description": {
     "message": "Izberite to možnost, če se stran ne prikaže, ne deluje pravilno, ali pa ji manjka pomembna vsebina."
   },
   "issueReporter_falsePositive_label": {
-    "message": "Adblock Plus blokira preveč stvari"
+    "message": "Stran, ki si jo želim ogledati, je pokvarjena"
   },
   "issueReporter_highlighter_description": {
     "message": "Uporabite orodja za označevanje vsakega oglasa ali skrivanje občutljivih podatkov na sliki strani. Označevanje oglasov nam bo pomagalo pri hitrejšemu reševanju težave."
@@ -99,12 +99,12 @@
     "message": "Počakajte, dokler Adblock Plus pošilja vaše poročilo."
   },
   "issueReporter_showData_label": {
-    "message": "Pokaži podatke poročila"
+    "message": "Kliknite na to povezavo za predogled podatkov poročila pred pošiljanjem"
   },
   "issueReporter_typeSelector_description": {
-    "message": "To okno vas vodi po korakih do oddaje poročila o težavi z dodatkom Adblock Plus. Najprej izberite vrsto težave, s katero ste se srečali na tej strani:"
+    "message": "Izberite težavo:"
   },
   "issueReporter_typeSelector_heading": {
-    "message": "Izberite vrsto težave"
+    "message": "Do katere vrste težave je prišlo?"
   }
 }

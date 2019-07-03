@@ -54,7 +54,7 @@
     "message": "দরকারী বিজ্ঞপ্তি দেখান"
   },
   "options_dialog_about_copyright": {
-    "message": "কপিরাইট © $currentYear$ eyeo GmbH",
+    "message": "কপিরাইট © $currentYear$ <a0>eyeo GmbH</a0>",
     "placeholders": {
       "currentYear": {
         "content": "$1",
