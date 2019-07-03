@@ -72,7 +72,7 @@
     "message": "Benarkan pemberitahuan dari Adblock Plus (pemberitahuan berkaitan masalah prestasi akan sentiasa ditunjukkan)."
   },
   "options_dialog_about_copyright": {
-    "message": "Hak cipta © $currentYear$ eyeo GmbH.",
+    "message": "Hak cipta © $currentYear$ <a0>eyeo GmbH</a0>.",
     "placeholders": {
       "currentYear": {
         "content": "$1",

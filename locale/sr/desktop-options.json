@@ -60,7 +60,7 @@
     "message": "Приказуј корисна обавештења"
   },
   "options_dialog_about_copyright": {
-    "message": "Ауторско право © $currentYear$ eyeo GmbH.",
+    "message": "Ауторско право © $currentYear$ <a0>eyeo GmbH</a0>.",
     "placeholders": {
       "currentYear": {
         "content": "$1",

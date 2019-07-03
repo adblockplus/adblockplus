@@ -12,7 +12,7 @@
     "message": "தனிப்பயனாக்கல்கள்"
   },
   "options_dialog_about_copyright": {
-    "message": "பதிப்புரிமை © $currentYear$ eyeo GmbH.",
+    "message": "பதிப்புரிமை © $currentYear$ <a0>eyeo GmbH</a0>.",
     "placeholders": {
       "currentYear": {
         "content": "$1",

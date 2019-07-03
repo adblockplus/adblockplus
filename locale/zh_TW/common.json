@@ -20,6 +20,9 @@
   "common_notification_hide": {
     "message": "關閉通知"
   },
+  "copy_selected": {
+    "message": "複製選擇項目"
+  },
   "delete": {
     "message": "刪除"
   },

@@ -72,7 +72,7 @@
     "message": "Luba Adblock Plusi teavitused (kriitiliste jõudlusprobleemidega seotud teatisi näidatakse alati)."
   },
   "options_dialog_about_copyright": {
-    "message": "Autoriõigus © $currentYear$ eyeo GmbH.",
+    "message": "Autoriõigus © $currentYear$ <a0>eyeo GmbH</a0>.",
     "placeholders": {
       "currentYear": {
         "content": "$1",

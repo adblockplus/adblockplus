@@ -8,6 +8,9 @@
   "options_acceptableAds_description": {
     "message": "可接受的廣告是非侵入式廣告。由於它們為網站所有者創造了收入，因此它們處於廣告屏蔽和支持在線內容之間的中間位置。"
   },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>注意：</strong> <strong>請勿跟踪（DNT）</strong>選項在瀏覽器設定中已被禁用。為了使本功能正常工作，請在您的瀏覽器首選項中啟用<strong>DNT</strong>即可。<a>查看啟用DNT的方法</a>。"
+  },
   "options_acceptableAds_header": {
     "message": "可接受廣告"
   },
@@ -16,6 +19,15 @@
   },
   "options_advanced_description": {
     "message": "自定義 Adblock Plus、添加或移除過濾列表、創建和維護您自己的過濾列表"
+  },
+  "options_anti_cv_header": {
+    "message": "反規避過濾"
+  },
+  "options_anti_cv_title": {
+    "message": "ABP 反規避過濾列表"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "此過濾列表可以防止規避（即在廣告過濾用戶上強制投放廣告的技術）。這些過濾器可以解決規避廣告以及跟踪相關的問題。"
   },
   "options_close": {
     "message": "關閉"
@@ -27,10 +39,10 @@
     "message": "取消"
   },
   "options_customFilters_description": {
-    "message": "編寫自己的自定義過濾器，以進一步控制 Adblock Plus 允許或屏蔽的內容。"
+    "message": "編寫自己的自定義過濾器，以進一步控制 Adblock Plus 允許或封鎖的內容。"
   },
   "options_customFilters_title": {
-    "message": "創建和編輯您的過濾列表"
+    "message": "創建和編輯您自訂的過濾列表"
   },
   "options_customFilters_widget_title": {
     "message": "我的過濾列表"
@@ -56,8 +68,11 @@
   "options_customize_showNotifications": {
     "message": "顯示有用的通知"
   },
+  "options_customize_showNotifications_tooltip": {
+    "message": "允許來自 Adblock Plus 的通知（總是顯示與重要性能問題有關的通知）。"
+  },
   "options_dialog_about_copyright": {
-    "message": "版權所有 © $currentYear$ eyeo GmbH。",
+    "message": "版權所有 © $currentYear$ <a0>eyeo GmbH</a0>。",
     "placeholders": {
       "currentYear": {
         "content": "$1",
@@ -173,6 +188,14 @@
   "options_filter_list_rule": {
     "message": "過濾條件"
   },
+  "options_filters_search_or_add": {
+    "message": "搜尋或新增過濾器（例如$filter$）",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
+  },
   "options_footer_about": {
     "message": "關於 Adblock Plus"
   },
@@ -259,6 +282,31 @@
   },
   "options_tab_whitelist": {
     "message": "白名單網站"
+  },
+  "options_tracking_warning_1": {
+    "message": "我們注意到您同時啟用了<strong>$tracking$</strong>和<strong>$acceptableAds$</strong>。",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "我們想告知您，為了讓廣告商向您展示更有相關性的廣告，可接受廣告<strong>可能</strong>准許某些跟踪型的廣告。"
+  },
+  "options_tracking_warning_3": {
+    "message": "如果您更注重隱私，請選擇下方的<strong>$acceptableAdsPrivacy$</strong>複選框。",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
   },
   "options_tracking_warning_acknowledgment": {
     "message": "好的，知道了"

@@ -72,7 +72,7 @@
     "message": "Позволяване на известяване от Adblock Plus (това за критични проблеми в производителността ще се показва винаги)."
   },
   "options_dialog_about_copyright": {
-    "message": "Авторски права © eyeo GmbH, $currentYear$ г.",
+    "message": "Авторски права © <a0>eyeo GmbH</a0>, $currentYear$ г.",
     "placeholders": {
       "currentYear": {
         "content": "$1",

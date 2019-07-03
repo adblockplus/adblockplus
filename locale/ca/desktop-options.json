@@ -72,7 +72,7 @@
     "message": "Permet notificacions d'Adblock Plus (les notificacions relacionades amb problemes de rendiment crítics es mostraran sempre)."
   },
   "options_dialog_about_copyright": {
-    "message": "Drets d'autor © $currentYear$ eyeo GmbH.",
+    "message": "Drets d'autor © $currentYear$ <a0>eyeo GmbH</a0>.",
     "placeholders": {
       "currentYear": {
         "content": "$1",

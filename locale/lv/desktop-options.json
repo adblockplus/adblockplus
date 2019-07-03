@@ -54,7 +54,7 @@
     "message": "Rādīt noderīgus paziņojumus"
   },
   "options_dialog_about_copyright": {
-    "message": "Autortiesības © $currentYear$ eyeo GmbH.",
+    "message": "Autortiesības © $currentYear$ <a0>eyeo GmbH</a0>.",
     "placeholders": {
       "currentYear": {
         "content": "$1",

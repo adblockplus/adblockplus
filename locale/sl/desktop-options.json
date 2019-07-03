@@ -51,7 +51,7 @@
     "message": "Prikaži 'Blokiraj element' v meniju desnega klika"
   },
   "options_customize_blockElement_tooltip": {
-    "message": "Začasno blokiraj nadležne predmete spletni strani, npr. slike ali animirane predstavitve."
+    "message": "Začasno blokiraj nadležne predmete na spletni strani, npr. slike ali animirane predstavitve."
   },
   "options_customize_header": {
     "message": "Prilagajanje"
@@ -72,7 +72,7 @@
     "message": "Dovoli obvestila dodatka Adblock Plus (obvestila o kritičnih težavah glede zmogljivosti bodo vedno prikazana)."
   },
   "options_dialog_about_copyright": {
-    "message": "Avtorske pravice © $currentYear$ eyeo GmbH.",
+    "message": "Avtorske pravice © $currentYear$ <a0>eyeo GmbH</a0>.",
     "placeholders": {
       "currentYear": {
         "content": "$1",
@@ -144,7 +144,7 @@
     "message": "Pred nekaj urami"
   },
   "options_filterList_lastDownload_checksumMismatch": {
-    "message": "Neuspešno, kontrolna vsota se ne ujema"
+    "message": "Neuspešno, nadzorna vsota se ne ujema"
   },
   "options_filterList_lastDownload_connectionError": {
     "message": "Neuspešno, napaka prenosa"
@@ -171,7 +171,7 @@
     "message": "Dejaven"
   },
   "options_filterList_state_disabled": {
-    "message": "Neaktiven"
+    "message": "Nedejaven"
   },
   "options_filterList_title": {
     "message": "Seznami filtrov"
@@ -242,7 +242,7 @@
     "message": "Novo"
   },
   "options_page_document_title": {
-    "message": "Nastavitve"
+    "message": "Možnosti Adblock Plus"
   },
   "options_page_title": {
     "message": "Nastavitve"
@@ -257,7 +257,7 @@
     "message": "Ikone družbenih omrežij na spletnih straneh ki jih obiščete, družbenim omrežjem omogočajo, da o vas ustvarijo profil glede na vaše brskalne navade - tudi če nanje ne kliknete. Skrivanje teh ikon pomaga zaščititi vaš profil."
   },
   "options_report_bug": {
-    "message": "Ste našli hrošča? <a>Pošiljite nam poročilo o hrošču.</a>"
+    "message": "Ste našli hrošča? <a>Pošljite nam poročilo o hrošču.</a>"
   },
   "options_report_forum": {
     "message": "Želite pomoč naše skupnosti? <a>Obiščite forum.</a>"
