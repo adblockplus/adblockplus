@@ -258,7 +258,10 @@ Collection.prototype.updateItem = function(item)
       else
         control.setAttribute("aria-checked", checked);
       if (isAcceptableAds(item.url) && this == collections.filterLists)
-        control.disabled = !item.disabled;
+      {
+        control.disabled = true;
+        control.setAttribute("aria-hidden", true);
+      }
     }
     if (additionalSubscriptions.includes(item.url))
     {
