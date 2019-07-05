@@ -42,10 +42,27 @@ function getDoclink(link)
 
 function getErrorMessage(error)
 {
-  const message = browser.i18n.getMessage(error.reason, error.selector);
+  let message = null;
 
-  if (error.lineno)
-    return browser.i18n.getMessage("line", [error.lineno.toString(), message]);
+  if (error)
+  {
+    message = browser.i18n.getMessage(
+      error.reason || error.type,
+      [error.selector]
+    );
+  }
 
-  return message;
+  // Use a generic error message if we don't have one available yet
+  if (!message)
+  {
+    message = browser.i18n.getMessage("filter_action_failed");
+  }
+
+  if (!error || typeof error.lineno !== "number")
+    return message;
+
+  return browser.i18n.getMessage("line", [
+    error.lineno.toLocaleString(),
+    message
+  ]);
 }

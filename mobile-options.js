@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* globals getDoclink */
+/* globals getDoclink, getErrorMessage */
 
 "use strict";
 
@@ -287,7 +287,7 @@
         if (errors.length < 1)
           return;
 
-        console.error(errors);
+        console.error(getErrorMessage(errors[0]));
         toggle.checked = !toggle.checked;
       });
     }

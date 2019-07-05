@@ -228,6 +228,15 @@ function addFilter(data)
   if (!value)
     return;
 
+  if (value[0] === "[")
+  {
+    const error = {type: "unexpected_filter_list_header"};
+    dispatch.call(this, "filter:error", {errors: [error]});
+    value = value.replace(/^\S+/, "").trim();
+    if (!value)
+      return;
+  }
+
   // in case of multi line don't bother the search
   if (isMultiLine(value))
   {

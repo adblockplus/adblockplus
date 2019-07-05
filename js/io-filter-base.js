@@ -15,8 +15,6 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* globals getErrorMessage */
-
 "use strict";
 
 require("./io-checkbox");

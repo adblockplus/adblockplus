@@ -104,25 +104,6 @@ class IOFilterTable extends IOElement
     this.setState({match: value});
   }
 
-  getErrorMessage(errors)
-  {
-    return wire()`
-    <ul>${errors.map(error => wire()`
-      <li>${{
-        i18n: [
-          error.lineno ? "line" : error.reason,
-          error.lineno ?
-          [
-            error.lineno.toString(),
-            browser.i18n.getMessage(error.reason, error.selector)
-          ] :
-          [error.selector]
-        ]
-      }}
-      </li>`)}
-    </ul>`;
-  }
-
   onclick(event)
   {
     if (event.target.closest("io-checkbox"))
@@ -139,11 +120,8 @@ class IOFilterTable extends IOElement
     const {errors} = event.detail;
     const footerError = $(".footer .error", this);
 
-    bind(footerError)`${
-      errors ?
-        errors.join("\n") :
-        {i18n: "filter_action_failed"}
-    }`;
+    const errorMessages = errors.map(getErrorMessage);
+    bind(footerError)`${errorMessages.join("\n")}`;
   }
 
   onfooterclick(event)
