@@ -417,27 +417,27 @@ function addSubscription(subscription)
 {
   const {disabled, recommended, url} = subscription;
   let collection = null;
-  if (recommended)
+  switch (recommended)
   {
-    if (recommended == "ads")
-    {
+    case "ads":
       if (disabled == false)
         collection = collections.langs;
-
       collections.allLangs.addItem(subscription);
-    }
-    else
-    {
+      break;
+    case "privacy":
+    case "social":
       collection = collections.protection;
-    }
-  }
-  else if (!isAcceptableAds(url) && disabled == false)
-  {
-    collection = collections.more;
+      break;
+    case undefined:
+      if (!isAcceptableAds(url) && disabled == false)
+        collection = collections.more;
+      break;
   }
 
   if (collection)
+  {
     collection.addItem(subscription);
+  }
 
   subscriptionsMap[url] = subscription;
 }
