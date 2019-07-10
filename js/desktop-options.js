@@ -277,6 +277,7 @@ Collection.prototype.updateItem = function(item)
     if (lastUpdateElement)
     {
       const message = $(".message", element);
+      message.classList.remove("error");
       if (item.downloading)
       {
         const text = getMessage("options_filterList_lastDownload_inProgress");
@@ -288,8 +289,8 @@ Collection.prototype.updateItem = function(item)
         const error = filterErrors.get(item.downloadStatus);
         if (error)
         {
+          message.classList.add("error");
           message.textContent = getMessage(error);
-          dispatchError(error);
         }
         else
           message.textContent = item.downloadStatus;

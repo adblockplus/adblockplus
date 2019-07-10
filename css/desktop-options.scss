@@ -1338,6 +1338,29 @@ html[dir="rtl"] #update-all-subscriptions
   display: none;
 }
 
+#all-filter-lists-table li.show-message .message.error
+{
+  color: #C11D26;
+}
+
+#all-filter-lists-table li.show-message .message.error::before
+{
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
+  vertical-align: middle;
+  background-image: url(icons/attention.svg);
+  background-size: contain;
+  content: "";
+}
+
+html[dir="rtl"] #all-filter-lists-table li.show-message .message.error::before
+{
+  margin-right: 0;
+  margin-left: 0.5em;
+}
+
 #all-filter-lists-table
 {
   margin-bottom: 0.8rem;
