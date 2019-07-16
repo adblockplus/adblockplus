@@ -185,10 +185,10 @@ class IOFilterList extends IOFilterBase
       if (this.filters.some(f => f.text === filter.text && f !== filter))
       {
         const {reason} = filter;
-        filter.reason = "filter_duplicated";
+        filter.reason = {type: "filter_duplicated"};
 
         // render only if there's something different to show
-        if (filter.reason !== reason)
+        if (!isSameError(filter.reason, reason))
         {
           this.render();
         }
@@ -233,7 +233,7 @@ class IOFilterList extends IOFilterBase
       else
         delete filter.reason;
       // render only if there's something different to show
-      if (reason !== filter.reason)
+      if (!isSameError(filter.reason, reason))
         this.render();
     });
   }
@@ -515,6 +515,11 @@ function getWarning(filter)
   return "";
 }
 
+function isSameError(errorA = {}, errorB = {})
+{
+  return errorA.type === errorB.type && errorA.reason === errorB.reason;
+}
+
 function replaceFilter(filter, currentTarget)
 {
   const {text} = filter;
@@ -573,7 +578,7 @@ function setupPort()
       const filter = this.filters.find(f => f.text === text);
       if (filter && disabled !== filter.disabled)
       {
-        filter.reason = "filter_disabled";
+        filter.reason = {type: "filter_disabled"};
         filter.disabled = disabled;
       }
       this.render();
