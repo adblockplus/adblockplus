@@ -57,6 +57,7 @@
             </li>
           </ul>
         </nav>
+
         <footer>
           <p>
             <a data-i18n="options_footer_contribute" class="button secondary"
@@ -352,6 +353,16 @@
         </section>
       </div>
     </main>
+
+    <!-- Additional sidebar -->
+    <aside>
+      <io-popout id="rating" type="dialog" anchor-icon="heart">
+        <img class="h2-icon" src="skin/icons/waving.svg">
+        <h2 data-i18n="options_rating_title"></h2>
+        <p data-i18n="options_rating_description"></p>
+        <io-rating/>
+      </io-popout>
+    </aside>
 
     <!-- Dialog -->
     <div id="dialog" role="dialog" aria-hidden="true">

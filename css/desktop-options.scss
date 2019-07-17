@@ -19,6 +19,7 @@
 @import "io-list-box.scss";
 @import "io-popout.scss";
 @import "io-popout-fixes.scss";
+@import "io-rating.scss";
 @import "io-toggle.scss";
 
 html
@@ -694,6 +695,50 @@ html[dir="rtl"] li a[role="tab"][aria-selected]
   display: flex;
   margin: 1rem 0rem;
   justify-content: center;
+}
+
+#rating
+{
+  position: fixed;
+  bottom: 40px;
+  margin: 0 40px;
+}
+
+#rating .h2-icon
+{
+  /* Align icon with edges of text based on text's line height and font size */
+  width: 2em;
+  height: 2em;
+  margin-top: 0.3em;
+}
+
+html:not([dir="rtl"]) #rating .h2-icon
+{
+  float: left;
+  margin-right: 0.5em;
+}
+
+html[dir="rtl"] #rating .h2-icon
+{
+  float: right;
+  margin-left: 0.5em;
+}
+
+#rating h2
+{
+  margin: 0;
+  font-size: 1rem;
+}
+
+#rating p
+{
+  text-align: center;
+}
+
+#rating io-rating
+{
+  width: 70%;
+  margin: auto;
 }
 
 /* This is a stopgap solution of footer overlapping tabs on low resolutions */

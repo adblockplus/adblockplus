@@ -452,5 +452,13 @@
   },
   "options_filter_list_rule": {
     "message": "Filter rule"
+  },
+  "options_rating_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/8f12811171d57b7499d50514283c6ec2d0247b05/spec/abp/options-page.md#store-rating",
+    "message": "Please take a moment and help spread the word by rating Adblock Plus. Thanks for your support!"
+  },
+  "options_rating_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/8f12811171d57b7499d50514283c6ec2d0247b05/spec/abp/options-page.md#store-rating",
+    "message": "Enjoying Adblock Plus?"
   }
 }

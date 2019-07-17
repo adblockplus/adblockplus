@@ -123,6 +123,7 @@
       },
       "io-list-box": "$ create.test.component io-list-box",
       "io-popout": "$ create.test.component io-popout",
+      "io-rating": "$ create.test.component io-rating",
       "io-scrollbar": "$ create.test.component io-scrollbar",
       "io-steps": "$ create.test.component io-steps",
       "io-toggle": "$ create.test.component io-toggle",

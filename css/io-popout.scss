@@ -19,16 +19,29 @@ io-popout
 {
   --background-color: #FFF;
   --border: 1px solid #077CA6;
+  --icon-margin: 0.4rem;
   --icon-size-inner: 1.1rem;
-  --icon-size-outer: 1.5rem;
+  --icon-size-outer: calc(var(--icon-size-inner) + var(--icon-margin));
   --pointer-size: 10px;
   --pointer-offset-out: calc(var(--pointer-size) / -2 - 1px);
   --pointer-offset-start: calc(
     var(--icon-size-outer) + var(--pointer-offset-out)
   );
   --content-offset-out: calc(-0.5 * var(--icon-size-outer));
-  --content-offset-start: calc(1.5 * var(--icon-size-outer));
+  --content-offset-start: calc(var(--icon-size-outer) + 2 * var(--icon-margin));
   --z-index: 100;
+  z-index: var(--z-index);
+}
+
+/* Ensures that expanded popouts are always shown on top of other popouts */
+io-popout[expanded]
+{
+  z-index: calc(var(--z-index) + 1);
+}
+
+io-popout[type="dialog"]
+{
+  --icon-size-inner: 3rem;
 }
 
 /*
@@ -63,14 +76,39 @@ io-popout > .wrapper::before
   cursor: pointer;
 }
 
-io-popout > .wrapper.menubar::before
+io-popout[anchor-icon] > .wrapper::before
+{
+  border-radius: 50%;
+  background-color: #077CA6;
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 100ms,
+    box-shadow 100ms;
+}
+
+io-popout[anchor-icon][expanded] > .wrapper::before
+{
+  background-color: #4A4A4A;
+  box-shadow: none;
+  animation-name: tap;
+  animation-duration: 500ms;
+}
+
+io-popout[type="menubar"] > .wrapper::before
 {
   background-image: url(icons/gear.svg?default#default);
 }
 
-io-popout > .wrapper.tooltip::before
+io-popout[type="tooltip"] > .wrapper::before
 {
   background-image: url(icons/tooltip.svg);
+}
+
+io-popout[anchor-icon="heart"] > .wrapper::before
+{
+  background-image: url(icons/heart.svg);
 }
 
 /*******************************************************************************
@@ -81,7 +119,6 @@ io-popout > .wrapper > [role]::before
 {
   display: block;
   position: absolute;
-  z-index: calc(var(--z-index) + 1);
   width: var(--pointer-size);
   height: var(--pointer-size);
   border: var(--border);
@@ -91,14 +128,14 @@ io-popout > .wrapper > [role]::before
   content: "";
 }
 
-io-popout[expanded=""] > .wrapper > [role]::before,
+io-popout:not([expanded]) > .wrapper > [role]::before,
 io-popout[expanded="above"] > .wrapper > [role]::before,
 io-popout[expanded="below"] > .wrapper > [role]::before
 {
   right: var(--pointer-offset-start);
 }
 
-html[dir="rtl"] io-popout[expanded=""] > .wrapper > [role]::before,
+html[dir="rtl"] io-popout:not([expanded]) > .wrapper > [role]::before,
 html[dir="rtl"] io-popout[expanded="above"] > .wrapper > [role]::before,
 html[dir="rtl"] io-popout[expanded="below"] > .wrapper > [role]::before
 {
@@ -106,7 +143,7 @@ html[dir="rtl"] io-popout[expanded="below"] > .wrapper > [role]::before
   left: var(--pointer-offset-start);
 }
 
-io-popout[expanded=""] > .wrapper > [role]::before,
+io-popout:not([expanded]) > .wrapper > [role]::before,
 io-popout[expanded="below"] > .wrapper > [role]::before
 {
   top: var(--pointer-offset-out);
@@ -121,7 +158,6 @@ io-popout[expanded="above"] > .wrapper > [role]::before
 
 io-popout[expanded="start"] > .wrapper > [role]::before
 {
-  z-index: var(--z-index);
   top: var(--pointer-offset-start);
   right: var(--pointer-offset-out);
   transform: rotate(135deg);
@@ -141,11 +177,11 @@ html[dir="rtl"] io-popout[expanded="start"] > .wrapper > [role]::before
 io-popout > .wrapper > [role]
 {
   position: absolute;
-  z-index: var(--z-index);
+  box-sizing: border-box;
   border: var(--border);
   border-radius: 3px;
   background-color: var(--background-color);
-  line-height: 1.5rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   cursor: default;
 }
 
@@ -154,14 +190,14 @@ io-popout [aria-hidden="true"]
   display: none;
 }
 
-io-popout[expanded=""] > .wrapper > [role],
+io-popout:not([expanded]) > .wrapper > [role],
 io-popout[expanded="above"] > .wrapper > [role],
 io-popout[expanded="below"] > .wrapper > [role]
 {
   right: var(--content-offset-out);
 }
 
-html[dir="rtl"] io-popout[expanded=""] > .wrapper > [role],
+html[dir="rtl"] io-popout:not([expanded]) > .wrapper > [role],
 html[dir="rtl"] io-popout[expanded="above"] > .wrapper > [role],
 html[dir="rtl"] io-popout[expanded="below"] > .wrapper > [role]
 {
@@ -169,7 +205,7 @@ html[dir="rtl"] io-popout[expanded="below"] > .wrapper > [role]
   left: var(--content-offset-out);
 }
 
-io-popout[expanded=""] > .wrapper > [role],
+io-popout:not([expanded]) > .wrapper > [role],
 io-popout[expanded="below"] > .wrapper > [role]
 {
   top: var(--content-offset-start);
@@ -192,6 +228,12 @@ html[dir="rtl"] io-popout[expanded="start"] > .wrapper > [role]
   left: var(--content-offset-start);
 }
 
+io-popout > .wrapper > [role="dialog"]
+{
+  width: 12rem;
+  padding: 20px;
+}
+
 io-popout > .wrapper > [role="menubar"]
 {
   width: 12.2rem;
@@ -208,7 +250,7 @@ io-popout > .wrapper > [role="tooltip"]
  */
 io-popout > .wrapper > [role] *
 {
-  z-index: calc(var(--z-index) + 2);
+  z-index: 1;
 }
 
 io-popout .close
@@ -234,15 +276,48 @@ io-popout p
   padding: 0.2rem 1rem;
 }
 
+io-popout [role="dialog"] p
+{
+  padding: 1em 0;
+  margin: 0;
+  font-size: 0.9em;
+}
+
 io-popout [role="tooltip"] p
 {
   overflow-y: auto;
   /* Approximated to achieve a total tooltip height of 12.5em without
   hiding overflowing anchor pointer */
   max-height: 9em;
+  line-height: 1.5rem;
 }
 
 io-popout .close + *
 {
   margin-top: 2em;
+}
+
+/*******************************************************************************
+ * Animations
+ ******************************************************************************/
+
+@keyframes tap
+{
+  0%
+  {
+    background-position: center;
+    background-size: 40%;
+  }
+
+  20%
+  {
+    background-position: center 40%;
+    background-size: 50%;
+  }
+
+  100%
+  {
+    background-position: center;
+    background-size: 40%;
+  }
 }

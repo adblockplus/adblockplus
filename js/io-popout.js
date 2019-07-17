@@ -23,7 +23,7 @@ class IOPopout extends IOElement
 {
   static get observedAttributes()
   {
-    return ["expanded", "i18n-body", "type"];
+    return ["anchor-icon", "expanded", "i18n-body", "type"];
   }
 
   created()
@@ -44,7 +44,7 @@ class IOPopout extends IOElement
     if (ev.relatedTarget && this.contains(ev.relatedTarget))
       return;
 
-    this.expanded = "";
+    this.expanded = null;
   }
 
   onclick(ev)
@@ -57,9 +57,9 @@ class IOPopout extends IOElement
 
       if (this.expanded)
       {
-        this.expanded = "";
+        this.expanded = null;
       }
-      else if (this.type == "tooltip")
+      else if (this.type == "dialog" || this.type == "tooltip")
       {
         const {bottom, top} = ev.target.getBoundingClientRect();
         this.expanded = (screen.availHeight - bottom > top) ? "below" : "above";
@@ -71,7 +71,7 @@ class IOPopout extends IOElement
     }
     else if (target.nodeName == "A" || target.nodeName == "BUTTON")
     {
-      this.expanded = "";
+      this.expanded = null;
     }
   }
 
@@ -82,7 +82,7 @@ class IOPopout extends IOElement
     const role = this.type || "tooltip";
     const content = [];
 
-    if (role == "tooltip")
+    if (role == "dialog" || role == "tooltip")
     {
       content.push(wire(this, ":close")`
         <button class="icon close secondary"></button>
@@ -99,7 +99,7 @@ class IOPopout extends IOElement
     content.push(...this._children);
 
     this.html`
-    <div class="${["wrapper", "icon", role].join(" ")}">
+    <div class="wrapper icon">
       <div role="${role}" aria-hidden="${!this.expanded}">
         ${content}
       </div>
