@@ -17,6 +17,8 @@
 
 "use strict";
 
+require("./io-circle-toggle.js");
+
 function onResize()
 {
   window.top.postMessage({

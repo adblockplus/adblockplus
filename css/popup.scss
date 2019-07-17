@@ -16,11 +16,10 @@
  */
 
 @import "./light.scss";
-@import "./io-big-toggle.scss";
+@import "./io-circle-toggle.scss";
 
 :root
 {
-  --height-adjusted-by: 35px;
   --border-width-thick-doubled: calc(2 * var(--border-width-thick));
   --border-width-thin-negative: calc(-1 * var(--border-width-thin));
   --margin-primary-half: calc(var(--margin-primary) / 2);
@@ -266,39 +265,12 @@ header .notification button
   opacity: 1;
 }
 
-.refresh-info
-{
-  display: block;
-  overflow: hidden;
-  padding: var(--margin-primary-half);
-  border-width: var(--border-width-thin);
-  border-style: var(--border-style-primary);
-  border-color: var(--border-color-primary);
-  border-radius: var(--border-radius-primary);
-  font-size: var(--font-size-primary);
-  transition: transform 0.3s ease-out;
-  transform: scale3d(1, 1, 1) translateY(4px);
-  will-change: transform;
-}
-
-.refresh-info[hidden]
-{
-  height: 0;
-  padding: 0;
-  border: 0;
-  transform: scale3d(1, 0, 1) translateY(0);
-}
-
 #page-status
 {
   height: var(--page-status-height, auto);
-  transition: height 0.3s ease-out;
   will-change: height;
-}
-
-.refresh #page-status
-{
-  height: calc(var(--page-status-height) + var(--height-adjusted-by));
+  padding-bottom: 0;
+  transition: height 0.3s ease-out;
 }
 
 #page-status .details
@@ -306,14 +278,10 @@ header .notification button
   width: 240px;
 }
 
-#page-status io-big-toggle
+#page-status io-circle-toggle
 {
-  margin: var(--margin-primary-half);
-}
-
-body.disabled #page-status .details
-{
-  opacity: 0.5;
+  transform: scale(0.7);
+  transform-origin: 100%;
 }
 
 #blocking-domain
@@ -339,13 +307,33 @@ main h2
   font-size: var(--font-size-medium);
 }
 
-#page-info
+body:not(.refresh) #page-refresh
 {
-  overflow: hidden;
-  height: var(--page-info-height, auto);
+  display: none;
+}
+
+#page-refresh .card span
+{
+  display: block;
+  margin-top: var(--margin-primary-half);
+  margin-bottom: var(--margin-primary);
+}
+
+#page-refresh .card button
+{
+  width: 100%;
+  padding: var(--padding-secondary);
+  border: 1px solid #0497E1;
+  border-radius: 4px;
+  background-color: #EDF9FF;
+  text-align: center;
+  font-weight: 600;
+}
+
+#page-info,
+#page-refresh
+{
   background-color: var(--background-color-secondary);
-  transition: height 0.3s ease-out;
-  will-change: height;
 }
 
 #page-info #block-element-container,
@@ -362,22 +350,35 @@ main h2
 
 .refresh #page-info
 {
-  height: calc(var(--page-info-height) - var(--height-adjusted-by));
+  display: none;
 }
 
-#page-info > div
+.refresh #page-refresh
 {
-  transition: transform  0.3s ease-out;
-  transform: scale3d(1, 1, 1);
-  will-change: transform;
+  text-align: center;
 }
 
-.refresh #page-info > div
+.refresh #page-refresh .card
 {
-  opacity: 0.9;
-  transform: scale3d(0.8, 0.8, 0.8) translateY(-30px);
-  pointer-events: none;
-  filter: blur(5px);
+  animation: refresh-scale 0.5s ease-in-out;
+}
+
+@keyframes refresh-scale
+{
+  0%
+  {
+    transform: scale(1);
+  }
+
+  50%
+  {
+    transform: scale(0.9);
+  }
+
+  100%
+  {
+    transform: scale(1);
+  }
 }
 
 main .card

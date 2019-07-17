@@ -17,7 +17,7 @@
 
 "use strict";
 
-require("./io-big-toggle.js");
+require("./io-circle-toggle.js");
 require("./popup.notifications.js");
 
 const setupToggle = require("./popup.toggle.js");
@@ -104,7 +104,7 @@ activeTab.then(tab =>
 function disablePopup()
 {
   document.body.classList.add("disabled");
-  const buttons = $$("#page-info button, io-big-toggle");
+  const buttons = $$("#page-info button, io-circle-toggle");
   for (const button of buttons)
     button.disabled = true;
 }

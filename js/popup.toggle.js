@@ -18,82 +18,56 @@
 "use strict";
 
 const {isPageWhitelisted} = require("./popup.utils.js");
-const {$, $$} = require("./dom");
+const {$} = require("./dom");
+
+// used to keep changes in a queue
+let sentMessage = Promise.resolve();
+
+// remember initial state to better toggle content
+let toggleChecked;
 
 module.exports = setupToggle;
 
 function setupToggle(tab)
 {
+  const toggle = $("io-circle-toggle");
+  $("#page-refresh button").addEventListener("click", () =>
+  {
+    browser.tabs.reload(tab.id).then(window.close);
+  });
+
   isPageWhitelisted(tab).then(whitelisted =>
   {
     if (whitelisted)
-      whitelistedPage();
+    {
+      document.body.classList.add("disabled");
+      $("#block-element").disabled = true;
+
+      // avoid triggering an event on this change
+      toggle.setState({checked: false}, false);
+      toggle.checked = false;
+    }
+    toggleChecked = toggle.checked;
   });
 
-  const toggle = $("io-big-toggle");
   toggle.addEventListener("change", () =>
   {
-    let sendMessage;
+    const {body} = document;
+    const refresh = toggleChecked !== toggle.checked;
+    body.classList.toggle("refresh", refresh);
     if (toggle.checked)
     {
-      sendMessage = browser.runtime.sendMessage({
+      sentMessage = sentMessage.then(() => browser.runtime.sendMessage({
         type: "filters.unwhitelist",
         tab
-      });
+      }));
     }
     else
     {
-      sendMessage = browser.runtime.sendMessage({
+      sentMessage = sentMessage.then(() => browser.runtime.sendMessage({
         type: "filters.whitelist",
         tab
-      });
+      }));
     }
-    toggle.addEventListener("transitionend", function once()
-    {
-      if (toggle.refresh)
-      {
-        toggle.removeEventListener("transitionend", once);
-        sendMessage.then(transformStats);
-      }
-      else
-      {
-        toggle.refresh = true;
-        toggle.addEventListener("click", () =>
-        {
-          browser.tabs.reload(tab.id).then(window.close);
-        });
-      }
-    });
   });
-}
-
-function transformStats()
-{
-  const pageInfo = $("#page-info");
-  pageInfo.style.setProperty(
-    "--page-info-height",
-    pageInfo.getBoundingClientRect().height + "px"
-  );
-  const pageStatus = $("#page-status");
-  pageStatus.style.setProperty(
-    "--page-status-height",
-    pageStatus.getBoundingClientRect().height + "px"
-  );
-  setTimeout(() =>
-  {
-    document.body.classList.add("refresh");
-    const refresh = $(".refresh-info");
-    refresh.hidden = false;
-  }, 100);
-}
-
-function whitelistedPage()
-{
-  document.body.classList.add("disabled");
-  const [
-    toggle,
-    block
-  ] = $$("io-big-toggle, #block-element");
-  toggle.checked = false;
-  block.disabled = true;
 }

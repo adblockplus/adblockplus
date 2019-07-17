@@ -32,7 +32,7 @@
     "message": "Interested in Adblock Plus on mobile?"
   },
   "refresh_to_take_effect": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/bubble_ui/spec/abp/bubble-ui.md#refresh",
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/6f8028d692da33978069972d90417dcd10957f2b/spec/abp/bubble-ui.md#refresh",
     "message": "Click <strong>Refresh</strong> for the changes to take effect."
   },
   "stats_header": {
