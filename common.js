@@ -48,7 +48,7 @@ function getErrorMessage(error)
   {
     message = browser.i18n.getMessage(
       error.reason || error.type,
-      [error.selector]
+      (error.selector) ? [error.selector] : []
     );
   }
 
