@@ -36,7 +36,12 @@ io-popout
 /* Ensures that expanded popouts are always shown on top of other popouts */
 io-popout[expanded]
 {
-  z-index: calc(var(--z-index) + 1);
+  /*
+   * We can't use calc() for setting the z-index yet because support for it was
+   * only added in Firefox 57. Therefore we have to hardcode its value for now.
+   * https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/57#Quantum_CSS_notes
+   */
+  z-index: 101;
 }
 
 io-popout[type="dialog"]
