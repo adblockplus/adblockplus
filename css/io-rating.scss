@@ -31,5 +31,7 @@ io-rating > img
 io-rating:not(:hover) > img,
 io-rating > img:hover ~ img
 {
+  /* Vendor prefix was removed in Chrome 53 */
+  -webkit-filter: grayscale(1);
   filter: grayscale(1);
 }
