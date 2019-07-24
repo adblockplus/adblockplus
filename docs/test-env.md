@@ -7,6 +7,7 @@
 | Parameter | Value | Description |
 |-|-|-|
 | application | String | Used for resolving application-specific documentation links (e.g. "chrome_support") |
+| locale | String | Show page using given locale (see [list of supported locales](../locale)) |
 
 ### composer.html
 
