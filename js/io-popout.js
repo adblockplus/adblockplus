@@ -62,7 +62,8 @@ class IOPopout extends IOElement
       else if (this.type == "dialog" || this.type == "tooltip")
       {
         const {bottom, top} = ev.target.getBoundingClientRect();
-        this.expanded = (screen.availHeight - bottom > top) ? "below" : "above";
+        const {clientHeight} = document.documentElement;
+        this.expanded = (clientHeight - bottom > top) ? "below" : "above";
       }
       else
       {
