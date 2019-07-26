@@ -24,7 +24,7 @@ class IOToggle extends IOElement
   // action, checked, and disabled should be reflected down the button
   static get observedAttributes()
   {
-    return ["action", "checked", "disabled"];
+    return ["checked", "disabled"];
   }
 
   static get booleanAttributes()
@@ -66,7 +66,6 @@ class IOToggle extends IOElement
     <button
       role="checkbox"
       disabled="${this.disabled}"
-      data-action="${this.action}"
       aria-checked="${this.checked}"
       aria-disabled="${this.disabled}"
     />`;

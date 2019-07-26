@@ -62,7 +62,6 @@ class IOBigToggle extends IOToggle
     <button
       role="checkbox"
       disabled="${this.disabled}"
-      data-action="${this.action}"
       aria-checked="${this.checked}"
       aria-disabled="${this.disabled}"
     >
