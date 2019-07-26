@@ -86,7 +86,7 @@ function onUrlClick(event)
   if (event.button != 0)
     return;
 
-  // Firefox 57 doesn't support the openResource API.
+  // Firefox doesn't support the openResource API yet
   if (!("openResource" in browser.devtools.panels))
     return;
 
@@ -111,6 +111,7 @@ function createRecord(request, filter, template)
     originalUrl.classList.add("url");
     originalUrl.textContent = request.url;
     originalUrl.setAttribute("href", request.url);
+    originalUrl.setAttribute("target", "_blank");
 
     if (request.type != "POPUP")
     {
@@ -124,6 +125,7 @@ function createRecord(request, filter, template)
       rewrittenUrl.textContent = request.rewrittenUrl;
       rewrittenUrl.setAttribute("href", request.rewrittenUrl);
       rewrittenUrl.addEventListener("click", onUrlClick);
+      rewrittenUrl.setAttribute("target", "_blank");
     }
     else
     {
