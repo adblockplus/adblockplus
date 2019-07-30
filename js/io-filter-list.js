@@ -432,13 +432,11 @@ const issues = new WeakMap();
 const warnings = new WeakMap();
 
 // relate either issues or warnings to a filter
-const createImageForFilter = (weakMap, filter) =>
+const createImageForFilter = (isIssue, filter) =>
 {
-  const isIssue = weakMap === issues;
+  const error = (isIssue) ? filter.reason : {type: "filter_slow"};
   const image = createImageForType(isIssue);
-  if (isIssue)
-    image.title = stripTagsUnsafe(getErrorMessage(filter.reason));
-  weakMap.set(filter, image);
+  image.title = stripTagsUnsafe(getErrorMessage(error));
   return image;
 };
 
@@ -508,11 +506,25 @@ function getScrollTop(value, scrollHeight)
 
 function getWarning(filter)
 {
+  let map;
   if (filter.reason)
-    return issues.get(filter) || createImageForFilter(issues, filter);
-  if (filter.slow)
-    return warnings.get(filter) || createImageForFilter(warnings, filter);
-  return "";
+  {
+    map = issues;
+  }
+  else if (filter.slow)
+  {
+    map = warnings;
+  }
+  else
+    return "";
+
+  let warning = map.get(filter);
+  if (warning)
+    return warning;
+
+  warning = createImageForFilter(map === issues, filter);
+  map.set(filter, warning);
+  return warning;
 }
 
 function isSameError(errorA = {}, errorB = {})
