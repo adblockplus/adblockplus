@@ -41,7 +41,6 @@
 
 html,
 body,
-h1,
 h2
 {
   margin: 0;
@@ -105,7 +104,7 @@ footer
   padding: var(--padding-primary);
 }
 
-header .top,
+header,
 #page-status > div:not(.refresh-info),
 footer
 {
@@ -113,28 +112,15 @@ footer
   flex-direction: row;
 }
 
-header .top
+header
 {
   align-items: center;
+  justify-content: space-between;
 }
 
-header h1
+header img
 {
-  color: transparent;
-  background-image: url(icons/abp-full-logo.svg);
-  background-repeat: no-repeat;
-  flex-grow: 1;
-  user-select: none;
-}
-
-html:not([dir="rtl"]) header h1
-{
-  background-position: left center;
-}
-
-html[dir="rtl"] header h1
-{
-  background-position: right center;
+  height: 2.5em;
 }
 
 header .notification::before
