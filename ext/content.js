@@ -29,8 +29,10 @@
     window.ext = {};
 
   const backgroundFrame = document.createElement("iframe");
-  backgroundFrame.setAttribute("src",
-                               "background.html" + window.location.search);
+  backgroundFrame.setAttribute(
+    "src",
+    `mocks/background.html${location.search}`
+  );
   backgroundFrame.style.display = "none";
   window.addEventListener("DOMContentLoaded", () =>
   {
