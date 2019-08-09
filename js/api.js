@@ -34,6 +34,11 @@ const doclinks = {
 };
 module.exports.doclinks = doclinks;
 
+const prefs = {
+  get: (key) => send("prefs.get", {key})
+};
+module.exports.prefs = prefs;
+
 // For now we are merely reusing the port for long-lived communications to fix
 // https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/issues/415
 const port = browser.runtime.connect({name: "ui"});

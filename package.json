@@ -30,6 +30,10 @@
       ]
     ],
     "bundle": {
+      "day1": [
+        "$ create.bundle popup-dummy",
+        "$ create.bundle day1"
+      ],
       "desktop-options": {
         "css": "$ create.css desktop-options",
         "js": "$ create.js ./js/desktop-options.js ./desktop-options.js"

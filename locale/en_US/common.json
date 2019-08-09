@@ -15,6 +15,16 @@
     "description": "Delete button label",
     "message": "Delete"
   },
+  "common_copyright": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/e84d55b6bdc36b9d4e25da8fb511af73e2d15231/spec/abp/first-run.md#footer, https://gitlab.com/eyeo/specs/spec/blob/d20f444263ae5cfbecda745449481687d183efce/spec/abp/notifications.md#day-1-footer",
+    "message": "Copyright © $year$ All rights reserved. Adblock Plus® is a registered trademark of <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
   "common_feature_anti_adblock_title": {
     "description": "Feature title for anti-adblock blocking filter list",
     "message": "Hide Adblock Warning Messages"

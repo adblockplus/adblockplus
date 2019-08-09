@@ -45,7 +45,7 @@ function initLinks()
   {
     const year = new Date().getFullYear().toString();
     const notice = document.getElementById("copyright-notice");
-    ext.i18n.setElementText(notice, "firstRun_footer_copyright", year);
+    ext.i18n.setElementText(notice, "common_copyright", year);
     ext.i18n.setElementLinks("copyright-notice", url);
   });
 }

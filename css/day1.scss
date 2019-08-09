@@ -1,0 +1,267 @@
+/*
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-present eyeo GmbH
+ *
+ * Adblock Plus is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Adblock Plus is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*******************************************************************************
+ * General
+ ******************************************************************************/
+
+:root
+{
+  --color-highlight: #CA0000;
+  --color-primary: #0797E1;
+  --color-primary-hover: #0789CA;
+  --color-secondary: #FFF;
+  --color-tertiary: #000;
+  --margin: 60px;
+  font-size: 16px;
+}
+
+body
+{
+  margin: 0;
+}
+
+a.button
+{
+  display: inline-block;
+  padding: 1em 2.5em;
+  border: 3px solid var(--color-secondary);
+  border-radius: 0.5em;
+  font-weight: 600;
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 200ms;
+}
+
+a.button:hover
+{
+  background-color: var(--color-primary-hover);
+}
+
+/*******************************************************************************
+ * Header
+ ******************************************************************************/
+
+header
+{
+  text-align: center;
+}
+
+header,
+article
+{
+  position: relative;
+  margin-bottom: var(--margin);
+}
+
+article::after
+{
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: var(--margin);
+  background-color: var(--color-highlight);
+  content: "";
+}
+
+header img
+{
+  width: 250px;
+}
+
+h1
+{
+  margin-top: 100px;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+header a.button
+{
+  border-color: transparent;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/*******************************************************************************
+ * Footer
+ ******************************************************************************/
+
+footer
+{
+  padding: 30px;
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--color-secondary);
+  background-color: var(--color-tertiary);
+}
+
+#copyright-notice a
+{
+  font-weight: 600;
+  text-decoration: none;
+  color: inherit;
+}
+
+#copyright-notice a:hover
+{
+  text-decoration: underline;
+}
+
+/*******************************************************************************
+ * Content
+ ******************************************************************************/
+
+h2
+{
+  margin: 0;
+  font-size: 2rem;
+}
+
+h1 em
+{
+  font-style: normal;
+}
+
+h1 em[data-i18n-index="0"]
+{
+  color: var(--color-highlight);
+}
+
+h1 em[data-i18n-index="1"]
+{
+  color: var(--color-primary);
+}
+
+.content
+{
+  position: relative;
+  max-width: 1010px;
+  margin: auto;
+  padding: var(--margin) 30px 30px;
+}
+
+.content.columns
+{
+  display: flex;
+}
+
+.content.columns > div
+{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.content.columns > div:last-child
+{
+  align-items: flex-end;
+}
+
+@media (max-width: 1010px)
+{
+  .content.columns
+  {
+    flex-direction: column;
+  }
+
+  .content.columns > div:last-child
+  {
+    margin-top: 1em;
+    align-items: flex-start;
+  }
+}
+
+/*******************************************************************************
+ * Community Section
+ ******************************************************************************/
+
+#community
+{
+  margin-top: calc(100px + var(--margin));
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+}
+
+#community::after
+{
+  background-image: linear-gradient(
+    to bottom right,
+    var(--color-primary) 49%,
+    var(--color-secondary) 50%
+  );
+}
+
+#community > .content::before
+{
+  --offset-start: 60px;
+  position: absolute;
+  top: -100px;
+  left: calc(var(--offset-start) * -1);
+  width: calc(100% + var(--offset-start));
+  height: 100px;
+  background-image: url(icons/day1/bug.svg),
+    url(icons/day1/wave.svg),
+    url(icons/day1/tower.svg);
+  background-repeat: no-repeat;
+  background-size: 40px auto,
+    160px auto
+    40px auto;
+  background-position: 80px 0,
+    0 bottom,
+    100% bottom;
+  content: "";
+}
+
+/*******************************************************************************
+ * Block Element Section
+ ******************************************************************************/
+
+#blockelement a.button
+{
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
+}
+
+#blockelement a.button:hover
+{
+  border-color: var(--color-primary-hover);
+  color: var(--color-secondary);
+  background-color: var(--color-primary-hover);
+}
+
+#blockelement::after
+{
+  background-image: linear-gradient(
+    to bottom right,
+    var(--color-secondary) 49%,
+    var(--color-tertiary) 50%
+  );
+}
+
+#popup-dummy
+{
+  width: 340px;
+  border: 1px solid #D2D2D2;
+  border-radius: 4px;
+  margin-top: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}

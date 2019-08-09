@@ -54,9 +54,9 @@
 
   function updateFromURL(data)
   {
-    if (window.location.search)
+    if (window.top.location.search)
     {
-      const params = window.location.search.substr(1).split("&");
+      const params = window.top.location.search.substr(1).split("&");
 
       for (const param of params)
       {
@@ -112,6 +112,7 @@
 
   modules.prefs = {Prefs: new EventEmitter()};
   const prefs = {
+    blocked_total: 12345,
     notifications_ignoredcategories: params.showNotificationUI ? ["*"] : [],
     notifications_showui: params.showNotificationUI,
     shouldShowBlockElementMenu: true,

@@ -2,13 +2,17 @@
 /screenshots/
 /smoke/
 /skin/fonts/
+/skin/day1.css
 /skin/desktop-options.css
 /skin/first-run.css
 /skin/issue-reporter.css
 /skin/popup.css
+/skin/popup-dummy.css
 /skin/web.css
+/day1.js
 /desktop-options.js
 /first-run.js
 /issue-reporter.js
 /popup.js
+/popup-dummy.js
 /package-lock.json

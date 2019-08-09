@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+  - This file is part of Adblock Plus <https://adblockplus.org/>,
+  - Copyright (C) 2006-present eyeo GmbH
+  -
+  - Adblock Plus is free software: you can redistribute it and/or modify
+  - it under the terms of the GNU General Public License version 3 as
+  - published by the Free Software Foundation.
+  -
+  - Adblock Plus is distributed in the hope that it will be useful,
+  - but WITHOUT ANY WARRANTY; without even the implied warranty of
+  - MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  - GNU General Public License for more details.
+  -
+  - You should have received a copy of the GNU General Public License
+  - along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+<html>
+  <head>
+    <title id="title-message"></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="skin/fonts/font.css">
+    <link rel="stylesheet" type="text/css" href="skin/day1.css">
+    <script src="polyfill.js"></script>
+    <script src="ext/common.js"></script>
+    <script src="ext/content.js"></script>
+    <script src="common.js"></script>
+    <script src="i18n.js"></script>
+    <script src="day1.js" defer></script>
+  </head>
+  <body>
+
+    <main>
+      <header>
+        <div class="content">
+          <a data-doclink="adblock_plus">
+            <img src="skin/icons/abp-full-logo.svg" alt="Adblock Plus">
+          </a>
+          <h1 id="content-message"></h1>
+          <a class="button" data-i18n="day1_header_more" data-doclink="adware"></a>
+        </div>
+      </header>
+
+      <article id="community">
+        <div class="content columns">
+          <div>
+            <h2 data-i18n="day1_community_title"></h2>
+            <p data-i18n="day1_community_description_1"></p>
+            <p data-i18n="day1_community_description_2"></p>
+          </div>
+          <div>
+            <a id="contact" class="button" data-i18n="day1_community_contact"></a>
+        </div>
+      </article>
+
+      <article id="blockelement">
+        <div class="content columns">
+          <div>
+            <h2 data-i18n="day1_blockelement_title"></h2>
+            <p data-i18n="day1_blockelement_description"></p>
+            <a class="button" data-i18n="day1_blockelement_more" data-doclink="block_element"></a>
+          </div>
+          <div>
+            <img src="skin/backgrounds/toolbar.svg" alt="">
+            <iframe id="popup-dummy" src="popup-dummy.html"
+              data-i18n-title="day1_blockelement_screenshot"
+              tabindex="-1"></iframe>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      <span id="copyright-notice"></span>
+    </footer>
+
+  </body>
+</html>

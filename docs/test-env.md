@@ -13,6 +13,10 @@
 
 Not supported yet.
 
+### day1.html
+
+No parameters.
+
 ### desktop-options.html
 
 | Parameter | Value | Description |

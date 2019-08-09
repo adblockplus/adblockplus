@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+  - This file is part of Adblock Plus <https://adblockplus.org/>,
+  - Copyright (C) 2006-present eyeo GmbH
+  -
+  - Adblock Plus is free software: you can redistribute it and/or modify
+  - it under the terms of the GNU General Public License version 3 as
+  - published by the Free Software Foundation.
+  -
+  - Adblock Plus is distributed in the hope that it will be useful,
+  - but WITHOUT ANY WARRANTY; without even the implied warranty of
+  - MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  - GNU General Public License for more details.
+  -
+  - You should have received a copy of the GNU General Public License
+  - along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<html>
+  <head>
+    <title>Adblock Plus</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="skin/fonts/font.css">
+    <link rel="stylesheet" href="skin/popup.css">
+    <link rel="stylesheet" href="skin/popup-dummy.css">
+    <script src="polyfill.js"></script>
+    <script src="ext/common.js"></script>
+    <script src="ext/content.js"></script>
+    <script src="i18n.js"></script>
+    <script src="popup-dummy.js" defer></script>
+  </head>
+  <body>
+
+    <header>
+      <img src="skin/icons/abp-full-logo.svg">
+      <button id="options"></button>
+    </header>
+    <main>
+      <div id="page-status">
+        <div>
+          <div class="details">
+            <h2 data-i18n="status_header"></h2>
+            <p id="blocking-domain" class="reset-font">example.com</p>
+          </div>
+          <io-big-toggle checked>
+            <button aria-checked="true">
+              <span data-i18n="options_refresh"></span>
+            </button>
+          </io-big-toggle>
+        </div>
+        <div data-i18n="refresh_to_take_effect" class="refresh-info" hidden></div>
+      </div>
+      <div id="page-info">
+        <div id="default-container">
+          <h2 data-i18n="stats_header"></h2>
+          <div id="stats-page" class="card"></div>
+          <div id="stats-total" class="card"></div>
+          <div class="options">
+            <button id="issue-reporter">
+              <span data-i18n="sendReport" class="report"></span>
+            </button>
+            <button id="block-element">
+              <span data-i18n="easy_create_filter" class="block"></span>
+            </button>
+          </div>
+        </div>
+        <div id="block-element-container">
+          <div id="block-element-info" class="card">
+              <strong data-i18n="easy_create_filter"></strong>
+              <span data-i18n="click_element_to_block_it"></span>
+          </div>
+          <div class="options">
+            <button id="block-element-cancel">
+              <span data-i18n="cancel" class="block"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <span data-i18n="promote_abp_module"></span>
+      <button class="store apple"></button>
+      <button class="store android"></button>
+    </footer>
+
+    <div class="overlay highlight"></div>
+    <div class="overlay"></div>
+
+  </body>
+</html>

@@ -45,7 +45,7 @@
     return candidates;
   };
 
-  const match = /[?&]locale=([\w-]+)/.exec(window.location.search);
+  const match = /[?&]locale=([\w-]+)/.exec(window.top.location.search);
   const selectedLocale = (match) ? match[1] : "en_US";
 
   const locales = getLocaleCandidates(selectedLocale);
@@ -133,6 +133,7 @@
         readCatalog(locale, "common.json");
         readCatalog(locale, "filter-validation.json");
         readCatalog(locale, "issue-reporter.json");
+        readCatalog(locale, "popup.json");
         readCatalog(locale, catalogFile);
       }
     }

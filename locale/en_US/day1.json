@@ -1,0 +1,66 @@
+{
+  "day1_blockelement_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/d20f444263ae5cfbecda745449481687d183efce/spec/abp/notifications.md#landing-page",
+    "message": "Block them with Adblock Plus's nifty block element feature."
+  },
+  "day1_blockelement_more": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/d20f444263ae5cfbecda745449481687d183efce/spec/abp/notifications.md#landing-page",
+    "message": "Learn how"
+  },
+  "day1_blockelement_screenshot": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/f8c79649ef3837c77869ecb11749eb96cf565c15/spec/abp/notifications.md#day-1",
+    "message": "Example of icon pop-up with \"Block element\" button highlighted."
+  },
+  "day1_blockelement_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/d20f444263ae5cfbecda745449481687d183efce/spec/abp/notifications.md#landing-page",
+    "message": "Tired of comment sections bringing you down?"
+  },
+  "day1_community_contact": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/d20f444263ae5cfbecda745449481687d183efce/spec/abp/notifications.md#landing-page",
+    "message": "Contact us!"
+  },
+  "day1_community_contact_subject": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/d20f444263ae5cfbecda745449481687d183efce/spec/abp/notifications.md#landing-page",
+    "message": "Looking for support!"
+  },
+  "day1_community_description_1": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/d20f444263ae5cfbecda745449481687d183efce/spec/abp/notifications.md#landing-page",
+    "message": "As an open source project, we depend on users like you to help us improve your ad-blocking experience."
+  },
+  "day1_community_description_2": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/d20f444263ae5cfbecda745449481687d183efce/spec/abp/notifications.md#landing-page",
+    "message": "What features would you like to see? What can we do better? Is Adblock Plus making some websites misbehave?"
+  },
+  "day1_community_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/d20f444263ae5cfbecda745449481687d183efce/spec/abp/notifications.md#landing-page",
+    "message": "Join the Adblock Plus community"
+  },
+  "day1_header_more": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/d20f444263ae5cfbecda745449481687d183efce/spec/abp/notifications.md#landing-page",
+    "message": "Learn more about malicious advertising"
+  },
+  "day1_header_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/d20f444263ae5cfbecda745449481687d183efce/spec/abp/notifications.md#landing-page",
+    "message": "Adblock Plus <strong>blocked <em0>$ads$ ads</em0> in <em1>the last half hour</em1>,</strong> some of which might have contained malicious content",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/d20f444263ae5cfbecda745449481687d183efce/spec/abp/notifications.md#push-notification",
+    "message": "That's a lot of annoying ads. <a>Find out what else Adblock Plus can block.</a>"
+  },
+  "notification_day1_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/d20f444263ae5cfbecda745449481687d183efce/spec/abp/notifications.md#push-notification",
+    "message": "You've already blocked $ads$ ads!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

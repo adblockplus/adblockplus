@@ -106,7 +106,7 @@ ext.i18n = {
   {
     function processString(str, currentElement)
     {
-      const match = /^(.*?)<(a|slot|strong)(\d)?>(.*?)<\/\2\3>(.*)$/.exec(str);
+      const match = /^(.*?)<(a|em|slot|strong)(\d)?>(.*?)<\/\2\3>(.*)$/.exec(str);
       if (match)
       {
         const [, before, name, index, innerText, after] = match;
