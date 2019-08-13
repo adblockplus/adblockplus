@@ -1553,7 +1553,6 @@ port.postMessage({
   type: "prefs.listen",
   filter: [
     "notifications_ignoredcategories",
-    "notifications_showui",
     "shouldShowBlockElementMenu",
     "show_devtools_panel",
     "show_statsinicon",

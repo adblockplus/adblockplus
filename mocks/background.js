@@ -75,7 +75,6 @@
     addSubscription: false,
     filterError: false,
     downloadStatus: "synchronize_ok",
-    showNotificationUI: false,
     showPageOptions: false
   };
   updateFromURL(params);
@@ -113,8 +112,7 @@
   modules.prefs = {Prefs: new EventEmitter()};
   const prefs = {
     blocked_total: 12345,
-    notifications_ignoredcategories: params.showNotificationUI ? ["*"] : [],
-    notifications_showui: params.showNotificationUI,
+    notifications_ignoredcategories: [],
     shouldShowBlockElementMenu: true,
     show_devtools_panel: true,
     show_statsinicon: true,

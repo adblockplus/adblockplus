@@ -257,7 +257,6 @@ parameters:
 * `downloadStatus`: sets downloadStatus parameter for filter lists, can be used
   to trigger various filter list download errors
 * `platform=chromium`: shows the opt-out for the developer tools panel
-* `showNotificationUI=true`: simulates user having opted-out of notifications
 
 issue-reporter.html?1
 ---------------------

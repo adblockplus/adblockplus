@@ -33,7 +33,6 @@ No parameters.
 | | `synchronize_checksum_mismatch` | (deprecated) Set filter list download status: Checksum mismatch |
 | filterError | `true` | Causes any filter validation to fail |
 | platform | `chromium` | Shows opt-out for DevTools panel |
-| showNotificationUI | `true` | (deprecated) Show UI as if user had opted-out of notifications |
 
 ### devtools-panel.html
 
