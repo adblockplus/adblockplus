@@ -21,13 +21,13 @@
     "message": "Унесите важећу URL адресу"
   },
   "mops_filterlist_add": {
-    "message": "+ Додај листу филтера"
+    "message": "Додај листу филтера"
   },
   "mops_filterlist_add_action": {
     "message": "Додај листу филтера"
   },
   "mops_filterlist_add_url": {
-    "message": "+ Додај прилагођену листу филтера"
+    "message": "Додај прилагођену листу филтера"
   },
   "mops_header": {
     "message": "Поставке Adblock Plus-а"

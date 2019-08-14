@@ -18,13 +18,13 @@
     }
   },
   "mops_filterlist_add": {
-    "message": "+ Agiuntar ina glista da filters"
+    "message": "Agiuntar ina glista da filters"
   },
   "mops_filterlist_add_action": {
     "message": "Agiuntar ina glista da filters"
   },
   "mops_filterlist_add_url": {
-    "message": "+ Agiuntar ina glista da filters persunalisà"
+    "message": "Agiuntar ina glista da filters persunalisà"
   },
   "mops_header": {
     "message": "Parameters dad Adblock Plus"

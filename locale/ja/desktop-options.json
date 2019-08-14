@@ -123,7 +123,7 @@
     "message": "英語"
   },
   "options_filterList_add": {
-    "message": "+ 新規フィルターリストを追加"
+    "message": "新規フィルターリストを追加"
   },
   "options_filterList_column_name": {
     "message": "フィルターリスト"
@@ -198,7 +198,7 @@
     "message": "ヘルプを見るか、当社までお問い合わせください"
   },
   "options_language_add": {
-    "message": "+ 言語の追加"
+    "message": "言語の追加"
   },
   "options_language_change": {
     "message": "変更"

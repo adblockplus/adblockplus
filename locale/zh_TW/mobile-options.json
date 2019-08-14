@@ -21,13 +21,13 @@
     "message": "請輸入網址連結"
   },
   "mops_filterlist_add": {
-    "message": "+ 添加過濾列表"
+    "message": "添加過濾列表"
   },
   "mops_filterlist_add_action": {
     "message": "添加過濾列表"
   },
   "mops_filterlist_add_url": {
-    "message": "+ 新增自訂過濾條件列表"
+    "message": "新增自訂過濾條件列表"
   },
   "mops_header": {
     "message": "Adblock Plus 設置"

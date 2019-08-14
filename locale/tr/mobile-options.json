@@ -21,13 +21,13 @@
     "message": "Geçerli bir URL girin"
   },
   "mops_filterlist_add": {
-    "message": "+ Süzme listesi ekle"
+    "message": "Süzme listesi ekle"
   },
   "mops_filterlist_add_action": {
     "message": "Süzme listesi ekle"
   },
   "mops_filterlist_add_url": {
-    "message": "+ Özelleştirilmiş süzme listesi ekle"
+    "message": "Özelleştirilmiş süzme listesi ekle"
   },
   "mops_header": {
     "message": "Adblock Plus ayarları"

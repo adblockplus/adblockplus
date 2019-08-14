@@ -21,13 +21,13 @@
     "message": "এটা বৈধ URL প্ৰবিষ্ট কৰক"
   },
   "mops_filterlist_add": {
-    "message": "+ এখন ফিল্টাৰৰ সূচী যোগ কৰক"
+    "message": "এখন ফিল্টাৰৰ সূচী যোগ কৰক"
   },
   "mops_filterlist_add_action": {
     "message": "ফিল্টাৰৰ সূচী যোগ কৰক"
   },
   "mops_filterlist_add_url": {
-    "message": "+ এখন অনুকূলিত ফিল্টাৰৰ সূচী যোগ কৰক"
+    "message": "এখন অনুকূলিত ফিল্টাৰৰ সূচী যোগ কৰক"
   },
   "mops_header": {
     "message": "এডব্লক প্লাছৰ ছেটিংছ"

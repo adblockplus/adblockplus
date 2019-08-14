@@ -21,13 +21,13 @@
     "message": "Увядзіце сапраўдны URL-адрас"
   },
   "mops_filterlist_add": {
-    "message": "+ Дадаць спіс фільтраў"
+    "message": "Дадаць спіс фільтраў"
   },
   "mops_filterlist_add_action": {
     "message": "Дадаць спіс фільтраў"
   },
   "mops_filterlist_add_url": {
-    "message": "+ Дадаць уласны спіс фільтраў"
+    "message": "Дадаць уласны спіс фільтраў"
   },
   "mops_header": {
     "message": "Налады Adblock Plus"

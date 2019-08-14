@@ -21,13 +21,13 @@
     "message": "Voer een geldige URL in"
   },
   "mops_filterlist_add": {
-    "message": "+ Een filterlijst toevoegen"
+    "message": "Een filterlijst toevoegen"
   },
   "mops_filterlist_add_action": {
     "message": "Filterlijst toevoegen"
   },
   "mops_filterlist_add_url": {
-    "message": "+ Een eigen filterlijst toevoegen"
+    "message": "Een eigen filterlijst toevoegen"
   },
   "mops_header": {
     "message": "Adblock Plus-instellingen"

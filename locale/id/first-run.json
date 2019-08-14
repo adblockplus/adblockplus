@@ -1,0 +1,59 @@
+{
+  "firstRun_browser_description": {
+    "message": "Dari tim dibalik Adblock Plus, pemblokir iklan terpopuler untuk browser desktop, Adblock Browser kini tersedia untuk perangkat Android dan iOS."
+  },
+  "firstRun_browser_store_android": {
+    "message": "Apl Android di Google Play"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "Tersedia di iTunes App Store"
+  },
+  "firstRun_browser_title": {
+    "message": "Aplikasi Adblock Browser"
+  },
+  "firstRun_control_description": {
+    "message": "Secara default, Anda akan melihat iklan tidak mengganggu yang mematuhi <a0>kriteria ketat</a0>. Kami mengidentifikasinya sebagai Iklan yang Diizinkan. Lebih memilih blokir semua iklan? <a1>Matikan Iklan yang Diizinkan</a1> di <a2>pengaturan</a2>."
+  },
+  "firstRun_control_title": {
+    "message": "Anda yang mengontrol"
+  },
+  "firstRun_fair_description": {
+    "message": "Kami mendorong Anda untuk menggunakan Adblock Plus dan opsi untuk mendaftar putih (whitelist) situs web secara wajar. Tergantung pada filter yang Anda gunakan, Anda mengerti dan menerima bahwa hal yang tidak sengaja mungkin terjadi (seperti konten situs yang terblokir). Lihat <a0>Ketentuan Penggunaan</a0> untuk informasi lebih lanjut tentang penggunaan Adblock Plus secara wajar."
+  },
+  "firstRun_fair_title": {
+    "message": "Penggunaan wajar"
+  },
+  "firstRun_footer_copyright": {
+    "message": "Hak cipta © $year$ Hak cipta dilindungi. Adblock Plus® adalah merek dagang terdaftar dari <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
+  "firstRun_subtitle": {
+    "message": "Anda baru saja kendalikan browser Anda."
+  },
+  "firstRun_title": {
+    "message": "Instalasi Berhasil!"
+  },
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "Beberapa pengguna mengalami masalah dimana halaman ini terbuka setiap kali browser dijalankan. Masalah ini dapat diatasi dengan menghapus dan menginstal ulang Adblock Plus:"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "Jika Anda masih butuh bantuan, hubungi kami di <a0>support@adblockplus.org</a0> atau kunjungi <a1>Pusat Bantuan</a1> kami."
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "Buka tab Ekstensi browser Anda."
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Cari Adblock Plus dan hapus."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "Instal ulang Adblock Plus dari <a>adblockplus.org</a>."
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "Nampaknya ada masalah yang menyebabkan semua filter terhapus dan kami tak dapat memulihkan cadangan. Maka dari itu, kami telah mengatur ulang filter dan pengaturan Iklan yang Diizinkan Anda. Silakan periksa daftar filter dan pengaturan Iklan yang Diizinkan Anda di <a>opsi Adblock Plus</a>."
+  }
+}

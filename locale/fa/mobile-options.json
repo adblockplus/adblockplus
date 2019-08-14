@@ -17,14 +17,17 @@
       }
     }
   },
+  "mops_error_url": {
+    "message": "یک آدرس معتبر وارد کنید"
+  },
   "mops_filterlist_add": {
-    "message": "+ یک لیست فیلتر اضافه کنید"
+    "message": "یک لیست فیلتر اضافه کنید"
   },
   "mops_filterlist_add_action": {
     "message": "اضافه کردن لیست فیلتر"
   },
   "mops_filterlist_add_url": {
-    "message": "+ یک لیست فیلتر سفارشی اضافه کنید"
+    "message": "یک لیست فیلتر سفارشی اضافه کنید"
   },
   "mops_header": {
     "message": "Adblock Plus تنظیمات"

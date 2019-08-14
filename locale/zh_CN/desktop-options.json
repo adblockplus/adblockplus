@@ -120,10 +120,10 @@
     "message": "电子邮件："
   },
   "options_english": {
-    "message": "英语"
+    "message": "英語"
   },
   "options_filterList_add": {
-    "message": "+ 添加一个新的过滤列表"
+    "message": "添加一个新的过滤列表"
   },
   "options_filterList_column_name": {
     "message": "过滤列表"
@@ -141,7 +141,7 @@
     "message": "您尚未向 Adblock Plus 添加过滤列表。您添加的过滤列表将显示在此处。"
   },
   "options_filterList_hours": {
-    "message": "几小时以前"
+    "message": "小时前"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "失败，检验和不匹配"
@@ -165,7 +165,7 @@
     "message": "刚才"
   },
   "options_filterList_source": {
-    "message": "源文件"
+    "message": "来源"
   },
   "options_filterList_state_active": {
     "message": "活跃"
@@ -209,7 +209,7 @@
     "message": "寻求帮助或联系我们"
   },
   "options_language_add": {
-    "message": "+ 添加语言"
+    "message": "添加语言"
   },
   "options_language_change": {
     "message": "更改"
@@ -242,7 +242,7 @@
     "message": "新"
   },
   "options_page_document_title": {
-    "message": "设置"
+    "message": "Adblock Plus 选项"
   },
   "options_page_title": {
     "message": "设置"
@@ -297,7 +297,7 @@
     }
   },
   "options_tracking_warning_2": {
-    "message": "我们想告知您，为了让广告商向您展示更有相关性的广告，可接受广告<strong>可能</strong>准许某些跟踪型的广告。"
+    "message": "我们想告知您，为了让广告商向您展示更有相关性的广告，可接受广告中<strong>可能</strong>含有跟踪功能。"
   },
   "options_tracking_warning_3": {
     "message": "如果您更偏好隐私，选择下方的<strong>$acceptableAdsPrivacy$</strong>复选框。",

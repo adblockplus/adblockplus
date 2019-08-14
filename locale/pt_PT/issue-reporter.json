@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "Desta forma, não o poderemos contactar e o mais provável é que lhe iremos dar uma prioridade baixa."
   },
+  "issueReporter_closeButton_label": {
+    "message": "Fechar"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Adicionar comentário"
   },
@@ -25,6 +28,9 @@
   },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>Nota:</strong> é aberto temporariamente um separador adicional para que a página em que está não seja afetada pelo Relatório de Problemas."
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "Detalhes"
   },
   "issueReporter_doneButton_label": {
     "message": "Concluído"
@@ -53,11 +59,23 @@
   "issueReporter_knownIssueMessage": {
     "message": "O problema que reportou já é, provavelmente, conhecido. Mais informação:"
   },
+  "issueReporter_markIssueButton_label": {
+    "message": "Identificar problema"
+  },
   "issueReporter_page_title": {
     "message": "Comunicação de erros"
   },
   "issueReporter_privacyPolicy": {
     "message": "Política de privacidade"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Ocultar"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "Realçar"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Selecionar problema"
   },
   "issueReporter_sendButton_label": {
     "message": "Enviar relatório"

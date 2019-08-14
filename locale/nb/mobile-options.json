@@ -2,10 +2,49 @@
   "mops_acceptableAds_description": {
     "message": "Tillat noen ikke-påtrengende annonser"
   },
+  "mops_acceptableAds_more": {
+    "message": "Lær mer"
+  },
   "mops_action_cancel": {
     "message": "Avbryt"
   },
+  "mops_enabled_label": {
+    "message": "Aktiver Adblock Plus på <strong>$domain$</strong>",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "mops_error_url": {
+    "message": "Angi en gyldig URL"
+  },
+  "mops_filterlist_add": {
+    "message": "Legg til en filterliste"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Legg til filterliste"
+  },
+  "mops_filterlist_add_url": {
+    "message": "Legg til en tilpasset filterliste"
+  },
+  "mops_header": {
+    "message": "Innstillinger for Adblock Plus"
+  },
+  "mops_subscribe_header": {
+    "message": "Legg til en tilpasset filterliste"
+  },
+  "mops_subscribe_title": {
+    "message": "Filterlistenavn"
+  },
+  "mops_subscribe_url": {
+    "message": "Filterliste-URL"
+  },
   "mops_subscriptions_header": {
     "message": "Filterabonnementer"
+  },
+  "mops_title": {
+    "message": "Innstillinger for Adblock Plus"
   }
 }

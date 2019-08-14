@@ -99,7 +99,7 @@
     "message": "angličtina"
   },
   "options_filterList_add": {
-    "message": "+ PŘIDAT NOVÝ SEZNAM FILTRŮ"
+    "message": "Přidat nový seznam filtrů"
   },
   "options_filterList_column_name": {
     "message": "Seznamy filtrů"
@@ -174,7 +174,7 @@
     "message": "Vyhledejte si nápovědu nebo nás kontaktujte"
   },
   "options_language_add": {
-    "message": "+ PŘIDAT JAZYK"
+    "message": "Přidat jazyk"
   },
   "options_language_change": {
     "message": "ZMĚNIT"

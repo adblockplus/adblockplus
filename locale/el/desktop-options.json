@@ -96,7 +96,7 @@
     "message": "αγγλικά"
   },
   "options_filterList_add": {
-    "message": "+ ΠΡΟΣΘΗΚΗ ΝΕΑΣ ΛΙΣΤΑΣ ΦΙΛΤΡΩΝ"
+    "message": "Προσθηκη νεας λιστας φιλτρων"
   },
   "options_filterList_column_name": {
     "message": "Λίστες φίλτρων"
@@ -168,7 +168,7 @@
     "message": "Βρείτε βοήθεια ή επικοινωνήστε μαζί μας"
   },
   "options_language_add": {
-    "message": "+ ΠΡΟΣΘΗΚΗ ΓΛΩΣΣΑΣ"
+    "message": "Προσθηκη γλωσσας"
   },
   "options_language_change": {
     "message": "ΑΛΛΑΓΗ"

@@ -123,7 +123,7 @@
     "message": "Anglų"
   },
   "options_filterList_add": {
-    "message": "+ Pridėti naują sąrašą"
+    "message": "Pridėti naują sąrašą"
   },
   "options_filterList_column_name": {
     "message": "Filtrų sąrašai"
@@ -209,7 +209,7 @@
     "message": "Ieškokite pagalbos arba susisiekite su mumis"
   },
   "options_language_add": {
-    "message": "+ pridėti kalbą"
+    "message": "pridėti kalbą"
   },
   "options_language_change": {
     "message": "pakeisti"

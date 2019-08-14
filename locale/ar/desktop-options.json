@@ -123,7 +123,7 @@
     "message": "الإنجليزية"
   },
   "options_filterList_add": {
-    "message": "+ أضف قائمة عوامل تصفية جديدة"
+    "message": "أضف قائمة عوامل تصفية جديدة"
   },
   "options_filterList_column_name": {
     "message": "قوائم عوامل التصفية"
@@ -206,7 +206,7 @@
     "message": "ابحث عن التعليمات أو تواصل معنا"
   },
   "options_language_add": {
-    "message": "+ إضافة لغة"
+    "message": "إضافة لغة"
   },
   "options_language_change": {
     "message": "تغيير"

@@ -1,0 +1,20 @@
+{
+  "devtools_action_block": {
+    "message": "Bloquear item"
+  },
+  "devtools_filter_subtitle": {
+    "message": "Origem"
+  },
+  "devtools_filter_title": {
+    "message": "Filtro"
+  },
+  "devtools_header_state_all": {
+    "message": "tudo"
+  },
+  "devtools_header_state_blocked": {
+    "message": "bloqueado"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "na lista branca"
+  }
+}

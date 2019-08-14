@@ -21,13 +21,13 @@
     "message": "Adj meg egy érvényes URL-t"
   },
   "mops_filterlist_add": {
-    "message": "+ Szűrőlista hozzáadása"
+    "message": "Szűrőlista hozzáadása"
   },
   "mops_filterlist_add_action": {
     "message": "Szűrőlista hozzáadása"
   },
   "mops_filterlist_add_url": {
-    "message": "+ Egyéni szűrőlista hozzáadása"
+    "message": "Egyéni szűrőlista hozzáadása"
   },
   "mops_header": {
     "message": "Adblock Plus-beállítások"

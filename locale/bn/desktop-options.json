@@ -105,7 +105,7 @@
     "message": "ইংরেজি"
   },
   "options_filterList_add": {
-    "message": "+ নতুন ফিল্টার তালিকা যুক্ত করুন"
+    "message": "নতুন ফিল্টার তালিকা যুক্ত করুন"
   },
   "options_filterList_column_name": {
     "message": "ফিল্টারের তালিকা"
@@ -180,7 +180,7 @@
     "message": "সাহায্য পান বা আমাদের সাথে যোগাযোগ করুন"
   },
   "options_language_add": {
-    "message": "+ একটি ভাষা যোগ করুন"
+    "message": "একটি ভাষা যোগ করুন"
   },
   "options_language_change": {
     "message": "পরিবর্তন করুন"

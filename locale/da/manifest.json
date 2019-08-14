@@ -1,11 +1,14 @@
 {
   "description": {
-    "message": "Adblock Plus anvendes på over 500 millioner enheder og er således verdens mest populære ad blocker."
+    "message": "Download Adblock Plus, en af verdens mest populære annonceblokeringsværktøjer."
   },
   "name": {
     "message": "Adblock Plus"
   },
   "name_devbuild": {
     "message": "Adblock Plus-udviklingsversion"
+  },
+  "name_releasebuild": {
+    "message": "Adblock Plus -gratis annonceblokeringsværktøj"
   }
 }

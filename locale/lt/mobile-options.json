@@ -21,13 +21,13 @@
     "message": "Įveskite tinkamą URL"
   },
   "mops_filterlist_add": {
-    "message": "+ Pridėti filtrų sąrašą"
+    "message": "Pridėti filtrų sąrašą"
   },
   "mops_filterlist_add_action": {
     "message": "Pridėti filtrų sąrašą"
   },
   "mops_filterlist_add_url": {
-    "message": "+ Pridėti pasirinktinį filtrų sąrašą"
+    "message": "Pridėti pasirinktinį filtrų sąrašą"
   },
   "mops_header": {
     "message": "Adblock Plus nustatymai"

@@ -123,7 +123,7 @@
     "message": "Англійська"
   },
   "options_filterList_add": {
-    "message": "+ Додати новий список фільтрів"
+    "message": "Додати новий список фільтрів"
   },
   "options_filterList_column_name": {
     "message": "Списки фільтрів"
@@ -209,7 +209,7 @@
     "message": "Знайти допомогу або зв'язатися з нами"
   },
   "options_language_add": {
-    "message": "+ додати мову"
+    "message": "додати мову"
   },
   "options_language_change": {
     "message": "змінити"

@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "Vi kan ikke kontakte dig, og rapporten tildeles sandsynligvis en lavere prioritet."
   },
+  "issueReporter_closeButton_label": {
+    "message": "Luk"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Indtast kommentar"
   },
@@ -73,6 +76,9 @@
   },
   "issueReporter_processing_screenshot": {
     "message": "behandler"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "Mhp. bedre problemforståelse kræves et skærmbillede ved indsendelse af en problemrapport. Skærmbilledet kan, afhængigt af webstedet du befinder dig på, muligvis indeholde personlige oplysninger. Er du utryg ved at indsende et skærmbillede, så e-mail dit problem til <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_screenshot_hide": {
     "message": "Skjul"

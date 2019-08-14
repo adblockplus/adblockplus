@@ -20,7 +20,13 @@
   "common_notification_hide": {
     "message": "Đóng thông báo"
   },
+  "copy_selected": {
+    "message": "Sao chép đã chọn"
+  },
   "delete": {
     "message": "Xoá"
+  },
+  "filter_action_failed": {
+    "message": "Đã xảy ra lỗi. Vui lòng thử lại."
   }
 }

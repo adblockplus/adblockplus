@@ -21,13 +21,13 @@
     "message": "Angiv en gyldig URL-adresse"
   },
   "mops_filterlist_add": {
-    "message": "+ Tilføj en filterliste"
+    "message": "Tilføj en filterliste"
   },
   "mops_filterlist_add_action": {
     "message": "Tilføj filterliste"
   },
   "mops_filterlist_add_url": {
-    "message": "+ Tilføj en brugerdefineret filterliste"
+    "message": "Tilføj en brugerdefineret filterliste"
   },
   "mops_header": {
     "message": "Adblock Plus-indstillinger"

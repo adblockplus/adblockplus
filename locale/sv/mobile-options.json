@@ -18,13 +18,13 @@
     }
   },
   "mops_filterlist_add": {
-    "message": "+ Lägg till en filterlista"
+    "message": "Lägg till en filterlista"
   },
   "mops_filterlist_add_action": {
     "message": "Lägg till filterlista"
   },
   "mops_filterlist_add_url": {
-    "message": "+ Lägg till en anpassad filterlista"
+    "message": "Lägg till en anpassad filterlista"
   },
   "mops_header": {
     "message": "Adblock Plus-inställningar"

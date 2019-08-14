@@ -21,13 +21,13 @@
     "message": "Masukkan URL yang sah"
   },
   "mops_filterlist_add": {
-    "message": "+ Tambah senarai penapis"
+    "message": "Tambah senarai penapis"
   },
   "mops_filterlist_add_action": {
     "message": "TAMBAH SENARAI PENAPIS"
   },
   "mops_filterlist_add_url": {
-    "message": "+ Tambah senarai penapis tersuai"
+    "message": "Tambah senarai penapis tersuai"
   },
   "mops_header": {
     "message": "Adblock Plus Tetapan"

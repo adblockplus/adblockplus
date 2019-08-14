@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "Ugyldigt søgemønster"
   },
+  "filter_slow": {
+    "message": "For at kunne garantere et hurtigt filter, bedes du kontroller mønsterlængden og sikre, at det ikke indeholder et regulært udtryk."
+  },
   "filter_snippet_nodomain": {
     "message": "Intet aktivt domæne angivet for kodestykkefilter"
   },
@@ -18,7 +21,7 @@
     "message": "Ukendt filterindstilling"
   },
   "invalid_css_selector": {
-    "message": "$selector$ er ikke en gyldig CSS-indikator",
+    "message": "$selector$ er ikke en gyldig CSS-vælger",
     "placeholders": {
       "selector": {
         "content": "$1"

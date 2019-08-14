@@ -20,6 +20,9 @@
   "common_notification_hide": {
     "message": "Zatvorte oznámenie"
   },
+  "copy_selected": {
+    "message": "Kopírovať vybrané"
+  },
   "delete": {
     "message": "Odstrániť"
   },

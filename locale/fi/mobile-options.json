@@ -12,13 +12,13 @@
     "message": "Syötä kelvollinen URL-osoite"
   },
   "mops_filterlist_add": {
-    "message": "+ Lisää suodatinlista"
+    "message": "Lisää suodatinlista"
   },
   "mops_filterlist_add_action": {
     "message": "Lisää suodatinlista"
   },
   "mops_filterlist_add_url": {
-    "message": "+ Lisää mukautettu suodatinlista"
+    "message": "Lisää mukautettu suodatinlista"
   },
   "mops_header": {
     "message": "Adblock Plus asetukset"

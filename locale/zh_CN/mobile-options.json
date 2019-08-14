@@ -21,13 +21,13 @@
     "message": "输入有效的 URL"
   },
   "mops_filterlist_add": {
-    "message": "+ 添加过滤列表"
+    "message": "添加过滤列表"
   },
   "mops_filterlist_add_action": {
     "message": "添加过滤列表"
   },
   "mops_filterlist_add_url": {
-    "message": "+ 添加自定义过滤规则列表"
+    "message": "添加自定义过滤规则列表"
   },
   "mops_header": {
     "message": "Adblock Plus 设置"

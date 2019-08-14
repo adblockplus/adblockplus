@@ -39,7 +39,7 @@
     "message": "输入有效的电子邮件地址很有帮助。这让我们能够与您联系以解决恶意软件等棘手问题。请注意，输入电子邮件地址并非强制要求，我们绝不会与他人共享您的地址。"
   },
   "issueReporter_email_label": {
-    "message": "电子邮箱"
+    "message": "电子邮件："
   },
   "issueReporter_errorMessage": {
     "message": "发送报告失败，错误码 \"?1?\"。请确保您已连接互联网并重试。 如果问题依旧，请到 [link]Adblock Plus 论坛[/link]寻求帮助。"
@@ -99,7 +99,7 @@
     "message": "Adblock Plus 正在提交您的报告，请稍等。"
   },
   "issueReporter_showData_label": {
-    "message": "点击此链接在发出之前查看报告数据"
+    "message": "点击此链接查看即将发送的报告数据"
   },
   "issueReporter_typeSelector_description": {
     "message": "请选择一个问题："

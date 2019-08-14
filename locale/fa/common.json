@@ -19,5 +19,11 @@
   },
   "common_notification_hide": {
     "message": "بستن اعلان"
+  },
+  "delete": {
+    "message": "حذف"
+  },
+  "filter_action_failed": {
+    "message": "با عرض پوزش، اشتباهی رخ داده. لطفا بعدا دوباره امتحان کنید."
   }
 }

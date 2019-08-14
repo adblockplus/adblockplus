@@ -21,13 +21,13 @@
     "message": "正しいURLを入力してください"
   },
   "mops_filterlist_add": {
-    "message": "+ フィルターリストを追加"
+    "message": "フィルターリストを追加"
   },
   "mops_filterlist_add_action": {
     "message": "フィルターリストを追加"
   },
   "mops_filterlist_add_url": {
-    "message": "+ カスタムフィルターリストを追加"
+    "message": "カスタムフィルターリストを追加"
   },
   "mops_header": {
     "message": "Adblock Plus 設定"

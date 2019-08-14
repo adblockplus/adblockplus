@@ -102,7 +102,7 @@
     "message": "อีเมล:"
   },
   "options_filterList_add": {
-    "message": "+ เพิ่มรายการตัวกรองใหม่"
+    "message": "เพิ่มรายการตัวกรองใหม่"
   },
   "options_filterList_column_name": {
     "message": "รายการตัวกรอง"
@@ -177,7 +177,7 @@
     "message": "ขอความช่วยเหลือหรือติดต่อเรา"
   },
   "options_language_add": {
-    "message": "+ เพิ่มภาษา"
+    "message": "เพิ่มภาษา"
   },
   "options_language_change": {
     "message": "เปลี่ยน"

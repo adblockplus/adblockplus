@@ -11,6 +11,9 @@
   "options_acceptableAds_privacy_label": {
     "message": "فقط به تبلیغات بدون ردیابی شخص ثالث اجازه بده"
   },
+  "options_anti_cv_header": {
+    "message": "ضد فیلتر"
+  },
   "options_close": {
     "message": "بستن"
   },
@@ -19,6 +22,12 @@
   },
   "options_customFilter_cancel": {
     "message": "لغو"
+  },
+  "options_customFilters_title": {
+    "message": "فیلترهای سفارشی شما"
+  },
+  "options_customFilters_widget_title": {
+    "message": "فهرست فیلترهای من"
   },
   "options_customize_showNotifications": {
     "message": "نمایش اعلان های مفید"
@@ -66,7 +75,7 @@
     "message": "فارسی __ ترجمه شده: توسط میثم مقدم نیا"
   },
   "options_filterList_add": {
-    "message": "+ یک لیست فیلتر جدید اضافه کنید"
+    "message": "یک لیست فیلتر جدید اضافه کنید"
   },
   "options_filterList_column_name": {
     "message": "لیست فیلتر"
@@ -80,14 +89,32 @@
   "options_filterList_empty": {
     "message": "شما هیچ لیست فیلتر را برای Adblock Plus اضافه نکرد‌ه‌اید. فیلترهای لیستی که اضافه می‌کنید در اینجا نشان داده می‌شوند."
   },
+  "options_filterList_hours": {
+    "message": "ساعت پیش"
+  },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "ناموفق, عدم تطابق کنترلی"
   },
   "options_filterList_lastDownload_connectionError": {
     "message": "ناموفق، فرآیند دریافت شکست خورد"
   },
+  "options_filterList_lastDownload_inProgress": {
+    "message": "در حال به‌روزرسانی"
+  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "ناموفق، نشانی معتبر نیست"
+  },
+  "options_filterList_minutes": {
+    "message": "دقیقه پیش"
+  },
+  "options_filterList_now": {
+    "message": "همین حالا"
+  },
+  "options_filterList_source": {
+    "message": "منبع"
+  },
+  "options_filterList_state_active": {
+    "message": "فعال"
   },
   "options_filterList_state_disabled": {
     "message": "غیر فعال"
@@ -98,8 +125,11 @@
   "options_filterList_updateNow": {
     "message": "آپدیت کن"
   },
+  "options_filterList_website": {
+    "message": "وب‌سایت"
+  },
   "options_language_add": {
-    "message": "+ اضافه کردن زبان"
+    "message": "اضافه کردن زبان"
   },
   "options_language_change": {
     "message": "تغییر دادن"
@@ -134,8 +164,17 @@
   "options_privacy_header": {
     "message": "حریم خصوصی و امنیت"
   },
+  "options_support_title": {
+    "message": "پشتیبانی"
+  },
+  "options_tab_advanced": {
+    "message": "پیشرفته"
+  },
   "options_tab_general": {
     "message": "صفحه اصلی"
+  },
+  "options_tab_help": {
+    "message": "راهنما"
   },
   "options_tab_whitelist": {
     "message": "فهرست سفید پایگاهها (که تبلیغات مسدود نشه)"

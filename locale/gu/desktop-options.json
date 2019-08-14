@@ -105,7 +105,7 @@
     "message": "અંગ્રેજી"
   },
   "options_filterList_add": {
-    "message": "+ નવી ફિલ્ટર સૂચિ ઉમેરો"
+    "message": "નવી ફિલ્ટર સૂચિ ઉમેરો"
   },
   "options_filterList_column_name": {
     "message": "ફિલ્ટરની લીસ્ટ"
@@ -180,7 +180,7 @@
     "message": "મદદ શોધો અથવા અમારો સંપર્ક કરો"
   },
   "options_language_add": {
-    "message": "+ એક ભાષા ઉમેરો"
+    "message": "એક ભાષા ઉમેરો"
   },
   "options_language_change": {
     "message": "ફેરફાર"

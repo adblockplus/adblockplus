@@ -18,10 +18,13 @@
     }
   },
   "mops_filterlist_add": {
-    "message": "+ 필터 목록 추가"
+    "message": "필터 목록 추가"
   },
   "mops_filterlist_add_action": {
     "message": "필터 목록 추가"
+  },
+  "mops_filterlist_add_url": {
+    "message": "사용자 지정 필터 목록 추가"
   },
   "mops_header": {
     "message": "Adblock Plus 설정"

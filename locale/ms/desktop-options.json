@@ -123,7 +123,7 @@
     "message": "Bahasa Inggeris"
   },
   "options_filterList_add": {
-    "message": "+ TAMBAH SENARAI PENAPIS BARU"
+    "message": "Tambah senarai penapis baru"
   },
   "options_filterList_column_name": {
     "message": "Senarai penapis"
@@ -209,7 +209,7 @@
     "message": "Cari bantuan atau berhubung dengan kami"
   },
   "options_language_add": {
-    "message": "+ TAMBAH BAHASA"
+    "message": "Tambah bahasa"
   },
   "options_language_change": {
     "message": "UBAH"

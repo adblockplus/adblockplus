@@ -54,7 +54,7 @@
     "message": "Ingeles"
   },
   "options_filterList_add": {
-    "message": "+ Gehitu irazki zerrenda berri bat"
+    "message": "Gehitu irazki zerrenda berri bat"
   },
   "options_filterList_column_name": {
     "message": "Iragazki zerrendak"
@@ -102,7 +102,7 @@
     "message": "Hartu parte"
   },
   "options_language_add": {
-    "message": "+gehitu hizkuntza bat"
+    "message": "gehitu hizkuntza bat"
   },
   "options_language_change": {
     "message": "aldatu"

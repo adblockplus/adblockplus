@@ -4,5 +4,8 @@
   },
   "cancel": {
     "message": "Չեղարկել"
+  },
+  "common_notification_hide": {
+    "message": "Փակել ծանուցումը"
   }
 }

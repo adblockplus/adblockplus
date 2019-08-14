@@ -21,13 +21,13 @@
     "message": "Vnesite veljaven URL"
   },
   "mops_filterlist_add": {
-    "message": "+ Dodaj seznam filtrov"
+    "message": "Dodaj seznam filtrov"
   },
   "mops_filterlist_add_action": {
     "message": "Dodaj seznam filtrov"
   },
   "mops_filterlist_add_url": {
-    "message": "+ Dodaj seznam filtrov po meri"
+    "message": "Dodaj seznam filtrov po meri"
   },
   "mops_header": {
     "message": "Nastavitve Adblock Plus"

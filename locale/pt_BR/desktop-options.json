@@ -123,7 +123,7 @@
     "message": "Inglês"
   },
   "options_filterList_add": {
-    "message": "+ Adicionar uma nova lista de filtros"
+    "message": "Adicionar uma nova lista de filtros"
   },
   "options_filterList_column_name": {
     "message": "Listas de filtros"
@@ -209,7 +209,7 @@
     "message": "Encontre ajuda ou entre em contato conosco"
   },
   "options_language_add": {
-    "message": "+ ADICIONAR UM IDIOMA"
+    "message": "adicionar um idioma"
   },
   "options_language_change": {
     "message": "ALTERAR"

@@ -21,13 +21,13 @@
     "message": "შეიყვანეთ მართებული URL-ბმული"
   },
   "mops_filterlist_add": {
-    "message": "+ ფილტრის დამატება"
+    "message": "ფილტრის დამატება"
   },
   "mops_filterlist_add_action": {
     "message": "ფილტრის დამატება"
   },
   "mops_filterlist_add_url": {
-    "message": "+ საკუთარი ფილტრის დამატება"
+    "message": "საკუთარი ფილტრის დამატება"
   },
   "mops_header": {
     "message": "Adblock Plus-ის პარამეტრები"

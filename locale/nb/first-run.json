@@ -1,32 +1,59 @@
 {
   "firstRun_browser_description": {
-    "message": "Fra gruppen bak Adblock Plus, den mest populære annonse blokkeren for nettlesere på datamaskinen. Adblock Browser er nå tilgjengelig for dine Android eller iOS enheter."
+    "message": "Fra teamet bak Adblock Plus, den mest populære annonseblokkereren for nettlesere på datamaskinen. Adblock Browser er nå tilgjengelig for dine Android- og iOS-enheter."
   },
   "firstRun_browser_store_android": {
-    "message": "Android applikasjoner fra Google Play"
+    "message": "Android-app fra Google Play"
   },
   "firstRun_browser_store_ios": {
     "message": "Tilgjengelig i iTunes App Store"
   },
   "firstRun_browser_title": {
-    "message": "Adblock Browser app"
+    "message": "Adblock Browser-app"
+  },
+  "firstRun_control_description": {
+    "message": "Som standard kan du bli vist noen ikkepåtrengende annonser som oppfyller <a0>strenge kriterier</a0>. Vi klassifiserer de annonsene som Akseptable annonser. Foretrekker du å blokkere alle annonser? <a1>Skru av Akseptable annonser</a1> i <a2>innstillingene</a2> dine."
   },
   "firstRun_control_title": {
     "message": "Du har kontrollen"
   },
+  "firstRun_fair_description": {
+    "message": "Vi oppfordrer deg til å bruke Adblock Plus på en rimelig måte, og å bruke valget om å hviteliste enkelte nettsteder. Du forstår og aksepterer at uventede resultater kan oppstå ved bruk av ulike filtre (f.eks. blokkert innold på et nettsted). Referer til <a0>Bruksbetingelsene</a0> for mer informasjon om Adblock Plus."
+  },
+  "firstRun_fair_title": {
+    "message": "Rimelig bruk"
+  },
+  "firstRun_footer_copyright": {
+    "message": "Opphavsrett © $year$ Alle rettigheter forbeholdt. Adblock Plus® er et registrert varemerke fra <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
   "firstRun_subtitle": {
-    "message": "Du tok nettopp kontrollen over din nettleser."
+    "message": "Du tok nettopp kontroll over nettleseren din."
   },
   "firstRun_title": {
     "message": "Vellykket installasjon!"
   },
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "Noen brukere opplever et problem med at denne siden åpnes hver gang de åpner nettleseren. Det problemet kan fikses ved å avinstallere Adblock Plus og installere det på nytt:"
+  },
   "firstRun_warning_dataCorrupted_note": {
-    "message": "Dersom du fortsatt trenger hjelp, kontakt oss på <a0>support@adblockplus.org</a0> eller besøk vårt <a1>Hjelpesenterr</a1>."
+    "message": "Dersom du fortsatt trenger hjelp, kan du kontakte oss på <a0>support@adblockplus.org</a0>, eller besøke <a1>Hjelpesenteret vårt</a1>."
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "Åpne nettleserens Utvidelser-fane."
   },
   "firstRun_warning_dataCorrupted_step2": {
     "message": "Lokaliser Adblock Plus og fjern den."
   },
   "firstRun_warning_dataCorrupted_step3": {
     "message": "Installer Adblock Plus på nytt fra <a>adblockplus.org</a>."
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "Det kan se ut som at en feil i systemet gjorde at alle filtrene ble fjernet, og vi klarte ikke å gjenopprette sikkerhetskopien. Vi måtte derfor tilbakestille alle filtrene og innstillingene for Akseptable annonser. Vennligst sjekk filterlistene og innstillingene for Akseptable annonser i <a>Alternativer for Adblock Plus</a>."
   }
 }

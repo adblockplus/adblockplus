@@ -21,13 +21,13 @@
     "message": "Fier in URL yn"
   },
   "mops_filterlist_add": {
-    "message": "+ In filterlist tafoegje"
+    "message": "In filterlist tafoegje"
   },
   "mops_filterlist_add_action": {
     "message": "Filterlist tafoegje"
   },
   "mops_filterlist_add_url": {
-    "message": "+ In eigen filterlist tafoegje"
+    "message": "In eigen filterlist tafoegje"
   },
   "mops_header": {
     "message": "Adblock Plus-ynstellingen"

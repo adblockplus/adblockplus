@@ -11,8 +11,22 @@
   "filter_invalid_regexp": {
     "message": "Không hợp lệ"
   },
+  "filter_slow": {
+    "message": "Để đảm bảo bộ lọc nhanh, vui lòng kiểm tra độ dài của mẫu và đảm bảo nó không chứa biểu thức chính quy."
+  },
+  "filter_snippet_nodomain": {
+    "message": "Không có miền hoạt động được chỉ định cho bộ lọc đoạn trích"
+  },
   "filter_unknown_option": {
     "message": "Bộ lọc tùy chọn không rõ"
+  },
+  "invalid_css_selector": {
+    "message": "$selector$ không phải là phương thức chọn CSS hợp lệ",
+    "placeholders": {
+      "selector": {
+        "content": "$1"
+      }
+    }
   },
   "line": {
     "message": "Dòng $number$",

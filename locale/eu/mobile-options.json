@@ -18,13 +18,13 @@
     }
   },
   "mops_filterlist_add": {
-    "message": "+ Gehitu irazki zerrenda bat"
+    "message": "Gehitu irazki zerrenda bat"
   },
   "mops_filterlist_add_action": {
     "message": "Gehitu irazki zerrenda"
   },
   "mops_filterlist_add_url": {
-    "message": "+ Gehitu iragazki zerrenda pertsonala"
+    "message": "Gehitu iragazki zerrenda pertsonala"
   },
   "mops_header": {
     "message": "Adblock Plus ezarpenak"

@@ -21,13 +21,13 @@
     "message": "Gib eine gültige URL ein."
   },
   "mops_filterlist_add": {
-    "message": "+ Filterliste hinzufügen"
+    "message": "Filterliste hinzufügen"
   },
   "mops_filterlist_add_action": {
     "message": "FILTERLISTE HINZUFÜGEN"
   },
   "mops_filterlist_add_url": {
-    "message": "+ Eigene Filterliste hinzufügen"
+    "message": "Eigene Filterliste hinzufügen"
   },
   "mops_header": {
     "message": "Adblock Plus Einstellungen"

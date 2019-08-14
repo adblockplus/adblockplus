@@ -2,6 +2,9 @@
   "description": {
     "message": "با بیش‌ از ۵۰۰ میلیون دانلود، اد بلاک پلاس یکی از محبوب‌ترین مسدود کننده‌ های تبلیغات در جهان است."
   },
+  "name": {
+    "message": "Adblock Plus"
+  },
   "name_devbuild": {
     "message": "توسعه ساخت Adblock Plus"
   }

@@ -7,5 +7,8 @@
   },
   "name_devbuild": {
     "message": "Membangun pengembangan Adblock Plus"
+  },
+  "name_releasebuild": {
+    "message": "Adblock Plus - pemblokir iklan gratis"
   }
 }

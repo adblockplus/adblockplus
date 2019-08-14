@@ -21,13 +21,13 @@
     "message": "أدخل عنوان URL صحيح"
   },
   "mops_filterlist_add": {
-    "message": "+ إضافة قائمة عوامل تصفية"
+    "message": "إضافة قائمة فلاتر"
   },
   "mops_filterlist_add_action": {
     "message": "إضافة قائمة عوامل تصفية"
   },
   "mops_filterlist_add_url": {
-    "message": "+ إضافة قائمة فلاتر مخصصة"
+    "message": "إضافة قائمة فلاتر مخصصة"
   },
   "mops_header": {
     "message": "Adblock Plus إعدادات"

@@ -105,7 +105,7 @@
     "message": "angļu valoda"
   },
   "options_filterList_add": {
-    "message": "+ Pievienot jaunu filtru sarakstu"
+    "message": "Pievienot jaunu filtru sarakstu"
   },
   "options_filterList_column_name": {
     "message": "Filtru saraksts"
@@ -174,7 +174,7 @@
     "message": "Atrast palīdzību vai sazināties ar mums"
   },
   "options_language_add": {
-    "message": "+ pievienot valodu"
+    "message": "pievienot valodu"
   },
   "options_language_change": {
     "message": "mainīt"

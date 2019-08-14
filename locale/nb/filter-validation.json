@@ -1,6 +1,6 @@
 {
   "filter_elemhideemulation_nodomain": {
-    "message": "Ingen aktive domener er angitt for utvidet elementskjulingsfilter"
+    "message": "Det er ikke angitt et aktivt domene for det utvidede elementskjulingsfilteret"
   },
   "filter_invalid_csp": {
     "message": "Ugyldig innholdssikkerhetspolicy"
@@ -10,6 +10,12 @@
   },
   "filter_invalid_regexp": {
     "message": "Ugyldig regulært uttrykk"
+  },
+  "filter_slow": {
+    "message": "For å være sikker på at filteret er raskt, bør du sjekke lengden på mønsteret og forsikre deg om at det ikke inneholder et regulært uttrykk."
+  },
+  "filter_snippet_nodomain": {
+    "message": "Det er ikke angitt et domene for utdragsfilteret"
   },
   "filter_unknown_option": {
     "message": "Ukjent filteralternativ"

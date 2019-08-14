@@ -27,6 +27,6 @@
     "message": "Törlés"
   },
   "filter_action_failed": {
-    "message": "Hiba történt! Kérjük, próbálja meg újra."
+    "message": "Valami hiba történt. Kérlek, próbáld újra."
   }
 }

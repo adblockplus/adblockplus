@@ -123,7 +123,7 @@
     "message": "ინგლისური"
   },
   "options_filterList_add": {
-    "message": "+ ახალი ფილტრის დამატება"
+    "message": "ახალი ფილტრის დამატება"
   },
   "options_filterList_column_name": {
     "message": "ფილტრები"
@@ -209,7 +209,7 @@
     "message": "მიიღეთ დახმარება ან გამოგვეხმაურეთ"
   },
   "options_language_add": {
-    "message": "+ ენის დამატება"
+    "message": "ენის დამატება"
   },
   "options_language_change": {
     "message": "შეცვლა"

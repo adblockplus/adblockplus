@@ -74,6 +74,9 @@
   "issueReporter_privacyPolicy": {
     "message": "Zasady ochrony prywatności"
   },
+  "issueReporter_processing_screenshot": {
+    "message": "Przetwarzanie"
+  },
   "issueReporter_screenreader_warning": {
     "message": "Abyśmy lepiej zrozumieli problem, wraz ze zgłoszeniem należy przesłać zrzut ekranu. W zależności od aktualnie otwartej witryny zrzut ekranu może zawierać prywatne dane. Jeśli wolisz nie przesyłać zrzutu ekranu, prześlij opis problemu we wiadomości e-mail na adres <a0>support@adblockplus.org</a0>."
   },

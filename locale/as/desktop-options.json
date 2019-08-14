@@ -72,7 +72,7 @@
     "message": "ইংৰাজী"
   },
   "options_filterList_add": {
-    "message": "+ এখন নতুন ফিল্টাৰৰ সূচী যোগ কৰক"
+    "message": "এখন নতুন ফিল্টাৰৰ সূচী যোগ কৰক"
   },
   "options_filterList_column_name": {
     "message": "ফিল্টাৰৰ সূচীবোৰ"
@@ -155,7 +155,7 @@
     "message": "সহায় বিচাৰক বা আমাৰ সৈতে যোগাযোগ কৰক"
   },
   "options_language_add": {
-    "message": "+ এটা ভাষা যোগ কৰক"
+    "message": "এটা ভাষা যোগ কৰক"
   },
   "options_language_change": {
     "message": "সলনি কৰক"

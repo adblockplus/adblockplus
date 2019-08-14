@@ -56,6 +56,9 @@
   "issueReporter_falsePositive_label": {
     "message": "Adblock Plus chặn quá nhiều"
   },
+  "issueReporter_highlighter_description": {
+    "message": "Sử dụng các công cụ để làm nổi bật từng quảng cáo hoặc ẩn thông tin nhạy cảm trên ảnh chụp màn hình. Quảng cáo nổi bật sẽ giúp chúng tôi khắc phục vấn đề nhanh hơn."
+  },
   "issueReporter_highlighter_heading": {
     "message": "Tô đậm vấn đề"
   },
@@ -70,6 +73,12 @@
   },
   "issueReporter_privacyPolicy": {
     "message": "Chính sách riêng tư"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "đang xử lý"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "Để giúp chúng tôi hiểu rõ hơn về vấn đề này, cần có ảnh chụp màn hình khi gửi báo cáo sự cố. Tùy thuộc vào trang web bạn hiện đang truy cập, ảnh chụp màn hình có thể chứa thông tin cá nhân. Nếu bạn không thoải mái khi gửi ảnh chụp màn hình, vui lòng gửi email vấn đề của bạn tới <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_screenshot_hide": {
     "message": "Ẩn"

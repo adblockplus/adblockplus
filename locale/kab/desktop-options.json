@@ -57,7 +57,7 @@
     "message": "Imayl:"
   },
   "options_filterList_add": {
-    "message": "+ Rnu tabdart n imsizdeg tamaynut"
+    "message": "Rnu tabdart n imsizdeg tamaynut"
   },
   "options_filterList_column_name": {
     "message": "Tibdarin n imsizdeg"
@@ -120,7 +120,7 @@
     "message": "Ttekki"
   },
   "options_language_add": {
-    "message": "+ rnu tutlayt"
+    "message": "rnu tutlayt"
   },
   "options_language_change": {
     "message": "beddel"

@@ -1,4 +1,7 @@
 {
+  "firstRun_fair_title": {
+    "message": "Uso justo"
+  },
   "firstRun_warning_dataCorrupted_intro": {
     "message": "Alguns usuários estão a ter um problema em que esta página abre cada vez que o navegador é iniciado. Este problema pode ser resolvido desinstalando e reinstalando o Adblock Plus:"
   },

@@ -8,6 +8,9 @@
   "options_acceptableAds_description": {
     "message": "Quảng cáo chấp nhận được là những quảng cáo phù hợp. Chúng dung hòa giữa việc chặn quảng cáo và hỗ trợ nội dung trực tuyến bởi vì chúng tạo ra doanh thu cho chủ trang web."
   },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>Ghi chú:</strong> Bạn có <strong>Không theo dõi (DNT)</strong> bị vô hiệu trong cài đặt trình duyệt của bạn. Để tính năng này hoạt động đúng, hãy bật <strong>DNT</strong> trong tùy chọn trình duyệt của bạn. <a>Tìm hiểu cách kích hoạt DNT</a>."
+  },
   "options_acceptableAds_header": {
     "message": "Quảng cáo chấp nhận được"
   },
@@ -16,6 +19,15 @@
   },
   "options_advanced_description": {
     "message": "Tùy chỉnh Adblock Plus, thêm hoặc xóa danh sách lọc, tạo và duy trì các danh sách lọc của riêng bạn"
+  },
+  "options_anti_cv_header": {
+    "message": "Anti-Circumvention"
+  },
+  "options_anti_cv_title": {
+    "message": "ABP Anti-Circumvention Filter List"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "Danh sách bộ lọc này hoạt động chống lại sự lách luật (tức là các kỹ thuật để buộc quảng cáo trên người dùng chặn quảng cáo). Các bộ lọc này giải quyết các quảng cáo lách luật cũng như theo dõi liên quan."
   },
   "options_close": {
     "message": "đóng"
@@ -44,6 +56,9 @@
   "options_customize_header": {
     "message": "Tùy biến"
   },
+  "options_customize_iconStats": {
+    "message": "Hiển thị số lượng quảng cáo bị chặn trong biểu tượng"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "Hiển thị bảng điều khiển ‘Adblock Plus’ trong các công cụ của nhà phát triển"
   },
@@ -52,6 +67,9 @@
   },
   "options_customize_showNotifications": {
     "message": "Hiện thông báo hữu ích"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Cho phép thông báo từ Adblock Plus (thông báo liên quan đến các vấn đề hiệu suất quan trọng sẽ luôn được hiển thị)."
   },
   "options_dialog_about_copyright": {
     "message": "Bản quyền © $currentYear$ <a0>eyeo GmbH</a0>.",
@@ -105,7 +123,7 @@
     "message": "Tiếng Anh"
   },
   "options_filterList_add": {
-    "message": "THÊM MỘT DANH SÁCH LỌC MỚI"
+    "message": "Thêm một danh sách lọc mới"
   },
   "options_filterList_column_name": {
     "message": "Danh sách lọc"
@@ -167,6 +185,17 @@
   "options_filterList_website": {
     "message": "Trang web"
   },
+  "options_filter_list_rule": {
+    "message": "Quy tắc lọc"
+  },
+  "options_filters_search_or_add": {
+    "message": "Tìm kiếm hoặc thêm bộ lọc (ví dụ: $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
+  },
   "options_footer_about": {
     "message": "Giới thiệu về Adblock Plus"
   },
@@ -180,7 +209,7 @@
     "message": "Tìm kiếm trợ giúp hoặc liên hệ với chúng tôi"
   },
   "options_language_add": {
-    "message": "THÊM NGÔN NGỮ"
+    "message": "Thêm ngôn ngữ"
   },
   "options_language_change": {
     "message": "thay đổi"
@@ -253,6 +282,22 @@
   },
   "options_tab_whitelist": {
     "message": "Danh sách trang web không gây hại"
+  },
+  "options_tracking_warning_1": {
+    "message": "Chúng tôi nhận thấy bạn có cả <strong>$tracking$</strong> và <strong>$acceptableAds$</strong> được bật.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "Chúng tôi muốn bạn biết rằng để các nhà quảng cáo hiển thị cho bạn các quảng cáo phù hợp hơn, <strong>có thể</strong> có một số theo dõi với Quảng cáo được chấp nhận."
   },
   "options_tracking_warning_3": {
     "message": "Nếu bạn thích sự riêng tư hơn, hãy chọn ô <strong>$acceptableAdsPrivacy$</strong> bên dưới.",

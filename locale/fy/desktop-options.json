@@ -123,7 +123,7 @@
     "message": "Ingelsk"
   },
   "options_filterList_add": {
-    "message": "+ Nije filterlist tafoegje"
+    "message": "Nije filterlist tafoegje"
   },
   "options_filterList_column_name": {
     "message": "Filterlisten"
@@ -209,7 +209,7 @@
     "message": "Help sykje of kontakt mei ús opnimme"
   },
   "options_language_add": {
-    "message": "+ in taal tafoegje"
+    "message": "in taal tafoegje"
   },
   "options_language_change": {
     "message": "wizigje"

@@ -2,11 +2,17 @@
   "easy_create_filter": {
     "message": "Bloquear elemento"
   },
+  "options_refresh": {
+    "message": "Recarregar"
+  },
   "options_short": {
     "message": "Opções"
   },
   "overlay_notification_closing_button_optout": {
     "message": "Parar de mostrar notificações"
+  },
+  "sendReport": {
+    "message": "Reportar problema"
   },
   "stats_label_page": {
     "message": "<strong>$number$</strong> nesta página",

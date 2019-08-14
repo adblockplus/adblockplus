@@ -111,7 +111,7 @@
     "message": "Енглески"
   },
   "options_filterList_add": {
-    "message": "+ Додај нову листу филтера"
+    "message": "Додај нову листу филтера"
   },
   "options_filterList_column_name": {
     "message": "Листе филтера"
@@ -188,7 +188,7 @@
     "message": "Потражите помоћ или ступите у контакт са нама"
   },
   "options_language_add": {
-    "message": "+ додај језик"
+    "message": "додај језик"
   },
   "options_language_change": {
     "message": "промени"

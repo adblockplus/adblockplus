@@ -102,7 +102,7 @@
     "message": "E-pošta:"
   },
   "options_filterList_add": {
-    "message": "+ Dodaj novi popis filtra"
+    "message": "Dodaj novi popis filtra"
   },
   "options_filterList_column_name": {
     "message": "Popisi filtera"
@@ -165,7 +165,7 @@
     "message": "Potražite pomoć ili nas kontaktirajte"
   },
   "options_language_add": {
-    "message": "+ dodaj jezik"
+    "message": "dodaj jezik"
   },
   "options_language_change": {
     "message": "promijeni"

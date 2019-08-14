@@ -123,7 +123,7 @@
     "message": "Inglise keel"
   },
   "options_filterList_add": {
-    "message": "+ Lisa uus filtrite nimekiri"
+    "message": "Lisa uus filtrite nimekiri"
   },
   "options_filterList_column_name": {
     "message": "Filtrite nimekirjad"
@@ -209,7 +209,7 @@
     "message": "Leia abi või võta meiega ühendust"
   },
   "options_language_add": {
-    "message": "+ lisa keel"
+    "message": "lisa keel"
   },
   "options_language_change": {
     "message": "muuda"

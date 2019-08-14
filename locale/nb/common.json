@@ -9,15 +9,24 @@
     "message": "Skjul Adblock Advarsler"
   },
   "common_feature_malware_title": {
-    "message": "Blokker Malware"
+    "message": "Blokkér Malware"
   },
   "common_feature_privacy_title": {
-    "message": "Blokker ytterligere sporing"
+    "message": "Blokkér ytterligere sporing"
   },
   "common_feature_social_title": {
-    "message": "Blokker sporing av ikoner for sosiale medier"
+    "message": "Blokkér sporing via sosiale medier-ikoner"
   },
   "common_notification_hide": {
     "message": "Lukk påminnelse"
+  },
+  "copy_selected": {
+    "message": "Kopier valgte objekter"
+  },
+  "delete": {
+    "message": "Slett"
+  },
+  "filter_action_failed": {
+    "message": "Noe gikk dessverre galt. Prøv igjen."
   }
 }

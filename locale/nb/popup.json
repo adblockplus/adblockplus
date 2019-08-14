@@ -1,12 +1,33 @@
 {
+  "click_element_to_block_it": {
+    "message": "Klikk på et element på siden for å blokkere det."
+  },
   "easy_create_filter": {
     "message": "Blokkér element"
+  },
+  "options_refresh": {
+    "message": "Oppdater"
   },
   "options_short": {
     "message": "Alternativer"
   },
+  "overlay_notification_closing_button_hide": {
+    "message": "Lukk"
+  },
   "overlay_notification_closing_button_optout": {
     "message": "Ikke vis flere varsler"
+  },
+  "promote_abp_module": {
+    "message": "Lyst på Adblock Plus på telefonen?"
+  },
+  "refresh_to_take_effect": {
+    "message": "Klikk <strong>Oppdater</strong> for se effekten av endringene."
+  },
+  "sendReport": {
+    "message": "Varsle om problem"
+  },
+  "stats_header": {
+    "message": "Antall blokkerte elementer"
   },
   "stats_label_page": {
     "message": "<strong>$number$</strong> på denne siden",
@@ -23,5 +44,8 @@
         "content": "$1"
       }
     }
+  },
+  "status_header": {
+    "message": "Blokkér annonser på:"
   }
 }

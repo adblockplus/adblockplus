@@ -21,13 +21,13 @@
     "message": "Въведете действителен адрес"
   },
   "mops_filterlist_add": {
-    "message": "+ Добави филтър"
+    "message": "Добави филтър"
   },
   "mops_filterlist_add_action": {
     "message": "Добави филтъра"
   },
   "mops_filterlist_add_url": {
-    "message": "+ Добави собствен филтър"
+    "message": "Добави собствен филтър"
   },
   "mops_header": {
     "message": "Настройки на Adblock Plus"

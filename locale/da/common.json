@@ -19,5 +19,14 @@
   },
   "common_notification_hide": {
     "message": "Luk meddelelse"
+  },
+  "copy_selected": {
+    "message": "Kopiér valgte"
+  },
+  "delete": {
+    "message": "Slet"
+  },
+  "filter_action_failed": {
+    "message": "Noget gik galt. Forsøg igen."
   }
 }

@@ -5,8 +5,14 @@
   "options_short": {
     "message": "تنظیمات"
   },
+  "overlay_notification_closing_button_hide": {
+    "message": "بستن"
+  },
   "overlay_notification_closing_button_optout": {
     "message": "عدم نمایش اعلان ها"
+  },
+  "sendReport": {
+    "message": "گزارش مشکل"
   },
   "stats_label_page": {
     "message": "<strong>$number$</strong> در این صفحه",

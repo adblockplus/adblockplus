@@ -19,5 +19,14 @@
   },
   "common_notification_hide": {
     "message": "Tutup pemberitahuan"
+  },
+  "copy_selected": {
+    "message": "Salin"
+  },
+  "delete": {
+    "message": "Hapus"
+  },
+  "filter_action_failed": {
+    "message": "Ada yang salah. Silahkan coba lagi."
   }
 }

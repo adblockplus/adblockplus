@@ -123,7 +123,7 @@
     "message": "אנגלית"
   },
   "options_filterList_add": {
-    "message": "+ הוסף רשימת מסננים חדשה"
+    "message": "הוסף רשימת מסננים חדשה"
   },
   "options_filterList_column_name": {
     "message": "רשימות מסננים"
@@ -209,7 +209,7 @@
     "message": "מצא עזרה או צור איתנו קשר"
   },
   "options_language_add": {
-    "message": "+ הוסף שפה"
+    "message": "הוסף שפה"
   },
   "options_language_change": {
     "message": "שנה"

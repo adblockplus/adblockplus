@@ -123,7 +123,7 @@
     "message": "İngilizce"
   },
   "options_filterList_add": {
-    "message": "+ Yeni süzgeç listesi ekle"
+    "message": "Yeni süzgeç listesi ekle"
   },
   "options_filterList_column_name": {
     "message": "Süzgeç listeleri"
@@ -209,7 +209,7 @@
     "message": "Yardıma veya bize ulaşın"
   },
   "options_language_add": {
-    "message": "+ dil ekle"
+    "message": "dil ekle"
   },
   "options_language_change": {
     "message": "değiştir"

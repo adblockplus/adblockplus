@@ -1,12 +1,33 @@
 {
+  "options_acceptableAds_ads_description_1": {
+    "message": "Akseptable annonser er ikke irriterende, og forstyrrer ikke visningen av innholdet. <a>Les mer om kriteriene for Akseptable annonser</a>"
+  },
   "options_acceptableAds_ads_label": {
-    "message": "Tillat akseptable reklamer"
+    "message": "Tillat Akseptable annonser"
+  },
+  "options_acceptableAds_description": {
+    "message": "Akseptable annonser er ikke-påtrengende annonser. Å akseptere dem er et kompromiss mellom annonseblokkering og å sørge for at nettsteder får inntekter."
+  },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>Viktig:</strong> Du har deaktivert <strong>Do Not Track (DNT)</strong> i innstillingene til nettleseren din. Du må aktivere <strong>DNT</strong> i nettleserinnstillingene dine for at denne funksjonen skal fungere. <a>Finn ut hvordan du aktiverer DNT</a>."
   },
   "options_acceptableAds_header": {
     "message": "Akseptable annonser"
   },
   "options_acceptableAds_privacy_label": {
-    "message": "Bare tillat annonser uten tredjeparts sporing"
+    "message": "Tillat kun annonser uten tredjepartssporing"
+  },
+  "options_advanced_description": {
+    "message": "Tilpass Adblock Plus, legg til eller fjern filterlister, lag og vedlikehold dine egne filterlister"
+  },
+  "options_anti_cv_header": {
+    "message": "Antiomgåelse"
+  },
+  "options_anti_cv_title": {
+    "message": "ABP filterliste for Antiomgåelse"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "Denne filterlisten virker mot omgåelse (teknikker for å tvinge annonser på brukere som har blokkert dem). Disse filtrene håndterer annonser som prøver å omgå blokkeringen og eventuell sporing."
   },
   "options_close": {
     "message": "lukk"
@@ -18,31 +39,64 @@
     "message": "Avbryt"
   },
   "options_customFilters_description": {
-    "message": "Lag dine egne tilpassede filter for å kontrollere hvilket innhold Adblock Plus tillater eller blokkerer ytterligere."
+    "message": "Lag dine egne tilpassede filtre for å kontrollere hvilket innhold Adblock Plus tillater eller blokkerer. <a0>Lær hvordan du lager filtre</a0>"
   },
   "options_customFilters_title": {
-    "message": "Opprett og rediger dine filterlister"
+    "message": "Dine tilpassede filtre"
   },
   "options_customFilters_widget_title": {
     "message": "Min filterliste"
   },
+  "options_customize_blockElement": {
+    "message": "Vis høyreklikkmenyvalget \"Blokkér element\""
+  },
+  "options_customize_blockElement_tooltip": {
+    "message": "Blokkér irriterende elementer på en nettside midlertidig, f.eks. bilder eller animasjoner."
+  },
+  "options_customize_header": {
+    "message": "Tilpasninger"
+  },
+  "options_customize_iconStats": {
+    "message": "Vis antall blokkerte annonser i ikonet"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "Vis \"Adblock Plus\"-panelet i utviklerverktøyene"
+  },
+  "options_customize_showDevToolsPanel_tooltip": {
+    "message": "Vis blokkerte og hvitelistede elementer i nettleserens utviklingsverktøypanel."
   },
   "options_customize_showNotifications": {
     "message": "Vis nyttige varsler"
   },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Tillat notifikasjoner fra Adblock Plus (notifikasjoner om kritiske ytelsesproblemer vil alltid vises uansett)."
+  },
+  "options_dialog_about_copyright": {
+    "message": "Opphavsrett © $currentYear$ eyeo GmbH.",
+    "placeholders": {
+      "currentYear": {
+        "content": "$1",
+        "example": "2017"
+      }
+    }
+  },
   "options_dialog_about_title": {
     "message": "Om Adblock Plus"
   },
+  "options_dialog_about_trademark": {
+    "message": "Alle rettigheter forbehold. Adblock Plus® er et registrert varemerke fra eyeo GmbH."
+  },
   "options_dialog_about_version": {
-    "message": "Versjonnummer $version$",
+    "message": "Versjonsnummer $version$",
     "placeholders": {
       "version": {
         "content": "$1",
         "example": "2.6.7"
       }
     }
+  },
+  "options_dialog_import_subscription_location": {
+    "message": "Filterliste-URL"
   },
   "options_dialog_import_subscription_location_error": {
     "message": "Angi en gyldig URL"
@@ -69,7 +123,7 @@
     "message": "Engelsk"
   },
   "options_filterList_add": {
-    "message": "+ Legg til en ny filterliste"
+    "message": "Legg til en ny filterliste"
   },
   "options_filterList_column_name": {
     "message": "Filterlister"
@@ -80,11 +134,17 @@
   "options_filterList_column_update": {
     "message": "Sist oppdatert"
   },
+  "options_filterList_description": {
+    "message": "Hver enkelt Adblock Plus-innstilling fungerer på grunn av en filterliste. Under vises filterlistene som er knyttet til alle Adblock Plus-innstillingene dine. Du kan legge til ytterligere filterlister, som er laget og vedlikeholdes av det pålitelige nettsamfunnet vårt."
+  },
+  "options_filterList_empty": {
+    "message": "Du har ikke lagt filterlister til Adblock Plus ennå. Filterlister som du legger til vil vises her."
+  },
   "options_filterList_hours": {
     "message": "timer siden"
   },
   "options_filterList_lastDownload_checksumMismatch": {
-    "message": "Mislyktes, kontrollsummen stemmer ikke"
+    "message": "Feilet, kontrollsummen stemmer ikke"
   },
   "options_filterList_lastDownload_connectionError": {
     "message": "Feilet, nedlastingsfeil"
@@ -125,6 +185,9 @@
   "options_filterList_website": {
     "message": "nettside"
   },
+  "options_filter_list_rule": {
+    "message": "Filterregel"
+  },
   "options_filters_search_or_add": {
     "message": "Søk / Legg til filter (f.eks. $filter$)",
     "placeholders": {
@@ -146,10 +209,13 @@
     "message": "Finn hjelp eller kontakt oss"
   },
   "options_language_add": {
-    "message": "+ legg til et språk"
+    "message": "legg til et språk"
   },
   "options_language_change": {
     "message": "endre"
+  },
+  "options_language_description": {
+    "message": "Optimaliser Adblock Plus til språket/språkene på nettstende du oftest bruker."
   },
   "options_language_empty": {
     "message": "Du har ingen språkspesifikke filtre."
@@ -157,11 +223,20 @@
   "options_language_header": {
     "message": "Språk"
   },
+  "options_language_tip": {
+    "message": "<strong>TIPS:</strong> Velg kun de språkene du trenger. Jo flere språk du velger, jo tregere er annonseblokkeringen, og dermed også den generelle netthastigheten din."
+  },
   "options_learn_more": {
     "message": "Få mer informasjon"
   },
+  "options_more_filters_description": {
+    "message": "Dette er ytterligere filtre som du har lagt til Adblock Plus tidligere."
+  },
   "options_more_filters_header": {
     "message": "Flere filtre"
+  },
+  "options_more_filters_note": {
+    "message": "<strong>OBS:</strong> Du bør kun bruke tredjepartsfilterlister fra leverandører som du stoler på."
   },
   "options_new_label": {
     "message": "Ny"
@@ -174,6 +249,12 @@
   },
   "options_privacy_header": {
     "message": "Personvern & sikkerhet"
+  },
+  "options_protection_privacy_tooltip": {
+    "message": "Beskytt privatlivet ditt fra kjente parter som kan spore nettaktivteten din på tvers av nettsidene du besøker."
+  },
+  "options_protection_social_tooltip": {
+    "message": "Sosiale medier-ikonene på nettstedene du besøker tillater at sosiale nettverk kan bygge en profil av deg basert på netthistorikken din - til og med om du ikke klikker på dem. Ved å skjule disse ikonene kan du beskytte privatlivet ditt."
   },
   "options_report_bug": {
     "message": "Funnet en feil? <a>Send oss en feilrapport</a>"
@@ -201,6 +282,31 @@
   },
   "options_tab_whitelist": {
     "message": "Hvitelistede nettsteder"
+  },
+  "options_tracking_warning_1": {
+    "message": "Vi registrerer at du har aktivert både <strong>$tracking$</strong> og <strong>$acceptableAds$</strong>.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "Vi vil informere deg om at for at annonsører skal kunne vise deg mer relevante annonser, <strong>kan</strong> det være at det er en viss sporing av deg med Akseptable annonser aktivert."
+  },
+  "options_tracking_warning_3": {
+    "message": "Hvis du foretrekker ekstra beskyttelse av privatliivet, kan du aktivere <strong>$acceptableAdsPrivacy$</strong>-sjekkboksen under.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Ok, skjønner"

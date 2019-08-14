@@ -117,7 +117,7 @@
     "message": "Inglês"
   },
   "options_filterList_add": {
-    "message": "+ Adicionar uma nova lista de filtros"
+    "message": "Adicionar uma nova lista de filtros"
   },
   "options_filterList_column_name": {
     "message": "Listas de filtros"
@@ -179,6 +179,17 @@
   "options_filterList_website": {
     "message": "Site Web"
   },
+  "options_filter_list_rule": {
+    "message": "Regra de filtro"
+  },
+  "options_filters_search_or_add": {
+    "message": "Pesquisar ou adicionar filtro(s) (ex. $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
+  },
   "options_footer_about": {
     "message": "Sobre o Adblock Plus"
   },
@@ -192,7 +203,7 @@
     "message": "Encontre ajuda ou entre em contacto connosco"
   },
   "options_language_add": {
-    "message": "+ adicionar idioma"
+    "message": "adicionar idioma"
   },
   "options_language_change": {
     "message": "ALTERAR"
@@ -265,6 +276,15 @@
   },
   "options_tab_whitelist": {
     "message": "Sites Web na lista branca"
+  },
+  "options_tracking_warning_3": {
+    "message": "Se preferir maior privacidade, marque a caixa de seleção <strong>$acceptableAdsPrivacy$</strong>.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Ok, percebi"

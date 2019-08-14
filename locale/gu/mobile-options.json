@@ -18,13 +18,13 @@
     }
   },
   "mops_filterlist_add": {
-    "message": "+ એક ફિલ્ટર સૂચિ ઉમેરો"
+    "message": "એક ફિલ્ટર સૂચિ ઉમેરો"
   },
   "mops_filterlist_add_action": {
-    "message": "+ એક ફિલ્ટર સૂચિ ઉમેરો"
+    "message": "એક ફિલ્ટર સૂચિ ઉમેરો"
   },
   "mops_filterlist_add_url": {
-    "message": "+ કસ્ટમ ફિલ્ટર સૂચિ ઉમેરો"
+    "message": "કસ્ટમ ફિલ્ટર સૂચિ ઉમેરો"
   },
   "mops_header": {
     "message": "એડબ્લોક પ્લસ સેટિંગ્સ"

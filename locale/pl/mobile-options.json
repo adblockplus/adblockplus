@@ -21,13 +21,13 @@
     "message": "Wprowadź prawidłowy adres URL"
   },
   "mops_filterlist_add": {
-    "message": "+ Dodaj zestaw filtrów"
+    "message": "Dodaj zestaw filtrów"
   },
   "mops_filterlist_add_action": {
     "message": "DODAJ LISTĘ FILTRÓW"
   },
   "mops_filterlist_add_url": {
-    "message": "+ Dodaj własny zestaw filtrów"
+    "message": "Dodaj własny zestaw filtrów"
   },
   "mops_header": {
     "message": "Adblock Plus Ustawienia"

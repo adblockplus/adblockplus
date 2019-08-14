@@ -105,7 +105,7 @@
     "message": "English"
   },
   "options_filterList_add": {
-    "message": "+ Add a new filter list"
+    "message": "Add a new filter list"
   },
   "options_filterList_column_name": {
     "message": "Filter lists"
@@ -180,7 +180,7 @@
     "message": "Find help or get in touch with us"
   },
   "options_language_add": {
-    "message": "+ add a language"
+    "message": "add a language"
   },
   "options_language_change": {
     "message": "change"

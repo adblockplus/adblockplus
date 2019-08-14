@@ -45,13 +45,13 @@
     "message": "Опитът за изпращане на доклада се провали с код на грешка „?1?“. Моля, уверете се, че сте свързани с интернет и повторете. Ако това продължи, моля потърсете помощ във [link]форума на Adblock Plus[/link]."
   },
   "issueReporter_falseNegative_description": {
-    "message": "Изберете настройката когато се изобразява реклама, въпреки включването на Adblock Plus."
+    "message": "Adblock Plus е активен но аз все още виждам реклама или реклами."
   },
   "issueReporter_falseNegative_label": {
     "message": "Продължавам да виждам реклами"
   },
   "issueReporter_falsePositive_description": {
-    "message": "Изберете настройката когато липсва важно съдържание; то се изобразява неправилно; или функционира неправилно в страницата. Бихте могли да определите дали се причинява от Adblock Plus, като временно го изключите."
+    "message": "Страницата се показва неправилно не работи както трябва или липсват важни неща."
   },
   "issueReporter_falsePositive_label": {
     "message": "Блокирането разрушава страницата"
@@ -73,6 +73,12 @@
   },
   "issueReporter_privacyPolicy": {
     "message": "Политика на поверителност"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "обработва се"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "За да ни помогнете да разберем по добре проблема ви моля да прикачите снимка на екрана и ако съдържа ваши лични данни моля изпратете я на мейлът <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_screenshot_hide": {
     "message": "Скрий"

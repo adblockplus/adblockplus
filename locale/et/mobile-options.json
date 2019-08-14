@@ -21,13 +21,13 @@
     "message": "Sisesta sobiv aadress"
   },
   "mops_filterlist_add": {
-    "message": "+ Lisa filtrite nimekiri"
+    "message": "Lisa filtrite nimekiri"
   },
   "mops_filterlist_add_action": {
     "message": "Lisa filtrite nimekiri"
   },
   "mops_filterlist_add_url": {
-    "message": "+ Lisa kohandatud filtrite nimekiri"
+    "message": "Lisa kohandatud filtrite nimekiri"
   },
   "mops_header": {
     "message": "Adblock Plusi sätted"

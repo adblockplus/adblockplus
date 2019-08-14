@@ -123,7 +123,7 @@
     "message": "英語"
   },
   "options_filterList_add": {
-    "message": "+ 添加一個新的過濾列表"
+    "message": "添加一個新的過濾列表"
   },
   "options_filterList_column_name": {
     "message": "過濾列表"
@@ -209,7 +209,7 @@
     "message": "尋求幫助或聯繫我們"
   },
   "options_language_add": {
-    "message": "+ 添加語言"
+    "message": "添加語言"
   },
   "options_language_change": {
     "message": "更改"

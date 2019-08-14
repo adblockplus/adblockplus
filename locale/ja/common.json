@@ -19,5 +19,8 @@
   },
   "common_notification_hide": {
     "message": "通知を閉じる"
+  },
+  "filter_action_failed": {
+    "message": "何らかの問題が発生しました。再度お試しください。"
   }
 }

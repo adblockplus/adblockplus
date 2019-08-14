@@ -1,12 +1,42 @@
 {
+  "firstRun_browser_description": {
+    "message": "Từ nhóm đứng sau Adblock Plus, trình chặn quảng cáo phổ biến nhất cho trình duyệt máy tính để bàn, Adblock Browser hiện có sẵn cho các thiết bị Android và iOS của bạn."
+  },
   "firstRun_browser_store_android": {
     "message": "Ứng dụng Android trên Google Play"
   },
   "firstRun_browser_store_ios": {
     "message": "Có sẵn trên Kho ứng dụng iTunes"
   },
+  "firstRun_browser_title": {
+    "message": "Ứng dụng Adblock Browser"
+  },
+  "firstRun_control_description": {
+    "message": "Theo mặc định, bạn có thể thấy một số quảng cáo không xâm phạm tuân thủ <a0>tiêu chí nghiêm ngặt</a0>. Chúng tôi xác định những quảng cáo này là Quảng cáo được chấp nhận. Thích chặn tất cả quảng cáo? <a1>Tắt quảng cáo được chấp nhận</a1> trong <a2>Cài đặt</a2> của bạn."
+  },
+  "firstRun_control_title": {
+    "message": "Bạn đang kiếm soát"
+  },
+  "firstRun_fair_description": {
+    "message": "Chúng tôi khuyến khích bạn sử dụng hợp lý Adblock Plus và tùy chọn cho các trang web danh sách trắng. Tùy thuộc vào các bộ lọc bạn sử dụng, bạn hiểu và chấp nhận rằng các kết quả không chủ ý có thể xảy ra (ví dụ: nội dung bị chặn trên trang web). Tham khảo <a0>Điều khoản sử dụng</a0> để biết thêm thông tin về việc sử dụng hợp lý Adblock Plus."
+  },
   "firstRun_fair_title": {
     "message": "Sử dụng hợp lý"
+  },
+  "firstRun_footer_copyright": {
+    "message": "Copyright © $year$ Bảo lưu mọi quyền. Adblock Plus® là thương hiệu đã đăng ký của <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
+  "firstRun_subtitle": {
+    "message": "Bạn chỉ cần điều khiển trình duyệt của bạn."
+  },
+  "firstRun_title": {
+    "message": "Cài đặt thành công!"
   },
   "firstRun_warning_dataCorrupted_intro": {
     "message": "Một số người dùng gặp sự cố khi trang này mở ra mỗi khi trình duyệt của họ khởi chạy. Có thể giải quyết vấn đề này bằng cách gỡ cài đặt và cài đặt lại Adblock Plus:"

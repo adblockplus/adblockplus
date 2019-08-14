@@ -1,0 +1,53 @@
+{
+  "devtools_action_block": {
+    "message": "Blokkér element"
+  },
+  "devtools_action_remove": {
+    "message": "Fjern regel"
+  },
+  "devtools_action_unblock": {
+    "message": "Legg til unntak"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "brukerdefinert"
+  },
+  "devtools_filter_origin_none": {
+    "message": "abonnement uten navn"
+  },
+  "devtools_filter_subtitle": {
+    "message": "Opprinnelse"
+  },
+  "devtools_filter_title": {
+    "message": "Filter"
+  },
+  "devtools_footer": {
+    "message": "<a0>Last inn</a0> siden på nytt for å se effekten av endringene av filteret"
+  },
+  "devtools_header": {
+    "message": "Vis <slot0></slot0> elementer av type <slot1></slot1>"
+  },
+  "devtools_header_state_all": {
+    "message": "alle"
+  },
+  "devtools_header_state_blocked": {
+    "message": "blokkerte"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "hvitelistet"
+  },
+  "devtools_header_type_any": {
+    "message": "enhver"
+  },
+  "devtools_request_subtitle": {
+    "message": "Dokumentdomene"
+  },
+  "devtools_request_title": {
+    "message": "Forespør"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0> skrevet om til <a1></a1>"
+  },
+  "devtools_type_title": {
+    "message": "Type"
+  }
+}

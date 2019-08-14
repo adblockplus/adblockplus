@@ -123,7 +123,7 @@
     "message": "Engleză"
   },
   "options_filterList_add": {
-    "message": "+ Adaugă o nouă listă de filtre"
+    "message": "Adaugă o nouă listă de filtre"
   },
   "options_filterList_column_name": {
     "message": "Liste de filtre"
@@ -209,7 +209,7 @@
     "message": "Găseşte ajutor sau pune-te în contact cu noi"
   },
   "options_language_add": {
-    "message": "+ adaugă o limbă"
+    "message": "adaugă o limbă"
   },
   "options_language_change": {
     "message": "modifică"

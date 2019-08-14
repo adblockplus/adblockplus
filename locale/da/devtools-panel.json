@@ -1,0 +1,53 @@
+{
+  "devtools_action_block": {
+    "message": "Blokér element"
+  },
+  "devtools_action_remove": {
+    "message": "Fjern regel"
+  },
+  "devtools_action_unblock": {
+    "message": "Tilføj undtagelse"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "brugerdefineret"
+  },
+  "devtools_filter_origin_none": {
+    "message": "unavngivet abonnement"
+  },
+  "devtools_filter_subtitle": {
+    "message": "Oprindelse"
+  },
+  "devtools_filter_title": {
+    "message": "Filter"
+  },
+  "devtools_footer": {
+    "message": "<a0>Genindlæs</a0> side for at se resultatet af filterændringerne"
+  },
+  "devtools_header": {
+    "message": "Vis <slot0></slot0> elementer af <slot1></slot1> typen"
+  },
+  "devtools_header_state_all": {
+    "message": "alle"
+  },
+  "devtools_header_state_blocked": {
+    "message": "blokeret"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "hvidlistet"
+  },
+  "devtools_header_type_any": {
+    "message": "alle"
+  },
+  "devtools_request_subtitle": {
+    "message": "Dokumentdomæne"
+  },
+  "devtools_request_title": {
+    "message": "Anmodning"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0> omskrevet til <a1></a1>"
+  },
+  "devtools_type_title": {
+    "message": "Type"
+  }
+}

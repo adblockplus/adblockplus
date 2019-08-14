@@ -108,7 +108,7 @@
     "message": "Angličtina"
   },
   "options_filterList_add": {
-    "message": "+ Pridajte nový zoznam filtrov"
+    "message": "Pridajte nový zoznam filtrov"
   },
   "options_filterList_column_name": {
     "message": "Zoznamy filtrov"
@@ -186,7 +186,7 @@
     "message": "Nájdite pomoc alebo nás kontaktujte"
   },
   "options_language_add": {
-    "message": "+ pridajte jazyk"
+    "message": "pridajte jazyk"
   },
   "options_language_change": {
     "message": "zmeniť"
@@ -213,7 +213,7 @@
     "message": "Ďalšie filtre"
   },
   "options_more_filters_note": {
-    "message": "<strong> Poznámka: </strong> Zoznam filtrovv tretích strán by ste mali používať iba od autorov, ktorým dôverujete."
+    "message": "<strong> Poznámka: </strong> Zoznamy filtrov tretích strán by ste mali používať iba od autorov, ktorým dôverujete."
   },
   "options_new_label": {
     "message": "Nový"

@@ -123,7 +123,7 @@
     "message": "Angleščina"
   },
   "options_filterList_add": {
-    "message": "+ Dodaj nov seznam filtrov"
+    "message": "Dodaj nov seznam filtrov"
   },
   "options_filterList_column_name": {
     "message": "Seznami filtrov"
@@ -209,7 +209,7 @@
     "message": "Poiščite pomoč ali navežite stik z nami"
   },
   "options_language_add": {
-    "message": "+ dodaj jezik"
+    "message": "dodaj jezik"
   },
   "options_language_change": {
     "message": "spremeni"

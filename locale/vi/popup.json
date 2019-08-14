@@ -1,4 +1,7 @@
 {
+  "click_element_to_block_it": {
+    "message": "Nhấp vào một phần tử trên trang để chặn nó."
+  },
   "easy_create_filter": {
     "message": "Chặn phần tử"
   },
@@ -22,6 +25,9 @@
   },
   "sendReport": {
     "message": "Báo cáo vấn đề"
+  },
+  "stats_header": {
+    "message": "Số lượng mục bị chặn"
   },
   "stats_label_page": {
     "message": "<strong>$number$</strong> trên trang này",

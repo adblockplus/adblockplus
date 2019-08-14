@@ -21,13 +21,13 @@
     "message": "Ievadiet derīgu URL"
   },
   "mops_filterlist_add": {
-    "message": "+ Pievienot filtru sarakstu"
+    "message": "Pievienot filtru sarakstu"
   },
   "mops_filterlist_add_action": {
     "message": "Pievienot filtru sarakstu"
   },
   "mops_filterlist_add_url": {
-    "message": "+ Pievienot savu filtru sarakstu"
+    "message": "Pievienot savu filtru sarakstu"
   },
   "mops_header": {
     "message": "Adblock Plus iestatījumi"

@@ -105,7 +105,7 @@
     "message": "Engelska"
   },
   "options_filterList_add": {
-    "message": "+ Lägg till en ny filterlista"
+    "message": "Lägg till en ny filterlista"
   },
   "options_filterList_column_name": {
     "message": "Filterlistor"
@@ -180,7 +180,7 @@
     "message": "Få hjälp eller kom i kontakt med oss"
   },
   "options_language_add": {
-    "message": "+ lägg till ett språk"
+    "message": "lägg till ett språk"
   },
   "options_language_change": {
     "message": "ändra"

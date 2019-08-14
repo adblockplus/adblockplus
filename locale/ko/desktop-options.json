@@ -99,7 +99,7 @@
     "message": "영어"
   },
   "options_filterList_add": {
-    "message": "+ 새 필터 목록 추가"
+    "message": "새 필터 목록 추가"
   },
   "options_filterList_column_name": {
     "message": "필터 목록"
@@ -174,7 +174,7 @@
     "message": "도움말을 참조하시거나 저희에게 연락주십시오"
   },
   "options_language_add": {
-    "message": "+ 언어 추가"
+    "message": "언어 추가"
   },
   "options_language_change": {
     "message": "변경"

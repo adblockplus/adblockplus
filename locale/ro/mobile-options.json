@@ -21,13 +21,13 @@
     "message": "Introduceți un URL valid"
   },
   "mops_filterlist_add": {
-    "message": "+ Adaugă o listă de filtre"
+    "message": "Adaugă o listă de filtre"
   },
   "mops_filterlist_add_action": {
     "message": "Adaugă o listă de filtre"
   },
   "mops_filterlist_add_url": {
-    "message": "+ Adaugă o listă de filtre personalizate"
+    "message": "Adaugă o listă de filtre personalizate"
   },
   "mops_header": {
     "message": "Opţiuni Adblock Plus"

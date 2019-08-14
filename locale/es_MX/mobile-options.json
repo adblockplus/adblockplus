@@ -18,13 +18,13 @@
     }
   },
   "mops_filterlist_add": {
-    "message": "+ Agregar una lista de filtros"
+    "message": "Agregar una lista de filtros"
   },
   "mops_filterlist_add_action": {
     "message": "AGREGAR LISTA DE FILTROS"
   },
   "mops_filterlist_add_url": {
-    "message": "+ Agregar una lista de filtros personalizada"
+    "message": "Agregar una lista de filtros personalizada"
   },
   "mops_header": {
     "message": "Adblock Plus Ajustes"

@@ -17,11 +17,17 @@
   "overlay_notification_closing_button_optout": {
     "message": "Prestať zobrazovať upozornenia"
   },
+  "promote_abp_module": {
+    "message": "Máte záujem o Adblock Plus na mobile?"
+  },
   "refresh_to_take_effect": {
     "message": "Kliknite na <strong>Obnoviť</strong> aby sa zmeny prejavili."
   },
   "sendReport": {
     "message": "Nahlásiť problém"
+  },
+  "stats_header": {
+    "message": "Počet zablokovaných objektov"
   },
   "stats_label_page": {
     "message": "<strong>$number$</strong> na tejto stránke",
@@ -38,5 +44,8 @@
         "content": "$1"
       }
     }
+  },
+  "status_header": {
+    "message": "Blokovať reklamy na:"
   }
 }

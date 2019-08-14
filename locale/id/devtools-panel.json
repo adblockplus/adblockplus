@@ -1,0 +1,53 @@
+{
+  "devtools_action_block": {
+    "message": "Blokir item"
+  },
+  "devtools_action_remove": {
+    "message": "Hapus aturan"
+  },
+  "devtools_action_unblock": {
+    "message": "Tambahkan pengecualian"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "ditetapkan pengguna"
+  },
+  "devtools_filter_origin_none": {
+    "message": "langganan tanpa nama"
+  },
+  "devtools_filter_subtitle": {
+    "message": "Asal"
+  },
+  "devtools_filter_title": {
+    "message": "Filter"
+  },
+  "devtools_footer": {
+    "message": "<a0>Muat ulang</a0> laman untuk melihat efek perubahan filter"
+  },
+  "devtools_header": {
+    "message": "Tampilkan item <slot0></slot0> dari tipe <slot1></slot1>"
+  },
+  "devtools_header_state_all": {
+    "message": "semua"
+  },
+  "devtools_header_state_blocked": {
+    "message": "diblokir"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "dalam daftar putih"
+  },
+  "devtools_header_type_any": {
+    "message": "apa saja"
+  },
+  "devtools_request_subtitle": {
+    "message": "Domain dokumen"
+  },
+  "devtools_request_title": {
+    "message": "Permintaan"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0> ditulis ulang ke <a1></a1>"
+  },
+  "devtools_type_title": {
+    "message": "Jenis"
+  }
+}

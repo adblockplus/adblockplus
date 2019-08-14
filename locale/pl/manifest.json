@@ -2,6 +2,9 @@
   "description": {
     "message": "Pobierz Adblock Plus — jedno z najpopularniejszych na świecie rozwiązań do blokowania reklam."
   },
+  "name": {
+    "message": "Adblock Plus"
+  },
   "name_devbuild": {
     "message": "Adblock Plus – wersja rozwojowa"
   },

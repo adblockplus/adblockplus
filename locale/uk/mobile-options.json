@@ -21,13 +21,13 @@
     "message": "Ввести дійсну URL"
   },
   "mops_filterlist_add": {
-    "message": "+ Додати список фільтрів"
+    "message": "Додати список фільтрів"
   },
   "mops_filterlist_add_action": {
     "message": "Додати список фільтрів"
   },
   "mops_filterlist_add_url": {
-    "message": "+ Додати власний список фільтрів"
+    "message": "Додати власний список фільтрів"
   },
   "mops_header": {
     "message": "Налаштування Adblock Plus"

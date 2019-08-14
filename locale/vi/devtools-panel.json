@@ -1,5 +1,53 @@
 {
+  "devtools_action_block": {
+    "message": "Mục chặn"
+  },
+  "devtools_action_remove": {
+    "message": "Loại bỏ quy tắc"
+  },
+  "devtools_action_unblock": {
+    "message": "Thêm ngoại lệ"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "người dùng đã xác định"
+  },
+  "devtools_filter_origin_none": {
+    "message": "đăng ký không tên"
+  },
+  "devtools_filter_subtitle": {
+    "message": "Gốc"
+  },
   "devtools_filter_title": {
     "message": "Bộ lọc"
+  },
+  "devtools_footer": {
+    "message": "<a0>Tải lại</a0> trang để xem những thay đổi của bộ lọc"
+  },
+  "devtools_header": {
+    "message": "Hiện <slot0></slot0> mục của <slot1></slot1> kiểu"
+  },
+  "devtools_header_state_all": {
+    "message": "tất cả"
+  },
+  "devtools_header_state_blocked": {
+    "message": "đã chặn"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "danh sách trắng"
+  },
+  "devtools_header_type_any": {
+    "message": "bất kì"
+  },
+  "devtools_request_subtitle": {
+    "message": "Miền tài liệu"
+  },
+  "devtools_request_title": {
+    "message": "Yêu cầu"
+  },
+  "devtools_request_url": {
+    "message": "<a0></a0> viết lại thành <a1></a1>"
+  },
+  "devtools_type_title": {
+    "message": "Kiểu"
   }
 }

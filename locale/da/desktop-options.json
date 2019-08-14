@@ -123,7 +123,7 @@
     "message": "Engelsk"
   },
   "options_filterList_add": {
-    "message": "+ Tilføj en ny filterliste"
+    "message": "Tilføj en ny filterliste"
   },
   "options_filterList_column_name": {
     "message": "Filterlister"
@@ -209,7 +209,7 @@
     "message": "Få hjælp eller kontakt os"
   },
   "options_language_add": {
-    "message": "+ Tilføj et sprog"
+    "message": "Tilføj et sprog"
   },
   "options_language_change": {
     "message": "skift"

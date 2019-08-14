@@ -17,14 +17,17 @@
       }
     }
   },
+  "mops_error_url": {
+    "message": "Nhập một URL hợp lệ"
+  },
   "mops_filterlist_add": {
-    "message": "+ Thêm một danh sách bộ lọc"
+    "message": "Thêm một danh sách bộ lọc"
   },
   "mops_filterlist_add_action": {
     "message": "Thêm danh sách bộ lọc"
   },
   "mops_filterlist_add_url": {
-    "message": "+ Thêm một danh sách bộ lọc tuỳ chỉnh"
+    "message": "Thêm một danh sách bộ lọc tuỳ chỉnh"
   },
   "mops_header": {
     "message": "Thiết lập Adblock Plus"

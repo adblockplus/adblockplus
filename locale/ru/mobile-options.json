@@ -21,13 +21,13 @@
     "message": "Введите действительную URL"
   },
   "mops_filterlist_add": {
-    "message": "+ Добавить список фильтров"
+    "message": "Добавить список фильтров"
   },
   "mops_filterlist_add_action": {
     "message": "Добавить список фильтров"
   },
   "mops_filterlist_add_url": {
-    "message": "+ Добавить собственный список фильтров"
+    "message": "Добавить собственный список фильтров"
   },
   "mops_header": {
     "message": "Adblock Plus Настройки"

@@ -18,13 +18,13 @@
     }
   },
   "mops_filterlist_add": {
-    "message": "+ Dodaj popis filtera"
+    "message": "Dodaj popis filtera"
   },
   "mops_filterlist_add_action": {
     "message": "Dodaj popis filtera"
   },
   "mops_filterlist_add_url": {
-    "message": "+ Dodaj svoj popis filtera"
+    "message": "Dodaj svoj popis filtera"
   },
   "mops_header": {
     "message": "Adblock Plus postavke"

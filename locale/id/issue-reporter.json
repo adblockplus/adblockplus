@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "Kami tidak dapat menghubungi Anda kembali dan akan menurunkan prioritas laporan ini."
   },
+  "issueReporter_closeButton_label": {
+    "message": "Tutup"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Masukkan Komentar"
   },
@@ -22,6 +25,12 @@
   },
   "issueReporter_confirmationMessage": {
     "message": "Laporan Anda telah disimpan. Anda dapat mengaksesnya pada alamat berikut:"
+  },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Catatan:</strong> tab tambahan akan terbuka sementara sehingga halaman yang anda buka tidak terpengaruh oleh Pelapor Masalah."
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "Rincian"
   },
   "issueReporter_doneButton_label": {
     "message": "Selesai"
@@ -47,14 +56,38 @@
   "issueReporter_falsePositive_label": {
     "message": "Adblock Plus memcekal terlalu banyak"
   },
+  "issueReporter_highlighter_description": {
+    "message": "Gunakan alat untuk menyorot setiap iklan atau menyembunyikan info sensitif pada screenshot. Menyoroti iklan akan membantu kami memperbaiki masalah dengan cepat."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Soroti masalah"
+  },
   "issueReporter_knownIssueMessage": {
     "message": "Masalah yang Anda laporkan mungkin sudah dikenal. Informasi selanjutnya:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Tandai masalah"
   },
   "issueReporter_page_title": {
     "message": "Pelapor permasalahan"
   },
   "issueReporter_privacyPolicy": {
     "message": "Kebijakan privasi"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "memproses"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "Untuk membantu kami lebih memahami masalah ini, screenshot diperlukan saat mengirimkan laporan masalah. Bergantung pada situs web Anda saat ini, tangkapan layar mungkin berisi informasi pribadi. Jika Anda merasa tidak nyaman mengirimkan screenshot, harap email masalah Anda ke <a0>support@adblockplus.org</a0>."
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Sembunyikan"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "Sorot"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Pilih masalah"
   },
   "issueReporter_sendButton_label": {
     "message": "Kirim laporan"

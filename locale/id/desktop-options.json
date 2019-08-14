@@ -1,15 +1,90 @@
 {
+  "options_acceptableAds_ads_description_1": {
+    "message": "Iklan yang Diizinkan tidak menjengkelkan dan tidak mengganggu konten yang Anda lihat. <a>Selengkapnya tentang kriteria Iklan yang Diizinkan</a>"
+  },
+  "options_acceptableAds_ads_label": {
+    "message": "Bolehkan Iklan yang Diizinkan"
+  },
+  "options_acceptableAds_description": {
+    "message": "Iklan yang Diizinkan adalah iklan yang tidak mengganggu. Mereka adalah jalan tengah antara pemblokiran iklan dan mendukung konten online karena mereka menghasilkan pendapatan bagi pemilik situs web."
+  },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>Catatan:</strong> Anda telah mematikan <strong>Jangan Lacak</strong> di pengaturan browser Anda. Agar fitur ini berjalan lancar, harap aktifkan <strong>Jangan Lacak</strong> di browser anda. <a>Silahkan cari cara mengaktifkan Jangan Lacak</a>."
+  },
+  "options_acceptableAds_header": {
+    "message": "Iklan yang Diizinkan"
+  },
+  "options_acceptableAds_privacy_label": {
+    "message": "Hanya mengizinkan iklan tanpa pelacakan pihak ketiga"
+  },
+  "options_advanced_description": {
+    "message": "Sesuaikan Adblock Plus, tambah atau hapus daftar filter, buat dan kelola daftar filter Anda sendiri"
+  },
+  "options_anti_cv_header": {
+    "message": "Anti-Pengelakan"
+  },
+  "options_anti_cv_title": {
+    "message": "Daftar Filter Anti-Pengelakan ABP"
+  },
+  "options_anti_cv_tooltip": {
+    "message": "Filter ini bekerja terhadap pengelakan (teknik untuk memaksa iklan pada pengguna ad-block). Filter ini mengatasi pengelakan iklan serta pelacakan terkait."
+  },
   "options_close": {
     "message": "tutup"
+  },
+  "options_control_remove_title": {
+    "message": "hapus"
   },
   "options_customFilter_cancel": {
     "message": "Batal"
   },
+  "options_customFilters_description": {
+    "message": "Buat dan kelola filter Anda sendiri untuk mengontrol lebih lanjut konten apa yang diperbolehkan atau diblokir oleh Adblock Plus. <a0>Pelajari cara membuat filter</a0>"
+  },
+  "options_customFilters_title": {
+    "message": "Filter kustom Anda"
+  },
+  "options_customFilters_widget_title": {
+    "message": "Daftar filter saya"
+  },
+  "options_customize_blockElement": {
+    "message": "Tampilkan item 'Blokir Elemen' pada menu klik kanan"
+  },
+  "options_customize_blockElement_tooltip": {
+    "message": "Memblokir sementara item yang mengganggu pada halaman web, seperti gambar atau animasi slideshow."
+  },
+  "options_customize_header": {
+    "message": "Kustomisasi"
+  },
+  "options_customize_iconStats": {
+    "message": "Tampilkan jumlah iklan yang diblokir dalam ikon"
+  },
+  "options_customize_showDevToolsPanel": {
+    "message": "Tampilkan panel 'Adblock Plus' di dalam alat pengembang"
+  },
+  "options_customize_showDevToolsPanel_tooltip": {
+    "message": "Tampilkan item yang diblokir dan masuk daftar putih dari panel alat pengembang browser Anda."
+  },
   "options_customize_showNotifications": {
     "message": "Tampilkan pemberitahuan yang berguna"
   },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Perbolehkan notifikasi dari Adblock Plus (notifikasi terkait dengan masalah kinerja kritis akan selalu muncul)."
+  },
+  "options_dialog_about_copyright": {
+    "message": "Hak cipta © $currentYear$ <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "currentYear": {
+        "content": "$1",
+        "example": "2017"
+      }
+    }
+  },
   "options_dialog_about_title": {
     "message": "Tentang Adblock Plus"
+  },
+  "options_dialog_about_trademark": {
+    "message": "Hak cipta dilindungi. Adblock Plus® adalah merek dagang terdaftar dari eyeo GmbH."
   },
   "options_dialog_about_version": {
     "message": "Versi nomor $version$",
@@ -20,11 +95,26 @@
       }
     }
   },
+  "options_dialog_import_subscription_location": {
+    "message": "URL daftar filter"
+  },
+  "options_dialog_import_subscription_location_error": {
+    "message": "Masukkan URL yang valid"
+  },
+  "options_dialog_import_title": {
+    "message": "Tambah daftar filter"
+  },
+  "options_dialog_language_other_empty": {
+    "message": "Tidak ada bahasa yang tersedia."
+  },
   "options_dialog_language_title": {
     "message": "Pilih Bahasa"
   },
   "options_dialog_predefined_confirm": {
     "message": "Ya, gunakan saringan ini"
+  },
+  "options_dialog_predefined_title": {
+    "message": "Yakin anda ingin menambahkan daftar filter ini?"
   },
   "options_email": {
     "message": "Surel:"
@@ -32,11 +122,26 @@
   "options_english": {
     "message": "Bahasa Inggris"
   },
+  "options_filterList_add": {
+    "message": "Tambah daftar filter baru"
+  },
   "options_filterList_column_name": {
     "message": "Daftar penyaring"
   },
   "options_filterList_column_status": {
     "message": "Status"
+  },
+  "options_filterList_column_update": {
+    "message": "Terakhir diperbarui"
+  },
+  "options_filterList_description": {
+    "message": "Setiap pengaturan Adblock Plus berfungsi karena daftar filter. Di bawah ini adalah daftar filter yang sesuai dengan pengaturan Adblock Plus Anda. Anda juga bisa menambahkan filter yang dibuat dan dikelola oleh komunitas terpercaya kami."
+  },
+  "options_filterList_empty": {
+    "message": "Anda belum menambahkan daftar filter apapun ke Adblock Plus. Daftar filter yang Anda tambahkan akan muncul disini."
+  },
+  "options_filterList_hours": {
+    "message": "jam yang lalu"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Gagal, checksum tidak cocok"
@@ -47,14 +152,23 @@
   "options_filterList_lastDownload_inProgress": {
     "message": "Memperbarui"
   },
+  "options_filterList_lastDownload_invalidData": {
+    "message": "Gagal, daftar filter tidak sah"
+  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Gagal, alamat tidak sah"
+  },
+  "options_filterList_minutes": {
+    "message": "menit yang lalu"
   },
   "options_filterList_now": {
     "message": "Baru saja"
   },
   "options_filterList_source": {
     "message": "sumber"
+  },
+  "options_filterList_state_active": {
+    "message": "Aktif"
   },
   "options_filterList_state_disabled": {
     "message": "Dinonaktifkan"
@@ -71,26 +185,61 @@
   "options_filterList_website": {
     "message": "situs web"
   },
+  "options_filter_list_rule": {
+    "message": "Aturan filter"
+  },
+  "options_filters_search_or_add": {
+    "message": "Cari atau tambah filter (seperti $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
+  },
   "options_footer_about": {
     "message": "Tentang Adblock Plus"
+  },
+  "options_footer_contribute": {
+    "message": "Kontribusi"
+  },
+  "options_general_description": {
+    "message": "Tentukan apa yang ditampilkan atau disembunyikan Adblock Plus di situs web"
   },
   "options_help_description": {
     "message": "Menemukan bantuan atau menghubungi kami"
   },
   "options_language_add": {
-    "message": "+ Tambahkan bahasa"
+    "message": "tambahkan bahasa"
   },
   "options_language_change": {
     "message": "ubah"
   },
+  "options_language_description": {
+    "message": "Optimalkan Adblock Plus untuk bahasa yang Anda gunakan untuk menjelajah situs web."
+  },
+  "options_language_empty": {
+    "message": "Anda tidak memiliki filter khusus bahasa."
+  },
   "options_language_header": {
     "message": "Bahasa"
+  },
+  "options_language_tip": {
+    "message": "<strong>TIPS:</strong> Hanya pilih bahasa yang Anda butuhkan. Memilih lebih banyak akan memperlambat pemblokir iklan, dan juga kecepatan browsing Anda."
   },
   "options_learn_more": {
     "message": "Pelajari lebih lanjut"
   },
+  "options_more_filters_description": {
+    "message": "Ini adalah filter tambahan yang anda tambahkan sebelumnya ke Adblock Plus."
+  },
   "options_more_filters_header": {
     "message": "Filter lain"
+  },
+  "options_more_filters_note": {
+    "message": "<strong>Catatan:</strong> Anda hanya boleh menambah filter pihak ketiga dari pembuat yang Anda percaya."
+  },
+  "options_new_label": {
+    "message": "Baru"
   },
   "options_page_document_title": {
     "message": "Pengaturan"
@@ -101,8 +250,20 @@
   "options_privacy_header": {
     "message": "Privasi & keamanan"
   },
+  "options_protection_privacy_tooltip": {
+    "message": "Lindungi privasi Anda dari entitas yang dikenal yang dapat melacak aktivitas online Anda di situs yang Anda kunjungi."
+  },
+  "options_protection_social_tooltip": {
+    "message": "Ikon sosial media pada situs yang Anda kunjungi membolehkan jaringan sosmed untuk membuat profil anda berdasarkan kebiasaan browsing Anda - bahkan ketika Anda tidak menekannya. Menghilangkan ikon ini dapat melindungi profil Anda."
+  },
   "options_report_bug": {
     "message": "Menemukan bug? <a>Kirimkan laporan bug</a>"
+  },
+  "options_report_forum": {
+    "message": "Ingin mendukung komunitas kami? <a>Pergi ke Forum</a>"
+  },
+  "options_social_description": {
+    "message": "Punya pertanyaan atau ide yang baru? Kami disini untuk membantu."
   },
   "options_social_title": {
     "message": "Menghubungi"
@@ -121,6 +282,46 @@
   },
   "options_tab_whitelist": {
     "message": "Situs dalam daftar putih/aman"
+  },
+  "options_tracking_warning_1": {
+    "message": "Kami perhatikan anda telah mengaktifkan <strong>$tracking$</strong> dan <strong>$acceptableAds$</strong>.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "Kami ingin Anda tahu bahwa agar pengiklan menampilkan iklan yang lebih relevan, <strong>mungkin</strong> ada pelacakan dengan Iklan yang Diizinkan."
+  },
+  "options_tracking_warning_3": {
+    "message": "Jika Anda memilih perlindungan ekstra, pilih kotak centang <strong>$acceptableAdsPrivacy$</strong> di bawah.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "Oke, mengerti"
+  },
+  "options_whitelist_add": {
+    "message": "Tambah situs web"
+  },
+  "options_whitelist_description": {
+    "message": "Anda menonaktifkan pemblokiran iklan di situs ini, dan akan melihat iklan di sana."
+  },
+  "options_whitelist_empty_1": {
+    "message": "Anda tidak memiliki situs yang didaftar putih."
+  },
+  "options_whitelist_empty_2": {
+    "message": "Situs yang Anda percayai dan ingin membolehkan iklan muncul akan ditampilkan di sini."
   },
   "options_whitelist_notification": {
     "message": "\"$website$\" telah masuk daftar putih.",

@@ -123,7 +123,7 @@
     "message": "Engels"
   },
   "options_filterList_add": {
-    "message": "+ Nieuwe filterlijst toevoegen"
+    "message": "Nieuwe filterlijst toevoegen"
   },
   "options_filterList_column_name": {
     "message": "Filterlijsten"
@@ -209,7 +209,7 @@
     "message": "Hulp zoeken of contact met ons opnemen"
   },
   "options_language_add": {
-    "message": "+ een taal toevoegen"
+    "message": "een taal toevoegen"
   },
   "options_language_change": {
     "message": "wijzigen"

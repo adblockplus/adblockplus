@@ -1,6 +1,6 @@
 {
   "filter_elemhideemulation_nodomain": {
-    "message": "Tidak ada domain aktif yang digunakan untuk saringan penyembunyian elemen yang diperpanjang"
+    "message": "Tidak ada domain aktif yang ditentukan untuk filter penyembunyian elemen yang diperpanjang"
   },
   "filter_invalid_csp": {
     "message": "Kebijakan Keamanan Konten Tidak Valid"
@@ -11,8 +11,11 @@
   "filter_invalid_regexp": {
     "message": "Kalimat biasa yang tidak valid"
   },
+  "filter_slow": {
+    "message": "Untuk memastikan filter cepat, perhatikan panjang pola dan pastikan tidak mengandung kalimat biasa."
+  },
   "filter_snippet_nodomain": {
-    "message": "Tidak ada domain aktif yang ditetapkan untuk potongan penyaring"
+    "message": "Tidak ada domain aktif yang ditetapkan untuk potongan filter"
   },
   "filter_unknown_option": {
     "message": "Opsi filter yang tidak diketahui"
@@ -34,6 +37,6 @@
     }
   },
   "unexpected_filter_list_header": {
-    "message": "Daftar saringan header tidak diperbolehkan disini"
+    "message": "Header daftar filter tidak diperbolehkan disini"
   }
 }

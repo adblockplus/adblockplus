@@ -18,6 +18,12 @@
     "message": "حجب تعقب رموز مواقع التواصل الاجتماعي"
   },
   "common_notification_hide": {
-    "message": "أغلق هذا التنبيه"
+    "message": "إغلاق الإشعارات"
+  },
+  "delete": {
+    "message": "حذف"
+  },
+  "filter_action_failed": {
+    "message": "حدث خطأ ما. الرجاء المحاولة مرة أخرى."
   }
 }

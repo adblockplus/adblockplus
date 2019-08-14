@@ -123,7 +123,7 @@
     "message": "английски"
   },
   "options_filterList_add": {
-    "message": "+ Добави нов филтър"
+    "message": "Добави нов филтър"
   },
   "options_filterList_column_name": {
     "message": "Филтър"
@@ -209,7 +209,7 @@
     "message": "Намиране на помощ или свързване с нас"
   },
   "options_language_add": {
-    "message": "+ добави език"
+    "message": "добави език"
   },
   "options_language_change": {
     "message": "промени"

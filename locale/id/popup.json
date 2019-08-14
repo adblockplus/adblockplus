@@ -1,12 +1,33 @@
 {
+  "click_element_to_block_it": {
+    "message": "Klik elemen pada laman untuk memblokirnya."
+  },
   "easy_create_filter": {
     "message": "Blokir elemen"
+  },
+  "options_refresh": {
+    "message": "Refresh"
   },
   "options_short": {
     "message": "Pilihan"
   },
+  "overlay_notification_closing_button_hide": {
+    "message": "Tutup"
+  },
   "overlay_notification_closing_button_optout": {
     "message": "Hentikan menampilkan pemberitahuan"
+  },
+  "promote_abp_module": {
+    "message": "Tertarik dengan Adblock Plus di ponsel?"
+  },
+  "refresh_to_take_effect": {
+    "message": "Klik <strong>Refresh</strong> untuk melihat perubahan."
+  },
+  "sendReport": {
+    "message": "Laporkan masalah"
+  },
+  "stats_header": {
+    "message": "Jumlah item yang diblokir"
   },
   "stats_label_page": {
     "message": "<strong>$number$</strong> pada halaman ini",
@@ -17,11 +38,14 @@
     }
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> totalnya",
+    "message": "Total ada <strong>$number$</strong>",
     "placeholders": {
       "number": {
         "content": "$1"
       }
     }
+  },
+  "status_header": {
+    "message": "Blokir iklan di:"
   }
 }
