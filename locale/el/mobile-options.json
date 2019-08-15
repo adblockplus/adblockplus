@@ -8,11 +8,17 @@
   "mops_action_cancel": {
     "message": "ΑΚΥΡΩΣΗ"
   },
+  "mops_enabled_label": {
+    "message": "Μπλοκάρισμα διαφημίσεων σε:"
+  },
   "mops_filterlist_add": {
     "message": "Προσθήκη λίστας φίλτρων"
   },
   "mops_filterlist_add_action": {
     "message": "ΠΡΟΣΘΗΚΗ ΛΙΣΤΑΣ ΦΙΛΤΡΩΝ"
+  },
+  "mops_filterlist_add_url": {
+    "message": "Προσθήκη μιας λίστας προσαρμοσμένων φίλτρων"
   },
   "mops_header": {
     "message": "Adblock Plus Ρυθμίσεις"

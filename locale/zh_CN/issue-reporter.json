@@ -23,6 +23,9 @@
   "issueReporter_comment_label": {
     "message": "注释（可选）："
   },
+  "issueReporter_config_label": {
+    "message": "包括有关浏览器配置的信息，以及我正在使用的活动扩展列表。"
+  },
   "issueReporter_confirmationMessage": {
     "message": "您的报告已被保存。您可以通过如下地址访问："
   },

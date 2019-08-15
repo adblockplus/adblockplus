@@ -5,6 +5,18 @@
   "cancel": {
     "message": "Ακύρωση"
   },
+  "common_copyright": {
+    "message": "Πνευματικά δικαιώματα © $year$ Με την επιφύλαξη παντός δικαιώματος. Το Adblock Plus® είναι καταχωρημένο εμπορικό σήμα της <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
+  "common_feature_circumvention_title": {
+    "message": "Λίστα φίλτρων έναντι παράκαμψης ABP"
+  },
   "common_feature_privacy_title": {
     "message": "Αποκλεισμός επιπρόσθετης παρακολούθησης"
   },

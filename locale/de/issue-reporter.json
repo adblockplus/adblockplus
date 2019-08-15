@@ -23,6 +23,9 @@
   "issueReporter_comment_label": {
     "message": "Kommentar (optional):"
   },
+  "issueReporter_config_label": {
+    "message": "Informationen zu meiner Browserkonfiguration, sowie eine Liste der von mir verwendeten aktiven Erweiterungen anhängen."
+  },
   "issueReporter_confirmationMessage": {
     "message": "Ihr Bericht wurde gespeichert. Sie können Ihn unter der folgenden Adresse aufrufen:"
   },

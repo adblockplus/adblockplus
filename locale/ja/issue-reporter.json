@@ -20,6 +20,9 @@
   "issueReporter_comment_label": {
     "message": "コメント (省略可):"
   },
+  "issueReporter_config_label": {
+    "message": "ブラウザの設定に関する情報と、使用中のアクティブな拡張機能のリストを含めます。"
+  },
   "issueReporter_confirmationMessage": {
     "message": "あなたの不具合報告は保存されました。次のアドレスでアクセスできます:"
   },

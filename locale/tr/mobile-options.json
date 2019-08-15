@@ -9,13 +9,7 @@
     "message": "Vazgeç"
   },
   "mops_enabled_label": {
-    "message": "<strong>$domain$</strong> sitesinde Adblock Plus kullanılsın",
-    "placeholders": {
-      "domain": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
+    "message": "Aşağıdaki adreste reklamları engelle:"
   },
   "mops_error_url": {
     "message": "Geçerli bir URL girin"

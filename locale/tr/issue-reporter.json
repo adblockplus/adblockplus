@@ -23,6 +23,9 @@
   "issueReporter_comment_label": {
     "message": "Yorum (isteğe bağlı):"
   },
+  "issueReporter_config_label": {
+    "message": "Tarayıcımın yapılandırması hakkında bilgileri ve kullanmakta olduğum aktif uzantıların bir listesini dahil edin."
+  },
   "issueReporter_confirmationMessage": {
     "message": "Bildiriminiz kaydedildi ve ona aşağıdaki adresten ulaşabilirsiniz:"
   },

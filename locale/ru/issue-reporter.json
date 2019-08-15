@@ -23,6 +23,9 @@
   "issueReporter_comment_label": {
     "message": "Комментарий (необязательно):"
   },
+  "issueReporter_config_label": {
+    "message": "Добавить информацию о конфигурации моего браузера, а также список моих активных расширений."
+  },
   "issueReporter_confirmationMessage": {
     "message": "Сообщение отправлено и сохранено. Вы можете просмотреть его по следующей ссылке:"
   },

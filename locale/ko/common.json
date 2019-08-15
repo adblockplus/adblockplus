@@ -5,8 +5,20 @@
   "cancel": {
     "message": "취소"
   },
+  "common_copyright": {
+    "message": "Copyright © $year$ 저작권 소유. Adblock Plus®는 <a0>eyeo GmbH</a0>의 등록 상표입니다.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
   "common_feature_anti_adblock_title": {
     "message": "Adblock 경고 메시지 숨기기"
+  },
+  "common_feature_circumvention_title": {
+    "message": "ABP 우회덤핑방지 필터 목록"
   },
   "common_feature_malware_title": {
     "message": "멀웨어 차단"

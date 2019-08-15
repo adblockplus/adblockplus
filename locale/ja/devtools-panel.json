@@ -4,5 +4,18 @@
   },
   "devtools_header_state_all": {
     "message": "すべて"
+  },
+  "devtools_request_url": {
+    "message": "<a0>$original$</a0>は<a1>$rewritten$</a1>に書き換えられました",
+    "placeholders": {
+      "original": {
+        "content": "$1",
+        "example": "http://example.com/foo"
+      },
+      "rewritten": {
+        "content": "$2",
+        "example": "http://example.com/bar"
+      }
+    }
   }
 }

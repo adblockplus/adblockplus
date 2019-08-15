@@ -1,0 +1,53 @@
+{
+  "day1_blockelement_description": {
+    "message": "Bloquéalos con la práctica función \"Bloquear elemento\" de Adblock Plus."
+  },
+  "day1_blockelement_more": {
+    "message": "Descubre cómo"
+  },
+  "day1_blockelement_screenshot": {
+    "message": "Ejemplo de ventana emergente con el botón de \"Bloquear elemento\" resaltado."
+  },
+  "day1_blockelement_title": {
+    "message": "¿Te desanima la sección de comentarios de las páginas web?"
+  },
+  "day1_community_contact": {
+    "message": "¡Contáctanos!"
+  },
+  "day1_community_contact_subject": {
+    "message": "¡Necesito ayuda!"
+  },
+  "day1_community_description_1": {
+    "message": "Al ser un proyecto de código abierto, dependemos de usuarios como tú para ayudarnos a mejorar tu experiencia con el bloqueo de anuncios."
+  },
+  "day1_community_description_2": {
+    "message": "¿Qué funciones te gustaría que incluyéramos? ¿Qué podemos mejorar? ¿Hay páginas que no funcionan como deberían a causa de Adblock Plus?"
+  },
+  "day1_community_title": {
+    "message": "Únete a la comunidad de Adblock Plus"
+  },
+  "day1_header_more": {
+    "message": "Obtén más información sobre la publicidad maliciosa"
+  },
+  "day1_header_title": {
+    "message": "Adblock Plus <strong>ha bloqueado <em0>$ads$ anuncios</em0> en <em1>la última media hora</em1>,</strong> de los cuales alguno podría ser de contenido malicioso.",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_message": {
+    "message": "Eso es un montón de anuncios molestos. <a>Descubre qué más se puede bloquear con Adblock Plus.</a>"
+  },
+  "notification_day1_title": {
+    "message": "¡Ya has bloqueado $ads$ anuncios!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

@@ -1,4 +1,13 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "لتساعدنا في تحسين Adblock Plus، هل تمانع في الإفصاح عن سبب إيقافك لتشغيل الإعلان المقبول الإعلان المقبول؟"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "لا، شكرًا"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "الانتقال إلى الاستبيان"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "الإعلان المقبول لا تسبب أي مضايقات ولا تعيق المحتوى الذي تشاهده. <a>اقرأ المزيد عن معايير الإعلان المقبول</a>"
   },
@@ -29,6 +38,9 @@
   "options_anti_cv_tooltip": {
     "message": "تعمل قائمة الفلاتر هذه ضد التحايل (مثلا أي تقنيات لفرض إعلانات على المستخدمين الذين يمنعون الإعلانات). تتناول هذه الفلاتر التحايل على الإعلانات بالإضافة إلى التتبع ذي الصلة."
   },
+  "options_builtin_filterList_add": {
+    "message": "إضافة قوائم عوامل تصفية مدمجة"
+  },
   "options_close": {
     "message": "غلق"
   },
@@ -39,7 +51,7 @@
     "message": "إلغاء"
   },
   "options_customFilters_description": {
-    "message": "اكتب عوامل التصفية المخصصة لديك لزيادة التحكم في المحتوى الذي يسمح Adblock Plus أو يحجبه."
+    "message": "اكتب عوامل التصفية المخصصة لديك لزيادة التحكم في المحتوى الذي يسمح Adblock Plus أو يحجبه (باللغة الإنجليزية)."
   },
   "options_customFilters_title": {
     "message": "إنشاء وتحرير قوائم عوامل التصفية"
@@ -123,7 +135,7 @@
     "message": "الإنجليزية"
   },
   "options_filterList_add": {
-    "message": "أضف قائمة عوامل تصفية جديدة"
+    "message": "إضافة قائمة عامل تصفية من خلال URL"
   },
   "options_filterList_column_name": {
     "message": "قوائم عوامل التصفية"
@@ -202,6 +214,12 @@
   "options_general_description": {
     "message": "حدد المحتويات التي يظهرها Adblock Plus ويخفيها على مواقع الويب."
   },
+  "options_generic_error": {
+    "message": "يا لها من ورطة! حدث خطأ ما. الرجاء المحاولة مجددًا."
+  },
+  "options_help_center": {
+    "message": "هل تبحث عن إجابات عن أسئلتك؟ <a0>تفضل بزيارة مركز التعليمات الخاص بنا (باللغة الإنجليزية)</a0>"
+  },
   "options_help_description": {
     "message": "ابحث عن التعليمات أو تواصل معنا"
   },
@@ -217,8 +235,24 @@
   "options_language_empty": {
     "message": "ليس لديك أي عوامل تصفية محددة حسب اللغة."
   },
+  "options_language_filter_list": {
+    "message": "قوائم عوامل تصفية اللغة"
+  },
   "options_language_header": {
     "message": "اللغة"
+  },
+  "options_language_join": {
+    "message": "$lang1$، $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>نصيحة:</strong> لا تحدد سوى اللغات التي تحتاجها. سيؤدي تحديد المزيد من اللغات إلى إبطاء مانع الإعلانات ومن ثم إبطاء سرعة تصفحك."
@@ -252,6 +286,12 @@
   },
   "options_protection_social_tooltip": {
     "message": "تتيح رموز مواقع التواصل الاجتماعي التي تظهر في مواقع الويب لك زيارة شبكات مواقع التواصل الاجتماعي لإنشاء بروفايل شخصي لك استنادًا إلى عاداتك في التصفح - حتى عندما لا تنقر فوق تلك الأزرار أو الرموز. يمكن حماية بروفايلك الشخصي من خلال إخفاء تلك الرموز."
+  },
+  "options_rating_description": {
+    "message": "الرجاء قضاء بعض الوقت والمساعدة في التعبير عن رأيك عن طريق تقييم Adblock Plus. شكرًا لك على دعمك!"
+  },
+  "options_rating_title": {
+    "message": "هل تستمع بـ Adblock Plus؟"
   },
   "options_report_bug": {
     "message": "هل وجدت خطأ برمجيًا؟ <a>أرسل لنا تقريرًا بالخطأ البرمجي</a>"
@@ -321,13 +361,7 @@
     "message": "ستظهر هنا مواقع الويب التي تثق فيها وتريد السماح بظهور الإعلانات فيها."
   },
   "options_whitelist_notification": {
-    "message": "$website$ تم إدراجه في القائمة البيضاء.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
+    "message": "الموقع الإلكتروني تم إدراجه في القائمة البيضاء."
   },
   "options_whitelist_placeholder_example": {
     "message": "مثال $domain$",

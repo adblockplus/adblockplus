@@ -23,6 +23,9 @@
   "issueReporter_comment_label": {
     "message": "Opmerking (optioneel):"
   },
+  "issueReporter_config_label": {
+    "message": "Voeg informatie over mijn browserconfiguratie toe, evenals een lijst van actieve extensies die ik gebruik."
+  },
   "issueReporter_confirmationMessage": {
     "message": "Uw rapport is opgeslagen. U kunt het vinden op het volgende adres:"
   },

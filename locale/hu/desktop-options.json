@@ -1,4 +1,13 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "Annak érdekében, hogy az Adblock Plus javításában segítsen, megosztaná velünk, miért kapcsolta ki az elfogadható hirdetéseket?"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "Köszönöm, nem"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "Ugrás a felmérésre"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "Az elfogadható hirdetések nem bosszantanak, és nem zavarják a tartalom megtekintését. <a>További információ az elfogadható hirdetési feltételekről</a>"
   },
@@ -28,6 +37,9 @@
   },
   "options_anti_cv_tooltip": {
     "message": "Ez a szűrőlista a megkerülést akadályozza (pl. olyan technikák, amelyek rákényszerítik a reklámokat a felhasználókra, akkor is ha reklámblokkolót használnak). Ezek a szűrők blokkolják ezeket a reklámokat, valamint a hozzájuk kapcsolódó követést is."
+  },
+  "options_builtin_filterList_add": {
+    "message": "Hirdetések beépített szűrőlistái"
   },
   "options_close": {
     "message": "bezárás"
@@ -123,7 +135,7 @@
     "message": "angol"
   },
   "options_filterList_add": {
-    "message": "Új szűrőlista hozzáadása"
+    "message": "Adjon hozzá szűrőlistát URL-címen keresztül"
   },
   "options_filterList_column_name": {
     "message": "Szűrő lista"
@@ -205,6 +217,9 @@
   "options_general_description": {
     "message": "Az Adblock Plus által elrejtett és megjelenített elemek meghatározása"
   },
+  "options_help_center": {
+    "message": "Válaszokat keres a kérdéseire? <a0>Látogassa meg a Súgóközpontunkat (csak angol nyelven)</a0>"
+  },
   "options_help_description": {
     "message": "Súgó vagy kapcsolatfelvétel"
   },
@@ -220,8 +235,24 @@
   "options_language_empty": {
     "message": "Nincsenek nyelvspecifikus szűrői."
   },
+  "options_language_filter_list": {
+    "message": "Nyelvi szűrőlisták"
+  },
   "options_language_header": {
     "message": "Nyelv"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>Tipp:</strong> Csak a szükséges nyelveket válassza ki. Több nyelv kiválasztása lassítja a reklámblokkolót, és ezáltal a böngészési sebességet."
@@ -255,6 +286,12 @@
   },
   "options_protection_social_tooltip": {
     "message": "A meglátogatott weboldalakon lévő közösségimédia-ikonok lehetővé teszik a közösségi hálózatoknak egy profil felépítését a böngészési szokásai alapján – még akkor is, ha nem kattint rájuk. Az elrejtésük megvédheti a profilját."
+  },
+  "options_rating_description": {
+    "message": "Szánjon rá egy pillanatot és segítsen az Adblock Plus értékelésével a jó hírünk terjeszítésében. Köszönjük támogatását!"
+  },
+  "options_rating_title": {
+    "message": "Kedveli az Adblock Plust?"
   },
   "options_report_bug": {
     "message": "Hibát talált? <a>Küldjön hibajelentést nekünk</a>"
@@ -324,13 +361,7 @@
     "message": "Azok a weboldalak jelennek meg itt, amikben megbízik, így engedélyezi rajtuk a hirdetéseket."
   },
   "options_whitelist_notification": {
-    "message": "„$website$” felkerült a fehérlistára.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
+    "message": "A weboldal felkerült a fehérlistára."
   },
   "options_whitelist_placeholder_example": {
     "message": "Pl. $domain$",

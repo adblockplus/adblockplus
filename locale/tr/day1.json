@@ -1,0 +1,53 @@
+{
+  "day1_blockelement_description": {
+    "message": "Adblock Plus'ın havalı öğe engelleme özelliği ile engelleyin."
+  },
+  "day1_blockelement_more": {
+    "message": "Nasıl yapılacağını öğrenin"
+  },
+  "day1_blockelement_screenshot": {
+    "message": "\"Öğeyi engelle\" düğmesinin vurgulandığı üstten açılır simge örneği."
+  },
+  "day1_blockelement_title": {
+    "message": "Can sıkıcı yorum bölümlerini görmekten yoruldunuz mu?"
+  },
+  "day1_community_contact": {
+    "message": "Bizimle iletişime geçin!"
+  },
+  "day1_community_contact_subject": {
+    "message": "Desteğe ihtiyacı olanlar!"
+  },
+  "day1_community_description_1": {
+    "message": "Bir açık kaynak projesi olarak, reklam engelleme deneyiminizi iyileştirmemiz konusunda bize yardımcı olması için sizin gibi kullanıcılara güveniyoruz."
+  },
+  "day1_community_description_2": {
+    "message": "Hangi özellikleri görmek istiyorsunuz? Neleri iyileştirebiliriz? Adblock Plus bazı web sitelerinin uygunsuz davranmasına mı neden oluyor?"
+  },
+  "day1_community_title": {
+    "message": "Adblock Plus topluluğuna katılın"
+  },
+  "day1_header_more": {
+    "message": "Kötü niyetli reklamlar hakkında daha fazla bilgi alın"
+  },
+  "day1_header_title": {
+    "message": "Adblock Plus, son yarım saat içinde kötü niyetli içerik içerebilecek olan <strong><em0>$ads$ reklamı</em0> <em1>engelledi</em1></strong>",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_message": {
+    "message": "Çok fazla can sıkı reklam. <a>Adblock Plus'ın başka neleri engelleyebileceğini keşfedin.</a>"
+  },
+  "notification_day1_title": {
+    "message": "$ads$ reklamlarını zaten engellediniz!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

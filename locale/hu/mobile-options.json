@@ -9,13 +9,7 @@
     "message": "Mégse"
   },
   "mops_enabled_label": {
-    "message": "Adblock Plus engedélyezése itt: <strong>$domain$</strong>",
-    "placeholders": {
-      "domain": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
+    "message": "Blokkolt hirdetések:"
   },
   "mops_error_url": {
     "message": "Adj meg egy érvényes URL-t"

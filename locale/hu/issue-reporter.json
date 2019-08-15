@@ -23,6 +23,9 @@
   "issueReporter_comment_label": {
     "message": "Megjegyzés (nem kötelező):"
   },
+  "issueReporter_config_label": {
+    "message": "Tartalmazzon információkat a böngészőm konfigurációjáról, valamint az általam használt aktív kiterjesztések listájáról."
+  },
   "issueReporter_confirmationMessage": {
     "message": "Az Ön jelentése el lett mentve. Az alábbi címen érheti el a későbbiekben:"
   },

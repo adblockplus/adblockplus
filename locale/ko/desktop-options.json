@@ -1,4 +1,13 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "Adblock Plus를 개선할 수 있도록 허용되는 광고를 끈 이유를 공유해 주시겠습니까?"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "안 함"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "설문조사로 가기"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "허용되는 광고는 짜증을 유발하거나 사용자의 콘텐츠 감상을 방해하지 않습니다. <a>허용되는 광고 기준에 대한 더 자세한 내용 보기</a>"
   },
@@ -13,6 +22,9 @@
   },
   "options_advanced_description": {
     "message": "Adblock Plus 사용자 설정, 필터 목록 추가 또는 제거, 사용자 자체 필터 목록 유지"
+  },
+  "options_builtin_filterList_add": {
+    "message": "기본 제공 필터 목록 추가"
   },
   "options_close": {
     "message": "닫기"
@@ -99,7 +111,7 @@
     "message": "영어"
   },
   "options_filterList_add": {
-    "message": "새 필터 목록 추가"
+    "message": "URL을 통한 필터 목록 추가"
   },
   "options_filterList_column_name": {
     "message": "필터 목록"
@@ -170,6 +182,12 @@
   "options_general_description": {
     "message": "Adblock Plus가 웹사이트에서 표시하고 숨길 내용을 선택하세요"
   },
+  "options_generic_error": {
+    "message": "이런! 문제가 발생했습니다. 다시 시도하십시오."
+  },
+  "options_help_center": {
+    "message": "질문에 대한 답변을 찾고 계십니까? <a0>도움말 센터 방문(영어로만 제공)</a0>"
+  },
   "options_help_description": {
     "message": "도움말을 참조하시거나 저희에게 연락주십시오"
   },
@@ -185,8 +203,24 @@
   "options_language_empty": {
     "message": "특정 언어 필터가 없습니다."
   },
+  "options_language_filter_list": {
+    "message": "언어 필터 목록"
+  },
   "options_language_header": {
     "message": "언어"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>팁:</strong> 필요한 언어만 선택하십시오. 더 많은 언어를 선택하면 광고 차단 프로그램의 속도 저하로 인해 브라우징의 속도가 느려질 수 있습니다."
@@ -220,6 +254,12 @@
   },
   "options_protection_social_tooltip": {
     "message": "방문한 웹사이트의 소셜 미디어 아이콘을 통해 소셜 미디어 네트워크는 사용자의 브라우징 습관을 바탕으로 사용자의 프로필을 구축합니다. 사용자가 클릭하지 않아도 이 작업은 진행됩니다. 이러한 아이콘을 숨김으로써 사용자의 프로필을 보호할 수 있습니다."
+  },
+  "options_rating_description": {
+    "message": "잠시 시간을 내어 Adblock Plus를 평가해서 입소문을 내주세요. 지원해 주셔서 감사합니다!"
+  },
+  "options_rating_title": {
+    "message": "Adblock Plus가 마음에 드셨나요?"
   },
   "options_report_bug": {
     "message": "버그를 찾으셨습니까? <a>버그 리포트 보내기</a>"
@@ -264,13 +304,7 @@
     "message": "신뢰할 수 있고 광고를 허용하고자 하는 웹사이트가 이곳에 표시됩니다."
   },
   "options_whitelist_notification": {
-    "message": "$website$ 이(가) 허용되었습니다.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
+    "message": "웹사이트가 화이트리스트에 추가되었습니다."
   },
   "options_whitelist_placeholder_example": {
     "message": "예: $domain$",

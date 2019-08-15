@@ -1,4 +1,13 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "Zou u, om ons te helpen Adblock Plus te verbeteren, willen vertellen waarom u Acceptabele advertenties heeft uitgeschakeld?"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "Nee, bedankt"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "Ga naar de enquête"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "Acceptabele advertenties zijn niet vervelend en geven geen verstoring met de inhoud die u bekijkt. <a>Lees meer over de criteria voor Acceptabele advertenties</a>"
   },
@@ -29,6 +38,9 @@
   "options_anti_cv_tooltip": {
     "message": "Deze filterlijst werkt tegen omzeiling (d.w.z. technieken om advertenties op te dringen aan gebruikers die advertenties blokkeren). Deze filters gaan zowel het omzeilen van advertentieblokkering als gerelateerde tracking tegen."
   },
+  "options_builtin_filterList_add": {
+    "message": "Ingebouwde filterlijsten toevoegen"
+  },
   "options_close": {
     "message": "sluiten"
   },
@@ -39,7 +51,7 @@
     "message": "Annuleren"
   },
   "options_customFilters_description": {
-    "message": "Maak en onderhoud uw eigen filters om verder te bepalen welke inhoud Adblock Plus toestaat of blokkeert. <a0>Info over het schrijven van filters</a0>"
+    "message": "Maak en onderhoud uw eigen filters om verder te bepalen welke inhoud Adblock Plus toestaat of blokkeert. <a0>Info over het schrijven van filters (alleen in het Engels)</a0>"
   },
   "options_customFilters_title": {
     "message": "Uw aangepaste filters"
@@ -123,7 +135,7 @@
     "message": "Engels"
   },
   "options_filterList_add": {
-    "message": "Nieuwe filterlijst toevoegen"
+    "message": "Voeg filterlijst via URL toe"
   },
   "options_filterList_column_name": {
     "message": "Filterlijsten"
@@ -205,6 +217,9 @@
   "options_general_description": {
     "message": "Bepalen wat Adblock Plus op websites toont en verbergt"
   },
+  "options_help_center": {
+    "message": "Zoekt u antwoord op uw vragen? <a0>Ga naar onze Helpcentrale (alleen in het Engels)</a0>"
+  },
   "options_help_description": {
     "message": "Hulp zoeken of contact met ons opnemen"
   },
@@ -220,8 +235,24 @@
   "options_language_empty": {
     "message": "U hebt geen taalspecifieke filters."
   },
+  "options_language_filter_list": {
+    "message": "Taalfilterlijsten"
+  },
   "options_language_header": {
     "message": "Taal"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>TIP:</strong> selecteer alleen de talen die u nodig hebt. Het selecteren van meer talen vertraagt de adblocker en daarmee uw surfsnelheid."
@@ -255,6 +286,12 @@
   },
   "options_protection_social_tooltip": {
     "message": "Via de sociale-mediapictogrammen op de websites die u bezoekt, kunnen sociale-medianetwerken een profiel van u opbouwen op basis van uw surfgedrag - zelfs wanneer u hier niet op klikt. Het verbergen van deze knoppen kan uw profiel beschermen."
+  },
+  "options_rating_description": {
+    "message": "Neem een moment en help de boodschap te verspreiden door Adblock Plus te beoordelen. Bedankt voor uw steun!"
+  },
+  "options_rating_title": {
+    "message": "Geniet u van Adblock Plus?"
   },
   "options_report_bug": {
     "message": "Een bug gevonden? <a>Stuur ons een bugrapport</a>"
@@ -324,13 +361,7 @@
     "message": "Hier worden websites getoond die u vertrouwt en waarop u advertenties wilt toestaan."
   },
   "options_whitelist_notification": {
-    "message": "‘$website$’ is op de witte lijst geplaatst.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
+    "message": "Website is op de witte lijst geplaatst."
   },
   "options_whitelist_placeholder_example": {
     "message": "bv. $domain$",

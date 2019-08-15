@@ -9,13 +9,7 @@
     "message": "취소"
   },
   "mops_enabled_label": {
-    "message": "<strong>$domain$</strong>에 Adblock Plus를 사용",
-    "placeholders": {
-      "domain": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
+    "message": "광고 차단 대상:"
   },
   "mops_filterlist_add": {
     "message": "필터 목록 추가"

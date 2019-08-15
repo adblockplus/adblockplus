@@ -20,6 +20,9 @@
   "issueReporter_comment_label": {
     "message": "보고 내용 (필수 항목) :"
   },
+  "issueReporter_config_label": {
+    "message": "내 브라우저 구성을 비롯하여 사용 중인 활성 확장 기능 목록에 관한 정보를 포함합니다."
+  },
   "issueReporter_confirmationMessage": {
     "message": "보고서가 서버에 저장되었고, 다음 주소로 보고서를 확인할 수 있습니다. 필터 유지자가 보고를 접수하면 보고서의 Status 항목에는 unknown 대신에 처리 결과가 표시됩니다."
   },

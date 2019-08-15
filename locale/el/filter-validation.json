@@ -20,10 +20,15 @@
     }
   },
   "line": {
-    "message": "Γραμμή $number$",
+    "message": "Γραμμή $number$: $message$",
     "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
       "number": {
-        "content": "$1"
+        "content": "$1",
+        "example": "42"
       }
     }
   },

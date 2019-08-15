@@ -1,4 +1,13 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "Adblock Plus'ı iyileştirmemize yardımcı olmak için, Kabul edilebilir reklamları kapatma nedeninizi bizimle paylaşmayı düşünmez misiniz?"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "Hayır, teşekkürler"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "Ankete katılın"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "Kabul edilebilir reklamlar, can sıkıcı olmayan ve görüntülemekte olduğunuz içeriğe müdahale etmeyen reklamlardır. <a>Kabul edilebilir reklamlar ölçütleri hakkında daha fazla bilgi alın</a>"
   },
@@ -29,6 +38,9 @@
   "options_anti_cv_tooltip": {
     "message": "Bu süzgeç listesi atlatmaya karşı iş görür. (Ör. reklamları engelleyen kullanıcılara zorla reklam göstermek.) Bu süzgeçler reklam engellemeyi atlatmayı ve bağlantılı takip girişimlerinin önüne geçer."
   },
+  "options_builtin_filterList_add": {
+    "message": "Yerleşik süzgeç listeleri ekleyin"
+  },
   "options_close": {
     "message": "kapat"
   },
@@ -39,7 +51,7 @@
     "message": "Vazgeç"
   },
   "options_customFilters_description": {
-    "message": "Adblock Plus'ın izin vereceği veya engelleyeceği içeriklere ilişkin daha fazla kontrol için kendi süzgeçlerinizi oluşturun ve saklayın. <a0>Nasıl süzgeç yazılacağını öğrenin</a0>"
+    "message": "Adblock Plus'ın izin vereceği veya engelleyeceği içeriklere ilişkin daha fazla kontrol için kendi süzgeçlerinizi oluşturun ve saklayın. <a0>Nasıl süzgeç yazılacağını öğrenin (sadece İngilizce)</a0>"
   },
   "options_customFilters_title": {
     "message": "Özel süzgeçleriniz"
@@ -123,7 +135,7 @@
     "message": "İngilizce"
   },
   "options_filterList_add": {
-    "message": "Yeni süzgeç listesi ekle"
+    "message": "URL araciliğiyla filtre listesi ekleyin"
   },
   "options_filterList_column_name": {
     "message": "Süzgeç listeleri"
@@ -205,6 +217,9 @@
   "options_general_description": {
     "message": "Adblock Plus'ın sayfalarda ne gösterip ne gizleyeceğini belirleyin"
   },
+  "options_help_center": {
+    "message": "Sorularınız için yanıt mı arıyorsunuz? <a0>Yardım Merkezimizi ziyaret edin (Sadece İngilizce)</a0>"
+  },
   "options_help_description": {
     "message": "Yardıma veya bize ulaşın"
   },
@@ -220,8 +235,24 @@
   "options_language_empty": {
     "message": "Henüz herhangi bir dile özel süzgeç listeniz yok."
   },
+  "options_language_filter_list": {
+    "message": "Dil Süzgeci Listeleri"
+  },
   "options_language_header": {
     "message": "Dil"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>İPUCU:</strong> Sadece ihtiyaç duyduğunuz dilleri seçin. Daha fazla dil seçmek reklam engelleyiciyi, dolayısıyla tarama hızınızı azaltacak."
@@ -255,6 +286,12 @@
   },
   "options_protection_social_tooltip": {
     "message": "Ziyaret ettiğiniz sayfalarda yer alan sosyal medya düğmeleri (veya simgeleri) tarama alışkanlıklarınızı temel alarak sizin bir \"resminizi\" oluşturur. Kimliğinizi korumak için bu düğmeleri gizleyin."
+  },
+  "options_rating_description": {
+    "message": "Lütfen birkaç dakikanızı ayırın ve Adblock Plus'ı değerlendirerek herkesin Adblock Plus'ı tanımasına yardımcı olun. Desteğiniz için teşekkür ederiz!"
+  },
+  "options_rating_title": {
+    "message": "Adblock Plus'ı beğendiniz mi?"
   },
   "options_report_bug": {
     "message": "Hataya mı rastladınız? <a>Sorunu bize bildirin.</a>"
@@ -324,13 +361,7 @@
     "message": "Güvendiğiniz ve reklam gösterme izni verdiğiniz siteler burada gösterilecek."
   },
   "options_whitelist_notification": {
-    "message": "$website$ beyaz listeye eklendi.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
+    "message": "Web sitesi beyaz listeye eklendi."
   },
   "options_whitelist_placeholder_example": {
     "message": "örn. $domain$",

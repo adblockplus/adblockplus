@@ -1,0 +1,53 @@
+{
+  "day1_blockelement_description": {
+    "message": "Blokuj je, korzystając z doskonałej funkcji blokowania elementów Adblock Plus."
+  },
+  "day1_blockelement_more": {
+    "message": "Dowiedz się, jak"
+  },
+  "day1_blockelement_screenshot": {
+    "message": "Przykład wyskakującej ikony z wyróżnionym przyciskiem „Zablokuj element”."
+  },
+  "day1_blockelement_title": {
+    "message": "Masz dość sekcji komentarzy?"
+  },
+  "day1_community_contact": {
+    "message": "Skontaktuj się z nami!"
+  },
+  "day1_community_contact_subject": {
+    "message": "Szukamy wsparcia!"
+  },
+  "day1_community_description_1": {
+    "message": "Jako projekt open source, w celu poprawy funkcji blokowania reklam polegamy na doświadczeniu użytkowników, takich jak Ty."
+  },
+  "day1_community_description_2": {
+    "message": "Jakich funkcji Ci brakuje? Co możemy poprawić? Czy Adblock Plus powoduje nieprawidłowe działanie niektórych witryn?"
+  },
+  "day1_community_title": {
+    "message": "Dołącz do społeczności Adblock Plus"
+  },
+  "day1_header_more": {
+    "message": "Dowiedz się więcej o złośliwych reklamach"
+  },
+  "day1_header_title": {
+    "message": "Adblock Plus <strong>zablokował <em0>$ads$ reklam</em0> w <em1>ciągu ostatnich 30 minut</em1>,</strong> a niektóre z nich mogły zawierać złośliwą zawartość",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_message": {
+    "message": "To mnóstwo natarczywych reklam. <a>Dowiedz się, co jeszcze może blokować Adblock Plus.</a>"
+  },
+  "notification_day1_title": {
+    "message": "Zablokowaliśmy już $ads$ reklam!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "devtools_request_url": {
+    "message": "<a0>$original$</a0>이(가) <a1>$rewritten$</a1>에 다시 작성되었습니다.",
+    "placeholders": {
+      "original": {
+        "content": "$1",
+        "example": "http://example.com/foo"
+      },
+      "rewritten": {
+        "content": "$2",
+        "example": "http://example.com/bar"
+      }
+    }
+  }
+}

@@ -1,4 +1,13 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "Adblock Plus をよりよくするため、あなたが控えめな広告を消した理由をお知らせください。"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "いいえ、結構です"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "アンケートに移動"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "控えめな広告は、迷惑ではなく、表示するコンテンツの邪魔になりません。<a>控えめな広告の基準について詳細を読む</a>"
   },
@@ -28,6 +37,9 @@
   },
   "options_anti_cv_tooltip": {
     "message": "このフィルタリストは、ブロック回避（広告ブロック使用者に広告を強制表示する技術）に対して機能します。これらのフィルタはブロックを回避する広告や関連するトラッキングに対処します。"
+  },
+  "options_builtin_filterList_add": {
+    "message": "組み込みフィルターリストを追加"
   },
   "options_close": {
     "message": "閉じる"
@@ -123,7 +135,7 @@
     "message": "英語"
   },
   "options_filterList_add": {
-    "message": "新規フィルターリストを追加"
+    "message": "URL からフィルターリストを追加"
   },
   "options_filterList_column_name": {
     "message": "フィルターリスト"
@@ -194,6 +206,12 @@
   "options_general_description": {
     "message": "Adblock Plus がウェブサイトで表示・非表示にするものを特定します"
   },
+  "options_generic_error": {
+    "message": "申し訳ありません。エラーが発生しました。再試行してください。"
+  },
+  "options_help_center": {
+    "message": "ご質問への回答をお探しですか？<a0>ヘルプセンター（英語のみ）をご覧ください</a0>"
+  },
   "options_help_description": {
     "message": "ヘルプを見るか、当社までお問い合わせください"
   },
@@ -209,8 +227,24 @@
   "options_language_empty": {
     "message": "言語特定のフィルターが設定されていません。"
   },
+  "options_language_filter_list": {
+    "message": "言語フィルターリスト"
+  },
   "options_language_header": {
     "message": "言語"
+  },
+  "options_language_join": {
+    "message": "$lang1$、$lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>コツ:</strong>必要な言語だけを選択してください。言語を多く選択するほど広告ブロッカーが遅くなるので、閲覧にかかるスピードも遅くなります。"
@@ -244,6 +278,12 @@
   },
   "options_protection_social_tooltip": {
     "message": "閲覧したウェブサイトにあるソーシャルメディア アイコンでは、このをクリックしない場合でも、ユーザーの習慣的な閲覧履歴に基づいてプロファイルを構築します。このようなアイコン を非表示して、自分のプロファイルを守ることができます。"
+  },
+  "options_rating_description": {
+    "message": "Adblock Plus を評価して、クチコミ拡散にご協力ください。サポートありがとうございます。"
+  },
+  "options_rating_title": {
+    "message": "Adblock Plus の満足度は？"
   },
   "options_report_bug": {
     "message": "バグがあった場合<a>バグ報告を送信</a>してください"
@@ -313,13 +353,7 @@
     "message": "信頼出来て広告を許可できるウェブサイトはここに表示されます。"
   },
   "options_whitelist_notification": {
-    "message": "$website$ がホワイトリストに登録されました。",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
+    "message": "ウェブサイトはホワイトリストに登録されています。"
   },
   "options_whitelist_placeholder_example": {
     "message": "例: $domain$",

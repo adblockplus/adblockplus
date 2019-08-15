@@ -9,13 +9,7 @@
     "message": "ОТМЕНА"
   },
   "mops_enabled_label": {
-    "message": "Включить Adblock Plus на <strong>$domain$</strong>",
-    "placeholders": {
-      "domain": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
+    "message": "Блокировать рекламу на:"
   },
   "mops_error_url": {
     "message": "Введите действительную URL"

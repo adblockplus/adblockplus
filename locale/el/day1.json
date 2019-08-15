@@ -1,0 +1,53 @@
+{
+  "day1_blockelement_description": {
+    "message": "Μπλοκάρετέ τις με την αποτελεσματική λειτουργία αποκλεισμού στοιχείου του Adblock Plus."
+  },
+  "day1_blockelement_more": {
+    "message": "Μάθετε πώς"
+  },
+  "day1_blockelement_screenshot": {
+    "message": "Παράδειγμα ανάδυσης εικονιδίου με επισημασμένο το κουμπί \"Φραγή στοιχείου\"."
+  },
+  "day1_blockelement_title": {
+    "message": "Έχετε κουραστεί από προσβλητικά σχόλια;"
+  },
+  "day1_community_contact": {
+    "message": "Επικοινωνήστε μαζί μας!"
+  },
+  "day1_community_contact_subject": {
+    "message": "Αναζητούμε υποστήριξη!"
+  },
+  "day1_community_description_1": {
+    "message": "Ως ένα έργο ανοιχτού κώδικα, εξαρτόμαστε από χρήστες όπως εσείς για να μας βοηθήσουν να βελτιώσουμε την εμπειρία φραγμού διαφημίσεων."
+  },
+  "day1_community_description_2": {
+    "message": "Τι λειτουργίες θα θέλατε να δείτε; Τι μπορούμε να κάνουμε καλύτερα; Προκαλεί το Adblock Plus προβλήματα στη λειτουργία ορισμένων ιστότοπων;"
+  },
+  "day1_community_title": {
+    "message": "Γίνετε μέλος της κοινότητας του Adblock Plus"
+  },
+  "day1_header_more": {
+    "message": "Μάθετε περισσότερα σχετικά με τις κακόβουλες διαφημίσεις"
+  },
+  "day1_header_title": {
+    "message": "Το Adblock Plus <strong>μπλόκαρε <em0>$ads$ διαφημίσεις</em0> την <em1>τελευταία μισή ώρα</em1>,</strong> κάποιες από τις οποίες περιείχαν κακόβουλο περιεχόμενο",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_message": {
+    "message": "Πρόκειται για πολλές ενοχλητικές διαφημίσεις. <a>Μάθετε τι άλλο μπορεί να μπλοκάρει το Adblock Plus.</a>"
+  },
+  "notification_day1_title": {
+    "message": "Έχετε μπλοκάρει ήδη $ads$ διαφημίσεις!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

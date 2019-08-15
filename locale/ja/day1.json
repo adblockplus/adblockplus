@@ -1,0 +1,53 @@
+{
+  "day1_blockelement_description": {
+    "message": "Adblock Plus の効果的なブロック要素機能で広告をブロック。"
+  },
+  "day1_blockelement_more": {
+    "message": "方法を見る"
+  },
+  "day1_blockelement_screenshot": {
+    "message": "強調表示された「要素をブロック」ボタンを用いたアイコンポップアップの例。"
+  },
+  "day1_blockelement_title": {
+    "message": "コメント欄にがっかりさせられるのにうんざりしていませんか？"
+  },
+  "day1_community_contact": {
+    "message": "弊社までご連絡を！"
+  },
+  "day1_community_contact_subject": {
+    "message": "サポート求む！"
+  },
+  "day1_community_description_1": {
+    "message": "オープンソースプロジェクトとして、弊社ではお客様のようなユーザーの皆さまに、広告ブロック体験改善へのご協力をお願いしています。"
+  },
+  "day1_community_description_2": {
+    "message": "どのような機能をご希望ですか？弊社がより良くできることは何でしょう？Adblock Plus で一部のウェブサイトの作動がおかしなくなってはいませんか？"
+  },
+  "day1_community_title": {
+    "message": "Adblock Plus コミュニティーにご参加ください"
+  },
+  "day1_header_more": {
+    "message": "悪質な広告について詳しく知る"
+  },
+  "day1_header_title": {
+    "message": "Adblock Plus は<strong><em1>この 30 分間</em1>で <em0>$ads$ 件の広告</em0>をブロックしました。</strong>その中の一部は悪質なコンテンツが含まれていた可能性があります。",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_message": {
+    "message": "それは大量の不愉快な広告です。<a>その他の Adblock Plus がブロックできるものについてご覧ください。</a>"
+  },
+  "notification_day1_title": {
+    "message": "お客様は既に $ads$ 件の広告をブロックされました！",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

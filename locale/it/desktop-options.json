@@ -1,4 +1,13 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "Al fine di aiutarci a migliorare Adblock Plus, potresti dirci perché hai disattivato gli annunci accettabili?"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "No, grazie"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "Vai al sondaggio"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "Gli Annunci Accettabili non sono fastidiosi e non interferiscono con il contenuto che stai visualizzando. <a>Leggi maggiori informazioni sui criteri per gli Annunci Accettabili</a>"
   },
@@ -29,6 +38,9 @@
   "options_anti_cv_tooltip": {
     "message": "Questi filtri consentono di prevenire la circonvenzione, ovvero le tecniche atte a forzare la distribuzione di annunci agli utenti che hanno installato un software per il blocco degli annunci. Questi filtri consentono di gestire la circonvenzione degli annunci e il relativo monitoraggio."
   },
+  "options_builtin_filterList_add": {
+    "message": "Aggiungere elenchi di filtri integrati"
+  },
   "options_close": {
     "message": "CHIUDERE"
   },
@@ -39,7 +51,7 @@
     "message": "ANNULLARE"
   },
   "options_customFilters_description": {
-    "message": "Crea e gestisci i tuoi filtri per controllare ulteriormente i contenuti consentiti o bloccati da Adblock Plus. <a0>Scopri come scrivere i filtri</a0>"
+    "message": "Crea e gestisci i tuoi filtri per controllare ulteriormente i contenuti consentiti o bloccati da Adblock Plus. <a0>Scopri come scrivere i filtri (solo in inglese)</a0>"
   },
   "options_customFilters_title": {
     "message": "I tuoi filtri personalizzati"
@@ -123,7 +135,7 @@
     "message": "Inglese"
   },
   "options_filterList_add": {
-    "message": "Aggiungere nuovo elenco di filtri"
+    "message": "Aggiungi un elenco di filtri tramite URL"
   },
   "options_filterList_column_name": {
     "message": "Elenchi di filtri"
@@ -205,6 +217,9 @@
   "options_general_description": {
     "message": "Definisci cosa viene mostrato e nascosto sui siti da Adblock Plus"
   },
+  "options_help_center": {
+    "message": "Cerchi delle risposte alle tue domande? <a0>Visita il nostro Centro di assistenza (solo in inglese)</a0>"
+  },
   "options_help_description": {
     "message": "Trova aiuto o mettiti in contatto con noi"
   },
@@ -220,8 +235,24 @@
   "options_language_empty": {
     "message": "Non hai nessun filtro specifico per le lingue."
   },
+  "options_language_filter_list": {
+    "message": "Elenchi di filtri per lingua"
+  },
   "options_language_header": {
     "message": "Lingua"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>SUGGERIMENTO:</strong> Seleziona solo le lingue di cui hai bisogno. La selezione di un numero maggiore di lingue rallenta l'applicazione e, di conseguenza, la tua velocità di navigazione."
@@ -255,6 +286,12 @@
   },
   "options_protection_social_tooltip": {
     "message": "Le icone per i social media sui siti che visiti consentono alle reti di social media di creare un profilo su di te basato sulle tue abitudini di navigazione, anche quando non clicchi su di essi. Nascondere queste icone può proteggere il tuo profilo."
+  },
+  "options_rating_description": {
+    "message": "Ti invitiamo a dedicare qualche minuto per aiutarci a diffondere le informazioni dando una valutazione ad Adblock Plus. Grazie per il tuo sostegno."
+  },
+  "options_rating_title": {
+    "message": "Ti piace Adblock Plus?"
   },
   "options_report_bug": {
     "message": "Hai trovato un bug? <a>Inviaci un bug report</a>"
@@ -324,13 +361,7 @@
     "message": "I siti di cui ti fidi e di cui vuoi visualizzare le pubblicità vengono mostrati qui."
   },
   "options_whitelist_notification": {
-    "message": "$website$ è stato inserito nella lista bianca.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
+    "message": "Il sito web è stato inserito nella lista bianca."
   },
   "options_whitelist_placeholder_example": {
     "message": "ad esempio $domain$",

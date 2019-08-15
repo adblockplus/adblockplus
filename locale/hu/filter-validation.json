@@ -29,10 +29,15 @@
     }
   },
   "line": {
-    "message": "$number$. sor",
+    "message": "$number$. sor: $message$",
     "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
       "number": {
-        "content": "$1"
+        "content": "$1",
+        "example": "42"
       }
     }
   },

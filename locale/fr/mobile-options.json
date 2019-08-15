@@ -9,13 +9,7 @@
     "message": "ANNULER"
   },
   "mops_enabled_label": {
-    "message": "Activer Adblock Plus sur <strong>$domain$</strong>",
-    "placeholders": {
-      "domain": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
+    "message": "Bloquer les publicités sur :"
   },
   "mops_error_url": {
     "message": "Saisir une URL valide"

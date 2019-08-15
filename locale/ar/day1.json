@@ -1,0 +1,53 @@
+{
+  "day1_blockelement_description": {
+    "message": "احجبها باستخدام ميزة عنصر الحجب المنمق في Adblock Plus."
+  },
+  "day1_blockelement_more": {
+    "message": "تعرف على كيفية حدوث ذلك"
+  },
+  "day1_blockelement_screenshot": {
+    "message": "مثال على رمز منبثق مع تمييز زر عنصر الحجب \"حجب العنصر\"."
+  },
+  "day1_blockelement_title": {
+    "message": "هل أرهقتك أقسام التعليقات؟"
+  },
+  "day1_community_contact": {
+    "message": "اتصل بنا!"
+  },
+  "day1_community_contact_subject": {
+    "message": "أتبحث عن الدعم!"
+  },
+  "day1_community_description_1": {
+    "message": "كمشروع مفتوح المصادر، نعتمد على المستخدمين وأنت منهم لمساعدتنا في تحسين تجربتكم في حجب الإعلانات."
+  },
+  "day1_community_description_2": {
+    "message": "ما المزايا التي تود رؤيتها؟ ما الذي يمكننا تحسينه؟ هل يتسبب Adblock Plus في أن تصدر أشياء غريبة من بعض المواقع الإلكترونية؟"
+  },
+  "day1_community_title": {
+    "message": "انضم إلى مجتمع Adblock Plus"
+  },
+  "day1_header_more": {
+    "message": "اعرف المزيد عن الإعلانات الضارة"
+  },
+  "day1_header_title": {
+    "message": "قام Adblock Plus <strong> بحجب إعلانات <em0>$ads$ </em0> في <em1>النصف ساعة الأخيرة </em1>,</strong> كان بعضها يشتمل على محتوى ضار.",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_message": {
+    "message": "ثمة كثير من الإعلانات المزعجة. <a>اكتشف الأشياء الأخرى التي يستطيع Adblock Plus حجبها.</a>"
+  },
+  "notification_day1_title": {
+    "message": "لقد حجبت إعلانات $ads$!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

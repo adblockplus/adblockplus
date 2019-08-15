@@ -1,4 +1,13 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "Afin de nous aider à améliorer Adblock Plus, accepteriez-vous de nous indiquer les raisons pour lesquelles vous avez supprimé l'option pour la publicité acceptable ?"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "Non merci"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "Accéder à l’enquête"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "Les publicités acceptables ne sont pas agaçantes et ne gênent pas le contenu que vous affichez. <a>Plus d'infos sur les critères des publicités acceptables</a>"
   },
@@ -29,6 +38,9 @@
   "options_anti_cv_tooltip": {
     "message": "Cette liste de filtres est efficace contre le contournement (les techniques utilisées pour forcer l’affichage de publicités sur les écrans des personnes utilisant des services de blocage publicitaire). Ces filtres ciblent le contournement et le suivi qui s’y rapporte."
   },
+  "options_builtin_filterList_add": {
+    "message": "Ajouter des listes de filtres intégrés"
+  },
   "options_close": {
     "message": "FERMER"
   },
@@ -39,7 +51,7 @@
     "message": "ANNULER"
   },
   "options_customFilters_description": {
-    "message": "Créer et gérer vos filtres sur mesure pour contrôler encore mieux le contenu autorisé ou bloqué par Adblock Plus. <a0>Apprendre à écrire des listes de filtres</a0>"
+    "message": "Créer et gérer vos filtres sur mesure pour contrôler encore mieux le contenu autorisé ou bloqué par Adblock Plus. <a0>Apprendre à écrire des filtres (en anglais uniquement)</a0>"
   },
   "options_customFilters_title": {
     "message": "Vos filtres personnalisés"
@@ -123,7 +135,7 @@
     "message": "Anglais"
   },
   "options_filterList_add": {
-    "message": "Ajouter une nouvelle liste de filtres"
+    "message": "Ajouter une liste de filtres via URL"
   },
   "options_filterList_column_name": {
     "message": "Listes de filtres"
@@ -205,6 +217,9 @@
   "options_general_description": {
     "message": "Déterminez les éléments qu’Adblock Plus affiche et masque sur les sites web"
   },
+  "options_help_center": {
+    "message": "Vous recherchez des réponses à vos questions ? <a0>Consultez notre Centre d'aide (en anglais uniquement)</a0>"
+  },
   "options_help_description": {
     "message": "Trouvez de l’aide ou nous contacter"
   },
@@ -220,8 +235,24 @@
   "options_language_empty": {
     "message": "Vous n’avez aucun filtre spécifique à la langue."
   },
+  "options_language_filter_list": {
+    "message": "Listes de filtres par langues"
+  },
   "options_language_header": {
     "message": "Langue"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>CONSEIL :</strong> Sélectionnez uniquement les langues dont vous avez besoin. Si vous en sélectionnez plus, le bloqueur de publicité sera ralenti, ce qui ralentira donc votre vitesse de navigation."
@@ -255,6 +286,12 @@
   },
   "options_protection_social_tooltip": {
     "message": "Les icônes des médias sociaux sur les sites web que vous consultez permettent aux réseaux de médias sociaux de construire votre profil en fonction de vos habitudes de navigation, même si vous ne cliquez pas dessus. En masquant ces icônes, vous pouvez protéger votre profil."
+  },
+  "options_rating_description": {
+    "message": "Merci de prendre un moment pour nous aider à diffuser en attribuant une note. Merci pour votre aide !"
+  },
+  "options_rating_title": {
+    "message": "Adblock Plus vous intéresse ?"
   },
   "options_report_bug": {
     "message": "Vous avez trouvé un bogue ? <a>Envoyez-nous un rapport de bogue</a>"
@@ -324,13 +361,7 @@
     "message": "Les sites web auxquels vous faites confiance et souhaitez autoriser à vous présenter des publicités apparaîtront ici."
   },
   "options_whitelist_notification": {
-    "message": "$website$ a été mis sur liste blanche.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
+    "message": "Le site Internet a été mis sur liste blanche."
   },
   "options_whitelist_placeholder_example": {
     "message": "par exemple: $domain$",

@@ -20,6 +20,9 @@
   "issueReporter_comment_label": {
     "message": "التعليق (إختياري):"
   },
+  "issueReporter_config_label": {
+    "message": "أدرج معلومات عن تكوين متصفحي بالإضافة إلى قائمة بالامتدادات النشطة التي أستخدمها."
+  },
   "issueReporter_confirmationMessage": {
     "message": "تم حفظ تقريرك. ستستطيع الوصول إليه عن طريق العنوان التالي:"
   },

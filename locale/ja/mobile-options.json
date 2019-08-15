@@ -9,13 +9,7 @@
     "message": "キャンセル"
   },
   "mops_enabled_label": {
-    "message": "<strong>$domain$</strong> で Adblock Plus を有効にする",
-    "placeholders": {
-      "domain": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
+    "message": "広告をブロック:"
   },
   "mops_error_url": {
     "message": "正しいURLを入力してください"

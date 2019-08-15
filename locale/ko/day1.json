@@ -1,0 +1,53 @@
+{
+  "day1_blockelement_description": {
+    "message": "Adblock Plus의 우수한 요소 차단 기능을 사용해 차단하십시오."
+  },
+  "day1_blockelement_more": {
+    "message": "사용법 알아보기"
+  },
+  "day1_blockelement_screenshot": {
+    "message": "“이 요소 숨기기” 버튼이 강조 표시된 상태의 아이콘 팝업 예."
+  },
+  "day1_blockelement_title": {
+    "message": "설명 섹션을 확인하는 데 지치셨나요?"
+  },
+  "day1_community_contact": {
+    "message": "저희에게 연락 주십시오!"
+  },
+  "day1_community_contact_subject": {
+    "message": "지원 사항을 찾아보세요!"
+  },
+  "day1_community_description_1": {
+    "message": "오픈 소스 프로젝트에 따라 저희는 광고 차단 경험을 개선할 수 있도록 귀하와 같은 사용자 여러분의 의견을 구하고 있습니다."
+  },
+  "day1_community_description_2": {
+    "message": "어떤 기능이 제공되길 원하시나요? 어떻게 하면 저희가 서비스를 개선할 수 있을까요? Adblock Plus로 인해 일부 웹사이트가 잘못 작동합니까?"
+  },
+  "day1_community_title": {
+    "message": "Adblock Plus 커뮤니티 가입"
+  },
+  "day1_header_more": {
+    "message": "악성 광고에 대해 자세히 알아보기"
+  },
+  "day1_header_title": {
+    "message": "Adblock Plus가 <strong><em1>30분</em1> 동안 <em0>$ads$개의 광고</em0>를 차단했는데,</strong> 그 중에는 악성 콘텐츠가 포함되어 있을 수 있습니다.",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_message": {
+    "message": "정말 짜증스러운 광고예요. <a>Adblock Plus가 또 어떤 것을 차단할 수 있는지 살펴보세요.</a>"
+  },
+  "notification_day1_title": {
+    "message": "귀하는 이미 $ads$개의 광고를 차단했습니다!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

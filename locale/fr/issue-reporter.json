@@ -23,6 +23,9 @@
   "issueReporter_comment_label": {
     "message": "Commentaire (facultatif) :"
   },
+  "issueReporter_config_label": {
+    "message": "Inclure des informations sur la configuration de mon navigateur, ainsi qu'une liste des extensions actives que j'utilise."
+  },
   "issueReporter_confirmationMessage": {
     "message": "Votre signalement a été envoyé. Vous pouvez y accéder à l'adresse suivante :"
   },

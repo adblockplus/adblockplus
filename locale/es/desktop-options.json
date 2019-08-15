@@ -1,4 +1,13 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "¿Te importaría compartir el motivo por el que has desactivado la función de anuncios aceptables y así ayudarnos a mejorar Adblock Plus?"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "No, gracias"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "Acceder a la encuesta"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "Los anuncios aceptables no son molestos y no interfieren con el contenido que estás viendo. <a>Leer más sobre los criterios de Anuncios Aceptables</a>"
   },
@@ -29,6 +38,9 @@
   "options_anti_cv_tooltip": {
     "message": "Esta lista de filtros funciona contra cualquier práctica de elusión en sitios web (es decir, técnicas para forzar anuncios en aquellos usuarios que cuenten con bloqueo de anuncios). Estos filtros abordan tanto los anuncios que eluden el bloqueo como el seguimiento relacionado."
   },
+  "options_builtin_filterList_add": {
+    "message": "Añadir listas de filtros integradas"
+  },
   "options_close": {
     "message": "CERRAR"
   },
@@ -39,7 +51,7 @@
     "message": "CANCELAR"
   },
   "options_customFilters_description": {
-    "message": "Crea y mantén tus propios filtros para un mayor control sobre qué contenido bloquea o permite Adblock Plus. <a0>Más información sobre cómo crear filtros</a0>"
+    "message": "Crea y mantén tus propios filtros para un mayor control sobre qué contenido bloquea o permite Adblock Plus. <a0>Más información sobre cómo crear filtros (solo en inglés)</a0>"
   },
   "options_customFilters_title": {
     "message": "Tus filtros personalizados"
@@ -123,7 +135,7 @@
     "message": "Inglés"
   },
   "options_filterList_add": {
-    "message": "Añadir una nueva lista de filtros"
+    "message": "Añadir lista de filtros a través de una dirección URL"
   },
   "options_filterList_column_name": {
     "message": "Listas de filtros"
@@ -205,6 +217,9 @@
   "options_general_description": {
     "message": "Determina qué muestra y oculta Adblock Plus en páginas web"
   },
+  "options_help_center": {
+    "message": "¿Buscas respuestas a tus preguntas? <a0>Visita nuestro centro de ayuda (solo en inglés)</a0>"
+  },
   "options_help_description": {
     "message": "Encuentra ayuda o contacta con nosotros"
   },
@@ -220,8 +235,24 @@
   "options_language_empty": {
     "message": "No tienes ningún filtro específico de idiomas."
   },
+  "options_language_filter_list": {
+    "message": "Listas de filtros de idiomas"
+  },
   "options_language_header": {
     "message": "Idioma"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>SUGERENCIA:</strong> Selecciona solo los idiomas que necesitas. Seleccionar más ralentizará el bloqueador de anuncios y, por tanto, la velocidad de navegación."
@@ -255,6 +286,12 @@
   },
   "options_protection_social_tooltip": {
     "message": "Los iconos de medios sociales en las páginas web que visitas permiten que las redes de medios sociales construyan un perfil tuyo en base a tus hábitos de navegación, incluso cuando no haces clic en ellos. Ocultar estos iconos puede proteger tu perfil."
+  },
+  "options_rating_description": {
+    "message": "Ayúdanos a hacer que corra la voz valorando Adblock Plus, es solo un momento. ¡Gracias por tu apoyo!"
+  },
+  "options_rating_title": {
+    "message": "¿Te gusta Adblock Plus?"
   },
   "options_report_bug": {
     "message": "¿Encontraste un error? <a>Envíanos un informe de error</a>"
@@ -324,13 +361,7 @@
     "message": "Las páginas web en las que confías y deseas permitir anuncios se mostrarán aquí."
   },
   "options_whitelist_notification": {
-    "message": "\"$website$\" ha sido añadida a la lista blanca.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
+    "message": "La página web ha sido añadida a la lista blanca."
   },
   "options_whitelist_placeholder_example": {
     "message": "p.ej. $domain$",

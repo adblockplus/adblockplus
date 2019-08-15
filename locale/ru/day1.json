@@ -1,0 +1,53 @@
+{
+  "day1_blockelement_description": {
+    "message": "Заблокируйте их при помощи передовой функции блокировки элементов от Adblock Plus."
+  },
+  "day1_blockelement_more": {
+    "message": "Узнайте, как это сделать."
+  },
+  "day1_blockelement_screenshot": {
+    "message": "Пример выскакивающего сверху значка с выделенной кнопкой «Заблокировать элемент»."
+  },
+  "day1_blockelement_title": {
+    "message": "Устали от разделов комментариев, которые только портят настроение?"
+  },
+  "day1_community_contact": {
+    "message": "Свяжитесь с нами!"
+  },
+  "day1_community_contact_subject": {
+    "message": "В поисках поддержки!"
+  },
+  "day1_community_description_1": {
+    "message": "Так как данный проект имеет открытый код, мы полагаемся на таких пользователей как вы, которые помогают нам улучшать качество блокировки рекламы."
+  },
+  "day1_community_description_2": {
+    "message": "Какие новые функции вы бы хотели видеть в будущем? Что нам следует улучшить? Влияет ли Adblock Plus на работу некоторых сайтов?"
+  },
+  "day1_community_title": {
+    "message": "Присоединяйтесь к сообществу Adblock Plus"
+  },
+  "day1_header_more": {
+    "message": "Узнайте больше о вредоносной рекламе"
+  },
+  "day1_header_title": {
+    "message": "Adblock Plus <strong>заблокировал <em0>рекламу $ads$</em0> за <em1>последние полчаса</em1>,</strong> некоторые из них содержали вредоносные элементы.",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_message": {
+    "message": "Это очень много надоедливой рекламы. <a>Узнайте, что еще Adblock Plus может заблокировать.</a>"
+  },
+  "notification_day1_title": {
+    "message": "Реклама $ads$ уже заблокирована!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

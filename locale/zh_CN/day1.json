@@ -1,0 +1,53 @@
+{
+  "day1_blockelement_description": {
+    "message": "使用 Adblock Plus 绝妙的块元素功能拦截它们。"
+  },
+  "day1_blockelement_more": {
+    "message": "详细了解"
+  },
+  "day1_blockelement_screenshot": {
+    "message": "突出显示“拦截元素”按钮的图标弹出示例。"
+  },
+  "day1_blockelement_title": {
+    "message": "厌倦了评论部分让您失望？"
+  },
+  "day1_community_contact": {
+    "message": "联系我们！"
+  },
+  "day1_community_contact_subject": {
+    "message": "寻求支持！"
+  },
+  "day1_community_description_1": {
+    "message": "作为一个开源项目，我们依靠像您这样的用户来帮助我们改善广告拦截体验。"
+  },
+  "day1_community_description_2": {
+    "message": "您希望看到什么功能？什么方面我们可以做得更好？Adblock Plus 是否让一些网站行为不端？"
+  },
+  "day1_community_title": {
+    "message": "加入 Adblock Plus 社区"
+  },
+  "day1_header_more": {
+    "message": "详细了解恶意广告"
+  },
+  "day1_header_title": {
+    "message": "Adblock Plus <strong><em1>在过去半小时内拦截了 </em1><em0>$ads$ 个广告</em0></strong>，其中一些可能包含恶意内容",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_message": {
+    "message": "很多烦人的广告。<a>了解 Adblock Plus 可以拦截的其他内容。</a>"
+  },
+  "notification_day1_title": {
+    "message": "您已拦截 $ads$ 个广告！",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

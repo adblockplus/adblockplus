@@ -23,6 +23,9 @@
   "issueReporter_comment_label": {
     "message": "Commento (opzionale):"
   },
+  "issueReporter_config_label": {
+    "message": "Comprendono informazioni sulla configurazione del mio browser, ed anche un elenco di estensioni attive che sto usando."
+  },
   "issueReporter_confirmationMessage": {
     "message": "Segnalazione inviata correttamente, per visualizzarne i dati fare clic sul seguente link:"
   },

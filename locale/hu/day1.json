@@ -1,0 +1,53 @@
+{
+  "day1_blockelement_description": {
+    "message": "Blokkolja az Adblock Plus kilencven blokkelemes funkciójával."
+  },
+  "day1_blockelement_more": {
+    "message": "Ismerje meg, hogyan"
+  },
+  "day1_blockelement_screenshot": {
+    "message": "Ikonpopup példa kiemelt „Elem blokkolása” gombbal."
+  },
+  "day1_blockelement_title": {
+    "message": "Unja a lehangoló hozzászólás-szakaszokat?"
+  },
+  "day1_community_contact": {
+    "message": "Lépjen kapcsolatba velünk!"
+  },
+  "day1_community_contact_subject": {
+    "message": "Támogatást keresek!"
+  },
+  "day1_community_description_1": {
+    "message": "Nyílt forráskódú projektként az Önhöz hasonló felhasználókra támaszkodunk, hogy segítsenek minket a hirdetésblokkoló élmény javításában."
+  },
+  "day1_community_description_2": {
+    "message": "Milyen funkciókat szeretne látni? Mit csinálhatunk jobban? Az Adblock Plus miatt néhány webhely másként viselkedik?"
+  },
+  "day1_community_title": {
+    "message": "Csatlakozzon az Adblock Plus közösséghez"
+  },
+  "day1_header_more": {
+    "message": "Tudjon meg többet a rosszindulatú hirdetésekről"
+  },
+  "day1_header_title": {
+    "message": "Az Adblock Plus <strong><em0>$ads$ hirdetést</em0> blokkolt <em1>az utóbbi fél órában</em1>,</strong> ezek közül néhánynak a tartalma kártékony lehetett",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_message": {
+    "message": "Ez rengeteg zavaró hirdetés. <a>Tudja meg, mit blokkolhat még az Adblock Plus.</a>"
+  },
+  "notification_day1_title": {
+    "message": "Már $ads$ hirdetést blokkolt!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

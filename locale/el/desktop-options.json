@@ -1,4 +1,13 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "Για να μας βοηθήσετε να βελτιώσουμε το Adblock Plus, θα θέλατε να μας πείτε γιατί απενεργοποιήσατε τις Αποδεκτές Διαφημίσεις;"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "Όχι, ευχαριστώ"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "Μετάβαση στην έρευνα"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "Οι αποδεκτές διαφημίσεις δεν είναι ενοχλητικές και δεν παρεμβαίνουν στο περιεχόμενο που βλέπετε. [Διαβάστε περισσότερα σχετικά με τα κριτήρια αποδεκτών διαφημίσεων] [1]"
   },
@@ -16,6 +25,9 @@
   },
   "options_advanced_description": {
     "message": "Προσαρμόστε το Adblock Plus, προσθέστε ή καταργήστε λίστες φίλτρων, δημιουργήστε και συντηρήστε τις δικές σας λίστες φίλτρων"
+  },
+  "options_builtin_filterList_add": {
+    "message": "Προσθήκη ενσωματωμένων λιστών φίλτρων"
   },
   "options_close": {
     "message": "ΚΛΕΙΣΙΜΟ"
@@ -96,7 +108,7 @@
     "message": "αγγλικά"
   },
   "options_filterList_add": {
-    "message": "Προσθηκη νεας λιστας φιλτρων"
+    "message": "Προσθηκη καταλογου φιλτρων μεσω URL"
   },
   "options_filterList_column_name": {
     "message": "Λίστες φίλτρων"
@@ -164,6 +176,12 @@
   "options_general_description": {
     "message": "Καθορίστε τι προβάλλει και αποκρύπτει το Adblock Plus σε ιστότοπους"
   },
+  "options_generic_error": {
+    "message": "Ωχ, αμάν! Κάτι πήγε στραβά. Δοκιμάστε ξανά."
+  },
+  "options_help_center": {
+    "message": "Αναζητάτε απαντήσεις στις ερωτήσεις σας; <a0>Επισκεφθείτε το Κέντρο Βοηθείας μας (μόνο αγγλικά)</a0>"
+  },
   "options_help_description": {
     "message": "Βρείτε βοήθεια ή επικοινωνήστε μαζί μας"
   },
@@ -179,8 +197,24 @@
   "options_language_empty": {
     "message": "Δεν έχετε φίλτρα ειδικά για κάποια γλώσσα."
   },
+  "options_language_filter_list": {
+    "message": "Λίστες φίλτρων γλώσσας"
+  },
   "options_language_header": {
     "message": "Γλώσσα"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>ΣΥΜΒΟΥΛΗ:</strong> Επιλέξτε μόνο τις γλώσσες που χρειάζεστε. Η επιλογή περισσότερων θα επιβραδύνει τον αποκλεισμό διαφημίσεων και επομένως την ταχύτητα περιήγησής σας."
@@ -214,6 +248,12 @@
   },
   "options_protection_social_tooltip": {
     "message": "Τα εικονίδια κοινωνικών μέσων στους ιστότοπους που επισκέπτεστε επιτρέπουν στα δίκτυα των κοινωνικών μέσων να δημιουργήσουν ένα προφίλ με βάση τις συνήθειες περιήγησης σας - ακόμα και όταν δεν κάνετε κλικ σε αυτά. Η απόκρυψη αυτών των εικονιδίων μπορεί να προστατεύσει το προφίλ σας."
+  },
+  "options_rating_description": {
+    "message": "Βοηθήστε μας να διαδώσουμε το προϊόν μας βαθμολογώντας το Adblock Plus. Σας ευχαριστούμε για την υποστήριξή σας!"
+  },
+  "options_rating_title": {
+    "message": "Απολαμβάνετε το Adblock Plus;"
   },
   "options_report_bug": {
     "message": "Βρήκατε σφάλμα; <a>Στείλτε μας μια αναφορά σφάλματος</a>"
@@ -255,13 +295,7 @@
     "message": "Ιστότοποι που εμπιστεύεστε και θέλετε να επιτρέψετε οι διαφημίσεις τους να εμφανίζονται εδώ."
   },
   "options_whitelist_notification": {
-    "message": "$website$ προστέθηκε στη λίστα επιτρεπόμενων.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
+    "message": "Ο ιστότοπος έχει προστεθεί στη λίστα επιτρεπόμενων."
   },
   "options_whitelist_placeholder_example": {
     "message": "π.χ. $domain$",

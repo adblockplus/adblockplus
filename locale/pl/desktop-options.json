@@ -1,4 +1,13 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "Aby pomóc nam w ulepszaniu Adblock Plus, powiedz, co spowodowało wyłączenie Akceptowalnych reklam?"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "Nie, dziękuję"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "Przejdź do ankiety"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "Akceptowalne reklamy nie są irytujące i nie zakłócają wyświetlania treści. <a>Przeczytaj więcej o kryteriach akceptowalnych reklam</a>"
   },
@@ -29,6 +38,9 @@
   "options_anti_cv_tooltip": {
     "message": "Filtry znajdujące się w tym zestawie przeciwdziałają omijaniu blokowania – technikom wymuszającym wyświetlanie reklam użytkownikom blokującym reklamy. Filtry te identyfikują i zakłócają omijanie blokowania oraz powiązane z nimi śledzenie."
   },
+  "options_builtin_filterList_add": {
+    "message": "Dodaj wbudowane listy filtrów"
+  },
   "options_close": {
     "message": "Zamknij"
   },
@@ -39,7 +51,7 @@
     "message": "Anuluj"
   },
   "options_customFilters_description": {
-    "message": "Utwórz i edytuj własne niestandardowe filtry, aby jeszcze lepiej kontrolować wyświetlanie zawartości przez Adblock Plus. <a0>Dowiedz się, jak tworzyć filtry</a0>"
+    "message": "Utwórz i edytuj własne niestandardowe filtry, aby jeszcze lepiej kontrolować wyświetlanie zawartości przez Adblock Plus. <a0>Dowiedz się, jak tworzyć filtry (tylko w języku angielskim)</a0>"
   },
   "options_customFilters_title": {
     "message": "Filtry niestandardowe"
@@ -123,7 +135,7 @@
     "message": "Angielski"
   },
   "options_filterList_add": {
-    "message": "Dodaj nowy zestaw filtrów"
+    "message": "Dodaj adres URL listy filtrów"
   },
   "options_filterList_column_name": {
     "message": "Zestawy filtrów"
@@ -205,6 +217,9 @@
   "options_general_description": {
     "message": "Określ, co Adblock Plus pokazuje i ukrywa na stronach internetowych"
   },
+  "options_help_center": {
+    "message": "Szukasz odpowiedzi na swoje pytania? <a0>Odwiedź nasze Centrum pomocy (tylko w j. angielskim)</a0>"
+  },
   "options_help_description": {
     "message": "Znajdź pomoc lub skontaktuj się z nami"
   },
@@ -220,8 +235,24 @@
   "options_language_empty": {
     "message": "Nie masz żadnych filtrów specyficznych dla języków."
   },
+  "options_language_filter_list": {
+    "message": "Listy filtrów dla języka"
+  },
   "options_language_header": {
     "message": "Język"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>Wskazówka</strong> Wybierz tylko Języki, których potrzebujesz. Zaznaczanie dużej liczby języków spowolni blokowanie reklam, a co za tym idzie – szybkość przeglądania."
@@ -255,6 +286,12 @@
   },
   "options_protection_social_tooltip": {
     "message": "Ikony mediów społecznościowych znajdujące się w odwiedzanych witrynach internetowych umożliwiaj sieciom mediów społecznościowych na budowanie Twojego profilu w oparciu o Twoje nawyki przeglądania – nawet, jeśli ich nie klikasz. Ukrycie tych ikon może ochronić Twój profil."
+  },
+  "options_rating_description": {
+    "message": "Poświęć chwilę i pomóż spopularyzować Adblock Plus, wystawiając ocenę. Dziękujemy za wsparcie!"
+  },
+  "options_rating_title": {
+    "message": "Lubisz Adblock Plus?"
   },
   "options_report_bug": {
     "message": "Widzisz błąd? <a>Wyślij do nas zgłoszenie</a>"
@@ -324,13 +361,7 @@
     "message": "Tutaj będą wyświetlane zaufane strony, na których mogą być wyświetlane reklamy."
   },
   "options_whitelist_notification": {
-    "message": "Witryna „$website$” została dodana do listy dozwolonych.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
+    "message": "Witryna została dodana do listy dozwolonych."
   },
   "options_whitelist_placeholder_example": {
     "message": "np. $domain$",

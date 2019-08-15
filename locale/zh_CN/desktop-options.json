@@ -1,4 +1,13 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "为了帮助我们改进 Adblock Plus，是否介意分享为什么关闭可接受广告？"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "不用了，谢谢"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "前往调查"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "可接受广告不会令人烦恼，也不会干扰您正在查看的内容。<a>阅读更多关于可接受广告的标准</a>"
   },
@@ -29,6 +38,9 @@
   "options_anti_cv_tooltip": {
     "message": "此过滤列表可以防止规避（即在广告拦截用户上强制投放广告的技术）。这些过滤器可以解决规避广告以及跟踪相关的问题。"
   },
+  "options_builtin_filterList_add": {
+    "message": "添加内置过滤列表"
+  },
   "options_close": {
     "message": "关闭"
   },
@@ -39,7 +51,7 @@
     "message": "取消"
   },
   "options_customFilters_description": {
-    "message": "创建并维护自己的过滤器，以进一步控制 Adblock Plus 允许或拦截的内容。<a0>了解如何编写过滤器</a0>"
+    "message": "创建并维护自己的过滤器，以进一步控制 Adblock Plus 允许或拦截的内容。<a0>了解如何编写过滤器（仅限英文）</a0>"
   },
   "options_customFilters_title": {
     "message": "您的自定义过滤器"
@@ -123,7 +135,7 @@
     "message": "英語"
   },
   "options_filterList_add": {
-    "message": "添加一个新的过滤列表"
+    "message": "通过 URL 添加过滤列表"
   },
   "options_filterList_column_name": {
     "message": "过滤列表"
@@ -205,6 +217,9 @@
   "options_general_description": {
     "message": "确定 Adblock Plus 在网站上显示和隐藏的内容"
   },
+  "options_help_center": {
+    "message": "正在寻找问题的答案？<a0>访问我们的帮助中心（仅限英文）</a0>"
+  },
   "options_help_description": {
     "message": "寻求帮助或联系我们"
   },
@@ -220,8 +235,24 @@
   "options_language_empty": {
     "message": "您没有任何特定语言的过滤器。"
   },
+  "options_language_filter_list": {
+    "message": "语言过滤列表"
+  },
   "options_language_header": {
     "message": "语言"
+  },
+  "options_language_join": {
+    "message": "$lang1$、$lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>提示：</strong>只选择您需要的语言。选择更多会减慢广告拦截器的速度，因此会降低浏览速度。"
@@ -255,6 +286,12 @@
   },
   "options_protection_social_tooltip": {
     "message": "您访问的网站上的社交媒体图标允许社交媒体网络根据您的浏览习惯建立您的个人资料记录——即使您没有点击它们。隐藏这些图标可以保护您的个人资料。"
+  },
+  "options_rating_description": {
+    "message": "请花一点时间为 Adblock Plus 评分，帮助它宣传。感谢您的支持！"
+  },
+  "options_rating_title": {
+    "message": "喜欢 Adblock Plus？"
   },
   "options_report_bug": {
     "message": "发现错误？<a>向我们发送错误报告</a>"
@@ -324,13 +361,7 @@
     "message": "您信任的网站并希望允许广告在此显示。"
   },
   "options_whitelist_notification": {
-    "message": "$website$ 已被列入白名单。",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
+    "message": "网站已被列入白名单。"
   },
   "options_whitelist_placeholder_example": {
     "message": "例如 $domain$",
