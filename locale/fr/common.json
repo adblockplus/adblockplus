@@ -5,8 +5,20 @@
   "cancel": {
     "message": "Annuler"
   },
+  "common_copyright": {
+    "message": "Copyright © $year$ Tous droits réservés. Adblock Plus® est une marque déposée d’<a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
   "common_feature_anti_adblock_title": {
     "message": "Masquer les messages d'avertissement Adblock"
+  },
+  "common_feature_circumvention_title": {
+    "message": "Liste de filtres anticontournement ABP"
   },
   "common_feature_malware_title": {
     "message": "Bloquer les logiciels malveillants"

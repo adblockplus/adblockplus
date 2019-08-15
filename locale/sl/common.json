@@ -5,8 +5,20 @@
   "cancel": {
     "message": "Prekliči"
   },
+  "common_copyright": {
+    "message": "Avtorske pravice © $year$ Vse pravice pridržane. Adblock Plus® je registrirana blagovna znamka podjetja <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
   "common_feature_anti_adblock_title": {
     "message": "Skrij Adblockova opozorilna sporočila"
+  },
+  "common_feature_circumvention_title": {
+    "message": "ABP-jev seznam filtrov proti izogibanju blokiranja"
   },
   "common_feature_malware_title": {
     "message": "Blokiraj zlonamerne programe"

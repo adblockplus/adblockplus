@@ -5,8 +5,20 @@
   "cancel": {
     "message": "إلغاء"
   },
+  "common_copyright": {
+    "message": "حقوق الطبع والنشر © $year$ جميع الحقوق محفوظة. Adblock Plus® هو علامة تجارية مسجلة لـ <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
   "common_feature_anti_adblock_title": {
     "message": "اخفاء رسائل تحذير ادبلوك"
+  },
+  "common_feature_circumvention_title": {
+    "message": "قائمة فلاتر ضد التحايل ABP"
   },
   "common_feature_malware_title": {
     "message": "منع البرامج الضارة"

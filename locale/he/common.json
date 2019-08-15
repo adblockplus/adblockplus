@@ -5,8 +5,20 @@
   "cancel": {
     "message": "בטל"
   },
+  "common_copyright": {
+    "message": "זכות יוצרים © $year$ כל הזכויות שמורות. Adblock Plus® הוא סימן מסחרי רשום של <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
   "common_feature_anti_adblock_title": {
     "message": "הסתר הודעות אזהרה של Adblock"
+  },
+  "common_feature_circumvention_title": {
+    "message": "רשימת מסנני נגד־עקיפה של ABP"
   },
   "common_feature_malware_title": {
     "message": "חסום נוזקה"

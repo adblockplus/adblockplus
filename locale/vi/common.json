@@ -5,8 +5,20 @@
   "cancel": {
     "message": "Hủy bỏ"
   },
+  "common_copyright": {
+    "message": "Copyright © $year$ Bảo lưu mọi quyền. Adblock Plus® là thương hiệu đã đăng ký của <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
   "common_feature_anti_adblock_title": {
     "message": "Ẩn thông báo cảnh báo chặn quảng cáo"
+  },
+  "common_feature_circumvention_title": {
+    "message": "ABP Anti-Circumvention Filter List"
   },
   "common_feature_malware_title": {
     "message": "Chặn phần mềm độc hại"

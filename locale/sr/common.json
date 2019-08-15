@@ -8,6 +8,9 @@
   "common_feature_anti_adblock_title": {
     "message": "Сакриј поруке упозорења Adblock-а"
   },
+  "common_feature_circumvention_title": {
+    "message": "Листа филтера антизаобилажења ABP-а"
+  },
   "common_feature_malware_title": {
     "message": "Блокирај малвер"
   },

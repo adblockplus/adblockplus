@@ -5,8 +5,20 @@
   "cancel": {
     "message": "取消"
   },
+  "common_copyright": {
+    "message": "版权所有© $year$ 保留所有权利。Adblock Plus® 是 <a0>eyeo GmbH</a0> 的注册商标。",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
   "common_feature_anti_adblock_title": {
     "message": "隐藏 Adblock 警告消息"
+  },
+  "common_feature_circumvention_title": {
+    "message": "ABP 反规避过滤列表"
   },
   "common_feature_malware_title": {
     "message": "屏蔽恶意软件"

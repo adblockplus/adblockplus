@@ -5,8 +5,20 @@
   "cancel": {
     "message": "გაუქმება"
   },
+  "common_copyright": {
+    "message": "საავტორო უფლებები © $year$ ყველა უფლება დაცულია. Adblock Plus® წარმოადგენს <a0>eyeo GmbH</a0>-ის კუთვნილ სავაჭრო ნიშანს.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
   "common_feature_anti_adblock_title": {
     "message": "Adblock-ის გაფრთხილებების დამალვა"
+  },
+  "common_feature_circumvention_title": {
+    "message": "ABP-თვის გვერდის ავლის შესაზღუდი ფილტრი"
   },
   "common_feature_malware_title": {
     "message": "მავნე პროგრამების საიტების შეზღუდვა"

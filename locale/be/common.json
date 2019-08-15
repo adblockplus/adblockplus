@@ -5,8 +5,20 @@
   "cancel": {
     "message": "Скасаваць"
   },
+  "common_copyright": {
+    "message": "Аўтарскае права © $year$ Усе правы абаронены. Adblock Plus® – зарэгістраваны таварны знак <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
   "common_feature_anti_adblock_title": {
     "message": "Хаваць папярэджанні сайтаў пра выкарыстанне Adblock"
+  },
+  "common_feature_circumvention_title": {
+    "message": "Супрацьабыходны спіс фільтраў ABP"
   },
   "common_feature_malware_title": {
     "message": "Блакаванне шкоднага ПЗ"

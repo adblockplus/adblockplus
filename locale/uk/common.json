@@ -5,8 +5,20 @@
   "cancel": {
     "message": "Скасувати"
   },
+  "common_copyright": {
+    "message": "Авторське право © $year$ Всі права захищені. Adblock Plus® є зареєстрованою торговою маркою компанії <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
   "common_feature_anti_adblock_title": {
     "message": "Приховувати попередження про використання блокувальника реклами"
+  },
+  "common_feature_circumvention_title": {
+    "message": "Протиобхідний список фільтрів ABP"
   },
   "common_feature_malware_title": {
     "message": "Блокувати шкідливі програми"

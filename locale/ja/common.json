@@ -5,8 +5,20 @@
   "cancel": {
     "message": "キャンセル"
   },
+  "common_copyright": {
+    "message": "Copyright © $year$ 全著作権所有 。Adblock Plus® は <a0>eyeo GmbH</a0> の登録商標です。",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
   "common_feature_anti_adblock_title": {
     "message": "Adblock に対する警告メッセージを隠す"
+  },
+  "common_feature_circumvention_title": {
+    "message": "ABP 回避対策フィルタリスト"
   },
   "common_feature_malware_title": {
     "message": "マルウェアのブロック"

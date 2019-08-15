@@ -5,6 +5,15 @@
   "cancel": {
     "message": "Peruuta"
   },
+  "common_copyright": {
+    "message": "Copyright © $year$ Kaikki oikeudet pidätetään Adblock Plus® on rekisteröity <a0>eyeo GmbH</a0> tavaramerkki.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
   "common_feature_anti_adblock_title": {
     "message": "Piilota Adblock varoitussanomat"
   },

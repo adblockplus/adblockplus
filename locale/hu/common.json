@@ -5,8 +5,20 @@
   "cancel": {
     "message": "Mégse"
   },
+  "common_copyright": {
+    "message": "Copyright © $year$ Minden jog fenntartva. Adblock Plus® egy bejegyzett <a0>eyeo GmbH</a0> védjegye.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
   "common_feature_anti_adblock_title": {
     "message": "Adblock-figyelmeztetések elrejtése"
+  },
+  "common_feature_circumvention_title": {
+    "message": "ABP Megkerülésvédelem szűrőlista"
   },
   "common_feature_malware_title": {
     "message": "Kártékony szoftverek blokkolása"

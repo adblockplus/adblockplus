@@ -5,8 +5,20 @@
   "cancel": {
     "message": "Vazgeç"
   },
+  "common_copyright": {
+    "message": "Telif hakkı. © $year$ Tüm hakları saklıdır. Adblock Plus®, <a0>eyeo GmbH</a0>'nin tescilli ticari markasıdır.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
   "common_feature_anti_adblock_title": {
     "message": "Adblock Uyarı İletilerini Gizle"
+  },
+  "common_feature_circumvention_title": {
+    "message": "ABP reklam engellemeyi atlatma süzgeç listesi"
   },
   "common_feature_malware_title": {
     "message": "Kötücül Yazılımı Engelle"

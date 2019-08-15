@@ -5,8 +5,20 @@
   "cancel": {
     "message": "Annuller"
   },
+  "common_copyright": {
+    "message": "Copyright © $year$ Alle rettigheder forbeholdes. Adblock Plus® er et registreret varemærke tilhørende <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
   "common_feature_anti_adblock_title": {
     "message": "Skjul Adblock-advarselsmeddelelser"
+  },
+  "common_feature_circumvention_title": {
+    "message": "Filterliste for ABP-omgåelsesbeskyttelse"
   },
   "common_feature_malware_title": {
     "message": "Blokér malware"
