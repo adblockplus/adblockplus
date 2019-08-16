@@ -97,10 +97,16 @@ button[disabled]
 }
 
 header,
+#notification,
 main > *,
 footer
 {
   padding: var(--padding-primary);
+}
+
+#notification
+{
+  padding-top: 0;
 }
 
 header,
@@ -122,7 +128,7 @@ header img
   height: 2.5em;
 }
 
-header .notification::before
+#notification .content::before
 {
   --border-top-color: var(--border-color-primary);
   display: block;
@@ -138,17 +144,17 @@ header .notification::before
   content: "";
 }
 
-header .notification.critical::before
+#notification .content.critical::before
 {
   --border-top-color: var(--color-critical);
 }
 
-header .notification.information::before
+#notification .content.information::before
 {
   --border-top-color: var(--color-info);
 }
 
-header .notification,
+#notification .content,
 main .card
 {
   border-width: var(--border-width-thin);
@@ -158,31 +164,29 @@ main .card
   box-shadow: var(--box-shadow-primary);
 }
 
-header .notification
+#notification .content
 {
-  margin-top: var(--margin-primary);
-  margin-bottom: var(--margin-primary-half);
   border-top: 0;
 }
 
-header .notification > div
+#notification .content > div
 {
   padding: var(--padding-primary);
 }
 
-header .notification h3[hidden] + p
+#notification .content h3[hidden] + p
 {
   margin-top: 0;
 }
 
-header .notification h3
+#notification .content h3
 {
   margin: 0;
   color: var(--color-secondary);
   font-size: var(--font-size-primary);
 }
 
-header .notification h3::before
+#notification .content h3::before
 {
   display: inline-block;
   position: absolute;
@@ -194,48 +198,48 @@ header .notification h3::before
   content: "";
 }
 
-html:not([dir="rtl"]) header .notification.critical h3,
-html:not([dir="rtl"]) header .notification.information h3
+html:not([dir="rtl"]) #notification .content.critical h3,
+html:not([dir="rtl"]) #notification .content.information h3
 {
   padding-left: 24px;
 }
 
-html:not([dir="rtl"]) header .notification.critical h3::before,
-html:not([dir="rtl"]) header .notification.information h3::before
+html:not([dir="rtl"]) #notification .content.critical h3::before,
+html:not([dir="rtl"]) #notification .content.information h3::before
 {
   margin-left: -24px;
 }
 
-html[dir="rtl"] header .notification.critical h3,
-html[dir="rtl"] header .notification.information h3
+html[dir="rtl"] #notification .content.critical h3,
+html[dir="rtl"] #notification .content.information h3
 {
   padding-right: 24px;
 }
 
-html[dir="rtl"] header .notification.critical h3::before,
-html[dir="rtl"] header .notification.information h3::before
+html[dir="rtl"] #notification .content.critical h3::before,
+html[dir="rtl"] #notification .content.information h3::before
 {
   margin-right: -24px;
 }
 
-header .notification.critical h3::before
+#notification .content.critical h3::before
 {
   background-image: url(icons/critical.svg);
 }
 
-header .notification.information h3::before
+#notification .content.information h3::before
 {
   background-image: url(icons/info.svg);
 }
 
-header .notification hr
+#notification .content hr
 {
   height: var(--border-width-thin);
   border: 0;
   background: var(--border-color-primary);
 }
 
-header .notification button
+#notification .content button
 {
   display: block;
   padding-right: 0;
@@ -243,7 +247,7 @@ header .notification button
   font-size: var(--font-size-primary);
 }
 
-header .notification button
+#notification .content button
 {
   margin-top: var(--margin-primary-half);
 }

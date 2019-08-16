@@ -56,7 +56,7 @@ window.addEventListener(
   {
     const notification = event.detail;
     const notifier = wire()`
-    <div class="${"notification " + notification.type}">
+    <div class="${"content " + notification.type}">
       <div>
         <h3 hidden="${!notification.texts.title}">
           ${notification.texts.title}
@@ -75,7 +75,9 @@ window.addEventListener(
       </div>
     </div>`;
 
-    $("header").appendChild(notifier);
+    const container = $("#notification");
+    container.innerHTML = "";
+    container.appendChild(notifier);
 
     getDoclinks(notification).then(docLinks =>
     {
