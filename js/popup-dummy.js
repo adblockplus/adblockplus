@@ -42,7 +42,10 @@ if ("IntersectionObserver" in window)
 {
   const observer = new IntersectionObserver(onResize, {
     root: null,
-    threshold: 0
+    // The observer only notifies us when a threshold is passed in either way
+    // so we need to specify small enough thresholds to get notified
+    // of any size changes
+    threshold: Array.from({length: 101}, (value, idx) => idx / 100)
   });
   observer.observe(document.body);
 }
