@@ -44,7 +44,8 @@ function getText(info)
     if ("content" in placeholder)
       hardcodedPlaceholders += placeholder.content.replace(/\$\d/g, "");
   }
-  return message + hardcodedPlaceholders;
+  const caseInsensitive = message + hardcodedPlaceholders;
+  return caseInsensitive.toLowerCase() + caseInsensitive.toUpperCase();
 }
 
 /**
