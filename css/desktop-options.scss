@@ -15,6 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+@import "z-index.scss";
 @import "light.scss";
 @import "io-filter-table.scss";
 @import "io-list-box.scss";
@@ -1440,7 +1441,7 @@ html[dir="rtl"] #social ul li
 {
   display: none;
   position: fixed;
-  z-index: 2;
+  z-index: var(--z-dialog);
   top: 0px;
   right: 0px;
   bottom: 0px;
@@ -1457,7 +1458,7 @@ body[data-dialog] #dialog-background
 #dialog
 {
   position: fixed;
-  z-index: 2;
+  z-index: var(--z-dialog);
   top: 100px;
   right: 0px;
   left: 0px;

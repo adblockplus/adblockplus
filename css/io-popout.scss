@@ -15,6 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+@import "z-index.scss";
+
 io-popout
 {
   --background-color: #FFF;
@@ -29,8 +31,7 @@ io-popout
   );
   --content-offset-out: calc(-0.5 * var(--icon-size-outer));
   --content-offset-start: calc(var(--icon-size-outer) + 2 * var(--icon-margin));
-  --z-index: 100;
-  z-index: var(--z-index);
+  z-index: var(--z-popout);
 }
 
 /* Ensures that expanded popouts are always shown on top of other popouts */
@@ -41,7 +42,7 @@ io-popout[expanded]
    * only added in Firefox 57. Therefore we have to hardcode its value for now.
    * https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/57#Quantum_CSS_notes
    */
-  z-index: 101;
+  z-index: var(--z-popout-active);
 }
 
 io-popout[type="dialog"]
