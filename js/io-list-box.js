@@ -73,6 +73,8 @@ class IOListBox extends IOElement
       delete this.items;
       this.items = items;
     }
+
+    this.addEventListener("blur", this, true);
   }
 
   // can be overridden but by default
@@ -191,6 +193,9 @@ class IOListBox extends IOElement
   // label related events
   onblur(event)
   {
+    if (event.relatedTarget && this.contains(event.relatedTarget))
+      return;
+
     // ensure blur won't close the list right away or it's impossible
     // to get the selected raw on click (bad target)
     if (this.expanded)
@@ -314,7 +319,7 @@ class IOListBox extends IOElement
     >${"+ " + i18n.getMessage(buttonText)}</button>
     <ul
       role="listbox"
-      tab-index="-1"
+      tabindex="-1"
       id="${id + "popup"}"
       aria-labelledby="${id + "label"}"
       hidden="${!expanded}"
