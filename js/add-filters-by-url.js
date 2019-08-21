@@ -34,12 +34,8 @@ module.exports = {
   setupAddFiltersByURL()
   {
     const wrapper = $("#filterlist-by-url-wrap");
-    const elements = $$("*", wrapper);
-    for (const element of elements)
-    {
-      element.addEventListener("blur", filtersBlur);
-      element.addEventListener("keydown", filtersKeydown);
-    }
+    wrapper.addEventListener("blur", filtersBlur, true);
+    wrapper.addEventListener("keydown", filtersKeydown);
 
     const opener = $('[data-action="open-filterlist-by-url"]', wrapper);
     opener.addEventListener("mousedown", filtersToggle);
@@ -83,7 +79,10 @@ function filtersClose()
 function filtersKeydown(event)
 {
   if (events.key(event) === "Escape" && !isClosed())
+  {
     $('[data-action="open-filterlist-by-url"]').focus();
+    filtersClose();
+  }
 }
 
 function filtersOpen()
