@@ -100,60 +100,6 @@ class IOCircleToggle extends IOElement
       aria-checked="${this.checked}"
       aria-disabled="${this.disabled}"
     >
-      <style>
-      io-circle-toggle .outer-circle,
-      io-circle-toggle .inner-circle,
-      io-circle-toggle .on,
-      io-circle-toggle .off
-      {
-        transition: all 0.5s cubic-bezier(0.8, 0, 0.25, 1);
-      }
-
-      io-circle-toggle .outer-circle
-      {
-        transform: translateX(-32.2px);
-        fill: #585858;
-        stroke-width: 0;
-      }
-
-      io-circle-toggle .inner-circle
-      {
-        transform: translateX(-45.4px);
-      }
-
-      io-circle-toggle[checked] .outer-circle
-      {
-        transform: translateX(-11.4px);
-        fill: #0797E1;
-      }
-
-      io-circle-toggle[checked] .inner-circle
-      {
-        transform: translateX(-11.4px);
-      }
-
-      io-circle-toggle:not([checked]) .on
-      {
-        transform: translateX(12px);
-      }
-
-      io-circle-toggle:not([checked]) .off
-      {
-        transform: translateX(14.8px);
-      }
-
-      io-circle-toggle:focus .outer-circle
-      {
-        stroke: rgba(88, 88, 88, 0.8);
-        stroke-width: 5;
-      }
-
-      io-circle-toggle[checked]:focus .outer-circle
-      {
-        stroke: rgba(6, 136, 203, 0.8);
-        stroke-width: 5;
-      }
-      </style>
       <defs>
         <circle id="${id + "path"}" cx="23" cy="22.4" r="22.4" />
       </defs>
