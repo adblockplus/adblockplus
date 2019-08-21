@@ -20,9 +20,6 @@
 const {isPageWhitelisted} = require("./popup.utils.js");
 const {$} = require("./dom");
 
-// used to keep changes in a queue
-let sentMessage = Promise.resolve();
-
 // remember initial state to better toggle content
 let toggleChecked;
 
@@ -57,17 +54,17 @@ function setupToggle(tab)
     body.classList.toggle("refresh", refresh);
     if (toggle.checked)
     {
-      sentMessage = sentMessage.then(() => browser.runtime.sendMessage({
+      browser.runtime.sendMessage({
         type: "filters.unwhitelist",
         tab
-      }));
+      });
     }
     else
     {
-      sentMessage = sentMessage.then(() => browser.runtime.sendMessage({
+      browser.runtime.sendMessage({
         type: "filters.whitelist",
         tab
-      }));
+      });
     }
   });
 }
