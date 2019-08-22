@@ -1395,6 +1395,12 @@ html[dir="rtl"] #all-filter-lists-table li.show-message .message.error::before
   margin-bottom: 0.8rem;
 }
 
+/* used to ensure its inner popouts are also shown on top */
+#all-filter-lists-table .col5
+{
+  z-index: var(--z-popout);
+}
+
 /*
   Help tab content
 */
