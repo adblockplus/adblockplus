@@ -31,18 +31,6 @@ io-popout
   );
   --content-offset-out: calc(-0.5 * var(--icon-size-outer));
   --content-offset-start: calc(var(--icon-size-outer) + 2 * var(--icon-margin));
-  z-index: var(--z-popout);
-}
-
-/* Ensures that expanded popouts are always shown on top of other popouts */
-io-popout[expanded]
-{
-  /*
-   * We can't use calc() for setting the z-index yet because support for it was
-   * only added in Firefox 57. Therefore we have to hardcode its value for now.
-   * https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/57#Quantum_CSS_notes
-   */
-  z-index: var(--z-popout-active);
 }
 
 io-popout[type="dialog"]
@@ -63,6 +51,41 @@ io-popout:focus
 io-popout > :not(.wrapper)
 {
   display: none;
+}
+
+/*******************************************************************************
+ * Z-Index
+ ******************************************************************************/
+
+/*
+ * z-index on custom elements seem to be ignored, so that
+ * this extra z-index for io-popout > .wrapper is needed to avoid issues
+ */
+io-popout,
+io-popout > .wrapper
+{
+  z-index: var(--z-popout);
+}
+
+/* Ensures that expanded popouts are always shown on top of other popouts */
+io-popout[expanded],
+io-popout[expanded] > .wrapper
+{
+  /*
+   * We can't use calc() for setting the z-index yet because support for it was
+   * only added in Firefox 57. Therefore we have to hardcode its value for now.
+   * https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/57#Quantum_CSS_notes
+   */
+  z-index: var(--z-popout-active);
+}
+
+/*
+ * We need to ensure that any content overlays the anchor pointer or otherwise
+ * its inner half becomes visible when the content's background color changes
+ */
+io-popout > .wrapper > [role] *
+{
+  z-index: 1;
 }
 
 /*******************************************************************************
@@ -248,15 +271,6 @@ io-popout > .wrapper > [role="menubar"]
 io-popout > .wrapper > [role="tooltip"]
 {
   width: 15rem;
-}
-
-/*
- * We need to ensure that any content overlays the anchor pointer or otherwise
- * its inner half becomes visible when the content's background color changes
- */
-io-popout > .wrapper > [role] *
-{
-  z-index: 1;
 }
 
 io-popout .close
