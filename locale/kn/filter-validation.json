@@ -1,9 +1,14 @@
 {
   "line": {
-    "message": "ಲೈನ್ $number$",
+    "message": "ಲೈನ್ $number$: $message$",
     "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
       "number": {
-        "content": "$1"
+        "content": "$1",
+        "example": "42"
       }
     }
   },

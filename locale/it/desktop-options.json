@@ -29,15 +29,6 @@
   "options_advanced_description": {
     "message": "Personalizza Adblock Plus, aggiungi o rimuovi gli elenchi di filtri, crea e mantieni i tuoi elenchi di filtri"
   },
-  "options_anti_cv_header": {
-    "message": "Anti circonvenzione"
-  },
-  "options_anti_cv_title": {
-    "message": "Elenco di filtri anti circonvenzione di ABP"
-  },
-  "options_anti_cv_tooltip": {
-    "message": "Questi filtri consentono di prevenire la circonvenzione, ovvero le tecniche atte a forzare la distribuzione di annunci agli utenti che hanno installato un software per il blocco degli annunci. Questi filtri consentono di gestire la circonvenzione degli annunci e il relativo monitoraggio."
-  },
   "options_builtin_filterList_add": {
     "message": "Aggiungere elenchi di filtri integrati"
   },
@@ -83,15 +74,6 @@
   "options_customize_showNotifications_tooltip": {
     "message": "Consenti le notifiche di Adblock Plus (verranno sempre visualizzate quelle relative a problemi critici di prestazioni)."
   },
-  "options_dialog_about_copyright": {
-    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
-    "placeholders": {
-      "currentYear": {
-        "content": "$1",
-        "example": "2017"
-      }
-    }
-  },
   "options_dialog_about_title": {
     "message": "Informazioni su Adblock Plus"
   },
@@ -111,7 +93,7 @@
     "message": "URL dell'elenco di filtri"
   },
   "options_dialog_import_subscription_location_error": {
-    "message": "Inserisci una URL valida"
+    "message": "Inserisci un URL valido"
   },
   "options_dialog_import_title": {
     "message": "Aggiungere un elenco di filtri"
@@ -179,12 +161,6 @@
   "options_filterList_source": {
     "message": "Fonte"
   },
-  "options_filterList_state_active": {
-    "message": "Attivo"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Non attivo"
-  },
   "options_filterList_title": {
     "message": "Elenchi di filtri"
   },
@@ -240,19 +216,6 @@
   },
   "options_language_header": {
     "message": "Lingua"
-  },
-  "options_language_join": {
-    "message": "$lang1$, $lang2$",
-    "placeholders": {
-      "lang1": {
-        "content": "$1",
-        "example": "čeština"
-      },
-      "lang2": {
-        "content": "$2",
-        "example": "slovenčina"
-      }
-    }
   },
   "options_language_tip": {
     "message": "<strong>SUGGERIMENTO:</strong> Seleziona solo le lingue di cui hai bisogno. La selezione di un numero maggiore di lingue rallenta l'applicazione e, di conseguenza, la tua velocità di navigazione."
@@ -367,8 +330,7 @@
     "message": "ad esempio $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

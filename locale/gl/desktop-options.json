@@ -26,9 +26,6 @@
   "options_filterList_lastDownload_invalidURL": {
     "message": "Erro: enderezo non válido"
   },
-  "options_filterList_state_disabled": {
-    "message": "Desactivado"
-  },
   "options_filterList_title": {
     "message": "Listaxes de filtros"
   },

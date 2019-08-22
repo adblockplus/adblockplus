@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "Открыть все ссылки из этого уведомления"
   },
-  "notification_with_buttons": {
-    "message": "Щёлкните «OK», чтобы открыть все ссылки в этом уведомлении."
-  },
   "notification_without_buttons": {
     "message": "Щелкните по уведомлению, чтобы открыть все ссылки."
   },

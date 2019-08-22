@@ -8,15 +8,6 @@
   "mops_action_cancel": {
     "message": "ยกเลิก"
   },
-  "mops_enabled_label": {
-    "message": "เปิดใช้งาน Adblock Plus ใน <strong>$domain$</strong>",
-    "placeholders": {
-      "domain": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "mops_filterlist_add": {
     "message": "เพิ่มรายการตัวกรอง"
   },

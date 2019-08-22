@@ -11,19 +11,16 @@
   "filter_unknown_option": {
     "message": "Aɣewwaṛ n imsizdeg arussin"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ nmačči d amsefran CSS ameɣtu",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
-    "message": "Izirig $number$",
+    "message": "Izirig $number$: $message$",
     "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
       "number": {
-        "content": "$1"
+        "content": "$1",
+        "example": "42"
       }
     }
   },

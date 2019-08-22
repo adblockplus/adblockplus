@@ -23,15 +23,6 @@
   "firstRun_fair_title": {
     "message": "合理使用"
   },
-  "firstRun_footer_copyright": {
-    "message": "版权所有© $year$ 保留所有权利。Adblock Plus® 是 <a0>eyeo GmbH</a0> 的注册商标。",
-    "placeholders": {
-      "year": {
-        "content": "$1",
-        "example": "1984"
-      }
-    }
-  },
   "firstRun_subtitle": {
     "message": "您已经成功控制您的浏览器"
   },

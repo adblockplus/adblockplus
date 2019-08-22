@@ -8,15 +8,6 @@
   "mops_action_cancel": {
     "message": "لغو"
   },
-  "mops_enabled_label": {
-    "message": "Adblock Plus را در <strong>$domain$</strong> فعال کنید",
-    "placeholders": {
-      "domain": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "mops_error_url": {
     "message": "یک آدرس معتبر وارد کنید"
   },

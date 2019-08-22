@@ -20,15 +20,6 @@
   "options_advanced_description": {
     "message": "Seadista Adblock Plusi, lisa või eemalda filtrite nimekirju, loo või halda oma enda filtrite nimekirju"
   },
-  "options_anti_cv_header": {
-    "message": "Möödahiilimisvastased"
-  },
-  "options_anti_cv_title": {
-    "message": "ABP möödahiilimisvastaste filtrite loend"
-  },
-  "options_anti_cv_tooltip": {
-    "message": "See filtrite loend töötab möödahiilimiste vastu (nt. viisid reklaamide pealesurumiseks reklaame blokeerivatele kasutajatele). Need filtrid on suunatud nii kõrvalehiilivatele reklaamidele kui nendega seotud jälgimisele."
-  },
   "options_close": {
     "message": "sulge"
   },
@@ -166,12 +157,6 @@
   },
   "options_filterList_source": {
     "message": "allikas"
-  },
-  "options_filterList_state_active": {
-    "message": "Aktiivne"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Mitteaktiivne"
   },
   "options_filterList_title": {
     "message": "Filtrite nimekirjad"
@@ -323,21 +308,11 @@
   "options_whitelist_empty_2": {
     "message": "Siin näidatakse veebisaite, mida sa usaldad ja lubad neil reklaame näidata."
   },
-  "options_whitelist_notification": {
-    "message": "\"$website$\" lisati lubatute nimekirja.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "options_whitelist_placeholder_example": {
     "message": "nt. $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

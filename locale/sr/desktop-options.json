@@ -20,12 +20,6 @@
   "options_advanced_description": {
     "message": "Прилагодите Adblock Plus, додајте или уклоните листе филтера, направите или одржавајте своје сопствене листе филтера"
   },
-  "options_anti_cv_header": {
-    "message": "Антизаобилажење"
-  },
-  "options_anti_cv_title": {
-    "message": "Листа филтера антизаобилажења ABP-а"
-  },
   "options_close": {
     "message": "затвори"
   },
@@ -149,12 +143,6 @@
   "options_filterList_source": {
     "message": "извор"
   },
-  "options_filterList_state_active": {
-    "message": "Активан"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Онемогућено"
-  },
   "options_filterList_title": {
     "message": "Листе филтера"
   },
@@ -268,21 +256,11 @@
   "options_whitelist_empty_2": {
     "message": "Овде ће бити приказани веб-сајтови којима верујете и на којима желите да дозволите огласе."
   },
-  "options_whitelist_notification": {
-    "message": "Веб-сајт „$website$” је додат на белу листу.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "options_whitelist_placeholder_example": {
     "message": "нпр. $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

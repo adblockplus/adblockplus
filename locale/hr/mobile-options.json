@@ -8,15 +8,6 @@
   "mops_action_cancel": {
     "message": "Poništi"
   },
-  "mops_enabled_label": {
-    "message": "Omogući Adblock Plus na <strong>$domain$</strong>",
-    "placeholders": {
-      "domain": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "mops_filterlist_add": {
     "message": "Dodaj popis filtera"
   },

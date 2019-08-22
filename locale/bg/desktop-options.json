@@ -20,15 +20,6 @@
   "options_advanced_description": {
     "message": "Нагласяване на Adblock Plus, добавяне или премахване на филтри, създаване и поддържане на собствени филтри."
   },
-  "options_anti_cv_header": {
-    "message": "Противозаобикаляне"
-  },
-  "options_anti_cv_title": {
-    "message": "Противозаобикалящ филтър на ABP"
-  },
-  "options_anti_cv_tooltip": {
-    "message": "Филтърът се ползва срещу заобикаляне (т.е. техники за натрапване на реклами на потребители на блокери). Тези филтри се справят със заобикалящите реклами, както и свързаното с тях проследяване."
-  },
   "options_close": {
     "message": "затвори"
   },
@@ -166,12 +157,6 @@
   },
   "options_filterList_source": {
     "message": "източник"
-  },
-  "options_filterList_state_active": {
-    "message": "Действащ"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Недействащ"
   },
   "options_filterList_title": {
     "message": "Филтри"
@@ -323,21 +308,11 @@
   "options_whitelist_empty_2": {
     "message": "Тук са доверените и сайтовете, на които сте позволил да показват реклама."
   },
-  "options_whitelist_notification": {
-    "message": "„$website$“ е изключен.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "options_whitelist_placeholder_example": {
     "message": "например $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

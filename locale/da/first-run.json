@@ -12,7 +12,7 @@
     "message": "Adblock Browser-app"
   },
   "firstRun_control_description": {
-    "message": "Som standard vil du få vist nogle ikke-påtrængende annoncer, der overholder <a0>strenge krav</a0>. Vi identificerer disse annoncer som acceptable annoncer. Foretrækker du at blokere alle annoncer? <a1>Slå Acceptable annoncer</a1> til under <a2>Indstillinger</a2>."
+    "message": "Som standard vil du få vist nogle ikke-påtrængende annoncer, der overholder <a0>strenge krav</a0>. Vi identificerer disse annoncer som Acceptable annoncer. Foretrækker du at blokere alle annoncer? <a1>Slå Acceptable annoncer</a1> til under <a2>Indstillinger</a2>."
   },
   "firstRun_control_title": {
     "message": "Du har kontrollen"
@@ -22,15 +22,6 @@
   },
   "firstRun_fair_title": {
     "message": "Forsvarlig brug"
-  },
-  "firstRun_footer_copyright": {
-    "message": "Copyright © $year$ Alle rettigheder forbeholdes. Adblock Plus® er et registreret varemærke tilhørende <a0>eyeo GmbH</a0>.",
-    "placeholders": {
-      "year": {
-        "content": "$1",
-        "example": "1984"
-      }
-    }
   },
   "firstRun_subtitle": {
     "message": "Du har lige taget kontrollen over din browser."
@@ -54,6 +45,6 @@
     "message": "Geninstallér Adblock Plus via <a>adblockplus.org</a>."
   },
   "firstRun_warning_reinitialized": {
-    "message": "Et problem har tilsyneladende fjernet alle filtre, og det var ikke muligt at gendanne en sikkerhedskopi. Dine filtre og indstillinger for acceptable annoncer er derfor blevet nulstillet. Kontrollér dine filterlister og indstillinger for acceptable annoncer under <a>Adblock Plus-indstillinger</a>."
+    "message": "Et problem har tilsyneladende fjernet alle filtre, og det var ikke muligt at gendanne en sikkerhedskopi. Dine filtre og indstillinger for Acceptable annoncer er derfor blevet nulstillet. Kontrollér dine filterlister og indstillinger for Acceptable annoncer under <a>Adblock Plus-indstillinger</a>."
   }
 }

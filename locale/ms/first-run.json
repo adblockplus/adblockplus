@@ -23,15 +23,6 @@
   "firstRun_fair_title": {
     "message": "Guna dengan baik"
   },
-  "firstRun_footer_copyright": {
-    "message": "Hak cipta © $year$ Hak cipta terpelihara. Adblock Plus® adalah tanda dagangan berdaftar <a0>eyeo GmbH</a0>.",
-    "placeholders": {
-      "year": {
-        "content": "$1",
-        "example": "1984"
-      }
-    }
-  },
   "firstRun_subtitle": {
     "message": "Anda yang mengawal pelayar anda."
   },

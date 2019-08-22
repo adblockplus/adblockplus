@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "打開此通知的所有連結"
   },
-  "notification_with_buttons": {
-    "message": "點選＂確定＂打開通知中的所有連結。"
-  },
   "notification_without_buttons": {
     "message": "點擊通知打開它裡面的所有鏈接"
   },

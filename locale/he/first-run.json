@@ -23,15 +23,6 @@
   "firstRun_fair_title": {
     "message": "שימוש הוגן"
   },
-  "firstRun_footer_copyright": {
-    "message": "זכות יוצרים © $year$ כל הזכויות שמורות. Adblock Plus® הוא סימן מסחרי רשום של <a0>eyeo GmbH</a0>.",
-    "placeholders": {
-      "year": {
-        "content": "$1",
-        "example": "1984"
-      }
-    }
-  },
   "firstRun_subtitle": {
     "message": "הרגע לקחת שליטה בדפדפן שלך."
   },

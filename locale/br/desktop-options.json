@@ -20,9 +20,6 @@
   "options_filterList_lastDownload_invalidURL": {
     "message": "Fazi, n'eo ket ur chomlec'h"
   },
-  "options_filterList_state_disabled": {
-    "message": "Marvaat"
-  },
   "options_filterList_title": {
     "message": "Filter lists"
   }

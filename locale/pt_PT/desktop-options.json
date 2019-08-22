@@ -20,9 +20,6 @@
   "options_advanced_description": {
     "message": "Personalize o Adblock Plus, adicione ou remova listas de filtros, crie e mantenha as suas próprias listas de filtros"
   },
-  "options_anti_cv_header": {
-    "message": "Anti-circunvecção"
-  },
   "options_close": {
     "message": "FECHAR"
   },
@@ -64,15 +61,6 @@
   },
   "options_customize_showNotifications_tooltip": {
     "message": "Permitir notificações do Adblock Plus (notificações relacionadas com problemas críticos de desempenho serão mostradas sempre)."
-  },
-  "options_dialog_about_copyright": {
-    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
-    "placeholders": {
-      "currentYear": {
-        "content": "$1",
-        "example": "2017"
-      }
-    }
   },
   "options_dialog_about_title": {
     "message": "Sobre o Adblock Plus"
@@ -160,12 +148,6 @@
   },
   "options_filterList_source": {
     "message": "Fonte"
-  },
-  "options_filterList_state_active": {
-    "message": "Ativo"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Inativo"
   },
   "options_filterList_title": {
     "message": "Listas de filtros"
@@ -302,20 +284,13 @@
     "message": "Os sites Web fidedignos e nos quais pretende permitir anúncios serão apresentados aqui."
   },
   "options_whitelist_notification": {
-    "message": "$website$ foi colocado na lista branca.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
+    "message": "Website foi colocado na lista branca."
   },
   "options_whitelist_placeholder_example": {
     "message": "p. ex. $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

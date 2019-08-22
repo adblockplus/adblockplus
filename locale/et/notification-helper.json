@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "Ava kõik selle teate lingid"
   },
-  "notification_with_buttons": {
-    "message": "Kõikide linkide avamiseks klõpsake 'OK'."
-  },
   "notification_without_buttons": {
     "message": "Klõpsake teatel, et avada kõik sellel olevad lingid."
   },

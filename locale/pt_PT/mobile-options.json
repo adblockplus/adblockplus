@@ -9,13 +9,7 @@
     "message": "CANCELAR"
   },
   "mops_enabled_label": {
-    "message": "Ativar o Adblock Plus no <strong>$domain$</strong>",
-    "placeholders": {
-      "domain": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
+    "message": "Bloqueio de anúncios ativo:"
   },
   "mops_filterlist_add": {
     "message": "Adicionar uma lista de filtros"

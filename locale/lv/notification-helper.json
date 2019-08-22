@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "Atvērt visas paziņojumā iekļautās saites"
   },
-  "notification_with_buttons": {
-    "message": "Noklikšķiniet \"OK\", lai atvērtu visas saites šajā paziņojumā."
-  },
   "notification_without_buttons": {
     "message": "Noklikšķiniet uz paziņojuma, lai atvērtu visas saites tajā."
   },

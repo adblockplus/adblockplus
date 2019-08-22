@@ -8,15 +8,6 @@
   "mops_action_cancel": {
     "message": "Скасувати"
   },
-  "mops_enabled_label": {
-    "message": "Включити Adblock Plus <strong>$domain$</strong>",
-    "placeholders": {
-      "domain": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "mops_error_url": {
     "message": "Ввести дійсну URL"
   },

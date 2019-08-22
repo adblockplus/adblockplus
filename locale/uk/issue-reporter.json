@@ -23,6 +23,9 @@
   "issueReporter_comment_label": {
     "message": "Коментар (необов’язково):"
   },
+  "issueReporter_config_label": {
+    "message": "Включити інформацію про налаштування мого браузера та перелік активних розширень, які я використовую."
+  },
   "issueReporter_confirmationMessage": {
     "message": "Звіт було записано. Ви можете переглянути його за посиланням:"
   },

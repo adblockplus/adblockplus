@@ -29,15 +29,6 @@
   "options_advanced_description": {
     "message": "Passe Adblock Plus an, füge Filterlisten hinzu oder entferne sie, erstelle und pflege eigene Filterlisten"
   },
-  "options_anti_cv_header": {
-    "message": "Umgehungsschutz"
-  },
-  "options_anti_cv_title": {
-    "message": "ABP-Filterliste für Umgehungsschutz"
-  },
-  "options_anti_cv_tooltip": {
-    "message": "Diese Filterliste wirkt der Umgehung entgegen (d. h. Techniken zur Erzwingung von Werbungen für werbeblockierende Benutzer). Dieser Filter berücksichtigt die Umgehung der Blockierung von Werbung und ein damit verbundenes Tracking."
-  },
   "options_builtin_filterList_add": {
     "message": "Integrierte Filterlisten hinzufügen"
   },
@@ -82,15 +73,6 @@
   },
   "options_customize_showNotifications_tooltip": {
     "message": "Benachrichtigungen von Adblock Plus zulassen (Benachrichtigungen in Bezug auf kritische Leistungsprobleme werden immer angezeigt)."
-  },
-  "options_dialog_about_copyright": {
-    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
-    "placeholders": {
-      "currentYear": {
-        "content": "$1",
-        "example": "2017"
-      }
-    }
   },
   "options_dialog_about_title": {
     "message": "Informationen zu Adblock Plus"
@@ -179,12 +161,6 @@
   "options_filterList_source": {
     "message": "Quelle"
   },
-  "options_filterList_state_active": {
-    "message": "Aktiv"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Inaktiv"
-  },
   "options_filterList_title": {
     "message": "Filterlisten"
   },
@@ -243,19 +219,6 @@
   },
   "options_language_header": {
     "message": "Sprache"
-  },
-  "options_language_join": {
-    "message": "$lang1$, $lang2$",
-    "placeholders": {
-      "lang1": {
-        "content": "$1",
-        "example": "čeština"
-      },
-      "lang2": {
-        "content": "$2",
-        "example": "slovenčina"
-      }
-    }
   },
   "options_language_tip": {
     "message": "<strong>TIPP:</strong> Wähle nur die Sprachen aus, die du brauchst. Wenn du mehrere Sprachen wählst, verlangsamt das Adblock Plus und somit die Geschwindigkeit deines Browsers."
@@ -370,8 +333,7 @@
     "message": "z.B. $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

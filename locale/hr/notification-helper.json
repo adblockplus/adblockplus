@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "Otvori sve linkove iz ove obavijesti"
   },
-  "notification_with_buttons": {
-    "message": "Kliknite 'U redu' za otvaranje svih poveznica u ovoj obavijesti."
-  },
   "notification_without_buttons": {
     "message": "Kliknite na obavijest za otvaranje svih poveznica koje sadrži."
   },

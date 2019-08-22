@@ -29,15 +29,6 @@
   "options_advanced_description": {
     "message": "Настраивайте Adblock Plus, добавляйте или удаляйте списки фильтров, создавайте и администрируйте собственные списки фильтров."
   },
-  "options_anti_cv_header": {
-    "message": "Антиобход"
-  },
-  "options_anti_cv_title": {
-    "message": "Список фильтров для антиобхода ABP"
-  },
-  "options_anti_cv_tooltip": {
-    "message": "Данный список фильтров позволяет бороться с обходами (то есть методами продвижения рекламы пользователям, которые ее блокируют). Эти фильтры распространяются на рекламу, внедряемую посредством обхода, а также на соответствующие службы отслеживания."
-  },
   "options_builtin_filterList_add": {
     "message": "Добавить списки встроенных фильтров"
   },
@@ -60,7 +51,7 @@
     "message": "Мой список фильтров"
   },
   "options_customize_blockElement": {
-    "message": "Показать пункт контекстного меню «Блокировать элемент»"
+    "message": "Показывать «Заблокировать элемент» в контекстном меню"
   },
   "options_customize_blockElement_tooltip": {
     "message": "Временная блокировка раздражающих элементов на сайте, например изображений или анимационных слайд-шоу."
@@ -179,12 +170,6 @@
   "options_filterList_source": {
     "message": "Источник"
   },
-  "options_filterList_state_active": {
-    "message": "Активен"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Неактивный"
-  },
   "options_filterList_title": {
     "message": "Списки фильтров"
   },
@@ -240,19 +225,6 @@
   },
   "options_language_header": {
     "message": "Язык"
-  },
-  "options_language_join": {
-    "message": "$lang1$, $lang2$",
-    "placeholders": {
-      "lang1": {
-        "content": "$1",
-        "example": "čeština"
-      },
-      "lang2": {
-        "content": "$2",
-        "example": "slovenčina"
-      }
-    }
   },
   "options_language_tip": {
     "message": "<strong>СОВЕТ:</strong> Выберите только нужные языки. При выборе чрезмерного количества языков блокиратор рекламы станет работать медленнее и, следовательно, браузер тоже."
@@ -367,8 +339,7 @@
     "message": "например, $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

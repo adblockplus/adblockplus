@@ -11,19 +11,16 @@
   "filter_unknown_option": {
     "message": "未知的過濾器選項"
   },
-  "invalid_css_selector": {
-    "message": "$selector$不是一個有效的CSS選擇器",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
-    "message": "行$number$",
+    "message": "行 $number$ ：$message$",
     "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
       "number": {
-        "content": "$1"
+        "content": "$1",
+        "example": "42"
       }
     }
   },

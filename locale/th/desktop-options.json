@@ -53,15 +53,6 @@
   "options_customize_showNotifications": {
     "message": "แสดงการแจ้งเตือนที่เป็นประโยชน์"
   },
-  "options_dialog_about_copyright": {
-    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
-    "placeholders": {
-      "currentYear": {
-        "content": "$1",
-        "example": "2017"
-      }
-    }
-  },
   "options_dialog_about_title": {
     "message": "เกี่ยวกับ Adblock Plus"
   },
@@ -145,12 +136,6 @@
   },
   "options_filterList_source": {
     "message": "แหล่งที่มา"
-  },
-  "options_filterList_state_active": {
-    "message": "ใช้งานอยู่"
-  },
-  "options_filterList_state_disabled": {
-    "message": "ปิดใช้งาน"
   },
   "options_filterList_title": {
     "message": "รายการตัวกรอง"
@@ -291,21 +276,11 @@
   "options_whitelist_empty_2": {
     "message": "เว็บไซต์ที่คุณไว้วางใจและต้องการให้แสดงโฆษณาจะแสดงอยู่ที่นี่"
   },
-  "options_whitelist_notification": {
-    "message": "$website$ อยู่ในรายการปลอดภัย",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "options_whitelist_placeholder_example": {
     "message": "เช่น $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

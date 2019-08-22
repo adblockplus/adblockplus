@@ -1,9 +1,12 @@
 {
+  "options_aa_opt_out_survey_no": {
+    "message": "Alla, tanemmirt"
+  },
   "options_acceptableAds_ads_label": {
     "message": "Sireg adellel yettwaqbalen"
   },
   "options_acceptableAds_header": {
-    "message": "Adell yettwaqbalen"
+    "message": "Adellel yettwaqbalen"
   },
   "options_close": {
     "message": "mdel"
@@ -56,6 +59,9 @@
   "options_email": {
     "message": "Imayl:"
   },
+  "options_english": {
+    "message": "Taglizit"
+  },
   "options_filterList_add": {
     "message": "Rnu tabdart n imsizdeg tamaynut"
   },
@@ -94,12 +100,6 @@
   },
   "options_filterList_source": {
     "message": "aɣbalu"
-  },
-  "options_filterList_state_active": {
-    "message": "Urmid"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Insa"
   },
   "options_filterList_title": {
     "message": "Tibdarin n imsizdeg"
@@ -164,6 +164,9 @@
   "options_tab_whitelist": {
     "message": "Ismal n tebdarin timellalin"
   },
+  "options_tracking_warning_acknowledgment": {
+    "message": "IH, awi-t"
+  },
   "options_whitelist_add": {
     "message": "Rnu asmel web"
   },
@@ -171,8 +174,7 @@
     "message": "m.d. $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

@@ -1,0 +1,53 @@
+{
+  "day1_blockelement_description": {
+    "message": "Bloquegeu-los amb la funció «Bloqueja l'element» de l'Adblock Plus."
+  },
+  "day1_blockelement_more": {
+    "message": "Aprèn com"
+  },
+  "day1_blockelement_screenshot": {
+    "message": "Exemple d'icona emergent amb el botó «Bloqueja l'element» ressaltat."
+  },
+  "day1_blockelement_title": {
+    "message": "Us desanima la secció de comentaris de les pàgines web?"
+  },
+  "day1_community_contact": {
+    "message": "Contacteu-nos!"
+  },
+  "day1_community_contact_subject": {
+    "message": "Necessito ajuda!"
+  },
+  "day1_community_description_1": {
+    "message": "Com a projecte de codi obert, depenem d'usuaris per ajudar-nos a millorar la vostra experiència de bloqueig d'anuncis."
+  },
+  "day1_community_description_2": {
+    "message": "Quines funcions us agradaria veure? Què podem fer millor? L'Adblock Plus fa que alguns llocs web funcionin malament?"
+  },
+  "day1_community_title": {
+    "message": "Uniu-vos a la comunitat d'Adblock Plus"
+  },
+  "day1_header_more": {
+    "message": "Aprèn més sobre la publicitat maliciosa"
+  },
+  "day1_header_title": {
+    "message": "L'Adblock Plus <strong>ha bloquejat <em0>$ads$ anuncis</em0> la <em1>darrera mitja hora</em1>,</strong> alguns dels quals podrien contenir codi maliciós",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_message": {
+    "message": "Això és una gran quantitat d'anuncis molestos. <a>Descobriu què més es pot bloquejar amb l'Adblock Plus.</a>"
+  },
+  "notification_day1_title": {
+    "message": "Heu bloquejat $ads$ anuncis!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

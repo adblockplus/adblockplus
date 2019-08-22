@@ -17,19 +17,16 @@
   "filter_unknown_option": {
     "message": "Nežinoma filtro parinktis"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ nėra tinkamas CSS selektorius",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
-    "message": "Eilutė $number$",
+    "message": "Eilutė $number$: $message$",
     "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
       "number": {
-        "content": "$1"
+        "content": "$1",
+        "example": "42"
       }
     }
   },

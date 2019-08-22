@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "Öppna alla länkar från denna notifikationen"
   },
-  "notification_with_buttons": {
-    "message": "Klicka på 'OK' för att öppna alla länkar i detta meddelande."
-  },
   "notification_without_buttons": {
     "message": "Klicka på meddelandet för att öppna alla länkar i det."
   },

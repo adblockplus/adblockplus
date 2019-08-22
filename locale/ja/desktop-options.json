@@ -29,15 +29,6 @@
   "options_advanced_description": {
     "message": "Adblock Plus のカスタマイズ、フィルターリストの追加または削除、自分用のフィルターリスト作成またはメンテナンスを行います。"
   },
-  "options_anti_cv_header": {
-    "message": "回避対策"
-  },
-  "options_anti_cv_title": {
-    "message": "ABP 回避対策フィルタリスト"
-  },
-  "options_anti_cv_tooltip": {
-    "message": "このフィルタリストは、ブロック回避（広告ブロック使用者に広告を強制表示する技術）に対して機能します。これらのフィルタはブロックを回避する広告や関連するトラッキングに対処します。"
-  },
   "options_builtin_filterList_add": {
     "message": "組み込みフィルターリストを追加"
   },
@@ -60,7 +51,7 @@
     "message": "マイ フィルターリスト"
   },
   "options_customize_blockElement": {
-    "message": "右クリックでメニュー項目、[要素のブロック] を表示させます"
+    "message": "右クリックでメニュー項目、「要素をブロック」を表示させます"
   },
   "options_customize_blockElement_tooltip": {
     "message": "ウェブページで気障りな項目を一時的にブロックします（画像またはアニメーション表示のスライドショーなど）。"
@@ -82,15 +73,6 @@
   },
   "options_customize_showNotifications_tooltip": {
     "message": "Adblock Plus (重要なパフォーマンス上の問題は常に表示される) からの通知を許可します。"
-  },
-  "options_dialog_about_copyright": {
-    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
-    "placeholders": {
-      "currentYear": {
-        "content": "$1",
-        "example": "2017"
-      }
-    }
   },
   "options_dialog_about_title": {
     "message": "Adblock Plus について"
@@ -178,12 +160,6 @@
   },
   "options_filterList_source": {
     "message": "ソース"
-  },
-  "options_filterList_state_active": {
-    "message": "アクティブ"
-  },
-  "options_filterList_state_disabled": {
-    "message": "無効"
   },
   "options_filterList_title": {
     "message": "フィルターリスト"
@@ -359,8 +335,7 @@
     "message": "例: $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

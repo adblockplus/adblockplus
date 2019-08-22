@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "Deschide toate link-urile din această notificare"
   },
-  "notification_with_buttons": {
-    "message": "Clic 'OK' pentru a deschide toate link-urile în această notificare."
-  },
   "notification_without_buttons": {
     "message": "Clic pe notificare pentru a deschide toate link-urile incluse în ea."
   },

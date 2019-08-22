@@ -23,15 +23,6 @@
   "firstRun_fair_title": {
     "message": "إستخدام عادل"
   },
-  "firstRun_footer_copyright": {
-    "message": "حقوق الطبع والنشر © $year$ جميع الحقوق محفوظة. Adblock Plus® هو علامة تجارية مسجلة لـ <a0>eyeo GmbH</a0>.",
-    "placeholders": {
-      "year": {
-        "content": "$1",
-        "example": "1984"
-      }
-    }
-  },
   "firstRun_subtitle": {
     "message": "لقد اتخذت للتو السيطرة على المتصفح الخاص بك."
   },

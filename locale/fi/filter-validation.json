@@ -14,19 +14,16 @@
   "filter_unknown_option": {
     "message": "Tuntematon suodatusvaihtoehto"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ ei ole kelvollinen CSS-valitsin",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
-    "message": "Rivi $number$",
+    "message": "Rivi $number$: $message$",
     "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
       "number": {
-        "content": "$1"
+        "content": "$1",
+        "example": "42"
       }
     }
   },

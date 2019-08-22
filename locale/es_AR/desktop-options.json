@@ -53,15 +53,6 @@
   "options_customize_showNotifications": {
     "message": "Mostrar avisos útiles"
   },
-  "options_dialog_about_copyright": {
-    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
-    "placeholders": {
-      "currentYear": {
-        "content": "$1",
-        "example": "2017"
-      }
-    }
-  },
   "options_dialog_about_title": {
     "message": "Acerca de Adblock Plus"
   },
@@ -148,12 +139,6 @@
   },
   "options_filterList_source": {
     "message": "Fuente"
-  },
-  "options_filterList_state_active": {
-    "message": "Activada"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Desactivada"
   },
   "options_filterList_title": {
     "message": "Listas de filtros"
@@ -295,20 +280,13 @@
     "message": "Las páginas web en las que confías y deseas permitir anuncios se mostrarán aquí."
   },
   "options_whitelist_notification": {
-    "message": "\"$website$\" ha sido añadida a la lista blanca.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
+    "message": "La página web ha sido añadida a la lista blanca."
   },
   "options_whitelist_placeholder_example": {
     "message": "p.ej. $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "Atidaryti visas šio pranešimo nuorodas"
   },
-  "notification_with_buttons": {
-    "message": "Paspauskite „Gerai“ ir bus atvertos visos šio pranešimo nuorodos."
-  },
   "notification_without_buttons": {
     "message": "Paspauskite ant pranešimo ir bus atvertos visos nuorodos jame."
   },

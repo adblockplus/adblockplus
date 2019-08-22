@@ -20,19 +20,16 @@
   "filter_unknown_option": {
     "message": "Невідома опція фільтра"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ не є припустимим CSS-селектором",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
-    "message": "Рядок $number$",
+    "message": "Рядок $number$: $message$",
     "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
       "number": {
-        "content": "$1"
+        "content": "$1",
+        "example": "42"
       }
     }
   },

@@ -152,12 +152,6 @@
   "options_filterList_source": {
     "message": "zdroj"
   },
-  "options_filterList_state_active": {
-    "message": "Aktívny"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Vypnutý"
-  },
   "options_filterList_title": {
     "message": "Zoznamy filtrov"
   },
@@ -213,7 +207,7 @@
     "message": "Ďalšie filtre"
   },
   "options_more_filters_note": {
-    "message": "<strong> Poznámka: </strong> Zoznamy filtrov tretích strán by ste mali používať iba od autorov, ktorým dôverujete."
+    "message": "<strong>Poznámka:</strong> Zoznamy filtrov tretích strán by ste mali používať iba od autorov, ktorým dôverujete."
   },
   "options_new_label": {
     "message": "Nový"
@@ -300,21 +294,11 @@
   "options_whitelist_empty_2": {
     "message": "Webové stránky, ktorým dôverujete a ktorým chcete povoliť reklamy, sa zobrazia tu."
   },
-  "options_whitelist_notification": {
-    "message": "\"$website$\" bola zaradená na bielu listinu.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "options_whitelist_placeholder_example": {
     "message": "napr. $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

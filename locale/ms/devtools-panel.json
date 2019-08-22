@@ -45,7 +45,17 @@
     "message": "Minta"
   },
   "devtools_request_url": {
-    "message": "<a0></a0> ditulis semula kepada <a1></a1>"
+    "message": "<a0>$original$</a0> ditulis semula kepada <a1>$rewritten$</a1>",
+    "placeholders": {
+      "original": {
+        "content": "$1",
+        "example": "http://example.com/foo"
+      },
+      "rewritten": {
+        "content": "$2",
+        "example": "http://example.com/bar"
+      }
+    }
   },
   "devtools_type_title": {
     "message": "Jenis"

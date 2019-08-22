@@ -20,14 +20,6 @@
   "filter_unknown_option": {
     "message": "Onbekende filteroptie"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ is geen geldige CSS-selector",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
     "message": "Regel $number$: $message$",
     "placeholders": {

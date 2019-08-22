@@ -20,19 +20,16 @@
   "filter_unknown_option": {
     "message": "אפשרות מסנן לא ידועה"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ איננו בורר CSS תקף",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
-    "message": "שורה $number$",
+    "message": "שורה $number$: $message$",
     "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
       "number": {
-        "content": "$1"
+        "content": "$1",
+        "example": "42"
       }
     }
   },

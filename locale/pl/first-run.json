@@ -23,15 +23,6 @@
   "firstRun_fair_title": {
     "message": "Użytkowanie fair"
   },
-  "firstRun_footer_copyright": {
-    "message": "Copyright © $year$ Wszelkie prawa zastrzeżone. Adblock Plus® jest zarejestrowanym znakiem towarowym <a0>eyeo GmbH</a0>.",
-    "placeholders": {
-      "year": {
-        "content": "$1",
-        "example": "1984"
-      }
-    }
-  },
   "firstRun_subtitle": {
     "message": "Masz pełną kontrolę nad przeglądarką"
   },

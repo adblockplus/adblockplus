@@ -20,19 +20,16 @@
   "filter_unknown_option": {
     "message": "Ukjent filteralternativ"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ er ikke en gyldig CSS-velger",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
-    "message": "Linje $number$",
+    "message": "Linje $number$: $message$",
     "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
       "number": {
-        "content": "$1"
+        "content": "$1",
+        "example": "42"
       }
     }
   },

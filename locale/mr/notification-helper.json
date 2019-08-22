@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "या अधिसूचनेमधील सर्व दुवे उघडा"
   },
-  "notification_with_buttons": {
-    "message": "ठीक' वर टिचकी मारून या अधिसूचनेतील सर्व दुवे उघडा."
-  },
   "overlay_notification_button_no": {
     "message": "नाही"
   },

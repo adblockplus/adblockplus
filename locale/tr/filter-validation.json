@@ -20,14 +20,6 @@
   "filter_unknown_option": {
     "message": "Bilinmeyen süzme seçeneği"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ geçerli bir CSS seçicisi değil",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
     "message": "$number$. satır: $message$",
     "placeholders": {

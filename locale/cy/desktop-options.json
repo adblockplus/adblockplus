@@ -23,9 +23,6 @@
   "options_filterList_lastDownload_invalidURL": {
     "message": "Methwyd, cyfeiriad annilys"
   },
-  "options_filterList_state_disabled": {
-    "message": "Analluogwyd"
-  },
   "options_tab_whitelist": {
     "message": "Gwefannau a wenrestrwyd"
   }

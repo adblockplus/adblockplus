@@ -17,14 +17,6 @@
   "filter_unknown_option": {
     "message": "خيار فلتر غير معروف"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ غير صالح كمحدد لـ CSS",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
     "message": "السطر $number$: $message$",
     "placeholders": {

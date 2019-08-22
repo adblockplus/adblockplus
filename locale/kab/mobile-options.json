@@ -8,15 +8,6 @@
   "mops_action_cancel": {
     "message": "Sefsex"
   },
-  "mops_enabled_label": {
-    "message": "Rmed Adblock Plus ɣef <strong>$domain$</strong>",
-    "placeholders": {
-      "domain": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "mops_filterlist_add": {
     "message": "Rnu tabdart n imsizdeg"
   },

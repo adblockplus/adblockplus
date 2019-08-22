@@ -11,19 +11,16 @@
   "filter_unknown_option": {
     "message": "Iragazki aukera ezezaguna"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ ez da baliozko CSS selektore bat",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
-    "message": "$number$ lerroa",
+    "message": "$number$ lerroa: $message$",
     "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
       "number": {
-        "content": "$1"
+        "content": "$1",
+        "example": "42"
       }
     }
   },

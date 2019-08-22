@@ -14,15 +14,6 @@
   "firstRun_fair_title": {
     "message": "Reilu käyttö"
   },
-  "firstRun_footer_copyright": {
-    "message": "Copyright © $year$ Kaikki oikeudet pidätetään Adblock Plus® on rekisteröity <a0>eyeo GmbH</a0> tavaramerkki.",
-    "placeholders": {
-      "year": {
-        "content": "$1",
-        "example": "1984"
-      }
-    }
-  },
   "firstRun_subtitle": {
     "message": "Otit juuri selaimesi hallinnan."
   },

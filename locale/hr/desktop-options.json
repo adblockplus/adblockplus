@@ -137,12 +137,6 @@
   "options_filterList_source": {
     "message": "izvor"
   },
-  "options_filterList_state_active": {
-    "message": "Aktivno"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Onemogućeno"
-  },
   "options_filterList_title": {
     "message": "Popisi filtra"
   },
@@ -233,21 +227,11 @@
   "options_whitelist_empty_2": {
     "message": "Web stranice koje smatrate pouzdanima i na njima želite omogućiti oglase bit će prikazane ovdje."
   },
-  "options_whitelist_notification": {
-    "message": "\"$website$\" je dodana u popis dopuštenih.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "options_whitelist_placeholder_example": {
     "message": "npr. $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

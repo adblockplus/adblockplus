@@ -29,15 +29,6 @@
   "options_advanced_description": {
     "message": "Personaliza Adblock Plus, añade o elimina listas de filtros, crea y mantén tus propias listas de filtros"
   },
-  "options_anti_cv_header": {
-    "message": "Antielusión"
-  },
-  "options_anti_cv_title": {
-    "message": "Lista de filtros antielusión de ABP"
-  },
-  "options_anti_cv_tooltip": {
-    "message": "Esta lista de filtros funciona contra cualquier práctica de elusión en sitios web (es decir, técnicas para forzar anuncios en aquellos usuarios que cuenten con bloqueo de anuncios). Estos filtros abordan tanto los anuncios que eluden el bloqueo como el seguimiento relacionado."
-  },
   "options_builtin_filterList_add": {
     "message": "Añadir listas de filtros integradas"
   },
@@ -179,12 +170,6 @@
   "options_filterList_source": {
     "message": "Fuente"
   },
-  "options_filterList_state_active": {
-    "message": "Activada"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Inactiva"
-  },
   "options_filterList_title": {
     "message": "Listas de filtros"
   },
@@ -216,6 +201,9 @@
   },
   "options_general_description": {
     "message": "Determina qué muestra y oculta Adblock Plus en páginas web"
+  },
+  "options_generic_error": {
+    "message": "¡Oh no! Algo no ha funcionado. Por favor, inténtalo de nuevo."
   },
   "options_help_center": {
     "message": "¿Buscas respuestas a tus preguntas? <a0>Visita nuestro centro de ayuda (solo en inglés)</a0>"
@@ -367,8 +355,7 @@
     "message": "p.ej. $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

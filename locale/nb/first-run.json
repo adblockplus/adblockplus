@@ -23,15 +23,6 @@
   "firstRun_fair_title": {
     "message": "Rimelig bruk"
   },
-  "firstRun_footer_copyright": {
-    "message": "Opphavsrett © $year$ Alle rettigheter forbeholdt. Adblock Plus® er et registrert varemerke fra <a0>eyeo GmbH</a0>.",
-    "placeholders": {
-      "year": {
-        "content": "$1",
-        "example": "1984"
-      }
-    }
-  },
   "firstRun_subtitle": {
     "message": "Du tok nettopp kontroll over nettleseren din."
   },

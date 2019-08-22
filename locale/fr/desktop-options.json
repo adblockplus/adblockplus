@@ -29,15 +29,6 @@
   "options_advanced_description": {
     "message": "Personnalisez Adblock Plus, ajoutez ou supprimez des listes de filtres, créez et maintenez vos propres listes de filtres"
   },
-  "options_anti_cv_header": {
-    "message": "Anticontournement"
-  },
-  "options_anti_cv_title": {
-    "message": "Liste de filtres anticontournement ABP"
-  },
-  "options_anti_cv_tooltip": {
-    "message": "Cette liste de filtres est efficace contre le contournement (les techniques utilisées pour forcer l’affichage de publicités sur les écrans des personnes utilisant des services de blocage publicitaire). Ces filtres ciblent le contournement et le suivi qui s’y rapporte."
-  },
   "options_builtin_filterList_add": {
     "message": "Ajouter des listes de filtres intégrés"
   },
@@ -82,15 +73,6 @@
   },
   "options_customize_showNotifications_tooltip": {
     "message": "Autoriser les notifications provenant d’Adblock Plus (les notifications liées à des problèmes de performance critiques s'afficheront toujours)."
-  },
-  "options_dialog_about_copyright": {
-    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
-    "placeholders": {
-      "currentYear": {
-        "content": "$1",
-        "example": "2017"
-      }
-    }
   },
   "options_dialog_about_title": {
     "message": "À propos d'Adblock Plus"
@@ -179,12 +161,6 @@
   "options_filterList_source": {
     "message": "Source"
   },
-  "options_filterList_state_active": {
-    "message": "Actif"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Inactif"
-  },
   "options_filterList_title": {
     "message": "Listes de filtres"
   },
@@ -240,19 +216,6 @@
   },
   "options_language_header": {
     "message": "Langue"
-  },
-  "options_language_join": {
-    "message": "$lang1$, $lang2$",
-    "placeholders": {
-      "lang1": {
-        "content": "$1",
-        "example": "čeština"
-      },
-      "lang2": {
-        "content": "$2",
-        "example": "slovenčina"
-      }
-    }
   },
   "options_language_tip": {
     "message": "<strong>CONSEIL :</strong> Sélectionnez uniquement les langues dont vous avez besoin. Si vous en sélectionnez plus, le bloqueur de publicité sera ralenti, ce qui ralentira donc votre vitesse de navigation."
@@ -367,8 +330,7 @@
     "message": "par exemple: $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

@@ -1,4 +1,13 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "Da nam pomagate izboljšati Adblock Plus, bi nam zaupali, zakaj ste izklopili sprejemljive oglase?"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "Ne, hvala"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "Pojdi na raziskavo"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "Sprejemljivi oglasi niso nadležni in ne posegajo v vsebino, ki si jo ogledujete. <a>Preberite več o merilih za sprejemljive oglase.</a>"
   },
@@ -20,14 +29,8 @@
   "options_advanced_description": {
     "message": "Prilagodite Adblock Plus, dodajte ali odstranite sezname filtrov, ustvarite in vzdržujte svoje sezname filtrov"
   },
-  "options_anti_cv_header": {
-    "message": "Preprečevanje izogibanja blokiranja"
-  },
-  "options_anti_cv_title": {
-    "message": "ABP-jev seznam filtrov proti izogibanju blokiranja"
-  },
-  "options_anti_cv_tooltip": {
-    "message": "Ta seznam filtrov deluje proti izogibanju (tehnikam za vsiljevanje oglasov navkljub uporabniškemu blokiranju). Ti filtri obravnavajo oglase, ki se izognejo blokiranju, kot tudi z njimi povezano sledenje."
+  "options_builtin_filterList_add": {
+    "message": "Dodaj vgrajene sezname filtrov"
   },
   "options_close": {
     "message": "zapri"
@@ -167,12 +170,6 @@
   "options_filterList_source": {
     "message": "vir"
   },
-  "options_filterList_state_active": {
-    "message": "Dejaven"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Nedejaven"
-  },
   "options_filterList_title": {
     "message": "Seznami filtrov"
   },
@@ -205,6 +202,12 @@
   "options_general_description": {
     "message": "Določite, kaj naj Adblock Plus prikaže ali skrije na spletnih straneh"
   },
+  "options_generic_error": {
+    "message": "Ups! Nekaj je šlo narobe. Prosimo, poskusite znova."
+  },
+  "options_help_center": {
+    "message": "Iščete odgovore na vprašanja? <a0>Obiščite naše središče za pomoč (samo v angleščini)</a0>"
+  },
   "options_help_description": {
     "message": "Poiščite pomoč ali navežite stik z nami"
   },
@@ -220,8 +223,24 @@
   "options_language_empty": {
     "message": "Nimate filtrov za posamezen jezik."
   },
+  "options_language_filter_list": {
+    "message": "Jezikovni seznami filtrov"
+  },
   "options_language_header": {
     "message": "Jezik"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>NASVET:</strong> Izberite samo jezike, ki jih potrebujete. Če jih izberete več, bo to upočasnilo AdBlock Plus in posledično hitrost brskanja."
@@ -255,6 +274,12 @@
   },
   "options_protection_social_tooltip": {
     "message": "Ikone družbenih omrežij na spletnih straneh ki jih obiščete, družbenim omrežjem omogočajo, da o vas ustvarijo profil glede na vaše brskalne navade - tudi če nanje ne kliknete. Skrivanje teh ikon pomaga zaščititi vaš profil."
+  },
+  "options_rating_description": {
+    "message": "Prosimo, vzemite si trenutek in nam pomagajte razširiti Adblock Plus tako, da ga ocenite. Hvala za vašo podporo!"
+  },
+  "options_rating_title": {
+    "message": "Vam je Adblock Plus všeč?"
   },
   "options_report_bug": {
     "message": "Ste našli hrošča? <a>Pošljite nam poročilo o hrošču.</a>"
@@ -323,21 +348,11 @@
   "options_whitelist_empty_2": {
     "message": "Spletne strani, ki jim zaupate in na njih želite videti oglase, bodo prikazane tukaj."
   },
-  "options_whitelist_notification": {
-    "message": "Spletni strani \"$website$\" ste dovolili objavo oglasov.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "options_whitelist_placeholder_example": {
     "message": "npr. $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

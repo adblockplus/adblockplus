@@ -8,15 +8,6 @@
   "mops_action_cancel": {
     "message": "取消"
   },
-  "mops_enabled_label": {
-    "message": "在 <strong>$domain$</strong> 中啟用 Adblock Plus",
-    "placeholders": {
-      "domain": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "mops_error_url": {
     "message": "請輸入網址連結"
   },

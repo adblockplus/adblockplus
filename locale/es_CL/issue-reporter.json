@@ -23,6 +23,9 @@
   "issueReporter_comment_label": {
     "message": "Comentario (opcional):"
   },
+  "issueReporter_config_label": {
+    "message": "Incluir información sobre la configuración de mi navegador, así como una lista de extensiones activas que uso actualmente."
+  },
   "issueReporter_confirmationMessage": {
     "message": "Su informe ha sido guardado. Puede acceder a él en la siguiente dirección:"
   },

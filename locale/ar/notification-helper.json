@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "فتح كل الروابط من هذا الإشعار"
   },
-  "notification_with_buttons": {
-    "message": "اضغط موافق لفتح جميع الروابط في هذا التنبيه."
-  },
   "notification_without_buttons": {
     "message": "اضغط على التنبيه لفتح كل الروابط الموجودة فيه."
   },

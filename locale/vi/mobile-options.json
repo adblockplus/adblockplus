@@ -8,15 +8,6 @@
   "mops_action_cancel": {
     "message": "Hủy bỏ"
   },
-  "mops_enabled_label": {
-    "message": "Bật Adblock Plus trên <strong>$domain$</strong>",
-    "placeholders": {
-      "domain": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "mops_error_url": {
     "message": "Nhập một URL hợp lệ"
   },

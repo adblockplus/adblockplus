@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "ಈ ಅಧಿಸೂಚನೆಯಿಂದ ಎಲ್ಲಾ ಲಿಂಕ್ಗಳನ್ನು ತೆರೆಯಲು"
   },
-  "notification_with_buttons": {
-    "message": "ಈ ಅಧಿಸೂಚನೆಯನ್ನು ಎಲ್ಲ ಲಿಂಕ್ಗಳನ್ನು ತೆರೆಯಲು 'ಸರಿ' ಕ್ಲಿಕ್ ಮಾಡಿ."
-  },
   "notification_without_buttons": {
     "message": "ಇದು ಎಲ್ಲಾ ಲಿಂಕ್ಗಳನ್ನು ತೆರೆಯಲು ಪ್ರಕಟಣೆ ಮೇಲೆ ಕ್ಲಿಕ್ ಮಾಡಿ."
   },

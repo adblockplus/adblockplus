@@ -29,15 +29,6 @@
   "options_advanced_description": {
     "message": "Adblock Plus'ı özelleştirin; süzme listeleri ekleyin veya çıkarın; kendi süzme listelerinizi oluşturun veya düzenleyin"
   },
-  "options_anti_cv_header": {
-    "message": "Reklam engellemeyi atlatma"
-  },
-  "options_anti_cv_title": {
-    "message": "ABP reklam engellemeyi atlatma süzgeç listesi"
-  },
-  "options_anti_cv_tooltip": {
-    "message": "Bu süzgeç listesi atlatmaya karşı iş görür. (Ör. reklamları engelleyen kullanıcılara zorla reklam göstermek.) Bu süzgeçler reklam engellemeyi atlatmayı ve bağlantılı takip girişimlerinin önüne geçer."
-  },
   "options_builtin_filterList_add": {
     "message": "Yerleşik süzgeç listeleri ekleyin"
   },
@@ -179,12 +170,6 @@
   "options_filterList_source": {
     "message": "kaynak"
   },
-  "options_filterList_state_active": {
-    "message": "Etkin"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Devre dışı"
-  },
   "options_filterList_title": {
     "message": "Süzgeç listeleri"
   },
@@ -217,6 +202,9 @@
   "options_general_description": {
     "message": "Adblock Plus'ın sayfalarda ne gösterip ne gizleyeceğini belirleyin"
   },
+  "options_generic_error": {
+    "message": "Uh oh! Bir hata oluştu. Lütfen tekrar deneyin."
+  },
   "options_help_center": {
     "message": "Sorularınız için yanıt mı arıyorsunuz? <a0>Yardım Merkezimizi ziyaret edin (Sadece İngilizce)</a0>"
   },
@@ -240,19 +228,6 @@
   },
   "options_language_header": {
     "message": "Dil"
-  },
-  "options_language_join": {
-    "message": "$lang1$, $lang2$",
-    "placeholders": {
-      "lang1": {
-        "content": "$1",
-        "example": "čeština"
-      },
-      "lang2": {
-        "content": "$2",
-        "example": "slovenčina"
-      }
-    }
   },
   "options_language_tip": {
     "message": "<strong>İPUCU:</strong> Sadece ihtiyaç duyduğunuz dilleri seçin. Daha fazla dil seçmek reklam engelleyiciyi, dolayısıyla tarama hızınızı azaltacak."
@@ -367,8 +342,7 @@
     "message": "örn. $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

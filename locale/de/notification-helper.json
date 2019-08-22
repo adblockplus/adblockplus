@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "Öffne alle Links in dieser Benachrichtigung"
   },
-  "notification_with_buttons": {
-    "message": "Klicken Sie 'OK', um alle Links in dieser Benachrichtigung zu öffnen."
-  },
   "notification_without_buttons": {
     "message": "Auf die Benachrichtigung klicken, um alle enthaltenen Links zu öffnen."
   },

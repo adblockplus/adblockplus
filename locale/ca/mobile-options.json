@@ -9,13 +9,7 @@
     "message": "Cancel·la"
   },
   "mops_enabled_label": {
-    "message": "Activa l'Adblock Plus a <strong>$domain$</strong>",
-    "placeholders": {
-      "domain": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
+    "message": "Bloqueja anuncis a:"
   },
   "mops_error_url": {
     "message": "Introduïu una URL vàlida"

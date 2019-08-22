@@ -17,19 +17,16 @@
   "filter_unknown_option": {
     "message": "Tundmatu filtri valik"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ ei ole kehtiv CSS valija",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
-    "message": "Rida $number$",
+    "message": "Rida $number$: $message$",
     "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
       "number": {
-        "content": "$1"
+        "content": "$1",
+        "example": "42"
       }
     }
   },

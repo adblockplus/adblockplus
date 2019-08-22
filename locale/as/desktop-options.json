@@ -20,12 +20,6 @@
   "options_advanced_description": {
     "message": "এডব্লক প্লাছ অনুকূলিত কৰক, ফিল্টাৰৰ সূচী যোগ কৰক বা আঁতৰাওক, আপোনাৰ নিজা ফিল্টাৰৰ সূচী সৃষ্টি কৰক আৰু বজাই ৰাখক"
   },
-  "options_anti_cv_header": {
-    "message": "প্রতাৰণা-বিৰোধী"
-  },
-  "options_anti_cv_title": {
-    "message": "ABP প্রতাৰণা-বিৰোধী ফিল্টাৰৰ সূচী"
-  },
   "options_close": {
     "message": "বন্ধ কৰক"
   },
@@ -112,12 +106,6 @@
   },
   "options_filterList_source": {
     "message": "উৎস"
-  },
-  "options_filterList_state_active": {
-    "message": "সক্ৰিয়"
-  },
-  "options_filterList_state_disabled": {
-    "message": "নিষ্ক্ৰিয়"
   },
   "options_filterList_title": {
     "message": "ফিল্টাৰৰ সূচীবোৰ"
@@ -251,21 +239,11 @@
   "options_whitelist_empty_2": {
     "message": "আপুনি বিশ্বাস কৰা ৱেবছাইটবোৰ আৰু যিবোৰত বিজ্ঞাপনবোৰক অনুমতি দিবলৈ বিচাৰে সেইবোৰ ইয়াত দেখুওৱা হ\\'ব।"
   },
-  "options_whitelist_notification": {
-    "message": "\"$website$\" শ্বেতসূচীভুক্ত কৰা হ\\'ল।",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "options_whitelist_placeholder_example": {
     "message": "যেনে $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

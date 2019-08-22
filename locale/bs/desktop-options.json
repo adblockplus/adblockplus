@@ -17,9 +17,6 @@
   "options_filterList_lastDownload_invalidURL": {
     "message": "Neuspjeh, adresa nije validna"
   },
-  "options_filterList_state_disabled": {
-    "message": "Onemogućeno"
-  },
   "options_language_header": {
     "message": "Jezik"
   },

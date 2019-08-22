@@ -1,0 +1,20 @@
+{
+  "firstRun_browser_store_android": {
+    "message": "Asnas Android deg Google Play"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "Illa deg iTunes App Store"
+  },
+  "firstRun_browser_title": {
+    "message": "Asnas Adblock Browser"
+  },
+  "firstRun_title": {
+    "message": "Asebded immed!"
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Nadi Adblock Plus sakin kkes-it."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "Ales asebded n Adblock Plus seg <a>adblockplus.org</a>."
+  }
+}

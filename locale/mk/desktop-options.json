@@ -16,8 +16,5 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Неуспешно, адресата не е валидна"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Исклучено"
   }
 }

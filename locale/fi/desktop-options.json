@@ -62,12 +62,6 @@
   "options_filterList_source": {
     "message": "lähde"
   },
-  "options_filterList_state_active": {
-    "message": "Aktiivinen"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Ei käytössä"
-  },
   "options_filterList_title": {
     "message": "Suodatinlistat"
   },

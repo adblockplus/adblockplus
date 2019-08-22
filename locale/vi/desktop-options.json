@@ -1,4 +1,13 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "Để giúp chúng tôi cải thiện Adblock Plus, hãy chia sẻ lý do tại sao bạn đã tắt Quảng cáo chấp nhận được?"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "Không, cảm ơn"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "Đến khảo sát"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "Quảng cáo chấp nhận được không làm phiền và không cản trở nội dung bạn đang xem. <a>Đọc thêm về các tiêu chí của Quảng cáo chấp nhận được</a>"
   },
@@ -20,14 +29,8 @@
   "options_advanced_description": {
     "message": "Tùy chỉnh Adblock Plus, thêm hoặc xóa danh sách lọc, tạo và duy trì các danh sách lọc của riêng bạn"
   },
-  "options_anti_cv_header": {
-    "message": "Anti-Circumvention"
-  },
-  "options_anti_cv_title": {
-    "message": "ABP Anti-Circumvention Filter List"
-  },
-  "options_anti_cv_tooltip": {
-    "message": "Danh sách bộ lọc này hoạt động chống lại sự lách luật (tức là các kỹ thuật để buộc quảng cáo trên người dùng chặn quảng cáo). Các bộ lọc này giải quyết các quảng cáo lách luật cũng như theo dõi liên quan."
+  "options_builtin_filterList_add": {
+    "message": "Thêm danh sách bộ lọc tích hợp"
   },
   "options_close": {
     "message": "đóng"
@@ -167,12 +170,6 @@
   "options_filterList_source": {
     "message": "Nguồn"
   },
-  "options_filterList_state_active": {
-    "message": "Hiện hoạt"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Vô hiệu hóa"
-  },
   "options_filterList_title": {
     "message": "Danh sách lọc"
   },
@@ -205,6 +202,12 @@
   "options_general_description": {
     "message": "Quyết định xem Adblock Plus hiển thị và ẩn những gì trên trang web"
   },
+  "options_generic_error": {
+    "message": "Uh oh! Đã xảy ra lỗi. Vui lòng thử lại."
+  },
+  "options_help_center": {
+    "message": "Tìm kiếm câu trả lời cho câu hỏi của bạn? <a0>Ghé thăm Trung tâm trợ giúp của chúng tôi (chỉ bằng tiếng Anh)</a0>"
+  },
   "options_help_description": {
     "message": "Tìm kiếm trợ giúp hoặc liên hệ với chúng tôi"
   },
@@ -220,8 +223,24 @@
   "options_language_empty": {
     "message": "Bạn không có bất kỳ bộ lọc ngôn ngữ cụ thể nào."
   },
+  "options_language_filter_list": {
+    "message": "Danh sách bộ lọc ngôn ngữ"
+  },
   "options_language_header": {
     "message": "Ngôn ngữ"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>MẸO:</strong> Chỉ chọn những ngôn ngữ bạn cần. Việc chọn thêm sẽ làm chậm bộ chặn quảng cáo và do đó ảnh hưởng đến tốc độ duyệt web của bạn."
@@ -255,6 +274,12 @@
   },
   "options_protection_social_tooltip": {
     "message": "Các biểu tượng mạng xã hội trên các trang web mà bạn ghé thăm cho phép các mạng xã hội tạo ra hồ sơ về bạn dựa trên những thói quen duyệt web của bạn - ngay cả khi bạn không bấm vào chúng. Ẩn những biểu tượng này đi có thể bảo vệ hồ sơ của bạn."
+  },
+  "options_rating_description": {
+    "message": "Vui lòng dành chút thời gian và giúp quảng bá bằng cách xếp hạng Adblock Plus. Cảm ơn sự hỗ trợ của bạn!"
+  },
+  "options_rating_title": {
+    "message": "Thích Adblock Plus?"
   },
   "options_report_bug": {
     "message": "Tìm thấy lỗi? <a>Gửi cho chúng tôi báo cáo lỗi</a>"
@@ -323,21 +348,11 @@
   "options_whitelist_empty_2": {
     "message": "Các trang web bạn tin tưởng và muốn cho phép hiển thị quảng cáo tại đó."
   },
-  "options_whitelist_notification": {
-    "message": "$website$ đã được thêm vào danh sách.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "options_whitelist_placeholder_example": {
     "message": "ví dụ: $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

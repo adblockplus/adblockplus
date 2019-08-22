@@ -22,8 +22,5 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Mistókst, ekki gilt netfang"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Óvirkt"
   }
 }

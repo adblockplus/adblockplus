@@ -14,19 +14,16 @@
   "filter_unknown_option": {
     "message": "Qeyri-müəyyən filtr seçimi"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ etibarsız CSS-selektorudur",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
-    "message": "Sətir $number$",
+    "message": "Sətir $number$: $message$",
     "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
       "number": {
-        "content": "$1"
+        "content": "$1",
+        "example": "42"
       }
     }
   },

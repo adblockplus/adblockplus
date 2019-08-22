@@ -8,15 +8,6 @@
   "mops_action_cancel": {
     "message": "ரத்து செய்"
   },
-  "mops_enabled_label": {
-    "message": "<strong>$domain$</strong> இல் Adblock Plus-ஐ இயக்கு",
-    "placeholders": {
-      "domain": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "mops_error_url": {
     "message": "செல்லும் URL உள்ளிடு"
   },

@@ -1,0 +1,53 @@
+{
+  "day1_blockelement_description": {
+    "message": "შეზღუდეთ ისინი Adblock Plus-ის შეზღუდვის გამორჩეული შესაძლებლობით."
+  },
+  "day1_blockelement_more": {
+    "message": "იხილეთ, როგორ"
+  },
+  "day1_blockelement_screenshot": {
+    "message": "მაგალითი ამომხტომი ხატულის, „ელემენტის შეზღუდვის“ მონიშნული ღილაკით."
+  },
+  "day1_blockelement_title": {
+    "message": "ხასიათს გიფუჭებთ გამოხმაურებების არე?"
+  },
+  "day1_community_contact": {
+    "message": "დაგვიკავშირდით!"
+  },
+  "day1_community_contact_subject": {
+    "message": "გვესაჭიროება მხარდაჭერა!"
+  },
+  "day1_community_description_1": {
+    "message": "როგორც ღია წყაროს პროექტი, ჩვენ მეტად ვართ დამოკიდებულნი თქვენნაირი მომხმარებლების დახმარებაზე, რეკლამის შეზღუდვის შესაძლებლობის გაუმჯობესებაში."
+  },
+  "day1_community_description_2": {
+    "message": "რომელი შესაძლებლობების ხილვას ისურვებდით? კიდევ რისი გაუმჯობესება შეგვიძლია? იწვევს Adblock Plus საიტების ნაწილზე გაუმართაობას?"
+  },
+  "day1_community_title": {
+    "message": "შემოუერთდით Adblock Plus-ის ერთობას"
+  },
+  "day1_header_more": {
+    "message": "იხილეთ ვრცლად, მავნე რეკლამირების შესახებ"
+  },
+  "day1_header_title": {
+    "message": "Adblock Plus-მა <strong>შეზღუდა <em0>$ads$ რეკლამა</em0> ამ <em1>ნახევარ საათში</em1>,</strong> რომელთა ნაწილიც, სავარაუდოდ მავნე შიგთავსს შეიცავდა",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_message": {
+    "message": "ბევრი მომაბეზრებელი რეკლამაა. <a>გამოარკვიეთ, კიდევ რისი შეზღუდვა შეუძლია Adblock Plus-ს.</a>"
+  },
+  "notification_day1_title": {
+    "message": "თქვენ უკვე შეზღუდეთ $ads$ რეკლამა!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

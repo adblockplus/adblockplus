@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "Apri tutti i collegamenti da questa notifica"
   },
-  "notification_with_buttons": {
-    "message": "Clic 'OK' per aprire tutti i collegamenti in questa notifica."
-  },
   "notification_without_buttons": {
     "message": "Clic sulla notifica per aprire tutti i link contenuti."
   },

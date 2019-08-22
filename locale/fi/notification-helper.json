@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "Avata kaikki linkit tästä ilmoituksesta"
   },
-  "notification_with_buttons": {
-    "message": "Valitse 'OK', jos haluat avata kaikki linkit tässä ilmoituksessa."
-  },
   "notification_without_buttons": {
     "message": "Napsauttamalla ilmoitusta voit avata kaikki linkit siitä."
   },

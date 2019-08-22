@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "פתח את כל הקישורים מהתראה זו"
   },
-  "notification_with_buttons": {
-    "message": "לחץ על 'אישור' כדי לפתוח את כל הקישורים בהתראה זו."
-  },
   "notification_without_buttons": {
     "message": "לחץ על ההתראה כדי לפתוח את כל הקישורים שבתוכה."
   },

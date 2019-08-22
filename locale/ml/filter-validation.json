@@ -1,17 +1,14 @@
 {
-  "invalid_css_selector": {
-    "message": "$selector$ ഒരു ശരിയായ സി. എസ്. എസ്. സെലക്റ്റര്‍ അല്ല",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
-    "message": "വരി $number$",
+    "message": "വരി $number$: $message$",
     "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
       "number": {
-        "content": "$1"
+        "content": "$1",
+        "example": "42"
       }
     }
   },

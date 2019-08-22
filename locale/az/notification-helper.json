@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "Bu bildirişə aid bütün keçidləri aç"
   },
-  "notification_with_buttons": {
-    "message": "Bu bildirişə aid bütün keçidləri açmaq üçün 'OK' düyməsini basın."
-  },
   "notification_without_buttons": {
     "message": "Bütün keçidləri açmaq üçün, bildirişin üzərinə klik edin."
   },

@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "ყველა ბმულის გახსნა ამ შეტყობინებიდან"
   },
-  "notification_with_buttons": {
-    "message": "დაწკაპეთ \"OK\" ამ შეტყობინებიდან ყველა ბმულის გასახსნელად."
-  },
   "notification_without_buttons": {
     "message": "დააწკაპეთ ამ შეტყობინებაზე მასში არსებული ყველა ბმულის გასახსნელად."
   },

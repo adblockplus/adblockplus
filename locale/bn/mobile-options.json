@@ -8,15 +8,6 @@
   "mops_action_cancel": {
     "message": "বাতিল"
   },
-  "mops_enabled_label": {
-    "message": "<strong>$domain$</strong>-এ অ্যাডব্লক প্লাস সক্রিয় করুন",
-    "placeholders": {
-      "domain": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "mops_filterlist_add": {
     "message": "একটি ফিল্টার তালিকা যুক্ত করুন"
   },

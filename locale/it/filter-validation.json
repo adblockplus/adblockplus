@@ -20,14 +20,6 @@
   "filter_unknown_option": {
     "message": "Opzione Filtro Sconosciuta"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ non è un selettore CSS valido",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
     "message": "Riga $number$: $message$",
     "placeholders": {

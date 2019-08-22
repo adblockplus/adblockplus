@@ -5,19 +5,16 @@
   "filter_invalid_domain": {
     "message": "Imbalid (o walang laman) ang domain na tinukoy"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ ay hindi valid na CSS selector",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
-    "message": "Linya $number$",
+    "message": "Linya $number$: $message$",
     "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
       "number": {
-        "content": "$1"
+        "content": "$1",
+        "example": "42"
       }
     }
   },

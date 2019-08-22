@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "Бу билдиришномадаги барча ҳаволалар очилсин"
   },
-  "notification_with_buttons": {
-    "message": "Бу билдиришномадаги барча ҳаволаларни очиш учун \"ОК\" тугмасини босинг."
-  },
   "notification_without_buttons": {
     "message": "Барча иловаларни очиш учун билдиришномага босинг."
   },

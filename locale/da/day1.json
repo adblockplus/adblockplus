@@ -1,0 +1,53 @@
+{
+  "day1_blockelement_description": {
+    "message": "Blokér dem med Adblock Plus' smarte elementblokeringsfunktion."
+  },
+  "day1_blockelement_more": {
+    "message": "Find ud af hvordan"
+  },
+  "day1_blockelement_screenshot": {
+    "message": "Eksempel på pop op-ikon med knappen \"Blokér element\" fremhævet."
+  },
+  "day1_blockelement_title": {
+    "message": "Træt af, at kommentarafsnit ødelægger dit humør?"
+  },
+  "day1_community_contact": {
+    "message": "Kontakt os!"
+  },
+  "day1_community_contact_subject": {
+    "message": "Søger efter support!"
+  },
+  "day1_community_description_1": {
+    "message": "Som et open source-projekt, er vi afhængige af brugere som dig til at hjælpe os med at forbedre din annonceblokeringsoplevelse."
+  },
+  "day1_community_description_2": {
+    "message": "Hvilke funktioner vil du gerne se? Hvad kan vi gøre bedre? Får Adblock Plus nogle websteder til at opføre sig mærkeligt?"
+  },
+  "day1_community_title": {
+    "message": "Deltag i Adblock Plus-fællesskabet"
+  },
+  "day1_header_more": {
+    "message": "Få mere at vide om ondsindet annoncering"
+  },
+  "day1_header_title": {
+    "message": "Adblock Plus <strong>har blokeret <em0>$ads$ annoncer</em0> i <em1>den seneste halve time</em1>,</strong> hvoraf nogle muligvis har haft ondsindet indhold",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_message": {
+    "message": "Det er en masse irriterende annoncer. <a>Find ud af, hvad Adblock Plus ellers kan blokere.</a>"
+  },
+  "notification_day1_title": {
+    "message": "Du har allerede blokeret $ads$ annoncer!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

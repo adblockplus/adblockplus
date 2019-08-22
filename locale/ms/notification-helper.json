@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "Buka Semua link dari notifikasi ini"
   },
-  "notification_with_buttons": {
-    "message": "Klik 'OK' untuk membuka semua pautan dalam notifikasi ini."
-  },
   "notification_without_buttons": {
     "message": "Klik pada notifikasi untuk membuka semua pautan yang terkandung dalamnya."
   },

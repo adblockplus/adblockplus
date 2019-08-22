@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "Abrir todos los enlaces de esta notificación"
   },
-  "notification_with_buttons": {
-    "message": "Pulse \"Aceptar\" para abrir todos los enlaces de este aviso."
-  },
   "notification_without_buttons": {
     "message": "Pulse en el aviso para abrir todos los enlaces que contiene."
   },

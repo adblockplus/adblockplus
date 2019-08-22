@@ -20,15 +20,6 @@
   "options_advanced_description": {
     "message": "Наладзьце Adblock Plus, дадавайце або выдаляйце спісы фільтраў, стварайце і карыстайцеся ўласнымі спісамі фільтраў"
   },
-  "options_anti_cv_header": {
-    "message": "Барацьба з абыходам блакавання"
-  },
-  "options_anti_cv_title": {
-    "message": "Супрацьабыходны спіс фільтраў ABP"
-  },
-  "options_anti_cv_tooltip": {
-    "message": "Гэты спіс фільтраў прызначаны для барацьбы з абыходам блакавання (г.з. метадамі прымусовага паказу рэкламы карыстальнікам, якія яе блакуюць). Да таго фільтры супрацьстаяць і збіранню звестак, звязанаму з абыходам блакавання."
-  },
   "options_close": {
     "message": "закрыць"
   },
@@ -166,12 +157,6 @@
   },
   "options_filterList_source": {
     "message": "змест"
-  },
-  "options_filterList_state_active": {
-    "message": "Уключаны"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Адключаны"
   },
   "options_filterList_title": {
     "message": "Спісы фільтраў"
@@ -323,21 +308,11 @@
   "options_whitelist_empty_2": {
     "message": "Тут будуць паказвацца сайты якім вы давяраеце і дазваляеце ім паказваць рэкламу."
   },
-  "options_whitelist_notification": {
-    "message": "\"$website$\" дададзены ў спіс дазволеных.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "options_whitelist_placeholder_example": {
     "message": "Узор: $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

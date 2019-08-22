@@ -1,17 +1,14 @@
 {
-  "invalid_css_selector": {
-    "message": "$selector$ ትክክለኛ የሲኤስኤስ መራጭ አይደለም።",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
-    "message": "መስመር $number$",
+    "message": "መስመር $number$: $message$",
     "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
       "number": {
-        "content": "$1"
+        "content": "$1",
+        "example": "42"
       }
     }
   },

@@ -23,15 +23,6 @@
   "firstRun_fair_title": {
     "message": "Добросовестное использование"
   },
-  "firstRun_footer_copyright": {
-    "message": "Авторское право © $year$ Все права защищены. Adblock Plus® является зарегистрированной торговой маркой компании <a0>eyeo GmbH</a0>.",
-    "placeholders": {
-      "year": {
-        "content": "$1",
-        "example": "1984"
-      }
-    }
-  },
   "firstRun_subtitle": {
     "message": "Вы получили возможность управлять своим браузером"
   },

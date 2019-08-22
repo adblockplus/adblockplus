@@ -29,15 +29,6 @@
   "options_advanced_description": {
     "message": "Personalize o Adblock Plus, adicione ou remova listas de filtros, crie e mantenha as suas próprias listas de filtros"
   },
-  "options_anti_cv_header": {
-    "message": "Anticircunvenção"
-  },
-  "options_anti_cv_title": {
-    "message": "Lista ABP de filtros anticircunvenção"
-  },
-  "options_anti_cv_tooltip": {
-    "message": "Esta lista de filtros trabalha contra a circunvenção (ou seja, técnicas para forçar anúncios para usuários que estão bloqueando os anúncios). Estes filtros contornam anúncios circunventores, bem como o rastreamento associado a essa prática."
-  },
   "options_builtin_filterList_add": {
     "message": "Adicionar listas de filtragem integradas"
   },
@@ -179,12 +170,6 @@
   "options_filterList_source": {
     "message": "Fonte"
   },
-  "options_filterList_state_active": {
-    "message": "Ativo"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Inativo"
-  },
   "options_filterList_title": {
     "message": "Listas de filtros"
   },
@@ -216,6 +201,9 @@
   },
   "options_general_description": {
     "message": "Determine o que o Adblock Plus mostra e oculta nos sites"
+  },
+  "options_generic_error": {
+    "message": "Uh oh! Um erro ocorreu. Tente novamente."
   },
   "options_help_center": {
     "message": "A procura de respostas para suas perguntas? <a0>Visite nosso Centro de Ajuda (somente em inglês)</a0>"
@@ -367,8 +355,7 @@
     "message": "p. ex. $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

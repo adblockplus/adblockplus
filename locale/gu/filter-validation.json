@@ -14,19 +14,16 @@
   "filter_unknown_option": {
     "message": "અજ્ઞાત ફિલ્ટર વિકલ્પ"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ એ યોગ્ય CSS selector નથી",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
-    "message": "લાઈન $number$",
+    "message": "લાઈન $number$: $message$",
     "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
       "number": {
-        "content": "$1"
+        "content": "$1",
+        "example": "42"
       }
     }
   },

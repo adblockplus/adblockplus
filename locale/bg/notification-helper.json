@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "Отваряй всички препратки от известието"
   },
-  "notification_with_buttons": {
-    "message": "Натиснете „ДА“ за отваряне на всички препратки от известието."
-  },
   "notification_without_buttons": {
     "message": "Щракнете по известие за отваряне на съдържащите се препратки."
   },

@@ -45,7 +45,7 @@
     "message": "내 필터 목록"
   },
   "options_customize_blockElement": {
-    "message": "‘차단 요소’ 우클릭 메뉴 항목 보기"
+    "message": "‘이 요소 숨기기’ 우클릭 메뉴 항목 보기"
   },
   "options_customize_blockElement_tooltip": {
     "message": "웹페이지에서 방해가 되는 항목을 일시적으로 차단합니다. 예: 이미지 또는 애니메이션 슬라이드쇼"
@@ -155,12 +155,6 @@
   "options_filterList_source": {
     "message": "소스"
   },
-  "options_filterList_state_active": {
-    "message": "활성화"
-  },
-  "options_filterList_state_disabled": {
-    "message": "비활성화"
-  },
   "options_filterList_title": {
     "message": "필터 목록"
   },
@@ -208,19 +202,6 @@
   },
   "options_language_header": {
     "message": "언어"
-  },
-  "options_language_join": {
-    "message": "$lang1$, $lang2$",
-    "placeholders": {
-      "lang1": {
-        "content": "$1",
-        "example": "čeština"
-      },
-      "lang2": {
-        "content": "$2",
-        "example": "slovenčina"
-      }
-    }
   },
   "options_language_tip": {
     "message": "<strong>팁:</strong> 필요한 언어만 선택하십시오. 더 많은 언어를 선택하면 광고 차단 프로그램의 속도 저하로 인해 브라우징의 속도가 느려질 수 있습니다."
@@ -310,8 +291,7 @@
     "message": "예: $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

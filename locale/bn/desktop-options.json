@@ -149,12 +149,6 @@
   "options_filterList_source": {
     "message": "উৎস"
   },
-  "options_filterList_state_active": {
-    "message": "সক্রিয়"
-  },
-  "options_filterList_state_disabled": {
-    "message": "নিষ্ক্রিয়"
-  },
   "options_filterList_title": {
     "message": "ফিল্টারের তালিকা"
   },
@@ -294,21 +288,11 @@
   "options_whitelist_empty_2": {
     "message": "আপনি যে ওয়েবসাইটগুলি বিশ্বাস করেন এবং যেগুলিতে বিজ্ঞাপনকে অনুমতি দিতে চান তা এখানে দেখানো হবে।"
   },
-  "options_whitelist_notification": {
-    "message": "\"$website$\" সাদাতালিকাভুক্ত করা হয়েছে।",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "options_whitelist_placeholder_example": {
     "message": "যেমন: $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

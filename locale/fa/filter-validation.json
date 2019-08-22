@@ -17,19 +17,16 @@
   "filter_unknown_option": {
     "message": "فیلتر ناشناخته"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ انتخابگر معتبری در CSS نیست",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
-    "message": "خط $number$",
+    "message": "خط $number$: $message$",
     "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
       "number": {
-        "content": "$1"
+        "content": "$1",
+        "example": "42"
       }
     }
   },

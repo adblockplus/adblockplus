@@ -11,19 +11,16 @@
   "filter_unknown_option": {
     "message": "Фильтр параметри номаълум"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ яроқли CSS селектор эмас",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
-    "message": "$number$-қатор",
+    "message": "$number$-қатор: $message$",
     "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
       "number": {
-        "content": "$1"
+        "content": "$1",
+        "example": "42"
       }
     }
   },

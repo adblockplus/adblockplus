@@ -20,15 +20,6 @@
   "options_advanced_description": {
     "message": "Встановіть Adblock Plus, додайте або видаліть списки фільтрів, створюйте та адмініструйте власні списки фільтрів"
   },
-  "options_anti_cv_header": {
-    "message": "Боротьба з обходом блокування"
-  },
-  "options_anti_cv_title": {
-    "message": "Протиобхідний список фільтрів ABP"
-  },
-  "options_anti_cv_tooltip": {
-    "message": "Даний список фільтрів дозволяє боротися з обходами (тобто методами просування реклами користувачам, які блокують її). Ці фільтри поширюються на рекламу, впроваджувану за допомогою обходу, а також на відповідні служби відстеження."
-  },
   "options_close": {
     "message": "закрити"
   },
@@ -166,12 +157,6 @@
   },
   "options_filterList_source": {
     "message": "джерело"
-  },
-  "options_filterList_state_active": {
-    "message": "Активний"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Неактивні"
   },
   "options_filterList_title": {
     "message": "Списки фільтрів"
@@ -323,21 +308,11 @@
   "options_whitelist_empty_2": {
     "message": "Тут відображаються сайти, яким ви довіряєте та дозволяєте показ реклами."
   },
-  "options_whitelist_notification": {
-    "message": "$website$ внесено в білий список.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "options_whitelist_placeholder_example": {
     "message": "наприклад, $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

@@ -20,14 +20,6 @@
   "filter_unknown_option": {
     "message": "未知的过滤规则"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ 不是有效的 CSS 选择器",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
     "message": "第 $number$ 行：$message$",
     "placeholders": {

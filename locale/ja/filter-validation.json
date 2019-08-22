@@ -17,14 +17,6 @@
   "filter_unknown_option": {
     "message": "不明なフィルター オプション"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ は有効な CSS セレクタではありません",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
     "message": "$number$ 行目: $message$",
     "placeholders": {

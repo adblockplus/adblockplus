@@ -1,0 +1,53 @@
+{
+  "day1_blockelement_description": {
+    "message": "Blokkearje se mei de handige funksje 'Elemint blokkearje' fan Adblock Plus."
+  },
+  "day1_blockelement_more": {
+    "message": "Mear ynfo"
+  },
+  "day1_blockelement_screenshot": {
+    "message": "Foarbyld fan piktogrampop-up mei markearre knop ‘Elemint blokkearje’."
+  },
+  "day1_blockelement_title": {
+    "message": "Genôch fan negative reaksjes?"
+  },
+  "day1_community_contact": {
+    "message": "Nim kontakt mei ús op!"
+  },
+  "day1_community_contact_subject": {
+    "message": "Wy sykje help!"
+  },
+  "day1_community_description_1": {
+    "message": "As iepen-boarneprojekt, binne wy ôfhinklik fan brûkers lykas jo om ús te helpen jo ûnderfining mei advertinsjeblokkearring te ferbetterjen."
+  },
+  "day1_community_description_2": {
+    "message": "Hokker funksjes wolle jo graach sjen? Wat kinne wy better dwaan? Lit Adblock Plus guon websites min misdrage?"
+  },
+  "day1_community_title": {
+    "message": "Nim diel oan de Adblock Plus-mienskip"
+  },
+  "day1_header_more": {
+    "message": "Untdek mear oer kwealike advertinsjes"
+  },
+  "day1_header_title": {
+    "message": "Adblock Plus hat <strong><em0>$ads$ advertinsjes</em0> blokkearre <em1>it ôfrûne heal oer</em1></strong>, wêrfan guon mooglik kwealike ynhâld befetsje",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_message": {
+    "message": "Dat binne in protte yrritante advertinsjes. <a>Untdek wat Adblock Plus noch mear blokkearje kin.</a>"
+  },
+  "notification_day1_title": {
+    "message": "Jo hawwe al $ads$ advertinsjes blokkearre!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

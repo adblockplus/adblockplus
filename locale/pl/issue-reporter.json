@@ -24,7 +24,7 @@
     "message": "Komentarz (opcjonalne):"
   },
   "issueReporter_config_label": {
-    "message": "Dołącz informacje o konfiguracji mojej przeglądarki oraz listę aktywnych rozszerzeń, z których korzystam."
+    "message": "Dołącz informacje o konfiguracji mojej przeglądarki oraz listę używanych aktywnych rozszerzeń."
   },
   "issueReporter_confirmationMessage": {
     "message": "Zgłoszenie zostało zapisane. Możesz zobaczyć je pod następującym adresem:"

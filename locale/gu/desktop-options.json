@@ -149,12 +149,6 @@
   "options_filterList_source": {
     "message": "સ્રોત"
   },
-  "options_filterList_state_active": {
-    "message": "સક્રિય"
-  },
-  "options_filterList_state_disabled": {
-    "message": "અક્ષમ"
-  },
   "options_filterList_title": {
     "message": "ફિલ્ટરની લીસ્ટ"
   },
@@ -291,21 +285,11 @@
   "options_whitelist_empty_2": {
     "message": "તમે જે વેબસાઇટ્સ પર વિશ્વાસ કરો છો અને જાહેરાતોને પરવાનગી આપવા માંગો છો તે અહીં બતાવવામાં આવશે."
   },
-  "options_whitelist_notification": {
-    "message": "$website$ વ્હાઇટલિસ્ટેડ કરવામાં આવ્યું છે.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "options_whitelist_placeholder_example": {
     "message": "ઉદાહરણ માટે $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

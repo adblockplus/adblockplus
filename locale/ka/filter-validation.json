@@ -20,19 +20,16 @@
   "filter_unknown_option": {
     "message": "ფილტრის უცნობი პარამეტრი"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ არაა მართებული CSS მიმთითებელი",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
-    "message": "ხაზი $number$",
+    "message": "ხაზი $number$: $message$",
     "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
       "number": {
-        "content": "$1"
+        "content": "$1",
+        "example": "42"
       }
     }
   },

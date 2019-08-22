@@ -14,9 +14,6 @@
   "options_filterList_lastDownload_invalidURL": {
     "message": "പരാജയപ്പെട്ടിരിക്കുന്നു, ഇതൊരു സാധുവായ വിലാസം അല്ല"
   },
-  "options_filterList_state_disabled": {
-    "message": "പ്രവര്‍ത്തനരഹിത"
-  },
   "options_filterList_title": {
     "message": "പട്ടികകള്‍ അരിക്കുക"
   },

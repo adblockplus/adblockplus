@@ -20,19 +20,16 @@
   "filter_unknown_option": {
     "message": "Opsi filter yang tidak diketahui"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ bukan selector CSS yang benar",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
-    "message": "Baris $number$",
+    "message": "Baris $number$: $message$",
     "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
       "number": {
-        "content": "$1"
+        "content": "$1",
+        "example": "42"
       }
     }
   },

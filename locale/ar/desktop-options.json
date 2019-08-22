@@ -29,15 +29,6 @@
   "options_advanced_description": {
     "message": "يمكنك تخصيص Adblock Plus حسب تفضيلاتك الشخصية أو يمكنك إضافة أو إزالة قوائم عوامل التصفية أو إنشاء قوائم عوامل تصفية خاصة بك أو الحفاظ عليها"
   },
-  "options_anti_cv_header": {
-    "message": "ضد التحايل"
-  },
-  "options_anti_cv_title": {
-    "message": "قائمة فلاتر ضد التحايل ABP"
-  },
-  "options_anti_cv_tooltip": {
-    "message": "تعمل قائمة الفلاتر هذه ضد التحايل (مثلا أي تقنيات لفرض إعلانات على المستخدمين الذين يمنعون الإعلانات). تتناول هذه الفلاتر التحايل على الإعلانات بالإضافة إلى التتبع ذي الصلة."
-  },
   "options_builtin_filterList_add": {
     "message": "إضافة قوائم عوامل تصفية مدمجة"
   },
@@ -178,12 +169,6 @@
   },
   "options_filterList_source": {
     "message": "المصدر"
-  },
-  "options_filterList_state_active": {
-    "message": "نشط"
-  },
-  "options_filterList_state_disabled": {
-    "message": "معطل"
   },
   "options_filterList_title": {
     "message": "قوائم عوامل التصفية"
@@ -367,8 +352,7 @@
     "message": "مثال $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

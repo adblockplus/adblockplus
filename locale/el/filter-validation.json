@@ -11,14 +11,6 @@
   "filter_unknown_option": {
     "message": "Άγνωστη επιλογή φίλτρου"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ δεν είναι έγκυρος επιλογέας CSS",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
     "message": "Γραμμή $number$: $message$",
     "placeholders": {

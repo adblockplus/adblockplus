@@ -6,7 +6,7 @@
     "message": "Отказ"
   },
   "common_copyright": {
-    "message": "Авторски права $year$ г. © Всички права запазени. Adblock Plus® е запазена търговска марка на <a0>eyeo GmbH</a0>.",
+    "message": "Авторски права © $year$ г. Всички права запазени. Adblock Plus® е запазена търговска марка на <a0>eyeo GmbH</a0>.",
     "placeholders": {
       "year": {
         "content": "$1",

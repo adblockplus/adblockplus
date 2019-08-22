@@ -23,6 +23,9 @@
   "issueReporter_comment_label": {
     "message": "Bình luận (phụ):"
   },
+  "issueReporter_config_label": {
+    "message": "Bao gồm thông tin về cấu hình trình duyệt của tôi, cũng như danh sách các tiện ích mở rộng đang hoạt động tôi đang sử dụng."
+  },
   "issueReporter_confirmationMessage": {
     "message": "Báo cáo của bạn đã được lưu. Bạn có thể truy cập nó tại địa chỉ sau:"
   },

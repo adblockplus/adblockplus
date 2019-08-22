@@ -23,6 +23,9 @@
   "issueReporter_comment_label": {
     "message": "הערה (רשותי):"
   },
+  "issueReporter_config_label": {
+    "message": "כלול מידע אודות תצורת הדפדפן שלי, כמו כן רשימה של הרחבות פעילות שאני משתמש בהן."
+  },
   "issueReporter_confirmationMessage": {
     "message": "הדיווח שלך נשמר. ניתן להשיג גישה אליו בכתובת הבאה:"
   },

@@ -23,15 +23,6 @@
   "firstRun_fair_title": {
     "message": "Utilizare corectã"
   },
-  "firstRun_footer_copyright": {
-    "message": "Copyright © $year$ toate drepturile rezervate. Adblock Plus® este o marcă înregistrată a <a0>eyeo GmbH</a0>.",
-    "placeholders": {
-      "year": {
-        "content": "$1",
-        "example": "1984"
-      }
-    }
-  },
   "firstRun_subtitle": {
     "message": "Aveţi pe deplin controlul browser-ului dvs."
   },

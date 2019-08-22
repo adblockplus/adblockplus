@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "เปิดลิงค์ทั้งหมดจากแจ้งเตือนนี้"
   },
-  "notification_with_buttons": {
-    "message": "คลิ๊ก 'ตกลง' เพื่อเปิดลิ้งก์ทั้งหมดในการแจ้งเตือนนี้"
-  },
   "notification_without_buttons": {
     "message": "คลิกบนการแจ้งเตือนเพื่อเปิดลิงก์ทั้งหมด"
   },

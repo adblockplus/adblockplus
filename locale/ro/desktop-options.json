@@ -20,15 +20,6 @@
   "options_advanced_description": {
     "message": "Personalizează Adblock Plus, adaugă sau elimină liste de filtre, crează şi întreţine propriile liste de filtre"
   },
-  "options_anti_cv_header": {
-    "message": "Anti-Truc"
-  },
-  "options_anti_cv_title": {
-    "message": "ABP Lista Anti-Trucuri "
-  },
-  "options_anti_cv_tooltip": {
-    "message": "Această listă de filtre împotriva trucurilor (adică tehnici pentru a forţa anunţuri pentru utilizatorii de adblockers). Aceste filtre rezolvă astfel de reclame precum si tracking-ul aferent"
-  },
   "options_close": {
     "message": "închide"
   },
@@ -70,15 +61,6 @@
   },
   "options_customize_showNotifications_tooltip": {
     "message": "Permiteţi notificări în Adblock Plus (notificări legate de probleme critice de performanţă vor fi afişate totdeauna)."
-  },
-  "options_dialog_about_copyright": {
-    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
-    "placeholders": {
-      "currentYear": {
-        "content": "$1",
-        "example": "2017"
-      }
-    }
   },
   "options_dialog_about_title": {
     "message": "Despre Adblock Plus"
@@ -166,12 +148,6 @@
   },
   "options_filterList_source": {
     "message": "sursă"
-  },
-  "options_filterList_state_active": {
-    "message": "Activ"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Inactiv"
   },
   "options_filterList_title": {
     "message": "Liste de filtre"
@@ -323,21 +299,11 @@
   "options_whitelist_empty_2": {
     "message": "Site-urile în care aveţi încredere şi le permiteţi reclamele vor fi indicate aici."
   },
-  "options_whitelist_notification": {
-    "message": "\"$website$\" a fost whitelisted.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "options_whitelist_placeholder_example": {
     "message": "exemplu $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

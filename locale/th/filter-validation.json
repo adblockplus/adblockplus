@@ -14,19 +14,16 @@
   "filter_unknown_option": {
     "message": "ตัวเลือกตัวกรองที่ไม่รู้จัก"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ กำหนดค่า CSS selector ไม่ถูกต้อง",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
-    "message": "บรรทัด $number$",
+    "message": "บรรทัด $number$: $message$",
     "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
       "number": {
-        "content": "$1"
+        "content": "$1",
+        "example": "42"
       }
     }
   },

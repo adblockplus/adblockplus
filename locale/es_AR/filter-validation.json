@@ -11,19 +11,16 @@
   "filter_unknown_option": {
     "message": "Opción de filtrado desconocida"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ no es un selector CSS válido",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
-    "message": "Línea $number$",
+    "message": "Línea $number$: $message$",
     "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
       "number": {
-        "content": "$1"
+        "content": "$1",
+        "example": "42"
       }
     }
   },

@@ -23,6 +23,9 @@
   "issueReporter_comment_label": {
     "message": "Каментарый (неабавязкова):"
   },
+  "issueReporter_config_label": {
+    "message": "Дадаць інфармацыю пра канфігурацыю майго браўзера, а таксама спіс маіх актыўных пашырэнняў."
+  },
   "issueReporter_confirmationMessage": {
     "message": "Справаздача захавана. Вы можаце праглядзець яе, калі пяройдзеце па наступнай спасылцы:"
   },

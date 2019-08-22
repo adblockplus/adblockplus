@@ -8,15 +8,6 @@
   "mops_action_cancel": {
     "message": "Anulează"
   },
-  "mops_enabled_label": {
-    "message": "Activează Adblock Plus pe <strong>$domain$</strong>",
-    "placeholders": {
-      "domain": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "mops_error_url": {
     "message": "Introduceți un URL valid"
   },

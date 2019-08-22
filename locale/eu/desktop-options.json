@@ -20,15 +20,6 @@
   "options_customFilters_widget_title": {
     "message": "Nire iragazkien zerrenda"
   },
-  "options_dialog_about_copyright": {
-    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
-    "placeholders": {
-      "currentYear": {
-        "content": "$1",
-        "example": "2017"
-      }
-    }
-  },
   "options_dialog_import_subscription_location": {
     "message": "Iragazki zerrendaren URLa"
   },
@@ -82,12 +73,6 @@
   },
   "options_filterList_source": {
     "message": "iturburua"
-  },
-  "options_filterList_state_active": {
-    "message": "Aktibo"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Ezgaitua"
   },
   "options_filterList_title": {
     "message": "Iragazki zerrendak"
@@ -147,8 +132,7 @@
     "message": "adib. $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

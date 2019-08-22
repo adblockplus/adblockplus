@@ -17,9 +17,6 @@
   "options_advanced_description": {
     "message": "Pielāgojiet Adblock Plus, pievienojiet vai noņemiet filtru sarakstus, izveidojiet un pārvaldiet savus filtru sarakstus"
   },
-  "options_anti_cv_title": {
-    "message": "ABP pretapiešanas filtru saraksts"
-  },
   "options_close": {
     "message": "aizvērt"
   },
@@ -143,12 +140,6 @@
   "options_filterList_source": {
     "message": "saturs"
   },
-  "options_filterList_state_active": {
-    "message": "Aktīvs"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Atspējots"
-  },
   "options_filterList_title": {
     "message": "Filtru saraksts"
   },
@@ -254,21 +245,11 @@
   "options_whitelist_empty_2": {
     "message": "Tīmekļvietnes kurām jūs uzticaties un atļaujat rādīt reklāmas."
   },
-  "options_whitelist_notification": {
-    "message": "\"$website$\" iekļauta baltajā sarakstā.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "options_whitelist_placeholder_example": {
     "message": "piemēram, $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

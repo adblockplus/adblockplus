@@ -23,15 +23,6 @@
   "firstRun_fair_title": {
     "message": "Igazságos használat"
   },
-  "firstRun_footer_copyright": {
-    "message": "Copyright © $year$ Minden jog fenntartva. Adblock Plus® egy bejegyzett <a0>eyeo GmbH</a0> védjegye.",
-    "placeholders": {
-      "year": {
-        "content": "$1",
-        "example": "1984"
-      }
-    }
-  },
   "firstRun_subtitle": {
     "message": "Csak átvetted az irányítást a böngésződben."
   },

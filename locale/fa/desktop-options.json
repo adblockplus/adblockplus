@@ -1,4 +1,10 @@
 {
+  "options_aa_opt_out_survey_no": {
+    "message": "نه، ممنون"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "برو به نظرسنجی"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "آگهی های قابل قبول آزار دهنده نیستند و با محتوایی که مشاهده می کنید تداخل نکنید. <a> درباره معیارهای قابل قبول تبلیغات بیشتر بدانید </a>"
   },
@@ -10,9 +16,6 @@
   },
   "options_acceptableAds_privacy_label": {
     "message": "فقط به تبلیغات بدون ردیابی شخص ثالث اجازه بده"
-  },
-  "options_anti_cv_header": {
-    "message": "ضد فیلتر"
   },
   "options_close": {
     "message": "بستن"
@@ -113,12 +116,6 @@
   "options_filterList_source": {
     "message": "منبع"
   },
-  "options_filterList_state_active": {
-    "message": "فعال"
-  },
-  "options_filterList_state_disabled": {
-    "message": "غیر فعال"
-  },
   "options_filterList_title": {
     "message": "لیست فیلتر"
   },
@@ -127,6 +124,12 @@
   },
   "options_filterList_website": {
     "message": "وب‌سایت"
+  },
+  "options_filter_list_rule": {
+    "message": "قواعد پالایش"
+  },
+  "options_footer_contribute": {
+    "message": "مشارکت"
   },
   "options_language_add": {
     "message": "اضافه کردن زبان"
@@ -163,6 +166,12 @@
   },
   "options_privacy_header": {
     "message": "حریم خصوصی و امنیت"
+  },
+  "options_rating_title": {
+    "message": "از ادبلاک‌پلاس لذت می‌بری؟"
+  },
+  "options_social_title": {
+    "message": "در تماس باشید"
   },
   "options_support_title": {
     "message": "پشتیبانی"

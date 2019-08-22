@@ -48,7 +48,7 @@
     "message": "Η λίστα φίλτρων μου"
   },
   "options_customize_blockElement": {
-    "message": "Εμφάνιση του στοιχείου μενού \"Αποκλεισμός στοιχείου\" στο δεξί κλικ"
+    "message": "Εμφάνιση του στοιχείου μενού \"Φραγή στοιχείου\" στο δεξί κλικ"
   },
   "options_customize_blockElement_tooltip": {
     "message": "Αποκλείστε προσωρινά ενοχλητικά στοιχεία σε μια ιστοσελίδα, π.χ. εικόνες ή κινούμενες προβολές εικόνων."
@@ -149,12 +149,6 @@
   "options_filterList_source": {
     "message": "Πηγή"
   },
-  "options_filterList_state_active": {
-    "message": "Ενεργή"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Απενεργοποιημένη"
-  },
   "options_filterList_title": {
     "message": "Λίστες φίλτρων"
   },
@@ -202,19 +196,6 @@
   },
   "options_language_header": {
     "message": "Γλώσσα"
-  },
-  "options_language_join": {
-    "message": "$lang1$, $lang2$",
-    "placeholders": {
-      "lang1": {
-        "content": "$1",
-        "example": "čeština"
-      },
-      "lang2": {
-        "content": "$2",
-        "example": "slovenčina"
-      }
-    }
   },
   "options_language_tip": {
     "message": "<strong>ΣΥΜΒΟΥΛΗ:</strong> Επιλέξτε μόνο τις γλώσσες που χρειάζεστε. Η επιλογή περισσότερων θα επιβραδύνει τον αποκλεισμό διαφημίσεων και επομένως την ταχύτητα περιήγησής σας."
@@ -301,8 +282,7 @@
     "message": "π.χ. $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

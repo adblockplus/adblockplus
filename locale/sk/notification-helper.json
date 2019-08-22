@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "Otvoriť všetky odkazy z tohto upozornenia"
   },
-  "notification_with_buttons": {
-    "message": "Stlačte 'OK' pre otvorenie všetkých odkazov v tomto upozornení."
-  },
   "notification_without_buttons": {
     "message": "Kliknite na upozornenie pre otvorenie všetkých odkazov v ňom."
   },

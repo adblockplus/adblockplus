@@ -20,9 +20,6 @@
   "options_filterList_lastDownload_invalidURL": {
     "message": "Անհաջող. Սխալ հասցե"
   },
-  "options_filterList_state_disabled": {
-    "message": "Անջատված"
-  },
   "options_language_header": {
     "message": "Լեզու"
   },

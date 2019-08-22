@@ -23,6 +23,9 @@
   "issueReporter_comment_label": {
     "message": "Comentari (opcional):"
   },
+  "issueReporter_config_label": {
+    "message": "Incloure informació sobre la configuració del meu navegador, així com una llista d'extensions actives que estic utilitzant."
+  },
   "issueReporter_confirmationMessage": {
     "message": "El vostre informe ha estat desat. Podeu accedir-hi a la següent adreça:"
   },

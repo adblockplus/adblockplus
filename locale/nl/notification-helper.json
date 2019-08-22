@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "Alle koppelingen van deze melding openen"
   },
-  "notification_with_buttons": {
-    "message": "Klik op ‘OK’ om alle koppelingen in deze melding te openen."
-  },
   "notification_without_buttons": {
     "message": "Klik op de melding om alle koppelingen erin te openen."
   },

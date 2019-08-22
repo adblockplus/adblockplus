@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "इस नोटिफिकेशन से सभी लिंक खोलें"
   },
-  "notification_with_buttons": {
-    "message": "इस अधिसूचना के सारे लिंक खोलने के लिए \"ok\" बटन दबाये"
-  },
   "notification_without_buttons": {
     "message": "इसके सभी लिंक खोलने के लिए नोटिफिकेशन पर क्लिक करें।"
   },

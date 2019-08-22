@@ -20,14 +20,6 @@
   "filter_unknown_option": {
     "message": "Неизвестная опция фильтра"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ не является допустимым CSS-селектором",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
     "message": "Строка $number$: $message$",
     "placeholders": {

@@ -14,14 +14,6 @@
   "filter_unknown_option": {
     "message": "알 수 없는 필터 옵션"
   },
-  "invalid_css_selector": {
-    "message": "$selector$은/는 유효한 CSS 선택이 아닙니다",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
     "message": "$number$번째 줄: $message$",
     "placeholders": {

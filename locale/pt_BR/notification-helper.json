@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "Abrir todos os links desta notificação"
   },
-  "notification_with_buttons": {
-    "message": "Clique em 'CONFIRMAR' para abrir todos os links nesta notificação."
-  },
   "notification_without_buttons": {
     "message": "Clique na notificação para abrir todos os links nele."
   },

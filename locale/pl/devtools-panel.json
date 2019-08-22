@@ -21,7 +21,7 @@
     "message": "Filtr"
   },
   "devtools_footer": {
-    "message": "<a0>Załaduj ponownie</a0> stronę, aby zobaczyć efekty zmian w filtrze"
+    "message": "Aby zobaczyć efekty zmian w filtrze <a0>wczytaj ponownie</a0> stronę"
   },
   "devtools_header": {
     "message": "Pokaż <slot0></slot0> elementów typu <slot1></slot1>"

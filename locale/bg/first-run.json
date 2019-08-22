@@ -8,15 +8,6 @@
   "firstRun_control_title": {
     "message": "Под ваш контрол"
   },
-  "firstRun_footer_copyright": {
-    "message": "Авторски права $year$ г. © Всички права запазени. Adblock Plus® е запазена търговска марка на <a0>eyeo GmbH</a0>.",
-    "placeholders": {
-      "year": {
-        "content": "$1",
-        "example": "1984"
-      }
-    }
-  },
   "firstRun_subtitle": {
     "message": "Току-що поставихте своя браузър под ваш контрол."
   },

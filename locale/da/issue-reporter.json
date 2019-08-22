@@ -23,6 +23,9 @@
   "issueReporter_comment_label": {
     "message": "Kommentar (valgfri):"
   },
+  "issueReporter_config_label": {
+    "message": "Inkludér oplysninger om min browser-opsætning samt en liste over de aktive udvidelser, jeg benytter."
+  },
   "issueReporter_confirmationMessage": {
     "message": "Rapporten er gemt. Den kan ses på følgende adresse:"
   },

@@ -8,15 +8,6 @@
   "mops_action_cancel": {
     "message": "રદ"
   },
-  "mops_enabled_label": {
-    "message": "<strong>$domain$</strong> પર એડબ્લૉક પ્લસને સક્ષમ કરો",
-    "placeholders": {
-      "domain": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "mops_filterlist_add": {
     "message": "એક ફિલ્ટર સૂચિ ઉમેરો"
   },

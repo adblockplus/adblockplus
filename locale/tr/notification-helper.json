@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "Bu bildirimden gelen tüm bağlantıları aç"
   },
-  "notification_with_buttons": {
-    "message": "Bu bildirimdeki tüm bağlantıları açmak için 'Tamam' düğmesine tıklayın."
-  },
   "notification_without_buttons": {
     "message": "Bildirimdeki tüm bağlantıları açmak için bildirime tıklayın."
   },

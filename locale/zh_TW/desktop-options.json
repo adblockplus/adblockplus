@@ -20,15 +20,6 @@
   "options_advanced_description": {
     "message": "自定義 Adblock Plus、添加或移除過濾列表、創建和維護您自己的過濾列表"
   },
-  "options_anti_cv_header": {
-    "message": "反規避過濾"
-  },
-  "options_anti_cv_title": {
-    "message": "ABP 反規避過濾列表"
-  },
-  "options_anti_cv_tooltip": {
-    "message": "此過濾列表可以防止規避（即在廣告過濾用戶上強制投放廣告的技術）。這些過濾器可以解決規避廣告以及跟踪相關的問題。"
-  },
   "options_close": {
     "message": "關閉"
   },
@@ -166,12 +157,6 @@
   },
   "options_filterList_source": {
     "message": "來源"
-  },
-  "options_filterList_state_active": {
-    "message": "活躍"
-  },
-  "options_filterList_state_disabled": {
-    "message": "未啟用"
   },
   "options_filterList_title": {
     "message": "過濾列表"
@@ -323,21 +308,11 @@
   "options_whitelist_empty_2": {
     "message": "您信任的網站並希望允許廣告在此顯示。"
   },
-  "options_whitelist_notification": {
-    "message": "$website$ 已被列入白名單。",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "options_whitelist_placeholder_example": {
     "message": "例如$domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

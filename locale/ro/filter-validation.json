@@ -20,19 +20,16 @@
   "filter_unknown_option": {
     "message": "Opțiune filtru necunoscută"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ nu este un selector de CSS valabil",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
-    "message": "Linie $number$",
+    "message": "Linie $number$: $message$",
     "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
       "number": {
-        "content": "$1"
+        "content": "$1",
+        "example": "42"
       }
     }
   },

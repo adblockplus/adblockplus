@@ -14,15 +14,6 @@
   "firstRun_control_description": {
     "message": "Pēc noklusējuma var tikt rādītas dažas neuzmācīgas reklāmas, kas atbilst <a0>stingriem kritērijiem</a0>. Mēs identificējam šīs reklāmas kā pieļaujamas. Ja nevēlaties tās redzēt <a1>bloķējiet pieļaujamās reklāmas</a1> <a2>iestatījumos</a2>."
   },
-  "firstRun_footer_copyright": {
-    "message": "Copyright © $year$. Visas tiesības paturētas. Adblock Plus® ir <a0>eyeo GmbH</a0> reģistrēta preču zīme.",
-    "placeholders": {
-      "year": {
-        "content": "$1",
-        "example": "1984"
-      }
-    }
-  },
   "firstRun_warning_dataCorrupted_intro": {
     "message": "Daži lietotāji saskaras ar problēmu, ka šī lapa tiek atvērta katrā pārlūka palaišanas reizē. Šo problēmu var atrisināt pārinstalējot Adblock Plus:"
   },

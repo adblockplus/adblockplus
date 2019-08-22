@@ -8,15 +8,6 @@
   "mops_action_cancel": {
     "message": "BATALKAN"
   },
-  "mops_enabled_label": {
-    "message": "Dayakan Adblock Plus di <strong>$domain$</strong>",
-    "placeholders": {
-      "domain": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "mops_error_url": {
     "message": "Masukkan URL yang sah"
   },

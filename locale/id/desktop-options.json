@@ -20,15 +20,6 @@
   "options_advanced_description": {
     "message": "Sesuaikan Adblock Plus, tambah atau hapus daftar filter, buat dan kelola daftar filter Anda sendiri"
   },
-  "options_anti_cv_header": {
-    "message": "Anti-Pengelakan"
-  },
-  "options_anti_cv_title": {
-    "message": "Daftar Filter Anti-Pengelakan ABP"
-  },
-  "options_anti_cv_tooltip": {
-    "message": "Filter ini bekerja terhadap pengelakan (teknik untuk memaksa iklan pada pengguna ad-block). Filter ini mengatasi pengelakan iklan serta pelacakan terkait."
-  },
   "options_close": {
     "message": "tutup"
   },
@@ -166,12 +157,6 @@
   },
   "options_filterList_source": {
     "message": "sumber"
-  },
-  "options_filterList_state_active": {
-    "message": "Aktif"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Dinonaktifkan"
   },
   "options_filterList_title": {
     "message": "Daftar penyaring"
@@ -323,21 +308,11 @@
   "options_whitelist_empty_2": {
     "message": "Situs yang Anda percayai dan ingin membolehkan iklan muncul akan ditampilkan di sini."
   },
-  "options_whitelist_notification": {
-    "message": "\"$website$\" telah masuk daftar putih.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "options_whitelist_placeholder_example": {
     "message": "misalnya $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

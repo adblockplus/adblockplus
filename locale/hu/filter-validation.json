@@ -20,14 +20,6 @@
   "filter_unknown_option": {
     "message": "Ismeretlen szűrőlehetőség"
   },
-  "invalid_css_selector": {
-    "message": "Érvénytelen CSS kiválasztó: $selector$",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
     "message": "$number$. sor: $message$",
     "placeholders": {

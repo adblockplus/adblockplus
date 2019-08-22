@@ -29,15 +29,6 @@
   "options_advanced_description": {
     "message": "Adblock Plus aanpassen, filterlijsten toevoegen of verwijderen, uw eigen filterlijsten maken en beheren"
   },
-  "options_anti_cv_header": {
-    "message": "Anti-omzeiling"
-  },
-  "options_anti_cv_title": {
-    "message": "ABP-filterlijst voor anti-omzeiling"
-  },
-  "options_anti_cv_tooltip": {
-    "message": "Deze filterlijst werkt tegen omzeiling (d.w.z. technieken om advertenties op te dringen aan gebruikers die advertenties blokkeren). Deze filters gaan zowel het omzeilen van advertentieblokkering als gerelateerde tracking tegen."
-  },
   "options_builtin_filterList_add": {
     "message": "Ingebouwde filterlijsten toevoegen"
   },
@@ -179,12 +170,6 @@
   "options_filterList_source": {
     "message": "bron"
   },
-  "options_filterList_state_active": {
-    "message": "Actief"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Inactief"
-  },
   "options_filterList_title": {
     "message": "Filterlijsten"
   },
@@ -216,6 +201,9 @@
   },
   "options_general_description": {
     "message": "Bepalen wat Adblock Plus op websites toont en verbergt"
+  },
+  "options_generic_error": {
+    "message": "O jee! Er is iets fout gegaan. Probeer het opnieuw."
   },
   "options_help_center": {
     "message": "Zoekt u antwoord op uw vragen? <a0>Ga naar onze Helpcentrale (alleen in het Engels)</a0>"
@@ -367,8 +355,7 @@
     "message": "bv. $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

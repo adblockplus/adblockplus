@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "এই সুচনাটোৰ পৰা সকলো লিংক খোলক।"
   },
-  "notification_with_buttons": {
-    "message": "এই সুচনাটোত থকা সকলো লিংক খোলিবলৈ 'ঠিক আছে' ক্লিক কৰক।"
-  },
   "notification_without_buttons": {
     "message": "সুচনাটোত থকা সকলো লিংক খোলিবলৈ সেইটোত ক্লিক কৰক।"
   },

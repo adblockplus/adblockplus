@@ -20,14 +20,6 @@
   "filter_unknown_option": {
     "message": "Opción de filtrado desconocida"
   },
-  "invalid_css_selector": {
-    "message": "$selector$ no es un selector CSS válido",
-    "placeholders": {
-      "selector": {
-        "content": "$1"
-      }
-    }
-  },
   "line": {
     "message": "Línea $number$: $message$",
     "placeholders": {

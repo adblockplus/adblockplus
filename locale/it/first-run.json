@@ -23,15 +23,6 @@
   "firstRun_fair_title": {
     "message": "Utilizzo equo"
   },
-  "firstRun_footer_copyright": {
-    "message": "Copyright © $year$ Tutti i diritti riservati. Adblock Plus® è un marchio di fabbrica registrato di <a0>eyeo GmbH</a0>.",
-    "placeholders": {
-      "year": {
-        "content": "$1",
-        "example": "1984"
-      }
-    }
-  },
   "firstRun_subtitle": {
     "message": "Hai appena preso il controllo del tuo browser"
   },

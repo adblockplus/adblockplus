@@ -29,15 +29,6 @@
   "options_advanced_description": {
     "message": "Az Adblock Plus testreszabása, szűrőlisták hozzáadása és eltávolítása, saját szűrőlisták létrehozása és karbantartása"
   },
-  "options_anti_cv_header": {
-    "message": "Megkerülésvédelem"
-  },
-  "options_anti_cv_title": {
-    "message": "ABP Megkerülésvédelem szűrőlista"
-  },
-  "options_anti_cv_tooltip": {
-    "message": "Ez a szűrőlista a megkerülést akadályozza (pl. olyan technikák, amelyek rákényszerítik a reklámokat a felhasználókra, akkor is ha reklámblokkolót használnak). Ezek a szűrők blokkolják ezeket a reklámokat, valamint a hozzájuk kapcsolódó követést is."
-  },
   "options_builtin_filterList_add": {
     "message": "Hirdetések beépített szűrőlistái"
   },
@@ -82,15 +73,6 @@
   },
   "options_customize_showNotifications_tooltip": {
     "message": "Értesítések engedélyezése az Adblock Plus-tól (a kritikus teljesítményre vonatkozó értesítések mindig megjelennek)."
-  },
-  "options_dialog_about_copyright": {
-    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
-    "placeholders": {
-      "currentYear": {
-        "content": "$1",
-        "example": "2017"
-      }
-    }
   },
   "options_dialog_about_title": {
     "message": "Az Adblock Plus névjegye"
@@ -179,12 +161,6 @@
   "options_filterList_source": {
     "message": "forráskód"
   },
-  "options_filterList_state_active": {
-    "message": "Aktív"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Inaktív"
-  },
   "options_filterList_title": {
     "message": "Szűrő lista"
   },
@@ -240,19 +216,6 @@
   },
   "options_language_header": {
     "message": "Nyelv"
-  },
-  "options_language_join": {
-    "message": "$lang1$, $lang2$",
-    "placeholders": {
-      "lang1": {
-        "content": "$1",
-        "example": "čeština"
-      },
-      "lang2": {
-        "content": "$2",
-        "example": "slovenčina"
-      }
-    }
   },
   "options_language_tip": {
     "message": "<strong>Tipp:</strong> Csak a szükséges nyelveket válassza ki. Több nyelv kiválasztása lassítja a reklámblokkolót, és ezáltal a böngészési sebességet."
@@ -367,8 +330,7 @@
     "message": "Pl. $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

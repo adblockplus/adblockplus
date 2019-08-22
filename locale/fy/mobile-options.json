@@ -8,15 +8,6 @@
   "mops_action_cancel": {
     "message": "Annulearje"
   },
-  "mops_enabled_label": {
-    "message": "Adblock Plus ynskeakelje op <strong>$domain$</strong>",
-    "placeholders": {
-      "domain": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "mops_error_url": {
     "message": "Fier in URL yn"
   },

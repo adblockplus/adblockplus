@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "Obre tots els enllaços d'aquesta notificació"
   },
-  "notification_with_buttons": {
-    "message": "Feu clic a «D'acord» per obrir tots els enllaços en aquesta notificació."
-  },
   "notification_without_buttons": {
     "message": "Feu clic a la notificació per obrir-ne tots els enllaços."
   },

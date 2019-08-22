@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "Összes link megnyitása ebből az értesítésből"
   },
-  "notification_with_buttons": {
-    "message": "Kattints az OK gombra az értesítésben lévő összes link megnyitásához."
-  },
   "notification_without_buttons": {
     "message": "Kattints az értesítésre a benne lévő összes link megnyitásához."
   },

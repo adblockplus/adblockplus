@@ -20,15 +20,6 @@
   "options_advanced_description": {
     "message": "Peribadikan Adblock Plus, tambah atau keluarkan senarai penapis, buat dan kekalkan senarai penapis anda sendiri"
   },
-  "options_anti_cv_header": {
-    "message": "Anti-Pemintasan"
-  },
-  "options_anti_cv_title": {
-    "message": "Senarai Penapis Anti-Pemintasan ABP"
-  },
-  "options_anti_cv_tooltip": {
-    "message": "Senarai penapis ini berfungsi terhadap pemintasan (teknik untuk memaksa memaparkan iklan kepada pengguna penyekat iklan). Penapis ini menyekat iklan pintasan serta penjejak yang berkautan."
-  },
   "options_close": {
     "message": "TUTUP"
   },
@@ -166,12 +157,6 @@
   },
   "options_filterList_source": {
     "message": "Sumber"
-  },
-  "options_filterList_state_active": {
-    "message": "Aktif"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Dilumpuhkan"
   },
   "options_filterList_title": {
     "message": "Senarai penapis"
@@ -323,21 +308,11 @@
   "options_whitelist_empty_2": {
     "message": "Laman web yang anda percayai dan ingin membenarkan iklan akan dipaparkan di sini."
   },
-  "options_whitelist_notification": {
-    "message": "$website$ Telah disenarai putih.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "options_whitelist_placeholder_example": {
     "message": "cth. $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

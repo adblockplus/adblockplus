@@ -8,15 +8,6 @@
   "mops_action_cancel": {
     "message": "Loobu"
   },
-  "mops_enabled_label": {
-    "message": "Luba Adblock Plus domeenil <strong>$domain$</strong>",
-    "placeholders": {
-      "domain": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "mops_error_url": {
     "message": "Sisesta sobiv aadress"
   },

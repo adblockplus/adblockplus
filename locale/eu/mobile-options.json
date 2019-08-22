@@ -8,15 +8,6 @@
   "mops_action_cancel": {
     "message": "Utzi bertan behera"
   },
-  "mops_enabled_label": {
-    "message": "Gaitu Adblock Plus <strong>$domain$</strong> domeinuan",
-    "placeholders": {
-      "domain": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "mops_filterlist_add": {
     "message": "Gehitu irazki zerrenda bat"
   },

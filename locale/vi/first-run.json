@@ -23,15 +23,6 @@
   "firstRun_fair_title": {
     "message": "Sử dụng hợp lý"
   },
-  "firstRun_footer_copyright": {
-    "message": "Copyright © $year$ Bảo lưu mọi quyền. Adblock Plus® là thương hiệu đã đăng ký của <a0>eyeo GmbH</a0>.",
-    "placeholders": {
-      "year": {
-        "content": "$1",
-        "example": "1984"
-      }
-    }
-  },
   "firstRun_subtitle": {
     "message": "Bạn chỉ cần điều khiển trình duyệt của bạn."
   },

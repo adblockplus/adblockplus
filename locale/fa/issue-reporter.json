@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "ما قادر نخواهیم بود که دوباره بیاییم و احتمالاً این گزارش را در اولویت های پایین تر قرار می دهیم."
   },
+  "issueReporter_closeButton_label": {
+    "message": "بستن"
+  },
   "issueReporter_commentPage_heading": {
     "message": "وارد کردن نظر"
   },

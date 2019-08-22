@@ -20,15 +20,6 @@
   "options_advanced_description": {
     "message": "Derinkite Adblock Plus, pridėkite ar pašalinkite sąrašus, kurkite ir prižiūrėkite savo sąrašus"
   },
-  "options_anti_cv_header": {
-    "message": "Anti-apribojimai"
-  },
-  "options_anti_cv_title": {
-    "message": "ABP anti-apribojimų filtrų sąrašas"
-  },
-  "options_anti_cv_tooltip": {
-    "message": "Šis sąrašas nukreiptas prieš apribojimus (t.y. būdus parodyti reklamą žmonėm naudojantiem reklamų blokavimo įrankius). Šie filtrai kovoja su tokiom reklamos ir tom kurios susiję su sekimu."
-  },
   "options_close": {
     "message": "užverti"
   },
@@ -166,12 +157,6 @@
   },
   "options_filterList_source": {
     "message": "šaltinis"
-  },
-  "options_filterList_state_active": {
-    "message": "Aktyvus"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Išjungta"
   },
   "options_filterList_title": {
     "message": "Filtrų sąrašai"
@@ -323,21 +308,11 @@
   "options_whitelist_empty_2": {
     "message": "Tinklapiai kuriais pasitikite ir norite juose matyti reklamą, bus rodomi čia."
   },
-  "options_whitelist_notification": {
-    "message": "„$website$“ pridėta į ignoruojamų sąrašą.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "options_whitelist_placeholder_example": {
     "message": "pvz. $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

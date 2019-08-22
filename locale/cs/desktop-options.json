@@ -50,15 +50,6 @@
   "options_customize_showNotifications": {
     "message": "Zobrazovat užitečná upozornění"
   },
-  "options_dialog_about_copyright": {
-    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
-    "placeholders": {
-      "currentYear": {
-        "content": "$1",
-        "example": "2017"
-      }
-    }
-  },
   "options_dialog_about_title": {
     "message": "O aplikaci Adblock Plus"
   },
@@ -142,12 +133,6 @@
   },
   "options_filterList_source": {
     "message": "Zdroj"
-  },
-  "options_filterList_state_active": {
-    "message": "Aktivní"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Neaktivní"
   },
   "options_filterList_title": {
     "message": "Seznamy filtrů"
@@ -260,21 +245,11 @@
   "options_whitelist_empty_2": {
     "message": "Zde se zobrazí webové stránky, kterým důvěřujete a chcete na nich povolit reklamy."
   },
-  "options_whitelist_notification": {
-    "message": "$website$ byla přidána na seznam povolených.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "options_whitelist_placeholder_example": {
     "message": "např.: $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

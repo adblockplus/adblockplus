@@ -23,15 +23,6 @@
   "firstRun_fair_title": {
     "message": "Adil kullanim"
   },
-  "firstRun_footer_copyright": {
-    "message": "Telif hakkı. © $year$ Tüm hakları saklıdır. Adblock Plus®, <a0>eyeo GmbH</a0>'nin tescilli ticari markasıdır.",
-    "placeholders": {
-      "year": {
-        "content": "$1",
-        "example": "1984"
-      }
-    }
-  },
   "firstRun_subtitle": {
     "message": "Tarayıcınız artık kontrol altında."
   },

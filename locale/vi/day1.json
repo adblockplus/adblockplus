@@ -1,0 +1,53 @@
+{
+  "day1_blockelement_description": {
+    "message": "Chặn chúng với tính năng chặn phần tử tiện lợi Adblock Plus."
+  },
+  "day1_blockelement_more": {
+    "message": "Học cách làm"
+  },
+  "day1_blockelement_screenshot": {
+    "message": "Ví dụ về biểu tượng bật lên với nút \"Chặn phần tử\" được tô sáng."
+  },
+  "day1_blockelement_title": {
+    "message": "Mệt mỏi của các phần bình luận đưa bạn xuống?"
+  },
+  "day1_community_contact": {
+    "message": "Hãy liên hệ với chúng tôi!"
+  },
+  "day1_community_contact_subject": {
+    "message": "Tìm kiếm sự hỗ trợ!"
+  },
+  "day1_community_description_1": {
+    "message": "Là một dự án nguồn mở, chúng tôi phụ thuộc vào những người dùng như bạn để giúp chúng tôi cải thiện trải nghiệm chặn quảng cáo của bạn."
+  },
+  "day1_community_description_2": {
+    "message": "Những tính năng bạn muốn xem? Chúng ta có thể làm gì tốt hơn? Là Adblock Plus làm cho một số trang web hoạt động sai?"
+  },
+  "day1_community_title": {
+    "message": "Tham gia cộng đồng Adblock Plus"
+  },
+  "day1_header_more": {
+    "message": "Tìm hiểu thêm về quảng cáo độc hại"
+  },
+  "day1_header_title": {
+    "message": "Adblock Plus <strong>đã chặn <em0>$ads$ qc</em0> trong <em1>nửa giờ qua</em1>,</strong>một số trong đó có thể chứa nội dung độc hại",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_message": {
+    "message": "Đó là rất nhiều quảng cáo gây phiền nhiễu. <a>Tìm hiểu những gì khác Adblock Plus có thể chặn.</a>"
+  },
+  "notification_day1_title": {
+    "message": "Bạn đã chặn $ads$ quảng cáo!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

@@ -23,6 +23,9 @@
   "issueReporter_comment_label": {
     "message": "Kommentaar (opsjoneel):"
   },
+  "issueReporter_config_label": {
+    "message": "Foegje ynformaasje oer myn browserkonfiguraasje ta, en ek in list fan aktive útwreidingen dy't ik brûk."
+  },
   "issueReporter_confirmationMessage": {
     "message": "Jo rapport is bewarre. Jo kinne it besjen op it folgjende adres:"
   },

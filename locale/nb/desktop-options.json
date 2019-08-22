@@ -20,15 +20,6 @@
   "options_advanced_description": {
     "message": "Tilpass Adblock Plus, legg til eller fjern filterlister, lag og vedlikehold dine egne filterlister"
   },
-  "options_anti_cv_header": {
-    "message": "Antiomgåelse"
-  },
-  "options_anti_cv_title": {
-    "message": "ABP filterliste for Antiomgåelse"
-  },
-  "options_anti_cv_tooltip": {
-    "message": "Denne filterlisten virker mot omgåelse (teknikker for å tvinge annonser på brukere som har blokkert dem). Disse filtrene håndterer annonser som prøver å omgå blokkeringen og eventuell sporing."
-  },
   "options_close": {
     "message": "lukk"
   },
@@ -166,12 +157,6 @@
   },
   "options_filterList_source": {
     "message": "kilde"
-  },
-  "options_filterList_state_active": {
-    "message": "Aktiv"
-  },
-  "options_filterList_state_disabled": {
-    "message": "Deaktivert"
   },
   "options_filterList_title": {
     "message": "Filterlister"
@@ -323,21 +308,11 @@
   "options_whitelist_empty_2": {
     "message": "Nettsteder du stoler på og ønsker å tillate annonser på vil bli vist her."
   },
-  "options_whitelist_notification": {
-    "message": "\"$website$\" har blitt hvitelistet.",
-    "placeholders": {
-      "website": {
-        "content": "$1",
-        "example": "example.com"
-      }
-    }
-  },
   "options_whitelist_placeholder_example": {
     "message": "f.eks $domain$",
     "placeholders": {
       "domain": {
-        "content": "$1",
-        "example": "www.example.com"
+        "content": "www.example.com"
       }
     }
   }

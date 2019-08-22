@@ -5,9 +5,6 @@
   "notification_open_all": {
     "message": "Ireki jakinarazpen honetako esteka guztiak"
   },
-  "notification_with_buttons": {
-    "message": "Sakatu 'Ados' jakinarazpen honetako esteka guztiak irekitzeko."
-  },
   "notification_without_buttons": {
     "message": "Sakatu jakinarazpenean bertako esteka guztiak irekitzeko."
   },

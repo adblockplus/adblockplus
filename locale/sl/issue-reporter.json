@@ -23,6 +23,9 @@
   "issueReporter_comment_label": {
     "message": "Komentar (neobvezno):"
   },
+  "issueReporter_config_label": {
+    "message": "Vključi podatke o nastavitvah mojega brskalnika, kot tudi seznam dejavnih razširitev, ki jih uporabljam."
+  },
   "issueReporter_confirmationMessage": {
     "message": "Vaše poročilo je shranjeno. Do njega lahko dostopate na naslednjem naslovu:"
   },
