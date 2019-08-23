@@ -58,7 +58,7 @@ class IOScrollbar extends IOElement
       "wheel",
       (event) =>
       {
-        stop(event);
+        stopEvent(event);
         let delta = 0;
         if (this.direction === "vertical")
           delta = event.deltaY;
@@ -144,7 +144,7 @@ class IOScrollbar extends IOElement
     doc.addEventListener("mouseup", this, true);
     // also prevents selection like a native scrollbar would
     // (this is specially needed for Firefox and Edge)
-    doc.addEventListener("selectstart", stop, true);
+    doc.addEventListener("selectstart", stopEvent, true);
   }
 
   onmousemove(event)
@@ -172,7 +172,7 @@ class IOScrollbar extends IOElement
     const {currentTarget: doc, target} = event;
     doc.removeEventListener("mousemove", this, true);
     doc.removeEventListener("mouseup", this, true);
-    doc.removeEventListener("selectstart", stop, true);
+    doc.removeEventListener("selectstart", stopEvent, true);
     // stop dragging if mouseup happens outside this component
     // or within this component slider (the only child)
     // otherwise let the click handler ignore the action
@@ -235,7 +235,7 @@ function sizeChange()
 
 // if inside a container with its own wheel or mouse events,
 // avoid possible backfiring through already handled events.
-function stop(event)
+function stopEvent(event)
 {
   event.preventDefault();
   event.stopPropagation();
