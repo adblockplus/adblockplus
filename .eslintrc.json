@@ -15,6 +15,7 @@
     // As long as issue 6581 is under discussion, ABP UI
     // decided to put an end to all debates and use
     // the `prefer-const` rule.
-    "prefer-const": ["error", {"destructuring": "all"}]
+    "prefer-const": ["error", {"destructuring": "all"}],
+    "no-prototype-builtins": 0
   }
 }

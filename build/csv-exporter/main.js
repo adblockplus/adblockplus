@@ -15,8 +15,6 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* globals process */
-
 "use strict";
 
 const {importTranslations} = require("./import");
