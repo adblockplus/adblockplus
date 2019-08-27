@@ -13,6 +13,8 @@ before_script:
   # peer dependencies need to be installed explicitly see adblockplusui#211
   - install-peerdeps stylelint-config-eyeo@1.0.2
   - install-peerdeps ajv-keywords@3.2.0
+  - pip install --user Jinja2 cryptography fonttools brotli
+  - export PATH=$PATH:~/.local/bin
 
 stages:
   - lint
