@@ -146,15 +146,15 @@
     "hyperhtml-element": "^3.5.0",
     "node-sass": "^4.10.0",
     "npm-dollar": "^2.1.3",
-    "website-defaults": "github:adblockplus/website-defaults#255e4f1"
+    "website-defaults": "github:adblockplus/website-defaults#255e4f1",
+    "local-range": "^0.1.0",
+    "glob": "^7.1.3"
   },
   "devDependencies": {
     "csv": "^5.0.0",
     "eslint": "^5.9.0",
     "eslint-config-eyeo": "^2.1.0",
-    "glob": "^7.1.3",
     "http-server": "^0.11.1",
-    "local-range": "^0.1.0",
     "nightmare": "^3.0.1",
     "pngquant": "^2.0.1",
     "stylelint": "^9.9.0",
