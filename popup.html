@@ -35,13 +35,21 @@
     <div id="notification" aria-hidden="true"></div>
     <main>
       <div id="page-status">
-        <div>
+        <h2 data-i18n="status_header"></h2>
+        <div class="domain">
           <div class="details">
-            <h2 data-i18n="status_header"></h2>
+            <h3 data-i18n="status_domain"></h3>
             <p id="blocking-domain" class="reset-font"></p>
           </div>
           <io-circle-toggle checked></io-circle-toggle>
         </div>
+        <div class="page">
+            <div class="details">
+              <h3 data-i18n="status_page"></h3>
+              <p id="blocking-page" class="reset-font"></p>
+            </div>
+            <io-circle-toggle checked></io-circle-toggle>
+          </div>
       </div>
       <div id="page-info">
         <div id="default-container">
@@ -71,6 +79,7 @@
       </div>
       <div id="page-refresh">
         <div class="card">
+          <strong data-i18n="refresh_this_page"></strong>
           <span data-i18n="refresh_to_take_effect"></span>
           <button data-i18n="options_refresh"></button>
         </div>

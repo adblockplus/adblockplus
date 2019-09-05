@@ -1,7 +1,15 @@
 {
   "status_header": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/bubble_ui/spec/abp/bubble-ui.md#index",
-    "message": "Block ads on:"
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
+    "message": "Block ads on"
+  },
+  "status_domain": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
+    "message": "This website:"
+  },
+  "status_page": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
+    "message": "This page:"
   },
   "click_element_to_block_it": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/bubble_ui/spec/abp/bubble-ui.md#block-element",
@@ -28,12 +36,16 @@
     "message": "Stop showing notifications"
   },
   "promote_abp_module": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/bubble_ui/spec/abp/bubble-ui.md#index",
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#index",
     "message": "Interested in Adblock Plus on mobile?"
+  },
+  "refresh_this_page": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/6f8028d692da33978069972d90417dcd10957f2b/spec/abp/bubble-ui.md#refresh",
+    "message": "Refresh this page"
   },
   "refresh_to_take_effect": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/6f8028d692da33978069972d90417dcd10957f2b/spec/abp/bubble-ui.md#refresh",
-    "message": "Click <strong>Refresh</strong> for the changes to take effect."
+    "message": "Click the button below for changes to take effect."
   },
   "stats_header": {
     "description": "Stats description above the page / total stats",

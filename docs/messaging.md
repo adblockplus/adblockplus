@@ -34,7 +34,9 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
   - [remove](#filtersremove)
   - [replace](#filtersreplace)
   - [toggle](#filterstoggle)
+  - [unwhitelist](#filtersunwhitelist)
   - [validate](#filtersvalidate)
+  - [whitelist](#filterswhitelist)
 - prefs
   - [get](#prefsget)
   - [listen](#prefslisten)
@@ -187,6 +189,11 @@ See [`filterNotifier`][filternotifier].
 - **string** text
 - **boolean** disabled
 
+#### filters.unwhitelist
+
+- **object** tab
+- **boolean** singlePage - to unwhitelist a page instead of the whole domain
+
 #### filters.validate
 
 - **string** text
@@ -194,6 +201,11 @@ See [`filterNotifier`][filternotifier].
 **Response**
 
 **[FilterError](#filtererror)[]** errors
+
+#### filters.whitelist
+
+- **object** tab
+- **boolean** singlePage - to whitelist a page instead of the whole domain
 
 ---
 

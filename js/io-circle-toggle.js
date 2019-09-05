@@ -86,7 +86,7 @@ class IOCircleToggle extends IOElement
   {
     this.html`
     <svg
-      width="71px" height="50px"
+      width="100%"
       viewBox="-2.5 -2.5 71 50" version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       role="checkbox"

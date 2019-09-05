@@ -277,23 +277,75 @@ html[dir="rtl"] #notification .content.information h3::before
   transition: height 0.3s ease-out;
 }
 
+#page-status h2
+{
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}
+
+#page-status h3
+{
+  margin: 0;
+  color: var(--color-secondary);
+}
+
+#page-status .domain
+{
+  --toggle-width: 50px;
+}
+
+#page-status .page
+{
+  --toggle-width: 35px;
+}
+
+#page-status .domain io-circle-toggle,
+#page-status .page io-circle-toggle
+{
+  width: var(--toggle-width);
+}
+
 #page-status .details
 {
-  width: 240px;
+  flex-grow: 1;
+  width: calc(100% - var(--toggle-width));
 }
 
-#page-status io-circle-toggle
+#page-status .page .details,
+#page-status .page io-circle-toggle
 {
-  transform: scale(0.7);
-  transform-origin: 100%;
+  padding: 1em 0;
 }
 
-#blocking-domain
+#page-status .page
+{
+  margin-bottom: var(--margin-primary);
+}
+
+html[dir="ltr"] #page-status .page
+{
+  border-left: 4px solid #F7F7F7;
+  padding-left: var(--padding-primary);
+}
+
+html[dir="rtl"] #page-status .page
+{
+  border-right: 4px solid #F7F7F7;
+  padding-right: var(--padding-primary);
+}
+
+#blocking-domain,
+#blocking-page
 {
   overflow: hidden;
-  margin: var(--margin-primary-half) 0;
+  margin-top: var(--margin-primary-half);
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+#blocking-page
+{
+  margin-bottom: 0;
 }
 
 a,
@@ -319,13 +371,19 @@ body:not(.refresh) #page-refresh
 #page-refresh .card span
 {
   display: block;
-  margin-top: var(--margin-primary-half);
-  margin-bottom: var(--margin-primary);
+  padding: 0 var(--padding-primary);
+}
+
+#page-refresh .card strong
+{
+  display: block;
+  margin-bottom: var(--margin-primary-half);
 }
 
 #page-refresh .card button
 {
   width: 100%;
+  margin-top: var(--margin-primary);
   padding: var(--padding-secondary);
   border: 1px solid #0497E1;
   border-radius: 4px;
