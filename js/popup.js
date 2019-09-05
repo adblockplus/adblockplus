@@ -20,7 +20,7 @@
 require("./io-circle-toggle.js");
 require("./popup.notifications.js");
 
-const setupToggle = require("./popup.toggle.js");
+const setupToggles = require("./popup.toggles.js");
 const setupBlock = require("./popup.blockelement.js");
 const {activeTab} = require("./popup.utils.js");
 const {$, $$} = require("./dom");
@@ -76,8 +76,10 @@ activeTab.then(tab =>
 .then(tab =>
 {
   const {url} = tab;
-  const hostname = url ? new URL(url).hostname.replace(/^www\./, "") : "";
+  const defaultDetails = {hostname: "", pathname: ""};
+  const {hostname, pathname} = url ? new URL(url) : defaultDetails;
   $("#blocking-domain").textContent = hostname;
+  $("#blocking-page").textContent = pathname;
   $("#issue-reporter").addEventListener(
     "click", () => reportIssue(tab)
   );
@@ -95,7 +97,7 @@ activeTab.then(tab =>
       () => window.close()
     );
   });
-  setupToggle(tab);
+  setupToggles(tab);
   updateStats(tab);
   setupBlock(tab);
   setupFooter();
