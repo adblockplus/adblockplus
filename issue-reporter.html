@@ -127,11 +127,14 @@
 
     <footer>
       <div>
-        <a id="privacyPolicy" data-i18n="issueReporter_privacyPolicy" data-doclink="reporter_privacy"></a>
+        <div>
+          <a id="privacyPolicy" data-i18n="issueReporter_privacyPolicy" data-doclink="reporter_privacy"></a>
+        </div>
+        <button id="cancel" data-i18n="cancel" class="secondary"></button>
+        <button id="continue" data-i18n="continue" class="primary" disabled></button>
+        <button id="send" data-i18n="issueReporter_sendButton_label" class="primary" disabled hidden></button>
       </div>
-      <button id="cancel" data-i18n="cancel" class="secondary"></button>
-      <button id="continue" data-i18n="continue" class="primary" disabled></button>
-      <button id="send" data-i18n="issueReporter_sendButton_label" class="primary" disabled hidden></button>
+      <div id="other-issues" data-i18n="issueReporter_other_issues"></div>
     </footer>
   </body>
 </html>

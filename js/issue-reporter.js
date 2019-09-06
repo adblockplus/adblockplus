@@ -43,9 +43,14 @@ function containsPermissions()
 
 document.addEventListener("DOMContentLoaded", () =>
 {
+  const supportEmail = "support@adblockplus.org";
   ext.i18n.setElementLinks(
     "sr-warning",
-    "mailto:support@adblockplus.org"
+    `mailto:${supportEmail}`
+  );
+  ext.i18n.setElementLinks(
+    "other-issues",
+    `mailto:${supportEmail}?subject=${encodeURIComponent("[Issue Reporter]")}`
   );
 
   const cancelButton = $("#cancel");

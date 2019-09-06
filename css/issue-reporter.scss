@@ -108,9 +108,15 @@ main
   flex-direction: column;
   box-sizing: border-box;
   padding: 1.4rem;
+  flex-grow: 1;
+}
+
+main,
+#other-issues,
+.modalContent
+{
   border: 1px solid #CDCDCD;
   background-color: #FFF;
-  flex-grow: 1;
 }
 
 .page:not([hidden])
@@ -214,28 +220,63 @@ html[dir="rtl"] #typeSelectorGroup > p
   flex-grow: 1;
 }
 
-footer
+footer,
+footer > div
 {
-  display: flex;
-  flex-direction: row;
   box-sizing: border-box;
-  margin-top: 2rem;
   padding-bottom: 16px;
 }
 
-footer > div
+footer > div:not(#other-issues)
+{
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+}
+
+footer > div:not(#other-issues) > div
 {
   flex-grow: 1;
   align-self: flex-end;
 }
 
-#privacyPolicy
+#privacyPolicy,
+#other-issues
 {
   font-size: 1rem;
 }
 
+#other-issues
+{
+  margin-top: 1rem;
+  padding-top: 16px;
+  background-image: url(icons/info-big.svg);
+  background-repeat: no-repeat;
+}
+
+html[dir="ltr"] #other-issues
+{
+  padding-left: 72px;
+  background-position: 24px center;
+}
+
+html[dir="rtl"] #other-issues
+{
+  padding-right: 72px;
+  background-position: calc(100% - 24px) center;
+}
+
+#other-issues a,
+#other-issues a:visited
+{
+  font-weight: 600;
+  text-decoration: none;
+}
+
 #privacyPolicy,
-#privacyPolicy:visited
+#privacyPolicy:visited,
+#other-issues a,
+#other-issues a:visited
 {
   color: #077ca7;
 }
@@ -394,8 +435,6 @@ input[type="radio"]:checked
   overflow: auto;
   flex-direction: column;
   padding: 2rem;
-  border: 1px solid #CDCDCD;
-  background-color: #FFF;
   flex-grow: 1;
   align-items: flex-end;
 }
