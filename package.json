@@ -131,8 +131,7 @@
       "io-rating": "$ create.test.component io-rating",
       "io-scrollbar": "$ create.test.component io-scrollbar",
       "io-steps": "$ create.test.component io-steps",
-      "io-toggle": "$ create.test.component io-toggle",
-      "io-big-toggle": "$ create.test.component io-big-toggle"
+      "io-toggle": "$ create.test.component io-toggle"
     },
     "watch": {
       "dev-build": "watch 'npm run dev-build' ./css ./js",
