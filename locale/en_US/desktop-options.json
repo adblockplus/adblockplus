@@ -317,15 +317,24 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "description": "Error message in advanced tab",
-    "message": "Failed, not a valid address"
+    "message": "Not a valid address. Check the URL."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#filter-list-error-statuses",
+    "message": "Download failed. URL must start with $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_lastDownload_connectionError": {
     "description": "Error message in advanced tab",
-    "message": "Failed, download failure"
+    "message": "Download failure"
   },
   "options_filterList_lastDownload_invalidData": {
     "description": "Error message in advanced tab",
-    "message": "Failed, not a valid filter list"
+    "message": "Not a valid filter list"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "description": "Error message in advanced tab",
@@ -433,6 +442,15 @@
   "options_dialog_import_subscription_location_error": {
     "description": "Error message of 'Filter list URL' input in 'Add a filter list' dialog",
     "message": "Enter a valid URL"
+  },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#add-custom-subscription-popup-invalid",
+    "message": "URL must start with $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_dialog_language_title": {
     "description": "Title of lanugage modal dialog",
