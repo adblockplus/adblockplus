@@ -50,7 +50,29 @@ module.exports = {
 function checkIfValid(event)
 {
   const {currentTarget} = event;
-  currentTarget.setAttribute("aria-invalid", !currentTarget.checkValidity());
+  const isValid = currentTarget.checkValidity();
+
+  currentTarget.setAttribute("aria-invalid", !isValid);
+
+  let errorText = "";
+  if (!isValid)
+  {
+    const url = currentTarget.value;
+    if (url)
+    {
+      let errorId = null;
+      if (!(new RegExp(currentTarget.pattern).test(url)))
+      {
+        errorId = "options_dialog_import_subscription_location_error_protocol";
+      }
+      else
+      {
+        errorId = "options_dialog_import_subscription_location_error";
+      }
+      errorText = browser.i18n.getMessage(errorId);
+    }
+  }
+  $("#import-list-url ~ .error-msg").textContent = errorText;
 }
 
 function filtersBlur()

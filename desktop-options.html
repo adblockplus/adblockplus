@@ -291,8 +291,16 @@
                 <h3 data-i18n="options_filterList_add" class="add secondary"></h3>
                 <form data-validation="custom" novalidate>
                   <p class="main-input">
-                    <input id="import-list-url" type="url" data-i18n-placeholder="options_dialog_import_subscription_location" required>
-                    <span data-i18n="options_dialog_import_subscription_location_error" class="error-msg"></span>
+                    <!--
+                      Core doesn't tell us whether the URL is valid so we have
+                      to determine that ourselves and check whether it's using
+                      a supported protocol
+                      https://gitlab.com/eyeo/adblockplus/adblockpluscore/blob/d3f6b1b7e3880eab6356b132493a4a947c87d33f/lib/downloader.js#L270
+                    -->
+                    <input id="import-list-url" type="url"
+                      required pattern="^(?:data|https):.*$"
+                      data-i18n-placeholder="options_dialog_import_subscription_location">
+                    <span class="error-msg"></span>
                     <span class="icon attention"></span>
                   </p>
                   <p class="side-controls">
@@ -384,7 +392,6 @@
       <header>
         <span id="dialog-title">
           <h3 id="dialog-title-about" data-i18n="options_dialog_about_title"></h3>
-          <h3 id="dialog-title-import" data-i18n="options_dialog_import_title"></h3>
           <h3 id="dialog-title-language-add" data-i18n="options_dialog_language_title"></h3>
           <h3 id="dialog-title-language-change" data-i18n="options_dialog_language_title"></h3>
           <h3 id="dialog-title-predefined" data-i18n="options_dialog_predefined_title"></h3>

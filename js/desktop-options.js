@@ -290,11 +290,24 @@ Collection.prototype.updateItem = function(item)
       }
       else if (item.downloadStatus != "synchronize_ok")
       {
-        const error = filterErrors.get(item.downloadStatus);
-        if (error)
+        let errorId = null;
+        // Core doesn't tell us why the URL is invalid so we have to check
+        // ourselves whether the filter list is using a supported protocol
+        // https://gitlab.com/eyeo/adblockplus/adblockpluscore/blob/d3f6b1b7e3880eab6356b132493a4a947c87d33f/lib/downloader.js#L270
+        if (item.downloadStatus === "synchronize_invalid_url" &&
+            !/^(?:data|https):/.test(item.url))
+        {
+          errorId = "options_filterList_lastDownload_invalidURLProtocol";
+        }
+        else
+        {
+          errorId = filterErrors.get(item.downloadStatus);
+        }
+
+        if (errorId)
         {
           message.classList.add("error");
-          message.textContent = getMessage(error);
+          message.textContent = getMessage(errorId);
         }
         else
           message.textContent = item.downloadStatus;
