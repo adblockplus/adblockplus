@@ -78,6 +78,7 @@ window.addEventListener(
     const container = $("#notification");
     container.innerHTML = "";
     container.appendChild(notifier);
+    container.setAttribute("aria-hidden", false);
 
     getDoclinks(notification).then(docLinks =>
     {
@@ -104,6 +105,7 @@ window.addEventListener(
       const el = evt.currentTarget;
       if (el.dataset.pref)
         setPref(el.dataset.pref, true);
+      container.setAttribute("aria-hidden", true);
       notifier.parentNode.removeChild(notifier);
       browser.runtime.sendMessage({type: "notifications.clicked"});
     }
