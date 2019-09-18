@@ -587,7 +587,7 @@
     // so we'll post the message after one second
     setTimeout(() =>
     {
-      const url = "http://example.com/custom.txt";
+      let url = "https://example.com/custom.txt";
 
       let title = "Custom subscription";
       switch (params.addSubscription)
@@ -600,6 +600,9 @@
         // https://hg.adblockplus.org/adblockpluschrome/file/56f54c897e3a/subscriptionLink.postload.js#l86
         case "title-url":
           title = url;
+          break;
+        case "invalid":
+          url = url.replace("https:", "http:");
           break;
       }
 

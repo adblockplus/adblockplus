@@ -419,6 +419,14 @@
     "description": "Trademark information in 'about Adblock Plus' modal dialog",
     "message": "All rights reserved. Adblock Plus® is a registered trademark of eyeo GmbH."
   },
+  "options_dialog_invalid_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "Error occurred"
+  },
+  "options_dialog_invalid_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "For security reasons, only HTTPS filter lists can be added."
+  },
   "options_dialog_predefined_confirm": {
     "description": "Confirming to add a predefined subscription when asked in a dialog",
     "message": "Yes, use this filter list"

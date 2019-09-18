@@ -25,6 +25,7 @@ No parameters.
 | addSubscription | `true`| Show dialog for adding filter list as done using abp-subscribe links |
 | | `title-none` | Show dialog as if no title or URL had been passed |
 | | `title-url` | Show dialog as if no title had been passed |
+| | `invalid` | Show dialog as if an invalid URL had been passed |
 | application | `edge` | Hides rating dialog |
 | downloadStatus | `synchronize_ok` | Set filter list download status: Filter list download succeeded (default) |
 | | `synchronize_connection_error` | Set filter list download status: Connection error |

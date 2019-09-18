@@ -32,6 +32,8 @@ const {
   setupAddFiltersByURL
 } = require("./add-filters-by-url");
 
+const ALLOWED_PROTOCOLS = /^(?:data|https):/;
+
 const {port} = api;
 const {stripTagsUnsafe} = ext.i18n;
 
@@ -295,7 +297,7 @@ Collection.prototype.updateItem = function(item)
         // ourselves whether the filter list is using a supported protocol
         // https://gitlab.com/eyeo/adblockplus/adblockpluscore/blob/d3f6b1b7e3880eab6356b132493a4a947c87d33f/lib/downloader.js#L270
         if (item.downloadStatus === "synchronize_invalid_url" &&
-            !/^(?:data|https):/.test(item.url))
+            !ALLOWED_PROTOCOLS.test(item.url))
         {
           errorId = "options_filterList_lastDownload_invalidURLProtocol";
         }
@@ -1525,7 +1527,6 @@ port.onMessage.addListener((message) =>
       {
         case "addSubscription":
           const subscription = message.args[0];
-          const dialog = $("#dialog-content-predefined");
 
           let {title, url} = subscription;
           if (!title || title == url)
@@ -1533,9 +1534,17 @@ port.onMessage.addListener((message) =>
             title = "";
           }
 
-          $("h3", dialog).textContent = title;
-          $(".url", dialog).textContent = url;
-          openDialog("predefined");
+          if (ALLOWED_PROTOCOLS.test(url))
+          {
+            const dialog = $("#dialog-content-predefined");
+            $("h3", dialog).textContent = title;
+            $(".url", dialog).textContent = url;
+            openDialog("predefined");
+          }
+          else
+          {
+            openDialog("invalid");
+          }
           break;
         case "focusSection":
           let section = message.args[0];
