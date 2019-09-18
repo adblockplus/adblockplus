@@ -1572,11 +1572,18 @@ body:not([data-dialog="language-add"]) #dialog-body button.add,
 body:not([data-dialog="language-change"]) #dialog-body button.change,
 body:not([data-dialog="predefined"]) #dialog-title-predefined,
 body:not([data-dialog="predefined"]) #dialog-content-predefined,
+body:not([data-dialog="invalid"]) #dialog-title-invalid,
+body:not([data-dialog="invalid"]) #dialog-content-invalid,
 body:not([data-dialog]) #dialog
 {
   display: none;
 }
 /* stylelint-enable indentation */
+
+#dialog-title-invalid
+{
+  text-transform: uppercase;
+}
 
 /*
   Notification

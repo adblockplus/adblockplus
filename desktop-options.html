@@ -395,6 +395,7 @@
           <h3 id="dialog-title-language-add" data-i18n="options_dialog_language_title"></h3>
           <h3 id="dialog-title-language-change" data-i18n="options_dialog_language_title"></h3>
           <h3 id="dialog-title-predefined" data-i18n="options_dialog_predefined_title"></h3>
+          <h3 id="dialog-title-invalid" data-i18n="options_dialog_invalid_title"></h3>
         </span>
         <button class="icon close primary" data-action="close-dialog"></button>
       </header>
@@ -440,6 +441,13 @@
             <h3></h3>
             <div class="url"></div>
             <button data-i18n="options_dialog_predefined_confirm" class="default-focus primary" data-action="add-predefined-subscription"></button>
+          </div>
+        </div>
+        <!-- Reject invalid subscriptions -->
+        <div id="dialog-content-invalid" class="dialog-content">
+          <div class="dialog-content-block">
+            <div class="url" data-i18n="options_dialog_invalid_message"></div>
+            <button data-i18n="options_customFilter_cancel" class="default-focus primary" data-action="close-dialog"></button>
           </div>
         </div>
       </div>
