@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {activeTab, getDoclinks, setPref} = require("./popup.utils.js");
+const {activeTab, setPref} = require("./popup.utils.js");
 const {wire} = require("./io-element");
 const {$} = require("./dom");
 
@@ -80,23 +80,34 @@ window.addEventListener(
     container.appendChild(notifier);
     container.setAttribute("aria-hidden", false);
 
-    getDoclinks(notification).then(docLinks =>
-    {
-      const messageElement = $("#notification-message", notifier);
-      insertMessage(messageElement, notification.texts.message, docLinks);
+    const messageElement = $("#notification-message", notifier);
+    insertMessage(
+      messageElement,
+      notification.texts.message,
+      notification.links.map((link) => `#${link}`)
+    );
 
-      messageElement.addEventListener("click", evt =>
-      {
-        const link = evt.target.closest("a");
-        // The contains(other) method, when invoked,
-        // must return true if other is an inclusive descendant
-        // of context object, and false otherwise
-        // (including when other is null).
-        if (!messageElement.contains(link))
-          return;
-        evt.preventDefault();
-        evt.stopPropagation();
-        browser.tabs.create({url: link.href});
+    messageElement.addEventListener("click", evt =>
+    {
+      const link = evt.target.closest("a");
+      // The contains(other) method, when invoked,
+      // must return true if other is an inclusive descendant
+      // of context object, and false otherwise
+      // (including when other is null).
+      if (!messageElement.contains(link))
+        return;
+
+      evt.preventDefault();
+      evt.stopPropagation();
+
+      const linkTarget = link.hash.slice(1);
+      if (!linkTarget)
+        throw new Error("Link has no target");
+
+      browser.runtime.sendMessage({
+        type: "notifications.clicked",
+        id: notification.id,
+        link: linkTarget
       });
     });
 
@@ -107,7 +118,10 @@ window.addEventListener(
         setPref(el.dataset.pref, true);
       container.setAttribute("aria-hidden", true);
       notifier.parentNode.removeChild(notifier);
-      browser.runtime.sendMessage({type: "notifications.clicked"});
+      browser.runtime.sendMessage({
+        type: "notifications.clicked",
+        id: notification.id
+      });
     }
 
     function insertMessage(element, text, links)
