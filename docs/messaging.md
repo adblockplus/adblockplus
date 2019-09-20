@@ -242,6 +242,11 @@ See [`filterNotifier`][filternotifier].
 
 #### notifications.clicked
 
+**Arguments**
+
+- **string** id - notification ID
+- **string** [link] - documentation link ID or abp-URI
+
 #### notifications.get
 
 **Arguments**
