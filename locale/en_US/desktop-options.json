@@ -346,15 +346,15 @@
   },
   "options_filterList_updateNow": {
     "description": "Context menu item in advanced tab, appears after click on subscription",
-    "message": "update now"
+    "message": "Update now"
   },
   "options_filterList_website": {
     "description": "Context menu item in advanced tab, appears after click on subscription",
-    "message": "website"
+    "message": "Website"
   },
   "options_filterList_source": {
     "description": "Context menu item in advanced tab, appears after click on subscription",
-    "message": "source"
+    "message": "Source"
   },
   "options_customFilter_cancel": {
     "description": "Label below raw view of user's filter list in Advanced tab",
