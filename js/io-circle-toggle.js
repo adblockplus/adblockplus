@@ -20,8 +20,6 @@
 const IOElement = require("./io-element");
 const {$, events} = require("./dom");
 
-let counter = 0;
-
 class IOCircleToggle extends IOElement
 {
   static get observedAttributes()
@@ -41,10 +39,7 @@ class IOCircleToggle extends IOElement
 
   created()
   {
-    this.setState({
-      id: `io-circle-toggle-${counter++}`,
-      checked: this.checked
-    });
+    this.setState({checked: this.checked});
     this.setAttribute("tabindex", 0);
     this.addEventListener("click", this);
     this.addEventListener("keydown", this);
@@ -89,7 +84,6 @@ class IOCircleToggle extends IOElement
 
   render()
   {
-    const {id} = this.state;
     this.html`
     <svg
       width="71px" height="50px"
@@ -100,21 +94,13 @@ class IOCircleToggle extends IOElement
       aria-checked="${this.checked}"
       aria-disabled="${this.disabled}"
     >
-      <defs>
-        <circle id="${id + "path"}" cx="23" cy="22.4" r="22.4" />
-      </defs>
       <g>
         <rect fill="#E4E4E4" x="1" y="16.8"
               width="64.4" height="12.6" rx="6.3" />
         <g transform="translate(31.6, 0)">
-          <mask id="${id + "mask"}" fill="white">
-            <use class="inner-circle" href="${"#" + id + "path"}" />
-          </mask>
-          <use class="outer-circle" href="${"#" + id + "path"}" />
-          <circle class="on" fill="#0688CB" mask="${"url(#" + id + "mask)"}"
-                  cx="12" cy="22.4" r="9.8" />
-          <circle class="off" fill="#4B4B4B" mask="${"url(#" + id + "mask)"}"
-                  cx="-24" cy="22.4" r="9.8" />
+          <circle class="outer-circle" cx="23" cy="22.4" r="22.4" />
+          <circle class="on" fill="#0688CB" cx="12" cy="22.4" r="9.8" />
+          <circle class="off" fill="#4B4B4B" cx="-24" cy="22.4" r="9.8" />
         </g>
       </g>
     </svg>`;
