@@ -33,11 +33,42 @@ io-circle-toggle[disabled]
  */
 
 io-circle-toggle .outer-circle,
-io-circle-toggle .inner-circle,
 io-circle-toggle .on,
 io-circle-toggle .off
 {
   transition: all 0.5s cubic-bezier(0.8, 0, 0.25, 1);
+}
+
+/*
+ * We cannot rely on SVG's masking/clipping to work with CSS transforms
+ * so we have to replicate the outline of the outer circle in CSS.
+ * https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/issues/543
+ * https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/issues/598
+ */
+io-circle-toggle[checked] .on,
+io-circle-toggle .off
+{
+  clip-path: circle(100% at 50% 50%);
+}
+
+io-circle-toggle .on
+{
+  clip-path: circle(100% at -100% 50%);
+}
+
+io-circle-toggle[checked] .off
+{
+  clip-path: circle(100% at 200% 50%);
+}
+
+/*
+ * Edge, Firefox 52 and 53 don't support
+ * basic shape values for clip-path yet
+ */
+io-circle-toggle:not([checked]) .on,
+io-circle-toggle[checked] .off
+{
+  opacity: 0;
 }
 
 io-circle-toggle .outer-circle
@@ -47,20 +78,10 @@ io-circle-toggle .outer-circle
   stroke-width: 0;
 }
 
-io-circle-toggle .inner-circle
-{
-  transform: translateX(-45.4px);
-}
-
 io-circle-toggle[checked] .outer-circle
 {
   transform: translateX(-11.4px);
   fill: #0797E1;
-}
-
-io-circle-toggle[checked] .inner-circle
-{
-  transform: translateX(-11.4px);
 }
 
 io-circle-toggle:not([checked]) .on
