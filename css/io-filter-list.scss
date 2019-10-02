@@ -154,6 +154,7 @@ io-filter-list [data-column="rule"]
 io-filter-list [data-column="rule"] .content
 {
   overflow: hidden;
+  height: 100%;
   text-overflow: ellipsis;
 }
 
@@ -168,6 +169,17 @@ io-filter-list [data-column="rule"] .content:focus
   text-overflow: initial;
 }
 
+io-filter-list tbody tr.editing
+{
+  height: auto;
+}
+
+io-filter-list tbody tr.editing [data-column="rule"]
+{
+  overflow: initial;
+  white-space: initial;
+}
+
 html:not([dir="rtl"]) io-filter-list [data-column="rule"]
 {
   text-align: left;
@@ -177,6 +189,16 @@ html[dir="rtl"] io-filter-list [data-column="rule"]
 {
   text-align: right;
 }
+
+/* stylelint-disable indentation */
+io-filter-list tbody tr:not(.empty):not(.editing)
+  [data-column="rule"] div:hover
+{
+  outline: 1px dashed #d0d0d0;
+  cursor: pointer;
+}
+/* stylelint-enable indentation */
+
 
 io-filter-list [data-column="status"],
 io-filter-list [data-column="selected"],

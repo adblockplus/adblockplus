@@ -240,14 +240,18 @@ class IOFilterList extends IOFilterBase
 
   onfocus(event)
   {
-    this._filter = event.currentTarget.data;
+    const {currentTarget} = event;
+    this._filter = currentTarget.data;
+    currentTarget.closest("tr").classList.add("editing");
   }
 
   onblur(event)
   {
+    const {currentTarget} = event;
+    currentTarget.closest("tr").classList.remove("editing");
     // needed to avoid ellipsis on overflow hidden
     // make the filter look like disappeared from the list
-    event.currentTarget.scrollLeft = 0;
+    currentTarget.scrollLeft = 0;
     if (this._changingFocus)
     {
       this._filter = null;
