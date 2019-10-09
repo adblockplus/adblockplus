@@ -1326,9 +1326,14 @@ function populateLists()
 function addWhitelistedDomain()
 {
   const domain = $("#whitelisting-textbox");
+  const value = domain.value.trim();
+
+  if (!value)
+    return;
+
   for (const whitelistItem of collections.whitelist.items)
   {
-    if (whitelistItem.title == domain.value)
+    if (whitelistItem.title == value)
     {
       whitelistItem[timestampUI] = Date.now();
       collections.whitelist.updateItem(whitelistItem);
@@ -1336,18 +1341,21 @@ function addWhitelistedDomain()
       break;
     }
   }
-  const value = domain.value.trim();
-  if (value)
+
+  try
   {
-    const host = /^https?:\/\//i.test(value) ? new URL(value).host : value;
+    const {host} = new URL(/^https?:/.test(value) ? value : `http://${value}`);
     sendMessageHandleErrors({
       type: "filters.add",
       text: "@@||" + host.toLowerCase() + "^$document"
     });
+    domain.value = "";
+    $("#whitelisting-add-button").disabled = true;
   }
-
-  domain.value = "";
-  $("#whitelisting-add-button").disabled = true;
+  catch (error)
+  {
+    dispatchError(error);
+  }
 }
 
 function addEnableSubscription(url, title, homepage)
