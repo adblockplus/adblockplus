@@ -58,13 +58,19 @@ io-list-box button
 {
   padding: 0.6rem 0.8rem;
   border: 1px solid #bcbcbc;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 
 io-list-box button[aria-expanded="false"]
 {
-  color: #059cd0;
+  color: #0797E1;
   background: #e9f6fc;
   text-transform: uppercase;
+}
+
+io-list-box[detached] button[aria-expanded="false"]
+{
+  border-radius: var(--border-radius);
 }
 
 io-list-box button:focus
@@ -79,6 +85,7 @@ io-list-box [role="listbox"]
   z-index: var(--z-popout-active);
   bottom: 2.2em;
   max-height: 290px;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
   box-shadow: 0 -4px 20px 0 rgba(0,0,0,0.11);
 }
 
