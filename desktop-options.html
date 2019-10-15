@@ -179,23 +179,25 @@
             <a data-i18n="options_learn_more" data-doclink="whitelist"></a>
           </p>
         </header>
-        <form class="section">
-          <input id="whitelisting-textbox" type="text"
-            data-i18n-placeholder="options_whitelist_placeholder_example">
-          <button id="whitelisting-add-button"
-                  type="submit" 
-                  data-action="add-domain-exception" 
-                  data-i18n="options_whitelist_add" class="primary" disabled>
-          </button>
-        </form>
-        <ul id="whitelisting-table" class="table list">
-          <template>
-            <span class="reset-font" data-display="title"></span>
-            <button data-action="remove-filter" class="icon delete control" 
-              data-i18n-title="options_control_remove_title">
+        <section>
+          <form>
+            <input id="whitelisting-textbox" type="text"
+              data-i18n-placeholder="options_whitelist_placeholder_example">
+            <button id="whitelisting-add-button"
+                    type="submit"
+                    data-action="add-domain-exception"
+                    data-i18n="options_whitelist_add" class="primary" disabled>
             </button>
-          </template>
-        </ul>
+          </form>
+          <ul id="whitelisting-table" class="table list">
+            <template>
+              <span class="reset-font" data-display="title"></span>
+              <button data-action="remove-filter" class="icon delete control"
+                data-i18n-title="options_control_remove_title">
+              </button>
+            </template>
+          </ul>
+        </section>
       </div>
 
       <!-- Advanced tab content -->
@@ -284,7 +286,7 @@
               id="filters-box"
               data-text="options_builtin_filterList_add"
               data-expanded="options_builtin_filterList_add"
-              autoclose
+              autoclose detached
             ></io-list-box>
             <div id="filterlist-by-url-wrap" tabindex="-1">
               <div id="filterlist-by-url" aria-hidden="true">

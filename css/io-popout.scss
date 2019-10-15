@@ -20,7 +20,7 @@
 io-popout
 {
   --background-color: #FFF;
-  --border: 1px solid #077CA6;
+  --border: 1px solid #0797E1;
   --icon-margin: 0.4rem;
   --icon-size-inner: 1.1rem;
   --icon-size-outer: calc(var(--icon-size-inner) + var(--icon-margin));
@@ -108,7 +108,7 @@ io-popout > .wrapper::before
 io-popout[anchor-icon] > .wrapper::before
 {
   border-radius: 50%;
-  background-color: #077CA6;
+  background-color: #0797E1;
   background-repeat: no-repeat;
   background-size: 40%;
   background-position: center;
@@ -208,7 +208,7 @@ io-popout > .wrapper > [role]
   position: absolute;
   box-sizing: border-box;
   border: var(--border);
-  border-radius: 3px;
+  border-radius: var(--border-radius);
   background-color: var(--background-color);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   cursor: default;

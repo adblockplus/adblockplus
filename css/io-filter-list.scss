@@ -64,14 +64,11 @@ io-filter-list[disabled] io-toggle,
 
 io-filter-list table
 {
-  color: #505050;
-  background-color: #fff;
-}
-
-io-filter-list table
-{
   width: 100%;
   border: 1px solid #bcbcbc;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  color: #505050;
+  background-color: #fff;
   user-select: none;
 }
 

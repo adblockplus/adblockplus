@@ -278,7 +278,7 @@ html[dir="rtl"] #other-issues
 #other-issues a,
 #other-issues a:visited
 {
-  color: #077ca7;
+  color: #0797E1;
 }
 
 /*
@@ -316,7 +316,7 @@ button.primary:not(.icon)
 {
   border: 0px;
   color: #FFF;
-  background-color: #077ca7;
+  background-color: #0797E1;
 }
 
 button.primary:not([disabled]):not(.icon):hover
@@ -331,20 +331,20 @@ button.primary[disabled]:not(.icon)
 
 button.secondary
 {
-  border: 1px solid #077ca7;
-  color: #077ca7;
+  border: 1px solid #0797E1;
+  color: #0797E1;
 }
 
 button.secondary:hover
 {
-  box-shadow: inset 0 0 0 2px #077ca7;
+  box-shadow: inset 0 0 0 2px #0797E1;
 }
 
 button.link
 {
   padding: 0.2rem;
   border: 0px;
-  color: #077CA6;
+  color: #0797E1;
   background-color: transparent;
   font-weight: 400;
   text-decoration: underline;
@@ -367,7 +367,7 @@ input[type="text"],
 input[type="email"],
 textarea
 {
-  border: 2px solid #077ca7;
+  border: 2px solid #0797E1;
   font-size: 1.25rem;
 }
 

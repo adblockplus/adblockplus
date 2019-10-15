@@ -57,7 +57,7 @@ h2
 
 a
 {
-  color: #077CA6;
+  color: #0797E1;
 }
 
 a:hover
@@ -114,6 +114,7 @@ button,
 {
   display: block;
   padding: 0.6rem 0.8rem;
+  border-radius: var(--border-radius);
   background-color: transparent;
   font-size: 1rem;
   font-weight: 700;
@@ -134,7 +135,7 @@ button.primary:not(.icon),
 {
   border: 0px;
   color: #FFF;
-  background-color: #077CA6;
+  background-color: #0797E1;
 }
 
 button.primary:not([disabled]):not(.icon):hover,
@@ -151,20 +152,20 @@ button.primary[disabled]:not(.icon)
 button.secondary:not(.icon),
 .button.secondary:not(.icon)
 {
-  border: 2px solid #077CA6;
-  color: #077CA6;
+  border: 2px solid #0797E1;
+  color: #0797E1;
 }
 
 button.secondary:not(.icon):hover,
 .button.secondary:not(.icon):hover
 {
-  box-shadow: inset 0 0 0 1px #077CA6;
+  box-shadow: inset 0 0 0 1px #0797E1;
 }
 
 button.link,
 button.list
 {
-  color: #077CA6;
+  color: #0797E1;
 }
 
 button.link
@@ -195,8 +196,8 @@ button.list
 
 button.list:hover
 {
-  border-color: #077CA6;
-  box-shadow: inset 0 0 0 3px #077CA6;
+  border-color: #0797E1;
+  box-shadow: inset 0 0 0 3px #0797E1;
 }
 
 button.add.secondary
@@ -207,7 +208,7 @@ button.add.secondary
 
 button.add.secondary:hover
 {
-  border-color: #077CA6;
+  border-color: #0797E1;
 }
 
 button.add::before
@@ -233,6 +234,7 @@ button.add::before
   top: -260px;
   width: 100%;
   height: 260px;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
   background: #fff;
   box-shadow: 0 -4px 20px 0 rgba(0,0,0,0.11);
 }
@@ -683,35 +685,54 @@ html[dir="rtl"] #sidebar header h1
   list-style: none;
 }
 
-[role="tablist"] li a
+li a[role="tab"]
 {
   display: flex;
-  margin-top: -1px;
   margin-right: -1px;
   margin-left: -1px;
   padding: 1rem 0.8rem;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #CDCDCD transparent;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
   color: inherit;
   text-decoration: none;
   cursor: pointer;
 }
 
+li a[role="tab"]:hover
+{
+  background-color: #EAEAEA;
+}
+
 li a[role="tab"][aria-selected]
 {
+  border-color: #CDCDCD;
   background-color: #FFF;
   font-weight: 700;
 }
 
-html:not([dir="rtl"]) li a[role="tab"][aria-selected]
+html[dir="rtl"] li a[role="tab"]
+{
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+html:not([dir="rtl"]) li a[role="tab"]:hover
+{
+  border-right-color: #CDCDCD;
+}
+
+html[dir="rtl"] li a[role="tab"]:hover
 {
   border-left-color: #CDCDCD;
 }
 
+html:not([dir="rtl"]) li a[role="tab"][aria-selected]
+{
+  border-right-color: transparent;
+}
+
 html[dir="rtl"] li a[role="tab"][aria-selected]
 {
-  border-right-color: #CDCDCD;
+  border-left-color: transparent;
 }
 
 #sidebar footer
@@ -802,6 +823,7 @@ main
   width: 46.3rem;
   padding: 0px 0rem 1.4rem;
   border: 1px solid #CDCDCD;
+  border-radius: var(--border-radius);
   background-color: #FFF;
 }
 
@@ -822,7 +844,8 @@ main p
 [role="tabpanel"] > section,
 [role="tabpanel"] > .section
 {
-  padding: 1.4rem 2rem;
+  margin: 0 2rem;
+  padding: 1.4rem 0;
   border-top: 1px solid #CDCDCD;
 }
 
@@ -955,6 +978,7 @@ html[dir="rtl"] button
   margin-top: 40px;
   padding: 16px;
   border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
   background-color: var(--background-color);
   text-align: center;
 }
@@ -987,7 +1011,7 @@ html[dir="rtl"] button
   position: initial;
   margin: auto;
   border: 0;
-  color: #077CA6;
+  color: #0797E1;
 }
 
 html:not([dir="rtl"]) #acceptable-ads label
@@ -1003,7 +1027,7 @@ html[dir="rtl"] #acceptable-ads label
 #dnt
 {
   padding: 0.8rem;
-  border: 1px solid #077CA6;
+  border: 1px solid #0797E1;
 }
 
 /*
@@ -1047,6 +1071,7 @@ ul.list
 .table li:first-of-type
 {
   border-top: 1px solid #CDCDCD;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
 .table.list li
@@ -1284,13 +1309,14 @@ html[dir="rtl"] .tooltip
 #content-whitelist form
 {
   display: flex;
+  margin-bottom: 1.4rem;
 }
 
 #content-whitelist form input
 {
-  height: 100%;
   padding: 0.5rem 1rem;
-  border: 2px solid #077CA6;
+  border: 2px solid #0797E1;
+  border-radius: var(--border-radius);
   font-size: 1rem;
   flex: 1;
 }
@@ -1457,6 +1483,7 @@ body[data-dialog] #dialog-background
 
 #dialog
 {
+  overflow: hidden;
   position: fixed;
   z-index: var(--z-dialog);
   top: 100px;
@@ -1464,7 +1491,7 @@ body[data-dialog] #dialog-background
   left: 0px;
   width: 50vw;
   margin: auto;
-  border-radius: 3px;
+  border-radius: var(--border-radius);
   background-color: #FFF;
 }
 
@@ -1472,7 +1499,7 @@ body[data-dialog] #dialog-background
 {
   display: flex;
   padding: 0.7rem 1.5rem;
-  background-color: #077CA6;
+  background-color: #0797E1;
 }
 
 #dialog header h3
@@ -1609,7 +1636,7 @@ body:not([data-dialog]) #dialog
 
 #notification.info
 {
-  color: #077CA6;
+  color: #0797E1;
   background-color: rgba(225, 242, 250, 0.8);
 }
 
