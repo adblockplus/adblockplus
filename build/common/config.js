@@ -17,24 +17,7 @@
 
 "use strict";
 
-const fs = require("fs");
-const {promisify} = require("util");
-const csv = require("csv");
-const csvStringify = promisify(csv.stringify);
-const writeFile = promisify(fs.writeFile);
+const localesDir = "locale";
+const defaultLocale = "en_US";
 
-/**
- * Convert two dimensional array to the CSV file
- * @param  {Object[]} csvArray - array to convert from
- * @param  {String} outputFileName - name of the output file
- * @returns {Promise}
- */
-const arrayToCsv = (csvArray, outputFileName) =>
-{
-  return csvStringify(csvArray).then((output) =>
-  {
-    return writeFile(outputFileName, output, "utf8");
-  });
-};
-
-module.exports = {arrayToCsv};
+module.exports = {localesDir, defaultLocale};

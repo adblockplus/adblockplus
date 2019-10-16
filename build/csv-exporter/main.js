@@ -17,8 +17,8 @@
 
 "use strict";
 
-const {importTranslations} = require("./import");
 const {exportTranslations} = require("./export");
+const {importTranslations} = require("./import");
 
 const argv = require("minimist")(process.argv.slice(2));
 const helpText = `Missing arguments: check "Translations CSV exporter" section

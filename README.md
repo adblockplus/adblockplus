@@ -180,6 +180,8 @@ below:
 Translations CSV exporter
 -------------------------
 
+[To be deprecated, see [XTM Synchronization](#xtm-synchronization)]
+
 Translation agencies are using CSVs for translating priority language strings.
 CSV exporter helps keeping that files in sync with the project. 
 
@@ -193,6 +195,26 @@ Format of the exported CSV files:
 |----------|--------------|----------|----------------------|-----------------------------|---------------|------------|-----|-----|
 | Modified | options.json | cancel   | Cancel button label  |                             | Cancel        | Kanselleer | ይቅር | ... |
 | Added    | options.json | domain   | Domain input example | {"domain":{"content":"$1"}} | e.g. $domain$ |            |     | ... |
+
+XTM Synchronization
+--------------------------------
+
+XTM is a new tool for managing priority language translations, in order to use
+it several environement variables(`USER_ID`, `CLIENT`, `PASSWORD`) needs to be
+specified.
+
+Example usage:
+`USER_ID='111' CLIENT='NAME' PASSWORD='PSWD' npm run $ xtm.create`
+
+Commands:
+- `npm run $ xtm.create`
+  - Create a new project using branch name and upload source text changes.
+- `npm run $ xtm.update`
+  - Updates the project with the current branch name with source text changes.
+- `npm run $ xtm.build`
+  - Generates project files - to be executed before downloading translations.
+- `npm run $ xtm.download`
+  - Downloads translation files and update local files accordingly.
 
 Fonts generation
 ----------------

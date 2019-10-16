@@ -18,12 +18,13 @@
 "use strict";
 
 const path = require("path");
-const {getSourceStringFileDiffs} = require("./diff");
+const {getSourceStringFileDiffs} = require("../common/diff");
 const {localesDir, defaultLocale, outputFileName, addedLabel, modifiedLabel,
       headers} = require("./config");
 const {promisify} = require("util");
 const glob = promisify(require("glob").glob);
-const {readJson, arrayToCsv} = require("./utils");
+const {arrayToCsv} = require("./utils");
+const {readJson} = require("../common/utils");
 
 /**
  * Export Translations since specific commit
