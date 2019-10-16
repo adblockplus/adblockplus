@@ -17,24 +17,35 @@
 
 "use strict";
 
-const fs = require("fs");
-const {promisify} = require("util");
-const csv = require("csv");
-const csvStringify = promisify(csv.stringify);
-const writeFile = promisify(fs.writeFile);
+const {restApiUrl} = require("./config");
+const fetch = require("node-fetch");
 
-/**
- * Convert two dimensional array to the CSV file
- * @param  {Object[]} csvArray - array to convert from
- * @param  {String} outputFileName - name of the output file
- * @returns {Promise}
- */
-const arrayToCsv = (csvArray, outputFileName) =>
+// Authentication
+const {CLIENT, PASSWORD, USER_ID} = process.env;
+
+const getToken = () =>
 {
-  return csvStringify(csvArray).then((output) =>
+  const uri = `${restApiUrl}/auth/token`;
+  const authenticationData = {
+    client: CLIENT,
+    password: PASSWORD,
+    userId: parseInt(USER_ID, 10)
+  };
+
+  const getTokenOptions = {
+    method: "post",
+    body: JSON.stringify(authenticationData),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  };
+
+  return fetch(uri, getTokenOptions).then((res) =>
   {
-    return writeFile(outputFileName, output, "utf8");
-  });
+    if (!res.ok)
+      return Promise.reject(res.json());
+    return res.json();
+  }).catch(console.error);
 };
 
-module.exports = {arrayToCsv};
+module.exports = {getToken, restApiUrl};
