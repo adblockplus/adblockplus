@@ -25,7 +25,7 @@ const path = require("path");
 
 let localesDir = "";
 let defaultLocale = "";
-let fileTreeOb = null;
+let newFileTreeOb = null;
 
 /**
  * Import locales from files data object
@@ -35,12 +35,12 @@ let fileTreeOb = null;
  */
 function importFilesObjects(filesDataObject, localesDirPath, deafultLocaleName)
 {
-  fileTreeOb = filesDataObject;
+  newFileTreeOb = filesDataObject;
   localesDir = localesDirPath;
   defaultLocale = deafultLocaleName;
-  for (const fileName of Object.keys(fileTreeOb))
+  for (const fileName of Object.keys(newFileTreeOb))
   {
-    for (const locale of Object.keys(fileTreeOb[fileName]))
+    for (const locale of Object.keys(newFileTreeOb[fileName]))
     {
       if (locale === defaultLocale)
         continue;
@@ -52,7 +52,7 @@ function importFilesObjects(filesDataObject, localesDirPath, deafultLocaleName)
       }
       else
       {
-        const strings = fileTreeOb[fileName][locale];
+        const strings = newFileTreeOb[fileName][locale];
         writeJson(fileObjToDataTreeObj({fileName, locale, strings}));
       }
     }
@@ -62,21 +62,25 @@ function importFilesObjects(filesDataObject, localesDirPath, deafultLocaleName)
 function writeToExistingFile(fileObject)
 {
   const {fileName, locale} = fileObject;
-  const fileDataTreeObj = fileObjToDataTreeObj(fileObject);
-  for (const stringId of Object.keys(fileTreeOb[fileName][locale]))
+  const existingFileTreeObj = fileObjToDataTreeObj(fileObject);
+  for (const stringId of Object.keys(newFileTreeOb[fileName][locale]))
   {
-    const fileString = fileDataTreeObj[fileName][locale][stringId];
-    const csvString = fileTreeOb[fileName][locale][stringId];
-    if (!fileString)
+    const existingString = existingFileTreeObj[fileName][locale][stringId];
+    const newString = newFileTreeOb[fileName][locale][stringId];
+    if (!existingString)
     {
-      fileDataTreeObj[fileName][locale][stringId] = csvString;
+      existingFileTreeObj[fileName][locale][stringId] = newString;
     }
-    else if (fileString.message !== csvString.message)
+    else if (existingString.message !== newString.message)
     {
-      fileString.message = csvString.message;
+      existingString.message = newString.message;
+      if (!newString.placeholders)
+        delete existingString.placeholders;
+      else
+        existingString.placeholders = newString.placeholders;
     }
   }
-  writeJson(fileDataTreeObj);
+  writeJson(existingFileTreeObj);
 }
 
 /**

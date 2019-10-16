@@ -48,7 +48,7 @@ function dataTreeObjFromDataMatrix(dataMatrix)
   for (const rowId in dataMatrix)
   {
     const row = dataMatrix[rowId];
-    let [/* type */, currentFilename, stringId, description, placeholder,
+    let [/* type */, currentFilename, stringId, description, placeholders,
         ...messages] = row;
     if (!stringId)
       continue;
@@ -80,8 +80,8 @@ function dataTreeObjFromDataMatrix(dataMatrix)
         stringObj.description = description;
 
       stringObj.message = message;
-      if (placeholder)
-        stringObj.placeholders = JSON.parse(placeholder);
+      if (placeholders)
+        stringObj.placeholders = JSON.parse(placeholders);
     }
   }
   return dataTreeObj;
