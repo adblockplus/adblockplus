@@ -84,6 +84,13 @@ resulting page/component inside the `./smoke` folder.
 
 Please read how it's done for `io-element` to know more.
 
+Unit Testing
+------------
+
+The `./test/unit` folder contains various unit tests files. Unit tests are being
+run with other tests when `npm test` command is executed, but if needed they can
+also be executed separately by running `npm run $ test.unit`.
+
 Styled Components
 -----------------
 

@@ -97,13 +97,14 @@
     },
     "lint": {
       "css": "stylelint ./build/**/*.css ./css/*.scss ./skin/*.css --ignore-path .gitignore",
-      "js": "eslint './*.js' './js/**/*.js' './lib/**/*.js' './ext/**/*.js' './build/**/*.js' './mocks/**/*.js'",
+      "js": "eslint './*.js' './js/**/*.js' './lib/**/*.js' './ext/**/*.js' './build/**/*.js' './mocks/**/*.js' './test/**/*.js'",
       "locale": [
         "node build/locale-linter/test",
         "node build/locale-linter ./locale/**/*.json"
       ]
     },
     "test": {
+      "unit": "mocha ./test/unit/tests",
       "icons": "cp -R ./skin/icons ./smoke",
       "io-checkbox": "$ create.test.component io-checkbox",
       "io-element": {
@@ -158,6 +159,7 @@
   },
   "devDependencies": {
     "adm-zip": "^0.4.13",
+    "basichtml": "^1.0.2",
     "csv": "^5.1.2",
     "eslint": "^6.2.1",
     "eslint-config-eyeo": "^2.1.1",
@@ -166,11 +168,13 @@
     "http-server": "^0.11.1",
     "minimist": "^1.2.0",
     "node-fetch": "^2.3.0",
+    "mocha": "^6.1.4",
     "nightmare": "^3.0.2",
     "pngquant": "^3.0.0",
     "stylelint": "^10.1.0",
     "stylelint-config-eyeo": "^1.0.3",
     "svgo": "^1.3.0",
-    "watch": "^1.0.2"
+    "watch": "^1.0.2",
+    "xmldom": "^0.1.27"
   }
 }
