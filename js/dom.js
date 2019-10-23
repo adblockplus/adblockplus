@@ -131,10 +131,10 @@ function asIndentedString(element, indentation = 0)
   if (!indentation)
   {
     // get the top meaningful element to parse
-    if (element.nodeType === 9)
+    if (element.nodeType === Node.DOCUMENT_NODE)
       element = element.documentElement;
     // accept only elements
-    if (element.nodeType !== 1)
+    if (element.nodeType !== Node.ELEMENT_NODE)
       throw new Error("Unable to serialize " + element);
     // avoid original XML pollution at first iteration
     element = element.cloneNode(true);
@@ -142,14 +142,23 @@ function asIndentedString(element, indentation = 0)
   const before = "  ".repeat(indentation + 1);
   const after = "  ".repeat(indentation);
   const doc = element.ownerDocument;
-  const children = element.children;
-  const length = children.length;
-  for (let i = 0; i < length; i++)
+  for (const child of Array.from(element.childNodes))
   {
-    const child = children[i];
-    element.insertBefore(doc.createTextNode(`\n${before}`), child);
-    asIndentedString(child, indentation + 1);
-    if ((i + 1) === length)
+    const {nodeType} = child;
+    if (nodeType === Node.ELEMENT_NODE || nodeType === Node.TEXT_NODE)
+    {
+      if (nodeType === Node.TEXT_NODE)
+      {
+        const content = child.textContent.trim();
+        child.textContent = content.length ? `\n${before}${content}` : "";
+      }
+      else
+      {
+        element.insertBefore(doc.createTextNode(`\n${before}`), child);
+        asIndentedString(child, indentation + 1);
+      }
+    }
+    if (child === element.lastChild)
       element.appendChild(doc.createTextNode(`\n${after}`));
   }
   // inner calls don't need to bother serialization
