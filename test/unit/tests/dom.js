@@ -20,7 +20,7 @@
 const {equal, deepEqual} = require("assert");
 const {TestEnvironment} = require("../env");
 const basichtml = require("basichtml");
-const {XMLSerializer} = require("xmldom");
+const {DOMParser, XMLSerializer} = require("xmldom");
 
 let document;
 let env;
@@ -96,46 +96,24 @@ describe("Testing dom.js API", () =>
 
   it("asIndentedString() should return string  representation of DOM", () =>
   {
-    env.setGlobals({XMLSerializer});
+    env.setGlobals({Node: basichtml.Node, XMLSerializer});
     const {asIndentedString} = env.requireModule("../../../js/dom");
 
-    const createElem = (name, attributes) =>
-    {
-      const node = document.createElement(name);
-      // window.Node.prototype.cloneNode is not available in basicHTML.
-      const oldClone = node.cloneNode;
-      node.cloneNode = (attr) =>
-      {
-        const clonedNode = oldClone.call(node, attr);
-        // basichtml sets style by default
-        clonedNode.removeAttribute("style");
-        return clonedNode;
-      };
-
-      node.removeAttribute("style");
-      for (const attribute in attributes)
-        node.setAttribute(attribute, attributes[attribute]);
-      return node;
-    };
-
-    // Create report DOM object
-    const elemA = createElem("a", {attr: "value"});
-    const elemB = createElem("b");
-    const elemC = createElem("c");
-    elemC.textContent = "text";
-    const elemD = createElem("d");
-    elemB.appendChild(elemC);
-    elemB.appendChild(elemD);
-    elemA.appendChild(elemB);
+    const xml = new DOMParser().parseFromString(
+      "<a attr='value'><b><c>text</c><d/></b></a>",
+      "text/xml"
+    );
 
     const result = `<a attr="value">
   <b>
-    <c>text</c>
+    <c>
+      text
+    </c>
     <d/>
   </b>
 </a>`;
 
-    equal(asIndentedString(elemA), result);
+    equal(asIndentedString(xml), result);
   });
 
   it("relativeCoordinates() Should return relative coordinates to the" +
