@@ -1,6 +1,8 @@
+mocks/dist/
 node_modules/
 screenshots/
 smoke/
+skin/fonts/
 skin/day1.css
 skin/desktop-options.css
 skin/first-run.css

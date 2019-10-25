@@ -49,6 +49,10 @@
         "css": "$ create.css issue-reporter",
         "js": "$ create.js ./js/issue-reporter.js ./issue-reporter.js"
       },
+      "mocks": [
+        "mkdir -p mocks/dist",
+        "$ create.js ./mocks/js/background.js ./mocks/dist/background.js"
+      ],
       "popup": "$ create.bundle popup",
       "test": [
         [
