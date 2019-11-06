@@ -311,7 +311,6 @@ html[dir="rtl"] #notification .content.information h3::before
   width: calc(100% - var(--toggle-width));
 }
 
-#page-status .page .details,
 #page-status .page io-circle-toggle
 {
   padding: 1em 0;
@@ -322,16 +321,19 @@ html[dir="rtl"] #notification .content.information h3::before
   margin-bottom: var(--margin-primary);
 }
 
+#page-status .page .details
+{
+  padding: 1em var(--padding-primary);
+}
+
 html[dir="ltr"] #page-status .page
 {
   border-left: 4px solid #F7F7F7;
-  padding-left: var(--padding-primary);
 }
 
 html[dir="rtl"] #page-status .page
 {
   border-right: 4px solid #F7F7F7;
-  padding-right: var(--padding-primary);
 }
 
 #blocking-domain,
