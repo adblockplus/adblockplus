@@ -36,10 +36,18 @@
     </header>
     <main>
       <div id="page-status">
-        <div>
+        <h2 data-i18n="status_header"></h2>
+        <div class="domain">
           <div class="details">
-            <h2 data-i18n="status_header"></h2>
+            <h3 data-i18n="status_domain"></h3>
             <p id="blocking-domain" class="reset-font">example.com</p>
+          </div>
+          <io-circle-toggle checked></io-circle-toggle>
+        </div>
+        <div class="page">
+          <div class="details">
+            <h3 data-i18n="status_page"></h3>
+            <p id="blocking-page" class="reset-font">/</p>
           </div>
           <io-circle-toggle checked></io-circle-toggle>
         </div>
