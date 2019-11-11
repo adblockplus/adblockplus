@@ -47,27 +47,38 @@
     "description": "https://gitlab.com/eyeo/specs/spec/blob/6f8028d692da33978069972d90417dcd10957f2b/spec/abp/bubble-ui.md#refresh",
     "message": "Click the button below for changes to take effect."
   },
+  "social_media_share": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/36533b29e70499ed5521564d2330e51392cfb2e9/spec/abp/popup.md#counter-panel",
+    "message": "Share numbers with friends"
+  },
+  "share_on_facebook": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/36533b29e70499ed5521564d2330e51392cfb2e9/spec/abp/popup.md#counter-panel",
+    "message": "Share on Facebook"
+  },
+  "share_on_twitter": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/36533b29e70499ed5521564d2330e51392cfb2e9/spec/abp/popup.md#counter-panel",
+    "message": "Share on Twitter"
+  },
+  "share_on_twitter_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/1e5b1524ef5d69849415054a25d100e6bc5a9468/spec/abp/popup.md#counter-panel",
+    "message": "I've blocked $number$ ads with Adblock Plus. Give it a try - it's FREE!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
   "stats_header": {
     "description": "Stats description above the page / total stats",
     "message": "Number of items blocked"
   },
   "stats_label_page": {
-    "description": "This shows the number of blocked requests on a specific page in the popup.",
-    "message": "<strong>$number$</strong> on this page",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/1e5b1524ef5d69849415054a25d100e6bc5a9468/spec/abp/popup.md#counter-panel",
+    "message": "on this page"
   },
   "stats_label_total": {
-    "description": "This shows the total number of blocked requests in the popup.",
-    "message": "<strong>$number$</strong> in total",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/1e5b1524ef5d69849415054a25d100e6bc5a9468/spec/abp/popup.md#counter-panel",
+    "message": "in total"
   },
   "sendReport": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/bubble_ui/spec/abp/bubble-ui.md#report-issue",
