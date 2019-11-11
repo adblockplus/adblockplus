@@ -24,6 +24,7 @@ const setupToggles = require("./popup.toggles.js");
 const setupBlock = require("./popup.blockelement.js");
 const {activeTab} = require("./popup.utils.js");
 const api = require("./api");
+const {createShareLink} = require("./social-media-share.js");
 const {$, $$} = require("./dom");
 
 const {
@@ -110,15 +111,18 @@ activeTab.then(tab =>
   setupToggles(tab);
   setupStats(tab);
   setupBlock(tab);
+  setupShare();
   setupFooter();
 });
 
 function disablePopup()
 {
   document.body.classList.add("disabled");
-  const buttons = $$("#page-info button, io-circle-toggle");
+  const buttons = $$("#page-info .options button, io-circle-toggle");
   for (const button of buttons)
+  {
     button.disabled = true;
+  }
 }
 
 function setupFooter()
@@ -158,18 +162,19 @@ function updateStats(tab, blockedTotal)
 {
   api.stats.getBlocked(tab).then((blockedPage) =>
   {
-    ext.i18n.setElementText(
-      $("#stats-page"),
-      "stats_label_page",
-      [blockedPage.toLocaleString()]
-    );
+    $("#stats-page .amount").textContent = blockedPage.toLocaleString();
   });
 
-  ext.i18n.setElementText(
-    $("#stats-total"),
-    "stats_label_total",
-    [blockedTotal.toLocaleString()]
-  );
+  const total = blockedTotal.toLocaleString();
+  $("#stats-total .amount").textContent = total;
+
+  // whenever the total changes, update social media shared stats links too
+  for (const media of ["facebook", "twitter"])
+  {
+    const link = $(`#counter-panel .share a.${media}`);
+    link.target = "_blank";
+    link.href = createShareLink(media, total);
+  }
 }
 
 function setupStats(tab)
@@ -190,5 +195,54 @@ function setupStats(tab)
   api.port.postMessage({
     type: "prefs.listen",
     filter: ["blocked_total"]
+  });
+}
+
+function setupShare()
+{
+  const wrapper = $("#counter-panel .share");
+  const shareButton = $(".enter", wrapper);
+  const cancelButton = $(".cancel", wrapper);
+  const firstFocusable = $("a", wrapper);
+  const indexed = $$("[tabindex]", wrapper);
+
+  const isExpanded = () => wrapper.classList.contains("expanded");
+
+  // when sharing link enters the container, it should get focused,
+  // but only if the focus was still in the sharedButton
+  firstFocusable.addEventListener("transitionend", () =>
+  {
+    if (isExpanded() && document.activeElement === shareButton)
+      firstFocusable.focus();
+  });
+
+  wrapper.addEventListener("transitionend", () =>
+  {
+    const expanded = isExpanded();
+
+    // add/drop tabindex accordingly with the expanded value
+    const tabindex = expanded ? 0 : -1;
+    for (const el of indexed)
+    {
+      el.setAttribute("tabindex", tabindex);
+    }
+    shareButton.setAttribute("tabindex", expanded ? -1 : 0);
+
+    // if it's not expanded, and the cancel was clicked, and it's still focused
+    // move the focus back to the shareButton
+    if (!expanded && document.activeElement === cancelButton)
+      shareButton.focus();
+  });
+
+  shareButton.addEventListener("click", (event) =>
+  {
+    event.preventDefault();
+    wrapper.classList.add("expanded");
+  });
+
+  cancelButton.addEventListener("click", (event) =>
+  {
+    event.preventDefault();
+    wrapper.classList.remove("expanded");
   });
 }

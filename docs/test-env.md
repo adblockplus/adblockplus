@@ -35,6 +35,8 @@ No parameters.
 | filterError | `true` | Causes any filter validation to fail |
 | platform | `chromium` | Shows opt-out for DevTools panel |
 
+If the `locale` uses any Chinese that starts with `zh`, the _Get in touch_ section under the _Help_ tab should show social media icons different from Facebook and Twitter, as these platform are not available for Chinese users.
+
 ### devtools-panel.html
 
 No parameters.
@@ -73,6 +75,8 @@ No parameters.
 | | `information` | Show notification with "information" type |
 | pageWhitelisted | `true` | Show popup as if page is whitelisted |
 | platform | `edgehtml` | Hides button to open issue reporter |
+
+If the `locale` uses any Chinese that starts with `zh`, the _Share numbers with friends_ should either be invisible, or it should show social media icons different from Facebook and Twitter, as these platform are not available for Chinese users.
 
 ### popup-dummy.html
 
