@@ -1,20 +1,20 @@
 ## Environment
-- **OS version:** _(e.g. Windows 10)_
-- **Browser version:** _(e.g. Firefox 51)_
-- **Extension version:** _(e.g. Adblock Plus 3.6; UI release 2019-1)_
+- **OS version:** (e.g. Windows 10)
+- **Browser version:** (e.g. Firefox 51)
+- **Extension version:** (e.g. Adblock Plus 3.6; UI release 2019-1)
 - **Last working version:** (e.g. Adblock Plus 3.5)
 
 ## Steps to reproduce
-1. _(e.g. Open Advanced tab in desktop settings page)_
-2. _(e.g. Add custom filter `foo`)_
+1. (e.g. Open Advanced tab in desktop settings page)
+2. (e.g. Add custom filter `foo`)
 
 ## Observed behavior
-_(Describe the experienced behavior when following the above steps)_
+(Describe the experienced behavior when following the above steps)
 
 ## Expected behavior
-_(Describe the behavior that is expected when following the above steps)_
+(Describe the behavior that is expected when following the above steps)
 
 ## Further information
-_(Mention any further information here, such as what led to the bug)_
+(Mention any further information here, such as what led to the bug)
 
 /label ~"Bug (ABPUI)"
