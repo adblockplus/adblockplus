@@ -18,15 +18,15 @@
 "use strict";
 
 const sourceLanguage = "en_US";
-const targetLanguages = ["ar_AA", "de_DE", "el_GR", "es_ES", "fr_FR", "hu_HU",
+const targetLanguages = ["ar_EG", "de_DE", "el_GR", "es_ES", "fr_FR", "hu_HU",
                          "it_IT", "ja_JP", "ko_KR", "nl_NL", "pl_PL", "pt_BR",
                          "ru_RU", "tr_TR", "zh_CN"];
 const localesDir = "./locale";
 const fs = require("fs");
-const restApiUrl = "https://wstest2.xtm-intl.com/rest-api";
-const customerId = 12445;
-const workflowId = 2926;
-const analysisTemplateId = 251759;
+const restApiUrl = "https://www.xtm-cloud.com/rest-api";
+const customerId = 4419;
+const workflowId = 2982;
+const analysisTemplateId = "json";
 
 /**
  * Maps XTM's locales to locales we use
@@ -44,7 +44,7 @@ function generateXtmToLocalesMap()
       xtmToLocalesMap[`${language}_${language.toUpperCase()}`] = language;
   }
   // Hardcoding locales, for which country codes can't be extracted:
-  xtmToLocalesMap["ar_AA"] = "ar";
+  xtmToLocalesMap["ar_EG"] = "ar";
   xtmToLocalesMap["el_GR"] = "el";
   xtmToLocalesMap["ja_JP"] = "ja";
   xtmToLocalesMap["ko_KR"] = "ko";
