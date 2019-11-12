@@ -1,7 +1,7 @@
 {
   "description": {
     "description": "https://gitlab.com/eyeo/adblockplus/webstores/blob/d7acfa77af92c53bce1aa5e243bd81768e004e01/spec/chrome-web-store/listing-en_US.md#summary, Note: this cannot be longer than 132 characters",
-    "message": "Block YouTube™ ads, pop ups & fight malware!"
+    "message": "Block YouTube™ ads, pop-ups & fight malware!"
   },
   "name": {
     "message": "Adblock Plus"
