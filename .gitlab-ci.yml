@@ -6,13 +6,9 @@ before_script:
   - curl -sL https://deb.nodesource.com/setup_10.x | bash -
   - apt-get update -yqq
   - apt-get install -yqq nodejs
-  - npm install -g install-peerdeps
   # enable unsafe-perm to avoid problems with running npm as root
   # see adblockplusui#193
   - export npm_config_unsafe_perm=true
-  # peer dependencies need to be installed explicitly see adblockplusui#211
-  - install-peerdeps stylelint-config-eyeo@1.0.2
-  - install-peerdeps ajv-keywords@3.2.0
   - pip install --user Jinja2 cryptography fonttools brotli
   - export PATH=$PATH:~/.local/bin
 
@@ -22,6 +18,9 @@ stages:
   - build
   - pages
   - uploadcrowdin
+  - uploadxtm
+  - updatextm
+  - downloadxtm
 
 lint:
   stage: lint
@@ -202,3 +201,68 @@ uploadcrowdin:
   environment:
     name: crowdin/$BASENAME
     url: https://crowdin.com/project/$BASENAME
+
+.xtm:
+  variables:
+    USER_ID: $XTM_USER_ID
+    CLIENT: $XTM_CLIENT
+    PASSWORD: $XTM_PASSWORD
+  environment:
+    name: xtm/$CI_COMMIT_REF_SLUG
+
+uploadxtm:
+  stage: uploadxtm
+  extends: .xtm
+  script:
+    - mkdir -p .git/info && touch .git/info/exclude
+    - npm install
+    # Currently the xtm script determines the branch name using git rev-parse
+    # which doesn't work inside the CI environment because it's using a detached
+    # head (see https://gitlab.com/gitlab-org/gitlab-ce/issues/19421) to make
+    # it work we need to created the corresponding branches
+    - git branch master origin/master
+    - git checkout -B "$CI_BUILD_REF_NAME" "$CI_BUILD_REF"
+    - npm run $ xtm.create
+  when: manual
+
+updatextm:
+  stage: updatextm
+  extends: .xtm
+  script:
+    - mkdir -p .git/info && touch .git/info/exclude
+    - npm install
+    # Currently the xtm script determines the branch name using git rev-parse
+    # which doesn't work inside the CI environment because it's using a detached
+    # head (see https://gitlab.com/gitlab-org/gitlab-ce/issues/19421) to make
+    # it work we need to created the corresponding branches
+    - git branch master origin/master
+    - git checkout -B "$CI_BUILD_REF_NAME" "$CI_BUILD_REF"
+    - npm run $ xtm.update
+  when: manual
+
+downloadxtm:
+  stage: downloadxtm
+  extends: .xtm
+  script:
+    - mkdir -p .git/info && touch .git/info/exclude
+    - npm install
+    # Currently the xtm script determines the branch name using git rev-parse
+    # which doesn't work inside the CI environment because it's using a detached
+    # head (see https://gitlab.com/gitlab-org/gitlab-ce/issues/19421) to make
+    # it work we need to created the corresponding branches
+    - git branch master origin/master
+    - git checkout -B "$CI_BUILD_REF_NAME" "$CI_BUILD_REF"
+    # Download the translations
+    - npm run $ xtm.download
+    # Configure author for commit
+    - git config user.email "$GITLAB_USER_EMAIL"
+    - git config user.name "$GITLAB_USER_NAME"
+    # Add changes and commit
+    - git add locale
+    - export COMMIT_MSG="Noissue - Added XTM translations for $CI_BUILD_REF_NAME"
+    - git commit -m "$COMMIT_MSG"
+    # Push into new branch and create a new merge request
+    - export TARGET_BRANCH="$CI_BUILD_REF_NAME""-xtm-download"
+    - export PUSH_URL=$(echo $CI_PROJECT_URL | sed "s/:\/\//:\/\/$GITLAB_USER:$GITLAB_TOKEN@/g")
+    - "git push --push-option=merge_request.create --push-option=merge_request.target=$CI_BUILD_REF_NAME --push-option=merge_request.remove_source_branch --push-option=merge_request.title=\"WIP: ${COMMIT_MSG}\" $PUSH_URL HEAD:$TARGET_BRANCH"
+  when: manual
