@@ -18,6 +18,7 @@
 "use strict";
 
 const filterClasses = require("./filter-classes");
+require("./filter-composer");
 const filterNotifier = require("./filter-notifier");
 const filterStorage = require("./filter-storage");
 const hitLogger = require("./hit-logger");
@@ -30,10 +31,12 @@ const options = require("./options");
 const prefs = require("./prefs");
 const recommendations = require("./recommendations");
 const requestBlocker = require("./request-blocker");
+require("./stats");
 const subscriptionClasses = require("./subscription-classes");
 const subscriptionInit = require("./subscription-init");
 const synchronizer = require("./synchronizer");
 const utils = require("./utils");
+require("./whitelisting");
 
 const modules = {
   filterClasses,

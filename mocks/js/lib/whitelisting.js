@@ -17,34 +17,7 @@
 
 "use strict";
 
-const {prefs} = require("./prefs");
+const {params} = require("../config/env");
+const {port} = require("./messaging");
 
-const notification = {
-  Notification: {
-    getLocalizedTexts(notif)
-    {
-      const texts = {};
-      if ("message" in notif)
-      {
-        texts.message = notif.message;
-      }
-      if ("title" in notif)
-      {
-        texts.title = notif.title;
-      }
-      return texts;
-    },
-    toggleIgnoreCategory(category)
-    {
-      const categories = prefs.Prefs.notifications_ignoredcategories;
-      const index = categories.indexOf(category);
-      if (index == -1)
-        categories.push(category);
-      else
-        categories.splice(index, 1);
-      prefs.Prefs.notifications_ignoredcategories = categories;
-    }
-  }
-};
-
-module.exports = notification;
+port.on("filters.isWhitelisted", () => !!params.pageWhitelisted);

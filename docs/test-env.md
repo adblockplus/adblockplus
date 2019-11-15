@@ -64,7 +64,19 @@ No parameters.
 
 ### popup.html
 
-Not supported yet.
+| Parameter | Value | Description |
+|-|-|-|
+| application | `edge` | Hides Adblock Browser promotion message |
+| composerActive | `false` | Hides button to open filter composer |
+| notification | `critical` | Show notification with "critical" type |
+| | `default` | Show notification with unknown type |
+| | `information` | Show notification with "information" type |
+| pageWhitelisted | `true` | Show popup as if page is whitelisted |
+| platform | `edgehtml` | Hides button to open issue reporter |
+
+### popup-dummy.html
+
+No parameters.
 
 ### updates.html
 

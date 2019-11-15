@@ -27,7 +27,14 @@ function updateFromURL(data)
     {
       const parts = param.split("=", 2);
       if (parts.length == 2 && parts[0] in data)
-        data[parts[0]] = decodeURIComponent(parts[1]);
+      {
+        let value = decodeURIComponent(parts[1]);
+        if (value === "false" || value === "true")
+        {
+          value = (value === "true");
+        }
+        data[parts[0]] = value;
+      }
     }
   }
 }
@@ -44,12 +51,15 @@ updateFromURL(info);
 
 const params = {
   additionalSubscriptions: "",
-  blockedURLs: "",
-  dataCorrupted: false,
-  filterlistsReinitialized: false,
   addSubscription: false,
-  filterError: false,
+  blockedURLs: "",
+  composerActive: true,
+  dataCorrupted: false,
   downloadStatus: "synchronize_ok",
+  filterError: false,
+  filterlistsReinitialized: false,
+  notification: null,
+  pageWhitelisted: false,
   showPageOptions: false
 };
 updateFromURL(params);
