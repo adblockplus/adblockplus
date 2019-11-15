@@ -154,7 +154,7 @@
     "glob": "^7.1.4",
     "hyperhtml-element": "^3.12.2",
     "local-range": "^0.1.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.0",
     "npm-dollar": "^2.2.1",
     "website-defaults": "github:adblockplus/website-defaults#255e4f1"
   },
