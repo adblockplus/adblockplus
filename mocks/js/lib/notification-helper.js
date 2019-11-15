@@ -17,8 +17,38 @@
 
 "use strict";
 
+const {params} = require("../config/env");
+
+const notifications = {
+  critical: {
+    type: "critical",
+    title: "Critical title",
+    message: "Critical <a>message</a> with <a>links</a>",
+    links: ["foo", "bar"]
+  },
+  default: {
+    title: "Default title",
+    message: "Default <a>message</a> with <a>links</a>",
+    links: ["foo", "bar"]
+  },
+  information: {
+    type: "information",
+    title: "Info title",
+    message: "Info <a>message</a> with <a>links</a>",
+    links: ["foo", "bar"]
+  }
+};
+
 const notificationHelper = {
   getActiveNotification()
+  {
+    const name = params.notification;
+    if (!name || !(name in notifications))
+      return null;
+
+    return notifications[name];
+  },
+  notificationClicked()
   {
   },
   shouldDisplay()

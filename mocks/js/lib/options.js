@@ -20,7 +20,7 @@
 const showOptions = function()
 {
   if (!/\/(?:mobile|desktop)-options\.html\b/.test(top.location.href))
-    window.open("desktop-options.html", "_blank");
+    window.open("../desktop-options.html", "_blank");
 
   return Promise.resolve();
 };

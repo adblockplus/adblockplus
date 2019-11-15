@@ -72,6 +72,11 @@
   if (!("runtime" in browser))
     browser.runtime = {};
 
+  browser.runtime.onMessage = {
+    addListener() {},
+    removeListener() {}
+  };
+
   browser.runtime.sendMessage = message =>
   {
     const messageId = ++maxMessageId;
@@ -210,8 +215,16 @@
 
   browser.tabs.getCurrent = () => Promise.resolve(activeTab);
 
+  browser.tabs.query = () => Promise.resolve(Array.from(tabs.values()));
+
   browser.tabs.onUpdated = {
     addListener() {}
+  };
+
+  browser.tabs.reload = (tabId) =>
+  {
+    log(`Reloaded tab: ${tabs.get(tabId).url}`);
+    return Promise.resolve();
   };
 
   browser.tabs.remove = (tabId) =>
@@ -219,6 +232,14 @@
     log(`Closed tab: ${tabs.get(tabId).url}`);
     tabs.delete(tabId);
     return Promise.resolve();
+  };
+
+  browser.tabs.sendMessage = (tabId, msg) =>
+  {
+    if (msg.type !== "composer.content.getState")
+      return;
+
+    return Promise.resolve({active: false});
   };
 
   browser.tabs.update = (tabId, options) =>
