@@ -348,6 +348,9 @@
   "options_whitelist_empty_2": {
     "message": "ვებსაიტები რომელთაც ენდობით და გსურთ მათი რეკლამების ხილვა."
   },
+  "options_whitelist_notification": {
+    "message": "საიტი დამატებულია გამონაკლისებში."
+  },
   "options_whitelist_placeholder_example": {
     "message": "მაგ. $domain$",
     "placeholders": {

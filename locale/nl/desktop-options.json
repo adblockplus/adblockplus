@@ -1,12 +1,12 @@
 {
   "options_aa_opt_out_survey": {
-    "message": "Zou u, om ons te helpen Adblock Plus te verbeteren, willen vertellen waarom u Acceptabele advertenties heeft uitgeschakeld?"
+    "message": "Zou u, om ons te helpen Adblock Plus te verbeteren, willen vertellen waarom u Acceptabele advertenties hebt uitgeschakeld?"
   },
   "options_aa_opt_out_survey_no": {
     "message": "Nee, bedankt"
   },
   "options_aa_opt_out_survey_ok": {
-    "message": "Ga naar de enquête"
+    "message": "Naar de enquête"
   },
   "options_acceptableAds_ads_description_1": {
     "message": "Acceptabele advertenties zijn niet vervelend en geven geen verstoring met de inhoud die u bekijkt. <a>Lees meer over de criteria voor Acceptabele advertenties</a>"
@@ -105,7 +105,7 @@
     "message": "Voer een geldige URL in"
   },
   "options_dialog_import_title": {
-    "message": "Een filterlijst toevoegen"
+    "message": "Filterlijst toevoegen"
   },
   "options_dialog_language_other_empty": {
     "message": "Er zijn geen beschikbare talen."
@@ -126,7 +126,7 @@
     "message": "Engels"
   },
   "options_filterList_add": {
-    "message": "Voeg filterlijst via URL toe"
+    "message": "Filterlijst toevoegen via URL"
   },
   "options_filterList_column_name": {
     "message": "Filterlijsten"
@@ -206,13 +206,13 @@
     "message": "O jee! Er is iets fout gegaan. Probeer het opnieuw."
   },
   "options_help_center": {
-    "message": "Zoekt u antwoord op uw vragen? <a0>Ga naar onze Helpcentrale (alleen in het Engels)</a0>"
+    "message": "Zoekt u antwoorden op uw vragen? <a0>Bezoek ons Helpcentrum (alleen in het Engels)</a0>"
   },
   "options_help_description": {
     "message": "Hulp zoeken of contact met ons opnemen"
   },
   "options_language_add": {
-    "message": "een taal toevoegen"
+    "message": "Een taal toevoegen"
   },
   "options_language_change": {
     "message": "wijzigen"
@@ -276,7 +276,7 @@
     "message": "Via de sociale-mediapictogrammen op de websites die u bezoekt, kunnen sociale-medianetwerken een profiel van u opbouwen op basis van uw surfgedrag - zelfs wanneer u hier niet op klikt. Het verbergen van deze knoppen kan uw profiel beschermen."
   },
   "options_rating_description": {
-    "message": "Neem een moment en help de boodschap te verspreiden door Adblock Plus te beoordelen. Bedankt voor uw steun!"
+    "message": "Neem even de tijd en help de boodschap te verspreiden door Adblock Plus te beoordelen. Bedankt voor uw steun!"
   },
   "options_rating_title": {
     "message": "Geniet u van Adblock Plus?"

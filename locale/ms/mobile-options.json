@@ -8,6 +8,9 @@
   "mops_action_cancel": {
     "message": "BATALKAN"
   },
+  "mops_enabled_label": {
+    "message": "Blok iklan di:"
+  },
   "mops_error_url": {
     "message": "Masukkan URL yang sah"
   },

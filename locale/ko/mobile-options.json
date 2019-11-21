@@ -11,6 +11,9 @@
   "mops_enabled_label": {
     "message": "광고 차단 대상:"
   },
+  "mops_error_url": {
+    "message": "유효한 URL을 입력하세요"
+  },
   "mops_filterlist_add": {
     "message": "필터 목록 추가"
   },

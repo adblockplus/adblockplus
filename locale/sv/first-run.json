@@ -1,0 +1,14 @@
+{
+  "firstRun_browser_store_android": {
+    "message": "Android-app på Google Play"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "Tillgänglig på iTunes App Store"
+  },
+  "firstRun_control_title": {
+    "message": "Du har kontrollen"
+  },
+  "firstRun_title": {
+    "message": "Installation slutförd!"
+  }
+}

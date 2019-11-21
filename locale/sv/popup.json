@@ -2,6 +2,9 @@
   "easy_create_filter": {
     "message": "Blockera objekt"
   },
+  "options_refresh": {
+    "message": "Uppdatera"
+  },
   "options_short": {
     "message": "Inställningar"
   },
@@ -10,6 +13,12 @@
   },
   "overlay_notification_closing_button_optout": {
     "message": "Sluta visa notifieringar"
+  },
+  "sendReport": {
+    "message": "Rapportera problem"
+  },
+  "stats_header": {
+    "message": "Antal objekt blockerade"
   },
   "stats_label_page": {
     "message": "<strong>$number$</strong> på den här sidan",

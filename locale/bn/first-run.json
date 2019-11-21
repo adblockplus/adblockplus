@@ -1,0 +1,47 @@
+{
+  "firstRun_browser_description": {
+    "message": "ডেস্কটপ ব্রাউজারগুলির জন্য সর্বাধিক জনপ্রিয় অ্যাড ব্লক Adblock Plus র পিছনের দল থেকে, অ্যাডব্লক ব্রাউজারটি এখন আপনার অ্যান্ড্রয়েড এবং আইওএস ডিভাইসের জন্য পাওয়া যায়।"
+  },
+  "firstRun_browser_store_android": {
+    "message": "Google Play Android অ্যাপ"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "iTunes App Store এ আছে"
+  },
+  "firstRun_browser_title": {
+    "message": "Adblock Browser অ্যাপ"
+  },
+  "firstRun_control_title": {
+    "message": "আপনি নিয়ন্ত্রণে আছেন"
+  },
+  "firstRun_fair_description": {
+    "message": "আমরা আপনাকে Adblock Plus র ন্যায্য ব্যবহার করতে এবং ওয়েবসাইটগুলিকে হোয়াইটলিস্ট করতে উত্সাহিত করি। আপনি যে ফিল্টারগুলি ব্যবহার করেন তার উপর নির্ভর করে আপনি বুঝতে এবং গ্রহণ করেছেন যে অনিচ্ছাকৃত ফলাফল হতে পারে (উদাঃ কোনও ওয়েবসাইটে ব্লক করা সামগ্রী)। Adblock Plus র সুষ্ঠু ব্যবহার সম্পর্কে আরও তথ্যের জন্য <a0>ব্যবহারের শর্তাদি</a0> দেখুন।"
+  },
+  "firstRun_fair_title": {
+    "message": "ন্যায্য ব্যবহার"
+  },
+  "firstRun_subtitle": {
+    "message": "আপনি সবেমাত্র আপনার ব্রাউজারের নিয়ন্ত্রণ নিয়েছেন।"
+  },
+  "firstRun_title": {
+    "message": "সফলভাবে সংস্থাপন!"
+  },
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "কিছু ব্যবহারকারী এমন সমস্যাইয় পড়েছেন যেখানে এই পৃষ্ঠাটি প্রতিবার তাদের ব্রাউজারটি চালু হওয়ার সময় খোলে। এই সমস্যাটি Adblock Plus আনইনস্টল এবং পুনরায় ইনস্টল করে সমাধান করা যেতে পারে:"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "দি আপনার এখনও সহায়তা প্রয়োজন হয় তবে <a0>support@adblockplus.org</a0> এ আমাদের সাথে যোগাযোগ করুন বা আমাদের <a1>সহায়তা কেন্দ্র</a1> দেখুন।"
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "আপনার ব্রাউজারের এক্সটেনশান ট্যাব খুলুন।"
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Adblock Plus টি সন্ধান করুন এবং এটি সরান।"
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "<a>adblockplus.org</a> থেকে Adblock Plus পুনরায় ইনস্টল করুন।"
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "দেখে মনে হচ্ছে যে কোনও সমস্যার কারণে সমস্ত ফিল্টার সরিয়ে ফেলা হয়েছে এবং আমরা একটি ব্যাকআপ পুনরুদ্ধার করতে অক্ষম। সুতরাং আমাদের আপনার ফিল্টার এবং গ্রহণযোগ্য বিজ্ঞাপন সেটিংস পুনরায় সেট করতে হয়েছিল। <a>Adblock Plus বিকল্পগুলিতে</a> আপনার ফিল্টার তালিকা এবং গ্রহণযোগ্য বিজ্ঞাপন সেটিংস পরীক্ষা করুন।"
+  }
+}

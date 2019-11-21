@@ -8,6 +8,9 @@
   "mops_action_cancel": {
     "message": "Annulearje"
   },
+  "mops_enabled_label": {
+    "message": "Advertinsjes blokkearje op:"
+  },
   "mops_error_url": {
     "message": "Fier in URL yn"
   },

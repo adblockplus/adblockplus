@@ -348,6 +348,9 @@
   "options_whitelist_empty_2": {
     "message": "Websteder, som du har tillid til og ønsker at tillade annoncer på, vil blive vist her."
   },
+  "options_whitelist_notification": {
+    "message": "Webstedet er nu hvidlistet."
+  },
   "options_whitelist_placeholder_example": {
     "message": "f.eks. $domain$",
     "placeholders": {

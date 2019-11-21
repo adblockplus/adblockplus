@@ -1,0 +1,20 @@
+{
+  "day1_blockelement_more": {
+    "message": "Lär dig hur"
+  },
+  "day1_community_contact": {
+    "message": "Kontakta oss!"
+  },
+  "day1_community_contact_subject": {
+    "message": "Letar efter support!"
+  },
+  "notification_day1_title": {
+    "message": "Du har redan blockerat $ads$ annonser!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

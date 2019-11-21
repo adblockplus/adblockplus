@@ -348,6 +348,9 @@
   "options_whitelist_empty_2": {
     "message": "Spletne strani, ki jim zaupate in na njih želite videti oglase, bodo prikazane tukaj."
   },
+  "options_whitelist_notification": {
+    "message": "Spletni strani ste dovolili objavo oglasov."
+  },
   "options_whitelist_placeholder_example": {
     "message": "npr. $domain$",
     "placeholders": {

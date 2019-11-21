@@ -8,6 +8,9 @@
   "mops_action_cancel": {
     "message": "Prekliči"
   },
+  "mops_enabled_label": {
+    "message": "Blokiraj oglase na:"
+  },
   "mops_error_url": {
     "message": "Vnesite veljaven URL"
   },

@@ -80,6 +80,9 @@
   "issueReporter_processing_screenshot": {
     "message": "feldolgozás"
   },
+  "issueReporter_screenreader_warning": {
+    "message": "A probléma jobb megértése érdekében képernyőképet kell készíteni a problémajelentés benyújtásakor. A jelenlegi webhelytől függően a képernyőkép személyes információkat tartalmazhat. Ha kellemetlennek találja a képernyőkép benyújtását, kérjük, küldje el kérdését e-mailben a <a0>support@adblockplus.org</a0> címre."
+  },
   "issueReporter_screenshot_hide": {
     "message": "Elrejt"
   },

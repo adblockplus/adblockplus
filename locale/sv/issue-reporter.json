@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "Vi kommer inte att kunna kontakta er och er rapport kan få en lägre prioritering."
   },
+  "issueReporter_closeButton_label": {
+    "message": "Stäng"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Ange kommentar"
   },
@@ -59,8 +62,14 @@
   "issueReporter_privacyPolicy": {
     "message": "Sekretesspolicy"
   },
+  "issueReporter_processing_screenshot": {
+    "message": "bearbetar"
+  },
   "issueReporter_screenshot_hide": {
     "message": "Dölj"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Välj problem"
   },
   "issueReporter_sendButton_label": {
     "message": "Skicka rapport"

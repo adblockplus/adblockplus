@@ -348,6 +348,9 @@
   "options_whitelist_empty_2": {
     "message": "Hjir wurde websites toand dy't jo fertrouwe en wêrop jo advertinsjes tastean wolle."
   },
+  "options_whitelist_notification": {
+    "message": "Website is op de wite list pleatst."
+  },
   "options_whitelist_placeholder_example": {
     "message": "byg. $domain$",
     "placeholders": {

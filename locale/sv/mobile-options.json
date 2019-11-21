@@ -8,6 +8,12 @@
   "mops_action_cancel": {
     "message": "Avbryt"
   },
+  "mops_enabled_label": {
+    "message": "Blockera annonser på:"
+  },
+  "mops_error_url": {
+    "message": "Ange en giltig URL"
+  },
   "mops_filterlist_add": {
     "message": "Lägg till en filterlista"
   },

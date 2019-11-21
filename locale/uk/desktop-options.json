@@ -1,4 +1,13 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "Чи не могли б Ви розповісти, чому вимкнули функцію «Допустима реклама»? Ваша думка допоможе нам зробити Adblock Plus кращим."
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "Ні, дякую"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "Перейти до опитування"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "«Допустима реклама» не дратує й не перекривається з помітним вмістом. <a>Дізнатися більше про критерії «Допустимої реклами»</a>"
   },
@@ -12,13 +21,16 @@
     "message": "<strong>Примітка:</strong> Ви відключили функцію <strong>заборона відстеження (DNT)</strong> в налаштуваннях вашого браузера. Для належної роботи цієї функції, будь ласка, увімкніть <strong>DNT</strong> в налаштуваннях свого браузеру. <a>Дізнайтеся, як включити DNT</a>."
   },
   "options_acceptableAds_header": {
-    "message": "Прийнятна реклама"
+    "message": "Допустима реклама"
   },
   "options_acceptableAds_privacy_label": {
     "message": "Дозволити тільки рекламу без відстеження третьою стороною"
   },
   "options_advanced_description": {
     "message": "Встановіть Adblock Plus, додайте або видаліть списки фільтрів, створюйте та адмініструйте власні списки фільтрів"
+  },
+  "options_builtin_filterList_add": {
+    "message": "Додати списки вбудованих фільтрів"
   },
   "options_close": {
     "message": "закрити"
@@ -190,6 +202,12 @@
   "options_general_description": {
     "message": "Визначте, що Adblock Plus показуватиме та приховуватиме на сайтах"
   },
+  "options_generic_error": {
+    "message": "Ой! Щось пішло не так. Будь ласка, спробуйте ще раз."
+  },
+  "options_help_center": {
+    "message": "Шукаєте відповіді на свої питання? <a0>Відвідайте наш центр допомоги (лише англійською мовою)</a0>"
+  },
   "options_help_description": {
     "message": "Знайти допомогу або зв'язатися з нами"
   },
@@ -205,8 +223,24 @@
   "options_language_empty": {
     "message": "У вас немає фільтрів для певних мов."
   },
+  "options_language_filter_list": {
+    "message": "Списки мовних фільтрів"
+  },
   "options_language_header": {
     "message": "Мова"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>ПОРАДА:</strong> Оберіть мови. При виборі надмірної кількості мов блокувальник реклами працюватиме повільніше і, отже, браузер теж."
@@ -240,6 +274,12 @@
   },
   "options_protection_social_tooltip": {
     "message": "Значки соціальних мереж на відвідуваних сайтах дозволяють соціальних мереж формувати ваш профіль на підставі ваших звичок перегляду ресурсів мережі – навіть якщо ви їх не натискаєте. Приховування цих значків допоможе захистити ваш профіль."
+  },
+  "options_rating_description": {
+    "message": "Просимо Вас виділити декілька хвилин, щоб оцінити роботу Adblock Plus і розповісти іншим про його користь. Дякуємо Вам за підтримку!"
+  },
+  "options_rating_title": {
+    "message": "Подобається Adblock Plus?"
   },
   "options_report_bug": {
     "message": "Знайшли помилку? <a>Надіслати нам звіт про помилки</a>"
@@ -307,6 +347,9 @@
   },
   "options_whitelist_empty_2": {
     "message": "Тут відображаються сайти, яким ви довіряєте та дозволяєте показ реклами."
+  },
+  "options_whitelist_notification": {
+    "message": "Сайт додано в білий список."
   },
   "options_whitelist_placeholder_example": {
     "message": "наприклад, $domain$",

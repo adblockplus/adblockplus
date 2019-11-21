@@ -74,6 +74,15 @@
   "options_customize_showNotifications_tooltip": {
     "message": "Benachrichtigungen von Adblock Plus zulassen (Benachrichtigungen in Bezug auf kritische Leistungsprobleme werden immer angezeigt)."
   },
+  "options_dialog_about_copyright": {
+    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "currentYear": {
+        "content": "$1",
+        "example": "2017"
+      }
+    }
+  },
   "options_dialog_about_title": {
     "message": "Informationen zu Adblock Plus"
   },
@@ -219,6 +228,19 @@
   },
   "options_language_header": {
     "message": "Sprache"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>TIPP:</strong> Wähle nur die Sprachen aus, die du brauchst. Wenn du mehrere Sprachen wählst, verlangsamt das Adblock Plus und somit die Geschwindigkeit deines Browsers."

@@ -56,5 +56,8 @@
         "example": "http://example.com/bar"
       }
     }
+  },
+  "devtools_type_title": {
+    "message": "Type"
   }
 }

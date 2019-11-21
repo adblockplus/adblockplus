@@ -1,4 +1,13 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "Et aidata meiil Adblock Plusi täiustada, kas oleksid nõus ütlema, miks sa keelasid lubatavad reklaamid?"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "Tänan, ei"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "Mine küsitlusele vastama"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "Lubatavad reklaamid ei ole tüütud ega sega vaadatavat sisu. <a>Loe Lubatavate reklaamide tingimuste kohta lähemalt</a>"
   },
@@ -190,11 +199,14 @@
   "options_general_description": {
     "message": "Määra, mida Adblock Plus veebisaitidel näitab ja peidab"
   },
+  "options_generic_error": {
+    "message": "Oih! Midagi läks valesti. Palun proovi uuesti."
+  },
   "options_help_description": {
     "message": "Leia abi või võta meiega ühendust"
   },
   "options_language_add": {
-    "message": "lisa keel"
+    "message": "Lisa keel"
   },
   "options_language_change": {
     "message": "muuda"
@@ -207,6 +219,19 @@
   },
   "options_language_header": {
     "message": "Keel"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>VIHJE:</strong> Vali ainult vajalikud keeled. Rohkemate valimine aeglustab reklaamide blokeerijat ja seega su veebilehitsemise kiirust."
@@ -240,6 +265,9 @@
   },
   "options_protection_social_tooltip": {
     "message": "Sotsiaalvõrgustike ikoonid külastatavatel veebisaitidel võimaldavad sotsiaalmeedia võrgustikel koostada sinu sirvimisharjumustel põhineva profiili - isegi kui sa neil ei klõpsa. Nende ikoonide peitmine võib su profiili kaitsta."
+  },
+  "options_rating_title": {
+    "message": "Naudid Adblock Plusi?"
   },
   "options_report_bug": {
     "message": "Leidsid vea? <a>Saada meile vearaport</a>"
@@ -307,6 +335,9 @@
   },
   "options_whitelist_empty_2": {
     "message": "Siin näidatakse veebisaite, mida sa usaldad ja lubad neil reklaame näidata."
+  },
+  "options_whitelist_notification": {
+    "message": "Veebisait lisati lubatute nimekirja."
   },
   "options_whitelist_placeholder_example": {
     "message": "nt. $domain$",

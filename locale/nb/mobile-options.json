@@ -8,6 +8,9 @@
   "mops_action_cancel": {
     "message": "Avbryt"
   },
+  "mops_enabled_label": {
+    "message": "Blokkér annonser på:"
+  },
   "mops_error_url": {
     "message": "Angi en gyldig URL"
   },

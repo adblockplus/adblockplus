@@ -1,8 +1,14 @@
 {
+  "description": {
+    "message": "Adblock Plus ডাউনলোড করুন যা বিশ্বের অন্যতম জনপ্রিয় অ্যাড ব্লকার।"
+  },
   "name": {
-    "message": "এ্যাডব্লক প্লাস"
+    "message": "Adblock Plus"
   },
   "name_devbuild": {
     "message": "Adblock Plus উন্নয়ন গঠন"
+  },
+  "name_releasebuild": {
+    "message": "Adblock Plus - বিনামূল্যে বিজ্ঞাপন ব্লকার"
   }
 }

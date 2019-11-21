@@ -1,4 +1,13 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "Adblock Plus উন্নত করতে আমাদের সাহায্য করুন, মন খুলে বলুন কেনো আপনি গ্রহণযোগ্য বিজ্ঞাপন বন্ধ করেছেন?"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "না, ধন্যবাদ"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "জরিপ করতে যান"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "গ্রহণযোগ্য বিজ্ঞাপনগুলি বিরক্তিকর নয় এবং আপনি যে সামগ্রী দেখছেন তা হস্তক্ষেপ করে না। <a>গ্রহণযোগ্য বিজ্ঞাপনের শর্তাবলী সম্পর্কে আরও পড়ুন</a>"
   },
@@ -6,10 +15,10 @@
     "message": "গ্রহনযোগ্য বিজ্ঞাপনের অনুমতি দিন"
   },
   "options_acceptableAds_description": {
-    "message": "গ্রহণযোগ্য বিজ্ঞাপনগুলি অ-বিরক্তিকর বিজ্ঞাপন।"
+    "message": "গ্রহণযোগ্য বিজ্ঞাপনগুলি অ-বিরক্তিকর বিজ্ঞাপন।এগুলি বিজ্ঞাপন অবরুদ্ধ করা এবং অনলাইন সামগ্রীকে সমর্থন করার মধ্যে মাঝের ক্ষেত্র কারণ তারা ওয়েবসাইটের মালিকদের জন্য উপার্জন অর্জন করে।"
   },
   "options_acceptableAds_dnt_notification": {
-    "message": "<strong>টীকা:</strong> আপনার ব্রাউজারের সেটিংসে <strong>অনুসরণ করবেন না(DNT)</strong> সক্রিয় করা আছে। এই বৈশিষ্ট্যটি সঠিকভাবে কাজ করার জন্য, অনুগ্রহ করে আপনার ব্রাউজারে <strong>DNT</strong> সক্রিয় করুন। <a>জানুন কিভাবে DNT সক্রিয় করবেন</a>।"
+    "message": "<strong>টীকা:</strong> আপনার ব্রাউজারের সেটিংসে <strong>অনুসরণ করবেন না(DNT)</strong> সক্রিয় করা আছে। এই সুবিধা সঠিকভাবে কাজ করার জন্য, অনুগ্রহ করে আপনার ব্রাউজারে <strong>DNT</strong> সক্রিয় করুন। <a>জানুন কিভাবে DNT সক্রিয় করবেন</a>।"
   },
   "options_acceptableAds_header": {
     "message": "গ্রহণযোগ্য বিজ্ঞাপন"
@@ -18,7 +27,10 @@
     "message": "তৃতীয়-পক্ষের অনুসরণহীন বিজ্ঞাপনগুলিকে শুধু অনুমতি দিন"
   },
   "options_advanced_description": {
-    "message": "অ্যাডব্লক প্লাস স্ব-নির্ধারণ করুন, ফিল্টার তালিকা যুক্ত করুন বা অপসারণ করুন, নিজের ফিল্টার তালিকা তৈরি এবং বজায় রাখুন"
+    "message": "Adblock Plus স্ব-নির্ধারণ করুন, ফিল্টার তালিকা যুক্ত করুন বা অপসারণ করুন, নিজের ফিল্টার তালিকা তৈরি এবং বজায় রাখুন"
+  },
+  "options_builtin_filterList_add": {
+    "message": "যোগ করুন বিল্ট-ইন ফিল্টারে তালিকা"
   },
   "options_close": {
     "message": "বন্ধ করুন"
@@ -27,10 +39,10 @@
     "message": "সরান"
   },
   "options_customFilter_cancel": {
-    "message": "বাতিল"
+    "message": "বাতিল করুন"
   },
   "options_customFilters_description": {
-    "message": "আরো নিয়ন্ত্রণ করতে আপনার নিজস্ব স্ব-নির্ধারিত ফিল্টার লিখুন।"
+    "message": "Adblock Plus কোন সামগ্রী অনুমোদিত বা অবরুদ্ধ করে তা আরও নিয়ন্ত্রণ করতে আপনার নিজের ফিল্টার তৈরি এবং রক্ষণাবেক্ষণ করুন। <a0>ফিল্টার লিখতে শিখুন (কেবল ইংরেজী)</a0>"
   },
   "options_customFilters_title": {
     "message": "আপনার ফিল্টার তালিকা তৈরি ও সম্পাদনা করুন"
@@ -39,19 +51,28 @@
     "message": "আমার ফিল্টারের তালিকা"
   },
   "options_customize_blockElement": {
-    "message": "ডান-ক্লিক মেনু আইটেমে 'উপাদান অবরুদ্ধ করুন' প্রদর্শন করান"
+    "message": "ব্লক উপাদান' দেখতে ডান পাশের মেনুতে ক্লিক করুন"
   },
   "options_customize_blockElement_tooltip": {
     "message": "অস্থায়ীভাবে একটি ওয়েবপৃষ্ঠার বিরক্তিকর আইটেম অবরুদ্ধ করে, যেমন চিত্র বা অ্যানিমেশন স্লাইডশো।"
   },
+  "options_customize_header": {
+    "message": "ইচ্ছেমতো সাজানো"
+  },
+  "options_customize_iconStats": {
+    "message": "কতোগুলো বিজ্ঞাপন বন্ধ করেছে দেখুন এই আইকনে"
+  },
   "options_customize_showDevToolsPanel": {
-    "message": "বিকাশকারী সরঞ্জামে 'Adblock Plus' প্যানেল দেখান"
+    "message": "বিকাশকারী সরঞ্জামগুলিতে 'Adblock Plus' প্যানেল দেখান"
   },
   "options_customize_showDevToolsPanel_tooltip": {
     "message": "আপনার ব্রাউজারের বিকাশকারী সরঞ্জাম প্যানেল থেকে অবরুদ্ধ এবং সাদাতালিকাভুক্ত আইটেমগুলি দেখুন।"
   },
   "options_customize_showNotifications": {
     "message": "দরকারী বিজ্ঞপ্তি দেখান"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Adblock Plus থেকে নোটিফিকেশনের অনুমতি (নোটিফিকেশ সর্ম্পকিত মারাত্বক বিষয়গুলো এইখানে দেখাবে)।"
   },
   "options_dialog_about_copyright": {
     "message": "কপিরাইট © $currentYear$ <a0>eyeo GmbH</a0>",
@@ -63,7 +84,7 @@
     }
   },
   "options_dialog_about_title": {
-    "message": "অ্যাডব্লক প্লাস সম্পর্কে"
+    "message": "Adblock Plus সম্পর্কে"
   },
   "options_dialog_about_trademark": {
     "message": "সর্বস্বত্ব সংরক্ষিত। Adblock Plus® হল eyeo GmbH-এর একটি নিবন্ধিত ট্রেডমার্ক।"
@@ -87,7 +108,7 @@
     "message": "একটি ফিল্টার তালিকা যুক্ত করুন"
   },
   "options_dialog_language_other_empty": {
-    "message": "এখানে কোন উপলব্ধ ভাষা নেই।"
+    "message": "কোনও উপলভ্য ভাষা নেই."
   },
   "options_dialog_language_title": {
     "message": "একটি ভাষা নির্বাচন করুন"
@@ -105,7 +126,7 @@
     "message": "ইংরেজি"
   },
   "options_filterList_add": {
-    "message": "নতুন ফিল্টার তালিকা যুক্ত করুন"
+    "message": "URL দিয়ে ফিল্টার তালিকা যুক্ত করুন"
   },
   "options_filterList_column_name": {
     "message": "ফিল্টারের তালিকা"
@@ -117,10 +138,10 @@
     "message": "শেষ হালনাগাদ হয়েছে"
   },
   "options_filterList_description": {
-    "message": "একটি ফিল্টার তালিকার কারণে প্রতিটি অ্যাডব্লক সেটিংস কাজ করে। নীচে আপনার অ্যাডব্লক প্লাস সেটিংসগুলির সাথে সংশ্লিষ্ট ফিল্টারের তালিকাগুলি দেয়া হয়েছে। আপনি আমাদের বিশ্বস্ত সম্প্রদায়ের তৈরি এবং পরিচালিত অতিরিক্ত ফিল্টারগুলিও যোগ করতে পারেন।"
+    "message": "একটি ফিল্টার তালিকার কারণে প্রতিটি অ্যাডব্লক সেটিংস কাজ করে। নীচে আপনার Adblock Plus সেটিংসগুলির সাথে সংশ্লিষ্ট ফিল্টারের তালিকাগুলি দেয়া হয়েছে। আপনি আমাদের বিশ্বস্ত সম্প্রদায়ের তৈরি এবং পরিচালিত অতিরিক্ত ফিল্টারগুলিও যোগ করতে পারেন।"
   },
   "options_filterList_empty": {
-    "message": "আপনি অ্যাডব্লক প্লাসের জন্য কোনও ফিল্টার তালিকা যুক্ত করেননি। আপনার যোগ করা ফিল্টার তালিকা এখানে দেখানো হবে।"
+    "message": "আপনি Adblock Plus র জন্য কোনও ফিল্টার তালিকা যুক্ত করেননি। আপনার যোগ করা ফিল্টার তালিকা এখানে দেখানো হবে।"
   },
   "options_filterList_hours": {
     "message": "ঘণ্টা আগে"
@@ -161,17 +182,34 @@
   "options_filterList_website": {
     "message": "ওয়েবসাইট"
   },
+  "options_filter_list_rule": {
+    "message": "ছাঁকন নিয়ম"
+  },
+  "options_filters_search_or_add": {
+    "message": "খুঁজুন কিংবা ফিল্টার যোগ করুন(যেগুলো) (যেমন $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
+  },
   "options_footer_about": {
-    "message": "অ্যাডব্লক প্লাস সম্পর্কে"
+    "message": "Adblock Plus সম্পর্কে"
   },
   "options_footer_contribute": {
     "message": "অবদান"
   },
   "options_general_description": {
-    "message": "ওয়েবসাইটে অ্যাডব্লক প্লাস কি দেখাবে এবং লুকাবে তা নির্ধারণ করুন"
+    "message": "ওয়েবসাইটে Adblock Plus কি দেখাবে এবং লুকাবে তা নির্ধারণ করুন"
+  },
+  "options_generic_error": {
+    "message": "ওহ! কিছু ভুল হয়েছে. দয়া করে আবার চেষ্টা করুন।"
+  },
+  "options_help_center": {
+    "message": "আপনার প্রশ্নের উওর খুঁজছেন? <a0>আমাদের সাহায্য কেন্দ্রে যোগাযোগ করুন(শুধু মাত্র ইংরেজি)</a0>"
   },
   "options_help_description": {
-    "message": "সাহায্য পান বা আমাদের সাথে যোগাযোগ করুন"
+    "message": "সাহায্য খুঁজুন বা আমাদের সাথে যোগাযোগ করুন"
   },
   "options_language_add": {
     "message": "একটি ভাষা যোগ করুন"
@@ -185,17 +223,33 @@
   "options_language_empty": {
     "message": "আপনার কোন ভাষা-নির্দিষ্ট ফিল্টার নেই।"
   },
+  "options_language_filter_list": {
+    "message": "ভাষা ফিল্টার তালিকা"
+  },
   "options_language_header": {
     "message": "ভাষা"
   },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
+  },
   "options_language_tip": {
-    "message": "<strong>পরামর্শ:</strong> শুধুমাত্র আপনার প্রয়োজনীয় ভাষা নির্বাচন করুন। বেশী নির্বাচন করলে তা আপনার অ্যাডব্লক প্লাসের গতি গমিয়ে দিবে ও সেইসাথে ইন্টারনেটেও।"
+    "message": "<strong>পরামর্শ:</strong> শুধুমাত্র আপনার প্রয়োজনীয় ভাষা নির্বাচন করুন। বেশী নির্বাচন করলে তা আপনার Adblock Plus র গতি গমিয়ে দিবে ও সেইসাথে ইন্টারনেটেও।"
   },
   "options_learn_more": {
     "message": "আরও জানুন"
   },
   "options_more_filters_description": {
-    "message": "এই অতিরিক্ত ফিল্টারগুলি আপনি পূর্বে অ্যাডব্লক প্লাসে যোগ করেছেন।"
+    "message": "এই অতিরিক্ত ফিল্টারগুলি আপনি পূর্বে Adblock Plus যোগ করেছেন।"
   },
   "options_more_filters_header": {
     "message": "আরো ফিল্টার"
@@ -207,7 +261,7 @@
     "message": "নতুন"
   },
   "options_page_document_title": {
-    "message": "সেটিংস"
+    "message": "Adblock Plus র আপশন"
   },
   "options_page_title": {
     "message": "সেটিংস"
@@ -220,6 +274,12 @@
   },
   "options_protection_social_tooltip": {
     "message": "আপনি যে ওয়েবসাইটগুলিতে যান সেখানের সামাজিক মিডিয়া আইকনগুলি সামাজিক প্রচার মাধ্যমের নেটওয়ার্কে আপনার ব্রাউজিং অভ্যাসের উপর ভিত্তি করে আপনার প্রোফাইল তৈরি করে - এমনকি যখন আপনি তাদের উপর ক্লিক করেন না। এই আইকন লুকিয়ে আপনার প্রোফাইল রক্ষা করতে পারেন।"
+  },
+  "options_rating_description": {
+    "message": "অনুগ্রহ করে কিছু সময় নিয়ে Adblock Plus কে রেটিং দিয়ে সাহায্য করুন। ধন্যবাদ আমাদের সমার্থন করার জন্য!"
+  },
+  "options_rating_title": {
+    "message": "Adblock Plus উপভোগ করছেন?"
   },
   "options_report_bug": {
     "message": "কোন বাগ খুঁজে পেয়েছেন? <a>আমাদের একটি প্রতিবেদন প্রেরণ করুন</a>"
@@ -287,6 +347,9 @@
   },
   "options_whitelist_empty_2": {
     "message": "আপনি যে ওয়েবসাইটগুলি বিশ্বাস করেন এবং যেগুলিতে বিজ্ঞাপনকে অনুমতি দিতে চান তা এখানে দেখানো হবে।"
+  },
+  "options_whitelist_notification": {
+    "message": "ওয়েব সাইট সাদা তালিকাভুক্ত করা হয়েছে।"
   },
   "options_whitelist_placeholder_example": {
     "message": "যেমন: $domain$",

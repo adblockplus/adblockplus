@@ -8,6 +8,9 @@
   "mops_action_cancel": {
     "message": "გაუქმება"
   },
+  "mops_enabled_label": {
+    "message": "რეკლამების შეზღუდვა საიტზე:"
+  },
   "mops_error_url": {
     "message": "შეიყვანეთ მართებული URL-ბმული"
   },

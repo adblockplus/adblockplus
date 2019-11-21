@@ -1,5 +1,51 @@
 {
+  "click_element_to_block_it": {
+    "message": "Cliciwch elfen ar y dudalen i'w blocio."
+  },
+  "easy_create_filter": {
+    "message": "Blocio elfen"
+  },
+  "options_refresh": {
+    "message": "Adnewyddu"
+  },
   "options_short": {
     "message": "Dewisiadau"
+  },
+  "overlay_notification_closing_button_hide": {
+    "message": "Cau"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Peidio â dangos hysbysiadau"
+  },
+  "promote_abp_module": {
+    "message": "Oes gennych chi ddiddordeb yn Adblock Plus ar ffôn symudol?"
+  },
+  "refresh_to_take_effect": {
+    "message": "Cliciwch <strong>Adnewyddu</strong> i'r newidiadau chymrud effaith."
+  },
+  "sendReport": {
+    "message": "Cyhoeddi adroddiad"
+  },
+  "stats_header": {
+    "message": "Nifer yr eitemau wedi'u blocio"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> ar y dudalen hon",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> mewn cyfanswm",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "status_header": {
+    "message": "Blocio'r hysbysebion ar:"
   }
 }

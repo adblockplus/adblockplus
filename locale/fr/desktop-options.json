@@ -74,6 +74,15 @@
   "options_customize_showNotifications_tooltip": {
     "message": "Autoriser les notifications provenant d’Adblock Plus (les notifications liées à des problèmes de performance critiques s'afficheront toujours)."
   },
+  "options_dialog_about_copyright": {
+    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "currentYear": {
+        "content": "$1",
+        "example": "2017"
+      }
+    }
+  },
   "options_dialog_about_title": {
     "message": "À propos d'Adblock Plus"
   },
@@ -193,6 +202,9 @@
   "options_general_description": {
     "message": "Déterminez les éléments qu’Adblock Plus affiche et masque sur les sites web"
   },
+  "options_generic_error": {
+    "message": "Oh non ! Quelque chose s'est mal passé. Réessaie plus tard."
+  },
   "options_help_center": {
     "message": "Vous recherchez des réponses à vos questions ? <a0>Consultez notre Centre d'aide (en anglais uniquement)</a0>"
   },
@@ -216,6 +228,19 @@
   },
   "options_language_header": {
     "message": "Langue"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>CONSEIL :</strong> Sélectionnez uniquement les langues dont vous avez besoin. Si vous en sélectionnez plus, le bloqueur de publicité sera ralenti, ce qui ralentira donc votre vitesse de navigation."
