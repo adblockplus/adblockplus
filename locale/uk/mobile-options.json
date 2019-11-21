@@ -8,6 +8,9 @@
   "mops_action_cancel": {
     "message": "Скасувати"
   },
+  "mops_enabled_label": {
+    "message": "Блокування реклами на:"
+  },
   "mops_error_url": {
     "message": "Ввести дійсну URL"
   },

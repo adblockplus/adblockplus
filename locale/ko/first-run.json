@@ -2,6 +2,9 @@
   "firstRun_browser_store_android": {
     "message": "구글 플레이 스토어에 있는 안드로이드 앱"
   },
+  "firstRun_browser_store_ios": {
+    "message": "iTunes App Store 도 사용가능"
+  },
   "firstRun_browser_title": {
     "message": "Adblock Browser 앱"
   },

@@ -14,6 +14,12 @@
       }
     }
   },
+  "common_feature_anti_adblock_title": {
+    "message": "Թաքցնել Adblock-ի Զգուշացումները"
+  },
+  "common_feature_circumvention_title": {
+    "message": "ABP Anti-Circumvention Ֆիլտրի Ցանկ"
+  },
   "common_notification_hide": {
     "message": "Փակել ծանուցումը"
   },

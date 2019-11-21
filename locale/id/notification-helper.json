@@ -1,12 +1,12 @@
 {
   "notification_configure": {
-    "message": "Atur pengaturan pemberitahuan"
+    "message": "Atur pengaturan notifikas"
   },
   "notification_open_all": {
-    "message": "Buka semua tautan dari pemberitahuan ini"
+    "message": "Buka semua tautan dari notifikasi ini"
   },
   "notification_without_buttons": {
-    "message": "Klik pada pemberitahuan untuk membuka semua link di dalamnya."
+    "message": "Klik pemberitahuan untuk membuka semua link di dalamnya."
   },
   "overlay_notification_button_no": {
     "message": "Tidak"

@@ -1,0 +1,53 @@
+{
+  "day1_blockelement_description": {
+    "message": "Adblock Plus এর সুবিদা দিয়ে নিপুণভাবে ব্লক করুন"
+  },
+  "day1_blockelement_more": {
+    "message": "কিভাবে শিখবেন"
+  },
+  "day1_blockelement_screenshot": {
+    "message": "আইকন পপ-আপ এর উদাহরণ \"কিভাবে উপাদান ব্লক করবেন\" বাটন হাইলাইটেড।"
+  },
+  "day1_blockelement_title": {
+    "message": "মন্তব্য বিভাগে ক্লান্ত আপনি নিচে নামাচ্ছেন?"
+  },
+  "day1_community_contact": {
+    "message": "আমাদের সাথে যোগাযোগ!"
+  },
+  "day1_community_contact_subject": {
+    "message": "সাহায্য খুঁজছেন!"
+  },
+  "day1_community_description_1": {
+    "message": "যেহেতু এটা উনমুক্ত প্রজেক্ট তাই আমরা আপনার মতো ব্যাবহারকারীর উপর নির্ভর করি । বিজ্জাপন বন্ধ উন্নত করতে আমাদের সাহায্য করেন।"
+  },
+  "day1_community_description_2": {
+    "message": "আপনি কি কি সুবিধা দেখতে চান? কিভাবে আমরা ভালো করতে পারি? Adblock Plus কি কোনো সাইট বন্ধ করেছে?"
+  },
+  "day1_community_title": {
+    "message": "Adblock Plus দলে যোগদিন"
+  },
+  "day1_header_more": {
+    "message": "ক্ষতিকর বিজ্জাপন সম্পর্কে আরো জানুন"
+  },
+  "day1_header_title": {
+    "message": "Adblock Plus <strong>বন্ধ করেছে <em0>$ads$ বিজ্জাপন</em0> এই <em1>শেষ আধা ঘণ্টায়</em1>,</strong> যেগুলো তো রয়েছে ক্ষতিকর উপাদান",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_message": {
+    "message": "যেগুলো খুব বিরক্তিকর বিজ্জাপন। <a>Adblock Plus অন্যকিছু খুঁজে বের করুন।</a>"
+  },
+  "notification_day1_title": {
+    "message": "ইতিমধ্যে আপনি বন্ধ করেছেন $ads$ বিজ্জাপন!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

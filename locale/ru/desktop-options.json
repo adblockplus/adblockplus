@@ -202,6 +202,9 @@
   "options_general_description": {
     "message": "Определите, что Adblock Plus показывает и скрывает на сайтах"
   },
+  "options_generic_error": {
+    "message": "Ой! Что-то пошло не так. Пожалуйста, попробуйте еще раз."
+  },
   "options_help_center": {
     "message": "Ищите ответы на свои вопросы? <a0>Посетите наш справочный центр (только на английском языке)</a0>"
   },
@@ -225,6 +228,19 @@
   },
   "options_language_header": {
     "message": "Язык"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>СОВЕТ:</strong> Выберите только нужные языки. При выборе чрезмерного количества языков блокиратор рекламы станет работать медленнее и, следовательно, браузер тоже."

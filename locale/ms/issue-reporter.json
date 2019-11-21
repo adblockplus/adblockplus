@@ -23,6 +23,9 @@
   "issueReporter_comment_label": {
     "message": "Komen(optional)"
   },
+  "issueReporter_config_label": {
+    "message": "Sertakan informasi mengenai konfigurasi pelayar saya, serta senarai sambungan yang saya gunakan."
+  },
   "issueReporter_confirmationMessage": {
     "message": "Laporan anda telah disimpan. Anda boleh mengaksesnya di alamat berikut:"
   },

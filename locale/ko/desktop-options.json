@@ -53,6 +53,9 @@
   "options_customize_header": {
     "message": "사용자 설정"
   },
+  "options_customize_iconStats": {
+    "message": "아이콘에 차단된 광고 개수를 보여줍니다."
+  },
   "options_customize_showDevToolsPanel": {
     "message": "개발자 도구 패널에서 'Adblock Plus’ 패널을 표시합니다."
   },
@@ -94,6 +97,9 @@
   },
   "options_dialog_import_title": {
     "message": "필터 목록 추가"
+  },
+  "options_dialog_language_other_empty": {
+    "message": "가능한 언어가 없습니다."
   },
   "options_dialog_language_title": {
     "message": "언어 선택"
@@ -166,6 +172,9 @@
   },
   "options_filterList_website": {
     "message": "웹사이트"
+  },
+  "options_filter_list_rule": {
+    "message": "필터 규칙"
   },
   "options_footer_about": {
     "message": "Adblock Plus 정보"

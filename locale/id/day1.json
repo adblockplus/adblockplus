@@ -1,0 +1,53 @@
+{
+  "day1_blockelement_description": {
+    "message": "Blokir mereka dengan fitur 'Blok Elemen' Adblock Plus."
+  },
+  "day1_blockelement_more": {
+    "message": "Pelajari caranya"
+  },
+  "day1_blockelement_screenshot": {
+    "message": "Contoh ikon pop-up dengan tombol \"Blok Elemen\" tersorot."
+  },
+  "day1_blockelement_title": {
+    "message": "Bosan dengan sesi komentar yang menjatuhkanmu?"
+  },
+  "day1_community_contact": {
+    "message": "Kontak kami!"
+  },
+  "day1_community_contact_subject": {
+    "message": "Mencari dukungan!"
+  },
+  "day1_community_description_1": {
+    "message": "Sebagai proyek sumber terbuka, kami bergantung pada pengguna seperti Anda untuk membantu kami meningkatkan pengalaman pemblokiran iklan Anda."
+  },
+  "day1_community_description_2": {
+    "message": "Fitur apa yang ingin Anda mau? Apa yang bisa kami lakukan agar lebih baik? Apakah Adblock Plus membuat beberapa situs web tidak pantas?"
+  },
+  "day1_community_title": {
+    "message": "Gabung di komunitas Adblock Plus"
+  },
+  "day1_header_more": {
+    "message": "Pelajari selengkapnya tentang Iklan berbahaya"
+  },
+  "day1_header_title": {
+    "message": "Adblock Plus <strong>memblokir <em0>$ads$ iklan</em0> dalam <em1>setengah jam terakhir</em1>,</strong> beberapa diantaranya mungkin berisi konten berbahaya",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_message": {
+    "message": "Iklan mengganggu yang banyak sekali. <a>Cari tahu apa lagi yang dapat diblokir Adblock Plus</a>"
+  },
+  "notification_day1_title": {
+    "message": "Anda telah memblokir $ads$ iklan!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

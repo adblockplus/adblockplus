@@ -3,13 +3,13 @@
     "message": "Continuar"
   },
   "filters_subscription_lastDownload_connectionError": {
-    "message": "Error: error de descarga"
+    "message": "Error, ha fallado la descarga"
   },
   "issueReporter_anonymousSubmission_label": {
     "message": "Envío anónimo"
   },
   "issueReporter_anonymousSubmission_warning": {
-    "message": "No podremos comunicar con usted y es probable que le demos una prioridad inferior a su informe."
+    "message": "No podremos comunicarnos contigo y es probable que le demos una prioridad inferior a tu informe."
   },
   "issueReporter_closeButton_label": {
     "message": "Cerrar"
@@ -39,13 +39,13 @@
     "message": "Hecho"
   },
   "issueReporter_email_description": {
-    "message": "Introduce una dirección de correo electrónico válida. Nos será de gran utilidad. De este modo, podremos ponernos en contacto contigo y solucionar así los problemas más complicados, como el \"malware\". Recuerda que no estás obligado a introducir una dirección de correo electrónico y que nunca la compartiremos con otras personas."
+    "message": "Introduce una dirección de correo electrónico válida. Nos será de gran utilidad. De este modo, podremos ponernos en contacto contigo y solucionar así los problemas más complicados, como los programas maliciosos. Recuerda que no estás obligado a introducir una dirección de correo electrónico y que nunca la compartiremos con otras personas."
   },
   "issueReporter_email_label": {
     "message": "Correo electrónico:"
   },
   "issueReporter_errorMessage": {
-    "message": "Un intento de enviar el informe produjo un fallo con código de error \"?1?\". Por favor, asegúrese de que está conectado a Internet y vuelva a intentarlo. Si el problema persiste por favor pida ayuda en el [link]foro de Adblock Plus[/link]."
+    "message": "Se produjo un fallo con código de error \"?1?\" al intentar enviar el informe. Asegúrate de tener conexión a Internet y vuelve a intentarlo. Si el problema persiste, por favor pide ayuda en el [link]foro de Adblock Plus[/link]."
   },
   "issueReporter_falseNegative_description": {
     "message": "He activado Adblock Plus, pero siguen apareciendo anuncios."
@@ -72,7 +72,7 @@
     "message": "Marcar problema"
   },
   "issueReporter_page_title": {
-    "message": "Creador de informes de errores"
+    "message": "Generador de informes de problemas"
   },
   "issueReporter_privacyPolicy": {
     "message": "Política de privacidad"
@@ -99,7 +99,7 @@
     "message": "Enviar informe"
   },
   "issueReporter_sending": {
-    "message": "Por favor, espere mientras Adblock Plus envía su informe."
+    "message": "Por favor, espera mientras Adblock Plus envía tu informe."
   },
   "issueReporter_showData_label": {
     "message": "Hacer clic en este enlace para revisar los datos del informe antes de enviarlo"

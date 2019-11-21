@@ -1,0 +1,63 @@
+{
+  "devtools_action_block": {
+    "message": "উপাদান বন্ধ করুন"
+  },
+  "devtools_action_remove": {
+    "message": "নিয়ম সরান"
+  },
+  "devtools_action_unblock": {
+    "message": "এটা ছাড়া যোগ করুন"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "ব্যাবহারকারী নির্ণয়"
+  },
+  "devtools_filter_origin_none": {
+    "message": "নাম ছাড়া সাবস্ক্রিপশন"
+  },
+  "devtools_filter_subtitle": {
+    "message": "জাত"
+  },
+  "devtools_filter_title": {
+    "message": "ফিল্টার"
+  },
+  "devtools_footer": {
+    "message": "<a0>আবার লোড করুন</a0> পৃষ্টা দেখুন ফিল্টার পরিবর্তন করতে"
+  },
+  "devtools_header": {
+    "message": "দেখুন <slot0></slot0> কি ধরনের <slot1></slot1> উপাদান"
+  },
+  "devtools_header_state_all": {
+    "message": "সব"
+  },
+  "devtools_header_state_blocked": {
+    "message": "বন্ধ করা"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "সাদা তালিকাভুক্ত"
+  },
+  "devtools_header_type_any": {
+    "message": "অন্য"
+  },
+  "devtools_request_subtitle": {
+    "message": "দলিল পত্র ডোমেইন"
+  },
+  "devtools_request_title": {
+    "message": "অনুরোধ"
+  },
+  "devtools_request_url": {
+    "message": "<a0>$original$</a0> আবার <a1>$rewritten$</a1>",
+    "placeholders": {
+      "original": {
+        "content": "$1",
+        "example": "http://example.com/foo"
+      },
+      "rewritten": {
+        "content": "$2",
+        "example": "http://example.com/bar"
+      }
+    }
+  },
+  "devtools_type_title": {
+    "message": "কি ধরনের"
+  }
+}

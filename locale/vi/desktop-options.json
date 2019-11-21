@@ -45,13 +45,13 @@
     "message": "Điền các bộ lọc tùy chỉnh của riêng bạn để hạn chế thêm nội dung nào Adblock Plus cho phép hoặc chặn."
   },
   "options_customFilters_title": {
-    "message": "TẠO VÀ CHỈNH SỬA DANH SÁCH LỌC CỦA BẠN"
+    "message": "Bộ lọc tùy chỉnh của bạn"
   },
   "options_customFilters_widget_title": {
-    "message": "Danh sách lọc của tôi"
+    "message": "Danh sách bộ lọc của tôi"
   },
   "options_customize_blockElement": {
-    "message": "Hiển thị mục trình đơn bên chuột phải ‘Chặn thành phần’"
+    "message": "Hiển thị mục trình đơn bên chuột phải ‘Chặn phần tử’"
   },
   "options_customize_blockElement_tooltip": {
     "message": "Tạm thời chặn những thành phần gây khó chịu trên một trang web, ví dụ các hình ảnh hay hoạt hình."
@@ -99,13 +99,13 @@
     }
   },
   "options_dialog_import_subscription_location": {
-    "message": "URL danh sách lọc"
+    "message": "URL danh sách bộ lọc"
   },
   "options_dialog_import_subscription_location_error": {
     "message": "Nhập một URL hợp lệ"
   },
   "options_dialog_import_title": {
-    "message": "Thêm một danh sách lọc"
+    "message": "Thêm một danh sách bộ lọc"
   },
   "options_dialog_language_other_empty": {
     "message": "Hiện không có ngôn ngữ có sẵn."
@@ -126,10 +126,10 @@
     "message": "Tiếng Anh"
   },
   "options_filterList_add": {
-    "message": "Thêm một danh sách lọc mới"
+    "message": "Thêm danh sách bộ lọc qua URL"
   },
   "options_filterList_column_name": {
-    "message": "Danh sách lọc"
+    "message": "Danh sách bộ lọc"
   },
   "options_filterList_column_status": {
     "message": "Trạng thái"
@@ -144,7 +144,7 @@
     "message": "Bạn đã không thêm bất kỳ danh sách lọc nào cho Adblock Plus. Các danh sách lọc bạn thêm sẽ được hiển thị ở đây."
   },
   "options_filterList_hours": {
-    "message": "giờ trước đây"
+    "message": "giờ trước"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Thất bại, mã kiểm tra không phù hợp"
@@ -162,25 +162,25 @@
     "message": "Thất bại, không phải là địa chỉ hợp lệ"
   },
   "options_filterList_minutes": {
-    "message": "phút trước đây"
+    "message": "phút trước"
   },
   "options_filterList_now": {
     "message": "Mới đây"
   },
   "options_filterList_source": {
-    "message": "Nguồn"
+    "message": "nguồn"
   },
   "options_filterList_title": {
-    "message": "Danh sách lọc"
+    "message": "Danh sách bộ lọc"
   },
   "options_filterList_update": {
-    "message": "CẬP NHẬT TẤT CẢ DANH SÁCH LỌC"
+    "message": "cập nhật tất cả danh sách bộ lọc"
   },
   "options_filterList_updateNow": {
-    "message": "Cập nhật ngay"
+    "message": "cập nhật ngay"
   },
   "options_filterList_website": {
-    "message": "Trang web"
+    "message": "trang web"
   },
   "options_filter_list_rule": {
     "message": "Quy tắc lọc"
@@ -197,7 +197,7 @@
     "message": "Giới thiệu về Adblock Plus"
   },
   "options_footer_contribute": {
-    "message": "ĐÓNG GÓP"
+    "message": "Đóng góp"
   },
   "options_general_description": {
     "message": "Quyết định xem Adblock Plus hiển thị và ẩn những gì trên trang web"
@@ -258,13 +258,13 @@
     "message": "<strong>Chú ý:</strong> Bạn chỉ nên sử dụng danh sách lọc của bên thứ ba từ các tác giả mà bạn tin tưởng."
   },
   "options_new_label": {
-    "message": "MỚI"
+    "message": "Mới"
   },
   "options_page_document_title": {
-    "message": "Thiết đặt"
+    "message": "Tuỳ chỉnh Adblock Plus"
   },
   "options_page_title": {
-    "message": "Thiết đặt"
+    "message": "Cài đặt"
   },
   "options_privacy_header": {
     "message": "Riêng tư & bảo mật"
@@ -337,7 +337,7 @@
     "message": "Ok, đã hiểu"
   },
   "options_whitelist_add": {
-    "message": "THÊM TRANG WEB"
+    "message": "Thêm trang web"
   },
   "options_whitelist_description": {
     "message": "Bạn đã tắt chặn quảng cáo trên những trang web này và do đó bạn sẽ thấy những quảng cáo trên các trang này."
@@ -347,6 +347,9 @@
   },
   "options_whitelist_empty_2": {
     "message": "Các trang web bạn tin tưởng và muốn cho phép hiển thị quảng cáo tại đó."
+  },
+  "options_whitelist_notification": {
+    "message": "Trang web đã được đưa vào danh sách trắng."
   },
   "options_whitelist_placeholder_example": {
     "message": "ví dụ: $domain$",

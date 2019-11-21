@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "আমরা আপনার কাছে ফিরে আসতে সক্ষম না এবং সম্ভাবত রিপোর্টের অগ্রাধিকার কম দেয়া হবে।"
   },
+  "issueReporter_closeButton_label": {
+    "message": "বন্ধ"
+  },
   "issueReporter_commentPage_heading": {
     "message": "মন্তব্য লিখুন"
   },
@@ -20,8 +23,17 @@
   "issueReporter_comment_label": {
     "message": "মন্তব্য (ঐচ্ছিক):"
   },
+  "issueReporter_config_label": {
+    "message": "আমার ব্রাউজার কনফিগারেশন সম্পর্কিত তথ্য অন্তর্ভুক্ত করুন, পাশাপাশি আমি ব্যবহার করছি সক্রিয় এক্সটেনশনের একটি তালিকা।"
+  },
   "issueReporter_confirmationMessage": {
     "message": "আপনার প্রতিবেদন সংরক্ষণ করা হয়েছে। আপনি এটি নিচের ঠিকানায় দেখতে পারেন:"
+  },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>দ্রষ্টব্য:</strong> একটি অতিরিক্ত ট্যাব অস্থায়ীভাবে খুলবে যাতে আপনি যে পৃষ্ঠাটিতে রয়েছেন তা ইস্যু রিপোর্টার দ্বারা প্রভাবিত হবে না।"
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "বিস্তারিত"
   },
   "issueReporter_doneButton_label": {
     "message": "সম্পন্ন"
@@ -38,23 +50,41 @@
   "issueReporter_falseNegative_description": {
     "message": "এই অপশন নির্বাচন করুন যদি Adblock Plus সক্রিয় থাকা সত্ত্বেও বিজ্ঞাপন প্রদর্শিত হয়।"
   },
-  "issueReporter_falseNegative_label": {
-    "message": "Adblock Plus বিজ্ঞাপন অবরুদ্ধ করেনি"
-  },
-  "issueReporter_falsePositive_description": {
-    "message": "এই অপশনটি নির্বাচন করুন যদি পাতাটিতে গুরুত্বপূর্ণ বিষয়বস্তুর অভাব, ভুলভাবে প্রদর্শন করা বা সঠিকরূপে চালাতে ব্যর্থ হয়। এই সমস্যা Adblock Plus-এর কারণে হয়েছি কিনা তা আপনি এটি সাময়িকভাবে নিষ্ক্রিয় করে নির্ধারণ করতে পারবেন।"
-  },
   "issueReporter_falsePositive_label": {
-    "message": "অ্যাডব্লক প্লাস অনেক বেশি অবরুদ্ধ করেছে"
+    "message": "আমি যে পৃষ্ঠাটি দেখার চেষ্টা করছি তা নষ্ট হয়ে গেছে"
+  },
+  "issueReporter_highlighter_description": {
+    "message": "প্রতিটি বিজ্ঞাপন হাইলাইট করতে বা স্ক্রিনশটে সংবেদনশীল তথ্য লুকানোর জন্য সরঞ্জামগুলি ব্যবহার করুন। হাইলাইট করা বিজ্ঞাপনগুলি আমাদের সমস্যাটি দ্রুত সমাধান করতে সহায়তা করবে।"
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "হাইলাইট ইস্যু"
   },
   "issueReporter_knownIssueMessage": {
     "message": "আপনার রিপোর্টকৃত সমস্যাটি হয়তো ইতিমধ্যে জানা। আরও তথ্য:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "ইস্যু চিহ্নিত করুন"
   },
   "issueReporter_page_title": {
     "message": "ইস্যু রিপোর্টার"
   },
   "issueReporter_privacyPolicy": {
     "message": "গোপনীয়তার নীতি"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "প্রক্রিয়াকরণ"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "সমস্যাটি আরও ভালভাবে বুঝতে আমাদের সহায়তা করুন, ইস্যু রিপোর্ট জমা দেওয়ার সময় একটি স্ক্রিনশট প্রয়োজন। আপনি বর্তমানে যে ওয়েবসাইটটিতে আছেন তার উপর নির্ভর করে স্ক্রিনশটে ব্যক্তিগত তথ্য থাকতে পারে। আপনি যদি স্ক্রিনশট জমা দিতে অস্বস্তি হন তবে দয়া করে আপনার সমস্যাটি <a0>support@adblockplus.org</a0> এ ইমেল করুন।"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "লুকান"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "লক্ষণীয় করা"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "সমস্যা নির্বাচন করুন"
   },
   "issueReporter_sendButton_label": {
     "message": "প্রতিবেদন পাঠান"
@@ -63,13 +93,10 @@
     "message": "প্রতিবেদন পাঠান"
   },
   "issueReporter_sending": {
-    "message": "Adblock প্লাস আপনার প্রতিবেদন দাখিল করা পর্যন্ত দয়া করে অপেক্ষা করুন।"
+    "message": "Adblock Plus আপনার প্রতিবেদন দাখিল করা পর্যন্ত দয়া করে অপেক্ষা করুন।"
   },
   "issueReporter_showData_label": {
     "message": "রিপোর্টের ডাটা দেখান"
-  },
-  "issueReporter_typeSelector_description": {
-    "message": "এই উইন্ডোটি Adblock Plus এর ইস্যু রিপোর্ট করতে প্রয়োজনীয় প্রদক্ষেপগুলোর নির্দেশনা দিবে। প্রথমে, আপনি এই পাতায় যেই ধরণের ইস্যুর সম্মুখিন হচ্ছেন অনুগ্রহপূর্বক তার ধরণ নির্বাচন করুন:"
   },
   "issueReporter_typeSelector_heading": {
     "message": "ইস্যুর ধরণ নির্ধারণ করুন"

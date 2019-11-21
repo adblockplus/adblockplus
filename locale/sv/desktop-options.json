@@ -1,4 +1,7 @@
 {
+  "options_aa_opt_out_survey_no": {
+    "message": "Nej, tack"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "Godtagbar annonser är inte irriterande och stör inte innehållet du visar. <a>Läs mer om Godtagbara annonser-kriteriet</a>"
   },
@@ -43,6 +46,9 @@
   },
   "options_customize_blockElement_tooltip": {
     "message": "Tillfälligt blockera irriterande objekt på en webbsida, t.ex. bilder eller animerade bildspel."
+  },
+  "options_customize_header": {
+    "message": "Anpassningar"
   },
   "options_customize_showDevToolsPanel": {
     "message": "Visa 'Adblock Plus'-panelen i utvecklarverktygen"
@@ -178,6 +184,19 @@
   },
   "options_language_header": {
     "message": "Språk"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>TIP:</strong> Välj endast språken du behöver. Att välja mer kommer att sakna ner annonsblockeraren och din surfhastighet."

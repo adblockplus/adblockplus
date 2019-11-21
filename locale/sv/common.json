@@ -16,5 +16,8 @@
   },
   "common_feature_social_title": {
     "message": "Blockera spårning via sociala medieikoner"
+  },
+  "delete": {
+    "message": "Ta bort"
   }
 }

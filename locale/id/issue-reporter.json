@@ -18,10 +18,13 @@
     "message": "Masukkan Komentar"
   },
   "issueReporter_comment_description": {
-    "message": "Kotak teks di bawah ini memungkinkan Anda untuk memasukkan komentar untuk membantu kami memahami masalah. Langkah ini adalah pilihan tetapi dianjurkan jika masalahnya tidak jelas. Anda juga dapat memeriksa data laporan sebelum dikirim."
+    "message": "Masukkan komentar di bawah agar kami bisa mengerti dengan baik masalah ini."
   },
   "issueReporter_comment_label": {
-    "message": "Komentar (pilihan):"
+    "message": "Komentar (opsional):"
+  },
+  "issueReporter_config_label": {
+    "message": "Termasuk informasi tentang setelan browser saya, serta daftar ekstensi aktif yang saya gunakan."
   },
   "issueReporter_confirmationMessage": {
     "message": "Laporan Anda telah disimpan. Anda dapat mengaksesnya pada alamat berikut:"
@@ -36,25 +39,25 @@
     "message": "Selesai"
   },
   "issueReporter_email_description": {
-    "message": "Kami menganjurkan Anda untuk memasukkan alamat email yang valid sehingga kami dapat menghubungi Anda jika terdapat pertanyaan tentang laporan Anda. Ini juga akan memungkinkan kami untuk mengetahui kontribusi Anda dan meninggikan prioritas."
+    "message": "Kami menganjurkan Anda untuk memasukkan alamat email yang valid sehingga kami dapat menghubungi Anda jika terdapat pertanyaan tentang laporan Anda. Ingat bahwa ini tergantung dari pilihan Anda untuk menambahkan alamat email, dan email Anda tidak akan dibagikan."
   },
   "issueReporter_email_label": {
-    "message": "Surel:"
+    "message": "Email:"
   },
   "issueReporter_errorMessage": {
-    "message": "Upaya mengirimkan laporan gagal dengan kode kesalahan \"?1?\". Silahkan pastikan Anda terhubung ke Internet dan coba kembali. Jika masalah berlanjut, silahkan meminta bantuan pada [link]Forum Adblock Plus[/link]."
+    "message": "Upaya mengirimkan laporan gagal dengan kode kesalahan \"?1?\". Pastikan Anda telah terhubung ke Internet dan coba lagi. Jika masalah berlanjut, silakan meminta bantuan pada [link]Forum Adblock Plus[/link]."
   },
   "issueReporter_falseNegative_description": {
-    "message": "Pilih opsi ini jika suatu iklan tetap muncul meski Adblock Plus telah diaktifkan."
+    "message": "Adblock Plus telah diaktifkan, tetapi saya masih melihat beberapa iklan."
   },
   "issueReporter_falseNegative_label": {
-    "message": "Adblock Plus tidak mencekal sebuah iklan"
+    "message": "Saya masih melihat iklan"
   },
   "issueReporter_falsePositive_description": {
-    "message": "Pilih opsi ini jika halaman tersebut telah kehilangan konten penting, ditampilkan dengan tidak tepat, atau tidak berfungsi sebagaimana mestinya. Anda dapat memastikan apakah Adblock Plus yang menyebabkan permasalahan tersebut dengan menonaktifkannya untuk sementara."
+    "message": "Halaman ditampilkan dengan tidak benar, tidak berfungsi, atau sepertinya ada konten penting yang hilang."
   },
   "issueReporter_falsePositive_label": {
-    "message": "Adblock Plus memcekal terlalu banyak"
+    "message": "Halaman yang saya coba lihat rusak"
   },
   "issueReporter_highlighter_description": {
     "message": "Gunakan alat untuk menyorot setiap iklan atau menyembunyikan info sensitif pada screenshot. Menyoroti iklan akan membantu kami memperbaiki masalah dengan cepat."
@@ -99,7 +102,7 @@
     "message": "Silahkan tunggu sementara Adblock Plus mengirimkan laporan Anda."
   },
   "issueReporter_showData_label": {
-    "message": "Tunjukkan data laporan"
+    "message": "Klik link ini untuk melihat kembali laporan sebelum dikirimkan"
   },
   "issueReporter_typeSelector_description": {
     "message": "Jendela ini akan memandu Anda melewati langkah-langkah yang diperlukan untuk mengirimkan laporan permasalahan Adblock Plus. Pertama, silakan pilih jenis permasalahan yang Anda alami di halaman ini:"

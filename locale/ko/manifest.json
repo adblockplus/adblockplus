@@ -7,5 +7,8 @@
   },
   "name_devbuild": {
     "message": "Adblock Plus 개발 빌드"
+  },
+  "name_releasebuild": {
+    "message": "Adblock Plus - 무료 광고 차단"
   }
 }

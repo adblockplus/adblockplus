@@ -34,6 +34,6 @@
     }
   },
   "unexpected_filter_list_header": {
-    "message": "Los encabezados de listas de filtros no se permiten aquí"
+    "message": "Las cabeceras de listas de filtros no se permiten aquí"
   }
 }

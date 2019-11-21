@@ -1,0 +1,32 @@
+{
+  "day1_blockelement_description": {
+    "message": "Blokeeri need Adblock Plusi toreda elementide blokeerimise funktsiooniga."
+  },
+  "day1_community_contact": {
+    "message": "Võta meiega ühendust!"
+  },
+  "day1_community_description_1": {
+    "message": "Avatud lähtekoodiga projektina sõltume kasutajatest nagu sina, et aidata meil täiustada reklaamide blokeerimise kogemust."
+  },
+  "day1_community_title": {
+    "message": "Liitu Adblock Plusi kogukonnaga"
+  },
+  "day1_header_title": {
+    "message": "Adblock Plus <strong>blokeeris <em1>viimase poole tunni jooksul</em1> <em0>$ads$ reklaami</em0>,</strong> millest osa võis sisaldada pahatahtlikku sisu",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_title": {
+    "message": "Sa oled juba blokeerinud $ads$ reklaami!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

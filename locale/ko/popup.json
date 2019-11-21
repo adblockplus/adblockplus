@@ -1,4 +1,7 @@
 {
+  "click_element_to_block_it": {
+    "message": "페이지에서 차단할 요소를 클릭하세요."
+  },
   "easy_create_filter": {
     "message": "항목 차단"
   },
@@ -13,6 +16,9 @@
   },
   "overlay_notification_closing_button_optout": {
     "message": "알림 표시를 중지합니다"
+  },
+  "promote_abp_module": {
+    "message": "모바일용 Adblock Plus는 어떠세요?"
   },
   "sendReport": {
     "message": "문제 보고"

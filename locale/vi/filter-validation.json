@@ -1,6 +1,6 @@
 {
   "filter_elemhideemulation_nodomain": {
-    "message": "Miền chưa được xác định để chặn phần tử"
+    "message": "Không có miền hoạt động được chỉ định cho bộ lọc phần tử ẩn mở rộng"
   },
   "filter_invalid_csp": {
     "message": "Không hợp lệ"
@@ -9,7 +9,7 @@
     "message": "Tên miền được chỉ định không hợp lệ (hoặc trống rỗng)"
   },
   "filter_invalid_regexp": {
-    "message": "Không hợp lệ"
+    "message": "Biểu thức chính quy không hợp lệ"
   },
   "filter_slow": {
     "message": "Để đảm bảo bộ lọc nhanh, vui lòng kiểm tra độ dài của mẫu và đảm bảo nó không chứa biểu thức chính quy."

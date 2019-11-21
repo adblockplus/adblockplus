@@ -23,6 +23,9 @@
   "issueReporter_comment_label": {
     "message": "Kommentar (valgfritt):"
   },
+  "issueReporter_config_label": {
+    "message": "Inkluder informasjon om nettleserinnstillingene mine, i tillegg til en liste over alle utvidelsene jeg bruker."
+  },
   "issueReporter_confirmationMessage": {
     "message": "Rapporten er lagret. Du kan få tilgang til den på følgende internettadresse:"
   },

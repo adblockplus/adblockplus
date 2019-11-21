@@ -60,7 +60,7 @@
     "message": "Personalización"
   },
   "options_customize_iconStats": {
-    "message": "Mostrar número de anuncios bloqueados en icono"
+    "message": "Mostrar el número de anuncios bloqueados en el icono"
   },
   "options_customize_showDevToolsPanel": {
     "message": "Mostrar el panel de \"Adblock Plus\" en herramientas del desarrollador"
@@ -150,7 +150,7 @@
     "message": "Error, el checksum no coincide"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Error: error de descarga"
+    "message": "Error, ha fallado la descarga"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Actualizando"

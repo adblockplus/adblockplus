@@ -348,6 +348,9 @@
   "options_whitelist_empty_2": {
     "message": "אתרים שאתה בוטח בהם ורוצה להתיר בהם פרסומות יופיעו כאן."
   },
+  "options_whitelist_notification": {
+    "message": "אתר התווסף לרשימה הלבנה."
+  },
   "options_whitelist_placeholder_example": {
     "message": "לדוגמה $domain$",
     "placeholders": {

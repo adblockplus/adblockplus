@@ -1,4 +1,13 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "Kan du fortelle oss hvorfor du har skrudd av Akseptable annonser, slik at vi kan forbedre tjenesten?"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "Nei takk"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "Gå til spørreundersøkelsen"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "Akseptable annonser er ikke irriterende, og forstyrrer ikke visningen av innholdet. <a>Les mer om kriteriene for Akseptable annonser</a>"
   },
@@ -19,6 +28,9 @@
   },
   "options_advanced_description": {
     "message": "Tilpass Adblock Plus, legg til eller fjern filterlister, lag og vedlikehold dine egne filterlister"
+  },
+  "options_builtin_filterList_add": {
+    "message": "Legg til innebygde filterlister"
   },
   "options_close": {
     "message": "lukk"
@@ -190,6 +202,12 @@
   "options_general_description": {
     "message": "Avgjør hva Adblock Plus viser og skjuler på nettsteder"
   },
+  "options_generic_error": {
+    "message": "Oisann! Noe gikk dessverre galt. Prøv igjen."
+  },
+  "options_help_center": {
+    "message": "Leter du etter svar på spørsmålene dine? <a0>Besøk hjelpesenteret vårt (kun engelskspråklig)</a0>"
+  },
   "options_help_description": {
     "message": "Finn hjelp eller kontakt oss"
   },
@@ -205,8 +223,24 @@
   "options_language_empty": {
     "message": "Du har ingen språkspesifikke filtre."
   },
+  "options_language_filter_list": {
+    "message": "Språkspesfikke filterlister"
+  },
   "options_language_header": {
     "message": "Språk"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>TIPS:</strong> Velg kun de språkene du trenger. Jo flere språk du velger, jo tregere er annonseblokkeringen, og dermed også den generelle netthastigheten din."
@@ -240,6 +274,12 @@
   },
   "options_protection_social_tooltip": {
     "message": "Sosiale medier-ikonene på nettstedene du besøker tillater at sosiale nettverk kan bygge en profil av deg basert på netthistorikken din - til og med om du ikke klikker på dem. Ved å skjule disse ikonene kan du beskytte privatlivet ditt."
+  },
+  "options_rating_description": {
+    "message": "Det ville vært supert om du kunne brukt et øyeblikk på å gi en karakter til Adblock Plus, slik at vi får mer publisitet. Tusen takk for støtten!"
+  },
+  "options_rating_title": {
+    "message": "Liker du Adblock Plus?"
   },
   "options_report_bug": {
     "message": "Funnet en feil? <a>Send oss en feilrapport</a>"
@@ -307,6 +347,9 @@
   },
   "options_whitelist_empty_2": {
     "message": "Nettsteder du stoler på og ønsker å tillate annonser på vil bli vist her."
+  },
+  "options_whitelist_notification": {
+    "message": "Nettstedet er nå hvitelistet."
   },
   "options_whitelist_placeholder_example": {
     "message": "f.eks $domain$",

@@ -15,7 +15,7 @@
     "message": "Neem contact met ons op!"
   },
   "day1_community_contact_subject": {
-    "message": "We zoeken hulp!"
+    "message": "Hulp gezocht!"
   },
   "day1_community_description_1": {
     "message": "Als opensourceproject zijn we afhankelijk van gebruikers zoals u om ons te helpen uw ervaring met advertentieblokkering te verbeteren."
@@ -27,7 +27,7 @@
     "message": "Neem deel aan de Adblock Plus-community"
   },
   "day1_header_more": {
-    "message": "Ontdek meer over kwaadwillende advertenties"
+    "message": "Meer info over kwaadwillende advertenties"
   },
   "day1_header_title": {
     "message": "Adblock Plus heeft <strong><em1>het afgelopen half uur</em1> <em0>$ads$ advertenties</em0> geblokkeerd</strong>, waarvan sommige mogelijk kwaadwillende inhoud bevatten",

@@ -8,6 +8,9 @@
   "mops_action_cancel": {
     "message": "Hủy bỏ"
   },
+  "mops_enabled_label": {
+    "message": "Chặn quảng cáo trên:"
+  },
   "mops_error_url": {
     "message": "Nhập một URL hợp lệ"
   },

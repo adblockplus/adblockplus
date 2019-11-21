@@ -8,6 +8,9 @@
   "mops_action_cancel": {
     "message": "ביטול"
   },
+  "mops_enabled_label": {
+    "message": "חסום פרסומות ב:"
+  },
   "mops_error_url": {
     "message": "הכנס כתובת תקפה"
   },

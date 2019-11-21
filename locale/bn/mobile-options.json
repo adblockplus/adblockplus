@@ -8,6 +8,12 @@
   "mops_action_cancel": {
     "message": "বাতিল"
   },
+  "mops_enabled_label": {
+    "message": "বিজ্ঞাপনগুলি অবরুদ্ধ করুন:"
+  },
+  "mops_error_url": {
+    "message": "একটি বৈধ URL লিখুন"
+  },
   "mops_filterlist_add": {
     "message": "একটি ফিল্টার তালিকা যুক্ত করুন"
   },
@@ -18,7 +24,7 @@
     "message": "একটি স্ব ফিল্টার তালিকা যুক্ত করুন"
   },
   "mops_header": {
-    "message": "অ্যাডব্লক প্লাস সেটিং"
+    "message": "Adblock Plus সেটিং"
   },
   "mops_subscribe_header": {
     "message": "একটি স্ব ফিল্টার তালিকা যুক্ত করুন"
@@ -33,6 +39,6 @@
     "message": "ছাঁকনি সদস্যতাসমূহ"
   },
   "mops_title": {
-    "message": "অ্যাডব্লক প্লাস সেটিং"
+    "message": "Adblock Plus সেটিং"
   }
 }

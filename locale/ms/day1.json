@@ -1,0 +1,53 @@
+{
+  "day1_blockelement_description": {
+    "message": "Blok mereka dengan Adblock Plus's ciri elemen block yang bagus."
+  },
+  "day1_blockelement_more": {
+    "message": "Ketahui lebih lanjut"
+  },
+  "day1_blockelement_screenshot": {
+    "message": "Contoh ikon yang muncul tiba tiba dengan \"elemen blok\" butang yang diserlahkan."
+  },
+  "day1_blockelement_title": {
+    "message": "Penat dengan seksyen komen membawa anda ke bawah?"
+  },
+  "day1_community_contact": {
+    "message": "Hubungi kami!"
+  },
+  "day1_community_contact_subject": {
+    "message": "Sedang mencari penyokong!"
+  },
+  "day1_community_description_1": {
+    "message": "Sebagai projek sumber terbuka, kami mengharap penguna seperti anda dapat membantu kami untuk menambah baik pengalaman menyekat iklan."
+  },
+  "day1_community_description_2": {
+    "message": "Apakah ciri yang anda mahu lihat? Apa yang kami boleh lakukan untuk lebih baik? Adakah Adblock Plus membuat sebahagian laman web anda berkelakuan pelik?"
+  },
+  "day1_community_title": {
+    "message": "Sertai komuniti Adblock Plus"
+  },
+  "day1_header_more": {
+    "message": "Belajar lagi mengenai pengiklanan yang berniat jahat"
+  },
+  "day1_header_title": {
+    "message": "Adblock Plus <strong>menyekat <em0>$ads$ iklan</em0> dalam <em1>setengah jam lepas</em1>,</strong> sebahagiannya mungkin terkandung kandungan yang mencurigakan",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_message": {
+    "message": "Itu adalah iklan menjengkelkan yang banyak <a>Cari apa yang Adblock Plus boleh blok</a>"
+  },
+  "notification_day1_title": {
+    "message": "Anda telah block $ads$ iklan!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}
