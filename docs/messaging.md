@@ -45,6 +45,8 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
 - notifications
   - [clicked](#notificationsclicked)
   - [get](#notificationsget)
+- stats
+  - [getBlockedPerPage](#statsgetblockedperpage)
 - subscriptions
   - [add](#subscriptionsadd)
   - [get](#subscriptionsget)
@@ -273,6 +275,20 @@ See [`filterNotifier`][filternotifier].
 
 ---
 
+### stats
+
+#### stats.getBlockedPerPage
+
+**Arguments**
+
+- **[Tab][tab]** tab
+
+**Response**
+
+- **number** blockedPage
+
+---
+
 ### subscriptions
 
 #### subscriptions.add
@@ -356,3 +372,4 @@ See [`filterNotifier`][filternotifier].
 ![Subscription expiration](images/subscription-expiration.svg)
 
 [filternotifier]: https://hg.adblockplus.org/adblockpluscore/file/master/lib/filterNotifier.js
+[tab]: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/Tab

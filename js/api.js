@@ -39,6 +39,11 @@ const prefs = {
 };
 module.exports.prefs = prefs;
 
+const stats = {
+  getBlocked: (tab) => send("stats.getBlockedPerPage", {tab})
+};
+module.exports.stats = stats;
+
 // For now we are merely reusing the port for long-lived communications to fix
 // https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/issues/415
 const port = browser.runtime.connect({name: "ui"});
