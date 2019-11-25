@@ -23,6 +23,7 @@ require("./popup.notifications.js");
 const setupToggles = require("./popup.toggles.js");
 const setupBlock = require("./popup.blockelement.js");
 const {activeTab} = require("./popup.utils.js");
+const api = require("./api");
 const {$, $$} = require("./dom");
 
 const {
@@ -98,7 +99,7 @@ activeTab.then(tab =>
     );
   });
   setupToggles(tab);
-  updateStats(tab);
+  setupStats(tab);
   setupBlock(tab);
   setupFooter();
 });
@@ -144,22 +145,41 @@ function gotoMobile(event)
     );
 }
 
-function updateStats(tab)
+function updateStats(tab, blockedTotal)
 {
-  const statsPage = $("#stats-page");
-  browser.runtime.sendMessage({
-    type: "stats.getBlockedPerPage",
-    tab
-  }).then(blockedPage =>
+  api.stats.getBlocked(tab).then((blockedPage) =>
   {
-    ext.i18n.setElementText(statsPage, "stats_label_page",
-                            [blockedPage.toLocaleString()]);
+    ext.i18n.setElementText(
+      $("#stats-page"),
+      "stats_label_page",
+      [blockedPage.toLocaleString()]
+    );
   });
 
-  const statsTotal = $("#stats-total");
-  getPref("blocked_total").then(blockedTotal =>
+  ext.i18n.setElementText(
+    $("#stats-total"),
+    "stats_label_total",
+    [blockedTotal.toLocaleString()]
+  );
+}
+
+function setupStats(tab)
+{
+  api.prefs.get("blocked_total").then((blockedTotal) =>
   {
-    ext.i18n.setElementText(statsTotal, "stats_label_total",
-                            [blockedTotal.toLocaleString()]);
+    updateStats(tab, blockedTotal);
+  });
+
+  api.port.onMessage.addListener((msg) =>
+  {
+    if (msg.type !== "prefs.respond" || msg.action !== "blocked_total")
+      return;
+
+    updateStats(tab, msg.args[0]);
+  });
+
+  api.port.postMessage({
+    type: "prefs.listen",
+    filter: ["blocked_total"]
   });
 }
