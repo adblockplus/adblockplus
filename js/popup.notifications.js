@@ -26,8 +26,7 @@ activeTab
   {
     return browser.runtime.sendMessage({
       type: "notifications.get",
-      displayMethod: "popup",
-      url: tab.url
+      displayMethod: "popup"
     });
   })
   .then((notification) =>

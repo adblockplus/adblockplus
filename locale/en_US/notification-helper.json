@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "Click on the notification to open all links in it."
-  },
-  "overlay_notification_button_no": {
-    "message": "No"
-  },
-  "overlay_notification_button_yes": {
-    "message": "Yes"
   }
 }

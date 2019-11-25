@@ -277,7 +277,6 @@ See [`filterNotifier`][filternotifier].
 
 - **string** [displayMethod] - (see [`displayMethods`](https://hg.adblockplus.org/adblockpluschrome/file/master/lib/notificationHelper.js))
 - (deprecated) **string** locale
-- **string** [url]
 
 **Response**
 
