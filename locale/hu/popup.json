@@ -20,8 +20,12 @@
   "promote_abp_module": {
     "message": "Érdekli az Adblock Plus a mobiltelefonon?"
   },
+  "refresh_this_page": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/6f8028d692da33978069972d90417dcd10957f2b/spec/abp/bubble-ui.md#refresh",
+    "message": "Oldal frissítése"
+  },
   "refresh_to_take_effect": {
-    "message": "Kattints a <strong>Frissítésre</strong>, hogy a módosítások életbe lépjenek."
+    "message": "A módosítások érvényesítéséhez kattintson az alábbi gombra."
   },
   "sendReport": {
     "message": "Hiba bejelentése"
@@ -45,7 +49,15 @@
       }
     }
   },
+  "status_domain": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
+    "message": "Ez a weboldal:"
+  },
   "status_header": {
-    "message": "Blokkolt hirdetések:"
+    "message": "Reklámblokkoló bekapcsolva"
+  },
+  "status_page": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
+    "message": "Ez az oldal:"
   }
 }

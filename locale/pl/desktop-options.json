@@ -104,8 +104,25 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Wprowadź prawidłowy adres URL"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#add-custom-subscription-popup-invalid",
+    "message": "Adres URL musi zaczynać się od $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Dodaj zestaw filtrów"
+  },
+  "options_dialog_invalid_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "Ze względów bezpieczeństwa, możliwe jest dodanie wyłącznie list filtrów protokołu HTTPS."
+  },
+  "options_dialog_invalid_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "Wystąpił problem"
   },
   "options_dialog_language_other_empty": {
     "message": "Brak dostępnych języków."
@@ -150,16 +167,25 @@
     "message": "Nie powiodło się – niepoprawna suma kontrolna"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Nie powiodło się – błąd pobierania"
+    "message": "Błąd pobierania"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Aktualizacja"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "Nie powiodło się – nieprawidłowy zestaw filtrów"
+    "message": "Nieprawidłowa lista filtrów"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "Nie powiodło się – nieprawidłowy adres"
+    "message": "Nieprawidłowy adres. Sprawdź adres URL."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#filter-list-error-statuses",
+    "message": "Pobieranie się nie powiodło. Adres URL musi zaczynać się od $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "min temu"
@@ -180,7 +206,7 @@
     "message": "Aktualizuj teraz"
   },
   "options_filterList_website": {
-    "message": "Witryna internetowa"
+    "message": "Strona internetowa"
   },
   "options_filter_list_rule": {
     "message": "Reguły filtrowania"

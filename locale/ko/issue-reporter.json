@@ -56,6 +56,10 @@
   "issueReporter_knownIssueMessage": {
     "message": "보고한 문제는 다른 사용자들에 의해 이미 많이 보고되었습니다. 더 많은 정보 :"
   },
+  "issueReporter_other_issues": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/68b2ce406fde75fb849d8f2732b19b1e4105ce3d/spec/abp/issue-reporter.md#issue-type",
+    "message": "다른 문제의 경우 <a0>support@adblockplus.org</a0>로 연락해 주십시오."
+  },
   "issueReporter_page_title": {
     "message": "문제 보고 마법사"
   },

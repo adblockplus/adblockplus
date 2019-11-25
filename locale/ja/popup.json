@@ -20,8 +20,12 @@
   "promote_abp_module": {
     "message": "Adblock Plus モバイルに興味がありますか？"
   },
+  "refresh_this_page": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/6f8028d692da33978069972d90417dcd10957f2b/spec/abp/bubble-ui.md#refresh",
+    "message": "このページをリフレッシュ"
+  },
   "refresh_to_take_effect": {
-    "message": "<strong>更新</strong> の変更を反映をクリックします。"
+    "message": "以下のボタンをクリックして、変更を有効にしてください。"
   },
   "sendReport": {
     "message": "問題を報告"
@@ -45,7 +49,15 @@
       }
     }
   },
+  "status_domain": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
+    "message": "本ウェブサイト："
+  },
   "status_header": {
-    "message": "広告をブロック:"
+    "message": "広告をブロック"
+  },
+  "status_page": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
+    "message": "本ページ："
   }
 }

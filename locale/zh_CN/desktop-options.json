@@ -104,8 +104,25 @@
   "options_dialog_import_subscription_location_error": {
     "message": "输入有效的 URL"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#add-custom-subscription-popup-invalid",
+    "message": "URL 必须以 $protocol$ 开头。",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "添加过滤列表"
+  },
+  "options_dialog_invalid_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "出于安全原因，仅可添加 HTTPS 筛选器列表。"
+  },
+  "options_dialog_invalid_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "发生错误"
   },
   "options_dialog_language_other_empty": {
     "message": "没有可用的语言。"
@@ -150,16 +167,25 @@
     "message": "失败，检验和不匹配"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "失败，下载失败"
+    "message": "下载失败"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "正在更新"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "失败，不是有效的过滤规则列表"
+    "message": "筛选器列表无效"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "失败，不是有效地址"
+    "message": "地址无效。请检查 URL。"
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#filter-list-error-statuses",
+    "message": "下载失败。URL 必须以 $protocol$ 开头。",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "几分钟前"
@@ -177,7 +203,7 @@
     "message": "更新所有过滤列表"
   },
   "options_filterList_updateNow": {
-    "message": "现在更新"
+    "message": "立即更新"
   },
   "options_filterList_website": {
     "message": "网站"

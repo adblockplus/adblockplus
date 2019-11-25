@@ -104,8 +104,25 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Introduce una dirección URL válida"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#add-custom-subscription-popup-invalid",
+    "message": "La dirección URL debe empezar por $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Añadir una lista de filtros"
+  },
+  "options_dialog_invalid_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "Por motivos de seguridad, solo se pueden añadir listas de filtros HTTPS."
+  },
+  "options_dialog_invalid_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "Se ha producido un error"
   },
   "options_dialog_language_other_empty": {
     "message": "No hay idiomas disponibles."
@@ -150,16 +167,25 @@
     "message": "Error, el checksum no coincide"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Error, ha fallado la descarga"
+    "message": "Error de descarga"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Actualizando"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "Error: lista de filtros no válida"
+    "message": "Esta lista de filtros no es válida"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "Error: dirección no válida"
+    "message": "No es una dirección válida. Comprueba la URL."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#filter-list-error-statuses",
+    "message": "Error de descarga. La dirección URL debe empezar por $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "hace minutos"
@@ -180,7 +206,7 @@
     "message": "Actualizar ahora"
   },
   "options_filterList_website": {
-    "message": "Página web"
+    "message": "Sitio web"
   },
   "options_filter_list_rule": {
     "message": "Regla del filtro"

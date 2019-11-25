@@ -20,8 +20,12 @@
   "promote_abp_module": {
     "message": "Интересует Adblock Plus для мобильного устройства?"
   },
+  "refresh_this_page": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/6f8028d692da33978069972d90417dcd10957f2b/spec/abp/bubble-ui.md#refresh",
+    "message": "Обновите данную страницу"
+  },
   "refresh_to_take_effect": {
-    "message": "Нажмите <strong>Обновить</strong>, чтобы изменения вступили в силу."
+    "message": "Щёлкните кнопку внизу, чтобы изменения вступили в силу."
   },
   "sendReport": {
     "message": "Сообщить об ошибке"
@@ -45,7 +49,15 @@
       }
     }
   },
+  "status_domain": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
+    "message": "Данный сайт:"
+  },
   "status_header": {
-    "message": "Блокировать рекламу на:"
+    "message": "Блокировка рекламы включена"
+  },
+  "status_page": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
+    "message": "Данная страница:"
   }
 }

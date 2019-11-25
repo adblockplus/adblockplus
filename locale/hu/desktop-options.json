@@ -104,8 +104,25 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Adjon meg egy érvényes URL-t"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#add-custom-subscription-popup-invalid",
+    "message": "Az URL-címnek a következővel kell kezdődnie: $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Szűrőlista hozzáadása"
+  },
+  "options_dialog_invalid_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "Biztonsági okokból csak HTTPS szűrőlisták adhatók hozzá."
+  },
+  "options_dialog_invalid_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "Hiba történt"
   },
   "options_dialog_language_other_empty": {
     "message": "Nincsenek elérhető nyelvek."
@@ -150,16 +167,25 @@
     "message": "Sikertelen, érvénytelen ellenőrzőösszeg"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Sikertelen, letöltési hiba"
+    "message": "Letöltési hiba"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Frissítés…"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "Sikertelen, nem érvényes szűrőlista"
+    "message": "A szűrőlista nem érvényes"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "Sikertelen, érvénytelen cím"
+    "message": "A cím nem érvényes. Ellenőrizze az URL-címet."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#filter-list-error-statuses",
+    "message": "A letöltés nem sikerült. Az URL-címnek a következővel kell kezdődnie: $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "perccel ezelőtt"
@@ -168,7 +194,7 @@
     "message": "Épp most"
   },
   "options_filterList_source": {
-    "message": "forráskód"
+    "message": "Forrás"
   },
   "options_filterList_title": {
     "message": "Szűrő lista"
@@ -177,10 +203,10 @@
     "message": "Összes szűrőlista frissítése"
   },
   "options_filterList_updateNow": {
-    "message": "frissítés most"
+    "message": "Frissítés most"
   },
   "options_filterList_website": {
-    "message": "weboldal"
+    "message": "Weboldal"
   },
   "options_filter_list_rule": {
     "message": "Szűrő szabály"
