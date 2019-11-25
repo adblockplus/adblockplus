@@ -20,8 +20,12 @@
   "promote_abp_module": {
     "message": "Interessado no Adblock Plus para plataformas móveis?"
   },
+  "refresh_this_page": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/6f8028d692da33978069972d90417dcd10957f2b/spec/abp/bubble-ui.md#refresh",
+    "message": "Atualizar esta página"
+  },
   "refresh_to_take_effect": {
-    "message": "Clique em <strong>Atualizar</strong> para efetivar as alterações."
+    "message": "Clique no botão abaixo para que as alterações tenham efeito."
   },
   "sendReport": {
     "message": "Comunicar problema"
@@ -45,7 +49,15 @@
       }
     }
   },
+  "status_domain": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
+    "message": "Este site:"
+  },
   "status_header": {
-    "message": "Bloqueio de anúncios ativo:"
+    "message": "Bloquear anúncios"
+  },
+  "status_page": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
+    "message": "Esta página:"
   }
 }

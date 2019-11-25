@@ -68,6 +68,10 @@
   "issueReporter_markIssueButton_label": {
     "message": "وَسْم المشكل"
   },
+  "issueReporter_other_issues": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/68b2ce406fde75fb849d8f2732b19b1e4105ce3d/spec/abp/issue-reporter.md#issue-type",
+    "message": "لأي مشكلة أخرى، يُرجى التواصل معنا عبر البريد الإلكتروني ⁦<a0>⁩support@adblockplus.org</a0>."
+  },
   "issueReporter_page_title": {
     "message": "مبلغ المشاكل"
   },

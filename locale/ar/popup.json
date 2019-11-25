@@ -20,8 +20,12 @@
   "promote_abp_module": {
     "message": "هل أنت مهتم بـ Adblock Plus على الجوال؟"
   },
+  "refresh_this_page": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/6f8028d692da33978069972d90417dcd10957f2b/spec/abp/bubble-ui.md#refresh",
+    "message": "تحديث هذه الصفحة"
+  },
   "refresh_to_take_effect": {
-    "message": "أنقر <strong>تحديث</strong> لتصبح التغييرات سارية المفعول."
+    "message": "انقر فوق الزر بالأسفل لتفعيل التغييرات."
   },
   "sendReport": {
     "message": "تبليغ عن مشكلة"
@@ -45,7 +49,15 @@
       }
     }
   },
+  "status_domain": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
+    "message": "موقع الويب هذا:"
+  },
   "status_header": {
-    "message": "حظر الإعلانات على:"
+    "message": "حظر الإعلانات على"
+  },
+  "status_page": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
+    "message": "هذه الصفحة:"
   }
 }

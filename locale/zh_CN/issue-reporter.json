@@ -71,6 +71,10 @@
   "issueReporter_markIssueButton_label": {
     "message": "标记问题"
   },
+  "issueReporter_other_issues": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/68b2ce406fde75fb849d8f2732b19b1e4105ce3d/spec/abp/issue-reporter.md#issue-type",
+    "message": "对于所有其他问题，请通过 <a0>support@adblockplus.org</a0> 联系我们。"
+  },
   "issueReporter_page_title": {
     "message": "问题报告"
   },

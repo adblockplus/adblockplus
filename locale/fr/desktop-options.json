@@ -104,8 +104,25 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Saisissez une URL valide"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#add-custom-subscription-popup-invalid",
+    "message": "L'URL doit commencer par $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Ajouter une liste de filtres"
+  },
+  "options_dialog_invalid_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "Pour des raisons de sécurité, seules des listes de filtres HTTPS peuvent être ajoutées."
+  },
+  "options_dialog_invalid_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "Une erreur s'est produite"
   },
   "options_dialog_language_other_empty": {
     "message": "Il n’y a pas de langues disponibles."
@@ -150,16 +167,25 @@
     "message": "Échec, le checksum ne correspond pas"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Échec, erreur lors du téléchargement !"
+    "message": "Échec du téléchargement"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Mise à jour en cours"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "Échec, ceci n'est pas une liste de filtres valide"
+    "message": "Liste de filtres non valide"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "Échec, ceci n'est pas une adresse valide !"
+    "message": "Adresse non valide. Vérifiez l'URL."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#filter-list-error-statuses",
+    "message": "Échec du téléchargement. L'URL doit commencer par $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "Il y a minutes"

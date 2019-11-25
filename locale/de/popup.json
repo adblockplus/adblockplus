@@ -20,8 +20,12 @@
   "promote_abp_module": {
     "message": "Hast du Interesse an Adblock Plus fürs Handy?"
   },
+  "refresh_this_page": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/6f8028d692da33978069972d90417dcd10957f2b/spec/abp/bubble-ui.md#refresh",
+    "message": "Diese Seite aktualisieren"
+  },
   "refresh_to_take_effect": {
-    "message": "Klicke auf <strong>Aktualisieren</strong>, damit die Änderungen wirksam werden."
+    "message": "Zum Bestätigen der Änderungen klicke auf die nachstehende Schaltfläche."
   },
   "sendReport": {
     "message": "Problem melden"
@@ -45,7 +49,15 @@
       }
     }
   },
+  "status_domain": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
+    "message": "Diese Webseite:"
+  },
   "status_header": {
-    "message": "Werbung blockieren auf:"
+    "message": "Werbung blockieren auf"
+  },
+  "status_page": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
+    "message": "Diese Seite:"
   }
 }

@@ -20,8 +20,12 @@
   "promote_abp_module": {
     "message": "对移动设备上的 Adblock Plus 感兴趣？"
   },
+  "refresh_this_page": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/6f8028d692da33978069972d90417dcd10957f2b/spec/abp/bubble-ui.md#refresh",
+    "message": "刷新此页面"
+  },
   "refresh_to_take_effect": {
-    "message": "单击<strong>刷新</strong>以使更改生效。"
+    "message": "点击以下按钮以使更改生效。"
   },
   "sendReport": {
     "message": "报告问题"
@@ -45,7 +49,15 @@
       }
     }
   },
+  "status_domain": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
+    "message": "此网站："
+  },
   "status_header": {
-    "message": "拦截广告于："
+    "message": "阻止广告"
+  },
+  "status_page": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
+    "message": "此页面："
   }
 }

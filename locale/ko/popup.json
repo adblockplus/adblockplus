@@ -20,6 +20,14 @@
   "promote_abp_module": {
     "message": "모바일용 Adblock Plus는 어떠세요?"
   },
+  "refresh_this_page": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/6f8028d692da33978069972d90417dcd10957f2b/spec/abp/bubble-ui.md#refresh",
+    "message": "이 페이지 새로 고침 하기"
+  },
+  "refresh_to_take_effect": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/6f8028d692da33978069972d90417dcd10957f2b/spec/abp/bubble-ui.md#refresh",
+    "message": "효과를 적용하려면 하단의 버튼을 클릭하세요."
+  },
   "sendReport": {
     "message": "문제 보고"
   },
@@ -42,7 +50,15 @@
       }
     }
   },
+  "status_domain": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
+    "message": "이 웹사이트:"
+  },
   "status_header": {
-    "message": "이 사이트에서 광고 차단을 사용합니다"
+    "message": "광고 차단"
+  },
+  "status_page": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
+    "message": "이 페이지:"
   }
 }

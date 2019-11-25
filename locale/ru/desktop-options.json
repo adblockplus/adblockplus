@@ -104,8 +104,25 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Введите действительную URL"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#add-custom-subscription-popup-invalid",
+    "message": "URL-адрес должен начинаться с $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Добавить список фильтров"
+  },
+  "options_dialog_invalid_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "В целях безопасности могут быть добавлены лишь списки, отфильтрованные протоколом HTTPS"
+  },
+  "options_dialog_invalid_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "Произошла ошибка"
   },
   "options_dialog_language_other_empty": {
     "message": "Нет доступных языков."
@@ -150,16 +167,25 @@
     "message": "Ошибка: проверочная сумма не совпадает"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Ошибка: невозможно загрузить"
+    "message": "Ошибка загрузки"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Выполняется обновление"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "Ошибка: неверный формат списка фильтров"
+    "message": "Недействительный список фильтров"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "Ошибка: неверный адрес"
+    "message": "Неверный адрес. Проверьте URL."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#filter-list-error-statuses",
+    "message": "Ошибка загрузки. URL-адрес должен начинаться с $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "минут(-ы) назад"

@@ -95,8 +95,25 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Inserisci un URL valido"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#add-custom-subscription-popup-invalid",
+    "message": "L'URL deve iniziare con $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Aggiungere un elenco di filtri"
+  },
+  "options_dialog_invalid_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "Per motivi di sicurezza, è possibile aggiungere solo elenchi di filtri HTTPS."
+  },
+  "options_dialog_invalid_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "Si è verificato un errore"
   },
   "options_dialog_language_other_empty": {
     "message": "Non esistono lingue disponibili."
@@ -141,16 +158,25 @@
     "message": "Sincronizzazione non riuscita, checksum non corrispondente"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Sincronizzazione non riuscita, errore durante il download"
+    "message": "Errore di download"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Aggiornamento in corso"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "Errore, non un elenco di filtri valido"
+    "message": "Elenco di filtri non valido"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "Sincronizzazione non riuscita, indirizzo web non valido"
+    "message": "Indirizzo non valido. Verificare l'URL."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#filter-list-error-statuses",
+    "message": "Impossibile eseguire il download. L'URL deve iniziare con $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "minuti fa"
@@ -171,7 +197,7 @@
     "message": "Aggiornare ora"
   },
   "options_filterList_website": {
-    "message": "Sito"
+    "message": "Sito web"
   },
   "options_filter_list_rule": {
     "message": "Regola del filtro"
