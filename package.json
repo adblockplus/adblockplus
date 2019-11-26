@@ -89,6 +89,7 @@
     "crowdin": {
       "download-translations": [
         "python build.py gettranslations $CROWDIN_API_KEY",
+        "for file in $(grep -rw './locale' -le '{}'); do rm $file; done",
         "npm run fonts-gen"
       ],
       "upload-strings": "python build.py translate $CROWDIN_API_KEY",
