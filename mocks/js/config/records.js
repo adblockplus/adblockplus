@@ -96,6 +96,19 @@ const records = [
       userDefined: true,
       subscription: null
     }
+  },
+  // long filter
+  {
+    request: {
+      type: "ELEMHIDE",
+      docDomain: "example.com"
+    },
+    filter: {
+      text: `example.com${",example.com".repeat(499)}##.ad_banner`,
+      whitelisted: false,
+      userDefined: false,
+      subscription: "EasyList"
+    }
   }
 ];
 

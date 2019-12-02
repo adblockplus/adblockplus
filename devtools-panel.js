@@ -19,6 +19,12 @@
 
 const {getMessage} = browser.i18n;
 
+const promisedPlatform = browser.runtime.sendMessage({
+  type: "app.get",
+  what: "platform"
+});
+const maxTitleLength = 1000;
+
 let lastFilterQuery = null;
 
 browser.runtime.sendMessage({type: "types.get"})
@@ -94,6 +100,44 @@ function onUrlClick(event)
   event.preventDefault();
 }
 
+function getTitleText(str)
+{
+  return promisedPlatform
+    .then((platform) =>
+    {
+      // Firefox doesn't wrap tooltip strings without whitespace characters
+      // so we have to split up the string into individual lines
+      // https://bugzilla.mozilla.org/show_bug.cgi?id=805039
+      if (platform === "gecko")
+      {
+        const maxLineCount = maxTitleLength / 50;
+
+        let lines = str.match(/.{1,50}/g);
+        if (lines.length > maxLineCount)
+        {
+          // Text is too long to display in full so we cut out the middle part
+          lines = [
+            ...lines.slice(0, maxLineCount / 2),
+            "…",
+            ...lines.slice(-(maxLineCount / 2))
+          ];
+        }
+
+        return lines.join("\n");
+      }
+
+      if (str.length < maxTitleLength + 3)
+        return str;
+
+      // Text is too long to display in full so we cut out the middle part
+      return [
+        str.slice(0, maxTitleLength / 2),
+        "…",
+        str.slice(-(maxTitleLength / 2))
+      ].join("\n");
+    });
+}
+
 function createRecord(request, filter, template)
 {
   const row = document.importNode(template, true);
@@ -112,6 +156,10 @@ function createRecord(request, filter, template)
 
     const originalUrl = urlElement.querySelector("[data-i18n-index='0']");
     originalUrl.classList.add("url");
+    getTitleText(request.url).then((title) =>
+    {
+      originalUrl.setAttribute("title", title);
+    });
     originalUrl.setAttribute("href", request.url);
     originalUrl.setAttribute("target", "_blank");
 
@@ -124,9 +172,13 @@ function createRecord(request, filter, template)
     {
       const rewrittenUrl = urlElement.querySelector("[data-i18n-index='1'");
       rewrittenUrl.classList.add("url-rewritten");
+      getTitleText(request.rewrittenUrl).then((title) =>
+      {
+        rewrittenUrl.setAttribute("title", title);
+      });
       rewrittenUrl.setAttribute("href", request.rewrittenUrl);
-      rewrittenUrl.addEventListener("click", onUrlClick);
       rewrittenUrl.setAttribute("target", "_blank");
+      rewrittenUrl.addEventListener("click", onUrlClick);
     }
     else
     {
@@ -144,6 +196,10 @@ function createRecord(request, filter, template)
     const filterElement = row.querySelector(".filter");
     const originElement = row.querySelector(".origin");
 
+    getTitleText(filter.text).then((title) =>
+    {
+      filterElement.setAttribute("title", title);
+    });
     filterElement.textContent = filter.text;
     row.dataset.state = filter.whitelisted ? "whitelisted" : "blocked";
 
