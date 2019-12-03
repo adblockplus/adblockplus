@@ -25,7 +25,7 @@ const localesDir = "./locale";
 const fs = require("fs");
 const restApiUrl = "https://www.xtm-cloud.com/rest-api";
 const customerId = 4419;
-const workflowId = 2982;
+const workflowId = 2946;
 const analysisTemplateId = "json";
 
 /**
