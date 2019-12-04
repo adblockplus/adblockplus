@@ -1092,8 +1092,11 @@ ul.list
 
 .table.list li > span
 {
+  overflow: hidden;
   margin: 0rem;
   flex: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .table.list li.empty-placeholder

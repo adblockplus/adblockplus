@@ -61,6 +61,7 @@ const filterErrors = new Map([
 ]);
 const timestampUI = Symbol();
 const whitelistedDomainRegexp = /^@@\|\|([^/:]+)\^\$document$/;
+const whitelistedPageRegexp = /^@@\|([^?|]+)[?|]\$document$/;
 // Period of time in milliseconds
 const minuteInMs = 60000;
 const hourInMs = 3600000;
@@ -498,10 +499,26 @@ function updateSubscription(subscription)
 
 function updateFilter(filter)
 {
-  const match = filter.text.match(whitelistedDomainRegexp);
-  if (match && !filtersMap[filter.text])
+  let whitelistTitle = null;
+
+  const domainMatch = filter.text.match(whitelistedDomainRegexp);
+  if (domainMatch && !filtersMap[filter.text])
   {
-    filter.title = match[1];
+    whitelistTitle = domainMatch[1];
+  }
+  else
+  {
+    const pageMatch = filter.text.match(whitelistedPageRegexp);
+    if (pageMatch && !filtersMap[filter.text])
+    {
+      const url = pageMatch[1];
+      whitelistTitle = url.replace(/^[\w-]+:\/+(?:www\.)?/, "");
+    }
+  }
+
+  if (whitelistTitle)
+  {
+    filter.title = whitelistTitle;
     collections.whitelist.addItem(filter);
     if (isCustomFiltersLoaded)
     {
