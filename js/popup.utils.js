@@ -37,7 +37,7 @@ function getPref(key)
   return browser.runtime.sendMessage({type: "prefs.get", key});
 }
 
-function isPageWhitelisted(tab)
+function isTabWhitelisted(tab)
 {
   return browser.runtime.sendMessage({type: "filters.isWhitelisted", tab});
 }
@@ -98,7 +98,7 @@ module.exports = {
   activeTab,
   getDoclinks,
   getPref,
-  isPageWhitelisted,
+  isTabWhitelisted,
   reportIssue,
   setPref,
   togglePref,

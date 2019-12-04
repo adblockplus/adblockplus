@@ -30,6 +30,7 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
   - [add](#filtersadd)
   - [get](#filtersget)
   - [importRaw](#filtersimportraw)
+  - [isWhitelisted](#filtersiswhitelisted)
   - [listen](#filterslisten)
   - [remove](#filtersremove)
   - [replace](#filtersreplace)
@@ -157,6 +158,18 @@ If filter includes `showPageOptions`:
 **Response**
 
 **[FilterError](#filtererror)[]** errors
+
+#### filters.isWhitelisted
+
+**Arguments**
+
+- **object** tab
+
+**Response**
+
+**object** isWhitelisted
+  - **boolean** hostname
+  - **boolean** page
 
 #### filters.listen
 
