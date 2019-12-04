@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {isPageWhitelisted} = require("./popup.utils.js");
+const {isTabWhitelisted} = require("./popup.utils.js");
 const {$} = require("./dom");
 
 // remember initial state to better toggle content
@@ -40,7 +40,11 @@ function setupToggles(tab)
     // as the attribute is sensible to animations while the state
     // is set only after, so it's the source of truth, avoiding
     // inconsistent behavior with Firefox or Edge
-    setPageStateAfterDomain(page, !domain.state.checked);
+    setPageStateAfterDomain(
+      page,
+      !domain.state.checked,
+      domain.state.checked
+    );
   });
 
   $("#page-refresh button").addEventListener("click", () =>
@@ -48,9 +52,9 @@ function setupToggles(tab)
     browser.tabs.reload(tab.id).then(window.close);
   });
 
-  isPageWhitelisted(tab).then(whitelisted =>
+  isTabWhitelisted(tab).then((isWhitelisted) =>
   {
-    if (whitelisted)
+    if (isWhitelisted.hostname)
     {
       document.body.classList.add("disabled");
       $("#block-element").disabled = true;
@@ -58,7 +62,11 @@ function setupToggles(tab)
       // avoid triggering an event on this change
       domain.setState({checked: false}, false);
       domain.checked = false;
-      setPageStateAfterDomain(page, false);
+      setPageStateAfterDomain(page, false, true);
+    }
+    else if (isWhitelisted.page)
+    {
+      setPageStateAfterDomain(page, false, false);
     }
     toggleChecked = domain.checked;
   });
@@ -84,9 +92,9 @@ function setupToggles(tab)
   });
 }
 
-function setPageStateAfterDomain(page, checked)
+function setPageStateAfterDomain(page, checked, disabled)
 {
   page.setState({checked}, checked);
   page.checked = checked;
-  page.disabled = !checked;
+  page.disabled = disabled;
 }
