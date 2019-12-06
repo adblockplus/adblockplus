@@ -20,8 +20,11 @@
   "promote_abp_module": {
     "message": "Interesseret i Adblock Plus på mobilen?"
   },
+  "refresh_this_page": {
+    "message": "Opfrisk denne side"
+  },
   "refresh_to_take_effect": {
-    "message": "Klik på <strong>Opdater</strong> for at ændringerne kan træde i kraft."
+    "message": "Klik på knappen nedenfor for at effektuere ændringerne."
   },
   "sendReport": {
     "message": "Rapportér et problem"
@@ -45,7 +48,13 @@
       }
     }
   },
+  "status_domain": {
+    "message": "Dette websted:"
+  },
   "status_header": {
     "message": "Blokér annoncer på:"
+  },
+  "status_page": {
+    "message": "Denne side:"
   }
 }

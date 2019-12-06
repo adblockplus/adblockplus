@@ -8,6 +8,9 @@
   "mops_action_cancel": {
     "message": "لغو"
   },
+  "mops_enabled_label": {
+    "message": "مسدود کردن تبلیغات در:"
+  },
   "mops_error_url": {
     "message": "یک آدرس معتبر وارد کنید"
   },

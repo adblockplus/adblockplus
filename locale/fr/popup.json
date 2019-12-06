@@ -18,10 +18,9 @@
     "message": "Cesser d'afficher les notifications"
   },
   "promote_abp_module": {
-    "message": "Intéressé par Adblock Plus pour mobile ?"
+    "message": "Intéressé par Adblock Plus pour votre appareil mobile ?"
   },
   "refresh_this_page": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/6f8028d692da33978069972d90417dcd10957f2b/spec/abp/bubble-ui.md#refresh",
     "message": "Rafraîchir cette page"
   },
   "refresh_to_take_effect": {
@@ -50,14 +49,12 @@
     }
   },
   "status_domain": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
     "message": "Ce site web :"
   },
   "status_header": {
-    "message": "Bloqueur de publicités"
+    "message": "Bloquer les publicités sur"
   },
   "status_page": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
     "message": "Cette page :"
   }
 }

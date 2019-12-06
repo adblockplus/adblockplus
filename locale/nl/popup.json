@@ -21,11 +21,10 @@
     "message": "Interesse in Adblock Plus op mobiel?"
   },
   "refresh_this_page": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/6f8028d692da33978069972d90417dcd10957f2b/spec/abp/bubble-ui.md#refresh",
-    "message": "Ververs deze pagina"
+    "message": "Deze pagina vernieuwen"
   },
   "refresh_to_take_effect": {
-    "message": "Klik op de onderstaande knop om de wijzigingen van kracht te laten gaan."
+    "message": "Klik op de knop hieronder om wijzigingen door te voeren."
   },
   "sendReport": {
     "message": "Probleem melden"
@@ -50,14 +49,12 @@
     }
   },
   "status_domain": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
     "message": "Deze website:"
   },
   "status_header": {
-    "message": "Blokkeer advertenties op"
+    "message": "Advertenties blokkeren op"
   },
   "status_page": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
     "message": "Deze pagina:"
   }
 }

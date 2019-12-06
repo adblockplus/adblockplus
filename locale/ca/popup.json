@@ -20,8 +20,11 @@
   "promote_abp_module": {
     "message": "Esteu interessat en Adblock Plus per al mòbil?"
   },
+  "refresh_this_page": {
+    "message": "Actualitza aquesta pàgina"
+  },
   "refresh_to_take_effect": {
-    "message": "Feu clic a <strong>Refresca</strong> perquè els canvis tinguin efecte."
+    "message": "Feu clic al botó següent per aplicar els canvis."
   },
   "sendReport": {
     "message": "Notifica un problema"
@@ -45,7 +48,13 @@
       }
     }
   },
+  "status_domain": {
+    "message": "Aquest lloc web:"
+  },
   "status_header": {
-    "message": "Bloqueja anuncis a:"
+    "message": "Bloqueja anuncis a"
+  },
+  "status_page": {
+    "message": "Aquesta pàgina:"
   }
 }

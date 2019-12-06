@@ -104,6 +104,14 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Masukkan URL yang valid"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "Url harus dimulai dengan $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Tambah daftar filter"
   },

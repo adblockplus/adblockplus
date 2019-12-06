@@ -1,6 +1,6 @@
 {
   "options_aa_opt_out_survey": {
-    "message": "为了帮助我们改进 Adblock Plus，是否介意分享为什么关闭可接受广告？"
+    "message": "为了帮助我们改进 Adblock Plus，是否介意分享您关闭可接受广告的原因？"
   },
   "options_aa_opt_out_survey_no": {
     "message": "不用了，谢谢"
@@ -105,7 +105,6 @@
     "message": "输入有效的 URL"
   },
   "options_dialog_import_subscription_location_error_protocol": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#add-custom-subscription-popup-invalid",
     "message": "URL 必须以 $protocol$ 开头。",
     "placeholders": {
       "protocol": {
@@ -117,11 +116,9 @@
     "message": "添加过滤列表"
   },
   "options_dialog_invalid_message": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
     "message": "出于安全原因，仅可添加 HTTPS 筛选器列表。"
   },
   "options_dialog_invalid_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
     "message": "发生错误"
   },
   "options_dialog_language_other_empty": {
@@ -140,7 +137,7 @@
     "message": "电子邮件："
   },
   "options_english": {
-    "message": "英語"
+    "message": "英语"
   },
   "options_filterList_add": {
     "message": "通过 URL 添加过滤列表"
@@ -161,10 +158,10 @@
     "message": "您尚未向 Adblock Plus 添加过滤列表。您添加的过滤列表将显示在此处。"
   },
   "options_filterList_hours": {
-    "message": "小时前"
+    "message": "几小时以前"
   },
   "options_filterList_lastDownload_checksumMismatch": {
-    "message": "失败，检验和不匹配"
+    "message": "失败，校验和不匹配"
   },
   "options_filterList_lastDownload_connectionError": {
     "message": "下载失败"
@@ -179,7 +176,6 @@
     "message": "地址无效。请检查 URL。"
   },
   "options_filterList_lastDownload_invalidURLProtocol": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#filter-list-error-statuses",
     "message": "下载失败。URL 必须以 $protocol$ 开头。",
     "placeholders": {
       "protocol": {

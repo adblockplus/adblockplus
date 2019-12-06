@@ -104,8 +104,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Angiv en gyldig URL-adresse"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "URL skal starte med $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Tilføj en filterliste"
+  },
+  "options_dialog_invalid_message": {
+    "message": "Af sikkerhedsårsager kan kun HTTPS-filterlister tilføjes."
+  },
+  "options_dialog_invalid_title": {
+    "message": "En fejl opstod"
   },
   "options_dialog_language_other_empty": {
     "message": "Der er ingen tilgængelige sprog."
@@ -150,16 +164,24 @@
     "message": "Der opstod en fejl: Der er en uoverensstemmelse i kontrolsummen"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Der opstod en fejl: Download mislykket"
+    "message": "Download mislykkedes"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Opdaterer"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "Der opstod en fejl: Ikke en gyldig filterliste"
+    "message": "Ikke en gyldig filterliste"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "Der opstod en fejl: Ikke en gyldig adresse"
+    "message": "Ikke en gyldig adresse. Tjek URL'en."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Download mislykkedes. URL skal starte med $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "minutter siden"
@@ -168,7 +190,7 @@
     "message": "Lige nu"
   },
   "options_filterList_source": {
-    "message": "kilde"
+    "message": "Kilde"
   },
   "options_filterList_title": {
     "message": "Filterlister"
@@ -177,10 +199,10 @@
     "message": "opdater alle filterlister"
   },
   "options_filterList_updateNow": {
-    "message": "opdater nu"
+    "message": "Opdatér nu"
   },
   "options_filterList_website": {
-    "message": "websted"
+    "message": "Websted"
   },
   "options_filter_list_rule": {
     "message": "Filterregel"

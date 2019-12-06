@@ -71,6 +71,9 @@
   "issueReporter_markIssueButton_label": {
     "message": "ხარვეზის მონიშვნა"
   },
+  "issueReporter_other_issues": {
+    "message": "ყველა სხვა საკითხის შესახებ, გთხოვთ მოგვწეროთ ფოსტაზე <a0>support@adblockplus.org</a0>."
+  },
   "issueReporter_page_title": {
     "message": "ხარვეზის მომხსენებელი"
   },

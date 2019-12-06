@@ -1,4 +1,13 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "Pro vylepšení Adblock Plus, můžete nám sdělit, proč jste vypnuli možnost Přijatelné reklamy?"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "Ne, děkuji"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "Přejít na dotazník"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "Nerušivé reklamy nejsou dotěrné a nezasahují do obsahu, který právě prohlížíte. [Přečtěte si více o kritériích Nerušivé reklamy] [1]"
   },
@@ -8,8 +17,14 @@
   "options_acceptableAds_description": {
     "message": "Cílem iniciativy Nerušivé reklamy je regulovat zobrazování reklam a propouštět pouze nerušivé reklamy. Tento princip se nachází někde mezi úplným blokováním reklam a podporou obsahu online, neboť vytváří příjmy pro vlastníky webových stránek."
   },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>Poznámka:</strong> Máte vyplý požadavek <strong>Do Not Track (DNT)</strong>. Aby tato funkce fungovala správně, prosím zapnetě požadavek <strong>DNT</strong> v nastavení Vašeho prohlížeče. <a>Zjistěte, jak zapnout DNT</a>."
+  },
   "options_acceptableAds_header": {
     "message": "Nerušivé reklamy"
+  },
+  "options_acceptableAds_privacy_label": {
+    "message": "Povolit pouze reklamy bez sledování třetích stran"
   },
   "options_advanced_description": {
     "message": "Službu Adblock Plus lze přizpůsobit dle vlastních preferenci, je zde možnost přidávat nebo odstraňovat seznamy filtrů, vytvářet a udržovat vlastní seznamy filtrů apod."
@@ -50,6 +65,15 @@
   "options_customize_showNotifications": {
     "message": "Zobrazovat užitečná upozornění"
   },
+  "options_dialog_about_copyright": {
+    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "currentYear": {
+        "content": "$1",
+        "example": "2017"
+      }
+    }
+  },
   "options_dialog_about_title": {
     "message": "O aplikaci Adblock Plus"
   },
@@ -71,8 +95,19 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Zadat platnou URL"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "Adresa URL musí začínat $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Přidat seznam filtrů"
+  },
+  "options_dialog_invalid_title": {
+    "message": "Došlo k chybě"
   },
   "options_dialog_language_title": {
     "message": "Vybrat jazyk"
@@ -155,6 +190,9 @@
   "options_general_description": {
     "message": "Nyní máte možnost určit, co má Adblock Plus na webových stránkách zobrazit a co skrýt"
   },
+  "options_generic_error": {
+    "message": "O, ou... Něco se nezdařilo. Zkuste to znovu."
+  },
   "options_help_description": {
     "message": "Vyhledejte si nápovědu nebo nás kontaktujte"
   },
@@ -172,6 +210,19 @@
   },
   "options_language_header": {
     "message": "Jazyk"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>RADA:</strong> Vyberte pouze požadované jazyky. Výběr více jazyků by způsobil zpomalení blokování reklam a tím i prohlížení."
@@ -206,6 +257,9 @@
   "options_protection_social_tooltip": {
     "message": "Ikony sociálních médií na vámi navštívených webových stránkách sociálním sítím umožňují, aby si na základě vašich zvyků procházení vytvořily profil - a to i když na ně neklikáte. Skrytím těchto ikon lze chránit váš profil."
   },
+  "options_rating_title": {
+    "message": "Líbí se Vám Adblock Plus?"
+  },
   "options_report_bug": {
     "message": "Našli jste chybu? <a>Zašlete nám zprávu o chybě</a>"
   },
@@ -233,6 +287,9 @@
   "options_tab_whitelist": {
     "message": "Povolené webové stránky"
   },
+  "options_tracking_warning_acknowledgment": {
+    "message": "Dobře, chápu"
+  },
   "options_whitelist_add": {
     "message": "PŘIDAT WEBOVÉ STRÁNKY"
   },
@@ -244,6 +301,9 @@
   },
   "options_whitelist_empty_2": {
     "message": "Zde se zobrazí webové stránky, kterým důvěřujete a chcete na nich povolit reklamy."
+  },
+  "options_whitelist_notification": {
+    "message": "Stránka byla přidána na seznam povolených stránek."
   },
   "options_whitelist_placeholder_example": {
     "message": "např.: $domain$",

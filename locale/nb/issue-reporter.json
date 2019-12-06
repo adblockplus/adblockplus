@@ -71,6 +71,9 @@
   "issueReporter_markIssueButton_label": {
     "message": "Marker problem"
   },
+  "issueReporter_other_issues": {
+    "message": "Hvis du opplever andre problemer, kan du kontakte oss via <a0>support@adblockplus.org</a0>."
+  },
   "issueReporter_page_title": {
     "message": "Problemrapporterer"
   },

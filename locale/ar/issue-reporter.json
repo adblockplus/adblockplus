@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "لن نكون قادرين على الرجوع إليك و لن نعطي للتقرير أهمية كبيرة."
   },
+  "issueReporter_closeButton_label": {
+    "message": "أغلق"
+  },
   "issueReporter_commentPage_heading": {
     "message": "أضف تعليق"
   },
@@ -69,7 +72,6 @@
     "message": "وَسْم المشكل"
   },
   "issueReporter_other_issues": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/68b2ce406fde75fb849d8f2732b19b1e4105ce3d/spec/abp/issue-reporter.md#issue-type",
     "message": "لأي مشكلة أخرى، يُرجى التواصل معنا عبر البريد الإلكتروني ⁦<a0>⁩support@adblockplus.org</a0>."
   },
   "issueReporter_page_title": {
@@ -80,6 +82,9 @@
   },
   "issueReporter_processing_screenshot": {
     "message": "معالجة"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "لمساعدتنا على فهم المشكل بشكل أفضل، لقطة شاشة مطلوب عند تقديم تقرير المشكلة. حسب موقع الويب الذي تستخدمه حاليًا، قد تحتوي لقطة الشاشة على معلومات شخصية. إذا كنت غير مرتاح لإرسال لقطة شاشة، يرجى إرسال مشكلتك بالبريد الإلكتروني إلى <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_screenshot_hide": {
     "message": "إخفاء"

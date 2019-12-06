@@ -1,4 +1,16 @@
 {
+  "devtools_action_block": {
+    "message": "مسدود کردن مورد"
+  },
+  "devtools_action_remove": {
+    "message": "حذف کردن قاعده"
+  },
+  "devtools_action_unblock": {
+    "message": "افزودن استثنا"
+  },
+  "devtools_filter_subtitle": {
+    "message": "اصل"
+  },
   "devtools_filter_title": {
     "message": "فیلتر"
   },

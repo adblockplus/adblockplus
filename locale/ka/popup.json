@@ -20,6 +20,9 @@
   "promote_abp_module": {
     "message": "გაინტერესებთ Adblock Plus მობილურზე?"
   },
+  "refresh_this_page": {
+    "message": "განაახლეთ გვერდი"
+  },
   "refresh_to_take_effect": {
     "message": "დაწკაპეთ <strong>განახლებას</strong> ცვლილებების ასახვისთვის."
   },
@@ -45,7 +48,13 @@
       }
     }
   },
+  "status_domain": {
+    "message": "ეს საიტი:"
+  },
   "status_header": {
     "message": "რეკლამების შეზღუდვა:"
+  },
+  "status_page": {
+    "message": "ეს გვერდი:"
   }
 }

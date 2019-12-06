@@ -8,6 +8,9 @@
   "mops_action_cancel": {
     "message": "Скасаваць"
   },
+  "mops_enabled_label": {
+    "message": "Блакаванне рэкламы на:"
+  },
   "mops_error_url": {
     "message": "Увядзіце сапраўдны URL-адрас"
   },

@@ -30,7 +30,10 @@
     "message": "حجب تعقب رموز مواقع التواصل الاجتماعي"
   },
   "common_notification_hide": {
-    "message": "إغلاق الإشعارات"
+    "message": "أغلق التنبيه"
+  },
+  "copy_selected": {
+    "message": "نسخ المحدد"
   },
   "delete": {
     "message": "حذف"

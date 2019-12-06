@@ -20,6 +20,9 @@
   "promote_abp_module": {
     "message": "Bạn có hứng thú với Adblock Plus cho di động?"
   },
+  "refresh_this_page": {
+    "message": "Làm mới trang này"
+  },
   "refresh_to_take_effect": {
     "message": "Nhấn vào <strong>Làm mới</strong> để thay đổi có hiệu lực."
   },
@@ -45,7 +48,13 @@
       }
     }
   },
+  "status_domain": {
+    "message": "Trang web này:"
+  },
   "status_header": {
     "message": "Chặn quảng cáo trên:"
+  },
+  "status_page": {
+    "message": "Trang này:"
   }
 }

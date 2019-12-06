@@ -6,7 +6,7 @@
     "message": "Abrir todos los enlaces de esta notificación"
   },
   "notification_without_buttons": {
-    "message": "Pulse en el aviso para abrir todos los enlaces que contiene."
+    "message": "Haz clic en la notificación para abrir todos los enlaces que ésta contiene."
   },
   "overlay_notification_button_no": {
     "message": "No"

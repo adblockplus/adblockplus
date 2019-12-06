@@ -24,7 +24,7 @@
     "message": "Каментарый (неабавязкова):"
   },
   "issueReporter_config_label": {
-    "message": "Дадаць інфармацыю пра канфігурацыю майго браўзера, а таксама спіс маіх актыўных пашырэнняў."
+    "message": "Дадаць інфармацыю пра канфігурацыю майго браўзера і спіс актыўных пашырэнняў."
   },
   "issueReporter_confirmationMessage": {
     "message": "Справаздача захавана. Вы можаце праглядзець яе, калі пяройдзеце па наступнай спасылцы:"
@@ -70,6 +70,9 @@
   },
   "issueReporter_markIssueButton_label": {
     "message": "Пазначыць праблему"
+  },
+  "issueReporter_other_issues": {
+    "message": "Пры ўзнікненні іншых праблем, з намі можна звязацца праз пошту <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_page_title": {
     "message": "Паведаміць аб праблеме"
