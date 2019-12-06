@@ -71,6 +71,9 @@
   "issueReporter_markIssueButton_label": {
     "message": "Probleem markearje"
   },
+  "issueReporter_other_issues": {
+    "message": "Nim foar alle oare problemen kontakt mei ús op fia <a0>support@adblockplus.org</a0>."
+  },
   "issueReporter_page_title": {
     "message": "Probleemrapportearder"
   },

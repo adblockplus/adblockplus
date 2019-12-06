@@ -105,7 +105,6 @@
     "message": "أدخل رابط URL صحيحًا"
   },
   "options_dialog_import_subscription_location_error_protocol": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#add-custom-subscription-popup-invalid",
     "message": "يجب أن يبدأ عنوان URL بـ $protocol$.",
     "placeholders": {
       "protocol": {
@@ -117,11 +116,9 @@
     "message": "إضافة قائمة عوامل تصفية"
   },
   "options_dialog_invalid_message": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
     "message": "لأسباب تتعلق بالأمان، يمكن إضافة قوائم عامل تصفية HTTPS فقط."
   },
   "options_dialog_invalid_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
     "message": "حدث خطأ"
   },
   "options_dialog_language_other_empty": {
@@ -179,7 +176,6 @@
     "message": "عنوان غير صالح. تحقق من عنوان URL."
   },
   "options_filterList_lastDownload_invalidURLProtocol": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#filter-list-error-statuses",
     "message": "فشل التنزيل. يجب أن يبدأ عنوان URL بـ $protocol$.",
     "placeholders": {
       "protocol": {
@@ -207,6 +203,9 @@
   },
   "options_filterList_website": {
     "message": "موقع الويب"
+  },
+  "options_filter_list_rule": {
+    "message": "قاعدة عامل تصفية"
   },
   "options_filters_search_or_add": {
     "message": "بحث / إضافة فلتر (مثال $filter$)",

@@ -1,0 +1,20 @@
+{
+  "day1_blockelement_more": {
+    "message": "Jak na to"
+  },
+  "day1_community_contact": {
+    "message": "Kontaktujte nás!"
+  },
+  "notification_day1_message": {
+    "message": "To je hodně otravných reklam. <a>Zjistěte, co jiného může Adblock Plus zablokovat.</a>"
+  },
+  "notification_day1_title": {
+    "message": "Zablokoval jsi již $ads$ reklam!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

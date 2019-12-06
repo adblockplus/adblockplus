@@ -20,6 +20,9 @@
   "promote_abp_module": {
     "message": "Lyst på Adblock Plus på telefonen?"
   },
+  "refresh_this_page": {
+    "message": "Last inn denne siden på nytt"
+  },
   "refresh_to_take_effect": {
     "message": "Klikk <strong>Oppdater</strong> for se effekten av endringene."
   },
@@ -45,7 +48,13 @@
       }
     }
   },
+  "status_domain": {
+    "message": "Dette nettstedet:"
+  },
   "status_header": {
     "message": "Blokkér annonser på:"
+  },
+  "status_page": {
+    "message": "Denne siden:"
   }
 }

@@ -8,6 +8,9 @@
   "mops_action_cancel": {
     "message": "Atcelt"
   },
+  "mops_enabled_label": {
+    "message": "Bloķēt reklāmas:"
+  },
   "mops_error_url": {
     "message": "Ievadiet derīgu URL"
   },

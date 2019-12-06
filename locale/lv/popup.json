@@ -20,6 +20,9 @@
   "promote_abp_module": {
     "message": "Interesē Adblock Plus mobilajā ierīcē?"
   },
+  "refresh_this_page": {
+    "message": "Atsvaidzināt šo lapu"
+  },
   "refresh_to_take_effect": {
     "message": "Noklikšķiniet <strong>Atsvaidzināt</strong>, lai izmaiņas stātos spēkā."
   },
@@ -45,7 +48,13 @@
       }
     }
   },
+  "status_domain": {
+    "message": "Tīmekļvietne:"
+  },
   "status_header": {
     "message": "Bloķēt reklāmas:"
+  },
+  "status_page": {
+    "message": "Lapa:"
   }
 }

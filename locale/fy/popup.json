@@ -20,6 +20,9 @@
   "promote_abp_module": {
     "message": "Ynteresse yn Adblock Plus op mobyl?"
   },
+  "refresh_this_page": {
+    "message": "Dizze side fernije"
+  },
   "refresh_to_take_effect": {
     "message": "Klik op <strong>Fernije</strong> om de wizigingen ta te passen."
   },
@@ -45,7 +48,13 @@
       }
     }
   },
+  "status_domain": {
+    "message": "Dizze website:"
+  },
   "status_header": {
     "message": "Advertinsjes blokkearje op:"
+  },
+  "status_page": {
+    "message": "Dizze side:"
   }
 }

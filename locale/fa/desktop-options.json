@@ -32,6 +32,12 @@
   "options_customFilters_widget_title": {
     "message": "فهرست فیلترهای من"
   },
+  "options_customize_header": {
+    "message": "شخصی‌سازی"
+  },
+  "options_customize_iconStats": {
+    "message": "نمایش تعداد تبلیغات مسدودشده در آیکون"
+  },
   "options_customize_showNotifications": {
     "message": "نمایش اعلان های مفید"
   },
@@ -58,6 +64,9 @@
   },
   "options_dialog_import_title": {
     "message": "یک لیست فیلتر اضافه کنید"
+  },
+  "options_dialog_invalid_title": {
+    "message": "خطایی رخ داد"
   },
   "options_dialog_language_other_empty": {
     "message": "زبان‌های در دسترس وجود ندارد."

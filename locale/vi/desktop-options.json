@@ -104,8 +104,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Nhập một URL hợp lệ"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "URL phải bắt đầu bằng $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Thêm một danh sách bộ lọc"
+  },
+  "options_dialog_invalid_message": {
+    "message": "Vì lý do bảo mật, chỉ có thể thêm danh sách bộ lọc HTTPS."
+  },
+  "options_dialog_invalid_title": {
+    "message": "Đã xảy ra lỗi"
   },
   "options_dialog_language_other_empty": {
     "message": "Hiện không có ngôn ngữ có sẵn."
@@ -160,6 +174,14 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Thất bại, không phải là địa chỉ hợp lệ"
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Tải về thất bại. URL phải bắt đầu bằng $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "phút trước"

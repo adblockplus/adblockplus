@@ -71,6 +71,9 @@
   "issueReporter_markIssueButton_label": {
     "message": "Đánh dấu vấn đề"
   },
+  "issueReporter_other_issues": {
+    "message": "Đối với tất cả các vấn đề khác, xin vui lòng liên hệ với chúng tôi qua <a0>support@adblockplus.org</a0>."
+  },
   "issueReporter_page_title": {
     "message": "Trình báo cáo lỗi"
   },

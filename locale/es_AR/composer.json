@@ -4,5 +4,8 @@
   },
   "block_element": {
     "message": "Bloquear Elemento"
+  },
+  "loading": {
+    "message": "Cargando..."
   }
 }

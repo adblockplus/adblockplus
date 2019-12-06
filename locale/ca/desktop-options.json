@@ -104,8 +104,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Introduïu una URL vàlida"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "L'URL ha de començar amb $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Afegeix una llista de filtres"
+  },
+  "options_dialog_invalid_message": {
+    "message": "Per raons de seguretat, només es poden afegir llistes de filtres HTTPS."
+  },
+  "options_dialog_invalid_title": {
+    "message": "S'ha produït un error"
   },
   "options_dialog_language_other_empty": {
     "message": "No hi ha idiomes disponibles."
@@ -156,10 +170,18 @@
     "message": "S'està actualitzant"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "Error, no és una llista de filtres vàlida"
+    "message": "No és una llista de filtres vàlida"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "Error, no és una adreça vàlida"
+    "message": "No és una adreça vàlida. Comproveu l’URL."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Ha fallat la baixada. L'URL ha de començar amb $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "fa uns minuts"
@@ -168,7 +190,7 @@
     "message": "Ara mateix"
   },
   "options_filterList_source": {
-    "message": "font"
+    "message": "Origen"
   },
   "options_filterList_title": {
     "message": "Llista de filtres"
@@ -177,10 +199,10 @@
     "message": "actualitza totes les llistes de filtres"
   },
   "options_filterList_updateNow": {
-    "message": "actualitza ara"
+    "message": "Actualitza ara"
   },
   "options_filterList_website": {
-    "message": "lloc web"
+    "message": "Lloc web"
   },
   "options_filter_list_rule": {
     "message": "Regla de filtre"

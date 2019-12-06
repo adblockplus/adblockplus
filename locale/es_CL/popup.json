@@ -20,6 +20,9 @@
   "promote_abp_module": {
     "message": "¿Interesado en Adblock Plus para móvil?"
   },
+  "refresh_this_page": {
+    "message": "Actualizar esta página"
+  },
   "refresh_to_take_effect": {
     "message": "Cliquea <strong>Actualizar</strong> para que los cambios surtan efecto."
   },
@@ -45,7 +48,13 @@
       }
     }
   },
+  "status_domain": {
+    "message": "Este sitio web:"
+  },
   "status_header": {
     "message": "Bloquear anuncios en:"
+  },
+  "status_page": {
+    "message": "Esta página:"
   }
 }

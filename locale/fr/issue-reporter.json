@@ -72,7 +72,6 @@
     "message": "Marquer le problème"
   },
   "issueReporter_other_issues": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/68b2ce406fde75fb849d8f2732b19b1e4105ce3d/spec/abp/issue-reporter.md#issue-type",
     "message": "Pour toute autre question, n'hésitez pas à nous contacter en nous écrivant à <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_page_title": {
@@ -109,7 +108,7 @@
     "message": "Cliquez sur ce lien pour examiner les données contenues dans le rapport avant de l’envoyer"
   },
   "issueReporter_typeSelector_description": {
-    "message": "Sélectionnez un problème :"
+    "message": "S'il vous plaît sélectionnez un problème :"
   },
   "issueReporter_typeSelector_heading": {
     "message": "Quel type de problème rencontrez-vous ?"

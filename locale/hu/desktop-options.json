@@ -105,7 +105,6 @@
     "message": "Adjon meg egy érvényes URL-t"
   },
   "options_dialog_import_subscription_location_error_protocol": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#add-custom-subscription-popup-invalid",
     "message": "Az URL-címnek a következővel kell kezdődnie: $protocol$.",
     "placeholders": {
       "protocol": {
@@ -117,11 +116,9 @@
     "message": "Szűrőlista hozzáadása"
   },
   "options_dialog_invalid_message": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
     "message": "Biztonsági okokból csak HTTPS szűrőlisták adhatók hozzá."
   },
   "options_dialog_invalid_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
     "message": "Hiba történt"
   },
   "options_dialog_language_other_empty": {
@@ -179,7 +176,6 @@
     "message": "A cím nem érvényes. Ellenőrizze az URL-címet."
   },
   "options_filterList_lastDownload_invalidURLProtocol": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#filter-list-error-statuses",
     "message": "A letöltés nem sikerült. Az URL-címnek a következővel kell kezdődnie: $protocol$.",
     "placeholders": {
       "protocol": {

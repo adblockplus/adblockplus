@@ -5,6 +5,12 @@
   "cancel": {
     "message": "Zrušit"
   },
+  "common_feature_anti_adblock_title": {
+    "message": "Skrýt zprávy varování"
+  },
+  "common_feature_malware_title": {
+    "message": "Blokovat Malware"
+  },
   "common_feature_privacy_title": {
     "message": "Blokovat dodatečné sledování"
   },
@@ -13,5 +19,14 @@
   },
   "common_notification_hide": {
     "message": "Uzavřít oznámení"
+  },
+  "copy_selected": {
+    "message": "Zkopírovat vybrané"
+  },
+  "delete": {
+    "message": "Smazat"
+  },
+  "filter_action_failed": {
+    "message": "Něco se nezdařilo. Prosím, zkuste to znovu."
   }
 }

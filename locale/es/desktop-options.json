@@ -105,7 +105,6 @@
     "message": "Introduce una dirección URL válida"
   },
   "options_dialog_import_subscription_location_error_protocol": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#add-custom-subscription-popup-invalid",
     "message": "La dirección URL debe empezar por $protocol$.",
     "placeholders": {
       "protocol": {
@@ -117,11 +116,9 @@
     "message": "Añadir una lista de filtros"
   },
   "options_dialog_invalid_message": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
     "message": "Por motivos de seguridad, solo se pueden añadir listas de filtros HTTPS."
   },
   "options_dialog_invalid_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
     "message": "Se ha producido un error"
   },
   "options_dialog_language_other_empty": {
@@ -161,7 +158,7 @@
     "message": "No has añadido ninguna lista de filtros a Adblock Plus. Las listas de filtros que añadas se mostrarán aquí."
   },
   "options_filterList_hours": {
-    "message": "hace horas"
+    "message": "hace unas horas"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Error, el checksum no coincide"
@@ -179,7 +176,6 @@
     "message": "No es una dirección válida. Comprueba la URL."
   },
   "options_filterList_lastDownload_invalidURLProtocol": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#filter-list-error-statuses",
     "message": "Error de descarga. La dirección URL debe empezar por $protocol$.",
     "placeholders": {
       "protocol": {
@@ -188,7 +184,7 @@
     }
   },
   "options_filterList_minutes": {
-    "message": "hace minutos"
+    "message": "hace unos minutos"
   },
   "options_filterList_now": {
     "message": "Hace un momento"

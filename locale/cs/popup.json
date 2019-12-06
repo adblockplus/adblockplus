@@ -2,11 +2,23 @@
   "easy_create_filter": {
     "message": "Blokovat prvek"
   },
+  "options_refresh": {
+    "message": "Obnovit"
+  },
   "options_short": {
     "message": "Možnosti"
   },
   "overlay_notification_closing_button_optout": {
     "message": "Přestaň ukazovat oznámení"
+  },
+  "promote_abp_module": {
+    "message": "Máte zájem o Adblock Plus na mobil?"
+  },
+  "refresh_this_page": {
+    "message": "Obnovit stránku"
+  },
+  "sendReport": {
+    "message": "Nahlásit problém"
   },
   "stats_label_page": {
     "message": "<strong>$number$</strong> na této stránce",
@@ -23,5 +35,8 @@
         "content": "$1"
       }
     }
+  },
+  "status_page": {
+    "message": "Tato stránka:"
   }
 }

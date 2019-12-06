@@ -20,6 +20,9 @@
   "promote_abp_module": {
     "message": "Цікавіць Adblock Plus для мабільных прылад?"
   },
+  "refresh_this_page": {
+    "message": "Абнавіце гэту старонку"
+  },
   "refresh_to_take_effect": {
     "message": "Націсніце <strong>Абнавіць</strong>, каб ажыццявіць змены."
   },
@@ -45,7 +48,13 @@
       }
     }
   },
+  "status_domain": {
+    "message": "Гэты сайт:"
+  },
   "status_header": {
     "message": "Блакаванне рэкламы на:"
+  },
+  "status_page": {
+    "message": "Гэта старонка:"
   }
 }

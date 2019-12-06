@@ -23,6 +23,9 @@
   "issueReporter_comment_label": {
     "message": "Komentārs (nav obligāti):"
   },
+  "issueReporter_config_label": {
+    "message": "Iekļaut informāciju par pārlūka konfigurāciju un aktīvo paplašinājumu sarakstu."
+  },
   "issueReporter_confirmationMessage": {
     "message": "Jūsu ziņojums ir saglabāts. Jūs tam varat piekļūt sekojošajā adresē:"
   },
@@ -67,6 +70,9 @@
   },
   "issueReporter_markIssueButton_label": {
     "message": "Iezīmēt"
+  },
+  "issueReporter_other_issues": {
+    "message": "Par citām problēmām ziņojiet uz <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_page_title": {
     "message": "Problēmu ziņotājs"

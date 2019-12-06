@@ -105,7 +105,6 @@
     "message": "Wprowadź prawidłowy adres URL"
   },
   "options_dialog_import_subscription_location_error_protocol": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#add-custom-subscription-popup-invalid",
     "message": "Adres URL musi zaczynać się od $protocol$.",
     "placeholders": {
       "protocol": {
@@ -117,11 +116,9 @@
     "message": "Dodaj zestaw filtrów"
   },
   "options_dialog_invalid_message": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
     "message": "Ze względów bezpieczeństwa, możliwe jest dodanie wyłącznie list filtrów protokołu HTTPS."
   },
   "options_dialog_invalid_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
     "message": "Wystąpił problem"
   },
   "options_dialog_language_other_empty": {
@@ -179,7 +176,6 @@
     "message": "Nieprawidłowy adres. Sprawdź adres URL."
   },
   "options_filterList_lastDownload_invalidURLProtocol": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#filter-list-error-statuses",
     "message": "Pobieranie się nie powiodło. Adres URL musi zaczynać się od $protocol$.",
     "placeholders": {
       "protocol": {

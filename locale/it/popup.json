@@ -21,7 +21,6 @@
     "message": "Sei interessato ad Adblock Plus per cellulare?"
   },
   "refresh_this_page": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/6f8028d692da33978069972d90417dcd10957f2b/spec/abp/bubble-ui.md#refresh",
     "message": "Aggiorna questa pagina"
   },
   "refresh_to_take_effect": {
@@ -50,14 +49,12 @@
     }
   },
   "status_domain": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
     "message": "Questo sito web:"
   },
   "status_header": {
     "message": "Blocca gli annunci su"
   },
   "status_page": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
     "message": "Questa pagina:"
   }
 }

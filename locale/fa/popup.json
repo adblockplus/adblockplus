@@ -29,5 +29,14 @@
         "content": "$1"
       }
     }
+  },
+  "status_domain": {
+    "message": "این وب‌سایت:"
+  },
+  "status_header": {
+    "message": "مسدود کردن تبلیغات در"
+  },
+  "status_page": {
+    "message": "این صفحه:"
   }
 }
