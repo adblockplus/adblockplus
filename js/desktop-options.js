@@ -1409,7 +1409,8 @@ function onFilterMessage(action, filter)
       break;
     case "removed":
       const knownFilter = filtersMap[filter.text];
-      if (whitelistedDomainRegexp.test(knownFilter.text))
+      if (whitelistedDomainRegexp.test(knownFilter.text) ||
+          whitelistedPageRegexp.test(knownFilter.text))
         collections.whitelist.removeItem(knownFilter);
       else
         removeCustomFilter(filter.text);
