@@ -1108,6 +1108,13 @@ ul.list
   text-overflow: ellipsis;
 }
 
+.table.list li[aria-label^="https://"] > span,
+.table.list li[aria-label^="data:"] > span
+{
+  white-space: initial;
+  word-break: break-all;
+}
+
 .table.list li.empty-placeholder
 {
   padding: 1rem 1.4rem;
@@ -1171,6 +1178,12 @@ ul.list
 .table .col5:nth-of-type(2)
 {
   flex: 8;
+}
+
+.table [aria-label^="https://"] .col5:nth-of-type(2),
+.table [aria-label^="data:"] .col5:nth-of-type(2)
+{
+  word-break: break-all;
 }
 
 .th .col5:nth-of-type(3),
