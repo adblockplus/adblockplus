@@ -64,10 +64,7 @@
         "js": "$ create.js ./js/$1.js ./$1.js"
       },
       "css": "node-sass ./css/$1.scss ./skin/$1.css",
-      "js": [
-        "!prod eslint ./js/**/*.js",
-        "echo \"/* eslint-disable */$(browserify --node $1)\">$2"
-      ],
+      "js": "echo \"/* eslint-disable */$(browserify --node $1)\">$2",
       "test": {
         "component": {
           "css": "$ create.test.css $1",
