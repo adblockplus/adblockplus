@@ -973,14 +973,24 @@ html[dir="rtl"] button
   --border-color: #099CD0;
   position: absolute;
   z-index: 1;
-  left: -130px;
   width: 260px;
   margin-top: 40px;
   padding: 16px;
+  box-sizing: border-box;
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   background-color: var(--background-color);
   text-align: center;
+}
+
+html[dir="ltr"] #acceptable-ads #acceptable-ads-why-not
+{
+  left: -117px;
+}
+
+html[dir="rtl"] #acceptable-ads #acceptable-ads-why-not
+{
+  right: -117px;
 }
 
 #acceptable-ads #acceptable-ads-why-not::before
@@ -988,10 +998,9 @@ html[dir="rtl"] button
   display: block;
   position: absolute;
   top: -6px;
-  left: 50%;
+  left: calc(50% - 5px);
   width: 10px;
   height: 10px;
-  margin-left: -9px;
   border: 1px solid var(--border-color);
   border-right: none;
   border-bottom: none;
