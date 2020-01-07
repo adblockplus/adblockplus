@@ -91,6 +91,9 @@ build:
     # Include resulting dependencies in debug output
     - cat dependencies
     - pip install cryptography==2.2.2 Jinja2==2.10 tox==3.0.0 PyYAML==3.12 urllib3==1.22
+    # Since build.py doesn't call npm install for adblockpluschrome itself,
+    # we need to call npm install explicitly
+    - npm install
     # Finally build abp
     - python build.py build -t gecko adblockplus-firefox-${CI_COMMIT_SHA:0:8}.xpi
     - python build.py build -t chrome adblockplus-chrome-${CI_COMMIT_SHA:0:8}.zip
