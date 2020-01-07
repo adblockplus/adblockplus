@@ -147,12 +147,12 @@
   "dependencies": {
     "browserify": "^16.2.3",
     "document-register-element": "^1.14.3",
-    "hyperhtml-element": "^3.10.1",
+    "glob": "^7.1.4",
+    "hyperhtml-element": "^3.12.2",
+    "local-range": "^0.1.0",
     "node-sass": "^4.12.0",
     "npm-dollar": "^2.2.1",
-    "website-defaults": "github:adblockplus/website-defaults#255e4f1",
-    "local-range": "^0.1.0",
-    "glob": "^7.1.4"
+    "website-defaults": "github:adblockplus/website-defaults#255e4f1"
   },
   "devDependencies": {
     "adm-zip": "^0.4.13",
