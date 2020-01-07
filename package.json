@@ -105,7 +105,8 @@
       ]
     },
     "test": {
-      "unit": "mocha ./test/unit/tests",
+      "unit": "mocha ./test/unit",
+      "integration": "mocha ./test/integration",
       "icons": "cp -R ./skin/icons ./smoke",
       "io-checkbox": "$ create.test.component io-checkbox",
       "io-element": {
