@@ -30,10 +30,14 @@ class TestEnvironment
   constructor(config)
   {
     this._globals = config.globals;
-    this._modules = config.modules;
-
     this.setGlobals(config.globals);
-    this.setModules(config.modules);
+
+    this._modules = {};
+    if (config.modules)
+    {
+      this._modules = config.modules;
+      this.setModules(config.modules);
+    }
   }
 
   get globals()

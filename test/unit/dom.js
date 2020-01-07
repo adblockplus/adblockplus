@@ -77,7 +77,7 @@ describe("Testing dom.js API", () =>
 
   it("$() should return first match", () =>
   {
-    const {$} = env.requireModule("../../../js/dom");
+    const {$} = env.requireModule("../../js/dom");
     addHtmlContent();
     // Note: By default, basichtml accepts only node, .class, or #id
     equal($("span", document).textContent, "inside first span");
@@ -85,7 +85,7 @@ describe("Testing dom.js API", () =>
 
   it("$$() should return all matches", () =>
   {
-    const {$$} = env.requireModule("../../../js/dom");
+    const {$$} = env.requireModule("../../js/dom");
     addHtmlContent();
     // Note: By default, basichtml accepts only node, .class, or #id
     const spans = $$("span", document);
@@ -97,7 +97,7 @@ describe("Testing dom.js API", () =>
   it("asIndentedString() should return string  representation of DOM", () =>
   {
     env.setGlobals({Node: basichtml.Node, XMLSerializer});
-    const {asIndentedString} = env.requireModule("../../../js/dom");
+    const {asIndentedString} = env.requireModule("../../js/dom");
 
     const xml = new DOMParser().parseFromString(
       "<a attr='value'><b><c>text</c><d/></b></a>",
@@ -119,7 +119,7 @@ describe("Testing dom.js API", () =>
   it("relativeCoordinates() Should return relative coordinates to the" +
     " closest positioned element", () =>
   {
-    const {relativeCoordinates} = env.requireModule("../../../js/dom");
+    const {relativeCoordinates} = env.requireModule("../../js/dom");
     const resultA = {x: 158, y: 78};
     const eventA = {
       layerX: 158,

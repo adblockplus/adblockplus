@@ -93,8 +93,15 @@ Unit Testing
 ------------
 
 The `./test/unit` folder contains various unit tests files. Unit tests are being
-run with other tests when `npm test` command is executed, but if needed they can
-also be executed separately by running `npm run $ test.unit`.
+run with other tests when `npm test` command is executed, by running `npm run $
+test.unit`.
+
+Integration Testing
+-------------------
+
+The `./test/integration` folder contains various integration tests files.
+Integration tests are being run with other tests when `npm test` command is
+executed, or by running `npm run $ test.unit`.
 
 Styled Components
 -----------------
