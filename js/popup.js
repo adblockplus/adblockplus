@@ -77,10 +77,15 @@ activeTab.then(tab =>
 .then(tab =>
 {
   const {url} = tab;
-  const defaultDetails = {hostname: "", pathname: ""};
-  const {hostname, pathname} = url ? new URL(url) : defaultDetails;
+  const defaultDetails = {hostname: "", pathname: "", search: ""};
+  const {hostname, pathname, search} = url ? new URL(url) : defaultDetails;
   $("#blocking-domain").textContent = hostname;
-  $("#blocking-page").textContent = pathname;
+  let pageContent = pathname;
+  if (!search.includes("&"))
+  {
+    pageContent += search;
+  }
+  $("#blocking-page").textContent = pageContent;
   $("#issue-reporter").addEventListener(
     "click", () => reportIssue(tab)
   );
