@@ -17,6 +17,7 @@
 
 "use strict";
 
+const {$} = require("./dom");
 require("./io-circle-toggle.js");
 
 function onResize()
@@ -27,16 +28,8 @@ function onResize()
   }, "*");
 }
 
-ext.i18n.setElementText(
-  document.getElementById("stats-total"),
-  "stats_label_total",
-  [(21412).toLocaleString()]
-);
-ext.i18n.setElementText(
-  document.getElementById("stats-page"),
-  "stats_label_page",
-  [(18).toLocaleString()]
-);
+$("#stats-page .amount").textContent = (18).toLocaleString();
+$("#stats-total .amount").textContent = (21412).toLocaleString();
 
 if ("IntersectionObserver" in window)
 {
