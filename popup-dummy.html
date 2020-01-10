@@ -55,8 +55,26 @@
       <div id="page-info">
         <div id="default-container">
           <h2 data-i18n="stats_header"></h2>
-          <div id="stats-page" class="card"></div>
-          <div id="stats-total" class="card"></div>
+          <div id="counter-panel" class="card">
+            <div class="stats">
+              <div id="stats-page">
+                <span data-i18n="stats_label_page"></span>
+                <strong class="amount"></strong>
+              </div>
+              <div id="stats-total">
+                <span data-i18n="stats_label_total"></span>
+                <strong class="amount"></strong>
+              </div>
+            </div>
+            <div class="share">
+              <div class="stack">
+                <button class="enter">
+                  <img src="skin/icons/share.svg" alt="">
+                  <span data-i18n="social_media_share"></span>
+                </button>
+              </div>
+            </div>
+          </div>
           <div class="options">
             <button id="issue-reporter">
               <span data-i18n="sendReport" class="report"></span>
