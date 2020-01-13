@@ -22,7 +22,7 @@ io-popout
   --background-color: #FFF;
   --border: 1px solid #0797E1;
   --icon-margin: 0.4rem;
-  --icon-size-inner: 1.1rem;
+  --icon-size-inner: 1rem;
   --icon-size-outer: calc(var(--icon-size-inner) + var(--icon-margin));
   --pointer-size: 10px;
   --pointer-offset-out: calc(var(--pointer-size) / -2 - 1px);
@@ -96,6 +96,7 @@ io-popout > .wrapper
 {
   display: inline-block;
   position: relative;
+  vertical-align: middle;
 }
 
 io-popout > .wrapper::before
