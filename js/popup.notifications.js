@@ -58,7 +58,7 @@ window.addEventListener(
     <div class="${"content " + notification.type}">
       <div>
         <h3 hidden="${!notification.texts.title}">
-          ${notification.texts.title}
+          <span>${notification.texts.title}</span>
         </h3>
         <p id="notification-message"></p>
         <hr>
@@ -83,7 +83,7 @@ window.addEventListener(
     insertMessage(
       messageElement,
       notification.texts.message,
-      notification.links.map((link) => `#${link}`)
+      (notification.links || []).map((link) => `#${link}`)
     );
 
     messageElement.addEventListener("click", evt =>

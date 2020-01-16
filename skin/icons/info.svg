@@ -1,18 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
-    <title>iconInfo</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="V5" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="00a" transform="translate(-57.000000, -119.000000)" fill="#0797E1">
-            <g id="Group" transform="translate(25.000000, 23.000000)">
-                <g id="Group-10" transform="translate(16.000000, 80.000000)">
-                    <g id="iconInfo" transform="translate(16.000000, 16.000000)">
-                        <path d="M8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 Z M8,3 C7.44771525,3 7,3.44771525 7,4 C7,4.55228475 7.44771525,5 8,5 C8.55228475,5 9,4.55228475 9,4 C9,3.44771525 8.55228475,3 8,3 Z M8,7 C7.44771525,7 7,7.44771525 7,8 L7,12 C7,12.5522847 7.44771525,13 8,13 C8.55228475,13 9,12.5522847 9,12 L9,8 C9,7.44771525 8.55228475,7 8,7 Z"></path>
-                    </g>
-                </g>
-            </g>
-        </g>
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g fill="none" fill-rule="evenodd">
+        <circle id="a" fill="#0797E1" opacity=".297" cx="16" cy="16" r="16"/>
+        <circle fill="#0797E1" cx="16" cy="16" r="12"/>
+        <path d="M17.02 20.709v.01c0 .822-.625 1.489-1.395 1.489-.771 0-1.396-.667-1.396-1.49v-.01h2.791zM15.625 9.647c.346 0 .627.3.627.67v.756c1.467.311 2.572 1.692 2.572 3.349v2.456l1.256 1.969a.716.716 0 01.037.698.63.63 0 01-.561.36h-7.863a.63.63 0 01-.56-.36.716.716 0 01.036-.698l1.256-1.969v-2.456c0-1.657 1.105-3.038 2.572-3.349v-.756c0-.37.281-.67.628-.67z" fill="#FFF" fill-rule="nonzero"/>
     </g>
+    <animate xlink:href="#a" attributeName="r" from="12" to="16" begin="0s" dur="0.6s"/>
+    <animate xlink:href="#a" attributeName="opacity" from=".297" to="0" begin="0.6s" dur="0.3s"/>
+    <animate xlink:href="#a" attributeName="r" from="12" to="16" begin="0.9s" dur="0.6s"/>
+    <animate xlink:href="#a" attributeName="opacity" from=".297" to="0" begin="1.5s" dur="0.3s"/>
+    <animate xlink:href="#a" attributeName="r" from="12" to="16" begin="1.8s" dur="0.6s"/>
+    <animate xlink:href="#a" attributeName="opacity" from=".297" to="0" begin="2.4s" dur="0.3s" fill="freeze"/>
 </svg>

@@ -172,6 +172,7 @@ main .card
 #notification .content > div
 {
   padding: var(--padding-primary);
+  padding-top: var(--padding-secondary);
 }
 
 #notification .content h3[hidden] + p
@@ -184,50 +185,37 @@ main .card
   margin: 0;
   color: var(--color-secondary);
   font-size: var(--font-size-primary);
-}
-
-#notification .content h3::before
-{
-  display: inline-block;
-  position: absolute;
-  width: 16px;
-  height: 16px;
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: 16px;
-  content: "";
+  background-size: 32px;
 }
 
-html:not([dir="rtl"]) #notification .content.critical h3,
-html:not([dir="rtl"]) #notification .content.information h3
+#notification .content h3 > span
 {
-  padding-left: 24px;
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
 }
 
-html:not([dir="rtl"]) #notification .content.critical h3::before,
-html:not([dir="rtl"]) #notification .content.information h3::before
+html:not([dir="rtl"]) #notification .content h3
 {
-  margin-left: -24px;
+  padding-left: 36px;
+  margin-left: -6px;
+  background-position: left;
 }
 
-html[dir="rtl"] #notification .content.critical h3,
-html[dir="rtl"] #notification .content.information h3
+html[dir="rtl"] #notification .content h3
 {
-  padding-right: 24px;
+  padding-right: 36px;
+  margin-right: -6px;
+  background-position: right;
 }
 
-html[dir="rtl"] #notification .content.critical h3::before,
-html[dir="rtl"] #notification .content.information h3::before
-{
-  margin-right: -24px;
-}
-
-#notification .content.critical h3::before
+#notification .content.critical h3
 {
   background-image: url(icons/critical.svg);
 }
 
-#notification .content.information h3::before
+#notification .content.information h3
 {
   background-image: url(icons/info.svg);
 }
