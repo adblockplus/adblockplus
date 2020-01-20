@@ -506,11 +506,6 @@ button[role="checkbox"][disabled].icon.toggle::before
   background-image: url("icons/facebook.svg");
 }
 
-.icon.weibo::before
-{
-  background-image: url("icons/weibo.svg");
-}
-
 /*
   Forms
  */
@@ -1461,12 +1456,6 @@ html[dir="rtl"] #all-filter-lists-table li.show-message .message.error::before
 /*
   Help tab content
 */
-
-html:not([lang^="zh"]) #social-chinese,
-html[lang^="zh"] #social-general
-{
-  display: none;
-}
 
 #social ul
 {
