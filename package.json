@@ -53,7 +53,7 @@
       "test": [
         [
           "if [ ! -z $1 ]; then",
-          " echo \"/* eslint-disable */$(browserify --node ./tests/$1.js)\">./smoke/$1.js;",
+          " echo \"/* eslint-disable */$(browserify --node ./test/smoke/tests/$1.js)\">./smoke/$1.js;",
           "fi"
         ]
       ]
@@ -79,7 +79,7 @@
         ],
         "js": [
           "mkdir -p smoke",
-          "cp -R ./tests/{locale,background.html,$1.*} ./smoke"
+          "cp -R ./test/smoke/tests/{locale,background.html,$1.*} ./smoke"
         ]
       }
     },
@@ -117,7 +117,7 @@
         "css": [
           "$ create.test.css io-highlighter",
           "cp -R ./skin/icons smoke/css",
-          "cp ./tests/image.base64.txt ./smoke"
+          "cp ./test/smoke/tests/image.base64.txt ./smoke"
         ],
         "js": [
           "$ create.test.js io-highlighter",

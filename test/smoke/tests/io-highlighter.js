@@ -1,8 +1,6 @@
-/* globals require */
-
 "use strict";
 
-require("../js/io-highlighter");
+require("../../../js/io-highlighter");
 
 document.addEventListener(
   "DOMContentLoaded",

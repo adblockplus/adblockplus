@@ -1,6 +1,6 @@
 "use strict";
 
-require("../js/io-scrollbar");
+require("../../../js/io-scrollbar");
 
 const handler = {
   handleEvent(event)

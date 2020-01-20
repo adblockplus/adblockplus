@@ -1,6 +1,6 @@
 "use strict";
 
-const IOElement = require("../js/io-element");
+const IOElement = require("../../../js/io-element");
 
 class IOClock extends IOElement
 {

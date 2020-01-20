@@ -1,8 +1,6 @@
-/* globals module, require */
-
 "use strict";
 
-require("../js/io-steps");
+require("../../../js/io-steps");
 
 document.addEventListener(
   "input",

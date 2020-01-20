@@ -1,6 +1,6 @@
 "use strict";
 
-require("../js/io-filter-search");
+require("../../../js/io-filter-search");
 
 
 window.onload = () =>
