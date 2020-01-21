@@ -1,5 +1,3 @@
-/* globals __dirname process */
-
 "use strict";
 
 const Nightmare = require("nightmare");
