@@ -952,13 +952,16 @@ html[dir="rtl"] #acceptable-ads ul
 #acceptable-ads ul button
 {
   position: absolute;
+}
+
+html[dir="ltr"] button
+{
   left: 0rem;
 }
 
 html[dir="rtl"] button
 {
   right: 0rem;
-  left: auto;
 }
 
 #acceptable-ads label
