@@ -20,6 +20,7 @@ io-steps
   display: flex;
   position: relative;
   margin: 0;
+  margin-top: 2rem;
   padding: 0;
   justify-content: space-between;
 }
@@ -39,7 +40,7 @@ io-steps::before
 }
 
 html:not([dir="rtl"]) io-steps button,
-io-steps button
+html[dir="rtl"] io-steps button
 {
   margin: initial;
   padding: initial;
