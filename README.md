@@ -180,12 +180,23 @@ so that is watched, and each bundled created, every time there is a changes.
 
 Simply `npm run watch` to start watching for all changes.
 
-Translations
-------------
+Translations(Crowdin)
+---------------------
 
-Translations for the strings in this project are managed using the online
-[Crowdin platform][crowdin]. To synchronise with Crowdin use commands
-below:
+Adblock Plus UI project community can help us, by [contributing translations in
+the Crowdin](https://crowdin.com/project/adblockplusui). Synchronization of
+strings is done using [Crowdin CLI](https://support.crowdin.com/cli-tool/)
+which [requires Java 7 or
+newer](https://support.crowdin.com/cli-tool/#requirements). Follow the [Crowdin
+CLI installation guide](https://support.crowdin.com/cli-tool/#installation) in
+order to install it.
+
+You can find various configuration for Crowdin CLI in `crowdin.yml` file. Learn
+more about [Crowdin configuration file
+here](https://support.crowdin.com/configuration-file/).
+
+After installing cli-tool on your machine use commands below to synchronize
+translations:
 - `CROWDIN_API_KEY="1111" npm run $ crowdin.upload-strings`
   - Pushes all master(en_US) files to crowdin
 - `CROWDIN_API_KEY="1111" npm run $ crowdin.download-translations`
@@ -196,8 +207,8 @@ below:
 
 **Note:** Use actual Crowdin project key instead of "1111".
 
-Translations CSV exporter
--------------------------
+Translations(CSV exporter)
+--------------------------
 
 [To be deprecated, see [XTM Synchronization](#xtm-synchronization)]
 
@@ -215,8 +226,8 @@ Format of the exported CSV files:
 | Modified | options.json | cancel   | Cancel button label  |                             | Cancel        | Kanselleer | ይቅር | ... |
 | Added    | options.json | domain   | Domain input example | {"domain":{"content":"$1"}} | e.g. $domain$ |            |     | ... |
 
-XTM Synchronization
---------------------------------
+Translations(XTM)
+-----------------
 
 XTM is a new tool for managing priority language translations, in order to use
 it several environement variables(`USER_ID`, `CLIENT`, `PASSWORD`) needs to be
