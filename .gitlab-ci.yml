@@ -17,7 +17,6 @@ stages:
   - test
   - build
   - pages
-  - uploadcrowdin
   - uploadxtm
   - updatextm
   - downloadxtm
@@ -182,30 +181,6 @@ pages:
       - /^compat-\w+-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
     variables:
       - $CI_PROJECT_NAME == 'adblockplusui-nightlies'
-
-uploadcrowdin:
-  variables:
-    BASENAME: 'adblockplusui'
-  stage: uploadcrowdin
-  script:
-    # gitlab uses a custom template when cloning repositories so we need to
-    # create .git/info/exclude, which is needed by ensure_dependencies.py,
-    # ourselves
-    - mkdir -p .git/info && touch .git/info/exclude
-    - npm install
-    # To allow uploading to a test project you can override the basename via
-    # the environment variable BASENAME. This ensures BASENAME and basename in
-    # metadata.generic are the same.
-    - sed -i -E "s/basename\s=\s.+$/basename = $BASENAME/g" metadata.generic
-    # show resulting metadata.generic so we can see which basename was used
-    - cat metadata.generic
-    # finally upload source strings and translations to crowdin
-    - npm run $ crowdin.upload-strings
-    - npm run $ crowdin.upload-translations
-  when: manual
-  environment:
-    name: crowdin/$BASENAME
-    url: https://crowdin.com/project/$BASENAME
 
 .xtm:
   variables:

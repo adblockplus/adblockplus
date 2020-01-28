@@ -89,12 +89,13 @@
     },
     "crowdin": {
       "download-translations": [
-        "python2 build.py gettranslations $CROWDIN_API_KEY",
+        "crowdin -k $CROWDIN_API_KEY download",
         "for file in $(grep -rw './locale' -le '{}'); do rm $file; done",
+        "node build/crowdin/clear-descriptions.js",
         "npm run fonts-gen"
       ],
-      "upload-strings": "python2 build.py translate $CROWDIN_API_KEY",
-      "upload-translations": "python2 build.py uploadtrans $CROWDIN_API_KEY"
+      "upload-strings": "crowdin -k $CROWDIN_API_KEY upload sources",
+      "upload-translations": "crowdin -k $CROWDIN_API_KEY upload translations"
     },
     "lint": {
       "css": "stylelint ./build/**/*.css ./css/*.scss ./skin/*.css --ignore-path .gitignore",
