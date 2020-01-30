@@ -80,8 +80,7 @@ function generateFont(inputFile, outputFile, locales)
     const unicodes = `--unicodes=${unicodeRange}`;
     const flavor = "--flavor=woff2";
     const output = `--output-file=${outputFile}`;
-    const python2 = "python2 $(which pyftsubset)";
-    return exec(`${python2} ${inputFile} ${unicodes} ${flavor} ${output}`).
+    return exec(`pyftsubset ${inputFile} ${unicodes} ${flavor} ${output}`).
       then(() =>
       {
         // eslint-disable-next-line no-console
