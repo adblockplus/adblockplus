@@ -85,6 +85,10 @@ activeTab.then(tab =>
   {
     pageContent += search;
   }
+  else if (search)
+  {
+    pageContent += "?…";
+  }
   $("#blocking-page").textContent = pageContent;
   $("#issue-reporter").addEventListener(
     "click", () => reportIssue(tab)
