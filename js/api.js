@@ -39,6 +39,11 @@ const prefs = {
 };
 module.exports.prefs = prefs;
 
+const subscriptions = {
+  getInitIssues: () => send("subscriptions.getInitIssues")
+};
+module.exports.subscriptions = subscriptions;
+
 const stats = {
   getBlocked: (tab) => send("stats.getBlockedPerPage", {tab})
 };

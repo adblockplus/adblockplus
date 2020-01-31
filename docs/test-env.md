@@ -45,7 +45,7 @@ No parameters.
 |-|-|-|
 | application | `edge` | Hides Adblock Browser promotion message |
 | dataCorrupted | `true` | Show data corruption message |
-| filterlistsReinitialized | `true` | Show settings reinitialized message |
+| reinitialized | `true` | Show settings reinitialized message |
 
 ### issue-reporter.html
 

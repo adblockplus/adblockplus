@@ -69,12 +69,12 @@
 
   const params = {
     additionalSubscriptions: "",
+    addSubscription: false,
     blockedURLs: "",
     dataCorrupted: false,
-    filterlistsReinitialized: false,
-    addSubscription: false,
-    filterError: false,
     downloadStatus: "synchronize_ok",
+    filterError: false,
+    reinitialized: false,
     showPageOptions: false
   };
   updateFromURL(params);
@@ -436,8 +436,8 @@
   updateFromURL(modules.info);
 
   modules.subscriptionInit = {
-    isDataCorrupted: () => params.dataCorrupted,
-    isReinitialized: () => params.filterlistsReinitialized
+    isDataCorrupted: () => !!params.dataCorrupted,
+    isReinitialized: () => !!params.reinitialized
   };
 
   modules.messaging = {

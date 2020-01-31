@@ -42,6 +42,7 @@
   } = require("subscriptionClasses");
   const {showOptions} = require("options");
   const {recommendations} = require("recommendations");
+  const subscriptionInit = require("subscriptionInit");
 
   port.on("types.get", (message, sender) =>
   {
@@ -215,15 +216,6 @@
 
   port.on("app.get", (message, sender) =>
   {
-    if (message.what == "issues")
-    {
-      const subscriptionInit = require("subscriptionInit");
-      return {
-        dataCorrupted: subscriptionInit.isDataCorrupted(),
-        filterlistsReinitialized: subscriptionInit.isReinitialized()
-      };
-    }
-
     if (message.what == "doclink")
     {
       let {application} = info;
@@ -525,6 +517,14 @@
       subscriptions.push(subscription);
     }
     return subscriptions;
+  });
+
+  port.on("subscriptions.getInitIssues", () =>
+  {
+    return {
+      dataCorrupted: subscriptionInit.isDataCorrupted(),
+      reinitialized: subscriptionInit.isReinitialized()
+    };
   });
 
   port.on("subscriptions.remove", (message, sender) =>

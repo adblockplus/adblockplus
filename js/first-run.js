@@ -52,13 +52,14 @@ function initLinks()
 
 function initWarnings()
 {
-  api.app.get("issues")
+  api.subscriptions.getInitIssues()
     .then((issues) =>
     {
+      const {dataCorrupted, reinitialized} = issues;
       const warnings = [];
 
       // Show warning if we detected some data corruption
-      if (issues.dataCorrupted)
+      if (dataCorrupted)
       {
         warnings.push("dataCorrupted");
         api.doclinks.get("adblock_plus").then((url) =>
@@ -75,7 +76,7 @@ function initWarnings()
         });
       }
       // Show warning if filterlists settings were reinitialized
-      else if (issues.filterlistsReinitialized)
+      else if (reinitialized)
       {
         warnings.push("reinitialized");
         ext.i18n.setElementLinks("warning-reinitialized", openOptions);

@@ -51,6 +51,7 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
 - subscriptions
   - [add](#subscriptionsadd)
   - [get](#subscriptionsget)
+  - [getInitIssues](#subscriptionsgetinitissues)
   - [listen](#subscriptionslisten)
   - [remove](#subscriptionsremove)
   - [toggle](#subscriptionstoggle)
@@ -68,7 +69,6 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
 - **string** what
   - `doclink`
   - `features`
-  - `issues`
   - `localeInfo`
   - `recommendations`
   - `senderId`
@@ -79,9 +79,6 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
 
 **object** features (if "what" is `features`)
 - **boolean** devToolsPanel
-
-**object** issues (if "what" is `issues`)
-- **boolean** filterlistsReinitialized
 
 **object** localeInfo (if "what" is `localeInfo`)
 - **string** bidiDir
@@ -326,6 +323,14 @@ See [`filterNotifier`][filternotifier].
 
 **[Subscription](#subscription)[]** subscriptions
 - **string[]** disabledFilters
+
+#### subscriptions.getInitIssues
+
+**Response**
+
+**object** issues
+- **boolean** dataCorrupted
+- **boolean** reinitialized
 
 #### subscriptions.listen
 
