@@ -61,7 +61,7 @@ const filterErrors = new Map([
 ]);
 const timestampUI = Symbol();
 const whitelistedDomainRegexp = /^@@\|\|([^/:]+)\^\$document$/;
-const whitelistedPageRegexp = /^@@\|([^?|]+)[?|]\$document$/;
+const whitelistedPageRegexp = /^@@\|([^?|]+(?:\?[^&]+)?)[?|]\$document$/;
 // Period of time in milliseconds
 const minuteInMs = 60000;
 const hourInMs = 3600000;
