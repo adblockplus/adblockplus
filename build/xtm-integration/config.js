@@ -27,6 +27,8 @@ const restApiUrl = "https://www.xtm-cloud.com/rest-api";
 const customerId = 4419;
 const workflowId = 2946;
 const analysisTemplateId = "json";
+const projectManagerId = 20;
+const subjectMatterId = 24234;
 
 /**
  * Maps XTM's locales to locales we use
@@ -52,5 +54,5 @@ function generateXtmToLocalesMap()
 }
 
 module.exports = {sourceLanguage, targetLanguages, localesDir, restApiUrl,
-  customerId, workflowId, analysisTemplateId,
+  customerId, workflowId, analysisTemplateId, projectManagerId, subjectMatterId,
   xtmToLocalesMap: generateXtmToLocalesMap()};

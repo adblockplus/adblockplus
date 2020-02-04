@@ -145,6 +145,7 @@
     },
     "xtm": {
       "create": "node build/xtm-integration/index.js --create",
+      "details": "node build/xtm-integration/index.js --details",
       "update": "node build/xtm-integration/index.js --update",
       "build": "node build/xtm-integration/index.js --build",
       "download": "node build/xtm-integration/index.js --download"
