@@ -153,6 +153,32 @@ function getProjectIdByName(projectName)
 }
 
 /**
+ * https://www.xtm-cloud.com/rest-api/#operation/updateProjectUsingPUT
+ * @param {number} projectId project ID
+ * @param {json} details Data to update (ex.: subjectMatterId, projectManagerId)
+ * @returns {Promise}
+ */
+function updateDetails(projectId, details)
+{
+  return getToken().then(({token}) =>
+  {
+    const uri = `${restApiUrl}/projects/${projectId}`;
+    const headers = generateAuthHeader(token);
+    headers["Content-Type"] = "application/json";
+    const dataupdateDetails = {
+      method: "PUT",
+      headers,
+      body: JSON.stringify(details)
+    };
+    return fetch(uri, dataupdateDetails);
+  }).then(fetchResponse).then(() =>
+  {
+    const detailNames = Object.keys(details).join(", ");
+    return `${detailNames} are updated for project ${projectId}`;
+  });
+}
+
+/**
  * Update project source files
  * see -> https://wstest2.xtm-intl.com/rest-api/#operation/uploadFilesUsingPOST
  * @param {number} projectId project ID
@@ -255,4 +281,4 @@ function downloadProject(projectId, destination, callback)
 }
 
 module.exports = {createProject, updateProject, downloadProject, buildProject,
-  getProjectIdByName};
+  getProjectIdByName, updateDetails};

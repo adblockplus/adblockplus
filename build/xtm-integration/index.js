@@ -26,7 +26,8 @@ const {writeFileSync, existsSync, mkdirSync} = require("fs");
 const {importFilesObjects} = require("../common/import");
 const execSync = require("child_process").execSync;
 const {localesDir, sourceLanguage, customerId,
-  workflowId, analysisTemplateId} = require("./config");
+  workflowId, analysisTemplateId, projectManagerId,
+  subjectMatterId} = require("./config");
 const {getSourceStringFileDiffs} = require("../common/diff");
 
 function exec(command)
@@ -87,7 +88,7 @@ function create()
   return xtm.getProjectIdByName(branchName).then((projectId) =>
   {
     if (projectId)
-      return Promise.reject(`Project ${branchName} already exists`);
+      throw `Project ${branchName} already exists`;
     return createSourceFiles(hash);
   }).then((files) =>
   {
@@ -106,13 +107,31 @@ function update()
   return xtm.getProjectIdByName(branchName).then((projectId) =>
   {
     if (!projectId)
-      return Promise.reject(`No project ${branchName} found`);
+      throw `No project ${branchName} found`;
 
     const hash = getParentVersionHash();
     return createSourceFiles(hash).then((files) =>
     {
       return xtm.updateProject(projectId, files);
     });
+  });
+}
+
+/**
+ * Updated details of the project which are not possible to set during create()
+ * @returns {Promise}
+ */
+function updateDetails()
+{
+  const branchName = getProjectName();
+  return xtm.getProjectIdByName(branchName).then((projectId) =>
+  {
+    if (!projectId)
+      throw `No project ${branchName} found`;
+    const data = {
+      projectManagerId, subjectMatterId
+    };
+    return xtm.updateDetails(projectId, data);
   });
 }
 
@@ -155,11 +174,19 @@ process.on("exit", () =>
 
 if (argv.create)
 {
-  create().then(console.log).catch(errorHandler);
+  create()
+    .then(console.log)
+    .then(updateDetails)
+    .then(console.log)
+    .catch(errorHandler);
 }
 else if (argv.update)
 {
   update().then(console.log).catch(errorHandler);
+}
+else if (argv.details)
+{
+  updateDetails().then(console.log).catch(errorHandler);
 }
 else if (argv.download)
 {

@@ -245,6 +245,9 @@ Commands:
   - Generates project files - to be executed before downloading translations.
 - `npm run $ xtm.download`
   - Downloads translation files and update local files accordingly.
+- `npm run $ xtm.details`
+  - Updates project `projectManagerId` and `subjectMatterId`.
+  - **Note:** This command is automatically executed on `npm run $ xtm.create`.
 
 Fonts generation
 ----------------
