@@ -3,8 +3,11 @@
   --background-color-error: #F7DDE1;
   --background-color-secondary: #f7f7f7;
   --background-color-primary: #fff;
+  --background-color-ternary: #edf9ff;
   --border-color-secondary: #d2d2d2;
   --border-color-primary: #e6e6e6;
+  --border-color-ternary: #c0e6f9;
+  --border-color-outline: #acacac;
   --border-radius: 4px;
   --border-radius-primary: 6px;
   --border-style-primary: solid;
@@ -23,7 +26,8 @@
   --font-size-primary: 13px;
   --font-size-small: 12px;
   --margin-primary: 16px;
+  --margin-secondary: calc(var(--margin-primary) / 2);
   --padding-primary: 16px;
   --padding-secondary: calc(var(--padding-primary) / 2);
-  --primary-outline: #acacac dotted 1px;
+  --primary-outline: var(--border-color-outline) dotted 1px;
 }

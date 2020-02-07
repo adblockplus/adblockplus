@@ -11,6 +11,10 @@
     "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
     "message": "This page:"
   },
+  "block_element_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/bubble_ui/spec/abp/bubble-ui.md#block-element",
+    "message": "Block specific element on this website"
+  },
   "click_element_to_block_it": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/bubble_ui/spec/abp/bubble-ui.md#block-element",
     "message": "Click an element on the page to block it."
