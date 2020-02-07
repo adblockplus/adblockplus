@@ -447,118 +447,115 @@ main .card strong
 
 main .options
 {
-  display: flex;
   padding-top: var(--padding-primary);
 }
 
 main .options button
 {
+  width: 100%;
   padding: var(--padding-secondary);
-  border: 0;
-  color: var(--color-primary);
-  background-color: transparent;
+  border-radius: var(--border-radius-primary);
   font-size: var(--font-size-small);
   text-align: center;
-  transition: color 0.3s ease-in;
-  flex-grow: 1;
+  transition: border 0.3s ease-in;
 }
 
-main .options #block-element-cancel
+#block-element
 {
-  margin: auto;
-  flex-grow: 0;
+  border: 1px solid var(--border-color-ternary);
+  background-color: var(--background-color-ternary);
+  color: var(--color-link);
 }
 
-#block-element-cancel .block
+#block-element:hover,
+#block-element:focus
 {
-  margin-right: var(--margin-primary);
-  margin-left: var(--margin-primary);
+  border-color: var(--color-link);
+  outline: none;
 }
 
-html:not([dir="rtl"]) main .options button
+#block-element > *
 {
-  border-left: var(--border-width-thin)
-    var(--border-style-primary)
-    var(--border-color-primary);
+  display: block;
 }
 
-html:not([dir="rtl"]) main .options button:last-child
+#block-element > strong
 {
-  border-right: var(--border-width-thin)
-    var(--border-style-primary)
-    var(--border-color-primary);
+  display: flex;
+  justify-content: center;
+  font-size: var(--font-size-small);
 }
 
-html[dir="rtl"] main .options button
-{
-  border-right: var(--border-width-thin)
-    var(--border-style-primary)
-    var(--border-color-primary);
-}
-
-html[dir="rtl"] main .options button:last-child
-{
-  border-left: var(--border-width-thin)
-    var(--border-style-primary)
-    var(--border-color-primary);
-}
-
-main .options button .report::before,
-main .options button .block::before
+#block-element strong::before
 {
   display: inline-block;
+  width: var(--font-size-medium);
+  height: var(--font-size-medium);
+  margin: 0 4px;
+  background-image: url(icons/block-element.svg);
+  background-size: var(--font-size-medium);
   background-repeat: no-repeat;
   content: "";
 }
 
-html:not([dir="rtl"]) main .options button .report::before,
-html:not([dir="rtl"]) main .options button .block::before
+#issue-reporter
 {
-  margin-right: var(--margin-primary-half);
+  margin-top: var(--margin-secondary);
 }
 
-html[dir="rtl"] main .options button .report::before,
-html[dir="rtl"] main .options button .block::before
+#issue-reporter,
+#block-element-cancel
 {
-  margin-left: var(--margin-primary-half);
+  border: 1px solid var(--border-color-primary);
+  color: var(--color-primary);
 }
 
-main .options button .report::before
+#issue-reporter:hover,
+#issue-reporter:focus,
+#block-element-cancel:hover,
+#block-element-cancel:focus
 {
-  width: 13px;
-  height: 11px;
-  background-image: url(icons/report-issue.svg?normal#normal);
-  background-size: 13px 11px;
+  border-color: var(--border-color-outline);
+  outline: none;
 }
 
-main .options button .block::before
+#issue-reporter > span
 {
-  width: 12px;
-  height: 12px;
-  background-image: url(icons/block-element.svg?normal#normal);
-  background-size: 12px 12px;
-  transform: translateY(1);
+  background-image: url(icons/report-issue.svg);
+}
+
+#block-element-cancel > span
+{
+  background-image: url(icons/cancel.svg);
+}
+
+#issue-reporter > span,
+#block-element-cancel > span
+{
+  background-size: var(--font-size-small);
+}
+
+#page-info .background-icon
+{
+  background-repeat: no-repeat;
+  line-height: var(--font-size-big);
+}
+
+html:not([dir="rtl"]) #page-info .background-icon
+{
+  padding-left: var(--font-size-big);
+  background-position: left;
+}
+
+html[dir="rtl"] #page-info .background-icon
+{
+  padding-right: var(--font-size-big);
+  background-position: right;
 }
 
 main .options button[disabled]
 {
   opacity: 0.5;
-}
-
-main .options button:not([disabled]):hover .report::before
-{
-  background-image: url(icons/report-issue.svg?hover#hover);
-}
-
-body:not(.disabled) main .options button:hover .block::before
-{
-  background-image: url(icons/block-element.svg?hover#hover);
-}
-
-body:not(.disabled) main .options button:hover,
-body:not(.disabled) main .options button:focus
-{
-  color: var(--color-info);
 }
 
 main > *,
