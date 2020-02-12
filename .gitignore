@@ -2,6 +2,7 @@
 /node_modules/
 /screenshots/
 /smoke/
+/skin/icons/toolbar/*.png
 /skin/day1.css
 /skin/desktop-options.css
 /skin/first-run.css

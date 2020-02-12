@@ -46,6 +46,7 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
 - notifications
   - [clicked](#notificationsclicked)
   - [get](#notificationsget)
+  - [seen](#notificationsseen)
 - stats
   - [getBlockedPerPage](#statsgetblockedperpage)
 - subscriptions
@@ -281,6 +282,8 @@ See [`filterNotifier`][filternotifier].
 **Response**
 
 **Object** notification
+
+#### notifications.seen
 
 ---
 

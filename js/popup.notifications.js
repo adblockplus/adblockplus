@@ -17,24 +17,21 @@
 
 "use strict";
 
-const {activeTab, setPref} = require("./popup.utils.js");
+const api = require("./api");
+const {setPref} = require("./popup.utils");
 const {wire} = require("./io-element");
 const {$} = require("./dom");
 
-activeTab
-  .then((tab) =>
-  {
-    return browser.runtime.sendMessage({
-      type: "notifications.get",
-      displayMethod: "popup"
-    });
-  })
+api.notifications.get("popup")
   .then((notification) =>
   {
     if (notification)
+    {
       window.dispatchEvent(
         new CustomEvent("extension:notification", {detail: notification})
       );
+      api.notifications.seen();
+    }
   });
 
 // Using an event to make testing as easy as possible.

@@ -2,7 +2,7 @@ mocks/dist/
 node_modules/
 screenshots/
 smoke/
-skin/fonts/
+skin/icons/toolbar/*.png
 skin/day1.css
 skin/desktop-options.css
 skin/first-run.css
