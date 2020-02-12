@@ -34,6 +34,12 @@ const doclinks = {
 };
 module.exports.doclinks = doclinks;
 
+const notifications = {
+  get: (displayMethod) => send("notifications.get", {displayMethod}),
+  seen: () => send("notifications.seen")
+};
+module.exports.notifications = notifications;
+
 const prefs = {
   get: (key) => send("prefs.get", {key})
 };
