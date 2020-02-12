@@ -249,14 +249,6 @@ Commands:
   - Updates project `projectManagerId` and `subjectMatterId`.
   - **Note:** This command is automatically executed on `npm run $ xtm.create`.
 
-Fonts generation
-----------------
-
-`npm run fonts-gen` - Generates font subsets and css file with `@font-face`
-  and `:lang()` rules using unicode ranges extracted from extension locales.
-
-See `build/font-generation/config.js` for the script configuration.
-
 firstRun.html
 -------------
 

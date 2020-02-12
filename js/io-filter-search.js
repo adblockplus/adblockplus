@@ -203,7 +203,6 @@ class IOFilterSearch extends IOElement
     const {disabled} = this;
     this.html`
     <input
-      class="reset-font"
       placeholder="${this._placeholder}"
       onkeydown="${this}" onkeyup="${this}"
       ondrop="${this}" onpaste="${this}"
