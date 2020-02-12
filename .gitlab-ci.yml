@@ -9,7 +9,6 @@ before_script:
   # enable unsafe-perm to avoid problems with running npm as root
   # see adblockplusui#193
   - export npm_config_unsafe_perm=true
-  - pip install --user Jinja2 cryptography fonttools brotli
   - export PATH=$PATH:~/.local/bin
 
 stages:

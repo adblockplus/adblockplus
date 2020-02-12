@@ -6,8 +6,7 @@
     "$": "npm-dollar",
     "dev-build": "npm run $ bundle && npm run $ dev-build",
     "bundle": "npm run $ bundle",
-    "dist": "npm run fonts-gen && npm run bundle",
-    "fonts-gen": "node build/font-generation/index.js",
+    "dist": "npm run bundle",
     "lint": "npm run $ lint",
     "start": "http-server & npm run watch",
     "test": "npm run $ test",
@@ -91,8 +90,7 @@
       "download-translations": [
         "crowdin -k $CROWDIN_API_KEY download",
         "for file in $(grep -rw './locale' -le '{}'); do rm $file; done",
-        "node build/crowdin/clear-descriptions.js",
-        "npm run fonts-gen"
+        "node build/crowdin/clear-descriptions.js"
       ],
       "upload-strings": "crowdin -k $CROWDIN_API_KEY upload sources",
       "upload-translations": "crowdin -k $CROWDIN_API_KEY upload translations"
@@ -140,8 +138,7 @@
     "watch": {
       "dev-build": "watch 'npm run dev-build' ./css ./js",
       "bundle": "watch 'npm run bundle' ./css ./js",
-      "test": "watch 'npm run test' ./css ./js",
-      "fonts-gen": "watch 'npm run fonts-gen' ./locale"
+      "test": "watch 'npm run test' ./css ./js"
     },
     "xtm": {
       "create": "node build/xtm-integration/index.js --create",
