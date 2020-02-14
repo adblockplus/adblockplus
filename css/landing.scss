@@ -1,0 +1,378 @@
+/*
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-present eyeo GmbH
+ *
+ * Adblock Plus is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Adblock Plus is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@import "light.scss";
+
+/*******************************************************************************
+ * General
+ ******************************************************************************/
+
+:root
+{
+  --color-content: #FFF;
+  --color-footer: #000;
+  --color-highlight: #CA0000;
+  --color-primary: #0797E1;
+  --color-primary-hover: #0789CA;
+  --color-secondary: #FAFAFA;
+  --margin: 60px;
+  font-size: 16px;
+}
+
+body
+{
+  margin: 0;
+}
+
+a
+{
+  color: var(--color-link);
+}
+
+a.button
+{
+  display: inline-block;
+  padding: 1em 2.5em;
+  border: 3px solid var(--color-content);
+  border-radius: 0.5em;
+  font-weight: 600;
+  color: var(--color-content);
+  background-color: var(--color-primary);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 200ms;
+}
+
+a.button:hover
+{
+  background-color: var(--color-primary-hover);
+}
+
+h1,
+h2
+{
+  margin: 0 0 1rem;
+}
+
+h1
+{
+  font-size: 60px;
+  line-height: 70px;
+}
+
+h2
+{
+  font-size: 30px;
+  line-height: 40px;
+}
+
+h2.icon::before
+{
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  vertical-align: middle;
+  background-size: 100%;
+  content: "";
+}
+
+html[dir="ltr"] h2.icon::before
+{
+  margin-right: 10px;
+}
+
+html[dir="rtl"] h2.icon::before
+{
+  margin-left: 10px;
+}
+
+.block-icon
+{
+  --width: 40px;
+  position: relative;
+}
+
+html[dir="ltr"] .block-icon
+{
+  padding-left: calc(var(--width) + 20px);
+}
+
+html[dir="rtl"] .block-icon
+{
+  padding-right: calc(var(--width) + 20px);
+}
+
+.block-icon::before
+{
+  position: absolute;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  content: "";
+}
+
+.block-icon::before
+{
+  width: var(--width);
+  height: var(--width);
+  background-image: url(icons/warning.svg);
+}
+
+html[dir="ltr"] .block-icon::before
+{
+  left: 0;
+}
+
+html[dir="rtl"] .block-icon::before
+{
+  right: 0;
+}
+
+
+/*******************************************************************************
+ * Header
+ ******************************************************************************/
+
+header p
+{
+  margin: 1.5em 0;
+  color: #5A5A5A;
+}
+
+header .block-icon
+{
+  --width: 50px;
+}
+
+#logo
+{
+  width: 200px;
+  margin-bottom: 70px;
+}
+
+#hero
+{
+  flex: 0;
+}
+
+html[dir="ltr"] #hero
+{
+  margin-left: 40px;
+}
+
+html[dir="rtl"] #hero
+{
+  margin-right: 40px;
+}
+
+/*******************************************************************************
+ * Footer
+ ******************************************************************************/
+
+footer
+{
+  padding: 30px;
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--color-content);
+  background-color: var(--color-footer);
+}
+
+#copyright-notice a
+{
+  font-weight: 600;
+  text-decoration: none;
+  color: inherit;
+}
+
+#copyright-notice a:hover
+{
+  text-decoration: underline;
+}
+
+/*******************************************************************************
+ * Content
+ ******************************************************************************/
+
+.content
+{
+  position: relative;
+  box-sizing: border-box;
+  max-width: 940px;
+  margin: auto;
+  padding: var(--margin) 0 50px;
+}
+
+.content.columns
+{
+  display: flex;
+}
+
+.content p
+{
+  margin-top: 0;
+  line-height: 26px;
+}
+
+.content.columns > div
+{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.content.columns > div:last-child
+{
+  align-items: flex-end;
+}
+
+@media (max-width: 960px)
+{
+  .content.columns
+  {
+    flex-direction: column;
+  }
+
+  .content.columns > div:last-child
+  {
+    margin-top: 1em;
+    align-items: flex-start;
+  }
+}
+
+/*******************************************************************************
+ * Sections
+ ******************************************************************************/
+
+article
+{
+  position: relative;
+}
+
+article.primary,
+article:last-child
+{
+  margin-bottom: var(--margin);
+}
+
+article.primary::after,
+article.secondary::before,
+article:last-child::after
+{
+  position: absolute;
+  width: 100%;
+  height: var(--margin);
+  content: "";
+}
+
+article.primary::after,
+article:last-child::after
+{
+  top: 100%;
+}
+
+article.secondary::before
+{
+  top: calc(var(--margin) * -1);
+}
+
+section:not(:first-of-type)
+{
+  margin-top: 75px;
+}
+
+article.primary
+{
+  margin-top: calc(100px + var(--margin));
+  color: var(--color-content);
+  background-color: var(--color-primary);
+}
+
+article.primary::after
+{
+  background-image: linear-gradient(
+    to bottom right,
+    var(--color-primary) 49%,
+    var(--color-content) 50%
+  );
+}
+
+article.secondary
+{
+  background-color: var(--color-secondary);
+}
+
+article.secondary::before
+{
+  background-image: linear-gradient(
+    to bottom right,
+    var(--color-content) 49%,
+    var(--color-secondary) 50%
+  );
+}
+
+article:last-child::after
+{
+  background-image: linear-gradient(
+    to bottom right,
+    var(--color-content) 49%,
+    var(--color-footer) 50%
+  );
+}
+
+/*******************************************************************************
+ * Social
+ ******************************************************************************/
+
+#social .content
+{
+  max-width: 230px;
+  text-align: center;
+}
+
+#social p
+{
+  color: #5A5A5A;
+}
+
+#social a
+{
+  display: inline-block;
+  width: 3em;
+  height: 3em;
+  margin: 1em 10px 0;
+  border-radius: 1.5em;
+  background-color: #000;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#social a.email
+{
+  background-image: url(icons/email-white.svg);
+}
+
+#social a.facebook
+{
+  background-image: url(icons/facebook-white.svg);
+}
+
+#social a.twitter
+{
+  background-image: url(icons/twitter-white.svg);
+}

@@ -19,6 +19,7 @@
 
 const api = require("./api");
 const {$} = require("./dom");
+require("./landing");
 
 function initContact()
 {
@@ -26,17 +27,6 @@ function initContact()
   const subject = browser.i18n.getMessage("day1_community_contact_subject");
   const uri = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
   $("#contact").href = uri;
-}
-
-function initCopyrightNotice()
-{
-  api.doclinks.get("eyeo").then((url) =>
-  {
-    const year = new Date().getFullYear().toString();
-    const notice = document.getElementById("copyright-notice");
-    ext.i18n.setElementText(notice, "common_copyright", year);
-    ext.i18n.setElementLinks("copyright-notice", url);
-  });
 }
 
 function initPopupDummy()
@@ -74,6 +64,5 @@ function initTitle()
 }
 
 initContact();
-initCopyrightNotice();
 initPopupDummy();
 initTitle();
