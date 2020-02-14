@@ -104,7 +104,8 @@ window.addEventListener(
         type: "notifications.clicked",
         id: notification.id,
         link: linkTarget
-      });
+      })
+      .then(() => window.close());
     });
 
     function dismiss(evt)
