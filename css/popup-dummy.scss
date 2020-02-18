@@ -42,27 +42,7 @@
 
 #block-element
 {
-  outline: none;
-}
-
-#block-element .block
-{
   position: relative;
   z-index: 1;
-}
-
-#block-element .block::after
-{
-  --padding-x: 20px;
-  --padding-y: 10px;
-  position: absolute;
-  z-index: -1;
-  top: calc(var(--padding-y) * -1);
-  left: calc(var(--padding-x) * -1);
-  width: calc(100% + 2 * var(--padding-x));
-  height: calc(100% + 2 * var(--padding-y));
   border: 3px solid #CA0000;
-  border-radius: 100px;
-  background-color: #FFF;
-  content: "";
 }

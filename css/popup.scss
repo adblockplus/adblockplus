@@ -553,6 +553,16 @@ html[dir="rtl"] #page-info .background-icon
   background-position: right;
 }
 
+html:not([dir="rtl"]) #block-element .background-icon
+{
+  margin-left: calc(var(--font-size-big) * -1);
+}
+
+html[dir="rtl"] #block-element .background-icon
+{
+  margin-right: calc(var(--font-size-big) * -1);
+}
+
 main .options button[disabled]
 {
   opacity: 0.5;
