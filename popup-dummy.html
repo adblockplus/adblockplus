@@ -47,7 +47,7 @@
         <div class="page">
           <div class="details">
             <h3 data-i18n="status_page"></h3>
-            <p id="blocking-page">/</p>
+            <p id="blocking-page"></p>
           </div>
           <io-circle-toggle checked></io-circle-toggle>
         </div>
@@ -73,25 +73,39 @@
                   <span data-i18n="social_media_share"></span>
                 </button>
               </div>
+              <div class="stack links">
+                <span class="link">
+                  <a class="facebook" tabindex="-1" href="#">
+                    <img i18n-alt="share_on_facebook" src="skin/icons/share-on-facebook.svg" height="16">
+                  </a>
+                </span>
+                <span class="link">
+                  <a class="twitter" tabindex="-1" href="#">
+                    <img i18n-alt="share_on_twitter" src="skin/icons/share-on-twitter.svg" height="14">
+                  </a>
+                </span>
+                <button class="cancel" tabindex="-1" data-i18n="cancel"></button>
+              </div>
             </div>
           </div>
           <div class="options">
-            <button id="issue-reporter">
-              <span data-i18n="sendReport" class="report"></span>
-            </button>
             <button id="block-element">
-              <span data-i18n="easy_create_filter" class="block"></span>
+              <strong data-i18n="easy_create_filter" class="block background-icon"></strong>
+              <span data-i18n="click_element_to_block_it" class="block"></span>
+            </button>
+            <button id="issue-reporter">
+              <span data-i18n="sendReport" class="report background-icon"></span>
             </button>
           </div>
         </div>
         <div id="block-element-container">
           <div id="block-element-info" class="card">
               <strong data-i18n="easy_create_filter"></strong>
-              <span data-i18n="click_element_to_block_it"></span>
+              <span data-i18n="block_element_description"></span>
           </div>
           <div class="options">
             <button id="block-element-cancel">
-              <span data-i18n="cancel" class="block"></span>
+              <span data-i18n="cancel" class="block background-icon"></span>
             </button>
           </div>
         </div>
