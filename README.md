@@ -19,6 +19,11 @@ This should create and populate, both `./node_modules` folder and the `./buildto
 
 **Note:** [devDependencies](https://docs.npmjs.com/files/package.json#devdependencies) are not preinstalled during extension build, use [dependencies](https://docs.npmjs.com/files/package.json#dependencies) instead.
 
+Using adblockplusui as a dependency
+-----------------------------------
+
+In order to use adblockplusui as a dependency, some files need to be generated first by [installing its dependencies](#installing-dependencies) and then running `npm run dist`.
+
 Nightlies
 ---------
 

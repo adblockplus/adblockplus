@@ -35,6 +35,7 @@ test:
   stage: test
   script:
     - npm install
+    - npm run dist
     - npm run test
   only:
     variables:
@@ -46,6 +47,7 @@ build:
     # Since adblockplusui exists before we run build.py we need to call
     # npm install explicitly
     - npm install
+    - npm run dist
     # We cannot upload artifacts from outside the build folder so we need to
     # add a hirachy level to make space for adblockpluschrome
     - cd ..
