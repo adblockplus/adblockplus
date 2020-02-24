@@ -173,7 +173,7 @@ function updateStats(tab, blockedTotal)
   {
     const link = $(`#counter-panel .share a.${media}`);
     link.target = "_blank";
-    link.href = createShareLink(media, total);
+    link.href = createShareLink(media, blockedTotal);
   }
 }
 

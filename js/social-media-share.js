@@ -59,7 +59,7 @@ const shareLinksContent = {
   {
     return browser.i18n.getMessage(
       "share_on_twitter_message",
-      [blockedCount]
+      [blockedCount.toLocaleString()]
     );
   }
 };
