@@ -38,16 +38,16 @@
   display: none !important;
 }
 
+html
+{
+  background-color: var(--background-color-primary);
+}
+
 html,
 body,
 h2
 {
   margin: 0;
-}
-
-body
-{
-  overflow-x: hidden;
 }
 
 /*
@@ -73,11 +73,11 @@ html,
 body
 {
   padding: 0;
-  background-color: var(--background-color-primary);
 }
 
 body
 {
+  overflow-x: hidden;
   width: 340px;
   color: var(--color-primary);
   font-size: var(--font-size-primary);
