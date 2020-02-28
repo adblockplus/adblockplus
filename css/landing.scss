@@ -119,16 +119,11 @@ html[dir="rtl"] .block-icon
 .block-icon::before
 {
   position: absolute;
+  width: var(--width);
+  height: var(--width);
   background-size: 100%;
   background-repeat: no-repeat;
   content: "";
-}
-
-.block-icon::before
-{
-  width: var(--width);
-  height: var(--width);
-  background-image: url(icons/warning.svg);
 }
 
 html[dir="ltr"] .block-icon::before

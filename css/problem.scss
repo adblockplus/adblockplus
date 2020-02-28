@@ -1,0 +1,166 @@
+/*
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-present eyeo GmbH
+ *
+ * Adblock Plus is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Adblock Plus is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@import "landing.scss";
+
+/*******************************************************************************
+ * Header
+ ******************************************************************************/
+
+#title::before
+{
+  margin-top: 15px;
+}
+
+#title.block-icon::before
+{
+  background-image: url(icons/warning.svg);
+}
+
+.note
+{
+  padding: 1em;
+  border: 1px solid #FFC478;
+  border-radius: 6px;
+  font-size: 0.9em;
+  color: #000;
+  background-color: #FFF1DF;
+}
+
+/*******************************************************************************
+ * Content
+ ******************************************************************************/
+
+#solution > .block-icon::before
+{
+  background-image: url(icons/checkmark-green.svg);
+}
+
+#solution ol
+{
+  position: relative;
+  padding: 0;
+  margin-top: 2em;
+  color: #5A5A5A;
+}
+
+#solution ol::before
+{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  height: auto;
+  background-color: #E8E8E8;
+  content: "";
+}
+
+html[dir="ltr"] #solution ol::before
+{
+  left: -2.5em;
+}
+
+html[dir="rtl"] #solution ol::before
+{
+  right: -2.5em;
+}
+
+#solution li
+{
+  margin: 0 -0.5em;
+  padding: 0 0.5em;
+}
+
+#solution li:not(:last-child)
+{
+  margin-bottom: 1.5em;
+}
+
+#solution a
+{
+  font-weight: 700;
+}
+
+#solution :not(li) > a
+{
+  font-size: 30px;
+}
+
+#solution a::after
+{
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  vertical-align: middle;
+  background-image: url(icons/open-link.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+}
+
+html[dir="ltr"] #solution a::after
+{
+  margin-left: 0.3em;
+}
+
+html[dir="rtl"] #solution a::after
+{
+  margin-right: 0.3em;
+  transform: scaleX(-1);
+}
+
+#solution .os
+{
+  font-style: normal;
+}
+
+#solution .os::after
+{
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  content: ""
+}
+
+html[dir="ltr"] #solution .os::after
+{
+  margin-left: 0.3em;
+}
+
+html[dir="rtl"] #solution .os::after
+{
+  margin-right: 0.3em;
+}
+
+#solution .os.mac::after
+{
+  background-image: url(icons/mac.svg);
+}
+
+#solution .os.windows::after
+{
+  background-image: url(icons/windows.svg);
+}
+
+body[data-application="opera"] [data-hide="opera"],
+body:not([data-application="opera"]) [data-show="opera"]
+{
+  display: none;
+}

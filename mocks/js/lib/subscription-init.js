@@ -17,10 +17,10 @@
 
 "use strict";
 
-const params = require("../config/env");
+const {params} = require("../config/env");
 
 const isDataCorrupted = () => params.dataCorrupted;
-const isReinitialized = () => params.filterlistsReinitialized;
+const isReinitialized = () => params.reinitialized;
 
 module.exports = {
   isDataCorrupted,

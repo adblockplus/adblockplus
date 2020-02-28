@@ -130,7 +130,7 @@ header img
 
 #notification .content::before
 {
-  --border-top-color: var(--border-color-primary);
+  --border-top-color: var(--color-default);
   display: block;
   overflow: hidden;
   height: var(--border-width-thick-doubled);

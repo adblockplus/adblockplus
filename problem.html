@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+  - This file is part of Adblock Plus <https://adblockplus.org/>,
+  - Copyright (C) 2006-present eyeo GmbH
+  -
+  - Adblock Plus is free software: you can redistribute it and/or modify
+  - it under the terms of the GNU General Public License version 3 as
+  - published by the Free Software Foundation.
+  -
+  - Adblock Plus is distributed in the hope that it will be useful,
+  - but WITHOUT ANY WARRANTY; without even the implied warranty of
+  - MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  - GNU General Public License for more details.
+  -
+  - You should have received a copy of the GNU General Public License
+  - along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+<html>
+<head>
+  <title data-i18n="problem_title"></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="skin/fonts/font.css">
+  <link rel="stylesheet" type="text/css" href="skin/problem.css">
+  <script src="polyfill.js"></script>
+  <script src="ext/common.js"></script>
+  <script src="ext/content.js"></script>
+  <script src="common.js"></script>
+  <script src="i18n.js"></script>
+  <script src="problem.js" defer></script>
+</head>
+<body>
+
+<main>
+  <header>
+    <div class="content columns">
+      <div id="title-wrapper">
+        <a data-doclink="adblock_plus" target="_blank">
+          <img id="logo" src="skin/icons/abp-full-logo.svg" alt="Adblock Plus">
+        </a>
+        <div id="title" class="block-icon">
+          <h1 data-i18n="problem_title"></h1>
+          <p data-hide="opera" data-i18n="problem_subtitle"></p>
+          <p data-show="opera" data-i18n="problem_subtitle_opera"></p>
+          <p class="note" data-i18n="problem_note"></p>
+        </div>
+      </div>
+      <div id="hero">
+        <img src="skin/icons/problem/data-corrupted.png" alt="">
+      </div>
+    </div>
+  </header>
+
+  <article id="solution" class="secondary">
+    <div class="content block-icon">
+      <h2 data-i18n="problem_solution_title"></h2>
+      <div data-hide="opera">
+        <a id="store-link" src="#" target="_blank" data-i18n="problem_solution_action"></a>
+      </div>
+      <div data-show="opera">
+        <ol>
+          <li>
+            <a data-doclink="opera_store" target="_blank"
+              data-i18n="problem_solution_opera_step_1"></a>
+          </li>
+          <li data-i18n="problem_solution_opera_step_2"></li>
+          <li data-i18n="problem_solution_opera_step_3"></li>
+          <li data-i18n="problem_solution_opera_step_4"></li>
+          <li data-i18n="problem_solution_opera_step_5"></li>
+          <li data-i18n="problem_solution_opera_step_6"></li>
+          <li data-i18n="problem_solution_opera_step_7"></li>
+        </ol>
+      </div>
+    </div>
+  </article>
+
+  <article id="social">
+    <div class="content">
+      <h2 data-i18n="problem_social_title"></h2>
+      <p data-i18n="problem_social_description"></p>
+      <p>
+        <a class="twitter" target="_blank" data-doclink="social_twitter"
+          data-i18n-title="problem_social_twitter"></a>
+        <a class="facebook" target="_blank" data-doclink="social_facebook"
+          data-i18n-title="problem_social_facebook"></a>
+        <a class="email" href="mailto:support@adblockplus.org"
+          data-i18n-title="problem_social_email"></a>
+        </a>
+      </p>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <span id="copyright-notice"></span>
+</footer>
+
+</body>
+</html>

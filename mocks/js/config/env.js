@@ -57,9 +57,9 @@ const params = {
   dataCorrupted: false,
   downloadStatus: "synchronize_ok",
   filterError: false,
-  filterlistsReinitialized: false,
   notification: null,
   pageWhitelisted: false,
+  reinitialized: false,
   showPageOptions: false
 };
 updateFromURL(params);

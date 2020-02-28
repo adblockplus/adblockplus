@@ -82,6 +82,16 @@ If the `locale` uses any Chinese that starts with `zh`, the _Share numbers with 
 
 No parameters.
 
+### problem.html
+
+| Parameter | Value | Description |
+|-|-|-|
+| application | `edge` | Shows instructions for Edge (overrules platform) |
+| | `opera` | Shows instructions for Opera (overrules platform) |
+| platform | `chromium` | Shows instructions for Chromium-based browsers |
+| | `edgehtml` | Shows instructions for EdgeHTML-based browsers |
+| | `gecko` | Shows instructions for Gecko-based browsers |
+
 ### updates.html
 
 No parameters.
