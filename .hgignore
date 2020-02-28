@@ -9,6 +9,7 @@ skin/first-run.css
 skin/issue-reporter.css
 skin/popup.css
 skin/popup-dummy.css
+skin/problem.css
 skin/web.css
 ^day1.js
 ^desktop-options.js
@@ -16,4 +17,5 @@ skin/web.css
 ^issue-reporter.js
 ^popup.js
 ^popup-dummy.js
+^problem.js
 ^package-lock.json

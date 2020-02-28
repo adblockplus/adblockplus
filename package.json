@@ -54,6 +54,7 @@
         "$ create.js ./mocks/js/background.js ./mocks/dist/background.js"
       ],
       "popup": "$ create.bundle popup",
+      "problem": "$ create.bundle problem",
       "test": [
         [
           "if [ ! -z $1 ]; then",
