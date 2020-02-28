@@ -665,8 +665,8 @@ function execAction(action, element)
       return true;
     case "add-predefined-subscription": {
       const dialog = $("#dialog-content-predefined");
-      const title = $("h3", dialog).textContent;
-      const url = $(".url", dialog).textContent;
+      const title = $(".title > span", dialog).textContent;
+      const url = $(".url > a", dialog).textContent;
       addEnableSubscription(url, title);
       closeDialog();
       return true;
@@ -1162,7 +1162,8 @@ function openDialog(name)
 {
   const dialog = $("#dialog");
   dialog.setAttribute("aria-hidden", false);
-  dialog.setAttribute("aria-labelledby", "dialog-title-" + name);
+  dialog.setAttribute("aria-labelledby", `dialog-title-${name}`);
+  dialog.setAttribute("aria-describedby", `dialog-description-${name}`);
   document.body.setAttribute("data-dialog", name);
 
   let defaultFocus = $(`#dialog-content-${name} .default-focus`);
@@ -1567,8 +1568,11 @@ port.onMessage.addListener((message) =>
           if (ALLOWED_PROTOCOLS.test(url))
           {
             const dialog = $("#dialog-content-predefined");
-            $("h3", dialog).textContent = title;
-            $(".url", dialog).textContent = url;
+            $(".title > span", dialog).textContent = title;
+            $(".title", dialog).hidden = !title;
+            const link = $(".url > a", dialog);
+            link.href = url;
+            link.textContent = url;
             openDialog("predefined");
           }
           else

@@ -390,7 +390,7 @@
 
     <!-- Dialog -->
     <div id="dialog-background"></div>
-    <div id="dialog" role="dialog" aria-hidden="true">
+    <div id="dialog" role="dialog" aria-modal="true" aria-hidden="true">
       <header>
         <span id="dialog-title">
           <h3 id="dialog-title-about" data-i18n="options_dialog_about_title"></h3>
@@ -404,12 +404,14 @@
       <div id="dialog-body" class="content">
         <!-- About Adblock Plus -->
         <div id="dialog-content-about" class="dialog-content">
-          <p id="abp-version"></p>
-          <p id="copyright"></p>
-          <p data-i18n="options_dialog_about_trademark"></p>
-          <p>
-            <a id="privacy-policy" class="i18n_issueReporter_privacyPolicy" target="_blank"></a>
-          </p>
+          <div id="dialog-description-about">
+            <p id="abp-version"></p>
+            <p id="copyright"></p>
+            <p data-i18n="options_dialog_about_trademark"></p>
+            <p>
+              <a id="privacy-policy" class="i18n_issueReporter_privacyPolicy" target="_blank"></a>
+            </p>
+          </div>
           <p>
             <button data-i18n="options_close" class="primary default-focus" data-action="close-dialog"></button>
           </p>
@@ -439,18 +441,29 @@
         </div>
         <!-- Add predefined subscription -->
         <div id="dialog-content-predefined" class="dialog-content">
-          <div class="dialog-content-block">
-            <h3></h3>
-            <div class="url"></div>
-            <button data-i18n="options_dialog_predefined_confirm" class="default-focus primary" data-action="add-predefined-subscription"></button>
+          <div id="dialog-description-predefined">
+            <div class="field title">
+              <h3 data-i18n="options_dialog_predefined_subscription_title"></h3>
+              <span></span>
+            </div>
+            <div class="field url">
+              <h3 data-i18n="options_dialog_predefined_subscription_url"></h3>
+              <a href="#" target="_blank"></a>
+            </div>
           </div>
+          <button class="default-focus primary"
+            data-action="add-predefined-subscription"
+            data-i18n="options_dialog_predefined_confirm"></button>
+          <button class="secondary" data-action="close-dialog"
+            data-i18n="options_customFilter_cancel"></button>
         </div>
         <!-- Reject invalid subscriptions -->
         <div id="dialog-content-invalid" class="dialog-content">
-          <div class="dialog-content-block">
-            <div class="url" data-i18n="options_dialog_invalid_message"></div>
-            <button data-i18n="options_customFilter_cancel" class="default-focus primary" data-action="close-dialog"></button>
-          </div>
+          <div class="error">!</div>
+          <div id="dialog-description-invalid"
+            data-i18n="options_dialog_invalid_message"></div>
+          <button class="default-focus primary" data-action="close-dialog"
+            data-i18n="options_customFilter_cancel"></button>
         </div>
       </div>
       <!-- Placeholder element to determine when to wrap focus around -->
