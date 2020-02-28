@@ -129,6 +129,14 @@ button[aria-disabled="true"]
   cursor: default;
 }
 
+button.primary:not(.icon),
+.button.primary:not(.icon),
+button.secondary:not(.icon),
+.button.secondary:not(.icon)
+{
+  padding: 0.6rem 2rem;
+}
+
 /* Ignore .icon to avoid overriding "specific" (primary, secondary) styles */
 button.primary:not(.icon),
 .button.primary:not(.icon)
@@ -295,7 +303,7 @@ html[dir="rtl"] .side-controls > *
 
 .side-controls.wrap > *
 {
-  margin: 0.6rem 0rem;
+  margin: 0.6rem 0;
 }
 
 html:not([dir="rtl"]) .side-controls.wrap > *
@@ -530,7 +538,7 @@ button[role="checkbox"][disabled].icon.toggle::before
   top: calc(var(--padding-primary) * -2);
   right: 0;
   z-index: 10;
-  color: #C11D27;
+  color: var(--color-error);
 }
 
 [data-validation] .side-controls
@@ -551,7 +559,7 @@ html[dir="rtl"] [data-validation] .main-input input ~ .error-msg
 
 [data-validation] .main-input input:focus:invalid
 {
-  border-color: #C11D27;
+  border-color: var(--color-error);
 }
 
 [data-validation] .main-input input:focus:invalid ~ .attention::before,
@@ -1515,31 +1523,42 @@ body[data-dialog] #dialog-background
   position: fixed;
   z-index: var(--z-dialog);
   top: 100px;
-  right: 0px;
-  left: 0px;
-  width: 50vw;
+  right: 0;
+  left: 0;
+  width: 700px;
   margin: auto;
   border-radius: var(--border-radius);
   background-color: #FFF;
+  box-shadow: 0 -4px 20px 0 rgba(255, 255, 255, 0.11);
 }
 
 #dialog header
 {
   display: flex;
-  padding: 0.7rem 1.5rem;
+  padding: 1.5em;
   background-color: #0797E1;
 }
 
-#dialog header h3
+#dialog-title
 {
-  margin: 0rem;
-  font-size: 1rem;
-  font-weight: 700;
+  color: #FFF;
+  flex: 1;
+}
+
+#dialog-title h3
+{
+  margin: 0;
+  text-transform: uppercase;
+}
+
+#dialog button
+{
+  display: inline-block;
 }
 
 .close
 {
-  margin: 0rem;
+  margin: 0;
   cursor: pointer;
 }
 
@@ -1547,11 +1566,59 @@ body[data-dialog] #dialog-background
 {
   overflow: auto;
   max-height: 60vh;
+  padding: 2rem 1rem;
 }
 
-.dialog-content
+#dialog-body button
 {
-  margin: 1rem 1.8rem;
+  margin-top: 2rem;
+}
+
+#dialog-body h3
+{
+  margin: 0 0 0.5em;
+  line-height: 0.9em;
+  font-size: 0.9em;
+}
+
+#dialog-body h3::before
+{
+  position: absolute;
+  width: 18px;
+  height: 11px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+}
+
+html[dir="ltr"] #dialog-body h3::before
+{
+  margin-left: -26px;
+}
+
+html[dir="rtl"] #dialog-body h3::before
+{
+  margin-right: -26px;
+}
+
+#dialog-body .field.title h3::before
+{
+  background-image: url(icons/filter-list-title.svg);
+}
+
+#dialog-body .field.url h3::before
+{
+  background-image: url(icons/filter-list-url.svg);
+}
+
+html[dir="ltr"] #dialog-body button + button
+{
+  margin-left: 1rem;
+}
+
+html[dir="rtl"] #dialog-body button + button
+{
+  margin-right: 1rem;
 }
 
 #dialog-content-language-add
@@ -1560,14 +1627,10 @@ body[data-dialog] #dialog-background
 }
 
 #dialog-content-about,
+#dialog-content-invalid,
 #filters-box button[role="combobox"]
 {
   text-align: center;
-}
-
-#dialog-content-about button
-{
-  margin: 1.5rem auto 1.8rem;
 }
 
 #dialog-content-about p
@@ -1580,6 +1643,51 @@ body[data-dialog] #dialog-background
   margin-top: 2.45rem;
 }
 
+#dialog-content-invalid
+{
+  color: var(--color-error);
+}
+
+#dialog-content-invalid .error
+{
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 1em;
+  border-radius: 50%;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 50px;
+  background-color: var(--background-color-error);
+}
+
+#dialog-content-invalid strong
+{
+  padding: 2px 5px;
+  border-radius: var(--border-radius);
+  font-style: italic;
+  background-color: var(--background-color-error);
+}
+
+#dialog .field
+{
+  margin-bottom: 1.5em;
+}
+
+html[dir="ltr"] #dialog .field
+{
+  margin-left: 28px;
+}
+
+html[dir="rtl"] #dialog .field
+{
+  margin-right: 28px;
+}
+
+#dialog .field:last-of-type
+{
+  margin-bottom: 0;
+}
+
 #dialog .table
 {
   width: 100%;
@@ -1590,28 +1698,38 @@ body[data-dialog] #dialog-background
   margin-top: 24px;
 }
 
-#dialog-title
+#dialog .url > a
 {
-  color: #FFF;
-  font-size: 16px;
-  flex: 1;
-}
-
-#dialog-body .dialog-content-block
-{
-  padding: 12px 0px;
-}
-
-#dialog .url
-{
-  margin-top: 10px;
-  margin-bottom: 20px;
   word-wrap: break-word;
+  text-decoration: none;
 }
 
-#dialog-content-predefined h3:empty
+#dialog .url > a:hover
 {
-  display: none;
+  text-decoration: underline;
+}
+
+#dialog .url > a::after
+{
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  vertical-align: middle;
+  background-image: url(icons/open-link.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+}
+
+html[dir="ltr"] #dialog .url > a::after
+{
+  margin-left: 0.3em;
+}
+
+html[dir="rtl"] #dialog .url > a::after
+{
+  margin-right: 0.3em;
+  transform: scaleX(-1);
 }
 
 /* stylelint-disable indentation */
@@ -1634,11 +1752,6 @@ body:not([data-dialog]) #dialog
   display: none;
 }
 /* stylelint-enable indentation */
-
-#dialog-title-invalid
-{
-  text-transform: uppercase;
-}
 
 /*
   Notification

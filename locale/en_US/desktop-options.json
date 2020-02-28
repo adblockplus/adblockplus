@@ -425,11 +425,19 @@
   },
   "options_dialog_invalid_message": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
-    "message": "For security reasons, only HTTPS filter lists can be added."
+    "message": "For security reasons, only <strong>HTTPS</strong> filter lists and <strong>data</strong> URLs can be added."
   },
   "options_dialog_predefined_confirm": {
-    "description": "Confirming to add a predefined subscription when asked in a dialog",
-    "message": "Yes, use this filter list"
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "Yes, add this filter list"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "Title"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "description": "Dialog title for adding a predefined subscription",
