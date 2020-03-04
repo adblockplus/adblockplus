@@ -1,0 +1,29 @@
+{
+  "title": {
+    "image": "skin/icons/updates/panda.gif"
+  },
+  "fixes": [
+    {
+      "id": "f1",
+      "image": {
+        "url": "skin/icons/updates/panda.gif"
+      },
+      "doclink": "eyeo"
+    },
+    {
+      "id": "f2"
+    }
+  ],
+  "improvements": [
+    {
+      "id": "i1",
+      "image": {
+        "url": "skin/icons/updates/panda.gif"
+      }
+    },
+    {
+      "id": "i2",
+      "doclink": "eyeo"
+    }
+  ]
+}

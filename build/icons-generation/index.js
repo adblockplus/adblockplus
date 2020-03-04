@@ -77,7 +77,10 @@ function optimizePNG(filepath)
 {
   return new Promise((resolve, reject) =>
   {
-    const proc = childProcess.spawn("npm", ["run", "optimize.png", filepath]);
+    const proc = childProcess.spawn(
+      "npm",
+      ["run", "$", "optimize.png", filepath]
+    );
     proc.on("close", (code) =>
     {
       if (code)

@@ -164,10 +164,9 @@ When omitted, all properties will be executed so that `npm run $ bundle.desktop-
 Optimizing Assets
 -----------------
 
-The `package.json` comes with dev dependencies such as [svgo](https://www.npmjs.com/package/svgo) or [pngquant](https://www.npmjs.com/package/pngquant).
+The `package.json` comes with dev dependencies such as [svgo](https://www.npmjs.com/package/svgo), [pngquant](https://www.npmjs.com/package/pngquant) or [gifsicle](https://www.npmjs.com/package/gifsicle).
 
-In order to optimize an entry you can either use `npm run optimize.svg skin/icons/abp-logo.svg` for SVGs, or `npm run optimize.png skin/icons/abp-128.png` for PNGs.
-
+In order to optimize an entry you can either use `npm run $ optimize.svg <path to file>` for SVGs, `npm run $ optimize.png <path to file>` for PNGs or `npm run $ optimize.gif <path to file>` for GIFs.
 
 Watching
 --------

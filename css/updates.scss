@@ -1,0 +1,149 @@
+/*
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-present eyeo GmbH
+ *
+ * Adblock Plus is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Adblock Plus is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@import "landing.scss";
+
+/*******************************************************************************
+ * Header
+ ******************************************************************************/
+
+header
+{
+  margin-bottom: 20px;
+}
+
+#title
+{
+  flex: 1;
+}
+
+#version
+{
+  padding: 0.3em 0.5em;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  color: rgb(89, 164, 6);
+  background-color: rgba(89, 164, 6, 0.25);
+}
+
+h1
+{
+  margin: 10px 0 14px;
+}
+
+#title p
+{
+  margin: 0;
+}
+
+/*******************************************************************************
+ * Updates
+ ******************************************************************************/
+
+#improvements h2::before
+{
+  background-image: url(icons/improvements.svg);
+}
+
+#fixes h2::before
+{
+  background-image: url(icons/fixes.svg);
+}
+
+.updates
+{
+  padding: 0;
+  line-height: 22px;
+}
+
+.updates > li
+{
+  padding: 20px 50px;
+  margin-bottom: 20px;
+  border: 1px solid #EBEBEB;
+  border-radius: var(--border-radius);
+  background-color: #FFF;
+  list-style: none;
+}
+
+html[dir="ltr"] .updates > li
+{
+  padding-right: 100px;
+}
+
+html[dir="rtl"] .updates > li
+{
+  padding-left: 100px;
+}
+
+.updates h3
+{
+  position: relative;
+  margin-top: 0;
+  font-size: 1rem;
+  color: #5A5A5A;
+}
+
+.updates h3::before
+{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-image: url(icons/update.svg);
+  background-size: 100%;
+  content: "";
+}
+
+html[dir="ltr"] .updates h3::before
+{
+  left: -35px;
+}
+
+html[dir="rtl"] .updates h3::before
+{
+  right: -35px;
+}
+
+.updates p
+{
+  font-size: 14px;
+  color: #757575;
+}
+
+.updates p:last-child
+{
+  margin-bottom: 0;
+}
+
+.updates a
+{
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.updates a:hover
+{
+  text-decoration: underline;
+}
+
+.updates img
+{
+  border: 1px solid #DCDCDC;
+  background-color: #F8F8F8;
+}
