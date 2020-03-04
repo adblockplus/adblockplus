@@ -66,6 +66,7 @@ function setupToggles(tab)
     }
     else if (isWhitelisted.page)
     {
+      document.body.classList.add("disabled");
       setPageStateAfterDomain(page, false, false);
     }
     toggleChecked = domain.checked;

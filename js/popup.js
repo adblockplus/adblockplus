@@ -29,7 +29,6 @@ const {$, $$} = require("./dom");
 
 const {
   getDoclinks,
-  getPref,
   reportIssue,
   whenPageReady
 } = require("./popup.utils.js");
