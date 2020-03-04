@@ -10,12 +10,14 @@
 /skin/popup.css
 /skin/popup-dummy.css
 /skin/problem.css
+/skin/updates.css
 /skin/web.css
 /day1.js
 /desktop-options.js
 /first-run.js
 /issue-reporter.js
+/package-lock.json
 /popup.js
 /popup-dummy.js
 /problem.js
-/package-lock.json
+/updates.js

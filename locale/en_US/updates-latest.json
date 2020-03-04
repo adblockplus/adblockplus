@@ -1,0 +1,38 @@
+{
+  "notification_updates_message": {
+    "message": "TEST NOTIFICATION MESSAGE <a>LINK</a>"
+  },
+  "notification_updates_title": {
+    "message": "TEST NOTIFICATION TITLE"
+  },
+  "updates_update_f1_description": {
+    "message": "TEST DESCRIPTION"
+  },
+  "updates_update_f1_image": {
+    "message": "TEST IMAGE"
+  },
+  "updates_update_f1_title": {
+    "message": "TEST TITLE"
+  },
+  "updates_update_f2_description": {
+    "message": "TEST DESCRIPTION"
+  },
+  "updates_update_f2_title": {
+    "message": "TEST TITLE"
+  },
+  "updates_update_i1_description": {
+    "message": "TEST DESCRIPTION"
+  },
+  "updates_update_i1_image": {
+    "message": "TEST IMAGE"
+  },
+  "updates_update_i1_title": {
+    "message": "TEST TITLE"
+  },
+  "updates_update_i2_description": {
+    "message": "TEST DESCRIPTION"
+  },
+  "updates_update_i2_title": {
+    "message": "TEST TITLE"
+  }
+}

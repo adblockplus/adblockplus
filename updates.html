@@ -15,78 +15,76 @@
   - You should have received a copy of the GNU General Public License
   - along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
   -->
-
 <html>
-  <head>
-    <title data-i18n="updates_status"></title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="skin/fonts/font.css" rel="stylesheet">
-    <link href="skin/updates.css" rel="stylesheet">
-    <script src="polyfill.js"></script>
-    <script src="ext/common.js"></script>
-    <script src="ext/content.js"></script>
-    <script src="common.js"></script>
-    <script src="i18n.js"></script>
-    <script src="updates.js"></script>
-  </head>
+<head>
+  <title data-i18n="updates_title"></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="skin/fonts/font.css">
+  <link rel="stylesheet" type="text/css" href="skin/updates.css">
+  <script src="polyfill.js"></script>
+  <script src="ext/common.js"></script>
+  <script src="ext/content.js"></script>
+  <script src="common.js"></script>
+  <script src="i18n.js"></script>
+  <script src="updates.js" defer></script>
+</head>
+<body>
 
-  <body>
-    <main>
-      <div id="container">
-
-        <header class="column graphic-column">
-          <div class="update-graphic-container">
-            <div class="update-graphic-content">
-              <img src="skin/icons/abp-logo.svg">
-              <div class="version-details">
-                <h2 data-i18n="updates_status"></h2>
-              </div>
-            </div>
+<main>
+  <header>
+    <div class="content columns">
+      <div id="title-wrapper">
+        <a data-doclink="adblock_plus">
+          <img id="logo" src="skin/icons/abp-full-logo.svg" alt="Adblock Plus">
+        </a>
+        <div id="title">
+          <div>
+            <span id="version"></span>
           </div>
-        </header>
-
-        <section class="column content-column">
-
-          <div id="content">
-
-            <header>
-              <h1 data-i18n="updates_heading"></h1>
-              <p data-i18n="updates_subheading"></p>
-            </header>
-
-            <article class="feature-entry">
-              <img class="feature-icon" src="skin/icons/updates/rocket.svg">
-              <p id="options-page-news" data-i18n="updates_optionsPageNews"></p>
-            </article>
-
-            <article class="feature-entry">
-              <img class="feature-icon" src="skin/icons/updates/thumbs-up.svg">
-              <p id="block-ads-text" data-i18n="updates_blockAds"></p>
-            </article>
-
-            <h2 data-i18n="updates_phone"></h2>
-
-            <article class="feature-entry">
-              <img class="feature-icon" src="skin/icons/updates/mobile.svg">
-              <p id="adblock-browser-text" data-i18n="updates_adblockBrowser"></p>
-            </article>
-
-            <div class="store-buttons">
-              <a class="store-button applestore-button" data-doclink="adblock_browser_ios_store">
-                <img src="skin/backgrounds/appstore.svg" alt="apple store button">
-              </a>
-              <a class="store-button googleplay-button" data-doclink="adblock_browser_android_store">
-                <img src="skin/backgrounds/googleplay.svg" alt="google play store button">
-              </a>
-            </div>
-
-          </div>
-
-        </section>
-
+          <h1 data-i18n="updates_title"></h1>
+          <p data-i18n="updates_subtitle"></p>
+        </div>
       </div>
+      <div id="hero">
+        <img src="" alt="">
+      </div>
+    </div>
+  </header>
 
-    </main>
-  </body>
+  <article id="updates" class="secondary">
+    <div class="content">
+      <section id="improvements">
+        <h2 class="icon" data-i18n="updates_improvements_title"></h2>
+        <ul class="updates"></ul>
+      </section>
+
+      <section id="fixes">
+        <h2 class="icon" data-i18n="updates_fixes_title"></h2>
+        <ul class="updates"></ul>
+      </section>
+    </div>
+  </article>
+
+  <article id="social">
+    <div class="content">
+      <h2 data-i18n="updates_social_title"></h2>
+      <p data-i18n="updates_social_description"></p>
+      <p>
+        <a class="twitter" target="_blank" data-doclink="social_twitter"
+          data-i18n-title="updates_social_twitter"></a>
+        <a class="facebook" target="_blank" data-doclink="social_facebook"
+          data-i18n-title="updates_social_facebook"></a>
+        <a class="email" href="mailto:support@adblockplus.org"
+          data-i18n-title="updates_social_email"></a>
+      </p>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <span id="copyright-notice"></span>
+</footer>
+
+</body>
 </html>

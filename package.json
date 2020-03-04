@@ -13,9 +13,7 @@
     "test": "npm run $ test",
     "watch": "npm run $ watch",
     "csv-export": "node build/csv-exporter/main.js -e",
-    "csv-import": "node build/csv-exporter/main.js -i",
-    "optimize.svg": "svgo --pretty -i $1",
-    "optimize.png": "pngquant --skip-if-larger --force --ext .png --speed 1 -- $1"
+    "csv-import": "node build/csv-exporter/main.js -i"
   },
   "$": {
     "dev-build": [
@@ -61,7 +59,8 @@
           " echo \"/* eslint-disable */$(browserify --node ./test/smoke/tests/$1.js)\">./smoke/$1.js;",
           "fi"
         ]
-      ]
+      ],
+      "updates": "$ create.bundle updates"
     },
     "create": {
       "bundle": {
@@ -104,6 +103,11 @@
         "node build/locale-linter/test",
         "node build/locale-linter ./locale/**/*.json"
       ]
+    },
+    "optimize": {
+      "gif": "gifsicle -o $1 $1",
+      "png": "pngquant --skip-if-larger --force --ext .png --speed 1 -- $1",
+      "svg": "svgo --pretty -i $1"
     },
     "test": {
       "unit": "mocha ./test/unit",
@@ -168,6 +172,7 @@
     "eslint": "^6.2.1",
     "eslint-config-eyeo": "^2.1.1",
     "form-data": "^2.3.3",
+    "gifsicle": "^5.0.0",
     "glob": "^7.1.2",
     "http-server": "^0.11.1",
     "minimist": "^1.2.0",

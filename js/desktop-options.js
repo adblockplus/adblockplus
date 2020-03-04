@@ -586,11 +586,11 @@ function getLanguageTitle(item)
 function loadRecommendations()
 {
   return Promise.all([
-    fetch("data/languages.json").then((resp) => resp.json()),
+    fetch("./data/locales.json").then((resp) => resp.json()),
     api.app.get("recommendations")
-  ]).then(([languagesData, recommendations]) =>
+  ]).then(([localeData, recommendations]) =>
   {
-    languages = languagesData;
+    languages = localeData.nativeNames;
 
     const subscriptions = [];
     for (const recommendation of recommendations)

@@ -134,6 +134,7 @@
         readCatalog(locale, "filter-validation.json");
         readCatalog(locale, "issue-reporter.json");
         readCatalog(locale, "popup.json");
+        readCatalog(locale, "updates-latest.json");
         readCatalog(locale, catalogFile);
       }
     }

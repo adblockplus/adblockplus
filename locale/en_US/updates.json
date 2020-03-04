@@ -1,23 +1,42 @@
 {
-  "updates_status": {
-    "message": "Update complete"
+  "updates_fixes_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
+    "message": "Fixes"
   },
-  "updates_heading": {
-    "message": "Adblock Plus has been updated!"
+  "updates_improvements_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
+    "message": "Improvements"
   },
-  "updates_subheading": {
-    "message": "What's new?"
+  "updates_link": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
+    "message": "Read more"
   },
-  "updates_optionsPageNews": {
-    "message": "Brand new Settings page - revamped and restyled with more privacy and security options - so it's easier to <a>customize Adblock Plus just like you want it</a>."
+  "updates_social_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Share your thoughts on the latest ABP update."
   },
-  "updates_blockAds": {
-    "message": "The Open Source Rebel Alliance created new blocking filters that let you blast hidden ads on websites like Facebook, even if the Empire strikes back."
+  "updates_social_email": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Email"
   },
-  "updates_phone": {
-    "message": "But wait! What about your phone?"
+  "updates_social_facebook": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Facebook"
   },
-  "updates_adblockBrowser": {
-    "message": "If you are taking control on desktop, you can block ads and improve your privacy and security on mobile too. Get the <a>Adblock Browser App below</a>."
+  "updates_social_twitter": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Twitter"
+  },
+  "updates_social_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "We want to hear from you!"
+  },
+  "updates_subtitle": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
+    "message": "We think you'll like the latest updates."
+  },
+  "updates_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
+    "message": "Adblock Plus is up-to-date!"
   }
 }
