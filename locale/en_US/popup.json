@@ -86,6 +86,6 @@
   },
   "sendReport": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/bubble_ui/spec/abp/bubble-ui.md#report-issue",
-    "message": "Report issue"
+    "message": "Report an issue on this page"
   }
 }
