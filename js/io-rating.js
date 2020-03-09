@@ -24,7 +24,7 @@ class IORating extends IOElement
 {
   static get observedAttributes()
   {
-    return ["application"];
+    return ["store"];
   }
 
   attributeChangedCallback()
@@ -40,7 +40,7 @@ class IORating extends IOElement
   onclick(event)
   {
     const rating = parseInt(event.target.dataset.rating, 10);
-    let doclink = `${this.application}_review`;
+    let doclink = `${this.store}_review`;
     if (rating < 4)
     {
       doclink += "_low";
@@ -54,7 +54,7 @@ class IORating extends IOElement
 
   render()
   {
-    if (!this.application)
+    if (!this.store)
       return;
 
     this.html`

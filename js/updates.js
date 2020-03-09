@@ -69,6 +69,19 @@ function addUpdates(container, updates)
   bind(list)`${items}`;
 }
 
+function initRating()
+{
+  api.app.getInfo().then((info) =>
+  {
+    document.body.dataset.store = info.store;
+
+    api.doclinks.get(`${info.store}_store`).then((url) =>
+    {
+      $("#contribute-rate a").href = url;
+    });
+  });
+}
+
 function initUpdates()
 {
   fetch("data/updates.json")
@@ -91,6 +104,7 @@ function initVersion()
 
 function load()
 {
+  initRating();
   initUpdates();
   initVersion();
 }

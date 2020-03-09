@@ -62,6 +62,20 @@ a.button:hover
   background-color: var(--color-primary-hover);
 }
 
+a.button.secondary
+{
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: var(--color-content);
+}
+
+a.button.secondary:hover
+{
+  border-color: var(--color-primary-hover);
+  color: var(--color-content);
+  background-color: var(--color-primary-hover);
+}
+
 h1,
 h2
 {
@@ -102,25 +116,25 @@ html[dir="rtl"] h2.icon::before
 
 .block-icon
 {
-  --width: 40px;
+  --icon-width: 40px;
   position: relative;
 }
 
 html[dir="ltr"] .block-icon
 {
-  padding-left: calc(var(--width) + 20px);
+  padding-left: calc(var(--icon-width) + 20px);
 }
 
 html[dir="rtl"] .block-icon
 {
-  padding-right: calc(var(--width) + 20px);
+  padding-right: calc(var(--icon-width) + 20px);
 }
 
 .block-icon::before
 {
   position: absolute;
-  width: var(--width);
-  height: var(--width);
+  width: var(--icon-width);
+  height: var(--icon-width);
   background-size: 100%;
   background-repeat: no-repeat;
   content: "";
@@ -149,7 +163,7 @@ header p
 
 header .block-icon
 {
-  --width: 50px;
+  --icon-width: 50px;
 }
 
 #logo
@@ -209,6 +223,11 @@ footer
   max-width: 940px;
   margin: auto;
   padding: var(--margin) 0 50px;
+}
+
+.content:not(:first-child)
+{
+  padding-top: 0;
 }
 
 .content.columns
@@ -286,7 +305,7 @@ article.secondary::before
   top: calc(var(--margin) * -1);
 }
 
-section:not(:first-of-type)
+:not(.columns) > section:not(:first-of-type)
 {
   margin-top: 75px;
 }

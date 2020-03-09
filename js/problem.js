@@ -21,27 +21,11 @@ const api = require("./api");
 const {$} = require("./dom");
 require("./landing");
 
-const platformToStore = new Map([
-  ["chromium", "chrome"],
-  ["edgehtml", "edge"],
-  ["gecko", "firefox"]
-]);
-
-Promise.all([
-  api.app.get("application"),
-  api.app.get("platform")
-]).then(([application, platform]) =>
+api.app.getInfo().then((info) =>
 {
-  document.body.dataset.application = application;
+  document.body.dataset.application = info.application;
 
-  let store = application;
-  // Edge and Opera have their own stores so we should refer to those instead
-  if (application !== "edge" && application !== "opera")
-  {
-    store = platformToStore.get(platform) || "chrome";
-  }
-
-  api.doclinks.get(`${store}_store`).then((url) =>
+  api.doclinks.get(`${info.store}_store`).then((url) =>
   {
     $("#store-link").href = url;
   });

@@ -94,4 +94,6 @@ No parameters.
 
 ### updates.html
 
-No parameters.
+| Parameter | Value | Description |
+|-|-|-|
+| application | `edge` | Hides rating section |
