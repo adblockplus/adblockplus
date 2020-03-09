@@ -97,12 +97,10 @@ build:
     # Finally build abp
     - python build.py build -t gecko adblockplus-firefox-${CI_COMMIT_SHA:0:8}.xpi
     - python build.py build -t chrome adblockplus-chrome-${CI_COMMIT_SHA:0:8}.zip
-    - python build.py build -t edge adblockplus-edge-${CI_COMMIT_SHA:0:8}.zip
   artifacts:
     paths:
       - adblockpluschrome/adblockplus-firefox-${CI_COMMIT_SHA:0:8}.xpi
       - adblockpluschrome/adblockplus-chrome-${CI_COMMIT_SHA:0:8}.zip
-      - adblockpluschrome/adblockplus-edge-${CI_COMMIT_SHA:0:8}.zip
   only:
     refs:
       - /^release-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
@@ -153,15 +151,12 @@ pages:
       <p>
         To install the Chrome version (adblockplus-chrome.zip) you need unpack the zip archive somewhere, then go to <i>chrome://extensions/</i> enable <i>Developer mode</i> and then load the unpacked extension from the folder you unpacked it to previously.
       </p>
-      <p>
-        To install the Edge version (adblockplus-edge.zip), first unpack the zip archive somewhere, then go to <i>about:flags/</i> and check the <i>Enable extension developer features</i> checkbox. After that, load the unpacked extension from the Edge's <i>Extensions</i> menu via the <i>Load extension</i> button.
-      </p>
       {%- for id, url, ref, commit, date in jobs %}
       <p>
           Job: <a href='{{ url }}'>{{ id }}</a>
           Ref: <a href='https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/commit/{{ commit }}'>{{ ref }} ({{ commit }})</a>
           Date: {{ date }}
-          Extension: <a href='https://gitlab.com/api/v4/projects/eyeo%2fadblockplus%2fabpui%2fadblockplusui/jobs/{{ id }}/artifacts/adblockpluschrome/adblockplus-firefox-{{ commit }}.xpi'>adblockplus-firefox-{{ commit }}.xpi</a> / <a href='https://gitlab.com/api/v4/projects/eyeo%2fadblockplus%2fabpui%2fadblockplusui/jobs/{{ id }}/artifacts/adblockpluschrome/adblockplus-chrome-{{ commit }}.zip'>adblockplus-chrome-{{ commit }}.zip (Chrome)</a> / <a href='https://gitlab.com/api/v4/projects/eyeo%2fadblockplus%2fabpui%2fadblockplusui/jobs/{{ id }}/artifacts/adblockpluschrome/adblockplus-edge-{{ commit }}.zip'>adblockplus-edge-{{ commit }}.zip (Edge)</a>
+          Extension: <a href='https://gitlab.com/api/v4/projects/eyeo%2fadblockplus%2fabpui%2fadblockplusui/jobs/{{ id }}/artifacts/adblockpluschrome/adblockplus-firefox-{{ commit }}.xpi'>adblockplus-firefox-{{ commit }}.xpi</a> / <a href='https://gitlab.com/api/v4/projects/eyeo%2fadblockplus%2fabpui%2fadblockplusui/jobs/{{ id }}/artifacts/adblockpluschrome/adblockplus-chrome-{{ commit }}.zip'>adblockplus-chrome-{{ commit }}.zip (Chrome)</a>
       </p>
       {%- endfor %}
       </body>
