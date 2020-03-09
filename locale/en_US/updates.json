@@ -1,4 +1,36 @@
 {
+  "updates_contribute_donate_action": {
+    "description": "",
+    "message": "Contribute"
+  },
+  "updates_contribute_donate_subtitle": {
+    "description": "",
+    "message": "Your support allows us to continue to improve Adblock Plus."
+  },
+  "updates_contribute_donate_title": {
+    "description": "",
+    "message": "Contribute to the ABP project"
+  },
+  "updates_contribute_rate_action": {
+    "description": "",
+    "message": "Rate it"
+  },
+  "updates_contribute_rate_subtitle": {
+    "description": "",
+    "message": "Please take a moment and help spread the word by rating Adblock Plus. It's quick and free!"
+  },
+  "updates_contribute_rate_title": {
+    "description": "",
+    "message": "Rate it!"
+  },
+  "updates_contribute_subtitle": {
+    "description": "",
+    "message": "Consider supporting ABP in one of two ways:"
+  },
+  "updates_contribute_title": {
+    "description": "",
+    "message": "Enjoying Adblock Plus?"
+  },
   "updates_fixes_title": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
     "message": "Fixes"

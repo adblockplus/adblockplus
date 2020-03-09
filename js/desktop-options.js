@@ -1109,24 +1109,17 @@ function onDOMLoaded()
     setElementLinks("visit-forum", url);
   });
 
-  api.app.get("application").then((application) =>
+  api.app.getInfo().then((info) =>
   {
-    // Chromium has its own application ID but also installs extensions from
-    // the Chrome Web Store so we're treating it the same way as Chrome
-    if (application === "chromium")
-    {
-      application = "chrome";
-    }
-
     // We need to restrict this feature to certain browsers for which we
     // have a link to where users can rate us
-    if (!["chrome", "opera", "firefox"].includes(application))
+    if (!["chrome", "opera", "firefox"].includes(info.application))
     {
       $("#rating").setAttribute("aria-hidden", true);
       return;
     }
 
-    $("#rating io-rating").application = application;
+    $("#rating io-rating").store = info.store;
   });
 
   $("#dialog").addEventListener("keydown", function(e)
