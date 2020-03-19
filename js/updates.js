@@ -75,7 +75,7 @@ function initRating()
   {
     document.body.dataset.store = info.store;
 
-    api.doclinks.get(`${info.store}_store`).then((url) =>
+    api.doclinks.get(`${info.store}_review`).then((url) =>
     {
       $("#contribute-rate a").href = url;
     });
