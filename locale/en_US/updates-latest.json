@@ -1,38 +1,42 @@
 {
   "notification_updates_message": {
-    "message": "TEST NOTIFICATION MESSAGE <a>LINK</a>"
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
+    "message": "No action is required—continue browsing the web without annoying ads! <a>See what's new</a>"
   },
   "notification_updates_title": {
-    "message": "TEST NOTIFICATION TITLE"
-  },
-  "updates_update_f1_description": {
-    "message": "TEST DESCRIPTION"
-  },
-  "updates_update_f1_image": {
-    "message": "TEST IMAGE"
-  },
-  "updates_update_f1_title": {
-    "message": "TEST TITLE"
-  },
-  "updates_update_f2_description": {
-    "message": "TEST DESCRIPTION"
-  },
-  "updates_update_f2_title": {
-    "message": "TEST TITLE"
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
+    "message": "Adblock Plus is up-to-date"
   },
   "updates_update_i1_description": {
-    "message": "TEST DESCRIPTION"
-  },
-  "updates_update_i1_image": {
-    "message": "TEST IMAGE"
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Should your ABP settings become corrupted due to a browser issue, the notification message now opens in a new browser tab."
   },
   "updates_update_i1_title": {
-    "message": "TEST TITLE"
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Data corruption notification moved"
   },
   "updates_update_i2_description": {
-    "message": "TEST DESCRIPTION"
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Help spread the word about your favorite ad blocker by sharing the total number of ads that you've blocked on your favorite social media channels."
   },
   "updates_update_i2_title": {
-    "message": "TEST TITLE"
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Added option to share number of ads blocked on social media"
+  },
+  "updates_update_i3_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Long filters can now be viewed in their entirety, including the CSS selector."
+  },
+  "updates_update_i3_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Expanded the length of developer tools panel tooltip"
+  },
+  "updates_update_i4_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "The icon now blinks and turns blue to alert users of notifications."
+  },
+  "updates_update_i4_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Made ABP taskbar icon notifications more obvious and distinguishable"
   }
 }
