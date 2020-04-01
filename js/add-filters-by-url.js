@@ -28,7 +28,7 @@ module.exports = {
     if (!isClosed())
     {
       ignoreFocus = false;
-      $('[data-action="open-filterlist-by-url"]').focus();
+      $("[data-action='open-filterlist-by-url']").focus();
     }
   },
   setupAddFiltersByURL()
@@ -37,12 +37,12 @@ module.exports = {
     wrapper.addEventListener("blur", filtersBlur, true);
     wrapper.addEventListener("keydown", filtersKeydown);
 
-    const opener = $('[data-action="open-filterlist-by-url"]', wrapper);
+    const opener = $("[data-action='open-filterlist-by-url']", wrapper);
     opener.addEventListener("mousedown", filtersToggle);
     opener.addEventListener("focus", filtersToggle);
     opener.addEventListener("keydown", openerKeys);
 
-    const input = $('input[type="url"]', wrapper);
+    const input = $("input[type='url']", wrapper);
     input.addEventListener("keyup", checkIfValid);
   }
 };
@@ -100,10 +100,27 @@ function filtersClose()
 
 function filtersKeydown(event)
 {
-  if (events.key(event) === "Escape" && !isClosed())
+  // We're only interested in dialog-internal key presses so we ignore any
+  // that we might get while the dialog is closed
+  if (isClosed())
+    return;
+
+  const key = events.key(event);
+  if (key !== "Enter" && key !== "Escape")
+    return;
+
+  event.preventDefault();
+  event.stopPropagation();
+
+  switch (key)
   {
-    $('[data-action="open-filterlist-by-url"]').focus();
-    filtersClose();
+    case "Enter":
+      $("[data-action='validate-import-subscription']").click();
+      break;
+    case "Escape":
+      $("[data-action='open-filterlist-by-url']").focus();
+      filtersClose();
+      break;
   }
 }
 
@@ -111,7 +128,7 @@ function filtersOpen()
 {
   const element = $("#filterlist-by-url");
   element.removeAttribute("aria-hidden");
-  $('input[type="url"]', element).focus();
+  $("input[type='url']", element).focus();
 }
 
 function filtersToggle(event)
