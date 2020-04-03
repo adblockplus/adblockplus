@@ -152,9 +152,22 @@ class IOFilterBase extends IOElement
           activeElement.blur();
           return;
         }
-        const {scrollHeight, scrollTop} = this.state;
+        // it's necessary to handle deltaMode as it indicates
+        // the units of measurement for the event delta values
+        // e.g. Firefox uses a deltaMode of 1 (DOM_DELTA_LINE)
+        const {scrollHeight, scrollTop, rowHeight, viewHeight} = this.state;
+        const scrollFactors = {
+          0: 1,
+          1: rowHeight,
+          // as defined in Gecko implementation
+          // https://github.com/mozilla/gecko-dev/blob/535145f19797558c2bad0d1d6f8b7f06d3e6346b/layout/generic/nsGfxScrollFrame.cpp#L4527
+          2: viewHeight - Math.min(0.1 * viewHeight, 2 * rowHeight)
+        };
         this.setState({
-          scrollTop: getScrollTop(scrollTop + event.deltaY, scrollHeight)
+          scrollTop: getScrollTop(
+            scrollTop + event.deltaY * scrollFactors[event.deltaMode],
+            scrollHeight
+          )
         });
         // update the scrollbar position accordingly
         updateScrollbarPosition.call(this);
