@@ -1,0 +1,50 @@
+{
+  "firstRun_browser_description": {
+    "message": "Gallout a rit kaout Adblock Browser war Android hag iOS bremañ. Krouet eo bet gant skipailh Adblock Plus, ar stanker bruderezh brudetañ evit merdeerien an urzhiataerioù."
+  },
+  "firstRun_browser_store_android": {
+    "message": "Android app war Google Play"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "Kavet e vo war iTunes App Store"
+  },
+  "firstRun_browser_title": {
+    "message": "Adblock Browser app"
+  },
+  "firstRun_control_description": {
+    "message": "Marteze e vo gwelet bruderezh ganeoc'h ha n'eo ket drouk anezhañ dre ziouer, an hini a zouj ouzh <a0>dezverkoù strizh</a0> Acceptable Ads a vez graet anezhe. O stankañ a blijfe deoc'h? <a1>Lazhañ Acceptable Ads</a1> en hoc'h <a2>Arventennoù</a2>."
+  },
+  "firstRun_control_title": {
+    "message": "Deoc'h da ren"
+  },
+  "firstRun_fair_description": {
+    "message": "Broudañ a reomp ac'hanoc'h da chom hegarat pa implijit Adblock Plus hag an option da zegemer lec'hiennoù zo. Diouzh ar siloù arveret ganeoc'h e komprenit mat e c'hallfe c'hoarvezout traoù dic'hortoz (lakaomp endalc'h stanket war ul lec'hienn bennak). Lennit ar <a0>Reolennoù Implij</a0> evit kaout muioc'h a ditouroù diwar-benn implij hegarat Adblock Plus."
+  },
+  "firstRun_fair_title": {
+    "message": "Implij hegarat"
+  },
+  "firstRun_subtitle": {
+    "message": "Mestr war ho merdeer oc'h bremañ."
+  },
+  "firstRun_title": {
+    "message": "Deuet oc'h a-benn da staliañ!"
+  },
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "Evit tud zo e vez digoret ar bajenn-mañ bep tro ma vez lañset ho merdeer gante. Distaliañ ha staliañ Adblock Plus en-dro a c'hall sikour:"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "M'ho peus ezhomm da vezañ sikouret c'hoazh, deuit e darempred ganeomp <a0>support@adblockplus.org</a0> pe amañ <a1>Help Center</a1>."
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "Digorit ivinell Astennoù ho merdeer."
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Kavout Adblock Plus hag e zilemel."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "Staliañ Adblock Plus en-dro adalek <a>adblockplus.org</a>."
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "Skarzhet eo bet an holl siloù abalamour d'ur fazi bennak ha n'omp ket bet gouest da adkavout anezhe. Se zo kaoz omp bet rediet da ziverkañ ho siloù hag arventennoù Acceptable Ads. Kit da wiriañ ho rolloù sil hag hoc'h arventennoù Acceptable Ads en ho <a>Tibarzhioù Adblock Plus</a>."
+  }
+}

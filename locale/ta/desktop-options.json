@@ -1,15 +1,48 @@
 {
+  "options_aa_opt_out_survey_no": {
+    "message": "வேண்டாம், நன்றி"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "கணக்கெடுப்புக்குச் செல்"
+  },
   "options_acceptableAds_ads_label": {
     "message": "ஏற்கக்கூடிய விளம்பரங்களை அனுமதி"
+  },
+  "options_acceptableAds_header": {
+    "message": "ஏற்கக்கூடிய விளம்பரங்கள்"
+  },
+  "options_builtin_filterList_add": {
+    "message": "உடன் வரும் வடிகட்டி பட்டியல்களைச் சேர்"
   },
   "options_close": {
     "message": "மூட"
   },
+  "options_control_remove_title": {
+    "message": "அகற்று"
+  },
   "options_customFilter_cancel": {
     "message": "ரத்து செய்"
   },
+  "options_customFilters_title": {
+    "message": "உங்கள் தனிப்பயன் வடிகட்டிகள்"
+  },
+  "options_customFilters_widget_title": {
+    "message": "எனது வடிகட்டி பட்டியல்"
+  },
+  "options_customize_blockElement": {
+    "message": "வலது-கிளிக் மெனுவில் 'உறுப்பைத் தடு' உருப்படியைக் காண்பி"
+  },
   "options_customize_header": {
     "message": "தனிப்பயனாக்கல்கள்"
+  },
+  "options_customize_showDevToolsPanel": {
+    "message": " நிரலாக்குநர் கருவிகளில் \"Adblock Plus\" ஐ காண்பி"
+  },
+  "options_customize_showNotifications": {
+    "message": "பயனுள்ள அறிவிப்புகளை காட்டு"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Adblock Plus இலிருந்து அறிவுப்புகளைக் காட்டு (முக்கிய செயல்திறன் சிக்கல்கள் தொடர்பான அறிவிப்புகள் எப்போதும் காண்பிக்கப்படும்)."
   },
   "options_dialog_about_copyright": {
     "message": "பதிப்புரிமை © $currentYear$ <a0>eyeo GmbH</a0>.",
@@ -23,8 +56,43 @@
   "options_dialog_about_title": {
     "message": "Adblock Plus பற்றி"
   },
+  "options_dialog_about_trademark": {
+    "message": "அனைத்து உரிமைகள் பாதுகாக்கப்பட்டவை. Adblock Plus® eyeo GmbH இன் பதிவுசெய்யப்பட்ட வணிகமுத்திரையாகும்."
+  },
+  "options_dialog_about_version": {
+    "message": "பதிப்பு எண் $version$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "2.6.7"
+      }
+    }
+  },
+  "options_dialog_import_subscription_location": {
+    "message": "வடிகட்டி பட்டியல் URL"
+  },
   "options_dialog_import_subscription_location_error": {
     "message": "செல்லும் URL உள்ளிடு"
+  },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "URL $protocol$ இல் துவங்கவேண்டும்.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
+  "options_dialog_import_title": {
+    "message": "ஒரு வடிகட்டி பட்டியலைச் சேர்"
+  },
+  "options_dialog_invalid_message": {
+    "message": "பாதுகாப்பு காரணங்களாக, HTTPS வடிக்கட்டிகளை மட்டுமே சேர்க்கமுடியும்."
+  },
+  "options_dialog_invalid_title": {
+    "message": "பிழை ஏற்ப்பட்டது"
+  },
+  "options_dialog_language_other_empty": {
+    "message": "கிடைக்கும் மொழிகள் எதுவுமில்லை."
   },
   "options_dialog_language_title": {
     "message": "ஒரு மொழியைத் தேர்ந்தெடு"
@@ -50,17 +118,31 @@
   "options_filterList_column_update": {
     "message": "கடைசியாக புதுப்பிக்கப்பட்டது"
   },
+  "options_filterList_hours": {
+    "message": "மணிநேரங்களுக்கு முன்"
+  },
   "options_filterList_lastDownload_connectionError": {
     "message": "தோல்வியடைந்தது, பதிவிறக்கம் தோல்வி"
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "தோல்வி, செல்லத்தக்க இல்லை முகவரி"
   },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "பதிவிறக்கம் தோல்வியுற்றது. URL $protocol$ இல் துவங்கவேண்டும்.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_filterList_minutes": {
     "message": "நிமிடங்கள் முன்பு"
   },
   "options_filterList_now": {
     "message": "இப்போது"
+  },
+  "options_filterList_source": {
+    "message": "மூலம்"
   },
   "options_filterList_title": {
     "message": "வடிகட்டி பட்டியல்கள்"
@@ -79,10 +161,102 @@
       }
     }
   },
+  "options_footer_about": {
+    "message": "Adblock Plus பற்றி"
+  },
+  "options_footer_contribute": {
+    "message": "பங்களி"
+  },
+  "options_generic_error": {
+    "message": "ஓ! ஏதோ ஏதோ தவறாகவிட்டது. தயவுசெய்து மீண்டும் முயலவும்."
+  },
+  "options_help_center": {
+    "message": "உமது பதிலுக்கு விடை தேடுகிறாயா? <a0>எங்கள் உதவி மையத்திற்கு செல்க (ஆங்கிலம் மட்டும்)</a0>"
+  },
+  "options_language_add": {
+    "message": "ஒரு மொழியைச் சேர்"
+  },
+  "options_language_change": {
+    "message": "மாற்று"
+  },
+  "options_language_header": {
+    "message": "மொழி"
+  },
+  "options_learn_more": {
+    "message": "மேலும் அறிக"
+  },
+  "options_more_filters_header": {
+    "message": "மேலும் வடிகட்டிகள்"
+  },
+  "options_new_label": {
+    "message": "புதிய"
+  },
+  "options_page_document_title": {
+    "message": "Adblock Plus விருப்பங்கள்"
+  },
+  "options_page_title": {
+    "message": "அமைப்புகள்"
+  },
+  "options_privacy_header": {
+    "message": "தனியுரிமை & பாதுகாப்பு"
+  },
+  "options_rating_title": {
+    "message": "Adblock Plus உமக்குப் பிடித்துள்ளதா?"
+  },
+  "options_report_bug": {
+    "message": "பிழையை ஒன்றை கண்டுப்பிடித்தீர்களா? <a>எங்களுக்கு ஒரு பிழை அறிக்கையை அனுப்புங்கள்</a>"
+  },
+  "options_report_forum": {
+    "message": "எங்கள் சமூகத்திலிருந்து ஆதரவு வேண்டும்? <a>அவைக்குச் செல்க</a>"
+  },
+  "options_social_description": {
+    "message": "கேள்வி அல்லது புது கருத்து உள்ளது? உதவ நாங்கள் இருக்கிறோம்."
+  },
+  "options_social_title": {
+    "message": "தொடர்பில் இரு"
+  },
+  "options_support_title": {
+    "message": "ஆதரவு"
+  },
+  "options_tab_advanced": {
+    "message": "மேம்பட்ட"
+  },
   "options_tab_general": {
     "message": "பொது"
   },
+  "options_tab_help": {
+    "message": "உதவி"
+  },
   "options_tab_whitelist": {
     "message": "அனுமதிக்கப்பட்ட வலைத்தளங்கள்"
+  },
+  "options_tracking_warning_3": {
+    "message": "உமக்கு மேலும் தனியுரிமை வேண்டும் என்றால், கீழே உள்ள <strong>$acceptableAdsPrivacy$</strong> -ஐ தேர்ந்தெடு.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "சரி, புரிந்துவிட்டது"
+  },
+  "options_whitelist_add": {
+    "message": "வலைத்தளத்தைச் சேர்"
+  },
+  "options_whitelist_description": {
+    "message": "நீங்கள் இந்த வலைத்தளங்களில் விளம்பர தடுத்தலை அணைத்திருகிறீர்கள், அதனால் இதில் விளம்பரங்களைப் காண்பீர்கள்."
+  },
+  "options_whitelist_notification": {
+    "message": "வலைத்தளம் தடைசெய்யப்பட்ட பட்டியலில் சேர்க்கப்பட்டது."
+  },
+  "options_whitelist_placeholder_example": {
+    "message": "எ.கா. $domain$",
+    "placeholders": {
+      "domain": {
+        "content": "www.example.com"
+      }
+    }
   }
 }

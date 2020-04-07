@@ -6,7 +6,7 @@
     "message": "למד עוד"
   },
   "mops_action_cancel": {
-    "message": "ביטול"
+    "message": "בטל"
   },
   "mops_enabled_label": {
     "message": "חסום פרסומות ב:"
@@ -36,7 +36,7 @@
     "message": "כתובת רשימת מסננים"
   },
   "mops_subscriptions_header": {
-    "message": "מנויי מסננים"
+    "message": "מינויי מסננים"
   },
   "mops_title": {
     "message": "הגדרות Adblock Plus"

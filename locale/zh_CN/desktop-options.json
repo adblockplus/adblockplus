@@ -42,10 +42,10 @@
     "message": "取消"
   },
   "options_customFilters_description": {
-    "message": "创建并维护自己的过滤器，以进一步控制 Adblock Plus 允许或拦截的内容。<a0>了解如何编写过滤器（仅限英文）</a0>"
+    "message": "创建并维护自己的过滤，以进一步控制 Adblock Plus 允许或拦截的内容。<a0>了解如何编写过滤（仅限英文）</a0>"
   },
   "options_customFilters_title": {
-    "message": "您的自定义过滤器"
+    "message": "您的自定义过滤"
   },
   "options_customFilters_widget_title": {
     "message": "我的过滤列表"
@@ -152,7 +152,7 @@
     "message": "最近更新时间"
   },
   "options_filterList_description": {
-    "message": "每个 Adblock Plus 设置由于过滤列表而起作用。以下是与所有 Adblock Plus 设置相对应的过滤列表。您还可以添加由我们信任的社区创建和维护的其他过滤器。"
+    "message": "每个 Adblock Plus 设置由于过滤列表而起作用。以下是与所有 Adblock Plus 设置相对应的过滤列表。您还可以添加由我们信任的社区创建和维护的其他过滤。"
   },
   "options_filterList_empty": {
     "message": "您尚未向 Adblock Plus 添加过滤列表。您添加的过滤列表将显示在此处。"
@@ -208,7 +208,7 @@
     "message": "过滤规则"
   },
   "options_filters_search_or_add": {
-    "message": "搜索或添加过滤器（例如$filter$）",
+    "message": "搜索或添加过滤（例如$filter$）",
     "placeholders": {
       "filter": {
         "content": "/ads/track/*"
@@ -243,7 +243,7 @@
     "message": "为您平日浏览网站的语言优化 Adblock Plus。"
   },
   "options_language_empty": {
-    "message": "您没有任何特定语言的过滤器。"
+    "message": "您没有任何特定语言的过滤。"
   },
   "options_language_filter_list": {
     "message": "语言过滤列表"
@@ -271,7 +271,7 @@
     "message": "了解详情"
   },
   "options_more_filters_description": {
-    "message": "这些是您以前添加到 Adblock Plus 的其他过滤器。"
+    "message": "这些是您以前添加到 Adblock Plus 的其他过滤。"
   },
   "options_more_filters_header": {
     "message": "更多过滤器"

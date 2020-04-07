@@ -5,6 +5,15 @@
   "cancel": {
     "message": "Откажи"
   },
+  "common_copyright": {
+    "message": "Ауторско право © $year$ Сва права задржана. Adblock Plus® је регистровани жиг компаније <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
   "common_feature_anti_adblock_title": {
     "message": "Сакриј поруке упозорења Adblock-а"
   },
@@ -12,15 +21,24 @@
     "message": "Листа филтера антизаобилажења ABP-а"
   },
   "common_feature_malware_title": {
-    "message": "Блокирај малвер"
+    "message": "Блокирање малвера"
   },
   "common_feature_privacy_title": {
-    "message": "Блокирај додатно праћење"
+    "message": "Блокирање додатног праћења"
   },
   "common_feature_social_title": {
-    "message": "Блокирај праћење икона друштвених медија"
+    "message": "Блокирање праћења икона друштвених медија"
   },
   "common_notification_hide": {
-    "message": "Затворите обавештење"
+    "message": "Затвори обавештење"
+  },
+  "copy_selected": {
+    "message": "Копирај изабрано"
+  },
+  "delete": {
+    "message": "Избриши"
+  },
+  "filter_action_failed": {
+    "message": "Дошло је до грешке. Покушајте поново."
   }
 }

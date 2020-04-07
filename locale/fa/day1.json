@@ -1,8 +1,41 @@
 {
+  "day1_blockelement_description": {
+    "message": "مسدود کردن آنها با ویژگی عنصر نود Adblock Plus."
+  },
+  "day1_blockelement_more": {
+    "message": "یاد بگیرید"
+  },
+  "day1_blockelement_title": {
+    "message": "خسته شدن از بخش نظرات شما را ناراحت کرده؟"
+  },
   "day1_community_contact": {
     "message": "با ما تماس بگیرید!"
   },
   "day1_community_contact_subject": {
     "message": "به دنبال پشتیبانی!"
+  },
+  "day1_community_description_1": {
+    "message": "به عنوان یک پروژه متن باز, ما به کاربران مانند شما وابسته ایم تا کمک کنید تجربه مسدود کردن تبلیغات را بهبود ببخشیم."
+  },
+  "day1_community_description_2": {
+    "message": "دوست دارید چه ویژگی هایی ببینید؟چه کار بهتری میتوانیم انجام دهیم؟آیا Adblock Plus باعث اشتباه بعضی سایت ها شده؟"
+  },
+  "day1_community_title": {
+    "message": "به جامعه Adblock Plus بپیوندید"
+  },
+  "day1_header_more": {
+    "message": "درباره تبلیغات مخرب اطلاعات بیشتری کسب کنید"
+  },
+  "notification_day1_message": {
+    "message": "تبلیغات آزار دهنده زیادی وجود دارد.<a> دریابید که Adblock Plus چه چیزدیگری را میتوند مسدود کند.</a>"
+  },
+  "notification_day1_title": {
+    "message": "شما در حال حاضر تبلیغات $ads$ را مسدود کرده اید!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
   }
 }

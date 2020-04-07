@@ -1,0 +1,53 @@
+{
+  "day1_blockelement_description": {
+    "message": "Stankit anezhe gant arc'hweladur \"Stankañ an elfenn\" Adblock Plus."
+  },
+  "day1_blockelement_more": {
+    "message": "Deskiñ penaos"
+  },
+  "day1_blockelement_screenshot": {
+    "message": "Setu ur skouer eus un arlun kemperzhel gant ar bouton \"Stankañ an elfenn\" lakaet war wel."
+  },
+  "day1_blockelement_title": {
+    "message": "Erru oc'h skuizh gant an evezhiadennoù?"
+  },
+  "day1_community_contact": {
+    "message": "Deuit e darempred ganeomp!"
+  },
+  "day1_community_contact_subject": {
+    "message": "Sikour 'mo!"
+  },
+  "day1_community_description_1": {
+    "message": "Ezhomm hon eus ac'hanoc'h evit gwellaat hor stanker bruderezh dre ma'z eo hor raktres ur raktres mammenn digor."
+  },
+  "day1_community_description_2": {
+    "message": "Peseurt arc'hweladurioù a blijfe deoc'h kaout? Petra a c'hallfe bezañ gwellaet? N' ez a ket en-dro lec'hiennoù zo abalamour da Adblock Plus?"
+  },
+  "day1_community_title": {
+    "message": "Deuit e darempred gant kumuniezh Adblock Plus"
+  },
+  "day1_header_more": {
+    "message": "Deskiñ muioc'h diwar-benn ar bruderezh drouk"
+  },
+  "day1_header_title": {
+    "message": "Adblock Plus <strong>en deus stanket <em0>$ads$ ads</em0> e-kerzh <em1>an tregont munutenn dremenet</em1>,</strong> hag en o-zouez reoù gant danvez drouk enne moarvat",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_message": {
+    "message": "Kalz bruderezh eo. <a>Setu ar pezh a c'hall Adblock Plus stankañ ouzhpenn.</a>"
+  },
+  "notification_day1_title": {
+    "message": "$ads$ bruderezh ho peus stanket dija!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

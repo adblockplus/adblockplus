@@ -20,6 +20,12 @@
   "promote_abp_module": {
     "message": "Adblock Plus மொபைலில் ஆர்வமா?"
   },
+  "refresh_this_page": {
+    "message": "இந்தப் பக்கத்தைப் புதுப்பி"
+  },
+  "sendReport": {
+    "message": "சிக்கலைப் புகாரளி"
+  },
   "stats_header": {
     "message": "தடுக்கப்பட்ட எண்ணிக்கை"
   },
@@ -39,7 +45,13 @@
       }
     }
   },
+  "status_domain": {
+    "message": "இந்த வலைத்தளம்:"
+  },
   "status_header": {
     "message": "இல் விளம்பரங்கள் தடை:"
+  },
+  "status_page": {
+    "message": "இந்தப் பக்கம்:"
   }
 }

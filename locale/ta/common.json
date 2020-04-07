@@ -5,10 +5,28 @@
   "cancel": {
     "message": "ரத்து செய்"
   },
+  "common_copyright": {
+    "message": "பதிப்புரிமை © $year$ அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை. Adblock Plus® <a0>eyeo GmbH</a0> இன் பதிவுசெய்யப்பட்ட வணிகமுத்திரையாகும்.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
   "common_feature_malware_title": {
     "message": "தீம்பொருள் தடை"
   },
   "common_notification_hide": {
     "message": "அறிவிப்பை மூடு"
+  },
+  "copy_selected": {
+    "message": "தேர்ந்தெடுத்ததை நகலெடு"
+  },
+  "delete": {
+    "message": "நீக்கு"
+  },
+  "filter_action_failed": {
+    "message": "ஏதோ தவறாகவிட்டது. தயவுசெய்து மீண்டும் முயலவும்."
   }
 }

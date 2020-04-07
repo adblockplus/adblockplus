@@ -71,6 +71,9 @@
   "issueReporter_markIssueButton_label": {
     "message": "סמן סוגייה"
   },
+  "issueReporter_other_issues": {
+    "message": "עבור כל הסוגיות האחרות, אנא צור איתנו קשר דרך <a0>support@adblockplus.org</a0>."
+  },
   "issueReporter_page_title": {
     "message": "מדווח הסוגיות"
   },

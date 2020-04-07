@@ -8,6 +8,9 @@
   "mops_action_cancel": {
     "message": "Отказ"
   },
+  "mops_enabled_label": {
+    "message": "Блокиране на реклами в:"
+  },
   "mops_error_url": {
     "message": "Въведете действителен адрес"
   },

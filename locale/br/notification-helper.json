@@ -1,4 +1,13 @@
 {
+  "notification_configure": {
+    "message": "Kefluniañ arventennoù ar c'hemennoù"
+  },
+  "notification_open_all": {
+    "message": "Digeriñ an holl liammoù a ya gant ar c'hemenn-mañ"
+  },
+  "notification_without_buttons": {
+    "message": "Klikit war ar c'hemenn evit digeriñ an holl liammoù a zo ennañ."
+  },
   "overlay_notification_button_no": {
     "message": "Ket"
   },

@@ -20,6 +20,9 @@
   "promote_abp_module": {
     "message": "Tertarik dengan Adblock Plus di ponsel?"
   },
+  "refresh_this_page": {
+    "message": "Muat ulang halaman ini"
+  },
   "refresh_to_take_effect": {
     "message": "Klik <strong>Refresh</strong> untuk melihat perubahan."
   },
@@ -38,14 +41,20 @@
     }
   },
   "stats_label_total": {
-    "message": "Total ada <strong>$number$</strong>",
+    "message": "Total item <strong>$number$</strong>",
     "placeholders": {
       "number": {
         "content": "$1"
       }
     }
   },
+  "status_domain": {
+    "message": "Situs ini:"
+  },
   "status_header": {
     "message": "Blokir iklan di:"
+  },
+  "status_page": {
+    "message": "Halaman ini:"
   }
 }

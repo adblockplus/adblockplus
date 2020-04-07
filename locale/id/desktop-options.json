@@ -18,7 +18,7 @@
     "message": "Iklan yang Diizinkan adalah iklan yang tidak mengganggu. Mereka adalah jalan tengah antara pemblokiran iklan dan pendukung konten online karena mereka menghasilkan pendapatan bagi pemilik situs web."
   },
   "options_acceptableAds_dnt_notification": {
-    "message": "<strong>Catatan:</strong> Anda telah mematikan <strong>Jangan Lacak</strong> di pengaturan browser Anda. Agar fitur ini berjalan lancar, harap aktifkan <strong>Jangan Lacak</strong> di browser anda. <a>Silahkan cari cara mengaktifkan Jangan Lacak</a>."
+    "message": "<strong>Catatan:</strong> Anda telah mematikan <strong>Jangan Lacak</strong> di pengaturan browser Anda. Agar fitur ini berjalan lancar, harap aktifkan <strong>Jangan Lacak</strong> di browser anda. <a>Cari tahu cara mengaktifkan Jangan Lacak</a>."
   },
   "options_acceptableAds_header": {
     "message": "Iklan yang Diizinkan"
@@ -51,7 +51,7 @@
     "message": "Daftar filter saya"
   },
   "options_customize_blockElement": {
-    "message": "Tampilkan item 'Blokir Elemen' pada menu klik kanan"
+    "message": "Tampilkan item 'Blokir Elemen' pada menu klik-kanan"
   },
   "options_customize_blockElement_tooltip": {
     "message": "Memblokir sementara item yang mengganggu pada halaman web, seperti gambar atau animasi slideshow."
@@ -115,6 +115,12 @@
   "options_dialog_import_title": {
     "message": "Tambah daftar filter"
   },
+  "options_dialog_invalid_message": {
+    "message": "Untuk alasan keamanan, hanya daftar filter HTTPS yang boleh ditambahkan."
+  },
+  "options_dialog_invalid_title": {
+    "message": "Terjadi kesalahan"
+  },
   "options_dialog_language_other_empty": {
     "message": "Tidak ada bahasa yang tersedia."
   },
@@ -168,6 +174,14 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Gagal, alamat tidak sah"
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Download gagal. URL harus diawali dengan $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "menit yang lalu"

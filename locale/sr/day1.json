@@ -1,0 +1,53 @@
+{
+  "day1_blockelement_description": {
+    "message": "Блокирајте их уз изванредну функцију блокирања елемената додатка Adblock Plus."
+  },
+  "day1_blockelement_more": {
+    "message": "Сазнајте како"
+  },
+  "day1_blockelement_screenshot": {
+    "message": "Пример искачућег прозора иконе са истакнутим дугметом „Блокирај елемент”."
+  },
+  "day1_blockelement_title": {
+    "message": "Доста вам је одељака коментара који вам покваре расположење?"
+  },
+  "day1_community_contact": {
+    "message": "Контактирајте с нама"
+  },
+  "day1_community_contact_subject": {
+    "message": "Тражим подршку"
+  },
+  "day1_community_description_1": {
+    "message": "Као пројекат отвореног кода, зависимо од корисника попут вас који нам помажу да побољшамо искуство приликом блокирања огласа."
+  },
+  "day1_community_description_2": {
+    "message": "Које бисте функције желели да видите? Шта можемо да побољшамо? Да ли се приликом коришћења додатка Adblock Plus неки веб-сајтови понашају чудно?"
+  },
+  "day1_community_title": {
+    "message": "Придружите се заједници додатка Adblock Plus"
+  },
+  "day1_header_more": {
+    "message": "Сазнајте више о злонамерном оглашавању"
+  },
+  "day1_header_title": {
+    "message": "Adblock Plus је <strong>блокирао <em0>$ads$ огласа</em0> у <em1>последњих пола сата</em1>,</strong> од којих су неки можда садржавали злонамерни садржај",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_message": {
+    "message": "То је пуно иритантних реклама. <a>Сазнајте шта још Adblock Plus може да блокира.</a>"
+  },
+  "notification_day1_title": {
+    "message": "Блокирали сте већ $ads$ огласа.",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

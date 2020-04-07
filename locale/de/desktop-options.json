@@ -39,7 +39,7 @@
     "message": "Entfernen"
   },
   "options_customFilter_cancel": {
-    "message": "ABBRECHEN"
+    "message": "Abbrechen"
   },
   "options_customFilters_description": {
     "message": "Erstelle und verwalte deine eigenen Filter, um zu beeinflussen, welche Inhalte Adblock Plus zulässt oder blockiert. <a0>Erfahre, wie man Filter schreibt (nur in englischer Sprache)</a0>"
@@ -122,7 +122,7 @@
     "message": "Ein Fehler ist aufgetreten"
   },
   "options_dialog_language_other_empty": {
-    "message": "Es gibt keine verfügbaren Sprachen."
+    "message": "Es sind keine Sprachen verfügbar."
   },
   "options_dialog_language_title": {
     "message": "Wähle eine Sprache"
@@ -161,7 +161,7 @@
     "message": "vor Stunden"
   },
   "options_filterList_lastDownload_checksumMismatch": {
-    "message": "Fehler, Prüfsumme ist falsch, möglicherweise ein Übertragungsfehler"
+    "message": "Fehler, Prüfsumme ist falsch"
   },
   "options_filterList_lastDownload_connectionError": {
     "message": "Download fehlgeschlagen"

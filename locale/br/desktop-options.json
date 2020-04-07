@@ -1,9 +1,113 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "Kontant e vefec'h da lâret deomp perak ho peus nac'het Acceptable Ads evit hon sikour da wellaat Adblock Plus?"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "Ne vefen ket, mersi deoc'h"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "Mont d'an enklask"
+  },
+  "options_acceptableAds_ads_description_1": {
+    "message": "N'eo ket kazus an Acceptable Ads rak ne zirenkont ket ac'hanoc'h pa emaoc'h war ul lec'hienn.<a>Lenn muioc'h diwar-benn dezverkoù an Acceptable Ads</a>"
+  },
+  "options_acceptableAds_ads_label": {
+    "message": "Aotreañ an Acceptable Ads"
+  },
+  "options_acceptableAds_description": {
+    "message": "N'eo ket kazus an Acceptable Ads. War an hent etre stankañ pep tra ha skoazellañ an endalc'h emaint peogwir e vez gounezet argant a-drugarez dezhe gant perc'henned al lec'hiennoù-se."
+  },
+  "options_acceptableAds_header": {
+    "message": "Acceptable Ads"
+  },
+  "options_acceptableAds_privacy_label": {
+    "message": "Aotreañ bruderezh hep trede-lodenn heuliañ"
+  },
+  "options_advanced_description": {
+    "message": "Personelait Adblock Plus oc'h ouzhpnnañ pe o skarzhañ rolloù siloù, krouit ho rolloù siloù deoc'h-c'hwi"
+  },
   "options_close": {
     "message": "serriñ"
   },
+  "options_control_remove_title": {
+    "message": "lemel"
+  },
   "options_customFilter_cancel": {
     "message": "Nullañ"
+  },
+  "options_customFilters_title": {
+    "message": "Ho siloù personelaet"
+  },
+  "options_customFilters_widget_title": {
+    "message": "Ma roll siloù"
+  },
+  "options_customize_blockElement_tooltip": {
+    "message": "Stankañ elfennoù kazus evit poent, lakaomp skeudennoù pe diaporamaoù."
+  },
+  "options_customize_header": {
+    "message": "Personelaat"
+  },
+  "options_dialog_about_copyright": {
+    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "currentYear": {
+        "content": "$1",
+        "example": "2017"
+      }
+    }
+  },
+  "options_dialog_about_title": {
+    "message": "Diwar-benn Adblock Plus"
+  },
+  "options_dialog_about_trademark": {
+    "message": "Pep gwir miret strizh. Ur merk marilhet eus eyeo GmbH eo Adblock Plus®."
+  },
+  "options_dialog_about_version": {
+    "message": "Stumm niverenn $version$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "2.6.7"
+      }
+    }
+  },
+  "options_dialog_import_subscription_location": {
+    "message": "URL roll ar siloù"
+  },
+  "options_dialog_import_subscription_location_error": {
+    "message": "Bizskrivit un URL gwiriek"
+  },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "Gant $protocol$ e rank kregiñ an URL.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
+  "options_dialog_import_title": {
+    "message": "Ouzhpennañ ur roll siloù"
+  },
+  "options_dialog_invalid_title": {
+    "message": "Ur fazi zo bet"
+  },
+  "options_dialog_language_title": {
+    "message": "Dibabit ur yezh"
+  },
+  "options_dialog_predefined_confirm": {
+    "message": "Ya, ober gant ar roll siloù-mañ"
+  },
+  "options_dialog_predefined_title": {
+    "message": "Sur oc'h da ouzhpennañ al listenn siloù-mañ?"
+  },
+  "options_email": {
+    "message": "Postel:"
+  },
+  "options_english": {
+    "message": "Saozneg"
+  },
+  "options_filterList_add": {
+    "message": "Ouzhpennañ ur roll siloù dre URL"
   },
   "options_filterList_column_name": {
     "message": "Filter lists"
@@ -11,16 +115,222 @@
   "options_filterList_column_status": {
     "message": "Stad"
   },
+  "options_filterList_column_update": {
+    "message": "Hizivadur diwezhañ"
+  },
+  "options_filterList_hours": {
+    "message": "eur zo"
+  },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Fazi, n'eo ket ar memes checksum"
   },
   "options_filterList_lastDownload_connectionError": {
     "message": "Fazi, pellgargañ torret"
   },
+  "options_filterList_lastDownload_inProgress": {
+    "message": "O hizivaat"
+  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Fazi, n'eo ket ur chomlec'h"
   },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Pellgargañ c'hwitet warnañ. Gant $protocol$ e rank kregiñ an URL.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
+  "options_filterList_minutes": {
+    "message": "munutenn zo"
+  },
+  "options_filterList_now": {
+    "message": "Diouzhtu bremañ"
+  },
+  "options_filterList_source": {
+    "message": "Tarzh"
+  },
   "options_filterList_title": {
     "message": "Filter lists"
+  },
+  "options_filterList_update": {
+    "message": "hizivaat an holl rolloù siloù"
+  },
+  "options_filterList_updateNow": {
+    "message": "Hizivaat bremañ"
+  },
+  "options_filterList_website": {
+    "message": "Lec'hienn"
+  },
+  "options_filter_list_rule": {
+    "message": "Reolenn ar siloù"
+  },
+  "options_filters_search_or_add": {
+    "message": "Klask pe ouzhpennañ sil(où) (da skouer $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
+  },
+  "options_footer_about": {
+    "message": "Diwar-benn Adblock Plus"
+  },
+  "options_footer_contribute": {
+    "message": "Kemer perzh"
+  },
+  "options_general_description": {
+    "message": "Dibab ar pezh a vez kuzhet ha diskouezet war al lec'hiennoù gant Adblock Plus"
+  },
+  "options_generic_error": {
+    "message": "Ma? Ur gudenn zo bet. Klaskit en-dro mar plij."
+  },
+  "options_help_center": {
+    "message": "Respontoù ho pefe c'hoant da gaout? <a0> Deuit e-barzh hor C'hreizenn sikour (e saozneg nemetken)</a0>"
+  },
+  "options_help_description": {
+    "message": "Kaout skoazell pe mont e darempred ganeomp"
+  },
+  "options_language_add": {
+    "message": "Ouzhpennañ ur yezh"
+  },
+  "options_language_change": {
+    "message": "cheñch"
+  },
+  "options_language_description": {
+    "message": "Gwellekait Adblock Plus evit ar yezh(où) a rit gante pa vezit o verdeiñ war Internet."
+  },
+  "options_language_empty": {
+    "message": "N'ho peus sil ebet a-fet yezh."
+  },
+  "options_language_filter_list": {
+    "message": "Rolloù ar siloù yezh"
+  },
+  "options_language_header": {
+    "message": "Yezh"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
+  },
+  "options_language_tip": {
+    "message": "<strong>ALI FUR:</strong> Na zibabit nemet ar yezhoù ho peus ezhomm anezhe. Dibab meur a hini a lakao ar stanker bruderezh da c'horrekaat hag alese tizh ho merdeer ivez."
+  },
+  "options_learn_more": {
+    "message": "Lenn muioc'h"
+  },
+  "options_more_filters_description": {
+    "message": "Setu siloù ouzhpenn ho poa lakaet gwechall war Adblock Plus."
+  },
+  "options_more_filters_header": {
+    "message": "Muioc'h a siloù"
+  },
+  "options_new_label": {
+    "message": "Nevez"
+  },
+  "options_page_document_title": {
+    "message": "Dibarzhioù Adblock Plus"
+  },
+  "options_page_title": {
+    "message": "Arventennoù"
+  },
+  "options_privacy_header": {
+    "message": "Buhez prevez & surentez"
+  },
+  "options_protection_privacy_tooltip": {
+    "message": "Gwarezit ho puhez prevez enep lec'hiennoù a c'hallfe klask heuliañ ar pezh a rit enlinenn deus ul lec'hienn d'eben."
+  },
+  "options_rating_description": {
+    "message": "Kemerit un nebeut eilennoù evit sikour ha diorren Adblock Plus o priziañ hol labour. Mersi deoc'h evit ho sikour!"
+  },
+  "options_rating_title": {
+    "message": "Plijet oc'h gant Adblock Plus?"
+  },
+  "options_report_bug": {
+    "message": "Ur bug ho peus kavet? <a>Kasit un danevell bug deomp</a>"
+  },
+  "options_report_forum": {
+    "message": "Un tamm sikour a-berzh hor c'humuniezh ho po? <a>Kit war ar forom</a>"
+  },
+  "options_social_description": {
+    "message": "Ur goulenn pe ur soñj? Amañ emaomp evit ho sikour."
+  },
+  "options_social_title": {
+    "message": "Mont e darempred"
+  },
+  "options_support_title": {
+    "message": "Skoazell"
+  },
+  "options_tab_advanced": {
+    "message": "Kempleshoc'h"
+  },
+  "options_tab_general": {
+    "message": "Hollek"
+  },
+  "options_tab_help": {
+    "message": "Sikour"
+  },
+  "options_tab_whitelist": {
+    "message": "Lec'hiennoù aotreet"
+  },
+  "options_tracking_warning_1": {
+    "message": "Merzhet hon eus ho peus lakaet war elum<strong>$tracking$</strong> ha <strong>$acceptableAds$</strong>.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "<strong>Marteze</strong> e veoc'h heuliet gant Acceptable ads evit ma vefe kinniget deoc'h bruderezh a glotfe muioc'h ganeoc'h, deoc'h da c'houzout."
+  },
+  "options_tracking_warning_3": {
+    "message": "Ma faotañ deoc'h gwareziñ muioc'h ho puhez prevez, grit ur groazig er c'harrezig bihan amañ dindan <strong>$acceptableAdsPrivacy$</strong>.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "Mat eo, komprenet em eus"
+  },
+  "options_whitelist_add": {
+    "message": "Ouzhpennañ ul lec'hienn"
+  },
+  "options_whitelist_description": {
+    "message": "Lazhet ho peus ar stanker bruderezh evit al lec'hiennoù-se hag alese e vo bruderezh pa veoc'h o verdeiñ warne."
+  },
+  "options_whitelist_empty_1": {
+    "message": "N'ho peus ket aotreet lec'hienn ebet."
+  },
+  "options_whitelist_empty_2": {
+    "message": "Amañ e vo kavet al lec'hiennoù ho peus fiziañs enne hag a vo aotreet ganeoc'h."
+  },
+  "options_whitelist_notification": {
+    "message": "Al lec'hienn zo bet aotreet ar bruderezh enni."
+  },
+  "options_whitelist_placeholder_example": {
+    "message": "d.s. $domain$",
+    "placeholders": {
+      "domain": {
+        "content": "www.example.com"
+      }
+    }
   }
 }

@@ -1,0 +1,32 @@
+{
+  "day1_blockelement_description": {
+    "message": "使用 Adblock Plus 的絕妙擋元件功能來阻擋它們。"
+  },
+  "day1_blockelement_more": {
+    "message": "學習如何做"
+  },
+  "day1_community_contact": {
+    "message": "聯絡我們！"
+  },
+  "day1_community_contact_subject": {
+    "message": "尋求支援！"
+  },
+  "day1_community_description_1": {
+    "message": "作為一個開放原始碼專案，我們依賴像您這樣的使用者來幫助我們改善廣告攔截體驗。"
+  },
+  "day1_community_title": {
+    "message": "加入 Adblock Plus 社群"
+  },
+  "day1_header_more": {
+    "message": "知道有關可疑廣告的資訊"
+  },
+  "day1_header_title": {
+    "message": "Adblock Plus 在<em1>過去的半小時內</em1><strong>阻擋了 <em0>$ads$ 則廣告</em0>, </strong> 有些廣告甚至是可疑內容！",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

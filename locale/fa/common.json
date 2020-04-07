@@ -5,8 +5,20 @@
   "cancel": {
     "message": "لغو"
   },
+  "common_copyright": {
+    "message": "$year$ تمامی حقوق محقوظ است. Adblock Plus® یک علامت تجاری ثبت شده برای <a0> eyeo GmbH </a0> است.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
   "common_feature_anti_adblock_title": {
     "message": "مخفی کردن پیام‌های هشدار Adblock"
+  },
+  "common_feature_circumvention_title": {
+    "message": "لیست فیلتر ضد دورگرد ABP"
   },
   "common_feature_malware_title": {
     "message": "مسدود کردن بدافزار"
@@ -19,6 +31,9 @@
   },
   "common_notification_hide": {
     "message": "بستن اعلان"
+  },
+  "copy_selected": {
+    "message": "کپی کردن"
   },
   "delete": {
     "message": "حذف"

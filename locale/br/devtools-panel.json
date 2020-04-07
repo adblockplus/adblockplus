@@ -1,51 +1,51 @@
 {
   "devtools_action_block": {
-    "message": "拦截项目"
+    "message": "Stankañ an elfenn"
   },
   "devtools_action_remove": {
-    "message": "删除规则"
+    "message": "Dilemel ar reolenn"
   },
   "devtools_action_unblock": {
-    "message": "添加例外"
+    "message": "Ouzhpennañ un nemedenn"
   },
   "devtools_filter_origin_custom": {
-    "message": "用户定义"
+    "message": "diouzh an implijer"
   },
   "devtools_filter_origin_none": {
-    "message": "未命名订阅"
+    "message": "koumanant dianav"
   },
   "devtools_filter_subtitle": {
-    "message": "来源"
+    "message": "Orin"
   },
   "devtools_filter_title": {
-    "message": "过滤"
+    "message": "Sil"
   },
   "devtools_footer": {
-    "message": "<a0>重新加载</a0>页面以查看过滤更改的效果"
+    "message": "<a0>Adkargañ</a0>ar bajenn evit gwelet ar cheñchamantoù degaset gant ar siloù"
   },
   "devtools_header": {
-    "message": "显示<slot1></slot1>类型的<slot0></slot0>项目"
+    "message": "Diskouez <slot0></slot0> elfennoù eus <slot1></slot1> ar seurt-mañ"
   },
   "devtools_header_state_all": {
-    "message": "全部"
+    "message": "an holl"
   },
   "devtools_header_state_blocked": {
-    "message": "已拦截"
+    "message": "stanket"
   },
   "devtools_header_state_whitelisted": {
-    "message": "已列入白名单"
+    "message": "aotreet"
   },
   "devtools_header_type_any": {
-    "message": "任何"
+    "message": "forzh peseurt"
   },
   "devtools_request_subtitle": {
-    "message": "文档域"
+    "message": "Domani an diell"
   },
   "devtools_request_title": {
-    "message": "请求"
+    "message": "Reked"
   },
   "devtools_request_url": {
-    "message": "<a0>$original$</a0>重写为<a1>$rewritten$</a1>",
+    "message": "<a0>$original$</a0> adskrivet evit <a1>$rewritten$</a1>",
     "placeholders": {
       "original": {
         "content": "$1",
@@ -58,6 +58,6 @@
     }
   },
   "devtools_type_title": {
-    "message": "类型"
+    "message": "Furm"
   }
 }
