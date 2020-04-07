@@ -8,6 +8,9 @@
   "mops_action_cancel": {
     "message": "ரத்து செய்"
   },
+  "mops_enabled_label": {
+    "message": "இல் விளம்பரங்களை தடு:"
+  },
   "mops_error_url": {
     "message": "செல்லும் URL உள்ளிடு"
   },
@@ -17,8 +20,17 @@
   "mops_filterlist_add_action": {
     "message": "வடிகட்டி பட்டியல் சேர்"
   },
+  "mops_filterlist_add_url": {
+    "message": "ஒரு தனிப்பயன் வடிகட்டி பட்டியல் சேர்"
+  },
   "mops_header": {
     "message": "Adblock Plus அமைப்புகள்"
+  },
+  "mops_subscribe_header": {
+    "message": "ஒரு தனிப்பயன் வடிகட்டி பட்டியல் சேர்"
+  },
+  "mops_subscribe_title": {
+    "message": "வடிகட்டி பட்டியல் பெயர்"
   },
   "mops_subscribe_url": {
     "message": "வடிகட்டி பட்டியல் URL"

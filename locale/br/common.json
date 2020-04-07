@@ -4,5 +4,41 @@
   },
   "cancel": {
     "message": "Nullañ"
+  },
+  "common_copyright": {
+    "message": "Copyright © $year$ Pep gwir miret strizh. Ur merk marilhet eus <a0>eyeo GmbH</a0> eo Adblock Plus®.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
+  "common_feature_anti_adblock_title": {
+    "message": "Kuzhat kemennadennoù Adblock"
+  },
+  "common_feature_circumvention_title": {
+    "message": "Roll ar siloù enep-hent-tro ABP"
+  },
+  "common_feature_malware_title": {
+    "message": "Stankañ ar meizantoù drouk"
+  },
+  "common_feature_privacy_title": {
+    "message": "Stankañ an heuliañ ouzhpenn"
+  },
+  "common_feature_social_title": {
+    "message": "Stankañ an heuliañ dre an arlunioù mediaoù sokial"
+  },
+  "common_notification_hide": {
+    "message": "Serriñ ar c'hemennoù"
+  },
+  "copy_selected": {
+    "message": "Eilañ an diuzet"
+  },
+  "delete": {
+    "message": "Diverkañ"
+  },
+  "filter_action_failed": {
+    "message": "Ur gudenn zo bet. Klaskit en-dro mar plij."
   }
 }

@@ -1,12 +1,21 @@
 {
+  "firstRun_browser_description": {
+    "message": "От екипа зад Adblock Plus, който е най-популярния брокировач на реклами за браузъри на работния плот, Adblock Browser сега е на разположение на вашите устройства Android и iOS."
+  },
   "firstRun_browser_store_android": {
     "message": "Ап за Android от Google Play"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "Налично в магазина за приложения iTunes"
   },
   "firstRun_browser_title": {
     "message": "Ап Adblock Browser"
   },
   "firstRun_control_title": {
     "message": "Под ваш контрол"
+  },
+  "firstRun_fair_title": {
+    "message": "Честна употреба"
   },
   "firstRun_subtitle": {
     "message": "Току-що поставихте своя браузър под ваш контрол."

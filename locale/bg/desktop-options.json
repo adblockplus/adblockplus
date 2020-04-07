@@ -1,4 +1,7 @@
 {
+  "options_aa_opt_out_survey_no": {
+    "message": "Не, благодаря"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "Приемливи реклами не досаждат и не пречат на съдържанието. <a>Прочети повече за приемливо реклами критерии</a>"
   },
@@ -92,8 +95,19 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Въведете действителен адрес"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "URL адресът трябва да започва с $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Добавяне на филтър"
+  },
+  "options_dialog_invalid_title": {
+    "message": "Възникна грешка"
   },
   "options_dialog_language_other_empty": {
     "message": "Няма налични езици."
@@ -138,7 +152,7 @@
     "message": "Провалено — несъвпадаща контролна сума!"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Провалено — неизправно изтегляне!"
+    "message": "Изтеглянето се провали"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "обновяване"
@@ -149,6 +163,14 @@
   "options_filterList_lastDownload_invalidURL": {
     "message": "Провалено — недействителен адрес!"
   },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Изтеглянето пропадна. URL адресът трябва да започва с $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_filterList_minutes": {
     "message": "преди минути"
   },
@@ -156,7 +178,7 @@
     "message": "току-що"
   },
   "options_filterList_source": {
-    "message": "източник"
+    "message": "Източник"
   },
   "options_filterList_title": {
     "message": "Филтри"
@@ -165,7 +187,7 @@
     "message": "обнови всички"
   },
   "options_filterList_updateNow": {
-    "message": "обнови"
+    "message": "Обновяване сега"
   },
   "options_filterList_website": {
     "message": "сайт"
@@ -190,11 +212,14 @@
   "options_general_description": {
     "message": "Определяне какво Adblock Plus показва и скрива в сайтовете"
   },
+  "options_generic_error": {
+    "message": "Опа! Нещо се обърка. Опитайте пак."
+  },
   "options_help_description": {
     "message": "Намиране на помощ или свързване с нас"
   },
   "options_language_add": {
-    "message": "добави език"
+    "message": "Добавяне на език"
   },
   "options_language_change": {
     "message": "промени"
@@ -240,6 +265,9 @@
   },
   "options_protection_social_tooltip": {
     "message": "Социалните бутони позволяват на социалните мрежи да съставят, според посетените сайтове, профил на вашите навици на сърфиране, дори когато не ги натискате. Скриването им ви предпазва от това."
+  },
+  "options_rating_title": {
+    "message": "Радвате ли се на Adblock Plus?"
   },
   "options_report_bug": {
     "message": "Открихте грешка? <a>Изпратете ни доклад за грешка</a>"

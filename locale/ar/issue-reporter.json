@@ -30,7 +30,7 @@
     "message": "تم حفظ تقريرك. ستستطيع الوصول إليه عن طريق العنوان التالي:"
   },
   "issueReporter_data_gathering_tab": {
-    "message": "<strong>ملاحظة:</strong>سيتم فتح علامة تبويب إضافية مؤقتًا بحيث لن تتأثر الصفحة التي تزورها بالمُبلّغ عن المشكلة."
+    "message": "<strong>ملاحظة:</strong>سيتم فتح علامة تبويب إضافية مؤقتًا بحيث لن تتأثر الصفحة التي تزورها بمُبلّغ المشاكل."
   },
   "issueReporter_detailsButton_label": {
     "message": "تفاصيل"
@@ -75,7 +75,7 @@
     "message": "لأي مشكلة أخرى، يُرجى التواصل معنا عبر البريد الإلكتروني ⁦<a0>⁩support@adblockplus.org</a0>."
   },
   "issueReporter_page_title": {
-    "message": "مبلغ المشاكل"
+    "message": "مُبَلِغ المشاكل"
   },
   "issueReporter_privacyPolicy": {
     "message": "سياسة الخصوصية"

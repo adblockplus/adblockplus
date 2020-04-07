@@ -42,7 +42,7 @@
     "message": "בטל"
   },
   "options_customFilters_description": {
-    "message": "צור ותחזק מסננים משלך כדי לשלוט יותר איזה תוכן Adblock Plus מתיר או חוסם. <a0>למד כיצד לכתוב מסננים</a0>"
+    "message": "צור ותחזק מסננים משלך כדי לשלוט יותר איזה תוכן Adblock Plus מתיר או חוסם. <a0>למד כיצד לכתוב מסננים (אנגלית בלבד)</a0>"
   },
   "options_customFilters_title": {
     "message": "מסננים מותאמים אישית"
@@ -104,8 +104,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "הכנס כתובת תקפה"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "כתובת חייבת להתחיל ב־$protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "הוסף רשימת מסננים"
+  },
+  "options_dialog_invalid_message": {
+    "message": "למען סיבות אבטחה, רק רשימות מסננים HTTPS יכולים להתווסף."
+  },
+  "options_dialog_invalid_title": {
+    "message": "שגיאה התרחשה"
   },
   "options_dialog_language_other_empty": {
     "message": "אין שפות זמינות."
@@ -126,7 +140,7 @@
     "message": "אנגלית"
   },
   "options_filterList_add": {
-    "message": "הוסף רשימת מסננים חדשה"
+    "message": "הוסף רשימת מסננים דרך כתובת"
   },
   "options_filterList_column_name": {
     "message": "רשימות מסננים"
@@ -150,16 +164,24 @@
     "message": "נכשל, ביקורת סיכום לא מתאימה"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "נכשל, כישלון הורדה"
+    "message": "כישלון הורדה"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "מעדכן"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "נכשל, רשימת מסננים לא תקפה"
+    "message": "זו לא רשימת מסננים תקפה"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "נכשל, כתובת לא תקפה"
+    "message": "זו לא כתובת תקפה. בדוק את הכתובת."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "הורדה נכשלה. כתובת חייבת להתחיל ב־$protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "דקות קודם לכן"
@@ -276,7 +298,7 @@
     "message": "צלמיות המדיה החברתית באתרים שאתה מבקר בהם מתירות לרשתות מדיה חברתית לבנות פרופיל שלך על סמך הרגלי גלישתך - אפילו אם אתה לא לוחץ עליהן. הסתרת צלמיות אלו יכולה להגן על הפרופיל שלך."
   },
   "options_rating_description": {
-    "message": "אנא קח רגע ועזור להפיץ את הידיעה ע\"י דירוג Adblock Plus. תודה על תמיכתך!"
+    "message": "אנא קח רגע ועזור להפיץ את הידיעה ע״י דירוג Adblock Plus. תודה על תמיכתך!"
   },
   "options_rating_title": {
     "message": "נהנה מ־Adblock Plus?"

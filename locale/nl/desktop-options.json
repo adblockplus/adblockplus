@@ -164,7 +164,7 @@
     "message": "Mislukt, ongeldige controlesom"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Download mislukt"
+    "message": "Downloaden mislukt"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Bijwerken"

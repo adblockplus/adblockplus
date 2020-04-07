@@ -105,7 +105,7 @@
     "message": "Angiv en gyldig URL-adresse"
   },
   "options_dialog_import_subscription_location_error_protocol": {
-    "message": "URL skal starte med $protocol$.",
+    "message": "URL-adressen skal starte med $protocol$.",
     "placeholders": {
       "protocol": {
         "content": "https://"
@@ -116,10 +116,10 @@
     "message": "Tilføj en filterliste"
   },
   "options_dialog_invalid_message": {
-    "message": "Af sikkerhedsårsager kan kun HTTPS-filterlister tilføjes."
+    "message": "Af sikkerhedsårsager er det kun muligt at tilføje HTTPS-filterlister."
   },
   "options_dialog_invalid_title": {
-    "message": "En fejl opstod"
+    "message": "Der opstod en fejl"
   },
   "options_dialog_language_other_empty": {
     "message": "Der er ingen tilgængelige sprog."
@@ -155,7 +155,7 @@
     "message": "Hver Adblock Plus-indstilling virker på grund af en filterliste. Nedenfor er de filterlister, der svarer til alle dine Adblock Plus-indstillinger. Du kan også tilføje ekstra filtre oprettet og vedligeholdt af vores betroede fællesskab."
   },
   "options_filterList_empty": {
-    "message": "Du har ikke tilføjet nogen filterlister til Adblock Plus. Filtrerlister, du tilføjer, bliver vist her."
+    "message": "Du har ikke tilføjet nogen filterlister til Adblock Plus. Filterlister, du tilføjer, bliver vist her."
   },
   "options_filterList_hours": {
     "message": "timer siden"
@@ -173,10 +173,10 @@
     "message": "Ikke en gyldig filterliste"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "Ikke en gyldig adresse. Tjek URL'en."
+    "message": "Ikke en gyldig adresse. Kontrollér URL-adressen."
   },
   "options_filterList_lastDownload_invalidURLProtocol": {
-    "message": "Download mislykkedes. URL skal starte med $protocol$.",
+    "message": "Download mislykkedes. URL-adressen skal starte med $protocol$.",
     "placeholders": {
       "protocol": {
         "content": "https://"

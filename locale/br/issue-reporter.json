@@ -5,16 +5,112 @@
   "filters_subscription_lastDownload_connectionError": {
     "message": "Fazi, pellgargañ torret"
   },
+  "issueReporter_anonymousSubmission_label": {
+    "message": "Kinnig hep reiñ hoc'h anv"
+  },
+  "issueReporter_anonymousSubmission_warning": {
+    "message": "Ne vimp ket gouest da vont e darempred ganeoc'h ha graet e vo war-dro ar gemennadenn dindan kentoc'h."
+  },
+  "issueReporter_closeButton_label": {
+    "message": "Serriñ"
+  },
+  "issueReporter_commentPage_heading": {
+    "message": "Lâret un dra bennak"
+  },
+  "issueReporter_comment_description": {
+    "message": "Sikourit ac'hanomp da gompren peseurt kudenn zo bet o skrivañ ur gerig amañ dindan."
+  },
+  "issueReporter_comment_label": {
+    "message": "Evezhiadenn (ma faota deoc'h):"
+  },
+  "issueReporter_config_label": {
+    "message": "Kas titouroù diwar-benn kefluniadur ma merdeer ha roll an astennoù arveret ganin."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "Saveteet eo bet ho tanevell. Kavet e vo ganeoc'h aze:"
+  },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>A-bouez:</strong> Digoret e vo un ivinell ouzhpenn kuit da vezañ direnket gant an disklerier-kudenn."
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "Munudoù"
+  },
+  "issueReporter_doneButton_label": {
+    "message": "Echu"
+  },
+  "issueReporter_email_description": {
+    "message": "Lakaat ur chomlec'h postel mat a sikouro ac'hanomp. E-mod-se e c'hallimp mont a darempred ganeoc'h ma'z eus kudennoù, meizantoù drouk da skouer. N'oc'h ket rediet da vizskrivañ ur chomlec'h postel ha ne vo ket roet da zen ebet."
+  },
+  "issueReporter_email_label": {
+    "message": "Postel:"
+  },
+  "issueReporter_errorMessage": {
+    "message": "Ur fazi zo bet pa 'z eo bet kaset ho kemennadenn gant ar c'hod \"?!?\". Gwiriit hag-eñ oc'h war Internet ha klaskit en-dro. Ma pad ar gudenn, goulennit sikour gant an dud war ar forom [link]Adblock Plus forom[/link]."
+  },
+  "issueReporter_falseNegative_description": {
+    "message": "Mont a ra Adblock Plus en-dro met bruderezh a welan c'hoazh."
+  },
+  "issueReporter_falseNegative_label": {
+    "message": "Bruderezh a welan c'hoazh"
+  },
+  "issueReporter_falsePositive_description": {
+    "message": "Diskwelet eo ar bajenn a-dreuz, ne 'z a ket en-dro pe traoù a-bouez a vank dezhi."
+  },
+  "issueReporter_falsePositive_label": {
+    "message": "Ar bajenn emaon o klask sellet outi n'ez a ket mat ganti"
+  },
+  "issueReporter_highlighter_description": {
+    "message": "Grit gant an ostilhoù evit usskediñ pep tamm bruderezh pe kuzhat titouroù prevez war skeudenn ho skramm. Usskediñ ar bruderezh a sikouro ac'hanomp da zresañ ar gudenn buanoc'h."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Usskediñ ur gudenn"
+  },
+  "issueReporter_knownIssueMessage": {
+    "message": "Ur gudenn emaoc'h o talañ outi zo annavezet dija moarvat. Setu muioc'h a ditouroù:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Merkañ ar gudenn"
+  },
+  "issueReporter_other_issues": {
+    "message": "Evit kudennoù all, deuit e darempred ganeomp dre <a0>support@adblockplus.org</a0>."
+  },
   "issueReporter_page_title": {
-    "message": "Ar c'hazetenner"
+    "message": "Diskleriañ ur gudenn"
   },
   "issueReporter_privacyPolicy": {
     "message": "Kefluniadur politikerez"
   },
+  "issueReporter_processing_screenshot": {
+    "message": "o labourat"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "Tennit ur skeudenn eus ar skramm pa faotañ deoc'h kas ur gemennadenn deomp kement-se evit aesaat ar c'hompren. Diouzh al lec'hienn emaoc'h warni e c'hallfe bezañ gwelet titouroù prevez ivez. Ma 'z eo gwelloc'h ganeoc'h chom hep kas ur skeudenn eus ho skramm, kasit ur postel deomp evit displegañ an traoù da <a0>support@adblockplus.org</a0>."
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Kuzhat"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "Usskediñ"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Dibab ar gudenn"
+  },
   "issueReporter_sendButton_label": {
-    "message": "Kas c'houzout"
+    "message": "Kas ur gemennadenn"
   },
   "issueReporter_sendPage_heading": {
     "message": "Kas c'houzout"
+  },
+  "issueReporter_sending": {
+    "message": "Gortozit mar plij keit m'emañ Adblock Plus o kas ho tanevell."
+  },
+  "issueReporter_showData_label": {
+    "message": "Klikit war al liamm-mañ evit adlenn ho kemennadenn a-raok he c'has"
+  },
+  "issueReporter_typeSelector_description": {
+    "message": "Dibabit ur gudenn mar plij:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "Peseurt doare kudenn ho peus bet?"
   }
 }

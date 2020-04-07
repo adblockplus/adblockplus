@@ -1,0 +1,26 @@
+{
+  "day1_blockelement_more": {
+    "message": "எப்படி என்பதை அறியவும்"
+  },
+  "day1_community_contact": {
+    "message": "எங்களைத் தொடர்புக்கொள்ளுங்கள்!"
+  },
+  "day1_community_contact_subject": {
+    "message": "ஆதரவுக்குத் தேடுகிறோம்!"
+  },
+  "day1_community_title": {
+    "message": "Adblock Plus சமூகத்தில் சேருங்கள்"
+  },
+  "day1_header_more": {
+    "message": "தீங்கிழைக்கும் விளம்பரங்களைப் பற்றி மேலும் அறிக"
+  },
+  "notification_day1_title": {
+    "message": "நீங்கள் ஏற்கனவே $ads$ விளம்பரங்களைத் தடுத்துள்ளீர்கள்!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

@@ -1,8 +1,44 @@
 {
+  "mops_acceptableAds_description": {
+    "message": "Aotren bruderezh nann-intrudus."
+  },
+  "mops_acceptableAds_more": {
+    "message": "Lenn muioc'h"
+  },
   "mops_action_cancel": {
     "message": "Nullañ"
   },
+  "mops_enabled_label": {
+    "message": "Stankañ ar bruderezh war:"
+  },
+  "mops_error_url": {
+    "message": "Bizskrivit un URL gwiriek"
+  },
+  "mops_filterlist_add": {
+    "message": "Ouzhpennañ ur roll siloù"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Ouzhpennañ ur roll siloù"
+  },
+  "mops_filterlist_add_url": {
+    "message": "Ouzhpennañ ur roll siloù personelaet"
+  },
+  "mops_header": {
+    "message": "Arventennoù Adblock Plus"
+  },
+  "mops_subscribe_header": {
+    "message": "Ouzhpennañ ur roll siloù personelaet"
+  },
+  "mops_subscribe_title": {
+    "message": "Anv roll ar siloù"
+  },
+  "mops_subscribe_url": {
+    "message": "URL istenn ar siloù"
+  },
   "mops_subscriptions_header": {
     "message": "Koumanantoù sil"
+  },
+  "mops_title": {
+    "message": "Arventennoù Adblock Plus"
   }
 }

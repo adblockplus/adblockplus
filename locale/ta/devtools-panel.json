@@ -1,0 +1,20 @@
+{
+  "devtools_action_block": {
+    "message": "உருப்படியைத் தடு"
+  },
+  "devtools_action_remove": {
+    "message": "விதிமுறையை அகற்று"
+  },
+  "devtools_filter_title": {
+    "message": "வடிகட்டி"
+  },
+  "devtools_header_state_all": {
+    "message": "எல்லாம்"
+  },
+  "devtools_request_title": {
+    "message": "கோரிக்கை"
+  },
+  "devtools_type_title": {
+    "message": "வகை"
+  }
+}

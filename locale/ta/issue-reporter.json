@@ -8,8 +8,20 @@
   "issueReporter_anonymousSubmission_label": {
     "message": "அநாமதேய சமர்ப்பிப்பு"
   },
+  "issueReporter_closeButton_label": {
+    "message": "மூடு"
+  },
   "issueReporter_commentPage_heading": {
     "message": "ஒரு கருத்து தெரிவிக்கவும்"
+  },
+  "issueReporter_comment_label": {
+    "message": "கருத்துகள் (விருப்பம்):"
+  },
+  "issueReporter_config_label": {
+    "message": "எனது உலாவி அமைப்பு மற்றும் நான் பயன்படுத்தும் நீடிப்புகளின் பட்டியலை சேர்க்கவும்."
+  },
+  "issueReporter_confirmationMessage": {
+    "message": "உங்கள் அறிக்கை சேமிக்கப்பட்டது. இந்த முகவரியில் அதை அணுகலாம்:"
   },
   "issueReporter_detailsButton_label": {
     "message": "விவரங்கள்"
@@ -38,7 +50,13 @@
   "issueReporter_sendPage_heading": {
     "message": "அறிக்கை அனுப்பு"
   },
+  "issueReporter_sending": {
+    "message": "உங்கள் அறிக்கையை Adblock Plus ஐ சமர்ப்பிக்கும் வரை தயவுசெய்து பொறுங்கள்."
+  },
   "issueReporter_typeSelector_description": {
     "message": "தயவுசெய்து ஒரு சிக்கலைத் தேர்ந்தெடு:"
+  },
+  "issueReporter_typeSelector_heading": {
+    "message": "எந்த வகையான சிக்கலை நீங்கள் அனுபவிக்கிறிர்கள்?"
   }
 }

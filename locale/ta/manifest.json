@@ -1,5 +1,14 @@
 {
+  "description": {
+    "message": "YouTube™ விளம்பரங்கள், பாப்-அப்சைத் தடுக்கவும் & தீம்பொருளை எதிர்க்கவும்!"
+  },
+  "name": {
+    "message": "Adblock Plus"
+  },
   "name_devbuild": {
     "message": "Adblock Plus வளர்ச்சி கட்டமை"
+  },
+  "name_releasebuild": {
+    "message": "Adblock Plus - இலவச விளம்பரம் தடுப்பான்"
   }
 }

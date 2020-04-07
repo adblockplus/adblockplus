@@ -30,7 +30,7 @@
     "message": "Cancel"
   },
   "options_customFilters_description": {
-    "message": "Write your own custom filters to further control what content Adblock Plus allows or blocks."
+    "message": "Write your own custom filters to further control what content Adblock Plus allows or blocks. <a0>Learn how to write filters (English only)</a0>"
   },
   "options_customFilters_title": {
     "message": "Create and edit your filter list"

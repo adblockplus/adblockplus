@@ -1,0 +1,20 @@
+{
+  "day1_blockelement_more": {
+    "message": "Научете как"
+  },
+  "day1_community_contact": {
+    "message": "Свържете се с нас!"
+  },
+  "day1_community_title": {
+    "message": "Присъединете се към общността на Adblock Plus"
+  },
+  "notification_day1_title": {
+    "message": "Вече блокирахте $ads$ реклами!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

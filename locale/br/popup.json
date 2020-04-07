@@ -1,5 +1,60 @@
 {
+  "click_element_to_block_it": {
+    "message": "Klikit war un elfenn eus ar bajenn-mañ evit stankañ anezhi."
+  },
+  "easy_create_filter": {
+    "message": "Stankañ an elfenn"
+  },
+  "options_refresh": {
+    "message": "Azbevaat"
+  },
   "options_short": {
     "message": "Dibaboù"
+  },
+  "overlay_notification_closing_button_hide": {
+    "message": "Serriñ"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Paouez da ziskouez kemennoù"
+  },
+  "promote_abp_module": {
+    "message": "Interesed gant Adblock Plus evit ho hezoug?"
+  },
+  "refresh_this_page": {
+    "message": "Azbevaat ar bajenn-mañ"
+  },
+  "refresh_to_take_effect": {
+    "message": "Klikit war ar bouton dindan evit ma vefe efedus ar cheñchamantoù."
+  },
+  "sendReport": {
+    "message": "Diskleriañ ur gudenn"
+  },
+  "stats_header": {
+    "message": "Niver a elfennoù stanket"
+  },
+  "stats_label_page": {
+    "message": "<strong>$number$</strong> war ar bajenn-mañ",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_label_total": {
+    "message": "<strong>$number$</strong> en holl",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "status_domain": {
+    "message": "Al lec'hienn-mañ:"
+  },
+  "status_header": {
+    "message": "Stankañ ar bruderezh war"
+  },
+  "status_page": {
+    "message": "Ar bajenn-mañ:"
   }
 }

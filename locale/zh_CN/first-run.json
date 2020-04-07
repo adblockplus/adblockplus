@@ -18,7 +18,7 @@
     "message": "一切尽在掌控"
   },
   "firstRun_fair_description": {
-    "message": "我们建议您合理使用 Adblock Plus，并选择将网站列入白名单。根据您使用的过滤器，您了解并接受可能会发生无意的结果（例如：拦截网站上的内容）。有关使用 Adblock Plus 的更多信息，请参阅<a0>使用条款</a0>。"
+    "message": "我们建议您合理使用 Adblock Plus，并选择将网站列入白名单。根据您使用的过滤，您了解并接受可能会发生无意的结果（例如：拦截网站上的内容）。有关使用 Adblock Plus 的更多信息，请参阅<a0>使用条款</a0>。"
   },
   "firstRun_fair_title": {
     "message": "合理使用"
@@ -45,6 +45,6 @@
     "message": "从<a>adblockplus.org</a>上面重新安装Adblock Plus。"
   },
   "firstRun_warning_reinitialized": {
-    "message": "似乎有问题导致了所有过滤器被移除，我们无法恢复备份。因此，我们必须重置您的过滤器和“可接受广告”设置。请在 <a>Adblock Plus 选项</a>中查看过滤列表和“可接受广告”设置。"
+    "message": "似乎有问题导致了所有过滤被移除，我们无法恢复备份。因此，我们必须重置您的过滤和“可接受广告”设置。请在 <a>Adblock Plus 选项</a>中查看过滤列表和“可接受广告”设置。"
   }
 }
