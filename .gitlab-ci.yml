@@ -19,6 +19,8 @@ stages:
   - uploadxtm
   - updatextm
   - downloadxtm
+  - uploadcrowdin
+  - downloadcrowdin
 
 lint:
   stage: lint
@@ -176,6 +178,54 @@ pages:
     variables:
       - $CI_PROJECT_NAME == 'adblockplusui-nightlies'
 
+.crowdin:
+  variables:
+    CROWDIN_API_KEY: $CROWDIN_API_KEY
+
+uploadcrowdin:
+  stage: uploadcrowdin
+  extends: .crowdin
+  script:
+    - npm install
+    # installing java
+    - apt-get install openjdk-11-jre -yqq
+    # installing crowdin-cli
+    - wget https://artifacts.crowdin.com/repo/deb/crowdin.deb -O crowdin.deb
+    - dpkg -i crowdin.deb
+    - crowdin --version
+    # Uploading strings
+    - npm run $ crowdin.upload-strings
+    - npm run $ crowdin.upload-translations
+  when: manual
+
+downloadcrowdin:
+  stage: downloadcrowdin
+  extends: .crowdin
+  script:
+    - npm install
+    # installing java
+    - apt-get install openjdk-11-jre -yqq
+    # installing crowdin-cli
+    - wget https://artifacts.crowdin.com/repo/deb/crowdin.deb -O crowdin.deb
+    - dpkg -i crowdin.deb
+    - crowdin --version
+    # Download strings
+    - npm run $ crowdin.download-translations
+    # Test translations
+    - npm run $ lint.locale
+    # Configure author for commit
+    - git config user.email "$GITLAB_USER_EMAIL"
+    - git config user.name "$GITLAB_USER_NAME"
+    # Add changes and commit
+    - git add locale
+    - export COMMIT_MSG="Noissue - Downloaded Crowdin translations for $CI_BUILD_REF_NAME"
+    - git commit -m "$COMMIT_MSG"
+    # Push into new branch and create a new merge request
+    - export TARGET_BRANCH="${CI_BUILD_REF_NAME}-crowdin-download"
+    - export PUSH_URL=$(echo $CI_PROJECT_URL | sed "s/:\/\//:\/\/$GITLAB_USER:$GITLAB_TOKEN@/")
+    - 'git push -o merge_request.create -o merge_request.target=$CI_BUILD_REF_NAME -o merge_request.remove_source_branch -o merge_request.title="WIP: ${COMMIT_MSG}" $PUSH_URL HEAD:refs/heads/$TARGET_BRANCH'
+  when: manual
+
 .xtm:
   variables:
     USER_ID: $XTM_USER_ID
@@ -188,7 +238,6 @@ uploadxtm:
   stage: uploadxtm
   extends: .xtm
   script:
-    - mkdir -p .git/info && touch .git/info/exclude
     - npm install
     # Currently the xtm script determines the branch name using git rev-parse
     # which doesn't work inside the CI environment because it's using a detached
@@ -203,7 +252,6 @@ updatextm:
   stage: updatextm
   extends: .xtm
   script:
-    - mkdir -p .git/info && touch .git/info/exclude
     - npm install
     # Currently the xtm script determines the branch name using git rev-parse
     # which doesn't work inside the CI environment because it's using a detached
@@ -218,7 +266,6 @@ downloadxtm:
   stage: downloadxtm
   extends: .xtm
   script:
-    - mkdir -p .git/info && touch .git/info/exclude
     - npm install
     # Currently the xtm script determines the branch name using git rev-parse
     # which doesn't work inside the CI environment because it's using a detached
@@ -228,15 +275,17 @@ downloadxtm:
     - git checkout -B "$CI_BUILD_REF_NAME" "$CI_BUILD_REF"
     # Download the translations
     - npm run $ xtm.download
+    # Test translations
+    - npm run $ lint.locale
     # Configure author for commit
     - git config user.email "$GITLAB_USER_EMAIL"
     - git config user.name "$GITLAB_USER_NAME"
     # Add changes and commit
     - git add locale
-    - export COMMIT_MSG="Noissue - Added XTM translations for $CI_BUILD_REF_NAME"
+    - export COMMIT_MSG="Noissue - Downloaded XTM translations for $CI_BUILD_REF_NAME"
     - git commit -m "$COMMIT_MSG"
     # Push into new branch and create a new merge request
-    - export TARGET_BRANCH="$CI_BUILD_REF_NAME""-xtm-download"
-    - export PUSH_URL=$(echo $CI_PROJECT_URL | sed "s/:\/\//:\/\/$GITLAB_USER:$GITLAB_TOKEN@/g")
-    - "git push --push-option=merge_request.create --push-option=merge_request.target=$CI_BUILD_REF_NAME --push-option=merge_request.remove_source_branch --push-option=merge_request.title=\"WIP: ${COMMIT_MSG}\" $PUSH_URL HEAD:$TARGET_BRANCH"
+    - export TARGET_BRANCH="${CI_BUILD_REF_NAME}-xtm-download"
+    - export PUSH_URL=$(echo $CI_PROJECT_URL | sed "s/:\/\//:\/\/$GITLAB_USER:$GITLAB_TOKEN@/")
+    - 'git push -o merge_request.create -o merge_request.target=$CI_BUILD_REF_NAME -o merge_request.remove_source_branch -o merge_request.title="WIP: ${COMMIT_MSG}" $PUSH_URL HEAD:refs/heads/$TARGET_BRANCH'
   when: manual
