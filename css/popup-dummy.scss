@@ -40,9 +40,12 @@
   );
 }
 
-#block-element
+#block-element,
+#block-element:hover,
+#block-element:focus
 {
   position: relative;
   z-index: 1;
   border: 3px solid #CA0000;
+  cursor: default;
 }
