@@ -1,34 +1,34 @@
 {
   "updates_contribute_donate_action": {
-    "description": "",
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/019381532ccd93cbba8732de1b90a1ce7fdb7e4a/spec/abp/updates.md#contribute",
     "message": "Contribute"
   },
   "updates_contribute_donate_subtitle": {
-    "description": "",
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/019381532ccd93cbba8732de1b90a1ce7fdb7e4a/spec/abp/updates.md#contribute",
     "message": "Your support allows us to continue to improve Adblock Plus."
   },
   "updates_contribute_donate_title": {
-    "description": "",
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/019381532ccd93cbba8732de1b90a1ce7fdb7e4a/spec/abp/updates.md#contribute",
     "message": "Contribute to the ABP project"
   },
   "updates_contribute_rate_action": {
-    "description": "",
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/019381532ccd93cbba8732de1b90a1ce7fdb7e4a/spec/abp/updates.md#contribute",
     "message": "Rate it"
   },
   "updates_contribute_rate_subtitle": {
-    "description": "",
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/019381532ccd93cbba8732de1b90a1ce7fdb7e4a/spec/abp/updates.md#contribute",
     "message": "Please take a moment and help spread the word by rating Adblock Plus. It's quick and free!"
   },
   "updates_contribute_rate_title": {
-    "description": "",
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/019381532ccd93cbba8732de1b90a1ce7fdb7e4a/spec/abp/updates.md#contribute",
     "message": "Rate it!"
   },
   "updates_contribute_subtitle": {
-    "description": "",
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/019381532ccd93cbba8732de1b90a1ce7fdb7e4a/spec/abp/updates.md#contribute",
     "message": "Consider supporting ABP in one of two ways:"
   },
   "updates_contribute_title": {
-    "description": "",
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/019381532ccd93cbba8732de1b90a1ce7fdb7e4a/spec/abp/updates.md#contribute",
     "message": "Enjoying Adblock Plus?"
   },
   "updates_fixes_title": {
