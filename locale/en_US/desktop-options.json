@@ -494,5 +494,9 @@
   "options_rating_title": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/8f12811171d57b7499d50514283c6ec2d0247b05/spec/abp/options-page.md#store-rating",
     "message": "Enjoying Adblock Plus?"
+  },
+  "options_rating_button": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/53d319c7512cf83e1c2dfd0517885e1e49adecd4/spec/abp/desktop-settings/index.md#store-rating",
+    "message": "Rate us"
   }
 }

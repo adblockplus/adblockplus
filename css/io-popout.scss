@@ -278,13 +278,6 @@ io-popout .close
 {
   position: absolute;
   top: 10px;
-  right: 10px;
-}
-
-html[dir="rtl"] io-popout .close
-{
-  right: auto;
-  left: 10px;
 }
 
 io-popout .close:focus
@@ -328,6 +321,18 @@ html[dir="rtl"] io-popout button.close
 io-popout .close + *
 {
   margin-top: 2em;
+}
+
+html[dir="ltr"] io-popout button.close
+{
+  right: 10px;
+  left: auto;
+}
+
+html[dir="rtl"] io-popout button.close
+{
+  right: auto;
+  left: 10px;
 }
 
 /*******************************************************************************
