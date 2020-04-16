@@ -22,7 +22,6 @@
 require("./io-filter-table");
 require("./io-list-box");
 require("./io-popout");
-require("./io-rating");
 require("./io-toggle");
 
 const api = require("./api");
@@ -1109,17 +1108,23 @@ function onDOMLoaded()
     setElementLinks("visit-forum", url);
   });
 
-  api.app.getInfo().then((info) =>
+  api.app.getInfo().then(({application, store}) =>
   {
     // We need to restrict this feature to certain browsers for which we
     // have a link to where users can rate us
-    if (!["chrome", "opera", "firefox"].includes(info.application))
+    if (!["chrome", "opera", "firefox"].includes(application))
     {
       $("#rating").setAttribute("aria-hidden", true);
       return;
     }
 
-    $("#rating io-rating").store = info.store;
+    $("#rating button:last-of-type").addEventListener("click", () =>
+    {
+      api.doclinks.get(`${store}_review`).then((url) =>
+      {
+        browser.tabs.create({url});
+      });
+    });
   });
 
   $("#dialog").addEventListener("keydown", function(e)
