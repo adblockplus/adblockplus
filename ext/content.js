@@ -165,8 +165,26 @@
     };
   }
 
+  function getTabURLFromQueryString()
+  {
+    if (window.top.location.search)
+    {
+      const params = window.top.location.search.substr(1).split("&");
+
+      for (const param of params)
+      {
+        const parts = param.split("=", 2);
+        if (parts.length == 2 && parts[0] === "pageURL")
+        {
+          return decodeURIComponent(parts[1]);
+        }
+      }
+    }
+    return "https://example.com";
+  }
+
   let tabCounter = 0;
-  let activeTab = getTab("https://example.com/");
+  let activeTab = getTab(getTabURLFromQueryString());
   const tabs = new Map([
     [activeTab.id, activeTab]
   ]);

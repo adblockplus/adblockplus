@@ -75,6 +75,8 @@ No parameters.
 | | `information` | Show notification with "information" type |
 | pageWhitelisted | `true` | Show popup as if page is whitelisted |
 | platform | `edgehtml` | Hides button to open issue reporter |
+| pageURL | `https%3A%2F%2Fexample.com%2F` | Sets the displayed URL in the popup to the given value (the given value must be URL-encoded) |
+| | `chrome%3A%2F%2Fextensions` | The UI will only display stats, as ABP is not active on built-in browser pages |
 
 If the `locale` uses any Chinese that starts with `zh`, the _Share numbers with friends_ should either be invisible, or it should show social media icons different from Facebook and Twitter, as these platform are not available for Chinese users.
 
