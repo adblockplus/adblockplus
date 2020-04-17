@@ -9,7 +9,7 @@
     "dist": "npm run icons-gen && npm run bundle",
     "icons-gen": "node build/icons-generation/index.js",
     "lint": "npm run $ lint",
-    "start": "http-server & npm run watch",
+    "start": "http-server",
     "test": "npm run $ test",
     "watch": "npm run $ watch",
     "csv-export": "node build/csv-exporter/main.js -e",
