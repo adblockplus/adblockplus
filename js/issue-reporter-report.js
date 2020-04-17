@@ -29,7 +29,12 @@ function getOriginalTabId()
 {
   const tabId = parseInt(location.search.replace(/^\?/, ""), 10);
   if (!tabId && tabId !== 0)
+  {
+    console.warn(
+      "Missing tab id. Try appending '?1' to the end of the url."
+      );
     throw new Error("invalid tab id");
+  }
 
   return tabId;
 }
