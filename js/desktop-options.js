@@ -169,7 +169,7 @@ Collection.prototype.addItem = function(item)
     const tooltip = $("io-popout[type='tooltip']", listItem);
     if (tooltip)
     {
-      let tooltipId = tooltip.getAttribute("i18n-body");
+      let tooltipId = tooltip.dataset.templateI18nBody;
       tooltipId = tooltipId.replace("%value%", item.recommended);
       if (getMessage(tooltipId))
       {
