@@ -14,7 +14,10 @@
 # Files configuration
 "files": [
   {
-    "ignore": ["/en_US/updates-latest.json"],
+    "ignore": [
+      "/en_US/updates.json",
+      "/en_US/updates-latest.json"
+    ],
     "source" : "/en_US/*.json",
     "translation" : "/%two_letters_code%/%original_file_name%"
   }
