@@ -107,7 +107,7 @@
     "message": "フィルターリストを追加"
   },
   "options_dialog_invalid_message": {
-    "message": "セキュリティ上の理由により、HTTPS フィルタリストしか追加できません。"
+    "message": "セキュリティ上の理由により、<strong>HTTPS</strong> フィルタリストと<strong>データ</strong>のみ追加できます。"
   },
   "options_dialog_invalid_title": {
     "message": "エラーが発生しました"
@@ -119,7 +119,15 @@
     "message": "言語の選択"
   },
   "options_dialog_predefined_confirm": {
-    "message": "はい、このフィルターリストを使用します"
+    "message": "はい。このフィルターリストを追加します"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "タイトル"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "個のフィルターリストを追加しますか？"

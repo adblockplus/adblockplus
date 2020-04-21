@@ -1,0 +1,86 @@
+{
+  "notification_problem_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Bir sorun ABP ayarlarınızın varsayılan olarak sıfırlanmasına neden oldu. <a>Sorunu giderin ve daha fazla bilgi edinin</a>"
+  },
+  "problem_note": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Adblock Plus'ı kurmanızın ardından, ABP'yi nasıl kullandığınıza bağlı olarak, ayarlarınızı, özel filtrelerinizi ve güvenilir listesindeki web sitelerinizi yeniden yapılandırmanız gerekebilir."
+  },
+  "problem_os_mac": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Mac"
+  },
+  "problem_os_windows": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Windows"
+  },
+  "problem_social_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Sorun mu yaşıyorsunuz? Destek ekibimizle temasa geçin"
+  },
+  "problem_social_email": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "E-posta"
+  },
+  "problem_social_facebook": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Facebook"
+  },
+  "problem_social_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Hala yardıma ihtiyacınız var mı?"
+  },
+  "problem_social_twitter": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Twitter"
+  },
+  "problem_solution_action": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Adblock Plus kurulumunu kaldırmak ve yeniden kurmak için buraya tıklayın"
+  },
+  "problem_solution_opera_step_1": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Opera Addons için olan bu bağlantıyı açın (yeni bir sekmede açılacaktır)"
+  },
+  "problem_solution_opera_step_2": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Opera araç çubuğundan, <strong>Adblock Plus</strong> simgesine <em0>sağ tıklayın</em0> / <em1>kontrol tuşu ile aynı anda tıklayın</em1> ve <strong>Uzantıyı yönet</strong>'i seçin."
+  },
+  "problem_solution_opera_step_3": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Adblock Plus simgesinin yanındaki <strong>ok</strong> simgesine tıklayın."
+  },
+  "problem_solution_opera_step_4": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Adblock Plus'ı bulun ve sağ üst köşedeki <strong>X</strong> simgesine tıklayın."
+  },
+  "problem_solution_opera_step_5": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "<strong>Kaldır</strong>'a tıklayın."
+  },
+  "problem_solution_opera_step_6": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Opera Addons sayfasını yenileyin."
+  },
+  "problem_solution_opera_step_7": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "<strong>Opera'ya ekle</strong>'ye tıklayın."
+  },
+  "problem_solution_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Çözüm:"
+  },
+  "problem_subtitle": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Bu nedenle, ABP ayarlarınız varsayılan olarak sıfırlandı. Sorunu gidermek için, Adblock Plus kurulumunu kaldırmanız ve yeniden kurmanız gereklidir. Bunu yapmak için aşağıdaki bağlantıya tıklayın."
+  },
+  "problem_subtitle_opera": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Bu nedenle, ABP ayarlarınız varsayılan olarak sıfırlandı. Sorunu gidermek için, Adblock Plus kurulumunu kaldırmanız ve yeniden kurmanız gereklidir. Bunu yapmak için aşağıdaki adımları izleyin."
+  },
+  "problem_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Bir tarayıcı sorunu ABP ayarlarınızın sıfırlanmasına neden oldu."
+  }
+}

@@ -5,8 +5,52 @@
   "updates_blockAds": {
     "message": "Повстанческий альянс разработчиков открытого ПО создал новые блокирующие фильтры, позволяющие избавиться от скрытой рекламы на таких сайтах, как Facebook, даже если Империя нанесет ответный удар."
   },
+  "updates_contribute_donate_action": {
+    "description": "",
+    "message": "Пожертвовать"
+  },
+  "updates_contribute_donate_subtitle": {
+    "description": "",
+    "message": "Ваша поддержка позволяет нам продолжать улучшать Adblock Plus."
+  },
+  "updates_contribute_donate_title": {
+    "description": "",
+    "message": "Пожертвовать на развитие проекта ABP"
+  },
+  "updates_contribute_rate_action": {
+    "description": "",
+    "message": "Оценить"
+  },
+  "updates_contribute_rate_subtitle": {
+    "description": "",
+    "message": "Уделите пару минут, чтобы рассказать другим об Adblock Plus и оценить его. Это быстро и бесплатно!"
+  },
+  "updates_contribute_rate_title": {
+    "description": "",
+    "message": "Оценить"
+  },
+  "updates_contribute_subtitle": {
+    "description": "",
+    "message": "Вы можете поддержать ABP одним из двух способов:"
+  },
+  "updates_contribute_title": {
+    "description": "",
+    "message": "Нравится Adblock Plus?"
+  },
+  "updates_fixes_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
+    "message": "Исправления"
+  },
   "updates_heading": {
     "message": "Adblock Plus обновлен!"
+  },
+  "updates_improvements_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
+    "message": "Улучшения"
+  },
+  "updates_link": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
+    "message": "Подробнее"
   },
   "updates_optionsPageNews": {
     "message": "Принципиально новая страница параметров c новым обновленным дизайном и с улучшенными функциями конфиденциальности и безопасности, <a>упростившими настройку Adblock Plus</a>."
@@ -14,10 +58,38 @@
   "updates_phone": {
     "message": "Но минутку! А как же ваш телефон?"
   },
+  "updates_social_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Поделитесь своими мыслями о последнем обновлении ABP."
+  },
+  "updates_social_email": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Эл. почта"
+  },
+  "updates_social_facebook": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Facebook"
+  },
+  "updates_social_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Мы будем рады обратной связи!"
+  },
+  "updates_social_twitter": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Twitter"
+  },
   "updates_status": {
     "message": "Обновление завершено"
   },
   "updates_subheading": {
     "message": "Что нового?"
+  },
+  "updates_subtitle": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
+    "message": "Мы верим, что вам понравятся последние обновления."
+  },
+  "updates_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
+    "message": "Adblock Plus обновился"
   }
 }

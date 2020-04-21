@@ -116,7 +116,7 @@
     "message": "Añadir una lista de filtros"
   },
   "options_dialog_invalid_message": {
-    "message": "Por motivos de seguridad, solo se pueden añadir listas de filtros HTTPS."
+    "message": "Por motivos de seguridad, solo se pueden añadir listas de filtros <strong>HTTPS</strong> y URL de <strong>datos</strong>."
   },
   "options_dialog_invalid_title": {
     "message": "Se ha producido un error"
@@ -128,7 +128,15 @@
     "message": "Seleccionar un idioma"
   },
   "options_dialog_predefined_confirm": {
-    "message": "Sí, utilizar esta lista de filtros"
+    "message": "Sí, añadir esta lista de filtros"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "Título"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "¿Seguro que deseas añadir esta lista de filtros?"

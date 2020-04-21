@@ -116,7 +116,7 @@
     "message": "إضافة قائمة عوامل تصفية"
   },
   "options_dialog_invalid_message": {
-    "message": "لأسباب تتعلق بالأمان، يمكن إضافة قوائم عامل تصفية HTTPS فقط."
+    "message": "لأسباب تتعلق بالأمان، يمكن إضافة قوائم عامل تصفية <strong>HTTPS</strong> وعناوين URL <strong>للبيانات</strong> فقط."
   },
   "options_dialog_invalid_title": {
     "message": "حدث خطأ"
@@ -128,7 +128,15 @@
     "message": "حدد لغة"
   },
   "options_dialog_predefined_confirm": {
-    "message": "نعم، استخدم قائمة الفلاتر هذه"
+    "message": "نعم، أضف قائمة التصفية هذه"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "العنوان"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "عنوان URL"
   },
   "options_dialog_predefined_title": {
     "message": "هل أنت بالتأكيد تريد إضافة قائمة عوامل التصفية هذه؟"

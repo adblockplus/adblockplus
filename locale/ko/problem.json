@@ -1,0 +1,86 @@
+{
+  "notification_problem_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "문제가 발생하여 ABP 설정이 기본 설정으로 재설정되었습니다. <a>문제를 해결하고 자세히 알아보기</a>"
+  },
+  "problem_note": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "ABP 사용 방법에 따라, Adblock Plus 재설치하고 설정, 맞춤 필터, 허용 목록에 추가된 웹사이트를 다시 설정해야 할 수 있습니다."
+  },
+  "problem_os_mac": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Mac"
+  },
+  "problem_os_windows": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Windows"
+  },
+  "problem_social_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "문제가 있습니까? 지원팀에 연락해주십시오."
+  },
+  "problem_social_email": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "이메일"
+  },
+  "problem_social_facebook": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Facebook"
+  },
+  "problem_social_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "도움이 더 필요하십니까?"
+  },
+  "problem_social_twitter": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "트위터"
+  },
+  "problem_solution_action": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "여기를 클릭하여 Adblock Plus를 삭제하고 재설치하십시오."
+  },
+  "problem_solution_opera_step_1": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Opera Addons 링크를 엽니다(새로운 탭에서 열립니다)."
+  },
+  "problem_solution_opera_step_2": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Opera 도구 모음에서 <strong>Adblock Plus</strong> 아이콘을 <em0>오른쪽 클릭</em0> / <em1>컨트롤 클릭</em1>하고 <strong>확장 프로그램 관리</strong>를 선택합니다."
+  },
+  "problem_solution_opera_step_3": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Adblock Plus 아이콘 옆 <strong>화살표</strong>를 클릭합니다."
+  },
+  "problem_solution_opera_step_4": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Adblock Plus를 찾아 오른쪽 상단 모서리에서 <strong>X</strong>를 클릭합니다."
+  },
+  "problem_solution_opera_step_5": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "<strong>제거</strong>를 클릭합니다."
+  },
+  "problem_solution_opera_step_6": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Opera Addons 페이지를 새로 고침합니다."
+  },
+  "problem_solution_opera_step_7": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "<strong>Opera에 추가</strong>를 클릭합니다."
+  },
+  "problem_solution_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "해결 방법:"
+  },
+  "problem_subtitle": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "이로 인해 ABP 설정이 기본 설정으로 재설정되었습니다. 이 문제를 해결하려면 Adblock Plus를 삭제 후 재설치해야 합니다. 삭제 및 재설치하려면 아래 링크를 클릭하십시오."
+  },
+  "problem_subtitle_opera": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "이로 인해 ABP 설정이 기본 설정으로 재설정되었습니다. 이 문제를 해결하려면 Adblock Plus를 삭제 후 재설치해야 합니다. 삭제 및 재설치하려면 다음 단계를 따르십시오."
+  },
+  "problem_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "브라우저 문제로 ABP 설정이 재설정되었습니다."
+  }
+}

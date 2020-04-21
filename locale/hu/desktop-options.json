@@ -116,7 +116,7 @@
     "message": "Szűrőlista hozzáadása"
   },
   "options_dialog_invalid_message": {
-    "message": "Biztonsági okokból csak HTTPS szűrőlisták adhatók hozzá."
+    "message": "Biztonsági okokból csak a <strong>HTTPS</strong> szűrőlisták és <strong>adat</strong> URL-címek hozzáadása végezhető el."
   },
   "options_dialog_invalid_title": {
     "message": "Hiba történt"
@@ -128,7 +128,15 @@
     "message": "Válasszon egy nyelvet"
   },
   "options_dialog_predefined_confirm": {
-    "message": "Igen, szűrőlista használata"
+    "message": "Igen, végezze el e szűrőlista hozzáadást."
+  },
+  "options_dialog_predefined_subscription_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "Cím"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "URL-cím"
   },
   "options_dialog_predefined_title": {
     "message": "Biztosan fel akarja venni ezt a szűrőlistát?"

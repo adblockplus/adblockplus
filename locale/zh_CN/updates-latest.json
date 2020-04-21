@@ -1,0 +1,42 @@
+{
+  "notification_updates_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
+    "message": "无需任何操作，继续浏览网页而不会看到烦人的广告！<a>了解最新功能</a>"
+  },
+  "notification_updates_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
+    "message": "Adblock Plus 已更新"
+  },
+  "updates_update_i1_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "如果您的 ABP 设置因浏览器问题而损坏，通知消息现在将在新的浏览器页面中打开。"
+  },
+  "updates_update_i1_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "数据损坏通知已改变位置"
+  },
+  "updates_update_i2_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "请在您最喜爱的社交媒体渠道上分享您已封锁的广告总数，帮助您喜欢的广告拦截程序广而告之。"
+  },
+  "updates_update_i2_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "添加了在社交媒体上分享已拦截广告数的选项"
+  },
+  "updates_update_i3_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "现在可以完整查看长筛选器，包括 CSS 选择器。"
+  },
+  "updates_update_i3_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "扩展了开发者工具面板工具提示"
+  },
+  "updates_update_i4_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "图标现在会闪烁并变蓝，以提醒用户有通知。"
+  },
+  "updates_update_i4_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "使 ABP 任务栏图标通知更醒目，更易辨认"
+  }
+}

@@ -5,8 +5,52 @@
   "updates_blockAds": {
     "message": "开源反抗联盟创建了新的拦截过滤，即使在Facebook等帝国反击的情况下，也可以屏蔽其上的广告。"
   },
+  "updates_contribute_donate_action": {
+    "description": "",
+    "message": "协助"
+  },
+  "updates_contribute_donate_subtitle": {
+    "description": "",
+    "message": "您的支持让我们能够持续改进 Adblock Plus。"
+  },
+  "updates_contribute_donate_title": {
+    "description": "",
+    "message": "助力 ABP 项目"
+  },
+  "updates_contribute_rate_action": {
+    "description": "",
+    "message": "评价"
+  },
+  "updates_contribute_rate_subtitle": {
+    "description": "",
+    "message": "请抽出宝贵时间评价 Adblock Plus，帮助我们广而告之。只需占用您一点时间，而且免费！"
+  },
+  "updates_contribute_rate_title": {
+    "description": "",
+    "message": "评价！"
+  },
+  "updates_contribute_subtitle": {
+    "description": "",
+    "message": "请考虑以两种方式之一支持 ABP："
+  },
+  "updates_contribute_title": {
+    "description": "",
+    "message": "喜欢 Adblock Plus？"
+  },
+  "updates_fixes_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
+    "message": "修补程序"
+  },
   "updates_heading": {
     "message": "Adblock Plus 已完成更新！"
+  },
+  "updates_improvements_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
+    "message": "改进"
+  },
+  "updates_link": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
+    "message": "了解详情"
   },
   "updates_optionsPageNews": {
     "message": "全新的设置页面 - 改进和重新设计跟以前比，Adblock Plus有更多的隐私和安全性选项-<a>所以您可以根据需要轻松自定义它</a>。"
@@ -14,10 +58,38 @@
   "updates_phone": {
     "message": "等等！您的手机呢？"
   },
+  "updates_social_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "分享您对 ABP 最新更新的看法。"
+  },
+  "updates_social_email": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "电子邮件"
+  },
+  "updates_social_facebook": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Facebook"
+  },
+  "updates_social_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "我们想倾听您的心声！"
+  },
+  "updates_social_twitter": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Twitter"
+  },
   "updates_status": {
     "message": "更新完成"
   },
   "updates_subheading": {
     "message": "有哪些新功能？"
+  },
+  "updates_subtitle": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
+    "message": "我们觉得您会喜欢最新更新。"
+  },
+  "updates_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
+    "message": "Adblock Plus 已更新！"
   }
 }

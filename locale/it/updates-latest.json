@@ -1,0 +1,42 @@
+{
+  "notification_updates_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
+    "message": "Non è necessaria alcuna azione: continua a navigare senza fastidiosi annunci! <a>Scopri le novità</a>"
+  },
+  "notification_updates_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
+    "message": "Adblock Plus è aggiornato"
+  },
+  "updates_update_i1_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "In caso di danno alle impostazioni di ABP a causa di un problema del browser, il messaggio di notifica si aprirà in una nuova scheda del browser."
+  },
+  "updates_update_i1_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Notifica di danno ai dati spostata"
+  },
+  "updates_update_i2_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Aiutaci a far conoscere il tuo ad blocker preferito condividendo sui tuoi social media preferiti il numero totale di annunci che hai bloccato."
+  },
+  "updates_update_i2_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Aggiunta l'opzione che consente di condividere sui social media il numero di annunci bloccati"
+  },
+  "updates_update_i3_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "I filtri lunghi ora sono visualizzabili integralmente, compreso il selettore CSS."
+  },
+  "updates_update_i3_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Ampliata la lunghezza della descrizione comando nel pannello degli strumenti di sviluppo"
+  },
+  "updates_update_i4_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "L'icona ora lampeggia e diventa blu per avvisare gli utenti delle notifiche."
+  },
+  "updates_update_i4_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Le notifiche dell'icona della barra applicazioni di ABP ora sono più chiare e distinguibili"
+  }
+}

@@ -29,24 +29,35 @@
   "sendReport": {
     "message": "Comunicar problema"
   },
+  "share_on_facebook": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/36533b29e70499ed5521564d2330e51392cfb2e9/spec/abp/popup.md#counter-panel",
+    "message": "Compartilhe no Facebook"
+  },
+  "share_on_twitter": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/36533b29e70499ed5521564d2330e51392cfb2e9/spec/abp/popup.md#counter-panel",
+    "message": "Compartilhe no Twitter"
+  },
+  "share_on_twitter_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/1e5b1524ef5d69849415054a25d100e6bc5a9468/spec/abp/popup.md#counter-panel",
+    "message": "Eu bloqueei $number$ anúncios com o Adblock Plus. Experimente, é GRÁTIS!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "social_media_share": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/36533b29e70499ed5521564d2330e51392cfb2e9/spec/abp/popup.md#counter-panel",
+    "message": "Compartilhe números com amigos"
+  },
   "stats_header": {
     "message": "Número de artigos bloqueados"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> nesta página",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "nesta página"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> no total",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "no total"
   },
   "status_domain": {
     "message": "Este site:"

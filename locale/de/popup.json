@@ -29,24 +29,35 @@
   "sendReport": {
     "message": "Problem melden"
   },
+  "share_on_facebook": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/36533b29e70499ed5521564d2330e51392cfb2e9/spec/abp/popup.md#counter-panel",
+    "message": "Auf Facebook teilen"
+  },
+  "share_on_twitter": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/36533b29e70499ed5521564d2330e51392cfb2e9/spec/abp/popup.md#counter-panel",
+    "message": "Auf Twitter teilen"
+  },
+  "share_on_twitter_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/1e5b1524ef5d69849415054a25d100e6bc5a9468/spec/abp/popup.md#counter-panel",
+    "message": "Ich habe $number$ Werbeanzeigen mit Adblock Plus blockiert. Probier' es mal aus – es ist GRATIS!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "social_media_share": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/36533b29e70499ed5521564d2330e51392cfb2e9/spec/abp/popup.md#counter-panel",
+    "message": "Zahlen mit Freunden teilen"
+  },
   "stats_header": {
     "message": "Anzahl blockierter Elemente"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> auf dieser Seite",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "auf dieser Seite"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> gesamt",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "insgesamt"
   },
   "status_domain": {
     "message": "Diese Webseite:"

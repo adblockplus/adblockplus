@@ -5,8 +5,52 @@
   "updates_blockAds": {
     "message": "İmparatora rağmen, İsyancı Açık Kaynak Topluluğu, Facebook gibi web sitelerindeki gizli reklamları yok etmenize olanak sağlayan yeni bir engelleme filtresi oluşturdu."
   },
+  "updates_contribute_donate_action": {
+    "description": "",
+    "message": "Katkıda bulunun"
+  },
+  "updates_contribute_donate_subtitle": {
+    "description": "",
+    "message": "Sizin katkınız Adblock Plus'ı iyileştirmeye devam etmemizi sağlar."
+  },
+  "updates_contribute_donate_title": {
+    "description": "",
+    "message": "ABP projesine katkıda bulunun"
+  },
+  "updates_contribute_rate_action": {
+    "description": "",
+    "message": "Değerlendirin"
+  },
+  "updates_contribute_rate_subtitle": {
+    "description": "",
+    "message": "Lütfen vakit ayırıp Adblock Plus'ı değerlendirerek bu mesajı yayın. Hem hızlı hem de ücretsiz!"
+  },
+  "updates_contribute_rate_title": {
+    "description": "",
+    "message": "Değerlendirin!"
+  },
+  "updates_contribute_subtitle": {
+    "description": "",
+    "message": "ABP'yi iki yöntemden biri ile desteklemeyi düşünün:"
+  },
+  "updates_contribute_title": {
+    "description": "",
+    "message": "Adblock Plus'tan keyif alıyor musunuz?"
+  },
+  "updates_fixes_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
+    "message": "Düzeltmeler"
+  },
   "updates_heading": {
     "message": "Adblock Plus güncellendi!"
+  },
+  "updates_improvements_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
+    "message": "İyileştirmeler"
+  },
+  "updates_link": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
+    "message": "Daha fazla okuyun"
   },
   "updates_optionsPageNews": {
     "message": "Yeni Ayarlar sayfası - daha fazla gizlilik ve güvenlik seçenekleriyle yenilendi ve yeniden tasarlandı - bu sayede <a>Adblock Plus'ı istediğiniz gibi özelleştirmek</a> artık çok daha kolay."
@@ -14,10 +58,38 @@
   "updates_phone": {
     "message": "Ama durun! Peki ya telefonunuz?"
   },
+  "updates_social_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "En yeni ABP güncellemesine dair fikirlerinizi paylaşın."
+  },
+  "updates_social_email": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "E-posta"
+  },
+  "updates_social_facebook": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Facebook"
+  },
+  "updates_social_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Sizin görüşlerinizi duymak istiyoruz!"
+  },
+  "updates_social_twitter": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Twitter"
+  },
   "updates_status": {
     "message": "Güncelleme tamamlandı"
   },
   "updates_subheading": {
     "message": "Yenilikler"
+  },
+  "updates_subtitle": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
+    "message": "En yeni güncellemeleri beğeneceğinizi düşünüyoruz."
+  },
+  "updates_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
+    "message": "Adblock Plus artık güncellendi!"
   }
 }

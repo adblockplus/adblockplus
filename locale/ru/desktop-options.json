@@ -116,7 +116,7 @@
     "message": "Добавить список фильтров"
   },
   "options_dialog_invalid_message": {
-    "message": "В целях безопасности могут быть добавлены лишь списки, отфильтрованные протоколом HTTPS"
+    "message": "В целях безопасности могут быть добавлены лишь списки фильтров <strong>HTTPS</strong> и URL <strong>данных</strong>."
   },
   "options_dialog_invalid_title": {
     "message": "Произошла ошибка"
@@ -128,7 +128,15 @@
     "message": "Выбрать язык"
   },
   "options_dialog_predefined_confirm": {
-    "message": "Да, использовать этот список фильтров"
+    "message": "Да, добавить этот список фильтров"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "Заголовок"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "Вы уверены, что хотите добавить этот список фильтров?"

@@ -1,0 +1,42 @@
+{
+  "notification_updates_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
+    "message": "Du brauchst nichts zu tun – surfe einfach weiter im Internet ohne nervige Werbeanzeigen! <a>Schau dir an, was es Neues gibt</a>"
+  },
+  "notification_updates_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
+    "message": "Adblock Plus wurde aktualisiert"
+  },
+  "updates_update_i1_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Sollten deine ABP-Einstellungen aufgrund eines Browser-Problems beschädigt werden, öffnet sich die Benachrichtigung in einer neuen Browser-Registerkarte."
+  },
+  "updates_update_i1_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Benachrichtigung zur Datenkorruption verschoben"
+  },
+  "updates_update_i2_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Hilf deinem Lieblings-Adblocker, indem du die Gesamtzahl der Werbeanzeigen, die du blockiert hast, auf deinen Lieblings-Social-Media-Kanälen teilst. "
+  },
+  "updates_update_i2_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Option zum Teilen der Anzahl der blockierten Werbeanzeigen hinzugefügt"
+  },
+  "updates_update_i3_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Lange Filter können in ihrer Gesamtheit betrachtet werden, einschließlich des CSS-Selektors."
+  },
+  "updates_update_i3_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Länge von Tooltips in den Entwicklerwerkzeugen erhöht"
+  },
+  "updates_update_i4_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Das Symbol blinkt nun und leuchtet blau auf, um Nutzer auf Benachrichtigungen aufmerksam zu machen."
+  },
+  "updates_update_i4_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Benachrichtigungen über das ABP-Taskleistensymbol wurden geändert, damit sie schneller erkannt und auseinandergehalten werden können"
+  }
+}

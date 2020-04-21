@@ -1,0 +1,42 @@
+{
+  "notification_updates_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
+    "message": "Δεν χρειάζεται να κάνετε τίποτα άλλο - συνεχίστε την περιήγησή σας στο διαδίκτυο χωρίς ενοχλητικές διαφημίσεις! <a>Δείτε τι νέο υπάρχει</a>"
+  },
+  "notification_updates_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
+    "message": "Το Adblock Plus είναι ενημερωμένο"
+  },
+  "updates_update_i1_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Σε περίπτωση που οι ρυθμίσεις του ABP σας αλλοιωθούν λόγω ενός προβλήματος του προγράμματος περιήγησης, το μήνυμα ειδοποίησης ανοίγει τώρα σε καινούργια καρτέλα περιήγησης."
+  },
+  "updates_update_i1_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Μετακίνηση της ειδοποίησης για την αλλοίωση δεδομένων"
+  },
+  "updates_update_i2_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Βοηθήστε μας να ενημερώσουμε το κοινό για το αγαπημένο σας πρόγραμμα αποκλεισμού διαφημίσεων κοινοποιώντας τον συνολικό αριθμό των διαφημίσεων που αποκλείσατε στα αγαπημένα σας κανάλια κοινωνικής δικτύωσης."
+  },
+  "updates_update_i2_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Επιπλέον δυνατότητα κοινοποίησης του αριθμού των αποκλεισμένων διαφημίσεων στα μέσα κοινωνικής δικτύωσης."
+  },
+  "updates_update_i3_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Μπορείτε τώρα να δείτε τα μακριά φίλτρα, συμπεριλαμβανομένου του επιλογέα CSS, στο σύνολό τους."
+  },
+  "updates_update_i3_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Επέκταση του μεγέθους του πίνακα υπόμνησης των εργαλείων ανάπτυξης"
+  },
+  "updates_update_i4_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Πλέον το εικονίδιο αναβοσβήνει και γίνεται μπλε προκειμένου να προειδοποιήσει τους χρήστες για τυχόν ειδοποιήσεις."
+  },
+  "updates_update_i4_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Πιο εμφανείς και ευδιάκριτες ειδοποιήσεις της γραμμής εργασιών του ABP"
+  }
+}
