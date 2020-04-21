@@ -1,0 +1,86 @@
+{
+  "notification_problem_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "一个问题导致您的 ABP 设置被重置为默认值。<a>修复问题并了解更多信息</a>"
+  },
+  "problem_note": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "请注意，根据您使用 ABP 的方式，重新安装 Adblock Plus 后，您可能需要重新配置设置、自定义筛选器和列入白名单的网站。"
+  },
+  "problem_os_mac": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Mac"
+  },
+  "problem_os_windows": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Windows"
+  },
+  "problem_social_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "遇到问题？请联系我们的支持团队"
+  },
+  "problem_social_email": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "电子邮件"
+  },
+  "problem_social_facebook": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Facebook"
+  },
+  "problem_social_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "仍然需要帮助？"
+  },
+  "problem_social_twitter": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "Twitter"
+  },
+  "problem_solution_action": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "单击此处卸载并重新安装 Adblock Plus"
+  },
+  "problem_solution_opera_step_1": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "打开指向 Opera Addons 链接（将在新标签页中打开）"
+  },
+  "problem_solution_opera_step_2": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "在 Opera 工具栏中，<em0>右键单击</em0>/<em1>按住 Control 键并单击</em1> <strong>Adblock Plus</strong> 图标，然后选择<strong>管理扩展程序</strong>。"
+  },
+  "problem_solution_opera_step_3": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "单击 Adblock Plus 图标旁的<strong>箭头</strong>。"
+  },
+  "problem_solution_opera_step_4": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "单击 Adblock Plus，然后单击右上角的 <strong>X</strong>。"
+  },
+  "problem_solution_opera_step_5": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "单击<strong>移除</strong>。"
+  },
+  "problem_solution_opera_step_6": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "刷新 Opera Addons 页面。"
+  },
+  "problem_solution_opera_step_7": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "单击<strong>添加到 Opera</strong>。"
+  },
+  "problem_solution_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "解决方案："
+  },
+  "problem_subtitle": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "因此，您的 ABP 设置已重置为默认值。 要解决此问题，您需要卸载并重新安装 Adblock Plus。 单击以下链接以执行此操作。"
+  },
+  "problem_subtitle_opera": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "因此，您的 ABP 设置已重置为默认值。 要解决此问题，您需要卸载并重新安装 Adblock Plus。 根据以下步骤执行此操作。"
+  },
+  "problem_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
+    "message": "一个浏览器问题导致您的 ABP 设置被重置。"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "notification_updates_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
+    "message": "Никаких действий не требуется — продолжайте просматривать веб-страницы без назойливой рекламы! <a>Узнайте, что нового</a>"
+  },
+  "notification_updates_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
+    "message": "Adblock Plus обновился"
+  },
+  "updates_update_i1_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Если ваши настройки ABP будут повреждены из-за проблемы с браузером, в новой вкладке браузера откроется сообщение с уведомлением."
+  },
+  "updates_update_i1_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Уведомление о повреждении данных перемещено"
+  },
+  "updates_update_i2_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Помогите поделиться информацией о вашем любимом средстве блокировки рекламы, рассказав об общем количестве заблокированной рекламы в ваших любимых социальных сетях."
+  },
+  "updates_update_i2_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Добавлена возможность делиться в социальных сетях количеством заблокированной рекламы"
+  },
+  "updates_update_i3_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Длинные фильтры теперь можно просматривать полностью, включая селектор CSS."
+  },
+  "updates_update_i3_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Увеличена длина всплывающей подсказки панели инструментов разработчика"
+  },
+  "updates_update_i4_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Значок теперь мигает и становится синим, сообщая пользователям об уведомлениях."
+  },
+  "updates_update_i4_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "Уведомления в виде значков на панели задач ABP стали более заметными и различимыми"
+  }
+}

@@ -107,7 +107,7 @@
     "message": "필터 목록 추가"
   },
   "options_dialog_invalid_message": {
-    "message": "보안상의 이유로 HTTPS 필터 리스트만 추가 가능합니다."
+    "message": "보안상의 이유로 <strong>HTTPS</strong> 필터 목록 및 <strong>데이터</strong> URL만 추가 가능합니다."
   },
   "options_dialog_invalid_title": {
     "message": "오류 발생"
@@ -119,7 +119,15 @@
     "message": "언어 선택"
   },
   "options_dialog_predefined_confirm": {
-    "message": "예, 이 필터 목록을 사용합니다"
+    "message": "예, 이 필터 목록을 추가합니다"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "제목"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "이 필터 목록을 추가하길 원하십니까?"

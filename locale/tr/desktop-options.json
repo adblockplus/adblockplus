@@ -116,7 +116,7 @@
     "message": "Süzgeç listesi ekle"
   },
   "options_dialog_invalid_message": {
-    "message": "Güvenlik nedenleriyle sadece HTTPS filtreli listeler eklenebilir."
+    "message": "Güvenlik nedenleriyle, sadece <strong>HTTPS</strong> filtreli listeler ve <strong>veri</strong> URL'leri eklenebilir."
   },
   "options_dialog_invalid_title": {
     "message": "Hata oluştu"
@@ -128,7 +128,15 @@
     "message": "Bir dil seçin"
   },
   "options_dialog_predefined_confirm": {
-    "message": "Evet, bu süzme listesini kullan"
+    "message": "Evet, bu filtre listesini ekle"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "Başlık"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "Bu filtre listesini eklemek istediğinizden emin misiniz?"

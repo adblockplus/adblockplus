@@ -5,8 +5,52 @@
   "updates_blockAds": {
     "message": "A nyílt forráskódú lázadó szövetség új blokkoló szűrőket hozott létre, amelyek lehetővé teszik rejtett hirdetések robbanását a Facebookon, például a Birodalom visszaszorításakor."
   },
+  "updates_contribute_donate_action": {
+    "description": "",
+    "message": "Támogasson bennünket"
+  },
+  "updates_contribute_donate_subtitle": {
+    "description": "",
+    "message": "Támogatásával tovább fejleszthetjük az Adblock Plus alkalmazást."
+  },
+  "updates_contribute_donate_title": {
+    "description": "",
+    "message": "Támogassa az ABP projektet"
+  },
+  "updates_contribute_rate_action": {
+    "description": "",
+    "message": "Értékelje"
+  },
+  "updates_contribute_rate_subtitle": {
+    "description": "",
+    "message": "Kérjük, szánjon rá egy percet és értékelje az Adblock Plus alkalmazást. Gyors és ingyenes!"
+  },
+  "updates_contribute_rate_title": {
+    "description": "",
+    "message": "Értékelje!"
+  },
+  "updates_contribute_subtitle": {
+    "description": "",
+    "message": "Az ABP fejlesztését két módon támogathatja:"
+  },
+  "updates_contribute_title": {
+    "description": "",
+    "message": "Tetszik az Adblock Plus alkalmazás?"
+  },
+  "updates_fixes_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
+    "message": "Hibajavítások"
+  },
   "updates_heading": {
     "message": "Az Adblock Plus frissítve!"
+  },
+  "updates_improvements_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
+    "message": "Fejlesztések"
+  },
+  "updates_link": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
+    "message": "További részletek"
   },
   "updates_optionsPageNews": {
     "message": "Vadonatúj Beállítások lap – átalakítva és átformázva még több adatvédelmi és biztonsági beállítással, hogy könnyebb legyen <a>olyanra alakítani az Adblock Plust, amilyenre szeretné</a>."
@@ -14,10 +58,38 @@
   "updates_phone": {
     "message": "Várjon csak! Mi a helyzet a telefonjával?"
   },
+  "updates_social_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Ossza meg véleményét a legújabb ABP frissítésről."
+  },
+  "updates_social_email": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "E-mail"
+  },
+  "updates_social_facebook": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Facebook"
+  },
+  "updates_social_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Kíváncsiak vagyunk a véleményére!"
+  },
+  "updates_social_twitter": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Twitter"
+  },
   "updates_status": {
     "message": "A frissítés befejezve"
   },
   "updates_subheading": {
     "message": "Újdonságok"
+  },
+  "updates_subtitle": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
+    "message": "Reméljük, tetszettek a fejlesztések."
+  },
+  "updates_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
+    "message": "Az Adblock Plus naprakész!"
   }
 }

@@ -1,0 +1,42 @@
+{
+  "notification_updates_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
+    "message": "何もすることはありません — 広告に煩わされることなくウェブをお楽しみください！<a>最新情報はこちら</a>"
+  },
+  "notification_updates_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
+    "message": "Adblock Plus は最新版です"
+  },
+  "updates_update_i1_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "ブラウザの問題で ABP の設定が破損した場合、新しいタブで通知メッセージが表示されます。"
+  },
+  "updates_update_i1_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "データ破損通知の表示場所が変更"
+  },
+  "updates_update_i2_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "お気に入りのソーシャルメディアでブロックした広告の件数を共有して、お気に入りの広告ブロッカーについてお知り合いに伝えてください。"
+  },
+  "updates_update_i2_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "ソーシャルメディアで広告ブロック件数を共有する機能が追加"
+  },
+  "updates_update_i3_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "長いフィルターも、CSSセレクターを含め全体が表示できます。"
+  },
+  "updates_update_i3_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "開発者ツールパネルのツールチップを拡張"
+  },
+  "updates_update_i4_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "通知のアラートがある場合は、アイコンが点滅して青に変わります。"
+  },
+  "updates_update_i4_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
+    "message": "ABP のタスクバーアイコンがより見やすく、分かりやすく"
+  }
+}

@@ -5,8 +5,52 @@
   "updates_blockAds": {
     "message": "L’Alliance Rebelle Open Source a créé de nouveaux filtres de blocage qui vous permettent d’éliminer les pubs déguisées sur les sites web comme Facebook, même si l'Empire contre-attaque."
   },
+  "updates_contribute_donate_action": {
+    "description": "",
+    "message": "Participez"
+  },
+  "updates_contribute_donate_subtitle": {
+    "description": "",
+    "message": "Votre soutien nous permet de continuer à améliorer Adblock Plus."
+  },
+  "updates_contribute_donate_title": {
+    "description": "",
+    "message": "Participez à la réalisation du projet ABP"
+  },
+  "updates_contribute_rate_action": {
+    "description": "",
+    "message": "Évaluez-le"
+  },
+  "updates_contribute_rate_subtitle": {
+    "description": "",
+    "message": "Veuillez prendre quelques instants et faites passer le mot en évaluant Adblock Plus. C'est rapide et gratuit !"
+  },
+  "updates_contribute_rate_title": {
+    "description": "",
+    "message": "Évaluez-le !"
+  },
+  "updates_contribute_subtitle": {
+    "description": "",
+    "message": "Vous pouvez soutenir ABP en choisissant l'une des deux façons suivantes :"
+  },
+  "updates_contribute_title": {
+    "description": "",
+    "message": "Vous aimez Adblock Plus ?"
+  },
+  "updates_fixes_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
+    "message": "Corrections"
+  },
   "updates_heading": {
     "message": "Adblock Plus a été mis à jour !"
+  },
+  "updates_improvements_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
+    "message": "Améliorations"
+  },
+  "updates_link": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
+    "message": "Pour en savoir plus"
   },
   "updates_optionsPageNews": {
     "message": "Page des paramètres totalement nouvelle - remaniée et relookée, avec plus d’options de protection de la vie privée et de sécurité - pour qu’il soit plus facile de <a>personnaliser Adblock Plus exactement comme vous voulez</a>."
@@ -14,10 +58,38 @@
   "updates_phone": {
     "message": "Mais ce n’est pas tout ! Et votre téléphone ?"
   },
+  "updates_social_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Partagez vos réflexions sur la dernière mise à jour d'ABP."
+  },
+  "updates_social_email": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Courriel"
+  },
+  "updates_social_facebook": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Facebook"
+  },
+  "updates_social_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Dites-nous ce que vous en pensez !"
+  },
+  "updates_social_twitter": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Twitter"
+  },
   "updates_status": {
     "message": "Mise à jour terminée"
   },
   "updates_subheading": {
     "message": "Quoi de neuf ?"
+  },
+  "updates_subtitle": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
+    "message": "Nous pensons que vous aimerez les dernières mises à jour."
+  },
+  "updates_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
+    "message": "Adblock Plus a été mis à jour !"
   }
 }

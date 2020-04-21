@@ -116,7 +116,7 @@
     "message": "添加过滤列表"
   },
   "options_dialog_invalid_message": {
-    "message": "出于安全原因，仅可添加 HTTPS 筛选器列表。"
+    "message": "出于安全原因，仅可添加 <strong>HTTPS</strong> 筛选器列表和<strong>数据</strong> URL。"
   },
   "options_dialog_invalid_title": {
     "message": "发生错误"
@@ -128,7 +128,15 @@
     "message": "选择语言"
   },
   "options_dialog_predefined_confirm": {
-    "message": "是，使用此过滤规则列表"
+    "message": "是的，添加此筛选器列表"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "标题"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "您确定要添加此过滤列表吗？"

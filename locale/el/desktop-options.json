@@ -104,13 +104,25 @@
     "message": "Προσθήκη λίστας φίλτρων"
   },
   "options_dialog_invalid_message": {
-    "message": "Για λόγους ασφαλείας, μπορούν να προστεθούν μόνο λίστες φίλτρων HTTPS."
+    "message": "Για λόγους ασφαλείας, μπορούν να προστεθούν μόνο λίστες φίλτρων <strong>HTTPS</strong> και ηλεκτρονικές διευθύνσεις URL <strong>δεδομένων</strong>."
   },
   "options_dialog_invalid_title": {
     "message": "Προέκυψε σφάλμα"
   },
   "options_dialog_language_title": {
     "message": "Επιλέξτε μια γλώσσα"
+  },
+  "options_dialog_predefined_confirm": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "Ναι, να προστεθεί αυτή η λίστα φίλτρων"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "Τίτλος"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "Σίγουρα θέλετε να προσθέσετε αυτήν τη λίστα φίλτρων;"

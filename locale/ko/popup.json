@@ -29,24 +29,35 @@
   "sendReport": {
     "message": "문제 보고"
   },
+  "share_on_facebook": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/36533b29e70499ed5521564d2330e51392cfb2e9/spec/abp/popup.md#counter-panel",
+    "message": "Facebook에 공유하기"
+  },
+  "share_on_twitter": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/36533b29e70499ed5521564d2330e51392cfb2e9/spec/abp/popup.md#counter-panel",
+    "message": "트위터에 공유하기"
+  },
+  "share_on_twitter_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/1e5b1524ef5d69849415054a25d100e6bc5a9468/spec/abp/popup.md#counter-panel",
+    "message": "Adblock Plus로 광고 $number$개를 차단했습니다. 무료로 사용해보세요!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "social_media_share": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/36533b29e70499ed5521564d2330e51392cfb2e9/spec/abp/popup.md#counter-panel",
+    "message": "차단 개수 친구와 공유하기"
+  },
   "stats_header": {
     "message": "차단된 광고의 수"
   },
   "stats_label_page": {
-    "message": "이 페이지에서 <strong>$number$</strong> 개",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "이 페이지에서"
   },
   "stats_label_total": {
-    "message": "총 <strong>$number$</strong> 개",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "총계"
   },
   "status_domain": {
     "message": "이 웹사이트:"

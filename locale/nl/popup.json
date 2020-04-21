@@ -29,24 +29,35 @@
   "sendReport": {
     "message": "Probleem melden"
   },
+  "share_on_facebook": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/36533b29e70499ed5521564d2330e51392cfb2e9/spec/abp/popup.md#counter-panel",
+    "message": "Op Facebook delen"
+  },
+  "share_on_twitter": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/36533b29e70499ed5521564d2330e51392cfb2e9/spec/abp/popup.md#counter-panel",
+    "message": "Op Twitter delen"
+  },
+  "share_on_twitter_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/1e5b1524ef5d69849415054a25d100e6bc5a9468/spec/abp/popup.md#counter-panel",
+    "message": "Ik heb reclame geblokkeerd $number$ met Adblock Plus. Probeer het eens - het is GRATIS!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "social_media_share": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/36533b29e70499ed5521564d2330e51392cfb2e9/spec/abp/popup.md#counter-panel",
+    "message": "Deel aantallen met vrienden"
+  },
   "stats_header": {
     "message": "Aantal geblokkeerde items"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> op deze pagina",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "op deze pagina"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> in totaal",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "in totaal"
   },
   "status_domain": {
     "message": "Deze website:"

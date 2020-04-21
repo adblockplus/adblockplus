@@ -5,8 +5,52 @@
   "updates_blockAds": {
     "message": "Neue Blockierungs-Technologie! Es gibt jetzt mehr Möglichkeiten als je zuvor, neue Filter zum Blockieren zu erstellen mit denen du versteckte Anzeigen auf Websites wie Facebook entfernen kannst, selbst wenn das Imperium zurückschlägt."
   },
+  "updates_contribute_donate_action": {
+    "description": "",
+    "message": "Hilf mit"
+  },
+  "updates_contribute_donate_subtitle": {
+    "description": "",
+    "message": "Mit deiner Unterstützung können wir Adblock Plus immer weiter verbessern."
+  },
+  "updates_contribute_donate_title": {
+    "description": "",
+    "message": "Leiste einen Beitrag zum ABP-Projekt"
+  },
+  "updates_contribute_rate_action": {
+    "description": "",
+    "message": "Bewerten"
+  },
+  "updates_contribute_rate_subtitle": {
+    "description": "",
+    "message": "Nimm dir bitte einen Augenblick Zeit und verschaffe Adblock Plus mehr Aufmerksamkeit, indem du uns bewertest – schnell und kostenlos!"
+  },
+  "updates_contribute_rate_title": {
+    "description": "",
+    "message": "Gib deine Bewertung ab!"
+  },
+  "updates_contribute_subtitle": {
+    "description": "",
+    "message": "Wenn du willst, kannst du ABP auf eine dieser zwei Weisen unterstützen:"
+  },
+  "updates_contribute_title": {
+    "description": "",
+    "message": "Gefällt dir Adblock Plus?"
+  },
+  "updates_fixes_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
+    "message": "Fehlerbehebungen"
+  },
   "updates_heading": {
     "message": "Adblock Plus wurde aktualisiert!"
+  },
+  "updates_improvements_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
+    "message": "Verbesserungen"
+  },
+  "updates_link": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
+    "message": "Mehr erfahren"
   },
   "updates_optionsPageNews": {
     "message": "Brandneue Einstellungsseite – komplett überarbeitet, mit neuem Stil und mehr Datenschutz- und Sicherheitsoptionen. So <a>kannst du Adblock Plus leichter an deine Anforderungen anpassen</a>."
@@ -14,10 +58,38 @@
   "updates_phone": {
     "message": "Aber warte! Was ist mit deinem Handy?"
   },
+  "updates_social_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Teile deine Meinung zum neuesten ABP-Update."
+  },
+  "updates_social_email": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "E-Mail"
+  },
+  "updates_social_facebook": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Facebook"
+  },
+  "updates_social_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Wir freuen uns, von dir zu hören!"
+  },
+  "updates_social_twitter": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
+    "message": "Twitter"
+  },
   "updates_status": {
     "message": "Aktualisierung abgeschlossen"
   },
   "updates_subheading": {
     "message": "Was ist neu?"
+  },
+  "updates_subtitle": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
+    "message": "Wir denken, dass dir die neuesten Änderungen gefallen werden."
+  },
+  "updates_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
+    "message": "Adblock Plus wurde aktualisiert!"
   }
 }
