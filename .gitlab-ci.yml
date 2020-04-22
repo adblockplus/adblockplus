@@ -178,13 +178,20 @@ pages:
     variables:
       - $CI_PROJECT_NAME == 'adblockplusui-nightlies'
 
+.translations:
+  only: 
+    refs:
+      - /^release-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
+
 .crowdin:
   variables:
     CROWDIN_API_KEY: $CROWDIN_API_KEY
 
 uploadcrowdin:
   stage: uploadcrowdin
-  extends: .crowdin
+  extends: 
+    - .crowdin
+    - .translations
   script:
     - npm install
     # installing java
@@ -200,7 +207,9 @@ uploadcrowdin:
 
 downloadcrowdin:
   stage: downloadcrowdin
-  extends: .crowdin
+  extends: 
+    - .crowdin
+    - .translations
   script:
     - npm install
     # installing java
@@ -223,7 +232,7 @@ downloadcrowdin:
     # Push into new branch and create a new merge request
     - export TARGET_BRANCH="${CI_BUILD_REF_NAME}-crowdin-download"
     - export PUSH_URL=$(echo $CI_PROJECT_URL | sed "s/:\/\//:\/\/$GITLAB_USER:$GITLAB_TOKEN@/")
-    - 'git push -o merge_request.create -o merge_request.target=$CI_BUILD_REF_NAME -o merge_request.remove_source_branch -o merge_request.title="WIP: ${COMMIT_MSG}" $PUSH_URL HEAD:refs/heads/$TARGET_BRANCH'
+    - 'git push -f -o merge_request.create -o merge_request.target=$CI_BUILD_REF_NAME -o merge_request.remove_source_branch -o merge_request.title="WIP: ${COMMIT_MSG}" $PUSH_URL HEAD:refs/heads/$TARGET_BRANCH'
   when: manual
 
 .xtm:
@@ -236,7 +245,9 @@ downloadcrowdin:
 
 uploadxtm:
   stage: uploadxtm
-  extends: .xtm
+  extends: 
+    - .xtm
+    - .translations
   script:
     - npm install
     # Currently the xtm script determines the branch name using git rev-parse
@@ -250,7 +261,9 @@ uploadxtm:
 
 updatextm:
   stage: updatextm
-  extends: .xtm
+  extends: 
+    - .xtm
+    - .translations
   script:
     - npm install
     # Currently the xtm script determines the branch name using git rev-parse
@@ -264,7 +277,9 @@ updatextm:
 
 downloadxtm:
   stage: downloadxtm
-  extends: .xtm
+  extends: 
+    - .xtm
+    - .translations
   script:
     - npm install
     # Currently the xtm script determines the branch name using git rev-parse
@@ -287,5 +302,5 @@ downloadxtm:
     # Push into new branch and create a new merge request
     - export TARGET_BRANCH="${CI_BUILD_REF_NAME}-xtm-download"
     - export PUSH_URL=$(echo $CI_PROJECT_URL | sed "s/:\/\//:\/\/$GITLAB_USER:$GITLAB_TOKEN@/")
-    - 'git push -o merge_request.create -o merge_request.target=$CI_BUILD_REF_NAME -o merge_request.remove_source_branch -o merge_request.title="WIP: ${COMMIT_MSG}" $PUSH_URL HEAD:refs/heads/$TARGET_BRANCH'
+    - 'git push -f -o merge_request.create -o merge_request.target=$CI_BUILD_REF_NAME -o merge_request.remove_source_branch -o merge_request.title="WIP: ${COMMIT_MSG}" $PUSH_URL HEAD:refs/heads/$TARGET_BRANCH'
   when: manual
