@@ -7,6 +7,7 @@
 - **Design:** (Link to any designs here)
 - **Research:** (Link to any research data here)
 - **Spec:** ([Create spec merge request](https://gitlab.com/eyeo/specs/spec/merge_requests/new) and link to it from here)
+- **Development:** (Mention any implementation details here)
 
 ## Hints for testers
 (Mention any areas/scenarios that should be tested in addition to what's described in the spec)
