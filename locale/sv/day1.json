@@ -1,12 +1,45 @@
 {
+  "day1_blockelement_description": {
+    "message": "Blockera dem med Adblock Plus's fiffiga blockelementfunktion."
+  },
   "day1_blockelement_more": {
     "message": "Lär dig hur"
+  },
+  "day1_blockelement_screenshot": {
+    "message": "Exempel på ikonen pop-up med knappen \"Blockera element\" markerad."
+  },
+  "day1_blockelement_title": {
+    "message": "Trött på kommentaravsnittet tar dig ner?"
   },
   "day1_community_contact": {
     "message": "Kontakta oss!"
   },
   "day1_community_contact_subject": {
     "message": "Letar efter support!"
+  },
+  "day1_community_description_1": {
+    "message": "Som ett projekt med öppen källkod är vi beroende av användare som du för att hjälpa oss att förbättra din annonsblockerande upplevelse."
+  },
+  "day1_community_description_2": {
+    "message": "Vilka funktioner skulle du vilja se? Vad kan vi göra bättre? Gör Adblock Plus att vissa webbplatser missköter sig?"
+  },
+  "day1_community_title": {
+    "message": "Gå med i Adblock Plus-gemenskapen"
+  },
+  "day1_header_more": {
+    "message": "Läs mer om skadlig reklam"
+  },
+  "day1_header_title": {
+    "message": "Adblock Plus <strong>blockerade <em0>$ads$ annonser</em0> i <em1>den senaste halvtimmen</em1>,</strong> några av dem kan ha innehållit skadligt innehåll",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_message": {
+    "message": "Det är en hel del irriterande annonser. <a>Ta reda på vad annat Adblock Plus kan blockera.</a>"
   },
   "notification_day1_title": {
     "message": "Du har redan blockerat $ads$ annonser!",

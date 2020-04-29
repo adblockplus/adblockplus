@@ -6,19 +6,9 @@
     "message": "ምርጫዎች"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> በዚህ ገጽ ላይ",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "በዚህ ገጽ ላይ"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> ባጠቃላይ",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "ባጠቃላይ"
   }
 }

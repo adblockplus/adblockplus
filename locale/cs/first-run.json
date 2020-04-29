@@ -15,6 +15,6 @@
     "message": "Znovu nainstalujte Adblock Plus z <a>adblockplus.org</a>."
   },
   "firstRun_warning_reinitialized": {
-    "message": "Zdá se, že nastal problém, který způsobil smazání všech filtrů a nebyli jsme schopni je obnovit ze zálohy. Museli jsme tudíž Vaše filtry a nastavení Přijatelných reklam resetovat. Prosím zkontrolujte si své nastavení seznamů filtrů a Přijatelných reklam v <a>předvolbách Adblocku Plus</a>."
+    "message": "Zdá se, že nastal problém, který způsobil smazání všech filtrů a nebyli jsme schopni je obnovit ze zálohy. Museli jsme tudíž Vaše filtry a nastavení Přijatelných reklam resetovat. Prosím zkontrolujte si své nastavení seznamů filtrů a Přijatelných reklam v <a>předvolbách Adblock Plus</a>."
   }
 }

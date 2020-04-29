@@ -29,24 +29,31 @@
   "sendReport": {
     "message": "Reportar problema"
   },
+  "share_on_facebook": {
+    "message": "Compartir en Facebook"
+  },
+  "share_on_twitter": {
+    "message": "Compartir en Twitter"
+  },
+  "share_on_twitter_message": {
+    "message": "He bloqueado $number$ anuncios con Adblock Plus. Pruébalo. ¡Es GRATIS!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "social_media_share": {
+    "message": "Comparte los números con amigos"
+  },
   "stats_header": {
     "message": "Número de elementos bloqueados"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> en esta página",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "en esta página"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> en total",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "en total"
   },
   "status_domain": {
     "message": "Este sitio web:"

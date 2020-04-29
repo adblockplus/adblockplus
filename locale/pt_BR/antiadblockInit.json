@@ -1,8 +1,0 @@
-{
-  "notification_antiadblock_message": {
-    "message": "Este site é conhecido por mostrar mensagens direcionadas a usuários do Adblock Plus. Você quer que o Adblock Plus esconda mensagens direcionadas?"
-  },
-  "notification_antiadblock_title": {
-    "message": "Ocultar mensagens direcionadas?"
-  }
-}

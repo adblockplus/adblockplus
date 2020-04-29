@@ -9,19 +9,9 @@
     "message": "Билдиришномалар кўрсатилмасин"
   },
   "stats_label_page": {
-    "message": "Бу саҳифада: <strong>$number$</strong>",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "бу саҳифада"
   },
   "stats_label_total": {
-    "message": "Жами: <strong>$number$</strong>",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "жами"
   }
 }

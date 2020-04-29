@@ -33,20 +33,10 @@
     "message": "Bloķēto elementu skaits"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> šajā lapā",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "šajā lapā"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> pavisam",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "pavisam"
   },
   "status_domain": {
     "message": "Tīmekļvietne:"

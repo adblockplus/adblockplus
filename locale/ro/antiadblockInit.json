@@ -1,8 +1,0 @@
-{
-  "notification_antiadblock_message": {
-    "message": "Acest site trimite mesaje personalizate utilizatorilor Adblock Plus. Vrei ca Adblock Plus să ascundă aceste mesaje?"
-  },
-  "notification_antiadblock_title": {
-    "message": "Vrei sa ascunzi mesajele personalizate?"
-  }
-}

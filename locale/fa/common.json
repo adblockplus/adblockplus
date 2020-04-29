@@ -6,7 +6,7 @@
     "message": "لغو"
   },
   "common_copyright": {
-    "message": "$year$ تمامی حقوق محقوظ است. Adblock Plus® یک علامت تجاری ثبت شده برای <a0> eyeo GmbH </a0> است.",
+    "message": "$year$ تمامی حقوق محقوظ است. Adblock Plus® یک علامت تجاری ثبت شده برای <a0>eyeo GmbH</a0> است.",
     "placeholders": {
       "year": {
         "content": "$1",

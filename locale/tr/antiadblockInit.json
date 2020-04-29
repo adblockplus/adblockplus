@@ -1,8 +1,0 @@
-{
-  "notification_antiadblock_message": {
-    "message": "Bu site Adblock Plus kullanıcılarını hedef alan iletiler göstermesiyle bilinir. Adblock Plus'ın hedeflenen iletileri gizlemesini istiyor musunuz?"
-  },
-  "notification_antiadblock_title": {
-    "message": "Hedeflenen iletileri gizlemek istiyor musunuz?"
-  }
-}

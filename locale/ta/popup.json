@@ -30,20 +30,10 @@
     "message": "தடுக்கப்பட்ட எண்ணிக்கை"
   },
   "stats_label_page": {
-    "message": "இந்தப் பக்கத்தில் <strong>$number$</strong>",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "இந்தப் பக்கத்தில்"
   },
   "stats_label_total": {
-    "message": "மொத்தம் <strong>$number$</strong>",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "மொத்தம்"
   },
   "status_domain": {
     "message": "இந்த வலைத்தளம்:"

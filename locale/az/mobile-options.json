@@ -2,10 +2,43 @@
   "mops_acceptableAds_description": {
     "message": "Bəzi qeyri-müdaxilə reklamlarına icazə ver"
   },
+  "mops_acceptableAds_more": {
+    "message": "Daha ətraflı"
+  },
   "mops_action_cancel": {
     "message": "Ləğv et"
   },
+  "mops_enabled_label": {
+    "message": "Reklamları əngəllə:"
+  },
+  "mops_error_url": {
+    "message": "Etibarlı bir URL daxil edin"
+  },
+  "mops_filterlist_add": {
+    "message": "Filtr siyahısı əlavə et"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Filtr siyahısı əlavə et"
+  },
+  "mops_filterlist_add_url": {
+    "message": "Özəl filtr siyahısı əlavə et"
+  },
+  "mops_header": {
+    "message": "Adblock Plus tənzimləmələri"
+  },
+  "mops_subscribe_header": {
+    "message": "Özəl filtr siyahısı əlavə et"
+  },
+  "mops_subscribe_title": {
+    "message": "Filtr siyahı adı"
+  },
+  "mops_subscribe_url": {
+    "message": "Filtr siyahı URL-si"
+  },
   "mops_subscriptions_header": {
     "message": "Filtr abunəlikləri"
+  },
+  "mops_title": {
+    "message": "Adblock Plus tənzimləmələri"
   }
 }

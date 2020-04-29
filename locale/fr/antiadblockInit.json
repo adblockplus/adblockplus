@@ -1,8 +1,0 @@
-{
-  "notification_antiadblock_message": {
-    "message": "Ce site est connu pour afficher des messages destinés aux utilisateurs d'Adblock Plus. Voulez-vous qu'Adblock Plus cache ces messages ?"
-  },
-  "notification_antiadblock_title": {
-    "message": "Cacher les messages ciblés ?"
-  }
-}

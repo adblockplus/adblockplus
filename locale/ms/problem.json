@@ -1,0 +1,65 @@
+{
+  "notification_problem_message": {
+    "message": "Suatu masalah telah menyebabkan tetapan ABP anda diset semula kepada lalai. <a>Perbaiki masalah itu dan ketahui lebih lanjut</a>"
+  },
+  "problem_note": {
+    "message": "Ambil maklum bahawa bergantung kepada cara anda menggunakan ABP, anda mungkin perlu untuk menyusun semula tetapan, penapis tersuai dan laman web disenarai putih anda setelah anda memasang semula Adblock Plus."
+  },
+  "problem_os_mac": {
+    "message": "Mac"
+  },
+  "problem_os_windows": {
+    "message": "Windows"
+  },
+  "problem_social_description": {
+    "message": "Mengalami masalah? Hubungi pasukan sokongan kami"
+  },
+  "problem_social_email": {
+    "message": "E-mel"
+  },
+  "problem_social_facebook": {
+    "message": "Facebook"
+  },
+  "problem_social_title": {
+    "message": "Masih mencari pertolongan?"
+  },
+  "problem_social_twitter": {
+    "message": "Twitter"
+  },
+  "problem_solution_action": {
+    "message": "Klik di sini untuk menyah pasang dan memasang semula Adblock Plus"
+  },
+  "problem_solution_opera_step_1": {
+    "message": "Buka pautan ini untuk ke Opera Addons (ia akan membuka tab baharu)"
+  },
+  "problem_solution_opera_step_2": {
+    "message": "Dari bar alatan Opera, <em0>klik kanan</em0>/<em1>klik-kawalan</em1> ikon <strong>Adblock Plus</strong> dan pilih <strong>Uruskan sambungan</strong>."
+  },
+  "problem_solution_opera_step_3": {
+    "message": "Klik <strong>anak panah</strong> di sebelah ikon Adblock Plus."
+  },
+  "problem_solution_opera_step_4": {
+    "message": "Cari Adblock Plus dan klik <strong>X</strong> di sudut kanan atas."
+  },
+  "problem_solution_opera_step_5": {
+    "message": "Klik <strong>Buang</strong>."
+  },
+  "problem_solution_opera_step_6": {
+    "message": "Muat semula halaman Opera Addons."
+  },
+  "problem_solution_opera_step_7": {
+    "message": "Klik <strong>Tambah ke Opera</strong>."
+  },
+  "problem_solution_title": {
+    "message": "Penyelesaian:"
+  },
+  "problem_subtitle": {
+    "message": "Disebabkan ini, tetapan ABP anda telah ditetapkan semula ke lalai. Untuk menyelesaikan masalah itu, anda perlu menyah pasang dan memasang semula Adblock Plus. Klik pautan di bawah untuk melakukannya."
+  },
+  "problem_subtitle_opera": {
+    "message": "Disebabkan ini, tetapan ABP anda telah ditetapkan semula ke lalai. Untuk menyelesaikan masalah itu, anda perlu menyah pasang dan memasang semula Adblock Plus. Ikuti langkah di bawah untuk melakukannya."
+  },
+  "problem_title": {
+    "message": "Masalah pelayar telah menyebabkan tetapan ABP anda ditetapkan semula ke lalai."
+  }
+}

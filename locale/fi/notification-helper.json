@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "Napsauttamalla ilmoitusta voit avata kaikki linkit siitä."
-  },
-  "overlay_notification_button_no": {
-    "message": "Ei"
-  },
-  "overlay_notification_button_yes": {
-    "message": "Kyllä"
   }
 }

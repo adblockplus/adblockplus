@@ -1,42 +1,32 @@
 {
   "notification_updates_message": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
     "message": "لا يلزم اتخاذ أي إجراء — تابع استعراض الويب دون أي إعلانات مزعجة! <a>تعرّف على الجديد</a>"
   },
   "notification_updates_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
     "message": "Adblock Plus مُحدَّث"
   },
   "updates_update_i1_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
-    "message": "في حالة لو أصبحت إعدادات Adblock Plus تالفة بسبب مشكلة في المستعرض، تُفتح حينئذ رسالة الإشعار في نافذة مستعرض جديدة. "
+    "message": "في حالة لو أصبحت إعدادات Adblock Plus تالفة بسبب مشكلة في المستعرض، تُفتح حينئذ رسالة الإشعار في نافذة مستعرض جديدة."
   },
   "updates_update_i1_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "تم نقل إشعار تلف البيانات"
   },
   "updates_update_i2_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "ساعد في نشر رسالة حاجب الإعلانات المفضل لديك عن طريق مشاركة العدد الإجمالي للإعلانات التي حجبتها على قنوات التواصل الاجتماعي المفضلة لديك."
   },
   "updates_update_i2_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "تمت إضافة خيار لمشاركة عدد الإعلانات التي تم حجبها على مواقع التواصل الاجتماعي"
   },
   "updates_update_i3_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "يمكن الآن عرض عوامل التصفية الطويلة بكاملها، بما في ذلك مُحدد CSS."
   },
   "updates_update_i3_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "تم توسيع طول تلميحات أدوات لوحة أدوات المطوّرين"
   },
   "updates_update_i4_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "أصبحت الأيقونة تومض ويتحوّل لونها إلى الأزرق لتنبيه المستخدمين إلى الإشعارات."
   },
   "updates_update_i4_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "أصبحت إشعارات أيقونة شريط مهام Adblock Plus أكثر وضوحًا وتميزًا"
   }
 }

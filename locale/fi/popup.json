@@ -30,20 +30,10 @@
     "message": "Estettyjen kohteiden määrä"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> tällä sivulla",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "tällä sivulla"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> yhteensä",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "yhteensä"
   },
   "status_header": {
     "message": "Estä mainoksia:"

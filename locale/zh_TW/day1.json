@@ -21,7 +21,7 @@
     "message": "知道有關可疑廣告的資訊"
   },
   "day1_header_title": {
-    "message": "Adblock Plus 在<em1>過去的半小時內</em1><strong>阻擋了 <em0>$ads$ 則廣告</em0>, </strong> 有些廣告甚至是可疑內容！",
+    "message": "Adblock Plus 在<strong><em1>過去的半小時內</em1>阻擋了 <em0>$ads$ 則廣告</em0>,</strong> 有些廣告甚至是可疑內容！",
     "placeholders": {
       "ads": {
         "content": "$1",

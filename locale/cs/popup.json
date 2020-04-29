@@ -21,20 +21,10 @@
     "message": "Nahlásit problém"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> na této stránce",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "na této stránce"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> celkem",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "celkem"
   },
   "status_page": {
     "message": "Tato stránka:"

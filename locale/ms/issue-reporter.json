@@ -71,6 +71,9 @@
   "issueReporter_markIssueButton_label": {
     "message": "Tandakan masalah"
   },
+  "issueReporter_other_issues": {
+    "message": "Untuk masalah yang lain, hubungi kami melalui <a0>support@adblockplus.org</a0>."
+  },
   "issueReporter_page_title": {
     "message": "Pelapor isu"
   },

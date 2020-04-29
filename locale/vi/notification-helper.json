@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "Nhấn vào thông báo để mở tất cả liên kết trong nó."
-  },
-  "overlay_notification_button_no": {
-    "message": "Không"
-  },
-  "overlay_notification_button_yes": {
-    "message": "Có"
   }
 }

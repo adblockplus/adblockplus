@@ -1,0 +1,23 @@
+{
+  "problem_os_mac": {
+    "message": "مک"
+  },
+  "problem_os_windows": {
+    "message": "ویندوز"
+  },
+  "problem_social_email": {
+    "message": "ایمیل"
+  },
+  "problem_social_facebook": {
+    "message": "فیس‌بوک"
+  },
+  "problem_social_title": {
+    "message": "هنوز به راهنمایی نیاز دارید؟"
+  },
+  "problem_social_twitter": {
+    "message": "توییتر"
+  },
+  "problem_solution_title": {
+    "message": "راه‌حل:"
+  }
+}

@@ -30,15 +30,12 @@
     "message": "Сообщить об ошибке"
   },
   "share_on_facebook": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/36533b29e70499ed5521564d2330e51392cfb2e9/spec/abp/popup.md#counter-panel",
     "message": "Поделиться в Facebook"
   },
   "share_on_twitter": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/36533b29e70499ed5521564d2330e51392cfb2e9/spec/abp/popup.md#counter-panel",
     "message": "Поделиться в Twitter"
   },
   "share_on_twitter_message": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/1e5b1524ef5d69849415054a25d100e6bc5a9468/spec/abp/popup.md#counter-panel",
     "message": "Я заблокировал(-а) $number$ рекламных объявлений с Adblock Plus. Попробуйте и вы – это БЕСПЛАТНО!",
     "placeholders": {
       "number": {
@@ -47,7 +44,6 @@
     }
   },
   "social_media_share": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/36533b29e70499ed5521564d2330e51392cfb2e9/spec/abp/popup.md#counter-panel",
     "message": "Поделитесь цифрами с друзьями"
   },
   "stats_header": {

@@ -30,20 +30,10 @@
     "message": "Število blokiranih elementov"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> na tej strani",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "na tej strani"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> skupaj",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "skupaj"
   },
   "status_header": {
     "message": "Blokiraj oglase na:"

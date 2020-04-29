@@ -39,7 +39,7 @@
     "message": "メールアドレスを入力すると調査中の不明な点を問い合わせたり、報告者毎に優先度に上げた対応が可能になります。"
   },
   "issueReporter_email_label": {
-    "message": "Eメール:"
+    "message": "メール:"
   },
   "issueReporter_errorMessage": {
     "message": "不具合報告の送信がエラーコード \"?1?\" で失敗しました。インターネットに接続されているか確認し再試行してください。問題が解決しない場合は [link]Adblock Plus フォーラム[/link] で助けを求めてください。"

@@ -1,0 +1,65 @@
+{
+  "notification_problem_message": {
+    "message": "Un problema ha provocat que els paràmetres de l'ABP es restableixin als valors per defecte. <a>Soluciona el problema i obtén més informació</a>"
+  },
+  "problem_note": {
+    "message": "Tingueu en compte que, en funció de la forma en què utilitzeu l'ABP, potser haureu de tornar a configurar els paràmetres, els filtres personalitzats i els llocs web afegits en la llista blanca un cop hagueu reinstal·lat l'Adblock Plus."
+  },
+  "problem_os_mac": {
+    "message": "Mac"
+  },
+  "problem_os_windows": {
+    "message": "Windows"
+  },
+  "problem_social_description": {
+    "message": "Heu experimentat un problema? Contacteu amb el nostre equip d'assistència"
+  },
+  "problem_social_email": {
+    "message": "Correu"
+  },
+  "problem_social_facebook": {
+    "message": "Facebook"
+  },
+  "problem_social_title": {
+    "message": "Encara busqueu ajuda?"
+  },
+  "problem_social_twitter": {
+    "message": "Twitter"
+  },
+  "problem_solution_action": {
+    "message": "Feu clic aquí per desinstal·lar i reinstal·lar l'Adblock Plus"
+  },
+  "problem_solution_opera_step_1": {
+    "message": "Obre aquest enllaç en l'Opera Addons (s'obrirà en una pestanya nova)"
+  },
+  "problem_solution_opera_step_2": {
+    "message": "A la barra d'eines de l'Opera, <em0>feu clic amb el botó dret</em0>/<em1>control-clic</em1> a la icona de l'<strong>Adblock Plus</strong> i seleccioneu <strong>Administra l'extensió</strong>."
+  },
+  "problem_solution_opera_step_3": {
+    "message": "Feu clic a la <strong>fletxa</strong> situada al costat de la icona de l'Adblock Plus."
+  },
+  "problem_solution_opera_step_4": {
+    "message": "Localitzeu l'Adblock Plus i feu clic a la <strong>X</strong> de la cantonada superior dreta."
+  },
+  "problem_solution_opera_step_5": {
+    "message": "Feu clic a <strong>Elimina</strong>."
+  },
+  "problem_solution_opera_step_6": {
+    "message": "Actualitza la pàgina d'Addons de l'Opera."
+  },
+  "problem_solution_opera_step_7": {
+    "message": "Feu clic a <strong>Afegeix a l'Opera</strong>."
+  },
+  "problem_solution_title": {
+    "message": "La solució:"
+  },
+  "problem_subtitle": {
+    "message": "Per això, la vostra configuració de l'ABP s'ha restablit als valors per defecte. Per resoldre el problema, haureu de desinstal·lar i reinstal·lar l'Adblock Plus. Feu clic a l'enllaç següent per fer-ho."
+  },
+  "problem_subtitle_opera": {
+    "message": "Per això, la vostra configuració de l'ABP s'ha restablit als valors per defecte. Per resoldre el problema, haureu de desinstal·lar i reinstal·lar Adblock Plus. Seguiu els passos següents per fer-ho."
+  },
+  "problem_title": {
+    "message": "Un problema del navegador ha provocat que es restableixi la configuració de l'ABP als valors per defecte."
+  }
+}

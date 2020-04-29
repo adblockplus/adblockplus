@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "Sakatu jakinarazpenean bertako esteka guztiak irekitzeko."
-  },
-  "overlay_notification_button_no": {
-    "message": "Ez"
-  },
-  "overlay_notification_button_yes": {
-    "message": "Bai"
   }
 }

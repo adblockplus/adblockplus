@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "Klõpsake teatel, et avada kõik sellel olevad lingid."
-  },
-  "overlay_notification_button_no": {
-    "message": "Ei"
-  },
-  "overlay_notification_button_yes": {
-    "message": "Jah"
   }
 }

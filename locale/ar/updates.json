@@ -6,50 +6,39 @@
     "message": "أنشأ تحالف متمردي المصادر المفتوحة عوامل تصفية جديدة للحجب وهي تتيح لك تدمير الإعلانات المخفية على مواقع الويب مثل الفيس بوك حتى إذا عاود الإمبراطور الهجوم."
   },
   "updates_contribute_donate_action": {
-    "description": "",
     "message": "مساهمة"
   },
   "updates_contribute_donate_subtitle": {
-    "description": "",
     "message": "إنّ ما تُقدّمه لنا من دعم يمكّننا من مواصلة تحسين Adblock Plus."
   },
   "updates_contribute_donate_title": {
-    "description": "",
     "message": "المساهمة في مشروع Adblock Plus"
   },
   "updates_contribute_rate_action": {
-    "description": "",
     "message": "قيِّمه"
   },
   "updates_contribute_rate_subtitle": {
-    "description": "",
     "message": "الرجاء تخصيص بعض الوقت لمساعدتنا في نشر رسالتنا عن طريق تقييم Adblock Plus. هذا التقييم سريع ومجاني!"
   },
   "updates_contribute_rate_title": {
-    "description": "",
     "message": "قيِّمه!"
   },
   "updates_contribute_subtitle": {
-    "description": "",
     "message": "ضع في اعتبارك دعم Adblock Plus بإحدى طريقتين:"
   },
   "updates_contribute_title": {
-    "description": "",
     "message": "هل تجد Adblock Plus ممتعًا؟"
   },
   "updates_fixes_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
     "message": "الإصلاحات"
   },
   "updates_heading": {
     "message": "تم تحديث Adblock Plus!"
   },
   "updates_improvements_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
     "message": "التحسينات"
   },
   "updates_link": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
     "message": "قراءة المزيد"
   },
   "updates_optionsPageNews": {
@@ -59,23 +48,18 @@
     "message": "ولكن تمهل! ماذا عن هاتفك؟"
   },
   "updates_social_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "شارك آراءك بشأن تحديث Adblock Plus الأخير."
   },
   "updates_social_email": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "البريد الإلكتروني"
   },
   "updates_social_facebook": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "فيسبوك"
   },
   "updates_social_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "يهمنا معرفة رأيك!"
   },
   "updates_social_twitter": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "تويتر"
   },
   "updates_status": {
@@ -85,11 +69,9 @@
     "message": "ما الجديد؟"
   },
   "updates_subtitle": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
     "message": "نعتقد أنّ التحديثات الأخيرة ستروق لك."
   },
   "updates_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
     "message": "Adblock Plus مُحدَّث!"
   }
 }

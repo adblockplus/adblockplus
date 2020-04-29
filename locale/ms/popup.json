@@ -20,32 +20,48 @@
   "promote_abp_module": {
     "message": "Berminat dengan Adblock Plus di telefon bimbit?"
   },
+  "refresh_this_page": {
+    "message": "Muat semula halaman"
+  },
   "refresh_to_take_effect": {
     "message": "Klik <strong>Segar semula</strong> supaya perubahan dapat dilaksanakan."
   },
   "sendReport": {
     "message": "Laporkan isu"
   },
+  "share_on_facebook": {
+    "message": "Kongsi di Facebook"
+  },
+  "share_on_twitter": {
+    "message": "Kongsi di Twitter"
+  },
+  "share_on_twitter_message": {
+    "message": "Saya telah menyekat $number$ iklan dengan Adblock Plus. Cuba sekarang - ia adalah PERCUMA!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "social_media_share": {
+    "message": "Kongsi nombor dengan rakan"
+  },
   "stats_header": {
     "message": "Bilangan item disekat"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> pada halaman ini",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "pada halaman ini"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> secara keseluruhan",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "secara keseluruhan"
+  },
+  "status_domain": {
+    "message": "Laman web ini:"
   },
   "status_header": {
     "message": "Sekat iklan di:"
+  },
+  "status_page": {
+    "message": "Halaman ini:"
   }
 }

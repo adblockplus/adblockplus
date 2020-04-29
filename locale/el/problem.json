@@ -1,86 +1,50 @@
 {
   "notification_problem_message": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Λόγω ενός προβλήματος, έχει γίνει επαναφορά των ρυθμίσεων του ABP σας στην αρχική επιλογή. <a>Διορθώστε το πρόβλημα και μάθετε περισσότερα</a>"
   },
   "problem_note": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Σημειώστε ότι, ανάλογα με το πώς χρησιμοποιείτε το ABP, ίσως χρειαστεί να αναδιαμορφώσετε τις ρυθμίσεις, τις λίστες φίλτρων, τις προσαρμοσμένες λίστες, καθώς και τις λίστες επιτρεπόμενων ιστοσελίδων όταν εγκαταστήσετε εκ νέου το Adblock Plus."
   },
-  "problem_os_mac": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
-    "message": "Mac"
-  },
-  "problem_os_windows": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
-    "message": "Windows"
-  },
   "problem_social_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Έχετε κάποιο πρόβλημα; Επικοινωνήστε με την ομάδα υποστήριξης"
   },
-  "problem_social_email": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
-    "message": "Email"
-  },
-  "problem_social_facebook": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
-    "message": "Facebook"
-  },
   "problem_social_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Αναζητάτε ακόμη βοήθεια;"
   },
-  "problem_social_twitter": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
-    "message": "Twitter"
-  },
   "problem_solution_action": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Πατήστε εδώ για την κατάργηση εγκατάστασης ή την επανεγκατάσταση του Adblock Plus"
   },
   "problem_solution_opera_step_1": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Ανοίξτε τον σύνδεσμο αυτό στο Opera Addons (θα ανοίξει σε νέο παράθυρο)"
   },
   "problem_solution_opera_step_2": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Από τη γραμμή εργαλείων του Opera, <em0>δεξί κλικ</em0> / <em1>control-κλικ</em1> στο εικονίδιο του <strong>Adblock Plus</strong> και επιλογή <strong>Διαχείριση επεκτάσεων</strong>."
   },
   "problem_solution_opera_step_3": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Πατήστε στο <strong>βέλος</strong> δίπλα στο εικονίδιο του Adblock Plus."
   },
   "problem_solution_opera_step_4": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Εντοπίστε το εικονίδιο Adblock Plus και πατήστε το <strong>X</strong> στην πάνω δεξία γωνία."
   },
   "problem_solution_opera_step_5": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Πατήστε <strong>Αφαίρεση</strong>."
   },
   "problem_solution_opera_step_6": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Ανανεώστε τη σελίδα του Opera Addons."
   },
   "problem_solution_opera_step_7": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Πατήστε <strong>Προσθέστε στο Opera</strong>."
   },
   "problem_solution_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Η λύση:"
   },
   "problem_subtitle": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Λόγω αυτού, έχει γίνει επαναφορά των ρυθμίσεων του ABP σας στην αρχική επιλογή. Για να επιλύσετε το πρόβλημα αυτό, θα χρειαστεί να απεγκαταστήσετε και να εγκαταστήσετε εκ νέου το Adblock Plus. Για να το κάνετε αυτό, πατήστε στον παρακάτω σύνδεσμο."
   },
   "problem_subtitle_opera": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Λόγω αυτού, έχει γίνει επαναφορά των ρυθμίσεων του ABP σας στην αρχική επιλογή. Για να επιλύσετε το πρόβλημα αυτό, θα χρειαστεί να απεγκαταστήσετε και να εγκαταστήσετε εκ νέου το Adblock Plus. Για να το κάνετε αυτό, ακολουθήστε τα παρακάτω βήματα."
   },
   "problem_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Λόγω ενός προβλήματος του προγράμματος περιήγησης, έχει γίνει επαναφορά των ρυθμίσεων του ABP σας."
   }
 }

@@ -1,8 +1,0 @@
-{
-  "notification_antiadblock_message": {
-    "message": "Situs ini telah diketahui sering menampilkan pesan yang ditargetkan untuk pengguna Adblock Plus. Apakah Anda ingin Adblick Plus untuk menyembunyikan pesan yang ditargetkan tersebut?"
-  },
-  "notification_antiadblock_title": {
-    "message": "Sembunyikan pesan yang ditargetkan?"
-  }
-}

@@ -130,6 +130,12 @@
   "options_dialog_predefined_confirm": {
     "message": "Ya, gunakan daftar filter ini"
   },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Judul"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
+  },
   "options_dialog_predefined_title": {
     "message": "Yakin anda ingin menambahkan daftar filter ini?"
   },

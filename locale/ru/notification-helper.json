@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "Щелкните по уведомлению, чтобы открыть все ссылки."
-  },
-  "overlay_notification_button_no": {
-    "message": "Нет"
-  },
-  "overlay_notification_button_yes": {
-    "message": "Да"
   }
 }

@@ -30,7 +30,7 @@
     "message": "详细了解恶意广告"
   },
   "day1_header_title": {
-    "message": "Adblock Plus <strong><em1>在过去半小时内拦截了 </em1><em0>$ads$ 个广告</em0></strong>，其中一些可能包含恶意内容",
+    "message": "Adblock Plus <strong><em1>在过去半小时内拦截了</em1><em0>$ads$ 个广告</em0></strong>，其中一些可能包含恶意内容",
     "placeholders": {
       "ads": {
         "content": "$1",

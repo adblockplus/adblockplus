@@ -1,8 +1,0 @@
-{
-  "notification_antiadblock_message": {
-    "message": "Laman web ini telah dikenali untuk menunjukkan mesej yang disasarkan kepada pengguna Adblock Plus. Adakah anda mahu Adblock Plus untuk menyembunyikan mesej yang disasarkan?"
-  },
-  "notification_antiadblock_title": {
-    "message": "Sembunyi Mesej-mesej yang disasarkan?"
-  }
-}

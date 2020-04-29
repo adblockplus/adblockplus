@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "Trykk på varselet for å åpne alle koblingene."
-  },
-  "overlay_notification_button_no": {
-    "message": "Nei"
-  },
-  "overlay_notification_button_yes": {
-    "message": "Ja"
   }
 }

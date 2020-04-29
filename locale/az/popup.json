@@ -2,26 +2,37 @@
   "easy_create_filter": {
     "message": "Elementi əngəllə"
   },
+  "options_refresh": {
+    "message": "Təzələ"
+  },
   "options_short": {
     "message": "Ayarlar"
+  },
+  "overlay_notification_closing_button_hide": {
+    "message": "Bağla"
   },
   "overlay_notification_closing_button_optout": {
     "message": "Bildirişləri göstərməyi dayandır"
   },
+  "refresh_this_page": {
+    "message": "Bu səhifəni təzələ"
+  },
+  "refresh_to_take_effect": {
+    "message": "Dəyişikliklərin tətbiq edilməsi üçün aşağıdakı düyməyə klikləyin."
+  },
   "stats_label_page": {
-    "message": "Bu səhifədə <strong>$number$</strong>",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "Bu səhifədə"
   },
   "stats_label_total": {
-    "message": "Ümumi <strong>$number$</strong>",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "Ümumi"
+  },
+  "status_domain": {
+    "message": "Bu veb sayt:"
+  },
+  "status_header": {
+    "message": "Reklamları əngəllə"
+  },
+  "status_page": {
+    "message": "Bu səhifə:"
   }
 }

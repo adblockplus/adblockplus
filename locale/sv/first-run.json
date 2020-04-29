@@ -1,14 +1,50 @@
 {
+  "firstRun_browser_description": {
+    "message": "Från teamet bakom Adblock Plus, den mest populära annonsblockeraren för stationära webbläsare, finns Adblock Browser nu tillgänglig för dina Android och iOS-enheter."
+  },
   "firstRun_browser_store_android": {
     "message": "Android-app på Google Play"
   },
   "firstRun_browser_store_ios": {
     "message": "Tillgänglig på iTunes App Store"
   },
+  "firstRun_browser_title": {
+    "message": "Adblock Browser-app"
+  },
+  "firstRun_control_description": {
+    "message": "Som standard kan du se några icke-störande annonser som följer <a0>strikta kriterier</a0>. Vi identifierar dessa annonser som Godtagbara Annonser. Föredrar du att blockera alla annonser? <a1>Stäng av Godtagbara Annonser</a1> i <a2>Inställningar</a2>."
+  },
   "firstRun_control_title": {
     "message": "Du har kontrollen"
   },
+  "firstRun_fair_description": {
+    "message": "Vi uppmuntrar dig att använda Adblock Plus på ett rättvist sätt och möjligheten att vitlista webbplatser. Beroende på vilka filter du använder, förstår och accepterar du att oavsiktliga resultat kan uppstå (ex. blockerat innehåll på en webbplats). Se <a0>Användarvillkor</a0> för mer information om rättvis användning av Adblock Plus."
+  },
+  "firstRun_fair_title": {
+    "message": "Skäligt bruk"
+  },
+  "firstRun_subtitle": {
+    "message": "Du tog precis kontroll över din webbläsare."
+  },
   "firstRun_title": {
     "message": "Installation slutförd!"
+  },
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "Vissa användare upplever ett problem där denna sida öppnas varje gång deras webbläsare startar. Detta problem kan lösas genom att avinstallera och ominstallera Adblock Plus:"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "Om du fortfarande behöver hjälp, kontakta oss på <a0>support@adblockplus.org</a0> eller besök vårt <a1>Hjälpcenter</a1>."
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "Öppna fliken Tillägg i din webbläsare."
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Leta upp Adblock Plus och ta bort den."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "Installera om Adblock Plus från <a>adblockplus.org</a>."
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "Det verkar som ett problem har orsakat att alla filter har tagits bort och det gick inte att återställa en säkerhetskopia. Vi var därför tvungna att att återställa dina filter och Godtagbara Annonser inställningar. Vänligen kontrollera dina filterlistor och Godtagbara Annonser inställningar i <a>Adblock Plus inställningar</a>."
   }
 }

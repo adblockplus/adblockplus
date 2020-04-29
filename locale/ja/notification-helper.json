@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "通知内すべてのリンクを開くにはここをクリックしてください。"
-  },
-  "overlay_notification_button_no": {
-    "message": "いいえ"
-  },
-  "overlay_notification_button_yes": {
-    "message": "はい"
   }
 }

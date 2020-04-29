@@ -122,18 +122,13 @@
     "message": "はい。このフィルターリストを追加します"
   },
   "options_dialog_predefined_subscription_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
     "message": "タイトル"
-  },
-  "options_dialog_predefined_subscription_url": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
-    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "個のフィルターリストを追加しますか？"
   },
   "options_email": {
-    "message": "Eメール:"
+    "message": "メール:"
   },
   "options_english": {
     "message": "英語"

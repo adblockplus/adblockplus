@@ -6,19 +6,9 @@
     "message": "ಆಯ್ಕೆಗಳು"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> ಈ ಪುಟದಲ್ಲಿ",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "ಈ ಪುಟದಲ್ಲಿ"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> ಒಟ್ಟಾಗಿ",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "ಒಟ್ಟಾಗಿ"
   }
 }

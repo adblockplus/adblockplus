@@ -104,8 +104,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Masukkan URL yang sah"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "URL mesti dimulai dengan $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Tambah senarai penapis"
+  },
+  "options_dialog_invalid_message": {
+    "message": "Atas alasan keselamatan, hanya senarai penapis <strong>HTTPS</strong> dan URL <strong>data</strong> boleh ditambah."
+  },
+  "options_dialog_invalid_title": {
+    "message": "Ralat berlaku"
   },
   "options_dialog_language_other_empty": {
     "message": "Tiada bahasa yang tersedia."
@@ -115,6 +129,12 @@
   },
   "options_dialog_predefined_confirm": {
     "message": "Ya, gunakan senarai penapis ini"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Tajuk"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "Adakah anda pasti mahu menambah senarai penapis ini?"
@@ -160,6 +180,14 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Gagal, bukan alamat yang sah"
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Muat turun gagal. URL mesti dimulai dengan $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "minit yang lalu"

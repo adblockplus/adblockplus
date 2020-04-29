@@ -1,0 +1,20 @@
+{
+  "day1_blockelement_more": {
+    "message": "Даведацца як"
+  },
+  "day1_community_contact": {
+    "message": "Звяжыцеся з намі!"
+  },
+  "day1_community_contact_subject": {
+    "message": "Пошук падтрымкі"
+  },
+  "day1_header_title": {
+    "message": "Adblock Plus <strong>заблакаваў <em0>$ads$ рэкламных аб'яў</em0> за <em1>апошнія паўгадзіны</em1>,</strong> некаторыя з іх утрымлівалі шкодны змест.",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

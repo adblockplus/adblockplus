@@ -9,19 +9,9 @@
     "message": "Ne prikazuj više obavijesti"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> na ovoj stranici",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "na ovoj stranici"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> ukupno",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "ukupno"
   }
 }

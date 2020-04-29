@@ -1,8 +1,0 @@
-{
-  "notification_antiadblock_message": {
-    "message": "Bu səhifənin lazımi mesajları Adblock Plus istifadəçilərinə göstərir. Adblock Plus' un hədəf mesajları gizlətməyini istəyirsiniz?"
-  },
-  "notification_antiadblock_title": {
-    "message": "Hədəf mesajlar gizlədilsin?"
-  }
-}

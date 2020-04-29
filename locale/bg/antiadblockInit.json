@@ -1,8 +1,0 @@
-{
-  "notification_antiadblock_message": {
-    "message": "Сайтът показва целенасочени съобщения на потребителите на Adblock Plus. Скриване на насочените съобщения от Adblock Plus?"
-  },
-  "notification_antiadblock_title": {
-    "message": "Скриване на насочените съобщения?"
-  }
-}

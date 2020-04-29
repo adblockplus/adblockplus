@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "Preme na notificación para abrir todas as súas ligazóns."
-  },
-  "overlay_notification_button_no": {
-    "message": "Non"
-  },
-  "overlay_notification_button_yes": {
-    "message": "Si"
   }
 }

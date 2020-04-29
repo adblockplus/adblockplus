@@ -18,7 +18,7 @@
     "message": "Paouez da ziskouez kemennoù"
   },
   "promote_abp_module": {
-    "message": "Interesed gant Adblock Plus evit ho hezoug?"
+    "message": "Interesed gant Adblock Plus evit ho hezoug ?"
   },
   "refresh_this_page": {
     "message": "Azbevaat ar bajenn-mañ"
@@ -29,32 +29,28 @@
   "sendReport": {
     "message": "Diskleriañ ur gudenn"
   },
+  "share_on_facebook": {
+    "message": "Skignañ war Facebook"
+  },
+  "share_on_twitter": {
+    "message": "Skignañ war Twitter"
+  },
   "stats_header": {
     "message": "Niver a elfennoù stanket"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> war ar bajenn-mañ",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "war ar bajenn-mañ"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> en holl",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "en holl"
   },
   "status_domain": {
-    "message": "Al lec'hienn-mañ:"
+    "message": "Al lec'hienn-mañ :"
   },
   "status_header": {
     "message": "Stankañ ar bruderezh war"
   },
   "status_page": {
-    "message": "Ar bajenn-mañ:"
+    "message": "Ar bajenn-mañ :"
   }
 }

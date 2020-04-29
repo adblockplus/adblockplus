@@ -6,19 +6,9 @@
     "message": "ఐచ్ఛికాలు"
   },
   "stats_label_page": {
-    "message": "ఈ పేజీ లో <strong>$number$</strong>",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "ఈ పేజీ లో"
   },
   "stats_label_total": {
-    "message": "మొత్తం <strong>$number$</strong>",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "మొత్తం"
   }
 }

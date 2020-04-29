@@ -1,6 +1,6 @@
 {
   "options_acceptableAds_ads_description_1": {
-    "message": "Prijateľné reklamy nie sú otravné a nezasahujú do obsahu, ktorý prezeráte. <a> Viac informácií o kritériách prijateľných reklám </a>"
+    "message": "Prijateľné reklamy nie sú otravné a nezasahujú do obsahu, ktorý prezeráte. <a>Viac informácií o kritériách prijateľných reklám</a>"
   },
   "options_acceptableAds_ads_label": {
     "message": "Povoliť prijateľné reklamy"
@@ -228,10 +228,10 @@
     "message": "Ikony sociálnych médií na navštívených webových stránkach umožňujú sociálnym sieťam vytvoriť si profil na základe vašich zvykov prehliadania - aj keď na ne nekliknete. Skrytie týchto ikon môže chrániť váš profil."
   },
   "options_report_bug": {
-    "message": "Bola nájdená chyba?<a> Pošlite nám správu o chybe </a>"
+    "message": "Bola nájdená chyba? <a>Pošlite nám správu o chybe</a>"
   },
   "options_report_forum": {
-    "message": "Chcete podporiť našu komunitu?<a> Prejdite na fórum </a>"
+    "message": "Chcete podporiť našu komunitu? <a>Prejdite na fórum</a>"
   },
   "options_social_description": {
     "message": "Máte otázku alebo nový nápad? Sme tu, aby sme vám pomohli."

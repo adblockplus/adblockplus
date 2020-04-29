@@ -29,24 +29,31 @@
   "sendReport": {
     "message": "ხარვეზის მოხსენება"
   },
+  "share_on_facebook": {
+    "message": "Facebook-ზე გაზიარება"
+  },
+  "share_on_twitter": {
+    "message": "Twitter-ზე გაზიარება"
+  },
+  "share_on_twitter_message": {
+    "message": "მე $number$ რეკლამა მოვიცილე Adblock Plus-ით. სცადე - უფასოა!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "social_media_share": {
+    "message": "გაუზიარეთ ციფრები მეგობრებს"
+  },
   "stats_header": {
     "message": "შეზღუდული ერთეულების რიცხვი"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> ამ გვერდზე",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "ამ გვერდზე"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> ჯამში",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "ჯამში"
   },
   "status_domain": {
     "message": "ეს საიტი:"

@@ -1,0 +1,65 @@
+{
+  "notification_problem_message": {
+    "message": "סוגייה גרמה להגדרות ABP שלך להתאפס אל ברירת מחדל. <a>תקן את הסוגייה ולמד עוד</a>"
+  },
+  "problem_note": {
+    "message": "שים לב שעל סמך האופן שבו אתה משתמש ב־ABP, ייתכן שתצטרך לתצר מחדש את ההגדרות, המסננים המותאמים אישית והאתרים ברשימה הלבנה שלך ברגע שתתקין מחדש את Adblock Plus."
+  },
+  "problem_os_mac": {
+    "message": "Mac"
+  },
+  "problem_os_windows": {
+    "message": "Windows"
+  },
+  "problem_social_description": {
+    "message": "חווה סוגייה? צור קשר עם צוות התמיכה שלנו"
+  },
+  "problem_social_email": {
+    "message": "דוא״ל"
+  },
+  "problem_social_facebook": {
+    "message": "פייסבוק"
+  },
+  "problem_social_title": {
+    "message": "עדיין מחפש עזרה?"
+  },
+  "problem_social_twitter": {
+    "message": "Twitter"
+  },
+  "problem_solution_action": {
+    "message": "לחץ כאן כדי להסיר ולהתקין מחדש את Adblock Plus"
+  },
+  "problem_solution_opera_step_1": {
+    "message": "פתח קישור זה אל Opera Addons (הוא ייפתח בלשונית חדשה)"
+  },
+  "problem_solution_opera_step_2": {
+    "message": "מתוך סרגל הכלים של Opera, <em0>לחץ לחיצה ימנית</em0> / <em1>לחץ לחיצת בקרה</em1> על הצלמית של <strong>Adblock Plus</strong> ובחר ב<strong>נהל הרחבות</strong>."
+  },
+  "problem_solution_opera_step_3": {
+    "message": "לחץ על ה<strong>חץ</strong> ליד הצלמית של Adblock Plus."
+  },
+  "problem_solution_opera_step_4": {
+    "message": "אתר את Adblock Plus ולחץ על ה־<strong>X</strong> בפינה הימנית העליונה."
+  },
+  "problem_solution_opera_step_5": {
+    "message": "לחץ <strong>הסר</strong>."
+  },
+  "problem_solution_opera_step_6": {
+    "message": "רענן את הדף Opera Addons."
+  },
+  "problem_solution_opera_step_7": {
+    "message": "לחץ <strong>הוסף אל Opera</strong>."
+  },
+  "problem_solution_title": {
+    "message": "הפיתרון:"
+  },
+  "problem_subtitle": {
+    "message": "בגלל זה, הגדרות ABP שלך אופסו אל ברירת מחדל. כדי לפתור את הסוגייה, תצטרך להסיר ולהתקין מחדש את Adblock Plus. לחץ על הקישור למטה כדי לעשות זאת."
+  },
+  "problem_subtitle_opera": {
+    "message": "בגלל זה, הגדרות ABP שלך אופסו אל ברירת מחדל. כדי לפתור את הסוגייה, תצטרך להסיר ולהתקין מחדש את Adblock Plus. עקוב אחר הצעדים למטה כדי לעשות זאת."
+  },
+  "problem_title": {
+    "message": "סוגיית דפדפן גרמה להגדרות ABP שלך להתאפס."
+  }
+}

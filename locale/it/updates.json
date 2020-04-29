@@ -6,50 +6,39 @@
     "message": "L'Alleanza Ribelle Open Source ha creato nuovi filtri di blocco che ti permettono di annientare le pubblicità nascoste sui siti come Facebook, anche se l'Impero colpisce ancora."
   },
   "updates_contribute_donate_action": {
-    "description": "",
     "message": "Contribuisci"
   },
   "updates_contribute_donate_subtitle": {
-    "description": "",
     "message": "Il tuo sostegno ci consente di continuare a migliorare Adblock Plus."
   },
   "updates_contribute_donate_title": {
-    "description": "",
     "message": "Contribuisci al progetto ABP"
   },
   "updates_contribute_rate_action": {
-    "description": "",
     "message": "Dai un voto"
   },
   "updates_contribute_rate_subtitle": {
-    "description": "",
     "message": "Aiutaci a far conoscere Adblock Plus valutandolo in modo rapido e gratuito."
   },
   "updates_contribute_rate_title": {
-    "description": "",
     "message": "Dai un voto!"
   },
   "updates_contribute_subtitle": {
-    "description": "",
     "message": "Puoi sostenere ABP in uno dei seguenti due modi:"
   },
   "updates_contribute_title": {
-    "description": "",
     "message": "Ti piace Adblock Plus?"
   },
   "updates_fixes_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
     "message": "Correzioni"
   },
   "updates_heading": {
     "message": "Adblock Plus è stato aggiornato!"
   },
   "updates_improvements_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
     "message": "Miglioramenti"
   },
   "updates_link": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
     "message": "Altre informazioni"
   },
   "updates_optionsPageNews": {
@@ -59,23 +48,18 @@
     "message": "Ma non finisce qui! E il tuo telefono?"
   },
   "updates_social_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "Condividi le tue opinioni sull'ultimo aggiornamento di ABP."
   },
   "updates_social_email": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "Email"
   },
   "updates_social_facebook": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "Facebook"
   },
   "updates_social_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "Ci piacerebbe conoscere la tua opinione!"
   },
   "updates_social_twitter": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "Twitter"
   },
   "updates_status": {
@@ -85,11 +69,9 @@
     "message": "Quali sono le novità?"
   },
   "updates_subtitle": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
     "message": "Pensiamo che gli ultimi aggiornamenti ti piaceranno."
   },
   "updates_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
     "message": "Adblock Plus è aggiornato!"
   }
 }

@@ -30,20 +30,10 @@
     "message": "Numărul de elemente blocat"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> pe această pagină",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "pe această pagină"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> în total",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "în total"
   },
   "status_header": {
     "message": "Blocarea anunţurilor este activã:"

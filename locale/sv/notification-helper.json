@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "Klicka på meddelandet för att öppna alla länkar i det."
-  },
-  "overlay_notification_button_no": {
-    "message": "Nej"
-  },
-  "overlay_notification_button_yes": {
-    "message": "Ja"
   }
 }

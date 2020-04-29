@@ -1,42 +1,32 @@
 {
   "notification_updates_message": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
     "message": "Er is geen actie vereist — browse verder zonder vervelende advertenties! <a>Bekijk wat er is veranderd</a>"
   },
   "notification_updates_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
     "message": "Adblock Plus is up-to-date"
   },
   "updates_update_i1_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Als uw ABP-instellingen corrupt zijn geraakt door een browserprobleem, wordt de melding nu geopend in een nieuw browsertabblad."
   },
   "updates_update_i1_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Datacorruptie-melding verplaatst"
   },
   "updates_update_i2_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Vertel anderen over uw favoriete reclameblokkering door het totaal aantal advertenties te delen dat u geblokkeerd heeft op uw favoriete socialemediakanalen."
   },
   "updates_update_i2_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Er is een optie toegevoegd om het aantal geblokkeerde advertenties op sociale media te delen"
   },
   "updates_update_i3_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Lange filters kunnen nu in hun geheel bekeken worden, inclusief de CSS-selector."
   },
   "updates_update_i3_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "De lengte van de tooltip met ontwikkelaarstools is verlengd"
   },
   "updates_update_i4_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Het pictogram knippert en wordt vervolgens blauw om gebruikers attent te maken op meldingen."
   },
   "updates_update_i4_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "De meldingspictogrammen in de ABP-taakbalk zijn duidelijker en makkelijker te onderscheiden gemaakt"
   }
 }

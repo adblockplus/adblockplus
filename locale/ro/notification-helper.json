@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "Clic pe notificare pentru a deschide toate link-urile incluse în ea."
-  },
-  "overlay_notification_button_no": {
-    "message": "Nu"
-  },
-  "overlay_notification_button_yes": {
-    "message": "Da"
   }
 }

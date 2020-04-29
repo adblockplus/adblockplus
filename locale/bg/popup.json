@@ -30,20 +30,10 @@
     "message": "Брой блокирани"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> — в страницата",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "— в страницата"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> — общо",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "— общо"
   },
   "status_header": {
     "message": "Блокирани реклами:"

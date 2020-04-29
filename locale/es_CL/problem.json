@@ -1,0 +1,65 @@
+{
+  "notification_problem_message": {
+    "message": "Un problema ha provocado que tus ajustes de ABP se restableciesen por defecto. <a>Corrige el problema y aprende más</a>"
+  },
+  "problem_note": {
+    "message": "Ten en cuenta que, en función de cómo utilices ABP, puede que tengas que reconfigurar tus ajustes, filtros personalizados y sitios web incluidos en la lista blanca cuando hayas instalado de nuevo Adblock Plus."
+  },
+  "problem_os_mac": {
+    "message": "Mac"
+  },
+  "problem_os_windows": {
+    "message": "Windows"
+  },
+  "problem_social_description": {
+    "message": "¿Estás teniendo algún problema? Ponte en contacto con nuestro equipo de asistencia"
+  },
+  "problem_social_email": {
+    "message": "Correo electrónico"
+  },
+  "problem_social_facebook": {
+    "message": "Facebook"
+  },
+  "problem_social_title": {
+    "message": "¿Todavía buscas ayuda?"
+  },
+  "problem_social_twitter": {
+    "message": "Twitter"
+  },
+  "problem_solution_action": {
+    "message": "Cliquea aquí para desinstalar y reinstalar Adblock Plus"
+  },
+  "problem_solution_opera_step_1": {
+    "message": "Abre este enlace a Opera Addons (se abrirá en una nueva pestaña)"
+  },
+  "problem_solution_opera_step_2": {
+    "message": "Desde la barra de herramientas de Opera, <em0>haz clic derecho</em0>/<em1>control-clic</em1> en el icono de <strong>Adblock Plus</strong> y selecciona <strong>Gestionar extensión</strong>."
+  },
+  "problem_solution_opera_step_3": {
+    "message": "Cliquea en la <strong>flecha</strong> junto al icono de Adblock Plus."
+  },
+  "problem_solution_opera_step_4": {
+    "message": "Localiza Adblock Plus y cliquea la <strong>X</strong> en la esquina superior derecha."
+  },
+  "problem_solution_opera_step_5": {
+    "message": "Cliquea en <strong>Eliminar</strong>."
+  },
+  "problem_solution_opera_step_6": {
+    "message": "Actualiza la página Opera Addons."
+  },
+  "problem_solution_opera_step_7": {
+    "message": "Cliquea en <strong>Añadir a Opera</strong>."
+  },
+  "problem_solution_title": {
+    "message": "La solución:"
+  },
+  "problem_subtitle": {
+    "message": "Debido a esto, tus ajustes de ABP se han restablecido a por defecto. Para resolver este problema, tendrás que desinstalar y reinstalar Adblock Plus. Para hacerlo, cliquea en el siguiente enlace."
+  },
+  "problem_subtitle_opera": {
+    "message": "Debido a esto, tus ajustes de ABP se han restablecido a por defecto. Para resolver este problema, tendrás que desinstalar y reinstalar Adblock Plus. Para hacerlo, sigue los pasos a continuación."
+  },
+  "problem_title": {
+    "message": "Un problema del navegador ha provocado que tus ajustes de ABP tengan que restablecerse."
+  }
+}

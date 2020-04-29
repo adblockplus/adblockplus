@@ -1,86 +1,65 @@
 {
   "notification_problem_message": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "В результате проблемы ваши настройки ABP были сброшены до значений по умолчанию. <a>Устранить проблему и узнать более подробную информацию</a>"
   },
   "problem_note": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Обратите внимание, что в зависимости от того, как вы использовали ABP, после переустановки Adblock Plus вам может потребоваться поменять настройки, индивидуальные фильтры и вебсайты из белого списка."
   },
   "problem_os_mac": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Mac"
   },
   "problem_os_windows": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Windows"
   },
   "problem_social_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "У вас проблема? Свяжитесь с нашей службой поддержки"
   },
   "problem_social_email": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Эл. почта"
   },
   "problem_social_facebook": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Facebook"
   },
   "problem_social_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "По-прежнему нужна помощь?"
   },
   "problem_social_twitter": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Twitter"
   },
   "problem_solution_action": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Нажмите здесь, чтобы удалить и заново установить Adblock Plus"
   },
   "problem_solution_opera_step_1": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Нажмите на эту ссылку на Opera Addons (она откроется в новой вкладке)"
   },
   "problem_solution_opera_step_2": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "В панели инструментов Opera <em0>нажмите правой кнопкой мыши</em0> / <em1>удерживайте кнопку Ctrl и нажмите кнопкой мыши</em1> на значок <strong>Adblock Plus</strong> и выберите <strong>Управлять расширениями</strong>."
   },
   "problem_solution_opera_step_3": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Нажмите на <strong>стрелку</strong> рядом со значком Adblock Plus."
   },
   "problem_solution_opera_step_4": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Найдите Adblock Plus и нажмите на <strong>X</strong> в правом верхнем углу."
   },
   "problem_solution_opera_step_5": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Нажмите <strong>Удалить</strong>."
   },
   "problem_solution_opera_step_6": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Обновите страницу Opera Addons."
   },
   "problem_solution_opera_step_7": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Нажмите <strong>Добавить в Opera</strong>."
   },
   "problem_solution_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Решение:"
   },
   "problem_subtitle": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "По этой причине ваши настройки ABP были сброшены до значений по умолчанию. Для решения этой проблемы вам нужно удалить и заново установить Adblock Plus. Чтобы сделать это, нажмите на ссылку ниже."
   },
   "problem_subtitle_opera": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "По этой причине ваши настройки ABP были сброшены до значений по умолчанию. Для решения этой проблемы вам нужно удалить и заново установить Adblock Plus. Чтобы сделать это, следуйте инструкциям ниже."
   },
   "problem_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Проблема с браузером привела к сбросу настроек ABP."
   }
 }

@@ -1,42 +1,32 @@
 {
   "notification_updates_message": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
     "message": "Nincs szükség beavatkozásra—böngésszen tovább zavaró reklámok nélkül! <a>Tekintse meg az újdonságokat</a>"
   },
   "notification_updates_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
     "message": "Az Adblock Plus naprakész"
   },
   "updates_update_i1_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Arra az esetre, ha böngésző probléma miatt az ABP beállításai módosulnak, az értesítési üzenet most egy új böngészőablakban jelenik meg."
   },
   "updates_update_i1_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Áthelyezésre került az adatsérülési értesítés"
   },
   "updates_update_i2_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Vigye jó hírét kedvenc reklámblokkoló alkalmazásának, és ossza meg a blokkolt hirdetések számát kedvenc közösségi média oldalain."
   },
   "updates_update_i2_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Hozzáadott beállítás a blokkolt hirdetések számának megosztásához a közösségi oldalakon"
   },
   "updates_update_i3_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "A hosszú szűrők most teljes egészében megtekinthetők, beleértve a CSS kiválasztót."
   },
   "updates_update_i3_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Megnőtt a fejlesztői eszközök eszközleírásainak a hossza."
   },
   "updates_update_i4_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Az ikon most villog, és felhasználók riasztására érkezések esetén kék színre vált."
   },
   "updates_update_i4_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Az ABP tálcaikon értesítések egyértelműbbek és jobban láthatók"
   }
 }

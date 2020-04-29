@@ -12,7 +12,7 @@
     "message": "App Adblock Browser"
   },
   "firstRun_control_description": {
-    "message": "Per impostazione predefinita potresti visualizzare alcune pubblicità non invadenti che rispettano <a0>rigorosi criteri</a0>. Definiamo queste pubblicità come pubblicità accettabili. Preferisci bloccare tutte le pubblicità? <a1>Disabilita le pubblicità accettabili</a1> nelle tue<a2> impostazioni</a2>."
+    "message": "Per impostazione predefinita potresti visualizzare alcune pubblicità non invadenti che rispettano <a0>rigorosi criteri</a0>. Definiamo queste pubblicità come pubblicità accettabili. Preferisci bloccare tutte le pubblicità? <a1>Disabilita le pubblicità accettabili</a1> nelle tue <a2>impostazioni</a2>."
   },
   "firstRun_control_title": {
     "message": "Sei tu a decidere"

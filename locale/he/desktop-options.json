@@ -51,7 +51,7 @@
     "message": "רשימת המסננים שלי"
   },
   "options_customize_blockElement": {
-    "message": "הראה פריט 'חסום יסוד' של תפריט לחיצה ימנית"
+    "message": "הראה פריט 'חסום אלמנט' של תפריט לחיצה ימנית"
   },
   "options_customize_blockElement_tooltip": {
     "message": "חסום באופן זמני פריטים מטרידים באתר. לדוגמה, תמונות או מצגות מונפשות."
@@ -116,7 +116,7 @@
     "message": "הוסף רשימת מסננים"
   },
   "options_dialog_invalid_message": {
-    "message": "למען סיבות אבטחה, רק רשימות מסננים HTTPS יכולים להתווסף."
+    "message": "למען סיבות אבטחה, רק כתובות של רשימות מסננים מסוג <strong>HTTPS</strong> יכולות להתווסף."
   },
   "options_dialog_invalid_title": {
     "message": "שגיאה התרחשה"
@@ -128,13 +128,19 @@
     "message": "בחר שפה"
   },
   "options_dialog_predefined_confirm": {
-    "message": "כן, השתמש ברשימת מסננים זו"
+    "message": "כן, הוסף רשימת מסננים זו"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "כותרת"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "כתובת"
   },
   "options_dialog_predefined_title": {
     "message": "האם אתה בטוח שאתה רוצה להוסיף רשימת מסננים זו?"
   },
   "options_email": {
-    "message": "דוא\"ל:"
+    "message": "דוא״ל:"
   },
   "options_english": {
     "message": "אנגלית"
@@ -161,7 +167,7 @@
     "message": "שעות קודם לכן"
   },
   "options_filterList_lastDownload_checksumMismatch": {
-    "message": "נכשל, ביקורת סיכום לא מתאימה"
+    "message": "נכשל, סיכום ביקורת אינו תואם"
   },
   "options_filterList_lastDownload_connectionError": {
     "message": "כישלון הורדה"

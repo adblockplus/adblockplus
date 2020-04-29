@@ -1,42 +1,32 @@
 {
   "notification_updates_message": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
     "message": "No es necesario que hagas nada, excepto seguir navegando por la web sin anuncios molestos. <a>Consulta las novedades</a>"
   },
   "notification_updates_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
     "message": "Adblock Plus está actualizado"
   },
   "updates_update_i1_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Si los ajustes de ABP se dañan debido a un problema del navegador, el mensaje de notificación se abrirá a partir de ahora en una pestaña nueva."
   },
   "updates_update_i1_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "La notificación de corrupción de los datos ha cambiado de lugar"
   },
   "updates_update_i2_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Ayuda a correr la voz sobre tu bloqueador de anuncios favorito compartiendo en tus redes sociales favoritas el número total de anuncios que has bloqueado."
   },
   "updates_update_i2_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Opción de compartir en redes sociales el número de anuncios bloqueados"
   },
   "updates_update_i3_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Los filtros largos pueden verse ahora en su totalidad, incluido el selector CSS."
   },
   "updates_update_i3_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Más espacio en la información del panel de herramientas del desarrollador"
   },
   "updates_update_i4_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "El icono ahora parpadea y se vuelve azul para alertar a los usuarios de las notificaciones."
   },
   "updates_update_i4_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Notificaciones más obvias en el icono ABP de la barra de tareas"
   }
 }

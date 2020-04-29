@@ -2,6 +2,9 @@
   "options_aa_opt_out_survey_no": {
     "message": "Не, дзякуй"
   },
+  "options_aa_opt_out_survey_ok": {
+    "message": "Перайсці да апытання"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "Дапушчальна рэклама не дакучае і не мяшае прагляду зместу старонкі. <a>Больш падрабязна пра крытэрыі дапушчальнай рэкламы</a>"
   },
@@ -36,10 +39,10 @@
     "message": "Скасаваць"
   },
   "options_customFilters_description": {
-    "message": "Пішыце ўласныя фільтры, каб дадаткова акрэсліць змест, які Adblock Plus будзе паказваць або хаваць."
+    "message": "Пішыце ўласныя фільтры, каб дадаткова акрэсліць змест, які Adblock Plus будзе паказваць або хаваць. <a0>Даведайцеся як пісаць фільтры (толькі на англійскай)</a0>"
   },
   "options_customFilters_title": {
-    "message": "Стварыце і рэдагуйце ўласны спіс фільтраў"
+    "message": "Уласныя фільтры"
   },
   "options_customFilters_widget_title": {
     "message": "Уласны спіс фільтраў"
@@ -121,6 +124,12 @@
   "options_dialog_predefined_confirm": {
     "message": "Так, ужыць гэты спіс фільтраў"
   },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Назва"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
+  },
   "options_dialog_predefined_title": {
     "message": "Сапраўды дадаць гэты спіс фільтраў?"
   },
@@ -166,6 +175,14 @@
   "options_filterList_lastDownload_invalidURL": {
     "message": "Памылка: няправільны адрас"
   },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Памылка спампоўвання. URL-адрас павінен пачынацца з $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_filterList_minutes": {
     "message": "некалькі хвілін таму"
   },
@@ -206,6 +223,12 @@
   },
   "options_general_description": {
     "message": "Акрэсліце, што будзе паказваць і хаваць Adblock Plus на сайтах"
+  },
+  "options_generic_error": {
+    "message": "Вой! Нешта пайшло не так. Паспрабуйце яшчэ раз."
+  },
+  "options_help_center": {
+    "message": "Шукаеце адказы на пытанні? <a0>Наведайце наш даведачны цэнтр (толькі на англійскай)</a0>"
   },
   "options_help_description": {
     "message": "Знайдзіце даведачныя матэрыялы або звяжыцеся з намі"

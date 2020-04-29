@@ -1,6 +1,6 @@
 {
   "options_aa_opt_out_survey": {
-    "message": "Kontant e vefec'h da lâret deomp perak ho peus nac'het Acceptable Ads evit hon sikour da wellaat Adblock Plus?"
+    "message": "Kontant e vefec'h da lâret deomp perak ho peus nac'het Acceptable Ads evit hon sikour da wellaat Adblock Plus ?"
   },
   "options_aa_opt_out_survey_no": {
     "message": "Ne vefen ket, mersi deoc'h"
@@ -91,17 +91,26 @@
   "options_dialog_invalid_title": {
     "message": "Ur fazi zo bet"
   },
+  "options_dialog_language_other_empty": {
+    "message": "N'eus ket yezh ebet dibres."
+  },
   "options_dialog_language_title": {
     "message": "Dibabit ur yezh"
   },
   "options_dialog_predefined_confirm": {
     "message": "Ya, ober gant ar roll siloù-mañ"
   },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Titl"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
+  },
   "options_dialog_predefined_title": {
-    "message": "Sur oc'h da ouzhpennañ al listenn siloù-mañ?"
+    "message": "Sur oc'h da ouzhpennañ al listenn siloù-mañ ?"
   },
   "options_email": {
-    "message": "Postel:"
+    "message": "Postel :"
   },
   "options_english": {
     "message": "Saozneg"
@@ -129,6 +138,9 @@
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "O hizivaat"
+  },
+  "options_filterList_lastDownload_invalidData": {
+    "message": "Ur gudenn zo gant listenn ar siloù"
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Fazi, n'eo ket ur chomlec'h"
@@ -183,10 +195,10 @@
     "message": "Dibab ar pezh a vez kuzhet ha diskouezet war al lec'hiennoù gant Adblock Plus"
   },
   "options_generic_error": {
-    "message": "Ma? Ur gudenn zo bet. Klaskit en-dro mar plij."
+    "message": "Ma ? Ur gudenn zo bet. Klaskit en-dro mar plij."
   },
   "options_help_center": {
-    "message": "Respontoù ho pefe c'hoant da gaout? <a0> Deuit e-barzh hor C'hreizenn sikour (e saozneg nemetken)</a0>"
+    "message": "Respontoù ho pefe c'hoant da gaout ? <a0>Deuit e-barzh hor C'hreizenn sikour (e saozneg nemetken)</a0>"
   },
   "options_help_description": {
     "message": "Kaout skoazell pe mont e darempred ganeomp"
@@ -223,7 +235,7 @@
     }
   },
   "options_language_tip": {
-    "message": "<strong>ALI FUR:</strong> Na zibabit nemet ar yezhoù ho peus ezhomm anezhe. Dibab meur a hini a lakao ar stanker bruderezh da c'horrekaat hag alese tizh ho merdeer ivez."
+    "message": "<strong>ALI FUR :</strong> Na zibabit nemet ar yezhoù ho peus ezhomm anezhe. Dibab meur a hini a lakao ar stanker bruderezh da c'horrekaat hag alese tizh ho merdeer ivez."
   },
   "options_learn_more": {
     "message": "Lenn muioc'h"
@@ -250,19 +262,19 @@
     "message": "Gwarezit ho puhez prevez enep lec'hiennoù a c'hallfe klask heuliañ ar pezh a rit enlinenn deus ul lec'hienn d'eben."
   },
   "options_rating_description": {
-    "message": "Kemerit un nebeut eilennoù evit sikour ha diorren Adblock Plus o priziañ hol labour. Mersi deoc'h evit ho sikour!"
+    "message": "Kemerit un nebeut eilennoù evit sikour ha diorren Adblock Plus o priziañ hol labour. Mersi deoc'h evit ho sikour !"
   },
   "options_rating_title": {
-    "message": "Plijet oc'h gant Adblock Plus?"
+    "message": "Plijet oc'h gant Adblock Plus ?"
   },
   "options_report_bug": {
-    "message": "Ur bug ho peus kavet? <a>Kasit un danevell bug deomp</a>"
+    "message": "Ur bug ho peus kavet ? <a>Kasit un danevell bug deomp</a>"
   },
   "options_report_forum": {
-    "message": "Un tamm sikour a-berzh hor c'humuniezh ho po? <a>Kit war ar forom</a>"
+    "message": "Un tamm sikour a-berzh hor c'humuniezh ho po ? <a>Kit war ar forom</a>"
   },
   "options_social_description": {
-    "message": "Ur goulenn pe ur soñj? Amañ emaomp evit ho sikour."
+    "message": "Ur goulenn pe ur soñj ? Amañ emaomp evit ho sikour."
   },
   "options_social_title": {
     "message": "Mont e darempred"

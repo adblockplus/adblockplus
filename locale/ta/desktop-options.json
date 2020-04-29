@@ -1,4 +1,7 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "Adblock Plusஐ மேம்படுத்த, நீங்கள் ஏன் ஏற்கக்கூடிய விளம்பரங்களை அணைத்திருக்கிறீர்கள் என்று எங்களுக்கு விளக்குங்கள்?"
+  },
   "options_aa_opt_out_survey_no": {
     "message": "வேண்டாம், நன்றி"
   },
@@ -10,6 +13,12 @@
   },
   "options_acceptableAds_header": {
     "message": "ஏற்கக்கூடிய விளம்பரங்கள்"
+  },
+  "options_acceptableAds_privacy_label": {
+    "message": "மூன்றாம்-தரப்பு டிராக்கிங் இல்லாத விளம்பரங்களை மட்டும் அனுமதி"
+  },
+  "options_advanced_description": {
+    "message": "Adblock Plusஐ தனிமையாக்கு, வடிக்கட்டி பட்டியல்களை சேர் அல்லது நீக்கு, உங்களின் சொந்த வடிக்கட்டி பட்டியல்களை உருவாக்கி நிர்வகி"
   },
   "options_builtin_filterList_add": {
     "message": "உடன் வரும் வடிகட்டி பட்டியல்களைச் சேர்"
@@ -36,7 +45,7 @@
     "message": "தனிப்பயனாக்கல்கள்"
   },
   "options_customize_showDevToolsPanel": {
-    "message": " நிரலாக்குநர் கருவிகளில் \"Adblock Plus\" ஐ காண்பி"
+    "message": "நிரலாக்குநர் கருவிகளில் \"Adblock Plus\" ஐ காண்பி"
   },
   "options_customize_showNotifications": {
     "message": "பயனுள்ள அறிவிப்புகளை காட்டு"
@@ -178,6 +187,9 @@
   },
   "options_language_change": {
     "message": "மாற்று"
+  },
+  "options_language_filter_list": {
+    "message": "மொழி வடிகட்டி பட்டியல்கள்"
   },
   "options_language_header": {
     "message": "மொழி"

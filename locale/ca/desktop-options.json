@@ -116,7 +116,7 @@
     "message": "Afegeix una llista de filtres"
   },
   "options_dialog_invalid_message": {
-    "message": "Per raons de seguretat, només es poden afegir llistes de filtres HTTPS."
+    "message": "Per raons de seguretat, només es poden afegir llistes de filtres <strong>HTTPS</strong> i URL de <strong>dades</strong>."
   },
   "options_dialog_invalid_title": {
     "message": "S'ha produït un error"
@@ -128,7 +128,13 @@
     "message": "Seleccioneu un idioma"
   },
   "options_dialog_predefined_confirm": {
-    "message": "Sí, utilitza aquesta llista de filtres"
+    "message": "Sí, afegeix aquesta llista de filtres"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Títol"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "Esteu segur que voleu afegir aquesta llista de filtres?"

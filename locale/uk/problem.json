@@ -1,0 +1,65 @@
+{
+  "notification_problem_message": {
+    "message": "Проблема призвела до того, що налаштування ABP будуть скинуті до типових. <a>Виправити помилку і дізнатися більше</a>"
+  },
+  "problem_note": {
+    "message": "Зверніть увагу, що в залежності від того, як ви використовуєте ABP, можливо буде потрібне повторне налаштування користувацьких фільтрів та дозволених веб-сайтів після перевстановлення Adblock Plus."
+  },
+  "problem_os_mac": {
+    "message": "Mac"
+  },
+  "problem_os_windows": {
+    "message": "Windows"
+  },
+  "problem_social_description": {
+    "message": "Виникли труднощі? Зв'яжіться з командою підтримки"
+  },
+  "problem_social_email": {
+    "message": "Електронна пошта"
+  },
+  "problem_social_facebook": {
+    "message": "Facebook"
+  },
+  "problem_social_title": {
+    "message": "Досі шукаєте допомоги?"
+  },
+  "problem_social_twitter": {
+    "message": "Twitter"
+  },
+  "problem_solution_action": {
+    "message": "Натисніть тут, щоб видалити і перевстановити Adblock Plus"
+  },
+  "problem_solution_opera_step_1": {
+    "message": "Відкрити це посилання на Opera Addons (відкриється у новій вкладці)"
+  },
+  "problem_solution_opera_step_2": {
+    "message": "З панелі інструментів Opera, клікніть <em0>правою кнопкою миші</em0> (або <em1>Ctrl + клік</em1>) по значку <strong>Adblock Plus</strong> і виберіть <strong>Керувати розширеннями</strong>."
+  },
+  "problem_solution_opera_step_3": {
+    "message": "Натисніть кнопку <strong>зі стрілкою</strong> поруч з іконкою Adblock Plus."
+  },
+  "problem_solution_opera_step_4": {
+    "message": "Знайдіть Adblock Plus і натисніть <strong>X</strong> в правому верхньому куті."
+  },
+  "problem_solution_opera_step_5": {
+    "message": "Натисніть <strong>Видалити</strong>."
+  },
+  "problem_solution_opera_step_6": {
+    "message": "Оновити сторінку Opera Addons"
+  },
+  "problem_solution_opera_step_7": {
+    "message": "Натисніть <strong>Додати до Opera</strong>."
+  },
+  "problem_solution_title": {
+    "message": "Рішення:"
+  },
+  "problem_subtitle": {
+    "message": "Через це, ваші налаштування ABP були скинуті до усталених. Щоб вирішити проблему, вам потрібно видалити і перевстановити Adblock Plus. Натисніть на посилання нижче, щоб це зробити."
+  },
+  "problem_subtitle_opera": {
+    "message": "Через це, ваші налаштування ABP були скинуті до усталених. Щоб вирішити проблему, вам потрібно видалити і перевстановити Adblock Plus. Виконуйте кроки, вказані нижче."
+  },
+  "problem_title": {
+    "message": "Проблема в браузері призвела до того, що налаштування ABP було скинуто."
+  }
+}

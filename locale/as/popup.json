@@ -30,20 +30,10 @@
     "message": "সংখ্যক সামগ্ৰী অৱৰুদ্ধ কৰা হৈছে"
   },
   "stats_label_page": {
-    "message": "এইখন পৃষ্ঠাত <strong>$number$</strong>টা",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "এইখন পৃষ্ঠাত টা"
   },
   "stats_label_total": {
-    "message": "মুঠ <strong>$number$</strong>টা",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "মুঠ টা"
   },
   "status_header": {
     "message": "ইয়াত বিজ্ঞাপন অৱৰুদ্ধ কৰক:"

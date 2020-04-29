@@ -27,19 +27,9 @@
     "message": "Reportar problema"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> nesta página",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "nesta página"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> no total",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "no total"
   }
 }

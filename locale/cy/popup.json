@@ -30,20 +30,10 @@
     "message": "Nifer yr eitemau wedi'u blocio"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> ar y dudalen hon",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "ar y dudalen hon"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> mewn cyfanswm",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "mewn cyfanswm"
   },
   "status_header": {
     "message": "Blocio'r hysbysebion ar:"

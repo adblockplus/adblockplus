@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "Націсніце на апавяшчэнне, каб адкрыць усе размешчаныя ў ім спасылкі."
-  },
-  "overlay_notification_button_no": {
-    "message": "Не"
-  },
-  "overlay_notification_button_yes": {
-    "message": "Так"
   }
 }

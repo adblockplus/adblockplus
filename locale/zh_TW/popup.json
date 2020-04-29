@@ -30,20 +30,10 @@
     "message": "被過濾的項目數量"
   },
   "stats_label_page": {
-    "message": "在這 <strong>$number$</strong> 頁面上",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "在這 頁面上"
   },
   "stats_label_total": {
-    "message": "共有 <strong>$number$</strong> 項被過濾",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "共有 項被過濾"
   },
   "status_header": {
     "message": "過濾廣告於："

@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "Kliknite na obavijest za otvaranje svih poveznica koje sadrži."
-  },
-  "overlay_notification_button_no": {
-    "message": "Ne"
-  },
-  "overlay_notification_button_yes": {
-    "message": "Da"
   }
 }

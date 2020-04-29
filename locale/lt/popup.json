@@ -30,20 +30,10 @@
     "message": "Užblokuotų elementų skaičius"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> šiame puslapyje",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "šiame puslapyje"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> iš viso",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "iš viso"
   },
   "status_header": {
     "message": "Blokuoti reklamas:"

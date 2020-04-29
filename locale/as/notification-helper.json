@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "সুচনাটোত থকা সকলো লিংক খোলিবলৈ সেইটোত ক্লিক কৰক।"
-  },
-  "overlay_notification_button_no": {
-    "message": "নহয়"
-  },
-  "overlay_notification_button_yes": {
-    "message": "হয়"
   }
 }

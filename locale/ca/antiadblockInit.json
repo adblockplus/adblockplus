@@ -1,8 +1,0 @@
-{
-  "notification_antiadblock_message": {
-    "message": "S'ha detectat que aquest lloc mostra missatges orientats als usuaris d'Adblock Plus. Voleu que Adblock Plus oculti missatges orientats?"
-  },
-  "notification_antiadblock_title": {
-    "message": "Voleu amagar els missatges orientats?"
-  }
-}

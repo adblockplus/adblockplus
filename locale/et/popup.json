@@ -30,20 +30,10 @@
     "message": "Blokeeritud üksuseid"
   },
   "stats_label_page": {
-    "message": "Sellel lehel <strong>$number$</strong>",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "Sellel lehel"
   },
   "stats_label_total": {
-    "message": "Kokku <strong>$number$</strong>",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "kokku"
   },
   "status_header": {
     "message": "Blokeeri reklaamid saidil:"

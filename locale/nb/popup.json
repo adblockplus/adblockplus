@@ -33,20 +33,10 @@
     "message": "Antall blokkerte elementer"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> på denne siden",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "på denne siden"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> totalt",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "totalt"
   },
   "status_domain": {
     "message": "Dette nettstedet:"

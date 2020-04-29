@@ -33,20 +33,10 @@
     "message": "Số lượng mục bị chặn"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> trên trang này",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "trên trang này"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> trên tổng số",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "trên tổng số"
   },
   "status_domain": {
     "message": "Trang web này:"
