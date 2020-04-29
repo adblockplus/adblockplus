@@ -35,6 +35,11 @@ const shareLinks = {
     text: messageMark,
     url: shareURL,
     via: "AdblockPlus"
+  }],
+  // API
+  weibo: ["http://service.weibo.com/share/share.php", {
+    title: messageMark,
+    url: shareURL
   }]
 };
 
@@ -59,6 +64,13 @@ const shareLinksContent = {
   {
     return browser.i18n.getMessage(
       "share_on_twitter_message",
+      [blockedCount.toLocaleString()]
+    );
+  },
+  weibo(blockedCount)
+  {
+    return browser.i18n.getMessage(
+      "share_on_weibo_message",
       [blockedCount.toLocaleString()]
     );
   }
