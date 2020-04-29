@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "اضغط على التنبيه لفتح كل الروابط الموجودة فيه."
-  },
-  "overlay_notification_button_no": {
-    "message": "لا"
-  },
-  "overlay_notification_button_yes": {
-    "message": "نعم"
   }
 }

@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "এটিতে সকল লিংক খোলার জন্য বিজ্ঞপ্তিতে ক্লিক করুন।"
-  },
-  "overlay_notification_button_no": {
-    "message": "না"
-  },
-  "overlay_notification_button_yes": {
-    "message": "হ্যাঁ"
   }
 }

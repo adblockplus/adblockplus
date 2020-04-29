@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "알림에 포함된 모든 링크를 열려면 클릭하세요."
-  },
-  "overlay_notification_button_no": {
-    "message": "아니요"
-  },
-  "overlay_notification_button_yes": {
-    "message": "예"
   }
 }

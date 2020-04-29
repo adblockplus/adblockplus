@@ -5,7 +5,40 @@
   "cancel": {
     "message": "Ləğv et"
   },
+  "common_copyright": {
+    "message": "Copyright © $year$ Bütün hüquqlar qorunur. Adblock Plus®, <a0>eyeo GmbH</a0>-ın qeydiyyatdan keçmiş ticarət nişanıdır.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
+  "common_feature_anti_adblock_title": {
+    "message": "Adblock Xəbərdarlıq Mesajlarını Gizlət"
+  },
+  "common_feature_circumvention_title": {
+    "message": "ABP Aldatmaya Qarşı Filtr Siyahısı"
+  },
+  "common_feature_malware_title": {
+    "message": "Zərərli Proqramı Əngəllə"
+  },
+  "common_feature_privacy_title": {
+    "message": "Əlavə izləmələri əngəllə"
+  },
+  "common_feature_social_title": {
+    "message": "Sosial media nişanları ilə izləməni əngəllə"
+  },
   "common_notification_hide": {
     "message": "Bildirişi bağla"
+  },
+  "copy_selected": {
+    "message": "Seçilmişi kopyala"
+  },
+  "delete": {
+    "message": "Sil"
+  },
+  "filter_action_failed": {
+    "message": "Nəsə səhv getdi. Zəhmət olmasa yenidən sınayın."
   }
 }

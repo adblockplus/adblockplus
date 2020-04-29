@@ -1,6 +1,9 @@
 {
+  "click_element_to_block_it": {
+    "message": "Klicka på ett element på sidan för att blockera det."
+  },
   "easy_create_filter": {
-    "message": "Blockera objekt"
+    "message": "Blockera element"
   },
   "options_refresh": {
     "message": "Uppdatera"
@@ -14,6 +17,15 @@
   "overlay_notification_closing_button_optout": {
     "message": "Sluta visa notifieringar"
   },
+  "promote_abp_module": {
+    "message": "Intresserad av Adblock Plus på mobilen?"
+  },
+  "refresh_this_page": {
+    "message": "Uppdatera denna sida"
+  },
+  "refresh_to_take_effect": {
+    "message": "Klicka på knappen nedan för att ändringar ska träda i kraft."
+  },
   "sendReport": {
     "message": "Rapportera problem"
   },
@@ -21,19 +33,18 @@
     "message": "Antal objekt blockerade"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> på den här sidan",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "på den här sidan"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> totalt",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "totalt"
+  },
+  "status_domain": {
+    "message": "Denna webbplats:"
+  },
+  "status_header": {
+    "message": "Blockera annonser på"
+  },
+  "status_page": {
+    "message": "Denna sida:"
   }
 }

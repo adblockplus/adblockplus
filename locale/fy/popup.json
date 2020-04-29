@@ -29,24 +29,31 @@
   "sendReport": {
     "message": "Probleem melde"
   },
+  "share_on_facebook": {
+    "message": "Diele op Facebook"
+  },
+  "share_on_twitter": {
+    "message": "Diele op Twitter"
+  },
+  "share_on_twitter_message": {
+    "message": "Ik haw $number$ advertinsjes blokkearre mei Adblock Plus. Probearje it ris – it is FERGEES!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "social_media_share": {
+    "message": "Oantallen diele mei freonen"
+  },
   "stats_header": {
     "message": "Oantal blokkearre items"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> op dizze side",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "op dizze side"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> yn totaal",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "yn totaal"
   },
   "status_domain": {
     "message": "Dizze website:"

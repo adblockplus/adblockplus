@@ -6,19 +6,9 @@
     "message": "Mga pagpipilian"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> sa pahinang ito",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "sa pahinang ito"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> sa kabuuan",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "sa kabuuan"
   }
 }

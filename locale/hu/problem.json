@@ -1,86 +1,65 @@
 {
   "notification_problem_message": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Egy probléma miatt alapértelmezettekre kell visszaállítani az ABP beállításokat. <a>Oldja meg a problémát és tudjon meg többet</a>"
   },
   "problem_note": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Felhívjuk figyelmét, hogy az ABP használatától függően előfordulhat, hogy az Adblock Plus újratelepítésekor újra meg kell adnia a beállításokat, egyéni szűrőket és fehérlistás weboldalakat."
   },
   "problem_os_mac": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Mac"
   },
   "problem_os_windows": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Windows"
   },
   "problem_social_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Problémát tapasztal? Lépjen kapcsolatba a támogatási csapatunkkal"
   },
   "problem_social_email": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "E-mail"
   },
   "problem_social_facebook": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Facebook"
   },
   "problem_social_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Segítségre van szüksége?"
   },
   "problem_social_twitter": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Twitter"
   },
   "problem_solution_action": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Az Adblock Plus eltávolításához és újratelepítéséhez kattintson ide."
   },
   "problem_solution_opera_step_1": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Az Opera Addons eléréséhez kattintson erre a hivatkozásra (új lapon nyílik meg)"
   },
   "problem_solution_opera_step_2": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Az Opera eszköztáron <em0>kattintson az egér jobb gombjával</em0> / <em1>Ctrl billentyű megnyomva tartásával</em1> az <strong>Adblock Plus</strong> ikonra, és válassza a <strong>Bővítmény kezelése</strong> menüpontot."
   },
   "problem_solution_opera_step_3": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Kattintson az Adblock Plus ikon melletti <strong>nyílra</strong>."
   },
   "problem_solution_opera_step_4": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Keresse meg az Adblock Plus alkalmazást, és kattintson az <strong>X</strong>-re a jobb felső sarokban."
   },
   "problem_solution_opera_step_5": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Kattintson az <strong>Eltávolítás</strong> gombra."
   },
   "problem_solution_opera_step_6": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Töltse be újra az Opera Addons oldalt."
   },
   "problem_solution_opera_step_7": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Kattintson a <strong>Hozzáadás az Opera-hoz</strong> gombra."
   },
   "problem_solution_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "A megoldás:"
   },
   "problem_subtitle": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Emiatt az ABP beállításokat visszaállította alapértelmezettre. A probléma megoldásához el kell távolítania, és újra kell telepítenie az Adblock Plus alkalmazást. Ehhez kattintson az alábbi hivatkozásra."
   },
   "problem_subtitle_opera": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Emiatt az ABP beállításokat visszaállította alapértelmezettre. A probléma megoldásához el kell távolítania, és újra kell telepítenie az Adblock Plus alkalmazást. Ehhez kövesse az alábbi lépéseket."
   },
   "problem_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Egy böngésző probléma miatt az ABP beállítások alapértelmezettre lettek visszaállítva."
   }
 }

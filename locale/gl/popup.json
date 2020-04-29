@@ -9,19 +9,9 @@
     "message": "Deixar de mostrar notificacións"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> nesta páxina",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "nesta páxina"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> en total",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "en total"
   }
 }

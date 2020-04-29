@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "დააწკაპეთ ამ შეტყობინებაზე მასში არსებული ყველა ბმულის გასახსნელად."
-  },
-  "overlay_notification_button_no": {
-    "message": "არა"
-  },
-  "overlay_notification_button_yes": {
-    "message": "დიახ"
   }
 }

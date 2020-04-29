@@ -1,12 +1,57 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "Adblock Plus-u təkmilləşdirməyə kömək etmək üçün Qəbul edilə bilən reklamları bağlama səbəbinizi bizimlə paylaşmağı düşünürsünüz?"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "Xeyr, təşəkkürlər"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "Anketə get"
+  },
+  "options_acceptableAds_ads_label": {
+    "message": "Qəbul edilən reklamlara icazə ver"
+  },
+  "options_acceptableAds_description": {
+    "message": "Qəbul edilən reklamlar narahat etməyən reklamlardır. Veb saytlar sahiblərini gəlirlə təmin etdiyi üçün reklamları əngəlləmə və onlayn məzmunu dəstəkləmə arasında qalan yerdir."
+  },
+  "options_acceptableAds_header": {
+    "message": "Qəbul edilən reklamlar"
+  },
   "options_close": {
     "message": "bağla"
+  },
+  "options_control_remove_title": {
+    "message": "çıxart"
   },
   "options_customFilter_cancel": {
     "message": "Ləğv et"
   },
   "options_customize_showNotifications": {
     "message": "Faydalı bildirişləri göstər"
+  },
+  "options_dialog_about_title": {
+    "message": "Adblock Plus Haqqında"
+  },
+  "options_dialog_about_version": {
+    "message": "Versiya nömrəsi $version$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "2.6.7"
+      }
+    }
+  },
+  "options_dialog_invalid_title": {
+    "message": "Xəta baş verdi"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Başlıq"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
+  },
+  "options_email": {
+    "message": "E-poçt:"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Baş tutmadı, rəqəmsal cəm uyğunlaşmadı"
@@ -20,8 +65,26 @@
   "options_filterList_updateNow": {
     "message": "indi yenilə"
   },
+  "options_footer_about": {
+    "message": "Adblock Plus Haqqında"
+  },
+  "options_footer_contribute": {
+    "message": "Töhfə ver"
+  },
+  "options_general_description": {
+    "message": "Adblock Plus-un saytlarda nəyi göstərib nəyi gizlədəcəyini müəyyənləşdirin"
+  },
+  "options_language_change": {
+    "message": "dəyişdir"
+  },
   "options_language_header": {
     "message": "Dil"
+  },
+  "options_learn_more": {
+    "message": "Daha ətraflı"
+  },
+  "options_new_label": {
+    "message": "Yeni"
   },
   "options_page_document_title": {
     "message": "Tənzimləmələr"
@@ -29,7 +92,44 @@
   "options_page_title": {
     "message": "Tənzimləmələr"
   },
+  "options_privacy_header": {
+    "message": "Gizlilik və təhlükəsizlik"
+  },
+  "options_protection_privacy_tooltip": {
+    "message": "Gizliliyinizi, ziyarət etdiyiniz veb saytlarda onlayn fəaliyyətinizi izləyə bilənlərdən qoruyun."
+  },
+  "options_protection_social_tooltip": {
+    "message": "Ziyarət etdiyiniz saytlarda olan sosial media nişanları, sosial media şəbəkələrinə, saytlardakı gəzinti vərdişlərinizə əsaslanaraq sizin profilinizi yaratmağa icazə verir - hətta onlara klikləməsəniz belə. Bu nişanları gizlətmək profilinizi qoruya bilər."
+  },
+  "options_support_title": {
+    "message": "Dəstək"
+  },
+  "options_tab_advanced": {
+    "message": "Qabaqcıl"
+  },
   "options_tab_general": {
     "message": "Ümumi"
+  },
+  "options_tab_help": {
+    "message": "Kömək"
+  },
+  "options_tab_whitelist": {
+    "message": "Ağ siyahıdakı veb saytlar"
+  },
+  "options_tracking_warning_1": {
+    "message": "Hər ikisidə fəaldır: <strong>$tracking$</strong> və <strong>$acceptableAds$</strong>.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "Yaxşı, anladım."
   }
 }

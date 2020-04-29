@@ -9,19 +9,9 @@
     "message": "หยุดแสดงการแจ้งเตือน"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> ในหน้านี้",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "ในหน้านี้"
   },
   "stats_label_total": {
-    "message": "รวม <strong>$number$</strong> อย่าง",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "รวม อย่าง"
   }
 }

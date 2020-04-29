@@ -130,6 +130,12 @@
   "options_dialog_predefined_confirm": {
     "message": "დიახ, მსურს ამ ფილტრის გამოყენება"
   },
+  "options_dialog_predefined_subscription_title": {
+    "message": "სათაური"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
+  },
   "options_dialog_predefined_title": {
     "message": "ნამდვილად გსურთ ამ ფილტრის დამატება?"
   },

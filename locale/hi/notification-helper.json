@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "इसके सभी लिंक खोलने के लिए नोटिफिकेशन पर क्लिक करें।"
-  },
-  "overlay_notification_button_no": {
-    "message": "नहीं"
-  },
-  "overlay_notification_button_yes": {
-    "message": "हाँ"
   }
 }

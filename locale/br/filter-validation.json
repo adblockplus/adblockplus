@@ -21,7 +21,7 @@
     "message": "Dianav eo dibarzh ar sil"
   },
   "line": {
-    "message": "Linenn $number$: $message$",
+    "message": "Linenn $number$ : $message$",
     "placeholders": {
       "message": {
         "content": "$2",

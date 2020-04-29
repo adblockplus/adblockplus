@@ -9,19 +9,9 @@
     "message": "Seḥbes askan n yilɣa"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> ɣef usebter-agi",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "ɣef usebter-agi"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> s umata",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "s umata"
   }
 }

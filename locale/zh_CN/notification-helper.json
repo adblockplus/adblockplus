@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "点击通知打开它上面的所有链接。"
-  },
-  "overlay_notification_button_no": {
-    "message": "否"
-  },
-  "overlay_notification_button_yes": {
-    "message": "是"
   }
 }

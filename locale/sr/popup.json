@@ -30,20 +30,10 @@
     "message": "Број блокираних ставки"
   },
   "stats_label_page": {
-    "message": "На овој страници: <strong>$number$</strong>",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "на овој страници"
   },
   "stats_label_total": {
-    "message": "Укупно: <strong>$number$</strong>",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "укупно"
   },
   "status_header": {
     "message": "Блокирај огласе на домену:"

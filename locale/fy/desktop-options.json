@@ -130,6 +130,12 @@
   "options_dialog_predefined_confirm": {
     "message": "Ja, dizze filterlist brûke"
   },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Titel"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
+  },
   "options_dialog_predefined_title": {
     "message": "Binne jo wis dat jo dizze filterlist tafoegje wolle?"
   },

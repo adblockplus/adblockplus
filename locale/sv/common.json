@@ -5,8 +5,20 @@
   "cancel": {
     "message": "Avbryt"
   },
+  "common_copyright": {
+    "message": "Copyright © $year$ Alla rätter reserverade. Adblock Plus® är ett registrerad varumärke av <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
   "common_feature_anti_adblock_title": {
     "message": "Dölj Adblock Varningsmeddelanden"
+  },
+  "common_feature_circumvention_title": {
+    "message": "ABP Anti-Circumvention Filter Lista"
   },
   "common_feature_malware_title": {
     "message": "Blockera skadliga program"
@@ -17,7 +29,16 @@
   "common_feature_social_title": {
     "message": "Blockera spårning via sociala medieikoner"
   },
+  "common_notification_hide": {
+    "message": "Stäng notifikation"
+  },
+  "copy_selected": {
+    "message": "Kopiera valda"
+  },
   "delete": {
     "message": "Ta bort"
+  },
+  "filter_action_failed": {
+    "message": "Något gick fel. Vänligen försök igen."
   }
 }

@@ -84,7 +84,7 @@
     "message": "wird verarbeitet"
   },
   "issueReporter_screenreader_warning": {
-    "message": "Damit wir das Problem besser verstehen können, ist bei der Übermittlung eines Problemberichtes ein Screenshot erforderlich. Je nach Website, auf der du dich momentan befindest, könnte der Screenshot personenbezogene Informationen enthalten. Wenn du keinen Screenshot übermitteln möchtest, schicke dein Problem bitte an <a0>support@adblockplus.org</a0>."
+    "message": "Damit wir das Problem besser verstehen können, ist bei der Übermittlung eines Problemberichtes ein Screenshot erforderlich. Je nach Webseite, auf der du dich momentan befindest, könnte der Screenshot personenbezogene Informationen enthalten. Wenn du keinen Screenshot übermitteln möchtest, schicke dein Problem bitte an <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_screenshot_hide": {
     "message": "Ausblenden"

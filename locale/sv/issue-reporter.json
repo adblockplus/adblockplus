@@ -23,8 +23,14 @@
   "issueReporter_comment_label": {
     "message": "Kommentar (valfritt):"
   },
+  "issueReporter_config_label": {
+    "message": "Inkludera information om min webbläsarkonfiguration, samt en lista över aktiva tillägg jag använder."
+  },
   "issueReporter_confirmationMessage": {
     "message": "Din rapport har sparats. Du kan nå den på följande adress:"
+  },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Obs:</strong> En ytterligare flik öppnas temporärt så att sidan du är på inte påverkas av Ärenderapporten."
   },
   "issueReporter_detailsButton_label": {
     "message": "Detaljer"
@@ -53,8 +59,20 @@
   "issueReporter_falsePositive_label": {
     "message": "Adblock Plus blockerar alltför mycket"
   },
+  "issueReporter_highlighter_description": {
+    "message": "Använd verktygen för att markera varje annons eller dölja känslig information på skärmbilden. Markering av annonser hjälper oss att lösa problemet snabbare."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Markera problem"
+  },
   "issueReporter_knownIssueMessage": {
     "message": "Problemet du rapporterade är antagligen redan känt. Mer information:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Markera ärende"
+  },
+  "issueReporter_other_issues": {
+    "message": "För alla andra frågor, vänligen kontakta oss via <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_page_title": {
     "message": "Rapportera problem"
@@ -65,8 +83,14 @@
   "issueReporter_processing_screenshot": {
     "message": "bearbetar"
   },
+  "issueReporter_screenreader_warning": {
+    "message": "För att hjälpa oss att bättre förstå problemet, krävs en skärmdump när du skickar in en ärenderapport. Beroende på vilken webbplats du använder, kan skärmdumpen innehålla personlig information. Om du är obekväm med att skicka in en skärmdump, vänligen maila ditt problem till <a0>support@adblockplus.org</a0>."
+  },
   "issueReporter_screenshot_hide": {
     "message": "Dölj"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "Markera"
   },
   "issueReporter_selectIssueButton_label": {
     "message": "Välj problem"

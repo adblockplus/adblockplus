@@ -1,8 +1,0 @@
-{
-  "notification_antiadblock_message": {
-    "message": "Бұл сайт Adblock Plus пайдаланушыларына мақсатталған хабарламаларды көрсететіні белгілі. Adblock Plus мақсатталған хабарламаларды жасыруы керек пе?"
-  },
-  "notification_antiadblock_title": {
-    "message": "Мақсатталған хабарламаларды жасыру керек пе?"
-  }
-}

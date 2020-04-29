@@ -1,0 +1,17 @@
+{
+  "problem_solution_opera_step_7": {
+    "message": "Klik <strong>Tambahkan ke Opera</strong>."
+  },
+  "problem_solution_title": {
+    "message": "Solusi:"
+  },
+  "problem_subtitle": {
+    "message": "Karena masalah tersebut, pengaturan ABP Anda telah diatur ulang ke default. Untuk mengatasi masalah ini, Anda harus menghapus dan menginstal ulang Adblock Plus. Klik link di bawah untuk melakukannya."
+  },
+  "problem_subtitle_opera": {
+    "message": "Karena masalah tersebut, pengaturan ABP Anda telah diatur ulang ke default. Untuk mengatasi masalah ini, Anda harus menghapus dan menginstal ulang Adblock Plus. Ikuti langkah-langkah di bawah ini untuk melakukannya."
+  },
+  "problem_title": {
+    "message": "Masalah browser telah menyebabkan pengaturan ABP Anda di-reset."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "problem_os_mac": {
+    "message": "Mac"
+  },
+  "problem_os_windows": {
+    "message": "Windows"
+  },
+  "problem_social_description": {
+    "message": "Ur gudenn zo bet ? Deuit e darempred gant hor skipailh"
+  },
+  "problem_social_email": {
+    "message": "Postel"
+  },
+  "problem_social_facebook": {
+    "message": "Facebook"
+  },
+  "problem_social_title": {
+    "message": "Emaoc'h c'hoazh e sell da gaout sikour ?"
+  },
+  "problem_social_twitter": {
+    "message": "Twitter"
+  },
+  "problem_solution_action": {
+    "message": "Klikit amañ evit distaliañ ha staliañ en dro Adblock Plus"
+  },
+  "problem_solution_title": {
+    "message": "An diskoulm :"
+  }
+}

@@ -20,32 +20,48 @@
   "promote_abp_module": {
     "message": "Цікавить Adblock Plus для мобільного пристрою?"
   },
+  "refresh_this_page": {
+    "message": "Оновити сторінку"
+  },
   "refresh_to_take_effect": {
     "message": "Натисніть <strong>Оновити</strong>, щоб зміни набули чинності."
   },
   "sendReport": {
     "message": "Повідомити про помилку"
   },
+  "share_on_facebook": {
+    "message": "Опублікувати на Facebook"
+  },
+  "share_on_twitter": {
+    "message": "Твітнути в Twitter"
+  },
+  "share_on_twitter_message": {
+    "message": "Adblock Plus заблокував для мене $number$ рекламних оголошень. Спробуйте і ви — це безкоштовно!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "social_media_share": {
+    "message": "Поділитися з друзями"
+  },
   "stats_header": {
     "message": "Кількість заблокованих об'єктів"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> на цій сторінці",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "на цій сторінці"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> всього",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "всього"
+  },
+  "status_domain": {
+    "message": "Цей веб-сайт:"
   },
   "status_header": {
     "message": "Блокування реклами на:"
+  },
+  "status_page": {
+    "message": "Ця сторінка:"
   }
 }

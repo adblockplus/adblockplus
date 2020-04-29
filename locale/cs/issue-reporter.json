@@ -39,7 +39,7 @@
     "message": "E-mail:"
   },
   "issueReporter_errorMessage": {
-    "message": "Pokus odeslat hlášení problému selhal s chybovým kódem \"?1?\". Ověřte prosím, že jste připojeni k internetu a pokus opakujte. Pokud problém přetrvává, zkuste prosím vyhledat pomoc na [link]fóru Adblocku Plus[/link]."
+    "message": "Pokus odeslat hlášení problému selhal s chybovým kódem \"?1?\". Ověřte prosím, že jste připojeni k internetu a pokus opakujte. Pokud problém přetrvává, zkuste prosím vyhledat pomoc na [link]fóru Adblock Plus[/link]."
   },
   "issueReporter_falseNegative_description": {
     "message": "Tuto možnost vyberte v případě, že vidíte reklamu i přesto, že je Adblock Plus aktivovaný."
@@ -75,7 +75,7 @@
     "message": "Zobrazit data hlášení"
   },
   "issueReporter_typeSelector_description": {
-    "message": "Toto okno vás provede kroky potřebnými k oznámení problému v Adblocku Plus. Začněte prosím vybráním druhu problému, se kterým jste se na této stránce setkali:"
+    "message": "Toto okno vás provede kroky potřebnými k oznámení problému v Adblock Plus. Začněte prosím vybráním druhu problému, se kterým jste se na této stránce setkali:"
   },
   "issueReporter_typeSelector_heading": {
     "message": "Vyberte druh problému"

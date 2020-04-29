@@ -1,12 +1,12 @@
 {
   "day1_blockelement_description": {
-    "message": "חסום אותם עם מאפיין חסימת יסוד של Adblock Plus."
+    "message": "חסום אותם עם מאפיין חסימת אלמנט של Adblock Plus."
   },
   "day1_blockelement_more": {
     "message": "למד כיצד"
   },
   "day1_blockelement_screenshot": {
-    "message": "דוגמה של צלמית קופצת עם כפתור מודגש של \"חסום יסוד\"."
+    "message": "דוגמה של צלמית קופצת עם כפתור מודגש של \"חסום אלמנט\"."
   },
   "day1_blockelement_title": {
     "message": "נמאס לך מקטעי תגובות המעצבנים אותך?"
@@ -18,7 +18,7 @@
     "message": "מחפש תמיכה!"
   },
   "day1_community_description_1": {
-    "message": "בתור מיזם של קוד פתוח, אנחנו מסתמכים על משתמשים כמוך כדי לעזור לנו לשפר את חווית חסימת הפסומות."
+    "message": "בתור מיזם בקוד פתוח, אנחנו מסתמכים על משתמשים כמוך כדי לעזור לנו לשפר את חווית חסימת הפסומות."
   },
   "day1_community_description_2": {
     "message": "אילו מאפיינים היית רוצה לראות? מה אנחנו יכולים לשפר? האם Adblock Plus משבש אתרים מסוימים?"

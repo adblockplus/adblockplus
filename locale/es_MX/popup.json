@@ -9,19 +9,9 @@
     "message": "Dejar de mostrar avisos"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> en esta página",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "en esta página"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> en total",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "en total"
   }
 }

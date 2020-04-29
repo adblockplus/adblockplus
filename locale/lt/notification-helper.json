@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "Paspauskite ant pranešimo ir bus atvertos visos nuorodos jame."
-  },
-  "overlay_notification_button_no": {
-    "message": "Ne"
-  },
-  "overlay_notification_button_yes": {
-    "message": "Taip"
   }
 }

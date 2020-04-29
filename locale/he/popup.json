@@ -1,9 +1,9 @@
 {
   "click_element_to_block_it": {
-    "message": "לחץ על יסוד בעמוד כדי לחסום אותו."
+    "message": "לחץ על אלמנט בעמוד כדי לחסום אותו."
   },
   "easy_create_filter": {
-    "message": "חסום יסוד"
+    "message": "חסום אלמנט"
   },
   "options_refresh": {
     "message": "רענן"
@@ -29,24 +29,31 @@
   "sendReport": {
     "message": "דווח על סוגייה"
   },
+  "share_on_facebook": {
+    "message": "שתף ב־פייסבוק"
+  },
+  "share_on_twitter": {
+    "message": "שתף ב־Twitter"
+  },
+  "share_on_twitter_message": {
+    "message": "חסמתי $number$ פרסומות עם Adblock Plus. תן לו ניסיון - הוא חינמי!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "social_media_share": {
+    "message": "שתף מספרים עם חברים"
+  },
   "stats_header": {
     "message": "מספר של פריטים חסומים"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> בעמוד זה",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "בדף זה"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> בסך הכל",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "בסך הכל"
   },
   "status_domain": {
     "message": "אתר זה:"

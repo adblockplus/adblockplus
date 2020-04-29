@@ -29,24 +29,31 @@
   "sendReport": {
     "message": "Laporkan masalah"
   },
+  "share_on_facebook": {
+    "message": "Bagikan di Facebook"
+  },
+  "share_on_twitter": {
+    "message": "Bagikan di Twitter"
+  },
+  "share_on_twitter_message": {
+    "message": "Saya telah memblokir $number$ iklan dengan Adblock Plus. Coba sekarang - GRATIS!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "social_media_share": {
+    "message": "Bagikan ke teman-teman"
+  },
   "stats_header": {
     "message": "Jumlah item yang diblokir"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> pada halaman ini",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "pada halaman ini"
   },
   "stats_label_total": {
-    "message": "Total item <strong>$number$</strong>",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "total item"
   },
   "status_domain": {
     "message": "Situs ini:"

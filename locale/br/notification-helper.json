@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "Klikit war ar c'hemenn evit digeriñ an holl liammoù a zo ennañ."
-  },
-  "overlay_notification_button_no": {
-    "message": "Ket"
-  },
-  "overlay_notification_button_yes": {
-    "message": "Ya"
   }
 }

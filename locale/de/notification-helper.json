@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "Auf die Benachrichtigung klicken, um alle enthaltenen Links zu öffnen."
-  },
-  "overlay_notification_button_no": {
-    "message": "Nein"
-  },
-  "overlay_notification_button_yes": {
-    "message": "Ja"
   }
 }

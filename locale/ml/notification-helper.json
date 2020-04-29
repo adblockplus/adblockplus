@@ -4,11 +4,5 @@
   },
   "notification_open_all": {
     "message": "ഈ അറിയിപ്പില്‍നിന്നുള്ള എല്ലാ കണ്ണികളും തുറക്കുക"
-  },
-  "overlay_notification_button_no": {
-    "message": "അല്ല"
-  },
-  "overlay_notification_button_yes": {
-    "message": "അതെ"
   }
 }

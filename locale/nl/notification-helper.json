@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "Klik op de melding om alle koppelingen erin te openen."
-  },
-  "overlay_notification_button_no": {
-    "message": "Nee"
-  },
-  "overlay_notification_button_yes": {
-    "message": "Ja"
   }
 }

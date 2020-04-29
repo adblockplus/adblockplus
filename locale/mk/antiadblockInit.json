@@ -1,8 +1,0 @@
-{
-  "notification_antiadblock_message": {
-    "message": "Оваа страна е позната по тоа што пушта намерни пораки до корисниците на Adblock Plus. Дали сакате Adblock Plus да ги скрие пораките?"
-  },
-  "notification_antiadblock_title": {
-    "message": "Сокриј насочени пораки?"
-  }
-}

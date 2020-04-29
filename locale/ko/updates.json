@@ -1,55 +1,44 @@
 {
   "updates_adblockBrowser": {
-    "message": "데스크톱을 통제할 수 있는 사용자는 모바일 기기에서도 광고를 차단하고 개인 정보 보호 및 보안 기능을 향상할 수 있습니다.  <a>아래의 Adblock Browser 응용프로그램</a>을 다운로드하세요"
+    "message": "데스크톱을 통제할 수 있는 사용자는 모바일 기기에서도 광고를 차단하고 개인 정보 보호 및 보안 기능을 향상할 수 있습니다. <a>아래의 Adblock Browser 응용프로그램</a>을 다운로드하세요"
   },
   "updates_blockAds": {
     "message": "오픈 소스 반란군 연합이 개발한 새로운 차단 필터는 제국의 역습에도 불구하고 Facebook과 같은 웹사이트에 숨겨진 광고를 날려버릴 수 있습니다."
   },
   "updates_contribute_donate_action": {
-    "description": "",
     "message": "참여하기"
   },
   "updates_contribute_donate_subtitle": {
-    "description": "",
     "message": "여러분의 지지 덕분에 Adblock Plus가 계속해 개선할 수 있습니다."
   },
   "updates_contribute_donate_title": {
-    "description": "",
     "message": "ABP 프로젝트에 참여하기"
   },
   "updates_contribute_rate_action": {
-    "description": "",
     "message": "점수 주기"
   },
   "updates_contribute_rate_subtitle": {
-    "description": "",
     "message": "잠시 시간을 내어 Adblock Plus를 평가해 홍보할 수 있도록 도와주세요. 빠르고 무료입니다!"
   },
   "updates_contribute_rate_title": {
-    "description": "",
     "message": "점수를 주세요!"
   },
   "updates_contribute_subtitle": {
-    "description": "",
     "message": "두 방법 중 한 가지로 ABP를 지지하세요:"
   },
   "updates_contribute_title": {
-    "description": "",
     "message": "Adblock Plus가 유용한가요?"
   },
   "updates_fixes_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
     "message": "해결"
   },
   "updates_heading": {
     "message": "Adblock Plus가 업데이트되었습니다!"
   },
   "updates_improvements_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
     "message": "개선"
   },
   "updates_link": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
     "message": "더 보기"
   },
   "updates_optionsPageNews": {
@@ -59,23 +48,18 @@
     "message": "잠깐! 그렇다면 휴대폰은 어떨까요?"
   },
   "updates_social_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "최신 ABP 업데이트에 대한 의견을 들려주세요."
   },
   "updates_social_email": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "이메일"
   },
   "updates_social_facebook": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "Facebook"
   },
   "updates_social_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "여러분의 의견을 기다립니다!"
   },
   "updates_social_twitter": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "트위터"
   },
   "updates_status": {
@@ -85,11 +69,9 @@
     "message": "새로운 기능"
   },
   "updates_subtitle": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
     "message": "최신 업데이트가 여러분 마음에 들 것으로 생각합니다."
   },
   "updates_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
     "message": "Adblock Plus가 최신 상태입니다!"
   }
 }

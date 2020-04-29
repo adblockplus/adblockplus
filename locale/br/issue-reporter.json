@@ -21,7 +21,7 @@
     "message": "Sikourit ac'hanomp da gompren peseurt kudenn zo bet o skrivañ ur gerig amañ dindan."
   },
   "issueReporter_comment_label": {
-    "message": "Evezhiadenn (ma faota deoc'h):"
+    "message": "Evezhiadenn (ma faota deoc'h) :"
   },
   "issueReporter_config_label": {
     "message": "Kas titouroù diwar-benn kefluniadur ma merdeer ha roll an astennoù arveret ganin."
@@ -30,7 +30,7 @@
     "message": "Saveteet eo bet ho tanevell. Kavet e vo ganeoc'h aze:"
   },
   "issueReporter_data_gathering_tab": {
-    "message": "<strong>A-bouez:</strong> Digoret e vo un ivinell ouzhpenn kuit da vezañ direnket gant an disklerier-kudenn."
+    "message": "<strong>A-bouez :</strong> Digoret e vo un ivinell ouzhpenn kuit da vezañ direnket gant an disklerier-kudenn."
   },
   "issueReporter_detailsButton_label": {
     "message": "Munudoù"
@@ -42,7 +42,7 @@
     "message": "Lakaat ur chomlec'h postel mat a sikouro ac'hanomp. E-mod-se e c'hallimp mont a darempred ganeoc'h ma'z eus kudennoù, meizantoù drouk da skouer. N'oc'h ket rediet da vizskrivañ ur chomlec'h postel ha ne vo ket roet da zen ebet."
   },
   "issueReporter_email_label": {
-    "message": "Postel:"
+    "message": "Postel :"
   },
   "issueReporter_errorMessage": {
     "message": "Ur fazi zo bet pa 'z eo bet kaset ho kemennadenn gant ar c'hod \"?!?\". Gwiriit hag-eñ oc'h war Internet ha klaskit en-dro. Ma pad ar gudenn, goulennit sikour gant an dud war ar forom [link]Adblock Plus forom[/link]."
@@ -66,7 +66,7 @@
     "message": "Usskediñ ur gudenn"
   },
   "issueReporter_knownIssueMessage": {
-    "message": "Ur gudenn emaoc'h o talañ outi zo annavezet dija moarvat. Setu muioc'h a ditouroù:"
+    "message": "Ur gudenn emaoc'h o talañ outi zo annavezet dija moarvat. Setu muioc'h a ditouroù :"
   },
   "issueReporter_markIssueButton_label": {
     "message": "Merkañ ar gudenn"
@@ -108,9 +108,9 @@
     "message": "Klikit war al liamm-mañ evit adlenn ho kemennadenn a-raok he c'has"
   },
   "issueReporter_typeSelector_description": {
-    "message": "Dibabit ur gudenn mar plij:"
+    "message": "Dibabit ur gudenn mar plij :"
   },
   "issueReporter_typeSelector_heading": {
-    "message": "Peseurt doare kudenn ho peus bet?"
+    "message": "Peseurt doare kudenn ho peus bet ?"
   }
 }

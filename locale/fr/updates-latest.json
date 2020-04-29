@@ -1,42 +1,32 @@
 {
   "notification_updates_message": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
     "message": "Aucune action n'est requise : continuez à naviguer sur Internet sans être importuné par les publicités agaçantes ! <a>Découvrez les nouveautés</a>"
   },
   "notification_updates_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
     "message": "Adblock Plus a été mis à jour !"
   },
   "updates_update_i1_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Si vos paramètres ABP sont corrompus en raison d'un problème de navigateur, le message de notification s'ouvre maintenant dans un nouvel onglet du navigateur."
   },
   "updates_update_i1_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Notification de corruption de données déplacée"
   },
   "updates_update_i2_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Aidez-nous à faire passer le message concernant votre bloqueur de publicités préféré en partageant le nombre total de publicités que vous avez bloquées sur les chaînes de vos médias sociaux préférés."
   },
   "updates_update_i2_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Ajout d'une option pour partager le nombre de publicités bloquées sur les médias sociaux"
   },
   "updates_update_i3_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Les filtres longs peuvent désormais être affichés dans leur intégralité, y compris le sélecteur CSS."
   },
   "updates_update_i3_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Extension de la longueur des info-bulles du panneau des outils de développement"
   },
   "updates_update_i4_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "L'icône clignote maintenant et devient bleue pour alerter les utilisateurs de l'arrivée de notifications."
   },
   "updates_update_i4_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#current-updates",
     "message": "Rendre la notification des icônes de la barre des tâches ABP plus évidente et plus distincte"
   }
 }

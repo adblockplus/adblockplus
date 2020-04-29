@@ -6,50 +6,39 @@
     "message": "Η συμμαχία επαναστατών ανοιχτού κώδικα δημιούργησε νέα φίλτρα αποκλεισμού που σας επιτρέπουν να αποκλείσετε τις κρυμμένες διαφημίσεις σε ιστότοπους όπως το Facebook, ακόμα και αν η αυτοκρατορία αντεπιτεθεί."
   },
   "updates_contribute_donate_action": {
-    "description": "",
     "message": "Συνεισφορά"
   },
   "updates_contribute_donate_subtitle": {
-    "description": "",
     "message": "Η στήριξή σας μας βοηθά να βελτιώνουμε συνεχώς το Adblock Plus."
   },
   "updates_contribute_donate_title": {
-    "description": "",
     "message": "Συνεισφέρετε στο ABP"
   },
   "updates_contribute_rate_action": {
-    "description": "",
     "message": "Βαθμολογήστε το"
   },
   "updates_contribute_rate_subtitle": {
-    "description": "",
     "message": "Παρακαλούμε βρείτε λίγο χρόνο να βαθμολογήσετε το Adblock Plus για να μας βοηθήσετε να διαδώσουμε τα νέα. Είναι γρήγορο και δωρεάν."
   },
   "updates_contribute_rate_title": {
-    "description": "",
     "message": "Βαθμολογήστε το!"
   },
   "updates_contribute_subtitle": {
-    "description": "",
     "message": "Υπάρχουν δύο τρόποι στήριξης του ABP:"
   },
   "updates_contribute_title": {
-    "description": "",
     "message": "Απολαμβάνετε το Adblock Plus;"
   },
   "updates_fixes_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
     "message": "Διορθώσεις"
   },
   "updates_heading": {
     "message": "Το Adblock Plus ενημερώθηκε!"
   },
   "updates_improvements_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
     "message": "Βελτιώσεις"
   },
   "updates_link": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
     "message": "Διαβάστε περισσότερα"
   },
   "updates_optionsPageNews": {
@@ -59,23 +48,18 @@
     "message": "Αλλά περιμένετε! Τι γίνεται με το τηλέφωνό σας;"
   },
   "updates_social_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "Μοιραστείτε τις σκέψεις σας σχετικά με την τελευταία ενημέρωση του ABP."
   },
   "updates_social_email": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "Email"
   },
   "updates_social_facebook": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "Facebook"
   },
   "updates_social_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "Θέλουμε να ακούσουμε από εσάς!"
   },
   "updates_social_twitter": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "Twitter"
   },
   "updates_status": {
@@ -85,11 +69,9 @@
     "message": "Τι καινούργιο υπάρχει;"
   },
   "updates_subtitle": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
     "message": "Πιστεύουμε ότι θα απολαύσετε τις τελευταίες ενημερώσεις."
   },
   "updates_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
     "message": "Το Adblock Plus είναι ενημερωμένο!"
   }
 }

@@ -1,0 +1,38 @@
+{
+  "problem_os_mac": {
+    "message": "Mac"
+  },
+  "problem_os_windows": {
+    "message": "Windows"
+  },
+  "problem_social_description": {
+    "message": "Узнікла праблема? Звяжыцеся з нашай службай падтрымкі"
+  },
+  "problem_social_email": {
+    "message": "Эл. пошта"
+  },
+  "problem_social_facebook": {
+    "message": "Facebook"
+  },
+  "problem_social_title": {
+    "message": "Усё яшчэ патрэбна дапамога?"
+  },
+  "problem_social_twitter": {
+    "message": "Twitter"
+  },
+  "problem_solution_action": {
+    "message": "Націсніце тут, каб выдаліць і зноў усталяваць Adblock Plus"
+  },
+  "problem_solution_opera_step_5": {
+    "message": "Націсніце <strong>Выдаліць</strong>."
+  },
+  "problem_solution_opera_step_6": {
+    "message": "Абнавіце старонку Opera Addons."
+  },
+  "problem_solution_opera_step_7": {
+    "message": "Націсніце <strong>Дадаць у Opera</strong>."
+  },
+  "problem_solution_title": {
+    "message": "Рашэнне:"
+  }
+}

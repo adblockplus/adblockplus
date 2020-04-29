@@ -1,6 +1,12 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "För att hjälpa oss att förbättra Adblock Plus, tankedelning varför du har inaktiverat Godtagbara Annonser?"
+  },
   "options_aa_opt_out_survey_no": {
     "message": "Nej, tack"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "Gå till undersökningen"
   },
   "options_acceptableAds_ads_description_1": {
     "message": "Godtagbar annonser är inte irriterande och stör inte innehållet du visar. <a>Läs mer om Godtagbara annonser-kriteriet</a>"
@@ -22,6 +28,9 @@
   },
   "options_advanced_description": {
     "message": "Anpassa Adblock Plus, lägg till eller ta bort filterlistor, skapa och underhåll dina egna filterlistor"
+  },
+  "options_builtin_filterList_add": {
+    "message": "Lägg till inbyggda filterlistor"
   },
   "options_close": {
     "message": "stäng"
@@ -50,6 +59,9 @@
   "options_customize_header": {
     "message": "Anpassningar"
   },
+  "options_customize_iconStats": {
+    "message": "Visa antal blockerade annonser i ikonen"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "Visa 'Adblock Plus'-panelen i utvecklarverktygen"
   },
@@ -58,6 +70,18 @@
   },
   "options_customize_showNotifications": {
     "message": "Visa användbara notifieringar"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Tillåt aviseringar från Adblock Plus (aviseringar relaterade till kritiska prestandaproblem kommer alltid att visas)."
+  },
+  "options_dialog_about_copyright": {
+    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "currentYear": {
+        "content": "$1",
+        "example": "2017"
+      }
+    }
   },
   "options_dialog_about_title": {
     "message": "Om Adblock Plus"
@@ -80,8 +104,19 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Ange en giltig URL"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "URL måste börja med $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Lägg till en filterlista"
+  },
+  "options_dialog_invalid_title": {
+    "message": "Ett fel uppstod"
   },
   "options_dialog_language_other_empty": {
     "message": "Det finns inga tillgängliga språk."
@@ -137,6 +172,14 @@
   "options_filterList_lastDownload_invalidURL": {
     "message": "Ogiltig adress"
   },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Nedladdningen misslyckades. URL måste börja med $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_filterList_minutes": {
     "message": "minuter sedan"
   },
@@ -158,6 +201,17 @@
   "options_filterList_website": {
     "message": "webbplats"
   },
+  "options_filter_list_rule": {
+    "message": "Filterregler"
+  },
+  "options_filters_search_or_add": {
+    "message": "Sök eller lägg till filter (t.ex. $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
+  },
   "options_footer_about": {
     "message": "Om Adblock Plus"
   },
@@ -166,6 +220,12 @@
   },
   "options_general_description": {
     "message": "Bestäm vad Adblock Plus visar och döljer på webbsidor"
+  },
+  "options_generic_error": {
+    "message": "Åh nej! Något gick fel. Vänligen försök igen."
+  },
+  "options_help_center": {
+    "message": "Letar du efter svar på dina frågor? <a0>Besök vårt hjälpcenter (endast engelska)</a0>"
   },
   "options_help_description": {
     "message": "Få hjälp eller kom i kontakt med oss"
@@ -181,6 +241,9 @@
   },
   "options_language_empty": {
     "message": "Du har inga språkspecifika filter."
+  },
+  "options_language_filter_list": {
+    "message": "Filterlistor för språk"
   },
   "options_language_header": {
     "message": "Språk"
@@ -225,8 +288,17 @@
   "options_privacy_header": {
     "message": "Sekretess & säkerhet"
   },
+  "options_protection_privacy_tooltip": {
+    "message": "Skydda din integritet från kända entiteter som kan spåra din online-aktivitet på webbplatser du besöker."
+  },
   "options_protection_social_tooltip": {
     "message": "Sociala medieikoner på webbsidor du besöker tillåter sociala medianätverk att bygga upp en profil baserat på dina surfvanor - även om du inte klickar på dem. Dölj dessa ikoner för att skydda din profil."
+  },
+  "options_rating_description": {
+    "message": "Ta en stund och hjälp till att sprida ordet genom att betygsätta Adblock Plus. Tack för ditt stöd!"
+  },
+  "options_rating_title": {
+    "message": "Gillar du Adblock Plus?"
   },
   "options_report_bug": {
     "message": "Hittat en bugg? <a>Skicka en buggrapport</a>"
@@ -294,6 +366,9 @@
   },
   "options_whitelist_empty_2": {
     "message": "Webbplatser du litar på och vill tillåta annonser på kommer att visas här."
+  },
+  "options_whitelist_notification": {
+    "message": "Webbplatsen har vitlistats."
   },
   "options_whitelist_placeholder_example": {
     "message": "t.ex. $domain$",

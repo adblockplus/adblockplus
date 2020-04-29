@@ -1,8 +1,0 @@
-{
-  "notification_antiadblock_message": {
-    "message": "Αυτή η σελίδα είναι γνωστό ότι προβάλει στοχευμένα μηνύματα στους χρήστες του Adblock Plus. Θέλετε το Adblock Plus να αποκρύπτει στοχευμένα μηνύματα;"
-  },
-  "notification_antiadblock_title": {
-    "message": "Απόκρυψη στοχευμένων μηνυμάτων;"
-  }
-}

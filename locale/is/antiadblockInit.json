@@ -1,8 +1,0 @@
-{
-  "notification_antiadblock_message": {
-    "message": "Þetta vefsvæði er þekkt fyrir að sýna áhugamiðuð skilaboð til Adblock Plus notenda. Viltu að Adblock Plus feli þessi áhugamiðuð skilaboð?"
-  },
-  "notification_antiadblock_title": {
-    "message": "Fela áhugamiðuð skilaboð?"
-  }
-}

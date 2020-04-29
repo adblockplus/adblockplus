@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "இதில் உள்ள எல்லா இணைப்புகளையும் திறக்க \"அறிவிப்பை\" சொடுக்கவும்."
-  },
-  "overlay_notification_button_no": {
-    "message": "இல்லை"
-  },
-  "overlay_notification_button_yes": {
-    "message": "ஆம்"
   }
 }

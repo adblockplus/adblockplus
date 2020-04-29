@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "Sizinlə əlaqə saxlaya bilməyəcəyik və raportu çox vacib qiymətləndirə bilməyəcəyik."
   },
+  "issueReporter_closeButton_label": {
+    "message": "Bağla"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Qeyd əlavə et"
   },
@@ -23,11 +26,17 @@
   "issueReporter_confirmationMessage": {
     "message": "Raportunuz yadda saxlandı. Ona aşağıdakı ünvandan keçə bilərsiniz:"
   },
+  "issueReporter_detailsButton_label": {
+    "message": "Təfsilatlar"
+  },
   "issueReporter_doneButton_label": {
     "message": "Oldu"
   },
   "issueReporter_email_description": {
     "message": "Raport haqqında sualımız olarkən sizinlə əlaqə saxlaya biləcəyimiz e-ünvan daxil etməyinizi xahiş edirik. Bu qatqılarınıza prioritetlik verməyimizə və onlara görə sizxatırlmağımıza kömək edəcək."
+  },
+  "issueReporter_email_label": {
+    "message": "E-poçt:"
   },
   "issueReporter_errorMessage": {
     "message": "Raport göndərmə cəhdi \"?1?\" xəta səbəbi ilə uğursuz alındı. Lütfən internet əlaqənizi yoxlayın və yenidən cəhd edin. Problem hələ də qalırsa [link]Adblock Plus forum[/link] - dən kömək alın."
@@ -52,6 +61,9 @@
   },
   "issueReporter_privacyPolicy": {
     "message": "Gizlilik siyasəti"
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Gizlət"
   },
   "issueReporter_sendButton_label": {
     "message": "Raportu göndər"

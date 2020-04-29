@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "Kliknij powiadomienie, aby otworzyć wszystkie znajdujące się w nim odnośniki."
-  },
-  "overlay_notification_button_no": {
-    "message": "Nie"
-  },
-  "overlay_notification_button_yes": {
-    "message": "Tak"
   }
 }

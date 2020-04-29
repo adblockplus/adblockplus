@@ -29,24 +29,31 @@
   "sendReport": {
     "message": "Notifica un problema"
   },
+  "share_on_facebook": {
+    "message": "Comparteix al Facebook"
+  },
+  "share_on_twitter": {
+    "message": "Comparteix al Twitter"
+  },
+  "share_on_twitter_message": {
+    "message": "He bloquejat $number$ anuncis amb l'Adblock Plus. Proveu-lo. És GRATUÏT!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "social_media_share": {
+    "message": "Comparteix les estadístiques amb els amics"
+  },
   "stats_header": {
     "message": "Número d'elements bloquejats"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> en aquesta pàgina",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "en aquesta pàgina"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> en total",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "en total"
   },
   "status_domain": {
     "message": "Aquest lloc web:"

@@ -1,8 +1,0 @@
-{
-  "notification_antiadblock_message": {
-    "message": "Este sítio é conhecido por enviar mensagens dirigidas aos utilizadores do Adblock Plus. Gostaria de ocultar essas mensagens?"
-  },
-  "notification_antiadblock_title": {
-    "message": "Ocultar mensagens?"
-  }
-}

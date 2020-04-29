@@ -9,19 +9,19 @@
     "message": "Setu ur skouer eus un arlun kemperzhel gant ar bouton \"Stankañ an elfenn\" lakaet war wel."
   },
   "day1_blockelement_title": {
-    "message": "Erru oc'h skuizh gant an evezhiadennoù?"
+    "message": "Erru oc'h skuizh gant an evezhiadennoù ?"
   },
   "day1_community_contact": {
-    "message": "Deuit e darempred ganeomp!"
+    "message": "Deuit e darempred ganeomp !"
   },
   "day1_community_contact_subject": {
-    "message": "Sikour 'mo!"
+    "message": "Sikour 'mo !"
   },
   "day1_community_description_1": {
     "message": "Ezhomm hon eus ac'hanoc'h evit gwellaat hor stanker bruderezh dre ma'z eo hor raktres ur raktres mammenn digor."
   },
   "day1_community_description_2": {
-    "message": "Peseurt arc'hweladurioù a blijfe deoc'h kaout? Petra a c'hallfe bezañ gwellaet? N' ez a ket en-dro lec'hiennoù zo abalamour da Adblock Plus?"
+    "message": "Peseurt arc'hweladurioù a blijfe deoc'h kaout ? Petra a c'hallfe bezañ gwellaet ? N' ez a ket en-dro lec'hiennoù zo abalamour da Adblock Plus ?"
   },
   "day1_community_title": {
     "message": "Deuit e darempred gant kumuniezh Adblock Plus"
@@ -42,7 +42,7 @@
     "message": "Kalz bruderezh eo. <a>Setu ar pezh a c'hall Adblock Plus stankañ ouzhpenn.</a>"
   },
   "notification_day1_title": {
-    "message": "$ads$ bruderezh ho peus stanket dija!",
+    "message": "$ads$ bruderezh ho peus stanket dija !",
     "placeholders": {
       "ads": {
         "content": "$1",

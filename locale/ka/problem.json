@@ -1,0 +1,65 @@
+{
+  "notification_problem_message": {
+    "message": "ხარვეზის შედეგად, თქვენი ABP-პარამეტრები ნაგულისხმევზე დაბრუნდა. <a>გამოსწორება და ვრცლად ნახვა</a>"
+  },
+  "problem_note": {
+    "message": "გაითვალისწინეთ, იმისდა მიხედვით თუ როგორ იყენებთ ABP-ს, შესაძლოა კვლავ დაგჭირდეთ გამართვა პარამეტრების, მორგებული ფილტრებისა და გამონაკლისი საიტების, როცა ხელახლა დაყენდება Adblock Plus."
+  },
+  "problem_os_mac": {
+    "message": "Mac"
+  },
+  "problem_os_windows": {
+    "message": "Windows"
+  },
+  "problem_social_description": {
+    "message": "ხარვეზს გადააწყდით? მიმართეთ ჩვენი მხარდაჭერის გუნდს"
+  },
+  "problem_social_email": {
+    "message": "ელფოსტა"
+  },
+  "problem_social_facebook": {
+    "message": "Facebook"
+  },
+  "problem_social_title": {
+    "message": "კვლავ გესაჭიროებათ დახმარება?"
+  },
+  "problem_social_twitter": {
+    "message": "Twitter"
+  },
+  "problem_solution_action": {
+    "message": "დაწკაპეთ აქ რომ ამოშალოთ და ხელახლა დააყენოთ Adblock Plus"
+  },
+  "problem_solution_opera_step_1": {
+    "message": "ამ ბმულს გახსნის Opera Addons (ახალ ჩანართში)"
+  },
+  "problem_solution_opera_step_2": {
+    "message": "Opera-ს ხელსაწყოთა ზოლიდან, <em0>მარჯვენა წკაპით</em0> / <em1>CTRL-წკაპით</em1> <strong>Adblock Plus</strong> ხატულაზე და აირჩიეთ <strong>გაფართოებების მართვა</strong>."
+  },
+  "problem_solution_opera_step_3": {
+    "message": "დაწკაპეთ <strong>ისარი</strong> Adblock Plus ხატულის გვერდით."
+  },
+  "problem_solution_opera_step_4": {
+    "message": "მონახეთ Adblock Plus და დაწკაპეთ <strong>X</strong> ზედა მარჯვენა კუთხეში."
+  },
+  "problem_solution_opera_step_5": {
+    "message": "დაწკაპეთ <strong>მოცილება</strong>."
+  },
+  "problem_solution_opera_step_6": {
+    "message": "ხელახლა გახსენით Opera Addons გვერდი."
+  },
+  "problem_solution_opera_step_7": {
+    "message": "დაწკაპეთ <strong>დაემატოს Opera-ს</strong>."
+  },
+  "problem_solution_title": {
+    "message": "გადაწყვეტა:"
+  },
+  "problem_subtitle": {
+    "message": "ხარვეზის შედეგად, თქვენი ABP-პარამეტრები ნაგულისხმევზე დაბრუნდა. გამოსასწორებლად, უნდა ამოშალოთ და ხელახლა დააყენოთ Adblock Plus. ამისთვის დაწკაპეთ ქვედა ბმულზე."
+  },
+  "problem_subtitle_opera": {
+    "message": "ხარვეზის შედეგად, თქვენი ABP-პარამეტრები ნაგულისხმევზე დაბრუნდა. გამოსასწორებლად, უნდა ამოშალოთ და ხელახლა დააყენოთ Adblock Plus. ამისთვის მიჰყევით ქვემოთ მითითებებს."
+  },
+  "problem_title": {
+    "message": "ბრაუზერის ხარვეზის შედეგად, თქვენი ABP-პარამეტრები ნაგულისხმევზე დაბრუნდა."
+  }
+}

@@ -1,8 +1,0 @@
-{
-  "notification_antiadblock_message": {
-    "message": "Táto stránka bola známa zobrazením cielených správ pre používateľa Adblock Plus. Chcete, aby  Adblock Plus skryl cielené správy?"
-  },
-  "notification_antiadblock_title": {
-    "message": "Skryť cielené správy?"
-  }
-}

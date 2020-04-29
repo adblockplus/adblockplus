@@ -130,6 +130,12 @@
   "options_dialog_predefined_confirm": {
     "message": "Sí, utilizar esta lista de filtros"
   },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Título"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
+  },
   "options_dialog_predefined_title": {
     "message": "¿Estás seguro de querer agregar esta lista de filtros?"
   },

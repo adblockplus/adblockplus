@@ -104,8 +104,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Ввести дійсну URL"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "URL-адреса має починатися з $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Додати список фільтрів"
+  },
+  "options_dialog_invalid_message": {
+    "message": "З міркувань безпеки можна додати лише <strong>HTTPS</strong> списки фільтрів і <strong>URL-адреси</strong> даних."
+  },
+  "options_dialog_invalid_title": {
+    "message": "Виникла помилка"
   },
   "options_dialog_language_other_empty": {
     "message": "Немає доступних мов."
@@ -115,6 +129,12 @@
   },
   "options_dialog_predefined_confirm": {
     "message": "Так, використовувати цей список фільтрів"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Назва"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "Посилання"
   },
   "options_dialog_predefined_title": {
     "message": "Ви впевнені, що хочете додати цей список?"
@@ -160,6 +180,14 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Помилка, невірна адреса"
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Завантаження не вдалося. URL повинен починатися з $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "хвилин(-и) тому"

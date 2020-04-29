@@ -1,11 +1,14 @@
 {
   "description": {
-    "message": "Med över 500 miljoner nedladdningar är Adblock Plus en av världens mest populära annonsblockerare."
+    "message": "Blockera YouTube™-annonser, popup-fönster & bekämpa mot skadlig kod!"
   },
   "name": {
     "message": "Adblock Plus"
   },
   "name_devbuild": {
     "message": "Adblock Plus utvecklingsversion"
+  },
+  "name_releasebuild": {
+    "message": "Adblock Plus - gratis annonsblockerare"
   }
 }

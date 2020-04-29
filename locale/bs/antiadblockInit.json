@@ -1,8 +1,0 @@
-{
-  "notification_antiadblock_message": {
-    "message": "Ovaj site je poznato da pokaže ciljanih poruka korisnicima Adblock Plus. Želite li Adblock Plus da sakrije ciljane poruke?"
-  },
-  "notification_antiadblock_title": {
-    "message": "Sakriti ciljane poruke?"
-  }
-}

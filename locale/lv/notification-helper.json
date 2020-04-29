@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "Noklikšķiniet uz paziņojuma, lai atvērtu visas saites tajā."
-  },
-  "overlay_notification_button_no": {
-    "message": "Nē"
-  },
-  "overlay_notification_button_yes": {
-    "message": "Jā"
   }
 }

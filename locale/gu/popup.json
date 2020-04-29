@@ -9,19 +9,9 @@
     "message": "સૂચનાઓ દર્શાવવાનું રોકો"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> આ પેજ પર",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "આ પેજ પર"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> કુલ",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "કુલ"
   }
 }

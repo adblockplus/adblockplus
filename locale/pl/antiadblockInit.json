@@ -1,8 +1,0 @@
-{
-  "notification_antiadblock_message": {
-    "message": "Ta witryna wyświetla użytkownikom Adblock Plusa ukierunkowane dla nich informacje. Czy chcesz, by Adblock Plus ukrywał tego typu informacje?"
-  },
-  "notification_antiadblock_title": {
-    "message": "Ukrywanie ukierunkowanych informacji"
-  }
-}

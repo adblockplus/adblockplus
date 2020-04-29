@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "Kliknite na upozornenie pre otvorenie všetkých odkazov v ňom."
-  },
-  "overlay_notification_button_no": {
-    "message": "Nie"
-  },
-  "overlay_notification_button_yes": {
-    "message": "Áno"
   }
 }

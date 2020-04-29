@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "Kattints az értesítésre a benne lévő összes link megnyitásához."
-  },
-  "overlay_notification_button_no": {
-    "message": "Nem"
-  },
-  "overlay_notification_button_yes": {
-    "message": "Igen"
   }
 }

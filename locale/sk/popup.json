@@ -30,20 +30,10 @@
     "message": "Počet zablokovaných objektov"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> na tejto stránke",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "na tejto stránke"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> dokopy",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "dokopy"
   },
   "status_header": {
     "message": "Blokovať reklamy na:"

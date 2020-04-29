@@ -1,8 +1,0 @@
-{
-  "notification_antiadblock_message": {
-    "message": "O této stránce se ví, že zobrazuje hlášení cílená na uživatele Adblocku Plus. Chcete, aby Adblock Plus skryl tyto cílené zprávy?"
-  },
-  "notification_antiadblock_title": {
-    "message": "Skrýt cílená hlášení?"
-  }
-}

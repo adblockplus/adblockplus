@@ -9,19 +9,9 @@
     "message": "Utzi jakinarazpenak erakusteari"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> orri honetan",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "orri honetan"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> guztira",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "guztira"
   }
 }

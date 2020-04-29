@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "ಇದು ಎಲ್ಲಾ ಲಿಂಕ್ಗಳನ್ನು ತೆರೆಯಲು ಪ್ರಕಟಣೆ ಮೇಲೆ ಕ್ಲಿಕ್ ಮಾಡಿ."
-  },
-  "overlay_notification_button_no": {
-    "message": "ಇಲ್ಲ"
-  },
-  "overlay_notification_button_yes": {
-    "message": "ಹೌದು"
   }
 }

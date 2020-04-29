@@ -18,7 +18,7 @@
     "message": "Os Anúncios Aceitáveis são anúncios não invasivos. Estão no grupo do meio entre o bloqueio de anúncios e conteúdo online de apoio pois geram receitas para os proprietários do site."
   },
   "options_acceptableAds_dnt_notification": {
-    "message": "<strong>Nota:</strong> você tem <strong>Não rastrear  (DNT)</strong> desativado nas definições do seu navegador. Para esta funcionalidade funcionar corretamente, ative <strong>DNT</strong> nas preferências do navegador. <a>Saiba como ativar DNT</a>"
+    "message": "<strong>Nota:</strong> você tem <strong>Não rastrear (DNT)</strong> desativado nas definições do seu navegador. Para esta funcionalidade funcionar corretamente, ative <strong>DNT</strong> nas preferências do navegador. <a>Saiba como ativar DNT</a>"
   },
   "options_acceptableAds_header": {
     "message": "ANÚNCIOS ACEITÁVEIS"
@@ -131,11 +131,9 @@
     "message": "Sim, adicionar esta lista de filtros."
   },
   "options_dialog_predefined_subscription_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
     "message": "Título"
   },
   "options_dialog_predefined_subscription_url": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
     "message": "URL"
   },
   "options_dialog_predefined_title": {

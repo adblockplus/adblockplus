@@ -6,19 +6,9 @@
     "message": "സൗകര്യങ്ങള്‍"
   },
   "stats_label_page": {
-    "message": "ഈ താളില്‍ <strong>$number$</strong>",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "ഈ താളില്‍"
   },
   "stats_label_total": {
-    "message": "മൊത്തം <strong>$number$</strong>",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "മൊത്തം"
   }
 }

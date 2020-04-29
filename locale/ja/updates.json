@@ -6,50 +6,39 @@
     "message": "オープンソース反乱同盟軍は、帝国が逆襲しても、Facebook などのウェブサイト上の隠された広告も削除できる、新たなブロックフィルターを作成しました。"
   },
   "updates_contribute_donate_action": {
-    "description": "",
     "message": "支援する"
   },
   "updates_contribute_donate_subtitle": {
-    "description": "",
     "message": "皆様のご支援により Adblock Plus はさらに改善されていきます。"
   },
   "updates_contribute_donate_title": {
-    "description": "",
     "message": "ABP プロジェクトにご支援ください"
   },
   "updates_contribute_rate_action": {
-    "description": "",
     "message": "評価する"
   },
   "updates_contribute_rate_subtitle": {
-    "description": "",
     "message": "評価を記入して、Adblock Plus についてお知らせください。無料でお時間は取らせません。"
   },
   "updates_contribute_rate_title": {
-    "description": "",
     "message": "評価してください！"
   },
   "updates_contribute_subtitle": {
-    "description": "",
     "message": "ABP は2通りの方法でご支援いただけます："
   },
   "updates_contribute_title": {
-    "description": "",
     "message": "Adblock Plus をお楽しみいただいていますか。"
   },
   "updates_fixes_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
     "message": "修正"
   },
   "updates_heading": {
     "message": "Adblock Plus がアップデートされました！"
   },
   "updates_improvements_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
     "message": "改善"
   },
   "updates_link": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
     "message": "詳細"
   },
   "updates_optionsPageNews": {
@@ -59,23 +48,18 @@
     "message": "でも、まだ安心できません！携帯はどうでしょうか？"
   },
   "updates_social_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "ABP 最新版について、ご意見・ご要望をお待ちしています。"
   },
   "updates_social_email": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "メール"
   },
   "updates_social_facebook": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "Facebook"
   },
   "updates_social_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "ご意見をお聞かせください。"
   },
   "updates_social_twitter": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#contact-us-area",
     "message": "Twitter"
   },
   "updates_status": {
@@ -85,11 +69,9 @@
     "message": "更新内容"
   },
   "updates_subtitle": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
     "message": "最新版をお楽しみください。"
   },
   "updates_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
     "message": "Adblock Plus は最新版です！"
   }
 }

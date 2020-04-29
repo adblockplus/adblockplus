@@ -15,20 +15,10 @@
     "message": "گزارش مشکل"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> در این صفحه",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "در این صفحه"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> در کل",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "در کل"
   },
   "status_domain": {
     "message": "این وب‌سایت:"

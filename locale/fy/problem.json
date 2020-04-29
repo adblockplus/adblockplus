@@ -1,0 +1,65 @@
+{
+  "notification_problem_message": {
+    "message": "Troch in probleem binne jo ABP-ynstellingen weromset nei de standert wearden. <a>It probleem oplosse en mear ynfo</a>"
+  },
+  "problem_note": {
+    "message": "Hâld der rekkening mei dat, ôfhinklik fan hoe't jo ABP brûke, jo mooglik jo ynstellingen, persoanlike filters en op de wite list pleatste websites opnij konfigurearje moatte sa gau as jo Adblock Plus opnij ynstallearje."
+  },
+  "problem_os_mac": {
+    "message": "Mac"
+  },
+  "problem_os_windows": {
+    "message": "Windows"
+  },
+  "problem_social_description": {
+    "message": "Hawwe jo in probleem? Nim kontakt op mei ús stipeteam"
+  },
+  "problem_social_email": {
+    "message": "E-mail"
+  },
+  "problem_social_facebook": {
+    "message": "Facebook"
+  },
+  "problem_social_title": {
+    "message": "Sykje jo noch hieltyd op help?"
+  },
+  "problem_social_twitter": {
+    "message": "Twitter"
+  },
+  "problem_solution_action": {
+    "message": "Klik hjir om Adblock Plus fuort te smiten en opnij te ynstallearjen"
+  },
+  "problem_solution_opera_step_1": {
+    "message": "Dizze keppeling nei Opera Addons iepenje (wurdt yn in nij ljepblêd iepene)"
+  },
+  "problem_solution_opera_step_2": {
+    "message": "<em0>Klik mei de rjochtermûsknop</em0> / <em1>Hâld Control yndrukt en klik</em1> fan de Opera-arkbalke út op it <strong>Adblock Plus</strong>-piktogram en selektearje <strong>Utwreiding beheare</strong>."
+  },
+  "problem_solution_opera_step_3": {
+    "message": "Klik op de <strong>pylk</strong> neist it Adblock Plus-piktogram."
+  },
+  "problem_solution_opera_step_4": {
+    "message": "Sykje nei Adblock Plus en klik yn de rjochterboppehoek op de <strong>X</strong>."
+  },
+  "problem_solution_opera_step_5": {
+    "message": "Klik op <strong>Fuortsmite</strong>."
+  },
+  "problem_solution_opera_step_6": {
+    "message": "Fernij de Opera Addons-side."
+  },
+  "problem_solution_opera_step_7": {
+    "message": "Klik op <strong>Tafoegje opan Opera</strong>."
+  },
+  "problem_solution_title": {
+    "message": "De oplossing:"
+  },
+  "problem_subtitle": {
+    "message": "Hjirtroch binne jo ABP-ynstellingen weromset nei de standert wearden. Om it probleem te ferhelpen, moatte jo Adblock Plus fuortsmite en opnij ynstallearje. Klik op de ûndersteande keppeling om dit te dwaan."
+  },
+  "problem_subtitle_opera": {
+    "message": "Hjirtroch binne jo ABP-ynstellingen weromset nei de standert wearden. Om it probleem te ferhelpen, moatte jo Adblock Plus fuortsmite en opnij ynstallearje. Folgje de ûndersteande stappen om dit te dwaan."
+  },
+  "problem_title": {
+    "message": "Troch in browserprobleem binne jo ABP-ynstellingen weromset."
+  }
+}

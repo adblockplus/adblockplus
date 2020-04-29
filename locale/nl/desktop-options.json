@@ -116,7 +116,7 @@
     "message": "Filterlijst toevoegen"
   },
   "options_dialog_invalid_message": {
-    "message": "Om veiligheidsredenen kunnen alleen <strong>HTTPS</strong> -filterlijsten en <strong>data</strong> URL's worden toegevoegd."
+    "message": "Om veiligheidsredenen kunnen alleen <strong>HTTPS</strong>-filterlijsten en <strong>data</strong>-URL’s worden toegevoegd."
   },
   "options_dialog_invalid_title": {
     "message": "Fout opgetreden"
@@ -128,14 +128,12 @@
     "message": "Een taal selecteren"
   },
   "options_dialog_predefined_confirm": {
-    "message": "Ja, voeg deze filterlijst toe"
+    "message": "Ja, deze filterlijst toevoegen"
   },
   "options_dialog_predefined_subscription_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
     "message": "Titel"
   },
   "options_dialog_predefined_subscription_url": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
     "message": "URL"
   },
   "options_dialog_predefined_title": {

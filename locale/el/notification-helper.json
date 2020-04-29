@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "Κάντε κλικ στην ειδοποίηση για να ανοίξετε όλους τους συνδέσμους σε αυτή."
-  },
-  "overlay_notification_button_no": {
-    "message": "Όχι"
-  },
-  "overlay_notification_button_yes": {
-    "message": "Ναι"
   }
 }

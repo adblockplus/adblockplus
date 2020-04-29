@@ -7,11 +7,5 @@
   },
   "notification_without_buttons": {
     "message": "Барча иловаларни очиш учун билдиришномага босинг."
-  },
-  "overlay_notification_button_no": {
-    "message": "Йўқ"
-  },
-  "overlay_notification_button_yes": {
-    "message": "Ҳа"
   }
 }

@@ -1,8 +1,0 @@
-{
-  "notification_antiadblock_message": {
-    "message": "このサイトは Adblock Plus ユーザーを対象としたメッセージを表示することで知られています。Adblock Plus でこれらのメッセージを非表示にしますか？"
-  },
-  "notification_antiadblock_title": {
-    "message": "Adblock Plus ユーザー向けのメッセージを非表示にしますか？"
-  }
-}

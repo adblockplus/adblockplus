@@ -9,19 +9,9 @@
     "message": "नोटिफिकेशन दिखाना बंद करें"
   },
   "stats_label_page": {
-    "message": "इस पृष्ठ पर <strong>$number$</strong>",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "इस पृष्ठ पर"
   },
   "stats_label_total": {
-    "message": "कुल <strong>$number$</strong>",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "कुल"
   }
 }

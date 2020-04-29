@@ -19,5 +19,8 @@
   },
   "common_notification_hide": {
     "message": "Fren alɣu"
+  },
+  "delete": {
+    "message": "Kkes"
   }
 }

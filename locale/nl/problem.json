@@ -1,86 +1,65 @@
 {
   "notification_problem_message": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
-    "message": "Door een probleem zijn uw ABP-instellingen teruggezet naar fabrieksinstellingen. <a>Het probleem oplossen en meer te weten komen</a>"
+    "message": "Door een probleem zijn uw ABP-instellingen teruggezet naar de standaardwaarden. <a>Het probleem oplossen en meer info</a>"
   },
   "problem_note": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
-    "message": "Merk op dat afhankelijk van hoe u ABP gebruikt, u misschien uw instellingen, persoonlijke filters en op de witte lijst geplaatste websites opnieuw moet instellen als u Adblock Plus opnieuw heeft geïnstalleerd."
+    "message": "Houd er rekening mee dat afhankelijk van hoe u ABP gebruikt, u mogelijk uw instellingen, persoonlijke filters en op de witte lijst geplaatste websites opnieuw moet configureren zodra u Adblock Plus opnieuw installeert."
   },
   "problem_os_mac": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Mac"
   },
   "problem_os_windows": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Windows"
   },
   "problem_social_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
-    "message": "Heeft u een probleem? Neem contact op met ons ondersteuningsteam"
+    "message": "Ondervindt u een probleem? Neem contact op met ons ondersteuningsteam"
   },
   "problem_social_email": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
-    "message": "E-mail"
+    "message": "E-mailadres"
   },
   "problem_social_facebook": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Facebook"
   },
   "problem_social_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
-    "message": "Heeft u nog steeds hulp nodig?"
+    "message": "Nog steeds op zoek naar hulp?"
   },
   "problem_social_twitter": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Twitter"
   },
   "problem_solution_action": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
-    "message": "Hier klikken om Adblock Plus te verwijderen en opnieuw te installeren"
+    "message": "Klik hier om Adblock Plus te verwijderen en opnieuw te installeren"
   },
   "problem_solution_opera_step_1": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
-    "message": "Deze link naar Opera Addons openen (het opent in een nieuw tabblad)"
+    "message": "Deze koppeling naar Opera Addons openen (wordt in een nieuw tabblad geopend)"
   },
   "problem_solution_opera_step_2": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
-    "message": "Vanuit de Opera-werkbalk, <em1>Control en klikken</em1> / <em0>rechts-klikken</em0> op het <strong>Adblock Plus</strong> pictogram en <strong>Uitbreiding beheren</strong> kiezen."
+    "message": "<em0>Klik met de rechtermuisknop</em0> / <em1>Houd control ingedrukt en klik</em1> vanuit de Opera-werkbalk op het <strong>Adblock Plus</strong>-pictogram en selecteer <strong>Extensie beheren</strong>."
   },
   "problem_solution_opera_step_3": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
-    "message": "Op de <strong>pijl</strong> naast het Adblock Plus pictogram klikken."
+    "message": "Klik op de <strong>pijl</strong> naast het Adblock Plus-pictogram."
   },
   "problem_solution_opera_step_4": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
-    "message": "Adblock Plus zoeken en op de <strong>X</strong> in de rechterbovenhoek klikken."
+    "message": "Zoek naar Adblock Plus en klik in de rechterbovenhoek op de <strong>X</strong>."
   },
   "problem_solution_opera_step_5": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
-    "message": "Op <strong>Verwijderen</strong> klikken."
+    "message": "Klik op <strong>Verwijderen</strong>."
   },
   "problem_solution_opera_step_6": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
-    "message": "De Opera Addons pagina verversen."
+    "message": "Vernieuw de Opera Addons-pagina."
   },
   "problem_solution_opera_step_7": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
-    "message": "Op <strong>Toevoegen aan Opera</strong> klikken."
+    "message": "Klik op <strong>Toevoegen aan Opera</strong>."
   },
   "problem_solution_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "De oplossing:"
   },
   "problem_subtitle": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
-    "message": "Hierdoor zijn uw ABP-instellingen teruggezet naar de fabrieksinstellingen. Om het probleem op te lossen, moet u Adblock Plus verwijderen en opnieuw installeren. Klik op de onderstaande link om dit te doen."
+    "message": "Hierdoor zijn uw ABP-instellingen teruggezet naar de standaardwaarden. Om het probleem verhelpen, dient u Adblock Plus te verwijderen en opnieuw te installeren. Klik op de onderstaande koppeling om dit te doen."
   },
   "problem_subtitle_opera": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
-    "message": "Hierdoor zijn uw ABP-instellingen teruggezet naar de fabrieksinstellingen. Om het probleem op te lossen, moet u Adblock Plus verwijderen en opnieuw installeren. Volg de onderstaande stappen om dit te doen."
+    "message": "Hierdoor zijn uw ABP-instellingen teruggezet naar de standaardwaarden. Om het probleem verhelpen, dient u Adblock Plus te verwijderen en opnieuw te installeren. Volg de onderstaande stappen om dit te doen."
   },
   "problem_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/a8e03839c92b789dff36b84c520a57b0eceefb44/spec/abp/notifications.md#warning-data-corruption-and-filters-reset",
     "message": "Door een browserprobleem zijn uw ABP-instellingen teruggezet."
   }
 }
