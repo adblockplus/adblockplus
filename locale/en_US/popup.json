@@ -63,8 +63,21 @@
     "description": "https://gitlab.com/eyeo/specs/spec/blob/36533b29e70499ed5521564d2330e51392cfb2e9/spec/abp/popup.md#counter-panel",
     "message": "Share on Twitter"
   },
+  "share_on_weibo": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a70522b79b1196b7966a0d2f824cb0a525ac4160/spec/abp/popup.md#counter-panel",
+    "message": "Share on Weibo"
+  },
   "share_on_twitter_message": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/1e5b1524ef5d69849415054a25d100e6bc5a9468/spec/abp/popup.md#counter-panel",
+    "message": "I've blocked $number$ ads with Adblock Plus. Give it a try - it's FREE!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "share_on_weibo_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a70522b79b1196b7966a0d2f824cb0a525ac4160/spec/abp/popup.md#counter-panel",
     "message": "I've blocked $number$ ads with Adblock Plus. Give it a try - it's FREE!",
     "placeholders": {
       "number": {

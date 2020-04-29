@@ -168,7 +168,7 @@ function updateStats(tab, blockedTotal)
   $("#stats-total .amount").textContent = total;
 
   // whenever the total changes, update social media shared stats links too
-  for (const media of ["facebook", "twitter"])
+  for (const media of ["facebook", "twitter", "weibo"])
   {
     const link = $(`#counter-panel .share a.${media}`);
     link.target = "_blank";

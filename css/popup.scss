@@ -322,7 +322,7 @@ h2
   padding: 1em var(--padding-primary);
 }
 
-html[dir="ltr"] #page-status .page
+html:not([dir="rtl"]) #page-status .page
 {
   border-left: 4px solid #F7F7F7;
 }
@@ -656,7 +656,7 @@ footer > button.android
   content: "";
 }
 
-html[dir="ltr"] #stats-page::after
+html:not([dir="rtl"]) #stats-page::after
 {
   right: 0;
 }
@@ -727,26 +727,27 @@ html[dir="rtl"] #stats-page::after
   margin: auto;
 }
 
-#counter-panel .links .link
+html:not([lang^="zh"]) #counter-panel .links .link:nth-of-type(2),
+html[lang^="zh"] #counter-panel .links .link:last-of-type
 {
   flex-grow: 1;
   justify-content: flex-start;
 }
 
-#counter-panel .links .link:first-child
+#counter-panel .links .link:first-of-type
 {
-  flex-grow: 2;
+  flex-grow: 1;
   justify-content: flex-end;
 }
 
-html[dir="ltr"] #counter-panel .links .link:first-child
-{
-  margin-right: 4px;
-}
-
-html[dir="rtl"] #counter-panel .links .link:first-child
+html:not([dir="rtl"]) #counter-panel .links .link + .link
 {
   margin-left: 4px;
+}
+
+html[dir="rtl"] #counter-panel .links .link + .link
+{
+  margin-right: 4px;
 }
 
 #counter-panel .share:not(.expanded) .link a
@@ -765,14 +766,19 @@ html[dir="rtl"] #counter-panel .links .link:first-child
   opacity: 1;
 }
 
-#counter-panel .share .facebook
+#counter-panel .share a.facebook
 {
   transition: transform 0.3s ease-out 0.3s;
 }
 
-#counter-panel .share .twitter
+#counter-panel .share a.twitter
 {
   transition: transform 0.3s ease-out 0.5s;
+}
+
+#counter-panel .share a.weibo
+{
+  transition: transform 0.3s ease-out 0.7s;
 }
 
 #counter-panel .share .enter,
@@ -809,7 +815,7 @@ html[dir="rtl"] #counter-panel .links .link:first-child
   }
 }
 
-html[lang^="zh"] #counter-panel .share
+html:not([lang^="zh"]) #counter-panel .links .link:last-of-type
 {
   display: none;
 }
