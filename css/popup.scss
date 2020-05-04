@@ -667,10 +667,9 @@ html[dir="rtl"] #stats-page::after
 
 #counter-panel .share
 {
-  --height: 38px;
   --padding: 4px;
   overflow: hidden;
-  height: var(--height);
+  position: relative;
   padding: var(--padding);
   border-top: 1px solid var(--border-color-primary);
 }
@@ -678,7 +677,6 @@ html[dir="rtl"] #stats-page::after
 #counter-panel .share .stack
 {
   display: flex;
-  height: calc(var(--height) - var(--padding) * 2);
   margin-bottom: var(--padding);
   justify-content: center;
   transition: transform 0.5s cubic-bezier(0.8,0,0.25,1);
@@ -686,14 +684,15 @@ html[dir="rtl"] #stats-page::after
 
 #counter-panel .share.expanded .stack
 {
-  transform: translateY(calc(var(--height) * -1 + var(--padding)));
+  transform: translateY(calc(-1 * 100% - var(--padding)));
 }
 
-#counter-panel .share.links
+#counter-panel .share .links
 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  position: absolute;
+  align-items: center;
+  width: 100%;
+  height: calc(100% - 3 * var(--padding));
 }
 
 #counter-panel .links .link,
@@ -737,7 +736,7 @@ html[dir="rtl"] #counter-panel .links .link:first-child
 
 #counter-panel .share:not(.expanded) .link a
 {
-  transform: translateY(var(--height));
+  transform: translateY(38px);
 }
 
 #counter-panel .share .cancel
@@ -775,6 +774,12 @@ html[dir="rtl"] #counter-panel .links .link:first-child
   outline: var(--primary-outline);
   animation: 0.3s ease-out 0s 1 outline-in;
 }
+
+#counter-panel .share .enter > *
+{
+  vertical-align: middle;
+}
+
 
 @keyframes outline-in
 {
