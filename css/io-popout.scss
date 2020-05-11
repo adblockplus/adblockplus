@@ -313,6 +313,18 @@ io-popout [role="tooltip"] p
   line-height: 1.5rem;
 }
 
+html[dir="ltr"] io-popout button.close
+{
+  right: 10px;
+  left: auto;
+}
+
+html[dir="rtl"] io-popout button.close
+{
+  right: auto;
+  left: 10px;
+}
+
 io-popout .close + *
 {
   margin-top: 2em;
