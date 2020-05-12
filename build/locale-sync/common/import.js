@@ -17,11 +17,13 @@
 
 "use strict";
 
-const {readJson, sortJson} = require("./utils");
-const {promisify} = require("util");
 const fs = require("fs");
-const writeFile = promisify(fs.writeFile);
 const path = require("path");
+const {promisify} = require("util");
+
+const {readJson} = require("./utils");
+
+const writeFile = promisify(fs.writeFile);
 
 let localesDir = "";
 let defaultLocale = "";
@@ -109,8 +111,7 @@ function writeJson(dataTreeObj)
     for (const locale in dataTreeObj[fileName])
     {
       const filePath = path.join(localesDir, locale, fileName);
-      const sortedJson = sortJson(dataTreeObj[fileName][locale]);
-      let fileString = JSON.stringify(sortedJson, null, 2);
+      let fileString = JSON.stringify(dataTreeObj[fileName][locale], null, 2);
 
       // Newline at end of file to match Coding Style
       if (locale == defaultLocale)

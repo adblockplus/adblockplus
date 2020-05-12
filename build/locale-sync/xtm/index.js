@@ -19,16 +19,19 @@
 
 /* eslint-disable no-console */
 
-const argv = require("minimist")(process.argv.slice(2));
-const path = require("path");
-const xtm = require("./xtm");
+const {execSync} = require("child_process");
 const {writeFileSync, existsSync, mkdirSync} = require("fs");
+const minimist = require("minimist");
+const path = require("path");
+
+const {getSourceStringFileDiffs} = require("../common/diff");
 const {importFilesObjects} = require("../common/import");
-const execSync = require("child_process").execSync;
 const {localesDir, sourceLanguage, customerId,
   workflowId, analysisTemplateId, projectManagerId,
   subjectMatterId} = require("./config");
-const {getSourceStringFileDiffs} = require("../common/diff");
+const xtm = require("./xtm");
+
+const argv = minimist(process.argv.slice(2));
 
 function exec(command)
 {

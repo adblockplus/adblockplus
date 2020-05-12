@@ -20,6 +20,7 @@
 const {promisify} = require("util");
 const exec = promisify(require("child_process").exec);
 const glob = promisify(require("glob").glob);
+
 const {localesDir, defaultLocale} = require("./config");
 const {readJson} = require("./utils");
 

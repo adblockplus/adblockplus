@@ -17,23 +17,27 @@
 
 "use strict";
 
-const {exportTranslations} = require("./export");
-const {importTranslations} = require("./import");
+const fs = require("fs");
+const path = require("path");
+const {promisify} = require("util");
 
-const argv = require("minimist")(process.argv.slice(2));
-const helpText = `Missing arguments: check "Translations CSV exporter" section
-in the README file for more details`;
+const readFile = promisify(fs.readFile);
 
-if (argv.e)
+/**
+ * Reads JSON file and assign filename and locale to it
+ * @param {string} filePath - ex.: "locales/en_US/desktop-options.json"
+ * @returns {Promise<Object>} resolves fileName, locale and strings of the
+ *                            locale file
+ */
+const readJson = (filePath) =>
 {
-  exportTranslations(argv.e);
-}
-else if (argv.i)
-{
-  importTranslations(argv.i);
-}
-else
-{
-  // eslint-disable-next-line no-console
-  console.log(helpText);
-}
+  return readFile(filePath, "utf8").then((data) =>
+  {
+    const {dir, base} = path.parse(filePath);
+    const locale = dir.split(path.sep).pop();
+    const strings = JSON.parse(data);
+    return {fileName: base, locale, strings};
+  });
+};
+
+module.exports = {readJson};

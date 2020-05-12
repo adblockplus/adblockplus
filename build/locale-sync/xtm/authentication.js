@@ -17,22 +17,36 @@
 
 "use strict";
 
-const {promisify} = require("util");
-const glob = promisify(require("glob").glob);
-const readFile = promisify(require("fs").readFile);
-const writeFile = promisify(require("fs").writeFile);
-const {localesDir, defaultLocale} = require("./config");
+const fetch = require("node-fetch");
 
-glob(`${localesDir}/!(${defaultLocale})/**/*.json`).then((filePaths) =>
+const {restApiUrl} = require("./config");
+
+// Authentication
+const {CLIENT, PASSWORD, USER_ID} = process.env;
+
+const getToken = () =>
 {
-  filePaths.forEach(removeDescription);
-});
+  const uri = `${restApiUrl}/auth/token`;
+  const authenticationData = {
+    client: CLIENT,
+    password: PASSWORD,
+    userId: parseInt(USER_ID, 10)
+  };
 
-async function removeDescription(filePath)
-{
-  const file = JSON.parse(await readFile(filePath));
-  for (const stringId in file)
-    delete file[stringId].description;
+  const getTokenOptions = {
+    method: "post",
+    body: JSON.stringify(authenticationData),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  };
 
-  await writeFile(filePath, JSON.stringify(file, null, 2), "utf8");
-}
+  return fetch(uri, getTokenOptions).then((res) =>
+  {
+    if (!res.ok)
+      return Promise.reject(res.json());
+    return res.json();
+  }).catch(console.error);
+};
+
+module.exports = {getToken, restApiUrl};
