@@ -17,12 +17,14 @@
 
 "use strict";
 
-const {localesDir, defaultLocale} = require("./config");
-const {importFilesObjects} = require("../common/import");
-const {promisify} = require("util");
-const fs = require("fs");
-const readFile = promisify(fs.readFile);
 const csv = require("csv");
+const fs = require("fs");
+const {promisify} = require("util");
+
+const {importFilesObjects} = require("../common/import");
+const {localesDir, defaultLocale} = require("./config");
+
+const readFile = promisify(fs.readFile);
 const csvParser = promisify(csv.parse);
 
 /**

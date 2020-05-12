@@ -17,24 +17,25 @@
 
 "use strict";
 
-const fs = require("fs");
-const {promisify} = require("util");
-const csv = require("csv");
-const csvStringify = promisify(csv.stringify);
-const writeFile = promisify(fs.writeFile);
+const minimist = require("minimist");
 
-/**
- * Convert two dimensional array to the CSV file
- * @param  {Object[]} csvArray - array to convert from
- * @param  {String} outputFileName - name of the output file
- * @returns {Promise}
- */
-const arrayToCsv = (csvArray, outputFileName) =>
+const {exportTranslations} = require("./export");
+const {importTranslations} = require("./import");
+
+const argv = minimist(process.argv.slice(2));
+const helpText = `Missing arguments: check "Translations CSV exporter" section
+in the README file for more details`;
+
+if (argv.e)
 {
-  return csvStringify(csvArray).then((output) =>
-  {
-    return writeFile(outputFileName, output, "utf8");
-  });
-};
-
-module.exports = {arrayToCsv};
+  exportTranslations(argv.e);
+}
+else if (argv.i)
+{
+  importTranslations(argv.i);
+}
+else
+{
+  // eslint-disable-next-line no-console
+  console.log(helpText);
+}

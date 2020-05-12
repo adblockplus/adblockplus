@@ -12,8 +12,8 @@
     "start": "http-server",
     "test": "npm run $ test",
     "watch": "npm run $ watch",
-    "csv-export": "node build/csv-exporter/main.js -e",
-    "csv-import": "node build/csv-exporter/main.js -i"
+    "csv-export": "node build/locale-sync/csv/main.js -e",
+    "csv-import": "node build/locale-sync/csv/main.js -i && node build/locale-sync/normalize.js"
   },
   "$": {
     "dev-build": [
@@ -92,7 +92,7 @@
       "download-translations": [
         "crowdin -k $CROWDIN_API_KEY download",
         "for file in $(grep -rw './locale' -le '{}'); do rm $file; done",
-        "node build/crowdin/clear-descriptions.js"
+        "node build/locale-sync/normalize.js"
       ],
       "upload-strings": "crowdin -k $CROWDIN_API_KEY upload sources",
       "upload-translations": "crowdin -k $CROWDIN_API_KEY upload translations"
@@ -147,11 +147,14 @@
       "test": "watch 'npm run test' ./css ./js"
     },
     "xtm": {
-      "create": "node build/xtm-integration/index.js --create",
-      "details": "node build/xtm-integration/index.js --details",
-      "update": "node build/xtm-integration/index.js --update",
-      "build": "node build/xtm-integration/index.js --build",
-      "download": "node build/xtm-integration/index.js --download"
+      "create": "node build/locale-sync/xtm --create",
+      "details": "node build/locale-sync/xtm --details",
+      "update": "node build/locale-sync/xtm --update",
+      "build": "node build/locale-sync/xtm --build",
+      "download": [
+        "node build/locale-sync/xtm --download",
+        "node build/locale-sync/normalize.js"
+      ]
     }
   },
   "dependencies": {

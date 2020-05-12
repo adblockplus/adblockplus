@@ -17,12 +17,13 @@
 
 "use strict";
 
+const fs = require("fs");
+
 const sourceLanguage = "en_US";
 const targetLanguages = ["ar_EG", "de_DE", "el_GR", "es_ES", "fr_FR", "hu_HU",
                          "it_IT", "ja_JP", "ko_KR", "nl_NL", "pl_PL", "pt_BR",
                          "ru_RU", "tr_TR", "zh_CN"];
 const localesDir = "./locale";
-const fs = require("fs");
 const restApiUrl = "https://www.xtm-cloud.com/rest-api";
 const customerId = 4419;
 const workflowId = 2946;

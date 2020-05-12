@@ -19,17 +19,19 @@
 
 /* eslint-disable no-console */
 
-const path = require("path");
-const {createWriteStream, createReadStream} = require("fs");
-const {unlinkSync} = require("fs");
 const admZip = require("adm-zip");
 const FormData = require("form-data");
+const {
+  createReadStream,
+  createWriteStream,
+  existsSync,
+  mkdirSync,
+  unlinkSync
+} = require("fs");
 const fetch = require("node-fetch");
-const {existsSync, mkdirSync} = require("fs");
+const path = require("path");
 
-// Authentication
 const {getToken, restApiUrl} = require("./authentication");
-
 const {sourceLanguage, targetLanguages, xtmToLocalesMap} = require("./config");
 
 /**
