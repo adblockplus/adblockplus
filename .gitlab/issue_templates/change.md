@@ -17,9 +17,3 @@
 
 ## Integration notes
 (Mention any breaking changes and necessary changes that need to be made by any project that wants to include this change)
-
-## Updates page (optional)
-
-#TBA
-
-(Should this issue be mentioned on the update page for the upcoming release? If yes [find](https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/issues?scope=all&utf8=%E2%9C%93&state=opened&search=%22update+page+for%22) (or create it if necessary) the update page issue, link it from here and add a reference to this issue to it. If not this section can be removed.)

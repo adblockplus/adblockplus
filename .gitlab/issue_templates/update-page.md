@@ -1,27 +1,21 @@
-/title Updates page for %MILESTONE
-
 ## Background
 
-Ticket to update the [update page](/eyeo/specs/spec/spec/abp/updates.md) for the %MILESTONE release.
+This ticket mentions changes for the %MILESTONE release that we would like to announce to our users in the [updates page](https://gitlab.com/eyeo/specs/spec/-/blob/master/spec/abp/updates.md).
 
 ## List of Improvements
 
-(Add relevant changes to this list)
+(Add issue links for [relevant changes](https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/wikis/release-workflow#update-specific-changes) to this list)
 
-- #TBA
+- #000
 
 ## List of Fixes
 
-(Add relevant fixes to this list)
+(Add issue links for [relevant fixes](https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/wikis/release-workflow#update-specific-changes) to this list)
 
-- #TBA
+- #000
 
 ## What to change
 
-- **Hero image in header:** (Add link to the image)
-- **List of Improvements:** (List improvements based on [List of Improvements](#list-of-improvements) above. List Title, Description, Link (optionally) and Image (optionailly))
-  - TBA
-- **List of Fixes:** (List fixes based on [List of Fixes](#list-of-fixes) above. List Title, Description, Link (optionally) and Image (optionally))
-  - TBA
+- **Spec:** ([Create spec merge request](https://gitlab.com/eyeo/specs/spec/merge_requests/new) for [changes to the updates page](https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/wikis/release-workflow#update-specific-changes) and link to it from here)
 
 /milestone %MILESTONE
