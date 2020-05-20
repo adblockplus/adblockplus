@@ -186,6 +186,9 @@ pages:
 .crowdin:
   variables:
     CROWDIN_API_KEY: $CROWDIN_API_KEY
+  environment:
+    name: crowdin
+    url: https://crowdin.com/project/adblockplusui
 
 uploadcrowdin:
   stage: uploadcrowdin
@@ -242,6 +245,7 @@ downloadcrowdin:
     PASSWORD: $XTM_PASSWORD
   environment:
     name: xtm/$CI_COMMIT_REF_SLUG
+    url: https://www.xtm-cloud.com
 
 uploadxtm:
   stage: uploadxtm
