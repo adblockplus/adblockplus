@@ -1126,7 +1126,8 @@ ul.list
   word-break: break-all;
 }
 
-.table.list li.empty-placeholder
+.table.list li.empty-placeholder,
+#all-filter-lists-table .empty-placeholder
 {
   padding: 1rem 1.4rem;
 }
