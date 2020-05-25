@@ -151,8 +151,10 @@ function createRecord(request, filter, template)
 
   if (request.url)
   {
-    ext.i18n.setElementText(urlElement, "devtools_request_url",
-      [request.url, request.rewrittenUrl]);
+    ext.i18n.setElementText(
+      urlElement, "devtools_request_url",
+      [request.url, request.rewrittenUrl]
+    );
 
     const originalUrl = urlElement.querySelector("[data-i18n-index='0']");
     originalUrl.classList.add("url");

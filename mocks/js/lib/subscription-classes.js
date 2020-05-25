@@ -111,8 +111,10 @@ SpecialSubscription.prototype = {
       if (this._filterText[i] == filterText)
       {
         this._filterText.splice(i, 1);
-        filterNotifier.filterNotifier.emit("filter.removed",
-          filterClasses.Filter.fromText(filterText));
+        filterNotifier.filterNotifier.emit(
+          "filter.removed",
+          filterClasses.Filter.fromText(filterText)
+        );
         return;
       }
     }

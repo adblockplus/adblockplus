@@ -174,7 +174,7 @@
     "basichtml": "^1.0.2",
     "csv": "^5.1.2",
     "eslint": "^6.2.1",
-    "eslint-config-eyeo": "^2.1.1",
+    "eslint-config-eyeo": "^3.0.0",
     "form-data": "^2.3.3",
     "gifsicle": "^5.0.0",
     "glob": "^7.1.2",

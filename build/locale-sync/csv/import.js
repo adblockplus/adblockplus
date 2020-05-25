@@ -50,8 +50,14 @@ function dataTreeObjFromDataMatrix(dataMatrix)
   for (const rowId in dataMatrix)
   {
     const row = dataMatrix[rowId];
-    let [/* type */, currentFilename, stringId, description, placeholders,
-        ...messages] = row;
+    let [
+      /* type */,
+      currentFilename,
+      stringId,
+      description,
+      placeholders,
+      ...messages
+    ] = row;
     if (!stringId)
       continue;
 

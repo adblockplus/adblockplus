@@ -23,15 +23,15 @@ const i18nAttributes = ["alt", "placeholder", "title", "value"];
 // requires messaging the background page. For Chrome and Safari,
 // we could get the UI locale here, but would need to duplicate
 // the logic implemented in Utils.appLocale.
-browser.runtime.sendMessage(
-  {
-    type: "app.get",
-    what: "localeInfo"
-  }).then(localeInfo =>
-  {
-    document.documentElement.lang = localeInfo.locale;
-    document.documentElement.dir = localeInfo.bidiDir;
-  });
+browser.runtime.sendMessage({
+  type: "app.get",
+  what: "localeInfo"
+})
+.then(localeInfo =>
+{
+  document.documentElement.lang = localeInfo.locale;
+  document.documentElement.dir = localeInfo.bidiDir;
+});
 
 function assignAction(elements, action)
 {

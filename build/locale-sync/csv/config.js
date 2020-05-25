@@ -25,5 +25,11 @@ const modifiedLabel = "Modified";
 const headers = ["Type", "Filename", "StringID", "Description", "Placeholders",
                  defaultLocale];
 
-module.exports = {localesDir, defaultLocale, outputFileName, addedLabel,
-  modifiedLabel, headers};
+module.exports = {
+  addedLabel,
+  defaultLocale,
+  headers,
+  localesDir,
+  modifiedLabel,
+  outputFileName
+};

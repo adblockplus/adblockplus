@@ -66,8 +66,10 @@ const minuteInMs = 60000;
 const hourInMs = 3600000;
 const fullDayInMs = 86400000;
 
-const promisedLocaleInfo = browser.runtime.sendMessage({type: "app.get",
-  what: "localeInfo"});
+const promisedLocaleInfo = browser.runtime.sendMessage({
+  type: "app.get",
+  what: "localeInfo"
+});
 const promisedDateFormat = promisedLocaleInfo.then((addonLocale) =>
 {
   return new Intl.DateTimeFormat(addonLocale.locale);
@@ -452,8 +454,10 @@ function addSubscription(subscription)
     case "social":
       collection = collections.protection;
       break;
-    case undefined:
-      if (!isAcceptableAds(url) && disabled == false)
+    default:
+      if (typeof recommended === "undefined" &&
+          !isAcceptableAds(url) &&
+          disabled == false)
         collection = collections.more;
       break;
   }
@@ -1023,8 +1027,10 @@ function onDOMLoaded()
     what: "addonVersion"
   }).then(addonVersion =>
   {
-    $("#abp-version").textContent = getMessage("options_dialog_about_version",
-      [addonVersion]);
+    $("#abp-version").textContent = getMessage(
+      "options_dialog_about_version",
+      [addonVersion]
+    );
   });
 
   // Initialize interactive UI elements
@@ -1053,11 +1059,19 @@ function onDOMLoaded()
   {
     $("#privacy-policy").href = url;
   });
-  setElementText($("#tracking-warning-1"), "options_tracking_warning_1",
-    [getMessage("common_feature_privacy_title"),
-     getMessage("options_acceptableAds_ads_label")]);
-  setElementText($("#tracking-warning-3"), "options_tracking_warning_3",
-    [getMessage("options_acceptableAds_privacy_label")]);
+  setElementText(
+    $("#tracking-warning-1"),
+    "options_tracking_warning_1",
+    [
+      getMessage("common_feature_privacy_title"),
+      getMessage("options_acceptableAds_ads_label")
+    ]
+  );
+  setElementText(
+    $("#tracking-warning-3"),
+    "options_tracking_warning_3",
+    [getMessage("options_acceptableAds_privacy_label")]
+  );
 
   getDoclink("adblock_plus_{browser}_dnt").then(url =>
   {

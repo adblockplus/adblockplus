@@ -282,5 +282,11 @@ function downloadProject(projectId, destination, callback)
   }).catch(errorHandler);
 }
 
-module.exports = {createProject, updateProject, downloadProject, buildProject,
-  getProjectIdByName, updateDetails};
+module.exports = {
+  buildProject,
+  createProject,
+  downloadProject,
+  getProjectIdByName,
+  updateDetails,
+  updateProject
+};

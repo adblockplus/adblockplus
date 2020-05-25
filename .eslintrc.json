@@ -11,6 +11,12 @@
     "module": true
   },
   "rules": {
+    // This rule was mistakenly added to eslint-config-eyeo in [1]
+    // so we have to temporarily disable it while we're searching for a
+    // solution in [2].
+    // [1]: https://gitlab.com/eyeo/auxiliary/eyeo-coding-style/-/issues/12
+    // [2]: https://gitlab.com/eyeo/auxiliary/eyeo-coding-style/-/issues/15
+    "arrow-parens": 0,
     // @link https://issues.adblockplus.org/ticket/6581
     // As long as issue 6581 is under discussion, ABP UI
     // decided to put an end to all debates and use
