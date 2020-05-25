@@ -20,8 +20,10 @@
 const {port} = require("./api");
 const {$, $$} = require("./dom");
 
-const reportData = new DOMParser().parseFromString("<report></report>",
-                                                 "text/xml");
+const reportData = new DOMParser().parseFromString(
+  "<report></report>",
+  "text/xml"
+);
 let dataGatheringTabId = null;
 let isMinimumTimeMet = false;
 
@@ -30,9 +32,7 @@ function getOriginalTabId()
   const tabId = parseInt(location.search.replace(/^\?/, ""), 10);
   if (!tabId && tabId !== 0)
   {
-    console.warn(
-      "Missing tab id. Try appending '?1' to the end of the url."
-      );
+    console.warn("Missing tab id. Try appending '?1' to the end of the url.");
     throw new Error("invalid tab id");
   }
 
@@ -80,8 +80,10 @@ port.onMessage.addListener((message) =>
             const existingFilter = $(`[text="${escapedText}"]`, reportData);
             if (existingFilter)
             {
-              const countNum = parseInt(existingFilter.getAttribute("hitCount"),
-                                      10);
+              const countNum = parseInt(
+                existingFilter.getAttribute("hitCount"),
+                10
+              );
               existingFilter.setAttribute("hitCount", countNum + 1);
             }
             else

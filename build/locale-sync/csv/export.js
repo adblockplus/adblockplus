@@ -23,8 +23,14 @@ const glob = promisify(require("glob").glob);
 
 const {getSourceStringFileDiffs} = require("../common/diff");
 const {readJson} = require("../common/utils");
-const {localesDir, defaultLocale, outputFileName, addedLabel, modifiedLabel,
-      headers} = require("./config");
+const {
+  addedLabel,
+  defaultLocale,
+  headers,
+  localesDir,
+  modifiedLabel,
+  outputFileName
+} = require("./config");
 const {arrayToCsv} = require("./utils");
 
 /**

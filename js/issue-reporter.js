@@ -306,17 +306,19 @@ function sendReport(reportData)
       errorElement.hidden = false;
     }
 
-    result = result.replace(/%CONFIRMATION%/g, encodeHTML(
-                browser.i18n.getMessage("issueReporter_confirmationMessage")
-              ));
-    result = result.replace(/%KNOWNISSUE%/g, encodeHTML(
-                browser.i18n.getMessage("issueReporter_knownIssueMessage")
-              ));
-    result = result.replace(/(<html)\b/, '$1 dir="' + encodeHTML(
-                window.getComputedStyle(
-                  document.documentElement, ""
-                ).direction + '"'
-              ));
+    result = result.replace(
+      /%CONFIRMATION%/g,
+      encodeHTML(browser.i18n.getMessage("issueReporter_confirmationMessage"))
+    );
+    result = result.replace(
+      /%KNOWNISSUE%/g,
+      encodeHTML(browser.i18n.getMessage("issueReporter_knownIssueMessage"))
+    );
+    const {direction} = window.getComputedStyle(document.documentElement, "");
+    result = result.replace(
+      /(<html)\b/,
+      `$1 dir="${encodeHTML(direction)}"`
+    );
 
     document.getElementById("sendReportMessage").hidden = true;
     document.getElementById("sendingProgressContainer").hidden = true;

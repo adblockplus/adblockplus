@@ -55,7 +55,7 @@ const records = require("./config/records");
           (reason) =>
           {
             console.error(reason);
-            reply(undefined);
+            reply();
           }
         );
       }

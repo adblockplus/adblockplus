@@ -86,8 +86,11 @@ module.exports = class DrawingHandler
     this.canvas.style.width = Math.round(canvasWidth / this.ratio) + "px";
     this.canvas.style.height = Math.round(canvasHeight / this.ratio) + "px";
     // draw resized image accordingly with new dimensions
-    this.ctx.drawImage(image, 0, 0, naturalWidth, naturalHeight,
-                              0, 0, canvasWidth, canvasHeight);
+    this.ctx.drawImage(
+      image,
+      0, 0, naturalWidth, naturalHeight,
+      0, 0, canvasWidth, canvasHeight
+    );
     // collect all info to process the iamge data
     this.imageData = this.ctx.getImageData(0, 0, canvasWidth, canvasHeight);
     const data = this.imageData.data;
@@ -241,17 +244,19 @@ module.exports = class DrawingHandler
     parent.appendChild(wire()`
       <span
         class="closer"
-        onclick="${evt =>
-        {
-          if (!utils.event.isLeftClick(evt))
-            return;
-          // when clicked, remove the related rectangle
-          // and draw the canvas again
-          stopEvent(evt);
-          parent.removeChild(evt.currentTarget);
-          this.paths.delete(rect);
-          this.draw();
-        }}"
+        onclick="${
+          evt =>
+          {
+            if (!utils.event.isLeftClick(evt))
+              return;
+            // when clicked, remove the related rectangle
+            // and draw the canvas again
+            stopEvent(evt);
+            parent.removeChild(evt.currentTarget);
+            this.paths.delete(rect);
+            this.draw();
+          }
+        }"
         style="${{
           // always top right corner
           top: closeCoords.y + "px",

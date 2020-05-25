@@ -461,8 +461,10 @@
         return;
     }
 
-    const texts = NotificationStorage.getLocalizedTexts(notification,
-                                                      message.locale);
+    const texts = NotificationStorage.getLocalizedTexts(
+      notification,
+      message.locale
+    );
     return Object.assign({texts}, notification);
   });
 

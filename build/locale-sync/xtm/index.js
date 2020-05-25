@@ -26,9 +26,15 @@ const path = require("path");
 
 const {getSourceStringFileDiffs} = require("../common/diff");
 const {importFilesObjects} = require("../common/import");
-const {localesDir, sourceLanguage, customerId,
-  workflowId, analysisTemplateId, projectManagerId,
-  subjectMatterId} = require("./config");
+const {
+  analysisTemplateId,
+  customerId,
+  localesDir,
+  projectManagerId,
+  sourceLanguage,
+  subjectMatterId,
+  workflowId
+} = require("./config");
 const xtm = require("./xtm");
 
 const argv = minimist(process.argv.slice(2));

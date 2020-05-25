@@ -54,6 +54,15 @@ function generateXtmToLocalesMap()
   return xtmToLocalesMap;
 }
 
-module.exports = {sourceLanguage, targetLanguages, localesDir, restApiUrl,
-  customerId, workflowId, analysisTemplateId, projectManagerId, subjectMatterId,
-  xtmToLocalesMap: generateXtmToLocalesMap()};
+module.exports = {
+  analysisTemplateId,
+  customerId,
+  localesDir,
+  projectManagerId,
+  restApiUrl,
+  sourceLanguage,
+  subjectMatterId,
+  targetLanguages,
+  workflowId,
+  xtmToLocalesMap: generateXtmToLocalesMap()
+};

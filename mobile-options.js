@@ -177,7 +177,8 @@
       {
         const element = create(listInstalled, "li", null, {"data-url": url});
         create(element, "span", title || url);
-        create(element, "button", null, {class: "remove"},
+        create(
+          element, "button", null, {class: "remove"},
           () => uninstallSubscription(url)
         );
 
@@ -230,7 +231,8 @@
         const listRecommended = get(`#${idRecommended}`);
         for (const {title, url} of recommended)
         {
-          create(listRecommended, "li", title, {"data-url": url},
+          create(
+            listRecommended, "li", title, {"data-url": url},
             (ev) =>
             {
               if (ev.target.classList.contains("installed"))
