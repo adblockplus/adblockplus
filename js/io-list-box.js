@@ -26,7 +26,7 @@ const {$, $$, events} = require("./dom");
 // used to create options
 const {wire} = IOElement;
 
-// used to map codes cross browser
+// used to map codes across browser
 const KeyCode = {
   ARROW_DOWN: "ArrowDown",
   ARROW_UP: "ArrowUp",
