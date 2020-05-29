@@ -1114,8 +1114,12 @@ ul.list
   overflow: hidden;
   margin: 0rem;
   flex: 1;
-  white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+#content-whitelist .table.list li > span
+{
+  white-space: nowrap;
 }
 
 .table.list li[aria-label^="https://"] > span,
