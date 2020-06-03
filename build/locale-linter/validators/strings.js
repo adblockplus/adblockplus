@@ -20,8 +20,9 @@
 const {reStringId} = require("../common");
 const {validate: validatePlaceholders} = require("./placeholders");
 const {validate: validateTags} = require("./tags");
+const {validate: validateWords} = require("./words");
 
-function validate(stringInfos)
+function validate(locale, stringInfos)
 {
   for (const stringId in stringInfos)
   {
@@ -37,6 +38,13 @@ function validate(stringInfos)
       if (/\n/.test(stringInfo.message))
         throw new Error("Unexpected newline character");
 
+      if (/^\s|\s$/.test(stringInfo.message))
+        throw new Error("Unexpected leading/trailing space");
+
+      if (/\s{2,}/.test(stringInfo.message))
+        throw new Error("Unexpected redundant space");
+
+      validateWords(locale, stringInfo.message);
       validatePlaceholders(stringInfo.message, stringInfo.placeholders);
       validateTags(stringInfo.message);
     }

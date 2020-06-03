@@ -34,8 +34,11 @@ async function run()
 
     try
     {
+      const locale = path.dirname(filepath)
+        .split(path.sep)
+        .pop();
       const stringInfos = await validateFile(filepath);
-      validateStrings(stringInfos);
+      validateStrings(locale, stringInfos);
     }
     catch (ex)
     {
