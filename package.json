@@ -90,6 +90,7 @@
     },
     "crowdin": {
       "download-translations": [
+        "find ./locale -mindepth 1 -not -path './locale/en_US' -not -path './locale/en_US/*' -delete",
         "crowdin -k $CROWDIN_API_KEY download",
         "for file in $(grep -rw './locale' -le '{}'); do rm $file; done",
         "node build/locale-sync/normalize.js"
