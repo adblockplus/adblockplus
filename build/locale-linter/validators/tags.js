@@ -18,7 +18,7 @@
 "use strict";
 
 const allowedTags = new Set(["a", "em", "slot", "strong"]);
-const reTag = /^(.*?)<([^>\d]+)(\d)?>(.*?)<\/\2\3>(.*)$/;
+const reTag = /^(.*?)<([^/>\d]+)(\d)?>(.*?)<\/\2\3>(.*)$/;
 
 function validate(string)
 {
@@ -38,6 +38,9 @@ function validate(string)
 
   if (name === "slot" && innerText)
     throw new Error("Slot tag must be empty");
+
+  if (/^\s|\s$/.test(innerText))
+    throw new Error(`Unexpected space inside tag '${name}'`);
 
   validate(before);
   validate(innerText);

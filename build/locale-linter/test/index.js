@@ -23,6 +23,7 @@ const {validate: validateFiles} = require("../validators/files");
 const {validate: validatePlaceholders} = require("../validators/placeholders");
 const {validate: validateStrings} = require("../validators/strings");
 const {validate: validateTags} = require("../validators/tags");
+const {validate: validateWords} = require("../validators/words");
 
 let hasError = false;
 
@@ -58,6 +59,7 @@ function assertFiles(msg, expectedError, filepath)
 const assertPlaceholders = assertError.bind(null, validatePlaceholders);
 const assertStrings = assertError.bind(null, validateStrings);
 const assertTags = assertError.bind(null, validateTags);
+const assertWords = assertError.bind(null, validateWords);
 
 Promise.all([
   assertFiles("Valid file", false, "./data/en_US/file.json"),
@@ -83,16 +85,19 @@ Promise.all([
   }),
   assertPlaceholders("Unexpected placeholder name", true, "$foo$", {bar: null}),
 
-  assertStrings("No strings", false, {}),
-  assertStrings("Valid strings", false, {
+  assertStrings("No strings", false, null, {}),
+  assertStrings("Valid strings", false, null, {
     foo: {message: "foo"},
     bar: {message: "bar"}
   }),
-  assertStrings("Invalid string ID", true, {"foo-bar": {message: "foo"}}),
-  assertStrings("Missing required properties", true, {foo: {}}),
-  assertStrings("Invalid character in string", true, {
+  assertStrings("Invalid string ID", true, null, {"foo-bar": {message: "foo"}}),
+  assertStrings("Missing required properties", true, null, {foo: {}}),
+  assertStrings("Invalid character in string", true, null, {
     foo: {message: "foo\nbar"}
   }),
+  assertStrings("Leading space", true, null, {foo: {message: " foo"}}),
+  assertStrings("Trailing space", true, null, {foo: {message: "foo "}}),
+  assertStrings("Redundant space", true, null, {foo: {message: "foo  bar"}}),
 
   assertTags("Valid tags", false, "abc <a>def</a> ghi <a>jkl</a> mno"),
   assertTags("Valid tag with index", false, "<a0>foo</a0>"),
@@ -100,7 +105,22 @@ Promise.all([
   assertTags("Invalid closing tag", true, "<a0>foo</a>"),
   assertTags("Invalid tag hierarchy", true, "<a>foo<strong>bar</a></strong>"),
   assertTags("Unknown tag name", true, "<b>foo</b>"),
-  assertTags("Invalid slot tag syntax", true, "<slot>foo</slot>")
+  assertTags("Invalid slot tag syntax", true, "<slot>foo</slot>"),
+  assertTags("Space after opening tag", true, "<a> foo</a>"),
+  assertTags("Space before closing tag", true, "<a>foo </a>"),
+
+  assertWords("Wrong character in word", true, null, "Adblick Plus"),
+  assertWords("Lower-case character in word", true, null, "Adblock plus"),
+  assertWords("Upper-case character in word", true, null, "AdBlock Plus"),
+  assertWords("Multiple problems in word", true, null, "Andbock Plus"),
+  assertWords("Ignore locale-specific exceptions", false, "pl", "Opery"),
+  assertWords("Valid word with punctuation", false, null, "Adblock Plus,"),
+  assertWords("Invalid word with punctuation", true, null, "Mircosoft,"),
+  assertWords(
+    "Invalid long word with punctuation", true,
+    null, "Abdlock Plus,"
+  ),
+  assertWords("Invalid punctuation inside word", true, null, "Adblock, Plus")
 ])
 .then(() =>
 {
