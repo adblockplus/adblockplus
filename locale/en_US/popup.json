@@ -12,11 +12,11 @@
     "message": "This page:"
   },
   "block_element_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/bubble_ui/spec/abp/bubble-ui.md#block-element",
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/5a876713adebe79842be51ad6e287b1c675e023a/spec/abp/popup.md#block-element",
     "message": "Block specific element on this website"
   },
   "click_element_to_block_it": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/bubble_ui/spec/abp/bubble-ui.md#block-element",
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/5a876713adebe79842be51ad6e287b1c675e023a/spec/abp/popup.md#block-element",
     "message": "Click an element on the page to block it."
   },
   "easy_create_filter": {
@@ -32,11 +32,11 @@
     "message": "Options"
   },
   "overlay_notification_closing_button_hide": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/bubble_ui/spec/abp/bubble-ui.md#notifications",
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/5a876713adebe79842be51ad6e287b1c675e023a/spec/abp/popup.md#notifications",
     "message": "Close"
   },
   "overlay_notification_closing_button_optout": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/bubble_ui/spec/abp/bubble-ui.md#notifications",
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/5a876713adebe79842be51ad6e287b1c675e023a/spec/abp/popup.md#notifications",
     "message": "Stop showing notifications"
   },
   "promote_abp_module": {
@@ -98,7 +98,7 @@
     "message": "in total"
   },
   "sendReport": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/bubble_ui/spec/abp/bubble-ui.md#report-issue",
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/5a876713adebe79842be51ad6e287b1c675e023a/spec/abp/popup.md#block-element-and-report-issue",
     "message": "Report an issue on this page"
   }
 }
