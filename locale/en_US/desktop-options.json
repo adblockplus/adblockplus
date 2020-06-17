@@ -157,7 +157,7 @@
     "message": "<strong>TIP:</strong> Only select the languages you need. Selecting more will slow down the ad blocker and, therefore, your browsing speed."
   },
   "options_language_join": {
-    "description": "Combines language filter list specifications(language names) together, ex: -> https://gitlab.com/eyeo/specs/spec/blob/master/spec/abp/options-page.md#language-drop-down",
+    "description": "Combines language filter list specifications(language names) together, ex: -> https://gitlab.com/eyeo/specs/spec/blob/5a876713adebe79842be51ad6e287b1c675e023a/spec/abp/desktop-settings.md#language-drop-down",
     "message": "$lang1$, $lang2$",
     "placeholders": {
       "lang1": {
