@@ -506,6 +506,28 @@ main .options button
   content: "";
 }
 
+html[dir="rtl"] #block-element strong::before
+{
+  transform: scaleX(-1);
+}
+
+#block-element-info strong::before
+{
+  display: block;
+  height: 32px;
+  background-image: url(icons/block-element.svg);
+  background-size: 28px;
+  background-repeat: no-repeat;
+  background-position: top center;
+  filter: grayscale(1);
+  content: "";
+}
+
+html[dir="rtl"] #block-element-info strong::before
+{
+  transform: scaleX(-1);
+}
+
 #issue-reporter
 {
   margin-top: var(--margin-secondary);

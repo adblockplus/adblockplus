@@ -29,6 +29,7 @@
       ]
     ],
     "bundle": {
+      "composer": "$ create.css composer",
       "day1": [
         "$ create.bundle popup-dummy",
         "$ create.bundle day1"

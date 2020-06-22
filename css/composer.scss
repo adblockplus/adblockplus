@@ -1,0 +1,193 @@
+/*
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-present eyeo GmbH
+ *
+ * Adblock Plus is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Adblock Plus is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@import "./light.scss";
+
+*,
+*::before,
+*::after
+{
+  box-sizing: border-box;
+}
+
+html,
+body
+{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body,
+.spacer,
+footer
+{
+  display: flex;
+}
+
+body
+{
+  flex-direction: column;
+}
+
+main,
+.details
+{
+  flex-grow: 1;
+}
+
+main,
+footer
+{
+  padding: var(--padding-primary);
+}
+
+.spacer,
+footer
+{
+  flex-direction: row;
+}
+
+.spacer
+{
+  margin-top: var(--margin-primary);
+}
+
+button
+{
+  font-weight: 700;
+  line-height: 34px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.details
+{
+  margin: auto;
+}
+
+button:not(#unselect)
+{
+  padding: 4px 20px;
+  border-radius: var(--border-radius);
+}
+
+#filters
+{
+  width: 100%;
+  height: 116px;
+  padding: 4px var(--padding-secondary);
+  border: 0;
+  background-color: transparent;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: inherit;
+  outline: none;
+  resize: none;
+}
+
+#unselect
+{
+  border: 0;
+  background: transparent;
+  color: var(--color-link);
+}
+
+#selected,
+#cancel,
+#filters
+{
+  color: var(--color-dimmed);
+}
+
+#selected::before
+{
+  display: inline-block;
+  min-width: 24px;
+  height: 24px;
+  padding-left: 4px;
+  padding-right: 4px;
+  border-radius: 50%;
+  line-height: 24px;
+  text-align: center;
+  color: var(--background-color-primary);
+  background-color: var(--color-default);
+  content: attr(data-count);
+}
+
+html:not([dir="rtl"]) #selected,
+html:not([dir="rtl"]) #selected::before
+{
+  margin-right: var(--margin-secondary);
+}
+
+html[dir="rtl"] #selected,
+html[dir="rtl"] #selected::before
+{
+  margin-left: var(--margin-secondary);
+}
+
+#block
+{
+  margin: auto;
+  border: 1px solid var(--color-error);
+  color: var(--color-critical);
+  background-color: #fae9e9;
+}
+
+#block:disabled,
+#filters:disabled
+{
+  opacity: 0.5;
+  cursor: default;
+}
+
+footer
+{
+  background-color: var(--background-color-secondary);
+}
+
+#cancel
+{
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--border-color-secondary);
+  background-color: transparent;
+}
+
+#logo
+{
+  margin: auto;
+  height: 22px;
+}
+
+.textarea-wrapper
+{
+  position: relative;
+  border: 1px solid var(--border-color-secondary);
+  border-radius: var(--border-radius);
+}
+
+html:not([dir="rtl"]) #logo
+{
+  margin-right: 0;
+}
+
+html[dir="rtl"] #logo
+{
+  margin-left: 0;
+}

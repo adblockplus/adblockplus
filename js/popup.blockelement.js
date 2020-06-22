@@ -23,13 +23,13 @@ module.exports = setupBlock;
 
 function setupBlock(tab)
 {
-  $("#block-element").addEventListener("click", (event) =>
+  $("#block-element").addEventListener("click", () =>
   {
     $("#page-info").classList.add("blocking");
     activateClickHide(tab);
   });
 
-  $("#block-element-cancel").addEventListener("click", (event) =>
+  $("#block-element-cancel").addEventListener("click", () =>
   {
     $("#page-info").classList.remove("blocking");
     cancelClickHide(tab);
