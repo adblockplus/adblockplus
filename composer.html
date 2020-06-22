@@ -19,7 +19,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title data-i18n="block_element"></title>
+    <title>Adblock Plus</title>
+    <link rel="stylesheet" href="skin/fonts/font.css">
     <link rel="stylesheet" type="text/css" href="skin/composer.css">
     <script src="polyfill.js"></script>
     <script src="ext/common.js"></script>
@@ -29,18 +30,24 @@
     <script src="composer.js"></script>
   </head>
   <body>
-
-    <div id="title">
-      <img src="skin/icons/abp-logo.svg">
-      <span data-i18n="add_filters_msg"></span>
-    </div>
-
-    <textarea id="filters" data-i18n="loading" disabled></textarea>
-
-    <div id="buttons">
-      <button id="addButton" data-i18n="add" disabled></button>
-      <button id="cancelButton" data-i18n="cancel"></button>
-    </div>
-
+    <main>
+      <div class="textarea-wrapper">
+        <textarea id="filters" data-i18n="composer_loading"
+                  autocomplete="off" autocorrect="off" autocapitalize="off"
+                  spellcheck="false" disabled></textarea>
+      </div>
+      <div class="spacer">
+        <div class="details">
+          <span id="selected" data-count="0" data-i18n="composer_elements"></span>
+          •
+          <button id="unselect" data-i18n="composer_unselect"></button>
+        </div>
+        <button id="block" data-i18n="composer_block" disabled></button>
+      </div>
+    </main>
+    <footer>
+      <button id="cancel" data-i18n="composer_cancel"></button>
+      <img id="logo" src="skin/icons/abp-full-logo.svg" alt="">
+    </footer>
   </body>
 </html>

@@ -29,18 +29,14 @@ function onKeyDown(event)
     event.preventDefault();
     closeDialog();
   }
-  else if (event.keyCode == 13 && !event.shiftKey && !event.ctrlKey)
-  {
-    event.preventDefault();
-    addFilters();
-  }
 }
 
 function addFilters()
 {
+  const textarea = document.getElementById("filters");
   browser.runtime.sendMessage({
     type: "filters.importRaw",
-    text: document.getElementById("filters").value
+    text: textarea.value
   }).then((errors) =>
   {
     if (errors.length > 0)
@@ -64,7 +60,7 @@ function closeMe()
   }).then(tabId => browser.tabs.remove(tabId));
 }
 
-function closeDialog(success)
+function closeDialog(success = false)
 {
   browser.runtime.sendMessage({
     type: "composer.forward",
@@ -73,10 +69,22 @@ function closeDialog(success)
     {
       type: "composer.content.finished",
       popupAlreadyClosed: true,
-      remove: (typeof success == "boolean" ? success : false)
+      remove: !!success
     }
   });
   closeMe();
+}
+
+function resetFilters()
+{
+  browser.tabs.sendMessage(targetPageId, {
+    type: "composer.content.finished"
+  }).then(() =>
+  {
+    browser.tabs.sendMessage(targetPageId, {
+      type: "composer.content.startPickingElement"
+    }).then(closeMe);
+  });
 }
 
 function init()
@@ -84,12 +92,13 @@ function init()
   // Attach event listeners
   window.addEventListener("keydown", onKeyDown, false);
 
-  document.getElementById("addButton").addEventListener("click", addFilters);
-  document.getElementById("cancelButton").addEventListener(
+  const block = document.getElementById("block");
+  block.addEventListener("click", addFilters);
+
+  document.getElementById("unselect").addEventListener("click", resetFilters);
+  document.getElementById("cancel").addEventListener(
     "click", closeDialog.bind(null, false)
   );
-
-  document.getElementById("filters").focus();
 
   ext.onMessage.addListener((msg, sender, sendResponse) =>
   {
@@ -100,7 +109,9 @@ function init()
         const filtersTextArea = document.getElementById("filters");
         filtersTextArea.value = msg.filters.join("\n");
         filtersTextArea.disabled = false;
-        document.getElementById("addButton").disabled = false;
+        block.disabled = false;
+        block.focus();
+        document.getElementById("selected").dataset.count = msg.highlights;
 
         // Firefox sometimes tells us this window had loaded before it has[1],
         // to work around that we send the "composer.dialog.init" message again
