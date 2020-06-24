@@ -160,7 +160,8 @@ html[dir="rtl"] #selected::before
 }
 
 #block:disabled,
-#filters:disabled
+#filters:disabled,
+#preview:disabled
 {
   opacity: 0.5;
   cursor: default;
