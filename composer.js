@@ -19,6 +19,7 @@
 
 "use strict";
 
+let initialFilterText = "";
 let targetPageId = null;
 const {stripTagsUnsafe} = ext.i18n;
 
@@ -62,6 +63,7 @@ function closeMe()
 
 function closeDialog(success = false)
 {
+  document.getElementById("filters").disabled = true;
   browser.runtime.sendMessage({
     type: "composer.forward",
     targetPageId,
@@ -71,8 +73,10 @@ function closeDialog(success = false)
       popupAlreadyClosed: true,
       remove: !!success
     }
+  }).then(() =>
+  {
+    closeMe();
   });
-  closeMe();
 }
 
 function resetFilters()
@@ -90,23 +94,44 @@ function resetFilters()
 function previewFilters({currentTarget})
 {
   const {preview} = currentTarget.dataset;
-  const isActive = preview === "active";
+  const wasActive = preview === "active";
+
+  const filtersTextArea = document.getElementById("filters");
+
+  // if it is inactive, disable the textarea upfront
+  if (!wasActive)
+    filtersTextArea.disabled = true;
+
   browser.runtime.sendMessage({
     type: "composer.forward",
     targetPageId,
     payload:
     {
       type: "composer.content.preview",
-      active: !isActive
+      // toggle the preview mode
+      active: !wasActive
     }
   }).then(() =>
   {
-    currentTarget.dataset.preview = isActive ? "inactive" : "active";
+    // if it was active, it's now inactive so the area should be editable
+    if (wasActive)
+      filtersTextArea.disabled = false;
+
+    // toggle both data-preview and the button message accordingly
+    currentTarget.dataset.preview = wasActive ? "inactive" : "active";
     currentTarget.textContent =
       browser.i18n.getMessage(
-        isActive ? "composer_undo_preview" : "composer_preview"
+        wasActive ? "composer_preview" : "composer_undo_preview"
       );
   });
+}
+
+function updateComposerState({currentTarget})
+{
+  const {value} = currentTarget;
+  const disabled = !value.trim().length;
+  document.getElementById("block").disabled = disabled;
+  document.getElementById("preview").disabled = initialFilterText !== value;
 }
 
 function init()
@@ -120,6 +145,9 @@ function init()
   const preview = document.getElementById("preview");
   preview.addEventListener("click", previewFilters);
 
+  const filtersTextArea = document.getElementById("filters");
+  filtersTextArea.addEventListener("input", updateComposerState);
+
   document.getElementById("unselect").addEventListener("click", resetFilters);
   document.getElementById("cancel").addEventListener(
     "click", closeDialog.bind(null, false)
@@ -131,8 +159,8 @@ function init()
     {
       case "composer.dialog.init":
         targetPageId = msg.sender;
-        const filtersTextArea = document.getElementById("filters");
-        filtersTextArea.value = msg.filters.join("\n");
+        initialFilterText = msg.filters.join("\n");
+        filtersTextArea.value = initialFilterText;
         filtersTextArea.disabled = false;
         preview.disabled = false;
         block.disabled = false;
