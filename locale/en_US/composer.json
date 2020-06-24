@@ -22,5 +22,13 @@
   "composer_unselect": {
     "description": "https://gitlab.com/eyeo/specs/spec/-/blob/6077f8f4142302601ee1493b73c6e5b85b25ba9e/spec/abp/composer.md",
     "message": "Unselect"
+  },
+  "composer_preview": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/6077f8f4142302601ee1493b73c6e5b85b25ba9e/spec/abp/composer.md",
+    "message": "Preview"
+  },
+  "composer_undo_preview": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/6077f8f4142302601ee1493b73c6e5b85b25ba9e/spec/abp/composer.md",
+    "message": "Exit preview"
   }
 }
