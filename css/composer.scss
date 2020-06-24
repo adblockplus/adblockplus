@@ -100,6 +100,14 @@ button:not(#unselect)
   resize: none;
 }
 
+#preview
+{
+  margin: auto var(--margin-secondary);
+  border: 1px solid var(--border-color-ternary);
+  color: var(--color-link);
+  background-color: var(--background-color-ternary);
+}
+
 #unselect
 {
   border: 0;

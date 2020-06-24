@@ -87,6 +87,28 @@ function resetFilters()
   });
 }
 
+function previewFilters({currentTarget})
+{
+  const {preview} = currentTarget.dataset;
+  const isActive = preview === "active";
+  browser.runtime.sendMessage({
+    type: "composer.forward",
+    targetPageId,
+    payload:
+    {
+      type: "composer.content.preview",
+      active: !isActive
+    }
+  }).then(() =>
+  {
+    currentTarget.dataset.preview = isActive ? "inactive" : "active";
+    currentTarget.textContent =
+      browser.i18n.getMessage(
+        isActive ? "composer_undo_preview" : "composer_preview"
+      );
+  });
+}
+
 function init()
 {
   // Attach event listeners
@@ -94,6 +116,9 @@ function init()
 
   const block = document.getElementById("block");
   block.addEventListener("click", addFilters);
+
+  const preview = document.getElementById("preview");
+  preview.addEventListener("click", previewFilters);
 
   document.getElementById("unselect").addEventListener("click", resetFilters);
   document.getElementById("cancel").addEventListener(
@@ -109,6 +134,7 @@ function init()
         const filtersTextArea = document.getElementById("filters");
         filtersTextArea.value = msg.filters.join("\n");
         filtersTextArea.disabled = false;
+        preview.disabled = false;
         block.disabled = false;
         block.focus();
         document.getElementById("selected").dataset.count = msg.highlights;
