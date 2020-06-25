@@ -54,11 +54,12 @@ function setupToggles(tab)
 
   isTabWhitelisted(tab).then((isWhitelisted) =>
   {
+    document.body.classList.toggle(
+      "disabled",
+      isWhitelisted.hostname || isWhitelisted.page
+    );
     if (isWhitelisted.hostname)
     {
-      document.body.classList.add("disabled");
-      $("#block-element").disabled = true;
-
       // avoid triggering an event on this change
       domain.setState({checked: false}, false);
       domain.checked = false;
@@ -66,7 +67,6 @@ function setupToggles(tab)
     }
     else if (isWhitelisted.page)
     {
-      document.body.classList.add("disabled");
       setPageStateAfterDomain(page, false, false);
     }
     toggleChecked = domain.checked;

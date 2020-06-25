@@ -58,6 +58,7 @@ const params = {
   downloadStatus: "synchronize_ok",
   filterError: false,
   notification: null,
+  domainWhitelisted: false,
   pageWhitelisted: false,
   reinitialized: false,
   showPageOptions: false

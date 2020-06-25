@@ -62,6 +62,7 @@ html[data-platform="edgehtml"] #issue-reporter,
  */
 html[data-application="edge"] footer,
 body.nohtml #block-element,
+body.disabled #block-element,
 body.disabled #stats-page,
 body.ignore #page-status,
 body.ignore #default-container .options
@@ -470,6 +471,7 @@ main .options button
 
 #block-element
 {
+  margin-bottom: var(--margin-secondary);
   border: 1px solid var(--border-color-ternary);
   background-color: var(--background-color-ternary);
   color: var(--color-link);
@@ -526,11 +528,6 @@ html[dir="rtl"] #block-element strong::before
 html[dir="rtl"] #block-element-info strong::before
 {
   transform: scaleX(-1);
-}
-
-#issue-reporter
-{
-  margin-top: var(--margin-secondary);
 }
 
 #issue-reporter,
