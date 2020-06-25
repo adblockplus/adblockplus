@@ -70,6 +70,7 @@ No parameters.
 |-|-|-|
 | application | `edge` | Hides Adblock Browser promotion message |
 | composerActive | `false` | Hides button to open filter composer |
+| domainWhitelisted | `true` | Shows popup as if domain is whitelisted |
 | notification | `critical` | Show notification with "critical" type |
 | | `default` | Show notification with unknown type |
 | | `information` | Show notification with "information" type |
