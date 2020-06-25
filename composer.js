@@ -155,5 +155,10 @@ function init()
   });
 
   window.removeEventListener("load", init);
+
+  // fixes inconsistent popup size across browsers
+  const {innerWidth, innerHeight} = window;
+  window.resizeBy(600 - innerWidth, 300 - innerHeight);
 }
+
 window.addEventListener("load", init, false);
