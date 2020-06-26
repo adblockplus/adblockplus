@@ -68,7 +68,7 @@ activeTab.then(tab =>
   }
   else
   {
-    disablePopup();
+    document.body.classList.add("disabled");
     document.body.classList.add("ignore");
     document.body.classList.remove("nohtml");
   }
@@ -113,16 +113,6 @@ activeTab.then(tab =>
   setupShare();
   setupFooter();
 });
-
-function disablePopup()
-{
-  document.body.classList.add("disabled");
-  const buttons = $$("#page-info .options button, io-circle-toggle");
-  for (const button of buttons)
-  {
-    button.disabled = true;
-  }
-}
 
 function setupFooter()
 {

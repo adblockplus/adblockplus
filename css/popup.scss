@@ -51,6 +51,12 @@ h2
 }
 
 /*
+  We use CSS to hide elements depending on the context:
+    disabled: Blocking is not active on page
+    ignore: Extension cannot be active on page
+    nohtml: Content scripts are not active on page
+ */
+/*
   explicitly disable Issue Reporter in EdgeHTML due bug
   https://issues.adblockplus.org/ticket/7175
  */
@@ -65,6 +71,7 @@ body.nohtml #block-element,
 body.disabled #block-element,
 body.disabled #stats-page,
 body.ignore #page-status,
+body.ignore #stats-page,
 body.ignore #default-container .options
 {
   display: none;
