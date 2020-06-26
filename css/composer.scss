@@ -34,18 +34,21 @@ body
 }
 
 body,
+main,
 .spacer,
 footer
 {
   display: flex;
 }
 
-body
+body,
+main
 {
   flex-direction: column;
 }
 
 main,
+#filters,
 .details
 {
   flex-grow: 1;
@@ -89,10 +92,9 @@ button:not(#unselect)
 
 #filters
 {
-  width: 100%;
-  height: 116px;
   padding: 4px var(--padding-secondary);
-  border: 0;
+  border: 1px solid var(--border-color-secondary);
+  border-radius: var(--border-radius);
   background-color: transparent;
   font-family: "Source Sans Pro", sans-serif;
   font-size: inherit;
@@ -181,13 +183,6 @@ footer
 {
   margin: auto;
   height: 22px;
-}
-
-.textarea-wrapper
-{
-  position: relative;
-  border: 1px solid var(--border-color-secondary);
-  border-radius: var(--border-radius);
 }
 
 html:not([dir="rtl"]) #logo
