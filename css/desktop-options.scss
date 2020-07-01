@@ -749,14 +749,14 @@ html[dir="rtl"] li a[role="tab"][aria-selected]
   justify-content: center;
 }
 
-#rating
+#support-us
 {
   position: fixed;
   bottom: 40px;
   margin: 0 40px;
 }
 
-#rating .h2-icon
+#support-us .h2-icon
 {
   /* Align icon with edges of text based on text's line height and font size */
   width: 2em;
@@ -764,38 +764,51 @@ html[dir="rtl"] li a[role="tab"][aria-selected]
   margin-top: 0.3em;
 }
 
-html:not([dir="rtl"]) #rating .h2-icon
+html:not([dir="rtl"]) #support-us .h2-icon
 {
   float: left;
   margin-right: 0.5em;
 }
 
-html[dir="rtl"] #rating .h2-icon
+html[dir="rtl"] #support-us .h2-icon
 {
   float: right;
   margin-left: 0.5em;
 }
 
-#rating h2
+#support-us h2
 {
   margin: 0;
   font-size: 1rem;
 }
 
-#rating p
+#support-us p
 {
   text-align: center;
 }
 
-#rating button:last-of-type
+#support-us a.button
 {
   width: 100%;
+  margin-bottom: 0.5rem;
   padding: 2px;
   border: 1px solid var(--border-color-ternary);
   font-size: var(--font-size-primary);
   color: #0797e1;
-  background-color: #e9f6fc;
   text-transform: uppercase;
+  text-align: center;
+  transition: background-color 0.2s ease-out;
+}
+
+#support-us a.button:last-of-type
+{
+  margin-bottom: 0;
+}
+
+#support-us a.button:hover,
+#support-us a.button:focus
+{
+  background-color: #e9f6fc;
 }
 
 /* This is a stopgap solution of footer overlapping tabs on low resolutions */

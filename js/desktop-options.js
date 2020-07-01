@@ -1126,18 +1126,15 @@ function onDOMLoaded()
   {
     // We need to restrict this feature to certain browsers for which we
     // have a link to where users can rate us
-    if (!["chrome", "opera", "firefox"].includes(application))
+    if (!["chrome", "chromium", "opera", "firefox"].includes(application))
     {
-      $("#rating").setAttribute("aria-hidden", true);
+      $("#support-us").setAttribute("aria-hidden", true);
       return;
     }
 
-    $("#rating button:last-of-type").addEventListener("click", () =>
+    api.doclinks.get(`${store}_review`).then((url) =>
     {
-      api.doclinks.get(`${store}_review`).then((url) =>
-      {
-        browser.tabs.create({url});
-      });
+      $("#support-us a[data-i18n='options_rating_button']").href = url;
     });
   });
 

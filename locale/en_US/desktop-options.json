@@ -487,16 +487,20 @@
   "options_filter_list_rule": {
     "message": "Filter rule"
   },
-  "options_rating_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/8f12811171d57b7499d50514283c6ec2d0247b05/spec/abp/options-page.md#store-rating",
-    "message": "Please take a moment and help spread the word by rating Adblock Plus. Thanks for your support!"
+  "options_supportUs_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/677a0a3c68c7e96369301813d8b413c6ecd1b381/spec/abp/desktop-settings/index.md#store-rating",
+    "message": "Please take a moment to rate ABP or donate to the project. Thanks for your support!"
   },
-  "options_rating_title": {
+  "options_supportUs_title": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/8f12811171d57b7499d50514283c6ec2d0247b05/spec/abp/options-page.md#store-rating",
     "message": "Enjoying Adblock Plus?"
   },
   "options_rating_button": {
     "description": "https://gitlab.com/eyeo/specs/spec/-/blob/53d319c7512cf83e1c2dfd0517885e1e49adecd4/spec/abp/desktop-settings/index.md#store-rating",
     "message": "Rate us"
+  },
+  "options_donate_button": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/677a0a3c68c7e96369301813d8b413c6ecd1b381/spec/abp/desktop-settings/index.md#store-rating",
+    "message": "Donate"
   }
 }
