@@ -129,6 +129,16 @@ isolation. As it's done for `io-element`, you need to add at least an
 You can run `npm run $ test:io-element.js` to create the HTML page inside the
 `/smoke` folder.
 
+### End-to-end testing
+
+The `./test/end-to-end/tests` folder contains various end-to-end tests. Run 
+`npm run test:end-to-end -- -p EXTENSION_PATH` in order to execute tests in the
+latest stable Chrome browser, where `EXTENSION_PATH` is path to the extension
+root folder. The `./test/end-to-end/config.js` file contains paths and
+descriptions of each executable test. In order to build the extension for
+testing purposes please refer to the
+[building Adblock Plus][abp-webext-readme-build] documentation.
+
 ### Linting
 
 You can lint all files via `npm run lint` or lint only specific file types:
@@ -182,6 +192,7 @@ This project follows the typical GitLab process:
 [abp-ui-tags]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/tags
 [abp-webext]: https://gitlab.com/eyeo/adblockplus/adblockpluschrome/
 [abp-webext-readme]: https://gitlab.com/eyeo/adblockplus/adblockpluschrome/blob/master/README.md
+[abp-webext-readme-build]: https://gitlab.com/eyeo/adblockplus/adblockpluschrome#building
 [abp-webext-releases]: https://github.com/adblockplus/adblockpluschrome/releases
 [badge-pipeline-image]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/badges/master/pipeline.svg
 [badge-pipeline-link]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/commits/master

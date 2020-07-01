@@ -13,7 +13,8 @@
     "test": "npm run $ test",
     "watch": "npm run $ watch",
     "csv-export": "node build/locale-sync/csv/main.js -e",
-    "csv-import": "node build/locale-sync/csv/main.js -i && node build/locale-sync/normalize.js"
+    "csv-import": "node build/locale-sync/csv/main.js -i && node build/locale-sync/normalize.js",
+    "test:end-to-end": "mocha test/end-to-end/main.js --timeout 15000 --delay"
   },
   "$": {
     "dev-build": [
@@ -174,6 +175,7 @@
   "devDependencies": {
     "adm-zip": "^0.4.13",
     "basichtml": "^1.0.2",
+    "chromedriver": "^83.0.0",
     "csv": "^5.1.2",
     "eslint": "^6.2.1",
     "eslint-config-eyeo": "^3.0.0",
@@ -185,6 +187,7 @@
     "mocha": "^6.1.4",
     "nightmare": "^3.0.2",
     "node-fetch": "^2.3.0",
+    "selenium-webdriver": "^4.0.0-alpha.7",
     "stylelint": "^10.1.0",
     "stylelint-config-eyeo": "^1.0.3",
     "svgo": "^1.3.0",
