@@ -53,12 +53,22 @@ function addFilters()
 // We'd rather just call window.close, but that isn't working consistently with
 // Firefox 57, even when allowScriptsToClose is passed to browser.windows.create
 // See https://bugzilla.mozilla.org/show_bug.cgi?id=1418394
+// window.close is also broken on Firefox 63.x
+// See https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/issues/791#note_374617568
 function closeMe()
 {
   browser.runtime.sendMessage({
     type: "app.get",
     what: "senderId"
-  }).then(tabId => browser.tabs.remove(tabId));
+  }).then(tabId =>
+    browser.tabs.remove(tabId).catch(err =>
+    {
+      // Opera 68 throws a "Tabs cannot be edited right now (user may be
+      // dragging a tab)." exception when we attempt to close the window
+      // using `browser.tabs.remove`.
+      window.close();
+    })
+  );
 }
 
 function closeDialog(success = false)
