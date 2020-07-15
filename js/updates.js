@@ -54,7 +54,7 @@ function addUpdates(container, updates)
     {
       image = wire()`<img
         src="${update.image.url}"
-        alt="${{i18n: `updates_update_${update.id}_image`}}">`;
+        alt="${browser.i18n.getMessage(`updates_update_${update.id}_image`)}">`;
     }
 
     return wire()`<li>
