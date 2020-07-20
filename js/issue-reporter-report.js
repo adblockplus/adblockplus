@@ -71,7 +71,8 @@ port.onMessage.addListener((message) =>
           }
           if (filter)
           {
-            const existingFilter = $(`[text='${filter.text}']`, reportData);
+            const escapedText = CSS.escape(filter.text);
+            const existingFilter = $(`[text="${escapedText}"]`, reportData);
             if (existingFilter)
             {
               const countNum = parseInt(existingFilter.getAttribute("hitCount"),
