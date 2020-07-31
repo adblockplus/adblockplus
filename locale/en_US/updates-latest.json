@@ -7,6 +7,14 @@
     "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
     "message": "Adblock Plus is up-to-date"
   },
+  "updates_subtitle": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
+    "message": "We think you'll like the latest updates."
+  },
+  "updates_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
+    "message": "Adblock Plus is up-to-date!"
+  },
   "updates_update_i1_description": {
     "description": "https://gitlab.com/eyeo/specs/spec/-/blob/e7880944f972552fb33aeb0444bd821714712b5a/spec/abp/updates.md#current-updates",
     "message": "Added a short description of the Block Element feature and improved wording for the Report button."
