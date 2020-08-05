@@ -49,19 +49,37 @@ function addUpdates(container, updates)
       });
     }
 
-    let image = null;
+    let media = null;
     if (update.image)
     {
-      image = wire()`<img
+      media = wire()`<img
         src="${update.image.url}"
         alt="${browser.i18n.getMessage(`updates_update_${update.id}_image`)}">`;
+    }
+    else if (update.video)
+    {
+      const videoDescription = `updates_update_${update.id}_video`;
+      media = wire()`<video
+        autoplay loop muted
+        aria-label="${browser.i18n.getMessage(videoDescription)}">
+        <source src="${update.video.url}" type="${update.video.type}">
+        </source>
+      </video>`;
+
+      const fallback = wire()`<div class="fallback">
+        ${{i18n: videoDescription}}
+      </div>`;
+      media.addEventListener("error", () =>
+      {
+        media.parentElement.replaceChild(fallback, media);
+      }, true);
     }
 
     return wire()`<li>
       <h3>${{i18n: `updates_update_${update.id}_title`}}</h3>
       <p>${{i18n: `updates_update_${update.id}_description`}}</p>
       ${link}
-      ${image}
+      ${media}
     </li>`;
   });
 

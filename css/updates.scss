@@ -142,10 +142,25 @@ html[dir="rtl"] .updates h3::before
   text-decoration: underline;
 }
 
-.updates img
+.updates img,
+.updates video
 {
   border: 1px solid #DCDCDC;
+}
+
+.updates video,
+.updates img,
+.updates .fallback
+{
+  position: relative;
+  max-width: 500px;
+  width: 100%;
   background-color: #F8F8F8;
+}
+
+.updates .fallback
+{
+  text-align: center;
 }
 
 /*******************************************************************************

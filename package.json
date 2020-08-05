@@ -115,7 +115,11 @@
     "optimize": {
       "gif": "gifsicle -o $1 $1",
       "png": "pngquant --skip-if-larger --force --ext .png --speed 1 -- $1",
-      "svg": "svgo --pretty -i $1"
+      "svg": "svgo --pretty -i $1",
+      "mp4": [
+        "ffmpeg -i $1 -an $1.mp4",
+        "mv $1.mp4 $1"
+      ]
     },
     "test": {
       "unit": "mocha ./test/unit",
