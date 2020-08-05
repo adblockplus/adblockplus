@@ -17,5 +17,6 @@ This ticket mentions changes for the %MILESTONE release that we would like to an
 ## What to change
 
 - **Spec:** ([Create spec merge request](https://gitlab.com/eyeo/specs/spec/merge_requests/new) for [changes to the updates page](https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/wikis/release-workflow#update-specific-changes) and link to it from here)
+- **Legal:** (Link to JIRA ticket with Legal's approval)
 
 /milestone %MILESTONE
