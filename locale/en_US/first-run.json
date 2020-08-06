@@ -17,6 +17,10 @@
   "firstRun_control_title": {
     "message": "You're in control"
   },
+  "firstRun_donate": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/d8fb4d685ae8b6f264558e506c02f8b89d3a1612/spec/abp/first-run.md#header",
+    "message": "Donate"
+  },
   "firstRun_fair_description": {
     "message": "We encourage you to make fair use of Adblock Plus and the option to whitelist websites. Depending on the filters you use, you understand and accept that unintentional results might occur (e.g. blocked content on a website). Refer to the <a0>Terms of Use</a0> for more information about fair use of Adblock Plus."
   },
