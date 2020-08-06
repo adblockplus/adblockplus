@@ -21,15 +21,16 @@ const {params} = require("./env");
 const {subscriptionUrls} = require("./subscriptions");
 
 const prefsData = {
+  additional_subscriptions: params.additionalSubscriptions.split(","),
+  elemhide_debug: false,
   notifications_ignoredcategories: [],
   shouldShowBlockElementMenu: true,
   show_devtools_panel: true,
   show_statsinicon: true,
-  ui_warn_tracking: true,
-  additional_subscriptions: params.additionalSubscriptions.split(","),
   subscriptions_exceptionsurl: subscriptionUrls.URL_WHITELIST,
   subscriptions_exceptionsurl_privacy:
-    subscriptionUrls.URL_WHITELIST_PRIVACY
+    subscriptionUrls.URL_WHITELIST_PRIVACY,
+  ui_warn_tracking: true
 };
 
 module.exports = prefsData;

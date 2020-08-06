@@ -235,6 +235,14 @@
     "description": "Tooltip text for Show 'Block element' option item of customize section in Advanced tab",
     "message": "Temporarily block annoying items on a webpage, e.g. images or animated slideshows."
   },
+  "options_customize_elemhideDebug": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/62965fd7d57debe51636b9689aa09091bc9bb6e4/spec/abp/desktop-settings/advanced-tab.md#customize-section",
+    "message": "Turn on debug element hiding filters mode"
+  },
+  "options_customize_elemhideDebug_tooltip": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/62965fd7d57debe51636b9689aa09091bc9bb6e4/spec/abp/desktop-settings/advanced-tab.md#customize-section",
+    "message": "Highlight elements on a page that are affected by element hiding filters."
+  },
   "options_customize_iconStats": {
     "description": "Option label of customize section in Advanced tab",
     "message": "Show number of ads blocked in icon"

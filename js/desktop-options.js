@@ -1636,6 +1636,7 @@ port.postMessage({
 port.postMessage({
   type: "prefs.listen",
   filter: [
+    "elemhide_debug",
     "notifications_ignoredcategories",
     "shouldShowBlockElementMenu",
     "show_devtools_panel",
