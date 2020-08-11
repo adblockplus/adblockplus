@@ -66,6 +66,10 @@ function addUpdates(container, updates)
         </source>
       </video>`;
 
+      // "muted" attribute in some scenarios doesn't work in Firefox,
+      // explicitely muting using JavaScript seem to fix it.
+      // https://bugzilla.mozilla.org/show_bug.cgi?id=1588360
+      media.muted = true;
       const fallback = wire()`<div class="fallback">
         ${{i18n: videoDescription}}
       </div>`;
