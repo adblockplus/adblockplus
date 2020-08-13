@@ -990,6 +990,16 @@ html[dir="rtl"] button
   font-weight: 700;
 }
 
+html:not([dir="rtl"]) #acceptable-ads label
+{
+  margin-right: 0.5rem;
+}
+
+html[dir="rtl"] #acceptable-ads label
+{
+  margin-left: 0.5rem;
+}
+
 #acceptable-ads #acceptable-ads-why-not
 {
   --background-color: #FFF;
@@ -1046,14 +1056,14 @@ html[dir="rtl"] #acceptable-ads #acceptable-ads-why-not
   color: #0797E1;
 }
 
-html:not([dir="rtl"]) #acceptable-ads label
+html[lang="de"] #acceptable-ads-why-not .donate
 {
-  margin-right: 0.5rem;
+  display: none;
 }
 
-html[dir="rtl"] #acceptable-ads label
+html:not([lang="de"]) #acceptable-ads-why-not .survey
 {
-  margin-left: 0.5rem;
+  display: none;
 }
 
 #dnt
