@@ -1,8 +1,44 @@
 {
+  "mops_acceptableAds_description": {
+    "message": "බාධා රහිත වෙළඳ දැන්වීම් සඳහා ඉඩ දෙන්න."
+  },
+  "mops_acceptableAds_more": {
+    "message": "වැඩිදුර ඉගෙන ගන්න"
+  },
   "mops_action_cancel": {
     "message": "අවලංගු කරන්න"
   },
+  "mops_enabled_label": {
+    "message": "දැන්වීම් අවහිර කරන්න:"
+  },
+  "mops_error_url": {
+    "message": "වලංගු URL එකක් පමනක් ඇතුළත් කරන්න"
+  },
+  "mops_filterlist_add": {
+    "message": "පෙරහන් ලැයිස්තුවක් එක් කරන්න"
+  },
+  "mops_filterlist_add_action": {
+    "message": "පෙරහන් ලැයිස්තු එක් කරන්න"
+  },
+  "mops_filterlist_add_url": {
+    "message": "සාදාගත් පෙරහන් ලැයිස්තුවක් එක් කරන්න"
+  },
+  "mops_header": {
+    "message": "ඇඩ්බ්ලොක් ප්ලස් සැකසුම්"
+  },
+  "mops_subscribe_header": {
+    "message": "සාදාගත් පෙරහන් ලැයිස්තුවක් එක් කරන්න"
+  },
+  "mops_subscribe_title": {
+    "message": "ලැයිස්තුවේ නම පෙරහන් කරන්න"
+  },
+  "mops_subscribe_url": {
+    "message": "ලැයිස්තුවේ URL පෙරහන් කරන්න"
+  },
   "mops_subscriptions_header": {
     "message": "සම්බන්ධ වූ පෙරහන්, සකසා ගත් පෙරහන්"
+  },
+  "mops_title": {
+    "message": "ඇඩ්බ්ලොක් ප්ලස් සැකසුම්"
   }
 }

@@ -1,0 +1,53 @@
+{
+  "day1_blockelement_description": {
+    "message": "Estä mainokset Adblock Plussan näppärällä kohdetoiminnolla."
+  },
+  "day1_blockelement_more": {
+    "message": "Tutustu"
+  },
+  "day1_blockelement_screenshot": {
+    "message": "Esimerkki ponnahdusikkunasta, jossa Estä kohde -painike on korostettuna."
+  },
+  "day1_blockelement_title": {
+    "message": "Oletko kyllästynyt verkon kommenttipalstoihin?"
+  },
+  "day1_community_contact": {
+    "message": "Ota yhteyttä!"
+  },
+  "day1_community_contact_subject": {
+    "message": "Apukäsiä kaivataan!"
+  },
+  "day1_community_description_1": {
+    "message": "Avoimen lähdekoodin projektina tarvitsemme jatkuvasti uusia ihmisiä kehittämään mainostenesto-ohjelmistoamme."
+  },
+  "day1_community_description_2": {
+    "message": "Mitä ominaisuuksia kaipaat? Mitä voimme tehdä paremmin? Ovatko jotkut sivustot alkaneet kiertämään mainostenestoa?"
+  },
+  "day1_community_title": {
+    "message": "Liity Adblock Plussan yhteisöön"
+  },
+  "day1_header_more": {
+    "message": "Lisätietoja haittaohjelmamainonnasta"
+  },
+  "day1_header_title": {
+    "message": "Adblock Plus <strong>esti<em0>$ads$ mainosta</em0> <em1>viimeisimmän puolen tunnin aikana</em1>,</strong> joista osa saattaa olla haittaohjelmia",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_message": {
+    "message": "Aika monta ärsyttävää mainosta. <a>Tutustu muihin Adblock Plussan ominaisuuksiin</a>"
+  },
+  "notification_day1_title": {
+    "message": "Jo $ads$ mainosta on estetty!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

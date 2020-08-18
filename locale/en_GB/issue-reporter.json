@@ -1,4 +1,7 @@
 {
+  "continue": {
+    "message": "Continue"
+  },
   "filters_subscription_lastDownload_connectionError": {
     "message": "Failed: download failure"
   },
@@ -7,6 +10,9 @@
   },
   "issueReporter_anonymousSubmission_warning": {
     "message": "We won't be able to come back to you and will likely prioritize the report lower."
+  },
+  "issueReporter_closeButton_label": {
+    "message": "Close"
   },
   "issueReporter_commentPage_heading": {
     "message": "Enter comment"
@@ -17,8 +23,17 @@
   "issueReporter_comment_label": {
     "message": "Comment (optional):"
   },
+  "issueReporter_config_label": {
+    "message": "Include information about my browser configuration, as well as a list of active extensions I'm using."
+  },
   "issueReporter_confirmationMessage": {
     "message": "Your report has been saved. You can access it at the following address:"
+  },
+  "issueReporter_data_gathering_tab": {
+    "message": "<strong>Note:</strong> An additional tab will temporarily open so the page you are on won't be affected by the Issue Reporter."
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "Details"
   },
   "issueReporter_doneButton_label": {
     "message": "Done"
@@ -44,14 +59,41 @@
   "issueReporter_falsePositive_label": {
     "message": "Adblock Plus is blocking too much"
   },
+  "issueReporter_highlighter_description": {
+    "message": "Use the tools to highlight each ad or hide sensitive info on the screenshot. Highlighting ads will help us fix the issue faster."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "Highlight issue"
+  },
   "issueReporter_knownIssueMessage": {
     "message": "The issue you reported is probably already known. More information:"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "Mark issue"
+  },
+  "issueReporter_other_issues": {
+    "message": "For all other issues, please contact us via <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_page_title": {
     "message": "Issue reporter"
   },
   "issueReporter_privacyPolicy": {
     "message": "Privacy policy"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "processing"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "To help us better understand the issue, a screenshot is required when submitting an issue report. Depending on the website you're currently on, the screenshot might contain personal information. If you're uncomfortable submitting a screenshot, please email your issue to <a0>support@adblockplus.org</a0>."
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "Hide"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "Highlight"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "Select issue"
   },
   "issueReporter_sendButton_label": {
     "message": "Send report"

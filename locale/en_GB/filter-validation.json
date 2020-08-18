@@ -1,0 +1,39 @@
+{
+  "filter_elemhideemulation_nodomain": {
+    "message": "No active domain specified for extended element hiding filter"
+  },
+  "filter_invalid_csp": {
+    "message": "Invalid Content Security Policy"
+  },
+  "filter_invalid_domain": {
+    "message": "Invalid (or empty) domain specified"
+  },
+  "filter_invalid_regexp": {
+    "message": "Invalid regular expression"
+  },
+  "filter_slow": {
+    "message": "To ensure a fast filter, please check the length of the pattern and ensure it doesn't contain a regular expression."
+  },
+  "filter_snippet_nodomain": {
+    "message": "No active domain specified for snippet filter"
+  },
+  "filter_unknown_option": {
+    "message": "Unknown filter option"
+  },
+  "line": {
+    "message": "Line $number$: $message$",
+    "placeholders": {
+      "message": {
+        "content": "$2",
+        "example": "Some error on this line"
+      },
+      "number": {
+        "content": "$1",
+        "example": "42"
+      }
+    }
+  },
+  "unexpected_filter_list_header": {
+    "message": "Filter list headers aren't allowed here."
+  }
+}

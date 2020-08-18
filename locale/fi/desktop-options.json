@@ -1,9 +1,33 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "Haluamme parantaa AdBlock Plussan käyttökokemusta. Haluaisitko kertoa, minkä vuoksi poistit käyttäjäystävälliset mainokset käytöstä?"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "Ei kiitos"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "Siirry kyselyyn"
+  },
+  "options_acceptableAds_ads_description_1": {
+    "message": "Käyttäjäystävälliset mainokset eivät häiritse sisältöä tai hyppää silmille. <a>Lisätietoa käyttäjäystävällisten mainosten kriteereistä (englanniksi)</a>"
+  },
   "options_acceptableAds_ads_label": {
-    "message": "Salli hyväksyttävät mainokset"
+    "message": "Salli käyttäjäystävälliset mainokset"
+  },
+  "options_acceptableAds_description": {
+    "message": "Mainostulot ovat tärkeitä monille verkkosivustoille, joten sallimalla käyttäjäystävälliset mainokset tuet sisällöntuottajia ja samalla kannustat heitä luomaan vähemmän häiritseviä mainoksia."
   },
   "options_acceptableAds_header": {
-    "message": "Hyväksytyt mainokset"
+    "message": "Käyttäjäystävälliset mainokset"
+  },
+  "options_acceptableAds_privacy_label": {
+    "message": "Älä salli kolmannen osapuolen jäljitystä käyttäviä mainoksia"
+  },
+  "options_advanced_description": {
+    "message": "Mukauta Adblock Plussaa, hallinnoi suodatinlistoja, luo omia suodatinlistoja"
+  },
+  "options_builtin_filterList_add": {
+    "message": "Lisää valmiita suodatinlistoja"
   },
   "options_close": {
     "message": "sulje"
@@ -14,14 +38,83 @@
   "options_customFilter_cancel": {
     "message": "Peruuta"
   },
+  "options_customFilters_description": {
+    "message": "Omilla suodattimilla voit hallinnoida Adblock Plussan rajoittamaa sisältöä oletussuodattimia tarkemmin. <a0>Lisätietoa omista suodattimista (englanniksi)</a0>"
+  },
+  "options_customFilters_title": {
+    "message": "Omat suodattimet"
+  },
   "options_customFilters_widget_title": {
     "message": "Oma suodatinluettelo"
+  },
+  "options_customize_blockElement": {
+    "message": "Näytä Estä kohde -painike oikean hiiren painikkeen valikossa"
+  },
+  "options_customize_blockElement_tooltip": {
+    "message": "Painikkeella voit estää väliaikaisesti häiritsevät kohteet, kuten kuvat ja diaesitykset."
   },
   "options_customize_header": {
     "message": "Mukauttaminen"
   },
+  "options_customize_iconStats": {
+    "message": "Näytä estettyjen mainosten määrä kuvakkeessa"
+  },
+  "options_customize_showDevToolsPanel": {
+    "message": "Näytä Adblock Plus -paneeli kehittäjätyökaluissa"
+  },
+  "options_customize_showDevToolsPanel_tooltip": {
+    "message": "Tarkista estetyt ja sallitut kohteet selaimen kehittäjätyökaluista."
+  },
   "options_customize_showNotifications": {
     "message": "Näytä hyödylliset ilmoitukset"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Salli Adblock Plussan lähettämät ilmoitukset (kriittiset suorituskykyilmoitukset näytetään aina)"
+  },
+  "options_dialog_about_title": {
+    "message": "Tietoa AdBlock Plussasta"
+  },
+  "options_dialog_about_trademark": {
+    "message": "Kaikki oikeudet pidätetään. Adblock Plus® on eyeo GmbH:n rekisteröimä tavaramerkki."
+  },
+  "options_dialog_about_version": {
+    "message": "Versio $version$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "2.6.7"
+      }
+    }
+  },
+  "options_dialog_import_subscription_location": {
+    "message": "Suodatinlistan osoite"
+  },
+  "options_dialog_import_subscription_location_error": {
+    "message": "Syötä kelvollinen osoite"
+  },
+  "options_dialog_import_title": {
+    "message": "Lisää suodatinlista"
+  },
+  "options_dialog_invalid_message": {
+    "message": "Turvallisuussyistä suodatinlistan tulee olla suojattu <strong>HTTPS</strong>-yhteydellä ja osoitteen olla <strong>data-URL</strong>-muodossa."
+  },
+  "options_dialog_invalid_title": {
+    "message": "Virhe"
+  },
+  "options_dialog_language_title": {
+    "message": "Valitse kieli"
+  },
+  "options_dialog_predefined_confirm": {
+    "message": "Kyllä, lisää tämä lista"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Nimi"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "Osoite"
+  },
+  "options_dialog_predefined_title": {
+    "message": "Haluatko varmasti lisätä tämän suodatinlistan?"
   },
   "options_email": {
     "message": "Sähköposti:"
@@ -29,26 +122,38 @@
   "options_english": {
     "message": "englanti"
   },
+  "options_filterList_add": {
+    "message": "Lisää suodatinlista osoitteella"
+  },
   "options_filterList_column_name": {
-    "message": "Suodatinlistat"
+    "message": "Suodatinlista"
   },
   "options_filterList_column_status": {
     "message": "Tila"
   },
   "options_filterList_column_update": {
-    "message": "Viimeksi päivitetty"
+    "message": "Päivitetty"
+  },
+  "options_filterList_description": {
+    "message": "Mainostenesto perustuu suodatinlistoihin, joiden sisältämät osoitteet piilotetaan sivustoilta. Alla oleva lista näyttää käytössä olevat listat. Voit myös ottaa käyttöön yhteisön kehittämiä listoja."
+  },
+  "options_filterList_empty": {
+    "message": "Et ole lisännyt suodatinlistoja Adblock Plussaan."
   },
   "options_filterList_hours": {
     "message": "tuntia sitten"
   },
   "options_filterList_lastDownload_checksumMismatch": {
-    "message": "Epäonnistui, tarkistussumma ei täsmää"
+    "message": "Tarkistussumma ei täsmää"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Epäonnistui, latausvirhe"
+    "message": "Latausvirhe"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Päivitetään"
+  },
+  "options_filterList_lastDownload_invalidData": {
+    "message": "Suodatinlista ei kelpaa"
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Epäonnistui, kelvoton osoite"
@@ -60,7 +165,7 @@
     "message": "Juuri nyt"
   },
   "options_filterList_source": {
-    "message": "lähde"
+    "message": "Lähde"
   },
   "options_filterList_title": {
     "message": "Suodatinlistat"
@@ -69,28 +174,70 @@
     "message": "päivitä kaikki suodatinlistat"
   },
   "options_filterList_updateNow": {
-    "message": "päivitä nyt"
+    "message": "Päivitä nyt"
   },
   "options_filterList_website": {
     "message": "sivusto"
   },
+  "options_filter_list_rule": {
+    "message": "Sääntö"
+  },
+  "options_filters_search_or_add": {
+    "message": "Hae tai lisää suodatin (esim. $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
+  },
   "options_footer_about": {
-    "message": "Tietoa Adblock Plus"
+    "message": "Tietoa Adblock Plussasta"
   },
   "options_footer_contribute": {
-    "message": "Avusta"
+    "message": "Osallistu"
+  },
+  "options_general_description": {
+    "message": "Määritä AdBlock Plussan piilottama sisältö"
+  },
+  "options_help_center": {
+    "message": "<a0>Käyttäjätuki (englanniksi)</a0>"
+  },
+  "options_help_description": {
+    "message": "Ohje ja yhteystiedot"
   },
   "options_language_add": {
     "message": "lisää kieli"
   },
   "options_language_change": {
-    "message": "muuta"
+    "message": "vaihda"
+  },
+  "options_language_description": {
+    "message": "Adblock Plus toimii tehokkaammin, jos suodatin on optimoitu usein käytettyjen verkkosivustojen kielelle."
+  },
+  "options_language_filter_list": {
+    "message": "Kieliperustaiset suodatinlistat"
   },
   "options_language_header": {
     "message": "Kieli"
   },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
+  },
+  "options_language_tip": {
+    "message": "<strong>VINKKI:</strong> Valitse vain säännöllisesti käyttämiäsi kieliä. Liian monen suodattimen valinta hidastaa selaimen toimintaa."
+  },
   "options_learn_more": {
-    "message": "Lue lisää"
+    "message": "Lisätietoja"
   },
   "options_more_filters_header": {
     "message": "Lisää suodattimia"
@@ -107,11 +254,29 @@
   "options_privacy_header": {
     "message": "Yksityisyys & tietoturva"
   },
+  "options_protection_privacy_tooltip": {
+    "message": "Suojaa yksityisyyttäsi toimijoilta, jotka saattavat jäljittää verkon käyttöäsi"
+  },
+  "options_protection_social_tooltip": {
+    "message": "Sosiaalisen median palvelut voivat jäljittää verkon käyttöäsi muilla sivustoilla olevilla kuvakkeilla, vaikka et napsauttaisikaan niitä. Voit suojata yksityisyyttäsi piilottamalla kuvakkeet."
+  },
+  "options_report_bug": {
+    "message": "<a>Vikailmoitukset</a>"
+  },
+  "options_report_forum": {
+    "message": "<a>Kehittäjäyhteisö</a>"
+  },
+  "options_social_description": {
+    "message": "Kysymyksiä tai ideoita? Ota meihin yhteyttä."
+  },
+  "options_social_title": {
+    "message": "Ota yhteyttä"
+  },
   "options_support_title": {
     "message": "Tuki"
   },
   "options_tab_advanced": {
-    "message": "Edistynyt"
+    "message": "Lisäasetukset"
   },
   "options_tab_general": {
     "message": "Yleiset"
@@ -122,10 +287,55 @@
   "options_tab_whitelist": {
     "message": "Sallitut sivustot"
   },
+  "options_tracking_warning_1": {
+    "message": "<strong>$tracking$</strong> ja <strong>$acceptableAds$</strong> ovat käytössä",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "Huomaathan, että mainostajien pyrkiessä kohdistamaan mainontaansa <strong>saattaa</strong> osa käyttäjäystävällisistä mainoksista jäljittää verkon käyttöäsi."
+  },
+  "options_tracking_warning_3": {
+    "message": "Voit parantaa yksityisyyttäsi entisestään valitsemalla alla <strong>$acceptableAdsPrivacy$</strong>.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
   "options_tracking_warning_acknowledgment": {
     "message": "OK, asia selvä"
   },
   "options_whitelist_add": {
     "message": "Lisää sivusto"
+  },
+  "options_whitelist_description": {
+    "message": "Mainostenesto ei ole käytössä näillä sivustoilla, ja siksi mainokset näkyvät normaalisti."
+  },
+  "options_whitelist_empty_1": {
+    "message": "Sallittujen sivustojen lista on tyhjä."
+  },
+  "options_whitelist_empty_2": {
+    "message": "Jos päätät sallia mainokset tietyillä sivustoilla, ne näytetään tässä."
+  },
+  "options_whitelist_notification": {
+    "message": "Sivusto on lisätty sallittujen listalle."
+  },
+  "options_whitelist_placeholder_example": {
+    "message": "esim. $domain$",
+    "placeholders": {
+      "domain": {
+        "content": "www.example.com"
+      }
+    }
   }
 }

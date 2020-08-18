@@ -23,6 +23,9 @@
   "issueReporter_comment_label": {
     "message": "Comentariu (opțional):"
   },
+  "issueReporter_config_label": {
+    "message": "Include informații despre configurația browser-ului meu, precum și o listă de extensii active pe care le folosesc."
+  },
   "issueReporter_confirmationMessage": {
     "message": "Raportarea a fost salvată și poate fi accesată la adresa următoare:"
   },
@@ -36,7 +39,7 @@
     "message": "Efectuat"
   },
   "issueReporter_email_description": {
-    "message": "Vă recomandăm să introduceți o adresă validă de email pentru a vă putea contacta cu posibile întrebări despre acest raport. De asemenea, acest lucru ne ajută la recunoașterea contribuțiilor dumneavoastră și la prioritizarea mai bună a acestora."
+    "message": "Este util să introduci o adresă de e-mail validă. Ea ne permite să vă contactăm cu privire la acest raport sau pentru a remedia probleme dificile precum malware. Reține că e-mailul nu este obligatoriu, iar adresa dvs. nu va fi niciodată distribuită."
   },
   "issueReporter_email_label": {
     "message": "Email:"
@@ -57,22 +60,25 @@
     "message": "Adblock Plus blochează prea mult"
   },
   "issueReporter_highlighter_description": {
-    "message": "Folositi uneltele pentru a evidentia sau ascunde date sensibile pe screenshot. Marcând reclamele ne va ajuta sa rezolvam mai repede problema."
+    "message": "Folosind unelte, evidențiază pub sau ascunde informații sensibile de pe captura de ecran. Evidențiind reclamele ne ajuți să accelerăm rezolvarea problemei."
   },
   "issueReporter_highlighter_heading": {
-    "message": "Evidentiaza problema"
+    "message": "Evidențiază problema"
   },
   "issueReporter_knownIssueMessage": {
     "message": "Problema pe care o aveți este probabil cunoscută. Detalii:"
   },
   "issueReporter_markIssueButton_label": {
-    "message": "Evidentiaza problema"
+    "message": "Marcare problemă"
+  },
+  "issueReporter_other_issues": {
+    "message": "Pentru orice alte probleme, te rugăm să ne contactezi la <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_page_title": {
     "message": "Raportare problemă"
   },
   "issueReporter_privacyPolicy": {
-    "message": "Politică de confidenţialitate"
+    "message": "Politica Intimității"
   },
   "issueReporter_processing_screenshot": {
     "message": "Procesare"
@@ -84,10 +90,10 @@
     "message": "Ascunde"
   },
   "issueReporter_screenshot_highlight": {
-    "message": "Evidentiaza"
+    "message": "Evidențiază"
   },
   "issueReporter_selectIssueButton_label": {
-    "message": "Alegeți tipul problemei"
+    "message": "Selectare problemă"
   },
   "issueReporter_sendButton_label": {
     "message": "Trimite raport"

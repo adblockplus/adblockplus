@@ -7,5 +7,17 @@
   },
   "day1_header_more": {
     "message": "Uzzināt vairāk par ļaunprātīgu reklāmu"
+  },
+  "notification_day1_message": {
+    "message": "Tās ir daudzas kaitinošas reklāmas. <a>Uzziniet, ko vēl Adblock Plus var bloķēt.</a>"
+  },
+  "notification_day1_title": {
+    "message": "Jau bloķētas $ads$ reklāmas!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
   }
 }

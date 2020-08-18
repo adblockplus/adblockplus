@@ -6,7 +6,7 @@
     "message": "Anulează"
   },
   "common_copyright": {
-    "message": "Copyright © $year$ toate drepturile rezervate. Adblock Plus® este o marcă înregistrată a <a0>eyeo GmbH</a0>.",
+    "message": "Copyright © $year$ Toate drepturile rezervate. Adblock Plus® este o marcă înregistrată a <a0>eyeo GmbH</a0>.",
     "placeholders": {
       "year": {
         "content": "$1",
@@ -18,7 +18,7 @@
     "message": "Ascunde mesajele de avertizare Adblock"
   },
   "common_feature_circumvention_title": {
-    "message": "ABP Lista Anti-Trucuri"
+    "message": "Listă de Filtre ABP Anti-Eludare"
   },
   "common_feature_malware_title": {
     "message": "Blochează Malware"

@@ -2,7 +2,34 @@
   "easy_create_filter": {
     "message": "Արգելապակել Ելեմենտը"
   },
+  "options_refresh": {
+    "message": "Թարմացնել"
+  },
   "options_short": {
     "message": "Կարգավորումներ"
+  },
+  "overlay_notification_closing_button_hide": {
+    "message": "Փակել"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Չցուցադրել ծանուցումներ"
+  },
+  "refresh_this_page": {
+    "message": "Թարմացնել էջը"
+  },
+  "share_on_facebook": {
+    "message": "Կիսվել Facebook-ում"
+  },
+  "share_on_twitter": {
+    "message": "Կիսվել Twitter-ում"
+  },
+  "status_domain": {
+    "message": "Տվյալ կայքում."
+  },
+  "status_header": {
+    "message": "Արգելափակել գովազդները"
+  },
+  "status_page": {
+    "message": "Տվյալ էջում."
   }
 }

@@ -1,0 +1,67 @@
+{
+  "click_element_to_block_it": {
+    "message": "Click an element on the page to block it."
+  },
+  "easy_create_filter": {
+    "message": "Block element"
+  },
+  "options_refresh": {
+    "message": "Refresh"
+  },
+  "options_short": {
+    "message": "Options"
+  },
+  "overlay_notification_closing_button_hide": {
+    "message": "Close"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Stop showing notifications"
+  },
+  "promote_abp_module": {
+    "message": "Interested in Adblock Plus on mobile?"
+  },
+  "refresh_this_page": {
+    "message": "Refresh this page"
+  },
+  "refresh_to_take_effect": {
+    "message": "Click the button below for changes to take effect."
+  },
+  "sendReport": {
+    "message": "Report issue"
+  },
+  "share_on_facebook": {
+    "message": "Share on Facebook"
+  },
+  "share_on_twitter": {
+    "message": "Share on Twitter"
+  },
+  "share_on_twitter_message": {
+    "message": "I've blocked $number$ ads with Adblock Plus. Give it a try - it's FREE!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "social_media_share": {
+    "message": "Share numbers with friends"
+  },
+  "stats_header": {
+    "message": "Number of items blocked"
+  },
+  "stats_label_page": {
+    "message": "on this page"
+  },
+  "stats_label_total": {
+    "message": "in total"
+  },
+  "status_domain": {
+    "message": "This website:"
+  },
+  "status_header": {
+    "message": "Block ads on"
+  },
+  "status_page": {
+    "message": "This page:"
+  }
+}

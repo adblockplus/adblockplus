@@ -1,9 +1,9 @@
 {
   "add_filters_msg": {
-    "message": "Lisää suodatin\\suodattimia?"
+    "message": "Lisätäänkö suodatin?"
   },
   "block_element": {
-    "message": "Estä elementti"
+    "message": "Estä kohde"
   },
   "loading": {
     "message": "Ladataan..."

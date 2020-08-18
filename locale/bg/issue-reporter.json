@@ -23,6 +23,9 @@
   "issueReporter_comment_label": {
     "message": "Коментар (по избор):"
   },
+  "issueReporter_config_label": {
+    "message": "Включва данни за конфигурирането на браузъра ми, както и списък с дейните разширения, които употребявам."
+  },
   "issueReporter_confirmationMessage": {
     "message": "Докладът е записан. Ще го откриете на следния адрес:"
   },
@@ -45,7 +48,7 @@
     "message": "Опитът за изпращане на доклада се провали с код на грешка „?1?“. Моля, уверете се, че сте свързани с интернет и повторете. Ако това продължи, моля потърсете помощ във [link]форума на Adblock Plus[/link]."
   },
   "issueReporter_falseNegative_description": {
-    "message": "Adblock Plus е активен но аз все още виждам реклама или реклами."
+    "message": "Adblock Plus е включен, но аз все още виждам реклама или реклами."
   },
   "issueReporter_falseNegative_label": {
     "message": "Продължавам да виждам реклами"
@@ -67,6 +70,9 @@
   },
   "issueReporter_markIssueButton_label": {
     "message": "Отбелязване"
+  },
+  "issueReporter_other_issues": {
+    "message": "За всякакви други проблем се свържете с нас на адрес <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_page_title": {
     "message": "Докладчик на недостатък"

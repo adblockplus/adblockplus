@@ -1,4 +1,25 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "ඇඩ්බ්ලොක් ප්ලස් වැඩි දියුණු කිරීමට අපට උදව් කිරීමට, දැන්වීම් අක්‍රිය කළේ මන්දැයි අප සමග බෙදා ගැනීමට කමතිද?"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "නැත, ස්තුතියි"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "සමීක්ෂණයටකට යන්න"
+  },
+  "options_acceptableAds_ads_label": {
+    "message": "පිළිගත හැකි දැන්වීම්"
+  },
+  "options_acceptableAds_description": {
+    "message": "පිළිගත හැකි දැන්වීම් යනු අවිනිශ්චිත දැන්වීම් ය. වෙබ් අඩවි හිමිකරුවන් සඳහා ආදායම් උත්පාදනය කරන බැවින් ඒවා දැන්වීම් අවහිර කිරීම සහ සබැඳි අන්තර්ගතයට සහාය වීම අතර මැද කොටස වේ."
+  },
+  "options_acceptableAds_header": {
+    "message": "පිළිගත හැකි දැන්වීම්"
+  },
+  "options_control_remove_title": {
+    "message": "ඉවත් කරන්න"
+  },
   "options_customFilter_cancel": {
     "message": "අවලංගු කරන්න"
   },
@@ -10,5 +31,75 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "අසාර්ථකයි, වලංගු ලිපිනයක් නාෙවේ"
+  },
+  "options_footer_about": {
+    "message": "ඇඩ්බ්ලොක් ප්ලස් අප ගැන"
+  },
+  "options_footer_contribute": {
+    "message": "දායක වනවා"
+  },
+  "options_general_description": {
+    "message": "වෙබ් අඩවි වල පෙන්වන සහ සඟවන දේ ඇඩ්බ්ලොක් ප්ලස් තීරණය කරන්න"
+  },
+  "options_learn_more": {
+    "message": "වැඩිදුර ඉගෙන ගන්න"
+  },
+  "options_new_label": {
+    "message": "අලුත්"
+  },
+  "options_page_document_title": {
+    "message": "ඇඩ්බ්ලොක් ප්ලස් සැකසුම්"
+  },
+  "options_page_title": {
+    "message": "සැකසුම්"
+  },
+  "options_privacy_header": {
+    "message": "පෞද්ගලිකත්වය සහ ආරක්ෂාව"
+  },
+  "options_protection_privacy_tooltip": {
+    "message": "ඔබ පිවිසෙන වෙබ් අඩවි හරහා ඔබගේ සබැඳි ක්‍රියාකාරකම් නිරීක්ෂණය කළ හැකි දන්නා ආයතන වලින් ඔබේ පෞද්ගලිකත්වය ආරක්ෂා කරන්න."
+  },
+  "options_protection_social_tooltip": {
+    "message": "ඔබ පිවිසෙන වෙබ් අඩවි වල ඇති සමාජ මාධ්‍ය ජාලා අයිකන මඟින් ඔබේ ගවේෂණ පුරුදු මත පදනම්ව ඔබේ පැතිකඩක් තැනීමට සමාජ මාධ්‍ය ජාලවලට ඉඩ දෙයි - ඔබ ඒවා මත ක්ලික් නොකළත්. මෙම අයිකන සැඟවීමෙන් ඔබගේ පැතිකඩ ආරක්ෂා කළ හැකිය."
+  },
+  "options_tab_advanced": {
+    "message": "උසස් සැකසුම්"
+  },
+  "options_tab_general": {
+    "message": "පොදු"
+  },
+  "options_tab_help": {
+    "message": "උදව්"
+  },
+  "options_tab_whitelist": {
+    "message": "අවහිර නොකළ වෙබ් අඩවිය ලැයිස්තුව"
+  },
+  "options_tracking_warning_1": {
+    "message": "අපි නිරීක්ෂණය කළා ඔබ <strong>$tracking$</strong> සහ <strong>$acceptableAds$</strong> දෙකම සක්‍රීය කර ඇති බව.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "දැන්වීම්කරුවන් ඔබට වඩාත් අදාළ දැන්වීම් පෙන්වීම සඳහා, <strong>මැයි</strong> පිළිගත හැකි දැන්වීම් සමඟ යම් ලුහුබැඳීමක් ඇති බව ඔබ දැන ගැනීමට අපට අවශ්‍යය."
+  },
+  "options_tracking_warning_3": {
+    "message": "ඔබ අමතර පෞද්ගලිකත්වයට කැමති නම්, තෝරන්න <strong>$acceptableAdsPrivacy$</strong> පිරික්සුම් කොටුව පහතින්",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "හරි, තේරුණා"
   }
 }

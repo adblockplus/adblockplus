@@ -1,11 +1,11 @@
 {
   "add_filters_msg": {
-    "message": "Adaugă filtru/filtre?"
+    "message": "Adaugă filtru(re)?"
   },
   "block_element": {
     "message": "Blochează elementul"
   },
   "loading": {
-    "message": "Incărcare..."
+    "message": "Încărcare..."
   }
 }

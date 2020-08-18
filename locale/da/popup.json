@@ -29,6 +29,23 @@
   "sendReport": {
     "message": "Rapportér et problem"
   },
+  "share_on_facebook": {
+    "message": "Del på Facebook"
+  },
+  "share_on_twitter": {
+    "message": "Del på Twitter"
+  },
+  "share_on_twitter_message": {
+    "message": "Jeg har blokeret $number$ annoncer med Adblock Plus. Prøv udvidelsen - den er GRATIS!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "social_media_share": {
+    "message": "Del din statistik med dine venner"
+  },
   "stats_header": {
     "message": "Antal blokerede elementer"
   },

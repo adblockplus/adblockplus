@@ -1,4 +1,22 @@
 {
+  "problem_solution_opera_step_1": {
+    "message": "Buka tautan ini ke Opera Addons (akan terbuka di tab baru)"
+  },
+  "problem_solution_opera_step_2": {
+    "message": "Dari toolbar Opera, <em0>klik kanan</em0>/<em1>control-klik</em1> ikon <strong>Adblock Plus</strong> dan pilih <strong>Kelola ekstensi</strong>."
+  },
+  "problem_solution_opera_step_3": {
+    "message": "Klik <strong>panah</strong> di sebelah ikon Adblock Plus."
+  },
+  "problem_solution_opera_step_4": {
+    "message": "Temukan Adblock Plus dan klik <strong>X</strong> di sudut kanan atas."
+  },
+  "problem_solution_opera_step_5": {
+    "message": "Klik <strong>Hapus</strong>"
+  },
+  "problem_solution_opera_step_6": {
+    "message": "Muat ulang halaman Opera Addons"
+  },
   "problem_solution_opera_step_7": {
     "message": "Klik <strong>Tambahkan ke Opera</strong>."
   },

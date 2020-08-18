@@ -1,4 +1,13 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "To help us improve Adblock Plus, mind sharing why you’ve turned off Acceptable Ads?"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "No, thanks"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "Go to the survey"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "Acceptable Ads are not annoying and do not interfere with the content you are viewing. <a>Read more about the Acceptable Ads criteria</a>"
   },
@@ -19,6 +28,9 @@
   },
   "options_advanced_description": {
     "message": "Customize Adblock Plus, add or remove filter lists, create and maintain your own filter lists"
+  },
+  "options_builtin_filterList_add": {
+    "message": "Add built-in filter lists"
   },
   "options_close": {
     "message": "close"
@@ -44,6 +56,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "Temporarily block annoying items on a webpage, e.g. images or animated slideshows."
   },
+  "options_customize_header": {
+    "message": "Customisations"
+  },
+  "options_customize_iconStats": {
+    "message": "Show number of ads blocked in icon"
+  },
   "options_customize_showDevToolsPanel": {
     "message": "Show 'Adblock Plus' panel in developer tools"
   },
@@ -52,6 +70,18 @@
   },
   "options_customize_showNotifications": {
     "message": "Show useful notifications"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Allow notifications from Adblock Plus (notifications related to critical performance issues will always be shown)."
+  },
+  "options_dialog_about_copyright": {
+    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "currentYear": {
+        "content": "$1",
+        "example": "2017"
+      }
+    }
   },
   "options_dialog_about_title": {
     "message": "About Adblock Plus"
@@ -74,8 +104,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Enter a valid URL"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "URL must start with $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Add a filter list"
+  },
+  "options_dialog_invalid_message": {
+    "message": "For security reasons, only <strong>HTTPS</strong> filter lists and <strong>data</strong> URLs can be added."
+  },
+  "options_dialog_invalid_title": {
+    "message": "Error occurred"
   },
   "options_dialog_language_other_empty": {
     "message": "There are no available languages."
@@ -85,6 +129,12 @@
   },
   "options_dialog_predefined_confirm": {
     "message": "Yes, use this filter list"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Title"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "Are you sure you want to add this filter list?"
@@ -131,6 +181,14 @@
   "options_filterList_lastDownload_invalidURL": {
     "message": "Failed, not a valid address"
   },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Download failed. URL must start with $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_filterList_minutes": {
     "message": "minutes ago"
   },
@@ -152,6 +210,17 @@
   "options_filterList_website": {
     "message": "website"
   },
+  "options_filter_list_rule": {
+    "message": "Filter rule"
+  },
+  "options_filters_search_or_add": {
+    "message": "Search or add filter(s) (e.g. $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
+  },
   "options_footer_about": {
     "message": "About Adblock Plus"
   },
@@ -160,6 +229,12 @@
   },
   "options_general_description": {
     "message": "Determine what Adblock Plus shows and hides on websites"
+  },
+  "options_generic_error": {
+    "message": "Uh oh! Something went wrong. Please try again."
+  },
+  "options_help_center": {
+    "message": "Looking for answers to your questions? <a0>Visit our Help Center (English only)</a0>"
   },
   "options_help_description": {
     "message": "Find help or get in touch with us"
@@ -176,8 +251,24 @@
   "options_language_empty": {
     "message": "You don't have any language-specific filters."
   },
+  "options_language_filter_list": {
+    "message": "Language Filter Lists"
+  },
   "options_language_header": {
     "message": "Language"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>TIP:</strong> Only select the languages you need. Selecting more will slow down the ad blocker and, therefore, your browsing speed."
@@ -198,7 +289,7 @@
     "message": "New"
   },
   "options_page_document_title": {
-    "message": "Settings"
+    "message": "Adblock Plus Options"
   },
   "options_page_title": {
     "message": "Settings"
@@ -211,6 +302,12 @@
   },
   "options_protection_social_tooltip": {
     "message": "The social media icons on the websites you visit allow social media networks to build a profile of you based on your browsing habits - even when you don't click on them. Hiding these icons can protect your profile."
+  },
+  "options_rating_description": {
+    "message": "Please take a moment and help spread the word by rating Adblock Plus. Thanks for your support!"
+  },
+  "options_rating_title": {
+    "message": "Enjoying Adblock Plus?"
   },
   "options_report_bug": {
     "message": "Found a bug? <a>Send us a bug report</a>"
@@ -239,6 +336,34 @@
   "options_tab_whitelist": {
     "message": "Whitelisted websites"
   },
+  "options_tracking_warning_1": {
+    "message": "We noticed you have both <strong>$tracking$</strong> and <strong>$acceptableAds$</strong> enabled.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "We want you to know that in order for advertisers to show you more relevant ads, there <strong>may</strong> be some tracking with Acceptable Ads."
+  },
+  "options_tracking_warning_3": {
+    "message": "If you prefer extra privacy, select the <strong>$acceptableAdsPrivacy$</strong> checkbox below.",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "OK, got it"
+  },
   "options_whitelist_add": {
     "message": "Add website"
   },
@@ -250,6 +375,9 @@
   },
   "options_whitelist_empty_2": {
     "message": "Websites you trust and want to allow ads on will be shown here."
+  },
+  "options_whitelist_notification": {
+    "message": "Website has been whitelisted."
   },
   "options_whitelist_placeholder_example": {
     "message": "e.g. $domain$",

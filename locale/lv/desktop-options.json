@@ -152,6 +152,14 @@
   "options_filterList_website": {
     "message": "mājaslapa"
   },
+  "options_filters_search_or_add": {
+    "message": "Meklēt vai pievienot filtru (piem. $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
+  },
   "options_footer_about": {
     "message": "Par Adblock Plus"
   },
@@ -172,6 +180,12 @@
   },
   "options_language_description": {
     "message": "Optimizējiet Adblock Plus valodām, kurās parasti pārlūkojat tīmekļvietnes."
+  },
+  "options_language_empty": {
+    "message": "Nav ar valodu saistītu filtru."
+  },
+  "options_language_filter_list": {
+    "message": "Valodu filtru saraksts"
   },
   "options_language_header": {
     "message": "Valoda"

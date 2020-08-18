@@ -8,6 +8,9 @@
   "mops_action_cancel": {
     "message": "Anulează"
   },
+  "mops_enabled_label": {
+    "message": "Blochează pub pe:"
+  },
   "mops_error_url": {
     "message": "Introduceți un URL valid"
   },

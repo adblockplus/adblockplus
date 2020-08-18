@@ -28,5 +28,14 @@
   },
   "common_notification_hide": {
     "message": "Sulje ilmoitus"
+  },
+  "copy_selected": {
+    "message": "Kopioi valitut"
+  },
+  "delete": {
+    "message": "Poista"
+  },
+  "filter_action_failed": {
+    "message": "Jokin meni vikaan, yritä uudelleen."
   }
 }
