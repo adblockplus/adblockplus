@@ -17,6 +17,9 @@
   "firstRun_control_title": {
     "message": "Prenez le contrôle"
   },
+  "firstRun_donate": {
+    "message": "Faites un don"
+  },
   "firstRun_fair_description": {
     "message": "Nous vous encourageons à faire un usage loyal d’Adblock Plus et de l’option de mise sur liste blanche de certains sites web. En fonction des filtres que vous utilisez, vous comprenez et acceptez que des résultats involontaires peuvent se produire (par ex. contenu bloqué sur un site web). Consultez les <a0>Conditions d’utilisation</a0> pour obtenir des informations supplémentaires à propos de l’usage loyal d’Adblock Plus."
   },

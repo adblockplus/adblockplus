@@ -1,4 +1,7 @@
 {
+  "block_element_description": {
+    "message": "Заблокировать отдельный элемент на сайте"
+  },
   "click_element_to_block_it": {
     "message": "Нажмите на элемент на странице, чтобы заблокировать его."
   },
@@ -27,7 +30,7 @@
     "message": "Щёлкните кнопку внизу, чтобы изменения вступили в силу."
   },
   "sendReport": {
-    "message": "Сообщить об ошибке"
+    "message": "Сообщить о проблеме на этой странице"
   },
   "share_on_facebook": {
     "message": "Поделиться в Facebook"
@@ -36,6 +39,17 @@
     "message": "Поделиться в Twitter"
   },
   "share_on_twitter_message": {
+    "message": "Я заблокировал(-а) $number$ рекламных объявлений с Adblock Plus. Попробуйте и вы – это БЕСПЛАТНО!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "share_on_weibo": {
+    "message": "Поделиться в Weibo"
+  },
+  "share_on_weibo_message": {
     "message": "Я заблокировал(-а) $number$ рекламных объявлений с Adblock Plus. Попробуйте и вы – это БЕСПЛАТНО!",
     "placeholders": {
       "number": {

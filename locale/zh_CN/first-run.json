@@ -17,6 +17,9 @@
   "firstRun_control_title": {
     "message": "一切尽在掌控"
   },
+  "firstRun_donate": {
+    "message": "捐赠"
+  },
   "firstRun_fair_description": {
     "message": "我们建议您合理使用 Adblock Plus，并选择将网站列入白名单。根据您使用的过滤，您了解并接受可能会发生无意的结果（例如：拦截网站上的内容）。有关使用 Adblock Plus 的更多信息，请参阅<a0>使用条款</a0>。"
   },

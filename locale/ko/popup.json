@@ -1,4 +1,7 @@
 {
+  "block_element_description": {
+    "message": "이 웹사이트의 특정 요소 차단"
+  },
   "click_element_to_block_it": {
     "message": "페이지에서 차단할 요소를 클릭하세요."
   },
@@ -27,7 +30,7 @@
     "message": "효과를 적용하려면 하단의 버튼을 클릭하세요."
   },
   "sendReport": {
-    "message": "문제 보고"
+    "message": "이 페이지의 문제 신고"
   },
   "share_on_facebook": {
     "message": "Facebook에 공유하기"
@@ -36,6 +39,17 @@
     "message": "트위터에 공유하기"
   },
   "share_on_twitter_message": {
+    "message": "Adblock Plus로 광고 $number$개를 차단했습니다. 무료로 사용해보세요!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "share_on_weibo": {
+    "message": "웨이보(Weibo)에 공유하기"
+  },
+  "share_on_weibo_message": {
     "message": "Adblock Plus로 광고 $number$개를 차단했습니다. 무료로 사용해보세요!",
     "placeholders": {
       "number": {

@@ -6,16 +6,19 @@
     "message": "Adblock Plus is up-to-date"
   },
   "updates_update_i1_description": {
-    "message": "Als uw ABP-instellingen corrupt zijn geraakt door een browserprobleem, wordt de melding nu geopend in een nieuw browsertabblad."
+    "message": "Er is een korte beschrijving toegevoegd van de functie 'Blokkeer element' en een betere formulering voor de knop 'Rapporteer'."
   },
   "updates_update_i1_title": {
-    "message": "Datacorruptie-melding verplaatst"
+    "message": "De gebruikersinterface van ABP is nu iets gebruiksvriendelijker"
   },
   "updates_update_i2_description": {
-    "message": "Vertel anderen over uw favoriete reclameblokkering door het totaal aantal advertenties te delen dat u geblokkeerd heeft op uw favoriete socialemediakanalen."
+    "message": "We hebben het gebruik van de functie 'Blokkeer element' vergemakkelijkt, door toevoeging van zowel korte instructies als een voorbeeld van hoe de pagina eruit zal zien zonder het opdringerige element. Probeer het uit!"
+  },
+  "updates_update_i2_image": {
+    "message": "Voorbeeld waarbij het pictogram verschijnt met nieuw ontworpen knop 'Blokkeer element'."
   },
   "updates_update_i2_title": {
-    "message": "Er is een optie toegevoegd om het aantal geblokkeerde advertenties op sociale media te delen"
+    "message": "Bijgewerkte en verbeterde functie 'Blokkeer element'"
   },
   "updates_update_i3_description": {
     "message": "Lange filters kunnen nu in hun geheel bekeken worden, inclusief de CSS-selector."

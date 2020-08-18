@@ -139,6 +139,9 @@
   "options_dialog_predefined_title": {
     "message": "Biztosan fel akarja venni ezt a szűrőlistát?"
   },
+  "options_donate_button": {
+    "message": "Támogatás"
+  },
   "options_email": {
     "message": "E-mail:"
   },
@@ -303,6 +306,9 @@
   "options_protection_social_tooltip": {
     "message": "A meglátogatott weboldalakon lévő közösségimédia-ikonok lehetővé teszik a közösségi hálózatoknak egy profil felépítését a böngészési szokásai alapján – még akkor is, ha nem kattint rájuk. Az elrejtésük megvédheti a profilját."
   },
+  "options_rating_button": {
+    "message": "Értékeljen bennünket"
+  },
   "options_rating_description": {
     "message": "Szánjon rá egy pillanatot és segítsen az Adblock Plus értékelésével a jó hírünk terjeszítésében. Köszönjük támogatását!"
   },
@@ -320,6 +326,12 @@
   },
   "options_social_title": {
     "message": "Kapcsolat"
+  },
+  "options_supportUs_description": {
+    "message": "Kérjük, értékelje az ABP alkalmazást vagy támogasson bennünket. Köszönjük támogatását!"
+  },
+  "options_supportUs_title": {
+    "message": "Tetszik az Adblock Plus alkalmazás?"
   },
   "options_support_title": {
     "message": "Támogatás"

@@ -6,16 +6,19 @@
     "message": "Adblock Plus가 최신 상태입니다"
   },
   "updates_update_i1_description": {
-    "message": "브라우저 문제로 인해 ABP 설정이 간섭을 받게 되면 알림 메시지가 브라우저 새 탭에서 열립니다."
+    "message": "\"요소 차단\" 기능의 간단한 설명 추가 및 신고 버튼 설명 개선."
   },
   "updates_update_i1_title": {
-    "message": "데이터 간섭 공지 이동"
+    "message": "ABP 사용자 인터페이스가 더욱 편리해졌습니다."
   },
   "updates_update_i2_description": {
-    "message": "원하는 소셜 미디어 채널에 차단한 광고의 총합을 공유해 귀하가 사용하는 광고 차단기를 홍보하세요."
+    "message": "요소 차단 기능에 간단한 설명을 추가하고 거슬리는 요소 없이 페이지가 어떻게 표시되는지 미리 볼 수 있도록 해서 기능 이용이 더 쉬워졌습니다. 사용해보세요!"
+  },
+  "updates_update_i2_image": {
+    "message": "다시 디자인한 \"요소 차단\" 버튼 아이콘 팝업 예시."
   },
   "updates_update_i2_title": {
-    "message": "차단한 광고 수를 소셜 미디어에 공유하는 선택 기능 추가"
+    "message": "요소 차단 기능 업데이트 및 개선"
   },
   "updates_update_i3_description": {
     "message": "CSS 선택기를 포함하여 긴 필터 전체를 볼 수 있습니다."

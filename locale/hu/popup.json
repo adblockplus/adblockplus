@@ -1,4 +1,7 @@
 {
+  "block_element_description": {
+    "message": "Megadott elem blokkolása e weboldalon"
+  },
   "click_element_to_block_it": {
     "message": "Az elem blokkolásához kattintson egy elemre az oldalon."
   },
@@ -27,7 +30,7 @@
     "message": "A módosítások érvényesítéséhez kattintson az alábbi gombra."
   },
   "sendReport": {
-    "message": "Hiba bejelentése"
+    "message": "Probléma jelentése ezen oldalon"
   },
   "share_on_facebook": {
     "message": "Megosztás a Facebook-on"
@@ -36,6 +39,17 @@
     "message": "Megosztás a Twitter-en"
   },
   "share_on_twitter_message": {
+    "message": "Az Adblock Plus alkalmazással $number$ reklámot blokkoltam. Próbálja ki, INGYENES!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "share_on_weibo": {
+    "message": "Megosztás a Weibo mikroblog webhelyen"
+  },
+  "share_on_weibo_message": {
     "message": "Az Adblock Plus alkalmazással $number$ reklámot blokkoltam. Próbálja ki, INGYENES!",
     "placeholders": {
       "number": {

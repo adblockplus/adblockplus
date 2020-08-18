@@ -6,16 +6,19 @@
     "message": "Adblock Plus は最新版です"
   },
   "updates_update_i1_description": {
-    "message": "ブラウザの問題で ABP の設定が破損した場合、新しいタブで通知メッセージが表示されます。"
+    "message": "「要素をブロック」機能の簡潔な説明を追加。「報告」ボタンの説明を改良。"
   },
   "updates_update_i1_title": {
-    "message": "データ破損通知の表示場所が変更"
+    "message": "ABP のユーザーインタフェースがより使いやすくなりました"
   },
   "updates_update_i2_description": {
-    "message": "お気に入りのソーシャルメディアでブロックした広告の件数を共有して、お気に入りの広告ブロッカーについてお知り合いに伝えてください。"
+    "message": "「要素をブロック」機能がより使いやすくなりました。簡潔な説明とともに、目障りになる要素を除くとページがどのように表示されるかを示すプレビューを追加しました。お試しください！"
+  },
+  "updates_update_i2_image": {
+    "message": "新設計の「要素をブロック」ボタンによるポップアップの例。"
   },
   "updates_update_i2_title": {
-    "message": "ソーシャルメディアで広告ブロック件数を共有する機能が追加"
+    "message": "「要素をブロック」機能を更新・改良"
   },
   "updates_update_i3_description": {
     "message": "長いフィルターも、CSSセレクターを含め全体が表示できます。"

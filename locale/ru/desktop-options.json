@@ -139,6 +139,9 @@
   "options_dialog_predefined_title": {
     "message": "Вы уверены, что хотите добавить этот список фильтров?"
   },
+  "options_donate_button": {
+    "message": "Пожертвовать"
+  },
   "options_email": {
     "message": "Электронная почта:"
   },
@@ -303,6 +306,9 @@
   "options_protection_social_tooltip": {
     "message": "Значки социальных сетей на посещаемых сайтах позволяют социальным сетям формировать ваш профиль на основании ваших привычек просмотра ресурсов сети – даже если вы их не нажимаете. Скрытие этих значков поможет защитить ваш профиль."
   },
+  "options_rating_button": {
+    "message": "Оцените нас"
+  },
   "options_rating_description": {
     "message": "Просим уделить пару минут, чтобы оценить работу Adblock Plus и рассказать другим о его пользе. Благодарим Вас за поддержку!"
   },
@@ -320,6 +326,12 @@
   },
   "options_social_title": {
     "message": "Связаться"
+  },
+  "options_supportUs_description": {
+    "message": "Уделите немного времени, чтобы оценить ABP или сделать пожертвование на проект. Спасибо за вашу поддержку!"
+  },
+  "options_supportUs_title": {
+    "message": "Нравится Adblock Plus?"
   },
   "options_support_title": {
     "message": "Поддержка"

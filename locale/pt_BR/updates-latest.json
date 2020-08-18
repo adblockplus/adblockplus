@@ -6,16 +6,19 @@
     "message": "O Adblock Plus está atualizado"
   },
   "updates_update_i1_description": {
-    "message": "Se as configurações do ABP forem alteradas devido a um problema no navegador, a mensagem de notificação será aberta em uma nova aba do navegador."
+    "message": "Foi adicionada uma breve descrição do recurso Bloquear elemento e foi aprimorado o enunciado do botão Relatar."
   },
   "updates_update_i1_title": {
-    "message": "Notificação de alteração de dados movida"
+    "message": "A interface do usuário do ABP agora está um pouco mais simples."
   },
   "updates_update_i2_description": {
-    "message": "Ajude a divulgar o seu bloqueador de anúncios favorito, compartilhando, nos seus canais preferidos de mídias sociais, o número total de anúncios que você já bloqueou."
+    "message": "Tornamos o recurso Bloquear elemento mais fácil de usar, pois adicionamos instruções curtas e a visualização de como a página será exibida sem o elemento intrusivo. Experimente!"
+  },
+  "updates_update_i2_image": {
+    "message": "Exemplo de pop-up de ícone com botão \"Bloquear elemento\" redesenhado."
   },
   "updates_update_i2_title": {
-    "message": "Adicionada a opção para compartilhar, nas mídias sociais, o número de anúncios bloqueados"
+    "message": "Recurso Bloquear elemento atualizado e aprimorado"
   },
   "updates_update_i3_description": {
     "message": "Agora, os filtros longos podem ser visualizados na íntegra, incluindo o seletor CSS."

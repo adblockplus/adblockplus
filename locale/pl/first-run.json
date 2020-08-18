@@ -17,6 +17,9 @@
   "firstRun_control_title": {
     "message": "Masz kontrolę"
   },
+  "firstRun_donate": {
+    "message": "Wesprzyj"
+  },
   "firstRun_fair_description": {
     "message": "Zachęcamy do korzystania z Adblock Plus z wybraną opcją dozwolonych witryn internetowych. Użytkownik rozumie i akceptuje, że w zależności od używanych filtrów mogą pojawić się niezamierzone wyniki (przykładowo zablokowana treść witryn). Aby uzyskać więcej informacji o użytkowaniu Adblock Plus z zachowaniem zasad fair, patrz <a0>Warunki użytkowania</a0>."
   },

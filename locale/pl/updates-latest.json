@@ -6,16 +6,19 @@
     "message": "Adblock Plus został zaktualizowany"
   },
   "updates_update_i1_description": {
-    "message": "Jeśli utraciłeś swoje ustawienia ABP z powodu błędu przeglądarki, komunikat pojawi się w nowej karcie."
+    "message": "Dodano krótki opis funkcji Blokuj element oraz poprawiono przycisk Raport."
   },
   "updates_update_i1_title": {
-    "message": "Przeniesiony komunikat dotyczący uszkodzenia danych"
+    "message": "Interfejs ABP jest teraz bardziej przyjazny dla użytkownika"
   },
   "updates_update_i2_description": {
-    "message": "Podziel się z innymi użytkownikami Twoich ulubionych kanałów społecznościowych liczbą zablokowanych do tej pory reklam."
+    "message": "Uprościliśmy funkcję Blokuj element, dodając krótkie instrukcje, a także podgląd wyglądu strony bez uciążliwego elementu. Wypróbuj to!"
+  },
+  "updates_update_i2_image": {
+    "message": "Przykład wyskakującej ikony z przeprojektowanym przyciskiem \"Blokuj element\"."
   },
   "updates_update_i2_title": {
-    "message": "Dodatkowa opcja umożliwiająca udostępnienie w mediach społecznościowych liczby zablokowanych reklam"
+    "message": "Uaktualniona i ulepszona funkcja Blokuj element"
   },
   "updates_update_i3_description": {
     "message": "Długa lista filtrów jest teraz widoczna w całości, wraz z selektorem CSS."

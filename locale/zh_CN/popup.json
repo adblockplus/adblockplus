@@ -1,4 +1,7 @@
 {
+  "block_element_description": {
+    "message": "拦截此网站上的特定元素"
+  },
   "click_element_to_block_it": {
     "message": "点击页面上的一个元素来拦截它。"
   },
@@ -27,7 +30,7 @@
     "message": "点击以下按钮以使更改生效。"
   },
   "sendReport": {
-    "message": "报告问题"
+    "message": "报告此页面上的问题"
   },
   "share_on_facebook": {
     "message": "在 Facebook 上分享"
@@ -36,6 +39,17 @@
     "message": "在 Twitter 上分享"
   },
   "share_on_twitter_message": {
+    "message": "我使用$number$ Adblock Plus 拦截广告。试试吧，完全免费！",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "share_on_weibo": {
+    "message": "在微博上分享"
+  },
+  "share_on_weibo_message": {
     "message": "我使用$number$ Adblock Plus 拦截广告。试试吧，完全免费！",
     "placeholders": {
       "number": {

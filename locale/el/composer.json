@@ -4,5 +4,26 @@
   },
   "block_element": {
     "message": "Φραγή στοιχείου"
+  },
+  "composer_block": {
+    "message": "Αποκλεισμός"
+  },
+  "composer_cancel": {
+    "message": "Ακύρωση"
+  },
+  "composer_elements": {
+    "message": "επιλεγμένο/α στοιχείο/α"
+  },
+  "composer_loading": {
+    "message": "Φορτώνει..."
+  },
+  "composer_preview": {
+    "message": "Προεπισκόπηση"
+  },
+  "composer_undo_preview": {
+    "message": "Έξοδος από τη λειτουργία προεπισκόπησης"
+  },
+  "composer_unselect": {
+    "message": "Αποεπιλογή"
   }
 }

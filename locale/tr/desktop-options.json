@@ -139,6 +139,9 @@
   "options_dialog_predefined_title": {
     "message": "Bu filtre listesini eklemek istediğinizden emin misiniz?"
   },
+  "options_donate_button": {
+    "message": "Bağış yapın"
+  },
   "options_email": {
     "message": "E-posta:"
   },
@@ -303,6 +306,9 @@
   "options_protection_social_tooltip": {
     "message": "Ziyaret ettiğiniz sayfalarda yer alan sosyal medya düğmeleri (veya simgeleri) tarama alışkanlıklarınızı temel alarak sizin bir \"resminizi\" oluşturur. Kimliğinizi korumak için bu düğmeleri gizleyin."
   },
+  "options_rating_button": {
+    "message": "Bizi değerlendirin"
+  },
   "options_rating_description": {
     "message": "Lütfen birkaç dakikanızı ayırın ve Adblock Plus'ı değerlendirerek herkesin Adblock Plus'ı tanımasına yardımcı olun. Desteğiniz için teşekkür ederiz!"
   },
@@ -320,6 +326,12 @@
   },
   "options_social_title": {
     "message": "Temas kur"
+  },
+  "options_supportUs_description": {
+    "message": "Lütfen bir dakikanızı ayırarak ABP'yi değerlendirin veya projeye bağış yapın. Desteğiniz için teşekkür ederiz!"
+  },
+  "options_supportUs_title": {
+    "message": "Adblock Plus'tan keyif alıyor musunuz?"
   },
   "options_support_title": {
     "message": "Destek"

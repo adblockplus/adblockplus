@@ -139,6 +139,9 @@
   "options_dialog_predefined_title": {
     "message": "您确定要添加此过滤列表吗？"
   },
+  "options_donate_button": {
+    "message": "捐赠"
+  },
   "options_email": {
     "message": "电子邮件："
   },
@@ -303,6 +306,9 @@
   "options_protection_social_tooltip": {
     "message": "您访问的网站上的社交媒体图标允许社交媒体网络根据您的浏览习惯建立您的个人资料记录——即使您没有点击它们。隐藏这些图标可以保护您的个人资料。"
   },
+  "options_rating_button": {
+    "message": "评价我们"
+  },
   "options_rating_description": {
     "message": "请花一点时间为 Adblock Plus 评分，帮助它宣传。感谢您的支持！"
   },
@@ -320,6 +326,12 @@
   },
   "options_social_title": {
     "message": "保持联系"
+  },
+  "options_supportUs_description": {
+    "message": "请花一点时间评价 ABP 或对项目进行捐赠。感谢您的支持！"
+  },
+  "options_supportUs_title": {
+    "message": "喜欢 Adblock Plus？"
   },
   "options_support_title": {
     "message": "支持"

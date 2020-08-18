@@ -139,6 +139,9 @@
   "options_dialog_predefined_title": {
     "message": "هل أنت بالتأكيد تريد إضافة قائمة عوامل التصفية هذه؟"
   },
+  "options_donate_button": {
+    "message": "تبرّع"
+  },
   "options_email": {
     "message": "البريد الإلكتروني:"
   },
@@ -303,6 +306,9 @@
   "options_protection_social_tooltip": {
     "message": "تتيح رموز مواقع التواصل الاجتماعي التي تظهر في مواقع الويب لك زيارة شبكات مواقع التواصل الاجتماعي لإنشاء بروفايل شخصي لك استنادًا إلى عاداتك في التصفح - حتى عندما لا تنقر فوق تلك الأزرار أو الرموز. يمكن حماية بروفايلك الشخصي من خلال إخفاء تلك الرموز."
   },
+  "options_rating_button": {
+    "message": "قيّمنا"
+  },
   "options_rating_description": {
     "message": "الرجاء قضاء بعض الوقت والمساعدة في التعبير عن رأيك عن طريق تقييم Adblock Plus. شكرًا لك على دعمك!"
   },
@@ -320,6 +326,12 @@
   },
   "options_social_title": {
     "message": "تواصل معنا"
+  },
+  "options_supportUs_description": {
+    "message": "الرجاء تخصيص بعض الوقت لتقييم Adblock Plus أو التبرع لصالح المشروع. شكرًا لك لما تقدّمه من دعم!"
+  },
+  "options_supportUs_title": {
+    "message": "هل تجد Adblock Plus ممتعًا؟"
   },
   "options_support_title": {
     "message": "الدعم"

@@ -1,4 +1,7 @@
 {
+  "block_element_description": {
+    "message": "Een specifiek onderdeel op deze website blokkeren"
+  },
   "click_element_to_block_it": {
     "message": "Klik op een element op de pagina om het te blokkeren."
   },
@@ -27,7 +30,7 @@
     "message": "Klik op de knop hieronder om wijzigingen door te voeren."
   },
   "sendReport": {
-    "message": "Probleem melden"
+    "message": "Een probleem op deze pagina rapporteren"
   },
   "share_on_facebook": {
     "message": "Delen op Facebook"
@@ -36,6 +39,17 @@
     "message": "Delen op Twitter"
   },
   "share_on_twitter_message": {
+    "message": "Ik heb reclame geblokkeerd $number$ met Adblock Plus. Probeer het eens - het is GRATIS!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "share_on_weibo": {
+    "message": "Delen op Weibo"
+  },
+  "share_on_weibo_message": {
     "message": "Ik heb reclame geblokkeerd $number$ met Adblock Plus. Probeer het eens - het is GRATIS!",
     "placeholders": {
       "number": {

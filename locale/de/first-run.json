@@ -17,6 +17,9 @@
   "firstRun_control_title": {
     "message": "Du hast die Kontrolle"
   },
+  "firstRun_donate": {
+    "message": "Spenden"
+  },
   "firstRun_fair_description": {
     "message": "Wir ermutigen dich, Adblock Plus sowie die Whitelist-Option für Webseiten angemessen zu nutzen. Abhängig von den Filtern, die du verwendest, akzeptierst du, dass unbeabsichtigte Ergebnisse auftreten können (z. B. blockierte Inhalte einer Webseite). Lies die <a0>Nutzungsbedingungen</a0> für weitere Informationen zur angemessenen Nutzung von Adblock Plus."
   },

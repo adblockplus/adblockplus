@@ -6,16 +6,19 @@
     "message": "Adblock Plus 已更新"
   },
   "updates_update_i1_description": {
-    "message": "如果您的 ABP 设置因浏览器问题而损坏，通知消息现在将在新的浏览器页面中打开。"
+    "message": "添加了“拦截元素”功能的简短描述，改进了“报告”按钮的语言表述。"
   },
   "updates_update_i1_title": {
-    "message": "数据损坏通知已改变位置"
+    "message": "ABP 用户介面现在更易于使用"
   },
   "updates_update_i2_description": {
-    "message": "请在您最喜爱的社交媒体渠道上分享您已封锁的广告总数，帮助您喜欢的广告拦截程序广而告之。"
+    "message": "我们通过添加简短的说明，以及提供页面在没有侵入性元素时的预览，让“拦截元素”功能更易于使用。试用一下吧！"
+  },
+  "updates_update_i2_image": {
+    "message": "带有重新设计的“拦截元素”按钮的弹出图标示例。"
   },
   "updates_update_i2_title": {
-    "message": "添加了在社交媒体上分享已拦截广告数的选项"
+    "message": "更新及改进的“拦截元素”功能"
   },
   "updates_update_i3_description": {
     "message": "现在可以完整查看长筛选器，包括 CSS 选择器。"

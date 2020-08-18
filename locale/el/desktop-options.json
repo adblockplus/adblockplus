@@ -121,6 +121,9 @@
   "options_dialog_predefined_title": {
     "message": "Σίγουρα θέλετε να προσθέσετε αυτήν τη λίστα φίλτρων;"
   },
+  "options_donate_button": {
+    "message": "Κάντε δωρεά"
+  },
   "options_email": {
     "message": "Email:"
   },
@@ -261,6 +264,9 @@
   "options_protection_social_tooltip": {
     "message": "Τα εικονίδια κοινωνικών μέσων στους ιστότοπους που επισκέπτεστε επιτρέπουν στα δίκτυα των κοινωνικών μέσων να δημιουργήσουν ένα προφίλ με βάση τις συνήθειες περιήγησης σας - ακόμα και όταν δεν κάνετε κλικ σε αυτά. Η απόκρυψη αυτών των εικονιδίων μπορεί να προστατεύσει το προφίλ σας."
   },
+  "options_rating_button": {
+    "message": "Βαθμολογήστε μας"
+  },
   "options_rating_description": {
     "message": "Βοηθήστε μας να διαδώσουμε το προϊόν μας βαθμολογώντας το Adblock Plus. Σας ευχαριστούμε για την υποστήριξή σας!"
   },
@@ -278,6 +284,12 @@
   },
   "options_social_title": {
     "message": "Επικοινωνήστε"
+  },
+  "options_supportUs_description": {
+    "message": "Αφιερώστε μερικά λεπτά για να βαθμολογήσετε το ABP ή για να κάνετε δωρεά στο έργο. Σας ευχαριστούμε για την στήριξή σας!"
+  },
+  "options_supportUs_title": {
+    "message": "Απολαμβάνετε το Adblock Plus;"
   },
   "options_support_title": {
     "message": "Υποστήριξη"

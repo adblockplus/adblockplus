@@ -1,4 +1,7 @@
 {
+  "block_element_description": {
+    "message": "Αποκλεισμός στοιχείου σε αυτόν τον ιστότοπο"
+  },
   "easy_create_filter": {
     "message": "Φραγή στοιχείου"
   },
@@ -14,6 +17,9 @@
   "refresh_to_take_effect": {
     "message": "Κάντε κλικ στο παρακάτω κουμπί για να πραγματοποιηθούν οι αλλαγές."
   },
+  "sendReport": {
+    "message": "Αναφορά ενός προβλήματος σε αυτή την σελίδα"
+  },
   "share_on_facebook": {
     "message": "Κοινοποίηση στο Facebook"
   },
@@ -21,6 +27,17 @@
     "message": "Κοινοποίηση στο Twitter"
   },
   "share_on_twitter_message": {
+    "message": "Εχώ αποκλείσει $number$ τις διαφημίσεις με το Adblock Plus. Δοκιμάστε το - είναι ΔΩΡΕΑΝ!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "share_on_weibo": {
+    "message": "Κοινοποίηση στο Weibo"
+  },
+  "share_on_weibo_message": {
     "message": "Εχώ αποκλείσει $number$ τις διαφημίσεις με το Adblock Plus. Δοκιμάστε το - είναι ΔΩΡΕΑΝ!",
     "placeholders": {
       "number": {

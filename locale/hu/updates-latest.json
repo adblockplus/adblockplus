@@ -6,16 +6,19 @@
     "message": "Az Adblock Plus naprakész"
   },
   "updates_update_i1_description": {
-    "message": "Arra az esetre, ha böngésző probléma miatt az ABP beállításai módosulnak, az értesítési üzenet most egy új böngészőablakban jelenik meg."
+    "message": "Hozzáadtuk az Elem blokkolása funkció rövid leírását, és javítottuk a Jelentés gomb megjelenését."
   },
   "updates_update_i1_title": {
-    "message": "Áthelyezésre került az adatsérülési értesítés"
+    "message": "Az ABP felhasználói felület még felhasználóbarátabb lett."
   },
   "updates_update_i2_description": {
-    "message": "Vigye jó hírét kedvenc reklámblokkoló alkalmazásának, és ossza meg a blokkolt hirdetések számát kedvenc közösségi média oldalain."
+    "message": "Egyszerűsítettük az Elem blokkolása funkció használatát egy rövid leírás hozzáadásával, illetve az oldal zavaró elem nélküli előnézetével. Próbálja ki!"
+  },
+  "updates_update_i2_image": {
+    "message": "Példa felugró ikonra újratervezett \"Elem blokkolása\" gombbal."
   },
   "updates_update_i2_title": {
-    "message": "Hozzáadott beállítás a blokkolt hirdetések számának megosztásához a közösségi oldalakon"
+    "message": "Frissített és javított Elem blokkolása funkció"
   },
   "updates_update_i3_description": {
     "message": "A hosszú szűrők most teljes egészében megtekinthetők, beleértve a CSS kiválasztót."

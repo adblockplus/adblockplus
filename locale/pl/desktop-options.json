@@ -139,6 +139,9 @@
   "options_dialog_predefined_title": {
     "message": "Czy chcesz użyć tego zestaw filtrów?"
   },
+  "options_donate_button": {
+    "message": "Wesprzyj"
+  },
   "options_email": {
     "message": "E-mail:"
   },
@@ -303,6 +306,9 @@
   "options_protection_social_tooltip": {
     "message": "Ikony mediów społecznościowych znajdujące się w odwiedzanych witrynach internetowych umożliwiaj sieciom mediów społecznościowych na budowanie Twojego profilu w oparciu o Twoje nawyki przeglądania – nawet, jeśli ich nie klikasz. Ukrycie tych ikon może ochronić Twój profil."
   },
+  "options_rating_button": {
+    "message": "Oceń nas"
+  },
   "options_rating_description": {
     "message": "Poświęć chwilę i pomóż spopularyzować Adblock Plusa, wystawiając ocenę. Dziękujemy za wsparcie!"
   },
@@ -320,6 +326,12 @@
   },
   "options_social_title": {
     "message": "Bądź w kontakcie"
+  },
+  "options_supportUs_description": {
+    "message": "Poświęć chwilę, aby ocenić ABP lub przekazać darowiznę na projekt. Dziękujemy za wsparcie!"
+  },
+  "options_supportUs_title": {
+    "message": "Lubisz Adblock Plus?"
   },
   "options_support_title": {
     "message": "Pomoc"
