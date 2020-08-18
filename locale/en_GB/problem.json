@@ -1,0 +1,65 @@
+{
+  "notification_problem_message": {
+    "message": "An issue has caused your ABP settings to be reset to default. <a>Fix the issue and learn more</a>"
+  },
+  "problem_note": {
+    "message": "Note that depending on how you use ABP, you may need to re-configure your settings, custom filters, and whitelisted websites once you reinstall Adblock Plus."
+  },
+  "problem_os_mac": {
+    "message": "Mac"
+  },
+  "problem_os_windows": {
+    "message": "Windows"
+  },
+  "problem_social_description": {
+    "message": "Experiencing an issue? Contact our support team"
+  },
+  "problem_social_email": {
+    "message": "Email"
+  },
+  "problem_social_facebook": {
+    "message": "Facebook"
+  },
+  "problem_social_title": {
+    "message": "Still looking for help?"
+  },
+  "problem_social_twitter": {
+    "message": "Twitter"
+  },
+  "problem_solution_action": {
+    "message": "Click here to uninstall and reinstall Adblock Plus"
+  },
+  "problem_solution_opera_step_1": {
+    "message": "Open this link to Opera Addons (it will open in a new tab)"
+  },
+  "problem_solution_opera_step_2": {
+    "message": "From the Opera toolbar, <em0>right-click</em0> / <em1>control-click</em1> the <strong>Adblock Plus</strong> icon and select <strong>Manage extension</strong>."
+  },
+  "problem_solution_opera_step_3": {
+    "message": "Click the <strong>arrow</strong> next to the Adblock Plus icon."
+  },
+  "problem_solution_opera_step_4": {
+    "message": "Locate Adblock Plus and click the <strong>X</strong> in the upper-right corner."
+  },
+  "problem_solution_opera_step_5": {
+    "message": "Click <strong>Remove</strong>."
+  },
+  "problem_solution_opera_step_6": {
+    "message": "Refresh the Opera Addons page."
+  },
+  "problem_solution_opera_step_7": {
+    "message": "Click <strong>Add to Opera</strong>."
+  },
+  "problem_solution_title": {
+    "message": "The solution:"
+  },
+  "problem_subtitle": {
+    "message": "Because of this, your ABP settings have been reset to default. To resolve the issue, you'll need to uninstall and reinstall Adblock Plus. Click the link below to do this."
+  },
+  "problem_subtitle_opera": {
+    "message": "Because of this, your ABP settings have been reset to default. To resolve the issue, you'll need to uninstall and reinstall Adblock Plus. Follow the steps below to do this."
+  },
+  "problem_title": {
+    "message": "A browser issue has caused your ABP settings to be reset."
+  }
+}

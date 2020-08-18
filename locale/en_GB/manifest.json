@@ -1,0 +1,14 @@
+{
+  "description": {
+    "message": "Block YouTube™ ads and pop-ups & fight malware!"
+  },
+  "name": {
+    "message": "Adblock Plus"
+  },
+  "name_devbuild": {
+    "message": "Adblock Plus development build"
+  },
+  "name_releasebuild": {
+    "message": "Adblock Plus - free ad blocker"
+  }
+}

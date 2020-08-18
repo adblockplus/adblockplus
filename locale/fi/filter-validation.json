@@ -11,6 +11,9 @@
   "filter_invalid_regexp": {
     "message": "Virheellinen normaali-ilmaus"
   },
+  "filter_slow": {
+    "message": "Suodatin toimii nopeammin, jos suodattimen pituus on optimaalinen eikä se sisällä yleisiä ilmauksia."
+  },
   "filter_unknown_option": {
     "message": "Tuntematon suodatusvaihtoehto"
   },

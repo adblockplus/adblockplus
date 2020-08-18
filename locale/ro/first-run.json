@@ -12,7 +12,7 @@
     "message": "Adblock Browser"
   },
   "firstRun_control_description": {
-    "message": "În mod implicit, puteţi vedea unele reclame neagasante care aderă la <a0>criterii stricte</a0>. Vom identifica aceste anunţuri ca anunţurile acceptabile. Preferi să blochezi toate anunţurile? <a1>stopaţi anunţurile acceptabile</a1> în <a2>setările</a2> tale."
+    "message": "În mod implicit, poți vedea unele reclame non-intruzive care aderă la <a0>criterii stricte</a0>. Vom identifica aceste reclame ca Reclame Acceptabile. Preferi să blochezi toate reclamele? <a1>Oprește Reclamele Acceptabile</a1> în <a2>Setările</a2> tale."
   },
   "firstRun_control_title": {
     "message": "Aveţi pe deplin controlul"
@@ -27,7 +27,7 @@
     "message": "Aveţi pe deplin controlul browser-ului dvs."
   },
   "firstRun_title": {
-    "message": "Instalare reusita!"
+    "message": "Instalare reușită!"
   },
   "firstRun_warning_dataCorrupted_intro": {
     "message": "Unii utilizatori se confruntă cu problema deschiderii acestei pagini de fiecare datã când browser-ul este deschis. Această problemă poate fi rezolvatã prin dezinstalarea şi reinstalarea Adblock Plus:"
@@ -36,7 +36,7 @@
     "message": "Dacă încă mai aveţi nevoie de ajutor, contactaţi-ne la <a0>support@adblockplus.org</a0> sau vizitaţi <a1>centrul de ajutor</a1>."
   },
   "firstRun_warning_dataCorrupted_step1": {
-    "message": "Deschideți pagina de extensii din browser-ul dumneavoastră."
+    "message": "Deschide fila Extensii a browser-ului."
   },
   "firstRun_warning_dataCorrupted_step2": {
     "message": "Localizaţi Adblock Plus şi dezinstalaţi-l."

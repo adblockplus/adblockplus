@@ -8,6 +8,9 @@
   "day1_community_title": {
     "message": "Присъединете се към общността на Adblock Plus"
   },
+  "notification_day1_message": {
+    "message": "Това са много досадни реклами. <a>Намерете какво друго може да блокира Adblock Plus.</a>"
+  },
   "notification_day1_title": {
     "message": "Вече блокирахте $ads$ реклами!",
     "placeholders": {

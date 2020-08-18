@@ -1,51 +1,51 @@
 {
   "devtools_action_block": {
-    "message": "Blochează element"
+    "message": "Block item"
   },
   "devtools_action_remove": {
-    "message": "Elimina regulă"
+    "message": "Remove rule"
   },
   "devtools_action_unblock": {
-    "message": "Adăugare excepție"
+    "message": "Add exception"
   },
   "devtools_filter_origin_custom": {
-    "message": "definit de utilizator"
+    "message": "user-defined"
   },
   "devtools_filter_origin_none": {
-    "message": "abonament anonim"
+    "message": "unnamed subscription"
   },
   "devtools_filter_subtitle": {
-    "message": "Origine"
+    "message": "Origin"
   },
   "devtools_filter_title": {
-    "message": "Filtru"
+    "message": "Filter"
   },
   "devtools_footer": {
-    "message": "<a0>reload</a0> pagină pentru a vedea efectul filtrului modificat"
+    "message": "<a0>Reload</a0> page to see effect of filter changes"
   },
   "devtools_header": {
-    "message": "Afişare <slot0></slot0> elemente de tipul <slot1></slot1>"
+    "message": "Show <slot0></slot0> items of <slot1></slot1> type"
   },
   "devtools_header_state_all": {
-    "message": "toate"
+    "message": "all"
   },
   "devtools_header_state_blocked": {
-    "message": "blocat"
+    "message": "blocked"
   },
   "devtools_header_state_whitelisted": {
-    "message": "permis"
+    "message": "whitelisted"
   },
   "devtools_header_type_any": {
-    "message": "orice"
+    "message": "any"
   },
   "devtools_request_subtitle": {
-    "message": "Domeniu de document"
+    "message": "Document domain"
   },
   "devtools_request_title": {
-    "message": "Cerere"
+    "message": "Request"
   },
   "devtools_request_url": {
-    "message": "<a0>$original$</a0> rescrise la <a1>$rewritten$</a1>",
+    "message": "<a0>$original$</a0> rewritten to <a1>$rewritten$</a1>",
     "placeholders": {
       "original": {
         "content": "$1",
@@ -58,6 +58,6 @@
     }
   },
   "devtools_type_title": {
-    "message": "Tip"
+    "message": "Type"
   }
 }

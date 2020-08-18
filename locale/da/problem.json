@@ -1,0 +1,65 @@
+{
+  "notification_problem_message": {
+    "message": "Dine ABP-indstillinger er blevet nulstillet til standard pga. en fejl. <a>Ret denne fejl, og få flere oplysninger</a>"
+  },
+  "problem_note": {
+    "message": "Bemærk, at afhængigt af, hvordan du bruger ABP, kan det være nødvendigt at omkonfigurere dine indstillinger, brugertilpassede filtre og hvidlistede websteder efter du har geninstalleret Adblock Plus."
+  },
+  "problem_os_mac": {
+    "message": "Mac"
+  },
+  "problem_os_windows": {
+    "message": "Windows"
+  },
+  "problem_social_description": {
+    "message": "Er det opstået en fejl? Kontakt vores supportteam"
+  },
+  "problem_social_email": {
+    "message": "E-mail"
+  },
+  "problem_social_facebook": {
+    "message": "Facebook"
+  },
+  "problem_social_title": {
+    "message": "Har du stadig brug for hjælp?"
+  },
+  "problem_social_twitter": {
+    "message": "Twitter"
+  },
+  "problem_solution_action": {
+    "message": "Klik her for at afinstallere og geninstallere Adblock Plus"
+  },
+  "problem_solution_opera_step_1": {
+    "message": "Åbn dette link til Opera Addons (åbnes i en ny fane)"
+  },
+  "problem_solution_opera_step_2": {
+    "message": "<em0>Højreklik</em0>/<em1>Ctrl+klik</em1> på <strong>Adblock Plus</strong>-ikonet på værktøjslinjen i Opera, og vælg <strong>Administrer udvidelse</strong>."
+  },
+  "problem_solution_opera_step_3": {
+    "message": "Klik på <strong>pilen</strong> ved siden af Adblock Plus-ikonet."
+  },
+  "problem_solution_opera_step_4": {
+    "message": "Find Adblock Plus, og klik på <strong>X</strong> i øverste højre hjørne."
+  },
+  "problem_solution_opera_step_5": {
+    "message": "Klik på <strong>Fjern</strong>."
+  },
+  "problem_solution_opera_step_6": {
+    "message": "Opdater siden Opera Addons."
+  },
+  "problem_solution_opera_step_7": {
+    "message": "Klik på <strong>Føj til Opera</strong>."
+  },
+  "problem_solution_title": {
+    "message": "Løsning:"
+  },
+  "problem_subtitle": {
+    "message": "Dine ABP-indstillinger er derfor blevet nulstillet til standard. For at rette denne fejl, skal du afinstallere og geninstallere Adblock Plus. Klik på linket nedenfor for at gøre dette."
+  },
+  "problem_subtitle_opera": {
+    "message": "Dine ABP-indstillinger er derfor blevet nulstillet til standard. For at rette denne fejl, skal du afinstallere og geninstallere Adblock Plus. Følg nedenstående trin for at gøre dette."
+  },
+  "problem_title": {
+    "message": "En browser-fejl er skyld i en nulstilling af dine ABP-indstillinger."
+  }
+}

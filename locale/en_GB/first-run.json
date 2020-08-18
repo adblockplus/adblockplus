@@ -1,0 +1,50 @@
+{
+  "firstRun_browser_description": {
+    "message": "From the team behind Adblock Plus, the most popular ad blocker for desktop browsers, Adblock Browser is now available for your Android and iOS devices."
+  },
+  "firstRun_browser_store_android": {
+    "message": "Android app on Google Play"
+  },
+  "firstRun_browser_store_ios": {
+    "message": "Available on the iTunes App Store"
+  },
+  "firstRun_browser_title": {
+    "message": "Adblock Browser app"
+  },
+  "firstRun_control_description": {
+    "message": "By default, you may see some nonintrusive ads that adhere to <a0>strict criteria</a0>. We identify these ads as Acceptable Ads. Prefer to block all ads? <a1>Turn off Acceptable Ads</a1> in your <a2>Settings</a2>."
+  },
+  "firstRun_control_title": {
+    "message": "You're in control"
+  },
+  "firstRun_fair_description": {
+    "message": "We encourage you to make fair use of Adblock Plus and the option to whitelist websites. Depending on the filters you use, you understand and accept that unintentional results might occur (e.g. blocked content on a website). Refer to the <a0>Terms of Use</a0> for more information about fair use of Adblock Plus."
+  },
+  "firstRun_fair_title": {
+    "message": "Fair use"
+  },
+  "firstRun_subtitle": {
+    "message": "You just took control of your browser."
+  },
+  "firstRun_title": {
+    "message": "Installation Successful!"
+  },
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "Some users are experiencing an issue where this page opens each time their browser is launched. This issue can be resolved by uninstalling and reinstalling Adblock Plus:"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "If you still need help, contact us at <a0>support@adblockplus.org</a0> or visit our <a1>Help Center</a1>."
+  },
+  "firstRun_warning_dataCorrupted_step1": {
+    "message": "Open your browser's Extensions tab."
+  },
+  "firstRun_warning_dataCorrupted_step2": {
+    "message": "Locate Adblock Plus and remove it."
+  },
+  "firstRun_warning_dataCorrupted_step3": {
+    "message": "Reinstall Adblock Plus from <a>adblockplus.org</a>."
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "It seems that an issue caused all filters to be removed and we were unable to restore a backup. Therefore, we had to reset your filters and Acceptable Ads settings. Please check your filter lists and Acceptable Ads settings in the <a>Adblock Plus options</a>."
+  }
+}

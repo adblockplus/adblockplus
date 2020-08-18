@@ -116,7 +116,7 @@
     "message": "Tilføj en filterliste"
   },
   "options_dialog_invalid_message": {
-    "message": "Af sikkerhedsårsager er det kun muligt at tilføje HTTPS-filterlister."
+    "message": "Af sikkerhedsårsager er det kun muligt at tilføje <strong>HTTPS</strong>-filterlister og <strong>data</strong>-URL-adresser."
   },
   "options_dialog_invalid_title": {
     "message": "Der opstod en fejl"
@@ -128,7 +128,13 @@
     "message": "Vælg et sprog"
   },
   "options_dialog_predefined_confirm": {
-    "message": "Ja, brug denne filterliste"
+    "message": "Ja, tilføj denne filterliste"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Titel"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL-adresse"
   },
   "options_dialog_predefined_title": {
     "message": "Er du sikker på, at du vil tilføje denne filterliste?"

@@ -1,0 +1,53 @@
+{
+  "day1_blockelement_description": {
+    "message": "Blochează-le cu eleganta funcție de blocare de elemente a Adblock Plus."
+  },
+  "day1_blockelement_more": {
+    "message": "Află cum"
+  },
+  "day1_blockelement_screenshot": {
+    "message": "Exemplu de icon pop-up cu butonul \"Blochează elementul\" evidențiat."
+  },
+  "day1_blockelement_title": {
+    "message": "Ești obosit de secțiunile de comentarii deprimante?"
+  },
+  "day1_community_contact": {
+    "message": "Contactează-ne!"
+  },
+  "day1_community_contact_subject": {
+    "message": "Ai nevoie de asistență?"
+  },
+  "day1_community_description_1": {
+    "message": "Ca un proiect open source, depindem de ajutor de la utilizatori ca tine ca să le ameliorăm experiența blocării de reclame."
+  },
+  "day1_community_description_2": {
+    "message": "Ce caracteristici doriți să vedeți? Ce putem îmbunătăți? Adblock Plus împiedică funcționarea anumitor situri?"
+  },
+  "day1_community_title": {
+    "message": "Alătură-te comunității Adblock Plus"
+  },
+  "day1_header_more": {
+    "message": "Află mai multe despre publicitatea malițioasă"
+  },
+  "day1_header_title": {
+    "message": "Adblock Plus <strong>a blocat <em0>$ads$ (de) reclame</em0> în <em1>ultima jumătate de oră</em1>,</strong> din care unele ar fi putut include conținut malițios.",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
+  "notification_day1_message": {
+    "message": "Sunt multe reclame enervante. <a>Află ce altceva poate bloca Adblock Plus.</a>"
+  },
+  "notification_day1_title": {
+    "message": "Ai blocat deja $ads$ (de) reclame!",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  }
+}

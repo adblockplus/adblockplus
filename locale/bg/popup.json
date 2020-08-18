@@ -20,11 +20,31 @@
   "promote_abp_module": {
     "message": "Интересува ви мобилен Adblock Plus?"
   },
+  "refresh_this_page": {
+    "message": "Опресняване на тази страница"
+  },
   "refresh_to_take_effect": {
     "message": "Натиснете <strong>Опресни</strong> за влизане на промените в сила."
   },
   "sendReport": {
     "message": "Докладвай недостатъка"
+  },
+  "share_on_facebook": {
+    "message": "Споделяне във Facebook"
+  },
+  "share_on_twitter": {
+    "message": "Споделяне в Twitter"
+  },
+  "share_on_twitter_message": {
+    "message": "Блокирах $number$ реклами с Adblock Plus. Опитайте и вие - безплатно е!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "social_media_share": {
+    "message": "Споделете цифри с приятели"
   },
   "stats_header": {
     "message": "Брой блокирани"
@@ -35,7 +55,13 @@
   "stats_label_total": {
     "message": "— общо"
   },
+  "status_domain": {
+    "message": "Този уебсайт:"
+  },
   "status_header": {
     "message": "Блокирани реклами:"
+  },
+  "status_page": {
+    "message": "Тази страница:"
   }
 }

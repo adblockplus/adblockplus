@@ -1,0 +1,65 @@
+{
+  "notification_problem_message": {
+    "message": "O problemă a cauzat resetarea setărilor ABP la valorile implicite. <a>Repară problema și află mai multe</a>"
+  },
+  "problem_note": {
+    "message": "Reține că, în funcție de cum utilizezi ABP, poate fi necesar să reconfigurezi setările, filtrele adaptate și site-urile listate în alb atunci când reinstalezi Adblock Plus."
+  },
+  "problem_os_mac": {
+    "message": "Mac"
+  },
+  "problem_os_windows": {
+    "message": "Windows"
+  },
+  "problem_social_description": {
+    "message": "Ai o problemă? Contactează echipa noastră de asistență."
+  },
+  "problem_social_email": {
+    "message": "E-mail"
+  },
+  "problem_social_facebook": {
+    "message": "Facebook"
+  },
+  "problem_social_title": {
+    "message": "Încă mai cauți ajutor?"
+  },
+  "problem_social_twitter": {
+    "message": "Twitter"
+  },
+  "problem_solution_action": {
+    "message": "Clichează aici pentru a dezinstala și reinstala Adblock Plus"
+  },
+  "problem_solution_opera_step_1": {
+    "message": "Deschide acest link către Opera Addons (se va deschide într-o filă nouă)"
+  },
+  "problem_solution_opera_step_2": {
+    "message": "Din bara de unelte Opera, dă <em0>clic dreapta</em0> / <em1>CTRL-clic</em1> pe iconul <strong>Adblock Plus</strong> și selectează <strong>Gestiune extensie</strong>."
+  },
+  "problem_solution_opera_step_3": {
+    "message": "Dă clic pe <strong>săgeata</strong> de lângă iconul Adblock Plus."
+  },
+  "problem_solution_opera_step_4": {
+    "message": "Găsește Adblock Plus și clichează pe <strong>X</strong> în colțul din dreapta sus."
+  },
+  "problem_solution_opera_step_5": {
+    "message": "Clichează pe <strong>Elimină</strong>."
+  },
+  "problem_solution_opera_step_6": {
+    "message": "Reîncarcă pagina Opera Addons."
+  },
+  "problem_solution_opera_step_7": {
+    "message": "Clichează pe <strong>Adaugă la Opera</strong>."
+  },
+  "problem_solution_title": {
+    "message": "Soluția:"
+  },
+  "problem_subtitle": {
+    "message": "Din această cauză, setările ABP au fost resetate la valorile implicite. Pentru a rezolva problema, Adblock Plus va trebui dezinstalat și reinstalat. Clichează pe linkul de mai jos ca să faci asta."
+  },
+  "problem_subtitle_opera": {
+    "message": "Din această cauză, setările ABP au fost resetate la valorile implicite. Pentru a rezolva problema, Adblock Plus va trebui dezinstalat și reinstalat. Urmează pașii de mai jos ca să faci acest lucru."
+  },
+  "problem_title": {
+    "message": "O problemă cu browser-ul a cauzat resetarea setărilor ABP."
+  }
+}

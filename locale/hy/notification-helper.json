@@ -1,0 +1,8 @@
+{
+  "notification_configure": {
+    "message": "Կարգավորել ծանուցման կայանքները"
+  },
+  "notification_open_all": {
+    "message": "Բացել բոլոր հղումները այս ծանուցումից"
+  }
+}

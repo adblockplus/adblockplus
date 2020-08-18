@@ -20,11 +20,31 @@
   "promote_abp_module": {
     "message": "Interesat în Adblock Plus pe mobil?"
   },
+  "refresh_this_page": {
+    "message": "Reîncarcă pagina"
+  },
   "refresh_to_take_effect": {
     "message": "Faceţi clic pe <strong>Refresh</strong> pentru ca modificările să aibă efect."
   },
   "sendReport": {
     "message": "Raportează o problemă"
+  },
+  "share_on_facebook": {
+    "message": "Partajează pe Facebook"
+  },
+  "share_on_twitter": {
+    "message": "Partajează pe Twitter"
+  },
+  "share_on_twitter_message": {
+    "message": "Am blocat $number$ (de) reclame cu Adblock Plus. Încearcă - este GRATUIT!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "social_media_share": {
+    "message": "Partajează numere cu prietenii"
   },
   "stats_header": {
     "message": "Numărul de elemente blocat"
@@ -35,7 +55,13 @@
   "stats_label_total": {
     "message": "în total"
   },
+  "status_domain": {
+    "message": "Acest site web:"
+  },
   "status_header": {
     "message": "Blocarea anunţurilor este activã:"
+  },
+  "status_page": {
+    "message": "Această pagină:"
   }
 }

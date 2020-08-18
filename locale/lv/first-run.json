@@ -14,6 +14,15 @@
   "firstRun_control_description": {
     "message": "Pēc noklusējuma var tikt rādītas dažas neuzmācīgas reklāmas, kas atbilst <a0>stingriem kritērijiem</a0>. Mēs identificējam šīs reklāmas kā pieļaujamas. Ja nevēlaties tās redzēt <a1>bloķējiet pieļaujamās reklāmas</a1> <a2>iestatījumos</a2>."
   },
+  "firstRun_control_title": {
+    "message": "Tagad jūs to kontrolējat"
+  },
+  "firstRun_subtitle": {
+    "message": "Jūs tikko pārņēmāt savas pārlūkprogrammas vadību."
+  },
+  "firstRun_title": {
+    "message": "Instalēšana sekmīgi pabeigta!"
+  },
   "firstRun_warning_dataCorrupted_intro": {
     "message": "Daži lietotāji saskaras ar problēmu, ka šī lapa tiek atvērta katrā pārlūka palaišanas reizē. Šo problēmu var atrisināt pārinstalējot Adblock Plus:"
   },
@@ -28,5 +37,8 @@
   },
   "firstRun_warning_dataCorrupted_step3": {
     "message": "Pārinstalējiet Adblock Plus no <a>adblockplus.org</a>."
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "Šķiet, ka problēma izraisīja visu filtru noņemšanu. Mēs nevarējām atjaunot dublējumu, tādēļ nācās atiestatīt filtrus un pieļaujamo reklāmu iestatījumus. Lūdzu, pārbaudiet filtru sarakstus un pieļaujamo reklāmu <a>Adblock Plus iestījumos</a>."
   }
 }

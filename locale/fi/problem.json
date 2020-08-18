@@ -1,0 +1,65 @@
+{
+  "notification_problem_message": {
+    "message": "Adblock Plussan asetukset on palautettu oletuksiin teknisen virheen takia. <a>Lisätietoja tästä ongelmasta</a>"
+  },
+  "problem_note": {
+    "message": "Saatat joutua määrittämään asetukset, omat suodattimet ja sallitut sivustot uudelleen Adblock Plussan uudelleenasennuksen jälkeen."
+  },
+  "problem_os_mac": {
+    "message": "Mac"
+  },
+  "problem_os_windows": {
+    "message": "Windows"
+  },
+  "problem_social_description": {
+    "message": "Teknisiä ongelmia? Ota yhteyttä tukeen"
+  },
+  "problem_social_email": {
+    "message": "Sähköposti"
+  },
+  "problem_social_facebook": {
+    "message": "Facebook"
+  },
+  "problem_social_title": {
+    "message": "Yhä avun tarpeessa?"
+  },
+  "problem_social_twitter": {
+    "message": "Twitter"
+  },
+  "problem_solution_action": {
+    "message": "Asenna Adblock Plus uudelleen napsauttamalla tästä"
+  },
+  "problem_solution_opera_step_1": {
+    "message": "Avaa linkki Opera-lisäosissa uuteen välilehteen"
+  },
+  "problem_solution_opera_step_2": {
+    "message": "Napsauta hiiren <em0>oikealla painikkeella</em0> tai <em1>control-painikkeella</em1> <strong>AdBlock Plus</strong> -logoa Operan työkalupalkista ja valitse sitten <strong>Hallitse lisäosaa</strong>."
+  },
+  "problem_solution_opera_step_3": {
+    "message": "Napsauta <strong>nuolta</strong> Adblock Plus -kuvakkeen vieressä."
+  },
+  "problem_solution_opera_step_4": {
+    "message": "Etsi Adblock Plus ja napsauta <strong>X</strong>-kuvaketta oikeasta yläkulmasta."
+  },
+  "problem_solution_opera_step_5": {
+    "message": "Napsauta <strong>Poista</strong>."
+  },
+  "problem_solution_opera_step_6": {
+    "message": "Päivitä Opera-lisäosat-sivu."
+  },
+  "problem_solution_opera_step_7": {
+    "message": "Napsauta <strong>Lisää Operaan</strong>."
+  },
+  "problem_solution_title": {
+    "message": "Ratkaisu:"
+  },
+  "problem_subtitle": {
+    "message": "Adblock Plussan asetukset on palautettu oletuksiin. Ongelman vuoksi joudut asentamaan Adblock Plussan uudelleen napsauttamalla tästä:"
+  },
+  "problem_subtitle_opera": {
+    "message": "Adblock Plussan asetukset on palautettu oletuksiin. Ongelman ratkaisemiseksi seuraa ohjeita ja asenna Adblock Plussan uudelleen."
+  },
+  "problem_title": {
+    "message": "Selaimen teknisen ongelman vuoksi Adblock Plussan asetukset on palautettu oletuksiin."
+  }
+}

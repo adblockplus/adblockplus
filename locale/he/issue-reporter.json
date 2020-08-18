@@ -18,7 +18,7 @@
     "message": "השאר תגובה"
   },
   "issueReporter_comment_description": {
-    "message": "אנא עזור לנו להבין בצורה טובה יותר את הסוגייה ע\"י השארת תגובה למטה."
+    "message": "אנא עזור לנו להבין בצורה טובה יותר את הסוגייה ע״י השארת תגובה למטה."
   },
   "issueReporter_comment_label": {
     "message": "הערה (רשותי):"
@@ -54,7 +54,7 @@
     "message": "אני עדין רואה פרסומות"
   },
   "issueReporter_falsePositive_description": {
-    "message": "הדף מוצג בצורה לא נכונה, נכשל לתפקד או נראה שחסר בו תוכן חשוב."
+    "message": "הדף מוצג באופן שגוי, נכשל לתפקד או נראה שחסר בו תוכן חשוב."
   },
   "issueReporter_falsePositive_label": {
     "message": "העמוד שאני מנסה לראות שבור"

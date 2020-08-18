@@ -1,0 +1,50 @@
+{
+  "devtools_action_block": {
+    "message": "Estä kohde"
+  },
+  "devtools_action_remove": {
+    "message": "Poista sääntö"
+  },
+  "devtools_action_unblock": {
+    "message": "Lisää poikkeus"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "käyttäjän määrittämä"
+  },
+  "devtools_filter_origin_none": {
+    "message": "nimetön tilaus"
+  },
+  "devtools_filter_subtitle": {
+    "message": "Lähde"
+  },
+  "devtools_filter_title": {
+    "message": "Suodatin"
+  },
+  "devtools_footer": {
+    "message": "Ota suodatinmuutokset käyttöön <a0>päivittämällä sivu</a0>"
+  },
+  "devtools_header": {
+    "message": "Näytä <slot0></slot0>/<slot1></slot1> kohdetta"
+  },
+  "devtools_header_state_all": {
+    "message": "kaikki"
+  },
+  "devtools_header_state_blocked": {
+    "message": "estetty"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "sallittu"
+  },
+  "devtools_header_type_any": {
+    "message": "kaikki"
+  },
+  "devtools_request_subtitle": {
+    "message": "Osoite"
+  },
+  "devtools_request_title": {
+    "message": "Pyyntö"
+  },
+  "devtools_type_title": {
+    "message": "Tyyppi"
+  }
+}

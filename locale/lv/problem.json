@@ -1,0 +1,20 @@
+{
+  "problem_os_mac": {
+    "message": "Mac"
+  },
+  "problem_os_windows": {
+    "message": "Windows"
+  },
+  "problem_social_email": {
+    "message": "E-pasts"
+  },
+  "problem_social_facebook": {
+    "message": "Facebook"
+  },
+  "problem_social_twitter": {
+    "message": "Twitter"
+  },
+  "problem_solution_title": {
+    "message": "Risinājums:"
+  }
+}

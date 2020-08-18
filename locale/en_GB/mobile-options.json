@@ -8,8 +8,20 @@
   "mops_action_cancel": {
     "message": "Cancel"
   },
+  "mops_enabled_label": {
+    "message": "Block ads on:"
+  },
+  "mops_error_url": {
+    "message": "Enter a valid URL"
+  },
+  "mops_filterlist_add": {
+    "message": "Add a filter list"
+  },
   "mops_filterlist_add_action": {
     "message": "Add filter list"
+  },
+  "mops_filterlist_add_url": {
+    "message": "Add a custom filter list"
   },
   "mops_header": {
     "message": "Adblock Plus settings"

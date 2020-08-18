@@ -1,0 +1,11 @@
+{
+  "notification_configure": {
+    "message": "Configure notification settings"
+  },
+  "notification_open_all": {
+    "message": "Open all links from this notification."
+  },
+  "notification_without_buttons": {
+    "message": "Click on the notification to open all links in it."
+  }
+}

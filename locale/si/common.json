@@ -4,5 +4,32 @@
   },
   "cancel": {
     "message": "අවලංගු කරන්න"
+  },
+  "common_feature_anti_adblock_title": {
+    "message": "Adblock අනතුරු ඇඟවීමේ පණිවිඩ සඟවන්න"
+  },
+  "common_feature_circumvention_title": {
+    "message": "ABP ප්‍රති-චක්‍රීය පෙරහන් ලැයිස්තුව"
+  },
+  "common_feature_malware_title": {
+    "message": "අනිෂ්ට මෘදුකාංග අවහිර කරන්න"
+  },
+  "common_feature_privacy_title": {
+    "message": "අමතර ලුහුබැඳීම අවහිර කරන්න"
+  },
+  "common_feature_social_title": {
+    "message": "සමාජ මාධ්‍ය අයිකන ලුහුබැඳීම අවහිර කරන්න"
+  },
+  "common_notification_hide": {
+    "message": "දැනුම්දීම වසන්න"
+  },
+  "copy_selected": {
+    "message": "තෝරාගත් පිටපත"
+  },
+  "delete": {
+    "message": "මකන්න"
+  },
+  "filter_action_failed": {
+    "message": "කුමක් හෝ වරදක් සිදුවී ඇත. කරුණාකර නැවත උත්සාහ කරන්න."
   }
 }

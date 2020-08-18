@@ -118,6 +118,12 @@
   "options_dialog_predefined_confirm": {
     "message": "Да, ползвай филтъра"
   },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Заглавие"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL адрес"
+  },
   "options_dialog_predefined_title": {
     "message": "Сигурен ли сте, че ще ползвате филтъра?"
   },
@@ -232,6 +238,19 @@
   },
   "options_language_header": {
     "message": "Език"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>СЪВЕТ:</strong> Изберете само нужните езици. Изборът на повече забавя блокера на реклами, и с това — скоростта на сърфиране."
