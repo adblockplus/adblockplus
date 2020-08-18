@@ -5,6 +5,27 @@
   "block_element": {
     "message": "拦截元素"
   },
+  "composer_block": {
+    "message": "拦截"
+  },
+  "composer_cancel": {
+    "message": "取消"
+  },
+  "composer_elements": {
+    "message": "个元素已选择"
+  },
+  "composer_loading": {
+    "message": "正在加载..."
+  },
+  "composer_preview": {
+    "message": "预览"
+  },
+  "composer_undo_preview": {
+    "message": "退出预览"
+  },
+  "composer_unselect": {
+    "message": "取消选择"
+  },
   "loading": {
     "message": "加载中……"
   }

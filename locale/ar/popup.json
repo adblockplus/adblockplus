@@ -1,4 +1,7 @@
 {
+  "block_element_description": {
+    "message": "حجب عنصر محدد على موقع الويب هذا"
+  },
   "click_element_to_block_it": {
     "message": "أنقر فوق عنصر في الصفحة لحظره."
   },
@@ -27,7 +30,7 @@
     "message": "انقر فوق الزر بالأسفل لتفعيل التغييرات."
   },
   "sendReport": {
-    "message": "تبليغ عن مشكلة"
+    "message": "الإبلاغ عن مشكلة في هذه الصفحة"
   },
   "share_on_facebook": {
     "message": "المشاركة على فيسبوك"
@@ -36,6 +39,17 @@
     "message": "المشاركة على تويتر"
   },
   "share_on_twitter_message": {
+    "message": "لقد حجبت $number$ الإعلانات باستخدام Adblock Plus. جرّبه؛ إنّه مجاني!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "share_on_weibo": {
+    "message": "المشاركة على ويبو (Weibo)"
+  },
+  "share_on_weibo_message": {
     "message": "لقد حجبت $number$ الإعلانات باستخدام Adblock Plus. جرّبه؛ إنّه مجاني!",
     "placeholders": {
       "number": {

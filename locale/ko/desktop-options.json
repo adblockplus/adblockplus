@@ -127,6 +127,9 @@
   "options_dialog_predefined_title": {
     "message": "이 필터 목록을 추가하길 원하십니까?"
   },
+  "options_donate_button": {
+    "message": "기부하기"
+  },
   "options_email": {
     "message": "이메일:"
   },
@@ -270,6 +273,9 @@
   "options_protection_social_tooltip": {
     "message": "방문한 웹사이트의 소셜 미디어 아이콘을 통해 소셜 미디어 네트워크는 사용자의 브라우징 습관을 바탕으로 사용자의 프로필을 구축합니다. 사용자가 클릭하지 않아도 이 작업은 진행됩니다. 이러한 아이콘을 숨김으로써 사용자의 프로필을 보호할 수 있습니다."
   },
+  "options_rating_button": {
+    "message": "평가하기"
+  },
   "options_rating_description": {
     "message": "잠시 시간을 내어 Adblock Plus를 평가해서 입소문을 내주세요. 지원해 주셔서 감사합니다!"
   },
@@ -287,6 +293,12 @@
   },
   "options_social_title": {
     "message": "연락하기"
+  },
+  "options_supportUs_description": {
+    "message": "잠시 시간을 내어 ABP를 평가해주시거나 프로젝트에 기부해주세요. 지원해주셔서 감사합니다!"
+  },
+  "options_supportUs_title": {
+    "message": "Adblock Plus가 유용한가요?"
   },
   "options_support_title": {
     "message": "지원"

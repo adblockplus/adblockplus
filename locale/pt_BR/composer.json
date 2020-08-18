@@ -5,6 +5,27 @@
   "block_element": {
     "message": "Bloquear elemento"
   },
+  "composer_block": {
+    "message": "Bloquear"
+  },
+  "composer_cancel": {
+    "message": "Cancelar"
+  },
+  "composer_elements": {
+    "message": "elemento(s) selecionado(s)"
+  },
+  "composer_loading": {
+    "message": "Carregando..."
+  },
+  "composer_preview": {
+    "message": "Visualizar"
+  },
+  "composer_undo_preview": {
+    "message": "Sair da visualização"
+  },
+  "composer_unselect": {
+    "message": "Desmarcar"
+  },
   "loading": {
     "message": "Carregando..."
   }

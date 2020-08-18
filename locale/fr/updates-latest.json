@@ -6,16 +6,19 @@
     "message": "Adblock Plus a été mis à jour !"
   },
   "updates_update_i1_description": {
-    "message": "Si vos paramètres ABP sont corrompus en raison d'un problème de navigateur, le message de notification s'ouvre maintenant dans un nouvel onglet du navigateur."
+    "message": "Ajout d’une brève description de la fonctionnalité Bloquer l’élément et d’une formulation améliorée pour le bouton Rapport."
   },
   "updates_update_i1_title": {
-    "message": "Notification de corruption de données déplacée"
+    "message": "L’interface utilisateur d’ABP est désormais plus conviviale"
   },
   "updates_update_i2_description": {
-    "message": "Aidez-nous à faire passer le message concernant votre bloqueur de publicités préféré en partageant le nombre total de publicités que vous avez bloquées sur les chaînes de vos médias sociaux préférés."
+    "message": "Nous avons rendu la fonctionnalité Bloquer l’élément plus facile à utiliser en ajoutant de courtes instructions, ainsi qu’un aperçu de la page sans l’élément intrusif. Faites un essai !"
+  },
+  "updates_update_i2_image": {
+    "message": "Exemple de pop-up avec nouveau bouton « Bloquer l’élément »."
   },
   "updates_update_i2_title": {
-    "message": "Ajout d'une option pour partager le nombre de publicités bloquées sur les médias sociaux"
+    "message": "Fonctionnalité « Bloquer l’élément » mise à jour et améliorée"
   },
   "updates_update_i3_description": {
     "message": "Les filtres longs peuvent désormais être affichés dans leur intégralité, y compris le sélecteur CSS."

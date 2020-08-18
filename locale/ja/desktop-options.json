@@ -127,6 +127,9 @@
   "options_dialog_predefined_title": {
     "message": "個のフィルターリストを追加しますか？"
   },
+  "options_donate_button": {
+    "message": "寄付を送る"
+  },
   "options_email": {
     "message": "メール:"
   },
@@ -280,6 +283,9 @@
   "options_protection_social_tooltip": {
     "message": "閲覧したウェブサイトにあるソーシャルメディア アイコンでは、このをクリックしない場合でも、ユーザーの習慣的な閲覧履歴に基づいてプロファイルを構築します。このようなアイコン を非表示して、自分のプロファイルを守ることができます。"
   },
+  "options_rating_button": {
+    "message": "評価する"
+  },
   "options_rating_description": {
     "message": "Adblock Plus を評価して、クチコミ拡散にご協力ください。サポートありがとうございます。"
   },
@@ -297,6 +303,12 @@
   },
   "options_social_title": {
     "message": "お問い合わせ"
+  },
+  "options_supportUs_description": {
+    "message": "ABP の評価をお願いします。また、プロジェクトへの寄付も募集しております。ご協力ありがとうございます。"
+  },
+  "options_supportUs_title": {
+    "message": "Adblock Plus をお楽しみいただいていますか。"
   },
   "options_support_title": {
     "message": "サポート"

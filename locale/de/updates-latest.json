@@ -6,16 +6,19 @@
     "message": "Adblock Plus wurde aktualisiert"
   },
   "updates_update_i1_description": {
-    "message": "Sollten deine ABP-Einstellungen aufgrund eines Browser-Problems beschädigt werden, öffnet sich die Benachrichtigung in einer neuen Browser-Registerkarte."
+    "message": "Es wurde eine Kurzbeschreibung der „Element blockieren”-Funktion und ein verbesserter Wortlaut für die Bericht-Schaltfläche hinzugefügt."
   },
   "updates_update_i1_title": {
-    "message": "Benachrichtigung zur Datenkorruption verschoben"
+    "message": "Die ABP-Schnittstelle ist nun benutzerfreundlicher gestaltet."
   },
   "updates_update_i2_description": {
-    "message": "Hilf deinem Lieblings-Adblocker, indem du die Gesamtzahl der Werbeanzeigen, die du blockiert hast, auf deinen Lieblings-Social-Media-Kanälen teilst."
+    "message": "Die „Element blockieren”-Funktion ist nun bedienerfreundlicher. Es werden sowohl Kurzanweisungen als auch eine Vorschau geboten, wie die Seite ohne dieses störende Element aussehen wird. Versuche es einfach mal!"
+  },
+  "updates_update_i2_image": {
+    "message": "Beispiel eines Symbol-Pop-Up-Fensters mit einer neu entworfenen „Element blockieren”-Schaltfläche"
   },
   "updates_update_i2_title": {
-    "message": "Option zum Teilen der Anzahl der blockierten Werbeanzeigen hinzugefügt"
+    "message": "„Element blockieren”-Funktion aktualisiert und verbessert"
   },
   "updates_update_i3_description": {
     "message": "Lange Filter können in ihrer Gesamtheit betrachtet werden, einschließlich des CSS-Selektors."

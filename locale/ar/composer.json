@@ -5,6 +5,27 @@
   "block_element": {
     "message": "حجب العنصر"
   },
+  "composer_block": {
+    "message": "حجب"
+  },
+  "composer_cancel": {
+    "message": "إلغاء"
+  },
+  "composer_elements": {
+    "message": "من العناصر تم تحديدها"
+  },
+  "composer_loading": {
+    "message": "جارٍ التحميل..."
+  },
+  "composer_preview": {
+    "message": "معاينة"
+  },
+  "composer_undo_preview": {
+    "message": "خروج من المعاينة"
+  },
+  "composer_unselect": {
+    "message": "إلغاء التحديد"
+  },
   "loading": {
     "message": "جار التحميل..."
   }

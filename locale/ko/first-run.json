@@ -8,6 +8,9 @@
   "firstRun_browser_title": {
     "message": "Adblock Browser 앱"
   },
+  "firstRun_donate": {
+    "message": "기부하기"
+  },
   "firstRun_title": {
     "message": "설치 성공!"
   },

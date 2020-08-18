@@ -5,6 +5,27 @@
   "block_element": {
     "message": "Elem blokkolása"
   },
+  "composer_block": {
+    "message": "Blokkolás"
+  },
+  "composer_cancel": {
+    "message": "Mégse"
+  },
+  "composer_elements": {
+    "message": "elem kiválasztva"
+  },
+  "composer_loading": {
+    "message": "Betöltés"
+  },
+  "composer_preview": {
+    "message": "Előnézet"
+  },
+  "composer_undo_preview": {
+    "message": "Kilépés az előnézetből"
+  },
+  "composer_unselect": {
+    "message": "Kijelölés törlése"
+  },
   "loading": {
     "message": "Betöltés…"
   }

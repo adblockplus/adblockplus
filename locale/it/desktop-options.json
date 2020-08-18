@@ -127,6 +127,9 @@
   "options_dialog_predefined_title": {
     "message": "Sei sicuro di voler raggiungere questo elenco di filtri?"
   },
+  "options_donate_button": {
+    "message": "Fai una donazione"
+  },
   "options_email": {
     "message": "Indirizzo e-mail:"
   },
@@ -275,6 +278,9 @@
   "options_protection_social_tooltip": {
     "message": "Le icone per i social media sui siti che visiti consentono alle reti di social media di creare un profilo su di te basato sulle tue abitudini di navigazione, anche quando non clicchi su di essi. Nascondere queste icone può proteggere il tuo profilo."
   },
+  "options_rating_button": {
+    "message": "Dacci un voto"
+  },
   "options_rating_description": {
     "message": "Ti invitiamo a dedicare qualche minuto per aiutarci a diffondere le informazioni dando una valutazione ad Adblock Plus. Grazie per il tuo sostegno."
   },
@@ -292,6 +298,12 @@
   },
   "options_social_title": {
     "message": "Mettiti in contatto"
+  },
+  "options_supportUs_description": {
+    "message": "Aiutaci valutando ABP o facendo una donazione al progetto. Grazie del sostegno!"
+  },
+  "options_supportUs_title": {
+    "message": "Ti piace Adblock Plus?"
   },
   "options_support_title": {
     "message": "Assistenza"

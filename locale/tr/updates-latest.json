@@ -6,16 +6,19 @@
     "message": "Adblock Plus artık güncellendi"
   },
   "updates_update_i1_description": {
-    "message": "ABP ayarlarınız tarayıcı sorunu nedeniyle bozulursa bildirim mesajı yeni bir tarayıcı sekmesinde açılır."
+    "message": "Öğe Engelle özelliğine kısa bir açıklama eklendi ve Bildir düğmesinin anlatım biçimi iyileştirildi."
   },
   "updates_update_i1_title": {
-    "message": "Veri bozukluğu bildirimi taşındı"
+    "message": "ABP kullanıcı arayüzü artık birazcık daha kullanıcı dostu"
   },
   "updates_update_i2_description": {
-    "message": "Engellediğiniz toplam reklam sayısını en sevdiğiniz sosyal medya kanallarında paylaşarak en sevdiğiniz reklam engelleme aracı ile ilgili mesajı yayın."
+    "message": "Öğe Engelle özelliğine kısa talimatlar ekledik ve zorla giren öğe olmadan sayfanın nasıl görüneceğine ilişkin bir önizleme koyduk; yani kullanımını sizin için kolaylaştırdık. Deneyin ve görün!"
+  },
+  "updates_update_i2_image": {
+    "message": "Yeniden tasarlanmış \"Öğe engelle\" düğmesinin olduğu simge açılır penceresine bir örnek."
   },
   "updates_update_i2_title": {
-    "message": "Engellenen reklam sayısını sosyal medyada paylaşma seçeneği eklendi"
+    "message": "Öğe Engelle özelliği güncellendi ve iyileştirildi"
   },
   "updates_update_i3_description": {
     "message": "Uzun filtreler artık, CSS seçici dahil olmak üzere tamamen görüntülenebiliyor."

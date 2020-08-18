@@ -1,4 +1,7 @@
 {
+  "block_element_description": {
+    "message": "Bloqueie elemento específico nesta página"
+  },
   "click_element_to_block_it": {
     "message": "Clique sobre um elemento na página para o bloquear."
   },
@@ -27,7 +30,7 @@
     "message": "Clique no botão abaixo para que as alterações tenham efeito."
   },
   "sendReport": {
-    "message": "Comunicar problema"
+    "message": "Relatar problema nesta página"
   },
   "share_on_facebook": {
     "message": "Compartilhe no Facebook"
@@ -36,6 +39,17 @@
     "message": "Compartilhe no Twitter"
   },
   "share_on_twitter_message": {
+    "message": "Eu bloqueei $number$ anúncios com o Adblock Plus. Experimente, é GRÁTIS!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "share_on_weibo": {
+    "message": "Compartilhe no Weibo"
+  },
+  "share_on_weibo_message": {
     "message": "Eu bloqueei $number$ anúncios com o Adblock Plus. Experimente, é GRÁTIS!",
     "placeholders": {
       "number": {

@@ -1,4 +1,7 @@
 {
+  "block_element_description": {
+    "message": "このウェブサイトの特定の要素をブロックする"
+  },
   "click_element_to_block_it": {
     "message": "ページ上の要素をクリックしてブロックします。"
   },
@@ -27,7 +30,7 @@
     "message": "以下のボタンをクリックして、変更を有効にしてください。"
   },
   "sendReport": {
-    "message": "問題を報告"
+    "message": "このページの問題を報告する"
   },
   "share_on_facebook": {
     "message": "Facebook で共有"
@@ -36,6 +39,17 @@
     "message": "Twitter で共有"
   },
   "share_on_twitter_message": {
+    "message": "Adblock Plus $number$ 件の広告をブロックしました。試してみましょう 。無料です！",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "share_on_weibo": {
+    "message": "微博で共有"
+  },
+  "share_on_weibo_message": {
     "message": "Adblock Plus $number$ 件の広告をブロックしました。試してみましょう 。無料です！",
     "placeholders": {
       "number": {

@@ -17,6 +17,9 @@
   "firstRun_control_title": {
     "message": "Sei tu a decidere"
   },
+  "firstRun_donate": {
+    "message": "Fai una donazione"
+  },
   "firstRun_fair_description": {
     "message": "Ti invitiamo a fare un utilizzo equo di Adblock Plus e a inserire siti web sulla white list. A seconda dei filtri utilizzati, comprendi e accetti la possibilità di produrre risultati indesiderati (es. blocco del contenuto di una pagina web). Fai riferimento ai <a0>termini e alle condizioni d'uso</a0> per ulteriori informazioni circa l'utilizzo equo di Adblock Plus."
   },
