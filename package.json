@@ -44,10 +44,7 @@
         "js": "$ create.js ./js/desktop-options.js ./desktop-options.js"
       },
       "first-run": {
-        "css": [
-          "$ create.css first-run",
-          "$ create.css web"
-        ],
+        "css": "$ create.css first-run",
         "js": "$ create.js ./js/first-run.js ./first-run.js"
       },
       "issue-reporter": {
@@ -177,8 +174,7 @@
     "local-range": "^0.1.0",
     "node-sass": "^4.13.0",
     "npm-dollar": "^2.2.1",
-    "pngquant-bin": "^5.0.2",
-    "website-defaults": "github:adblockplus/website-defaults#255e4f1"
+    "pngquant-bin": "^5.0.2"
   },
   "devDependencies": {
     "adm-zip": "^0.4.13",

@@ -16,6 +16,260 @@
  */
 
 /*******************************************************************************
+ * General
+ ******************************************************************************/
+
+*
+{
+  box-sizing: inherit;
+  font-size: 16px;
+}
+
+html,
+body,
+h1,
+h2,
+a,
+p,
+span,
+small,
+strong,
+ol,
+li,
+div,
+section,
+main,
+nav,
+header,
+footer,
+img,
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+html
+{
+  box-sizing: border-box;
+  color: #212121;
+  background-color: #fff;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  line-height: 1.5;
+}
+
+body
+{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  /* Start below fixed navbar */
+  padding-top: 4em;
+  line-height: 1.5;
+}
+
+main
+{
+  flex-grow: 1;
+}
+
+h1
+{
+  font-size: 2em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h2
+{
+  margin: 2rem 0 1rem;
+  font-weight: 700;
+  font-size: 1.4em;
+}
+
+ol
+{
+  padding-left: 1.5em;
+}
+
+[dir="rtl"] ol
+{
+  padding-right: 2em;
+  padding-left: 0;
+}
+
+li
+{
+  margin: 0.25em 0;
+}
+
+strong
+{
+  font-weight: bolder;
+}
+
+small
+{
+  font-size: smaller;
+}
+
+a,
+a:visited
+{
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover,
+a:active,
+a:focus
+{
+  text-decoration: underline;
+}
+
+a:link,
+a:visited
+{
+  color: #555;
+}
+
+img
+{
+  max-width: 100%;
+}
+
+a img
+{
+  border: none;
+}
+
+.container,
+.navbar-container
+{
+  width: 1140px;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+/* Clear without collapsed margin */
+.content::after,
+.content::before
+{
+  display: table;
+  content: " ";
+}
+
+.content::after
+{
+  clear: both;
+}
+
+ol,
+.content p
+{
+  margin: 1em 0;
+}
+
+.content a,
+.content a:visited
+{
+  color: #c70d2c;
+}
+
+.column
+{
+  float: left;
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding: 0 1em;
+}
+
+[dir="rtl"] .column
+{
+  float: right;
+}
+
+.column > header > img
+{
+  width: 70px;
+  height: 70px;
+}
+
+.column > header > h2
+{
+  text-transform: uppercase;
+}
+
+section
+{
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+section > p
+{
+  font-weight: 300;
+}
+
+section > p a
+{
+  font-weight: 400;
+}
+
+#content
+{
+  padding-bottom: 2em;
+}
+
+@media (min-width: 768px)
+{
+  h2
+  {
+    font-size: 1.6em;
+  }
+}
+
+@media (min-width: 992px)
+{
+  .one-third
+  {
+    width: 33.333333%;
+  }
+
+  .two-thirds
+  {
+    width: 66.666667%;
+  }
+}
+
+@media (max-width: 992px)
+{
+  section
+  {
+    margin: 0;
+  }
+
+  .one-third
+  {
+    padding: 50px 0;
+    border-bottom: 1px solid #d3d3d3;
+  }
+
+  .one-third:last-child
+  {
+    border-bottom: none;
+  }
+}
+
+/*******************************************************************************
  * Button styles taken from landing.scss
  ******************************************************************************/
 
@@ -46,53 +300,59 @@ a.button:hover
 }
 
 /*******************************************************************************
- * General
- ******************************************************************************/
-
-body
-{
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main
-{
-  flex-grow: 1;
-}
-
-/*******************************************************************************
  * Navbar
  ******************************************************************************/
 
 #navbar
 {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  min-height: 4em;
   background-color: #FFF;
 }
 
-.navbar-container
+#navbar .navbar-container
 {
   display: flex;
+  padding-right: 0;
+  padding-left: 0;
   align-items: center;
   justify-content: space-between;
 }
 
-#navbar-logo,
-#navbar-logo > *
+#navbar-logo
 {
-  float: none;
+  padding: 0 1em;
+  color: #fff;
 }
 
 #navbar-logo:active,
 #navbar-logo:focus,
 #navbar-logo:hover
 {
-  background-color: inherit;
+  text-decoration: none;
 }
 
 #navbar-logo img
 {
   display: block;
+  height: 4em;
+  margin: 0 1em 0 0;
+  padding: 0.5em 0;
+}
+
+[dir="rtl"] #navbar-logo > img
+{
+  margin: 0 0 0 1em;
+}
+
+#navbar-logo > span
+{
+  font-size: 1.375em;
+  /* full-height: 2.91 * 1.375 = ~4em */
+  line-height: 2.91em;
 }
 
 #navbar-donate
@@ -108,22 +368,34 @@ main
   background-color: #AE0013;
 }
 
+@media (max-width: 991px)
+{
+  #navbar
+  {
+    overflow: auto;
+  }
+}
+
 /*******************************************************************************
  * Content
  ******************************************************************************/
 
+.store-buttons
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+.store-button > img
+{
+  height: 40px;
+}
+
 #installation-status
 {
   padding: 20px;
-  background-color: #ECECEC;
+  background-color: #ececec;
   text-align: center;
-}
-
-#installation-status > h1
-{
-  font-size: 2em;
-  font-weight: 700;
-  text-transform: uppercase;
 }
 
 #installation-status > img
@@ -135,44 +407,6 @@ main
 #installation-status > p
 {
   font-weight: 300;
-}
-
-section
-{
-  margin-top: 50px;
-  margin-bottom: 20px;
-}
-
-section > header > img
-{
-  width: 70px;
-  height: 70px;
-}
-
-section > header > h2
-{
-  text-transform: uppercase;
-}
-
-section > p
-{
-  font-weight: 300;
-}
-
-section > p a
-{
-  font-weight: 400;
-}
-
-.store-buttons
-{
-  display: flex;
-  justify-content: space-between;
-}
-
-.store-button > img
-{
-  height: 40px;
 }
 
 #warnings > section
@@ -201,24 +435,47 @@ html[data-application="edge"] #abb-promotion
 
 @media (max-width: 992px)
 {
-  section
-  {
-    margin: 0;
-  }
-
-  #warnings section
+  #warnings > section
   {
     margin-top: 50px;
   }
+}
 
-  #content .one-third
+/*******************************************************************************
+ * Footer
+ ******************************************************************************/
+
+#footer
+{
+  overflow: auto;
+  padding: 2em 0;
+  color: #ececec;
+  background-color: #292929;
+  font-size: 0.9em;
+}
+
+#footer a
+{
+  color: #ececec;
+}
+
+#footer a:hover,
+#footer a:active,
+#footer a:focus
+{
+  color: #fff;
+  text-decoration: underline;
+}
+
+@media (min-width: 1200px)
+{
+  #copyright-notice
   {
-    padding: 50px 0;
-    border-bottom: 1px solid #d3d3d3;
+    float: left;
   }
 
-  #content .one-third:last-child
+  [dir="rtl"] #copyright-notice
   {
-    border-bottom: none;
+    float: right;
   }
 }
