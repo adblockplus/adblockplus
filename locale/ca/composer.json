@@ -1,11 +1,5 @@
 {
-  "add_filters_msg": {
-    "message": "Voleu afegir els filtres?"
-  },
   "block_element": {
     "message": "Bloqueja l'element"
-  },
-  "loading": {
-    "message": "S'està carregant..."
   }
 }

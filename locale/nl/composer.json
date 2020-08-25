@@ -1,18 +1,15 @@
 {
-  "add_filters_msg": {
-    "message": "Filter(s) toevoegen?"
-  },
   "block_element": {
     "message": "Element blokkeren"
   },
   "composer_block": {
-    "message": "Blokkeer"
+    "message": "Blokkeren"
   },
   "composer_cancel": {
-    "message": "Annuleer"
+    "message": "Annuleren"
   },
   "composer_elements": {
-    "message": "geselecteerde element(en)"
+    "message": "element(en) geselecteerd"
   },
   "composer_loading": {
     "message": "Laden..."
@@ -24,9 +21,6 @@
     "message": "Voorbeeld sluiten"
   },
   "composer_unselect": {
-    "message": "Deselecteer"
-  },
-  "loading": {
-    "message": "Laden…"
+    "message": "Deselecteren"
   }
 }

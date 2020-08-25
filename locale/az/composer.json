@@ -1,11 +1,5 @@
 {
-  "add_filters_msg": {
-    "message": "Filtr əlavə et?"
-  },
   "block_element": {
     "message": "Elementi əngəllə"
-  },
-  "loading": {
-    "message": "Yüklənir..."
   }
 }

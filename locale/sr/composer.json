@@ -1,11 +1,5 @@
 {
-  "add_filters_msg": {
-    "message": "Додавање филтера"
-  },
   "block_element": {
     "message": "Блокирајте елемент"
-  },
-  "loading": {
-    "message": "Учитавање…"
   }
 }

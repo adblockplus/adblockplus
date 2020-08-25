@@ -1,11 +1,5 @@
 {
-  "add_filters_msg": {
-    "message": "فلٹر شامل کریں؟"
-  },
   "block_element": {
     "message": "بلاک عنصر"
-  },
-  "loading": {
-    "message": "لوڈ کر رہا ہے..."
   }
 }

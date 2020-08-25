@@ -1,11 +1,5 @@
 {
-  "add_filters_msg": {
-    "message": "Tambah penapis?"
-  },
   "block_element": {
     "message": "Halang elemen"
-  },
-  "loading": {
-    "message": "Sedang memuatkan..."
   }
 }

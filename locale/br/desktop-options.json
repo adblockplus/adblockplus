@@ -261,12 +261,6 @@
   "options_protection_privacy_tooltip": {
     "message": "Gwarezit ho puhez prevez enep lec'hiennoù a c'hallfe klask heuliañ ar pezh a rit enlinenn deus ul lec'hienn d'eben."
   },
-  "options_rating_description": {
-    "message": "Kemerit un nebeut eilennoù evit sikour ha diorren Adblock Plus o priziañ hol labour. Mersi deoc'h evit ho sikour !"
-  },
-  "options_rating_title": {
-    "message": "Plijet oc'h gant Adblock Plus ?"
-  },
   "options_report_bug": {
     "message": "Ur bug ho peus kavet ? <a>Kasit un danevell bug deomp</a>"
   },

@@ -1,11 +1,5 @@
 {
-  "add_filters_msg": {
-    "message": "Ouzhpennañ siloù ?"
-  },
   "block_element": {
     "message": "Stankañ an elfenn"
-  },
-  "loading": {
-    "message": "O kargañ..."
   }
 }

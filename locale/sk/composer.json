@@ -1,11 +1,5 @@
 {
-  "add_filters_msg": {
-    "message": "Pridať filtre?"
-  },
   "block_element": {
     "message": "Blokovať prvok"
-  },
-  "loading": {
-    "message": "Načítavam..."
   }
 }

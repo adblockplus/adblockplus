@@ -303,12 +303,6 @@
   "options_protection_social_tooltip": {
     "message": "Les icones de les xarxes socials dels llocs web que visiteu permeten que les xarxes de xarxes socials construeixin un perfil segons els vostres hàbits de navegació, fins i tot quan no feu clic a ells. Ocultar aquestes icones pot protegir el vostre perfil."
   },
-  "options_rating_description": {
-    "message": "Ajudeu-nos a difondre la paraula qualificant l'Adblock Plus. Gràcies pel vostre suport!"
-  },
-  "options_rating_title": {
-    "message": "Us agrada l'Adblock Plus?"
-  },
   "options_report_bug": {
     "message": "Heu trobat un error? <a>Envieu-nos un informe d'error</a>"
   },

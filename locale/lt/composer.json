@@ -1,11 +1,5 @@
 {
-  "add_filters_msg": {
-    "message": "Pridėti filtrus(-ą)?"
-  },
   "block_element": {
     "message": "Blokuoti elementą"
-  },
-  "loading": {
-    "message": "Įkeliama..."
   }
 }

@@ -1,6 +1,9 @@
 {
+  "block_element_description": {
+    "message": "Blochează un element specific pe acest site"
+  },
   "click_element_to_block_it": {
-    "message": "Faceţi clic pe un element de pe pagină pentru a-l bloca."
+    "message": "Clichează pe un element din pagină pentru a-l bloca."
   },
   "easy_create_filter": {
     "message": "Blochează elementul"
@@ -9,13 +12,13 @@
     "message": "Actualizează"
   },
   "options_short": {
-    "message": "Opţiuni"
+    "message": "Opțiuni"
   },
   "overlay_notification_closing_button_hide": {
     "message": "Închide"
   },
   "overlay_notification_closing_button_optout": {
-    "message": "Opreşte afişarea notificărilor"
+    "message": "Oprește afișarea notificărilor"
   },
   "promote_abp_module": {
     "message": "Interesat în Adblock Plus pe mobil?"
@@ -24,7 +27,7 @@
     "message": "Reîncarcă pagina"
   },
   "refresh_to_take_effect": {
-    "message": "Faceţi clic pe <strong>Refresh</strong> pentru ca modificările să aibă efect."
+    "message": "Faceți clic pe <strong>Refresh</strong> pentru ca modificările să aibă efect."
   },
   "sendReport": {
     "message": "Raportează o problemă"
@@ -43,11 +46,22 @@
       }
     }
   },
+  "share_on_weibo": {
+    "message": "Distribuie pe Weibo"
+  },
+  "share_on_weibo_message": {
+    "message": "Am blocat $number$ (de) reclame cu Adblock Plus. Încearcă - este GRATUIT!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
   "social_media_share": {
     "message": "Partajează numere cu prietenii"
   },
   "stats_header": {
-    "message": "Numărul de elemente blocat"
+    "message": "Numărul de elemente blocate"
   },
   "stats_label_page": {
     "message": "pe această pagină"
@@ -59,7 +73,7 @@
     "message": "Acest site web:"
   },
   "status_header": {
-    "message": "Blocarea anunţurilor este activã:"
+    "message": "Blocare de pub activă"
   },
   "status_page": {
     "message": "Această pagină:"

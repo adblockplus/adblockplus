@@ -257,9 +257,6 @@
   "options_protection_social_tooltip": {
     "message": "Ikony sociálních médií na vámi navštívených webových stránkách sociálním sítím umožňují, aby si na základě vašich zvyků procházení vytvořily profil - a to i když na ně neklikáte. Skrytím těchto ikon lze chránit váš profil."
   },
-  "options_rating_title": {
-    "message": "Líbí se Vám Adblock Plus?"
-  },
   "options_report_bug": {
     "message": "Našli jste chybu? <a>Zašlete nám zprávu o chybě</a>"
   },

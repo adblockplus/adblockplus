@@ -15,7 +15,7 @@
     }
   },
   "common_feature_anti_adblock_title": {
-    "message": "Ascunde mesajele de avertizare Adblock"
+    "message": "Ascunde Mesajele de Avertizare Adblock"
   },
   "common_feature_circumvention_title": {
     "message": "Listă de Filtre ABP Anti-Eludare"
@@ -24,21 +24,21 @@
     "message": "Blochează Malware"
   },
   "common_feature_privacy_title": {
-    "message": "Blochează tracking"
+    "message": "Blochează urmărire suplimentară"
   },
   "common_feature_social_title": {
-    "message": "Blochează tracking pe reţelele sociale"
+    "message": "Blochează urmărirea de iconuri social media"
   },
   "common_notification_hide": {
-    "message": "Închideţi această notificare"
+    "message": "Închide această notificare"
   },
   "copy_selected": {
-    "message": "Copiază ce este selectat"
+    "message": "Copiază selecția"
   },
   "delete": {
     "message": "Șterge"
   },
   "filter_action_failed": {
-    "message": "Ceva n-a mers bine! Vă rugăm să încercați din nou."
+    "message": "Ceva n-a mers bine! Te rugăm să încerci din nou."
   }
 }

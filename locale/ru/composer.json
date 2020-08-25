@@ -1,7 +1,4 @@
 {
-  "add_filters_msg": {
-    "message": "Добавить фильтр(ы)?"
-  },
   "block_element": {
     "message": "Заблокировать элемент"
   },
@@ -25,8 +22,5 @@
   },
   "composer_unselect": {
     "message": "Отменить выбор"
-  },
-  "loading": {
-    "message": "Загрузка..."
   }
 }

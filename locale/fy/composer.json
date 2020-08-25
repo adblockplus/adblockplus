@@ -1,11 +1,5 @@
 {
-  "add_filters_msg": {
-    "message": "Filter(s) tafoegje?"
-  },
   "block_element": {
     "message": "Elemint blokkearje"
-  },
-  "loading": {
-    "message": "Lade…"
   }
 }

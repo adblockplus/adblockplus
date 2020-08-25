@@ -306,12 +306,6 @@
   "options_rating_button": {
     "message": "Bewerte uns"
   },
-  "options_rating_description": {
-    "message": "Nimm dir bitte einen Moment Zeit und bewerte Adblock Plus. Danke für deine Unterstützung!"
-  },
-  "options_rating_title": {
-    "message": "Gefällt dir Adblock Plus?"
-  },
   "options_report_bug": {
     "message": "Hast du einen Fehler gefunden? <a>Sende uns einen Fehlerbericht</a>"
   },

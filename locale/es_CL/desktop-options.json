@@ -303,12 +303,6 @@
   "options_protection_social_tooltip": {
     "message": "Los botones de redes sociales en los sitios web que visitas permiten que las redes sociales construyan un perfil de ti basado en tus hábitos de navegación - incluso cuando no has hecho clic en ellos. Ocultando estos botones puedes proteger tu perfil."
   },
-  "options_rating_description": {
-    "message": "Por favor, tómate un momento y ayuda a difundir la palabra calificando a Adblock Plus. ¡Gracias por tu apoyo!"
-  },
-  "options_rating_title": {
-    "message": "¿Disfrutando Adblock Plus?"
-  },
   "options_report_bug": {
     "message": "¿Encontraste un error? <a>Envíanos un informe de error</a>"
   },

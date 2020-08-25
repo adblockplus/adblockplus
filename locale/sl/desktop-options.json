@@ -275,12 +275,6 @@
   "options_protection_social_tooltip": {
     "message": "Ikone družbenih omrežij na spletnih straneh ki jih obiščete, družbenim omrežjem omogočajo, da o vas ustvarijo profil glede na vaše brskalne navade - tudi če nanje ne kliknete. Skrivanje teh ikon pomaga zaščititi vaš profil."
   },
-  "options_rating_description": {
-    "message": "Prosimo, vzemite si trenutek in nam pomagajte razširiti Adblock Plus tako, da ga ocenite. Hvala za vašo podporo!"
-  },
-  "options_rating_title": {
-    "message": "Vam je Adblock Plus všeč?"
-  },
   "options_report_bug": {
     "message": "Ste našli hrošča? <a>Pošljite nam poročilo o hrošču.</a>"
   },

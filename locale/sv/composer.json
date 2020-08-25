@@ -1,11 +1,5 @@
 {
-  "add_filters_msg": {
-    "message": "Lägg till filter?"
-  },
   "block_element": {
     "message": "Blockera objekt"
-  },
-  "loading": {
-    "message": "Laddar..."
   }
 }

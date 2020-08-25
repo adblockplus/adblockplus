@@ -1,11 +1,5 @@
 {
-  "add_filters_msg": {
-    "message": "Rnu imsizdeg?"
-  },
   "block_element": {
     "message": "Sewḥel aferdis"
-  },
-  "loading": {
-    "message": "Asider..."
   }
 }

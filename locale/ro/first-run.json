@@ -1,50 +1,53 @@
 {
   "firstRun_browser_description": {
-    "message": "De la echipa din spatele Adblock Plus, cel mai popular ad blocker pentru browsere desktop, Adblock Browser este acum disponibil pentru dispozitivele Android si iOS."
+    "message": "De la echipa din spatele Adblock Plus, cel mai popular ad blocker pentru browsere desktop, Adblock Browser este acum disponibil pentru dispozitivele Android și iOS."
   },
   "firstRun_browser_store_android": {
-    "message": "Android app de pe Google Play"
+    "message": "Aplicația Android pe Google Play"
   },
   "firstRun_browser_store_ios": {
     "message": "Disponibil pe iTunes App Store"
   },
   "firstRun_browser_title": {
-    "message": "Adblock Browser"
+    "message": "Aplicația Adblock Browser"
   },
   "firstRun_control_description": {
     "message": "În mod implicit, poți vedea unele reclame non-intruzive care aderă la <a0>criterii stricte</a0>. Vom identifica aceste reclame ca Reclame Acceptabile. Preferi să blochezi toate reclamele? <a1>Oprește Reclamele Acceptabile</a1> în <a2>Setările</a2> tale."
   },
   "firstRun_control_title": {
-    "message": "Aveţi pe deplin controlul"
+    "message": "Ai pe deplin controlul"
+  },
+  "firstRun_donate": {
+    "message": "Donează"
   },
   "firstRun_fair_description": {
-    "message": "Vă recomandăm să utilizati corect Adblock Plus şi opţiunea de a debloca unele site-uri web. În funcţie de filtrele pe care le utilizati, veţi înţelege şi accepta că rezultatele neintenţionate ar putea apărea (ex. blocate de conţinut de pe un site web). Consultaţi pentru mai multe informaţii despre utilizarea corectă a Adblock Plus de <a0>termeni de utilizare</a0>."
+    "message": "Te încurajăm să utilizezi corect Adblock Plus și opțiunea de a lista în alb pagini web. În funcție de filtrele folosite, înțelegi și accepți că pot apărea rezultate neintenționate (ex. conținut blocat pe un site web). Consultă <a0>Termenii de utilizare</a0> pentru mai multe informații despre utilizarea corectă a Adblock Plus."
   },
   "firstRun_fair_title": {
-    "message": "Utilizare corectã"
+    "message": "Utilizare leală"
   },
   "firstRun_subtitle": {
-    "message": "Aveţi pe deplin controlul browser-ului dvs."
+    "message": "Tocmai ai preluat controlul browserului tău."
   },
   "firstRun_title": {
     "message": "Instalare reușită!"
   },
   "firstRun_warning_dataCorrupted_intro": {
-    "message": "Unii utilizatori se confruntă cu problema deschiderii acestei pagini de fiecare datã când browser-ul este deschis. Această problemă poate fi rezolvatã prin dezinstalarea şi reinstalarea Adblock Plus:"
+    "message": "Unii utilizatori se confruntă cu problema deschiderii acestei pagini de fiecare dată când browserul este deschis. Această problemă poate fi rezolvată prin dezinstalarea și reinstalarea Adblock Plus:"
   },
   "firstRun_warning_dataCorrupted_note": {
-    "message": "Dacă încă mai aveţi nevoie de ajutor, contactaţi-ne la <a0>support@adblockplus.org</a0> sau vizitaţi <a1>centrul de ajutor</a1>."
+    "message": "Dacă mai ai nevoie de ajutor, contactează-ne la <a0>support@adblockplus.org</a0> sau vizitează-ne <a1>Centrul de Ajutor</a1>."
   },
   "firstRun_warning_dataCorrupted_step1": {
     "message": "Deschide fila Extensii a browser-ului."
   },
   "firstRun_warning_dataCorrupted_step2": {
-    "message": "Localizaţi Adblock Plus şi dezinstalaţi-l."
+    "message": "Localizează și dezinstalează Adblock Plus."
   },
   "firstRun_warning_dataCorrupted_step3": {
-    "message": "Reinstalaţi Adblock Plus de pe site-ul <a>adblockplus.org</a>."
+    "message": "Reinstalează Adblock Plus de pe site-ul <a>adblockplus.org</a>."
   },
   "firstRun_warning_reinitialized": {
-    "message": "Se pare că din cauza unor probleme toate filtrele au fost eliminate şi a fost imposibil să le recuperăm. Prin urmare, am resetat filtrele şi setările pentru publicitate acceptabilă. Vă rugăm să verificaţi listele de filtre şi setările pentru publicitate acceptabilă în <a>Opţiuni pentru Adblock Plus</a>."
+    "message": "Se pare că o problemă a făcut ca toate filtrele să fie eliminate și a fost imposibil să le recuperăm. De aceea, am resetat filtrele și setările de Reclame Acceptabile. Te rugăm să verifici listele de filtre și setările de Reclame Acceptabile în <a>opțiunile Adblock Plus</a>."
   }
 }

@@ -303,12 +303,6 @@
   "options_protection_social_tooltip": {
     "message": "The social media icons on the websites you visit allow social media networks to build a profile of you based on your browsing habits - even when you don't click on them. Hiding these icons can protect your profile."
   },
-  "options_rating_description": {
-    "message": "Please take a moment and help spread the word by rating Adblock Plus. Thanks for your support!"
-  },
-  "options_rating_title": {
-    "message": "Enjoying Adblock Plus?"
-  },
   "options_report_bug": {
     "message": "Found a bug? <a>Send us a bug report</a>"
   },

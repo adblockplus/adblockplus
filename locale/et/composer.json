@@ -1,11 +1,5 @@
 {
-  "add_filters_msg": {
-    "message": "Lisada filter(id)?"
-  },
   "block_element": {
     "message": "Blokeeri element"
-  },
-  "loading": {
-    "message": "Laadimine..."
   }
 }

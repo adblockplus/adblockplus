@@ -294,12 +294,6 @@
   "options_protection_social_tooltip": {
     "message": "Sociala medieikoner på webbsidor du besöker tillåter sociala medianätverk att bygga upp en profil baserat på dina surfvanor - även om du inte klickar på dem. Dölj dessa ikoner för att skydda din profil."
   },
-  "options_rating_description": {
-    "message": "Ta en stund och hjälp till att sprida ordet genom att betygsätta Adblock Plus. Tack för ditt stöd!"
-  },
-  "options_rating_title": {
-    "message": "Gillar du Adblock Plus?"
-  },
   "options_report_bug": {
     "message": "Hittat en bugg? <a>Skicka en buggrapport</a>"
   },

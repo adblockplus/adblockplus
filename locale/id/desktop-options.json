@@ -303,12 +303,6 @@
   "options_protection_social_tooltip": {
     "message": "Ikon sosial media pada situs yang Anda kunjungi membolehkan jaringan sosmed untuk membuat profil anda berdasarkan kebiasaan browsing Anda - bahkan ketika Anda tidak menekannya. Menghilangkan ikon ini dapat melindungi profil Anda."
   },
-  "options_rating_description": {
-    "message": "Luangkan waktu Anda sejenak dan beri tahu orang-orang berdasarkan rating Adblock Plus. Terima kasih atas dukungan Anda!"
-  },
-  "options_rating_title": {
-    "message": "Menikmati Adblock Plus?"
-  },
   "options_report_bug": {
     "message": "Anda menemukan bug? <a>Kirimkan laporan bug</a>"
   },

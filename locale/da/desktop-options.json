@@ -303,12 +303,6 @@
   "options_protection_social_tooltip": {
     "message": "Ikoner fra sociale medier på websteder, du besøger, giver sociale medienetværk mulighed for at opbygge en profil af dig baseret på dine internet-vaner - selv når du ikke klikker på dem. Hvis du vælger at skjule disse ikoner, kan du beskytte din profil."
   },
-  "options_rating_description": {
-    "message": "Brug et øjeblik på at hjælpe med at sprede budskabet ved at bedømme Adblock Plus. Tak for din støtte!"
-  },
-  "options_rating_title": {
-    "message": "Er du glad for Adblock Plus?"
-  },
   "options_report_bug": {
     "message": "Fundet en fejl? <a>Send os en fejlrapport</a>"
   },
