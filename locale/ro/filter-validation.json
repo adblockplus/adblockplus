@@ -3,16 +3,16 @@
     "message": "Niciun domeniu activ specificat pentru filtrul extins de ascundere al elementului"
   },
   "filter_invalid_csp": {
-    "message": "Directivă CSP invalidă"
+    "message": "Politică Securitate Conținut invalidă"
   },
   "filter_invalid_domain": {
-    "message": "Domeniul specificat este incorect (sau inexistent)"
+    "message": "Domeniul specificat incorect (sau gol)"
   },
   "filter_invalid_regexp": {
     "message": "Expresie regulată invalidă"
   },
   "filter_slow": {
-    "message": "Pentru a asigura o filtrare rapidă, verificaţi lungimea filtrului şi că nu conţine o expresie regulată."
+    "message": "Pentru a asigura o filtrare rapidă, verifică lungimea modelului și asigură-te că acesta nu conține o expresie regulată."
   },
   "filter_snippet_nodomain": {
     "message": "Nici un domeniu activ specificat pentru filtrul de tip snippet"
@@ -34,6 +34,6 @@
     }
   },
   "unexpected_filter_list_header": {
-    "message": "Antetul listei de filtre nu este permis aici"
+    "message": "Anteturile listei de filtre nu sunt permise aici"
   }
 }

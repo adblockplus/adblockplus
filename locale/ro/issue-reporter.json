@@ -3,22 +3,22 @@
     "message": "Continuă"
   },
   "filters_subscription_lastDownload_connectionError": {
-    "message": "Eroare, descărcare nereuşită"
+    "message": "Eroare, descărcare nereușită"
   },
   "issueReporter_anonymousSubmission_label": {
     "message": "Prezentare anonimă"
   },
   "issueReporter_anonymousSubmission_warning": {
-    "message": "Nu vom putea să te contactăm aşa că vom prioritatea semnalării va fi mai mică."
+    "message": "Nu vom putea să te contactăm așa că vom acorda probabil prioritate raportului mai mic."
   },
   "issueReporter_closeButton_label": {
     "message": "Închide"
   },
   "issueReporter_commentPage_heading": {
-    "message": "Introducere comentariu"
+    "message": "Lasă un comentariu"
   },
   "issueReporter_comment_description": {
-    "message": "Puteți introduce aici o explicație detaliată care ne poate ajuta să înțelegem mai bine problema (opțional, însă recomandat)."
+    "message": "Poți introduce aici o descriere detaliată care ne poate ajuta să înțelegem mai bine problema (opțional, însă recomandat)."
   },
   "issueReporter_comment_label": {
     "message": "Comentariu (opțional):"
@@ -39,52 +39,52 @@
     "message": "Efectuat"
   },
   "issueReporter_email_description": {
-    "message": "Este util să introduci o adresă de e-mail validă. Ea ne permite să vă contactăm cu privire la acest raport sau pentru a remedia probleme dificile precum malware. Reține că e-mailul nu este obligatoriu, iar adresa dvs. nu va fi niciodată distribuită."
+    "message": "Este util să introduci o adresă de e-mail validă. Ea ne permite să te contactăm pentru a regla probleme dificile ca malware. Reține că adresa de e-mail nu este obligatorie, iar adresa ta nu va fi niciodată distribuită."
   },
   "issueReporter_email_label": {
-    "message": "Email:"
+    "message": "E-mail:"
   },
   "issueReporter_errorMessage": {
-    "message": "Eroare la trimitere, cod \"?1?\". Verificați dacă sunteți conectat la internet. Dacă problema persistă, cereți ajutor în [link]forumul Adblock Plus[/link]."
+    "message": "Eroare la trimitere, cod \"?1?\". Verifică dacă ești conectat la internet. Dacă problema persistă, cere ajutor în [link]forumul Adblock Plus[/link]."
   },
   "issueReporter_falseNegative_description": {
-    "message": "Alegeți această opțiune în caz că o reclamă este afișată în ciuda faptului că Adblock Plus este activ."
+    "message": "Alege această opțiune în caz că o reclamă este afișată în ciuda faptului că Adblock Plus este activ."
   },
   "issueReporter_falseNegative_label": {
-    "message": "Adblock Plus nu blochează o reclamă"
+    "message": "Încă văd reclame neblocate"
   },
   "issueReporter_falsePositive_description": {
-    "message": "Alegeți această opțiune dacă pagina este afișată incorect sau nu funcționează cum trebuie atunci când Adblock Plus este activ. Verificați dacă Adblock Plus este sursa problemei prin dezactivarea temporară a suplimentului."
+    "message": "Pagina se afișează incorect, nu funcționează sau pare să lipsească un conținut important."
   },
   "issueReporter_falsePositive_label": {
     "message": "Adblock Plus blochează prea mult"
   },
   "issueReporter_highlighter_description": {
-    "message": "Folosind unelte, evidențiază pub sau ascunde informații sensibile de pe captura de ecran. Evidențiind reclamele ne ajuți să accelerăm rezolvarea problemei."
+    "message": "Folosind unelte, evidențiază pub sau ascunde date sensibile de pe captura de ecran. Marcând reclamele ne ajuți să rezolvăm problema mai rapid."
   },
   "issueReporter_highlighter_heading": {
     "message": "Evidențiază problema"
   },
   "issueReporter_knownIssueMessage": {
-    "message": "Problema pe care o aveți este probabil cunoscută. Detalii:"
+    "message": "Problema pe care o ai este probabil cunoscută. Mai multe informații:"
   },
   "issueReporter_markIssueButton_label": {
-    "message": "Marcare problemă"
+    "message": "Indică problema"
   },
   "issueReporter_other_issues": {
     "message": "Pentru orice alte probleme, te rugăm să ne contactezi la <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_page_title": {
-    "message": "Raportare problemă"
+    "message": "Raportor de probleme"
   },
   "issueReporter_privacyPolicy": {
     "message": "Politica Intimității"
   },
   "issueReporter_processing_screenshot": {
-    "message": "Procesare"
+    "message": "procesare"
   },
   "issueReporter_screenreader_warning": {
-    "message": "Pentru a înţelege mai bine problema, un screenshot este necesar când trimiteți un raport de problemă. În funcţie de site-ul pe care vă aflaţi, captura de ecran ar putea conţine informaţii personale. Daca nu doriţi să trimiteţi o captură de ecran, vă rugăm să trimiteţi detalii la <a0>support@adblockplus.org</a0>."
+    "message": "Pentru a înțelege mai bine problema, o captură de ecran este necesar când trimiți un raport de problemă. În funcție de site-ul pe care te afli, captura de ecran ar putea conține informații personale. Daca nu dorești să trimiți o captură de ecran, te rugăm să trimiți detalii la <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_screenshot_hide": {
     "message": "Ascunde"
@@ -93,7 +93,7 @@
     "message": "Evidențiază"
   },
   "issueReporter_selectIssueButton_label": {
-    "message": "Selectare problemă"
+    "message": "Alege problema"
   },
   "issueReporter_sendButton_label": {
     "message": "Trimite raport"
@@ -102,15 +102,15 @@
     "message": "Trimite raport"
   },
   "issueReporter_sending": {
-    "message": "Așteptați până când Adblock Plus trimite datele."
+    "message": "Așteptată până când Adblock Plus îți trimite raportul."
   },
   "issueReporter_showData_label": {
-    "message": "Afişare raportare"
+    "message": "Clicați acest link ca să vizualizați raportul înaintea trimiterii"
   },
   "issueReporter_typeSelector_description": {
-    "message": "Această fereastră vă ghidează prin pașii necesari raportării unei probleme Adblock Plus. Pentru început, alegeți tipul problemei întâlnite pe pagina curentă:"
+    "message": "Selectați o problemă:"
   },
   "issueReporter_typeSelector_heading": {
-    "message": "Alegeți tipul problemei"
+    "message": "Cu ce tip de problemă ai de-a face?"
   }
 }

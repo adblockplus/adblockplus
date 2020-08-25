@@ -1,11 +1,5 @@
 {
-  "add_filters_msg": {
-    "message": "Tambahkan filter?"
-  },
   "block_element": {
     "message": "Blokir elemen"
-  },
-  "loading": {
-    "message": "Sedang memuat..."
   }
 }

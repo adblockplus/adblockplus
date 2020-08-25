@@ -297,12 +297,6 @@
   "options_protection_social_tooltip": {
     "message": "Sosiale medier-ikonene på nettstedene du besøker tillater at sosiale nettverk kan bygge en profil av deg basert på netthistorikken din - til og med om du ikke klikker på dem. Ved å skjule disse ikonene kan du beskytte privatlivet ditt."
   },
-  "options_rating_description": {
-    "message": "Det ville vært supert om du kunne brukt et øyeblikk på å gi en karakter til Adblock Plus, slik at vi får mer publisitet. Tusen takk for støtten!"
-  },
-  "options_rating_title": {
-    "message": "Liker du Adblock Plus?"
-  },
   "options_report_bug": {
     "message": "Funnet en feil? <a>Send oss en feilrapport</a>"
   },

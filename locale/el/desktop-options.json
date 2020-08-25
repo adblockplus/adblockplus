@@ -267,12 +267,6 @@
   "options_rating_button": {
     "message": "Βαθμολογήστε μας"
   },
-  "options_rating_description": {
-    "message": "Βοηθήστε μας να διαδώσουμε το προϊόν μας βαθμολογώντας το Adblock Plus. Σας ευχαριστούμε για την υποστήριξή σας!"
-  },
-  "options_rating_title": {
-    "message": "Απολαμβάνετε το Adblock Plus;"
-  },
   "options_report_bug": {
     "message": "Βρήκατε σφάλμα; <a>Στείλτε μας μια αναφορά σφάλματος</a>"
   },

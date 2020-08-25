@@ -1,11 +1,26 @@
 {
-  "add_filters_msg": {
-    "message": "להוסיף מסנן(ים)?"
-  },
   "block_element": {
     "message": "חסום אלמנט"
   },
-  "loading": {
+  "composer_block": {
+    "message": "חסום"
+  },
+  "composer_cancel": {
+    "message": "בטל"
+  },
+  "composer_elements": {
+    "message": "אלמנט(ים) נבחר(ו)"
+  },
+  "composer_loading": {
     "message": "טוען…"
+  },
+  "composer_preview": {
+    "message": "הצג מראש"
+  },
+  "composer_undo_preview": {
+    "message": "צא מתצוגה מקדימה"
+  },
+  "composer_unselect": {
+    "message": "בטל בחירה"
   }
 }

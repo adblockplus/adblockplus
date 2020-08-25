@@ -1,11 +1,26 @@
 {
-  "add_filters_msg": {
-    "message": "Adaugă filtru(re)?"
-  },
   "block_element": {
     "message": "Blochează elementul"
   },
-  "loading": {
-    "message": "Încărcare..."
+  "composer_block": {
+    "message": "Blochează"
+  },
+  "composer_cancel": {
+    "message": "Anulare"
+  },
+  "composer_elements": {
+    "message": "element(e) selectate"
+  },
+  "composer_loading": {
+    "message": "Se încarcă..."
+  },
+  "composer_preview": {
+    "message": "Vizualizare"
+  },
+  "composer_undo_preview": {
+    "message": "Ieșire vizualizare"
+  },
+  "composer_unselect": {
+    "message": "Deselectează"
   }
 }

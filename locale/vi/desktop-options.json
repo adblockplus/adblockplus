@@ -297,12 +297,6 @@
   "options_protection_social_tooltip": {
     "message": "Các biểu tượng mạng xã hội trên các trang web mà bạn ghé thăm cho phép các mạng xã hội tạo ra hồ sơ về bạn dựa trên những thói quen duyệt web của bạn - ngay cả khi bạn không bấm vào chúng. Ẩn những biểu tượng này đi có thể bảo vệ hồ sơ của bạn."
   },
-  "options_rating_description": {
-    "message": "Vui lòng dành chút thời gian và giúp quảng bá bằng cách xếp hạng Adblock Plus. Cảm ơn sự hỗ trợ của bạn!"
-  },
-  "options_rating_title": {
-    "message": "Thích Adblock Plus?"
-  },
   "options_report_bug": {
     "message": "Tìm thấy lỗi? <a>Gửi cho chúng tôi báo cáo lỗi</a>"
   },

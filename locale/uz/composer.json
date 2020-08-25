@@ -1,11 +1,5 @@
 {
-  "add_filters_msg": {
-    "message": "Фильтр(лар) қўшилсинми?"
-  },
   "block_element": {
     "message": "Элементни блоклаш"
-  },
-  "loading": {
-    "message": "Юкланмоқда..."
   }
 }

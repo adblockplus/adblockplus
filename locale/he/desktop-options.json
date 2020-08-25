@@ -116,7 +116,7 @@
     "message": "הוסף רשימת מסננים"
   },
   "options_dialog_invalid_message": {
-    "message": "למען סיבות אבטחה, רק כתובות של רשימות מסננים מסוג <strong>HTTPS</strong> יכולות להתווסף."
+    "message": "למען סיבות אבטחה, רק רשימות מסננים מסוג <strong>HTTPS</strong> וכתובות <strong>נתונים</strong> יכולות להתווסף."
   },
   "options_dialog_invalid_title": {
     "message": "שגיאה התרחשה"
@@ -138,6 +138,9 @@
   },
   "options_dialog_predefined_title": {
     "message": "האם אתה בטוח שאתה רוצה להוסיף רשימת מסננים זו?"
+  },
+  "options_donate_button": {
+    "message": "תרום"
   },
   "options_email": {
     "message": "דוא״ל:"
@@ -303,11 +306,8 @@
   "options_protection_social_tooltip": {
     "message": "צלמיות המדיה החברתית באתרים שאתה מבקר בהם מתירות לרשתות מדיה חברתית לבנות פרופיל שלך על סמך הרגלי גלישתך - אפילו אם אתה לא לוחץ עליהן. הסתרת צלמיות אלו יכולה להגן על הפרופיל שלך."
   },
-  "options_rating_description": {
-    "message": "אנא קח רגע ועזור להפיץ את הידיעה ע״י דירוג Adblock Plus. תודה על תמיכתך!"
-  },
-  "options_rating_title": {
-    "message": "נהנה מ־Adblock Plus?"
+  "options_rating_button": {
+    "message": "דרג אותנו"
   },
   "options_report_bug": {
     "message": "מצאת תקל? <a>שלח לנו דיווח תקלים</a>"
@@ -320,6 +320,12 @@
   },
   "options_social_title": {
     "message": "שמור על קשר"
+  },
+  "options_supportUs_description": {
+    "message": "אנא קח רגע כדי לדרג את ABP או כדי לתרום אל המיזם. תודה על תמיכתך!"
+  },
+  "options_supportUs_title": {
+    "message": "נהנה מ־Adblock Plus?"
   },
   "options_support_title": {
     "message": "תמיכה"

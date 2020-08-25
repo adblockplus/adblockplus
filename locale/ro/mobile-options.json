@@ -3,7 +3,7 @@
     "message": "Permite publicitatea neinvazivă."
   },
   "mops_acceptableAds_more": {
-    "message": "Aflaţi mai multe"
+    "message": "Află mai multe"
   },
   "mops_action_cancel": {
     "message": "Anulează"
@@ -12,7 +12,7 @@
     "message": "Blochează pub pe:"
   },
   "mops_error_url": {
-    "message": "Introduceți un URL valid"
+    "message": "Introdu un URL valid"
   },
   "mops_filterlist_add": {
     "message": "Adaugă o listă de filtre"
@@ -24,7 +24,7 @@
     "message": "Adaugă o listă de filtre personalizate"
   },
   "mops_header": {
-    "message": "Opţiuni Adblock Plus"
+    "message": "Opțiuni Adblock Plus"
   },
   "mops_subscribe_header": {
     "message": "Adaugă o listă de filtre personalizate"

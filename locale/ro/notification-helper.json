@@ -1,11 +1,11 @@
 {
   "notification_configure": {
-    "message": "Configuraţi setările de notificare"
+    "message": "Configurează setările de notificare"
   },
   "notification_open_all": {
-    "message": "Deschide toate link-urile din această notificare"
+    "message": "Deschide toate linkurile din această notificare"
   },
   "notification_without_buttons": {
-    "message": "Clic pe notificare pentru a deschide toate link-urile incluse în ea."
+    "message": "Clichează notificarea pentru a deschide toate linkurile incluse în ea."
   }
 }

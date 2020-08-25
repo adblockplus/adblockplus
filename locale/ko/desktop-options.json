@@ -276,12 +276,6 @@
   "options_rating_button": {
     "message": "평가하기"
   },
-  "options_rating_description": {
-    "message": "잠시 시간을 내어 Adblock Plus를 평가해서 입소문을 내주세요. 지원해 주셔서 감사합니다!"
-  },
-  "options_rating_title": {
-    "message": "Adblock Plus가 마음에 드셨나요?"
-  },
   "options_report_bug": {
     "message": "버그를 찾으셨습니까? <a>버그 리포트 보내기</a>"
   },

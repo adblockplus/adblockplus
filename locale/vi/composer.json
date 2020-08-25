@@ -1,11 +1,5 @@
 {
-  "add_filters_msg": {
-    "message": "Thêm bộ lọc?"
-  },
   "block_element": {
     "message": "Chặn phần tử"
-  },
-  "loading": {
-    "message": "Đang tải..."
   }
 }

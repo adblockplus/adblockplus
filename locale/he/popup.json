@@ -1,4 +1,7 @@
 {
+  "block_element_description": {
+    "message": "חסום אלמנט מסוים באתר זה"
+  },
   "click_element_to_block_it": {
     "message": "לחץ על אלמנט בעמוד כדי לחסום אותו."
   },
@@ -36,6 +39,17 @@
     "message": "שתף ב־Twitter"
   },
   "share_on_twitter_message": {
+    "message": "חסמתי $number$ פרסומות עם Adblock Plus. תן לו ניסיון - הוא חינמי!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "share_on_weibo": {
+    "message": "שתף ב־Weibo"
+  },
+  "share_on_weibo_message": {
     "message": "חסמתי $number$ פרסומות עם Adblock Plus. תן לו ניסיון - הוא חינמי!",
     "placeholders": {
       "number": {

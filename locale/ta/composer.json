@@ -1,11 +1,5 @@
 {
-  "add_filters_msg": {
-    "message": "வடிகட்டியை சேர்க்கவா?"
-  },
   "block_element": {
     "message": "உறுப்பை தடு"
-  },
-  "loading": {
-    "message": "ஏற்றுகிறது..."
   }
 }

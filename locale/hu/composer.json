@@ -1,7 +1,4 @@
 {
-  "add_filters_msg": {
-    "message": "Szűrő(k) hozzáadása?"
-  },
   "block_element": {
     "message": "Elem blokkolása"
   },
@@ -25,8 +22,5 @@
   },
   "composer_unselect": {
     "message": "Kijelölés törlése"
-  },
-  "loading": {
-    "message": "Betöltés…"
   }
 }

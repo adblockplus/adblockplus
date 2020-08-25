@@ -1,11 +1,5 @@
 {
-  "add_filters_msg": {
-    "message": "Legg til filter/filtre?"
-  },
   "block_element": {
     "message": "Blokkér element"
-  },
-  "loading": {
-    "message": "Laster inn..."
   }
 }

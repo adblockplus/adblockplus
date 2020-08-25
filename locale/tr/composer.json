@@ -1,7 +1,4 @@
 {
-  "add_filters_msg": {
-    "message": "Süzgeç(ler) eklensin mi?"
-  },
   "block_element": {
     "message": "Öğeyi engelle"
   },
@@ -25,8 +22,5 @@
   },
   "composer_unselect": {
     "message": "Seçimi kaldır"
-  },
-  "loading": {
-    "message": "Yükleniyor..."
   }
 }

@@ -309,12 +309,6 @@
   "options_rating_button": {
     "message": "Оцените нас"
   },
-  "options_rating_description": {
-    "message": "Просим уделить пару минут, чтобы оценить работу Adblock Plus и рассказать другим о его пользе. Благодарим Вас за поддержку!"
-  },
-  "options_rating_title": {
-    "message": "Нравится Adblock Plus?"
-  },
   "options_report_bug": {
     "message": "Нашли ошибку? <a>Отправить нам отчет об ошибках</a>"
   },

@@ -140,7 +140,7 @@
     "message": "Weet u zeker dat u deze filterlijst wilt toevoegen?"
   },
   "options_donate_button": {
-    "message": "Doneer"
+    "message": "Doneren"
   },
   "options_email": {
     "message": "E-mail:"
@@ -309,12 +309,6 @@
   "options_rating_button": {
     "message": "Beoordeel ons"
   },
-  "options_rating_description": {
-    "message": "Neem even de tijd en help de boodschap te verspreiden door Adblock Plus te beoordelen. Bedankt voor uw steun!"
-  },
-  "options_rating_title": {
-    "message": "Geniet u van Adblock Plus?"
-  },
   "options_report_bug": {
     "message": "Een bug gevonden? <a>Stuur ons een bugrapport</a>"
   },
@@ -328,10 +322,10 @@
     "message": "Contact opnemen"
   },
   "options_supportUs_description": {
-    "message": "Neem een ogenblik om ABP te beoordelen of doneer aan het project. Hartelijk dank voor uw steun!"
+    "message": "Neem even de tijd om ABP te beoordelen of aan het project te doneren. Bedankt voor uw steun!"
   },
   "options_supportUs_title": {
-    "message": "Bent u tevreden over het gebruik van Adblock Plus?"
+    "message": "Bevalt Adblock Plus?"
   },
   "options_support_title": {
     "message": "Ondersteuning"

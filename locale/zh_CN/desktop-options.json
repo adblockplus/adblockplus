@@ -309,12 +309,6 @@
   "options_rating_button": {
     "message": "评价我们"
   },
-  "options_rating_description": {
-    "message": "请花一点时间为 Adblock Plus 评分，帮助它宣传。感谢您的支持！"
-  },
-  "options_rating_title": {
-    "message": "喜欢 Adblock Plus？"
-  },
   "options_report_bug": {
     "message": "发现错误？<a>向我们发送错误报告</a>"
   },

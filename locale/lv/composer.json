@@ -1,11 +1,5 @@
 {
-  "add_filters_msg": {
-    "message": "Pievienot filtru(s)?"
-  },
   "block_element": {
     "message": "Bloķēt elementu"
-  },
-  "loading": {
-    "message": "Ielāde..."
   }
 }

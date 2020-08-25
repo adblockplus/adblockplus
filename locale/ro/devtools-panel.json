@@ -3,7 +3,7 @@
     "message": "Blochează element"
   },
   "devtools_action_remove": {
-    "message": "Elimina regulă"
+    "message": "Elimină regula"
   },
   "devtools_action_unblock": {
     "message": "Adăugare excepție"
@@ -21,10 +21,10 @@
     "message": "Filtru"
   },
   "devtools_footer": {
-    "message": "<a0>reload</a0> pagină pentru a vedea efectul filtrului modificat"
+    "message": "<a0>Reîncarcă</a0> pagina pentru a vedea efectul filtrului modificat"
   },
   "devtools_header": {
-    "message": "Afişare <slot0></slot0> elemente de tipul <slot1></slot1>"
+    "message": "Afișare <slot0></slot0> elemente de tipul <slot1></slot1>"
   },
   "devtools_header_state_all": {
     "message": "toate"

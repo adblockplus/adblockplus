@@ -281,12 +281,6 @@
   "options_rating_button": {
     "message": "Dacci un voto"
   },
-  "options_rating_description": {
-    "message": "Ti invitiamo a dedicare qualche minuto per aiutarci a diffondere le informazioni dando una valutazione ad Adblock Plus. Grazie per il tuo sostegno."
-  },
-  "options_rating_title": {
-    "message": "Ti piace Adblock Plus?"
-  },
   "options_report_bug": {
     "message": "Hai trovato un bug? <a>Inviaci un bug report</a>"
   },

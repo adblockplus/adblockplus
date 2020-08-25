@@ -309,12 +309,6 @@
   "options_rating_button": {
     "message": "Évaluez-nous"
   },
-  "options_rating_description": {
-    "message": "Merci de prendre un moment pour nous aider à diffuser en attribuant une note. Merci pour votre aide !"
-  },
-  "options_rating_title": {
-    "message": "Adblock Plus vous intéresse ?"
-  },
   "options_report_bug": {
     "message": "Vous avez trouvé un bogue ? <a>Envoyez-nous un rapport de bogue</a>"
   },

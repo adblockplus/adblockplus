@@ -1,11 +1,5 @@
 {
-  "add_filters_msg": {
-    "message": "Přidat filtr(y)?"
-  },
   "block_element": {
     "message": "Blokovat prvek"
-  },
-  "loading": {
-    "message": "Načítání..."
   }
 }

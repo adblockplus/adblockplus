@@ -1,7 +1,4 @@
 {
-  "add_filters_msg": {
-    "message": "Filter hinzufügen?"
-  },
   "block_element": {
     "message": "Element blockieren"
   },
@@ -25,8 +22,5 @@
   },
   "composer_unselect": {
     "message": "Auswahl aufheben"
-  },
-  "loading": {
-    "message": "Ladevorgang läuft..."
   }
 }
