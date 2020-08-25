@@ -172,7 +172,8 @@ pages:
 
 .crowdin:
   variables:
-    CROWDIN_API_KEY: $CROWDIN_API_KEY
+    CROWDIN_TOKEN: $CROWDIN_TOKEN
+    CROWDIN_PROJECT_ID: $CROWDIN_PROJECT_ID
   environment:
     name: crowdin
     url: https://crowdin.com/project/adblockplusui
@@ -187,7 +188,7 @@ uploadcrowdin:
     # installing java
     - apt-get install openjdk-11-jre -yqq
     # installing crowdin-cli
-    - wget https://artifacts.crowdin.com/repo/deb/crowdin.deb -O crowdin.deb
+    - wget https://artifacts.crowdin.com/repo/deb/crowdin3.deb -O crowdin.deb
     - dpkg -i crowdin.deb
     - crowdin --version
     # Uploading strings
@@ -205,7 +206,7 @@ downloadcrowdin:
     # installing java
     - apt-get install openjdk-11-jre -yqq
     # installing crowdin-cli
-    - wget https://artifacts.crowdin.com/repo/deb/crowdin.deb -O crowdin.deb
+    - wget https://artifacts.crowdin.com/repo/deb/crowdin3.deb -O crowdin.deb
     - dpkg -i crowdin.deb
     - crowdin --version
     # Download strings

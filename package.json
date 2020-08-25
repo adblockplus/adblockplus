@@ -94,12 +94,12 @@
     "crowdin": {
       "download-translations": [
         "node build/locale-sync/crowdin/clear-files.js",
-        "crowdin -k $CROWDIN_API_KEY download",
+        "crowdin download",
         "for file in $(grep -rw './locale' -le '{}'); do rm $file; done",
         "node build/locale-sync/normalize.js"
       ],
-      "upload-strings": "crowdin -k $CROWDIN_API_KEY upload sources",
-      "upload-translations": "crowdin -k $CROWDIN_API_KEY upload translations"
+      "upload-strings": "crowdin upload sources",
+      "upload-translations": "crowdin upload translations"
     },
     "lint": {
       "css": "stylelint ./build/**/*.css ./css/*.scss ./skin/*.css --ignore-path .gitignore",

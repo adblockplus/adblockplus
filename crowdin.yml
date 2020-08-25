@@ -1,9 +1,8 @@
 # https://support.crowdin.com/configuration-file/
 
 # Crowdin's credentials
-"project_identifier" : "adblockplusui"
-# Required for passing environment variable via `crowdin -k CROWDIN_API_KEY`
-"api_key_env" : CROWDIN_API_KEY
+"project_id_env": "CROWDIN_PROJECT_ID"
+"api_token_env": "CROWDIN_TOKEN"
 
 # Translation strings location
 "base_path" : "./locale"
