@@ -574,12 +574,21 @@ function getItemTitle(item)
 
 function getLanguageTitle(item)
 {
-  const langs = item.languages.slice(0);
-  const firstLang = langs.shift();
-  const description = langs.reduce((acc, lang) =>
-  {
-    return getMessage("options_language_join", [acc, languages[lang]]);
-  }, languages[firstLang]);
+  const description = item.languages
+    .slice()
+    .map((langCode) => languages[langCode])
+    // Remove duplicate language names
+    .filter((langName, idx, arr) => arr.indexOf(langName) === idx)
+    .reduce(
+      (acc, langName, idx) =>
+      {
+        if (idx === 0)
+          return langName;
+
+        return getMessage("options_language_join", [acc, langName]);
+      },
+      ""
+    );
 
   return /\+EasyList$/.test(item.originalTitle) ?
           `${description} + ${getMessage("options_english")}` :
