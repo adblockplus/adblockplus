@@ -93,7 +93,7 @@
     },
     "crowdin": {
       "download-translations": [
-        "find ./locale -mindepth 1 -not -path './locale/en_US' -not -path './locale/en_US/*' -delete",
+        "node build/locale-sync/crowdin/clear-files.js",
         "crowdin -k $CROWDIN_API_KEY download",
         "for file in $(grep -rw './locale' -le '{}'); do rm $file; done",
         "node build/locale-sync/normalize.js"
@@ -187,6 +187,7 @@
     "gifsicle": "^5.0.0",
     "glob": "^7.1.2",
     "http-server": "^0.11.1",
+    "js-yaml": "^3.14.0",
     "minimist": "^1.2.0",
     "mocha": "^6.1.4",
     "nightmare": "^3.0.2",
