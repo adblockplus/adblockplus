@@ -3,7 +3,7 @@ image: python:2
 before_script:
   - apt-get update -yqq
   - apt-get install apt-transport-https
-  - curl -sL https://deb.nodesource.com/setup_10.x | bash -
+  - curl -sL https://deb.nodesource.com/setup_12.x | bash -
   - apt-get update -yqq
   - apt-get install -yqq nodejs
   # enable unsafe-perm to avoid problems with running npm as root
@@ -44,10 +44,6 @@ test:
 build:
   stage: build
   script:
-    # Since adblockplusui exists before we run build.py we need to call
-    # npm install explicitly
-    - npm install
-    - npm run dist
     # We cannot upload artifacts from outside the build folder so we need to
     # add a hirachy level to make space for adblockpluschrome
     - cd ..
@@ -55,10 +51,6 @@ build:
     - mv adblockplusui adblockplusui.new/
     - mv adblockplusui.new adblockplusui
     - cd adblockplusui
-    # gitlab uses a custom template when cloning repositories so we need to
-    # create .git/info/exclude, which is needed by ensure_dependencies.py,
-    # ourselves
-    - mkdir -p adblockplusui/.git/info && touch adblockplusui/.git/info/exclude
     # Clone adblockpluschrome
     - git clone ${CI_REPOSITORY_URL/adblockplusui.git/adblockpluschrome.git}
     - ln -s `pwd`/adblockplusui adblockpluschrome
@@ -85,24 +77,27 @@ build:
       done
     # Include resulting HEAD in debug output
     - git log --oneline HEAD^..
-    # Tweak dependencies to use the right repositories i.e. eyeo/adblockplus/abp/*
+    # Tweak dependencies to use the right repositories i.e. eyeo/adblockplus/abpui/*
     - export REPOSITORY_ROOT_URL_ESCAPED=$(echo ${CI_REPOSITORY_URL/adblockplusui.git/} | sed -e 's/[\/&]/\\&/g')
-    # Tweak dependencies to automagically use the current UI version
-    - sed -i -E "s/(_root = hg:[^ ]+ git:)([^ ]+)/\1$REPOSITORY_ROOT_URL_ESCAPED/g" dependencies
-    - sed -i -E "s/(adblockplusui = adblockplusui hg:[[:alnum:]]{12} git:)([[:alnum:]]{7})/\1${CI_COMMIT_SHA:0:8}/g" dependencies
+    - sed -i -E "s/url = .*\/([^/]+\.git)/url = $REPOSITORY_ROOT_URL_ESCAPED\1/g" .gitmodules
+    # Update dependencies
+    - git submodule update --init --recursive
+    # Swap dependencies to use the current UI version instead
+    - rm -R adblockplusui
+    - cp -r ../adblockplusui adblockplusui
     # Include resulting dependencies in debug output
-    - cat dependencies
-    - pip install cryptography==2.2.2 Jinja2==2.10 tox==3.0.0 PyYAML==3.12 urllib3==1.22
-    # Since build.py doesn't call npm install for adblockpluschrome itself,
-    # we need to call npm install explicitly
-    - npm install
+    - git submodule status
     # Finally build abp
-    - python build.py build -t gecko adblockplus-firefox-${CI_COMMIT_SHA:0:8}.xpi
-    - python build.py build -t chrome adblockplus-chrome-${CI_COMMIT_SHA:0:8}.zip
+    - npm install
+    - npx gulp build -t firefox
+    - npx gulp build -t chrome
+    # Attach commit hash to build files
+    - mv adblockpluschrome-*.zip adblockplus-chrome-${CI_COMMIT_SHA:0:8}.zip
+    - mv adblockplusfirefox-*.xpi adblockplus-firefox-${CI_COMMIT_SHA:0:8}.xpi
   artifacts:
     paths:
-      - adblockpluschrome/adblockplus-firefox-${CI_COMMIT_SHA:0:8}.xpi
       - adblockpluschrome/adblockplus-chrome-${CI_COMMIT_SHA:0:8}.zip
+      - adblockpluschrome/adblockplus-firefox-${CI_COMMIT_SHA:0:8}.xpi
   only:
     refs:
       - /^release-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
