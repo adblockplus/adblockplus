@@ -78,12 +78,13 @@
           <p data-i18n="options_general_description"></p>
         </header>
         <section class="cols">
-          <h2 data-i18n="options_privacy_header"></h2>
-          <ul class="list" id="recommend-protection-list-table">
+          <h2 data-i18n="options_recommended_filters_header"></h2>
+          <ul class="list" id="recommended-list-table">
             <template>
               <button data-action="toggle-remove-subscription" data-disable="preconfigured" role="checkbox" class="control icon"></button>
               <span data-display="title"></span>
-              <io-popout type="tooltip" data-template-i18n-body="options_protection_%value%_tooltip"></io-popout>
+              <io-popout type="tooltip" data-template-i18n-body="options_recommended_%value%_tooltip"></io-popout>
+              <span class="new-tag" data-i18n="options_new_label"></span>
             </template>
           </ul>
         </section>

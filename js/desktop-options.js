@@ -164,6 +164,7 @@ Collection.prototype.addItem = function(item)
     const listItem = document.createElement("li");
     listItem.appendChild(document.importNode(template.content, true));
     listItem.setAttribute("aria-label", this._getItemTitle(item, j));
+    listItem.setAttribute("data-recommended", item.recommended);
     listItem.setAttribute("data-access", item.url || item.text);
     listItem.setAttribute("role", "section");
 
@@ -175,6 +176,10 @@ Collection.prototype.addItem = function(item)
       if (getMessage(tooltipId))
       {
         tooltip.setAttribute("i18n-body", tooltipId);
+      }
+      if (item.recommended === "cookies")
+      {
+        tooltip.dataset.i18nDoclinks = "block_cookie_warnings";
       }
     }
 
@@ -399,9 +404,9 @@ function focusNextElement(container, currentElement)
   return true;
 }
 
-collections.protection = new Collection([
+collections.recommendedList = new Collection([
   {
-    id: "recommend-protection-list-table"
+    id: "recommended-list-table"
   }
 ]);
 collections.langs = new Collection([
@@ -450,9 +455,11 @@ function addSubscription(subscription)
         collection = collections.langs;
       collections.allLangs.addItem(subscription);
       break;
+    case "cookies":
+    case "notifications":
     case "privacy":
     case "social":
-      collection = collections.protection;
+      collection = collections.recommendedList;
       break;
     default:
       if (typeof recommended === "undefined" &&

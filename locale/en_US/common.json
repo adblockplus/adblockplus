@@ -45,6 +45,14 @@
     "description": "Feature title for social media blocking filter list",
     "message": "Block social media icons tracking"
   },
+  "common_feature_notifications_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/52243bc8596b06107461034c745a6ecdaa42f1f6/spec/abp/desktop-settings/general-tab.md#list-of-recommended-filter-lists",
+    "message": "Block push notifications"
+  },
+  "common_feature_cookies_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/52243bc8596b06107461034c745a6ecdaa42f1f6/spec/abp/desktop-settings/general-tab.md#list-of-recommended-filter-lists",
+    "message": "Block cookie warnings"
+  },
   "common_notification_hide": {
     "description": "Hidden text attached to the close button for screen readers of Notification",
     "message": "Close notification"

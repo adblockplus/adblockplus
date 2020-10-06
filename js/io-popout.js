@@ -15,15 +15,18 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/* globals getDoclink */
+
 "use strict";
 
+const {$} = require("./dom");
 const IOElement = require("./io-element");
 
 class IOPopout extends IOElement
 {
   static get observedAttributes()
   {
-    return ["anchor-icon", "expanded", "i18n-body", "type"];
+    return ["anchor-icon", "expanded", "i18n-body", "i18n-doclinks", "type"];
   }
 
   created()
@@ -92,9 +95,23 @@ class IOPopout extends IOElement
 
     if (this.i18nBody)
     {
-      content.push(wire(this, ":body")`
+      const body = wire(this, ":body")`
         <p>${{i18n: this.i18nBody}}</p>
-      `);
+      `;
+
+      // Support for link elements in the body is given through the mapping
+      // of comma-separated values of `i18n-doclinks` popout dataset property
+      // and the corresponding indexed anchor descendants.
+      const {i18nDoclinks} = this.dataset;
+      if (i18nDoclinks)
+      {
+        Promise.all(i18nDoclinks.split(",").map(getDoclink)).then(links =>
+        {
+          ext.i18n.setElementLinks(body, ...links);
+        });
+      }
+
+      content.push(body);
     }
 
     content.push(...this._children);

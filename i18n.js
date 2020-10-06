@@ -65,9 +65,12 @@ function* getRemainingLinks(parent)
 }
 
 ext.i18n = {
-  setElementLinks(elementId, ...actions)
+  setElementLinks(idOrElement, ...actions)
   {
-    const element = document.getElementById(elementId);
+    const element = typeof idOrElement === "string" ?
+                    document.getElementById(idOrElement) :
+                    idOrElement;
+
     const remainingLinks = getRemainingLinks(element);
 
     for (let i = 0; i < actions.length; i++)

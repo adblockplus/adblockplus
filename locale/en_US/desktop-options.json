@@ -64,20 +64,28 @@
     "message": "Determine what Adblock Plus shows and hides on websites"
   },
   "options_new_label": {
-    "description": "Label of the new elements. Currently on hold for possible future usage.",
+    "description": "Label of the new elements",
     "message": "New"
   },
-  "options_privacy_header": {
-    "description": "Section title in General tab",
-    "message": "Privacy & security"
+  "options_recommended_filters_header": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/52243bc8596b06107461034c745a6ecdaa42f1f6/spec/abp/desktop-settings/general-tab.md#recommended-filters-section",
+    "message": "Recommended filters"
   },
-  "options_protection_privacy_tooltip": {
-    "description": "Tooltip for 'Block additional tracking' option in General tab",
+  "options_recommended_privacy_tooltip": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/52243bc8596b06107461034c745a6ecdaa42f1f6/spec/abp/desktop-settings/general-tab.md#list-of-recommended-filter-lists",
     "message": "Protect your privacy from known entities that may track your online activity across websites you visit."
   },
-  "options_protection_social_tooltip": {
-    "description": "Tooltip for 'Block social media icons tracking' option in General tab",
+  "options_recommended_social_tooltip": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/52243bc8596b06107461034c745a6ecdaa42f1f6/spec/abp/desktop-settings/general-tab.md#list-of-recommended-filter-lists",
     "message": "The social media icons on the websites you visit allow social media networks to build a profile of you based on your browsing habits - even when you don't click on them. Hiding these icons can protect your profile."
+  },
+  "options_recommended_notifications_tooltip": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/52243bc8596b06107461034c745a6ecdaa42f1f6/spec/abp/desktop-settings/general-tab.md#list-of-recommended-filter-lists",
+    "message": "Stop websites from asking you to allow push notifications that could track your online activity."
+  },
+  "options_recommended_cookies_tooltip": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/52243bc8596b06107461034c745a6ecdaa42f1f6/spec/abp/desktop-settings/general-tab.md#list-of-recommended-filter-lists",
+    "message": "By adding this filter you are waiving your right to be notified about cookies and edit cookie settings on individual websites. Please note that some websites may track you by default. More info here: <a0>https://adblockplus.org/block-cookie-warnings</a0>"
   },
   "options_acceptableAds_header": {
     "description": "Section title in General tab",
