@@ -53,7 +53,6 @@ build:
     - cd adblockplusui
     # Clone adblockpluschrome
     - git clone ${CI_REPOSITORY_URL/adblockplusui.git/adblockpluschrome.git}
-    - ln -s `pwd`/adblockplusui adblockpluschrome
     - cd adblockpluschrome
     # If adblockpluschrome has a matching branch (e.g.
     # adblockplusui@release-YYYY-N => adblockpluschrome@release-YYYY-N) use
@@ -84,7 +83,7 @@ build:
     - git submodule update --init --recursive
     # Swap dependencies to use the current UI version instead
     - rm -R adblockplusui
-    - cp -r ../adblockplusui adblockplusui
+    - ln -s ../adblockplusui adblockplusui
     # Include resulting dependencies in debug output
     - git submodule status
     # Finally build abp
