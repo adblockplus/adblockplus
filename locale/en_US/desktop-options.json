@@ -84,16 +84,16 @@
     "message": "Acceptable Ads"
   },
   "options_acceptableAds_description": {
-    "description": "Acceptable Ads section description in General tab",
-    "message": "Acceptable Ads are nonintrusive ads. They are the middle ground between ad blocking and supporting online content because they generate revenue for website owners."
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/584df1995099bb86898ffa2b530392de777c003a/spec/abp/desktop-settings/general-tab.md#acceptable-ads-section",
+    "message": "Acceptable ads are non-annoying ads that comply with a strict ad standard. They help generate revenue for content creators and do not interfere with the content you are viewing."
   },
   "options_tracking_warning_1": {
-    "description": "Text of the tracking notification (being shown when both 'Acceptable Ads' and 'EasyPrivacy' are enabled) in General tab",
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/584df1995099bb86898ffa2b530392de777c003a/spec/abp/desktop-settings/general-tab.md#notification-text",
     "message": "We noticed you have both <strong>$tracking$</strong> and <strong>$acceptableAds$</strong> enabled.",
     "placeholders": {
       "acceptableAds": {
         "content": "$2",
-        "example": "Allow Acceptable Ads"
+        "example": "Show acceptable ads"
       },
       "tracking": {
         "content": "$1",
@@ -102,11 +102,11 @@
     }
   },
   "options_tracking_warning_2": {
-    "description": "Text of the tracking notification (being shown when both 'Acceptable Ads' and 'EasyPrivacy' are enabled) in General tab",
-    "message": "We want you to know that in order for advertisers to show you more relevant ads, there <strong>may</strong> be some tracking with Acceptable Ads."
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/584df1995099bb86898ffa2b530392de777c003a/spec/abp/desktop-settings/general-tab.md#notification-text",
+    "message": "We want you to know that in order for advertisers to show you more relevant ads, there <strong>may</strong> be some tracking with acceptable ads."
   },
   "options_tracking_warning_3": {
-    "description": "Text of the tracking notification (being shown when both 'Acceptable Ads' and 'EasyPrivacy' are enabled) in General tab",
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/584df1995099bb86898ffa2b530392de777c003a/spec/abp/desktop-settings/general-tab.md#notification-text",
     "message": "If you prefer extra privacy, select the <strong>$acceptableAdsPrivacy$</strong> checkbox below.",
     "placeholders": {
       "acceptableAdsPrivacy": {
@@ -120,12 +120,12 @@
     "message": "OK, got it"
   },
   "options_acceptableAds_ads_label": {
-    "description": "Acceptable Ads section option label in General tab",
-    "message": "Allow Acceptable Ads"
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/584df1995099bb86898ffa2b530392de777c003a/spec/abp/desktop-settings/general-tab.md#acceptable-ads-section",
+    "message": "Show acceptable ads"
   },
   "options_acceptableAds_ads_description_1": {
-    "description": "Acceptable Ads section 'Allow some nonintrusive ads' option description in General tab",
-    "message": "Acceptable Ads are not annoying and do not interfere with the content you are viewing. <a>Read more about the Acceptable Ads criteria</a>"
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/584df1995099bb86898ffa2b530392de777c003a/spec/abp/desktop-settings/general-tab.md#acceptable-ads-section",
+    "message": "Acceptable ads do not interfere with the content you are viewing. <a>Learn more</a>"
   },
   "options_acceptableAds_privacy_label": {
     "description": "Acceptable Ads section option label in General tab",
