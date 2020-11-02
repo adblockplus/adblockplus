@@ -24,15 +24,22 @@ const {validate: validatePlaceholders} = require("../validators/placeholders");
 const {validate: validateStrings} = require("../validators/strings");
 const {validate: validateTags} = require("../validators/tags");
 const {validate: validateWords} = require("../validators/words");
+const {ResultGroup} = require("../common");
 
-let hasError = false;
+const allAssertResults = new ResultGroup("Test locale linter");
 
 async function assertError(fn, msg, expectedError, ...args)
 {
+  const assertResults = new ResultGroup(msg);
+
   let error = null;
   try
   {
-    await fn(...args);
+    error = await fn(...args);
+    if (!error.hasErrors())
+    {
+      error = null;
+    }
   }
   catch (ex)
   {
@@ -41,13 +48,10 @@ async function assertError(fn, msg, expectedError, ...args)
 
   if ((expectedError && !error) || (!expectedError && error))
   {
-    console.error(`Failed: ${msg}`);
-    if (error)
-    {
-      console.error(error);
-    }
-    hasError = true;
+    assertResults.push(error);
   }
+
+  allAssertResults.push(assertResults);
 }
 
 function assertFiles(msg, expectedError, filepath)
@@ -124,8 +128,17 @@ Promise.all([
 ])
 .then(() =>
 {
-  if (hasError)
+  const output = allAssertResults.toString();
+  if (allAssertResults.hasErrors())
+  {
+    console.error(output);
     process.exit(1);
+  }
+  else
+  {
+    /* eslint-disable-next-line no-console */
+    console.log(output);
+  }
 })
 .catch((err) =>
 {

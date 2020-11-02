@@ -17,6 +17,8 @@
 
 "use strict";
 
+const {ResultGroup} = require("../common");
+
 const distanceCache = new Map();
 const importantWords = [
   "ABP",
@@ -75,6 +77,8 @@ function getDistance(a, b)
 
 function validate(locale, string)
 {
+  const results = new ResultGroup("Validate words");
+
   const words = string.split(" ");
 
   for (let i = 0; i < words.length; i++)
@@ -111,8 +115,12 @@ function validate(locale, string)
       const distance = getDistance(word, importantWord);
       if (distance === 1 ||
           (importantWord.length > 6 && distance === 2))
-        throw new Error(`Invalid word '${word}'`);
+      {
+        results.push(`Invalid word '${word}'`);
+      }
     }
   }
+
+  return results;
 }
 exports.validate = validate;

@@ -17,42 +17,62 @@
 
 "use strict";
 
-const {reStringId} = require("../common");
+const {ResultGroup, reStringId} = require("../common");
 const {validate: validatePlaceholders} = require("./placeholders");
 const {validate: validateTags} = require("./tags");
 const {validate: validateWords} = require("./words");
 
 function validate(locale, stringInfos)
 {
+  const results = new ResultGroup("Validate strings");
+
   for (const stringId in stringInfos)
   {
-    try
+    const stringResults = new ResultGroup(
+      `Validate string '${stringId}'`
+    );
+
+    if (!reStringId.test(stringId))
     {
-      if (!reStringId.test(stringId))
-        throw new Error(`Unexpected string ID '${stringId}'`);
-
-      const stringInfo = stringInfos[stringId];
-      if (!("message" in stringInfo))
-        throw new Error("Missing 'message' property");
-
-      if (/\n/.test(stringInfo.message))
-        throw new Error("Unexpected newline character");
-
-      if (/^\s|\s$/.test(stringInfo.message))
-        throw new Error("Unexpected leading/trailing space");
-
-      if (/\s{2,}/.test(stringInfo.message))
-        throw new Error("Unexpected redundant space");
-
-      validateWords(locale, stringInfo.message);
-      validatePlaceholders(stringInfo.message, stringInfo.placeholders);
-      validateTags(stringInfo.message);
+      stringResults.push(`Invalid string ID '${stringId}'`);
     }
-    catch (ex)
+
+    const stringInfo = stringInfos[stringId];
+    if (!("message" in stringInfo))
     {
-      ex.message += `\nFailed to validate string '${stringId}'`;
-      throw ex;
+      stringResults.push("Missing 'message' property");
     }
+
+    if (/\n/.test(stringInfo.message))
+    {
+      stringResults.push("Unexpected newline character");
+    }
+
+    if (/^\s|\s$/.test(stringInfo.message))
+    {
+      stringResults.push("Unexpected leading/trailing space");
+    }
+
+    if (/\s{2,}/.test(stringInfo.message))
+    {
+      stringResults.push("Unexpected redundant space");
+    }
+
+    const placeholdersResults = validatePlaceholders(
+      stringInfo.message,
+      stringInfo.placeholders
+    );
+    stringResults.push(placeholdersResults);
+
+    const tagsResults = validateTags(stringInfo.message);
+    stringResults.push(tagsResults);
+
+    const wordsResults = validateWords(locale, stringInfo.message);
+    stringResults.push(wordsResults);
+
+    results.push(stringResults);
   }
+
+  return results;
 }
 exports.validate = validate;

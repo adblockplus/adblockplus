@@ -20,37 +20,38 @@
 const path = require("path");
 
 const {validate: validateFile} = require("./validators/files");
-const {validate: validateStrings} = require("./validators/strings");
+const {ResultGroup} = require("./common");
 
 async function run()
 {
-  const filepaths = process.argv.slice(2);
+  const results = new ResultGroup("Validate translations");
 
-  let hasError = false;
-
-  for (let filepath of filepaths)
+  try
   {
-    filepath = path.resolve(filepath);
+    const filepaths = process.argv.slice(2);
+    for (let filepath of filepaths)
+    {
+      filepath = path.resolve(filepath);
 
-    try
-    {
-      const locale = path.dirname(filepath)
-        .split(path.sep)
-        .pop();
-      const stringInfos = await validateFile(filepath);
-      validateStrings(locale, stringInfos);
-    }
-    catch (ex)
-    {
-      ex.message += `\nFailed to validate '${filepath}'`;
-      console.error(ex);
-      hasError = true;
+      const result = await validateFile(filepath);
+      results.push(result);
     }
   }
-
-  if (hasError)
+  catch (ex)
   {
+    results.push(ex);
+  }
+
+  const output = results.toString();
+  if (results.hasErrors())
+  {
+    console.error(output);
     process.exit(1);
+  }
+  else
+  {
+    /* eslint-disable-next-line no-console */
+    console.log(output);
   }
 }
 

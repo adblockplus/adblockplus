@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {reStringId} = require("../common");
+const {ResultGroup, reStringId} = require("../common");
 
 const rePlaceholders = /\$([^$]+)\$/g;
 
@@ -36,19 +36,31 @@ function getPlaceholders(string)
 
 function validate(string, placeholderInfo)
 {
+  const results = new ResultGroup("Validate placeholders");
+
   const placeholders = getPlaceholders(string);
   const expected = Object.keys(placeholderInfo || {});
 
   if (expected.length < placeholders.size)
-    throw new Error("Unexpected placeholders");
+  {
+    results.push("Unexpected placeholders");
+    return results;
+  }
 
   for (const placeholder of expected)
   {
     if (!reStringId.test(placeholder))
-      throw new Error(`Invalid placeholder name '${placeholder}'`);
+    {
+      results.push(`Invalid placeholder name '${placeholder}'`);
+      continue;
+    }
 
     if (!placeholders.has(placeholder))
-      throw new Error("Missing placeholders");
+    {
+      results.push("Missing placeholders");
+    }
   }
+
+  return results;
 }
 exports.validate = validate;

@@ -17,33 +17,46 @@
 
 "use strict";
 
+const {ResultGroup} = require("../common");
+
 const allowedTags = new Set(["a", "em", "slot", "strong"]);
 const reTag = /^(.*?)<([^/>\d]+)(\d)?>(.*?)<\/\2\3>(.*)$/;
 
 function validate(string)
 {
+  const results = new ResultGroup("Validate tags");
+
   const match = reTag.exec(string);
   if (!match)
   {
     if (/<\S|\S>/.test(string))
-      throw new Error("Unexpected tag");
-
-    return;
+    {
+      results.push("Unexpected tag");
+    }
+    return results;
   }
 
   const [, before, name,, innerText, after] = match;
 
   if (!allowedTags.has(name))
-    throw new Error(`Unexpected tag name '${name}'`);
+  {
+    results.push(`Unexpected tag name '${name}'`);
+  }
 
   if (name === "slot" && innerText)
-    throw new Error("Slot tag must be empty");
+  {
+    results.push("Slot tag must be empty");
+  }
 
   if (/^\s|\s$/.test(innerText))
-    throw new Error(`Unexpected space inside tag '${name}'`);
+  {
+    results.push(`Unexpected space inside tag '${name}'`);
+  }
 
-  validate(before);
-  validate(innerText);
-  validate(after);
+  results.push(validate(before));
+  results.push(validate(innerText));
+  results.push(validate(after));
+
+  return results;
 }
 exports.validate = validate;
