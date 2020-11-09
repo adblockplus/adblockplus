@@ -17,10 +17,9 @@
 
 "use strict";
 
-// Custom Elements ponyfill (a polyfill triggered on demand)
-const customElementsPonyfill = require("document-register-element/pony");
+// Custom Elements polyfill (triggered on demand)
 if (typeof customElements !== "object")
-  customElementsPonyfill(window);
+  require("@webreflection/custom-elements-no-builtin");
 
 // external dependencies
 const {default: HyperHTMLElement} = require("hyperhtml-element/cjs");

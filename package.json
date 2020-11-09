@@ -166,11 +166,11 @@
     }
   },
   "dependencies": {
+    "@webreflection/custom-elements-no-builtin": "^0.1.14",
     "browserify": "^16.2.3",
     "canvas": "^2.6.0",
-    "document-register-element": "^1.14.3",
     "glob": "^7.1.4",
-    "hyperhtml-element": "^3.12.2",
+    "hyperhtml-element": "^3.12.4",
     "local-range": "^0.1.0",
     "node-sass": "^4.13.0",
     "npm-dollar": "^2.2.1",
