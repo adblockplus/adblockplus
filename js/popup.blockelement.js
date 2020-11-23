@@ -40,6 +40,11 @@ function setupBlock(tab)
     {
       if (response && response.active)
         $("#page-info").classList.add("blocking");
+    })
+    .catch((err) =>
+    {
+      // We expect the sending of this message to fail whenever
+      // our content script isn't running on the page.
     });
 }
 
