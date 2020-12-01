@@ -17,8 +17,8 @@
 
 "use strict";
 
-const {$} = require("./dom");
-require("./io-circle-toggle.js");
+const {$} = require("../dom");
+require("../io-circle-toggle.js");
 
 function onResize()
 {

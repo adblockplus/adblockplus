@@ -19,11 +19,11 @@
 
 const {bind, wire} = require("hyperhtml");
 
-const api = require("./api");
-const {$} = require("./dom");
+const api = require("../api");
+const {$} = require("../dom");
 // We need to import io-element to initialize the i18n intent we're using
-require("./io-element");
-require("./landing");
+require("../io-element");
+require("../landing");
 
 function addUpdates(container, updates)
 {

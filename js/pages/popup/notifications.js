@@ -17,10 +17,10 @@
 
 "use strict";
 
-const api = require("./api");
-const {setPref} = require("./popup.utils");
-const {wire} = require("./io-element");
-const {$} = require("./dom");
+const api = require("../../api");
+const {$} = require("../../dom");
+const {wire} = require("../../io-element");
+const {setPref} = require("./utils");
 
 api.notifications.get("popup")
   .then((notification) =>

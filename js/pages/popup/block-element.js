@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {$} = require("./dom");
+const {$} = require("../../dom");
 
 module.exports = setupBlock;
 

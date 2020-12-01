@@ -34,23 +34,15 @@
       ]
     ],
     "bundle": {
-      "composer": "$ create.css composer",
+      "composer": "$ create.bundle.css composer",
       "day1": [
+        "$ create.bundle.css popup",
         "$ create.bundle popup-dummy",
         "$ create.bundle day1"
       ],
-      "desktop-options": {
-        "css": "$ create.css desktop-options",
-        "js": "$ create.js ./js/desktop-options.js ./desktop-options.js"
-      },
-      "first-run": {
-        "css": "$ create.css first-run",
-        "js": "$ create.js ./js/first-run.js ./first-run.js"
-      },
-      "issue-reporter": {
-        "css": "$ create.css issue-reporter",
-        "js": "$ create.js ./js/issue-reporter.js ./issue-reporter.js"
-      },
+      "desktop-options": "$ create.bundle desktop-options",
+      "first-run": "$ create.bundle first-run",
+      "issue-reporter": "$ create.bundle issue-reporter",
       "mocks": [
         "mkdir -p mocks/dist",
         "$ create.js ./mocks/js/background.js ./mocks/dist/background.js"
@@ -68,10 +60,13 @@
     },
     "create": {
       "bundle": {
-        "css": "$ create.css $1",
-        "js": "$ create.js ./js/$1.js ./$1.js"
+        "css": "$ create.css ./css/pages/$1.scss ./skin/$1.css",
+        "js": [
+          "source=$([ -d ./js/pages/$1 ] && echo \"./js/pages/$1/index.js\" || echo \"./js/pages/$1.js\")",
+          "$ create.js $source ./$1.js"
+        ]
       },
-      "css": "node-sass ./css/$1.scss ./skin/$1.css",
+      "css": "node-sass $1 $2",
       "js": "echo \"/* eslint-disable */$(browserify --node $1)\">$2",
       "test": {
         "component": {

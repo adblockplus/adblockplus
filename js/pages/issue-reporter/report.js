@@ -17,8 +17,8 @@
 
 "use strict";
 
-const {port} = require("./api");
-const {$, $$} = require("./dom");
+const {port} = require("../../api");
+const {$, $$} = require("../../dom");
 
 const reportData = new DOMParser().parseFromString(
   "<report></report>",

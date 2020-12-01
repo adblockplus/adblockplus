@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {$, $$, events} = require("./dom");
+const {$, $$, events} = require("../../dom");
 
 let ignoreFocus = false;
 

@@ -17,21 +17,19 @@
 
 "use strict";
 
-require("./io-circle-toggle.js");
-require("./popup.notifications.js");
-
-const setupToggles = require("./popup.toggles.js");
-const setupBlock = require("./popup.blockelement.js");
-const {activeTab} = require("./popup.utils.js");
-const api = require("./api");
+const api = require("../../api");
+const {$, $$} = require("../../dom");
+require("../../io-circle-toggle.js");
+const setupBlock = require("./block-element.js");
+require("./notifications.js");
 const {createShareLink} = require("./social-media-share.js");
-const {$, $$} = require("./dom");
-
+const setupToggles = require("./toggles.js");
 const {
+  activeTab,
   getDoclinks,
   reportIssue,
   whenPageReady
-} = require("./popup.utils.js");
+} = require("./utils.js");
 
 // platform and application dataset bootstrap
 Promise.all([

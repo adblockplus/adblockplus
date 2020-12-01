@@ -17,8 +17,8 @@
 
 "use strict";
 
-const {isTabWhitelisted} = require("./popup.utils.js");
-const {$} = require("./dom");
+const {$} = require("../../dom");
+const {isTabWhitelisted} = require("./utils.js");
 
 // remember initial state to better toggle content
 let toggleChecked;

@@ -19,17 +19,16 @@
 
 "use strict";
 
-require("./io-filter-table");
-require("./io-list-box");
-require("./io-popout");
-require("./io-toggle");
-
-const api = require("./api");
-const {$, $$, events} = require("./dom");
 const {
   closeAddFiltersByURL,
   setupAddFiltersByURL
 } = require("./add-filters-by-url");
+const api = require("../../api");
+const {$, $$, events} = require("../../dom");
+require("../../io-filter-table");
+require("../../io-list-box");
+require("../../io-popout");
+require("../../io-toggle");
 
 const ALLOWED_PROTOCOLS = /^(?:data|https):/;
 

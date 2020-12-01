@@ -17,7 +17,7 @@
 
 "use strict";
 
-const api = require("./api");
+const api = require("../api");
 
 function openOptions()
 {

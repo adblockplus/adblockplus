@@ -17,12 +17,11 @@
 
 "use strict";
 
+const {$, $$} = require("../../dom");
 // both components are needed,
 // and handled, by this file
-require("./io-steps");
-require("./io-highlighter");
-
-const {$, $$} = require("./dom");
+require("../../io-steps");
+require("../../io-highlighter");
 
 // managers are invoked right away
 // but their initialization might be asynchronous

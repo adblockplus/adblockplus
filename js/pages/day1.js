@@ -17,9 +17,9 @@
 
 "use strict";
 
-const api = require("./api");
-const {$} = require("./dom");
-require("./landing");
+const api = require("../api");
+const {$} = require("../dom");
+require("../landing");
 
 function initContact()
 {

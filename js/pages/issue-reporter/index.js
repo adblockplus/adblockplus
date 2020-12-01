@@ -17,9 +17,9 @@
 
 "use strict";
 
-const stepsManager = require("./issue-reporter-steps-manager");
-const report = require("./issue-reporter-report");
-const {$, asIndentedString} = require("./dom");
+const {$, asIndentedString} = require("../../dom");
+const report = require("./report");
+const stepsManager = require("./steps-manager");
 
 const optionalPermissions = {
   permissions: [
