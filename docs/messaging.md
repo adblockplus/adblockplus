@@ -238,7 +238,7 @@ See [`filterNotifier`][filternotifier].
 
 **Arguments**
 
-- **string[]** filter (see [list of preferences](https://hg.adblockplus.org/adblockpluschrome/file/master/lib/prefs.js))
+- **string[]** filter (see [list of preferences](https://gitlab.com/eyeo/adblockplus/adblockpluschrome/-/blob/master/lib/prefs.js))
 
 #### prefs.set
 
@@ -276,7 +276,7 @@ See [`filterNotifier`][filternotifier].
 
 **Arguments**
 
-- **string** [displayMethod] - (see [`displayMethods`](https://hg.adblockplus.org/adblockpluschrome/file/master/lib/notificationHelper.js))
+- **string** [displayMethod] - (see [`displayMethods`](https://gitlab.com/eyeo/adblockplus/adblockpluschrome/-/blob/master/lib/notificationHelper.js))
 - (deprecated) **string** locale
 
 **Response**
@@ -391,5 +391,5 @@ See [`filterNotifier`][filternotifier].
 
 ![Subscription expiration](images/subscription-expiration.svg)
 
-[filternotifier]: https://hg.adblockplus.org/adblockpluscore/file/master/lib/filterNotifier.js
+[filternotifier]: https://gitlab.com/eyeo/adblockplus/adblockpluscore/-/blob/master/lib/filterNotifier.js
 [tab]: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/Tab
