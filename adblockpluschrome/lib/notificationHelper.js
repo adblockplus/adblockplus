@@ -313,7 +313,7 @@ async function showNotification(notification)
   {
     let notificationTitle = texts.title || "";
     let message = (texts.message || "").replace(/<\/?(a|strong)>/g, "");
-    let iconUrl = browser.runtime.getURL("icons/detailed/abp-128.png");
+    let iconUrl = browser.runtime.getURL("icons/logo/abp-128.png");
 
     let notificationOptions = {
       type: "basic",

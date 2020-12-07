@@ -92,11 +92,11 @@
   "default_locale": "en_US",
   "devtools_page": "devtools.html",
   "icons": {
-    "128": "icons/detailed/abp-128.png",
+    "128": "icons/logo/abp-128.png",
     "16": "icons/abp-16.png",
     "32": "icons/abp-32.png",
-    "48": "icons/detailed/abp-48.png",
-    "64": "icons/detailed/abp-64.png"
+    "48": "icons/logo/abp-48.png",
+    "64": "icons/logo/abp-64.png"
   },
   "options_ui": {
     "open_in_tab": true,

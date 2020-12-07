@@ -133,7 +133,7 @@ body.dark #items table
 
 #items tr[data-state=blocked]
 {
-  color: #f00;
+  color: #ED1E45;
 }
 
 body.dark #items tr[data-state=blocked]

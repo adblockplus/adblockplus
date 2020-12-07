@@ -32,7 +32,7 @@ const baseIcons = {
 };
 const iconSizes = [16, 20, 32, 40];
 const iconVariants = [
-  {type: "default", content: "abp", color: "C90000"},
+  {type: "default", content: "abp", color: "ED1E45"},
   {type: "disabled", content: "abp", color: "A7A7A7"},
   {type: "notification", content: "bell", color: "0797E1"}
 ];

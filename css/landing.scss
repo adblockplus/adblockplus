@@ -25,7 +25,7 @@
 {
   --color-content: #FFF;
   --color-footer: #000;
-  --color-highlight: #CA0000;
+  --color-highlight: var(--color-brand-primary);
   --color-primary: #0797E1;
   --color-primary-hover: #0789CA;
   --color-secondary: #FAFAFA;

@@ -54,7 +54,9 @@ h1::before
   left: -25px;
   width: 20px;
   height: 20px;
-  background-image: url(icons/abp-logo.svg);
+  background-image: url(icons/logo/abp.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
   content: "";
 }
 
@@ -297,7 +299,7 @@ ul + button
   order: 3;
   margin-top: 5px;
   font-size: 12px;
-  color: #C11D26;
+  color: #ED1E45;
 }
 
 #dialog-subscribe [name="title"]:placeholder-shown,
@@ -314,7 +316,7 @@ ul + button
 
 #dialog-subscribe[data-error="url"] [name="url"]:placeholder-shown
 {
-  border-color: #C11D26;
+  border-color: #ED1E45;
 }
 
 body:not([data-dialog]) #dialog,

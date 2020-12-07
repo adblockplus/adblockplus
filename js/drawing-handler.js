@@ -135,8 +135,8 @@ module.exports = class DrawingHandler
     }
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.ctx.lineJoin = "round";
-    this.ctx.strokeStyle = "rgb(208, 1, 27)";
-    this.ctx.fillStyle = "rgb(0, 0, 0)";
+    this.ctx.strokeStyle = "#ED1E45";
+    this.ctx.fillStyle = "#000";
     this.ctx.lineWidth = 4 * this.ratio;
   }
 

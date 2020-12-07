@@ -15,8 +15,9 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-@import "./io-filter-search.scss";
-@import "./io-filter-list.scss";
+@import "light.scss";
+@import "io-filter-search.scss";
+@import "io-filter-list.scss";
 
 io-filter-table
 {
@@ -76,8 +77,8 @@ io-filter-table .footer button:not(:first-child)
 
 io-filter-table .footer .delete
 {
-  border: 2px solid #db394b;
-  color: #db394b;
+  border: 2px solid var(--color-brand-primary);
+  color: var(--color-brand-primary);
 }
 
 io-filter-table .footer .copy
@@ -112,7 +113,7 @@ io-filter-table .footer .error
 {
   display: inline;
   border: 0;
-  color: #db394b;
+  color: var(--color-error);
   text-transform: none;
   flex-grow: 1;
   white-space: pre;

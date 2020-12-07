@@ -14,12 +14,13 @@
   --border-width-thick: 4px;
   --border-width-thin: 1px;
   --box-shadow-primary: 0 2px 4px 0 hsla(0, 0%, 84%, 0.5);
+  --color-brand-primary: #ED1E45;
+  --color-primary: #585858;
   --color-secondary: #000;
   --color-dimmed: #4A4A4A;
-  --color-critical: #ca0000;
+  --color-critical: var(--color-brand-primary);
   --color-default: #FF8F00;
-  --color-error: #C70D2C;
-  --color-primary: #585858;
+  --color-error: var(--color-brand-primary);
   --color-link: #0797E1;
   --color-info: #0797E1;
   --color-tag: #07E1CF;

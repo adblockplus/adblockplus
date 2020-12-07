@@ -46,6 +46,6 @@
 {
   position: relative;
   z-index: 1;
-  border: 3px solid #CA0000;
+  border: 3px solid var(--color-brand-primary);
   cursor: default;
 }

@@ -661,9 +661,9 @@ html[dir="rtl"] #sidebar header
   font-size: 0;
   line-height: 48px;
   color: transparent;
-  background-image: url(icons/abp-full-logo.svg);
+  background-image: url(icons/logo/abp-full.svg);
+  background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
 }
 
 #sidebar header p
@@ -1482,7 +1482,7 @@ html[dir="rtl"] #update-all-subscriptions
 
 #all-filter-lists-table li.show-message .message.error
 {
-  color: #C11D26;
+  color: var(--color-error);
 }
 
 #all-filter-lists-table li.show-message .message.error::before
@@ -1828,7 +1828,7 @@ body:not([data-dialog]) #dialog
 
 #notification.error
 {
-  color: #F00;
+  color: var(--color-error);
   background-color: rgba(235, 199, 203, 0.8);
 }
 

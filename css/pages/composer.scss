@@ -154,8 +154,8 @@ html[dir="rtl"] #selected::before
 #block
 {
   margin: auto;
-  border: 1px solid var(--color-error);
-  color: var(--color-critical);
+  border: 1px solid var(--color-brand-primary);
+  color: var(--color-brand-primary);
   background-color: #fae9e9;
 }
 

@@ -63,19 +63,16 @@ export default {
           "skin/**",
           "!skin/fonts/*00/**",
           "!skin/icons/toolbar/**",
-          "!skin/icons/abp-128.png",
           "!skin/icons/arrow.svg",
-          "!skin/icons/iconClose.svg",
-          "!skin/icons/iconCritical.svg",
+          "!skin/icons/logo/manifest/**",
           "!skin/icons/mobile/**",
           "!skin/mobile-options.css"
         ]
       },
       {
-        dest: "icons/detailed",
+        dest: "icons/logo",
         src: [
-          "adblockpluschrome/icons/detailed/*.png",
-          "skin/icons/abp-128.png"
+          "skin/icons/logo/manifest/**"
         ]
       },
       {
