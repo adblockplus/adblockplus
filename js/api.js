@@ -77,7 +77,8 @@ const subscriptions = {
 module.exports.subscriptions = subscriptions;
 
 const stats = {
-  getBlocked: (tab) => send("stats.getBlockedPerPage", {tab})
+  getBlockedPerPage: (tab) => send("stats.getBlockedPerPage", {tab}),
+  getBlockedTotal: () => send("stats.getBlockedTotal")
 };
 module.exports.stats = stats;
 

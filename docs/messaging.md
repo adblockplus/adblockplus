@@ -49,6 +49,8 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
   - [seen](#notificationsseen)
 - stats
   - [getBlockedPerPage](#statsgetblockedperpage)
+  - [getBlockedTotal](#statsgetblockedtotal)
+  - [listen](#statslisten)
 - subscriptions
   - [add](#subscriptionsadd)
   - [get](#subscriptionsget)
@@ -281,7 +283,7 @@ See [`filterNotifier`][filternotifier].
 
 **Response**
 
-**Object** notification
+**object** notification
 
 #### notifications.seen
 
@@ -297,7 +299,33 @@ See [`filterNotifier`][filternotifier].
 
 **Response**
 
-- **number** blockedPage
+- **number** blockedPageCount
+
+#### stats.getBlockedTotal
+
+**Response**
+
+- **number** blockedTotalCount
+
+#### stats.listen
+
+**Arguments**
+
+- **string[]** filter
+  - `blocked_per_page`
+  - `blocked_total`
+
+**Response**
+
+If filter includes `blocked_per_page`:
+
+- **object** newBlockedPage
+  - **number** tabId
+  - **number** blocked
+
+If filter includes `blocked_total`:
+
+- **number** newBlockedTotal
 
 ---
 

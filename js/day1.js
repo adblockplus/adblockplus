@@ -45,7 +45,7 @@ function initPopupDummy()
 
 function initTitle()
 {
-  api.prefs.get("blocked_total")
+  api.stats.getBlockedTotal()
     .then((blockedTotal) =>
     {
       blockedTotal = blockedTotal.toLocaleString();

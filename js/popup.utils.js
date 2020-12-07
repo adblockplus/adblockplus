@@ -9,7 +9,8 @@ const activeTab = new Promise(
       browser.tabs.query({active: true, lastFocusedWindow: true})
         .then((tabs) =>
         {
-          resolve({id: tabs[0].id, url: tabs[0].url});
+          const {id, incognito, url} = tabs[0];
+          resolve({id, incognito, url});
         });
     }, {once: true});
   }

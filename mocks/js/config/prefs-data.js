@@ -21,7 +21,6 @@ const {params} = require("./env");
 const {subscriptionUrls} = require("./subscriptions");
 
 const prefsData = {
-  blocked_total: 12345,
   notifications_ignoredcategories: [],
   shouldShowBlockElementMenu: true,
   show_devtools_panel: true,

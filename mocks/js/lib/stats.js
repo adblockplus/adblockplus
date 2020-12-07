@@ -20,3 +20,4 @@
 const {port} = require("./messaging");
 
 port.on("stats.getBlockedPerPage", () => 123);
+port.on("stats.getBlockedTotal", () => 12345);

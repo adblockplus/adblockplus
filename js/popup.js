@@ -72,6 +72,9 @@ activeTab.then(tab =>
     document.body.classList.add("ignore");
     document.body.classList.remove("nohtml");
   }
+
+  document.body.classList.toggle("private", tab.incognito);
+
   return tab;
 })
 .then(tab =>
@@ -147,13 +150,13 @@ function gotoMobile(event)
     );
 }
 
-function updateStats(tab, blockedTotal)
+function updateBlockedPerPage(blockedPage)
 {
-  api.stats.getBlocked(tab).then((blockedPage) =>
-  {
-    $("#stats-page .amount").textContent = blockedPage.toLocaleString();
-  });
+  $("#stats-page .amount").textContent = blockedPage.toLocaleString();
+}
 
+function updateBlockedTotal(blockedTotal)
+{
   const total = blockedTotal.toLocaleString();
   $("#stats-total .amount").textContent = total;
 
@@ -168,22 +171,37 @@ function updateStats(tab, blockedTotal)
 
 function setupStats(tab)
 {
-  api.prefs.get("blocked_total").then((blockedTotal) =>
+  api.stats.getBlockedPerPage(tab).then((blockedPage) =>
   {
-    updateStats(tab, blockedTotal);
+    updateBlockedPerPage(blockedPage);
+  });
+  api.stats.getBlockedTotal().then((blockedTotal) =>
+  {
+    updateBlockedTotal(blockedTotal);
   });
 
   api.port.onMessage.addListener((msg) =>
   {
-    if (msg.type !== "prefs.respond" || msg.action !== "blocked_total")
+    if (msg.type !== "stats.respond")
       return;
 
-    updateStats(tab, msg.args[0]);
+    switch (msg.action)
+    {
+      case "blocked_per_page":
+        if (msg.args[0].tabId === tab.id)
+        {
+          updateBlockedPerPage(msg.args[0].blocked);
+        }
+        break;
+      case "blocked_total":
+        updateBlockedTotal(msg.args[0]);
+        break;
+    }
   });
 
   api.port.postMessage({
-    type: "prefs.listen",
-    filter: ["blocked_total"]
+    type: "stats.listen",
+    filter: ["blocked_per_page", "blocked_total"]
   });
 }
 

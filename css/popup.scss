@@ -55,6 +55,7 @@ h2
     disabled: Blocking is not active on page
     ignore: Extension cannot be active on page
     nohtml: Content scripts are not active on page
+    private: Total blocked counter is not being updated
  */
 /*
   explicitly disable Issue Reporter in EdgeHTML due bug
@@ -67,12 +68,27 @@ html[data-platform="edgehtml"] #issue-reporter,
   https://issues.adblockplus.org/ticket/7193
  */
 html[data-application="edge"] footer,
+/* Block element feature can only be used for HTML documents */
 body.nohtml #block-element,
+/* Block element feature can only be used if ad blocking is enabled */
 body.disabled #block-element,
+/* Page-specific blocked counter only updates if ad blocking is enabled */
 body.disabled #stats-page,
+/* Ad blocking can only be en-/disabled for HTTP(S) pages */
 body.ignore #page-status,
+/* Page-specific blocked counter only updates for HTTP(S) pages */
 body.ignore #stats-page,
-body.ignore #default-container .options
+/* Page actions can only be used for HTTP(S) pages */
+body.ignore #default-container .options,
+/* Total blocked counter only updates for regular tabs */
+body.private #stats-total,
+/* Blocked counters only update for regular tabs if ad blocking is enabled */
+body.private.disabled #page-info,
+/* Blocked counters only update for regular tabs containing HTTP(S) pages */
+body.private.ignore #page-info,
+/* UI page is empty for private tabs containing non-HTTP(S) pages */
+body:not(.private) #idle-status,
+body.private:not(.ignore) #idle-status
 {
   display: none;
 }
@@ -263,6 +279,18 @@ html[dir="rtl"] #notification .content h3
 #options:hover
 {
   opacity: 1;
+}
+
+#idle-status
+{
+  margin: var(--margin-primary) 0;
+  text-align: center;
+}
+
+#idle-status img
+{
+  width: 200px;
+  height: 200px;
 }
 
 #page-status
@@ -602,7 +630,8 @@ main .options button[disabled]
   opacity: 0.5;
 }
 
-main > *:not(:first-child),
+#page-info,
+#page-refresh,
 footer
 {
   border-top: var(--border-width-thin)
