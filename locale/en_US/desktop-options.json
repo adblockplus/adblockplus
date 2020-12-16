@@ -149,8 +149,8 @@
     "message": "Language"
   },
   "options_language_description": {
-    "description": "Language section description in General tab",
-    "message": "Optimize Adblock Plus for the language(s) you typically browse websites in."
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/5a16934e1b4ce889bd62561b4fab956551339e18/spec/abp/desktop-settings/general-tab.md#language-section-description",
+    "message": "Add or remove languages that you want Adblock Plus to block ads in."
   },
   "options_language_empty": {
     "description": "Language section language list empty text in General tab",
