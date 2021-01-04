@@ -88,8 +88,8 @@ build:
     - git submodule status
     # Finally build abp
     - npm install
-    - npx gulp build -t firefox
-    - npx gulp build -t chrome
+    - npx gulp build -t firefox --unhandled-rejections=strict
+    - npx gulp build -t chrome --unhandled-rejections=strict
     # Attach commit hash to build files
     - mv adblockpluschrome-*.zip adblockplus-chrome-${CI_COMMIT_SHA:0:8}.zip
     - mv adblockplusfirefox-*.xpi adblockplus-firefox-${CI_COMMIT_SHA:0:8}.xpi
