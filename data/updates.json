@@ -4,7 +4,9 @@
   },
   "fixes": [],
   "improvements": [
-    {"id": "i1"},
-    {"id": "i2", "image": {"url": "skin/icons/updates/block-element.gif"}}
+    {"id": "i1", "image": {"url": "skin/icons/updates/recommended-filter-lists.png"}},
+    {"id": "i2", "image": {"url": "skin/icons/updates/smart-filter-lists.png"}},
+    {"id": "i3"},
+    {"id": "i4"}
   ]
 }

@@ -16,23 +16,43 @@
     "message": "Adblock Plus is up-to-date!"
   },
   "updates_update_i1_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/e7880944f972552fb33aeb0444bd821714712b5a/spec/abp/updates.md#current-updates",
-    "message": "Added a short description of the Block Element feature and improved wording for the Report button."
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/2a69300851f45962e505eb4836e7544b3093d5d0/spec/abp/updates.md#current-updates",
+    "message": "You will see a new section when you open your Settings called <strong>Recommended Filters</strong>. Here you can easily turn on/off recommended filters with a simple click and enhance your web experience."
   },
   "updates_update_i1_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/e7880944f972552fb33aeb0444bd821714712b5a/spec/abp/updates.md#current-updates",
-    "message": "ABP user interface is now a little more user-friendly"
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/2a69300851f45962e505eb4836e7544b3093d5d0/spec/abp/updates.md#current-updates",
+    "message": "Added new recommended filter lists for easy access"
+  },
+  "updates_update_i1_image": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/2a69300851f45962e505eb4836e7544b3093d5d0/spec/abp/updates.md#current-updates",
+    "message": "\"Block push notifications\" and \"Block cookie warnings\" filter lists highlighted in \"RECOMMENDED FILTERS\" section of options page"
   },
   "updates_update_i2_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/e7880944f972552fb33aeb0444bd821714712b5a/spec/abp/updates.md#current-updates",
-    "message": "We've made the Block Element feature easier to use by adding short instructions as well as a preview of how the page will look without the intrusive element. Try it out!"
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/2a69300851f45962e505eb4836e7544b3093d5d0/spec/abp/updates.md#current-updates",
+    "message": "You can now visit websites in other languages and still have the ads blocked. When you visit a website in a specific language, you will be able to choose whether you want to block ads on all websites in that language. You can turn this option on/off in <strong>Settings > General > Language filter lists</strong>."
   },
   "updates_update_i2_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/e7880944f972552fb33aeb0444bd821714712b5a/spec/abp/updates.md#current-updates",
-    "message": "Updated and improved Block Element feature"
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/2a69300851f45962e505eb4836e7544b3093d5d0/spec/abp/updates.md#current-updates",
+    "message": "Added notification option for available language filters"
   },
   "updates_update_i2_image": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/e7880944f972552fb33aeb0444bd821714712b5a/spec/abp/updates.md#current-updates",
-    "message": "Example of icon pop-up with redesigned \"Block element\" button."
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/2a69300851f45962e505eb4836e7544b3093d5d0/spec/abp/updates.md#current-updates",
+    "message": "\"Notify me of available language filter lists\" checkbox highlighted in \"LANGUAGE\" section of options page"
+  },
+  "updates_update_i3_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/2a69300851f45962e505eb4836e7544b3093d5d0/spec/abp/updates.md#current-updates",
+    "message": "For our more advanced users, we have a new debug-element hiding filters mode that can be turned on in the advanced settings. Elements will then be highlighted for easy debugging."
+  },
+  "updates_update_i3_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/2a69300851f45962e505eb4836e7544b3093d5d0/spec/abp/updates.md#current-updates",
+    "message": "Added debug element-hiding filters mode"
+  },
+  "updates_update_i4_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/2a69300851f45962e505eb4836e7544b3093d5d0/spec/abp/updates.md#current-updates",
+    "message": "Should you decide to turn off Acceptable Ads, you will be given the option to still support us through the form of a donation. This is, of course, completely optional!"
+  },
+  "updates_update_i4_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/2a69300851f45962e505eb4836e7544b3093d5d0/spec/abp/updates.md#current-updates",
+    "message": "More ways to support Adblock Plus"
   }
 }
