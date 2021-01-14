@@ -82,6 +82,8 @@ body.ignore #stats-page,
 body.ignore #default-container .options,
 /* Social sharing section is only shown for regular tabs */
 body.private #counter-panel .share,
+/* The separator between page and total count is only shown for regular tabs */
+body.private #stats-page::after,
 /* Total blocked counter only updates for regular tabs */
 body.private #stats-total,
 /* Blocked counters only update for regular tabs if ad blocking is enabled */
