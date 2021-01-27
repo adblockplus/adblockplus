@@ -1,7 +1,11 @@
 {
   "name": "adblockplusui",
-  "private": true,
-  "description": "Adblock Plus UI",
+  "repository": "https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui",
+  "license": "GPL-3.0",
+  "engines": {
+    "node": ">=12.17.0",
+    "npm": ">=6"
+  },
   "scripts": {
     "$": "npm-dollar",
     "dev-build": "npm run $ bundle && npm run $ dev-build",

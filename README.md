@@ -1,10 +1,10 @@
-# Adblock Plus UI
+# Adblock Plus
 
-Welcome to the user interface repository for the Adblock Plus extension!
+Welcome to the repository for the Adblock Plus extension!
 
 The main project is hosted on [GitLab][abp-ui] and, in addition to the user
-interface, the Adblock Plus extension also includes the Adblock Plus [web
-extension code][abp-webext] and [core functionality][abp-core].
+interface and the web extension code, the Adblock Plus extension also includes
+the Adblock Plus [core functionality][abp-core].
 
 - [About Adblock Plus](#about-adblock-plus)
 - [Prerequisites](#prerequisites)
@@ -36,8 +36,8 @@ download `npm` [here](https://www.npmjs.com/get-npm).
 `npm`, too.
 
 If you want to build the Adblock Plus extension, please refer to the
-[Adblock Plus for Chrome, Firefox, Edge and Opera README][abp-webext-readme] for
-additional requirements.
+[Adblock Plus web extension README][abp-webext-readme] for additional
+requirements.
 
 After cloning this repository, open its folder and run `npm install`.
 
@@ -175,9 +175,9 @@ instructions for [building Adblock Plus][abp-webext-readme-build].
 
 ## Release history
 
-[UI specific releases][abp-ui-tags]
+[Extension releases (since 3.11)][abp-ui-tags]
 
-[Extension releases][abp-webext-releases]
+[Extension releases (prior to 3.11)][abp-webext-releases]
 
 ## Contributing
 
@@ -196,9 +196,8 @@ This project follows the typical GitLab process:
 [abp-ui]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/
 [abp-ui-nightlies]: https://wspee.gitlab.io/adblockplusui-nightlies/
 [abp-ui-tags]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/tags
-[abp-webext]: https://gitlab.com/eyeo/adblockplus/adblockpluschrome/
-[abp-webext-readme]: https://gitlab.com/eyeo/adblockplus/adblockpluschrome/blob/master/README.md
-[abp-webext-readme-build]: https://gitlab.com/eyeo/adblockplus/adblockpluschrome#building
+[abp-webext-readme]: /adblockpluschrome/README.md
+[abp-webext-readme-build]: /adblockpluschrome/README.md#building
 [abp-webext-releases]: https://github.com/adblockplus/adblockpluschrome/releases
 [badge-pipeline-image]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/badges/master/pipeline.svg
 [badge-pipeline-link]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/commits/master
