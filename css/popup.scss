@@ -82,6 +82,8 @@ body.ignore #stats-page,
 body.ignore #default-container .options,
 /* Social sharing section is only shown for regular tabs */
 body.private #counter-panel .share,
+/* Issue reporter button is only shown for regular tabs */
+body.private #issue-reporter,
 /* The separator between page and total count is only shown for regular tabs */
 body.private #stats-page::after,
 /* Total blocked counter only updates for regular tabs */
@@ -510,10 +512,14 @@ main .options button
 
 #block-element
 {
-  margin-bottom: var(--margin-secondary);
   border: 1px solid var(--border-color-ternary);
   background-color: var(--background-color-ternary);
   color: var(--color-link);
+}
+
+body:not(.private) #block-element,
+{
+  margin-bottom: var(--margin-secondary);
 }
 
 #block-element:hover,
