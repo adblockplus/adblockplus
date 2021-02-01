@@ -1,0 +1,229 @@
+# This file is part of Adblock Plus <https://adblockplus.org/>,
+# Copyright (C) 2006-present eyeo GmbH
+#
+# Adblock Plus is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 3 as
+# published by the Free Software Foundation.
+#
+# Adblock Plus is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+
+---
+
+default:
+  image: "registry.gitlab.com/eyeo/docker/adblockplus-ci:node12"
+
+stages:
+  - "prepare"
+  - "build"
+  - "publish"
+  - "test"
+
+variables:
+  GIT_SUBMODULE_STRATEGY: "recursive"
+  npm_config_audit: "false"
+  npm_config_prefer_offline: "true"
+  npm_config_unsafe_perm: "true"
+
+.cache:
+  cache: &cache
+    key: "global-cache"
+    untracked: true
+    paths:
+      - "adblockpluschrome/adblockpluscore/*-snapshots/download-cache/"
+      - "adblockpluschrome/adblockpluscore/chromium-snapshots/chromedriver/"
+      - "node_modules/"
+
+.default_template:
+  needs:
+    - job: "prepare-dependencies"
+  before_script:
+    - "cd adblockpluschrome"
+    - "npm install"
+  retry:
+    max: 2
+    when: "stuck_or_timeout_failure"
+  except:
+    - "schedules"
+  cache:
+    <<: *cache
+    policy: "pull"
+  interruptible: true
+
+prepare-dependencies:
+  stage: "prepare"
+  script:
+    - "cd adblockpluschrome"
+    - "git clean -x -d -ff"
+    - "git -C adblockpluscore clean -e '/*-snapshots' -x -d -ff"
+    - "git -C .. clean -x -d -ff"
+    - "npm install"
+    - "npm run download-test-browsers"
+  except:
+    - "schedules"
+  cache: *cache
+  interruptible: true
+
+###############################################################################
+#                               Build & document                              #
+###############################################################################
+
+.build:
+  extends: ".default_template"
+  stage: "build"
+  script:
+    - "npx gulp build -t $TARGET -c development"
+    - "npx gulp devenv -t $TARGET"
+
+build:chrome:
+  extends: ".build"
+  variables:
+    TARGET: "chrome"
+  artifacts:
+    paths:
+      - "adblockpluschrome/adblockpluschrome-*.zip"
+      - "adblockpluschrome/devenv.chrome/tests/"
+
+build:firefox:
+  extends: ".build"
+  variables:
+    TARGET: "firefox"
+  artifacts:
+    paths:
+      - "adblockpluschrome/adblockplusfirefox-*.xpi"
+      - "adblockpluschrome/devenv.firefox/tests/"
+
+build:source:
+  extends: ".build"
+  script:
+    - "npx gulp source -c development"
+  artifacts:
+    paths:
+      - "adblockpluschrome/adblockplus-*.tar.gz"
+
+docs:
+  extends: ".default_template"
+  stage: "build"
+  script:
+    - "npm run docs"
+  artifacts:
+    paths:
+      - "adblockpluschrome/docs/"
+    expire_in: "1 week"
+
+###############################################################################
+#                                Tests & checks                               #
+###############################################################################
+
+.test_template:
+  extends: ".default_template"
+  stage: "test"
+  before_script:
+    - "cd adblockpluschrome"
+    - "npm install"
+    - "unzip -q $EXTENSION_FILE -d devenv.*"
+  variables:
+    SKIP_BUILD: "true"
+  artifacts:
+    paths:
+      - "adblockpluschrome/test/screenshots/"
+    when: "on_failure"
+    expire_in: "1 mo"
+
+.test_template_chromium:
+  extends: ".test_template"
+  needs:
+    - job: "build:chrome"
+      artifacts: true
+  variables:
+    EXTENSION_FILE: "adblockpluschrome-*.zip"
+
+.test_template_firefox:
+  extends: ".test_template"
+  needs:
+    - job: "build:firefox"
+      artifacts: true
+  variables:
+    EXTENSION_FILE: "adblockplusfirefox-*.xpi"
+
+lint:yaml:
+  image: "registry.gitlab.com/eyeo/docker/yamllint:1.14.0-configured"
+  stage: "test"
+  needs: []
+  script:
+    - "cd adblockpluschrome"
+    - "yamllint .gitlab-ci.yml"
+  except:
+    - "schedules"
+  interruptible: true
+
+lint:js:
+  extends: ".default_template"
+  stage: "test"
+  script:
+    - "npm run lint"
+
+audit:
+  extends: ".default_template"
+  stage: "test"
+  script:
+    - "npm audit"
+  allow_failure: true
+
+test:firefox:oldest:
+  extends: ".test_template_firefox"
+  script:
+    - "npm run test-only -- -g 'Firefox \\(oldest\\)'"
+
+test:firefox:latest:
+  extends: ".test_template_firefox"
+  script:
+    - "npm run test-only -- -g 'Firefox \\(latest\\)'"
+
+test:chromium:oldest:
+  extends: ".test_template_chromium"
+  script:
+    - "xvfb-run -a npm run test-only -- -g 'Chromium \\(oldest\\)'"
+
+test:chromium:latest:
+  extends: ".test_template_chromium"
+  script:
+    - "xvfb-run -a npm run test-only -- -g 'Chromium \\(latest\\)'"
+
+test:edge:
+  extends: ".test_template_chromium"
+  before_script:
+    - "cd adblockpluschrome"
+    - "Expand-Archive -Path $EXTENSION_FILE -DestinationPath devenv.chrome"
+    - "choco upgrade -y nodejs --version=12.17.0"
+    - "choco install -y microsoft-edge --version=79.0.309.71"
+    - "npm install"
+  script:
+    - "npm run test-only -- -g 'Edge'"
+  tags:
+    - shared-windows
+    - windows
+    - windows-1809
+  # https://gitlab.com/gitlab-org/gitlab-runner/-/issues/25980
+  cache: null
+
+###############################################################################
+#                                 Public pages                                #
+###############################################################################
+
+.pages:
+  stage: "publish"
+  needs:
+    - job: "docs"
+      artifacts: true
+  except:
+    - "schedules"
+
+include:
+  project: "eyeo/adblockplus/adblockpluscore"
+  file: ".gitlab-pages.yml"

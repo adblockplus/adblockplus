@@ -1,3 +1,20 @@
+# This file is part of Adblock Plus <https://adblockplus.org/>,
+# Copyright (C) 2006-present eyeo GmbH
+#
+# Adblock Plus is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 3 as
+# published by the Free Software Foundation.
+#
+# Adblock Plus is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+
+---
+
 image: python:2
 
 before_script:
@@ -16,11 +33,16 @@ stages:
   - test
   - build
   - pages
+  - webext
   - uploadxtm
   - updatextm
   - downloadxtm
   - uploadcrowdin
   - downloadcrowdin
+
+################################################################################
+# Test
+################################################################################
 
 lint:
   stage: lint
@@ -41,52 +63,19 @@ test:
     variables:
       - $CI_PROJECT_NAME == 'adblockplusui'
 
+################################################################################
+# Build
+################################################################################
+
 build:
   stage: build
   script:
-    # We cannot upload artifacts from outside the build folder so we need to
-    # add a hirachy level to make space for adblockpluschrome
-    - cd ..
-    - mkdir adblockplusui.new
-    - mv adblockplusui adblockplusui.new/
-    - mv adblockplusui.new adblockplusui
-    - cd adblockplusui
-    # Clone adblockpluschrome
-    - git clone ${CI_REPOSITORY_URL/adblockplusui.git/adblockpluschrome.git}
-    - cd adblockpluschrome
-    # If adblockpluschrome has a matching branch (e.g.
-    # adblockplusui@release-YYYY-N => adblockpluschrome@release-YYYY-N) use
-    # the matching branch instead of master
-    - |
-      IFS=$'\n';
-      for HEADS in $(git --git-dir ../adblockplusui/.git log --pretty=format:%D origin/master..HEAD | sed "/^$/d"); do
-        IFS=$', ';
-        for HEAD in $HEADS; do
-          # Skip special ref HEAD since it will always be present
-          if [[ $HEAD == *"HEAD"* ]]; then
-            continue;
-          fi
-          # Strip ref e.g. ref/branch => branch
-          export HEAD=$(echo $HEAD | sed "s/[^\/]\+\///g");
-          if [ $(git rev-parse --quiet --verify origin/$HEAD) ]; then
-            git reset --hard origin/$HEAD;
-            break 2;
-          fi
-        done
-      done
-    # Include resulting HEAD in debug output
-    - git log --oneline HEAD^..
-    # Tweak dependencies to use the right repositories i.e. eyeo/adblockplus/abpui/*
-    - export REPOSITORY_ROOT_URL_ESCAPED=$(echo ${CI_REPOSITORY_URL/adblockplusui.git/} | sed -e 's/[\/&]/\\&/g')
-    - sed -i -E "s/url = .*\/([^/]+\.git)/url = $REPOSITORY_ROOT_URL_ESCAPED\1/g" .gitmodules
     # Update dependencies
     - git submodule update --init --recursive
-    # Swap dependencies to use the current UI version instead
-    - rm -R adblockplusui
-    - ln -s ../adblockplusui adblockplusui
     # Include resulting dependencies in debug output
     - git submodule status
     # Finally build abp
+    - cd adblockpluschrome
     - npm install
     - npx gulp build -t firefox --unhandled-rejections=strict
     - npx gulp build -t chrome --unhandled-rejections=strict
@@ -171,6 +160,10 @@ pages:
       - /^compat-\w+-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
     variables:
       - $CI_PROJECT_NAME == 'adblockplusui-nightlies'
+
+################################################################################
+# Translate
+################################################################################
 
 .translations:
   only: 
@@ -301,4 +294,18 @@ downloadxtm:
     - export TARGET_BRANCH="${CI_BUILD_REF_NAME}-xtm-download"
     - export PUSH_URL=$(echo $CI_PROJECT_URL | sed "s/:\/\//:\/\/$GITLAB_USER:$GITLAB_TOKEN@/")
     - 'git push -f -o merge_request.create -o merge_request.target=$CI_BUILD_REF_NAME -o merge_request.remove_source_branch -o merge_request.title="WIP: ${COMMIT_MSG}" $PUSH_URL HEAD:refs/heads/$TARGET_BRANCH'
+  when: manual
+
+################################################################################
+# Extension
+################################################################################
+
+webext:
+  stage: webext
+  trigger:
+    include: "/adblockpluschrome/.gitlab-ci.yml"
+    strategy: depend
+  only:
+    variables:
+      - $CI_PROJECT_NAME == 'adblockplusui'
   when: manual

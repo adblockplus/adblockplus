@@ -10,7 +10,7 @@ extension code][abp-webext] and [core functionality][abp-core].
 - [Prerequisites](#prerequisites)
 - [UI elements](#ui-elements)
 - [Testing](#testing)
-- [Bundling](#bundling)
+- [Building](#building)
 - [Contributing](#contributing)
 
 ## About Adblock Plus
@@ -135,9 +135,7 @@ The `./test/end-to-end/tests` folder contains various end-to-end tests. Run
 `npm run test:end-to-end -- -p EXTENSION_PATH` in order to execute tests in the
 latest stable Chrome browser, where `EXTENSION_PATH` is path to the extension
 root folder. The `./test/end-to-end/config.js` file contains paths and
-descriptions of each executable test. In order to build the extension for
-testing purposes please refer to the
-[building Adblock Plus][abp-webext-readme-build] documentation.
+descriptions of each executable test.
 
 ### Linting
 
@@ -152,7 +150,9 @@ included when you install `npm`.
 
 `npx stylelint --fix skin/real-file-name.css`
 
-## Bundling
+## Building
+
+### Bundling the UI
 
 Various files need to be generated before using the UI. When building the UI
 for inclusion in the extension, this is achieved using `npm run dist`.
@@ -166,6 +166,12 @@ environment.
 
 Beyond that, this repository contains [various utilities][wiki-utils] that we
 rely on across our development process.
+
+### Building the extension
+
+In order to build the extension you need to run `git submodule update --init`
+before you can navigate to the adblockpluschrome/ directory to follow the
+instructions for [building Adblock Plus][abp-webext-readme-build].
 
 ## Release history
 
