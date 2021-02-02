@@ -258,7 +258,8 @@ browser.webRequest.onBeforeRequest.addListener(
 function headerMatch(details, url, frameId, docDomain, sitekey, type,
                      specificOnly)
 {
-  let match = defaultMatcher.match(url, contentTypes.HEADER,
+  let match = defaultMatcher.match(url,
+                                   contentTypes.HEADER | contentTypes[type],
                                    docDomain, sitekey, specificOnly);
 
   // The presence of an exception filter is enough.
