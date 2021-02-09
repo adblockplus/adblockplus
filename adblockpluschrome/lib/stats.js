@@ -17,6 +17,7 @@
 
 /** @module stats */
 
+import {EventEmitter} from "../adblockpluscore/lib/events.js";
 import {BlockingFilter} from "../adblockpluscore/lib/filterClasses.js";
 import {setBadge} from "./browserAction.js";
 import {port} from "./messaging.js";
@@ -25,6 +26,7 @@ import {Prefs} from "./prefs.js";
 const badgeColor = "#646464";
 const badgeRefreshRate = 4;
 
+let eventEmitter = new EventEmitter();
 let blockedPerPage = new ext.PageMap();
 
 /**
@@ -95,15 +97,64 @@ export async function recordBlockedRequest(filter, tabIds)
   {
     let page = new ext.Page({id: tabId});
     let blocked = blockedPerPage.get(page) || 0;
+    ++blocked;
 
-    blockedPerPage.set(page, ++blocked);
+    blockedPerPage.set(page, blocked);
     scheduleBadgeUpdate(tabId);
+
+    eventEmitter.emit("blocked_per_page", {tabId, blocked});
   }
+
+  // Don't update the total for incognito tabs.
+  let tabs = await Promise.all(tabIds.map(id => browser.tabs.get(id)));
+  if (tabs.some(tab => tab.incognito))
+    return;
 
   // Make sure blocked_total is only read after the storage was loaded.
   await Prefs.untilLoaded;
+
   Prefs.blocked_total++;
+  eventEmitter.emit("blocked_total", Prefs.blocked_total);
 }
+
+/**
+  * @namespace
+  * @static
+  */
+export let Stats = {
+  /**
+   * Adds a callback that is called when the
+   * value of a specified stat changed.
+   *
+   * @param {string}   stat
+   * @param {function} callback
+   */
+  on(stat, callback)
+  {
+    eventEmitter.on(stat, callback);
+  },
+
+  /**
+   * Removes a callback for the specified stat.
+   *
+   * @param {string}   stat
+   * @param {function} callback
+   */
+  off(stat, callback)
+  {
+    eventEmitter.off(stat, callback);
+  },
+
+  /**
+   * The total number of blocked requests on non-incognito pages.
+   *
+   * @type {number}
+   */
+  get blocked_total()
+  {
+    return Prefs.blocked_total;
+  }
+};
 
 Prefs.on("show_statsinicon", async() =>
 {
@@ -125,6 +176,14 @@ Prefs.on("show_statsinicon", async() =>
  */
 port.on("stats.getBlockedPerPage",
         message => getBlockedPerPage(new ext.Page(message.tab)));
+
+/**
+ * Returns the total number of blocked requests on non-incognito pages.
+ *
+ * @event "stats.getBlockedTotal"
+ * @returns {number}
+ */
+port.on("stats.getBlockedTotal", () => Stats.blocked_total);
 
 browser.tabs.query({active: true}).then(tabs =>
 {

@@ -21,6 +21,7 @@ import {startIconAnimation, stopIconAnimation} from "./icon.js";
 import * as info from "info";
 import {port} from "./messaging.js";
 import {Prefs} from "./prefs.js";
+import {Stats} from "./stats.js";
 import {notifications} from "../adblockpluscore/lib/notifications.js";
 import {initDay1Notification} from "../../lib/notifications.js";
 import {showOptions} from "./options.js";
@@ -481,7 +482,7 @@ ext.pages.onLoading.addListener(page =>
   notifications.showNext(page.url.href);
 });
 
-Prefs.on("blocked_total", () =>
+Stats.on("blocked_total", () =>
 {
   notifications.showNext();
 });

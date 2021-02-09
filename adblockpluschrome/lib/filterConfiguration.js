@@ -17,6 +17,7 @@
 
 import {port} from "./messaging.js";
 import {Prefs} from "./prefs.js";
+import {Stats} from "./stats.js";
 import {filterStorage} from "../adblockpluscore/lib/filterStorage.js";
 import {filterNotifier} from "../adblockpluscore/lib/filterNotifier.js";
 import {isSlowFilter} from "../adblockpluscore/lib/matcher.js";
@@ -86,12 +87,14 @@ function convertFilter(filter)
 let uiPorts = new Map();
 let listenedPreferences = new Set();
 let listenedFilterChanges = new Set();
+let listenedStats = new Set();
 let messageTypes = new Map([
   ["app", "app.respond"],
   ["filter", "filters.respond"],
   ["pref", "prefs.respond"],
   ["requests", "requests.respond"],
-  ["subscription", "subscriptions.respond"]
+  ["subscription", "subscriptions.respond"],
+  ["stats", "stats.respond"]
 ]);
 
 function sendMessage(type, action, ...args)
@@ -665,6 +668,20 @@ function listen(type, filters, newFilter, message, senderTabId)
     case "requests":
       filters.set("requests", newFilter);
       addRequestListeners(message.tabId, senderTabId);
+      break;
+    case "stats":
+      filters.set("stats", newFilter);
+      for (let stat of newFilter)
+      {
+        if (!listenedStats.has(stat))
+        {
+          listenedStats.add(stat);
+          Stats.on(stat, info =>
+          {
+            sendMessage("stats", stat, info);
+          });
+        }
+      }
       break;
   }
 }
