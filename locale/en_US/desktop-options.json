@@ -1,22 +1,14 @@
 {
-  "options_aa_opt_out_donate_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/4430bf5379354fc986e1d5b4caa856a5d405061e/spec/abp/desktop-settings/general-tab.md#acceptable-ads-opt-out-donation",
-    "message": "Adblock Plus is and always will be free. To help us continue improving the web, please consider donating!"
-  },
-  "options_aa_opt_out_donate_ok": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/4430bf5379354fc986e1d5b4caa856a5d405061e/spec/abp/desktop-settings/general-tab.md#acceptable-ads-opt-out-donation",
-    "message": "Donate"
-  },
-  "options_aa_opt_out_survey_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/4430bf5379354fc986e1d5b4caa856a5d405061e/spec/abp/desktop-settings/general-tab.md#acceptable-ads-opt-out-donation",
+  "options_aa_opt_out_survey": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/7daa26676865fc640146c8b5ad4146e6a17e171a/spec/abp/options-page.md#acceptable-ads-opt-out-survey",
     "message": "To help us improve Adblock Plus, mind sharing why you’ve turned off Acceptable Ads?"
   },
   "options_aa_opt_out_survey_ok": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/4430bf5379354fc986e1d5b4caa856a5d405061e/spec/abp/desktop-settings/general-tab.md#acceptable-ads-opt-out-donation",
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/7daa26676865fc640146c8b5ad4146e6a17e171a/spec/abp/options-page.md#acceptable-ads-opt-out-survey",
     "message": "Go to the survey"
   },
-  "options_aa_opt_out_dialog_no": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/4430bf5379354fc986e1d5b4caa856a5d405061e/spec/abp/desktop-settings/general-tab.md#acceptable-ads-opt-out-donation",
+  "options_aa_opt_out_survey_no": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/7daa26676865fc640146c8b5ad4146e6a17e171a/spec/abp/options-page.md#acceptable-ads-opt-out-survey",
     "message": "No, thanks"
   },
   "options_page_document_title": {

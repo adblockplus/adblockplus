@@ -698,7 +698,7 @@ function execAction(action, element)
     case "hide-more-filters-section":
       $("#more-filters").setAttribute("aria-hidden", true);
       return true;
-    case "hide-acceptable-ads-dialog":
+    case "hide-acceptable-ads-survey":
       $("#acceptable-ads-why-not").setAttribute("aria-hidden", true);
       return false;
     case "hide-notification":
@@ -1094,11 +1094,7 @@ function onDOMLoaded()
   });
   getDoclink("acceptable_ads_survey").then(url =>
   {
-    $("#acceptable-ads-why-not .survey a").href = url;
-  });
-  getDoclink("donate_aa_optout").then(url =>
-  {
-    $("#acceptable-ads-why-not .donate a").href = url;
+    $("#acceptable-ads-why-not a.primary").href = url;
   });
 
   // Advanced tab
