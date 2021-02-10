@@ -46,13 +46,5 @@
   "updates_update_i3_title": {
     "description": "https://gitlab.com/eyeo/specs/spec/-/blob/2a69300851f45962e505eb4836e7544b3093d5d0/spec/abp/updates.md#current-updates",
     "message": "Added debug element-hiding filters mode"
-  },
-  "updates_update_i4_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/2a69300851f45962e505eb4836e7544b3093d5d0/spec/abp/updates.md#current-updates",
-    "message": "Should you decide to turn off Acceptable Ads, you will be given the option to still support us through the form of a donation. This is, of course, completely optional!"
-  },
-  "updates_update_i4_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/2a69300851f45962e505eb4836e7544b3093d5d0/spec/abp/updates.md#current-updates",
-    "message": "More ways to support Adblock Plus"
   }
 }
