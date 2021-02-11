@@ -5,7 +5,6 @@
   "fixes": [],
   "improvements": [
     {"id": "i1", "image": {"url": "skin/icons/updates/recommended-filter-lists.png"}},
-    {"id": "i2", "image": {"url": "skin/icons/updates/smart-filter-lists.png"}},
     {"id": "i3"}
   ]
 }

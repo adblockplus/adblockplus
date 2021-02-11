@@ -27,18 +27,6 @@
     "description": "https://gitlab.com/eyeo/specs/spec/-/blob/2a69300851f45962e505eb4836e7544b3093d5d0/spec/abp/updates.md#current-updates",
     "message": "\"Block push notifications\" and \"Block cookie warnings\" filter lists highlighted in \"RECOMMENDED FILTERS\" section of options page"
   },
-  "updates_update_i2_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/2a69300851f45962e505eb4836e7544b3093d5d0/spec/abp/updates.md#current-updates",
-    "message": "You can now visit websites in other languages and still have the ads blocked. When you visit a website in a specific language, you will be able to choose whether you want to block ads on all websites in that language. You can turn this option on/off in <strong>Settings > General > Language filter lists</strong>."
-  },
-  "updates_update_i2_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/2a69300851f45962e505eb4836e7544b3093d5d0/spec/abp/updates.md#current-updates",
-    "message": "Added notification option for available language filters"
-  },
-  "updates_update_i2_image": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/2a69300851f45962e505eb4836e7544b3093d5d0/spec/abp/updates.md#current-updates",
-    "message": "\"Notify me of available language filter lists\" checkbox highlighted in \"LANGUAGE\" section of options page"
-  },
   "updates_update_i3_description": {
     "description": "https://gitlab.com/eyeo/specs/spec/-/blob/2a69300851f45962e505eb4836e7544b3093d5d0/spec/abp/updates.md#current-updates",
     "message": "For our more advanced users, we have a new debug-element hiding filters mode that can be turned on in the advanced settings. Elements will then be highlighted for easy debugging."
