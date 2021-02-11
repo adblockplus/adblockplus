@@ -15,6 +15,3 @@
 
 ## Hints for translators
 (Mention any changes that were made to any files in the `locale` directory)
-
-## Integration notes
-(Mention any breaking changes and necessary changes that need to be made by any project that wants to include this change)
