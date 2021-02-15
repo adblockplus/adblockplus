@@ -30,7 +30,7 @@
          notificationClicked} = require("notificationHelper");
   const {HitLogger} = require("hitLogger");
   const {
-    Filter, ActiveFilter, InvalidFilter, RegExpFilter
+    Filter, ActiveFilter, InvalidFilter, URLFilter
   } = require("filterClasses");
   const {synchronizer} = require("synchronizer");
   const info = require("info");
@@ -87,7 +87,7 @@
 
   // pollute a converted filter object with `slow` detail
   // there are 3 kind of slow filters
-  //  1. filter instanceof RegExpFilter && isSlowFilter(filter)
+  //  1. filter instanceof URLFilter && isSlowFilter(filter)
   //  2. filter instanceof ElemHideEmulationFilter
   //  3. filter instanceof SnippetFilter
   // for the time being, we want to simply expose the first kind
@@ -95,7 +95,7 @@
   function convertFilter(filter)
   {
     const obj = convertObject(["disabled", "text"], filter);
-    obj.slow = filter instanceof RegExpFilter && isSlowFilter(filter);
+    obj.slow = filter instanceof URLFilter && isSlowFilter(filter);
     return obj;
   }
 
@@ -456,7 +456,7 @@
         matcher.add(Filter.fromText(urlFilter));
       }
 
-      const {DOCUMENT} = RegExpFilter.typeMap;
+      const {DOCUMENT} = URLFilter.typeMap;
       if (!matcher.matchesAny(url, DOCUMENT, url.hostname))
         return;
     }

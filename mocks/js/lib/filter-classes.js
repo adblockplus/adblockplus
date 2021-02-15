@@ -29,7 +29,7 @@ class Filter
     if (text[0] === "!")
       return new CommentFilter(text);
 
-    return new RegExpFilter(text);
+    return new URLFilter(text);
   }
 
   static normalize(text)
@@ -63,11 +63,11 @@ class InvalidFilter extends Filter
   }
 }
 
-class RegExpFilter extends ActiveFilter {}
+class URLFilter extends ActiveFilter {}
 
 module.exports = {
   ActiveFilter,
   Filter,
   InvalidFilter,
-  RegExpFilter
+  URLFilter
 };
