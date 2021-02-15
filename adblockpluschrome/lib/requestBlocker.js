@@ -206,6 +206,9 @@ function listener(matchFunction, details)
   let {result, filter} = matchFunction(
     details, url, frameId, docDomain, sitekey, type, specificOnly);
 
+  if (result && result.cancel)
+    collapse(details.tabId, frameId, type, details.url);
+
   getRelatedTabIds(details).then(tabIds =>
   {
     logRequest(
@@ -240,7 +243,6 @@ function urlMatch(details, url, frameId, docDomain, sitekey, type, specificOnly)
     }
     else
     {
-      collapse(details.tabId, frameId, type, details.url);
       result = {cancel: true};
     }
   }
