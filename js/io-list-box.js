@@ -44,7 +44,7 @@ const KeyCode = {
 
 /*
   <io-list-box
-    autoclose=boolean to close per each change
+    ?autoclose=${boolean} to close per each change
     data-text="i18n entry text when it's closed"
     data-expanded="optional i18n entry text when it's opened"
   />

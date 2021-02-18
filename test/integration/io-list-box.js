@@ -63,7 +63,7 @@ describe("Testing io-list-box component", () =>
         id="languages-box"
         data-text="options_language_add"
         data-expanded="options_dialog_language_title"
-        autoclose
+        ?autoclose=${true}
       ></io-list-box>
     `;
     const listBox = getComponent();

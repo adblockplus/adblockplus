@@ -326,7 +326,7 @@ class IOFilterList extends IOFilterBase
     this.html`<table cellpadding="0" cellspacing="0">
       <thead onclick="${this}" data-call="onheaderclick">
         <th data-column="selected">
-          <io-checkbox checked=${!!length && this.selected.size === length} />
+          <io-checkbox ?checked=${!!length && this.selected.size === length} />
         </th>
         <th data-column="status"></th>
         <th data-column="rule">${{i18n: "options_filter_list_rule"}}</th>
@@ -388,15 +388,15 @@ function getRow(filter, i)
     <tr class="${selected ? "selected" : ""}">
       <td data-column="selected">
         <io-checkbox
-          checked="${selected}"
+          ?checked=${selected}
           onclick="${this}" onchange="${this}"
         />
       </td>
       <td data-column="status">
         <!-- Not all filters can be en-/disabled (e.g. comments) -->
         <io-toggle
-          checked="${!filter.disabled}"
-          disabled="${!("disabled" in filter)}"
+          ?checked=${!filter.disabled}
+          ?disabled=${!("disabled" in filter)}
           aria-hidden="${!("disabled" in filter)}"
           onchange="${this}"
         />
