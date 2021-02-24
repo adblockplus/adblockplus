@@ -139,6 +139,9 @@
   "options_dialog_predefined_title": {
     "message": "Binne jo wis dat jo dizze filterlist tafoegje wolle?"
   },
+  "options_donate_button": {
+    "message": "Donearje"
+  },
   "options_email": {
     "message": "E-mail:"
   },
@@ -303,6 +306,9 @@
   "options_protection_social_tooltip": {
     "message": "Fia de sosjale-mediapiktogrammen op de websites dy't jo besykje, kinne sosjale-medianetwurken in profyl fan jo opboue op basis fan jo sneupgedrach - sels wannear't jo hjir net op klikke. It ferstopjen fan dizze knoppen kin jo profyl beskermje."
   },
+  "options_rating_button": {
+    "message": "Beoardielje ús"
+  },
   "options_report_bug": {
     "message": "In bug fûn? <a>Stjoer ús in bugrapport</a>"
   },
@@ -314,6 +320,12 @@
   },
   "options_social_title": {
     "message": "Kontakt opnimme"
+  },
+  "options_supportUs_description": {
+    "message": "Nim efkes de tiid om ABP te beoardielen of oan it projekt te donearjen. Tank foar jo stipe!"
+  },
+  "options_supportUs_title": {
+    "message": "Genietsje jo fan Adblock Plus?"
   },
   "options_support_title": {
     "message": "Stipe"

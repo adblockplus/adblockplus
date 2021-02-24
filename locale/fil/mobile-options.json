@@ -1,5 +1,41 @@
 {
+  "mops_acceptableAds_more": {
+    "message": "Matuto nang higit pa"
+  },
   "mops_action_cancel": {
-    "message": "I-cancel"
+    "message": "Kanselahin"
+  },
+  "mops_enabled_label": {
+    "message": "Nakabukas ang pam-block ng mga ad"
+  },
+  "mops_error_url": {
+    "message": "Maglagay ng wastong URL"
+  },
+  "mops_filterlist_add": {
+    "message": "Magdagdag ng filter list"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Magdagdag ng filter list"
+  },
+  "mops_filterlist_add_url": {
+    "message": "Magdagdag ng kustom na filter list"
+  },
+  "mops_header": {
+    "message": "Mga Setting ng Adblock Plus"
+  },
+  "mops_subscribe_header": {
+    "message": "Magdagadag ng kustom na filter list"
+  },
+  "mops_subscribe_title": {
+    "message": "Pangalan ng filter list"
+  },
+  "mops_subscribe_url": {
+    "message": "URL ng filter list"
+  },
+  "mops_subscriptions_header": {
+    "message": "Mga suskripsyon ng filter"
+  },
+  "mops_title": {
+    "message": "Mga Setting ng Adblock Plus"
   }
 }

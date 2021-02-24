@@ -1,5 +1,26 @@
 {
   "block_element": {
     "message": "Estä kohde"
+  },
+  "composer_block": {
+    "message": "Estä"
+  },
+  "composer_cancel": {
+    "message": "Peruuta"
+  },
+  "composer_elements": {
+    "message": "kohdetta valittu"
+  },
+  "composer_loading": {
+    "message": "Ladataan..."
+  },
+  "composer_preview": {
+    "message": "Esikatsele"
+  },
+  "composer_undo_preview": {
+    "message": "Poistu esikatselusta"
+  },
+  "composer_unselect": {
+    "message": "Poista valinta"
   }
 }

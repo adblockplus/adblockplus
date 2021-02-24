@@ -1,6 +1,6 @@
 {
   "firstRun_browser_description": {
-    "message": "מהצוות שמאחורי Adblock Plus, חוסם הפרסומות הפופולרי ביותר עבור דפדפני שולחן עבודה, דפדפן Adblock זמין עכשיו עבור מכשירי Android ומכשירי iOS שלך."
+    "message": "מהצוות שמאחורי Adblock Plus, חוסם הפרסומות הפופולרי ביותר עבור דפדפני שולחן עבודה, Adblock Browser זמין עכשיו עבור מכשירי Android ומכשירי iOS שלך."
   },
   "firstRun_browser_store_android": {
     "message": "יישום Android ב־Google Play"
@@ -9,7 +9,7 @@
     "message": "זמין בחנות היישומים iTunes"
   },
   "firstRun_browser_title": {
-    "message": "יישום דפדפן Adblock"
+    "message": "יישום Adblock Browser"
   },
   "firstRun_control_description": {
     "message": "כברירת מחדל, יתכן שתראה מספר פרסומות בלתי־פולשניות שדבקות <a0>בקריטריון קפדני</a0>. אנו מזהים פרסומות אלו בתור פרסומות מקובלות. מעדיף לחסום את כל הפרסומות? <a1>כבה פרסומות מקובלות</a1> בתוך <a2>הגדרות</a2>."

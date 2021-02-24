@@ -1,4 +1,7 @@
 {
+  "block_element_description": {
+    "message": "Sekat elemen tertentu di laman web ini"
+  },
   "click_element_to_block_it": {
     "message": "Klik pada eleman di halaman untuk menyekatnya."
   },
@@ -36,6 +39,17 @@
     "message": "Kongsi di Twitter"
   },
   "share_on_twitter_message": {
+    "message": "Saya telah menyekat $number$ iklan dengan Adblock Plus. Cuba sekarang - ia adalah PERCUMA!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "share_on_weibo": {
+    "message": "Kongsi di Weibo"
+  },
+  "share_on_weibo_message": {
     "message": "Saya telah menyekat $number$ iklan dengan Adblock Plus. Cuba sekarang - ia adalah PERCUMA!",
     "placeholders": {
       "number": {

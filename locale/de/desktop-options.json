@@ -133,6 +133,9 @@
   "options_dialog_predefined_subscription_title": {
     "message": "Titel"
   },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
+  },
   "options_dialog_predefined_title": {
     "message": "Bist du sicher, dass du diese Filterliste hinzufügen möchtest?"
   },

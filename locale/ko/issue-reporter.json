@@ -11,6 +11,9 @@
   "issueReporter_anonymousSubmission_warning": {
     "message": "우리가 당신에 게 돌아올 수 없을 고 가능성이 보고서 낮은 우선 순위를 지정 합니다."
   },
+  "issueReporter_closeButton_label": {
+    "message": "닫기"
+  },
   "issueReporter_commentPage_heading": {
     "message": "보고 내용 입력"
   },
@@ -28,6 +31,9 @@
   },
   "issueReporter_data_gathering_tab": {
     "message": "<strong>참고:</strong> 추가 탭이 일시적으로 열리므로 귀하가 방문 중인 페이지는 이슈 리포터의 영향을 받지 않습니다."
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "상세"
   },
   "issueReporter_doneButton_label": {
     "message": "실행"
@@ -53,8 +59,17 @@
   "issueReporter_falsePositive_label": {
     "message": "애드블록 플러스가 콘텐츠를 과도하게 차단함"
   },
+  "issueReporter_highlighter_description": {
+    "message": "도구를 사용해서 스크린샷에 있는 광고를 강조하거나 민감한 정보를 숨기세요. 광고를 강조하면 문제를 더 빠르게 해결할 수 있습니다."
+  },
+  "issueReporter_highlighter_heading": {
+    "message": "문제 강조"
+  },
   "issueReporter_knownIssueMessage": {
     "message": "보고한 문제는 다른 사용자들에 의해 이미 많이 보고되었습니다. 더 많은 정보 :"
+  },
+  "issueReporter_markIssueButton_label": {
+    "message": "문제 표시"
   },
   "issueReporter_other_issues": {
     "message": "다른 문제의 경우 <a0>support@adblockplus.org</a0>로 연락해 주십시오."
@@ -64,6 +79,21 @@
   },
   "issueReporter_privacyPolicy": {
     "message": "개인 정보 보호 정책"
+  },
+  "issueReporter_processing_screenshot": {
+    "message": "처리 중"
+  },
+  "issueReporter_screenreader_warning": {
+    "message": "어떤 문제인지 알 수 있도록 문제를 알려주실 떄 스크린샷을 포함해주세요. 웹사이트에 따라 민감한 개인정보가 포함되어 있을 수 있습니다. 스크린샷을 보내기가 곤란하다면, <a0>support@adblockplus.org</a0>으로 문제를 보내주세요."
+  },
+  "issueReporter_screenshot_hide": {
+    "message": "숨기기"
+  },
+  "issueReporter_screenshot_highlight": {
+    "message": "강조"
+  },
+  "issueReporter_selectIssueButton_label": {
+    "message": "문제 유형 선택"
   },
   "issueReporter_sendButton_label": {
     "message": "보고서 전송"

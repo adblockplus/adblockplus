@@ -17,6 +17,9 @@
   "firstRun_control_title": {
     "message": "Du har kontrollen"
   },
+  "firstRun_donate": {
+    "message": "Donera"
+  },
   "firstRun_fair_description": {
     "message": "Vi uppmuntrar dig att använda Adblock Plus på ett rättvist sätt och möjligheten att vitlista webbplatser. Beroende på vilka filter du använder, förstår och accepterar du att oavsiktliga resultat kan uppstå (ex. blockerat innehåll på en webbplats). Se <a0>Användarvillkor</a0> för mer information om rättvis användning av Adblock Plus."
   },

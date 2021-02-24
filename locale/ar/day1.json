@@ -29,6 +29,15 @@
   "day1_header_more": {
     "message": "اعرف المزيد عن الإعلانات الضارة"
   },
+  "day1_header_title": {
+    "message": "قام Adblock Plus <strong>بحجب <em0>$ads$ إعلان</em0> في <em1>النصف ساعة الأخيرة</em1>,</strong> والتي ربما كانت يتضمن بعض منها محتوى ضار",
+    "placeholders": {
+      "ads": {
+        "content": "$1",
+        "example": "12,000"
+      }
+    }
+  },
   "notification_day1_message": {
     "message": "ثمة كثير من الإعلانات المزعجة. <a>اكتشف الأشياء الأخرى التي يستطيع Adblock Plus حجبها.</a>"
   },

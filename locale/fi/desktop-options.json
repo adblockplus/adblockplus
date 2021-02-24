@@ -1,6 +1,6 @@
 {
   "options_aa_opt_out_survey": {
-    "message": "Haluamme parantaa AdBlock Plussan käyttökokemusta. Haluaisitko kertoa, minkä vuoksi poistit käyttäjäystävälliset mainokset käytöstä?"
+    "message": "Auttaaksesi meitä parantamaan AdBlock Plussan käyttökokemusta, kertoisitko miksi olet poistanut käyttäjäystävälliset mainokset käytöstä?"
   },
   "options_aa_opt_out_survey_no": {
     "message": "Ei kiitos"
@@ -15,7 +15,10 @@
     "message": "Salli käyttäjäystävälliset mainokset"
   },
   "options_acceptableAds_description": {
-    "message": "Mainostulot ovat tärkeitä monille verkkosivustoille, joten sallimalla käyttäjäystävälliset mainokset tuet sisällöntuottajia ja samalla kannustat heitä luomaan vähemmän häiritseviä mainoksia."
+    "message": "Käyttäjäystävälliset mainokset ovat ei-häiritseviä. Mainostulot ovat tärkeä tulonlähde monille verkkosivustoille ja sallimalla nämä mainokset tuet sisällöntuottajia."
+  },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>Huomautus:</strong> Tämä toiminto edellyttää selaimen lähettämien <strong>Älä jäljitä -pyyntöjen</strong> ottamista käyttöön. <a>Näin otat pyynnöt käyttöön</a>."
   },
   "options_acceptableAds_header": {
     "message": "Käyttäjäystävälliset mainokset"
@@ -51,7 +54,7 @@
     "message": "Näytä Estä kohde -painike oikean hiiren painikkeen valikossa"
   },
   "options_customize_blockElement_tooltip": {
-    "message": "Painikkeella voit estää väliaikaisesti häiritsevät kohteet, kuten kuvat ja diaesitykset."
+    "message": "Painikkeella voi väliaikaisesti estää häiritsevät kohteet, kuten kuvat ja diaesitykset."
   },
   "options_customize_header": {
     "message": "Mukauttaminen"
@@ -70,6 +73,15 @@
   },
   "options_customize_showNotifications_tooltip": {
     "message": "Salli Adblock Plussan lähettämät ilmoitukset (kriittiset suorituskykyilmoitukset näytetään aina)"
+  },
+  "options_dialog_about_copyright": {
+    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "currentYear": {
+        "content": "$1",
+        "example": "2017"
+      }
+    }
   },
   "options_dialog_about_title": {
     "message": "Tietoa AdBlock Plussasta"
@@ -92,6 +104,14 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Syötä kelvollinen osoite"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "Osoitteen tulee alkaa $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Lisää suodatinlista"
   },
@@ -100,6 +120,9 @@
   },
   "options_dialog_invalid_title": {
     "message": "Virhe"
+  },
+  "options_dialog_language_other_empty": {
+    "message": "Kieliä ei saatavilla."
   },
   "options_dialog_language_title": {
     "message": "Valitse kieli"
@@ -115,6 +138,9 @@
   },
   "options_dialog_predefined_title": {
     "message": "Haluatko varmasti lisätä tämän suodatinlistan?"
+  },
+  "options_donate_button": {
+    "message": "Lahjoita"
   },
   "options_email": {
     "message": "Sähköposti:"
@@ -141,7 +167,7 @@
     "message": "Et ole lisännyt suodatinlistoja Adblock Plussaan."
   },
   "options_filterList_hours": {
-    "message": "tuntia sitten"
+    "message": "tunteja sitten"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Tarkistussumma ei täsmää"
@@ -158,11 +184,19 @@
   "options_filterList_lastDownload_invalidURL": {
     "message": "Epäonnistui, kelvoton osoite"
   },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Lataus epäonnistui. Osoitteen tulee alkaa $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_filterList_minutes": {
-    "message": "minuuttia sitten"
+    "message": "minuutteja sitten"
   },
   "options_filterList_now": {
-    "message": "Juuri nyt"
+    "message": "äsken"
   },
   "options_filterList_source": {
     "message": "Lähde"
@@ -191,13 +225,16 @@
     }
   },
   "options_footer_about": {
-    "message": "Tietoa Adblock Plussasta"
+    "message": "Tietoja Adblock Plussasta"
   },
   "options_footer_contribute": {
     "message": "Osallistu"
   },
   "options_general_description": {
-    "message": "Määritä AdBlock Plussan piilottama sisältö"
+    "message": "Määritä mitä Adblock Plus näyttää ja piilottaa sivustoilla"
+  },
+  "options_generic_error": {
+    "message": "Jokin meni vikaan, yritä uudelleen."
   },
   "options_help_center": {
     "message": "<a0>Käyttäjätuki (englanniksi)</a0>"
@@ -213,6 +250,9 @@
   },
   "options_language_description": {
     "message": "Adblock Plus toimii tehokkaammin, jos suodatin on optimoitu usein käytettyjen verkkosivustojen kielelle."
+  },
+  "options_language_empty": {
+    "message": "Ei kieliperusteisia suodattimia."
   },
   "options_language_filter_list": {
     "message": "Kieliperustaiset suodatinlistat"
@@ -239,26 +279,35 @@
   "options_learn_more": {
     "message": "Lisätietoja"
   },
+  "options_more_filters_description": {
+    "message": "Olet lisännyt nämä lisäsuodattimet aiemmin Adblock Plussaan."
+  },
   "options_more_filters_header": {
     "message": "Lisää suodattimia"
+  },
+  "options_more_filters_note": {
+    "message": "<strong>Huomautus:</strong> Käytä vain sellaisia suodatinlistoja, joiden kehittäjään luotat."
   },
   "options_new_label": {
     "message": "Uusi"
   },
   "options_page_document_title": {
-    "message": "Asetukset"
+    "message": "Adblock Plussan asetukset"
   },
   "options_page_title": {
     "message": "Asetukset"
   },
   "options_privacy_header": {
-    "message": "Yksityisyys & tietoturva"
+    "message": "Yksityisyys ja tietoturva"
   },
   "options_protection_privacy_tooltip": {
-    "message": "Suojaa yksityisyyttäsi toimijoilta, jotka saattavat jäljittää verkon käyttöäsi"
+    "message": "Suojaa yksityisyyttäsi tunnetuilta toimijoilta, jotka saattavat jäljittää toimintaasi vierailemillasi sivustoilla."
   },
   "options_protection_social_tooltip": {
-    "message": "Sosiaalisen median palvelut voivat jäljittää verkon käyttöäsi muilla sivustoilla olevilla kuvakkeilla, vaikka et napsauttaisikaan niitä. Voit suojata yksityisyyttäsi piilottamalla kuvakkeet."
+    "message": "Sosiaaliset verkostot keräävät tietoa selaustavoistasi muilla sivustoilla olevien jako- yms. kuvakkeiden avulla (vaikka et napsauttaisikaan niitä) ja luovat näiden tietojen pohjalta profiilin, jota käytetään mm. kohdennettuun mainontaan. Voit suojata profiiliasi piilottamalla tällaiset kuvakkeet."
+  },
+  "options_rating_button": {
+    "message": "Arvostele meidät"
   },
   "options_report_bug": {
     "message": "<a>Vikailmoitukset</a>"
@@ -272,6 +321,12 @@
   "options_social_title": {
     "message": "Ota yhteyttä"
   },
+  "options_supportUs_description": {
+    "message": "Käytä hetki Adblock Plussan arviointiin tai lahjoita projektille. Kiitos tuestasi!"
+  },
+  "options_supportUs_title": {
+    "message": "Pidätkö Adblock Plussasta?"
+  },
   "options_support_title": {
     "message": "Tuki"
   },
@@ -282,13 +337,13 @@
     "message": "Yleiset"
   },
   "options_tab_help": {
-    "message": "Ohjeet"
+    "message": "Ohje"
   },
   "options_tab_whitelist": {
     "message": "Sallitut sivustot"
   },
   "options_tracking_warning_1": {
-    "message": "<strong>$tracking$</strong> ja <strong>$acceptableAds$</strong> ovat käytössä",
+    "message": "Huomasimme, että olet ottanut <strong>$tracking$</strong> ja <strong>$acceptableAds$</strong> -suodattimet käyttöön.",
     "placeholders": {
       "acceptableAds": {
         "content": "$2",
@@ -301,10 +356,10 @@
     }
   },
   "options_tracking_warning_2": {
-    "message": "Huomaathan, että mainostajien pyrkiessä kohdistamaan mainontaansa <strong>saattaa</strong> osa käyttäjäystävällisistä mainoksista jäljittää verkon käyttöäsi."
+    "message": "Huomaathan, että mainostajien pyrkiessä kohdistamaan mainontaansa <strong>saattaa</strong> osa hyväksyttävistä mainoksista jäljittää toimiasi."
   },
   "options_tracking_warning_3": {
-    "message": "Voit parantaa yksityisyyttäsi entisestään valitsemalla alla <strong>$acceptableAdsPrivacy$</strong>.",
+    "message": "Voit parantaa yksityisyyttäsi entisestään ottamalla alla olevan <strong>$acceptableAdsPrivacy$</strong> -valinnan käyttöön.",
     "placeholders": {
       "acceptableAdsPrivacy": {
         "content": "$1",
@@ -313,7 +368,7 @@
     }
   },
   "options_tracking_warning_acknowledgment": {
-    "message": "OK, asia selvä"
+    "message": "OK, selvä"
   },
   "options_whitelist_add": {
     "message": "Lisää sivusto"

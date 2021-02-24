@@ -139,6 +139,9 @@
   "options_dialog_predefined_title": {
     "message": "Yakin anda ingin menambahkan daftar filter ini?"
   },
+  "options_donate_button": {
+    "message": "Donasi"
+  },
   "options_email": {
     "message": "Email:"
   },
@@ -303,6 +306,9 @@
   "options_protection_social_tooltip": {
     "message": "Ikon sosial media pada situs yang Anda kunjungi membolehkan jaringan sosmed untuk membuat profil anda berdasarkan kebiasaan browsing Anda - bahkan ketika Anda tidak menekannya. Menghilangkan ikon ini dapat melindungi profil Anda."
   },
+  "options_rating_button": {
+    "message": "Beri nilai ke kami"
+  },
   "options_report_bug": {
     "message": "Anda menemukan bug? <a>Kirimkan laporan bug</a>"
   },
@@ -314,6 +320,12 @@
   },
   "options_social_title": {
     "message": "Hubungi"
+  },
+  "options_supportUs_description": {
+    "message": "Mohon memberikan waktu sejenak untuk menilai ABP atau mendonasikan ke proyek ini. Terima kasih atas dukungan Anda!"
+  },
+  "options_supportUs_title": {
+    "message": "Menikmati Adblock Plus?"
   },
   "options_support_title": {
     "message": "Dukungan"

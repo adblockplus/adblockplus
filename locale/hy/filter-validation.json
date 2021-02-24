@@ -1,12 +1,9 @@
 {
-  "filter_invalid_regexp": {
-    "message": "Սխալ կանոնավոր արտահայտություն"
-  },
   "filter_unknown_option": {
-    "message": "Չճանաչված ֆիլտր"
+    "message": "Զտիչի անհայտ ընտրանք"
   },
   "line": {
-    "message": "Տող $number$: $message$",
+    "message": "Տող $number$՝ $message$",
     "placeholders": {
       "message": {
         "content": "$2",

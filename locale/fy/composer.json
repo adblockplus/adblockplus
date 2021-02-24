@@ -1,5 +1,26 @@
 {
   "block_element": {
     "message": "Elemint blokkearje"
+  },
+  "composer_block": {
+    "message": "Blokkearje"
+  },
+  "composer_cancel": {
+    "message": "Annulearje"
+  },
+  "composer_elements": {
+    "message": "elemint(en) selektearre"
+  },
+  "composer_loading": {
+    "message": "Lade…"
+  },
+  "composer_preview": {
+    "message": "Foarbyld"
+  },
+  "composer_undo_preview": {
+    "message": "Foarbyld slute"
+  },
+  "composer_unselect": {
+    "message": "Deselektearje"
   }
 }

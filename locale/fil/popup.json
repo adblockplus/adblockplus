@@ -1,14 +1,78 @@
 {
+  "block_element_description": {
+    "message": "I-block ang partikular na element sa webstire na'to"
+  },
+  "click_element_to_block_it": {
+    "message": "Pundutin ang isang element sa pahina upang i-block ito."
+  },
   "easy_create_filter": {
-    "message": "Ihinto ang element"
+    "message": "I-block ang element"
+  },
+  "options_refresh": {
+    "message": "Refresh"
   },
   "options_short": {
-    "message": "Mga pagpipilian"
+    "message": "Mga Opsyon"
+  },
+  "overlay_notification_closing_button_hide": {
+    "message": "Isara"
+  },
+  "overlay_notification_closing_button_optout": {
+    "message": "Ihinto ang pagpapakita ng mga notipikasyon"
+  },
+  "promote_abp_module": {
+    "message": "Interisado sa Adblock Plus sa mobile?"
+  },
+  "refresh_this_page": {
+    "message": "I-refresh itong pahina"
+  },
+  "refresh_to_take_effect": {
+    "message": "Pindutin ang button sa ibaba upang magkabisa ang mga pagbabago."
+  },
+  "sendReport": {
+    "message": "Mag-ulat ng problema sa pahinang ito"
+  },
+  "share_on_facebook": {
+    "message": "Ibahagi sa Facebook"
+  },
+  "share_on_twitter": {
+    "message": "Ibahagi sa Twitter"
+  },
+  "share_on_twitter_message": {
+    "message": "Naka-block ako ng $number$ (mga) ad gamit ang AdblockPlus. Subukan mo — LIBRE ito!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "share_on_weibo": {
+    "message": "Ibahagi sa Weibo"
+  },
+  "share_on_weibo_message": {
+    "message": "Naka-block ako ng $number$ (mga) ad gamit ang AdblockPlus. Subukan mo — LIBRE ito!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "stats_header": {
+    "message": "Bilang ng mga aytem na nai-block"
   },
   "stats_label_page": {
     "message": "sa pahinang ito"
   },
   "stats_label_total": {
     "message": "sa kabuuan"
+  },
+  "status_domain": {
+    "message": "Itong website:"
+  },
+  "status_header": {
+    "message": "Nakabukas ang pam-block ng mga ad"
+  },
+  "status_page": {
+    "message": "Itong pahina:"
   }
 }

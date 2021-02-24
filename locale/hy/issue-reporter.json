@@ -3,58 +3,55 @@
     "message": "Շարունակել"
   },
   "filters_subscription_lastDownload_connectionError": {
-    "message": "Բեռնման րնթացքում առաջացել են խնդիրներ"
-  },
-  "issueReporter_anonymousSubmission_label": {
-    "message": "Անհայտ ֆիլտեր"
+    "message": "Սխալ, ներբեռնումը ձախողվեց"
   },
   "issueReporter_anonymousSubmission_warning": {
-    "message": "Մենք չենք կարողանալու ետ գալ Ձեզ մոտ և զեկույցը ցածր կհամարենք:"
+    "message": "Մենք չենք կարողանա կապվել Ձեզ հետ և հավանաբար ավելի քիչ ուշադրություն կդարձնենք Ձեր զեկույցին։"
   },
   "issueReporter_commentPage_heading": {
     "message": "Մեկնաբանել"
   },
   "issueReporter_comment_description": {
-    "message": "Տեքստային դաշտի ստորեւ թույլ է տալիս մուտքագրել մեկնաբանություն մեզ օգնելու համար՝ հասկանալ խնդիրը\" Այս քայլը պարտադիր չէ, սակայն խորհուրդ է տրվում, եթե Խնդիրը ակնհայտ չէ: Դուք կարող եք նաեւ վերանայել զեկույցի տվյալները մինչ դրա ուղարկումը:"
+    "message": "Որպեսզի մենք ավելի լավ հասկանանք Ձեր խնդիրը, ավելացրեք Ձեր մեկնաբանությունը ստորև։"
   },
   "issueReporter_comment_label": {
     "message": "Մեկնաբանություն (պարտադիր չէ)՝"
   },
   "issueReporter_confirmationMessage": {
-    "message": "Ձեր զեկույցը պահպանվել է: Դուք կարող եք մուտք գործել այն հետեւյալ հասցեով՝"
+    "message": "Ձեր զեկույցը պահպանվեց։ Դուք կարող եք տեսնել այն հետևյալ հասցեով՝"
   },
   "issueReporter_doneButton_label": {
     "message": "Պատրաստ է"
   },
   "issueReporter_email_description": {
-    "message": "Խնդրում ենք գրե՛ք ճիշտ email հասցե՝ Ձեզ հետ կապնվելու համար և խնդիրը լուծելու համար:"
+    "message": "Օգտակար է մուտքագրել վավեր էլ.հասցե: Դա մեզ թույլ կտա կապվել Ձեզ հետ՝ վնասակար ծրագրերի պես բարդ խնդիրները լուծելու համար։ Սակայն նկատի ունեցեք, որ պարտադիր չէ նշել էլփոստի հասցեն, և որ այն երբեք չի փոխանցվելու այլ անձանց։"
   },
   "issueReporter_email_label": {
-    "message": "Email՝"
+    "message": "էլ. հասցե՝"
   },
   "issueReporter_errorMessage": {
-    "message": "Զեկույցի ուղարկման փորձը ձախողվել է հետևյալ սխալի կոդով՝ \"?1?\": Ստուգեք միացումը ինտերնետին եւ կրկնեք: Եթե խնդիրը չկարգավորվի, խնդրում ենք դիմել [link]Adblock Plus Ֆորում[/link] աջակցության համար:"
+    "message": "Զեկույցի ուղարկման փորձը ձախողվել է սխալի հետևյալ կոդով՝ «?1?»։ Ստուգեք կապակցումը համացանցին և փորձեք կրկին։ Եթե խնդիրը չկարգավորվի, խնդրում ենք օգնության համար դիմել [link]Adblock Plus Ֆորում[/link]։"
   },
   "issueReporter_falseNegative_description": {
-    "message": "Ընտրեք այս տարբերակը, եթե գովազդը ցուցադրվում է, չնայած Adblock Plus միացված է:"
+    "message": "Adblock Plus-ը միացված է, բայց ես դեռ տեսնում եմ գովազդ։"
   },
   "issueReporter_falseNegative_label": {
-    "message": "Adblock Plus-ը չի փակում գովազդը"
+    "message": "Ես դեռ էլի տեսնում եմ գովազդ"
   },
   "issueReporter_falsePositive_description": {
-    "message": "Ընտրեք այս տարբերակը, եթե այս էջում կորել է կարեւոր բովանդակություն, այն ցուցադրվում է սխալ կամ չի աշխատում: Դուք կարող եք որոշել, թե արդյոք Adblock Plus-ն է պատճառը ժամանակավորապես անջատելով այն:"
+    "message": "Էջը սխալ է ցուցադրվում, չի աշխատում կամ պակասում է կարևոր բովանդակություն։"
   },
   "issueReporter_falsePositive_label": {
-    "message": "Adblock Plus-ը շատ է արգելում"
+    "message": "Դիտարկվող էջը չի աշխատում"
   },
   "issueReporter_knownIssueMessage": {
     "message": "Ձեր հաղորդած հարցը հնարավոր է արդեն հայտնի է: Լրացուցիչ տեղեկություններ՝"
   },
   "issueReporter_page_title": {
-    "message": "Տեղեկացնել"
+    "message": "Խնդրի զեկույց"
   },
   "issueReporter_privacyPolicy": {
-    "message": "Անձնական տվյալների պահպանում"
+    "message": "Գաղտնիության քաղաքականություն"
   },
   "issueReporter_sendButton_label": {
     "message": "Ուղարկել զեկույցը"
@@ -63,15 +60,15 @@
     "message": "Ուղարկել զեկույցը"
   },
   "issueReporter_sending": {
-    "message": "Խնդրում ենք սպասել, մինչ Adblock Plus-ը, ուղարկի Ձեր զեկույցը:"
+    "message": "Խնդրում ենք սպասել, մինչև Adblock Plus-ն ուղարկի Ձեր զեկույցը։"
   },
   "issueReporter_showData_label": {
-    "message": "Ցույց տալ զեկույցը"
+    "message": "Կտտացրեք այս հղումը՝ զեկույցի տվյալներն ուղարկելուց առաջ տեսնելու"
   },
   "issueReporter_typeSelector_description": {
-    "message": "Այս պատուհանը օգնում է կատարել Adblock Plus-ի խնդրի մասին տեղակացնելու համար անհրաժեշտ քայլերն. Նախ ընտրեք այս էջում ձեր ունեցած խնդրի տեսակը"
+    "message": "Խնդրում ենք նշել Ձեր խնդիրը՝"
   },
   "issueReporter_typeSelector_heading": {
-    "message": "Խնդրի ընտրում"
+    "message": "Ի՞նչ խնդրի եք հանդիպել։"
   }
 }

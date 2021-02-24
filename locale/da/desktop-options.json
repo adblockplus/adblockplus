@@ -139,6 +139,9 @@
   "options_dialog_predefined_title": {
     "message": "Er du sikker på, at du vil tilføje denne filterliste?"
   },
+  "options_donate_button": {
+    "message": "Donér"
+  },
   "options_email": {
     "message": "E-mail:"
   },
@@ -303,6 +306,9 @@
   "options_protection_social_tooltip": {
     "message": "Ikoner fra sociale medier på websteder, du besøger, giver sociale medienetværk mulighed for at opbygge en profil af dig baseret på dine internet-vaner - selv når du ikke klikker på dem. Hvis du vælger at skjule disse ikoner, kan du beskytte din profil."
   },
+  "options_rating_button": {
+    "message": "Bedøm os"
+  },
   "options_report_bug": {
     "message": "Fundet en fejl? <a>Send os en fejlrapport</a>"
   },
@@ -314,6 +320,12 @@
   },
   "options_social_title": {
     "message": "Kontakt os"
+  },
+  "options_supportUs_description": {
+    "message": "Brug et øjeblik på at bedømme ABP eller donere til projektet. Tak for din støtte!"
+  },
+  "options_supportUs_title": {
+    "message": "Er du tilfreds med Adblock Plus?"
   },
   "options_support_title": {
     "message": "Support"

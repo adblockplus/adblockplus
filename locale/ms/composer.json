@@ -1,5 +1,26 @@
 {
   "block_element": {
     "message": "Halang elemen"
+  },
+  "composer_block": {
+    "message": "Sekat"
+  },
+  "composer_cancel": {
+    "message": "Batal"
+  },
+  "composer_elements": {
+    "message": "elemen dipilih"
+  },
+  "composer_loading": {
+    "message": "Memuatkan..."
+  },
+  "composer_preview": {
+    "message": "Pratonton"
+  },
+  "composer_undo_preview": {
+    "message": "Keluar pratonton"
+  },
+  "composer_unselect": {
+    "message": "Nyahpilih"
   }
 }

@@ -4,5 +4,23 @@
   },
   "cancel": {
     "message": "منسوخ کریں"
+  },
+  "common_copyright": {
+    "message": "کاپی رآئیٹ © $year$ سارے حقین محفوظ. Adblock Plus® ہے اندراج <a0>eyeo GmbH</a0> کا.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
+  },
+  "copy_selected": {
+    "message": "منتحب کو کاپی کریں"
+  },
+  "delete": {
+    "message": "حذف کردہ"
+  },
+  "filter_action_failed": {
+    "message": "کچ مسئلہ ہو گیا ہیں- برای کرم ایک بار اور کوشیس کریں"
   }
 }

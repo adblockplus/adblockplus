@@ -1,12 +1,12 @@
 {
   "firstRun_browser_store_android": {
-    "message": "Android sovellus Google Play:ssa"
+    "message": "Android-sovellus Google Playssa"
   },
   "firstRun_browser_store_ios": {
-    "message": "Saatavilla iTunes sovelluskaupasta"
+    "message": "Saatavilla iTunes App Storesta"
   },
   "firstRun_browser_title": {
-    "message": "Adblock Browser sovellus"
+    "message": "Adblock-selainsovellus"
   },
   "firstRun_control_title": {
     "message": "Sinä päätät"

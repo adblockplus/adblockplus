@@ -15,10 +15,19 @@
     }
   },
   "common_feature_anti_adblock_title": {
-    "message": "Թաքցնել Adblock-ի Զգուշացումները"
+    "message": "Թաքցնել զգուշացումները գովազդի արգելափակիչի օգտագործման մասին"
   },
   "common_feature_circumvention_title": {
-    "message": "ABP Anti-Circumvention Ֆիլտրի Ցանկ"
+    "message": "ABP-ի հակաշրջանցման զտիչների ցանկ"
+  },
+  "common_feature_malware_title": {
+    "message": "Արգելափակել վնասակար ծրագրերը"
+  },
+  "common_feature_privacy_title": {
+    "message": "Արգելել լրացուցիչ հետագծումը"
+  },
+  "common_feature_social_title": {
+    "message": "Արգելել հետագծումը սոցցանցերի պատկերակների միջոցով"
   },
   "common_notification_hide": {
     "message": "Փակել ծանուցումը"
@@ -30,6 +39,6 @@
     "message": "Ջնջել"
   },
   "filter_action_failed": {
-    "message": "Ինչ-որ բան այն չէ։ Խնդրում ենք ավելի ուշ կրկին փորձել։"
+    "message": "Ինչ-որ բան այն չէ։ Խնդրում ենք փորձել կրկին։"
   }
 }

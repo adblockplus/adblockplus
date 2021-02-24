@@ -1,5 +1,26 @@
 {
   "block_element": {
     "message": "உறுப்பை தடு"
+  },
+  "composer_block": {
+    "message": "தடு"
+  },
+  "composer_cancel": {
+    "message": "ரத்துசெய்"
+  },
+  "composer_elements": {
+    "message": "உறுப்பு (கள்) தேர்ந்தெடுக்கப்பட்டன"
+  },
+  "composer_loading": {
+    "message": "ஏற்றுகிறது ..."
+  },
+  "composer_preview": {
+    "message": "முன்னோட்ட"
+  },
+  "composer_undo_preview": {
+    "message": "முன்னோட்டத்திலிருந்து வெளியேறு"
+  },
+  "composer_unselect": {
+    "message": "தேர்வுநீக்கு"
   }
 }

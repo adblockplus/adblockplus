@@ -11,6 +11,12 @@
   "filter_invalid_regexp": {
     "message": "잘못된 정규 표현식"
   },
+  "filter_slow": {
+    "message": "필터를 빠르게 유지하려면 패턴의 길이와 정규 표현식이 포함되어 있지는 않은지 확인해보세요."
+  },
+  "filter_snippet_nodomain": {
+    "message": "스니펫 필터에 대한 활성 도메인이 없습니다."
+  },
   "filter_unknown_option": {
     "message": "알 수 없는 필터 옵션"
   },

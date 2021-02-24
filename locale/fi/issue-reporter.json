@@ -6,16 +6,16 @@
     "message": "Latausvirhe"
   },
   "issueReporter_anonymousSubmission_label": {
-    "message": "Lähetä nimettömänä"
+    "message": "Lähetä nimettömästi"
   },
   "issueReporter_anonymousSubmission_warning": {
-    "message": "Sinuun ei voida ottaa yhteyttä ja ilmoituksen käsittely hidastuu."
+    "message": "Sinuun ei voida ottaa yhteyttä, minkä vuoksi ilmoituksen käsittely hidastuu."
   },
   "issueReporter_closeButton_label": {
     "message": "Sulje"
   },
   "issueReporter_commentPage_heading": {
-    "message": "Lisää kommentti"
+    "message": "Jätä kommentti"
   },
   "issueReporter_comment_description": {
     "message": "Asian käsittely nopeutuu, jos kuvailet ongelmaa omin sanoin (englanniksi)."
@@ -51,13 +51,13 @@
     "message": "Mainos näkyy, vaikka Adblock Plus on käytössä."
   },
   "issueReporter_falseNegative_label": {
-    "message": "Adblock Plus ei estä mainosta"
+    "message": "Näen edelleen mainoksia"
   },
   "issueReporter_falsePositive_description": {
     "message": "Sivulta puuttuu olennaista sisältöä tai se näkyy väärin. Voit päätellä onko Adblock Plus syy ongelmaan ottamalla sen väliaikaisesti pois käytöstä."
   },
   "issueReporter_falsePositive_label": {
-    "message": "Adblock Plus estää liikaa"
+    "message": "Käyttämäni sivu on vioittunut"
   },
   "issueReporter_highlighter_description": {
     "message": "Merkitse kuvaan jokainen mainos ja piilota tarvittaessa yksityisiä tietoja. Tämä nopeuttaa ilmoituksen käsittelyä."
@@ -66,7 +66,7 @@
     "message": "Merkitse ongelma"
   },
   "issueReporter_knownIssueMessage": {
-    "message": "Raportoimasi ongelma on todennäköisesti jo tiedossa. Lisätietoa:"
+    "message": "Ilmoittamasi ongelma on todennäköisesti jo tiedossa. Lisätietoa:"
   },
   "issueReporter_markIssueButton_label": {
     "message": "Merkitse"
@@ -83,6 +83,9 @@
   "issueReporter_processing_screenshot": {
     "message": "Käsitellään"
   },
+  "issueReporter_screenreader_warning": {
+    "message": "Jotta voimme ymmärtää ongelmaa paremmin, tarvitsemme raporttiin myös kuvakaappauksen. Sivustosta riippuen kuvakaappaus saattaa sisältää henkilökohtaisia tietoja. Mikäli et ole halukas luovuttamaan kuvakaappausta, lähetä ongelmasi sähköpostitse osoitteeseen <a0>support@adblockplus.org</a0>, kiitos."
+  },
   "issueReporter_screenshot_hide": {
     "message": "Piilota"
   },
@@ -96,18 +99,18 @@
     "message": "Lähetä raportti"
   },
   "issueReporter_sendPage_heading": {
-    "message": "Lähettää..."
+    "message": "Lähetä raportti"
   },
   "issueReporter_sending": {
-    "message": "Odota, Adblock Plus lähettää raporttia."
+    "message": "Odota kun Adblock Plus lähettää raporttisi."
   },
   "issueReporter_showData_label": {
-    "message": "Esikatsele ilmoituksen tiedot"
+    "message": "Esikatsele ilmoituksen sisältöä ennen lähetystä"
   },
   "issueReporter_typeSelector_description": {
-    "message": "Tämä ikkuna ohjaa sinut Adblock Plus -ongelmaraportin lähettämiseen tarvittavien vaiheiden läpi. Kerro ensin, millaisen ongelman olet kohdannut tällä sivulla:"
+    "message": "Valitse ongelma:"
   },
   "issueReporter_typeSelector_heading": {
-    "message": "Valitse ongelman tyyppi"
+    "message": "Millaisia ongelmia olet kohdannut?"
   }
 }

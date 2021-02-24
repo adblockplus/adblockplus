@@ -17,8 +17,14 @@
   "options_acceptableAds_description": {
     "message": "허용되는 광고는 유해한 광고가 아닙니다. 광고 차단과 온라인 콘텐츠 지원 사이의 중간 지점에 위치하는 광고로서 웹 사이트 소유자의 이익을 창출하는 광고를 의미합니다."
   },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>참고:</strong> 브라우저 설정에서 <strong>추적 안함 (DNT)</strong>을 비활성화하셨습니다. 이 기능이 제대로 작동하도록 하려면 브라우저 설정에서 <strong>DNT</strong>를 활성화 해주세요. <a>DNT를 활성화하는 방법에 대해서 알아보세요</a>."
+  },
   "options_acceptableAds_header": {
     "message": "허용되는 광고"
+  },
+  "options_acceptableAds_privacy_label": {
+    "message": "서드파티 추적이 없는 광고만 허용"
   },
   "options_advanced_description": {
     "message": "Adblock Plus 사용자 설정, 필터 목록 추가 또는 제거, 사용자 자체 필터 목록 유지"
@@ -64,6 +70,9 @@
   },
   "options_customize_showNotifications": {
     "message": "유용한 알림 표시"
+  },
+  "options_customize_showNotifications_tooltip": {
+    "message": "Adblock Plus으로부터의 알림 허용하기 (중요한 성능 문제와 관련된 알림은 항상 표시됩니다)."
   },
   "options_dialog_about_copyright": {
     "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0> 저작권 소유.",
@@ -123,6 +132,9 @@
   },
   "options_dialog_predefined_subscription_title": {
     "message": "제목"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "이 필터 목록을 추가하길 원하십니까?"
@@ -204,6 +216,14 @@
   "options_filter_list_rule": {
     "message": "필터 규칙"
   },
+  "options_filters_search_or_add": {
+    "message": "필터 검색 또는 추가 (예시: $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
+  },
   "options_footer_about": {
     "message": "Adblock Plus 정보"
   },
@@ -239,6 +259,19 @@
   },
   "options_language_header": {
     "message": "언어"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>팁:</strong> 필요한 언어만 선택하십시오. 더 많은 언어를 선택하면 광고 차단 프로그램의 속도 저하로 인해 브라우징의 속도가 느려질 수 있습니다."
@@ -308,6 +341,19 @@
   },
   "options_tab_whitelist": {
     "message": "허용 목록에 추가된 웹사이트"
+  },
+  "options_tracking_warning_1": {
+    "message": "<strong>$tracking$</strong>와 <strong>$acceptableAds$</strong> 양 쪽 모두 활성화되어 있는 것을 발견했습니다.",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
   },
   "options_tracking_warning_acknowledgment": {
     "message": "네. 이해했습니다"

@@ -33,10 +33,10 @@
     "message": "פתח קישור זה אל Opera Addons (הוא ייפתח בלשונית חדשה)"
   },
   "problem_solution_opera_step_2": {
-    "message": "מתוך סרגל הכלים של Opera, <em0>לחץ לחיצה ימנית</em0> / <em1>לחץ לחיצת בקרה</em1> על הצלמית של <strong>Adblock Plus</strong> ובחר ב<strong>נהל הרחבות</strong>."
+    "message": "מתוך סרגל הכלים של Opera, <em0>לחץ לחיצה ימנית</em0> / <em1>לחץ לחיצת בקרה</em1> על האיקון של <strong>Adblock Plus</strong> ובחר ב<strong>נהל הרחבות</strong>."
   },
   "problem_solution_opera_step_3": {
-    "message": "לחץ על ה<strong>חץ</strong> ליד הצלמית של Adblock Plus."
+    "message": "לחץ על ה<strong>חץ</strong> ליד האיקון של Adblock Plus."
   },
   "problem_solution_opera_step_4": {
     "message": "אתר את Adblock Plus ולחץ על ה־<strong>X</strong> בפינה הימנית העליונה."

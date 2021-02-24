@@ -1,0 +1,17 @@
+{
+  "problem_os_mac": {
+    "message": "Mac"
+  },
+  "problem_social_email": {
+    "message": "E-post"
+  },
+  "problem_social_facebook": {
+    "message": "Facebook"
+  },
+  "problem_social_twitter": {
+    "message": "Twitter"
+  },
+  "problem_solution_title": {
+    "message": "Lösningen:"
+  }
+}

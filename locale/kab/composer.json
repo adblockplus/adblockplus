@@ -1,5 +1,11 @@
 {
   "block_element": {
     "message": "Sewḥel aferdis"
+  },
+  "composer_cancel": {
+    "message": "Sefsex"
+  },
+  "composer_loading": {
+    "message": "Yessalay-d..."
   }
 }

@@ -17,6 +17,9 @@
   "firstRun_control_title": {
     "message": "Anda yang mengontrol"
   },
+  "firstRun_donate": {
+    "message": "Donasi"
+  },
   "firstRun_fair_description": {
     "message": "Kami mendorong Anda untuk menggunakan Adblock Plus dan opsi untuk mendaftar putih (whitelist) situs web secara wajar. Tergantung pada filter yang Anda gunakan, Anda mengerti dan menerima bahwa hal yang tidak sengaja mungkin terjadi (seperti konten situs yang terblokir). Lihat <a0>Ketentuan Penggunaan</a0> untuk informasi lebih lanjut tentang penggunaan Adblock Plus secara wajar."
   },

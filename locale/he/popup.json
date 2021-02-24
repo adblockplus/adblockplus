@@ -30,13 +30,13 @@
     "message": "לחץ על הכפתור למטה כדי שהשינויים ייכנסו לתוקף."
   },
   "sendReport": {
-    "message": "דווח על סוגייה"
+    "message": "דווח על סוגייה בדף זה"
   },
   "share_on_facebook": {
-    "message": "שתף ב־פייסבוק"
+    "message": "שתף בפייסבוק"
   },
   "share_on_twitter": {
-    "message": "שתף ב־Twitter"
+    "message": "שתף בטוויטר"
   },
   "share_on_twitter_message": {
     "message": "חסמתי $number$ פרסומות עם Adblock Plus. תן לו ניסיון - הוא חינמי!",

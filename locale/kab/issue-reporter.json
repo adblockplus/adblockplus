@@ -8,11 +8,17 @@
   "issueReporter_anonymousSubmission_label": {
     "message": "Tuzna tudrigt"
   },
+  "issueReporter_closeButton_label": {
+    "message": "Mdel"
+  },
   "issueReporter_commentPage_heading": {
     "message": "Sekcem awennit"
   },
   "issueReporter_comment_label": {
     "message": "Awennit (afrayan):"
+  },
+  "issueReporter_detailsButton_label": {
+    "message": "Talqayt"
   },
   "issueReporter_doneButton_label": {
     "message": "Immed"

@@ -29,6 +29,18 @@
   "sendReport": {
     "message": "Rapportera problem"
   },
+  "share_on_facebook": {
+    "message": "Dela på Facebook"
+  },
+  "share_on_twitter": {
+    "message": "Dela på Twitter"
+  },
+  "share_on_weibo": {
+    "message": "Dela på Weibo"
+  },
+  "social_media_share": {
+    "message": "Dela nummer med vänner"
+  },
   "stats_header": {
     "message": "Antal objekt blockerade"
   },

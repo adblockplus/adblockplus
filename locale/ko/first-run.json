@@ -8,8 +8,17 @@
   "firstRun_browser_title": {
     "message": "Adblock Browser 앱"
   },
+  "firstRun_control_title": {
+    "message": "효과적인 통제"
+  },
   "firstRun_donate": {
     "message": "기부하기"
+  },
+  "firstRun_fair_title": {
+    "message": "공정 이용"
+  },
+  "firstRun_subtitle": {
+    "message": "방금 브라우저의 통제권을 되찾으셨습니다."
   },
   "firstRun_title": {
     "message": "설치 성공!"

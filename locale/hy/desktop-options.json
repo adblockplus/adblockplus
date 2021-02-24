@@ -1,6 +1,36 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "Որպեսզի օգնեք մեզ բարելավել Adblock Plus-ը, խնդրում ենք պատմել՝ ինչու եք անջատել ընդունելի գովազդի ցուցադրումը։"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "Ոչ, շնորհակալ եմ"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "Անցնել հարցմանը"
+  },
+  "options_acceptableAds_ads_description_1": {
+    "message": "Ընդունելի գովազդը չի ջղայնացնում և չի խանգարում տեսնել բովանդակությանը։ <a>Իմանալ ավելին Ընդունելի գովազդի չափանիշների մասին</a>"
+  },
+  "options_acceptableAds_ads_label": {
+    "message": "Թույլատրել ընդունելի գովազդը"
+  },
+  "options_acceptableAds_description": {
+    "message": "Ընդունելի գովազդը, դա ոչ զզվեցնող գովազդն է։ Դա միջին գիծ է գովազդի արգելափակման և առցանց բովանդակության աջակցման միջև, քանի որ դա եկամուտ է բերում կայքի սեփականատերերի համար։"
+  },
+  "options_acceptableAds_dnt_notification": {
+    "message": "<strong>Նշում.</strong> Ձեր զննարկիչի կարգավորումներում անջատված է <strong>Չհետագծել</strong> կարգավորումը։ Որպեսզի այս գործառույթը ճիշտ աշխատի, Ձեր զննարկիչի կարգավորումներում միացրեք <strong>Չհետագծել</strong> կարգավորումը։ <a>Իմացեք, թե ինչպես միացնել այն</a>:"
+  },
+  "options_acceptableAds_header": {
+    "message": "Ընդունելի գովազդ"
+  },
+  "options_acceptableAds_privacy_label": {
+    "message": "Թույլատրել գովազդը միայն առանց երրորդ կողմի հետագծման"
+  },
   "options_close": {
     "message": "փակել"
+  },
+  "options_control_remove_title": {
+    "message": "հեռացնել"
   },
   "options_customFilter_cancel": {
     "message": "Չեղարկել"
@@ -8,25 +38,157 @@
   "options_email": {
     "message": "Էլ. փոստ՝"
   },
+  "options_english": {
+    "message": "Անգլերեն"
+  },
   "options_filterList_column_status": {
     "message": "Վիճակը"
   },
-  "options_filterList_lastDownload_checksumMismatch": {
-    "message": "Անհաջող."
-  },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Անհաջող. Բեռնման սխալ"
+    "message": "Ներբեռնման ձախողում"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "Անհաջող. Սխալ հասցե"
+    "message": "Սխալ հասցե։ Ստուգեք հասցեն։"
+  },
+  "options_filterList_now": {
+    "message": "Հենց նոր"
+  },
+  "options_filters_search_or_add": {
+    "message": "Որոնել կամ ավելացնել զտիչ(-ներ) (օր.՝ $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
+  },
+  "options_footer_about": {
+    "message": "Adblock Plus-ի մասին"
+  },
+  "options_footer_contribute": {
+    "message": "Աջակցել"
+  },
+  "options_general_description": {
+    "message": "Որոշեք, թե Adblock Plus-ն ինչ է ցույց տալիս և թաքցնում կայքերում"
+  },
+  "options_language_add": {
+    "message": "Ավելացնել լեզու"
+  },
+  "options_language_change": {
+    "message": "փոխել"
+  },
+  "options_language_description": {
+    "message": "Օպտիմիզացրեք Adblock Plus-ն այն լեզվի (լեզուների) համար, որով սովորաբար դիտում եք կայքերը։"
+  },
+  "options_language_empty": {
+    "message": "Դուք չունեք զտիչներ որևէ լեզուների համար։"
+  },
+  "options_language_filter_list": {
+    "message": "Զտիչների ցանկեր ըստ լեզվի"
   },
   "options_language_header": {
     "message": "Լեզու"
   },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
+  },
+  "options_language_tip": {
+    "message": "<strong>ՀՈՒՇՈՒՄ.</strong> Ընտրեք միայն անհրաժեշտ լեզուները։ Ավելին ընտրելը կդանդաղեցնի գովազդի արգելափակիչի աշխատանը և, հետևաբար, զննարկիչի արագությունը։"
+  },
+  "options_learn_more": {
+    "message": "Իմանալ ավելին"
+  },
+  "options_more_filters_description": {
+    "message": "Սրանք հավելյալ զտիչներ են, որոնք նախկինում ավելացրել եք Adblock Plus-ին։"
+  },
+  "options_more_filters_header": {
+    "message": "Լրացուցիչ զտիչներ"
+  },
+  "options_more_filters_note": {
+    "message": "<strong>Նշում.</strong> Դուք պիտի օգտագործեք միայն այն հեղինակների ստեղծած կողմնակի զտիչների ցանկերը, որոնց վստահում եք։"
+  },
+  "options_new_label": {
+    "message": "Նոր"
+  },
   "options_page_document_title": {
-    "message": "Կարգավորել"
+    "message": "Adblock Plus-ի ընտրանքներ"
   },
   "options_page_title": {
-    "message": "Կարգավորել"
+    "message": "Կարգավորումներ"
+  },
+  "options_privacy_header": {
+    "message": "Գաղտնիություն և անվտանգություն"
+  },
+  "options_protection_privacy_tooltip": {
+    "message": "Պաշտպանեք Ձեր անձնական տվյալները հայտնի սուբյեկտներից, որոնք կարող են հետագծել Ձեր գործողությունները այցելած կայքերում։"
+  },
+  "options_protection_social_tooltip": {
+    "message": "Ձեր այցելած կայքերում սոցիալական ցանցերի պատկերակները թույլ են տալիս սոցիալական ցանցերին ձևավորել Ձեր պրոֆիլը՝ ելնելով Ձեր զննարկման սովորույթներից, նույնիսկ եթե դրանք չեք սեղմում։ Այդ պատկերակները թաքցնելը կարող է պաշտպանել Ձեր պրոֆիլը։"
+  },
+  "options_tab_advanced": {
+    "message": "Ընդլայնված"
+  },
+  "options_tab_general": {
+    "message": "Ընդհանուր"
+  },
+  "options_tab_help": {
+    "message": "Օգնություն"
+  },
+  "options_tab_whitelist": {
+    "message": "Կայքերի սպիտակ ցուցակ"
+  },
+  "options_tracking_warning_1": {
+    "message": "Մենք նկատեցինք, որ Դուք միացրել եք <strong>$tracking$</strong> և <strong>$acceptableAds$</strong> կարգավորումները։",
+    "placeholders": {
+      "acceptableAds": {
+        "content": "$2",
+        "example": "Allow Acceptable Ads"
+      },
+      "tracking": {
+        "content": "$1",
+        "example": "Block additional tracking"
+      }
+    }
+  },
+  "options_tracking_warning_2": {
+    "message": "Ձեզ հարկավոր է իմանալ, որպեսզի Ձեզ ավելի համապատասխան գովազդ ներկայացվի, գովազդատուն <strong>կարող է</strong> հետագծել Ձեր որոշ գործողությունները, երբ ընդունելի գովազդ կարգավորումը միացված է։"
+  },
+  "options_tracking_warning_3": {
+    "message": "Եթե նախընտրում եք ավելի բարձ մակարդակի գաղտնիություն, ընտրեք <strong>$acceptableAdsPrivacy$</strong> կարգավորումը։",
+    "placeholders": {
+      "acceptableAdsPrivacy": {
+        "content": "$1",
+        "example": "Only allow ads without third-party tracking"
+      }
+    }
+  },
+  "options_tracking_warning_acknowledgment": {
+    "message": "Լավ, հասկացա"
+  },
+  "options_whitelist_add": {
+    "message": "Ավելացնել կայք"
+  },
+  "options_whitelist_description": {
+    "message": "Դուք անջատել եք գովազդի արգելափակումն այս կայքերի համար և, հետևաբար, դրանցում գովազդ կտեսնեք։"
+  },
+  "options_whitelist_empty_1": {
+    "message": "Դուք սպիտակ ցուցակում որևէ կայք չունեք։"
+  },
+  "options_whitelist_placeholder_example": {
+    "message": "օր.՝ $domain$",
+    "placeholders": {
+      "domain": {
+        "content": "www.example.com"
+      }
+    }
   }
 }

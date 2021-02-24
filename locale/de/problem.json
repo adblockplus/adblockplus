@@ -5,14 +5,26 @@
   "problem_note": {
     "message": "Bitte beachte, dass du – abhängig von deiner Nutzungsweise von ABP – deine Einstellungen, benutzerdefinierten Filter sowie Webseiten auf der Whitelist nach der Neuinstallation von Adblock Plus neu konfigurieren musst."
   },
+  "problem_os_mac": {
+    "message": "Mac"
+  },
+  "problem_os_windows": {
+    "message": "Windows"
+  },
   "problem_social_description": {
     "message": "Hast du ein Problem? Wende dich an unser Support-Team!"
   },
   "problem_social_email": {
     "message": "E-Mail"
   },
+  "problem_social_facebook": {
+    "message": "Facebook"
+  },
   "problem_social_title": {
     "message": "Brauchst du noch weitere Hilfe?"
+  },
+  "problem_social_twitter": {
+    "message": "Twitter"
   },
   "problem_solution_action": {
     "message": "Klicke hier, um Adblock Plus zu deinstallieren und neu zu installieren."

@@ -1,4 +1,7 @@
 {
+  "options_aa_opt_out_survey_no": {
+    "message": "Nē, paldies"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "Pieļaujamā reklāma nav kaitinoša un netraucē skatāmajam saturam. <a>Uzzināt vairāk par pieļaujamās reklāmas kritērijiem</a>"
   },
@@ -16,6 +19,9 @@
   },
   "options_advanced_description": {
     "message": "Pielāgojiet Adblock Plus, pievienojiet vai noņemiet filtru sarakstus, izveidojiet un pārvaldiet savus filtru sarakstus"
+  },
+  "options_builtin_filterList_add": {
+    "message": "Pievienot iebūvēto filtru sarakstus"
   },
   "options_close": {
     "message": "aizvērt"
@@ -83,6 +89,9 @@
   "options_dialog_import_title": {
     "message": "Pievienot filtru sarakstu"
   },
+  "options_dialog_invalid_title": {
+    "message": "Radās kļūda"
+  },
   "options_dialog_language_other_empty": {
     "message": "Nav nevienas pieejamas valodas."
   },
@@ -92,8 +101,14 @@
   "options_dialog_predefined_confirm": {
     "message": "Jā, izmantot šo filtru sarakstu"
   },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
+  },
   "options_dialog_predefined_title": {
     "message": "Vai tiešām vēlaties pievienot šo filtru sarakstu?"
+  },
+  "options_donate_button": {
+    "message": "Ziedot"
   },
   "options_email": {
     "message": "E-pasts:"
@@ -168,6 +183,9 @@
   },
   "options_general_description": {
     "message": "Nosakiet, ko Adblock Plus rāda un slēpj tīmekļvietnēs"
+  },
+  "options_generic_error": {
+    "message": "Diemžēl radās kāda problēma. Lūdzu, mēģiniet vēlreiz."
   },
   "options_help_description": {
     "message": "Atrast palīdzību vai sazināties ar mums"
@@ -245,6 +263,9 @@
   "options_social_title": {
     "message": "Sazināties"
   },
+  "options_supportUs_description": {
+    "message": "Lūdzu, veltiet brīdi, lai novērtētu ABP vai ziedotu projektam. Paldies par atbalstu!"
+  },
   "options_support_title": {
     "message": "Atbalsts"
   },
@@ -271,6 +292,9 @@
   },
   "options_whitelist_empty_2": {
     "message": "Tīmekļvietnes kurām jūs uzticaties un atļaujat rādīt reklāmas."
+  },
+  "options_whitelist_notification": {
+    "message": "Vietne iekļauta baltajā sarakstā."
   },
   "options_whitelist_placeholder_example": {
     "message": "piemēram, $domain$",

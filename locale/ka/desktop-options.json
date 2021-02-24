@@ -139,6 +139,9 @@
   "options_dialog_predefined_title": {
     "message": "ნამდვილად გსურთ ამ ფილტრის დამატება?"
   },
+  "options_donate_button": {
+    "message": "შემოწირულობა"
+  },
   "options_email": {
     "message": "ელფოსტა:"
   },
@@ -303,6 +306,9 @@
   "options_protection_social_tooltip": {
     "message": "ვებსაიტებზე არსებული მოწონების ან გაზიარების ხატულებით, სოციალურ ქსელებს ეძლევა საშუალება შეისწავლოს და შეადგინოს თქვენი პიროვნული დახასიათება, მონახულებული გვერდების საფუძველზე - მიუხედავად იმისა, დააწკაპებთ თუ არა ამ მათზე. ამ ხატულების დამალვა, უზრუნველყოფს თქვენს პირადულობას."
   },
+  "options_rating_button": {
+    "message": "შეაფასეთ"
+  },
   "options_report_bug": {
     "message": "ხარვეზი აღმოაჩინეთ? <a>მოგვახსენეთ ამის შესახებ</a>"
   },
@@ -314,6 +320,12 @@
   },
   "options_social_title": {
     "message": "გამოგვეხმაურეთ"
+  },
+  "options_supportUs_description": {
+    "message": "გთხოვთ, გამონახოთ დრო და შეაფასოთ ABP ან გაიღოთ შემოწირულობა პროექტისთვის. გმადლობთ მხარდაჭერისთვის!"
+  },
+  "options_supportUs_title": {
+    "message": "მოგეწონათ Adblock Plus?"
   },
   "options_support_title": {
     "message": "მხარდაჭერა"

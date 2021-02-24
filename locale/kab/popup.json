@@ -5,13 +5,31 @@
   "options_short": {
     "message": "Iɣewwaṛen"
   },
+  "overlay_notification_closing_button_hide": {
+    "message": "Mdel"
+  },
   "overlay_notification_closing_button_optout": {
     "message": "Seḥbes askan n yilɣa"
+  },
+  "share_on_facebook": {
+    "message": "Bḍu γer Facebook"
+  },
+  "share_on_twitter": {
+    "message": "Bḍu γer Twitter"
+  },
+  "share_on_weibo": {
+    "message": "Bḍu γer Weibo"
   },
   "stats_label_page": {
     "message": "ɣef usebter-agi"
   },
   "stats_label_total": {
     "message": "s umata"
+  },
+  "status_domain": {
+    "message": "Asmel-a web:"
+  },
+  "status_page": {
+    "message": "Asebter-ayi:"
   }
 }

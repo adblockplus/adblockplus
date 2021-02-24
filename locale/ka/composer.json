@@ -1,5 +1,26 @@
 {
   "block_element": {
     "message": "ელემენტის შეზღუდვა"
+  },
+  "composer_block": {
+    "message": "შეზღუდვა"
+  },
+  "composer_cancel": {
+    "message": "გაუქმება"
+  },
+  "composer_elements": {
+    "message": "ელემენტ(ებ)ი შერჩეულია"
+  },
+  "composer_loading": {
+    "message": "იტვირთება..."
+  },
+  "composer_preview": {
+    "message": "შეთვალიერება"
+  },
+  "composer_undo_preview": {
+    "message": "შეთვალიერების დახურვა"
+  },
+  "composer_unselect": {
+    "message": "შერჩევის გაუქმება"
   }
 }

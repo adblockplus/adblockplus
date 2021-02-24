@@ -17,8 +17,14 @@
   "common_feature_anti_adblock_title": {
     "message": "Adblock எச்சரிக்கைச் செய்திகளை மறை"
   },
+  "common_feature_circumvention_title": {
+    "message": "ஏபிபி எதிர்ப்பு எதிர்ப்பு வடிகட்டி பட்டியல்"
+  },
   "common_feature_malware_title": {
     "message": "தீம்பொருள் தடை"
+  },
+  "common_feature_privacy_title": {
+    "message": "கூடுதல் கண்காணிப்பைத் தடு"
   },
   "common_feature_social_title": {
     "message": "சமூக ஊடகப் படவுரு டிராக்கிங்கை தடு"

@@ -1,4 +1,7 @@
 {
+  "block_element_description": {
+    "message": "ცალკეული ელემენტის შეზღუდვა ამ საიტზე"
+  },
   "click_element_to_block_it": {
     "message": "დააწკაპეთ ელემენტზე მოცემულ გვერდზე მის შესაზღუდად."
   },
@@ -37,6 +40,17 @@
   },
   "share_on_twitter_message": {
     "message": "მე $number$ რეკლამა მოვიცილე Adblock Plus-ით. სცადე - უფასოა!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "share_on_weibo": {
+    "message": "გაზიარება Weibo-ზე"
+  },
+  "share_on_weibo_message": {
+    "message": "მე $number$ რეკლამა მოვიცილე Adblock Plus-ით. სცადე – ᲣᲤᲐᲡᲝᲐ!",
     "placeholders": {
       "number": {
         "content": "$1"

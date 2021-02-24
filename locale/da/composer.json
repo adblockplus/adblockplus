@@ -1,5 +1,26 @@
 {
   "block_element": {
     "message": "Blokér element"
+  },
+  "composer_block": {
+    "message": "Blokér"
+  },
+  "composer_cancel": {
+    "message": "Annullér"
+  },
+  "composer_elements": {
+    "message": "element(er) valgt"
+  },
+  "composer_loading": {
+    "message": "Indlæser..."
+  },
+  "composer_preview": {
+    "message": "Forhåndsvisning"
+  },
+  "composer_undo_preview": {
+    "message": "Afslut forhåndsvisning"
+  },
+  "composer_unselect": {
+    "message": "Ikke valgte"
   }
 }

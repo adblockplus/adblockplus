@@ -127,8 +127,17 @@
   "options_dialog_predefined_confirm": {
     "message": "Ja, använd den här filterlistan"
   },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Titel"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
+  },
   "options_dialog_predefined_title": {
     "message": "Är du säker du vill lägga till den här filterlistan?"
+  },
+  "options_donate_button": {
+    "message": "Donera"
   },
   "options_email": {
     "message": "E-Post:"
@@ -294,6 +303,9 @@
   "options_protection_social_tooltip": {
     "message": "Sociala medieikoner på webbsidor du besöker tillåter sociala medianätverk att bygga upp en profil baserat på dina surfvanor - även om du inte klickar på dem. Dölj dessa ikoner för att skydda din profil."
   },
+  "options_rating_button": {
+    "message": "Betygsätt oss"
+  },
   "options_report_bug": {
     "message": "Hittat en bugg? <a>Skicka en buggrapport</a>"
   },
@@ -305,6 +317,9 @@
   },
   "options_social_title": {
     "message": "Kom i kontakt"
+  },
+  "options_supportUs_title": {
+    "message": "Gillar du Adblock Plus?"
   },
   "options_support_title": {
     "message": "Support"

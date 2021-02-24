@@ -51,7 +51,7 @@
     "message": "我的过滤列表"
   },
   "options_customize_blockElement": {
-    "message": "显示“块元素”右键单击菜单项"
+    "message": "右键菜单中显示“屏蔽元素”选项"
   },
   "options_customize_blockElement_tooltip": {
     "message": "暂时屏蔽网页上的烦人项目，例如：图片或动画幻灯片。"

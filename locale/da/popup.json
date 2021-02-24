@@ -1,4 +1,7 @@
 {
+  "block_element_description": {
+    "message": "Blokér specifikt element på dette websted"
+  },
   "click_element_to_block_it": {
     "message": "Klik på et element på siden for at blokere det."
   },
@@ -27,7 +30,7 @@
     "message": "Klik på knappen nedenfor for at effektuere ændringerne."
   },
   "sendReport": {
-    "message": "Rapportér et problem"
+    "message": "Rapportér et problem på denne side"
   },
   "share_on_facebook": {
     "message": "Del på Facebook"
@@ -36,6 +39,17 @@
     "message": "Del på Twitter"
   },
   "share_on_twitter_message": {
+    "message": "Jeg har blokeret $number$ annoncer med Adblock Plus. Prøv udvidelsen - den er GRATIS!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "share_on_weibo": {
+    "message": "Del på Weibo"
+  },
+  "share_on_weibo_message": {
     "message": "Jeg har blokeret $number$ annoncer med Adblock Plus. Prøv udvidelsen - den er GRATIS!",
     "placeholders": {
       "number": {

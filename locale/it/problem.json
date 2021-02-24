@@ -5,11 +5,26 @@
   "problem_note": {
     "message": "Attenzione: a seconda di come si utilizza ABP, potrebbe essere necessario riconfigurare le impostazioni, i filtri personalizzati e i siti web nella whitelist dopo aver reinstallato Adblock Plus."
   },
+  "problem_os_mac": {
+    "message": "Mac"
+  },
+  "problem_os_windows": {
+    "message": "Windows"
+  },
   "problem_social_description": {
     "message": "Hai riscontrato un problema? Contatta il team di supporto"
   },
+  "problem_social_email": {
+    "message": "Email"
+  },
+  "problem_social_facebook": {
+    "message": "Facebook"
+  },
   "problem_social_title": {
     "message": "Hai ancora bisogno di aiuto?"
+  },
+  "problem_social_twitter": {
+    "message": "Twitter"
   },
   "problem_solution_action": {
     "message": "Fai clic qui per disinstallare e reinstallare Adblock Plus"

@@ -1,11 +1,11 @@
 {
   "notification_configure": {
-    "message": "I-configure ang mga setting ng notification"
+    "message": "I-configure ang mga setting ng notipikasyon"
   },
   "notification_open_all": {
     "message": "Buksan ang lahat ng mga link mula sa notification na ito"
   },
   "notification_without_buttons": {
-    "message": "Pindutin ang notification para mabuksan ang mga links."
+    "message": "Pindutin ang notipikasyon para mabuksan ang mga link."
   }
 }

@@ -1,5 +1,26 @@
 {
   "block_element": {
     "message": "Blokir elemen"
+  },
+  "composer_block": {
+    "message": "Blok"
+  },
+  "composer_cancel": {
+    "message": "Batalkan"
+  },
+  "composer_elements": {
+    "message": "elemen-elemen dipilih"
+  },
+  "composer_loading": {
+    "message": "Memuat..."
+  },
+  "composer_preview": {
+    "message": "Pratinjau"
+  },
+  "composer_undo_preview": {
+    "message": "Keluar dari pratinjau"
+  },
+  "composer_unselect": {
+    "message": "Lepas pilihan"
   }
 }

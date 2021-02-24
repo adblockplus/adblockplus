@@ -1,12 +1,12 @@
 {
   "description": {
-    "message": "Yli 500 miljoonalla latauksella Adblock Plus on yksi maailman tunnetuimmista mainoksenesto-ohjelmista."
+    "message": "Estä YouTube™-mainokset, ponnahdusikkunat ja haittaohjelmat!"
   },
   "name": {
     "message": "Adblock Plus"
   },
   "name_devbuild": {
-    "message": "Adblock Plus kehittäjäversio"
+    "message": "Adblock Plus -kehittäjäversio"
   },
   "name_releasebuild": {
     "message": "Adblock Plus - ilmainen mainosesto"

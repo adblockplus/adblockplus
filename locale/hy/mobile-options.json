@@ -1,11 +1,44 @@
 {
   "mops_acceptableAds_description": {
-    "message": "Թույլատրել որոշ չկպչուն գովազդ"
+    "message": "Թույլատրել որոշ ոչ զզվեցնող գովազդներ։"
+  },
+  "mops_acceptableAds_more": {
+    "message": "Իմանալ ավելին"
   },
   "mops_action_cancel": {
     "message": "Չեղարկել"
   },
+  "mops_enabled_label": {
+    "message": "Արգելափակել գովազդն՝"
+  },
+  "mops_error_url": {
+    "message": "Մուտքագրեք վավեր URL"
+  },
+  "mops_filterlist_add": {
+    "message": "Ավելացնել զտիչների ցանկ"
+  },
+  "mops_filterlist_add_action": {
+    "message": "Ավելացնել զտիչների ցանկը"
+  },
+  "mops_filterlist_add_url": {
+    "message": "Ավելացնել սեփական զտիչների ցանկ"
+  },
+  "mops_header": {
+    "message": "Adblock Plus Կարգավորումներ"
+  },
+  "mops_subscribe_header": {
+    "message": "Ավելացնել զտիչների սեփական ցանկ"
+  },
+  "mops_subscribe_title": {
+    "message": "Զտիչների ցանկի անուն"
+  },
+  "mops_subscribe_url": {
+    "message": "Զտիչների ցանկի URL"
+  },
   "mops_subscriptions_header": {
-    "message": "Բաժանորդագրված ֆիլտրեր"
+    "message": "Զտիչների բաժնեգրություններ"
+  },
+  "mops_title": {
+    "message": "Adblock Plus Կարգավորումներ"
   }
 }

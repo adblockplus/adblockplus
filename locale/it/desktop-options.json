@@ -74,6 +74,15 @@
   "options_customize_showNotifications_tooltip": {
     "message": "Consenti le notifiche di Adblock Plus (verranno sempre visualizzate quelle relative a problemi critici di prestazioni)."
   },
+  "options_dialog_about_copyright": {
+    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "currentYear": {
+        "content": "$1",
+        "example": "2017"
+      }
+    }
+  },
   "options_dialog_about_title": {
     "message": "Informazioni su Adblock Plus"
   },
@@ -123,6 +132,9 @@
   },
   "options_dialog_predefined_subscription_title": {
     "message": "Titolo"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "Sei sicuro di voler raggiungere questo elenco di filtri?"
@@ -221,6 +233,9 @@
   "options_general_description": {
     "message": "Definisci cosa viene mostrato e nascosto sui siti da Adblock Plus"
   },
+  "options_generic_error": {
+    "message": "Ops! Qualcosa è andato storto. Si è pregati di riprovare."
+  },
   "options_help_center": {
     "message": "Cerchi delle risposte alle tue domande? <a0>Visita il nostro Centro di assistenza (solo in inglese)</a0>"
   },
@@ -244,6 +259,19 @@
   },
   "options_language_header": {
     "message": "Lingua"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>SUGGERIMENTO:</strong> Seleziona solo le lingue di cui hai bisogno. La selezione di un numero maggiore di lingue rallenta l'applicazione e, di conseguenza, la tua velocità di navigazione."

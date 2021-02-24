@@ -1,5 +1,20 @@
 {
   "block_element": {
     "message": "Blockera objekt"
+  },
+  "composer_block": {
+    "message": "Blockera"
+  },
+  "composer_cancel": {
+    "message": "Avbryt"
+  },
+  "composer_loading": {
+    "message": "Laddar..."
+  },
+  "composer_preview": {
+    "message": "Förhandsgranska"
+  },
+  "composer_undo_preview": {
+    "message": "Avsluta förhandsgranskning"
   }
 }

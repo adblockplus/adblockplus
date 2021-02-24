@@ -1,5 +1,26 @@
 {
   "block_element": {
     "message": "Заблокувати елемент"
+  },
+  "composer_block": {
+    "message": "Заблокувати"
+  },
+  "composer_cancel": {
+    "message": "Скасувати"
+  },
+  "composer_elements": {
+    "message": "елемент(ів) обрано"
+  },
+  "composer_loading": {
+    "message": "Завантаження..."
+  },
+  "composer_preview": {
+    "message": "Попередній перегляд"
+  },
+  "composer_undo_preview": {
+    "message": "Вийти з попереднього перегляду"
+  },
+  "composer_unselect": {
+    "message": "Зняти виділення"
   }
 }

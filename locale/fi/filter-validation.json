@@ -1,21 +1,24 @@
 {
   "filter_elemhideemulation_nodomain": {
-    "message": "Aktiivista verkkotunnusta ei ole määritetty laajennetun elementin piilotussuodattimelle"
+    "message": "Laajennetulle elementin piilotussuodattimelle ei määritetty aktiivista verkkotunnusta"
   },
   "filter_invalid_csp": {
-    "message": "Virheellinen sisältöturvapolitiikka"
+    "message": "Virheellinen sisällön suojauskäytäntö"
   },
   "filter_invalid_domain": {
     "message": "Väärä (tai tyhjä) verkkotunnus"
   },
   "filter_invalid_regexp": {
-    "message": "Virheellinen normaali-ilmaus"
+    "message": "Virheellinen yleisilmaus"
   },
   "filter_slow": {
     "message": "Suodatin toimii nopeammin, jos suodattimen pituus on optimaalinen eikä se sisällä yleisiä ilmauksia."
   },
+  "filter_snippet_nodomain": {
+    "message": "Koodin osien suodattimelle ei määritetty aktiivista verkkotunnusta"
+  },
   "filter_unknown_option": {
-    "message": "Tuntematon suodatusvaihtoehto"
+    "message": "Tuntematon suodatinvalinta"
   },
   "line": {
     "message": "Rivi $number$: $message$",

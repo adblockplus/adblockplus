@@ -1,5 +1,14 @@
 {
+  "description": {
+    "message": "I-block ang mga YouTube™ ad, mga pop-up & labanan ang malware!"
+  },
+  "name": {
+    "message": "Adblock Plus"
+  },
   "name_devbuild": {
-    "message": "pagbuo ng Adblock Plus"
+    "message": "development build ng Adblock Plus"
+  },
+  "name_releasebuild": {
+    "message": "Adblock Plus - libreng ad blocker"
   }
 }

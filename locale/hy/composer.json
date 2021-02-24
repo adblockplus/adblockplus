@@ -1,5 +1,23 @@
 {
   "block_element": {
-    "message": "Արգելափակել Ելեմենտը"
+    "message": "Արգելափակել տարրը"
+  },
+  "composer_block": {
+    "message": "Արգելափակել"
+  },
+  "composer_cancel": {
+    "message": "Չեղարկել"
+  },
+  "composer_elements": {
+    "message": "տարր ընտրված է"
+  },
+  "composer_loading": {
+    "message": "Բեռնում..."
+  },
+  "composer_preview": {
+    "message": "Նախադիտում"
+  },
+  "composer_undo_preview": {
+    "message": "Դուրս գալ նախադիտումից"
   }
 }

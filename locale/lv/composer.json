@@ -1,5 +1,14 @@
 {
   "block_element": {
     "message": "Bloķēt elementu"
+  },
+  "composer_block": {
+    "message": "Bloķēt"
+  },
+  "composer_cancel": {
+    "message": "Atcelt"
+  },
+  "composer_preview": {
+    "message": "Priekšskatījums"
   }
 }

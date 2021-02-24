@@ -6,7 +6,7 @@
     "message": "Peruuta"
   },
   "common_copyright": {
-    "message": "Copyright © $year$ Kaikki oikeudet pidätetään Adblock Plus® on rekisteröity <a0>eyeo GmbH</a0> tavaramerkki.",
+    "message": "Copyright © $year$ Kaikki oikeudet pidätetään. Adblock Plus® on rekisteröity <a0>eyeo GmbH</a0>:n tavaramerkki.",
     "placeholders": {
       "year": {
         "content": "$1",
@@ -15,7 +15,10 @@
     }
   },
   "common_feature_anti_adblock_title": {
-    "message": "Piilota Adblock varoitussanomat"
+    "message": "Piilota Adblockin varoitussanomat"
+  },
+  "common_feature_circumvention_title": {
+    "message": "ABP Anti-Circumvention Filter List"
   },
   "common_feature_malware_title": {
     "message": "Estä haittaohjelmat"
@@ -24,7 +27,7 @@
     "message": "Estä muu seuranta"
   },
   "common_feature_social_title": {
-    "message": "Estä sosiaalisen median kuvakkeet"
+    "message": "Estä sosiaalisen median kuvakkeiden seuranta"
   },
   "common_notification_hide": {
     "message": "Sulje ilmoitus"
@@ -36,6 +39,6 @@
     "message": "Poista"
   },
   "filter_action_failed": {
-    "message": "Jokin meni vikaan, yritä uudelleen."
+    "message": "Jokin meni pieleen. Yritä uudelleen."
   }
 }

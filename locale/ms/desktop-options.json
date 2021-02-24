@@ -139,6 +139,9 @@
   "options_dialog_predefined_title": {
     "message": "Adakah anda pasti mahu menambah senarai penapis ini?"
   },
+  "options_donate_button": {
+    "message": "Sumbang"
+  },
   "options_email": {
     "message": "E-mel:"
   },
@@ -303,6 +306,9 @@
   "options_protection_social_tooltip": {
     "message": "Ikon media sosial di laman web yang anda lawati membolehkan rangkaian media sosial untuk membina profil anda berdasarkan tabiat pelayaran anda - walaupun anda tidak klik pada mereka. Menyembunyikan ikon ini boleh melindungi profil anda."
   },
+  "options_rating_button": {
+    "message": "Nilaikan kami"
+  },
   "options_report_bug": {
     "message": "Menemui bug? <a>Hantar laporan bug kepada kami</a>"
   },
@@ -314,6 +320,12 @@
   },
   "options_social_title": {
     "message": "Dapatkan berhubung"
+  },
+  "options_supportUs_description": {
+    "message": "Luangkan sedikit masa untuk menilai ABP atau menyumbang kepada projek. Terima kasih atas sokongan anda!"
+  },
+  "options_supportUs_title": {
+    "message": "Suka Adblock Plus?"
   },
   "options_support_title": {
     "message": "Sokongan"

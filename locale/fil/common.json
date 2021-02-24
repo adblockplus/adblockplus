@@ -3,15 +3,39 @@
     "message": "Magdagdag"
   },
   "cancel": {
-    "message": "I-cancel"
+    "message": "Kanselahin"
+  },
+  "common_copyright": {
+    "message": "Copyright © $year$ Nakalaan ang lahat ng mga karapatan. Ang Adblock Plus® ay isang rehistradong tatak ni <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "year": {
+        "content": "$1",
+        "example": "1984"
+      }
+    }
   },
   "common_feature_anti_adblock_title": {
     "message": "Itago ang mga babalang mensahe ng Adblock"
   },
+  "common_feature_circumvention_title": {
+    "message": "ABP Anti-Circumvention Filter List"
+  },
   "common_feature_malware_title": {
-    "message": "Harangan ang Malware"
+    "message": "I-block ang Malware"
   },
   "common_feature_privacy_title": {
     "message": "Harangan ang karagdagang pagsubaybay"
+  },
+  "common_notification_hide": {
+    "message": "Isara ang notipikasyon"
+  },
+  "copy_selected": {
+    "message": "Kopyahin ang nakaselekta"
+  },
+  "delete": {
+    "message": "Burahin"
+  },
+  "filter_action_failed": {
+    "message": "May nangyaring 'di inaasahan. Mangyaring subukan muli."
   }
 }

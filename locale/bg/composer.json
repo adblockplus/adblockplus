@@ -1,5 +1,26 @@
 {
   "block_element": {
     "message": "Блокирай елемента"
+  },
+  "composer_block": {
+    "message": "Блокирай"
+  },
+  "composer_cancel": {
+    "message": "Отказ"
+  },
+  "composer_elements": {
+    "message": "Избран(и) елементи"
+  },
+  "composer_loading": {
+    "message": "Зареждане…"
+  },
+  "composer_preview": {
+    "message": "Предварителен преглед"
+  },
+  "composer_undo_preview": {
+    "message": "Изход от прегледа"
+  },
+  "composer_unselect": {
+    "message": "Не избрани"
   }
 }

@@ -32,6 +32,9 @@
   "common_notification_hide": {
     "message": "알림 닫기"
   },
+  "copy_selected": {
+    "message": "선택 복사"
+  },
   "delete": {
     "message": "삭제"
   },

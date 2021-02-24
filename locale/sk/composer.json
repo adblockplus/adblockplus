@@ -1,5 +1,26 @@
 {
   "block_element": {
     "message": "Blokovať prvok"
+  },
+  "composer_block": {
+    "message": "Zablokovať"
+  },
+  "composer_cancel": {
+    "message": "Zrušiť"
+  },
+  "composer_elements": {
+    "message": "Výbraný(e) prvok(prvky)"
+  },
+  "composer_loading": {
+    "message": "Načítavam..."
+  },
+  "composer_preview": {
+    "message": "Náhľad"
+  },
+  "composer_undo_preview": {
+    "message": "Zavrieť prehľad"
+  },
+  "composer_unselect": {
+    "message": "Neoznačené"
   }
 }

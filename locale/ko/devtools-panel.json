@@ -1,4 +1,49 @@
 {
+  "devtools_action_block": {
+    "message": "항목 차단"
+  },
+  "devtools_action_remove": {
+    "message": "규칙 제거"
+  },
+  "devtools_action_unblock": {
+    "message": "예외 추가"
+  },
+  "devtools_filter_origin_custom": {
+    "message": "사용자 정의"
+  },
+  "devtools_filter_origin_none": {
+    "message": "이름 없는 구독"
+  },
+  "devtools_filter_subtitle": {
+    "message": "출처"
+  },
+  "devtools_filter_title": {
+    "message": "필터"
+  },
+  "devtools_footer": {
+    "message": "필터 변경 사항을 확인하려면 <a0>새로고침</a0> 해주세요"
+  },
+  "devtools_header": {
+    "message": "<slot1></slot1> 유형의 <slot0></slot0> 표시"
+  },
+  "devtools_header_state_all": {
+    "message": "모두"
+  },
+  "devtools_header_state_blocked": {
+    "message": "차단됨"
+  },
+  "devtools_header_state_whitelisted": {
+    "message": "허용됨"
+  },
+  "devtools_header_type_any": {
+    "message": "전체"
+  },
+  "devtools_request_subtitle": {
+    "message": "문서 도메인"
+  },
+  "devtools_request_title": {
+    "message": "요청"
+  },
   "devtools_request_url": {
     "message": "<a0>$original$</a0>이(가) <a1>$rewritten$</a1>에 다시 작성되었습니다.",
     "placeholders": {
@@ -11,5 +56,8 @@
         "example": "http://example.com/bar"
       }
     }
+  },
+  "devtools_type_title": {
+    "message": "유형"
   }
 }

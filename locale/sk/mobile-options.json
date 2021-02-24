@@ -8,6 +8,9 @@
   "mops_action_cancel": {
     "message": "Zrušiť"
   },
+  "mops_enabled_label": {
+    "message": "Blokovať reklamy na:"
+  },
   "mops_error_url": {
     "message": "Zadajte platnú adresu URL"
   },
