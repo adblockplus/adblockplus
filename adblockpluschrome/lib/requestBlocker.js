@@ -74,7 +74,6 @@ export let filterTypes = new Set(function*()
   yield "ELEMHIDE";
   yield "SNIPPET";
   yield "CSP";
-  yield "HEADER";
 }());
 
 function getDocumentInfo(page, frame, originUrl)

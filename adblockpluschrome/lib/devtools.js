@@ -61,10 +61,9 @@ function getFilterInfo(filter)
   };
 }
 
-function hasRecord(panel, request, filter)
+function hasRecord(request, filter, record)
 {
-  return panel.records.some(record =>
-    record.request.url == request.url &&
+  return record.request.url == request.url &&
     record.request.docDomain == request.docDomain &&
 
     // Ignore partial (e.g. ELEMHIDE) allowlisting if there is already
@@ -81,22 +80,51 @@ function hasRecord(panel, request, filter)
     // any duplicates. Two CSP filters are duplicates if both have identical
     // text.
     (record.filter && record.filter.csp && record.filter.text) ==
-    (filter && filter.csp && filter.text)
-  );
+    (filter && filter.csp && filter.text);
 }
 
 function addRecord(panel, request, filter)
 {
-  if (!hasRecord(panel, request, filter))
-  {
-    panel.port.postMessage({
-      type: "add-record",
-      request,
-      filter: getFilterInfo(filter)
-    });
+  let matchesAny = false;
 
-    panel.records.push({request, filter});
+  for (let i = 0; i < panel.records.length; i++)
+  {
+    let record = panel.records[i];
+
+    let matches = hasRecord(request, filter, record);
+    if (!matches)
+      continue;
+
+    matchesAny = true;
+
+    // Update record without filters, if filter matches on later checks
+    if (!filter)
+      break;
+
+    if (record.filter)
+      continue;
+
+    record.filter = filter;
+
+    panel.port.postMessage({
+      type: "update-record",
+      initialize: true,
+      index: i,
+      request: record.request,
+      filter: getFilterInfo(record.filter)
+    });
   }
+
+  if (matchesAny)
+    return;
+
+  panel.port.postMessage({
+    type: "add-record",
+    request,
+    filter: getFilterInfo(filter)
+  });
+
+  panel.records.push({request, filter});
 }
 
 function matchRequest(request)

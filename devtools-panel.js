@@ -317,8 +317,11 @@ document.addEventListener("DOMContentLoaded", () =>
         const oldRow = table.getElementsByTagName("tr")[message.index];
         const newRow = createRecord(message.request, message.filter, template);
         oldRow.parentNode.replaceChild(newRow, oldRow);
-        newRow.classList.add("changed");
-        container.classList.add("has-changes");
+        if (!message.initialize)
+        {
+          newRow.classList.add("changed");
+          container.classList.add("has-changes");
+        }
         break;
 
       case "remove-record":
