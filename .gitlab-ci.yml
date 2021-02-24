@@ -221,7 +221,7 @@ downloadcrowdin:
     - export COMMIT_MSG="Noissue - Downloaded Crowdin translations for $CI_BUILD_REF_NAME"
     - git commit -m "$COMMIT_MSG"
     # Push into new branch and create a new merge request
-    - export TARGET_BRANCH="${CI_BUILD_REF_NAME}-crowdin-download"
+    - export TARGET_BRANCH="translation-${CI_BUILD_REF_NAME}-crowdin-download"
     - export PUSH_URL=$(echo $CI_PROJECT_URL | sed "s/:\/\//:\/\/$GITLAB_USER:$GITLAB_TOKEN@/")
     - 'git push -f -o merge_request.create -o merge_request.target=$CI_BUILD_REF_NAME -o merge_request.remove_source_branch -o merge_request.title="WIP: ${COMMIT_MSG}" $PUSH_URL HEAD:refs/heads/$TARGET_BRANCH'
   when: manual
@@ -292,7 +292,7 @@ downloadxtm:
     - export COMMIT_MSG="Noissue - Downloaded XTM translations for $CI_BUILD_REF_NAME"
     - git commit -m "$COMMIT_MSG"
     # Push into new branch and create a new merge request
-    - export TARGET_BRANCH="${CI_BUILD_REF_NAME}-xtm-download"
+    - export TARGET_BRANCH="translation-${CI_BUILD_REF_NAME}-xtm-download"
     - export PUSH_URL=$(echo $CI_PROJECT_URL | sed "s/:\/\//:\/\/$GITLAB_USER:$GITLAB_TOKEN@/")
     - 'git push -f -o merge_request.create -o merge_request.target=$CI_BUILD_REF_NAME -o merge_request.remove_source_branch -o merge_request.title="WIP: ${COMMIT_MSG}" $PUSH_URL HEAD:refs/heads/$TARGET_BRANCH'
   when: manual
