@@ -34,12 +34,18 @@ while (match = regexp.exec(navigator.userAgent))
   {
     platformVersion = ver;
   }
+  // For compatibility with legacy websites, Chrome's UA
+  // also includes a Mozilla, AppleWebKit and Safari token.
+  // Any further name/version pair indicates a fork.
   else if (app != "Mozilla" && app != "AppleWebKit" && app != "Safari")
   {
-    // For compatibility with legacy websites, Chrome's UA
-    // also includes a Mozilla, AppleWebKit and Safari token.
-    // Any further name/version pair indicates a fork.
-    application = app == "OPR" ? "opera" : app.toLowerCase();
+    if (app == "Edg")
+      application = "edge";
+    else if (app == "OPR")
+      application = "opera";
+    else
+      application = app.toLowerCase();
+
     applicationVersion = ver;
   }
 }
