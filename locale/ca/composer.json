@@ -1,5 +1,26 @@
 {
   "block_element": {
     "message": "Bloqueja l'element"
+  },
+  "composer_block": {
+    "message": "Bloca"
+  },
+  "composer_cancel": {
+    "message": "Cancel·la"
+  },
+  "composer_elements": {
+    "message": "element(s) seleccionat(s)"
+  },
+  "composer_loading": {
+    "message": "S'està carregant..."
+  },
+  "composer_preview": {
+    "message": "Vista prèvia"
+  },
+  "composer_undo_preview": {
+    "message": "Surt de la vista prèvia"
+  },
+  "composer_unselect": {
+    "message": "Deselecciona"
   }
 }

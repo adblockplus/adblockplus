@@ -139,6 +139,9 @@
   "options_dialog_predefined_title": {
     "message": "Esteu segur que voleu afegir aquesta llista de filtres?"
   },
+  "options_donate_button": {
+    "message": "Fes una donació"
+  },
   "options_email": {
     "message": "Correu:"
   },
@@ -303,6 +306,9 @@
   "options_protection_social_tooltip": {
     "message": "Les icones de les xarxes socials dels llocs web que visiteu permeten que les xarxes de xarxes socials construeixin un perfil segons els vostres hàbits de navegació, fins i tot quan no feu clic a ells. Ocultar aquestes icones pot protegir el vostre perfil."
   },
+  "options_rating_button": {
+    "message": "Valora'ns"
+  },
   "options_report_bug": {
     "message": "Heu trobat un error? <a>Envieu-nos un informe d'error</a>"
   },
@@ -314,6 +320,12 @@
   },
   "options_social_title": {
     "message": "Contacteu-nos"
+  },
+  "options_supportUs_description": {
+    "message": "Preneu-vos un moment per valorar l'ABP o fer una donació al projecte. Gràcies pel vostre suport!"
+  },
+  "options_supportUs_title": {
+    "message": "Us agrada l'Adblock Plus?"
   },
   "options_support_title": {
     "message": "Suport"
