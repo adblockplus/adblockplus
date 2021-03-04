@@ -9,7 +9,7 @@
     "message": "Cancelar"
   },
   "composer_elements": {
-    "message": "elementos seleccionados"
+    "message": "elemento(s) seleccionado(s)"
   },
   "composer_loading": {
     "message": "Cargando..."

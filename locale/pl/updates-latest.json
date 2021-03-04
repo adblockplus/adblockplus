@@ -5,11 +5,20 @@
   "notification_updates_title": {
     "message": "Adblock Plus został zaktualizowany"
   },
+  "updates_subtitle": {
+    "message": "Mamy nadzieję, że podobają ci się najnowsze uaktualnienia."
+  },
+  "updates_title": {
+    "message": "Adblock Plus został zaktualizowany!"
+  },
   "updates_update_i1_description": {
-    "message": "Dodano krótki opis funkcji Blokuj element oraz poprawiono przycisk Raport."
+    "message": "Po otwarciu Ustawień zobaczysz nową sekcję <strong>Zalecane filtry</strong>. Tutaj za pomocą jednego kliknięcia możesz łatwo włączyć/wyłączyć zalecane filtry i poprawić swoje korzystanie z sieci."
+  },
+  "updates_update_i1_image": {
+    "message": "Listy filtrów \"Blokuj powiadomienia\" oraz \"Blokuj ostrzeżenia o plikach cookie\" są podświetlone w sekcji \"ZALECANE FILTRY\" na stronie opcji"
   },
   "updates_update_i1_title": {
-    "message": "Interfejs ABP jest teraz bardziej przyjazny dla użytkownika"
+    "message": "Dodano nowe listy zalecanych filtrów dla łatwiejszego dostępu"
   },
   "updates_update_i2_description": {
     "message": "Uprościliśmy funkcję Blokuj element, dodając krótkie instrukcje, a także podgląd wyglądu strony bez uciążliwego elementu. Wypróbuj to!"
@@ -21,10 +30,10 @@
     "message": "Uaktualniona i ulepszona funkcja Blokuj element"
   },
   "updates_update_i3_description": {
-    "message": "Długa lista filtrów jest teraz widoczna w całości, wraz z selektorem CSS."
+    "message": "Dla naszych bardziej zaawansowanych użytkowników mamy nowy tryb ukrywania filtrów debugowania elementów, który można włączyć w ustawieniach zaawansowanych. Elementy będą wtedy podświetlone dla ułatwienia debugowania."
   },
   "updates_update_i3_title": {
-    "message": "Zwiększone okno panelu narzędzi programistycznych"
+    "message": "Dodano tryb ukrywania filtrów debugowania elementów"
   },
   "updates_update_i4_description": {
     "message": "Ikona miga i zmienia kolor na niebieski, aby poinformować użytkownika o nowych powiadomieniach."

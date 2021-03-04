@@ -56,6 +56,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "Storende items op een webpagina, zoals afbeeldingen of bewegende diavoorstellingen, tijdelijk blokkeren"
   },
+  "options_customize_elemhideDebug": {
+    "message": "Schakel de modus in voor het debuggen van element verbergende filters"
+  },
+  "options_customize_elemhideDebug_tooltip": {
+    "message": "Markeer elementen op een pagina die worden beïnvloed door element verbergende filters."
+  },
   "options_customize_header": {
     "message": "Aanpassingen"
   },
@@ -308,6 +314,21 @@
   },
   "options_rating_button": {
     "message": "Beoordeel ons"
+  },
+  "options_recommended_cookies_tooltip": {
+    "message": "Door dit filter toe te voegen doet u afstand van uw recht om op de hoogte gesteld te worden over cookies en het wijzigen van cookie-instellingen op individuele websites. Houd er rekening mee dat sommige websites u standaard volgen. Hier vind u meer informatie: <a0>https://adblockplus.org/block-cookie-warnings</a0>"
+  },
+  "options_recommended_filters_header": {
+    "message": "Aanbevolen filters"
+  },
+  "options_recommended_notifications_tooltip": {
+    "message": "Stop websites met vragen of u pushmeldingen toestaat die uw online-activiteit kunnen volgen."
+  },
+  "options_recommended_privacy_tooltip": {
+    "message": "Bescherm uw privacy tegen bekende entiteiten die uw online activiteiten kunnen volgen via alle websites die u bezoekt."
+  },
+  "options_recommended_social_tooltip": {
+    "message": "De sociale media pictogrammen op de websites die u bezoekt laten toe dat sociale media netwerken een profiel van u bouwen op basis van uw browsinggedrag - zelfs als u er niet op klikt. Het verbergen van deze pictogrammen kan uw profiel beschermen."
   },
   "options_report_bug": {
     "message": "Een bug gevonden? <a>Stuur ons een bugrapport</a>"

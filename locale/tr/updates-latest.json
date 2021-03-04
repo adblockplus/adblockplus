@@ -5,11 +5,20 @@
   "notification_updates_title": {
     "message": "Adblock Plus artık güncellendi"
   },
+  "updates_subtitle": {
+    "message": "En yeni güncellemeleri beğeneceğinizi düşünüyoruz."
+  },
+  "updates_title": {
+    "message": "Adblock Plus artık güncellendi!"
+  },
   "updates_update_i1_description": {
-    "message": "Öğe Engelle özelliğine kısa bir açıklama eklendi ve Bildir düğmesinin anlatım biçimi iyileştirildi."
+    "message": "Ayarlar kısmını açtığınızda, <strong>Önerilen Filtreler</strong> adlı yeni bir bölüm göreceksiniz. Burada, önerilen filtreleri basit bir tıklama ile kolayca etkinleştirebilir/devre dışı bırakabilir ve web deneyiminizi geliştirebilirsiniz."
+  },
+  "updates_update_i1_image": {
+    "message": "\"Anlık bildirimleri engelle\" ve \"Çerez uyarılarını engelle\" filtre listeleri, seçenekler sayfasının \"ÖNERİLEN FİLTRELER\" kısmında öne çıkarılmıştır"
   },
   "updates_update_i1_title": {
-    "message": "ABP kullanıcı arayüzü artık birazcık daha kullanıcı dostu"
+    "message": "Kolay erişim için yeni önerilen filtre listeleri eklendi"
   },
   "updates_update_i2_description": {
     "message": "Öğe Engelle özelliğine kısa talimatlar ekledik ve zorla giren öğe olmadan sayfanın nasıl görüneceğine ilişkin bir önizleme koyduk; yani kullanımını sizin için kolaylaştırdık. Deneyin ve görün!"
@@ -21,10 +30,10 @@
     "message": "Öğe Engelle özelliği güncellendi ve iyileştirildi"
   },
   "updates_update_i3_description": {
-    "message": "Uzun filtreler artık, CSS seçici dahil olmak üzere tamamen görüntülenebiliyor."
+    "message": "Daha ileri düzey kullanıcılarımız için, gelişmiş ayarlarda etkinleştirilebilen yeni bir öge gizleme filtreleri hata ayıklama modumuz bulunuyor. Bu modun etkinleştirilmesiyle, ögeler kolay hata ayıklama amacıyla öne çıkarılacaktır."
   },
   "updates_update_i3_title": {
-    "message": "Geliştirici araçları paneli araç çubuğu daha uzun hale getirildi"
+    "message": "Öge gizleme filtreleri hata ayıklama modu eklendi"
   },
   "updates_update_i4_description": {
     "message": "Simge artık kullanıcılara bildirim iletmek için yanıp sönüyor ve mavi renk alıyor."

@@ -56,6 +56,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "ウェブページで気障りな項目を一時的にブロックします（画像またはアニメーション表示のスライドショーなど）。"
   },
+  "options_customize_elemhideDebug": {
+    "message": "要素を非表示にするフィルターモードのデバッグを有効にする"
+  },
+  "options_customize_elemhideDebug_tooltip": {
+    "message": "要素を非表示にするフィルターにより影響を受けるページの要素をハイライト表示する"
+  },
   "options_customize_header": {
     "message": "カスタマイズ"
   },
@@ -285,6 +291,21 @@
   },
   "options_rating_button": {
     "message": "評価する"
+  },
+  "options_recommended_cookies_tooltip": {
+    "message": "このフィルターを追加することで、各ウェブサイトで Cookie の通知を受け取ったり、Cookie の設定を変更したりする権利を放棄することとなります。詳しくは<a0>https://adblockplus.org/block-cookie-warnings をご覧ください。</a0>"
+  },
+  "options_recommended_filters_header": {
+    "message": "お勧めのフィルター"
+  },
+  "options_recommended_notifications_tooltip": {
+    "message": "ウェブサイト上で、ユーザーのオンライン行動を追跡するプッシュ通知の許可を求められることがなくなります。"
+  },
+  "options_recommended_privacy_tooltip": {
+    "message": "訪問したウェブサイトでの行動を追跡することで知られる企業から個人情報を保護します。"
+  },
+  "options_recommended_social_tooltip": {
+    "message": "訪問したウェブサイトにソーシャルメディアのアイコンが表示される場合、アイコンをクリックしなくても、ソーシャルメディアネットワーク側で、ユーザーの閲覧習慣に基づいてプロファイルを構築することができます。アイコンを非表示にすると、プロファイルの保護が可能となります。"
   },
   "options_report_bug": {
     "message": "バグがあった場合<a>バグ報告を送信</a>してください"

@@ -20,8 +20,14 @@
   "common_feature_circumvention_title": {
     "message": "ABP-filterlijst voor anti-omzeiling"
   },
+  "common_feature_cookies_title": {
+    "message": "Cookie-waarschuwingen blokkeren"
+  },
   "common_feature_malware_title": {
     "message": "Malware blokkeren"
+  },
+  "common_feature_notifications_title": {
+    "message": "Pushmeldingen blokkeren"
   },
   "common_feature_privacy_title": {
     "message": "Aanvullende tracking blokkeren"

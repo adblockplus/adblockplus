@@ -56,6 +56,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "웹페이지에서 방해가 되는 항목을 일시적으로 차단합니다. 예: 이미지 또는 애니메이션 슬라이드쇼"
   },
+  "options_customize_elemhideDebug": {
+    "message": "디버그 요소 숨김 필터 모드 켜기"
+  },
+  "options_customize_elemhideDebug_tooltip": {
+    "message": "요소 숨김 필터의 영향을 받는 페이지에서 요소 강조하기"
+  },
   "options_customize_header": {
     "message": "사용자 설정"
   },
@@ -308,6 +314,21 @@
   },
   "options_rating_button": {
     "message": "평가하기"
+  },
+  "options_recommended_cookies_tooltip": {
+    "message": "이 필터를 추가하면 귀하는 개별 웹사이트에 대해 쿠키 관련 알림을 받을 권리와 쿠키 설정을 편집할 권리를 포기하게 됩니다. 일부 웹사이트는 기본적으로 귀하를 추적할 수 있음을 참고해 주십시오. 더 자세한 정보는 다음에서 확인할 수 있습니다: <a0>https://adblockplus.org/block-cookie-warnings</a0>"
+  },
+  "options_recommended_filters_header": {
+    "message": "권장 필터"
+  },
+  "options_recommended_notifications_tooltip": {
+    "message": "웹사이트가 귀하의 온라인 활동을 추적할 수 있는 푸시 알림 허용을 요청하는 것을 막으십시오."
+  },
+  "options_recommended_privacy_tooltip": {
+    "message": "방문한 웹사이트 전체의 온라인 활동을 추적할 수 있다고 알려진 단체로부터 귀하의 프라이버시를 보호하세요."
+  },
+  "options_recommended_social_tooltip": {
+    "message": "방문한 웹사이트의 소셜 미디어 아이콘은 귀하가 클릭하지 않은 경우에도 귀하의 브라우징 습관을 근거로 소셜 미디어 네트워크가 귀하의 프로필을 작성하도록 허용합니다. 이러한 아이콘을 숨겨 귀하의 프로필을 보호할 수 있습니다."
   },
   "options_report_bug": {
     "message": "버그를 찾으셨습니까? <a>버그 리포트 보내기</a>"

@@ -17,6 +17,12 @@
   "common_feature_circumvention_title": {
     "message": "Λίστα φίλτρων έναντι παράκαμψης ABP"
   },
+  "common_feature_cookies_title": {
+    "message": "Αποκλεισμός προειδοποιήσεων περί cookies"
+  },
+  "common_feature_notifications_title": {
+    "message": "Αποκλεισμός ειδοποιήσεων push"
+  },
   "common_feature_privacy_title": {
     "message": "Αποκλεισμός επιπρόσθετης παρακολούθησης"
   },

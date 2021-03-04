@@ -20,8 +20,14 @@
   "common_feature_circumvention_title": {
     "message": "Liste de filtres anticontournement ABP"
   },
+  "common_feature_cookies_title": {
+    "message": "Bloquer les avertissements de cookies"
+  },
   "common_feature_malware_title": {
     "message": "Bloquer les logiciels malveillants"
+  },
+  "common_feature_notifications_title": {
+    "message": "Bloquer les notifications push"
   },
   "common_feature_privacy_title": {
     "message": "Bloquer le traçage supplémentaire"

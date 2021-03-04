@@ -5,11 +5,20 @@
   "notification_updates_title": {
     "message": "Adblock Plus 已更新"
   },
+  "updates_subtitle": {
+    "message": "我们觉得您会喜欢最新更新。"
+  },
+  "updates_title": {
+    "message": "Adblock Plus 已更新！"
+  },
   "updates_update_i1_description": {
-    "message": "添加了“拦截元素”功能的简短描述，改进了“报告”按钮的语言表述。"
+    "message": "在打开设置时您会看到一个新的部分，称为<strong>推荐的筛选器</strong>。在这里您只需要点一下即可打开/关闭推荐的筛选器，从而提升您的网络体验。"
+  },
+  "updates_update_i1_image": {
+    "message": "“拦截推送通知”和“拦截 Cookie 警告”筛选清单在选项页面的“推荐的筛选器”部分突出显示"
   },
   "updates_update_i1_title": {
-    "message": "ABP 用户介面现在更易于使用"
+    "message": "添加了新的推荐的筛选清单以便于访问"
   },
   "updates_update_i2_description": {
     "message": "我们通过添加简短的说明，以及提供页面在没有侵入性元素时的预览，让“拦截元素”功能更易于使用。试用一下吧！"
@@ -21,10 +30,10 @@
     "message": "更新及改进的“拦截元素”功能"
   },
   "updates_update_i3_description": {
-    "message": "现在可以完整查看长筛选器，包括 CSS 选择器。"
+    "message": "对于我们高级用户，我们推出了新的调试元素隐藏筛选器模式，可以在高级设置中打开。然后元素会突出显示，以便于调试。"
   },
   "updates_update_i3_title": {
-    "message": "扩展了开发者工具面板工具提示"
+    "message": "添加了调试元素隐藏筛选器模式"
   },
   "updates_update_i4_description": {
     "message": "图标现在会闪烁并变蓝，以提醒用户有通知。"

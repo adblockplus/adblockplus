@@ -56,6 +56,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "Bloquea temporalmente los elementos molestos en una página web (p. ej., imágenes o presentaciones de diapositivas animadas)."
   },
+  "options_customize_elemhideDebug": {
+    "message": "Activa el modo de depuración de filtros de ocultación de elementos"
+  },
+  "options_customize_elemhideDebug_tooltip": {
+    "message": "Resalta los elementos de una página que se ven afectados por los filtros de ocultación de elementos."
+  },
   "options_customize_header": {
     "message": "Personalización"
   },
@@ -308,6 +314,21 @@
   },
   "options_rating_button": {
     "message": "Valóranos"
+  },
+  "options_recommended_cookies_tooltip": {
+    "message": "Al agregar este filtro estás renunciando a tu derecho de ser notificado acerca de las cookies y de editar la configuración de cookies en sitios web individuales. Ten en cuenta que algunos sitios web pueden hacerte un seguimiento de forma predeterminada. Más información aquí: <a0>https://adblockplus.org/block-cookie-warnings</a0>"
+  },
+  "options_recommended_filters_header": {
+    "message": "Filtros recomendados"
+  },
+  "options_recommended_notifications_tooltip": {
+    "message": "Haz que los sitios web dejen de preguntarte si deseas permitir la recepción de notificaciones que podrían hacer un seguimiento de tu actividad en Internet."
+  },
+  "options_recommended_privacy_tooltip": {
+    "message": "Protege tu privacidad frente a entidades conocidas que pueden realizar un seguimiento de tu actividad en Internet en los sitios web que visitas."
+  },
+  "options_recommended_social_tooltip": {
+    "message": "Los iconos de redes sociales de los sitios web que visitas permiten a las redes sociales construir un perfil tuyo basado en tus hábitos de navegación, aunque no hagas clic en ellos. Ocultar estos iconos puede proteger tu perfil."
   },
   "options_report_bug": {
     "message": "¿Encontraste un error? <a>Envíanos un informe de error</a>"

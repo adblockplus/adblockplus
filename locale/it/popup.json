@@ -1,6 +1,6 @@
 {
   "block_element_description": {
-    "message": "Blocca elementi specifici su questo sito"
+    "message": "Blocca un elemento specifico su questo sito web"
   },
   "click_element_to_block_it": {
     "message": "Clicca su un elemento della pagina per bloccarlo."
@@ -30,7 +30,7 @@
     "message": "Fai clic sul pulsante qui sotto per rendere effettive le modifiche."
   },
   "sendReport": {
-    "message": "Segnalare un problema su questa pagina"
+    "message": "Segnala un problema su questa pagina"
   },
   "share_on_facebook": {
     "message": "Condividi su Facebook"

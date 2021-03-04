@@ -5,11 +5,20 @@
   "notification_updates_title": {
     "message": "Az Adblock Plus naprakész"
   },
+  "updates_subtitle": {
+    "message": "Reméljük, tetszettek a fejlesztések."
+  },
+  "updates_title": {
+    "message": "Az Adblock Plus naprakész!"
+  },
   "updates_update_i1_description": {
-    "message": "Hozzáadtuk az Elem blokkolása funkció rövid leírását, és javítottuk a Jelentés gomb megjelenését."
+    "message": "A Beállítások megnyitásakor egy új, <strong>Ajánlott szűrők</strong> címmel ellátott rész jelenik meg. Itt egyetlen kattintással egyszerűen be-/kikapcsolhatja az ajánlott szűrőket, és javíthatja a felhasználói élményét."
+  },
+  "updates_update_i1_image": {
+    "message": "A \"Push értesítések blokkolása\" és a \"Süti figyelmeztetések blokkolása\" szűrőlista ki van emelve az opciók oldal \"AJÁNLOTT SZŰRŐK\" részében."
   },
   "updates_update_i1_title": {
-    "message": "Az ABP felhasználói felület még felhasználóbarátabb lett."
+    "message": "Új ajánlott szűrőlistákkal egészült ki az egyszerű hozzáférés biztosítása érdekében"
   },
   "updates_update_i2_description": {
     "message": "Egyszerűsítettük az Elem blokkolása funkció használatát egy rövid leírás hozzáadásával, illetve az oldal zavaró elem nélküli előnézetével. Próbálja ki!"
@@ -21,10 +30,10 @@
     "message": "Frissített és javított Elem blokkolása funkció"
   },
   "updates_update_i3_description": {
-    "message": "A hosszú szűrők most teljes egészében megtekinthetők, beleértve a CSS kiválasztót."
+    "message": "Tapasztaltabb felhasználóink részére egy új elem elrejtő szűrő üzemmód hibakeresést tettünk elérhetővé, amely a speciális beállításokban kapcsolható be. Az elemeket ekkor kijelöli az egyszerű hibakereséshez."
   },
   "updates_update_i3_title": {
-    "message": "Megnőtt a fejlesztői eszközök eszközleírásainak a hossza."
+    "message": "Elem elrejtő szűrők mód hibakereséssel egészült ki"
   },
   "updates_update_i4_description": {
     "message": "Az ikon most villog, és felhasználók riasztására érkezések esetén kék színre vált."

@@ -1,6 +1,6 @@
 {
   "block_element_description": {
-    "message": "Specifiek element op deze website blokkeren"
+    "message": "Specifieke elementen op deze website blokkeren"
   },
   "click_element_to_block_it": {
     "message": "Klik op een element op de pagina om het te blokkeren."
@@ -50,7 +50,7 @@
     "message": "Delen op Weibo"
   },
   "share_on_weibo_message": {
-    "message": "Ik heb $number$ advertenties geblokkeerd met Adblock Plus. Probeer het eens - het is GRATIS!",
+    "message": "Ik heb reclame geblokkeerd $number$ met Adblock Plus. Probeer het eens - het is GRATIS!",
     "placeholders": {
       "number": {
         "content": "$1"

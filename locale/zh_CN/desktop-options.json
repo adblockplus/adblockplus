@@ -56,6 +56,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "暂时屏蔽网页上的烦人项目，例如：图片或动画幻灯片。"
   },
+  "options_customize_elemhideDebug": {
+    "message": "开启调试元素隐藏筛选器模式"
+  },
+  "options_customize_elemhideDebug_tooltip": {
+    "message": "突出显示页面上受元素隐藏筛选器影响的页面。"
+  },
   "options_customize_header": {
     "message": "自定义"
   },
@@ -308,6 +314,21 @@
   },
   "options_rating_button": {
     "message": "评价我们"
+  },
+  "options_recommended_cookies_tooltip": {
+    "message": "添加此筛选器，即表示您放弃在各个网站上收到 Cookie 相关通知及编辑 Cookie 设置的权利。更多信息请参阅此处：<a0>https://adblockplus.org/block-cookie-warnings</a0>"
+  },
+  "options_recommended_filters_header": {
+    "message": "推荐的筛选器"
+  },
+  "options_recommended_notifications_tooltip": {
+    "message": "阻止网站要求您允许可能追踪您的在线活动的推送通知。"
+  },
+  "options_recommended_privacy_tooltip": {
+    "message": "针对已知会追踪您访问各网站的在线活动的实体保护您的隐私"
+  },
+  "options_recommended_social_tooltip": {
+    "message": "您访问的网站上的社交媒体图标可让社交媒体网络根据您的浏览习惯为您建立个人资料 - 即使您未点击它们。隐藏这些图标可以保护您的个人资料。"
   },
   "options_report_bug": {
     "message": "发现错误？<a>向我们发送错误报告</a>"

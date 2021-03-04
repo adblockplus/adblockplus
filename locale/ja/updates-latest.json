@@ -5,11 +5,20 @@
   "notification_updates_title": {
     "message": "Adblock Plus は最新版です"
   },
+  "updates_subtitle": {
+    "message": "最新版をお楽しみください。"
+  },
+  "updates_title": {
+    "message": "Adblock Plus は最新版です！"
+  },
   "updates_update_i1_description": {
-    "message": "「要素をブロック」機能の簡潔な説明を追加。「報告」ボタンの説明を改良。"
+    "message": "設定画面を開くと、新しく<strong>お勧めのフィルター</strong>が表示されます。ここでは、ウェブ体験の向上に役立つお勧めのフィルターをクリックするだけで、ON/OFF 切り替えることができます。"
+  },
+  "updates_update_i1_image": {
+    "message": "「プッシュ通知をブロック」と「Cookie 警告をブロック」のフィルターが、オプションページの「お勧めのフィルター」の部分で紹介されています"
   },
   "updates_update_i1_title": {
-    "message": "ABP のユーザーインタフェースがより使いやすくなりました"
+    "message": "アクセスしやすいお勧めのフィルターリストを新規追加"
   },
   "updates_update_i2_description": {
     "message": "「要素をブロック」機能がより使いやすくなりました。簡潔な説明とともに、目障りになる要素を除くとページがどのように表示されるかを示すプレビューを追加しました。お試しください！"
@@ -21,10 +30,10 @@
     "message": "「要素をブロック」機能を更新・改良"
   },
   "updates_update_i3_description": {
-    "message": "長いフィルターも、CSSセレクターを含め全体が表示できます。"
+    "message": "上級ユーザーに向け、要素を非表示にするフィルターモードのデバッグを有効にするモードを詳細設定に新しく追加しました。これを利用すると、デバッグの際に要素が分かりやすく強調表示されます。"
   },
   "updates_update_i3_title": {
-    "message": "開発者ツールパネルのツールチップを拡張"
+    "message": "要素を非表示にするフィルターモードのデバッグを有効にするモードを追加"
   },
   "updates_update_i4_description": {
     "message": "通知のアラートがある場合は、アイコンが点滅して青に変わります。"

@@ -1,6 +1,6 @@
 {
   "block_element_description": {
-    "message": "Zablokuj konkretne elementy na tej stronie"
+    "message": "Blokuj konkretny element na tej stronie"
   },
   "click_element_to_block_it": {
     "message": "Kliknij element strony, aby go zablokować."

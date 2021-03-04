@@ -56,6 +56,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "Blocca in maniera temporanea elementi fastidiosi su una pagina, ad esempio immagini o presentazioni animate."
   },
+  "options_customize_elemhideDebug": {
+    "message": "Attiva modalità debug filtri nascondi-elementi"
+  },
+  "options_customize_elemhideDebug_tooltip": {
+    "message": "Evidenza gli elementi su una pagina che sono interessati dai filtri nascondi-elementi."
+  },
   "options_customize_header": {
     "message": "Personalizzazioni"
   },
@@ -308,6 +314,21 @@
   },
   "options_rating_button": {
     "message": "Dacci un voto"
+  },
+  "options_recommended_cookies_tooltip": {
+    "message": "Aggiungendo questo filtro rinunci al diritto di essere informato/a sui cookie e di modificare le impostazioni dei cookie sui singoli siti web. Tieni presente che alcuni siti web possono tracciarti di default. Maggiori informazioni qui: <a0>https://adblockplus.org/block-cookie-warnings</a0>"
+  },
+  "options_recommended_filters_header": {
+    "message": "Filtri consigliati"
+  },
+  "options_recommended_notifications_tooltip": {
+    "message": "Impedisci ai siti web di chiederti di consentire le notifiche push che potrebbero tracciare la tua attività online."
+  },
+  "options_recommended_privacy_tooltip": {
+    "message": "Proteggi la tua privacy da entità note che possono tracciare la tua attività online sui siti web che visiti."
+  },
+  "options_recommended_social_tooltip": {
+    "message": "Le icone dei social media sui siti web che visiti consentono alle reti dei social media di costruire un profilo di te basato sulle tue abitudini di navigazione, anche se non ci fai clic. Nascondendo queste icone puoi proteggere il tuo profilo."
   },
   "options_report_bug": {
     "message": "Hai trovato un bug? <a>Inviaci un bug report</a>"

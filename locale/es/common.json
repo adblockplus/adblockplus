@@ -20,8 +20,14 @@
   "common_feature_circumvention_title": {
     "message": "Lista de filtros antielusión de ABP"
   },
+  "common_feature_cookies_title": {
+    "message": "Bloquear avisos de cookies"
+  },
   "common_feature_malware_title": {
     "message": "Bloquear \"malware\""
+  },
+  "common_feature_notifications_title": {
+    "message": "Bloquear notificaciones de inserción"
   },
   "common_feature_privacy_title": {
     "message": "Bloquear el seguimiento adicional"

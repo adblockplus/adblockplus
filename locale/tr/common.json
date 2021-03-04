@@ -20,8 +20,14 @@
   "common_feature_circumvention_title": {
     "message": "ABP Atlama Önleyici Süzgeç Listesi"
   },
+  "common_feature_cookies_title": {
+    "message": "Çerez uyarılarını engelle"
+  },
   "common_feature_malware_title": {
     "message": "Kötücül Yazılımı Engelle"
+  },
+  "common_feature_notifications_title": {
+    "message": "Anlık bildirimleri engelle"
   },
   "common_feature_privacy_title": {
     "message": "Ek takipçileri engelle"

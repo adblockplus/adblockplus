@@ -20,8 +20,14 @@
   "common_feature_circumvention_title": {
     "message": "Zestaw filtrów ABP przeciwdziałających omijaniu blokowania"
   },
+  "common_feature_cookies_title": {
+    "message": "Blokuj ostrzeżenia o plikach cookie"
+  },
   "common_feature_malware_title": {
     "message": "Blokowanie szkodliwego oprogramowania"
+  },
+  "common_feature_notifications_title": {
+    "message": "Blokuj powiadomienia"
   },
   "common_feature_privacy_title": {
     "message": "Blokowanie dodatkowych mechanizmów śledzenia"

@@ -20,8 +20,14 @@
   "common_feature_circumvention_title": {
     "message": "Elenco di filtri anti circonvenzione di ABP"
   },
+  "common_feature_cookies_title": {
+    "message": "Blocca avvisi sui cookie"
+  },
   "common_feature_malware_title": {
     "message": "Bloccare il Malware"
+  },
+  "common_feature_notifications_title": {
+    "message": "Blocca notifiche push"
   },
   "common_feature_privacy_title": {
     "message": "Bloccare il tracciamento aggiuntivo"

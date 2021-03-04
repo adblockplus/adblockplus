@@ -1,6 +1,6 @@
 {
   "block_element_description": {
-    "message": "このウェブサイトの特定の要素をブロックする"
+    "message": "このウェブ上の特定の要素をブロックする"
   },
   "click_element_to_block_it": {
     "message": "ページ上の要素をクリックしてブロックします。"

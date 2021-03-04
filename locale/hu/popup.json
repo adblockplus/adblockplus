@@ -1,6 +1,6 @@
 {
   "block_element_description": {
-    "message": "Megadott elem blokkolása e weboldalon"
+    "message": "A weboldal bizonyos elemeinek blokkolása"
   },
   "click_element_to_block_it": {
     "message": "Az elem blokkolásához kattintson egy elemre az oldalon."
@@ -30,7 +30,7 @@
     "message": "A módosítások érvényesítéséhez kattintson az alábbi gombra."
   },
   "sendReport": {
-    "message": "Probléma jelentése ezen oldalon"
+    "message": "Probléma jelentése az oldalon"
   },
   "share_on_facebook": {
     "message": "Megosztás a Facebook-on"
@@ -47,7 +47,7 @@
     }
   },
   "share_on_weibo": {
-    "message": "Megosztás a Weibo mikroblog webhelyen"
+    "message": "Megosztás a Weibo mikroblog weboldalon"
   },
   "share_on_weibo_message": {
     "message": "Az Adblock Plus alkalmazással $number$ reklámot blokkoltam. Próbálja ki, INGYENES!",

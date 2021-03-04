@@ -12,15 +12,15 @@
     "message": "επιλεγμένο/α στοιχείο/α"
   },
   "composer_loading": {
-    "message": "Φορτώνει..."
+    "message": "Φόρτωση..."
   },
   "composer_preview": {
     "message": "Προεπισκόπηση"
   },
   "composer_undo_preview": {
-    "message": "Έξοδος από τη λειτουργία προεπισκόπησης"
+    "message": "Έξοδος από προεπισκόπηση"
   },
   "composer_unselect": {
-    "message": "Αποεπιλογή"
+    "message": "Κατάργηση επιλογής"
   }
 }

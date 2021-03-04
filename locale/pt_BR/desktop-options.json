@@ -56,6 +56,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "Bloqueie temporariamente itens irritantes numa página, p. ex., imagens ou apresentações animadas."
   },
+  "options_customize_elemhideDebug": {
+    "message": "Ativar modo de filtros de ocultação de elementos de depuração"
+  },
+  "options_customize_elemhideDebug_tooltip": {
+    "message": "Destacar elementos em uma página que são afetados pelos filtros de ocultação de elementos."
+  },
   "options_customize_header": {
     "message": "Customizações"
   },
@@ -308,6 +314,21 @@
   },
   "options_rating_button": {
     "message": "Avalie-nos"
+  },
+  "options_recommended_cookies_tooltip": {
+    "message": "Ao adicionar este filtro, você renuncia ao direito de ser notificado sobre cookies e de editar configurações de cookies em sites específicos. Observe que alguns sites podem rastrear você por padrão. Veja mais informações aqui: <a0>https://adblockplus.org/block-cookie-warnings</a0>"
+  },
+  "options_recommended_filters_header": {
+    "message": "Filtros recomendados"
+  },
+  "options_recommended_notifications_tooltip": {
+    "message": "Interrompa os sites quando pedirem para você permitir notificações de push que possam rastrear suas atividades on-line."
+  },
+  "options_recommended_privacy_tooltip": {
+    "message": "Proteja a sua privacidade de entidades conhecidas que podem rastrear suas atividades on-line nos sites que visita."
+  },
+  "options_recommended_social_tooltip": {
+    "message": "Os ícones de redes sociais nos sites que visita permitem que as redes sociais criem um perfil sobre você que se baseia nos seus hábitos de navegação, mesmo quando você não clica neles. Ocultar esses ícones pode proteger o seu perfil."
   },
   "options_report_bug": {
     "message": "Encontrou um erro? <a>Envie um relatório de erros</a>"

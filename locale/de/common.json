@@ -20,8 +20,14 @@
   "common_feature_circumvention_title": {
     "message": "ABP-Filterliste für Umgehungsschutz"
   },
+  "common_feature_cookies_title": {
+    "message": "Cookie-Warnmeldungen blockieren"
+  },
   "common_feature_malware_title": {
     "message": "Blockieren von Malware"
+  },
+  "common_feature_notifications_title": {
+    "message": "Push-Benachrichtigungen blockieren"
   },
   "common_feature_privacy_title": {
     "message": "Blockieren von zusätzlichem Tracking"

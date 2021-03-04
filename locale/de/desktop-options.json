@@ -56,6 +56,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "Temporäres Blockieren von störenden Elementen auf einer Webseite, z. B Bilder oder animierte Diashows."
   },
+  "options_customize_elemhideDebug": {
+    "message": "Aktivieren des Fehlersuche-Ausblenden-Modus für einzelne Elemente"
+  },
+  "options_customize_elemhideDebug_tooltip": {
+    "message": "Hervorheben von Elementen auf einer Seite, die von Ausblendefiltern für Elemente beeinflusst werden."
+  },
   "options_customize_header": {
     "message": "Anpassungen"
   },
@@ -308,6 +314,21 @@
   },
   "options_rating_button": {
     "message": "Bewerte uns"
+  },
+  "options_recommended_cookies_tooltip": {
+    "message": "Durch Hinzufügen dieses Filters verzichtest du auf das Recht, Benachrichtigungen über Cookies zu erhalten und Cookie-Einstellungen auf individuellen Websites zu bearbeiten. Bitte beachte, dass einige Websites dich standardmäßig nachverfolgen. Weitere Informationen hierzu unter: <a0>https://adblockplus.org/block-cookie-warnings</a0>"
+  },
+  "options_recommended_filters_header": {
+    "message": "Empfohlene Filter"
+  },
+  "options_recommended_notifications_tooltip": {
+    "message": "Verhindere, das Websites dich darum bitten, Push-Benachrichtigungen zu gestatten, die deine Online-Aktivitäten nachverfolgen können."
+  },
+  "options_recommended_privacy_tooltip": {
+    "message": "Schütze deine Daten von bekannten Organisationen, die möglicherweise deine Online-Aktivitäten bei den Webseiten, die du besuchst, nachverfolgen."
+  },
+  "options_recommended_social_tooltip": {
+    "message": "Die Social Media-Symbole auf den Webseiten, die du besuchst, ermöglichen den Social Media-Netzwerken, ein Profil auf Grundlage deiner Browsing-Gewohnheiten zu erstellen, selbst wenn du nicht darauf klickst. Das Ausblenden dieser Symbole kann dein Profil beschützen."
   },
   "options_report_bug": {
     "message": "Hast du einen Fehler gefunden? <a>Sende uns einen Fehlerbericht</a>"

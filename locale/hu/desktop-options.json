@@ -56,6 +56,12 @@
   "options_customize_blockElement_tooltip": {
     "message": "Zavaró elemek, pl. képek vagy animált diavetítések ideiglenes blokkolása egy weboldalon."
   },
+  "options_customize_elemhideDebug": {
+    "message": "Elem elrejtő szűrők mód hibakeresésének a bekapcsolása"
+  },
+  "options_customize_elemhideDebug_tooltip": {
+    "message": "Jelölje ki azon elemeket egy oldalon, amelyeket az elem elrejtő szűrők érintenek."
+  },
   "options_customize_header": {
     "message": "Testreszabás"
   },
@@ -308,6 +314,21 @@
   },
   "options_rating_button": {
     "message": "Értékeljen bennünket"
+  },
+  "options_recommended_cookies_tooltip": {
+    "message": "A szűrő hozzáadásával lemond a sütikre vonatkozó értesítésekről és a sütik szerkesztéséről az egyes weboldalakon. További információk találhatóak a következő címen: <a0>https://adblockplus.org/block-cookie-warnings</a0>"
+  },
+  "options_recommended_filters_header": {
+    "message": "Ajánlott szűrők"
+  },
+  "options_recommended_notifications_tooltip": {
+    "message": "Akadályozza meg, hogy a weboldalak olyan leküldéses értesítésekre vonatkozó engedélyeket kérjenek, amelyekkel nyomon követhető az online tevékenysége."
+  },
+  "options_recommended_privacy_tooltip": {
+    "message": "Védje adatait olyan entitásoktól, amelyek követhetik online tevékenységét a meglátogatott weboldalakon."
+  },
+  "options_recommended_social_tooltip": {
+    "message": "A meglátogatott weboldalakon található közösségi média ikonok lehetővé teszik a közösségi felületek számára, hogy profilt hozzanak létre a felhasználókról a böngészési szokásaik alapján, akkor is, ha nem kattint rájuk. Az ikonok elrejtésével védelmet biztosíthat a profiljának."
   },
   "options_report_bug": {
     "message": "Hibát talált? <a>Küldjön hibajelentést nekünk</a>"

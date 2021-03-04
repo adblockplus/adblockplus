@@ -3,16 +3,16 @@
     "message": "Element blokkeren"
   },
   "composer_block": {
-    "message": "Blokkeren"
+    "message": "Blokkeer"
   },
   "composer_cancel": {
-    "message": "Annuleren"
+    "message": "Annuleer"
   },
   "composer_elements": {
-    "message": "element(en) geselecteerd"
+    "message": "geselecteerde element(en)"
   },
   "composer_loading": {
-    "message": "Laden..."
+    "message": "Aan het laden..."
   },
   "composer_preview": {
     "message": "Voorbeeld"
@@ -21,6 +21,6 @@
     "message": "Voorbeeld sluiten"
   },
   "composer_unselect": {
-    "message": "Deselecteren"
+    "message": "Deselecteer"
   }
 }

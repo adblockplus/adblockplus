@@ -5,11 +5,20 @@
   "notification_updates_title": {
     "message": "Adblock Plus è aggiornato"
   },
+  "updates_subtitle": {
+    "message": "Pensiamo che gli ultimi aggiornamenti ti piaceranno."
+  },
+  "updates_title": {
+    "message": "Adblock Plus è aggiornato!"
+  },
   "updates_update_i1_description": {
-    "message": "Aggiunta una breve descrizione della funzionalità Blocca elemento e migliorato il testo per il pulsante Segnala."
+    "message": "Aprendo le Impostazioni, appare una nuova sezione chiamata <strong>Filtri consigliati</strong> in cui si possono facilmente attivare/disattivare i filtri consigliati con un semplice clic per migliorare l'esperienza di navigazione."
+  },
+  "updates_update_i1_image": {
+    "message": "Elenchi filtri \"Blocca notifiche push\" e \"Blocca avvisi sui cookie\" evidenziati nella sezione \"FILTRI CONSIGLIATI\" della pagina opzioni"
   },
   "updates_update_i1_title": {
-    "message": "Da oggi, l'interfaccia utente di ABP è un po' più intuitiva."
+    "message": "Aggiunti nuovi elenchi di filtri consigliati per facilitare l'accesso"
   },
   "updates_update_i2_description": {
     "message": "Abbiamo reso la funzionalità Blocca elemento più facile da usare grazie all'aggiunta di brevi istruzioni e di un'anteprima di come apparirà la pagina senza l'elemento invasivo. Provala!"
@@ -21,10 +30,10 @@
     "message": "Funzionalità Blocca elemento aggiornata e migliorata."
   },
   "updates_update_i3_description": {
-    "message": "I filtri lunghi ora sono visualizzabili integralmente, compreso il selettore CSS."
+    "message": "Ai nostri utenti più avanzati offriamo una nuova modalità debug filtri nascondi-elementi attivabile nelle impostazioni avanzate. Gli elementi vengono evidenziati per semplificare il debug."
   },
   "updates_update_i3_title": {
-    "message": "Ampliata la lunghezza della descrizione comando nel pannello degli strumenti di sviluppo"
+    "message": "Aggiunta modalità debug filtri nascondi-elementi"
   },
   "updates_update_i4_description": {
     "message": "L'icona ora lampeggia e diventa blu per avvisare gli utenti delle notifiche."

@@ -5,11 +5,20 @@
   "notification_updates_title": {
     "message": "Adblock Plus está actualizado"
   },
+  "updates_subtitle": {
+    "message": "Creemos que te gustarán las últimas novedades."
+  },
+  "updates_title": {
+    "message": "¡Adblock Plus está actualizado!"
+  },
   "updates_update_i1_description": {
-    "message": "Descripción breve de la función \"Bloquear elemento\" y mejora del texto del botón \"Informar\"."
+    "message": "Cuando abras tu Configuración, verás una nueva sección llamada <strong>Filtros recomendados</strong>. Aquí puedes activar o desactivar fácilmente los filtros recomendados con tan solo un clic y mejorar tu experiencia web."
+  },
+  "updates_update_i1_image": {
+    "message": "Listas de filtros \"Bloquear notificaciones de inserción\" y \"Bloquear avisos de cookies\" resaltadas en la sección \"FILTROS RECOMENDADOS\" de la página de opciones."
   },
   "updates_update_i1_title": {
-    "message": "La interfaz de usuario de ABP es ahora más fácil de usar"
+    "message": "Nueva lista de filtros recomendados para facilitar el acceso"
   },
   "updates_update_i2_description": {
     "message": "Hemos hecho que la función Bloquear elemento sea más fácil de usar al añadir instrucciones breves, así como una vista previa del aspecto de la página sin el elemento intrusivo. ¡Pruébalo!"
@@ -21,10 +30,10 @@
     "message": "Actualización y mejora de la función \"Bloquear elemento\"."
   },
   "updates_update_i3_description": {
-    "message": "Los filtros largos pueden verse ahora en su totalidad, incluido el selector CSS."
+    "message": "Para nuestros usuarios más avanzados, disponemos de un modo de depuración de filtros de ocultación de elementos que puede activarse en la configuración avanzada. A continuación, los elementos estarán resaltados para facilitar la depuración."
   },
   "updates_update_i3_title": {
-    "message": "Más espacio en la información del panel de herramientas del desarrollador"
+    "message": "Modo de depuración de filtros de ocultación de elementos"
   },
   "updates_update_i4_description": {
     "message": "El icono ahora parpadea y se vuelve azul para alertar a los usuarios de las notificaciones."

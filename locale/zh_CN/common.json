@@ -20,8 +20,14 @@
   "common_feature_circumvention_title": {
     "message": "ABP 反规避过滤列表"
   },
+  "common_feature_cookies_title": {
+    "message": "拦截 Cookie 警告"
+  },
   "common_feature_malware_title": {
     "message": "屏蔽恶意软件"
+  },
+  "common_feature_notifications_title": {
+    "message": "拦截推送通知"
   },
   "common_feature_privacy_title": {
     "message": "禁用其他跟踪"

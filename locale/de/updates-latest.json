@@ -5,11 +5,20 @@
   "notification_updates_title": {
     "message": "Adblock Plus wurde aktualisiert"
   },
+  "updates_subtitle": {
+    "message": "Wir denken, dass dir die neuesten Änderungen gefallen werden."
+  },
+  "updates_title": {
+    "message": "Adblock Plus wurde aktualisiert!"
+  },
   "updates_update_i1_description": {
-    "message": "Es wurde eine Kurzbeschreibung der „Element blockieren”-Funktion und ein verbesserter Wortlaut für die Bericht-Schaltfläche hinzugefügt."
+    "message": "Du siehst einen neuen Abschnitt mit der Bezeichnung <strong>Empfohlene Filter</strong> beim Öffnen der Einstellungen. Hier können empfohlene Filter mit einem einfachen Klick aktiviert/deaktiviert werden und dein Web-Erlebnis verbessern."
+  },
+  "updates_update_i1_image": {
+    "message": "„Push-Benachrichtigungen blockieren‶ und „Cookie-Warnmeldungen blockieren‶-Filterlisten werden im Abschnitt „EMPFOHLENE FILTER‶ der Optionen-Seite hervorgehoben"
   },
   "updates_update_i1_title": {
-    "message": "Die ABP-Schnittstelle ist nun benutzerfreundlicher gestaltet."
+    "message": "Neue Liste für empfohlene Filter zum leichten Zugang hinzugefügt."
   },
   "updates_update_i2_description": {
     "message": "Die „Element blockieren”-Funktion ist nun bedienerfreundlicher. Es werden sowohl Kurzanweisungen als auch eine Vorschau geboten, wie die Seite ohne dieses störende Element aussehen wird. Versuche es einfach mal!"
@@ -21,10 +30,10 @@
     "message": "„Element blockieren”-Funktion aktualisiert und verbessert"
   },
   "updates_update_i3_description": {
-    "message": "Lange Filter können in ihrer Gesamtheit betrachtet werden, einschließlich des CSS-Selektors."
+    "message": "Für unsere fortgeschritteneren Benutzer haben wir einen neuen Fehlersuche-Ausblenden-Modus für einzelne Elemente, der in den erweiterten Einstellungen aktiviert werden kann. Die Elemente werden dann hervorgehoben, damit man leicht eine Fehlerbehebung durchführen kann."
   },
   "updates_update_i3_title": {
-    "message": "Länge von Tooltips in den Entwicklerwerkzeugen erhöht"
+    "message": "Fehlersuche-Ausblenden-Modus für einzelne Elemente hinzugefügt"
   },
   "updates_update_i4_description": {
     "message": "Das Symbol blinkt nun und leuchtet blau auf, um Nutzer auf Benachrichtigungen aufmerksam zu machen."

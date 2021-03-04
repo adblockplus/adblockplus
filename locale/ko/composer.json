@@ -9,18 +9,18 @@
     "message": "취소"
   },
   "composer_elements": {
-    "message": "선택된 요소"
+    "message": "선택한 요소"
   },
   "composer_loading": {
     "message": "로딩 중..."
   },
   "composer_preview": {
-    "message": "미리 보기"
+    "message": "미리보기"
   },
   "composer_undo_preview": {
-    "message": "미리 보기 종료"
+    "message": "미리보기 나가기"
   },
   "composer_unselect": {
-    "message": "선택 해제"
+    "message": "선택 취소"
   }
 }

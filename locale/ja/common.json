@@ -20,8 +20,14 @@
   "common_feature_circumvention_title": {
     "message": "ABP 回避対策フィルタリスト"
   },
+  "common_feature_cookies_title": {
+    "message": "Cookie 警告をブロック"
+  },
   "common_feature_malware_title": {
     "message": "マルウェアのブロック"
+  },
+  "common_feature_notifications_title": {
+    "message": "プッシュ通知をブロック"
   },
   "common_feature_privacy_title": {
     "message": "トラッキングの追加ブロック"
