@@ -398,6 +398,9 @@ async function elementPicked(event)
   if (!currentElement)
     return;
 
+  event.preventDefault();
+  event.stopPropagation();
+
   let element = currentElement.prisoner || currentElement;
   let {filters, selectors} = await getFiltersForElement(element);
   if (currentlyPickingElement)
@@ -431,9 +434,6 @@ async function elementPicked(event)
       payload: {type: "composer.content.dialogOpened", popupId}
     });
   }
-
-  event.preventDefault();
-  event.stopPropagation();
 }
 
 function stopPickingElement()
