@@ -94,7 +94,7 @@
         "node build/locale-sync/normalize.js"
       ],
       "upload-strings": "crowdin upload sources",
-      "upload-translations": "crowdin upload translations"
+      "upload-translations": "crowdin upload translations --auto-approve-imported"
     },
     "lint": {
       "css": "stylelint ./build/**/*.css ./css/*.scss ./skin/*.css --ignore-path .gitignore",
