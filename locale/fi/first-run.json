@@ -1,4 +1,7 @@
 {
+  "firstRun_browser_description": {
+    "message": "Työpöytäselainten suosituimman mainoseston, Adblock Plussan kehittäjien Adblock Browser -selainsovellus on nyt saatavilla Android- ja iOS-laitteillesi."
+  },
   "firstRun_browser_store_android": {
     "message": "Android-sovellus Google Playssa"
   },
@@ -6,10 +9,19 @@
     "message": "Saatavilla iTunes App Storesta"
   },
   "firstRun_browser_title": {
-    "message": "Adblock-selainsovellus"
+    "message": "Adblock Browser -selainsovellus"
+  },
+  "firstRun_control_description": {
+    "message": "Oletusarvoisesti saatat nähdä joitakin ei-häiritseviä mainoksia, jotka noudattavat <a0>tiukkoja vaatimuksia</a0>. Tunnistamme nämä mainokset käyttäjäystävällisinä mainoksina. Haluatko estää kaikki mainokset? <a1>Poista käyttäjäystävälliset mainokset</a1> käytöstä <a2>asetuksista</a2>."
   },
   "firstRun_control_title": {
     "message": "Sinä päätät"
+  },
+  "firstRun_donate": {
+    "message": "Lahjoita"
+  },
+  "firstRun_fair_description": {
+    "message": "Kannustamme Adblock Plussan reiluun käyttöön ja hyödyntämään sallittujen sivustojen listaa. Riippuen käyttämistäsi suodattimista ymmärrät ja hyväksyt, että tahatonta toimintaa saattaa esiintyä (esim. estetään sisältöä sisvustolla). Tutustu <a0>käyttöehtoihin</a0> saadaksesi lisätietoja Adblock Plussan reilusta käytöstä."
   },
   "firstRun_fair_title": {
     "message": "Reilu käyttö"
@@ -20,6 +32,12 @@
   "firstRun_title": {
     "message": "Asennus onnistui!"
   },
+  "firstRun_warning_dataCorrupted_intro": {
+    "message": "Jotkin käyttäjät kärsivät ongelmasta, jossa tämä sivu avautuu aina selaimen käynnistyessä. Ongelma voidaan ratkaista poistamalla Adblock Plus ja asentamalla se sitten uudelleen:"
+  },
+  "firstRun_warning_dataCorrupted_note": {
+    "message": "Jos tarvitset edelleen apua, ota meihin yhteyttä osoitteella <a0>support@adblockplus.org</a0> tai vieraile <a1>tukisivuillamme</a1> (englanniksi)."
+  },
   "firstRun_warning_dataCorrupted_step1": {
     "message": "Avaa selaimesi laajennukset -välilehti."
   },
@@ -28,5 +46,8 @@
   },
   "firstRun_warning_dataCorrupted_step3": {
     "message": "Uudelleenasenna Adblock Plus osoitteesta <a>adblockplus.org</a>."
+  },
+  "firstRun_warning_reinitialized": {
+    "message": "Näyttäisi siltä, että ongelman takia kaikki suodattimet on poistettu ja niiden palauttaminen varmuuskopiosta epäonnistui. Tämän vuoksi kaikki suodattimien ja hyväksyttävien mainosten asetukset on palautettu alkuarvoihin. Tarkasta suodatinlistat ja hyväksyttävien mainosten asetukset <a>Adblock Plussan asetuksista</a>."
   }
 }

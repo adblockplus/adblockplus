@@ -356,7 +356,7 @@
     }
   },
   "options_tracking_warning_2": {
-    "message": "Huomaathan, että mainostajien pyrkiessä kohdistamaan mainontaansa <strong>saattaa</strong> osa hyväksyttävistä mainoksista jäljittää toimiasi."
+    "message": "Huomaathan, että mainostajien pyrkiessä kohdistamaan mainontaansa <strong>saattaa</strong> osa käyttäjäystävällisistä mainoksista jäljittää toimiasi."
   },
   "options_tracking_warning_3": {
     "message": "Voit parantaa yksityisyyttäsi entisestään ottamalla alla olevan <strong>$acceptableAdsPrivacy$</strong> -valinnan käyttöön.",
