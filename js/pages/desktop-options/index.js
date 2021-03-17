@@ -117,8 +117,8 @@ Collection.prototype._createElementQuery = function(item)
 
 Collection.prototype._getItemTitle = function(item, i)
 {
-  if (this.details[i].getTitleFunction)
-    return this.details[i].getTitleFunction(item);
+  if (this.details[i].getItemTitle)
+    return this.details[i].getItemTitle(item);
   return item.title || item.url || item.text;
 };
 
@@ -405,21 +405,22 @@ function focusNextElement(container, currentElement)
 
 collections.recommendedList = new Collection([
   {
-    id: "recommended-list-table"
+    id: "recommended-list-table",
+    getItemTitle: (item) => getSubscriptionItemTitle(item, false)
   }
 ]);
 collections.langs = new Collection([
   {
     id: "blocking-languages-table",
     emptyTexts: ["options_language_empty"],
-    getTitleFunction: getLanguageTitle
+    getItemTitle: getLanguageItemTitle
   }
 ]);
 collections.allLangs = new Collection([
   {
     id: "all-lang-table-add",
     emptyTexts: ["options_dialog_language_other_empty"],
-    getTitleFunction: getItemTitle
+    getItemTitle: (item) => getSubscriptionItemTitle(item, true)
   }
 ]);
 collections.more = new Collection([
@@ -439,7 +440,7 @@ collections.filterLists = new Collection([
   {
     id: "all-filter-lists-table",
     emptyTexts: ["options_filterList_empty"],
-    getTitleFunction: (item) => item.originalTitle || item.title || item.url
+    getItemTitle: (item) => item.originalTitle || item.title || item.url
   }
 ]);
 
@@ -563,22 +564,30 @@ function removeCustomFilter(text)
     customFilters.splice(index, 1);
 }
 
-function getItemTitle(item)
+function getSubscriptionItemTitle(item, includeOriginal)
 {
   const {originalTitle, recommended} = item;
-  let description = "";
+
+  let description = null;
   if (recommended === "ads")
   {
-    description = getLanguageTitle(item);
+    description = getLanguageItemTitle(item);
   }
   else
   {
     description = getMessage(`common_feature_${recommended}_title`);
   }
-  return description ? `${originalTitle} (${description})` : originalTitle;
+
+  if (!description)
+    return originalTitle;
+
+  if (includeOriginal)
+    return `${originalTitle} (${description})`;
+
+  return description;
 }
 
-function getLanguageTitle(item)
+function getLanguageItemTitle(item)
 {
   const description = item.languages
     .slice()
@@ -613,23 +622,15 @@ function loadRecommendations()
     const subscriptions = [];
     for (const recommendation of recommendations)
     {
-      let {type} = recommendation;
       const subscription = {
         disabled: true,
         downloadStatus: null,
         homepage: null,
         originalTitle: recommendation.title,
         languages: recommendation.languages,
-        recommended: type,
+        recommended: recommendation.type,
         url: recommendation.url
       };
-
-      if (subscription.recommended != "ads" &&
-          subscription.recommended != "circumvention")
-      {
-        type = type.replace(/\W/g, "_");
-        subscription.title = getMessage(`common_feature_${type}_title`);
-      }
 
       subscriptions.push(subscription);
       addSubscription(subscription);
@@ -963,7 +964,7 @@ function setupFiltersBox()
 
   if (!ioListBox.items)
   {
-    ioListBox.getItemTitle = getItemTitle;
+    ioListBox.getItemTitle = (item) => getSubscriptionItemTitle(item, true);
     ioListBox.addEventListener("change", (event) =>
     {
       const item = event.detail;
@@ -992,7 +993,7 @@ function getListBoxItems(subscriptions)
   {
     const {recommended, url} = subscription;
     const key = recommended === "ads" ? recommended : "others";
-    const label = getItemTitle(subscription);
+    const label = getSubscriptionItemTitle(subscription, true);
     const selected = urls.has(url);
     const overrides = {unselectable: selected, label, selected};
     groups[key].push(Object.assign({}, subscription, overrides));
@@ -1013,7 +1014,7 @@ function getListBoxItems(subscriptions)
 function setupLanguagesBox()
 {
   const ioListBox = $("#languages-box");
-  ioListBox.getItemTitle = getLanguageTitle;
+  ioListBox.getItemTitle = getLanguageItemTitle;
   ioListBox.items = collections.allLangs.items;
   ioListBox.addEventListener("close", (event) =>
   {
@@ -1460,10 +1461,7 @@ function onSubscriptionMessage(action, subscription)
       const knownSubscription = subscriptionsMap[subscription.url];
       for (const property in subscription)
       {
-        if (property == "title" && knownSubscription.recommended)
-          knownSubscription.originalTitle = subscription.title;
-        else
-          knownSubscription[property] = subscription[property];
+        knownSubscription[property] = subscription[property];
       }
       subscription = knownSubscription;
     }
