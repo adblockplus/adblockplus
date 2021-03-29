@@ -23,6 +23,7 @@ import {filterStorage} from "../adblockpluscore/lib/filterStorage.js";
 import {port} from "./messaging.js";
 import {Filter, ElemHideFilter} from "../adblockpluscore/lib/filterClasses.js";
 import {contentTypes} from "../adblockpluscore/lib/contentTypes.js";
+import {checkAllowlisted} from "./allowlisting.js";
 
 export let nonRequestTypes = [
   "DOCUMENT", "ELEMHIDE", "SNIPPET", "GENERICBLOCK", "GENERICHIDE", "CSP"
@@ -91,9 +92,9 @@ export function logRequest(tabIds, request, filter)
     eventEmitter.emit(tabId, request, filter);
 }
 
-function logHiddenElements(tabId, selectors, filters, docDomain)
+function logHiddenElements(page, frame, selectors, filters, docDomain)
 {
-  if (HitLogger.hasListener(tabId))
+  if (HitLogger.hasListener(page.id))
   {
     for (let subscription of filterStorage.subscriptions())
     {
@@ -113,7 +114,21 @@ function logHiddenElements(tabId, selectors, filters, docDomain)
                                      filter.isActiveOnDomain(docDomain);
 
         if (isActiveElemHideFilter || filters.includes(text))
-          eventEmitter.emit(tabId, {type: "ELEMHIDE", docDomain}, filter);
+        {
+          // For generic filters we need to additionally check whether
+          // they were not applied to the page due to an exception rule.
+          if (filter.isGeneric())
+          {
+            let specificOnly = checkAllowlisted(
+              page, frame, null,
+              contentTypes.GENERICHIDE
+            );
+            if (specificOnly)
+              continue;
+          }
+
+          eventEmitter.emit(page.id, {type: "ELEMHIDE", docDomain}, filter);
+        }
       }
     }
   }
@@ -152,7 +167,7 @@ export function logAllowlistedDocument(tabId, url, typeMask, docDomain, filter)
 port.on("hitLogger.traceElemHide", (message, sender) =>
 {
   logHiddenElements(
-    sender.page.id, message.selectors, message.filters,
+    sender.page, sender.frame, message.selectors, message.filters,
     extractHostFromFrame(sender.frame)
   );
 });
