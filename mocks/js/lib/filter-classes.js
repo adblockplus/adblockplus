@@ -23,8 +23,9 @@ class Filter
 {
   static fromText(text)
   {
-    if (params.filterError)
-      return new InvalidFilter(text, "filter_invalid_csp");
+    const {filterError, filterOption} = params;
+    if (filterError)
+      return new InvalidFilter(text, `filter_${filterError}`, filterOption);
 
     if (text[0] === "!")
       return new CommentFilter(text);
@@ -56,10 +57,11 @@ class CommentFilter extends Filter {}
 
 class InvalidFilter extends Filter
 {
-  constructor(text, reason)
+  constructor(text, reason, option)
   {
     super(text);
     this.reason = reason;
+    this.option = option;
   }
 }
 

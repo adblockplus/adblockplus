@@ -43,13 +43,19 @@ function getDoclink(link)
 function getErrorMessage(error)
 {
   let message = null;
-
   if (error)
   {
-    message = browser.i18n.getMessage(
-      error.reason || error.type,
-      (error.selector) ? [error.selector] : []
-    );
+    let messageId = error.reason || error.type;
+    let placeholders = [];
+    if (error.reason === "filter_unknown_option")
+    {
+      if (error.option)
+        placeholders = [error.option];
+      else
+        messageId = "filter_invalid_option";
+    }
+
+    message = browser.i18n.getMessage(messageId, placeholders);
   }
 
   // Use a generic error message if we don't have one available yet

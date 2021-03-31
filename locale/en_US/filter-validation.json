@@ -1,25 +1,41 @@
 {
   "filter_elemhideemulation_nodomain": {
-    "message": "No active domain specified for extended element hiding filter"
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/7b0211f0bce836052977583bcaf764f34aee95e5/spec/abp/desktop-settings/advanced-tab.md#custom-filters-alert",
+    "message": "No active domain specified. Please specify at least one domain for this extended element hiding filter."
   },
   "filter_invalid_csp": {
-    "message": "Invalid Content Security Policy"
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/7b0211f0bce836052977583bcaf764f34aee95e5/spec/abp/desktop-settings/advanced-tab.md#custom-filters-alert",
+    "message": "Invalid content security policy (syntax does not adhere to standard)."
   },
   "filter_invalid_domain": {
-    "message": "Invalid (or empty) domain specified"
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/7b0211f0bce836052977583bcaf764f34aee95e5/spec/abp/desktop-settings/advanced-tab.md#custom-filters-alert",
+    "message": "Invalid or empty domain. Domain list must contain one or more domains separated by a comma (,), e.g. abc.com,def.com,ghi.com."
   },
   "filter_invalid_regexp": {
-    "message": "Invalid regular expression"
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/7b0211f0bce836052977583bcaf764f34aee95e5/spec/abp/desktop-settings/advanced-tab.md#custom-filters-alert",
+    "message": "Invalid regular expression (syntax does not adhere to standard)."
   },
   "filter_slow": {
-    "description": "A slow filter highlighted through the warning icon",
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/7b0211f0bce836052977583bcaf764f34aee95e5/spec/abp/desktop-settings/advanced-tab.md#custom-filters-alert",
     "message": "To ensure a fast filter, please check the length of the pattern and ensure it doesn't contain a regular expression."
   },
   "filter_snippet_nodomain": {
-    "message": "No active domain specified for snippet filter"
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/7b0211f0bce836052977583bcaf764f34aee95e5/spec/abp/desktop-settings/advanced-tab.md#custom-filters-alert",
+    "message": "No active domain specified. Please specify at least one domain for this snippet filter."
   },
   "filter_unknown_option": {
-    "message": "Unknown filter option"
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/7b0211f0bce836052977583bcaf764f34aee95e5/spec/abp/desktop-settings/advanced-tab.md#custom-filters-alert",
+    "message": "$option$ is not a valid filter option.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "foo"
+      }
+    }
+  },
+  "filter_invalid_option": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/7b0211f0bce836052977583bcaf764f34aee95e5/spec/abp/desktop-settings/advanced-tab.md#custom-filters-alert",
+    "message": "Invalid filter option"
   },
   "line": {
     "description": "Error message with line number indicator",
@@ -36,7 +52,7 @@
     }
   },
   "unexpected_filter_list_header": {
-    "description": "Error message shown when the user attempts to add a custom filter that has the format of a header (e.g. \"[Adblock Plus 2.0]\") which are only allowed in filter lists",
-    "message": "Filter list headers aren't allowed here"
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/7b0211f0bce836052977583bcaf764f34aee95e5/spec/abp/desktop-settings/advanced-tab.md#custom-filters-alert",
+    "message": "Filter list headers are only supported in downloadable filter lists."
   }
 }
