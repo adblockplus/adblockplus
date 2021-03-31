@@ -211,9 +211,10 @@ function addSubscription(subscription, properties)
 
 class FilterError
 {
-  constructor(type, reason = null)
+  constructor(type, reason = null, option = null)
   {
     this.lineno = null;
+    this.option = option;
     this.reason = reason;
     this.selector = null;
     this.type = type;
@@ -223,6 +224,7 @@ class FilterError
   {
     return {
       lineno: this.lineno,
+      option: this.option,
       reason: this.reason,
       selector: this.selector,
       type: this.type
@@ -247,7 +249,7 @@ function parseFilter(text)
       filter = Filter.fromText(text);
       if (filter instanceof InvalidFilter)
       {
-        error = new FilterError("invalid_filter", filter.reason);
+        error = new FilterError("invalid_filter", filter.reason, filter.option);
       }
       else if (isActiveFilter(filter) && filter.domains)
       {
