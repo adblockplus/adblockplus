@@ -455,7 +455,8 @@ port.on("prefs.set", async(message, sender) =>
 {
   if (message.key == "notifications_ignoredcategories")
   {
-    let notifications = await import("../adblockpluscore/lib/notifications.js");
+    let {notifications} =
+      await import("../adblockpluscore/lib/notifications.js");
     return notifications.toggleIgnoreCategory("*", !!message.value);
   }
 
@@ -473,7 +474,8 @@ port.on("prefs.toggle", async(message, sender) =>
 {
   if (message.key == "notifications_ignoredcategories")
   {
-    let notifications = await import("../adblockpluscore/lib/notifications.js");
+    let {notifications} =
+      await import("../adblockpluscore/lib/notifications.js");
     return notifications.toggleIgnoreCategory("*");
   }
 
