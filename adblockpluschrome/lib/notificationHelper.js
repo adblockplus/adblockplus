@@ -17,12 +17,15 @@
 
 /** @module notificationHelper */
 
+import {askConfirmSubscription} from "./filterConfiguration.js";
 import {startIconAnimation, stopIconAnimation} from "./icon.js";
 import * as info from "info";
 import {port} from "./messaging.js";
 import {Prefs} from "./prefs.js";
 import {Stats} from "./stats.js";
 import {notifications} from "../adblockpluscore/lib/notifications.js";
+import {recommendations} from "../adblockpluscore/lib/recommendations.js";
+import {Subscription} from "../adblockpluscore/lib/subscriptionClasses.js";
 import {initDay1Notification} from "../../lib/notifications.js";
 import {showOptions} from "./options.js";
 
@@ -144,8 +147,27 @@ function getNotificationButtons({type: notificationType, links}, message)
 
 function openNotificationLink(link)
 {
-  let url;
+  if (link.startsWith("abp:subscribe:"))
+  {
+    let [,, type, locale] = link.split(":", 4);
+    for (let recommendation of recommendations())
+    {
+      if (recommendation.type != type ||
+          !recommendation.languages.includes(locale))
+        continue;
 
+      let subscription = Subscription.fromURL(recommendation.url);
+      subscription.title = recommendation.title;
+      subscription.homepage = recommendation.homepage;
+      askConfirmSubscription(subscription);
+      return;
+    }
+
+    console.error("No recommended subscription found");
+    return;
+  }
+
+  let url;
   if (link.startsWith("abp:"))
     url = localNotificationPages.get(link);
   else
@@ -299,7 +321,9 @@ async function showNotification(notification)
   // notification page which we don't have.
   for (let link of getButtonLinks(buttons))
   {
-    if (link.startsWith("abp:") && !localNotificationPages.has(link))
+    if (link.startsWith("abp:") &&
+        !link.startsWith("abp:subscribe:") &&
+        !localNotificationPages.has(link))
       return;
   }
 
@@ -427,12 +451,11 @@ export function isOptional(notificationType)
 port.on("notifications.clicked", (message, sender) =>
 {
   if (message.link)
-  {
     openNotificationLink(message.link);
-  }
+
   // While clicking on a desktop notification's button dismisses the
   // notification, clicking on a popup window notification's link does not.
-  else
+  if (!message.link || message.link.startsWith("abp:subscribe:"))
   {
     browser.notifications.clear(message.id);
     notificationDismissed(message.id, true);

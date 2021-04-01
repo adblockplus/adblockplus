@@ -209,6 +209,16 @@ function addSubscription(subscription, properties)
   return true;
 }
 
+/**
+ * Asks user to confirm the subscription details before it is added.
+ * @param {Subscription} subscription
+ */
+export async function askConfirmSubscription(subscription)
+{
+  await showOptions();
+  sendMessage("app", "addSubscription", subscription);
+}
+
 class FilterError
 {
   constructor(type, reason = null, option = null)
@@ -446,9 +456,7 @@ port.on("subscriptions.add", async(message, sender) =>
     if ("homepage" in message)
       subscription.homepage = message.homepage;
 
-    await showOptions();
-    sendMessage("app", "addSubscription", subscription);
-
+    askConfirmSubscription(subscription);
     return null;
   }
 

@@ -145,12 +145,12 @@
     }
   },
   "options_language_header": {
-    "description": "Section title in General tab",
-    "message": "Language"
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/8c75b970ea8c9f21bda6b81fe8c35777cb65e234/spec/abp/desktop-settings/general-tab.md#language-section",
+    "message": "Language filter lists"
   },
   "options_language_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/5a16934e1b4ce889bd62561b4fab956551339e18/spec/abp/desktop-settings/general-tab.md#language-section-description",
-    "message": "Add or remove languages that you want Adblock Plus to block ads in."
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/5a16934e1b4ce889bd62561b4fab956551339e18/spec/abp/desktop-settings/general-tab.md#language-section-description https://gitlab.com/eyeo/specs/spec/-/blob/8c75b970ea8c9f21bda6b81fe8c35777cb65e234/spec/abp/desktop-settings/general-tab.md#language-section-description",
+    "message": "Add or remove languages that you want Adblock Plus to block ads in. <a0>Learn more</a0>"
   },
   "options_language_empty": {
     "description": "Language section language list empty text in General tab",
@@ -178,9 +178,17 @@
       }
     }
   },
+  "options_language_recommend": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/8c75b970ea8c9f21bda6b81fe8c35777cb65e234/spec/abp/desktop-settings/general-tab.md#filter-list-activation-checkbox",
+    "message": "Notify me of available language filter lists"
+  },
+  "options_language_recommend_tooltip": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/8c75b970ea8c9f21bda6b81fe8c35777cb65e234/spec/abp/desktop-settings/general-tab.md#filter-list-activation-tooltip",
+    "message": "Adblock Plus relies on filter lists to block ads in different languages."
+  },
   "options_more_filters_header": {
-    "description": "Section title in General tab",
-    "message": "More filters"
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/ac3c812659d2dc90c0656eb49a21da7de11de6f5/spec/abp/desktop-settings/general-tab.md#more-filters-section-headline",
+    "message": "More filter lists"
   },
   "options_more_filters_description": {
     "description": "More filters section description in General tab",
@@ -195,8 +203,8 @@
     "message": "English"
   },
   "options_language_add": {
-    "description": "Add other language button in General Tab",
-    "message": "Add a language"
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/8c75b970ea8c9f21bda6b81fe8c35777cb65e234/spec/abp/desktop-settings/general-tab.md#label-1",
+    "message": "Add a language filter list"
   },
   "options_language_filter_list": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/dae74279dec45b839455626de2d0d5861d33b016/spec/abp/options-page.md#add-filter-list-modal-window",
