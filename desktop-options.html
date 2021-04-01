@@ -130,7 +130,7 @@
         <section class="cols">
           <header>
             <h2 data-i18n="options_language_header"></h2>
-            <p data-i18n="options_language_description"></p>
+            <p id="blocking-languages-description" data-i18n="options_language_description"></p>
           </header>
           <div id="blocking-languages">
             <ul id="blocking-languages-table" class="table list bottom-control">
@@ -151,6 +151,13 @@
               data-expanded="options_dialog_language_title"
               autoclose
             ></io-list-box>
+            <ul id="language-recommend" class="list">
+              <li data-pref="recommend_language_subscriptions">
+                <button class="icon" role="checkbox" data-action="toggle-pref"></button>
+                <span data-i18n="options_language_recommend"></span>
+                <io-popout type="tooltip" i18n-body="options_language_recommend_tooltip"></io-popout>
+              </li>
+            </ul>
             <p data-i18n="options_language_tip"></p>
           </div>
         </section>

@@ -1057,6 +1057,13 @@ function onDOMLoaded()
     $("#whitelisting-add-button").disabled = !e.target.value;
   }, false);
 
+  $$("li[data-pref]").forEach(async(option) =>
+  {
+    const key = option.dataset.pref;
+    const value = await getPref(key);
+    onPrefMessage(key, value, true);
+  });
+
   // General tab
   getDoclink("acceptable_ads_criteria").then(link =>
   {
@@ -1074,6 +1081,10 @@ function onDOMLoaded()
   getDoclink("privacy").then((url) =>
   {
     $("#privacy-policy").href = url;
+  });
+  getDoclink("language_subscription").then((url) =>
+  {
+    setElementLinks("blocking-languages-description", url);
   });
   setElementText(
     $("#tracking-warning-1"),
@@ -1099,18 +1110,6 @@ function onDOMLoaded()
   });
 
   // Advanced tab
-  let customize = $$("#customize li[data-pref]");
-  customize = Array.prototype.map.call(customize, (checkbox) =>
-  {
-    return checkbox.getAttribute("data-pref");
-  });
-  for (const key of customize)
-  {
-    getPref(key).then((value) =>
-    {
-      onPrefMessage(key, value, true);
-    });
-  }
   browser.runtime.sendMessage({
     type: "app.get",
     what: "features"
@@ -1642,6 +1641,7 @@ port.postMessage({
   filter: [
     "elemhide_debug",
     "notifications_ignoredcategories",
+    "recommend_language_subscriptions",
     "shouldShowBlockElementMenu",
     "show_devtools_panel",
     "show_statsinicon",

@@ -1354,29 +1354,22 @@ html[dir="rtl"] .tooltip
   General tab content
 */
 
-html[lang="de"] #recommended-list-table li[data-recommended="cookies"],
-html[lang="fr"] #recommended-list-table li[data-recommended="cookies"]
-{
-  display: none;
-}
-
 #blocking-languages li button[data-single]
 {
   padding: 0;
 }
 
-#blocking-languages-dialog-table
+#languages-box
 {
-  border-bottom: none;
+  margin-bottom: 0.8rem;
 }
 
-.button-add,
-.cancel-button
+html[lang^="de"] #recommended-list-table li[data-recommended="cookies"],
+html[lang^="fr"] #recommended-list-table li[data-recommended="cookies"],
+html[lang^="de"] #language-recommend,
+html[lang^="fr"] #language-recommend
 {
-  border: 0px;
-  color: #3A7BA6;
-  background-color: transparent;
-  cursor: pointer;
+  display: none;
 }
 
 /*

@@ -194,6 +194,13 @@ defaults.elemhide_debug = false;
 defaults.remote_first_run_page_url = "https://welcome.adblockplus.org/%LANG%/installed?an=%ADDON_NAME%&av=%ADDON_VERSION%&ap=%APPLICATION_NAME%&apv=%APPLICATION_VERSION%&p=%PLATFORM_NAME%&pv=%PLATFORM_VERSION%";
 
 /**
+ * Whether to recommend language filter lists to user.
+ *
+ * @type {boolean}
+ */
+defaults.recommend_language_subscriptions = true;
+
+/**
   * @namespace
   * @static
   */
@@ -455,7 +462,7 @@ port.on("prefs.set", async(message, sender) =>
 {
   if (message.key == "notifications_ignoredcategories")
   {
-    let {notifications} =
+    const {notifications} =
       await import("../adblockpluscore/lib/notifications.js");
     return notifications.toggleIgnoreCategory("*", !!message.value);
   }
@@ -474,7 +481,7 @@ port.on("prefs.toggle", async(message, sender) =>
 {
   if (message.key == "notifications_ignoredcategories")
   {
-    let {notifications} =
+    const {notifications} =
       await import("../adblockpluscore/lib/notifications.js");
     return notifications.toggleIgnoreCategory("*");
   }

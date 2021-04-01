@@ -43,6 +43,7 @@
     "storage.managed.get",
     "tabs.captureVisibleTab",
     "tabs.create",
+    "tabs.detectLanguage",
     "tabs.executeScript",
     "tabs.get",
     "tabs.getCurrent",

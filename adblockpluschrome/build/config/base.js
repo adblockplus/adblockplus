@@ -29,6 +29,7 @@ export default {
           "adblockpluschrome/lib/popupBlocker.js",
           "adblockpluschrome/lib/subscriptionInit.js",
           "lib/init.js",
+          "lib/recommendLanguage.js",
           "adblockpluschrome/lib/filterComposer.js",
           "adblockpluschrome/lib/stats.js",
           "adblockpluschrome/lib/uninstall.js",

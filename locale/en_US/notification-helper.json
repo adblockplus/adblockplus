@@ -5,6 +5,16 @@
   "notification_open_all": {
     "message": "Open all links from this notification"
   },
+  "notification_recommendLanguage_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/8c75b970ea8c9f21bda6b81fe8c35777cb65e234/spec/abp/filter-list-activation.md#notification-for-new-languages",
+    "message": "It looks like you visited a website in: $language$. Would you like to block ads on all websites in this language? <a>Yes</a>",
+    "placeholders": {
+      "language": {
+        "content": "$1",
+        "example": "čeština"
+      }
+    }
+  },
   "notification_without_buttons": {
     "message": "Click on the notification to open all links in it."
   }

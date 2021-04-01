@@ -24,6 +24,7 @@ const prefsData = {
   additional_subscriptions: params.additionalSubscriptions.split(","),
   elemhide_debug: false,
   notifications_ignoredcategories: [],
+  recommend_language_subscriptions: true,
   shouldShowBlockElementMenu: true,
   show_devtools_panel: true,
   show_statsinicon: true,
