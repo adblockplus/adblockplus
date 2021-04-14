@@ -20,10 +20,10 @@
 const {params} = require("../config/env");
 const {port} = require("./messaging");
 
-port.on("filters.isWhitelisted", () =>
+port.on("filters.isAllowlisted", () =>
 {
   return {
-    hostname: !!params.domainWhitelisted,
-    page: !!params.pageWhitelisted
+    hostname: !!params.domainAllowlisted,
+    page: !!params.pageAllowlisted
   };
 });

@@ -117,7 +117,7 @@ const records = require("./config/records");
           args: [
             {
               host: "example.com",
-              whitelisted: false
+              allowlisted: false
             }
           ]
         }

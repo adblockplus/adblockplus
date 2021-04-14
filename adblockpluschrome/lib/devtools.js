@@ -54,7 +54,7 @@ function getFilterInfo(filter)
 
   return {
     text: filter.text,
-    whitelisted: filter instanceof AllowingFilter ||
+    allowlisted: filter instanceof AllowingFilter ||
                  filter instanceof ElemHideException,
     userDefined,
     subscription: subscriptionTitle

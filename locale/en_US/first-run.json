@@ -22,7 +22,8 @@
     "message": "Donate"
   },
   "firstRun_fair_description": {
-    "message": "We encourage you to make fair use of Adblock Plus and the option to whitelist websites. Depending on the filters you use, you understand and accept that unintentional results might occur (e.g. blocked content on a website). Refer to the <a0>Terms of Use</a0> for more information about fair use of Adblock Plus."
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/6a6fb785b6a703c5fe77e7109ddf3f6b3ee22787/spec/abp/first-run.md#index-1",
+    "message": "We encourage you to make fair use of Adblock Plus and the option to add websites to your allowlist. Depending on the filters you use, you understand and accept that unintentional results might occur (e.g. blocked content on a website). Refer to the <a0>Terms of Use</a0> for more information about fair use of Adblock Plus."
   },
   "firstRun_fair_title": {
     "message": "Fair use"

@@ -27,12 +27,12 @@ const records = [
     },
     filter: {
       text: "/ad_banner*$domain=example.com",
-      whitelisted: false,
+      allowlisted: false,
       userDefined: false,
       subscription: "EasyList"
     }
   },
-  // whitelisted request
+  // allowlisted request
   {
     request: {
       url: "http://example.com/looks_like_an_ad_but_isnt_one.html",
@@ -41,7 +41,7 @@ const records = [
     },
     filter: {
       text: "@@||example.com/looks_like_an_ad_but_isnt_one.html",
-      whitelisted: true,
+      allowlisted: true,
       userDefined: false,
       subscription: "EasyList"
     }
@@ -63,7 +63,7 @@ const records = [
     },
     filter: {
       text: "example.com##.ad_banner",
-      whitelisted: false,
+      allowlisted: false,
       userDefined: false,
       subscription: "EasyList"
     }
@@ -77,7 +77,7 @@ const records = [
     },
     filter: {
       text: "||example.com/some-annoying-popup$popup",
-      whitelisted: false,
+      allowlisted: false,
       userDefined: true,
       subscription: null
     }
@@ -92,7 +92,7 @@ const records = [
     },
     filter: {
       text: "/(example\\.com\\/some-annoying-popup\\)$/$rewrite=$1?nopopup",
-      whitelisted: false,
+      allowlisted: false,
       userDefined: true,
       subscription: null
     }
@@ -105,7 +105,7 @@ const records = [
     },
     filter: {
       text: `example.com${",example.com".repeat(499)}##.ad_banner`,
-      whitelisted: false,
+      allowlisted: false,
       userDefined: false,
       subscription: "EasyList"
     }

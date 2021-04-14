@@ -141,18 +141,18 @@ body.dark #items tr[data-state=blocked]
   color: #ff3a3a;
 }
 
-#items tr[data-state=whitelisted]
+#items tr[data-state=allowlisted]
 {
   color: #080;
 }
 
-body.dark #items tr[data-state=whitelisted]
+body.dark #items tr[data-state=allowlisted]
 {
   color: #389c22;
 }
 
 #items[data-filter-state=blocked]       tr:not([data-state=blocked]),
-#items[data-filter-state=whitelisted]   tr:not([data-state=whitelisted])
+#items[data-filter-state=allowlisted]   tr:not([data-state=allowlisted])
 {
   display: none;
 }

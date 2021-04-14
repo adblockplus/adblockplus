@@ -28,9 +28,9 @@ const prefsData = {
   shouldShowBlockElementMenu: true,
   show_devtools_panel: true,
   show_statsinicon: true,
-  subscriptions_exceptionsurl: subscriptionUrls.URL_WHITELIST,
+  subscriptions_exceptionsurl: subscriptionUrls.URL_ALLOWLIST,
   subscriptions_exceptionsurl_privacy:
-    subscriptionUrls.URL_WHITELIST_PRIVACY,
+    subscriptionUrls.URL_ALLOWLIST_PRIVACY,
   ui_warn_tracking: true
 };
 

@@ -18,25 +18,25 @@
 "use strict";
 
 const URL_SUBSCRIPTION_BASE = "https://easylist-downloads.adblockplus.org";
-const URL_BLACKLIST = `${URL_SUBSCRIPTION_BASE}/easylistgermany+easylist.txt`;
-const URL_WHITELIST = `${URL_SUBSCRIPTION_BASE}/exceptionrules.txt`;
-const URL_WHITELIST_PRIVACY =
+const URL_BLOCKLIST = `${URL_SUBSCRIPTION_BASE}/easylistgermany+easylist.txt`;
+const URL_ALLOWLIST = `${URL_SUBSCRIPTION_BASE}/exceptionrules.txt`;
+const URL_ALLOWLIST_PRIVACY =
   `${URL_SUBSCRIPTION_BASE}/exceptionrules-privacy-friendly.txt`;
 const URL_DOCLINK_BASE = "https://adblockplus.org/redirect?link=";
 
 const USER_ID = "~user~786254";
 
 const subscriptionDetails = {
-  [URL_BLACKLIST]: {
+  [URL_BLOCKLIST]: {
     title: "EasyList Germany+EasyList",
     filterText: ["-ad-banner.", "-ad-big.", "-ad-bottom-", "-ad-button-"],
     installed: true
   },
-  [URL_WHITELIST]: {
+  [URL_ALLOWLIST]: {
     title: "Allow non-intrusive advertising",
     installed: true
   },
-  [URL_WHITELIST_PRIVACY]: {
+  [URL_ALLOWLIST_PRIVACY]: {
     title: "Allow only nonintrusive ads that are privacy-friendly"
   },
   [`${URL_SUBSCRIPTION_BASE}/fanboy-social.txt`]: {
@@ -62,8 +62,8 @@ const subscriptionDetails = {
 module.exports = {
   subscriptionUrls: {
     URL_DOCLINK_BASE,
-    URL_WHITELIST,
-    URL_WHITELIST_PRIVACY
+    URL_ALLOWLIST,
+    URL_ALLOWLIST_PRIVACY
   },
   subscriptionDetails,
   USER_ID

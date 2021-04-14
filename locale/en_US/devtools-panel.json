@@ -43,9 +43,9 @@
     "description": "https://gitlab.com/eyeo/specs/spec/blob/28aba213f76265253786a9ed64fdba1377644352/spec/abp/devtools-panel.md#status-dropdown",
     "message": "blocked"
   },
-  "devtools_header_state_whitelisted": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/28aba213f76265253786a9ed64fdba1377644352/spec/abp/devtools-panel.md#status-dropdown",
-    "message": "whitelisted"
+  "devtools_header_state_allowlisted": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/6a6fb785b6a703c5fe77e7109ddf3f6b3ee22787/spec/abp/devtools-panel.md#status-dropdown",
+    "message": "allowlisted"
   },
   "devtools_header_type_any": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/28aba213f76265253786a9ed64fdba1377644352/spec/abp/devtools-panel.md#content-type-dropdown",

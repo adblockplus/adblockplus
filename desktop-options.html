@@ -47,7 +47,7 @@
               <a href="#general" data-i18n="options_tab_general" role="tab" aria-selected="true" tabindex="-1" aria-controls="content-general"></a>
             </li>
             <li role="presentation">
-              <a href="#whitelist" data-i18n="options_tab_whitelist" role="tab" tabindex="-1" aria-controls="content-whitelist"></a>
+              <a href="#allowlist" data-i18n="options_tab_allowlist" role="tab" tabindex="-1" aria-controls="content-allowlist"></a>
             </li>
             <li role="presentation">
               <a href="#advanced" data-i18n="options_tab_advanced" role="tab" tabindex="-1" aria-controls="content-advanced"></a>
@@ -178,26 +178,26 @@
         </section>
       </div>
 
-      <!-- Whitelist tab content -->
-      <div id="content-whitelist" role="tabpanel" aria-labelledby="tab-whitelist">
+      <!-- Allowlist tab content -->
+      <div id="content-allowlist" role="tabpanel" aria-labelledby="tab-allowlist">
         <header>
-          <h1 data-i18n="options_tab_whitelist"></h1>
+          <h1 data-i18n="options_tab_allowlist"></h1>
           <p>
-            <span data-i18n="options_whitelist_description"></span>
-            <a data-i18n="options_learn_more" data-doclink="whitelist"></a>
+            <span data-i18n="options_allowlist_description"></span>
+            <a data-i18n="options_learn_more" data-doclink="allowlist"></a>
           </p>
         </header>
         <section>
           <form>
-            <input id="whitelisting-textbox" type="text"
-              data-i18n-placeholder="options_whitelist_placeholder_example">
-            <button id="whitelisting-add-button"
+            <input id="allowlisting-textbox" type="text"
+              data-i18n-placeholder="options_allowlist_placeholder_example">
+            <button id="allowlisting-add-button"
                     type="submit"
                     data-action="add-domain-exception"
-                    data-i18n="options_whitelist_add" class="primary" disabled>
+                    data-i18n="options_allowlist_add" class="primary" disabled>
             </button>
           </form>
-          <ul id="whitelisting-table" class="table list">
+          <ul id="allowlisting-table" class="table list">
             <template>
               <span data-display="title"></span>
               <button data-action="remove-filter" class="icon delete control"
