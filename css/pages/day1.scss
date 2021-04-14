@@ -32,6 +32,16 @@ header
   margin-bottom: var(--margin);
 }
 
+header a.logo
+{
+  margin-bottom: 100px;
+}
+
+header a.logo img
+{
+  width: 250px;
+}
+
 header a.button
 {
   border-color: transparent;
@@ -59,12 +69,6 @@ h1 em[data-i18n-index="0"]
 h1 em[data-i18n-index="1"]
 {
   color: var(--color-primary);
-}
-
-#logo
-{
-  width: 250px;
-  margin-bottom: 100px;
 }
 
 /*******************************************************************************

@@ -166,10 +166,15 @@ header .block-icon
   --icon-width: 50px;
 }
 
-#logo
+header a.logo
+{
+  display: inline-block;
+  margin-bottom: 70px;
+}
+
+header a.logo img
 {
   width: 200px;
-  margin-bottom: 70px;
 }
 
 #hero
