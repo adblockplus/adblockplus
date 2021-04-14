@@ -850,7 +850,7 @@ html[dir="rtl"] #support-us .h2-icon
 
 body[data-tab|="general"] #content-general,
 body[data-tab|="advanced"] #content-advanced,
-body[data-tab|="whitelist"] #content-whitelist,
+body[data-tab|="allowlist"] #content-allowlist,
 body[data-tab|="help"] #content-help
 {
   display: block;
@@ -1148,7 +1148,7 @@ ul.list
   text-overflow: ellipsis;
 }
 
-#content-whitelist .table.list li > span
+#content-allowlist .table.list li > span
 {
   white-space: nowrap;
 }
@@ -1373,16 +1373,16 @@ html[lang^="fr"] #language-recommend
 }
 
 /*
-  Whitelist tab
+  Allowlist tab
  */
 
-#content-whitelist form
+#content-allowlist form
 {
   display: flex;
   margin-bottom: 1.4rem;
 }
 
-#content-whitelist form input
+#content-allowlist form input
 {
   padding: 0.5rem 1rem;
   border: 2px solid #0797E1;
@@ -1391,17 +1391,17 @@ html[lang^="fr"] #language-recommend
   flex: 1;
 }
 
-html:not([dir="rtl"]) #content-whitelist form button
+html:not([dir="rtl"]) #content-allowlist form button
 {
   margin-left: 0.7rem;
 }
 
-html[dir="rtl"] #content-whitelist form button
+html[dir="rtl"] #content-allowlist form button
 {
   margin-right: 0.7rem;
 }
 
-#whitelisting-table li
+#allowlisting-table li
 {
   padding-right: 1.4rem;
   padding-left: 1.4rem;

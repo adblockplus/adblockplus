@@ -203,7 +203,7 @@ function createRecord(request, filter, template)
       filterElement.setAttribute("title", title);
     });
     filterElement.textContent = filter.text;
-    row.dataset.state = filter.whitelisted ? "whitelisted" : "blocked";
+    row.dataset.state = filter.allowlisted ? "allowlisted" : "blocked";
 
     if (filter.subscription)
       originElement.textContent = filter.subscription;
@@ -217,7 +217,7 @@ function createRecord(request, filter, template)
       originElement.classList.add("unnamed");
     }
 
-    if (!filter.whitelisted && request.type != "ELEMHIDE")
+    if (!filter.allowlisted && request.type != "ELEMHIDE")
     {
       actionWrapper.appendChild(createActionButton(
         "add", "devtools_action_unblock", "@@" + generateFilter(request, false)

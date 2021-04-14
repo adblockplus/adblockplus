@@ -36,7 +36,7 @@ const subscriptionClasses = require("./subscription-classes");
 const subscriptionInit = require("./subscription-init");
 const synchronizer = require("./synchronizer");
 const utils = require("./utils");
-require("./whitelisting");
+require("./allowlisting");
 
 const modules = {
   filterClasses,

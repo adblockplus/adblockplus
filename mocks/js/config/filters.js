@@ -19,10 +19,10 @@
 
 const knownFilterText = [
   "! Exception rules",
-  "@@||whitelisted-domain.com^$document",
-  "@@|http://whitelisted-page.com/|$document",
-  "@@|https://www.whitelisted-page.com/foo/bar.baz?$document",
-  `@@|https://whitelisted-page.com${"/foo".repeat(20)}|$document`,
+  "@@||allowlisted-domain.com^$document",
+  "@@|http://allowlisted-page.com/|$document",
+  "@@|https://www.allowlisted-page.com/foo/bar.baz?$document",
+  `@@|https://allowlisted-page.com${"/foo".repeat(20)}|$document`,
   "@@||example.com/looks_like_an_ad_but_isnt_one.html",
   "! Blocking rules",
   "||biglemon.am/bg_poster/banner.jpg",

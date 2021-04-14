@@ -58,8 +58,8 @@ const filterErrors = new Map([
    "options_filterList_lastDownload_checksumMismatch"]
 ]);
 const timestampUI = Symbol();
-const whitelistedDomainRegexp = /^@@\|\|([^/:]+)\^\$document$/;
-const whitelistedPageRegexp = /^@@\|([^?|]+(?:\?[^|]*)?)\|?\$document$/;
+const allowlistedDomainRegexp = /^@@\|\|([^/:]+)\^\$document$/;
+const allowlistedPageRegexp = /^@@\|([^?|]+(?:\?[^|]*)?)\|?\$document$/;
 // Period of time in milliseconds
 const minuteInMs = 60000;
 const hourInMs = 3600000;
@@ -430,10 +430,10 @@ collections.more = new Collection([
     removeEmptyAction: "show-more-filters-section"
   }
 ]);
-collections.whitelist = new Collection([
+collections.allowlist = new Collection([
   {
-    id: "whitelisting-table",
-    emptyTexts: ["options_whitelist_empty_1", "options_whitelist_empty_2"]
+    id: "allowlisting-table",
+    emptyTexts: ["options_allowlist_empty_1", "options_allowlist_empty_2"]
   }
 ]);
 collections.filterLists = new Collection([
@@ -509,34 +509,34 @@ function updateSubscription(subscription)
 
 function updateFilter(filter)
 {
-  let whitelistTitle = null;
+  let allowlistTitle = null;
 
-  const domainMatch = filter.text.match(whitelistedDomainRegexp);
+  const domainMatch = filter.text.match(allowlistedDomainRegexp);
   if (domainMatch && !filtersMap[filter.text])
   {
-    whitelistTitle = domainMatch[1];
+    allowlistTitle = domainMatch[1];
   }
   else
   {
-    const pageMatch = filter.text.match(whitelistedPageRegexp);
+    const pageMatch = filter.text.match(allowlistedPageRegexp);
     if (pageMatch && !filtersMap[filter.text])
     {
       const url = pageMatch[1];
-      whitelistTitle = url.replace(/^[\w-]+:\/+(?:www\.)?/, "");
-      if (/\?$/.test(whitelistTitle))
+      allowlistTitle = url.replace(/^[\w-]+:\/+(?:www\.)?/, "");
+      if (/\?$/.test(allowlistTitle))
       {
-        whitelistTitle += "…";
+        allowlistTitle += "…";
       }
     }
   }
 
-  if (whitelistTitle)
+  if (allowlistTitle)
   {
-    filter.title = whitelistTitle;
-    collections.whitelist.addItem(filter);
+    filter.title = allowlistTitle;
+    collections.allowlist.addItem(filter);
     if (isCustomFiltersLoaded)
     {
-      const text = getMessage("options_whitelist_notification", [filter.title]);
+      const text = getMessage("options_allowlist_notification", [filter.title]);
       showNotification(text, "info");
     }
   }
@@ -677,7 +677,7 @@ function execAction(action, element)
   switch (action)
   {
     case "add-domain-exception":
-      addWhitelistedDomain();
+      addAllowlistedDomain();
       return true;
     case "add-language-subscription":
       addEnableSubscription(findParentData(element, "access", false));
@@ -1052,9 +1052,9 @@ function onDOMLoaded()
   // Initialize interactive UI elements
   document.body.addEventListener("click", onClick, false);
   document.body.addEventListener("keyup", onKeyUp, false);
-  $("#whitelisting-textbox").addEventListener("keyup", (e) =>
+  $("#allowlisting-textbox").addEventListener("keyup", (e) =>
   {
-    $("#whitelisting-add-button").disabled = !e.target.value;
+    $("#allowlisting-add-button").disabled = !e.target.value;
   }, false);
 
   $$("li[data-pref]").forEach(async(option) =>
@@ -1369,20 +1369,20 @@ function populateLists()
   });
 }
 
-function addWhitelistedDomain()
+function addAllowlistedDomain()
 {
-  const domain = $("#whitelisting-textbox");
+  const domain = $("#allowlisting-textbox");
   const value = domain.value.trim();
 
   if (!value)
     return;
 
-  for (const whitelistItem of collections.whitelist.items)
+  for (const allowlistItem of collections.allowlist.items)
   {
-    if (whitelistItem.title == value)
+    if (allowlistItem.title == value)
     {
-      whitelistItem[timestampUI] = Date.now();
-      collections.whitelist.updateItem(whitelistItem);
+      allowlistItem[timestampUI] = Date.now();
+      collections.allowlist.updateItem(allowlistItem);
       domain.value = "";
       break;
     }
@@ -1396,7 +1396,7 @@ function addWhitelistedDomain()
       text: "@@||" + host.toLowerCase() + "^$document"
     });
     domain.value = "";
-    $("#whitelisting-add-button").disabled = true;
+    $("#allowlisting-add-button").disabled = true;
   }
   catch (error)
   {
@@ -1438,9 +1438,9 @@ function onFilterMessage(action, filter)
       break;
     case "removed":
       const knownFilter = filtersMap[filter.text];
-      if (whitelistedDomainRegexp.test(knownFilter.text) ||
-          whitelistedPageRegexp.test(knownFilter.text))
-        collections.whitelist.removeItem(knownFilter);
+      if (allowlistedDomainRegexp.test(knownFilter.text) ||
+          allowlistedPageRegexp.test(knownFilter.text))
+        collections.allowlist.removeItem(knownFilter);
       else
         removeCustomFilter(filter.text);
 

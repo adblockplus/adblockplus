@@ -59,8 +59,8 @@ const params = {
   filterError: null,
   filterOption: null,
   notification: null,
-  domainWhitelisted: false,
-  pageWhitelisted: false,
+  domainAllowlisted: false,
+  pageAllowlisted: false,
   reinitialized: false,
   showPageOptions: false
 };

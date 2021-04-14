@@ -12,7 +12,7 @@
     "message": "Cancel"
   },
   "mops_enabled_label": {
-    "description": "Label for whitelisting domain",
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/6a6fb785b6a703c5fe77e7109ddf3f6b3ee22787/spec/abp/mobile-settings.md#toggle-text",
     "message": "Block ads on:"
   },
   "mops_error_url": {

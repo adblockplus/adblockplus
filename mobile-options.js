@@ -24,7 +24,7 @@
   const idAcceptableAds = "acceptableAds";
   const idRecommended = "subscriptions-recommended";
   const promisedAcceptableAdsUrl = getAcceptableAdsUrl();
-  let whitelistFilter = null;
+  let allowlistFilter = null;
 
   /* Utility functions */
 
@@ -116,7 +116,7 @@
 
   function setFilter({disabled, text}, action)
   {
-    if (!whitelistFilter || text != whitelistFilter)
+    if (!allowlistFilter || text != allowlistFilter)
       return;
 
     get("#enabled").checked = (action == "remove" || disabled);
@@ -275,14 +275,14 @@
   }
   document.addEventListener("change", onChange);
 
-  function toggleWhitelistFilter(toggle)
+  function toggleAllowlistFilter(toggle)
   {
-    if (whitelistFilter)
+    if (allowlistFilter)
     {
       browser.runtime.sendMessage(
         {
           type: (toggle.checked) ? "filters.remove" : "filters.add",
-          text: whitelistFilter
+          text: allowlistFilter
         }
       ).then(errors =>
       {
@@ -295,7 +295,7 @@
     }
     else
     {
-      console.error("Whitelist filter hasn't been initialized yet");
+      console.error("Allowlist filter hasn't been initialized yet");
     }
   }
 
@@ -310,7 +310,7 @@
         setDialog(ev.target.dataset.dialog);
         break;
       case "toggle-enabled":
-        toggleWhitelistFilter(ev.target);
+        toggleAllowlistFilter(ev.target);
         ev.preventDefault();
         break;
     }
@@ -356,11 +356,11 @@
             setDialog(dialogSubscribe, {title, url});
             break;
           case "showPageOptions":
-            const [{host, whitelisted}] = msg.args;
-            whitelistFilter = `@@||${host}^$document`;
+            const [{host, allowlisted}] = msg.args;
+            allowlistFilter = `@@||${host}^$document`;
             get("#enabled-domain").textContent = host;
             const toggle = get("#enabled");
-            toggle.checked = !whitelisted;
+            toggle.checked = !allowlisted;
 
             get("#enabled-container").hidden = false;
             break;

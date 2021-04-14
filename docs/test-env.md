@@ -71,11 +71,11 @@ No parameters.
 |-|-|-|
 | application | `edge` | Hides Adblock Browser promotion message |
 | composerActive | `false` | Hides button to open filter composer |
-| domainWhitelisted | `true` | Shows popup as if domain is whitelisted |
+| domainAllowlisted | `true` | Shows popup as if domain is allowlisted |
 | notification | `critical` | Show notification with "critical" type |
 | | `default` | Show notification with unknown type |
 | | `information` | Show notification with "information" type |
-| pageWhitelisted | `true` | Show popup as if page is whitelisted |
+| pageAllowlisted | `true` | Show popup as if page is allowlisted |
 | platform | `edgehtml` | Hides button to open issue reporter |
 | pageURL | `https%3A%2F%2Fexample.com%2F` | Sets the displayed URL in the popup to the given value (the given value must be URL-encoded) |
 | | `chrome%3A%2F%2Fextensions` | The UI will only display stats, as ABP is not active on built-in browser pages |

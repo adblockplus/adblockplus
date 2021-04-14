@@ -126,10 +126,10 @@ export function listAllowlistingFilters(page, frame, originUrl,
 /**
  * Checks if the given page is allowlisted.
  *
- * @event "filters.isWhitelisted"
+ * @event "filters.isAllowlisted"
  * @returns {filtersIsAllowlistedResult}
  */
-port.on("filters.isWhitelisted", message =>
+port.on("filters.isAllowlisted", message =>
 {
   let pageAllowlisted = false;
   let hostnameAllowlisted = false;
@@ -153,11 +153,11 @@ port.on("filters.isWhitelisted", message =>
  * already allowlisted. Note: If a disabled allowing filter exists, we
  * enable that instead.
  *
- * @event "filters.whitelist"
+ * @event "filters.allowlist"
  * @property {boolean} [singlePage=false]
  *   If true we add an allowing filter for the given page's URL instead.
  */
-port.on("filters.whitelist", message =>
+port.on("filters.allowlist", message =>
 {
   let page = new ext.Page(message.tab);
   let filter;
@@ -191,12 +191,12 @@ port.on("filters.whitelist", message =>
 /**
  * Remove any allowing filters which apply to the given page's URL.
  *
- * @event "filters.unwhitelist"
+ * @event "filters.unallowlist"
  * @property {boolean} [singlePage=false]
  *   If true we only remove allowing filters which are not for an entire
  *   domain.
  */
-port.on("filters.unwhitelist", message =>
+port.on("filters.unallowlist", message =>
 {
   let page = new ext.Page(message.tab);
   for (let filter of listAllowlistingFilters(page))

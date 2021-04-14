@@ -18,7 +18,7 @@
 "use strict";
 
 const {$} = require("../../dom");
-const {isTabWhitelisted} = require("./utils.js");
+const {isTabAllowlisted} = require("./utils.js");
 
 // remember initial state to better toggle content
 let toggleChecked;
@@ -33,7 +33,7 @@ function setupToggles(tab)
   domain.addEventListener("click", () =>
   {
     // when the domain is clicked it will either
-    // whitelist or un-whitelist the whole domain,
+    // allowlist or un-allowlist the whole domain,
     // and in both cases we should ignore page changes
     // - - -
     // use the domain.state instead of its checked attribute
@@ -52,20 +52,20 @@ function setupToggles(tab)
     browser.tabs.reload(tab.id).then(window.close);
   });
 
-  isTabWhitelisted(tab).then((isWhitelisted) =>
+  isTabAllowlisted(tab).then((isAllowlisted) =>
   {
     document.body.classList.toggle(
       "disabled",
-      isWhitelisted.hostname || isWhitelisted.page
+      isAllowlisted.hostname || isAllowlisted.page
     );
-    if (isWhitelisted.hostname)
+    if (isAllowlisted.hostname)
     {
       // avoid triggering an event on this change
       domain.setState({checked: false}, false);
       domain.checked = false;
       setPageStateAfterDomain(page, false, true);
     }
-    else if (isWhitelisted.page)
+    else if (isAllowlisted.page)
     {
       setPageStateAfterDomain(page, false, false);
     }
@@ -77,7 +77,7 @@ function setupToggles(tab)
     const {checked} = domain;
     document.body.classList.toggle("refresh", toggleChecked !== checked);
     browser.runtime.sendMessage({
-      type: `filters.${checked ? "unwhitelist" : "whitelist"}`,
+      type: `filters.${checked ? "unallowlist" : "allowlist"}`,
       tab
     });
   });
@@ -86,7 +86,7 @@ function setupToggles(tab)
   {
     document.body.classList.toggle("refresh");
     browser.runtime.sendMessage({
-      type: `filters.${page.checked ? "unwhitelist" : "whitelist"}`,
+      type: `filters.${page.checked ? "unallowlist" : "allowlist"}`,
       singlePage: true,
       tab
     });

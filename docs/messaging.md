@@ -28,16 +28,16 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
   - [open](#appopen)
 - filters
   - [add](#filtersadd)
+  - [allowlist](#filtersallowlist)
   - [get](#filtersget)
   - [importRaw](#filtersimportraw)
-  - [isWhitelisted](#filtersiswhitelisted)
+  - [isAllowlisted](#filtersisallowlisted)
   - [listen](#filterslisten)
   - [remove](#filtersremove)
   - [replace](#filtersreplace)
   - [toggle](#filterstoggle)
-  - [unwhitelist](#filtersunwhitelist)
+  - [unallowlist](#filtersunallowlist)
   - [validate](#filtersvalidate)
-  - [whitelist](#filterswhitelist)
 - prefs
   - [get](#prefsget)
   - [listen](#prefslisten)
@@ -112,7 +112,7 @@ If filter includes `addSubscription`:
 If filter includes `showPageOptions`:
 
 - **string** host
-- **boolean** whitelisted
+- **boolean** allowlisted
 
 #### app.open
 
@@ -159,7 +159,7 @@ If filter includes `showPageOptions`:
 
 **[FilterError](#filtererror)[]** errors
 
-#### filters.isWhitelisted
+#### filters.isAllowlisted
 
 **Arguments**
 
@@ -167,7 +167,7 @@ If filter includes `showPageOptions`:
 
 **Response**
 
-**object** isWhitelisted
+**object** isAllowlisted
   - **boolean** hostname
   - **boolean** page
 
@@ -204,10 +204,10 @@ See [`filterNotifier`][filternotifier].
 - **string** text
 - **boolean** disabled
 
-#### filters.unwhitelist
+#### filters.unallowlist
 
 - **object** tab
-- **boolean** singlePage - to unwhitelist a page instead of the whole domain
+- **boolean** singlePage - to unallowlist a page instead of the whole domain
 
 #### filters.validate
 
@@ -217,10 +217,10 @@ See [`filterNotifier`][filternotifier].
 
 **[FilterError](#filtererror)[]** errors
 
-#### filters.whitelist
+#### filters.allowlist
 
 - **object** tab
-- **boolean** singlePage - to whitelist a page instead of the whole domain
+- **boolean** singlePage - to allowlist a page instead of the whole domain
 
 ---
 
