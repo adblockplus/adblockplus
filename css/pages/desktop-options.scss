@@ -505,24 +505,6 @@ button[role="checkbox"][disabled].icon.toggle::before
   background-image: url("icons/facebook.svg");
 }
 
-.new-tag
-{
-  display: none;
-  padding: 0rem 0.4rem;
-  border-radius: var(--border-radius);
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--background-color-primary);
-  background-color: var(--color-tag);
-}
-
-li[data-recommended="cookies"] .new-tag,
-li[data-recommended="notifications"] .new-tag
-{
-  display: inline-block;
-}
-
 /*
   Forms
  */
