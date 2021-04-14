@@ -27,7 +27,7 @@ import {notifications} from "../adblockpluscore/lib/notifications.js";
 import {recommendations} from "../adblockpluscore/lib/recommendations.js";
 import {Subscription} from "../adblockpluscore/lib/subscriptionClasses.js";
 import {initDay1Notification} from "../../lib/notifications.js";
-import {showOptions} from "./options.js";
+import {showOptions} from "../../lib/pages/options.js";
 
 const displayMethods = new Map([
   ["critical", ["icon", "notification", "popup"]],

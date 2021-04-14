@@ -17,7 +17,7 @@
 
 "use strict";
 
-let iframe = document.getElementById("content");
+const iframe = document.getElementById("content");
 
 iframe.onload = () =>
 {
@@ -26,7 +26,7 @@ iframe.onload = () =>
 
 (async() =>
 {
-  let os = await browser.runtime.sendMessage({
+  const os = await browser.runtime.sendMessage({
     type: "app.get",
     what: "os"
   });

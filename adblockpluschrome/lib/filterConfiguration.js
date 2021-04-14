@@ -29,7 +29,7 @@ import {synchronizer} from "../adblockpluscore/lib/synchronizer.js";
 import {Subscription, DownloadableSubscription, SpecialSubscription,
         RegularSubscription}
   from "../adblockpluscore/lib/subscriptionClasses.js";
-import {showOptions} from "./options.js";
+import {showOptions} from "../../lib/pages/options.js";
 import {recommendations} from "../adblockpluscore/lib/recommendations.js";
 import {allowlistedDomainRegexp} from "./allowlisting.js";
 import {filterState} from "../adblockpluscore/lib/filterState.js";
