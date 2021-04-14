@@ -101,7 +101,6 @@ export default {
           "*.html",
           // marked as optional using wildcard
           "vendor/abp-snippets/dist/webext/snippets*.json",
-          "adblockpluschrome/options.*",
           "adblockpluschrome/devtools.*",
           "adblockpluschrome/polyfill.js",
           "!polyfill.js",
