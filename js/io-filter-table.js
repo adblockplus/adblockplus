@@ -121,7 +121,8 @@ class IOFilterTable extends IOElement
     const footerError = $(".footer .error", this);
 
     const errorMessages = errors.map(getErrorMessage);
-    bind(footerError)`${errorMessages.join("\n")}`;
+    bind(footerError)`${errorMessages.map(mssg => `<li>${mssg}</li>`)}`;
+    footerError.removeAttribute("hidden");
   }
 
   onfooterclick(event)
@@ -254,7 +255,7 @@ class IOFilterTable extends IOElement
         disabled="${disabled}"
         data-call="onfooterclick"
       >${{i18n: "copy_selected"}}</button>
-      <button class="error"></button>
+      <ul class="error" hidden></ul>
     `;
   }
 }
@@ -265,7 +266,10 @@ function cleanErrors()
 {
   const footerError = $(".footer .error", this);
   if (footerError)
+  {
+    footerError.setAttribute("hidden", true);
     bind(footerError)``;
+  }
   this.updateFooter();
 }
 

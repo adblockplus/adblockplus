@@ -54,20 +54,20 @@ io-filter-table .footer
   align-items: center;
 }
 
+io-filter-table .footer > *
+{
+  font-weight: 700;
+}
+
 io-filter-table .footer button
 {
   padding: 4px;
-  font-weight: 600;
+  text-transform: uppercase;
 }
 
 io-filter-table .footer button[disabled]
 {
-  visibility: hidden;
-}
-
-io-filter-table .footer button:not(:last-child)
-{
-  text-transform: uppercase;
+  display: none;
 }
 
 io-filter-table .footer button:not(:first-child)
@@ -87,7 +87,7 @@ io-filter-table .footer .copy
   color: #337ba2;
 }
 
-io-filter-table .footer button:not(.error)::before
+io-filter-table .footer button::before
 {
   display: inline-block;
   width: 1em;
@@ -109,21 +109,23 @@ io-filter-table .footer .copy::before
   background-image: url(icons/copy.svg);
 }
 
-io-filter-table .footer .error
+io-filter-table .footer ul.error
 {
-  display: inline;
   border: 0;
+  padding: 0;
   color: var(--color-error);
   text-transform: none;
   flex-grow: 1;
-  white-space: pre;
+  line-height: 1.9rem;
+  list-style: none;
 }
 
-io-filter-table .footer .error ul
+io-filter-table .footer ul.error li
 {
-  padding: 0;
-  line-height: 30px;
-  list-style: none;
+  padding: var(--padding-secondary) var(--padding-primary);
+  margin-bottom: var(--margin-secondary);
+  border-radius: 4px;
+  background-color: #ED1E4526;
 }
 
 io-filter-table .footer .error strong
@@ -136,26 +138,10 @@ io-filter-table .footer .error strong
   font-family: monospace;
 }
 
-io-filter-table .footer .error:not([data-filter])
-{
-  outline: none;
-  cursor: default;
-}
-
-html:not([dir="rtl"]) io-filter-table .footer .error
-{
-  text-align: left;
-}
-
 html:not([dir="rtl"]) io-filter-table .footer .delete::before,
 html:not([dir="rtl"]) io-filter-table .footer .copy::before
 {
   margin-right: 4px;
-}
-
-html[dir="rtl"] io-filter-table .footer .error
-{
-  text-align: right;
 }
 
 html[dir="rtl"] io-filter-table .footer .delete::before,
