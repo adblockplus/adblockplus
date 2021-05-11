@@ -17,6 +17,8 @@
 
 "use strict";
 
+const {setElementText} = require("./i18n");
+
 // Custom Elements polyfill (triggered on demand)
 if (typeof customElements !== "object")
   require("@webreflection/custom-elements-no-builtin");
@@ -163,7 +165,6 @@ class IOElement extends HyperHTMLElement
 //  render() {
 //    return this.html`<div>${{i18n:'about-abp'}}</div>`;
 //  }
-const {setElementText} = ext.i18n;
 IOElement.intent("i18n", idOrArgs =>
 {
   const fragment = document.createDocumentFragment();

@@ -19,6 +19,7 @@
 
 const api = require("../../api");
 const {$, $$} = require("../../dom");
+const {initI18n} = require("../../i18n");
 require("../../io-circle-toggle.js");
 const setupBlock = require("./block-element.js");
 require("./notifications.js");
@@ -30,6 +31,8 @@ const {
   reportIssue,
   whenPageReady
 } = require("./utils.js");
+
+initI18n();
 
 // platform and application dataset bootstrap
 Promise.all([

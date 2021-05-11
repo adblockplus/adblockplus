@@ -17,7 +17,11 @@
 
 "use strict";
 
+const {initI18n, setElementText} = require("../i18n");
+
 const {getMessage} = browser.i18n;
+
+initI18n();
 
 const promisedPlatform = browser.runtime.sendMessage({
   type: "app.get",
@@ -151,7 +155,7 @@ function createRecord(request, filter, template)
 
   if (request.url)
   {
-    ext.i18n.setElementText(
+    setElementText(
       urlElement, "devtools_request_url",
       [request.url, request.rewrittenUrl]
     );

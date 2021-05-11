@@ -18,7 +18,10 @@
 "use strict";
 
 const {$} = require("../dom");
+const {initI18n} = require("../i18n");
 require("../io-circle-toggle.js");
+
+initI18n();
 
 function onResize()
 {

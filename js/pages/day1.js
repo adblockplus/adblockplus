@@ -18,7 +18,9 @@
 "use strict";
 
 const api = require("../api");
+const {convertDoclinks} = require("../common");
 const {$} = require("../dom");
+const {initI18n, setElementText, stripTagsUnsafe} = require("../i18n");
 require("../landing");
 
 function initContact()
@@ -49,7 +51,7 @@ function initTitle()
     .then((blockedTotal) =>
     {
       blockedTotal = blockedTotal.toLocaleString();
-      ext.i18n.setElementText(
+      setElementText(
         $("#content-message"),
         "day1_header_title",
         [blockedTotal]
@@ -59,10 +61,12 @@ function initTitle()
         "day1_header_title",
         [blockedTotal]
       );
-      $("title").textContent = ext.i18n.stripTagsUnsafe(message);
+      $("title").textContent = stripTagsUnsafe(message);
     });
 }
 
+convertDoclinks();
+initI18n();
 initContact();
 initPopupDummy();
 initTitle();

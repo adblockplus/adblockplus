@@ -15,9 +15,10 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* globals getDoclink, getErrorMessage */
-
 "use strict";
+
+const {convertDoclinks, getDoclink, getErrorMessage} = require("../common");
+const {initI18n} = require("../i18n");
 
 {
   const dialogSubscribe = "subscribe";
@@ -414,6 +415,8 @@
 
   /* Initialization */
 
+  convertDoclinks();
+  initI18n();
   populateLists();
 
   getDoclink("privacy").then((url) =>

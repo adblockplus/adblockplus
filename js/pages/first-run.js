@@ -18,6 +18,8 @@
 "use strict";
 
 const api = require("../api");
+const {convertDoclinks} = require("../common");
+const {initI18n, setElementLinks, setElementText} = require("../i18n");
 
 function openOptions()
 {
@@ -31,22 +33,19 @@ function initLinks()
     api.doclinks.get("acceptable_ads_opt_out")
   ]).then(([urlCriteria, urlOptOut]) =>
   {
-    ext.i18n.setElementLinks(
-      "control-description",
-      urlCriteria, urlOptOut, openOptions
-    );
+    setElementLinks("control-description", urlCriteria, urlOptOut, openOptions);
   });
 
   api.doclinks.get("terms").then((url) =>
   {
-    ext.i18n.setElementLinks("fair-description", url);
+    setElementLinks("fair-description", url);
   });
   api.doclinks.get("eyeo").then((url) =>
   {
     const year = new Date().getFullYear().toString();
     const notice = document.getElementById("copyright-notice");
-    ext.i18n.setElementText(notice, "common_copyright", year);
-    ext.i18n.setElementLinks("copyright-notice", url);
+    setElementText(notice, "common_copyright", year);
+    setElementLinks("copyright-notice", url);
   });
 }
 
@@ -64,11 +63,11 @@ function initWarnings()
         warnings.push("dataCorrupted");
         api.doclinks.get("adblock_plus").then((url) =>
         {
-          ext.i18n.setElementLinks("dataCorrupted-reinstall", url);
+          setElementLinks("dataCorrupted-reinstall", url);
         });
         api.doclinks.get("help_center").then((url) =>
         {
-          ext.i18n.setElementLinks(
+          setElementLinks(
             "dataCorrupted-support",
             "mailto:support@adblockplus.org",
             url
@@ -79,7 +78,7 @@ function initWarnings()
       else if (reinitialized)
       {
         warnings.push("reinitialized");
-        ext.i18n.setElementLinks("warning-reinitialized", openOptions);
+        setElementLinks("warning-reinitialized", openOptions);
       }
 
       // While our design isn't optimized for it yet, multiple warnings can
@@ -99,11 +98,8 @@ function initApplication()
   });
 }
 
-// Translations are resolved on DOMContentLoaded so waiting for DOM by
-// deferring script execution is insufficient
-window.addEventListener("DOMContentLoaded", () =>
-{
-  initLinks();
-  initWarnings();
-  initApplication();
-});
+convertDoclinks();
+initI18n();
+initLinks();
+initWarnings();
+initApplication();

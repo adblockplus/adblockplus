@@ -15,19 +15,17 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* globals getErrorMessage */
-
 "use strict";
 
-require("./io-checkbox");
-require("./io-toggle");
-
 const {port} = require("./api");
+const {getErrorMessage} = require("./common");
 const {$, events} = require("./dom");
+const {stripTagsUnsafe} = require("./i18n");
+require("./io-checkbox");
 const IOElement = require("./io-element");
+require("./io-toggle");
 const IOFilterBase = require("./io-filter-base");
 
-const {stripTagsUnsafe} = ext.i18n;
 const {utils, wire} = IOElement;
 const prevFilterText = new WeakMap();
 

@@ -18,7 +18,9 @@
 "use strict";
 
 const api = require("../api");
+const {convertDoclinks} = require("../common");
 const {$} = require("../dom");
+const {initI18n} = require("../i18n");
 require("../landing");
 
 api.app.getInfo().then((info) =>
@@ -38,9 +40,6 @@ function initOSReference(name, idx)
   element.title = browser.i18n.getMessage(`problem_os_${name}`);
 }
 
-// We need to wait explicitly for DOMContentLoaded to ensure that the
-// translations are already present.
-window.addEventListener("DOMContentLoaded", () =>
-{
-  ["windows", "mac"].forEach(initOSReference);
-});
+convertDoclinks();
+initI18n();
+["windows", "mac"].forEach(initOSReference);

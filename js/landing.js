@@ -18,6 +18,7 @@
 "use strict";
 
 const api = require("./api");
+const {setElementLinks, setElementText} = require("./i18n");
 
 function initCopyrightNotice()
 {
@@ -25,8 +26,8 @@ function initCopyrightNotice()
   {
     const year = new Date().getFullYear().toString();
     const notice = document.getElementById("copyright-notice");
-    ext.i18n.setElementText(notice, "common_copyright", year);
-    ext.i18n.setElementLinks("copyright-notice", url);
+    setElementText(notice, "common_copyright", year);
+    setElementLinks("copyright-notice", url);
   });
 }
 

@@ -15,10 +15,9 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* globals getErrorMessage */
-
 "use strict";
 
+const {getErrorMessage} = require("./common");
 const IOElement = require("./io-element");
 const IOFilterList = require("./io-filter-list");
 const IOFilterSearch = require("./io-filter-search");

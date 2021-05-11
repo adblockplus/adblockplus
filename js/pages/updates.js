@@ -20,7 +20,9 @@
 const {bind, wire} = require("hyperhtml");
 
 const api = require("../api");
+const {convertDoclinks} = require("../common");
 const {$} = require("../dom");
+const {initI18n} = require("../i18n");
 // We need to import io-element to initialize the i18n intent we're using
 require("../io-element");
 require("../landing");
@@ -126,6 +128,8 @@ function initVersion()
 
 function load()
 {
+  convertDoclinks();
+  initI18n();
   initRating();
   initUpdates();
   initVersion();
