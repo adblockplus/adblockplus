@@ -17,7 +17,9 @@
 
 "use strict";
 
+const {convertDoclinks} = require("../../common");
 const {$, asIndentedString} = require("../../dom");
+const {initI18n, setElementLinks} = require("../../i18n");
 const report = require("./report");
 const stepsManager = require("./steps-manager");
 
@@ -27,6 +29,9 @@ const optionalPermissions = {
     "management"
   ]
 };
+
+convertDoclinks();
+initI18n();
 
 function containsPermissions()
 {
@@ -44,11 +49,8 @@ function containsPermissions()
 document.addEventListener("DOMContentLoaded", () =>
 {
   const supportEmail = "support@adblockplus.org";
-  ext.i18n.setElementLinks(
-    "sr-warning",
-    `mailto:${supportEmail}`
-  );
-  ext.i18n.setElementLinks(
+  setElementLinks("sr-warning", `mailto:${supportEmail}`);
+  setElementLinks(
     "other-issues",
     `mailto:${supportEmail}?subject=${encodeURIComponent("[Issue Reporter]")}`
   );

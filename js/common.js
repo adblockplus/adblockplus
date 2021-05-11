@@ -29,7 +29,6 @@ function convertDoclinks()
     });
   }
 }
-window.addEventListener("DOMContentLoaded", convertDoclinks, true);
 
 function getDoclink(link)
 {
@@ -72,3 +71,5 @@ function getErrorMessage(error)
     message
   ]);
 }
+
+module.exports = {convertDoclinks, getDoclink, getErrorMessage};

@@ -15,8 +15,6 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* globals getDoclink getErrorMessage */
-
 "use strict";
 
 const {
@@ -24,7 +22,14 @@ const {
   setupAddFiltersByURL
 } = require("./add-filters-by-url");
 const api = require("../../api");
+const {convertDoclinks, getDoclink, getErrorMessage} = require("../../common");
 const {$, $$, events} = require("../../dom");
+const {
+  initI18n,
+  setElementLinks,
+  setElementText,
+  stripTagsUnsafe
+} = require("../../i18n");
 require("../../io-filter-table");
 require("../../io-list-box");
 require("../../io-popout");
@@ -33,7 +38,6 @@ require("../../io-toggle");
 const ALLOWED_PROTOCOLS = /^(?:data|https):/;
 
 const {port} = api;
-const {stripTagsUnsafe} = ext.i18n;
 
 let subscriptionsMap = Object.create(null);
 let filtersMap = Object.create(null);
@@ -45,7 +49,6 @@ let languages = {};
 
 const collections = Object.create(null);
 const {getMessage} = browser.i18n;
-const {setElementLinks, setElementText} = ext.i18n;
 const customFilters = [];
 const filterErrors = new Map([
   ["synchronize_invalid_url",
@@ -64,6 +67,9 @@ const allowlistedPageRegexp = /^@@\|([^?|]+(?:\?[^|]*)?)\|?\$document$/;
 const minuteInMs = 60000;
 const hourInMs = 3600000;
 const fullDayInMs = 86400000;
+
+convertDoclinks();
+initI18n();
 
 const promisedLocaleInfo = browser.runtime.sendMessage({
   type: "app.get",

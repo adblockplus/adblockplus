@@ -15,13 +15,13 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* globals getErrorMessage */
-
 "use strict";
+
+const {getErrorMessage} = require("../common");
+const {initI18n, stripTagsUnsafe} = require("../i18n");
 
 let initialFilterText = "";
 let targetPageId = null;
-const {stripTagsUnsafe} = ext.i18n;
 
 function onKeyDown(event)
 {
@@ -195,4 +195,5 @@ function init()
   window.removeEventListener("load", init);
 }
 
+initI18n();
 window.addEventListener("load", init, false);

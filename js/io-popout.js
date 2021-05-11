@@ -15,11 +15,10 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* globals getDoclink */
-
 "use strict";
 
-const {$} = require("./dom");
+const {getDoclink} = require("./common");
+const {setElementLinks} = require("./i18n");
 const IOElement = require("./io-element");
 
 class IOPopout extends IOElement
@@ -107,7 +106,7 @@ class IOPopout extends IOElement
       {
         Promise.all(i18nDoclinks.split(",").map(getDoclink)).then(links =>
         {
-          ext.i18n.setElementLinks(body, ...links);
+          setElementLinks(body, ...links);
         });
       }
 

@@ -36,15 +36,17 @@
       ]
     ],
     "bundle": {
-      "composer": "$ create.bundle.css composer",
+      "composer": "$ create.bundle composer",
       "day1": [
         "$ create.bundle.css popup",
         "$ create.bundle popup-dummy",
         "$ create.bundle day1"
       ],
       "desktop-options": "$ create.bundle desktop-options",
+      "devtools-panel": "$ create.bundle devtools-panel",
       "first-run": "$ create.bundle first-run",
       "issue-reporter": "$ create.bundle issue-reporter",
+      "mobile-options": "$ create.bundle mobile-options",
       "mocks": [
         "mkdir -p mocks/dist",
         "$ create.js ./mocks/js/background.js ./mocks/dist/background.js"
