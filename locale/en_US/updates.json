@@ -27,6 +27,10 @@
     "description": "https://gitlab.com/eyeo/specs/spec/-/blob/019381532ccd93cbba8732de1b90a1ce7fdb7e4a/spec/abp/updates.md#contribute",
     "message": "Consider supporting ABP in one of two ways:"
   },
+  "updates_contribute_subtitle_generic": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/8e59a136b0f544afd961645f0c071b717f81dd03/spec/abp/updates.md#contribute",
+    "message": "Consider supporting ABP:"
+  },
   "updates_contribute_title": {
     "description": "https://gitlab.com/eyeo/specs/spec/-/blob/019381532ccd93cbba8732de1b90a1ce7fdb7e4a/spec/abp/updates.md#contribute",
     "message": "Enjoying Adblock Plus?"
