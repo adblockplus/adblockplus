@@ -93,19 +93,6 @@ function addUpdates(container, updates)
   bind(list)`${items}`;
 }
 
-function initRating()
-{
-  api.app.getInfo().then((info) =>
-  {
-    document.body.dataset.store = info.store;
-
-    api.doclinks.get(`${info.store}_review`).then((url) =>
-    {
-      $("#contribute-rate a").href = url;
-    });
-  });
-}
-
 function initUpdates()
 {
   fetch("data/updates.json")
@@ -126,11 +113,29 @@ function initVersion()
   });
 }
 
+function initContribute()
+{
+  api.app.getInfo().then(({store}) =>
+  {
+    document.body.dataset.store = store;
+    let contributeSubtitleId = "updates_contribute_subtitle";
+    if (store === "edge")
+      contributeSubtitleId = "updates_contribute_subtitle_generic";
+
+    const contributeSubtitle = browser.i18n.getMessage(contributeSubtitleId);
+    $("#contribute-subtitle").textContent = contributeSubtitle;
+    api.doclinks.get(`${store}_review`).then((url) =>
+    {
+      $("#contribute-rate a").href = url;
+    });
+  });
+}
+
 function load()
 {
   convertDoclinks();
   initI18n();
-  initRating();
+  initContribute();
   initUpdates();
   initVersion();
 }
