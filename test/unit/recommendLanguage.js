@@ -66,6 +66,7 @@ const defaultModules = {
       *subscriptions() {}
     }
   },
+  info: {application: "firefox"},
   notifications: {
     notifications: {
       addNotification() {},
@@ -179,6 +180,44 @@ describe("Test language filter list recommendation", () =>
       env.globals.browser.i18n,
       "getUILanguage",
       () => "de"
+    );
+
+    env.override(
+      env.globals.browser.webNavigation.onCompleted,
+      "addListener",
+      () =>
+      {
+        addsListener = true;
+      }
+    );
+
+    env.requireModule("../../lib/recommendLanguage");
+    await wait(0);
+
+    nok(addsListener, "Navigation events listener installed");
+    nok(
+      loadedFiles.has("data/locales.json"),
+      "Language data fetched"
+    );
+  });
+
+  it("Should not load on Opera", async() =>
+  {
+    const loadedFiles = new Set();
+    let addsListener = false;
+
+    env.setGlobals({
+      fetch(path)
+      {
+        loadedFiles.add(path);
+        return defaultGlobals.fetch();
+      }
+    });
+
+    env.override(
+      env.modules.info,
+      "application",
+      "opera"
     );
 
     env.override(

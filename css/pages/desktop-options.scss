@@ -1350,7 +1350,13 @@ html[dir="rtl"] .tooltip
 html[lang^="de"] #recommended-list-table li[data-recommended="cookies"],
 html[lang^="fr"] #recommended-list-table li[data-recommended="cookies"],
 html[lang^="de"] #language-recommend,
-html[lang^="fr"] #language-recommend
+html[lang^="fr"] #language-recommend,
+/*
+  Hide language recommendation feature for Opera users
+  due to problems with its language detection
+  https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/issues/960
+*/
+html[data-application="opera"] #language-recommend
 {
   display: none;
 }

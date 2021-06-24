@@ -1145,6 +1145,8 @@ function onDOMLoaded()
 
   api.app.getInfo().then(({application, store}) =>
   {
+    document.documentElement.dataset.application = application;
+
     // We need to restrict this feature to certain browsers for which we
     // have a link to where users can rate us
     if (!["chrome", "chromium", "opera", "firefox"].includes(application))
