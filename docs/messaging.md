@@ -38,6 +38,8 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
   - [toggle](#filterstoggle)
   - [unallowlist](#filtersunallowlist)
   - [validate](#filtersvalidate)
+- filterState
+  - [listen](#filterstatelisten)
 - prefs
   - [get](#prefsget)
   - [listen](#prefslisten)
@@ -53,6 +55,7 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
   - [listen](#statslisten)
 - subscriptions
   - [add](#subscriptionsadd)
+  - [enableAllFilters](#subscriptionsenableallfilters)
   - [get](#subscriptionsget)
   - [getInitIssues](#subscriptionsgetinitissues)
   - [listen](#subscriptionslisten)
@@ -175,12 +178,17 @@ If filter includes `showPageOptions`:
 
 **Arguments**
 
-- **string[]** filter (see also `filter.*` events in [`filterNotifier`][filternotifier])
+- **string[]** filter
+  - `added`
+  - `moved`
+  - `removed`
   - `loaded`
 
 **Response**
 
-See [`filterNotifier`][filternotifier].
+If filter is `added`, `moved` or `removed`
+
+- see [`filterStorage`][filterstorage]
 
 #### filters.remove
 
@@ -221,6 +229,23 @@ See [`filterNotifier`][filternotifier].
 
 - **object** tab
 - **boolean** singlePage - to allowlist a page instead of the whole domain
+
+---
+
+### filterState
+
+#### filterState.listen
+
+**Arguments**
+
+- **string[]** filter
+  - `enabled`
+  - `hitCount`
+  - `lastCount`
+
+**Response**
+
+See [`filterState`][filterstate]
 
 ---
 
@@ -340,6 +365,12 @@ If filter includes `blocked_total`:
 - **string** [title]
 - **string** url
 
+#### subscriptions.enableAllFilters
+
+**Arguments**
+
+- **string** url
+
 #### subscriptions.get
 
 **Arguments**
@@ -366,11 +397,38 @@ If filter includes `blocked_total`:
 
 **Arguments**
 
-- **string[]** filter (see also [`filterNotifier`][filternotifier])
+- **string[]** filter
+  - `added`
+  - `disabled`
+  - `downloading`
+  - `downloadStatus`
+  - `errors`
+  - `filtersDisabled`
+  - `fixedTitle`
+  - `homepage`
+  - `lastCheck`
+  - `lastDownload`
+  - `removed`
+  - `title`
+  - `updated`
 
 **Response**
 
-See [`filterNotifier`][filternotifier].
+If filter is `added`, `removed` or `updated`
+
+- see [`filterStorage`][filterstorage]
+
+If filter is `disabled`, `downloadStatus`, `errors`, `fixedTitle`, `homepage`, `lastCheck`, `lastDownload` or `title`
+
+- see [`subscriptionClasses`][subscriptionclasses]
+
+If filter is `downloading`
+
+- see [`synchronizer`][synchronizer]
+
+If filter is `filtersDisabled`
+
+- see [`filterConfiguration`][filterconfiguration]
 
 #### subscriptions.remove
 
@@ -419,5 +477,10 @@ See [`filterNotifier`][filternotifier].
 
 ![Subscription expiration](images/subscription-expiration.svg)
 
+[filterconfiguration]: ../adblockpluschrome/lib/filterConfiguration.js
+[filterstate]: https://gitlab.com/eyeo/adblockplus/adblockpluscore/-/blob/master/lib/filterState.js
+[filterstorage]: https://gitlab.com/eyeo/adblockplus/adblockpluscore/-/blob/master/lib/filterStorage.js
 [filternotifier]: https://gitlab.com/eyeo/adblockplus/adblockpluscore/-/blob/master/lib/filterNotifier.js
+[synchronizer]: https://gitlab.com/eyeo/adblockplus/adblockpluscore/-/blob/master/lib/synchronizer.js
+[subscriptionclasses]: https://gitlab.com/eyeo/adblockplus/adblockpluscore/-/blob/master/lib/subscriptionClasses.js
 [tab]: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/Tab

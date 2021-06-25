@@ -15,47 +15,33 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-io-popout ul
-{
-  padding: 0;
-}
+"use strict";
 
-io-popout li
-{
-  list-style: none;
-}
+const {filterNotifier} = require("./filter-notifier");
 
-.table.cols io-popout li
-{
-  padding: 0;
-  border: 0;
-}
+const map = new Map();
 
-.table.cols io-popout[type="menubar"] li > *
-{
-  display: flex;
-  width: 100%;
-  padding: 0.7rem 0rem;
-  border: 0rem;
-  color: #0797E1;
-  font-size: 1rem;
-  font-weight: 400;
-  text-decoration: none;
-  text-transform: none;
-  align-items: center;
-}
+const filterState = {
+  isEnabled(filterText)
+  {
+    const state = map.get(filterText);
+    return state ? !state.disabled : true;
+  },
+  setEnabled(filterText, enabled)
+  {
+    const oldEnabled = this.isEnabled(filterText);
 
-io-popout[type="menubar"] li > *:hover,
-io-popout[type="menubar"] li > *:focus
-{
-  background-color: #E1F2FA;
-  cursor: pointer;
-}
+    if (enabled)
+      map.delete(filterText);
+    else
+      map.set(filterText, {disabled: true});
 
-io-popout li .icon::before
-{
-  width: var(--icon-size-inner);
-  height: var(--icon-size-inner);
-  margin: 0 var(--icon-size-inner);
-  border: none;
-}
+    if (enabled !== oldEnabled)
+    {
+      filterNotifier.emit("filterState.enabled", filterText, enabled,
+                          oldEnabled);
+    }
+  }
+};
+
+module.exports = {filterState};

@@ -20,7 +20,9 @@
 io-popout
 {
   --background-color: #FFF;
-  --border: 1px solid #0797E1;
+  --border-color: #0797E1;
+  --border: 1px solid var(--border-color);
+  --horizontal-padding: 1rem;
   --icon-margin: 0.4rem;
   --icon-size-inner: 1rem;
   --icon-size-outer: calc(var(--icon-size-inner) + var(--icon-margin));
@@ -106,7 +108,7 @@ io-popout > .wrapper::before
   cursor: pointer;
 }
 
-io-popout[anchor-icon] > .wrapper::before
+io-popout[anchor-icon="heart"] > .wrapper::before
 {
   border-radius: 50%;
   background-color: #0797E1;
@@ -118,7 +120,7 @@ io-popout[anchor-icon] > .wrapper::before
     box-shadow 100ms;
 }
 
-io-popout[anchor-icon][expanded] > .wrapper::before
+io-popout[anchor-icon="heart"][expanded] > .wrapper::before
 {
   background-color: #4A4A4A;
   box-shadow: none;
@@ -139,6 +141,11 @@ io-popout[type="tooltip"] > .wrapper::before
 io-popout[anchor-icon="heart"] > .wrapper::before
 {
   background-image: url(icons/heart.svg);
+}
+
+io-popout[anchor-icon="error"] > .wrapper::before
+{
+  background-image: url(icons/error-round.svg);
 }
 
 /*******************************************************************************
@@ -287,7 +294,7 @@ io-popout .close:focus
 
 io-popout p
 {
-  padding: 0.2rem 1rem;
+  padding: 0.2rem var(--horizontal-padding);
 }
 
 io-popout [role="dialog"] p
@@ -333,6 +340,63 @@ html[dir="rtl"] io-popout button.close
 {
   right: auto;
   left: 10px;
+}
+
+/*******************************************************************************
+ * Appearance variants
+ ******************************************************************************/
+
+io-popout[appearance="error"] .icon.close::before
+{
+  background-image: url(icons/close.svg?error#error);
+}
+
+io-popout[appearance="error"] .icon.close:hover::before
+{
+  background-image: url(icons/close.svg?error-hover#error-hover);
+}
+
+io-popout[appearance="error"]
+{
+  --border-color: var(--color-error);
+}
+
+io-popout[appearance="error"] ul
+{
+  padding: 0 var(--horizontal-padding);
+  margin-bottom: 1rem;
+}
+
+io-popout[appearance="error"] .error-list li
+{
+  --border-size: 4px;
+  --border: var(--border-size) solid var(--background-color-error);
+  --padding: calc(var(--horizontal-padding) - var(--border-size));
+  display: block;
+  border-radius: 0;
+  margin: 0.8rem 0;
+  color: var(--color-error);
+}
+
+html:not([dir="rtl"]) io-popout[appearance="error"] .error-list li
+{
+  border-left: var(--border);
+  padding-left: var(--padding);
+}
+
+html[dir="rtl"] io-popout[appearance="error"] .error-list li
+{
+  border-right: var(--border);
+  padding-right: var(--padding);
+}
+
+io-popout[appearance="error"] .error-list li a
+{
+  display: block;
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 /*******************************************************************************

@@ -29,6 +29,7 @@ function Subscription(url)
   this._disabled = false;
   this._lastDownload = 1234;
   this._filterText = [];
+  this.hasDisabledFilters = false;
   this.homepage = "https://easylist.adblockplus.org/";
   this.downloadStatus = params.downloadStatus;
 
@@ -43,6 +44,9 @@ function Subscription(url)
     }
   }
   Subscription.knownSubscriptions.set(url, this);
+
+  if (params.filtersDisabled && this._filterText.length)
+    this.hasDisabledFilters = true;
 }
 Subscription.prototype =
 {
@@ -63,6 +67,10 @@ Subscription.prototype =
   {
     this._lastDownload = value;
     filterNotifier.filterNotifier.emit("subscription.lastDownload", this);
+  },
+  get filterCount()
+  {
+    return this._filterText.length;
   },
   *filterText()
   {

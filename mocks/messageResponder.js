@@ -192,9 +192,9 @@
       if (!(name in listenedFilterChanges))
       {
         listenedFilterChanges[name] = null;
-        filterNotifier.on(name, (item) =>
+        filterNotifier.on(name, (...args) =>
         {
-          sendMessage(type, action, item);
+          sendMessage(type, action, ...args);
         });
       }
     }
@@ -499,6 +499,20 @@
     }
   });
 
+  port.on("subscriptions.enableAllFilters", (message, sender) =>
+  {
+    const subscription = Subscription.fromURL(message.url);
+    const oldHasDisabledFilters = subscription.hasDisabledFilters;
+
+    subscription.hasDisabledFilters = false;
+    filterNotifier.emit(
+      "subscription.filtersDisabled",
+      subscription,
+      false,
+      oldHasDisabledFilters
+    );
+  });
+
   port.on("subscriptions.get", (message, sender) =>
   {
     const subscriptions = [];
@@ -524,6 +538,13 @@
       subscriptions.push(subscription);
     }
     return subscriptions;
+  });
+
+  port.on("subscriptions.getDisabledFilterCount", (message, sender) =>
+  {
+    const subscription = Subscription.fromURL(message.url);
+
+    return subscription.hasDisabledFilters ? subscription.filterCount : 0;
   });
 
   port.on("subscriptions.getInitIssues", () =>
@@ -657,6 +678,10 @@
       case "filters":
         filters.set("filter", newFilter);
         addFilterListeners("filter", newFilter);
+        break;
+      case "filterState":
+        filters.set("filterState", newFilter);
+        addFilterListeners("filterState", newFilter);
         break;
       case "prefs":
         filters.set("pref", newFilter);

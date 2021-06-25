@@ -35,6 +35,8 @@ import {allowlistedDomainRegexp} from "./allowlisting.js";
 import {filterState} from "../adblockpluscore/lib/filterState.js";
 import {filterTypes} from "./requestBlocker.js";
 
+const disabledFilterCounters = new WeakMap();
+
 function convertObject(keys, obj)
 {
   let result = {};
@@ -91,6 +93,7 @@ let listenedStats = new Set();
 let messageTypes = new Map([
   ["app", "app.respond"],
   ["filter", "filters.respond"],
+  ["filterState", "filterState.respond"],
   ["pref", "prefs.respond"],
   ["requests", "requests.respond"],
   ["subscription", "subscriptions.respond"],
@@ -182,9 +185,9 @@ function addFilterListeners(type, actions)
     if (!listenedFilterChanges.has(name))
     {
       listenedFilterChanges.add(name);
-      filterNotifier.on(name, item =>
+      filterNotifier.on(name, (...args) =>
       {
-        sendMessage(type, action, item);
+        sendMessage(type, action, ...args);
       });
     }
   }
@@ -464,6 +467,24 @@ port.on("subscriptions.add", async(message, sender) =>
 });
 
 /**
+ * Enables all filters from the given subscription.
+ *
+ * @event "subscriptions.enableAllFilters"
+ * @property {string} url
+ *   The subscription's URL.
+ */
+port.on("subscriptions.enableAllFilters", (message, sender) =>
+{
+  const subscription = Subscription.fromURL(message.url);
+
+  if (!subscription)
+    return;
+
+  for (const filterText of subscription.filterText())
+    filterState.setEnabled(filterText, true);
+});
+
+/**
  * Returns a serialised version of all the subscriptions which meet the given
  * criteria. Optionally include the disabled filters for those subscriptions.
  *
@@ -501,6 +522,17 @@ port.on("subscriptions.get", (message, sender) =>
     subscriptions.push(subscription);
   }
   return subscriptions;
+});
+
+/**
+ * Returns the amount of disabled filters contained in a subscription.
+ *
+ * @event "subscriptions.getDisabledFilterCount"
+ * @property {string} url - The subscription's URL.
+ */
+port.on("subscriptions.getDisabledFilterCount", (message, sender) =>
+{
+  return disabledFilterCounters.get(Subscription.fromURL(message.url)) || 0;
 });
 
 /**
@@ -646,6 +678,58 @@ function filtersRemove(message)
   return [];
 }
 
+function initDisabledFilterCounters()
+{
+  for (const subscription of filterStorage.subscriptions())
+  {
+    let count = 0;
+
+    for (const filterText of subscription.filterText())
+    {
+      if (!filterState.isEnabled(filterText))
+        count++;
+    }
+
+    if (count > 0)
+    {
+      disabledFilterCounters.set(subscription, count);
+      // Core doesn't expose the subscription's disabled filters state
+      // and to avoid adding new "loaded" events and behavior around it,
+      // we emit a "filtersDisabled" event to trigger UI changes
+      filterNotifier.emit(
+        "subscription.filtersDisabled",
+        subscription,
+        true,
+        true
+      );
+    }
+  }
+}
+
+function updateCounters(filterText, enabled)
+{
+  for (const subscription of filterStorage.subscriptions(filterText))
+  {
+    const oldCount = disabledFilterCounters.get(subscription) || 0;
+    const newCount = (enabled) ? oldCount - 1 : oldCount + 1;
+
+    if (newCount === 0)
+      disabledFilterCounters.delete(subscription);
+    else
+      disabledFilterCounters.set(subscription, newCount);
+
+    if (oldCount === 0 || newCount === 0)
+    {
+      filterNotifier.emit(
+        "subscription.filtersDisabled",
+        subscription,
+        newCount > 0,
+        oldCount > 0
+      );
+    }
+  }
+}
+
 function listen(type, filters, newFilter, message, senderTabId)
 {
   switch (type)
@@ -656,6 +740,10 @@ function listen(type, filters, newFilter, message, senderTabId)
     case "filters":
       filters.set("filter", newFilter);
       addFilterListeners("filter", newFilter);
+      break;
+    case "filterState":
+      filters.set("filterState", newFilter);
+      addFilterListeners("filterState", newFilter);
       break;
     case "prefs":
       filters.set("pref", newFilter);
@@ -723,4 +811,13 @@ function onConnect(uiPort)
   });
 }
 
+filterNotifier.on("filterState.enabled", (filterText, enabled) =>
+{
+  updateCounters(filterText, enabled);
+});
+filterNotifier.on("ready", () => initDisabledFilterCounters());
+filterNotifier.on("subscription.removed", subscription =>
+{
+  disabledFilterCounters.delete(subscription);
+});
 browser.runtime.onConnect.addListener(onConnect);

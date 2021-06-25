@@ -18,6 +18,7 @@
 "use strict";
 
 const {params} = require("../config/env");
+const {filterState} = require("./filter-state");
 
 class Filter
 {
@@ -50,6 +51,14 @@ class ActiveFilter extends Filter
   {
     super(text);
     this.disabled = false;
+  }
+  get disabled()
+  {
+    return !filterState.isEnabled(this.text);
+  }
+  set disabled(value)
+  {
+    filterState.setEnabled(this.text, !value);
   }
 }
 

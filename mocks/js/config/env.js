@@ -56,6 +56,7 @@ const params = {
   composerActive: true,
   dataCorrupted: false,
   downloadStatus: "synchronize_ok",
+  filtersDisabled: false,
   filterError: null,
   filterOption: null,
   notification: null,

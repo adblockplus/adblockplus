@@ -50,7 +50,7 @@ let languages = {};
 const collections = Object.create(null);
 const {getMessage} = browser.i18n;
 const customFilters = [];
-const filterErrors = new Map([
+const syncErrorIds = new Map([
   ["synchronize_invalid_url",
    "options_filterList_lastDownload_invalidURL"],
   ["synchronize_connection_error",
@@ -60,6 +60,8 @@ const filterErrors = new Map([
   ["synchronize_checksum_mismatch",
    "options_filterList_lastDownload_checksumMismatch"]
 ]);
+const filtersDisabledErrorId = "options_filterList_filtersDisabled";
+const subscriptionErrorIds = new Map();
 const timestampUI = Symbol();
 const allowlistedDomainRegexp = /^@@\|\|([^/:]+)\^\$document$/;
 const allowlistedPageRegexp = /^@@\|([^?|]+(?:\?[^|]*)?)\|?\$document$/;
@@ -241,15 +243,15 @@ Collection.prototype.removeItem = function(item)
 Collection.prototype.updateItem = function(item)
 {
   const oldIndex = this.items.indexOf(item);
+  if (oldIndex === -1)
+    return;
+
   this._sortItems();
   const access = (item.url || item.text).replace(/'/g, "\\'");
   for (let i = 0; i < this.details.length; i++)
   {
     const table = $(`#${this.details[i].id}`);
     const element = $(`[data-access="${access}"]`, table);
-    if (!element)
-      continue;
-
     const title = this._getItemTitle(item, i);
     const displays = $$("[data-display]", element);
     for (let j = 0; j < displays.length; j++)
@@ -294,38 +296,34 @@ Collection.prototype.updateItem = function(item)
     const lastUpdateElement = $(".last-update", element);
     if (lastUpdateElement)
     {
-      const message = $(".message", element);
-      message.classList.remove("error");
+      element.classList.remove("show-message");
+      cleanSyncErrorIdsFromSubscription(item.url);
       if (item.downloading)
       {
         const text = getMessage("options_filterList_lastDownload_inProgress");
-        message.textContent = text;
+        $(".message", element).textContent = text;
         element.classList.add("show-message");
       }
       else if (item.downloadStatus != "synchronize_ok")
       {
-        let errorId = null;
         // Core doesn't tell us why the URL is invalid so we have to check
         // ourselves whether the filter list is using a supported protocol
         // https://gitlab.com/eyeo/adblockplus/adblockpluscore/blob/d3f6b1b7e3880eab6356b132493a4a947c87d33f/lib/downloader.js#L270
         if (item.downloadStatus === "synchronize_invalid_url" &&
             !ALLOWED_PROTOCOLS.test(item.url))
         {
-          errorId = "options_filterList_lastDownload_invalidURLProtocol";
+          addErrorIdToSubscription(
+            item.url,
+            "options_filterList_lastDownload_invalidURLProtocol"
+          );
         }
         else
         {
-          errorId = filterErrors.get(item.downloadStatus);
+          const errorId = syncErrorIds.get(item.downloadStatus) ||
+                          item.downloadStatus;
+          if (errorId)
+            addErrorIdToSubscription(item.url, errorId);
         }
-
-        if (errorId)
-        {
-          message.classList.add("error");
-          message.textContent = getMessage(errorId);
-        }
-        else
-          message.textContent = item.downloadStatus;
-        element.classList.add("show-message");
       }
       else if (item.lastDownload > 0)
       {
@@ -354,8 +352,9 @@ Collection.prototype.updateItem = function(item)
           lastUpdateElement.textContent =
             getMessage("options_filterList_now");
         }
-        element.classList.remove("show-message");
       }
+
+      updateErrorTooltip(element, subscriptionErrorIds.get(item.url));
     }
 
     const websiteElement = $("io-popout .website", element);
@@ -776,6 +775,14 @@ function execAction(action, element)
       return true;
     case "switch-tab":
       switchTab(element.getAttribute("href").substr(1));
+      return true;
+    case "enable-filters":
+      const url = findParentData(element, "access", false);
+      const subscription = subscriptionsMap[url];
+      browser.runtime.sendMessage({
+        type: "subscriptions.enableAllFilters",
+        url
+      }).then(() => updateSubscription(subscription));
       return true;
     case "toggle-disable-subscription":
       browser.runtime.sendMessage({
@@ -1433,6 +1440,71 @@ function addEnableSubscription(url, title, homepage)
   browser.runtime.sendMessage(message);
 }
 
+function cleanSyncErrorIdsFromSubscription(url)
+{
+  for (const syncErrorId of syncErrorIds.values())
+  {
+    removeErrorIdFromSubscription(url, syncErrorId);
+  }
+}
+
+function addErrorIdToSubscription(url, errorId)
+{
+  let errorIds = subscriptionErrorIds.get(url);
+
+  if (!errorIds)
+  {
+    errorIds = new Set();
+    subscriptionErrorIds.set(url, errorIds);
+  }
+
+  errorIds.add(errorId);
+}
+
+function removeErrorIdFromSubscription(url, errorId)
+{
+  const errorIds = subscriptionErrorIds.get(url);
+
+  if (!errorIds)
+    return;
+
+  errorIds.delete(errorId);
+
+  if (errorIds.size === 0)
+    subscriptionErrorIds.delete(url);
+}
+
+function updateErrorTooltip(element, errorIds)
+{
+  const errorTooltip = $("io-popout[anchor-icon='error']", element);
+  const errorList = $(".error-list", errorTooltip);
+  errorList.innerHTML = "";
+
+  if (!errorIds || element.classList.contains("show-message"))
+  {
+    element.classList.remove("error");
+    return;
+  }
+
+  for (const errorId of errorIds)
+  {
+    const listItem = document.createElement("li");
+    listItem.textContent = getMessage(errorId) || errorId;
+    if (errorId === filtersDisabledErrorId)
+    {
+      const enableFiltersButton = document.createElement("a");
+      enableFiltersButton.textContent = getMessage(
+        "options_filterList_enableFilters"
+      );
+      enableFiltersButton.setAttribute("data-action", "enable-filters");
+      listItem.appendChild(enableFiltersButton);
+    }
+    errorList.appendChild(listItem);
+  }
+
+  element.classList.add("error");
+}
+
 function onFilterMessage(action, filter)
 {
   switch (action)
@@ -1457,7 +1529,7 @@ function onFilterMessage(action, filter)
   }
 }
 
-function onSubscriptionMessage(action, subscription)
+function onSubscriptionMessage(action, subscription, ...args)
 {
   // Ensure that recommendations have already been loaded so that we can
   // identify and handle recommended filter lists accordingly (see #6838)
@@ -1489,6 +1561,19 @@ function onSubscriptionMessage(action, subscription)
       case "title":
         updateSubscription(subscription);
         break;
+      case "filtersDisabled":
+        const filtersDisabled = args[0];
+        if (filtersDisabled)
+          addErrorIdToSubscription(subscription.url, filtersDisabledErrorId);
+        else
+        {
+          removeErrorIdFromSubscription(
+            subscription.url,
+            filtersDisabledErrorId
+          );
+        }
+        updateSubscription(subscription);
+        break;
       case "added":
         const {url} = subscription;
         // Handle custom subscription
@@ -1505,8 +1590,16 @@ function onSubscriptionMessage(action, subscription)
         if (isAcceptableAds(url))
           setAcceptableAds();
 
-        collections.filterLists.addItem(subscription);
-        setPrivacyConflict();
+        browser.runtime.sendMessage({
+          type: "subscriptions.getDisabledFilterCount",
+          url: subscription.url
+        }).then(disabledFilterCount =>
+        {
+          if (disabledFilterCount > 0)
+            addErrorIdToSubscription(subscription.url, filtersDisabledErrorId);
+          collections.filterLists.addItem(subscription);
+          setPrivacyConflict();
+        });
         break;
       case "removed":
         if (subscription.recommended)
@@ -1527,6 +1620,7 @@ function onSubscriptionMessage(action, subscription)
           }
         }
 
+        subscriptionErrorIds.delete(subscription.url);
         collections.filterLists.removeItem(subscription);
         setPrivacyConflict();
         break;
@@ -1630,7 +1724,7 @@ port.onMessage.addListener((message) =>
       onPrefMessage(message.action, message.args[0], false);
       break;
     case "subscriptions.respond":
-      onSubscriptionMessage(message.action, message.args[0]);
+      onSubscriptionMessage(message.action, ...message.args);
       setupFiltersBox();
       break;
   }
@@ -1658,8 +1752,8 @@ port.postMessage({
 });
 port.postMessage({
   type: "subscriptions.listen",
-  filter: ["added", "disabled", "homepage", "lastDownload", "removed",
-           "title", "downloadStatus", "downloading"]
+  filter: ["added", "disabled", "filtersDisabled", "homepage", "lastDownload",
+           "removed", "title", "downloadStatus", "downloading"]
 });
 
 onDOMLoaded();

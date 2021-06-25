@@ -263,7 +263,7 @@ module.exports = class DrawingHandler
           left: closeCoords.x + "px"
         }}"
       >
-        <img src="/skin/icons/delete.svg" />
+        <img src="/skin/icons/close.svg" />
       </span>`);
   }
 
