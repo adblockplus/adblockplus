@@ -20,6 +20,7 @@
 const filterClasses = require("./filter-classes");
 require("./filter-composer");
 const filterNotifier = require("./filter-notifier");
+const filterState = require("./filter-state");
 const filterStorage = require("./filter-storage");
 const hitLogger = require("./hit-logger");
 const info = require("./info");
@@ -41,6 +42,7 @@ require("./allowlisting");
 const modules = {
   filterClasses,
   filterNotifier,
+  filterState,
   filterStorage,
   hitLogger,
   info,

@@ -447,32 +447,32 @@ button[role="checkbox"][disabled].icon.toggle::before
 
 .icon.close.primary::before
 {
-  background-image: url(icons/delete.svg?primary#primary);
+  background-image: url(icons/close.svg?primary#primary);
 }
 
 .icon.close.primary:hover::before
 {
-  background-image: url(icons/delete.svg?primary-hover#primary-hover);
+  background-image: url(icons/close.svg?primary-hover#primary-hover);
 }
 
 .icon.close.secondary::before
 {
-  background-image: url(icons/delete.svg?secondary#secondary);
+  background-image: url(icons/close.svg?secondary#secondary);
 }
 
 .icon.close.tertiary::before
 {
-  background-image: url(icons/delete.svg?tertiary#tertiary);
+  background-image: url(icons/close.svg?tertiary#tertiary);
 }
 
 .icon.close.secondary:hover::before
 {
-  background-image: url(icons/delete.svg?secondary-hover#secondary-hover);
+  background-image: url(icons/close.svg?secondary-hover#secondary-hover);
 }
 
 .icon.close.tertiary:hover::before
 {
-  background-image: url(icons/delete.svg?tertiary-hover#tertiary-hover);
+  background-image: url(icons/close.svg?tertiary-hover#tertiary-hover);
 }
 
 #dialog .table.list li button.icon::before
@@ -1219,7 +1219,6 @@ ul.list
 .table .col5:nth-of-type(3)
 {
   flex: 4;
-  text-align: center;
 }
 
 .th .col5:nth-of-type(4),
@@ -1256,6 +1255,12 @@ html[dir="rtl"] .table .col5:nth-of-type(5)
 .table.cols li
 {
   padding: 0.5rem 0rem;
+}
+
+.table.cols li.error .col5:nth-of-type(2)
+{
+  color: var(--color-error);
+  font-style: italic;
 }
 
 .table.cols .toggle
@@ -1447,6 +1452,8 @@ html[dir="rtl"] #update-all-subscriptions
 
 #all-filter-lists-table li.show-message .last-update,
 #all-filter-lists-table li:not(.show-message) .message,
+#all-filter-lists-table li.error .last-update,
+#all-filter-lists-table li:not(.error) io-popout[appearance="error"],
 #acceptable-ads:not(.show-dnt-notification) #dnt
 {
   display: none;

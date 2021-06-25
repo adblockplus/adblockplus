@@ -30,8 +30,8 @@ const {utils, wire} = IOElement;
 const prevFilterText = new WeakMap();
 
 port.postMessage({
-  type: "filters.listen",
-  filter: ["disabled"]
+  type: "filterState.listen",
+  filter: ["enabled"]
 });
 
 // <io-filter-list disabled />.{filters = [...]}
@@ -586,14 +586,20 @@ function setupPort()
 {
   port.onMessage.addListener((message) =>
   {
-    if (message.type === "filters.respond" && message.action === "disabled")
+    if (message.type === "filterState.respond" && message.action === "enabled")
     {
-      const {text, disabled} = message.args[0];
+      const [text, enabled] = message.args;
       const filter = this.filters.find(f => f.text === text);
-      if (filter && disabled !== filter.disabled)
+
+      if (!filter)
+        return;
+
+      const shownEnabled = !filter.disabled;
+
+      if (enabled !== shownEnabled)
       {
         filter.reason = {type: "filter_disabled"};
-        filter.disabled = disabled;
+        filter.disabled = !enabled;
       }
       this.render();
     }

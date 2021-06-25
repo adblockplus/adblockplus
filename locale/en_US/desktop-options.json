@@ -339,12 +339,16 @@
     "description": "Custom filter widget title in Advanced tab",
     "message": "My filter list"
   },
+  "options_filterList_errorPopup_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/820a59c30a895f361f88bae52c1fe5c2cd565222/spec/abp/desktop-settings/advanced-tab.md#filter-list-error-popup",
+    "message": "There are one or more issues with this filter list:"
+  },
   "options_filterList_lastDownload_invalidURL": {
     "description": "Error message in advanced tab",
     "message": "Not a valid address. Check the URL."
   },
   "options_filterList_lastDownload_invalidURLProtocol": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#filter-list-error-statuses",
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/820a59c30a895f361f88bae52c1fe5c2cd565222/spec/abp/desktop-settings/advanced-tab.md#filter-list-error-statuses",
     "message": "Download failed. URL must start with $protocol$.",
     "placeholders": {
       "protocol": {
@@ -353,8 +357,8 @@
     }
   },
   "options_filterList_lastDownload_connectionError": {
-    "description": "Error message in advanced tab",
-    "message": "Download failure"
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/13b453dfc28055f240cb228d9f44021aa45b747c/spec/abp/desktop-settings/advanced-tab.md#filter-list-error-statuses",
+    "message": "Filter list has failed to download."
   },
   "options_filterList_lastDownload_invalidData": {
     "description": "Error message in advanced tab",
@@ -367,6 +371,14 @@
   "options_filterList_lastDownload_inProgress": {
     "description": "Progress message in advanced tab",
     "message": "Updating"
+  },
+  "options_filterList_filtersDisabled": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/820a59c30a895f361f88bae52c1fe5c2cd565222/spec/abp/desktop-settings/advanced-tab.md#filter-list-error-statuses",
+    "message": "Some filters in this filter list are disabled."
+  },
+  "options_filterList_enableFilters": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/820a59c30a895f361f88bae52c1fe5c2cd565222/spec/abp/desktop-settings/advanced-tab.md#filter-list-error-statuses",
+    "message": "Enable them"
   },
   "options_filterList_updateNow": {
     "description": "Context menu item in advanced tab, appears after click on subscription",
