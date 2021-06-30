@@ -20,6 +20,7 @@
 const {$} = require("../dom");
 const {initI18n} = require("../i18n");
 require("../io-circle-toggle.js");
+require("../io-popup-footer");
 
 initI18n();
 
@@ -33,6 +34,8 @@ function onResize()
 
 $("#stats-page .amount").textContent = (18).toLocaleString();
 $("#stats-total .amount").textContent = (21412).toLocaleString();
+
+setupFooter();
 
 if ("IntersectionObserver" in window)
 {
@@ -51,4 +54,19 @@ else
   // at this point so we're telling the embedding page that it's now safe
   // to resize the frame
   window.addEventListener("load", onResize);
+}
+
+function setupFooter()
+{
+  const footer = document.querySelector("io-popup-footer");
+
+  fetch("data/popup-footer.json")
+    .then((res) => res.json())
+    .then((messages) =>
+    {
+      footer.setState({
+        messages,
+        current: 0
+      });
+    });
 }

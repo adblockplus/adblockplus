@@ -31,7 +31,7 @@
       <img src="skin/icons/logo/abp-full.svg" alt="">
       <button id="options" data-i18n="options_short"></button>
     </header>
-    <div id="notification" aria-hidden="true"></div>
+    <div id="notification" hidden></div>
     <main>
       <div id="idle-status">
         <img src="skin/icons/idle.svg" alt="">
@@ -125,9 +125,7 @@
       </div>
     </main>
     <footer>
-      <span data-i18n="promote_abp_module"></span>
-      <button class="store apple"></button>
-      <button class="store android"></button>
+      <io-popup-footer></io-popup-footer>
     </footer>
   </body>
 </html>
