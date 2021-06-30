@@ -23,11 +23,11 @@ async function waitForExtension()
 {
   const driver = await initDriver();
   let origin;
-  await driver.wait(async() =>
+  await driver.waitUntil(async() =>
   {
-    for (const handle of await driver.getAllWindowHandles())
+    for (const handle of await driver.getWindowHandles())
     {
-      await driver.switchTo().window(handle);
+      await driver.switchToWindow(handle);
       origin = await driver.executeAsyncScript(`
         let callback = arguments[arguments.length - 1];
         (async() =>
@@ -42,12 +42,12 @@ async function waitForExtension()
             }
           }
           callback(null);
-        })();`);
+        })();`, []);
       if (origin)
         return true;
     }
     return false;
-  }, 5000, "options page not found");
+  }, {timeout: 5000}, "options page not found");
 
   return [driver, origin];
 }
