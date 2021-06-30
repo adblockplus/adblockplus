@@ -1,0 +1,79 @@
+[
+  {
+    "i18n": "footer_mobile_description",
+    "order": 0,
+    "buttons": [
+      {
+        "action": "open-doclink",
+        "doclink": "adblock_browser_ios_store",
+        "image": {"url": "skin/icons/apple.svg", "i18nAlt": "browser_store_ios"}
+      },
+      {
+        "action": "open-doclink",
+        "doclink": "adblock_browser_android_store",
+        "image": {
+          "url": "skin/icons/android.svg",
+          "i18nAlt": "browser_store_android"
+        }
+      }
+    ],
+    "exceptions": {
+      "application": ["edge"]
+    }
+  },
+  {
+    "i18n": "footer_donate_description",
+    "order": 1,
+    "buttons": [
+      {
+        "action": "open-doclink",
+        "doclink": "donate",
+        "i18n": "footer_donate_button"
+      }
+    ]
+  },
+  {
+    "i18n": "footer_rate_description",
+    "order": 2,
+    "buttons": [
+      {
+        "action": "open-doclink",
+        "doclink": "%store%_review",
+        "i18n": "footer_rate_button"
+      }
+    ]
+  },
+  {
+    "i18n": "footer_social_description",
+    "order": 3,
+    "buttons": [
+      {
+        "action": "open-doclink",
+        "doclink": "social_facebook",
+        "image": {
+          "url": "skin/icons/share-on-facebook.svg",
+          "i18nAlt": "connect_on_facebook"
+        }
+      },
+      {
+        "action": "open-doclink",
+        "doclink": "social_twitter",
+        "image": {
+          "url": "skin/icons/share-on-twitter.svg",
+          "i18nAlt": "connect_on_twitter"
+        }
+      }
+    ]
+  },
+  {
+    "i18n": "footer_get_help_description",
+    "order": 4,
+    "buttons": [
+      {
+        "action": "open-doclink",
+        "doclink": "help_center",
+        "i18n": "footer_get_help_button"
+      }
+    ]
+  }
+]

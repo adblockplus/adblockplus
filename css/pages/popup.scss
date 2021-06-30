@@ -17,6 +17,7 @@
 
 @import "../light.scss";
 @import "../io-circle-toggle.scss";
+@import "../io-popup-footer.scss";
 
 :root
 {
@@ -32,8 +33,7 @@
   box-sizing: border-box;
 }
 
-[hidden],
-[aria-hidden="true"]
+[hidden]
 {
   display: none !important;
 }
@@ -62,12 +62,6 @@ h2
   https://issues.adblockplus.org/ticket/7175
  */
 html[data-platform="edgehtml"] #issue-reporter,
-/*
-  explicitly hide footer in Edge (no matter which engine)
-  due MS Store restrictions
-  https://issues.adblockplus.org/ticket/7193
- */
-html[data-application="edge"] footer,
 /* Block element feature can only be used for HTML documents */
 body.nohtml #block-element,
 /* Block element feature can only be used if ad blocking is enabled */
@@ -126,10 +120,31 @@ button[disabled]
   cursor: default;
 }
 
+a:focus,
+button:focus
+{
+  outline: var(--primary-outline);
+  animation: 0.3s ease-out 0s 1 outline-in;
+}
+
+#page-info .options button,
+io-popup-footer a:not(.icon)
+{
+  outline: none;
+  animation: none;
+}
+
+@keyframes outline-in
+{
+  from
+  {
+    outline-color: transparent;
+  }
+}
+
 header,
 #notification,
-main > *,
-footer
+main > *
 {
   padding: var(--padding-primary);
 }
@@ -140,8 +155,7 @@ footer
 }
 
 header,
-#page-status > div:not(.refresh-info),
-footer
+#page-status > div:not(.refresh-info)
 {
   display: flex;
   flex-direction: row;
@@ -282,7 +296,8 @@ html[dir="rtl"] #notification .content h3
   flex-shrink: 0;
 }
 
-#options:hover
+#options:hover,
+#options:focus
 {
   opacity: 1;
 }
@@ -517,7 +532,7 @@ main .options button
   color: var(--color-link);
 }
 
-body:not(.private) #block-element,
+body:not(.private) #block-element
 {
   margin-bottom: var(--margin-secondary);
 }
@@ -526,7 +541,6 @@ body:not(.private) #block-element,
 #block-element:focus
 {
   border-color: var(--color-link);
-  outline: none;
 }
 
 #block-element > *
@@ -588,7 +602,6 @@ html[dir="rtl"] #block-element-info strong::before
 #block-element-cancel:focus
 {
   border-color: var(--border-color-outline);
-  outline: none;
 }
 
 #issue-reporter > span
@@ -658,38 +671,6 @@ footer
 {
   display: block;
   margin-bottom: var(--margin-primary-half);
-}
-
-footer > span
-{
-  flex-grow: 1;
-}
-
-footer > button
-{
-  width: var(--font-size-primary);
-  margin-right: var(--margin-primary-half);
-  margin-left: var(--margin-primary-half);
-  opacity: 0.5;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  transition: opacity 0.1s ease-in;
-}
-
-footer > button:hover
-{
-  opacity: 1;
-}
-
-footer > button.apple
-{
-  background-image: url(icons/apple.svg);
-}
-
-footer > button.android
-{
-  background-image: url(icons/android.svg);
 }
 
 #counter-panel
@@ -771,7 +752,7 @@ html[dir="rtl"] #stats-page::after
 {
   position: absolute;
   align-items: center;
-  width: 100%;
+  width: calc(100% - 2 * var(--padding));
   height: calc(100% - 3 * var(--padding));
 }
 
@@ -785,6 +766,16 @@ html[dir="rtl"] #stats-page::after
 #counter-panel .links .link a
 {
   width: 20px;
+  opacity: 0.5;
+  transition-property: transform, opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+
+#counter-panel .links .link a:hover,
+#counter-panel .links .link a:focus
+{
+  opacity: 1;
 }
 
 #counter-panel .links .link a img
@@ -833,17 +824,17 @@ html[dir="rtl"] #counter-panel .links .link + .link
 
 #counter-panel .share a.facebook
 {
-  transition: transform 0.3s ease-out 0.3s;
+  transition-delay: 0.3s, 0s;
 }
 
 #counter-panel .share a.twitter
 {
-  transition: transform 0.3s ease-out 0.5s;
+  transition-delay: 0.5s, 0s;
 }
 
 #counter-panel .share a.weibo
 {
-  transition: transform 0.3s ease-out 0.7s;
+  transition-delay: 0.7s, 0s;
 }
 
 #counter-panel .share .enter,
@@ -853,31 +844,9 @@ html[dir="rtl"] #counter-panel .links .link + .link
   color: var(--color-link);
 }
 
-#counter-panel .share .enter:focus,
-#counter-panel .links a:focus,
-#counter-panel .links button:focus
-{
-  outline: var(--primary-outline);
-  animation: 0.3s ease-out 0s 1 outline-in;
-}
-
 #counter-panel .share .enter > *
 {
   vertical-align: middle;
-}
-
-
-@keyframes outline-in
-{
-  from
-  {
-    outline: transparent dotted 1px;
-  }
-
-  to
-  {
-    outline: var(--primary-outline);
-  }
 }
 
 html:not([lang^="zh"]) #counter-panel .links .link:last-of-type

@@ -39,10 +39,6 @@
     "description": "https://gitlab.com/eyeo/specs/spec/blob/5a876713adebe79842be51ad6e287b1c675e023a/spec/abp/popup.md#notifications",
     "message": "Stop showing notifications"
   },
-  "promote_abp_module": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#index",
-    "message": "Interested in Adblock Plus on mobile?"
-  },
   "refresh_this_page": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/6f8028d692da33978069972d90417dcd10957f2b/spec/abp/bubble-ui.md#refresh",
     "message": "Refresh this page"
@@ -100,5 +96,53 @@
   "sendReport": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/5a876713adebe79842be51ad6e287b1c675e023a/spec/abp/popup.md#block-element-and-report-issue",
     "message": "Report an issue on this page"
+  },
+  "footer_mobile_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/588556f9ca89668a018aa7db00252747ba789b07/spec/abp/popup.md#footer-teaser",
+    "message": "Interested in ABP on mobile?"
+  },
+  "footer_donate_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/588556f9ca89668a018aa7db00252747ba789b07/spec/abp/popup.md#footer-teaser",
+    "message": "Want to support ABP?"
+  },
+  "footer_donate_button": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/588556f9ca89668a018aa7db00252747ba789b07/spec/abp/popup.md#footer-teaser",
+    "message": "Donate"
+  },
+  "footer_rate_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/588556f9ca89668a018aa7db00252747ba789b07/spec/abp/popup.md#footer-teaser",
+    "message": "Enjoying the extension?"
+  },
+  "footer_rate_button": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/588556f9ca89668a018aa7db00252747ba789b07/spec/abp/popup.md#footer-teaser",
+    "message": "Rate ABP"
+  },
+  "footer_social_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/588556f9ca89668a018aa7db00252747ba789b07/spec/abp/popup.md#footer-teaser",
+    "message": "Stay connected with us!"
+  },
+  "footer_get_help_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/588556f9ca89668a018aa7db00252747ba789b07/spec/abp/popup.md#footer-teaser",
+    "message": "Having trouble using ABP?"
+  },
+  "footer_get_help_button": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/588556f9ca89668a018aa7db00252747ba789b07/spec/abp/popup.md#footer-teaser",
+    "message": "Get Help"
+  },
+  "browser_store_android": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/588556f9ca89668a018aa7db00252747ba789b07/spec/abp/popup.md#footer-teaser",
+    "message": "Android app on Google Play"
+  },
+  "browser_store_ios": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/588556f9ca89668a018aa7db00252747ba789b07/spec/abp/popup.md#footer-teaser",
+    "message": "Available on the iTunes App Store"
+  },
+  "connect_on_twitter": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/588556f9ca89668a018aa7db00252747ba789b07/spec/abp/popup.md#footer-teaser",
+    "message": "Connect on Twitter"
+  },
+  "connect_on_facebook": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/588556f9ca89668a018aa7db00252747ba789b07/spec/abp/popup.md#footer-teaser",
+    "message": "Connect on Facebook"
   }
 }

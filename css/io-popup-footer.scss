@@ -1,0 +1,214 @@
+/*
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-present eyeo GmbH
+ *
+ * Adblock Plus is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Adblock Plus is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+io-popup-footer
+{
+  --footer-height: calc(50px - var(--border-width-thin));
+  --tabs-height: 8px;
+  --panels-height: calc(var(--footer-height) - var(--tabs-height));
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: var(--footer-height);
+}
+
+io-popup-footer ul
+{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+io-popup-footer a
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease-out;
+}
+
+io-popup-footer a:not(.icon)
+{
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+io-popup-footer a:not(.icon):hover,
+io-popup-footer a:not(.icon):focus
+{
+  border-color: var(--border-color-ternary);
+  background-color: var(--background-color-ternary);
+}
+
+io-popup-footer a.icon
+{
+  margin: 0 var(--margin-secondary);
+  width: var(--font-size-primary);
+  opacity: 0.5;
+}
+
+io-popup-footer a.icon:hover,
+io-popup-footer a.icon:focus
+{
+  opacity: 1;
+}
+
+io-popup-footer a.icon img
+{
+  pointer-events: none;
+}
+
+io-popup-footer .panels
+{
+  overflow: hidden;
+  position: relative;
+  height: var(--panels-height);
+}
+
+io-popup-footer .panels > li
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  height: var(--panels-height);
+  padding: 0 var(--padding-primary);
+  opacity: 0;
+  transform: translateY(calc(-1 * var(--panels-height)));
+  transition: transform 0.3s ease;
+}
+
+io-popup-footer .panels > [aria-hidden="false"]
+{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+io-popup-footer [role="tabpanel"] > .message
+{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+io-popup-footer [role="tabpanel"] > .buttons
+{
+  display: flex;
+}
+
+io-popup-footer .tabs
+{
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+io-popup-footer .tabs > li
+{
+  flex: 1;
+  padding: 0 1px;
+}
+
+io-popup-footer .tabs button
+{
+  position: relative;
+  height: var(--tabs-height);
+  width: 100%;
+  padding: 0;
+}
+
+/*
+ * ::before styles the width-fixed visible area of the tab
+ * ::after styles the progress bar area of the tab
+ */
+io-popup-footer .tabs button::before,
+io-popup-footer .tabs button::after
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50%;
+  background-color: var(--color-info);
+  opacity: 0.3;
+  content: "";
+  transition: all 0.3s ease-in;
+}
+
+io-popup-footer .tabs button[aria-selected="true"]::before,
+io-popup-footer .tabs button:hover::before,
+io-popup-footer .tabs button:focus::before,
+io-popup-footer .tabs button[aria-selected="true"]::after
+{
+  height: 100%;
+}
+
+io-popup-footer .tabs:not(.animated) button[aria-selected="true"]::before
+{
+  opacity: 0.5;
+}
+
+io-popup-footer .tabs button::after
+{
+  right: 100%;
+  height: 50%;
+  opacity: 0.5;
+  --animation-name: progress-bar
+}
+
+html[dir="rtl"] io-popup-footer .tabs button::after
+{
+  right: 0%;
+  left: 100%;
+  --animation-name: progress-bar-rtl
+}
+
+io-popup-footer .tabs.animated button[aria-selected="true"]::after
+{
+  animation: var(--animation-name) var(--animation-duration) linear 0s;
+}
+
+@keyframes progress-bar
+{
+  from
+  {
+    right: 100%;
+  }
+
+  to
+  {
+    right: 0;
+  }
+}
+
+@keyframes progress-bar-rtl
+{
+  from
+  {
+    left: 100%;
+  }
+
+  to
+  {
+    left: 0;
+  }
+}

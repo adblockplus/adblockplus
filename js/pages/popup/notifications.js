@@ -74,7 +74,7 @@ window.addEventListener(
     const container = $("#notification");
     container.innerHTML = "";
     container.appendChild(notifier);
-    container.setAttribute("aria-hidden", false);
+    container.removeAttribute("hidden");
 
     const messageElement = $("#notification-message", notifier);
     insertMessage(
@@ -113,7 +113,7 @@ window.addEventListener(
       const el = evt.currentTarget;
       if (el.dataset.pref)
         setPref(el.dataset.pref, true);
-      container.setAttribute("aria-hidden", true);
+      container.setAttribute("hidden", "");
       notifier.parentNode.removeChild(notifier);
       browser.runtime.sendMessage({
         type: "notifications.clicked",

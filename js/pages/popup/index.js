@@ -25,36 +25,30 @@ const setupBlock = require("./block-element.js");
 require("./notifications.js");
 const {createShareLink} = require("./social-media-share.js");
 const setupToggles = require("./toggles.js");
+require("../../io-popup-footer.js");
 const {
   activeTab,
-  getDoclinks,
   reportIssue,
   whenPageReady
 } = require("./utils.js");
 
 initI18n();
 
-// platform and application dataset bootstrap
-Promise.all([
-  // one is used to hide the Issue Reporter due EdgeHTML bug
-  // the Issue Reporter should work once MSEdge ships with Chromium instead
-  browser.runtime.sendMessage({
-    type: "app.get",
-    what: "platform"
-  }),
-  // one is used to hide all Edge specific things (i.e. 3rd parts links)
-  browser.runtime.sendMessage({
-    type: "app.get",
-    what: "application"
-  })
-]).then(([platform, application]) =>
+// info (platform, application and store) dataset bootstrap
+//
+// "platform" is used to hide the Issue Reporter due EdgeHTML bug
+// the Issue Reporter should work once MSEdge ships with Chromium instead
+//
+// "application" is used to hide all Edge specific things (i.e. 3rd parts links)
+//
+// "store" is used to specify the extension rating redirect link
+api.app.getInfo().then(info =>
 {
   // this won't ever change during ABP lifecycle, which is why
   // it's set ASAP as data-platform attribute, on the most top element,
   // instead of being one of the body classes
   const {dataset} = document.documentElement;
-  dataset.platform = platform;
-  dataset.application = application;
+  ["platform", "application", "store"].forEach(key => dataset[key] = info[key]);
 });
 
 activeTab.then(tab =>
@@ -117,39 +111,6 @@ activeTab.then(tab =>
   setupShare();
   setupFooter();
 });
-
-function setupFooter()
-{
-  // order matters and reflected later on
-  // by selecting apple first and android after
-  getDoclinks({links: [
-    "adblock_browser_ios_store",
-    "adblock_browser_android_store"
-  ]}).then(links =>
-  {
-    // using forEach instead of for/of due its handy index
-    // NodeList.prototype.forEach is available since Chrome 51
-    const forEach = Array.prototype.forEach;
-    forEach.call($$("footer .apple, footer .android"), (button, i) =>
-    {
-      button.dataset.link = links[i];
-      button.addEventListener("click", gotoMobile);
-    });
-  });
-}
-
-function gotoMobile(event)
-{
-  event.preventDefault();
-  event.stopPropagation();
-  browser.tabs
-    .create({url: event.currentTarget.dataset.link})
-    .then(
-      // force closing popup which is not happening in Firefox
-      // @link https://issues.adblockplus.org/ticket/7017
-      () => window.close()
-    );
-}
 
 function updateBlockedPerPage(blockedPage)
 {
@@ -253,4 +214,41 @@ function setupShare()
     event.preventDefault();
     wrapper.classList.remove("expanded");
   });
+}
+
+function setupFooter()
+{
+  const footer = document.querySelector("io-popup-footer");
+
+  fetch("data/popup-footer.json")
+    .then((res) => res.json())
+    .then((msgs) =>
+    {
+      const msgsToDisplay = msgs.filter(({exceptions}) =>
+      {
+        if (!exceptions)
+          return true;
+
+        return !["platform", "application", "store"].some((info) =>
+        {
+          const {[info]: exceptionsInfo} = exceptions;
+
+          if (!exceptionsInfo)
+            return false;
+
+          const {[info]: browserInfo} = document.documentElement.dataset;
+
+          return exceptionsInfo.includes(browserInfo);
+        });
+      });
+
+      msgsToDisplay.sort((a, b) => a.order - b.order);
+
+      footer.setState({
+        messages: msgsToDisplay,
+        current: Math.floor(Math.random() * msgsToDisplay.length)
+      });
+
+      footer.startAnimation();
+    });
 }
