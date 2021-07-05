@@ -19,7 +19,7 @@
 
 const BasePage = require("./base.page");
 
-class FooterChunk extends BasePage
+class AllowlistedWebsitesPage extends BasePage
 {
   constructor(browser)
   {
@@ -27,20 +27,34 @@ class FooterChunk extends BasePage
     this.browser = browser;
   }
 
-  get contributeButton()
+  get _allowlistedWebsitesTabButton()
   {
-    return this.browser.$(".button=Contribute");
+    return this.browser
+      .$("//a[contains(@data-i18n, 'options_tab_allowlist')" +
+        "and text()='Allowlisted websites']");
   }
 
-  async clickContributeButton()
+  async init()
   {
-    await (await this.contributeButton).click();
+    await (await this._allowlistedWebsitesTabButton).click();
   }
 
-  async switchToContributeTab()
+  get allowlistingLearnMoreLink()
   {
-    await this.switchToTab("Contribute to Adblock Plus");
+    return this.browser
+      .$("//a[contains(@data-doclink, 'allowlist')" +
+        "and text()='Learn more']");
+  }
+
+  async clickAllowlistingLearnMoreLink()
+  {
+    await (await this.allowlistingLearnMoreLink).click();
+  }
+
+  async switchToABPFAQTab()
+  {
+    await this.switchToTab("FAQ - Basic functionality");
   }
 }
 
-module.exports = FooterChunk;
+module.exports = AllowlistedWebsitesPage;

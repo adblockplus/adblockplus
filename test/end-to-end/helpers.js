@@ -23,6 +23,7 @@ async function waitForExtension()
 {
   const driver = await initDriver();
   let origin;
+  await driver.pause(1000);
   await driver.waitUntil(async() =>
   {
     for (const handle of await driver.getWindowHandles())
