@@ -315,7 +315,16 @@ port.on("content.injectSelectors", (message, sender) =>
 
 (async() =>
 {
-  let response =
-    await fetch(browser.runtime.getURL("/snippets.js"), {cache: "no-cache"});
-  snippetsLibrarySource = response.ok ? (await response.text()) : "";
+  try
+  {
+    let response =
+      await fetch(browser.runtime.getURL("/snippets.min.js"),
+                  {cache: "no-cache"});
+    snippetsLibrarySource = response.ok ? (await response.text()) : "";
+  }
+  catch (e)
+  {
+    // If the request fails, the snippets library is not
+    // bundled with the extension, so we silently ignore this error.
+  }
 })();

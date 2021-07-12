@@ -18,8 +18,30 @@
 import semver from "semver";
 import specializedTests from "./specialized.js";
 import {takeScreenshot, writeScreenshotFile} from "../../misc/screenshots.js";
+import {access} from "fs";
+import {promisify} from "util";
 
-export function isExcluded(page, browserName, browserVersion)
+const fsAccess = promisify(access);
+
+async function snippetsIncluded()
+{
+  try
+  {
+    await fsAccess("../vendor/abp-snippets/dist/snippets.min.js");
+  }
+  catch (err)
+  {
+    if (err.code == "ENOENT")
+      return false;
+
+    throw err;
+  }
+
+  return true;
+}
+
+
+export async function isExcluded(page, browserName, browserVersion)
 {
   let excluded;
   if (page in specializedTests)
@@ -34,6 +56,10 @@ export function isExcluded(page, browserName, browserVersion)
   // https://bugzilla.mozilla.org/show_bug.cgi?id=1528146
   else if (page == "circumvention/anoniframe-documentwrite")
     excluded = {chrome: "<64", firefox: "<67"};
+  // If the snippets library is not included we want to skip
+  // all snippet tests.
+  else if (page.startsWith("snippets") && !(await snippetsIncluded()))
+    return true;
   // shadowing requires Firefox 63+ or 59+ with flag
   // dom.webcomponents.shadowdom.enabled
   else if (page == "snippets/hide-if-shadow-contains")

@@ -78,7 +78,7 @@ export default () =>
         it(pageTitle, async function()
         {
           let page = getPage(url);
-          if (isExcluded(page, this.browserName, this.browserVersion))
+          if (await isExcluded(page, this.browserName, this.browserVersion))
             this.skip();
 
           if (page in specializedTests)

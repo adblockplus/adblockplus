@@ -18,7 +18,9 @@
     "watch": "npm run $ watch",
     "csv-export": "node build/locale-sync/csv/main.js -e",
     "csv-import": "node build/locale-sync/csv/main.js -i && node build/locale-sync/normalize.js",
-    "test:end-to-end": "mocha test/end-to-end/main.js --timeout 15000 --delay"
+    "test:end-to-end": "mocha test/end-to-end/main.js --timeout 15000 --delay",
+    "submodules:update": "git submodule update --init --recursive",
+    "submodules:update-with-snippets": "git -c submodule.\"vendor/abp-snippets\".update=checkout submodule update --init --recursive"
   },
   "$": {
     "dev-build": [

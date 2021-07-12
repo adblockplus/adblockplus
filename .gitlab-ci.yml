@@ -49,9 +49,10 @@ lint:
   script:
     - npm install
     - npm run lint
-  only:
+  except:
     variables:
-      - $CI_PROJECT_NAME == 'adblockplusui'
+      - $CI_PROJECT_NAME == 'adblockplusui-nightlies'
+
 
 test:
   stage: test
@@ -59,9 +60,10 @@ test:
     - npm install
     - npm run dist
     - npm run test
-  only:
+  except:
     variables:
-      - $CI_PROJECT_NAME == 'adblockplusui'
+      - $CI_PROJECT_NAME == 'adblockplusui-nightlies'
+
 
 ################################################################################
 # Build
@@ -71,7 +73,7 @@ build:
   stage: build
   script:
     # Update dependencies
-    - git submodule update --init --recursive
+    - npm run submodules:update
     # Include resulting dependencies in debug output
     - git submodule status
     # Finally build abp
@@ -91,8 +93,47 @@ build:
       - /^release-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
       - /^dep-\w+-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
       - /^feature-[1-9][0-9]*(|-.+)$/
+  except:
     variables:
-      - $CI_PROJECT_NAME == 'adblockplusui'
+      - $CI_PROJECT_NAME == 'adblockplusui-nightlies'
+
+build:with-snippets:
+  stage: build
+  script:
+    # Configure SSH as seen in this example:
+    # https://gitlab.com/gitlab-examples/ssh-private-key/-/blob/master/.gitlab-ci.yml
+    - command -v ssh-agent >/dev/null || (apt-get update -y && apt-get install openssh-client -y)
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$SNIPPETS_SSH_KEY" | base64 -d)
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan gitlab.com >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    # Get the snippets libary
+    - npm run submodules:update-with-snippets
+    - git submodule status
+    # Prepare to build
+    - cd adblockpluschrome
+    - npm install
+    # Create the builds
+    - npx gulp build -t firefox --unhandled-rejections=strict
+    - npx gulp build -t chrome --unhandled-rejections=strict
+    # Attach commit hash to build files
+    - mv adblockpluschrome-*.zip adblockplus-chrome-${CI_COMMIT_SHA:0:8}.zip
+    - mv adblockplusfirefox-*.xpi adblockplus-firefox-${CI_COMMIT_SHA:0:8}.xpi
+    # Encrypt the builds
+    - gpg -c --batch --passphrase $SNIPPETS_PASSWORD adblockplus-chrome-*.zip
+    - gpg -c --batch --passphrase $SNIPPETS_PASSWORD adblockplus-firefox-*.xpi
+  artifacts:
+    paths:
+      - adblockpluschrome/adblockplus-*.gpg
+  only:
+    refs:
+      - /^release-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
+      - /^dep-\w+-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
+  except:
+    variables:
+      - $CI_PROJECT_NAME == 'adblockplusui-nightlies'
 
 pages:
   stage: pages
@@ -306,7 +347,7 @@ webext:
   trigger:
     include: "/adblockpluschrome/.gitlab-ci.yml"
     strategy: depend
-  only:
+  except:
     variables:
-      - $CI_PROJECT_NAME == 'adblockplusui'
+      - $CI_PROJECT_NAME == 'adblockplusui-nightlies'
   when: manual

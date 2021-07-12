@@ -99,7 +99,8 @@ export default {
         src: [
           "*.js",
           "*.html",
-          "adblockpluschrome/adblockpluscore/lib/content/snippets.js",
+          // marked as optional using wildcard
+          "vendor/abp-snippets/dist/*snippets.min.js",
           "adblockpluschrome/options.*",
           "adblockpluschrome/devtools.*",
           "adblockpluschrome/polyfill.js",

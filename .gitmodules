@@ -1,3 +1,7 @@
 [submodule "adblockpluschrome/adblockpluscore"]
 	path = adblockpluschrome/adblockpluscore
 	url = https://gitlab.com/eyeo/adblockplus/adblockpluscore.git
+[submodule "vendor/abp-snippets"]
+	path = vendor/abp-snippets
+	url = git@gitlab.com:eyeo/adblockplus/abp-snippets.git
+	update = none

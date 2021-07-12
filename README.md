@@ -109,6 +109,8 @@ you want to test.
 Nightly builds for feature and release [branches][wiki-branches] can be found
 [on this page][abp-ui-nightlies].
 
+**Note**: Nightly builds with snippets are encrypted using GPG.
+
 ### Unit testing
 
 The `./test/unit` folder contains various unit tests files. Those can be run
@@ -169,9 +171,15 @@ rely on across our development process.
 
 ### Building the extension
 
-In order to build the extension you need to run `git submodule update --init`
-before you can navigate to the adblockpluschrome/ directory to follow the
-instructions for [building Adblock Plus][abp-webext-readme-build].
+In order to build the extension, you need to use the
+`npm run submodules:update` npm script before you can navigate to the
+adblockpluschrome/ directory to follow the instructions for
+[building Adblock Plus][abp-webext-readme-build]. This build won't include
+the snippets library.
+
+In order to create a build which includes the snippets library, you should use
+the `npm run submodules:update-with-snippets` npm script instead. This will
+work only if you have access to the [abp-snippets repository][abp-snippets].
 
 ## Release history
 
@@ -199,6 +207,7 @@ This project follows the typical GitLab process:
 [abp-webext-readme]: /adblockpluschrome/README.md
 [abp-webext-readme-build]: /adblockpluschrome/README.md#building
 [abp-webext-releases]: https://github.com/adblockplus/adblockpluschrome/releases
+[abp-snippets]: https://gitlab.com/eyeo/adblockplus/abp-snippets
 [badge-pipeline-image]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/badges/master/pipeline.svg
 [badge-pipeline-link]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/commits/master
 [eyeo]: https://eyeo.com/

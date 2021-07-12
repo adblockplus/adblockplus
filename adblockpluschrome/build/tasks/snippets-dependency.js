@@ -29,77 +29,79 @@ async function getMTime(file)
   return (await fs.promises.stat(file)).mtimeMs;
 }
 
-function createBuild()
+function createSnippetsBuild()
 {
-  return (promisify(exec))("bash -c \"npm run --prefix ../ dist\"");
+  return (promisify(exec))(
+    "bash -c \"npm run --prefix ../vendor/abp-snippets build\"");
 }
 
-async function mustBuildUI(lastUIBuildTime)
+async function mustBuildSnippets(lastSnippetsBuildTime)
 {
-  let matches = await (promisify(glob))(
-    "../**",
-    {
-      ignore: [
-        "../.github/**",
-        "../.gitlab/**",
-        "../adblockpluschrome/**",
-        "../docs/**",
-        "../ext/**",
-        "../mocks/**",
-        "../node_modules/**",
-        "../smoke/**",
-        "../test/**"
-      ]
-    }
-  );
+  let matches = [
+    ...(await (promisify(glob))("../vendor/abp-snippets/lib/**")),
+    ...(await (promisify(glob))("../vendor/abp-snippets/build/**")),
+    ...(await (promisify(glob))("../vendor/abp-snippets/test/**")),
+    ...(await (promisify(glob))("../vendor/abp-snippets/test_runner.mjs")),
+    ...(await (promisify(glob))("../vendor/abp-snippets/package*"))
+  ];
 
   return await new Promise((resolve, reject) =>
   {
     Promise.all(matches.map(filename =>
       getMTime(filename).then(mtime =>
       {
-        if (mtime > lastUIBuildTime)
+        if (mtime > lastSnippetsBuildTime)
           resolve(true);
       })
     )).then(() => { resolve(false); }, reject);
   });
 }
 
-function updateLastUIBuildTime()
+function updateLastSnippetsBuildTime()
 {
-  return fs.promises.utimes(".last_ui_build", new Date(), new Date());
+  return fs.promises.utimes(".last_snippets_build", new Date(), new Date());
 }
 
-function createLastUIBuildTime()
+function createLastSnippetsBuildTime()
 {
   return new Readable.from([
     new Vinyl({
-      path: ".last_ui_build",
+      path: ".last_snippets_build",
       contents: Buffer.from("")
     })
   ]).pipe(gulp.dest("."));
 }
 
-export async function buildUI(cb)
+export async function buildSnippets(cb)
 {
-  let lastUIBuildTime;
+  let lastSnippetsBuildTime;
 
   try
   {
-    lastUIBuildTime = await getMTime(".last_ui_build");
+    lastSnippetsBuildTime = await getMTime(".last_snippets_build");
   }
   catch (e)
   {
-    await createBuild();
-    return createLastUIBuildTime();
+    try
+    {
+      await createSnippetsBuild();
+      return createLastSnippetsBuildTime();
+    }
+    catch (error)
+    {
+      if (error.stderr.match(/ENOENT/))
+      {
+        console.log("Skipping Snippets.");
+        return cb();
+      }
+    }
   }
 
-  if (await mustBuildUI(lastUIBuildTime))
+  if (await mustBuildSnippets(lastSnippetsBuildTime))
   {
-    await createBuild();
-    return updateLastUIBuildTime();
+    await createSnippetsBuild();
+    return updateLastSnippetsBuildTime();
   }
 
   return cb();
 }
-

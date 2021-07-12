@@ -171,11 +171,13 @@ function cleanDir()
 export let devenv = gulp.series(
   cleanDir,
   tasks.buildUI,
+  tasks.buildSnippets,
   buildDevenv
 );
 
 export let build = gulp.series(
   tasks.buildUI,
+  tasks.buildSnippets,
   buildPacked
 );
 
@@ -210,5 +212,6 @@ function startWatch()
 
 export let watch = gulp.series(
   tasks.buildUI,
+  tasks.buildSnippets,
   startWatch
 );

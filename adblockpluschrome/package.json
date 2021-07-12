@@ -43,7 +43,9 @@
     "lint": "eslint --ext .js,.cjs,.js.tmpl *.js lib/ ext/ test/ build/",
     "test-only": "mocha --unhandled-rejections=strict --delay",
     "test": "npm run test-only --",
-    "postinstall": "cd .. && npm install --only=production --loglevel=error --no-audit --no-fund --no-optional",
+    "postinstall": "npm run install-ui && npm run install-snippets",
+    "install-ui": "npm install --only=production --loglevel=error --no-audit --no-fund --no-optional --prefix ..",
+    "install-snippets": "[ -d ../vendor/abp-snippets ] && npm install --loglevel=error --no-audit --no-fund --no-optional --prefix ../vendor/abp-snippets || echo 'Skipping abp-snippets installation'",
     "posttest": "npm run lint",
     "docs": "jsdoc --configure jsdoc.conf --destination docs lib",
     "download-test-browsers": "node test/bin/downloadBrowsers.js"
