@@ -78,10 +78,10 @@ class IOListBox extends IOElement
   }
 
   // can be overridden but by default
-  // it returns the item.originalTitle
+  // it returns the item.title
   getItemTitle(item)
   {
-    return item.originalTitle;
+    return item.title;
   }
 
   get swap()
@@ -141,7 +141,7 @@ class IOListBox extends IOElement
   // items handler
   get items()
   {
-    return this._items;
+    return this._items || [];
   }
 
   set items(items)

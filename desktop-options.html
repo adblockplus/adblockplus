@@ -132,9 +132,9 @@
             <ul id="blocking-languages-table" class="table list bottom-control">
               <template>
                 <span>
-                  <span data-display="title"></span>
+                  <span data-display></span>
                   <span class="dimmed">
-                    (<span data-display="originalTitle"></span>)
+                    (<span data-display="title"></span>)
                   </span>
                 </span>
                 <button data-single="hidden" data-hide="preconfigured" data-action="remove-subscription" class="icon delete control" data-i18n-title="options_control_remove_title"></button>
@@ -165,7 +165,7 @@
           <div>
             <ul id="more-list-table" class="table list">
               <template>
-                <span data-display="title"></span>
+                <span data-display></span>
                 <button data-hide="preconfigured" data-action="remove-subscription" data-i18n="options_control_remove_title" class="control link" data-i18n-title="options_control_remove_title"></button>
               </template>
             </ul>
@@ -195,7 +195,7 @@
           </form>
           <ul id="allowlisting-table" class="table list">
             <template>
-              <span data-display="title"></span>
+              <span data-display></span>
               <button data-action="remove-filter" class="icon delete control"
                 data-i18n-title="options_control_remove_title">
               </button>
@@ -216,26 +216,26 @@
           <ul id="customize" class="list">
             <li data-pref="show_statsinicon">
               <button class="icon" role="checkbox" data-action="toggle-pref"></button>
-              <span data-i18n="options_customize_iconStats" data-display="title"></span>
+              <span data-i18n="options_customize_iconStats"></span>
             </li>
             <li data-pref="shouldShowBlockElementMenu">
               <button class="icon" role="checkbox" data-action="toggle-pref"></button>
-              <span data-i18n="options_customize_blockElement" data-display="title"></span>
+              <span data-i18n="options_customize_blockElement"></span>
               <io-popout type="tooltip" i18n-body="options_customize_blockElement_tooltip"></io-popout>
             </li>
             <li data-pref="show_devtools_panel">
               <button class="icon" role="checkbox" data-action="toggle-pref"></button>
-              <span data-i18n="options_customize_showDevToolsPanel" data-display="title"></span>
+              <span data-i18n="options_customize_showDevToolsPanel"></span>
               <io-popout type="tooltip" i18n-body="options_customize_showDevToolsPanel_tooltip"></io-popout>
             </li>
             <li data-pref="elemhide_debug">
               <button class="icon" role="checkbox" data-action="toggle-pref"></button>
-              <span data-i18n="options_customize_elemhideDebug" data-display="title"></span>
+              <span data-i18n="options_customize_elemhideDebug"></span>
               <io-popout type="tooltip" i18n-body="options_customize_elemhideDebug_tooltip"></io-popout>
             </li>
             <li data-pref="notifications_ignoredcategories">
               <button class="icon" role="checkbox" data-action="toggle-pref"></button>
-              <span data-i18n="options_customize_showNotifications" data-display="title"></span>
+              <span data-i18n="options_customize_showNotifications"></span>
               <io-popout type="tooltip" i18n-body="options_customize_showNotifications_tooltip"></io-popout>
             </li>
           </ul>
@@ -264,7 +264,7 @@
                 <io-toggle class="control" data-action="toggle-disable-subscription"></io-toggle>
               </div>
               <div class="col5">
-                <span data-display="originalTitle"></span>
+                <span data-display></span>
               </div>
               <div class="col5">
                 <span class="last-update"></span>
@@ -421,29 +421,6 @@
           <p>
             <button data-i18n="options_close" class="primary default-focus" data-action="close-dialog"></button>
           </p>
-        </div>
-        <!-- Add language subscription -->
-        <div id="dialog-content-language-add" class="dialog-content">
-          <ul id="all-lang-table-add" class="table list default-focus">
-            <template>
-              <button data-action="add-language-subscription,close-dialog" class="control icon add" role="checkbox">
-                <span>
-                  <span data-display="title"></span>
-                  <span class="dimmed">
-                    (<span data-display="originalTitle"></span>)
-                  </span>
-                </span>
-              </button>
-              <button data-action="change-language-subscription,close-dialog" class="control icon change" role="checkbox">
-                <span>
-                  <span data-display="title"></span>
-                  <span class="dimmed">
-                    (<span data-display="originalTitle"></span>)
-                  </span>
-                </span>
-              </button>
-            </template>
-          </ul>
         </div>
         <!-- Add predefined subscription -->
         <div id="dialog-content-predefined" class="dialog-content">

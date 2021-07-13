@@ -35,6 +35,7 @@ No parameters.
 | | `synchronize_checksum_mismatch` | (deprecated) Set filter list download status: Checksum mismatch |
 | filterError | `string` | Causes any filter validation to fail to specific filter error (e.g. `invalid_csp`, `unknown_option`) |
 | filterOption | `string` | Invalid option of `unknown_option` filter validation error |
+| includeUnknownSubscription | `true` | Preinstall non-recommended subscription |
 | platform | `chromium` | Shows opt-out for DevTools panel |
 
 If the `locale` uses any Chinese that starts with `zh`, the _Get in touch_ section under the _Help_ tab should show social media icons different from Facebook and Twitter, as these platform are not available for Chinese users.

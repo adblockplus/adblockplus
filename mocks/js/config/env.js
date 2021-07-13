@@ -59,6 +59,7 @@ const params = {
   filtersDisabled: false,
   filterError: null,
   filterOption: null,
+  includeUnknownSubscription: false,
   notification: null,
   domainAllowlisted: false,
   pageAllowlisted: false,

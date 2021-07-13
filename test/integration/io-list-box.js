@@ -90,12 +90,12 @@ describe("Testing io-list-box component", () =>
     const firstGroup = ioListBox.popup.querySelector(".group");
     equal(firstGroup.textContent, getItems()[2].description);
   });
-  it("getItemTitle() returns item originalTitle", () =>
+  it("getItemTitle() returns item title", () =>
   {
     const ioListBox = getComponent();
     const firstItem = ioListBox.items[0];
-    const originalTitle = ioListBox.getItemTitle(firstItem);
-    equal(originalTitle, "EasyList Germany+EasyList");
+    const title = ioListBox.getItemTitle(firstItem);
+    equal(title, "EasyList Germany+EasyList");
   });
   it("Disabling the element disables the 'label' as well", () =>
   {
@@ -185,7 +185,7 @@ function getItems()
       downloadStatus: "synchronize_ok",
       homepage: "https://easylist.adblockplus.org/",
       value: "Deutsch",
-      originalTitle: "EasyList Germany+EasyList",
+      title: "EasyList Germany+EasyList",
       recommended: "ads",
       url: "https://easylist-downloads.adblockplus.org/easylistgermany+easylist.txt",
       lastDownload: 1234,
@@ -196,7 +196,7 @@ function getItems()
       downloadStatus: null,
       homepage: null,
       value: "English",
-      originalTitle: "EasyList",
+      title: "EasyList",
       recommended: "ads",
       url: "https://easylist-downloads.adblockplus.org/easylist.txt"
     },
@@ -210,7 +210,7 @@ function getItems()
       downloadStatus: null,
       homepage: null,
       value: "español",
-      originalTitle: "EasyList Spanish+EasyList",
+      title: "EasyList Spanish+EasyList",
       recommended: "ads",
       url: "https://easylist-downloads.adblockplus.org/easylistspanish+easylist.txt"
     }
