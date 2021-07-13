@@ -21,6 +21,11 @@ const {
   closeAddFiltersByURL,
   setupAddFiltersByURL
 } = require("./add-filters-by-url");
+const {
+  getPrettyItemTitle,
+  getRawItemTitle,
+  loadLanguageNames
+} = require("./titles");
 const api = require("../../api");
 const {convertDoclinks, getDoclink, getErrorMessage} = require("../../common");
 const {$, $$, events} = require("../../dom");
@@ -45,7 +50,6 @@ let acceptableAdsUrl = null;
 let acceptableAdsPrivacyUrl = null;
 let isCustomFiltersLoaded = false;
 let additionalSubscriptions = [];
-let languages = {};
 
 const collections = Object.create(null);
 const {getMessage} = browser.i18n;
@@ -81,7 +85,7 @@ const promisedDateFormat = promisedLocaleInfo.then((addonLocale) =>
 {
   return new Intl.DateTimeFormat(addonLocale.locale);
 }).catch(dispatchError);
-const promisedRecommendations = loadRecommendations();
+const promisedResources = loadResources();
 
 function Collection(details)
 {
@@ -127,7 +131,8 @@ Collection.prototype._getItemTitle = function(item, i)
 {
   if (this.details[i].getItemTitle)
     return this.details[i].getItemTitle(item);
-  return item.title || item.url || item.text;
+
+  return getRawItemTitle(item);
 };
 
 Collection.prototype._sortItems = function()
@@ -411,21 +416,14 @@ function focusNextElement(container, currentElement)
 collections.recommendedList = new Collection([
   {
     id: "recommended-list-table",
-    getItemTitle: (item) => getSubscriptionItemTitle(item, false)
+    getItemTitle: (item) => getPrettyItemTitle(item, false)
   }
 ]);
 collections.langs = new Collection([
   {
     id: "blocking-languages-table",
     emptyTexts: ["options_language_empty"],
-    getItemTitle: getLanguageItemTitle
-  }
-]);
-collections.allLangs = new Collection([
-  {
-    id: "all-lang-table-add",
-    emptyTexts: ["options_dialog_language_other_empty"],
-    getItemTitle: (item) => getSubscriptionItemTitle(item, true)
+    getItemTitle: (item) => getPrettyItemTitle(item, false)
   }
 ]);
 collections.more = new Collection([
@@ -444,8 +442,7 @@ collections.allowlist = new Collection([
 collections.filterLists = new Collection([
   {
     id: "all-filter-lists-table",
-    emptyTexts: ["options_filterList_empty"],
-    getItemTitle: (item) => item.originalTitle || item.title || item.url
+    emptyTexts: ["options_filterList_empty"]
   }
 ]);
 
@@ -458,7 +455,9 @@ function addSubscription(subscription)
     case "ads":
       if (disabled == false)
         collection = collections.langs;
-      collections.allLangs.addItem(subscription);
+
+      const ioListBox = $("#languages-box");
+      ioListBox.items = ioListBox.items.concat(subscription);
       break;
     case "cookies":
     case "notifications":
@@ -569,80 +568,37 @@ function removeCustomFilter(text)
     customFilters.splice(index, 1);
 }
 
-function getSubscriptionItemTitle(item, includeOriginal)
+async function loadResources()
 {
-  const {originalTitle, recommended} = item;
+  const subscriptions = [];
 
-  let description = null;
-  if (recommended === "ads")
+  try
   {
-    description = getLanguageItemTitle(item);
-  }
-  else
-  {
-    description = getMessage(`common_feature_${recommended}_title`);
-  }
+    await loadLanguageNames();
 
-  if (!description)
-    return originalTitle;
-
-  if (includeOriginal)
-    return `${originalTitle} (${description})`;
-
-  return description;
-}
-
-function getLanguageItemTitle(item)
-{
-  const description = item.languages
-    .slice()
-    .map((langCode) => languages[langCode])
-    // Remove duplicate language names
-    .filter((langName, idx, arr) => arr.indexOf(langName) === idx)
-    .reduce(
-      (acc, langName, idx) =>
-      {
-        if (idx === 0)
-          return langName;
-
-        return getMessage("options_language_join", [acc, langName]);
-      },
-      ""
-    );
-
-  return /\+EasyList$/.test(item.originalTitle) ?
-          `${description} + ${getMessage("options_english")}` :
-          description;
-}
-
-function loadRecommendations()
-{
-  return Promise.all([
-    fetch("./data/locales.json").then((resp) => resp.json()),
-    api.app.get("recommendations")
-  ]).then(([localeData, recommendations]) =>
-  {
-    languages = localeData.nativeNames;
-
-    const subscriptions = [];
+    const recommendations = await api.app.get("recommendations");
     for (const recommendation of recommendations)
     {
       const subscription = {
         disabled: true,
         downloadStatus: null,
         homepage: null,
-        originalTitle: recommendation.title,
         languages: recommendation.languages,
         recommended: recommendation.type,
+        title: recommendation.title,
         url: recommendation.url
       };
 
       subscriptions.push(subscription);
       addSubscription(subscription);
     }
-    return subscriptions;
-  })
-  .catch(dispatchError);
+  }
+  catch (ex)
+  {
+    dispatchError(ex);
+  }
+
+  return {recommendations: subscriptions};
 }
 
 function findParentData(element, dataName, returnElement)
@@ -975,19 +931,19 @@ function setupFiltersBox()
 {
   const ioListBox = $("#filters-box");
 
-  if (!ioListBox.items)
+  if (!ioListBox.items.length)
   {
-    ioListBox.getItemTitle = (item) => getSubscriptionItemTitle(item, true);
+    ioListBox.getItemTitle = (item) => getPrettyItemTitle(item, true);
     ioListBox.addEventListener("change", (event) =>
     {
       const item = event.detail;
-      addEnableSubscription(item.url, item.originalTitle, item.homepage);
+      addEnableSubscription(item.url, item.title, item.homepage);
     });
   }
 
-  promisedRecommendations.then(subscriptions =>
+  promisedResources.then(({recommendations}) =>
   {
-    ioListBox.items = getListBoxItems(subscriptions);
+    ioListBox.items = getListBoxItems(recommendations);
   });
 }
 
@@ -1006,7 +962,7 @@ function getListBoxItems(subscriptions)
   {
     const {recommended, url} = subscription;
     const key = recommended === "ads" ? recommended : "others";
-    const label = getSubscriptionItemTitle(subscription, true);
+    const label = getPrettyItemTitle(subscription, true);
     const selected = urls.has(url);
     const overrides = {unselectable: selected, label, selected};
     groups[key].push(Object.assign({}, subscription, overrides));
@@ -1027,8 +983,7 @@ function getListBoxItems(subscriptions)
 function setupLanguagesBox()
 {
   const ioListBox = $("#languages-box");
-  ioListBox.getItemTitle = getLanguageItemTitle;
-  ioListBox.items = collections.allLangs.items;
+  ioListBox.getItemTitle = (item) => getPrettyItemTitle(item, false);
   ioListBox.addEventListener("close", (event) =>
   {
     ioListBox.swap = false;
@@ -1041,14 +996,15 @@ function setupLanguagesBox()
     else
     {
       item.disabled = !item.disabled;
-      addEnableSubscription(item.url, item.originalTitle, item.homepage);
+      addEnableSubscription(item.url, item.title, item.homepage);
     }
   });
 }
 
 function onDOMLoaded()
 {
-  populateLists().then(setupLanguagesBox).catch(dispatchError);
+  setupLanguagesBox();
+  populateLists().catch(dispatchError);
 
   // Initialize navigation sidebar
   browser.runtime.sendMessage({
@@ -1533,7 +1489,7 @@ function onSubscriptionMessage(action, subscription, ...args)
 {
   // Ensure that recommendations have already been loaded so that we can
   // identify and handle recommended filter lists accordingly (see #6838)
-  promisedRecommendations.then(() =>
+  promisedResources.then(() =>
   {
     if (subscription.url in subscriptionsMap)
     {

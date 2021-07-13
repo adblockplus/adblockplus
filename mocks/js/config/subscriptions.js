@@ -17,12 +17,15 @@
 
 "use strict";
 
+const {params} = require("./env");
+
 const URL_SUBSCRIPTION_BASE = "https://easylist-downloads.adblockplus.org";
 const URL_BLOCKLIST = `${URL_SUBSCRIPTION_BASE}/easylistgermany+easylist.txt`;
 const URL_ALLOWLIST = `${URL_SUBSCRIPTION_BASE}/exceptionrules.txt`;
 const URL_ALLOWLIST_PRIVACY =
   `${URL_SUBSCRIPTION_BASE}/exceptionrules-privacy-friendly.txt`;
 const URL_DOCLINK_BASE = "https://adblockplus.org/redirect?link=";
+const URL_UNKNOWN = "https://www.example.com/filters.txt";
 
 const USER_ID = "~user~786254";
 
@@ -53,6 +56,10 @@ const subscriptionDetails = {
     title: "Adblock Warning Removal List",
     installed: true,
     disabled: true
+  },
+  [URL_UNKNOWN]: {
+    title: "Unknown filter list",
+    installed: params.includeUnknownSubscription
   },
   [USER_ID]: {
     installed: true
