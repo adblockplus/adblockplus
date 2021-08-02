@@ -19,7 +19,7 @@
 
 const BasePage = require("./base.page");
 
-class FooterChunk extends BasePage
+class AcceptableAdsDialogChunk extends BasePage
 {
   constructor(browser)
   {
@@ -27,43 +27,21 @@ class FooterChunk extends BasePage
     this.browser = browser;
   }
 
-  get aboutABPLink()
+  get goToSurveyButton()
   {
     return this.browser
-      .$("//button[contains(@data-i18n, 'options_footer_about')" +
-        "and text()='About Adblock Plus']");
+      .$("//a[@data-i18n='options_aa_opt_out_survey_ok']");
   }
 
-  get contributeButton()
+  async clickGoToSurveyButton()
   {
-    return this.browser.$(".button=Contribute");
+    await (await this.goToSurveyButton).click();
   }
 
-  get heartButton()
+  async switchToAASurveyTab()
   {
-    return this.browser
-      .$("//*[@id='support-us']/div");
-  }
-
-  async clickAboutABPLink()
-  {
-    await (await this.aboutABPLink).click();
-  }
-
-  async clickContributeButton()
-  {
-    await (await this.contributeButton).click();
-  }
-
-  async clickHeartButton()
-  {
-    await (await this.heartButton).click();
-  }
-
-  async switchToContributeTab()
-  {
-    await this.switchToTab("Contribute to Adblock Plus");
+    await this.switchToTab("Acceptable Ads have been turned off");
   }
 }
 
-module.exports = FooterChunk;
+module.exports = AcceptableAdsDialogChunk;

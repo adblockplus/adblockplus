@@ -52,6 +52,12 @@ class GeneralPage extends BasePage
         "and text()='Learn more']");
   }
 
+  get allowAcceptableAdsCheckbox()
+  {
+    return this.browser
+      .$("#acceptable-ads-allow");
+  }
+
   async clickAcceptableAdsCriteriaLink()
   {
     await (await this.acceptableAdsCriteriaLink).click();
@@ -60,6 +66,11 @@ class GeneralPage extends BasePage
   async clickAcceptableAdsLearnMoreLink()
   {
     await (await this.acceptableAdsLearnMoreLink).click();
+  }
+
+  async clickAllowAcceptableAdsCheckbox()
+  {
+    await (await this.allowAcceptableAdsCheckbox).click();
   }
 
   async switchToAAInfoTab()

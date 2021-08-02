@@ -19,7 +19,7 @@
 
 const BasePage = require("./base.page");
 
-class FooterChunk extends BasePage
+class AboutDialogChunk extends BasePage
 {
   constructor(browser)
   {
@@ -27,43 +27,37 @@ class FooterChunk extends BasePage
     this.browser = browser;
   }
 
-  get aboutABPLink()
+  get eyeoGmbhLink()
   {
     return this.browser
-      .$("//button[contains(@data-i18n, 'options_footer_about')" +
-        "and text()='About Adblock Plus']");
+      .$("//a[text()='eyeo GmbH']");
   }
 
-  get contributeButton()
-  {
-    return this.browser.$(".button=Contribute");
-  }
-
-  get heartButton()
+  get privacyPolicyLink()
   {
     return this.browser
-      .$("//*[@id='support-us']/div");
+      .$("//*[@id='privacy-policy']");
   }
 
-  async clickAboutABPLink()
+  async clickEyeoGmbhLink()
   {
-    await (await this.aboutABPLink).click();
+    await (await this.eyeoGmbhLink).click();
   }
 
-  async clickContributeButton()
+  async clickPrivacyPolicyLink()
   {
-    await (await this.contributeButton).click();
+    await (await this.privacyPolicyLink).click();
   }
 
-  async clickHeartButton()
+  async switchToImprintTab()
   {
-    await (await this.heartButton).click();
+    await this.switchToTab("Imprint");
   }
 
-  async switchToContributeTab()
+  async switchToPrivacyPolicyTab()
   {
-    await this.switchToTab("Contribute to Adblock Plus");
+    await this.switchToTab("Privacy Policy");
   }
 }
 
-module.exports = FooterChunk;
+module.exports = AboutDialogChunk;

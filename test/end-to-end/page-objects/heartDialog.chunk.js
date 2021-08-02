@@ -19,7 +19,7 @@
 
 const BasePage = require("./base.page");
 
-class FooterChunk extends BasePage
+class HeartDialogChunk extends BasePage
 {
   constructor(browser)
   {
@@ -27,43 +27,37 @@ class FooterChunk extends BasePage
     this.browser = browser;
   }
 
-  get aboutABPLink()
+  get rateUsButton()
   {
     return this.browser
-      .$("//button[contains(@data-i18n, 'options_footer_about')" +
-        "and text()='About Adblock Plus']");
+      .$("//a[@data-i18n='options_rating_button']");
   }
 
-  get contributeButton()
-  {
-    return this.browser.$(".button=Contribute");
-  }
-
-  get heartButton()
+  get doanteButton()
   {
     return this.browser
-      .$("//*[@id='support-us']/div");
+      .$("//a[@data-i18n='options_donate_button']");
   }
 
-  async clickAboutABPLink()
+  async clickRateUsButton()
   {
-    await (await this.aboutABPLink).click();
+    await (await this.rateUsButton).click();
   }
 
-  async clickContributeButton()
+  async clickDonateButton()
   {
-    await (await this.contributeButton).click();
+    await (await this.doanteButton).click();
   }
 
-  async clickHeartButton()
+  async switchToWebstoreTab()
   {
-    await (await this.heartButton).click();
+    await this.switchToTab("Adblock Plus - free ad blocker - Chrome Web Store");
   }
 
-  async switchToContributeTab()
+  async switchToDonateTab()
   {
-    await this.switchToTab("Contribute to Adblock Plus");
+    await this.switchToTab("Donate to Adblock Plus");
   }
 }
 
-module.exports = FooterChunk;
+module.exports = HeartDialogChunk;

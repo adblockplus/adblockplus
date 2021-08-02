@@ -28,7 +28,7 @@ const AllowlistedWebsitesPage =
 const dataLinks = require("../test-data/data-links");
 let browser = null;
 
-describe("test links", () =>
+describe("test options page links", () =>
 {
   beforeEach(async() =>
   {
