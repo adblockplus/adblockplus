@@ -17,7 +17,7 @@
 
 /** @module icon */
 
-import {filterNotifier} from "../adblockpluscore/lib/filterNotifier.js";
+import {allowlistingState} from "./allowlisting.js";
 import {setIconPath, setIconImageData, toggleBadge} from "./browserAction.js";
 import * as info from "info";
 
@@ -132,7 +132,7 @@ function setIcon(page, opacity, frames)
   }
 }
 
-filterNotifier.on("page.AllowlistingStateRevalidate", (page, filter) =>
+allowlistingState.addListener("changed", (page, filter) =>
 {
   allowlistedState.set(page, !!filter);
   if (canUpdateIcon)

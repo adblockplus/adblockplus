@@ -18,7 +18,7 @@
 /** @module prefs */
 
 import * as info from "info";
-import {EventEmitter} from "../adblockpluscore/lib/events.js";
+import {EventEmitter} from "./events.js";
 import {port} from "./messaging.js";
 
 const keyPrefix = "pref:";

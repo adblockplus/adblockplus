@@ -17,7 +17,7 @@
 
 /** @module messaging */
 
-import {EventEmitter} from "../adblockpluscore/lib/events.js";
+import {EventEmitter} from "./events.js";
 
 /**
  * Communication port wrapping ext.onMessage to receive messages.

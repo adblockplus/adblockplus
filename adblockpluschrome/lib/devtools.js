@@ -29,7 +29,7 @@ import {filterNotifier} from "../adblockpluscore/lib/filterNotifier.js";
 import {port} from "./messaging.js";
 import {HitLogger, nonRequestTypes} from "./hitLogger.js";
 import * as info from "info";
-import {compareVersions} from "../adblockpluscore/lib/versions.js";
+import {compareVersions} from "./versions.js";
 
 let panels = new Map();
 

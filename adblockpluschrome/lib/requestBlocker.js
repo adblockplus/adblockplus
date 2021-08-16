@@ -367,7 +367,6 @@ function onFilterChange(arg, isDisabledAction)
       onBeforeNavigate.addListener(onNavigateAfterFilterChange);
 
     ignoreFilterNotifications = false;
-    filterNotifier.emit("filter.behaviorChanged");
   });
 }
 

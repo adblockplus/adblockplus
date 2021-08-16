@@ -19,10 +19,9 @@
 
 import {defaultMatcher} from "../adblockpluscore/lib/matcher.js";
 import {contentTypes} from "../adblockpluscore/lib/contentTypes.js";
-import {filterNotifier} from "../adblockpluscore/lib/filterNotifier.js";
 import {Prefs} from "./prefs.js";
 import {extractHostFromFrame} from "./url.js";
-import {getKey, checkAllowlisted} from "./allowlisting.js";
+import {getKey, checkAllowlisted, allowlistingState} from "./allowlisting.js";
 import {port} from "./messaging.js";
 import * as info from "info";
 
@@ -399,7 +398,7 @@ if ("windows" in browser)
   });
 }
 
-filterNotifier.on("page.AllowlistingStateRevalidate", (page, filter) =>
+allowlistingState.addListener("changed", (page, filter) =>
 {
   if (readyActivePages.has(page))
   {
