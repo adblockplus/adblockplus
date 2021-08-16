@@ -21,5 +21,4 @@ export {default as mapping} from "./mapping.js";
 export {translations, chromeTranslations} from "./translations.js";
 export {addDevEnvVersion, addUnitTestsPage} from "./devenv.js";
 export {buildUI} from "./ui-dependency.js";
-export {buildSnippets} from "./snippets-dependency.js";
 export {default as sourceDistribution} from "./sourceDistribution.js";

@@ -47,7 +47,11 @@ lint:
 test:
   stage: test
   script:
+    # Update dependencies
+    - npm run submodules:update
+    - git submodule status
     - npm install
+    # Create distributables and run tests
     - npm run dist
     - npm run test
 
@@ -61,11 +65,10 @@ build:
   script:
     # Update dependencies
     - npm run submodules:update
-    # Include resulting dependencies in debug output
     - git submodule status
-    # Finally build abp
-    - cd adblockpluschrome
     - npm install
+    # Create extension builds
+    - cd adblockpluschrome
     - npx gulp build -t firefox --unhandled-rejections=strict
     - npx gulp build -t chrome --unhandled-rejections=strict
     # Attach commit hash to build files
@@ -93,13 +96,12 @@ build:with-snippets:
     - chmod 700 ~/.ssh
     - ssh-keyscan gitlab.com >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
-    # Get the snippets libary
+    # Update dependencies
     - npm run submodules:update-with-snippets
     - git submodule status
-    # Prepare to build
-    - cd adblockpluschrome
     - npm install
-    # Create the builds
+    # Create extension builds
+    - cd adblockpluschrome
     - npx gulp build -t firefox --unhandled-rejections=strict
     - npx gulp build -t chrome --unhandled-rejections=strict
     # Attach commit hash to build files
