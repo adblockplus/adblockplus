@@ -27,9 +27,11 @@ import {extractHostFromFrame} from "./url.js";
 import {port} from "./messaging.js";
 import {logAllowlistedDocument} from "./hitLogger.js";
 import {verifySignature} from "../adblockpluscore/lib/rsa.js";
+import {EventEmitter} from "./events.js";
 
 let sitekeys = new ext.PageMap();
 export let allowlistedDomainRegexp = /^@@\|\|([^/:]+)\^\$document$/;
+let eventEmitter = new EventEmitter();
 
 function match(page, url, typeMask, docDomain, sitekey)
 {
@@ -210,22 +212,53 @@ port.on("filters.unwhitelist", message =>
   }
 });
 
+/**
+ * @namespace
+ * @static
+ */
+export let allowlistingState = {
+  /**
+   * Adds a listener for the given event name.
+   *
+   * @param {string} name
+   * @param {function} listener
+   */
+  addListener: eventEmitter.on.bind(eventEmitter),
+
+  /**
+   * Removes a listener for the given event name.
+   *
+   * @param {string} name
+   * @param {function} listener
+   */
+  removeListener: eventEmitter.off.bind(eventEmitter)
+};
+
 function revalidateAllowlistingState(page)
 {
-  filterNotifier.emit(
-    "page.AllowlistingStateRevalidate",
-    page, checkAllowlisted(page)
+  eventEmitter.emit(
+    "changed",
+    page,
+    checkAllowlisted(page)
   );
 }
 
-filterNotifier.on("filter.behaviorChanged", async() =>
+async function onFilterChange()
 {
   let tabs = await browser.tabs.query({});
   for (let tab of tabs)
     revalidateAllowlistingState(new ext.Page(tab));
-});
+}
 
 ext.pages.onLoading.addListener(revalidateAllowlistingState);
+filterNotifier.on("ready", onFilterChange);
+filterNotifier.on("filter.added", onFilterChange);
+filterNotifier.on("filterState.enabled", onFilterChange);
+filterNotifier.on("filter.removed", onFilterChange);
+filterNotifier.on("subscription.added", onFilterChange);
+filterNotifier.on("subscription.disabled", onFilterChange);
+filterNotifier.on("subscription.removed", onFilterChange);
+filterNotifier.on("subscription.updated", onFilterChange);
 
 /**
  * Gets the public key, previously recorded for the given page

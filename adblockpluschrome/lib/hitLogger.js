@@ -18,7 +18,7 @@
 /** @module hitLogger */
 
 import {extractHostFromFrame} from "./url.js";
-import {EventEmitter} from "../adblockpluscore/lib/events.js";
+import {EventEmitter} from "./events.js";
 import {filterStorage} from "../adblockpluscore/lib/filterStorage.js";
 import {port} from "./messaging.js";
 import {Filter, ElemHideFilter} from "../adblockpluscore/lib/filterClasses.js";

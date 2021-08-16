@@ -17,7 +17,7 @@
 
 /** @module stats */
 
-import {EventEmitter} from "../adblockpluscore/lib/events.js";
+import {EventEmitter} from "./events.js";
 import {BlockingFilter} from "../adblockpluscore/lib/filterClasses.js";
 import {setBadge} from "./browserAction.js";
 import {port} from "./messaging.js";
