@@ -48,8 +48,7 @@ async function mustBuildUI(lastUIBuildTime)
         "../mocks/**",
         "../node_modules/**",
         "../smoke/**",
-        "../test/**",
-        "../vendor/abp-snippets/**"
+        "../test/**"
       ]
     }
   );

@@ -27,17 +27,16 @@ Adblock Plus.
 
 To contribute to this project, you'll need:
 
-[Node](https://nodejs.org/en/) and npm
+[Node][nodejs] (>= 12.17.0) and npm
 
 **Important**: `Node` should come installed with `npm`. If it doesn't, you can
-download `npm` [here](https://www.npmjs.com/get-npm).
+download `npm` [here][npm].
+
+**Important:** On Windows, you need a [Linux environment running on WSL][ms-wsl]
+and run the commands from within Bash.
 
 **Tip**: If you're installing `node` in ArchLinux, please remember to install
 `npm`, too.
-
-If you want to build the Adblock Plus extension, please refer to the
-[Adblock Plus web extension README][abp-webext-readme] for additional
-requirements.
 
 After cloning this repository, open its folder and run `npm install`.
 
@@ -154,6 +153,34 @@ included when you install `npm`.
 
 ## Building
 
+### Building the extension
+
+In order to build the extension you need to first
+[update its dependencies](#updating-the-dependencies). You can then navigate
+to the adblockpluschrome/ folder and run
+[the appropriate command][abp-webext-readme-build] for the type of build you'd
+like to generate.
+
+#### Updating the dependencies
+
+Clone the external repositories:
+
+`npm run submodules:update`
+
+**Important:** When building from a source archive, this step must be skipped.
+
+**Note:** In order to create a build which includes the snippets library,
+you should use the `npm run submodules:update-with-snippets` npm script instead.
+This will work only if you have access to the
+[abp-snippets repository][abp-snippets].
+
+Install the required npm packages:
+
+`npm install`
+
+Rerun the above commands when the dependencies might have changed,
+e.g. after checking out a new revision.
+
 ### Bundling the UI
 
 Various files need to be generated before using the UI. When building the UI
@@ -168,18 +195,6 @@ environment.
 
 Beyond that, this repository contains [various utilities][wiki-utils] that we
 rely on across our development process.
-
-### Building the extension
-
-In order to build the extension, you need to use the
-`npm run submodules:update` npm script before you can navigate to the
-adblockpluschrome/ directory to follow the instructions for
-[building Adblock Plus][abp-webext-readme-build]. This build won't include
-the snippets library.
-
-In order to create a build which includes the snippets library, you should use
-the `npm run submodules:update-with-snippets` npm script instead. This will
-work only if you have access to the [abp-snippets repository][abp-snippets].
 
 ## Release history
 
@@ -199,12 +214,11 @@ This project follows the typical GitLab process:
 
 
 
-[abp-core]: https://gitlab.com/eyeo/adblockplus/adblockpluscore/
+[abp-core]: https://gitlab.com/eyeo/adblockplus/abc/adblockpluscore/
 [abp-spec]: https://gitlab.com/eyeo/specs/spec/tree/master/spec/abp
 [abp-ui]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/
 [abp-ui-nightlies]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/pipelines?scope=branches
 [abp-ui-tags]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/tags
-[abp-webext-readme]: /adblockpluschrome/README.md
 [abp-webext-readme-build]: /adblockpluschrome/README.md#building
 [abp-webext-releases]: https://github.com/adblockplus/adblockpluschrome/releases
 [abp-snippets]: https://gitlab.com/eyeo/adblockplus/abp-snippets
@@ -213,6 +227,9 @@ This project follows the typical GitLab process:
 [eyeo]: https://eyeo.com/
 [eyeo-terms]: https://adblockplus.org/terms
 [gpl3]: https://www.gnu.org/licenses/gpl.html
+[ms-wsl]: https://docs.microsoft.com/windows/wsl/install-win10
+[nodejs]: https://nodejs.org/en/
+[npm]: https://www.npmjs.com/get-npm
 [npx]: https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b
 [wiki-branches]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/wikis/development-workflow#naming-schemes
 [wiki-utils]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/wikis/utilities

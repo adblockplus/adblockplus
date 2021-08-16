@@ -8,30 +8,6 @@ Adblock Plus for these platforms.
 Building
 ---------
 
-### Requirements
-
-- [Node.js](https://nodejs.org/) (>= 12.17.0)
-
-### Building on Windows
-
-On Windows, you need a [Linux environment running on WSL](https://docs.microsoft.com/windows/wsl/install-win10).
-Then install the above requirements and run the commands below from within Bash.
-
-### Updating the dependencies
-
-Clone the external repositories:
-
-    git submodule update --init --recursive
-
-_Note: when building from a source archive, this step must be skipped._
-
-Install the required npm packages:
-
-    npm install
-
-Rerun the above commands when the dependencies might have changed,
-e.g. after checking out a new revison.
-
 ### Building the extension
 
 Run the following command in the project directory:

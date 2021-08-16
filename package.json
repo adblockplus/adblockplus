@@ -10,8 +10,7 @@
     "$": "npm-dollar",
     "dev-build": "npm run $ bundle && npm run $ dev-build",
     "bundle": "npm run $ bundle",
-    "dist": "npm run icons-gen && npm run bundle",
-    "icons-gen": "node build/icons-generation/index.js",
+    "dist": "npm run $ create.dist",
     "lint": "npm run $ lint",
     "start": "http-server",
     "test": "npm run $ test",
@@ -20,7 +19,8 @@
     "csv-import": "node build/locale-sync/csv/main.js -i && node build/locale-sync/normalize.js",
     "test:end-to-end": "mocha test/end-to-end/main.js --timeout 15000 --delay",
     "submodules:update": "git submodule update --init --recursive",
-    "submodules:update-with-snippets": "git -c submodule.\"vendor/abp-snippets\".update=checkout submodule update --init --recursive"
+    "submodules:update-with-snippets": "git -c submodule.\"vendor/abp-snippets\".update=checkout submodule update --init --recursive",
+    "postinstall": "npm run $ install"
   },
   "$": {
     "dev-build": [
@@ -69,6 +69,12 @@
         ]
       },
       "css": "node-sass $1 $2",
+      "dist": {
+        "ewe": "cd vendor/webext-sdk && npx webpack --env release && cd ../..",
+        "icons": "node build/icons-generation/index.js",
+        "snippets": "[ -f ./vendor/abp-snippets/package.json ] && npm run --prefix ./vendor/abp-snippets build || echo 'Skipping snippets'",
+        "ui": "$ bundle"
+      },
       "js": "echo \"/* eslint-disable */$(browserify --node $1)\">$2",
       "test": {
         "component": {
@@ -98,6 +104,11 @@
       "upload-strings": "crowdin upload sources",
       "upload-translations": "crowdin upload translations --auto-approve-imported"
     },
+    "install": [
+      "npm install --loglevel=error --no-audit --no-fund --no-optional --no-save --prefix adblockpluschrome",
+      "npm install --only=production --loglevel=error --no-audit --no-fund --no-optional --no-save --prefix vendor/webext-sdk",
+      "[ -f ./vendor/abp-snippets/package.json ] && npm install --only=production --loglevel=error --no-audit --no-fund --no-optional --no-save --prefix vendor/abp-snippets || echo 'Skipping abp-snippets installation'"
+    ],
     "lint": {
       "css": "stylelint ./build/**/*.css ./css/*.scss ./skin/*.css --ignore-path .gitignore",
       "js": "eslint './*.js' './js/**/*.js' './lib/**/*.js' './ext/**/*.js' './build/**/*.js' './mocks/**/*.js' './test/**/*.js'",
