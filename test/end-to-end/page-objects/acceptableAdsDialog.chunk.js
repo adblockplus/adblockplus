@@ -27,15 +27,47 @@ class AcceptableAdsDialogChunk extends BasePage
     this.browser = browser;
   }
 
+  get aaDialog()
+  {
+    return this.browser
+      .$("//*[@id='acceptable-ads-why-not']");
+  }
+
   get goToSurveyButton()
   {
     return this.browser
       .$("//a[@data-i18n='options_aa_opt_out_survey_ok']");
   }
 
+  get noThanksButton()
+  {
+    return this.browser
+      .$("//button[@data-i18n='options_aa_opt_out_survey_no']");
+  }
+
   async clickGoToSurveyButton()
   {
     await (await this.goToSurveyButton).click();
+  }
+
+  async clickNoThanksButton()
+  {
+    await (await this.noThanksButton).click();
+  }
+
+  async isAADialogDisplayed()
+  {
+    return await (await this.aaDialog).isDisplayed();
+  }
+
+  async isGoToSurveyButtonDisplayed()
+  {
+    return await (await this.goToSurveyButton).isDisplayed();
+  }
+
+  async isNoThanksButtonDisplayed()
+  {
+    return await (await this.noThanksButton).isDisplayed();
   }
 
   async switchToAASurveyTab()

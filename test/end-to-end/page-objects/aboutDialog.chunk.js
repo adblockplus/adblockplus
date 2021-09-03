@@ -27,6 +27,24 @@ class AboutDialogChunk extends BasePage
     this.browser = browser;
   }
 
+  get closeButton()
+  {
+    return this.browser
+      .$("//button[@data-action='close-dialog']");
+  }
+
+  get copyrightText()
+  {
+    return this.browser
+      .$("//*[@id='copyright']");
+  }
+
+  get dialog()
+  {
+    return this.browser
+      .$("//*[@id='dialog']");
+  }
+
   get eyeoGmbhLink()
   {
     return this.browser
@@ -39,6 +57,11 @@ class AboutDialogChunk extends BasePage
       .$("//*[@id='privacy-policy']");
   }
 
+  async clickCloseButton()
+  {
+    await (await this.closeButton).click();
+  }
+
   async clickEyeoGmbhLink()
   {
     await (await this.eyeoGmbhLink).click();
@@ -47,6 +70,16 @@ class AboutDialogChunk extends BasePage
   async clickPrivacyPolicyLink()
   {
     await (await this.privacyPolicyLink).click();
+  }
+
+  async getCopyrightText()
+  {
+    return await (await this.copyrightText).getText();
+  }
+
+  async isDialogDisplayed()
+  {
+    return await (await this.dialog).isDisplayed();
   }
 
   async switchToImprintTab()

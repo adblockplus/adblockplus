@@ -33,7 +33,7 @@ class HeartDialogChunk extends BasePage
       .$("//a[@data-i18n='options_rating_button']");
   }
 
-  get doanteButton()
+  get donateButton()
   {
     return this.browser
       .$("//a[@data-i18n='options_donate_button']");
@@ -46,7 +46,17 @@ class HeartDialogChunk extends BasePage
 
   async clickDonateButton()
   {
-    await (await this.doanteButton).click();
+    await (await this.donateButton).click();
+  }
+
+  async isDonateButtonDisplayed()
+  {
+    return await (await this.donateButton).isDisplayed();
+  }
+
+  async isRateUsButtonDisplayed()
+  {
+    return await (await this.rateUsButton).isDisplayed();
   }
 
   async switchToWebstoreTab()
