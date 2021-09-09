@@ -19,7 +19,7 @@
 
 const BasePage = require("./base.page");
 
-class HeartDialogChunk extends BasePage
+class WebstoreCookiesAgreementPage extends BasePage
 {
   constructor(browser)
   {
@@ -27,47 +27,22 @@ class HeartDialogChunk extends BasePage
     this.browser = browser;
   }
 
-  get rateUsButton()
+  get iAgreeButton()
   {
     return this.browser
-      .$("//a[@data-i18n='options_rating_button']");
+      .$("//button[@aria-label='Agree to the use of cookies " +
+        "and other data for the purposes described']");
   }
 
-  get donateButton()
+  async clickIAgreeButton()
   {
-    return this.browser
-      .$("//a[@data-i18n='options_donate_button']");
+    await (await this.iAgreeButton).click();
   }
 
-  async clickRateUsButton()
+  async switchToWebstoreTab()
   {
-    await (await this.rateUsButton).click();
-  }
-
-  async clickDonateButton()
-  {
-    await (await this.donateButton).click();
-  }
-
-  async isDonateButtonDisplayed()
-  {
-    return await (await this.donateButton).isDisplayed();
-  }
-
-  async isRateUsButtonDisplayed()
-  {
-    return await (await this.rateUsButton).isDisplayed();
-  }
-
-  async switchToWebstoreCookiesAgreementTab()
-  {
-    await this.switchToTab("Before you continue");
-  }
-
-  async switchToDonateTab()
-  {
-    await this.switchToTab("Donate to Adblock Plus");
+    await this.switchToTab("Adblock Plus - free ad blocker - Chrome Web Store");
   }
 }
 
-module.exports = HeartDialogChunk;
+module.exports = WebstoreCookiesAgreementPage;
