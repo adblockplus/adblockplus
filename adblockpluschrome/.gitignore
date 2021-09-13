@@ -1,6 +1,5 @@
 /devenv.*/
 /node_modules/
-/docs/
 /test/screenshots/
 /.last_ui_build
 /adblockpluschrome-*.zip

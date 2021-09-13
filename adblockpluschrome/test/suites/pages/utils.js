@@ -148,7 +148,7 @@ export async function runFirstTest(driver, browserName, browserVersion,
   for (let [url] of pageTests)
   {
     let page = getPage(url);
-    if (!(isExcluded(page, browserName, browserVersion) ||
+    if (!(await isExcluded(page, browserName, browserVersion) ||
           page in specializedTests))
     {
       let expectedScreenshot = await getExpectedScreenshot(driver, url);

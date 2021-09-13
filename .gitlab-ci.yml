@@ -43,7 +43,6 @@ lint:
     - npm install
     - npm run lint
 
-
 test:
   stage: test
   script:
@@ -54,7 +53,6 @@ test:
     # Create distributables and run tests
     - npm run dist
     - npm run test
-
 
 ################################################################################
 # Build
@@ -69,15 +67,18 @@ build:
     - npm install
     # Create extension builds
     - cd adblockpluschrome
-    - npx gulp build -t firefox --unhandled-rejections=strict
     - npx gulp build -t chrome --unhandled-rejections=strict
+    - npx gulp build -t firefox --unhandled-rejections=strict
+    - npx gulp source
     # Attach commit hash to build files
     - mv adblockpluschrome-*.zip adblockplus-chrome-${CI_COMMIT_SHA:0:8}.zip
     - mv adblockplusfirefox-*.xpi adblockplus-firefox-${CI_COMMIT_SHA:0:8}.xpi
+    - mv adblockplus-*.tar.gz adblockplus-${CI_COMMIT_SHA:0:8}.tar.gz
   artifacts:
     paths:
       - adblockpluschrome/adblockplus-chrome-${CI_COMMIT_SHA:0:8}.zip
       - adblockpluschrome/adblockplus-firefox-${CI_COMMIT_SHA:0:8}.xpi
+      - adblockpluschrome/adblockplus-${CI_COMMIT_SHA:0:8}.tar.gz
   only:
     refs:
       - /^release-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
@@ -102,14 +103,17 @@ build:with-snippets:
     - npm install
     # Create extension builds
     - cd adblockpluschrome
-    - npx gulp build -t firefox --unhandled-rejections=strict
     - npx gulp build -t chrome --unhandled-rejections=strict
+    - npx gulp build -t firefox --unhandled-rejections=strict
+    - npx gulp source
     # Attach commit hash to build files
     - mv adblockpluschrome-*.zip adblockplus-chrome-${CI_COMMIT_SHA:0:8}.zip
     - mv adblockplusfirefox-*.xpi adblockplus-firefox-${CI_COMMIT_SHA:0:8}.xpi
+    - mv adblockplus-*.tar.gz adblockplus-${CI_COMMIT_SHA:0:8}.tar.gz
     # Encrypt the builds
     - gpg -c --batch --passphrase $SNIPPETS_PASSWORD adblockplus-chrome-*.zip
     - gpg -c --batch --passphrase $SNIPPETS_PASSWORD adblockplus-firefox-*.xpi
+    - gpg -c --batch --passphrase $SNIPPETS_PASSWORD adblockplus-*.tar.gz
   artifacts:
     paths:
       - adblockpluschrome/adblockplus-*.gpg

@@ -22,12 +22,14 @@ const {initDriver} = require("./browsers/chromium");
 async function waitForExtension()
 {
   const driver = await initDriver();
+  let extensionHandle;
   let origin;
   await driver.wait(async() =>
   {
     for (const handle of await driver.getAllWindowHandles())
     {
       await driver.switchTo().window(handle);
+      extensionHandle = handle;
       origin = await driver.executeAsyncScript(`
         let callback = arguments[arguments.length - 1];
         (async() =>
@@ -49,7 +51,7 @@ async function waitForExtension()
     return false;
   }, 5000, "options page not found");
 
-  return [driver, origin];
+  return [driver, origin, extensionHandle];
 }
 
 module.exports = {waitForExtension};

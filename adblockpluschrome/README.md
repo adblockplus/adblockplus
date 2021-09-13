@@ -121,18 +121,3 @@ to `"true"`.
 
 [Edge Chromium](https://www.microsoft.com/en-us/edge/business/download) needs to
 be installed before running the Edge tests.
-
-Linting
--------
-
-You can lint the code using [ESLint](http://eslint.org).
-
-You will need to setup first. This will install our configuration
-[eslint-config-eyeo](https://gitlab.com/eyeo/auxiliary/eyeo-coding-style/-/tree/master/eslint-config-eyeo)
-and everything needed after you run:
-
-    npm install
-
-Then you can run to lint the code:
-
-    npm run lint
