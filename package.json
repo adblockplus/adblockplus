@@ -114,6 +114,7 @@
     "lint": {
       "css": "stylelint ./build/**/*.css ./css/*.scss ./skin/*.css --ignore-path .gitignore",
       "js": "eslint './*.js' './js/**/*.js' './lib/**/*.js' './ext/**/*.js' './build/**/*.js' './mocks/**/*.js' './test/**/*.js'",
+      "legacy": "eslint --ext .js,.cjs,.js.tmpl adblockpluschrome/*.js adblockpluschrome/lib/ adblockpluschrome/ext/ adblockpluschrome/test/ adblockpluschrome/build/",
       "locale": [
         "node build/locale-linter/test",
         "node build/locale-linter ./locale/**/*.json"

@@ -33,6 +33,7 @@ function getExtensionPath()
 
 async function waitForExtension()
 {
+  let extensionHandle;
   let origin;
   const basePage = new BasePage(browser);
   await basePage.switchToTab("Adblock Plus Options");
@@ -41,6 +42,7 @@ async function waitForExtension()
     for (const handle of await browser.getWindowHandles())
     {
       await browser.switchToWindow(handle);
+      extensionHandle = handle;
       origin = await browser.executeAsyncScript(`
         let callback = arguments[arguments.length - 1];
         (async() =>
@@ -62,7 +64,7 @@ async function waitForExtension()
     return false;
   }, {timeout: 5000}, "options page not found");
 
-  return [origin];
+  return [origin, extensionHandle];
 }
 
 module.exports = {getExtensionPath, helperExtension, waitForExtension};
