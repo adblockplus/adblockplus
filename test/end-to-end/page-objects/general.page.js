@@ -58,6 +58,69 @@ class GeneralPage extends BasePage
       .$("#acceptable-ads-allow");
   }
 
+  get blockAdditionalTrackingTooltipIcon()
+  {
+    return this.browser
+      .$("//li[@aria-label='Block additional tracking']/io-popout");
+  }
+
+  get blockAdditionalTrackingTooltipText()
+  {
+    return this.browser
+      .$("//li[@aria-label='Block additional tracking']/io-popout/div/div/p");
+  }
+
+  get blockCookieWarningsTooltipIcon()
+  {
+    return this.browser
+      .$("//li[@aria-label='Block cookie warnings']/io-popout");
+  }
+
+  get blockCookieWarningsTooltipText()
+  {
+    return this.browser
+      .$("//li[@aria-label='Block cookie warnings']/io-popout/div/div/p");
+  }
+
+  get blockPushNotificationsTooltipIcon()
+  {
+    return this.browser
+      .$("//li[@aria-label='Block push notifications']/io-popout");
+  }
+
+  get blockPushNotificationsTooltipText()
+  {
+    return this.browser
+      .$("//li[@aria-label='Block push notifications']/io-popout/div/div/p");
+  }
+
+  get blockSocialMediaIconsTrackingTooltipIcon()
+  {
+    return this.browser
+      .$("//li[@aria-label='Block social media icons tracking']/io-popout");
+  }
+
+  get blockSocialMediaIconsTrackingTooltipText()
+  {
+    return this.browser
+      .$("//li[@aria-label='Block social media icons tracking']" +
+        "/io-popout/div/div/p");
+  }
+
+  get notifyLanguageFilterListsTooltipIcon()
+  {
+    return this.browser
+      .$("//li[@data-pref='recommend_language_subscriptions']" +
+        "/io-popout");
+  }
+
+  get notifyLanguageFilterListsTooltipText()
+  {
+    return this.browser
+      .$("//li[@data-pref='recommend_language_subscriptions']" +
+        "/io-popout/div/div/p");
+  }
+
   async clickAcceptableAdsCriteriaLink()
   {
     await (await this.acceptableAdsCriteriaLink).click();
@@ -71,6 +134,85 @@ class GeneralPage extends BasePage
   async clickAllowAcceptableAdsCheckbox()
   {
     await (await this.allowAcceptableAdsCheckbox).click();
+  }
+
+  async clickBlockAdditionalTrackingTooltipIcon()
+  {
+    await (await this.blockAdditionalTrackingTooltipIcon).click();
+  }
+
+  async clickBlockCookieWarningsTooltipIcon()
+  {
+    await (await this.blockCookieWarningsTooltipIcon).click();
+  }
+
+  async clickBlockPushNotificationsTooltipIcon()
+  {
+    await (await this.blockPushNotificationsTooltipIcon).click();
+  }
+
+  async clickBlockSocialMediaIconsTrackingTooltipIcon()
+  {
+    await (await this.blockSocialMediaIconsTrackingTooltipIcon).click();
+  }
+
+  async clickNotifyLanguageFilterListsTooltipIcon()
+  {
+    await (await this.notifyLanguageFilterListsTooltipIcon).click();
+  }
+
+  async getBlockAdditionalTrackingTooltipText()
+  {
+    return await (await this.blockAdditionalTrackingTooltipText).getText();
+  }
+
+  async getBlockCookieWarningsTooltipText()
+  {
+    return await (await this.blockCookieWarningsTooltipText).getText();
+  }
+
+  async getBlockPushNotificationsTooltipText()
+  {
+    return await (await this.blockPushNotificationsTooltipText).getText();
+  }
+
+  async getBlockSocialMediaIconsTrackingTooltipText()
+  {
+    return await (await
+    this.blockSocialMediaIconsTrackingTooltipText).getText();
+  }
+
+  async getNotifyLanguageFilterListsTooltipText()
+  {
+    return await (await
+    this.notifyLanguageFilterListsTooltipText).getText();
+  }
+
+  async isBlockAdditionalTrackingTooltipTextDisplayed()
+  {
+    return await (await this.blockAdditionalTrackingTooltipText).isDisplayed();
+  }
+
+  async isBlockCookieWarningsTooltipTextDisplayed()
+  {
+    return await (await this.blockCookieWarningsTooltipText).isDisplayed();
+  }
+
+  async isBlockPushNotificationsTooltipTextDisplayed()
+  {
+    return await (await this.blockPushNotificationsTooltipText).isDisplayed();
+  }
+
+  async isBlockSocialMediaIconsTrackingTooltipTextDisplayed()
+  {
+    return await (await this.blockSocialMediaIconsTrackingTooltipText).
+      isDisplayed();
+  }
+
+  async isNotifyLanguageFilterListsTooltipTextDisplayed()
+  {
+    return await (await this.notifyLanguageFilterListsTooltipText).
+      isDisplayed();
   }
 
   async switchToAAInfoTab()
