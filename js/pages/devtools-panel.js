@@ -221,7 +221,10 @@ function createRecord(request, filter, template)
       originElement.classList.add("unnamed");
     }
 
-    if (!filter.allowlisted && request.type != "ELEMHIDE")
+    // We cannot generate allowing filters for already allowlisted requests
+    // or for filters that are applied to frames
+    if (!filter.allowlisted && request.type != "ELEMHIDE" &&
+      request.type != "SNIPPET")
     {
       actionWrapper.appendChild(createActionButton(
         "add", "devtools_action_unblock", "@@" + generateFilter(request, false)

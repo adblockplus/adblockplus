@@ -109,6 +109,20 @@ const records = [
       userDefined: false,
       subscription: "EasyList"
     }
+  },
+  // snippet filter
+  {
+    request: {
+      url: "http://example.com/",
+      type: "SNIPPET",
+      docDomain: "example.com"
+    },
+    filter: {
+      text: "example.com#$#dir-string",
+      allowlisted: false,
+      userDefined: false,
+      subscription: "EasyList"
+    }
   }
 ];
 
