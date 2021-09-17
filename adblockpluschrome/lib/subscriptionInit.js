@@ -30,7 +30,6 @@ import {Prefs} from "./prefs.js";
 import {initNotifications} from "./notificationHelper.js";
 
 let firstRun;
-let subscriptionsCallback = null;
 let userNotificationCallback = null;
 let reinitialized = false;
 let dataCorrupted = false;
@@ -195,9 +194,6 @@ function getSubscriptions()
 
 function addSubscriptionsAndNotifyUser(subscriptions)
 {
-  if (subscriptionsCallback)
-    subscriptions = subscriptionsCallback(subscriptions);
-
   for (let subscription of subscriptions)
   {
     filterStorage.addSubscription(subscription);
@@ -256,18 +252,6 @@ async function testStorage()
 export function isDataCorrupted()
 {
   return dataCorrupted;
-}
-
-/**
- * Sets a callback that is called with an array of subscriptions to be added
- * during initialization. The callback must return an array of subscriptions
- * that will effectively be added.
- *
- * @param {function} callback
- */
-export function setSubscriptionsCallback(callback)
-{
-  subscriptionsCallback = callback;
 }
 
 /**
