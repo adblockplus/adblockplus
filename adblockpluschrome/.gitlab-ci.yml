@@ -54,8 +54,10 @@ variables:
   retry:
     max: 2
     when: "stuck_or_timeout_failure"
-  except:
-    - "schedules"
+  rules:
+    - if: "$CI_PIPELINE_SOURCE == 'schedule'"
+      when: "never"
+    - when: "on_success"
   cache:
     <<: *cache
     policy: "pull"
@@ -69,8 +71,10 @@ prepare-dependencies:
     - "npm install"
     - "cd adblockpluschrome"
     - "npm run download-test-browsers"
-  except:
-    - "schedules"
+  rules:
+    - if: "$CI_PIPELINE_SOURCE == 'schedule'"
+      when: "never"
+    - when: "on_success"
   cache: *cache
   interruptible: true
 
