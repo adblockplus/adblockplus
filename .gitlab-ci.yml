@@ -43,13 +43,11 @@ lint:
     - npm install
     - npm run lint
 
-
 test:
   stage: test
   script:
     - npm install
     - npm run test
-
 
 ################################################################################
 # Build
@@ -105,19 +103,19 @@ build:with-snippets:
   artifacts:
     paths:
       - adblockpluschrome/adblockplus-*.gpg
-  only:
-    variables:
-      - $SNIPPETS_SSH_KEY && $SNIPPETS_PASSWORD
+  rules:
+    - if: $SNIPPETS_SSH_KEY && $SNIPPETS_PASSWORD
 
 ################################################################################
 # Translate
 ################################################################################
 
 .translations:
-  only: 
-    refs:
-      - /^feature-/
-      - release
+  rules:
+    - if: $CI_COMMIT_BRANCH =~ /^feature-/
+      when: manual
+    - if: $CI_COMMIT_BRANCH == "release"
+      when: manual
 
 .crowdin:
   variables:
@@ -143,7 +141,6 @@ uploadcrowdin:
     # Uploading strings
     - npm run $ crowdin.upload-strings
     - npm run $ crowdin.upload-translations
-  when: manual
 
 downloadcrowdin:
   stage: downloadcrowdin
@@ -173,7 +170,6 @@ downloadcrowdin:
     - export TARGET_BRANCH="translation-${CI_BUILD_REF_NAME}-crowdin-download"
     - export PUSH_URL=$(echo $CI_PROJECT_URL | sed "s/:\/\//:\/\/$GITLAB_USER:$GITLAB_TOKEN@/")
     - 'git push -f -o merge_request.create -o merge_request.target=$CI_BUILD_REF_NAME -o merge_request.remove_source_branch -o merge_request.title="WIP: ${COMMIT_MSG}" $PUSH_URL HEAD:refs/heads/$TARGET_BRANCH'
-  when: manual
 
 .xtm:
   variables:
@@ -198,7 +194,6 @@ uploadxtm:
     - git branch master origin/master
     - git checkout -B "$CI_BUILD_REF_NAME" "$CI_BUILD_REF"
     - npm run $ xtm.create
-  when: manual
 
 updatextm:
   stage: updatextm
@@ -214,7 +209,6 @@ updatextm:
     - git branch master origin/master
     - git checkout -B "$CI_BUILD_REF_NAME" "$CI_BUILD_REF"
     - npm run $ xtm.update
-  when: manual
 
 downloadxtm:
   stage: downloadxtm
@@ -244,7 +238,6 @@ downloadxtm:
     - export TARGET_BRANCH="translation-${CI_BUILD_REF_NAME}-xtm-download"
     - export PUSH_URL=$(echo $CI_PROJECT_URL | sed "s/:\/\//:\/\/$GITLAB_USER:$GITLAB_TOKEN@/")
     - 'git push -f -o merge_request.create -o merge_request.target=$CI_BUILD_REF_NAME -o merge_request.remove_source_branch -o merge_request.title="WIP: ${COMMIT_MSG}" $PUSH_URL HEAD:refs/heads/$TARGET_BRANCH'
-  when: manual
 
 ################################################################################
 # Extension

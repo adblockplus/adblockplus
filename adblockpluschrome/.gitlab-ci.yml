@@ -54,8 +54,10 @@ variables:
   retry:
     max: 2
     when: "stuck_or_timeout_failure"
-  except:
-    - "schedules"
+  rules:
+    - if: "$CI_PIPELINE_SOURCE == 'schedule'"
+      when: "never"
+    - when: "on_success"
   cache:
     <<: *cache
     policy: "pull"
@@ -70,8 +72,10 @@ prepare-dependencies:
     - "git -C .. clean -x -d -ff"
     - "npm install"
     - "npm run download-test-browsers"
-  except:
-    - "schedules"
+  rules:
+    - if: "$CI_PIPELINE_SOURCE == 'schedule'"
+      when: "never"
+    - when: "on_success"
   cache: *cache
   interruptible: true
 
