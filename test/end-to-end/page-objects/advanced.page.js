@@ -39,11 +39,35 @@ class AdvancedPage extends BasePage
     await (await this._advancedTabButton).click();
   }
 
+  get easyPrivacyFL()
+  {
+    return this.browser
+      .$("//li[@aria-label='EasyPrivacy']");
+  }
+
+  get fanboysNotificationsBlockingListFL()
+  {
+    return this.browser
+      .$("//li[@aria-label=\"Fanboy's Notifications Blocking List\"]");
+  }
+
+  get fanboysSocialBlockingListFL()
+  {
+    return this.browser
+      .$("//li[@aria-label=\"Fanboy's Social Blocking List\"]");
+  }
+
   get filterListsLearnMoreLink()
   {
     return this.browser
       .$("//a[contains(@data-doclink, 'subscriptions')" +
         "and text()='Learn more']");
+  }
+
+  get iDontCareAboutCookiesFL()
+  {
+    return this.browser
+      .$("//li[@aria-label=\"I don't care about cookies\"]");
   }
 
   get learnHowToWriteFiltersLink()
@@ -156,6 +180,28 @@ class AdvancedPage extends BasePage
   async getTurnOnDebugElementTooltipText()
   {
     return await (await this.turnOnDebugElementTooltipText).getText();
+  }
+
+  async isEasyPrivacyFLDisplayed()
+  {
+    return await this.waitForDisplayedNoError(this.easyPrivacyFL);
+  }
+
+  async isFanboysNotificationsBlockingListFLDisplayed()
+  {
+    return await this.waitForDisplayedNoError(this.
+    fanboysNotificationsBlockingListFL);
+  }
+
+  async isFanboysSocialBlockingListFLDisplayed()
+  {
+    return await this.waitForDisplayedNoError(this.
+    fanboysSocialBlockingListFL);
+  }
+
+  async isIDontCareAboutCookiesFLDisplayed()
+  {
+    return await this.waitForDisplayedNoError(this.iDontCareAboutCookiesFL);
   }
 
   async isShowAdblockPlusPanelTooltipTextDisplayed()

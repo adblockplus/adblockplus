@@ -62,6 +62,19 @@ class BasePage
   {
     return await this.browser.getUrl();
   }
+
+  async waitForDisplayedNoError(element, timeoutMs = 2000)
+  {
+    try
+    {
+      return await (await element).
+      waitForDisplayed({timeout: timeoutMs});
+    }
+    catch (ElementNotVisibleException)
+    {
+      return false;
+    }
+  }
 }
 
 module.exports = BasePage;

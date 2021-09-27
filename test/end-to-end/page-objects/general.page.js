@@ -58,6 +58,12 @@ class GeneralPage extends BasePage
       .$("#acceptable-ads-allow");
   }
 
+  get blockAdditionalTrackingCheckbox()
+  {
+    return this.browser
+      .$("//li[@aria-label='Block additional tracking']/button");
+  }
+
   get blockAdditionalTrackingTooltipIcon()
   {
     return this.browser
@@ -70,6 +76,12 @@ class GeneralPage extends BasePage
       .$("//li[@aria-label='Block additional tracking']/io-popout/div/div/p");
   }
 
+  get blockCookieWarningsCheckbox()
+  {
+    return this.browser
+      .$("//li[@aria-label='Block cookie warnings']/button");
+  }
+
   get blockCookieWarningsTooltipIcon()
   {
     return this.browser
@@ -80,6 +92,12 @@ class GeneralPage extends BasePage
   {
     return this.browser
       .$("//li[@aria-label='Block cookie warnings']/io-popout/div/div/p");
+  }
+
+  get blockPushNotificationsCheckbox()
+  {
+    return this.browser
+      .$("//li[@aria-label='Block push notifications']/button");
   }
 
   get blockPushNotificationsTooltipIcon()
@@ -98,6 +116,12 @@ class GeneralPage extends BasePage
   {
     return this.browser
       .$("//li[@aria-label='Block social media icons tracking']/io-popout");
+  }
+
+  get blockSocialMediaIconsTrackingCheckbox()
+  {
+    return this.browser
+      .$("//li[@aria-label='Block social media icons tracking']/button");
   }
 
   get blockSocialMediaIconsTrackingTooltipText()
@@ -136,9 +160,19 @@ class GeneralPage extends BasePage
     await (await this.allowAcceptableAdsCheckbox).click();
   }
 
+  async clickBlockAdditionalTrackingCheckbox()
+  {
+    await (await this.blockAdditionalTrackingCheckbox).click();
+  }
+
   async clickBlockAdditionalTrackingTooltipIcon()
   {
     await (await this.blockAdditionalTrackingTooltipIcon).click();
+  }
+
+  async clickBlockCookieWarningsCheckbox()
+  {
+    await (await this.blockCookieWarningsCheckbox).click();
   }
 
   async clickBlockCookieWarningsTooltipIcon()
@@ -146,9 +180,19 @@ class GeneralPage extends BasePage
     await (await this.blockCookieWarningsTooltipIcon).click();
   }
 
+  async clickBlockPushNotificationsCheckbox()
+  {
+    await (await this.blockPushNotificationsCheckbox).click();
+  }
+
   async clickBlockPushNotificationsTooltipIcon()
   {
     await (await this.blockPushNotificationsTooltipIcon).click();
+  }
+
+  async clickBlockSocialMediaIconsTrackingCheckbox()
+  {
+    await (await this.blockSocialMediaIconsTrackingCheckbox).click();
   }
 
   async clickBlockSocialMediaIconsTrackingTooltipIcon()
@@ -188,9 +232,21 @@ class GeneralPage extends BasePage
     this.notifyLanguageFilterListsTooltipText).getText();
   }
 
+  async isBlockAdditionalTrackingCheckboxSelected()
+  {
+    return await (await this.blockAdditionalTrackingCheckbox).
+    getAttribute("aria-checked") === "true";
+  }
+
   async isBlockAdditionalTrackingTooltipTextDisplayed()
   {
     return await (await this.blockAdditionalTrackingTooltipText).isDisplayed();
+  }
+
+  async isBlockCookieWarningsCheckboxSelected()
+  {
+    return await (await this.blockCookieWarningsCheckbox).
+    getAttribute("aria-checked") === "true";
   }
 
   async isBlockCookieWarningsTooltipTextDisplayed()
@@ -198,9 +254,21 @@ class GeneralPage extends BasePage
     return await (await this.blockCookieWarningsTooltipText).isDisplayed();
   }
 
+  async isBlockPushNotificationsCheckboxSelected()
+  {
+    return await (await this.blockPushNotificationsCheckbox).
+    getAttribute("aria-checked") === "true";
+  }
+
   async isBlockPushNotificationsTooltipTextDisplayed()
   {
     return await (await this.blockPushNotificationsTooltipText).isDisplayed();
+  }
+
+  async isBlockSocialMediaIconsTrackingCheckboxSelected()
+  {
+    return await (await this.blockSocialMediaIconsTrackingCheckbox).
+    getAttribute("aria-checked") === "true";
   }
 
   async isBlockSocialMediaIconsTrackingTooltipTextDisplayed()
