@@ -39,6 +39,19 @@ class AdvancedPage extends BasePage
     await (await this._advancedTabButton).click();
   }
 
+  get allowNonintrusiveAdvertisingFL()
+  {
+    return this.browser
+      .$("//li[@aria-label='Allow nonintrusive advertising']");
+  }
+
+  get allowNonintrusiveAdvertisingWithoutTrackingFL()
+  {
+    return this.browser
+      .$("//li[@aria-label='Allow nonintrusive advertising " +
+      "without third-party tracking']");
+  }
+
   get easyPrivacyFL()
   {
     return this.browser
@@ -180,6 +193,18 @@ class AdvancedPage extends BasePage
   async getTurnOnDebugElementTooltipText()
   {
     return await (await this.turnOnDebugElementTooltipText).getText();
+  }
+
+  async isAllowNonintrusiveAdvertisingFLDisplayed()
+  {
+    return await this.waitForDisplayedNoError(this.
+    allowNonintrusiveAdvertisingFL);
+  }
+
+  async isAllowNonintrusiveAdvertisingWithoutTrackingFLDisplayed()
+  {
+    return await this.waitForDisplayedNoError(this.
+    allowNonintrusiveAdvertisingWithoutTrackingFL);
   }
 
   async isEasyPrivacyFLDisplayed()

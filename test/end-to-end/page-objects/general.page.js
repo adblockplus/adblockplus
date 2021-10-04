@@ -131,6 +131,12 @@ class GeneralPage extends BasePage
         "/io-popout/div/div/p");
   }
 
+  get doNotTrackNoteParagraph()
+  {
+    return this.browser
+      .$("#dnt");
+  }
+
   get notifyLanguageFilterListsTooltipIcon()
   {
     return this.browser
@@ -143,6 +149,24 @@ class GeneralPage extends BasePage
     return this.browser
       .$("//li[@data-pref='recommend_language_subscriptions']" +
         "/io-popout/div/div/p");
+  }
+
+  get okGotItTrackingWarningButton()
+  {
+    return this.browser
+      .$("//button[@data-i18n='options_tracking_warning_acknowledgment']");
+  }
+
+  get onlyAllowAdsWithoutTrackingCheckbox()
+  {
+    return this.browser
+      .$("#acceptable-ads-privacy-allow");
+  }
+
+  get trackingWarning()
+  {
+    return this.browser
+      .$("#tracking-warning");
   }
 
   async clickAcceptableAdsCriteriaLink()
@@ -205,6 +229,16 @@ class GeneralPage extends BasePage
     await (await this.notifyLanguageFilterListsTooltipIcon).click();
   }
 
+  async clickOnlyAllowAdsWithoutTrackingCheckbox()
+  {
+    await (await this.onlyAllowAdsWithoutTrackingCheckbox).click();
+  }
+
+  async clickOkGotItTrackingWarningButton()
+  {
+    await (await this.okGotItTrackingWarningButton).click();
+  }
+
   async getBlockAdditionalTrackingTooltipText()
   {
     return await (await this.blockAdditionalTrackingTooltipText).getText();
@@ -230,6 +264,12 @@ class GeneralPage extends BasePage
   {
     return await (await
     this.notifyLanguageFilterListsTooltipText).getText();
+  }
+
+  async isAllowAcceptableAdsCheckboxSelected()
+  {
+    return await (await this.allowAcceptableAdsCheckbox).
+    getAttribute("aria-checked") === "true";
   }
 
   async isBlockAdditionalTrackingCheckboxSelected()
@@ -277,10 +317,38 @@ class GeneralPage extends BasePage
       isDisplayed();
   }
 
+  async isDoNotTrackNoteParagraphDisplayed()
+  {
+    return await (await this.doNotTrackNoteParagraph).isDisplayed();
+  }
+
   async isNotifyLanguageFilterListsTooltipTextDisplayed()
   {
     return await (await this.notifyLanguageFilterListsTooltipText).
       isDisplayed();
+  }
+
+  async isOnlyAllowAdsWithoutTrackingCheckboxEnabled()
+  {
+    return await (await this.onlyAllowAdsWithoutTrackingCheckbox).
+    getAttribute("aria-disabled") === "false";
+  }
+
+  async isOnlyAllowAdsWithoutTrackingCheckboxSelected()
+  {
+    return await (await this.onlyAllowAdsWithoutTrackingCheckbox).
+    getAttribute("aria-checked") === "true";
+  }
+
+  async isTrackingWarningDisplayed()
+  {
+    return await (await this.trackingWarning).isDisplayed();
+  }
+
+  async isTrackingWarningNotDisplayed()
+  {
+    return await this.waitForDisplayedNoError(this.
+      trackingWarning, true);
   }
 
   async switchToAAInfoTab()

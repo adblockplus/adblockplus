@@ -63,12 +63,13 @@ class BasePage
     return await this.browser.getUrl();
   }
 
-  async waitForDisplayedNoError(element, timeoutMs = 2000)
+  async waitForDisplayedNoError(element,
+                                reverseOption = false, timeoutMs = 2000)
   {
     try
     {
       return await (await element).
-      waitForDisplayed({timeout: timeoutMs});
+      waitForDisplayed({reverse: reverseOption, timeout: timeoutMs});
     }
     catch (ElementNotVisibleException)
     {
