@@ -14,13 +14,12 @@
 # along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
 
 ---
-
-image: "node:12-buster-slim"
-
-before_script:
-  - "apt-get update"
-  - "apt-get install -y git libgtk-3-0 libxt6 xvfb libnss3 libxss1"
-  - "apt-get install -y libgconf-2-4 libasound2 libgbm1 unzip"
+default:
+  image: "node:12-buster-slim"
+  before_script:
+    - "apt-get update"
+    - "apt-get install -y git libgtk-3-0 libxt6 xvfb libnss3 libxss1"
+    - "apt-get install -y libgconf-2-4 libasound2 libgbm1 unzip"
 
 stages:
   - "prepare"
@@ -61,6 +60,7 @@ variables:
 prepare-dependencies:
   stage: "prepare"
   script:
+    - "cd adblockpluschrome"
     - "git clean -x -d -ff"
     - "git -C adblockpluscore clean -e '/*-snapshots' -x -d -ff"
     - "git -C .. clean -x -d -ff"
