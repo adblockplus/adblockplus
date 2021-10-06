@@ -17,6 +17,11 @@
 
 image: "node:12-buster-slim"
 
+before_script:
+  - "apt-get update"
+  - "apt-get install -y git libgtk-3-0 libxt6 xvfb libnss3 libxss1"
+  - "apt-get install -y libgconf-2-4 libasound2 libgbm1 unzip"
+
 stages:
   - "prepare"
   - "build"
@@ -27,13 +32,6 @@ variables:
   npm_config_audit: "false"
   npm_config_prefer_offline: "true"
   npm_config_unsafe_perm: "true"
-
-.setup:
-  script:
-    - "apt-get update"
-    - "apt-get install -y git libgtk-3-0 libxt6 xvfb libnss3 libxss1"
-    - "apt-get install -y libgconf-2-4 libasound2 libgbm1 unzip"
-    - "cd adblockpluschrome"
 
 .cache:
   cache: &cache
@@ -48,7 +46,7 @@ variables:
   needs:
     - job: "prepare-dependencies"
   before_script:
-    - !reference [.setup, script]
+    - "cd adblockpluschrome"
     - "npm install"
   retry:
     max: 2
@@ -63,7 +61,6 @@ variables:
 prepare-dependencies:
   stage: "prepare"
   script:
-    - !reference [.setup, script]
     - "git clean -x -d -ff"
     - "git -C adblockpluscore clean -e '/*-snapshots' -x -d -ff"
     - "git -C .. clean -x -d -ff"
@@ -129,7 +126,7 @@ docs:
   extends: ".default_template"
   stage: "test"
   before_script:
-    - !reference [.setup, script]
+    - "cd adblockpluschrome"
     - "npm install"
     - "unzip -q $EXTENSION_FILE -d devenv.*"
   variables:
@@ -192,7 +189,7 @@ test:chromium:latest:
 test:edge:
   extends: ".test_template_chromium"
   before_script:
-    - !reference [.setup, script]
+    - "cd adblockpluschrome"
     - "Expand-Archive -Path $EXTENSION_FILE -DestinationPath devenv.chrome"
     - "choco upgrade -y nodejs --version=12.17.0"
     - "choco install -y microsoft-edge --version=79.0.309.71"
