@@ -107,7 +107,7 @@ you want to test.
 ### Nightlies
 
 Nightly builds for feature and release [branches][wiki-branches] can be found
-[on this page][abp-ui-nightlies].
+as artifacts [from this page][abp-ui-nightlies].
 
 **Note**: Nightly builds with snippets are encrypted using GPG.
 
@@ -202,7 +202,7 @@ This project follows the typical GitLab process:
 [abp-core]: https://gitlab.com/eyeo/adblockplus/adblockpluscore/
 [abp-spec]: https://gitlab.com/eyeo/specs/spec/tree/master/spec/abp
 [abp-ui]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/
-[abp-ui-nightlies]: https://wspee.gitlab.io/adblockplusui-nightlies/
+[abp-ui-nightlies]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/pipelines?scope=branches
 [abp-ui-tags]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/tags
 [abp-webext-readme]: /adblockpluschrome/README.md
 [abp-webext-readme-build]: /adblockpluschrome/README.md#building

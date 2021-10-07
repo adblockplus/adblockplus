@@ -15,24 +15,17 @@
 
 ---
 
-image: python:2
-
-before_script:
-  - apt-get update -yqq
-  - apt-get install apt-transport-https
-  - curl -sL https://deb.nodesource.com/setup_12.x | bash -
-  - apt-get update -yqq
-  - apt-get install -yqq nodejs
-  # enable unsafe-perm to avoid problems with running npm as root
-  # see adblockplusui#193
-  - export npm_config_unsafe_perm=true
-  - export PATH=$PATH:~/.local/bin
+default:
+  image: node:12
+  before_script:
+    # enable unsafe-perm to avoid problems with running npm as root
+    # see https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/issues/193
+    - export npm_config_unsafe_perm=true
 
 stages:
   - lint
   - test
   - build
-  - pages
   - webext
   - uploadxtm
   - updatextm
@@ -49,9 +42,6 @@ lint:
   script:
     - npm install
     - npm run lint
-  except:
-    variables:
-      - $CI_PROJECT_NAME == 'adblockplusui-nightlies'
 
 
 test:
@@ -60,9 +50,6 @@ test:
     - npm install
     - npm run dist
     - npm run test
-  except:
-    variables:
-      - $CI_PROJECT_NAME == 'adblockplusui-nightlies'
 
 
 ################################################################################
@@ -93,9 +80,6 @@ build:
       - /^release-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
       - /^dep-\w+-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
       - /^feature-[1-9][0-9]*(|-.+)$/
-  except:
-    variables:
-      - $CI_PROJECT_NAME == 'adblockplusui-nightlies'
 
 build:with-snippets:
   stage: build
@@ -131,76 +115,6 @@ build:with-snippets:
     refs:
       - /^release-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
       - /^dep-\w+-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
-  except:
-    variables:
-      - $CI_PROJECT_NAME == 'adblockplusui-nightlies'
-
-pages:
-  stage: pages
-  script:
-    - pip install python-gitlab requests Jinja2==2.10
-    - mkdir -p public
-    - |
-      python -c "import gitlab;
-      import jinja2;
-
-      gitlab = gitlab.Gitlab(
-        url='https://gitlab.com',
-        private_token='$PRIVATE_TOKEN_ABPUI');
-      project = gitlab.projects.get('eyeo/adblockplus/abpui/adblockplusui');
-
-      jobs = [];
-      for pipeline in project.pipelines.list(per_page=100, status='success'):
-          for job in pipeline.jobs.list(all=True):
-              if job.attributes['name'] == 'build':
-                  if job.attributes['commit']:
-                    short_id = job.attributes['commit']['short_id']
-                    created_at = job.attributes['commit']['created_at']
-
-                    jobs.append((
-                      job.id,
-                      job.attributes['web_url'],
-                      job.attributes['ref'],
-                      short_id,
-                      created_at,
-                    ));
-
-      env = jinja2.Environment();
-      template = env.from_string('''<html>
-      <head><title>ABP UI Nightlies</title></head>
-      <body>
-      <h1>ABP UI Nightlies</h1>
-      <p>
-        To install the Firefox version (adblockplus-firefox.xpi) you first need to enable installation of an unsigned extension got to
-        <i>about:config</i> and disable <i>xpinstall.signatures.required</i>, see <a href='https://support.mozilla.org/en-US/kb/add-on-signing-in-firefox?as=u&utm_source=inproduct#w_what-are-my-options-if-i-want-to-use-an-unsigned-add-on-advanced-users'>here</a>.
-      </p>
-      <p>
-        To install the Chrome version (adblockplus-chrome.zip) you need unpack the zip archive somewhere, then go to <i>chrome://extensions/</i> enable <i>Developer mode</i> and then load the unpacked extension from the folder you unpacked it to previously.
-      </p>
-      {%- for id, url, ref, commit, date in jobs %}
-      <p>
-          Job: <a href='{{ url }}'>{{ id }}</a>
-          Ref: <a href='https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/commit/{{ commit }}'>{{ ref }} ({{ commit }})</a>
-          Date: {{ date }}
-          Extension: <a href='https://gitlab.com/api/v4/projects/eyeo%2fadblockplus%2fabpui%2fadblockplusui/jobs/{{ id }}/artifacts/adblockpluschrome/adblockplus-firefox-{{ commit }}.xpi'>adblockplus-firefox-{{ commit }}.xpi</a> / <a href='https://gitlab.com/api/v4/projects/eyeo%2fadblockplus%2fabpui%2fadblockplusui/jobs/{{ id }}/artifacts/adblockpluschrome/adblockplus-chrome-{{ commit }}.zip'>adblockplus-chrome-{{ commit }}.zip (Chrome)</a>
-      </p>
-      {%- endfor %}
-      </body>
-      </html>
-      ''');
-
-      with open('public/index.html', 'w+') as out:
-          out.write(template.render(jobs=jobs));"
-  artifacts:
-    paths:
-      - public/
-  only:
-    refs:
-      - /^release-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
-      - /^dep-\w+-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
-      - /^feature-[1-9][0-9]*(|-.+)$/
-    variables:
-      - $CI_PROJECT_NAME == 'adblockplusui-nightlies'
 
 ################################################################################
 # Translate
@@ -347,7 +261,4 @@ webext:
   trigger:
     include: "/adblockpluschrome/.gitlab-ci.yml"
     strategy: depend
-  except:
-    variables:
-      - $CI_PROJECT_NAME == 'adblockplusui-nightlies'
   when: manual
