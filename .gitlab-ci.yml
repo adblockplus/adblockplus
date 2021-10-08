@@ -61,6 +61,11 @@ test:
 build:
   stage: build
   script:
+    # Update git version to fix problems with ls-files command
+    # https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/issues/1040
+    - echo "deb http://deb.debian.org/debian stretch-backports main" > /etc/apt/sources.list.d/stretch-backports.list
+    - apt-get update
+    - apt-get -t stretch-backports install -y git
     # Update dependencies
     - npm run submodules:update
     - git submodule status
