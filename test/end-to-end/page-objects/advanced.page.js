@@ -52,6 +52,18 @@ class AdvancedPage extends BasePage
       "without third-party tracking']");
   }
 
+  get easyListFL()
+  {
+    return this.browser
+      .$("//li[@aria-label='EasyList']");
+  }
+
+  get easyListGermanyPlusEasyListFL()
+  {
+    return this.browser
+      .$("//li[@aria-label='EasyList Germany+EasyList']");
+  }
+
   get easyPrivacyFL()
   {
     return this.browser
@@ -205,6 +217,17 @@ class AdvancedPage extends BasePage
   {
     return await this.waitForDisplayedNoError(this.
     allowNonintrusiveAdvertisingWithoutTrackingFL);
+  }
+
+  async isEasyListFLDisplayed()
+  {
+    return await this.waitForDisplayedNoError(this.easyListFL);
+  }
+
+  async isEasyListGermanyPlusEasyListFLDisplayed()
+  {
+    return await this.waitForDisplayedNoError(this.
+      easyListGermanyPlusEasyListFL);
   }
 
   async isEasyPrivacyFLDisplayed()

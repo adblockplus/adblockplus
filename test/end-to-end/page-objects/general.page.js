@@ -52,6 +52,12 @@ class GeneralPage extends BasePage
         "and text()='Learn more']");
   }
 
+  get addALanguageButton()
+  {
+    return this.browser
+      .$("#languages-boxlabel");
+  }
+
   get allowAcceptableAdsCheckbox()
   {
     return this.browser
@@ -92,6 +98,19 @@ class GeneralPage extends BasePage
   {
     return this.browser
       .$("//li[@aria-label='Block cookie warnings']/io-popout/div/div/p");
+  }
+
+  get deutschPlusEnglishListItem()
+  {
+    return this.browser
+      .$("//li[contains(@role, 'option')" +
+        "and text()='Deutsch + English']");
+  }
+
+  get filterListsSuggestionsCheckbox()
+  {
+    return this.browser
+      .$("//li[@data-pref='recommend_language_subscriptions']/button");
   }
 
   get blockPushNotificationsCheckbox()
@@ -137,6 +156,42 @@ class GeneralPage extends BasePage
       .$("#dnt");
   }
 
+  get deutschPlusEnglishLanguageTableItem()
+  {
+    return this.browser
+      .$("//li[@aria-label='Deutsch + English']");
+  }
+
+  get deutschPlusEnglishLanguageTrashIcon()
+  {
+    return this.browser
+      .$("//li[@aria-label='Deutsch + English']/button[@title='remove']");
+  }
+
+  get englishLanguageChangeButton()
+  {
+    return this.browser
+      .$("//li[@aria-label='English']/button[@data-dialog='language-change']");
+  }
+
+  get englishLanguageTableItem()
+  {
+    return this.browser
+      .$("//li[@aria-label='English']");
+  }
+
+  get englishLanguageTrashIcon()
+  {
+    return this.browser
+      .$("//li[@aria-label='English']/button[@title='remove']");
+  }
+
+  get languagesDropdown()
+  {
+    return this.browser
+      .$("#languages-boxpopup");
+  }
+
   get notifyLanguageFilterListsTooltipIcon()
   {
     return this.browser
@@ -177,6 +232,11 @@ class GeneralPage extends BasePage
   async clickAcceptableAdsLearnMoreLink()
   {
     await (await this.acceptableAdsLearnMoreLink).click();
+  }
+
+  async clickAddALanguageButton()
+  {
+    await (await this.addALanguageButton).click();
   }
 
   async clickAllowAcceptableAdsCheckbox()
@@ -222,6 +282,26 @@ class GeneralPage extends BasePage
   async clickBlockSocialMediaIconsTrackingTooltipIcon()
   {
     await (await this.blockSocialMediaIconsTrackingTooltipIcon).click();
+  }
+
+  async clickDeutschPlusEnglishListItem()
+  {
+    await (await this.deutschPlusEnglishListItem).click();
+  }
+
+  async clickDeutschPlusEnglishLanguageTrashIcon()
+  {
+    await (await this.deutschPlusEnglishLanguageTrashIcon).click();
+  }
+
+  async clickEnglishLanguageChangeButton()
+  {
+    await (await this.englishLanguageChangeButton).click();
+  }
+
+  async clickFilterListsSuggestionsCheckbox()
+  {
+    await (await this.filterListsSuggestionsCheckbox).click();
   }
 
   async clickNotifyLanguageFilterListsTooltipIcon()
@@ -317,9 +397,58 @@ class GeneralPage extends BasePage
       isDisplayed();
   }
 
+  async isDeutschPlusEnglishLanguageTableItemDisplayed(wait = false)
+  {
+    let returnValue = null;
+    if (!wait)
+    {
+      returnValue = await (await this.deutschPlusEnglishLanguageTableItem).
+      isDisplayed();
+    }
+    else
+    {
+      returnValue = await this.waitForDisplayedNoError(this.
+        deutschPlusEnglishLanguageTableItem);
+    }
+    return returnValue;
+  }
+
+  async isDeutschPlusEnglishLanguageTrashIconDisplayed()
+  {
+    return await (await this.deutschPlusEnglishLanguageTrashIcon).
+    isDisplayed();
+  }
+
   async isDoNotTrackNoteParagraphDisplayed()
   {
     return await (await this.doNotTrackNoteParagraph).isDisplayed();
+  }
+
+  async isEnglishLanguageChangeButtonDisplayed()
+  {
+    return await (await this.englishLanguageChangeButton).isDisplayed();
+  }
+
+  async isEnglishLanguageTableItemDisplayed()
+  {
+    return await (await this.englishLanguageTableItem).isDisplayed();
+  }
+
+  async isEnglishLanguageTrashIconDisplayed()
+  {
+    return await (await this.englishLanguageTrashIcon).isDisplayed();
+  }
+
+  async isFilterListsSuggestionsCheckboxSelected()
+  {
+    await this.browser.pause(1000);
+    return await (await this.filterListsSuggestionsCheckbox).
+    getAttribute("aria-checked") === "true";
+  }
+
+  async isLanguagesDropdownDisplayed()
+  {
+    return await (await this.languagesDropdown).isDisplayed();
   }
 
   async isNotifyLanguageFilterListsTooltipTextDisplayed()
