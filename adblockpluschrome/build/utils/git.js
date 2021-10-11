@@ -37,9 +37,12 @@ export async function getBuildnum(revision = "HEAD")
 
 export async function lsFiles()
 {
+  await promisify(execFile)("pwd");
+  await promisify(execFile)("cd", [".."]);
   let {stdout} = await promisify(execFile)(
-    "git", ["-C", "..", "ls-files", "--recurse-submodules"]
+    "git", ["ls-files", "--recurse-submodules"]
   );
+  await promisify(execFile)("cd", ["adblockpluschrome"]);
   return stdout.trim().split(EOL);
 }
 
