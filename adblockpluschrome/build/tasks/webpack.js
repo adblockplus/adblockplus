@@ -48,6 +48,11 @@ export default function webpack({webpackInfo, addonName, addonVersion,
                   options: {
                     data: {addonName, addonVersion}
                   }
+                },
+                {
+                  test: /\.js$/,
+                  enforce: "pre",
+                  use: ["source-map-loader"]
                 }
               ]
             },

@@ -21,7 +21,7 @@
   "overrides": [
     {
       "files": [
-        "./devtools.js", "./polyfill.js", "./ext/*.js", "*.cjs"
+        "./devtools.js", "./ext/*.js", "*.cjs"
       ],
       "parserOptions": {
         "sourceType": "script"

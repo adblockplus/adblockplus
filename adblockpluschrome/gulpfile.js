@@ -96,7 +96,7 @@ async function getBuildOptions(isDevenv, isSource)
 
   opts.sourceMapType = opts.target == "chrome" ?
                         isDevenv == true ?
-                        "inline-cheap-source-map" : false :
+                        "inline-source-map" : false :
                         "source-map";
   if (args.config)
     configParser.setConfig(await import(url.pathToFileURL(args.config)));

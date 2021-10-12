@@ -21,6 +21,12 @@ export default {
   webpack: {
     bundles: [
       {
+        dest: "polyfill.js",
+        src: [
+          "adblockpluschrome/lib/polyfill.js"
+        ]
+      },
+      {
         dest: "background.js",
         src: [
           "adblockpluschrome/lib/devtools.js",
@@ -102,7 +108,6 @@ export default {
           // marked as optional using wildcard
           "vendor/abp-snippets/dist/webext/snippets*.json",
           "adblockpluschrome/devtools.*",
-          "adblockpluschrome/polyfill.js",
           "!polyfill.js",
           "!mobile-options.*"
         ]

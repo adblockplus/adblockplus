@@ -6,7 +6,9 @@
     "node": ">=12.17.0",
     "npm": ">=6"
   },
-  "dependencies": {},
+  "dependencies": {
+    "webextension-polyfill": "0.8.0"
+  },
   "devDependencies": {
     "argparse": "1.0.10",
     "chromedriver": "85.0.1",
@@ -27,6 +29,7 @@
     "ncp": "2.0.0",
     "selenium-webdriver": "4.0.0-alpha.7",
     "semver": "7.3.2",
+    "source-map-loader": "3.0.0",
     "through": "2.3.8",
     "webpack": "5.4.0",
     "webpack-merge": "5.1.4",
