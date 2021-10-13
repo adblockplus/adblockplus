@@ -34,8 +34,6 @@ variables:
     - "apt-get update"
     - "apt-get install -y git libgtk-3-0 libxt6 xvfb libnss3 libxss1"
     - "apt-get install -y libgconf-2-4 libasound2 libgbm1 unzip"
-    - "npm install"
-    - "cd adblockpluschrome"
 
 .cache:
   cache: &cache
@@ -51,6 +49,8 @@ variables:
     - job: "prepare-dependencies"
   before_script:
     - !reference [.setup, script]
+    - "npm install"
+    - "cd adblockpluschrome"
   retry:
     max: 2
     when: "stuck_or_timeout_failure"
@@ -64,9 +64,11 @@ variables:
 prepare-dependencies:
   stage: "prepare"
   script:
+    - !reference [.setup, script]
     - "git clean -x -d -ff"
     - "git -C adblockpluschrome/adblockpluscore clean -e '/*-snapshots' -x -d -ff"
-    - !reference [.setup, script]
+    - "npm install"
+    - "cd adblockpluschrome"
     - "npm run download-test-browsers"
   except:
     - "schedules"
@@ -111,6 +113,8 @@ build:firefox:
   stage: "test"
   before_script:
     - !reference [.setup, script]
+    - "npm install"
+    - "cd adblockpluschrome"
     - "unzip -q $EXTENSION_FILE -d devenv.*"
   variables:
     SKIP_BUILD: "true"
@@ -160,6 +164,8 @@ test:edge:
   extends: ".test_template_chromium"
   before_script:
     - !reference [.setup, script]
+    - "npm install"
+    - "cd adblockpluschrome"
     - "Expand-Archive -Path $EXTENSION_FILE -DestinationPath devenv.chrome"
     - "choco upgrade -y nodejs --version=12.17.0"
     - "choco install -y microsoft-edge --version=79.0.309.71"
