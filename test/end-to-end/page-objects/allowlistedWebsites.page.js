@@ -39,6 +39,12 @@ class AllowlistedWebsitesPage extends BasePage
     await (await this._allowlistedWebsitesTabButton).click();
   }
 
+  get addWebsiteButton()
+  {
+    return this.browser
+      .$("#allowlisting-add-button");
+  }
+
   get allowlistingLearnMoreLink()
   {
     return this.browser
@@ -46,9 +52,54 @@ class AllowlistedWebsitesPage extends BasePage
         "and text()='Learn more']");
   }
 
+  get allowlistingTableItems()
+  {
+    return this.browser
+      .$$("//*[@id='allowlisting-table']/li");
+  }
+
+  get allowlistingTextbox()
+  {
+    return this.browser
+      .$("#allowlisting-textbox");
+  }
+
   async clickAllowlistingLearnMoreLink()
   {
     await (await this.allowlistingLearnMoreLink).click();
+  }
+
+  async clickAddWebsiteButton()
+  {
+    await (await this.addWebsiteButton).click();
+  }
+
+  async getAttributeOfAllowlistingTableItems(attribute)
+  {
+    const classNames = [];
+    const tableItems = await this.allowlistingTableItems;
+    for (const element of tableItems)
+    {
+      classNames.push(await element.getAttribute(attribute));
+    }
+    return classNames;
+  }
+
+  async isAddWebsiteButtonEnabled()
+  {
+    return await (await this.addWebsiteButton).isEnabled();
+  }
+
+  async removeAllowlistedDomain(domainName)
+  {
+    const domainDeleteButton = await this.browser
+      .$("//li[@aria-label='" + domainName + "']/button");
+    await (await domainDeleteButton).click();
+  }
+
+  async setAllowlistingTextboxValue(value)
+  {
+    await (await this.allowlistingTextbox).setValue(value);
   }
 
   async switchToABPFAQTab()
