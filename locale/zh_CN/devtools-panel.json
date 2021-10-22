@@ -29,6 +29,9 @@
   "devtools_header_state_all": {
     "message": "全部"
   },
+  "devtools_header_state_allowlisted": {
+    "message": "允许列表"
+  },
   "devtools_header_state_blocked": {
     "message": "已拦截"
   },

@@ -1,13 +1,4 @@
 {
-  "options_acceptableAds_ads_description_1": {
-    "message": "โฆษณาที่ยอมรับได้ไม่สร้างความรำคาญและไม่ขัดขวางการรับชมเนื้อหาของคุณ <a>อ่านเพิ่มเติมเกี่ยวกับเกณฑ์โฆษณาที่ยอมรับได้</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "อนุญาตโฆษณาที่ยอมรับได้"
-  },
-  "options_acceptableAds_description": {
-    "message": "โฆษณาที่ยอมรับได้คือโฆษณาที่ไม่คุกคาม มีทางสายกลางระหว่างการบล็อคโฆษณาทั้งหมดกับการสนับสนุนคอนเทนต์ออนไลน์เพราะสิ่งเหล่านี้ช่วยสร้างรายได้ให้กับเจ้าของเว็บไซต์"
-  },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>หมายเหตุ:</strong> คุณได้ปิด <strong>ห้ามติดตาม(DNT)</strong>ในการตั้งค่าของเบราเซอร์ เพื่อให้คุณสมบัตินี้ทำงานอย่างถูกต้อง โปรดเปิดใช้ <strong>ห้ามติดตาม</strong>ในการตั้งค่าเบราเซอร์ของคุณ <a>ค้นหาวิธีการเปิดใช้ ห้ามติดตาม</a>"
   },
@@ -46,9 +37,6 @@
   },
   "options_customize_showDevToolsPanel": {
     "message": "แสดงแผง 'Adblock Plus' ในเครื่องมือผู้พัฒนา"
-  },
-  "options_customize_showDevToolsPanel_tooltip": {
-    "message": "ดูรายการที่ถูกบล็อคหรือรายการปลอดภัยที่อนุญาตจากแถบเครื่องมือผู้พัฒนาในบราวเซอร์ของคุณ"
   },
   "options_customize_showNotifications": {
     "message": "แสดงการแจ้งเตือนที่เป็นประโยชน์"
@@ -116,9 +104,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "ความถูกต้องของไฟล์ดาวน์โหลดผิดพลาด"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "การดาวน์โหลดล้มเหลว"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "กำลังอัพเดต"
   },
@@ -161,20 +146,11 @@
   "options_help_description": {
     "message": "ขอความช่วยเหลือหรือติดต่อเรา"
   },
-  "options_language_add": {
-    "message": "เพิ่มภาษา"
-  },
   "options_language_change": {
     "message": "เปลี่ยน"
   },
-  "options_language_description": {
-    "message": "ปรับแต่ง Adblock Plus สำหรับภาษาที่คุณมักจะใช้ในการท่องเว็บ"
-  },
   "options_language_empty": {
     "message": "คุณไม่มีตัวกรองแบบเจาะจงภาษาใดๆ"
-  },
-  "options_language_header": {
-    "message": "ภาษา"
   },
   "options_language_tip": {
     "message": "<strong>คำแนะนำ:</strong> เลือกเฉพาะภาษาที่คุณต้องการเท่านั้น ยิ่งเลือกภาษามากเท่าใด การทำงานของตัวบล็อคโฆษณาก็จะยิ่งช้าลง และทำให้การท่องเว็บของคุณช้าลงไปด้วย"
@@ -184,9 +160,6 @@
   },
   "options_more_filters_description": {
     "message": "นี่คือตัวกรองเพิ่มเติมที่คุณเคยเพิ่มไปยัง Adblock Plus"
-  },
-  "options_more_filters_header": {
-    "message": "ตัวกรองเพิ่มเติม"
   },
   "options_more_filters_note": {
     "message": "<strong>หมายเหตุ:</strong> คุณควรจะใช้รายการตัวกรองบุคคลที่สามเฉพาะจากผู้สร้างที่คุณไว้ใจได้"
@@ -248,9 +221,6 @@
         "example": "Block additional tracking"
       }
     }
-  },
-  "options_tracking_warning_2": {
-    "message": "เราต้องการให้คุณรู้เกี่ยวกับโฆษณาตามสั่งของผู้ลงโฆษณาเพื่อแสดงโฆษณาที่เกี่ยวข้อง <strong>อาจจะมี</strong>การติดตามด้วยโฆษณาที่ยอมรับได้"
   },
   "options_tracking_warning_3": {
     "message": "ถ้าคุณต้องการความเป็นส่วนตัวพิเศษ ให้กาเลือก <strong>$acceptableAdsPrivacy$</strong> ด้านล่าง",

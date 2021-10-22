@@ -8,9 +8,6 @@
   "options_aa_opt_out_survey_ok": {
     "message": "கணக்கெடுப்புக்குச் செல்"
   },
-  "options_acceptableAds_ads_label": {
-    "message": "ஏற்கக்கூடிய விளம்பரங்களை அனுமதி"
-  },
   "options_acceptableAds_header": {
     "message": "ஏற்கக்கூடிய விளம்பரங்கள்"
   },
@@ -130,9 +127,6 @@
   "options_filterList_hours": {
     "message": "மணிநேரங்களுக்கு முன்"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "தோல்வியடைந்தது, பதிவிறக்கம் தோல்வி"
-  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "தோல்வி, செல்லத்தக்க இல்லை முகவரி"
   },
@@ -182,23 +176,14 @@
   "options_help_center": {
     "message": "உமது பதிலுக்கு விடை தேடுகிறாயா? <a0>எங்கள் உதவி மையத்திற்கு செல்க (ஆங்கிலம் மட்டும்)</a0>"
   },
-  "options_language_add": {
-    "message": "ஒரு மொழியைச் சேர்"
-  },
   "options_language_change": {
     "message": "மாற்று"
   },
   "options_language_filter_list": {
     "message": "மொழி வடிகட்டி பட்டியல்கள்"
   },
-  "options_language_header": {
-    "message": "மொழி"
-  },
   "options_learn_more": {
     "message": "மேலும் அறிக"
-  },
-  "options_more_filters_header": {
-    "message": "மேலும் வடிகட்டிகள்"
   },
   "options_new_label": {
     "message": "புதிய"

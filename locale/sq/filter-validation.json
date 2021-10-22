@@ -1,8 +1,0 @@
-{
-  "filter_invalid_regexp": {
-    "message": "Shprehja e pavlefshme e rregullt"
-  },
-  "filter_unknown_option": {
-    "message": "Opsioni i filtërit te panjohur"
-  }
-}

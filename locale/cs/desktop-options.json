@@ -8,15 +8,6 @@
   "options_aa_opt_out_survey_ok": {
     "message": "Přejít na dotazník"
   },
-  "options_acceptableAds_ads_description_1": {
-    "message": "Nerušivé reklamy nejsou dotěrné a nezasahují do obsahu, který právě prohlížíte. [Přečtěte si více o kritériích Nerušivé reklamy] [1]"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "Umožnit Nerušivé reklamy"
-  },
-  "options_acceptableAds_description": {
-    "message": "Cílem iniciativy Nerušivé reklamy je regulovat zobrazování reklam a propouštět pouze nerušivé reklamy. Tento princip se nachází někde mezi úplným blokováním reklam a podporou obsahu online, neboť vytváří příjmy pro vlastníky webových stránek."
-  },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Poznámka:</strong> Máte vyplý požadavek <strong>Do Not Track (DNT)</strong>. Aby tato funkce fungovala správně, prosím zapnetě požadavek <strong>DNT</strong> v nastavení Vašeho prohlížeče. <a>Zjistěte, jak zapnout DNT</a>."
   },
@@ -58,9 +49,6 @@
   },
   "options_customize_showDevToolsPanel": {
     "message": "V nástrojích pro vývojáře zobrazte panel Adblock Plus"
-  },
-  "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Z panelu nástrojů pro vývojáře prohlížeče zobrazte zablokované a povolené položky."
   },
   "options_customize_showNotifications": {
     "message": "Zobrazovat užitečná upozornění"
@@ -148,9 +136,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Chyba, neodpovídá kontrolní součet"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Chyba, nepodařilo se stáhnout soubor"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Aktualizace"
   },
@@ -196,20 +181,11 @@
   "options_help_description": {
     "message": "Vyhledejte si nápovědu nebo nás kontaktujte"
   },
-  "options_language_add": {
-    "message": "Přidat jazyk"
-  },
   "options_language_change": {
     "message": "ZMĚNIT"
   },
-  "options_language_description": {
-    "message": "Adblock Plus lze optimalizovat pro jazyky webových stránek, kterými obvykle procházíte."
-  },
   "options_language_empty": {
     "message": "Nemáte žádné filtry specifické pro příslušný jazyk."
-  },
-  "options_language_header": {
-    "message": "Jazyk"
   },
   "options_language_join": {
     "message": "$lang1$, $lang2$",
@@ -232,9 +208,6 @@
   },
   "options_more_filters_description": {
     "message": "Jedná se o další filtry, které jste dříve přidali do Adblock Plus."
-  },
-  "options_more_filters_header": {
-    "message": "Další filtry"
   },
   "options_more_filters_note": {
     "message": "<strong>Poznámka:</strong> Měli byste používat pouze seznamy filtrů třetích stran od důvěryhodných autorů."

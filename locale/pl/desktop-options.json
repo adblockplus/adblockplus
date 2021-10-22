@@ -9,13 +9,13 @@
     "message": "Przejdź do ankiety"
   },
   "options_acceptableAds_ads_description_1": {
-    "message": "Akceptowalne reklamy nie są irytujące i nie zakłócają wyświetlania treści. <a>Przeczytaj więcej o kryteriach akceptowalnych reklam</a>"
+    "message": "Akceptowalne reklamy nie przeszkadzają w oglądaniu treści. <a>Dowiedz się więcej</a>"
   },
   "options_acceptableAds_ads_label": {
-    "message": "Zezwalaj na akceptowalne reklamy"
+    "message": "Pokaż akceptowalne reklamy"
   },
   "options_acceptableAds_description": {
-    "message": "Akceptowalne reklamy to reklamy nie natarczywe. Są kompromisem między blokowaniem reklam i wspieraniem treści online, ponieważ generują one przychody dla właścicieli stron internetowych."
+    "message": "Akceptowalne reklamy to takie, które nie są irytujące i spełniają rygorystyczne standardy reklamowe. Pomagają w generowaniu przychodów dla twórców treści oraz nie przeszkadzają w przeglądaniu stron."
   },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Uwaga:</strong> W ustawieniach przeglądarki opcja <strong>Bez śledzenia (DNT)</strong> jest wyłączona. Aby ta funkcja działała poprawnie włącz <strong>DNT</strong> w ustawieniach swojej przeglądarki. <a>Sprawdź, jak włączyć DNT</a>."
@@ -28,6 +28,29 @@
   },
   "options_advanced_description": {
     "message": "Dostosuj Adblock Plus, dodaj lub usuń zestawy filtrów, twórz i utrzymuj własne zestawy filtrów"
+  },
+  "options_allowlist_add": {
+    "message": "Dodaj stronę"
+  },
+  "options_allowlist_description": {
+    "message": "Blokowanie reklam na tych stronach zostało wyłączone i dlatego zobaczysz na nich reklamy."
+  },
+  "options_allowlist_empty_1": {
+    "message": "Nie masz żadnych stron na swojej liście dozwolonych."
+  },
+  "options_allowlist_empty_2": {
+    "message": "Tutaj pojawią się strony, którym ufasz oraz zezwalasz na wyświetlanie reklam."
+  },
+  "options_allowlist_notification": {
+    "message": "Strona została dodana do listy dozwolonych."
+  },
+  "options_allowlist_placeholder_example": {
+    "message": "np. $domain$",
+    "placeholders": {
+      "domain": {
+        "content": "www.example.com"
+      }
+    }
   },
   "options_builtin_filterList_add": {
     "message": "Dodaj wbudowane listy filtrów"
@@ -72,7 +95,7 @@
     "message": "Wyświetlaj panel „Adblock Plus” w narzędziach dla deweloperów"
   },
   "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Wyświetl zablokowane i dozwolone elementy z panelu narzędzi programisty."
+    "message": "Z panelu narzędzi deweloperskich przeglądarki wyświetl elementy zablokowane oraz dozwolone."
   },
   "options_customize_showNotifications": {
     "message": "Wyświetlaj użyteczne powiadomienia"
@@ -172,6 +195,15 @@
   "options_filterList_empty": {
     "message": "Nie dodano żadnych zestawów filtrów. Dodane zestawy filtrów będą widoczne tutaj."
   },
+  "options_filterList_enableFilters": {
+    "message": "Włącz je"
+  },
+  "options_filterList_errorPopup_title": {
+    "message": "Występuje co najmniej jeden problem z tą listą filtrów:"
+  },
+  "options_filterList_filtersDisabled": {
+    "message": "Niektóre filtry na tej liście są wyłączone."
+  },
   "options_filterList_hours": {
     "message": "godzin temu"
   },
@@ -179,7 +211,7 @@
     "message": "Nie powiodło się – niepoprawna suma kontrolna"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Błąd pobierania"
+    "message": "Nie udało się pobrać listy filtrów."
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Aktualizacja"
@@ -249,13 +281,13 @@
     "message": "Znajdź pomoc lub skontaktuj się z nami"
   },
   "options_language_add": {
-    "message": "Dodaj język"
+    "message": "Dodaj listę filtra językowego"
   },
   "options_language_change": {
     "message": "Zmień"
   },
   "options_language_description": {
-    "message": "Optymalizuj Adblock Plusa dla języka, w którym zazwyczaj przeglądasz witryny."
+    "message": "Dodaj lub usuń języki, w których chcesz, aby Adblock Plus blokował reklamy.<a0>Dowiedz się więcej</a0>"
   },
   "options_language_empty": {
     "message": "Nie masz żadnych filtrów specyficznych dla języków."
@@ -264,7 +296,7 @@
     "message": "Listy filtrów dla języka"
   },
   "options_language_header": {
-    "message": "Język"
+    "message": "Listy filtrów w różnych językach"
   },
   "options_language_join": {
     "message": "$lang1$, $lang2$",
@@ -279,6 +311,12 @@
       }
     }
   },
+  "options_language_recommend": {
+    "message": "Powiadamiaj mnie o dostępnych listach filtrów w różnych językach"
+  },
+  "options_language_recommend_tooltip": {
+    "message": "Adblock Plus opiera się na listach filtrów do blokowania reklam w różnych językach."
+  },
   "options_language_tip": {
     "message": "<strong>Wskazówka</strong> Wybierz tylko Języki, których potrzebujesz. Zaznaczanie dużej liczby języków spowolni blokowanie reklam, a co za tym idzie – szybkość przeglądania."
   },
@@ -289,7 +327,7 @@
     "message": "To są dodatkowe filtry wcześniej dodane do Adblock Plusa."
   },
   "options_more_filters_header": {
-    "message": "Więcej filtrów"
+    "message": "Więcej list filtrów"
   },
   "options_more_filters_note": {
     "message": "<strong>Uwaga:</strong> Używane zestawy filtrów powinny pochodzić wyłącznie od zaufanych autorów."
@@ -354,6 +392,9 @@
   "options_tab_advanced": {
     "message": "Zaawansowane"
   },
+  "options_tab_allowlist": {
+    "message": "Strony dozwolone"
+  },
   "options_tab_general": {
     "message": "Ogólne"
   },
@@ -377,7 +418,7 @@
     }
   },
   "options_tracking_warning_2": {
-    "message": "Aby reklamodawcy mogli wyświetlać bardziej trafne reklamy <strong>może</strong> istnieć pewne śledzenie realizowane za pomocą akceptowalne reklam."
+    "message": "Chcemy, abyście wiedzieli, że aby reklamodawcy <strong>mogli</strong> pokazywać bardziej dopasowane reklamy, w pewnym stopniu mogą występować związane z tym przypadki śledzenia."
   },
   "options_tracking_warning_3": {
     "message": "Jeśli preferujesz dodatkową prywatność, zaznacz poniżej opcję <strong>$acceptableAdsPrivacy$</strong>.",

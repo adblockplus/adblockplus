@@ -26,6 +26,9 @@
   "updates_contribute_subtitle": {
     "message": "请考虑以两种方式之一支持 ABP："
   },
+  "updates_contribute_subtitle_generic": {
+    "message": "考虑支持 ABP："
+  },
   "updates_contribute_title": {
     "message": "喜欢 Adblock Plus？"
   },

@@ -12,13 +12,10 @@
     "message": "Az Adblock Plus naprakész!"
   },
   "updates_update_i1_description": {
-    "message": "A Beállítások megnyitásakor egy új, <strong>Ajánlott szűrők</strong> címmel ellátott rész jelenik meg. Itt egyetlen kattintással egyszerűen be-/kikapcsolhatja az ajánlott szűrőket, és javíthatja a felhasználói élményét."
-  },
-  "updates_update_i1_image": {
-    "message": "A \"Push értesítések blokkolása\" és a \"Süti figyelmeztetések blokkolása\" szűrőlista ki van emelve az opciók oldal \"AJÁNLOTT SZŰRŐK\" részében."
+    "message": "A Beállítások megnyitásakor egy új rész jelenik meg az <strong>Ajánlott szűrők</strong> címen. Itt egyszerűen bekapcsolhatja/kikapcsolhatja a javasolt szűrőket egy egyszerű kattintással és javíthatja a böngészési élményt."
   },
   "updates_update_i1_title": {
-    "message": "Új ajánlott szűrőlistákkal egészült ki az egyszerű hozzáférés biztosítása érdekében"
+    "message": "Új ajánlott szűrőlisták hozzáadva az egyszerű hozzáférés érdekében"
   },
   "updates_update_i2_description": {
     "message": "Egyszerűsítettük az Elem blokkolása funkció használatát egy rövid leírás hozzáadásával, illetve az oldal zavaró elem nélküli előnézetével. Próbálja ki!"
@@ -30,10 +27,10 @@
     "message": "Frissített és javított Elem blokkolása funkció"
   },
   "updates_update_i3_description": {
-    "message": "Tapasztaltabb felhasználóink részére egy új elem elrejtő szűrő üzemmód hibakeresést tettünk elérhetővé, amely a speciális beállításokban kapcsolható be. Az elemeket ekkor kijelöli az egyszerű hibakereséshez."
+    "message": "A haladó felhasználók számára egy új hibakereső szűrő elrejtési üzemmód kapcsolható be a speciális beállításokban. Ezután az elemeket kiemeli az egyszerűbb hibakereséshez."
   },
   "updates_update_i3_title": {
-    "message": "Elem elrejtő szűrők mód hibakereséssel egészült ki"
+    "message": "Hibakereső szűrő elrejtési üzemmód hozzáadva"
   },
   "updates_update_i4_description": {
     "message": "Az ikon most villog, és felhasználók riasztására érkezések esetén kék színre vált."

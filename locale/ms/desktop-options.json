@@ -8,15 +8,6 @@
   "options_aa_opt_out_survey_ok": {
     "message": "Pergi ke kaji selidik"
   },
-  "options_acceptableAds_ads_description_1": {
-    "message": "Iklan yang boleh diterima tidak menjengkelkan dan tidak mengganggu kandungan yang anda lihat. <a>Baca lebih lanjut mengenai kriteria Iklan yang boleh diterima</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "Benarkan Iklan yang boleh diterima"
-  },
-  "options_acceptableAds_description": {
-    "message": "Iklan yang boleh diterima adalah iklan yang tidak mengganggu. Mereka adalah alasan tengah antara penyekatan iklan dan penyokongan kandungan dalam talian kerana mereka menjana pendapatan untuk pemilik laman web."
-  },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Nota:</strong> <strong>Jangan Kesan/Jejak (DNT)</strong> dinyahdaya dalam tetapan pelayar anda. Untuk membenarkan ciri ini berfungsi dengan baik, sila dayakan <strong>DNT</strong> dalam tetapan pelayar anda. <a>Ketahui cara untuk mendayakan DNT</a>."
   },
@@ -64,9 +55,6 @@
   },
   "options_customize_showDevToolsPanel": {
     "message": "Tunjukkan panel ‘Adblock Plus’ dalam alat pemaju"
-  },
-  "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Lihat item yang disekat dan disenarai putih dari panel alat pemaju pelayar anda."
   },
   "options_customize_showNotifications": {
     "message": "Papar notifikasi yang berguna"
@@ -172,9 +160,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Gagal, checksum tidak sepadan"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Gagal, kegagalan memuat-turun"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Mengemas kini"
   },
@@ -242,23 +227,14 @@
   "options_help_description": {
     "message": "Cari bantuan atau berhubung dengan kami"
   },
-  "options_language_add": {
-    "message": "Tambah bahasa"
-  },
   "options_language_change": {
     "message": "UBAH"
-  },
-  "options_language_description": {
-    "message": "Optimalkan Adblock Plus untuk bahasa yang anda biasanya guna untuk melayari laman web."
   },
   "options_language_empty": {
     "message": "Anda tidak mempunyai sebarang penapis khusus bahasa."
   },
   "options_language_filter_list": {
     "message": "Senarai Penapis Bahasa"
-  },
-  "options_language_header": {
-    "message": "Bahasa"
   },
   "options_language_join": {
     "message": "$lang1$, $lang2$",
@@ -281,9 +257,6 @@
   },
   "options_more_filters_description": {
     "message": "Ini adalah penapis tambahan yang telah anda tambahkan pada Adblock Plus."
-  },
-  "options_more_filters_header": {
-    "message": "Lebih banyak penapis"
   },
   "options_more_filters_note": {
     "message": "<strong>Perhatian:</strong> Anda harus menggunakan senarai penapis pihak ketiga daripada pengarang yang anda percayai sahaja."
@@ -354,9 +327,6 @@
         "example": "Block additional tracking"
       }
     }
-  },
-  "options_tracking_warning_2": {
-    "message": "Kami mahu anda tahu bahawa untuk pengiklan menunjukkan anda iklan yang relevan, <strong>kemungkinan</strong> terdapat penjejak dengan Iklan yang Boleh Diterima."
   },
   "options_tracking_warning_3": {
     "message": "Jika anda lebih suka privasi tambahan, pilih <strong>$acceptableAdsPrivacy$</strong> kotak di bawah.",

@@ -17,9 +17,6 @@
   "firstRun_control_title": {
     "message": "Tú tienes el control"
   },
-  "firstRun_fair_description": {
-    "message": "Te animamos a hacer un uso razonable de Adblock Plus y de la opción de lista blanca para sitios web permitidos. Según los filtros que uses, deberás entender y aceptar que se pueden generar resultados no intencionados, como contenido bloqueado en un sitio web. Consulta los <a0>Términos de uso</a0> para conocer más información sobre un uso razonable de Adblock Plus."
-  },
   "firstRun_fair_title": {
     "message": "Uso razonable"
   },

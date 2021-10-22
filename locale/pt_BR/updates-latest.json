@@ -12,13 +12,10 @@
     "message": "O Adblock Plus está atualizado!"
   },
   "updates_update_i1_description": {
-    "message": "Ao abrir Configurações, você verá uma nova seção, chamada <strong>Filtros recomendados</strong>. Nela você pode ativar/desativar facilmente os filtros recomendados com um simples clique e aprimorar a sua experiência na Web."
-  },
-  "updates_update_i1_image": {
-    "message": "\"Bloquear notificações de push\" e \"Bloquear avisos de cookies\" filtram listas realçadas na seção \"FILTROS RECOMENDADOS\" da página de opções."
+    "message": "Quando você abrir Configurações, verá uma nova seção, chamada <strong>Filtros recomendados</strong>. Nesta seção, você poderá habilitar/desabilitar filtros recomendados com um simples clique e aprimorar sua experiência na Web."
   },
   "updates_update_i1_title": {
-    "message": "Novas listas de filtros recomendados para facilitar o acesso adicionadas."
+    "message": "Adicionadas novas listas de filtros recomendados para facilitar o acesso"
   },
   "updates_update_i2_description": {
     "message": "Tornamos o recurso Bloquear elemento mais fácil de usar, pois adicionamos instruções curtas e a visualização de como a página será exibida sem o elemento intrusivo. Experimente!"
@@ -30,10 +27,10 @@
     "message": "Recurso Bloquear elemento atualizado e aprimorado"
   },
   "updates_update_i3_description": {
-    "message": "Para os usuários mais avançados, temos um novo modo de filtros de ocultação de elementos de depuração que pode ser habilitado nas configurações avançadas. Os elementos serão realçados para permitir a depuração fácil."
+    "message": "Para os usuários mais avançados, temos um novo modo de filtros de ocultação de elementos de depuração que pode ser habilitado nas configurações avançadas. Os elementos serão realçados para permitir uma depuração fácil."
   },
   "updates_update_i3_title": {
-    "message": "Modo de filtros de ocultação de elementos de depuração adicionado."
+    "message": "Modo de filtros de ocultação de elementos de depuração adicionado"
   },
   "updates_update_i4_description": {
     "message": "Agora, o ícone pisca e fica azul para alertar os usuários sobre as notificações."

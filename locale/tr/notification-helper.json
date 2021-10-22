@@ -5,6 +5,15 @@
   "notification_open_all": {
     "message": "Bu bildirimden gelen tüm bağlantıları aç"
   },
+  "notification_recommendLanguage_message": {
+    "message": "Görünüşe göre şu dildeki bir web sitesini ziyaret ettiniz: $language$. Bu dildeki tüm web sitelerinde yer alan reklamları engellemek istiyor musunuz? <a>Evet</a>",
+    "placeholders": {
+      "language": {
+        "content": "$1",
+        "example": "čeština"
+      }
+    }
+  },
   "notification_without_buttons": {
     "message": "Bildirimdeki tüm bağlantıları açmak için bildirime tıklayın."
   }

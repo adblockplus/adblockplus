@@ -1,24 +1,6 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "Gjin aktyf domein opjûn foar wiidweidige elemintferbergjend filter"
-  },
-  "filter_invalid_csp": {
-    "message": "Unjildich ynhâldbefeiligingsbelied"
-  },
-  "filter_invalid_domain": {
-    "message": "Unjildich (of leech) domein opjaan"
-  },
-  "filter_invalid_regexp": {
-    "message": "Unjildige reguliere ekspresje"
-  },
   "filter_slow": {
     "message": "Kontrolearje foar in fluch filter de lingte fan it patroan en soargje derfoar dat dit gjin reguliere ekspresje brûkt."
-  },
-  "filter_snippet_nodomain": {
-    "message": "Gjin aktyf domein opjûn foar snippetfilter"
-  },
-  "filter_unknown_option": {
-    "message": "Unbekende filteropsje"
   },
   "line": {
     "message": "Regel $number$: $message$",
@@ -32,8 +14,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "Filterlistheaders binne hjir net tastien"
   }
 }

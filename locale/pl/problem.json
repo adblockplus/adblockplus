@@ -3,7 +3,7 @@
     "message": "Wystąpił problem, który spowodował przywrócenie ustawień ABP do domyślnych. <a>Napraw problem i dowiedz się więcej</a>"
   },
   "problem_note": {
-    "message": "Pamiętaj, że w zależności od sposobu korzystania z ABP może być konieczna ponowna konfiguracja ustawień, filtrów niestandardowych i witryn z listy dozwolonych po ponownej instalacji Adblock Plus."
+    "message": "Pamiętaj, że w zależności od sposobu korzystania po ponownej instalacji Adblock Plus może być konieczna ponowna konfiguracja ustawień, filtrów niestandardowych oraz witryn z listy dozwolonych."
   },
   "problem_os_mac": {
     "message": "Mac"

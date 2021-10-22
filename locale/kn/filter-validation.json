@@ -11,8 +11,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "ಫಿಲ್ಟರ್ ಪಟ್ಟಿ ಹೆಡರ್ ಇಲ್ಲಿ ಅನುಮತಿಸಲಾಗುವುದಿಲ್ಲ"
   }
 }

@@ -17,9 +17,6 @@
   "firstRun_control_title": {
     "message": "Du har kontrollen"
   },
-  "firstRun_fair_description": {
-    "message": "Vi oppfordrer deg til å bruke Adblock Plus på en rimelig måte, og å bruke valget om å hviteliste enkelte nettsteder. Du forstår og aksepterer at uventede resultater kan oppstå ved bruk av ulike filtre (f.eks. blokkert innold på et nettsted). Referer til <a0>Bruksbetingelsene</a0> for mer informasjon om Adblock Plus."
-  },
   "firstRun_fair_title": {
     "message": "Rimelig bruk"
   },

@@ -1,24 +1,33 @@
 {
   "filter_elemhideemulation_nodomain": {
-    "message": "Nincs megadva domain a kiterjesztett elemszűréshez"
+    "message": "Nincs aktív domain meghatározva. Adjon meg legalább egy domain-t e kiterjesztett elem elrejtő szűrő számára."
   },
   "filter_invalid_csp": {
-    "message": "Érvénytelen tartalombiztonsági irányelv"
+    "message": "Érvénytelen tartalombiztonsági irányelv (a szintaxis nem felel meg a szabványnak)."
   },
   "filter_invalid_domain": {
-    "message": "Érvénytelen (vagy üres) domain"
+    "message": "Érvénytelen vagy üres domain. Egy vagy több, vesszővel elválasztott (,) domain-t kell tartalmaznia a domain listának, pl. abc.com,def.com,ghi.com."
+  },
+  "filter_invalid_option": {
+    "message": "Érvénytelen szűrő beállítás"
   },
   "filter_invalid_regexp": {
-    "message": "Érvénytelen reguláris kifejezés"
+    "message": "Érvénytelen reguláris kifejezés (a szintaxis nem felel meg a szabványnak)."
   },
   "filter_slow": {
     "message": "A gyors szűrő biztosítása érdekében, ellenőrizze a minta hosszát, és győződjön meg arról, hogy nem tartalmaz szabályos kifejezést."
   },
   "filter_snippet_nodomain": {
-    "message": "Nincs aktív kiválasztott domain a kódrészlet szűrőben"
+    "message": "Nincs aktív domain meghatározva. Adjon meg legalább egy domain-t e kódrészlet szűrő számára."
   },
   "filter_unknown_option": {
-    "message": "Ismeretlen szűrőlehetőség"
+    "message": "$option$ érvénytelen szűrő beállítás.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "foo"
+      }
+    }
   },
   "line": {
     "message": "$number$. sor: $message$",
@@ -34,6 +43,6 @@
     }
   },
   "unexpected_filter_list_header": {
-    "message": "A szűrő lista fejlécek itt nem engedélyezettek"
+    "message": "Kizárólag letölthető szűrőlistákban támogatottak a szűrőlista fejlécek."
   }
 }

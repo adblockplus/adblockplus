@@ -1,16 +1,4 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "沒有為擴展元素隱藏規則指定活躍域名"
-  },
-  "filter_invalid_domain": {
-    "message": "無效（或空的）網域被指定"
-  },
-  "filter_invalid_regexp": {
-    "message": "無效的正規表示法"
-  },
-  "filter_unknown_option": {
-    "message": "未知的過濾器選項"
-  },
   "line": {
     "message": "行 $number$ ：$message$",
     "placeholders": {
@@ -23,8 +11,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "這裡不允許過濾器列表標題"
   }
 }

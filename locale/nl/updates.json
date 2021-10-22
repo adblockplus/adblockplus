@@ -26,6 +26,9 @@
   "updates_contribute_subtitle": {
     "message": "U kunt ABP op twee manieren steunen:"
   },
+  "updates_contribute_subtitle_generic": {
+    "message": "Overweeg ondersteuning aan ABP:"
+  },
   "updates_contribute_title": {
     "message": "Bent u tevreden over het gebruik van Adblock Plus?"
   },

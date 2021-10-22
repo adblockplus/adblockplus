@@ -2,9 +2,6 @@
   "notification_problem_message": {
     "message": "Adblock Plussan asetukset on palautettu oletuksiin teknisen virheen takia. <a>Lisätietoja tästä ongelmasta</a>"
   },
-  "problem_note": {
-    "message": "Saatat joutua määrittämään asetukset, omat suodattimet ja sallitut sivustot uudelleen Adblock Plussan uudelleenasennuksen jälkeen."
-  },
   "problem_os_mac": {
     "message": "Mac"
   },

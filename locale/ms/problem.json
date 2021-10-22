@@ -2,9 +2,6 @@
   "notification_problem_message": {
     "message": "Suatu masalah telah menyebabkan tetapan ABP anda diset semula kepada lalai. <a>Perbaiki masalah itu dan ketahui lebih lanjut</a>"
   },
-  "problem_note": {
-    "message": "Ambil maklum bahawa bergantung kepada cara anda menggunakan ABP, anda mungkin perlu untuk menyusun semula tetapan, penapis tersuai dan laman web disenarai putih anda setelah anda memasang semula Adblock Plus."
-  },
   "problem_os_mac": {
     "message": "Mac"
   },

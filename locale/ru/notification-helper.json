@@ -5,6 +5,15 @@
   "notification_open_all": {
     "message": "Открыть все ссылки из этого уведомления"
   },
+  "notification_recommendLanguage_message": {
+    "message": "Похоже, вы посетили вебсайт на: $language$. Хотите ли вы заблокировать рекламу на всех вебсайтах на этом языке? <a>Да</a>",
+    "placeholders": {
+      "language": {
+        "content": "$1",
+        "example": "čeština"
+      }
+    }
+  },
   "notification_without_buttons": {
     "message": "Щелкните по уведомлению, чтобы открыть все ссылки."
   }

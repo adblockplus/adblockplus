@@ -1,16 +1,4 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "No hay un dominio activo para el filtro extendido de ocultamiento de elementos"
-  },
-  "filter_invalid_domain": {
-    "message": "Dominio especificado inválido (o vacío)"
-  },
-  "filter_invalid_regexp": {
-    "message": "Expresión regular inválida"
-  },
-  "filter_unknown_option": {
-    "message": "Opción de filtrado desconocida"
-  },
   "line": {
     "message": "Línea $number$: $message$",
     "placeholders": {
@@ -23,8 +11,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "Cabeceras de la lista del filtro no son permitidas aquí"
   }
 }

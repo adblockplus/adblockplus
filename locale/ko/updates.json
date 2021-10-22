@@ -26,6 +26,9 @@
   "updates_contribute_subtitle": {
     "message": "두 방법 중 한 가지로 ABP를 지지하세요:"
   },
+  "updates_contribute_subtitle_generic": {
+    "message": "ABP를 지원해 주세요:"
+  },
   "updates_contribute_title": {
     "message": "Adblock Plus가 유용한가요?"
   },

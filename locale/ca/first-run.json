@@ -20,9 +20,6 @@
   "firstRun_donate": {
     "message": "Fes una donació"
   },
-  "firstRun_fair_description": {
-    "message": "Us animem a fer un ús raonable d'Adblock Plus i de l'opció de llista blanca per a llocs web permesos. Segons els filtres que feu servir, haureu d'entendre i acceptar que es poden generar resultats no intencionats, com a contingut bloquejat en un lloc web. Consulteu els <a0>Termes d'ús</a0> per a conèixer més informació sobre un ús raonable d'Adblock Plus."
-  },
   "firstRun_fair_title": {
     "message": "Ús raonable"
   },

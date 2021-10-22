@@ -9,13 +9,13 @@
     "message": "Naar de enquête"
   },
   "options_acceptableAds_ads_description_1": {
-    "message": "Acceptabele advertenties zijn niet vervelend en geven geen verstoring met de inhoud die u bekijkt. <a>Lees meer over de criteria voor Acceptabele advertenties</a>"
+    "message": "Acceptabele advertenties hebben geen invloed op de inhoud die u bekijkt. <a>Meer te weten komen</a>"
   },
   "options_acceptableAds_ads_label": {
-    "message": "Acceptabele advertenties toestaan"
+    "message": "Acceptabele advertenties tonen"
   },
   "options_acceptableAds_description": {
-    "message": "Acceptabele advertenties zijn niet-opdringerige advertenties. Ze zijn de middenweg tussen advertentieblokkering en het steunen van online-inhoud, omdat ze inkomsten genereren voor website-eigenaren."
+    "message": "Acceptabele advertenties zijn niet-storende advertenties die voldoen aan een strenge advertentiestandaard. Ze helpen inkomsten te genereren voor contentschrijvers en hebben geen invloed op de inhoud die u bekijkt."
   },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Opmerking:</strong> u hebt <strong>Do Not Track (DNT)</strong> uitgeschakeld in uw browserinstellingen. Schakel <strong>DNT</strong> in in uw browservoorkeuren om deze functie goed te laten werken. <a>Lees hoe u DNT kunt inschakelen</a>."
@@ -28,6 +28,29 @@
   },
   "options_advanced_description": {
     "message": "Adblock Plus aanpassen, filterlijsten toevoegen of verwijderen, uw eigen filterlijsten maken en beheren"
+  },
+  "options_allowlist_add": {
+    "message": "Voeg een website toe"
+  },
+  "options_allowlist_description": {
+    "message": "U heeft de functie voor het blokkeren van advertenties op deze websites uitgeschakeld en zult daarom advertenties zien op deze pagina's."
+  },
+  "options_allowlist_empty_1": {
+    "message": "U hebt geen websites op uw toelatingslijst."
+  },
+  "options_allowlist_empty_2": {
+    "message": "Websites die u vertrouwt en waarop u advertenties wilt toestaan worden hier vertoond."
+  },
+  "options_allowlist_notification": {
+    "message": "De website is toegevoegd aan de toelatingslijst."
+  },
+  "options_allowlist_placeholder_example": {
+    "message": "bijv. $domain$",
+    "placeholders": {
+      "domain": {
+        "content": "www.example.com"
+      }
+    }
   },
   "options_builtin_filterList_add": {
     "message": "Ingebouwde filterlijsten toevoegen"
@@ -72,7 +95,7 @@
     "message": "Paneel ‘Adblock Plus’ in ontwikkelaarshulpmiddelen tonen"
   },
   "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Geblokkeerde en items op witte lijst van het paneel ontwikkelaarshulpmiddelen van uw browser bekijken"
+    "message": "Bekijk geblokkeerde en op de lijst toegestane items via het Developer Tools-paneel van uw browser."
   },
   "options_customize_showNotifications": {
     "message": "Nuttige meldingen tonen"
@@ -172,6 +195,15 @@
   "options_filterList_empty": {
     "message": "U hebt geen filterlijsten aan Adblock Plus toegevoegd. Filterlijsten die u toevoegt worden hier getoond."
   },
+  "options_filterList_enableFilters": {
+    "message": "Activeer ze"
+  },
+  "options_filterList_errorPopup_title": {
+    "message": "Er zijn één of meerdere problemen met deze filterlijst:"
+  },
+  "options_filterList_filtersDisabled": {
+    "message": "Sommige filters in deze filterlijst zijn gedeactiveerd."
+  },
   "options_filterList_hours": {
     "message": "uren geleden"
   },
@@ -179,7 +211,7 @@
     "message": "Mislukt, ongeldige controlesom"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Downloaden mislukt"
+    "message": "Het downloaden van de filterlijst is mislukt."
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Bijwerken"
@@ -249,13 +281,13 @@
     "message": "Hulp zoeken of contact met ons opnemen"
   },
   "options_language_add": {
-    "message": "Een taal toevoegen"
+    "message": "Toevoegen van taalfilterlijst"
   },
   "options_language_change": {
     "message": "wijzigen"
   },
   "options_language_description": {
-    "message": "Optimaliseer Adblock Plus voor de taal/talen waarin u websites doorgaans bekijkt."
+    "message": "Toevoegen of verwijderen van talen waarin u Adblock Plus-advertenties wilt laten blokkeren. <a0>Meer informatie</a0>"
   },
   "options_language_empty": {
     "message": "U hebt geen taalspecifieke filters."
@@ -264,7 +296,7 @@
     "message": "Taalfilterlijsten"
   },
   "options_language_header": {
-    "message": "Taal"
+    "message": "Taalfilterlijsten"
   },
   "options_language_join": {
     "message": "$lang1$, $lang2$",
@@ -279,6 +311,12 @@
       }
     }
   },
+  "options_language_recommend": {
+    "message": "Informeer mij over beschikbare taalfilterlijsten"
+  },
+  "options_language_recommend_tooltip": {
+    "message": "Adblock Plus is afhankelijk van filterlijsten om advertenties in verschillende talen te blokkeren."
+  },
   "options_language_tip": {
     "message": "<strong>TIP:</strong> selecteer alleen de talen die u nodig hebt. Het selecteren van meer talen vertraagt de adblocker en daarmee uw surfsnelheid."
   },
@@ -289,7 +327,7 @@
     "message": "Dit zijn extra filters die u eerder aan Adblock Plus hebt toegevoegd."
   },
   "options_more_filters_header": {
-    "message": "Meer filters"
+    "message": "Meer filterlijsten"
   },
   "options_more_filters_note": {
     "message": "<strong>Opmerking:</strong> u dient alleen filterlijsten van derden te gebruiken van auteurs die u vertrouwt."
@@ -354,6 +392,9 @@
   "options_tab_advanced": {
     "message": "Geavanceerd"
   },
+  "options_tab_allowlist": {
+    "message": "Op de lijst toegestane websites"
+  },
   "options_tab_general": {
     "message": "Algemeen"
   },
@@ -377,7 +418,7 @@
     }
   },
   "options_tracking_warning_2": {
-    "message": "U moet weten dat er bij Acceptabele advertenties <strong>mogelijk</strong> tracking plaatsvindt, zodat adverteerders meer relevante advertenties kunnen tonen."
+    "message": "Om adverteerders relevantere reclame aan u te laten zien, willen we dat u weet dat er enig volgen met acceptabele reclame <strong>kan</strong> plaatsvinden."
   },
   "options_tracking_warning_3": {
     "message": "Als u de voorkeur geeft aan extra privacy, selecteer dan het onderstaande vakje <strong>$acceptableAdsPrivacy$</strong>.",

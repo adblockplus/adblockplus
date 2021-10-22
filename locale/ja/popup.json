@@ -2,11 +2,47 @@
   "block_element_description": {
     "message": "このウェブ上の特定の要素をブロックする"
   },
+  "browser_store_android": {
+    "message": "Google Play の Android アプリ"
+  },
+  "browser_store_ios": {
+    "message": "iTunes App Store でご利用いただけます"
+  },
   "click_element_to_block_it": {
     "message": "ページ上の要素をクリックしてブロックします。"
   },
+  "connect_on_facebook": {
+    "message": "Facebook でつながる"
+  },
+  "connect_on_twitter": {
+    "message": "Twitter でつながる"
+  },
   "easy_create_filter": {
     "message": "要素をブロック"
+  },
+  "footer_donate_button": {
+    "message": "寄付する"
+  },
+  "footer_donate_description": {
+    "message": "ABP にご支援いただけますか？"
+  },
+  "footer_get_help_button": {
+    "message": "ご連絡先"
+  },
+  "footer_get_help_description": {
+    "message": "ABP で問題がありますか？"
+  },
+  "footer_mobile_description": {
+    "message": "モバイル ABP はいかがですか？"
+  },
+  "footer_rate_button": {
+    "message": "ABP を評価"
+  },
+  "footer_rate_description": {
+    "message": "追加機能をお楽しみですか？"
+  },
+  "footer_social_description": {
+    "message": "ご連絡ください。"
   },
   "options_refresh": {
     "message": "更新"

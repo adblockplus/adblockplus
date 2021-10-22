@@ -2,11 +2,47 @@
   "block_element_description": {
     "message": "حجب عنصر محدد على موقع الويب هذا"
   },
+  "browser_store_android": {
+    "message": "تطبيق Android على متجر Google Play"
+  },
+  "browser_store_ios": {
+    "message": "متوفر على iTunes App Store"
+  },
   "click_element_to_block_it": {
     "message": "أنقر فوق عنصر في الصفحة لحظره."
   },
+  "connect_on_facebook": {
+    "message": "التواصل على فيسبوك"
+  },
+  "connect_on_twitter": {
+    "message": "التواصل على Twitter"
+  },
   "easy_create_filter": {
     "message": "حجب العنصر"
+  },
+  "footer_donate_button": {
+    "message": "التبرّع"
+  },
+  "footer_donate_description": {
+    "message": "هل تريد دعم ABP؟"
+  },
+  "footer_get_help_button": {
+    "message": "طلب مساعدة"
+  },
+  "footer_get_help_description": {
+    "message": "هل تواجه مشكلة في استخدام ABP؟"
+  },
+  "footer_mobile_description": {
+    "message": "هل تهتم بـ ABP للأجهزة المحمولة؟"
+  },
+  "footer_rate_button": {
+    "message": "تقييم ABP"
+  },
+  "footer_rate_description": {
+    "message": "هل يعجبك الامتداد؟"
+  },
+  "footer_social_description": {
+    "message": "ابقَ على اتصال معنا!"
   },
   "options_refresh": {
     "message": "تحديث"

@@ -26,6 +26,9 @@
   "updates_contribute_subtitle": {
     "message": "ABP'yi iki yöntemden biri ile desteklemeyi düşünün:"
   },
+  "updates_contribute_subtitle_generic": {
+    "message": "ABP'yi desteklemeyi düşünün:"
+  },
   "updates_contribute_title": {
     "message": "Adblock Plus'tan keyif alıyor musunuz?"
   },

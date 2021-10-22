@@ -8,15 +8,6 @@
   "options_aa_opt_out_survey_ok": {
     "message": "জরিপ করতে যান"
   },
-  "options_acceptableAds_ads_description_1": {
-    "message": "গ্রহণযোগ্য বিজ্ঞাপনগুলি বিরক্তিকর নয় এবং আপনি যে সামগ্রী দেখছেন তা হস্তক্ষেপ করে না। <a>গ্রহণযোগ্য বিজ্ঞাপনের শর্তাবলী সম্পর্কে আরও পড়ুন</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "গ্রহনযোগ্য বিজ্ঞাপনের অনুমতি দিন"
-  },
-  "options_acceptableAds_description": {
-    "message": "গ্রহণযোগ্য বিজ্ঞাপনগুলি অ-বিরক্তিকর বিজ্ঞাপন।এগুলি বিজ্ঞাপন অবরুদ্ধ করা এবং অনলাইন সামগ্রীকে সমর্থন করার মধ্যে মাঝের ক্ষেত্র কারণ তারা ওয়েবসাইটের মালিকদের জন্য উপার্জন অর্জন করে।"
-  },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>টীকা:</strong> আপনার ব্রাউজারের সেটিংসে <strong>অনুসরণ করবেন না(DNT)</strong> সক্রিয় করা আছে। এই সুবিধা সঠিকভাবে কাজ করার জন্য, অনুগ্রহ করে আপনার ব্রাউজারে <strong>DNT</strong> সক্রিয় করুন। <a>জানুন কিভাবে DNT সক্রিয় করবেন</a>।"
   },
@@ -64,9 +55,6 @@
   },
   "options_customize_showDevToolsPanel": {
     "message": "বিকাশকারী সরঞ্জামগুলিতে 'Adblock Plus' প্যানেল দেখান"
-  },
-  "options_customize_showDevToolsPanel_tooltip": {
-    "message": "আপনার ব্রাউজারের বিকাশকারী সরঞ্জাম প্যানেল থেকে অবরুদ্ধ এবং সাদাতালিকাভুক্ত আইটেমগুলি দেখুন।"
   },
   "options_customize_showNotifications": {
     "message": "দরকারী বিজ্ঞপ্তি দেখান"
@@ -149,9 +137,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "ব্যর্থ, ত্রুটিনির্ধারক মেলেনি"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "ব্যর্থ, নামানো ব্যর্থতা"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "হালনাগাদ হচ্ছে"
   },
@@ -211,23 +196,14 @@
   "options_help_description": {
     "message": "সাহায্য খুঁজুন বা আমাদের সাথে যোগাযোগ করুন"
   },
-  "options_language_add": {
-    "message": "একটি ভাষা যোগ করুন"
-  },
   "options_language_change": {
     "message": "পরিবর্তন করুন"
-  },
-  "options_language_description": {
-    "message": "ওয়েবসাইট ব্রাউজের সময় অ্যাডব্লকের যে ভাষা ব্যবহার করেন তা অপ্টিমাইজ করুন।"
   },
   "options_language_empty": {
     "message": "আপনার কোন ভাষা-নির্দিষ্ট ফিল্টার নেই।"
   },
   "options_language_filter_list": {
     "message": "ভাষা ফিল্টার তালিকা"
-  },
-  "options_language_header": {
-    "message": "ভাষা"
   },
   "options_language_join": {
     "message": "$lang1$, $lang2$",
@@ -250,9 +226,6 @@
   },
   "options_more_filters_description": {
     "message": "এই অতিরিক্ত ফিল্টারগুলি আপনি পূর্বে Adblock Plus যোগ করেছেন।"
-  },
-  "options_more_filters_header": {
-    "message": "আরো ফিল্টার"
   },
   "options_more_filters_note": {
     "message": "<strong>টীকা:</strong> আপনার সেইসব তৃতীয় পক্ষের ফিল্টার তালিকা ব্যবহার করা উচিত যা আপনি বিশ্বাস করেন।"
@@ -314,9 +287,6 @@
         "example": "Block additional tracking"
       }
     }
-  },
-  "options_tracking_warning_2": {
-    "message": "আমরা আপনাকে জানাতে চাই যে আপনাকে আরো গ্রহণযোগ্য বিজ্ঞাপন দেখাতে, গ্রহণযযোগ্য বিজ্ঞাপণের সাথে কিছু অনুসরণ <strong>থাকতে</strong> পারে।"
   },
   "options_tracking_warning_3": {
     "message": "যদি আপনি অতিরিক্ত গোপনীয়তা চান, তবে <strong>$acceptableAdsPrivacy$</strong> বাক্সটি টিক দিন।",

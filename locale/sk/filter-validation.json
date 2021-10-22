@@ -1,19 +1,4 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "Neexistuje žiadna aktívna doména pre filtrovanie rozšírených prvkov"
-  },
-  "filter_invalid_csp": {
-    "message": "Nesprávny obsah Politiky zabezpečenia"
-  },
-  "filter_invalid_domain": {
-    "message": "Neplatná doména (alebo prázdna)"
-  },
-  "filter_invalid_regexp": {
-    "message": "Neplatný regulárny výraz"
-  },
-  "filter_unknown_option": {
-    "message": "Neznáma možnosť filtra"
-  },
   "line": {
     "message": "Riadok $number$: $message$",
     "placeholders": {
@@ -26,8 +11,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "Hlavičky filtra nie sú povolené"
   }
 }

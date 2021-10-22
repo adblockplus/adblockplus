@@ -2,15 +2,6 @@
   "options_aa_opt_out_survey_no": {
     "message": "Nē, paldies"
   },
-  "options_acceptableAds_ads_description_1": {
-    "message": "Pieļaujamā reklāma nav kaitinoša un netraucē skatāmajam saturam. <a>Uzzināt vairāk par pieļaujamās reklāmas kritērijiem</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "Atļaut pieļaujamo reklāmu"
-  },
-  "options_acceptableAds_description": {
-    "message": "Pieļaujamā reklāma ir neuzmācīga reklāma Tas ir kompromiss starp reklāmas bloķēšanu un tiešsaistes satura atbalstīšanu, jo tā rada ieņēmumus vietņu īpašniekiem."
-  },
   "options_acceptableAds_header": {
     "message": "Pieļaujamā reklāma"
   },
@@ -134,9 +125,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Neizdevās, kontrolsummas neatbilstība"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Neizdevās, lejupielāde neizdevās"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Atjaunina"
   },
@@ -190,23 +178,14 @@
   "options_help_description": {
     "message": "Atrast palīdzību vai sazināties ar mums"
   },
-  "options_language_add": {
-    "message": "pievienot valodu"
-  },
   "options_language_change": {
     "message": "mainīt"
-  },
-  "options_language_description": {
-    "message": "Optimizējiet Adblock Plus valodām, kurās parasti pārlūkojat tīmekļvietnes."
   },
   "options_language_empty": {
     "message": "Nav ar valodu saistītu filtru."
   },
   "options_language_filter_list": {
     "message": "Valodu filtru saraksts"
-  },
-  "options_language_header": {
-    "message": "Valoda"
   },
   "options_language_join": {
     "message": "$lang1$, $lang2$",
@@ -229,9 +208,6 @@
   },
   "options_more_filters_description": {
     "message": "Šie ir papildu filtri, ko iepriekš pievienojāt Adblock Plus."
-  },
-  "options_more_filters_header": {
-    "message": "Vairāk filtru"
   },
   "options_more_filters_note": {
     "message": "<strong>Piezīme:</strong> Izmantojiet tikai uzticamu autoru trešās puses filtru sarakstus."

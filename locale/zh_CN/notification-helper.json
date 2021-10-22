@@ -5,6 +5,15 @@
   "notification_open_all": {
     "message": "打开此通知中的所有链接"
   },
+  "notification_recommendLanguage_message": {
+    "message": "看起来您访问了以下语言的网站：$language$。您想在所有此语言的网站上拦截广告吗？<a>是</a>",
+    "placeholders": {
+      "language": {
+        "content": "$1",
+        "example": "čeština"
+      }
+    }
+  },
   "notification_without_buttons": {
     "message": "点击通知打开它上面的所有链接。"
   }

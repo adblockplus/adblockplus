@@ -1,24 +1,6 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "No se ha especificado dominio activo para el filtro de ocultar elementos extendidos"
-  },
-  "filter_invalid_csp": {
-    "message": "Política de seguridad de contenido no válida"
-  },
-  "filter_invalid_domain": {
-    "message": "Dominio especificado no válido (o vacío)"
-  },
-  "filter_invalid_regexp": {
-    "message": "Expresión regular inválida"
-  },
   "filter_slow": {
     "message": "Para asegurar un filtro rápido, comprueba la longitud del patrón y asegúrate de que no contiene una expresión regular."
-  },
-  "filter_snippet_nodomain": {
-    "message": "No se ha especificado dominio activo para el filtro de fragmentos"
-  },
-  "filter_unknown_option": {
-    "message": "Opción de filtrado desconocida"
   },
   "line": {
     "message": "Línea $number$: $message$",
@@ -32,8 +14,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "Cabeceras de la lista del filtro no son permitidas aquí"
   }
 }

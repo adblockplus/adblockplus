@@ -2,9 +2,6 @@
   "options_aa_opt_out_survey_no": {
     "message": "Alla, tanemmirt"
   },
-  "options_acceptableAds_ads_label": {
-    "message": "Sireg adellel yettwaqbalen"
-  },
   "options_acceptableAds_header": {
     "message": "Adellel yettwaqbalen"
   },
@@ -89,9 +86,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Icceḍ, checksum ur imenṭaḍ ara"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Failed, download failure"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Aleqqem"
   },
@@ -128,20 +122,11 @@
   "options_footer_contribute": {
     "message": "Ttekki"
   },
-  "options_language_add": {
-    "message": "Rnu tutlayt"
-  },
   "options_language_change": {
     "message": "beddel"
   },
-  "options_language_header": {
-    "message": "Tutlayt"
-  },
   "options_learn_more": {
     "message": "Issin ugar"
-  },
-  "options_more_filters_header": {
-    "message": "Ugar n imsizdigen"
   },
   "options_new_label": {
     "message": "Amaynut"

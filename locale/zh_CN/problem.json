@@ -3,7 +3,7 @@
     "message": "一个问题导致您的 ABP 设置被重置为默认值。<a>修复问题并了解更多信息</a>"
   },
   "problem_note": {
-    "message": "请注意，根据您使用 ABP 的方式，重新安装 Adblock Plus 后，您可能需要重新配置设置、自定义筛选器和列入白名单的网站。"
+    "message": "请注意，根据您使用 ABP 的方式，重新安装 Adblock Plus 后，您可能需要重新配置设置、自定义筛选器和列入允许列表的网站。"
   },
   "problem_os_mac": {
     "message": "Mac"

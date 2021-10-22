@@ -1,13 +1,4 @@
 {
-  "options_acceptableAds_ads_description_1": {
-    "message": "Prijateľné reklamy nie sú otravné a nezasahujú do obsahu, ktorý prezeráte. <a>Viac informácií o kritériách prijateľných reklám</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "Povoliť prijateľné reklamy"
-  },
-  "options_acceptableAds_description": {
-    "message": "Prijateľné reklamy nie sú rušivé reklamy. Jeú to stredná cesta medzi blokovaním reklám a podporou obsahu online, pretože vytvárajú príjmy pre vlastníkov webových stránok."
-  },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Poznámka:</strong> Máte vypnuté <strong>Nesledovať (DNT)</strong> v nastavení vášho prehliadača. Ak má táto funkcia pracovať správne, povoľte <strong>DNT</strong> v predvoľbách prehliadača. <a>Zistite ako zapnúť DNT</a>."
   },
@@ -49,9 +40,6 @@
   },
   "options_customize_showDevToolsPanel": {
     "message": "Zobraziť panel \"Adblock Plus\" v nástrojoch pre vývojárov"
-  },
-  "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Zobraziť položky zablokované a označené bielou listinou z panelu nástrojov pre vývojárov v prehliadači."
   },
   "options_customize_showNotifications": {
     "message": "Zobraziť užitočné upozornenia"
@@ -131,9 +119,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Zlyhalo, chybné prispôsobenie kontrolného súčtu"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Zlyhanie, sťahovanie neúspešné"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Aktualizácia"
   },
@@ -179,20 +164,11 @@
   "options_help_description": {
     "message": "Nájdite pomoc alebo nás kontaktujte"
   },
-  "options_language_add": {
-    "message": "pridajte jazyk"
-  },
   "options_language_change": {
     "message": "zmeniť"
   },
-  "options_language_description": {
-    "message": "Optimalizujte program Adblock Plus pre jazyk(y), ktorým obvykle prehliadate webové stránky."
-  },
   "options_language_empty": {
     "message": "Nemáte žiadne filtre špecifické pre daný jazyk."
-  },
-  "options_language_header": {
-    "message": "Jazyk"
   },
   "options_language_tip": {
     "message": "<strong>TIP:</strong>Vyberte iba požadované jazyky. Ak vyberiete viac, spomalíte blokovanie reklamy, a teda rýchlosť prehliadania."
@@ -202,9 +178,6 @@
   },
   "options_more_filters_description": {
     "message": "Ide o ďalšie filtre, ktoré ste predtým pridali do Adblock Plus."
-  },
-  "options_more_filters_header": {
-    "message": "Ďalšie filtre"
   },
   "options_more_filters_note": {
     "message": "<strong>Poznámka:</strong> Zoznamy filtrov tretích strán by ste mali používať iba od autorov, ktorým dôverujete."
@@ -266,9 +239,6 @@
         "example": "Block additional tracking"
       }
     }
-  },
-  "options_tracking_warning_2": {
-    "message": "Chceme, aby ste vedeli, že aby inzerenti mohli zobrazovať relevantnejšie reklamy, môže byť <strong>možné</strong> nejaké sledovanie s prijateľnými reklamami."
   },
   "options_tracking_warning_3": {
     "message": "Ak uprednostňujete dodatočné súkromie, vyberte položku <strong>$acceptableAdsPrivacy$</strong> nižšie.",

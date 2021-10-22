@@ -1,13 +1,4 @@
 {
-  "options_acceptableAds_ads_description_1": {
-    "message": "可接受廣告不會令人煩惱，也不會干擾您正在查看的內容。<a>閱讀更多關於可接受廣告的標準</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "允許可接受廣告"
-  },
-  "options_acceptableAds_description": {
-    "message": "可接受的廣告是非侵入式廣告。由於它們為網站所有者創造了收入，因此它們處於廣告屏蔽和支持在線內容之間的中間位置。"
-  },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>注意：</strong> <strong>請勿跟踪（DNT）</strong>選項在瀏覽器設定中已被禁用。為了使本功能正常工作，請在您的瀏覽器首選項中啟用<strong>DNT</strong>即可。<a>查看啟用DNT的方法</a>。"
   },
@@ -52,9 +43,6 @@
   },
   "options_customize_showDevToolsPanel": {
     "message": "在開發人員工具中顯示“Adblock Plus”面板"
-  },
-  "options_customize_showDevToolsPanel_tooltip": {
-    "message": "從瀏覽器的開發人員工具面板中查看已被屏蔽和列入白名單的項目。"
   },
   "options_customize_showNotifications": {
     "message": "顯示有用的通知"
@@ -137,9 +125,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "失敗，驗證碼不符"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "失敗，檔案下載失敗"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "正在更新"
   },
@@ -193,20 +178,11 @@
   "options_help_description": {
     "message": "尋求幫助或聯繫我們"
   },
-  "options_language_add": {
-    "message": "添加語言"
-  },
   "options_language_change": {
     "message": "更改"
   },
-  "options_language_description": {
-    "message": "為您平日瀏覽網站的語言優化 Adblock Plus。"
-  },
   "options_language_empty": {
     "message": "您沒有任何特定語言的過濾器。"
-  },
-  "options_language_header": {
-    "message": "語言"
   },
   "options_language_tip": {
     "message": "<strong>提示：</strong>只選擇您需要的語言。選擇更多會減慢廣告攔截器的速度，因此會降低瀏覽速度。"
@@ -216,9 +192,6 @@
   },
   "options_more_filters_description": {
     "message": "這些是您以前添加到 Adblock Plus 的其他過濾器。"
-  },
-  "options_more_filters_header": {
-    "message": "更多過濾器"
   },
   "options_more_filters_note": {
     "message": "<strong>注意：</strong>您應僅使用您相信的作者列出的協力廠商篩選器。"
@@ -280,9 +253,6 @@
         "example": "Block additional tracking"
       }
     }
-  },
-  "options_tracking_warning_2": {
-    "message": "我們想告知您，為了讓廣告商向您展示更有相關性的廣告，可接受廣告<strong>可能</strong>准許某些跟踪型的廣告。"
   },
   "options_tracking_warning_3": {
     "message": "如果您更注重隱私，請選擇下方的<strong>$acceptableAdsPrivacy$</strong>複選框。",

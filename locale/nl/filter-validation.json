@@ -1,24 +1,33 @@
 {
   "filter_elemhideemulation_nodomain": {
-    "message": "Geen actief domein opgegeven voor uitgebreide elementverbergende filter"
+    "message": "Geen actief domein aangegeven. Geef ten minste één domein op voor dit toegevoegde element om filters te verbergen."
   },
   "filter_invalid_csp": {
-    "message": "Ongeldig inhoudsbeveiligingsbeleid"
+    "message": "Ongeldige inhoud veiligheidsbeleid (syntaxis voldoet niet aan de norm)."
   },
   "filter_invalid_domain": {
-    "message": "Ongeldig (of leeg) domein opgegeven"
+    "message": "Ongeldig of leeg domein. De domeinlijst moet één of meer domeinen bevatten, gescheiden door een komma (,), bijv. abc.com,def.com,ghi.com."
+  },
+  "filter_invalid_option": {
+    "message": "Ongeldige filteroptie"
   },
   "filter_invalid_regexp": {
-    "message": "Ongeldige reguliere expressie"
+    "message": "Ongeldige reguliere expressie (de syntaxis voldoet niet aan de norm)."
   },
   "filter_slow": {
     "message": "Controleer voor een snel filter de lengte van het patroon en zorg ervoor dat dit geen reguliere expressie gebruikt."
   },
   "filter_snippet_nodomain": {
-    "message": "Geen actief domein opgegeven voor snippetfilter"
+    "message": "Geen actief domein aangegeven. Geef ten minste één domein op voor dit toegevoegde element om filters te verbergen."
   },
   "filter_unknown_option": {
-    "message": "Onbekende filteroptie"
+    "message": "$option$ is geen geldige filteroptie.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "foo"
+      }
+    }
   },
   "line": {
     "message": "Regel $number$: $message$",
@@ -34,6 +43,6 @@
     }
   },
   "unexpected_filter_list_header": {
-    "message": "Filterlijstheaders zijn hier niet toegestaan"
+    "message": "De headers voor filterlijsten worden alleen ondersteund in downloadbare filterlijsten."
   }
 }

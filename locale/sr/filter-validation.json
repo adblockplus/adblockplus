@@ -1,22 +1,4 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "Није наведен активан домен у проширеном филтеру за скривање елемената"
-  },
-  "filter_invalid_csp": {
-    "message": "Неважећа политика безбедности садржаја"
-  },
-  "filter_invalid_domain": {
-    "message": "Наведен је неважећи (или празан) домен"
-  },
-  "filter_invalid_regexp": {
-    "message": "Неважећи регуларни израз"
-  },
-  "filter_snippet_nodomain": {
-    "message": "Није наведен активан домен за филтер исечака"
-  },
-  "filter_unknown_option": {
-    "message": "Непозната опција филтера"
-  },
   "line": {
     "message": "Ред $number$: $message$",
     "placeholders": {
@@ -29,8 +11,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "Заглавља листа филтера овде нису дозвољена"
   }
 }

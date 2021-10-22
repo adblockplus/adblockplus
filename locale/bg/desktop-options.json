@@ -2,15 +2,6 @@
   "options_aa_opt_out_survey_no": {
     "message": "Не, благодаря"
   },
-  "options_acceptableAds_ads_description_1": {
-    "message": "Приемливи реклами не досаждат и не пречат на съдържанието. <a>Прочети повече за приемливо реклами критерии</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "Позволи Приемливи реклами"
-  },
-  "options_acceptableAds_description": {
-    "message": "Приемливите реклами са ненатрапчиви. Нещо средно между блокирана реклама и спонсорско съдържание, защото генерират приходи за собствениците на сайта."
-  },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Забележка:</strong> <strong>Искай неследене (DNT)</strong> е забранена във вашия браузър. За правилна работа на функцията, моля, разрешете <strong>DNT</strong> в настройките на браузъра. <a>Как да разрешите DNT</a>."
   },
@@ -55,9 +46,6 @@
   },
   "options_customize_showDevToolsPanel": {
     "message": "Показвай панел „Adblock Plus“ към развойни инструменти"
-  },
-  "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Преглед на блокирани и изключени елементи през панела с развойни инструменти на браузъра."
   },
   "options_customize_showNotifications": {
     "message": "Показвай полезни известия"
@@ -157,9 +145,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Провалено — несъвпадаща контролна сума!"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Изтеглянето се провали"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "обновяване"
   },
@@ -224,20 +209,11 @@
   "options_help_description": {
     "message": "Намиране на помощ или свързване с нас"
   },
-  "options_language_add": {
-    "message": "Добавяне на език"
-  },
   "options_language_change": {
     "message": "промени"
   },
-  "options_language_description": {
-    "message": "Фина настройка в Adblock Plus за езиците на най-често разглежданите от вас сайтове."
-  },
   "options_language_empty": {
     "message": "Нямате езикозависещи филтри."
-  },
-  "options_language_header": {
-    "message": "Език"
   },
   "options_language_join": {
     "message": "$lang1$, $lang2$",
@@ -260,9 +236,6 @@
   },
   "options_more_filters_description": {
     "message": "Добавените от вас допълнителни филтри към Adblock Plus."
-  },
-  "options_more_filters_header": {
-    "message": "Още филтри"
   },
   "options_more_filters_note": {
     "message": "<strong>Забележка:</strong> Ползвайте филтри от трета страна само от автори, на които доверявате."
@@ -324,9 +297,6 @@
         "example": "Block additional tracking"
       }
     }
-  },
-  "options_tracking_warning_2": {
-    "message": "Добре е да знаете, че за показване на по-подходяща реклама от рекламодателите, при Приемливи реклами <strong>може</strong> да има определено проследяване."
   },
   "options_tracking_warning_3": {
     "message": "Ако предпочитате екстра неприкосновеност, поставете отметка пред <strong>$acceptableAdsPrivacy$</strong> по-долу.",

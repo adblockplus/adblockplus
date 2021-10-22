@@ -1,8 +1,0 @@
-{
-  "filter_invalid_regexp": {
-    "message": "Njepłaśiwy regularny wuraz"
-  },
-  "filter_unknown_option": {
-    "message": "Njeznata filtrowa opcija"
-  }
-}

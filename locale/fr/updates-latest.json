@@ -12,13 +12,10 @@
     "message": "Adblock Plus a été mis à jour !"
   },
   "updates_update_i1_description": {
-    "message": "Vous verrez une nouvelle section lorsque vous ouvrirez vos paramètres appelée <strong>Filtres recommandés</strong>. Vous pourrez facilement activer/désactiver les filtres recommandés d'un simple clic et améliorer votre expérience Web."
-  },
-  "updates_update_i1_image": {
-    "message": "Les listes de filtres « Bloquer les notifications push » et « Bloquer les avertissements de cookies » sont mises en évidence dans la section « FILTRES RECOMMANDÉS » de la page d'options."
+    "message": "À l’ouverture des Paramètres, une nouvelle section intitulée <strong>Filtres recommandés</strong> est disponible. Vous pouvez alors activer ou désactiver facilement les filtres recommandés d’un simple clic et améliorer ainsi votre expérience du Web."
   },
   "updates_update_i1_title": {
-    "message": "Ajout de nouvelles listes de filtres recommandés pour un accès amélioré"
+    "message": "Ajout de nouvelles listes de filtres recommandés pour un accès facile"
   },
   "updates_update_i2_description": {
     "message": "Nous avons rendu la fonctionnalité Bloquer l’élément plus facile à utiliser en ajoutant de courtes instructions, ainsi qu’un aperçu de la page sans l’élément intrusif. Faites un essai !"
@@ -30,10 +27,10 @@
     "message": "Fonctionnalité « Bloquer l’élément » mise à jour et améliorée"
   },
   "updates_update_i3_description": {
-    "message": "Pour nos utilisateurs plus avancés, nous avons un nouveau mode de masquage des éléments de débogage qui peut être activé dans les paramètres avancés. Les éléments seront ensuite mis en évidence pour faciliter le débogage."
+    "message": "Pour nos utilisateurs plus avancés, un nouveau mode de masquage des filtres des éléments de débogage est disponible. Il peut être activé dans les paramètres avancés. Ces éléments sont ensuite mis en évidence pour faciliter le débogage."
   },
   "updates_update_i3_title": {
-    "message": "Ajout du mode de filtres de masquage d'élément de débogage"
+    "message": "Ajout d’un mode de masquage des filtres des éléments de débogage"
   },
   "updates_update_i4_description": {
     "message": "L'icône clignote maintenant et devient bleue pour alerter les utilisateurs de l'arrivée de notifications."

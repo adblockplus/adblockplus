@@ -1,24 +1,6 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "Не вказано активний домен для розширеного приховування елементів"
-  },
-  "filter_invalid_csp": {
-    "message": "Невірне правило політики безпеки"
-  },
-  "filter_invalid_domain": {
-    "message": "Вказано недійсний (або порожній) домен"
-  },
-  "filter_invalid_regexp": {
-    "message": "Неправильний регулярний вираз"
-  },
   "filter_slow": {
     "message": "Для забезпечення швидкого фільтра, перевірте довжину шаблону і переконайтеся, що він не містить регулярних виразів."
-  },
-  "filter_snippet_nodomain": {
-    "message": "Не вказано активний домен для фрагментного фільтра"
-  },
-  "filter_unknown_option": {
-    "message": "Невідома опція фільтра"
   },
   "line": {
     "message": "Рядок $number$: $message$",
@@ -32,8 +14,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "Заголовки списків фільтрів тут не допускаються"
   }
 }

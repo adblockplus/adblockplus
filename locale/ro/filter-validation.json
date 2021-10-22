@@ -1,24 +1,6 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "Niciun domeniu activ specificat pentru filtrul extins de ascundere al elementului"
-  },
-  "filter_invalid_csp": {
-    "message": "Politică Securitate Conținut invalidă"
-  },
-  "filter_invalid_domain": {
-    "message": "Domeniul specificat incorect (sau gol)"
-  },
-  "filter_invalid_regexp": {
-    "message": "Expresie regulată invalidă"
-  },
   "filter_slow": {
     "message": "Pentru a asigura o filtrare rapidă, verifică lungimea modelului și asigură-te că acesta nu conține o expresie regulată."
-  },
-  "filter_snippet_nodomain": {
-    "message": "Nici un domeniu activ specificat pentru filtrul de tip snippet"
-  },
-  "filter_unknown_option": {
-    "message": "Opțiune filtru necunoscută"
   },
   "line": {
     "message": "Linie $number$: $message$",
@@ -32,8 +14,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "Anteturile listei de filtre nu sunt permise aici"
   }
 }

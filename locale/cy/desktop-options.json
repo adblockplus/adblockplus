@@ -17,9 +17,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Methwyd, prawfswm anghywir"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Methwyd, gwall lawrlwytho"
-  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Methwyd, cyfeiriad annilys"
   },

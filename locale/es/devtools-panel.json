@@ -29,6 +29,9 @@
   "devtools_header_state_all": {
     "message": "cualesquiera"
   },
+  "devtools_header_state_allowlisted": {
+    "message": "lista de elementos permitidos"
+  },
   "devtools_header_state_blocked": {
     "message": "bloqueados"
   },

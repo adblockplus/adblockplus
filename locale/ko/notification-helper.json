@@ -5,6 +5,15 @@
   "notification_open_all": {
     "message": "이 알림에 있는 모든 링크를 엽니다"
   },
+  "notification_recommendLanguage_message": {
+    "message": "귀하는 다음 언어로 된 웹사이트를 방문한 것으로 보입니다: $language$. 이 언어로 된 모든 웹사이트의 광고를 차단하시겠습니까? <a>예</a>",
+    "placeholders": {
+      "language": {
+        "content": "$1",
+        "example": "čeština"
+      }
+    }
+  },
   "notification_without_buttons": {
     "message": "알림에 포함된 모든 링크를 열려면 클릭하세요."
   }

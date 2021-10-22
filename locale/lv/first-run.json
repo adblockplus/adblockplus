@@ -20,9 +20,6 @@
   "firstRun_donate": {
     "message": "Ziedot"
   },
-  "firstRun_fair_description": {
-    "message": "Mēs aicinām godprātīgi izmantot Adblock Plus un iespēju vietņu iekļaušanai baltajā sarakstā. Atkarībā no izmantotajiem filtriem, jūs saprotat un piekrītat, ka var rasties negaidīti rezultāti (piemēram, bloķēts vietnes saturs). Plašāku informāciju par Adblock Plus godprātīgu izmantošanu skatiet <a0>lietošanas noteikumos</a0>."
-  },
   "firstRun_fair_title": {
     "message": "Godprātīga izmantošana"
   },

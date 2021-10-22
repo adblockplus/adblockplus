@@ -8,15 +8,6 @@
   "options_aa_opt_out_survey_ok": {
     "message": "Անցնել հարցմանը"
   },
-  "options_acceptableAds_ads_description_1": {
-    "message": "Ընդունելի գովազդը չի ջղայնացնում և չի խանգարում տեսնել բովանդակությանը։ <a>Իմանալ ավելին Ընդունելի գովազդի չափանիշների մասին</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "Թույլատրել ընդունելի գովազդը"
-  },
-  "options_acceptableAds_description": {
-    "message": "Ընդունելի գովազդը, դա ոչ զզվեցնող գովազդն է։ Դա միջին գիծ է գովազդի արգելափակման և առցանց բովանդակության աջակցման միջև, քանի որ դա եկամուտ է բերում կայքի սեփականատերերի համար։"
-  },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Նշում.</strong> Ձեր զննարկիչի կարգավորումներում անջատված է <strong>Չհետագծել</strong> կարգավորումը։ Որպեսզի այս գործառույթը ճիշտ աշխատի, Ձեր զննարկիչի կարգավորումներում միացրեք <strong>Չհետագծել</strong> կարգավորումը։ <a>Իմացեք, թե ինչպես միացնել այն</a>:"
   },
@@ -44,9 +35,6 @@
   "options_filterList_column_status": {
     "message": "Վիճակը"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Ներբեռնման ձախողում"
-  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Սխալ հասցե։ Ստուգեք հասցեն։"
   },
@@ -70,23 +58,14 @@
   "options_general_description": {
     "message": "Որոշեք, թե Adblock Plus-ն ինչ է ցույց տալիս և թաքցնում կայքերում"
   },
-  "options_language_add": {
-    "message": "Ավելացնել լեզու"
-  },
   "options_language_change": {
     "message": "փոխել"
-  },
-  "options_language_description": {
-    "message": "Օպտիմիզացրեք Adblock Plus-ն այն լեզվի (լեզուների) համար, որով սովորաբար դիտում եք կայքերը։"
   },
   "options_language_empty": {
     "message": "Դուք չունեք զտիչներ որևէ լեզուների համար։"
   },
   "options_language_filter_list": {
     "message": "Զտիչների ցանկեր ըստ լեզվի"
-  },
-  "options_language_header": {
-    "message": "Լեզու"
   },
   "options_language_join": {
     "message": "$lang1$, $lang2$",
@@ -109,9 +88,6 @@
   },
   "options_more_filters_description": {
     "message": "Սրանք հավելյալ զտիչներ են, որոնք նախկինում ավելացրել եք Adblock Plus-ին։"
-  },
-  "options_more_filters_header": {
-    "message": "Լրացուցիչ զտիչներ"
   },
   "options_more_filters_note": {
     "message": "<strong>Նշում.</strong> Դուք պիտի օգտագործեք միայն այն հեղինակների ստեղծած կողմնակի զտիչների ցանկերը, որոնց վստահում եք։"
@@ -158,9 +134,6 @@
         "example": "Block additional tracking"
       }
     }
-  },
-  "options_tracking_warning_2": {
-    "message": "Ձեզ հարկավոր է իմանալ, որպեսզի Ձեզ ավելի համապատասխան գովազդ ներկայացվի, գովազդատուն <strong>կարող է</strong> հետագծել Ձեր որոշ գործողությունները, երբ ընդունելի գովազդ կարգավորումը միացված է։"
   },
   "options_tracking_warning_3": {
     "message": "Եթե նախընտրում եք ավելի բարձ մակարդակի գաղտնիություն, ընտրեք <strong>$acceptableAdsPrivacy$</strong> կարգավորումը։",

@@ -2,11 +2,47 @@
   "block_element_description": {
     "message": "拦截此网站上的特定元素"
   },
+  "browser_store_android": {
+    "message": "在 Google Play 获取 Android 应用程序"
+  },
+  "browser_store_ios": {
+    "message": "在 iTunes App Store 中提供"
+  },
   "click_element_to_block_it": {
     "message": "点击页面上的一个元素来拦截它。"
   },
+  "connect_on_facebook": {
+    "message": "在 Facebook 上联系"
+  },
+  "connect_on_twitter": {
+    "message": "在 Twitter 上联系"
+  },
   "easy_create_filter": {
     "message": "拦截元素"
+  },
+  "footer_donate_button": {
+    "message": "捐赠"
+  },
+  "footer_donate_description": {
+    "message": "想支持 ABP？"
+  },
+  "footer_get_help_button": {
+    "message": "获取帮助"
+  },
+  "footer_get_help_description": {
+    "message": "使用 ABP 遇到问题？"
+  },
+  "footer_mobile_description": {
+    "message": "有兴趣在手机上使用 ABP？"
+  },
+  "footer_rate_button": {
+    "message": "评价 ABP"
+  },
+  "footer_rate_description": {
+    "message": "享受此扩展程序？"
+  },
+  "footer_social_description": {
+    "message": "与我们保持联系！"
   },
   "options_refresh": {
     "message": "刷新"

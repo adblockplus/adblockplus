@@ -26,6 +26,9 @@
   "updates_contribute_subtitle": {
     "message": "Υπάρχουν δύο τρόποι στήριξης του ABP:"
   },
+  "updates_contribute_subtitle_generic": {
+    "message": "Σκεφτείτε να υποστηρίξετε το ABP:"
+  },
   "updates_contribute_title": {
     "message": "Απολαμβάνετε το Adblock Plus;"
   },

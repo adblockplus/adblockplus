@@ -1,7 +1,4 @@
 {
-  "filter_unknown_option": {
-    "message": "Զտիչի անհայտ ընտրանք"
-  },
   "line": {
     "message": "Տող $number$՝ $message$",
     "placeholders": {

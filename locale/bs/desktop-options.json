@@ -11,14 +11,8 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Nije uspjelo, nepodudarnost checksum-a"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Nije uspjelo, download neuspjeh"
-  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Neuspjeh, adresa nije validna"
-  },
-  "options_language_header": {
-    "message": "Jezik"
   },
   "options_page_document_title": {
     "message": "Postavke"

@@ -12,13 +12,10 @@
     "message": "Adblock Plus wurde aktualisiert!"
   },
   "updates_update_i1_description": {
-    "message": "Du siehst einen neuen Abschnitt mit der Bezeichnung <strong>Empfohlene Filter</strong> beim Öffnen der Einstellungen. Hier können empfohlene Filter mit einem einfachen Klick aktiviert/deaktiviert werden und dein Web-Erlebnis verbessern."
-  },
-  "updates_update_i1_image": {
-    "message": "„Push-Benachrichtigungen blockieren‶ und „Cookie-Warnmeldungen blockieren‶-Filterlisten werden im Abschnitt „EMPFOHLENE FILTER‶ der Optionen-Seite hervorgehoben"
+    "message": "Du siehst einen neuen Abschnitt mit der Bezeichnung <strong>Empfohlene Filter</strong>. Hier können empfohlene Filter mit einem einfachen Klick aktiviert/deaktiviert werden und dein Web-Erlebnis verbessern."
   },
   "updates_update_i1_title": {
-    "message": "Neue Liste für empfohlene Filter zum leichten Zugang hinzugefügt."
+    "message": "Neue empfohlene Filterlisten hinzugefügt für einen leichteren Zugriff"
   },
   "updates_update_i2_description": {
     "message": "Die „Element blockieren”-Funktion ist nun bedienerfreundlicher. Es werden sowohl Kurzanweisungen als auch eine Vorschau geboten, wie die Seite ohne dieses störende Element aussehen wird. Versuche es einfach mal!"
@@ -30,10 +27,10 @@
     "message": "„Element blockieren”-Funktion aktualisiert und verbessert"
   },
   "updates_update_i3_description": {
-    "message": "Für unsere fortgeschritteneren Benutzer haben wir einen neuen Fehlersuche-Ausblenden-Modus für einzelne Elemente, der in den erweiterten Einstellungen aktiviert werden kann. Die Elemente werden dann hervorgehoben, damit man leicht eine Fehlerbehebung durchführen kann."
+    "message": "Für unsere fortgeschritteneren Benutzer haben wir einen neuen Fehlersuche-Modus für Filter zum Ausblenden von Elementen, der in den erweiterten Einstellungen aktiviert werden kann. Die Elemente werden dann hervorgehoben, damit man leicht eine Fehlerbehebung durchführen kann."
   },
   "updates_update_i3_title": {
-    "message": "Fehlersuche-Ausblenden-Modus für einzelne Elemente hinzugefügt"
+    "message": "Fehlersuche-Modus für Filter zum Ausblenden von Elementen hinzugefügt"
   },
   "updates_update_i4_description": {
     "message": "Das Symbol blinkt nun und leuchtet blau auf, um Nutzer auf Benachrichtigungen aufmerksam zu machen."

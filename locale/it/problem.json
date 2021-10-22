@@ -3,7 +3,7 @@
     "message": "A causa di un problema, sono state ripristinate le impostazioni ABP predefinite. <a>Risolvi il problema e scopri di più</a>"
   },
   "problem_note": {
-    "message": "Attenzione: a seconda di come si utilizza ABP, potrebbe essere necessario riconfigurare le impostazioni, i filtri personalizzati e i siti web nella whitelist dopo aver reinstallato Adblock Plus."
+    "message": "Attenzione: a seconda di come si utilizza ABP, potrebbe essere necessario riconfigurare le impostazioni, i filtri personalizzati e i siti web inseriti tra i siti accettati dopo aver reinstallato Adblock Plus."
   },
   "problem_os_mac": {
     "message": "Mac"

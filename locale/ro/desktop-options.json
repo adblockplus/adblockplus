@@ -8,15 +8,6 @@
   "options_aa_opt_out_survey_ok": {
     "message": "Mergi la sondaj"
   },
-  "options_acceptableAds_ads_description_1": {
-    "message": "Publicitatea acceptabilă nu este enervantă şi nu interferează cu conţinutul vizionat. <a>Citeste mai multe despre criteriile Reclamelor acceptabile</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "Permite anunţurile acceptabile"
-  },
-  "options_acceptableAds_description": {
-    "message": "Reclamele acceptabile sunt reclame neinvazive. Ele sunt o cale de mijloc între blocarea reclamelor și sprijinirea conținutului online, deoarece generează venituri proprietarilor de site-uri."
-  },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Notă:</strong> <strong>Nu mă urmări (DNT)</strong> este dezactivată în setările browser-ului. Pentru ca această setare să poată lucra în mod corespunzător, activează te rog <strong>DNT</strong> în preferințele browser-ului. <a>Află cum se activează DNT</a>."
   },
@@ -64,9 +55,6 @@
   },
   "options_customize_showDevToolsPanel": {
     "message": "Afișare panou 'Adblock Plus' în instrumente dezvoltator"
-  },
-  "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Vezi elementele blocate şi permise în panoul de instrumente asociat browserului."
   },
   "options_customize_showNotifications": {
     "message": "Arată notificări utile"
@@ -172,9 +160,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Eroare, suma de control nu se potriveşte"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Eroare, descărcare nereușită"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Se actualizează"
   },
@@ -242,23 +227,14 @@
   "options_help_description": {
     "message": "Găsește ajutor sau ia legătura cu noi"
   },
-  "options_language_add": {
-    "message": "Adaugă o limbă"
-  },
   "options_language_change": {
     "message": "modifică"
-  },
-  "options_language_description": {
-    "message": "Optimizaţi Adblock Plus pentru limba (limbile) folosite de obicei pentru a naviga pe site-uri."
   },
   "options_language_empty": {
     "message": "Nu există filtre specifice limbii folosite."
   },
   "options_language_filter_list": {
     "message": "Liste de Filtre de Limbă"
-  },
-  "options_language_header": {
-    "message": "Limbă"
   },
   "options_language_join": {
     "message": "$lang1$, $lang2$",
@@ -281,9 +257,6 @@
   },
   "options_more_filters_description": {
     "message": "Acestea sunt filtrele suplimentare pe care le-aţi adăugat anterior la Adblock Plus."
-  },
-  "options_more_filters_header": {
-    "message": "Mai multe filtre"
   },
   "options_more_filters_note": {
     "message": "<strong>Notă:</strong> Ar trebui să utilizezi numai liste de filtre create de autori în care ai încredere."
@@ -354,9 +327,6 @@
         "example": "Block additional tracking"
       }
     }
-  },
-  "options_tracking_warning_2": {
-    "message": "Vrem să ştiţi că pentru ca agenţii de publicitate să vă arate anunţuri mai relevante, <strong>poate</strong> exista tracking cu anunţurile acceptabile."
   },
   "options_tracking_warning_3": {
     "message": "Dacă preferi extra confidențialitate, alege caseta de selectare <strong>$acceptableAdsPrivacy$</strong> de mai jos.",

@@ -9,13 +9,13 @@
     "message": "الانتقال إلى الاستبيان"
   },
   "options_acceptableAds_ads_description_1": {
-    "message": "الإعلان المقبول لا تسبب أي مضايقات ولا تعيق المحتوى الذي تشاهده. <a>اقرأ المزيد عن معايير الإعلان المقبول</a>"
+    "message": "لا تتداخل الإعلانات المقبولة مع المحتوى الذي تستعرضه. <a>معرفة المزيد</a>"
   },
   "options_acceptableAds_ads_label": {
-    "message": "السماح بـالإعلان المقبول"
+    "message": "عرض الإعلانات المقبولة"
   },
   "options_acceptableAds_description": {
-    "message": "الإعلانات المقبولة هي إعلانات غير تطفلية. إنها نقطة الوسط بين حجب الإعلانات ودعم المحتوى الإلكتروني عبر الإنترنت لأنها تدر أرباحًا على مالكي موقع الويب."
+    "message": "الإعلانات المقبولة هي إعلانات غير مزعجة تتوافق مع معيار صارم للإعلانات. وتساعد هذه الإعلانات في توفير عائد مادي لمنشئي المحتوى في حين لا تتداخل مع المحتوى الذي تستعرضه."
   },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>ملاحظة:</strong> لديك <strong>ميزة عدم التعقب (DNT)</strong> معطّلة في إعدادات المتصفّح. لكي تعمل هذه الميزة بشكل صحيح، الرجاء تمكين <strong>DNT</strong> في تفضيلات المتصفّح. <a>تعرف على كيفية تشغيل DNT</a>."
@@ -28,6 +28,29 @@
   },
   "options_advanced_description": {
     "message": "يمكنك تخصيص Adblock Plus حسب تفضيلاتك الشخصية أو يمكنك إضافة أو إزالة قوائم عوامل التصفية أو إنشاء قوائم عوامل تصفية خاصة بك أو الحفاظ عليها"
+  },
+  "options_allowlist_add": {
+    "message": "إضافة موقع ويب"
+  },
+  "options_allowlist_description": {
+    "message": "لقد أوقفت تشغيل حجب الإعلانات على مواقع الويب هذه، وبالتالي، ستشاهد إعلانات عليها."
+  },
+  "options_allowlist_empty_1": {
+    "message": "لا يوجد لديك أي مواقع ويب في القائمة المسموح بها الخاصة بك."
+  },
+  "options_allowlist_empty_2": {
+    "message": "مواقع الويب التي تثق بها وتريد السماح بالإعلانات عليها ستظهر هنا."
+  },
+  "options_allowlist_notification": {
+    "message": "تمت إضافة موقع الويب إلى القائمة المسموح بها."
+  },
+  "options_allowlist_placeholder_example": {
+    "message": "مثل: $domain$",
+    "placeholders": {
+      "domain": {
+        "content": "www.example.com"
+      }
+    }
   },
   "options_builtin_filterList_add": {
     "message": "إضافة قوائم عوامل تصفية مدمجة"
@@ -72,7 +95,7 @@
     "message": "عرض لوحة 'Adblock Plus' في أدوات المطور"
   },
   "options_customize_showDevToolsPanel_tooltip": {
-    "message": "عرض العناصر التي تم حجبها أو إدراجها في القائمة البيضاء من لوحة أدوات المطور في المتصفح."
+    "message": "يمكنك عرض العناصر المحظورة والمسموح بها من لوحة أدوات المطوّرين في المتصفح الخاص بك."
   },
   "options_customize_showNotifications": {
     "message": "أظهر الأشعارات الهامة"
@@ -172,6 +195,15 @@
   "options_filterList_empty": {
     "message": "لم تضف أي عوامل تصفية إلى Adblock Plus. ستظهر هنا عوامل التصفية التي أضفتها."
   },
+  "options_filterList_enableFilters": {
+    "message": "تمكينها"
+  },
+  "options_filterList_errorPopup_title": {
+    "message": "توجد مشكلة أو أكثر متعلقة بقائمة عوامل التصفية هذه:"
+  },
+  "options_filterList_filtersDisabled": {
+    "message": "تم تعطيل بعض عوامل التصفية في قائمة عوامل التصفية هذه."
+  },
   "options_filterList_hours": {
     "message": "منذ ساعات"
   },
@@ -179,7 +211,7 @@
     "message": "فشل الأمر، عدم تطابق المجموع الإختباري"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "فشل التنزيل"
+    "message": "فشل تنزيل قائمة عوامل التصفية."
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "تحديث"
@@ -249,13 +281,13 @@
     "message": "ابحث عن التعليمات أو تواصل معنا"
   },
   "options_language_add": {
-    "message": "إضافة لغة"
+    "message": "إضافة قائمة عوامل تصفية لغة"
   },
   "options_language_change": {
     "message": "تغيير"
   },
   "options_language_description": {
-    "message": "يمكنك تحسين Adblock Plus للغة (اللغات) التي تتصفح بها مواقع الويب عادة."
+    "message": "أضف أو أزِل اللغات التي تريد من Adblock Plus أن يحجب الإعلانات المكتوبة بها. ⁦<a0>⁩معرفة المزيد⁦</a0>⁩"
   },
   "options_language_empty": {
     "message": "ليس لديك أي عوامل تصفية محددة حسب اللغة."
@@ -264,7 +296,7 @@
     "message": "قوائم عوامل تصفية اللغة"
   },
   "options_language_header": {
-    "message": "اللغة"
+    "message": "قوائم عوامل تصفية اللغات"
   },
   "options_language_join": {
     "message": "$lang1$، $lang2$",
@@ -279,6 +311,12 @@
       }
     }
   },
+  "options_language_recommend": {
+    "message": "إعلامي بقوائم عوامل تصفية اللغات المتاحة"
+  },
+  "options_language_recommend_tooltip": {
+    "message": "يعتمد Adblock Plus على قوائم عوامل التصفية لحجب الإعلانات بلغات مختلفة."
+  },
   "options_language_tip": {
     "message": "<strong>نصيحة:</strong> لا تحدد سوى اللغات التي تحتاجها. سيؤدي تحديد المزيد من اللغات إلى إبطاء مانع الإعلانات ومن ثم إبطاء سرعة تصفحك."
   },
@@ -289,7 +327,7 @@
     "message": "هذه عوامل تصفية إضافية أضفتها من قبل إلى Adblock Plus."
   },
   "options_more_filters_header": {
-    "message": "المزيد من عوامل التصفية"
+    "message": "قوائم عوامل تصفية أكثر"
   },
   "options_more_filters_note": {
     "message": "<strong>ملاحظة:</strong> ينبغي ألا تستخدم عوامل تصفية من أطراف خارجية إلا من مؤلفين تثق بهم."
@@ -354,6 +392,9 @@
   "options_tab_advanced": {
     "message": "متقدمة"
   },
+  "options_tab_allowlist": {
+    "message": "مواقع الويب المسموح بها"
+  },
   "options_tab_general": {
     "message": "عامة"
   },
@@ -377,7 +418,7 @@
     }
   },
   "options_tracking_warning_2": {
-    "message": "نريدك أن تعرف أنه حتى يتمكن المعلنون من عرض إعلانات ملائمة أكثر، <strong>قد</strong> يكون هناك بعض التتبع مع الإعلانات المقبولة."
+    "message": "نريدك أن تعرف أنه لكي تتمكن جهات الإعلان من عرض إعلانات أكثر صلة بك، فقد تحدث <strong>بعض</strong> أشكال التتبع باستخدام إعلانات مقبولة."
   },
   "options_tracking_warning_3": {
     "message": "إذا كنت تفضل خصوصية إضافية، حدد <strong>$acceptableAdsPrivacy$</strong> خانة الاختيار أدناه.",

@@ -8,15 +8,6 @@
   "options_aa_opt_out_survey_ok": {
     "message": "Siirry kyselyyn"
   },
-  "options_acceptableAds_ads_description_1": {
-    "message": "Käyttäjäystävälliset mainokset eivät häiritse sisältöä tai hyppää silmille. <a>Lisätietoa käyttäjäystävällisten mainosten kriteereistä (englanniksi)</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "Salli käyttäjäystävälliset mainokset"
-  },
-  "options_acceptableAds_description": {
-    "message": "Käyttäjäystävälliset mainokset ovat ei-häiritseviä. Mainostulot ovat tärkeä tulonlähde monille verkkosivustoille ja sallimalla nämä mainokset tuet sisällöntuottajia."
-  },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Huomautus:</strong> Tämä toiminto edellyttää selaimen lähettämien <strong>Älä jäljitä -pyyntöjen</strong> ottamista käyttöön. <a>Näin otat pyynnöt käyttöön</a>."
   },
@@ -64,9 +55,6 @@
   },
   "options_customize_showDevToolsPanel": {
     "message": "Näytä Adblock Plus -paneeli kehittäjätyökaluissa"
-  },
-  "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Tarkista estetyt ja sallitut kohteet selaimen kehittäjätyökaluista."
   },
   "options_customize_showNotifications": {
     "message": "Näytä hyödylliset ilmoitukset"
@@ -172,9 +160,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Tarkistussumma ei täsmää"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Latausvirhe"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Päivitetään"
   },
@@ -242,23 +227,14 @@
   "options_help_description": {
     "message": "Ohje ja yhteystiedot"
   },
-  "options_language_add": {
-    "message": "lisää kieli"
-  },
   "options_language_change": {
     "message": "vaihda"
-  },
-  "options_language_description": {
-    "message": "Adblock Plus toimii tehokkaammin, jos suodatin on optimoitu usein käytettyjen verkkosivustojen kielelle."
   },
   "options_language_empty": {
     "message": "Ei kieliperusteisia suodattimia."
   },
   "options_language_filter_list": {
     "message": "Kieliperustaiset suodatinlistat"
-  },
-  "options_language_header": {
-    "message": "Kieli"
   },
   "options_language_join": {
     "message": "$lang1$, $lang2$",
@@ -281,9 +257,6 @@
   },
   "options_more_filters_description": {
     "message": "Olet lisännyt nämä lisäsuodattimet aiemmin Adblock Plussaan."
-  },
-  "options_more_filters_header": {
-    "message": "Lisää suodattimia"
   },
   "options_more_filters_note": {
     "message": "<strong>Huomautus:</strong> Käytä vain sellaisia suodatinlistoja, joiden kehittäjään luotat."
@@ -354,9 +327,6 @@
         "example": "Block additional tracking"
       }
     }
-  },
-  "options_tracking_warning_2": {
-    "message": "Huomaathan, että mainostajien pyrkiessä kohdistamaan mainontaansa <strong>saattaa</strong> osa käyttäjäystävällisistä mainoksista jäljittää toimiasi."
   },
   "options_tracking_warning_3": {
     "message": "Voit parantaa yksityisyyttäsi entisestään ottamalla alla olevan <strong>$acceptableAdsPrivacy$</strong> -valinnan käyttöön.",

@@ -14,9 +14,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Njeraźiło, wopacna kontrolna suma"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Njeraźiło, ześěgnjeńska zmólka"
-  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Njeraźiło, žedna płaśiwa adresa"
   }

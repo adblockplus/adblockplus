@@ -12,10 +12,7 @@
     "message": "Adblock Plus artık güncellendi!"
   },
   "updates_update_i1_description": {
-    "message": "Ayarlar kısmını açtığınızda, <strong>Önerilen Filtreler</strong> adlı yeni bir bölüm göreceksiniz. Burada, önerilen filtreleri basit bir tıklama ile kolayca etkinleştirebilir/devre dışı bırakabilir ve web deneyiminizi geliştirebilirsiniz."
-  },
-  "updates_update_i1_image": {
-    "message": "\"Anlık bildirimleri engelle\" ve \"Çerez uyarılarını engelle\" filtre listeleri, seçenekler sayfasının \"ÖNERİLEN FİLTRELER\" kısmında öne çıkarılmıştır"
+    "message": "Ayarlar kısmını açtığınızda, <strong>Önerilen Filtreler</strong> adlı yeni bir bölüm göreceksiniz. Burada, önerilen filtreleri basit bir tıklama ile kolayca etkinleştirebilir/ devre dışı bırakabilir ve web deneyiminizi iyileştirebilirsiniz."
   },
   "updates_update_i1_title": {
     "message": "Kolay erişim için yeni önerilen filtre listeleri eklendi"
@@ -30,7 +27,7 @@
     "message": "Öğe Engelle özelliği güncellendi ve iyileştirildi"
   },
   "updates_update_i3_description": {
-    "message": "Daha ileri düzey kullanıcılarımız için, gelişmiş ayarlarda etkinleştirilebilen yeni bir öge gizleme filtreleri hata ayıklama modumuz bulunuyor. Bu modun etkinleştirilmesiyle, ögeler kolay hata ayıklama amacıyla öne çıkarılacaktır."
+    "message": "Daha ileri seviye kullanıcılarımız için, gelişmiş ayarlarda etkinleştirilebilen yeni bir öge gizleme filtreleri hata ayıklama modumuz bulunuyor. Bu modun etkinleştirilmesiyle, ögeler kolay hata ayıklama amacıyla öne çıkarılacaktır."
   },
   "updates_update_i3_title": {
     "message": "Öge gizleme filtreleri hata ayıklama modu eklendi"

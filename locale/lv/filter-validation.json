@@ -1,24 +1,6 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "Nav aktīva domēna norādītais paplašinātā elements neizcelt filtrs"
-  },
-  "filter_invalid_csp": {
-    "message": "Nederīga satura drošības politika"
-  },
-  "filter_invalid_domain": {
-    "message": "Norādīts nederīgs (vai tukšs) domēns"
-  },
-  "filter_invalid_regexp": {
-    "message": "Nederīga regulārā izteiksme"
-  },
   "filter_slow": {
     "message": "Lai nodrošinātu filtra ātru darbību, lūdzu, pārbaudiet shēmas garumu un pārliecinieties, ka tas nesatur regulāru izteiksmi."
-  },
-  "filter_snippet_nodomain": {
-    "message": "Fragmentu filtram nav norādīts aktīvs domēns"
-  },
-  "filter_unknown_option": {
-    "message": "Nezināma filtra opcija"
   },
   "line": {
     "message": "Līnijas $number$: $message$",
@@ -32,8 +14,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "Filtra saraksta galvenes šeit nav atļautas"
   }
 }

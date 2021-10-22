@@ -2,11 +2,47 @@
   "block_element_description": {
     "message": "A weboldal bizonyos elemeinek blokkolása"
   },
+  "browser_store_android": {
+    "message": "Android alkalmazás a Google Play áruházban"
+  },
+  "browser_store_ios": {
+    "message": "Elérhető az iTunes App Store boltban"
+  },
   "click_element_to_block_it": {
     "message": "Az elem blokkolásához kattintson egy elemre az oldalon."
   },
+  "connect_on_facebook": {
+    "message": "Csatlakozás a Facebook-on"
+  },
+  "connect_on_twitter": {
+    "message": "Csatlakozás a Twitter-en"
+  },
   "easy_create_filter": {
     "message": "Elem blokkolása"
+  },
+  "footer_donate_button": {
+    "message": "Adomány"
+  },
+  "footer_donate_description": {
+    "message": "Támogatni szeretnéd az ABP-t?"
+  },
+  "footer_get_help_button": {
+    "message": "Támogatás"
+  },
+  "footer_get_help_description": {
+    "message": "Gond van az ABP használatával?"
+  },
+  "footer_mobile_description": {
+    "message": "Érdekel az ABP mobil változata?"
+  },
+  "footer_rate_button": {
+    "message": "ABP érték"
+  },
+  "footer_rate_description": {
+    "message": "Tetszik a bővítmény?"
+  },
+  "footer_social_description": {
+    "message": "Maradj velünk kapcsolatban!"
   },
   "options_refresh": {
     "message": "Frissítés"

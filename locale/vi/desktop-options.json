@@ -8,15 +8,6 @@
   "options_aa_opt_out_survey_ok": {
     "message": "Đến khảo sát"
   },
-  "options_acceptableAds_ads_description_1": {
-    "message": "Quảng cáo chấp nhận được không làm phiền và không cản trở nội dung bạn đang xem. <a>Đọc thêm về các tiêu chí của Quảng cáo chấp nhận được</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "Cho phép Quảng cáo chấp nhận được"
-  },
-  "options_acceptableAds_description": {
-    "message": "Quảng cáo chấp nhận được là những quảng cáo phù hợp. Chúng dung hòa giữa việc chặn quảng cáo và hỗ trợ nội dung trực tuyến bởi vì chúng tạo ra doanh thu cho chủ trang web."
-  },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Ghi chú:</strong> Bạn có <strong>Không theo dõi (DNT)</strong> bị vô hiệu trong cài đặt trình duyệt của bạn. Để tính năng này hoạt động đúng, hãy bật <strong>DNT</strong> trong tùy chọn trình duyệt của bạn. <a>Tìm hiểu cách kích hoạt DNT</a>."
   },
@@ -64,9 +55,6 @@
   },
   "options_customize_showDevToolsPanel": {
     "message": "Hiển thị bảng điều khiển ‘Adblock Plus’ trong các công cụ của nhà phát triển"
-  },
-  "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Xem những mục bị chặn và được phép từ bảng điều khiển công cụ nhà phát triển trên trình duyệt của bạn."
   },
   "options_customize_showNotifications": {
     "message": "Hiện thông báo hữu ích"
@@ -163,9 +151,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Thất bại, mã kiểm tra không phù hợp"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Thất bại, tải xuống thất bại"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Đang cập nhật"
   },
@@ -233,23 +218,14 @@
   "options_help_description": {
     "message": "Tìm kiếm trợ giúp hoặc liên hệ với chúng tôi"
   },
-  "options_language_add": {
-    "message": "Thêm ngôn ngữ"
-  },
   "options_language_change": {
     "message": "thay đổi"
-  },
-  "options_language_description": {
-    "message": "Tối ưu Adblock Plus cho (các) ngôn ngữ mà bạn thường truy cập các trang web."
   },
   "options_language_empty": {
     "message": "Bạn không có bất kỳ bộ lọc ngôn ngữ cụ thể nào."
   },
   "options_language_filter_list": {
     "message": "Danh sách bộ lọc ngôn ngữ"
-  },
-  "options_language_header": {
-    "message": "Ngôn ngữ"
   },
   "options_language_join": {
     "message": "$lang1$, $lang2$",
@@ -272,9 +248,6 @@
   },
   "options_more_filters_description": {
     "message": "Đây là những bộ lọc bổ sung mà bạn vừa thêm vào Adblock Plus."
-  },
-  "options_more_filters_header": {
-    "message": "Thêm bộ lọc"
   },
   "options_more_filters_note": {
     "message": "<strong>Chú ý:</strong> Bạn chỉ nên sử dụng danh sách lọc của bên thứ ba từ các tác giả mà bạn tin tưởng."
@@ -336,9 +309,6 @@
         "example": "Block additional tracking"
       }
     }
-  },
-  "options_tracking_warning_2": {
-    "message": "Chúng tôi muốn bạn biết rằng để các nhà quảng cáo hiển thị cho bạn các quảng cáo phù hợp hơn, <strong>có thể</strong> có một số theo dõi với Quảng cáo được chấp nhận."
   },
   "options_tracking_warning_3": {
     "message": "Nếu bạn thích sự riêng tư hơn, hãy chọn ô <strong>$acceptableAdsPrivacy$</strong> bên dưới.",

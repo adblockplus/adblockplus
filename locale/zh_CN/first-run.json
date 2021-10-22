@@ -21,7 +21,7 @@
     "message": "捐赠"
   },
   "firstRun_fair_description": {
-    "message": "我们建议您合理使用 Adblock Plus，并选择将网站列入白名单。根据您使用的过滤，您了解并接受可能会发生无意的结果（例如：拦截网站上的内容）。有关使用 Adblock Plus 的更多信息，请参阅<a0>使用条款</a0>。"
+    "message": "我们鼓励您合理使用 Adblock Plus 以及向允许列表添加网站的选项。视您使用的筛选器而定，您理解并接受可能发生的意外结果（例如，网站上的内容被拦截）。请参阅<a0>使用条款</a0>以了解有关合理使用 Adblock Plus 的更多信息。"
   },
   "firstRun_fair_title": {
     "message": "合理使用"

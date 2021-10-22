@@ -1,13 +1,4 @@
 {
-  "options_acceptableAds_ads_description_1": {
-    "message": "Priimtinos reklamos yra tokios kurios nesikerta su jūsų žiūrimu turiniu. <a>Daugiau apie neįkyrių reklamų kriterijus galite sužinoti čia</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "Leisti neįkyrias reklamas"
-  },
-  "options_acceptableAds_description": {
-    "message": "Priimtini skelbimai yra neįkyrūs skelbimai. Tai aukso vidurys tarp reklamų blokavimo ir interneto turinio pajamų gavimo palaikymas."
-  },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Pastaba:</strong> Jūs nustatymuose išjungėte <strong>Do Not Track (DNT)</strong>. Norint jog ši parinktis tinkamai veiktų įjunkite <strong>DNT</strong>. <a>Apie DNT daugiau galite sužinoti čia</a>."
   },
@@ -52,9 +43,6 @@
   },
   "options_customize_showDevToolsPanel": {
     "message": "Rodyti „Adblock Plus“ valdymo pultą kūrėjo įrankiuose"
-  },
-  "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Peržiūrėkite užblokuotus ir neblokuojamus elementus iš kūrėjo įrankinės."
   },
   "options_customize_showNotifications": {
     "message": "Rodyti naudingus pranešimus"
@@ -137,9 +125,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Nepavyko, bloga kontrolinė suma"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Nepavyko, atsiuntimo klaida"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Atnaujinama"
   },
@@ -193,20 +178,11 @@
   "options_help_description": {
     "message": "Ieškokite pagalbos arba susisiekite su mumis"
   },
-  "options_language_add": {
-    "message": "pridėti kalbą"
-  },
   "options_language_change": {
     "message": "pakeisti"
   },
-  "options_language_description": {
-    "message": "Optimizuoti Adblock Plus tai kalbai(-oms) kurių tinklapius naršote."
-  },
   "options_language_empty": {
     "message": "Neturite konkrečios kalbos sąrašų."
-  },
-  "options_language_header": {
-    "message": "Kalba"
   },
   "options_language_tip": {
     "message": "<strong>PATARIMAS:</strong> Pasirinkite tik reikiamas kalbas. Jei pasirinksite per daug tai tik sulėtins jūsų naršymą."
@@ -216,9 +192,6 @@
   },
   "options_more_filters_description": {
     "message": "Tai yra papildomi sąrašai kuriuos anksčiau pridėjote į Adblock Plus."
-  },
-  "options_more_filters_header": {
-    "message": "Daugiau filtrų"
   },
   "options_more_filters_note": {
     "message": "<strong>Pastaba:</strong> Trečiųjų šalių sąrašus turėtumėte naudoti tik iš patikimų autorių."
@@ -280,9 +253,6 @@
         "example": "Block additional tracking"
       }
     }
-  },
-  "options_tracking_warning_2": {
-    "message": "Norime pranešti jog norint parodyti jums aktualesnius skelbimus Priimtinuose skelbimuose <strong>gali</strong> būti šiek tiek stebėjimo."
   },
   "options_tracking_warning_3": {
     "message": "Jei pageidaujate papildomo saugumo, žemiau pažymėkite <strong>$acceptableAdsPrivacy$</strong>.",

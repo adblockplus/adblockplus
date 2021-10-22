@@ -14,9 +14,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "असफल, checksum मिसमैच"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "विफल रहा, डाउनलोड विफलता"
-  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "विफल रहा, एक मान्य पता नहीं"
   },
@@ -25,9 +22,6 @@
   },
   "options_filterList_updateNow": {
     "message": "अपडेट करें"
-  },
-  "options_language_header": {
-    "message": "भाष"
   },
   "options_page_document_title": {
     "message": "सेटिंग्स"

@@ -1,13 +1,4 @@
 {
-  "options_acceptableAds_ads_description_1": {
-    "message": "গ্ৰহণযোগ্য বিজ্ঞাপনবোৰ বিৰক্তিকৰ নহয় আৰু আপুনি চাই থকা সমলৰ সৈতে হস্তক্ষেপ নকৰে। <a>গ্ৰহণযোগ্য বিজ্ঞাপনবোৰৰ মাপদণ্ডৰ বিষয়ে অধিক পঢ়ক</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "গ্ৰহণযোগ্য বিজ্ঞাপনবোৰক অনুমতি দিয়ক"
-  },
-  "options_acceptableAds_description": {
-    "message": "গ্ৰহণযোগ্য বিজ্ঞাপনবোৰ হৈছে অ-অনধিকাৰমূলক বিজ্ঞাপন। সেইবোৰ বিজ্ঞাপন অৱৰুদ্ধকৰণ আৰু অনলাইন সমলৰ সমৰ্থনৰ মধ্যস্তৰ কাৰণ সেইবোৰে ৱেবছাইটৰ গৰাকীসকলৰ বাবে ৰাজস্ব উৎপন্ন কৰে।"
-  },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>লক্ষ্য কৰিব:</strong> আপোনাৰ ব্ৰাউজাৰ ছেটিংছত আপোনাৰ <strong>ট্ৰেক নকৰিব (DNT)</strong> অক্ষম কৰি থোৱা আছে। এই সুবিধাটোৱে সঠিককৈ কাৰ্য কৰিবলৈ হ\\'লে, অনুগ্ৰহ কৰি আপোনাৰ ব্ৰাউজাৰ অগ্ৰাধিকাৰসমূহত <strong>DNT</strong> সক্ষম কৰক। <a>চাওঁক DNT কেনেকৈ সক্ষম কৰে</a>।"
   },
@@ -86,9 +77,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "ব্যৰ্থ হ\\'ল, ত্ৰুটিনিৰ্ধাৰক মিলা নাই"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "ব্যৰ্থ হ\\'ল, ডাউনল\\'ড ব্যৰ্থতা"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "উন্নীত হৈ আছে"
   },
@@ -142,29 +130,17 @@
   "options_help_description": {
     "message": "সহায় বিচাৰক বা আমাৰ সৈতে যোগাযোগ কৰক"
   },
-  "options_language_add": {
-    "message": "এটা ভাষা যোগ কৰক"
-  },
   "options_language_change": {
     "message": "সলনি কৰক"
   },
-  "options_language_description": {
-    "message": "আপুনি সাধাৰণত ব্ৰাউজ কৰা ভাষা(বোৰ)ৰ বাবে এডব্লক প্লাছ অপ্টিমাইজ কৰক।"
-  },
   "options_language_empty": {
     "message": "আপোনাৰ কোন ভাষা-নিৰ্দিষ্ট ফিল্টাৰ নাই।"
-  },
-  "options_language_header": {
-    "message": "ভাষা"
   },
   "options_language_tip": {
     "message": "<strong>আভাস:</strong> কেৱল আপোনাৰ প্ৰয়োজনীয় ভাষাবোৰহে চয়ন কৰক। অধিক ভাষা চয়ন কৰাটোৱে বিজ্ঞাপন অৱৰোধকাৰীটোৰ লগতে আপোনাৰ ব্ৰাউজ কৰা গতি মন্থৰ কৰি তুলিব।"
   },
   "options_learn_more": {
     "message": "অধিক জানক"
-  },
-  "options_more_filters_header": {
-    "message": "অধিক ফিল্টাৰ"
   },
   "options_new_label": {
     "message": "নতুন"
@@ -211,9 +187,6 @@
         "example": "Block additional tracking"
       }
     }
-  },
-  "options_tracking_warning_2": {
-    "message": "আমি আপোনাক জনাবলৈ বিচাৰো যে বিজ্ঞাপকসকলে আপোনাক অধিক প্ৰাসঙ্গিক বিজ্ঞাপনবোৰ দেখুৱাবলৈ, গ্ৰহণযোগ্য বিজ্ঞাপনবোৰৰ সৈতে কিছু ট্ৰেকিং <strong>কৰিবও</strong> পাৰে।"
   },
   "options_tracking_warning_3": {
     "message": "যদি আপুনি অতিৰিক্ত গোপনীয়তা বিচাৰে, তলৰ <strong>$acceptableAdsPrivacy$</strong>ৰ চেকবক্সটো চয়ন কৰক।",

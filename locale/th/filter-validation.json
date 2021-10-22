@@ -1,19 +1,4 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "ไม่มีโดเมนที่ใช้งานอยู่ในตัวกรองการซ่อนองค์ประกอบ"
-  },
-  "filter_invalid_csp": {
-    "message": "นโยบายความปลอดภัยของเนื้อหาไม่ถูกต้อง"
-  },
-  "filter_invalid_domain": {
-    "message": "โดเมนที่ระบุไม่ถูกต้อง (หรือว่างเปล่า)"
-  },
-  "filter_invalid_regexp": {
-    "message": "นิพจน์ทั่วไปที่ไม่ถูกต้อง"
-  },
-  "filter_unknown_option": {
-    "message": "ตัวเลือกตัวกรองที่ไม่รู้จัก"
-  },
   "line": {
     "message": "บรรทัด $number$: $message$",
     "placeholders": {
@@ -26,8 +11,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "หัวข้อรายการของตัวกรองยังไม่ได้รับอนุญาตให้ใช้งานที่นี่"
   }
 }

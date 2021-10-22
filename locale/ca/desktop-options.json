@@ -8,15 +8,6 @@
   "options_aa_opt_out_survey_ok": {
     "message": "Vés a l'enquesta"
   },
-  "options_acceptableAds_ads_description_1": {
-    "message": "Els anuncis acceptables no són molestos i no interfereixen amb el contingut que esteu visualitzant. <a>Obtén més informació sobre els criteris d'anuncis acceptables</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "Permet els anuncis acceptables"
-  },
-  "options_acceptableAds_description": {
-    "message": "Els anuncis acceptables són anuncis no intrusius. Estan entre el bloqueig d'anuncis i el suport als continguts en línia, ja que generen ingressos per als propietaris del lloc web."
-  },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Nota:</strong> Teniu el mode <strong>no vull ser rastrejat (DNT)</strong> desactivat a la configuració del vostre navegador. Perquè aquesta funció funcioni correctament, activeu <strong>DNT</strong> a les preferències del vostre navegador. <a>Esbrina com activar DNT</a>."
   },
@@ -64,9 +55,6 @@
   },
   "options_customize_showDevToolsPanel": {
     "message": "Mostra el quadre «Adblock Plus» a les eines de desenvolupador"
-  },
-  "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Mostra els elements bloquejats i el de la llista blanca del tauler d'eines del desenvolupador del navegador."
   },
   "options_customize_showNotifications": {
     "message": "Mostra les notificacions útils"
@@ -172,9 +160,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Error en la suma de verificació"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Error en la baixada"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "S'està actualitzant"
   },
@@ -242,23 +227,14 @@
   "options_help_description": {
     "message": "Trobeu ajuda o poseu-vos en contacte amb nosaltres"
   },
-  "options_language_add": {
-    "message": "Afegeix un idioma"
-  },
   "options_language_change": {
     "message": "canvia"
-  },
-  "options_language_description": {
-    "message": "Optimitza l'Adblock Plus per l'idioma(es) amb el qual normalment navegueu per pàgines web."
   },
   "options_language_empty": {
     "message": "No teniu cap filtre específic d'idioma."
   },
   "options_language_filter_list": {
     "message": "Llistes de filtres d'idiomes"
-  },
-  "options_language_header": {
-    "message": "Idioma"
   },
   "options_language_join": {
     "message": "$lang1$, $lang2$",
@@ -281,9 +257,6 @@
   },
   "options_more_filters_description": {
     "message": "Aquests són els filtres addicionals que heu afegit prèviament a l'Adblock Plus."
-  },
-  "options_more_filters_header": {
-    "message": "Més filtres"
   },
   "options_more_filters_note": {
     "message": "<strong>Nota:</strong> Només heu d'utilitzar llistes de filtres de tercers dels autors que confieu."
@@ -354,9 +327,6 @@
         "example": "Block additional tracking"
       }
     }
-  },
-  "options_tracking_warning_2": {
-    "message": "Volem que sàpiga que per tal que els anunciants mostrin anuncis més rellevants, <strong>és possible</strong> que hi hagi algun seguiment amb anuncis acceptables."
   },
   "options_tracking_warning_3": {
     "message": "Si preferiu més privadesa, seleccioneu la casella de verificació <strong>$acceptableAdsPrivacy$</strong> a continuació.",

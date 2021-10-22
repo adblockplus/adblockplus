@@ -20,9 +20,6 @@
   "firstRun_donate": {
     "message": "Donér"
   },
-  "firstRun_fair_description": {
-    "message": "Vi opfordrer dig til at anvende Adblock Plus forsvarligt sammen med hvidlistede hjemmesider. Afhængigt af de filtre, du bruger, forstår og accepterer du, at utilsigtede resultater kan opstå (f.eks. blokeret indhold på en hjemmeside). Vi henviser til <a0>Brugsvilkår</a0> for flere oplysninger om forsvarlig anvendelse af Adblock Plus."
-  },
   "firstRun_fair_title": {
     "message": "Forsvarlig brug"
   },

@@ -21,7 +21,7 @@
     "message": "Bağış yapın"
   },
   "firstRun_fair_description": {
-    "message": "Güvenilir listesindeki web siteleri seçeneği ve Adblock Plus adil kullanımı konusunda sizi teşvik ediyoruz. Kullandığınız filtrelere bağlı olarak, istem dışı meydana gelebilecek sonuçları (örn. bir web sitesinde engellenen içerik) anlamış ve kabul etmiş olursunuz. Adblock Plus adil kullanımı hakkında daha fazla bilgi için, <a0>Kullanım Şartları</a0> bölümüne bakınız."
+    "message": "Adblock Plus'ı ve izin verilenler listenize web siteleri ekleme seçeneğini adil bir şekilde kullanmanızı öneririz. Kullandığınız filtrelere bağlı olarak öngörülmeyen sonuçların ortaya çıkabileceğini (örn. bir web sitesindeki engellenen içerik gibi) anlıyor ve kabul ediyorsunuz. Adblock Plus'ın adil kullanımı hakkında daha fazla bilgi için <a0>Kullanım Şartlarına</a0> bakın."
   },
   "firstRun_fair_title": {
     "message": "Adil kullanim"

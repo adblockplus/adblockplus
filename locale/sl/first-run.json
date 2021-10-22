@@ -17,9 +17,6 @@
   "firstRun_control_title": {
     "message": "VI imate nadzor"
   },
-  "firstRun_fair_description": {
-    "message": "Priporočamo, da primerno uporabljate Adblock Plus in njegovo možnost dodajanja spletnih strani na beli seznam. Glede na filtre, ki jih uporabljate, se strinjate in sprejmete, da se lahko pojavijo nenamerni rezultati (npr. blokirana vsebina na spletni strani). Več informacij glede primerne uporabe dodatka Adblock Plus najdete v <a0>pogojih uporabe</a0>."
-  },
   "firstRun_fair_title": {
     "message": "Primerna uporaba"
   },

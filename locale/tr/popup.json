@@ -2,11 +2,47 @@
   "block_element_description": {
     "message": "Bu web sitesindeki belirli bir öğeyi bloke edin"
   },
+  "browser_store_android": {
+    "message": "Google Play'de Android uygulaması"
+  },
+  "browser_store_ios": {
+    "message": "iTunes App Store'da mevcut"
+  },
   "click_element_to_block_it": {
     "message": "Sayfada engellemek istediğiniz ögenin üzerine tıklayın."
   },
+  "connect_on_facebook": {
+    "message": "Facebook'da bağlan"
+  },
+  "connect_on_twitter": {
+    "message": "Twitter'da bağlan"
+  },
   "easy_create_filter": {
     "message": "Ögeyi engelle"
+  },
+  "footer_donate_button": {
+    "message": "Bağış yap"
+  },
+  "footer_donate_description": {
+    "message": "ABP'yi destelemek ister misiniz?"
+  },
+  "footer_get_help_button": {
+    "message": "Yardım al"
+  },
+  "footer_get_help_description": {
+    "message": "ABP ile sorun mu yaşıyorsunuz?"
+  },
+  "footer_mobile_description": {
+    "message": "ABP mobil ile ilgileniyor musunuz?"
+  },
+  "footer_rate_button": {
+    "message": "ABP'yi oyla"
+  },
+  "footer_rate_description": {
+    "message": "Uzantıyı beğendiniz mi?"
+  },
+  "footer_social_description": {
+    "message": "Bizimle iletişimde kalın!"
   },
   "options_refresh": {
     "message": "Tazele"

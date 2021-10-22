@@ -1,19 +1,4 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "Nema aktivne domene za filter sa proširenim elementima za skrivanje"
-  },
-  "filter_invalid_csp": {
-    "message": "Nevaljana Sadržajna sigurnosna politika (CSP)"
-  },
-  "filter_invalid_domain": {
-    "message": "Prazna (ili nevaljana) domena navedena"
-  },
-  "filter_invalid_regexp": {
-    "message": "Nevaljani regularni izraz"
-  },
-  "filter_unknown_option": {
-    "message": "Nepoznata postavka filtera"
-  },
   "line": {
     "message": "Linija $number$: $message$",
     "placeholders": {
@@ -26,8 +11,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "Zaglavlja filter listi nisu dozvoljena ovdje"
   }
 }

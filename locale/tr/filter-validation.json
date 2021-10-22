@@ -1,24 +1,33 @@
 {
   "filter_elemhideemulation_nodomain": {
-    "message": "Genişletilmiş öğe gizleme süzgeci için etkin bir alan adı belirtilmedi"
+    "message": "Etkin alan belirtilmedi. Lütfen, bu genişletilmiş öge gizleme filtresi için en az bir alan adı belirtin."
   },
   "filter_invalid_csp": {
-    "message": "Geçersiz İçerik Güvenliği Politikası"
+    "message": "Geçersiz Content Security Policy (söz dizimi standarda uygun değil)."
   },
   "filter_invalid_domain": {
-    "message": "Geçersiz (veya boş) alan adı belirtildi"
+    "message": "Geçersiz ya da boş alan. Alan listesinde, virgülle (,) ayrılmış bir ya da daha fazla alan adı bulunmalıdır; örn. abc.com,def.com,ghi.com."
+  },
+  "filter_invalid_option": {
+    "message": "Geçersiz filtre seçeneği"
   },
   "filter_invalid_regexp": {
-    "message": "Geçersiz düzenli ifade"
+    "message": "Geçersiz düzenli ifade (söz dizimi standarda uygun değil)."
   },
   "filter_slow": {
     "message": "Hızlı bir süzgeç için, lütfen yöntemin uzunluğunu kontrol edin ve kurallı ifade içermediğinden emin olun."
   },
   "filter_snippet_nodomain": {
-    "message": "Kod parçacığı filtresi için belirtilmiş etkin etki alanı yok"
+    "message": "Etkin alan belirtilmedi. Lütfen, bu parçacık filtresi için en az bir alan adı belirtin."
   },
   "filter_unknown_option": {
-    "message": "Bilinmeyen süzme seçeneği"
+    "message": "$option$ geçerli bir filtre seçeneği değildir.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "foo"
+      }
+    }
   },
   "line": {
     "message": "$number$. satır: $message$",
@@ -34,6 +43,6 @@
     }
   },
   "unexpected_filter_list_header": {
-    "message": "Süzgeç listesi üst bilgisine burada izin verilmiyor"
+    "message": "Filtre listesi başlıkları yalnızca indirilebilir filtre listelerinde desteklenir."
   }
 }

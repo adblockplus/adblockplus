@@ -8,12 +8,6 @@
   "options_aa_opt_out_survey_ok": {
     "message": "Anketə get"
   },
-  "options_acceptableAds_ads_label": {
-    "message": "Qəbul edilən reklamlara icazə ver"
-  },
-  "options_acceptableAds_description": {
-    "message": "Qəbul edilən reklamlar narahat etməyən reklamlardır. Veb saytlar sahiblərini gəlirlə təmin etdiyi üçün reklamları əngəlləmə və onlayn məzmunu dəstəkləmə arasında qalan yerdir."
-  },
   "options_acceptableAds_header": {
     "message": "Qəbul edilən reklamlar"
   },
@@ -56,9 +50,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Baş tutmadı, rəqəmsal cəm uyğunlaşmadı"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Baş tutmadı yükləmə uğursuz oldu"
-  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Baş tutmadı ünvan düzgün deyil"
   },
@@ -76,9 +67,6 @@
   },
   "options_language_change": {
     "message": "dəyişdir"
-  },
-  "options_language_header": {
-    "message": "Dil"
   },
   "options_learn_more": {
     "message": "Daha ətraflı"

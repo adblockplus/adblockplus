@@ -1,24 +1,6 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "Không có miền hoạt động được chỉ định cho bộ lọc phần tử ẩn mở rộng"
-  },
-  "filter_invalid_csp": {
-    "message": "Không hợp lệ"
-  },
-  "filter_invalid_domain": {
-    "message": "Tên miền được chỉ định không hợp lệ (hoặc trống rỗng)"
-  },
-  "filter_invalid_regexp": {
-    "message": "Biểu thức chính quy không hợp lệ"
-  },
   "filter_slow": {
     "message": "Để đảm bảo bộ lọc nhanh, vui lòng kiểm tra độ dài của mẫu và đảm bảo nó không chứa biểu thức chính quy."
-  },
-  "filter_snippet_nodomain": {
-    "message": "Không có miền hoạt động được chỉ định cho bộ lọc đoạn trích"
-  },
-  "filter_unknown_option": {
-    "message": "Bộ lọc tùy chọn không rõ"
   },
   "line": {
     "message": "Dòng $number$: $message$",
@@ -32,8 +14,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "Tiêu đề danh sách bộ lọc không được phép tại đây"
   }
 }

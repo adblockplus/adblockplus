@@ -2,9 +2,6 @@
   "options_customFilter_cancel": {
     "message": "Kanselleer"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Misluk, aflaai nie voltooi"
-  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Misluk, nie 'n geldige adres"
   }

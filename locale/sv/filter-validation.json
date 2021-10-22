@@ -1,24 +1,6 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "Ingen aktiv domän angiven för utökat elementdöljarfilter"
-  },
-  "filter_invalid_csp": {
-    "message": "Ogiltigt innehåll enligt säkerhetspolicyn"
-  },
-  "filter_invalid_domain": {
-    "message": "Ogiltig (eller tom) domän angiven"
-  },
-  "filter_invalid_regexp": {
-    "message": "Ogiltigt reguljärt uttryck"
-  },
   "filter_slow": {
     "message": "För att säkerställa ett snabbt filter, kontrollera mönstrets längd och se till att det inte innehåller ett reguljärt uttryck."
-  },
-  "filter_snippet_nodomain": {
-    "message": "Ingen aktiv domän angiven för textmodul-filter"
-  },
-  "filter_unknown_option": {
-    "message": "Okänt filteralternativ"
   },
   "line": {
     "message": "Rad $number$: $message$",
@@ -32,8 +14,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "Filterlistrubriker är inte tillåtna här"
   }
 }

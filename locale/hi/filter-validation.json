@@ -1,19 +1,4 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "एक्सटेंडेड एलिमेंट छिपाव फ़िल्टर के लिए कोई सक्रिय डोमेन निर्दिष्ट नहीं किया गया"
-  },
-  "filter_invalid_csp": {
-    "message": "अमान्य सामग्री सुरक्षा नीति"
-  },
-  "filter_invalid_domain": {
-    "message": "अमान्य (या रिक्त) डोमेन निर्दिष्ट किया गया"
-  },
-  "filter_invalid_regexp": {
-    "message": "अमान्य नियमित अभिव्यक्ति"
-  },
-  "filter_unknown_option": {
-    "message": "अज्ञात फ़िल्टर विकल्प"
-  },
   "line": {
     "message": "लाइन $number$: $message$",
     "placeholders": {
@@ -26,8 +11,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "फ़िल्टर सूची हेडर को यहाँ होने की अनुमति नहीं है"
   }
 }

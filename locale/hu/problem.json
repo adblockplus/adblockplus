@@ -3,7 +3,7 @@
     "message": "Egy probléma miatt alapértelmezettekre kell visszaállítani az ABP beállításokat. <a>Oldja meg a problémát és tudjon meg többet</a>"
   },
   "problem_note": {
-    "message": "Felhívjuk figyelmét, hogy az ABP használatától függően előfordulhat, hogy az Adblock Plus újratelepítésekor újra meg kell adnia a beállításokat, egyéni szűrőket és fehérlistás weboldalakat."
+    "message": "Felhívjuk figyelmét arra, hogy az ABP használatától függően előfordulhat, hogy újra kell konfigurálnia a beállításokat, egyéni szűrőket és engedélyezési listás webhelyeket."
   },
   "problem_os_mac": {
     "message": "Mac"

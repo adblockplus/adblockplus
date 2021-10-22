@@ -2,11 +2,47 @@
   "block_element_description": {
     "message": "Заблокировать определенный элемент на этом вебсайте"
   },
+  "browser_store_android": {
+    "message": "Приложение Android на Google Play"
+  },
+  "browser_store_ios": {
+    "message": "Доступно в App Store iTunes"
+  },
   "click_element_to_block_it": {
     "message": "Нажмите на элемент на странице, чтобы заблокировать его."
   },
+  "connect_on_facebook": {
+    "message": "Присоединяйтесь к нам в Facebook"
+  },
+  "connect_on_twitter": {
+    "message": "Следите за нами в Twitter"
+  },
   "easy_create_filter": {
     "message": "Заблокировать элемент"
+  },
+  "footer_donate_button": {
+    "message": "Жертвовать"
+  },
+  "footer_donate_description": {
+    "message": "Хотите поддержать ABP?"
+  },
+  "footer_get_help_button": {
+    "message": "Помощь"
+  },
+  "footer_get_help_description": {
+    "message": "Проблемы с ABP?"
+  },
+  "footer_mobile_description": {
+    "message": "Ищете ABP в мобильном формате?"
+  },
+  "footer_rate_button": {
+    "message": "Оценить"
+  },
+  "footer_rate_description": {
+    "message": "Нравится расширение?"
+  },
+  "footer_social_description": {
+    "message": "Оставайтесь на связи!"
   },
   "options_refresh": {
     "message": "Обновить"

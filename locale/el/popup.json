@@ -2,8 +2,44 @@
   "block_element_description": {
     "message": "Αποκλεισμός συγκεκριμένου στοιχείου σε αυτή την ιστοσελίδα"
   },
+  "browser_store_android": {
+    "message": "Android app στο Google Play"
+  },
+  "browser_store_ios": {
+    "message": "Διαθέσιμο στο iTunes App Store"
+  },
+  "connect_on_facebook": {
+    "message": "Σύνδεση σε Facebook"
+  },
+  "connect_on_twitter": {
+    "message": "Σύνδεση σε Twitter"
+  },
   "easy_create_filter": {
     "message": "Φραγή στοιχείου"
+  },
+  "footer_donate_button": {
+    "message": "Δωρίστε"
+  },
+  "footer_donate_description": {
+    "message": "Επιθυμείτε να υποστηρίξετε το ABP;"
+  },
+  "footer_get_help_button": {
+    "message": "Ζητ. βοήθ."
+  },
+  "footer_get_help_description": {
+    "message": "Έχετε προβλήματα με τη χρήση ABP;"
+  },
+  "footer_mobile_description": {
+    "message": "Ενδιαφ. για ABP σε κινητή συσκευή;"
+  },
+  "footer_rate_button": {
+    "message": "Αξιολ. ABP"
+  },
+  "footer_rate_description": {
+    "message": "Απολαμβάνετε την επέκταση;"
+  },
+  "footer_social_description": {
+    "message": "Μείνετε συνδεδεμένοι μαζί μας!"
   },
   "options_short": {
     "message": "Επιλογές"

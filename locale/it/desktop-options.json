@@ -9,13 +9,13 @@
     "message": "Vai al sondaggio"
   },
   "options_acceptableAds_ads_description_1": {
-    "message": "Gli Annunci Accettabili non sono fastidiosi e non interferiscono con il contenuto che stai visualizzando. <a>Leggi maggiori informazioni sui criteri per gli Annunci Accettabili</a>"
+    "message": "Gli annunci accettabili non interferiscono con i contenuti che stai visualizzando. <a>Scopri di più</a>"
   },
   "options_acceptableAds_ads_label": {
-    "message": "Consentire gli Annunci Accettabili"
+    "message": "Mostra annunci accettabili"
   },
   "options_acceptableAds_description": {
-    "message": "Gli Annunci Accettabili sono pubblicità non invasive. Queste rappresentano una via di mezzo fra il blocco d'annunci e il supporto di contenuti online poiché generano fatturato per i proprietari dei siti."
+    "message": "Gli annunci accettabili sono pubblicità non fastidiose conformi a rigorose norme sugli annunci. Aiutano a generare entrate per i creatori di contenuti e non interferiscono con il contenuto che si sta visualizzando."
   },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Nota:</strong> <strong>Non tenere traccia (DNT)</strong> è disabilitato nelle impostazioni del browser. Affinché questa funzione venga eseguita in maniera adeguata, abilita <strong>DNT</strong> nelle preferenze del tuo browser. <a>Scopri come abilitare DNT</a>"
@@ -28,6 +28,29 @@
   },
   "options_advanced_description": {
     "message": "Personalizza Adblock Plus, aggiungi o rimuovi gli elenchi di filtri, crea e mantieni i tuoi elenchi di filtri"
+  },
+  "options_allowlist_add": {
+    "message": "Aggiungi sito web"
+  },
+  "options_allowlist_description": {
+    "message": "Hai disattivato il blocco degli annunci su questi siti quindi vedrai gli annunci."
+  },
+  "options_allowlist_empty_1": {
+    "message": "Non hai siti accettati."
+  },
+  "options_allowlist_empty_2": {
+    "message": "I siti web di cui ti fidi e su cui desideri consentire gli annunci appariranno qui."
+  },
+  "options_allowlist_notification": {
+    "message": "Sito inserito tra i siti accettati."
+  },
+  "options_allowlist_placeholder_example": {
+    "message": "ad es. $domain$",
+    "placeholders": {
+      "domain": {
+        "content": "www.example.com"
+      }
+    }
   },
   "options_builtin_filterList_add": {
     "message": "Aggiungere elenchi di filtri integrati"
@@ -72,7 +95,7 @@
     "message": "Mostrare il pannello \"Adblock Plus\" negli strumenti per lo sviluppatore"
   },
   "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Visualizza gli articoli bloccati e in lista bianca a partire dal pannello degli strumenti per lo sviluppatore del browser."
+    "message": "Visualizza gli elementi bloccati e quelli inseriti tra i siti accettati dal pannello degli strumenti di sviluppo del tuo browser."
   },
   "options_customize_showNotifications": {
     "message": "Mostra notifiche utili"
@@ -172,6 +195,15 @@
   "options_filterList_empty": {
     "message": "Non hai aggiunto alcun elenco di filtri ad Adblock Plus. Gli elenchi di filtri che hai aggiunto vengono visualizzati qui."
   },
+  "options_filterList_enableFilters": {
+    "message": "Abilitali"
+  },
+  "options_filterList_errorPopup_title": {
+    "message": "Ci sono uno o più problemi con questo elenco filtri:"
+  },
+  "options_filterList_filtersDisabled": {
+    "message": "Alcuni filtri in questo elenco filtri sono disabilitati."
+  },
   "options_filterList_hours": {
     "message": "ore fa"
   },
@@ -179,7 +211,7 @@
     "message": "Sincronizzazione non riuscita, checksum non corrispondente"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Errore di download"
+    "message": "Impossibile scaricare l'elenco filtri."
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Aggiornamento in corso"
@@ -249,13 +281,13 @@
     "message": "Trova aiuto o mettiti in contatto con noi"
   },
   "options_language_add": {
-    "message": "aggiungere una lingua"
+    "message": "Aggiungi un elenco filtri di lingua"
   },
   "options_language_change": {
     "message": "MODIFICARE"
   },
   "options_language_description": {
-    "message": "Ottimizza Adblock Plus per la lingua o le lingue che usi in genere durante la navigazione."
+    "message": "Aggiungi o rimuovi le lingue degli annunci che Adblock Plus deve bloccare. <a0>Scopri di più</a0>"
   },
   "options_language_empty": {
     "message": "Non hai nessun filtro specifico per le lingue."
@@ -264,7 +296,7 @@
     "message": "Elenchi di filtri per lingua"
   },
   "options_language_header": {
-    "message": "Lingua"
+    "message": "Elenchi filtri di lingua"
   },
   "options_language_join": {
     "message": "$lang1$, $lang2$",
@@ -279,6 +311,12 @@
       }
     }
   },
+  "options_language_recommend": {
+    "message": "Informami quando sono disponibili elenchi filtri di lingua"
+  },
+  "options_language_recommend_tooltip": {
+    "message": "Adblock Plus si basa sugli elenchi filtri per bloccare gli annunci in diverse lingue."
+  },
   "options_language_tip": {
     "message": "<strong>SUGGERIMENTO:</strong> Seleziona solo le lingue di cui hai bisogno. La selezione di un numero maggiore di lingue rallenta l'applicazione e, di conseguenza, la tua velocità di navigazione."
   },
@@ -289,7 +327,7 @@
     "message": "Questi sono ulteriori filtri che hai aggiunto in precedenza ad Adblock Plus."
   },
   "options_more_filters_header": {
-    "message": "Altri filtri"
+    "message": "Altri elenchi filtri"
   },
   "options_more_filters_note": {
     "message": "<strong>Nota:</strong> Devi utilizzare solo elenchi di filtro di terze parti provenienti da autori di cui ti fidi."
@@ -354,6 +392,9 @@
   "options_tab_advanced": {
     "message": "Avanzate"
   },
+  "options_tab_allowlist": {
+    "message": "Siti accettati"
+  },
   "options_tab_general": {
     "message": "Generali"
   },
@@ -377,7 +418,7 @@
     }
   },
   "options_tracking_warning_2": {
-    "message": "Vogliamo farvi sapere che, al fine per gli inserzionisti di mostrare annunci più pertinenti, ci <strong>può</strong> essere qualche tracciamento con annunci accettabili."
+    "message": "Ti informiamo che per consentire agli inserzionisti di mostrarti annunci più pertinenti, con gli annunci accettabili <strong>potrebbero</strong> verificarsi alcune attività di tracciamento."
   },
   "options_tracking_warning_3": {
     "message": "Se si preferisce privacy extra, selezionare la casella di controllo <strong>$acceptableAdsPrivacy$</strong> qui sotto.",

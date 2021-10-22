@@ -1,24 +1,33 @@
 {
   "filter_elemhideemulation_nodomain": {
-    "message": "No se ha especificado ningún dominio activo para el filtro extendido de ocultación de elementos"
+    "message": "No se ha especificado dominio activo. Especifica, al menos, un dominio para este filtro de ocultación de elementos ampliado."
   },
   "filter_invalid_csp": {
-    "message": "Política de seguridad de contenido no válida"
+    "message": "Política de seguridad de contenido no válida (la sintaxis no sigue la norma)."
   },
   "filter_invalid_domain": {
-    "message": "El dominio especificado no es válido (o está vacío)"
+    "message": "Dominio no válido o vacío. La lista de dominios debe contener uno o más dominios separados por una coma (,), p. ej., abc.com,def.com,ghi.com."
+  },
+  "filter_invalid_option": {
+    "message": "Opción de filtro no válida"
   },
   "filter_invalid_regexp": {
-    "message": "Expresión regular no válida"
+    "message": "Expresión regular no válida (la sintaxis no sigue la norma)."
   },
   "filter_slow": {
     "message": "Para conseguir que un filtro sea rápido, comprueba la longitud de la secuencia de elementos y asegúrate de que no contiene ninguna expresión regular."
   },
   "filter_snippet_nodomain": {
-    "message": "No se ha especificado un dominio activo para el filtro de fragmentos"
+    "message": "No se ha especificado un dominio activo. Especifica, al menos, un dominio para este filtro de fragmento de código."
   },
   "filter_unknown_option": {
-    "message": "Opción de filtrado desconocida"
+    "message": "$option$ no es una opción de filtro válida.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "foo"
+      }
+    }
   },
   "line": {
     "message": "Línea $number$: $message$",
@@ -34,6 +43,6 @@
     }
   },
   "unexpected_filter_list_header": {
-    "message": "Las cabeceras de listas de filtros no se permiten aquí"
+    "message": "Los encabezados de las listas de filtros solo están habilitados para las listas de filtros descargables."
   }
 }

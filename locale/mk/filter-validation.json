@@ -1,8 +1,0 @@
-{
-  "filter_invalid_regexp": {
-    "message": "Непознатo регуларно изразување"
-  },
-  "filter_unknown_option": {
-    "message": "Непозната опција за филтер"
-  }
-}

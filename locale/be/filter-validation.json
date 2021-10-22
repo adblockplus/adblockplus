@@ -1,24 +1,6 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "Не ўказаны дамен для пашыранага фільтра хавання элементаў"
-  },
-  "filter_invalid_csp": {
-    "message": "Недапушчальная палітыка бяспекі кантэнту (CSP)"
-  },
-  "filter_invalid_domain": {
-    "message": "Дамен указаны няправільна (або не ўказаны)"
-  },
-  "filter_invalid_regexp": {
-    "message": "Няправільны рэгулярны выраз"
-  },
   "filter_slow": {
     "message": "Каб забяспечыць хуткую працу фільтра, праверце даўжыню правіла, і пераканайцеся, што яно не ўтрымлівае рэгулярных выразаў."
-  },
-  "filter_snippet_nodomain": {
-    "message": "Не ўказаны дамен для фільтра фрагментаў кода"
-  },
-  "filter_unknown_option": {
-    "message": "Невядомы параметр фільтра"
   },
   "line": {
     "message": "Радок $number$: $message$",
@@ -32,8 +14,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "Загалоўкі для спіса фільтраў тут не дазволеныя"
   }
 }

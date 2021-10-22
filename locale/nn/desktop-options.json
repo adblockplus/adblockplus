@@ -1,7 +1,4 @@
 {
-  "options_acceptableAds_ads_label": {
-    "message": "Tillat akseptable reklamer"
-  },
   "options_customFilter_cancel": {
     "message": "Avbryt"
   },
@@ -17,9 +14,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Feilet, checksum feil"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Feilet, nedlastningsfeil"
-  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Feilet, ikke en gyldig adresse"
   },
@@ -34,9 +28,6 @@
   },
   "options_footer_contribute": {
     "message": "Bidra"
-  },
-  "options_language_header": {
-    "message": "Språk"
   },
   "options_page_document_title": {
     "message": "Innstillingar"

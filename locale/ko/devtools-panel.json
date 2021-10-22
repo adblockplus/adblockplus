@@ -29,6 +29,9 @@
   "devtools_header_state_all": {
     "message": "모두"
   },
+  "devtools_header_state_allowlisted": {
+    "message": "허용 목록"
+  },
   "devtools_header_state_blocked": {
     "message": "차단됨"
   },

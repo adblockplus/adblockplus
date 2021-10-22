@@ -8,9 +8,6 @@
   "options_filterList_column_name": {
     "message": "പട്ടികകള്‍ അരിക്കുക"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "പരാജയം, ഡൌണ്‍ലോഡ് പരാജയപ്പെട്ടിരിക്കുന്നു"
-  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "പരാജയപ്പെട്ടിരിക്കുന്നു, ഇതൊരു സാധുവായ വിലാസം അല്ല"
   },

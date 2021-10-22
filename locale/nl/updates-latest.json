@@ -12,13 +12,10 @@
     "message": "Adblock Plus is up-to-date!"
   },
   "updates_update_i1_description": {
-    "message": "Bij het openen van uw Instellingen ziet u een nieuwe sectie genaamd <strong>Aanbevolen filters</strong>. Hier kunt u gemakkelijk aanbevolen filters in- en uitschakelen met een eenvoudige klik en uw webervaring verbeteren."
-  },
-  "updates_update_i1_image": {
-    "message": "De filterlijsten \"Pushmeldingen blokkeren\" en \"Cookie-waarschuwingen blokkeren\" zijn gemarkeerd in de sectie \"AANBEVOLEN FILTERS\" van de pagina opties"
+    "message": "Wanneer u uw Instellingen opent zult u een nieuwe sectie zien onder de naam <strong>Aanbevolen filters</strong>. Hier kunt u aanbevolen filters eenvoudig met een klik in- of uitschakelen en zo uw surfervaring verbeteren."
   },
   "updates_update_i1_title": {
-    "message": "Toegevoegde nieuwe aanbevolen filterlijsten voor gemakkelijke toegang."
+    "message": "Nieuwe aanbevolen filterlijst voor gemakkelijke toegang toegevoegd"
   },
   "updates_update_i2_description": {
     "message": "We hebben het gebruik van de functie 'Blokkeer element' vergemakkelijkt, door toevoeging van zowel korte instructies als een voorbeeld van hoe de pagina eruit zal zien zonder het opdringerige element. Probeer het uit!"
@@ -30,10 +27,10 @@
     "message": "Bijgewerkte en verbeterde functie 'Blokkeer element'"
   },
   "updates_update_i3_description": {
-    "message": "Voor onze gevorderde gebruikers, hebben we een nieuwe modus voor het debuggen van element verbergende filters die ingeschakeld kan worden in de geavanceerde instellingen. Elementen worden dan gemarkeerd voor gemakkelijk debuggen."
+    "message": "Voor onze verder gevorderde gebruikers hebben we een nieuwe 'modus voor het debuggen van element verbergende filters'. Deze kan worden ingeschakeld in de geavanceerde instellingen. De elementen worden dan gemarkeerd voor eenvoudig debuggen."
   },
   "updates_update_i3_title": {
-    "message": "Toegevoegde modus voor het debuggen van element verbergende filters."
+    "message": "De 'modus voor het debuggen van element verbergende filters' toegevoegd"
   },
   "updates_update_i4_description": {
     "message": "Het pictogram knippert en wordt vervolgens blauw om gebruikers attent te maken op meldingen."
