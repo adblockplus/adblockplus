@@ -36,7 +36,8 @@ export default {
           "adblockpluschrome/lib/contentFiltering.js",
           "adblockpluschrome/lib/messageResponder.js",
           "adblockpluschrome/lib/filterConfiguration.js",
-          "adblockpluschrome/lib/ml.js"
+          // marked as optional using wildcard
+          "vendor/abp-snippets/dist/ml/bundle*.ml.mjs"
         ]
       },
       {
@@ -80,12 +81,10 @@ export default {
         src: "data/*.json"
       },
       {
-        dest: "data/mlHideIfGraphMatches",
+        dest: "data/hideIfGraphMatches",
         src: [
-          // eslint-disable-next-line max-len
-          "adblockpluschrome/adblockpluscore/data/mlHideIfGraphMatches/model.json",
-          // eslint-disable-next-line max-len
-          "adblockpluschrome/adblockpluscore/data/mlHideIfGraphMatches/group1-shard1of1.dat"
+          // marked as optional using wildcard
+          "vendor/abp-snippets/dist/ml/hideIfGraphMatches/*"
         ]
       },
       {
@@ -100,7 +99,7 @@ export default {
           "*.js",
           "*.html",
           // marked as optional using wildcard
-          "vendor/abp-snippets/dist/*snippets.min.js",
+          "vendor/abp-snippets/dist/webext/snippets*.json",
           "adblockpluschrome/options.*",
           "adblockpluschrome/devtools.*",
           "adblockpluschrome/polyfill.js",

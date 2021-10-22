@@ -6,10 +6,7 @@
     "node": ">=12.17.0",
     "npm": ">=6"
   },
-  "dependencies": {
-    "@tensorflow/tfjs-converter": "2.7.0",
-    "@tensorflow/tfjs-core": "2.7.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "argparse": "1.0.10",
     "chromedriver": "85.0.1",

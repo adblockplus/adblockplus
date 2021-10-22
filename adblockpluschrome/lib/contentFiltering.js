@@ -47,7 +47,7 @@ const styleSheetRemovalSupported = info.platform == "gecko";
 
 let userStyleSheetsSupported = true;
 
-let snippetsLibrarySource = "";
+let snippetsSource = {};
 
 function addStyleSheet(tabId, frameId, styleSheet)
 {
@@ -156,7 +156,12 @@ function executeScripts(scripts, tabId, frameId)
 
     let details = {
       frameId,
-      code: compileScript(scripts, [snippetsLibrarySource], environment),
+      code: compileScript(
+        scripts,
+        snippetsSource.isolatedCode,
+        snippetsSource.injectedCode,
+        snippetsSource.injectedList,
+        environment),
       matchAboutBlank: true,
       runAt: "document_start"
     };
@@ -221,7 +226,11 @@ port.on("content.applyFilters", (message, sender) =>
   {
     let docDomain = extractHostFromFrame(sender.frame);
 
-    if (filterTypes.snippets)
+    // If snippetsSource is an empty object,
+    // then the snippets library was not bundled with the extension.
+    // For compatibility reasons with `compileScript` we avoid
+    // injecting anything into the page.
+    if (filterTypes.snippets && Object.keys(snippetsSource).length > 0)
     {
       let filters = snippets.getFilters(docDomain);
 
@@ -318,9 +327,9 @@ port.on("content.injectSelectors", (message, sender) =>
   try
   {
     let response =
-      await fetch(browser.runtime.getURL("/snippets.min.js"),
+      await fetch(browser.runtime.getURL("/snippets.json"),
                   {cache: "no-cache"});
-    snippetsLibrarySource = response.ok ? (await response.text()) : "";
+    snippetsSource = response.ok ? (await response.json()) : {};
   }
   catch (e)
   {
