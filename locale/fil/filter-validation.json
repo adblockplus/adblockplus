@@ -1,18 +1,6 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "Walang aktibong domain na tinukoy para sa extended element hiding filter"
-  },
-  "filter_invalid_domain": {
-    "message": "'Di wasto (o walang laman) ang domain na tinutukoy"
-  },
-  "filter_invalid_regexp": {
-    "message": "'Di wasto ang regular expression"
-  },
   "filter_slow": {
     "message": "Upang masiguro ang mabilis na filter, pakitignan ang haba ng pattern at siguraduhing wala itong regular expression."
-  },
-  "filter_unknown_option": {
-    "message": "Di-kilalang opsyon ng filter"
   },
   "line": {
     "message": "Linya $number$: $message$",
@@ -26,8 +14,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "Hindi maaari ang Filter list headers dito"
   }
 }

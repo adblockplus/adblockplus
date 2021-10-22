@@ -2,9 +2,6 @@
   "notification_problem_message": {
     "message": "Sebuah masalah telah menyebabkan pengaturan ABP Anda kembali di atur ulang ke bawaan. <a>Perbaiki masalah dan pelajari lebih lanjut</a>"
   },
-  "problem_note": {
-    "message": "Perlu dicatat bahwa tergantung bagaimana Anda menggunakan ABP, Anda mungkin perlu mengatur kembali pengaturan, custom filters, dan daftar putih situs web setelah Anda memasang ulang kembali Adblock Plus."
-  },
   "problem_os_mac": {
     "message": "Mac"
   },

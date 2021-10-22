@@ -2,9 +2,6 @@
   "notification_problem_message": {
     "message": "Troch in probleem binne jo ABP-ynstellingen weromset nei de standert wearden. <a>It probleem oplosse en mear ynfo</a>"
   },
-  "problem_note": {
-    "message": "Hâld der rekkening mei dat, ôfhinklik fan hoe't jo ABP brûke, jo mooglik jo ynstellingen, persoanlike filters en op de wite list pleatste websites opnij konfigurearje moatte sa gau as jo Adblock Plus opnij ynstallearje."
-  },
   "problem_os_mac": {
     "message": "Mac"
   },

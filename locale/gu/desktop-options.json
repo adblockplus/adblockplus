@@ -1,13 +1,4 @@
 {
-  "options_acceptableAds_ads_description_1": {
-    "message": "સ્વીકાર્ય જાહેરાતો નકામી નથી અને તમે જોઈ રહ્યાં છો તે સામગ્રીમાં દખલ ન કરો <a>સ્વીકાર્ય જાહેરાત માનકો વિશે વધુ વાંચો</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "સ્વીકાર્ય જાહેરાતોને મંજૂરી આપો"
-  },
-  "options_acceptableAds_description": {
-    "message": "સ્વીકાર્ય જાહેરાતો બિન કર્કશ જાહેરાતો છે તેઓ જાહેરાત અવરોધિત અને સહાયક ઑનલાઇન સામગ્રી વચ્ચે મધ્યમ જમીન છે કારણ કે તેઓ વેબસાઇટ માલિકો માટે આવક પેદા કરે છે."
-  },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>નૉૅધ;</strong>તમારી પાસે છે<strong>ટ્રેક કરશો નહીં (ડીએનટી)</strong>તમારી બ્રાઉઝર સેટિંગ્સમાં અક્ષમ કરેલું છે આ સુવિધાને યોગ્ય રીતે કામ કરવા માટે, કૃપા કરીને સક્ષમ કરો <strong>ડીએનટી</strong>તમારા બ્રાઉઝર પસંદગીઓમાં <a>ડીએનટી ને કેવી રીતે સક્ષમ કરવું તે શોધો</a>."
   },
@@ -46,9 +37,6 @@
   },
   "options_customize_showDevToolsPanel": {
     "message": "વિકાસકર્તા સાધનોમાં 'એડબ્લોક પ્લસ' પેનલ દર્શાવો"
-  },
-  "options_customize_showDevToolsPanel_tooltip": {
-    "message": "તમારા બ્રાઉઝરનાં વિકાસકર્તા ટૂલ્સ પેનલમાંથી અવરોધિત અને વ્હાઇટલિસ્ટ કરેલ આઇટમ્સ જુઓ."
   },
   "options_customize_showNotifications": {
     "message": "ઉપયોગી અને સૂચનાઓ બતાવો"
@@ -128,9 +116,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "નિષ્ફળ, checksum મેળ ખાતી નથી"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "નિષ્ફળ થયું, ડાઉનલોડ નિષ્ફળ થયું"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "અપડેટ કરી રહ્યું છે"
   },
@@ -173,20 +158,11 @@
   "options_help_description": {
     "message": "મદદ શોધો અથવા અમારો સંપર્ક કરો"
   },
-  "options_language_add": {
-    "message": "એક ભાષા ઉમેરો"
-  },
   "options_language_change": {
     "message": "ફેરફાર"
   },
-  "options_language_description": {
-    "message": "ભાષા (ઓ) માટે એડબ્લૉક પ્લસ ઑપ્ટિમાઇઝ કરો તમે સામાન્ય રીતે વેબસાઇટ્સને બ્રાઉઝ કરો છો."
-  },
   "options_language_empty": {
     "message": "તમારી પાસે કોઈપણ ભાષા-વિશિષ્ટ ફિલ્ટર્સ નથી."
-  },
-  "options_language_header": {
-    "message": "ભાષા"
   },
   "options_language_tip": {
     "message": "<strong>સંકેત:</strong>માત્ર તમને જરૂરી ભાષાઓ પસંદ કરો વધુ પસંદ કરવાથી જાહેરાત અવરોધક ધીમું હશે અને, તેથી, તમારી બ્રાઉઝિંગ ગતિ."
@@ -196,9 +172,6 @@
   },
   "options_more_filters_description": {
     "message": "આ એડબ્લૉકલ પ્લસમાં અગાઉ ઉમેરાયેલા વધારાના ફિલ્ટર્સ છે."
-  },
-  "options_more_filters_header": {
-    "message": "વધુ ફિલ્ટર્સ"
   },
   "options_more_filters_note": {
     "message": "<strong>નૉૅધ:</strong>તમારે ફક્ત લેખકોની તૃતીય પક્ષ ફિલ્ટર સૂચિનો ઉપયોગ કરવો જોઈએ જે તમે વિશ્વાસ કરો છો."
@@ -257,9 +230,6 @@
         "example": "Block additional tracking"
       }
     }
-  },
-  "options_tracking_warning_2": {
-    "message": "અમે તમને જણાવવા માગીએ છીએ કે જાહેરાતકર્તાઓ તમને વધુ સંબંધિત જાહેરાતો બતાવવા માટે ક્રમમાં આવે છે, ત્યાં <strong>શકે છે</strong> સ્વીકાર્ય જાહેરાતો સાથે કેટલાક ટ્રેકિંગ હોઈ શકે છે."
   },
   "options_tracking_warning_3": {
     "message": "જો તમે વધારાની ગોપનીયતા પસંદ કરો છો, તો પસંદ કરો<strong>$acceptableAdsPrivacy$</strong> ચેકબૉક્સ નીચે.",

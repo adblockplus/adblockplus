@@ -1,16 +1,4 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "Ulac taɣult iremden i yimsizdeg n tuffra n uferdis yettwasiɣezfen"
-  },
-  "filter_invalid_domain": {
-    "message": "Taɣult d-ittinefken diritt (neɣ d tilemt)"
-  },
-  "filter_invalid_regexp": {
-    "message": "Yir tanfalit talugant"
-  },
-  "filter_unknown_option": {
-    "message": "Aɣewwaṛ n imsizdeg arussin"
-  },
   "line": {
     "message": "Izirig $number$: $message$",
     "placeholders": {
@@ -23,8 +11,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "Iqerra n tibdarin n imsizdigen ad ttwasirgen dagi"
   }
 }

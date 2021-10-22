@@ -1,22 +1,4 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "Nėra nurodytas aktyvus domenas išplėstam slėpimo filtrui"
-  },
-  "filter_invalid_csp": {
-    "message": "Neleistino turinio saugumo politika"
-  },
-  "filter_invalid_domain": {
-    "message": "Nurodytas netinkamas (arba nenurodytas) domenas"
-  },
-  "filter_invalid_regexp": {
-    "message": "Netinkama reguliarioji išraiška"
-  },
-  "filter_snippet_nodomain": {
-    "message": "Filtro fragmente nenurodytas aktyvus domenas"
-  },
-  "filter_unknown_option": {
-    "message": "Nežinoma filtro parinktis"
-  },
   "line": {
     "message": "Eilutė $number$: $message$",
     "placeholders": {
@@ -29,8 +11,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "Čia negalima naudoti filtrų sąrašo antraščių"
   }
 }

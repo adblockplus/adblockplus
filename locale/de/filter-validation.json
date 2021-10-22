@@ -1,24 +1,33 @@
 {
   "filter_elemhideemulation_nodomain": {
-    "message": "Keine aktive Domain für den erweiterten Filter zum Ausblenden von Elementen angegeben"
+    "message": "Keine aktive Domain angegeben. Bitte gib mindestens eine Domain für diesen erweiterten Ausblendefilter für Elemente an."
   },
   "filter_invalid_csp": {
-    "message": "Ungültige Content Security Policy"
+    "message": "Ungültige Content Security Policy (Syntax entspricht nicht dem Standard)."
   },
   "filter_invalid_domain": {
-    "message": "Ungültige (oder leere) Domäne angegeben"
+    "message": "Ungültige oder leere Domain. Die Domainliste muss mindestens eine oder mehrere Domains enthalten, die durch ein Komma getrennt sind, (,), z. B. abc.com,def.com,ghi.com."
+  },
+  "filter_invalid_option": {
+    "message": "Ungültige Filter-Option"
   },
   "filter_invalid_regexp": {
-    "message": "Ungültiger regulärer Ausdruck"
+    "message": "Ungültiger regulärer Ausdruck (Syntax entspricht nicht dem Standard)."
   },
   "filter_slow": {
     "message": "Bitte überprüfe die Länge des Musters und dass der Filter keinen regulären Ausdruck enthält, um sicherzustellen, dass er schnell angewandt werden kann."
   },
   "filter_snippet_nodomain": {
-    "message": "Keine aktive Domain für den Snippet-Filter angegeben"
+    "message": "Keine aktive Domain angegeben. Bitte gib mindestens eine Domain für diesen Snippet-Filter an."
   },
   "filter_unknown_option": {
-    "message": "Unbekannte Filteroption"
+    "message": "$option$ ist eine ungültige Filter-Option.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "foo"
+      }
+    }
   },
   "line": {
     "message": "Zeile $number$: $message$",
@@ -34,6 +43,6 @@
     }
   },
   "unexpected_filter_list_header": {
-    "message": "Filterlisten-Header sind hier unzulässig"
+    "message": "Filterliste-Header werden nur in herunterladbaren Filterlisten unterstützt."
   }
 }

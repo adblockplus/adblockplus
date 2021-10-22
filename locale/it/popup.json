@@ -2,11 +2,47 @@
   "block_element_description": {
     "message": "Blocca un elemento specifico su questo sito web"
   },
+  "browser_store_android": {
+    "message": "App per Android su Google Play"
+  },
+  "browser_store_ios": {
+    "message": "Disponibile su iTunes App Store"
+  },
   "click_element_to_block_it": {
     "message": "Clicca su un elemento della pagina per bloccarlo."
   },
+  "connect_on_facebook": {
+    "message": "Connettiti a Facebook"
+  },
+  "connect_on_twitter": {
+    "message": "Connettiti a Twitter"
+  },
   "easy_create_filter": {
     "message": "Blocca Elemento"
+  },
+  "footer_donate_button": {
+    "message": "Dona"
+  },
+  "footer_donate_description": {
+    "message": "Desideri supportare ABP?"
+  },
+  "footer_get_help_button": {
+    "message": "Aiuto"
+  },
+  "footer_get_help_description": {
+    "message": "Hai problemi nell'uso di ABP?"
+  },
+  "footer_mobile_description": {
+    "message": "Ti interessa ABP su mobile?"
+  },
+  "footer_rate_button": {
+    "message": "Valuta ABP"
+  },
+  "footer_rate_description": {
+    "message": "Ti piace l'estensione?"
+  },
+  "footer_social_description": {
+    "message": "Resta in contatto con noi!"
   },
   "options_refresh": {
     "message": "Aggiorna"

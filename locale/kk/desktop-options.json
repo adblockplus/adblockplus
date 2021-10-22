@@ -17,9 +17,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Қате, тексеру сомасы сәйкес емес"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Қате, жүктеу мүмкін емес"
-  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Қате, дұрыс адрес емес"
   },

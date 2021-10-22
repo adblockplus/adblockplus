@@ -8,15 +8,6 @@
   "options_aa_opt_out_survey_ok": {
     "message": "Pojdi na raziskavo"
   },
-  "options_acceptableAds_ads_description_1": {
-    "message": "Sprejemljivi oglasi niso nadležni in ne posegajo v vsebino, ki si jo ogledujete. <a>Preberite več o merilih za sprejemljive oglase.</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "Dovoli sprejemljive oglase"
-  },
-  "options_acceptableAds_description": {
-    "message": "Sprejemljivi oglasi so nevsiljivi oglasi. So vmesna rešitev med blokiranjem oglasov in podpiranjem spletne vsebine, ker lastnikom spletnih strani ustvarjajo prihodke."
-  },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Opomba:</strong> Možnost <strong>Brez sledenja</strong> je v nastavitvah vašega brskalnika onemogočena. Za pravilno delovanje te funkcije jo omogočite. <a>Izvédite, kako jo omogočiti.</a>"
   },
@@ -64,9 +55,6 @@
   },
   "options_customize_showDevToolsPanel": {
     "message": "Prikaži ploščo 'Adblock Plus' v orodjih za razvijalce"
-  },
-  "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Pokaži blokirane in dovoljene predmete na plošči orodij za razvijalce vašega brskalnika."
   },
   "options_customize_showNotifications": {
     "message": "Prikaži koristna obvestila"
@@ -149,9 +137,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Neuspešno, nadzorna vsota se ne ujema"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Neuspešno, napaka prenosa"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Posodabljanje"
   },
@@ -211,23 +196,14 @@
   "options_help_description": {
     "message": "Poiščite pomoč ali navežite stik z nami"
   },
-  "options_language_add": {
-    "message": "dodaj jezik"
-  },
   "options_language_change": {
     "message": "spremeni"
-  },
-  "options_language_description": {
-    "message": "Optimizirajte Adblock Plus za jezike spletnih strani, po katerih ponavadi brskate."
   },
   "options_language_empty": {
     "message": "Nimate filtrov za posamezen jezik."
   },
   "options_language_filter_list": {
     "message": "Jezikovni seznami filtrov"
-  },
-  "options_language_header": {
-    "message": "Jezik"
   },
   "options_language_join": {
     "message": "$lang1$, $lang2$",
@@ -250,9 +226,6 @@
   },
   "options_more_filters_description": {
     "message": "To so dodatni filtri, ki ste jih prej dodali v Adblock Plus."
-  },
-  "options_more_filters_header": {
-    "message": "Več filtrov"
   },
   "options_more_filters_note": {
     "message": "<strong>Opomba:</strong> Uporabljajte samo sezname filtrov tretjih oseb od avtorjev, ki jim zaupate."
@@ -314,9 +287,6 @@
         "example": "Block additional tracking"
       }
     }
-  },
-  "options_tracking_warning_2": {
-    "message": "Upoštevajte, da če želite od oglaševalcev videti ustreznejše oglase, je <strong>lahko</strong> pri sprejemljivih oglasih prisotnega nekaj sledenja."
   },
   "options_tracking_warning_3": {
     "message": "Če imate rajši zasebnost, spodaj označite polje <strong>$acceptableAdsPrivacy$</strong>.",

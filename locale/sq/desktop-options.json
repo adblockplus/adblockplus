@@ -14,9 +14,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Deshtoi,mosperputhje checksumi"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Deshtoi,gabim shkarkimi"
-  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Deshtoi,nje adrese e pavlefshme"
   }

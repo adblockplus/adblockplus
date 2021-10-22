@@ -21,7 +21,7 @@
     "message": "Támogatás"
   },
   "firstRun_fair_description": {
-    "message": "Arra ösztönözünk, hogy tisztességesen használják az Adblock Plus-ot, és engedélyezzék a webhelyek fehérlista engedélyezését. A használt szűrők függvényében megértetted és elfogadod, hogy nem szándékolt eredmények keletkezhetnek (például a webhelyen letiltott tartalom). Tekintsd meg a <a0>Használati feltételeket</a0> az Adblock Plus tisztességes használatáról."
+    "message": "Bátorítjuk arra, hogy méltányosan használja az Adblock Plus alkalmazást és a webhelyek hozzáadása opciót az engedélyezési listájához. Az Ön által használt szűrőtől függően érti és elfogadja, hogy véletlen eredmények is előfordulhatnak (pl. blokkolt tartalom egy webhelyen). Az Adblock Plus méltányos használatára vonatkozó további információkért lásd a <a0>Felhasználási feltételeket</a0>."
   },
   "firstRun_fair_title": {
     "message": "Igazságos használat"

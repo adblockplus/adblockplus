@@ -29,6 +29,9 @@
   "devtools_header_state_all": {
     "message": "összes"
   },
+  "devtools_header_state_allowlisted": {
+    "message": "engedélyezőlistán"
+  },
   "devtools_header_state_blocked": {
     "message": "blokkolva"
   },

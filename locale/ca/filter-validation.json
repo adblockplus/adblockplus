@@ -1,24 +1,6 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "No s'ha especificat cap domini actiu per al filtre estès d'ocultació d'elements"
-  },
-  "filter_invalid_csp": {
-    "message": "Política de seguretat de contingut no vàlida"
-  },
-  "filter_invalid_domain": {
-    "message": "S'ha especificat un domini no vàlid (o buit)"
-  },
-  "filter_invalid_regexp": {
-    "message": "Expressió regular no vàlida"
-  },
   "filter_slow": {
     "message": "Per garantir un filtre ràpid, comproveu la longitud del patró i assegureu-vos que no contingui expressions regulars."
-  },
-  "filter_snippet_nodomain": {
-    "message": "No s'ha especificat cap domini actiu per al filtre de fragments"
-  },
-  "filter_unknown_option": {
-    "message": "Opció de filtrat desconegut"
   },
   "line": {
     "message": "Línia $number$: $message$",
@@ -32,8 +14,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "Els encapçalaments de la llista de filtres no es permeten aquí"
   }
 }

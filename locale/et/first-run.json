@@ -8,9 +8,6 @@
   "firstRun_browser_title": {
     "message": "Adblock Browser äpp"
   },
-  "firstRun_fair_description": {
-    "message": "Julgustame sind Adblock Plusi ja selle võimalust veebisaite lubatute nimekirja lisada õiglaselt kasutama. Sõltuvalt kasutatavatest filtritest, sa mõistad ja nõustud, et ilmneda võivad tahtmatud tulemused (nt. blokeeritud sisu veebilehel). Adblock Plusi õiglase kasutamise kohta lähema teabe saamiseks vaata <a0>Kasutustingimusi</a0>."
-  },
   "firstRun_fair_title": {
     "message": "Õiglane kasutamine"
   },

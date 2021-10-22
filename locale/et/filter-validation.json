@@ -1,21 +1,6 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "Laiendatud elemendi peitmise filtrile pole määratletud aktiivset domeeni"
-  },
-  "filter_invalid_csp": {
-    "message": "Vigane sisuturbepoliitika"
-  },
-  "filter_invalid_domain": {
-    "message": "Määratletud on sobimatu (või tühi) domeen"
-  },
-  "filter_invalid_regexp": {
-    "message": "Vigane regulaaravaldis"
-  },
   "filter_slow": {
     "message": "Kiire filtri tagamiseks palun kontrolli mustri pikkust ja veendu, et see ei sisalda regulaaravaldist."
-  },
-  "filter_unknown_option": {
-    "message": "Tundmatu filtri valik"
   },
   "line": {
     "message": "Rida $number$: $message$",
@@ -29,8 +14,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "Filtrite loetelu päised pole siin lubatud"
   }
 }

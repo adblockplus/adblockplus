@@ -1,21 +1,30 @@
 {
   "filter_elemhideemulation_nodomain": {
-    "message": "拡張要素非表示フィルタに指定されたドメインは有効ではありません"
+    "message": "有効なドメインが指定されていません。この拡張要素非表示フィルターには、少なくとも1つのドメインを指定してください。"
   },
   "filter_invalid_csp": {
-    "message": "無効なコンテンツセキュリティポリシー"
+    "message": "コンテンツセキュリティポリシーが無効です（シンタックスが基準に準拠していません）。"
   },
   "filter_invalid_domain": {
-    "message": "不正な（または空の）ドメインが指定されました"
+    "message": "ドメインが無効であるか、空白になっています。ドメインリストには、少なくとも1つのドメインを含めてください。複数のドメインを含める場合は、コンマ (,) で区切ります。例：abc.com,def.com,ghi.com."
+  },
+  "filter_invalid_option": {
+    "message": "フィルターオプションが無効です"
   },
   "filter_invalid_regexp": {
-    "message": "無効な正規表現"
+    "message": "正規表現が無効です（シンタックスが基準に準拠していません）。"
   },
   "filter_snippet_nodomain": {
-    "message": "CSS プロパティフィルタにドメインが正しく指定されていません"
+    "message": "有効なドメインが指定されていません。このスニペットフィルターには、少なくとも1つのドメインを指定してください。"
   },
   "filter_unknown_option": {
-    "message": "不明なフィルター オプション"
+    "message": "これは無効なフィルターオプションです: $option$",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "foo"
+      }
+    }
   },
   "line": {
     "message": "$number$ 行目: $message$",
@@ -31,6 +40,6 @@
     }
   },
   "unexpected_filter_list_header": {
-    "message": "ここにフィルタのヘッダーを記述することはできません"
+    "message": "フィルターリストヘッダーは、ダウンロード可能なフィルターリストでのみサポートされます。"
   }
 }

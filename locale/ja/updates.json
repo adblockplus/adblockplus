@@ -26,6 +26,9 @@
   "updates_contribute_subtitle": {
     "message": "ABP は2通りの方法でご支援いただけます："
   },
+  "updates_contribute_subtitle_generic": {
+    "message": "ABP にご支援ください："
+  },
   "updates_contribute_title": {
     "message": "Adblock Plus をお楽しみいただいていますか。"
   },

@@ -3,7 +3,7 @@
     "message": "Aufgrund eines Problems wurden deine ABP-Einstellungen auf die Standardeinstellungen zurückgesetzt. <a>Behebe das Problem und erfahre mehr</a>"
   },
   "problem_note": {
-    "message": "Bitte beachte, dass du – abhängig von deiner Nutzungsweise von ABP – deine Einstellungen, benutzerdefinierten Filter sowie Webseiten auf der Whitelist nach der Neuinstallation von Adblock Plus neu konfigurieren musst."
+    "message": "Bitte beachte, dass du – abhängig von deiner Nutzungsweise von ABP – deine Einstellungen, benutzerdefinierten Filter sowie Websites auf der Allowlist nach der Neuinstallation von Adblock Plus möglicherweise neu konfigurieren musst."
   },
   "problem_os_mac": {
     "message": "Mac"

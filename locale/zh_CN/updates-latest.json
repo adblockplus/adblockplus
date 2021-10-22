@@ -12,13 +12,10 @@
     "message": "Adblock Plus 已更新！"
   },
   "updates_update_i1_description": {
-    "message": "在打开设置时您会看到一个新的部分，称为<strong>推荐的筛选器</strong>。在这里您只需要点一下即可打开/关闭推荐的筛选器，从而提升您的网络体验。"
-  },
-  "updates_update_i1_image": {
-    "message": "“拦截推送通知”和“拦截 Cookie 警告”筛选清单在选项页面的“推荐的筛选器”部分突出显示"
+    "message": "打开设置后，您将看到一个称为<strong>推荐筛选器</strong>的新部分。在这里，您只需点击一下就可以轻松打开/关闭推荐的筛选器，以提升您的网络体验。"
   },
   "updates_update_i1_title": {
-    "message": "添加了新的推荐的筛选清单以便于访问"
+    "message": "添加了新的推荐筛选器列表以便于访问"
   },
   "updates_update_i2_description": {
     "message": "我们通过添加简短的说明，以及提供页面在没有侵入性元素时的预览，让“拦截元素”功能更易于使用。试用一下吧！"
@@ -30,7 +27,7 @@
     "message": "更新及改进的“拦截元素”功能"
   },
   "updates_update_i3_description": {
-    "message": "对于我们高级用户，我们推出了新的调试元素隐藏筛选器模式，可以在高级设置中打开。然后元素会突出显示，以便于调试。"
+    "message": "对于我们的高级用户，我们推出了新的调试元素隐藏筛选器模式，可以在高级设置中打开。然后将突出显示元素，以便于调试。"
   },
   "updates_update_i3_title": {
     "message": "添加了调试元素隐藏筛选器模式"

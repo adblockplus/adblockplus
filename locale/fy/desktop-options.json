@@ -8,15 +8,6 @@
   "options_aa_opt_out_survey_ok": {
     "message": "Gean nei de enkête"
   },
-  "options_acceptableAds_ads_description_1": {
-    "message": "Akseptabele advertinsjes binne net ferfelend en jouwe gjin fersteuring mei de ynhâld dy't jo besjogge. <a>Lês mear oer de kritearia foar Akseptabele advertinsjes</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "Akseptabele advertinsjes tastean"
-  },
-  "options_acceptableAds_description": {
-    "message": "Akseptabele advertinsjes binne net-opdringerige advertinsjes. Se binne it middenpaad tusken advertinsjeblokkearring en it stypjen fan online-ynhâld, omdat se ynkomsten foar website-eigeners generearje."
-  },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Opmerking:</strong> jo hawwe <strong>Do Not Track (DNT)</strong> útskeakele yn jo browserynstellingen. Skeakelje <strong>DNT</strong> yn yn jo browserfoarkarren om dizze funksje goed wurkje te litt. <a>Lês hoe't jo DNT ynskeakelje kinne</a>."
   },
@@ -64,9 +55,6 @@
   },
   "options_customize_showDevToolsPanel": {
     "message": "Paniel ‘Adblock Plus’ yn ûntwikkelershelpmiddelen toane"
-  },
-  "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Blokkearre en items op wite list fan it paniel ûntwikkelershelpmiddelen fan jo browser besjen"
   },
   "options_customize_showNotifications": {
     "message": "Nuttige meldingen toane"
@@ -172,9 +160,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Mislearre, checksum komt net oerien"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Mislearre, ynlaadprobleem"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Fernije"
   },
@@ -242,23 +227,14 @@
   "options_help_description": {
     "message": "Help sykje of kontakt mei ús opnimme"
   },
-  "options_language_add": {
-    "message": "in taal tafoegje"
-  },
   "options_language_change": {
     "message": "wizigje"
-  },
-  "options_language_description": {
-    "message": "Optimalisearje Adblock Plus foar de taal/talen wêryn't jo websites trochgeans besjogge."
   },
   "options_language_empty": {
     "message": "Jo hawwe gjin taalspesifike filters."
   },
   "options_language_filter_list": {
     "message": "Taalfilterlisten"
-  },
-  "options_language_header": {
-    "message": "Taal"
   },
   "options_language_join": {
     "message": "$lang1$, $lang2$",
@@ -281,9 +257,6 @@
   },
   "options_more_filters_description": {
     "message": "Dit binne ekstra filters dy't jo earder oan Adblock Plus tafoege hawwe."
-  },
-  "options_more_filters_header": {
-    "message": "Mear filters"
   },
   "options_more_filters_note": {
     "message": "<strong>Opmerking:</strong> jo moatte allinnich filterlisten fan tredden brûke fan auteurs dy't jo fertrouwe."
@@ -354,9 +327,6 @@
         "example": "Block additional tracking"
       }
     }
-  },
-  "options_tracking_warning_2": {
-    "message": "Jo moatte witte dat der by Akseptabele advertinsjes <strong>mooglik</strong> tracking bart, sadat advertearders mear relevante advertinsjes toane kinne."
   },
   "options_tracking_warning_3": {
     "message": "As jo de foarkar jouwe oan ekstra privacy, selektearje dan it ûndersteande fekje <strong>$acceptableAdsPrivacy$</strong>.",

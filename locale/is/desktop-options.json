@@ -17,9 +17,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Mistókst, prófsumma stemmir ekki"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Mistókst, gat ekki niðurhalað"
-  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Mistókst, ekki gilt netfang"
   }

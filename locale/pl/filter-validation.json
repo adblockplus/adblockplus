@@ -1,24 +1,33 @@
 {
   "filter_elemhideemulation_nodomain": {
-    "message": "Nie określono aktywnej domeny dla rozszerzonego filtru ukrywania elementów"
+    "message": "Nie określono aktywnej domeny. Proszę podać co najmniej jedną domenę dla tego filtra ukrywającego elementy rozszerzone."
   },
   "filter_invalid_csp": {
-    "message": "Nieprawidłowy filtr Content Security Policy (CSP)"
+    "message": "Nieprawidłowa polityka bezpieczeństwa zawartości (składnia nie odpowiada standardowi)."
   },
   "filter_invalid_domain": {
-    "message": "Podano nieprawidłową lub nie podano domeny"
+    "message": "Nieprawidłowa lub pusta domena. Lista domen musi zawierać co najmniej jedną domenę oddzieloną przecinkiem (,) np. abc.com,def.com,ghi.com."
+  },
+  "filter_invalid_option": {
+    "message": "Nieprawidłowa opcja filtra"
   },
   "filter_invalid_regexp": {
-    "message": "Nieprawidłowe wyrażenie regularne"
+    "message": "Nieprawidłowe wyrażenie regularne (składnia nie jest zgodna ze standardem)."
   },
   "filter_slow": {
     "message": "Aby filtr działał szybko, należy sprawdzić długość wzorca, który nie powinien zawierać wyrażeń regularnych."
   },
   "filter_snippet_nodomain": {
-    "message": "Nie określono aktywnej domeny dla filtra kodu typu snippet"
+    "message": "Nie określono aktywnej domeny. Proszę podać co najmniej jedną domenę dla tego filtra fragmentów."
   },
   "filter_unknown_option": {
-    "message": "Nieznana opcja filtra"
+    "message": "$option$ jest nieprawidłową opcja filtra.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "foo"
+      }
+    }
   },
   "line": {
     "message": "Wiersz $number$: $message$",
@@ -34,6 +43,6 @@
     }
   },
   "unexpected_filter_list_header": {
-    "message": "Nagłówki listy filtrów są tutaj zabronione"
+    "message": "Nagłówki list filtrów są obsługiwane tylko w listach filtrów do pobrania."
   }
 }

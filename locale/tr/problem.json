@@ -3,7 +3,7 @@
     "message": "Bir sorun ABP ayarlarınızın varsayılan olarak sıfırlanmasına neden oldu. <a>Sorunu giderin ve daha fazla bilgi edinin</a>"
   },
   "problem_note": {
-    "message": "Adblock Plus'ı kurmanızın ardından, ABP'yi nasıl kullandığınıza bağlı olarak, ayarlarınızı, özel filtrelerinizi ve güvenilir listesindeki web sitelerinizi yeniden yapılandırmanız gerekebilir."
+    "message": "ABP'yi nasıl kullandığınıza bağlı olarak, Adblock Plus'ı yeniden yükledikten sonra ayarlarınızı, özel filtrelerinizi ve izin verilen web sitelerinizi yeniden yapılandırmanız gerekebileceğini unutmayın."
   },
   "problem_social_description": {
     "message": "Sorun mu yaşıyorsunuz? Destek ekibimizle temasa geçin"

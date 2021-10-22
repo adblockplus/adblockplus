@@ -8,15 +8,6 @@
   "options_aa_opt_out_survey_ok": {
     "message": "לך אל הסקר"
   },
-  "options_acceptableAds_ads_description_1": {
-    "message": "פרסומות מקובלות אינן מטרידות ואינן מתנגשות עם התוכן שאתה רואה. <a>קרא עוד אודות הקריטריון של פרסומות מקובלות</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "התר פרסומות מקובלות"
-  },
-  "options_acceptableAds_description": {
-    "message": "פרסומות מקובלות הן אינן פרסומות פולשניות. הן הקרקע האמצעית בין חסימת פרסומות לבין תמיכה בתוכן מקוון מאחר שהן מחוללות רווח לבעלי האתרים."
-  },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>הערה:</strong> האפשרות <strong>אל תעקוב (DNT)</strong> מושבתת בהגדרות הדפדפן שלך. כדי שמאפיין זה יעבוד כראוי, אנא אפשר את <strong>אל תעקוב</strong> בהגדרות הדפדפן שלך. <a>גלה כיצד לאפשר אל תעקוב</a>."
   },
@@ -64,9 +55,6 @@
   },
   "options_customize_showDevToolsPanel": {
     "message": "הראה חלונית 'Adblock Plus' במצב מפתחים"
-  },
-  "options_customize_showDevToolsPanel_tooltip": {
-    "message": "הצג פריטים חסומים ומותרים מחלונית כליי המפתחים של הדפדפן שלך."
   },
   "options_customize_showNotifications": {
     "message": "הראה התראות שימושיות"
@@ -172,9 +160,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "נכשל, סיכום ביקורת אינו תואם"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "כישלון הורדה"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "מעדכן"
   },
@@ -242,23 +227,14 @@
   "options_help_description": {
     "message": "מצא עזרה או צור איתנו קשר"
   },
-  "options_language_add": {
-    "message": "הוסף שפה"
-  },
   "options_language_change": {
     "message": "שנה"
-  },
-  "options_language_description": {
-    "message": "מטב את Adblock Plus אל השפות שאתה בד״כ גולש בהן באתרים."
   },
   "options_language_empty": {
     "message": "אין לך מסננים כלשהם של שפות יחודיות."
   },
   "options_language_filter_list": {
     "message": "רשימות מסננים של שפה"
-  },
-  "options_language_header": {
-    "message": "שפה"
   },
   "options_language_join": {
     "message": "$lang1$, $lang2$",
@@ -281,9 +257,6 @@
   },
   "options_more_filters_description": {
     "message": "אלו מסננים נוספים שהוספת קודם לכן אל Adblock Plus."
-  },
-  "options_more_filters_header": {
-    "message": "עוד מסננים"
   },
   "options_more_filters_note": {
     "message": "<strong>הערה:</strong> אתה אמור להשתמש ברשימות מסננים צד שלישי רק ממחברים שאתה בוטח בהם."
@@ -354,9 +327,6 @@
         "example": "Block additional tracking"
       }
     }
-  },
-  "options_tracking_warning_2": {
-    "message": "אנחנו רוצים שתדע שכדי שמפרסמים יציגו לך פרסומות ענייניות, <strong>עשוי</strong> להיות מעקב מסוים עם פרסומות מקובלות."
   },
   "options_tracking_warning_3": {
     "message": "אם אתה מעדיף פרטיות נוספת, בחר בתיבת הסימון <strong>$acceptableAdsPrivacy$</strong> להלן.",

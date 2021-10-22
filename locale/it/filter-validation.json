@@ -1,24 +1,33 @@
 {
   "filter_elemhideemulation_nodomain": {
-    "message": "Nessun dominio attivo specificato per il filtro di occultamento dell'elemento"
+    "message": "Nessun dominio attivo specificato. Specificare almeno un dominio per questo filtro nascondi-elementi esteso."
   },
   "filter_invalid_csp": {
-    "message": "Contenuto CSP invalido"
+    "message": "Politica di sicurezza sui contenuti non valida (la sintassi non aderisce allo standard)."
   },
   "filter_invalid_domain": {
-    "message": "Dominio specificato non valido (o vuoto)"
+    "message": "Dominio non valido o vuoto. L'elenco domini deve contenere uno o più domini separati da una virgola (,), ad es. abc.com,def.com,ghi.com."
+  },
+  "filter_invalid_option": {
+    "message": "Opzione di filtro non valida"
   },
   "filter_invalid_regexp": {
-    "message": "Espressione regolare Invalida"
+    "message": "Espressione regolare non valida (la sintassi non aderisce allo standard)."
   },
   "filter_slow": {
     "message": "Per ottenere un filtro veloce, controlla la lunghezza dello schema e fai in modo che non contenga un'espressione regolare."
   },
   "filter_snippet_nodomain": {
-    "message": "Nessun dominio attivo specificato per il filtro dei frammenti"
+    "message": "Nessun dominio attivo specificato. Specificare almeno un dominio per questo filtro frammenti."
   },
   "filter_unknown_option": {
-    "message": "Opzione Filtro Sconosciuta"
+    "message": "$option$ non è un'opzione di filtro valida.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "foo"
+      }
+    }
   },
   "line": {
     "message": "Riga $number$: $message$",
@@ -34,6 +43,6 @@
     }
   },
   "unexpected_filter_list_header": {
-    "message": "Gli header delle liste dei filtri non sono ammessi qui"
+    "message": "Le intestazioni degli elenchi filtri sono supportate solo negli elenchi filtri scaricabili."
   }
 }

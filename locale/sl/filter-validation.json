@@ -1,24 +1,6 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "Za razširjen filter skrivanja elementov ni navedene dejavne domene"
-  },
-  "filter_invalid_csp": {
-    "message": "Neveljavna politika varnosti vsebine"
-  },
-  "filter_invalid_domain": {
-    "message": "Navedena neveljavna (ali prazna) domena"
-  },
-  "filter_invalid_regexp": {
-    "message": "Neveljaven regularni izraz"
-  },
   "filter_slow": {
     "message": "Za zagotavljanje hitrega filtra, prosimo preverite dolžino vzorca in se prepričajte, da ne vsebuje regularnega izraza."
-  },
-  "filter_snippet_nodomain": {
-    "message": "Za filter izrezkov ni navedene dejavne domene"
-  },
-  "filter_unknown_option": {
-    "message": "Neznana možnost filtra"
   },
   "line": {
     "message": "Vrstica $number$: $message$",
@@ -32,8 +14,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "Glave seznamov filtrov tukaj niso dovoljene"
   }
 }

@@ -9,13 +9,13 @@
     "message": "설문조사로 가기"
   },
   "options_acceptableAds_ads_description_1": {
-    "message": "허용되는 광고는 짜증을 유발하거나 사용자의 콘텐츠 감상을 방해하지 않습니다. <a>허용되는 광고 기준에 대한 더 자세한 내용 보기</a>"
+    "message": "허용되는 광고는 귀하가 확인 중인 콘텐츠를 방해하지 않습니다. <a>자세히 보기</a>"
   },
   "options_acceptableAds_ads_label": {
-    "message": "허용되는 광고 허용"
+    "message": "허용되는 광고 표시"
   },
   "options_acceptableAds_description": {
-    "message": "허용되는 광고는 유해한 광고가 아닙니다. 광고 차단과 온라인 콘텐츠 지원 사이의 중간 지점에 위치하는 광고로서 웹 사이트 소유자의 이익을 창출하는 광고를 의미합니다."
+    "message": "허용되는 광고는 엄격한 광고 기준을 준수하는 성가시지 않은 광고입니다. 콘텐츠 제작자가 수익을 만드는 것을 도우며 귀하가 보고 있는 콘텐츠를 방해하지 않습니다."
   },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>참고:</strong> 브라우저 설정에서 <strong>추적 안함 (DNT)</strong>을 비활성화하셨습니다. 이 기능이 제대로 작동하도록 하려면 브라우저 설정에서 <strong>DNT</strong>를 활성화 해주세요. <a>DNT를 활성화하는 방법에 대해서 알아보세요</a>."
@@ -28,6 +28,29 @@
   },
   "options_advanced_description": {
     "message": "Adblock Plus 사용자 설정, 필터 목록 추가 또는 제거, 사용자 자체 필터 목록 유지"
+  },
+  "options_allowlist_add": {
+    "message": "웹사이트 추가"
+  },
+  "options_allowlist_description": {
+    "message": "이러한 웹사이트의 광고 차단 기능을 끄셨기 때문에 광고가 표시될 것입니다."
+  },
+  "options_allowlist_empty_1": {
+    "message": "허용 목록에 웹사이트가 없습니다."
+  },
+  "options_allowlist_empty_2": {
+    "message": "신뢰하고 광고를 허용하려는 웹사이트가 여기에 표시됩니다."
+  },
+  "options_allowlist_notification": {
+    "message": "웹사이트가 허용 목록에 추가되었습니다."
+  },
+  "options_allowlist_placeholder_example": {
+    "message": "예: $domain$",
+    "placeholders": {
+      "domain": {
+        "content": "www.example.com"
+      }
+    }
   },
   "options_builtin_filterList_add": {
     "message": "기본 제공 필터 목록 추가"
@@ -72,7 +95,7 @@
     "message": "개발자 도구 패널에서 'Adblock Plus’ 패널을 표시합니다."
   },
   "options_customize_showDevToolsPanel_tooltip": {
-    "message": "브라우저의 개발자 도구 패널에서 차단된 항목과 허용된 항목을 확인합니다."
+    "message": "브라우저 개발자 도구 패널에서 차단 및 허용 목록에 추가된 항목 보기."
   },
   "options_customize_showNotifications": {
     "message": "유용한 알림 표시"
@@ -172,6 +195,15 @@
   "options_filterList_empty": {
     "message": "Adblock Plus에 아무 필터 목록도 추가하지 않았습니다. 사용자가 추가한 필터 목록이 여기에 표시됩니다."
   },
+  "options_filterList_enableFilters": {
+    "message": "필터 활성화"
+  },
+  "options_filterList_errorPopup_title": {
+    "message": "이 필터 목록에 하나 이상의 문제가 있습니다:"
+  },
+  "options_filterList_filtersDisabled": {
+    "message": "이 필터 목록 중 일부 필터가 비활성화되었습니다."
+  },
   "options_filterList_hours": {
     "message": "시간 전"
   },
@@ -179,7 +211,7 @@
     "message": "실패함 : 검사합 불일치"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "다운로드 실패"
+    "message": "필터 목록 다운로드에 실패하였습니다."
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "업데이트중"
@@ -249,13 +281,13 @@
     "message": "도움말을 참조하시거나 저희에게 연락주십시오"
   },
   "options_language_add": {
-    "message": "언어 추가"
+    "message": "언어 필터 목록 추가"
   },
   "options_language_change": {
     "message": "변경"
   },
   "options_language_description": {
-    "message": "웹 사이트 브라우징에 일반적으로 사용하는 언어로 Adblock Plus를 맞춤 설정하십시오."
+    "message": "Adblock Plus가 차단하기를 원하는 광고의 언어를 추가하거나 제거하십시오. <a0>더 보기</a0>"
   },
   "options_language_empty": {
     "message": "특정 언어 필터가 없습니다."
@@ -264,7 +296,7 @@
     "message": "언어 필터 목록"
   },
   "options_language_header": {
-    "message": "언어"
+    "message": "언어 필터 목록"
   },
   "options_language_join": {
     "message": "$lang1$, $lang2$",
@@ -279,6 +311,12 @@
       }
     }
   },
+  "options_language_recommend": {
+    "message": "이용 가능한 언어 필터 목록 알리기"
+  },
+  "options_language_recommend_tooltip": {
+    "message": "Adblock Plus는 다양한 언어의 광고를 차단하기 위해 필터 목록을 이용합니다."
+  },
   "options_language_tip": {
     "message": "<strong>팁:</strong> 필요한 언어만 선택하십시오. 더 많은 언어를 선택하면 광고 차단 프로그램의 속도 저하로 인해 브라우징의 속도가 느려질 수 있습니다."
   },
@@ -289,7 +327,7 @@
     "message": "이전에 Adblock Plus에 추가한 추가적인 필터입니다."
   },
   "options_more_filters_header": {
-    "message": "더 많은 필터"
+    "message": "더 많은 필터 목록"
   },
   "options_more_filters_note": {
     "message": "<strong>참고:</strong> 반드시 신뢰할 수 있는 작성자의 제삼자 필터 목록만을 사용해야 합니다."
@@ -354,6 +392,9 @@
   "options_tab_advanced": {
     "message": "고급"
   },
+  "options_tab_allowlist": {
+    "message": "허용 목록에 추가된 웹사이트"
+  },
   "options_tab_general": {
     "message": "일반"
   },
@@ -375,6 +416,9 @@
         "example": "Block additional tracking"
       }
     }
+  },
+  "options_tracking_warning_2": {
+    "message": "광고자가 더 관련성 높은 광고를 표시할 수 있도록 허용되는 광고로 일부 추적<strong>할 수</strong> 있음을 알려드립니다."
   },
   "options_tracking_warning_acknowledgment": {
     "message": "네. 이해했습니다"

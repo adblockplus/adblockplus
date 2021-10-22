@@ -1,24 +1,33 @@
 {
   "filter_elemhideemulation_nodomain": {
-    "message": "Nenhum domínio ativo especificado para o elemento estendido, escondendo o filtro"
+    "message": "Não há domínio ativo especificado. Especifique pelo menos um domínio para este filtro de ocultação de elemento estendido."
   },
   "filter_invalid_csp": {
-    "message": "Política de segurança de conteúdo inválido"
+    "message": "Política de segurança de conteúdo inválida (a sintaxe não segue o padrão)."
   },
   "filter_invalid_domain": {
-    "message": "Domínio especificado inválido (ou vazio)"
+    "message": "Domínio inválido ou vazio. A lista de domínios deve conter um ou mais domínios separados por vírgula (,), como, por exemplo, abc.com,def.com,ghi.com."
+  },
+  "filter_invalid_option": {
+    "message": "Opção de filtro inválida"
   },
   "filter_invalid_regexp": {
-    "message": "Expressão regular inválida"
+    "message": "Expressão regular incluída (a sintaxe não segue o padrão)."
   },
   "filter_slow": {
     "message": "Para garantir um filtro rápido, verifique o comprimento do padrão e certifique-se de ele não contenha uma expressão regular."
   },
   "filter_snippet_nodomain": {
-    "message": "Nenhum domínio ativo especificado para filtro de snippet"
+    "message": "Não há domínio ativo especificado. Especifique pelo menos um domínio para este filtro de snippets."
   },
   "filter_unknown_option": {
-    "message": "Opção de filtro desconhecido"
+    "message": "$option$ não é uma opção válida.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "foo"
+      }
+    }
   },
   "line": {
     "message": "Linha $number$: $message$",
@@ -34,6 +43,6 @@
     }
   },
   "unexpected_filter_list_header": {
-    "message": "Filtrar a lista de cabeçalhos não é permitido aqui"
+    "message": "Cabeçalhos de listas de filtros são compatíveis apenas em listas de filtros que possam ser baixadas."
   }
 }

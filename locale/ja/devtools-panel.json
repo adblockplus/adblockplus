@@ -5,6 +5,9 @@
   "devtools_header_state_all": {
     "message": "すべて"
   },
+  "devtools_header_state_allowlisted": {
+    "message": "許可リストに登録済み"
+  },
   "devtools_request_url": {
     "message": "<a0>$original$</a0>は<a1>$rewritten$</a1>に書き換えられました",
     "placeholders": {

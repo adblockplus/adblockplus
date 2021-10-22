@@ -2,9 +2,6 @@
   "notification_problem_message": {
     "message": "O problemă a cauzat resetarea setărilor ABP la valorile implicite. <a>Repară problema și află mai multe</a>"
   },
-  "problem_note": {
-    "message": "Reține că, în funcție de cum utilizezi ABP, poate fi necesar să reconfigurezi setările, filtrele adaptate și site-urile listate în alb atunci când reinstalezi Adblock Plus."
-  },
   "problem_os_mac": {
     "message": "Mac"
   },

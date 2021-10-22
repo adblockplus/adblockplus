@@ -2,9 +2,6 @@
   "notification_problem_message": {
     "message": "Un problema ha provocat que els paràmetres de l'ABP es restableixin als valors per defecte. <a>Soluciona el problema i obtén més informació</a>"
   },
-  "problem_note": {
-    "message": "Tingueu en compte que, en funció de la forma en què utilitzeu l'ABP, potser haureu de tornar a configurar els paràmetres, els filtres personalitzats i els llocs web afegits en la llista blanca un cop hagueu reinstal·lat l'Adblock Plus."
-  },
   "problem_os_mac": {
     "message": "Mac"
   },

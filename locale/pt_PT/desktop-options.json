@@ -1,13 +1,4 @@
 {
-  "options_acceptableAds_ads_description_1": {
-    "message": "Os Anúncios Aceitáveis não são irritantes e não interferem com o conteúdo que está a visualizar. <a>Saiba mais sobre os critérios de Anúncios Aceitáveis</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "Permitir Anúncios Aceitáveis"
-  },
-  "options_acceptableAds_description": {
-    "message": "Os Anúncios Aceitáveis são anúncios não invasivos. Estão no grupo do meio entre o bloqueio de anúncios e conteúdo online de apoio pois geram receitas para os proprietários do site Web."
-  },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Nota:</strong> tem <strong>Não monitorizar (DNT)</strong> desativado nas definições do seu navegador. Para esta funcionalidade funcionar corretamente, ative <strong>DNT</strong> nas preferências do navegador. <a>Saiba como ativar DNT</a>"
   },
@@ -52,9 +43,6 @@
   },
   "options_customize_showDevToolsPanel": {
     "message": "Mostrar o painel \"Adblock Plus\" nas ferramentas do programador"
-  },
-  "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Veja os itens bloqueados e da lista branca no painel de ferramentas do programador do seu browser."
   },
   "options_customize_showNotifications": {
     "message": "Mostrar notificações úteis"
@@ -128,9 +116,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Falhou, checksum errado"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Falhou, transferência inválida"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "A atualizar"
   },
@@ -184,20 +169,11 @@
   "options_help_description": {
     "message": "Encontre ajuda ou entre em contacto connosco"
   },
-  "options_language_add": {
-    "message": "adicionar idioma"
-  },
   "options_language_change": {
     "message": "ALTERAR"
   },
-  "options_language_description": {
-    "message": "Otimize o Adblock Plus para o(s) idioma(s) nos quais normalmente navega."
-  },
   "options_language_empty": {
     "message": "Não possui filtros específicos do idioma."
-  },
-  "options_language_header": {
-    "message": "Idioma"
   },
   "options_language_tip": {
     "message": "<strong>DICA:</strong> selecione apenas os idiomas necessários. Selecionar mais irá tornar o bloqueador de anúncios lento e, como tal, a velocidade de navegação."
@@ -207,9 +183,6 @@
   },
   "options_more_filters_description": {
     "message": "Estes são filtros adicionais anteriormente adicionados ao Adblock Plus."
-  },
-  "options_more_filters_header": {
-    "message": "Mais filtros"
   },
   "options_more_filters_note": {
     "message": "<strong>Nota:</strong> Apenas deve utilizar listas de filtros de tercerios a partir de autores em que confia."

@@ -2,9 +2,6 @@
   "notification_problem_message": {
     "message": "Dine ABP-indstillinger er blevet nulstillet til standard pga. en fejl. <a>Ret denne fejl, og få flere oplysninger</a>"
   },
-  "problem_note": {
-    "message": "Bemærk, at afhængigt af, hvordan du bruger ABP, kan det være nødvendigt at omkonfigurere dine indstillinger, brugertilpassede filtre og hvidlistede websteder efter du har geninstalleret Adblock Plus."
-  },
   "problem_os_mac": {
     "message": "Mac"
   },

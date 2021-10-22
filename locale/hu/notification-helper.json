@@ -5,6 +5,15 @@
   "notification_open_all": {
     "message": "Összes link megnyitása ebből az értesítésből"
   },
+  "notification_recommendLanguage_message": {
+    "message": "Úgy látszik, hogy felkeresett egy webhelyet a következő nyelven: $language$. Szeretné blokkolni az összes webhelyen az ilyen nyelvű hirdetéseket? <a>Igen</a>",
+    "placeholders": {
+      "language": {
+        "content": "$1",
+        "example": "čeština"
+      }
+    }
+  },
   "notification_without_buttons": {
     "message": "Kattints az értesítésre a benne lévő összes link megnyitásához."
   }

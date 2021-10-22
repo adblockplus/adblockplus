@@ -1,19 +1,4 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "विस्तारित घटक लपवण्याच्या गाळणीसाठी सक्रीय डोमेन निर्धारित केलेले नाहीत"
-  },
-  "filter_invalid_csp": {
-    "message": "अवैध मजकूर सुरक्षा धोरण"
-  },
-  "filter_invalid_domain": {
-    "message": "अवैध (किंवा रिक्त) डोमेन निर्धारित"
-  },
-  "filter_invalid_regexp": {
-    "message": "अवैध सामान्य अविर्भाव"
-  },
-  "filter_unknown_option": {
-    "message": "अज्ञात गाळणी पर्याय"
-  },
   "line": {
     "message": "ओळ $number$: $message$",
     "placeholders": {
@@ -26,8 +11,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "गाळणी यादी मधील हेडर ला यथे परवानगी नाही"
   }
 }

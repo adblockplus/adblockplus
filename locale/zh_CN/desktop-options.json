@@ -9,13 +9,13 @@
     "message": "前往调查"
   },
   "options_acceptableAds_ads_description_1": {
-    "message": "可接受广告不会令人烦恼，也不会干扰您正在查看的内容。<a>阅读更多关于可接受广告的标准</a>"
+    "message": "可接受广告不会干扰您正在查看的内容。<a>了解详细信息</a>"
   },
   "options_acceptableAds_ads_label": {
-    "message": "允许可接受广告"
+    "message": "显示可接受广告"
   },
   "options_acceptableAds_description": {
-    "message": "可接受的广告是非侵入式广告。由于它们为网站所有者创造了收入，因此它们处于广告屏蔽和支持在线内容之间的中间位置。"
+    "message": "可接受广告是遵守严格的广告标准、不恼人的广告。它们有助于为内容创作者产生收入，并且不会干扰您正在查看的内容。"
   },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>注意：</strong><strong>请勿跟踪 (DNT)</strong>选项在浏览器设置中已被禁用。为了本功能正常工作，请在您的浏览器首选项中启用 <strong>DNT</strong>。<a>查看启用DNT的方法</a>。"
@@ -28,6 +28,29 @@
   },
   "options_advanced_description": {
     "message": "自定义 Adblock Plus、添加或移除过滤列表、创建和维护您自己的过滤列表"
+  },
+  "options_allowlist_add": {
+    "message": "添加网站"
+  },
+  "options_allowlist_description": {
+    "message": "您已关闭这些网站上的广告拦截功能，因此将在这些网站上看到广告。"
+  },
+  "options_allowlist_empty_1": {
+    "message": "您的允许列表中没有任何网站。"
+  },
+  "options_allowlist_empty_2": {
+    "message": "此处将显示您信任的网站以及您想要允许显示广告的网站。"
+  },
+  "options_allowlist_notification": {
+    "message": "网站已添加至允许列表"
+  },
+  "options_allowlist_placeholder_example": {
+    "message": "例如， $domain$",
+    "placeholders": {
+      "domain": {
+        "content": "www.example.com"
+      }
+    }
   },
   "options_builtin_filterList_add": {
     "message": "添加内置过滤列表"
@@ -72,7 +95,7 @@
     "message": "在开发人员工具中显示“Adblock Plus”面板"
   },
   "options_customize_showDevToolsPanel_tooltip": {
-    "message": "从浏览器的开发人员工具面板中查看已被屏蔽和列入白名单的项目。"
+    "message": "从您的浏览器开发者工具面板中查看拦截项目及加入允许列表的项目。"
   },
   "options_customize_showNotifications": {
     "message": "显示有用的通知"
@@ -172,6 +195,15 @@
   "options_filterList_empty": {
     "message": "您尚未向 Adblock Plus 添加过滤列表。您添加的过滤列表将显示在此处。"
   },
+  "options_filterList_enableFilters": {
+    "message": "启用它们"
+  },
+  "options_filterList_errorPopup_title": {
+    "message": "此筛选清单有一个或多个问题："
+  },
+  "options_filterList_filtersDisabled": {
+    "message": "此筛选清单中的某些筛选器已禁用。"
+  },
   "options_filterList_hours": {
     "message": "几小时以前"
   },
@@ -179,7 +211,7 @@
     "message": "失败，校验和不匹配"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "下载失败"
+    "message": "筛选清单无法下载。"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "正在更新"
@@ -249,13 +281,13 @@
     "message": "寻求帮助或联系我们"
   },
   "options_language_add": {
-    "message": "添加语言"
+    "message": "添加语言筛选器列表"
   },
   "options_language_change": {
     "message": "更改"
   },
   "options_language_description": {
-    "message": "为您平日浏览网站的语言优化 Adblock Plus。"
+    "message": "添加或删除您想要 Adblock Plus 阻止哪些语言的广告。 <a0>了解详细信息</a0>"
   },
   "options_language_empty": {
     "message": "您没有任何特定语言的过滤。"
@@ -264,7 +296,7 @@
     "message": "语言过滤列表"
   },
   "options_language_header": {
-    "message": "语言"
+    "message": "语言筛选器列表"
   },
   "options_language_join": {
     "message": "$lang1$、$lang2$",
@@ -279,6 +311,12 @@
       }
     }
   },
+  "options_language_recommend": {
+    "message": "通知我可用语言筛选器列表"
+  },
+  "options_language_recommend_tooltip": {
+    "message": "Adblock Plus 依靠筛选器列表拦截不同语言的广告。"
+  },
   "options_language_tip": {
     "message": "<strong>提示：</strong>只选择您需要的语言。选择更多会减慢广告拦截器的速度，因此会降低浏览速度。"
   },
@@ -289,7 +327,7 @@
     "message": "这些是您以前添加到 Adblock Plus 的其他过滤。"
   },
   "options_more_filters_header": {
-    "message": "更多过滤器"
+    "message": "更多筛选器列表"
   },
   "options_more_filters_note": {
     "message": "<strong>注意：</strong>您应该只使用来自您信任的作者的第三方过滤列表。"
@@ -354,6 +392,9 @@
   "options_tab_advanced": {
     "message": "高级"
   },
+  "options_tab_allowlist": {
+    "message": "列入允许名单的网站"
+  },
   "options_tab_general": {
     "message": "一般"
   },
@@ -377,7 +418,7 @@
     }
   },
   "options_tracking_warning_2": {
-    "message": "我们想告知您，为了让广告商向您展示更有相关性的广告，可接受广告中<strong>可能</strong>含有跟踪功能。"
+    "message": "我们想告诉您，为了让广告厂商向您显示更相关的广告，<strong>可能</strong>会对可接受广告进行一些追踪。"
   },
   "options_tracking_warning_3": {
     "message": "如果您更偏好隐私，选择下方的<strong>$acceptableAdsPrivacy$</strong>复选框。",

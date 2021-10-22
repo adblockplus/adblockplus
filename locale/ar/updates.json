@@ -26,6 +26,9 @@
   "updates_contribute_subtitle": {
     "message": "ضع في اعتبارك دعم Adblock Plus بإحدى طريقتين:"
   },
+  "updates_contribute_subtitle_generic": {
+    "message": "خُذ بعين الاعتبار دعم ABP:"
+  },
   "updates_contribute_title": {
     "message": "هل تجد Adblock Plus ممتعًا؟"
   },

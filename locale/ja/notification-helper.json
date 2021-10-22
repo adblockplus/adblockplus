@@ -5,6 +5,15 @@
   "notification_open_all": {
     "message": "この通知内のリンクをすべて開く"
   },
+  "notification_recommendLanguage_message": {
+    "message": "次の言語のウェブサイトが表示されたようです: $language$。この言語のすべてのウェブサイトで広告をブロックしますか？<a>はい</a>",
+    "placeholders": {
+      "language": {
+        "content": "$1",
+        "example": "čeština"
+      }
+    }
+  },
   "notification_without_buttons": {
     "message": "通知内すべてのリンクを開くにはここをクリックしてください。"
   }

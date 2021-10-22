@@ -1,13 +1,4 @@
 {
-  "options_acceptableAds_ads_description_1": {
-    "message": "Prihvatljivi oglasi nisu nametljivi i ne ometaju sadržaj koji pregledavate. <a>Pročitajte više o Kriteriju prihvatljivih oglasa</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "Dopusti prihvatljive oglase"
-  },
-  "options_acceptableAds_description": {
-    "message": "Prihvatljivi oglasi su nenametljivi oglasi. Oni su sredina između blokiranja oglasa i podrške mrežnom sadržaju jer oni generiraju prihod za vlasnike web stranica."
-  },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Napomena:</strong> Imate <strong>Nemoj pratiti (DNT)</strong> onemogućen u vašim postavkama preglednika. Kako bi ova značajka radila ispravno, omogućite <strong>DNT</strong> u vašim postavkama preglednika. <a>Saznajte kako omogućiti DNT</a>."
   },
@@ -46,9 +37,6 @@
   },
   "options_customize_showDevToolsPanel": {
     "message": "Prikaži 'Adblock Plus' panel u alatima razvijatelja"
-  },
-  "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Prikaži blokirane i dopuštene stavke iz panela alata razvijatelja vašeg preglednika."
   },
   "options_customize_showNotifications": {
     "message": "Prikaži korisne obavijesti"
@@ -119,9 +107,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Neuspješno, neusklađenost kontrolnog zbroja"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Neuspješno, greška preuzimanja"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Ažuriranje"
   },
@@ -158,20 +143,11 @@
   "options_help_description": {
     "message": "Potražite pomoć ili nas kontaktirajte"
   },
-  "options_language_add": {
-    "message": "dodaj jezik"
-  },
   "options_language_change": {
     "message": "promijeni"
   },
-  "options_language_header": {
-    "message": "Jezik"
-  },
   "options_learn_more": {
     "message": "Saznajte više"
-  },
-  "options_more_filters_header": {
-    "message": "Više filtra"
   },
   "options_new_label": {
     "message": "Novi"

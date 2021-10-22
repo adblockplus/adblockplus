@@ -1,10 +1,4 @@
 {
-  "options_acceptableAds_ads_description_1": {
-    "message": "Iragarki onargarriak ez dira gogaikarriak eta ez diote trabarik egiten ikusten ari zaren edukiari <a>Irakurri gehiago iragarki onargarrien irizpideari buruz</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "Baimendu iragarki onargarriak"
-  },
   "options_acceptableAds_header": {
     "message": "Iragarki Onargarriak"
   },
@@ -59,9 +53,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Errorea; kontrol-baturak ez datoz bat"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Huts egin du; deskarga errorea"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Eguneratzen"
   },
@@ -86,20 +77,11 @@
   "options_footer_contribute": {
     "message": "Hartu parte"
   },
-  "options_language_add": {
-    "message": "gehitu hizkuntza bat"
-  },
   "options_language_change": {
     "message": "aldatu"
   },
-  "options_language_header": {
-    "message": "Hizkuntza"
-  },
   "options_learn_more": {
     "message": "Ikasi gehiago"
-  },
-  "options_more_filters_header": {
-    "message": "Iragazki gehiago"
   },
   "options_new_label": {
     "message": "Berria"

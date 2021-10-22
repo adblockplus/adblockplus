@@ -1,19 +1,4 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "વિસ્તૃત ઘટક છૂપાઇ ફિલ્ટર માટે કોઈ સક્રિય ડોમેન નિર્દિષ્ટ નથી"
-  },
-  "filter_invalid_csp": {
-    "message": "અમાન્ય સામગ્રી સુરક્ષા નીતિ"
-  },
-  "filter_invalid_domain": {
-    "message": "ઉલ્લેખિત અમાન્ય (અથવા ખાલી) ડોમેન"
-  },
-  "filter_invalid_regexp": {
-    "message": "અમાન્ય રેગ્યુલર એક્સપ્રેશન"
-  },
-  "filter_unknown_option": {
-    "message": "અજ્ઞાત ફિલ્ટર વિકલ્પ"
-  },
   "line": {
     "message": "લાઈન $number$: $message$",
     "placeholders": {
@@ -26,8 +11,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "ફિલ્ટર લીસ્ટ હેડર આહીં વાપરી શકાય નહિ"
   }
 }

@@ -1,24 +1,33 @@
 {
   "filter_elemhideemulation_nodomain": {
-    "message": "Aucun domaine actif spécifié pour le filtre de masquage d'élément étendu"
+    "message": "Aucun domaine actif spécifié. Veuillez spécifier au moins un domaine pour ce filtre de masquage d’éléments étendu."
   },
   "filter_invalid_csp": {
-    "message": "Politique de sécurité du contenu non valide"
+    "message": "Politique de sécurité du contenu non valide (la syntaxe n’est pas conforme à la norme)."
   },
   "filter_invalid_domain": {
-    "message": "Le domaine spécifié est Invalide (ou vide)"
+    "message": "Domaine invalide ou vide. La liste des domaines doit contenir un ou plusieurs domaines séparés par une virgule. (,), par ex. abc.com,def.com,ghi.com."
+  },
+  "filter_invalid_option": {
+    "message": "Option de filtre invalide"
   },
   "filter_invalid_regexp": {
-    "message": "Expression régulière non valide"
+    "message": "Expression régulière invalide (la syntaxe n’est pas conforme à la norme)."
   },
   "filter_slow": {
     "message": "Pour disposer d’un filtrage rapide, merci de vérifier la longueur du modèle et s’assurer qu’il ne contient pas une expression régulière."
   },
   "filter_snippet_nodomain": {
-    "message": "Aucun domaine actif spécifié pour le filtre de fragments"
+    "message": "Aucun domaine actif spécifié. Veuillez spécifier au moins un domaine pour ce filtre partiel."
   },
   "filter_unknown_option": {
-    "message": "Option de filtre inconnue"
+    "message": "$option$ n’est pas une option de filtre valide.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "foo"
+      }
+    }
   },
   "line": {
     "message": "Ligne $number$: $message$",
@@ -34,6 +43,6 @@
     }
   },
   "unexpected_filter_list_header": {
-    "message": "Les en-têtes de listes de filtres ne sont pas autorisés ici"
+    "message": "Les en-têtes de liste de filtres sont uniquement pris en charge dans les listes de filtres téléchargeables."
   }
 }

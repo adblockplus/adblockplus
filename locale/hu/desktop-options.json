@@ -9,13 +9,13 @@
     "message": "Ugrás a felmérésre"
   },
   "options_acceptableAds_ads_description_1": {
-    "message": "Az elfogadható hirdetések nem bosszantanak, és nem zavarják a tartalom megtekintését. <a>További információ az elfogadható hirdetési feltételekről</a>"
+    "message": "Az elfogadható hirdetések nem befolyásolják a megtekintett tartalmakat. <a>További tudnivalók</a>"
   },
   "options_acceptableAds_ads_label": {
-    "message": "Elfogadható hirdetések engedélyezése"
+    "message": "Elfogadható hirdetések megjelenítése"
   },
   "options_acceptableAds_description": {
-    "message": "Az elfogadható hirdetések nem tolakodóak. A középutat jelentik a hirdetések letiltása és az online tartalom támogatása között, mert bevételt termelnek a weboldalak üzemeltetőinek."
+    "message": "Az elfogadható hirdetések nem zavaró hirdetések, amelyek megfelelnek a szigorú hirdetési szabványnak. Segítenek bevételt szerezni a tartalomkészítőknek, és nem befolyásolják a megtekintett tartalmat."
   },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Megjegyzés:</strong> A <strong>követés elleni védelem</strong> (Do Not Track – DNT) ki van kapcsolva a böngésző beállításaiban. A funkció helyes működéséhez engedélyezze ezt a funkciót a beállításokban. <a>Útmutató a DNT engedélyezéséhez</a>."
@@ -28,6 +28,29 @@
   },
   "options_advanced_description": {
     "message": "Az Adblock Plus testreszabása, szűrőlisták hozzáadása és eltávolítása, saját szűrőlisták létrehozása és karbantartása"
+  },
+  "options_allowlist_add": {
+    "message": "Weboldal hozzáadása"
+  },
+  "options_allowlist_description": {
+    "message": "A reklámblokkolást ezeken a weboldalakon kikapcsolta, ezért megjelennek a reklámok."
+  },
+  "options_allowlist_empty_1": {
+    "message": "Nem szerepel weboldal az engedélyezett listán."
+  },
+  "options_allowlist_empty_2": {
+    "message": "Itt azok a weboldalak jelennek meg, amelyekben bízik és engedélyezi a reklámokat."
+  },
+  "options_allowlist_notification": {
+    "message": "A weboldalt hozzáadta az engedélyezett listához."
+  },
+  "options_allowlist_placeholder_example": {
+    "message": "pl. $domain$",
+    "placeholders": {
+      "domain": {
+        "content": "www.example.com"
+      }
+    }
   },
   "options_builtin_filterList_add": {
     "message": "Hirdetések beépített szűrőlistái"
@@ -72,7 +95,7 @@
     "message": "„Adblock Plus” panel megjelenítése a fejlesztői eszközökben"
   },
   "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Blokkolt és fehérlistán lévő elemek megjelenítése a böngésző fejlesztői eszközök paneljén."
+    "message": "Tekintse meg a blokkolt és engedélyezett tételeket böngészője fejlesztői eszközök paneljén."
   },
   "options_customize_showNotifications": {
     "message": "Hasznos értesítések megjelenítése"
@@ -172,6 +195,15 @@
   "options_filterList_empty": {
     "message": "Még nem vett fel szűrőlistákat az Adblock Plusba. A felvett szűrőlisták itt fognak megjelenni."
   },
+  "options_filterList_enableFilters": {
+    "message": "Bekapcsolás"
+  },
+  "options_filterList_errorPopup_title": {
+    "message": "Ezzel a szűrőlistával egy vagy több probléma van:"
+  },
+  "options_filterList_filtersDisabled": {
+    "message": "A szűrőlista egyes szűrői ki vannak kapcsolva."
+  },
   "options_filterList_hours": {
     "message": "órával ezelőtt"
   },
@@ -179,7 +211,7 @@
     "message": "Sikertelen, érvénytelen ellenőrzőösszeg"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Letöltési hiba"
+    "message": "A szűrőlista letöltése nem sikerült."
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Frissítés…"
@@ -249,13 +281,13 @@
     "message": "Súgó vagy kapcsolatfelvétel"
   },
   "options_language_add": {
-    "message": "Nyelv hozzáadása"
+    "message": "Nyelv szűrőlista hozzáadása"
   },
   "options_language_change": {
     "message": "módosítás"
   },
   "options_language_description": {
-    "message": "Az Adblock Plus optimalizálása a gyakran használt weboldalnyelv(ek)re."
+    "message": "Adja hozzá vagy távolítsa el a nyelveket, amelyeken az Adblock Plus blokkolja a hirdetéseket. <a0>További tudnivalók</a0>"
   },
   "options_language_empty": {
     "message": "Nincsenek nyelvspecifikus szűrői."
@@ -264,7 +296,7 @@
     "message": "Nyelvi szűrőlisták"
   },
   "options_language_header": {
-    "message": "Nyelv"
+    "message": "Nyelv szűrőlisták"
   },
   "options_language_join": {
     "message": "$lang1$, $lang2$",
@@ -279,6 +311,12 @@
       }
     }
   },
+  "options_language_recommend": {
+    "message": "Értesítsen az elérhető nyelv szűrőlistákról"
+  },
+  "options_language_recommend_tooltip": {
+    "message": "Az Adblock Plus a különböző nyelvű reklámokat szűrőlisták alapján blokkolja."
+  },
   "options_language_tip": {
     "message": "<strong>Tipp:</strong> Csak a szükséges nyelveket válassza ki. Több nyelv kiválasztása lassítja a reklámblokkolót, és ezáltal a böngészési sebességet."
   },
@@ -289,7 +327,7 @@
     "message": "Ezeket a további szűrőket adta hozzá korábban az Adblock Plushoz."
   },
   "options_more_filters_header": {
-    "message": "További szűrők"
+    "message": "További szűrőlisták"
   },
   "options_more_filters_note": {
     "message": "<strong>Megjegyzés:</strong> Csak megbízható szerzők külső szűrőlistáit használja."
@@ -354,6 +392,9 @@
   "options_tab_advanced": {
     "message": "Speciális"
   },
+  "options_tab_allowlist": {
+    "message": "A listán szereplő weboldalak engedélyezése"
+  },
   "options_tab_general": {
     "message": "Általános"
   },
@@ -377,7 +418,7 @@
     }
   },
   "options_tracking_warning_2": {
-    "message": "Azt szeretnénk, ha tudnád, hogy ahhoz, hogy a hirdetők relevánsabb hirdetéseket mutathassanak, az <strong>lehet</strong> követni az elfogadható hirdetéseket."
+    "message": "Felhívjuk figyelmét arra, hogy annak érdekében, hogy a hirdetés-szolgáltatók relevánsabb hirdetéseket jeleníthessenek meg, <strong>előfordulhat</strong> néhány nyomon követés elfogadható hirdetésekkel."
   },
   "options_tracking_warning_3": {
     "message": "Ha további adatvédelmet szeretne, jelölje be az alábbi <strong>$acceptableAdsPrivacy$</strong> jelölőnégyzetet.",

@@ -1,24 +1,33 @@
 {
   "filter_elemhideemulation_nodomain": {
-    "message": "没有为扩展元素隐藏规则指定有效域名"
+    "message": "未指定活动域。请为此扩展元素隐藏筛选器指定至少一个域。"
   },
   "filter_invalid_csp": {
-    "message": "无效的内容安全策略（CSP）"
+    "message": "无效的内容安全政策（语法不符合标准）。"
   },
   "filter_invalid_domain": {
-    "message": "指定的域名无效或者为空"
+    "message": "域无效或为空。域列表必须包含一个或多个逗号 (,) 分隔的域，例如，abc.com,def.com,ghi.com。"
+  },
+  "filter_invalid_option": {
+    "message": "无效的筛选器选项"
   },
   "filter_invalid_regexp": {
-    "message": "无效的正则表达式"
+    "message": "正则表达式无效（语言不符合标准）。"
   },
   "filter_slow": {
     "message": "为确保快速过滤，请检查序列长度并确保不包含正则表达式。"
   },
   "filter_snippet_nodomain": {
-    "message": "没有为代码片段过滤指定活动域"
+    "message": "未指定活动域。请为此代码段筛选器指定至少一个域。"
   },
   "filter_unknown_option": {
-    "message": "未知的过滤规则"
+    "message": "$option$ 不是有效的筛选器选项。",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "foo"
+      }
+    }
   },
   "line": {
     "message": "第 $number$ 行：$message$",
@@ -34,6 +43,6 @@
     }
   },
   "unexpected_filter_list_header": {
-    "message": "这里不允许过滤列表标题"
+    "message": "筛选器列表标头仅在可下载筛选器列表中受支持。"
   }
 }

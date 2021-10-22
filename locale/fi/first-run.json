@@ -20,9 +20,6 @@
   "firstRun_donate": {
     "message": "Lahjoita"
   },
-  "firstRun_fair_description": {
-    "message": "Kannustamme Adblock Plussan reiluun käyttöön ja hyödyntämään sallittujen sivustojen listaa. Riippuen käyttämistäsi suodattimista ymmärrät ja hyväksyt, että tahatonta toimintaa saattaa esiintyä (esim. estetään sisältöä sisvustolla). Tutustu <a0>käyttöehtoihin</a0> saadaksesi lisätietoja Adblock Plussan reilusta käytöstä."
-  },
   "firstRun_fair_title": {
     "message": "Reilu käyttö"
   },

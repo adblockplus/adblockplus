@@ -14,9 +14,6 @@
   "updates_update_i1_description": {
     "message": "Aprendo le Impostazioni, appare una nuova sezione chiamata <strong>Filtri consigliati</strong> in cui si possono facilmente attivare/disattivare i filtri consigliati con un semplice clic per migliorare l'esperienza di navigazione."
   },
-  "updates_update_i1_image": {
-    "message": "Elenchi filtri \"Blocca notifiche push\" e \"Blocca avvisi sui cookie\" evidenziati nella sezione \"FILTRI CONSIGLIATI\" della pagina opzioni"
-  },
   "updates_update_i1_title": {
     "message": "Aggiunti nuovi elenchi di filtri consigliati per facilitare l'accesso"
   },

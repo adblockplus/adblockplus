@@ -8,14 +8,8 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "अयशस्वी, चेकसम जुळत नाही"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "अयशस्वी, डाउनलोड अयशस्वी"
-  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "अयशस्वी, वैध पत्ता नाही"
-  },
-  "options_language_header": {
-    "message": "भाष"
   },
   "options_page_document_title": {
     "message": "सेटिंग्ज"

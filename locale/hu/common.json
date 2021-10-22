@@ -27,7 +27,7 @@
     "message": "Kártékony szoftverek blokkolása"
   },
   "common_feature_notifications_title": {
-    "message": "Leküldéses értesítések blokkolása"
+    "message": "Leküldött (Push) értesítések blokkolása"
   },
   "common_feature_privacy_title": {
     "message": "További követés tiltása"

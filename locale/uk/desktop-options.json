@@ -8,15 +8,6 @@
   "options_aa_opt_out_survey_ok": {
     "message": "Перейти до опитування"
   },
-  "options_acceptableAds_ads_description_1": {
-    "message": "«Допустима реклама» не дратує й не перекривається з помітним вмістом. <a>Дізнатися більше про критерії «Допустимої реклами»</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "Включити допустиму рекламу"
-  },
-  "options_acceptableAds_description": {
-    "message": "«Допустима реклама» – це ненав'язлива реклама. Це компроміс між блокуванням реклами та підтримкою онлайн-вмісту, тому що така реклама створює дохід для власників сайтів."
-  },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Примітка:</strong> Ви відключили функцію <strong>заборона відстеження (DNT)</strong> в налаштуваннях вашого браузера. Для належної роботи цієї функції, будь ласка, увімкніть <strong>DNT</strong> в налаштуваннях свого браузеру. <a>Дізнайтеся, як включити DNT</a>."
   },
@@ -64,9 +55,6 @@
   },
   "options_customize_showDevToolsPanel": {
     "message": "Показувати панель «Adblock Plus» в інструментах розробника"
-  },
-  "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Перегляд заблокованих і дозволених елементів на панелі засобів розробника вашого браузера."
   },
   "options_customize_showNotifications": {
     "message": "Показувати корисні повідомлення"
@@ -172,9 +160,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Помилка, не збіглась контрольна сума"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Помилка, неможливо викачати"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Оновлення"
   },
@@ -242,23 +227,14 @@
   "options_help_description": {
     "message": "Знайти допомогу або зв'язатися з нами"
   },
-  "options_language_add": {
-    "message": "додати мову"
-  },
   "options_language_change": {
     "message": "змінити"
-  },
-  "options_language_description": {
-    "message": "Оптимізуйте Adblock Plus для мови(-ів), на яких ви зазвичай переглядаєте сайти."
   },
   "options_language_empty": {
     "message": "У вас немає фільтрів для певних мов."
   },
   "options_language_filter_list": {
     "message": "Списки мовних фільтрів"
-  },
-  "options_language_header": {
-    "message": "Мова"
   },
   "options_language_join": {
     "message": "$lang1$, $lang2$",
@@ -281,9 +257,6 @@
   },
   "options_more_filters_description": {
     "message": "Це додаткові фільтри, які ви раніше додали в Adblock Plus."
-  },
-  "options_more_filters_header": {
-    "message": "Більше фільтрів"
   },
   "options_more_filters_note": {
     "message": "<strong>Примітка:</strong> Ви маєте використовувати тільки списки сторонніх фільтрів від авторів, яким ви довіряєте."
@@ -354,9 +327,6 @@
         "example": "Block additional tracking"
       }
     }
-  },
-  "options_tracking_warning_2": {
-    "message": "Вам слід знати, що допустима реклама <strong>може</strong> застосовувати відстеження ваших пересувань, аби показувати найцікавіші пропозиції."
   },
   "options_tracking_warning_3": {
     "message": "Якщо ви віддаєте перевагу більш високий рівень конфіденційності, позначте прапорцем нижче <strong>$acceptableAdsPrivacy$</strong>.",

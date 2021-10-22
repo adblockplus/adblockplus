@@ -2,9 +2,6 @@
   "notification_problem_message": {
     "message": "Un problema ha provocado que tus ajustes de ABP se restableciesen por defecto. <a>Corrige el problema y aprende más</a>"
   },
-  "problem_note": {
-    "message": "Ten en cuenta que, en función de cómo utilices ABP, puede que tengas que reconfigurar tus ajustes, filtros personalizados y sitios web incluidos en la lista blanca cuando hayas instalado de nuevo Adblock Plus."
-  },
   "problem_os_mac": {
     "message": "Mac"
   },

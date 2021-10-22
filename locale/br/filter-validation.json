@@ -1,24 +1,6 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "N'eus domani oberiant spisaet ebet evit ar sil a guzh an elfenn hiraet"
-  },
-  "filter_invalid_csp": {
-    "message": "Diwiriek danvez ar reolennoù surentez"
-  },
-  "filter_invalid_domain": {
-    "message": "Diwiriek (pe goullo) eo an domani spisaet"
-  },
-  "filter_invalid_regexp": {
-    "message": "Bomm reolek diwiriek"
-  },
   "filter_slow": {
     "message": "Gwirit hirder ar skouer evit bezañ sur n'ho pefe ket lakaet ur bomm reolek enni, kement-se evit ma vefe fonnusoc'h ar silañ."
-  },
-  "filter_snippet_nodomain": {
-    "message": "N'eus domani ebet spisaet evit ar sil pezhioù"
-  },
-  "filter_unknown_option": {
-    "message": "Dianav eo dibarzh ar sil"
   },
   "line": {
     "message": "Linenn $number$ : $message$",
@@ -32,8 +14,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "Talbennoù ar roll siloù n'int ket aotreet amañ"
   }
 }

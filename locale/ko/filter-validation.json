@@ -1,24 +1,33 @@
 {
   "filter_elemhideemulation_nodomain": {
-    "message": "확장된 요소 숨김 필터에 지정된 활성 도메인이 없음"
+    "message": "지정된 활성 도메인이 없습니다. 확장 요소 숨김 필터에 최소 하나의 도메인을 지정해 주십시오."
   },
   "filter_invalid_csp": {
-    "message": "잘못된 보안 정책 컨텐츠"
+    "message": "유효하지 않은 콘텐츠 보안 정책(구문이 표준을 준수하지 않음)."
   },
   "filter_invalid_domain": {
-    "message": "잘못된 (혹은 비어 있는) 도메인이 지정되었습니다"
+    "message": "유효하지 않거나 빈 도메인. 도메인 목록에는 쉼표(,)로 구분된 하나 이상의 도메인이 포함되어야 합니다. (예: abc.com,def.com,ghi.com)"
+  },
+  "filter_invalid_option": {
+    "message": "유효하지 않은 필터 옵션"
   },
   "filter_invalid_regexp": {
-    "message": "잘못된 정규 표현식"
+    "message": "유효하지 않은 정규 표현식(구문이 표준을 준수하지 않음)."
   },
   "filter_slow": {
     "message": "필터를 빠르게 유지하려면 패턴의 길이와 정규 표현식이 포함되어 있지는 않은지 확인해보세요."
   },
   "filter_snippet_nodomain": {
-    "message": "스니펫 필터에 대한 활성 도메인이 없습니다."
+    "message": "지정된 활성 도메인이 없습니다. 스니펫 필터에 최소 하나의 도메인을 지정해 주십시오."
   },
   "filter_unknown_option": {
-    "message": "알 수 없는 필터 옵션"
+    "message": "$option$ 은(는) 유효한 필터 옵션이 아닙니다.",
+    "placeholders": {
+      "option": {
+        "content": "$1",
+        "example": "foo"
+      }
+    }
   },
   "line": {
     "message": "$number$번째 줄: $message$",
@@ -34,6 +43,6 @@
     }
   },
   "unexpected_filter_list_header": {
-    "message": "여기에서 필터 목록 헤더가 허용되지 않습니다"
+    "message": "필터 목록 헤더는 다운로드 가능한 필터 목록에서만 지원됩니다."
   }
 }

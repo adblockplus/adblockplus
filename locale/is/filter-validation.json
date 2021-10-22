@@ -1,8 +1,0 @@
-{
-  "filter_invalid_regexp": {
-    "message": "Ógild regluleg segð"
-  },
-  "filter_unknown_option": {
-    "message": "Óþekkt síunnar val"
-  }
-}

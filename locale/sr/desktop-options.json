@@ -1,13 +1,4 @@
 {
-  "options_acceptableAds_ads_description_1": {
-    "message": "Прихватљиви огласи нису наметљиви и не ометају садржај који прегледате. <a>Прочитајте више о критеријуму прихватљивих огласа</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "Дозволи прихватљиве огласе"
-  },
-  "options_acceptableAds_description": {
-    "message": "Прихватљиви огласи су ненаметљиви. Они су средина између блокирања огласа и подршке онлајн-садржају јер генеришу приход за власнике веб-сајтова."
-  },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Напомена:</strong> Опција <strong>Не прати (DNT)</strong> онемогућена је у поставкама вашег прегледача. Да би ова функција радила исправно, омогућите је. <a>Сазнајте како да омогућите опцију DNT</a>."
   },
@@ -46,9 +37,6 @@
   },
   "options_customize_showDevToolsPanel": {
     "message": "Прикажи таблу „Adblock Plus” у алаткама за програмере"
-  },
-  "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Прегледајте блокиране и ставке на белој листи из табле алатки за програмере вашег прегледача."
   },
   "options_customize_showNotifications": {
     "message": "Приказуј корисна обавештења"
@@ -122,9 +110,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Грешка: неподударање контролног збира"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Дошло је до грешке при преузимању"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Ажурирам"
   },
@@ -175,29 +160,17 @@
   "options_help_description": {
     "message": "Потражите помоћ или ступите у контакт са нама"
   },
-  "options_language_add": {
-    "message": "додај језик"
-  },
   "options_language_change": {
     "message": "промени"
   },
-  "options_language_description": {
-    "message": "Оптимизујте Adblock Plus за језик(е) на којима обично претражујете веб-сајтове."
-  },
   "options_language_empty": {
     "message": "Немате ниједан филтер специфичан за језик."
-  },
-  "options_language_header": {
-    "message": "Језик"
   },
   "options_learn_more": {
     "message": "Сазнајте више"
   },
   "options_more_filters_description": {
     "message": "Ово су додатни филтери које сте раније додали у Adblock Plus."
-  },
-  "options_more_filters_header": {
-    "message": "Још филтера"
   },
   "options_more_filters_note": {
     "message": "<strong>Напомена:</strong> Требали бисте користити само листе филтера трећих страна од аутора којима вјерујете."

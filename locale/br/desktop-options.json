@@ -8,15 +8,6 @@
   "options_aa_opt_out_survey_ok": {
     "message": "Mont d'an enklask"
   },
-  "options_acceptableAds_ads_description_1": {
-    "message": "N'eo ket kazus an Acceptable Ads rak ne zirenkont ket ac'hanoc'h pa emaoc'h war ul lec'hienn.<a>Lenn muioc'h diwar-benn dezverkoù an Acceptable Ads</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "Aotreañ an Acceptable Ads"
-  },
-  "options_acceptableAds_description": {
-    "message": "N'eo ket kazus an Acceptable Ads. War an hent etre stankañ pep tra ha skoazellañ an endalc'h emaint peogwir e vez gounezet argant a-drugarez dezhe gant perc'henned al lec'hiennoù-se."
-  },
   "options_acceptableAds_header": {
     "message": "Acceptable Ads"
   },
@@ -133,9 +124,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Fazi, n'eo ket ar memes checksum"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Fazi, pellgargañ torret"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "O hizivaat"
   },
@@ -203,23 +191,14 @@
   "options_help_description": {
     "message": "Kaout skoazell pe mont e darempred ganeomp"
   },
-  "options_language_add": {
-    "message": "Ouzhpennañ ur yezh"
-  },
   "options_language_change": {
     "message": "cheñch"
-  },
-  "options_language_description": {
-    "message": "Gwellekait Adblock Plus evit ar yezh(où) a rit gante pa vezit o verdeiñ war Internet."
   },
   "options_language_empty": {
     "message": "N'ho peus sil ebet a-fet yezh."
   },
   "options_language_filter_list": {
     "message": "Rolloù ar siloù yezh"
-  },
-  "options_language_header": {
-    "message": "Yezh"
   },
   "options_language_join": {
     "message": "$lang1$, $lang2$",
@@ -242,9 +221,6 @@
   },
   "options_more_filters_description": {
     "message": "Setu siloù ouzhpenn ho poa lakaet gwechall war Adblock Plus."
-  },
-  "options_more_filters_header": {
-    "message": "Muioc'h a siloù"
   },
   "options_new_label": {
     "message": "Nevez"
@@ -300,9 +276,6 @@
         "example": "Block additional tracking"
       }
     }
-  },
-  "options_tracking_warning_2": {
-    "message": "<strong>Marteze</strong> e veoc'h heuliet gant Acceptable ads evit ma vefe kinniget deoc'h bruderezh a glotfe muioc'h ganeoc'h, deoc'h da c'houzout."
   },
   "options_tracking_warning_3": {
     "message": "Ma faotañ deoc'h gwareziñ muioc'h ho puhez prevez, grit ur groazig er c'harrezig bihan amañ dindan <strong>$acceptableAdsPrivacy$</strong>.",

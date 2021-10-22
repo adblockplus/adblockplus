@@ -1,24 +1,6 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "Intet aktivt domæne angivet for udvidet elementskjulningsfilter"
-  },
-  "filter_invalid_csp": {
-    "message": "Ugyldigt indhold iht. sikkerhedspolitik"
-  },
-  "filter_invalid_domain": {
-    "message": "Ugyldigt (eller tomt) domæne angivet"
-  },
-  "filter_invalid_regexp": {
-    "message": "Ugyldigt søgemønster"
-  },
   "filter_slow": {
     "message": "For at kunne garantere et hurtigt filter, bedes du kontroller mønsterlængden og sikre, at det ikke indeholder et regulært udtryk."
-  },
-  "filter_snippet_nodomain": {
-    "message": "Intet aktivt domæne angivet for kodestykkefilter"
-  },
-  "filter_unknown_option": {
-    "message": "Ukendt filterindstilling"
   },
   "line": {
     "message": "Linje $number$: $message$",
@@ -32,8 +14,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "Filterlisteoverskrifter er ikke tilladt her"
   }
 }

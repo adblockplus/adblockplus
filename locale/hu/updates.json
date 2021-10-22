@@ -26,6 +26,9 @@
   "updates_contribute_subtitle": {
     "message": "Az ABP fejlesztését két módon támogathatja:"
   },
+  "updates_contribute_subtitle_generic": {
+    "message": "Támogasd az ABP alkalmazást:"
+  },
   "updates_contribute_title": {
     "message": "Tetszik az Adblock Plus alkalmazás?"
   },

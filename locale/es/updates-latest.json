@@ -12,13 +12,10 @@
     "message": "¡Adblock Plus está actualizado!"
   },
   "updates_update_i1_description": {
-    "message": "Cuando abras tu Configuración, verás una nueva sección llamada <strong>Filtros recomendados</strong>. Aquí puedes activar o desactivar fácilmente los filtros recomendados con tan solo un clic y mejorar tu experiencia web."
-  },
-  "updates_update_i1_image": {
-    "message": "Listas de filtros \"Bloquear notificaciones de inserción\" y \"Bloquear avisos de cookies\" resaltadas en la sección \"FILTROS RECOMENDADOS\" de la página de opciones."
+    "message": "Cuando abras tu Configuración, ahora verás una nueva sección llamada <strong>Filtros recomendados</strong>. Aquí puedes activar o desactivar los filtros recomendados con tan solo un clic y mejorar tu experiencia web."
   },
   "updates_update_i1_title": {
-    "message": "Nueva lista de filtros recomendados para facilitar el acceso"
+    "message": "Añadidas nuevas listas recomendadas de filtros para facilitar el acceso"
   },
   "updates_update_i2_description": {
     "message": "Hemos hecho que la función Bloquear elemento sea más fácil de usar al añadir instrucciones breves, así como una vista previa del aspecto de la página sin el elemento intrusivo. ¡Pruébalo!"
@@ -30,10 +27,10 @@
     "message": "Actualización y mejora de la función \"Bloquear elemento\"."
   },
   "updates_update_i3_description": {
-    "message": "Para nuestros usuarios más avanzados, disponemos de un modo de depuración de filtros de ocultación de elementos que puede activarse en la configuración avanzada. A continuación, los elementos estarán resaltados para facilitar la depuración."
+    "message": "Para nuestros usuarios más avanzados, tenemos un modo de filtros de ocultación de elementos de depuración que puede activarse en la configuración avanzada. Al hacerlo, los elementos estarán señalados para facilitar la depuración."
   },
   "updates_update_i3_title": {
-    "message": "Modo de depuración de filtros de ocultación de elementos"
+    "message": "Añadido modo de depuración de filtros de ocultación de elementos"
   },
   "updates_update_i4_description": {
     "message": "El icono ahora parpadea y se vuelve azul para alertar a los usuarios de las notificaciones."

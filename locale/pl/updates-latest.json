@@ -12,13 +12,10 @@
     "message": "Adblock Plus został zaktualizowany!"
   },
   "updates_update_i1_description": {
-    "message": "Po otwarciu Ustawień zobaczysz nową sekcję <strong>Zalecane filtry</strong>. Tutaj za pomocą jednego kliknięcia możesz łatwo włączyć/wyłączyć zalecane filtry i poprawić swoje korzystanie z sieci."
-  },
-  "updates_update_i1_image": {
-    "message": "Listy filtrów \"Blokuj powiadomienia\" oraz \"Blokuj ostrzeżenia o plikach cookie\" są podświetlone w sekcji \"ZALECANE FILTRY\" na stronie opcji"
+    "message": "Po otwarciu Ustawień zobaczysz nową sekcję o nazwie <strong>Zalecane filtry</strong>. Tutaj możesz łatwo włączać/wyłączać zalecane filtry jednym kliknięciem oraz poprawiać wrażenia z korzystania z Internetu."
   },
   "updates_update_i1_title": {
-    "message": "Dodano nowe listy zalecanych filtrów dla łatwiejszego dostępu"
+    "message": "Dodano nowe zalecane listy filtrów dla łatwiejszego dostępu"
   },
   "updates_update_i2_description": {
     "message": "Uprościliśmy funkcję Blokuj element, dodając krótkie instrukcje, a także podgląd wyglądu strony bez uciążliwego elementu. Wypróbuj to!"
@@ -30,10 +27,10 @@
     "message": "Uaktualniona i ulepszona funkcja Blokuj element"
   },
   "updates_update_i3_description": {
-    "message": "Dla naszych bardziej zaawansowanych użytkowników mamy nowy tryb ukrywania filtrów debugowania elementów, który można włączyć w ustawieniach zaawansowanych. Elementy będą wtedy podświetlone dla ułatwienia debugowania."
+    "message": "Dla naszych bardziej zaawansowanych użytkowników, mamy nowy tryb ukrycia filtrów debugowania elementów, który można włączyć w ustawieniach zaawansowanych. Elementy będą wtedy podświetlone dla ułatwienia debugowania."
   },
   "updates_update_i3_title": {
-    "message": "Dodano tryb ukrywania filtrów debugowania elementów"
+    "message": "Dodany tryb ukrycia filtrów debugowania elementów"
   },
   "updates_update_i4_description": {
     "message": "Ikona miga i zmienia kolor na niebieski, aby poinformować użytkownika o nowych powiadomieniach."

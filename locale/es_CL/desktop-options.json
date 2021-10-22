@@ -8,15 +8,6 @@
   "options_aa_opt_out_survey_ok": {
     "message": "Acceder a la encuesta"
   },
-  "options_acceptableAds_ads_description_1": {
-    "message": "Los anuncios aceptables no son molestos y no interfieren con el contenido que estás viendo. <a>Lee más acerca de los criterios de Anuncios Aceptables</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "Permitir anuncios aceptables"
-  },
-  "options_acceptableAds_description": {
-    "message": "Los anuncios aceptables son anuncios no intrusivos. Están entremedio del bloqueo de anuncios y el apoyo al contenido en línea ya que generan ingresos para los dueños de sitios web."
-  },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Nota:</strong> Tienes desactivada la función <strong>No realizar seguimiento (DNT)</strong> en tus ajustes del navegador. Para que esta funcione correctamente, activa <strong>DNT</strong> en las preferencias de tu navegador. <a>Descubre cómo activar DNT</a>."
   },
@@ -64,9 +55,6 @@
   },
   "options_customize_showDevToolsPanel": {
     "message": "Mostrar el panel de \"Adblock Plus\" en las herramientas de desarrollador"
-  },
-  "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Ver elementos bloqueados y en lista blanca desde el panel de herramientas de desarrollador de tu navegador."
   },
   "options_customize_showNotifications": {
     "message": "Mostrar notificaciones útiles"
@@ -169,9 +157,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Fallido, falta de suma de comprobación"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Fallido, fallo al descargar"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Actualizando"
   },
@@ -239,23 +224,14 @@
   "options_help_description": {
     "message": "Buscar ayuda o contactar con nosotros"
   },
-  "options_language_add": {
-    "message": "agregar un idioma"
-  },
   "options_language_change": {
     "message": "cambiar"
-  },
-  "options_language_description": {
-    "message": "Optimizar Adblock Plus para el lenguaje(s) con que normalmente navega por páginas web."
   },
   "options_language_empty": {
     "message": "No tiene ningún filtro de idioma específico."
   },
   "options_language_filter_list": {
     "message": "Listas de Filtros de Idioma"
-  },
-  "options_language_header": {
-    "message": "Lenguaje"
   },
   "options_language_join": {
     "message": "$lang1$, $lang2$",
@@ -278,9 +254,6 @@
   },
   "options_more_filters_description": {
     "message": "Estos son los filtros adicionales que agregaste previamente a Adblock Plus."
-  },
-  "options_more_filters_header": {
-    "message": "Más filtros"
   },
   "options_more_filters_note": {
     "message": "<strong>Nota:</strong> Solo debes utilizar listas de filtros de terceros de autores en los que confíes."
@@ -342,9 +315,6 @@
         "example": "Block additional tracking"
       }
     }
-  },
-  "options_tracking_warning_2": {
-    "message": "Queremos que sepas que para que los anunciantes puedan mostrarte publicidad de mayor relevancia, <strong>tal vez</strong> haya algún tipo de seguimiento con los Anuncios Aceptables."
   },
   "options_tracking_warning_3": {
     "message": "Si prefieres privacidad extra, selecciona la casilla <strong>$acceptableAdsPrivacy$</strong> a continuación.",

@@ -1,16 +1,4 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "Ez da domeinu aktiborik zehaztu elementuak ezkutatzeko iragazki hedatuarentzat"
-  },
-  "filter_invalid_domain": {
-    "message": "Domeinu baliogabea (edo hutsa) zehaztu da"
-  },
-  "filter_invalid_regexp": {
-    "message": "Adierazpen erregular baliogabea"
-  },
-  "filter_unknown_option": {
-    "message": "Iragazki aukera ezezaguna"
-  },
   "line": {
     "message": "$number$ lerroa: $message$",
     "placeholders": {
@@ -23,8 +11,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "Iragazki zerrenden goiburuak ez dira hemen onartzen"
   }
 }

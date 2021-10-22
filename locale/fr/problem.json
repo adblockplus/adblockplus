@@ -3,7 +3,7 @@
     "message": "Un problème a causé la réinitialisation des paramètres ABP par défaut. <a>Résoudre le problème et en savoir plus</a>"
   },
   "problem_note": {
-    "message": "Veuillez noter que selon la manière dont vous utilisez ABP, vous devrez peut-être reconfigurer vos paramètres, filtres personnalisés, et vos sites sur listes blanches lorsque vous réinstallerez Adblock Plus."
+    "message": "Veuillez noter qu’en fonction de la manière dont vous utilisez ABP, vous devrez peut-être reconfigurer vos paramètres, vos filtres personnalisés et votre liste de sites web autorisés lorsque vous réinstallerez Adblock Plus."
   },
   "problem_os_mac": {
     "message": "Mac"

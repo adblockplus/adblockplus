@@ -1,4 +1,7 @@
 {
+  "devtools_header_state_allowlisted": {
+    "message": "που επιτρέπεται"
+  },
   "devtools_request_url": {
     "message": "<a0>$original$</a0> επανεγγράφηκε σε <a1>$rewritten$</a1>",
     "placeholders": {

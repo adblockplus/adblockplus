@@ -3,7 +3,7 @@
     "message": "Um problema fez as configurações do ABP serem redefinidas ao padrão. <a>Corrija o problema e saiba mais</a>"
   },
   "problem_note": {
-    "message": "Observe que, dependendo de como você usa o ABP, poderá ser necessário redefinir as configurações, filtros personalizados e sites na lista de permissões depois de reinstalar o Adblock Plus."
+    "message": "Observe que, dependendo de como você usa o ABP, poderá ser necessário redefinir as configurações, filtros personalizados e sites permitidos depois de reinstalar o Adblock Plus."
   },
   "problem_os_mac": {
     "message": "Mac"

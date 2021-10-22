@@ -8,12 +8,6 @@
   "options_aa_opt_out_survey_ok": {
     "message": "සමීක්ෂණයටකට යන්න"
   },
-  "options_acceptableAds_ads_label": {
-    "message": "පිළිගත හැකි දැන්වීම්"
-  },
-  "options_acceptableAds_description": {
-    "message": "පිළිගත හැකි දැන්වීම් යනු අවිනිශ්චිත දැන්වීම් ය. වෙබ් අඩවි හිමිකරුවන් සඳහා ආදායම් උත්පාදනය කරන බැවින් ඒවා දැන්වීම් අවහිර කිරීම සහ සබැඳි අන්තර්ගතයට සහාය වීම අතර මැද කොටස වේ."
-  },
   "options_acceptableAds_header": {
     "message": "පිළිගත හැකි දැන්වීම්"
   },
@@ -25,9 +19,6 @@
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "අසාර්ථක විය, පරීක්ෂාකිරීම් ගණනය වෙනස්ය"
-  },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "අසාර්ථක විය, බාගතකිරීම අසාර්ථකයි"
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "අසාර්ථකයි, වලංගු ලිපිනයක් නාෙවේ"
@@ -86,9 +77,6 @@
         "example": "Block additional tracking"
       }
     }
-  },
-  "options_tracking_warning_2": {
-    "message": "දැන්වීම්කරුවන් ඔබට වඩාත් අදාළ දැන්වීම් පෙන්වීම සඳහා, <strong>මැයි</strong> පිළිගත හැකි දැන්වීම් සමඟ යම් ලුහුබැඳීමක් ඇති බව ඔබ දැන ගැනීමට අපට අවශ්‍යය."
   },
   "options_tracking_warning_3": {
     "message": "ඔබ අමතර පෞද්ගලිකත්වයට කැමති නම්, තෝරන්න <strong>$acceptableAdsPrivacy$</strong> පිරික්සුම් කොටුව පහතින්",

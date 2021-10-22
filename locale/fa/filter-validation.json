@@ -1,22 +1,4 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "هیچ دامنه فعال برای فیلترینگ پنهان شده مشخص نشده است"
-  },
-  "filter_invalid_csp": {
-    "message": "سیاست امنیتی نامعتبر مطالب"
-  },
-  "filter_invalid_domain": {
-    "message": "دامنه نامعتبر (یا خالی) انتخاب شده است"
-  },
-  "filter_invalid_regexp": {
-    "message": "الگوی جستجوی نامعتبر"
-  },
-  "filter_snippet_nodomain": {
-    "message": "هیچ دامنه فعال برای فیلتر snippet مشخص نشده است"
-  },
-  "filter_unknown_option": {
-    "message": "فیلتر ناشناخته"
-  },
   "line": {
     "message": "خط $number$: $message$",
     "placeholders": {
@@ -29,8 +11,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "فیلتر لیست هدر ها ، اینجا مجاز نیست"
   }
 }

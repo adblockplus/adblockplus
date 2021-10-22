@@ -1,22 +1,4 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "Незададен действащ домейн към скриващия филтър за разширени елементи"
-  },
-  "filter_invalid_csp": {
-    "message": "Недействителна политика за сигурност на съдържанието"
-  },
-  "filter_invalid_domain": {
-    "message": "Недействително зададен (или празен) домейн"
-  },
-  "filter_invalid_regexp": {
-    "message": "Недействителен регулярен израз"
-  },
-  "filter_snippet_nodomain": {
-    "message": "Незададен действащ домейн към филтъра за фрагменти"
-  },
-  "filter_unknown_option": {
-    "message": "Неизвестна настройка на филтъра"
-  },
   "line": {
     "message": "Ред $number$: $message$",
     "placeholders": {
@@ -29,8 +11,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "Непозволени заглавия на филтри"
   }
 }

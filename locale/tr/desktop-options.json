@@ -9,13 +9,13 @@
     "message": "Ankete katılın"
   },
   "options_acceptableAds_ads_description_1": {
-    "message": "Kabul edilebilir reklamlar, can sıkıcı olmayan ve görüntülemekte olduğunuz içeriğe müdahale etmeyen reklamlardır. <a>Kabul edilebilir reklamlar ölçütleri hakkında daha fazla bilgi alın</a>"
+    "message": "Kabul edilebilir reklamlar, görüntülediğiniz içeriği engellemez. <a>Daha fazla bilgi edin</a>"
   },
   "options_acceptableAds_ads_label": {
-    "message": "Kabul edilebilir reklamlara izin ver"
+    "message": "Kabul edilebilir reklamları göster"
   },
   "options_acceptableAds_description": {
-    "message": "Kabul edilebilir reklamlar, rahatsız etmeyen reklamlardır. Bu tür reklamlar, reklamları tamamen engellemekle çevrim içi içeriği desteklemek arasında bir arayoldur, çünkü site sahiplerinin gelir elde etmelerini sağlarlar."
+    "message": "Kabul edilebilir reklamlar, katı bir reklam standardına uygun olan ve sinir bozucu olmayan reklamlardır. Bu reklamlar, içerik oluşturucuların gelir elde etmesine yardımcı olur ve görüntülediğiniz içeriği engellemez."
   },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Açıklama:</strong> Tarayıcı ayarlarınızda <strong>Do Not Track (DNT)</strong> seçeneği devre dışı olarak ayarlı. Bu özelliğin düzgün çalışmasını sağlamak için lütfen tarayıcı tercihlerinizde <strong>DNT</strong> özelliğini devreye alın. <a>DNT'yi nasıl devreye alabileceğinizi öğrenin</a>."
@@ -28,6 +28,29 @@
   },
   "options_advanced_description": {
     "message": "Adblock Plus'ı özelleştirin; süzme listeleri ekleyin veya çıkarın; kendi süzme listelerinizi oluşturun veya düzenleyin"
+  },
+  "options_allowlist_add": {
+    "message": "Web sitesi ekle"
+  },
+  "options_allowlist_description": {
+    "message": "Bu web sitelerinde reklam engellemeyi kapattınız; bu nedenle, bu web sitelerindeki reklamları göreceksiniz."
+  },
+  "options_allowlist_empty_1": {
+    "message": "İzin verilenler listenizde hiç web sitesi yok."
+  },
+  "options_allowlist_empty_2": {
+    "message": "Güvendiğiniz ve reklamlara izin vermek istediğiniz web siteleri burada gösterilir."
+  },
+  "options_allowlist_notification": {
+    "message": "Web sitesi izin listesine eklendi."
+  },
+  "options_allowlist_placeholder_example": {
+    "message": "örn. $domain$",
+    "placeholders": {
+      "domain": {
+        "content": "www.example.com"
+      }
+    }
   },
   "options_builtin_filterList_add": {
     "message": "Yerleşik süzgeç listeleri ekleyin"
@@ -72,7 +95,7 @@
     "message": "Geliştirici araçlarında 'Adblock Plus' panelini göster"
   },
   "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Tarayıcınızın geliştirici araçları panelinde engellenen veya beyaz listeye alınan öğeleri göster."
+    "message": "Tarayıcınızın geliştirici araçları panelinden engellenen ve izin verilen ögeleri görüntüleyin."
   },
   "options_customize_showNotifications": {
     "message": "Yararlı bildirimlerini göster"
@@ -172,6 +195,15 @@
   "options_filterList_empty": {
     "message": "Adblock Plus'a hiçbir süzme listesi eklemediniz. Eklediğiniz süzme listeleri burada gösterilecektir."
   },
+  "options_filterList_enableFilters": {
+    "message": "Bunları etkinleştir"
+  },
+  "options_filterList_errorPopup_title": {
+    "message": "Bu filtre listesiyle ilgili bir veya daha fazla sorun var:"
+  },
+  "options_filterList_filtersDisabled": {
+    "message": "Bu filtre listesindeki bazı filtreler devre dışı bırakıldı."
+  },
   "options_filterList_hours": {
     "message": "saat önce"
   },
@@ -179,7 +211,7 @@
     "message": "Başarısız. Sağlama yapılamadı."
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "İndirme başarısız"
+    "message": "Filtre listesi indirilemedi."
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Güncelleniyor"
@@ -249,13 +281,13 @@
     "message": "Yardıma veya bize ulaşın"
   },
   "options_language_add": {
-    "message": "dil ekle"
+    "message": "Bir dil filtresi listesi ekleyin"
   },
   "options_language_change": {
     "message": "değiştir"
   },
   "options_language_description": {
-    "message": "Adblock Plus'u ziyaret ettiğiniz sitelerin dillerine göre en iyi hâle getirin."
+    "message": "Adblock Plus'ın reklamları engellemesini istediğiniz dilleri ekleyin veya kaldırın. <a0>Daha fazla bilgi edinin</a0>"
   },
   "options_language_empty": {
     "message": "Henüz herhangi bir dile özel süzgeç listeniz yok."
@@ -264,7 +296,7 @@
     "message": "Dil Süzgeci Listeleri"
   },
   "options_language_header": {
-    "message": "Dil"
+    "message": "Dil filtresi listeleri"
   },
   "options_language_join": {
     "message": "$lang1$, $lang2$",
@@ -279,6 +311,12 @@
       }
     }
   },
+  "options_language_recommend": {
+    "message": "Kullanılabilir dil filtresi listelerini bana bildir"
+  },
+  "options_language_recommend_tooltip": {
+    "message": "Adblock Plus, farklı dillerdeki reklamları engellemek için filtre listelerini esas alır."
+  },
   "options_language_tip": {
     "message": "<strong>İPUCU:</strong> Sadece ihtiyaç duyduğunuz dilleri seçin. Daha fazla dil seçmek reklam engelleyiciyi, dolayısıyla tarama hızınızı azaltacak."
   },
@@ -289,7 +327,7 @@
     "message": "Bunlar Adblock Plus'a daha önce eklediğiniz ek süzgeçler."
   },
   "options_more_filters_header": {
-    "message": "Daha fazla süzgeç"
+    "message": "Daha fazla filtre listesi"
   },
   "options_more_filters_note": {
     "message": "<strong>Not:</strong> Yalnızca güvendiğiniz geliştiricilerin üçüncü taraf süzme listelerini kullanmalısınız."
@@ -354,6 +392,9 @@
   "options_tab_advanced": {
     "message": "Gelişmiş"
   },
+  "options_tab_allowlist": {
+    "message": "İzin verilenler listesindeki web siteleri"
+  },
   "options_tab_general": {
     "message": "Genel"
   },
@@ -377,7 +418,7 @@
     }
   },
   "options_tracking_warning_2": {
-    "message": "Reklamcıların size daha uygun reklam gösterebilmeleri amacıyla, Kabul Edilebilir Reklamlar'dan bazıları sizi takip ediyor <strong>olabilir</strong>."
+    "message": "Reklamverenlerin size ilgi alanlarınıza daha uygun olan reklamlar göstermesi için, kabul edilebilir reklamlarla bir miktar izleme <strong>yapılabileceğini</strong> bilmenizi isteriz."
   },
   "options_tracking_warning_3": {
     "message": "Daha fazla gizlilik istiyorsanız aşağıdaki <strong>$acceptableAdsPrivacy$</strong> kutucuğunu işaretleyin.",

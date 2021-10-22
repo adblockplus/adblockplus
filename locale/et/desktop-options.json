@@ -8,15 +8,6 @@
   "options_aa_opt_out_survey_ok": {
     "message": "Mine küsitlusele vastama"
   },
-  "options_acceptableAds_ads_description_1": {
-    "message": "Lubatavad reklaamid ei ole tüütud ega sega vaadatavat sisu. <a>Loe Lubatavate reklaamide tingimuste kohta lähemalt</a>"
-  },
-  "options_acceptableAds_ads_label": {
-    "message": "Luba Lubatavad reklaamid"
-  },
-  "options_acceptableAds_description": {
-    "message": "Lubatavad reklaamid on mitte-pealetükkivad reklaamid. Need on kompromissiks reklaamide blokeerimise ja veebisisu toetamise vahel, sest need toovad veebisaitide omanikele tulu."
-  },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Pane tähele:</strong> Sinu veebilehitseja sätetes on <strong>Jälgimisvastane kaitse (DNT)</strong> keelatud. Selle funktsiooni korralikuks töötamiseks palun luba oma veebilehitseja eelistustes <strong>DNT</strong>. <a>Uuri järele, kuidas DNT lubada</a>."
   },
@@ -61,9 +52,6 @@
   },
   "options_customize_showDevToolsPanel": {
     "message": "Näita arendaja tööriistades paneeli 'Adblock Plus'"
-  },
-  "options_customize_showDevToolsPanel_tooltip": {
-    "message": "Vaata blokeeritud ja lubatud elemente oma veebilehitseja arendaja tööriistade paneelil."
   },
   "options_customize_showNotifications": {
     "message": "Näita kasulikke teateid"
@@ -146,9 +134,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Nurjus, kontrollsumma ei klapi"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Nurjus, allalaadimise viga"
-  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Uuendamine"
   },
@@ -205,20 +190,11 @@
   "options_help_description": {
     "message": "Leia abi või võta meiega ühendust"
   },
-  "options_language_add": {
-    "message": "Lisa keel"
-  },
   "options_language_change": {
     "message": "muuda"
   },
-  "options_language_description": {
-    "message": "Optimeeri Adblock Plus tavaliselt sirvitavate veebisaitide keel(t)e jaoks."
-  },
   "options_language_empty": {
     "message": "Sul pole ühtki keelepõhist filtrit."
-  },
-  "options_language_header": {
-    "message": "Keel"
   },
   "options_language_join": {
     "message": "$lang1$, $lang2$",
@@ -241,9 +217,6 @@
   },
   "options_more_filters_description": {
     "message": "Need on eelnevalt lisatud Adblock Plusi lisafiltrid."
-  },
-  "options_more_filters_header": {
-    "message": "Veel filtreid"
   },
   "options_more_filters_note": {
     "message": "<strong>Pane tähele:</strong> Sa peaksid lisama ainult usaldatavatelt autoritelt pärit kolmanda osapoole filtrite nimekirju."
@@ -305,9 +278,6 @@
         "example": "Block additional tracking"
       }
     }
-  },
-  "options_tracking_warning_2": {
-    "message": "Soovime sulle teatada, et reklaamijad saaks sulle näidata asjakohasemaid reklaame, on Lubatud reklaamidel <strong>võibolla</strong> mõnd jälitamist."
   },
   "options_tracking_warning_3": {
     "message": "Kui eelistad täiendavat privaatsust, märgista allolev märkeruut <strong>$acceptableAdsPrivacy$</strong>.",

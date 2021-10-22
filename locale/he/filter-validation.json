@@ -1,24 +1,6 @@
 {
-  "filter_elemhideemulation_nodomain": {
-    "message": "תחום פעיל לא צויין עבור אלמנט מורחב של מסנן הסתרה"
-  },
-  "filter_invalid_csp": {
-    "message": "מדיניות בלתי תקפה של אבטחת תוכן"
-  },
-  "filter_invalid_domain": {
-    "message": "תחום בלתי תקף (או ריק) צויין"
-  },
-  "filter_invalid_regexp": {
-    "message": "ביטוי רגולרי בלתי תקף"
-  },
   "filter_slow": {
     "message": "כדי להבטיח סינון מהיר, אנא בדוק את האורך של הדפוס ווודא שהוא אינו מכיל ביטוי רגולרי."
-  },
-  "filter_snippet_nodomain": {
-    "message": "תחום פעיל לא צויין עבור מסנן תגזירים"
-  },
-  "filter_unknown_option": {
-    "message": "אפשרות מסנן לא ידועה"
   },
   "line": {
     "message": "שורה $number$: $message$",
@@ -32,8 +14,5 @@
         "example": "42"
       }
     }
-  },
-  "unexpected_filter_list_header": {
-    "message": "כותרות רשימת מסננים אינן מותרות כאן"
   }
 }

@@ -17,9 +17,6 @@
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Malsukcesis, kontrolsuma miskongruo"
   },
-  "options_filterList_lastDownload_connectionError": {
-    "message": "Malsukcesis, elŝuta eraro"
-  },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Malsukcesis, tio ne estas valida adreso"
   },

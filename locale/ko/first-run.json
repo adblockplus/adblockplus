@@ -14,6 +14,9 @@
   "firstRun_donate": {
     "message": "기부하기"
   },
+  "firstRun_fair_description": {
+    "message": "저희는 Adblock Plus의 공정한 사용과 귀하의 허용 목록에 웹사이트 추가 옵션을 장려합니다. 사용하시는 필터에 따라 의도하지 않은 결과(예: 웹사이트의 콘텐츠 차단)가 발생할 수 있음을 이해하고 수용합니다. Adblock Plus의 공정한 사용에 관한 더 자세한 정보는 <a0>이용 약관</a0>을 참조하십시오."
+  },
   "firstRun_fair_title": {
     "message": "공정 이용"
   },

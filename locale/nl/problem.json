@@ -3,7 +3,7 @@
     "message": "Door een probleem zijn uw ABP-instellingen teruggezet naar de standaardwaarden. <a>Het probleem oplossen en meer info</a>"
   },
   "problem_note": {
-    "message": "Houd er rekening mee dat afhankelijk van hoe u ABP gebruikt, u mogelijk uw instellingen, persoonlijke filters en op de witte lijst geplaatste websites opnieuw moet configureren zodra u Adblock Plus opnieuw installeert."
+    "message": "Let op dat, afhankelijk van hoe u ABP gebruikt, het misschien nodig is na het herinstalleren van Adblock Plus uw instellingen opnieuw te configureren, alsmede de filters en op de lijst toegestane websites aan te passen."
   },
   "problem_os_mac": {
     "message": "Mac"
