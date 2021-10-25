@@ -42,7 +42,7 @@
     "test": "npm run test-only --",
     "postinstall": "npm run install-ui && npm run install-snippets",
     "install-ui": "npm install --only=production --loglevel=error --no-audit --no-fund --no-optional --prefix ..",
-    "install-snippets": "[ -d ../vendor/abp-snippets ] && npm install --loglevel=error --no-audit --no-fund --no-optional --prefix ../vendor/abp-snippets || echo 'Skipping abp-snippets installation'",
+    "install-snippets": "[ -d ../vendor/abp-snippets ] && npm install --loglevel=error --no-audit --no-fund --prefix ../vendor/abp-snippets || echo 'Skipping abp-snippets installation'",
     "posttest": "npm run lint",
     "docs": "jsdoc --configure jsdoc.conf --destination docs lib",
     "download-test-browsers": "node test/bin/downloadBrowsers.js"
