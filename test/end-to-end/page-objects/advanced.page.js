@@ -101,6 +101,13 @@ class AdvancedPage extends BasePage
       .$("//a[text()='Learn how to write filters (English only)']");
   }
 
+  get showAdblockPlusPanelCheckbox()
+  {
+    return this.browser
+      .$("//li[@data-pref='show_devtools_panel']/button");
+  }
+
+
   get showAdblockPlusPanelTooltipIcon()
   {
     return this.browser
@@ -113,6 +120,12 @@ class AdvancedPage extends BasePage
     return this.browser
       .$("//li[@data-pref='show_devtools_panel']" +
         "/io-popout/div/div/p");
+  }
+
+  get showBlockElementCheckbox()
+  {
+    return this.browser
+      .$("//li[@data-pref='shouldShowBlockElementMenu']/button");
   }
 
   get showBlockElementTooltipIcon()
@@ -129,6 +142,18 @@ class AdvancedPage extends BasePage
         "/io-popout/div/div/p");
   }
 
+  get showNumberOfAdsBlockedCheckbox()
+  {
+    return this.browser
+      .$("//li[@data-pref='show_statsinicon']/button");
+  }
+
+  get showUsefulNotificationsCheckbox()
+  {
+    return this.browser
+      .$("//li[@data-pref='notifications_ignoredcategories']/button");
+  }
+
   get showUsefulNotificationsTooltipIcon()
   {
     return this.browser
@@ -141,6 +166,12 @@ class AdvancedPage extends BasePage
     return this.browser
       .$("//li[@data-pref='notifications_ignoredcategories']" +
         "/io-popout/div/div/p");
+  }
+
+  get turnOnDebugElementCheckbox()
+  {
+    return this.browser
+      .$("//li[@data-pref='elemhide_debug']/button");
   }
 
   get turnOnDebugElementTooltipIcon()
@@ -167,9 +198,19 @@ class AdvancedPage extends BasePage
     await (await this.learnHowToWriteFiltersLink).click();
   }
 
+  async clickShowAdblockPlusPanelCheckbox()
+  {
+    await (await this.showAdblockPlusPanelCheckbox).click();
+  }
+
   async clickShowAdblockPlusPanelTooltipIcon()
   {
     await (await this.showAdblockPlusPanelTooltipIcon).click();
+  }
+
+  async clickShowBlockElementCheckbox()
+  {
+    await (await this.showBlockElementCheckbox).click();
   }
 
   async clickShowBlockElementTooltipIcon()
@@ -177,9 +218,19 @@ class AdvancedPage extends BasePage
     await (await this.showBlockElementTooltipIcon).click();
   }
 
+  async clickShowNumberOfAdsBlockedCheckbox()
+  {
+    await (await this.showNumberOfAdsBlockedCheckbox).click();
+  }
+
   async clickShowUsefulNotificationsTooltipIcon()
   {
     await (await this.showUsefulNotificationsTooltipIcon).click();
+  }
+
+  async clickTurnOnDebugElementCheckbox()
+  {
+    await (await this.turnOnDebugElementCheckbox).click();
   }
 
   async clickTurnOnDebugElementTooltipIcon()
@@ -195,6 +246,11 @@ class AdvancedPage extends BasePage
   async getShowBlockElementTooltipText()
   {
     return await (await this.showBlockElementTooltipText).getText();
+  }
+
+  async clickShowUsefulNotificationsCheckbox()
+  {
+    await (await this.showUsefulNotificationsCheckbox).click();
   }
 
   async getShowUsefulNotificationsTooltipText()
@@ -252,9 +308,23 @@ class AdvancedPage extends BasePage
     return await this.waitForDisplayedNoError(this.iDontCareAboutCookiesFL);
   }
 
+  async isShowAdblockPlusPanelCheckboxSelected(expectedValue = "true",
+                                               timeoutVal = 3000)
+  {
+    return await this.waitUntilIsSelected(this.showAdblockPlusPanelCheckbox,
+                                          expectedValue, timeoutVal);
+  }
+
   async isShowAdblockPlusPanelTooltipTextDisplayed()
   {
     return await (await this.showAdblockPlusPanelTooltipText).isDisplayed();
+  }
+
+  async isShowBlockElementCheckboxSelected(expectedValue = "true",
+                                           timeoutVal = 3000)
+  {
+    return await this.waitUntilIsSelected(this.showBlockElementCheckbox,
+                                          expectedValue, timeoutVal);
   }
 
   async isShowBlockElementTooltipTextDisplayed()
@@ -262,9 +332,30 @@ class AdvancedPage extends BasePage
     return await (await this.showBlockElementTooltipText).isDisplayed();
   }
 
+  async isShowNumberOfAdsBlockedCheckboxSelected(expectedValue = "true",
+                                                 timeoutVal = 3000)
+  {
+    return await this.waitUntilIsSelected(this.showNumberOfAdsBlockedCheckbox,
+                                          expectedValue, timeoutVal);
+  }
+
+  async isShowUsefulNotificationsCheckboxSelected(expectedValue = "true",
+                                                  timeoutVal = 3000)
+  {
+    return await this.waitUntilIsSelected(this.showUsefulNotificationsCheckbox,
+                                          expectedValue, timeoutVal);
+  }
+
   async isShowUsefulNotificationsTooltipTextDisplayed()
   {
     return await (await this.showUsefulNotificationsTooltipText).isDisplayed();
+  }
+
+  async isTurnOnDebugElementCheckboxSelected(expectedValue = "true",
+                                             timeoutVal = 3000)
+  {
+    return await this.waitUntilIsSelected(this.turnOnDebugElementCheckbox,
+                                          expectedValue, timeoutVal);
   }
 
   async isTurnOnDebugElementTooltipTextDisplayed()

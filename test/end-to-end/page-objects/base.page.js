@@ -76,6 +76,20 @@ class BasePage
       return false;
     }
   }
+
+  async waitUntilIsSelected(element, expectedValue = "true",
+                            timeoutVal = 3000)
+  {
+    return await (await element).
+    waitUntil(async function()
+    {
+      return await (await this.
+      getAttribute("aria-checked")) === expectedValue;
+    }, {
+      timeout: timeoutVal,
+      timeoutMsg: "Timeout while waiting on condition."
+    });
+  }
 }
 
 module.exports = BasePage;
