@@ -15,18 +15,6 @@
     "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
     "message": "Adblock Plus is up-to-date!"
   },
-  "updates_update_i1_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3847450caab5a3d58b57965e0ce566d3eb41c396/spec/abp/updates.md#current-updates",
-    "message": "When you navigate to a page where 1 or more elements are blocked, you'll be able to easily turn them on/off and see what the page looks like without them. You can also remove any unnecessary blocked elements straight from the new interface. Check it out!"
-  },
-  "updates_update_i1_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3847450caab5a3d58b57965e0ce566d3eb41c396/spec/abp/updates.md#current-updates",
-    "message": "Introduced the Block Element Settings button for quick access to page filter rules"
-  },
-  "updates_update_i1_video": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3847450caab5a3d58b57965e0ce566d3eb41c396/spec/abp/updates.md#current-updates",
-    "message": "\"Block element settings\" button is highlighted, displaying a number and a pen icon. It gets clicked and a list of page filter rules appears. One of the rules gets switched off, a \"Save & Refresh\" button gets clicked, the filter list hides and the \"Block element settings\" button number decreases."
-  },
   "updates_update_i2_description": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/3847450caab5a3d58b57965e0ce566d3eb41c396/spec/abp/updates.md#current-updates",
     "message": "You can now visit websites in other languages and still have the ads blocked. When you visit a website in a specific language, you will be able to choose whether you want to block ads on all websites in that language. You can turn this option on/off in <strong>Settings > General > Language filter lists</strong>. The option is already available for our users on Chrome, Firefox and Microsoft Edge and is soon coming to Opera as well."
@@ -78,13 +66,5 @@
   "updates_update_f3_title": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/3847450caab5a3d58b57965e0ce566d3eb41c396/spec/abp/updates.md#current-updates",
     "message": "Fixed wrong link behind the \"Rate it\" button"
-  },
-  "updates_update_f4_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3847450caab5a3d58b57965e0ce566d3eb41c396/spec/abp/updates.md#current-updates",
-    "message": "For security reasons, only HTTPS filter lists and data URLs can be added. That means that any existing insecure filter lists have been automatically turned off. We've added a notification to alert you when such a filter is turned off so you can remove and replace it."
-  },
-  "updates_update_f4_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3847450caab5a3d58b57965e0ce566d3eb41c396/spec/abp/updates.md#current-updates",
-    "message": "Added notification when insecure filter lists are installed"
   }
 }
