@@ -5,11 +5,9 @@
   "fixes": [
     {"id": "f1"},
     {"id": "f2"},
-    {"id": "f3"},
-    {"id": "f4"}
+    {"id": "f3"}
   ],
   "improvements": [
-    {"id": "i1", "video": {"url": "skin/icons/updates/block-elements-settings.mp4"}},
     {"id": "i2", "image": {"url": "skin/icons/updates/smart-filter-lists.png"}},
     {"id": "i3"},
     {"id": "i4"}
