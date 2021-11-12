@@ -11,31 +11,43 @@
   "updates_title": {
     "message": "Adblock Plus 已更新！"
   },
-  "updates_update_i1_description": {
-    "message": "打开设置后，您将看到一个称为<strong>推荐筛选器</strong>的新部分。在这里，您只需点击一下就可以轻松打开/关闭推荐的筛选器，以提升您的网络体验。"
+  "updates_update_f1_description": {
+    "message": "我们更新了措词，以后将使用<strong>允许列表</strong>一词。"
   },
-  "updates_update_i1_title": {
-    "message": "添加了新的推荐筛选器列表以便于访问"
+  "updates_update_f1_title": {
+    "message": "更新了我们的措词"
+  },
+  "updates_update_f2_description": {
+    "message": "现在当可下载筛选清单中的某些筛选器关闭时，您将收到通知，这样您就可以方便地重新启用这些筛选器。"
+  },
+  "updates_update_f2_title": {
+    "message": "添加了在可下载筛选清单中重新启用筛选器的选项"
+  },
+  "updates_update_f3_description": {
+    "message": "我们更新了 Microsoft Edge 上“对此评分”按钮背后的链接，使其指向正确的外接附件商店。"
+  },
+  "updates_update_f3_title": {
+    "message": "更正了“对此评分”按钮背后的错误链接"
   },
   "updates_update_i2_description": {
-    "message": "我们通过添加简短的说明，以及提供页面在没有侵入性元素时的预览，让“拦截元素”功能更易于使用。试用一下吧！"
+    "message": "您现在可以访问其他语言的网站，并且仍可拦截广告。访问特定语言的网站时，您将可选择是否想对该语言的所有网站拦截广告。您可以在<strong>设置 > 一般 > 语言筛选清单</strong>中打开/关闭此选项。Chrome、Firefox 和 Microsoft Edge 用户已可以使用此选项，我们将很快向 Opera 添加此选项。"
   },
   "updates_update_i2_image": {
-    "message": "带有重新设计的“拦截元素”按钮的弹出图标示例。"
+    "message": "在选项页面的“语言”部分突出显示了“通知我可用语言筛选器”。"
   },
   "updates_update_i2_title": {
-    "message": "更新及改进的“拦截元素”功能"
+    "message": "对可用语言筛选器添加了通知选项"
   },
   "updates_update_i3_description": {
-    "message": "对于我们的高级用户，我们推出了新的调试元素隐藏筛选器模式，可以在高级设置中打开。然后将突出显示元素，以便于调试。"
+    "message": "当您从工具栏图标打开 Adblock Plus 菜单时，您会看到重新设计的新页脚。您可以从这里轻松访问有趣的链接，以更好地利用您的产品。从帮助中心获取支持，在社交媒体上与我们联系，以及其他更多功能！"
   },
   "updates_update_i3_title": {
-    "message": "添加了调试元素隐藏筛选器模式"
+    "message": "在菜单页脚添加了快速访问链接"
   },
   "updates_update_i4_description": {
-    "message": "图标现在会闪烁并变蓝，以提醒用户有通知。"
+    "message": "如果您经常向 ABP 添加自定义筛选器，现在有任何问题时您将看到更明确的错误消息。我们希望这个功能对您有用！"
   },
   "updates_update_i4_title": {
-    "message": "使 ABP 任务栏图标通知更醒目，更易辨认"
+    "message": "更新了筛选器验证消息"
   }
 }

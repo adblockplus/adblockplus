@@ -11,31 +11,43 @@
   "updates_title": {
     "message": "Adblock Plus a été mis à jour !"
   },
-  "updates_update_i1_description": {
-    "message": "À l’ouverture des Paramètres, une nouvelle section intitulée <strong>Filtres recommandés</strong> est disponible. Vous pouvez alors activer ou désactiver facilement les filtres recommandés d’un simple clic et améliorer ainsi votre expérience du Web."
+  "updates_update_f1_description": {
+    "message": "Nous avons mis à jour notre libellé afin de pouvoir dorénavant utiliser la <strong>liste d’autorisation</strong>."
   },
-  "updates_update_i1_title": {
-    "message": "Ajout de nouvelles listes de filtres recommandés pour un accès facile"
+  "updates_update_f1_title": {
+    "message": "Mise à jour de notre libellé"
+  },
+  "updates_update_f2_description": {
+    "message": "Vous serez désormais averti(e) lorsque certains filtres des listes de filtres téléchargeables sont désactivés afin que vous puissiez les réactiver à votre convenance."
+  },
+  "updates_update_f2_title": {
+    "message": "Ajout d’une option pour réactiver les filtres dans les listes de filtres téléchargeables"
+  },
+  "updates_update_f3_description": {
+    "message": "Nous avons mis à jour le lien du bouton « Évaluer » sur Microsoft Edge afin qu’il pointe vers le bon magasin d'extensions."
+  },
+  "updates_update_f3_title": {
+    "message": "Correction d’un mauvais lien pour le bouton « Évaluer »"
   },
   "updates_update_i2_description": {
-    "message": "Nous avons rendu la fonctionnalité Bloquer l’élément plus facile à utiliser en ajoutant de courtes instructions, ainsi qu’un aperçu de la page sans l’élément intrusif. Faites un essai !"
+    "message": "Vous pouvez désormais consulter des sites Web dans d’autres langues et toujours bloquer les publicités. Lorsque vous consulter un site Web dans une langue spécifique, vous pouvez choisir si vous souhaitez bloquer les publicités sur tous les sites Web dans cette langue. Vous pouvez activer/désactiver cette option dans <strong>Paramètres > Général > Listes de filtres de langue</strong>. L’option est déjà disponible pour nos utilisateurs sur Chrome, Firefox et Microsoft Edge et sera bientôt disponible sur Opera."
   },
   "updates_update_i2_image": {
-    "message": "Exemple de pop-up avec nouveau bouton « Bloquer l’élément »."
+    "message": "« M’avertir des filtres de langue disponibles » est mis en surbrillance dans la section « Langue » de la page des options."
   },
   "updates_update_i2_title": {
-    "message": "Fonctionnalité « Bloquer l’élément » mise à jour et améliorée"
+    "message": "Ajout d’une option de notification pour les filtres de langue disponibles"
   },
   "updates_update_i3_description": {
-    "message": "Pour nos utilisateurs plus avancés, un nouveau mode de masquage des filtres des éléments de débogage est disponible. Il peut être activé dans les paramètres avancés. Ces éléments sont ensuite mis en évidence pour faciliter le débogage."
+    "message": "Lorsque vous ouvrez le menu Adblock Plus à partir de l’icône de votre barre d’outils, vous voyez un nouveau pied de page. De là, vous pouvez facilement accéder à des liens intéressants pour tirer le meilleur parti de votre produit. Obtenez de l’aide du centre d’aide, contactez-nous sur les réseaux sociaux et plus encore !"
   },
   "updates_update_i3_title": {
-    "message": "Ajout d’un mode de masquage des filtres des éléments de débogage"
+    "message": "Ajout de liens d’accès rapide au menu du pied de page"
   },
   "updates_update_i4_description": {
-    "message": "L'icône clignote maintenant et devient bleue pour alerter les utilisateurs de l'arrivée de notifications."
+    "message": "Si vous ajoutez fréquemment des filtres personnalisés à ABP, vous voyez désormais des messages d’erreur plus clairs en cas de problème. Nous espérons que cela vous aidera !"
   },
   "updates_update_i4_title": {
-    "message": "Rendre la notification des icônes de la barre des tâches ABP plus évidente et plus distincte"
+    "message": "Messages de validation de filtre mis à jour"
   }
 }

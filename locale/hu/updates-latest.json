@@ -11,31 +11,43 @@
   "updates_title": {
     "message": "Az Adblock Plus naprakész!"
   },
-  "updates_update_i1_description": {
-    "message": "A Beállítások megnyitásakor egy új rész jelenik meg az <strong>Ajánlott szűrők</strong> címen. Itt egyszerűen bekapcsolhatja/kikapcsolhatja a javasolt szűrőket egy egyszerű kattintással és javíthatja a böngészési élményt."
+  "updates_update_f1_description": {
+    "message": "Frissítettük az üzeneteket az <strong>engedélyezőlista</strong> további használatához."
   },
-  "updates_update_i1_title": {
-    "message": "Új ajánlott szűrőlisták hozzáadva az egyszerű hozzáférés érdekében"
+  "updates_update_f1_title": {
+    "message": "Frissítettük az üzeneteket"
+  },
+  "updates_update_f2_description": {
+    "message": "Üzenetet kap, ha a letölthető szűrőlista bizonyos szűrőit kikapcsolták, ezáltal igényeinek megfelelően ismét bekapcsolhatja azokat."
+  },
+  "updates_update_f2_title": {
+    "message": "A letölthető szűrők listájában szereplő szűrők újraengedélyezésére szolgáló Hozzáadás beállítás"
+  },
+  "updates_update_f3_description": {
+    "message": "Frissítettük a Microsoft Edge „Értékelés” gomb hivatkozást, hogy a megfelelő bővítmény áruházra mutasson."
+  },
+  "updates_update_f3_title": {
+    "message": "Az „Értékelés” gomb hibás hivatkozásának kijavítása"
   },
   "updates_update_i2_description": {
-    "message": "Egyszerűsítettük az Elem blokkolása funkció használatát egy rövid leírás hozzáadásával, illetve az oldal zavaró elem nélküli előnézetével. Próbálja ki!"
+    "message": "Most más nyelvű webhelyeket is meglátogathat, ettől függetlenül a reklámok még blokkolva maradnak. Ha egy bizonyos nyelvű webhelyet látogat meg, akkor kiválaszthatja, hogy blokkolni kívánja-e a reklámokat az adott nyelven megjelenő összes oldalon. Ezt a beállítást a <strong>Beállítások > Általános > Nyelv szűrőlisták</strong> menüpontban kapcsolhatja be vagy ki. A beállítás elérhető a Chrome, Firefox és Microsoft Edge böngészőkön, és hamarosan elérhető lesz az Opera esetében is."
   },
   "updates_update_i2_image": {
-    "message": "Példa felugró ikonra újratervezett \"Elem blokkolása\" gombbal."
+    "message": "Az „Értesítsen az elérhető nyelvszűrőkről” beállítás kiemelten jelenik meg a beállítás oldal „Nyelv” rovatában."
   },
   "updates_update_i2_title": {
-    "message": "Frissített és javított Elem blokkolása funkció"
+    "message": "Értesítési beállítás hozzáadása az elérhető nyelvszűrőkről"
   },
   "updates_update_i3_description": {
-    "message": "A haladó felhasználók számára egy új hibakereső szűrő elrejtési üzemmód kapcsolható be a speciális beállításokban. Ezután az elemeket kiemeli az egyszerűbb hibakereséshez."
+    "message": "Az Adblock Plus menü megnyitásakor az Eszközsáv ikonjáról egy új, átalakított élőlábat láthat. Innen egyszerűen érhet el hasznos hivatkozásokat, amelyek segítségével többet kihozhat a termékéből. Kérjen támogatást a Támogatási központban, lépjen velünk kapcsolatba a közösségi oldalakon keresztül vagy egyéb módon!"
   },
   "updates_update_i3_title": {
-    "message": "Hibakereső szűrő elrejtési üzemmód hozzáadva"
+    "message": "Gyors hozzáférési hivatkozásokkal bővült a menü élőláb"
   },
   "updates_update_i4_description": {
-    "message": "Az ikon most villog, és felhasználók riasztására érkezések esetén kék színre vált."
+    "message": "Ha gyakran ad egyéni szűrőt az ABP-hez, akkor most egyértelműbb hibaüzeneteket kap a problémákról. Reméljük hasznos lesz!"
   },
   "updates_update_i4_title": {
-    "message": "Az ABP tálcaikon értesítések egyértelműbbek és jobban láthatók"
+    "message": "Frissített szűrőhitelesítési üzenetek"
   }
 }

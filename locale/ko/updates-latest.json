@@ -11,31 +11,43 @@
   "updates_title": {
     "message": "Adblock Plus가 최신 상태입니다!"
   },
-  "updates_update_i1_description": {
-    "message": "설정을 열면 <strong>권장 필터</strong>라고 부르는 새로운 섹션을 확인할 수 있습니다. 여기에서 쉽게 클릭만으로 권장 필터를 켜고 끌 수 있어 귀하의 웹 경험을 개선할 수 있습니다."
+  "updates_update_f1_description": {
+    "message": "앞으로 <strong>허용 목록</strong>을 사용하기 위해 단어 표현을 업데이트했습니다."
   },
-  "updates_update_i1_title": {
-    "message": "쉬운 접근을 위한 새로운 권장 필터 추가"
+  "updates_update_f1_title": {
+    "message": "단어 표현 업데이트"
+  },
+  "updates_update_f2_description": {
+    "message": "이제 다운로드 가능한 필터 목록 중 일부가 꺼졌을 때 알림을 받을 수 있어 원할 때 재활성화할 수 있습니다."
+  },
+  "updates_update_f2_title": {
+    "message": "다운로드 가능한 필터 목록의 필터 재활성화 옵션 추가"
+  },
+  "updates_update_f3_description": {
+    "message": "Microsoft Edge의 \"점수 주기\" 버튼 링크가 올바른 애드온 상점으로 연결되도록 업데이트하였습니다."
+  },
+  "updates_update_f3_title": {
+    "message": "\"점수 주기\" 버튼의 잘못된 링크 수정"
   },
   "updates_update_i2_description": {
-    "message": "요소 차단 기능에 간단한 설명을 추가하고 거슬리는 요소 없이 페이지가 어떻게 표시되는지 미리 볼 수 있도록 해서 기능 이용이 더 쉬워졌습니다. 사용해보세요!"
+    "message": "이제 다른 언어로 된 웹사이트에 방문해도 광고 차단을 할 수 있습니다. 특정한 언어로 된 웹사이트 방문 시, 해당 언어로 된 모든 웹사이트에서 광고를 차단할지 선택할 수 있습니다. 이 옵션은 <strong>설정 > 일반 > 언어 필터 목록</strong>에서 켜고 끌 수 있습니다. 현재 크롬(Chrome), 파이어폭스(Firefox), 마이크로소프트 에지(Microsoft Edge)에서 이용 가능한 옵션이며, 곧 오페라(Opera)에서도 이용할 수 있습니다."
   },
   "updates_update_i2_image": {
-    "message": "다시 디자인한 \"요소 차단\" 버튼 아이콘 팝업 예시."
+    "message": "\"이용 가능한 언어 필터 알림 받기\"는 옵션 페이지의 \"언어\" 부분에 강조되어 있습니다."
   },
   "updates_update_i2_title": {
-    "message": "요소 차단 기능 업데이트 및 개선"
+    "message": "이용 가능 언어 필터 알림 옵션 추가"
   },
   "updates_update_i3_description": {
-    "message": "고급 사용자를 위해, 고급 설정에서 켤 수 있는 새로운 디버그 요소 숨김 필터 모드를 선보입니다. 그 뒤 쉬운 디버깅을 위해 요소가 강조됩니다."
+    "message": "도구 표시줄 아이콘을 이용해 Adblock Plus 메뉴를 열면 새롭게 설계된 푸터가 보입니다. 헬프 센터에서 지원을 받고, 소셜 미디어로 소식을 알아보는 등 제품을 더 활용할 수 있는 흥미로운 링크가 이곳에 있어 간편하게 접근할 수 있습니다."
   },
   "updates_update_i3_title": {
-    "message": "디버그 요소 숨김 필터 모드 추가"
+    "message": "메뉴 푸터에 간편 접근 링크 추가"
   },
   "updates_update_i4_description": {
-    "message": "사용자 알림을 위해 아이콘이 깜빡이고 파란색으로 변하도록 변경되었습니다."
+    "message": "ABP에 맞춤 필터를 자주 추가한다면, 이제 문제가 발생할 때 더 명확한 오류 메시지를 확인할 수 있게 되었습니다. 도움이 되길 바랍니다!"
   },
   "updates_update_i4_title": {
-    "message": "ABP 작업표시줄 아이콘 알림을 보다 명확하고 눈에 띄도록 변경"
+    "message": "필터 확인 메시지 업데이트"
   }
 }

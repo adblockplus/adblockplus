@@ -11,31 +11,43 @@
   "updates_title": {
     "message": "Adblock Plus は最新版です！"
   },
-  "updates_update_i1_description": {
-    "message": "設定画面を開くと、新しく<strong>お勧めのフィルター</strong>が表示されます。ここでは、ウェブ体験の向上に役立つお勧めのフィルターをクリックするだけで、ON/OFF 切り替えることができます。"
+  "updates_update_f1_description": {
+    "message": "今後<strong>許可リスト</strong>で使用する文言を更新しました。"
   },
-  "updates_update_i1_title": {
-    "message": "アクセスしやすいお勧めのフィルターリストを新規追加"
+  "updates_update_f1_title": {
+    "message": "文言の更新"
+  },
+  "updates_update_f2_description": {
+    "message": "ダウンロード可能なフィルターリストで一部のフィルターがOFFになっている場合、必要に応じて再度ONできるよう、通知されるようになりました。"
+  },
+  "updates_update_f2_title": {
+    "message": "ダウンロード可能なフィルターリスト上のフィルターの再有効化オプションを追加"
+  },
+  "updates_update_f3_description": {
+    "message": "Microsoft Edgeの[評価]ボタンの先のリンクを更新し、正しいアドオンストアに接続されるようにしました。"
+  },
+  "updates_update_f3_title": {
+    "message": "[評価]ボタンの先のリンクを修正"
   },
   "updates_update_i2_description": {
-    "message": "「要素をブロック」機能がより使いやすくなりました。簡潔な説明とともに、目障りになる要素を除くとページがどのように表示されるかを示すプレビューを追加しました。お試しください！"
+    "message": "これからは他の言語のウェブサイトを表示するときも、広告をブロックできます。 特定の言語のウェブサイトを表示するときは、その言語のウェブサイトすべてで広告をブロックするかどうかを選択できます。このオプションのON/OFFは、<strong>設定 > 全般 > 言語</strong>のフィルターリストで切り替えることができます。このオプションは、すでに Chrome、Firefox、Microsoft Edge のユーザーの皆様にはご利用いただけます。また、近日中に Opera にも導入予定です。"
   },
   "updates_update_i2_image": {
-    "message": "新設計の「要素をブロック」ボタンによるポップアップの例。"
+    "message": "オプションページの「言語」のセクションで、「利用可能な言語リストを通知する」が強調表示されています。"
   },
   "updates_update_i2_title": {
-    "message": "「要素をブロック」機能を更新・改良"
+    "message": "利用可能な言語フィルターの通知オプションを追加"
   },
   "updates_update_i3_description": {
-    "message": "上級ユーザーに向けに、要素を非表示にするフィルターモードのデバッグを有効にするモードを詳細設定に新しく追加しました。これを利用すると、デバッグの際に要素が分かりやすく強調表示されます。"
+    "message": "ツールバーのアイコンから Adblock Plus メニューを開くと、新設計のフッターが表示されます。そこから、製品をより一層活用できる興味深いリンクに簡単にアクセスでき、ヘルプセンターからのサポートやソーシャルメディアによる当社へのご連絡など、様々な機能がご利用いただけます。"
   },
   "updates_update_i3_title": {
-    "message": "要素を非表示にするフィルターモードのデバッグを有効にするモードを追加"
+    "message": "メニューフッターにクイックアクセスリンクを追加"
   },
   "updates_update_i4_description": {
-    "message": "通知のアラートがある場合は、アイコンが点滅して青に変わります。"
+    "message": "頻繁に ABP にカスタムフィルターを追加する場合、問題が発生するとより明確なエラーメッセージが表示されるようになりました。お役に立てば幸いです！"
   },
   "updates_update_i4_title": {
-    "message": "ABP のタスクバーアイコンがより見やすく、分かりやすく"
+    "message": "フィルター検証メッセージを更新"
   }
 }
