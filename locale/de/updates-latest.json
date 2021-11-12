@@ -11,31 +11,43 @@
   "updates_title": {
     "message": "Adblock Plus wurde aktualisiert!"
   },
-  "updates_update_i1_description": {
-    "message": "Du siehst einen neuen Abschnitt mit der Bezeichnung <strong>Empfohlene Filter</strong>. Hier können empfohlene Filter mit einem einfachen Klick aktiviert/deaktiviert werden und dein Web-Erlebnis verbessern."
+  "updates_update_f1_description": {
+    "message": "Wir haben unsere Formulierung aktualisiert, um ab sofort den Ausdruck <strong>Allowlist</strong> verwenden zu können."
   },
-  "updates_update_i1_title": {
-    "message": "Neue empfohlene Filterlisten hinzugefügt für einen leichteren Zugriff"
+  "updates_update_f1_title": {
+    "message": "Wir haben unsere Formulierung aktualisiert"
+  },
+  "updates_update_f2_description": {
+    "message": "Du erhältst jetzt Benachrichtigungen, wenn einige Filter in den herunterladbaren Filterlisten deaktiviert sind, damit du sie bei Gelegenheit erneut aktivieren kannst."
+  },
+  "updates_update_f2_title": {
+    "message": "Option zur erneuten Aktivierung der Filter in herunterladbaren Filterlisten hinzugefügt"
+  },
+  "updates_update_f3_description": {
+    "message": "Wir haben den hinter der Schaltfläche „Bewerten“ auf Microsoft Edge stehenden Link aktualisiert, damit er dich zum richtigen Add-On-Store weiterleitet."
+  },
+  "updates_update_f3_title": {
+    "message": "Der falsche hinter der Schaltfläche „Bewerten“ stehende Link wurde behoben"
   },
   "updates_update_i2_description": {
-    "message": "Die „Element blockieren”-Funktion ist nun bedienerfreundlicher. Es werden sowohl Kurzanweisungen als auch eine Vorschau geboten, wie die Seite ohne dieses störende Element aussehen wird. Versuche es einfach mal!"
+    "message": "Du kannst nun Websites in anderen Sprachen besuchen und die Werbungen können immer noch blockiert werden. Wenn du Websites in einer bestimmten Sprache besuchst, wirst du entscheiden können, ob du Werbeanzeigen auf sämtlichen Websites in dieser Sprache blockieren möchtest oder nicht. Diese Option kann unter <strong>Einstellungen > Allgemein > Sprachen-Filterlisten</strong> ein- oder ausgeschaltet werden. Die Option ist bereits für unsere Chrome-, Firefox-, und Microsoft Edge-Benutzerinnen und -Benutzer verfügbar und wird bald auch für Opera zur Verfügung stehen."
   },
   "updates_update_i2_image": {
-    "message": "Beispiel eines Symbol-Pop-Up-Fensters mit einer neu entworfenen „Element blockieren”-Schaltfläche"
+    "message": "„Mich über verfügbare Filterlisten benachrichtigen“ wird im Abschnitt „Sprache“ der Optionen-Seite hervorgehoben."
   },
   "updates_update_i2_title": {
-    "message": "„Element blockieren”-Funktion aktualisiert und verbessert"
+    "message": "Benachrichtigungsoption für verfügbare Sprachenfilter hinzugefügt"
   },
   "updates_update_i3_description": {
-    "message": "Für unsere fortgeschritteneren Benutzer haben wir einen neuen Fehlersuche-Modus für Filter zum Ausblenden von Elementen, der in den erweiterten Einstellungen aktiviert werden kann. Die Elemente werden dann hervorgehoben, damit man leicht eine Fehlerbehebung durchführen kann."
+    "message": "Beim Öffnen des Adblock-Plus-Menüs über dein Symbolleisten-Symbol siehst du eine neu gestaltete Fußzeile. Dort können interessante Links leicht geöffnet werden, um mehr aus deinem Produkt herauszubekommen. Erhalte Unterstützung im Hilfecenter, nimm Kontakt zu uns in den sozialen Medien auf und mehr!"
   },
   "updates_update_i3_title": {
-    "message": "Fehlersuche-Modus für Filter zum Ausblenden von Elementen hinzugefügt"
+    "message": "Links zum schnellen Zugriff auf die Menü-Fußzeile hinzugefügt"
   },
   "updates_update_i4_description": {
-    "message": "Das Symbol blinkt nun und leuchtet blau auf, um Nutzer auf Benachrichtigungen aufmerksam zu machen."
+    "message": "Wenn du regelmäßig benutzerdefinierte Filter in ABP hinzufügst, erhältst du bei Problemen eindeutigere Fehlermeldungen. Wir hoffen, dass dir das helfen wird!"
   },
   "updates_update_i4_title": {
-    "message": "Benachrichtigungen über das ABP-Taskleistensymbol wurden geändert, damit sie schneller erkannt und auseinandergehalten werden können"
+    "message": "Nachrichten zur Filter-Validierung aktualisiert"
   }
 }

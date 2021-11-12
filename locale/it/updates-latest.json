@@ -11,31 +11,43 @@
   "updates_title": {
     "message": "Adblock Plus è aggiornato!"
   },
-  "updates_update_i1_description": {
-    "message": "Aprendo le Impostazioni, appare una nuova sezione chiamata <strong>Filtri consigliati</strong> in cui si possono facilmente attivare/disattivare i filtri consigliati con un semplice clic per migliorare l'esperienza di navigazione."
+  "updates_update_f1_description": {
+    "message": "Abbiamo aggiornato la nostra formulazione per l'utilizzo dei <strong>siti accettati</strong> in futuro."
   },
-  "updates_update_i1_title": {
-    "message": "Aggiunti nuovi elenchi di filtri consigliati per facilitare l'accesso"
+  "updates_update_f1_title": {
+    "message": "Aggiornata la formulazione"
+  },
+  "updates_update_f2_description": {
+    "message": "Ora riceverai una notifica quando alcuni filtri negli elenchi filtri scaricabili sono disattivati per consentirti di riattivarli a tuo piacimento."
+  },
+  "updates_update_f2_title": {
+    "message": "Aggiungi opzione di riattivazione dei filtri negli elenchi filtri scaricabili"
+  },
+  "updates_update_f3_description": {
+    "message": "Abbiamo aggiornato il link dietro il pulsante \"Dai un voto\" su Microsoft Edge in modo che punti all'add-ons store corretto."
+  },
+  "updates_update_f3_title": {
+    "message": "Corretto il link errato dietro il pulsante \"Dai un voto\""
   },
   "updates_update_i2_description": {
-    "message": "Abbiamo reso la funzionalità Blocca elemento più facile da usare grazie all'aggiunta di brevi istruzioni e di un'anteprima di come apparirà la pagina senza l'elemento invasivo. Provala!"
+    "message": "Ora è possibile visitare i siti web in altre lingue continuando ad avere il blocco delle pubblicità. Quando visiti un sito web in una lingua specifica, potrai scegliere se desideri bloccare le pubblicità su tutti i siti web in quella lingua. Puoi attivare o disattivare questa opzione in <strong>Impostazioni > Generale > Elenchi filtri di lingua</strong>. Questa opzione è già disponibile per i nostri utenti su Chrome, Firefox e Microsoft Edge e presto sarà disponibile anche su Opera."
   },
   "updates_update_i2_image": {
-    "message": "Esempio di icona pop-up con pulsante \"Blocca elemento\" ridisegnato."
+    "message": "\"Informami quando sono disponibili elenchi filtri di lingua\" è evidenziato nella sezione \"Lingua\" della pagina delle opzioni."
   },
   "updates_update_i2_title": {
-    "message": "Funzionalità Blocca elemento aggiornata e migliorata."
+    "message": "Aggiunta opzione di notifica per i filtri di lingua disponibili"
   },
   "updates_update_i3_description": {
-    "message": "Ai nostri utenti più avanzati offriamo una nuova modalità debug filtri nascondi-elementi attivabile nelle impostazioni avanzate. Gli elementi vengono evidenziati per semplificare il debug."
+    "message": "Aprendo il menu di Adblock Plus dall'icona barra degli strumenti, vedrai un piè di pagina rinnovato da cui potrai facilmente accedere a link interessanti per sfruttare al meglio il tuo prodotto. Potrai chiedere supporto al Centro assistenza e contattarci sui social media, e tanto altro ancora!"
   },
   "updates_update_i3_title": {
-    "message": "Aggiunta modalità debug filtri nascondi-elementi"
+    "message": "Aggiunti link di accesso rapido al piè di pagina del menu"
   },
   "updates_update_i4_description": {
-    "message": "L'icona ora lampeggia e diventa blu per avvisare gli utenti delle notifiche."
+    "message": "Se aggiungi spesso filtri personalizzati su ABP, in caso di problemi, ora vedrai messaggi di errore più chiari. Speriamo che ti sia d'aiuto!"
   },
   "updates_update_i4_title": {
-    "message": "Le notifiche dell'icona della barra applicazioni di ABP ora sono più chiare e distinguibili"
+    "message": "Aggiornati i messaggi di convalida filtri"
   }
 }

@@ -11,31 +11,43 @@
   "updates_title": {
     "message": "Adblock Plus artık güncellendi!"
   },
-  "updates_update_i1_description": {
-    "message": "Ayarlar kısmını açtığınızda, <strong>Önerilen Filtreler</strong> adlı yeni bir bölüm göreceksiniz. Burada, önerilen filtreleri basit bir tıklama ile kolayca etkinleştirebilir/ devre dışı bırakabilir ve web deneyiminizi iyileştirebilirsiniz."
+  "updates_update_f1_description": {
+    "message": "Metnimizi, <strong>izin verilenler listesini</strong> ileriye taşımak için güncelledik."
   },
-  "updates_update_i1_title": {
-    "message": "Kolay erişim için yeni önerilen filtre listeleri eklendi"
+  "updates_update_f1_title": {
+    "message": "Metnimizi güncelledik"
+  },
+  "updates_update_f2_description": {
+    "message": "Artık, indirilebilir filtre listelerindeki bazı filtreler kapatıldığında, bunları istediğiniz zaman tekrar etkinleştirebilmek için bilgilendirileceksiniz."
+  },
+  "updates_update_f2_title": {
+    "message": "İndirilebilir filte listelerindeki filtreleri tekrar etkinleştirme seçeneği eklendi"
+  },
+  "updates_update_f3_description": {
+    "message": "Microsoft Edge'deki \"Değerlendir\" düğmesinin arkasındaki bağlantıyı, doğru eklenti mağazasını gösterecek şekilde güncelledik."
+  },
+  "updates_update_f3_title": {
+    "message": "\"Değerlendir\" düğmesinin arkasındaki hatalı bağlantıyı onardık"
   },
   "updates_update_i2_description": {
-    "message": "Öğe Engelle özelliğine kısa talimatlar ekledik ve zorla giren öğe olmadan sayfanın nasıl görüneceğine ilişkin bir önizleme koyduk; yani kullanımını sizin için kolaylaştırdık. Deneyin ve görün!"
+    "message": "Artık, reklamları engellemeye devam ederek başka dillerdeki web sitelerini ziyaret edebilirsiniz. Belirli bir dildeki bir web sitesini ziyaret ederken, o dildeki tüm web sitelerinde reklamları engellemek isteyip istemediğiniz konusunda seçim yapabilirsiniz. Bu seçeneği şu izlek üzerinden açıp kapatabilirsiniz: <strong>Ayarlar > Genel > Dil filtresi listeleri</strong>. Chrome, Firefox ve Microsoft Edge kullanan kullanıcılarımız için sunulan bu seçenek, pek yakında Opera kullanan kullanıcılarımız için de sunulacak."
   },
   "updates_update_i2_image": {
-    "message": "Yeniden tasarlanmış \"Öğe engelle\" düğmesinin olduğu simge açılır penceresine bir örnek."
+    "message": "Seçenekler sayfasının \"Dil\" bölümünde, \"Kullanılabilir dil filtrelerini bana bildir\" seçeneği vurgulanır."
   },
   "updates_update_i2_title": {
-    "message": "Öğe Engelle özelliği güncellendi ve iyileştirildi"
+    "message": "Kullanılabilir dil filtreleri için bildirim seçeneği eklendi"
   },
   "updates_update_i3_description": {
-    "message": "Daha ileri seviye kullanıcılarımız için, gelişmiş ayarlarda etkinleştirilebilen yeni bir öge gizleme filtreleri hata ayıklama modumuz bulunuyor. Bu modun etkinleştirilmesiyle, ögeler kolay hata ayıklama amacıyla öne çıkarılacaktır."
+    "message": "Araç çubuğu simgenizden Adblock Plus menüsünü açtığınızda, yeni bir yeniden tasarlanmış altbilgi göreceksiniz. Buradan, ürününüzden daha fazla fayda elde etmek için kullanabileceğiniz ilgi çekici bağlantılara kolaylıkla erişebilirsiniz. Yardım Merkezinden destek alın, bizimle sosyal medyada iletişime geçin ve çok daha fazlası!"
   },
   "updates_update_i3_title": {
-    "message": "Öge gizleme filtreleri hata ayıklama modu eklendi"
+    "message": "Menü altbilgisine hızlı erişim bağlantıları ekledik"
   },
   "updates_update_i4_description": {
-    "message": "Simge artık kullanıcılara bildirim iletmek için yanıp sönüyor ve mavi renk alıyor."
+    "message": "ABP'ye sık sık özel filtreler ekliyorsanız, herhangi bir sorun olduğu takdirde artık daha açık ve net hata mesajları göreceksiniz. Umarız faydalı olur!"
   },
   "updates_update_i4_title": {
-    "message": "ABP görev çubuğu simgesi bildirimleri daha belirgin ve ayırt edilebilir hale getirildi"
+    "message": "Filtre doğrulama mesajlarını güncelledik"
   }
 }
