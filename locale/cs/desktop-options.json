@@ -254,33 +254,7 @@
   "options_tab_help": {
     "message": "Nápověda"
   },
-  "options_tab_whitelist": {
-    "message": "Povolené webové stránky"
-  },
   "options_tracking_warning_acknowledgment": {
     "message": "Dobře, chápu"
-  },
-  "options_whitelist_add": {
-    "message": "PŘIDAT WEBOVÉ STRÁNKY"
-  },
-  "options_whitelist_description": {
-    "message": "Na těchto webech jste deaktivovali blokování reklam, a proto se na nich budou zobrazovat reklamy."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Nemáte žádné povolené webové stránky."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Zde se zobrazí webové stránky, kterým důvěřujete a chcete na nich povolit reklamy."
-  },
-  "options_whitelist_notification": {
-    "message": "Stránka byla přidána na seznam povolených stránek."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "např.: $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

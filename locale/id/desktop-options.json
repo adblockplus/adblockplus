@@ -312,9 +312,6 @@
   "options_tab_help": {
     "message": "Bantuan"
   },
-  "options_tab_whitelist": {
-    "message": "Situs dalam daftar putih/aman"
-  },
   "options_tracking_warning_1": {
     "message": "Kami perhatikan anda telah mengaktifkan <strong>$tracking$</strong> dan <strong>$acceptableAds$</strong>.",
     "placeholders": {
@@ -339,28 +336,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Oke, mengerti"
-  },
-  "options_whitelist_add": {
-    "message": "Tambah situs web"
-  },
-  "options_whitelist_description": {
-    "message": "Anda menonaktifkan pemblokiran iklan di situs-situs ini, dan akan melihat iklan di sana."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Anda tidak memiliki situs yang didaftar putih."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Situs yang Anda percayai dan ingin membolehkan iklan muncul akan ditampilkan di sini."
-  },
-  "options_whitelist_notification": {
-    "message": "Situs web telah masuk daftar putih."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "misal. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

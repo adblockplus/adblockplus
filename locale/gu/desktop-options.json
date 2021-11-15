@@ -215,9 +215,6 @@
   "options_tab_help": {
     "message": "મદદ"
   },
-  "options_tab_whitelist": {
-    "message": "વ્હાઇટલિસ્ટ વેબસાઇટ્સ"
-  },
   "options_tracking_warning_1": {
     "message": "અમે નોંધ્યું છે કે તમારી પાસે બંને છે<strong>$tracking$</strong>અને<strong>$acceptableAds$</strong>સક્ષમ.",
     "placeholders": {
@@ -242,25 +239,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "બરાબર, મળ્યું"
-  },
-  "options_whitelist_add": {
-    "message": "વેબસાઇટ ઉમેરો"
-  },
-  "options_whitelist_description": {
-    "message": "તમે આ વેબસાઇટ્સ પર જાહેરાત અવરોધિત કરવાનું ચાલુ કર્યું છે અને તેથી, તેમના પરની જાહેરાતો જોવા મળશે."
-  },
-  "options_whitelist_empty_1": {
-    "message": "તમારી પાસે કોઈપણ વ્હાઇટલિસ્ટ વેબસાઇટ્સ નથી."
-  },
-  "options_whitelist_empty_2": {
-    "message": "તમે જે વેબસાઇટ્સ પર વિશ્વાસ કરો છો અને જાહેરાતોને પરવાનગી આપવા માંગો છો તે અહીં બતાવવામાં આવશે."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "ઉદાહરણ માટે $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

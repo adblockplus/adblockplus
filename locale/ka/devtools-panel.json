@@ -32,9 +32,6 @@
   "devtools_header_state_blocked": {
     "message": "შეზღუდული"
   },
-  "devtools_header_state_whitelisted": {
-    "message": "გამონაკლისებში"
-  },
   "devtools_header_type_any": {
     "message": "ნებისმიერი"
   },

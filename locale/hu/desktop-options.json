@@ -401,9 +401,6 @@
   "options_tab_help": {
     "message": "Súgó"
   },
-  "options_tab_whitelist": {
-    "message": "Fehérlistán lévő oldalak"
-  },
   "options_tracking_warning_1": {
     "message": "Észrevettük, hogy mind a <strong>$tracking$</strong> és <strong>$acceptableAds$</strong> engedélyezve van.",
     "placeholders": {
@@ -431,28 +428,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Ok, értem"
-  },
-  "options_whitelist_add": {
-    "message": "Weboldal hozzáadása"
-  },
-  "options_whitelist_description": {
-    "message": "Ezeken a weboldalakon kikapcsolta a hirdetésblokkolást, így megjelennek a reklámok."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Nincsenek weboldalak a fehérlistán."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Azok a weboldalak jelennek meg itt, amikben megbízik, így engedélyezi rajtuk a hirdetéseket."
-  },
-  "options_whitelist_notification": {
-    "message": "A weboldal felkerült a fehérlistára."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "Pl. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

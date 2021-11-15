@@ -300,9 +300,6 @@
   "options_tab_help": {
     "message": "Help"
   },
-  "options_tab_whitelist": {
-    "message": "Whitelisted websites"
-  },
   "options_tracking_warning_1": {
     "message": "We noticed you have both <strong>$tracking$</strong> and <strong>$acceptableAds$</strong> enabled.",
     "placeholders": {
@@ -327,28 +324,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "OK, got it"
-  },
-  "options_whitelist_add": {
-    "message": "Add website"
-  },
-  "options_whitelist_description": {
-    "message": "You've turned off ad blocking on these websites and, therefore, will see ads on them."
-  },
-  "options_whitelist_empty_1": {
-    "message": "You don't have any whitelisted websites."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Websites you trust and want to allow ads on will be shown here."
-  },
-  "options_whitelist_notification": {
-    "message": "Website has been whitelisted."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "e.g. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

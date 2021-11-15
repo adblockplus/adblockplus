@@ -20,9 +20,6 @@
   "overlay_notification_closing_button_optout": {
     "message": "Заборонити показ повідомлень"
   },
-  "promote_abp_module": {
-    "message": "Цікавить Adblock Plus для мобільного пристрою?"
-  },
   "refresh_this_page": {
     "message": "Оновити сторінку"
   },

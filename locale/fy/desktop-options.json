@@ -312,9 +312,6 @@
   "options_tab_help": {
     "message": "Help"
   },
-  "options_tab_whitelist": {
-    "message": "Websites op wite list"
-  },
   "options_tracking_warning_1": {
     "message": "Wy hawwe murken dat jo sawol <strong>$tracking$</strong> as <strong>$acceptableAds$</strong> ynskeakele hawwe.",
     "placeholders": {
@@ -339,28 +336,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "OK, begrepen"
-  },
-  "options_whitelist_add": {
-    "message": "Website tafoegje"
-  },
-  "options_whitelist_description": {
-    "message": "Jo hawwe it blokkearjen fan advertinsjes op de folgjende websites útskeakele, wêrtroch jo der advertinsjes op sjogge."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Jo hawwe gjin websites op de wite list."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Hjir wurde websites toand dy't jo fertrouwe en wêrop jo advertinsjes tastean wolle."
-  },
-  "options_whitelist_notification": {
-    "message": "Website is op de wite list pleatst."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "byg. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

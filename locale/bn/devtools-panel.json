@@ -32,9 +32,6 @@
   "devtools_header_state_blocked": {
     "message": "বন্ধ করা"
   },
-  "devtools_header_state_whitelisted": {
-    "message": "সাদা তালিকাভুক্ত"
-  },
   "devtools_header_type_any": {
     "message": "অন্য"
   },

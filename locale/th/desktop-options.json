@@ -206,9 +206,6 @@
   "options_tab_help": {
     "message": "ช่วยเหลือ"
   },
-  "options_tab_whitelist": {
-    "message": "เว็บไซต์ที่อนุญาต"
-  },
   "options_tracking_warning_1": {
     "message": "เราขอแจ้งให้คุณทราบว่า คุณได้มีการเปิดใช้ <strong>$tracking$</strong> และ <strong>$acceptableAds$</strong>",
     "placeholders": {
@@ -233,25 +230,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "ตกลง เข้าใจแล้ว"
-  },
-  "options_whitelist_add": {
-    "message": "เพิ่มเว็บไซต์"
-  },
-  "options_whitelist_description": {
-    "message": "คุณปิดการบล็อคโฆษณาสำหรับเว็บไซต์เหล่านี้ ดังนั้นคุณจะเห็นโฆษณาได้"
-  },
-  "options_whitelist_empty_1": {
-    "message": "คุณไม่มีเว็บไซต์ที่อยู่ในรายการปลอดภัย"
-  },
-  "options_whitelist_empty_2": {
-    "message": "เว็บไซต์ที่คุณไว้วางใจและต้องการให้แสดงโฆษณาจะแสดงอยู่ที่นี่"
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "เช่น $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

@@ -56,9 +56,6 @@
   "overlay_notification_closing_button_optout": {
     "message": "通知の表示を停止"
   },
-  "promote_abp_module": {
-    "message": "Adblock Plus モバイルに興味がありますか？"
-  },
   "refresh_this_page": {
     "message": "このページをリフレッシュ"
   },

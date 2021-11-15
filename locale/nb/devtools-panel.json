@@ -32,9 +32,6 @@
   "devtools_header_state_blocked": {
     "message": "blokkerte"
   },
-  "devtools_header_state_whitelisted": {
-    "message": "hvitelistet"
-  },
   "devtools_header_type_any": {
     "message": "enhver"
   },

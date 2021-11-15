@@ -17,9 +17,6 @@
   "overlay_notification_closing_button_optout": {
     "message": "停止顯示通知"
   },
-  "promote_abp_module": {
-    "message": "您對手機設備上的 Adblock Plus 感興趣嗎？"
-  },
   "refresh_to_take_effect": {
     "message": "點擊 <strong>重新整理</strong> 讓變更生效。"
   },

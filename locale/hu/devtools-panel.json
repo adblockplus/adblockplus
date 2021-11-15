@@ -35,9 +35,6 @@
   "devtools_header_state_blocked": {
     "message": "blokkolva"
   },
-  "devtools_header_state_whitelisted": {
-    "message": "fehérlistán"
-  },
   "devtools_header_type_any": {
     "message": "bármely"
   },

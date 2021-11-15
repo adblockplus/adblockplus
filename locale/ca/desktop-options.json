@@ -312,9 +312,6 @@
   "options_tab_help": {
     "message": "Ajuda"
   },
-  "options_tab_whitelist": {
-    "message": "Llista blanca"
-  },
   "options_tracking_warning_1": {
     "message": "Hem detectat que teniu ambdues opcions <strong>$tracking$</strong> i <strong>$acceptableAds$</strong> activades.",
     "placeholders": {
@@ -339,28 +336,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Entesos"
-  },
-  "options_whitelist_add": {
-    "message": "Afegeix un lloc web"
-  },
-  "options_whitelist_description": {
-    "message": "Heu desactivat el bloqueig d'anuncis en aquests llocs web i, per tant, veurà anuncis en ells."
-  },
-  "options_whitelist_empty_1": {
-    "message": "No teniu cap lloc web a la llista blanca."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Els llocs web en què confieu i desitgeu permetre que apareguin anuncis apareixeran aquí."
-  },
-  "options_whitelist_notification": {
-    "message": "El lloc web s'ha afegit a la llista blanca."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "p. e. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

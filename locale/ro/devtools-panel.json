@@ -32,9 +32,6 @@
   "devtools_header_state_blocked": {
     "message": "blocat"
   },
-  "devtools_header_state_whitelisted": {
-    "message": "permis"
-  },
   "devtools_header_type_any": {
     "message": "orice"
   },

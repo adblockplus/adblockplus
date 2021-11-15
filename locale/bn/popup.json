@@ -14,9 +14,6 @@
   "overlay_notification_closing_button_optout": {
     "message": "বিজ্ঞপ্তি দেখানো বন্ধ করুন"
   },
-  "promote_abp_module": {
-    "message": "Adblock Plus মোবাইলে ব্যবহারে আগ্রহী"
-  },
   "sendReport": {
     "message": "সমস্যা রির্পোট করুন"
   },

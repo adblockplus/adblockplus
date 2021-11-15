@@ -56,9 +56,6 @@
   "overlay_notification_closing_button_optout": {
     "message": "Bildirimleri gösterme"
   },
-  "promote_abp_module": {
-    "message": "Adblock Plus’ın mobil versiyonunu denemek ister misiniz?"
-  },
   "refresh_this_page": {
     "message": "Bu sayfayı yenile"
   },

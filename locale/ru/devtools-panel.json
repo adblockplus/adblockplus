@@ -35,9 +35,6 @@
   "devtools_header_state_blocked": {
     "message": "заблокированные"
   },
-  "devtools_header_state_whitelisted": {
-    "message": "разрешенные"
-  },
   "devtools_header_type_any": {
     "message": "любые"
   },

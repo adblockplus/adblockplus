@@ -263,9 +263,6 @@
   "options_tab_help": {
     "message": "Abi"
   },
-  "options_tab_whitelist": {
-    "message": "Lubatud veebisaidid"
-  },
   "options_tracking_warning_1": {
     "message": "Märkasime, et sul on lubatud nii <strong>$tracking$</strong> kui ka <strong>$acceptableAds$</strong>.",
     "placeholders": {
@@ -290,28 +287,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Selge, sain aru"
-  },
-  "options_whitelist_add": {
-    "message": "Lisa veebisait"
-  },
-  "options_whitelist_description": {
-    "message": "Oled nendel veebisaitidel reklaamide blokeerimise keelanud ja seega näed neil reklaame."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Lubatud veebisaitide nimekirjas pole ühtki kirjet."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Siin näidatakse veebisaite, mida sa usaldad ja lubad neil reklaame näidata."
-  },
-  "options_whitelist_notification": {
-    "message": "Veebisait lisati lubatute nimekirja."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "nt. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

@@ -17,9 +17,6 @@
   "overlay_notification_closing_button_optout": {
     "message": "Parar de mostrar notificações"
   },
-  "promote_abp_module": {
-    "message": "Interessado no Adblock Plus mobile?"
-  },
   "refresh_to_take_effect": {
     "message": "Clique em <strong>atualizar</strong> para que as alterações tenham efeito."
   },

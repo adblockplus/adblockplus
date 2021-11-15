@@ -401,9 +401,6 @@
   "options_tab_help": {
     "message": "Yardım"
   },
-  "options_tab_whitelist": {
-    "message": "Beyaz listedeki siteler"
-  },
   "options_tracking_warning_1": {
     "message": "Her ikisinin de devrede olduğu anlaşılıyor: <strong>$tracking$</strong> ve <strong>$acceptableAds$</strong>.",
     "placeholders": {
@@ -431,28 +428,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Tamam, anladım"
-  },
-  "options_whitelist_add": {
-    "message": "Site ekle"
-  },
-  "options_whitelist_description": {
-    "message": "Bu sitelerde reklam engellemeyi devre dışı bıraktınız. Bu sitelerde reklamlar göreceksiniz."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Beyaz listeye aldığınız hiçbir site yok."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Güvendiğiniz ve reklam gösterme izni verdiğiniz siteler burada gösterilecek."
-  },
-  "options_whitelist_notification": {
-    "message": "Web sitesi beyaz listeye eklendi."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "örn. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

@@ -19,8 +19,5 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Malsukcesis, tio ne estas valida adreso"
-  },
-  "options_tab_whitelist": {
-    "message": "Paĝoj listigitaj je blanka listo"
   }
 }

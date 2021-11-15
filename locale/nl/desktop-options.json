@@ -401,9 +401,6 @@
   "options_tab_help": {
     "message": "Help"
   },
-  "options_tab_whitelist": {
-    "message": "Websites op witte lijst"
-  },
   "options_tracking_warning_1": {
     "message": "We hebben gemerkt dat u zowel <strong>$tracking$</strong> als <strong>$acceptableAds$</strong> hebt ingeschakeld.",
     "placeholders": {
@@ -431,28 +428,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "OK, begrepen"
-  },
-  "options_whitelist_add": {
-    "message": "Website toevoegen"
-  },
-  "options_whitelist_description": {
-    "message": "U hebt het blokkeren van advertenties op deze websites uitgeschakeld, waardoor u er advertenties op ziet."
-  },
-  "options_whitelist_empty_1": {
-    "message": "U hebt geen websites op de witte lijst."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Hier worden websites getoond die u vertrouwt en waarop u advertenties wilt toestaan."
-  },
-  "options_whitelist_notification": {
-    "message": "Website is op de witte lijst geplaatst."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "bv. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

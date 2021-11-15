@@ -294,9 +294,6 @@
   "options_tab_help": {
     "message": "Trợ giúp"
   },
-  "options_tab_whitelist": {
-    "message": "Danh sách trang web không gây hại"
-  },
   "options_tracking_warning_1": {
     "message": "Chúng tôi nhận thấy bạn có cả <strong>$tracking$</strong> và <strong>$acceptableAds$</strong> được bật.",
     "placeholders": {
@@ -321,28 +318,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Ok, đã hiểu"
-  },
-  "options_whitelist_add": {
-    "message": "Thêm trang web"
-  },
-  "options_whitelist_description": {
-    "message": "Bạn đã tắt chặn quảng cáo trên những trang web này và do đó bạn sẽ thấy những quảng cáo trên các trang này."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Bạn không có bất kỳ trang web nào trong danh sách."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Các trang web bạn tin tưởng và muốn cho phép hiển thị quảng cáo tại đó."
-  },
-  "options_whitelist_notification": {
-    "message": "Trang web đã được đưa vào danh sách trắng."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "ví dụ: $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

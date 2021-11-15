@@ -312,9 +312,6 @@
   "options_tab_help": {
     "message": "Ohje"
   },
-  "options_tab_whitelist": {
-    "message": "Sallitut sivustot"
-  },
   "options_tracking_warning_1": {
     "message": "Huomasimme, että olet ottanut <strong>$tracking$</strong> ja <strong>$acceptableAds$</strong> -suodattimet käyttöön.",
     "placeholders": {
@@ -339,28 +336,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "OK, selvä"
-  },
-  "options_whitelist_add": {
-    "message": "Lisää sivusto"
-  },
-  "options_whitelist_description": {
-    "message": "Mainostenesto ei ole käytössä näillä sivustoilla, ja siksi mainokset näkyvät normaalisti."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Sallittujen sivustojen lista on tyhjä."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Jos päätät sallia mainokset tietyillä sivustoilla, ne näytetään tässä."
-  },
-  "options_whitelist_notification": {
-    "message": "Sivusto on lisätty sallittujen listalle."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "esim. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

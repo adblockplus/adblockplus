@@ -32,9 +32,6 @@
   "devtools_header_state_blocked": {
     "message": "חָסוּם"
   },
-  "devtools_header_state_whitelisted": {
-    "message": "ברשימה לבנה"
-  },
   "devtools_header_type_any": {
     "message": "כלשהו"
   },

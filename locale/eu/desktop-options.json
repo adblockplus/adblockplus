@@ -106,16 +106,5 @@
   },
   "options_tab_help": {
     "message": "Laguntza"
-  },
-  "options_tab_whitelist": {
-    "message": "Zerrenda zuriko webguneak"
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "adib. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

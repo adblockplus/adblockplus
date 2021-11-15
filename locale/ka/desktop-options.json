@@ -312,9 +312,6 @@
   "options_tab_help": {
     "message": "დახმარება"
   },
-  "options_tab_whitelist": {
-    "message": "გამონაკლისები"
-  },
   "options_tracking_warning_1": {
     "message": "როგორც ჩანს, თქვენ ჩართული გაქვთ ორივე: <strong>$tracking$</strong> და <strong>$acceptableAds$</strong>.",
     "placeholders": {
@@ -339,28 +336,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "კარგი, გასაგებია"
-  },
-  "options_whitelist_add": {
-    "message": "ვებსაიტის დამატება"
-  },
-  "options_whitelist_description": {
-    "message": "თქვენ გამორთავთ რეკლამების შეზღუდვას ამ ვებსაიტებზე და შესაბამისად, მათი მონახულებისას რეკლამებსაც იხილავთ."
-  },
-  "options_whitelist_empty_1": {
-    "message": "თქვენ არ გაქვთ საიტები დამატებული გამონაკლისებში."
-  },
-  "options_whitelist_empty_2": {
-    "message": "ვებსაიტები რომელთაც ენდობით და გსურთ მათი რეკლამების ხილვა."
-  },
-  "options_whitelist_notification": {
-    "message": "საიტი დამატებულია გამონაკლისებში."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "მაგ. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

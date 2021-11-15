@@ -101,9 +101,6 @@
   "options_tab_help": {
     "message": "Kömək"
   },
-  "options_tab_whitelist": {
-    "message": "Ağ siyahıdakı veb saytlar"
-  },
   "options_tracking_warning_1": {
     "message": "Hər ikisidə fəaldır: <strong>$tracking$</strong> və <strong>$acceptableAds$</strong>.",
     "placeholders": {

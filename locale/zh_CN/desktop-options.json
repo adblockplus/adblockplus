@@ -401,9 +401,6 @@
   "options_tab_help": {
     "message": "帮助"
   },
-  "options_tab_whitelist": {
-    "message": "白名单网站"
-  },
   "options_tracking_warning_1": {
     "message": "我们注意到您同时启用了<strong>$tracking$</strong>和<strong>$acceptableAds$</strong>。",
     "placeholders": {
@@ -431,28 +428,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "好的，知道了"
-  },
-  "options_whitelist_add": {
-    "message": "添加网站"
-  },
-  "options_whitelist_description": {
-    "message": "您已关闭这些网站上的广告屏蔽功能，因此会在这些网站上看到广告。"
-  },
-  "options_whitelist_empty_1": {
-    "message": "您没有任何列入白名单的网站。"
-  },
-  "options_whitelist_empty_2": {
-    "message": "您信任的网站并希望允许广告在此显示。"
-  },
-  "options_whitelist_notification": {
-    "message": "网站已被列入白名单。"
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "例如 $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

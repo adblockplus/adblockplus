@@ -32,9 +32,6 @@
   "devtools_header_state_blocked": {
     "message": "অৱৰুদ্ধ"
   },
-  "devtools_header_state_whitelisted": {
-    "message": "শ্বেতসূচীভুক্ত"
-  },
   "devtools_header_type_any": {
     "message": "যিকোনো"
   },

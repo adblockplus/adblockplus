@@ -401,9 +401,6 @@
   "options_tab_help": {
     "message": "Ayuda"
   },
-  "options_tab_whitelist": {
-    "message": "Páginas web de la lista blanca"
-  },
   "options_tracking_warning_1": {
     "message": "Hemos detectado que tienes activadas las opciones <strong>$tracking$</strong> y <strong>$acceptableAds$</strong>.",
     "placeholders": {
@@ -431,28 +428,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Entendido"
-  },
-  "options_whitelist_add": {
-    "message": "AÑADIR PÁGINA WEB"
-  },
-  "options_whitelist_description": {
-    "message": "Has desactivado el bloqueo de anuncios en estas páginas web y, por tanto, verás anuncios."
-  },
-  "options_whitelist_empty_1": {
-    "message": "No tienes ninguna página web en la lista blanca."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Las páginas web en las que confías y deseas permitir anuncios se mostrarán aquí."
-  },
-  "options_whitelist_notification": {
-    "message": "La página web ha sido añadida a la lista blanca."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "p.ej. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

@@ -312,9 +312,6 @@
   "options_tab_help": {
     "message": "Hjælp"
   },
-  "options_tab_whitelist": {
-    "message": "Tilladte websteder"
-  },
   "options_tracking_warning_1": {
     "message": "Vi har bemærket, at du har både <strong>$tracking$</strong> og <strong>$acceptableAds$</strong> aktiveret.",
     "placeholders": {
@@ -339,28 +336,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "OK, forstået"
-  },
-  "options_whitelist_add": {
-    "message": "Tilføj websted"
-  },
-  "options_whitelist_description": {
-    "message": "Du har deaktiveret blokering af annoncer på disse websteder og vil derfor se annoncer på dem."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Du har ikke nogen tilladte websteder."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Websteder, som du har tillid til og ønsker at tillade annoncer på, vil blive vist her."
-  },
-  "options_whitelist_notification": {
-    "message": "Webstedet er nu hvidlistet."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "f.eks. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

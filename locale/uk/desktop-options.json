@@ -312,9 +312,6 @@
   "options_tab_help": {
     "message": "Допомога"
   },
-  "options_tab_whitelist": {
-    "message": "Дозволені веб-сайти"
-  },
   "options_tracking_warning_1": {
     "message": "Схоже, що ви включили функції <strong>$tracking$</strong> та <strong>$acceptableAds$</strong>.",
     "placeholders": {
@@ -339,28 +336,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Все ясно"
-  },
-  "options_whitelist_add": {
-    "message": "Додати сайт"
-  },
-  "options_whitelist_description": {
-    "message": "Ви вимкнули блокування реклами на цих сайтах і, отже, бачитимете на них рекламу."
-  },
-  "options_whitelist_empty_1": {
-    "message": "У вас немає дозволених сайтів."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Тут відображаються сайти, яким ви довіряєте та дозволяєте показ реклами."
-  },
-  "options_whitelist_notification": {
-    "message": "Сайт додано в білий список."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "наприклад, $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

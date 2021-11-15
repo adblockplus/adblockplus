@@ -401,9 +401,6 @@
   "options_tab_help": {
     "message": "Guida"
   },
-  "options_tab_whitelist": {
-    "message": "Siti sulla lista bianca"
-  },
   "options_tracking_warning_1": {
     "message": "Abbiamo notato che hai sia <strong>$tracking$</strong> e <strong>$acceptableAds$</strong> abilitate.",
     "placeholders": {
@@ -431,28 +428,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Ok, capito"
-  },
-  "options_whitelist_add": {
-    "message": "AGGIUNGERE UN SITO"
-  },
-  "options_whitelist_description": {
-    "message": "Hai disattivato il blocco d'annunci su questi siti e, pertanto vedrai le pubblicità."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Non hai alcun sito sulla lista bianca."
-  },
-  "options_whitelist_empty_2": {
-    "message": "I siti di cui ti fidi e di cui vuoi visualizzare le pubblicità vengono mostrati qui."
-  },
-  "options_whitelist_notification": {
-    "message": "Il sito web è stato inserito nella lista bianca."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "ad esempio $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

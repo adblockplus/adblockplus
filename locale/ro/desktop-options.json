@@ -312,9 +312,6 @@
   "options_tab_help": {
     "message": "Ajutor"
   },
-  "options_tab_whitelist": {
-    "message": "Site-uri neblocate"
-  },
   "options_tracking_warning_1": {
     "message": "Am observat ca ai atât <strong>$tracking$</strong> cât și <strong>$acceptableAds$</strong> activate.",
     "placeholders": {
@@ -339,28 +336,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Ok, am înțeles"
-  },
-  "options_whitelist_add": {
-    "message": "Adaugă site"
-  },
-  "options_whitelist_description": {
-    "message": "Aţi dezactivat blocarea publicităţii pe aceste site-uri. Veţi vedea reclamele pe aceste site-uri."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Nu aţi adăugat niciun site la whitelist."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Site-urile în care ai încredere și pe care permiți reclamele vor fi afișate aici."
-  },
-  "options_whitelist_notification": {
-    "message": "Site-ul a fost pus pe lista albă."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "exemplu $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

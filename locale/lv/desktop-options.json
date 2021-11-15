@@ -253,31 +253,5 @@
   },
   "options_tab_help": {
     "message": "Palīdzība"
-  },
-  "options_tab_whitelist": {
-    "message": "Baltā saraksta vietnes"
-  },
-  "options_whitelist_add": {
-    "message": "Pievienot vietni"
-  },
-  "options_whitelist_description": {
-    "message": "Jūs esat izslēdzis reklāmu bloķēšanu šajās vietnēs un tāpēc tajās redzēsiet reklāmas."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Baltajā sarakstā nav nevienas vietnes."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Tīmekļvietnes kurām jūs uzticaties un atļaujat rādīt reklāmas."
-  },
-  "options_whitelist_notification": {
-    "message": "Vietne iekļauta baltajā sarakstā."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "piemēram, $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

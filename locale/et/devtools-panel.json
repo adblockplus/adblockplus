@@ -32,9 +32,6 @@
   "devtools_header_state_blocked": {
     "message": "blokeeritud"
   },
-  "devtools_header_state_whitelisted": {
-    "message": "lubatute loendis olevad"
-  },
   "devtools_header_type_any": {
     "message": "mis tahes"
   },

@@ -261,9 +261,6 @@
   "options_tab_help": {
     "message": "Sikour"
   },
-  "options_tab_whitelist": {
-    "message": "Lec'hiennoù aotreet"
-  },
   "options_tracking_warning_1": {
     "message": "Merzhet hon eus ho peus lakaet war elum<strong>$tracking$</strong> ha <strong>$acceptableAds$</strong>.",
     "placeholders": {
@@ -288,28 +285,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Mat eo, komprenet em eus"
-  },
-  "options_whitelist_add": {
-    "message": "Ouzhpennañ ul lec'hienn"
-  },
-  "options_whitelist_description": {
-    "message": "Lazhet ho peus ar stanker bruderezh evit al lec'hiennoù-se hag alese e vo bruderezh pa veoc'h o verdeiñ warne."
-  },
-  "options_whitelist_empty_1": {
-    "message": "N'ho peus ket aotreet lec'hienn ebet."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Amañ e vo kavet al lec'hiennoù ho peus fiziañs enne hag a vo aotreet ganeoc'h."
-  },
-  "options_whitelist_notification": {
-    "message": "Al lec'hienn zo bet aotreet ar bruderezh enni."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "d.s. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

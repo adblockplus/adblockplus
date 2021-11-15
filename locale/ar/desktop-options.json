@@ -401,9 +401,6 @@
   "options_tab_help": {
     "message": "تعليمات"
   },
-  "options_tab_whitelist": {
-    "message": "مواقع الويب المدرجة في القوائم البيضاء"
-  },
   "options_tracking_warning_1": {
     "message": "لاحظنا أنه لديك على حد سواء <strong>$tracking$</strong> و <strong>$acceptableAds$</strong> مفعلة.",
     "placeholders": {
@@ -431,28 +428,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "حسناً، فهمت"
-  },
-  "options_whitelist_add": {
-    "message": "إضافة موقع ويب"
-  },
-  "options_whitelist_description": {
-    "message": "لقد أوقفت تشغيل حجب الإعلانات في مواقع الويب هذه ومن ثم سترى إعلاناتها فيها."
-  },
-  "options_whitelist_empty_1": {
-    "message": "ليس لديك أي مواقع ويب مدرجة في القائمة البيضاء."
-  },
-  "options_whitelist_empty_2": {
-    "message": "ستظهر هنا مواقع الويب التي تثق فيها وتريد السماح بظهور الإعلانات فيها."
-  },
-  "options_whitelist_notification": {
-    "message": "الموقع الإلكتروني تم إدراجه في القائمة البيضاء."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "مثال $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

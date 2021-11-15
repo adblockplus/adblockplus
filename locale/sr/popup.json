@@ -17,9 +17,6 @@
   "overlay_notification_closing_button_optout": {
     "message": "Не приказуј обавештења"
   },
-  "promote_abp_module": {
-    "message": "Заинтересовани за Adblock Plus на мобилном?"
-  },
   "refresh_to_take_effect": {
     "message": "Кликните на <strong>Освежи</strong> да би промене ступиле на снагу."
   },

@@ -312,9 +312,6 @@
   "options_tab_help": {
     "message": "Bantu"
   },
-  "options_tab_whitelist": {
-    "message": "Laman web senarai putih"
-  },
   "options_tracking_warning_1": {
     "message": "Kami perasan anda mendayakan <strong>$tracking$</strong> dan <strong>$acceptableAds$</strong>.",
     "placeholders": {
@@ -339,28 +336,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Ok, faham"
-  },
-  "options_whitelist_add": {
-    "message": "TAMBAH LAMAN WEB"
-  },
-  "options_whitelist_description": {
-    "message": "Anda telah mematikan penyekatan iklan di laman web ini dan, oleh itu, akan melihat iklan di laman web ini."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Anda tidak mempunyai laman web yang disenarai putih."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Laman web yang anda percayai dan ingin membenarkan iklan akan dipaparkan di sini."
-  },
-  "options_whitelist_notification": {
-    "message": "Laman sesawang telah di senarai putihkan."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "cth. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

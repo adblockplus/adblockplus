@@ -20,9 +20,6 @@
   "devtools_header_state_blocked": {
     "message": "مسدودشده"
   },
-  "devtools_header_state_whitelisted": {
-    "message": "در فهرست سفید"
-  },
   "devtools_header_type_any": {
     "message": "هر موردی"
   },

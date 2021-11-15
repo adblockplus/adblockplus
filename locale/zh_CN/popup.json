@@ -56,9 +56,6 @@
   "overlay_notification_closing_button_optout": {
     "message": "停止显示通知"
   },
-  "promote_abp_module": {
-    "message": "对移动设备上的 Adblock Plus 感兴趣？"
-  },
   "refresh_this_page": {
     "message": "刷新此页面"
   },

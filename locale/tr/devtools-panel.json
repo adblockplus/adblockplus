@@ -35,9 +35,6 @@
   "devtools_header_state_blocked": {
     "message": "engellenen"
   },
-  "devtools_header_state_whitelisted": {
-    "message": "güvenilir listesindeki"
-  },
   "devtools_header_type_any": {
     "message": "tüm"
   },

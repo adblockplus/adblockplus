@@ -401,9 +401,6 @@
   "options_tab_help": {
     "message": "Hilfe"
   },
-  "options_tab_whitelist": {
-    "message": "Webseiten auf der Whitelist"
-  },
   "options_tracking_warning_1": {
     "message": "Es scheint, dass du sowohl <strong>$tracking$</strong> als auch <strong>$acceptableAds$</strong> aktiviert hast.",
     "placeholders": {
@@ -431,28 +428,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Alles klar"
-  },
-  "options_whitelist_add": {
-    "message": "Webseite hinzufügen"
-  },
-  "options_whitelist_description": {
-    "message": "Du hast das Blockieren von Werbung auf diesen Webseiten deaktiviert und wirst auf ihnen Anzeigen sehen."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Du hast keine Webseiten auf der Whitelist."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Hier werden Webseiten gezeigt, denen du vertraust und auf denen du Anzeigen zulassen möchtest."
-  },
-  "options_whitelist_notification": {
-    "message": "Die Webseite wurde auf die Whitelist gesetzt."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "z.B. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }
