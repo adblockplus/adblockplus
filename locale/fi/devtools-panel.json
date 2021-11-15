@@ -32,9 +32,6 @@
   "devtools_header_state_blocked": {
     "message": "estetty"
   },
-  "devtools_header_state_whitelisted": {
-    "message": "sallittu"
-  },
   "devtools_header_type_any": {
     "message": "kaikki"
   },

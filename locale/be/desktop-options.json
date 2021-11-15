@@ -294,9 +294,6 @@
   "options_tab_help": {
     "message": "Даведка"
   },
-  "options_tab_whitelist": {
-    "message": "Спіс дазволеных сайтаў"
-  },
   "options_tracking_warning_1": {
     "message": "Вы адначасова задзейнічалі дзве функцыі: <strong>$tracking$</strong> і <strong>$acceptableAds$</strong>.",
     "placeholders": {
@@ -321,28 +318,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Добра, зразумела"
-  },
-  "options_whitelist_add": {
-    "message": "Дадаць сайт"
-  },
-  "options_whitelist_description": {
-    "message": "На гэтых сайтах вы адключылі блакаванне, рэклама на іх будзе бачнай."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Пакуль што спіс дазволеных сайтаў пусты."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Тут будуць паказвацца сайты якім вы давяраеце і дазваляеце ім паказваць рэкламу."
-  },
-  "options_whitelist_notification": {
-    "message": "Сайт дададзены ў спіс дазволеных."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "Узор: $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

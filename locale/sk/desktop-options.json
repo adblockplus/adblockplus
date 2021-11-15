@@ -224,9 +224,6 @@
   "options_tab_help": {
     "message": "Pomoc"
   },
-  "options_tab_whitelist": {
-    "message": "Webové stránky s povolenými adresami"
-  },
   "options_tracking_warning_1": {
     "message": "Všimli sme si, že máte zapnuté oboje <strong>$tracking$</strong> a <strong>$acceptableAds$</strong>.",
     "placeholders": {
@@ -251,25 +248,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "OK, mám to"
-  },
-  "options_whitelist_add": {
-    "message": "Pridať webovú stránku"
-  },
-  "options_whitelist_description": {
-    "message": "Blokovanie reklám ste zakázali na týchto webových stránkach, a preto sa na nich zobrazia reklamy."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Nemáte žiadne webové stránky na bielom zozname."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Webové stránky, ktorým dôverujete a ktorým chcete povoliť reklamy, sa zobrazia tu."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "napr. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

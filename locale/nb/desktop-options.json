@@ -294,9 +294,6 @@
   "options_tab_help": {
     "message": "Hjelp"
   },
-  "options_tab_whitelist": {
-    "message": "Hvitelistede nettsteder"
-  },
   "options_tracking_warning_1": {
     "message": "Vi registrerer at du har aktivert både <strong>$tracking$</strong> og <strong>$acceptableAds$</strong>.",
     "placeholders": {
@@ -321,28 +318,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Ok, skjønner"
-  },
-  "options_whitelist_add": {
-    "message": "Legg til nettsted"
-  },
-  "options_whitelist_description": {
-    "message": "Du har slått av blokkering av annonser på disse nettstedene, og vil derfor se annonser på dem."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Du har ingen hvitelistede nettsteder."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Nettsteder du stoler på og ønsker å tillate annonser på vil bli vist her."
-  },
-  "options_whitelist_notification": {
-    "message": "Nettstedet er nå hvitelistet."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "f.eks $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

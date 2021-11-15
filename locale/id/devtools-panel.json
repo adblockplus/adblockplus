@@ -32,9 +32,6 @@
   "devtools_header_state_blocked": {
     "message": "diblokir"
   },
-  "devtools_header_state_whitelisted": {
-    "message": "dalam daftar putih"
-  },
   "devtools_header_type_any": {
     "message": "apa saja"
   },

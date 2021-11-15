@@ -17,9 +17,6 @@
   "overlay_notification_closing_button_optout": {
     "message": "সুচনাবোৰ দেখুওৱা বন্ধ কৰক"
   },
-  "promote_abp_module": {
-    "message": "ম\\'বাইলৰ এডব্লক প্লাছত আগ্ৰহ আছে?"
-  },
   "refresh_to_take_effect": {
     "message": "সালসলনিবোৰ প্ৰভাৱিত কৰিবলৈ <strong>সতেজ কৰক</strong>-ত ক্লিক কৰক।"
   },

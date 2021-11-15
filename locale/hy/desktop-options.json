@@ -119,9 +119,6 @@
   "options_tab_help": {
     "message": "Օգնություն"
   },
-  "options_tab_whitelist": {
-    "message": "Կայքերի սպիտակ ցուցակ"
-  },
   "options_tracking_warning_1": {
     "message": "Մենք նկատեցինք, որ Դուք միացրել եք <strong>$tracking$</strong> և <strong>$acceptableAds$</strong> կարգավորումները։",
     "placeholders": {
@@ -146,22 +143,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Լավ, հասկացա"
-  },
-  "options_whitelist_add": {
-    "message": "Ավելացնել կայք"
-  },
-  "options_whitelist_description": {
-    "message": "Դուք անջատել եք գովազդի արգելափակումն այս կայքերի համար և, հետևաբար, դրանցում գովազդ կտեսնեք։"
-  },
-  "options_whitelist_empty_1": {
-    "message": "Դուք սպիտակ ցուցակում որևէ կայք չունեք։"
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "օր.՝ $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

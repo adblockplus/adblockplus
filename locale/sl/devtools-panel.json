@@ -32,9 +32,6 @@
   "devtools_header_state_blocked": {
     "message": "blokirane"
   },
-  "devtools_header_state_whitelisted": {
-    "message": "dovoljene"
-  },
   "devtools_header_type_any": {
     "message": "katerekoli"
   },

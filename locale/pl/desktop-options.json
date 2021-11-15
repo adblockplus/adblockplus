@@ -401,9 +401,6 @@
   "options_tab_help": {
     "message": "Pomoc"
   },
-  "options_tab_whitelist": {
-    "message": "Dozwolone witryny"
-  },
   "options_tracking_warning_1": {
     "message": "Zauważyliśmy że masz włączone funkcje: <strong>$tracking$</strong> i <strong>$acceptableAds$</strong>.",
     "placeholders": {
@@ -431,28 +428,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "OK, rozumiem"
-  },
-  "options_whitelist_add": {
-    "message": "Dodaj witrynę"
-  },
-  "options_whitelist_description": {
-    "message": "Blokowanie reklam na tych witrynach zostało wyłączone – reklamy będą wyświetlane."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Nie ma żadnych witryn na liście dozwolonych."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Tutaj będą wyświetlane zaufane strony, na których mogą być wyświetlane reklamy."
-  },
-  "options_whitelist_notification": {
-    "message": "Witryna została dodana do listy dozwolonych."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "np. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

@@ -32,9 +32,6 @@
   "devtools_header_state_blocked": {
     "message": "đã chặn"
   },
-  "devtools_header_state_whitelisted": {
-    "message": "danh sách trắng"
-  },
   "devtools_header_type_any": {
     "message": "bất kì"
   },

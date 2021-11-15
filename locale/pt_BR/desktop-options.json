@@ -401,9 +401,6 @@
   "options_tab_help": {
     "message": "Ajuda"
   },
-  "options_tab_whitelist": {
-    "message": "Sites na lista branca"
-  },
   "options_tracking_warning_1": {
     "message": "Notamos que você possui ambos <strong>$tracking$</strong> e <strong>$acceptableAds$</strong> habilitados.",
     "placeholders": {
@@ -431,28 +428,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Ok, entendi"
-  },
-  "options_whitelist_add": {
-    "message": "ADICIONAR SITE"
-  },
-  "options_whitelist_description": {
-    "message": "Você desativou o bloqueio de anúncios nestes sites e, como tal, verá anúncios nestes."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Você não possui sites na lista branca."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Os sites nos quais você confia e nos quais pretende permitir anúncios serão apresentados aqui."
-  },
-  "options_whitelist_notification": {
-    "message": "Website foi listado como permitido."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "p. ex. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

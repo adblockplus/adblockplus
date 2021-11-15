@@ -35,9 +35,6 @@
   "devtools_header_state_blocked": {
     "message": "zablokowane"
   },
-  "devtools_header_state_whitelisted": {
-    "message": "na liście dozwolonych"
-  },
   "devtools_header_type_any": {
     "message": "dowolne"
   },

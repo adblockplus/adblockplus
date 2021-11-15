@@ -282,9 +282,6 @@
   "options_tab_help": {
     "message": "Помощ"
   },
-  "options_tab_whitelist": {
-    "message": "Изключения"
-  },
   "options_tracking_warning_1": {
     "message": "При вас както <strong>$tracking$</strong>, така и <strong>$acceptableAds$</strong> са разрешени.",
     "placeholders": {
@@ -309,25 +306,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "ДА, ясно"
-  },
-  "options_whitelist_add": {
-    "message": "Добави сайт"
-  },
-  "options_whitelist_description": {
-    "message": "Блокирането е изключено за сайтовете и следователно в тях ще виждате реклами."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Нямате изключени сайтове."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Тук са доверените и сайтовете, на които сте позволил да показват реклама."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "например $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

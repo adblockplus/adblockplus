@@ -19,8 +19,5 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Қате, дұрыс адрес емес"
-  },
-  "options_tab_whitelist": {
-    "message": "Рұқсат берілген домендер тізімі"
   }
 }

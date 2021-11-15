@@ -401,9 +401,6 @@
   "options_tab_help": {
     "message": "Aide"
   },
-  "options_tab_whitelist": {
-    "message": "Sites Web sur liste blanche"
-  },
   "options_tracking_warning_1": {
     "message": "Nous avons remarqué que vous avez les deux options <strong>$tracking$</strong> et <strong>$acceptableAds$</strong> activées.",
     "placeholders": {
@@ -431,28 +428,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Ok, j'ai compris"
-  },
-  "options_whitelist_add": {
-    "message": "AJOUTER UN SITE WEB"
-  },
-  "options_whitelist_description": {
-    "message": "Comme vous avez désactivé le blocage des publicités sur ces sites web, vous verrez des publicités lorsque vous les consultez."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Vous n’avez aucun site web sur liste blanche."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Les sites web auxquels vous faites confiance et souhaitez autoriser à vous présenter des publicités apparaîtront ici."
-  },
-  "options_whitelist_notification": {
-    "message": "Le site Internet a été mis sur liste blanche."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "par exemple: $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

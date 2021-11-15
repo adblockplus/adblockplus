@@ -56,9 +56,6 @@
   "overlay_notification_closing_button_optout": {
     "message": "Ne jelenjenek meg értesítések"
   },
-  "promote_abp_module": {
-    "message": "Érdekli az Adblock Plus a mobiltelefonon?"
-  },
   "refresh_this_page": {
     "message": "Oldal frissítése"
   },

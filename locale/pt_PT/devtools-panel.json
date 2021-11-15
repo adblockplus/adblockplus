@@ -13,8 +13,5 @@
   },
   "devtools_header_state_blocked": {
     "message": "bloqueado"
-  },
-  "devtools_header_state_whitelisted": {
-    "message": "na lista branca"
   }
 }

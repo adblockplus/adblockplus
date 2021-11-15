@@ -312,9 +312,6 @@
   "options_tab_help": {
     "message": "עזרה"
   },
-  "options_tab_whitelist": {
-    "message": "אתרים ברשימה הלבנה"
-  },
   "options_tracking_warning_1": {
     "message": "שמנו לב ששתי האפשרויות <strong>$tracking$</strong> ו־<strong>$acceptableAds$</strong> מאופשרות.",
     "placeholders": {
@@ -339,28 +336,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "בסדר, הבנתי"
-  },
-  "options_whitelist_add": {
-    "message": "הוסף אתר"
-  },
-  "options_whitelist_description": {
-    "message": "כיבית חסימת פרסומות באתרים אלו, ולכן תראה בהם פרסומות."
-  },
-  "options_whitelist_empty_1": {
-    "message": "אין לך אתרים כלשהם ברשימה הלבנה."
-  },
-  "options_whitelist_empty_2": {
-    "message": "אתרים שאתה בוטח בהם ורוצה להתיר בהם פרסומות יופיעו כאן."
-  },
-  "options_whitelist_notification": {
-    "message": "אתר התווסף לרשימה הלבנה."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "לדוגמה $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

@@ -306,9 +306,6 @@
   "options_tab_help": {
     "message": "Hjälp"
   },
-  "options_tab_whitelist": {
-    "message": "Vitlistade webbplatser"
-  },
   "options_tracking_warning_1": {
     "message": "Vi märkte att du har både <strong>$tracking$</strong> och <strong>$acceptableAds$</strong> aktiverat.",
     "placeholders": {
@@ -333,28 +330,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Ok, fattar"
-  },
-  "options_whitelist_add": {
-    "message": "Lägg till webbplats"
-  },
-  "options_whitelist_description": {
-    "message": "Du har inaktiverat annonsblockering på dessa webbplatser och kommer därför att se annonser på dem."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Du har inte några vitlistade webbsidor."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Webbplatser du litar på och vill tillåta annonser på kommer att visas här."
-  },
-  "options_whitelist_notification": {
-    "message": "Webbplatsen har vitlistats."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "t.ex. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

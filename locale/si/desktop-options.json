@@ -62,9 +62,6 @@
   "options_tab_help": {
     "message": "උදව්"
   },
-  "options_tab_whitelist": {
-    "message": "අවහිර නොකළ වෙබ් අඩවිය ලැයිස්තුව"
-  },
   "options_tracking_warning_1": {
     "message": "අපි නිරීක්ෂණය කළා ඔබ <strong>$tracking$</strong> සහ <strong>$acceptableAds$</strong> දෙකම සක්‍රීය කර ඇති බව.",
     "placeholders": {

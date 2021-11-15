@@ -56,9 +56,6 @@
   "overlay_notification_closing_button_optout": {
     "message": "إيقاف عرض الإشعارات"
   },
-  "promote_abp_module": {
-    "message": "هل أنت مهتم بـ Adblock Plus على الجوال؟"
-  },
   "refresh_this_page": {
     "message": "تحديث هذه الصفحة"
   },

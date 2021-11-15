@@ -272,9 +272,6 @@
   "options_tab_help": {
     "message": "Pomoč"
   },
-  "options_tab_whitelist": {
-    "message": "Dovoljene spletne strani"
-  },
   "options_tracking_warning_1": {
     "message": "Opazili smo, da imate omogočena tako <strong>$tracking$</strong> kot <strong>$acceptableAds$</strong>.",
     "placeholders": {
@@ -299,28 +296,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "V redu, razumem"
-  },
-  "options_whitelist_add": {
-    "message": "Dodaj spletno stran"
-  },
-  "options_whitelist_description": {
-    "message": "Na teh spletnih straneh ste izklopili blokiranje oglasov in jih boste zatorej videli."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Nimate spletnih strani, na katerih ste dovolili oglase."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Spletne strani, ki jim zaupate in na njih želite videti oglase, bodo prikazane tukaj."
-  },
-  "options_whitelist_notification": {
-    "message": "Spletni strani ste dovolili objavo oglasov."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "npr. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

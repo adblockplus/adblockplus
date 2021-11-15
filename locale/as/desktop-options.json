@@ -172,9 +172,6 @@
   "options_tab_help": {
     "message": "সহায়"
   },
-  "options_tab_whitelist": {
-    "message": "শ্বেতসূচীভুক্ত ৱেবছাইটবোৰ"
-  },
   "options_tracking_warning_1": {
     "message": "আমি লক্ষ্য কৰিছোঁ যে আপোনাৰ <strong>$tracking$</strong> আৰু <strong>$acceptableAds$</strong> দুয়ো সক্ষম কৰা আছে।",
     "placeholders": {
@@ -199,25 +196,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "ঠিক আছে, বুজিছোঁ"
-  },
-  "options_whitelist_add": {
-    "message": "ৱেবছাইট যোগ কৰক"
-  },
-  "options_whitelist_description": {
-    "message": "আপুনি এই ৱেবছাইটবোৰত বিজ্ঞাপন অৱৰুদ্ধকৰণ বন্ধ কৰিছে আৰু সেয়েহে, এইবোৰত বিজ্ঞাপন দেখা পাব।"
-  },
-  "options_whitelist_empty_1": {
-    "message": "আপোনাৰ কোনো শ্বেতসূচীভুক্ত ৱেবছাইট নাই।"
-  },
-  "options_whitelist_empty_2": {
-    "message": "আপুনি বিশ্বাস কৰা ৱেবছাইটবোৰ আৰু যিবোৰত বিজ্ঞাপনবোৰক অনুমতি দিবলৈ বিচাৰে সেইবোৰ ইয়াত দেখুওৱা হ\\'ব।"
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "যেনে $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

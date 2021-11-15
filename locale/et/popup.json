@@ -17,9 +17,6 @@
   "overlay_notification_closing_button_optout": {
     "message": "Lõpeta teadete näitamine"
   },
-  "promote_abp_module": {
-    "message": "Oled huvitatud Adblock Plusist mobiilil?"
-  },
   "refresh_to_take_effect": {
     "message": "Muudatuste jõustumiseks klõpsa <strong>Värskenda</strong>."
   },

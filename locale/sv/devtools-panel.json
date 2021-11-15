@@ -32,9 +32,6 @@
   "devtools_header_state_blocked": {
     "message": "blockerad"
   },
-  "devtools_header_state_whitelisted": {
-    "message": "vitlistad"
-  },
   "devtools_header_type_any": {
     "message": "någon"
   },

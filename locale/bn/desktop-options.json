@@ -272,9 +272,6 @@
   "options_tab_help": {
     "message": "সাহায্য"
   },
-  "options_tab_whitelist": {
-    "message": "সাদাতালিকাভুক্ত ওয়েবসাইট"
-  },
   "options_tracking_warning_1": {
     "message": "আমরা লক্ষ্য করেছি যে আপনার <strong>$tracking$</strong> ও <strong>$acceptableAds$</strong> সক্রিয় করা আছে।",
     "placeholders": {
@@ -299,28 +296,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "আচ্ছা, বুঝেছি"
-  },
-  "options_whitelist_add": {
-    "message": "ওয়েবসাইট যুক্ত করুন"
-  },
-  "options_whitelist_description": {
-    "message": "আপনি এই ওয়েবসাইটগুলিতে বিজ্ঞাপন বন্ধকরণ বন্ধ করেছেন এবং, তাই আপনি এগুলি থেকে বিজ্ঞাপন দেখতে পাবেন।"
-  },
-  "options_whitelist_empty_1": {
-    "message": "আপনি কোন সাদাতালিকাভুক্ত ওয়েবসাইট নেই।"
-  },
-  "options_whitelist_empty_2": {
-    "message": "আপনি যে ওয়েবসাইটগুলি বিশ্বাস করেন এবং যেগুলিতে বিজ্ঞাপনকে অনুমতি দিতে চান তা এখানে দেখানো হবে।"
-  },
-  "options_whitelist_notification": {
-    "message": "ওয়েব সাইট সাদা তালিকাভুক্ত করা হয়েছে।"
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "যেমন: $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

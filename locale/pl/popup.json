@@ -56,9 +56,6 @@
   "overlay_notification_closing_button_optout": {
     "message": "Przestań wyświetlać powiadomienia"
   },
-  "promote_abp_module": {
-    "message": "Interesuje cię Adblock Plus dla urządzeń przenośnych?"
-  },
   "refresh_this_page": {
     "message": "Odśwież tę stronę"
   },

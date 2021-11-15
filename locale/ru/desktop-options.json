@@ -401,9 +401,6 @@
   "options_tab_help": {
     "message": "Справка"
   },
-  "options_tab_whitelist": {
-    "message": "Белый список сайтов"
-  },
   "options_tracking_warning_1": {
     "message": "Похоже, что вы включили и функцию <strong>$tracking$</strong>, и <strong>$acceptableAds$</strong>.",
     "placeholders": {
@@ -431,28 +428,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Все ясно"
-  },
-  "options_whitelist_add": {
-    "message": "ДОБАВИТЬ САЙТ"
-  },
-  "options_whitelist_description": {
-    "message": "Вы выключили блокировку рекламы на этих сайтах и, следовательно, будете видеть на них рекламу."
-  },
-  "options_whitelist_empty_1": {
-    "message": "У вас нет разрешенных сайтов."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Здесь отображаются сайты, которым вы доверяете и разрешаете показ рекламы."
-  },
-  "options_whitelist_notification": {
-    "message": "Сайт внесен в белый список."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "например, $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

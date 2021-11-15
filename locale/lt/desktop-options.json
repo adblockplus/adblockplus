@@ -238,9 +238,6 @@
   "options_tab_help": {
     "message": "Pagalba"
   },
-  "options_tab_whitelist": {
-    "message": "Tinklapiai baltajame sąraše"
-  },
   "options_tracking_warning_1": {
     "message": "Pastebėjome jog pas jus įjungta ir <strong>$tracking$</strong> ir <strong>$acceptableAds$</strong>.",
     "placeholders": {
@@ -265,25 +262,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Gerai, supratau"
-  },
-  "options_whitelist_add": {
-    "message": "Pridėti svetainę"
-  },
-  "options_whitelist_description": {
-    "message": "Jūs išjungėte reklamų blokavimą šiuose puslapiuose ir matote reklamas juose."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Neturi puslapių baltąjame sąraše."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Tinklapiai kuriais pasitikite ir norite juose matyti reklamą, bus rodomi čia."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "pvz. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

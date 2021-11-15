@@ -378,9 +378,6 @@
   "options_tab_help": {
     "message": "ヘルプ"
   },
-  "options_tab_whitelist": {
-    "message": "ホワイトリストに登録されているウェブサイト"
-  },
   "options_tracking_warning_1": {
     "message": "<strong>$tracking$</strong> と <strong>$acceptableAds$</strong> の両方が有効になっています。",
     "placeholders": {
@@ -408,28 +405,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "OK, わかりました"
-  },
-  "options_whitelist_add": {
-    "message": "ウェブサイトの追加"
-  },
-  "options_whitelist_description": {
-    "message": "これらウェブサイトでは広告ブロッカーがオフになっているので、広告が表示されます。"
-  },
-  "options_whitelist_empty_1": {
-    "message": "ホワイトリストに登録されているウェブサイトがありません。"
-  },
-  "options_whitelist_empty_2": {
-    "message": "信頼出来て広告を許可できるウェブサイトはここに表示されます。"
-  },
-  "options_whitelist_notification": {
-    "message": "ウェブサイトはホワイトリストに登録されています。"
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "例: $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

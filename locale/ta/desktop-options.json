@@ -221,9 +221,6 @@
   "options_tab_help": {
     "message": "உதவி"
   },
-  "options_tab_whitelist": {
-    "message": "அனுமதிக்கப்பட்ட வலைத்தளங்கள்"
-  },
   "options_tracking_warning_3": {
     "message": "உமக்கு மேலும் தனியுரிமை வேண்டும் என்றால், கீழே உள்ள <strong>$acceptableAdsPrivacy$</strong> -ஐ தேர்ந்தெடு.",
     "placeholders": {
@@ -235,22 +232,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "சரி, புரிந்துவிட்டது"
-  },
-  "options_whitelist_add": {
-    "message": "வலைத்தளத்தைச் சேர்"
-  },
-  "options_whitelist_description": {
-    "message": "நீங்கள் இந்த வலைத்தளங்களில் விளம்பர தடுத்தலை அணைத்திருகிறீர்கள், அதனால் இதில் விளம்பரங்களைப் காண்பீர்கள்."
-  },
-  "options_whitelist_notification": {
-    "message": "வலைத்தளம் தடைசெய்யப்பட்ட பட்டியலில் சேர்க்கப்பட்டது."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "எ.கா. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

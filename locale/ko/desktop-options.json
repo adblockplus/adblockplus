@@ -401,9 +401,6 @@
   "options_tab_help": {
     "message": "도움말"
   },
-  "options_tab_whitelist": {
-    "message": "허용 목록에 추가된 웹사이트"
-  },
   "options_tracking_warning_1": {
     "message": "<strong>$tracking$</strong>와 <strong>$acceptableAds$</strong> 양 쪽 모두 활성화되어 있는 것을 발견했습니다.",
     "placeholders": {
@@ -422,28 +419,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "네. 이해했습니다"
-  },
-  "options_whitelist_add": {
-    "message": "웹사이트 추가"
-  },
-  "options_whitelist_description": {
-    "message": "이러한 웹 사이트에서 광고 차단 기능을 비활성화하면 광고가 표시됩니다."
-  },
-  "options_whitelist_empty_1": {
-    "message": "허용된 웹사이트가 없습니다."
-  },
-  "options_whitelist_empty_2": {
-    "message": "신뢰할 수 있고 광고를 허용하고자 하는 웹사이트가 이곳에 표시됩니다."
-  },
-  "options_whitelist_notification": {
-    "message": "웹사이트가 화이트리스트에 추가되었습니다."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "예: $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

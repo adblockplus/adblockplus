@@ -187,28 +187,5 @@
   },
   "options_tab_help": {
     "message": "Pomoć"
-  },
-  "options_tab_whitelist": {
-    "message": "Dopuštene web stranice"
-  },
-  "options_whitelist_add": {
-    "message": "Dodaj web stranicu"
-  },
-  "options_whitelist_description": {
-    "message": "Isključili ste blokiranje oglasa na ovim stranicama, stoga ćete vidjeti reklama na njima."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Nemate nikakve dopuštene web stranice."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Web stranice koje smatrate pouzdanima i na njima želite omogućiti oglase bit će prikazane ovdje."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "npr. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

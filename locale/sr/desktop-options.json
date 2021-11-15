@@ -211,30 +211,7 @@
   "options_tab_help": {
     "message": "Помоћ"
   },
-  "options_tab_whitelist": {
-    "message": "Веб-сајтови на белој листи"
-  },
   "options_tracking_warning_acknowledgment": {
     "message": "У реду, разумем"
-  },
-  "options_whitelist_add": {
-    "message": "Додај веб-сајт"
-  },
-  "options_whitelist_description": {
-    "message": "Искључили сте блокаду огласа на овим веб-сајтовима и, стога, видећете огласе на њима."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Немате ниједан веб-сајт на белој листи."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Овде ће бити приказани веб-сајтови којима верујете и на којима желите да дозволите огласе."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "нпр. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

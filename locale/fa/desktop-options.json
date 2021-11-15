@@ -182,19 +182,7 @@
   "options_tab_help": {
     "message": "راهنما"
   },
-  "options_tab_whitelist": {
-    "message": "فهرست سفید پایگاهها (که تبلیغات مسدود نشه)"
-  },
   "options_tracking_warning_acknowledgment": {
     "message": "باشه فهمیدم"
-  },
-  "options_whitelist_add": {
-    "message": "اضافه کردن وب سایت"
-  },
-  "options_whitelist_description": {
-    "message": "شما مسدود کردن تبلیغات در این وبسایت‌ها را غیرفعال کرده و بنابراین تبلیغات آن‌ها را مشاهده خواهید کرد."
-  },
-  "options_whitelist_empty_1": {
-    "message": "شما هیچ وب سایت لیست سفیدی ندارید"
   }
 }

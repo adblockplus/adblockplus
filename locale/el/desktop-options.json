@@ -359,33 +359,7 @@
   "options_tab_help": {
     "message": "Βοήθεια"
   },
-  "options_tab_whitelist": {
-    "message": "Λίστα επιτρεπόμενων ιστότοπων"
-  },
   "options_tracking_warning_2": {
     "message": "Πρέπει να γνωρίζετε ότι <strong>ενδεχομένως</strong> να υπάρχει παρακολούθηση με τις αποδεκτές διαφημίσεις. Με αυτόν τον τρόπο οι διαφημιστές μπορούν να σας παρουσιάζουν σχετικότερες διαφημίσεις."
-  },
-  "options_whitelist_add": {
-    "message": "ΠΡΟΣΘΗΚΗ ΙΣΤΟΤΟΠΟΥ"
-  },
-  "options_whitelist_description": {
-    "message": "Έχετε απενεργοποιήσει την αποκλεισμό διαφημίσεων σε αυτούς τους ιστότοπους και, κατά συνέπεια, θα εμφανίζονται διαφημίσεις σε αυτούς."
-  },
-  "options_whitelist_empty_1": {
-    "message": "Δεν διαθέτετε ευρετήριο επιτρεπόμενων ιστότοπων."
-  },
-  "options_whitelist_empty_2": {
-    "message": "Ιστότοποι που εμπιστεύεστε και θέλετε να επιτρέψετε οι διαφημίσεις τους να εμφανίζονται εδώ."
-  },
-  "options_whitelist_notification": {
-    "message": "Ο ιστότοπος έχει προστεθεί στη λίστα επιτρεπόμενων."
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "π.χ. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

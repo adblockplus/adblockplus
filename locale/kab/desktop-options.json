@@ -155,21 +155,7 @@
   "options_tab_help": {
     "message": "Tallelt"
   },
-  "options_tab_whitelist": {
-    "message": "Ismal n tebdarin timellalin"
-  },
   "options_tracking_warning_acknowledgment": {
     "message": "IH, awi-t"
-  },
-  "options_whitelist_add": {
-    "message": "Rnu asmel web"
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "m.d. $domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

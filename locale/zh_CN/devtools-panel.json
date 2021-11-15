@@ -35,9 +35,6 @@
   "devtools_header_state_blocked": {
     "message": "已拦截"
   },
-  "devtools_header_state_whitelisted": {
-    "message": "已列入白名单"
-  },
   "devtools_header_type_any": {
     "message": "任何"
   },

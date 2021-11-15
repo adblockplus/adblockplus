@@ -32,9 +32,6 @@
   "devtools_header_state_blocked": {
     "message": "bloquejat"
   },
-  "devtools_header_state_whitelisted": {
-    "message": "a la llista blanca"
-  },
   "devtools_header_type_any": {
     "message": "qualsevol"
   },

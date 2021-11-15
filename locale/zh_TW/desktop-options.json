@@ -238,9 +238,6 @@
   "options_tab_help": {
     "message": "幫助"
   },
-  "options_tab_whitelist": {
-    "message": "白名單網站"
-  },
   "options_tracking_warning_1": {
     "message": "我們注意到您同時啟用了<strong>$tracking$</strong>和<strong>$acceptableAds$</strong>。",
     "placeholders": {
@@ -265,25 +262,5 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "好的，知道了"
-  },
-  "options_whitelist_add": {
-    "message": "添加網站"
-  },
-  "options_whitelist_description": {
-    "message": "您已關閉這些網站上的廣告屏蔽功能，因此會在這些網站上看到廣告。"
-  },
-  "options_whitelist_empty_1": {
-    "message": "您沒有任何列入白名單的網站。"
-  },
-  "options_whitelist_empty_2": {
-    "message": "您信任的網站並希望允許廣告在此顯示。"
-  },
-  "options_whitelist_placeholder_example": {
-    "message": "例如$domain$",
-    "placeholders": {
-      "domain": {
-        "content": "www.example.com"
-      }
-    }
   }
 }

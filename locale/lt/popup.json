@@ -17,9 +17,6 @@
   "overlay_notification_closing_button_optout": {
     "message": "Neberodyti pranešimų"
   },
-  "promote_abp_module": {
-    "message": "Domina Adblock Plus mobiliąjame?"
-  },
   "refresh_to_take_effect": {
     "message": "Norėdami jog pakeitimai įsigaliotų paspauskite <strong>Atnaujinti</strong>."
   },
