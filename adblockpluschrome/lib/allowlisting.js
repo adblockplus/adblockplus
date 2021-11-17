@@ -30,7 +30,7 @@ import {verifySignature} from "../adblockpluscore/lib/rsa.js";
 import {EventEmitter} from "./events.js";
 
 let sitekeys = new ext.PageMap();
-export let allowlistedDomainRegexp = /^@@\|\|([^/:]+)\^\$document$/;
+let allowlistedDomainRegexp = /^@@\|\|([^/:]+)\^\$document$/;
 let eventEmitter = new EventEmitter();
 
 function match(page, url, typeMask, docDomain, sitekey)

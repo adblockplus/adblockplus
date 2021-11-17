@@ -80,7 +80,7 @@ const {initI18n} = require("../i18n");
   function getAcceptableAdsUrl()
   {
     return browser.runtime.sendMessage(
-      {type: "prefs.get", key: "subscriptions_exceptionsurl"});
+      {type: "app.get", what: "acceptableAdsUrl"});
   }
 
   function getRecommendedAds()
@@ -374,20 +374,22 @@ const {initI18n} = require("../i18n");
         break;
       }
       case "subscriptions.respond": {
-        const [subscription] = msg.args;
+        const [subscription, property] = msg.args;
         switch (msg.action)
         {
           case "added":
-          case "disabled":
             setSubscription(subscription, "add");
+            break;
+          case "changed":
+            setSubscription(
+              subscription,
+              // We're also receiving these messages for subscriptions that are
+              // not installed so we shouldn't add those by accident
+              (property === "enabled") ? "add" : "update"
+            );
             break;
           case "removed":
             setSubscription(subscription, "remove");
-            break;
-          case "title":
-            // We're also receiving these messages for subscriptions that are
-            // not installed so we shouldn't add those by accident
-            setSubscription(subscription, "update");
             break;
         }
         break;
@@ -410,7 +412,7 @@ const {initI18n} = require("../i18n");
 
   port.postMessage({
     type: "subscriptions.listen",
-    filter: ["added", "disabled", "removed", "title"]
+    filter: ["added", "changed", "removed"]
   });
 
   /* Initialization */

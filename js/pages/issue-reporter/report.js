@@ -285,7 +285,6 @@ function retrieveSubscriptions()
   return browser.runtime.sendMessage({
     type: "subscriptions.get",
     ignoreDisabled: true,
-    downloadable: true,
     disabledFilters: true
   }).then(subscriptions =>
   {

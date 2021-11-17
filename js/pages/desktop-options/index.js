@@ -1049,6 +1049,7 @@ function setupLanguagesBox()
 function onDOMLoaded()
 {
   populateLists().then(setupLanguagesBox).catch(dispatchError);
+  populateFilters().catch(dispatchError);
 
   // Initialize navigation sidebar
   browser.runtime.sendMessage({
@@ -1323,65 +1324,42 @@ function setPrivacyConflict()
   }
 }
 
-function populateLists()
+async function populateFilters()
 {
-  return new Promise(resolve =>
-  {
-    let todo = 2;
-    const done = () =>
-    {
-      if (!--todo)
-        resolve();
-    };
+  const filters = await api.filters.get();
+  loadCustomFilters([].concat(...filters));
+  isCustomFiltersLoaded = true;
+}
 
-    subscriptionsMap = Object.create(null);
-    filtersMap = Object.create(null);
+async function populateLists()
+{
+  subscriptionsMap = Object.create(null);
+  filtersMap = Object.create(null);
 
-    // Empty collections and lists
-    for (const property in collections)
-      collections[property].clearAll();
+  // Empty collections and lists
+  for (const property in collections)
+    collections[property].clearAll();
 
-    browser.runtime.sendMessage({
-      type: "subscriptions.get",
-      special: true
-    }).then((subscriptions) =>
-    {
-      const customFilterPromises = subscriptions.map(getSubscriptionFilters);
-      Promise.all(customFilterPromises).then((filters) =>
-      {
-        loadCustomFilters([].concat(...filters));
-        isCustomFiltersLoaded = true;
-      }).then(done).catch(dispatchError);
-    });
+  const [
+    url,
+    privacyUrl,
+    additionalSubscriptionUrls,
+    subscriptions
+  ] = await Promise.all([
+    api.app.get("acceptableAdsUrl"),
+    api.app.get("acceptableAdsPrivacyUrl"),
+    api.prefs.get("additional_subscriptions"),
+    api.subscriptions.get()
+  ]);
 
-    Promise.all([
-      browser.runtime.sendMessage({
-        type: "prefs.get",
-        key: "subscriptions_exceptionsurl"
-      }),
-      browser.runtime.sendMessage({
-        type: "prefs.get",
-        key: "subscriptions_exceptionsurl_privacy"
-      }),
-      getPref("additional_subscriptions"),
-      browser.runtime.sendMessage({
-        type: "subscriptions.get",
-        downloadable: true
-      })
-    ])
-    .then(([url, privacyUrl, additionalSubscriptionUrls, subscriptions]) =>
-    {
-      acceptableAdsUrl = url;
-      acceptableAdsPrivacyUrl = privacyUrl;
-      additionalSubscriptions = additionalSubscriptionUrls;
+  acceptableAdsUrl = url;
+  acceptableAdsPrivacyUrl = privacyUrl;
+  additionalSubscriptions = additionalSubscriptionUrls;
 
-      for (const subscription of subscriptions)
-        onSubscriptionMessage("added", subscription);
+  for (const subscription of subscriptions)
+    onSubscriptionMessage("added", subscription);
 
-      setAcceptableAds();
-      done();
-    });
-  });
+  setAcceptableAds();
 }
 
 function addAllowlistedDomain()
@@ -1513,9 +1491,6 @@ function onFilterMessage(action, filter)
       filter[timestampUI] = Date.now();
       updateFilter(filter);
       break;
-    case "loaded":
-      populateLists();
-      break;
     case "removed":
       const knownFilter = filtersMap[filter.text];
       if (allowlistedDomainRegexp.test(knownFilter.text) ||
@@ -1547,33 +1522,6 @@ function onSubscriptionMessage(action, subscription, ...args)
 
     switch (action)
     {
-      case "disabled":
-        updateSubscription(subscription);
-        if (isAcceptableAds(subscription.url))
-          setAcceptableAds();
-
-        setPrivacyConflict();
-        break;
-      case "downloading":
-      case "downloadStatus":
-      case "homepage":
-      case "lastDownload":
-      case "title":
-        updateSubscription(subscription);
-        break;
-      case "filtersDisabled":
-        const filtersDisabled = args[0];
-        if (filtersDisabled)
-          addErrorIdToSubscription(subscription.url, filtersDisabledErrorId);
-        else
-        {
-          removeErrorIdFromSubscription(
-            subscription.url,
-            filtersDisabledErrorId
-          );
-        }
-        updateSubscription(subscription);
-        break;
       case "added":
         const {url} = subscription;
         // Handle custom subscription
@@ -1601,11 +1549,31 @@ function onSubscriptionMessage(action, subscription, ...args)
           setPrivacyConflict();
         });
         break;
+      case "changed":
+        updateSubscription(subscription);
+        if (isAcceptableAds(subscription.url))
+          setAcceptableAds();
+
+        setPrivacyConflict();
+        break;
+      case "filtersDisabled":
+        const filtersDisabled = args[0];
+        if (filtersDisabled)
+          addErrorIdToSubscription(subscription.url, filtersDisabledErrorId);
+        else
+        {
+          removeErrorIdFromSubscription(
+            subscription.url,
+            filtersDisabledErrorId
+          );
+        }
+        updateSubscription(subscription);
+        break;
       case "removed":
         if (subscription.recommended)
         {
           subscription.disabled = true;
-          onSubscriptionMessage("disabled", subscription);
+          onSubscriptionMessage("changed", subscription);
         }
         else
         {
@@ -1626,13 +1594,6 @@ function onSubscriptionMessage(action, subscription, ...args)
         break;
     }
   }).catch(dispatchError);
-}
-
-function getSubscriptionFilters(subscription)
-{
-  return browser.runtime.sendMessage({
-    type: "filters.get",
-    subscriptionUrl: subscription.url});
 }
 
 function hidePref(key, value)
@@ -1736,7 +1697,7 @@ port.postMessage({
 });
 port.postMessage({
   type: "filters.listen",
-  filter: ["added", "loaded", "removed"]
+  filter: ["added", "changed", "removed"]
 });
 port.postMessage({
   type: "prefs.listen",
@@ -1752,8 +1713,7 @@ port.postMessage({
 });
 port.postMessage({
   type: "subscriptions.listen",
-  filter: ["added", "disabled", "filtersDisabled", "homepage", "lastDownload",
-           "removed", "title", "downloadStatus", "downloading"]
+  filter: ["added", "changed", "filtersDisabled", "removed"]
 });
 
 onDOMLoaded();

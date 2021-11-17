@@ -18,6 +18,7 @@
 /** @module messageResponder */
 
 import {port} from "./messaging.js";
+import {Prefs} from "./prefs.js";
 import * as info from "info";
 
 function forward(type, message, sender)
@@ -65,6 +66,12 @@ port.on("app.get", async(message, sender) =>
       bidiDir: browser.i18n.getMessage("@@bidi_dir")
     };
   }
+
+  if (message.what == "acceptableAdsUrl")
+    return Prefs.subscriptions_exceptionsurl;
+
+  if (message.what == "acceptableAdsPrivacyUrl")
+    return Prefs.subscriptions_exceptionsurl_privacy;
 
   if (message.what == "senderId")
     return sender.page.id;

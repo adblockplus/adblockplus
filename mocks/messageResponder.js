@@ -183,19 +183,46 @@
   {
     for (const action of actions)
     {
-      let name;
-      if (type == "filter" && action == "loaded")
-        name = "load";
-      else
-        name = type + "." + action;
-
-      if (!(name in listenedFilterChanges))
+      let names = [`${type}.${action}`];
+      if (type == "filter" && action == "changed")
+        names = ["filterState.enabled"];
+      else if (type == "subscription" && action == "changed")
       {
-        listenedFilterChanges[name] = null;
-        filterNotifier.on(name, (...args) =>
+        names = [
+          "subscription.disabled",
+          "subscription.downloading",
+          "subscription.downloadStatus",
+          "subscription.homepage",
+          "subscription.lastDownload",
+          "subscription.title"
+        ];
+      }
+
+      for (const name of names)
+      {
+        if (!(name in listenedFilterChanges))
         {
-          sendMessage(type, action, ...args);
-        });
+          listenedFilterChanges[name] = null;
+          filterNotifier.on(name, (item, ...args) =>
+          {
+            if (type == "subscription" && action == "changed")
+            {
+              let property = name.replace(/^subscription\./, "");
+              if (property == "disabled")
+                property = "enabled";
+
+              sendMessage(type, action, item, property);
+            }
+            else if (type == "subscription" && action == "filtersDisabled")
+            {
+              sendMessage(type, action, item, ...args);
+            }
+            else
+            {
+              sendMessage(type, action, item);
+            }
+          });
+        }
       }
     }
   }
@@ -216,6 +243,12 @@
 
   port.on("app.get", (message, sender) =>
   {
+    if (message.what == "acceptableAdsUrl")
+      return Prefs.subscriptions_exceptionsurl;
+
+    if (message.what == "acceptableAdsPrivacyUrl")
+      return Prefs.subscriptions_exceptionsurl_privacy;
+
     if (message.what == "doclink")
     {
       let {application} = info;
@@ -336,11 +369,15 @@
 
   port.on("filters.get", (message, sender) =>
   {
-    const subscription = Subscription.fromURL(message.subscriptionUrl);
-    if (!subscription)
-      return [];
+    const filters = [];
+    for (const subscription of filterStorage.subscriptions())
+    {
+      if (!(subscription instanceof SpecialSubscription))
+        continue;
 
-    return convertSubscriptionFilters(subscription);
+      filters.push(...convertSubscriptionFilters(subscription));
+    }
+    return filters;
   });
 
   port.on("filters.importRaw", (message, sender) =>
@@ -359,27 +396,6 @@
       }
       filterStorage.addFilter(filter);
       addedFilters.add(filter.text);
-    }
-
-    if (!message.removeExisting)
-      return errors;
-
-    for (const subscription of filterStorage.subscriptions())
-    {
-      if (!(subscription instanceof SpecialSubscription))
-        continue;
-
-      // We have to iterate backwards for now due to
-      // https://issues.adblockplus.org/ticket/7152
-      for (let i = subscription.filterCount; i--;)
-      {
-        const text = subscription.filterTextAt(i);
-        if (!/^@@\|\|([^/:]+)\^\$document$/.test(text) &&
-            !addedFilters.has(text))
-        {
-          filterStorage.removeFilter(Filter.fromText(text));
-        }
-      }
     }
 
     return errors;
@@ -521,10 +537,7 @@
       if (message.ignoreDisabled && s.disabled)
         continue;
 
-      if (message.downloadable && !(s instanceof DownloadableSubscription))
-        continue;
-
-      if (message.special && !(s instanceof SpecialSubscription))
+      if (!(s instanceof DownloadableSubscription))
         continue;
 
       const subscription = convertSubscription(s);
@@ -655,14 +668,7 @@
   function filtersRemove(message)
   {
     const filter = Filter.fromText(message.text);
-    let subscription = null;
-    if (message.subscriptionUrl)
-      subscription = Subscription.fromURL(message.subscriptionUrl);
-
-    if (!subscription)
-      filterStorage.removeFilter(filter);
-    else
-      filterStorage.removeFilter(filter, subscription, message.index);
+    filterStorage.removeFilter(filter);
     // in order to behave, from consumer perspective, like any other
     // method that could produce errors, return an Array, even if empty
     return [];

@@ -60,6 +60,11 @@ const doclinks = {
 };
 module.exports.doclinks = doclinks;
 
+const filters = {
+  get: () => send("filters.get")
+};
+module.exports.filters = filters;
+
 const notifications = {
   get: (displayMethod) => send("notifications.get", {displayMethod}),
   seen: () => send("notifications.seen")
@@ -72,6 +77,7 @@ const prefs = {
 module.exports.prefs = prefs;
 
 const subscriptions = {
+  get: (options) => send("subscriptions.get", options),
   getInitIssues: () => send("subscriptions.getInitIssues")
 };
 module.exports.subscriptions = subscriptions;

@@ -29,11 +29,6 @@ const IOFilterBase = require("./io-filter-base");
 const {utils, wire} = IOElement;
 const prevFilterText = new WeakMap();
 
-port.postMessage({
-  type: "filterState.listen",
-  filter: ["enabled"]
-});
-
 // <io-filter-list disabled />.{filters = [...]}
 class IOFilterList extends IOFilterBase
 {
@@ -586,20 +581,20 @@ function setupPort()
 {
   port.onMessage.addListener((message) =>
   {
-    if (message.type === "filterState.respond" && message.action === "enabled")
+    if (message.type === "filters.respond" && message.action === "changed")
     {
-      const [text, enabled] = message.args;
+      const {text, disabled} = message.args[0];
       const filter = this.filters.find(f => f.text === text);
 
       if (!filter)
         return;
 
-      const shownEnabled = !filter.disabled;
+      const shownDisabled = filter.disabled;
 
-      if (enabled !== shownEnabled)
+      if (disabled !== shownDisabled)
       {
         filter.reason = {type: "filter_disabled"};
-        filter.disabled = !enabled;
+        filter.disabled = disabled;
       }
       this.render();
     }

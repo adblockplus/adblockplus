@@ -31,7 +31,6 @@ import {Subscription, DownloadableSubscription, SpecialSubscription,
   from "../adblockpluscore/lib/subscriptionClasses.js";
 import {showOptions} from "../../lib/pages/options.js";
 import {recommendations} from "../adblockpluscore/lib/recommendations.js";
-import {allowlistedDomainRegexp} from "./allowlisting.js";
 import {filterState} from "../adblockpluscore/lib/filterState.js";
 import {filterTypes} from "./requestBlocker.js";
 
@@ -105,9 +104,20 @@ function sendMessage(type, action, ...args)
   if (uiPorts.size == 0)
     return;
 
+  // The filterState.enabled event passes the filter text,
+  // so we need to retrieve the filter object
+  if (type === "filter" && action === "changed" && typeof args[0] === "string")
+    args[0] = Filter.fromText(args[0]);
+
   let convertedArgs = [];
   for (let arg of args)
   {
+    if (typeof arg !== "object")
+    {
+      convertedArgs.push(arg);
+      continue;
+    }
+
     if (arg instanceof Subscription)
       convertedArgs.push(convertSubscription(arg));
     else if (arg instanceof Filter)
@@ -176,19 +186,48 @@ function addFilterListeners(type, actions)
 {
   for (let action of actions)
   {
-    let name;
-    if (type == "filter" && action == "loaded")
-      name = "ready";
-    else
-      name = type + "." + action;
-
-    if (!listenedFilterChanges.has(name))
+    let names = [`${type}.${action}`];
+    if (type == "filter" && action == "changed")
     {
-      listenedFilterChanges.add(name);
-      filterNotifier.on(name, (...args) =>
+      names = ["filterState.enabled"];
+    }
+    else if (type == "subscription" && action == "changed")
+    {
+      names = [
+        "subscription.disabled",
+        "subscription.downloading",
+        "subscription.downloadStatus",
+        "subscription.homepage",
+        "subscription.lastDownload",
+        "subscription.title"
+      ];
+    }
+
+    for (let name of names)
+    {
+      if (!listenedFilterChanges.has(name))
       {
-        sendMessage(type, action, ...args);
-      });
+        listenedFilterChanges.add(name);
+        filterNotifier.on(name, (item, ...args) =>
+        {
+          if (type == "subscription" && action == "changed")
+          {
+            let property = name.replace(/^subscription\./, "");
+            if (property == "disabled")
+              property = "enabled";
+
+            sendMessage(type, action, item, property);
+          }
+          else if (type == "subscription" && action == "filtersDisabled")
+          {
+            sendMessage(type, action, item, ...args);
+          }
+          else
+          {
+            sendMessage(type, action, item);
+          }
+        });
+      }
     }
   }
 }
@@ -291,20 +330,22 @@ function parseFilter(text)
 port.on("filters.add", (message, sender) => filtersAdd(message.text));
 
 /**
- * Returns a serialised version of all the filters that a given subscription
- * contains.
+ * Returns a serialized version of all filters in special subscriptions.
  *
  * @event "filters.get"
- * @property {string} subscriptionUrl - The subscription's URL.
  * @returns {object[]}
  */
 port.on("filters.get", (message, sender) =>
 {
-  let subscription = Subscription.fromURL(message.subscriptionUrl);
-  if (!subscription)
-    return [];
+  const filters = [];
+  for (const subscription of filterStorage.subscriptions())
+  {
+    if (!(subscription instanceof SpecialSubscription))
+      continue;
 
-  return convertSubscriptionFilters(subscription);
+    filters.push(...convertSubscriptionFilters(subscription));
+  }
+  return filters;
 });
 
 /**
@@ -313,24 +354,14 @@ port.on("filters.get", (message, sender) =>
  * @event "filters.getTypes"
  * @returns {string[]}
  */
-port.on("filters.getTypes", (message, sender) =>
-{
-  let types = Array.from(filterTypes);
-  types.push(...types.splice(types.indexOf("OTHER"), 1));
-
-  return types;
-});
+port.on("filters.getTypes", (message, sender) => Array.from(filterTypes));
 
 /**
- * Import the given block of filter text as custom user filters, optionally
- * removing any previously add custom user filters.
+ * Import the given block of filter text as custom user filters.
  *
  * @event "filters.importRaw"
  * @property {string} text
  *   The filters to add.
- * @property {boolean} removeExisting
- *   If true we remove any previously added custom user filters after adding
- *   the new ones.
  * @returns {string[]} errors
  */
 port.on("filters.importRaw", (message, sender) =>
@@ -348,25 +379,6 @@ port.on("filters.importRaw", (message, sender) =>
 
     filterStorage.addFilter(filter);
     addedFilters.add(filter.text);
-  }
-
-  if (!message.removeExisting)
-    return errors;
-
-  for (let subscription of filterStorage.subscriptions())
-  {
-    if (!(subscription instanceof SpecialSubscription))
-      continue;
-
-    // We have to iterate backwards for now due to
-    // https://issues.adblockplus.org/ticket/7152
-    for (let i = subscription.filterCount; i--;)
-    {
-      let text = subscription.filterTextAt(i);
-      if (!allowlistedDomainRegexp.test(text) &&
-          !addedFilters.has(text))
-        filterStorage.removeFilter(Filter.fromText(text));
-    }
   }
 
   return errors;
@@ -485,16 +497,13 @@ port.on("subscriptions.enableAllFilters", (message, sender) =>
 });
 
 /**
- * Returns a serialised version of all the subscriptions which meet the given
- * criteria. Optionally include the disabled filters for those subscriptions.
+ * Returns a serialized version of all downloadable subscriptions which meet
+ * the given criteria. Optionally include the disabled filters for those
+ * subscriptions.
  *
  * @event "subscriptions.get"
  * @property {boolean} ignoreDisabled
  *   Skip disabled subscriptions if true.
- * @property {boolean} downloadable
- *   Skip all but downloadable subscriptions if true.
- * @property {boolean} special
- *   Skip all but special subscriptions if true.
  * @property {boolean} disabledFilters
  *   Include a subscription's disabled filters if true.
  * @returns {object[]} subscriptions
@@ -507,8 +516,7 @@ port.on("subscriptions.get", (message, sender) =>
     if (message.ignoreDisabled && s.disabled)
       continue;
 
-    if (!(message.downloadable && s instanceof DownloadableSubscription ||
-          message.special && s instanceof SpecialSubscription))
+    if (!(s instanceof DownloadableSubscription))
       continue;
 
     let subscription = convertSubscription(s);
@@ -665,14 +673,7 @@ function filtersValidate(text)
 function filtersRemove(message)
 {
   let filter = Filter.fromText(message.text);
-  let subscription = null;
-  if (message.subscriptionUrl)
-    subscription = Subscription.fromURL(message.subscriptionUrl);
-
-  if (!subscription)
-    filterStorage.removeFilter(filter);
-  else
-    filterStorage.removeFilter(filter, subscription, message.index);
+  filterStorage.removeFilter(filter);
   // in order to behave, from consumer perspective, like any other
   // method that could produce errors, return an Array, even if empty
   return [];
