@@ -116,7 +116,6 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 Above license covers the following projects and their dependencies:
 
-  * custom-elements-no-builtin
   * hyperhtml-element
   * hyperhtml
   * lightercollective

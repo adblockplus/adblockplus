@@ -169,13 +169,4 @@
       ]);
     }
   };
-
-  // Workaround since HTMLCollection, NodeList, StyleSheetList, and CSSRuleList
-  // didn't have iterator support before Chrome 51.
-  // https://bugs.chromium.org/p/chromium/issues/detail?id=401699
-  for (const object of [HTMLCollection, NodeList, StyleSheetList, CSSRuleList])
-  {
-    if (!(Symbol.iterator in object.prototype))
-      object.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator];
-  }
 }());

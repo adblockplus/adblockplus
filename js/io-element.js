@@ -17,14 +17,10 @@
 
 "use strict";
 
-const {setElementText} = require("./i18n");
-
-// Custom Elements polyfill (triggered on demand)
-if (typeof customElements !== "object")
-  require("@webreflection/custom-elements-no-builtin");
-
 // external dependencies
 const {default: HyperHTMLElement} = require("hyperhtml-element/cjs");
+
+const {setElementText} = require("./i18n");
 
 // common DOM utilities exposed as IOElement.utils
 const DOMUtils = {

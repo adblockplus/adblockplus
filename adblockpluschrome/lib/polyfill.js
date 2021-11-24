@@ -22,19 +22,7 @@ import webextPolyfill from "webextension-polyfill";
 if (!("browser" in self))
   self.browser = webextPolyfill;
 
-// Object.values is not supported in Chrome <54.
-if (!("values" in Object))
-  Object.values = obj => Object.keys(obj).map(key => obj[key]);
-
-// Firefox <56 separates the locale parts with an underscore instead of a dash.
-// https://bugzilla.mozilla.org/show_bug.cgi?id=1374552
-let {getUILanguage} = browser.i18n;
-browser.i18n.getUILanguage = function()
-{
-  return getUILanguage().replace("_", "-");
-};
-
-// Chrome <69 does not support OffscreenCanvas
+// Firefox (at least up to 93) does not support OffscreenCanvas
 if (typeof OffscreenCanvas == "undefined")
 {
   self.OffscreenCanvas = function(width, height)
