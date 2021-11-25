@@ -12,9 +12,9 @@ let ext = window.ext; // eslint-disable-line no-redeclare
 if (!browser.devtools)
 {
   // Listen for messages from the background page.
-  browser.runtime.onMessage.addListener((message, sender, sendResponse) =>
+  browser.runtime.onMessage.addListener((message, sender) =>
   {
-    return ext.onMessage._dispatch(message, {}, sendResponse).includes(true);
+    return ext.onMessage._dispatch(message, {});
   });
 }
 

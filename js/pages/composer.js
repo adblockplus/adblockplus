@@ -163,7 +163,7 @@ function init()
     "click", closeDialog.bind(null, false)
   );
 
-  ext.onMessage.addListener((msg, sender, sendResponse) =>
+  ext.onMessage.addListener((msg, sender) =>
   {
     switch (msg.type)
     {
@@ -184,8 +184,7 @@ function init()
         // therefore send a response here, and check for it to see if the
         // message really was sent successfully.
         // [1] - https://bugzilla.mozilla.org/show_bug.cgi?id=1418655
-        sendResponse(true);
-        break;
+        return true;
       case "composer.dialog.close":
         closeMe();
         break;

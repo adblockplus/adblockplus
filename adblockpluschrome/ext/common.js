@@ -41,7 +41,7 @@ ext._EventTarget = class EventTarget
     let results = [];
     for (let listener of this._listeners)
       results.push(listener(...args));
-    return results;
+    return Promise.race(results);
   }
 };
 

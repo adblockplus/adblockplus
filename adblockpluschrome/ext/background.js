@@ -371,7 +371,7 @@
 
   /* Message passing */
 
-  browser.runtime.onMessage.addListener((message, rawSender, sendResponse) =>
+  browser.runtime.onMessage.addListener((message, rawSender) =>
   {
     let sender = {};
 
@@ -395,8 +395,6 @@
       };
     }
 
-    return ext.onMessage._dispatch(
-      message, sender, sendResponse
-    ).includes(true);
+    return ext.onMessage._dispatch(message, sender);
   });
 }

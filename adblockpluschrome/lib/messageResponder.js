@@ -23,10 +23,7 @@ import * as info from "info";
 
 function forward(type, message, sender)
 {
-  return new Promise(resolve =>
-  {
-    port._onMessage(Object.assign({}, message, {type}), sender, resolve);
-  });
+  return port._onMessage(Object.assign({}, message, {type}), sender);
 }
 
 /**

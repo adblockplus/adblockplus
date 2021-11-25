@@ -33,34 +33,20 @@ class Port
     ext.onMessage.addListener(this._onMessage);
   }
 
-  _onMessage(message, sender, sendResponse)
+  async _onMessage(message, sender)
   {
-    let async = false;
     let callbacks = this._eventEmitter.listeners(message.type);
 
-    for (let callback of callbacks)
+    try
     {
-      let response = callback(message, sender);
-
-      if (response && typeof response.then == "function")
-      {
-        response.then(
-          sendResponse,
-          reason =>
-          {
-            console.error(reason);
-            sendResponse();
-          }
-        );
-        async = true;
-      }
-      else
-      {
-        sendResponse(response);
-      }
+      let responses = callbacks.map(callback => callback(message, sender));
+      let response = await Promise.race(responses);
+      return response;
     }
-
-    return async;
+    catch (err)
+    {
+      console.error(err);
+    }
   }
 
   /**

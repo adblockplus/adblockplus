@@ -514,7 +514,7 @@ function initializeComposer()
     });
   }, true);
 
-  ext.onMessage.addListener(async(message, sender, sendResponse) =>
+  ext.onMessage.addListener(async(message, sender) =>
   {
     switch (message.type)
     {
@@ -524,9 +524,9 @@ function initializeComposer()
       case "composer.content.getState":
         if (window == window.top)
         {
-          sendResponse({
+          return {
             active: currentlyPickingElement || blockelementPopupId != null
-          });
+          };
         }
         break;
       case "composer.content.startPickingElement":
