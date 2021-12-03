@@ -1,4 +1,8 @@
 {
+  "filter_elemhide_not_specific_enough": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/cb3a51d71d78d06a2d45194592396d74d01b3a4a/spec/abp/desktop-settings/advanced-tab.md#custom-filters-alert",
+    "message": "CSS selector is too short. Please use a longer selector or specify at least one domain for this element hiding filter."
+  },
   "filter_elemhideemulation_nodomain": {
     "description": "https://gitlab.com/eyeo/specs/spec/-/blob/7b0211f0bce836052977583bcaf764f34aee95e5/spec/abp/desktop-settings/advanced-tab.md#custom-filters-alert",
     "message": "No active domain specified. Please specify at least one domain for this extended element hiding filter."
@@ -11,13 +15,17 @@
     "description": "https://gitlab.com/eyeo/specs/spec/-/blob/7b0211f0bce836052977583bcaf764f34aee95e5/spec/abp/desktop-settings/advanced-tab.md#custom-filters-alert",
     "message": "Invalid or empty domain. Domain list must contain one or more domains separated by a comma (,), e.g. abc.com,def.com,ghi.com."
   },
+  "filter_invalid_option": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/7b0211f0bce836052977583bcaf764f34aee95e5/spec/abp/desktop-settings/advanced-tab.md#custom-filters-alert",
+    "message": "Invalid filter option"
+  },
   "filter_invalid_regexp": {
     "description": "https://gitlab.com/eyeo/specs/spec/-/blob/7b0211f0bce836052977583bcaf764f34aee95e5/spec/abp/desktop-settings/advanced-tab.md#custom-filters-alert",
     "message": "Invalid regular expression (syntax does not adhere to standard)."
   },
   "filter_slow": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/7b0211f0bce836052977583bcaf764f34aee95e5/spec/abp/desktop-settings/advanced-tab.md#custom-filters-alert",
-    "message": "To ensure a fast filter, please check the length of the pattern and ensure it doesn't contain a regular expression."
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/cb3a51d71d78d06a2d45194592396d74d01b3a4a/spec/abp/desktop-settings/advanced-tab.md#custom-filters-alert",
+    "message": "Slow filter. Please check the length of the pattern and ensure it doesn't contain a regular expression."
   },
   "filter_snippet_nodomain": {
     "description": "https://gitlab.com/eyeo/specs/spec/-/blob/7b0211f0bce836052977583bcaf764f34aee95e5/spec/abp/desktop-settings/advanced-tab.md#custom-filters-alert",
@@ -33,9 +41,9 @@
       }
     }
   },
-  "filter_invalid_option": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/7b0211f0bce836052977583bcaf764f34aee95e5/spec/abp/desktop-settings/advanced-tab.md#custom-filters-alert",
-    "message": "Invalid filter option"
+  "filter_url_not_specific_enough": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/cb3a51d71d78d06a2d45194592396d74d01b3a4a/spec/abp/desktop-settings/advanced-tab.md#custom-filters-alert",
+    "message": "URL pattern is too short. Please use a longer pattern or specify at least one domain for this filter."
   },
   "line": {
     "description": "Error message with line number indicator",
