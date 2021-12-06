@@ -39,10 +39,81 @@ class AdvancedPage extends BasePage
     await (await this._advancedTabButton).click();
   }
 
+  get abpFiltersFL()
+  {
+    return this.browser
+      .$("//li[@aria-label='ABP filters']");
+  }
+
+  get abpFiltersFLLastUpdatedText()
+  {
+    return this.browser
+      .$("//li[@aria-label='ABP filters']/div/span[@class='last-update']");
+  }
+
+  get abpFiltersFLStatusToggle()
+  {
+    return this.browser
+      .$("//li[@aria-label='ABP filters']/div/io-toggle/button");
+  }
+
+  get abpTestFilterErrorIcon()
+  {
+    return this.browser.$("//li[@aria-label='ABP_TEST_FILTER']/div/io-popout");
+  }
+
+  get addAFilterListButton()
+  {
+    return this.browser
+      .$("//button[@data-action='validate-import-subscription']");
+  }
+
+  get addBuiltinFilterListButton()
+  {
+    return this.browser.$("#filters-boxlabel");
+  }
+
+  get addCustomFilterListButton()
+  {
+    return this.browser
+      .$("//io-filter-table/io-filter-search/button");
+  }
+
+  get addCustomFilterListInput()
+  {
+    return this.browser
+      .$("//io-filter-search/input");
+  }
+
+  get addNewFilterListButton()
+  {
+    return this.browser
+      .$("//button[@data-i18n='options_filterList_add']");
+  }
+
+  get addNewFilterListDialog()
+  {
+    return this.browser.$("#filterlist-by-url");
+  }
+
   get allowNonintrusiveAdvertisingFL()
   {
     return this.browser
       .$("//li[@aria-label='Allow nonintrusive advertising']");
+  }
+
+  get allowNonintrusiveAdvertisingFLLastUpdatedText()
+  {
+    return this.browser
+      .$("//li[@aria-label='Allow nonintrusive advertising']" +
+      "/div/span[@class='last-update']");
+  }
+
+  get allowNonintrusiveAdvertisingFLStatusToggle()
+  {
+    return this.browser
+      .$("//li[@aria-label='Allow nonintrusive advertising']" +
+      "/div/io-toggle/button");
   }
 
   get allowNonintrusiveAdvertisingWithoutTrackingFL()
@@ -52,10 +123,71 @@ class AdvancedPage extends BasePage
       "without third-party tracking']");
   }
 
+  get cancelAddingFLButton()
+  {
+    return this.browser.$("//button[@data-action='close-filterlist-by-url']");
+  }
+
+  get customFilterListsFirstItemToggle()
+  {
+    return this.browser
+      .$("//io-filter-list/table/tbody/tr[1]/td[2]/io-toggle/button");
+  }
+
   get easyListFL()
   {
     return this.browser
       .$("//li[@aria-label='EasyList']");
+  }
+
+  get easyListFLGearIcon()
+  {
+    return this.browser
+      .$("//li[@aria-label='EasyList']" +
+      "/div/io-popout[@type='menubar']");
+  }
+
+  get easyListFLLastUpdatedText()
+  {
+    return this.browser
+      .$("//li[@aria-label='EasyList']/div/span[@class='last-update']");
+  }
+
+  get easyListFLSourceButton()
+  {
+    return this.browser
+      .$("//li[@aria-label='EasyList']" +
+      "/div/io-popout[@type='menubar']" +
+      "/div/div/ul/li/a[@data-i18n='options_filterList_source']");
+  }
+
+  get easyListFLStatusToggle()
+  {
+    return this.browser
+      .$("//li[@aria-label='EasyList']/div/io-toggle/button");
+  }
+
+  get easyListFLTrashButton()
+  {
+    return this.browser
+      .$("//li[@aria-label='EasyList']/div/button" +
+      "[@data-action='remove-subscription']");
+  }
+
+  get easyListFLUpdateNowButton()
+  {
+    return this.browser
+      .$("//li[@aria-label='EasyList']" +
+      "/div/io-popout[@type='menubar']" +
+      "/div/div/ul/li/button[@data-i18n='options_filterList_updateNow']");
+  }
+
+  get easyListFLWebsiteButton()
+  {
+    return this.browser
+      .$("//li[@aria-label='EasyList']" +
+      "/div/io-popout[@type='menubar']" +
+      "/div/div/ul/li/a[@data-i18n='options_filterList_website']");
   }
 
   get easyListGermanyPlusEasyListFL()
@@ -66,8 +198,12 @@ class AdvancedPage extends BasePage
 
   get easyPrivacyFL()
   {
-    return this.browser
-      .$("//li[@aria-label='EasyPrivacy']");
+    return this.browser.$("//li[@aria-label='EasyPrivacy']");
+  }
+
+  get enableThemButton()
+  {
+    return this.browser.$("//a[@data-action='enable-filters']");
   }
 
   get fanboysNotificationsBlockingListFL()
@@ -82,11 +218,28 @@ class AdvancedPage extends BasePage
       .$("//li[@aria-label=\"Fanboy's Social Blocking List\"]");
   }
 
+  get filterListsDropdown()
+  {
+    return this.browser.$("#filters-boxpopup");
+  }
+
+  get filterListErrorPopout()
+  {
+    return this.browser
+      .$("//io-popout[@data-template-i18n-body=" +
+      "'options_filterList_errorPopup_title']");
+  }
+
   get filterListsLearnMoreLink()
   {
     return this.browser
       .$("//a[contains(@data-doclink, 'subscriptions')" +
         "and text()='Learn more']");
+  }
+
+  get filterListUrlInput()
+  {
+    return this.browser.$("#import-list-url");
   }
 
   get iDontCareAboutCookiesFL()
@@ -99,6 +252,24 @@ class AdvancedPage extends BasePage
   {
     return this.browser
       .$("//a[text()='Learn how to write filters (English only)']");
+  }
+
+  get listeFREasyListFL()
+  {
+    return this.browser.$("//li[@aria-label='Liste FR+EasyList']");
+  }
+
+  get listeFREasyListFLDropdownItem()
+  {
+    return this.browser
+      .$("//*[@id='filters-boxpopup']/" +
+      "li[contains(text(),'Liste FR+EasyList (français + English)')]");
+  }
+
+  get listeFREasyListFLStatusToggle()
+  {
+    return this.browser
+      .$("//li[@aria-label='Liste FR+EasyList']/div/io-toggle/button");
   }
 
   get showAdblockPlusPanelCheckbox()
@@ -168,6 +339,23 @@ class AdvancedPage extends BasePage
         "/io-popout/div/div/p");
   }
 
+  get testFilterList()
+  {
+    return this.browser.$("//li[@aria-label='https://test-filterlist.txt']");
+  }
+
+  get testFilterListNoHtttps()
+  {
+    return this.browser.$("//li[@aria-label='test-filterlist.txt']");
+  }
+
+  get testFilterListStatusToggle()
+  {
+    return this.browser
+      .$("//li[@aria-label='https://test-filterlist.txt']" +
+      "/div/io-toggle/button");
+  }
+
   get turnOnDebugElementCheckbox()
   {
     return this.browser
@@ -188,6 +376,89 @@ class AdvancedPage extends BasePage
         "/io-popout/div/div/p");
   }
 
+  get updateAllFilterlistsButton()
+  {
+    return this.browser
+      .$("#update");
+  }
+
+  get urlErrorMessage()
+  {
+    return this.browser
+      .$("//span[contains(@class, 'error-msg')" +
+        "and text()='URL must start with https://.']");
+  }
+
+  async clickAbpTestFilterErrorIcon()
+  {
+    await (await this.abpTestFilterErrorIcon).click();
+  }
+
+  async clickAddAFilterListButton()
+  {
+    await (await this.addAFilterListButton).click();
+  }
+
+  async clickAddBuiltinFilterListButton()
+  {
+    await (await this.addBuiltinFilterListButton).click();
+  }
+
+  async clickAddCustomFilterListButton()
+  {
+    await this.waitForEnabledThenClick(this.addCustomFilterListButton);
+  }
+
+  async clickAddNewFilterListButton()
+  {
+    await (await this.addNewFilterListButton).click();
+  }
+
+  async clickCancelAddingFLButton()
+  {
+    await (await this.cancelAddingFLButton).click();
+  }
+
+  async clickCustomFilterListsFirstItemToggle()
+  {
+    await (await this.customFilterListsFirstItemToggle).click();
+  }
+
+  async clickEasyListFLGearIcon()
+  {
+    await (await this.easyListFLGearIcon).click();
+  }
+
+  async clickEasyListFLSourceButton()
+  {
+    await (await this.easyListFLSourceButton).click();
+  }
+
+  async clickEasyListFLStatusToggle()
+  {
+    await (await this.easyListFLStatusToggle).click();
+  }
+
+  async clickEasyListFLTrashButton()
+  {
+    await (await this.easyListFLTrashButton).click();
+  }
+
+  async clickEasyListFLUpdateNowButton()
+  {
+    await (await this.easyListFLUpdateNowButton).click();
+  }
+
+  async clickEasyListFLWebsiteButton()
+  {
+    await (await this.easyListFLWebsiteButton).click();
+  }
+
+  async clickEnableThemButton()
+  {
+    await (await this.enableThemButton).click();
+  }
+
   async clickFilterListsLearnMoreLink()
   {
     await (await this.filterListsLearnMoreLink).click();
@@ -196,6 +467,11 @@ class AdvancedPage extends BasePage
   async clickLearnHowToWriteFiltersLink()
   {
     await (await this.learnHowToWriteFiltersLink).click();
+  }
+
+  async clickListeFREasyListFL()
+  {
+    await this.scrollIntoViewAndClick(this.listeFREasyListFLDropdownItem);
   }
 
   async clickShowAdblockPlusPanelCheckbox()
@@ -223,6 +499,11 @@ class AdvancedPage extends BasePage
     await (await this.showNumberOfAdsBlockedCheckbox).click();
   }
 
+  async clickShowUsefulNotificationsCheckbox()
+  {
+    await (await this.showUsefulNotificationsCheckbox).click();
+  }
+
   async clickShowUsefulNotificationsTooltipIcon()
   {
     await (await this.showUsefulNotificationsTooltipIcon).click();
@@ -238,6 +519,11 @@ class AdvancedPage extends BasePage
     await (await this.turnOnDebugElementTooltipIcon).click();
   }
 
+  async clickUpdateAllFilterlistsButton()
+  {
+    await (await this.updateAllFilterlistsButton).click();
+  }
+
   async getShowAdblockPlusPanelTooltipText()
   {
     return await (await this.showAdblockPlusPanelTooltipText).getText();
@@ -246,11 +532,6 @@ class AdvancedPage extends BasePage
   async getShowBlockElementTooltipText()
   {
     return await (await this.showBlockElementTooltipText).getText();
-  }
-
-  async clickShowUsefulNotificationsCheckbox()
-  {
-    await (await this.showUsefulNotificationsCheckbox).click();
   }
 
   async getShowUsefulNotificationsTooltipText()
@@ -263,10 +544,65 @@ class AdvancedPage extends BasePage
     return await (await this.turnOnDebugElementTooltipText).getText();
   }
 
+  async isAbpFiltersFLDisplayed()
+  {
+    return await this.waitForDisplayedNoError(this.abpFiltersFL);
+  }
+
+  async isAbpFiltersFLStatusToggleSelected()
+  {
+    return await (await this.abpFiltersFLStatusToggle).
+    getAttribute("aria-checked") === "true";
+  }
+
+  async isAbpFiltersFLUpdating()
+  {
+    return await (await this.abpFiltersFL).
+    getAttribute("class") === "show-message";
+  }
+
+  async isAbpFiltersFLUpdatingDone()
+  {
+    return await this.waitUntilAttributeValueIs(
+      this.abpFiltersFL, "class",
+      "show-message", 10000, true);
+  }
+
+  async isAbpTestFilterErrorIconDisplayed(reverseOption = false)
+  {
+    return await this.waitForDisplayedNoError(this.abpTestFilterErrorIcon,
+                                              reverseOption);
+  }
+
+  async isAddNewFilterListDialogDisplayed(reverseOption = false)
+  {
+    return await this.waitForDisplayedNoError(this.addNewFilterListDialog,
+                                              reverseOption);
+  }
+
   async isAllowNonintrusiveAdvertisingFLDisplayed()
   {
     return await this.waitForDisplayedNoError(this.
     allowNonintrusiveAdvertisingFL);
+  }
+
+  async isAllowNonintrusiveAdvertisingFLStatusToggleEnabled()
+  {
+    return await (await this.allowNonintrusiveAdvertisingFLStatusToggle).
+      isEnabled();
+  }
+
+  async isAllowNonintrusiveAdvertisingFLUpdating()
+  {
+    return await (await this.allowNonintrusiveAdvertisingFL).
+    getAttribute("class") === "show-message";
+  }
+
+  async isAllowNonintrusiveAdvertisingFLUpdatingDone()
+  {
+    return await this.waitUntilAttributeValueIs(
+      this.allowNonintrusiveAdvertisingFL, "class",
+      "show-message", 10000, true);
   }
 
   async isAllowNonintrusiveAdvertisingWithoutTrackingFLDisplayed()
@@ -275,9 +611,34 @@ class AdvancedPage extends BasePage
     allowNonintrusiveAdvertisingWithoutTrackingFL);
   }
 
+  async isCustomFilterListsFirstItemToggleSelected()
+  {
+    return await (await this.customFilterListsFirstItemToggle).
+    getAttribute("aria-checked") === "true";
+  }
+
   async isEasyListFLDisplayed()
   {
     return await this.waitForDisplayedNoError(this.easyListFL);
+  }
+
+  async isEasyListFLStatusToggleSelected()
+  {
+    return await (await this.easyListFLStatusToggle).
+    getAttribute("aria-checked") === "true";
+  }
+
+  async isEasyListFLUpdating()
+  {
+    return await (await this.easyListFL).
+    getAttribute("class") === "show-message";
+  }
+
+  async isEasyListFLUpdatingDone()
+  {
+    return await this.waitUntilAttributeValueIs(
+      this.easyListFL, "class",
+      "show-message", 10000, true);
   }
 
   async isEasyListGermanyPlusEasyListFLDisplayed()
@@ -303,16 +664,40 @@ class AdvancedPage extends BasePage
     fanboysSocialBlockingListFL);
   }
 
+  async isFilterListErrorPopoutDisplayed(reverseOption = false)
+  {
+    return await this.waitForDisplayedNoError(this.filterListErrorPopout,
+                                              reverseOption);
+  }
+
+  async isFilterListsDropdownDisplayed(reverseOption = false)
+  {
+    return await this.waitForDisplayedNoError(this.filterListsDropdown,
+                                              reverseOption);
+  }
+
   async isIDontCareAboutCookiesFLDisplayed()
   {
     return await this.waitForDisplayedNoError(this.iDontCareAboutCookiesFL);
   }
 
+  async isListeFREasyListFLDisplayed()
+  {
+    return await this.waitForDisplayedNoError(this.listeFREasyListFL);
+  }
+
+  async isListeFREasyListFLStatusToggleSelected()
+  {
+    return await (await this.listeFREasyListFLStatusToggle).
+    getAttribute("aria-checked") === "true";
+  }
+
   async isShowAdblockPlusPanelCheckboxSelected(expectedValue = "true",
                                                timeoutVal = 3000)
   {
-    return await this.waitUntilIsSelected(this.showAdblockPlusPanelCheckbox,
-                                          expectedValue, timeoutVal);
+    return await this.waitUntilAttributeValueIs(
+      this.showAdblockPlusPanelCheckbox, "aria-checked",
+      expectedValue, timeoutVal);
   }
 
   async isShowAdblockPlusPanelTooltipTextDisplayed()
@@ -323,8 +708,9 @@ class AdvancedPage extends BasePage
   async isShowBlockElementCheckboxSelected(expectedValue = "true",
                                            timeoutVal = 3000)
   {
-    return await this.waitUntilIsSelected(this.showBlockElementCheckbox,
-                                          expectedValue, timeoutVal);
+    return await this.waitUntilAttributeValueIs(
+      this.showBlockElementCheckbox, "aria-checked",
+      expectedValue, timeoutVal);
   }
 
   async isShowBlockElementTooltipTextDisplayed()
@@ -335,15 +721,17 @@ class AdvancedPage extends BasePage
   async isShowNumberOfAdsBlockedCheckboxSelected(expectedValue = "true",
                                                  timeoutVal = 3000)
   {
-    return await this.waitUntilIsSelected(this.showNumberOfAdsBlockedCheckbox,
-                                          expectedValue, timeoutVal);
+    return await this.waitUntilAttributeValueIs(
+      this.showNumberOfAdsBlockedCheckbox, "aria-checked",
+      expectedValue, timeoutVal);
   }
 
   async isShowUsefulNotificationsCheckboxSelected(expectedValue = "true",
                                                   timeoutVal = 3000)
   {
-    return await this.waitUntilIsSelected(this.showUsefulNotificationsCheckbox,
-                                          expectedValue, timeoutVal);
+    return await this.waitUntilAttributeValueIs(
+      this.showUsefulNotificationsCheckbox, "aria-checked",
+      expectedValue, timeoutVal);
   }
 
   async isShowUsefulNotificationsTooltipTextDisplayed()
@@ -351,16 +739,49 @@ class AdvancedPage extends BasePage
     return await (await this.showUsefulNotificationsTooltipText).isDisplayed();
   }
 
+  async isTestFilterListDisplayed()
+  {
+    return await (await this.testFilterList).isExisting();
+  }
+
+  async isTestFilterListNoHtttpsDisplayed()
+  {
+    return await (await this.testFilterListNoHtttps).isExisting();
+  }
+
+  async isTestFilterListStatusToggleSelected()
+  {
+    return await (await this.testFilterListStatusToggle).
+    getAttribute("aria-checked") === "true";
+  }
+
   async isTurnOnDebugElementCheckboxSelected(expectedValue = "true",
                                              timeoutVal = 3000)
   {
-    return await this.waitUntilIsSelected(this.turnOnDebugElementCheckbox,
-                                          expectedValue, timeoutVal);
+    return await this.waitUntilAttributeValueIs(
+      this.turnOnDebugElementCheckbox, "aria-checked",
+      expectedValue, timeoutVal);
   }
 
   async isTurnOnDebugElementTooltipTextDisplayed()
   {
     return await (await this.turnOnDebugElementTooltipText).isDisplayed();
+  }
+
+  async isUrlErrorMessageDisplayed()
+  {
+    return await this.waitForDisplayedNoError(this.urlErrorMessage);
+  }
+
+  async switchToEasylistSourceTab()
+  {
+    await this.switchToTab("https://easylist-downloads." +
+    "adblockplus.org/easylist.txt", 10000, true);
+  }
+
+  async switchToEasylisttoTab()
+  {
+    await this.switchToTab("EasyList - Overview");
   }
 
   async switchToHowToWriteFiltersTab()
@@ -371,6 +792,36 @@ class AdvancedPage extends BasePage
   async switchToSubscriptionsTab()
   {
     await this.switchToTab("Known Adblock Plus subscriptions");
+  }
+
+  async typeTextToFilterListUrlInput(text)
+  {
+    await (await this.filterListUrlInput).setValue(text);
+  }
+
+  async typeTextToAddCustomFilterListInput(text)
+  {
+    await (await this.addCustomFilterListInput).setValue(text);
+  }
+
+  async waitForAbpFiltersFLLastUpdatedTextToEqual(text, timeoutVal = 10000)
+  {
+    return await this.waitUntilTextIs(this.abpFiltersFLLastUpdatedText,
+                                      text, timeoutVal);
+  }
+
+  async waitForAllowNonintrusiveFLLastUpdatedTextToEqual(text,
+                                                         timeoutVal = 10000)
+  {
+    return await this.waitUntilTextIs(
+      this.allowNonintrusiveAdvertisingFLLastUpdatedText,
+      text, timeoutVal);
+  }
+
+  async waitForEasyListFLLastUpdatedTextToEqual(text, timeoutVal = 10000)
+  {
+    return await this.waitUntilTextIs(this.easyListFLLastUpdatedText,
+                                      text, timeoutVal);
   }
 }
 

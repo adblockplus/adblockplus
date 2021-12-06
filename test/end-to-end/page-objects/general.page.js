@@ -192,6 +192,18 @@ class GeneralPage extends BasePage
       .$("#languages-boxpopup");
   }
 
+  get languagesTableEmptyPlaceholder()
+  {
+    return this.browser
+      .$("//*[@id='blocking-languages-table']/li[@class='empty-placeholder']");
+  }
+
+  get listeFRPlusEasylistLanguageTableItem()
+  {
+    return this.browser
+      .$("//li[@aria-label='français + English']");
+  }
+
   get notifyLanguageFilterListsTooltipIcon()
   {
     return this.browser
@@ -340,6 +352,11 @@ class GeneralPage extends BasePage
     this.blockSocialMediaIconsTrackingTooltipText).getText();
   }
 
+  async getLanguagesTableEmptyPlaceholderText()
+  {
+    return await (await this.languagesTableEmptyPlaceholder).getText();
+  }
+
   async getNotifyLanguageFilterListsTooltipText()
   {
     return await (await
@@ -449,6 +466,12 @@ class GeneralPage extends BasePage
   async isLanguagesDropdownDisplayed()
   {
     return await (await this.languagesDropdown).isDisplayed();
+  }
+
+  async isListeFRPlusEasylistLanguageTableItemDisplayed()
+  {
+    return await (await this.listeFRPlusEasylistLanguageTableItem).
+    isDisplayed();
   }
 
   async isNotifyLanguageFilterListsTooltipTextDisplayed()

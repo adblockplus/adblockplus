@@ -24,43 +24,52 @@ class BasePage
     this.browser = browser;
   }
 
-  async switchToTab(url, timeout = 10000)
+  async getCurrentUrl()
   {
-    // Wait for tabs number to increase
+    return await this.browser.getUrl();
+  }
+
+  async scrollIntoViewAndClick(element)
+  {
+    const elem = await element;
+    await elem.scrollIntoView();
+    elem.click();
+  }
+
+  async switchToTab(title, timeout = 10000, checkUrl = false)
+  {
     let windowHandles = await this.browser.getWindowHandles();
-    let currentOpenTabsNr = windowHandles.length;
-    const previousOpenTabsNr = currentOpenTabsNr;
+    await this.browser.switchToWindow(windowHandles[windowHandles.length - 1]);
+    let currentTabTitle = "";
+    let currentTabUrl = "";
+    const re = new RegExp(title, "g");
     let waitTime = 0;
-    while ((currentOpenTabsNr != previousOpenTabsNr) && waitTime <= timeout)
+    while (waitTime <= timeout)
     {
       windowHandles = await this.browser.getWindowHandles();
-      currentOpenTabsNr = windowHandles.length;
-      await this.browser.pause(200);
-      waitTime += 200;
-    }
-    // Wait for tab title to load
-    await this.browser.switchToWindow(windowHandles[currentOpenTabsNr - 1]);
-    let done = false;
-    let currentTabTitle = "";
-    const re = new RegExp(url);
-    waitTime = 0;
-    while (!done && waitTime <= timeout)
-    {
-      currentTabTitle = await this.browser.getTitle();
-      if (re.test(currentTabTitle))
+      await this.browser.
+        switchToWindow(windowHandles[windowHandles.length - 1]);
+      if (checkUrl)
       {
-        done = true;
-        await this.browser.pause(300);
+        currentTabUrl = await this.browser.getUrl();
+        if (currentTabUrl === title)
+        {
+          break;
+        }
+      }
+      else
+      {
+        currentTabTitle = await this.browser.getTitle();
+        if (re.test(currentTabTitle))
+        {
+          break;
+        }
       }
       await this.browser.pause(200);
       waitTime += 200;
     }
-    await this.browser.switchWindow(url);
-  }
-
-  async getCurrentUrl()
-  {
-    return await this.browser.getUrl();
+    await this.browser.pause(300);
+    await this.browser.switchWindow(title);
   }
 
   async waitForDisplayedNoError(element,
@@ -77,14 +86,39 @@ class BasePage
     }
   }
 
-  async waitUntilIsSelected(element, expectedValue = "true",
-                            timeoutVal = 3000)
+  async waitForEnabledThenClick(element, timeoutMs = 2000)
+  {
+    await (await element).waitForEnabled({timeout: timeoutMs});
+    return (await element).click();
+  }
+
+  async waitUntilAttributeValueIs(element, attribute,
+                                  expectedValue, timeoutVal = 3000,
+                                  reverse = false)
   {
     return await (await element).
     waitUntil(async function()
     {
+      if (reverse)
+      {
+        return await (await this.
+        getAttribute(attribute)) != expectedValue;
+      }
       return await (await this.
-      getAttribute("aria-checked")) === expectedValue;
+      getAttribute(attribute)) === expectedValue;
+    }, {
+      timeout: timeoutVal,
+      timeoutMsg: "Timeout while waiting on condition."
+    });
+  }
+
+  async waitUntilTextIs(element, text,
+                        timeoutVal = 3000)
+  {
+    return await (await element).
+    waitUntil(async function()
+    {
+      return await (await this.getText()) === text;
     }, {
       timeout: timeoutVal,
       timeoutMsg: "Timeout while waiting on condition."
