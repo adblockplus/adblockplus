@@ -26,7 +26,7 @@ module.exports =
   contributeUrl: "https://adblockplus.org/en/contribute",
   donateUrl: "https://adblockplus.org/en/donate?utm_source=abp&utm_medium=settings_page&utm_campaign=donate",
   facebookUrl: "https://www.facebook.com/adblockplus",
-  forumUrl: "https://adblockplus.org/forum/viewforum.php?f=10",
+  forumUrl: "https://forum.adblockplus.org/viewforum.php?f=10",
   helpCenterUrl: "https://help.eyeo.com/en/adblockplus/",
   howToWriteFiltersUrl: "https://help.eyeo.com/adblockplus/how-to-write-filters",
   imprintUrl: "https://adblockplus.org/en/imprint",
