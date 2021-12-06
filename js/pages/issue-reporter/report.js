@@ -434,7 +434,9 @@ function proxyApiCall(apiId, ...args)
         case "contentSettings.cookies":
           if ("contentSettings" in proxy)
           {
-            proxy.contentSettings.cookies.get(...args).then(callback);
+            // browser.contentSettings is not supported by webextension-polyfill
+            // so we need to fall back to using callbacks as defined by Chrome
+            proxy.contentSettings.cookies.get(...args, callback);
           }
           else
           {
@@ -444,7 +446,9 @@ function proxyApiCall(apiId, ...args)
         case "contentSettings.javascript":
           if ("contentSettings" in proxy)
           {
-            proxy.contentSettings.javascript.get(...args).then(callback);
+            // browser.contentSettings is not supported by webextension-polyfill
+            // so we need to fall back to using callbacks as defined by Chrome
+            proxy.contentSettings.javascript.get(...args, callback);
           }
           else
           {
