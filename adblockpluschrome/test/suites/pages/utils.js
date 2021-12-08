@@ -27,7 +27,7 @@ async function snippetsIncluded()
 {
   try
   {
-    await fsAccess("../vendor/abp-snippets/dist/snippets.min.js");
+    await fsAccess("../vendor/abp-snippets/dist/");
   }
   catch (err)
   {
