@@ -8,7 +8,11 @@
     {"id": "f3"}
   ],
   "improvements": [
-    {"id": "i2", "image": {"url": "skin/icons/updates/smart-filter-lists.png"}},
+    {
+      "id": "i2",
+      "image": {"url": "skin/icons/updates/smart-filter-lists.png"},
+      "exceptions": {"locales": ["de", "fr"]}
+    },
     {"id": "i3"},
     {"id": "i4"}
   ]

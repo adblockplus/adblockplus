@@ -27,8 +27,36 @@ const {initI18n} = require("../i18n");
 require("../io-element");
 require("../landing");
 
-function addUpdates(container, updates)
+const localeInfo = api.app.get("localeInfo");
+
+async function addUpdates(container, updates)
 {
+  const [appLanguage, appRegion] = (await localeInfo).locale.split("-");
+
+  updates = updates.filter(({exceptions}) =>
+  {
+    if (!exceptions)
+      return true;
+
+    const {locales} = exceptions;
+
+    if (locales)
+    {
+      for (const locale of locales)
+      {
+        const [language, region] = locale.split("-");
+
+        if (
+          language === appLanguage &&
+          (!region || region === appRegion)
+        )
+          return false;
+      }
+    }
+
+    return true;
+  });
+
   if (!updates.length)
   {
     container.hidden = true;
