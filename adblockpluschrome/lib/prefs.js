@@ -198,7 +198,7 @@ defaults.remote_first_run_page_url = "https://welcome.adblockplus.org/%LANG%/ins
  *
  * @type {boolean}
  */
-defaults.recommend_language_subscriptions = true;
+defaults.recommend_language_subscriptions = false;
 
 /**
   * @namespace
