@@ -23,20 +23,13 @@ const GeneralPage = require("../page-objects/general.page");
 const AdvancedPage = require("../page-objects/advanced.page");
 const AcceptableAdsDialogChunk =
   require("../page-objects/acceptableAdsDialog.chunk");
-let browser = null;
 
 describe("test options page general tab acceptable ads", () =>
 {
   beforeEach(async() =>
   {
-    let origin = null;
-    [browser, origin] = await waitForExtension();
+    const [origin] = await waitForExtension();
     await browser.url(`${origin}/desktop-options.html`);
-  });
-
-  afterEach(async() =>
-  {
-    await browser.deleteSession();
   });
 
   it("should display AA default state", async() =>

@@ -20,20 +20,13 @@
 const {waitForExtension} = require("../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
-let browser = null;
 
 describe("test advanced tab customizations", () =>
 {
   beforeEach(async() =>
   {
-    let origin = null;
-    [browser, origin] = await waitForExtension();
+    const [origin] = await waitForExtension();
     await browser.url(`${origin}/desktop-options.html`);
-  });
-
-  afterEach(async() =>
-  {
-    await browser.deleteSession();
   });
 
   it("should display show number of ads blocked as checked", async() =>

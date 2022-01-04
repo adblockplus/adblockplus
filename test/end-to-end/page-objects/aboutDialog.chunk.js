@@ -29,32 +29,27 @@ class AboutDialogChunk extends BasePage
 
   get closeButton()
   {
-    return this.browser
-      .$("//button[@data-action='close-dialog']");
+    return $("//button[@data-action='close-dialog']");
   }
 
   get copyrightText()
   {
-    return this.browser
-      .$("//*[@id='copyright']");
+    return $("//*[@id='copyright']");
   }
 
   get dialog()
   {
-    return this.browser
-      .$("//*[@id='dialog']");
+    return $("//*[@id='dialog']");
   }
 
   get eyeoGmbhLink()
   {
-    return this.browser
-      .$("//a[text()='eyeo GmbH']");
+    return $("//a[text()='eyeo GmbH']");
   }
 
   get privacyPolicyLink()
   {
-    return this.browser
-      .$("//*[@id='privacy-policy']");
+    return $("//*[@id='privacy-policy']");
   }
 
   async clickCloseButton()

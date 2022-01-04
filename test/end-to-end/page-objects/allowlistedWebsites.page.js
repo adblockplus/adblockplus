@@ -29,8 +29,7 @@ class AllowlistedWebsitesPage extends BasePage
 
   get _allowlistedWebsitesTabButton()
   {
-    return this.browser
-      .$("//a[contains(@data-i18n, 'options_tab_allowlist')" +
+    return $("//a[contains(@data-i18n, 'options_tab_allowlist')" +
         "and text()='Allowlisted websites']");
   }
 
@@ -41,27 +40,24 @@ class AllowlistedWebsitesPage extends BasePage
 
   get addWebsiteButton()
   {
-    return this.browser
-      .$("#allowlisting-add-button");
+    return $("#allowlisting-add-button");
   }
 
   get allowlistingLearnMoreLink()
   {
-    return this.browser
-      .$("//a[contains(@data-doclink, 'allowlist')" +
+    return $("//a[contains(@data-doclink, 'allowlist')" +
         "and text()='Learn more']");
   }
 
   get allowlistingTableItems()
   {
-    return this.browser
-      .$$("//*[@id='allowlisting-table']/li");
+    // eslint-disable-next-line no-undef
+    return $$("//*[@id='allowlisting-table']/li");
   }
 
   get allowlistingTextbox()
   {
-    return this.browser
-      .$("#allowlisting-textbox");
+    return $("#allowlisting-textbox");
   }
 
   async clickAllowlistingLearnMoreLink()
@@ -92,8 +88,8 @@ class AllowlistedWebsitesPage extends BasePage
 
   async removeAllowlistedDomain(domainName)
   {
-    const domainDeleteButton = await this.browser
-      .$("//li[@aria-label='" + domainName + "']/button");
+    const domainDeleteButton = await $("//li[@aria-label='" +
+      domainName + "']/button");
     await (await domainDeleteButton).click();
   }
 

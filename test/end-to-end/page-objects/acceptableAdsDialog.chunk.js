@@ -29,20 +29,17 @@ class AcceptableAdsDialogChunk extends BasePage
 
   get aaDialog()
   {
-    return this.browser
-      .$("//*[@id='acceptable-ads-why-not']");
+    return $("//*[@id='acceptable-ads-why-not']");
   }
 
   get goToSurveyButton()
   {
-    return this.browser
-      .$("//a[@data-i18n='options_aa_opt_out_survey_ok']");
+    return $("//a[@data-i18n='options_aa_opt_out_survey_ok']");
   }
 
   get noThanksButton()
   {
-    return this.browser
-      .$("//button[@data-i18n='options_aa_opt_out_survey_no']");
+    return $("//button[@data-i18n='options_aa_opt_out_survey_no']");
   }
 
   async clickGoToSurveyButton()

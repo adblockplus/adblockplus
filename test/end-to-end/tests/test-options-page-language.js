@@ -21,20 +21,18 @@ const {waitForExtension} = require("../helpers");
 const {expect} = require("chai");
 const GeneralPage = require("../page-objects/general.page");
 const AdvancedPage = require("../page-objects/advanced.page");
-let browser = null;
 
 describe("test options page general tab language", () =>
 {
   beforeEach(async() =>
   {
-    let origin = null;
-    [browser, origin] = await waitForExtension();
+    const [origin] = await waitForExtension();
     await browser.url(`${origin}/desktop-options.html`);
   });
 
   afterEach(async() =>
   {
-    await browser.deleteSession();
+    await browser.reloadSession();
   });
 
   it("should have english in language table", async() =>

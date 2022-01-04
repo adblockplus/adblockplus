@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /*
  * This file is part of Adblock Plus <https://adblockplus.org/>,
  * Copyright (C) 2006-present eyeo GmbH
@@ -29,8 +30,7 @@ class WebstoreCookiesAgreementPage extends BasePage
 
   get iAgreeButton()
   {
-    return this.browser
-      .$("//button[@aria-label='Agree to the use of cookies " +
+    return $("//button[@aria-label='Agree to the use of cookies " +
         "and other data for the purposes described']");
   }
 

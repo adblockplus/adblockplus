@@ -25,20 +25,13 @@ const AcceptableAdsDialogChunk =
   require("../page-objects/acceptableAdsDialog.chunk");
 const HeartDialogChunk = require("../page-objects/heartDialog.chunk");
 const GeneralPage = require("../page-objects/general.page");
-let browser = null;
 
 describe("test options page dialogs", () =>
 {
   beforeEach(async() =>
   {
-    let origin = null;
-    [browser, origin] = await waitForExtension();
+    const [origin] = await waitForExtension();
     await browser.url(`${origin}/desktop-options.html`);
-  });
-
-  afterEach(async() =>
-  {
-    await browser.deleteSession();
   });
 
   it("should display copyright and version number", async() =>

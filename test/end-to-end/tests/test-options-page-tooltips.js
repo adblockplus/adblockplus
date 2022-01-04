@@ -22,20 +22,18 @@ const {expect} = require("chai");
 const GeneralPage = require("../page-objects/general.page");
 const AdvancedPage = require("../page-objects/advanced.page");
 const dataTooltips = require("../test-data/data-tooltips");
-let browser = null;
 
 describe("test options page tooltips", () =>
 {
   beforeEach(async() =>
   {
-    let origin = null;
-    [browser, origin] = await waitForExtension();
+    const [origin] = await waitForExtension();
     await browser.url(`${origin}/desktop-options.html`);
   });
 
   afterEach(async() =>
   {
-    await browser.deleteSession();
+    await browser.reloadSession();
   });
 
   it("should open block additional tracking tooltip", async() =>

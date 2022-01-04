@@ -1,3 +1,4 @@
+
 /* eslint-disable indent */
 /*
  * This file is part of Adblock Plus <https://adblockplus.org/>,
@@ -22,20 +23,13 @@ const {waitForExtension} = require("../helpers");
 const {expect} = require("chai");
 const AllowlistedWebsitesPage =
   require("../page-objects/allowlistedWebsites.page");
-let browser = null;
 
 describe("test allowlisted websites tab", () =>
 {
   beforeEach(async() =>
   {
-    let origin = null;
-    [browser, origin] = await waitForExtension();
+    const [origin] = await waitForExtension();
     await browser.url(`${origin}/desktop-options.html`);
-  });
-
-  afterEach(async() =>
-  {
-    await browser.deleteSession();
   });
 
   it("should display allowlisted websites default state", async() =>

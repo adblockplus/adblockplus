@@ -29,8 +29,7 @@ class HelpPage extends BasePage
 
   get _helpTabButton()
   {
-    return this.browser
-      .$("//a[contains(@data-i18n, 'options_tab_help')" +
+    return $("//a[contains(@data-i18n, 'options_tab_help')" +
         "and text()='Help']");
   }
 
@@ -41,32 +40,27 @@ class HelpPage extends BasePage
 
   get facebookLink()
   {
-    return this.browser
-      .$(".facebook");
+    return $(".facebook");
   }
 
   get forumLink()
   {
-    return this.browser
-      .$("//a[text()='Go to the Forum']");
+    return $("//a[text()='Go to the Forum']");
   }
 
   get sendUsABugReportLink()
   {
-    return this.browser
-      .$("//a[text()='Send us a bug report']");
+    return $("//a[text()='Send us a bug report']");
   }
 
   get twitterLink()
   {
-    return this.browser
-      .$(".twitter");
+    return $(".twitter");
   }
 
   get visitOurHelpCenterLink()
   {
-    return this.browser
-      .$("//a[text()='Visit our Help Center (English only)']");
+    return $("//a[text()='Visit our Help Center (English only)']");
   }
 
   async clickFacebookLink()
@@ -117,7 +111,7 @@ class HelpPage extends BasePage
 
   async switchToTwitterTab()
   {
-    await this.switchToTab("Adblock Plus (@AdblockPlus) / Twitter");
+    await this.switchToTab("https://twitter.com/adblockplus");
   }
 }
 

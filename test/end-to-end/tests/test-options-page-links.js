@@ -26,20 +26,18 @@ const HelpPage = require("../page-objects/help.page");
 const AllowlistedWebsitesPage =
   require("../page-objects/allowlistedWebsites.page");
 const dataLinks = require("../test-data/data-links");
-let browser = null;
 
 describe("test options page links", () =>
 {
   beforeEach(async() =>
   {
-    let origin = null;
-    [browser, origin] = await waitForExtension();
+    const [origin] = await waitForExtension();
     await browser.url(`${origin}/desktop-options.html`);
   });
 
   afterEach(async() =>
   {
-    await browser.deleteSession();
+    await browser.closeWindow();
   });
 
   it("should open contribute page", async() =>

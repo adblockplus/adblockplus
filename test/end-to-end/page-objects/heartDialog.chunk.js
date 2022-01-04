@@ -29,14 +29,12 @@ class HeartDialogChunk extends BasePage
 
   get rateUsButton()
   {
-    return this.browser
-      .$("//a[@data-i18n='options_rating_button']");
+    return $("//a[@data-i18n='options_rating_button']");
   }
 
   get donateButton()
   {
-    return this.browser
-      .$("//a[@data-i18n='options_donate_button']");
+    return $("//a[@data-i18n='options_donate_button']");
   }
 
   async clickRateUsButton()

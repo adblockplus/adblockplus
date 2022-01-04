@@ -21,20 +21,13 @@ const {waitForExtension} = require("../helpers");
 const {expect} = require("chai");
 const GeneralPage = require("../page-objects/general.page");
 const AdvancedPage = require("../page-objects/advanced.page");
-let browser = null;
 
 describe("test options page general tab recommended filters", () =>
 {
   beforeEach(async() =>
   {
-    let origin = null;
-    [browser, origin] = await waitForExtension();
+    const [origin] = await waitForExtension();
     await browser.url(`${origin}/desktop-options.html`);
-  });
-
-  afterEach(async() =>
-  {
-    await browser.deleteSession();
   });
 
   it("should block additional tracking", async() =>

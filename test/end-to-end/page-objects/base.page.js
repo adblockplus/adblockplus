@@ -36,44 +36,30 @@ class BasePage
     elem.click();
   }
 
-  async switchToTab(title, timeout = 10000, checkUrl = false)
+  async switchToTab(title, timeout = 10000)
   {
-    let windowHandles = await this.browser.getWindowHandles();
-    await this.browser.switchToWindow(windowHandles[windowHandles.length - 1]);
-    let currentTabTitle = "";
-    let currentTabUrl = "";
-    const re = new RegExp(title, "g");
     let waitTime = 0;
     while (waitTime <= timeout)
     {
-      windowHandles = await this.browser.getWindowHandles();
-      await this.browser.
-        switchToWindow(windowHandles[windowHandles.length - 1]);
-      if (checkUrl)
+      try
       {
-        currentTabUrl = await this.browser.getUrl();
-        if (currentTabUrl === title)
-        {
-          break;
-        }
+        await this.browser.switchWindow(title);
+        break;
       }
-      else
+      catch (Exception)
       {
-        currentTabTitle = await this.browser.getTitle();
-        if (re.test(currentTabTitle))
-        {
-          break;
-        }
+        await this.browser.pause(200);
+        waitTime += 200;
       }
-      await this.browser.pause(200);
-      waitTime += 200;
     }
-    await this.browser.pause(300);
-    await this.browser.switchWindow(title);
+    if (waitTime >= timeout)
+    {
+      throw new Error("Could not switch to tab!");
+    }
   }
 
   async waitForDisplayedNoError(element,
-                                reverseOption = false, timeoutMs = 2000)
+                                reverseOption = false, timeoutMs = 5000)
   {
     try
     {
@@ -93,7 +79,7 @@ class BasePage
   }
 
   async waitUntilAttributeValueIs(element, attribute,
-                                  expectedValue, timeoutVal = 3000,
+                                  expectedValue, timeoutVal = 5000,
                                   reverse = false)
   {
     return await (await element).
@@ -113,7 +99,7 @@ class BasePage
   }
 
   async waitUntilTextIs(element, text,
-                        timeoutVal = 3000)
+                        timeoutVal = 5000)
   {
     return await (await element).
     waitUntil(async function()

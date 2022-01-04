@@ -29,8 +29,7 @@ class FooterChunk extends BasePage
 
   get aboutABPLink()
   {
-    return this.browser
-      .$("//button[contains(@data-i18n, 'options_footer_about')" +
+    return $("//button[contains(@data-i18n, 'options_footer_about')" +
         "and text()='About Adblock Plus']");
   }
 
@@ -41,8 +40,7 @@ class FooterChunk extends BasePage
 
   get heartButton()
   {
-    return this.browser
-      .$("//*[@id='support-us']/div");
+    return $("//*[@id='support-us']/div");
   }
 
   async clickAboutABPLink()

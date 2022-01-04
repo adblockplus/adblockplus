@@ -29,8 +29,7 @@ class GeneralPage extends BasePage
 
   get _generalTabButton()
   {
-    return this.browser
-      .$("//a[contains(@data-i18n, 'options_tab_general')" +
+    return $("//a[contains(@data-i18n, 'options_tab_general')" +
         "and text()='General']");
   }
 
@@ -41,199 +40,171 @@ class GeneralPage extends BasePage
 
   get acceptableAdsCriteriaLink()
   {
-    return this.browser
-      .$("//*[@id='enable-acceptable-ads-description']/a");
+    return $("//*[@id='enable-acceptable-ads-description']/a");
   }
 
   get acceptableAdsLearnMoreLink()
   {
-    return this.browser
-      .$("//a[contains(@data-doclink, 'privacy_friendly_ads')" +
+    return $("//a[contains(@data-doclink, 'privacy_friendly_ads')" +
         "and text()='Learn more']");
   }
 
   get addALanguageButton()
   {
-    return this.browser
-      .$("#languages-boxlabel");
+    return $("#languages-boxlabel");
   }
 
   get allowAcceptableAdsCheckbox()
   {
-    return this.browser
-      .$("#acceptable-ads-allow");
+    return $("#acceptable-ads-allow");
   }
 
   get blockAdditionalTrackingCheckbox()
   {
-    return this.browser
-      .$("//li[@aria-label='Block additional tracking']/button");
+    return $("//li[@aria-label='Block additional tracking']/button");
   }
 
   get blockAdditionalTrackingTooltipIcon()
   {
-    return this.browser
-      .$("//li[@aria-label='Block additional tracking']/io-popout");
+    return $("//li[@aria-label='Block additional tracking']/io-popout");
   }
 
   get blockAdditionalTrackingTooltipText()
   {
-    return this.browser
-      .$("//li[@aria-label='Block additional tracking']/io-popout/div/div/p");
+    return $("//li[@aria-label='Block additional tracking']" +
+      "/io-popout/div/div/p");
   }
 
   get blockCookieWarningsCheckbox()
   {
-    return this.browser
-      .$("//li[@aria-label='Block cookie warnings']/button");
+    return $("//li[@aria-label='Block cookie warnings']/button");
   }
 
   get blockCookieWarningsTooltipIcon()
   {
-    return this.browser
-      .$("//li[@aria-label='Block cookie warnings']/io-popout");
+    return $("//li[@aria-label='Block cookie warnings']/io-popout");
   }
 
   get blockCookieWarningsTooltipText()
   {
-    return this.browser
-      .$("//li[@aria-label='Block cookie warnings']/io-popout/div/div/p");
+    return $("//li[@aria-label='Block cookie warnings']/io-popout/div/div/p");
   }
 
   get deutschPlusEnglishListItem()
   {
-    return this.browser
-      .$("//li[contains(@role, 'option')" +
+    return $("//li[contains(@role, 'option')" +
         "and text()='Deutsch + English']");
   }
 
   get filterListsSuggestionsCheckbox()
   {
-    return this.browser
-      .$("//li[@data-pref='recommend_language_subscriptions']/button");
+    return $("//li[@data-pref='recommend_language_subscriptions']/button");
   }
 
   get blockPushNotificationsCheckbox()
   {
-    return this.browser
-      .$("//li[@aria-label='Block push notifications']/button");
+    return $("//li[@aria-label='Block push notifications']/button");
   }
 
   get blockPushNotificationsTooltipIcon()
   {
-    return this.browser
-      .$("//li[@aria-label='Block push notifications']/io-popout");
+    return $("//li[@aria-label='Block push notifications']/io-popout");
   }
 
   get blockPushNotificationsTooltipText()
   {
-    return this.browser
-      .$("//li[@aria-label='Block push notifications']/io-popout/div/div/p");
+    return $("//li[@aria-label='Block push notifications']" +
+      "/io-popout/div/div/p");
   }
 
   get blockSocialMediaIconsTrackingTooltipIcon()
   {
-    return this.browser
-      .$("//li[@aria-label='Block social media icons tracking']/io-popout");
+    return $("//li[@aria-label='Block social media icons tracking']/io-popout");
   }
 
   get blockSocialMediaIconsTrackingCheckbox()
   {
-    return this.browser
-      .$("//li[@aria-label='Block social media icons tracking']/button");
+    return $("//li[@aria-label='Block social media icons tracking']/button");
   }
 
   get blockSocialMediaIconsTrackingTooltipText()
   {
-    return this.browser
-      .$("//li[@aria-label='Block social media icons tracking']" +
+    return $("//li[@aria-label='Block social media icons tracking']" +
         "/io-popout/div/div/p");
   }
 
   get doNotTrackNoteParagraph()
   {
-    return this.browser
-      .$("#dnt");
+    return $("#dnt");
   }
 
   get deutschPlusEnglishLanguageTableItem()
   {
-    return this.browser
-      .$("//li[@aria-label='Deutsch + English']");
+    return $("//li[@aria-label='Deutsch + English']");
   }
 
   get deutschPlusEnglishLanguageTrashIcon()
   {
-    return this.browser
-      .$("//li[@aria-label='Deutsch + English']/button[@title='remove']");
+    return $("//li[@aria-label='Deutsch + English']/button[@title='remove']");
   }
 
   get englishLanguageChangeButton()
   {
-    return this.browser
-      .$("//li[@aria-label='English']/button[@data-dialog='language-change']");
+    return $("//li[@aria-label='English']/" +
+      "button[@data-dialog='language-change']");
   }
 
   get englishLanguageTableItem()
   {
-    return this.browser
-      .$("//li[@aria-label='English']");
+    return $("//li[@aria-label='English']");
   }
 
   get englishLanguageTrashIcon()
   {
-    return this.browser
-      .$("//li[@aria-label='English']/button[@title='remove']");
+    return $("//li[@aria-label='English']/button[@title='remove']");
   }
 
   get languagesDropdown()
   {
-    return this.browser
-      .$("#languages-boxpopup");
+    return $("#languages-boxpopup");
   }
 
   get languagesTableEmptyPlaceholder()
   {
-    return this.browser
-      .$("//*[@id='blocking-languages-table']/li[@class='empty-placeholder']");
+    return $("//*[@id='blocking-languages-table']" +
+      "/li[@class='empty-placeholder']");
   }
 
   get listeFRPlusEasylistLanguageTableItem()
   {
-    return this.browser
-      .$("//li[@aria-label='français + English']");
+    return $("//li[@aria-label='français + English']");
   }
 
   get notifyLanguageFilterListsTooltipIcon()
   {
-    return this.browser
-      .$("//li[@data-pref='recommend_language_subscriptions']" +
+    return $("//li[@data-pref='recommend_language_subscriptions']" +
         "/io-popout");
   }
 
   get notifyLanguageFilterListsTooltipText()
   {
-    return this.browser
-      .$("//li[@data-pref='recommend_language_subscriptions']" +
+    return $("//li[@data-pref='recommend_language_subscriptions']" +
         "/io-popout/div/div/p");
   }
 
   get okGotItTrackingWarningButton()
   {
-    return this.browser
-      .$("//button[@data-i18n='options_tracking_warning_acknowledgment']");
+    return $("//button[@data-i18n='options_tracking_warning_acknowledgment']");
   }
 
   get onlyAllowAdsWithoutTrackingCheckbox()
   {
-    return this.browser
-      .$("#acceptable-ads-privacy-allow");
+    return $("#acceptable-ads-privacy-allow");
   }
 
   get trackingWarning()
   {
-    return this.browser
-      .$("#tracking-warning");
+    return $("#tracking-warning");
   }
 
   async clickAcceptableAdsCriteriaLink()
@@ -443,7 +414,8 @@ class GeneralPage extends BasePage
 
   async isEnglishLanguageChangeButtonDisplayed()
   {
-    return await (await this.englishLanguageChangeButton).isDisplayed();
+    return await this.waitForDisplayedNoError(this.
+      englishLanguageChangeButton);
   }
 
   async isEnglishLanguageTableItemDisplayed()

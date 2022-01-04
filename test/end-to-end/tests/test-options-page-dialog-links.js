@@ -28,20 +28,13 @@ const GeneralPage = require("../page-objects/general.page");
 const WebstoreCookiesAgreementPage =
   require("../page-objects/webstoreCookiesAgreement.external.page");
 const dataLinks = require("../test-data/data-links");
-let browser = null;
 
 describe("test options page dialog links", () =>
 {
   beforeEach(async() =>
   {
-    let origin = null;
-    [browser, origin] = await waitForExtension();
+    const [origin] = await waitForExtension();
     await browser.url(`${origin}/desktop-options.html`);
-  });
-
-  afterEach(async() =>
-  {
-    await browser.deleteSession();
   });
 
   it("should open privacy policy page", async() =>

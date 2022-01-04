@@ -29,8 +29,7 @@ class AdvancedPage extends BasePage
 
   get _advancedTabButton()
   {
-    return this.browser
-      .$("//a[contains(@data-i18n, 'options_tab_advanced')" +
+    return $("//a[contains(@data-i18n, 'options_tab_advanced')" +
         "and text()='Advanced']");
   }
 
@@ -41,20 +40,17 @@ class AdvancedPage extends BasePage
 
   get abpFiltersFL()
   {
-    return this.browser
-      .$("//li[@aria-label='ABP filters']");
+    return $("//li[@aria-label='ABP filters']");
   }
 
   get abpFiltersFLLastUpdatedText()
   {
-    return this.browser
-      .$("//li[@aria-label='ABP filters']/div/span[@class='last-update']");
+    return $("//li[@aria-label='ABP filters']/div/span[@class='last-update']");
   }
 
   get abpFiltersFLStatusToggle()
   {
-    return this.browser
-      .$("//li[@aria-label='ABP filters']/div/io-toggle/button");
+    return $("//li[@aria-label='ABP filters']/div/io-toggle/button");
   }
 
   get abpTestFilterErrorIcon()
@@ -64,8 +60,7 @@ class AdvancedPage extends BasePage
 
   get addAFilterListButton()
   {
-    return this.browser
-      .$("//button[@data-action='validate-import-subscription']");
+    return $("//button[@data-action='validate-import-subscription']");
   }
 
   get addBuiltinFilterListButton()
@@ -75,20 +70,17 @@ class AdvancedPage extends BasePage
 
   get addCustomFilterListButton()
   {
-    return this.browser
-      .$("//io-filter-table/io-filter-search/button");
+    return $("//io-filter-table/io-filter-search/button");
   }
 
   get addCustomFilterListInput()
   {
-    return this.browser
-      .$("//io-filter-search/input");
+    return $("//io-filter-search/input");
   }
 
   get addNewFilterListButton()
   {
-    return this.browser
-      .$("//button[@data-i18n='options_filterList_add']");
+    return $("//button[@data-i18n='options_filterList_add']");
   }
 
   get addNewFilterListDialog()
@@ -98,28 +90,24 @@ class AdvancedPage extends BasePage
 
   get allowNonintrusiveAdvertisingFL()
   {
-    return this.browser
-      .$("//li[@aria-label='Allow nonintrusive advertising']");
+    return $("//li[@aria-label='Allow nonintrusive advertising']");
   }
 
   get allowNonintrusiveAdvertisingFLLastUpdatedText()
   {
-    return this.browser
-      .$("//li[@aria-label='Allow nonintrusive advertising']" +
+    return $("//li[@aria-label='Allow nonintrusive advertising']" +
       "/div/span[@class='last-update']");
   }
 
   get allowNonintrusiveAdvertisingFLStatusToggle()
   {
-    return this.browser
-      .$("//li[@aria-label='Allow nonintrusive advertising']" +
+    return $("//li[@aria-label='Allow nonintrusive advertising']" +
       "/div/io-toggle/button");
   }
 
   get allowNonintrusiveAdvertisingWithoutTrackingFL()
   {
-    return this.browser
-      .$("//li[@aria-label='Allow nonintrusive advertising " +
+    return $("//li[@aria-label='Allow nonintrusive advertising " +
       "without third-party tracking']");
   }
 
@@ -130,70 +118,60 @@ class AdvancedPage extends BasePage
 
   get customFilterListsFirstItemToggle()
   {
-    return this.browser
-      .$("//io-filter-list/table/tbody/tr[1]/td[2]/io-toggle/button");
+    return $("//io-filter-list/table/tbody/tr[1]/td[2]/io-toggle/button");
   }
 
   get easyListFL()
   {
-    return this.browser
-      .$("//li[@aria-label='EasyList']");
+    return $("//li[@aria-label='EasyList']");
   }
 
   get easyListFLGearIcon()
   {
-    return this.browser
-      .$("//li[@aria-label='EasyList']" +
+    return $("//li[@aria-label='EasyList']" +
       "/div/io-popout[@type='menubar']");
   }
 
   get easyListFLLastUpdatedText()
   {
-    return this.browser
-      .$("//li[@aria-label='EasyList']/div/span[@class='last-update']");
+    return $("//li[@aria-label='EasyList']/div/span[@class='last-update']");
   }
 
   get easyListFLSourceButton()
   {
-    return this.browser
-      .$("//li[@aria-label='EasyList']" +
+    return $("//li[@aria-label='EasyList']" +
       "/div/io-popout[@type='menubar']" +
       "/div/div/ul/li/a[@data-i18n='options_filterList_source']");
   }
 
   get easyListFLStatusToggle()
   {
-    return this.browser
-      .$("//li[@aria-label='EasyList']/div/io-toggle/button");
+    return $("//li[@aria-label='EasyList']/div/io-toggle/button");
   }
 
   get easyListFLTrashButton()
   {
-    return this.browser
-      .$("//li[@aria-label='EasyList']/div/button" +
+    return $("//li[@aria-label='EasyList']/div/button" +
       "[@data-action='remove-subscription']");
   }
 
   get easyListFLUpdateNowButton()
   {
-    return this.browser
-      .$("//li[@aria-label='EasyList']" +
+    return $("//li[@aria-label='EasyList']" +
       "/div/io-popout[@type='menubar']" +
       "/div/div/ul/li/button[@data-i18n='options_filterList_updateNow']");
   }
 
   get easyListFLWebsiteButton()
   {
-    return this.browser
-      .$("//li[@aria-label='EasyList']" +
+    return $("//li[@aria-label='EasyList']" +
       "/div/io-popout[@type='menubar']" +
       "/div/div/ul/li/a[@data-i18n='options_filterList_website']");
   }
 
   get easyListGermanyPlusEasyListFL()
   {
-    return this.browser
-      .$("//li[@aria-label='EasyList Germany+EasyList']");
+    return $("//li[@aria-label='EasyList Germany+EasyList']");
   }
 
   get easyPrivacyFL()
@@ -208,14 +186,12 @@ class AdvancedPage extends BasePage
 
   get fanboysNotificationsBlockingListFL()
   {
-    return this.browser
-      .$("//li[@aria-label=\"Fanboy's Notifications Blocking List\"]");
+    return $("//li[@aria-label=\"Fanboy's Notifications Blocking List\"]");
   }
 
   get fanboysSocialBlockingListFL()
   {
-    return this.browser
-      .$("//li[@aria-label=\"Fanboy's Social Blocking List\"]");
+    return $("//li[@aria-label=\"Fanboy's Social Blocking List\"]");
   }
 
   get filterListsDropdown()
@@ -225,15 +201,13 @@ class AdvancedPage extends BasePage
 
   get filterListErrorPopout()
   {
-    return this.browser
-      .$("//io-popout[@data-template-i18n-body=" +
+    return $("//io-popout[@data-template-i18n-body=" +
       "'options_filterList_errorPopup_title']");
   }
 
   get filterListsLearnMoreLink()
   {
-    return this.browser
-      .$("//a[contains(@data-doclink, 'subscriptions')" +
+    return $("//a[contains(@data-doclink, 'subscriptions')" +
         "and text()='Learn more']");
   }
 
@@ -244,14 +218,12 @@ class AdvancedPage extends BasePage
 
   get iDontCareAboutCookiesFL()
   {
-    return this.browser
-      .$("//li[@aria-label=\"I don't care about cookies\"]");
+    return $("//li[@aria-label=\"I don't care about cookies\"]");
   }
 
   get learnHowToWriteFiltersLink()
   {
-    return this.browser
-      .$("//a[text()='Learn how to write filters (English only)']");
+    return $("//a[text()='Learn how to write filters (English only)']");
   }
 
   get listeFREasyListFL()
@@ -261,81 +233,69 @@ class AdvancedPage extends BasePage
 
   get listeFREasyListFLDropdownItem()
   {
-    return this.browser
-      .$("//*[@id='filters-boxpopup']/" +
+    return $("//*[@id='filters-boxpopup']/" +
       "li[contains(text(),'Liste FR+EasyList (français + English)')]");
   }
 
   get listeFREasyListFLStatusToggle()
   {
-    return this.browser
-      .$("//li[@aria-label='Liste FR+EasyList']/div/io-toggle/button");
+    return $("//li[@aria-label='Liste FR+EasyList']/div/io-toggle/button");
   }
 
   get showAdblockPlusPanelCheckbox()
   {
-    return this.browser
-      .$("//li[@data-pref='show_devtools_panel']/button");
+    return $("//li[@data-pref='show_devtools_panel']/button");
   }
 
 
   get showAdblockPlusPanelTooltipIcon()
   {
-    return this.browser
-      .$("//li[@data-pref='show_devtools_panel']" +
+    return $("//li[@data-pref='show_devtools_panel']" +
         "/io-popout");
   }
 
   get showAdblockPlusPanelTooltipText()
   {
-    return this.browser
-      .$("//li[@data-pref='show_devtools_panel']" +
+    return $("//li[@data-pref='show_devtools_panel']" +
         "/io-popout/div/div/p");
   }
 
   get showBlockElementCheckbox()
   {
-    return this.browser
-      .$("//li[@data-pref='shouldShowBlockElementMenu']/button");
+    return $("//li[@data-pref='shouldShowBlockElementMenu']/button");
   }
 
   get showBlockElementTooltipIcon()
   {
-    return this.browser
-      .$("//li[@data-pref='shouldShowBlockElementMenu']" +
+    return $("//li[@data-pref='shouldShowBlockElementMenu']" +
         "/io-popout");
   }
 
   get showBlockElementTooltipText()
   {
-    return this.browser
-      .$("//li[@data-pref='shouldShowBlockElementMenu']" +
+    return $("//li[@data-pref='shouldShowBlockElementMenu']" +
         "/io-popout/div/div/p");
   }
 
   get showNumberOfAdsBlockedCheckbox()
   {
-    return this.browser
-      .$("//li[@data-pref='show_statsinicon']/button");
+    return $("//li[@data-pref='show_statsinicon']/button");
   }
 
   get showUsefulNotificationsCheckbox()
   {
-    return this.browser
-      .$("//li[@data-pref='notifications_ignoredcategories']/button");
+    return $("//li[@data-pref='notifications_ignoredcategories']/button");
   }
 
   get showUsefulNotificationsTooltipIcon()
   {
-    return this.browser
-      .$("//li[@data-pref='notifications_ignoredcategories']" +
+    return $("//li[@data-pref='notifications_ignoredcategories']" +
         "/io-popout");
   }
 
   get showUsefulNotificationsTooltipText()
   {
-    return this.browser
-      .$("//li[@data-pref='notifications_ignoredcategories']" +
+    return $("//li[@data-pref='notifications_ignoredcategories']" +
         "/io-popout/div/div/p");
   }
 
@@ -351,41 +311,35 @@ class AdvancedPage extends BasePage
 
   get testFilterListStatusToggle()
   {
-    return this.browser
-      .$("//li[@aria-label='https://test-filterlist.txt']" +
+    return $("//li[@aria-label='https://test-filterlist.txt']" +
       "/div/io-toggle/button");
   }
 
   get turnOnDebugElementCheckbox()
   {
-    return this.browser
-      .$("//li[@data-pref='elemhide_debug']/button");
+    return $("//li[@data-pref='elemhide_debug']/button");
   }
 
   get turnOnDebugElementTooltipIcon()
   {
-    return this.browser
-      .$("//li[@data-pref='elemhide_debug']" +
+    return $("//li[@data-pref='elemhide_debug']" +
         "/io-popout");
   }
 
   get turnOnDebugElementTooltipText()
   {
-    return this.browser
-      .$("//li[@data-pref='elemhide_debug']" +
+    return $("//li[@data-pref='elemhide_debug']" +
         "/io-popout/div/div/p");
   }
 
   get updateAllFilterlistsButton()
   {
-    return this.browser
-      .$("#update");
+    return $("#update");
   }
 
   get urlErrorMessage()
   {
-    return this.browser
-      .$("//span[contains(@class, 'error-msg')" +
+    return $("//span[contains(@class, 'error-msg')" +
         "and text()='URL must start with https://.']");
   }
 
@@ -776,7 +730,7 @@ class AdvancedPage extends BasePage
   async switchToEasylistSourceTab()
   {
     await this.switchToTab("https://easylist-downloads." +
-    "adblockplus.org/easylist.txt", 10000, true);
+    "adblockplus.org/easylist.txt");
   }
 
   async switchToEasylisttoTab()
