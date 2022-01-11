@@ -50,8 +50,7 @@ test:
     - npm run submodules:update
     - git submodule status
     - npm install
-    # Create distributables and run tests
-    - npm run dist
+    # Run tests
     - npm run test
 
 ################################################################################
@@ -84,11 +83,6 @@ build:
       - adblockpluschrome/adblockplus-chrome-${CI_COMMIT_SHA:0:8}.zip
       - adblockpluschrome/adblockplus-firefox-${CI_COMMIT_SHA:0:8}.xpi
       - adblockpluschrome/adblockplus-${CI_COMMIT_SHA:0:8}.tar.gz
-  only:
-    refs:
-      - /^release-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
-      - /^dep-\w+-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
-      - /^feature-[1-9][0-9]*(|-.+)$/
 
 build:with-snippets:
   stage: build
@@ -123,9 +117,8 @@ build:with-snippets:
     paths:
       - adblockpluschrome/adblockplus-*.gpg
   only:
-    refs:
-      - /^release-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
-      - /^dep-\w+-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
+    variables:
+      - $SNIPPETS_SSH_KEY && $SNIPPETS_PASSWORD
 
 ################################################################################
 # Translate
@@ -134,7 +127,8 @@ build:with-snippets:
 .translations:
   only: 
     refs:
-      - /^release-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
+      - /^feature-/
+      - release
 
 .crowdin:
   variables:
