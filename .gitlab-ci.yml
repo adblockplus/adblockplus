@@ -48,7 +48,6 @@ test:
   stage: test
   script:
     - npm install
-    - npm run dist
     - npm run test
 
 
@@ -75,11 +74,6 @@ build:
     paths:
       - adblockpluschrome/adblockplus-chrome-${CI_COMMIT_SHA:0:8}.zip
       - adblockpluschrome/adblockplus-firefox-${CI_COMMIT_SHA:0:8}.xpi
-  only:
-    refs:
-      - /^release-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
-      - /^dep-\w+-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
-      - /^feature-[1-9][0-9]*(|-.+)$/
 
 build:with-snippets:
   stage: build
@@ -112,9 +106,8 @@ build:with-snippets:
     paths:
       - adblockpluschrome/adblockplus-*.gpg
   only:
-    refs:
-      - /^release-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
-      - /^dep-\w+-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
+    variables:
+      - $SNIPPETS_SSH_KEY && $SNIPPETS_PASSWORD
 
 ################################################################################
 # Translate
@@ -123,7 +116,8 @@ build:with-snippets:
 .translations:
   only: 
     refs:
-      - /^release-[0-9]{4}-[0-9]+(\.-?[0-9]+)?$/
+      - /^feature-/
+      - release
 
 .crowdin:
   variables:
