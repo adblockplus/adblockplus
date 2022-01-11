@@ -17,15 +17,16 @@
 
 "use strict";
 
+const fs = require("fs");
 const BasePage = require("./page-objects/base.page");
 const helperExtension = "helper-extension";
 
 function getExtensionPath()
 {
   const extensionPath = "../../adblockpluschrome/devenv.chrome";
-  if (!extensionPath)
+  if (!fs.existsSync(extensionPath))
   {
-    console.error("Extension path is missing");
+    console.error("Extension 'adblockpluschrome/devenv.chrome' does not exist");
     process.exit(1);
   }
   return extensionPath;
