@@ -17,7 +17,7 @@ the Adblock Plus [core functionality][abp-core].
 
 Adblock Plus is a free extension that allows users to customize their web
 experience. Users can block annoying ads, disable tracking and lots more. It’s
-available for all major desktop browsers and for mobile devices. 
+available for all major desktop browsers and for mobile devices.
 
 Adblock Plus is an open source project licensed under [GPLv3][gpl3] and subject
 to its [Terms of Use][eyeo-terms]. [eyeo GmbH][eyeo] is the parent company of
@@ -133,11 +133,10 @@ You can run `npm run $ test:io-element.js` to create the HTML page inside the
 
 ### End-to-end testing
 
-The `./test/end-to-end/tests` folder contains various end-to-end tests. Run 
-`npm run test:end-to-end -- -p EXTENSION_PATH` in order to execute tests in the
-latest stable Chrome browser, where `EXTENSION_PATH` is path to the extension
-root folder. The `./test/end-to-end/config.js` file contains paths and
-descriptions of each executable test.
+The `./test/end-to-end/tests` folder contains various end-to-end tests. After
+generating the [unpacked development build][abp-webext-readme-devenv] of
+the extension, the tests can be executed in the latest stable Chrome browser
+by running `npm run test:end-to-end`.
 
 ### Linting
 
@@ -206,6 +205,7 @@ This project follows the typical GitLab process:
 [abp-ui-tags]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/tags
 [abp-webext-readme]: /adblockpluschrome/README.md
 [abp-webext-readme-build]: /adblockpluschrome/README.md#building
+[abp-webext-readme-devenv]: /adblockpluschrome/README.md#development-environment
 [abp-webext-releases]: https://github.com/adblockplus/adblockpluschrome/releases
 [abp-snippets]: https://gitlab.com/eyeo/adblockplus/abp-snippets
 [badge-pipeline-image]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/badges/master/pipeline.svg
