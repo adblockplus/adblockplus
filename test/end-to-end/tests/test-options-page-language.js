@@ -112,19 +112,19 @@ describe("test options page general tab language", () =>
       isEasyListGermanyPlusEasyListFLDisplayed()).to.be.true;
   });
 
-  it("should have filter list suggestions checkbox enabled", async() =>
+  it("should have filter list suggestions checkbox disabled", async() =>
   {
     const generalPage = new GeneralPage(browser);
     expect(await generalPage.
-      isFilterListsSuggestionsCheckboxSelected()).to.be.true;
+      isFilterListsSuggestionsCheckboxSelected()).to.be.false;
     await generalPage.clickFilterListsSuggestionsCheckbox();
     expect(await generalPage.
-      isFilterListsSuggestionsCheckboxSelected()).to.be.false;
+      isFilterListsSuggestionsCheckboxSelected()).to.be.true;
     expect(await generalPage.
       isEnglishLanguageTableItemDisplayed()).to.be.true;
     await generalPage.clickFilterListsSuggestionsCheckbox();
     expect(await generalPage.
-      isFilterListsSuggestionsCheckboxSelected()).to.be.true;
+      isFilterListsSuggestionsCheckboxSelected()).to.be.false;
     expect(await generalPage.
       isEnglishLanguageTableItemDisplayed()).to.be.true;
   });
