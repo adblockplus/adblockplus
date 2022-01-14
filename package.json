@@ -16,7 +16,9 @@
     "watch": "npm run $ watch",
     "csv-export": "node build/locale-sync/csv/main.js -e",
     "csv-import": "node build/locale-sync/csv/main.js -i && node build/locale-sync/normalize.js",
+    "test:cleanup-reports" : "rm -r allure-report test/end-to-end/allure-results",
     "test:end-to-end": "cd test/end-to-end && npx wdio run wdio.conf.js",
+    "test:generate-and-open-report": "allure generate test/end-to-end/allure-results && allure open",
     "submodules:update": "git submodule update --init --recursive",
     "submodules:update-with-snippets": "git -c submodule.\"vendor/abp-snippets\".update=checkout submodule update --init --recursive",
     "postinstall": "npm run $ install"
@@ -173,6 +175,7 @@
     "sass": "1.46.0"
   },
   "devDependencies": {
+    "@wdio/allure-reporter": "7.16.11",
     "@wdio/cli": "7.16.10",
     "@wdio/local-runner": "7.16.10",
     "@wdio/mocha-framework": "7.16.6",

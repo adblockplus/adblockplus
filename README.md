@@ -137,6 +137,11 @@ generating the [unpacked development build][abp-webext-readme-devenv] of
 the extension, the tests can be executed in the latest stable Chrome browser
 by running `npm run test:end-to-end`.
 
+Allure reporter is used for displaying the results after the execution has been
+completed. The report can be generated and opened using the
+`npm run test:generate-and-open-report` command. To clean up previous results
+and reports before the new test execution, run `npm run test:cleanup-reports`.
+
 ### Linting
 
 You can lint all files via `npm run lint` or lint only specific file types:

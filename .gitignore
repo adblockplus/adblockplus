@@ -6,3 +6,5 @@
 /skin/*.css
 /*.js
 !/polyfill.js
+/allure-report/
+/test/end-to-end/allure-results/
