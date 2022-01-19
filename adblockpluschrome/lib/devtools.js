@@ -17,17 +17,9 @@
 
 /** @module devtools */
 
-import {AllowingFilter,
-        ElemHideException} from "../adblockpluscore/lib/filterClasses.js";
-import {SpecialSubscription} from
-  "../adblockpluscore/lib/subscriptionClasses.js";
-import {contentTypes} from "../adblockpluscore/lib/contentTypes.js";
-import {parseURL} from "../adblockpluscore/lib/url.js";
-import {filterStorage} from "../adblockpluscore/lib/filterStorage.js";
-import {defaultMatcher} from "../adblockpluscore/lib/matcher.js";
-import {filterNotifier} from "../adblockpluscore/lib/filterNotifier.js";
+import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
 import {port} from "./messaging.js";
-import {HitLogger, nonRequestTypes} from "./hitLogger.js";
+import {getTarget} from "./hitLogger.js";
 import * as info from "info";
 import {compareVersions} from "./versions.js";
 
@@ -41,57 +33,79 @@ function getFilterInfo(filter)
   let userDefined = false;
   let subscriptionTitle = null;
 
-  for (let subscription of filterStorage.subscriptions(filter.text))
+  for (let subscription of ewe.subscriptions.getForFilter(filter.text))
   {
-    if (!subscription.disabled)
-    {
-      if (subscription instanceof SpecialSubscription)
-        userDefined = true;
-      else
-        subscriptionTitle = subscription.title;
-    }
+    if (!subscription.enabled)
+      continue;
+
+    if (subscription.downloadable)
+      subscriptionTitle = subscription.title;
+    else
+      userDefined = true;
   }
 
   return {
     text: filter.text,
-    allowlisted: filter instanceof AllowingFilter ||
-                 filter instanceof ElemHideException,
+    allowlisted: filter.type == "allowing" ||
+      filter.type == "elemhideexception",
     userDefined,
     subscription: subscriptionTitle
   };
 }
 
-function hasRecord(request, filter, record)
+function hasRecord(newRecord, oldRecord)
 {
-  return record.request.url == request.url &&
-    record.request.docDomain == request.docDomain &&
+  if (oldRecord.target.url !== newRecord.target.url)
+    return false;
 
-    // Ignore partial (e.g. ELEMHIDE) allowlisting if there is already
-    // a DOCUMENT exception which disables all means of blocking.
-    (record.request.type == "DOCUMENT" ?
-       nonRequestTypes.includes(request.type) :
-       record.request.type == request.type) &&
+  if (oldRecord.target.docDomain !== newRecord.target.docDomain)
+    return false;
 
-    // Matched element hiding filters don't relate to a particular request,
-    // so we have to compare the selector in order to avoid duplicates.
-    (record.filter && record.filter.selector) == (filter && filter.selector) &&
+  // Ignore frame content allowlisting if there is already
+  // a DOCUMENT exception which disables all means of blocking.
+  if (oldRecord.target.type == "DOCUMENT")
+  {
+    if (!newRecord.target.isFrame)
+      return false;
+  }
+  else if (oldRecord.target.type !== newRecord.target.type)
+  {
+    return false;
+  }
 
-    // We apply multiple CSP filters to a document, but we must still remove
-    // any duplicates. Two CSP filters are duplicates if both have identical
-    // text.
-    (record.filter && record.filter.csp && record.filter.text) ==
-    (filter && filter.csp && filter.text);
+  // Matched element hiding filters don't relate to a particular request,
+  // so we have to compare the selector in order to avoid duplicates.
+  if (oldRecord.filter && newRecord.filter)
+  {
+    if (oldRecord.filter.selector != newRecord.filter.selector)
+      return false;
+  }
+
+  // We apply multiple CSP filters to a document, but we must still remove
+  // any duplicates. Two CSP filters are duplicates if both have identical
+  // text.
+  if (oldRecord.filter && oldRecord.filter.csp &&
+      newRecord.filter && newRecord.filter.csp)
+  {
+    if (oldRecord.filter.text !== newRecord.filter.text)
+      return false;
+  }
+
+  return true;
 }
 
-function addRecord(panel, request, filter)
+function addRecord(panel, filterMatch)
 {
   let matchesAny = false;
+  let {filter} = filterMatch;
+  let target = getTarget(filterMatch);
+  let newRecord = {filter, target};
 
   for (let i = 0; i < panel.records.length; i++)
   {
-    let record = panel.records[i];
+    let oldRecord = panel.records[i];
 
-    let matches = hasRecord(request, filter, record);
+    let matches = hasRecord(newRecord, oldRecord);
     if (!matches)
       continue;
 
@@ -101,17 +115,17 @@ function addRecord(panel, request, filter)
     if (!filter)
       break;
 
-    if (record.filter)
+    if (oldRecord.filter)
       continue;
 
-    record.filter = filter;
+    oldRecord.filter = filter;
 
     panel.port.postMessage({
       type: "update-record",
       initialize: true,
       index: i,
-      request: record.request,
-      filter: getFilterInfo(record.filter)
+      request: oldRecord.target,
+      filter: getFilterInfo(oldRecord.filter)
     });
   }
 
@@ -120,22 +134,11 @@ function addRecord(panel, request, filter)
 
   panel.port.postMessage({
     type: "add-record",
-    request,
+    request: target,
     filter: getFilterInfo(filter)
   });
 
-  panel.records.push({request, filter});
-}
-
-function matchRequest(request)
-{
-  return defaultMatcher.match(
-    parseURL(request.url),
-    contentTypes[request.type],
-    request.docDomain,
-    request.sitekey,
-    request.specificOnly
-  );
+  panel.records.push(newRecord);
 }
 
 function onBeforeRequest(details)
@@ -180,85 +183,6 @@ function onLoading(page)
   }
 }
 
-function updateFilters(subscription, filters, added)
-{
-  let includes = subscription ?
-    filter => filter && subscription.findFilterIndex(filter) != -1 :
-    filters.includes.bind(filters);
-
-  for (let panel of panels.values())
-  {
-    for (let i = 0; i < panel.records.length; i++)
-    {
-      let record = panel.records[i];
-
-      // If an added filter matches a request shown in the devtools panel,
-      // update that record to show the new filter. Ignore filters that aren't
-      // associated with any sub-resource request. There is no record for these
-      // if they don't already match. In particular, in case of element hiding
-      // filters, we also wouldn't know if any new element matches.
-      if (added)
-      {
-        if (nonRequestTypes.includes(record.request.type))
-          continue;
-
-        let filter = matchRequest(record.request);
-
-        if (!includes(filter))
-          continue;
-
-        record.filter = filter;
-      }
-
-      // If a filter shown in the devtools panel got removed, update that
-      // record to show the filter that matches now, or none, instead.
-      // For filters that aren't associated with any sub-resource request,
-      // just remove the record. We wouldn't know whether another filter
-      // matches instead until the page is reloaded.
-      else
-      {
-        if (!includes(record.filter))
-          continue;
-
-        if (nonRequestTypes.includes(record.request.type))
-        {
-          panel.port.postMessage({
-            type: "remove-record",
-            index: i
-          });
-          panel.records.splice(i--, 1);
-          continue;
-        }
-
-        record.filter = matchRequest(record.request);
-      }
-
-      panel.port.postMessage({
-        type: "update-record",
-        index: i,
-        request: record.request,
-        filter: getFilterInfo(record.filter)
-      });
-    }
-  }
-}
-
-function onFilterAdded(filter)
-{
-  updateFilters(null, [filter], true);
-}
-
-function onFilterRemoved(filter)
-{
-  updateFilters(null, [filter], false);
-}
-
-function onSubscriptionAdded(subscription)
-{
-  if (subscription instanceof SpecialSubscription)
-    updateFilters(subscription, null, true);
-}
-
 browser.runtime.onConnect.addListener(newPort =>
 {
   let match = newPort.name.match(/^devtools-(\d+)$/);
@@ -268,7 +192,7 @@ browser.runtime.onConnect.addListener(newPort =>
   let inspectedTabId = parseInt(match[1], 10);
   let localOnBeforeRequest = onBeforeRequest.bind();
   let panel = {port: newPort, records: []};
-  let hitListener = addRecord.bind(null, panel);
+  let onBlockableItem = addRecord.bind(null, panel);
 
   browser.webRequest.onBeforeRequest.addListener(
     localOnBeforeRequest,
@@ -280,29 +204,26 @@ browser.runtime.onConnect.addListener(newPort =>
   );
 
   if (panels.size == 0)
-  {
     ext.pages.onLoading.addListener(onLoading);
-    filterNotifier.on("filter.added", onFilterAdded);
-    filterNotifier.on("filter.removed", onFilterRemoved);
-    filterNotifier.on("subscription.added", onSubscriptionAdded);
-  }
+
+  let options = {
+    filterType: "all",
+    includeElementHiding: true,
+    includeUnmatched: true,
+    tabId: inspectedTabId
+  };
 
   newPort.onDisconnect.addListener(() =>
   {
-    HitLogger.removeListener(inspectedTabId, hitListener);
+    ewe.reporting.onBlockableItem.removeListener(onBlockableItem, options);
     panels.delete(inspectedTabId);
     browser.webRequest.onBeforeRequest.removeListener(localOnBeforeRequest);
 
     if (panels.size == 0)
-    {
       ext.pages.onLoading.removeListener(onLoading);
-      filterNotifier.off("filter.added", onFilterAdded);
-      filterNotifier.off("filter.removed", onFilterRemoved);
-      filterNotifier.off("subscription.added", onSubscriptionAdded);
-    }
   });
 
-  HitLogger.addListener(inspectedTabId, hitListener);
+  ewe.reporting.onBlockableItem.addListener(onBlockableItem, options);
   panels.set(inspectedTabId, panel);
 });
 

@@ -17,17 +17,16 @@
 
 /** @module notificationHelper */
 
+import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
+
 import {askConfirmSubscription} from "./filterConfiguration.js";
 import {startIconAnimation, stopIconAnimation} from "./icon.js";
 import * as info from "info";
 import {port} from "./messaging.js";
 import {Prefs} from "./prefs.js";
 import {Stats} from "./stats.js";
-import {notifications} from "../adblockpluscore/lib/notifications.js";
-import {recommendations} from "../adblockpluscore/lib/recommendations.js";
-import {Subscription} from "../adblockpluscore/lib/subscriptionClasses.js";
-import {initDay1Notification} from "../../lib/notifications.js";
 import {showOptions} from "../../lib/pages/options.js";
+import {initDay1Notification} from "../../lib/notifications.js";
 
 const displayMethods = new Map([
   ["critical", ["icon", "notification", "popup"]],
@@ -84,8 +83,6 @@ const browserNotificationButtonsSupported = info.platform == "chromium" &&
 const browserNotificationRequireInteractionSupported = (
   info.platform == "chromium" && parseInt(info.platformVersion, 10) >= 50
 );
-
-notifications.locale = browser.i18n.getUILanguage();
 
 function matchesDisplayMethod(method, {type})
 {
@@ -150,16 +147,17 @@ function openNotificationLink(link)
   if (link.startsWith("abp:subscribe:"))
   {
     let [,, type, locale] = link.split(":", 4);
-    for (let recommendation of recommendations())
+    for (let recommendation of ewe.subscriptions.getRecommendations())
     {
       if (recommendation.type != type ||
           !recommendation.languages.includes(locale))
         continue;
 
-      let subscription = Subscription.fromURL(recommendation.url);
-      subscription.title = recommendation.title;
-      subscription.homepage = recommendation.homepage;
-      askConfirmSubscription(subscription);
+      askConfirmSubscription({
+        homepage: recommendation.homepage,
+        title: recommendation.title,
+        url: recommendation.url
+      });
       return;
     }
 
@@ -265,7 +263,7 @@ function openNotificationInNewTab(notification)
     browser.tabs.onUpdated.removeListener(onUpdated);
 
     browser.tabs.create({url});
-    notifications.markAsShown(notification.id);
+    ewe.notifications.markAsShown(notification.id);
   }
 
   let onCreated = tab =>
@@ -314,7 +312,7 @@ async function showNotification(notification)
   if (activeNotification && activeNotification.id == notification.id)
     return;
 
-  let texts = notifications.getLocalizedTexts(notification);
+  let texts = ewe.notifications.getLocalizedTexts(notification);
   let buttons = getNotificationButtons(notification, texts.message);
 
   // Don't display notifications at all if they contain a link to a local
@@ -371,7 +369,7 @@ async function showNotification(notification)
     // notifications to them.
     if (installType == "admin")
     {
-      notifications.markAsShown(notification.id);
+      ewe.notifications.markAsShown(notification.id);
       return;
     }
 
@@ -379,7 +377,7 @@ async function showNotification(notification)
   }
   else
   {
-    notifications.markAsShown(notification.id);
+    ewe.notifications.markAsShown(notification.id);
   }
 }
 
@@ -422,7 +420,9 @@ export function initNotifications(firstRun)
   };
   browser.notifications.onClosed.addListener(onClosed);
 
-  notifications.start();
+  ewe.notifications.locale = browser.i18n.getUILanguage();
+  ewe.notifications.numBlocked = Stats.blocked_total;
+  ewe.notifications.start();
 
   if (firstRun)
     initDay1Notification();
@@ -481,7 +481,7 @@ port.on("notifications.get", (message, sender) =>
       !matchesDisplayMethod(message.displayMethod, activeNotification))
     return;
 
-  let texts = notifications.getLocalizedTexts(activeNotification);
+  let texts = ewe.notifications.getLocalizedTexts(activeNotification);
   return Object.assign({texts}, activeNotification);
 });
 
@@ -502,12 +502,13 @@ port.on("notifications.seen", (message, sender) =>
 
 ext.pages.onLoading.addListener(page =>
 {
-  notifications.showNext(page.url.href);
+  ewe.notifications.showNext(page.url.href);
 });
 
 Stats.on("blocked_total", () =>
 {
-  notifications.showNext();
+  ewe.notifications.numBlocked = Stats.blocked_total;
+  ewe.notifications.showNext();
 });
 
-notifications.addShowListener(showNotification);
+ewe.notifications.addShowListener(showNotification);

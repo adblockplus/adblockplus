@@ -32,7 +32,6 @@ export default {
   resolve: {
     modules: [
       path.resolve("lib"),
-      path.resolve("adblockpluscore/lib"),
       path.resolve("../lib"),
       path.resolve("build/templates"),
       "node_modules"

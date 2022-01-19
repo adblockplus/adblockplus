@@ -31,34 +31,17 @@ export default {
         src: [
           "adblockpluschrome/lib/devtools.js",
           "adblockpluschrome/lib/debug.js",
-          "adblockpluschrome/lib/requestBlocker.js",
-          "adblockpluschrome/lib/popupBlocker.js",
           "adblockpluschrome/lib/subscriptionInit.js",
           "lib/init.js",
           "lib/recommendLanguage.js",
           "adblockpluschrome/lib/filterComposer.js",
           "adblockpluschrome/lib/stats.js",
           "adblockpluschrome/lib/uninstall.js",
-          "adblockpluschrome/lib/csp.js",
           "adblockpluschrome/lib/contentFiltering.js",
           "adblockpluschrome/lib/messageResponder.js",
           "adblockpluschrome/lib/filterConfiguration.js",
           // marked as optional using wildcard
           "vendor/abp-snippets/dist/ml/bundle*.ml.mjs"
-        ]
-      },
-      {
-        dest: "include.preload.js",
-        src: [
-          "adblockpluschrome/include.preload.js",
-          "adblockpluschrome/inject.preload.js",
-          "adblockpluschrome/composer.preload.js"
-        ]
-      },
-      {
-        dest: "subscriptionLink.postload.js",
-        src: [
-          "adblockpluschrome/subscriptionLink.postload.js"
         ]
       }
     ]
@@ -108,6 +91,7 @@ export default {
           // marked as optional using wildcard
           "vendor/abp-snippets/dist/webext/snippets*.json",
           "adblockpluschrome/devtools.*",
+          "adblockpluschrome/composer.preload.js",
           "!polyfill.js",
           "!mobile-options.*"
         ]
@@ -161,6 +145,10 @@ export default {
       {
         dest: "icons/abp-40.png",
         src: "skin/icons/toolbar/default-40.png"
+      },
+      {
+        dest: "vendor/webext-sdk/content.js",
+        src: "vendor/webext-sdk/dist/ewe-content.js"
       }
     ]
   },

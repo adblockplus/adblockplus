@@ -16,12 +16,13 @@
  */
 
 import assert from "assert";
-import {analytics} from "../../adblockpluscore/lib/analytics.js";
-import {filterStorage} from "../../adblockpluscore/lib/filterStorage.js";
-import {Prefs} from "../../lib/prefs.js";
+import * as ewe from "../../../vendor/webext-sdk/dist/ewe-api.js";
 import {setUninstallURL} from "../../lib/uninstall.js";
 import * as info from "info";
 
+const adSubscriptionUrls = ewe.subscriptions.getRecommendations()
+  .filter(recommendation => recommendation.type == "ads")
+  .map(recommendation => recommendation.url);
 const realSetUninstallURL = browser.runtime.setUninstallURL;
 
 let uninstallURL;
@@ -46,7 +47,7 @@ describe("Uninstall URL", () =>
       ["ap", info.application],
       ["apv", info.applicationVersion],
       ["p", info.platform],
-      ["fv", analytics.getFirstVersion()],
+      ["fv", ewe.reporting.getFirstVersion()],
       ["pv", info.platformVersion],
       ["ndc", "0"],
       ["c", "0"],
@@ -82,19 +83,19 @@ describe("Uninstall URL", () =>
     beforeEach(() =>
     {
       browser.runtime.setUninstallURL = url => uninstallURL = url;
-      initialSubscriptions = Array.from(filterStorage.subscriptions());
+      initialSubscriptions = ewe.subscriptions.getDownloadable();
     });
     afterEach(() =>
     {
       for (let subscription of initialSubscriptions)
-        filterStorage.addSubscription(subscription);
+        ewe.subscriptions.add(subscription.url);
       browser.runtime.setUninstalLURL = realSetUninstallURL;
     });
 
     it("produces parameter s=0", () =>
     {
       for (let subscription of initialSubscriptions)
-        filterStorage.removeSubscription(subscription);
+        ewe.subscriptions.remove(subscription.url);
       setUninstallURL();
       assert.ok(
         urlParams().includes("s=0"),
@@ -106,8 +107,8 @@ describe("Uninstall URL", () =>
     {
       for (let subscription of initialSubscriptions)
       {
-        if (subscription.type != "ads")
-          filterStorage.removeSubscription(subscription);
+        if (!adSubscriptionUrls.includes(subscription.url))
+          ewe.subscriptions.remove(subscription.url);
       }
       setUninstallURL();
       assert.ok(
@@ -120,8 +121,8 @@ describe("Uninstall URL", () =>
     {
       for (let subscription of initialSubscriptions)
       {
-        if (subscription.url != Prefs.subscriptions_exceptionsurl)
-          filterStorage.removeSubscription(subscription);
+        if (subscription.url != ewe.subscriptions.ACCEPTABLE_ADS_URL)
+          ewe.subscriptions.remove(subscription.url);
       }
       setUninstallURL();
       assert.ok(

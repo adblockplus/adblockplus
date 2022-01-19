@@ -132,9 +132,9 @@ function setIcon(page, opacity, frames)
   }
 }
 
-allowlistingState.addListener("changed", (page, filter) =>
+allowlistingState.addListener("changed", (page, isAllowlisted) =>
 {
-  allowlistedState.set(page, !!filter);
+  allowlistedState.set(page, isAllowlisted);
   if (canUpdateIcon)
     setIcon(page);
 });

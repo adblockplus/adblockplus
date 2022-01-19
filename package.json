@@ -8,7 +8,6 @@
   },
   "scripts": {
     "$": "npm-dollar",
-    "dev-build": "npm run $ bundle && npm run $ dev-build",
     "bundle": "npm run $ bundle",
     "dist": "npm run $ create.dist",
     "lint": "npm run $ lint",
@@ -23,18 +22,6 @@
     "postinstall": "npm run $ install"
   },
   "$": {
-    "dev-build": [
-      [
-        "echo $(tput bold)building ${1:-chrome}$(tput sgr0);",
-        "cd ../adblockpluschrome;",
-        "git pull --rebase origin $(git rev-parse --abbrev-ref HEAD);",
-        "cd adblockpluscore;",
-        "git pull --rebase origin $(git rev-parse --abbrev-ref HEAD);",
-        "cd ../;",
-        "SKIP_DEPENDENCY_UPDATES=true python2 build.py devenv -t ${1:-chrome};",
-        "cd ../adblockplusui;"
-      ]
-    ],
     "bundle": {
       "composer": "$ create.bundle composer",
       "day1": [
@@ -72,7 +59,7 @@
       },
       "css": "node-sass $1 $2",
       "dist": {
-        "ewe": "cd vendor/webext-sdk && npx webpack --env release && cd ../..",
+        "ewe": "npm run --prefix ./vendor/webext-sdk build -- --config-name sdk --no-devtool",
         "icons": "node build/icons-generation/index.js",
         "snippets": "[ -f ./vendor/abp-snippets/package.json ] && npm run --prefix ./vendor/abp-snippets build || echo 'Skipping snippets'",
         "ui": "$ bundle"
@@ -161,7 +148,6 @@
       "io-toggle": "$ create.test.component io-toggle"
     },
     "watch": {
-      "dev-build": "watch 'npm run dev-build' ./css ./js",
       "bundle": "watch 'npm run bundle' ./css ./js",
       "test": "watch 'npm run test' ./css ./js"
     },

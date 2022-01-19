@@ -20,10 +20,11 @@
     {
       "all_frames": true,
       "js": [
+        "vendor/webext-sdk/content.js",
         "polyfill.js",
         "ext/common.js",
         "ext/content.js",
-        "include.preload.js"
+        "composer.preload.js"
       ],
       "match_about_blank": true,
       "matches": [
@@ -31,47 +32,6 @@
         "https://*/*"
       ],
       "run_at": "document_start"
-    },
-    {
-      "all_frames": true,
-      "js": [
-        "subscriptionLink.postload.js"
-      ],
-      "matches": [
-        "https://*.abpchina.org/*",
-        "https://*.abpindo.blogspot.com/*",
-        "https://*.abptestpages.org/*",
-        "https://*.abpvn.com/*",
-        "https://*.adblock.ee/*",
-        "https://*.adblock.gardar.net/*",
-        "https://*.adblockplus.me/*",
-        "https://*.adblockplus.org/*",
-        "https://*.commentcamarche.net/*",
-        "https://*.droit-finances.commentcamarche.com/*",
-        "https://*.easylist.to/*",
-        "https://*.eyeo.com/*",
-        "https://*.fanboy.co.nz/*",
-        "https://*.filterlists.com/*",
-        "https://*.forums.lanik.us/*",
-        "https://*.gitee.com/*",
-        "https://*.gitee.io/*",
-        "https://*.github.com/*",
-        "https://*.github.io/*",
-        "https://*.gitlab.com/*",
-        "https://*.gitlab.io/*",
-        "https://*.gurud.ee/*",
-        "https://*.hugolescargot.com/*",
-        "https://*.i-dont-care-about-cookies.eu/*",
-        "https://*.journaldesfemmes.fr/*",
-        "https://*.journaldunet.com/*",
-        "https://*.linternaute.com/*",
-        "https://*.spam404.com/*",
-        "https://*.stanev.org/*",
-        "https://*.void.gr/*",
-        "https://*.xfiles.noads.it/*",
-        "https://*.zoso.ro/*"
-      ],
-      "run_at": "document_end"
     }
   ],
   "manifest_version": 2,

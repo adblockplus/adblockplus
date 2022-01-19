@@ -194,7 +194,6 @@ function startWatch()
       "test/unit-tests/**",
       "lib/*",
       "ext/*",
-      "adblockpluscore/lib/*",
       "../*.js",
       "!gulpfile.js"
     ],

@@ -109,24 +109,19 @@ describe("Preferences", () =>
 
   it("stores numerical preferences", async() =>
   {
-    await testPrefStorage("patternsbackups", 0, 12);
+    await testPrefStorage("blocked_total", 0, 12);
   });
 
   it("stores boolean preferences", async() =>
   {
-    await testPrefStorage("savestats", false, true);
+    await testPrefStorage("elemhide_debug", false, true);
   });
 
   it("stores string preferences", async() =>
   {
-    let defaultValue = "https://notification.adblockplus.org/notification.json";
-    let newValue = "https://notification.adblockplus.org/foo\u1234bar.json";
+    let defaultValue = "https://adblockplus.org/redirect?link=%LINK%&lang=%LANG%";
+    let newValue = "https://adblockplus.org/foo\u1234bar?link=%LINK%&lang=%LANG%";
 
-    await testPrefStorage("notificationurl", defaultValue, newValue);
-  });
-
-  it("stores object preferences", async() =>
-  {
-    await testPrefStorage("notificationdata", {}, {foo: 1, bar: 2});
+    await testPrefStorage("documentation_link", defaultValue, newValue);
   });
 });

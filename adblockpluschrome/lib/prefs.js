@@ -17,6 +17,8 @@
 
 /** @module prefs */
 
+import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
+
 import * as info from "info";
 import {EventEmitter} from "./events.js";
 import {port} from "./messaging.js";
@@ -30,80 +32,16 @@ let overrides = Object.create(null);
 let defaults = Object.create(null);
 
 /**
- * @see https://adblockplus.org/en/preferences#analytics
- * @type {object}
- */
-defaults.analytics = {
-  trustedHosts: ["adblockplus.org", "notification.adblockplus.org",
-                 "easylist-downloads.adblockplus.org"]
-};
-/**
  * The application version as set during initialization. Used to detect updates.
  *
  * @type {string}
  */
 defaults.currentVersion = "";
 /**
- * @see https://adblockplus.org/en/preferences#patternsbackups
- * @type {number}
- */
-defaults.patternsbackups = 0;
-/**
- * @see https://adblockplus.org/en/preferences#patternsbackupinterval
- * @type {number}
- */
-defaults.patternsbackupinterval = 24;
-/**
- * Only for compatibility with core code. Please do not change!
- *
- * @type {boolean}
- */
-defaults.savestats = false;
-/**
- * @see https://adblockplus.org/en/preferences#subscriptions_fallbackerrors
- * @type {number}
- */
-defaults.subscriptions_fallbackerrors = 5;
-/**
- * @see https://adblockplus.org/en/preferences#subscriptions_fallbackurl
- * @type {string}
- */
-defaults.subscriptions_fallbackurl = "https://adblockplus.org/getSubscription?version=%VERSION%&url=%SUBSCRIPTION%&downloadURL=%URL%&error=%ERROR%&responseStatus=%RESPONSESTATUS%";
-/**
- * @see https://adblockplus.org/en/preferences#subscriptions_autoupdate
- * @type {boolean}
- */
-defaults.subscriptions_autoupdate = true;
-/**
- * @see https://adblockplus.org/en/preferences#subscriptions_exceptionsurl
- * @type {string}
- */
-defaults.subscriptions_exceptionsurl = "https://easylist-downloads.adblockplus.org/exceptionrules.txt";
-/**
- * @see https://adblockplus.org/en/preferences#subscriptions_exceptionsurl_privacy
- * @type {string}
- */
-defaults.subscriptions_exceptionsurl_privacy = "https://easylist-downloads.adblockplus.org/exceptionrules-privacy-friendly.txt";
-/**
- * Used to ensure the anti-circumvention subscription is opted in by default.
- * @type {boolean}
- */
-defaults.subscriptions_addedanticv = false;
-/**
  * @see https://adblockplus.org/en/preferences#documentation_link
  * @type {string}
  */
 defaults.documentation_link = "https://adblockplus.org/redirect?link=%LINK%&lang=%LANG%";
-/**
- * @see https://adblockplus.org/en/preferences#notificationdata
- * @type {object}
- */
-defaults.notificationdata = {};
-/**
- * @see https://adblockplus.org/en/preferences#notificationurl
- * @type {string}
- */
-defaults.notificationurl = "https://notification.adblockplus.org/notification.json";
 /**
  * The total number of requests blocked by the extension.
  *
@@ -118,12 +56,6 @@ defaults.blocked_total = 0;
  */
 defaults.show_statsinicon = true;
 /**
- * Whether to show the number of blocked ads in the popup.
- *
- * @type {boolean}
- */
-defaults.show_statsinpopup = true;
-/**
  * Whether to show the "Block element" context menu entry.
  *
  * @type {boolean}
@@ -137,13 +69,6 @@ defaults.shouldShowBlockElementMenu = true;
  * @type {boolean}
  */
 defaults.ui_warn_tracking = true;
-
-/**
- * Notification categories to be ignored.
- *
- * @type {string[]}
- */
-defaults.notifications_ignoredcategories = [];
 
 /**
  * Whether to show the developer tools panel.
@@ -414,29 +339,27 @@ async function init()
 
   browser.storage.onChanged.addListener(onChanged);
 
-  // Migrate the first and current version from notificationdata over to the
-  // new analytics preference for existing users. The analytics module takes
-  // care of new users.
-  if (!("data" in Prefs.analytics) &&
-      "firstVersion" in Prefs.notificationdata &&
-      Prefs.notificationdata.firstVersion != "0")
-  {
-    // JSON values aren't saved unless they are assigned a different object
-    // and we don't want to mutate the default value of Prefs.analytics.
-    let notificationdata = JSON.parse(JSON.stringify(Prefs.notificationdata));
-    let analytics = JSON.parse(JSON.stringify(Prefs.analytics));
+  // Initialize notifications_ignoredcategories pseudo preference
+  Object.defineProperty(Prefs, "notifications_ignoredcategories", {
+    get()
+    {
+      return ewe.notifications.getIgnoredCategories();
+    },
+    set(value)
+    {
+      ewe.notifications.toggleIgnoreCategory("*", !!value);
+    },
+    enumerable: true
+  });
 
-    // Migrate the version data.
-    analytics.data = {
-      firstVersion: notificationdata.firstVersion,
-      currentVersion: notificationdata.data.version
-    };
-    delete notificationdata.firstVersion;
-
-    // Write the changes back to Prefs and storage.
-    Prefs.notificationdata = notificationdata;
-    Prefs.analytics = analytics;
-  }
+  ewe.notifications.on(
+    "ignored-category-added",
+    () => eventEmitter.emit("notifications_ignoredcategories")
+  );
+  ewe.notifications.on(
+    "ignored-category-removed",
+    () => eventEmitter.emit("notifications_ignoredcategories")
+  );
 }
 
 Prefs.untilLoaded = init();
@@ -455,20 +378,13 @@ port.on("prefs.get", (message, sender) => Prefs[message.key]);
  *
  * @event "prefs.set"
  * @property {string} key - The preference key.
- * @property {string} key - The value to set.
+ * @property {string} value - The value to set.
  * @returns {string|string[]|number|boolean|undefined}
  */
-port.on("prefs.set", async(message, sender) =>
-{
-  if (message.key == "notifications_ignoredcategories")
-  {
-    const {notifications} =
-      await import("../adblockpluscore/lib/notifications.js");
-    return notifications.toggleIgnoreCategory("*", !!message.value);
-  }
-
-  return Prefs[message.key] = message.value;
-});
+port.on(
+  "prefs.set",
+  async(message, sender) => Prefs[message.key] = message.value
+);
 
 /**
  * Toggles the value of the given preference key.
@@ -480,11 +396,7 @@ port.on("prefs.set", async(message, sender) =>
 port.on("prefs.toggle", async(message, sender) =>
 {
   if (message.key == "notifications_ignoredcategories")
-  {
-    const {notifications} =
-      await import("../adblockpluscore/lib/notifications.js");
-    return notifications.toggleIgnoreCategory("*");
-  }
+    return ewe.notifications.toggleIgnoreCategory("*");
 
   return Prefs[message.key] = !Prefs[message.key];
 });

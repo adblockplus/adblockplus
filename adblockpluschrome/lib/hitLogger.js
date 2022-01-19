@@ -17,157 +17,62 @@
 
 /** @module hitLogger */
 
-import {extractHostFromFrame} from "./url.js";
-import {EventEmitter} from "./events.js";
-import {filterStorage} from "../adblockpluscore/lib/filterStorage.js";
-import {port} from "./messaging.js";
-import {Filter, ElemHideFilter} from "../adblockpluscore/lib/filterClasses.js";
-import {contentTypes} from "../adblockpluscore/lib/contentTypes.js";
-import {checkAllowlisted} from "./allowlisting.js";
+import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
 
-export let nonRequestTypes = [
-  "DOCUMENT", "ELEMHIDE", "SNIPPET", "GENERICBLOCK", "GENERICHIDE", "CSP"
-];
+let requestMethods = new Set([
+  "allowing",
+  "header",
+  "request"
+]);
 
-let eventEmitter = new EventEmitter();
-
-/**
- * @namespace
- * @static
- */
-export let HitLogger = {
-  /**
-   * Adds a listener for requests, filter hits etc related to the tab.
-   *
-   * Note: Calling code is responsible for removing the listener again,
-   *       it will not be automatically removed when the tab is closed.
-   *
-   * @param {number} tabId
-   * @param {function} listener
-   */
-  addListener: eventEmitter.on.bind(eventEmitter),
-
-  /**
-   * Removes a listener for the tab.
-   *
-   * @param {number} tabId
-   * @param {function} listener
-   */
-  removeListener: eventEmitter.off.bind(eventEmitter),
-
-  /**
-   * Checks whether a tab is being inspected by anything.
-   *
-   * @param {number} tabId
-   * @return {boolean}
-   */
-  hasListener: eventEmitter.hasListeners.bind(eventEmitter)
-};
-
-/**
- * Logs a request associated with a tab or multiple tabs.
- *
- * @param {number[]} tabIds
- *   The tabIds associated with the request
- * @param {Object} request
- *   The request to log
- * @param {string} request.url
- *   The URL of the request
- * @param {string} request.type
- *  The request type
- * @param {string} request.docDomain
- *  The hostname of the document
- * @param {boolean} request.thirdParty
- *   Whether the origin of the request and document differs
- * @param {?string} request.sitekey
- *   The active sitekey if there is any
- * @param {?boolean} request.specificOnly
- *   Whether generic filters should be ignored
- * @param {?BlockingFilter} filter
- *  The matched filter or null if there is no match
- */
-export function logRequest(tabIds, request, filter)
+export function getTarget({details: request, filter, info: matchInfo})
 {
-  for (let tabId of tabIds)
-    eventEmitter.emit(tabId, request, filter);
-}
+  let isFrame = !requestMethods.has(matchInfo.matchingMethod);
 
-function logHiddenElements(page, frame, selectors, filters, docDomain)
-{
-  if (HitLogger.hasListener(page.id))
+  let type;
+  if (matchInfo.matchingMethod == "request")
   {
-    for (let subscription of filterStorage.subscriptions())
-    {
-      if (subscription.disabled)
-        continue;
-
-      for (let text of subscription.filterText())
-      {
-        let filter = Filter.fromText(text);
-
-        // We only know the exact filter in case of element hiding emulation.
-        // For regular element hiding filters, the content script only knows
-        // the selector, so we have to find a filter that has an identical
-        // selector and is active on the domain the match was reported from.
-        let isActiveElemHideFilter = filter instanceof ElemHideFilter &&
-                                     selectors.includes(filter.selector) &&
-                                     filter.isActiveOnDomain(docDomain);
-
-        if (isActiveElemHideFilter || filters.includes(text))
-        {
-          // For generic filters we need to additionally check whether
-          // they were not applied to the page due to an exception rule.
-          if (filter.isGeneric())
-          {
-            let specificOnly = checkAllowlisted(
-              page, frame, null,
-              contentTypes.GENERICHIDE
-            );
-            if (specificOnly)
-              continue;
-          }
-
-          eventEmitter.emit(page.id, {type: "ELEMHIDE", docDomain}, filter);
-        }
-      }
-    }
+    // We are also receiving unmatched requests for special matching methods,
+    // so we need to consider main frame requests here, even though
+    // they cannot be blocked
+    // https://gitlab.com/eyeo/adblockplus/abc/webext-sdk/-/issues/135
+    if (request.type == "main_frame")
+      type = "document";
+    else
+      type = ewe.reporting.contentTypesMap.get(request.type);
   }
-}
-
-/**
- * Logs an allowing filter that disables (some kind of)
- * blocking for a particular document.
- *
- * @param {number}       tabId     The tabId the allowlisting is active for
- * @param {string}       url       The url of the allowlisted document
- * @param {number}       typeMask  The bit mask of allowing types checked
- *                                 for
- * @param {string}       docDomain The hostname of the parent document
- * @param {AllowingFilter} filter  The matched allowing filter
- */
-export function logAllowlistedDocument(tabId, url, typeMask, docDomain, filter)
-{
-  if (HitLogger.hasListener(tabId))
+  else if (matchInfo.matchingMethod == "allowing")
   {
-    for (let type of nonRequestTypes)
-    {
-      if (typeMask & filter.contentType & contentTypes[type])
-        eventEmitter.emit(tabId, {url, type, docDomain}, filter);
-    }
+    type = matchInfo.allowingReason;
   }
-}
+  // Show matching method when it had an effect on the request
+  else if (filter)
+  {
+    type = matchInfo.matchingMethod;
+  }
+  // Otherwise treat it as with matching method "request"
+  // so that it can be identified as a duplicate
+  // We are also receiving unmatched requests for special matching methods,
+  // so we need to consider main frame requests here, even though
+  // they cannot be blocked
+  // https://gitlab.com/eyeo/adblockplus/abc/webext-sdk/-/issues/135
+  else if (request.type == "main_frame")
+  {
+    type = "document";
+  }
+  else
+  {
+    type = ewe.reporting.contentTypesMap.get(request.type);
+  }
 
-/**
- * Logs active element hiding filters for a tab.
- *
- * @event "hitLogger.traceElemHide"
- * @property {string[]} selectors  The selectors of applied ElemHideFilters
- * @property {string[]} filters    The text of applied ElemHideEmulationFilters
- */
-port.on("hitLogger.traceElemHide", (message, sender) =>
-{
-  logHiddenElements(
-    sender.page, sender.frame, message.selectors, message.filters,
-    extractHostFromFrame(sender.frame)
-  );
-});
+  if (!type)
+    type = "other";
+
+  return {
+    docDomain: matchInfo.docDomain,
+    isFrame,
+    rewrittenUrl: matchInfo.rewrittenUrl,
+    type: type.toUpperCase(),
+    url: request.url
+  };
+}

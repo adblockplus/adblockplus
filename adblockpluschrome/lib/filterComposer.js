@@ -17,11 +17,10 @@
 
 /** @module filterComposer */
 
-import {defaultMatcher} from "../adblockpluscore/lib/matcher.js";
-import {contentTypes} from "../adblockpluscore/lib/contentTypes.js";
+import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
 import {Prefs} from "./prefs.js";
 import {extractHostFromFrame} from "./url.js";
-import {getKey, checkAllowlisted, allowlistingState} from "./allowlisting.js";
+import {allowlistingState} from "./allowlisting.js";
 import {port} from "./messaging.js";
 import * as info from "info";
 
@@ -75,47 +74,61 @@ function composeFilters(details)
   let filters = [];
   let selectors = [];
 
-  if (!checkAllowlisted(page, frame))
+  // Doesn't consider allowlisted parent frames yet
+  // https://gitlab.com/eyeo/adblockplus/abc/webext-sdk/-/issues/136
+  let isFrameAllowlisted = ewe.filters.isResourceAllowlisted(
+    frame.url,
+    "document",
+    page.id,
+    frame.id
+  );
+  if (!isFrameAllowlisted)
   {
     let docDomain = extractHostFromFrame(frame);
 
     // Add a blocking filter for each URL of the element that can be blocked
     if (details.url)
     {
-      let typeMask;
+      let type;
       switch (details.tagName)
       {
         case "img":
         case "input":
-          typeMask = contentTypes.IMAGE;
+          type = "image";
           break;
         case "audio":
         case "video":
-          typeMask = contentTypes.MEDIA;
+          type = "media";
           break;
         case "frame":
         case "iframe":
-          typeMask = contentTypes.SUBDOCUMENT;
+          type = "subdocument";
           break;
         case "object":
         case "embed":
-          typeMask = contentTypes.OBJECT;
+          type = "object";
           break;
       }
 
-      let specificOnly = checkAllowlisted(
-        page, frame, null, contentTypes.GENERICBLOCK
+      let isAllowlisted = ewe.filters.isResourceAllowlisted(
+        details.url,
+        type,
+        page.id,
+        frame.id
       );
-      let allowlisted = defaultMatcher.isAllowlisted(
-        details.url, typeMask, docDomain,
-        getKey(page, frame), specificOnly
-      );
-
-      if (!allowlisted)
+      if (!isAllowlisted)
       {
         let filterText = details.url.replace(/^[\w-]+:\/+(?:www\.)?/, "||");
 
-        if (specificOnly)
+        // Doesn't consider allowlisted parent frames yet
+        // https://gitlab.com/eyeo/adblockplus/abc/webext-sdk/-/issues/136
+        let isSpecificAllowlisted = ewe.filters.isResourceAllowlisted(
+          details.url,
+          "genericblock",
+          page.id,
+          frame.id
+        );
+        if (isSpecificAllowlisted)
           filterText += "$domain=" + docDomain;
 
         if (!filters.includes(filterText))
@@ -124,8 +137,15 @@ function composeFilters(details)
     }
 
     // If we couldn't generate any blocking filters, fallback to element hiding
-    if (filters.length == 0 && !checkAllowlisted(page, frame, null,
-                                                 contentTypes.ELEMHIDE))
+    // Doesn't consider allowlisted parent frames yet
+    // https://gitlab.com/eyeo/adblockplus/abc/webext-sdk/-/issues/136
+    let isElementAllowlisted = ewe.filters.isResourceAllowlisted(
+      frame.url,
+      "elemhide",
+      page.id,
+      frame.id
+    );
+    if (filters.length == 0 && !isElementAllowlisted)
     {
       // Generate CSS selectors based on the element's "id" and
       // "class" attribute.
@@ -398,11 +418,11 @@ if ("windows" in browser)
   });
 }
 
-allowlistingState.addListener("changed", (page, filter) =>
+allowlistingState.addListener("changed", (page, isAllowlisted) =>
 {
   if (readyActivePages.has(page))
   {
-    readyActivePages.set(page, !filter);
+    readyActivePages.set(page, !isAllowlisted);
     updateContextMenu(page);
   }
 });
@@ -434,6 +454,11 @@ port.on("composer.isPageReady", (message, sender) =>
  */
 port.on("composer.ready", (message, sender) =>
 {
-  readyActivePages.set(sender.page, !checkAllowlisted(sender.page));
+  let isAllowlisted = ewe.filters.isResourceAllowlisted(
+    sender.page.url,
+    "document",
+    sender.page.id
+  );
+  readyActivePages.set(sender.page, !isAllowlisted);
   updateContextMenu(sender.page);
 });

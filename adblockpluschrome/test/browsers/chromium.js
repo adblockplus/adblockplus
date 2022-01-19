@@ -23,7 +23,7 @@ import {exec, execFile} from "child_process";
 import {promisify} from "util";
 
 export {ensureChromium as ensureBrowser}
-  from "../../adblockpluscore/test/runners/chromium_download.mjs";
+  from "../runners/chromium_download.mjs";
 
 // We need to require the chromedriver,
 // otherwise on Windows the chromedriver path is not added to process.env.PATH.
@@ -37,8 +37,7 @@ export let oldestCompatibleVersion = 681094; // Chromium 77.0.3865.75
 
 export async function ensureDriver(browserBinary)
 {
-  let chromedriverPath =
-    path.resolve("adblockpluscore", "chromium-snapshots", "chromedriver");
+  let chromedriverPath = path.resolve("chromium-snapshots", "chromedriver");
   let env = {...process.env, npm_config_chromedriver_skip_download: false,
              npm_config_tmp: chromedriverPath};
   if (browserBinary)

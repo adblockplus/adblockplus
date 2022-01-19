@@ -16,6 +16,7 @@ const languageFile = {
     [defaultLocale]: `[${defaultLocale}]`
   }
 };
+const moduleEWE = "../vendor/webext-sdk/dist/ewe-api.js";
 const uiLocale = "en";
 
 const defaultGlobals = {
@@ -60,49 +61,30 @@ const defaultGlobals = {
 };
 
 const defaultModules = {
-  filterStorage: {
-    filterStorage: {
-      hasSubscription: () => false,
-      *subscriptions() {}
-    }
-  },
-  info: {application: "firefox"},
-  notifications: {
+  [moduleEWE]: {
     notifications: {
       addNotification() {},
       showNext() {}
+    },
+    subscriptions: {
+      getDownloadable: () => [],
+      getRecommendations()
+      {
+        return [
+          {
+            languages: [defaultLocale],
+            type: "ads",
+            url: "http://example.com/pl.txt"
+          }
+        ];
+      },
+      has: () => false
     }
   },
+  info: {application: "firefox"},
   prefs: {
     Prefs: {
       recommend_language_subscriptions: true
-    }
-  },
-  recommendations: {
-    *recommendations()
-    {
-      yield {
-        languages: [defaultLocale],
-        type: "ads",
-        url: "http://example.com/pl.txt"
-      };
-    }
-  },
-  subscriptionClasses: {
-    DownloadableSubscription: class
-    {
-      constructor(url)
-      {
-        this.disabled = true;
-        this.url = url;
-      }
-    },
-    Subscription: {
-      fromURL(url)
-      {
-        return new defaultModules.subscriptionClasses
-          .DownloadableSubscription(url);
-      }
     }
   }
 };
@@ -292,7 +274,7 @@ describe("Test language filter list recommendation", () =>
       });
 
       env.override(
-        env.modules.notifications.notifications,
+        env.modules[moduleEWE].notifications,
         "addNotification",
         () =>
         {
@@ -332,20 +314,22 @@ describe("Test language filter list recommendation", () =>
       let addedNotification = null;
       let notified = false;
 
-      env.setModules({
-        notifications: {
-          notifications: {
-            addNotification(notification)
-            {
-              addedNotification = notification;
-            },
-            showNext()
-            {
-              notified = true;
-            }
-          }
+      env.override(
+        env.modules[moduleEWE].notifications,
+        "addNotification",
+        (notification) =>
+        {
+          addedNotification = notification;
         }
-      });
+      );
+      env.override(
+        env.modules[moduleEWE].notifications,
+        "showNext",
+        () =>
+        {
+          notified = true;
+        }
+      );
 
       env.override(
         env.globals.browser.webNavigation.onCompleted,
@@ -403,7 +387,7 @@ describe("Test language filter list recommendation", () =>
       let notified = false;
 
       env.override(
-        env.modules.notifications.notifications,
+        env.modules[moduleEWE].notifications,
         "showNext",
         () =>
         {
@@ -412,15 +396,17 @@ describe("Test language filter list recommendation", () =>
       );
 
       env.override(
-        env.modules.recommendations,
-        "recommendations",
-        function*()
+        env.modules[moduleEWE].subscriptions,
+        "getRecommendations",
+        () =>
         {
-          yield {
-            languages: [defaultLocale],
-            type: "other",
-            url: "http://example.com/pl.txt"
-          };
+          return [
+            {
+              languages: [defaultLocale],
+              type: "other",
+              url: "http://example.com/pl.txt"
+            }
+          ];
         }
       );
 
@@ -456,7 +442,7 @@ describe("Test language filter list recommendation", () =>
       let notified = false;
 
       env.override(
-        env.modules.notifications.notifications,
+        env.modules[moduleEWE].notifications,
         "showNext",
         () =>
         {
@@ -494,7 +480,7 @@ describe("Test language filter list recommendation", () =>
       let notified = false;
 
       env.override(
-        env.modules.notifications.notifications,
+        env.modules[moduleEWE].notifications,
         "showNext",
         () =>
         {
@@ -545,7 +531,7 @@ describe("Test language filter list recommendation", () =>
         let notified = false;
 
         env.override(
-          env.modules.notifications.notifications,
+          env.modules[moduleEWE].notifications,
           "showNext",
           () =>
           {
@@ -609,7 +595,7 @@ describe("Test language filter list recommendation", () =>
       });
 
       env.override(
-        env.modules.notifications.notifications,
+        env.modules[moduleEWE].notifications,
         "showNext",
         () =>
         {
@@ -618,15 +604,17 @@ describe("Test language filter list recommendation", () =>
       );
 
       env.override(
-        env.modules.recommendations,
-        "recommendations",
-        function*()
+        env.modules[moduleEWE].subscriptions,
+        "getRecommendations",
+        () =>
         {
-          yield {
-            languages: ["en"],
-            type: "ads",
-            url: "http://example.com/en.txt"
-          };
+          return [
+            {
+              languages: ["en"],
+              type: "ads",
+              url: "http://example.com/en.txt"
+            }
+          ];
         }
       );
 
@@ -674,7 +662,7 @@ describe("Test language filter list recommendation", () =>
       let notified = false;
 
       env.override(
-        env.modules.notifications.notifications,
+        env.modules[moduleEWE].notifications,
         "showNext",
         () =>
         {
@@ -683,9 +671,9 @@ describe("Test language filter list recommendation", () =>
       );
 
       env.override(
-        env.modules.recommendations,
-        "recommendations",
-        function*() {}
+        env.modules[moduleEWE].subscriptions,
+        "getRecommendations",
+        () => []
       );
 
       env.override(
@@ -720,7 +708,7 @@ describe("Test language filter list recommendation", () =>
       let notified = false;
 
       env.override(
-        env.modules.notifications.notifications,
+        env.modules[moduleEWE].notifications,
         "showNext",
         () =>
         {
@@ -729,8 +717,8 @@ describe("Test language filter list recommendation", () =>
       );
 
       env.override(
-        env.modules.filterStorage.filterStorage,
-        "hasSubscription",
+        env.modules[moduleEWE].subscriptions,
+        "has",
         () => true
       );
 
@@ -789,7 +777,7 @@ describe("Test language filter list recommendation", () =>
         let notified = false;
 
         env.override(
-          env.modules.notifications.notifications,
+          env.modules[moduleEWE].notifications,
           "showNext",
           () =>
           {
@@ -798,14 +786,14 @@ describe("Test language filter list recommendation", () =>
         );
 
         env.override(
-          env.modules.filterStorage.filterStorage,
-          "subscriptions",
+          env.modules[moduleEWE].subscriptions,
+          "getDownloadable",
           recommendations
         );
 
         env.override(
-          env.modules.recommendations,
-          "recommendations",
+          env.modules[moduleEWE].subscriptions,
+          "getRecommendations",
           recommendations
         );
 

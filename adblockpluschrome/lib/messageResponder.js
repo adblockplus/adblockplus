@@ -17,8 +17,9 @@
 
 /** @module messageResponder */
 
+import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
+
 import {port} from "./messaging.js";
-import {Prefs} from "./prefs.js";
 import * as info from "info";
 
 function forward(type, message, sender)
@@ -65,10 +66,10 @@ port.on("app.get", async(message, sender) =>
   }
 
   if (message.what == "acceptableAdsUrl")
-    return Prefs.subscriptions_exceptionsurl;
+    return ewe.subscriptions.ACCEPTABLE_ADS_URL;
 
   if (message.what == "acceptableAdsPrivacyUrl")
-    return Prefs.subscriptions_exceptionsurl_privacy;
+    return ewe.subscriptions.ACCEPTABLE_ADS_PRIVACY_URL;
 
   if (message.what == "senderId")
     return sender.page.id;

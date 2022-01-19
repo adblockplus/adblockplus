@@ -4,7 +4,7 @@ Welcome to the repository for the Adblock Plus extension!
 
 The main project is hosted on [GitLab][abp-ui] and, in addition to the user
 interface and the web extension code, the Adblock Plus extension also includes
-the Adblock Plus [core functionality][abp-core].
+[eyeo's Web Extension Ad Blocking Toolkit (EWE)][eyeo-ewe].
 
 - [About Adblock Plus](#about-adblock-plus)
 - [Prerequisites](#prerequisites)
@@ -214,7 +214,6 @@ This project follows the typical GitLab process:
 
 
 
-[abp-core]: https://gitlab.com/eyeo/adblockplus/abc/adblockpluscore/
 [abp-spec]: https://gitlab.com/eyeo/specs/spec/tree/master/spec/abp
 [abp-ui]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/
 [abp-ui-nightlies]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/pipelines?scope=branches
@@ -225,6 +224,7 @@ This project follows the typical GitLab process:
 [badge-pipeline-image]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/badges/master/pipeline.svg
 [badge-pipeline-link]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/commits/master
 [eyeo]: https://eyeo.com/
+[eyeo-ewe]: https://gitlab.com/eyeo/adblockplus/abc/webext-sdk
 [eyeo-terms]: https://adblockplus.org/terms
 [gpl3]: https://www.gnu.org/licenses/gpl.html
 [ms-wsl]: https://docs.microsoft.com/windows/wsl/install-win10

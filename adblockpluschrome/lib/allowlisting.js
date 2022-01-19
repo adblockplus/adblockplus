@@ -17,104 +17,12 @@
 
 /** @module allowlisting */
 
-import {defaultMatcher} from "../adblockpluscore/lib/matcher.js";
-import {Filter} from "../adblockpluscore/lib/filterClasses.js";
-import {contentTypes} from "../adblockpluscore/lib/contentTypes.js";
-import {filterNotifier} from "../adblockpluscore/lib/filterNotifier.js";
-import {filterState} from "../adblockpluscore/lib/filterState.js";
-import {filterStorage} from "../adblockpluscore/lib/filterStorage.js";
-import {extractHostFromFrame} from "./url.js";
-import {port} from "./messaging.js";
-import {logAllowlistedDocument} from "./hitLogger.js";
-import {verifySignature} from "../adblockpluscore/lib/rsa.js";
+import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
 import {EventEmitter} from "./events.js";
+import {port} from "./messaging.js";
 
-let sitekeys = new ext.PageMap();
 let allowlistedDomainRegexp = /^@@\|\|([^/:]+)\^\$document$/;
 let eventEmitter = new EventEmitter();
-
-function match(page, url, typeMask, docDomain, sitekey)
-{
-  let filter = defaultMatcher.match(url, typeMask, docDomain, sitekey);
-
-  if (filter && page)
-    logAllowlistedDocument(page.id, url.href, typeMask, docDomain, filter);
-
-  return filter;
-}
-
-function* frameDetails(page, frame, originUrl, typeMask)
-{
-  if (frame || originUrl)
-  {
-    while (frame)
-    {
-      let parentFrame = frame.parent;
-
-      yield [frame.url, typeMask,
-             extractHostFromFrame(parentFrame, originUrl) || frame.url.hostname,
-             getKey(page, frame, originUrl)];
-
-      frame = parentFrame;
-    }
-
-    if (originUrl)
-    {
-      yield [originUrl, typeMask, originUrl.hostname,
-             getKey(null, null, originUrl)];
-    }
-  }
-  else if (page)
-  {
-    yield [page.url, typeMask, page.url.hostname, null];
-  }
-}
-
-/**
- * Gets the active allowing filter for the document associated
- * with the given page/frame, or null if it's not allowlisted.
- *
- * @param {?Page}   page
- * @param {?Frame} [frame]
- * @param {?URL}   [originUrl]
- * @param {number} [typeMask=contentTypes.DOCUMENT]
- * @return {?AllowingFilter}
- */
-export function checkAllowlisted(page, frame, originUrl,
-                                 typeMask = contentTypes.DOCUMENT)
-{
-  for (let details of frameDetails(page, frame, originUrl, typeMask))
-  {
-    let filter = match(page, ...details);
-    if (filter)
-      return filter;
-  }
-}
-
-/**
- * Returns all allowing filters that apply the document associated
- * with the given page/frame.
- *
- * @param {?Page}   page
- * @param {?Frame} [frame]
- * @param {?URL}   [originUrl]
- * @param {number} [typeMask=contentTypes.DOCUMENT]
- * @return {Array.<AllowingFilter>}
- */
-export function listAllowlistingFilters(page, frame, originUrl,
-                                        typeMask = contentTypes.DOCUMENT)
-{
-  let filters = new Set([]);
-
-  for (let details of frameDetails(page, frame, originUrl, typeMask))
-  {
-    let {allowing} = defaultMatcher.search(...details, false, "allowing");
-    for (let filter of allowing)
-      filters.add(filter);
-  }
-
-  return Array.from(filters);
-}
 
 /**
  * @typedef {object} filtersIsAllowlistedResult
@@ -136,9 +44,9 @@ port.on("filters.isAllowlisted", message =>
   let pageAllowlisted = false;
   let hostnameAllowlisted = false;
 
-  for (let filter of listAllowlistingFilters(new ext.Page(message.tab)))
+  for (let filterText of ewe.filters.getAllowingFilters(message.tab.id))
   {
-    if (allowlistedDomainRegexp.test(filter.text))
+    if (allowlistedDomainRegexp.test(filterText))
       hostnameAllowlisted = true;
     else
       pageAllowlisted = true;
@@ -162,11 +70,11 @@ port.on("filters.isAllowlisted", message =>
 port.on("filters.allowlist", message =>
 {
   let page = new ext.Page(message.tab);
-  let filter;
+  let filterText;
   if (!message.singlePage)
   {
     let host = page.url.hostname.replace(/^www\./, "");
-    filter = Filter.fromText("@@||" + host + "^$document");
+    filterText = `@@||${host}^$document`;
   }
   else
   {
@@ -182,12 +90,12 @@ port.on("filters.allowlist", message =>
       page.url.search = "";
       ending = "?";
     }
-    filter = Filter.fromText("@@|" + page.url.href + ending + "$document");
+    filterText = `@@|${page.url.href}${ending}$document`;
   }
 
-  filterState.setEnabled(filter.text, true);
-  if (filterStorage.getSubscriptionCount(filter.text) == 0)
-    filterStorage.addFilter(filter);
+  ewe.filters.enable(filterText);
+  if (ewe.subscriptions.getForFilter(filterText).length == 0)
+    ewe.filters.add(filterText);
 });
 
 /**
@@ -200,15 +108,14 @@ port.on("filters.allowlist", message =>
  */
 port.on("filters.unallowlist", message =>
 {
-  let page = new ext.Page(message.tab);
-  for (let filter of listAllowlistingFilters(page))
+  for (let filterText of ewe.filters.getAllowingFilters(message.tab.id))
   {
-    if (message.singlePage && allowlistedDomainRegexp.test(filter.text))
+    if (message.singlePage && allowlistedDomainRegexp.test(filterText))
       continue;
 
-    filterStorage.removeFilter(filter);
-    if (filterStorage.getSubscriptionCount(filter.text) != 0)
-      filterState.setEnabled(filter.text, false);
+    ewe.filters.remove(filterText);
+    if (ewe.subscriptions.getForFilter(filterText).length != 0)
+      ewe.filters.disable(filterText);
   }
 });
 
@@ -239,11 +146,11 @@ function revalidateAllowlistingState(page)
   eventEmitter.emit(
     "changed",
     page,
-    checkAllowlisted(page)
+    ewe.filters.isResourceAllowlisted(page.url, "document", page.id)
   );
 }
 
-async function onFilterChange()
+export async function revalidateAllowlistingStates()
 {
   let tabs = await browser.tabs.query({});
   for (let tab of tabs)
@@ -251,122 +158,21 @@ async function onFilterChange()
 }
 
 ext.pages.onLoading.addListener(revalidateAllowlistingState);
-filterNotifier.on("ready", onFilterChange);
-filterNotifier.on("filter.added", onFilterChange);
-filterNotifier.on("filterState.enabled", onFilterChange);
-filterNotifier.on("filter.removed", onFilterChange);
-filterNotifier.on("subscription.added", onFilterChange);
-filterNotifier.on("subscription.disabled", onFilterChange);
-filterNotifier.on("subscription.removed", onFilterChange);
-filterNotifier.on("subscription.updated", onFilterChange);
-
-/**
- * Gets the public key, previously recorded for the given page
- * and frame, to be considered for the $sitekey filter option.
- *
- * @param {?Page}   page
- * @param {?Frame}  frame
- * @param {URL}    [originUrl]
- * @return {string}
- */
-export function getKey(page, frame, originUrl)
+ewe.filters.onAdded.addListener(revalidateAllowlistingStates);
+ewe.filters.onChanged.addListener((filter, property) =>
 {
-  if (page)
-  {
-    let keys = sitekeys.get(page);
-    if (keys)
-    {
-      for (; frame; frame = frame.parent)
-      {
-        let key = keys.get(frame.url.href);
-        if (key)
-          return key;
-      }
-    }
-  }
+  if (property !== "enabled")
+    return;
 
-  if (originUrl)
-  {
-    for (let keys of sitekeys._map.values())
-    {
-      let key = keys.get(originUrl.href);
-      if (key)
-        return key;
-    }
-  }
-
-  return null;
-}
-
-function checkKey(token, url)
-{
-  let parts = token.split("_");
-  if (parts.length < 2)
-    return false;
-
-  let key = parts[0].replace(/=/g, "");
-  let signature = parts[1];
-  let data = url.pathname + url.search + "\0" +
-             url.host + "\0" +
-             self.navigator.userAgent;
-  if (!verifySignature(key, signature, data))
-    return false;
-
-  return key;
-}
-
-function recordKey(key, page, url)
-{
-  let keys = sitekeys.get(page);
-  if (!keys)
-  {
-    keys = new Map();
-    sitekeys.set(page, keys);
-  }
-  keys.set(url.href, key);
-}
-
-/**
- * Record the given sitekey if it is valid.
- *
- * @event "filters.addKey"
- * @property {string} token - The sitekey token found in the document element's
- *                            data-adblockkey attribute.
- */
-port.on("filters.addKey", (message, sender) =>
-{
-  let key = checkKey(message.token, sender.frame.url);
-  if (key)
-    recordKey(key, sender.page, sender.frame.url);
+  revalidateAllowlistingStates();
 });
-
-function onHeadersReceived(details)
+ewe.filters.onRemoved.addListener(revalidateAllowlistingStates);
+ewe.subscriptions.onAdded.addListener(revalidateAllowlistingStates);
+ewe.subscriptions.onChanged.addListener((subscription, property) =>
 {
-  let page = new ext.Page({id: details.tabId});
+  if (property !== null && property !== "enabled")
+    return;
 
-  for (let header of details.responseHeaders)
-  {
-    if (header.name.toLowerCase() == "x-adblock-key" && header.value)
-    {
-      let url = new URL(details.url);
-      let key = checkKey(header.value, url);
-      if (key)
-      {
-        recordKey(key, page, url);
-        break;
-      }
-    }
-  }
-}
-
-if (typeof browser == "object")
-{
-  browser.webRequest.onHeadersReceived.addListener(
-    onHeadersReceived,
-    {
-      urls: ["http://*/*", "https://*/*"],
-      types: ["main_frame", "sub_frame"]
-    },
-    ["responseHeaders"]
-  );
-}
+  revalidateAllowlistingStates();
+});
+ewe.subscriptions.onRemoved.addListener(revalidateAllowlistingStates);

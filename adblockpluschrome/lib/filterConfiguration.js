@@ -15,26 +15,18 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
+
+import {showOptions} from "../../lib/pages/options.js";
+import {EventEmitter} from "./events.js";
 import {port} from "./messaging.js";
 import {Prefs} from "./prefs.js";
 import {Stats} from "./stats.js";
-import {filterStorage} from "../adblockpluscore/lib/filterStorage.js";
-import {filterNotifier} from "../adblockpluscore/lib/filterNotifier.js";
-import {isSlowFilter} from "../adblockpluscore/lib/matcher.js";
-import {isValidHostname} from "../adblockpluscore/lib/url.js";
-import {HitLogger} from "./hitLogger.js";
-import {Filter, InvalidFilter, URLFilter,
-        isActiveFilter} from "filterClasses.js";
-import {synchronizer} from "../adblockpluscore/lib/synchronizer.js";
-import {Subscription, DownloadableSubscription, SpecialSubscription,
-        RegularSubscription}
-  from "../adblockpluscore/lib/subscriptionClasses.js";
-import {showOptions} from "../../lib/pages/options.js";
-import {recommendations} from "../adblockpluscore/lib/recommendations.js";
-import {filterState} from "../adblockpluscore/lib/filterState.js";
+import {getTarget} from "./hitLogger.js";
 import {filterTypes} from "./requestBlocker.js";
 
-const disabledFilterCounters = new WeakMap();
+const disabledFilterCounters = new Map();
+const eventEmitter = new EventEmitter();
 
 function convertObject(keys, obj)
 {
@@ -51,37 +43,32 @@ let convertRecommendation = convertObject.bind(null, [
   "languages", "title", "type", "url"
 ]);
 
-function convertSubscriptionFilters(subscription)
-{
-  return Array.from(subscription.filterText(),
-                    text => convertFilter(Filter.fromText(text)));
-}
-
 function convertSubscription(subscription)
 {
-  let obj = convertObject(["disabled", "downloadStatus", "homepage",
+  let obj = convertObject(["downloadStatus", "enabled", "homepage",
                            "version", "lastDownload", "lastSuccess",
                            "softExpiration", "expires", "title",
-                           "url"], subscription);
-  if (subscription instanceof SpecialSubscription)
-    obj.filters = convertSubscriptionFilters(subscription);
+                           "url", "downloading"], subscription);
 
-  obj.downloading = synchronizer.isExecuting(subscription.url);
-  obj.validURL = Subscription.isValidURL(subscription.url);
+  // For the time being, we are renaming the enabled property to
+  // make the UI compatible with EWE without having to rename it
+  // in the UI code itself just yet
+  obj.disabled = !obj.enabled;
+  delete obj.enabled;
+
   return obj;
 }
 
-// pollute a converted filter object with `slow` detail
-// there are 3 kind of slow filters
-//  1. filter instanceof URLFilter && isSlowFilter(filter)
-//  2. filter instanceof ElemHideEmulationFilter
-//  3. filter instanceof SnippetFilter
-// for the time being, we want to simply expose the first kind
-// since there's nothing users can do to avoid others being slow
 function convertFilter(filter)
 {
-  let obj = convertObject(["disabled", "text"], filter);
-  obj.slow = filter instanceof URLFilter && isSlowFilter(filter);
+  let obj = convertObject(["enabled", "slow", "text"], filter);
+
+  // For the time being, we are renaming the enabled property to
+  // make the UI compatible with EWE without having to rename it
+  // in the UI code itself just yet
+  obj.disabled = !obj.enabled;
+  delete obj.enabled;
+
   return obj;
 }
 
@@ -92,7 +79,6 @@ let listenedStats = new Set();
 let messageTypes = new Map([
   ["app", "app.respond"],
   ["filter", "filters.respond"],
-  ["filterState", "filterState.respond"],
   ["pref", "prefs.respond"],
   ["requests", "requests.respond"],
   ["subscription", "subscriptions.respond"],
@@ -104,24 +90,21 @@ function sendMessage(type, action, ...args)
   if (uiPorts.size == 0)
     return;
 
-  // The filterState.enabled event passes the filter text,
-  // so we need to retrieve the filter object
-  if (type === "filter" && action === "changed" && typeof args[0] === "string")
-    args[0] = Filter.fromText(args[0]);
-
   let convertedArgs = [];
   for (let arg of args)
   {
-    if (typeof arg !== "object")
+    if (!(arg instanceof Object))
     {
       convertedArgs.push(arg);
       continue;
     }
 
-    if (arg instanceof Subscription)
+    if (type == "subscription")
       convertedArgs.push(convertSubscription(arg));
-    else if (arg instanceof Filter)
+    else if (type == "filter")
       convertedArgs.push(convertFilter(arg));
+    else if (type == "app" && action == "addSubscription")
+      convertedArgs.push(convertSubscription(arg));
     else
       convertedArgs.push(arg);
   }
@@ -142,22 +125,31 @@ function sendMessage(type, action, ...args)
 
 function includeActiveRemoteSubscriptions(s)
 {
-  if (s.disabled || !(s instanceof RegularSubscription))
-    return false;
-  if (s instanceof DownloadableSubscription &&
-      !/^(http|https|ftp):/i.test(s.url))
+  if (!s.enabled || !/^(http|https|ftp):/i.test(s.url))
     return false;
   return true;
 }
 
 function addRequestListeners(dataCollectionTabId, issueReporterTabId)
 {
-  let logRequest = (request, filter) =>
+  let logRequest = filterMatch =>
   {
+    let {details, filter, info} = filterMatch;
+    if (details.tabId !== dataCollectionTabId)
+      return;
+
+    // Ignore special matching methods unless they have an effect on the request
+    // to avoid counting the request again
+    // https://gitlab.com/eyeo/adblockplus/abc/webext-sdk/-/issues/135
+    if (info.matchingMethod !== "allowing" &&
+      info.matchingMethod !== "request" &&
+      !filter)
+      return;
+
     let subscriptions = [];
     if (filter)
     {
-      for (let subscription of filterStorage.subscriptions(filter.text))
+      for (let subscription of ewe.subscriptions.getForFilter(filter.text))
       {
         if (includeActiveRemoteSubscriptions(subscription))
           subscriptions.push(subscription.url);
@@ -165,20 +157,29 @@ function addRequestListeners(dataCollectionTabId, issueReporterTabId)
 
       filter = convertFilter(filter);
     }
-    request = convertObject(["url", "type", "docDomain", "thirdParty"],
-                            request);
-    sendMessage("requests", "hits", request, filter, subscriptions);
+
+    let target = getTarget(filterMatch);
+    target = convertObject(["url", "type", "docDomain", "thirdParty"],
+                           target);
+    sendMessage("requests", "hits", target, filter, subscriptions);
+  };
+
+  let options = {
+    filterType: "all",
+    includeElementHiding: true,
+    includeUnmatched: true,
+    tabId: dataCollectionTabId
   };
   let removeTabListeners = tabId =>
   {
     if (tabId == dataCollectionTabId ||
         typeof issueReporterTabId == "number" && tabId == issueReporterTabId)
     {
-      HitLogger.removeListener(dataCollectionTabId, logRequest);
+      ewe.reporting.onBlockableItem.removeListener(logRequest, options);
       browser.tabs.onRemoved.removeListener(removeTabListeners);
     }
   };
-  HitLogger.addListener(dataCollectionTabId, logRequest);
+  ewe.reporting.onBlockableItem.addListener(logRequest, options);
   browser.tabs.onRemoved.addListener(removeTabListeners);
 }
 
@@ -186,79 +187,49 @@ function addFilterListeners(type, actions)
 {
   for (let action of actions)
   {
-    let names = [`${type}.${action}`];
-    if (type == "filter" && action == "changed")
-    {
-      names = ["filterState.enabled"];
-    }
-    else if (type == "subscription" && action == "changed")
-    {
-      names = [
-        "subscription.disabled",
-        "subscription.downloading",
-        "subscription.downloadStatus",
-        "subscription.homepage",
-        "subscription.lastDownload",
-        "subscription.title"
-      ];
-    }
+    let name = `${type}.${action}`;
+    if (listenedFilterChanges.has(name))
+      continue;
 
-    for (let name of names)
+    listenedFilterChanges.add(name);
+
+    if (name == "subscription.filtersDisabled")
     {
-      if (!listenedFilterChanges.has(name))
+      eventEmitter.on("filtersDisabled", (item, ...args) =>
       {
-        listenedFilterChanges.add(name);
-        filterNotifier.on(name, (item, ...args) =>
-        {
-          if (type == "subscription" && action == "changed")
-          {
-            let property = name.replace(/^subscription\./, "");
-            if (property == "disabled")
-              property = "enabled";
-
-            sendMessage(type, action, item, property);
-          }
-          else if (type == "subscription" && action == "filtersDisabled")
-          {
-            sendMessage(type, action, item, ...args);
-          }
-          else
-          {
-            sendMessage(type, action, item);
-          }
-        });
-      }
+        sendMessage(type, action, item, ...args);
+      });
     }
   }
 }
 
-function addSubscription(subscription, properties)
+function addSubscription(details)
 {
-  if (!Subscription.isValidURL(subscription.url))
+  try
+  {
+    ewe.subscriptions.add(details.url, details);
+    ewe.subscriptions.sync(details.url);
+  }
+  catch (ex)
+  {
     return false;
-
-  subscription.disabled = false;
-  if ("title" in properties)
-    subscription.title = properties.title;
-  if ("homepage" in properties)
-    subscription.homepage = properties.homepage;
-
-  filterStorage.addSubscription(subscription);
-  if (subscription instanceof DownloadableSubscription &&
-      !subscription.lastDownload)
-    synchronizer.execute(subscription);
+  }
 
   return true;
 }
 
 /**
  * Asks user to confirm the subscription details before it is added.
- * @param {Subscription} subscription
+ * @param {Object} details
  */
-export async function askConfirmSubscription(subscription)
+export async function askConfirmSubscription(details)
 {
   await showOptions();
-  sendMessage("app", "addSubscription", subscription);
+  sendMessage("app", "addSubscription", {
+    homepage: details.homepage || null,
+    title: details.title || null,
+    url: details.url
+  });
 }
 
 class FilterError
@@ -286,38 +257,18 @@ class FilterError
 
 function parseFilter(text)
 {
-  let filter = null;
+  let filterText = text.trim() || null;
   let error = null;
 
-  text = Filter.normalize(text);
-  if (text)
+  if (filterText)
   {
-    if (text[0] == "[")
-    {
+    if (filterText[0] == "[")
       error = new FilterError("unexpected_filter_list_header");
-    }
     else
-    {
-      filter = Filter.fromText(text);
-      if (filter instanceof InvalidFilter)
-      {
-        error = new FilterError("invalid_filter", filter.reason, filter.option);
-      }
-      else if (isActiveFilter(filter) && filter.domains)
-      {
-        for (let domain of filter.domains.keys())
-        {
-          if (domain && !isValidHostname(domain))
-          {
-            error = new FilterError("invalid_domain", domain);
-            break;
-          }
-        }
-      }
-    }
+      error = ewe.filters.validate(filterText);
   }
 
-  return [filter, error];
+  return [filterText, error];
 }
 
 /**
@@ -337,15 +288,8 @@ port.on("filters.add", (message, sender) => filtersAdd(message.text));
  */
 port.on("filters.get", (message, sender) =>
 {
-  const filters = [];
-  for (const subscription of filterStorage.subscriptions())
-  {
-    if (!(subscription instanceof SpecialSubscription))
-      continue;
-
-    filters.push(...convertSubscriptionFilters(subscription));
-  }
-  return filters;
+  let filters = ewe.filters.getUserFilters();
+  return filters.map(convertFilter);
 });
 
 /**
@@ -366,19 +310,15 @@ port.on("filters.getTypes", (message, sender) => Array.from(filterTypes));
  */
 port.on("filters.importRaw", (message, sender) =>
 {
-  let [filters, errors] = filtersValidate(message.text);
+  let [filterTexts, errors] = filtersValidate(message.text);
 
-  if (errors.length > 0)
-    return errors;
-
-  let addedFilters = new Set();
-  for (let filter of filters)
+  if (errors.length == 0)
   {
-    if (isActiveFilter(filter))
-      filterState.setEnabled(filter.text, true);
-
-    filterStorage.addFilter(filter);
-    addedFilters.add(filter.text);
+    for (let filterText of filterTexts)
+    {
+      ewe.filters.add(filterText);
+      ewe.filters.enable(filterText);
+    }
   }
 
   return errors;
@@ -426,7 +366,10 @@ port.on("filters.replace", (message, sender) =>
  */
 port.on("filters.toggle", (message, sender) =>
 {
-  filterState.setEnabled(message.text, !message.disabled);
+  if (message.disabled)
+    ewe.filters.disable(message.text);
+  else
+    ewe.filters.enable(message.text);
 });
 
 /**
@@ -462,20 +405,25 @@ port.on("filters.validate", (message, sender) =>
  */
 port.on("subscriptions.add", async(message, sender) =>
 {
-  let subscription = Subscription.fromURL(message.url);
-
   if (message.confirm)
   {
-    if ("title" in message)
-      subscription.title = message.title;
-    if ("homepage" in message)
-      subscription.homepage = message.homepage;
-
-    askConfirmSubscription(subscription);
+    askConfirmSubscription({
+      homepage: message.homepage,
+      title: message.title,
+      url: message.url
+    });
     return null;
   }
 
-  return addSubscription(subscription, message);
+  return addSubscription(message);
+});
+
+ewe.onSubscribeLinkClicked.addListener(message =>
+{
+  askConfirmSubscription({
+    title: message.title,
+    url: message.url
+  });
 });
 
 /**
@@ -487,13 +435,8 @@ port.on("subscriptions.add", async(message, sender) =>
  */
 port.on("subscriptions.enableAllFilters", (message, sender) =>
 {
-  const subscription = Subscription.fromURL(message.url);
-
-  if (!subscription)
-    return;
-
-  for (const filterText of subscription.filterText())
-    filterState.setEnabled(filterText, true);
+  for (const filter of ewe.subscriptions.getFilters(message.url))
+    ewe.filters.enable(filter.text);
 });
 
 /**
@@ -511,20 +454,17 @@ port.on("subscriptions.enableAllFilters", (message, sender) =>
 port.on("subscriptions.get", (message, sender) =>
 {
   let subscriptions = [];
-  for (let s of filterStorage.subscriptions())
+  for (let s of ewe.subscriptions.getDownloadable())
   {
-    if (message.ignoreDisabled && s.disabled)
-      continue;
-
-    if (!(s instanceof DownloadableSubscription))
+    if (message.ignoreDisabled && !s.enabled)
       continue;
 
     let subscription = convertSubscription(s);
     if (message.disabledFilters)
     {
-      subscription.disabledFilters =
-        Array.from(s.filterText(), Filter.fromText)
-        .filter(f => isActiveFilter(f) && !filterState.isEnabled(f.text))
+      let filters = ewe.subscriptions.getFilters(s.url) || [];
+      subscription.disabledFilters = filters
+        .filter(f => !f.enabled)
         .map(f => f.text);
     }
     subscriptions.push(subscription);
@@ -540,7 +480,7 @@ port.on("subscriptions.get", (message, sender) =>
  */
 port.on("subscriptions.getDisabledFilterCount", (message, sender) =>
 {
-  return disabledFilterCounters.get(Subscription.fromURL(message.url)) || 0;
+  return disabledFilterCounters.get(message.url) || 0;
 });
 
 /**
@@ -550,7 +490,7 @@ port.on("subscriptions.getDisabledFilterCount", (message, sender) =>
  * @returns {object[]} recommendedSubscriptions
  */
 port.on("subscriptions.getRecommendations",
-        (message, sender) => Array.from(recommendations(),
+        (message, sender) => Array.from(ewe.subscriptions.getRecommendations(),
                                         convertRecommendation));
 
 /**
@@ -561,9 +501,7 @@ port.on("subscriptions.getRecommendations",
  */
 port.on("subscriptions.remove", (message, sender) =>
 {
-  let subscription = Subscription.fromURL(message.url);
-  if (filterStorage.hasSubscription(subscription))
-    filterStorage.removeSubscription(subscription);
+  ewe.subscriptions.remove(message.url);
 });
 
 /**
@@ -581,18 +519,36 @@ port.on("subscriptions.remove", (message, sender) =>
  */
 port.on("subscriptions.toggle", (message, sender) =>
 {
-  let subscription = Subscription.fromURL(message.url);
-
-  if (filterStorage.hasSubscription(subscription))
+  if (ewe.subscriptions.has(message.url))
   {
-    if (subscription.disabled || message.keepInstalled)
-      subscription.disabled = !subscription.disabled;
-    else
-      filterStorage.removeSubscription(subscription);
-    return true;
+    let subscription;
+    for (let s of ewe.subscriptions.getDownloadable())
+    {
+      if (s.url == message.url)
+      {
+        subscription = s;
+        break;
+      }
+    }
+
+    if (subscription)
+    {
+      if (!subscription.enabled || message.keepInstalled)
+      {
+        if (subscription.enabled)
+          ewe.subscriptions.disable(message.url);
+        else
+          ewe.subscriptions.enable(message.url);
+      }
+      else
+      {
+        ewe.subscriptions.remove(subscription.url);
+      }
+      return true;
+    }
   }
 
-  return addSubscription(subscription, message);
+  return addSubscription(message);
 });
 
 /**
@@ -605,31 +561,20 @@ port.on("subscriptions.toggle", (message, sender) =>
  */
 port.on("subscriptions.update", (message, sender) =>
 {
-  let subscriptions;
-  if (message.url)
-    subscriptions = [Subscription.fromURL(message.url)];
-  else
-    subscriptions = filterStorage.subscriptions();
-
-  for (let subscription of subscriptions)
-  {
-    if (subscription instanceof DownloadableSubscription)
-      synchronizer.execute(subscription, true);
-  }
+  ewe.subscriptions.sync(message.url);
 });
 
 function filtersAdd(text)
 {
-  let [filter, error] = parseFilter(text);
+  let [filterText, error] = parseFilter(text);
 
   if (error)
     return [error];
 
-  if (filter)
+  if (filterText)
   {
-    if (isActiveFilter(filter))
-      filterState.setEnabled(text, true);
-    filterStorage.addFilter(filter);
+    ewe.filters.add(filterText);
+    ewe.filters.enable(filterText);
   }
 
   return [];
@@ -637,13 +582,13 @@ function filtersAdd(text)
 
 function filtersValidate(text)
 {
-  let filters = [];
+  let filterTexts = [];
   let errors = [];
 
   let lines = text.split("\n");
   for (let i = 0; i < lines.length; i++)
   {
-    let [filter, error] = parseFilter(lines[i]);
+    let [filterText, error] = parseFilter(lines[i]);
 
     if (error)
     {
@@ -661,44 +606,43 @@ function filtersValidate(text)
 
       errors.push(error);
     }
-    else if (filter)
+    else if (filterText)
     {
-      filters.push(filter);
+      filterTexts.push(filterText);
     }
   }
 
-  return [filters, errors];
+  return [filterTexts, errors];
 }
 
 function filtersRemove(message)
 {
-  let filter = Filter.fromText(message.text);
-  filterStorage.removeFilter(filter);
+  ewe.filters.remove(message.text);
   // in order to behave, from consumer perspective, like any other
   // method that could produce errors, return an Array, even if empty
   return [];
 }
 
-function initDisabledFilterCounters()
+export function initDisabledFilterCounters()
 {
-  for (const subscription of filterStorage.subscriptions())
+  for (const subscription of ewe.subscriptions.getDownloadable())
   {
     let count = 0;
 
-    for (const filterText of subscription.filterText())
+    for (const filter of ewe.subscriptions.getFilters(subscription.url))
     {
-      if (!filterState.isEnabled(filterText))
+      if (!filter.enabled)
         count++;
     }
 
     if (count > 0)
     {
-      disabledFilterCounters.set(subscription, count);
+      disabledFilterCounters.set(subscription.url, count);
       // Core doesn't expose the subscription's disabled filters state
       // and to avoid adding new "loaded" events and behavior around it,
       // we emit a "filtersDisabled" event to trigger UI changes
-      filterNotifier.emit(
-        "subscription.filtersDisabled",
+      eventEmitter.emit(
+        "filtersDisabled",
         subscription,
         true,
         true
@@ -709,20 +653,20 @@ function initDisabledFilterCounters()
 
 function updateCounters(filterText, enabled)
 {
-  for (const subscription of filterStorage.subscriptions(filterText))
+  for (const subscription of ewe.subscriptions.getForFilter(filterText))
   {
-    const oldCount = disabledFilterCounters.get(subscription) || 0;
+    const oldCount = disabledFilterCounters.get(subscription.url) || 0;
     const newCount = (enabled) ? oldCount - 1 : oldCount + 1;
 
     if (newCount === 0)
-      disabledFilterCounters.delete(subscription);
+      disabledFilterCounters.delete(subscription.url);
     else
-      disabledFilterCounters.set(subscription, newCount);
+      disabledFilterCounters.set(subscription.url, newCount);
 
     if (oldCount === 0 || newCount === 0)
     {
-      filterNotifier.emit(
-        "subscription.filtersDisabled",
+      eventEmitter.emit(
+        "filtersDisabled",
         subscription,
         newCount > 0,
         oldCount > 0
@@ -741,10 +685,6 @@ function listen(type, filters, newFilter, message, senderTabId)
     case "filters":
       filters.set("filter", newFilter);
       addFilterListeners("filter", newFilter);
-      break;
-    case "filterState":
-      filters.set("filterState", newFilter);
-      addFilterListeners("filterState", newFilter);
       break;
     case "prefs":
       filters.set("pref", newFilter);
@@ -785,6 +725,21 @@ function listen(type, filters, newFilter, message, senderTabId)
   }
 }
 
+function getListener(type, action)
+{
+  return (...args) =>
+  {
+    sendMessage(type, action, ...args);
+  };
+}
+
+ewe.filters.onAdded.addListener(getListener("filter", "added"));
+ewe.filters.onChanged.addListener(getListener("filter", "changed"));
+ewe.filters.onRemoved.addListener(getListener("filter", "removed"));
+ewe.subscriptions.onAdded.addListener(getListener("subscription", "added"));
+ewe.subscriptions.onChanged.addListener(getListener("subscription", "changed"));
+ewe.subscriptions.onRemoved.addListener(getListener("subscription", "removed"));
+
 function onConnect(uiPort)
 {
   if (uiPort.name != "ui")
@@ -812,13 +767,15 @@ function onConnect(uiPort)
   });
 }
 
-filterNotifier.on("filterState.enabled", (filterText, enabled) =>
+ewe.filters.onChanged.addListener((filter, property) =>
 {
-  updateCounters(filterText, enabled);
+  if (property !== "enabled")
+    return;
+
+  updateCounters(filter.text, filter.enabled);
 });
-filterNotifier.on("ready", () => initDisabledFilterCounters());
-filterNotifier.on("subscription.removed", subscription =>
+ewe.subscriptions.onRemoved.addListener(subscription =>
 {
-  disabledFilterCounters.delete(subscription);
+  disabledFilterCounters.delete(subscription.url);
 });
 browser.runtime.onConnect.addListener(onConnect);

@@ -17,8 +17,9 @@
 
 /** @module stats */
 
+import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
+
 import {EventEmitter} from "./events.js";
-import {BlockingFilter} from "../adblockpluscore/lib/filterClasses.js";
 import {setBadge} from "./browserAction.js";
 import {port} from "./messaging.js";
 import {Prefs} from "./prefs.js";
@@ -82,32 +83,25 @@ browser.webNavigation.onCommitted.addListener(details =>
     updateBadge(details.tabId);
 });
 
-/**
- * Records a blocked request.
- *
- * @param {Filter} filter
- * @param {Array.<number>} tabIds
- */
-export async function recordBlockedRequest(filter, tabIds)
+async function onBlockableItem({details, filter})
 {
-  if (!(filter instanceof BlockingFilter))
+  if (!filter || filter.type != "blocking")
     return;
 
-  for (let tabId of tabIds)
-  {
-    let page = new ext.Page({id: tabId});
-    let blocked = blockedPerPage.get(page) || 0;
-    ++blocked;
+  let {tabId} = details;
 
-    blockedPerPage.set(page, blocked);
-    scheduleBadgeUpdate(tabId);
+  let page = new ext.Page({id: tabId});
+  let blocked = blockedPerPage.get(page) || 0;
+  ++blocked;
 
-    eventEmitter.emit("blocked_per_page", {tabId, blocked});
-  }
+  blockedPerPage.set(page, blocked);
+  scheduleBadgeUpdate(tabId);
+
+  eventEmitter.emit("blocked_per_page", {tabId, blocked});
 
   // Don't update the total for incognito tabs.
-  let tabs = await Promise.all(tabIds.map(id => browser.tabs.get(id)));
-  if (tabs.some(tab => tab.incognito))
+  let tab = await browser.tabs.get(tabId);
+  if (tab.incognito)
     return;
 
   // Make sure blocked_total is only read after the storage was loaded.
@@ -116,6 +110,8 @@ export async function recordBlockedRequest(filter, tabIds)
   Prefs.blocked_total++;
   eventEmitter.emit("blocked_total", Prefs.blocked_total);
 }
+
+ewe.reporting.onBlockableItem.addListener(onBlockableItem);
 
 /**
   * @namespace

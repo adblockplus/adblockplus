@@ -15,9 +15,6 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import {collapseElement, contentFiltering,
-        getURLFromElement} from "./include.preload.js";
-
 // The page ID for the popup filter selection dialog (top frame only).
 let blockelementPopupId = null;
 
@@ -38,8 +35,29 @@ let highlightedElementsInterval = null;
 let lastRightClickEvent = null;
 let lastRightClickEventIsMostRecent = false;
 
+let keepPreviewEnabled = false;
+
 
 /* Utilities */
+
+function getURLFromElement(element)
+{
+  if (element.localName == "object")
+  {
+    if (element.data)
+      return element.data;
+
+    for (let child of element.children)
+    {
+      if (child.localName == "param" && child.name == "movie" && child.value)
+        return new URL(child.value, document.baseURI).href;
+    }
+
+    return null;
+  }
+
+  return element.currentSrc || element.src;
+}
 
 function getFiltersForElement(element)
 {
@@ -104,7 +122,6 @@ async function getBlockableElementOrAncestor(element)
   // We reached the document root without finding a blockable element.
   return null;
 }
-
 
 /* Element highlighting */
 
@@ -457,7 +474,8 @@ function stopPickingElement()
 // We're done with the block element feature for now, tidy everything up.
 function deactivateBlockElement(popupAlreadyClosed)
 {
-  previewBlockedElements(false);
+  if (!keepPreviewEnabled)
+    previewBlockedElements(false);
 
   if (currentlyPickingElement)
     stopPickingElement();
@@ -551,14 +569,11 @@ function initializeComposer()
       case "composer.content.finished":
         if (currentElement && message.remove)
         {
-          // Hide the selected element itself. Note that this
-          // behavior is incomplete, but the best we can do here,
-          // e.g. if an added blocking filter matches other elements,
-          // the effect won't be visible until the page is is reloaded.
-          collapseElement(currentElement.prisoner || currentElement);
-
-          // Apply added element hiding filters.
-          contentFiltering.apply({elemhide: true});
+          // We cannot easily apply the new filters ourselves, so we're
+          // keeping the preview enabled, so that similar effects can
+          // be seen immediately
+          keepPreviewEnabled = true;
+          previewBlockedElements(true);
         }
         deactivateBlockElement(!!message.popupAlreadyClosed);
         break;

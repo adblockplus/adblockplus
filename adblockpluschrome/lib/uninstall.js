@@ -17,11 +17,9 @@
 
 /** @module uninstall */
 
+import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
+
 import * as info from "info";
-import {analytics} from "../adblockpluscore/lib/analytics.js";
-import {filterNotifier} from "../adblockpluscore/lib/filterNotifier.js";
-import {filterStorage} from "../adblockpluscore/lib/filterStorage.js";
-import {recommendations} from "../adblockpluscore/lib/recommendations.js";
 import {isDataCorrupted} from "./subscriptionInit.js";
 import {Prefs} from "./prefs.js";
 
@@ -41,7 +39,7 @@ const abbreviations = [
 function getAdsSubscriptions()
 {
   let subscriptions = new Set();
-  for (let subscription of recommendations())
+  for (let subscription of ewe.subscriptions.getRecommendations())
   {
     if (subscription.type == "ads")
       subscriptions.add(subscription.url);
@@ -58,9 +56,9 @@ function getAdsSubscriptions()
  */
 function isAnySubscriptionActive(urls)
 {
-  for (let subscription of filterStorage.subscriptions())
+  for (let subscription of ewe.subscriptions.getDownloadable())
   {
-    if (!subscription.disabled && urls.has(subscription.url))
+    if (subscription.enabled && urls.has(subscription.url))
       return true;
   }
 
@@ -79,9 +77,9 @@ export function setUninstallURL()
   let params = Object.create(info);
 
   params.corrupted = isDataCorrupted() ? "1" : "0";
-  params.firstVersion = analytics.getFirstVersion();
+  params.firstVersion = ewe.reporting.getFirstVersion();
 
-  let notificationDownloadCount = Prefs.notificationdata.downloadCount || 0;
+  let notificationDownloadCount = ewe.notifications.getDownloadCount();
   if (notificationDownloadCount < 5)
     params.notificationDownloadCount = notificationDownloadCount;
   else if (notificationDownloadCount < 8)
@@ -95,7 +93,7 @@ export function setUninstallURL()
   else
     params.notificationDownloadCount = "180+";
 
-  let aaSubscriptions = new Set([Prefs.subscriptions_exceptionsurl]);
+  let aaSubscriptions = new Set([ewe.subscriptions.ACCEPTABLE_ADS_URL]);
   let adsSubscriptions = getAdsSubscriptions();
   let isAcceptableAdsActive = isAnySubscriptionActive(aaSubscriptions);
   let isAdBlockingActive = isAnySubscriptionActive(adsSubscriptions);
@@ -108,7 +106,13 @@ export function setUninstallURL()
                                   search.join("&"));
 }
 
-filterNotifier.on("subscription.added", setUninstallURL);
-filterNotifier.on("subscription.disabled", setUninstallURL);
-filterNotifier.on("subscription.removed", setUninstallURL);
-Prefs.on("notificationdata", setUninstallURL);
+ewe.notifications.on("downloaded", setUninstallURL);
+ewe.subscriptions.onAdded.addListener(setUninstallURL);
+ewe.subscriptions.onChanged.addListener((subscription, property) =>
+{
+  if (property !== "enabled")
+    return;
+
+  setUninstallURL();
+});
+ewe.subscriptions.onRemoved.addListener(setUninstallURL);

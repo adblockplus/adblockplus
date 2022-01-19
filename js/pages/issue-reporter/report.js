@@ -54,23 +54,44 @@ port.onMessage.addListener((message) =>
           if (request.url)
           {
             let requestElem = $(`[location="${request.url}"]`, reportData);
-            if (requestElem)
-            {
-              const countNum = parseInt(
-                requestElem.getAttribute("count"), 10
-              );
-              requestElem.setAttribute("count", countNum + 1);
-            }
-            else
+            if (!requestElem)
             {
               requestElem = reportData.createElement("request");
               requestElem.setAttribute("location", censorURL(request.url));
               requestElem.setAttribute("type", request.type);
               requestElem.setAttribute("docDomain", request.docDomain);
               requestElem.setAttribute("thirdParty", request.thirdParty);
-              requestElem.setAttribute("count", 1);
+              requestElem.setAttribute("count", 0);
               requestsContainerElem.appendChild(requestElem);
             }
+
+            let countNum = parseInt(
+              requestElem.getAttribute("count"),
+              10
+            );
+            const hadFilter = !!requestElem.getAttribute("filter");
+
+            // If we see the same request again we increase its count.
+            // In order to not count the same requeset twice, we're
+            // checking for discrepancies, based on the fact that a request
+            // can only be matched or unmatched, and that this doesn't change
+            // when encountering the same request again.
+            if (!hadFilter && !filter)
+              countNum++;
+            // We are also receiving unmatched requests for special matching
+            // methods, so we may end up counting a request multiple times
+            // https://gitlab.com/eyeo/adblockplus/abc/webext-sdk/-/issues/135
+            else if (hadFilter && filter)
+              countNum++;
+            // Ignore previous request hits, if it turns out to be
+            // a matched request
+            else if (!hadFilter && filter)
+              countNum = 1;
+            // Otherwise, ignore current request hit, if it previously
+            // turned out to be a matched request
+
+            requestElem.setAttribute("count", countNum);
+
             if (filter)
               requestElem.setAttribute("filter", filter.text);
           }
