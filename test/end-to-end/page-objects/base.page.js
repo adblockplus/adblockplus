@@ -72,6 +72,20 @@ class BasePage
     }
   }
 
+  async waitForEnabledNoError(element,
+                              reverseOption = false, timeoutMs = 5000)
+  {
+    try
+    {
+      return await (await element).
+        waitForEnabled({reverse: reverseOption, timeout: timeoutMs});
+    }
+    catch (ElementNotVisibleException)
+    {
+      return false;
+    }
+  }
+
   async waitForEnabledThenClick(element, timeoutMs = 2000)
   {
     await (await element).waitForEnabled({timeout: timeoutMs});

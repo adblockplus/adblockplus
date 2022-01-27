@@ -184,6 +184,7 @@
     "basichtml": "1.1.2",
     "chai": "4.3.4",
     "chromedriver": "96.0.0",
+    "clipboardy": "2.3.0",
     "csv": "5.4.0",
     "eslint": "6.8.0",
     "eslint-config-eyeo": "3.2.0",

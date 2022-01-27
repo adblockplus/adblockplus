@@ -116,9 +116,85 @@ class AdvancedPage extends BasePage
     return this.browser.$("//button[@data-action='close-filterlist-by-url']");
   }
 
+  get copyCustomFLButton()
+  {
+    return this.browser.$("//button[@class='copy']");
+  }
+
+  get customFilterListsErrorText()
+  {
+    return $("//div[@class='footer visible']/ul/li");
+  }
+
+  get customFilterListsFirstItemAlertIcon()
+  {
+    return $("//tbody/tr[1]/td[4]/img[@src='skin/icons/alert.svg']");
+  }
+
+  get customFilterListsFirstItemErrorIcon()
+  {
+    return $("//tbody/tr[1]/td[4]/img[@src='skin/icons/error.svg']");
+  }
+
+  get customFilterListsFirstItemAlertText()
+  {
+    return $("//tbody/tr[1]/td[4]/img[contains(@title, 'To ensure a fast')]");
+  }
+
+  async customFilterListsNthItemCheckbox(n)
+  {
+    return $("//tbody/tr[" + n + "]/td[1]/io-checkbox/button");
+  }
+
+  async customFilterListsNthItemText(n)
+  {
+    return $("//io-filter-list/table/tbody/tr[" + n + "]/td[3]/div");
+  }
+
   get customFilterListsFirstItemToggle()
   {
     return $("//io-filter-list/table/tbody/tr[1]/td[2]/io-toggle/button");
+  }
+
+  get customFilterListsTable()
+  {
+    return $("//io-filter-table");
+  }
+
+  get customFilterListsTableContent()
+  {
+    return $("//io-filter-list");
+  }
+
+  get customFilterListsTableRowsTexts()
+  {
+    return $("//io-filter-list/table").$$("//div[@class='content']");
+  }
+
+  get customFLTableHeadAlertIcon()
+  {
+    return this.browser.$("//io-filter-list/table/thead/tr/th[4]/img");
+  }
+
+  get customFLTableHeadArrow()
+  {
+    return this.browser.$("//io-filter-list/table/thead/tr/th[2]");
+  }
+
+  get customFLTableHeadCheckbox()
+  {
+    return this.browser.$("//io-filter-list/table/thead/tr/th[1]/" +
+      "io-checkbox/button");
+  }
+
+  get customFLTableHeadFilterRule()
+  {
+    return this.browser.$("//io-filter-list/table/thead/tr/th[3]");
+  }
+
+  get deleteCustomFLButton()
+  {
+    return this.browser.$("//button[@class='delete']");
   }
 
   get easyListFL()
@@ -373,9 +449,49 @@ class AdvancedPage extends BasePage
     await (await this.cancelAddingFLButton).click();
   }
 
+  async clickCopyCustomFLButton()
+  {
+    await (await this.copyCustomFLButton).click();
+  }
+
+  async clickCustomFilterListsNthItemCheckbox(n)
+  {
+    await (await this.customFilterListsNthItemCheckbox(n)).click();
+  }
+
+  async clickCustomFilterListsNthItemText(n)
+  {
+    await (await this.customFilterListsNthItemText(n)).click();
+  }
+
   async clickCustomFilterListsFirstItemToggle()
   {
     await (await this.customFilterListsFirstItemToggle).click();
+  }
+
+  async clickCustomFLTableHeadAlertIcon()
+  {
+    await (await this.customFLTableHeadAlertIcon).click();
+  }
+
+  async clickCustomFLTableHeadArrow()
+  {
+    await (await this.customFLTableHeadArrow).click();
+  }
+
+  async clickCustomFLTableHeadCheckbox()
+  {
+    await (await this.customFLTableHeadCheckbox).click();
+  }
+
+  async clickCustomFLTableHeadFilterRule()
+  {
+    await (await this.customFLTableHeadFilterRule).click();
+  }
+
+  async clickDeleteCustomFLButton()
+  {
+    await (await this.deleteCustomFLButton).click();
   }
 
   async clickEasyListFLGearIcon()
@@ -478,6 +594,11 @@ class AdvancedPage extends BasePage
     await (await this.updateAllFilterlistsButton).click();
   }
 
+  async getCustomFilterListsErrorText()
+  {
+    return await (await this.customFilterListsErrorText).getText();
+  }
+
   async getShowAdblockPlusPanelTooltipText()
   {
     return await (await this.showAdblockPlusPanelTooltipText).getText();
@@ -528,6 +649,13 @@ class AdvancedPage extends BasePage
                                               reverseOption);
   }
 
+  async isAddCustomFilterListButtonEnabled(reverseOption = false,
+                                           timeoutMs = 3000)
+  {
+    return await this.waitForEnabledNoError(this.addCustomFilterListButton,
+                                            reverseOption, timeoutMs);
+  }
+
   async isAddNewFilterListDialogDisplayed(reverseOption = false)
   {
     return await this.waitForDisplayedNoError(this.addNewFilterListDialog,
@@ -565,10 +693,70 @@ class AdvancedPage extends BasePage
     allowNonintrusiveAdvertisingWithoutTrackingFL);
   }
 
-  async isCustomFilterListsFirstItemToggleSelected()
+  async isCopyCustomFLButtonDisplayed()
   {
-    return await (await this.customFilterListsFirstItemToggle).
-    getAttribute("aria-checked") === "true";
+    return await (await this.copyCustomFLButton).isDisplayed();
+  }
+
+  async isCustomFilterListsFirstItemAlertIconDisplayed(reverseOption = false)
+  {
+    return await this.waitForDisplayedNoError(
+      this.customFilterListsFirstItemAlertIcon,
+      reverseOption);
+  }
+
+  async isCustomFilterListsFirstItemErrorIconDisplayed(reverseOption = false)
+  {
+    return await this.waitForDisplayedNoError(
+      this.customFilterListsFirstItemErrorIcon,
+      reverseOption);
+  }
+
+  async isCustomFLFirstItemAlertIconTooltipDisplayed(expectedValue = "",
+                                                     timeoutVal = 5000)
+  {
+    expectedValue = "To ensure a fast filter, please check the length of " +
+      "the pattern and ensure it doesn't contain a regular expression.";
+    await this.waitUntilAttributeValueIs(
+      this.customFilterListsFirstItemAlertIcon, "title",
+      expectedValue, timeoutVal);
+    // Wait until tooltip is displayed
+    await this.browser.pause(2000);
+    return await (await this.customFilterListsFirstItemAlertText).isDisplayed();
+  }
+
+  async isCustomFilterListsNthItemCheckboxChecked(n, reverseOption = false)
+  {
+    return await this.waitUntilAttributeValueIs(
+      this.customFilterListsNthItemCheckbox(n), "aria-checked",
+      "true", 3000, reverseOption);
+  }
+
+  async isCustomFilterListsFirstItemToggleDisplayed()
+  {
+    return await (await this.customFilterListsFirstItemToggle).isDisplayed();
+  }
+
+  async isCustomFilterListsFirstItemToggleSelected(reverseOption = false)
+  {
+    return await this.waitUntilAttributeValueIs(
+      this.customFilterListsFirstItemToggle, "aria-checked",
+      "true", 3000, reverseOption);
+  }
+
+  async isCustomFilterListsTableDisplayed()
+  {
+    return await (await this.customFilterListsTable).isDisplayed();
+  }
+
+  async isCustomFilterListsTableContentDisplayed()
+  {
+    return await (await this.customFilterListsTableContent).isDisplayed();
+  }
+
+  async isDeleteCustomFLButtonDisplayed()
+  {
+    return await (await this.deleteCustomFLButton).isDisplayed();
   }
 
   async isEasyListFLDisplayed()
@@ -727,6 +915,11 @@ class AdvancedPage extends BasePage
     return await this.waitForDisplayedNoError(this.urlErrorMessage);
   }
 
+  async hoverCustomFilterListsFirstItemAlertIcon()
+  {
+    await (await this.customFilterListsFirstItemAlertIcon).moveTo();
+  }
+
   async switchToEasylistSourceTab()
   {
     await this.switchToTab("https://easylist-downloads." +
@@ -758,6 +951,27 @@ class AdvancedPage extends BasePage
     await (await this.addCustomFilterListInput).setValue(text);
   }
 
+  async verifyTextPresentInCustomFLTable(text, timeoutVal = 3000)
+  {
+    let waitTime = 0;
+    while (waitTime <= timeoutVal)
+    {
+      for (const element of (await this.customFilterListsTableRowsTexts))
+      {
+        if (await element.getText() == text)
+        {
+          return true;
+        }
+        await this.browser.pause(200);
+        waitTime += 200;
+      }
+    }
+    if (waitTime >= timeoutVal)
+    {
+      return false;
+    }
+  }
+
   async waitForAbpFiltersFLLastUpdatedTextToEqual(text, timeoutVal = 10000)
   {
     return await this.waitUntilTextIs(this.abpFiltersFLLastUpdatedText,
@@ -769,6 +983,14 @@ class AdvancedPage extends BasePage
   {
     return await this.waitUntilTextIs(
       this.allowNonintrusiveAdvertisingFLLastUpdatedText,
+      text, timeoutVal);
+  }
+
+  async waitForCustomFilterListsNthItemTextToEqual(text, n,
+                                                   timeoutVal = 3000)
+  {
+    return await this.waitUntilTextIs(
+      this.customFilterListsNthItemText(n),
       text, timeoutVal);
   }
 
