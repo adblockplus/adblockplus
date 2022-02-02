@@ -32,7 +32,7 @@ function onKeyDown(event)
   }
 }
 
-function addFilters()
+function addFilters(reload = false)
 {
   const textarea = document.getElementById("filters");
   browser.runtime.sendMessage({
@@ -46,7 +46,7 @@ function addFilters()
       alert(stripTagsUnsafe(errors.join("\n")));
     }
     else
-      closeDialog(true);
+      closeDialog(!reload, reload);
   });
 }
 
@@ -71,7 +71,7 @@ function closeMe()
   );
 }
 
-function closeDialog(success = false)
+function closeDialog(apply = false, reload = false)
 {
   document.getElementById("filters").disabled = true;
   browser.runtime.sendMessage({
@@ -81,7 +81,8 @@ function closeDialog(success = false)
     {
       type: "composer.content.finished",
       popupAlreadyClosed: true,
-      remove: !!success
+      reload,
+      apply
     }
   }).then(() =>
   {
@@ -140,8 +141,18 @@ function updateComposerState({currentTarget})
 {
   const {value} = currentTarget;
   const disabled = !value.trim().length;
-  document.getElementById("block").disabled = disabled;
-  document.getElementById("preview").disabled = initialFilterText !== value;
+  const changed = (initialFilterText !== value);
+
+  const block = document.getElementById("block");
+  block.hidden = changed;
+  block.disabled = disabled;
+
+  const blockReload = document.getElementById("block-reload");
+  blockReload.hidden = !changed;
+  blockReload.disabled = disabled;
+
+  document.getElementById("details").hidden = changed;
+  document.getElementById("preview").disabled = changed;
 }
 
 function init()
@@ -150,7 +161,10 @@ function init()
   window.addEventListener("keydown", onKeyDown, false);
 
   const block = document.getElementById("block");
-  block.addEventListener("click", addFilters);
+  block.addEventListener("click", () => addFilters());
+
+  const blockReload = document.getElementById("block-reload");
+  blockReload.addEventListener("click", () => addFilters(true));
 
   const preview = document.getElementById("preview");
   preview.addEventListener("click", previewFilters);
@@ -158,9 +172,13 @@ function init()
   const filtersTextArea = document.getElementById("filters");
   filtersTextArea.addEventListener("input", updateComposerState);
 
-  document.getElementById("unselect").addEventListener("click", resetFilters);
+  document.getElementById("unselect").addEventListener(
+    "click",
+    () => resetFilters()
+  );
   document.getElementById("cancel").addEventListener(
-    "click", closeDialog.bind(null, false)
+    "click",
+    () => closeDialog()
   );
 
   ext.onMessage.addListener((msg, sender) =>

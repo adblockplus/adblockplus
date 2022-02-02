@@ -11,6 +11,10 @@
     "description": "https://gitlab.com/eyeo/specs/spec/-/blob/6077f8f4142302601ee1493b73c6e5b85b25ba9e/spec/abp/composer.md",
     "message": "Block"
   },
+  "composer_block_reload": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/66538093ac6f837c35e792a0b497778a0dae33ed/spec/abp/composer.md",
+    "message": "Block & reload page"
+  },
   "composer_cancel": {
     "description": "https://gitlab.com/eyeo/specs/spec/-/blob/6077f8f4142302601ee1493b73c6e5b85b25ba9e/spec/abp/composer.md",
     "message": "Cancel"

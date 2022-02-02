@@ -567,7 +567,7 @@ function initializeComposer()
         }
         break;
       case "composer.content.finished":
-        if (currentElement && message.remove)
+        if (currentElement && message.apply)
         {
           // We cannot easily apply the new filters ourselves, so we're
           // keeping the preview enabled, so that similar effects can
@@ -575,7 +575,11 @@ function initializeComposer()
           keepPreviewEnabled = true;
           previewBlockedElements(true);
         }
+
         deactivateBlockElement(!!message.popupAlreadyClosed);
+
+        if (message.reload)
+          location.reload();
         break;
       case "composer.content.clearPreviousRightClickEvent":
         if (!lastRightClickEventIsMostRecent)
