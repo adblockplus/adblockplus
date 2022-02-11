@@ -171,7 +171,7 @@
     "glob": "7.1.6",
     "hyperhtml-element": "3.14.0",
     "local-range": "0.1.0",
-    "node-sass": "4.14.1",
+    "node-sass": "7.0.0",
     "npm-dollar": "2.2.1",
     "pngquant-bin": "5.0.2"
   },
