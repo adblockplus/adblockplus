@@ -39,6 +39,9 @@ function convertObject(keys, obj)
   return result;
 }
 
+let convertFilterError = convertObject.bind(null, [
+  "lineno", "option", "reason", "type"
+]);
 let convertRecommendation = convertObject.bind(null, [
   "languages", "title", "type", "url"
 ]);
@@ -232,29 +235,6 @@ export async function askConfirmSubscription(details)
   });
 }
 
-class FilterError
-{
-  constructor(type, reason = null, option = null)
-  {
-    this.lineno = null;
-    this.option = option;
-    this.reason = reason;
-    this.selector = null;
-    this.type = type;
-  }
-
-  toJSON()
-  {
-    return {
-      lineno: this.lineno,
-      option: this.option,
-      reason: this.reason,
-      selector: this.selector,
-      type: this.type
-    };
-  }
-}
-
 function parseFilter(text)
 {
   let filterText = text.trim() || null;
@@ -263,9 +243,15 @@ function parseFilter(text)
   if (filterText)
   {
     if (filterText[0] == "[")
-      error = new FilterError("unexpected_filter_list_header");
+    {
+      error = {type: "unexpected_filter_list_header"};
+    }
     else
-      error = ewe.filters.validate(filterText);
+    {
+      let filterError = ewe.filters.validate(filterText);
+      if (filterError)
+        error = convertFilterError(filterError);
+    }
   }
 
   return [filterText, error];

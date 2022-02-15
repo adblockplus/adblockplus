@@ -418,16 +418,22 @@ If filter includes `blocked_total`:
 
 ### Filter
 
+**object**
+
 - **string** text
 
 ### FilterError
 
+**object**
+
 - **number** [lineno]
+- **string** [option]
 - **string** [reason]
-- **string** [selector]
 - **string** type
 
 ### Subscription
+
+**object**
 
 - **boolean** disabled
 - **string** downloadStatus
