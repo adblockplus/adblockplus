@@ -54,6 +54,11 @@ class GeneralPage extends BasePage
     return $("#languages-boxlabel");
   }
 
+  get addPredefinedSubscriptionButton()
+  {
+    return $("//button[@data-action='add-predefined-subscription']");
+  }
+
   get allowAcceptableAdsCheckbox()
   {
     return $("#acceptable-ads-allow");
@@ -164,6 +169,18 @@ class GeneralPage extends BasePage
     return $("//li[@aria-label='English']/button[@title='remove']");
   }
 
+  get italianoPlusEnglishLanguageTableItem()
+  {
+    return $("//li[@aria-label='italiano + English']");
+  }
+
+
+  get italianoPlusEnglishListItem()
+  {
+    return $("//li[contains(@role, 'option')" +
+        "and text()='italiano + English']");
+  }
+
   get languagesDropdown()
   {
     return $("#languages-boxpopup");
@@ -178,6 +195,17 @@ class GeneralPage extends BasePage
   get listeFRPlusEasylistLanguageTableItem()
   {
     return $("//li[@aria-label='français + English']");
+  }
+
+  get nederlandsPlusEnglishListItem()
+  {
+    return $("//li[contains(@role, 'option')" +
+        "and text()='Nederlands + English']");
+  }
+
+  get notifyLanguageFilterListsTooltipCheckbox()
+  {
+    return $("//ul[@id='language-recommend']/li/button");
   }
 
   get notifyLanguageFilterListsTooltipIcon()
@@ -202,6 +230,11 @@ class GeneralPage extends BasePage
     return $("#acceptable-ads-privacy-allow");
   }
 
+  get predefinedDialogTitle()
+  {
+    return $("#dialog-title-predefined");
+  }
+
   get trackingWarning()
   {
     return $("#tracking-warning");
@@ -220,6 +253,11 @@ class GeneralPage extends BasePage
   async clickAddALanguageButton()
   {
     await (await this.addALanguageButton).click();
+  }
+
+  async clickAddPredefinedSubscriptionButton()
+  {
+    await (await this.addPredefinedSubscriptionButton).click();
   }
 
   async clickAllowAcceptableAdsCheckbox()
@@ -287,6 +325,21 @@ class GeneralPage extends BasePage
     await (await this.filterListsSuggestionsCheckbox).click();
   }
 
+  async clickItalianoPlusEnglishListItem()
+  {
+    await (await this.italianoPlusEnglishListItem).click();
+  }
+
+  async clickNederlandsPlusEnglishListItem()
+  {
+    await (await this.nederlandsPlusEnglishListItem).click();
+  }
+
+  async clickNotifyLanguageFilterListsTooltipCheckbox()
+  {
+    await (await this.notifyLanguageFilterListsTooltipCheckbox).click();
+  }
+
   async clickNotifyLanguageFilterListsTooltipIcon()
   {
     await (await this.notifyLanguageFilterListsTooltipIcon).click();
@@ -332,6 +385,11 @@ class GeneralPage extends BasePage
   {
     return await (await
     this.notifyLanguageFilterListsTooltipText).getText();
+  }
+
+  async getPredefinedDialogTitleText()
+  {
+    return await (await this.predefinedDialogTitle).getText();
   }
 
   async isAllowAcceptableAdsCheckboxSelected()
@@ -433,6 +491,22 @@ class GeneralPage extends BasePage
     await this.browser.pause(1000);
     return await (await this.filterListsSuggestionsCheckbox).
     getAttribute("aria-checked") === "true";
+  }
+
+  async isItalianoPlusEnglishLanguageTableItemDisplayed(wait = false)
+  {
+    let returnValue = null;
+    if (!wait)
+    {
+      returnValue = await (await this.italianoPlusEnglishLanguageTableItem).
+      isDisplayed();
+    }
+    else
+    {
+      returnValue = await this.waitForDisplayedNoError(this.
+        italianoPlusEnglishLanguageTableItem);
+    }
+    return returnValue;
   }
 
   async isLanguagesDropdownDisplayed()
