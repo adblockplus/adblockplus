@@ -612,5 +612,7 @@ function initializeComposer()
     browser.runtime.sendMessage({type: "composer.ready"});
 }
 
-if (document instanceof HTMLDocument)
+// Firefox also injects our content scripts into blank top-level frames
+// https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/issues/1082
+if (document instanceof HTMLDocument && location.href != "about:blank")
   initializeComposer();
