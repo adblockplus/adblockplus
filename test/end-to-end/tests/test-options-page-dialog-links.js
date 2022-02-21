@@ -25,8 +25,6 @@ const AcceptableAdsDialogChunk =
   require("../page-objects/acceptableAdsDialog.chunk");
 const HeartDialogChunk = require("../page-objects/heartDialog.chunk");
 const GeneralPage = require("../page-objects/general.page");
-const WebstoreCookiesAgreementPage =
-  require("../page-objects/webstoreCookiesAgreement.external.page");
 const dataLinks = require("../test-data/data-links");
 
 describe("test options page dialog links", () =>
@@ -66,11 +64,12 @@ describe("test options page dialog links", () =>
     const heartDialogChunk = new HeartDialogChunk(browser);
     await heartDialogChunk.clickRateUsButton();
     await heartDialogChunk.switchToWebstoreCookiesAgreementTab();
-    const webstoreCookiesAgreementPage =
-      new WebstoreCookiesAgreementPage(browser);
-    await webstoreCookiesAgreementPage.clickIAgreeButton();
-    await webstoreCookiesAgreementPage.switchToWebstoreTab();
-    expect(await webstoreCookiesAgreementPage.getCurrentUrl()).to.equal(
+    await browser.keys("Tab");
+    await browser.keys("Tab");
+    await browser.keys("Tab");
+    await browser.keys("Tab");
+    await browser.keys("Enter");
+    expect(await heartDialogChunk.getCurrentUrl()).to.include(
       dataLinks.webstoreUrl);
   });
 

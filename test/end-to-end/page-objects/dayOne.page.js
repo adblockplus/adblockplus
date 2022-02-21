@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 /*
  * This file is part of Adblock Plus <https://adblockplus.org/>,
  * Copyright (C) 2006-present eyeo GmbH
@@ -20,7 +19,7 @@
 
 const BasePage = require("./base.page");
 
-class WebstoreCookiesAgreementPage extends BasePage
+class DayOnePage extends BasePage
 {
   constructor(browser)
   {
@@ -28,21 +27,35 @@ class WebstoreCookiesAgreementPage extends BasePage
     this.browser = browser;
   }
 
-  get iAgreeButton()
+  async init(origin)
   {
-    return $("//button[@aria-label='Agree to the use of cookies " +
-        "and other data for the purposes described']");
+    await this.browser.url(`${origin}/day1.html`);
   }
 
-  async clickIAgreeButton()
+  get abpLogo()
   {
-    await (await this.iAgreeButton).click();
+    return $("//a[@data-doclink='adblock_plus']");
   }
 
-  async switchToWebstoreTab()
+  get contactUsButton()
   {
-    await this.switchToTab("Adblock Plus - free ad blocker - Chrome Web Store");
+    return $("#contact");
+  }
+
+  get eyeoGmbHLink()
+  {
+    return $("//a[text()='eyeo GmbH']");
+  }
+
+  get learnHowButton()
+  {
+    return $("//a[@data-doclink='block_element']");
+  }
+
+  get learnMoreAboutMaliciousAdvertisingButton()
+  {
+    return $("//a[@data-i18n='day1_header_more']");
   }
 }
 
-module.exports = WebstoreCookiesAgreementPage;
+module.exports = DayOnePage;
