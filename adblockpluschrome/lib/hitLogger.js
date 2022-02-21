@@ -25,45 +25,20 @@ let requestMethods = new Set([
   "request"
 ]);
 
-export function getTarget({details: request, filter, info: matchInfo})
+export function getTarget({filter, matchInfo, request})
 {
-  let isFrame = !requestMethods.has(matchInfo.matchingMethod);
+  let isFrame = !requestMethods.has(matchInfo.method);
 
   let type;
-  if (matchInfo.matchingMethod == "request")
-  {
-    // We are also receiving unmatched requests for special matching methods,
-    // so we need to consider main frame requests here, even though
-    // they cannot be blocked
-    // https://gitlab.com/eyeo/adblockplus/abc/webext-sdk/-/issues/135
-    if (request.type == "main_frame")
-      type = "document";
-    else
-      type = ewe.reporting.contentTypesMap.get(request.type);
-  }
-  else if (matchInfo.matchingMethod == "allowing")
-  {
+  if (matchInfo.method == "request")
+    type = ewe.reporting.contentTypesMap.get(request.type);
+  else if (matchInfo.method == "allowing")
     type = matchInfo.allowingReason;
-  }
   // Show matching method when it had an effect on the request
   else if (filter)
-  {
-    type = matchInfo.matchingMethod;
-  }
-  // Otherwise treat it as with matching method "request"
-  // so that it can be identified as a duplicate
-  // We are also receiving unmatched requests for special matching methods,
-  // so we need to consider main frame requests here, even though
-  // they cannot be blocked
-  // https://gitlab.com/eyeo/adblockplus/abc/webext-sdk/-/issues/135
-  else if (request.type == "main_frame")
-  {
-    type = "document";
-  }
+    type = matchInfo.method;
   else
-  {
     type = ewe.reporting.contentTypesMap.get(request.type);
-  }
 
   if (!type)
     type = "other";

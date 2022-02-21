@@ -31,11 +31,7 @@ import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
       return;
 
     let snippets = await response.json();
-    ewe.snippets.setLibrary(
-      snippets.isolatedCode,
-      snippets.injectedCode,
-      snippets.injectedList
-    );
+    ewe.snippets.setLibrary(snippets);
   }
   catch (e)
   {

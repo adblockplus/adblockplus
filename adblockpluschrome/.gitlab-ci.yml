@@ -16,7 +16,7 @@
 ---
 
 default:
-  image: "node:12-buster-slim"
+  image: "node:16-buster-slim"
 
 stages:
   - "prepare"
@@ -166,7 +166,7 @@ test:edge:
     - "npm install"
     - "cd adblockpluschrome"
     - "Expand-Archive -Path $EXTENSION_FILE -DestinationPath devenv.chrome"
-    - "choco upgrade -y nodejs --version=12.17.0"
+    - "choco upgrade -y nodejs --version=16.10.0"
     - "choco install -y microsoft-edge --version=79.0.309.71"
   script:
     - "npm run test-only -- -g 'Edge'"

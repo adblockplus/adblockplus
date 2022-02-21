@@ -83,12 +83,12 @@ browser.webNavigation.onCommitted.addListener(details =>
     updateBadge(details.tabId);
 });
 
-async function onBlockableItem({details, filter})
+async function onBlockableItem({filter, request})
 {
   if (!filter || filter.type != "blocking")
     return;
 
-  let {tabId} = details;
+  let {tabId} = request;
 
   let page = new ext.Page({id: tabId});
   let blocked = blockedPerPage.get(page) || 0;

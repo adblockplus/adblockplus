@@ -3,8 +3,8 @@
   "repository": "https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui",
   "license": "GPL-3.0",
   "engines": {
-    "node": ">=12.17.0",
-    "npm": ">=6"
+    "node": ">=16.10.0",
+    "npm": ">=7"
   },
   "scripts": {
     "$": "npm-dollar",
@@ -57,7 +57,7 @@
           "$ create.js $source ./$1.js"
         ]
       },
-      "css": "node-sass $1 $2",
+      "css": "sass --no-source-map $1 $2",
       "dist": {
         "ewe": "npm run --prefix ./vendor/webext-sdk build -- --config-name sdk --no-devtool",
         "icons": "node build/icons-generation/index.js",
@@ -74,7 +74,7 @@
           ]
         },
         "css": [
-          "node-sass ./css/$1.scss ./smoke/css/$1.css",
+          "sass --no-source-map ./css/$1.scss ./smoke/css/$1.css",
           "cp -R ./skin ./smoke/"
         ],
         "js": [
@@ -164,13 +164,13 @@
   },
   "dependencies": {
     "browserify": "16.5.2",
-    "canvas": "2.7.0",
+    "canvas": "2.8.0",
     "glob": "7.1.6",
     "hyperhtml-element": "3.14.0",
     "local-range": "0.1.0",
-    "node-sass": "4.14.1",
     "npm-dollar": "2.2.1",
-    "pngquant-bin": "5.0.2"
+    "pngquant-bin": "5.0.2",
+    "sass": "1.46.0"
   },
   "devDependencies": {
     "@wdio/cli": "7.16.10",

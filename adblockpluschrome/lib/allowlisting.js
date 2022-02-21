@@ -67,7 +67,7 @@ port.on("filters.isAllowlisted", message =>
  * @property {boolean} [singlePage=false]
  *   If true we add an allowing filter for the given page's URL instead.
  */
-port.on("filters.allowlist", message =>
+port.on("filters.allowlist", async message =>
 {
   let page = new ext.Page(message.tab);
   let filterText;
@@ -93,9 +93,9 @@ port.on("filters.allowlist", message =>
     filterText = `@@|${page.url.href}${ending}$document`;
   }
 
-  ewe.filters.enable(filterText);
+  await ewe.filters.enable([filterText]);
   if (ewe.subscriptions.getForFilter(filterText).length == 0)
-    ewe.filters.add(filterText);
+    await ewe.filters.add([filterText]);
 });
 
 /**
@@ -106,16 +106,16 @@ port.on("filters.allowlist", message =>
  *   If true we only remove allowing filters which are not for an entire
  *   domain.
  */
-port.on("filters.unallowlist", message =>
+port.on("filters.unallowlist", async message =>
 {
   for (let filterText of ewe.filters.getAllowingFilters(message.tab.id))
   {
     if (message.singlePage && allowlistedDomainRegexp.test(filterText))
       continue;
 
-    ewe.filters.remove(filterText);
+    await ewe.filters.remove([filterText]);
     if (ewe.subscriptions.getForFilter(filterText).length != 0)
-      ewe.filters.disable(filterText);
+      await ewe.filters.disable([filterText]);
   }
 });
 

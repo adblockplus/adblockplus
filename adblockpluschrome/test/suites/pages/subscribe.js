@@ -48,8 +48,7 @@ async function checkSubscriptionAdded(driver, url)
 {
   let added = await executeScriptCompliant(driver, `
     let subs = await browser.runtime.sendMessage({type: "subscriptions.get",
-                                                  ignoreDisabled: true,
-                                                  downloadable: true});
+                                                  ignoreDisabled: true});
     return subs.some(s => s.url == arguments[0]);`, url);
   assert.ok(added, "subscription added");
 }

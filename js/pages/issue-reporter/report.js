@@ -65,32 +65,8 @@ port.onMessage.addListener((message) =>
               requestsContainerElem.appendChild(requestElem);
             }
 
-            let countNum = parseInt(
-              requestElem.getAttribute("count"),
-              10
-            );
-            const hadFilter = !!requestElem.getAttribute("filter");
-
-            // If we see the same request again we increase its count.
-            // In order to not count the same requeset twice, we're
-            // checking for discrepancies, based on the fact that a request
-            // can only be matched or unmatched, and that this doesn't change
-            // when encountering the same request again.
-            if (!hadFilter && !filter)
-              countNum++;
-            // We are also receiving unmatched requests for special matching
-            // methods, so we may end up counting a request multiple times
-            // https://gitlab.com/eyeo/adblockplus/abc/webext-sdk/-/issues/135
-            else if (hadFilter && filter)
-              countNum++;
-            // Ignore previous request hits, if it turns out to be
-            // a matched request
-            else if (!hadFilter && filter)
-              countNum = 1;
-            // Otherwise, ignore current request hit, if it previously
-            // turned out to be a matched request
-
-            requestElem.setAttribute("count", countNum);
+            const countNum = parseInt(requestElem.getAttribute("count"), 10);
+            requestElem.setAttribute("count", countNum + 1);
 
             if (filter)
               requestElem.setAttribute("filter", filter.text);

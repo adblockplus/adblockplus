@@ -137,16 +137,8 @@ function addRequestListeners(dataCollectionTabId, issueReporterTabId)
 {
   let logRequest = filterMatch =>
   {
-    let {details, filter, info} = filterMatch;
-    if (details.tabId !== dataCollectionTabId)
-      return;
-
-    // Ignore special matching methods unless they have an effect on the request
-    // to avoid counting the request again
-    // https://gitlab.com/eyeo/adblockplus/abc/webext-sdk/-/issues/135
-    if (info.matchingMethod !== "allowing" &&
-      info.matchingMethod !== "request" &&
-      !filter)
+    let {filter, request} = filterMatch;
+    if (request.tabId !== dataCollectionTabId)
       return;
 
     let subscriptions = [];
@@ -272,9 +264,9 @@ port.on("filters.add", (message, sender) => filtersAdd(message.text));
  * @event "filters.get"
  * @returns {object[]}
  */
-port.on("filters.get", (message, sender) =>
+port.on("filters.get", async(message, sender) =>
 {
-  let filters = ewe.filters.getUserFilters();
+  let filters = await ewe.filters.getUserFilters();
   return filters.map(convertFilter);
 });
 
@@ -294,17 +286,14 @@ port.on("filters.getTypes", (message, sender) => Array.from(filterTypes));
  *   The filters to add.
  * @returns {string[]} errors
  */
-port.on("filters.importRaw", (message, sender) =>
+port.on("filters.importRaw", async(message, sender) =>
 {
   let [filterTexts, errors] = filtersValidate(message.text);
 
   if (errors.length == 0)
   {
-    for (let filterText of filterTexts)
-    {
-      ewe.filters.add(filterText);
-      ewe.filters.enable(filterText);
-    }
+    await ewe.filters.add(filterTexts);
+    await ewe.filters.enable(filterTexts);
   }
 
   return errors;
@@ -334,12 +323,12 @@ port.on("filters.remove", (message, sender) => filtersRemove(message));
  * @property {} old - The old filter text to remove.
  * @returns {string[]} errors
  */
-port.on("filters.replace", (message, sender) =>
+port.on("filters.replace", async(message, sender) =>
 {
-  let errors = filtersAdd(message.new);
+  let errors = await filtersAdd(message.new);
   if (errors.length)
     return errors;
-  filtersRemove({text: message.old});
+  await filtersRemove({text: message.old});
   return [];
 });
 
@@ -350,12 +339,12 @@ port.on("filters.replace", (message, sender) =>
  * @property {string} text - The filter text.
  * @property {boolean} disabled - True to disable the filter, false to enable.
  */
-port.on("filters.toggle", (message, sender) =>
+port.on("filters.toggle", async(message, sender) =>
 {
   if (message.disabled)
-    ewe.filters.disable(message.text);
+    await ewe.filters.disable([message.text]);
   else
-    ewe.filters.enable(message.text);
+    await ewe.filters.enable([message.text]);
 });
 
 /**
@@ -404,7 +393,7 @@ port.on("subscriptions.add", async(message, sender) =>
   return addSubscription(message);
 });
 
-ewe.onSubscribeLinkClicked.addListener(message =>
+ewe.reporting.onSubscribeLinkClicked.addListener(message =>
 {
   askConfirmSubscription({
     title: message.title,
@@ -419,10 +408,11 @@ ewe.onSubscribeLinkClicked.addListener(message =>
  * @property {string} url
  *   The subscription's URL.
  */
-port.on("subscriptions.enableAllFilters", (message, sender) =>
+port.on("subscriptions.enableAllFilters", async(message, sender) =>
 {
-  for (const filter of ewe.subscriptions.getFilters(message.url))
-    ewe.filters.enable(filter.text);
+  const filterTexts = ewe.subscriptions.getFilters(message.url)
+    .map(filter => filter.text);
+  await ewe.filters.enable(filterTexts);
 });
 
 /**
@@ -550,7 +540,7 @@ port.on("subscriptions.update", (message, sender) =>
   ewe.subscriptions.sync(message.url);
 });
 
-function filtersAdd(text)
+async function filtersAdd(text)
 {
   let [filterText, error] = parseFilter(text);
 
@@ -559,8 +549,8 @@ function filtersAdd(text)
 
   if (filterText)
   {
-    ewe.filters.add(filterText);
-    ewe.filters.enable(filterText);
+    await ewe.filters.add([filterText]);
+    await ewe.filters.enable([filterText]);
   }
 
   return [];
@@ -601,9 +591,9 @@ function filtersValidate(text)
   return [filterTexts, errors];
 }
 
-function filtersRemove(message)
+async function filtersRemove(message)
 {
-  ewe.filters.remove(message.text);
+  await ewe.filters.remove([message.text]);
   // in order to behave, from consumer perspective, like any other
   // method that could produce errors, return an Array, even if empty
   return [];

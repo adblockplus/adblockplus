@@ -73,8 +73,7 @@ const {initI18n} = require("../i18n");
 
   function getInstalled()
   {
-    return browser.runtime.sendMessage(
-      {type: "subscriptions.get", downloadable: true});
+    return browser.runtime.sendMessage({type: "subscriptions.get"});
   }
 
   function getAcceptableAdsUrl()

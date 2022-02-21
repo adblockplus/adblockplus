@@ -43,10 +43,13 @@ let dataCorrupted = false;
  *
  * @param {boolean} foundSubscriptions
  * @param {boolean} foundStorage
+ *
+ * @return {Promise}
  */
-function detectFirstRun(foundSubscriptions, foundStorage)
+async function detectFirstRun(foundSubscriptions, foundStorage)
 {
-  firstRun = !foundSubscriptions && !ewe.filters.getUserFilters().length;
+  let userFilters = await ewe.filters.getUserFilters();
+  firstRun = !foundSubscriptions && !userFilters.length;
 
   if (firstRun && (foundStorage || Prefs.currentVersion))
     reinitialized = true;
@@ -144,9 +147,9 @@ function initElementHidingDebugMode()
     testStorage().catch(() => { setDataCorrupted(true); })
   ]);
 
-  detectFirstRun(
-    !eweFirstRun.subscriptionsFirstRun,
-    !eweFirstRun.storageFirstRun
+  await detectFirstRun(
+    eweFirstRun.foundSubscriptions,
+    eweFirstRun.foundStorage
   );
   addSubscriptionsAndNotifyUser();
   revalidateAllowlistingStates();

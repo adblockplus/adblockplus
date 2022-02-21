@@ -5,4 +5,4 @@
 
 [submodule "vendor/webext-sdk"]
 	path = vendor/webext-sdk
-	url = https://gitlab.com/eyeo/adblockplus/webext-sdk.git
+	url = https://gitlab.com/eyeo/adblockplus/abc/webext-sdk.git

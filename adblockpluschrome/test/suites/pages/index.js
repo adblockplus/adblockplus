@@ -45,9 +45,7 @@ async function updateFilters(driver, extensionHandle, url)
   let error = await runWithHandle(driver, extensionHandle,
                                   () => executeScriptCompliant(driver, `
     let filters = arguments[0];
-    let subs = await browser.runtime.sendMessage(
-      {type: "subscriptions.get", downloadable: true, special: true}
-    );
+    let subs = await browser.runtime.sendMessage({type: "subscriptions.get"});
     await Promise.all(subs.map(subscription => browser.runtime.sendMessage(
       {type: "subscriptions.remove", url: subscription.url}
     )));

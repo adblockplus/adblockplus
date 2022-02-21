@@ -74,8 +74,6 @@ function composeFilters(details)
   let filters = [];
   let selectors = [];
 
-  // Doesn't consider allowlisted parent frames yet
-  // https://gitlab.com/eyeo/adblockplus/abc/webext-sdk/-/issues/136
   let isFrameAllowlisted = ewe.filters.isResourceAllowlisted(
     frame.url,
     "document",
@@ -119,9 +117,6 @@ function composeFilters(details)
       if (!isAllowlisted)
       {
         let filterText = details.url.replace(/^[\w-]+:\/+(?:www\.)?/, "||");
-
-        // Doesn't consider allowlisted parent frames yet
-        // https://gitlab.com/eyeo/adblockplus/abc/webext-sdk/-/issues/136
         let isSpecificAllowlisted = ewe.filters.isResourceAllowlisted(
           details.url,
           "genericblock",
@@ -137,14 +132,13 @@ function composeFilters(details)
     }
 
     // If we couldn't generate any blocking filters, fallback to element hiding
-    // Doesn't consider allowlisted parent frames yet
-    // https://gitlab.com/eyeo/adblockplus/abc/webext-sdk/-/issues/136
-    let isElementAllowlisted = ewe.filters.isResourceAllowlisted(
-      frame.url,
-      "elemhide",
+    let isElementAllowlisted = !!ewe.filters.getAllowingFilters(
       page.id,
-      frame.id
-    );
+      {
+        frameId: frame.id,
+        types: ["elemhide"]
+      }
+    ).length;
     if (filters.length == 0 && !isElementAllowlisted)
     {
       // Generate CSS selectors based on the element's "id" and
