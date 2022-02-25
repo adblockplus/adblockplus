@@ -34,7 +34,12 @@ class PopupPage extends BasePage
 
   get closeNotificationButton()
   {
-    return $("//button[@text()='Close']");
+    return $("//button[contains(.,'Close')]");
+  }
+
+  get linkInNotificationMessage()
+  {
+    return $("//p[@id='notification-message']/a");
   }
 
   get notificationMessage()
@@ -44,7 +49,7 @@ class PopupPage extends BasePage
 
   get stopShowingNotificationsButton()
   {
-    return $("//button[@text()='Stop showing notifications']");
+    return $("//button[contains(.,'Stop showing notifications')]");
   }
 
   get yesButton()
@@ -57,6 +62,11 @@ class PopupPage extends BasePage
     await (await this.closeNotificationButton).click();
   }
 
+  async clickLinkInNotificationMessage()
+  {
+    await (await this.linkInNotificationMessage).click();
+  }
+
   async clickStopShowingNotificationsButton()
   {
     await (await this.stopShowingNotificationsButton).click();
@@ -67,14 +77,31 @@ class PopupPage extends BasePage
     await (await this.yesButton).click();
   }
 
+  async getNotificationBorderColor()
+  {
+    return this.browser.executeScript("return window.getComputedStyle" +
+      "(document.querySelector('#notification .content'),':before')." +
+      "getPropertyValue('border-top-color')", []);
+  }
+
   async getNotificationMessageText()
   {
     return await (await this.notificationMessage).getText();
   }
 
+  async isCloseNotificationButtonDisplayed()
+  {
+    return await (await this.closeNotificationButton).isDisplayed();
+  }
+
   async isNotificationMessageDisplayed()
   {
     return await (await this.notificationMessage).isDisplayed();
+  }
+
+  async isStopShowingNotificationsButtonDisplayed()
+  {
+    return await (await this.stopShowingNotificationsButton).isDisplayed();
   }
 }
 
