@@ -214,13 +214,13 @@
     return Promise.resolve(tab);
   };
 
-  function executeScript()
+  async function executeScript()
   {
-    return Promise.resolve([
-      "https://example.com/referrer"
-    ]);
+    return [
+      {result: "https://example.com/referrer"}
+    ];
   }
-  browser.tabs.executeScript = executeScript;
+  browser.scripting = {executeScript};
 
   browser.tabs.get = (tabId) =>
   {

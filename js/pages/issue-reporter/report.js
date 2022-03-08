@@ -242,39 +242,49 @@ function retrievePlatformInfo()
   });
 }
 
-function retrieveWindowInfo(tabId)
+async function retrieveWindowInfo(tabId)
 {
-  return browser.tabs.get(tabId)
-    .then((tab) =>
-    {
-      let openerUrl = null;
-      if (tab.openerTabId)
-      {
-        openerUrl = browser.tabs.get(tab.openerTabId)
-          .then((openerTab) => openerTab.url);
-      }
+  const tab = await browser.tabs.get(tabId);
+  let openerUrl = null;
+  let referrerUrl = null;
 
-      const referrerUrl = browser.tabs.executeScript(tabId, {
-        code: "document.referrer"
-      })
-      .then(([referrer]) => referrer);
+  if (tab.openerTabId)
+  {
+    const openerTab = await browser.tabs.get(tab.openerTabId);
+    openerUrl = openerTab.url;
+  }
 
-      return Promise.all([tab.url, openerUrl, referrerUrl]);
-    })
-    .then(([url, openerUrl, referrerUrl]) =>
-    {
-      const element = reportData.createElement("window");
-      if (openerUrl)
-      {
-        element.setAttribute("opener", censorURL(openerUrl));
-      }
-      if (referrerUrl)
-      {
-        element.setAttribute("referrer", censorURL(referrerUrl));
-      }
-      element.setAttribute("url", censorURL(url));
-      reportData.documentElement.appendChild(element);
+  // We need to use both browser.tabs.executeScript and
+  // browser.scripting.executeScript because they're exclusive to
+  // Manifest v2 and v3 respectively
+  if ("scripting" in browser)
+  {
+    const [frameResult] = await browser.scripting.executeScript({
+      target: {tabId},
+      // Despite being an arrow function, its content is evaluated
+      // in the context of the target page
+      func: () => document.referrer
     });
+    referrerUrl = frameResult.result;
+  }
+  else
+  {
+    [referrerUrl] = await browser.tabs.executeScript(tabId, {
+      code: "document.referrer"
+    });
+  }
+
+  const element = reportData.createElement("window");
+  if (openerUrl)
+  {
+    element.setAttribute("opener", censorURL(openerUrl));
+  }
+  if (referrerUrl)
+  {
+    element.setAttribute("referrer", censorURL(referrerUrl));
+  }
+  element.setAttribute("url", censorURL(tab.url));
+  reportData.documentElement.appendChild(element);
 }
 
 function retrieveSubscriptions()

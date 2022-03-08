@@ -78,11 +78,19 @@ build:
     - mv adblockpluschrome-*.zip adblockplus-chrome-${CI_COMMIT_SHA:0:8}.zip
     - mv adblockplusfirefox-*.xpi adblockplus-firefox-${CI_COMMIT_SHA:0:8}.xpi
     - mv adblockplus-*.tar.gz adblockplus-${CI_COMMIT_SHA:0:8}.tar.gz
+    # Create Manifest v3 extension builds
+    - npx gulp build -t chrome -m 3 --unhandled-rejections=strict
+    - npx gulp build -t firefox -m 3 --unhandled-rejections=strict
+    # Attach commit hash to build files
+    - mv adblockpluschrome-*.zip adblockplus-chrome-${CI_COMMIT_SHA:0:8}-mv3.zip
+    - mv adblockplusfirefox-*.xpi adblockplus-firefox-${CI_COMMIT_SHA:0:8}-mv3.xpi
   artifacts:
     paths:
-      - adblockpluschrome/adblockplus-chrome-${CI_COMMIT_SHA:0:8}.zip
-      - adblockpluschrome/adblockplus-firefox-${CI_COMMIT_SHA:0:8}.xpi
       - adblockpluschrome/adblockplus-${CI_COMMIT_SHA:0:8}.tar.gz
+      - adblockpluschrome/adblockplus-chrome-${CI_COMMIT_SHA:0:8}.zip
+      - adblockpluschrome/adblockplus-chrome-${CI_COMMIT_SHA:0:8}-mv3.zip
+      - adblockpluschrome/adblockplus-firefox-${CI_COMMIT_SHA:0:8}.xpi
+      - adblockpluschrome/adblockplus-firefox-${CI_COMMIT_SHA:0:8}-mv3.xpi
 
 build:with-snippets:
   stage: build
@@ -109,10 +117,18 @@ build:with-snippets:
     - mv adblockpluschrome-*.zip adblockplus-chrome-${CI_COMMIT_SHA:0:8}.zip
     - mv adblockplusfirefox-*.xpi adblockplus-firefox-${CI_COMMIT_SHA:0:8}.xpi
     - mv adblockplus-*.tar.gz adblockplus-${CI_COMMIT_SHA:0:8}.tar.gz
+    # Create Manifest v3 extension builds
+    - npx gulp build -t chrome -m 3 --unhandled-rejections=strict
+    - npx gulp build -t firefox -m 3 --unhandled-rejections=strict
+    # Attach commit hash to build files
+    - mv adblockpluschrome-*.zip adblockplus-chrome-${CI_COMMIT_SHA:0:8}-mv3.zip
+    - mv adblockplusfirefox-*.xpi adblockplus-firefox-${CI_COMMIT_SHA:0:8}-mv3.xpi
     # Encrypt the builds
-    - gpg -c --batch --passphrase $SNIPPETS_PASSWORD adblockplus-chrome-*.zip
-    - gpg -c --batch --passphrase $SNIPPETS_PASSWORD adblockplus-firefox-*.xpi
     - gpg -c --batch --passphrase $SNIPPETS_PASSWORD adblockplus-*.tar.gz
+    - gpg -c --batch --passphrase $SNIPPETS_PASSWORD adblockplus-chrome-${CI_COMMIT_SHA:0:8}.zip
+    - gpg -c --batch --passphrase $SNIPPETS_PASSWORD adblockplus-chrome-${CI_COMMIT_SHA:0:8}-mv3.zip
+    - gpg -c --batch --passphrase $SNIPPETS_PASSWORD adblockplus-firefox-${CI_COMMIT_SHA:0:8}.xpi
+    - gpg -c --batch --passphrase $SNIPPETS_PASSWORD adblockplus-firefox-${CI_COMMIT_SHA:0:8}-mv3.xpi
   artifacts:
     paths:
       - adblockpluschrome/adblockplus-*.gpg

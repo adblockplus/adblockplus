@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "background": {
+    "persistent": true,
+    "scripts": [
+      "polyfill.js",
+      "ext/common.js",
+      "ext/background.js",
+      "background.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "icons/abp-16.png",
+      "20": "icons/abp-20.png",
+      "32": "icons/abp-32.png",
+      "40": "icons/abp-40.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "__MSG_name__"
+  },
+  "permissions": [
+    "<all_urls>",
+    "contextMenus",
+    "notifications",
+    "storage",
+    "tabs",
+    "unlimitedStorage",
+    "webNavigation",
+    "webRequest",
+    "webRequestBlocking"
+  ]
+}

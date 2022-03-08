@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/abp-16.png",
+      "20": "icons/abp-20.png",
+      "32": "icons/abp-32.png",
+      "40": "icons/abp-40.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "__MSG_name__"
+  },
+  "permissions": [
+    "contextMenus",
+    "declarativeNetRequest",
+    "notifications",
+    "scripting",
+    "storage",
+    "tabs",
+    "unlimitedStorage",
+    "webNavigation",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}

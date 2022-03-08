@@ -43,7 +43,15 @@ argumentParser.addArgument(
 );
 argumentParser.addArgument(["-b", "--build-num"]);
 argumentParser.addArgument("--config");
-argumentParser.addArgument(["-m", "--manifest"]);
+argumentParser.addArgument(
+  ["-m", "--manifest-version"],
+  {
+    choices: [2, 3],
+    defaultValue: 2,
+    type: "int"
+  }
+);
+argumentParser.addArgument(["-p", "--manifest-path"]);
 
 let args = argumentParser.parseKnownArgs()[0];
 
@@ -141,7 +149,8 @@ async function getBuildOptions(isDevenv, isSource)
     target: opts.target,
     version: opts.version,
     channel: opts.channel,
-    path: args.manifest
+    manifestPath: args.manifest_path,
+    manifestVersion: args.manifest_version
   });
 
   return opts;

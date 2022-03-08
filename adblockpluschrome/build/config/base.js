@@ -29,6 +29,7 @@ export default {
       {
         dest: "background.js",
         src: [
+          "adblockpluschrome/lib/serviceworkerInit.js",
           "adblockpluschrome/lib/devtools.js",
           "adblockpluschrome/lib/debug.js",
           "adblockpluschrome/lib/subscriptionInit.js",

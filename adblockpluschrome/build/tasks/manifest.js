@@ -44,7 +44,10 @@ function editManifest(data, version, channel, target)
 
     delete data.minimum_chrome_version;
     delete data.minimum_opera_version;
-    delete data.browser_action.default_popup;
+    if ("action" in data)
+      delete data.action.default_popup;
+    if ("browser_action" in data)
+      delete data.browser_action.default_popup;
     delete data.optional_permissions;
     delete data.storage;
 
@@ -64,14 +67,29 @@ export function createManifest(contents)
   ]);
 }
 
-export async function getManifestContent({target, version, channel, path})
+async function getJSON(path)
 {
+  let content = await fs.promises.readFile(resolve(path));
+  return JSON.parse(content);
+}
+
+export async function getManifestContent(options)
+{
+  const {target, version, channel, manifestPath, manifestVersion} = options;
   if (manifest)
     return manifest;
 
-  let raw = JSON.parse(
-    await fs.promises.readFile(resolve(path || "build/manifest.json"))
-  );
+  let raw;
+  if (manifestPath)
+  {
+    raw = await getJSON(resolve(manifestPath));
+  }
+  else
+  {
+    let base = await getJSON("build/manifest.base.json");
+    let specific = await getJSON(`build/manifest.v${manifestVersion}.json`);
+    raw = Object.assign({}, base, specific);
+  }
 
   manifest = editManifest(raw, version, channel, target);
 

@@ -28,9 +28,11 @@ const defaultGlobals = {
     runtime: {
       getPlatformInfo: async() => ({os: "unix"})
     },
+    scripting: {
+      executeScript: async() => [{result: defaultLocale}]
+    },
     tabs: {
       detectLanguage: async() => defaultLocale,
-      executeScript: async() => [defaultLocale],
       get: async() => ({url: ""})
     },
     webNavigation: {
@@ -625,9 +627,9 @@ describe("Test language filter list recommendation", () =>
       );
 
       env.override(
-        env.globals.browser.tabs,
+        env.globals.browser.scripting,
         "executeScript",
-        async() => ["en"]
+        async() => [{result: "en"}]
       );
 
       env.override(

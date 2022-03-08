@@ -49,9 +49,9 @@ function applyChanges(tabId, changes)
     // as a menu item. There is no icon, but such an option may be added
     // in the future.
     // https://bugzilla.mozilla.org/show_bug.cgi?id=1331746
-    if (change == "iconPath" && "setIcon" in browser.browserAction)
+    if (change == "iconPath" && "setIcon" in browser.action)
     {
-      return browser.browserAction.setIcon({
+      return browser.action.setIcon({
         tabId,
         path: {
           16: changes.iconPath.replace("$size", "16"),
@@ -62,9 +62,9 @@ function applyChanges(tabId, changes)
       });
     }
 
-    if (change == "iconImageData" && "setIcon" in browser.browserAction)
+    if (change == "iconImageData" && "setIcon" in browser.action)
     {
-      return browser.browserAction.setIcon({
+      return browser.action.setIcon({
         tabId,
         imageData: changes.iconImageData
       });
@@ -72,7 +72,7 @@ function applyChanges(tabId, changes)
 
     // There is no badge on Firefox for Android; the browser action is
     // simply a menu item.
-    if (change == "badgeText" && "setBadgeText" in browser.browserAction)
+    if (change == "badgeText" && "setBadgeText" in browser.action)
     {
       // Remember changes to the badge text but don't apply them yet
       // as long as the badge is hidden.
@@ -80,7 +80,7 @@ function applyChanges(tabId, changes)
       if (badgeState.hiddenState == "hidden")
         return;
 
-      return browser.browserAction.setBadgeText({
+      return browser.action.setBadgeText({
         tabId,
         text: changes.badgeText
       });
@@ -89,9 +89,9 @@ function applyChanges(tabId, changes)
     // There is no badge on Firefox for Android; the browser action is
     // simply a menu item.
     if (change == "badgeColor" &&
-        "setBadgeBackgroundColor" in browser.browserAction)
+        "setBadgeBackgroundColor" in browser.action)
     {
-      return browser.browserAction.setBadgeBackgroundColor({
+      return browser.action.setBadgeBackgroundColor({
         tabId,
         color: changes.badgeColor
       });
@@ -140,7 +140,7 @@ async function addChange(tabId, name, value)
     }
     catch (e)
     {
-      // If the tab is prerendered, browser.browserAction.set* fails
+      // If the tab is prerendered, browser.action.set* fails
       // and we have to delay our changes until the currently visible tab
       // is replaced with the prerendered tab.
       browser.tabs.onReplaced.addListener(onReplaced);

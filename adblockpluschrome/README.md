@@ -12,12 +12,16 @@ Building
 
 Run the following command in the project directory:
 
-    npx gulp build -t {chrome|firefox} [-c development]
+    npx gulp build -t {chrome|firefox} [-c development] [-m 3]
 
 This will create a build with a name in the form
 _adblockpluschrome-n.n.n.zip_ or _adblockplusfirefox-n.n.n.xpi_. These builds
 are unsigned. They can be submitted as-is to the extension stores, or if
 unpacked loaded in development mode for testing (same as devenv builds below).
+
+You can pass the `-m 3` argument to generate a build that's compatible with
+WebExtensions Manifest version 3. If omitted, it will generate a build for
+Manifest version 2.
 
 ### Development environment
 
@@ -55,7 +59,7 @@ This can be done by:
 You should check `build/manifest.json` and `build/tasks/manifest.js` to see
 how we modify it.
 
-        npx gulp {build|devenv} -t {chrome|firefox} -m manifest.json
+        npx gulp {build|devenv} -t {chrome|firefox} -p manifest.json
 
 Running tests
 -------------

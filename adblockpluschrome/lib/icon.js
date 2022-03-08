@@ -125,7 +125,7 @@ function setIcon(page, opacity, frames)
   }
   else
   {
-    browser.browserAction.setIcon({
+    browser.action.setIcon({
       tabId: page.id,
       imageData: frames["" + opacity + allowlisted]
     });
