@@ -122,7 +122,6 @@ function addRecord(panel, filterMatch)
 
     panel.port.postMessage({
       type: "update-record",
-      initialize: true,
       index: i,
       request: oldRecord.target,
       filter: getFilterInfo(oldRecord.filter)

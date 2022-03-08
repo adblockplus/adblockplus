@@ -23,6 +23,7 @@ const {getMessage} = browser.i18n;
 
 initI18n();
 
+const onFilterChangedByRow = new WeakMap();
 const promisedPlatform = browser.runtime.sendMessage({
   type: "app.get",
   what: "platform"
@@ -48,44 +49,55 @@ browser.runtime.sendMessage({type: "types.get"})
     document.body.appendChild(filterStyleElem);
   });
 
-function generateFilter(request, domainSpecific)
+function generateFilter(request, options = {})
 {
-  let filter = request.url.replace(/^[\w-]+:\/+(?:www\.)?/, "||");
-  const options = [];
+  let {allowlisted = false, domainSpecific = false} = options;
+  let filterText = request.url.replace(/^[\w-]+:\/+(?:www\.)?/, "||");
+  const filterOptions = [];
 
   if (request.type == "POPUP")
   {
-    options.push("popup");
+    filterOptions.push("popup");
 
     if (request.url == "about:blank")
       domainSpecific = true;
   }
 
   if (request.type == "CSP")
-    options.push("csp");
+    filterOptions.push("csp");
 
   if (domainSpecific)
-    options.push("domain=" + request.docDomain);
+    filterOptions.push("domain=" + request.docDomain);
 
-  if (options.length > 0)
-    filter += "$" + options.join(",");
+  if (filterOptions.length > 0)
+    filterText += "$" + filterOptions.join(",");
 
-  return filter;
+  if (allowlisted)
+    filterText = "@@" + filterText;
+
+  return {
+    allowlisted,
+    subscription: null,
+    text: filterText,
+    userDefined: true
+  };
 }
 
-function createActionButton(action, stringId, filter)
+function createActionButton(action, stringId, filter, callback)
 {
   const button = document.createElement("span");
 
   button.textContent = getMessage(stringId);
   button.classList.add("action");
 
-  button.addEventListener("click", () =>
+  button.addEventListener("click", async() =>
   {
-    browser.runtime.sendMessage({
+    await browser.runtime.sendMessage({
       type: "filters." + action,
-      text: filter
+      text: filter.text
     });
+
+    callback(filter);
   }, false);
 
   return button;
@@ -142,16 +154,46 @@ function getTitleText(str)
     });
 }
 
-function createRecord(request, filter, template)
+function onFilterRemoved(oldFilter)
 {
+  const rows = document.querySelectorAll(`[data-filter="${oldFilter.text}"]`);
+  for (const row of rows)
+  {
+    const onFilterChanged = onFilterChangedByRow.get(row);
+    onFilterChanged(null);
+  }
+}
+
+function createRecord(request, filter, options = {})
+{
+  const {hasChanged = false, initialFilter = null} = options;
+  const template = document.querySelector("template").content.firstElementChild;
   const row = document.importNode(template, true);
   row.dataset.type = request.type;
+  row.classList.toggle("changed", hasChanged);
 
   row.querySelector(".domain").textContent = request.docDomain;
   row.querySelector(".type").textContent = request.type;
 
   const urlElement = row.querySelector(".url");
   const actionWrapper = row.querySelector(".action-wrapper");
+
+  const onFilterChanged = (newFilter) =>
+  {
+    const newRow = createRecord(
+      request,
+      newFilter || initialFilter,
+      {
+        hasChanged: !!newFilter,
+        initialFilter: (newFilter) ? (initialFilter || filter) : null
+      }
+    );
+    row.parentNode.replaceChild(newRow, row);
+
+    const container = document.getElementById("items");
+    container.classList.add("has-changes");
+  };
+  onFilterChangedByRow.set(row, onFilterChanged);
 
   if (request.url)
   {
@@ -208,6 +250,7 @@ function createRecord(request, filter, template)
     });
     filterElement.textContent = filter.text;
     row.dataset.state = filter.allowlisted ? "allowlisted" : "blocked";
+    row.dataset.filter = filter.text;
 
     if (filter.subscription)
       originElement.textContent = filter.subscription;
@@ -223,26 +266,38 @@ function createRecord(request, filter, template)
 
     // We cannot generate allowing filters for already allowlisted requests
     // or for filters that are applied to frames
+    // Additionally, we shouldn't generate allowing filters for blocking filters
+    // that were created by an action button on this page while it's open,
+    // because those should be removed instead to undo the action
     if (!filter.allowlisted && request.type != "ELEMHIDE" &&
-      request.type != "SNIPPET")
+      request.type != "SNIPPET" && !hasChanged)
     {
       actionWrapper.appendChild(createActionButton(
-        "add", "devtools_action_unblock", "@@" + generateFilter(request, false)
+        "add",
+        "devtools_action_unblock",
+        generateFilter(request, {allowlisted: true}),
+        onFilterChanged
       ));
     }
 
     if (filter.userDefined)
     {
       actionWrapper.appendChild(createActionButton(
-        "remove", "devtools_action_remove", filter.text
+        "remove",
+        "devtools_action_remove",
+        filter,
+        onFilterRemoved
       ));
     }
   }
-  else
+  // We cannot generate blocking filters for the top-level frame
+  else if (request.type !== "DOCUMENT")
   {
     actionWrapper.appendChild(createActionButton(
-      "add", "devtools_action_block",
-      generateFilter(request, request.specificOnly)
+      "add",
+      "devtools_action_block",
+      generateFilter(request, {domainSpecific: request.specificOnly}),
+      onFilterChanged
     ));
   }
 
@@ -293,7 +348,6 @@ document.addEventListener("DOMContentLoaded", () =>
 {
   const container = document.getElementById("items");
   const table = container.querySelector("tbody");
-  const template = document.querySelector("template").content.firstElementChild;
 
   document.querySelector("[data-i18n='devtools_footer'] > a")
     .addEventListener("click", () =>
@@ -316,19 +370,13 @@ document.addEventListener("DOMContentLoaded", () =>
     switch (message.type)
     {
       case "add-record":
-        table.appendChild(createRecord(message.request, message.filter,
-                                       template));
+        table.appendChild(createRecord(message.request, message.filter));
         break;
 
       case "update-record":
         const oldRow = table.getElementsByTagName("tr")[message.index];
-        const newRow = createRecord(message.request, message.filter, template);
+        const newRow = createRecord(message.request, message.filter);
         oldRow.parentNode.replaceChild(newRow, oldRow);
-        if (!message.initialize)
-        {
-          newRow.classList.add("changed");
-          container.classList.add("has-changes");
-        }
         break;
 
       case "remove-record":
