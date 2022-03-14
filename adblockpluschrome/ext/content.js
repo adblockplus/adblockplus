@@ -14,7 +14,8 @@ if (!browser.devtools)
   // Listen for messages from the background page.
   browser.runtime.onMessage.addListener((message, sender) =>
   {
-    return ext.onMessage._dispatch(message, {});
+    let responses = ext.onMessage._dispatch(message, {});
+    return ext.getMessageResponse(responses);
   });
 }
 

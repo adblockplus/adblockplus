@@ -41,7 +41,18 @@ ext._EventTarget = class EventTarget
     let results = [];
     for (let listener of this._listeners)
       results.push(listener(...args));
-    return Promise.race(results);
+    return results;
+  }
+};
+
+// We only support a single response for message listeners. Therefore we need to
+// identify the first valid one, so that we can then return it.
+ext.getMessageResponse = responses =>
+{
+  for (let response of responses)
+  {
+    if (typeof response !== "undefined")
+      return response;
   }
 };
 

@@ -395,6 +395,7 @@
       };
     }
 
-    return ext.onMessage._dispatch(message, sender);
+    let responses = ext.onMessage._dispatch(message, sender);
+    return ext.getMessageResponse(responses);
   });
 }

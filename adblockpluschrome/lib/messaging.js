@@ -40,8 +40,7 @@ class Port
     try
     {
       let responses = callbacks.map(callback => callback(message, sender));
-      let response = await Promise.race(responses);
-      return response;
+      return ext.getMessageResponse(responses);
     }
     catch (err)
     {
