@@ -69,7 +69,9 @@ function convertFilter(filter)
   // For the time being, we are renaming the enabled property to
   // make the UI compatible with EWE without having to rename it
   // in the UI code itself just yet
-  obj.disabled = !obj.enabled;
+  // For the same reason, we're not adding the property for comment filters
+  if (obj.enabled !== null)
+    obj.disabled = !obj.enabled;
   delete obj.enabled;
 
   return obj;
@@ -440,7 +442,7 @@ port.on("subscriptions.get", (message, sender) =>
     {
       let filters = ewe.subscriptions.getFilters(s.url) || [];
       subscription.disabledFilters = filters
-        .filter(f => !f.enabled)
+        .filter(f => f.enabled === false)
         .map(f => f.text);
     }
     subscriptions.push(subscription);
@@ -607,7 +609,7 @@ export function initDisabledFilterCounters()
 
     for (const filter of ewe.subscriptions.getFilters(subscription.url))
     {
-      if (!filter.enabled)
+      if (filter.enabled === false)
         count++;
     }
 
