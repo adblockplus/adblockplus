@@ -718,6 +718,9 @@ ewe.subscriptions.onRemoved.addListener(getListener("subscription", "removed"));
 
 function onConnect(uiPort)
 {
+  if (!ext.isTrustedSender(uiPort.sender))
+    return;
+
   if (uiPort.name != "ui")
     return;
 

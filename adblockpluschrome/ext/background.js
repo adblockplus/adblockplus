@@ -371,8 +371,39 @@
 
   /* Message passing */
 
+  const trustedBaseUrl = browser.runtime.getURL("");
+  const trustedMessages = [
+    "composer.content.clearPreviousRightClickEvent",
+    "composer.content.dialogOpened",
+    "composer.content.finished",
+    "composer.dialog.close",
+    "composer.forward",
+    "composer.getFilters",
+    "composer.openDialog",
+    "composer.ready"
+  ];
+
+  ext.isTrustedSender = sender => sender.url.startsWith(trustedBaseUrl);
+
   browser.runtime.onMessage.addListener((message, rawSender) =>
   {
+    // Ignore invalid messages
+    if (typeof message !== "object" || !message.type)
+      return;
+
+    // Ignore messages from EWE content scripts
+    if (message.type.startsWith("ewe:"))
+      return;
+
+    // Ignore messages from content scripts, unless we listed them as
+    // safe to use in the context they're running in
+    if (!ext.isTrustedSender(rawSender) &&
+        !trustedMessages.includes(message.type))
+    {
+      console.warn("Untrusted message received", message.type, rawSender.url);
+      return;
+    }
+
     let sender = {};
 
     // Add "page" and "frame" if the message was sent by a content script.

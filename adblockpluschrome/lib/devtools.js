@@ -184,6 +184,9 @@ function onLoading(page)
 
 browser.runtime.onConnect.addListener(newPort =>
 {
+  if (!ext.isTrustedSender(newPort.sender))
+    return;
+
   let match = newPort.name.match(/^devtools-(\d+)$/);
   if (!match)
     return;
