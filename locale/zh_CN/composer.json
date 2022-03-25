@@ -5,6 +5,9 @@
   "composer_block": {
     "message": "追踪"
   },
+  "composer_block_reload": {
+    "message": "拦截并重新加载页面"
+  },
   "composer_cancel": {
     "message": "取消"
   },

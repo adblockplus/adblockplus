@@ -1,7 +1,4 @@
 {
-  "filter_slow": {
-    "message": "Za zagotavljanje hitrega filtra, prosimo preverite dolžino vzorca in se prepričajte, da ne vsebuje regularnega izraza."
-  },
   "line": {
     "message": "Vrstica $number$: $message$",
     "placeholders": {

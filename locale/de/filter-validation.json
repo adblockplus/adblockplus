@@ -1,4 +1,7 @@
 {
+  "filter_elemhide_not_specific_enough": {
+    "message": "Der CSS-Selektor ist zu kurz. Nutze einen längeren Selektor oder gib mindestens eine Domain für diesen Ausblendefilter für Elemente an."
+  },
   "filter_elemhideemulation_nodomain": {
     "message": "Keine aktive Domain angegeben. Bitte gib mindestens eine Domain für diesen erweiterten Ausblendefilter für Elemente an."
   },
@@ -15,7 +18,7 @@
     "message": "Ungültiger regulärer Ausdruck (Syntax entspricht nicht dem Standard)."
   },
   "filter_slow": {
-    "message": "Bitte überprüfe die Länge des Musters und dass der Filter keinen regulären Ausdruck enthält, um sicherzustellen, dass er schnell angewandt werden kann."
+    "message": "Langsamer Filter. Überprüfe die Länge des Musters und stelle sicher, dass es keinen regulären Ausdruck enthält."
   },
   "filter_snippet_nodomain": {
     "message": "Keine aktive Domain angegeben. Bitte gib mindestens eine Domain für diesen Snippet-Filter an."
@@ -28,6 +31,9 @@
         "example": "foo"
       }
     }
+  },
+  "filter_url_not_specific_enough": {
+    "message": "Das URL-Muster ist zu kurz. Nutze ein längeres Muster oder gib mindestens eine Domain für diesen Filter an."
   },
   "line": {
     "message": "Zeile $number$: $message$",

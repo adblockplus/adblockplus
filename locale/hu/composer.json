@@ -5,6 +5,9 @@
   "composer_block": {
     "message": "Blokkolás"
   },
+  "composer_block_reload": {
+    "message": "Blokkolás és oldal újratöltése"
+  },
   "composer_cancel": {
     "message": "Mégse"
   },

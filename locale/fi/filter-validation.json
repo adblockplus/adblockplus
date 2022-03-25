@@ -1,7 +1,4 @@
 {
-  "filter_slow": {
-    "message": "Suodatin toimii nopeammin, jos suodattimen pituus on optimaalinen eikä se sisällä yleisiä ilmauksia."
-  },
   "line": {
     "message": "Rivi $number$: $message$",
     "placeholders": {

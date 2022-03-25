@@ -1,4 +1,7 @@
 {
+  "filter_elemhide_not_specific_enough": {
+    "message": "De CSS-kiezer is te kort. Gebruik een langere kiezer of specificeer minstens één domein voor deze element verbergende filter."
+  },
   "filter_elemhideemulation_nodomain": {
     "message": "Geen actief domein aangegeven. Geef ten minste één domein op voor dit toegevoegde element om filters te verbergen."
   },
@@ -15,7 +18,7 @@
     "message": "Ongeldige reguliere expressie (de syntaxis voldoet niet aan de norm)."
   },
   "filter_slow": {
-    "message": "Controleer voor een snel filter de lengte van het patroon en zorg ervoor dat dit geen reguliere expressie gebruikt."
+    "message": "Trage filter. Controleer de lengte van het patroon en zorg ervoor dat het geen reguliere expressie bevat."
   },
   "filter_snippet_nodomain": {
     "message": "Geen actief domein aangegeven. Geef ten minste één domein op voor dit toegevoegde element om filters te verbergen."
@@ -28,6 +31,9 @@
         "example": "foo"
       }
     }
+  },
+  "filter_url_not_specific_enough": {
+    "message": "Het URL-patroon is te kort. Gebruik een langer patroon of specificeer minstens één domein voor deze filter."
   },
   "line": {
     "message": "Regel $number$: $message$",

@@ -1,4 +1,7 @@
 {
+  "filter_elemhide_not_specific_enough": {
+    "message": "CSSセレクターが短すぎます。この要素を非表示にするフィルターでは、セレクターを長くするか少なくとも1つのドメインを特定してください。"
+  },
   "filter_elemhideemulation_nodomain": {
     "message": "有効なドメインが指定されていません。この拡張要素非表示フィルターには、少なくとも1つのドメインを指定してください。"
   },
@@ -14,6 +17,9 @@
   "filter_invalid_regexp": {
     "message": "正規表現が無効です（シンタックスが基準に準拠していません）。"
   },
+  "filter_slow": {
+    "message": "フィルターで遅延が発生します。パターンの長さを確かめ、正規表現が含まれていないことを確認してください。"
+  },
   "filter_snippet_nodomain": {
     "message": "有効なドメインが指定されていません。このスニペットフィルターには、少なくとも1つのドメインを指定してください。"
   },
@@ -25,6 +31,9 @@
         "example": "foo"
       }
     }
+  },
+  "filter_url_not_specific_enough": {
+    "message": "CSSパターンが短すぎます。このフィルターでは、パターンを長くするか少なくとも1つのドメインを特定してください。"
   },
   "line": {
     "message": "$number$ 行目: $message$",

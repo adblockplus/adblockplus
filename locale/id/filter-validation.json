@@ -1,7 +1,4 @@
 {
-  "filter_slow": {
-    "message": "Untuk memastikan filter cepat, perhatikan panjang pola dan pastikan tidak mengandung kalimat biasa."
-  },
   "line": {
     "message": "Baris $number$: $message$",
     "placeholders": {

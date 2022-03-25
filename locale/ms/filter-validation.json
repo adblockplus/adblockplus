@@ -1,7 +1,4 @@
 {
-  "filter_slow": {
-    "message": "Untuk tapisan pantas, periksa panjang corak dan pastikan ia tidak mempunyai ungkapan biasa."
-  },
   "line": {
     "message": "Baris ke $number$: $message$",
     "placeholders": {

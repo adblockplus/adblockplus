@@ -1,7 +1,4 @@
 {
-  "filter_slow": {
-    "message": "כדי להבטיח סינון מהיר, אנא בדוק את האורך של הדפוס ווודא שהוא אינו מכיל ביטוי רגולרי."
-  },
   "line": {
     "message": "שורה $number$: $message$",
     "placeholders": {

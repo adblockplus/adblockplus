@@ -1,4 +1,7 @@
 {
+  "filter_elemhide_not_specific_enough": {
+    "message": "O seletor CSS é curto demais. Use um seletor mais longo ou especifique pelo menos um domínio para este filtro de ocultação de elementos."
+  },
   "filter_elemhideemulation_nodomain": {
     "message": "Não há domínio ativo especificado. Especifique pelo menos um domínio para este filtro de ocultação de elemento estendido."
   },
@@ -15,7 +18,7 @@
     "message": "Expressão regular incluída (a sintaxe não segue o padrão)."
   },
   "filter_slow": {
-    "message": "Para garantir um filtro rápido, verifique o comprimento do padrão e certifique-se de ele não contenha uma expressão regular."
+    "message": "Filtro lento. Verifique o comprimento do padrão e assegure-se de que ele não contenha uma expressão regular."
   },
   "filter_snippet_nodomain": {
     "message": "Não há domínio ativo especificado. Especifique pelo menos um domínio para este filtro de snippets."
@@ -28,6 +31,9 @@
         "example": "foo"
       }
     }
+  },
+  "filter_url_not_specific_enough": {
+    "message": "O padrão do URL é curto demais. Use um padrão mais longo ou especifique pelo menos um domínio para este filtro."
   },
   "line": {
     "message": "Linha $number$: $message$",

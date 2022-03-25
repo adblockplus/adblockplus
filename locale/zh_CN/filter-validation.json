@@ -1,4 +1,7 @@
 {
+  "filter_elemhide_not_specific_enough": {
+    "message": "CSS 选择器太短。请使用更长的选择器，或为此要素隐藏筛选器指定至少一个域。"
+  },
   "filter_elemhideemulation_nodomain": {
     "message": "未指定活动域。请为此扩展元素隐藏筛选器指定至少一个域。"
   },
@@ -15,7 +18,7 @@
     "message": "正则表达式无效（语言不符合标准）。"
   },
   "filter_slow": {
-    "message": "为确保快速过滤，请检查序列长度并确保不包含正则表达式。"
+    "message": "筛选器太慢。请检查模式的长度，确保其不包含正则表达式。"
   },
   "filter_snippet_nodomain": {
     "message": "未指定活动域。请为此代码段筛选器指定至少一个域。"
@@ -28,6 +31,9 @@
         "example": "foo"
       }
     }
+  },
+  "filter_url_not_specific_enough": {
+    "message": "URL 模式太短。请使用更长的模式，或为此筛选器指定至少一个域。"
   },
   "line": {
     "message": "第 $number$ 行：$message$",

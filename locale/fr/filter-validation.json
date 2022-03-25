@@ -1,4 +1,7 @@
 {
+  "filter_elemhide_not_specific_enough": {
+    "message": "Le sélecteur CSS est trop court. Veuillez utiliser un sélecteur plus long ou spécifier au moins un domaine pour le filtre de masquage de cet élément."
+  },
   "filter_elemhideemulation_nodomain": {
     "message": "Aucun domaine actif spécifié. Veuillez spécifier au moins un domaine pour ce filtre de masquage d’éléments étendu."
   },
@@ -15,7 +18,7 @@
     "message": "Expression régulière invalide (la syntaxe n’est pas conforme à la norme)."
   },
   "filter_slow": {
-    "message": "Pour disposer d’un filtrage rapide, merci de vérifier la longueur du modèle et s’assurer qu’il ne contient pas une expression régulière."
+    "message": "Filtre lent. Veuillez vérifier la longueur du motif et assurez-vous qu’il ne contient pas une expression régulière."
   },
   "filter_snippet_nodomain": {
     "message": "Aucun domaine actif spécifié. Veuillez spécifier au moins un domaine pour ce filtre partiel."
@@ -28,6 +31,9 @@
         "example": "foo"
       }
     }
+  },
+  "filter_url_not_specific_enough": {
+    "message": "Le motif de l’URL est trop court. Veuillez utiliser un motif plus long ou spécifier au moins un domaine pour ce filtre."
   },
   "line": {
     "message": "Ligne $number$: $message$",

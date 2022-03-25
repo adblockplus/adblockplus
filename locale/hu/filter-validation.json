@@ -1,4 +1,7 @@
 {
+  "filter_elemhide_not_specific_enough": {
+    "message": "A CSS-kiválasztó túl rövid. Használjon hosszabb kiválasztót, vagy határozzon meg legalább egy tartományt ehhez az elem elrejtő szűrőhöz."
+  },
   "filter_elemhideemulation_nodomain": {
     "message": "Nincs aktív domain meghatározva. Adjon meg legalább egy domain-t e kiterjesztett elem elrejtő szűrő számára."
   },
@@ -15,7 +18,7 @@
     "message": "Érvénytelen reguláris kifejezés (a szintaxis nem felel meg a szabványnak)."
   },
   "filter_slow": {
-    "message": "A gyors szűrő biztosítása érdekében, ellenőrizze a minta hosszát, és győződjön meg arról, hogy nem tartalmaz szabályos kifejezést."
+    "message": "Lassú szűrő. Ellenőrizze a minta hosszát, és ügyeljen arra, hogy ne tartalmazzon szokásos kifejezést."
   },
   "filter_snippet_nodomain": {
     "message": "Nincs aktív domain meghatározva. Adjon meg legalább egy domain-t e kódrészlet szűrő számára."
@@ -28,6 +31,9 @@
         "example": "foo"
       }
     }
+  },
+  "filter_url_not_specific_enough": {
+    "message": "Az URL-minta túl rövid. Használjon hosszabb mintát, vagy határozzon meg legalább egy tartományt ehhez a szűrőhöz."
   },
   "line": {
     "message": "$number$. sor: $message$",

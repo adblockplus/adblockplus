@@ -1,7 +1,4 @@
 {
-  "filter_slow": {
-    "message": "För att säkerställa ett snabbt filter, kontrollera mönstrets längd och se till att det inte innehåller ett reguljärt uttryck."
-  },
   "line": {
     "message": "Rad $number$: $message$",
     "placeholders": {

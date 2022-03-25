@@ -1,7 +1,4 @@
 {
-  "filter_slow": {
-    "message": "Per garantir un filtre ràpid, comproveu la longitud del patró i assegureu-vos que no contingui expressions regulars."
-  },
   "line": {
     "message": "Línia $number$: $message$",
     "placeholders": {

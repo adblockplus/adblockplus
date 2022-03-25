@@ -1,4 +1,7 @@
 {
+  "filter_elemhide_not_specific_enough": {
+    "message": "CSS 선택기가 너무 짧습니다. 이 요소 숨김 필터를 위해 더 긴 선택기를 사용하거나 최소 하나의 도메인을 지정해 주십시오."
+  },
   "filter_elemhideemulation_nodomain": {
     "message": "지정된 활성 도메인이 없습니다. 확장 요소 숨김 필터에 최소 하나의 도메인을 지정해 주십시오."
   },
@@ -15,7 +18,7 @@
     "message": "유효하지 않은 정규 표현식(구문이 표준을 준수하지 않음)."
   },
   "filter_slow": {
-    "message": "필터를 빠르게 유지하려면 패턴의 길이와 정규 표현식이 포함되어 있지는 않은지 확인해보세요."
+    "message": "느린 필터. 패턴의 길이를 확인해 주시고 정규 표현을 포함하지 않도록 해주십시오."
   },
   "filter_snippet_nodomain": {
     "message": "지정된 활성 도메인이 없습니다. 스니펫 필터에 최소 하나의 도메인을 지정해 주십시오."
@@ -28,6 +31,9 @@
         "example": "foo"
       }
     }
+  },
+  "filter_url_not_specific_enough": {
+    "message": "URL 패턴이 너무 짧습니다. 이 필터를 위해 더 긴 패턴을 사용하거나 최소 하나의 도메인을 지정해 주십시오."
   },
   "line": {
     "message": "$number$번째 줄: $message$",

@@ -5,6 +5,9 @@
   "composer_block": {
     "message": "Заблокировать"
   },
+  "composer_block_reload": {
+    "message": "Заблокировать и перезагрузить страницу"
+  },
   "composer_cancel": {
     "message": "Отменить"
   },

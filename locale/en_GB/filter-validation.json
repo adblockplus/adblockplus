@@ -1,7 +1,4 @@
 {
-  "filter_slow": {
-    "message": "To ensure a fast filter, please check the length of the pattern and ensure it doesn't contain a regular expression."
-  },
   "line": {
     "message": "Line $number$: $message$",
     "placeholders": {

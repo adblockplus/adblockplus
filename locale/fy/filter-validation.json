@@ -1,7 +1,4 @@
 {
-  "filter_slow": {
-    "message": "Kontrolearje foar in fluch filter de lingte fan it patroan en soargje derfoar dat dit gjin reguliere ekspresje brûkt."
-  },
   "line": {
     "message": "Regel $number$: $message$",
     "placeholders": {

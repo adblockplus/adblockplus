@@ -5,6 +5,9 @@
   "composer_block": {
     "message": "Blokkeer"
   },
+  "composer_block_reload": {
+    "message": "Blokkeer en herlaad pagina"
+  },
   "composer_cancel": {
     "message": "Annuleer"
   },

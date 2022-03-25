@@ -1,4 +1,7 @@
 {
+  "filter_elemhide_not_specific_enough": {
+    "message": "Selektor CSS jest zbyt krótki. Użyj dłuższego selektora lub określ co najmniej jedną domenę dla filtru ukrywającego ten element."
+  },
   "filter_elemhideemulation_nodomain": {
     "message": "Nie określono aktywnej domeny. Proszę podać co najmniej jedną domenę dla tego filtra ukrywającego elementy rozszerzone."
   },
@@ -15,7 +18,7 @@
     "message": "Nieprawidłowe wyrażenie regularne (składnia nie jest zgodna ze standardem)."
   },
   "filter_slow": {
-    "message": "Aby filtr działał szybko, należy sprawdzić długość wzorca, który nie powinien zawierać wyrażeń regularnych."
+    "message": "Filtr powolny. Należy sprawdzić długość wzorca i upewnić się, że nie zawiera on wyrażenia regularnego."
   },
   "filter_snippet_nodomain": {
     "message": "Nie określono aktywnej domeny. Proszę podać co najmniej jedną domenę dla tego filtra fragmentów."
@@ -28,6 +31,9 @@
         "example": "foo"
       }
     }
+  },
+  "filter_url_not_specific_enough": {
+    "message": "Wzorzec adresu URL CSS jest zbyt krótki. Użyj dłuższego wzorca lub określ co najmniej jedną domenę dla tego filtra."
   },
   "line": {
     "message": "Wiersz $number$: $message$",

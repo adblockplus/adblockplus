@@ -5,6 +5,9 @@
   "composer_block": {
     "message": "차단"
   },
+  "composer_block_reload": {
+    "message": "차단 및 페이지 다시 로딩"
+  },
   "composer_cancel": {
     "message": "취소"
   },

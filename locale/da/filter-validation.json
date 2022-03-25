@@ -1,7 +1,4 @@
 {
-  "filter_slow": {
-    "message": "For at kunne garantere et hurtigt filter, bedes du kontroller mønsterlængden og sikre, at det ikke indeholder et regulært udtryk."
-  },
   "line": {
     "message": "Linje $number$: $message$",
     "placeholders": {

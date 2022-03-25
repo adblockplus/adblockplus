@@ -5,6 +5,9 @@
   "composer_block": {
     "message": "Engelle"
   },
+  "composer_block_reload": {
+    "message": "Engelle & sayfayı yeniden yükle"
+  },
   "composer_cancel": {
     "message": "Vazgeç"
   },

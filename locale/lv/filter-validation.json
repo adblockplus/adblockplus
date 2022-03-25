@@ -1,7 +1,4 @@
 {
-  "filter_slow": {
-    "message": "Lai nodrošinātu filtra ātru darbību, lūdzu, pārbaudiet shēmas garumu un pārliecinieties, ka tas nesatur regulāru izteiksmi."
-  },
   "line": {
     "message": "Līnijas $number$: $message$",
     "placeholders": {

@@ -5,6 +5,9 @@
   "composer_block": {
     "message": "Αποκλεισμός"
   },
+  "composer_block_reload": {
+    "message": "Αποκλεισμός και επαναφόρτωση σελίδας"
+  },
   "composer_cancel": {
     "message": "Ακύρωση"
   },

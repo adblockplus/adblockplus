@@ -1,7 +1,4 @@
 {
-  "filter_slow": {
-    "message": "Để đảm bảo bộ lọc nhanh, vui lòng kiểm tra độ dài của mẫu và đảm bảo nó không chứa biểu thức chính quy."
-  },
   "line": {
     "message": "Dòng $number$: $message$",
     "placeholders": {

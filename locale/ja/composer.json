@@ -5,6 +5,9 @@
   "composer_block": {
     "message": "ブロック"
   },
+  "composer_block_reload": {
+    "message": "ブロックしてページを再読み込み"
+  },
   "composer_cancel": {
     "message": "キャンセル"
   },

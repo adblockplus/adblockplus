@@ -1,7 +1,4 @@
 {
-  "filter_slow": {
-    "message": "Para asegurar un filtro rápido, comprueba la longitud del patrón y asegúrate de que no contiene una expresión regular."
-  },
   "line": {
     "message": "Línea $number$: $message$",
     "placeholders": {

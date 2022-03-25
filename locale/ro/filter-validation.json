@@ -1,7 +1,4 @@
 {
-  "filter_slow": {
-    "message": "Pentru a asigura o filtrare rapidă, verifică lungimea modelului și asigură-te că acesta nu conține o expresie regulată."
-  },
   "line": {
     "message": "Linie $number$: $message$",
     "placeholders": {

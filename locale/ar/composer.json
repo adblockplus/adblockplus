@@ -5,6 +5,9 @@
   "composer_block": {
     "message": "حجب"
   },
+  "composer_block_reload": {
+    "message": "الحجب وإعادة تحميل الصفحة"
+  },
   "composer_cancel": {
     "message": "إلغاء"
   },
