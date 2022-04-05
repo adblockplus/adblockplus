@@ -142,7 +142,10 @@ function initElementHidingDebugMode()
 (async() =>
 {
   const [eweFirstRun] = await Promise.all([
-    ewe.start(),
+    ewe.start({
+      name: info.addonName,
+      version: info.addonVersion
+    }),
     Prefs.untilLoaded.catch(() => { setDataCorrupted(true); }),
     testStorage().catch(() => { setDataCorrupted(true); })
   ]);
