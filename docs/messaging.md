@@ -136,6 +136,7 @@ If filter includes `showPageOptions`:
 
 **Arguments**
 
+- **string** [origin] - see [known filter origins](#known-filter-origins)
 - **string** text
 
 **Response**
@@ -146,6 +147,7 @@ If filter includes `showPageOptions`:
 
 **Arguments**
 
+- **string** [origin] - see [known filter origins](#known-filter-origins)
 - **boolean** singlePage - to allowlist a page instead of the whole domain
 - **object** tab
 
@@ -165,6 +167,7 @@ If filter includes `showPageOptions`:
 
 **Arguments**
 
+- **string** [origin] - see [known filter origins](#known-filter-origins)
 - **string** text
 
 **Response**
@@ -206,8 +209,9 @@ If filter includes `showPageOptions`:
 
 **Arguments**
 
-- **string** new
 - **string** old
+- **string** [origin] - see [known filter origins](#known-filter-origins)
+- **string** new
 
 **Response**
 
@@ -236,6 +240,11 @@ If filter includes `showPageOptions`:
 **Response**
 
 **[FilterError](#filtererror)[]** errors
+
+#### Known filter origins
+
+- `popup`
+- `web`
 
 ---
 

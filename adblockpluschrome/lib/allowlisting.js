@@ -19,6 +19,7 @@
 
 import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
 import {EventEmitter} from "./events.js";
+import {addFilter} from "./filterConfiguration.js";
 import {port} from "./messaging.js";
 
 let allowlistedDomainRegexp = /^@@\|\|([^/:]+)\^\$document$/;
@@ -58,7 +59,7 @@ port.on("filters.isAllowlisted", message =>
   return {hostname: hostnameAllowlisted, page: pageAllowlisted};
 });
 
-export async function allowlist({hostname, singlePage = false, url})
+export async function allowlist({hostname, origin, singlePage = false, url})
 {
   let filterText;
 
@@ -100,7 +101,7 @@ export async function allowlist({hostname, singlePage = false, url})
 
   await ewe.filters.enable([filterText]);
   if (ewe.subscriptions.getForFilter(filterText).length == 0)
-    await ewe.filters.add([filterText]);
+    await addFilter(filterText, origin);
 }
 
 /**
@@ -109,6 +110,8 @@ export async function allowlist({hostname, singlePage = false, url})
  * enable that instead.
  *
  * @event "filters.allowlist"
+ * @proper {string} [origin]
+ *   String indicating where the filter originated from.
  * @property {boolean} [singlePage=false]
  *   If true we add an allowing filter for the given page's URL instead.
  * @property {object} tab
@@ -118,6 +121,7 @@ port.on("filters.allowlist", async message =>
 {
   let page = new ext.Page(message.tab);
   await allowlist({
+    origin: message.origin,
     singlePage: message.singlePage,
     url: page.url
   });

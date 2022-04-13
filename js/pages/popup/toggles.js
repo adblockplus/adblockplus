@@ -78,6 +78,7 @@ function setupToggles(tab)
     document.body.classList.toggle("refresh", toggleChecked !== checked);
     browser.runtime.sendMessage({
       type: `filters.${checked ? "unallowlist" : "allowlist"}`,
+      origin: "popup",
       tab
     });
   });
@@ -87,6 +88,7 @@ function setupToggles(tab)
     document.body.classList.toggle("refresh");
     browser.runtime.sendMessage({
       type: `filters.${page.checked ? "unallowlist" : "allowlist"}`,
+      origin: "popup",
       singlePage: true,
       tab
     });

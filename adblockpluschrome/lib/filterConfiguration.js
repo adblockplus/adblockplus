@@ -28,6 +28,28 @@ import {filterTypes} from "./requestBlocker.js";
 const disabledFilterCounters = new Map();
 const eventEmitter = new EventEmitter();
 
+export async function addFilter(filterText, origin)
+{
+  const data = {created: Date.now()};
+  if (origin)
+    data.origin = origin;
+
+  try
+  {
+    await ewe.filters.add([filterText], data);
+    await ewe.filters.enable([filterText]);
+  }
+  catch (ex)
+  {
+    // If we add an existing filter again, we ignore the resulting error to
+    // avoid showing unnecessary error messages to the user
+    if (ex.type !== "storage_duplicate_filters")
+      return ex;
+  }
+
+  return null;
+}
+
 function convertObject(keys, obj)
 {
   let result = {};
@@ -255,10 +277,14 @@ function parseFilter(text)
  * Attempts to add the given filter, or returns an error.
  *
  * @event "filters.add"
+ * @property {string} [origin] - Where the filter originated from
  * @property {string} text - The filter text to add
  * @returns {FilterError[]}
  */
-port.on("filters.add", (message, sender) => filtersAdd(message.text));
+port.on("filters.add", (message, sender) =>
+{
+  return filtersAdd(message.text, message.origin);
+});
 
 /**
  * Returns a serialized version of all filters in special subscriptions.
@@ -284,6 +310,8 @@ port.on("filters.getTypes", (message, sender) => Array.from(filterTypes));
  * Import the given block of filter text as custom user filters.
  *
  * @event "filters.importRaw"
+ * @property {string} [origin]
+ *   Where the filter originated from.
  * @property {string} text
  *   The filters to add.
  * @returns {string[]} errors
@@ -294,22 +322,11 @@ port.on("filters.importRaw", async(message, sender) =>
 
   if (errors.length == 0)
   {
-    // We need to add one filter at a time, so that we can ignore errors about
-    // duplicate filters
     for (const filterText of filterTexts)
     {
-      try
-      {
-        await ewe.filters.add([filterText]);
-        await ewe.filters.enable([filterText]);
-      }
-      catch (ex)
-      {
-        // If we add an existing filter again, we ignore the resulting error to
-        // avoid showing unnecessary error messages to the user
-        if (ex.type !== "storage_duplicate_filters")
-          errors.push(ex);
-      }
+      const error = await addFilter(filterText, message.origin);
+      if (error)
+        errors.push(error);
     }
   }
 
@@ -336,13 +353,14 @@ port.on("filters.remove", (message, sender) => filtersRemove(message));
  * Replaces one custom user filter with another.
  *
  * @event "filters.replace"
- * @property {} new - The new filter text to add.
- * @property {} old - The old filter text to remove.
+ * @property {string} new - The new filter text to add.
+ * @property {string} old - The old filter text to remove.
+ * @property {string} [origin] - Where the filter originated from.
  * @returns {string[]} errors
  */
 port.on("filters.replace", async(message, sender) =>
 {
-  let errors = await filtersAdd(message.new);
+  let errors = await filtersAdd(message.new, message.origin);
   if (errors.length)
     return errors;
   await filtersRemove({text: message.old});
@@ -557,30 +575,14 @@ port.on("subscriptions.update", (message, sender) =>
   ewe.subscriptions.sync(message.url);
 });
 
-async function filtersAdd(text)
+async function filtersAdd(text, origin)
 {
   let [filterText, error] = parseFilter(text);
 
-  if (error)
-    return [error];
+  if (!error && filterText)
+    error = await addFilter(filterText, origin);
 
-  if (filterText)
-  {
-    try
-    {
-      await ewe.filters.add([filterText]);
-      await ewe.filters.enable([filterText]);
-    }
-    catch (ex)
-    {
-      // If we add an existing filter again, we ignore the resulting error to
-      // avoid showing unnecessary error messages to the user
-      if (ex.type !== "storage_duplicate_filters")
-        return [ex];
-    }
-  }
-
-  return [];
+  return (error) ? [error] : [];
 }
 
 function filtersValidate(text)
