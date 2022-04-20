@@ -1,4 +1,4 @@
-* thomas@adblockplus.org a.sandoval@eyeo.com m.saroyan@eyeo.com
+* thomas@adblockplus.org a.sandoval@adblock.org
 
-[Extension]
-/adblockpluschrome/ sebastian@adblockplus.org t.feliu@eyeo.com
+[E2E Testing]
+/test/end-to-end/ u.kacar@adblock.org c.anwuna@adblock.org
