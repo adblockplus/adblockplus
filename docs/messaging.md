@@ -142,6 +142,13 @@ If filter includes `showPageOptions`:
 
 **[FilterError](#filtererror)[]** errors
 
+#### filters.allowlist
+
+**Arguments**
+
+- **boolean** singlePage - to allowlist a page instead of the whole domain
+- **object** tab
+
 #### filters.get
 
 **Response**
@@ -197,6 +204,8 @@ If filter includes `showPageOptions`:
 
 #### filters.replace
 
+**Arguments**
+
 - **string** new
 - **string** old
 
@@ -206,26 +215,27 @@ If filter includes `showPageOptions`:
 
 #### filters.toggle
 
+**Arguments**
+
 - **string** text
 - **boolean** disabled
 
 #### filters.unallowlist
+
+**Arguments**
 
 - **object** tab
 - **boolean** singlePage - to unallowlist a page instead of the whole domain
 
 #### filters.validate
 
+**Arguments**
+
 - **string** text
 
 **Response**
 
 **[FilterError](#filtererror)[]** errors
-
-#### filters.allowlist
-
-- **object** tab
-- **boolean** singlePage - to allowlist a page instead of the whole domain
 
 ---
 
