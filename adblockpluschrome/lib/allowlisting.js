@@ -58,6 +58,51 @@ port.on("filters.isAllowlisted", message =>
   return {hostname: hostnameAllowlisted, page: pageAllowlisted};
 });
 
+export async function allowlist({hostname, singlePage = false, url})
+{
+  let filterText;
+
+  if (!hostname && !url)
+    throw new Error("Hostname or URL required");
+
+  if (url)
+  {
+    if (!(url instanceof URL))
+      throw new Error("Invalid URL");
+
+    if (singlePage)
+    {
+      // We generate a filter which only applies to the same protocol and
+      // subdomain, but one which doesn't consider the exact query string or
+      // fragment.
+      // Our logic here is taken from the legacy Firefox extension.
+      // See https://hg.adblockplus.org/adblockplus/file/tip/lib/ui.js#l1517
+      let ending = "|";
+      url.hash = "";
+      if (url.search && url.search.includes("&"))
+      {
+        url.search = "";
+        ending = "?";
+      }
+      filterText = `@@|${url.href}${ending}$document`;
+    }
+    else
+    {
+      hostname = url.hostname;
+    }
+  }
+
+  if (!filterText)
+  {
+    let host = hostname.replace(/^www\./, "");
+    filterText = `@@||${host}^$document`;
+  }
+
+  await ewe.filters.enable([filterText]);
+  if (ewe.subscriptions.getForFilter(filterText).length == 0)
+    await ewe.filters.add([filterText]);
+}
+
 /**
  * Adds an allowing filter for the given page's hostname, if it is not
  * already allowlisted. Note: If a disabled allowing filter exists, we
@@ -66,36 +111,16 @@ port.on("filters.isAllowlisted", message =>
  * @event "filters.allowlist"
  * @property {boolean} [singlePage=false]
  *   If true we add an allowing filter for the given page's URL instead.
+ * @property {object} tab
+ *   Tab that contains the page to allowlist.
  */
 port.on("filters.allowlist", async message =>
 {
   let page = new ext.Page(message.tab);
-  let filterText;
-  if (!message.singlePage)
-  {
-    let host = page.url.hostname.replace(/^www\./, "");
-    filterText = `@@||${host}^$document`;
-  }
-  else
-  {
-    // We generate a filter which only applies to the same protocol (e.g. http)
-    // and subdomain, but one which doesn't consider the exact query string or
-    // fragment.
-    // Our logic here is taken from the legacy Firefox extension.
-    // See https://hg.adblockplus.org/adblockplus/file/tip/lib/ui.js#l1517
-    let ending = "|";
-    page.url.hash = "";
-    if (page.url.search && page.url.search.includes("&"))
-    {
-      page.url.search = "";
-      ending = "?";
-    }
-    filterText = `@@|${page.url.href}${ending}$document`;
-  }
-
-  await ewe.filters.enable([filterText]);
-  if (ewe.subscriptions.getForFilter(filterText).length == 0)
-    await ewe.filters.add([filterText]);
+  await allowlist({
+    singlePage: message.singlePage,
+    url: page.url
+  });
 });
 
 /**

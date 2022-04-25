@@ -41,6 +41,7 @@ export default {
           "adblockpluschrome/lib/contentFiltering.js",
           "adblockpluschrome/lib/messageResponder.js",
           "adblockpluschrome/lib/filterConfiguration.js",
+          "lib/public-api/allowlisting.js",
           // marked as optional using wildcard
           "vendor/abp-snippets/dist/ml/bundle*.ml.mjs"
         ]
