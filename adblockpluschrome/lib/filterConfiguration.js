@@ -294,8 +294,23 @@ port.on("filters.importRaw", async(message, sender) =>
 
   if (errors.length == 0)
   {
-    await ewe.filters.add(filterTexts);
-    await ewe.filters.enable(filterTexts);
+    // We need to add one filter at a time, so that we can ignore errors about
+    // duplicate filters
+    for (const filterText of filterTexts)
+    {
+      try
+      {
+        await ewe.filters.add([filterText]);
+        await ewe.filters.enable([filterText]);
+      }
+      catch (ex)
+      {
+        // If we add an existing filter again, we ignore the resulting error to
+        // avoid showing unnecessary error messages to the user
+        if (ex.type !== "storage_duplicate_filters")
+          errors.push(ex);
+      }
+    }
   }
 
   return errors;
@@ -551,8 +566,18 @@ async function filtersAdd(text)
 
   if (filterText)
   {
-    await ewe.filters.add([filterText]);
-    await ewe.filters.enable([filterText]);
+    try
+    {
+      await ewe.filters.add([filterText]);
+      await ewe.filters.enable([filterText]);
+    }
+    catch (ex)
+    {
+      // If we add an existing filter again, we ignore the resulting error to
+      // avoid showing unnecessary error messages to the user
+      if (ex.type !== "storage_duplicate_filters")
+        return [ex];
+    }
   }
 
   return [];

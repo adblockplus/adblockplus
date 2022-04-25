@@ -97,7 +97,7 @@
     },
     "install": [
       "npm install --loglevel=error --no-audit --no-fund --no-optional --no-save --prefix adblockpluschrome",
-      "npm install --only=production --loglevel=error --no-audit --no-fund --no-optional --no-save --prefix vendor/webext-sdk",
+      "npm install --loglevel=error --no-audit --no-fund --no-optional --no-save --prefix vendor/webext-sdk",
       "[ -f ./vendor/abp-snippets/package.json ] && npm install --only=production --loglevel=error --no-audit --no-fund --no-save --prefix vendor/abp-snippets || echo 'Skipping abp-snippets installation'"
     ],
     "lint": {
