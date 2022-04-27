@@ -121,15 +121,6 @@ The `./test/integration` folder contains various integration tests files. Those
 can be run together with other tests via `npm test` or separately via
 `npm $ test.integration`.
 
-### Smoke testing
-
-The `/test/smoke` folder contains essential files to test custom elements in
-isolation. As it's done for `io-element`, you need to add at least an
-`io-element.js` test file and its `io-element.html` related page.
-
-You can run `npm run $ test:io-element.js` to create the HTML page inside the
-`/smoke` folder.
-
 ### End-to-end testing
 
 The `./test/end-to-end/tests` folder contains various end-to-end tests. After

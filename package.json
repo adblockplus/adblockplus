@@ -42,13 +42,6 @@
       ],
       "popup": "$ create.bundle popup",
       "problem": "$ create.bundle problem",
-      "test": [
-        [
-          "if [ ! -z $1 ]; then",
-          " echo \"/* eslint-disable */$(browserify --node ./test/smoke/tests/$1.js)\">./smoke/$1.js;",
-          "fi"
-        ]
-      ],
       "updates": "$ create.bundle updates"
     },
     "create": {
@@ -66,24 +59,7 @@
         "snippets": "[ -f ./vendor/abp-snippets/package.json ] && npm run --prefix ./vendor/abp-snippets build || echo 'Skipping snippets'",
         "ui": "$ bundle"
       },
-      "js": "echo \"/* eslint-disable */$(browserify --node $1)\">$2",
-      "test": {
-        "component": {
-          "css": "$ create.test.css $1",
-          "js": [
-            "$ create.test.js $1",
-            "$ bundle.test $1"
-          ]
-        },
-        "css": [
-          "sass --no-source-map ./css/$1.scss ./smoke/css/$1.css",
-          "cp -R ./skin ./smoke/"
-        ],
-        "js": [
-          "mkdir -p smoke",
-          "cp -R ./test/smoke/tests/{locale,background.html,$1.*} ./smoke"
-        ]
-      }
+      "js": "echo \"/* eslint-disable */$(browserify --node $1)\">$2"
     },
     "crowdin": {
       "download-translations": [
@@ -120,34 +96,7 @@
     },
     "test": {
       "unit": "mocha ./test/unit",
-      "integration": "mocha ./test/integration",
-      "icons": "cp -R ./skin/icons ./smoke",
-      "io-checkbox": "$ create.test.component io-checkbox",
-      "io-element": {
-        "js": [
-          "$ create.test.js io-element",
-          "$ bundle.test io-element"
-        ]
-      },
-      "io-filter-search": "$ create.test.component io-filter-search",
-      "io-filter-list": "$ create.test.component io-filter-list",
-      "io-filter-table": "$ create.test.component io-filter-table",
-      "io-highlighter": {
-        "css": [
-          "$ create.test.css io-highlighter",
-          "cp -R ./skin/icons smoke/css",
-          "cp ./test/smoke/tests/image.base64.txt ./smoke"
-        ],
-        "js": [
-          "$ create.test.js io-highlighter",
-          "$ bundle.test io-highlighter"
-        ]
-      },
-      "io-list-box": "$ create.test.component io-list-box",
-      "io-popout": "$ create.test.component io-popout",
-      "io-scrollbar": "$ create.test.component io-scrollbar",
-      "io-steps": "$ create.test.component io-steps",
-      "io-toggle": "$ create.test.component io-toggle"
+      "integration": "mocha ./test/integration"
     },
     "watch": {
       "bundle": "watch 'npm run bundle' ./css ./js",
@@ -195,7 +144,6 @@
     "js-yaml": "3.14.1",
     "minimist": "1.2.5",
     "mocha": "6.2.3",
-    "nightmare": "3.0.2",
     "node-fetch": "2.6.1",
     "stylelint": "10.1.0",
     "stylelint-config-eyeo": "1.0.3",

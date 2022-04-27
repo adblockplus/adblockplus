@@ -195,7 +195,7 @@
   browser.tabs.captureVisibleTab = (tabId, options) =>
   {
     log(`Take screenshot of tab with ID ${tabId || activeTab.id}`);
-    return fetch("../test/smoke/tests/image.base64.txt")
+    return fetch("./ext/image.base64.txt")
       .then(body => body.text());
   };
 

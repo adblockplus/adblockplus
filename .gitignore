@@ -1,7 +1,6 @@
 /mocks/dist/
 /node_modules/
 /screenshots/
-/smoke/
 /skin/icons/toolbar/*.png
 /skin/*.css
 /*.js

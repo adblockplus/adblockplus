@@ -47,7 +47,6 @@ async function mustBuildUI(lastUIBuildTime)
         "../ext/**",
         "../mocks/**",
         "../node_modules/**",
-        "../smoke/**",
         "../test/**"
       ]
     }
