@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {waitForExtension} = require("../helpers");
+const {afterSequence, beforeSequence} = require("../helpers");
 const {expect} = require("chai");
 const PopupPage = require("../page-objects/popup.page");
 const GeneralPage = require("../page-objects/general.page");
@@ -27,14 +27,12 @@ describe.skip("test filter list suggestion", () =>
 {
   beforeEach(async() =>
   {
-    const [origin] = await waitForExtension();
-    await browser.url(`${origin}/desktop-options.html`);
-    globalOrigin = origin;
+    globalOrigin = await beforeSequence();
   });
 
   afterEach(async() =>
   {
-    await browser.reloadSession();
+    await afterSequence();
   });
 
   it("should display default behaviour", async() =>

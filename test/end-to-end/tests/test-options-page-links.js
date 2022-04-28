@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {waitForExtension} = require("../helpers");
+const {afterSequence, beforeSequence} = require("../helpers");
 const {expect} = require("chai");
 const FooterChunk = require("../page-objects/footer.chunk");
 const GeneralPage = require("../page-objects/general.page");
@@ -31,13 +31,12 @@ describe("test options page links", () =>
 {
   beforeEach(async() =>
   {
-    const [origin] = await waitForExtension();
-    await browser.url(`${origin}/desktop-options.html`);
+    await beforeSequence();
   });
 
   afterEach(async() =>
   {
-    await browser.closeWindow();
+    await afterSequence();
   });
 
   it("should open contribute page", async() =>
@@ -124,9 +123,18 @@ describe("test options page links", () =>
     const helpPage = new HelpPage(browser);
     await helpPage.init();
     await helpPage.clickForumLink();
-    await helpPage.switchToForumTab();
-    expect(await helpPage.getCurrentUrl()).to.equal(
-      dataLinks.forumUrl);
+    if (browser.capabilities.browserName == "firefox")
+    {
+      await helpPage.switchToForumTabFirefox();
+      expect(await helpPage.getCurrentUrl()).to.equal(
+        dataLinks.forumUrlFirefox);
+    }
+    else if (browser.capabilities.browserName == "chrome")
+    {
+      await helpPage.switchToForumTabChrome();
+      expect(await helpPage.getCurrentUrl()).to.equal(
+        dataLinks.forumUrlChrome);
+    }
   });
 
   it("should open twitter page", async() =>

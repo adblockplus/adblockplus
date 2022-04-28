@@ -426,7 +426,7 @@ class AdvancedPage extends BasePage
 
   async clickAddAFilterListButton()
   {
-    await (await this.addAFilterListButton).click();
+    await this.waitForEnabledThenClick(this.addAFilterListButton);
   }
 
   async clickAddBuiltinFilterListButton()
@@ -441,7 +441,7 @@ class AdvancedPage extends BasePage
 
   async clickAddNewFilterListButton()
   {
-    await (await this.addNewFilterListButton).click();
+    await this.waitForEnabledThenClick(this.addNewFilterListButton);
   }
 
   async clickCancelAddingFLButton()
@@ -496,7 +496,7 @@ class AdvancedPage extends BasePage
 
   async clickEasyListFLGearIcon()
   {
-    await (await this.easyListFLGearIcon).click();
+    await this.waitForEnabledThenClick(this.easyListFLGearIcon);
   }
 
   async clickEasyListFLSourceButton()
@@ -511,12 +511,12 @@ class AdvancedPage extends BasePage
 
   async clickEasyListFLTrashButton()
   {
-    await (await this.easyListFLTrashButton).click();
+    await this.waitForEnabledThenClick(this.easyListFLTrashButton);
   }
 
   async clickEasyListFLUpdateNowButton()
   {
-    await (await this.easyListFLUpdateNowButton).click();
+    await this.waitForEnabledThenClick(this.easyListFLUpdateNowButton);
   }
 
   async clickEasyListFLWebsiteButton()
@@ -551,7 +551,8 @@ class AdvancedPage extends BasePage
 
   async clickShowAdblockPlusPanelTooltipIcon()
   {
-    await (await this.showAdblockPlusPanelTooltipIcon).click();
+    await this.waitForEnabledThenClick(this.
+      showAdblockPlusPanelTooltipIcon);
   }
 
   async clickShowBlockElementCheckbox()
@@ -561,7 +562,8 @@ class AdvancedPage extends BasePage
 
   async clickShowBlockElementTooltipIcon()
   {
-    await (await this.showBlockElementTooltipIcon).click();
+    await this.waitForEnabledThenClick(this.
+      showBlockElementTooltipIcon);
   }
 
   async clickShowNumberOfAdsBlockedCheckbox()
@@ -576,7 +578,8 @@ class AdvancedPage extends BasePage
 
   async clickShowUsefulNotificationsTooltipIcon()
   {
-    await (await this.showUsefulNotificationsTooltipIcon).click();
+    await this.waitForEnabledThenClick(this.
+      showUsefulNotificationsTooltipIcon);
   }
 
   async clickTurnOnDebugElementCheckbox()
@@ -586,7 +589,8 @@ class AdvancedPage extends BasePage
 
   async clickTurnOnDebugElementTooltipIcon()
   {
-    await (await this.turnOnDebugElementTooltipIcon).click();
+    await this.waitForEnabledThenClick(this.
+      turnOnDebugElementTooltipIcon);
   }
 
   async clickUpdateAllFilterlistsButton()
@@ -630,10 +634,10 @@ class AdvancedPage extends BasePage
     getAttribute("aria-checked") === "true";
   }
 
-  async isAbpFiltersFLUpdating()
+  async isAbpFiltersFLUpdating(timeout = 5000, reverse = false)
   {
-    return await (await this.abpFiltersFL).
-    getAttribute("class") === "show-message";
+    return await this.waitUntilAttributeValueIs(
+      this.abpFiltersFL, "class", "show-message", timeout, reverse);
   }
 
   async isAbpFiltersFLUpdatingDone()
@@ -674,10 +678,12 @@ class AdvancedPage extends BasePage
       isEnabled();
   }
 
-  async isAllowNonintrusiveAdvertisingFLUpdating()
+  async isAllowNonintrusiveAdvertisingFLUpdating(timeout = 5000,
+                                                 reverse = false)
   {
-    return await (await this.allowNonintrusiveAdvertisingFL).
-    getAttribute("class") === "show-message";
+    return await this.waitUntilAttributeValueIs(
+      this.allowNonintrusiveAdvertisingFL, "class", "show-message",
+      timeout, reverse);
   }
 
   async isAllowNonintrusiveAdvertisingFLUpdatingDone()
@@ -772,8 +778,8 @@ class AdvancedPage extends BasePage
 
   async isEasyListFLUpdating()
   {
-    return await (await this.easyListFL).
-    getAttribute("class") === "show-message";
+    return await this.waitUntilAttributeValueIs(
+      this.easyListFL, "class", "show-message");
   }
 
   async isEasyListFLUpdatingDone()
@@ -828,10 +834,12 @@ class AdvancedPage extends BasePage
     return await this.waitForDisplayedNoError(this.listeFREasyListFL);
   }
 
-  async isListeFREasyListFLStatusToggleSelected()
+  async isListeFREasyListFLStatusToggleSelected(expectedValue = "true",
+                                                timeoutVal = 3000)
   {
-    return await (await this.listeFREasyListFLStatusToggle).
-    getAttribute("aria-checked") === "true";
+    return await this.waitUntilAttributeValueIs(
+      this.listeFREasyListFLStatusToggle, "aria-checked",
+      expectedValue, timeoutVal);
   }
 
   async isShowAdblockPlusPanelCheckboxSelected(expectedValue = "true",
@@ -842,9 +850,10 @@ class AdvancedPage extends BasePage
       expectedValue, timeoutVal);
   }
 
-  async isShowAdblockPlusPanelTooltipTextDisplayed()
+  async isShowAdblockPlusPanelTooltipTextDisplayed(reverseOption = false)
   {
-    return await (await this.showAdblockPlusPanelTooltipText).isDisplayed();
+    return await this.waitForDisplayedNoError(this.
+      showAdblockPlusPanelTooltipText, reverseOption);
   }
 
   async isShowBlockElementCheckboxSelected(expectedValue = "true",
@@ -855,9 +864,10 @@ class AdvancedPage extends BasePage
       expectedValue, timeoutVal);
   }
 
-  async isShowBlockElementTooltipTextDisplayed()
+  async isShowBlockElementTooltipTextDisplayed(reverseOption = false)
   {
-    return await (await this.showBlockElementTooltipText).isDisplayed();
+    return await this.waitForDisplayedNoError(this.
+      showBlockElementTooltipText, reverseOption);
   }
 
   async isShowNumberOfAdsBlockedCheckboxSelected(expectedValue = "true",
@@ -876,9 +886,10 @@ class AdvancedPage extends BasePage
       expectedValue, timeoutVal);
   }
 
-  async isShowUsefulNotificationsTooltipTextDisplayed()
+  async isShowUsefulNotificationsTooltipTextDisplayed(reverseOption = false)
   {
-    return await (await this.showUsefulNotificationsTooltipText).isDisplayed();
+    return await this.waitForDisplayedNoError(this.
+      showUsefulNotificationsTooltipText, reverseOption);
   }
 
   async isTestFilterListDisplayed()
@@ -905,9 +916,10 @@ class AdvancedPage extends BasePage
       expectedValue, timeoutVal);
   }
 
-  async isTurnOnDebugElementTooltipTextDisplayed()
+  async isTurnOnDebugElementTooltipTextDisplayed(reverseOption = false)
   {
-    return await (await this.turnOnDebugElementTooltipText).isDisplayed();
+    return await this.waitForDisplayedNoError(this.
+      turnOnDebugElementTooltipText, reverseOption);
   }
 
   async isUrlErrorMessageDisplayed()
@@ -917,6 +929,7 @@ class AdvancedPage extends BasePage
 
   async hoverCustomFilterListsFirstItemAlertIcon()
   {
+    await (await this.customFilterListsFirstItemAlertIcon).scrollIntoView();
     await (await this.customFilterListsFirstItemAlertIcon).moveTo();
   }
 
@@ -943,12 +956,15 @@ class AdvancedPage extends BasePage
 
   async typeTextToFilterListUrlInput(text)
   {
-    await (await this.filterListUrlInput).setValue(text);
+    await (await this.filterListUrlInput).click();
+    await this.browser.keys(text);
   }
 
   async typeTextToAddCustomFilterListInput(text)
   {
-    await (await this.addCustomFilterListInput).setValue(text);
+    await (await this.addCustomFilterListInput).click();
+    await (await this.addCustomFilterListInput).clearValue();
+    await this.browser.keys(text);
   }
 
   async verifyTextPresentInCustomFLTable(text, timeoutVal = 3000)
@@ -958,6 +974,7 @@ class AdvancedPage extends BasePage
     {
       for (const element of (await this.customFilterListsTableRowsTexts))
       {
+        await element.scrollIntoView();
         if (await element.getText() == text)
         {
           return true;
@@ -987,7 +1004,7 @@ class AdvancedPage extends BasePage
   }
 
   async waitForCustomFilterListsNthItemTextToEqual(text, n,
-                                                   timeoutVal = 3000)
+                                                   timeoutVal = 5000)
   {
     return await this.waitUntilTextIs(
       this.customFilterListsNthItemText(n),

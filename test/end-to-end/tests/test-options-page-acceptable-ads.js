@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {waitForExtension} = require("../helpers");
+const {afterSequence, beforeSequence} = require("../helpers");
 const {expect} = require("chai");
 const GeneralPage = require("../page-objects/general.page");
 const AdvancedPage = require("../page-objects/advanced.page");
@@ -28,8 +28,12 @@ describe("test options page general tab acceptable ads", () =>
 {
   beforeEach(async() =>
   {
-    const [origin] = await waitForExtension();
-    await browser.url(`${origin}/desktop-options.html`);
+    await beforeSequence();
+  });
+
+  afterEach(async() =>
+  {
+    await afterSequence();
   });
 
   it("should display AA default state", async() =>
@@ -38,7 +42,7 @@ describe("test options page general tab acceptable ads", () =>
     expect(await generalPage.
       isAllowAcceptableAdsCheckboxSelected()).to.be.true;
     expect(await generalPage.
-      isOnlyAllowAdsWithoutTrackingCheckboxSelected()).to.be.false;
+      isOnlyAllowAdsWithoutTrackingCheckboxSelected(true)).to.be.true;
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
     expect(await advancedPage.
@@ -66,7 +70,7 @@ describe("test options page general tab acceptable ads", () =>
     const generalPage = new GeneralPage(browser);
     await generalPage.clickAllowAcceptableAdsCheckbox();
     expect(await generalPage.
-      isAllowAcceptableAdsCheckboxSelected()).to.be.false;
+      isAllowAcceptableAdsCheckboxSelected(true)).to.be.true;
     const acceptableAdsDialogChunk = new AcceptableAdsDialogChunk(browser);
     expect(await acceptableAdsDialogChunk.isAADialogDisplayed()).to.be.true;
     await acceptableAdsDialogChunk.clickNoThanksButton();

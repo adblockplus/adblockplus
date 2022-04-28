@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {waitForExtension} = require("../helpers");
+const {afterSequence, beforeSequence} = require("../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
 const GeneralPage = require("../page-objects/general.page");
@@ -26,8 +26,12 @@ describe("test advanced tab - filter lists", () =>
 {
   beforeEach(async() =>
   {
-    const [origin] = await waitForExtension();
-    await browser.url(`${origin}/desktop-options.html`);
+    await beforeSequence();
+  });
+
+  afterEach(async() =>
+  {
+    await afterSequence();
   });
 
   it("should display default state", async() =>
@@ -53,10 +57,13 @@ describe("test advanced tab - filter lists", () =>
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
     await advancedPage.clickUpdateAllFilterlistsButton();
+    advancedPage.clickUpdateAllFilterlistsButton();
     expect(await advancedPage.
       isAbpFiltersFLUpdating()).to.be.true;
+    advancedPage.clickUpdateAllFilterlistsButton();
     expect(await advancedPage.
       isEasyListFLUpdating()).to.be.true;
+    advancedPage.clickUpdateAllFilterlistsButton();
     expect(await advancedPage.
       isAllowNonintrusiveAdvertisingFLUpdating()).to.be.true;
     expect(await advancedPage.
@@ -71,21 +78,23 @@ describe("test advanced tab - filter lists", () =>
       waitForEasyListFLLastUpdatedTextToEqual("Just now")).to.be.true;
     expect(await advancedPage.
       waitForAllowNonintrusiveFLLastUpdatedTextToEqual("Just now")).to.be.true;
-  });
+  }, 2);
 
-  it("should update a filter lists", async() =>
+  it("should update a filter list", async() =>
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
     await advancedPage.clickEasyListFLGearIcon();
     await advancedPage.clickEasyListFLUpdateNowButton();
+    await advancedPage.clickEasyListFLGearIcon();
+    advancedPage.clickEasyListFLUpdateNowButton();
     expect(await advancedPage.
       isEasyListFLUpdating()).to.be.true;
     expect(await advancedPage.
-      isAbpFiltersFLUpdating()).to.be.false;
+      isAbpFiltersFLUpdating(1000, true)).to.be.true;
     expect(await advancedPage.
-      isAllowNonintrusiveAdvertisingFLUpdating()).to.be.false;
-  });
+      isAllowNonintrusiveAdvertisingFLUpdating(1000, true)).to.be.true;
+  }, 3);
 
   it("should go to filter list web page", async() =>
   {
@@ -132,7 +141,7 @@ describe("test advanced tab - filter lists", () =>
     await generalPage.init();
     expect(await generalPage.getLanguagesTableEmptyPlaceholderText()).to.equal(
       "You don't have any language-specific filters.");
-  });
+  }, 2);
 
   it("should add a built-in filter list", async() =>
   {
@@ -213,5 +222,5 @@ describe("test advanced tab - filter lists", () =>
       isAbpTestFilterErrorIconDisplayed(true)).to.be.true;
     expect(await advancedPage.
       isCustomFilterListsFirstItemToggleSelected()).to.be.true;
-  });
+  }, 3);
 });

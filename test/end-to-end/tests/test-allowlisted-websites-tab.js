@@ -19,17 +19,16 @@
 
 "use strict";
 
-const {waitForExtension} = require("../helpers");
+const {beforeSequence} = require("../helpers");
 const {expect} = require("chai");
 const AllowlistedWebsitesPage =
   require("../page-objects/allowlistedWebsites.page");
 
 describe("test allowlisted websites tab", () =>
 {
-  beforeEach(async() =>
+  before(async() =>
   {
-    const [origin] = await waitForExtension();
-    await browser.url(`${origin}/desktop-options.html`);
+    await beforeSequence();
   });
 
   it("should display allowlisted websites default state", async() =>
@@ -38,7 +37,7 @@ describe("test allowlisted websites tab", () =>
     await allowistedWebsitesPage.init();
     const attributesOfAllowlistingTableItems = await
       allowistedWebsitesPage.getAttributeOfAllowlistingTableItems("class");
-      attributesOfAllowlistingTableItems.forEach(async(element) =>
+    attributesOfAllowlistingTableItems.forEach(async(element) =>
     {
       expect(element).to.equal("empty-placeholder");
     });

@@ -17,16 +17,15 @@
 
 "use strict";
 
-const {waitForExtension} = require("../helpers");
+const {beforeSequence} = require("../helpers");
 const {expect} = require("chai");
 const GeneralPage = require("../page-objects/general.page");
 
 describe("test options page general tab tracking warning", () =>
 {
-  beforeEach(async() =>
+  before(async() =>
   {
-    const [origin] = await waitForExtension();
-    await browser.url(`${origin}/desktop-options.html`);
+    await beforeSequence();
   });
 
   it("should display tracking warning", async() =>

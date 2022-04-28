@@ -126,8 +126,10 @@ const problemPageData = [
   {
     testName: "Problem - Uninstall and reinstall",
     elementToClick: "clickHereToReinstallButton",
-    newTabUrl: "https://chrome.google.com/webstore/detail/adblock-plus-" +
-    "free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb",
+    newTabUrlChrome: "https://chrome.google.com/webstore/detail/adblock-" +
+    "plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb",
+    newTabUrlFirefox: "https://addons.mozilla.org/en-GB/firefox/" +
+    "addon/adblock-plus/",
     webstoreCookiesConsentPageTitle: "Before you continue"
   }
 ];
@@ -147,8 +149,10 @@ const updatesPageData = [
   {
     testName: "Updates - Rate it",
     elementToClick: "rateItButton",
-    newTabUrl: "https://chrome.google.com/webstore/detail/adblock-plus-free" +
-    "-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb/reviews?ref=store-rating",
+    newTabUrlChrome: "https://chrome.google.com/webstore/detail/adblock-plus" +
+    "-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb/reviews?ref=store-rating",
+    newTabUrlFirefox: "https://addons.mozilla.org/en-GB/firefox/" +
+    "addon/adblock-plus/",
     webstoreCookiesConsentPageTitle: "Before you continue"
   },
   {

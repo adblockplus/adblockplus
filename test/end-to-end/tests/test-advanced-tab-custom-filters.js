@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {waitForExtension} = require("../helpers");
+const {afterSequence, beforeSequence} = require("../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
 const customErrors = require("../test-data/data-custom-filters").customErrors;
@@ -28,13 +28,12 @@ describe("test advanced tab custom filters", () =>
 {
   beforeEach(async() =>
   {
-    const [origin] = await waitForExtension();
-    await browser.url(`${origin}/desktop-options.html`);
+    await beforeSequence();
   });
 
   afterEach(async() =>
   {
-    await browser.reloadSession();
+    await afterSequence();
   });
 
   it("should display default state", async() =>
@@ -177,7 +176,14 @@ describe("test advanced tab custom filters", () =>
     clipboard.writeSync(multilineString);
     await advancedPage.typeTextToAddCustomFilterListInput(
       "");
-    await browser.keys(["Shift", "Insert"]);
+    const platform = await browser.
+      executeScript("return navigator.platform", []);
+    let pasteKey = "Control";
+    if (platform.includes("Mac"))
+    {
+      pasteKey = "Command";
+    }
+    await browser.keys([pasteKey, "V"]);
     await advancedPage.
       waitForCustomFilterListsNthItemTextToEqual("##.hiding_filter", "1");
     expect(await advancedPage.
@@ -198,7 +204,14 @@ describe("test advanced tab custom filters", () =>
     clipboard.writeSync(multipleFilters);
     await advancedPage.typeTextToAddCustomFilterListInput(
       "");
-    await browser.keys(["Shift", "Insert"]);
+    const platform = await browser.
+      executeScript("return navigator.platform", []);
+    let pasteKey = "Control";
+    if (platform.includes("Mac"))
+    {
+      pasteKey = "Command";
+    }
+    await browser.keys([pasteKey, "V"]);
     await advancedPage.
       waitForCustomFilterListsNthItemTextToEqual("##.hiding_filter", "1");
     await advancedPage.clickCustomFilterListsFirstItemToggle();
@@ -254,7 +267,14 @@ describe("test advanced tab custom filters", () =>
     clipboard.writeSync(multipleFilters);
     await advancedPage.typeTextToAddCustomFilterListInput(
       "");
-    await browser.keys(["Shift", "Insert"]);
+    const platform = await browser.
+      executeScript("return navigator.platform", []);
+    let pasteKey = "Control";
+    if (platform.includes("Mac"))
+    {
+      pasteKey = "Command";
+    }
+    await browser.keys([pasteKey, "V"]);
     await advancedPage.
       verifyTextPresentInCustomFLTable("duplicate");
     await advancedPage.clickCustomFilterListsNthItemCheckbox("3");
@@ -306,7 +326,7 @@ describe("test advanced tab custom filters", () =>
       waitForCustomFilterListsNthItemTextToEqual(text + inputText, "1");
     expect(await advancedPage.
       verifyTextPresentInCustomFLTable(inputText, 200)).to.be.false;
-  });
+  }, 2);
 
   it("should edit a custom filter into an erroneous filter", async() =>
   {
@@ -346,7 +366,14 @@ describe("test advanced tab custom filters", () =>
     clipboard.writeSync(multipleFilters);
     await advancedPage.typeTextToAddCustomFilterListInput(
       "");
-    await browser.keys(["Shift", "Insert"]);
+    const platform = await browser.
+      executeScript("return navigator.platform", []);
+    let pasteKey = "Control";
+    if (platform.includes("Mac"))
+    {
+      pasteKey = "Command";
+    }
+    await browser.keys([pasteKey, "V"]);
     await advancedPage.
       verifyTextPresentInCustomFLTable("duplicate");
     await advancedPage.typeTextToAddCustomFilterListInput(
@@ -365,7 +392,7 @@ describe("test advanced tab custom filters", () =>
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
-    const inputText = "test/filter.png";
+    const inputText = "www.adblock.org";
     await advancedPage.typeTextToAddCustomFilterListInput(inputText);
     await advancedPage.clickAddCustomFilterListButton();
     await advancedPage.clickCustomFilterListsNthItemCheckbox("1");
@@ -377,9 +404,18 @@ describe("test advanced tab custom filters", () =>
     }
     expect(await advancedPage.
       verifyTextPresentInCustomFLTable(inputText, 200)).to.be.false;
-    await browser.keys(["Shift", "Insert"]);
+    const clipboard = require("clipboardy");
+    await browser.keys(clipboard.readSync());
     await browser.keys("Enter");
-    expect(await advancedPage.
-      verifyTextPresentInCustomFLTable(inputText)).to.be.true;
-  });
+    if (await advancedPage.verifyTextPresentInCustomFLTable(inputText))
+    {
+      expect(await advancedPage.
+        verifyTextPresentInCustomFLTable(inputText)).to.be.true;
+    }
+    else
+    {
+      expect(await advancedPage.
+        verifyTextPresentInCustomFLTable(inputText + inputText)).to.be.true;
+    }
+  }, 2);
 });

@@ -47,14 +47,22 @@ class HeartDialogChunk extends BasePage
     await (await this.donateButton).click();
   }
 
-  async isDonateButtonDisplayed()
+  async isDonateButtonDisplayed(reverseOption = false)
   {
-    return await (await this.donateButton).isDisplayed();
+    return await this.waitForDisplayedNoError(this.
+      donateButton, reverseOption);
   }
 
-  async isRateUsButtonDisplayed()
+  async isRateUsButtonDisplayed(reverseOption = false)
   {
-    return await (await this.rateUsButton).isDisplayed();
+    return await this.waitForDisplayedNoError(this.
+      rateUsButton, reverseOption);
+  }
+
+  async switchToAddonsTab()
+  {
+    await this.switchToTab("Adblock Plus – Get this Extension" +
+    " for 🦊 Firefox (en-GB)");
   }
 
   async switchToWebstoreCookiesAgreementTab()

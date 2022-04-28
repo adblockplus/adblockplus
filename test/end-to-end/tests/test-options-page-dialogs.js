@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {waitForExtension} = require("../helpers");
+const {beforeSequence} = require("../helpers");
 const {expect} = require("chai");
 const FooterChunk = require("../page-objects/footer.chunk");
 const AboutDialogChunk = require("../page-objects/aboutDialog.chunk");
@@ -28,10 +28,9 @@ const GeneralPage = require("../page-objects/general.page");
 
 describe("test options page dialogs", () =>
 {
-  beforeEach(async() =>
+  before(async() =>
   {
-    const [origin] = await waitForExtension();
-    await browser.url(`${origin}/desktop-options.html`);
+    await beforeSequence();
   });
 
   it("should display copyright and version number", async() =>
@@ -53,8 +52,8 @@ describe("test options page dialogs", () =>
     expect(await heartDialogChunk.isDonateButtonDisplayed()).to.be.true;
     expect(await heartDialogChunk.isRateUsButtonDisplayed()).to.be.true;
     await footerChunk.clickHeartButton();
-    expect(await heartDialogChunk.isDonateButtonDisplayed()).to.be.false;
-    expect(await heartDialogChunk.isRateUsButtonDisplayed()).to.be.false;
+    expect(await heartDialogChunk.isDonateButtonDisplayed(true)).to.be.true;
+    expect(await heartDialogChunk.isRateUsButtonDisplayed(true)).to.be.true;
   });
 
   it("should contain go to survey and no thanks button", async() =>

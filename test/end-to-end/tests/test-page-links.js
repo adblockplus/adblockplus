@@ -17,10 +17,11 @@
 
 "use strict";
 
-const {waitForExtension} = require("../helpers");
+const {afterSequence, beforeSequence} = require("../helpers");
 const {expect} = require("chai");
 const DayOnePage = require("../page-objects/dayOne.page");
 const FirstRunPage = require("../page-objects/firstRun.page");
+const HeartDialogChunk = require("../page-objects/heartDialog.chunk");
 const ProblemPage = require("../page-objects/problem.page");
 const UpdatesPage = require("../page-objects/updates.page");
 const dayOnePageData =
@@ -37,14 +38,12 @@ describe("test page links", () =>
 {
   beforeEach(async() =>
   {
-    const [origin] = await waitForExtension();
-    await browser.url(`${origin}/desktop-options.html`);
-    globalOrigin = origin;
+    globalOrigin = await beforeSequence();
   });
 
   afterEach(async() =>
   {
-    await browser.reloadSession();
+    await afterSequence();
   });
 
   firstRunPageData.forEach(async(dataSet) =>
@@ -106,14 +105,25 @@ describe("test page links", () =>
       {
         await problemPage.waitForEnabledThenClick(
           problemPage[dataSet.elementToClick]);
-        await problemPage.switchToTab(dataSet.webstoreCookiesConsentPageTitle);
-        await browser.keys("Tab");
-        await browser.keys("Tab");
-        await browser.keys("Tab");
-        await browser.keys("Tab");
-        await browser.keys("Enter");
-        expect(await problemPage.getCurrentUrl()).to.equal(
-          dataSet.newTabUrl);
+        if (browser.capabilities.browserName == "chrome")
+        {
+          await problemPage.switchToTab(
+            dataSet.webstoreCookiesConsentPageTitle);
+          await browser.keys("Tab");
+          await browser.keys("Tab");
+          await browser.keys("Tab");
+          await browser.keys("Tab");
+          await browser.keys("Enter");
+          expect(await problemPage.getCurrentUrl()).to.equal(
+            dataSet.newTabUrlChrome);
+        }
+        else if (browser.capabilities.browserName == "firefox")
+        {
+          const heartDialogChunk = new HeartDialogChunk(browser);
+          await heartDialogChunk.switchToAddonsTab();
+          expect(await heartDialogChunk.getCurrentUrl()).to.include(
+            dataSet.newTabUrlFirefox);
+        }
       }
       else
       {
@@ -141,14 +151,25 @@ describe("test page links", () =>
       {
         await updatesPage.waitForEnabledThenClick(
           updatesPage[dataSet.elementToClick]);
-        await updatesPage.switchToTab(dataSet.webstoreCookiesConsentPageTitle);
-        await browser.keys("Tab");
-        await browser.keys("Tab");
-        await browser.keys("Tab");
-        await browser.keys("Tab");
-        await browser.keys("Enter");
-        expect(await updatesPage.getCurrentUrl()).to.equal(
-          dataSet.newTabUrl);
+        if (browser.capabilities.browserName == "chrome")
+        {
+          await updatesPage.switchToTab(
+            dataSet.webstoreCookiesConsentPageTitle);
+          await browser.keys("Tab");
+          await browser.keys("Tab");
+          await browser.keys("Tab");
+          await browser.keys("Tab");
+          await browser.keys("Enter");
+          expect(await updatesPage.getCurrentUrl()).to.equal(
+            dataSet.newTabUrlChrome);
+        }
+        else if (browser.capabilities.browserName == "firefox")
+        {
+          const heartDialogChunk = new HeartDialogChunk(browser);
+          await heartDialogChunk.switchToAddonsTab();
+          expect(await heartDialogChunk.getCurrentUrl()).to.include(
+            dataSet.newTabUrlFirefox);
+        }
       }
       else
       {

@@ -1,3 +1,4 @@
+/* eslint-disable quote-props */
 /* eslint-disable max-len */
 /*
  * This file is part of Adblock Plus <https://adblockplus.org/>,
@@ -65,31 +66,32 @@ exports.config = {
   // and 30 processes will get spawned. The property handles how many capabilities
   // from the same test should run tests.
   //
-  maxInstances: 10,
+  maxInstances: 5,
   //
   // If you have trouble getting all important capabilities together, check out the
   // Sauce Labs platform configurator - a great tool to configure your capabilities:
   // https://saucelabs.com/platform/platform-configurator
   //
-  capabilities: [{
+  capabilities: [
+    {
+      browserName: "chrome",
+      "goog:chromeOptions": {
+        args: ["--no-sandbox",
+                 `--load-extension=${helpers.getExtensionPath()},${helpers.helperExtension}`,
+                 `--disable-extensions-except=${helpers.getExtensionPath()},${helpers.helperExtension}`],
+        excludeSwitches: ["disable-extensions"]
+      },
+      acceptInsecureCerts: true
+    },
+    {
+      browserName: "firefox",
+      acceptInsecureCerts: true
+    }
     // maxInstances can get overwritten per capability. So if you have an in-house Selenium
     // grid with only 5 firefox instances available you can make sure that not more than
     // 5 instances get started at a time.
-    "maxInstances": 5,
-    //
-    "browserName": "chrome",
-    "goog:chromeOptions": {
-      args: ["--no-sandbox",
-          `--load-extension=${helpers.getExtensionPath()},${helpers.helperExtension}`,
-          `--disable-extensions-except=${helpers.getExtensionPath()},${helpers.helperExtension}`],
-      excludeSwitches: ["disable-extensions"]
-    },
-    "acceptInsecureCerts": true
-    // If outputDir is provided WebdriverIO can capture driver session logs
-    // it is possible to configure which logTypes to include/exclude.
-    // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
-    // excludeDriverLogs: ['bugreport', 'server'],
-  }],
+    // maxInstances: 5,
+  ],
   //
   // ===================
   // Test Configurations
@@ -137,7 +139,7 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: ["chromedriver"],
+  services: ["chromedriver", "geckodriver"],
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
   // see also: https://webdriver.io/docs/frameworks
@@ -158,6 +160,7 @@ exports.config = {
   // Test reporter for stdout.
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter
+  // reporters: ["spec"],
   reporters: [["allure", {
     outputDir: "allure-results",
     disableWebdriverStepsReporting: true,
@@ -213,10 +216,9 @@ exports.config = {
      * @param {Array.<String>} specs        List of spec file paths that are to be run
      * @param {Object}         browser      instance of created browser/device session
      */
-  before(capabilities, specs)
-  {
-    browser.setWindowSize(1400, 1000);
-  },
+  // before(capabilities, specs)
+  // {
+  // },
   /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name

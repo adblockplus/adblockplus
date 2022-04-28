@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {waitForExtension} = require("../helpers");
+const {afterSequence, beforeSequence} = require("../helpers");
 const {expect} = require("chai");
 const FooterChunk = require("../page-objects/footer.chunk");
 const AboutDialogChunk = require("../page-objects/aboutDialog.chunk");
@@ -31,8 +31,12 @@ describe("test options page dialog links", () =>
 {
   beforeEach(async() =>
   {
-    const [origin] = await waitForExtension();
-    await browser.url(`${origin}/desktop-options.html`);
+    await beforeSequence();
+  });
+
+  afterEach(async() =>
+  {
+    await afterSequence();
   });
 
   it("should open privacy policy page", async() =>
@@ -63,15 +67,24 @@ describe("test options page dialog links", () =>
     await footerChunk.clickHeartButton();
     const heartDialogChunk = new HeartDialogChunk(browser);
     await heartDialogChunk.clickRateUsButton();
-    await heartDialogChunk.switchToWebstoreCookiesAgreementTab();
-    await browser.keys("Tab");
-    await browser.keys("Tab");
-    await browser.keys("Tab");
-    await browser.keys("Tab");
-    await browser.keys("Enter");
-    expect(await heartDialogChunk.getCurrentUrl()).to.include(
-      dataLinks.webstoreUrl);
-  });
+    if (browser.capabilities.browserName == "firefox")
+    {
+      await heartDialogChunk.switchToAddonsTab();
+      expect(await heartDialogChunk.getCurrentUrl()).to.include(
+        dataLinks.addonsUrl);
+    }
+    else if (browser.capabilities.browserName == "chrome")
+    {
+      await heartDialogChunk.switchToWebstoreCookiesAgreementTab();
+      await browser.keys("Tab");
+      await browser.keys("Tab");
+      await browser.keys("Tab");
+      await browser.keys("Tab");
+      await browser.keys("Enter");
+      expect(await heartDialogChunk.getCurrentUrl()).to.include(
+        dataLinks.webstoreUrl);
+    }
+  }, 2);
 
   it("should open donate page", async() =>
   {
@@ -82,7 +95,7 @@ describe("test options page dialog links", () =>
     await heartDialogChunk.switchToDonateTab();
     expect(await heartDialogChunk.getCurrentUrl()).to.equal(
       dataLinks.donateUrl);
-  });
+  }, 2);
 
   it("should open aa survey page", async() =>
   {
@@ -93,5 +106,5 @@ describe("test options page dialog links", () =>
     await acceptableAdsDialogChunk.switchToAASurveyTab();
     expect(await acceptableAdsDialogChunk.getCurrentUrl()).to.equal(
       dataLinks.aaSurveyUrl);
-  });
+  }, 2);
 });

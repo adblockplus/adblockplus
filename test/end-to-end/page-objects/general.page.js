@@ -272,7 +272,8 @@ class GeneralPage extends BasePage
 
   async clickBlockAdditionalTrackingTooltipIcon()
   {
-    await (await this.blockAdditionalTrackingTooltipIcon).click();
+    await this.waitForEnabledThenClick(this.
+      blockAdditionalTrackingTooltipIcon);
   }
 
   async clickBlockCookieWarningsCheckbox()
@@ -282,7 +283,8 @@ class GeneralPage extends BasePage
 
   async clickBlockCookieWarningsTooltipIcon()
   {
-    await (await this.blockCookieWarningsTooltipIcon).click();
+    await this.waitForEnabledThenClick(this.
+      blockCookieWarningsTooltipIcon);
   }
 
   async clickBlockPushNotificationsCheckbox()
@@ -292,7 +294,8 @@ class GeneralPage extends BasePage
 
   async clickBlockPushNotificationsTooltipIcon()
   {
-    await (await this.blockPushNotificationsTooltipIcon).click();
+    await this.waitForEnabledThenClick(this.
+      blockPushNotificationsTooltipIcon);
   }
 
   async clickBlockSocialMediaIconsTrackingCheckbox()
@@ -302,17 +305,19 @@ class GeneralPage extends BasePage
 
   async clickBlockSocialMediaIconsTrackingTooltipIcon()
   {
-    await (await this.blockSocialMediaIconsTrackingTooltipIcon).click();
+    await this.waitForEnabledThenClick(this.
+      blockSocialMediaIconsTrackingTooltipIcon);
   }
 
   async clickDeutschPlusEnglishListItem()
   {
-    await (await this.deutschPlusEnglishListItem).click();
+    await this.scrollIntoViewAndClick(this.deutschPlusEnglishListItem);
   }
 
   async clickDeutschPlusEnglishLanguageTrashIcon()
   {
-    await (await this.deutschPlusEnglishLanguageTrashIcon).click();
+    await this.scrollIntoViewAndClick(this.
+      deutschPlusEnglishLanguageTrashIcon);
   }
 
   async clickEnglishLanguageChangeButton()
@@ -347,7 +352,8 @@ class GeneralPage extends BasePage
 
   async clickOnlyAllowAdsWithoutTrackingCheckbox()
   {
-    await (await this.onlyAllowAdsWithoutTrackingCheckbox).click();
+    await this.waitForEnabledThenClick(this.
+      onlyAllowAdsWithoutTrackingCheckbox);
   }
 
   async clickOkGotItTrackingWarningButton()
@@ -378,6 +384,8 @@ class GeneralPage extends BasePage
 
   async getLanguagesTableEmptyPlaceholderText()
   {
+    await (await this.languagesTableEmptyPlaceholder).
+      waitForEnabled({timeout: 3000});
     return await (await this.languagesTableEmptyPlaceholder).getText();
   }
 
@@ -392,10 +400,13 @@ class GeneralPage extends BasePage
     return await (await this.predefinedDialogTitle).getText();
   }
 
-  async isAllowAcceptableAdsCheckboxSelected()
+  async isAllowAcceptableAdsCheckboxSelected(reverse = false)
   {
-    return await (await this.allowAcceptableAdsCheckbox).
-    getAttribute("aria-checked") === "true";
+    await (await this.allowAcceptableAdsCheckbox).
+      waitForEnabled({timeout: 3000});
+    return await this.waitUntilAttributeValueIs(
+      this.allowAcceptableAdsCheckbox, "aria-checked", "true",
+      3000, reverse);
   }
 
   async isBlockAdditionalTrackingCheckboxSelected()
@@ -404,31 +415,34 @@ class GeneralPage extends BasePage
     getAttribute("aria-checked") === "true";
   }
 
-  async isBlockAdditionalTrackingTooltipTextDisplayed()
+  async isBlockAdditionalTrackingTooltipTextDisplayed(reverseOption = false)
   {
-    return await (await this.blockAdditionalTrackingTooltipText).isDisplayed();
+    return await this.waitForDisplayedNoError(this.
+      blockAdditionalTrackingTooltipText, reverseOption);
   }
 
   async isBlockCookieWarningsCheckboxSelected()
   {
     return await (await this.blockCookieWarningsCheckbox).
-    getAttribute("aria-checked") === "true";
+      getAttribute("aria-checked") === "true";
   }
 
-  async isBlockCookieWarningsTooltipTextDisplayed()
+  async isBlockCookieWarningsTooltipTextDisplayed(reverseOption = false)
   {
-    return await (await this.blockCookieWarningsTooltipText).isDisplayed();
+    return await this.waitForDisplayedNoError(this.
+      blockCookieWarningsTooltipText, reverseOption);
   }
 
   async isBlockPushNotificationsCheckboxSelected()
   {
     return await (await this.blockPushNotificationsCheckbox).
-    getAttribute("aria-checked") === "true";
+      getAttribute("aria-checked") === "true";
   }
 
-  async isBlockPushNotificationsTooltipTextDisplayed()
+  async isBlockPushNotificationsTooltipTextDisplayed(reverseOption = false)
   {
-    return await (await this.blockPushNotificationsTooltipText).isDisplayed();
+    return await this.waitForDisplayedNoError(this.
+      blockPushNotificationsTooltipText, reverseOption);
   }
 
   async isBlockSocialMediaIconsTrackingCheckboxSelected()
@@ -437,26 +451,17 @@ class GeneralPage extends BasePage
     getAttribute("aria-checked") === "true";
   }
 
-  async isBlockSocialMediaIconsTrackingTooltipTextDisplayed()
+  async isBlockSocialMediaIconsTrackingTooltipTextDisplayed(reverseOption =
+  false)
   {
-    return await (await this.blockSocialMediaIconsTrackingTooltipText).
-      isDisplayed();
+    return await this.waitForDisplayedNoError(this.
+      blockSocialMediaIconsTrackingTooltipText, reverseOption);
   }
 
-  async isDeutschPlusEnglishLanguageTableItemDisplayed(wait = false)
+  async isDeutschPlusEnglishLanguageTableItemDisplayed(reverseOption = false)
   {
-    let returnValue = null;
-    if (!wait)
-    {
-      returnValue = await (await this.deutschPlusEnglishLanguageTableItem).
-      isDisplayed();
-    }
-    else
-    {
-      returnValue = await this.waitForDisplayedNoError(this.
-        deutschPlusEnglishLanguageTableItem);
-    }
-    return returnValue;
+    return await this.waitForDisplayedNoError(this.
+      deutschPlusEnglishLanguageTableItem, reverseOption);
   }
 
   async isDeutschPlusEnglishLanguageTrashIconDisplayed()
@@ -476,9 +481,10 @@ class GeneralPage extends BasePage
       englishLanguageChangeButton);
   }
 
-  async isEnglishLanguageTableItemDisplayed()
+  async isEnglishLanguageTableItemDisplayed(reverse = false)
   {
-    return await (await this.englishLanguageTableItem).isDisplayed();
+    return await this.waitForDisplayedNoError(this.
+      englishLanguageTableItem, reverse);
   }
 
   async isEnglishLanguageTrashIconDisplayed()
@@ -486,11 +492,12 @@ class GeneralPage extends BasePage
     return await (await this.englishLanguageTrashIcon).isDisplayed();
   }
 
-  async isFilterListsSuggestionsCheckboxSelected()
+  async isFilterListsSuggestionsCheckboxSelected(timeout = 5000,
+                                                 reverse = false)
   {
-    await this.browser.pause(1000);
-    return await (await this.filterListsSuggestionsCheckbox).
-    getAttribute("aria-checked") === "true";
+    return await this.waitUntilAttributeValueIs(
+      this.filterListsSuggestionsCheckbox, "aria-checked", "true",
+      timeout, reverse);
   }
 
   async isItalianoPlusEnglishLanguageTableItemDisplayed(wait = false)
@@ -509,9 +516,10 @@ class GeneralPage extends BasePage
     return returnValue;
   }
 
-  async isLanguagesDropdownDisplayed()
+  async isLanguagesDropdownDisplayed(reverseOption = false)
   {
-    return await (await this.languagesDropdown).isDisplayed();
+    return await this.waitForDisplayedNoError(this.
+      languagesDropdown, reverseOption);
   }
 
   async isListeFRPlusEasylistLanguageTableItemDisplayed()
@@ -520,10 +528,10 @@ class GeneralPage extends BasePage
     isDisplayed();
   }
 
-  async isNotifyLanguageFilterListsTooltipTextDisplayed()
+  async isNotifyLanguageFilterListsTooltipTextDisplayed(reverseOption = false)
   {
-    return await (await this.notifyLanguageFilterListsTooltipText).
-      isDisplayed();
+    return await this.waitForDisplayedNoError(this.
+      notifyLanguageFilterListsTooltipText, reverseOption);
   }
 
   async isOnlyAllowAdsWithoutTrackingCheckboxEnabled()
@@ -532,15 +540,16 @@ class GeneralPage extends BasePage
     getAttribute("aria-disabled") === "false";
   }
 
-  async isOnlyAllowAdsWithoutTrackingCheckboxSelected()
+  async isOnlyAllowAdsWithoutTrackingCheckboxSelected(reverse = false)
   {
-    return await (await this.onlyAllowAdsWithoutTrackingCheckbox).
-    getAttribute("aria-checked") === "true";
+    return await this.waitUntilAttributeValueIs(
+      this.onlyAllowAdsWithoutTrackingCheckbox, "aria-checked", "true",
+      3000, reverse);
   }
 
   async isTrackingWarningDisplayed()
   {
-    return await (await this.trackingWarning).isDisplayed();
+    return await this.waitForDisplayedNoError(this.trackingWarning);
   }
 
   async isTrackingWarningNotDisplayed()

@@ -31,9 +31,9 @@ class BasePage
 
   async scrollIntoViewAndClick(element)
   {
-    const elem = await element;
-    await elem.scrollIntoView();
-    elem.click();
+    await (await element).waitForClickable({timeout: 3000});
+    await (await element).scrollIntoView();
+    return (await element).click();
   }
 
   async switchToTab(title, timeout = 10000)
@@ -86,10 +86,10 @@ class BasePage
     }
   }
 
-  async waitForEnabledThenClick(element, timeoutMs = 2000)
+  async waitForEnabledThenClick(element, timeoutMs = 3000)
   {
-    await (await element).waitForEnabled({timeout: timeoutMs});
-    await this.browser.pause(500);
+    await (await element).waitForClickable({timeout: timeoutMs});
+    await this.browser.pause(700);
     return (await element).click();
   }
 
@@ -97,6 +97,7 @@ class BasePage
                                   expectedValue, timeoutVal = 5000,
                                   reverse = false)
   {
+    await (await element).waitForEnabled({timeout: 2000});
     return await (await element).
     waitUntil(async function()
     {

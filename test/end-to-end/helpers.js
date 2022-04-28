@@ -21,6 +21,41 @@ const fs = require("fs");
 const BasePage = require("./page-objects/base.page");
 const helperExtension = "helper-extension";
 
+async function afterSequence()
+{
+  await browser.reloadSession();
+}
+
+async function beforeSequence()
+{
+  if (browser.capabilities.browserName == "firefox")
+  {
+    let abpXpiFileName = "undefined";
+    const files = fs.readdirSync(__dirname);
+    files.forEach(async(name) =>
+    {
+      if (/.*\.xpi/.test(name))
+      {
+        abpXpiFileName = name;
+      }
+    });
+    if (abpXpiFileName == "undefined")
+    {
+      console.error("ABP xpi file not found.");
+      process.exit(1);
+    }
+    const abpExtensionXpi = await fs.promises.readFile(abpXpiFileName);
+    const helperExtensionZip = await fs.promises.
+      readFile("helper-extension/helper-extension.zip");
+    await browser.installAddOn(helperExtensionZip.toString("base64"), true);
+    await browser.installAddOn(abpExtensionXpi.toString("base64"), true);
+  }
+  const [origin] = await waitForExtension();
+  await browser.url(`${origin}/desktop-options.html`);
+  await browser.setWindowSize(1400, 1000);
+  return [origin];
+}
+
 function getExtensionPath()
 {
   const extensionPath = "../../adblockpluschrome/devenv.chrome";
@@ -34,7 +69,6 @@ function getExtensionPath()
 
 async function waitForExtension()
 {
-  let extensionHandle;
   let origin;
   const basePage = new BasePage(browser);
   await basePage.switchToTab("Adblock Plus Options");
@@ -43,7 +77,6 @@ async function waitForExtension()
     for (const handle of await browser.getWindowHandles())
     {
       await browser.switchToWindow(handle);
-      extensionHandle = handle;
       origin = await browser.executeAsyncScript(`
         let callback = arguments[arguments.length - 1];
         (async() =>
@@ -65,7 +98,8 @@ async function waitForExtension()
     return false;
   }, {timeout: 5000}, "options page not found");
 
-  return [origin, extensionHandle];
+  return [origin];
 }
 
-module.exports = {getExtensionPath, helperExtension, waitForExtension};
+module.exports = {afterSequence, beforeSequence, getExtensionPath,
+                  helperExtension, waitForExtension};

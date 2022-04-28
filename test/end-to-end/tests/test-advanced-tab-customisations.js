@@ -17,16 +17,15 @@
 
 "use strict";
 
-const {waitForExtension} = require("../helpers");
+const {beforeSequence} = require("../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
 
 describe("test advanced tab customizations", () =>
 {
-  beforeEach(async() =>
+  before(async() =>
   {
-    const [origin] = await waitForExtension();
-    await browser.url(`${origin}/desktop-options.html`);
+    await beforeSequence();
   });
 
   it("should display show number of ads blocked as checked", async() =>

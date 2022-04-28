@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {waitForExtension} = require("../helpers");
+const {afterSequence, beforeSequence} = require("../helpers");
 const {expect} = require("chai");
 const GeneralPage = require("../page-objects/general.page");
 const AdvancedPage = require("../page-objects/advanced.page");
@@ -27,13 +27,12 @@ describe("test options page tooltips", () =>
 {
   beforeEach(async() =>
   {
-    const [origin] = await waitForExtension();
-    await browser.url(`${origin}/desktop-options.html`);
+    await beforeSequence();
   });
 
   afterEach(async() =>
   {
-    await browser.reloadSession();
+    await afterSequence();
   });
 
   it("should open block additional tracking tooltip", async() =>
@@ -46,8 +45,8 @@ describe("test options page tooltips", () =>
       dataTooltips.blockAdditionalTrackingTooltipText);
     await generalPage.clickBlockAdditionalTrackingTooltipIcon();
     expect(await generalPage.
-      isBlockAdditionalTrackingTooltipTextDisplayed()).to.be.false;
-  });
+      isBlockAdditionalTrackingTooltipTextDisplayed(true)).to.be.true;
+  }, 2);
 
   it("should open block cookie warnings tooltip", async() =>
   {
@@ -59,8 +58,8 @@ describe("test options page tooltips", () =>
       dataTooltips.blockCookieWarningsTooltipText);
     await generalPage.clickBlockCookieWarningsTooltipIcon();
     expect(await generalPage.
-      isBlockCookieWarningsTooltipTextDisplayed()).to.be.false;
-  });
+      isBlockCookieWarningsTooltipTextDisplayed(true)).to.be.true;
+  }, 2);
 
   it("should open block push notifications tooltip", async() =>
   {
@@ -72,8 +71,8 @@ describe("test options page tooltips", () =>
       dataTooltips.blockPushNotificationsTooltipText);
     await generalPage.clickBlockPushNotificationsTooltipIcon();
     expect(await generalPage.
-      isBlockPushNotificationsTooltipTextDisplayed()).to.be.false;
-  });
+      isBlockPushNotificationsTooltipTextDisplayed(true)).to.be.true;
+  }, 2);
 
   it("should open block social media icons tracking tooltip", async() =>
   {
@@ -85,8 +84,8 @@ describe("test options page tooltips", () =>
       to.equal(dataTooltips.blockSocialMediaIconsTrackingTooltipText);
     await generalPage.clickBlockSocialMediaIconsTrackingTooltipIcon();
     expect(await generalPage.
-      isBlockSocialMediaIconsTrackingTooltipTextDisplayed()).to.be.false;
-  });
+      isBlockSocialMediaIconsTrackingTooltipTextDisplayed(true)).to.be.true;
+  }, 2);
 
   it("should open notify me of available language fls tooltip", async() =>
   {
@@ -98,8 +97,8 @@ describe("test options page tooltips", () =>
       to.equal(dataTooltips.notifyLanguageFilterListsTooltipText);
     await generalPage.clickNotifyLanguageFilterListsTooltipIcon();
     expect(await generalPage.
-      isNotifyLanguageFilterListsTooltipTextDisplayed()).to.be.false;
-  });
+      isNotifyLanguageFilterListsTooltipTextDisplayed(true)).to.be.true;
+  }, 2);
 
   it("should open show block element tooltip", async() =>
   {
@@ -112,8 +111,8 @@ describe("test options page tooltips", () =>
       to.equal(dataTooltips.showBlockElementTooltipText);
     await advancedPage.clickShowBlockElementTooltipIcon();
     expect(await advancedPage.
-      isShowBlockElementTooltipTextDisplayed()).to.be.false;
-  });
+      isShowBlockElementTooltipTextDisplayed(true)).to.be.true;
+  }, 2);
 
   it("should open adblock plus panel tooltip", async() =>
   {
@@ -126,8 +125,8 @@ describe("test options page tooltips", () =>
       to.equal(dataTooltips.showAdblockPlusPanelTooltipText);
     await advancedPage.clickShowAdblockPlusPanelTooltipIcon();
     expect(await advancedPage.
-      isShowAdblockPlusPanelTooltipTextDisplayed()).to.be.false;
-  });
+      isShowAdblockPlusPanelTooltipTextDisplayed(true)).to.be.true;
+  }, 2);
 
   it("should open turn on debug element tooltip", async() =>
   {
@@ -140,8 +139,8 @@ describe("test options page tooltips", () =>
       to.equal(dataTooltips.turnOnDebugElementTooltipText);
     await advancedPage.clickTurnOnDebugElementTooltipIcon();
     expect(await advancedPage.
-      isTurnOnDebugElementTooltipTextDisplayed()).to.be.false;
-  });
+      isTurnOnDebugElementTooltipTextDisplayed(true)).to.be.true;
+  }, 2);
 
   it("should open show useful notifications tooltip", async() =>
   {
@@ -154,6 +153,6 @@ describe("test options page tooltips", () =>
       to.equal(dataTooltips.showUsefulNotificationsTooltipText);
     await advancedPage.clickShowUsefulNotificationsTooltipIcon();
     expect(await advancedPage.
-      isShowUsefulNotificationsTooltipTextDisplayed()).to.be.false;
-  });
+      isShowUsefulNotificationsTooltipTextDisplayed(true)).to.be.true;
+  }, 2);
 });

@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {waitForExtension} = require("../helpers");
+const {afterSequence, beforeSequence} = require("../helpers");
 const {expect} = require("chai");
 const PopupPage = require("../page-objects/popup.page");
 const notificationScripts =
@@ -28,14 +28,12 @@ describe("test client side notifications appearance", () =>
 {
   beforeEach(async() =>
   {
-    const [origin] = await waitForExtension();
-    await browser.url(`${origin}/desktop-options.html`);
-    globalOrigin = origin;
+    globalOrigin = await beforeSequence();
   });
 
   afterEach(async() =>
   {
-    await browser.reloadSession();
+    await afterSequence();
   });
 
   it("should display critical notification", async() =>
