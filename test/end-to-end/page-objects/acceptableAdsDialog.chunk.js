@@ -44,7 +44,8 @@ class AcceptableAdsDialogChunk extends BasePage
 
   async clickGoToSurveyButton()
   {
-    await (await this.goToSurveyButton).click();
+    await this.waitForEnabledThenClick(this.
+      goToSurveyButton);
   }
 
   async clickNoThanksButton()

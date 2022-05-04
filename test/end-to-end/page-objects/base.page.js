@@ -98,20 +98,29 @@ class BasePage
                                   reverse = false)
   {
     await (await element).waitForEnabled({timeout: 2000});
-    return await (await element).
-    waitUntil(async function()
+    let status;
+    try
     {
-      if (reverse)
+      status = await (await element).
+      waitUntil(async function()
       {
+        if (reverse)
+        {
+          return await (await this.
+          getAttribute(attribute)) != expectedValue;
+        }
         return await (await this.
-        getAttribute(attribute)) != expectedValue;
-      }
-      return await (await this.
-      getAttribute(attribute)) === expectedValue;
-    }, {
-      timeout: timeoutVal,
-      timeoutMsg: "Timeout while waiting on condition."
-    });
+        getAttribute(attribute)) === expectedValue;
+      }, {
+        timeout: timeoutVal,
+        timeoutMsg: "Timeout while waiting on condition."
+      });
+    }
+    catch (error)
+    {
+      status = false;
+    }
+    return status;
   }
 
   async waitUntilTextIs(element, text,

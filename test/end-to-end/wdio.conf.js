@@ -48,7 +48,7 @@ exports.config = {
   ],
   // Patterns to exclude.
   exclude: [
-    // 'path/to/excluded/files'
+    "./tests/legacy-unit.js"
   ],
   //
   // ============
@@ -77,14 +77,24 @@ exports.config = {
       browserName: "chrome",
       "goog:chromeOptions": {
         args: ["--no-sandbox",
-                 `--load-extension=${helpers.getExtensionPath()},${helpers.helperExtension}`,
-                 `--disable-extensions-except=${helpers.getExtensionPath()},${helpers.helperExtension}`],
+                `--load-extension=${helpers.getExtensionPath()},${helpers.helperExtension}`,
+                `--disable-extensions-except=${helpers.getExtensionPath()},${helpers.helperExtension}`],
         excludeSwitches: ["disable-extensions"]
       },
       acceptInsecureCerts: true
     },
     {
       browserName: "firefox",
+      acceptInsecureCerts: true
+    },
+    {
+      browserName: "MicrosoftEdge",
+      "ms:edgeOptions": {
+        args: ["--no-sandbox",
+                `--load-extension=${helpers.getExtensionPath()},${helpers.helperExtension}`,
+                `--disable-extensions-except=${helpers.getExtensionPath()},${helpers.helperExtension}`],
+        excludeSwitches: ["disable-extensions"]
+      },
       acceptInsecureCerts: true
     }
     // maxInstances can get overwritten per capability. So if you have an in-house Selenium
@@ -139,7 +149,7 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: ["chromedriver", "geckodriver"],
+  services: ["geckodriver", "selenium-standalone"],
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
   // see also: https://webdriver.io/docs/frameworks

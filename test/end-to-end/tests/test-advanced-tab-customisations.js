@@ -17,18 +17,20 @@
 
 "use strict";
 
-const {beforeSequence} = require("../helpers");
+const {beforeSequence, globalRetriesNumber} = require("../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
 
-describe("test advanced tab customizations", () =>
+describe("test advanced tab customizations", function()
 {
-  before(async() =>
+  this.retries(globalRetriesNumber);
+
+  before(async function()
   {
     await beforeSequence();
   });
 
-  it("should display show number of ads blocked as checked", async() =>
+  it("should display show number of ads blocked as checked", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -42,7 +44,7 @@ describe("test advanced tab customizations", () =>
       isShowNumberOfAdsBlockedCheckboxSelected()).to.be.true;
   });
 
-  it("should display show block element menu as checked", async() =>
+  it("should display show block element menu as checked", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -56,7 +58,7 @@ describe("test advanced tab customizations", () =>
       isShowBlockElementCheckboxSelected()).to.be.true;
   });
 
-  it("should display show adblock plus panel as checked", async() =>
+  it("should display show adblock plus panel as checked", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -70,7 +72,7 @@ describe("test advanced tab customizations", () =>
       isShowAdblockPlusPanelCheckboxSelected()).to.be.true;
   });
 
-  it("should display turn on debug element as unchecked", async() =>
+  it("should display turn on debug element as unchecked", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -84,7 +86,7 @@ describe("test advanced tab customizations", () =>
       isTurnOnDebugElementCheckboxSelected("false")).to.be.true;
   });
 
-  it("should display show useful notifications as checked", async() =>
+  it("should display show useful notifications as checked", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();

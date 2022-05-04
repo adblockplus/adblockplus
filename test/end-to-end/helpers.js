@@ -20,6 +20,7 @@
 const fs = require("fs");
 const BasePage = require("./page-objects/base.page");
 const helperExtension = "helper-extension";
+const globalRetriesNumber = 2;
 
 async function afterSequence()
 {
@@ -102,4 +103,4 @@ async function waitForExtension()
 }
 
 module.exports = {afterSequence, beforeSequence, getExtensionPath,
-                  helperExtension, waitForExtension};
+                  helperExtension, globalRetriesNumber, waitForExtension};
