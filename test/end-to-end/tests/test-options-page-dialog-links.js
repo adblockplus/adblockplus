@@ -17,7 +17,8 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence} = require("../helpers");
+const {afterSequence, beforeSequence, globalRetriesNumber} =
+  require("../helpers");
 const {expect} = require("chai");
 const FooterChunk = require("../page-objects/footer.chunk");
 const AboutDialogChunk = require("../page-objects/aboutDialog.chunk");
@@ -27,19 +28,21 @@ const HeartDialogChunk = require("../page-objects/heartDialog.chunk");
 const GeneralPage = require("../page-objects/general.page");
 const dataLinks = require("../test-data/data-links");
 
-describe("test options page dialog links", () =>
+describe("test options page dialog links", function()
 {
-  beforeEach(async() =>
+  this.retries(globalRetriesNumber);
+
+  beforeEach(async function()
   {
     await beforeSequence();
   });
 
-  afterEach(async() =>
+  afterEach(async function()
   {
     await afterSequence();
   });
 
-  it("should open privacy policy page", async() =>
+  it("should open privacy policy page", async function()
   {
     const footerChunk = new FooterChunk(browser);
     await footerChunk.clickAboutABPLink();
@@ -50,7 +53,7 @@ describe("test options page dialog links", () =>
       dataLinks.privacyPolicyUrl);
   });
 
-  it("should open imprint page", async() =>
+  it("should open imprint page", async function()
   {
     const footerChunk = new FooterChunk(browser);
     await footerChunk.clickAboutABPLink();
@@ -61,46 +64,66 @@ describe("test options page dialog links", () =>
       dataLinks.imprintUrl);
   });
 
-  it("should open webstore page", async() =>
+  it("should open webstore page", async function()
   {
-    const footerChunk = new FooterChunk(browser);
-    await footerChunk.clickHeartButton();
-    const heartDialogChunk = new HeartDialogChunk(browser);
-    await heartDialogChunk.clickRateUsButton();
-    if (browser.capabilities.browserName == "firefox")
+    if (browser.capabilities.browserName == "msedge")
     {
-      await heartDialogChunk.switchToAddonsTab();
-      expect(await heartDialogChunk.getCurrentUrl()).to.include(
-        dataLinks.addonsUrl);
+      console.warn("Test skipped for Edge.");
     }
-    else if (browser.capabilities.browserName == "chrome")
+    else
     {
-      await heartDialogChunk.switchToWebstoreCookiesAgreementTab();
-      await browser.keys("Tab");
-      await browser.keys("Tab");
-      await browser.keys("Tab");
-      await browser.keys("Tab");
-      await browser.keys("Enter");
-      expect(await heartDialogChunk.getCurrentUrl()).to.include(
-        dataLinks.webstoreUrl);
+      const footerChunk = new FooterChunk(browser);
+      await footerChunk.clickHeartButton();
+      const heartDialogChunk = new HeartDialogChunk(browser);
+      await heartDialogChunk.clickRateUsButton();
+      if (browser.capabilities.browserName == "firefox")
+      {
+        await heartDialogChunk.switchToAddonsTab();
+        expect(await heartDialogChunk.getCurrentUrl()).to.include(
+          dataLinks.addonsUrl);
+      }
+      else if (browser.capabilities.browserName == "chrome")
+      {
+        await heartDialogChunk.switchToChromeWebstoreTab();
+        // Cookies agreement page was removed by Chrome.
+        // Keeping this functionality here in case it changes back.
+        // await browser.keys("Tab");
+        // await browser.keys("Tab");
+        // await browser.keys("Tab");
+        // await browser.keys("Tab");
+        // await browser.keys("Enter");
+        expect(await heartDialogChunk.getCurrentUrl()).to.include(
+          dataLinks.webstoreUrl);
+      }
     }
   }, 2);
 
-  it("should open donate page", async() =>
+  it("should open donate page", async function()
   {
-    const footerChunk = new FooterChunk(browser);
-    await footerChunk.clickHeartButton();
-    const heartDialogChunk = new HeartDialogChunk(browser);
-    await heartDialogChunk.clickDonateButton();
-    await heartDialogChunk.switchToDonateTab();
-    expect(await heartDialogChunk.getCurrentUrl()).to.equal(
-      dataLinks.donateUrl);
+    if (browser.capabilities.browserName == "msedge")
+    {
+      console.warn("Test skipped for Edge.");
+    }
+    else
+    {
+      const footerChunk = new FooterChunk(browser);
+      await footerChunk.clickHeartButton();
+      const heartDialogChunk = new HeartDialogChunk(browser);
+      await heartDialogChunk.clickDonateButton();
+      await heartDialogChunk.switchToDonateTab();
+      expect(await heartDialogChunk.getCurrentUrl()).to.equal(
+        dataLinks.donateUrl);
+    }
   }, 2);
 
-  it("should open aa survey page", async() =>
+  it("should open aa survey page", async function()
   {
     const generalPage = new GeneralPage(browser);
     await generalPage.clickAllowAcceptableAdsCheckbox();
+    if (await generalPage.isAllowAcceptableAdsCheckboxSelected())
+    {
+      await generalPage.clickAllowAcceptableAdsCheckbox();
+    }
     const acceptableAdsDialogChunk = new AcceptableAdsDialogChunk(browser);
     await acceptableAdsDialogChunk.clickGoToSurveyButton();
     await acceptableAdsDialogChunk.switchToAASurveyTab();

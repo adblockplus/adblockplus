@@ -17,25 +17,28 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence} = require("../helpers");
+const {afterSequence, beforeSequence, globalRetriesNumber} =
+  require("../helpers");
 const {expect} = require("chai");
 const GeneralPage = require("../page-objects/general.page");
 const AdvancedPage = require("../page-objects/advanced.page");
 const dataTooltips = require("../test-data/data-tooltips");
 
-describe("test options page tooltips", () =>
+describe("test options page tooltips", function()
 {
-  beforeEach(async() =>
+  this.retries(globalRetriesNumber);
+
+  beforeEach(async function()
   {
     await beforeSequence();
   });
 
-  afterEach(async() =>
+  afterEach(async function()
   {
     await afterSequence();
   });
 
-  it("should open block additional tracking tooltip", async() =>
+  it("should open block additional tracking tooltip", async function()
   {
     const generalPage = new GeneralPage(browser);
     await generalPage.clickBlockAdditionalTrackingTooltipIcon();
@@ -48,7 +51,7 @@ describe("test options page tooltips", () =>
       isBlockAdditionalTrackingTooltipTextDisplayed(true)).to.be.true;
   }, 2);
 
-  it("should open block cookie warnings tooltip", async() =>
+  it("should open block cookie warnings tooltip", async function()
   {
     const generalPage = new GeneralPage(browser);
     await generalPage.clickBlockCookieWarningsTooltipIcon();
@@ -61,7 +64,7 @@ describe("test options page tooltips", () =>
       isBlockCookieWarningsTooltipTextDisplayed(true)).to.be.true;
   }, 2);
 
-  it("should open block push notifications tooltip", async() =>
+  it("should open block push notifications tooltip", async function()
   {
     const generalPage = new GeneralPage(browser);
     await generalPage.clickBlockPushNotificationsTooltipIcon();
@@ -74,7 +77,7 @@ describe("test options page tooltips", () =>
       isBlockPushNotificationsTooltipTextDisplayed(true)).to.be.true;
   }, 2);
 
-  it("should open block social media icons tracking tooltip", async() =>
+  it("should open block social media icons tracking tooltip", async function()
   {
     const generalPage = new GeneralPage(browser);
     await generalPage.clickBlockSocialMediaIconsTrackingTooltipIcon();
@@ -87,7 +90,7 @@ describe("test options page tooltips", () =>
       isBlockSocialMediaIconsTrackingTooltipTextDisplayed(true)).to.be.true;
   }, 2);
 
-  it("should open notify me of available language fls tooltip", async() =>
+  it("should open notify me of available language fls tooltip", async function()
   {
     const generalPage = new GeneralPage(browser);
     await generalPage.clickNotifyLanguageFilterListsTooltipIcon();
@@ -100,7 +103,7 @@ describe("test options page tooltips", () =>
       isNotifyLanguageFilterListsTooltipTextDisplayed(true)).to.be.true;
   }, 2);
 
-  it("should open show block element tooltip", async() =>
+  it("should open show block element tooltip", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -114,7 +117,7 @@ describe("test options page tooltips", () =>
       isShowBlockElementTooltipTextDisplayed(true)).to.be.true;
   }, 2);
 
-  it("should open adblock plus panel tooltip", async() =>
+  it("should open adblock plus panel tooltip", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -128,7 +131,7 @@ describe("test options page tooltips", () =>
       isShowAdblockPlusPanelTooltipTextDisplayed(true)).to.be.true;
   }, 2);
 
-  it("should open turn on debug element tooltip", async() =>
+  it("should open turn on debug element tooltip", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -142,7 +145,7 @@ describe("test options page tooltips", () =>
       isTurnOnDebugElementTooltipTextDisplayed(true)).to.be.true;
   }, 2);
 
-  it("should open show useful notifications tooltip", async() =>
+  it("should open show useful notifications tooltip", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();

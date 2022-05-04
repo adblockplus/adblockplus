@@ -727,7 +727,7 @@ class AdvancedPage extends BasePage
       this.customFilterListsFirstItemAlertIcon, "title",
       expectedValue, timeoutVal);
     // Wait until tooltip is displayed
-    await this.browser.pause(2000);
+    await this.browser.pause(2500);
     return await (await this.customFilterListsFirstItemAlertText).isDisplayed();
   }
 

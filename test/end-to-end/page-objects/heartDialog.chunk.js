@@ -65,6 +65,12 @@ class HeartDialogChunk extends BasePage
     " for 🦊 Firefox (en-GB)");
   }
 
+  async switchToChromeWebstoreTab()
+  {
+    await this.switchToTab("Adblock Plus - free ad blocker - " +
+    "Chrome Web Store");
+  }
+
   async switchToWebstoreCookiesAgreementTab()
   {
     await this.switchToTab("Before you continue");

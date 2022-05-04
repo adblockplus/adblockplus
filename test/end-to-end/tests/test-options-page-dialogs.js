@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {beforeSequence} = require("../helpers");
+const {beforeSequence, globalRetriesNumber} = require("../helpers");
 const {expect} = require("chai");
 const FooterChunk = require("../page-objects/footer.chunk");
 const AboutDialogChunk = require("../page-objects/aboutDialog.chunk");
@@ -26,14 +26,16 @@ const AcceptableAdsDialogChunk =
 const HeartDialogChunk = require("../page-objects/heartDialog.chunk");
 const GeneralPage = require("../page-objects/general.page");
 
-describe("test options page dialogs", () =>
+describe("test options page dialogs", function()
 {
-  before(async() =>
+  this.retries(globalRetriesNumber);
+
+  before(async function()
   {
     await beforeSequence();
   });
 
-  it("should display copyright and version number", async() =>
+  it("should display copyright and version number", async function()
   {
     const footerChunk = new FooterChunk(browser);
     await footerChunk.clickAboutABPLink();
@@ -44,19 +46,26 @@ describe("test options page dialogs", () =>
     expect(await aboutDialogChunk.isDialogDisplayed()).to.be.false;
   });
 
-  it("should contain donate and rate us button", async() =>
+  it("should contain donate and rate us button", async function()
   {
-    const footerChunk = new FooterChunk(browser);
-    await footerChunk.clickHeartButton();
-    const heartDialogChunk = new HeartDialogChunk(browser);
-    expect(await heartDialogChunk.isDonateButtonDisplayed()).to.be.true;
-    expect(await heartDialogChunk.isRateUsButtonDisplayed()).to.be.true;
-    await footerChunk.clickHeartButton();
-    expect(await heartDialogChunk.isDonateButtonDisplayed(true)).to.be.true;
-    expect(await heartDialogChunk.isRateUsButtonDisplayed(true)).to.be.true;
+    if (browser.capabilities.browserName == "msedge")
+    {
+      console.warn("Test skipped for Edge.");
+    }
+    else
+    {
+      const footerChunk = new FooterChunk(browser);
+      await footerChunk.clickHeartButton();
+      const heartDialogChunk = new HeartDialogChunk(browser);
+      expect(await heartDialogChunk.isDonateButtonDisplayed()).to.be.true;
+      expect(await heartDialogChunk.isRateUsButtonDisplayed()).to.be.true;
+      await footerChunk.clickHeartButton();
+      expect(await heartDialogChunk.isDonateButtonDisplayed(true)).to.be.true;
+      expect(await heartDialogChunk.isRateUsButtonDisplayed(true)).to.be.true;
+    }
   });
 
-  it("should contain go to survey and no thanks button", async() =>
+  it("should contain go to survey and no thanks button", async function()
   {
     const generalPage = new GeneralPage(browser);
     await generalPage.clickAllowAcceptableAdsCheckbox();

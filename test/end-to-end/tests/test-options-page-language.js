@@ -17,24 +17,27 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence} = require("../helpers");
+const {afterSequence, beforeSequence, globalRetriesNumber} =
+  require("../helpers");
 const {expect} = require("chai");
 const GeneralPage = require("../page-objects/general.page");
 const AdvancedPage = require("../page-objects/advanced.page");
 
-describe("test options page general tab language", () =>
+describe("test options page general tab language", function()
 {
-  beforeEach(async() =>
+  this.retries(globalRetriesNumber);
+
+  beforeEach(async function()
   {
     await beforeSequence();
   });
 
-  afterEach(async() =>
+  afterEach(async function()
   {
     await afterSequence();
   });
 
-  it("should have english in language table", async() =>
+  it("should have english in language table", async function()
   {
     const generalPage = new GeneralPage(browser);
     expect(await generalPage.
@@ -45,7 +48,7 @@ describe("test options page general tab language", () =>
       isEasyListFLDisplayed()).to.be.true;
   });
 
-  it("should add a language", async() =>
+  it("should add a language", async function()
   {
     const generalPage = new GeneralPage(browser);
     await generalPage.clickAddALanguageButton();
@@ -72,12 +75,17 @@ describe("test options page general tab language", () =>
       isEasyListGermanyPlusEasyListFLDisplayed()).to.be.true;
   });
 
-  it("should remove a language", async() =>
+  it("should remove a language", async function()
   {
     const generalPage = new GeneralPage(browser);
     await generalPage.clickAddALanguageButton();
     await generalPage.clickDeutschPlusEnglishListItem();
     await generalPage.clickDeutschPlusEnglishLanguageTrashIcon();
+    if (await generalPage.
+      isDeutschPlusEnglishLanguageTableItemDisplayed(true) == false)
+    {
+      await generalPage.clickDeutschPlusEnglishLanguageTrashIcon();
+    }
     expect(await generalPage.
       isDeutschPlusEnglishLanguageTableItemDisplayed(true)).to.be.true;
     expect(await generalPage.
@@ -90,10 +98,15 @@ describe("test options page general tab language", () =>
       isEasyListGermanyPlusEasyListFLDisplayed()).to.be.false;
   }, 2);
 
-  it("should change a language", async() =>
+  it("should change a language", async function()
   {
     const generalPage = new GeneralPage(browser);
     await generalPage.clickEnglishLanguageChangeButton();
+    if (await generalPage.
+      isLanguagesDropdownDisplayed() == false)
+    {
+      await generalPage.clickEnglishLanguageChangeButton();
+    }
     expect(await generalPage.
       isLanguagesDropdownDisplayed()).to.be.true;
     await generalPage.clickDeutschPlusEnglishListItem();
@@ -111,7 +124,7 @@ describe("test options page general tab language", () =>
       isEasyListGermanyPlusEasyListFLDisplayed()).to.be.true;
   });
 
-  it("should have filter list suggestions checkbox disabled", async() =>
+  it("should have filter list suggestions checkbox disabled", async function()
   {
     const generalPage = new GeneralPage(browser);
     expect(await generalPage.

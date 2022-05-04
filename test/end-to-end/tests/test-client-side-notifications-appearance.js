@@ -17,26 +17,29 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence} = require("../helpers");
+const {afterSequence, beforeSequence, globalRetriesNumber} =
+  require("../helpers");
 const {expect} = require("chai");
 const PopupPage = require("../page-objects/popup.page");
 const notificationScripts =
   require("../test-data/data-notifications-appearance").notificationScripts;
 let globalOrigin;
 
-describe("test client side notifications appearance", () =>
+describe("test client side notifications appearance", function()
 {
-  beforeEach(async() =>
+  this.retries(globalRetriesNumber);
+
+  beforeEach(async function()
   {
     globalOrigin = await beforeSequence();
   });
 
-  afterEach(async() =>
+  afterEach(async function()
   {
     await afterSequence();
   });
 
-  it("should display critical notification", async() =>
+  it("should display critical notification", async function()
   {
     const popupPage = new PopupPage(browser);
     await popupPage.init(globalOrigin);
@@ -52,7 +55,7 @@ describe("test client side notifications appearance", () =>
       isNotificationMessageDisplayed()).to.be.false;
   });
 
-  it("should display default notification", async() =>
+  it("should display default notification", async function()
   {
     const popupPage = new PopupPage(browser);
     await popupPage.init(globalOrigin);
@@ -69,7 +72,7 @@ describe("test client side notifications appearance", () =>
       "https://adblockplus.org/");
   });
 
-  it("should display information notification", async() =>
+  it("should display information notification", async function()
   {
     const popupPage = new PopupPage(browser);
     await popupPage.init(globalOrigin);

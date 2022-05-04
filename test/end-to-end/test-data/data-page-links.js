@@ -130,7 +130,9 @@ const problemPageData = [
     "plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb",
     newTabUrlFirefox: "https://addons.mozilla.org/en-GB/firefox/" +
     "addon/adblock-plus/",
-    webstoreCookiesConsentPageTitle: "Before you continue"
+    webstoreCookiesConsentPageTitle: "Before you continue",
+    chromeWebstorePageTitle: "Adblock Plus - free ad blocker - " +
+    "Chrome Web Store"
   }
 ];
 
@@ -153,7 +155,9 @@ const updatesPageData = [
     "-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb/reviews?ref=store-rating",
     newTabUrlFirefox: "https://addons.mozilla.org/en-GB/firefox/" +
     "addon/adblock-plus/",
-    webstoreCookiesConsentPageTitle: "Before you continue"
+    webstoreCookiesConsentPageTitle: "Before you continue",
+    chromeWebstorePageTitle: "Adblock Plus - free ad blocker - " +
+    "Chrome Web Store"
   },
   {
     testName: "Updates - Twitter icon",

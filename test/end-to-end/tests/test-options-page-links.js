@@ -17,7 +17,8 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence} = require("../helpers");
+const {afterSequence, beforeSequence, globalRetriesNumber} =
+  require("../helpers");
 const {expect} = require("chai");
 const FooterChunk = require("../page-objects/footer.chunk");
 const GeneralPage = require("../page-objects/general.page");
@@ -27,19 +28,21 @@ const AllowlistedWebsitesPage =
   require("../page-objects/allowlistedWebsites.page");
 const dataLinks = require("../test-data/data-links");
 
-describe("test options page links", () =>
+describe("test options page links", function()
 {
-  beforeEach(async() =>
+  this.retries(globalRetriesNumber);
+
+  beforeEach(async function()
   {
     await beforeSequence();
   });
 
-  afterEach(async() =>
+  afterEach(async function()
   {
     await afterSequence();
   });
 
-  it("should open contribute page", async() =>
+  it("should open contribute page", async function()
   {
     const footerChunk = new FooterChunk(browser);
     await footerChunk.clickContributeButton();
@@ -48,7 +51,7 @@ describe("test options page links", () =>
       dataLinks.contributeUrl);
   });
 
-  it("should open AA criteria page", async() =>
+  it("should open AA criteria page", async function()
   {
     const generalPage = new GeneralPage(browser);
     await generalPage.init();
@@ -58,7 +61,7 @@ describe("test options page links", () =>
       dataLinks.aaCriteriaUrl);
   });
 
-  it("should open AA learn more page", async() =>
+  it("should open AA learn more page", async function()
   {
     const generalPage = new GeneralPage(browser);
     await generalPage.init();
@@ -68,7 +71,7 @@ describe("test options page links", () =>
       dataLinks.aaLearnMoreUrl);
   });
 
-  it("should open allowlisting learn more page", async() =>
+  it("should open allowlisting learn more page", async function()
   {
     const allowistedWebsitesPage = new AllowlistedWebsitesPage(browser);
     await allowistedWebsitesPage.init();
@@ -78,7 +81,7 @@ describe("test options page links", () =>
       dataLinks.allowlistingLearnMoreUrl);
   });
 
-  it("should open subscriptions page", async() =>
+  it("should open subscriptions page", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -88,7 +91,7 @@ describe("test options page links", () =>
       dataLinks.subscriptionsUrl);
   });
 
-  it("should open how to write filters page", async() =>
+  it("should open how to write filters page", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -98,7 +101,7 @@ describe("test options page links", () =>
       dataLinks.howToWriteFiltersUrl);
   });
 
-  it("should open help center page", async() =>
+  it("should open help center page", async function()
   {
     const helpPage = new HelpPage(browser);
     await helpPage.init();
@@ -108,7 +111,7 @@ describe("test options page links", () =>
       dataLinks.helpCenterUrl);
   });
 
-  it("should open bug report page", async() =>
+  it("should open bug report page", async function()
   {
     const helpPage = new HelpPage(browser);
     await helpPage.init();
@@ -118,7 +121,7 @@ describe("test options page links", () =>
       dataLinks.reportAnIssueUrl);
   });
 
-  it("should open forum page", async() =>
+  it("should open forum page", async function()
   {
     const helpPage = new HelpPage(browser);
     await helpPage.init();
@@ -129,7 +132,8 @@ describe("test options page links", () =>
       expect(await helpPage.getCurrentUrl()).to.equal(
         dataLinks.forumUrlFirefox);
     }
-    else if (browser.capabilities.browserName == "chrome")
+    else if (browser.capabilities.browserName == "chrome" &&
+      browser.capabilities.browserName == "msedge")
     {
       await helpPage.switchToForumTabChrome();
       expect(await helpPage.getCurrentUrl()).to.equal(
@@ -137,7 +141,7 @@ describe("test options page links", () =>
     }
   });
 
-  it("should open twitter page", async() =>
+  it("should open twitter page", async function()
   {
     const helpPage = new HelpPage(browser);
     await helpPage.init();
@@ -147,7 +151,7 @@ describe("test options page links", () =>
       dataLinks.twitterUrl);
   });
 
-  it("should open facebook page", async() =>
+  it("should open facebook page", async function()
   {
     const helpPage = new HelpPage(browser);
     await helpPage.init();

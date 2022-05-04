@@ -262,12 +262,14 @@ class GeneralPage extends BasePage
 
   async clickAllowAcceptableAdsCheckbox()
   {
-    await (await this.allowAcceptableAdsCheckbox).click();
+    await this.waitForEnabledThenClick(this.
+      allowAcceptableAdsCheckbox);
   }
 
   async clickBlockAdditionalTrackingCheckbox()
   {
-    await (await this.blockAdditionalTrackingCheckbox).click();
+    await this.waitForEnabledThenClick(this.
+      blockAdditionalTrackingCheckbox);
   }
 
   async clickBlockAdditionalTrackingTooltipIcon()
@@ -278,7 +280,8 @@ class GeneralPage extends BasePage
 
   async clickBlockCookieWarningsCheckbox()
   {
-    await (await this.blockCookieWarningsCheckbox).click();
+    await this.waitForEnabledThenClick(this.
+      blockCookieWarningsCheckbox);
   }
 
   async clickBlockCookieWarningsTooltipIcon()
@@ -409,10 +412,13 @@ class GeneralPage extends BasePage
       3000, reverse);
   }
 
-  async isBlockAdditionalTrackingCheckboxSelected()
+  async isBlockAdditionalTrackingCheckboxSelected(reverse = false)
   {
-    return await (await this.blockAdditionalTrackingCheckbox).
-    getAttribute("aria-checked") === "true";
+    await (await this.blockAdditionalTrackingCheckbox).
+      waitForEnabled({timeout: 3000});
+    return await this.waitUntilAttributeValueIs(
+      this.blockAdditionalTrackingCheckbox, "aria-checked", "true",
+      3000, reverse);
   }
 
   async isBlockAdditionalTrackingTooltipTextDisplayed(reverseOption = false)

@@ -17,25 +17,28 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence} = require("../helpers");
+const {afterSequence, beforeSequence, globalRetriesNumber} =
+  require("../helpers");
 const {expect} = require("chai");
 const PopupPage = require("../page-objects/popup.page");
 const GeneralPage = require("../page-objects/general.page");
 let globalOrigin;
 
-describe.skip("test filter list suggestion", () =>
+describe.skip("test filter list suggestion", function()
 {
-  beforeEach(async() =>
+  this.retries(globalRetriesNumber);
+
+  beforeEach(async function()
   {
     globalOrigin = await beforeSequence();
   });
 
-  afterEach(async() =>
+  afterEach(async function()
   {
     await afterSequence();
   });
 
-  it("should display default behaviour", async() =>
+  it("should display default behaviour", async function()
   {
     await browser.url("https://www.ansa.it/");
     await browser.url("https://www.ilfattoquotidiano.it/");
@@ -47,7 +50,7 @@ describe.skip("test filter list suggestion", () =>
       isNotificationMessageDisplayed()).to.be.false;
   });
 
-  it("should display filterlist suggestion notification", async() =>
+  it("should display filterlist suggestion notification", async function()
   {
     const generalPage = new GeneralPage(browser);
     await generalPage.clickNotifyLanguageFilterListsTooltipCheckbox();
@@ -73,7 +76,7 @@ describe.skip("test filter list suggestion", () =>
       isItalianoPlusEnglishLanguageTableItemDisplayed()).to.be.true;
   });
 
-  it("should not display FL suggestion notification for same TLD", async() =>
+  it("should not display FL suggestion for same TLD", async function()
   {
     const generalPage = new GeneralPage(browser);
     await generalPage.clickNotifyLanguageFilterListsTooltipCheckbox();
@@ -87,7 +90,7 @@ describe.skip("test filter list suggestion", () =>
       isNotificationMessageDisplayed()).to.be.false;
   });
 
-  it("should only trigger notification once per language", async() =>
+  it("should only trigger notification once per language", async function()
   {
     const generalPage = new GeneralPage(browser);
     await generalPage.clickNotifyLanguageFilterListsTooltipCheckbox();
@@ -118,7 +121,7 @@ describe.skip("test filter list suggestion", () =>
       getNotificationMessageText().includes("español")).to.be.true;
   });
 
-  it("should not trigger notification for more than 3 filter lists", async() =>
+  it("should not trigger notification for more than 3 FLs", async function()
   {
     const generalPage = new GeneralPage(browser);
     await generalPage.clickNotifyLanguageFilterListsTooltipCheckbox();
@@ -136,7 +139,7 @@ describe.skip("test filter list suggestion", () =>
       isNotificationMessageDisplayed()).to.be.false;
   });
 
-  it("should not trigger notification if FL already installed", async() =>
+  it("should not trigger notification if FL already installed", async function()
   {
     const generalPage = new GeneralPage(browser);
     await generalPage.clickNotifyLanguageFilterListsTooltipCheckbox();

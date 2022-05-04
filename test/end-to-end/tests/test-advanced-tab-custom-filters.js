@@ -17,26 +17,29 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence} = require("../helpers");
+const {afterSequence, beforeSequence, globalRetriesNumber} =
+  require("../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
 const customErrors = require("../test-data/data-custom-filters").customErrors;
 const multipleFilters =
   require("../test-data/data-custom-filters").multipleFilters;
 
-describe("test advanced tab custom filters", () =>
+describe("test advanced tab custom filters", function()
 {
-  beforeEach(async() =>
+  this.retries(globalRetriesNumber);
+
+  beforeEach(async function()
   {
     await beforeSequence();
   });
 
-  afterEach(async() =>
+  afterEach(async function()
   {
     await afterSequence();
   });
 
-  it("should display default state", async() =>
+  it("should display default state", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -52,7 +55,7 @@ describe("test advanced tab custom filters", () =>
       isAddCustomFilterListButtonEnabled(true)).to.be.true;
   });
 
-  it("should add a custom filter", async() =>
+  it("should add a custom filter", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -69,7 +72,7 @@ describe("test advanced tab custom filters", () =>
       isCustomFilterListsFirstItemToggleSelected()).to.be.true;
   });
 
-  it("should add a slow custom filter", async() =>
+  it("should add a slow custom filter", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -85,7 +88,7 @@ describe("test advanced tab custom filters", () =>
       isCustomFLFirstItemAlertIconTooltipDisplayed()).to.be.true;
   });
 
-  it("should add a comment custom filter", async() =>
+  it("should add a comment custom filter", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -98,7 +101,7 @@ describe("test advanced tab custom filters", () =>
       isCustomFilterListsFirstItemToggleDisplayed()).to.be.false;
   });
 
-  it("should add a duplicated custom filter", async() =>
+  it("should add a duplicated custom filter", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -113,7 +116,7 @@ describe("test advanced tab custom filters", () =>
       isCustomFilterListsNthItemCheckboxChecked("1")).to.be.true;
   });
 
-  it("should disable/enable a custom filter", async() =>
+  it("should disable/enable a custom filter", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -128,7 +131,7 @@ describe("test advanced tab custom filters", () =>
       isCustomFilterListsFirstItemToggleSelected()).to.be.true;
   });
 
-  it("should delete a custom filter", async() =>
+  it("should delete a custom filter", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -141,7 +144,7 @@ describe("test advanced tab custom filters", () =>
       verifyTextPresentInCustomFLTable("test/remove-filter.png")).to.be.false;
   });
 
-  it("should display copy and delete buttons", async() =>
+  it("should display copy and delete buttons", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -159,7 +162,7 @@ describe("test advanced tab custom filters", () =>
       isDeleteCustomFLButtonDisplayed()).to.be.true;
   });
 
-  it("should support multiline paste", async() =>
+  it("should support multiline paste", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -196,7 +199,7 @@ describe("test advanced tab custom filters", () =>
       verifyTextPresentInCustomFLTable("! comment")).to.be.true;
   });
 
-  it("should sort custom filters", async() =>
+  it("should sort custom filters", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -259,7 +262,7 @@ describe("test advanced tab custom filters", () =>
       waitForCustomFilterListsNthItemTextToEqual("##.hiding_filter", "4");
   });
 
-  it("should delete multiple custom filters", async() =>
+  it("should delete multiple custom filters", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -285,14 +288,14 @@ describe("test advanced tab custom filters", () =>
     expect(await advancedPage.
       verifyTextPresentInCustomFLTable("/blocking/filter/*")).to.be.true;
     expect(await advancedPage.
-      verifyTextPresentInCustomFLTable("duplicate", 500)).to.be.false;
+      verifyTextPresentInCustomFLTable("duplicate", 1000)).to.be.false;
     expect(await advancedPage.
-      verifyTextPresentInCustomFLTable("! comment", 500)).to.be.false;
+      verifyTextPresentInCustomFLTable("! comment", 1000)).to.be.false;
   });
 
   customErrors.forEach(async(dataSet) =>
   {
-    it("should display filters errors: " + dataSet.testName, async() =>
+    it("should display filters errors: " + dataSet.testName, async function()
     {
       const advancedPage = new AdvancedPage(browser);
       await advancedPage.init();
@@ -304,7 +307,7 @@ describe("test advanced tab custom filters", () =>
     });
   });
 
-  it("should edit a custom filter", async() =>
+  it("should edit a custom filter", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -328,7 +331,7 @@ describe("test advanced tab custom filters", () =>
       verifyTextPresentInCustomFLTable(inputText, 200)).to.be.false;
   }, 2);
 
-  it("should edit a custom filter into an erroneous filter", async() =>
+  it("should edit a custom filter into an erroneous filter", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -358,7 +361,7 @@ describe("test advanced tab custom filters", () =>
       isCustomFilterListsFirstItemAlertIconDisplayed(true)).to.be.true;
   });
 
-  it("should search for custom filters", async() =>
+  it("should search for custom filters", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -388,7 +391,7 @@ describe("test advanced tab custom filters", () =>
       isCustomFilterListsNthItemCheckboxChecked("4", true)).to.be.true;
   });
 
-  it("should copy custom filters", async() =>
+  it("should copy custom filters", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();

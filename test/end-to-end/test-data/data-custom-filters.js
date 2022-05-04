@@ -21,13 +21,19 @@ const customErrors = [
   {
     testName: "Invalid filter option",
     customFilter: "$unknown",
-    errorText: "Invalid filter option"
+    errorText: "unknown is not a valid filter option."
   },
   {
     testName: "No active domain for snippets",
     customFilter: "#$#noactivedomain",
     errorText: "No active domain specified. Please specify at " +
     "least one domain for this snippet filter."
+  },
+  {
+    testName: "No active domain for element hiding",
+    customFilter: "#?#foo",
+    errorText: "No active domain specified. Please specify at least one " +
+    "domain for this extended element hiding filter."
   },
   {
     testName: "Filter list header",
@@ -43,15 +49,37 @@ const customErrors = [
   },
   {
     testName: "Invalid regex",
-    customFilter: " /[/",
-    errorText: "Invalid regular expression (syntax does not adhere " +
-    "to standard)."
+    customFilter: " /[[/",
+    errorText: "Invalid regular expression (syntax does not " +
+    "adhere to standard)."
   },
   {
     testName: "Empty domain",
     customFilter: " ,##emptydomain",
     errorText: "Invalid or empty domain. Domain list must contain one " +
     "or more domains separated by a comma (,), e.g. abc.com,def.com,ghi.com."
+  },
+  {
+    testName: "Short pattern",
+    customFilter: "foo",
+    errorText: "URL pattern is too short. Please use a longer pattern or " +
+    "specify at least one domain for this filter."
+  },
+  {
+    testName: "Invalid option",
+    customFilter: "$domain=",
+    errorText: "Invalid filter option"
+  },
+  {
+    testName: "CSS selector too short",
+    customFilter: "##aa",
+    errorText: "CSS selector is too short. Please use a longer selector or " +
+    "specify at least one domain for this element hiding filter."
+  },
+  {
+    testName: "Generic error",
+    customFilter: "||example.com$rewrite=",
+    errorText: "Something went wrong. Please try again."
   }
 ];
 

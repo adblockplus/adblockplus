@@ -17,24 +17,27 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence} = require("../helpers");
+const {afterSequence, beforeSequence, globalRetriesNumber} =
+  require("../helpers");
 const {expect} = require("chai");
 const GeneralPage = require("../page-objects/general.page");
 const AdvancedPage = require("../page-objects/advanced.page");
 
-describe("test options page general tab recommended filters", () =>
+describe("test options page general tab recommended filters", function()
 {
-  beforeEach(async() =>
+  this.retries(globalRetriesNumber);
+
+  beforeEach(async function()
   {
     await beforeSequence();
   });
 
-  afterEach(async() =>
+  afterEach(async function()
   {
     await afterSequence();
   });
 
-  it("should block additional tracking", async() =>
+  it("should block additional tracking", async function()
   {
     const generalPage = new GeneralPage(browser);
     await generalPage.clickBlockAdditionalTrackingCheckbox();
@@ -46,14 +49,19 @@ describe("test options page general tab recommended filters", () =>
       isEasyPrivacyFLDisplayed()).to.be.true;
     await generalPage.init();
     await generalPage.clickBlockAdditionalTrackingCheckbox();
+    if (await generalPage.
+      isBlockAdditionalTrackingCheckboxSelected(true) == false)
+    {
+      await generalPage.clickBlockAdditionalTrackingCheckbox();
+    }
     expect(await generalPage.
-      isBlockAdditionalTrackingCheckboxSelected()).to.be.false;
+      isBlockAdditionalTrackingCheckboxSelected(true)).to.be.true;
     await advancedPage.init();
     expect(await advancedPage.
       isEasyPrivacyFLDisplayed()).to.be.false;
   });
 
-  it("should block cookie warnings", async() =>
+  it("should block cookie warnings", async function()
   {
     const generalPage = new GeneralPage(browser);
     await generalPage.clickBlockCookieWarningsCheckbox();
@@ -72,7 +80,7 @@ describe("test options page general tab recommended filters", () =>
       isIDontCareAboutCookiesFLDisplayed()).to.be.false;
   });
 
-  it("should block push notifications", async() =>
+  it("should block push notifications", async function()
   {
     const generalPage = new GeneralPage(browser);
     await generalPage.clickBlockPushNotificationsCheckbox();
@@ -91,7 +99,7 @@ describe("test options page general tab recommended filters", () =>
       isFanboysNotificationsBlockingListFLDisplayed()).to.be.false;
   });
 
-  it("should block social media icons tracking", async() =>
+  it("should block social media icons tracking", async function()
   {
     const generalPage = new GeneralPage(browser);
     await generalPage.clickBlockSocialMediaIconsTrackingCheckbox();

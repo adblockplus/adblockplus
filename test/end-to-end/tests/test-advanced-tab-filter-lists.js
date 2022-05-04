@@ -17,24 +17,27 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence} = require("../helpers");
+const {afterSequence, beforeSequence, globalRetriesNumber} =
+  require("../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
 const GeneralPage = require("../page-objects/general.page");
 
-describe("test advanced tab - filter lists", () =>
+describe("test advanced tab - filter lists", function()
 {
-  beforeEach(async() =>
+  this.retries(globalRetriesNumber);
+
+  beforeEach(async function()
   {
     await beforeSequence();
   });
 
-  afterEach(async() =>
+  afterEach(async function()
   {
     await afterSequence();
   });
 
-  it("should display default state", async() =>
+  it("should display default state", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -52,7 +55,7 @@ describe("test advanced tab - filter lists", () =>
       isAllowNonintrusiveAdvertisingFLStatusToggleEnabled()).to.be.false;
   });
 
-  it("should update all filter lists", async() =>
+  it("should update all filter lists", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -80,7 +83,7 @@ describe("test advanced tab - filter lists", () =>
       waitForAllowNonintrusiveFLLastUpdatedTextToEqual("Just now")).to.be.true;
   }, 2);
 
-  it("should update a filter list", async() =>
+  it("should update a filter list", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -96,7 +99,7 @@ describe("test advanced tab - filter lists", () =>
       isAllowNonintrusiveAdvertisingFLUpdating(1000, true)).to.be.true;
   }, 3);
 
-  it("should go to filter list web page", async() =>
+  it("should go to filter list web page", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -107,7 +110,7 @@ describe("test advanced tab - filter lists", () =>
       "https://easylist.to/");
   });
 
-  it("should go to filter list source page", async() =>
+  it("should go to filter list source page", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -118,7 +121,7 @@ describe("test advanced tab - filter lists", () =>
       "https://easylist-downloads.adblockplus.org/easylist.txt");
   });
 
-  it("should disable/enable a filter list", async() =>
+  it("should disable/enable a filter list", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -130,7 +133,7 @@ describe("test advanced tab - filter lists", () =>
       isEasyListFLStatusToggleSelected()).to.be.true;
   });
 
-  it("should delete a filter list", async() =>
+  it("should delete a filter list", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -143,7 +146,7 @@ describe("test advanced tab - filter lists", () =>
       "You don't have any language-specific filters.");
   }, 2);
 
-  it("should add a built-in filter list", async() =>
+  it("should add a built-in filter list", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -163,7 +166,7 @@ describe("test advanced tab - filter lists", () =>
       isListeFRPlusEasylistLanguageTableItemDisplayed()).to.be.true;
   });
 
-  it("should add a filter list via URL", async() =>
+  it("should add a filter list via URL", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -181,7 +184,7 @@ describe("test advanced tab - filter lists", () =>
       isTestFilterListStatusToggleSelected()).to.be.true;
   });
 
-  it("should display an error for invalid filter list via URL", async() =>
+  it("should display an error for invalid filter list via URL", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -198,7 +201,7 @@ describe("test advanced tab - filter lists", () =>
       isTestFilterListNoHtttpsDisplayed()).to.be.false;
   });
 
-  it("should display disabled filters error", async() =>
+  it("should display disabled filters error", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();

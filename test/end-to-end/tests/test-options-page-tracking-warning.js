@@ -17,18 +17,20 @@
 
 "use strict";
 
-const {beforeSequence} = require("../helpers");
+const {beforeSequence, globalRetriesNumber} = require("../helpers");
 const {expect} = require("chai");
 const GeneralPage = require("../page-objects/general.page");
 
-describe("test options page general tab tracking warning", () =>
+describe("test options page general tab tracking warning", function()
 {
-  before(async() =>
+  this.retries(globalRetriesNumber);
+
+  before(async function()
   {
     await beforeSequence();
   });
 
-  it("should display tracking warning", async() =>
+  it("should display tracking warning", async function()
   {
     const generalPage = new GeneralPage(browser);
     await generalPage.clickBlockAdditionalTrackingCheckbox();
