@@ -138,7 +138,7 @@ class AdvancedPage extends BasePage
 
   get customFilterListsFirstItemAlertText()
   {
-    return $("//tbody/tr[1]/td[4]/img[contains(@title, 'To ensure a fast')]");
+    return $("//tbody/tr[1]/td[4]/img[contains(@title, 'Slow filter')]");
   }
 
   async customFilterListsNthItemCheckbox(n)
@@ -721,8 +721,8 @@ class AdvancedPage extends BasePage
   async isCustomFLFirstItemAlertIconTooltipDisplayed(expectedValue = "",
                                                      timeoutVal = 5000)
   {
-    expectedValue = "To ensure a fast filter, please check the length of " +
-      "the pattern and ensure it doesn't contain a regular expression.";
+    expectedValue = "Slow filter. Please check the length of the pattern " +
+      "and ensure it doesn't contain a regular expression.";
     await this.waitUntilAttributeValueIs(
       this.customFilterListsFirstItemAlertIcon, "title",
       expectedValue, timeoutVal);

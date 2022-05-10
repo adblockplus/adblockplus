@@ -66,11 +66,6 @@ const customErrors = [
     "specify at least one domain for this filter."
   },
   {
-    testName: "Invalid option",
-    customFilter: "$domain=",
-    errorText: "Invalid filter option"
-  },
-  {
     testName: "CSS selector too short",
     customFilter: "##aa",
     errorText: "CSS selector is too short. Please use a longer selector or " +
