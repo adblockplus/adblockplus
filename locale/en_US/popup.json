@@ -1,4 +1,8 @@
 {
+  "idle_header": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/9f5b13a5e5d14cc8da5c28c4bac7698a164cc847/spec/abp/popup.md#inactive",
+    "message": "There's nothing to block on this page!"
+  },
   "status_header": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/241afce65629c742cfdf6456c06dfcb12f569163/spec/abp/popup.md#toggle",
     "message": "Block ads on"
