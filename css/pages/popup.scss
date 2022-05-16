@@ -86,9 +86,8 @@ body.private #stats-total,
 body.private.disabled #page-info,
 /* Blocked counters only update for regular tabs containing HTTP(S) pages */
 body.private.ignore #page-info,
-/* UI page is empty for private tabs containing non-HTTP(S) pages */
-body:not(.private) #idle-status,
-body.private:not(.ignore) #idle-status
+/* The idle status section is displayed on all non-HTTP(S) pages  */
+body:not(.ignore) #idle-status
 {
   display: none;
 }
@@ -304,14 +303,27 @@ html[dir="rtl"] #notification .content h3
 
 #idle-status
 {
-  margin: var(--margin-primary) 0;
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  margin: 0 auto;
+  padding: 0;
   text-align: center;
+}
+
+#idle-status h2
+{
+  margin: 0 0 var(--margin-primary) 0;
+  font-size: var(--font-size-heavy);
+  line-height: 1.3em;
+  color: var(--color-secondary);
+  letter-spacing: normal;
+  text-transform: none;
 }
 
 #idle-status img
 {
-  width: 200px;
-  height: 200px;
+  margin: 10px 20px;
 }
 
 #page-status
