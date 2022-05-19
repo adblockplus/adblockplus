@@ -19,6 +19,7 @@
 
 "use strict";
 
+const fs = require("fs");
 const helpers = require("./helpers.js");
 
 exports.config = {
@@ -77,8 +78,8 @@ exports.config = {
       browserName: "chrome",
       "goog:chromeOptions": {
         args: ["--no-sandbox",
-                `--load-extension=${helpers.getExtensionPath()},${helpers.helperExtension}`,
-                `--disable-extensions-except=${helpers.getExtensionPath()},${helpers.helperExtension}`],
+                `--load-extension=${helpers.getChromiumExtensionPath()},${helpers.helperExtension}`,
+                `--disable-extensions-except=${helpers.getChromiumExtensionPath()},${helpers.helperExtension}`],
         excludeSwitches: ["disable-extensions"]
       },
       acceptInsecureCerts: true
@@ -91,8 +92,8 @@ exports.config = {
       browserName: "MicrosoftEdge",
       "ms:edgeOptions": {
         args: ["--no-sandbox",
-                `--load-extension=${helpers.getExtensionPath()},${helpers.helperExtension}`,
-                `--disable-extensions-except=${helpers.getExtensionPath()},${helpers.helperExtension}`],
+                `--load-extension=${helpers.getChromiumExtensionPath()},${helpers.helperExtension}`,
+                `--disable-extensions-except=${helpers.getChromiumExtensionPath()},${helpers.helperExtension}`],
         excludeSwitches: ["disable-extensions"]
       },
       acceptInsecureCerts: true
@@ -196,8 +197,34 @@ exports.config = {
      * @param {Object} config wdio configuration object
      * @param {Array.<Object>} capabilities list of capabilities details
      */
-  // onPrepare: function (config, capabilities) {
-  // },
+  onPrepare(config, capabilities)
+  {
+    const browserList = [];
+    for (const property in capabilities)
+    {
+      browserList.push(capabilities[property]["browserName"]);
+    }
+
+    if (browserList.includes("chrome") || browserList.includes("MicrosoftEdge"))
+    {
+      const extensionPath = helpers.getChromiumExtensionPath();
+      if (!fs.existsSync(extensionPath))
+      {
+        console.error("Extension 'adblockpluschrome/devenv.chrome' does not exist");
+        process.exit(1);
+      }
+    }
+
+    if (browserList.includes("firefox"))
+    {
+      const extensionPath = helpers.getFirefoxExtensionPath();
+      if (!fs.existsSync(extensionPath))
+      {
+        console.error("Extension 'adblockpluschrome/*.xpi' does not exist");
+        process.exit(1);
+      }
+    }
+  },
   /**
      * Gets executed before a worker process is spawned and can be used to initialise specific service
      * for that worker as well as modify runtime environments in an async fashion.
@@ -234,7 +261,8 @@ exports.config = {
      * @param {String} commandName hook command name
      * @param {Array} args arguments that command would receive
      */
-  // beforeCommand: function (commandName, args) {
+  // beforeCommand(commandName, args)
+  // {
   // },
   /**
      * Hook that gets executed before the suite starts

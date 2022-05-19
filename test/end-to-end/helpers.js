@@ -31,20 +31,7 @@ async function beforeSequence()
 {
   if (browser.capabilities.browserName == "firefox")
   {
-    let abpXpiFileName = "undefined";
-    const files = fs.readdirSync(__dirname);
-    files.forEach(async(name) =>
-    {
-      if (/.*\.xpi/.test(name))
-      {
-        abpXpiFileName = name;
-      }
-    });
-    if (abpXpiFileName == "undefined")
-    {
-      console.error("ABP xpi file not found.");
-      process.exit(1);
-    }
+    const abpXpiFileName = getFirefoxExtensionPath();
     const abpExtensionXpi = await fs.promises.readFile(abpXpiFileName);
     const helperExtensionZip = await fs.promises.
       readFile("helper-extension/helper-extension.zip");
@@ -57,15 +44,24 @@ async function beforeSequence()
   return [origin];
 }
 
-function getExtensionPath()
+function getChromiumExtensionPath()
 {
   const extensionPath = "../../adblockpluschrome/devenv.chrome";
-  if (!fs.existsSync(extensionPath))
-  {
-    console.error("Extension 'adblockpluschrome/devenv.chrome' does not exist");
-    process.exit(1);
-  }
   return extensionPath;
+}
+
+function getFirefoxExtensionPath()
+{
+  let abpXpiFileName;
+  const files = fs.readdirSync("../../adblockpluschrome");
+  files.forEach(async(name) =>
+  {
+    if (/.*\.xpi/.test(name))
+    {
+      abpXpiFileName = "../../adblockpluschrome/" + name;
+    }
+  });
+  return abpXpiFileName;
 }
 
 async function waitForExtension()
@@ -102,5 +98,6 @@ async function waitForExtension()
   return [origin];
 }
 
-module.exports = {afterSequence, beforeSequence, getExtensionPath,
+module.exports = {afterSequence, beforeSequence,
+                  getChromiumExtensionPath, getFirefoxExtensionPath,
                   helperExtension, globalRetriesNumber, waitForExtension};
