@@ -27,10 +27,13 @@ Adblock Plus.
 
 To contribute to this project, you'll need:
 
-[Node][nodejs] (>= 16.10.0) and npm (>= 7)
+- [Node][nodejs] >= 16.10.0; < 17.0.0
+- [npm][npm] >= 7.0.0; < 8.0.0
 
-**Important**: `Node` should come installed with `npm`. If it doesn't, you can
+`Node` should come installed with `npm`. If it doesn't, you can
 download `npm` [here][npm].
+
+**Important**: If you are on a Mac with an M1 processor you must first install the correct architecture by running `arch -x86_64 zsh` in the command line **before** installing `Node` (or reinstall `Node` after). If you use `nvm`, you can install the alternate architecture [in just one version of node as shown here](https://github.com/nvm-sh/nvm/issues/2350#issuecomment-734132550)
 
 **Important:** On Windows, you need a [Linux environment running on WSL][ms-wsl]
 and run the commands from within Bash.

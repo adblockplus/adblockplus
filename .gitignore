@@ -7,3 +7,4 @@
 !/polyfill.js
 /allure-report/
 /test/end-to-end/allure-results/
+.DS_Store
