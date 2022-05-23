@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {$, $$, events} = require("../../dom");
+const {$} = require("../../dom");
 
 let ignoreFocus = false;
 
@@ -105,7 +105,7 @@ function filtersKeydown(event)
   if (isClosed())
     return;
 
-  const key = events.key(event);
+  const {key} = event;
   if (key !== "Enter" && key !== "Escape")
     return;
 
@@ -162,7 +162,7 @@ function isClosed()
 
 function openerKeys(event)
 {
-  switch (events.key(event))
+  switch (event.key)
   {
     case " ":
     case "Enter":

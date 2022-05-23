@@ -19,7 +19,7 @@
 
 const {port} = require("./api");
 const {getErrorMessage} = require("./common");
-const {$, events} = require("./dom");
+const {$} = require("./dom");
 const {stripTagsUnsafe} = require("./i18n");
 require("./io-checkbox");
 const IOElement = require("./io-element");
@@ -103,7 +103,7 @@ class IOFilterList extends IOFilterBase
 
   onkeydown(event)
   {
-    const key = events.key(event);
+    const {key} = event;
     if (key === "Enter" || key === "Escape")
     {
       event.preventDefault();
@@ -120,7 +120,7 @@ class IOFilterList extends IOFilterBase
 
   onkeyup(event)
   {
-    const isEnter = events.key(event) === "Enter";
+    const isEnter = event.key === "Enter";
     const update = isEnter || event.type === "blur";
     const {currentTarget} = event;
     const {title} = currentTarget;

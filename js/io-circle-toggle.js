@@ -18,7 +18,7 @@
 "use strict";
 
 const IOElement = require("./io-element");
-const {$, events} = require("./dom");
+const {$} = require("./dom");
 
 class IOCircleToggle extends IOElement
 {
@@ -56,7 +56,7 @@ class IOCircleToggle extends IOElement
 
   onkeydown(event)
   {
-    switch (events.key(event))
+    switch (event.key)
     {
       case " ":
       case "Enter":

@@ -29,17 +29,6 @@ if (browser.runtime.getBrowserInfo)
   });
 }
 
-// used as legacy fallback in events.key(event) via keys[event.keyCode]
-const keys = {
-  9: "Tab",
-  13: "Enter",
-  27: "Escape",
-  37: "ArrowLeft",
-  38: "ArrowUp",
-  39: "ArrowRight",
-  40: "ArrowDown"
-};
-
 module.exports = {
   $: (selector, container = document) => container.querySelector(selector),
   $$: (selector, container = document) => container.querySelectorAll(selector),
@@ -82,14 +71,6 @@ module.exports = {
         event = window;
       const clipboardData = event.clipboardData || window.clipboardData;
       return clipboardData ? clipboardData.getData("text") : "";
-    }
-  },
-
-  events: {
-    // necessary to retrieve the right key before Chrome 51
-    key(event)
-    {
-      return "key" in event ? event.key : keys[event.keyCode];
     }
   },
 

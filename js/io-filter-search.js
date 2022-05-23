@@ -19,7 +19,7 @@
 
 const IOElement = require("./io-element");
 
-const {$, events} = require("./dom");
+const {$} = require("./dom");
 
 const MINIMUM_SEARCH_LENGTH = 3;
 
@@ -122,7 +122,7 @@ class IOFilterSearch extends IOElement
 
   onkeydown(event)
   {
-    switch (events.key(event))
+    switch (event.key)
     {
       case "Enter":
         const {value} = this;

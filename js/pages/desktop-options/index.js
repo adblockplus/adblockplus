@@ -28,7 +28,7 @@ const {
 } = require("./titles");
 const api = require("../../api");
 const {convertDoclinks, getDoclink, getErrorMessage} = require("../../common");
-const {$, $$, events} = require("../../dom");
+const {$, $$} = require("../../dom");
 const {
   initI18n,
   setElementLinks,
@@ -844,9 +844,9 @@ function onClick(e)
   }
 }
 
-function onKeyUp(e)
+function onKeyUp(event)
 {
-  const key = events.key(e);
+  const {key} = event;
   let element = document.activeElement;
   if (!key || !element)
     return;
@@ -873,7 +873,7 @@ function onKeyUp(e)
   const foundAction = execActions(actions, element);
   if (foundAction)
   {
-    e.preventDefault();
+    event.preventDefault();
   }
 }
 
@@ -1125,25 +1125,27 @@ function onDOMLoaded()
     });
   });
 
-  $("#dialog").addEventListener("keydown", function(e)
+  $("#dialog").addEventListener("keydown", function(event)
   {
-    switch (events.key(e))
+    const {key, preventDefault, shiftKey, target} = event;
+
+    switch (key)
     {
       case "Escape":
         closeDialog();
         break;
       case "Tab":
-        if (e.shiftKey)
+        if (shiftKey)
         {
-          if (e.target.classList.contains("focus-first"))
+          if (target.classList.contains("focus-first"))
           {
-            e.preventDefault();
+            preventDefault();
             $(".focus-last", this).focus();
           }
         }
-        else if (e.target.classList.contains("focus-last"))
+        else if (target.classList.contains("focus-last"))
         {
-          e.preventDefault();
+          preventDefault();
           $(".focus-first", this).focus();
         }
         break;
