@@ -20,25 +20,6 @@
 const {ResultGroup} = require("../common");
 
 const distanceCache = new Map();
-const importantWords = [
-  "ABP",
-  "Adblock Browser",
-  "Adblock Plus",
-  "Android",
-  "Chrome",
-  "Edge",
-  "eyeo",
-  "iOS",
-  "Firefox",
-  "GmbH",
-  "Opera",
-  "Microsoft"
-];
-const importantWordsExceptions = {
-  pl: {
-    Opera: ["Opery"]
-  }
-};
 
 // We're calculating the Levenshtein distance between two strings
 // to determine how similar they are to each other
@@ -75,10 +56,18 @@ function getDistance(a, b)
   return distance;
 }
 
-function validate(locale, string)
+/**
+ * Validates the given i18n string for the given locale.
+ *
+ * @param {string} locale The locale of the i18n string to validate
+ * @param {string} string The i18n string to validate
+ * @param {string[]} [importantWords=[]] The list of strict spelling words
+ * @param {object} [exceptions={}] The map of strict spelling exceptions
+ * @returns {ResultGroup} The validation result
+ */
+function validate(locale, string, importantWords = [], exceptions = {})
 {
   const results = new ResultGroup("Validate words");
-
   const words = string.split(" ");
 
   for (let i = 0; i < words.length; i++)
@@ -107,9 +96,9 @@ function validate(locale, string)
         continue;
 
       // Ignore if word is a locale-specific exception
-      if (locale in importantWordsExceptions &&
-          importantWord in importantWordsExceptions[locale] &&
-          importantWordsExceptions[locale][importantWord].includes(word))
+      if (locale in exceptions &&
+          importantWord in exceptions[locale] &&
+          exceptions[locale][importantWord].includes(word))
         continue;
 
       const distance = getDistance(word, importantWord);

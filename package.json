@@ -77,10 +77,7 @@
       "css": "stylelint ./build/**/*.css ./css/*.scss ./skin/*.css --ignore-path .gitignore",
       "js": "eslint './*.js' './js/**/*.js' './lib/**/*.js' './ext/**/*.js' './build/**/*.js' './mocks/**/*.js' './test/**/*.js'",
       "legacy": "eslint --ext .js,.cjs,.js.tmpl adblockpluschrome/*.js adblockpluschrome/lib/ adblockpluschrome/ext/ adblockpluschrome/test/ adblockpluschrome/build/",
-      "locale": [
-        "node build/locale-linter/test",
-        "node build/locale-linter ./locale/**/*.json"
-      ]
+      "locale": "node build/locale-linter ./locale/**/*.json"
     },
     "optimize": {
       "gif": "gifsicle -o $1 $1",
@@ -92,8 +89,8 @@
       ]
     },
     "test": {
-      "unit": "mocha ./test/unit",
-      "integration": "mocha ./test/integration"
+      "unit": "mocha \"./test/unit/**/*.spec.js\"",
+      "integration": "mocha \"./test/integration/**/*.js\""
     },
     "watch": {
       "bundle": "watch 'npm run bundle' ./css ./js",

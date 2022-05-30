@@ -21,6 +21,7 @@ const path = require("path");
 
 const {validate: validateFile} = require("./validators/files");
 const {ResultGroup} = require("./common");
+const {importantWords, importantWordsExceptions} = require("./dictionary");
 
 async function run()
 {
@@ -33,7 +34,11 @@ async function run()
     {
       filepath = path.resolve(filepath);
 
-      const result = await validateFile(filepath);
+      const result = await validateFile(
+        filepath,
+        importantWords,
+        importantWordsExceptions
+      );
       results.push(result);
     }
   }

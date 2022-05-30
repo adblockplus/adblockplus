@@ -25,7 +25,16 @@ const {validate: validateStrings} = require("./strings");
 
 const reLocale = /^[a-z]{1,3}(?:_(?:[A-Z]{2}|\d+))?$/;
 
-async function validate(filepath)
+/**
+ * Validates the given i18n file.
+ *
+ * @param {string} filepath The path to the i18n file
+ * @param {string[]} [importantWords] The list of strict spelling words
+ * @param {object} [importantWordsExceptions] The map of strict spelling
+ *   exceptions
+ * @returns {Promise<ResultGroup>} The validation result
+ */
+async function validate(filepath, importantWords, importantWordsExceptions)
 {
   const results = new ResultGroup(`Validate '${filepath}'`);
 
@@ -49,7 +58,12 @@ async function validate(filepath)
   {
     const content = await fs.readFile(filepath, "utf8");
     const stringInfos = JSON.parse(content);
-    const stringResults = validateStrings(locale, stringInfos);
+    const stringResults = validateStrings(
+      locale,
+      stringInfos,
+      importantWords,
+      importantWordsExceptions
+    );
     results.push(stringResults);
   }
   catch (ex)

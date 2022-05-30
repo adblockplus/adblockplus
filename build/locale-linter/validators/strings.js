@@ -22,7 +22,17 @@ const {validate: validatePlaceholders} = require("./placeholders");
 const {validate: validateTags} = require("./tags");
 const {validate: validateWords} = require("./words");
 
-function validate(locale, stringInfos)
+/**
+ * Validates the contents of an i18n file for the given locale.
+ *
+ * @param {string} locale The locale to validate for
+ * @param {object} stringInfos The contents of an i18n file to validate
+ * @param {string[]} [importantWords] The list of strict spelling words
+ * @param {object} [importantWordsExceptions] The map of strict spelling
+ *   exceptions
+ * @returns {ResultGroup} The validation result
+ */
+function validate(locale, stringInfos, importantWords, importantWordsExceptions)
 {
   const results = new ResultGroup("Validate strings");
 
@@ -41,6 +51,10 @@ function validate(locale, stringInfos)
     if (!("message" in stringInfo))
     {
       stringResults.push("Missing 'message' property");
+      // We can't go on here, let's push the results we have so far and move
+      // on to process the next `stringId`.
+      results.push(stringResults);
+      continue;
     }
 
     if (/\n/.test(stringInfo.message))
@@ -67,7 +81,12 @@ function validate(locale, stringInfos)
     const tagsResults = validateTags(stringInfo.message);
     stringResults.push(tagsResults);
 
-    const wordsResults = validateWords(locale, stringInfo.message);
+    const wordsResults = validateWords(
+      locale,
+      stringInfo.message,
+      importantWords,
+      importantWordsExceptions
+    );
     stringResults.push(wordsResults);
 
     results.push(stringResults);
