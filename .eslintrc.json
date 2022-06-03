@@ -6,10 +6,25 @@
     "webextensions": true
   },
   "globals": {
-    "ext": true,
-    "require": true,
-    "module": true
+    "ext": true
   },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 11,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.js", "*.cjs"
+      ],
+      "parserOptions": {
+        "sourceType": "script"
+      }
+    }
+  ],
   "rules": {
     // This rule was mistakenly added to eslint-config-eyeo in [1]
     // so we have to temporarily disable it while we're searching for a

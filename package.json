@@ -37,7 +37,7 @@
       "mobile-options": "$ create.bundle mobile-options",
       "mocks": [
         "mkdir -p mocks/dist",
-        "$ create.js ./mocks/js/background.js ./mocks/dist/background.js"
+        "$ create.js ./mocks/js/background.mjs ./mocks/dist/background.js"
       ],
       "popup": "$ create.bundle popup",
       "problem": "$ create.bundle problem",
@@ -47,7 +47,7 @@
       "bundle": {
         "css": "$ create.css ./css/pages/$1.scss ./skin/$1.css",
         "js": [
-          "source=$([ -d ./js/pages/$1 ] && echo \"./js/pages/$1/index.js\" || echo \"./js/pages/$1.js\")",
+          "source=$([ -d ./js/pages/$1 ] && echo \"./js/pages/$1/index.mjs\" || echo \"./js/pages/$1.mjs\")",
           "$ create.js $source ./$1.js"
         ]
       },
@@ -57,7 +57,10 @@
         "icons": "node build/icons-generation/index.js",
         "ui": "$ bundle"
       },
-      "js": "echo \"/* eslint-disable */$(browserify --node $1)\">$2"
+      "js": [
+        "copyright=\"$(cat ./build/license.txt)\"",
+        "echo \"$copyright /* eslint-disable */\n$(rollup $1 --compact --format iife --plugin @rollup/plugin-node-resolve --plugin rollup-plugin-cleanup)\" > $2"
+      ]
     },
     "crowdin": {
       "download-translations": [
@@ -75,7 +78,7 @@
     ],
     "lint": {
       "css": "stylelint ./build/**/*.css ./css/*.scss ./skin/*.css --ignore-path .gitignore",
-      "js": "eslint './*.js' './js/**/*.js' './lib/**/*.js' './ext/**/*.js' './build/**/*.js' './mocks/**/*.js' './test/**/*.js'",
+      "js": "eslint './js/**/*.mjs' './lib/**/*.js' './ext/**/*.js' './build/**/*.js' './mocks/**/*.mjs' './test/**/*.js' './test/**/*.mjs'",
       "legacy": "eslint --ext .js,.cjs,.js.tmpl adblockpluschrome/*.js adblockpluschrome/lib/ adblockpluschrome/ext/ adblockpluschrome/test/ adblockpluschrome/build/",
       "locale": "node build/locale-linter ./locale/**/*.json"
     },
@@ -89,8 +92,7 @@
       ]
     },
     "test": {
-      "unit": "mocha \"./test/unit/**/*.spec.js\"",
-      "integration": "mocha \"./test/integration/**/*.js\""
+      "unit": "mocha \"./test/unit/**/*.spec.js\""
     },
     "watch": {
       "bundle": "watch 'npm run bundle' ./css ./js",
@@ -109,13 +111,15 @@
   },
   "dependencies": {
     "@eyeo/snippets": "0.5.2",
-    "browserify": "16.5.2",
+    "@rollup/plugin-node-resolve": "13.3.0",
     "canvas": "2.8.0",
     "glob": "7.1.6",
     "hyperhtml-element": "3.14.0",
     "local-range": "0.1.0",
     "npm-dollar": "2.2.1",
     "pngquant-bin": "5.0.2",
+    "rollup": "2.75.0",
+    "rollup-plugin-cleanup": "3.2.1",
     "sass": "1.46.0"
   },
   "devDependencies": {
