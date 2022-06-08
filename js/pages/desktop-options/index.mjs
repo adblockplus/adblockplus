@@ -1000,6 +1000,8 @@ function setupLanguagesBox()
 
 function onDOMLoaded()
 {
+  api.connect();
+
   setupLanguagesBox();
   populateLists().catch(dispatchError);
   populateFilters().catch(dispatchError);
@@ -1588,7 +1590,7 @@ function onPrefMessage(key, value, initial)
     checkbox.setAttribute("aria-checked", value);
 }
 
-api.port.onMessage.addListener((message) =>
+api.addListener((message) =>
 {
   switch (message.type)
   {
@@ -1646,36 +1648,21 @@ api.port.onMessage.addListener((message) =>
   }
 });
 
-api.port.postMessage({
-  type: "app.listen",
-  filter: ["addSubscription", "focusSection"]
-});
-api.port.postMessage({
-  type: "filters.listen",
-  filter: ["added", "changed", "removed"]
-});
-api.port.postMessage({
-  type: "prefs.listen",
-  filter: [
-    "elemhide_debug",
-    "notifications_ignoredcategories",
-    "recommend_language_subscriptions",
-    "shouldShowBlockElementMenu",
-    "show_devtools_panel",
-    "show_statsinicon",
-    "ui_warn_tracking"
-  ]
-});
-api.port.postMessage({
-  type: "subscriptions.listen",
-  filter: ["added", "changed", "filtersDisabled", "removed"]
-});
+api.app.listen(["addSubscription", "focusSection"]);
+api.filters.listen(["added", "changed", "removed"]);
+api.prefs.listen([
+  "elemhide_debug",
+  "notifications_ignoredcategories",
+  "recommend_language_subscriptions",
+  "shouldShowBlockElementMenu",
+  "show_devtools_panel",
+  "show_statsinicon",
+  "ui_warn_tracking"
+]);
+api.subscriptions.listen(["added", "changed", "filtersDisabled", "removed"]);
 
 onDOMLoaded();
 
-// We must call port.disconnect because of this Microsoft Edge bug:
-// https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/19011773/
-window.addEventListener("unload", () => api.port.disconnect());
 window.addEventListener("hashchange", onHashChange, false);
 
 // Show a generic error message

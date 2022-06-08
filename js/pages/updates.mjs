@@ -26,6 +26,7 @@ import {initI18n} from "../i18n";
 import "../io-element";
 import "../landing";
 
+api.connect();
 const localeInfo = api.app.get("localeInfo");
 
 async function addUpdates(container, updates)

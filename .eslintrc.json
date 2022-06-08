@@ -37,6 +37,7 @@
     // decided to put an end to all debates and use
     // the `prefer-const` rule.
     "prefer-const": ["error", {"destructuring": "all"}],
-    "no-prototype-builtins": 0
+    "no-prototype-builtins": 0,
+    "spaced-comment": ["error", "always", {"block": {"exceptions": ["*"]}}]
   }
 }

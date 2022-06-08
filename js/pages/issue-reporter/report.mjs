@@ -37,62 +37,56 @@ function getOriginalTabId()
   return tabId;
 }
 
-api.port.onMessage.addListener((message) =>
+api.connect();
+api.addListener((message) =>
 {
-  switch (message.type)
+  if (message.type !== "requests.respond" || message.action !== "hits")
+    return;
+
+  const [request, filter, subscriptions] = message.args;
+  const requestsContainerElem = $("requests", reportData);
+  const filtersElem = $("filters", reportData);
+  // ELEMHIDE hitLog request doesn't contain url
+  if (request.url)
   {
-    case "requests.respond":
-      switch (message.action)
-      {
-        case "hits":
-          const [request, filter, subscriptions] = message.args;
-          const requestsContainerElem = $("requests", reportData);
-          const filtersElem = $("filters", reportData);
-          // ELEMHIDE hitLog request doesn't contain url
-          if (request.url)
-          {
-            let requestElem = $(`[location="${request.url}"]`, reportData);
-            if (!requestElem)
-            {
-              requestElem = reportData.createElement("request");
-              requestElem.setAttribute("location", censorURL(request.url));
-              requestElem.setAttribute("type", request.type);
-              requestElem.setAttribute("docDomain", request.docDomain);
-              requestElem.setAttribute("thirdParty", request.thirdParty);
-              requestElem.setAttribute("count", 0);
-              requestsContainerElem.appendChild(requestElem);
-            }
+    let requestElem = $(`[location="${request.url}"]`, reportData);
+    if (!requestElem)
+    {
+      requestElem = reportData.createElement("request");
+      requestElem.setAttribute("location", censorURL(request.url));
+      requestElem.setAttribute("type", request.type);
+      requestElem.setAttribute("docDomain", request.docDomain);
+      requestElem.setAttribute("thirdParty", request.thirdParty);
+      requestElem.setAttribute("count", 0);
+      requestsContainerElem.appendChild(requestElem);
+    }
 
-            const countNum = parseInt(requestElem.getAttribute("count"), 10);
-            requestElem.setAttribute("count", countNum + 1);
+    const countNum = parseInt(requestElem.getAttribute("count"), 10);
+    requestElem.setAttribute("count", countNum + 1);
 
-            if (filter)
-              requestElem.setAttribute("filter", filter.text);
-          }
-          if (filter)
-          {
-            const escapedText = CSS.escape(filter.text);
-            const existingFilter = $(`[text="${escapedText}"]`, reportData);
-            if (existingFilter)
-            {
-              const countNum = parseInt(
-                existingFilter.getAttribute("hitCount"),
-                10
-              );
-              existingFilter.setAttribute("hitCount", countNum + 1);
-            }
-            else
-            {
-              const filterElem = reportData.createElement("filter");
-              filterElem.setAttribute("text", filter.text);
-              filterElem.setAttribute("subscriptions", subscriptions.join(" "));
-              filterElem.setAttribute("hitCount", 1);
-              filtersElem.appendChild(filterElem);
-            }
-          }
-          break;
-      }
-      break;
+    if (filter)
+      requestElem.setAttribute("filter", filter.text);
+  }
+  if (filter)
+  {
+    const escapedText = CSS.escape(filter.text);
+    const existingFilter = $(`[text="${escapedText}"]`, reportData);
+    if (existingFilter)
+    {
+      const countNum = parseInt(
+        existingFilter.getAttribute("hitCount"),
+        10
+      );
+      existingFilter.setAttribute("hitCount", countNum + 1);
+    }
+    else
+    {
+      const filterElem = reportData.createElement("filter");
+      filterElem.setAttribute("text", filter.text);
+      filterElem.setAttribute("subscriptions", subscriptions.join(" "));
+      filterElem.setAttribute("hitCount", 1);
+      filtersElem.appendChild(filterElem);
+    }
   }
 });
 
@@ -106,11 +100,7 @@ function collectRequests(tabId)
   }).then((tab) =>
   {
     dataGatheringTabId = tab.id;
-    api.port.postMessage({
-      type: "requests.listen",
-      filter: ["hits"],
-      tabId: dataGatheringTabId
-    });
+    api.requests.listen(dataGatheringTabId, ["hits"]);
 
     function minimumTimeMet()
     {

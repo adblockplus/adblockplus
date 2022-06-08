@@ -22,6 +22,7 @@ import {initI18n} from "../i18n";
 
 import "../landing";
 
+api.connect();
 api.app.getInfo().then((info) =>
 {
   document.body.dataset.application = info.application;

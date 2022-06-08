@@ -20,6 +20,11 @@ const platformToStore = new Map([
   ["edgehtml", "edge"],
   ["gecko", "firefox"]
 ]);
+const connectListeners = new Set();
+const disconnectListeners = new Set();
+const messageListeners = new Set();
+
+let port = null;
 
 function getInfo()
 {
@@ -40,6 +45,18 @@ function getInfo()
   });
 }
 
+function listen(type, filter, options = {})
+{
+  addConnectListener(() =>
+  {
+    port.postMessage({
+      type: `${type}.listen`,
+      filter,
+      ...options
+    });
+  });
+}
+
 function send(type, args)
 {
   return browser.runtime.sendMessage({
@@ -48,9 +65,14 @@ function send(type, args)
   });
 }
 
+/*******************************************************************************
+ * Messaging API
+ ******************************************************************************/
+
 const app = {
   get: (what) => send("app.get", {what}),
   getInfo,
+  listen: (filter) => listen("app", filter),
   open: (what) => send("app.open", {what})
 };
 
@@ -59,7 +81,8 @@ const doclinks = {
 };
 
 const filters = {
-  get: () => send("filters.get")
+  get: () => send("filters.get"),
+  listen: (filter) => listen("filters", filter)
 };
 
 const notifications = {
@@ -68,30 +91,121 @@ const notifications = {
 };
 
 const prefs = {
-  get: (key) => send("prefs.get", {key})
+  get: (key) => send("prefs.get", {key}),
+  listen: (filter) => listen("prefs", filter)
+};
+
+const requests = {
+  listen: (tabId, filter) => listen("requests", filter, {tabId})
 };
 
 const subscriptions = {
   get: (options) => send("subscriptions.get", options),
-  getInitIssues: () => send("subscriptions.getInitIssues")
+  getInitIssues: () => send("subscriptions.getInitIssues"),
+  listen: (filter) => listen("subscriptions", filter)
 };
 
 const stats = {
   getBlockedPerPage: (tab) => send("stats.getBlockedPerPage", {tab}),
-  getBlockedTotal: () => send("stats.getBlockedTotal")
+  getBlockedTotal: () => send("stats.getBlockedTotal"),
+  listen: (filter) => listen("stats", filter)
 };
 
-// For now we are merely reusing the port for long-lived communications to fix
-// https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/issues/415
-const port = browser.runtime.connect({name: "ui"});
+/*******************************************************************************
+ * Communication port setup
+ ******************************************************************************/
+
+function addConnectListener(listener)
+{
+  connectListeners.add(listener);
+  listener();
+}
+
+function addDisconnectListener(listener)
+{
+  disconnectListeners.add(listener);
+}
+
+function addMessageListener(listener)
+{
+  messageListeners.add(listener);
+}
+
+function removeDisconnectListener(listener)
+{
+  disconnectListeners.delete(listener);
+}
+
+function onMessage(message)
+{
+  if (!message.type.endsWith(".respond"))
+    return;
+
+  for (const listener of messageListeners)
+  {
+    listener(message);
+  }
+}
+
+function connect()
+{
+  // We're only establishing one connection per page, for which we need to
+  // ignoresubsequent connection attempts
+  if (port)
+    return;
+
+  try
+  {
+    port = browser.runtime.connect({name: "ui"});
+  }
+  catch (ex)
+  {
+    // We are no longer able to connect to the background page, so we give up
+    // and assume that the extension is gone
+    port = null;
+    for (const listener of disconnectListeners)
+    {
+      listener();
+    }
+    return;
+  }
+
+  port.onMessage.addListener((...args) =>
+  {
+    onMessage(...args);
+  });
+
+  // When the connection to the background page drops, we try to reconnect,
+  // assuming that the extension is still there, in order to wake up the
+  // service worker
+  port.onDisconnect.addListener(() =>
+  {
+    port = null;
+    // If the disconnect occurs due to the extension being unloaded, we may
+    // still be able to reconnect while that's ongoing, which misleads us into
+    // thinking that the extension is still there. Therefore we need to wait
+    // a little bit before trying to reconnect.
+    // https://bugs.chromium.org/p/chromium/issues/detail?id=1312478
+    setTimeout(() => connect(), 100);
+  });
+
+  for (const listener of connectListeners)
+  {
+    listener();
+  }
+}
 
 const apiMethods = {
+  addDisconnectListener,
+  addListener: addMessageListener,
+  connect,
+  removeDisconnectListener,
   app,
   doclinks,
   filters,
   notifications,
-  port,
   prefs,
+  requests,
   subscriptions,
   stats
 };

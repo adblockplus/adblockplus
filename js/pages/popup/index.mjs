@@ -33,6 +33,7 @@ import "../../io-popup-footer";
 
 initI18n();
 
+api.connect();
 // info (platform, application and store) dataset bootstrap
 //
 // "platform" is used to hide the Issue Reporter due EdgeHTML bug
@@ -141,7 +142,7 @@ function setupStats(tab)
     updateBlockedTotal(blockedTotal);
   });
 
-  api.port.onMessage.addListener((msg) =>
+  api.addListener((msg) =>
   {
     if (msg.type !== "stats.respond")
       return;
@@ -160,10 +161,7 @@ function setupStats(tab)
     }
   });
 
-  api.port.postMessage({
-    type: "stats.listen",
-    filter: ["blocked_per_page", "blocked_total"]
-  });
+  api.stats.listen(["blocked_per_page", "blocked_total"]);
 }
 
 function setupShare()

@@ -15,6 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import api from "../api";
 import {convertDoclinks, getDoclink, getErrorMessage} from "../common";
 import {initI18n} from "../i18n";
 
@@ -394,23 +395,12 @@ import {initI18n} from "../i18n";
     }
   }
 
-  const port = browser.runtime.connect({name: "ui"});
-  port.onMessage.addListener(onMessage);
+  api.connect();
+  api.addListener(onMessage);
 
-  port.postMessage({
-    type: "app.listen",
-    filter: ["addSubscription", "showPageOptions"]
-  });
-
-  port.postMessage({
-    type: "filters.listen",
-    filter: ["added", "removed"]
-  });
-
-  port.postMessage({
-    type: "subscriptions.listen",
-    filter: ["added", "changed", "removed"]
-  });
+  api.app.listen(["addSubscription", "showPageOptions"]);
+  api.filters.listen(["added", "removed"]);
+  api.subscriptions.listen(["added", "changed", "removed"]);
 
   /* Initialization */
 

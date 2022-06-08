@@ -48,6 +48,8 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
   - [clicked](#notificationsclicked)
   - [get](#notificationsget)
   - [seen](#notificationsseen)
+- requests
+  - [listen](#requestslisten)
 - stats
   - [getBlockedPerPage](#statsgetblockedperpage)
   - [getBlockedTotal](#statsgetblockedtotal)
@@ -313,6 +315,24 @@ If filter includes `showPageOptions`:
 
 ---
 
+### requests
+
+#### requests.listen
+
+**Arguments**
+
+- **string[]** filter
+  - `hits`
+- **number** tabId
+
+**Response**
+
+- **[Target](#target)** target
+- **[Filter](#filter)** filter
+- **string[]** subscriptions
+
+---
+
 ### stats
 
 #### stats.getBlockedPerPage
@@ -464,6 +484,13 @@ If filter includes `blocked_total`:
 - **string** title
 - **string** url
 - **string** version
+
+### Target
+
+- **string** docDomain
+- **boolean** thirdParty
+- **string** type
+- **string** url
 
 ![Subscription expiration](images/subscription-expiration.svg)
 

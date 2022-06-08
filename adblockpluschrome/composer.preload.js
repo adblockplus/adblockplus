@@ -15,6 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import api from "../js/api.mjs";
+
 // The page ID for the popup filter selection dialog (top frame only).
 let blockelementPopupId = null;
 
@@ -36,6 +38,7 @@ let lastRightClickEvent = null;
 let lastRightClickEventIsMostRecent = false;
 
 let keepPreviewEnabled = false;
+let previewSelectors = [];
 
 
 /* Utilities */
@@ -374,7 +377,7 @@ function startPickingElement()
   document.addEventListener("contextmenu", elementPicked, true);
   document.addEventListener("keydown", keyDown, true);
 
-  ext.onExtensionUnloaded.addListener(deactivateBlockElement);
+  api.addDisconnectListener(onDisconnect);
 }
 
 // Used to hide/show blocked elements on composer.content.preview
@@ -388,7 +391,18 @@ async function previewBlockedElements(active)
 
   previewBlockedElement(element, active, overlays);
 
-  let {selectors} = await getFiltersForElement(element);
+  let selectors;
+  if (active)
+  {
+    ({selectors} = await getFiltersForElement(element));
+    previewSelectors = selectors;
+  }
+  else
+  {
+    selectors = previewSelectors;
+    previewSelectors = [];
+  }
+
   if (selectors.length > 0)
   {
     let cssQuery = selectors.join(",");
@@ -506,7 +520,14 @@ function deactivateBlockElement(popupAlreadyClosed)
   while (overlays.length > 0)
     overlays[0].parentNode.removeChild(overlays[0]);
 
-  ext.onExtensionUnloaded.removeListener(deactivateBlockElement);
+  api.removeDisconnectListener(onDisconnect);
+}
+
+function onDisconnect()
+{
+  // When the background page disconnects, it's no longer safe to send messages
+  // to it, so we should instead leave it up to the browser to close the popup
+  deactivateBlockElement(true);
 }
 
 function initializeComposer()

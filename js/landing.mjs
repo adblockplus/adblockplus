@@ -29,4 +29,5 @@ function initCopyrightNotice()
   });
 }
 
+api.connect();
 initCopyrightNotice();
