@@ -16,7 +16,7 @@
 ---
 
 default:
-  image: node:16
+  image: node:16.15.0
   before_script:
     # enable unsafe-perm to avoid problems with running npm as root
     # see https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/issues/193
@@ -156,7 +156,7 @@ build:with-snippets:
 
 uploadcrowdin:
   stage: uploadcrowdin
-  extends: 
+  extends:
     - .crowdin
     - .translations
   script:
@@ -173,7 +173,7 @@ uploadcrowdin:
 
 downloadcrowdin:
   stage: downloadcrowdin
-  extends: 
+  extends:
     - .crowdin
     - .translations
   script:
@@ -211,7 +211,7 @@ downloadcrowdin:
 
 uploadxtm:
   stage: uploadxtm
-  extends: 
+  extends:
     - .xtm
     - .translations
   script:
@@ -226,7 +226,7 @@ uploadxtm:
 
 updatextm:
   stage: updatextm
-  extends: 
+  extends:
     - .xtm
     - .translations
   script:
@@ -241,7 +241,7 @@ updatextm:
 
 downloadxtm:
   stage: downloadxtm
-  extends: 
+  extends:
     - .xtm
     - .translations
   script:
