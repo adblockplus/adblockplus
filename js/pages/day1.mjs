@@ -64,7 +64,6 @@ function initTitle()
     });
 }
 
-api.connect();
 convertDoclinks();
 initI18n();
 initContact();

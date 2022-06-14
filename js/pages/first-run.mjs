@@ -96,7 +96,6 @@ function initApplication()
   });
 }
 
-api.connect();
 convertDoclinks();
 initI18n();
 initLinks();

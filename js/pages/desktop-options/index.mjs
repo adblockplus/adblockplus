@@ -1000,8 +1000,6 @@ function setupLanguagesBox()
 
 function onDOMLoaded()
 {
-  api.connect();
-
   setupLanguagesBox();
   populateLists().catch(dispatchError);
   populateFilters().catch(dispatchError);

@@ -395,7 +395,6 @@ import {initI18n} from "../i18n";
     }
   }
 
-  api.connect();
   api.addListener(onMessage);
 
   api.app.listen(["addSubscription", "showPageOptions"]);

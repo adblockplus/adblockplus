@@ -33,7 +33,6 @@ import "../../io-popup-footer";
 
 initI18n();
 
-api.connect();
 // info (platform, application and store) dataset bootstrap
 //
 // "platform" is used to hide the Issue Reporter due EdgeHTML bug
@@ -97,9 +96,7 @@ activeTab.then(tab =>
   options.textContent = "";
   options.addEventListener("click", () =>
   {
-    browser.runtime.sendMessage(
-      {type: "app.open", what: "options"}
-    ).then(
+    api.app.open("options").then(
       // force closing popup which is not happening in Firefox
       // @link https://issues.adblockplus.org/ticket/7017
       () => window.close()

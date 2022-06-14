@@ -562,7 +562,6 @@ function replaceFilter(filter, currentTarget)
 // delegate the error handling
 function setupPort()
 {
-  api.connect();
   api.addListener((message) =>
   {
     if (message.type === "filters.respond" && message.action === "changed")

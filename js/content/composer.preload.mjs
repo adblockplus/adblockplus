@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import api from "../js/api.mjs";
+import api from "../api";
 
 // The page ID for the popup filter selection dialog (top frame only).
 let blockelementPopupId = null;
@@ -50,7 +50,7 @@ function getURLFromElement(element)
     if (element.data)
       return element.data;
 
-    for (let child of element.children)
+    for (const child of element.children)
     {
       if (child.localName == "param" && child.name == "movie" && child.value)
         return new URL(child.value, document.baseURI).href;
@@ -64,7 +64,7 @@ function getURLFromElement(element)
 
 function getFiltersForElement(element)
 {
-  let src = element.getAttribute("src");
+  const src = element.getAttribute("src");
   return browser.runtime.sendMessage({
     type: "composer.getFilters",
     tagName: element.localName,
@@ -93,13 +93,13 @@ async function getBlockableElementOrAncestor(element)
     // But we have to block the image associated with the <map> element.
     else if (element.localName == "map")
     {
-      let images = document.querySelectorAll("img[usemap]");
+      const images = document.querySelectorAll("img[usemap]");
       let image = null;
 
-      for (let currentImage of images)
+      for (const currentImage of images)
       {
-        let usemap = currentImage.getAttribute("usemap");
-        let index = usemap.indexOf("#");
+        const usemap = currentImage.getAttribute("usemap");
+        const index = usemap.indexOf("#");
 
         if (index != -1 && usemap.substr(index + 1) == element.name)
         {
@@ -115,7 +115,7 @@ async function getBlockableElementOrAncestor(element)
     // any filters for this element. Otherwise fall back to its parent element.
     else
     {
-      let {filters} = await getFiltersForElement(element);
+      const {filters} = await getFiltersForElement(element);
       if (filters.length > 0)
         return element;
       return getBlockableElementOrAncestor(element.parentElement);
@@ -137,7 +137,7 @@ function addElementOverlay(element)
 
   for (let e = element; e; e = e.parentElement)
   {
-    let style = getComputedStyle(e);
+    const style = getComputedStyle(e);
 
     // If the element isn't rendered (since its or one of its ancestor's
     // "display" property is "none"), the overlay wouldn't match the element.
@@ -153,13 +153,13 @@ function addElementOverlay(element)
     }
   }
 
-  let overlay = document.createElement("div");
+  const overlay = document.createElement("div");
   overlay.prisoner = element;
   overlay.className = "__adblockplus__overlay";
   overlay.setAttribute("style",
                        "opacity:0.4; display:inline-block !important; " +
                        "overflow:hidden; box-sizing:border-box;");
-  let rect = element.getBoundingClientRect();
+  const rect = element.getBoundingClientRect();
   overlay.style.width = rect.width + "px";
   overlay.style.height = rect.height + "px";
   overlay.style.left = (rect.left + offsetX) + "px";
@@ -175,9 +175,9 @@ function highlightElement(element, border, backgroundColor)
 {
   unhighlightElement(element);
 
-  let highlightWithOverlay = () =>
+  const highlightWithOverlay = () =>
   {
-    let overlay = addElementOverlay(element);
+    const overlay = addElementOverlay(element);
 
     // If the element isn't displayed no overlay will be added.
     // Moreover, we don't need to highlight anything then.
@@ -193,14 +193,14 @@ function highlightElement(element, border, backgroundColor)
     };
   };
 
-  let highlightWithStyleAttribute = () =>
+  const highlightWithStyleAttribute = () =>
   {
-    let originalBorder = element.style.getPropertyValue("border");
-    let originalBorderPriority =
+    const originalBorder = element.style.getPropertyValue("border");
+    const originalBorderPriority =
       element.style.getPropertyPriority("box-shadow");
-    let originalBackgroundColor =
+    const originalBackgroundColor =
       element.style.getPropertyValue("background-color");
-    let originalBackgroundColorPriority =
+    const originalBackgroundColorPriority =
       element.style.getPropertyPriority("background-color");
 
     element.style.setProperty("border", `2px solid ${border}`, "important");
@@ -248,7 +248,7 @@ function highlightElements(selectorString)
 {
   unhighlightElements();
 
-  let elements = Array.prototype.slice.call(
+  const elements = Array.prototype.slice.call(
     document.querySelectorAll(selectorString)
   );
   highlightedElementsSelector = selectorString;
@@ -259,7 +259,7 @@ function highlightElements(selectorString)
   {
     if (elements.length > 0)
     {
-      let element = elements.shift();
+      const element = elements.shift();
       if (element != currentElement)
         highlightElement(element, "#CA0000", "#CA0000");
     }
@@ -304,7 +304,7 @@ async function mouseOver(event)
 {
   lastMouseOverEvent = event;
 
-  let element = await getBlockableElementOrAncestor(event.target);
+  const element = await getBlockableElementOrAncestor(event.target);
   if (event == lastMouseOverEvent)
   {
     lastMouseOverEvent = null;
@@ -361,7 +361,7 @@ function startPickingElement()
     document.querySelectorAll("object,embed,iframe,frame"),
     async element =>
     {
-      let {filters} = await getFiltersForElement(element);
+      const {filters} = await getFiltersForElement(element);
       if (filters.length > 0)
         addElementOverlay(element);
     }
@@ -386,8 +386,8 @@ async function previewBlockedElements(active)
   if (!currentElement)
     return;
 
-  let element = currentElement.prisoner || currentElement;
-  let overlays = document.querySelectorAll(".__adblockplus__overlay");
+  const element = currentElement.prisoner || currentElement;
+  const overlays = document.querySelectorAll(".__adblockplus__overlay");
 
   previewBlockedElement(element, active, overlays);
 
@@ -405,8 +405,8 @@ async function previewBlockedElements(active)
 
   if (selectors.length > 0)
   {
-    let cssQuery = selectors.join(",");
-    for (let node of document.querySelectorAll(cssQuery))
+    const cssQuery = selectors.join(",");
+    for (const node of document.querySelectorAll(cssQuery))
       previewBlockedElement(node, active, overlays);
   }
 }
@@ -414,9 +414,9 @@ async function previewBlockedElements(active)
 // the previewBlockedElements helper to avoid duplicated code
 function previewBlockedElement(element, active, overlays)
 {
-  let display = active ? "none" : null;
-  let find = Array.prototype.find;
-  let overlay = find.call(overlays, ({prisoner}) => prisoner === element);
+  const display = active ? "none" : null;
+  const find = Array.prototype.find;
+  const overlay = find.call(overlays, ({prisoner}) => prisoner === element);
   if (overlay)
     overlay.style.display = display;
   element.style.display = display;
@@ -432,8 +432,8 @@ async function elementPicked(event)
   event.preventDefault();
   event.stopPropagation();
 
-  let element = currentElement.prisoner || currentElement;
-  let {filters, selectors} = await getFiltersForElement(element);
+  const element = currentElement.prisoner || currentElement;
+  const {filters, selectors} = await getFiltersForElement(element);
   if (currentlyPickingElement)
     stopPickingElement();
 
@@ -442,12 +442,12 @@ async function elementPicked(event)
   let highlights = 1;
   if (selectors.length > 0)
   {
-    let cssQuery = selectors.join(",");
+    const cssQuery = selectors.join(",");
     highlightElements(cssQuery);
     highlights = document.querySelectorAll(cssQuery).length;
   }
 
-  let popupId = await browser.runtime.sendMessage({
+  const popupId = await browser.runtime.sendMessage({
     type: "composer.openDialog",
     filters,
     highlights
@@ -516,7 +516,7 @@ function deactivateBlockElement(popupAlreadyClosed)
   }
   unhighlightElements();
 
-  let overlays = document.getElementsByClassName("__adblockplus__overlay");
+  const overlays = document.getElementsByClassName("__adblockplus__overlay");
   while (overlays.length > 0)
     overlays[0].parentNode.removeChild(overlays[0]);
 
@@ -573,7 +573,7 @@ function initializeComposer()
           startPickingElement();
         break;
       case "composer.content.contextMenuClicked":
-        let event = lastRightClickEvent;
+        const event = lastRightClickEvent;
         deactivateBlockElement();
         if (event)
         {

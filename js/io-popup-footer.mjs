@@ -21,8 +21,6 @@ import IOElement from "./io-element";
 
 const {getMessage} = browser.i18n;
 
-api.connect();
-
 class IOPopupFooter extends IOElement
 {
   get defaultState()

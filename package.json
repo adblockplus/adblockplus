@@ -13,6 +13,8 @@
     "lint": "npm run $ lint",
     "start": "http-server",
     "test": "npm run $ test",
+    "test:lint": "npm run $ lint",
+    "test:types": "tsc --noEmit",
     "watch": "npm run $ watch",
     "csv-export": "node build/locale-sync/csv/main.js -e",
     "csv-import": "node build/locale-sync/csv/main.js -i && node build/locale-sync/normalize.js",
@@ -25,6 +27,10 @@
   "$": {
     "bundle": {
       "composer": "$ create.bundle composer",
+      "composer-preload": [
+        "mkdir -p dist",
+        "$ create.js ./js/content/composer.preload.mjs ./dist/composer.preload.js"
+      ],
       "day1": [
         "$ create.bundle.css popup",
         "$ create.bundle popup-dummy",
@@ -59,7 +65,7 @@
       },
       "js": [
         "copyright=\"$(cat ./build/license.txt)\"",
-        "echo \"$copyright /* eslint-disable */\n$(rollup $1 --compact --format iife --plugin @rollup/plugin-node-resolve --plugin rollup-plugin-cleanup)\" > $2"
+        "echo \"$copyright /* eslint-disable */\n$(rollup $1 --config rollup.config.ts --configPlugin typescript)\" > $2"
       ]
     },
     "crowdin": {
@@ -112,6 +118,8 @@
   "dependencies": {
     "@eyeo/snippets": "0.5.2",
     "@rollup/plugin-node-resolve": "13.3.0",
+    "@rollup/plugin-typescript": "8.3.2",
+    "@types/webextension-polyfill": "0.8.0",
     "canvas": "2.8.0",
     "glob": "7.1.6",
     "hyperhtml-element": "3.14.0",
@@ -120,7 +128,9 @@
     "pngquant-bin": "5.0.2",
     "rollup": "2.75.0",
     "rollup-plugin-cleanup": "3.2.1",
-    "sass": "1.46.0"
+    "typescript": "4.7.3",
+    "sass": "1.46.0",
+    "webextension-polyfill": "0.8.0"
   },
   "devDependencies": {
     "@wdio/allure-reporter": "7.16.11",

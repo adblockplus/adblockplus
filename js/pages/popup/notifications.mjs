@@ -20,7 +20,6 @@ import {$} from "../../dom";
 import IOElement from "../../io-element";
 import {setPref} from "./utils";
 
-api.connect();
 api.notifications.get("popup")
   .then((notification) =>
   {

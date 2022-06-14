@@ -37,7 +37,6 @@ function getOriginalTabId()
   return tabId;
 }
 
-api.connect();
 api.addListener((message) =>
 {
   if (message.type !== "requests.respond" || message.action !== "hits")
@@ -100,7 +99,7 @@ function collectRequests(tabId)
   }).then((tab) =>
   {
     dataGatheringTabId = tab.id;
-    api.requests.listen(dataGatheringTabId, ["hits"]);
+    api.requests.listen(["hits"], dataGatheringTabId);
 
     function minimumTimeMet()
     {
@@ -251,8 +250,7 @@ async function retrieveWindowInfo(tabId)
 
 function retrieveSubscriptions()
 {
-  return browser.runtime.sendMessage({
-    type: "subscriptions.get",
+  return api.subscriptions.get({
     ignoreDisabled: true,
     disabledFilters: true
   }).then(subscriptions =>

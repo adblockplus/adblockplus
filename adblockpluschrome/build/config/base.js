@@ -44,12 +44,6 @@ export default {
           "lib/public-api/allowlisting.js",
           "node_modules/@eyeo/snippets/ml/bundle.ml.mjs"
         ]
-      },
-      {
-        dest: "composer.preload.js",
-        src: [
-          "adblockpluschrome/composer.preload.js"
-        ]
       }
     ]
   },
@@ -95,6 +89,7 @@ export default {
           "*.js",
           "*.html",
           "node_modules/@eyeo/snippets/webext/snippets.json",
+          "dist/composer.preload.js",
           "adblockpluschrome/devtools.*",
           "!polyfill.js",
           "!mobile-options.*"
