@@ -172,14 +172,14 @@ io-popup-footer .tabs button::after
   right: 100%;
   height: 50%;
   opacity: 0.5;
-  --animation-name: progress-bar
+  --animation-name: progress-bar;
 }
 
 html[dir="rtl"] io-popup-footer .tabs button::after
 {
   right: 0%;
   left: 100%;
-  --animation-name: progress-bar-rtl
+  --animation-name: progress-bar-rtl;
 }
 
 io-popup-footer .tabs.animated button[aria-selected="true"]::after

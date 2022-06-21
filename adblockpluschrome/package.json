@@ -29,7 +29,6 @@
     "ncp": "2.0.0",
     "selenium-webdriver": "4.0.0-alpha.7",
     "semver": "7.3.2",
-    "source-map-loader": "3.0.0",
     "through": "2.3.8",
     "webpack": "5.4.0",
     "webpack-merge": "5.1.4",
