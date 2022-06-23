@@ -16,7 +16,7 @@
     "dmg": "0.1.0",
     "extract-zip": "2.0.1",
     "geckodriver": "1.20.0",
-    "got": "11.6.2",
+    "got": "11.8.5",
     "gulp": "4.0.2",
     "gulp-gzip": "1.4.2",
     "gulp-tar": "3.1.0",
