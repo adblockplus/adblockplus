@@ -500,11 +500,6 @@ port.on("notifications.seen", (message, sender) =>
     stopIconAnimation();
 });
 
-ext.pages.onLoading.addListener(page =>
-{
-  ewe.notifications.showNext(page.url.href);
-});
-
 Stats.on("blocked_total", () =>
 {
   ewe.notifications.numBlocked = Stats.blocked_total;

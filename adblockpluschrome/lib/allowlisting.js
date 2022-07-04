@@ -186,7 +186,7 @@ export async function revalidateAllowlistingStates()
     revalidateAllowlistingState(new ext.Page(tab));
 }
 
-ext.pages.onLoading.addListener(revalidateAllowlistingState);
+ext.pages.onLoaded.addListener(revalidateAllowlistingState);
 ewe.filters.onAdded.addListener(revalidateAllowlistingStates);
 ewe.filters.onChanged.addListener((filter, property) =>
 {

@@ -110,15 +110,18 @@
   ext.getPage = id => new Page({id: parseInt(id, 10)});
 
   ext.pages = {
-    onLoading: new ext._EventTarget(),
     onActivated: new ext._EventTarget(),
+    onLoaded: new ext._EventTarget(),
+    onLoading: new ext._EventTarget(),
     onRemoved: new ext._EventTarget()
   };
 
   browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) =>
   {
-    if (changeInfo.status == "loading")
+    if (changeInfo.status === "loading")
       ext.pages.onLoading._dispatch(new Page(tab));
+    else if (changeInfo.status === "complete")
+      ext.pages.onLoaded._dispatch(new Page(tab));
   });
 
   function createFrame(tabId, frameId)
