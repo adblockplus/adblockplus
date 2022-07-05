@@ -15,17 +15,16 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import {initI18n, setElementText} from "../i18n";
+import api from "../../api";
+import {initI18n, setElementText} from "../../i18n";
+import records from "./records";
 
 const {getMessage} = browser.i18n;
 
 initI18n();
 
 const onFilterChangedByRow = new WeakMap();
-const promisedPlatform = browser.runtime.sendMessage({
-  type: "app.get",
-  what: "platform"
-});
+const promisedPlatform = api.app.get("platform");
 const maxTitleLength = 1000;
 
 let lastFilterQuery = null;
@@ -162,7 +161,7 @@ function onFilterRemoved(oldFilter)
   }
 }
 
-function createRecord(request, filter, options = {})
+function createRow(request, filter, options = {})
 {
   const {hasChanged = false, initialFilter = null} = options;
   const template = document.querySelector("template").content.firstElementChild;
@@ -178,7 +177,7 @@ function createRecord(request, filter, options = {})
 
   const onFilterChanged = (newFilter) =>
   {
-    const newRow = createRecord(
+    const newRow = createRow(
       request,
       newFilter || initialFilter,
       {
@@ -350,7 +349,7 @@ document.addEventListener("DOMContentLoaded", () =>
   document.querySelector("[data-i18n='devtools_footer'] > a")
     .addEventListener("click", () =>
     {
-      ext.devtools.inspectedWindow.reload();
+      browser.devtools.inspectedWindow.reload();
     }, false);
 
   document.getElementById("filter-state").addEventListener("change", (event) =>
@@ -363,32 +362,44 @@ document.addEventListener("DOMContentLoaded", () =>
     container.dataset.filterType = event.target.value;
   }, false);
 
-  ext.onMessage.addListener((message) =>
+  api.addListener((message) =>
   {
-    switch (message.type)
+    if (message.type !== "requests.respond")
+      return;
+
+    switch (message.action)
     {
-      case "add-record":
-        table.appendChild(createRecord(message.request, message.filter));
+      case "hits":
+        const [target, filter, subscriptions] = message.args;
+        const changes = records.add(target, filter, subscriptions);
+        for (const change of changes)
+        {
+          switch (change.type)
+          {
+            case "add":
+              const row = createRow(change.request, change.filter);
+              table.appendChild(row);
+              break;
+            case "update":
+              const oldRow = table.getElementsByTagName("tr")[change.index];
+              const newRow = createRow(change.request, change.filter);
+              oldRow.parentNode.replaceChild(newRow, oldRow);
+              break;
+          }
+        }
         break;
-
-      case "update-record":
-        const oldRow = table.getElementsByTagName("tr")[message.index];
-        const newRow = createRecord(message.request, message.filter);
-        oldRow.parentNode.replaceChild(newRow, oldRow);
-        break;
-
-      case "remove-record":
-        const row = table.getElementsByTagName("tr")[message.index];
-        row.parentNode.removeChild(row);
-        container.classList.add("has-changes");
-        break;
-
       case "reset":
+        records.clear();
         table.innerHTML = "";
         container.classList.remove("has-changes");
         break;
     }
   });
+
+  api.requests.listen(
+    ["hits", "reset"],
+    browser.devtools.inspectedWindow.tabId
+  );
 
   window.addEventListener("message", (event) =>
   {
@@ -408,6 +419,6 @@ document.addEventListener("DOMContentLoaded", () =>
   // Since Chrome 54 the themeName is accessible, for earlier versions we must
   // assume the default theme is being used.
   // https://bugs.chromium.org/p/chromium/issues/detail?id=608869
-  const theme = ext.devtools.panels.themeName || "default";
+  const theme = browser.devtools.panels.themeName || "default";
   document.body.classList.add(theme);
 }, false);

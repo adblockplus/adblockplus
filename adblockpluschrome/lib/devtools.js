@@ -17,217 +17,76 @@
 
 /** @module devtools */
 
-import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
-import {port} from "./messaging.js";
-import {getTarget} from "./hitLogger.js";
 import * as info from "info";
+
+import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
+import {installHandler} from "./messaging/events.js";
+import {port} from "./messaging/port.js";
+import {
+  toPlainBlockableItem,
+  toPlainFilter,
+  toPlainSubscription
+} from "./messaging/types.js";
 import {compareVersions} from "./versions.js";
 
-let panels = new Map();
+const reloadStateByPage = new ext.PageMap();
 
-function getFilterInfo(filter)
+function onBlockableItem(emit, blockableItem)
 {
-  if (!filter)
-    return null;
+  const {filter} = blockableItem;
 
-  let userDefined = false;
-  let subscriptionTitle = null;
-
-  for (let subscription of ewe.subscriptions.getForFilter(filter.text))
+  let subscriptions = [];
+  if (filter)
   {
-    if (!subscription.enabled)
-      continue;
-
-    if (subscription.downloadable)
-      subscriptionTitle = subscription.title;
-    else
-      userDefined = true;
+    subscriptions = ewe.subscriptions.getForFilter(filter.text)
+      .filter(subscription => subscription.enabled)
+      .map(toPlainSubscription);
   }
 
-  return {
-    text: filter.text,
-    allowlisted: filter.type == "allowing" ||
-      filter.type == "elemhideexception",
-    userDefined,
-    subscription: subscriptionTitle
-  };
+  emit(
+    toPlainBlockableItem(blockableItem),
+    (filter) ? toPlainFilter(filter) : null,
+    subscriptions
+  );
 }
 
-function hasRecord(newRecord, oldRecord)
+function onPageFrame(emit, details)
 {
-  if (oldRecord.target.url !== newRecord.target.url)
-    return false;
-
-  if (oldRecord.target.docDomain !== newRecord.target.docDomain)
-    return false;
-
-  // Ignore frame content allowlisting if there is already
-  // a DOCUMENT exception which disables all means of blocking.
-  if (oldRecord.target.type == "DOCUMENT")
-  {
-    if (!newRecord.target.isFrame)
-      return false;
-  }
-  else if (oldRecord.target.type !== newRecord.target.type)
-  {
-    return false;
-  }
-
-  // Matched element hiding filters don't relate to a particular request,
-  // so we have to compare the selector in order to avoid duplicates.
-  if (oldRecord.filter && newRecord.filter)
-  {
-    if (oldRecord.filter.selector != newRecord.filter.selector)
-      return false;
-  }
-
-  // We apply multiple CSP filters to a document, but we must still remove
-  // any duplicates. Two CSP filters are duplicates if both have identical
-  // text.
-  if (oldRecord.filter && oldRecord.filter.csp &&
-      newRecord.filter && newRecord.filter.csp)
-  {
-    if (oldRecord.filter.text !== newRecord.filter.text)
-      return false;
-  }
-
-  return true;
-}
-
-function addRecord(panel, filterMatch)
-{
-  let matchesAny = false;
-  let {filter} = filterMatch;
-  let target = getTarget(filterMatch);
-  let newRecord = {filter, target};
-
-  for (let i = 0; i < panel.records.length; i++)
-  {
-    let oldRecord = panel.records[i];
-
-    let matches = hasRecord(newRecord, oldRecord);
-    if (!matches)
-      continue;
-
-    matchesAny = true;
-
-    // Update record without filters, if filter matches on later checks
-    if (!filter)
-      break;
-
-    if (oldRecord.filter)
-      continue;
-
-    oldRecord.filter = filter;
-
-    panel.port.postMessage({
-      type: "update-record",
-      index: i,
-      request: oldRecord.target,
-      filter: getFilterInfo(oldRecord.filter)
-    });
-  }
-
-  if (matchesAny)
-    return;
-
-  panel.port.postMessage({
-    type: "add-record",
-    request: target,
-    filter: getFilterInfo(filter)
-  });
-
-  panel.records.push(newRecord);
-}
-
-function onBeforeRequest(details)
-{
-  let panel = panels.get(details.tabId);
+  const page = new ext.Page(details.tabId);
+  const reloadState = reloadStateByPage.get(page);
 
   // Clear the devtools panel and reload the inspected tab without caching
   // when a new request is issued. However, make sure that we don't end up
   // in an infinite recursion if we already triggered a reload.
-  if (panel.reloading)
+  if (reloadState === "reloading")
   {
-    panel.reloading = false;
+    reloadStateByPage.delete(page);
+    return;
   }
-  else
-  {
-    panel.records = [];
-    panel.port.postMessage({type: "reset"});
 
-    // We can't repeat the request if it isn't a GET request. Chrome would
-    // prompt the user to confirm reloading the page, and POST requests are
-    // known to cause issues on many websites if repeated.
-    if (details.method == "GET")
-      panel.reload = true;
-  }
+  emit("requests", "reset");
+
+  // We can't repeat the request if it isn't a GET request. The browser would
+  // prompt the user to confirm reloading the page, and POST requests are
+  // known to cause issues on many websites if repeated.
+  if (details.method === "GET")
+    reloadStateByPage.set(page, "needsReload");
 }
 
-function onLoading(page)
+function onPageLoad(page)
 {
-  let tabId = page.id;
-  let panel = panels.get(tabId);
+  const reloadState = reloadStateByPage.get(page);
 
   // Reloading the tab is the only way that allows bypassing all caches, in
   // order to see all requests in the devtools panel. Reloading must not be
   // performed before the tab changes to "loading", otherwise it will load the
   // previous URL.
-  if (panel && panel.reload)
+  if (reloadState === "needsReload")
   {
-    browser.tabs.reload(tabId, {bypassCache: true});
-
-    panel.reload = false;
-    panel.reloading = true;
+    reloadStateByPage.set(page, "reloading");
+    browser.tabs.reload(page.id, {bypassCache: true});
   }
 }
-
-browser.runtime.onConnect.addListener(newPort =>
-{
-  if (!ext.isTrustedSender(newPort.sender))
-    return;
-
-  let match = newPort.name.match(/^devtools-(\d+)$/);
-  if (!match)
-    return;
-
-  let inspectedTabId = parseInt(match[1], 10);
-  let localOnBeforeRequest = onBeforeRequest.bind();
-  let panel = {port: newPort, records: []};
-  let onBlockableItem = addRecord.bind(null, panel);
-
-  browser.webRequest.onBeforeRequest.addListener(
-    localOnBeforeRequest,
-    {
-      urls: ["http://*/*", "https://*/*"],
-      types: ["main_frame"],
-      tabId: inspectedTabId
-    }
-  );
-
-  if (panels.size == 0)
-    ext.pages.onLoading.addListener(onLoading);
-
-  let options = {
-    filterType: "all",
-    includeElementHiding: true,
-    includeUnmatched: true,
-    tabId: inspectedTabId
-  };
-
-  newPort.onDisconnect.addListener(() =>
-  {
-    ewe.reporting.onBlockableItem.removeListener(onBlockableItem, options);
-    panels.delete(inspectedTabId);
-    browser.webRequest.onBeforeRequest.removeListener(localOnBeforeRequest);
-
-    if (panels.size == 0)
-      ext.pages.onLoading.removeListener(onLoading);
-  });
-
-  ewe.reporting.onBlockableItem.addListener(onBlockableItem, options);
-  panels.set(inspectedTabId, panel);
-});
 
 /**
  * Returns true if our devtools panel is supported by the browser.
@@ -240,3 +99,49 @@ port.on("devtools.supported", (message, sender) =>
   info.application == "firefox" &&
   compareVersions(info.applicationVersion, "54") >= 0
 );
+
+installHandler("requests", null, (emit, action, targetTabId) =>
+{
+  switch (action)
+  {
+    case "hits":
+      const blockableItemsOptions = {
+        filterType: "all",
+        includeElementHiding: true,
+        includeUnmatched: true,
+        tabId: targetTabId
+      };
+      const localOnBlockableItem = onBlockableItem.bind(null, emit);
+
+      ewe.reporting.onBlockableItem.addListener(
+        localOnBlockableItem,
+        blockableItemsOptions
+      );
+      return () =>
+      {
+        ewe.reporting.onBlockableItem.removeListener(
+          localOnBlockableItem,
+          blockableItemsOptions
+        );
+      };
+    case "reset":
+      const localOnPageFrame = onPageFrame.bind(null, emit);
+      const localOnPageLoad = onPageLoad.bind(null, emit);
+
+      browser.webRequest.onBeforeRequest.addListener(
+        localOnPageFrame,
+        {
+          urls: ["http://*/*", "https://*/*"],
+          types: ["main_frame"],
+          tabId: targetTabId
+        }
+      );
+      ext.pages.onLoading.addListener(localOnPageLoad);
+
+      return () =>
+      {
+        browser.webRequest.onBeforeRequest.removeListener(localOnPageFrame);
+        ext.pages.onLoading.removeListener(localOnPageLoad);
+      };
+  }
+});

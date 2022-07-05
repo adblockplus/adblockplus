@@ -17,16 +17,16 @@
 
 /** @module notificationHelper */
 
-import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
+import * as info from "info";
 
+import {initDay1Notification} from "../../lib/notifications.js";
+import {showOptions} from "../../lib/pages/options.js";
+import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
+import {port} from "./messaging/port.js";
 import {askConfirmSubscription} from "./filterConfiguration.js";
 import {startIconAnimation, stopIconAnimation} from "./icon.js";
-import * as info from "info";
-import {port} from "./messaging.js";
 import {Prefs} from "./prefs.js";
 import {Stats} from "./stats.js";
-import {showOptions} from "../../lib/pages/options.js";
-import {initDay1Notification} from "../../lib/notifications.js";
 
 const displayMethods = new Map([
   ["critical", ["icon", "notification", "popup"]],

@@ -29,19 +29,6 @@
     }, "*");
   }, false);
 
-  window.ext.devtools = {
-    onCreated: {
-      addListener(listener)
-      {
-        window.addEventListener("message", (event) =>
-        {
-          if (event.data.type == "devtools")
-            listener(new ext.Page(event.source));
-        });
-      }
-    }
-  };
-
   /* Message passing */
 
   if (!("runtime" in browser))

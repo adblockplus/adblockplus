@@ -17,12 +17,12 @@
 
 /** @module subscriptionInit */
 
-import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
-
 import * as info from "info";
+
+import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
+import {port} from "./messaging/port.js";
 import {revalidateAllowlistingStates} from "./allowlisting.js";
 import {initDisabledFilterCounters} from "./filterConfiguration.js";
-import {port} from "./messaging.js";
 import {initNotifications} from "./notificationHelper.js";
 import {Prefs} from "./prefs.js";
 

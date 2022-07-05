@@ -15,6 +15,14 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import {
+  USER_ID,
+  subscriptionDetails as subscriptions,
+  subscriptionUrls
+} from "./subscriptions";
+
+const {URL_BLOCKLIST} = subscriptionUrls;
+
 const records = [
   // blocked request
   {
@@ -25,10 +33,9 @@ const records = [
     },
     filter: {
       text: "/ad_banner*$domain=example.com",
-      allowlisted: false,
-      userDefined: false,
-      subscription: "EasyList"
-    }
+      type: "blocking"
+    },
+    subscription: subscriptions[URL_BLOCKLIST]
   },
   // allowlisted request
   {
@@ -39,10 +46,9 @@ const records = [
     },
     filter: {
       text: "@@||example.com/looks_like_an_ad_but_isnt_one.html",
-      allowlisted: true,
-      userDefined: false,
-      subscription: "EasyList"
-    }
+      type: "allowing"
+    },
+    subscription: subscriptions[URL_BLOCKLIST]
   },
   // request with long URL and no filter matches
   {
@@ -61,10 +67,9 @@ const records = [
     },
     filter: {
       text: "example.com##.ad_banner",
-      allowlisted: false,
-      userDefined: false,
-      subscription: "EasyList"
-    }
+      type: "elemhide"
+    },
+    subscription: subscriptions[URL_BLOCKLIST]
   },
   // user-defined filter
   {
@@ -75,10 +80,9 @@ const records = [
     },
     filter: {
       text: "||example.com/some-annoying-popup$popup",
-      allowlisted: false,
-      userDefined: true,
-      subscription: null
-    }
+      type: "blocking"
+    },
+    subscription: subscriptions[USER_ID]
   },
   // rewrite
   {
@@ -90,10 +94,9 @@ const records = [
     },
     filter: {
       text: "/(example\\.com\\/some-annoying-popup\\)$/$rewrite=$1?nopopup",
-      allowlisted: false,
-      userDefined: true,
-      subscription: null
-    }
+      type: "blocking"
+    },
+    subscription: subscriptions[USER_ID]
   },
   // long filter
   {
@@ -103,10 +106,9 @@ const records = [
     },
     filter: {
       text: `example.com${",example.com".repeat(499)}##.ad_banner`,
-      allowlisted: false,
-      userDefined: false,
-      subscription: "EasyList"
-    }
+      type: "elemhide"
+    },
+    subscription: subscriptions[URL_BLOCKLIST]
   },
   // snippet filter
   {
@@ -117,10 +119,9 @@ const records = [
     },
     filter: {
       text: "example.com#$#dir-string",
-      allowlisted: false,
-      userDefined: false,
-      subscription: "EasyList"
-    }
+      type: "snippet"
+    },
+    subscription: subscriptions[URL_BLOCKLIST]
   }
 ];
 

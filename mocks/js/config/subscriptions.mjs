@@ -31,28 +31,34 @@ export const subscriptionDetails = {
   [URL_BLOCKLIST]: {
     title: "EasyList Germany+EasyList",
     filterText: ["-ad-banner.", "-ad-big.", "-ad-bottom-", "-ad-button-"],
-    installed: true
+    installed: true,
+    downloadable: true
   },
   [URL_ALLOWLIST]: {
     title: "Allow non-intrusive advertising",
-    installed: true
+    installed: true,
+    downloadable: true
   },
   [URL_ALLOWLIST_PRIVACY]: {
-    title: "Allow only nonintrusive ads that are privacy-friendly"
+    title: "Allow only nonintrusive ads that are privacy-friendly",
+    downloadable: true
   },
   [`${URL_SUBSCRIPTION_BASE}/fanboy-social.txt`]: {
     title: "Fanboy's Social Blocking List",
-    installed: true
+    installed: true,
+    downloadable: true
   },
   [`${URL_SUBSCRIPTION_BASE}/abp-filters-anti-cv.txt`]: {
     title: "ABP Anti-Circumvention list",
     installed: true,
+    downloadable: true,
     disabled: false,
     recommended: "circumvention"
   },
   [`${URL_SUBSCRIPTION_BASE}/antiadblockfilters.txt`]: {
     title: "Adblock Warning Removal List",
     installed: true,
+    downloadable: true,
     disabled: true
   },
   [URL_UNKNOWN]: {
@@ -60,12 +66,14 @@ export const subscriptionDetails = {
     installed: params.includeUnknownSubscription
   },
   [USER_ID]: {
-    installed: true
+    installed: true,
+    downloadable: false
   }
 };
 
 export const subscriptionUrls = {
   URL_DOCLINK_BASE,
   URL_ALLOWLIST,
-  URL_ALLOWLIST_PRIVACY
+  URL_ALLOWLIST_PRIVACY,
+  URL_BLOCKLIST
 };

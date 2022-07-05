@@ -16,13 +16,16 @@
  */
 
 import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
-
 import {showOptions} from "../../lib/pages/options.js";
+import {installHandler} from "./messaging/events.js";
+import {port} from "./messaging/port.js";
+import {
+  toPlainFilter,
+  toPlainFilterError,
+  toPlainRecommendation,
+  toPlainSubscription
+} from "./messaging/types.js";
 import {EventEmitter} from "./events.js";
-import {port} from "./messaging.js";
-import {Prefs} from "./prefs.js";
-import {Stats} from "./stats.js";
-import {getTarget} from "./hitLogger.js";
 import {filterTypes} from "./requestBlocker.js";
 
 const disabledFilterCounters = new Map();
@@ -50,178 +53,6 @@ export async function addFilter(filterText, origin)
   return null;
 }
 
-function convertObject(keys, obj)
-{
-  let result = {};
-  for (let key of keys)
-  {
-    if (key in obj)
-      result[key] = obj[key];
-  }
-  return result;
-}
-
-let convertFilterError = convertObject.bind(null, [
-  "lineno", "option", "reason", "type"
-]);
-let convertRecommendation = convertObject.bind(null, [
-  "languages", "title", "type", "url"
-]);
-
-function convertSubscription(subscription)
-{
-  let obj = convertObject(["downloadStatus", "enabled", "homepage",
-                           "version", "lastDownload", "lastSuccess",
-                           "softExpiration", "expires", "title",
-                           "url", "downloading"], subscription);
-
-  // For the time being, we are renaming the enabled property to
-  // make the UI compatible with EWE without having to rename it
-  // in the UI code itself just yet
-  obj.disabled = !obj.enabled;
-  delete obj.enabled;
-
-  return obj;
-}
-
-function convertFilter(filter)
-{
-  let obj = convertObject(["enabled", "slow", "text"], filter);
-
-  // For the time being, we are renaming the enabled property to
-  // make the UI compatible with EWE without having to rename it
-  // in the UI code itself just yet
-  // For the same reason, we're not adding the property for comment filters
-  if (obj.enabled !== null)
-    obj.disabled = !obj.enabled;
-  delete obj.enabled;
-
-  return obj;
-}
-
-let uiPorts = new Map();
-let listenedPreferences = new Set();
-let listenedFilterChanges = new Set();
-let listenedStats = new Set();
-let messageTypes = new Map([
-  ["app", "app.respond"],
-  ["filter", "filters.respond"],
-  ["pref", "prefs.respond"],
-  ["requests", "requests.respond"],
-  ["subscription", "subscriptions.respond"],
-  ["stats", "stats.respond"]
-]);
-
-function sendMessage(type, action, ...args)
-{
-  if (uiPorts.size == 0)
-    return;
-
-  let convertedArgs = [];
-  for (let arg of args)
-  {
-    if (!(arg instanceof Object))
-    {
-      convertedArgs.push(arg);
-      continue;
-    }
-
-    if (type == "subscription")
-      convertedArgs.push(convertSubscription(arg));
-    else if (type == "filter")
-      convertedArgs.push(convertFilter(arg));
-    else if (type == "app" && action == "addSubscription")
-      convertedArgs.push(convertSubscription(arg));
-    else
-      convertedArgs.push(arg);
-  }
-
-  for (let [uiPort, filters] of uiPorts)
-  {
-    let actions = filters.get(type);
-    if (actions && actions.indexOf(action) != -1)
-    {
-      uiPort.postMessage({
-        type: messageTypes.get(type),
-        action,
-        args: convertedArgs
-      });
-    }
-  }
-}
-
-function includeActiveRemoteSubscriptions(s)
-{
-  if (!s.enabled || !/^(http|https|ftp):/i.test(s.url))
-    return false;
-  return true;
-}
-
-function addRequestListeners(dataCollectionTabId, issueReporterTabId)
-{
-  let logRequest = filterMatch =>
-  {
-    let {filter, request} = filterMatch;
-    if (request.tabId !== dataCollectionTabId)
-      return;
-
-    let subscriptions = [];
-    if (filter)
-    {
-      for (let subscription of ewe.subscriptions.getForFilter(filter.text))
-      {
-        if (includeActiveRemoteSubscriptions(subscription))
-          subscriptions.push(subscription.url);
-      }
-
-      filter = convertFilter(filter);
-    }
-
-    let target = getTarget(filterMatch);
-    target = convertObject(["url", "type", "docDomain", "thirdParty"],
-                           target);
-    sendMessage("requests", "hits", target, filter, subscriptions);
-  };
-
-  let options = {
-    filterType: "all",
-    includeElementHiding: true,
-    includeUnmatched: true,
-    tabId: dataCollectionTabId
-  };
-  let removeTabListeners = tabId =>
-  {
-    if (tabId == dataCollectionTabId ||
-        typeof issueReporterTabId == "number" && tabId == issueReporterTabId)
-    {
-      ewe.reporting.onBlockableItem.removeListener(logRequest, options);
-      browser.tabs.onRemoved.removeListener(removeTabListeners);
-    }
-  };
-  ewe.reporting.onBlockableItem.addListener(logRequest, options);
-  browser.tabs.onRemoved.addListener(removeTabListeners);
-}
-
-function addFilterListeners(type, actions)
-{
-  for (let action of actions)
-  {
-    let name = `${type}.${action}`;
-    if (listenedFilterChanges.has(name))
-      continue;
-
-    listenedFilterChanges.add(name);
-
-    if (name == "subscription.filtersDisabled")
-    {
-      eventEmitter.on("filtersDisabled", (item, ...args) =>
-      {
-        sendMessage(type, action, item, ...args);
-      });
-    }
-  }
-}
-
 function addSubscription(details)
 {
   try
@@ -244,7 +75,7 @@ function addSubscription(details)
 export async function askConfirmSubscription(details)
 {
   await showOptions();
-  sendMessage("app", "addSubscription", {
+  eventEmitter.emit("addSubscription", {
     homepage: details.homepage || null,
     title: details.title || null,
     url: details.url
@@ -266,7 +97,7 @@ function parseFilter(text)
     {
       let filterError = ewe.filters.validate(filterText);
       if (filterError)
-        error = convertFilterError(filterError);
+        error = toPlainFilterError(filterError);
     }
   }
 
@@ -295,7 +126,7 @@ port.on("filters.add", (message, sender) =>
 port.on("filters.get", async(message, sender) =>
 {
   let filters = await ewe.filters.getUserFilters();
-  return filters.map(convertFilter);
+  return filters.map(toPlainFilter);
 });
 
 /**
@@ -470,7 +301,7 @@ port.on("subscriptions.get", (message, sender) =>
     if (message.ignoreDisabled && !s.enabled)
       continue;
 
-    let subscription = convertSubscription(s);
+    let subscription = toPlainSubscription(s);
     if (message.disabledFilters)
     {
       let filters = ewe.subscriptions.getFilters(s.url) || [];
@@ -502,7 +333,7 @@ port.on("subscriptions.getDisabledFilterCount", (message, sender) =>
  */
 port.on("subscriptions.getRecommendations",
         (message, sender) => Array.from(ewe.subscriptions.getRecommendations(),
-                                        convertRecommendation));
+                                        toPlainRecommendation));
 
 /**
  * Remove the given subscription if it exists.
@@ -680,101 +511,6 @@ function updateCounters(filterText, enabled)
   }
 }
 
-function listen(type, filters, newFilter, message, senderTabId)
-{
-  switch (type)
-  {
-    case "app":
-      filters.set("app", newFilter);
-      break;
-    case "filters":
-      filters.set("filter", newFilter);
-      addFilterListeners("filter", newFilter);
-      break;
-    case "prefs":
-      filters.set("pref", newFilter);
-      for (let preference of newFilter)
-      {
-        if (!listenedPreferences.has(preference))
-        {
-          listenedPreferences.add(preference);
-          Prefs.on(preference, () =>
-          {
-            sendMessage("pref", preference, Prefs[preference]);
-          });
-        }
-      }
-      break;
-    case "subscriptions":
-      filters.set("subscription", newFilter);
-      addFilterListeners("subscription", newFilter);
-      break;
-    case "requests":
-      filters.set("requests", newFilter);
-      addRequestListeners(message.tabId, senderTabId);
-      break;
-    case "stats":
-      filters.set("stats", newFilter);
-      for (let stat of newFilter)
-      {
-        if (!listenedStats.has(stat))
-        {
-          listenedStats.add(stat);
-          Stats.on(stat, info =>
-          {
-            sendMessage("stats", stat, info);
-          });
-        }
-      }
-      break;
-  }
-}
-
-function getListener(type, action)
-{
-  return (...args) =>
-  {
-    sendMessage(type, action, ...args);
-  };
-}
-
-ewe.filters.onAdded.addListener(getListener("filter", "added"));
-ewe.filters.onChanged.addListener(getListener("filter", "changed"));
-ewe.filters.onRemoved.addListener(getListener("filter", "removed"));
-ewe.subscriptions.onAdded.addListener(getListener("subscription", "added"));
-ewe.subscriptions.onChanged.addListener(getListener("subscription", "changed"));
-ewe.subscriptions.onRemoved.addListener(getListener("subscription", "removed"));
-
-function onConnect(uiPort)
-{
-  if (!ext.isTrustedSender(uiPort.sender))
-    return;
-
-  if (uiPort.name != "ui")
-    return;
-
-  let filters = new Map();
-  uiPorts.set(uiPort, filters);
-
-  uiPort.onDisconnect.addListener(() =>
-  {
-    uiPorts.delete(uiPort);
-  });
-
-  uiPort.onMessage.addListener(message =>
-  {
-    let [type, action] = message.type.split(".", 2);
-
-    // For now we're only using long-lived connections for handling
-    // "*.listen" messages to tackle #6440
-    if (action == "listen")
-    {
-      listen(type, filters, message.filter, message,
-             uiPort.sender && uiPort.sender.tab && uiPort.sender.tab.id);
-    }
-  });
-}
-
 ewe.filters.onChanged.addListener((filter, property) =>
 {
   if (property !== "enabled")
@@ -782,8 +518,70 @@ ewe.filters.onChanged.addListener((filter, property) =>
 
   updateCounters(filter.text, filter.enabled);
 });
+
 ewe.subscriptions.onRemoved.addListener(subscription =>
 {
   disabledFilterCounters.delete(subscription.url);
 });
-browser.runtime.onConnect.addListener(onConnect);
+
+installHandler("app", "addSubscription", emit =>
+{
+  const onAddSubscription = subscriptionInfo => emit(subscriptionInfo);
+  eventEmitter.on("addSubscription", onAddSubscription);
+  return () => eventEmitter.off("addSubscription", onAddSubscription);
+});
+
+installHandler("filters", "added", emit =>
+{
+  const onAdded = filter => emit(toPlainFilter(filter));
+  ewe.filters.onAdded.addListener(onAdded);
+  return () => ewe.filters.onAdded.removeListener(onAdded);
+});
+
+installHandler("filters", "changed", emit =>
+{
+  const onChanged = (filter, property) => emit(toPlainFilter(filter), property);
+  ewe.filters.onChanged.addListener(onChanged);
+  return () => ewe.filters.onChanged.removeListener(onChanged);
+});
+
+installHandler("filters", "removed", emit =>
+{
+  const onRemoved = filter => emit(toPlainFilter(filter));
+  ewe.filters.onRemoved.addListener(onRemoved);
+  return () => ewe.filters.onRemoved.removeListener(onRemoved);
+});
+
+installHandler("subscriptions", "added", emit =>
+{
+  const onAdded = subscription => emit(toPlainSubscription(subscription));
+  ewe.subscriptions.onAdded.addListener(onAdded);
+  return () => ewe.subscriptions.onAdded.removeListener(onAdded);
+});
+
+installHandler("subscriptions", "changed", emit =>
+{
+  const onChanged = (subscription, property) =>
+  {
+    emit(toPlainSubscription(subscription), property);
+  };
+  ewe.subscriptions.onChanged.addListener(onChanged);
+  return () => ewe.subscriptions.onChanged.removeListener(onChanged);
+});
+
+installHandler("subscriptions", "filtersDisabled", emit =>
+{
+  const onFiltersDisabled = (subscription, hadFilters, hasFilters) =>
+  {
+    emit(toPlainSubscription(subscription), hadFilters, hasFilters);
+  };
+  eventEmitter.on("filtersDisabled", onFiltersDisabled);
+  return () => eventEmitter.off("filtersDisabled", onFiltersDisabled);
+});
+
+installHandler("subscriptions", "removed", emit =>
+{
+  const onRemoved = subscription => emit(toPlainSubscription(subscription));
+  ewe.subscriptions.onRemoved.addListener(onRemoved);
+  return () => ewe.subscriptions.onRemoved.removeListener(onRemoved);
+});

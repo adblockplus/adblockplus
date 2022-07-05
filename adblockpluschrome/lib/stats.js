@@ -18,10 +18,10 @@
 /** @module stats */
 
 import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
-
-import {EventEmitter} from "./events.js";
+import {installHandler} from "./messaging/events.js";
+import {port} from "./messaging/port.js";
 import {setBadge} from "./browserAction.js";
-import {port} from "./messaging.js";
+import {EventEmitter} from "./events.js";
 import {Prefs} from "./prefs.js";
 
 const badgeColor = "#646464";
@@ -190,6 +190,13 @@ browser.tabs.query({active: true}).then(tabs =>
   }
 
   scheduleBadgeUpdate();
+});
+
+installHandler("stats", null, (emit, action) =>
+{
+  const onChanged = info => emit(info);
+  Stats.on(action, onChanged);
+  return () => Stats.off(action, onChanged);
 });
 
 browser.tabs.onActivated.addListener(tab =>

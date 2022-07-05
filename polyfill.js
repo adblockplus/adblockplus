@@ -169,4 +169,14 @@
       ]);
     }
   };
+
+  browser.devtools = {
+    panels: {
+      openResource: (url) => window.open(url)
+    },
+
+    inspectedWindow: {
+      reload: () => location.reload()
+    }
+  };
 }());

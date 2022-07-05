@@ -17,11 +17,11 @@
 
 /** @module uninstall */
 
-import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
-
 import * as info from "info";
-import {isDataCorrupted} from "./subscriptionInit.js";
+
+import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
 import {Prefs} from "./prefs.js";
+import {isDataCorrupted} from "./subscriptionInit.js";
 
 const abbreviations = [
   ["an", "addonName"], ["av", "addonVersion"],

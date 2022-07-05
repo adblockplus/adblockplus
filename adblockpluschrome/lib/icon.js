@@ -17,9 +17,10 @@
 
 /** @module icon */
 
+import * as info from "info";
+
 import {allowlistingState} from "./allowlisting.js";
 import {setIconPath, setIconImageData, toggleBadge} from "./browserAction.js";
-import * as info from "info";
 
 const ANIMATION_LOOPS = 3;
 const FRAME_IN_MS = 100;

@@ -16,9 +16,7 @@
  */
 
 import {port} from "./lib/messaging";
-import filterNotifier from "./lib/filter-notifier";
 import {params} from "./config/env";
-import records from "./config/records";
 
 // this is imported instead of in a script tag to keep it
 // in the same context for the port event emitter
@@ -128,58 +126,4 @@ import "./messageResponder";
       }, "*");
     }, 1000);
   }
-
-  ext.devtools.onCreated.addListener((panel) =>
-  {
-    function getRecords(filter)
-    {
-      return records.filter((record) =>
-      {
-        const {url} = record.request;
-        if (!url)
-          return false;
-
-        const pattern = url.replace(/^[\w-]+:\/+(?:www\.)?/, "");
-        return filter.text.indexOf(pattern) > -1;
-      });
-    }
-
-    function removeRecord(filter)
-    {
-      for (const record of getRecords(filter))
-      {
-        const idx = records.indexOf(record);
-        panel.sendMessage({
-          type: "remove-record",
-          index: idx
-        });
-        records.splice(idx, 1);
-      }
-    }
-
-    function updateRecord(filter)
-    {
-      for (const record of getRecords(filter))
-      {
-        record.filter = filter;
-        panel.sendMessage({
-          type: "update-record",
-          index: records.indexOf(record),
-          filter: record.filter,
-          request: record.request
-        });
-      }
-    }
-
-    filterNotifier.filterNotifier.on("filter.added", updateRecord);
-    filterNotifier.filterNotifier.on("filter.removed", removeRecord);
-
-    for (const {filter, request} of records)
-    {
-      panel.sendMessage({
-        type: "add-record",
-        filter, request
-      });
-    }
-  });
 }());

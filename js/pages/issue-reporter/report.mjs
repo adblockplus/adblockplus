@@ -82,7 +82,9 @@ api.addListener((message) =>
     {
       const filterElem = reportData.createElement("filter");
       filterElem.setAttribute("text", filter.text);
-      filterElem.setAttribute("subscriptions", subscriptions.join(" "));
+      const subscriptionTitles = subscriptions
+        .map((subscription) => subscription.title);
+      filterElem.setAttribute("subscriptions", subscriptionTitles.join(" "));
       filterElem.setAttribute("hitCount", 1);
       filtersElem.appendChild(filterElem);
     }

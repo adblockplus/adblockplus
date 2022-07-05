@@ -17,11 +17,12 @@
 
 /** @module prefs */
 
-import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
-
 import * as info from "info";
+
+import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
+import {installHandler} from "./messaging/events.js";
+import {port} from "./messaging/port.js";
 import {EventEmitter} from "./events.js";
-import {port} from "./messaging.js";
 
 const keyPrefix = "pref:";
 
@@ -154,7 +155,7 @@ export let Prefs = {
       // values. https://bugzilla.mozilla.org/show_bug.cgi?id=1541449
       if (!oldValue &&
           info.platform == "gecko" && parseInt(info.platformVersion, 10) == 66)
-        onChanged({[prefToKey(preference)]: {oldValue}}, "local");
+        onStorageChanged({[prefToKey(preference)]: {oldValue}}, "local");
 
       return browser.storage.local.remove(prefToKey(preference));
     }
@@ -266,7 +267,7 @@ function addPreference(pref)
   });
 }
 
-function onChanged(changes)
+function onStorageChanged(changes)
 {
   for (let key in changes)
   {
@@ -337,7 +338,7 @@ async function init()
     }
   }
 
-  browser.storage.onChanged.addListener(onChanged);
+  browser.storage.onChanged.addListener(onStorageChanged);
 
   // Initialize notifications_ignoredcategories pseudo preference
   Object.defineProperty(Prefs, "notifications_ignoredcategories", {
@@ -418,4 +419,11 @@ port.on("prefs.getDocLink", (message, sender) =>
     application = "firefox";
 
   return Prefs.getDocLink(message.link.replace("{browser}", application));
+});
+
+installHandler("prefs", null, (emit, action) =>
+{
+  const onChanged = () => emit(Prefs[action]);
+  Prefs.on(action, onChanged);
+  return () => Prefs.off(action, onChanged);
 });

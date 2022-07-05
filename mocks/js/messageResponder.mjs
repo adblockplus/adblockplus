@@ -15,12 +15,14 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import {params} from "./config/env";
+import records from "./config/records";
+
 import {Prefs} from "./lib/prefs";
 import utils from "./lib/utils";
 import filterStorage from "./lib/filter-storage";
 import filterNotifier from "./lib/filter-notifier";
 import {isSlowFilter, Matcher} from "./lib/matcher";
-import HitLogger from "./lib/hit-logger";
 import info from "./lib/info";
 import {showOptions} from "./lib/options";
 import recommendations from "./lib/recommendations";
@@ -42,7 +44,6 @@ import {
 } from "./lib/subscription-classes";
 import {port} from "./lib/messaging";
 import {filterTypes as requestBlockerFilterTypes} from "./lib/request-blocker";
-import {params} from "./config/env";
 
 port.on("composer.isPageReady", () => Boolean(params.composerActive));
 port.on("stats.getBlockedPerPage", () => 123);
@@ -153,45 +154,12 @@ port.on("filters.isAllowlisted", () =>
     }
   }
 
-  function includeActiveRemoteSubscriptions(s)
+  function addRequestListeners(tabId)
   {
-    if (s.disabled)
-      return false;
-    if (s instanceof DownloadableSubscription &&
-        !/^(http|https|ftp):/i.test(s.url))
-      return false;
-    return true;
-  }
-
-  function addRequestListeners(dataCollectionTabId, issueReporterTabId)
-  {
-    const logRequest = (request, filter) =>
+    for (const {filter, request, subscription} of records)
     {
-      let subscriptions = [];
-      if (filter)
-      {
-        subscriptions = filterStorage.subscriptions(filter.text);
-        subscriptions = Array.from(subscriptions)
-          .filter(includeActiveRemoteSubscriptions)
-          .map(s => s.url);
-        filter = convertFilter(filter);
-      }
-      request = convertObject(
-        ["url", "type", "docDomain", "thirdParty"],
-        request
-      );
-      sendMessage("requests", "hits", request, filter, subscriptions);
-    };
-    const removeTabListeners = (tabId) =>
-    {
-      if (tabId == dataCollectionTabId || tabId == issueReporterTabId)
-      {
-        HitLogger.removeListener(dataCollectionTabId, logRequest);
-        browser.tabs.onRemoved.removeListener(removeTabListeners);
-      }
-    };
-    HitLogger.addListener(dataCollectionTabId, logRequest);
-    browser.tabs.onRemoved.addListener(removeTabListeners);
+      sendMessage("requests", "hits", request, filter, [subscription]);
+    }
   }
 
   function addFilterListeners(type, actions)
@@ -724,7 +692,7 @@ port.on("filters.isAllowlisted", () =>
         break;
       case "requests":
         filters.set("requests", newFilter);
-        addRequestListeners(message.tabId, senderTabId);
+        addRequestListeners(message.tabId);
         break;
     }
   }

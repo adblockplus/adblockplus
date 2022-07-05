@@ -17,10 +17,10 @@
 
 /** @module messageResponder */
 
-import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
-
-import {port} from "./messaging.js";
 import * as info from "info";
+
+import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
+import {port} from "./messaging/port.js";
 
 function forward(type, message, sender)
 {

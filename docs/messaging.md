@@ -322,14 +322,16 @@ If filter includes `showPageOptions`:
 **Arguments**
 
 - **string[]** filter
-  - `hits`
-- **number** tabId
+  - `hits:<tabId>`
+  - `reset:<tabId>`
 
 **Response**
 
+If filter is `hits:<tabId>`:
+
 - **[Target](#target)** target
 - **[Filter](#filter)** filter
-- **string[]** subscriptions
+- **[Subscription](#subscription)[]** subscriptions
 
 ---
 
@@ -410,6 +412,12 @@ If filter includes `blocked_total`:
 - **boolean** dataCorrupted
 - **boolean** reinitialized
 
+### subscriptions.getRecommendations
+
+**Response**
+
+**Recommendation[]** recommendations
+
 #### subscriptions.listen
 
 **Arguments**
@@ -459,7 +467,10 @@ If filter includes `blocked_total`:
 
 **object**
 
+- **boolean** disabled
+- **boolean** slow
 - **string** text
+- **string** type
 
 ### FilterError
 
@@ -470,11 +481,22 @@ If filter includes `blocked_total`:
 - **string** [reason]
 - **string** type
 
+### Recommendation
+
+**object**
+
+- **string[]** languages
+- **string** title
+- **string** type
+- **string** url
+
 ### Subscription
 
 **object**
 
 - **boolean** disabled
+- **boolean** downloadable
+- **boolean** downloading
 - **string** downloadStatus
 - **number** expires
 - **string** homepage
@@ -487,8 +509,11 @@ If filter includes `blocked_total`:
 
 ### Target
 
+**object**
+
 - **string** docDomain
-- **boolean** thirdParty
+- **boolean** isFrame
+- **string** rewrittenUrl
 - **string** type
 - **string** url
 

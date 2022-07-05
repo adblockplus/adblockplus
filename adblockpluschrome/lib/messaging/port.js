@@ -15,9 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/** @module messaging */
-
-import {EventEmitter} from "./events.js";
+import {EventEmitter} from "../events.js";
 
 /**
  * Communication port wrapping ext.onMessage to receive messages.

@@ -18,9 +18,9 @@
 /** @module allowlisting */
 
 import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
+import {port} from "./messaging/port.js";
 import {EventEmitter} from "./events.js";
 import {addFilter} from "./filterConfiguration.js";
-import {port} from "./messaging.js";
 
 let allowlistedDomainRegexp = /^@@\|\|([^/:]+)\^\$document$/;
 let eventEmitter = new EventEmitter();

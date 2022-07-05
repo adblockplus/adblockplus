@@ -17,12 +17,13 @@
 
 /** @module filterComposer */
 
+import * as info from "info";
+
 import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
+import {port} from "./messaging/port.js";
+import {allowlistingState} from "./allowlisting.js";
 import {Prefs} from "./prefs.js";
 import {extractHostFromFrame} from "./url.js";
-import {allowlistingState} from "./allowlisting.js";
-import {port} from "./messaging.js";
-import * as info from "info";
 
 function isValidString(s)
 {
