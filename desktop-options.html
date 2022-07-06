@@ -61,10 +61,10 @@
               data-doclink="contribute"></a>
           </p>
           <p>
-            <button data-i18n="options_footer_about" class="link" 
+            <button data-i18n="options_footer_about" class="link"
                     data-action="open-dialog" data-dialog="about"></button>
           </p>
-        </footer>        
+        </footer>
       </div>
     </div>
     <main>
@@ -101,18 +101,18 @@
             </div>
             <ul>
               <li>
-                <button id="acceptable-ads-allow" class="icon" data-action="switch-acceptable-ads" type="button" role="checkbox" name="acceptable-ads" value="ads"></button>
+                <input type="checkbox" id="acceptable-ads-allow" class="icon" name="acceptable-ads" data-value="ads"></input>
+                <label for="acceptable-ads-allow" data-i18n="options_acceptableAds_ads_label"></label>
                 <div id="acceptable-ads-why-not" role="dialog" aria-hidden="true">
                   <p data-i18n="options_aa_opt_out_survey"></p>
                   <a class="button primary" target="_blank" data-i18n="options_aa_opt_out_survey_ok" data-action="hide-acceptable-ads-survey"></a>
                   <button type="button" data-i18n="options_aa_opt_out_survey_no" data-action="hide-acceptable-ads-survey"></button>
                 </div>
-                <label for="acceptable-ads-allow" data-i18n="options_acceptableAds_ads_label"></label>
                 <p id="enable-acceptable-ads-description" data-i18n="options_acceptableAds_ads_description_1"></p>
               </li>
               <ul>
                 <li>
-                  <button id="acceptable-ads-privacy-allow" class="icon" data-action="switch-acceptable-ads" type="button" role="checkbox" name="acceptable-ads" value="privacy"></button>
+                  <input type="checkbox" id="acceptable-ads-privacy-allow" class="icon" name="acceptable-ads" data-value="privacy"></input>
                   <label for="acceptable-ads-privacy-allow" data-i18n="options_acceptableAds_privacy_label"></label>
                   <p>
                     <a data-i18n="options_learn_more" data-doclink="privacy_friendly_ads"></a>

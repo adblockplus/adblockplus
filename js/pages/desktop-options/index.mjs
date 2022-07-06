@@ -627,10 +627,202 @@ function switchTab(id)
   location.hash = id;
 }
 
+/**
+ * Checks if a url string equals either of the acceptable ads urls
+ *
+ * @param {string} url url to check against the acceptable ads urls
+ *
+ * @returns {boolean}
+ */
+function isAcceptableAds(url)
+{
+  return url == acceptableAdsUrl || url == acceptableAdsPrivacyUrl;
+}
+
+/**
+ * Checks if there is a privacy conflict between acceptable ads
+ * and disabling additional tracking
+ *
+ * @returns {boolean}
+ */
+function hasPrivacyConflict()
+{
+  const acceptableAdsList = subscriptionsMap[acceptableAdsUrl];
+  let privacyList = null;
+  for (const url in subscriptionsMap)
+  {
+    const subscription = subscriptionsMap[url];
+    if (subscription.recommended == "privacy")
+    {
+      privacyList = subscription;
+      break;
+    }
+  }
+  return acceptableAdsList && acceptableAdsList.disabled == false &&
+    privacyList && privacyList.disabled == false;
+}
+
+/**
+ * Sets the states of the acceptable ads checkboxes. This is set on load but
+ * also in reaction to subscriptions being added or removed
+ *
+ * @param {Object} options config params
+ */
+const setAcceptableAds = async(options = {}) =>
+{
+  const {firstLoad} = options;
+  const subscriptions = await api.subscriptions.get();
+
+  const activeSubscriptionUrls = subscriptions.map(
+    ({disabled, url}) => !disabled && url
+  ).filter(Boolean);
+
+  const acceptableAds = $("#acceptable-ads-allow");
+  const acceptableAdsPrivacy = $("#acceptable-ads-privacy-allow");
+  const acceptableAdsWhyNot = $("#acceptable-ads-why-not");
+
+  if (activeSubscriptionUrls.includes(acceptableAdsUrl))
+  {
+    acceptableAds.checked = true;
+    acceptableAdsPrivacy.disabled = false;
+
+    toggleDntNotification(false);
+    acceptableAdsWhyNot.setAttribute("aria-hidden", true);
+  }
+  else if (activeSubscriptionUrls.includes(acceptableAdsPrivacyUrl))
+  {
+    acceptableAds.checked = true;
+    acceptableAdsPrivacy.checked = true;
+    acceptableAdsPrivacy.disabled = false;
+
+    // Edge uses window instead of navigator.
+    // Prefer navigator first since it's the standard.
+    if ((navigator.doNotTrack || window.doNotTrack) !== 1)
+    {
+      toggleDntNotification(true);
+    }
+  }
+  else
+  {
+    acceptableAds.checked = false;
+    acceptableAdsPrivacy.checked = false;
+    acceptableAdsPrivacy.disabled = true;
+
+    if (!firstLoad)
+    {
+      acceptableAdsWhyNot.setAttribute("aria-hidden", false);
+    }
+
+    toggleDntNotification(false);
+  }
+};
+
+/**
+ * Sends a message to the browser runtime to add or remove subscription urls
+ *
+ * @param {Boolean} ads the updated state of the acceptable ads subscription
+ * @param {Boolean} privacyAds the updated state of the privacy ads subscription
+ */
+const setAcceptableAdsSubscriptions = ({ads, privacyAds}) =>
+{
+  browser.runtime.sendMessage({
+    type: ads ? "subscriptions.add" : "subscriptions.remove",
+    url: acceptableAdsUrl
+  });
+
+  browser.runtime.sendMessage({
+    type: privacyAds ? "subscriptions.add" : "subscriptions.remove",
+    url: acceptableAdsPrivacyUrl
+  });
+};
+
+/**
+ * Shows or hides the privacy conflict warning according to hasPrivacyConflict
+ */
+function setPrivacyConflict()
+{
+  const acceptableAdsForm = $("#acceptable-ads");
+
+  if (hasPrivacyConflict())
+  {
+    getPref("ui_warn_tracking").then((showTrackingWarning) =>
+    {
+      acceptableAdsForm.classList.toggle("show-warning", showTrackingWarning);
+    });
+  }
+  else
+  {
+    acceptableAdsForm.classList.remove("show-warning");
+  }
+}
+
+/**
+ * The event listener for a click
+ *
+ * @param {Event} e event send in from the listener
+ */
+const switchAcceptableAds = (e) =>
+{
+  e.stopPropagation();
+
+  const {checked, dataset: {value}} = e.target;
+
+  // Acceptable Ads checkbox clicked
+  if (value === "ads")
+  {
+    const acceptableAdsPrivacy = $("#acceptable-ads-privacy-allow");
+    const aaSurvey = $("#acceptable-ads-why-not");
+
+    if (checked === false)
+    {
+      aaSurvey.setAttribute("aria-hidden", false);
+      acceptableAdsPrivacy.checked = false;
+      toggleDntNotification(false);
+    }
+    else
+    {
+      aaSurvey.setAttribute("aria-hidden", true);
+    }
+
+    setAcceptableAdsSubscriptions({ads: checked, privacyAds: false});
+    acceptableAdsPrivacy.disabled = !checked;
+  }
+  // Privacy Friendly Acceptable Ads checkbox clicked
+  else
+  {
+    setAcceptableAdsSubscriptions({ads: !checked, privacyAds: checked});
+  }
+};
+
+/**
+ * Toggles the class to show the dnt notification
+ *
+ * @param {Boolean} show whether to add or remove the class
+ */
+const toggleDntNotification = (show) =>
+{
+  const acceptableAdsForm = $("#acceptable-ads");
+
+  if (show === false)
+  {
+    acceptableAdsForm.classList.remove("show-dnt-notification");
+  }
+  else
+  {
+    acceptableAdsForm.classList.add("show-dnt-notification");
+  }
+};
+
 function execAction(action, element)
 {
-  if (element.getAttribute("aria-disabled") == "true")
+  if (
+    element.getAttribute("aria-disabled") === "true" ||
+    element.disabled === true ||
+    !action
+  )
+  {
     return false;
+  }
 
   switch (action)
   {
@@ -696,35 +888,6 @@ function execAction(action, element)
       return true;
     case "show-more-filters-section":
       $("#more-filters").setAttribute("aria-hidden", false);
-      return true;
-    case "switch-acceptable-ads":
-      const value = element.value || element.dataset.value;
-      // User check the checkbox
-      const shouldCheck = element.getAttribute("aria-checked") != "true";
-      let installAcceptableAds = false;
-      let installAcceptableAdsPrivacy = false;
-      // Acceptable Ads checkbox clicked
-      if (value == "ads")
-      {
-        installAcceptableAds = shouldCheck;
-      }
-      // Privacy Friendly Acceptable Ads checkbox clicked
-      else
-      {
-        installAcceptableAdsPrivacy = shouldCheck;
-        installAcceptableAds = !shouldCheck;
-      }
-
-      browser.runtime.sendMessage({
-        type: installAcceptableAds ? "subscriptions.add" :
-          "subscriptions.remove",
-        url: acceptableAdsUrl
-      });
-      browser.runtime.sendMessage({
-        type: installAcceptableAdsPrivacy ? "subscriptions.add" :
-          "subscriptions.remove",
-        url: acceptableAdsPrivacyUrl
-      });
       return true;
     case "switch-tab":
       switchTab(element.getAttribute("href").substr(1));
@@ -903,6 +1066,7 @@ function selectTabItem(tabId, container, focus)
     setupFiltersBox();
     setupAddFiltersByURL();
   }
+
   return tabContent;
 }
 
@@ -1018,6 +1182,11 @@ function onDOMLoaded()
 
   // Initialize interactive UI elements
   document.body.addEventListener("click", onClick, false);
+
+  $("#acceptable-ads-allow").addEventListener("click", switchAcceptableAds);
+  $("#acceptable-ads-privacy-allow")
+    .addEventListener("click", switchAcceptableAds);
+
   document.body.addEventListener("keyup", onKeyUp, false);
   $("#allowlisting-textbox").addEventListener("keyup", (e) =>
   {
@@ -1194,91 +1363,6 @@ function hideNotification()
   $("#notification-text", notification).textContent = "";
 }
 
-function setAcceptableAds()
-{
-  const acceptableAdsForm = $("#acceptable-ads");
-  const acceptableAds = $("#acceptable-ads-allow");
-  const acceptableAdsPrivacy = $("#acceptable-ads-privacy-allow");
-  const wasSelected = acceptableAds.getAttribute("aria-checked") === "true";
-  acceptableAdsForm.classList.remove("show-dnt-notification");
-  acceptableAds.setAttribute("aria-checked", false);
-  acceptableAdsPrivacy.setAttribute("aria-checked", false);
-  acceptableAdsPrivacy.setAttribute("tabindex", 0);
-  if (acceptableAdsUrl in subscriptionsMap &&
-      !subscriptionsMap[acceptableAdsUrl].disabled)
-  {
-    acceptableAds.setAttribute("aria-checked", true);
-    acceptableAdsPrivacy.setAttribute("aria-disabled", false);
-  }
-  else if (acceptableAdsPrivacyUrl in subscriptionsMap &&
-          !subscriptionsMap[acceptableAdsPrivacyUrl].disabled)
-  {
-    acceptableAds.setAttribute("aria-checked", true);
-    acceptableAdsPrivacy.setAttribute("aria-checked", true);
-    acceptableAdsPrivacy.setAttribute("aria-disabled", false);
-
-    // Edge uses window instead of navigator.
-    // Prefer navigator first since it's the standard.
-    if ((navigator.doNotTrack || window.doNotTrack) != 1)
-      acceptableAdsForm.classList.add("show-dnt-notification");
-  }
-  else
-  {
-    // Using aria-disabled in order to keep the focus
-    acceptableAdsPrivacy.setAttribute("aria-disabled", true);
-    acceptableAdsPrivacy.setAttribute("tabindex", -1);
-  }
-
-  const isSelected = acceptableAds.getAttribute("aria-checked") === "true";
-  const aaSurvey = $("#acceptable-ads-why-not");
-  if (isSelected)
-  {
-    aaSurvey.setAttribute("aria-hidden", true);
-  }
-  else if (wasSelected)
-  {
-    aaSurvey.setAttribute("aria-hidden", false);
-  }
-}
-
-function isAcceptableAds(url)
-{
-  return url == acceptableAdsUrl || url == acceptableAdsPrivacyUrl;
-}
-
-function hasPrivacyConflict()
-{
-  const acceptableAdsList = subscriptionsMap[acceptableAdsUrl];
-  let privacyList = null;
-  for (const url in subscriptionsMap)
-  {
-    const subscription = subscriptionsMap[url];
-    if (subscription.recommended == "privacy")
-    {
-      privacyList = subscription;
-      break;
-    }
-  }
-  return acceptableAdsList && acceptableAdsList.disabled == false &&
-    privacyList && privacyList.disabled == false;
-}
-
-function setPrivacyConflict()
-{
-  const acceptableAdsForm = $("#acceptable-ads");
-  if (hasPrivacyConflict())
-  {
-    getPref("ui_warn_tracking").then((showTrackingWarning) =>
-    {
-      acceptableAdsForm.classList.toggle("show-warning", showTrackingWarning);
-    });
-  }
-  else
-  {
-    acceptableAdsForm.classList.remove("show-warning");
-  }
-}
-
 async function populateFilters()
 {
   const filters = await api.filters.get();
@@ -1311,10 +1395,10 @@ async function populateLists()
   acceptableAdsPrivacyUrl = privacyUrl;
   additionalSubscriptions = additionalSubscriptionUrls;
 
+  setAcceptableAds({firstLoad: true});
+
   for (const subscription of subscriptions)
     onSubscriptionMessage("added", subscription);
-
-  setAcceptableAds();
 }
 
 function addAllowlistedDomain()
@@ -1491,7 +1575,9 @@ function onSubscriptionMessage(action, subscription, ...args)
           addSubscription(subscription);
 
         if (isAcceptableAds(url))
+        {
           setAcceptableAds();
+        }
 
         browser.runtime.sendMessage({
           type: "subscriptions.getDisabledFilterCount",
@@ -1506,8 +1592,6 @@ function onSubscriptionMessage(action, subscription, ...args)
         break;
       case "changed":
         updateSubscription(subscription);
-        if (isAcceptableAds(subscription.url))
-          setAcceptableAds();
 
         setPrivacyConflict();
         break;
