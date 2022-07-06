@@ -52,8 +52,7 @@ const messageListeners: Set<PortEventListener> = new Set();
  *
  * @param listener supplied callback to be fired on connect
  */
-export function addConnectListener(listener: PortEventListener)
-{
+export function addConnectListener(listener: PortEventListener) {
   connectListeners.add(listener);
   listener();
 }
@@ -63,8 +62,7 @@ export function addConnectListener(listener: PortEventListener)
  *
  * @param listener supplied callback to be fired on disconnectconnect
  */
-export function addDisconnectListener(listener: PortEventListener)
-{
+export function addDisconnectListener(listener: PortEventListener) {
   disconnectListeners.add(listener);
 }
 
@@ -73,48 +71,37 @@ export function addDisconnectListener(listener: PortEventListener)
  *
  * @param listener supplied callback to be fired on recieving a message
  */
-export function addMessageListener(listener: PortEventListener)
-{
+export function addMessageListener(listener: PortEventListener) {
   messageListeners.add(listener);
 }
 
 /**
  * Connects the port and sets message and disconnect listeners
  */
-export const connect = () =>
-{
+export const connect = (): Port | null => {
   // We're only establishing one connection per page, for which we need to
   // ignoresubsequent connection attempts
-  if (port)
-    return;
+  if (port) return port;
 
-  try
-  {
-    port = browser.runtime.connect({name: "ui"});
-  }
-  catch (ex)
-  {
+  try {
+    port = browser.runtime.connect({ name: "ui" });
+  } catch (ex) {
     // We are no longer able to connect to the background page, so we give up
     // and assume that the extension is gone
     port = null;
-    for (const listener of disconnectListeners)
-    {
-      listener();
-    }
-    return;
+
+    disconnectListeners.forEach((listener) => listener());
+
+    return port;
   }
 
-  port.onMessage.addListener((message: MessageProps) =>
-  {
+  port.onMessage.addListener((message: MessageProps) => {
     onMessage(message);
   });
 
   port.onDisconnect.addListener(onDisconnect);
 
-  for (const listener of connectListeners)
-  {
-    listener();
-  }
+  connectListeners.forEach((listener) => listener());
 
   return port;
 };
@@ -126,14 +113,8 @@ export const connect = () =>
  * @param props.filter Filter strings to be acted upon.
  * @param ...options Other properties that may be passed, depending on type
  */
-export function listen({
-  type,
-  filter,
-  ...options
-}: ListenProps)
-{
-  addConnectListener(() =>
-  {
+export function listen({ type, filter, ...options }: ListenProps) {
+  addConnectListener(() => {
     if (port) {
       port.postMessage({
         type: `${type}.listen`,
@@ -149,8 +130,7 @@ export function listen({
  * assuming that the extension is still there, in order to wake up the
  * service worker
  */
-function onDisconnect()
-{
+function onDisconnect() {
   port = null;
   // If the disconnect occurs due to the extension being unloaded, we may
   // still be able to reconnect while that's ongoing, which misleads us into
@@ -166,15 +146,10 @@ function onDisconnect()
  *
  * @param message props including type, passed on to the message listeners
  */
-function onMessage(message: MessageProps)
-{
-  if (!message.type.endsWith(".respond"))
-    return;
+function onMessage(message: MessageProps) {
+  if (!message.type.endsWith(".respond")) return;
 
-  for (const listener of messageListeners)
-  {
-    listener(message);
-  }
+  messageListeners.forEach((listener) => listener(message));
 }
 
 /**
@@ -182,7 +157,6 @@ function onMessage(message: MessageProps)
  *
  * @param listener disconnect listener to remove
  */
-export function removeDisconnectListener(listener: PortEventListener)
-{
+export function removeDisconnectListener(listener: PortEventListener) {
   disconnectListeners.delete(listener);
 }

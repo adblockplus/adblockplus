@@ -42,6 +42,15 @@ import type Browser from "webextension-polyfill";
 declare const browser: Browser.Browser;
 
 /**
+ * All the Platforms with their store name.
+ */
+const platformToStore: Readonly<Partial<PlatformToStore>> = {
+  chromium: "chrome",
+  edgehtml: "edge",
+  gecko: "firefox"
+};
+
+/**
  * A collection of browser.runtime apis for app information.
  */
 export const app = {
@@ -64,19 +73,16 @@ export const app = {
         let store: Store;
 
         // Edge and Opera have their own stores so we should refer to those instead
-        if (application !== "edge" && application !== "opera")
-        {
+        if (application !== "edge" && application !== "opera") {
           store = platformToStore[platform] || "chrome";
-        }
-        else
-        {
+        } else {
           store = application;
         }
 
         return {
           application,
           platform,
-          store,
+          store
         };
       }
     );
@@ -87,14 +93,14 @@ export const app = {
    *
    * @param filter Filters to listen for
    */
-  listen: (filter: ListenFilters) => listen({type: "app", filter}),
+  listen: (filter: ListenFilters) => listen({ type: "app", filter }),
 
   /**
    * Opens an app page according to the passed string
    *
    * @param what which app page to open
    */
-  open: (what: AppOpenWhat) => send("app.open", { what }),
+  open: (what: AppOpenWhat) => send("app.open", { what })
 };
 
 /**
@@ -106,7 +112,7 @@ export const doclinks = {
    *
    * @param link which link to retrieve
    */
-  get: (link: string) => send("app.get", { what: "doclink", link }),
+  get: (link: string) => send("app.get", { what: "doclink", link })
 };
 
 /**
@@ -123,7 +129,7 @@ export const filters = {
    *
    * @param filter Filters to listen for
    */
-  listen: (filter: ListenFilters) => listen({type: "filters", filter})
+  listen: (filter: ListenFilters) => listen({ type: "filters", filter })
 };
 
 /**
@@ -135,21 +141,13 @@ export const notifications = {
    *
    * @param displayMethod the way the notification intends to be displayed
    */
-  get: (displayMethod: DisplayMethod) => send("notifications.get", { displayMethod }),
+  get: (displayMethod: DisplayMethod) =>
+    send("notifications.get", { displayMethod }),
 
   /**
    * Marks all active notifications as seen.
    */
-  seen: () => send("notifications.seen"),
-};
-
-/**
- * All the Platforms with their store name.
- */
-const platformToStore: Readonly<Partial<PlatformToStore>> = {
-  chromium: "chrome",
-  edgehtml: "edge",
-  gecko: "firefox"
+  seen: () => send("notifications.seen")
 };
 
 /**
@@ -159,14 +157,14 @@ export const prefs = {
   /**
    * Gets a specific preference setting according to the provided key.
    */
-  get: (key: PrefsGetWhat) => send("prefs.get", {key}),
+  get: (key: PrefsGetWhat) => send("prefs.get", { key }),
 
   /**
    * Adds a connection Listener for the "prefs"
    *
    * @param filter Filters to listen for
    */
-  listen: (filter: ListenFilters) => listen({type: "prefs", filter})
+  listen: (filter: ListenFilters) => listen({ type: "prefs", filter })
 };
 
 /**
@@ -179,7 +177,8 @@ export const requests = {
    * @param filter Filters to listen for
    * @param tabId tab to listen for changes on
    */
-  listen: (filter: ListenFilters, tabId: string) => listen({type: "requests", filter, tabId})
+  listen: (filter: ListenFilters, tabId: string) =>
+    listen({ type: "requests", filter, tabId })
 };
 
 /**
@@ -188,14 +187,17 @@ export const requests = {
  * @param sendType accepted message strings
  * @param rawArgs other arguments to be sent to the browser
  */
-const send = <T = string>(sendType: SendType, rawArgs: SendArgs = {}): Promise<T> => {
+function send<T = string>(
+  sendType: SendType,
+  rawArgs: SendArgs = {}
+): Promise<T> {
   const args = {
     ...rawArgs,
-    type: sendType,
+    type: sendType
   };
 
   return browser.runtime.sendMessage(args);
-};
+}
 
 /**
  * A collection of browser.runtime apis for stats.
@@ -218,7 +220,7 @@ export const stats = {
    *
    * @param filter Filters to listen for
    */
-  listen: (filter: ListenFilters) => listen({type: "stats", filter})
+  listen: (filter: ListenFilters) => listen({ type: "stats", filter })
 };
 
 /**
@@ -242,7 +244,7 @@ export const subscriptions = {
    *
    * @param filter Filters to listen for
    */
-  listen: (filter: ListenFilters) => listen({type: "subscriptions", filter})
+  listen: (filter: ListenFilters) => listen({ type: "subscriptions", filter })
 };
 
 /**
@@ -261,7 +263,7 @@ const api = {
   requests,
   removeDisconnectListener,
   subscriptions,
-  stats,
+  stats
 };
 
 /**

@@ -17,11 +17,46 @@
   },
   "overrides": [
     {
+      "files": ["test/**/*.js", "test/**/*.mjs"],
+      "env": {
+        "mocha": true,
+        "node": true
+      }
+    },
+    {
+      "files": ["build/**/*.js"],
+      "env": {
+        "node": true
+      }
+    },
+    {
+      "files": ["lib/**/*.js"],
+      "env": {
+        "commonjs": true
+      }
+    },
+    {
       "files": [
         "*.js", "*.cjs"
       ],
       "parserOptions": {
         "sourceType": "script"
+      }
+    },
+    {
+      "files": ["test/end-to-end/tests/*.js"],
+      "rules": {
+        "prefer-arrow-callback": "off"
+      }
+    },
+    {
+      "files": ["test/end-to-end/page-objects/*.js"],
+      "env": {
+        "jquery": true
+      },
+      "globals": {
+        "$": true,
+        "$$": true
       }
     }
   ],

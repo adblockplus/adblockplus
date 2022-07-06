@@ -39,8 +39,7 @@ export type AppGetWhat =
 /**
  * Strings accepted for api.app.open's first prop
  */
-export type AppOpenWhat =
-  | "options";
+export type AppOpenWhat = "options";
 
 /**
  * Used by app.open and app.get, this uses the general
@@ -56,7 +55,12 @@ interface AppReference {
 /**
  * Available display methods.
  */
-export type DisplayMethod = "critical" | "information" | "newtab" | "normal" | "relentless";
+export type DisplayMethod =
+  | "critical"
+  | "information"
+  | "newtab"
+  | "normal"
+  | "relentless";
 
 /**
  * Options for retrieving items blocked per page.
@@ -106,7 +110,7 @@ interface GetPrefsOptions {
 /**
  * Filter strings to be acted upon.
  */
- export type ListenFilters = string[];
+export type ListenFilters = string[];
 
 /**
  * Property configurations for the listen function
@@ -121,7 +125,7 @@ export type ListenProps =
       /**
        * Used with
        */
-      tabId: string
+      tabId: string;
 
       /**
        * Types of valid listen messages.
@@ -137,12 +141,7 @@ export type ListenProps =
       /**
        * Types of valid listen messages.
        */
-      type:
-        | "app"
-        | "filters"
-        | "prefs"
-        | "stats"
-        | "subscriptions";
+      type: "app" | "filters" | "prefs" | "stats" | "subscriptions";
     };
 
 /**
@@ -156,9 +155,9 @@ export type ListenTypes =
   | "stats"
   | "subscriptions";
 
- /**
-  * Props sent into message listeners to determine how they are reacted upon
-  */
+/**
+ * Props sent into message listeners to determine how they are reacted upon
+ */
 export interface MessageProps {
   /**
    * This type is suboptimal as it is unclear exactly what
@@ -170,7 +169,7 @@ export interface MessageProps {
    * The type of message being sent
    */
   type: string;
-};
+}
 
 /**
  * Static strings to match the browser engine to a store name.
@@ -214,7 +213,7 @@ export type Port = Browser.Runtime.Port | null;
 /**
  * An event listener supplied to one of the api listeners
  */
-export type PortEventListener = (options?: MessageProps) => void
+export type PortEventListener = (options?: MessageProps) => void;
 
 /**
  * Strings accepted for api.prefs.get's first prop
