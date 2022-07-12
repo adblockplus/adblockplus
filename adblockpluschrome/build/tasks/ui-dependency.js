@@ -31,6 +31,8 @@ async function getMTime(file)
 
 function createBuild()
 {
+  // If that ever changes, please update any documentation regarding partial
+  // builds!
   return (promisify(exec))("bash -c \"npm run --prefix ../ dist\"");
 }
 

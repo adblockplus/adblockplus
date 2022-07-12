@@ -51,11 +51,41 @@ argumentParser.addArgument(
     type: "int"
   }
 );
-argumentParser.addArgument(["-p", "--manifest-path"]);
+argumentParser.addArgument("--manifest-path");
+
+argumentParser.addArgument("--partial", {
+  choices: ["false", "true"],
+  defaultValue: "false",
+  help: "A partial build skips the build steps EWE, icons and UI."
+});
 
 let args = argumentParser.parseKnownArgs()[0];
 
 let targetDir = `devenv.${args.target}`;
+
+const buildTasks = [
+  tasks.buildUI,
+  buildPacked
+];
+
+const devenvTasks = [
+  cleanDir,
+  tasks.buildUI,
+  buildDevenv
+];
+
+if (args.partial === "true")
+{
+  // !! IMPORTANT !!
+  //
+  // If the contents of this block, or the `tasks.buildUI` task itself
+  // changes, please update the according documentation in the README and in
+  // the CLI help text.
+  //
+  // for a partial build, remove tasks.buildUI from task list
+  for (const taskList of [buildTasks, devenvTasks])
+    taskList.splice(taskList.indexOf(tasks.buildUI), 1);
+}
 
 async function getBuildSteps(options)
 {
@@ -177,16 +207,9 @@ function cleanDir()
   return del(targetDir);
 }
 
-export let devenv = gulp.series(
-  cleanDir,
-  tasks.buildUI,
-  buildDevenv
-);
+export let devenv = gulp.series(...devenvTasks);
 
-export let build = gulp.series(
-  tasks.buildUI,
-  buildPacked
-);
+export let build = gulp.series(...buildTasks);
 
 export async function source()
 {

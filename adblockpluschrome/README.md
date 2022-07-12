@@ -23,6 +23,9 @@ You can pass the `-m 3` argument to generate a build that's compatible with
 WebExtensions Manifest version 3. If omitted, it will generate a build for
 Manifest version 2.
 
+You can pass the `--partial true` argument to run a build that will not re-build the EWE, the icons and the UI. This is useful if your new changes do not touch any of the beforementioned parts of the extension, and you can benefit from the faster build time. Note that you must have a run a full build once before you can succesfully run a partial build.
+
+
 ### Development environment
 
 To simplify the process of testing your changes you can create an unpacked
@@ -59,7 +62,7 @@ This can be done by:
 You should check `build/manifest.json` and `build/tasks/manifest.js` to see
 how we modify it.
 
-        npx gulp {build|devenv} -t {chrome|firefox} -p manifest.json
+        npx gulp {build|devenv} -t {chrome|firefox} --manifest-path manifest.json
 
 Running tests
 -------------
