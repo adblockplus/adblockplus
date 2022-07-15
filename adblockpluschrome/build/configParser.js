@@ -70,17 +70,6 @@ function mergeTranslations(base, override = {})
   };
 }
 
-function mergeTests(base = {}, override = {})
-{
-  let result = {};
-  let baseScripts = base.scripts || [];
-  let overrideScripts = override.scripts || [];
-
-  result.scripts = [...new Set([...baseScripts, ...overrideScripts])];
-
-  return result;
-}
-
 function mergeMapping(base, override = {})
 {
   let result = {};
@@ -121,9 +110,7 @@ function mergeConfig(target)
     version,
     webpack,
     mapping: mergeMapping(baseConfig.mapping, config.mapping),
-    translations,
-    tests: mergeTests(baseConfig.tests, config.tests),
-    unitTests: mergeTests(baseConfig.unitTests, config.unitTests)
+    translations
   };
 
   return parsedConfigs[target];

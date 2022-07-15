@@ -15,8 +15,6 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import handlebars from "handlebars";
-import fs from "fs";
 import {Readable} from "stream";
 import Vinyl from "vinyl";
 
@@ -28,22 +26,6 @@ export function addDevEnvVersion()
     new Vinyl({
       contents: Buffer.from(randNumber),
       path: "devenvVersion__"
-    })
-  ]);
-}
-
-export async function addUnitTestsPage(templateData)
-{
-  let file = await fs.promises.readFile(
-    "build/templates/unitTestsIndex.html.tmpl", "utf8"
-  );
-  let template = handlebars.compile(file);
-  let data = template(templateData);
-
-  return new Readable.from([
-    new Vinyl({
-      contents: Buffer.from(data),
-      path: "tests/index.html"
     })
   ]);
 }

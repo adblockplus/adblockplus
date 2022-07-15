@@ -88,7 +88,7 @@
     "lint": {
       "css": "stylelint ./build/**/*.css ./css/*.scss ./skin/*.css --ignore-path .gitignore",
       "js": "eslint './js/**/*.mjs' './lib/**/*.js' './ext/**/*.js' './build/**/*.js' './mocks/**/*.mjs' './test/**/*.js' './test/**/*.mjs' --config ./.eslintrc.json",
-      "legacy": "eslint --ext .js,.cjs,.js.tmpl adblockpluschrome/*.js adblockpluschrome/lib/ adblockpluschrome/ext/ adblockpluschrome/test/ adblockpluschrome/build/",
+      "legacy": "eslint --ext .js,.cjs,.js.tmpl adblockpluschrome/*.js adblockpluschrome/lib/ adblockpluschrome/ext/ adblockpluschrome/build/",
       "locale": "node build/locale-linter ./locale/**/*.json"
     },
     "optimize": {

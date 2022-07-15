@@ -19,36 +19,9 @@ let common = {
   webpack: {
     bundles: [
       {
-        dest: "tests/unit-tests.js",
-        src: ["adblockpluschrome/test/unit-tests/*"]
-      },
-      {
         dest: "background.js",
         src: ["adblockpluschrome/lib/devenvPoller.js"]
       }
-    ]
-  },
-  mapping: {
-    copy: [
-      {
-        dest: "tests",
-        src: [
-          "adblockpluschrome/node_modules/mocha/mocha.js",
-          "adblockpluschrome/node_modules/mocha/mocha.css",
-          "adblockpluschrome/test/unit-tests/mocha/*"
-        ]
-      }
-    ]
-  },
-  unitTests: {
-    scripts: [
-      "mocha.js",
-      "mocha-setup.js",
-      "../polyfill.js",
-      "../ext/common.js",
-      "../ext/background.js",
-      "unit-tests.js",
-      "mocha-runner.js"
     ]
   }
 };

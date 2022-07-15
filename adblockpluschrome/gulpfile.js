@@ -98,11 +98,7 @@ async function getBuildSteps(options)
   if (options.isDevenv)
   {
     buildSteps.push(
-      tasks.addDevEnvVersion(),
-      await tasks.addUnitTestsPage(
-        {scripts: options.unitTests.scripts, addonName}
-      )
-    );
+      tasks.addDevEnvVersion());
   }
 
   buildSteps.push(
@@ -151,8 +147,6 @@ async function getBuildOptions(isDevenv, isSource)
 
   opts.webpackInfo = configParser.getSection(configName, "webpack");
   opts.mapping = configParser.getSection(configName, "mapping");
-  opts.tests = configParser.getSection(configName, "tests");
-  opts.unitTests = configParser.getSection(configName, "unitTests");
   opts.basename = configParser.getSection(configName, "basename");
   opts.version = configParser.getSection(configName, "version");
   opts.translations = configParser.getSection(configName, "translations");
@@ -223,7 +217,6 @@ function startWatch()
     [
       "*.js",
       "*.html",
-      "test/unit-tests/**",
       "lib/*",
       "ext/*",
       "../*.js",
