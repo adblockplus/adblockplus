@@ -47,6 +47,7 @@ async function mustBuildUI(lastUIBuildTime)
         "../adblockpluschrome/**",
         "../docs/**",
         "../ext/**",
+        "../lib/**",
         "../mocks/**",
         "../node_modules/**",
         "../test/**"

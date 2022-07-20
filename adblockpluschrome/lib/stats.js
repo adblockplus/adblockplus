@@ -20,6 +20,7 @@
 import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
 import {installHandler} from "./messaging/events.js";
 import {port} from "./messaging/port.js";
+import {TabSessionStorage} from "./storage/tab-session.js";
 import {setBadge} from "./browserAction.js";
 import {EventEmitter} from "./events.js";
 import {Prefs} from "./prefs.js";
@@ -28,7 +29,7 @@ const badgeColor = "#646464";
 const badgeRefreshRate = 4;
 
 let eventEmitter = new EventEmitter();
-let blockedPerPage = new ext.PageMap();
+let blockedPerPage = new TabSessionStorage("stats:blocked");
 
 /**
  * Gets the number of requests blocked on the given page.
@@ -36,9 +37,9 @@ let blockedPerPage = new ext.PageMap();
  * @param  {Page} page
  * @return {Number}
  */
-export function getBlockedPerPage(page)
+export async function getBlockedPerPage(page)
 {
-  return blockedPerPage.get(page) || 0;
+  return (await blockedPerPage.get(page.id)) || 0;
 }
 
 let activeTabIds = new Set();
@@ -46,17 +47,16 @@ let activeTabIdByWindowId = new Map();
 
 let badgeUpdateScheduled = false;
 
-function updateBadge(tabId)
+async function updateBadge(tabId)
 {
   if (!Prefs.show_statsinicon)
     return;
 
   for (let id of (typeof tabId == "undefined" ? activeTabIds : [tabId]))
   {
-    let page = new ext.Page({id});
-    let blockedCount = blockedPerPage.get(page);
+    let blockedCount = await blockedPerPage.get(id);
 
-    setBadge(page.id, blockedCount && {
+    setBadge(id, blockedCount && {
       color: badgeColor,
       number: blockedCount
     });
@@ -68,8 +68,11 @@ function scheduleBadgeUpdate(tabId)
   if (!badgeUpdateScheduled && Prefs.show_statsinicon &&
       (typeof tabId == "undefined" || activeTabIds.has(tabId)))
   {
-    setTimeout(() => { badgeUpdateScheduled = false; updateBadge(); },
-               1000 / badgeRefreshRate);
+    setTimeout(async() =>
+    {
+      badgeUpdateScheduled = false;
+      await updateBadge();
+    }, 1000 / badgeRefreshRate);
     badgeUpdateScheduled = true;
   }
 }
@@ -77,10 +80,10 @@ function scheduleBadgeUpdate(tabId)
 // Once nagivation for the tab has been committed to (e.g. it's no longer
 // being prerendered) we clear its badge, or if some requests were already
 // blocked beforehand we display those on the badge now.
-browser.webNavigation.onCommitted.addListener(details =>
+browser.webNavigation.onCommitted.addListener(async details =>
 {
   if (details.frameId == 0)
-    updateBadge(details.tabId);
+    await updateBadge(details.tabId);
 });
 
 async function onBlockableItem({filter, request})
@@ -90,11 +93,10 @@ async function onBlockableItem({filter, request})
 
   let {tabId} = request;
 
-  let page = new ext.Page({id: tabId});
-  let blocked = blockedPerPage.get(page) || 0;
+  let blocked = await blockedPerPage.get(tabId) || 0;
   ++blocked;
 
-  blockedPerPage.set(page, blocked);
+  await blockedPerPage.set(tabId, blocked);
   scheduleBadgeUpdate(tabId);
 
   eventEmitter.emit("blocked_per_page", {tabId, blocked});
@@ -158,7 +160,7 @@ Prefs.on("show_statsinicon", async() =>
   for (let tab of tabs)
   {
     if (Prefs.show_statsinicon)
-      updateBadge(tab.id);
+      await updateBadge(tab.id);
     else
       setBadge(tab.id, null);
   }

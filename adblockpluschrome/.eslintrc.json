@@ -16,7 +16,8 @@
     "sourceType": "module"
   },
   "rules": {
-    "curly": ["error", "multi-or-nest", "consistent"]
+    "curly": ["error", "multi-or-nest", "consistent"],
+    "spaced-comment": ["error", "always", {"block": {"exceptions": ["*"]}}]
   },
   "overrides": [
     {

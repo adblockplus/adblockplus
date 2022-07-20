@@ -21,6 +21,7 @@ import * as info from "info";
 
 import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
 import {port} from "./messaging/port.js";
+import {TabSessionStorage} from "./storage/tab-session.js";
 import {allowlistingState} from "./allowlisting.js";
 import {Prefs} from "./prefs.js";
 import {extractHostFromFrame} from "./url.js";
@@ -348,7 +349,7 @@ ext.pages.onLoading.addListener(page =>
 
 /* Context menu and popup button */
 
-let readyActivePages = new ext.PageMap();
+let readyActivePages = new TabSessionStorage("filterComposer:readyActivePages");
 let showingContextMenu = false;
 
 if ("contextMenus" in browser)
@@ -364,7 +365,7 @@ if ("contextMenus" in browser)
   });
 }
 
-function showOrHideContextMenu(activePage)
+async function showOrHideContextMenu(activePage)
 {
   // Firefox for Android does not support browser.contextMenus.
   // https://bugzilla.mozilla.org/show_bug.cgi?id=1269062
@@ -372,7 +373,7 @@ function showOrHideContextMenu(activePage)
     return;
 
   let shouldShowContextMenu = Prefs.shouldShowBlockElementMenu &&
-                                readyActivePages.get(activePage);
+                                await readyActivePages.get(activePage.id);
 
   if (shouldShowContextMenu && !showingContextMenu)
   {
@@ -394,12 +395,12 @@ async function updateContextMenu(updatedPage)
 {
   let tabs = await browser.tabs.query({active: true, lastFocusedWindow: true});
   if (tabs.length > 0 && (!updatedPage || updatedPage.id == tabs[0].id))
-    showOrHideContextMenu(updatedPage || new ext.Page(tabs[0]));
+    await showOrHideContextMenu(updatedPage || new ext.Page(tabs[0]));
 }
 
-browser.tabs.onActivated.addListener(activeInfo =>
+browser.tabs.onActivated.addListener(async activeInfo =>
 {
-  showOrHideContextMenu(new ext.Page({id: activeInfo.tabId}));
+  await showOrHideContextMenu(new ext.Page({id: activeInfo.tabId}));
 });
 
 // Firefox for Android does not support browser.windows.
@@ -413,11 +414,11 @@ if ("windows" in browser)
   });
 }
 
-allowlistingState.addListener("changed", (page, isAllowlisted) =>
+allowlistingState.addListener("changed", async(page, isAllowlisted) =>
 {
-  if (readyActivePages.has(page))
+  if (await readyActivePages.has(page.id))
   {
-    readyActivePages.set(page, !isAllowlisted);
+    await readyActivePages.set(page.id, !isAllowlisted);
     updateContextMenu(page);
   }
 });
@@ -437,7 +438,7 @@ Prefs.on("shouldShowBlockElementMenu", () =>
  */
 port.on("composer.isPageReady", (message, sender) =>
 {
-  return readyActivePages.has(new ext.Page({id: message.pageId}));
+  return readyActivePages.has(message.pageId);
 });
 
 /**
@@ -447,13 +448,13 @@ port.on("composer.isPageReady", (message, sender) =>
  * @event "composer.ready"
  * @returns {boolean}
  */
-port.on("composer.ready", (message, sender) =>
+port.on("composer.ready", async(message, sender) =>
 {
   let isAllowlisted = ewe.filters.isResourceAllowlisted(
     sender.page.url,
     "document",
     sender.page.id
   );
-  readyActivePages.set(sender.page, !isAllowlisted);
+  await readyActivePages.set(sender.page.id, !isAllowlisted);
   updateContextMenu(sender.page);
 });

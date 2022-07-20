@@ -17,13 +17,14 @@
 
 /** @module browserAction */
 
-let changesByTabId = new Map();
-let badgeStateByPage = new ext.PageMap();
+import {TabSessionStorage} from "./storage/tab-session.js";
 
-function setBadgeState(tabId, key, value)
+let changesByTabId = new Map();
+let badgeStateByPage = new TabSessionStorage("browserAction:blockedState");
+
+async function setBadgeState(tabId, key, value)
 {
-  let page = new ext.Page(tabId);
-  let badgeState = badgeStateByPage.get(page);
+  let badgeState = await badgeStateByPage.get(tabId);
 
   if (!badgeState)
   {
@@ -31,19 +32,20 @@ function setBadgeState(tabId, key, value)
       hiddenState: "visible",
       text: ""
     };
-    badgeStateByPage.set(page, badgeState);
   }
 
   // We need to ignore any text changes while we're hiding the badge
   if (!(badgeState.hiddenState == "hiding" && key == "text"))
     badgeState[key] = value;
 
+  await badgeStateByPage.set(tabId, badgeState);
+
   return badgeState;
 }
 
 function applyChanges(tabId, changes)
 {
-  return Promise.all(Object.keys(changes).map(change =>
+  return Promise.all(Object.keys(changes).map(async change =>
   {
     // Firefox for Android displays the browser action not as an icon but
     // as a menu item. There is no icon, but such an option may be added
@@ -76,7 +78,7 @@ function applyChanges(tabId, changes)
     {
       // Remember changes to the badge text but don't apply them yet
       // as long as the badge is hidden.
-      let badgeState = setBadgeState(tabId, "text", changes.badgeText);
+      let badgeState = await setBadgeState(tabId, "text", changes.badgeText);
       if (badgeState.hiddenState == "hidden")
         return;
 
@@ -204,13 +206,13 @@ export async function toggleBadge(tabId, shouldHide)
 {
   if (shouldHide)
   {
-    setBadgeState(tabId, "hiddenState", "hiding");
+    await setBadgeState(tabId, "hiddenState", "hiding");
     addChange(tabId, "badgeText", "");
-    setBadgeState(tabId, "hiddenState", "hidden");
+    await setBadgeState(tabId, "hiddenState", "hidden");
   }
   else
   {
-    let badgeState = setBadgeState(tabId, "hiddenState", "visible");
+    let badgeState = await setBadgeState(tabId, "hiddenState", "visible");
     addChange(tabId, "badgeText", badgeState.text);
   }
 }

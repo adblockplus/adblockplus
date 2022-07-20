@@ -19,6 +19,7 @@
 
 import * as info from "info";
 
+import {TabSessionStorage} from "./storage/tab-session.js";
 import {allowlistingState} from "./allowlisting.js";
 import {setIconPath, setIconImageData, toggleBadge} from "./browserAction.js";
 
@@ -31,7 +32,7 @@ let frameOpacitiesCritical = calculateFrameOpacities(5, 3);
 let stopRequested = false;
 let canUpdateIcon = true;
 let notRunning = Promise.resolve();
-let allowlistedState = new ext.PageMap();
+let allowlistedState = new TabSessionStorage("icon:allowlistedState");
 
 let icons = [null, null];
 
@@ -98,10 +99,10 @@ async function renderIcons()
   }
 }
 
-function setIcon(page, opacity, frames)
+async function setIcon(page, opacity, frames)
 {
   opacity = opacity || 0;
-  let allowlisted = !!allowlistedState.get(page);
+  let allowlisted = !!(await allowlistedState.get(page.id));
 
   if (!frames)
   {
@@ -133,11 +134,11 @@ function setIcon(page, opacity, frames)
   }
 }
 
-allowlistingState.addListener("changed", (page, isAllowlisted) =>
+allowlistingState.addListener("changed", async(page, isAllowlisted) =>
 {
-  allowlistedState.set(page, isAllowlisted);
+  await allowlistedState.set(page.id, isAllowlisted);
   if (canUpdateIcon)
-    setIcon(page);
+    await setIcon(page);
 });
 
 async function renderFrames(opacities)
@@ -202,10 +203,10 @@ async function animateIcon(opacities, frames)
   let numberOfFrames = opacities.length;
   let opacity = 0;
 
-  let onActivated = page =>
+  let onActivated = async page =>
   {
     pages.push(page);
-    setIcon(page, opacity, frames);
+    await setIcon(page, opacity, frames);
     toggleBadge(page.id, true);
   };
   ext.pages.onActivated.addListener(onActivated);
@@ -215,7 +216,7 @@ async function animateIcon(opacities, frames)
     toggleBadge(page.id, true);
   return new Promise((resolve, reject) =>
   {
-    let interval = setInterval(() =>
+    let interval = setInterval(async() =>
     {
       let oldOpacity = opacity;
       opacity = opacities[animationStep++];
@@ -224,8 +225,8 @@ async function animateIcon(opacities, frames)
       {
         for (let page of pages)
         {
-          if (allowlistedState.has(page))
-            setIcon(page, opacity, frames);
+          if (await allowlistedState.has(page.id))
+            await setIcon(page, opacity, frames);
         }
       }
 

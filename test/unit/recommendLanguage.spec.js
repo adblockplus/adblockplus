@@ -83,8 +83,17 @@ const defaultModules = {
       has: () => false
     }
   },
-  info: {application: "firefox"},
-  prefs: {
+  "storage/session": {
+    SessionStorage: class
+    {
+      constructor()
+      {
+        return new Map();
+      }
+    }
+  },
+  "info": {application: "firefox"},
+  "prefs": {
     Prefs: {
       recommend_language_subscriptions: true
     }

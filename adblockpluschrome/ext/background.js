@@ -18,63 +18,6 @@
 "use strict";
 
 {
-  let nonEmptyPageMaps = new Set();
-
-  ext.PageMap = class PageMap
-  {
-    constructor()
-    {
-      this._map = new Map();
-    }
-
-    _delete(id)
-    {
-      this._map.delete(id);
-
-      if (this._map.size == 0)
-        nonEmptyPageMaps.delete(this);
-    }
-
-    keys()
-    {
-      return Array.from(this._map.keys()).map(ext.getPage);
-    }
-
-    get(page)
-    {
-      return this._map.get(page.id);
-    }
-
-    set(page, value)
-    {
-      this._map.set(page.id, value);
-      nonEmptyPageMaps.add(this);
-    }
-
-    has(page)
-    {
-      return this._map.has(page.id);
-    }
-
-    clear()
-    {
-      this._map.clear();
-      nonEmptyPageMaps.delete(this);
-    }
-
-    delete(page)
-    {
-      this._delete(page.id);
-    }
-  };
-
-  function removeFromAllPageMaps(pageId)
-  {
-    for (let pageMap of nonEmptyPageMaps)
-      pageMap._delete(pageId);
-  }
-
-
   /* Pages */
 
   let Page = ext.Page = class Page
@@ -150,8 +93,6 @@
     if (frameId == 0)
     {
       let page = new Page({id: tabId, url});
-
-      removeFromAllPageMaps(tabId);
 
       browser.tabs.get(tabId).catch(error =>
       {
@@ -315,7 +256,6 @@
   {
     ext.pages.onRemoved._dispatch(tabId);
 
-    removeFromAllPageMaps(tabId);
     framesOfTabs.delete(tabId);
   }
 

@@ -23,10 +23,43 @@ import {initDay1Notification} from "../../lib/notifications.js";
 import {showOptions} from "../../lib/pages/options.js";
 import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
 import {port} from "./messaging/port.js";
+import {SessionStorage} from "./storage/session.js";
 import {askConfirmSubscription} from "./filterConfiguration.js";
 import {startIconAnimation, stopIconAnimation} from "./icon.js";
 import {Prefs} from "./prefs.js";
 import {Stats} from "./stats.js";
+
+/**
+ * The active notification is (if any) the most recent currently displayed
+ * notification. Once a notification is clicked or is superseded by another
+ * notification we no longer consider it active.
+ *
+ * @typedef {Object} ActiveNotification
+ */
+
+/**
+ * Key to store/retrieve the [active notification]{@link ActiveNotification}
+ */
+const activeNotificationKey = "activeNotification";
+
+/**
+ * When a notification button is clicked we need to look up what should
+ * happen. This can be both for the active notification, and also for
+ * notifications stashed in the notification center.
+ *
+ * @typedef {Object[]} NotificationButtons
+ */
+
+/**
+ * Gets the key to store/retrieve the [buttons]{@link NotificationButtons} for
+ * the notification with the given ID.
+ *
+ * @param {string} notificationId - Notification ID
+ * @returns {string} Key for storing/retrieving notification buttons
+ */
+const getButtonsKey = notificationId => `buttons:${notificationId}`;
+
+const session = new SessionStorage("notificationHelper");
 
 const displayMethods = new Map([
   ["critical", ["icon", "notification", "popup"]],
@@ -55,19 +88,9 @@ const localNotificationPages = new Map([
   ["abp:updates", "/updates.html"]
 ]);
 
-// The active notification is (if any) the most recent currently displayed
-// notification. Once a notification is clicked or is superceeded by another
-// notification we no longer consider it active.
-let activeNotification = null;
-
 // We animate the ABP icon while some kinds of notifications are active, to help
 // catch the user's attention.
 let notificationIconAnimationPlaying = false;
-
-// When a notification button is clicked we need to look up what should happen.
-// This can be both for the active notification, and also for notifications
-// stashed in the notification center.
-let buttonsByNotificationId = new Map();
 
 // Opera < 57 and Firefox (tested up to 68.0.1) do not support notifications
 // being created with buttons. Opera added button support with >= 57, however
@@ -188,16 +211,16 @@ function getButtonLinks(buttons)
   return links;
 }
 
-function openNotificationLinks(notificationId)
+async function openNotificationLinks(notificationId)
 {
-  let buttons = buttonsByNotificationId.get(notificationId) || [];
+  let buttons = await session.get(getButtonsKey(notificationId)) || [];
   for (let link of getButtonLinks(buttons))
     openNotificationLink(link);
 }
 
 async function notificationButtonClick(notificationId, buttonIndex)
 {
-  let buttons = buttonsByNotificationId.get(notificationId);
+  let buttons = await session.get(getButtonsKey(notificationId));
 
   if (!(buttons && buttonIndex in buttons))
     return;
@@ -210,7 +233,7 @@ async function notificationButtonClick(notificationId, buttonIndex)
       openNotificationLink(button.link);
       break;
     case "open-all":
-      openNotificationLinks(notificationId);
+      await openNotificationLinks(notificationId);
       break;
     case "configure":
       let [, optionsPort] = await showOptions();
@@ -227,16 +250,17 @@ async function notificationButtonClick(notificationId, buttonIndex)
  * Tidy up after a notification has been dismissed.
  *
  * @param {string} notificationId
- * @param {bool} stashedInNotificationCenter
+ * @param {bool} isStashed
  *   If the given notification is (or might be) stashed in the notification
  *   center, we must take care to remember what its buttons do. Leave as true
  *   unless you're sure!
  */
-function notificationDismissed(notificationId, stashedInNotificationCenter)
+async function notificationDismissed(notificationId, isStashed)
 {
+  const activeNotification = await session.get(activeNotificationKey);
   if (activeNotification && activeNotification.id == notificationId)
   {
-    activeNotification = null;
+    await session.delete(activeNotificationKey);
 
     if (notificationIconAnimationPlaying)
     {
@@ -245,8 +269,8 @@ function notificationDismissed(notificationId, stashedInNotificationCenter)
     }
   }
 
-  if (!stashedInNotificationCenter)
-    buttonsByNotificationId.delete(notificationId);
+  if (!isStashed)
+    await session.delete(getButtonsKey(notificationId));
 }
 
 function openNotificationInNewTab(notification)
@@ -309,6 +333,7 @@ function openNotificationInNewTab(notification)
 
 async function showNotification(notification)
 {
+  const activeNotification = await session.get(activeNotificationKey);
   if (activeNotification && activeNotification.id == notification.id)
     return;
 
@@ -328,9 +353,9 @@ async function showNotification(notification)
   // We take a note of the notification's buttons even if notification buttons
   // are not supported by this browser. That way, if the user clicks the
   // (buttonless) notification we can still open all the links.
-  buttonsByNotificationId.set(notification.id, buttons);
+  await session.set(getButtonsKey(notification.id), buttons);
 
-  activeNotification = notification;
+  await session.set(activeNotificationKey, notification);
   if (matchesDisplayMethod("notification", notification))
   {
     let notificationTitle = texts.title || "";
@@ -393,7 +418,7 @@ export function initNotifications(firstRun)
     if (typeof buttonIndex == "number")
       await notificationButtonClick(notificationId, buttonIndex);
     else if (!browserNotificationButtonsSupported)
-      openNotificationLinks(notificationId);
+      await openNotificationLinks(notificationId);
 
     // Chrome hides notifications in the notification center when clicked,
     // so we need to clear them.
@@ -401,12 +426,12 @@ export function initNotifications(firstRun)
 
     // But onClosed isn't triggered when we clear the notification, so we need
     // to take care to clear our record of it here too.
-    notificationDismissed(notificationId, false);
+    await notificationDismissed(notificationId, false);
   };
   browser.notifications.onButtonClicked.addListener(onClick);
   browser.notifications.onClicked.addListener(onClick);
 
-  let onClosed = (notificationId, byUser) =>
+  let onClosed = async(notificationId, byUser) =>
   {
     // Despite using the highest priority for our notifications, Windows 10
     // will still hide them after a few seconds and stash them in the
@@ -416,7 +441,7 @@ export function initNotifications(firstRun)
     // Note: Even if the notification was closed by the user, it still might
     //       be stashed in the notification center.
     if (byUser)
-      notificationDismissed(notificationId, true);
+      await notificationDismissed(notificationId, true);
   };
   browser.notifications.onClosed.addListener(onClosed);
 
@@ -448,7 +473,7 @@ export function isOptional(notificationType)
  * @property {number} id - ID of the clicked notification
  * @property {string} [link] - Notification link to open
  */
-port.on("notifications.clicked", (message, sender) =>
+port.on("notifications.clicked", async(message, sender) =>
 {
   if (message.link)
     openNotificationLink(message.link);
@@ -458,7 +483,7 @@ port.on("notifications.clicked", (message, sender) =>
   if (!message.link || message.link.startsWith("abp:subscribe:"))
   {
     browser.notifications.clear(message.id);
-    notificationDismissed(message.id, true);
+    await notificationDismissed(message.id, true);
   }
 });
 
@@ -472,8 +497,9 @@ port.on("notifications.clicked", (message, sender) =>
  *   For example "popup" or "icon".
  * @returns {?object}
  */
-port.on("notifications.get", (message, sender) =>
+port.on("notifications.get", async(message, sender) =>
 {
+  const activeNotification = await session.get(activeNotificationKey);
   if (!activeNotification)
     return;
 
@@ -490,8 +516,9 @@ port.on("notifications.get", (message, sender) =>
  *
  * @event "notifications.seen"
  */
-port.on("notifications.seen", (message, sender) =>
+port.on("notifications.seen", async(message, sender) =>
 {
+  const activeNotification = await session.get(activeNotificationKey);
   if (!activeNotification)
     return;
 

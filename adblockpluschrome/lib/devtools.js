@@ -27,9 +27,10 @@ import {
   toPlainFilter,
   toPlainSubscription
 } from "./messaging/types.js";
+import {TabSessionStorage} from "./storage/tab-session.js";
 import {compareVersions} from "./versions.js";
 
-const reloadStateByPage = new ext.PageMap();
+const reloadStateByPage = new TabSessionStorage("devtools:reloadState");
 
 function onBlockableItem(emit, blockableItem)
 {
@@ -50,17 +51,17 @@ function onBlockableItem(emit, blockableItem)
   );
 }
 
-function onPageFrame(emit, details)
+async function onPageFrame(emit, details)
 {
-  const page = new ext.Page(details.tabId);
-  const reloadState = reloadStateByPage.get(page);
+  const {tabId} = details;
+  const reloadState = await reloadStateByPage.get(tabId);
 
   // Clear the devtools panel and reload the inspected tab without caching
   // when a new request is issued. However, make sure that we don't end up
   // in an infinite recursion if we already triggered a reload.
   if (reloadState === "reloading")
   {
-    reloadStateByPage.delete(page);
+    await reloadStateByPage.delete(tabId);
     return;
   }
 
@@ -70,12 +71,12 @@ function onPageFrame(emit, details)
   // prompt the user to confirm reloading the page, and POST requests are
   // known to cause issues on many websites if repeated.
   if (details.method === "GET")
-    reloadStateByPage.set(page, "needsReload");
+    await reloadStateByPage.set(tabId, "needsReload");
 }
 
-function onPageLoad(page)
+async function onPageLoad(page)
 {
-  const reloadState = reloadStateByPage.get(page);
+  const reloadState = await reloadStateByPage.get(page.id);
 
   // Reloading the tab is the only way that allows bypassing all caches, in
   // order to see all requests in the devtools panel. Reloading must not be
@@ -83,7 +84,7 @@ function onPageLoad(page)
   // previous URL.
   if (reloadState === "needsReload")
   {
-    reloadStateByPage.set(page, "reloading");
+    await reloadStateByPage.set(page.id, "reloading");
     browser.tabs.reload(page.id, {bypassCache: true});
   }
 }
