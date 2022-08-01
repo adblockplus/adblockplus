@@ -22,7 +22,8 @@
     "csv-export": "node build/locale-sync/csv/main.js -e",
     "csv-import": "node build/locale-sync/csv/main.js -i && node build/locale-sync/normalize.js",
     "test:cleanup-reports": "rm -r allure-report test/end-to-end/allure-results",
-    "test:end-to-end": "cd test/end-to-end && npx wdio run wdio.conf.js",
+    "test:end-to-end": "rm -r allure-report test/end-to-end/allure-results ; cd test/end-to-end && npx wdio run wdio.conf.js",
+    "test:end-to-end-no-cleanup": "cd test/end-to-end && npx wdio run wdio.conf.js",
     "test:generate-and-open-report": "allure generate test/end-to-end/allure-results && allure open",
     "submodules:update": "git submodule update --init --recursive",
     "postinstall": "npm run $ install"

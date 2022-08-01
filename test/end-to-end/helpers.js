@@ -50,6 +50,11 @@ function getChromiumExtensionPath()
   return extensionPath;
 }
 
+function getCurrentDate(locale)
+{
+  return new Date().toLocaleDateString(locale);
+}
+
 function getFirefoxExtensionPath()
 {
   let abpXpiFileName;
@@ -98,6 +103,6 @@ async function waitForExtension()
   return [origin];
 }
 
-module.exports = {afterSequence, beforeSequence,
-                  getChromiumExtensionPath, getFirefoxExtensionPath,
+module.exports = {afterSequence, beforeSequence, getChromiumExtensionPath,
+                  getCurrentDate, getFirefoxExtensionPath,
                   helperExtension, globalRetriesNumber, waitForExtension};

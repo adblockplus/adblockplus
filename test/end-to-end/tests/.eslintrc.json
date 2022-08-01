@@ -1,0 +1,5 @@
+{
+  "rules": {
+      "prefer-arrow-callback": "off"
+  }
+}

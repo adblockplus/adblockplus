@@ -128,7 +128,9 @@ The `./test/end-to-end/tests` folder contains various end-to-end tests. After
 generating the [unpacked development build][abp-webext-readme-devenv] of the
 extension for Chrome, and [packed .xpi build][abp-webext-readme-build]
 of the extension for Firefox, the tests can be executed in the latest stable
-Chrome and Firefox browsers by running `npm run test:end-to-end`.
+Chrome and Firefox browsers by running `npm run test:end-to-end` - this will
+cleanup previously created allure results, if there are any. To run the tests
+without deleting existing results use `npm run test:end-to-end-no-cleanup`.
 
 Allure reporter is used for displaying the results after the execution has been
 completed. The report can be generated and opened using the
