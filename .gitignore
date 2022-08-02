@@ -11,6 +11,9 @@
 /allure-report/
 /test/end-to-end/allure-results/
 
+# generated test coverage
+coverage/
+
 # OS generated files
 .DS_Store
 
