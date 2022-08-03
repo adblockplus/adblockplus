@@ -37,6 +37,7 @@ No parameters.
 | filterOption | `string` | Invalid option of `unknown_option` filter validation error |
 | includeUnknownSubscription | `true` | Preinstall non-recommended subscription |
 | platform | `chromium` | Shows opt-out for DevTools panel |
+| premiumIsActive | `true` | Sets premium license as active |
 
 If the `locale` uses any Chinese that starts with `zh`, the _Get in touch_ section under the _Help_ tab should show social media icons different from Facebook and Twitter, as these platform are not available for Chinese users.
 

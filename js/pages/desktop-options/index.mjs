@@ -1164,6 +1164,7 @@ function setupLanguagesBox()
 
 function onDOMLoaded()
 {
+  setupPremium();
   setupLanguagesBox();
   populateLists().catch(dispatchError);
   populateFilters().catch(dispatchError);
@@ -1522,6 +1523,33 @@ function updateErrorTooltip(element, errorIds)
   element.classList.add("error");
 }
 
+async function setupPremium()
+{
+  const source = "desktop-options";
+  const premiumManageUrl = await api.ctalinks.get("premium-manage", {source});
+  const premiumUpgradeUrl = await api.ctalinks.get("premium-upgrade", {source});
+
+  const premiumSignInCTA = $("#premium-signin");
+  const premiumUpgradeCTA = $("#premium-upgrade");
+  const premiumUpgradeDescription = $("#premium-upgrade-description");
+
+  $$(".premium-manage.banner a").forEach(cta =>
+  {
+    cta.setAttribute("href", premiumManageUrl);
+  });
+  premiumSignInCTA.setAttribute("href", premiumManageUrl);
+  premiumUpgradeCTA.setAttribute("href", premiumUpgradeUrl);
+  setElementLinks(premiumUpgradeDescription, premiumUpgradeUrl);
+
+  const premiumIsActive = await api.prefs.get("premium_is_active");
+  setPremiumState(premiumIsActive);
+}
+
+async function setPremiumState(premiumIsActive)
+{
+  document.body.classList.toggle("premium", premiumIsActive);
+}
+
 function onFilterMessage(action, filter)
 {
   switch (action)
@@ -1665,6 +1693,9 @@ function onPrefMessage(key, value, initial)
     case "ui_warn_tracking":
       setPrivacyConflict();
       break;
+    case "premium_is_active":
+      setPremiumState(value);
+      break;
   }
 
   const checkbox = $(`[data-pref="${key}"] button[role="checkbox"]`);
@@ -1735,6 +1766,7 @@ api.filters.listen(["added", "changed", "removed"]);
 api.prefs.listen([
   "elemhide_debug",
   "notifications_ignoredcategories",
+  "premium_is_active",
   "recommend_language_subscriptions",
   "shouldShowBlockElementMenu",
   "show_devtools_panel",

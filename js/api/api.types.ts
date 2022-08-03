@@ -27,6 +27,7 @@ export type AppGetWhat =
   | "addonVersion"
   | "application"
   | "applicationVersion"
+  | "ctalink"
   | "doclink"
   | "features"
   | "localeInfo"
@@ -70,6 +71,24 @@ interface GetBlockedPerPageOptions {
    * Name of the tab to get info on.
    */
   tab: string;
+}
+
+/**
+ * Retrieves a specified cta link from the backend
+ */
+interface GetCtaLink {
+  /**
+   * The cta link name to retrieve
+   */
+  link: string;
+  /**
+   * Extra query parameters that should be added to the link
+   */
+  queryParams?: QueryParams;
+  /**
+   * Set this as a cta link command
+   */
+  what: "ctalink";
 }
 
 /**
@@ -231,7 +250,17 @@ export type PrefsGetWhat =
   | "last_updates_page_displayed"
   | "elemhide_debug"
   | "remote_first_run_page_url"
-  | "recommend_language_subscriptions";
+  | "recommend_language_subscriptions"
+  | "premium_is_active"
+  | "premium_manage_page_url"
+  | "premium_upgrade_page_url";
+
+/**
+ * Query parameters to be added in a URL
+ */
+export interface QueryParams {
+  source?: string;
+}
 
 /**
  * Available argument configurations for talking to the runtime.
@@ -239,6 +268,7 @@ export type PrefsGetWhat =
 export type SendArgs =
   | AppReference
   | GetBlockedPerPageOptions
+  | GetCtaLink
   | GetDocLink
   | GetNotificationOptions
   | GetPrefsOptions

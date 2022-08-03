@@ -226,6 +226,19 @@ port.on("filters.isAllowlisted", () =>
 
   port.on("app.get", (message, sender) =>
   {
+    if (message.what == "ctalink")
+    {
+      const ctaLinkNameToPrefsMap = new Map([
+        ["premium-manage", "premium_manage_page_url"],
+        ["premium-upgrade", "premium_upgrade_page_url"]
+      ]);
+
+      const {link: ctaLinkName} = message;
+      const prefsUrlKey = ctaLinkNameToPrefsMap.get(ctaLinkName);
+
+      return Prefs[prefsUrlKey];
+    }
+
     if (message.what == "acceptableAdsUrl")
       return Prefs.subscriptions_exceptionsurl;
 

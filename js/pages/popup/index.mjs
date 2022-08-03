@@ -102,11 +102,26 @@ activeTab.then(tab =>
       () => window.close()
     );
   });
+
+  setupPremium();
   setupToggles(tab);
   setupStats(tab);
   setupBlock(tab);
   setupShare();
   setupFooter();
+
+  // closing the popup when the user focus on a different tab,
+  // hence, normalizing the behavior across all browsers
+  browser.tabs.onActivated.addListener(() =>
+  {
+    // force closing popup, after user has clicked a link,
+    // which is not happening in Firefox
+    // @link https://issues.adblockplus.org/ticket/7017
+    // we can't rely on "click" events, as Firefox will end up opening
+    // the links in a new window, instead of a new tab
+    // @link https://bugzilla.mozilla.org/show_bug.cgi?id=1780550
+    window.close();
+  });
 });
 
 function updateBlockedPerPage(blockedPage)
@@ -126,6 +141,37 @@ function updateBlockedTotal(blockedTotal)
     link.target = "_blank";
     link.href = createShareLink(media, blockedTotal);
   }
+}
+
+async function setupPremium()
+{
+  const source = "popup";
+  const premiumManageUrl = await api.ctalinks.get("premium-manage", {source});
+  const premiumUpgradeUrl = await api.ctalinks.get("premium-upgrade", {source});
+
+  const premiumManageCTA = $("#premium-manage");
+  const premiumUpgradeCTA = $("#premium-upgrade");
+
+  premiumManageCTA.setAttribute("href", premiumManageUrl);
+  premiumUpgradeCTA.setAttribute("href", premiumUpgradeUrl);
+
+  const setPremiumState = (premiumIsActive) =>
+  {
+    document.body.classList.toggle("premium", premiumIsActive);
+  };
+
+  const premiumIsActive = await api.prefs.get("premium_is_active");
+  setPremiumState(premiumIsActive);
+
+  api.addListener((msg) =>
+  {
+    if (msg.type !== "prefs.respond" || msg.action !== "premium_is_active")
+      return;
+
+    setPremiumState(msg.args[0]);
+  });
+
+  api.prefs.listen(["premium_is_active"]);
 }
 
 function setupStats(tab)

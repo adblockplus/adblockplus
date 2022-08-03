@@ -1,4 +1,20 @@
 {
+  "options_premium_upgrade_description": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/346793c03b74f446073c6653bdb7f84c7f08f680/spec/abp/desktop-settings/index.md#free-users",
+    "message": "Customize and enhance your adblocking experience! <a0>Learn more</a0>"
+  },
+  "options_signin_button": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/346793c03b74f446073c6653bdb7f84c7f08f680/spec/abp/desktop-settings/index.md#free-users",
+    "message": "Sign in"
+  },
+  "options_upgrade_button": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/346793c03b74f446073c6653bdb7f84c7f08f680/spec/abp/desktop-settings/index.md#free-users",
+    "message": "Upgrade"
+  },
+  "options_premium_manage": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/346793c03b74f446073c6653bdb7f84c7f08f680/spec/abp/desktop-settings/index.md#premium-users",
+    "message": "Manage my subscription"
+  },
   "options_aa_opt_out_survey": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/7daa26676865fc640146c8b5ad4146e6a17e171a/spec/abp/options-page.md#acceptable-ads-opt-out-survey",
     "message": "To help us improve Adblock Plus, mind sharing why you’ve turned off Acceptable Ads?"

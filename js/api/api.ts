@@ -32,6 +32,7 @@ import type {
   Platform,
   PlatformToStore,
   PrefsGetWhat,
+  QueryParams,
   SendArgs,
   SendType,
   Store,
@@ -101,6 +102,20 @@ export const app = {
    * @param what which app page to open
    */
   open: (what: AppOpenWhat) => send("app.open", { what })
+};
+
+/**
+ * A collection of browser.runtime apis for ctalinks
+ */
+export const ctalinks = {
+  /**
+   * Retrieves a cta link
+   *
+   * @param link cta link name to retrieve
+   * @param queryParams extra query parameters that should be added to the link
+   */
+  get: (link: string, queryParams: QueryParams = {}) =>
+    send("app.get", { what: "ctalink", link, queryParams })
 };
 
 /**
@@ -256,6 +271,7 @@ const api = {
   addDisconnectListener,
   addListener: addMessageListener,
   app,
+  ctalinks,
   doclinks,
   filters,
   notifications,
