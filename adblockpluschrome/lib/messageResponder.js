@@ -21,6 +21,7 @@ import * as info from "info";
 
 import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
 import {port} from "./messaging/port.js";
+import {Prefs} from "./prefs.js";
 
 function forward(type, message, sender)
 {
@@ -73,6 +74,34 @@ port.on("app.get", async(message, sender) =>
 
   if (message.what == "senderId")
     return sender.page.id;
+
+  if (message.what == "ctalink")
+  {
+    const ctaLinkNameToPrefsMap = new Map([
+      ["premium-manage", "premium_manage_page_url"],
+      ["premium-upgrade", "premium_upgrade_page_url"]
+    ]);
+
+    const {link: ctaLinkName, queryParams} = message;
+    const prefsUrlKey = ctaLinkNameToPrefsMap.get(ctaLinkName);
+    let url = Prefs[prefsUrlKey];
+
+    const linkPlaceholders = [
+      ["LANG", () => browser.i18n.getUILanguage().replace("-", "_")],
+      ["ADDON_NAME", () => info.addonName],
+      ["ADDON_VERSION", () => info.addonVersion],
+      ["APPLICATION_NAME", () => info.application],
+      ["APPLICATION_VERSION", () => info.applicationVersion],
+      ["PLATFORM_NAME", () => info.platform],
+      ["PLATFORM_VERSION", () => info.platformVersion],
+      ["SOURCE", () => queryParams.source]
+    ];
+
+    for (const [key, getValue] of linkPlaceholders)
+      url = url.replace(`%${key}%`, encodeURIComponent(getValue()));
+
+    return url;
+  }
 
   if (message.what == "doclink")
     return forward("prefs.getDocLink", message, sender);

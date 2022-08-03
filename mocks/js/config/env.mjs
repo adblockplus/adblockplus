@@ -61,6 +61,7 @@ export const params = {
   notification: null,
   domainAllowlisted: false,
   pageAllowlisted: false,
+  premiumIsActive: false,
   reinitialized: false,
   showPageOptions: false
 };

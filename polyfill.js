@@ -49,6 +49,7 @@
   const selectedLocale = (match) ? match[1] : "en_US";
 
   const locales = getLocaleCandidates(selectedLocale);
+  let localeIdxToLoad = 0;
   const catalog = Object.create(null);
   const catalogFile = window.location.pathname.replace(/.*\//, "")
     .replace(/\..*/, "") + ".json";
@@ -126,10 +127,10 @@
           return text;
         }
 
-        if (locales.length == 0)
+        if (localeIdxToLoad >= locales.length)
           return "";
 
-        const locale = locales.shift();
+        const locale = locales[localeIdxToLoad++];
         readCatalog(locale, "common.json");
         readCatalog(locale, "filter-validation.json");
         readCatalog(locale, "issue-reporter.json");

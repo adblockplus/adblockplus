@@ -127,6 +127,27 @@ defaults.remote_first_run_page_url = "https://welcome.adblockplus.org/%LANG%/ins
 defaults.recommend_language_subscriptions = false;
 
 /**
+ * Whether the user has an active premium license.
+ *
+ * @type {boolean}
+ */
+defaults.premium_is_active = false;
+
+/**
+ * Address of page to manage Premium account.
+ *
+ * @type {string}
+ */
+defaults.premium_manage_page_url = "https://accounts.adblockplus.org/%LANG%/manage/?s=%SOURCE%";
+
+/**
+ * Address of page to upgrade to Premium.
+ *
+ * @type {string}
+ */
+defaults.premium_upgrade_page_url = "https://accounts.adblockplus.org/%LANG%/upgrade/?an=%ADDON_NAME%&av=%ADDON_VERSION%&ap=%APPLICATION_NAME%&apv=%APPLICATION_VERSION%&p=%PLATFORM_NAME%&pv=%PLATFORM_VERSION%&s=%SOURCE%";
+
+/**
   * @namespace
   * @static
   */

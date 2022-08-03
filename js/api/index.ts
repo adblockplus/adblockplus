@@ -2,6 +2,7 @@ import api from "./api";
 
 export {
   app,
+  ctalinks,
   doclinks,
   filters,
   notifications,
@@ -29,6 +30,7 @@ export type {
   MessageProps,
   PlatformToStore,
   Platform,
+  QueryParams,
   ExtensionInfo,
   Port,
   PortEventListener,

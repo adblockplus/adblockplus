@@ -60,22 +60,6 @@ class IOPopupFooter extends IOElement
       const idx = parseInt(currentTarget.id.split("-")[2], 10);
 
       this.setState({current: idx});
-
-      return;
-    }
-
-    // handle anchors
-    if (currentTarget.nodeName === "A")
-    {
-      event.preventDefault();
-      event.stopPropagation();
-      browser.tabs
-      .create({url: currentTarget.href})
-      .then(
-        // force closing popup which is not happening in Firefox
-        // @link https://issues.adblockplus.org/ticket/7017
-        () => window.close()
-      );
     }
   }
 

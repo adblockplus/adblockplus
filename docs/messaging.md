@@ -73,9 +73,13 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
 **Arguments**
 
 - **string** [link] - (if "what" is `doclink`; may include `{browser}` placeholder)
+- **string** [link] - (if "what" is `ctalink`)
+- **object** queryParams - (if "what" is `ctalink`; optional parameter)
+  - **string** source 
 - **string** what
   - `acceptableAdsUrl`
   - `acceptableAdsPrivacyUrl`
+  - `ctalink`
   - `doclink`
   - `features`
   - `localeInfo`
@@ -83,6 +87,8 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
   - `senderId`
 
 **Response**
+
+**string** ctalink (if "what" is `ctalink`)
 
 **string** doclink (if "what" is `doclink`)
 
