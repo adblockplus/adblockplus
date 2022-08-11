@@ -17,4 +17,4 @@
 ## Further information
 (Mention any further information here, such as what led to the bug)
 
-/label ~"Bug (ABPUI)"
+/label ~"Bug (ABPUI)" ~"Product:: ABP" 

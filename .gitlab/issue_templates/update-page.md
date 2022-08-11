@@ -20,3 +20,4 @@ This ticket mentions changes for the %MILESTONE release that we would like to an
 - **Legal:** (Link to JIRA ticket with Legal's approval)
 
 /milestone %MILESTONE
+/label ~"Product:: ABP" 
