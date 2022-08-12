@@ -25,8 +25,6 @@
       "run_at": "document_start"
     }
   ],
-  "minimum_chrome_version": "77.0",
-  "minimum_opera_version": "64.0",
   "name": "__MSG_name_releasebuild__",
   "short_name": "__MSG_name__",
   "description": "__MSG_description__",

@@ -19,6 +19,8 @@
     "default_popup": "popup.html",
     "default_title": "__MSG_name__"
   },
+  "minimum_chrome_version": "77.0",
+  "minimum_opera_version": "64.0",
   "permissions": [
     "<all_urls>",
     "contextMenus",
