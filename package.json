@@ -111,7 +111,7 @@
     }
   },
   "dependencies": {
-    "@eyeo/snippets": "0.5.1",
+    "@eyeo/snippets": "0.5.2",
     "browserify": "16.5.2",
     "canvas": "2.8.0",
     "glob": "7.1.6",
