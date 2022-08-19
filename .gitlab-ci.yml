@@ -40,7 +40,11 @@ stages:
 lint:
   stage: lint
   script:
+    # Update dependencies
+    - npm run submodules:update
+    - git submodule status
     - npm install
+    # Run linter
     - npm run lint
 
 test:
@@ -91,49 +95,6 @@ build:
       - adblockpluschrome/adblockplus-chrome-${CI_COMMIT_SHA:0:8}-mv3.zip
       - adblockpluschrome/adblockplus-firefox-${CI_COMMIT_SHA:0:8}.xpi
       - adblockpluschrome/adblockplus-firefox-${CI_COMMIT_SHA:0:8}-mv3.xpi
-
-build:with-snippets:
-  stage: build
-  script:
-    # Configure SSH as seen in this example:
-    # https://gitlab.com/gitlab-examples/ssh-private-key/-/blob/master/.gitlab-ci.yml
-    - command -v ssh-agent >/dev/null || (apt-get update -y && apt-get install openssh-client -y)
-    - eval $(ssh-agent -s)
-    - ssh-add <(echo "$SNIPPETS_SSH_KEY" | base64 -d)
-    - mkdir -p ~/.ssh
-    - chmod 700 ~/.ssh
-    - ssh-keyscan gitlab.com >> ~/.ssh/known_hosts
-    - chmod 644 ~/.ssh/known_hosts
-    # Update dependencies
-    - npm run submodules:update-with-snippets
-    - git submodule status
-    - npm install
-    # Create extension builds
-    - cd adblockpluschrome
-    - npx gulp build -t chrome --unhandled-rejections=strict
-    - npx gulp build -t firefox --unhandled-rejections=strict
-    - npx gulp source
-    # Attach commit hash to build files
-    - mv adblockpluschrome-*.zip adblockplus-chrome-${CI_COMMIT_SHA:0:8}.zip
-    - mv adblockplusfirefox-*.xpi adblockplus-firefox-${CI_COMMIT_SHA:0:8}.xpi
-    - mv adblockplus-*.tar.gz adblockplus-${CI_COMMIT_SHA:0:8}.tar.gz
-    # Create Manifest v3 extension builds
-    - npx gulp build -t chrome -m 3 --unhandled-rejections=strict
-    - npx gulp build -t firefox -m 3 --unhandled-rejections=strict
-    # Attach commit hash to build files
-    - mv adblockpluschrome-*.zip adblockplus-chrome-${CI_COMMIT_SHA:0:8}-mv3.zip
-    - mv adblockplusfirefox-*.xpi adblockplus-firefox-${CI_COMMIT_SHA:0:8}-mv3.xpi
-    # Encrypt the builds
-    - gpg -c --batch --passphrase $SNIPPETS_PASSWORD adblockplus-*.tar.gz
-    - gpg -c --batch --passphrase $SNIPPETS_PASSWORD adblockplus-chrome-${CI_COMMIT_SHA:0:8}.zip
-    - gpg -c --batch --passphrase $SNIPPETS_PASSWORD adblockplus-chrome-${CI_COMMIT_SHA:0:8}-mv3.zip
-    - gpg -c --batch --passphrase $SNIPPETS_PASSWORD adblockplus-firefox-${CI_COMMIT_SHA:0:8}.xpi
-    - gpg -c --batch --passphrase $SNIPPETS_PASSWORD adblockplus-firefox-${CI_COMMIT_SHA:0:8}-mv3.xpi
-  artifacts:
-    paths:
-      - adblockpluschrome/adblockplus-*.gpg
-  rules:
-    - if: $SNIPPETS_SSH_KEY && $SNIPPETS_PASSWORD
 
 ################################################################################
 # Translate

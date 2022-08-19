@@ -42,8 +42,7 @@ export default {
           "adblockpluschrome/lib/messageResponder.js",
           "adblockpluschrome/lib/filterConfiguration.js",
           "lib/public-api/allowlisting.js",
-          // marked as optional using wildcard
-          "vendor/abp-snippets/dist/ml/bundle*.ml.mjs"
+          "node_modules/@eyeo/snippets/ml/bundle.ml.mjs"
         ]
       }
     ]
@@ -75,8 +74,7 @@ export default {
       {
         dest: "data/hideIfGraphMatches",
         src: [
-          // marked as optional using wildcard
-          "vendor/abp-snippets/dist/ml/hideIfGraphMatches/*"
+          "node_modules/@eyeo/snippets/ml/hideIfGraphMatches/*"
         ]
       },
       {
@@ -90,8 +88,7 @@ export default {
         src: [
           "*.js",
           "*.html",
-          // marked as optional using wildcard
-          "vendor/abp-snippets/dist/webext/snippets*.json",
+          "node_modules/@eyeo/snippets/webext/snippets.json",
           "adblockpluschrome/devtools.*",
           "adblockpluschrome/composer.preload.js",
           "!polyfill.js",

@@ -108,8 +108,6 @@ you want to test.
 Nightly builds for feature and release [branches][wiki-branches] can be found
 as artifacts [from this page][abp-ui-nightlies].
 
-**Note**: Nightly builds with snippets are encrypted using GPG.
-
 ### Unit testing
 
 The `./test/unit` folder contains various unit tests files. Those can be run
@@ -165,11 +163,6 @@ Clone the external repositories:
 
 **Important:** When building from a source archive, this step must be skipped.
 
-**Note:** In order to create a build which includes the snippets library,
-you should use the `npm run submodules:update-with-snippets` npm script instead.
-This will work only if you have access to the
-[abp-snippets repository][abp-snippets].
-
 Install the required npm packages:
 
 `npm install`
@@ -217,7 +210,6 @@ This project follows the typical GitLab process:
 [abp-webext-readme-build]: /adblockpluschrome/README.md#building
 [abp-webext-readme-devenv]: /adblockpluschrome/README.md#development-environment
 [abp-webext-releases]: https://github.com/adblockplus/adblockpluschrome/releases
-[abp-snippets]: https://gitlab.com/eyeo/adblockplus/abp-snippets
 [badge-pipeline-image]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/badges/master/pipeline.svg
 [badge-pipeline-link]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/commits/master
 [eyeo]: https://eyeo.com/

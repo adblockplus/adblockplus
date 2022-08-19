@@ -1,8 +1,3 @@
-[submodule "vendor/abp-snippets"]
-	path = vendor/abp-snippets
-	url = git@gitlab.com:eyeo/adblockplus/abp-snippets.git
-	update = none
-
 [submodule "vendor/webext-sdk"]
 	path = vendor/webext-sdk
 	url = https://gitlab.com/eyeo/adblockplus/abc/webext-sdk.git

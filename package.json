@@ -20,7 +20,6 @@
     "test:end-to-end": "cd test/end-to-end && npx wdio run wdio.conf.js",
     "test:generate-and-open-report": "allure generate test/end-to-end/allure-results && allure open",
     "submodules:update": "git submodule update --init --recursive",
-    "submodules:update-with-snippets": "git -c submodule.\"vendor/abp-snippets\".update=checkout submodule update --init --recursive",
     "postinstall": "npm run $ install"
   },
   "$": {
@@ -56,7 +55,6 @@
       "dist": {
         "ewe": "npm run --prefix ./vendor/webext-sdk build -- --config-name sdk --no-devtool",
         "icons": "node build/icons-generation/index.js",
-        "snippets": "[ -f ./vendor/abp-snippets/package.json ] && npm run --prefix ./vendor/abp-snippets build || echo 'Skipping snippets'",
         "ui": "$ bundle"
       },
       "js": "echo \"/* eslint-disable */$(browserify --node $1)\">$2"
@@ -73,8 +71,7 @@
     },
     "install": [
       "npm install --loglevel=error --no-audit --no-fund --no-optional --no-save --prefix adblockpluschrome",
-      "npm install --loglevel=error --no-audit --no-fund --no-optional --no-save --prefix vendor/webext-sdk",
-      "[ -f ./vendor/abp-snippets/package.json ] && npm install --loglevel=error --no-audit --no-fund --no-save --prefix vendor/abp-snippets || echo 'Skipping abp-snippets installation'"
+      "npm install --loglevel=error --no-audit --no-fund --no-optional --no-save --prefix vendor/webext-sdk"
     ],
     "lint": {
       "css": "stylelint ./build/**/*.css ./css/*.scss ./skin/*.css --ignore-path .gitignore",
@@ -114,6 +111,7 @@
     }
   },
   "dependencies": {
+    "@eyeo/snippets": "0.5.1",
     "browserify": "16.5.2",
     "canvas": "2.8.0",
     "glob": "7.1.6",
@@ -134,7 +132,7 @@
     "adm-zip": "0.4.16",
     "basichtml": "1.1.2",
     "chai": "4.3.4",
-    "chromedriver": "^100.0.0",
+    "chromedriver": "100.0.0",
     "clipboardy": "2.3.0",
     "csv": "5.4.0",
     "eslint": "6.8.0",
