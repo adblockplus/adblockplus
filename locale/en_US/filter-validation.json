@@ -59,6 +59,10 @@
       }
     }
   },
+  "too_many_filters": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/2df3dfff1b3d08f76245bcf19b18e4a897d2d632/spec/abp/desktop-settings/advanced-tab.md#custom-filters-alert",
+    "message": "Reached maximum amount of filters. Please remove other filters of the same type before adding new ones."
+  },
   "unexpected_filter_list_header": {
     "description": "https://gitlab.com/eyeo/specs/spec/-/blob/7b0211f0bce836052977583bcaf764f34aee95e5/spec/abp/desktop-settings/advanced-tab.md#custom-filters-alert",
     "message": "Filter list headers are only supported in downloadable filter lists."
