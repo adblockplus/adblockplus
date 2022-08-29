@@ -152,6 +152,6 @@
     "watch": "1.0.2",
     "wdio-chromedriver-service": "7.2.2",
     "wdio-geckodriver-service": "^2.1.0",
-    "xmldom": "0.1.31"
+    "xmldom": "0.6.0"
   }
 }
