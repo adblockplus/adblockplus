@@ -15,20 +15,15 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-let version = null;
+export {
+  setListener,
+  removeListener,
+  setSchedule,
+  removeSchedule
+} from "./background/scheduled-event-emitter";
 
-async function doPoll()
-{
-  let response = await fetch(browser.runtime.getURL("devenvVersion__"));
-  let text = await response.text();
-
-  if (version == null)
-    version = text;
-
-  if (text != version)
-    browser.runtime.reload();
-  else
-    self.setTimeout(doPoll, 5000);
-}
-
-doPoll();
+export {
+  Schedule,
+  Listener,
+  ScheduleType
+} from "./background/scheduled-event-emitter.types";

@@ -24,9 +24,13 @@ import {TabSessionStorage} from "./storage/tab-session.js";
 import {setBadge} from "./browserAction.js";
 import {EventEmitter} from "./events.js";
 import {Prefs} from "./prefs.js";
+import * as scheduledEventEmitter from
+  // eslint-disable-next-line max-len
+  "../../src/core/scheduled-event-emitter/background/scheduled-event-emitter.ts";
 
 const badgeColor = "#646464";
 const badgeRefreshRate = 4;
+const badgeUpdateTopic = "stats.badgeUpdate";
 
 let eventEmitter = new EventEmitter();
 let blockedPerPage = new TabSessionStorage("stats:blocked");
@@ -68,14 +72,19 @@ function scheduleBadgeUpdate(tabId)
   if (!badgeUpdateScheduled && Prefs.show_statsinicon &&
       (typeof tabId == "undefined" || activeTabIds.has(tabId)))
   {
-    setTimeout(async() =>
-    {
-      badgeUpdateScheduled = false;
-      await updateBadge();
-    }, 1000 / badgeRefreshRate);
+    scheduledEventEmitter.setSchedule(
+      badgeUpdateTopic,
+      1000 / badgeRefreshRate
+    );
     badgeUpdateScheduled = true;
   }
 }
+
+scheduledEventEmitter.setListener(badgeUpdateTopic, async() =>
+{
+  badgeUpdateScheduled = false;
+  await updateBadge();
+});
 
 // Once nagivation for the tab has been committed to (e.g. it's no longer
 // being prerendered) we clear its badge, or if some requests were already

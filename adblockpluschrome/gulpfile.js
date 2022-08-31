@@ -59,6 +59,12 @@ argumentParser.addArgument("--partial", {
   help: "A partial build skips the build steps EWE, icons and UI."
 });
 
+argumentParser.addArgument("--skip-type-checks", {
+  choices: ["false", "true"],
+  defaultValue: "false",
+  help: "To speed up build time, you can skip some type checking."
+});
+
 let args = argumentParser.parseKnownArgs()[0];
 
 let targetDir = `devenv.${args.target}`;
@@ -107,7 +113,8 @@ async function getBuildSteps(options)
       webpackInfo: options.webpackInfo,
       addonName,
       addonVersion: options.version,
-      sourceMapType: options.sourceMapType
+      sourceMapType: options.sourceMapType,
+      skipTypeChecks: args["skip_type_checks"] === "true"
     }),
     tasks.createManifest(options.manifest),
     translations(options.translations, options.manifest)
@@ -140,8 +147,6 @@ async function getBuildOptions(isDevenv, isSource)
   let configName;
   if (isSource)
     configName = "base";
-  else if (isDevenv && configParser.hasTarget(`${opts.target}Dev`))
-    configName = `${opts.target}Dev`;
   else
     configName = opts.target;
 

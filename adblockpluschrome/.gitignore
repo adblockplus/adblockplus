@@ -1,7 +1,0 @@
-/devenv.*/
-/node_modules/
-/.last_ui_build
-/adblockpluschrome-*.zip
-/adblockplusfirefox-*.xpi
-/adblockplus-*.tar.gz
-/dist/

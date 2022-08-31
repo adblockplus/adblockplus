@@ -140,7 +140,7 @@ and reports before the new test execution, run `npm run test:cleanup-reports`.
 ### Linting
 
 You can lint all files via `npm run lint` or lint only specific file types:
-- JavaScript: `npm run $ lint.js`
+- JavaScript: `npm run $ lint.js` and `npm run $ lint.legacy`
 - SASS: `npm run $ lint.css`
 - Translation files: `npm run $ lint.locale`
 

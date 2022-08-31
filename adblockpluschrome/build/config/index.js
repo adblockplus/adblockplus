@@ -19,4 +19,3 @@ export {default as base} from "./base.js";
 export {default as chrome} from "./chrome.js";
 export {default as firefox} from "./firefox.js";
 export {default as webpack} from "./webpack.config.js";
-export {chromeDev, firefoxDev} from "./devenv.js";

@@ -25,6 +25,8 @@ Manifest version 2.
 
 You can pass the `--partial true` argument to run a build that will not re-build the EWE, the icons and the UI. This is useful if your new changes do not touch any of the beforementioned parts of the extension, and you can benefit from the faster build time. Note that you must have a run a full build once before you can succesfully run a partial build.
 
+You can pass the `--skip-type-checks` argument to skip type checking of TypeScript files that are imported by JavaScript files within the `adblockpluschrome` directory. This will speed up build time, and is useful in cases where you don't have changes inside of TypeScript files, and don't need re-checking the types.
+
 
 ### Development environment
 
