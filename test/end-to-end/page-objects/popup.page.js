@@ -47,6 +47,11 @@ class PopupPage extends BasePage
     return $("#notification-message");
   }
 
+  get numberOfAdsBlockedInTotal()
+  {
+    return $("//div[@id='stats-total']/strong");
+  }
+
   get stopShowingNotificationsButton()
   {
     return $("//button[contains(.,'Stop showing notifications')]");
@@ -89,6 +94,11 @@ class PopupPage extends BasePage
     return await (await this.notificationMessage).getText();
   }
 
+  async getNumberOfAdsBlockedInTotalText()
+  {
+    return await (await this.numberOfAdsBlockedInTotal).getText();
+  }
+
   async isCloseNotificationButtonDisplayed()
   {
     return await (await this.closeNotificationButton).isDisplayed();
@@ -102,6 +112,12 @@ class PopupPage extends BasePage
   async isStopShowingNotificationsButtonDisplayed()
   {
     return await (await this.stopShowingNotificationsButton).isDisplayed();
+  }
+
+  async switchToProblemPageTab()
+  {
+    await this.switchToTab("A browser issue has caused your ABP " +
+      "settings to be reset.");
   }
 }
 

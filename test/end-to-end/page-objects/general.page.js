@@ -568,6 +568,16 @@ class GeneralPage extends BasePage
   {
     await this.switchToTab("Allowing acceptable ads in Adblock Plus");
   }
+
+  async switchToInstalledTab()
+  {
+    await this.switchToTab("Adblock Plus has been installed!");
+  }
+
+  async switchToUninstalledTab()
+  {
+    await this.switchToTab("Adblock Plus has been uninstalled");
+  }
 }
 
 module.exports = GeneralPage;

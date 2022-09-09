@@ -69,6 +69,11 @@ function getFirefoxExtensionPath()
   return abpXpiFileName;
 }
 
+function randomIntFromInterval(min, max)
+{
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 async function waitForExtension()
 {
   let origin;
@@ -105,4 +110,5 @@ async function waitForExtension()
 
 module.exports = {afterSequence, beforeSequence, getChromiumExtensionPath,
                   getCurrentDate, getFirefoxExtensionPath,
-                  helperExtension, globalRetriesNumber, waitForExtension};
+                  randomIntFromInterval, helperExtension,
+                  globalRetriesNumber, waitForExtension};

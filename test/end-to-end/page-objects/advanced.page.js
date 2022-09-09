@@ -29,8 +29,7 @@ class AdvancedPage extends BasePage
 
   get _advancedTabButton()
   {
-    return $("//a[contains(@data-i18n, 'options_tab_advanced')" +
-        "and text()='Advanced']");
+    return $("#tab-advanced");
   }
 
   async init()
@@ -51,6 +50,12 @@ class AdvancedPage extends BasePage
   get abpFiltersFLStatusToggle()
   {
     return $("//li[@aria-label='ABP filters']/div/io-toggle/button");
+  }
+
+  get abpFiltersFLTrashButton()
+  {
+    return $("//li[@aria-label='ABP filters']/div/button" +
+      "[@data-action='remove-subscription']");
   }
 
   get abpTestFilterErrorIcon()
@@ -103,6 +108,12 @@ class AdvancedPage extends BasePage
   {
     return $("//li[@aria-label='Allow nonintrusive advertising']" +
       "/div/io-toggle/button");
+  }
+
+  get allowNonintrusiveAdvertisingFLTrashButton()
+  {
+    return $("//li[@aria-label='Allow nonintrusive advertising']/div/button" +
+      "[@data-action='remove-subscription']");
   }
 
   get allowNonintrusiveAdvertisingWithoutTrackingFL()
@@ -292,6 +303,12 @@ class AdvancedPage extends BasePage
     return this.browser.$("#import-list-url");
   }
 
+  get flTableEmptyPlaceholder()
+  {
+    return $("//*[@id='all-filter-lists-table']/" +
+      "li[@class='empty-placeholder']");
+  }
+
   get iDontCareAboutCookiesFL()
   {
     return $("//li[@aria-label=\"I don't care about cookies\"]");
@@ -424,6 +441,11 @@ class AdvancedPage extends BasePage
     await (await this.abpTestFilterErrorIcon).click();
   }
 
+  async clickAbpFiltersFLTrashButton()
+  {
+    await this.waitForEnabledThenClick(this.abpFiltersFLTrashButton);
+  }
+
   async clickAddAFilterListButton()
   {
     await this.waitForEnabledThenClick(this.addAFilterListButton);
@@ -442,6 +464,12 @@ class AdvancedPage extends BasePage
   async clickAddNewFilterListButton()
   {
     await this.waitForEnabledThenClick(this.addNewFilterListButton);
+  }
+
+  async clickAllowNonintrusiveAdvertisingFLTrashButton()
+  {
+    await this.waitForEnabledThenClick(
+      this.allowNonintrusiveAdvertisingFLTrashButton);
   }
 
   async clickCancelAddingFLButton()
@@ -601,6 +629,11 @@ class AdvancedPage extends BasePage
   async getCustomFilterListsErrorText()
   {
     return await (await this.customFilterListsErrorText).getText();
+  }
+
+  async getFlTableEmptyPlaceholderText()
+  {
+    return await (await this.flTableEmptyPlaceholder).getText();
   }
 
   async getShowAdblockPlusPanelTooltipText()

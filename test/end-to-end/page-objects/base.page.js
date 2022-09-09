@@ -24,9 +24,30 @@ class BasePage
     this.browser = browser;
   }
 
+  get contentIFrame()
+  {
+    return $("#content");
+  }
+
+  get truckerIFrame()
+  {
+    return $("#slave-2-1");
+  }
+
   async getCurrentUrl()
   {
     return await this.browser.getUrl();
+  }
+
+  async getElementBySelector(selector)
+  {
+    return $(selector);
+  }
+
+  async isElementDisplayed(selector, reverseOption = false, timeout = 5000)
+  {
+    return await this.waitForDisplayedNoError(
+      this.getElementBySelector(selector), reverseOption, timeout);
   }
 
   async scrollIntoViewAndClick(element)
@@ -55,6 +76,15 @@ class BasePage
     if (waitTime >= timeout)
     {
       throw new Error("Could not switch to tab!");
+    }
+  }
+
+  async switchToABPOptionsTab(noSwitchToFrame = false)
+  {
+    await this.switchToTab("Adblock Plus Options");
+    if (noSwitchToFrame == false)
+    {
+      await this.browser.switchToFrame(await this.contentIFrame);
     }
   }
 
