@@ -20,7 +20,7 @@
     "merge-stream": "2.0.0",
     "through": "2.3.8",
     "ts-loader": "9.3.1",
-    "webpack": "5.4.0",
+    "webpack": "5.74.0",
     "webpack-merge": "5.1.4",
     "webpack-stream": "6.1.1"
   },

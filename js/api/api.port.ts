@@ -15,15 +15,14 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import type Browser from "webextension-polyfill";
+import browser from "webextension-polyfill";
+
 import type {
   ListenProps,
   MessageProps,
   Port,
   PortEventListener
 } from "./api.types";
-
-declare const browser: Browser.Browser;
 
 /**
  * The browser.runtime port.
@@ -81,7 +80,9 @@ export function addMessageListener(listener: PortEventListener) {
 export const connect = (): Port | null => {
   // We're only establishing one connection per page, for which we need to
   // ignoresubsequent connection attempts
-  if (port) return port;
+  if (port) {
+    return port;
+  }
 
   try {
     port = browser.runtime.connect({ name: "ui" });
@@ -147,7 +148,9 @@ function onDisconnect() {
  * @param message props including type, passed on to the message listeners
  */
 function onMessage(message: MessageProps) {
-  if (!message.type.endsWith(".respond")) return;
+  if (!message.type.endsWith(".respond")) {
+    return;
+  }
 
   messageListeners.forEach((listener) => listener(message));
 }

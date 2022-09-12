@@ -160,7 +160,7 @@ export type ListenProps =
       /**
        * Types of valid listen messages.
        */
-      type: "app" | "filters" | "prefs" | "stats" | "subscriptions";
+      type: "app" | "filters" | "prefs" | "premium" | "stats" | "subscriptions";
     };
 
 /**
@@ -170,6 +170,7 @@ export type ListenTypes =
   | "app"
   | "filters"
   | "prefs"
+  | "premium"
   | "requests"
   | "stats"
   | "subscriptions";
@@ -251,9 +252,18 @@ export type PrefsGetWhat =
   | "elemhide_debug"
   | "remote_first_run_page_url"
   | "recommend_language_subscriptions"
-  | "premium_is_active"
   | "premium_manage_page_url"
   | "premium_upgrade_page_url";
+
+/**
+ * Options for activating Premium license
+ */
+export interface PremiumActivateOptions {
+  /**
+   * Premium user ID
+   */
+  userId: string;
+}
 
 /**
  * Query parameters to be added in a URL
@@ -272,6 +282,7 @@ export type SendArgs =
   | GetDocLink
   | GetNotificationOptions
   | GetPrefsOptions
+  | PremiumActivateOptions
   | SubscriptionOptions;
 
 /**
@@ -284,6 +295,8 @@ export type SendType =
   | "notifications.get"
   | "notifications.seen"
   | "prefs.get"
+  | "premium.activate"
+  | "premium.get"
   | "stats.getBlockedPerPage"
   | "stats.getBlockedTotal"
   | "subscriptions.get"

@@ -23,6 +23,21 @@
         "https://*/*"
       ],
       "run_at": "document_start"
+    },
+    {
+      "js": [
+        "polyfill.js",
+        "ext/common.js",
+        "ext/content.js",
+        "premium.preload.js"
+      ],
+      "matches": [
+        "https://accounts.adblockplus.org/premium",
+        "https://accounts.adblockplus.org/premium?*",
+        "https://accounts.adblockplus.org/*/premium",
+        "https://accounts.adblockplus.org/*/premium?*"
+      ],
+      "run_at": "document_start"
     }
   ],
   "name": "__MSG_name_releasebuild__",

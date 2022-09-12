@@ -21,6 +21,7 @@ import * as info from "info";
 
 import rulesIndex from "../../data/rules.json";
 import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
+import * as premium from "../../src/premium/background/index.ts";
 import {port} from "./messaging/port.js";
 import {revalidateAllowlistingStates} from "./allowlisting.js";
 import {initDisabledFilterCounters} from "./filterConfiguration.js";
@@ -170,6 +171,7 @@ function initElementHidingDebugMode()
   await initDisabledFilterCounters();
   initElementHidingDebugMode();
   initNotifications(firstRun);
+  premium.initialize();
 })();
 
 /**

@@ -89,6 +89,7 @@ export default {
           "*.js",
           "*.html",
           "dist/composer.preload.js",
+          "dist/premium.preload.js",
           "adblockpluschrome/devtools.*",
           "!polyfill.js",
           "!mobile-options.*"

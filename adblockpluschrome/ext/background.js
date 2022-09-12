@@ -314,19 +314,31 @@
 
   /* Message passing */
 
-  const trustedBaseUrl = browser.runtime.getURL("");
-  const trustedMessages = [
-    "composer.content.clearPreviousRightClickEvent",
-    "composer.content.dialogOpened",
-    "composer.content.finished",
-    "composer.dialog.close",
-    "composer.forward",
-    "composer.getFilters",
-    "composer.openDialog",
-    "composer.ready"
-  ];
+  const selfOrigin = new URL(browser.runtime.getURL("")).origin;
+  const trustedTypesByOrigin = new Map();
 
-  ext.isTrustedSender = sender => sender.url.startsWith(trustedBaseUrl);
+  /**
+   * Specify message types that we allow only for certain origins.
+   *
+   * @param {string} origin - Sender origin (any if `null`)
+   * @param {string[]} types - Trusted message types for given origin
+   */
+  ext.addTrustedMessageTypes = (origin, types) =>
+  {
+    if (!trustedTypesByOrigin.has(origin))
+      trustedTypesByOrigin.set(origin, []);
+
+    const trustedTypes = trustedTypesByOrigin.get(origin);
+    trustedTypes.push(...types);
+  };
+
+  function isTrustedMessageType(origin, type)
+  {
+    const trustedTypes = trustedTypesByOrigin.get(origin);
+    return !!trustedTypes && trustedTypes.includes(type);
+  }
+
+  ext.isTrustedSender = sender => sender.origin === selfOrigin;
 
   browser.runtime.onMessage.addListener((message, rawSender) =>
   {
@@ -341,7 +353,8 @@
     // Ignore messages from content scripts, unless we listed them as
     // safe to use in the context they're running in
     if (!ext.isTrustedSender(rawSender) &&
-        !trustedMessages.includes(message.type))
+        !isTrustedMessageType(rawSender.origin, message.type) &&
+        !isTrustedMessageType(null, message.type))
     {
       console.warn("Untrusted message received", message.type, rawSender.url);
       return;

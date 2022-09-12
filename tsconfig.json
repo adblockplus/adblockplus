@@ -19,6 +19,7 @@
     "ext/**/*",
     "build/**/*",
     "mocks/**/*",
+    "src/**/*",
     "rollup.config.ts"
  ],
  "compileOnSave":false

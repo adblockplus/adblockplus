@@ -15,48 +15,37 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import api from "./api";
+/**
+ * Payload of event for acknowledging that the user has paid
+ * for a Premium license
+ *
+ * This interface is declared by the Premium backend.
+ */
+export interface PaymentAcknowledgedPayload {
+  /**
+   * Whether the extension acknowledges that the user has paid
+   * for a Premium license
+   */
+  ack: true;
+}
 
-export {
-  app,
-  ctalinks,
-  doclinks,
-  filters,
-  notifications,
-  prefs,
-  requests,
-  stats,
-  subscriptions
-} from "./api";
-
-export {
-  addConnectListener,
-  addDisconnectListener,
-  addMessageListener,
-  listen,
-  removeDisconnectListener
-} from "./api.port";
-
-export type {
-  AppGetWhat,
-  AppOpenWhat,
-  DisplayMethod,
-  ListenFilters,
-  ListenProps,
-  ListenTypes,
-  MessageProps,
-  PlatformToStore,
-  Platform,
-  QueryParams,
-  ExtensionInfo,
-  Port,
-  PortEventListener,
-  PrefsGetWhat,
-  PremiumActivateOptions,
-  SendArgs,
-  SendType,
-  Store,
-  SubscriptionOptions
-} from "./api.types";
-
-export default api;
+/**
+ * Event received from a trusted web page to indicate that user has paid
+ * for a Premium license
+ *
+ * This interface is declared by the Premium backend.
+ */
+export interface PaymentSuccessPayload {
+  /**
+   * Premium API command
+   */
+  command: "payment_success";
+  /**
+   * Premium user ID
+   */
+  userId: string;
+  /**
+   * Premium API version
+   */
+  version: 1;
+}

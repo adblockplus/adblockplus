@@ -23,6 +23,7 @@
   "minimum_opera_version": "64.0",
   "permissions": [
     "<all_urls>",
+    "alarms",
     "contextMenus",
     "notifications",
     "storage",

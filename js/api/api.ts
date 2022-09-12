@@ -15,6 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import browser from "webextension-polyfill";
+
 import {
   addDisconnectListener,
   addMessageListener,
@@ -38,9 +40,6 @@ import type {
   Store,
   SubscriptionOptions
 } from "./api.types";
-import type Browser from "webextension-polyfill";
-
-declare const browser: Browser.Browser;
 
 /**
  * All the Platforms with their store name.
@@ -58,7 +57,7 @@ export const app = {
   /**
    * retrieves app information corresponding to the passed string
    *
-   * @param key which item of information to return
+   * @param what which item of information to return
    */
   get: <T = string>(what: AppGetWhat) => send<T>("app.get", { what }),
 
@@ -183,6 +182,30 @@ export const prefs = {
 };
 
 /**
+ * A collection of browser.runtime APIs for Premium
+ */
+export const premium = {
+  /**
+   * Triggers activation of Premium license with the given user ID
+   *
+   * @param userId - Premium user ID
+   */
+  activate: (userId: string) => send("premium.activate", { userId }),
+
+  /**
+   * Retrieves the current Premium state
+   */
+  get: () => send("premium.get"),
+
+  /**
+   * Adds a connection listener for the Premium state
+   *
+   * @param filter - Filters what to listen for
+   */
+  listen: (filter: ListenFilters) => listen({ type: "premium", filter })
+};
+
+/**
  * A collection of browser.runtime apis for requests.
  */
 export const requests = {
@@ -276,6 +299,7 @@ const api = {
   filters,
   notifications,
   prefs,
+  premium,
   requests,
   removeDisconnectListener,
   subscriptions,

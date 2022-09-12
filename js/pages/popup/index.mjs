@@ -160,18 +160,18 @@ async function setupPremium()
     document.body.classList.toggle("premium", premiumIsActive);
   };
 
-  const premiumIsActive = await api.prefs.get("premium_is_active");
-  setPremiumState(premiumIsActive);
+  const premium = await api.premium.get();
+  setPremiumState(premium.isActive);
 
   api.addListener((msg) =>
   {
-    if (msg.type !== "prefs.respond" || msg.action !== "premium_is_active")
+    if (msg.type !== "premium.respond" || msg.action !== "changed")
       return;
 
-    setPremiumState(msg.args[0]);
+    setPremiumState(msg.args[0].isActive);
   });
 
-  api.prefs.listen(["premium_is_active"]);
+  api.premium.listen(["changed"]);
 }
 
 function setupStats(tab)

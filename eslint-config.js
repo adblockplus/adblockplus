@@ -48,11 +48,22 @@ module.exports = {
     // eslint, because it triggers false positives for any enum declaration.
     // See https://typescript-eslint.io/rules/no-shadow/#how-to-use
     "no-shadow": "off",
-    "@typescript-eslint/no-shadow": ["error"],
+    "@typescript-eslint/no-shadow": "error",
+    // The no-unused-vars rule must be used from @typescript-eslint instead of
+    // eslint, because it triggers false positives for globals in *.d.ts files.
+    // See https://typescript-eslint.io/rules/no-unused-vars/#how-to-use
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
     // We do not prefer default exports.
     "import/prefer-default-export": "off",
     // We do allow calling warn() and error()
     "no-console": ["error", {allow: ["warn", "error"]}],
+    // This is already handled by TypeScript and causes ESLint to complain
+    // about globals in *.d.ts files.
+    // See https://github.com/typescript-eslint/typescript-eslint/blob/8176fb15299943cbf20385eb0ea7ba877e193285/docs/linting/TROUBLESHOOTING.md
+    "no-undef": "off",
+    // We disallow TODO comments in favor of references to tickets
+    "no-warning-comments": "error",
     /**
      * Since we have node-resolve installed we do not need extensions listed.
      */
@@ -69,22 +80,6 @@ module.exports = {
      * designed for lerna monorepos or Yarn workspaces, we'll turn it off.
      */
     "import/no-relative-packages": "off",
-    /**
-     * This slightly alters the allowed order of imports to allow us to put
-     * types clearly at the bottom.
-     */
-    "import/order": ["error", {
-      groups: [
-        "index",
-        "sibling",
-        "parent",
-        "internal",
-        "external",
-        "builtin",
-        "object",
-        "type"
-      ]
-    }],
     /**
      * This rule is disabled in functions since there is no problem using a
      * variable in a function before it is defined at the root. In that case

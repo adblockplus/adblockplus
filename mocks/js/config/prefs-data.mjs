@@ -22,7 +22,6 @@ const prefsData = {
   additional_subscriptions: params.additionalSubscriptions.split(","),
   elemhide_debug: false,
   notifications_ignoredcategories: [],
-  premium_is_active: params.premiumIsActive,
   premium_manage_page_url: "https://accounts.adblockplus.org/manage",
   premium_upgrade_page_url: "https://accounts.adblockplus.org/upgrade",
   recommend_language_subscriptions: false,

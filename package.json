@@ -51,6 +51,10 @@
         "$ create.js ./mocks/js/background.mjs ./mocks/dist/background.js"
       ],
       "popup": "$ create.bundle popup",
+      "premium-preload": [
+        "mkdir -p dist",
+        "$ create.js ./src/premium/content/index.ts ./dist/premium.preload.js"
+      ],
       "problem": "$ create.bundle problem",
       "updates": "$ create.bundle updates"
     },

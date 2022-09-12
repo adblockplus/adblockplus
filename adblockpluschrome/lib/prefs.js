@@ -127,11 +127,28 @@ defaults.remote_first_run_page_url = "https://welcome.adblockplus.org/%LANG%/ins
 defaults.recommend_language_subscriptions = false;
 
 /**
- * Whether the user has an active premium license.
+ * Premium license
  *
- * @type {boolean}
+ * @type {object}
  */
-defaults.premium_is_active = false;
+defaults.premium_license = {
+  lv: 1,
+  status: "expired"
+};
+
+/**
+ * Origin of page to activate Premium license.
+ *
+ * @type {string}
+ */
+defaults.premium_license_activation_origin = "https://accounts.adblockplus.org";
+
+/**
+ * Premium license check API endpoint
+ *
+ * @type {string}
+ */
+defaults.premium_license_check_url = "https://myadblock.licensing.adblockplus.dev/license";
 
 /**
  * Address of page to manage Premium account.
@@ -145,13 +162,43 @@ defaults.premium_manage_page_url = "https://accounts.adblockplus.org/%LANG%/mana
  *
  * @type {string}
  */
-defaults.premium_upgrade_page_url = "https://accounts.adblockplus.org/%LANG%/upgrade/?an=%ADDON_NAME%&av=%ADDON_VERSION%&ap=%APPLICATION_NAME%&apv=%APPLICATION_VERSION%&p=%PLATFORM_NAME%&pv=%PLATFORM_VERSION%&s=%SOURCE%";
+defaults.premium_upgrade_page_url = "https://accounts.adblockplus.org/%LANG%/premium/?an=%ADDON_NAME%&av=%ADDON_VERSION%&ap=%APPLICATION_NAME%&apv=%APPLICATION_VERSION%&p=%PLATFORM_NAME%&pv=%PLATFORM_VERSION%&s=%SOURCE%";
+
+/**
+ * Premium user ID
+ *
+ * @type {string}
+ */
+defaults.premium_user_id = "";
 
 /**
   * @namespace
   * @static
   */
 export let Prefs = {
+  /**
+   * Retrieves the given preference.
+   *
+   * @param {string} preference
+   * @return {any}
+   */
+  get(preference)
+  {
+    return (preference in overrides ? overrides : defaults)[preference];
+  },
+
+  /**
+   * Resets the given preference to its default value.
+   *
+   * @param {string} preference
+   * @return {Promise} A promise that resolves when the underlying
+                       browser.storage.local.set/remove() operation completes
+   */
+  reset(preference)
+  {
+    return Prefs.set(preference, defaults[preference]);
+  },
+
   /**
    * Sets the given preference.
    *
@@ -279,7 +326,10 @@ if (info.platform == "gecko" && parseInt(info.platformVersion, 10) < 66)
 function addPreference(pref)
 {
   Object.defineProperty(Prefs, pref, {
-    get() { return (pref in overrides ? overrides : defaults)[pref]; },
+    get()
+    {
+      return Prefs.get(pref);
+    },
     set(value)
     {
       Prefs.set(pref, value);

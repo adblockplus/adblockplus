@@ -39,15 +39,19 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
   - [toggle](#filterstoggle)
   - [unallowlist](#filtersunallowlist)
   - [validate](#filtersvalidate)
+- notifications
+  - [clicked](#notificationsclicked)
+  - [get](#notificationsget)
+  - [seen](#notificationsseen)
 - prefs
   - [get](#prefsget)
   - [listen](#prefslisten)
   - [set](#prefsset)
   - [toggle](#prefstoggle)
-- notifications
-  - [clicked](#notificationsclicked)
-  - [get](#notificationsget)
-  - [seen](#notificationsseen)
+- premium
+  - [activate](#premiumactivate)
+  - [get](#premiumget)
+  - [listen](#premiumlisten)
 - requests
   - [listen](#requestslisten)
 - stats
@@ -256,6 +260,30 @@ If filter includes `showPageOptions`:
 
 ---
 
+### notifications
+
+#### notifications.clicked
+
+**Arguments**
+
+- **string** id - notification ID
+- **string** [link] - documentation link ID or abp-URI
+
+#### notifications.get
+
+**Arguments**
+
+- **string** [displayMethod] - (see [`displayMethods`](https://gitlab.com/eyeo/adblockplus/adblockpluschrome/-/blob/master/lib/notificationHelper.js))
+- (deprecated) **string** locale
+
+**Response**
+
+**object** notification
+
+#### notifications.seen
+
+---
+
 ### prefs
 
 #### prefs.get
@@ -297,27 +325,36 @@ If filter includes `showPageOptions`:
 
 ---
 
-### notifications
+### premium
 
-#### notifications.clicked
-
-**Arguments**
-
-- **string** id - notification ID
-- **string** [link] - documentation link ID or abp-URI
-
-#### notifications.get
+#### premium.activate
 
 **Arguments**
 
-- **string** [displayMethod] - (see [`displayMethods`](https://gitlab.com/eyeo/adblockplus/adblockpluschrome/-/blob/master/lib/notificationHelper.js))
-- (deprecated) **string** locale
+- **string** userId
 
 **Response**
 
-**object** notification
+**boolean** isSuccess
 
-#### notifications.seen
+#### premium.get
+
+**Response**
+
+- **boolean** isActive
+
+#### premium.listen
+
+**Arguments**
+
+- **string[]** filter
+  - `changed`
+
+**Response**
+
+If filter is `changed`:
+
+- **boolean** isActive
 
 ---
 
