@@ -458,3 +458,14 @@ port.on("composer.ready", async(message, sender) =>
   await readyActivePages.set(sender.page.id, !isAllowlisted);
   updateContextMenu(sender.page);
 });
+
+ext.addTrustedMessageTypes(null, [
+  "composer.content.clearPreviousRightClickEvent",
+  "composer.content.dialogOpened",
+  "composer.content.finished",
+  "composer.dialog.close",
+  "composer.forward",
+  "composer.getFilters",
+  "composer.openDialog",
+  "composer.ready"
+]);

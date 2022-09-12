@@ -1541,8 +1541,8 @@ async function setupPremium()
   premiumUpgradeCTA.setAttribute("href", premiumUpgradeUrl);
   setElementLinks(premiumUpgradeDescription, premiumUpgradeUrl);
 
-  const premiumIsActive = await api.prefs.get("premium_is_active");
-  setPremiumState(premiumIsActive);
+  const premium = await api.premium.get();
+  setPremiumState(premium.isActive);
 }
 
 async function setPremiumState(premiumIsActive)
@@ -1693,9 +1693,6 @@ function onPrefMessage(key, value, initial)
     case "ui_warn_tracking":
       setPrivacyConflict();
       break;
-    case "premium_is_active":
-      setPremiumState(value);
-      break;
   }
 
   const checkbox = $(`[data-pref="${key}"] button[role="checkbox"]`);
@@ -1754,6 +1751,9 @@ api.addListener((message) =>
     case "prefs.respond":
       onPrefMessage(message.action, message.args[0], false);
       break;
+    case "premium.respond":
+      setPremiumState(message.args[0].isActive);
+      break;
     case "subscriptions.respond":
       onSubscriptionMessage(message.action, ...message.args);
       setupFiltersBox();
@@ -1766,13 +1766,13 @@ api.filters.listen(["added", "changed", "removed"]);
 api.prefs.listen([
   "elemhide_debug",
   "notifications_ignoredcategories",
-  "premium_is_active",
   "recommend_language_subscriptions",
   "shouldShowBlockElementMenu",
   "show_devtools_panel",
   "show_statsinicon",
   "ui_warn_tracking"
 ]);
+api.premium.listen(["changed"]);
 api.subscriptions.listen(["added", "changed", "filtersDisabled", "removed"]);
 
 onDOMLoaded();

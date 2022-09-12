@@ -441,6 +441,11 @@ port.on("filters.isAllowlisted", () =>
     return Prefs[message.key] = !Prefs[message.key];
   });
 
+  port.on("premium.get", () =>
+  {
+    return {isActive: params.premiumIsActive};
+  });
+
   port.on("notifications.get", (message, sender) =>
   {
     const notification = getActiveNotification();

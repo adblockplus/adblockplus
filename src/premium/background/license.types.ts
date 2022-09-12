@@ -15,48 +15,49 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import api from "./api";
+/**
+ * Premium license
+ *
+ * This interface is declared by the Premium backend.
+ */
+export interface License {
+  /**
+   * License version
+   */
+  lv: 1;
 
-export {
-  app,
-  ctalinks,
-  doclinks,
-  filters,
-  notifications,
-  prefs,
-  requests,
-  stats,
-  subscriptions
-} from "./api";
+  /**
+   * License status
+   */
+  status: "active" | "expired";
+}
 
-export {
-  addConnectListener,
-  addDisconnectListener,
-  addMessageListener,
-  listen,
-  removeDisconnectListener
-} from "./api.port";
+/**
+ * Payload of license check HTTP request
+ *
+ * This interface is declared by the Premium backend.
+ */
+export interface LicenseCheckPayload {
+  /**
+   * Premium API command
+   */
+  cmd: "license_check";
+  /**
+   * Premium user ID
+   */
+  u: string;
+  /**
+   * Premium API version
+   */
+  v: "1";
+}
 
-export type {
-  AppGetWhat,
-  AppOpenWhat,
-  DisplayMethod,
-  ListenFilters,
-  ListenProps,
-  ListenTypes,
-  MessageProps,
-  PlatformToStore,
-  Platform,
-  QueryParams,
-  ExtensionInfo,
-  Port,
-  PortEventListener,
-  PrefsGetWhat,
-  PremiumActivateOptions,
-  SendArgs,
-  SendType,
-  Store,
-  SubscriptionOptions
-} from "./api.types";
-
-export default api;
+/**
+ * Premium state information
+ */
+export interface PremiumState {
+  /**
+   * Whether the user has an active Premium license
+   */
+  isActive: boolean;
+}

@@ -50,6 +50,7 @@ async function mustBuildUI(lastUIBuildTime)
         "../lib/**",
         "../mocks/**",
         "../node_modules/**",
+        "../src/**/background/**",
         "../test/**"
       ]
     }

@@ -90,6 +90,7 @@ export default {
           "*.html",
           "node_modules/@eyeo/snippets/webext/snippets.json",
           "dist/composer.preload.js",
+          "dist/premium.preload.js",
           "adblockpluschrome/devtools.*",
           "!polyfill.js",
           "!mobile-options.*"

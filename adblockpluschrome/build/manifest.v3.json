@@ -16,6 +16,7 @@
   "minimum_chrome_version": "100.0",
   "minimum_opera_version": "86.0",
   "permissions": [
+    "alarms",
     "contextMenus",
     "declarativeNetRequest",
     "notifications",
