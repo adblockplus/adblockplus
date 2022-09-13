@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import browser from "webextension-polyfill";
+import Browser from "webextension-polyfill";
 
 import type {
   ListenProps,
@@ -23,6 +23,8 @@ import type {
   Port,
   PortEventListener
 } from "./api.types";
+
+declare const browser: Browser.Browser;
 
 /**
  * The browser.runtime port.
