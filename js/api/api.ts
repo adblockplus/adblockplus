@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import browser from "webextension-polyfill";
+import type Browser from "webextension-polyfill";
 
 import {
   addDisconnectListener,
@@ -40,6 +40,8 @@ import type {
   Store,
   SubscriptionOptions
 } from "./api.types";
+
+declare const browser: Browser.Browser;
 
 /**
  * All the Platforms with their store name.
