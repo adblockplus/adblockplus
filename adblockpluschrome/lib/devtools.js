@@ -32,14 +32,15 @@ import {compareVersions} from "./versions.js";
 
 const reloadStateByPage = new TabSessionStorage("devtools:reloadState");
 
-function onBlockableItem(emit, blockableItem)
+async function onBlockableItem(emit, blockableItem)
 {
   const {filter} = blockableItem;
 
   let subscriptions = [];
   if (filter)
   {
-    subscriptions = ewe.subscriptions.getForFilter(filter.text)
+    subscriptions = await ewe.subscriptions.getForFilter(filter.text);
+    subscriptions = subscriptions
       .filter(subscription => subscription.enabled)
       .map(toPlainSubscription);
   }

@@ -70,13 +70,13 @@ export function quoteCSS(value)
   return '"' + value.replace(/["\\{}\x00-\x1F\x7F]/g, escapeChar) + '"';
 }
 
-function composeFilters(details)
+async function composeFilters(details)
 {
   let {page, frame} = details;
   let filters = [];
   let selectors = [];
 
-  let isFrameAllowlisted = ewe.filters.isResourceAllowlisted(
+  let isFrameAllowlisted = await ewe.filters.isResourceAllowlisted(
     frame.url,
     "document",
     page.id,
@@ -110,7 +110,7 @@ function composeFilters(details)
           break;
       }
 
-      let isAllowlisted = ewe.filters.isResourceAllowlisted(
+      let isAllowlisted = await ewe.filters.isResourceAllowlisted(
         details.url,
         type,
         page.id,
@@ -119,7 +119,7 @@ function composeFilters(details)
       if (!isAllowlisted)
       {
         let filterText = details.url.replace(/^[\w-]+:\/+(?:www\.)?/, "||");
-        let isSpecificAllowlisted = ewe.filters.isResourceAllowlisted(
+        let isSpecificAllowlisted = await ewe.filters.isResourceAllowlisted(
           details.url,
           "genericblock",
           page.id,
@@ -134,13 +134,14 @@ function composeFilters(details)
     }
 
     // If we couldn't generate any blocking filters, fallback to element hiding
-    let isElementAllowlisted = !!ewe.filters.getAllowingFilters(
+    let elementAllowlistingFilters = await ewe.filters.getAllowingFilters(
       page.id,
       {
         frameId: frame.id,
         types: ["elemhide"]
       }
-    ).length;
+    );
+    let isElementAllowlisted = !!elementAllowlistingFilters.length;
     if (filters.length == 0 && !isElementAllowlisted)
     {
       // Generate CSS selectors based on the element's "id" and
@@ -450,7 +451,7 @@ port.on("composer.isPageReady", (message, sender) =>
  */
 port.on("composer.ready", async(message, sender) =>
 {
-  let isAllowlisted = ewe.filters.isResourceAllowlisted(
+  let isAllowlisted = await ewe.filters.isResourceAllowlisted(
     sender.page.url,
     "document",
     sender.page.id

@@ -69,7 +69,7 @@ const defaultModules = {
       showNext() {}
     },
     subscriptions: {
-      getDownloadable: () => [],
+      getDownloadable: async() => [],
       getRecommendations()
       {
         return [

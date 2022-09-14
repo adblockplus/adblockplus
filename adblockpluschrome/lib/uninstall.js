@@ -54,9 +54,9 @@ function getAdsSubscriptions()
  *
  * @return {boolean}
  */
-function isAnySubscriptionActive(urls)
+async function isAnySubscriptionActive(urls)
 {
-  for (let subscription of ewe.subscriptions.getDownloadable())
+  for (let subscription of await ewe.subscriptions.getDownloadable())
   {
     if (subscription.enabled && urls.has(subscription.url))
       return true;
@@ -71,7 +71,7 @@ function isAnySubscriptionActive(urls)
  * Must be called after prefs got initialized and a data corruption
  * if any was detected, as well when notification data change.
  */
-export function setUninstallURL()
+export async function setUninstallURL()
 {
   let search = [];
   let params = Object.create(info);
@@ -95,8 +95,8 @@ export function setUninstallURL()
 
   let aaSubscriptions = new Set([ewe.subscriptions.ACCEPTABLE_ADS_URL]);
   let adsSubscriptions = getAdsSubscriptions();
-  let isAcceptableAdsActive = isAnySubscriptionActive(aaSubscriptions);
-  let isAdBlockingActive = isAnySubscriptionActive(adsSubscriptions);
+  let isAcceptableAdsActive = await isAnySubscriptionActive(aaSubscriptions);
+  let isAdBlockingActive = await isAnySubscriptionActive(adsSubscriptions);
   params.subscriptions = (isAcceptableAdsActive << 1) | isAdBlockingActive;
 
   for (let [abbreviation, key] of abbreviations)
@@ -108,11 +108,11 @@ export function setUninstallURL()
 
 ewe.notifications.on("downloaded", setUninstallURL);
 ewe.subscriptions.onAdded.addListener(setUninstallURL);
-ewe.subscriptions.onChanged.addListener((subscription, property) =>
+ewe.subscriptions.onChanged.addListener(async(subscription, property) =>
 {
   if (property !== "enabled")
     return;
 
-  setUninstallURL();
+  await setUninstallURL();
 });
 ewe.subscriptions.onRemoved.addListener(setUninstallURL);

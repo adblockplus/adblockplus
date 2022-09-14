@@ -19,6 +19,7 @@
 
 import * as info from "info";
 
+import rulesIndex from "../../data/rules.json";
 import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
 import {port} from "./messaging/port.js";
 import {revalidateAllowlistingStates} from "./allowlisting.js";
@@ -70,13 +71,16 @@ function setDataCorrupted(value)
   ewe.notifications.ignored = value;
 }
 
-function addSubscriptionsAndNotifyUser()
+async function addSubscriptionsAndNotifyUser()
 {
+  if (firstRun || reinitialized)
+    await ewe.subscriptions.addDefaults();
+
   for (let url of Prefs.additional_subscriptions)
   {
     try
     {
-      ewe.subscriptions.add(url);
+      await ewe.subscriptions.add(url);
       ewe.subscriptions.sync(url);
     }
     catch (ex)
@@ -143,6 +147,7 @@ function initElementHidingDebugMode()
 {
   const [eweFirstRun] = await Promise.all([
     ewe.start({
+      bundledSubscriptions: rulesIndex,
       name: info.addonName,
       version: info.addonVersion
     }),
@@ -150,18 +155,19 @@ function initElementHidingDebugMode()
     testStorage().catch(() => { setDataCorrupted(true); })
   ]);
 
+  eweFirstRun.warnings.forEach(console.warn);
   await detectFirstRun(
     eweFirstRun.foundSubscriptions,
     eweFirstRun.foundStorage
   );
-  addSubscriptionsAndNotifyUser();
+  await addSubscriptionsAndNotifyUser();
   revalidateAllowlistingStates();
 
   // We have to require the "uninstall" module on demand,
   // as the "uninstall" module in turn requires this module.
-  (await import("./uninstall.js")).setUninstallURL();
+  await (await import("./uninstall.js")).setUninstallURL();
 
-  initDisabledFilterCounters();
+  await initDisabledFilterCounters();
   initElementHidingDebugMode();
   initNotifications(firstRun);
 })();

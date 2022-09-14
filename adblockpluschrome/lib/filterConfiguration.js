@@ -53,11 +53,11 @@ export async function addFilter(filterText, origin)
   return null;
 }
 
-function addSubscription(details)
+async function addSubscription(details)
 {
   try
   {
-    ewe.subscriptions.add(details.url, details);
+    await ewe.subscriptions.add(details.url, details);
     ewe.subscriptions.sync(details.url);
   }
   catch (ex)
@@ -276,8 +276,8 @@ ewe.reporting.onSubscribeLinkClicked.addListener(message =>
  */
 port.on("subscriptions.enableAllFilters", async(message, sender) =>
 {
-  const filterTexts = ewe.subscriptions.getFilters(message.url)
-    .map(filter => filter.text);
+  const filters = await ewe.subscriptions.getFilters(message.url);
+  const filterTexts = filters.map(filter => filter.text);
   await ewe.filters.enable(filterTexts);
 });
 
@@ -293,10 +293,10 @@ port.on("subscriptions.enableAllFilters", async(message, sender) =>
  *   Include a subscription's disabled filters if true.
  * @returns {object[]} subscriptions
  */
-port.on("subscriptions.get", (message, sender) =>
+port.on("subscriptions.get", async(message, sender) =>
 {
   let subscriptions = [];
-  for (let s of ewe.subscriptions.getDownloadable())
+  for (let s of await ewe.subscriptions.getDownloadable())
   {
     if (message.ignoreDisabled && !s.enabled)
       continue;
@@ -304,7 +304,7 @@ port.on("subscriptions.get", (message, sender) =>
     let subscription = toPlainSubscription(s);
     if (message.disabledFilters)
     {
-      let filters = ewe.subscriptions.getFilters(s.url) || [];
+      let filters = await ewe.subscriptions.getFilters(s.url) || [];
       subscription.disabledFilters = filters
         .filter(f => f.enabled === false)
         .map(f => f.text);
@@ -341,9 +341,9 @@ port.on("subscriptions.getRecommendations",
  * @event "subscriptions.remove"
  * @property {string} url - The subscription's URL.
  */
-port.on("subscriptions.remove", (message, sender) =>
+port.on("subscriptions.remove", async(message, sender) =>
 {
-  ewe.subscriptions.remove(message.url);
+  await ewe.subscriptions.remove(message.url);
 });
 
 /**
@@ -359,12 +359,12 @@ port.on("subscriptions.remove", (message, sender) =>
  *   true if the subscription was toggled successfully,
  *   false if it's a new subscription with an invalid URL
  */
-port.on("subscriptions.toggle", (message, sender) =>
+port.on("subscriptions.toggle", async(message, sender) =>
 {
-  if (ewe.subscriptions.has(message.url))
+  if (await ewe.subscriptions.has(message.url))
   {
     let subscription;
-    for (let s of ewe.subscriptions.getDownloadable())
+    for (let s of await ewe.subscriptions.getDownloadable())
     {
       if (s.url == message.url)
       {
@@ -378,13 +378,13 @@ port.on("subscriptions.toggle", (message, sender) =>
       if (!subscription.enabled || message.keepInstalled)
       {
         if (subscription.enabled)
-          ewe.subscriptions.disable(message.url);
+          await ewe.subscriptions.disable(message.url);
         else
-          ewe.subscriptions.enable(message.url);
+          await ewe.subscriptions.enable(message.url);
       }
       else
       {
-        ewe.subscriptions.remove(subscription.url);
+        await ewe.subscriptions.remove(subscription.url);
       }
       return true;
     }
@@ -459,13 +459,13 @@ async function filtersRemove(message)
   return [];
 }
 
-export function initDisabledFilterCounters()
+export async function initDisabledFilterCounters()
 {
-  for (const subscription of ewe.subscriptions.getDownloadable())
+  for (const subscription of await ewe.subscriptions.getDownloadable())
   {
     let count = 0;
 
-    for (const filter of ewe.subscriptions.getFilters(subscription.url))
+    for (const filter of await ewe.subscriptions.getFilters(subscription.url))
     {
       if (filter.enabled === false)
         count++;
@@ -487,9 +487,9 @@ export function initDisabledFilterCounters()
   }
 }
 
-function updateCounters(filterText, enabled)
+async function updateCounters(filterText, enabled)
 {
-  for (const subscription of ewe.subscriptions.getForFilter(filterText))
+  for (const subscription of await ewe.subscriptions.getForFilter(filterText))
   {
     const oldCount = disabledFilterCounters.get(subscription.url) || 0;
     const newCount = (enabled) ? oldCount - 1 : oldCount + 1;
@@ -511,12 +511,12 @@ function updateCounters(filterText, enabled)
   }
 }
 
-ewe.filters.onChanged.addListener((filter, property) =>
+ewe.filters.onChanged.addListener(async(filter, property) =>
 {
   if (property !== "enabled")
     return;
 
-  updateCounters(filter.text, filter.enabled);
+  await updateCounters(filter.text, filter.enabled);
 });
 
 ewe.subscriptions.onRemoved.addListener(subscription =>

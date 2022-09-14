@@ -40,12 +40,12 @@ let eventEmitter = new EventEmitter();
  * @event "filters.isAllowlisted"
  * @returns {filtersIsAllowlistedResult}
  */
-port.on("filters.isAllowlisted", message =>
+port.on("filters.isAllowlisted", async message =>
 {
   let pageAllowlisted = false;
   let hostnameAllowlisted = false;
 
-  for (let filterText of ewe.filters.getAllowingFilters(message.tab.id))
+  for (let filterText of await ewe.filters.getAllowingFilters(message.tab.id))
   {
     if (allowlistedDomainRegexp.test(filterText))
       hostnameAllowlisted = true;
@@ -100,7 +100,9 @@ export async function allowlist({hostname, origin, singlePage = false, url})
   }
 
   await ewe.filters.enable([filterText]);
-  if (ewe.subscriptions.getForFilter(filterText).length == 0)
+
+  const filterSubscriptions = await ewe.subscriptions.getForFilter(filterText);
+  if (filterSubscriptions.length == 0)
     await addFilter(filterText, origin);
 }
 
@@ -137,13 +139,16 @@ port.on("filters.allowlist", async message =>
  */
 port.on("filters.unallowlist", async message =>
 {
-  for (let filterText of ewe.filters.getAllowingFilters(message.tab.id))
+  for (let filterText of await ewe.filters.getAllowingFilters(message.tab.id))
   {
     if (message.singlePage && allowlistedDomainRegexp.test(filterText))
       continue;
 
     await ewe.filters.remove([filterText]);
-    if (ewe.subscriptions.getForFilter(filterText).length != 0)
+
+    const filterSubscriptions = await ewe.subscriptions
+      .getForFilter(filterText);
+    if (filterSubscriptions.length != 0)
       await ewe.filters.disable([filterText]);
   }
 });
@@ -170,12 +175,12 @@ export let allowlistingState = {
   removeListener: eventEmitter.off.bind(eventEmitter)
 };
 
-function revalidateAllowlistingState(page)
+async function revalidateAllowlistingState(page)
 {
   eventEmitter.emit(
     "changed",
     page,
-    ewe.filters.isResourceAllowlisted(page.url, "document", page.id)
+    await ewe.filters.isResourceAllowlisted(page.url, "document", page.id)
   );
 }
 
@@ -188,20 +193,20 @@ export async function revalidateAllowlistingStates()
 
 ext.pages.onLoaded.addListener(revalidateAllowlistingState);
 ewe.filters.onAdded.addListener(revalidateAllowlistingStates);
-ewe.filters.onChanged.addListener((filter, property) =>
+ewe.filters.onChanged.addListener(async(filter, property) =>
 {
   if (property !== "enabled")
     return;
 
-  revalidateAllowlistingStates();
+  await revalidateAllowlistingStates();
 });
 ewe.filters.onRemoved.addListener(revalidateAllowlistingStates);
 ewe.subscriptions.onAdded.addListener(revalidateAllowlistingStates);
-ewe.subscriptions.onChanged.addListener((subscription, property) =>
+ewe.subscriptions.onChanged.addListener(async(subscription, property) =>
 {
   if (property !== null && property !== "enabled")
     return;
 
-  revalidateAllowlistingStates();
+  await revalidateAllowlistingStates();
 });
 ewe.subscriptions.onRemoved.addListener(revalidateAllowlistingStates);

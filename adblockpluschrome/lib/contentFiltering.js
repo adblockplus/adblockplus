@@ -18,24 +18,9 @@
 /** @module contentFiltering */
 
 import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
+import * as snippets from "@eyeo/snippets";
 
-(async() =>
-{
-  try
-  {
-    let response = await fetch(
-      browser.runtime.getURL("/snippets.json"),
-      {cache: "no-cache"}
-    );
-    if (!response.ok)
-      return;
-
-    let snippets = await response.json();
-    ewe.snippets.setLibrary(snippets);
-  }
-  catch (e)
-  {
-    // If the request fails, the snippets library is not
-    // bundled with the extension, so we silently ignore this error.
-  }
-})();
+ewe.snippets.setLibrary({
+  injectedCode: snippets.injected,
+  isolatedCode: snippets.isolated
+});

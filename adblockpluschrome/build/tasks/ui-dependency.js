@@ -46,6 +46,7 @@ async function mustBuildUI(lastUIBuildTime)
         "../.gitlab/**",
         "../adblockpluschrome/**",
         "../docs/**",
+        "../dist/**",
         "../ext/**",
         "../lib/**",
         "../mocks/**",

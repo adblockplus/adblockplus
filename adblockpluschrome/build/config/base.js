@@ -88,7 +88,6 @@ export default {
         src: [
           "*.js",
           "*.html",
-          "node_modules/@eyeo/snippets/webext/snippets.json",
           "dist/composer.preload.js",
           "adblockpluschrome/devtools.*",
           "!polyfill.js",

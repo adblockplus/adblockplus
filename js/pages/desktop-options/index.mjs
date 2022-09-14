@@ -1609,7 +1609,7 @@ function onSubscriptionMessage(action, subscription, ...args)
         updateSubscription(subscription);
         break;
       case "removed":
-        if (subscription.recommended)
+        if (subscription.recommended && subscription.recommended !== "allowing")
         {
           subscription.disabled = true;
           onSubscriptionMessage("changed", subscription);
