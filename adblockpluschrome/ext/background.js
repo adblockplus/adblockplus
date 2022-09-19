@@ -338,7 +338,16 @@
     return !!trustedTypes && trustedTypes.includes(type);
   }
 
-  ext.isTrustedSender = sender => sender.origin === selfOrigin;
+  function getSenderOrigin(sender)
+  {
+    // Firefox (at least up to version 105) doesn't support MessageSender.origin
+    if (sender.origin)
+      return sender.origin;
+
+    return new URL(sender.url).origin;
+  }
+
+  ext.isTrustedSender = sender => getSenderOrigin(sender) === selfOrigin;
 
   browser.runtime.onMessage.addListener((message, rawSender) =>
   {
@@ -353,7 +362,7 @@
     // Ignore messages from content scripts, unless we listed them as
     // safe to use in the context they're running in
     if (!ext.isTrustedSender(rawSender) &&
-        !isTrustedMessageType(rawSender.origin, message.type) &&
+        !isTrustedMessageType(getSenderOrigin(rawSender), message.type) &&
         !isTrustedMessageType(null, message.type))
     {
       console.warn("Untrusted message received", message.type, rawSender.url);
