@@ -16,6 +16,7 @@
  */
 
 import api from "../../api";
+import {getSourceAttribute} from "../../common";
 import {$, $$} from "../../dom";
 import {initI18n} from "../../i18n";
 import setupBlock from "./block-element";
@@ -145,12 +146,12 @@ function updateBlockedTotal(blockedTotal)
 
 async function setupPremium()
 {
-  const source = "popup";
-  const premiumManageUrl = await api.ctalinks.get("premium-manage", {source});
-  const premiumUpgradeUrl = await api.ctalinks.get("premium-upgrade", {source});
-
   const premiumManageCTA = $("#premium-manage");
   const premiumUpgradeCTA = $("#premium-upgrade");
+
+  const source = getSourceAttribute(document.body);
+  const premiumManageUrl = await api.ctalinks.get("premium-manage", {source});
+  const premiumUpgradeUrl = await api.ctalinks.get("premium-upgrade", {source});
 
   premiumManageCTA.setAttribute("href", premiumManageUrl);
   premiumUpgradeCTA.setAttribute("href", premiumUpgradeUrl);

@@ -33,6 +33,10 @@
     "description": "Title for the Anti-Circumvention list",
     "message": "ABP Anti-Circumvention Filter List"
   },
+  "common_feature_distractions_title": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/blob/174961bed1ed95f9118bd08df0d6ad6e267e567d/spec/abp/desktop-settings/general-tab.md#premium-features-1",
+    "message": "Block more distractions"
+  },
   "common_feature_malware_title": {
     "description": "Feature title for anti-malware filter list",
     "message": "Block Malware"
@@ -48,10 +52,6 @@
   "common_feature_notifications_title": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/52243bc8596b06107461034c745a6ecdaa42f1f6/spec/abp/desktop-settings/general-tab.md#list-of-recommended-filter-lists",
     "message": "Block push notifications"
-  },
-  "common_feature_cookies_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/52243bc8596b06107461034c745a6ecdaa42f1f6/spec/abp/desktop-settings/general-tab.md#list-of-recommended-filter-lists",
-    "message": "Block cookie warnings"
   },
   "common_notification_hide": {
     "description": "Hidden text attached to the close button for screen readers of Notification",

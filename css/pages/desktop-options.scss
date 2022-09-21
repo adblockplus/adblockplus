@@ -79,6 +79,11 @@ main h3
   margin-bottom: 0.5rem;
 }
 
+.description
+{
+  font-size: 0.9rem;
+}
+
 [aria-hidden="true"],
 [hidden]
 {
@@ -870,8 +875,55 @@ html[dir="rtl"] #support-us .h2-icon
 }
 
 /*
-  Premium banners
+  Premium
  */
+
+.premium.icon::before
+{
+  border: none;
+}
+
+body.premium .premium.icon::before
+{
+  display: inline-block;
+  margin-right: 0.5rem;
+  width: 20px;
+  height: 20px;
+  background-image: url("icons/premium-crown.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  content: "";
+}
+
+body.premium .premium.upgrade.button
+{
+  display: none;
+}
+
+.premium.upgrade.button
+{
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: var(--color-premium);
+  color: var(--background-color-primary);
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.premium.upgrade.button:hover,
+.premium.upgrade.button:focus
+{
+  background-color: var(--color-premium-hover);
+}
+
+.premium.list button.icon[role="checkbox"]:disabled::before
+{
+  margin-top: 0;
+  background-color: transparent;
+  background-image: url(icons/premium-lock.svg);
+  background-position: center;
+}
 
 .premium-banner-container
 {
@@ -924,7 +976,7 @@ body.premium .premium-upgrade.banner
 .premium-upgrade.banner .premium-label
 {
   flex: 1;
-  align-items: center;
+  align-items: baseline;
   font-size: 20px;
 }
 
@@ -950,19 +1002,6 @@ body.premium .premium-upgrade.banner
   display: flex;
   align-items: center;
   gap: 13px;
-}
-
-.premium-upgrade.banner .button.upgrade
-{
-  padding: 9px 18px;
-  background-color: var(--color-premium);
-  color: var(--background-color-primary);
-}
-
-.premium-upgrade.banner .button.upgrade:hover,
-.premium-upgrade.banner .button.upgrade:focus
-{
-  background-color: var(--color-premium-hover);
 }
 
 body:not(.premium) .premium-manage.banner
@@ -1529,6 +1568,76 @@ html[dir="rtl"] .tooltip
   General tab content
 */
 
+section.recommended-features
+{
+  display: flex;
+  padding-top: 2rem;
+  gap: 24px;
+}
+
+section.recommended-features > *
+{
+  flex: 1;
+}
+
+section.recommended-features h2
+{
+  margin-bottom: 1.75rem;
+}
+
+section.recommended-features .premium.list-header
+{
+  display: flex;
+  align-items: flex-start;
+  gap: 1.4rem;
+}
+
+section.recommended-features .premium.list-header a.button
+{
+  transform: translateY(-25%);
+}
+
+section.recommended-features li
+{
+  align-items: flex-start;
+}
+
+section.recommended-features .description-container
+{
+  margin: 0 0.5rem;
+}
+
+section.recommended-features li button
+{
+  margin-top: -2px;
+}
+
+section.recommended-features h3
+{
+  display: inline-block;
+  margin: 0;
+  font-size: 1rem;
+}
+
+section.recommended-features li .beta-label
+{
+  display: none;
+  margin: 0 0.25rem;
+  font-size: var(--font-size-primary);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+section.recommended-features li.beta .beta-label
+{
+  display: inline-block;
+}
+
+section.recommended-features .description
+{
+  margin: 0.25rem 0;
+}
+
 #blocking-languages li button[data-single]
 {
   padding: 0;
@@ -1539,8 +1648,6 @@ html[dir="rtl"] .tooltip
   margin-bottom: 0.8rem;
 }
 
-html[lang^="de"] #recommended-list-table li[data-recommended="cookies"],
-html[lang^="fr"] #recommended-list-table li[data-recommended="cookies"],
 html[lang^="de"] #language-recommend,
 html[lang^="fr"] #language-recommend,
 /*

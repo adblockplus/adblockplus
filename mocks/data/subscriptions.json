@@ -244,5 +244,10 @@
     "title": "Fanboy's Social Blocking List",
     "url": "https://easylist-downloads.adblockplus.org/fanboy-social.txt",
     "homepage": "https://easylist.to/"
+  },
+  {
+    "type": "distractions",
+    "title": "Distractions List",
+    "url": "https://easylist-downloads.adblockplus.org/adblock_premium.txt"
   }
 ]

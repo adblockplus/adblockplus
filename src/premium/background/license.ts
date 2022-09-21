@@ -47,7 +47,7 @@ const checkRetryDelay = 60 * 1000; // 00:01:00
 /**
  * Emitter for license events
  */
-const emitter = new EventEmitter();
+export const emitter = new EventEmitter();
 
 /**
  * Event name for regular license checks schedule

@@ -25,7 +25,12 @@ import {
   loadLanguageNames
 } from "./titles";
 import api from "../../api";
-import {convertDoclinks, getDoclink, getErrorMessage} from "../../common";
+import {
+  convertDoclinks,
+  getDoclink,
+  getErrorMessage,
+  getSourceAttribute
+} from "../../common";
 import {$, $$} from "../../dom";
 import {
   initI18n,
@@ -47,6 +52,7 @@ let acceptableAdsUrl = null;
 let acceptableAdsPrivacyUrl = null;
 let isCustomFiltersLoaded = false;
 let additionalSubscriptions = [];
+let premiumIsActive = null;
 
 const collections = Object.create(null);
 const {getMessage} = browser.i18n;
@@ -169,13 +175,21 @@ Collection.prototype.addItem = function(item)
   {
     const detail = this.details[j];
     const table = $(`#${detail.id}`);
-    const template = $("template", table);
+    const template =
+      $("template", table) ||
+      $("template", table.closest(".template-container"));
     const listItem = document.createElement("li");
     listItem.appendChild(document.importNode(template.content, true));
     listItem.setAttribute("aria-label", this._getItemTitle(item, j));
     listItem.setAttribute("data-recommended", item.recommended);
     listItem.setAttribute("data-access", item.url || item.text);
     listItem.setAttribute("role", "section");
+
+    if (item.recommended === "distractions")
+    {
+      listItem.classList.add("beta");
+      updatePremiumStateInListItem(listItem);
+    }
 
     const tooltip = $("io-popout[type='tooltip']", listItem);
     if (tooltip)
@@ -186,10 +200,15 @@ Collection.prototype.addItem = function(item)
       {
         tooltip.setAttribute("i18n-body", tooltipId);
       }
-      if (item.recommended === "cookies")
-      {
-        tooltip.dataset.i18nDoclinks = "block_cookie_warnings";
-      }
+    }
+
+    const descriptionNode = $(".description", listItem);
+    if (descriptionNode)
+    {
+      let descriptionId = descriptionNode.dataset.templateI18nBody;
+      descriptionId = descriptionId.replace("%value%", item.recommended);
+      const description = getMessage(descriptionId);
+      descriptionNode.textContent = description;
     }
 
     this._setEmpty(table, detail, true);
@@ -410,9 +429,15 @@ function focusNextElement(container, currentElement)
   return true;
 }
 
-collections.recommendedList = new Collection([
+collections.recommendedFreeList = new Collection([
   {
-    id: "recommended-list-table",
+    id: "free-list-table",
+    getItemTitle: (item) => getPrettyItemTitle(item, false)
+  }
+]);
+collections.recommendedPremiumList = new Collection([
+  {
+    id: "premium-list-table",
     getItemTitle: (item) => getPrettyItemTitle(item, false)
   }
 ]);
@@ -456,11 +481,13 @@ function addSubscription(subscription)
       const ioListBox = $("#languages-box");
       ioListBox.items = ioListBox.items.concat(subscription);
       break;
-    case "cookies":
+    case "distractions":
+      collection = collections.recommendedPremiumList;
+      break;
     case "notifications":
     case "privacy":
     case "social":
-      collection = collections.recommendedList;
+      collection = collections.recommendedFreeList;
       break;
     default:
       if (typeof recommended === "undefined" &&
@@ -1125,7 +1152,8 @@ function getListBoxItems(subscriptions)
     const key = recommended === "ads" ? recommended : "others";
     const label = getPrettyItemTitle(subscription, true);
     const selected = urls.has(url);
-    const overrides = {unselectable: selected, label, selected};
+    const premium = recommended === "distractions";
+    const overrides = {unselectable: selected, label, selected, premium};
     groups[key].push(Object.assign({}, subscription, overrides));
   }
 
@@ -1525,29 +1553,64 @@ function updateErrorTooltip(element, errorIds)
 
 async function setupPremium()
 {
-  const source = "desktop-options";
-  const premiumManageUrl = await api.ctalinks.get("premium-manage", {source});
-  const premiumUpgradeUrl = await api.ctalinks.get("premium-upgrade", {source});
+  setupPremiumBanners();
+  setupPremiumInRecommended();
 
-  const premiumSignInCTA = $("#premium-signin");
-  const premiumUpgradeCTA = $("#premium-upgrade");
-  const premiumUpgradeDescription = $("#premium-upgrade-description");
+  const premium = await api.premium.get();
+  premiumIsActive = premium.isActive;
+  updatePremiumStateInPage();
+}
+
+async function setupPremiumBanners()
+{
+  const premiumUpgradeBanner = $(".premium-upgrade.banner");
+  const signInCTA = $("#premium-signin");
+  const upgradeCTA = $(".upgrade.button", premiumUpgradeBanner);
+  const upgradeDescription = $("#premium-upgrade-description");
+
+  const source = getSourceAttribute(premiumUpgradeBanner);
+  const manageUrl = await api.ctalinks.get("premium-manage", {source});
+  const upgradeUrl = await api.ctalinks.get("premium-upgrade", {source});
 
   $$(".premium-manage.banner a").forEach(cta =>
   {
-    cta.setAttribute("href", premiumManageUrl);
+    cta.setAttribute("href", manageUrl);
   });
-  premiumSignInCTA.setAttribute("href", premiumManageUrl);
-  premiumUpgradeCTA.setAttribute("href", premiumUpgradeUrl);
-  setElementLinks(premiumUpgradeDescription, premiumUpgradeUrl);
-
-  const premium = await api.premium.get();
-  setPremiumState(premium.isActive);
+  signInCTA.setAttribute("href", manageUrl);
+  upgradeCTA.setAttribute("href", upgradeUrl);
+  setElementLinks(upgradeDescription, upgradeUrl);
 }
 
-async function setPremiumState(premiumIsActive)
+async function setupPremiumInRecommended()
+{
+  const upgradeCTA = $(".recommended-features .upgrade.button");
+
+  const source = getSourceAttribute(upgradeCTA);
+  const upgradeUrl = await api.ctalinks.get("premium-upgrade", {source});
+
+  upgradeCTA.setAttribute("href", upgradeUrl);
+}
+
+function updatePremiumStateInPage()
 {
   document.body.classList.toggle("premium", premiumIsActive);
+
+  const premiumListItems = $$("#premium-list-table li");
+  premiumListItems.forEach((listItem) =>
+    updatePremiumStateInListItem(listItem)
+  );
+
+  setupFiltersBox();
+}
+
+function updatePremiumStateInListItem(listItem)
+{
+  if (!listItem)
+    return;
+
+  const checkbox = $("button[role='checkbox']", listItem);
+  if (checkbox)
+    checkbox.toggleAttribute("disabled", !premiumIsActive);
 }
 
 function onFilterMessage(action, filter)
@@ -1752,7 +1815,8 @@ api.addListener((message) =>
       onPrefMessage(message.action, message.args[0], false);
       break;
     case "premium.respond":
-      setPremiumState(message.args[0].isActive);
+      premiumIsActive = message.args[0].isActive;
+      updatePremiumStateInPage();
       break;
     case "subscriptions.respond":
       onSubscriptionMessage(message.action, ...message.args);

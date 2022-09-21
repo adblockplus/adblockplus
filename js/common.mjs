@@ -69,3 +69,13 @@ export function getErrorMessage(error)
     message
   ]);
 }
+
+export function getSourceAttribute(element)
+{
+  const sourceContainer = element.closest("[data-source]");
+
+  if (!sourceContainer)
+    return null;
+
+  return sourceContainer.dataset.source;
+}
