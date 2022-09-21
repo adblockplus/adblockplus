@@ -16,6 +16,7 @@
  */
 
 import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
+import * as premium from "../../src/premium/background/index.ts";
 import {showOptions} from "../../lib/pages/options.js";
 import {installHandler} from "./messaging/events.js";
 import {port} from "./messaging/port.js";
@@ -26,6 +27,7 @@ import {
   toPlainSubscription
 } from "./messaging/types.js";
 import {EventEmitter} from "./events.js";
+import {Prefs} from "./prefs.js";
 import {filterTypes} from "./requestBlocker.js";
 
 const disabledFilterCounters = new Map();
@@ -331,9 +333,15 @@ port.on("subscriptions.getDisabledFilterCount", (message, sender) =>
  * @event "subscriptions.getRecommendations"
  * @returns {object[]} recommendedSubscriptions
  */
-port.on("subscriptions.getRecommendations",
-        (message, sender) => Array.from(ewe.subscriptions.getRecommendations(),
-                                        toPlainRecommendation));
+port.on("subscriptions.getRecommendations", async(message, sender) =>
+{
+  const recommendations = await ewe.subscriptions.getRecommendations();
+
+  const distractionsList = Prefs.get("premium_distractions_list");
+  recommendations.push(distractionsList);
+
+  return Array.from(recommendations, toPlainRecommendation);
+});
 
 /**
  * Remove the given subscription if it exists.
@@ -522,6 +530,12 @@ ewe.filters.onChanged.addListener(async(filter, property) =>
 ewe.subscriptions.onRemoved.addListener(subscription =>
 {
   disabledFilterCounters.delete(subscription.url);
+});
+
+premium.emitter.on("deactivated", () =>
+{
+  const distractionsList = Prefs.get("premium_distractions_list");
+  ewe.subscriptions.remove(distractionsList.url);
 });
 
 installHandler("app", "addSubscription", emit =>

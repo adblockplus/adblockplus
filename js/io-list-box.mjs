@@ -330,6 +330,7 @@ class IOListBox extends IOElement
       return IOElement.wire(this, `html:${itemID}`)`
       <li
         id="${itemID}"
+        class="${item.premium ? "premium" : ""}"
         role="option"
         aria-disabled="${swap ? !item.disabled : liDisabled}"
         aria-selected="${selected}"

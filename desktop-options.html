@@ -27,7 +27,7 @@
     <script src="ext/content.js"></script>
     <script defer src="desktop-options.js"></script>
   </head>
-  <body data-tab="general">
+  <body data-tab="general" data-source="desktop-options">
     <!-- Navigation sidebar -->
     <div id="sidebar">
       <div class="fixed">
@@ -73,7 +73,7 @@
         <p id="premium-upgrade-description" data-i18n="options_premium_upgrade_description"></p>
         <div class="auth-container">
           <a id="premium-signin" class=button href="" target="_blank" data-i18n="options_signin_button"></a>
-          <a id="premium-upgrade" class="button upgrade" href="" target="_blank" data-i18n="options_upgrade_button"></a>
+          <a class="premium upgrade button" href="" target="_blank" data-i18n="options_upgrade_button"></a>
         </div>
       </div>
       <div class="premium-manage banner background">
@@ -82,22 +82,35 @@
     </aside>
     <main>
       <!-- General tab content -->
-      <div id="content-general" role="tabpanel" aria-labelledby="tab-general">
+      <div id="content-general" role="tabpanel" aria-labelledby="tab-general" data-source="general-tab">
         <header>
           <h1 data-i18n="options_tab_general"></h1>
           <p data-i18n="options_general_description"></p>
         </header>
-        <section class="cols">
-          <h2 data-i18n="options_recommended_filters_header"></h2>
-          <ul class="list" id="recommended-list-table">
-            <template>
-              <button data-action="toggle-remove-subscription" data-disable="preconfigured" role="checkbox" class="control icon"></button>
-              <span data-display></span>
-              <io-popout type="tooltip" data-template-i18n-body="options_recommended_%value%_tooltip"></io-popout>
-            </template>
-          </ul>
+        <section class="recommended-features template-container">
+          <div>
+            <header class="premium list-header">
+              <h2 class="premium icon" dir="ltr">Premium</h2>
+              <a class="premium upgrade button" href="" target="_blank" data-i18n="options_upgrade_button"></a>
+            </header>
+            <ul id="premium-list-table" class="premium list"></ul>
+          </div>
+          <div>
+            <h2 data-i18n="options_free_filters_header"></h2>
+            <ul id="free-list-table" class="list"></ul>
+          </div>
+          <template>
+            <button data-action="toggle-remove-subscription" data-disable="preconfigured" role="checkbox" class="control icon"></button>
+            <div class="description-container">
+              <header>
+                <h3 data-display></h3>
+                <span class="beta-label" data-i18n="options_beta_label"></span>
+              </header>
+              <p class="description" data-template-i18n-body="options_recommended_%value%_description"></p>
+            </div>
+          </template>
         </section>
-        <section class="cols">
+        <section>
           <header>
             <h2 data-i18n="options_acceptableAds_header"></h2>
             <p data-i18n="options_acceptableAds_description"></p>
@@ -121,7 +134,7 @@
                   <a class="button primary" target="_blank" data-i18n="options_aa_opt_out_survey_ok" data-action="hide-acceptable-ads-survey"></a>
                   <button type="button" data-i18n="options_aa_opt_out_survey_no" data-action="hide-acceptable-ads-survey"></button>
                 </div>
-                <p id="enable-acceptable-ads-description" data-i18n="options_acceptableAds_ads_description_1"></p>
+                <p id="enable-acceptable-ads-description" class="description" data-i18n="options_acceptableAds_ads_description_1"></p>
               </li>
               <ul>
                 <li>
@@ -136,7 +149,7 @@
             </ul>
           </form>
         </section>
-        <section class="cols">
+        <section>
           <header>
             <h2 data-i18n="options_language_header"></h2>
             <p id="blocking-languages-description" data-i18n="options_language_description"></p>
@@ -170,7 +183,7 @@
             <p data-i18n="options_language_tip"></p>
           </div>
         </section>
-        <section id="more-filters" class="cols">
+        <section id="more-filters">
           <header>
             <h2 data-i18n="options_more_filters_header"></h2>
             <p data-i18n="options_more_filters_description"></p>

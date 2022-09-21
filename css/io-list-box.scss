@@ -24,6 +24,11 @@ io-list-box
   box-sizing: border-box;
 }
 
+body:not(.premium) io-list-box [role="option"].premium
+{
+  display: none;
+}
+
 io-list-box,
 io-list-box button,
 io-list-box [role="listbox"],
