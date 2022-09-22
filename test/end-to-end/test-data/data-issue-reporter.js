@@ -23,13 +23,11 @@ module.exports =
   commentText: "TESTING, ignore report.",
   emailLabelText: "Email:",
   emailText: "********@a******.o*****",
-  filterData: '<filter text="/betrad.js" subscriptions="https://easylist-' +
-  'downloads.adblockplus.org/easylist.txt" hitCount="1"/>\n    <filter ' +
-  'text="/bannerads/*" subscriptions="https://easylist-downloads.adblockp' +
-  'lus.org/easylist.txt" hitCount="2"/>\n    <filter text="###serveAd1" ' +
-  'subscriptions="https://easylist-downloads.adblockplus.org/easylist.txt" ' +
-  'hitCount="1"/>\n    <filter text="##.zergmod" subscriptions="https://e' +
-  'asylist-downloads.adblockplus.org/easylist.txt" hitCount="1"/>',
+  filterData: '<filters>\n    <filter text="/wpsafelink.js" subscriptions="E' +
+  'asyList" hitCount="1"/>\n    <filter text="/bannerads/*" subscriptions="E' +
+  'asyList" hitCount="2"/>\n    <filter text="###ServerAd" subscriptions="Ea' +
+  'syList" hitCount="1"/>\n    <filter text="##.zergmod" subscriptions="Easy' +
+  'List" hitCount="1"/>\n  </filters>',
   issueTypeLableText: "Issue type:",
   issueTypeText: "False positive",
   otherIssuesText: "For all other issues, please contact us via " +
@@ -48,8 +46,8 @@ module.exports =
     'issue-reporter-testpage.html" type="DOCUMENT" docDomain="null" thirdPar' +
     'ty="undefined" count="3" filter="##.zergmod"/>',
     '<request location="https://adblockinc.gitlab.io/QA-team/issue-reporter/' +
-    'scripts/betrad.js" type="SCRIPT" docDomain="adblockinc.gitlab.io" third' +
-    'Party="undefined" count="1" filter="/betrad.js"/>',
+    'scripts/wpsafelink.js" type="SCRIPT" docDomain="adblockinc.gitlab.io" ' +
+    'thirdParty="undefined" count="1" filter="/wpsafelink.js"/>',
     '<request location="https://adblockinc.gitlab.io/QA-team/issue-reporter/' +
     'scripts/bannerads/blocking-filter.js" type="SCRIPT" docDomain="adblocki' +
     'nc.gitlab.io" thirdParty="undefined" count="1" filter="/bannerads/*"/>',
@@ -66,7 +64,7 @@ module.exports =
   "the following address",
   statusCellLabelText: "Status:",
   statusCellText: "unknown",
-  subscriptionsRegex: /<subscription id="https:\/\/easylist-downloads\.adblockplus\.org\/exceptionrules\.txt" version="\d*" lastDownloadAttempt=".*" lastDownloadSuccess=".*" softExpiration="\d*" hardExpiration="\d*" downloadStatus="synchronize_ok" disabledFilters="0"\/>\n {4}<subscription id="https:\/\/easylist-downloads\.adblockplus\.org\/easylist\.txt" version="\d*" lastDownloadAttempt=".*" lastDownloadSuccess=".*" softExpiration="\d*" hardExpiration="\d*" downloadStatus="synchronize_ok" disabledFilters="0"\/>\n {4}<subscription id="https:\/\/easylist-downloads\.adblockplus\.org\/abp-filters-anti-cv\.txt" version="\d*" lastDownloadAttempt=".*" lastDownloadSuccess=".*" softExpiration="\d*" hardExpiration="\d*" downloadStatus="synchronize_ok" disabledFilters="0"\/>/,
+  subscriptionsRegex: /<subscription id="https:\/\/easylist-downloads\.adblockplus\.org\/easylist\.txt" version="\d*" lastDownloadAttempt=".*" lastDownloadSuccess=".*" softExpiration="\d*" hardExpiration="\d*" downloadStatus="synchronize_ok" disabledFilters="0"\/>\n {4}<subscription id="https:\/\/easylist-downloads\.adblockplus\.org\/abp-filters-anti-cv\.txt" version="\d*" lastDownloadAttempt=".*" lastDownloadSuccess=".*" softExpiration="\d*" hardExpiration="\d*" downloadStatus="synchronize_ok" disabledFilters="0"\/>\n {4}<subscription id="https:\/\/easylist-downloads\.adblockplus\.org\/exceptionrules\.txt" version="\d*" lastDownloadAttempt=".*" lastDownloadSuccess=".*" softExpiration="\d*" hardExpiration="\d*" downloadStatus="synchronize_ok" disabledFilters="0"\/>/,
   timeCellText: "Time:",
   websiteLabelText: "Website:",
   websiteCellHref: "https://adblockinc.gitlab.io/QA-team/issue-" +

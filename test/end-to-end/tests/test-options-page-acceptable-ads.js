@@ -57,7 +57,7 @@ describe("test options page general tab acceptable ads", function()
     const generalPage = new GeneralPage(browser);
     await generalPage.clickOnlyAllowAdsWithoutTrackingCheckbox();
     if (await generalPage.
-      isOnlyAllowAdsWithoutTrackingCheckboxSelected() == false)
+      isOnlyAllowAdsWithoutTrackingCheckboxSelected(true, 1000) == true)
     {
       await generalPage.clickOnlyAllowAdsWithoutTrackingCheckbox();
     }
@@ -77,7 +77,8 @@ describe("test options page general tab acceptable ads", function()
   {
     const generalPage = new GeneralPage(browser);
     await generalPage.clickAllowAcceptableAdsCheckbox();
-    if (await generalPage.isAllowAcceptableAdsCheckboxSelected(true) == false)
+    if (await generalPage.
+      isAllowAcceptableAdsCheckboxSelected(false, 1000) == true)
     {
       await generalPage.clickAllowAcceptableAdsCheckbox();
     }

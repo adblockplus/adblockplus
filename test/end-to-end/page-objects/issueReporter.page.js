@@ -27,17 +27,10 @@ class IssueReporterPage extends BasePage
     this.browser = browser;
   }
 
-  async init(origin)
+  async init(origin, tabId)
   {
-    let tabId = "5";
-    if (browser.capabilities.browserName == "firefox" ||
-      browser.capabilities.browserName == "msedge")
-    {
-      tabId = "4";
-    }
     await this.browser.newWindow(`${origin}/issue-reporter.html?${tabId}`);
     await this.browser.refresh();
-    await this.switchToTab(/Issue reporter(?! test)/);
     await (await this.cancelButton).waitForExist({timeout: 10000});
   }
 

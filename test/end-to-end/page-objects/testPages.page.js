@@ -43,9 +43,9 @@ class TestPages extends BasePage
     return $("p*=This should be hidden by a snippet");
   }
 
-  get serveAd1Div()
+  get serverAdDiv()
   {
-    return $("#serveAd1");
+    return $("#ServerAd");
   }
 
   get snippetFilterDiv()
@@ -68,9 +68,9 @@ class TestPages extends BasePage
     return await (await this.banneradsFilter).getText();
   }
 
-  async getServeAd1DivText()
+  async getServerAdDivText()
   {
-    return await (await this.serveAd1Div).getText();
+    return await (await this.serverAdDiv).getText();
   }
 
   async getZergmodDivText()
@@ -83,9 +83,9 @@ class TestPages extends BasePage
     return await (await this.hiddenBySnippetText).isDisplayed();
   }
 
-  async isServeAd1DivDisplayed()
+  async isServerAdDivDisplayed()
   {
-    return await (await this.serveAd1Div).isDisplayed();
+    return await (await this.serverAdDiv).isDisplayed();
   }
 
   async isSnippetFilterDivDisplayed()

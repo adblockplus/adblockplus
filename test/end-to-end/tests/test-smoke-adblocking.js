@@ -32,7 +32,7 @@ const testData = require("../test-data/data-smoke-tests");
 
 describe("test adblocking as part of the smoke tests", function()
 {
-  this.retries(globalRetriesNumber);
+  this.retries(globalRetriesNumber + 1);
 
   beforeEach(async function()
   {
@@ -109,7 +109,7 @@ describe("test adblocking as part of the smoke tests", function()
     expect(await testPages.getBanneradsFilterText()).to.include(
       "/bannerads/* was blocked");
     expect(await testPages.
-      isServeAd1DivDisplayed()).to.be.false;
+      isServerAdDivDisplayed()).to.be.false;
     expect(await testPages.
       isZergmodDivDisplayed()).to.be.false;
   });
@@ -144,8 +144,8 @@ describe("test adblocking as part of the smoke tests", function()
       "wpsafelink.js blocking filter should block this");
     expect(await testPages.getBanneradsFilterText()).to.include(
       "first bannerads/* blocking filter should block this");
-    expect(await testPages.getServeAd1DivText()).to.include(
-      "serveAd1 id hiding filter should hide this");
+    expect(await testPages.getServerAdDivText()).to.include(
+      "ServerAd id hiding filter should hide this");
     expect(await testPages.getZergmodDivText()).to.include(
       "zergmod class hiding filter should hide this");
     await allowistedWebsitesPage.switchToABPOptionsTab(true);

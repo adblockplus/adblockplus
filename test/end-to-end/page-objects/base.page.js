@@ -34,6 +34,32 @@ class BasePage
     return $("#slave-2-1");
   }
 
+  async getABPOptionsTabId()
+  {
+    await this.switchToABPOptionsTab(true);
+    const currentTab = await this.browser.executeAsyncScript(`
+      function getTabID()
+      {
+        return new Promise((resolve, reject) =>
+        {
+          try
+          {
+            chrome.tabs.query({active: true,}, function (tabs)
+            {
+              resolve(tabs[0].id);})} catch (e) {reject(e);
+            }
+          })
+        }
+        async function returnID()
+        {
+          let responseTabID = await getTabID();
+          return responseTabID;}
+          var callback = arguments[arguments.length - 1];
+          returnID().then((data)=> {callback(data)
+        });`, []);
+    return currentTab;
+  }
+
   async getCurrentUrl()
   {
     return await this.browser.getUrl();
@@ -122,6 +148,33 @@ class BasePage
     await this.browser.pause(700);
     return (await element).click();
   }
+
+  async waitForSelectedNoError(element,
+                               reverse = false, timeoutMs = 5000)
+  {
+    let status;
+    try
+    {
+      status = await (await element).
+      waitUntil(async function()
+      {
+        if (reverse)
+        {
+          return await (await this.isSelected()) == false;
+        }
+        return await (await this.isSelected()) == true;
+      }, {
+        timeout: timeoutMs,
+        timeoutMsg: "Timeout while waiting on condition."
+      });
+    }
+    catch (error)
+    {
+      status = false;
+    }
+    return status;
+  }
+
 
   async waitUntilAttributeValueIs(element, attribute,
                                   expectedValue, timeoutVal = 5000,

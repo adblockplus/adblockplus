@@ -403,13 +403,12 @@ class GeneralPage extends BasePage
     return await (await this.predefinedDialogTitle).getText();
   }
 
-  async isAllowAcceptableAdsCheckboxSelected(reverse = false)
+  async isAllowAcceptableAdsCheckboxSelected(reverse = false, timeoutMs = 5000)
   {
     await (await this.allowAcceptableAdsCheckbox).
       waitForEnabled({timeout: 3000});
-    return await this.waitUntilAttributeValueIs(
-      this.allowAcceptableAdsCheckbox, "aria-checked", "true",
-      3000, reverse);
+    return await this.waitForSelectedNoError(this.
+      allowAcceptableAdsCheckbox, reverse, timeoutMs);
   }
 
   async isBlockAdditionalTrackingCheckboxSelected(reverse = false)
@@ -548,9 +547,10 @@ class GeneralPage extends BasePage
 
   async isOnlyAllowAdsWithoutTrackingCheckboxSelected(reverse = false)
   {
-    return await this.waitUntilAttributeValueIs(
-      this.onlyAllowAdsWithoutTrackingCheckbox, "aria-checked", "true",
-      3000, reverse);
+    await (await this.onlyAllowAdsWithoutTrackingCheckbox).
+      waitForEnabled({timeout: 3000});
+    return await this.waitForSelectedNoError(this.
+      onlyAllowAdsWithoutTrackingCheckbox, reverse);
   }
 
   async isTrackingWarningDisplayed()

@@ -48,9 +48,9 @@ exports.config = {
     "./tests/**.js"
   ],
   // Patterns to exclude.
-  exclude: [
-    "./tests/legacy-unit.js"
-  ],
+  // exclude: [
+  //   "./tests/legacy-unit.js"
+  // ],
   //
   // ============
   // Capabilities
@@ -82,13 +82,17 @@ exports.config = {
                 `--disable-extensions-except=${helpers.getChromiumExtensionPath()},${helpers.helperExtension}`],
         excludeSwitches: ["disable-extensions"]
       },
-      acceptInsecureCerts: true
+      acceptInsecureCerts: true,
+      exclude: [
+        "./tests/legacy-unit.js"
+      ]
     },
     {
       browserName: "firefox",
       acceptInsecureCerts: true,
       exclude: [
-        "./tests/test-issue-reporter.js"
+        "./tests/test-issue-reporter.js",
+        "./tests/legacy-unit.js"
       ]
     },
     {
@@ -101,7 +105,8 @@ exports.config = {
       },
       acceptInsecureCerts: true,
       exclude: [
-        "./tests/test-issue-reporter.js"
+        "./tests/test-issue-reporter.js",
+        "./tests/legacy-unit.js"
       ]
     }
     // maxInstances can get overwritten per capability. So if you have an in-house Selenium
@@ -147,7 +152,7 @@ exports.config = {
   //
   // Default timeout in milliseconds for request
   // if browser driver or grid doesn't send response
-  connectionRetryTimeout: 120000,
+  connectionRetryTimeout: 12000,
   //
   // Default request retries count
   connectionRetryCount: 3,
