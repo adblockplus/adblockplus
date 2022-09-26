@@ -722,9 +722,7 @@ const setAcceptableAds = async(options = {}) =>
     acceptableAdsPrivacy.checked = true;
     acceptableAdsPrivacy.disabled = false;
 
-    // Edge uses window instead of navigator.
-    // Prefer navigator first since it's the standard.
-    if ((navigator.doNotTrack || window.doNotTrack) !== 1)
+    if (navigator.doNotTrack !== "1")
     {
       toggleDntNotification(true);
     }
