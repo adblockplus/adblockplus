@@ -89,6 +89,7 @@ build:
     - mv adblockpluschrome-*.zip adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
     - mv adblockplusfirefox-*.xpi adblockplus-firefox-${CI_COMMIT_SHORT_SHA}-mv3.xpi
   artifacts:
+    name: "adblockplus-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA:0:8}"
     paths:
       - adblockpluschrome/adblockplus-${CI_COMMIT_SHORT_SHA}.tar.gz
       - adblockpluschrome/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
