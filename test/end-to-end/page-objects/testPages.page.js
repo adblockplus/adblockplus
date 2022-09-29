@@ -33,6 +33,26 @@ class TestPages extends BasePage
     return $("#bannerads-blocking-filter");
   }
 
+  get customBlockingFilter()
+  {
+    return $("#custom-blocking");
+  }
+
+  get customBlockingRegexFilter()
+  {
+    return $("#custom-blocking-regex");
+  }
+
+  get customHidingClass()
+  {
+    return $("#custom-hiding-class");
+  }
+
+  get customHidingId()
+  {
+    return $("#custom-hiding-id");
+  }
+
   get wpsafeFilter()
   {
     return $("#wpsafelink-blocking-filter");
@@ -58,9 +78,24 @@ class TestPages extends BasePage
     return $("#zergmod");
   }
 
-  async getWpsafeFilterText()
+  async getCustomBlockingFilterText()
   {
-    return await (await this.wpsafeFilter).getText();
+    return await (await this.customBlockingFilter).getText();
+  }
+
+  async getCustomBlockingRegexFilterText()
+  {
+    return await (await this.customBlockingRegexFilter).getText();
+  }
+
+  async getCustomHidingClassText()
+  {
+    return await (await this.customHidingClass).getText();
+  }
+
+  async getCustomHidingIdText()
+  {
+    return await (await this.customHidingId).getText();
   }
 
   async getBanneradsFilterText()
@@ -73,9 +108,24 @@ class TestPages extends BasePage
     return await (await this.serverAdDiv).getText();
   }
 
+  async getWpsafeFilterText()
+  {
+    return await (await this.wpsafeFilter).getText();
+  }
+
   async getZergmodDivText()
   {
     return await (await this.zergmodDiv).getText();
+  }
+
+  async isCustomHidingClassDisplayed()
+  {
+    return await (await this.customHidingClass).isDisplayed();
+  }
+
+  async isCustomHidingIdDisplayed()
+  {
+    return await (await this.customHidingId).isDisplayed();
   }
 
   async isHiddenBySnippetTextDisplayed()
