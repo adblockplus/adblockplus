@@ -23,11 +23,14 @@ module.exports =
   commentText: "TESTING, ignore report.",
   emailLabelText: "Email:",
   emailText: "********@a******.o*****",
-  filterData: '<filters>\n    <filter text="/wpsafelink.js" subscriptions="E' +
-  'asyList" hitCount="1"/>\n    <filter text="/bannerads/*" subscriptions="E' +
-  'asyList" hitCount="2"/>\n    <filter text="###ServerAd" subscriptions="Ea' +
-  'syList" hitCount="1"/>\n    <filter text="##.zergmod" subscriptions="Easy' +
-  'List" hitCount="1"/>\n  </filters>',
+  filterData: '<filters>\n    <filter text="/wpsafelink.js" subscriptions="h' +
+  'ttps://easylist-downloads.adblockplus.org/easylist.txt" hitCount="1"/' +
+  '>\n    <filter text="/bannerads/*" subscriptions="https://easylist-downlo' +
+  'ads.adblockplus.org/easylist.txt" hitCount="2"/>\n    <filter text="###Se' +
+  'rverAd" subscriptions="https://easylist-downloads.adblockplus.org/easylis' +
+  't.txt" hitCount="1"/>\n    <filter text="##.zergmod" subscriptions="https' +
+  '://easylist-downloads.adblockplus.org/easylist.txt" hitCount="1' +
+  '"/>\n  </filters>',
   issueTypeLableText: "Issue type:",
   issueTypeText: "False positive",
   otherIssuesText: "For all other issues, please contact us via " +

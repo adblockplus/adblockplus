@@ -69,6 +69,12 @@ class GeneralPage extends BasePage
     return $("//li[@aria-label='Block additional tracking']/button");
   }
 
+  get blockAdditionalTrackingDescription()
+  {
+    return $("//li[@aria-label='Block additional tracking']/" +
+      "div[@class='description-container']/p");
+  }
+
   get blockAdditionalTrackingTooltipIcon()
   {
     return $("//li[@aria-label='Block additional tracking']/io-popout");
@@ -111,6 +117,12 @@ class GeneralPage extends BasePage
     return $("//li[@aria-label='Block push notifications']/button");
   }
 
+  get blockPushNotificationsDescription()
+  {
+    return $("//li[@aria-label='Block push notifications']/" +
+    "div[@class='description-container']/p");
+  }
+
   get blockPushNotificationsTooltipIcon()
   {
     return $("//li[@aria-label='Block push notifications']/io-popout");
@@ -130,6 +142,12 @@ class GeneralPage extends BasePage
   get blockSocialMediaIconsTrackingCheckbox()
   {
     return $("//li[@aria-label='Block social media icons tracking']/button");
+  }
+
+  get blockSocialMediaIconsTrackingDescription()
+  {
+    return $("//li[@aria-label='Block social media icons tracking']/" +
+    "div[@class='description-container']/p");
   }
 
   get blockSocialMediaIconsTrackingTooltipText()
@@ -364,6 +382,11 @@ class GeneralPage extends BasePage
     await (await this.okGotItTrackingWarningButton).click();
   }
 
+  async getBlockAdditionalTrackingDescriptionText()
+  {
+    return await (await this.blockAdditionalTrackingDescription).getText();
+  }
+
   async getBlockAdditionalTrackingTooltipText()
   {
     return await (await this.blockAdditionalTrackingTooltipText).getText();
@@ -374,9 +397,20 @@ class GeneralPage extends BasePage
     return await (await this.blockCookieWarningsTooltipText).getText();
   }
 
+  async getBlockPushNotificationsDescriptionText()
+  {
+    return await (await this.blockPushNotificationsDescription).getText();
+  }
+
   async getBlockPushNotificationsTooltipText()
   {
     return await (await this.blockPushNotificationsTooltipText).getText();
+  }
+
+  async getBlockSocialMediaIconsTrackingDescriptionText()
+  {
+    return await (await
+    this.blockSocialMediaIconsTrackingDescription).getText();
   }
 
   async getBlockSocialMediaIconsTrackingTooltipText()
@@ -438,10 +472,13 @@ class GeneralPage extends BasePage
       blockCookieWarningsTooltipText, reverseOption);
   }
 
-  async isBlockPushNotificationsCheckboxSelected()
+  async isBlockPushNotificationsCheckboxSelected(reverse = false)
   {
-    return await (await this.blockPushNotificationsCheckbox).
-      getAttribute("aria-checked") === "true";
+    await (await this.blockPushNotificationsCheckbox).
+      waitForEnabled({timeout: 3000});
+    return await this.waitUntilAttributeValueIs(
+      this.blockPushNotificationsCheckbox, "aria-checked", "true",
+      3000, reverse);
   }
 
   async isBlockPushNotificationsTooltipTextDisplayed(reverseOption = false)
@@ -450,10 +487,13 @@ class GeneralPage extends BasePage
       blockPushNotificationsTooltipText, reverseOption);
   }
 
-  async isBlockSocialMediaIconsTrackingCheckboxSelected()
+  async isBlockSocialMediaIconsTrackingCheckboxSelected(reverse = false)
   {
-    return await (await this.blockSocialMediaIconsTrackingCheckbox).
-    getAttribute("aria-checked") === "true";
+    await (await this.blockSocialMediaIconsTrackingCheckbox).
+      waitForEnabled({timeout: 3000});
+    return await this.waitUntilAttributeValueIs(
+      this.blockSocialMediaIconsTrackingCheckbox, "aria-checked", "true",
+      3000, reverse);
   }
 
   async isBlockSocialMediaIconsTrackingTooltipTextDisplayed(reverseOption =

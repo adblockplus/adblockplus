@@ -38,58 +38,6 @@ describe("test options page tooltips", function()
     await afterSequence();
   });
 
-  it("should open block additional tracking tooltip", async function()
-  {
-    const generalPage = new GeneralPage(browser);
-    await generalPage.clickBlockAdditionalTrackingTooltipIcon();
-    expect(await generalPage.
-      isBlockAdditionalTrackingTooltipTextDisplayed()).to.be.true;
-    expect(await generalPage.getBlockAdditionalTrackingTooltipText()).to.equal(
-      dataTooltips.blockAdditionalTrackingTooltipText);
-    await generalPage.clickBlockAdditionalTrackingTooltipIcon();
-    expect(await generalPage.
-      isBlockAdditionalTrackingTooltipTextDisplayed(true)).to.be.true;
-  }, 2);
-
-  it("should open block cookie warnings tooltip", async function()
-  {
-    const generalPage = new GeneralPage(browser);
-    await generalPage.clickBlockCookieWarningsTooltipIcon();
-    expect(await generalPage.
-      isBlockCookieWarningsTooltipTextDisplayed()).to.be.true;
-    expect(await generalPage.getBlockCookieWarningsTooltipText()).to.equal(
-      dataTooltips.blockCookieWarningsTooltipText);
-    await generalPage.clickBlockCookieWarningsTooltipIcon();
-    expect(await generalPage.
-      isBlockCookieWarningsTooltipTextDisplayed(true)).to.be.true;
-  }, 2);
-
-  it("should open block push notifications tooltip", async function()
-  {
-    const generalPage = new GeneralPage(browser);
-    await generalPage.clickBlockPushNotificationsTooltipIcon();
-    expect(await generalPage.
-      isBlockPushNotificationsTooltipTextDisplayed()).to.be.true;
-    expect(await generalPage.getBlockPushNotificationsTooltipText()).to.equal(
-      dataTooltips.blockPushNotificationsTooltipText);
-    await generalPage.clickBlockPushNotificationsTooltipIcon();
-    expect(await generalPage.
-      isBlockPushNotificationsTooltipTextDisplayed(true)).to.be.true;
-  }, 2);
-
-  it("should open block social media icons tracking tooltip", async function()
-  {
-    const generalPage = new GeneralPage(browser);
-    await generalPage.clickBlockSocialMediaIconsTrackingTooltipIcon();
-    expect(await generalPage.
-      isBlockSocialMediaIconsTrackingTooltipTextDisplayed()).to.be.true;
-    expect(await generalPage.getBlockSocialMediaIconsTrackingTooltipText()).
-      to.equal(dataTooltips.blockSocialMediaIconsTrackingTooltipText);
-    await generalPage.clickBlockSocialMediaIconsTrackingTooltipIcon();
-    expect(await generalPage.
-      isBlockSocialMediaIconsTrackingTooltipTextDisplayed(true)).to.be.true;
-  }, 2);
-
   it("should open notify me of available language fls tooltip", async function()
   {
     const generalPage = new GeneralPage(browser);
