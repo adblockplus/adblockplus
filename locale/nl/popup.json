@@ -59,6 +59,9 @@
   "overlay_notification_closing_button_optout": {
     "message": "Tonen van meldingen stoppen"
   },
+  "premium_upgrade": {
+    "message": "Upgraden"
+  },
   "refresh_this_page": {
     "message": "Deze pagina vernieuwen"
   },

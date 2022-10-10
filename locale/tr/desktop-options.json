@@ -341,6 +341,12 @@
   "options_page_title": {
     "message": "Ayarlar"
   },
+  "options_premium_manage": {
+    "message": "Aboneliğimi yönet"
+  },
+  "options_premium_upgrade_description": {
+    "message": "Reklam engelleme deneyiminizi özelleştirin ve geliştirin! <a0>Daha fazla bilgi edinin</a0>"
+  },
   "options_privacy_header": {
     "message": "Gizlilik ve güvenlik"
   },
@@ -373,6 +379,9 @@
   },
   "options_report_forum": {
     "message": "Topluluktan yardım mı almak istiyorsunuz? <a>Foruma bakın.</a>"
+  },
+  "options_signin_button": {
+    "message": "Giriş yap"
   },
   "options_social_description": {
     "message": "Sorunuz veya fikriniz mi var? Yardım etmek için buradayız."
@@ -428,5 +437,8 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Tamam, anladım"
+  },
+  "options_upgrade_button": {
+    "message": "Yükselt"
   }
 }

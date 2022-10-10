@@ -341,6 +341,12 @@
   "options_page_title": {
     "message": "设置"
   },
+  "options_premium_manage": {
+    "message": "管理我的订阅"
+  },
+  "options_premium_upgrade_description": {
+    "message": "定制并提升您的广告拦截体验！<a0>了解更多</a0>"
+  },
   "options_privacy_header": {
     "message": "隐私与安全"
   },
@@ -373,6 +379,9 @@
   },
   "options_report_forum": {
     "message": "想要我们社区的支持？<a>前往论坛</a>"
+  },
+  "options_signin_button": {
+    "message": "登录"
   },
   "options_social_description": {
     "message": "有问题还是新想法？我们来帮忙。"
@@ -428,5 +437,8 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "好的，知道了"
+  },
+  "options_upgrade_button": {
+    "message": "升级"
   }
 }

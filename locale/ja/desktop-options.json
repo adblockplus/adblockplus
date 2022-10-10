@@ -318,6 +318,12 @@
   "options_page_title": {
     "message": "設定"
   },
+  "options_premium_manage": {
+    "message": "サブスクリプションの管理"
+  },
+  "options_premium_upgrade_description": {
+    "message": "広告ブロック体験をカスタマイズ・強化しましょう！<a0>詳しくはこちら</a0>"
+  },
   "options_privacy_header": {
     "message": "プライバシー & セキュリティー"
   },
@@ -350,6 +356,9 @@
   },
   "options_report_forum": {
     "message": "当社コミュニティのサポートを得るには<a>フォーラムに行く</a>"
+  },
+  "options_signin_button": {
+    "message": "サインイン"
   },
   "options_social_description": {
     "message": "当社へのご質問やご提案について是非お役立てください。"
@@ -405,5 +414,8 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "OK, わかりました"
+  },
+  "options_upgrade_button": {
+    "message": "アップグレード"
   }
 }

@@ -341,6 +341,12 @@
   "options_page_title": {
     "message": "Instellingen"
   },
+  "options_premium_manage": {
+    "message": "Beheer mijn abonnement"
+  },
+  "options_premium_upgrade_description": {
+    "message": "Stel uw Adblock-ervaring af en verbeter deze! <a0>Kom meer te weten</a0>"
+  },
   "options_privacy_header": {
     "message": "Privacy en beveiliging"
   },
@@ -373,6 +379,9 @@
   },
   "options_report_forum": {
     "message": "Ondersteuning van onze gemeenschap nodig? <a>Ga naar het forum</a>"
+  },
+  "options_signin_button": {
+    "message": "Aanmelden"
   },
   "options_social_description": {
     "message": "Hebt u een vraag of een nieuw idee? We zijn er om te helpen."
@@ -428,5 +437,8 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "OK, begrepen"
+  },
+  "options_upgrade_button": {
+    "message": "Upgraden"
   }
 }

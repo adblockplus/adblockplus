@@ -59,6 +59,9 @@
   "overlay_notification_closing_button_optout": {
     "message": "通知の表示を停止"
   },
+  "premium_upgrade": {
+    "message": "アップグレード"
+  },
   "refresh_this_page": {
     "message": "このページをリフレッシュ"
   },

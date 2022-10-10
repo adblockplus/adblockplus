@@ -59,6 +59,9 @@
   "overlay_notification_closing_button_optout": {
     "message": "Keine Benachrichtigungen mehr anzeigen"
   },
+  "premium_upgrade": {
+    "message": "Upgrade"
+  },
   "refresh_this_page": {
     "message": "Diese Seite aktualisieren"
   },

@@ -59,6 +59,9 @@
   "overlay_notification_closing_button_optout": {
     "message": "Запретить показ уведомлений"
   },
+  "premium_upgrade": {
+    "message": "Сделать апгрейд"
+  },
   "refresh_this_page": {
     "message": "Обновите данную страницу"
   },

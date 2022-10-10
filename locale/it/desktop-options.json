@@ -341,6 +341,12 @@
   "options_page_title": {
     "message": "Impostazioni"
   },
+  "options_premium_manage": {
+    "message": "Gestisci il mio abbonamento"
+  },
+  "options_premium_upgrade_description": {
+    "message": "Personalizza e migliora la tua esperienza di blocco degli annunci! <a0>Scopri di più</a0>"
+  },
   "options_privacy_header": {
     "message": "PRIVACY E SICUREZZA"
   },
@@ -373,6 +379,9 @@
   },
   "options_report_forum": {
     "message": "Hai bisogno di supporto dalla nostra community? <a>Vai al Forum</a>"
+  },
+  "options_signin_button": {
+    "message": "Accedi"
   },
   "options_social_description": {
     "message": "Hai una domanda o una nuova idea? Siamo qui per aiutarti."
@@ -428,5 +437,8 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Ok, capito"
+  },
+  "options_upgrade_button": {
+    "message": "Aggiorna"
   }
 }

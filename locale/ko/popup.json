@@ -59,6 +59,9 @@
   "overlay_notification_closing_button_optout": {
     "message": "알림 표시를 중지합니다"
   },
+  "premium_upgrade": {
+    "message": "업그레이드"
+  },
   "refresh_this_page": {
     "message": "이 페이지 새로 고침 하기"
   },

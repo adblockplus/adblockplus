@@ -59,6 +59,9 @@
   "overlay_notification_closing_button_optout": {
     "message": "Bildirimleri gösterme"
   },
+  "premium_upgrade": {
+    "message": "Yükselt"
+  },
   "refresh_this_page": {
     "message": "Bu sayfayı yenile"
   },

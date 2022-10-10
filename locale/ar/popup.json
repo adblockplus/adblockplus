@@ -59,6 +59,9 @@
   "overlay_notification_closing_button_optout": {
     "message": "إيقاف عرض الإشعارات"
   },
+  "premium_upgrade": {
+    "message": "ترقية"
+  },
   "refresh_this_page": {
     "message": "تحديث هذه الصفحة"
   },

@@ -299,6 +299,12 @@
   "options_page_title": {
     "message": "Ρυθμίσεις"
   },
+  "options_premium_manage": {
+    "message": "Διαχείριση της συνδρομής μου"
+  },
+  "options_premium_upgrade_description": {
+    "message": "Προσαρμόστε και βελτιώστε την εμπειρία αποκλεισμού διαφημίσεων! <a0>Μάθετε περισσότερα</a0>"
+  },
   "options_privacy_header": {
     "message": "ΑΠΟΡΡΗΤΟΥ & ΑΣΦΑΛΕΙΑ"
   },
@@ -332,6 +338,9 @@
   "options_report_forum": {
     "message": "Θέλετε υποστήριξη από την κοινότητά μας; <a>Πηγαίνετε στο φόρουμ</a>"
   },
+  "options_signin_button": {
+    "message": "Σύνδεση"
+  },
   "options_social_description": {
     "message": "Έχετε μια ερώτηση ή μια νέα ιδέα; Είμαστε εδώ για να βοηθήσουμε."
   },
@@ -361,5 +370,8 @@
   },
   "options_tracking_warning_2": {
     "message": "Πρέπει να γνωρίζετε ότι <strong>ενδεχομένως</strong> να υπάρχει παρακολούθηση με τις αποδεκτές διαφημίσεις. Με αυτόν τον τρόπο οι διαφημιστές μπορούν να σας παρουσιάζουν σχετικότερες διαφημίσεις."
+  },
+  "options_upgrade_button": {
+    "message": "Αναβάθμιση"
   }
 }

@@ -59,6 +59,9 @@
   "overlay_notification_closing_button_optout": {
     "message": "Cesser d'afficher les notifications"
   },
+  "premium_upgrade": {
+    "message": "Mise à jour"
+  },
   "refresh_this_page": {
     "message": "Rafraîchir cette page"
   },

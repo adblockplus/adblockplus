@@ -341,6 +341,12 @@
   "options_page_title": {
     "message": "설정"
   },
+  "options_premium_manage": {
+    "message": "구독 관리"
+  },
+  "options_premium_upgrade_description": {
+    "message": "광고차단 경험을 편집하고 강화하세요! <a0>자세히 보기</a0>"
+  },
   "options_privacy_header": {
     "message": "개인 정보 보호 및 보안"
   },
@@ -373,6 +379,9 @@
   },
   "options_report_forum": {
     "message": "커뮤니티의 지원이 필요하십니까? <a>포럼으로 가기</a>"
+  },
+  "options_signin_button": {
+    "message": "로그인"
   },
   "options_social_description": {
     "message": "질문이나 새로운 아이디어가 있습니까? 기꺼이 도와드리겠습니다."
@@ -419,5 +428,8 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "네. 이해했습니다"
+  },
+  "options_upgrade_button": {
+    "message": "업그레이드"
   }
 }

@@ -341,6 +341,12 @@
   "options_page_title": {
     "message": "Ustawienia"
   },
+  "options_premium_manage": {
+    "message": "Zarządzaj moją subskrypcją"
+  },
+  "options_premium_upgrade_description": {
+    "message": "Dostosuj i zwiększ swoje doświadczenie w zakresie blokowania reklam! <a0>Dowiedz się więcej</a0>"
+  },
   "options_privacy_header": {
     "message": "Prywatność i bezpieczeństwo"
   },
@@ -373,6 +379,9 @@
   },
   "options_report_forum": {
     "message": "Potrzebujesz pomocy od naszej społeczności? <a>Przejdź do forum</a>"
+  },
+  "options_signin_button": {
+    "message": "Zapisz się"
   },
   "options_social_description": {
     "message": "Masz pytanie lub nowy pomysł? Jesteśmy tutaj po to, aby pomóc."
@@ -428,5 +437,8 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "OK, rozumiem"
+  },
+  "options_upgrade_button": {
+    "message": "Aktualizuj"
   }
 }

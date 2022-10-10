@@ -50,6 +50,9 @@
   "overlay_notification_closing_button_optout": {
     "message": "Διακοπή εμφάνισης ειδοποιήσεων"
   },
+  "premium_upgrade": {
+    "message": "Αναβάθμιση"
+  },
   "refresh_this_page": {
     "message": "Ανανέωση αυτής της σελίδας"
   },

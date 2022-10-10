@@ -341,6 +341,12 @@
   "options_page_title": {
     "message": "Definições"
   },
+  "options_premium_manage": {
+    "message": "Gerenciar minha assinatura"
+  },
+  "options_premium_upgrade_description": {
+    "message": "Personalize e aprimore sua experiência de bloqueio de anúncios! <a0>Saiba mais</a0>"
+  },
   "options_privacy_header": {
     "message": "PRIVACIDADE E SEGURANÇA"
   },
@@ -373,6 +379,9 @@
   },
   "options_report_forum": {
     "message": "Quer ajuda da nossa comunidade? <a>Aceda ao Fórum</a>"
+  },
+  "options_signin_button": {
+    "message": "Assinar"
   },
   "options_social_description": {
     "message": "Tem uma pergunta ou sugestão? Estamos aqui para ajudar."
@@ -428,5 +437,8 @@
   },
   "options_tracking_warning_acknowledgment": {
     "message": "Ok, entendi"
+  },
+  "options_upgrade_button": {
+    "message": "Upgrade"
   }
 }
