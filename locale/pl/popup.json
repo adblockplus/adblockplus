@@ -44,6 +44,9 @@
   "footer_social_description": {
     "message": "Bądź z nami w kontakcie!"
   },
+  "idle_header": {
+    "message": "Na tej stronie nie ma nic do zablokowania!"
+  },
   "options_refresh": {
     "message": "Odśwież"
   },

@@ -44,6 +44,9 @@
   "footer_social_description": {
     "message": "Mit uns in Verbindung bleiben!"
   },
+  "idle_header": {
+    "message": "Auf dieser Seite muss nichts blockiert werden!"
+  },
   "options_refresh": {
     "message": "Aktualisieren"
   },

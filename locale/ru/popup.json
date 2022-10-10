@@ -44,6 +44,9 @@
   "footer_social_description": {
     "message": "Оставайтесь на связи!"
   },
+  "idle_header": {
+    "message": "На этой странице нечего блокировать!"
+  },
   "options_refresh": {
     "message": "Обновить"
   },

@@ -41,6 +41,9 @@
   "footer_social_description": {
     "message": "Μείνετε συνδεδεμένοι μαζί μας!"
   },
+  "idle_header": {
+    "message": "Δεν υπάρχει τίποτα για αποκλεισμό σε αυτή τη σελίδα!"
+  },
   "options_short": {
     "message": "Επιλογές"
   },

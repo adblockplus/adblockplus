@@ -44,6 +44,9 @@
   "footer_social_description": {
     "message": "Maradj velünk kapcsolatban!"
   },
+  "idle_header": {
+    "message": "Nincs mit blokkolni ezen az oldalon!"
+  },
   "options_refresh": {
     "message": "Frissítés"
   },

@@ -44,6 +44,9 @@
   "footer_social_description": {
     "message": "Blijf verbonden met ons!"
   },
+  "idle_header": {
+    "message": "Er is niets te blokkeren op deze pagina!"
+  },
   "options_refresh": {
     "message": "Vernieuwen"
   },

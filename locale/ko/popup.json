@@ -44,6 +44,9 @@
   "footer_social_description": {
     "message": "소식을 받아 보세요!"
   },
+  "idle_header": {
+    "message": "이 페이지에서 차단할 내용이 없습니다!"
+  },
   "options_refresh": {
     "message": "갱신"
   },

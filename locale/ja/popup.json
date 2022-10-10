@@ -44,6 +44,9 @@
   "footer_social_description": {
     "message": "ご連絡ください。"
   },
+  "idle_header": {
+    "message": "このページでは、ブロックするものはありません！"
+  },
   "options_refresh": {
     "message": "更新"
   },

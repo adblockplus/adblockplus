@@ -44,6 +44,9 @@
   "footer_social_description": {
     "message": "Bizimle iletişimde kalın!"
   },
+  "idle_header": {
+    "message": "Bu sayfada engellenecek bir şey yok!"
+  },
   "options_refresh": {
     "message": "Tazele"
   },

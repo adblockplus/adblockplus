@@ -44,6 +44,9 @@
   "footer_social_description": {
     "message": "ابقَ على اتصال معنا!"
   },
+  "idle_header": {
+    "message": "لا يوجد شيء لحجبه في هذه الصفحة!"
+  },
   "options_refresh": {
     "message": "تحديث"
   },

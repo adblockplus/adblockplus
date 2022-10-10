@@ -44,6 +44,9 @@
   "footer_social_description": {
     "message": "与我们保持联系！"
   },
+  "idle_header": {
+    "message": "此页面上没有需要拦截的内容！"
+  },
   "options_refresh": {
     "message": "刷新"
   },
