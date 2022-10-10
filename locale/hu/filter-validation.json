@@ -48,6 +48,9 @@
       }
     }
   },
+  "too_many_filters": {
+    "message": "Elérte a maximális szűrőszámot. Távolítson el azonos típusú más szűrőket, mielőtt újakat adna hozzá."
+  },
   "unexpected_filter_list_header": {
     "message": "Kizárólag letölthető szűrőlistákban támogatottak a szűrőlista fejlécek."
   }

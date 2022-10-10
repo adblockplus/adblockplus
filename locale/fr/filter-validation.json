@@ -48,6 +48,9 @@
       }
     }
   },
+  "too_many_filters": {
+    "message": "Nombre maximal de filtres atteint. Veuillez supprimer d'autres filtres du même type avant d'en ajouter de nouveaux."
+  },
   "unexpected_filter_list_header": {
     "message": "Les en-têtes de liste de filtres sont uniquement pris en charge dans les listes de filtres téléchargeables."
   }

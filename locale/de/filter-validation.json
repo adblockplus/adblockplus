@@ -48,6 +48,9 @@
       }
     }
   },
+  "too_many_filters": {
+    "message": "Die maximale Anzahl der Filter wurde erreicht. Bitte entferne andere Filter dieser Art, bevor du neue hinzufügst."
+  },
   "unexpected_filter_list_header": {
     "message": "Filterliste-Header werden nur in herunterladbaren Filterlisten unterstützt."
   }

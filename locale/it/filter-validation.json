@@ -48,6 +48,9 @@
       }
     }
   },
+  "too_many_filters": {
+    "message": "È stato raggiunto il numero massimo di filtri. Rimuovi gli altri filtri dello stesso tipo prima di aggiungerne di nuovi."
+  },
   "unexpected_filter_list_header": {
     "message": "Le intestazioni degli elenchi filtri sono supportate solo negli elenchi filtri scaricabili."
   }

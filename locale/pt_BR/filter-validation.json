@@ -48,6 +48,9 @@
       }
     }
   },
+  "too_many_filters": {
+    "message": "Número máximo de filtros atingido. Remova outros filtros do mesmo tipo antes de adicionar novos filtros."
+  },
   "unexpected_filter_list_header": {
     "message": "Cabeçalhos de listas de filtros são compatíveis apenas em listas de filtros que possam ser baixadas."
   }

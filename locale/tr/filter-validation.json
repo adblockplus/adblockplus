@@ -48,6 +48,9 @@
       }
     }
   },
+  "too_many_filters": {
+    "message": "Maksimum filtre sayısına ulaştınız. Lütfen, yeni filtre eklemeden önce aynı türden başka filtreleri kaldırın."
+  },
   "unexpected_filter_list_header": {
     "message": "Filtre listesi başlıkları yalnızca indirilebilir filtre listelerinde desteklenir."
   }

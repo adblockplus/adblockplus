@@ -48,6 +48,9 @@
       }
     }
   },
+  "too_many_filters": {
+    "message": "已达到筛选器最大数量。请移除其他同类筛选器，然后再添加新筛选器。"
+  },
   "unexpected_filter_list_header": {
     "message": "筛选器列表标头仅在可下载筛选器列表中受支持。"
   }

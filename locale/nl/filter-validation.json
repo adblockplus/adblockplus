@@ -48,6 +48,9 @@
       }
     }
   },
+  "too_many_filters": {
+    "message": "Maximum aantal filters bereikt. Verwijder andere filters van hetzelfde type voordat u nieuwe toevoegt."
+  },
   "unexpected_filter_list_header": {
     "message": "De headers voor filterlijsten worden alleen ondersteund in downloadbare filterlijsten."
   }

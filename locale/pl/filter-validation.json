@@ -48,6 +48,9 @@
       }
     }
   },
+  "too_many_filters": {
+    "message": "Osiągnięto maksymalną ilość filtrów. Przed dodaniem nowych proszę usunąć inne filtry tego samego typu."
+  },
   "unexpected_filter_list_header": {
     "message": "Nagłówki list filtrów są obsługiwane tylko w listach filtrów do pobrania."
   }

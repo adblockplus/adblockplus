@@ -48,6 +48,9 @@
       }
     }
   },
+  "too_many_filters": {
+    "message": "필터 수 한도에 도달했습니다. 새로운 필터를 추가하기 전에 동일한 유형의 다른 필터를 제거해 주십시오."
+  },
   "unexpected_filter_list_header": {
     "message": "필터 목록 헤더는 다운로드 가능한 필터 목록에서만 지원됩니다."
   }
