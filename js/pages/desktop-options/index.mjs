@@ -1147,6 +1147,9 @@ function getListBoxItems(subscriptions)
   for (const subscription of subscriptions)
   {
     const {recommended, url} = subscription;
+    if (recommended === "allowing")
+      continue;
+
     const key = recommended === "ads" ? recommended : "others";
     const label = getPrettyItemTitle(subscription, true);
     const selected = urls.has(url);
