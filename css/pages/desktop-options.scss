@@ -1001,7 +1001,17 @@ body.premium .premium-upgrade.banner
 {
   display: flex;
   align-items: center;
-  gap: 13px;
+}
+
+.premium-upgrade.banner .auth-container > *
+{
+  margin-right: 13px;
+}
+
+html:not([dir="rtl"]) .premium-upgrade.banner .auth-container > *:last-child,
+html[dir="rtl"] .premium-upgrade.banner .auth-container > *:first-child
+{
+  margin-right: 0;
 }
 
 body:not(.premium) .premium-manage.banner
@@ -1012,7 +1022,17 @@ body:not(.premium) .premium-manage.banner
 .premium-manage.banner
 {
   justify-content: end;
-  gap: 10px;
+}
+
+.premium-manage.banner > *
+{
+  margin-right: 10px;
+}
+
+html:not([dir="rtl"]) .premium-manage.banner > *:last-child,
+html[dir="rtl"] .premium-manage.banner > *:first-child
+{
+  margin-right: 0;
 }
 
 .premium-manage.banner .premium-label
@@ -1572,12 +1592,18 @@ section.recommended-features
 {
   display: flex;
   padding-top: 2rem;
-  gap: 24px;
 }
 
-section.recommended-features > *
+section.recommended-features > :not(template)
 {
   flex: 1;
+  margin-right: 24px;
+}
+
+html:not([dir="rtl"]) section.recommended-features > :not(template):last-of-type,
+html[dir="rtl"] section.recommended-features > :not(template):first-of-type
+{
+  margin-right: 0;
 }
 
 section.recommended-features h2
@@ -1589,7 +1615,17 @@ section.recommended-features .premium.list-header
 {
   display: flex;
   align-items: flex-start;
-  gap: 1.4rem;
+}
+
+section.recommended-features .premium.list-header > *
+{
+  margin-right: 1.4rem;
+}
+
+html:not([dir="rtl"]) section.recommended-features .premium.list-header > *:last-child,
+html[dir="rtl"] section.recommended-features .premium.list-header > *:first-child
+{
+  margin-right: 0;
 }
 
 section.recommended-features .premium.list-header a.button
