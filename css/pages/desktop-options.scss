@@ -881,18 +881,19 @@ html[dir="rtl"] #support-us .h2-icon
 .premium.icon::before
 {
   border: none;
+  content: none;
 }
 
 body.premium .premium.icon::before
 {
-  display: inline-block;
-  margin-right: 0.5rem;
+  display: block;
   width: 20px;
   height: 20px;
+  margin-right: 0.5rem;
   background-image: url("icons/premium-crown.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: bottom;
+  background-position: 0 3px;
   content: "";
 }
 
@@ -1609,6 +1610,7 @@ html[dir="rtl"] section.recommended-features > :not(template):first-of-type
 section.recommended-features h2
 {
   margin-bottom: 1.75rem;
+  display: flex;
 }
 
 section.recommended-features .premium.list-header
