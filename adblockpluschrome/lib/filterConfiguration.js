@@ -532,10 +532,13 @@ ewe.subscriptions.onRemoved.addListener(subscription =>
   disabledFilterCounters.delete(subscription.url);
 });
 
-premium.emitter.on("deactivated", () =>
+premium.emitter.on("deactivated", async() =>
 {
   const distractionsList = Prefs.get("premium_distractions_list");
-  ewe.subscriptions.remove(distractionsList.url);
+  if (!(await ewe.subscriptions.has(distractionsList.url)))
+    return;
+
+  await ewe.subscriptions.remove(distractionsList.url);
 });
 
 installHandler("app", "addSubscription", emit =>
