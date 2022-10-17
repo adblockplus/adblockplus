@@ -53,9 +53,9 @@ class TestPages extends BasePage
     return $("#custom-hiding-id");
   }
 
-  get wpsafeFilter()
+  get pubfigFilter()
   {
-    return $("#wpsafelink-blocking-filter");
+    return $("#pubfig-blocking-filter");
   }
 
   get hiddenBySnippetText()
@@ -110,7 +110,7 @@ class TestPages extends BasePage
 
   async getWpsafeFilterText()
   {
-    return await (await this.wpsafeFilter).getText();
+    return await (await this.pubfigFilter).getText();
   }
 
   async getZergmodDivText()

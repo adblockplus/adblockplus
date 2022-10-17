@@ -23,7 +23,7 @@ module.exports =
   commentText: "TESTING, ignore report.",
   emailLabelText: "Email:",
   emailText: "********@a******.o*****",
-  filterData: '<filters>\n    <filter text="/wpsafelink.js" subscriptions="h' +
+  filterData: '<filters>\n    <filter text="/pubfig.js" subscriptions="h' +
   'ttps://easylist-downloads.adblockplus.org/easylist.txt" hitCount="1"/' +
   '>\n    <filter text="/bannerads/*" subscriptions="https://easylist-downlo' +
   'ads.adblockplus.org/easylist.txt" hitCount="2"/>\n    <filter text="###Se' +
@@ -49,8 +49,8 @@ module.exports =
     'issue-reporter-testpage.html" type="DOCUMENT" docDomain="null" thirdPar' +
     'ty="undefined" count="3" filter="##.zergmod"/>',
     '<request location="https://adblockinc.gitlab.io/QA-team/issue-reporter/' +
-    'scripts/wpsafelink.js" type="SCRIPT" docDomain="adblockinc.gitlab.io" ' +
-    'thirdParty="undefined" count="1" filter="/wpsafelink.js"/>',
+    'scripts/pubfig.js" type="SCRIPT" docDomain="adblockinc.gitlab.io" ' +
+    'thirdParty="undefined" count="1" filter="/pubfig.js"/>',
     '<request location="https://adblockinc.gitlab.io/QA-team/issue-reporter/' +
     'scripts/bannerads/blocking-filter.js" type="SCRIPT" docDomain="adblocki' +
     'nc.gitlab.io" thirdParty="undefined" count="1" filter="/bannerads/*"/>',
