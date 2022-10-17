@@ -88,10 +88,13 @@ function activateLicense(oldLicense: License, newLicense: License): void {
  * @param retryCount - Number of times the license check was retried
  */
 async function checkLicense(retryCount: number = 0): Promise<void> {
-  // Keep existing license for now, assuming that we are temporarily unable to
-  // retrieve the license from the server
-  if (retryCount > 3) {
-    return;
+  // Stop retrying but keep existing license for now, assuming that we are
+  // temporarily unable to retrieve the license from the server
+  if (retryCount >= 3) {
+    scheduledEmitter.removeSchedule(licenseCheckRetryEventName);
+    if (retryCount > 3) {
+      return;
+    }
   }
 
   const userId = Prefs.get("premium_user_id") as string;
@@ -128,7 +131,7 @@ async function checkLicense(retryCount: number = 0): Promise<void> {
 
       if (status >= 500 && status <= 599) {
         throw new TemporaryLicenseCheckError(
-          `Received error response (code: ${status}`
+          `Received error response (code: ${status})`
         );
       }
 
@@ -154,7 +157,7 @@ async function checkLicense(retryCount: number = 0): Promise<void> {
     activateLicense(oldLicense, newLicense);
   } catch (ex) {
     if (ex instanceof TemporaryLicenseCheckError) {
-      console.warn(`Premium license check failed (retries: ${retryCount}`, ex);
+      console.warn(`Premium license check failed (retries: ${retryCount})`, ex);
       if (retryCount > 0) {
         return;
       }
