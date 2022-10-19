@@ -15,8 +15,6 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import browser from "webextension-polyfill";
-
 import { installHandler } from "../../../adblockpluschrome/lib/messaging/events";
 import { port } from "../../../adblockpluschrome/lib/messaging/port";
 import { EventEmitter } from "../../../adblockpluschrome/lib/events";
@@ -28,6 +26,12 @@ import { ScheduleType } from "../../core/scheduled-event-emitter/background/sche
 import { EventEmitterCallback } from "../../polyfills/background";
 import { License, LicenseCheckPayload, PremiumState } from "./license.types";
 
+// We want to obtain the reference to the global object from a
+// dedicated service eventually, so let's prepare for that.
+const global: WindowOrWorkerGlobalScope =
+  // eslint-disable-next-line no-restricted-globals
+  typeof window !== "undefined" ? window : self;
+
 /**
  * Error indicating a temporary problem during a license check,
  * which could be resolved by a later retry
@@ -35,24 +39,24 @@ import { License, LicenseCheckPayload, PremiumState } from "./license.types";
 class TemporaryLicenseCheckError extends Error {}
 
 /**
- * Delay between regular license checks in minutes
- */
-const checkInterval = 24 * 60; // 24:00:00
-
-/**
- * Delay between license check retries in milliseconds
- */
-const checkRetryDelay = 60 * 1000; // 00:01:00
-
-/**
  * Emitter for license events
  */
 export const emitter = new EventEmitter();
 
 /**
- * Event name for regular license checks schedule
+ * Delay between regular license checks in milliseconds
  */
-const licenseCheckEventName = "premium.license.check";
+const licenseCheckPeriod = 24 * 60 * 60 * 1000; // 24:00:00
+
+/**
+ * Current timeout for regular license checks
+ */
+let licenseCheckTimeoutId: number | null = null;
+
+/**
+ * Delay between license check retries in milliseconds
+ */
+const licenseCheckRetryDelay = 60 * 1000; // 00:01:00
 
 /**
  * Event name for license check retries schedule
@@ -73,11 +77,12 @@ function activateLicense(oldLicense: License, newLicense: License): void {
   if (oldLicense.status === "active") {
     emitter.emit("updated");
   } else {
-    // We cannot use ScheduledEventEmitter for regular license checks,
-    // because we need the interval to span across multiple sessions
-    browser.alarms.create(licenseCheckEventName, {
-      periodInMinutes: checkInterval
-    });
+    // We cannot set up multi-session license checks using either
+    // scheduled-event-emitter or browser.action. Therefore we're using a
+    // continuous series of timeouts to ensure that the license checks
+    // are properly reinitialized whenever the extension loads.
+    // https://gitlab.com/adblockinc/ext/adblockplus/adblockplusui/-/issues/1267
+    scheduleNextLicenseCheck(null);
     emitter.emit("activated");
   }
 }
@@ -164,7 +169,7 @@ async function checkLicense(retryCount: number = 0): Promise<void> {
 
       scheduledEmitter.setSchedule(
         licenseCheckRetryEventName,
-        checkRetryDelay,
+        licenseCheckRetryDelay,
         ScheduleType.interval
       );
       return;
@@ -180,10 +185,13 @@ async function checkLicense(retryCount: number = 0): Promise<void> {
  */
 function deactivateLicense(): void {
   Prefs.reset("premium_license");
+  Prefs.reset("premium_license_nextcheck");
   Prefs.reset("premium_user_id");
 
   scheduledEmitter.removeSchedule(licenseCheckRetryEventName);
-  scheduledEmitter.removeSchedule(licenseCheckEventName);
+  if (licenseCheckTimeoutId !== null) {
+    global.clearTimeout(licenseCheckTimeoutId);
+  }
 
   emitter.emit("deactivated");
 }
@@ -211,19 +219,45 @@ function hasActiveLicense(): boolean {
  * Initializes Premium license and license checks
  */
 export function initialize(): void {
-  browser.alarms.onAlarm.addListener((info) => {
-    if (info.name !== licenseCheckEventName) {
-      return;
-    }
+  initializeMessaging();
+  initializeLicenseChecks();
+}
 
+/**
+ * Schedules next license check
+ *
+ * @param nextTimestamp - Timestamp of next license check
+ */
+function scheduleNextLicenseCheck(nextTimestamp: number | null): void {
+  if (!nextTimestamp) {
+    /* eslint-disable-next-line no-param-reassign */
+    nextTimestamp = Date.now() + licenseCheckPeriod;
+    Prefs.set("premium_license_nextcheck", nextTimestamp);
+  }
+
+  // We cannot use scheduled-event-emitter to schedule delayed intervals, or
+  // for rescheduling an event when it is emitted.
+  // https://gitlab.com/adblockinc/ext/adblockplus/adblockplusui/-/issues/1227
+  licenseCheckTimeoutId = global.setTimeout(() => {
     checkLicense();
-  });
+    scheduleNextLicenseCheck(null);
+  }, nextTimestamp - Date.now());
+}
 
+/**
+ * Initializes license checks
+ */
+function initializeLicenseChecks(): void {
   scheduledEmitter.setListener(licenseCheckRetryEventName, (info) => {
     checkLicense(info.callCount);
   });
 
-  initializeMessaging();
+  const nextCheckTimestamp = Prefs.get("premium_license_nextcheck");
+  if (!nextCheckTimestamp) {
+    return;
+  }
+
+  scheduleNextLicenseCheck(nextCheckTimestamp);
 }
 
 /**

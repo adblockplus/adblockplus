@@ -158,6 +158,13 @@ defaults.premium_license = {
 defaults.premium_license_activation_origin = "https://accounts.adblockplus.org";
 
 /**
+ * Timestamp indicating when to attempt the next Premium license check.
+ *
+ * @type {number}
+ */
+defaults.premium_license_nextcheck = 0;
+
+/**
  * Premium license check API endpoint
  *
  * @type {string}
