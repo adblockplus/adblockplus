@@ -215,6 +215,17 @@ class GeneralPage extends BasePage
     return $("//li[@aria-label='français + English']");
   }
 
+  get moreFilterListsTable()
+  {
+    return $("#more-list-table");
+  }
+
+  async moreFilterListsTableItemByLabel(label)
+  {
+    return $("//ul[@id='more-list-table']/li[@aria-label" +
+    "='" + label + "']/span");
+  }
+
   get nederlandsPlusEnglishListItem()
   {
     return $("//li[contains(@role, 'option')" +
@@ -256,6 +267,11 @@ class GeneralPage extends BasePage
   get trackingWarning()
   {
     return $("#tracking-warning");
+  }
+
+  get yesUseThisFLButton()
+  {
+    return $("//button[@data-action='add-predefined-subscription']");
   }
 
   async clickAcceptableAdsCriteriaLink()
@@ -382,6 +398,11 @@ class GeneralPage extends BasePage
     await (await this.okGotItTrackingWarningButton).click();
   }
 
+  async clickYesUseThisFLButton()
+  {
+    await this.waitForEnabledThenClick(this.yesUseThisFLButton);
+  }
+
   async getBlockAdditionalTrackingDescriptionText()
   {
     return await (await this.blockAdditionalTrackingDescription).getText();
@@ -426,6 +447,12 @@ class GeneralPage extends BasePage
     return await (await this.languagesTableEmptyPlaceholder).getText();
   }
 
+  async getMoreFilterListsTableItemByLabelText(label)
+  {
+    return await (await
+    this.moreFilterListsTableItemByLabel(label)).getText();
+  }
+
   async getNotifyLanguageFilterListsTooltipText()
   {
     return await (await
@@ -434,6 +461,8 @@ class GeneralPage extends BasePage
 
   async getPredefinedDialogTitleText()
   {
+    await (await this.predefinedDialogTitle).
+      waitForEnabled({timeout: 3000});
     return await (await this.predefinedDialogTitle).getText();
   }
 

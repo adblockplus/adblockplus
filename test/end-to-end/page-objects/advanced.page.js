@@ -208,6 +208,12 @@ class AdvancedPage extends BasePage
     return this.browser.$("//button[@class='delete']");
   }
 
+  get easyListEnglishFLDropdownItem()
+  {
+    return $("//*[@id='filters-boxpopup']/" +
+      "li[contains(text(),'EasyList (English)')]");
+  }
+
   get easyListFL()
   {
     return $("//li[@aria-label='EasyList']");
@@ -520,6 +526,11 @@ class AdvancedPage extends BasePage
   async clickDeleteCustomFLButton()
   {
     await (await this.deleteCustomFLButton).click();
+  }
+
+  async clickEasyListEnglishFL()
+  {
+    await this.scrollIntoViewAndClick(this.easyListEnglishFLDropdownItem);
   }
 
   async clickEasyListFLGearIcon()

@@ -73,9 +73,39 @@ class TestPages extends BasePage
     return $("#snippet-filter");
   }
 
+  get subscribeLink()
+  {
+    return $("//*[@id='subscription-link']/a");
+  }
+
+  get subscriptionBlocking()
+  {
+    return $("#subscription-blocking");
+  }
+
+  get subscriptionBlockingRegex()
+  {
+    return $("#subscription-blocking-regex");
+  }
+
+  get subscriptionHidingClass()
+  {
+    return $("#subscription-hiding-class");
+  }
+
+  get subscriptionHidingId()
+  {
+    return $("#subscription-hiding-id");
+  }
+
   get zergmodDiv()
   {
     return $("#zergmod");
+  }
+
+  async clickSubscribeLink()
+  {
+    await this.waitForEnabledThenClick(this.subscribeLink);
   }
 
   async getCustomBlockingFilterText()
@@ -103,14 +133,36 @@ class TestPages extends BasePage
     return await (await this.banneradsFilter).getText();
   }
 
+  async getPubfigFilterText()
+  {
+    await (await this.pubfigFilter).waitForEnabled({timeout: 2000});
+    return await (await this.pubfigFilter).getText();
+  }
+
   async getServerAdDivText()
   {
     return await (await this.serverAdDiv).getText();
   }
 
-  async getWpsafeFilterText()
+  async getSubscriptionBlockingText()
   {
-    return await (await this.pubfigFilter).getText();
+    await (await this.subscriptionBlocking).waitForEnabled({timeout: 2000});
+    return await (await this.subscriptionBlocking).getText();
+  }
+
+  async getSubscriptionBlockingRegexText()
+  {
+    return await (await this.subscriptionBlockingRegex).getText();
+  }
+
+  async getSubscriptionHidingClassText()
+  {
+    return await (await this.subscriptionHidingClass).getText();
+  }
+
+  async getSubscriptionHidingIdText()
+  {
+    return await (await this.subscriptionHidingId).getText();
   }
 
   async getZergmodDivText()
@@ -136,6 +188,16 @@ class TestPages extends BasePage
   async isServerAdDivDisplayed()
   {
     return await (await this.serverAdDiv).isDisplayed();
+  }
+
+  async isSubscriptionHidingClassDisplayed()
+  {
+    return await (await this.subscriptionHidingClass).isDisplayed();
+  }
+
+  async isSubscriptionHidingIdDisplayed()
+  {
+    return await (await this.subscriptionHidingId).isDisplayed();
   }
 
   async isSnippetFilterDivDisplayed()

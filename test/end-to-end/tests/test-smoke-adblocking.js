@@ -104,7 +104,7 @@ describe("test adblocking as part of the smoke tests", function()
   {
     await browser.newWindow(testData.blockHideUrl);
     const testPages = new TestPages(browser);
-    expect(await testPages.getWpsafeFilterText()).to.include(
+    expect(await testPages.getPubfigFilterText()).to.include(
       "/pubfig.js was blocked");
     expect(await testPages.getBanneradsFilterText()).to.include(
       "/bannerads/* was blocked");
@@ -140,7 +140,7 @@ describe("test adblocking as part of the smoke tests", function()
     await allowistedWebsitesPage.clickAddWebsiteButton();
     await browser.newWindow(testData.allowlistingUrl);
     const testPages = new TestPages(browser);
-    expect(await testPages.getWpsafeFilterText()).to.include(
+    expect(await testPages.getPubfigFilterText()).to.include(
       "pubfig.js blocking filter should block this");
     expect(await testPages.getBanneradsFilterText()).to.include(
       "first bannerads/* blocking filter should block this");
@@ -159,7 +159,7 @@ describe("test adblocking as part of the smoke tests", function()
     });
     await browser.newWindow(testData.allowlistingUrl);
     await browser.refresh();
-    expect(await testPages.getWpsafeFilterText()).to.include(
+    expect(await testPages.getPubfigFilterText()).to.include(
       "/pubfig.js was blocked");
     expect(await testPages.getBanneradsFilterText()).to.include(
       "/bannerads/* was blocked");
