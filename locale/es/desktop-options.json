@@ -52,6 +52,9 @@
       }
     }
   },
+  "options_beta_label": {
+    "message": "Beta"
+  },
   "options_builtin_filterList_add": {
     "message": "Añadir listas de filtros integradas"
   },
@@ -268,6 +271,9 @@
   "options_footer_contribute": {
     "message": "CONTRIBUIR"
   },
+  "options_free_filters_header": {
+    "message": "Extras gratuitos"
+  },
   "options_general_description": {
     "message": "Determina qué muestra y oculta Adblock Plus en páginas web"
   },
@@ -359,20 +365,17 @@
   "options_rating_button": {
     "message": "Valóranos"
   },
-  "options_recommended_cookies_tooltip": {
-    "message": "Al agregar este filtro estás renunciando a tu derecho de ser notificado acerca de las cookies y de editar la configuración de cookies en sitios web individuales. Ten en cuenta que algunos sitios web pueden hacerte un seguimiento de forma predeterminada. Más información aquí: <a0>https://adblockplus.org/block-cookie-warnings</a0>"
+  "options_recommended_distractions_description": {
+    "message": "Bloquear vídeos flotantes, ventanas emergentes de boletines de noticias, solicitudes de encuestas y notificaciones de sitios."
   },
-  "options_recommended_filters_header": {
-    "message": "Filtros recomendados"
+  "options_recommended_notifications_description": {
+    "message": "Haz que los sitios web dejen de preguntarte si deseas permitir la recepción de notificaciones que podrían realizar un seguimiento de tu actividad en Internet."
   },
-  "options_recommended_notifications_tooltip": {
-    "message": "Haz que los sitios web dejen de preguntarte si deseas permitir la recepción de notificaciones que podrían hacer un seguimiento de tu actividad en Internet."
+  "options_recommended_privacy_description": {
+    "message": "Protege tu privacidad frente a entidades conocidas que pueden rastrear tu actividad en Internet en los sitios web que visitas."
   },
-  "options_recommended_privacy_tooltip": {
-    "message": "Protege tu privacidad frente a entidades conocidas que pueden realizar un seguimiento de tu actividad en Internet en los sitios web que visitas."
-  },
-  "options_recommended_social_tooltip": {
-    "message": "Los iconos de redes sociales de los sitios web que visitas permiten a las redes sociales construir un perfil tuyo basado en tus hábitos de navegación, aunque no hagas clic en ellos. Ocultar estos iconos puede proteger tu perfil."
+  "options_recommended_social_description": {
+    "message": "Evita que las redes sociales construyan un perfil tuyo basado en tus hábitos de navegación."
   },
   "options_report_bug": {
     "message": "¿Encontraste un error? <a>Envíanos un informe de error</a>"

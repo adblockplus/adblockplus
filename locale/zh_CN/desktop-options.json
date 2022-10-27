@@ -52,6 +52,9 @@
       }
     }
   },
+  "options_beta_label": {
+    "message": "试用版"
+  },
   "options_builtin_filterList_add": {
     "message": "添加内置过滤列表"
   },
@@ -268,6 +271,9 @@
   "options_footer_contribute": {
     "message": "协助"
   },
+  "options_free_filters_header": {
+    "message": "免费额外项目"
+  },
   "options_general_description": {
     "message": "确定 Adblock Plus 在网站上显示和隐藏的内容"
   },
@@ -359,20 +365,17 @@
   "options_rating_button": {
     "message": "评价我们"
   },
-  "options_recommended_cookies_tooltip": {
-    "message": "添加此筛选器，即表示您放弃在各个网站上收到 Cookie 相关通知及编辑 Cookie 设置的权利。更多信息请参阅此处：<a0>https://adblockplus.org/block-cookie-warnings</a0>"
+  "options_recommended_distractions_description": {
+    "message": "拦截浮动视频、新闻通讯弹出窗口、调查请求和网站通知。"
   },
-  "options_recommended_filters_header": {
-    "message": "推荐的筛选器"
+  "options_recommended_notifications_description": {
+    "message": "阻止网站要求您允许可能跟踪您的在线活动的推送通知。"
   },
-  "options_recommended_notifications_tooltip": {
-    "message": "阻止网站要求您允许可能追踪您的在线活动的推送通知。"
+  "options_recommended_privacy_description": {
+    "message": "针对已知可能会在您访问的网站上跟踪您的在线活动的实体保护您的隐私。"
   },
-  "options_recommended_privacy_tooltip": {
-    "message": "针对已知会追踪您访问各网站的在线活动的实体保护您的隐私"
-  },
-  "options_recommended_social_tooltip": {
-    "message": "您访问的网站上的社交媒体图标可让社交媒体网络根据您的浏览习惯为您建立个人资料 - 即使您未点击它们。隐藏这些图标可以保护您的个人资料。"
+  "options_recommended_social_description": {
+    "message": "防止社交媒体网络根据您的浏览习惯建立您的个人档案。"
   },
   "options_report_bug": {
     "message": "发现错误？<a>向我们发送错误报告</a>"

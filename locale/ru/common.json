@@ -20,8 +20,8 @@
   "common_feature_circumvention_title": {
     "message": "Список фильтров для антиобхода ABP"
   },
-  "common_feature_cookies_title": {
-    "message": "Заблокировать предупреждения о файлах cookie"
+  "common_feature_distractions_title": {
+    "message": "Заблокируйте еще больше помех"
   },
   "common_feature_malware_title": {
     "message": "Блокировать вредоносные программы"

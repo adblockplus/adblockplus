@@ -20,8 +20,8 @@
   "common_feature_circumvention_title": {
     "message": "ABP Megkerülésvédelem szűrőlista"
   },
-  "common_feature_cookies_title": {
-    "message": "Süti figyelmeztetések blokkolása"
+  "common_feature_distractions_title": {
+    "message": "Blokkoljon még több figyelmet elvonó tartalmat"
   },
   "common_feature_malware_title": {
     "message": "Kártékony szoftverek blokkolása"

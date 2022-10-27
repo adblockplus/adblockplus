@@ -20,8 +20,8 @@
   "common_feature_circumvention_title": {
     "message": "قائمة فلاتر ضد التحايل ABP"
   },
-  "common_feature_cookies_title": {
-    "message": "حجب تحذيرات ملفات تعريف الارتباط"
+  "common_feature_distractions_title": {
+    "message": "حجب المزيد من عوامل التشتيت"
   },
   "common_feature_malware_title": {
     "message": "منع البرامج الضارة"

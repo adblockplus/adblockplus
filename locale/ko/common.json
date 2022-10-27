@@ -20,8 +20,8 @@
   "common_feature_circumvention_title": {
     "message": "ABP 우회덤핑방지 필터 목록"
   },
-  "common_feature_cookies_title": {
-    "message": "쿠키 경고 차단"
+  "common_feature_distractions_title": {
+    "message": "산만한 요소 차단 강화"
   },
   "common_feature_malware_title": {
     "message": "멀웨어 차단"

@@ -52,6 +52,9 @@
       }
     }
   },
+  "options_beta_label": {
+    "message": "Bêta"
+  },
   "options_builtin_filterList_add": {
     "message": "Ajouter des listes de filtres intégrés"
   },
@@ -268,6 +271,9 @@
   "options_footer_contribute": {
     "message": "PARTICIPER"
   },
+  "options_free_filters_header": {
+    "message": "Extras gratuits"
+  },
   "options_general_description": {
     "message": "Déterminez les éléments qu’Adblock Plus affiche et masque sur les sites web"
   },
@@ -359,20 +365,17 @@
   "options_rating_button": {
     "message": "Évaluez-nous"
   },
-  "options_recommended_cookies_tooltip": {
-    "message": "En ajoutant ce filtre, vous renoncez à votre droit d’être informé(e) des cookies et de modifier les paramètres des cookies des sites Web individuellement. Veuillez noter que certains sites Web peuvent vous suivre par défaut. Plus d’informations sur : <a0>https://adblockplus.org/block-cookie-warnings</a0>"
+  "options_recommended_distractions_description": {
+    "message": "Bloquez les vidéos flottantes, les popups de newsletter, les demandes d’enquête et les notifications de site."
   },
-  "options_recommended_filters_header": {
-    "message": "Filtres recommandés"
+  "options_recommended_notifications_description": {
+    "message": "Empêchez les sites internet de vous demander d’autoriser les notifications push susceptibles de suivre vos activités en ligne."
   },
-  "options_recommended_notifications_tooltip": {
-    "message": "Empêchez les sites Web de vous demander d'autoriser les notifications push susceptibles de suivre votre activité en ligne."
+  "options_recommended_privacy_description": {
+    "message": "Protégez votre vie privée des entités connues susceptibles de suivre vos activités en ligne sur les sites internet que vous consultez."
   },
-  "options_recommended_privacy_tooltip": {
-    "message": "Protégez votre vie privée des entités connues susceptibles de suivre votre activité en ligne sur les sites Web que vous visitez."
-  },
-  "options_recommended_social_tooltip": {
-    "message": "Les icônes de réseaux sociaux sur les sites Web que vous visitez leur permettent de créer un profil de vous en fonction de vos habitudes de navigation, même si vous ne cliquez pas dessus. En masquant ces icônes, vous pouvez protéger votre profil."
+  "options_recommended_social_description": {
+    "message": "Empêchez les réseaux sociaux de créer un profil de vous basé sur vos habitudes de navigation."
   },
   "options_report_bug": {
     "message": "Vous avez trouvé un bogue ? <a>Envoyez-nous un rapport de bogue</a>"

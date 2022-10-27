@@ -52,6 +52,9 @@
       }
     }
   },
+  "options_beta_label": {
+    "message": "Beta"
+  },
   "options_builtin_filterList_add": {
     "message": "Hirdetések beépített szűrőlistái"
   },
@@ -268,6 +271,9 @@
   "options_footer_contribute": {
     "message": "Közreműködés"
   },
+  "options_free_filters_header": {
+    "message": "Ingyenes extra funkciók"
+  },
   "options_general_description": {
     "message": "Az Adblock Plus által elrejtett és megjelenített elemek meghatározása"
   },
@@ -359,20 +365,17 @@
   "options_rating_button": {
     "message": "Értékeljen bennünket"
   },
-  "options_recommended_cookies_tooltip": {
-    "message": "A szűrő hozzáadásával lemond a sütikre vonatkozó értesítésekről és a sütik szerkesztéséről az egyes weboldalakon. További információk találhatóak a következő címen: <a0>https://adblockplus.org/block-cookie-warnings</a0>"
+  "options_recommended_distractions_description": {
+    "message": "Blokkolja a lebegő videókat, felugró hírleveleket, felmérés kérelmeket és webhely értesítéseket."
   },
-  "options_recommended_filters_header": {
-    "message": "Ajánlott szűrők"
+  "options_recommended_notifications_description": {
+    "message": "Tiltsa le a webhelyek leküldéses értesítéseinek kérelmeit, amelyekkel online tevékenységét követhetik."
   },
-  "options_recommended_notifications_tooltip": {
-    "message": "Akadályozza meg, hogy a weboldalak olyan leküldéses értesítésekre vonatkozó engedélyeket kérjenek, amelyekkel nyomon követhető az online tevékenysége."
+  "options_recommended_privacy_description": {
+    "message": "Védje meg adatait olyan entitásoktól, amelyek követhetik az online tevékenységét a meglátogatott webhelyeken."
   },
-  "options_recommended_privacy_tooltip": {
-    "message": "Védje adatait olyan entitásoktól, amelyek követhetik online tevékenységét a meglátogatott weboldalakon."
-  },
-  "options_recommended_social_tooltip": {
-    "message": "A meglátogatott weboldalakon található közösségi média ikonok lehetővé teszik a közösségi felületek számára, hogy profilt hozzanak létre a felhasználókról a böngészési szokásaik alapján, akkor is, ha nem kattint rájuk. Az ikonok elrejtésével védelmet biztosíthat a profiljának."
+  "options_recommended_social_description": {
+    "message": "Akadályozza meg, hogy a közösségi média hálózatok profilt készíthessenek a böngészési szokásai alapján."
   },
   "options_report_bug": {
     "message": "Hibát talált? <a>Küldjön hibajelentést nekünk</a>"

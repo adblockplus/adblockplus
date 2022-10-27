@@ -52,6 +52,9 @@
       }
     }
   },
+  "options_beta_label": {
+    "message": "Beta"
+  },
   "options_builtin_filterList_add": {
     "message": "Yerleşik süzgeç listeleri ekleyin"
   },
@@ -268,6 +271,9 @@
   "options_footer_contribute": {
     "message": "Katkıda bulun"
   },
+  "options_free_filters_header": {
+    "message": "Ücretsiz ekstra özellikler"
+  },
   "options_general_description": {
     "message": "Adblock Plus'ın sayfalarda ne gösterip ne gizleyeceğini belirleyin"
   },
@@ -359,20 +365,17 @@
   "options_rating_button": {
     "message": "Bizi değerlendirin"
   },
-  "options_recommended_cookies_tooltip": {
-    "message": "Bu filtreyi ekleyerek, çerezler hakkında bilgilendirilme ve bireysel web sitelerindeki çerez ayarlarını düzenleme hakkınızdan feragat etmiş olursunuz. Lütfen bazı web sitelerinin varsayılan olarak sizi izleyebileceğini unutmayın. Daha fazla bilgiye şu adresten ulaşabilirsiniz: <a0>https://adblockplus.org/block-cookie-warnings</a0>"
+  "options_recommended_distractions_description": {
+    "message": "Yüzen videoları, bülten açılır pencerelerini, anket taleplerini ve site bildirimlerini engelleyin."
   },
-  "options_recommended_filters_header": {
-    "message": "Önerilen filtreler"
+  "options_recommended_notifications_description": {
+    "message": "Web sitelerinin, çevrimiçi etkinliğinizi izleyebilecek anlık bildirimlere izin vermeniz için istek göndermesine son verin."
   },
-  "options_recommended_notifications_tooltip": {
-    "message": "Web sitelerinin, çevrim içi etkinliğinizi izleyebilecek anlık bildirimlere izin vermeniz konusunda gönderdiği isteklerini durdurun."
+  "options_recommended_privacy_description": {
+    "message": "Gizliliğinizi, ziyaret ettiğiniz web sitelerindeki çevrimiçi aktivitenizi izleyebilecek bilinen varlıklardan koruyun."
   },
-  "options_recommended_privacy_tooltip": {
-    "message": "Gizliliğinizi, ziyaret ettiğiniz web sitelerindeki çevrim içi etkinliğinizi izleyebilecek bilinen varlıklardan koruyun."
-  },
-  "options_recommended_social_tooltip": {
-    "message": "Ziyaret ettiğiniz web sitelerindeki sosyal medya simgeleri, bunlara tıklamadığınızda bile, sosyal medya ağlarının, gezinme alışkanlıklarınıza göre sizin bir profilinizi oluşturmalarına olanak tanır. Bu simgeleri gizlemek profilinizi koruyabilir."
+  "options_recommended_social_description": {
+    "message": "Sosyal medya ağlarının, gezinme alışkanlıklarınıza bakarak size ait profil oluşturmasını önleyin."
   },
   "options_report_bug": {
     "message": "Hataya mı rastladınız? <a>Sorunu bize bildirin.</a>"

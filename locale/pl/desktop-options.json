@@ -52,6 +52,9 @@
       }
     }
   },
+  "options_beta_label": {
+    "message": "Beta"
+  },
   "options_builtin_filterList_add": {
     "message": "Dodaj wbudowane listy filtrów"
   },
@@ -268,6 +271,9 @@
   "options_footer_contribute": {
     "message": "Wesprzyj nas"
   },
+  "options_free_filters_header": {
+    "message": "Darmowe dodatki"
+  },
   "options_general_description": {
     "message": "Określ, co Adblock Plus pokazuje i ukrywa na stronach internetowych"
   },
@@ -359,20 +365,17 @@
   "options_rating_button": {
     "message": "Oceń nas"
   },
-  "options_recommended_cookies_tooltip": {
-    "message": "Dodając ten filtr, użytkownik zrzeka się prawa do otrzymywania informacji o plikach cookie oraz edytowania ustawień plików cookie na poszczególnych stronach internetowych. Należy pamiętać, że niektóre witryny mogą domyślnie śledzić użytkownika. Więcej informacji tutaj: <a0>https://adblockplus.org/block-cookie-warnings</a0>"
+  "options_recommended_distractions_description": {
+    "message": "Blokuj pływające filmy, wyskakujące okienka newslettera, prośby o wypełnienie ankiet oraz powiadomienia z witryn."
   },
-  "options_recommended_filters_header": {
-    "message": "Zalecane filtry"
+  "options_recommended_notifications_description": {
+    "message": "Powstrzymaj witryny przed proszeniem o zgodę na powiadomienia, które mogłyby śledzić Twoją aktywność w sieci."
   },
-  "options_recommended_notifications_tooltip": {
-    "message": "Powstrzymanie witryn przed proszeniem o zgodę na powiadomienia, które mogą śledzić Twoją aktywność w sieci."
-  },
-  "options_recommended_privacy_tooltip": {
+  "options_recommended_privacy_description": {
     "message": "Chroń swoją prywatność przed znanymi podmiotami, które mogą śledzić Twoją aktywność online na odwiedzanych stronach internetowych."
   },
-  "options_recommended_social_tooltip": {
-    "message": "Ikony mediów społecznościowych na odwiedzanych stronach internetowych umożliwiają sieciom społecznościowym budowanie Twojego profilu w oparciu o nawyki przeglądania stron - nawet jeśli ich nie klikasz. Ukrycie tych ikon może uchronić Twój profil."
+  "options_recommended_social_description": {
+    "message": "Zablokuj sieciom społecznościowym możliwość budowania Twojego profilu w oparciu o nawyki w przeglądaniu stron."
   },
   "options_report_bug": {
     "message": "Widzisz błąd? <a>Wyślij do nas zgłoszenie</a>"

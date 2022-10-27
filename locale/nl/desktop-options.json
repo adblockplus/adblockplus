@@ -52,6 +52,9 @@
       }
     }
   },
+  "options_beta_label": {
+    "message": "Beta"
+  },
   "options_builtin_filterList_add": {
     "message": "Ingebouwde filterlijsten toevoegen"
   },
@@ -268,6 +271,9 @@
   "options_footer_contribute": {
     "message": "Bijdragen"
   },
+  "options_free_filters_header": {
+    "message": "Gratis extra's"
+  },
   "options_general_description": {
     "message": "Bepalen wat Adblock Plus op websites toont en verbergt"
   },
@@ -359,20 +365,17 @@
   "options_rating_button": {
     "message": "Beoordeel ons"
   },
-  "options_recommended_cookies_tooltip": {
-    "message": "Door dit filter toe te voegen doet u afstand van uw recht om op de hoogte gesteld te worden over cookies en het wijzigen van cookie-instellingen op individuele websites. Houd er rekening mee dat sommige websites u standaard volgen. Hier vind u meer informatie: <a0>https://adblockplus.org/block-cookie-warnings</a0>"
+  "options_recommended_distractions_description": {
+    "message": "Blokkeer zwevende videovensters, nieuwsbriefpop-ups, enquêteverzoeken en websitemeldingen"
   },
-  "options_recommended_filters_header": {
-    "message": "Aanbevolen filters"
+  "options_recommended_notifications_description": {
+    "message": "Voorkom dat websites u vragen om pushmeldingen toe te staan die uw online activiteit kunnen tracken."
   },
-  "options_recommended_notifications_tooltip": {
-    "message": "Stop websites met vragen of u pushmeldingen toestaat die uw online-activiteit kunnen volgen."
+  "options_recommended_privacy_description": {
+    "message": "Bescherm uw privacy tegen bekende entiteiten die uw online activiteit mogelijk kunnen tracken wanneer u websites bezoekt."
   },
-  "options_recommended_privacy_tooltip": {
-    "message": "Bescherm uw privacy tegen bekende entiteiten die uw online activiteiten kunnen volgen via alle websites die u bezoekt."
-  },
-  "options_recommended_social_tooltip": {
-    "message": "De sociale media pictogrammen op de websites die u bezoekt laten toe dat sociale media netwerken een profiel van u bouwen op basis van uw browsinggedrag - zelfs als u er niet op klikt. Het verbergen van deze pictogrammen kan uw profiel beschermen."
+  "options_recommended_social_description": {
+    "message": "Voorkom dat sociale medianetwerken een profiel van u opbouwen op basis van uw surfgewoonten."
   },
   "options_report_bug": {
     "message": "Een bug gevonden? <a>Stuur ons een bugrapport</a>"

@@ -52,6 +52,9 @@
       }
     }
   },
+  "options_beta_label": {
+    "message": "Beta"
+  },
   "options_builtin_filterList_add": {
     "message": "Aggiungere elenchi di filtri integrati"
   },
@@ -268,6 +271,9 @@
   "options_footer_contribute": {
     "message": "CONTRIBUIRE"
   },
+  "options_free_filters_header": {
+    "message": "Extra gratuiti"
+  },
   "options_general_description": {
     "message": "Definisci cosa viene mostrato e nascosto sui siti da Adblock Plus"
   },
@@ -359,20 +365,17 @@
   "options_rating_button": {
     "message": "Dacci un voto"
   },
-  "options_recommended_cookies_tooltip": {
-    "message": "Aggiungendo questo filtro rinunci al diritto di essere informato/a sui cookie e di modificare le impostazioni dei cookie sui singoli siti web. Tieni presente che alcuni siti web possono tracciarti di default. Maggiori informazioni qui: <a0>https://adblockplus.org/block-cookie-warnings</a0>"
+  "options_recommended_distractions_description": {
+    "message": "Blocca i video fluttuanti, i pop-up delle newsletter, le richieste di sondaggi e le notifiche dei siti."
   },
-  "options_recommended_filters_header": {
-    "message": "Filtri consigliati"
+  "options_recommended_notifications_description": {
+    "message": "Impedisci ai siti web di chiederti di autorizzare le notifiche push che potrebbero tracciare la tua attività online."
   },
-  "options_recommended_notifications_tooltip": {
-    "message": "Impedisci ai siti web di chiederti di consentire le notifiche push che potrebbero tracciare la tua attività online."
-  },
-  "options_recommended_privacy_tooltip": {
+  "options_recommended_privacy_description": {
     "message": "Proteggi la tua privacy da entità note che possono tracciare la tua attività online sui siti web che visiti."
   },
-  "options_recommended_social_tooltip": {
-    "message": "Le icone dei social media sui siti web che visiti consentono alle reti dei social media di costruire un profilo di te basato sulle tue abitudini di navigazione, anche se non ci fai clic. Nascondendo queste icone puoi proteggere il tuo profilo."
+  "options_recommended_social_description": {
+    "message": "Impedisci ai social network di creare un tuo profilo in base alle tue abitudini di navigazione."
   },
   "options_report_bug": {
     "message": "Hai trovato un bug? <a>Inviaci un bug report</a>"
