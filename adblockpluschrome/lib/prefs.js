@@ -176,14 +176,14 @@ defaults.premium_license_check_url = "https://myadblock.licensing.adblockplus.de
  *
  * @type {string}
  */
-defaults.premium_manage_page_url = "https://accounts.adblockplus.org/%LANG%/manage/?s=%SOURCE%";
+defaults.premium_manage_page_url = "https://accounts.adblockplus.org/%LANG%/manage?s=%SOURCE%";
 
 /**
  * Address of page to upgrade to Premium.
  *
  * @type {string}
  */
-defaults.premium_upgrade_page_url = "https://accounts.adblockplus.org/%LANG%/premium/?an=%ADDON_NAME%&av=%ADDON_VERSION%&ap=%APPLICATION_NAME%&apv=%APPLICATION_VERSION%&p=%PLATFORM_NAME%&pv=%PLATFORM_VERSION%&s=%SOURCE%";
+defaults.premium_upgrade_page_url = "https://accounts.adblockplus.org/%LANG%/premium?an=%ADDON_NAME%&av=%ADDON_VERSION%&ap=%APPLICATION_NAME%&apv=%APPLICATION_VERSION%&p=%PLATFORM_NAME%&pv=%PLATFORM_VERSION%&s=%SOURCE%";
 
 /**
  * Premium user ID
