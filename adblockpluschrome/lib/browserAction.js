@@ -19,8 +19,8 @@
 
 import {TabSessionStorage} from "./storage/tab-session.js";
 
-let changesByTabId = new Map();
 let badgeStateByPage = new TabSessionStorage("browserAction:blockedState");
+let changesByPage = new TabSessionStorage("browserAction:changes");
 
 async function setBadgeState(tabId, key, value)
 {
@@ -103,52 +103,44 @@ function applyChanges(tabId, changes)
 
 async function addChange(tabId, name, value)
 {
-  let changes = changesByTabId.get(tabId);
-  if (!changes)
-  {
-    changes = {};
-    changesByTabId.set(tabId, changes);
-  }
+  const changes = (await changesByPage.get(tabId)) || {};
   changes[name] = value;
+  await changesByPage.set(tabId, changes);
 
-  function cleanup()
+  try
   {
-    changesByTabId.delete(tabId);
+    await applyChanges(tabId, changes);
+    await changesByPage.delete(tabId);
   }
-
-  async function onReplaced(addedTabId, removedTabId)
+  catch (e)
   {
-    if (addedTabId == tabId)
-    {
-      browser.tabs.onReplaced.removeListener(onReplaced);
-      try
-      {
-        await applyChanges(tabId, changes);
-        cleanup();
-      }
-      catch (e)
-      {
-        cleanup();
-      }
-    }
-  }
-
-  if (!browser.tabs.onReplaced.hasListener(onReplaced))
-  {
-    try
-    {
-      await applyChanges(tabId, changes);
-      cleanup();
-    }
-    catch (e)
-    {
-      // If the tab is prerendered, browser.action.set* fails
-      // and we have to delay our changes until the currently visible tab
-      // is replaced with the prerendered tab.
-      browser.tabs.onReplaced.addListener(onReplaced);
-    }
+    // If the tab is prerendered, browser.action.set* fails
+    // and we have to delay our changes until the currently visible tab
+    // is replaced with the prerendered tab.
   }
 }
+
+async function onReplaced(addedTabId)
+{
+  const changes = await changesByPage.get(addedTabId);
+  if (!changes)
+    return;
+
+  try
+  {
+    await applyChanges(addedTabId, changes);
+  }
+  catch (e)
+  {
+    // Ignore if we fail to apply the changes
+  }
+
+  await changesByPage.delete(addedTabId);
+}
+// If the tab is prerendered, browser.action.set* fails
+// and we have to delay our changes until the currently visible tab
+// is replaced with the prerendered tab.
+browser.tabs.onReplaced.addListener(onReplaced);
 
 /**
  * Sets icon badge for given tab.
