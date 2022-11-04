@@ -79,22 +79,22 @@ build:
     - npx gulp build -t firefox --unhandled-rejections=strict
     - npx gulp source
     # Attach commit hash to build files
-    - mv adblockpluschrome-*.zip adblockplus-chrome-${CI_COMMIT_SHA:0:8}.zip
-    - mv adblockplusfirefox-*.xpi adblockplus-firefox-${CI_COMMIT_SHA:0:8}.xpi
-    - mv adblockplus-*.tar.gz adblockplus-${CI_COMMIT_SHA:0:8}.tar.gz
+    - mv adblockpluschrome-*.zip adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
+    - mv adblockplusfirefox-*.xpi adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
+    - mv adblockplus-*.tar.gz adblockplus-${CI_COMMIT_SHORT_SHA}.tar.gz
     # Create Manifest v3 extension builds
     - npx gulp build -t chrome -m 3 --unhandled-rejections=strict
     - npx gulp build -t firefox -m 3 --unhandled-rejections=strict
     # Attach commit hash to build files
-    - mv adblockpluschrome-*.zip adblockplus-chrome-${CI_COMMIT_SHA:0:8}-mv3.zip
-    - mv adblockplusfirefox-*.xpi adblockplus-firefox-${CI_COMMIT_SHA:0:8}-mv3.xpi
+    - mv adblockpluschrome-*.zip adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
+    - mv adblockplusfirefox-*.xpi adblockplus-firefox-${CI_COMMIT_SHORT_SHA}-mv3.xpi
   artifacts:
     paths:
-      - adblockpluschrome/adblockplus-${CI_COMMIT_SHA:0:8}.tar.gz
-      - adblockpluschrome/adblockplus-chrome-${CI_COMMIT_SHA:0:8}.zip
-      - adblockpluschrome/adblockplus-chrome-${CI_COMMIT_SHA:0:8}-mv3.zip
-      - adblockpluschrome/adblockplus-firefox-${CI_COMMIT_SHA:0:8}.xpi
-      - adblockpluschrome/adblockplus-firefox-${CI_COMMIT_SHA:0:8}-mv3.xpi
+      - adblockpluschrome/adblockplus-${CI_COMMIT_SHORT_SHA}.tar.gz
+      - adblockpluschrome/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
+      - adblockpluschrome/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
+      - adblockpluschrome/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
+      - adblockpluschrome/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}-mv3.xpi
 
 ################################################################################
 # Translate
