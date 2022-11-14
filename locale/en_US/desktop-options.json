@@ -3,10 +3,6 @@
     "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/346793c03b74f446073c6653bdb7f84c7f08f680/spec/abp/desktop-settings/index.md#free-users",
     "message": "Customize and enhance your adblocking experience! <a0>Learn more</a0>"
   },
-  "options_signin_button": {
-    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/346793c03b74f446073c6653bdb7f84c7f08f680/spec/abp/desktop-settings/index.md#free-users",
-    "message": "Sign in"
-  },
   "options_upgrade_button": {
     "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/346793c03b74f446073c6653bdb7f84c7f08f680/spec/abp/desktop-settings/index.md#free-users",
     "message": "Upgrade"

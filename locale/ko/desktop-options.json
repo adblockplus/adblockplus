@@ -383,9 +383,6 @@
   "options_report_forum": {
     "message": "커뮤니티의 지원이 필요하십니까? <a>포럼으로 가기</a>"
   },
-  "options_signin_button": {
-    "message": "로그인"
-  },
   "options_social_description": {
     "message": "질문이나 새로운 아이디어가 있습니까? 기꺼이 도와드리겠습니다."
   },

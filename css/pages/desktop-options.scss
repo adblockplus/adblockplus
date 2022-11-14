@@ -937,6 +937,7 @@ body.premium .premium.upgrade.button
   padding: 1.4rem;
   margin-bottom: 1.4rem;
   align-items: center;
+  justify-content: space-between;
   border-radius: var(--border-radius);
   box-sizing: border-box;
 }
@@ -976,7 +977,6 @@ body.premium .premium-upgrade.banner
 
 .premium-upgrade.banner .premium-label
 {
-  flex: 1;
   align-items: baseline;
   font-size: 20px;
 }
@@ -996,23 +996,6 @@ body.premium .premium-upgrade.banner
 .premium-upgrade.banner p
 {
   margin: 0 1rem;
-}
-
-.premium-upgrade.banner .auth-container
-{
-  display: flex;
-  align-items: center;
-}
-
-.premium-upgrade.banner .auth-container > *
-{
-  margin-right: 13px;
-}
-
-html:not([dir="rtl"]) .premium-upgrade.banner .auth-container > *:last-child,
-html[dir="rtl"] .premium-upgrade.banner .auth-container > *:first-child
-{
-  margin-right: 0;
 }
 
 body:not(.premium) .premium-manage.banner

@@ -1565,7 +1565,6 @@ async function setupPremium()
 async function setupPremiumBanners()
 {
   const premiumUpgradeBanner = $(".premium-upgrade.banner");
-  const signInCTA = $("#premium-signin");
   const upgradeCTA = $(".upgrade.button", premiumUpgradeBanner);
   const upgradeDescription = $("#premium-upgrade-description");
 
@@ -1577,7 +1576,6 @@ async function setupPremiumBanners()
   {
     cta.setAttribute("href", manageUrl);
   });
-  signInCTA.setAttribute("href", manageUrl);
   upgradeCTA.setAttribute("href", upgradeUrl);
   setElementLinks(upgradeDescription, upgradeUrl);
 }
