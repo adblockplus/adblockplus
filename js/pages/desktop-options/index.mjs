@@ -185,7 +185,7 @@ Collection.prototype.addItem = function(item)
     listItem.setAttribute("data-access", item.url || item.text);
     listItem.setAttribute("role", "section");
 
-    if (item.recommended === "distractions")
+    if (item.recommended === "annoyances")
     {
       listItem.classList.add("beta");
       updatePremiumStateInListItem(listItem);
@@ -481,7 +481,7 @@ function addSubscription(subscription)
       const ioListBox = $("#languages-box");
       ioListBox.items = ioListBox.items.concat(subscription);
       break;
-    case "distractions":
+    case "annoyances":
       collection = collections.recommendedPremiumList;
       break;
     case "notifications":
@@ -1153,7 +1153,7 @@ function getListBoxItems(subscriptions)
     const key = recommended === "ads" ? recommended : "others";
     const label = getPrettyItemTitle(subscription, true);
     const selected = urls.has(url);
-    const premium = recommended === "distractions";
+    const premium = recommended === "annoyances";
     const overrides = {unselectable: selected, label, selected, premium};
     groups[key].push(Object.assign({}, subscription, overrides));
   }

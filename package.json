@@ -70,6 +70,7 @@
       "dist": {
         "ewe": "npm run --prefix ./vendor/webext-sdk build -- --config-name sdk --no-devtool",
         "icons": "node build/icons-generation/index.js",
+        "rules": "rules adblockplus",
         "ui": "$ bundle"
       },
       "js": [
@@ -126,6 +127,7 @@
     }
   },
   "dependencies": {
+    "@adblockinc/rules": "gitlab:adblockinc/ext/rules#ba876fb3",
     "@eyeo/snippets": "gitlab:eyeo/snippets#v0.5.6",
     "@rollup/plugin-node-resolve": "13.3.0",
     "@rollup/plugin-typescript": "8.3.2",

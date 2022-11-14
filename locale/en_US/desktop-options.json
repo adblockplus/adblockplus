@@ -79,7 +79,7 @@
     "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/blob/174961bed1ed95f9118bd08df0d6ad6e267e567d/spec/abp/desktop-settings/general-tab.md#free-features",
     "message": "Free features"
   },
-  "options_recommended_distractions_description": {
+  "options_recommended_annoyances_description": {
     "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/blob/174961bed1ed95f9118bd08df0d6ad6e267e567d/spec/abp/desktop-settings/general-tab.md#premium-features-1",
     "message": "Block floating videos, newsletter popups, survey requests and site notifications."
   },

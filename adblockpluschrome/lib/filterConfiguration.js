@@ -27,7 +27,6 @@ import {
   toPlainSubscription
 } from "./messaging/types.js";
 import {EventEmitter} from "./events.js";
-import {Prefs} from "./prefs.js";
 import {filterTypes} from "./requestBlocker.js";
 
 const disabledFilterCounters = new Map();
@@ -336,10 +335,6 @@ port.on("subscriptions.getDisabledFilterCount", (message, sender) =>
 port.on("subscriptions.getRecommendations", async(message, sender) =>
 {
   const recommendations = await ewe.subscriptions.getRecommendations();
-
-  const distractionsList = Prefs.get("premium_distractions_list");
-  recommendations.push(distractionsList);
-
   return Array.from(recommendations, toPlainRecommendation);
 });
 
@@ -534,11 +529,18 @@ ewe.subscriptions.onRemoved.addListener(subscription =>
 
 premium.emitter.on("deactivated", async() =>
 {
-  const distractionsList = Prefs.get("premium_distractions_list");
-  if (!(await ewe.subscriptions.has(distractionsList.url)))
-    return;
+  const recommendations = await ewe.subscriptions.getRecommendations();
+  for (const recommendation of recommendations)
+  {
+    if (recommendation.type !== "annoyances")
+      continue;
 
-  await ewe.subscriptions.remove(distractionsList.url);
+    if (!(await ewe.subscriptions.has(recommendation.url)))
+      break;
+
+    await ewe.subscriptions.remove(recommendation.url);
+    break;
+  }
 });
 
 installHandler("app", "addSubscription", emit =>

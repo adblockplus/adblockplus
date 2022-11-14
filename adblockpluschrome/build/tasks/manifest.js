@@ -22,7 +22,7 @@ import Vinyl from "vinyl";
 
 let manifest;
 
-function editManifest(data, version, channel, target)
+async function editManifest(data, version, channel, target)
 {
   data.version = version;
   data.name = `__MSG_name_${channel == "development" ? "dev" : channel}build__`;
@@ -52,6 +52,14 @@ function editManifest(data, version, channel, target)
     delete data.storage;
 
     data.applications.gecko = gecko;
+  }
+
+  if ("declarative_net_request" in data)
+  {
+    const rules = await getJSON(
+      "../node_modules/@adblockinc/rules/dist/manifest/adblockplus.json"
+    );
+    data.declarative_net_request = rules;
   }
 
   return data;
@@ -91,7 +99,7 @@ export async function getManifestContent(options)
     raw = Object.assign({}, base, specific);
   }
 
-  manifest = editManifest(raw, version, channel, target);
+  manifest = await editManifest(raw, version, channel, target);
 
   return manifest;
 }

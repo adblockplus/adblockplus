@@ -56,7 +56,7 @@ argumentParser.addArgument("--manifest-path");
 argumentParser.addArgument("--partial", {
   choices: ["false", "true"],
   defaultValue: "false",
-  help: "A partial build skips the build steps EWE, icons and UI."
+  help: "A partial build skips the build steps EWE, icons, rules and UI."
 });
 
 argumentParser.addArgument("--skip-type-checks", {
@@ -107,8 +107,10 @@ async function getBuildSteps(options)
       tasks.addDevEnvVersion());
   }
 
+  const rulesMapping = config.getRulesMapping(options.manifestVersion);
   buildSteps.push(
     tasks.mapping(options.mapping),
+    tasks.mapping(rulesMapping),
     tasks.webpack({
       webpackInfo: options.webpackInfo,
       addonName,
@@ -132,7 +134,8 @@ async function getBuildOptions(isDevenv, isSource)
     isDevenv,
     target: args.target,
     channel: args.channel,
-    archiveType: args.target == "chrome" ? ".zip" : ".xpi"
+    archiveType: args.target == "chrome" ? ".zip" : ".xpi",
+    manifestVersion: args.manifest_version
   };
 
   opts.sourceMapType = opts.target == "chrome" ?
@@ -179,7 +182,7 @@ async function getBuildOptions(isDevenv, isSource)
     version: opts.version,
     channel: opts.channel,
     manifestPath: args.manifest_path,
-    manifestVersion: args.manifest_version
+    manifestVersion: opts.manifestVersion
   });
 
   return opts;

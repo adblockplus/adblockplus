@@ -19,7 +19,6 @@
 
 import * as info from "info";
 
-import rulesIndex from "../../data/rules.json";
 import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
 import * as premium from "../../src/premium/background/index.ts";
 import {port} from "./messaging/port.js";
@@ -144,11 +143,22 @@ function initElementHidingDebugMode()
   );
 }
 
+// EWE 0.6.0 still requires the old index file format for Manifest v2,
+// so we cannot use the one from @adblockinc/rules yet for both versions
+// https://gitlab.com/eyeo/adblockplus/abc/webext-sdk/-/issues/353
+async function getRulesIndex()
+{
+  const response = await fetch("./data/rules/index.json");
+  return response.json();
+}
+
 (async() =>
 {
+  const rulesIndex = await getRulesIndex();
   const [eweFirstRun] = await Promise.all([
     ewe.start({
       bundledSubscriptions: rulesIndex,
+      bundledSubscriptionsPath: "/data/rules/abp",
       name: info.addonName,
       version: info.addonVersion
     }),

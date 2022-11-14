@@ -4,6 +4,7 @@ Welcome to the repository for the Adblock Plus extension!
 
 The main project is hosted on [GitLab][abp-ui] and, in addition to the user
 interface and the web extension code, the Adblock Plus extension also includes
+[static filter lists][adblockinc-rules],
 [eyeo's Web Extension Ad Blocking Toolkit (EWE)][eyeo-ewe] and
 [eyeo's snippets][eyeo-snippets].
 
@@ -214,6 +215,7 @@ This project follows the typical GitLab process:
 [abp-webext-readme-build]: /adblockpluschrome/README.md#building
 [abp-webext-readme-devenv]: /adblockpluschrome/README.md#development-environment
 [abp-webext-releases]: https://github.com/adblockplus/adblockpluschrome/releases
+[adblockinc-rules]: https://gitlab.com/adblockinc/ext/rules
 [badge-pipeline-image]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/badges/master/pipeline.svg
 [badge-pipeline-link]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/commits/master
 [eyeo]: https://eyeo.com/

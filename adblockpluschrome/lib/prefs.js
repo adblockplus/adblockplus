@@ -127,20 +127,6 @@ defaults.remote_first_run_page_url = "https://welcome.adblockplus.org/%LANG%/ins
 defaults.recommend_language_subscriptions = false;
 
 /**
- * Data of Premium filter list to block distractions.
- *
- * @type {object}
- * @property {string} type
- * @property {string} title
- * @property {string} url
- */
-defaults.premium_distractions_list = {
-  type: "distractions",
-  title: "Distractions List",
-  url: "https://easylist-downloads.adblockplus.org/adblock_premium.txt"
-};
-
-/**
  * Premium license
  *
  * @type {object}

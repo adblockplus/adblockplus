@@ -254,5 +254,11 @@
     "title": "Allow nonintrusive advertising",
     "url": "https://easylist-downloads.adblockplus.org/exceptionrules.txt",
     "homepage": "https://acceptableads.com/"
+  },
+  {
+    "type": "annoyances",
+    "title": "AdBlock premium list",
+    "url": "https://easylist-downloads.adblockplus.org/adblock_premium.txt",
+    "homepage": "https://help.getadblock.com/support/home"
   }
 ]

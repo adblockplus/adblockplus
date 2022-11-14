@@ -15,21 +15,23 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export {default as base} from "./base.js";
-export {default as chrome} from "./chrome.js";
-export {default as firefox} from "./firefox.js";
-import rulesV2 from "./rules.v2.js";
-import rulesV3 from "./rules.v3.js";
-export {default as webpack} from "./webpack.config.js";
-
-/**
- * Returns the file mapping configuration for the given manifest version.
- *
- * @param {number} manifestVersion - Manifest version
- * @return {object} File mapping configuration
- */
-export function getRulesMapping(manifestVersion)
-{
-  const rules = (manifestVersion === 2) ? rulesV2 : rulesV3;
-  return rules.mapping;
-}
+export default {
+  mapping: {
+    copy: [
+      {
+        dest: "data/rules/abp",
+        src: "node_modules/@adblockinc/rules/dist/rules/abp/*"
+      },
+      {
+        dest: "data/rules/dnr",
+        src: "node_modules/@adblockinc/rules/dist/rules/dnr/*"
+      }
+    ],
+    rename: [
+      {
+        dest: "data/rules/index.json",
+        src: "node_modules/@adblockinc/rules/dist/index/adblockplus.json"
+      }
+    ]
+  }
+};

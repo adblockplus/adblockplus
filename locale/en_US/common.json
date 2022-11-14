@@ -33,7 +33,7 @@
     "description": "Title for the Anti-Circumvention list",
     "message": "ABP Anti-Circumvention Filter List"
   },
-  "common_feature_distractions_title": {
+  "common_feature_annoyances_title": {
     "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/blob/174961bed1ed95f9118bd08df0d6ad6e267e567d/spec/abp/desktop-settings/general-tab.md#premium-features-1",
     "message": "Block more distractions"
   },
