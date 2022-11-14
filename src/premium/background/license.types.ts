@@ -30,6 +30,11 @@ export interface License {
    * License status
    */
   status: "active" | "expired";
+
+  /**
+   * License code
+   */
+  code: string;
 }
 
 /**

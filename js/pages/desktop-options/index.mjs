@@ -1815,6 +1815,7 @@ api.addListener((message) =>
       break;
     case "premium.respond":
       premiumIsActive = message.args[0].isActive;
+      setupPremiumBanners();
       updatePremiumStateInPage();
       break;
     case "subscriptions.respond":

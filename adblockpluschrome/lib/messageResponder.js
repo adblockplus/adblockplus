@@ -94,6 +94,7 @@ port.on("app.get", async(message, sender) =>
       ["APPLICATION_VERSION", () => info.applicationVersion],
       ["PLATFORM_NAME", () => info.platform],
       ["PLATFORM_VERSION", () => info.platformVersion],
+      ["LICENSE_CODE", () => Prefs.get("premium_license").code],
       ["SOURCE", () => queryParams.source]
     ];
 

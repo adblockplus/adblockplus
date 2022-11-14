@@ -146,20 +146,7 @@ function updateBlockedTotal(blockedTotal)
 
 async function setupPremium()
 {
-  const premiumManageCTA = $("#premium-manage");
-  const premiumUpgradeCTA = $("#premium-upgrade");
-
-  const source = getSourceAttribute(document.body);
-  const premiumManageUrl = await api.ctalinks.get("premium-manage", {source});
-  const premiumUpgradeUrl = await api.ctalinks.get("premium-upgrade", {source});
-
-  premiumManageCTA.setAttribute("href", premiumManageUrl);
-  premiumUpgradeCTA.setAttribute("href", premiumUpgradeUrl);
-
-  const setPremiumState = (premiumIsActive) =>
-  {
-    document.body.classList.toggle("premium", premiumIsActive);
-  };
+  setupPremiumBanners();
 
   const premium = await api.premium.get();
   setPremiumState(premium.isActive);
@@ -169,10 +156,29 @@ async function setupPremium()
     if (msg.type !== "premium.respond" || msg.action !== "changed")
       return;
 
+    setupPremiumBanners();
     setPremiumState(msg.args[0].isActive);
   });
 
   api.premium.listen(["changed"]);
+}
+
+async function setupPremiumBanners()
+{
+  const premiumManageCTA = $("#premium-manage");
+  const premiumUpgradeCTA = $("#premium-upgrade");
+
+  const source = getSourceAttribute(document.body);
+  const premiumManageUrl = await api.ctalinks.get("premium-manage", {source});
+  const premiumUpgradeUrl = await api.ctalinks.get("premium-upgrade", {source});
+
+  premiumManageCTA.setAttribute("href", premiumManageUrl);
+  premiumUpgradeCTA.setAttribute("href", premiumUpgradeUrl);
+}
+
+function setPremiumState(premiumIsActive)
+{
+  document.body.classList.toggle("premium", premiumIsActive);
 }
 
 function setupStats(tab)

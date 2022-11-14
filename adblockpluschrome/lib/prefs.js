@@ -147,6 +147,7 @@ defaults.premium_distractions_list = {
  */
 defaults.premium_license = {
   lv: 1,
+  code: "",
   status: "expired"
 };
 
@@ -176,7 +177,7 @@ defaults.premium_license_check_url = "https://myadblock.licensing.adblockplus.de
  *
  * @type {string}
  */
-defaults.premium_manage_page_url = "https://accounts.adblockplus.org/%LANG%/manage?s=%SOURCE%";
+defaults.premium_manage_page_url = "https://accounts.adblockplus.org/%LANG%/manage?lic=%LICENSE_CODE%&s=%SOURCE%";
 
 /**
  * Address of page to upgrade to Premium.
