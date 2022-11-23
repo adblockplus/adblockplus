@@ -33,8 +33,10 @@ export interface License {
 
   /**
    * License code
+   *
+   * Optional as the Premium server only sends it in the first license check calls.
    */
-  code: string;
+  code?: string;
 }
 
 /**

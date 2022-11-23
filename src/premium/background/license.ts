@@ -159,6 +159,16 @@ async function checkLicense(retryCount: number = 0): Promise<void> {
       throw new Error(`Unknown license status: ${newLicense.status}`);
     }
 
+    // There's no guarantee that the server will send the License code in all requests,
+    // but we need it for Premium user authentification in the Premium manage page
+    if (!newLicense.code) {
+      if (!oldLicense.code) {
+        throw new Error("Undefined license code");
+      }
+
+      newLicense.code = oldLicense.code;
+    }
+
     activateLicense(oldLicense, newLicense);
   } catch (ex) {
     if (ex instanceof TemporaryLicenseCheckError) {
