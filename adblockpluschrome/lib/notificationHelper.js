@@ -236,8 +236,7 @@ async function notificationButtonClick(notificationId, buttonIndex)
       await openNotificationLinks(notificationId);
       break;
     case "configure":
-      let [, optionsPort] = await showOptions();
-      optionsPort.postMessage({
+      await showOptions({
         type: "app.respond",
         action: "focusSection",
         args: ["notifications"]

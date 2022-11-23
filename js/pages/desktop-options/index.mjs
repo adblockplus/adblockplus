@@ -1800,6 +1800,17 @@ api.addListener((message) =>
             section = "advanced";
             const elem = getPrefElement("notifications_ignoredcategories");
             elem.classList.add("highlight-animate");
+
+            // Reset animation, in case we need to repeat it later
+            const onAnimationEnd = () =>
+            {
+              elem.classList.remove("highlight-animate");
+              elem.removeEventListener("animationcancel", onAnimationEnd);
+              elem.removeEventListener("animationend", onAnimationEnd);
+            };
+            elem.addEventListener("animationcancel", onAnimationEnd);
+            elem.addEventListener("animationend", onAnimationEnd);
+
             $("button", elem).focus();
           }
 

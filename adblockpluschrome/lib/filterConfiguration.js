@@ -75,11 +75,14 @@ async function addSubscription(details)
  */
 export async function askConfirmSubscription(details)
 {
-  await showOptions();
-  eventEmitter.emit("addSubscription", {
-    homepage: details.homepage || null,
-    title: details.title || null,
-    url: details.url
+  await showOptions({
+    type: "app.respond",
+    action: "addSubscription",
+    args: [{
+      homepage: details.homepage || null,
+      title: details.title || null,
+      url: details.url
+    }]
   });
 }
 
@@ -541,13 +544,6 @@ premium.emitter.on("deactivated", async() =>
     await ewe.subscriptions.remove(recommendation.url);
     break;
   }
-});
-
-installHandler("app", "addSubscription", emit =>
-{
-  const onAddSubscription = subscriptionInfo => emit(subscriptionInfo);
-  eventEmitter.on("addSubscription", onAddSubscription);
-  return () => eventEmitter.off("addSubscription", onAddSubscription);
 });
 
 installHandler("filters", "added", emit =>
