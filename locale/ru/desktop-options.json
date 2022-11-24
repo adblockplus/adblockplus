@@ -365,7 +365,7 @@
   "options_rating_button": {
     "message": "Оцените нас"
   },
-  "options_recommended_distractions_description": {
+  "options_recommended_annoyances_description": {
     "message": "Блокируйте всплывающие видео, окна с информационными сообщениями, запросы на прохождение опросов и уведомления с сайта."
   },
   "options_recommended_notifications_description": {
