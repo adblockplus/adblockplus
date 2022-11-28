@@ -21,6 +21,6 @@ import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
 import * as snippets from "@eyeo/snippets";
 
 ewe.snippets.setLibrary({
-  injectedCode: snippets.injected,
+  injectedCode: snippets.main,
   isolatedCode: snippets.isolated
 });

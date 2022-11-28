@@ -41,8 +41,7 @@ export default {
           "adblockpluschrome/lib/contentFiltering.js",
           "adblockpluschrome/lib/messageResponder.js",
           "adblockpluschrome/lib/filterConfiguration.js",
-          "lib/public-api/allowlisting.js",
-          "node_modules/@eyeo/snippets/ml/bundle.ml.mjs"
+          "lib/public-api/allowlisting.js"
         ]
       }
     ]
@@ -70,12 +69,6 @@ export default {
       {
         dest: "data",
         src: "data/*.json"
-      },
-      {
-        dest: "data/hideIfGraphMatches",
-        src: [
-          "node_modules/@eyeo/snippets/ml/hideIfGraphMatches/*"
-        ]
       },
       {
         dest: "ext",

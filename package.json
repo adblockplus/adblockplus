@@ -126,7 +126,7 @@
     }
   },
   "dependencies": {
-    "@eyeo/snippets": "0.5.3",
+    "@eyeo/snippets": "0.5.5",
     "@rollup/plugin-node-resolve": "13.3.0",
     "@rollup/plugin-typescript": "8.3.2",
     "@types/webextension-polyfill": "0.8.0",
