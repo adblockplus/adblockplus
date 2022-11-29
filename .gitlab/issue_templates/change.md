@@ -16,4 +16,4 @@
 ## Hints for translators
 (Mention any changes that were made to any files in the `locale` directory)
 
-/label ~"Product:: ABP" 
+/label ~"Product:: ABP"
