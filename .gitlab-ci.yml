@@ -89,7 +89,7 @@ build:
     - mv adblockpluschrome-*.zip adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
     - mv adblockplusfirefox-*.xpi adblockplus-firefox-${CI_COMMIT_SHORT_SHA}-mv3.xpi
   artifacts:
-    name: "adblockplus-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA:0:8}"
+    name: "adblockplus-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHORT_SHA}"
     paths:
       - adblockpluschrome/adblockplus-${CI_COMMIT_SHORT_SHA}.tar.gz
       - adblockpluschrome/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
@@ -250,7 +250,7 @@ downloadxtm:
   script:
     - cd testpages.adblockplus.org &&
       docker build -t testpages --build-arg EXTENSION_FILE=$EXTENSION . &&
-      docker run --shm-size=256m -e SKIP_EXTENSION_DOWNLOAD="true" -e GREP="$BROWSER" testpages
+      docker run --shm-size=256m -e SKIP_EXTENSION_DOWNLOAD="true" -e GREP="$PARAMETERS" testpages
   after_script:
     - docker cp $(docker ps -aqf ancestor=testpages):/testpages.adblockplus.org/test/screenshots .
       2> /dev/null
@@ -270,26 +270,38 @@ downloadxtm:
     - when: manual
       allow_failure: true
 
-testpages:chrome:latest:
+testpages:MV3:chrome:latest:
+  extends: .testpages
+  variables:
+    BROWSER: chromium latest
+    EXTENSION: adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
+    SKIP: Subscriptions|Header
+    PARAMETERS: '^.*$BROWSER((?!$SKIP).)*$'
+
+testpages:MV2:chrome:latest:
   extends: .testpages
   variables:
     BROWSER: chromium latest
     EXTENSION: adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
+    PARAMETERS: $BROWSER
 
-testpages:chrome:oldest:
+testpages:MV2:chrome:oldest:
   extends: .testpages
   variables:
     BROWSER: chromium 77.0.3865.0
     EXTENSION: adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
+    PARAMETERS: $BROWSER
 
-testpages:firefox:latest:
+testpages:MV2:firefox:latest:
   extends: .testpages
   variables:
     BROWSER: firefox latest
     EXTENSION: adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
+    PARAMETERS: $BROWSER
 
-testpages:firefox:oldest:
+testpages:MV2:firefox:oldest:
   extends: .testpages
   variables:
     BROWSER: firefox 68.0
     EXTENSION: adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
+    PARAMETERS: $BROWSER
