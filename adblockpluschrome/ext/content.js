@@ -35,7 +35,11 @@
     browser.runtime.onMessage.addListener((message, sender) =>
     {
       let responses = ext.onMessage._dispatch(message, {});
-      return ext.getMessageResponse(responses);
+      let response = ext.getMessageResponse(responses);
+      if (!response)
+        return;
+
+      return Promise.resolve(response);
     });
   }
 }

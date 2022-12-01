@@ -553,7 +553,7 @@ function initializeComposer()
     });
   }, true);
 
-  ext.onMessage.addListener(async(message, sender) =>
+  ext.onMessage.addListener((message, sender) =>
   {
     switch (message.type)
     {

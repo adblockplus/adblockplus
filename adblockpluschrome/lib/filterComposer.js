@@ -442,6 +442,17 @@ port.on("composer.isPageReady", (message, sender) =>
   return readyActivePages.has(message.pageId);
 });
 
+async function initializeReadyState(page)
+{
+  let isAllowlisted = await ewe.filters.isResourceAllowlisted(
+    page.url,
+    "document",
+    page.id
+  );
+  await readyActivePages.set(page.id, !isAllowlisted);
+  updateContextMenu(page);
+}
+
 /**
  * Marks the page which sent this message as being ready for the
  * "block element" tool, but only if the page isn't allowlisted.
@@ -451,13 +462,30 @@ port.on("composer.isPageReady", (message, sender) =>
  */
 port.on("composer.ready", async(message, sender) =>
 {
-  let isAllowlisted = await ewe.filters.isResourceAllowlisted(
-    sender.page.url,
-    "document",
-    sender.page.id
-  );
-  await readyActivePages.set(sender.page.id, !isAllowlisted);
-  updateContextMenu(sender.page);
+  await initializeReadyState(sender.page);
+});
+
+// We need to make sure that we check whether the content script is active
+// for each page load, since we only receive the "composer.ready" message
+// when it initializes itself on real page loads
+// https://gitlab.com/adblockinc/ext/adblockplus/adblockplusui/-/issues/1303
+ext.pages.onLoaded.addListener(async page =>
+{
+  try
+  {
+    const state = await browser.tabs.sendMessage(
+      page.id,
+      {type: "composer.content.getState"}
+    );
+    if (!state)
+      return;
+
+    await initializeReadyState(page);
+  }
+  catch (ex)
+  {
+    // Ignore if we're unable to send messages to the tab
+  }
 });
 
 ext.addTrustedMessageTypes(null, [
