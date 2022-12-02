@@ -220,7 +220,7 @@ async function retrieveWindowInfo(tabId)
   // We need to use both browser.tabs.executeScript and
   // browser.scripting.executeScript because they're exclusive to
   // Manifest v2 and v3 respectively
-  if ("scripting" in browser)
+  if (browser.scripting)
   {
     const [frameResult] = await browser.scripting.executeScript({
       target: {tabId},
