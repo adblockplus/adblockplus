@@ -30,7 +30,7 @@ module.exports =
   forumUrlChrome: "https://forum.adblockplus.org/viewforum.php?f=10",
   forumUrlFirefox: "https://forum.adblockplus.org/viewforum.php?f=1",
   helpCenterUrl: "https://help.eyeo.com/en/adblockplus/",
-  howToWriteFiltersUrl: "https://help.eyeo.com/adblockplus/how-to-write-filters",
+  howToWriteFiltersUrl: "https://help.adblockplus.org/hc/en-us/articles/360062733293",
   imprintUrl: "https://adblockplus.org/en/imprint",
   privacyPolicyUrl: "https://adblockplus.org/en/privacy",
   reportAnIssueUrl: "https://adblockplus.org/bugs#reporting",

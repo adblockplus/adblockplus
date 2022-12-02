@@ -26,7 +26,7 @@ const dayOnePageData = [
   {
     testName: "Day 1 - Learn more about malicious advertising",
     elementToClick: "learnMoreAboutMaliciousAdvertisingButton",
-    newTabUrl: "https://help.eyeo.com/adblockplus/adware"
+    newTabUrl: "https://help.adblockplus.org/hc/en-us/articles/360062861653"
   },
   {
     testName: "Day 1 - Contact us",
@@ -37,7 +37,7 @@ const dayOnePageData = [
   {
     testName: "Day 1 - Learn how",
     elementToClick: "learnHowButton",
-    newTabUrl: "https://help.eyeo.com/adblockplus/block-item-or-element"
+    newTabUrl: "https://help.adblockplus.org/hc/en-us/articles/1500002523962"
   },
   {
     testName: "Day 1 - eyeo GmbH",
