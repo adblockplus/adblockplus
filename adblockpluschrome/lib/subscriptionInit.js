@@ -19,6 +19,7 @@
 
 import * as info from "info";
 
+import rulesIndex from "@adblockinc/rules/adblockplus";
 import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
 import * as premium from "../../src/premium/background/index.ts";
 import {port} from "./messaging/port.js";
@@ -81,7 +82,7 @@ async function addSubscriptionsAndNotifyUser()
     try
     {
       await ewe.subscriptions.add(url);
-      ewe.subscriptions.sync(url);
+      await ewe.subscriptions.sync(url);
     }
     catch (ex)
     {
@@ -143,18 +144,8 @@ function initElementHidingDebugMode()
   );
 }
 
-// EWE 0.6.0 still requires the old index file format for Manifest v2,
-// so we cannot use the one from @adblockinc/rules yet for both versions
-// https://gitlab.com/eyeo/adblockplus/abc/webext-sdk/-/issues/353
-async function getRulesIndex()
-{
-  const response = await fetch("./data/rules/index.json");
-  return response.json();
-}
-
 (async() =>
 {
-  const rulesIndex = await getRulesIndex();
   const [eweFirstRun] = await Promise.all([
     ewe.start({
       bundledSubscriptions: rulesIndex,
@@ -166,6 +157,7 @@ async function getRulesIndex()
     testStorage().catch(() => { setDataCorrupted(true); })
   ]);
 
+  ewe.subscriptions.getMigrationErrors().forEach(console.error);
   eweFirstRun.warnings.forEach(console.warn);
   await detectFirstRun(
     eweFirstRun.foundSubscriptions,

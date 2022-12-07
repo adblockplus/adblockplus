@@ -59,7 +59,7 @@ async function addSubscription(details)
   try
   {
     await ewe.subscriptions.add(details.url, details);
-    ewe.subscriptions.sync(details.url);
+    await ewe.subscriptions.sync(details.url);
   }
   catch (ex)
   {
@@ -407,9 +407,9 @@ port.on("subscriptions.toggle", async(message, sender) =>
  *   The subscription to update, if not specified all subscriptions will be
  *   updated.
  */
-port.on("subscriptions.update", (message, sender) =>
+port.on("subscriptions.update", async(message, sender) =>
 {
-  ewe.subscriptions.sync(message.url);
+  await ewe.subscriptions.sync(message.url);
 });
 
 async function filtersAdd(text, origin)

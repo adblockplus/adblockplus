@@ -27,11 +27,6 @@ export default {
         src: "node_modules/@adblockinc/rules/dist/rules/dnr/*"
       }
     ],
-    rename: [
-      {
-        dest: "data/rules/index.json",
-        src: "node_modules/@adblockinc/rules/dist/index/adblockplus.json"
-      }
-    ]
+    rename: []
   }
 };

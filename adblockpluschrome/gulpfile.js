@@ -107,10 +107,15 @@ async function getBuildSteps(options)
       tasks.addDevEnvVersion());
   }
 
-  const rulesMapping = config.getRulesMapping(options.manifestVersion);
+  if (options.manifestVersion === 3)
+  {
+    buildSteps.push(
+      tasks.mapping(config.rulesV3.mapping)
+    );
+  }
+
   buildSteps.push(
     tasks.mapping(options.mapping),
-    tasks.mapping(rulesMapping),
     tasks.webpack({
       webpackInfo: options.webpackInfo,
       addonName,

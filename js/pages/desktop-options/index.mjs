@@ -726,6 +726,7 @@ const setAcceptableAds = async(options = {}) =>
     {
       toggleDntNotification(true);
     }
+    acceptableAdsWhyNot.setAttribute("aria-hidden", true);
   }
   else
   {
@@ -740,25 +741,6 @@ const setAcceptableAds = async(options = {}) =>
 
     toggleDntNotification(false);
   }
-};
-
-/**
- * Sends a message to the browser runtime to add or remove subscription urls
- *
- * @param {Boolean} ads the updated state of the acceptable ads subscription
- * @param {Boolean} privacyAds the updated state of the privacy ads subscription
- */
-const setAcceptableAdsSubscriptions = ({ads, privacyAds}) =>
-{
-  browser.runtime.sendMessage({
-    type: ads ? "subscriptions.add" : "subscriptions.remove",
-    url: acceptableAdsUrl
-  });
-
-  browser.runtime.sendMessage({
-    type: privacyAds ? "subscriptions.add" : "subscriptions.remove",
-    url: acceptableAdsPrivacyUrl
-  });
 };
 
 /**
@@ -798,24 +780,34 @@ const switchAcceptableAds = (e) =>
     const acceptableAdsPrivacy = $("#acceptable-ads-privacy-allow");
     const aaSurvey = $("#acceptable-ads-why-not");
 
-    if (checked === false)
+    if (acceptableAdsPrivacy.checked)
     {
-      aaSurvey.setAttribute("aria-hidden", false);
-      acceptableAdsPrivacy.checked = false;
-      toggleDntNotification(false);
+      void browser.runtime.sendMessage({
+        type: "subscriptions.remove",
+        url: acceptableAdsPrivacyUrl
+      });
     }
     else
     {
-      aaSurvey.setAttribute("aria-hidden", true);
+      aaSurvey.setAttribute("aria-hidden", checked);
+      void browser.runtime.sendMessage({
+        type: (checked) ? "subscriptions.add" : "subscriptions.remove",
+        url: acceptableAdsUrl
+      });
     }
-
-    setAcceptableAdsSubscriptions({ads: checked, privacyAds: false});
-    acceptableAdsPrivacy.disabled = !checked;
   }
   // Privacy Friendly Acceptable Ads checkbox clicked
   else
   {
-    setAcceptableAdsSubscriptions({ads: !checked, privacyAds: checked});
+    void browser.runtime.sendMessage({
+      type: (!checked) ? "subscriptions.add" : "subscriptions.remove",
+      url: acceptableAdsUrl
+    });
+
+    void browser.runtime.sendMessage({
+      type: (checked) ? "subscriptions.add" : "subscriptions.remove",
+      url: acceptableAdsPrivacyUrl
+    });
   }
 };
 
