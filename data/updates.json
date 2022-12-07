@@ -2,18 +2,10 @@
   "title": {
     "image": "skin/icons/updates/panda.gif"
   },
-  "fixes": [
-    {"id": "f1"},
-    {"id": "f2"},
-    {"id": "f3"}
-  ],
+  "fixes": [],
   "improvements": [
-    {
-      "id": "i2",
-      "image": {"url": "skin/icons/updates/smart-filter-lists.png"},
-      "exceptions": {"locales": ["de", "fr"]}
-    },
-    {"id": "i3"},
-    {"id": "i4"}
+    {"id": "i1"},
+    {"id": "i2"},
+    {"id": "i3"}
   ]
 }

@@ -40,8 +40,8 @@
     "message": "Fixes"
   },
   "updates_improvements_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
-    "message": "Improvements"
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/6bf047f5e7dfa6bef87999922b8a8e2280443d50/spec/abp/updates.md#current-updates",
+    "message": "What's new"
   },
   "updates_link": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#update-information-content",
