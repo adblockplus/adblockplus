@@ -8,63 +8,35 @@
     "message": "Adblock Plus is up-to-date"
   },
   "updates_subtitle": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
-    "message": "We think you'll like the latest updates."
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/6bf047f5e7dfa6bef87999922b8a8e2280443d50/spec/abp/updates.md#header-content",
+    "message": "Here's an overview of the updates we've made in order to adhere to the changes introduced by Google with Manifest V3 - the new version of the browser extension platform."
   },
   "updates_title": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/3488ef98776e3109710026c8d9e945e67d7bc3ec/spec/abp/updates.md#header-content",
     "message": "Adblock Plus is up-to-date!"
   },
+  "updates_update_i1_description": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/6bf047f5e7dfa6bef87999922b8a8e2280443d50/spec/abp/updates.md#current-updates",
+    "message": "Occasionally, we need to make substantial changes to ensure Adblock Plus keeps up with the browser ecosystem. We're on the cusp of one such change, which is the result of changes Google is making to how browser extensions work in Chrome. Called Manifest V3, the name refers to a new version of Google's browser extension platform. This evolution of the browser ecosystem will affect how all browser extensions work, and bring some challenges along with it. We've been working hard to ensure we have a Manifest V3-ready version. Earlier in 2022, we split up the Adblock Plus code base in order to create a dedicated library for the core ad blocking functionality. This change made it possible for us to continue to support Manifest V2 extensions where allowed, while switching to Manifest V3 on the Chromium browsers that require it. With this release, our users on Chromium browsers are now using the Manifest V3 version of Adblock Plus and can continue to enjoy a better browsing experience. If you're experiencing any issues, please reach out to us at support@adblockplus.org and we'd be happy to help!"
+  },
+  "updates_update_i1_title": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/6bf047f5e7dfa6bef87999922b8a8e2280443d50/spec/abp/updates.md#current-updates",
+    "message": "Switched to using Manifest V3 for Chromium browsers"
+  },
   "updates_update_i2_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3847450caab5a3d58b57965e0ce566d3eb41c396/spec/abp/updates.md#current-updates",
-    "message": "You can now visit websites in other languages and still have the ads blocked. When you visit a website in a specific language, you will be able to choose whether you want to block ads on all websites in that language. You can turn this option on/off in <strong>Settings > General > Language filter lists</strong>. The option is already available for our users on Chrome, Firefox and Microsoft Edge and is soon coming to Opera as well."
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/6bf047f5e7dfa6bef87999922b8a8e2280443d50/spec/abp/updates.md#current-updates",
+    "message": "Adblock Plus, like all ad blockers, relies on predefined rules to know what to block and hide on the web pages you visit. These rules are collected into lists, also called, \"filter lists.\" With Manifest V3, we are required to limit how many filter lists we can offer to our users, as well as package them with the extension. To comply with this new rule, we'll now offer up to 50 pre-installed filter lists that you can turn on and off depending on your preferences. Out of these, only 10 can be turned on at the same time – more on that below. We're working to ensure that popular filter lists our users love are supported by us, and that any updates to these lists are brought to you by frequent new releases of the extension."
   },
   "updates_update_i2_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3847450caab5a3d58b57965e0ce566d3eb41c396/spec/abp/updates.md#current-updates",
-    "message": "Added notification option for available language filters"
-  },
-  "updates_update_i2_image": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3847450caab5a3d58b57965e0ce566d3eb41c396/spec/abp/updates.md#current-updates",
-    "message": "\"Notify me of available language filters\" is highlighted in the \"Language\" section of the options page."
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/6bf047f5e7dfa6bef87999922b8a8e2280443d50/spec/abp/updates.md#current-updates",
+    "message": "Static filter lists are now packaged with the extension"
   },
   "updates_update_i3_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3847450caab5a3d58b57965e0ce566d3eb41c396/spec/abp/updates.md#current-updates",
-    "message": "When you open the Adblock Plus menu from your toolbar icon, you'll see a new redesigned footer. From here, you can easily access interesting links to get more out of your product. Get support from the Help Center, get in touch with us on social media and more!"
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/6bf047f5e7dfa6bef87999922b8a8e2280443d50/spec/abp/updates.md#current-updates",
+    "message": "Manifest V3 sets a limit of 10 active filter lists in browser extensions, and Adblock Plus is no exception. That means you can only have up to 10 filter lists turned on at any given time. Rest assured, most users won't notice the difference as the default configuration of active filter lists in ABP is well below that limit. If you reach the limit of 10 active filter lists and want to enable another one, you will first have to turn off one of your other active filter lists."
   },
   "updates_update_i3_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3847450caab5a3d58b57965e0ce566d3eb41c396/spec/abp/updates.md#current-updates",
-    "message": "Added quick access links to the menu footer"
-  },
-  "updates_update_i4_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3847450caab5a3d58b57965e0ce566d3eb41c396/spec/abp/updates.md#current-updates",
-    "message": "If you're frequently adding custom filters to ABP, you'll now see more clear error messages if there's any issues. We hope this helps!"
-  },
-  "updates_update_i4_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3847450caab5a3d58b57965e0ce566d3eb41c396/spec/abp/updates.md#current-updates",
-    "message": "Updated filter validation messages"
-  },
-  "updates_update_f1_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3847450caab5a3d58b57965e0ce566d3eb41c396/spec/abp/updates.md#current-updates",
-    "message": "We've updated our wording in order to use <strong>allowlist</strong> moving forward."
-  },
-  "updates_update_f1_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3847450caab5a3d58b57965e0ce566d3eb41c396/spec/abp/updates.md#current-updates",
-    "message": "Updated our wording"
-  },
-  "updates_update_f2_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3847450caab5a3d58b57965e0ce566d3eb41c396/spec/abp/updates.md#current-updates",
-    "message": "You will now be notified when some filters in the downloadable filter lists are turned off so that you can re-enable them at your convenience."
-  },
-  "updates_update_f2_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3847450caab5a3d58b57965e0ce566d3eb41c396/spec/abp/updates.md#current-updates",
-    "message": "Add option to re-enable filters in downloadable filter lists"
-  },
-  "updates_update_f3_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3847450caab5a3d58b57965e0ce566d3eb41c396/spec/abp/updates.md#current-updates",
-    "message": "We've updated the link behind the \"Rate it\" button on Microsoft Edge so that it points to the correct add-ons store."
-  },
-  "updates_update_f3_title": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/3847450caab5a3d58b57965e0ce566d3eb41c396/spec/abp/updates.md#current-updates",
-    "message": "Fixed wrong link behind the \"Rate it\" button"
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/6bf047f5e7dfa6bef87999922b8a8e2280443d50/spec/abp/updates.md#current-updates",
+    "message": "Use up to 10 filter lists"
   }
 }
