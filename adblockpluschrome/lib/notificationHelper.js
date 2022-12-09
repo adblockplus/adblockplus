@@ -61,6 +61,9 @@ const getButtonsKey = notificationId => `buttons:${notificationId}`;
 
 const session = new SessionStorage("notificationHelper");
 
+/**
+ * Maps notification types to display methods.
+ */
 const displayMethods = new Map([
   ["critical", ["icon", "notification", "popup"]],
   ["newtab", ["newtab"]],
@@ -287,6 +290,7 @@ function openNotificationInNewTab(notification)
 
     browser.tabs.create({url});
     ewe.notifications.markAsShown(notification.id);
+    void notificationDismissed(notification.id);
   }
 
   let onCreated = tab =>
@@ -330,6 +334,12 @@ function openNotificationInNewTab(notification)
   browser.tabs.onUpdated.addListener(onUpdated);
 }
 
+/**
+ * Shows the given notification. Will not re-show the currently active
+ * notification.
+ *
+ * @param {object} notification - The notification to show
+ */
 async function showNotification(notification)
 {
   const activeNotification = await session.get(activeNotificationKey);
@@ -394,6 +404,7 @@ async function showNotification(notification)
     if (installType == "admin")
     {
       ewe.notifications.markAsShown(notification.id);
+      void notificationDismissed(notification.id);
       return;
     }
 
@@ -447,6 +458,17 @@ export function initNotifications(firstRun)
   ewe.notifications.locale = browser.i18n.getUILanguage();
   ewe.notifications.numBlocked = Stats.blocked_total;
   ewe.notifications.start();
+
+  // If there is an active notification of the "newtab" type on startup, call
+  // openNotificationInNewTab() to activate it again. If we don't do this,
+  // the notification tab will not be opened when the user opens a new tab.
+  session.get(activeNotificationKey).then(notification =>
+  {
+    if (!notification || !matchesDisplayMethod("newtab", notification))
+      return;
+
+    openNotificationInNewTab(notification);
+  });
 
   if (firstRun)
     initDay1Notification();
