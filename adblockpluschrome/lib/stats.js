@@ -122,7 +122,69 @@ async function onBlockableItem({filter, request})
   eventEmitter.emit("blocked_total", Prefs.blocked_total);
 }
 
-ewe.reporting.onBlockableItem.addListener(onBlockableItem);
+/**
+ * Checks request errors for requests blocked by client and, if appropriate,
+ * calls the function to update the block counter.
+ *
+ * Note that we cannot distinguish whether the request was blocked by us or
+ * another extension.
+ *
+ * This is only here as a temporary workaround until
+ * ewe.reporting.onBlockableItem works properly in MV3.
+ *
+ * See https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onErrorOccurred#details_2
+ * for a type definition of the `details` object.
+ *
+ * @param {object} details The network error details
+ */
+async function handleRequestError({error, frameId, tabId, type, url})
+{
+  // Only check request errors inside of browser tabs, and only of
+  // the `net::ERR_BLOCKED_BY_CLIENT` type.
+  // NOTE: The error name "net::ERR_BLOCKED_BY_CLIENT" exists only in Chromium!
+  if (
+    tabId === browser.tabs.TAB_ID_NONE ||
+    error !== "net::ERR_BLOCKED_BY_CLIENT"
+  )
+    return;
+
+  // Ignore if request is allowlisted.
+  const isAllowlisted = await ewe.filters.isResourceAllowlisted(
+    url,
+    ewe.reporting.contentTypesMap.get(type),
+    tabId,
+    frameId
+  );
+  if (isAllowlisted)
+    return;
+
+  // Call `onBlockableItem` and feed it data in a structure it can consume.
+  void onBlockableItem({
+    filter: {
+      type: "blocking"
+    },
+    request: {
+      tabId
+    }
+  });
+}
+
+// In the MV3 version, ewe.reporting.onBlockableItem doesn't yet report
+// blocked items.
+// Until ewe.reporting.onBlockableItem works correctly with MV3, we count
+// every request that was blocked. However, we cannot distinguish whether the
+// request was blocked by us or another extension.
+if (browser.runtime.getManifest().manifest_version === 3)
+{
+  browser.webRequest.onErrorOccurred.addListener(
+    handleRequestError,
+    {urls: ["<all_urls>"]}
+  );
+}
+else
+{
+  ewe.reporting.onBlockableItem.addListener(onBlockableItem);
+}
 
 /**
   * @namespace
