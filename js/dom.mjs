@@ -15,19 +15,6 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-let browserName = "unknown";
-
-// Firefox only, which is exactly the one
-// we are looking for in order to patch events' layerX
-if (browser.runtime.getBrowserInfo)
-{
-  browser.runtime.getBrowserInfo().then(info =>
-  {
-    browserName = info.name.toLowerCase();
-  });
-}
-
-
 export const $ = (selector, container = document) =>
   container.querySelector(selector);
 export const $$ = (selector, container = document) =>
@@ -75,33 +62,8 @@ export const clipboard = {
 // to the closest positioned containing element
 export function relativeCoordinates(event)
 {
-  // good old way that will work properly in older browsers too
-  // mandatory for Chrome 49, still better than manual fallback
-  // in all other browsers that provide such functionality
-  let el = event.currentTarget;
-  if ("layerX" in event && "layerY" in event)
-  {
-    let {layerX} = event;
-    // see https://issues.adblockplus.org/ticket/7134
-    if (browserName === "firefox")
-      layerX -= el.offsetLeft;
-    return {x: layerX, y: event.layerY};
-  }
-  // fallback when layerX/Y will be removed (since deprecated)
-  let x = 0;
-  let y = 0;
-  do
-  {
-    x += el.offsetLeft - el.scrollLeft;
-    y += el.offsetTop - el.scrollTop;
-  } while (
-    (el = el.offsetParent) &&
-    !isNaN(el.offsetLeft) &&
-    !isNaN(el.offsetTop)
-  );
-  return {x: event.pageX - x, y: event.pageY - y};
+  return {x: event.offsetX, y: event.offsetY};
 }
-
 
 // helper to format as indented string any HTML/XML node
 export function asIndentedString(element, indentation = 0)
