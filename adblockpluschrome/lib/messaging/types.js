@@ -52,7 +52,10 @@ export function toPlainBlockableItem({filter, matchInfo, request})
 
 export function toPlainFilter(filter)
 {
-  let obj = toPlainObject(["enabled", "slow", "text", "type"], filter);
+  let obj = toPlainObject(
+    ["csp", "enabled", "selector", "slow", "text", "type"],
+    filter
+  );
 
   // For the time being, we are renaming the enabled property to
   // make the UI compatible with EWE without having to rename it

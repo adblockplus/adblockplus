@@ -98,6 +98,8 @@ function getFilterInfo(filter, subscriptions)
   return {
     allowlisted: filter.type == "allowing" ||
       filter.type == "elemhideexception",
+    csp: filter.csp,
+    selector: filter.selector,
     subscription: subscriptionTitle,
     text: filter.text,
     userDefined
@@ -114,7 +116,7 @@ function hasRecord(newRecord, oldRecord)
 
   // Ignore frame content allowlisting if there is already
   // a DOCUMENT exception which disables all means of blocking.
-  if (oldRecord.target.type == "DOCUMENT")
+  if (oldRecord.target.type === "DOCUMENT")
   {
     if (!newRecord.target.isFrame)
       return false;
@@ -128,7 +130,7 @@ function hasRecord(newRecord, oldRecord)
   // so we have to compare the selector in order to avoid duplicates.
   if (oldRecord.filter && newRecord.filter)
   {
-    if (oldRecord.filter.selector != newRecord.filter.selector)
+    if (oldRecord.filter.selector !== newRecord.filter.selector)
       return false;
   }
 

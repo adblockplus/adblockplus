@@ -510,7 +510,9 @@ If filter includes `blocked_total`:
 
 **object**
 
+- **string** [csp]
 - **boolean** disabled
+- **string** [selector]
 - **boolean** slow
 - **string** text
 - **string** type
