@@ -26,6 +26,15 @@ export default {
   output: {
     path: path.resolve("")
   },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        enforce: "pre",
+        use: ["source-map-loader"]
+      }
+    ]
+  },
   node: {
     global: false
   },

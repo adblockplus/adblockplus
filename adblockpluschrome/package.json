@@ -18,6 +18,7 @@
     "gulp-vinyl-zip": "2.2.1",
     "handlebars": "4.7.6",
     "merge-stream": "2.0.0",
+    "source-map-loader": "4.0.1",
     "through": "2.3.8",
     "ts-loader": "9.3.1",
     "webpack": "5.74.0",
