@@ -15,9 +15,9 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import filterNotifier from "./filter-notifier";
-import {Subscription} from "./subscription-classes";
-import {subscriptionDetails, USER_ID} from "../config/subscriptions";
+import filterNotifier from "./filter-notifier.mjs";
+import {Subscription} from "./subscription-classes.mjs";
+import {subscriptionDetails, USER_ID} from "../config/subscriptions.mjs";
 
 const knownSubscriptions = new Map();
 for (const url in subscriptionDetails)

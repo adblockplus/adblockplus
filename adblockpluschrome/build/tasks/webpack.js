@@ -60,7 +60,10 @@ export default function webpack({
                   use: [
                     {
                       loader: "ts-loader",
-                      options: {transpileOnly: skipTypeChecks}
+                      options: {
+                        onlyCompileBundledFiles: true,
+                        transpileOnly: skipTypeChecks
+                      }
                     }
                   ]
                 }

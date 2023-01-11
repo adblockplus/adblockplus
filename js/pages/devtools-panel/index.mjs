@@ -15,9 +15,9 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import api from "../../api";
-import {initI18n, setElementText} from "../../i18n";
-import records from "./records";
+import api from "../../api/index.ts";
+import {initI18n, setElementText} from "../../i18n.mjs";
+import records from "./records.mjs";
 
 const {getMessage} = browser.i18n;
 

@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import filterNotifier from "./filter-notifier";
+import filterNotifier from "./filter-notifier.mjs";
 
 const synchronizer = {
   _downloading: false,

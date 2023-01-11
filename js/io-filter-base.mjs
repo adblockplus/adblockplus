@@ -15,12 +15,12 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import IOElement from "./io-element";
-import IOScrollbar from "./io-scrollbar";
-import {$} from "./dom";
+import IOElement from "./io-element.mjs";
+import IOScrollbar from "./io-scrollbar.mjs";
+import {$} from "./dom.mjs";
 
-import "./io-checkbox";
-import "./io-toggle";
+import "./io-checkbox.mjs";
+import "./io-toggle.mjs";
 
 
 // <io-filter-list disabled />.{filters = [...]}

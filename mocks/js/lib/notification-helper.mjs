@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import {params} from "../config/env";
+import {params} from "../config/env.mjs";
 
 const notifications = {
   critical: {

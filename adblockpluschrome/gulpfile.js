@@ -32,7 +32,7 @@ let argumentParser = new argparse.ArgumentParser({
 
 argumentParser.addArgument(
   ["-t", "--target"],
-  {choices: ["chrome", "firefox"]}
+  {choices: ["chrome", "firefox", "local"]}
 );
 argumentParser.addArgument(
   ["-c", "--channel"],
@@ -114,6 +114,14 @@ async function getBuildSteps(options)
     );
   }
 
+  if (options.target !== "local")
+  {
+    buildSteps.push(
+      tasks.createManifest(options.manifest),
+      translations(options.translations, options.manifest)
+    );
+  }
+
   buildSteps.push(
     tasks.mapping(options.mapping),
     tasks.webpack({
@@ -122,9 +130,7 @@ async function getBuildSteps(options)
       addonVersion: options.version,
       sourceMapType: options.sourceMapType,
       skipTypeChecks: args["skip_type_checks"] === "true"
-    }),
-    tasks.createManifest(options.manifest),
-    translations(options.translations, options.manifest)
+    })
   );
 
   return buildSteps;

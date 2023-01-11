@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import {params} from "../config/env";
+import {params} from "../config/env.mjs";
 
 export const isDataCorrupted = () => params.dataCorrupted;
 export const isReinitialized = () => params.reinitialized;

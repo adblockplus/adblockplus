@@ -17,14 +17,14 @@
 
 import {bind, wire} from "hyperhtml";
 
-import api from "../api";
-import {convertDoclinks} from "../common";
-import {$} from "../dom";
-import {initI18n} from "../i18n";
+import api from "../api/index.ts";
+import {convertDoclinks} from "../common.mjs";
+import {$} from "../dom.mjs";
+import {initI18n} from "../i18n.mjs";
 
 // We need to import io-element to initialize the i18n intent we're using
-import "../io-element";
-import "../landing";
+import "../io-element.mjs";
+import "../landing.mjs";
 
 const localeInfo = api.app.get("localeInfo");
 

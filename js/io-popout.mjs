@@ -15,9 +15,9 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import {getDoclink} from "./common";
-import {setElementLinks} from "./i18n";
-import IOElement from "./io-element";
+import {getDoclink} from "./common.mjs";
+import {setElementLinks} from "./i18n.mjs";
+import IOElement from "./io-element.mjs";
 
 class IOPopout extends IOElement
 {

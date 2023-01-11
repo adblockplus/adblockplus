@@ -18,5 +18,6 @@
 export {default as base} from "./base.js";
 export {default as chrome} from "./chrome.js";
 export {default as firefox} from "./firefox.js";
+export {default as local} from "./local.js";
 export {default as rulesV3} from "./rules.v3.js";
 export {default as webpack} from "./webpack.config.js";

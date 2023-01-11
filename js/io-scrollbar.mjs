@@ -15,8 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import IOElement from "./io-element";
-import {relativeCoordinates} from "./dom";
+import IOElement from "./io-element.mjs";
+import {relativeCoordinates} from "./dom.mjs";
 
 const {isLeftClick} = IOElement.utils.event;
 

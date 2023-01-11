@@ -15,8 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import {$} from "../../dom";
-import {isTabAllowlisted} from "./utils";
+import {$} from "../../dom.mjs";
+import {isTabAllowlisted} from "./utils.mjs";
 
 // remember initial state to better toggle content
 let toggleChecked;

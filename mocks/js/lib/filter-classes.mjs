@@ -15,8 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import {params} from "../config/env";
-import filterState from "./filter-state";
+import {params} from "../config/env.mjs";
+import filterState from "./filter-state.mjs";
 
 export class Filter
 {

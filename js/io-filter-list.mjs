@@ -15,15 +15,15 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import api from "./api";
-import {getErrorMessage} from "./common";
-import {$} from "./dom";
-import {stripTagsUnsafe} from "./i18n";
-import IOElement from "./io-element";
-import IOFilterBase from "./io-filter-base";
+import api from "./api/index.ts";
+import {getErrorMessage} from "./common.mjs";
+import {$} from "./dom.mjs";
+import {stripTagsUnsafe} from "./i18n.mjs";
+import IOElement from "./io-element.mjs";
+import IOFilterBase from "./io-filter-base.mjs";
 
-import "./io-checkbox";
-import "./io-toggle";
+import "./io-checkbox.mjs";
+import "./io-toggle.mjs";
 
 const prevFilterText = new WeakMap();
 

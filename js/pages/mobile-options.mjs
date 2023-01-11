@@ -15,9 +15,9 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import api from "../api";
-import {convertDoclinks, getDoclink, getErrorMessage} from "../common";
-import {initI18n} from "../i18n";
+import api from "../api/index.ts";
+import {convertDoclinks, getDoclink, getErrorMessage} from "../common.mjs";
+import {initI18n} from "../i18n.mjs";
 
 {
   const dialogSubscribe = "subscribe";

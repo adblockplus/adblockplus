@@ -21,12 +21,6 @@ export default {
   webpack: {
     bundles: [
       {
-        dest: "polyfill.js",
-        src: [
-          "adblockpluschrome/lib/polyfill.js"
-        ]
-      },
-      {
         dest: "background.js",
         src: [
           "adblockpluschrome/lib/serviceworkerInit.js",
@@ -43,6 +37,58 @@ export default {
           "adblockpluschrome/lib/filterConfiguration.js",
           "lib/public-api/allowlisting.js"
         ]
+      },
+      {
+        dest: "composer.js",
+        src: ["js/pages/composer.mjs"]
+      },
+      {
+        dest: "composer.preload.js",
+        src: ["js/content/composer.preload.mjs"]
+      },
+      {
+        dest: "day1.js",
+        src: ["js/pages/day1.mjs"]
+      },
+      {
+        dest: "desktop-options.js",
+        src: ["js/pages/desktop-options/index.mjs"]
+      },
+      {
+        dest: "devtools-panel.js",
+        src: ["js/pages/devtools-panel/index.mjs"]
+      },
+      {
+        dest: "first-run.js",
+        src: ["js/pages/first-run.mjs"]
+      },
+      {
+        dest: "issue-reporter.js",
+        src: ["js/pages/issue-reporter/index.mjs"]
+      },
+      {
+        dest: "polyfill.js",
+        src: ["adblockpluschrome/lib/polyfill.js"]
+      },
+      {
+        dest: "popup.js",
+        src: ["js/pages/popup/index.mjs"]
+      },
+      {
+        dest: "popup-dummy.js",
+        src: ["js/pages/popup-dummy.mjs"]
+      },
+      {
+        dest: "premium.preload.js",
+        src: ["src/premium/content/index.ts"]
+      },
+      {
+        dest: "problem.js",
+        src: ["js/pages/problem.mjs"]
+      },
+      {
+        dest: "updates.js",
+        src: ["js/pages/updates.mjs"]
       }
     ]
   },
@@ -79,13 +125,10 @@ export default {
       {
         dest: "",
         src: [
-          "*.js",
           "*.html",
-          "dist/composer.preload.js",
-          "dist/premium.preload.js",
           "adblockpluschrome/devtools.*",
-          "!polyfill.js",
-          "!mobile-options.*"
+          "options.js",
+          "!mobile-options.html"
         ]
       }
     ],

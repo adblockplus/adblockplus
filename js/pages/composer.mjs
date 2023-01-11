@@ -15,8 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import {getErrorMessage} from "../common";
-import {initI18n, stripTagsUnsafe} from "../i18n";
+import {getErrorMessage} from "../common.mjs";
+import {initI18n, stripTagsUnsafe} from "../i18n.mjs";
 
 let initialFilterText = "";
 let targetPageId = null;

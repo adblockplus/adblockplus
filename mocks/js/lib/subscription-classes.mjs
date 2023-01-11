@@ -15,11 +15,11 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import {Filter} from "./filter-classes";
-import filterNotifier from "./filter-notifier";
-import {knownFilterText} from "../config/filters";
-import {params} from "../config/env";
-import {subscriptionDetails} from "../config/subscriptions";
+import {Filter} from "./filter-classes.mjs";
+import filterNotifier from "./filter-notifier.mjs";
+import {knownFilterText} from "../config/filters.mjs";
+import {params} from "../config/env.mjs";
+import {subscriptionDetails} from "../config/subscriptions.mjs";
 
 export function Subscription(url)
 {

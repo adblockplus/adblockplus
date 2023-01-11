@@ -15,8 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import IOElement from "./io-element";
-import {$} from "./dom";
+import IOElement from "./io-element.mjs";
+import {$} from "./dom.mjs";
 
 class IOCircleToggle extends IOElement
 {

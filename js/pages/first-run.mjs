@@ -15,9 +15,9 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import api from "../api";
-import {convertDoclinks} from "../common";
-import {initI18n, setElementLinks, setElementText} from "../i18n";
+import api from "../api/index.ts";
+import {convertDoclinks} from "../common.mjs";
+import {initI18n, setElementLinks, setElementText} from "../i18n.mjs";
 
 function openOptions()
 {

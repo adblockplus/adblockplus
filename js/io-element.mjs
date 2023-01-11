@@ -16,7 +16,7 @@
  */
 
 import HyperHTMLElement from "hyperhtml-element";
-import {setElementText} from "./i18n";
+import {setElementText} from "./i18n.mjs";
 
 // common DOM utilities exposed as IOElement.utils
 const DOMUtils = {

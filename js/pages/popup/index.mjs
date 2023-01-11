@@ -15,22 +15,22 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import api from "../../api";
-import {getSourceAttribute} from "../../common";
-import {$, $$} from "../../dom";
-import {initI18n} from "../../i18n";
-import setupBlock from "./block-element";
-import {createShareLink} from "./social-media-share";
-import setupToggles from "./toggles";
+import api from "../../api/index.ts";
+import {getSourceAttribute} from "../../common.mjs";
+import {$, $$} from "../../dom.mjs";
+import {initI18n} from "../../i18n.mjs";
+import setupBlock from "./block-element.mjs";
+import {createShareLink} from "./social-media-share.mjs";
+import setupToggles from "./toggles.mjs";
 import {
   activeTab,
   reportIssue,
   whenPageReady
-} from "./utils";
+} from "./utils.mjs";
 
-import "../../io-circle-toggle";
-import "./notifications";
-import "../../io-popup-footer";
+import "../../io-circle-toggle.mjs";
+import "./notifications.mjs";
+import "../../io-popup-footer.mjs";
 
 initI18n();
 
