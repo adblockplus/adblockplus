@@ -96,15 +96,15 @@ extension code in the extension's background process.
 ## Testing
 
 If you don't want to build the entire extension, you can open UI pages in a test
-environment using a local web server. This can be done by running npm start,
+environment using a local web server. This can be done by running `npm start`,
 which allows you to access the HTML pages under the URL shown in the terminal,
 e.g. http://127.0.0.1:8080.
 
 Various aspects of the pages can be tested by setting parameters in the URL (see
 [list of URL parameters](docs/test-env.md#url-parameters)).
 
-**Note**: You need to [create the bundles](#bundling) for the UI page(s) that
-you want to test.
+**Note**: You need to [create the bundles](#bundling-the-ui) for the UI page(s)
+that you want to test.
 
 ### Nightlies
 
@@ -180,12 +180,9 @@ e.g. after checking out a new revision.
 Various files need to be generated before using the UI. When building the UI
 for inclusion in the extension, this is achieved using `npm run dist`.
 
-For usage [in the test environment](#testing), you can run `npm run bundle` to
-generate the various bundles for all [UI elements](#ui-elements) or
-`npm run $ bundle.<page ID>` to create only those that are necessary for a
-specific UI page.  Additionally, you need to run `npm run $ bundle.mocks` in
-order to create the bundle for the mocks that are being used in the test
-environment.
+For usage [in the test environment](#testing), you can run
+`npm run $ create.mocks` to generate the various bundles for all
+[UI elements](#ui-elements).
 
 Beyond that, this repository contains [various utilities][wiki-utils] that we
 rely on across our development process.

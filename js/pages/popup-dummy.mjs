@@ -15,11 +15,11 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import {$} from "../dom";
-import {initI18n} from "../i18n";
+import {$} from "../dom.mjs";
+import {initI18n} from "../i18n.mjs";
 
-import "../io-circle-toggle";
-import "../io-popup-footer";
+import "../io-circle-toggle.mjs";
+import "../io-popup-footer.mjs";
 
 initI18n();
 

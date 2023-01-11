@@ -15,12 +15,12 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import {$, $$} from "../../dom";
+import {$, $$} from "../../dom.mjs";
 
 // both components are needed,
 // and handled, by this file
-import "../../io-steps";
-import "../../io-highlighter";
+import "../../io-steps.mjs";
+import "../../io-highlighter.mjs";
 
 // managers are invoked right away
 // but their initialization might be asynchronous

@@ -16,15 +16,15 @@
  */
 
 import {getUUID} from "../../../src/id/shared/index.ts";
-import {convertDoclinks} from "../../common";
-import {$, asIndentedString} from "../../dom";
-import {initI18n, setElementLinks} from "../../i18n";
+import {convertDoclinks} from "../../common.mjs";
+import {$, asIndentedString} from "../../dom.mjs";
+import {initI18n, setElementLinks} from "../../i18n.mjs";
 import {
   collectData,
   closeRequestsCollectingTab,
   updateConfigurationInfo
-} from "./report";
-import stepsManager from "./steps-manager";
+} from "./report.mjs";
+import stepsManager from "./steps-manager.mjs";
 
 const optionalPermissions = {
   permissions: [

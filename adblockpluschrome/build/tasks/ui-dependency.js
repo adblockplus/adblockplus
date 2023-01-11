@@ -39,22 +39,16 @@ function createBuild()
 async function mustBuildUI(lastUIBuildTime)
 {
   let matches = await (promisify(glob))(
-    "../**",
+    "../{build/icons-generation,css,vendor}/**",
     {
       ignore: [
-        "../.github/**",
-        "../.gitlab/**",
-        "../adblockpluschrome/**",
-        "../docs/**",
-        "../dist/**",
-        "../ext/**",
-        "../lib/**",
-        "../mocks/**",
-        "../node_modules/**",
-        "../src/**/background/**",
-        "../test/**"
+        "../vendor/webext-sdk/node_modules/**"
       ]
     }
+  );
+  matches.push(
+    "../package.json",
+    "../package-lock.json"
   );
 
   return await new Promise((resolve, reject) =>

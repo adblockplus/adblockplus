@@ -15,9 +15,9 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import IOElement from "./io-element";
+import IOElement from "./io-element.mjs";
 
-import {$} from "./dom";
+import {$} from "./dom.mjs";
 
 const MINIMUM_SEARCH_LENGTH = 3;
 

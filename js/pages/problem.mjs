@@ -15,12 +15,12 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import api from "../api";
-import {convertDoclinks} from "../common";
-import {$} from "../dom";
-import {initI18n} from "../i18n";
+import api from "../api/index.ts";
+import {convertDoclinks} from "../common.mjs";
+import {$} from "../dom.mjs";
+import {initI18n} from "../i18n.mjs";
 
-import "../landing";
+import "../landing.mjs";
 
 api.app.getInfo().then((info) =>
 {

@@ -15,6 +15,6 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import {EventEmitter} from "../event-emitter";
+import {EventEmitter} from "../event-emitter.mjs";
 
 export const port = new EventEmitter();

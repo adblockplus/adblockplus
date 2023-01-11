@@ -19,7 +19,7 @@ import {
   USER_ID,
   subscriptionDetails as subscriptions,
   subscriptionUrls
-} from "./subscriptions";
+} from "./subscriptions.mjs";
 
 const {URL_BLOCKLIST} = subscriptionUrls;
 

@@ -15,9 +15,9 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import IOElement from "./io-element";
-import DrawingHandler from "./drawing-handler";
-import {$} from "./dom";
+import IOElement from "./io-element.mjs";
+import DrawingHandler from "./drawing-handler.mjs";
+import {$} from "./dom.mjs";
 
 // <io-highlighter data-max-size=800 />
 class IOHighlighter extends IOElement

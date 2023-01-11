@@ -14,7 +14,7 @@
     "lint:ts-only": "eslint --no-eslintrc -c eslint-config.js --ext .ts ./ --ignore-path .gitignore",
     "prettier": "prettier ./**/*.ts ./**/*.md ./**/*.scss ./**/*.html ./**/*.json --write",
     "prettier:ts-only": "prettier ./**/*.ts --write",
-    "start": "http-server",
+    "start": "http-server ./adblockpluschrome/devenv.local/",
     "test": "npm run $ test",
     "test:unit:ts-only": "jest && npm run test:unit:printCoverageLink",
     "test:unit:printCoverageLink": "node ./scripts/printCoverageReportLink.js",
@@ -31,15 +31,7 @@
   },
   "$": {
     "bundle": {
-      "bypass-preload": [
-        "mkdir -p dist",
-        "$ create.js ./src/bypass/content/index.ts ./dist/bypass.preload.js"
-      ],
       "composer": "$ create.bundle composer",
-      "composer-preload": [
-        "mkdir -p dist",
-        "$ create.js ./js/content/composer.preload.mjs ./dist/composer.preload.js"
-      ],
       "day1": [
         "$ create.bundle.css popup",
         "$ create.bundle popup-dummy",
@@ -50,25 +42,13 @@
       "first-run": "$ create.bundle first-run",
       "issue-reporter": "$ create.bundle issue-reporter",
       "mobile-options": "$ create.bundle mobile-options",
-      "mocks": [
-        "mkdir -p mocks/dist",
-        "$ create.js ./mocks/js/background.mjs ./mocks/dist/background.js"
-      ],
       "popup": "$ create.bundle popup",
-      "premium-preload": [
-        "mkdir -p dist",
-        "$ create.js ./src/premium/content/index.ts ./dist/premium.preload.js"
-      ],
       "problem": "$ create.bundle problem",
       "updates": "$ create.bundle updates"
     },
     "create": {
       "bundle": {
-        "css": "$ create.css ./css/pages/$1.scss ./skin/$1.css",
-        "js": [
-          "source=$([ -d ./js/pages/$1 ] && echo \"./js/pages/$1/index.mjs\" || echo \"./js/pages/$1.mjs\")",
-          "$ create.js $source ./$1.js"
-        ]
+        "css": "$ create.css ./css/pages/$1.scss ./skin/$1.css"
       },
       "css": "sass --no-source-map $1 $2",
       "dist": {
@@ -77,9 +57,9 @@
         "rules": "rules adblockplus",
         "ui": "$ bundle"
       },
-      "js": [
-        "copyright=\"$(cat ./build/license.txt)\"",
-        "echo \"$copyright /* eslint-disable */\n$(rollup $1 --config rollup.config.ts --configPlugin typescript)\" > $2"
+      "mocks": [
+        "cd adblockpluschrome",
+        "npx gulp devenv -t local --skip-type-checks true"
       ]
     },
     "crowdin": {
@@ -133,16 +113,12 @@
   "dependencies": {
     "@adblockinc/rules": "gitlab:adblockinc/ext/rules#c53ddaee",
     "@eyeo/snippets": "0.7.0",
-    "@rollup/plugin-node-resolve": "13.3.0",
-    "@rollup/plugin-typescript": "8.3.2",
     "@types/webextension-polyfill": "0.8.0",
     "canvas": "2.9.1",
     "glob": "7.1.6",
     "hyperhtml-element": "3.15.2",
     "local-range": "0.1.0",
     "npm-dollar": "2.2.1",
-    "rollup": "2.75.0",
-    "rollup-plugin-cleanup": "3.2.1",
     "sass": "1.52.1",
     "typescript": "4.7.3",
     "webextension-polyfill": "0.8.0"

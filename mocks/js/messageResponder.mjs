@@ -15,35 +15,37 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import {params} from "./config/env";
-import records from "./config/records";
+import {params} from "./config/env.mjs";
+import records from "./config/records.mjs";
 
-import {Prefs} from "./lib/prefs";
-import utils from "./lib/utils";
-import filterStorage from "./lib/filter-storage";
-import filterNotifier from "./lib/filter-notifier";
-import {isSlowFilter, Matcher} from "./lib/matcher";
-import info from "./lib/info";
-import {showOptions} from "./lib/options";
-import recommendations from "./lib/recommendations";
-import {isDataCorrupted, isReinitialized} from "./lib/subscription-init";
-import synchronizer from "./lib/synchronizer";
-import {toggleIgnoreCategory, getLocalizedTexts} from "./lib/notification";
+import {Prefs} from "./lib/prefs.mjs";
+import utils from "./lib/utils.mjs";
+import filterStorage from "./lib/filter-storage.mjs";
+import filterNotifier from "./lib/filter-notifier.mjs";
+import {isSlowFilter, Matcher} from "./lib/matcher.mjs";
+import info from "./lib/info.mjs";
+import {showOptions} from "./lib/options.mjs";
+import recommendations from "./lib/recommendations.mjs";
+import {isDataCorrupted, isReinitialized} from "./lib/subscription-init.mjs";
+import synchronizer from "./lib/synchronizer.mjs";
+import {toggleIgnoreCategory, getLocalizedTexts} from "./lib/notification.mjs";
 import {
   getActiveNotification,
   notificationClicked,
   shouldDisplay
-} from "./lib/notification-helper";
+} from "./lib/notification-helper.mjs";
 import {
   Filter, ActiveFilter, InvalidFilter, URLFilter
-} from "./lib/filter-classes";
+} from "./lib/filter-classes.mjs";
 import {
   Subscription,
   DownloadableSubscription,
   SpecialSubscription
-} from "./lib/subscription-classes";
-import {port} from "./lib/messaging";
-import {filterTypes as requestBlockerFilterTypes} from "./lib/request-blocker";
+} from "./lib/subscription-classes.mjs";
+import {port} from "./lib/messaging.mjs";
+import {
+  filterTypes as requestBlockerFilterTypes
+} from "./lib/request-blocker.mjs";
 
 port.on("composer.isPageReady", () => Boolean(params.composerActive));
 port.on("stats.getBlockedPerPage", () => 123);

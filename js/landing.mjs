@@ -15,8 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import api from "./api";
-import {setElementLinks, setElementText} from "./i18n";
+import api from "./api/index.ts";
+import {setElementLinks, setElementText} from "./i18n.mjs";
 
 function initCopyrightNotice()
 {

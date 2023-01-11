@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import {params} from "./env";
+import {params} from "./env.mjs";
 
 const URL_SUBSCRIPTION_BASE = "https://easylist-downloads.adblockplus.org";
 const URL_BLOCKLIST = `${URL_SUBSCRIPTION_BASE}/easylistgermany+easylist.txt`;

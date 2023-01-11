@@ -1,5 +1,4 @@
 # dist directories for generated files
-/mocks/dist/
 /dist/
 
 # external dependencies
@@ -16,20 +15,6 @@ coverage/
 
 # OS generated files
 .DS_Store
-
-# generated files
-/composer.js
-/day1.js
-/desktop-options.js
-/devtools-panel.js
-/first-run.js
-/issue-reporter.js
-/mobile-options.js
-/options.js
-/popup-dummy.js
-/popup.js
-/problem.js
-/updates.js
 
 # adblockpluschrome
 /adblockpluschrome/devenv.*/

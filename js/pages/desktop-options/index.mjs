@@ -18,31 +18,31 @@
 import {
   closeAddFiltersByURL,
   setupAddFiltersByURL
-} from "./add-filters-by-url";
+} from "./add-filters-by-url.mjs";
 import {
   getPrettyItemTitle,
   getRawItemTitle,
   loadLanguageNames
-} from "./titles";
-import api from "../../api";
+} from "./titles.mjs";
+import api from "../../api/index.ts";
 import {
   convertDoclinks,
   getDoclink,
   getErrorMessage,
   getSourceAttribute
-} from "../../common";
-import {$, $$} from "../../dom";
+} from "../../common.mjs";
+import {$, $$} from "../../dom.mjs";
 import {
   initI18n,
   setElementLinks,
   setElementText,
   stripTagsUnsafe
-} from "../../i18n";
+} from "../../i18n.mjs";
 
-import "../../io-filter-table";
-import "../../io-list-box";
-import "../../io-popout";
-import "../../io-toggle";
+import "../../io-filter-table.mjs";
+import "../../io-list-box.mjs";
+import "../../io-popout.mjs";
+import "../../io-toggle.mjs";
 
 const ALLOWED_PROTOCOLS = /^(?:data|https):/;
 

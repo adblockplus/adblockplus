@@ -28,10 +28,17 @@ function mergeObjectArray(base, override = [])
 
     if (commonDest != -1)
     {
-      result[commonDest] = {
-        ...result[commonDest],
-        src: removeDuplicates(result[commonDest].src, elem.src)
-      };
+      if (elem.overwrite)
+      {
+        result[commonDest] = elem;
+      }
+      else
+      {
+        result[commonDest] = {
+          ...result[commonDest],
+          src: removeDuplicates(result[commonDest].src, elem.src)
+        };
+      }
     }
     else
     {

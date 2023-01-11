@@ -15,12 +15,12 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import {getErrorMessage} from "./common";
-import IOElement from "./io-element";
-import IOFilterList from "./io-filter-list";
-import IOFilterSearch from "./io-filter-search";
+import {getErrorMessage} from "./common.mjs";
+import IOElement from "./io-element.mjs";
+import IOFilterList from "./io-filter-list.mjs";
+import IOFilterSearch from "./io-filter-search.mjs";
 
-import {$, clipboard} from "./dom";
+import {$, clipboard} from "./dom.mjs";
 
 // io-filter-table is a basic controller
 // used to relate the search and the list

@@ -18,10 +18,18 @@
 export default {
   extends: "base",
   webpack: {
-    alias: {
-      info$: "info.gecko.js.tmpl"
-    },
     bundles: [
+      {
+        dest: "background.js",
+        src: ["mocks/js/background.mjs"],
+        overwrite: true
+      },
+      {
+        dest: "polyfill.js",
+        src: ["polyfill.js"],
+        overwrite: true
+      },
+      // Specific to Firefox Mobile
       {
         dest: "mobile-options.js",
         src: ["js/pages/mobile-options.mjs"]
@@ -30,6 +38,23 @@ export default {
   },
   mapping: {
     copy: [
+      {
+        dest: "ext",
+        src: ["ext/**"]
+      },
+      {
+        dest: "locale",
+        src: ["locale/**"]
+      },
+      {
+        dest: "mocks",
+        src: ["mocks/background.html"]
+      },
+      {
+        dest: "mocks/data",
+        src: ["mocks/data/**"]
+      },
+      // Specific to Firefox Mobile
       {
         dest: "skin",
         src: [
@@ -41,9 +66,7 @@ export default {
         dest: "",
         src: ["mobile-options.html"]
       }
-    ]
-  },
-  translations: {
-    src: ["locale/*/mobile-options.json"]
+    ],
+    rename: []
   }
 };

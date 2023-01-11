@@ -15,8 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import {EventEmitter} from "../event-emitter";
-import prefsData from "../config/prefs-data";
+import {EventEmitter} from "../event-emitter.mjs";
+import prefsData from "../config/prefs-data.mjs";
 
 export const Prefs = new EventEmitter();
 
