@@ -359,6 +359,10 @@
     "description": "https://gitlab.com/eyeo/specs/spec/blob/820a59c30a895f361f88bae52c1fe5c2cd565222/spec/abp/desktop-settings/advanced-tab.md#filter-list-error-popup",
     "message": "There are one or more issues with this filter list:"
   },
+  "options_filterList_lastDownload_bundled": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/22e147d89d172f8dd2391a51edf6171d69796c94/spec/abp/desktop-settings/advanced-tab.md#datetime-of-last-filter-list-update",
+    "message": "Bundled"
+  },
   "options_filterList_lastDownload_invalidURL": {
     "description": "Error message in advanced tab",
     "message": "Not a valid address. Check the URL."

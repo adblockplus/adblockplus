@@ -319,7 +319,13 @@ Collection.prototype.updateItem = function(item)
     {
       element.classList.remove("show-message");
       cleanSyncErrorIdsFromSubscription(item.url);
-      if (item.downloading)
+      if (!item.downloadable)
+      {
+        const text = getMessage("options_filterList_lastDownload_bundled");
+        $(".message", element).textContent = text;
+        element.classList.add("show-message");
+      }
+      else if (item.downloading)
       {
         const text = getMessage("options_filterList_lastDownload_inProgress");
         $(".message", element).textContent = text;
@@ -376,6 +382,12 @@ Collection.prototype.updateItem = function(item)
       }
 
       updateErrorTooltip(element, subscriptionErrorIds.get(item.url));
+    }
+
+    const updateElement = $("io-popout .update-subscription", element);
+    if (updateElement)
+    {
+      updateElement.setAttribute("aria-hidden", !item.downloadable);
     }
 
     const websiteElement = $("io-popout .website", element);
