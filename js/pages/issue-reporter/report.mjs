@@ -288,8 +288,11 @@ function retrieveSubscriptions()
         subscriptionElement.setAttribute("hardExpiration",
                                          subscription.expires - now);
       }
-      subscriptionElement.setAttribute("downloadStatus",
-                                       subscription.downloadStatus);
+      if (subscription.downloadStatus)
+      {
+        subscriptionElement.setAttribute("downloadStatus",
+                                         subscription.downloadStatus);
+      }
       subscriptionElement.setAttribute("disabledFilters",
                                        subscription.disabledFilters.length);
       element.appendChild(subscriptionElement);
