@@ -36,6 +36,7 @@ export class TabSessionStorage
   constructor(namespace)
   {
     this._namespace = namespace;
+    this._queue = Promise.resolve();
   }
 
   /**
@@ -45,16 +46,19 @@ export class TabSessionStorage
    */
   async delete(tabId)
   {
-    const session = await sessionByTabId.get(tabId);
-    if (!session)
-      return;
+    return sessionByTabId.transaction(async() =>
+    {
+      const session = await sessionByTabId.get(tabId);
+      if (!session)
+        return;
 
-    delete session[this._namespace];
+      delete session[this._namespace];
 
-    if (Object.keys(session).length)
-      await sessionByTabId.set(tabId, session);
-    else
-      await sessionByTabId.delete(tabId);
+      if (Object.keys(session).length)
+        await sessionByTabId.set(tabId, session);
+      else
+        await sessionByTabId.delete(tabId);
+    });
   }
 
   /**
@@ -90,9 +94,26 @@ export class TabSessionStorage
    */
   async set(tabId, value)
   {
-    const session = (await sessionByTabId.get(tabId)) || {};
-    session[this._namespace] = value;
-    await sessionByTabId.set(tabId, session);
+    return sessionByTabId.transaction(async() =>
+    {
+      const session = (await sessionByTabId.get(tabId)) || {};
+      session[this._namespace] = value;
+      await sessionByTabId.set(tabId, session);
+    });
+  }
+
+  /**
+   * Executes given function as a transaction to avoid race conditions.
+   * @param {Function} fn
+   * @return {Promise}
+   */
+  async transaction(fn)
+  {
+    this._queue = this._queue
+      // Necessary to avoid breakage of promise chain
+      .catch(console.error)
+      .then(fn);
+    return this._queue;
   }
 }
 

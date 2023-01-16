@@ -134,11 +134,18 @@ async function setIcon(page, opacity, frames)
   }
 }
 
-allowlistingState.addListener("changed", async(page, isAllowlisted) =>
+allowlistingState.addListener("changed", (page, isAllowlisted) =>
 {
-  await allowlistedState.set(page.id, isAllowlisted);
-  if (canUpdateIcon)
-    await setIcon(page);
+  void allowlistedState.transaction(async() =>
+  {
+    const wasAllowlisted = await allowlistedState.get(page.id);
+    if (wasAllowlisted === isAllowlisted)
+      return;
+
+    await allowlistedState.set(page.id, isAllowlisted);
+    if (canUpdateIcon)
+      await setIcon(page);
+  });
 });
 
 async function renderFrames(opacities)

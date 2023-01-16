@@ -31,7 +31,7 @@ class Port
     ext.onMessage.addListener(this._onMessage);
   }
 
-  async _onMessage(message, sender)
+  _onMessage(message, sender)
   {
     let callbacks = this._eventEmitter.listeners(message.type);
 

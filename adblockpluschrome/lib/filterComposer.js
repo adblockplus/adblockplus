@@ -21,10 +21,18 @@ import * as info from "info";
 
 import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
 import {port} from "./messaging/port.js";
+import {SessionStorage} from "./storage/session.js";
 import {TabSessionStorage} from "./storage/tab-session.js";
 import {allowlistingState} from "./allowlisting.js";
 import {Prefs} from "./prefs.js";
 import {extractHostFromFrame} from "./url.js";
+
+/**
+ * Key to store/retrieve the active filter composer dialog
+ */
+const activeDialogKey = "activeDialog";
+
+const session = new SessionStorage("filterComposer");
 
 function isValidString(s)
 {
@@ -192,7 +200,21 @@ async function composeFilters(details)
  */
 port.on("composer.openDialog", async(message, sender) =>
 {
-  let newWindow = await browser.windows.create({
+  // Close previously active dialog before opening new one
+  const activeDialog = await session.get(activeDialogKey);
+  if (activeDialog)
+  {
+    void browser.tabs.remove(activeDialog.tab.id);
+
+    // We cannot wait until this cleanup to occur when the tab gets closed,
+    // since the active dialog may have already changed in the meantime
+    void browser.tabs.sendMessage(activeDialog.sender.id, {
+      type: "composer.content.dialogClosed",
+      popupId: activeDialog.tab.id
+    });
+  }
+
+  const dialogWindow = await browser.windows.create({
     url: browser.runtime.getURL("composer.html"),
     left: 50,
     top: 50,
@@ -200,80 +222,125 @@ port.on("composer.openDialog", async(message, sender) =>
     height: 300,
     type: "popup"
   });
-  let popupPageId = newWindow.tabs[0].id;
+  const [dialogTab] = dialogWindow.tabs;
 
-  let doInitAttempt = 0;
-  let doInit = async() =>
-  {
-    doInitAttempt += 1;
-    if (doInitAttempt > 30)
-      return;
-
-    try
-    {
-      let response = await browser.tabs.sendMessage(popupPageId, {
-        type: "composer.dialog.init",
-        sender: sender.page.id,
-        filters: message.filters,
-        highlights: message.highlights
-      });
-
-      // Sometimes sendMessage incorrectly reports a success on Firefox, so
-      // we must check the response too.
-      if (!response)
-        throw new Error();
-
-      // Sometimes Firefox <63 doesn't draw the window's contents[1]
-      // initially, so we resize the window slightly as a workaround.
-      // [1] - https://bugzilla.mozilla.org/show_bug.cgi?id=1408446
-      if (info.application == "firefox")
-      {
-        await browser.windows.update(newWindow.id,
-                                     {width: newWindow.width + 2});
-      }
+  await session.set(activeDialogKey, {
+    filters: message.filters,
+    highlights: message.highlights,
+    initAttempt: 0,
+    sender: {
+      id: sender.page.id
+    },
+    status: null,
+    tab: {
+      id: dialogTab.id,
+      status: dialogTab.status
+    },
+    window: {
+      id: dialogWindow.id,
+      width: dialogWindow.width
     }
-    catch (e)
-    {
-      // Firefox sometimes sets the status for a window to "complete" before
-      // it is ready to receive messages[1]. As a workaround we'll try again a
-      // few times with a second delay.
-      // [1] - https://bugzilla.mozilla.org/show_bug.cgi?id=1418655
-      setTimeout(doInit, 100);
-    }
-  };
+  });
 
-  if (newWindow.tabs[0].status != "complete")
+  // Wait for the tab to finish loading
+  if (dialogTab.status !== "complete")
+    return;
+
+  await doInit();
+});
+
+async function doInit()
+{
+  const activeDialog = await session.get(activeDialogKey);
+
+  await browser.tabs.sendMessage(activeDialog.sender.id, {
+    type: "composer.content.dialogOpened",
+    popupId: activeDialog.tab.id
+  });
+
+  activeDialog.initAttempt += 1;
+  await session.set(activeDialogKey, activeDialog);
+  if (activeDialog.initAttempt > 30)
+    return;
+
+  try
   {
-    let updateListener = async(tabId, changeInfo, tab) =>
+    let response = await browser.tabs.sendMessage(activeDialog.tab.id, {
+      type: "composer.dialog.init",
+      sender: activeDialog.sender.id,
+      filters: activeDialog.filters,
+      highlights: activeDialog.highlights
+    });
+
+    // Sometimes sendMessage incorrectly reports a success on Firefox, so
+    // we must check the response too.
+    if (!response)
+      throw new Error();
+
+    // Sometimes Firefox <63 doesn't draw the window's contents[1]
+    // initially, so we resize the window slightly as a workaround.
+    // [1] - https://bugzilla.mozilla.org/show_bug.cgi?id=1408446
+    if (info.application == "firefox")
     {
-      if (tabId == popupPageId && changeInfo.status == "complete")
-      {
-        await browser.tabs.onUpdated.removeListener(updateListener);
-        await doInit();
-      }
-    };
-    await browser.tabs.onUpdated.addListener(updateListener);
+      await browser.windows.update(activeDialog.window.id,
+                                   {width: activeDialog.window.width + 2});
+    }
+  }
+  catch (e)
+  {
+    // Firefox sometimes sets the status for a window to "complete" before
+    // it is ready to receive messages[1]. As a workaround we'll try again a
+    // few times with a second delay.
+    // [1] - https://bugzilla.mozilla.org/show_bug.cgi?id=1418655
+    setTimeout(doInit, 100);
+  }
+}
+
+async function onTabRemoved(removedTabId)
+{
+  const activeDialog = await session.get(activeDialogKey);
+  if (!activeDialog)
+    return;
+
+  // Notify content script if dialog was closed
+  if (removedTabId === activeDialog.tab.id)
+  {
+    browser.tabs.sendMessage(activeDialog.sender.id, {
+      type: "composer.content.dialogClosed",
+      popupId: activeDialog.tab.id
+    });
+  }
+  // Close dialog if tab was closed
+  else if (removedTabId === activeDialog.sender.id)
+  {
+    browser.tabs.sendMessage(activeDialog.tab.id, {
+      type: "composer.dialog.close"
+    });
   }
   else
   {
-    await doInit();
+    return;
   }
 
-  let onRemoved = removedTabId =>
-  {
-    if (removedTabId == popupPageId)
-    {
-      browser.tabs.sendMessage(sender.page.id, {
-        type: "composer.content.dialogClosed",
-        popupId: popupPageId
-      });
-      browser.tabs.onRemoved.removeListener(onRemoved);
-    }
-  };
-  browser.tabs.onRemoved.addListener(onRemoved);
+  await session.delete(activeDialogKey);
+}
+browser.tabs.onRemoved.addListener(onTabRemoved);
 
-  return popupPageId;
-});
+async function onTabUpdated(tabId, changeInfo)
+{
+  const activeDialog = await session.get(activeDialogKey);
+  if (!activeDialog || tabId !== activeDialog.tab.id)
+    return;
+
+  if (activeDialog.status === "complete" || changeInfo.status !== "complete")
+    return;
+
+  activeDialog.status = changeInfo.status;
+  await session.set(activeDialogKey, activeDialog);
+
+  await doInit();
+}
+browser.tabs.onUpdated.addListener(onTabUpdated);
 
 /**
  * @typedef {object} composerGetFiltersResult
@@ -415,13 +482,16 @@ if ("windows" in browser)
   });
 }
 
-allowlistingState.addListener("changed", async(page, isAllowlisted) =>
+allowlistingState.addListener("changed", (page, isAllowlisted) =>
 {
-  if (await readyActivePages.has(page.id))
+  void readyActivePages.transaction(async() =>
   {
-    await readyActivePages.set(page.id, !isAllowlisted);
-    updateContextMenu(page);
-  }
+    if (await readyActivePages.has(page.id))
+    {
+      await readyActivePages.set(page.id, !isAllowlisted);
+      updateContextMenu(page);
+    }
+  });
 });
 
 Prefs.on("shouldShowBlockElementMenu", () =>
@@ -490,7 +560,6 @@ ext.pages.onLoaded.addListener(async page =>
 
 ext.addTrustedMessageTypes(null, [
   "composer.content.clearPreviousRightClickEvent",
-  "composer.content.dialogOpened",
   "composer.content.finished",
   "composer.dialog.close",
   "composer.forward",

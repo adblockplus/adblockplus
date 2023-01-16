@@ -102,13 +102,16 @@ async function onBlockableItem({filter, request})
 
   let {tabId} = request;
 
-  let blocked = await blockedPerPage.get(tabId) || 0;
-  ++blocked;
+  await blockedPerPage.transaction(async() =>
+  {
+    let blocked = await blockedPerPage.get(tabId) || 0;
+    ++blocked;
 
-  await blockedPerPage.set(tabId, blocked);
-  scheduleBadgeUpdate(tabId);
+    await blockedPerPage.set(tabId, blocked);
+    scheduleBadgeUpdate(tabId);
 
-  eventEmitter.emit("blocked_per_page", {tabId, blocked});
+    eventEmitter.emit("blocked_per_page", {tabId, blocked});
+  });
 
   // Don't update the total for incognito tabs.
   let tab = await browser.tabs.get(tabId);

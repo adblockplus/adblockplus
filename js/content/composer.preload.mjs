@@ -447,24 +447,11 @@ async function elementPicked(event)
     highlights = document.querySelectorAll(cssQuery).length;
   }
 
-  const popupId = await browser.runtime.sendMessage({
+  await browser.runtime.sendMessage({
     type: "composer.openDialog",
     filters,
     highlights
   });
-  // Only the top frame keeps a record of the popup window's ID,
-  // so if this isn't the top frame we need to pass the ID on.
-  if (window == window.top)
-  {
-    blockelementPopupId = popupId;
-  }
-  else
-  {
-    browser.runtime.sendMessage({
-      type: "composer.forward",
-      payload: {type: "composer.content.dialogOpened", popupId}
-    });
-  }
 }
 
 function stopPickingElement()
