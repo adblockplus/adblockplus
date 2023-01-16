@@ -36,7 +36,7 @@
     {
       let responses = ext.onMessage._dispatch(message, {});
       let response = ext.getMessageResponse(responses);
-      if (!response)
+      if (typeof response === "undefined")
         return;
 
       return Promise.resolve(response);

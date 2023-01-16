@@ -42,6 +42,7 @@ export class SessionStorage
   constructor(namespace)
   {
     this._namespace = namespace;
+    this._queue = Promise.resolve();
   }
 
   /**
@@ -98,6 +99,20 @@ export class SessionStorage
       return;
     }
 
-    browser.storage.session.set({[globalKey]: value});
+    await browser.storage.session.set({[globalKey]: value});
+  }
+
+  /**
+   * Executes given function as a transaction to avoid race conditions.
+   * @param {Function} fn
+   * @return {Promise}
+   */
+  async transaction(fn)
+  {
+    this._queue = this._queue
+      // Necessary to avoid breakage of promise chain
+      .catch(console.error)
+      .then(fn);
+    return this._queue;
   }
 }

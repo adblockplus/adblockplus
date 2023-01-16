@@ -52,42 +52,48 @@ async function onBlockableItem(emit, blockableItem)
   );
 }
 
-async function onPageFrame(emit, details)
+function onPageFrame(emit, details)
 {
-  const {tabId} = details;
-  const reloadState = await reloadStateByPage.get(tabId);
-
-  // Clear the devtools panel and reload the inspected tab without caching
-  // when a new request is issued. However, make sure that we don't end up
-  // in an infinite recursion if we already triggered a reload.
-  if (reloadState === "reloading")
+  void reloadStateByPage.transaction(async() =>
   {
-    await reloadStateByPage.delete(tabId);
-    return;
-  }
+    const {tabId} = details;
+    const reloadState = await reloadStateByPage.get(tabId);
 
-  emit("requests", "reset");
+    // Clear the devtools panel and reload the inspected tab without caching
+    // when a new request is issued. However, make sure that we don't end up
+    // in an infinite recursion if we already triggered a reload.
+    if (reloadState === "reloading")
+    {
+      await reloadStateByPage.delete(tabId);
+      return;
+    }
 
-  // We can't repeat the request if it isn't a GET request. The browser would
-  // prompt the user to confirm reloading the page, and POST requests are
-  // known to cause issues on many websites if repeated.
-  if (details.method === "GET")
-    await reloadStateByPage.set(tabId, "needsReload");
+    emit("requests", "reset");
+
+    // We can't repeat the request if it isn't a GET request. The browser would
+    // prompt the user to confirm reloading the page, and POST requests are
+    // known to cause issues on many websites if repeated.
+    if (details.method === "GET")
+      await reloadStateByPage.set(tabId, "needsReload");
+  });
 }
 
-async function onPageLoad(page)
+function onPageLoad(page)
 {
-  const reloadState = await reloadStateByPage.get(page.id);
-
-  // Reloading the tab is the only way that allows bypassing all caches, in
-  // order to see all requests in the devtools panel. Reloading must not be
-  // performed before the tab changes to "loading", otherwise it will load the
-  // previous URL.
-  if (reloadState === "needsReload")
+  void reloadStateByPage.transaction(async() =>
   {
-    await reloadStateByPage.set(page.id, "reloading");
-    browser.tabs.reload(page.id, {bypassCache: true});
-  }
+    const reloadState = await reloadStateByPage.get(page.id);
+
+    // Reloading the tab is the only way that allows bypassing all caches, in
+    // order to see all requests in the devtools panel. Reloading must not be
+    // performed before the tab changes to "loading", otherwise it will load the
+    // previous URL.
+    if (reloadState === "needsReload")
+    {
+      await reloadStateByPage.set(page.id, "reloading");
+      browser.tabs.reload(page.id, {bypassCache: true});
+    }
+  });
 }
 
 /**

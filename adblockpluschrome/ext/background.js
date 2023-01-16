@@ -394,6 +394,10 @@
     }
 
     let responses = ext.onMessage._dispatch(message, sender);
-    return ext.getMessageResponse(responses);
+    let response = ext.getMessageResponse(responses);
+    if (typeof response === "undefined")
+      return;
+
+    return Promise.resolve(response);
   });
 }

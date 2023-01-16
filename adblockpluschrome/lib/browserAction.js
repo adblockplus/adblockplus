@@ -24,23 +24,26 @@ let changesByPage = new TabSessionStorage("browserAction:changes");
 
 async function setBadgeState(tabId, key, value)
 {
-  let badgeState = await badgeStateByPage.get(tabId);
-
-  if (!badgeState)
+  return badgeStateByPage.transaction(async() =>
   {
-    badgeState = {
-      hiddenState: "visible",
-      text: ""
-    };
-  }
+    let badgeState = await badgeStateByPage.get(tabId);
 
-  // We need to ignore any text changes while we're hiding the badge
-  if (!(badgeState.hiddenState == "hiding" && key == "text"))
-    badgeState[key] = value;
+    if (!badgeState)
+    {
+      badgeState = {
+        hiddenState: "visible",
+        text: ""
+      };
+    }
 
-  await badgeStateByPage.set(tabId, badgeState);
+    // We need to ignore any text changes while we're hiding the badge
+    if (!(badgeState.hiddenState == "hiding" && key == "text"))
+      badgeState[key] = value;
 
-  return badgeState;
+    await badgeStateByPage.set(tabId, badgeState);
+
+    return badgeState;
+  });
 }
 
 function applyChanges(tabId, changes)
@@ -101,41 +104,47 @@ function applyChanges(tabId, changes)
   }));
 }
 
-async function addChange(tabId, name, value)
+function addChange(tabId, name, value)
 {
-  const changes = (await changesByPage.get(tabId)) || {};
-  changes[name] = value;
-  await changesByPage.set(tabId, changes);
+  void changesByPage.transaction(async() =>
+  {
+    const changes = (await changesByPage.get(tabId)) || {};
+    changes[name] = value;
+    await changesByPage.set(tabId, changes);
 
-  try
-  {
-    await applyChanges(tabId, changes);
-    await changesByPage.delete(tabId);
-  }
-  catch (e)
-  {
-    // If the tab is prerendered, browser.action.set* fails
-    // and we have to delay our changes until the currently visible tab
-    // is replaced with the prerendered tab.
-  }
+    try
+    {
+      await applyChanges(tabId, changes);
+      await changesByPage.delete(tabId);
+    }
+    catch (e)
+    {
+      // If the tab is prerendered, browser.action.set* fails
+      // and we have to delay our changes until the currently visible tab
+      // is replaced with the prerendered tab.
+    }
+  });
 }
 
-async function onReplaced(addedTabId)
+function onReplaced(addedTabId)
 {
-  const changes = await changesByPage.get(addedTabId);
-  if (!changes)
-    return;
-
-  try
+  void changesByPage.transaction(async() =>
   {
-    await applyChanges(addedTabId, changes);
-  }
-  catch (e)
-  {
-    // Ignore if we fail to apply the changes
-  }
+    const changes = await changesByPage.get(addedTabId);
+    if (!changes)
+      return;
 
-  await changesByPage.delete(addedTabId);
+    try
+    {
+      await applyChanges(addedTabId, changes);
+    }
+    catch (e)
+    {
+      // Ignore if we fail to apply the changes
+    }
+
+    await changesByPage.delete(addedTabId);
+  });
 }
 // If the tab is prerendered, browser.action.set* fails
 // and we have to delay our changes until the currently visible tab
