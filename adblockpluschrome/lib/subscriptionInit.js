@@ -146,6 +146,22 @@ function initElementHidingDebugMode()
 
 (async() =>
 {
+  // Recommendation URLs default to those for Manifest v3, so we need
+  // to adjust the rules index for Manifest v2 to avoid using those
+  // https://gitlab.com/eyeo/adblockplus/abc/webext-sdk/-/issues/437
+  if (browser.runtime.getManifest().manifest_version === 2)
+  {
+    for (const recommendation of rulesIndex)
+    {
+      if (!recommendation.mv2_url)
+        continue;
+
+      // We cannot remove the "mv2_url" property, because EWE uses it internally
+      // under Manifest v2 to determine the recommendation's URL
+      recommendation.url = recommendation.mv2_url;
+    }
+  }
+
   const [eweFirstRun] = await Promise.all([
     ewe.start({
       bundledSubscriptions: rulesIndex,

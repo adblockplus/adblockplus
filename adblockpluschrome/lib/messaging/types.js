@@ -83,18 +83,9 @@ function toPlainObject(keys, obj)
   return result;
 }
 
-export function toPlainRecommendation(recommendation)
-{
-  // The recommendation URL always refers to the one for Manifest v3,
-  // so we need to overwrite it for Manifest v2
-  if (browser.runtime.getManifest().manifest_version === 2)
-    recommendation.url = recommendation.mv2URL;
-
-  return toPlainObject(
-    ["languages", "title", "type", "url"],
-    recommendation
-  );
-}
+export let toPlainRecommendation = toPlainObject.bind(null, [
+  "languages", "title", "type", "url"
+]);
 
 export function toPlainSubscription(subscription)
 {

@@ -91,10 +91,6 @@ export default {
     ],
     rename: [
       {
-        dest: "data/rules/index.json",
-        src: "node_modules/@adblockinc/rules/dist/index/adblockplus.json"
-      },
-      {
         dest: "icons/abp-16-notification.png",
         src: "skin/icons/toolbar/notification-16.png"
       },
