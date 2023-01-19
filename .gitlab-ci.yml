@@ -26,6 +26,7 @@ stages:
   - lint
   - test
   - build
+  - checkfilesizes
   - testpages
   - uploadxtm
   - updatextm
@@ -96,6 +97,41 @@ build:
       - adblockpluschrome/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
       - adblockpluschrome/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
       - adblockpluschrome/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}-mv3.xpi
+
+# ################################################################################
+# # Check filesizes
+# ################################################################################
+
+.checkfilesizes:
+  image: alpine:latest
+  stage: checkfilesizes
+  script:
+   - unzip -d unpacked-extension/ adblockpluschrome/$EXTENSION
+   - cd unpacked-extension/
+   - if [ $(find . -type f -name '*.js' -size +4000k | wc -l) -gt 0 ]; then
+       echo 'Some extension files are bigger than 4 MB:' &&
+       find . -type f -name '*.js' -size +4000k -exec ls -lh {} \; &&
+       exit 1;
+     else
+       echo 'All extension files are smaller than 4 MB' &&
+       exit 0;
+     fi
+
+checkfilesizes:MV3:chrome:
+  extends: .checkfilesizes
+  variables:
+    EXTENSION: adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
+
+checkfilesizes:MV2:chrome:
+  extends: .checkfilesizes
+  variables:
+    EXTENSION: adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
+
+
+checkfilesizes:MV2:firefox:
+  extends: .checkfilesizes
+  variables:
+    EXTENSION: adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
 
 ################################################################################
 # Translate
