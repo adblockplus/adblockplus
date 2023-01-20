@@ -177,11 +177,8 @@ export let allowlistingState = {
 
 async function revalidateAllowlistingState(page)
 {
-  eventEmitter.emit(
-    "changed",
-    page,
-    await ewe.filters.isResourceAllowlisted(page.url, "document", page.id)
-  );
+  const allowingFilters = await ewe.filters.getAllowingFilters(page.id);
+  eventEmitter.emit("changed", page, allowingFilters.length > 0);
 }
 
 export async function revalidateAllowlistingStates()
