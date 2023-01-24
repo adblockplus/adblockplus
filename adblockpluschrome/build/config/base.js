@@ -182,8 +182,8 @@ export default {
         src: "skin/icons/toolbar/default-40.png"
       },
       {
-        dest: "vendor/webext-sdk/content.js",
-        src: "vendor/webext-sdk/dist/ewe-content.js"
+        dest: "vendor/@eyeo/webext-sdk/content.js",
+        src: "node_modules/@eyeo/webext-sdk/dist/ewe-content.js"
       }
     ]
   },

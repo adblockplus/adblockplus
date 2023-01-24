@@ -42,8 +42,6 @@ lint:
   stage: lint
   script:
     # Update dependencies
-    - npm run submodules:update
-    - git submodule status
     - npm install
     # Run linter
     - npm run lint
@@ -52,8 +50,6 @@ test:
   stage: test
   script:
     # Update dependencies
-    - npm run submodules:update
-    - git submodule status
     - npm install
     # Run tests
     - npm run test
@@ -71,8 +67,6 @@ build:
     - apt-get update
     - apt-get -t stretch-backports install -y git
     # Update dependencies
-    - npm run submodules:update
-    - git submodule status
     - npm install
     # Create extension builds
     - cd adblockpluschrome

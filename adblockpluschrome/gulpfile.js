@@ -56,7 +56,7 @@ argumentParser.addArgument("--manifest-path");
 argumentParser.addArgument("--partial", {
   choices: ["false", "true"],
   defaultValue: "false",
-  help: "A partial build skips the build steps EWE, icons, rules and UI."
+  help: "A partial build skips the build steps icons, rules and UI."
 });
 
 argumentParser.addArgument("--skip-type-checks", {

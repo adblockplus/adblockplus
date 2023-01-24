@@ -19,10 +19,11 @@
 
 import * as info from "info";
 
+import * as ewe from "@eyeo/webext-sdk";
+
 import {getPremiumState} from "../../src/premium/background/index.ts";
 import {initDay1Notification} from "../../lib/notifications.js";
 import {showOptions} from "../../lib/pages/options.js";
-import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
 import {port} from "./messaging/port.js";
 import {SessionStorage} from "./storage/session.js";
 import {askConfirmSubscription} from "./filterConfiguration.js";

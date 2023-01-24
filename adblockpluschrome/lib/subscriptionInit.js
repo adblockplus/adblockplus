@@ -20,7 +20,8 @@
 import * as info from "info";
 
 import rulesIndex from "@adblockinc/rules/adblockplus";
-import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
+import * as ewe from "@eyeo/webext-sdk";
+
 import * as premium from "../../src/premium/background/index.ts";
 import {port} from "./messaging/port.js";
 import {revalidateAllowlistingStates} from "./allowlisting.js";

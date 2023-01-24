@@ -17,7 +17,7 @@
 
 /** @module contentFiltering */
 
-import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
+import * as ewe from "@eyeo/webext-sdk";
 import * as snippets from "@eyeo/snippets";
 
 ewe.snippets.setLibrary({

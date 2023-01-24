@@ -19,7 +19,8 @@
 
 import * as info from "info";
 
-import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
+import * as ewe from "@eyeo/webext-sdk";
+
 import {port} from "./messaging/port.js";
 import {Prefs} from "./prefs.js";
 

@@ -17,7 +17,8 @@
 
 /** @module stats */
 
-import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
+import * as ewe from "@eyeo/webext-sdk";
+
 import {installHandler} from "./messaging/events.js";
 import {port} from "./messaging/port.js";
 import {TabSessionStorage} from "./storage/tab-session.js";
