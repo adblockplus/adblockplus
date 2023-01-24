@@ -84,7 +84,7 @@ function getFilterInfo(filter, subscriptions)
 
   for (const subscription of subscriptions)
   {
-    if (!subscription.downloadable)
+    if (subscription.url.startsWith("~user~"))
     {
       userDefined = true;
       break;
