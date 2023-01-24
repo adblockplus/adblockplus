@@ -84,14 +84,14 @@ interface Filter {
   csp: string | null;
 }
 
-declare interface EWE {
-  allowlisting: {
+declare module "@eyeo/webext-sdk" {
+  declare namespace allowlisting {
     /**
      * Sets the function called when allowlisting succeeds
      *
      * @param allowlistingCallback - User defined function that will be called
      */
-    setAllowlistingCallback: (
+    const setAllowlistingCallback: (
       allowlistingCallback: AllowlistingCallback
     ) => void;
 
@@ -100,15 +100,15 @@ declare interface EWE {
      *
      * @param keys - New set of public keys
      */
-    setAuthorizedKeys: (keys: string[]) => Promise<void>;
-  };
+    const setAuthorizedKeys: (keys: string[]) => Promise<void>;
+  }
 
-  filters: {
+  declare namespace filters {
     /**
      * Returns the allowing filters that will be effective when the given
      * document will be reloaded
      */
-    getAllowingFilters: (
+    const getAllowingFilters: (
       /**
        * ID of tab to look up
        */
@@ -125,25 +125,25 @@ declare interface EWE {
      *
      * @returns filter metadata
      */
-    getMetadata: (text: string) => Promise<?FilterMetadata>;
+    const getMetadata: (text: string) => Promise<?FilterMetadata>;
     /**
      * Returns an array of user filter objects
      *
      * @returns an array of user filter objects
      */
-    getUserFilters: () => Promise<Filter[]>;
+    const getUserFilters: () => Promise<Filter[]>;
     /**
      * Removes one or multiple filters. The filters will no longer have
      * any effect and won't be returned by `filters.getUserFilters()`.
      * @param texts - The filter rules to be removed.
      */
-    remove: (texts: string | string[]) => Promise<void>;
-  };
+    const remove: (texts: string | string[]) => Promise<void>;
+  }
 
-  notifications: {
+  declare namespace notifications {
     /**
      * Returns the list of ignored notification categories
      */
-    getIgnoredCategories: () => string[];
-  };
+    const getIgnoredCategories: () => string[];
+  }
 }

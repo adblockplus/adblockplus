@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import * as ewe from "../../../vendor/webext-sdk/dist/ewe-api.js";
+import * as ewe from "@eyeo/webext-sdk";
 
 const requestMethods = new Set([
   "allowing",

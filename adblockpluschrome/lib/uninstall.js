@@ -19,7 +19,8 @@
 
 import * as info from "info";
 
-import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
+import * as ewe from "@eyeo/webext-sdk";
+
 import {Prefs} from "./prefs.js";
 import {isDataCorrupted} from "./subscriptionInit.js";
 

@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import * as eweImport from "../../../vendor/webext-sdk/dist/ewe-api";
+import * as ewe from "@eyeo/webext-sdk";
 
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";
 
@@ -24,10 +24,6 @@ import { isFilterMetadata } from "../../polyfills/background";
 import { Timing, isTiming } from "./middleware";
 import { Stats } from "./stats.types";
 import { TimingConfiguration } from "./timing.types";
-
-// We cannot declare EWE as an ambient module, so we need to assign it
-// to an interface instead, until we import it as an npm module
-const ewe = eweImport as unknown as EWE;
 
 /**
  * Key for on-page dialog timing configurations storage

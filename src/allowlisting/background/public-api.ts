@@ -15,15 +15,11 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import * as eweImport from "../../../vendor/webext-sdk/dist/ewe-api";
+import * as ewe from "@eyeo/webext-sdk";
 
 import { allowlist } from "../../../adblockpluschrome/lib/allowlisting";
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";
 import * as premium from "../../premium/background";
-
-// We cannot declare EWE as an ambient module, so we need to assign it
-// to an interface instead, until we import it as an npm module
-const ewe = eweImport as unknown as EWE;
 
 /**
  * Function to be called when a valid allowlisting request was received

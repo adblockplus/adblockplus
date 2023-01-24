@@ -15,10 +15,10 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import * as ewe from "@eyeo/webext-sdk";
+
 import * as info from "info";
 import { Tabs } from "webextension-polyfill";
-
-import * as eweImport from "../../../vendor/webext-sdk/dist/ewe-api";
 
 import { port } from "../../../adblockpluschrome/lib/messaging/port";
 import { TabSessionStorage } from "../../../adblockpluschrome/lib/storage/tab-session";
@@ -49,10 +49,6 @@ import {
   shouldBeShown,
   start as setupTimings
 } from "./timing";
-
-// We cannot declare EWE as an ambient module, so we need to assign it
-// to an interface instead, until we import it as an npm module
-const ewe = eweImport as unknown as EWE;
 
 /**
  * Tab-specific session storage for IPM IDs

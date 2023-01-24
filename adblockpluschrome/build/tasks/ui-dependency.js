@@ -39,12 +39,7 @@ function createBuild()
 async function mustBuildUI(lastUIBuildTime)
 {
   let matches = await (promisify(glob))(
-    "../{build/icons-generation,css,vendor}/**",
-    {
-      ignore: [
-        "../vendor/webext-sdk/node_modules/**"
-      ]
-    }
+    "../{build/icons-generation,css,vendor}/**"
   );
   matches.push(
     "../package.json",

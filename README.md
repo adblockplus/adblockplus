@@ -162,12 +162,6 @@ like to generate.
 
 #### Updating the dependencies
 
-Clone the external repositories:
-
-`npm run submodules:update`
-
-**Important:** When building from a source archive, this step must be skipped.
-
 Install the required npm packages:
 
 `npm install`

@@ -201,8 +201,8 @@ export default {
         src: "src/onpage-dialog/content/frame.css"
       },
       {
-        dest: "vendor/webext-sdk/content.js",
-        src: "vendor/webext-sdk/dist/ewe-content.js"
+        dest: "vendor/@eyeo/webext-sdk/content.js",
+        src: "node_modules/@eyeo/webext-sdk/dist/ewe-content.js"
       }
     ]
   },

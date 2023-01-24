@@ -26,7 +26,6 @@
     "test:end-to-end": "rm -r allure-report test/end-to-end/allure-results ; cd test/end-to-end && npx wdio run wdio.conf.js",
     "test:end-to-end-no-cleanup": "cd test/end-to-end && npx wdio run wdio.conf.js",
     "test:generate-and-open-report": "allure generate test/end-to-end/allure-results && allure open",
-    "submodules:update": "git submodule update --init --recursive",
     "postinstall": "npm run $ install"
   },
   "$": {
@@ -52,7 +51,6 @@
       },
       "css": "sass --no-source-map $1 $2",
       "dist": {
-        "ewe": "npm run --prefix ./vendor/webext-sdk build -- --config-name sdk --no-devtool",
         "icons": "node build/icons-generation/index.js",
         "rules": "rules adblockplus",
         "ui": "$ bundle"
@@ -73,8 +71,7 @@
       "upload-translations": "crowdin upload translations --auto-approve-imported"
     },
     "install": [
-      "npm install --loglevel=error --no-audit --no-fund --no-optional --prefix adblockpluschrome",
-      "npm install --loglevel=error --no-audit --no-fund --no-optional --no-save --prefix vendor/webext-sdk"
+      "npm install --loglevel=error --no-audit --no-fund --no-optional --prefix adblockpluschrome"
     ],
     "lint": {
       "css": "stylelint ./build/**/*.css ./css/*.scss ./skin/*.css ./src/**/*.css --ignore-path .gitignore",
@@ -113,6 +110,7 @@
   "dependencies": {
     "@adblockinc/rules": "gitlab:adblockinc/ext/rules#c53ddaee",
     "@eyeo/snippets": "0.7.0",
+    "@eyeo/webext-sdk": "0.7.2",
     "@types/webextension-polyfill": "0.8.0",
     "canvas": "2.9.1",
     "glob": "7.1.6",

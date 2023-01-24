@@ -17,7 +17,7 @@
 
 /** @module requestBlocker */
 
-import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
+import * as ewe from "@eyeo/webext-sdk";
 
 export let filterTypes = new Set(function*()
 {

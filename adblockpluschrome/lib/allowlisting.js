@@ -17,7 +17,8 @@
 
 /** @module allowlisting */
 
-import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
+import * as ewe from "@eyeo/webext-sdk";
+
 import {port} from "./messaging/port.js";
 import {EventEmitter} from "./events.js";
 import {addFilter} from "./filterConfiguration.js";
