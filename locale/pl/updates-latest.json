@@ -6,7 +6,7 @@
     "message": "Adblock Plus został zaktualizowany"
   },
   "updates_subtitle": {
-    "message": "Mamy nadzieję, że podobają ci się najnowsze uaktualnienia."
+    "message": "Oto przegląd aktualizacji, których dokonaliśmy, aby dostosować się do zmian wprowadzonych przez Google wraz z Manifest V3 - nową wersją platformy rozszerzeń przeglądarki."
   },
   "updates_title": {
     "message": "Adblock Plus został zaktualizowany!"
@@ -29,20 +29,26 @@
   "updates_update_f3_title": {
     "message": "Zaktualizowany link przycisku \"Oceń\""
   },
+  "updates_update_i1_description": {
+    "message": "Od czasu do czasu musimy wprowadzić znaczące zmiany, aby Adblock Plus nadążał za rozwojem przeglądarek. Jesteśmy na progu jednej z takich zmian, która jest wynikiem tego, jak Google zmienia sposób działania rozszerzeń przeglądarki w Chrome. Nazywa Manifest V3 odnosi się do nowej wersji platformy rozszerzeń przeglądarki Google. Ta ewolucja ekosystemu przeglądarki wpłynie na sposób działania wszystkich rozszerzeń oraz przyniesie ze sobą pewne wyzwania. Ciężko pracowaliśmy, aby upewnić się, że nasza wersja jest gotowa na Manifest V3. Na początku 2022 roku podzieliliśmy bazę kodu Adblock Plus, aby stworzyć dedykowaną bibliotekę dla głównej funkcjonalności blokowania reklam. Ta zmiana umożliwiła nam dalsze wspieranie rozszerzeń Manifest V2 tam, gdzie jest to dozwolone, jednocześnie przechodząc na Manifest V3 w przeglądarkach Chrome, które tego wymagają. Dzięki temu wydaniu, nasi użytkownicy na przeglądarkach Chrome używają teraz Adblock Plus w wersji Manifest V3 oraz mogą cieszyć się lepszym doświadczeniem przeglądania stron internetowych. Jeśli masz jakiekolwiek problemy, skontaktuj się z nami pod adresem support@adblockplus.org, a my chętnie pomożemy!"
+  },
+  "updates_update_i1_title": {
+    "message": "Przełączono na używanie Manifest V3 dla przeglądarek Chrome"
+  },
   "updates_update_i2_description": {
-    "message": "Teraz możesz odwiedzać strony internetowe w innych językach i nadal mieć zablokowane reklamy. Gdy odwiedzisz witrynę w określonym języku, możesz wybrać, czy chcesz blokować reklamy na wszystkich witrynach w tym języku. Opcję tę można włączyć/wyłączyć w <strong>Ustawieniach > Ogólne > Listy filtrów językowych</strong>. Opcja ta jest już dostępna dla naszych użytkowników w Chrome, Firefox i Microsoft Edge, a wkrótce pojawi się także w Operze."
+    "message": "Adblock Plus, jak wszystkie systemy blokowania reklam, opiera się na predefiniowanych regułach - co blokować i ukrywać na odwiedzanych stronach internetowych. Reguły te są zebrane w listy, zwane również \"listami filtrów\". Wraz z Manifest V3 musimy ograniczyć ilości list filtrów, które możemy zaoferować naszym użytkownikom, jak również spakować je z rozszerzeniem. Aby spełnić tę nową zasadę, będziemy teraz oferować do 50 preinstalowanych list filtrów, które można włączać lub wyłączać w zależności od swoich preferencji. Spośród nich tylko 10 może być jednocześnie włączonych - więcej na ten temat poniżej. Pracujemy nad tym, aby popularne listy filtrów, które kochają nasi użytkownicy, były przez nas wspierane, a wszelkie ich aktualizacje były dostarczane przez częste nowe wydania rozszerzenia."
   },
   "updates_update_i2_image": {
     "message": "\"Powiadom mnie o dostępnych filtrach językowych\" jest podświetlone w sekcji \"Język\" na stronie opcji."
   },
   "updates_update_i2_title": {
-    "message": "Dodano opcję powiadamiania o dostępnych filtrach językowych"
+    "message": "Listy filtrów statycznych są teraz dostarczane z rozszerzeniem"
   },
   "updates_update_i3_description": {
-    "message": "Po otwarciu menu Adblock Plus z paska narzędzi zobaczysz nową, przeprojektowaną stopkę. Z tego miejsca można łatwo uzyskać dostęp do interesujących linków, aby lepiej wykorzystać swój produkt. Uzyskaj wsparcie Centrum pomocy, skontaktuj się z nami w mediach społecznościowych i nie tylko!"
+    "message": "Manifest V3 ustala limit 10 aktywnych list filtrów w rozszerzeniach przeglądarki, a Adblock Plus nie jest wyjątkiem. Oznacza to, że w danym momencie możesz mieć włączone do 10 list filtrów. Zapewniam, że większość użytkowników nie zauważy różnicy, ponieważ domyślna konfiguracja aktywnych list filtrów w ABP jest znacznie poniżej tego limitu. Jeśli osiągniesz limit 10 aktywnych list filtrów i chcesz włączyć kolejną, musisz najpierw wyłączyć jedną z pozostałych aktywnych list filtrów."
   },
   "updates_update_i3_title": {
-    "message": "Dodano linki szybkiego dostępu do stopki menu"
+    "message": "Używaj do 10 list filtrów"
   },
   "updates_update_i4_description": {
     "message": "Jeśli często dodajesz niestandardowe filtry do ABP, zobaczysz teraz bardziej przejrzyste komunikaty o błędach. Mamy nadzieję, że to pomoże!"

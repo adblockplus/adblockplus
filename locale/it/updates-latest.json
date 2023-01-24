@@ -6,7 +6,7 @@
     "message": "Adblock Plus è aggiornato"
   },
   "updates_subtitle": {
-    "message": "Pensiamo che gli ultimi aggiornamenti ti piaceranno."
+    "message": "Ecco una panoramica degli aggiornamenti eseguiti per aderire ai cambiamenti introdotti da Google con Manifest V3, la nuova versione della piattaforma di estensione dei browser."
   },
   "updates_title": {
     "message": "Adblock Plus è aggiornato!"
@@ -29,20 +29,26 @@
   "updates_update_f3_title": {
     "message": "Corretto il link errato dietro il pulsante \"Dai un voto\""
   },
+  "updates_update_i1_description": {
+    "message": "A volte dobbiamo apportare modifiche significative ad Adblock Plus per adattarlo all’ecosistema dei browser. Al momento, stiamo effettuando un cambiamento di questo tipo a seguito delle modifiche fatte da Google al funzionamento delle estensioni dei browser su Chrome. La nuova versione della piattaforma di estensione del browser di Google si chiama Manifest V3. Questa evoluzione dell'ecosistema dei browser inciderà sul funzionamento di tutte le estensioni e comporterà alcune sfide. Ci siamo impegnati a fondo per sviluppare una versione compatibile con Manifest V3. All'inizio del 2022, abbiamo suddiviso la base di codici di Adblock Plus per creare una raccolta dedicata alla funzionalità principale di blocco degli annunci. Questa modifica ci ha consentito di continuare a supportare le estensioni di Manifest V2, ove possibile, durante la transizione a Manifest V3 per i browser Chromium che lo richiedono. Con questa versione, gli utenti con browser Chromium stanno attualmente usando la versione Manifest V3 di Adblock Plus e possono continuare a godere di una migliore esperienza di navigazione. Se riscontri problemi, contattaci all'indirizzo support@adblockplus.org e saremo lieti di aiutarti!"
+  },
+  "updates_update_i1_title": {
+    "message": "Passaggio all'utilizzo di Manifest V3 per i browser Chromium"
+  },
   "updates_update_i2_description": {
-    "message": "Ora è possibile visitare i siti web in altre lingue continuando ad avere il blocco delle pubblicità. Quando visiti un sito web in una lingua specifica, potrai scegliere se desideri bloccare le pubblicità su tutti i siti web in quella lingua. Puoi attivare o disattivare questa opzione in <strong>Impostazioni > Generale > Elenchi filtri di lingua</strong>. Questa opzione è già disponibile per i nostri utenti su Chrome, Firefox e Microsoft Edge e presto sarà disponibile anche su Opera."
+    "message": "Adblock Plus, come tutti gli ad blocker, si basa su regole predefinite per sapere cosa bloccare e nascondere sulle pagine web visitate. Queste regole sono raccolte in elenchi, detti anche \"elenchi filtri\". Con Manifest V3, dobbiamo limitare il numero di elenchi filtri che possiamo offrire ai nostri utenti, nonché a offrirli insieme all’estensione. Per rispettare questa nuova regola, ora offriremo fino a 50 elenchi filtri preinstallati, attivabili e disattivabili a seconda delle preferenze. Di questi, solo 10 possono essere attivati contemporaneamente; maggiori informazioni di seguito. Stiamo lavorando per supportare gli elenchi filtri più popolari tra i nostri utenti e offrire frequenti aggiornamenti degli elenchi con nuove versioni dell'estensione."
   },
   "updates_update_i2_image": {
     "message": "\"Informami quando sono disponibili elenchi filtri di lingua\" è evidenziato nella sezione \"Lingua\" della pagina delle opzioni."
   },
   "updates_update_i2_title": {
-    "message": "Aggiunta opzione di notifica per i filtri di lingua disponibili"
+    "message": "Gli elenchi filtri statici ora sono offerti in pacchetti con l'estensione"
   },
   "updates_update_i3_description": {
-    "message": "Aprendo il menu di Adblock Plus dall'icona barra degli strumenti, vedrai un piè di pagina rinnovato da cui potrai facilmente accedere a link interessanti per sfruttare al meglio il tuo prodotto. Potrai chiedere supporto al Centro assistenza e contattarci sui social media, e tanto altro ancora!"
+    "message": "Manifest V3 fissa un limite di 10 elenchi filtri attivi nelle estensioni del browser, e Adblock Plus non fa eccezione. Ciò significa che è possibile attivare solo fino a 10 elenchi filtri contemporaneamente. Ti assicuriamo che la maggior parte degli utenti non noterà la differenza poiché la configurazione predefinita degli elenchi filtri attivi in ABP è ben al di sotto di tale limite. Se il limite di 10 elenchi di filtri attivi viene raggiunto e si desidera abilitarne un altro, si dovrà prima disattivare uno degli altri elenchi filtri attivi."
   },
   "updates_update_i3_title": {
-    "message": "Aggiunti link di accesso rapido al piè di pagina del menu"
+    "message": "Utilizza fino a 10 elenchi filtri"
   },
   "updates_update_i4_description": {
     "message": "Se aggiungi spesso filtri personalizzati su ABP, in caso di problemi, ora vedrai messaggi di errore più chiari. Speriamo che ti sia d'aiuto!"
