@@ -6,7 +6,7 @@
     "message": "Az Adblock Plus naprakész"
   },
   "updates_subtitle": {
-    "message": "Reméljük, tetszettek a fejlesztések."
+    "message": "Az alábbiakban összefoglaljuk azokat a frissítéseket, amelyeket a Google által bevezetett Manifest V3 új böngészőbővítmény platform módosításai tettek szükségessé."
   },
   "updates_title": {
     "message": "Az Adblock Plus naprakész!"
@@ -29,20 +29,26 @@
   "updates_update_f3_title": {
     "message": "Az „Értékelés” gomb hibás hivatkozásának kijavítása"
   },
+  "updates_update_i1_description": {
+    "message": "Időnként előfordulhat, hogy jelentős módosításokat kell végeznünk az Adblock Plus alkalmazáson, hogy lépést tudjunk tartani a böngészők fejlődésével. Jelenleg is egy ilyen módosítás előtt állunk, amelyet a Google által a Chrome bővítmények működésével kapcsolatban tett változások tesznek szükségessé. A Manifest V3 megnevezés a Google új böngészőbővítmény platformjára vonatkozik. A böngésző ökoszisztéma fejlődése befolyásolja az összes böngészőbővítmény működését, és ezzel néhány kihívás is jár. Keményen dolgozunk azon, hogy elkészítsük a Manifest V3-kész verziót. 2022 során korábban felosztottuk az Adblock Plus kód alapját egy dedikált könyvtár létrehozása érdekében az alap és blokkolási funkciókhoz. Ez a módosítás tette lehetővé számunkra a Manifest V2 bővítmények támogatását, ahol az engedélyezett, illetve a Manifest V3-ra váltást azokon a Chromium böngészőkön, amelyek azt igényelik. Ezzel a kiadással a Chromium böngészőt használó felhasználóink most az Adblock Plus Manifest V3 verzióját használják és tovább élvezhetik a jobb böngészés élményét. Ha bármilyen probléma merül fel, kérjük, írjon nekünk a support@adblockplus.org címre és örömmel segítünk!"
+  },
+  "updates_update_i1_title": {
+    "message": "Váltás a Manifest V3-ra a Chromium böngészőkön"
+  },
   "updates_update_i2_description": {
-    "message": "Most más nyelvű webhelyeket is meglátogathat, ettől függetlenül a reklámok még blokkolva maradnak. Ha egy bizonyos nyelvű webhelyet látogat meg, akkor kiválaszthatja, hogy blokkolni kívánja-e a reklámokat az adott nyelven megjelenő összes oldalon. Ezt a beállítást a <strong>Beállítások > Általános > Nyelv szűrőlisták</strong> menüpontban kapcsolhatja be vagy ki. A beállítás elérhető a Chrome, Firefox és Microsoft Edge böngészőkön, és hamarosan elérhető lesz az Opera esetében is."
+    "message": "Az Adblock Plus, mint minden más reklámblokkoló, előre meghatározott szabályokon alapszik, amelyekkel meghatározható, hogy mit blokkol és mit rejt el a meglátogatott webhelyeken. Ezek a szabályok listákba gyűjthetők, amelyeket „szűrőlistáknak” nevezünk. A Manifest V3-al korlátoznunk kell a felhasználóinknak kínált szűrőlisták számát, illetve be kell csomagolnunk a bővítménybe. Az új szabálynak való megfeleléshez most akár 50 előre telepített listát kínálunk, amelyeket a preferenciáitól függően be- vagy kikapcsolhat. Ezek közül 10 lista egyszerre bekapcsolható, lásd a további részleteket alább. Azon dolgozunk, hogy a felhasználóink által kedvelt népszerű szűrőlisták támogatását megőrizzük és ezeket a listákat a bővítmény gyakori új kiadásaival együtt frissítsük."
   },
   "updates_update_i2_image": {
     "message": "Az „Értesítsen az elérhető nyelvszűrőkről” beállítás kiemelten jelenik meg a beállítás oldal „Nyelv” rovatában."
   },
   "updates_update_i2_title": {
-    "message": "Értesítési beállítás hozzáadása az elérhető nyelvszűrőkről"
+    "message": "A statikus szűrőlisták a bővítménybe csomagolva"
   },
   "updates_update_i3_description": {
-    "message": "Az Adblock Plus menü megnyitásakor az Eszközsáv ikonjáról egy új, átalakított élőlábat láthat. Innen egyszerűen érhet el hasznos hivatkozásokat, amelyek segítségével többet kihozhat a termékéből. Kérjen támogatást a Támogatási központban, lépjen velünk kapcsolatba a közösségi oldalakon keresztül vagy egyéb módon!"
+    "message": "A Manifest V3 maximum 10 aktív szűrőlistát engedélyez a böngészőbővítményekben, ez alól az Adblock Plus sem kivétel. Ez azt jelenti, hogy egyszerre csak legfeljebb 10 szűrőlista lehet aktív. Aggodalomra nincs ok, a különbség nem lesz érzékelhető, mert az ABP alapértelmezett konfigurációjában ennél jóval kevesebb aktív szűrőlista található. Ha eléri a 10 aktív szűrőlista korlátozást, és egy újabbat szeretne engedélyezni, először ki kell kapcsolnia valamely aktív szűrőlistát."
   },
   "updates_update_i3_title": {
-    "message": "Gyors hozzáférési hivatkozásokkal bővült a menü élőláb"
+    "message": "Legfeljebb 10 szűrőlista használható"
   },
   "updates_update_i4_description": {
     "message": "Ha gyakran ad egyéni szűrőt az ABP-hez, akkor most egyértelműbb hibaüzeneteket kap a problémákról. Reméljük hasznos lesz!"

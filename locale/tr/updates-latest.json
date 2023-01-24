@@ -6,7 +6,7 @@
     "message": "Adblock Plus artık güncellendi"
   },
   "updates_subtitle": {
-    "message": "En yeni güncellemeleri beğeneceğinizi düşünüyoruz."
+    "message": "Bu kısımda, Google'ın, tarayıcı uzantısı platformunun yeni sürümü olan Manifest V3 ile birlikte hayata geçirdiği değişikliklere uyum sağlamak için yaptığımız güncellemelere genel bir bakış bulabilirsiniz."
   },
   "updates_title": {
     "message": "Adblock Plus artık güncellendi!"
@@ -29,20 +29,26 @@
   "updates_update_f3_title": {
     "message": "\"Değerlendir\" düğmesinin arkasındaki hatalı bağlantıyı onardık"
   },
+  "updates_update_i1_description": {
+    "message": "Adblock Plus'ın tarayıcı ekosistemine ayak uydurmasını sağlamak için zaman zaman önemli değişiklikler yapmamız gerekiyor. Google'ın, tarayıcı eklentilerinin Chrome'da çalışma şeklinde yaptığı değişiklikler nedeniyle tam olarak böyle bir değişikliğin eşiğindeyiz. Manifest V3 adı verilen bu yenilik, Google’ın tarayıcı eklenti platformunun yeni bir sürümünü ifade ediyor. Tarayıcı ekosistemindeki bu dönüşüm tüm tarayıcı eklentilerinin çalışma şeklini etkilerken, bir takım güçlükleri de beraberinde getirecek. Elimizde, Manifest V3 ile uyumlu biçimde çalışacak bir sürümün bulunmasını sağlamak için bir süredir sıkı bir şekilde çalışıyoruz. 2022 yılının başında, temel reklam engelleme işlevi için özel bir kitaplık oluşturmak üzere Adblock Plus kod tabanını bölmüştük. Bu değişiklik, izin verilen tarayıcılarda Manifest V2’yi desteklemeye devam etmemize ve Manifest V3’ün zorunlu olduğu Chromium tarayıcılarında bu sürüme geçiş yapmamıza olanak sağlamıştı. Bu sürümle birlikte ise, Chromium tarayıcı kullanan kullanıcılarımız artık Adblock Plus’ın Manifest V3 sürümünü kullanıyor ve daha iyi bir gezinme deneyiminin keyfini çıkarabiliyor. Herhangi bir sorun yaşıyorsanız size memnuniyetle yardımcı olabilmemiz için lütfen support@adblockplus.org adresinden bize ulaşın."
+  },
+  "updates_update_i1_title": {
+    "message": "Chromium tarayıcılar için Manifest V3 kullanımına geçiş"
+  },
   "updates_update_i2_description": {
-    "message": "Artık, reklamları engellemeye devam ederek başka dillerdeki web sitelerini ziyaret edebilirsiniz. Belirli bir dildeki bir web sitesini ziyaret ederken, o dildeki tüm web sitelerinde reklamları engellemek isteyip istemediğiniz konusunda seçim yapabilirsiniz. Bu seçeneği şu izlek üzerinden açıp kapatabilirsiniz: <strong>Ayarlar > Genel > Dil filtresi listeleri</strong>. Chrome, Firefox ve Microsoft Edge kullanan kullanıcılarımız için sunulan bu seçenek, pek yakında Opera kullanan kullanıcılarımız için de sunulacak."
+    "message": "Tüm reklam engelleyiciler gibi Adblock Plus da ziyaret ettiğiniz web sayfalarında nelerin engelleneceğinin ve nelerin gizleneceğinin bilinmesini sağlayan, önceden belirlenmiş kurallar üzerinden çalışır. Bu kurallar, “filtre listeleri” olarak da adlandırılan listeler halinde gruplanır. Manifest V3 ise kullanıcılarımıza sunabileceğimiz ve eklentiyle birlikte paket haline getirebileceğimiz filtre listesi sayısının sınırlandırılmasını gerektiriyor. Bu yeni kurala uyum sağlamak için bundan böyle kendi tercihlerinize bağlı olarak etkinleştirip devre dışı bırakabileceğiniz, önceden yüklenip kurulmuş en çok 50 adet filtre listesi sunacağız. Bunlardan yalnızca 10’u aynı anda etkinleştirilebilir - bu konuda daha fazla bilgiyi aşağıda bulabilirsiniz. Kullanıcılarımızın sevdiği popüler filtre listelerinin bizim tarafımızca desteklenmesini ve bu listelerdeki güncellemelerin, uzantının sık sık yeni sürümleriyle size sunulmasını sağlamak için çalışıyoruz."
   },
   "updates_update_i2_image": {
     "message": "Seçenekler sayfasının \"Dil\" bölümünde, \"Kullanılabilir dil filtrelerini bana bildir\" seçeneği vurgulanır."
   },
   "updates_update_i2_title": {
-    "message": "Kullanılabilir dil filtreleri için bildirim seçeneği eklendi"
+    "message": "Statik filtre listeleri artık bir paket olarak eklentinin birer parçası haline getirildi"
   },
   "updates_update_i3_description": {
-    "message": "Araç çubuğu simgenizden Adblock Plus menüsünü açtığınızda, yeni bir yeniden tasarlanmış altbilgi göreceksiniz. Buradan, ürününüzden daha fazla fayda elde etmek için kullanabileceğiniz ilgi çekici bağlantılara kolaylıkla erişebilirsiniz. Yardım Merkezinden destek alın, bizimle sosyal medyada iletişime geçin ve çok daha fazlası!"
+    "message": "Manifest V3, tarayıcı eklentileri için 10 adet etkin filtre listesi sınırı öngörmektedir ve Adblock Plus için herhangi bir istisna söz konusu değildir. Yani, artık herhangi bir anda etkin durumdaki filtre listelerinizin sayısı 10’u aşamaz. Merak etmeyin; ABP’deki etkin filtre listelerinin varsayılan yapılandırması bu sınırın oldukça altında olduğu için çoğu kullanıcı farkı hissetmeyecek bile. 10 etkin filtre listesi sınırına ulaşır ve bir başka filtre listesini daha etkinleştirmek isterseniz öncelikle diğer etkin filtre listelerinizden birini devre dışı bırakmanız gerekecek."
   },
   "updates_update_i3_title": {
-    "message": "Menü altbilgisine hızlı erişim bağlantıları ekledik"
+    "message": "En çok 10 filtre listesi kullanın"
   },
   "updates_update_i4_description": {
     "message": "ABP'ye sık sık özel filtreler ekliyorsanız, herhangi bir sorun olduğu takdirde artık daha açık ve net hata mesajları göreceksiniz. Umarız faydalı olur!"

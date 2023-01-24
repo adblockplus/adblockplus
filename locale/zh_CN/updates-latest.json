@@ -6,7 +6,7 @@
     "message": "Adblock Plus 已更新"
   },
   "updates_subtitle": {
-    "message": "我们觉得您会喜欢最新更新。"
+    "message": "以下是我们所做更新的概述，目的是满足 Google 通过 Manifest V3（新版本的浏览器扩展平台）引入的更改。"
   },
   "updates_title": {
     "message": "Adblock Plus 已更新！"
@@ -29,20 +29,26 @@
   "updates_update_f3_title": {
     "message": "更正了“对此评分”按钮背后的错误链接"
   },
+  "updates_update_i1_description": {
+    "message": "有时，我们需要进行重大更改，以确保 Adblock Plus 跟上浏览器生态系统的步伐。我们目前就面临着这样的更改，因为 Google 即将改变浏览器扩展在 Chrome 中的工作方式。我们将它称为 Manifest V3，是 Google 浏览器扩展平台的新版本。浏览器生态系统的这种演变将影响所有浏览器扩展的工作方式，并带来一些挑战。我们一直在努力确保自己的版本支持 Manifest V3。2022 年早些时候，我们拆分了 Adblock Plus 代码库，以便为核心广告拦截功能创建专用库。这种更改让我们可以继续支持 Manifest V2 扩展，同时在需要的 Chromium 浏览器上切换到 Manifest V3。通过该版本，Chromium 浏览器上的用户目前可以使用 Adblock Plus 的 Manifest V3 版本，也可以继续享受更好的浏览体验。如果您遇到任何问题，请通过 support@adblockplus.org 与我们联系，我们很乐意提供帮助！"
+  },
+  "updates_update_i1_title": {
+    "message": "对 Chromium 浏览器切换到使用 Manifest V3"
+  },
   "updates_update_i2_description": {
-    "message": "您现在可以访问其他语言的网站，并且仍可拦截广告。访问特定语言的网站时，您将可选择是否想对该语言的所有网站拦截广告。您可以在<strong>设置 > 一般 > 语言筛选清单</strong>中打开/关闭此选项。Chrome、Firefox 和 Microsoft Edge 用户已可以使用此选项，我们将很快向 Opera 添加此选项。"
+    "message": "与所有广告拦截器一样，Adblock Plus 依赖预定义规则来了解在您访问的网页上阻止和隐藏哪些内容。这些规则被收集到清单中，也称为“筛选清单”。使用 Manifest V3，我们需要限制可以提供给用户的筛选清单的数量，并将其打包到扩展中。为了遵守这种新规则，我们目前将提供多达 50 个预安装的筛选清单，您可以根据自己的喜好打开和关闭它们。用户只可以同时打开其中 10 个——详情请参见下文。我们正努力确保可以支持用户喜爱的热门筛选清单，同时通过频繁发布新扩展版本，为您提供任何清单更新。"
   },
   "updates_update_i2_image": {
     "message": "在选项页面的“语言”部分突出显示了“通知我可用语言筛选器”。"
   },
   "updates_update_i2_title": {
-    "message": "对可用语言筛选器添加了通知选项"
+    "message": "静态筛选清单现已打包至扩展"
   },
   "updates_update_i3_description": {
-    "message": "当您从工具栏图标打开 Adblock Plus 菜单时，您会看到重新设计的新页脚。您可以从这里轻松访问有趣的链接，以更好地利用您的产品。从帮助中心获取支持，在社交媒体上与我们联系，以及其他更多功能！"
+    "message": "Manifest V3 在浏览器扩展中设置了 10 个活动筛选清单的限制，Adblock Plus 也不例外。这意味着您在任何给定的时间最多只能打开 10 个筛选清单。请放心，大部分用户不会注意到这种差异，因为 ABP 中活动筛选清单的默认配置远低于此限制。如果您达到 10 个活动筛选清单的限制，并且想要启用另一个筛选清单，则首先必须关闭其他任一活动筛选清单。"
   },
   "updates_update_i3_title": {
-    "message": "在菜单页脚添加了快速访问链接"
+    "message": "最多使用 10 个筛选清单"
   },
   "updates_update_i4_description": {
     "message": "如果您经常向 ABP 添加自定义筛选器，现在有任何问题时您将看到更明确的错误消息。我们希望这个功能对您有用！"

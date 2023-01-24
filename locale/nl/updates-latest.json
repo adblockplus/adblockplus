@@ -6,7 +6,7 @@
     "message": "Adblock Plus is up-to-date"
   },
   "updates_subtitle": {
-    "message": "We denken dat u de laatste updates zult kunnen waarderen."
+    "message": "Hier is een overzicht van de updates die we hebben aangebracht om te voldoen aan de wijzigingen die door Google zijn geïntroduceerd in Manifest V3, de nieuwe versie van het browser-extensieplatform."
   },
   "updates_title": {
     "message": "Adblock Plus is up-to-date!"
@@ -29,20 +29,26 @@
   "updates_update_f3_title": {
     "message": "De verkeerde link achter de knop 'Beoordeel' gerepareerd"
   },
+  "updates_update_i1_description": {
+    "message": "Soms moeten we substantiële veranderingen doorvoeren om ervoor te zorgen dat Adblock Plus in de pas blijft lopen met het browser-ecosysteem. We staan aan de vooravond van een dergelijke verandering, die het gevolg is van wijzigingen die Google doorvoert aan de manier waarop browser-extensies werken in Chrome. De naam Manifest V3 verwijst naar een nieuwe versie van het browser-extensieplatform van Google. Deze evolutie van het browser-ecosysteem zal de werking van alle browser-extensies beïnvloeden en een aantal uitdagingen met zich meebrengen. We hebben er hard aan gewerkt om ervoor te zorgen dat we een versie hebben die geschikt is voor Manifest V3. Eerder in 2022 hebben we de Adblock Plus-codebasis opgesplitst om een speciale bibliotheek te creëren voor de functionaliteit voor het blokkeren van advertenties. Door deze wijziging is het voor ons mogelijk om de extensies van Manifest V2 te blijven ondersteunen waar toegestaan, terwijl we voor de Chromium-browsers die dit nodig hebben overschakelen naar Manifest V3. Met deze release gebruiken onze gebruikers met Chromium-browsers nu de Manifest V3-versie van Adblock Plus en kunnen ze blijven genieten van een betere browserervaring. Ondervindt u problemen, neem dan contact met ons op via support@adblockplus.org. We helpen u graag!"
+  },
+  "updates_update_i1_title": {
+    "message": "Overgestapt op het gebruik van Manifest V3 voor Chromium-browsers"
+  },
   "updates_update_i2_description": {
-    "message": "U kunt nu websites in andere talen bezoeken en nog steeds de advertenties laten blokkeren. Wanneer u een website in een bepaalde taal bezoekt, kunt u zelf kiezen of u advertenties op alle websites in die taal wilt blokkeren. U kunt deze optie in- of uitschakelen in de <strong>Instellingen > Algemeen > Taalfilterlijsten</strong>. Voor onze gebruikers van Chrome, Firefox en Microsoft Edge is deze optie al beschikbaar en Opera zal binnenkort ook die mogelijkheid bieden."
+    "message": "Adblock Plus is net als alle andere advertentieblokkeringen afhankelijk van vooraf gedefinieerde regels om te weten wat er moet worden geblokkeerd en verborgen op de webpagina's die u bezoekt. Deze regels worden verzameld in lijsten, ook wel 'filterlijsten' genoemd. Met Manifest V3 moeten we het aantal filterlijsten beperken dat we aan onze gebruikers kunnen aanbieden en deze lijsten samen met de extensie verpakken. Om aan deze nieuwe regel te voldoen, bieden we nu maximaal 50 vooraf geïnstalleerde filterlijsten aan die u naar eigen voorkeur kunt in- en uitschakelen. Van deze lijsten kunnen er slechts 10 tegelijk worden ingeschakeld – daarover leest u hieronder meer. We werken eraan om ervoor te zorgen dat populaire filterlijsten waar onze gebruikers van houden door ons worden ondersteund en dat u updates van deze lijsten krijgt door regelmatige nieuwe releases van de extensie."
   },
   "updates_update_i2_image": {
     "message": "'Houd me op de hoogte van beschikbare taalfilters' is geaccentueerd in de sectie 'Taal' van de opties-pagina."
   },
   "updates_update_i2_title": {
-    "message": "Melding optie voor beschikbare taalfilters toegevoegd"
+    "message": "Statische filterlijsten worden nu samen met de extensie geleverd"
   },
   "updates_update_i3_description": {
-    "message": "Als u het Adblock Plus menu opent via uw pictogram op de werkbalk, ziet u een nieuw ontworpen voettekst. Van hieruit heeft u makkelijk toegang tot interessante links om meer uit uw product te halen. Vraag hulp aan het Help Center of neem contact op met ons op social media en enzovoorts!"
+    "message": "Manifest V3 legt een limiet op van 10 actieve filterlijsten in browser-extensies en Adblock Plus is geen uitzondering. Dit betekent dat u op elk moment maximaal 10 filterlijsten kunt inschakelen. U kunt erop vertrouwen dat de meeste gebruikers het verschil niet zullen merken, omdat de standaardconfiguratie van actieve filterlijsten in ABP ver onder die limiet ligt. Als u de limiet van 10 actieve filterlijsten bereikt en een andere lijst wilt inschakelen, moet u eerst een van uw andere actieve filterlijsten uitschakelen."
   },
   "updates_update_i3_title": {
-    "message": "Toegevoegd zijn links voor snelle toegang tot de voettekst in het menu"
+    "message": "Gebruik maximaal 10 filterlijsten"
   },
   "updates_update_i4_description": {
     "message": "Als u vaak aangepaste filters toevoegt aan ABP, dan ziet u nu de foutmeldingen veel duidelijker mocht er zich een probleem voordoen. We hopen dat dit helpt!"
