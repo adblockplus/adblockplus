@@ -16,7 +16,7 @@
     "gulp-gzip": "1.4.2",
     "gulp-tar": "3.1.0",
     "gulp-vinyl-zip": "2.2.1",
-    "handlebars": "4.7.6",
+    "handlebars": "4.7.7",
     "merge-stream": "2.0.0",
     "through": "2.3.8",
     "ts-loader": "9.3.1",
