@@ -19,6 +19,7 @@
 
 import * as info from "info";
 
+import {getPremiumState} from "../../src/premium/background/index.ts";
 import {initDay1Notification} from "../../lib/notifications.js";
 import {showOptions} from "../../lib/pages/options.js";
 import * as ewe from "../../vendor/webext-sdk/dist/ewe-api.js";
@@ -397,11 +398,17 @@ async function showNotification(notification)
   // as shown right away because they're not shown immediately.
   if (matchesDisplayMethod("newtab", notification))
   {
-    let {installType} = await browser.management.getSelf();
+    const {installType} = await browser.management.getSelf();
+    const {isActive: isPremiumUser} = getPremiumState();
+
     // Newtab notifications can be quite obtrusive and managed users may
     // see them more frequently than others so we shouldn't show such
     // notifications to them.
-    if (installType == "admin")
+
+    // Because "newtab" notifications could potentially also contain upgrade
+    // campaigns, we don't want to show them to premium users.
+
+    if (installType === "admin" || isPremiumUser)
     {
       ewe.notifications.markAsShown(notification.id);
       void notificationDismissed(notification.id);

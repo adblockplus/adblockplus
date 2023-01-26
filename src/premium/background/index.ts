@@ -15,5 +15,5 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export { emitter, initialize } from "./license";
+export { emitter, getPremiumState, initialize } from "./license";
 export * from "./license.types";

@@ -211,7 +211,7 @@ function deactivateLicense(): void {
  *
  * @returns Premium state information
  */
-function getPremiumState(): PremiumState {
+export function getPremiumState(): PremiumState {
   return { isActive: hasActiveLicense() };
 }
 
