@@ -23,9 +23,11 @@
     "csv-export": "node build/locale-sync/csv/main.js -e",
     "csv-import": "node build/locale-sync/csv/main.js -i && node build/locale-sync/normalize.js",
     "test:cleanup-reports": "rm -r allure-report test/end-to-end/allure-results",
-    "test:end-to-end": "rm -r allure-report test/end-to-end/allure-results ; cd test/end-to-end && npx wdio run wdio.conf.js",
+    "test:end-to-end": "rm -r allure-report test/end-to-end/allure-results ; cd test/end-to-end && npx wdio run test.conf.js --suite ",
+    "test:end-to-end-local": "rm -r allure-report test/end-to-end/allure-results ; cd test/end-to-end && npx wdio run local-test.conf.js",
     "test:end-to-end-no-cleanup": "cd test/end-to-end && npx wdio run wdio.conf.js",
     "test:generate-and-open-report": "allure generate test/end-to-end/allure-results && allure open",
+    "test:generate-report": "allure generate test/end-to-end/allure-results",
     "postinstall": "npm run $ install"
   },
   "$": {
@@ -168,6 +170,7 @@
     "watch": "1.0.2",
     "wdio-chromedriver-service": "7.3.2",
     "wdio-geckodriver-service": "2.1.1",
+    "wdio-lambdatest-service": "1.0.14",
     "xmldom": "0.6.0"
   },
   "overrides": {

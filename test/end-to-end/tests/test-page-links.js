@@ -39,7 +39,7 @@ describe("test page links", function()
 {
   this.retries(globalRetriesNumber);
 
-  beforeEach(async function()
+  before(async function()
   {
     globalOrigin = await beforeSequence();
   });

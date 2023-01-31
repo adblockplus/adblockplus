@@ -32,7 +32,7 @@ describe("test options page dialog links", function()
 {
   this.retries(globalRetriesNumber);
 
-  beforeEach(async function()
+  before(async function()
   {
     await beforeSequence();
   });

@@ -110,7 +110,13 @@ class BasePage
     await this.switchToTab("Adblock Plus Options");
     if (noSwitchToFrame == false)
     {
-      await this.browser.switchToFrame(await this.contentIFrame);
+      try
+      {
+        await this.browser.switchToFrame(await this.contentIFrame);
+      }
+      catch (Exception)
+      {
+      }
     }
   }
 

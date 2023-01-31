@@ -28,7 +28,7 @@ describe("test extension as part of the smoke tests", function()
 {
   this.retries(globalRetriesNumber + 1);
 
-  beforeEach(async function()
+  before(async function()
   {
     globalOrigin = await beforeSequence();
   });

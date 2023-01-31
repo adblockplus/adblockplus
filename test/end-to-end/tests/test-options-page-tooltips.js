@@ -28,7 +28,7 @@ describe("test options page tooltips", function()
 {
   this.retries(globalRetriesNumber);
 
-  beforeEach(async function()
+  before(async function()
   {
     await beforeSequence();
   });

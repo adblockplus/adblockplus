@@ -27,7 +27,7 @@ describe("test advanced tab - filter lists", function()
 {
   this.retries(globalRetriesNumber);
 
-  beforeEach(async function()
+  before(async function()
   {
     await beforeSequence();
   });

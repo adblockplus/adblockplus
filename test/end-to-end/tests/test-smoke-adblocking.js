@@ -34,7 +34,7 @@ describe("test adblocking as part of the smoke tests", function()
 {
   this.retries(globalRetriesNumber + 1);
 
-  beforeEach(async function()
+  before(async function()
   {
     await beforeSequence();
   });
@@ -148,6 +148,8 @@ describe("test adblocking as part of the smoke tests", function()
       "ServerAd id hiding filter should hide this");
     expect(await testPages.getZergmodDivText()).to.include(
       "zergmod class hiding filter should hide this");
+    await allowistedWebsitesPage.switchToABPOptionsTab(true);
+    await browser.refresh();
     await allowistedWebsitesPage.switchToABPOptionsTab(true);
     await allowistedWebsitesPage.
       removeAllowlistedDomain("adblockinc.gitlab.io");

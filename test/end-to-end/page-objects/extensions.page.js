@@ -61,7 +61,7 @@ class ExtensionsPage extends BasePage
 
   get reloadExtensionButtonFF()
   {
-    return $$("//button[text()='Reload']")[1];
+    return $("//button[text()='Reload']");
   }
 
   get reloadHelperExtensionButtonChrome()
@@ -76,7 +76,7 @@ class ExtensionsPage extends BasePage
 
   get reloadHelperExtensionButtonFF()
   {
-    return $("//button[text()='Reload']");
+    return $$("//button[text()='Reload']")[1];
   }
 
   get removeExtensionButton()
