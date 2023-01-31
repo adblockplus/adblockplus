@@ -29,7 +29,7 @@ describe("test options page general tab acceptable ads", function()
 {
   this.retries(globalRetriesNumber);
 
-  beforeEach(async function()
+  before(async function()
   {
     await beforeSequence();
   });

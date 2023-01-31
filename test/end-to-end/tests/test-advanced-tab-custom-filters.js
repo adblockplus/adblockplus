@@ -30,7 +30,7 @@ describe("test advanced tab custom filters", function()
 {
   this.retries(globalRetriesNumber);
 
-  beforeEach(async function()
+  before(async function()
   {
     await beforeSequence();
   });

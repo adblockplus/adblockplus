@@ -17,14 +17,51 @@
 
 "use strict";
 
+const chromeBuild = "../../" + process.env.CHROME_BUILD;
+const firefoxBuild = "../../" + process.env.FIREFOX_BUILD;
+const ciTesting = process.env.CI_TESTING || false;
+
 const fs = require("fs");
 const BasePage = require("./page-objects/base.page");
+const ExtensionsPage = require("./page-objects/extensions.page");
 const helperExtension = "helper-extension";
-const globalRetriesNumber = 2;
+const globalRetriesNumber = 1;
 
 async function afterSequence()
 {
-  await browser.reloadSession();
+  const extensionsPage = new ExtensionsPage(browser);
+  for (const handle of await browser.getWindowHandles())
+  {
+    await browser.switchToWindow(handle);
+    const currentTabTitle = await browser.getTitle();
+    if (currentTabTitle != "Adblock Plus has been installed!" &&
+      currentTabTitle != "Adblock Plus Options")
+    {
+      await browser.closeWindow();
+    }
+  }
+  await extensionsPage.switchToABPOptionsTab(true);
+  await extensionsPage.init();
+  for (const handle of await browser.getWindowHandles())
+  {
+    await browser.switchToWindow(handle);
+    const currentTabTitle = await browser.getTitle();
+    if (currentTabTitle == "Adblock Plus Options")
+    {
+      await browser.closeWindow();
+    }
+  }
+  if (browser.capabilities.browserName == "firefox")
+  {
+    await extensionsPage.switchToTab("Debugging - Runtime / this-firefox");
+  }
+  else
+  {
+    await extensionsPage.switchToTab("Extensions");
+  }
+  await extensionsPage.clickReloadExtensionButton();
+  await extensionsPage.clickReloadHelperExtensionButton();
+  await extensionsPage.switchToABPOptionsTab();
 }
 
 async function beforeSequence()
@@ -35,8 +72,9 @@ async function beforeSequence()
     const abpExtensionXpi = await fs.promises.readFile(abpXpiFileName);
     const helperExtensionZip = await fs.promises.
       readFile("helper-extension/helper-extension.zip");
-    await browser.installAddOn(helperExtensionZip.toString("base64"), true);
     await browser.installAddOn(abpExtensionXpi.toString("base64"), true);
+    await browser.pause(500);
+    await browser.installAddOn(helperExtensionZip.toString("base64"), true);
   }
   const [origin] = await waitForExtension();
   await browser.url(`${origin}/desktop-options.html`);
@@ -46,8 +84,18 @@ async function beforeSequence()
 
 function getChromiumExtensionPath()
 {
-  const extensionPath = "../../adblockpluschrome/devenv.chrome";
-  return extensionPath;
+  let chromeExtension;
+  if (ciTesting)
+  {
+    chromeExtension = require("fs").
+      readFileSync(chromeBuild).toString("base64");
+  }
+  else
+  {
+    const extensionPath = "../../adblockpluschrome/devenv.chrome";
+    chromeExtension = extensionPath;
+  }
+  return chromeExtension;
 }
 
 function getCurrentDate(locale)
@@ -58,14 +106,21 @@ function getCurrentDate(locale)
 function getFirefoxExtensionPath()
 {
   let abpXpiFileName;
-  const files = fs.readdirSync("../../adblockpluschrome");
-  files.forEach(async(name) =>
+  if (ciTesting)
   {
-    if (/.*\.xpi/.test(name))
+    abpXpiFileName = firefoxBuild;
+  }
+  else
+  {
+    const files = fs.readdirSync("../../adblockpluschrome");
+    files.forEach(async(name) =>
     {
-      abpXpiFileName = "../../adblockpluschrome/" + name;
-    }
-  });
+      if (/.*\.xpi/.test(name))
+      {
+        abpXpiFileName = "../../adblockpluschrome/" + name;
+      }
+    });
+  }
   return abpXpiFileName;
 }
 

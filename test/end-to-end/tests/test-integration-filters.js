@@ -28,7 +28,7 @@ describe("test custom filters as part of the integration tests", function()
 {
   this.retries(globalRetriesNumber);
 
-  beforeEach(async function()
+  before(async function()
   {
     await beforeSequence();
   });

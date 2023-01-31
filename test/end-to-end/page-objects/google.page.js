@@ -29,7 +29,7 @@ class GooglePage extends BasePage
 
   async init()
   {
-    await this.browser.url("https://www.google.com/");
+    await this.browser.newWindow("https://www.google.com/intl/en/");
   }
 
   get acceptAllButton()

@@ -27,7 +27,7 @@ describe("test options page general tab recommended filters", function()
 {
   this.retries(globalRetriesNumber);
 
-  beforeEach(async function()
+  before(async function()
   {
     await beforeSequence();
   });

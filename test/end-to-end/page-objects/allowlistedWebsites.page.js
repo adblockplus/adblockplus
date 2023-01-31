@@ -35,6 +35,7 @@ class AllowlistedWebsitesPage extends BasePage
 
   async init()
   {
+    await this.waitForDisplayedNoError(this._allowlistedWebsitesTabButton);
     await (await this._allowlistedWebsitesTabButton).click();
   }
 
@@ -90,7 +91,7 @@ class AllowlistedWebsitesPage extends BasePage
   {
     const domainDeleteButton = await $("//li[@aria-label='" +
       domainName + "']/button");
-    await (await domainDeleteButton).click();
+    await this.waitForEnabledThenClick(domainDeleteButton);
   }
 
   async setAllowlistingTextboxValue(value)

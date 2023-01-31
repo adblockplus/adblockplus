@@ -28,6 +28,7 @@ stages:
   - build
   - checkfilesizes
   - testpages
+  - uitests
   - uploadxtm
   - updatextm
   - downloadxtm
@@ -335,3 +336,56 @@ testpages:MV2:firefox:oldest:
     BROWSER: firefox 68.0
     EXTENSION: adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
     PARAMETERS: $BROWSER
+
+################################################################################
+# UI tests
+################################################################################
+
+.uitests:
+  stage: uitests
+  variables:
+    CHROME_BUILD: adblockpluschrome/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
+    FIREFOX_BUILD: adblockpluschrome/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
+    BUILD_NUMBER: ${CI_COMMIT_SHORT_SHA}
+    LT_USERNAME: $LT_USERNAME
+    LT_ACCESS_KEY: $LT_ACCESS_KEY
+    CI_TESTING: "true"
+  script:
+    - npm install
+    - npm run test:end-to-end $SUITE || true
+    - apt-get update
+    - apt-get -y install openjdk-11-jre
+    - npx -y allure-commandline generate test/end-to-end/allure-results -o allure-report
+  artifacts:
+    when: always
+    paths:
+      - allure-report
+    expire_in: 1 week
+  dependencies:
+    - build
+  rules:
+    # Do not trigger a merge request pipeline
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: never
+    - when: manual
+      allow_failure: true
+
+uitests:all:
+  extends: .uitests
+  variables:
+    SUITE: all
+
+uitests:e2e:
+  extends: .uitests
+  variables:
+    SUITE: e2e
+
+uitests:integration:
+  extends: .uitests
+  variables:
+    SUITE: integration
+
+uitests:smoke:
+  extends: .uitests
+  variables:
+    SUITE: smoke

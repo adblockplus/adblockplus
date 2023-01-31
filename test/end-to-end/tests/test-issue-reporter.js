@@ -29,7 +29,7 @@ describe("test issue reporter", function()
 {
   this.retries(globalRetriesNumber);
 
-  beforeEach(async function()
+  before(async function()
   {
     globalOrigin = await beforeSequence();
   });

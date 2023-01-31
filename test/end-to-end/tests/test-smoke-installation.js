@@ -28,7 +28,7 @@ describe("test installation as part of the smoke tests", function()
 {
   this.retries(globalRetriesNumber);
 
-  beforeEach(async function()
+  before(async function()
   {
     await beforeSequence();
   });

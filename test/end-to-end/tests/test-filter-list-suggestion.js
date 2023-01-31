@@ -28,7 +28,7 @@ describe.skip("test filter list suggestion", function()
 {
   this.retries(globalRetriesNumber);
 
-  beforeEach(async function()
+  before(async function()
   {
     globalOrigin = await beforeSequence();
   });

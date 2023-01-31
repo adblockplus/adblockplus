@@ -990,7 +990,7 @@ class AdvancedPage extends BasePage
 
   async switchToHowToWriteFiltersTab()
   {
-    await this.switchToTab("How to write filters – Adblock Plus");
+    await this.switchToTab("How to write filters - Adblock Plus");
   }
 
   async switchToSubscriptionsTab()
