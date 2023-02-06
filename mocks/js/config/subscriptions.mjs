@@ -22,6 +22,7 @@ const URL_BLOCKLIST = `${URL_SUBSCRIPTION_BASE}/easylistgermany+easylist.txt`;
 const URL_ALLOWLIST = `${URL_SUBSCRIPTION_BASE}/exceptionrules.txt`;
 const URL_ALLOWLIST_PRIVACY =
   `${URL_SUBSCRIPTION_BASE}/exceptionrules-privacy-friendly.txt`;
+const URL_PREMIUM = `${URL_SUBSCRIPTION_BASE}/adblock_premium.txt`;
 const URL_DOCLINK_BASE = "https://adblockplus.org/redirect?link=";
 const URL_UNKNOWN = "https://www.example.com/filters.txt";
 
@@ -37,6 +38,11 @@ export const subscriptionDetails = {
   [URL_ALLOWLIST]: {
     title: "Allow non-intrusive advertising",
     installed: true,
+    downloadable: true
+  },
+  [URL_PREMIUM]: {
+    title: "AdBlock premium list",
+    installed: params.premiumIsActive,
     downloadable: true
   },
   [URL_ALLOWLIST_PRIVACY]: {

@@ -530,20 +530,55 @@ ewe.subscriptions.onRemoved.addListener(subscription =>
   disabledFilterCounters.delete(subscription.url);
 });
 
-premium.emitter.on("deactivated", async() =>
+/**
+ * Returns the premium subscription (Distraction Control).
+ *
+ * @returns {Promise} The premium subscription
+ */
+async function getPremiumSubscription()
 {
-  const recommendations = await ewe.subscriptions.getRecommendations();
-  for (const recommendation of recommendations)
-  {
-    if (recommendation.type !== "annoyances")
-      continue;
+  // The subscription of the "annoyances" type is the DC subscription
+  return (await ewe.subscriptions.getRecommendations())
+    .filter(recommendation => recommendation.type === "annoyances")
+    .shift();
+}
 
-    if (!(await ewe.subscriptions.has(recommendation.url)))
-      break;
+/**
+ * Adds the premium subscription.
+ *
+ * @returns {Promise} A Promise that settles after adding the subscription
+ *  was fulfilled or rejected
+ */
+async function addPremiumSubscription()
+{
+  const subscription = await getPremiumSubscription();
 
-    await ewe.subscriptions.remove(recommendation.url);
-    break;
-  }
+  if (!(await ewe.subscriptions.has(subscription.url)))
+    await addSubscription(subscription);
+}
+
+/**
+ * Removes the premium subscription.
+ *
+ * @returns {Promise} A Promise that settles after removing the subscription
+ *  was fulfilled or rejected
+ */
+async function removePremiumSubscription()
+{
+  const subscription = await getPremiumSubscription();
+
+  if (await ewe.subscriptions.has(subscription.url))
+    await ewe.subscriptions.remove(subscription.url);
+}
+
+premium.emitter.on("deactivated", () =>
+{
+  void removePremiumSubscription();
+});
+
+premium.emitter.on("activated", () =>
+{
+  void addPremiumSubscription();
 });
 
 installHandler("filters", "added", emit =>
