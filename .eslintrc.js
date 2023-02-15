@@ -8,7 +8,7 @@
  *
  * For the time being, it is used for TypeScript files.
  *
- * For the ESLint configuration for JavaScript files see `.eslintrc.json`.
+ * For the ESLint configuration for JavaScript files see `.eslintrc-legacy.js`.
  */
 module.exports = {
   env: {
@@ -16,19 +16,13 @@ module.exports = {
     es2021: true,
     webextensions: true
   },
-  extends: [
-    "airbnb-base",
-    "plugin:prettier/recommended"
-  ],
+  extends: ["airbnb-base", "plugin:prettier/recommended"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module"
   },
-  plugins: [
-    "@typescript-eslint",
-    "prettier"
-  ],
+  plugins: ["@typescript-eslint", "prettier"],
   settings: {
     "import/parsers": {
       "@typescript-eslint/parser": [".ts"]
@@ -60,7 +54,7 @@ module.exports = {
     // We do not prefer default exports.
     "import/prefer-default-export": "off",
     // We do allow calling warn() and error()
-    "no-console": ["error", {allow: ["warn", "error"]}],
+    "no-console": ["error", { allow: ["warn", "error"] }],
     // This is already handled by TypeScript and causes ESLint to complain
     // about globals in *.d.ts files.
     // See https://github.com/typescript-eslint/typescript-eslint/blob/8176fb15299943cbf20385eb0ea7ba877e193285/docs/linting/TROUBLESHOOTING.md
@@ -94,9 +88,12 @@ module.exports = {
      *    const getCoordinates = (x) => retrieveCoorsJson()[x];
      *    const retrieveCoorsJson = () => fetch();
      */
-    "no-use-before-define": ["error", {
-      functions: false
-    }],
+    "no-use-before-define": [
+      "error",
+      {
+        functions: false
+      }
+    ],
     /**
      * The info module doesn't exist in the source code and is generated
      * when building the extension, so we cannot lint it
@@ -106,16 +103,7 @@ module.exports = {
       {
         ignore: ["info.?"]
       }
-    ],
-    /**
-     * These rules are disabled, because they're no longer expected to apply
-     * after we switch from Airbnb to Standard
-     */
-    "consistent-return": "off",
-    "no-await-in-loop": "off",
-    "no-continue": "off",
-    "no-restricted-syntax": "off",
-    "no-restricted-globals": "off"
+    ]
   },
   overrides: [
     {
