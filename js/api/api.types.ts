@@ -64,6 +64,13 @@ export type DisplayMethod =
   | "relentless";
 
 /**
+ * Query parameters to be added in a URL
+ */
+export interface QueryParams {
+  source?: string;
+}
+
+/**
  * Options for retrieving items blocked per page.
  */
 interface GetBlockedPerPageOptions {
@@ -206,6 +213,11 @@ export interface PlatformToStore {
 export type Platform = keyof PlatformToStore;
 
 /**
+ * A single store name from the options available.
+ */
+export type Store = PlatformToStore[Platform] | "edge" | "opera";
+
+/**
  * Basic plugin info
  */
 export interface ExtensionInfo {
@@ -266,10 +278,18 @@ export interface PremiumActivateOptions {
 }
 
 /**
- * Query parameters to be added in a URL
+ * Options sent into subscription.get.
  */
-export interface QueryParams {
-  source?: string;
+export interface SubscriptionOptions {
+  /**
+   * Whether to return only the disabled filters.
+   */
+  disabledFilters?: boolean;
+
+  /**
+   * Whether or not to ignore filters that are disabled
+   */
+  ignoreDisabled?: boolean;
 }
 
 /**
@@ -301,23 +321,3 @@ export type SendType =
   | "stats.getBlockedTotal"
   | "subscriptions.get"
   | "subscriptions.getInitIssues";
-
-/**
- * A single store name from the options available.
- */
-export type Store = PlatformToStore[Platform] | "edge" | "opera";
-
-/**
- * Options sent into subscription.get.
- */
-export interface SubscriptionOptions {
-  /**
-   * Whether to return only the disabled filters.
-   */
-  disabledFilters?: boolean;
-
-  /**
-   * Whether or not to ignore filters that are disabled
-   */
-  ignoreDisabled?: boolean;
-}

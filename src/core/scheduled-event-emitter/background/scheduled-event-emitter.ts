@@ -151,9 +151,9 @@ export async function removeSchedule(name: string): Promise<void> {
   }
 
   if (schedule.runOnce) {
-    global.clearTimeout(schedule.activationId);
+    self.clearTimeout(schedule.activationId);
   } else {
-    global.clearInterval(schedule.activationId);
+    self.clearInterval(schedule.activationId);
   }
 
   delete schedules[name];
@@ -233,7 +233,6 @@ function activateSchedules(): void {
 
     if (!schedule.runOnce) {
       // Intervals are to start immediately.
-      // eslint-disable-next-line no-param-reassign
       schedule.activationId = self.setInterval(
         () => emitEvent(name),
         schedule.period
@@ -243,7 +242,6 @@ function activateSchedules(): void {
 
     if (!isDue) {
       // A timeout that is not due yet and needs to be planned.
-      // eslint-disable-next-line no-param-reassign
       schedule.activationId = self.setTimeout(() => emitEvent(name), delta);
       return;
     }

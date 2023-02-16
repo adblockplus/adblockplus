@@ -18,6 +18,14 @@
 import { Behavior, Command, Content } from "../../../ipm/background";
 
 /**
+ * Timing name
+ */
+export enum Timing {
+  afterWebAllowlisting = "after_web_allowlisting",
+  revisitWebAllowlisted = "revisit_web_allowlisted_site"
+}
+
+/**
  * On-page dialog behavior
  */
 export interface DialogBehavior extends Behavior {
@@ -33,6 +41,19 @@ export interface DialogBehavior extends Behavior {
    * When to open on-page dialog
    */
   timing: Timing;
+}
+
+/**
+ * On-page dialog command parameters
+ */
+export interface DialogParams {
+  timing: Timing;
+  display_duration?: number;
+  sub_title: string;
+  upper_body: string;
+  lower_body?: string;
+  button_label: string;
+  button_target: string;
 }
 
 /**
@@ -66,25 +87,4 @@ export enum DialogEventType {
   closed = "dialog_closed",
   ignored = "dialog_ignored",
   injected = "dialog_injected"
-}
-
-/**
- * On-page dialog command parameters
- */
-export interface DialogParams {
-  timing: Timing;
-  display_duration?: number;
-  sub_title: string;
-  upper_body: string;
-  lower_body?: string;
-  button_label: string;
-  button_target: string;
-}
-
-/**
- * Timing name
- */
-export enum Timing {
-  afterWebAllowlisting = "after_web_allowlisting",
-  revisitWebAllowlisted = "revisit_web_allowlisted_site"
 }

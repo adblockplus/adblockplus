@@ -194,7 +194,7 @@ function deactivateLicense(): void {
 
   scheduledEmitter.removeSchedule(licenseCheckRetryEventName);
   if (licenseCheckTimeoutId !== null) {
-    global.clearTimeout(licenseCheckTimeoutId);
+    self.clearTimeout(licenseCheckTimeoutId);
   }
 
   emitter.emit("deactivated");
@@ -248,7 +248,6 @@ export function initialize(): void {
  */
 function scheduleNextLicenseCheck(nextTimestamp: number | null): void {
   if (!nextTimestamp) {
-    /* eslint-disable-next-line no-param-reassign */
     nextTimestamp = Date.now() + licenseCheckPeriod;
     Prefs.set("premium_license_nextcheck", nextTimestamp);
   }

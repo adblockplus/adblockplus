@@ -16,6 +16,11 @@
  */
 
 /**
+ * DOM event with data that we can safely interact with
+ */
+export interface TrustedEvent extends CustomEvent {}
+
+/**
  * DOM event for requesting payload to verify
  * authenticity of Premium license data
  */
@@ -32,8 +37,3 @@ export interface AuthRequestEvent extends TrustedEvent {
     timestamp: number;
   };
 }
-
-/**
- * DOM event with data that we can safely interact with
- */
-export interface TrustedEvent extends CustomEvent {}
