@@ -25,9 +25,7 @@ import { SessionStorage } from "../../../../adblockpluschrome/lib/storage/sessio
 
 // We want to obtain the reference to the global object from a
 // dedicated service eventually, so let's prepare for that.
-const global: WindowOrWorkerGlobalScope =
-  // eslint-disable-next-line no-restricted-globals
-  typeof window !== "undefined" ? window : self;
+const global: WindowOrWorkerGlobalScope = self;
 
 /**
  * The ScheduledEventEmitter allows to schedule emission of events.
@@ -229,7 +227,6 @@ function activateSchedules(): void {
 
     if (!schedule.runOnce) {
       // Intervals are to start immediately.
-      // eslint-disable-next-line no-param-reassign
       schedule.activationId = global.setInterval(
         () => emitEvent(name),
         schedule.period
@@ -239,7 +236,6 @@ function activateSchedules(): void {
 
     if (!isDue) {
       // A timeout that is not due yet and needs to be planned.
-      // eslint-disable-next-line no-param-reassign
       schedule.activationId = global.setTimeout(() => emitEvent(name), delta);
       return;
     }

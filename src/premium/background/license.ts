@@ -28,9 +28,7 @@ import { License, LicenseCheckPayload, PremiumState } from "./license.types";
 
 // We want to obtain the reference to the global object from a
 // dedicated service eventually, so let's prepare for that.
-const global: WindowOrWorkerGlobalScope =
-  // eslint-disable-next-line no-restricted-globals
-  typeof window !== "undefined" ? window : self;
+const global: WindowOrWorkerGlobalScope = self;
 
 /**
  * Error indicating a temporary problem during a license check,
@@ -240,7 +238,6 @@ export function initialize(): void {
  */
 function scheduleNextLicenseCheck(nextTimestamp: number | null): void {
   if (!nextTimestamp) {
-    /* eslint-disable-next-line no-param-reassign */
     nextTimestamp = Date.now() + licenseCheckPeriod;
     Prefs.set("premium_license_nextcheck", nextTimestamp);
   }
