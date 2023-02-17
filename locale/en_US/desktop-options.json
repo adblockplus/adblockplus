@@ -81,7 +81,7 @@
   },
   "options_recommended_annoyances_description": {
     "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/blob/174961bed1ed95f9118bd08df0d6ad6e267e567d/spec/abp/desktop-settings/general-tab.md#premium-features-1",
-    "message": "Block floating videos, newsletter popups, survey requests and site notifications."
+    "message": "Block floating videos, newsletter pop-ups, survey requests and site notifications."
   },
   "options_recommended_privacy_description": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/52243bc8596b06107461034c745a6ecdaa42f1f6/spec/abp/desktop-settings/general-tab.md#list-of-recommended-filter-lists",
