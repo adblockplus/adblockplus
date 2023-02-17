@@ -59,7 +59,7 @@
       },
       "mocks": [
         "cd adblockpluschrome",
-        "npx gulp devenv -t local --skip-type-checks true"
+        "npx gulp devenv -t local"
       ]
     },
     "crowdin": {
