@@ -124,11 +124,11 @@ function initElementHidingDebugMode()
 {
   Prefs.on("elemhide_debug", () =>
   {
-    ewe.debugging.setElementHidingDebugMode(Prefs.elemhide_debug);
+    void ewe.debugging.setElementHidingDebugMode(Prefs.elemhide_debug);
   });
 
-  ewe.debugging.setElementHidingDebugMode(Prefs.elemhide_debug);
-  ewe.debugging.setElementHidingDebugStyle(
+  void ewe.debugging.setElementHidingDebugMode(Prefs.elemhide_debug);
+  void ewe.debugging.setElementHidingDebugStyle(
     [
       ["background", "#e67370"],
       ["outline", "solid #f00"]
@@ -177,7 +177,8 @@ async function start()
     testStorage().catch(() => { setDataCorrupted(true); })
   ]);
 
-  ewe.subscriptions.getMigrationErrors().forEach(console.error);
+  (await ewe.filters.getMigrationErrors()).forEach(console.error);
+  (await ewe.subscriptions.getMigrationErrors()).forEach(console.error);
   eweFirstRun.warnings.forEach(console.warn);
   await detectFirstRun(
     eweFirstRun.foundSubscriptions,
@@ -192,7 +193,7 @@ async function start()
 
   await initDisabledFilterCounters();
   initElementHidingDebugMode();
-  initNotifications(firstRun);
+  await initNotifications(firstRun);
   premium.initialize();
   void startTelemetry();
   setReadyState(ReadyState.started);

@@ -144,6 +144,6 @@ declare module "@eyeo/webext-sdk" {
     /**
      * Returns the list of ignored notification categories
      */
-    const getIgnoredCategories: () => string[];
+    const getIgnoredCategories: () => Promise<string[]>;
   }
 }

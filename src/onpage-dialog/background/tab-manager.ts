@@ -299,7 +299,7 @@ async function handleTabsUpdatedEvent(
     }
 
     // Ignore and dismiss command if user opted-out of notifications
-    const ignoredCategories = ewe.notifications.getIgnoredCategories();
+    const ignoredCategories = await ewe.notifications.getIgnoredCategories();
     if (ignoredCategories.includes("*")) {
       logger.debug("[onpage-dialog]: User ignores notifications");
       dismissDialogCommand(ipmId);

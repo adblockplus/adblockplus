@@ -571,13 +571,13 @@ _none_
 
 - **boolean** disabled
 - **boolean** downloadable
-- **boolean** downloading
-- **string** downloadStatus
-- **number** expires
+- **boolean** [downloading]
+- **string** [downloadStatus]
+- **number** [expires]
 - **string** homepage
-- **number** lastDownload
-- **number** lastSuccess
-- **number** softExpiration
+- **number** [lastDownload]
+- **number** [lastSuccess]
+- **number** [softExpiration]
 - **string** title
 - **string** url
 - **string** version

@@ -556,26 +556,46 @@ async function init()
 
   browser.storage.onChanged.addListener(onStorageChanged);
 
+  // EWE 0.8.0 made the notifications API asynchronous, so we need to
+  // cache ignored notification categories to continue to be able to
+  // get/set the notifications_ignoredcategories preference synchronously
+  let ignoredCategories = await ewe.notifications.getIgnoredCategories();
+
   // Initialize notifications_ignoredcategories pseudo preference
   Object.defineProperty(Prefs, "notifications_ignoredcategories", {
     get()
     {
-      return ewe.notifications.getIgnoredCategories();
+      return ignoredCategories;
     },
     set(value)
     {
-      ewe.notifications.toggleIgnoreCategory("*", !!value);
+      const categories = new Set(ignoredCategories);
+      if (value)
+        categories.add("*");
+      else
+        categories.delete("*");
+      ignoredCategories = categories;
+
+      void ewe.notifications.toggleIgnoreCategory("*", !!value);
     },
     enumerable: true
   });
 
   ewe.notifications.on(
     "ignored-category-added",
-    () => eventEmitter.emit("notifications_ignoredcategories")
+    async() =>
+    {
+      ignoredCategories = await ewe.notifications.getIgnoredCategories();
+      eventEmitter.emit("notifications_ignoredcategories");
+    }
   );
   ewe.notifications.on(
     "ignored-category-removed",
-    () => eventEmitter.emit("notifications_ignoredcategories")
+    async() =>
+    {
+      ignoredCategories = await ewe.notifications.getIgnoredCategories();
+      eventEmitter.emit("notifications_ignoredcategories");
+    }
   );
 }
 

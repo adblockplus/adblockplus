@@ -112,7 +112,7 @@
   "dependencies": {
     "@adblockinc/rules": "gitlab:adblockinc/ext/rules#c53ddaee",
     "@eyeo/snippets": "0.7.0",
-    "@eyeo/webext-sdk": "0.7.2",
+    "@eyeo/webext-sdk": "0.8.0",
     "@types/webextension-polyfill": "0.8.0",
     "canvas": "2.9.1",
     "glob": "7.1.6",
