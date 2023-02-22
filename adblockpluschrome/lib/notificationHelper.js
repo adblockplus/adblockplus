@@ -291,7 +291,7 @@ function openNotificationInNewTab(notification)
     browser.tabs.onUpdated.removeListener(onUpdated);
 
     browser.tabs.create({url});
-    ewe.notifications.markAsShown(notification.id);
+    void ewe.notifications.markAsShown(notification.id);
     void notificationDismissed(notification.id);
   }
 
@@ -411,7 +411,7 @@ async function showNotification(notification)
 
     if (installType === "admin" || isPremiumUser)
     {
-      ewe.notifications.markAsShown(notification.id);
+      void ewe.notifications.markAsShown(notification.id);
       void notificationDismissed(notification.id);
       return;
     }
@@ -420,7 +420,7 @@ async function showNotification(notification)
   }
   else
   {
-    ewe.notifications.markAsShown(notification.id);
+    void ewe.notifications.markAsShown(notification.id);
   }
 }
 
@@ -429,7 +429,7 @@ async function showNotification(notification)
  *
  * @param {bool} firstRun
  */
-export function initNotifications(firstRun)
+export async function initNotifications(firstRun)
 {
   let onClick = async(notificationId, buttonIndex) =>
   {
@@ -465,7 +465,7 @@ export function initNotifications(firstRun)
 
   ewe.notifications.locale = browser.i18n.getUILanguage();
   ewe.notifications.numBlocked = Stats.blocked_total;
-  ewe.notifications.start();
+  await ewe.notifications.start();
 
   // If there is an active notification of the "newtab" type on startup, call
   // openNotificationInNewTab() to activate it again. If we don't do this,
@@ -559,7 +559,7 @@ port.on("notifications.seen", async(message, sender) =>
 Stats.on("blocked_total", () =>
 {
   ewe.notifications.numBlocked = Stats.blocked_total;
-  ewe.notifications.showNext();
+  void ewe.notifications.showNext();
 });
 
 ewe.notifications.addShowListener(showNotification);

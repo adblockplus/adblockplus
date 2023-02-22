@@ -109,7 +109,7 @@ export async function setUninstallURL()
   params.corrupted = isDataCorrupted() ? "1" : "0";
   params.firstVersion = ewe.reporting.getFirstVersion();
 
-  let notificationDownloadCount = ewe.notifications.getDownloadCount();
+  let notificationDownloadCount = await ewe.notifications.getDownloadCount();
   if (notificationDownloadCount < 5)
     params.notificationDownloadCount = notificationDownloadCount;
   else if (notificationDownloadCount < 8)

@@ -18,7 +18,8 @@
   "declarative_net_request": {},
   "permissions": [
     "contextMenus",
-    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "declarativeNetRequestFeedback",
     "notifications",
     "scripting",
     "storage",

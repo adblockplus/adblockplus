@@ -66,7 +66,7 @@ const defaultModules = {
   [moduleEWE]: {
     notifications: {
       addNotification() {},
-      showNext() {}
+      async showNext() {}
     },
     subscriptions: {
       getDownloadable: async() => [],
