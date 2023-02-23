@@ -37,7 +37,7 @@
   },
   "options_tab_allowlist": {
     "description": "https://gitlab.com/eyeo/specs/spec/-/blob/6a6fb785b6a703c5fe77e7109ddf3f6b3ee22787/spec/abp/desktop-settings/allowlist-tab.md#allowlist-tab-headline",
-    "message": "Allowlisted websites"
+    "message": "QA task: Armando Cifuentes"
   },
   "options_tab_advanced": {
     "description": "Sidebar tab label and main heading inside corresponding tab",
