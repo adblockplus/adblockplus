@@ -24,12 +24,41 @@ import {Prefs} from "./prefs.js";
 import {isDataCorrupted} from "./subscriptionInit.js";
 
 const abbreviations = [
-  ["an", "addonName"], ["av", "addonVersion"],
-  ["ap", "application"], ["apv", "applicationVersion"],
-  ["p", "platform"], ["fv", "firstVersion"], ["pv", "platformVersion"],
-  ["ndc", "notificationDownloadCount"], ["c", "corrupted"],
-  ["s", "subscriptions"]
+  ["an", "addonName"],
+  ["ap", "application"],
+  ["apv", "applicationVersion"],
+  ["av", "addonVersion"],
+  ["c", "corrupted"],
+  ["fv", "firstVersion"],
+  ["ndc", "notificationDownloadCount"],
+  ["p", "platform"],
+  ["pv", "platformVersion"],
+  ["s", "subscriptions"],
+  ["wafc", "webAllowlistingFilterCount"]
 ];
+
+/**
+ * Returns the number of currently active filters that have been added using
+ * the experimental allowlisting functionality (i.e. that originated in the
+ * web, and not in the extension popup).
+ *
+ * @returns {number} The filter count
+ */
+async function getWebAllowlistingFilterCount()
+{
+  // get all allowlisting filters that are enabled
+  const filters = (await ewe.filters.getUserFilters()).filter(
+    filter => filter.type === "allowing" && filter.enabled
+  );
+
+  // collect their metadata
+  const filtersMetadata = await Promise.all(
+    filters.map(async filter => await ewe.filters.getMetadata(filter.text))
+  );
+
+  // count the ones that originated in the web
+  return filtersMetadata.filter(data => data.origin === "web").length;
+}
 
 /**
  * Retrieves set of URLs of recommended ad blocking filter lists
@@ -99,6 +128,8 @@ export async function setUninstallURL()
   let isAdBlockingActive = await isAnySubscriptionActive(adsSubscriptions);
   params.subscriptions = (isAcceptableAdsActive << 1) | isAdBlockingActive;
 
+  params.webAllowlistingFilterCount = await getWebAllowlistingFilterCount();
+
   for (let [abbreviation, key] of abbreviations)
     search.push(abbreviation + "=" + encodeURIComponent(params[key]));
 
@@ -107,6 +138,11 @@ export async function setUninstallURL()
 }
 
 ewe.notifications.on("downloaded", setUninstallURL);
+
+ewe.filters.onAdded.addListener(setUninstallURL);
+ewe.filters.onChanged.addListener(setUninstallURL);
+ewe.filters.onRemoved.addListener(setUninstallURL);
+
 ewe.subscriptions.onAdded.addListener(setUninstallURL);
 ewe.subscriptions.onChanged.addListener(async(subscription, property) =>
 {
