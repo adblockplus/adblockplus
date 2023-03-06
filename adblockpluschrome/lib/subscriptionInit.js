@@ -28,6 +28,8 @@ import {revalidateAllowlistingStates} from "./allowlisting.js";
 import {initDisabledFilterCounters} from "./filterConfiguration.js";
 import {initNotifications} from "./notificationHelper.js";
 import {Prefs} from "./prefs.js";
+import {setReadyState, ReadyState} from
+  "../../src/testing/ready-state/background/index.ts";
 
 let firstRun;
 let userNotificationCallback = null;
@@ -145,7 +147,7 @@ function initElementHidingDebugMode()
   );
 }
 
-(async() =>
+async function start()
 {
   // Recommendation URLs default to those for Manifest v3, so we need
   // to adjust the rules index for Manifest v2 to avoid using those
@@ -191,7 +193,28 @@ function initElementHidingDebugMode()
   initElementHidingDebugMode();
   initNotifications(firstRun);
   premium.initialize();
-})();
+  setReadyState(ReadyState.started);
+
+  /**
+   * @typedef {object} subscriptionsGetInitIssuesResult
+   * @property {boolean} dataCorrupted
+   *   true if it appears that the user's extension data was corrupted.
+   * @property {boolean} reinitialized
+   *   true if we have reset the user's settings due to data corruption.
+   */
+
+  /**
+   * Returns an Object with boolean flags for any subscription initialization
+   * issues.
+   *
+   * @event "subscriptions.getInitIssues"
+   * @returns {subscriptionsGetInitIssuesResult}
+   */
+  port.on("subscriptions.getInitIssues", (message, sender) => ({
+    dataCorrupted,
+    reinitialized
+  }));
+}
 
 /**
  * Gets a value indicating whether a data corruption was detected.
@@ -214,20 +237,4 @@ export function setNotifyUserCallback(callback)
   userNotificationCallback = callback;
 }
 
-/**
- * @typedef {object} subscriptionsGetInitIssuesResult
- * @property {boolean} dataCorrupted
- *   true if it appears that the user's extension data was corrupted.
- * @property {boolean} reinitialized
- *   true if we have reset the user's settings due to data corruption.
- */
-
-/**
- * Returns an Object with boolean flags for any subscription initialization
- * issues.
- *
- * @event "subscriptions.getInitIssues"
- * @returns {subscriptionsGetInitIssuesResult}
- */
-port.on("subscriptions.getInitIssues",
-        (message, sender) => ({dataCorrupted, reinitialized}));
+start();
