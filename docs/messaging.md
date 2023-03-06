@@ -68,6 +68,8 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
   - [remove](#subscriptionsremove)
   - [toggle](#subscriptionstoggle)
   - [update](#subscriptionsupdate)
+- testing
+  - [getReadyState](#testinggetreadystate)
 
 ---
 
@@ -515,6 +517,22 @@ If filter includes `blocked_total`:
 **Arguments**
 
 - **string** [url]
+
+
+
+### testing
+
+#### testing.getReadyState
+
+**Arguments**
+
+_none_
+
+**Response**
+
+**string** ReadyState
+  - `loading`
+  - `started`
 
 ## Types
 
