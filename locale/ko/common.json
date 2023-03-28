@@ -14,14 +14,14 @@
       }
     }
   },
+  "common_feature_annoyances_title": {
+    "message": "산만한 요소 차단 강화"
+  },
   "common_feature_anti_adblock_title": {
     "message": "Adblock 경고 메시지 숨기기"
   },
   "common_feature_circumvention_title": {
     "message": "ABP 우회덤핑방지 필터 목록"
-  },
-  "common_feature_annoyances_title": {
-    "message": "산만한 요소 차단 강화"
   },
   "common_feature_malware_title": {
     "message": "멀웨어 차단"

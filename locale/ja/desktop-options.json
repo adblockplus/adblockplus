@@ -198,6 +198,9 @@
   "options_filterList_hours": {
     "message": "時間前"
   },
+  "options_filterList_lastDownload_bundled": {
+    "message": "バンドル済み"
+  },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "更新失敗: チェックサム不一致"
   },

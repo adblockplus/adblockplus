@@ -210,6 +210,9 @@
   "options_filterList_hours": {
     "message": "Il y a heures"
   },
+  "options_filterList_lastDownload_bundled": {
+    "message": "Regroupés"
+  },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Échec, le checksum ne correspond pas"
   },

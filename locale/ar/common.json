@@ -14,14 +14,14 @@
       }
     }
   },
+  "common_feature_annoyances_title": {
+    "message": "حجب المزيد من عوامل التشتيت"
+  },
   "common_feature_anti_adblock_title": {
     "message": "اخفاء رسائل تحذير ادبلوك"
   },
   "common_feature_circumvention_title": {
     "message": "قائمة فلاتر ضد التحايل ABP"
-  },
-  "common_feature_annoyances_title": {
-    "message": "حجب المزيد من عوامل التشتيت"
   },
   "common_feature_malware_title": {
     "message": "منع البرامج الضارة"

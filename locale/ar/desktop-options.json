@@ -210,6 +210,9 @@
   "options_filterList_hours": {
     "message": "منذ ساعات"
   },
+  "options_filterList_lastDownload_bundled": {
+    "message": "ضمن حزمة"
+  },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "فشل الأمر، عدم تطابق المجموع الإختباري"
   },

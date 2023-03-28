@@ -192,6 +192,9 @@
   "options_filterList_hours": {
     "message": "ώρες πριν"
   },
+  "options_filterList_lastDownload_bundled": {
+    "message": "Ομαδοποιημένο"
+  },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Απέτυχε, απόκλιση στον έλεγχο checksum"
   },

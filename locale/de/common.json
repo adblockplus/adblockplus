@@ -14,14 +14,14 @@
       }
     }
   },
+  "common_feature_annoyances_title": {
+    "message": "Mehr Ablenkungen blockieren"
+  },
   "common_feature_anti_adblock_title": {
     "message": "Adblock-Warnmeldungen verbergen"
   },
   "common_feature_circumvention_title": {
     "message": "ABP-Filterliste für Umgehungsschutz"
-  },
-  "common_feature_annoyances_title": {
-    "message": "Mehr Ablenkungen blockieren"
   },
   "common_feature_malware_title": {
     "message": "Blockieren von Malware"

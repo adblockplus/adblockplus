@@ -14,11 +14,11 @@
       }
     }
   },
-  "common_feature_circumvention_title": {
-    "message": "Λίστα φίλτρων έναντι παράκαμψης ABP"
-  },
   "common_feature_annoyances_title": {
     "message": "Αποκλείστε περισσότερους περισπασμούς"
+  },
+  "common_feature_circumvention_title": {
+    "message": "Λίστα φίλτρων έναντι παράκαμψης ABP"
   },
   "common_feature_notifications_title": {
     "message": "Αποκλεισμός ειδοποιήσεων push"

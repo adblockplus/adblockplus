@@ -14,14 +14,14 @@
       }
     }
   },
+  "common_feature_annoyances_title": {
+    "message": "Заблокируйте еще больше помех"
+  },
   "common_feature_anti_adblock_title": {
     "message": "Скрывать предупреждения об использовании блокировщика рекламы"
   },
   "common_feature_circumvention_title": {
     "message": "Список фильтров для антиобхода ABP"
-  },
-  "common_feature_annoyances_title": {
-    "message": "Заблокируйте еще больше помех"
   },
   "common_feature_malware_title": {
     "message": "Блокировать вредоносные программы"

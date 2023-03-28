@@ -210,6 +210,9 @@
   "options_filterList_hours": {
     "message": "часа(-ов) назад"
   },
+  "options_filterList_lastDownload_bundled": {
+    "message": "Объединенный вариант"
+  },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Ошибка: проверочная сумма не совпадает"
   },

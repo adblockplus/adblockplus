@@ -210,6 +210,9 @@
   "options_filterList_hours": {
     "message": "시간 전"
   },
+  "options_filterList_lastDownload_bundled": {
+    "message": "묶음"
+  },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "실패함 : 검사합 불일치"
   },
