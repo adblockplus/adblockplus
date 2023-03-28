@@ -14,14 +14,14 @@
       }
     }
   },
+  "common_feature_annoyances_title": {
+    "message": "さらに迷惑な要素をブロック"
+  },
   "common_feature_anti_adblock_title": {
     "message": "Adblock に対する警告メッセージを隠す"
   },
   "common_feature_circumvention_title": {
     "message": "ABP 回避対策フィルタリスト"
-  },
-  "common_feature_annoyances_title": {
-    "message": "さらに迷惑な要素をブロック"
   },
   "common_feature_malware_title": {
     "message": "マルウェアのブロック"

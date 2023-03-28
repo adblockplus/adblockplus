@@ -210,6 +210,9 @@
   "options_filterList_hours": {
     "message": "órával ezelőtt"
   },
+  "options_filterList_lastDownload_bundled": {
+    "message": "Kötegelt"
+  },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Sikertelen, érvénytelen ellenőrzőösszeg"
   },

@@ -210,6 +210,9 @@
   "options_filterList_hours": {
     "message": "vor Stunden"
   },
+  "options_filterList_lastDownload_bundled": {
+    "message": "Gebündelt"
+  },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Fehler, Prüfsumme ist falsch"
   },

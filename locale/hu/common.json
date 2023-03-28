@@ -14,14 +14,14 @@
       }
     }
   },
+  "common_feature_annoyances_title": {
+    "message": "Blokkoljon még több figyelmet elvonó tartalmat"
+  },
   "common_feature_anti_adblock_title": {
     "message": "Adblock-figyelmeztetések elrejtése"
   },
   "common_feature_circumvention_title": {
     "message": "ABP Megkerülésvédelem szűrőlista"
-  },
-  "common_feature_annoyances_title": {
-    "message": "Blokkoljon még több figyelmet elvonó tartalmat"
   },
   "common_feature_malware_title": {
     "message": "Kártékony szoftverek blokkolása"

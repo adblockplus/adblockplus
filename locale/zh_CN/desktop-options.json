@@ -210,6 +210,9 @@
   "options_filterList_hours": {
     "message": "几小时以前"
   },
+  "options_filterList_lastDownload_bundled": {
+    "message": "捆绑"
+  },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "失败，校验和不匹配"
   },

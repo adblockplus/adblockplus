@@ -210,6 +210,9 @@
   "options_filterList_hours": {
     "message": "ore fa"
   },
+  "options_filterList_lastDownload_bundled": {
+    "message": "Pacchetto"
+  },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Sincronizzazione non riuscita, checksum non corrispondente"
   },

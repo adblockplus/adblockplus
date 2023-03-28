@@ -210,6 +210,9 @@
   "options_filterList_hours": {
     "message": "uren geleden"
   },
+  "options_filterList_lastDownload_bundled": {
+    "message": "Gebundeld"
+  },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Mislukt, ongeldige controlesom"
   },

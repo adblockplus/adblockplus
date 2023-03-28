@@ -210,6 +210,9 @@
   "options_filterList_hours": {
     "message": "saat önce"
   },
+  "options_filterList_lastDownload_bundled": {
+    "message": "Paket Halinde"
+  },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Başarısız. Sağlama yapılamadı."
   },

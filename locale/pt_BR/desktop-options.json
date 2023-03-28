@@ -210,6 +210,9 @@
   "options_filterList_hours": {
     "message": "Há horas"
   },
+  "options_filterList_lastDownload_bundled": {
+    "message": "Integrado"
+  },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Falhou, checksum deu errado"
   },

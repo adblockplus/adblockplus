@@ -210,6 +210,9 @@
   "options_filterList_hours": {
     "message": "godzin temu"
   },
+  "options_filterList_lastDownload_bundled": {
+    "message": "W pakiecie"
+  },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Nie powiodło się – niepoprawna suma kontrolna"
   },
