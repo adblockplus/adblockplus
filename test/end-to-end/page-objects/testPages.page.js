@@ -63,9 +63,9 @@ class TestPages extends BasePage
     return $("p*=This should be hidden by a snippet");
   }
 
-  get serverAdDiv()
+  get searchAdDiv()
   {
-    return $("#ServerAd");
+    return $("#search-ad");
   }
 
   get snippetFilterDiv()
@@ -139,9 +139,9 @@ class TestPages extends BasePage
     return await (await this.pubfigFilter).getText();
   }
 
-  async getServerAdDivText()
+  async getSearchAdDivText()
   {
-    return await (await this.serverAdDiv).getText();
+    return await (await this.searchAdDiv).getText();
   }
 
   async getSubscriptionBlockingText()
@@ -185,9 +185,9 @@ class TestPages extends BasePage
     return await (await this.hiddenBySnippetText).isDisplayed();
   }
 
-  async isServerAdDivDisplayed()
+  async isSearchAdDivDisplayed()
   {
-    return await (await this.serverAdDiv).isDisplayed();
+    return await (await this.searchAdDiv).isDisplayed();
   }
 
   async isSubscriptionHidingClassDisplayed()

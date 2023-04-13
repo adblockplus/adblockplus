@@ -29,7 +29,7 @@ class GooglePage extends BasePage
 
   async init()
   {
-    await this.browser.newWindow("https://www.google.com/intl/en/");
+    await browser.url("https://www.google.com/intl/en/");
   }
 
   get acceptAllButton()
@@ -47,19 +47,30 @@ class GooglePage extends BasePage
     return $("//input[@title='Search']");
   }
 
+  get sponsoredTag()
+  {
+    return $("//span[text()='Sponsored']");
+  }
+
   async clickAcceptAllButton()
   {
-    await this.waitForEnabledThenClick(this.acceptAllButton);
+    await this.waitForEnabledThenClick(this.acceptAllButton, 7000);
   }
 
   async isAdTagDisplayed(reverse = false)
   {
-    return await this.waitForDisplayedNoError(this.adTag, reverse);
+    return await this.waitForDisplayedNoError(this.adTag, reverse, 5000);
+  }
+
+  async isSponsoredTagDisplayed(reverse = false)
+  {
+    return await this.
+      waitForDisplayedNoError(this.sponsoredTag, reverse, 5000);
   }
 
   async searchForText(text)
   {
-    await (await this.searchBox).click();
+    await this.waitForEnabledThenClick(this.searchBox);
     await (await this.searchBox).clearValue();
     await this.browser.keys(text);
     await browser.keys("Enter");

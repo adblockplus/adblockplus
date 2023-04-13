@@ -29,7 +29,7 @@ class PopupPage extends BasePage
 
   async init(origin)
   {
-    await this.browser.url(`${origin}/popup.html`);
+    await browser.url(`${origin}/popup.html`);
   }
 
   get closeNotificationButton()
@@ -118,6 +118,12 @@ class PopupPage extends BasePage
   {
     await this.switchToTab("A browser issue has caused your ABP " +
       "settings to be reset.");
+  }
+
+  async waitForNumberOfAdsBlockedInTotalTextToEqual(text, timeoutVal = 3000)
+  {
+    return await this.waitUntilTextIs(this.numberOfAdsBlockedInTotal,
+                                      text, timeoutVal);
   }
 }
 

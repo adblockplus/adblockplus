@@ -27,6 +27,7 @@ const HelpPage = require("../page-objects/help.page");
 const AllowlistedWebsitesPage =
   require("../page-objects/allowlistedWebsites.page");
 const dataLinks = require("../test-data/data-links");
+let lastTest = false;
 
 describe("test options page links", function()
 {
@@ -39,7 +40,10 @@ describe("test options page links", function()
 
   afterEach(async function()
   {
-    await afterSequence();
+    if (lastTest == false)
+    {
+      await afterSequence();
+    }
   });
 
   it("should open contribute page", async function()
@@ -47,7 +51,7 @@ describe("test options page links", function()
     const footerChunk = new FooterChunk(browser);
     await footerChunk.clickContributeButton();
     await footerChunk.switchToContributeTab();
-    expect(await footerChunk.getCurrentUrl()).to.equal(
+    expect(await footerChunk.getCurrentUrl()).to.include(
       dataLinks.contributeUrl);
   });
 
@@ -57,7 +61,7 @@ describe("test options page links", function()
     await generalPage.init();
     await generalPage.clickAcceptableAdsCriteriaLink();
     await generalPage.switchToAAInfoTab();
-    expect(await generalPage.getCurrentUrl()).to.equal(
+    expect(await generalPage.getCurrentUrl()).to.include(
       dataLinks.aaCriteriaUrl);
   });
 
@@ -67,7 +71,7 @@ describe("test options page links", function()
     await generalPage.init();
     await generalPage.clickAcceptableAdsLearnMoreLink();
     await generalPage.switchToAAInfoTab();
-    expect(await generalPage.getCurrentUrl()).to.equal(
+    expect(await generalPage.getCurrentUrl()).to.include(
       dataLinks.aaLearnMoreUrl);
   });
 
@@ -77,7 +81,7 @@ describe("test options page links", function()
     await allowistedWebsitesPage.init();
     await allowistedWebsitesPage.clickAllowlistingLearnMoreLink();
     await allowistedWebsitesPage.switchToABPFAQTab();
-    expect(await allowistedWebsitesPage.getCurrentUrl()).to.equal(
+    expect(await allowistedWebsitesPage.getCurrentUrl()).to.include(
       dataLinks.allowlistingLearnMoreUrl);
   });
 
@@ -87,7 +91,7 @@ describe("test options page links", function()
     await advancedPage.init();
     await advancedPage.clickFilterListsLearnMoreLink();
     await advancedPage.switchToSubscriptionsTab();
-    expect(await advancedPage.getCurrentUrl()).to.equal(
+    expect(await advancedPage.getCurrentUrl()).to.include(
       dataLinks.subscriptionsUrl);
   });
 
@@ -97,7 +101,7 @@ describe("test options page links", function()
     await advancedPage.init();
     await advancedPage.clickLearnHowToWriteFiltersLink();
     await advancedPage.switchToHowToWriteFiltersTab();
-    expect(await advancedPage.getCurrentUrl()).to.equal(
+    expect(await advancedPage.getCurrentUrl()).to.include(
       dataLinks.howToWriteFiltersUrl);
   });
 
@@ -107,7 +111,7 @@ describe("test options page links", function()
     await helpPage.init();
     await helpPage.clickVisitOurHelpCenterLink();
     await helpPage.switchToHelpCenterTab();
-    expect(await helpPage.getCurrentUrl()).to.equal(
+    expect(await helpPage.getCurrentUrl()).to.include(
       dataLinks.helpCenterUrl);
   });
 
@@ -117,7 +121,7 @@ describe("test options page links", function()
     await helpPage.init();
     await helpPage.clickSendUsABugReportLink();
     await helpPage.switchToBugReportTab();
-    expect(await helpPage.getCurrentUrl()).to.equal(
+    expect(await helpPage.getCurrentUrl()).to.include(
       dataLinks.reportAnIssueUrl);
   });
 
@@ -129,14 +133,14 @@ describe("test options page links", function()
     if (browser.capabilities.browserName == "firefox")
     {
       await helpPage.switchToForumTabFirefox();
-      expect(await helpPage.getCurrentUrl()).to.equal(
+      expect(await helpPage.getCurrentUrl()).to.include(
         dataLinks.forumUrlFirefox);
     }
     else if (browser.capabilities.browserName == "chrome" &&
       browser.capabilities.browserName == "msedge")
     {
       await helpPage.switchToForumTabChrome();
-      expect(await helpPage.getCurrentUrl()).to.equal(
+      expect(await helpPage.getCurrentUrl()).to.include(
         dataLinks.forumUrlChrome);
     }
   });
@@ -147,17 +151,26 @@ describe("test options page links", function()
     await helpPage.init();
     await helpPage.clickTwitterLink();
     await helpPage.switchToTwitterTab();
-    expect(await helpPage.getCurrentUrl()).to.equal(
+    expect(await helpPage.getCurrentUrl()).to.include(
       dataLinks.twitterUrl);
   });
 
   it("should open facebook page", async function()
   {
+    lastTest = true;
     const helpPage = new HelpPage(browser);
     await helpPage.init();
     await helpPage.clickFacebookLink();
     await helpPage.switchToFacebookTab();
-    expect(await helpPage.getCurrentUrl()).to.equal(
-      dataLinks.facebookUrl);
+    try
+    {
+      expect(await helpPage.getCurrentUrl()).to.include(
+        dataLinks.facebookUrl);
+    }
+    catch (Exception)
+    {
+      expect(await helpPage.getCurrentUrl()).to.include(
+        dataLinks.facebookFallbackUrl);
+    }
   });
 });

@@ -95,7 +95,7 @@ class HelpPage extends BasePage
 
   async switchToFacebookTab()
   {
-    await this.switchToTab(/Adblock Plus.*Facebook/);
+    await this.switchToTab(/Facebook/);
   }
 
   async switchToForumTabChrome()
@@ -110,8 +110,7 @@ class HelpPage extends BasePage
 
   async switchToHelpCenterTab()
   {
-    await this.switchToTab("Adblock Plus Help Center | " +
-     "Adblock Plus Help Center");
+    await this.switchToTab("https://help.adblockplus.org/hc/en-us");
   }
 
   async switchToTwitterTab()

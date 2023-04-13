@@ -29,7 +29,7 @@ class FirstRunPage extends BasePage
 
   async init(origin)
   {
-    await this.browser.url(`${origin}/first-run.html`);
+    await browser.url(`${origin}/first-run.html`);
   }
 
   get abpLogo()

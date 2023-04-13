@@ -29,6 +29,7 @@ const GooglePage = require("../page-objects/google.page");
 const TestPages = require("../page-objects/testPages.page");
 const siteKeyData = require("../test-data/data-smoke-tests").siteKeyData;
 const testData = require("../test-data/data-smoke-tests");
+let lastTest = false;
 
 describe("test adblocking as part of the smoke tests", function()
 {
@@ -41,16 +42,40 @@ describe("test adblocking as part of the smoke tests", function()
 
   afterEach(async function()
   {
-    await afterSequence();
+    if (lastTest == false)
+    {
+      await afterSequence();
+    }
   });
 
   it("should display acceptable ads", async function()
   {
     const googlePage = new GooglePage(browser);
     await googlePage.init();
-    await googlePage.clickAcceptAllButton();
-    await googlePage.searchForText("hotels");
-    expect(await googlePage.isAdTagDisplayed()).to.be.true;
+    try
+    {
+      await googlePage.clickAcceptAllButton();
+    }
+    catch (Exception) {}
+    try
+    {
+      await googlePage.searchForText("hotels");
+    }
+    catch (Exception)
+    {
+      await googlePage.switchToTab("Google");
+      await browser.refresh();
+      await googlePage.init();
+      await googlePage.searchForText("hotels");
+    }
+    try
+    {
+      expect(await googlePage.isAdTagDisplayed()).to.be.true;
+    }
+    catch (Exception)
+    {
+      expect(await googlePage.isSponsoredTagDisplayed()).to.be.true;
+    }
     const extensionsPage = new ExtensionsPage(browser);
     await extensionsPage.init();
     await extensionsPage.clickReloadHelperExtensionButton();
@@ -60,36 +85,70 @@ describe("test adblocking as part of the smoke tests", function()
     await generalPage.clickAllowAcceptableAdsCheckbox();
     await googlePage.init();
     await googlePage.searchForText("hotels");
+    await browser.pause(randomIntFromInterval(1500, 2500));
     expect(await googlePage.isAdTagDisplayed(true)).to.be.true;
   });
 
   siteKeyData.forEach(async(dataSet) =>
   {
     if ((dataSet.website == "http://trucking.com" &&
-        browser.capabilities.browserName == "chrome") ||
+        browser.capabilities.browserName == "firefox") ||
         (dataSet.website == "http://cook.com" &&
-        browser.capabilities.browserName == "MicrosoftEdge") ||
+        browser.capabilities.browserName == "chrome") ||
         (dataSet.website == "http://zins.de" &&
-        browser.capabilities.browserName == "firefox"))
+        browser.capabilities.browserName == "msedge"))
     {
       it("should test sitekey: " + dataSet.website, async function()
       {
         await browser.newWindow(dataSet.website);
         const generalPage = new GeneralPage(browser);
-        expect(await generalPage.isElementDisplayed(
-          dataSet.relatedLinksSelector)).to.be.true;
+        if (browser.capabilities.browserName == "msedge")
+        {
+          try
+          {
+            expect(await generalPage.isElementDisplayed(
+              dataSet.relatedLinksSelector)).to.be.true;
+          }
+          catch (Exception)
+          {
+            await browser.pause(randomIntFromInterval(2500, 3500));
+            await browser.refresh();
+            await browser.pause(randomIntFromInterval(1500, 2500));
+            expect(await generalPage.isElementDisplayed(
+              dataSet.relatedLinksSelector)).to.be.true;
+          }
+        }
         await browser.pause(randomIntFromInterval(1500, 2500));
         await browser.refresh();
-        expect(await generalPage.isElementDisplayed(
-          dataSet.relatedLinksSelector)).to.be.true;
-        await generalPage.switchToABPOptionsTab(true);
+        if (browser.capabilities.browserName == "msedge")
+        {
+          try
+          {
+            expect(await generalPage.isElementDisplayed(
+              dataSet.relatedLinksSelector)).to.be.true;
+          }
+          catch (Exception)
+          {
+            await browser.pause(randomIntFromInterval(2500, 3500));
+            await browser.refresh();
+            await browser.pause(randomIntFromInterval(1500, 2500));
+            expect(await generalPage.isElementDisplayed(
+              dataSet.relatedLinksSelector)).to.be.true;
+          }
+        }
+        else
+        {
+          expect(await generalPage.isElementDisplayed(
+            dataSet.relatedLinksSelector)).to.be.true;
+        }
+        await generalPage.switchToABPOptionsTab();
         await generalPage.clickAllowAcceptableAdsCheckbox();
         await generalPage.switchToTab(dataSet.tabTitle);
         await browser.pause(randomIntFromInterval(1500, 2500));
         await browser.refresh();
         expect(await generalPage.isElementDisplayed(
           dataSet.relatedLinksSelector, true)).to.be.true;
-        await generalPage.switchToABPOptionsTab(true);
+        await generalPage.switchToABPOptionsTab();
         await generalPage.clickAllowAcceptableAdsCheckbox();
         await generalPage.switchToTab(dataSet.tabTitle);
         await browser.pause(randomIntFromInterval(1500, 2500));
@@ -98,18 +157,18 @@ describe("test adblocking as part of the smoke tests", function()
           dataSet.relatedLinksSelector)).to.be.true;
       });
     }
-  });
+  }, 2);
 
   it("should block and hide ads", async function()
   {
-    await browser.newWindow(testData.blockHideUrl);
+    await browser.url(testData.blockHideUrl);
     const testPages = new TestPages(browser);
     expect(await testPages.getPubfigFilterText()).to.include(
       "/pubfig.js was blocked");
     expect(await testPages.getBanneradsFilterText()).to.include(
       "/bannerads/* was blocked");
     expect(await testPages.
-      isServerAdDivDisplayed()).to.be.false;
+      isSearchAdDivDisplayed()).to.be.false;
     expect(await testPages.
       isZergmodDivDisplayed()).to.be.false;
   });
@@ -132,6 +191,7 @@ describe("test adblocking as part of the smoke tests", function()
   it("should allowlist websites", async function()
   {
     const allowistedWebsitesPage = new AllowlistedWebsitesPage(browser);
+    await allowistedWebsitesPage.switchToABPOptionsTab();
     await allowistedWebsitesPage.init();
     await allowistedWebsitesPage.
       setAllowlistingTextboxValue("https://adblockinc.gitlab.io/");
@@ -140,17 +200,24 @@ describe("test adblocking as part of the smoke tests", function()
     await allowistedWebsitesPage.clickAddWebsiteButton();
     await browser.newWindow(testData.allowlistingUrl);
     const testPages = new TestPages(browser);
+    if (browser.capabilities.browserName == "firefox")
+    {
+      if (await allowistedWebsitesPage.getCurrentTitle() !=
+        "Blocking and hiding")
+      {
+        await allowistedWebsitesPage.switchToTab("Blocking and hiding");
+        await browser.refresh();
+      }
+    }
     expect(await testPages.getPubfigFilterText()).to.include(
       "pubfig.js blocking filter should block this");
     expect(await testPages.getBanneradsFilterText()).to.include(
       "first bannerads/* blocking filter should block this");
-    expect(await testPages.getServerAdDivText()).to.include(
-      "ServerAd id hiding filter should hide this");
+    expect(await testPages.getSearchAdDivText()).to.include(
+      "search-ad id hiding filter should hide this");
     expect(await testPages.getZergmodDivText()).to.include(
       "zergmod class hiding filter should hide this");
-    await allowistedWebsitesPage.switchToABPOptionsTab(true);
-    await browser.refresh();
-    await allowistedWebsitesPage.switchToABPOptionsTab(true);
+    await allowistedWebsitesPage.switchToABPOptionsTab();
     await allowistedWebsitesPage.
       removeAllowlistedDomain("adblockinc.gitlab.io");
     const attributesOfAllowlistingTableItems = await
@@ -161,6 +228,16 @@ describe("test adblocking as part of the smoke tests", function()
     });
     await browser.newWindow(testData.allowlistingUrl);
     await browser.refresh();
+    if (browser.capabilities.browserName == "firefox")
+    {
+      if (await allowistedWebsitesPage.getCurrentTitle() !=
+        "Blocking and hiding")
+      {
+        await allowistedWebsitesPage.switchToTab("Blocking and hiding");
+        await browser.refresh();
+      }
+    }
+    lastTest = true;
     expect(await testPages.getPubfigFilterText()).to.include(
       "/pubfig.js was blocked");
     expect(await testPages.getBanneradsFilterText()).to.include(

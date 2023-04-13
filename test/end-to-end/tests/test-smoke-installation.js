@@ -17,12 +17,12 @@
 
 "use strict";
 
-const fs = require("fs");
 const {afterSequence, beforeSequence, globalRetriesNumber} =
   require("../helpers");
 const {expect} = require("chai");
 const GeneralPage = require("../page-objects/general.page");
 const testData = require("../test-data/data-smoke-tests");
+let lastTest = false;
 
 describe("test installation as part of the smoke tests", function()
 {
@@ -35,12 +35,17 @@ describe("test installation as part of the smoke tests", function()
 
   afterEach(async function()
   {
-    await afterSequence();
+    if (lastTest == false)
+    {
+      await afterSequence();
+    }
   });
 
   it("should install extension", async function()
   {
     const generalPage = new GeneralPage(browser);
+    const appVersion = await browser.
+      executeScript("return browser.runtime.getManifest().version;", []);
     await generalPage.switchToInstalledTab();
     const currentUrl = await generalPage.getCurrentUrl();
     expect(currentUrl).to.have.string(
@@ -52,10 +57,7 @@ describe("test installation as part of the smoke tests", function()
       currentUrl.match(testData.regex_apv)[0]);
     expect(majorBrowserVersion).to.equal(
       currentUrl.match(testData.regex_pv)[0]);
-    const manifestContents = fs.readFileSync("../../adblockpluschrome/" +
-      "devenv.chrome/manifest.json").toString();
-    expect(manifestContents.match(testData.regexManifestVersion)[0]).to.
-      equal(currentUrl.match(testData.regex_av)[0]);
+    expect(appVersion).to.equal(currentUrl.match(testData.regex_av)[0]);
     if (browser.capabilities.browserName == "chrome")
     {
       expect("adblockpluschrome").to.
@@ -91,8 +93,10 @@ describe("test installation as part of the smoke tests", function()
 
   it("should uninstall extension", async function()
   {
-    await browser.executeScript("browser.management.uninstallSelf();", []);
     const generalPage = new GeneralPage(browser);
+    const appVersion = await browser.
+      executeScript("return browser.runtime.getManifest().version;", []);
+    await browser.executeScript("browser.management.uninstallSelf();", []);
     await generalPage.switchToUninstalledTab();
     const currentUrl = await generalPage.getCurrentUrl();
     expect(currentUrl).to.have.string(
@@ -104,10 +108,8 @@ describe("test installation as part of the smoke tests", function()
       currentUrl.match(testData.regex_apv)[0]);
     expect(majorBrowserVersion).to.equal(
       currentUrl.match(testData.regex_pv)[0]);
-    const manifestContents = fs.readFileSync("../../adblockpluschrome/" +
-      "devenv.chrome/manifest.json").toString();
-    expect(manifestContents.match(testData.regexManifestVersion)[0]).to.
-      equal(currentUrl.match(testData.regex_av)[0]);
+    expect(appVersion).to.equal(currentUrl.match(testData.regex_av)[0]);
+    lastTest = true;
     if (browser.capabilities.browserName == "chrome")
     {
       expect("adblockpluschrome").to.

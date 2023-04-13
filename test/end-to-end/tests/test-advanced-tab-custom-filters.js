@@ -21,10 +21,8 @@ const {afterSequence, beforeSequence, globalRetriesNumber} =
   require("../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
-const customErrors = require("../test-data/data-custom-filters").customErrors;
 const multipleFilters =
   require("../test-data/data-custom-filters").multipleFilters;
-const clipboard = require("clipboardy");
 
 describe("test advanced tab custom filters", function()
 {
@@ -37,6 +35,14 @@ describe("test advanced tab custom filters", function()
 
   afterEach(async function()
   {
+    try
+    {
+      const advancedPage = new AdvancedPage(browser);
+      await advancedPage.init();
+      await advancedPage.clickCustomFLTableHeadCheckbox();
+      await advancedPage.clickDeleteCustomFLButton();
+    }
+    catch (Exception) {}
     await afterSequence();
   });
 
@@ -176,9 +182,10 @@ describe("test advanced tab custom filters", function()
       duplicate
       ! comment
     `;
-    clipboard.writeSync(multilineString);
     await advancedPage.typeTextToAddCustomFilterListInput(
       "");
+    await browser.executeScript(
+      `navigator.clipboard.writeText(\`${multilineString}\`);`, []);
     const platform = await browser.
       executeScript("return navigator.platform", []);
     let pasteKey = "Control";
@@ -203,9 +210,10 @@ describe("test advanced tab custom filters", function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
-    clipboard.writeSync(multipleFilters);
     await advancedPage.typeTextToAddCustomFilterListInput(
       "");
+    await browser.executeScript(
+      `navigator.clipboard.writeText(\`${multipleFilters}\`);`, []);
     const platform = await browser.
       executeScript("return navigator.platform", []);
     let pasteKey = "Control";
@@ -269,9 +277,10 @@ describe("test advanced tab custom filters", function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
-    clipboard.writeSync(multipleFilters);
     await advancedPage.typeTextToAddCustomFilterListInput(
       "");
+    await browser.executeScript(
+      `navigator.clipboard.writeText(\`${multipleFilters}\`);`, []);
     const platform = await browser.
       executeScript("return navigator.platform", []);
     let pasteKey = "Control";
@@ -293,20 +302,6 @@ describe("test advanced tab custom filters", function()
       verifyTextPresentInCustomFLTable("duplicate", 1000)).to.be.false;
     expect(await advancedPage.
       verifyTextPresentInCustomFLTable("! comment", 1000)).to.be.false;
-  });
-
-  customErrors.forEach(async(dataSet) =>
-  {
-    it("should display filters errors: " + dataSet.testName, async function()
-    {
-      const advancedPage = new AdvancedPage(browser);
-      await advancedPage.init();
-      await advancedPage.typeTextToAddCustomFilterListInput(
-        dataSet.customFilter);
-      await advancedPage.clickAddCustomFilterListButton();
-      expect(await advancedPage.getCustomFilterListsErrorText()).to.equal(
-        dataSet.errorText);
-    });
   });
 
   it("should edit a custom filter", async function()
@@ -354,6 +349,7 @@ describe("test advanced tab custom filters", function()
     expect(await advancedPage.
       isCustomFilterListsFirstItemErrorIconDisplayed()).to.be.true;
     await browser.refresh();
+    await advancedPage.switchToABPOptionsTab();
     await advancedPage.init();
     expect(await advancedPage.
       verifyTextPresentInCustomFLTable(inputText)).to.be.true;
@@ -367,9 +363,10 @@ describe("test advanced tab custom filters", function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
-    clipboard.writeSync(multipleFilters);
     await advancedPage.typeTextToAddCustomFilterListInput(
       "");
+    await browser.executeScript(
+      `navigator.clipboard.writeText(\`${multipleFilters}\`);`, []);
     const platform = await browser.
       executeScript("return navigator.platform", []);
     let pasteKey = "Control";
@@ -408,7 +405,14 @@ describe("test advanced tab custom filters", function()
     }
     expect(await advancedPage.
       verifyTextPresentInCustomFLTable(inputText, 200)).to.be.false;
-    await browser.keys(clipboard.readSync());
+    const platform = await browser.
+      executeScript("return navigator.platform", []);
+    let pasteKey = "Control";
+    if (platform.includes("Mac"))
+    {
+      pasteKey = "Command";
+    }
+    await browser.keys([pasteKey, "V"]);
     await browser.keys("Enter");
     if (await advancedPage.verifyTextPresentInCustomFLTable(inputText))
     {

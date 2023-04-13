@@ -34,7 +34,7 @@ class AdvancedPage extends BasePage
 
   async init()
   {
-    await (await this._advancedTabButton).click();
+    await this.waitForEnabledThenClick(this._advancedTabButton);
   }
 
   get abpFiltersFL()
@@ -60,7 +60,7 @@ class AdvancedPage extends BasePage
 
   get abpTestFilterErrorIcon()
   {
-    return this.browser.$("//li[@aria-label='ABP_TEST_FILTER']/div/io-popout");
+    return $("//li[@aria-label='ABP_TEST_FILTER']/div/io-popout");
   }
 
   get addAFilterListButton()
@@ -70,7 +70,7 @@ class AdvancedPage extends BasePage
 
   get addBuiltinFilterListButton()
   {
-    return this.browser.$("#filters-boxlabel");
+    return $("#filters-boxlabel");
   }
 
   get addCustomFilterListButton()
@@ -90,7 +90,7 @@ class AdvancedPage extends BasePage
 
   get addNewFilterListDialog()
   {
-    return this.browser.$("#filterlist-by-url");
+    return $("#filterlist-by-url");
   }
 
   get allowNonintrusiveAdvertisingFL()
@@ -124,12 +124,12 @@ class AdvancedPage extends BasePage
 
   get cancelAddingFLButton()
   {
-    return this.browser.$("//button[@data-action='close-filterlist-by-url']");
+    return $("//button[@data-action='close-filterlist-by-url']");
   }
 
   get copyCustomFLButton()
   {
-    return this.browser.$("//button[@class='copy']");
+    return $("//button[@class='copy']");
   }
 
   get customFilterListsErrorText()
@@ -184,28 +184,28 @@ class AdvancedPage extends BasePage
 
   get customFLTableHeadAlertIcon()
   {
-    return this.browser.$("//io-filter-list/table/thead/tr/th[4]/img");
+    return $("//io-filter-list/table/thead/tr/th[4]/img");
   }
 
   get customFLTableHeadArrow()
   {
-    return this.browser.$("//io-filter-list/table/thead/tr/th[2]");
+    return $("//io-filter-list/table/thead/tr/th[2]");
   }
 
   get customFLTableHeadCheckbox()
   {
-    return this.browser.$("//io-filter-list/table/thead/tr/th[1]/" +
+    return $("//io-filter-list/table/thead/tr/th[1]/" +
       "io-checkbox/button");
   }
 
   get customFLTableHeadFilterRule()
   {
-    return this.browser.$("//io-filter-list/table/thead/tr/th[3]");
+    return $("//io-filter-list/table/thead/tr/th[3]");
   }
 
   get deleteCustomFLButton()
   {
-    return this.browser.$("//button[@class='delete']");
+    return $("//button[@class='delete']");
   }
 
   get easyListEnglishFLDropdownItem()
@@ -269,12 +269,12 @@ class AdvancedPage extends BasePage
 
   get easyPrivacyFL()
   {
-    return this.browser.$("//li[@aria-label='EasyPrivacy']");
+    return $("//li[@aria-label='EasyPrivacy']");
   }
 
   get enableThemButton()
   {
-    return this.browser.$("//a[@data-action='enable-filters']");
+    return $("//a[@data-action='enable-filters']");
   }
 
   get fanboysNotificationsBlockingListFL()
@@ -289,7 +289,7 @@ class AdvancedPage extends BasePage
 
   get filterListsDropdown()
   {
-    return this.browser.$("#filters-boxpopup");
+    return $("#filters-boxpopup");
   }
 
   get filterListErrorPopout()
@@ -306,7 +306,7 @@ class AdvancedPage extends BasePage
 
   get filterListUrlInput()
   {
-    return this.browser.$("#import-list-url");
+    return $("#import-list-url");
   }
 
   get flTableEmptyPlaceholder()
@@ -327,7 +327,7 @@ class AdvancedPage extends BasePage
 
   get listeFREasyListFL()
   {
-    return this.browser.$("//li[@aria-label='Liste FR+EasyList']");
+    return $("//li[@aria-label='Liste FR+EasyList']");
   }
 
   get listeFREasyListFLDropdownItem()
@@ -400,12 +400,12 @@ class AdvancedPage extends BasePage
 
   get testFilterList()
   {
-    return this.browser.$("//li[@aria-label='https://test-filterlist.txt']");
+    return $("//li[@aria-label='https://test-filterlist.txt']");
   }
 
   get testFilterListNoHtttps()
   {
-    return this.browser.$("//li[@aria-label='test-filterlist.txt']");
+    return $("//li[@aria-label='test-filterlist.txt']");
   }
 
   get testFilterListStatusToggle()
@@ -490,17 +490,19 @@ class AdvancedPage extends BasePage
 
   async clickCustomFilterListsNthItemCheckbox(n)
   {
-    await (await this.customFilterListsNthItemCheckbox(n)).click();
+    await this.scrollIntoViewAndClick(
+      await this.customFilterListsNthItemCheckbox(n));
   }
 
   async clickCustomFilterListsNthItemText(n)
   {
-    await (await this.customFilterListsNthItemText(n)).click();
+    await this.scrollIntoViewAndClick(
+      await this.customFilterListsNthItemText(n));
   }
 
   async clickCustomFilterListsFirstItemToggle()
   {
-    await (await this.customFilterListsFirstItemToggle).click();
+    await this.scrollIntoViewAndClick(this.customFilterListsFirstItemToggle);
   }
 
   async clickCustomFLTableHeadAlertIcon()
@@ -515,7 +517,7 @@ class AdvancedPage extends BasePage
 
   async clickCustomFLTableHeadCheckbox()
   {
-    await (await this.customFLTableHeadCheckbox).click();
+    await this.scrollIntoViewAndClick(this.customFLTableHeadCheckbox);
   }
 
   async clickCustomFLTableHeadFilterRule()
@@ -777,6 +779,7 @@ class AdvancedPage extends BasePage
 
   async isCustomFilterListsNthItemCheckboxChecked(n, reverseOption = false)
   {
+    await (await this.customFilterListsNthItemCheckbox(n)).scrollIntoView();
     return await this.waitUntilAttributeValueIs(
       this.customFilterListsNthItemCheckbox(n), "aria-checked",
       "true", 3000, reverseOption);
@@ -802,6 +805,11 @@ class AdvancedPage extends BasePage
   async isCustomFilterListsTableContentDisplayed()
   {
     return await (await this.customFilterListsTableContent).isDisplayed();
+  }
+
+  async isCustomFLTableHeadCheckboxClickable()
+  {
+    return await (await this.customFLTableHeadCheckbox).isClickable();
   }
 
   async isDeleteCustomFLButtonDisplayed()
@@ -990,7 +998,7 @@ class AdvancedPage extends BasePage
 
   async switchToHowToWriteFiltersTab()
   {
-    await this.switchToTab("How to write filters - Adblock Plus");
+    await this.switchToTab("How to write filters – Adblock Plus");
   }
 
   async switchToSubscriptionsTab()
@@ -998,16 +1006,39 @@ class AdvancedPage extends BasePage
     await this.switchToTab("Known Adblock Plus subscriptions");
   }
 
-  async typeTextToFilterListUrlInput(text)
+  async typeTextToFilterListUrlInput(text, noClearValue = false)
   {
     await (await this.filterListUrlInput).click();
+    if (noClearValue)
+    {
+      await (await this.filterListUrlInput).click();
+      for (let i = 0; i < 75; i++)
+      {
+        await browser.keys("Backspace");
+      }
+    }
+    else
+    {
+      await (await this.filterListUrlInput).clearValue();
+    }
     await this.browser.keys(text);
   }
 
-  async typeTextToAddCustomFilterListInput(text)
+  async typeTextToAddCustomFilterListInput(text, noClearValue = false)
   {
     await (await this.addCustomFilterListInput).click();
-    await (await this.addCustomFilterListInput).clearValue();
+    if (noClearValue)
+    {
+      await (await this.addCustomFilterListInput).click();
+      for (let i = 0; i < 75; i++)
+      {
+        await browser.keys("Backspace");
+      }
+    }
+    else
+    {
+      await (await this.addCustomFilterListInput).clearValue();
+    }
     await this.browser.keys(text);
   }
 
@@ -1050,6 +1081,7 @@ class AdvancedPage extends BasePage
   async waitForCustomFilterListsNthItemTextToEqual(text, n,
                                                    timeoutVal = 5000)
   {
+    await (await this.customFilterListsNthItemText(n)).scrollIntoView();
     return await this.waitUntilTextIs(
       this.customFilterListsNthItemText(n),
       text, timeoutVal);

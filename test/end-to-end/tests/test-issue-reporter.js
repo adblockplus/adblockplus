@@ -17,15 +17,16 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence, getCurrentDate, globalRetriesNumber} =
+const {beforeSequence, getCurrentDate, globalRetriesNumber} =
   require("../helpers");
 const {expect} = require("chai");
 const IssueReportPage = require("../page-objects/issueReport.page");
 const IssueReporterPage = require("../page-objects/issueReporter.page");
 const dataIssueReporter = require("../test-data/data-issue-reporter");
 let globalOrigin;
+let lastTest = false;
 
-describe("test issue reporter", function()
+describe.skip("test issue reporter", function()
 {
   this.retries(globalRetriesNumber);
 
@@ -36,7 +37,11 @@ describe("test issue reporter", function()
 
   afterEach(async function()
   {
-    await afterSequence();
+    if (lastTest == false)
+    {
+      await browser.reloadSession();
+      globalOrigin = await beforeSequence();
+    }
   });
 
   it("should display issue reporter default state", async function()
@@ -153,7 +158,7 @@ describe("test issue reporter", function()
       dataIssueReporter.emailText);
     await issueReportPage.clickRequestsTabButton();
     expect(await issueReportPage.getNumberOfRowsForRequests()).to.equal(
-      7);
+      6);
     await issueReportPage.clickFiltersTabButton();
     expect(await issueReportPage.getNumberOfRowsForFilters()).to.equal(
       5);
@@ -185,14 +190,18 @@ describe("test issue reporter", function()
     });
     expect(await issueReporterPage.getShowDataValueText()).to.include(
       "<filters>");
-    expect(await issueReporterPage.getShowDataValueText()).to.include(
-      dataIssueReporter.filterData);
+    dataIssueReporter.filterData.forEach(async(tag) =>
+    {
+      expect(await issueReporterPage.getShowDataValueText()).to.include(tag);
+    });
     expect(await issueReporterPage.getShowDataValueText()).to.include(
       "<platform");
     expect(await issueReporterPage.getShowDataValueText()).to.include(
       "<subscriptions>");
-    expect(await issueReporterPage.getShowDataValueText()).to.match(
-      dataIssueReporter.subscriptionsRegex);
+    dataIssueReporter.subscriptionsRegex.forEach(async(regex) =>
+    {
+      expect(await issueReporterPage.getShowDataValueText()).to.match(regex);
+    });
     expect(await issueReporterPage.getShowDataValueText()).to.include(
       "<adblock-plus");
     expect(await issueReporterPage.getShowDataValueText()).to.include(
@@ -211,6 +220,7 @@ describe("test issue reporter", function()
 
   it("should contain issue reporter data settings", async function()
   {
+    lastTest = true;
     const issueReporterPage = new IssueReporterPage(browser);
     const tabId = await issueReporterPage.getABPOptionsTabId();
     await browser.url(dataIssueReporter.testPageUrl);

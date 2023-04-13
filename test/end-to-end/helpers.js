@@ -19,49 +19,52 @@
 
 const chromeBuild = "../../" + process.env.CHROME_BUILD;
 const firefoxBuild = "../../" + process.env.FIREFOX_BUILD;
-const ciTesting = process.env.CI_TESTING || false;
+// ======== USE THE FOLLOWING FOR DEBUGGING PURPOSES ==========
+// const chromeBuild = "../../adblockpluschrome/adblockpluschrome-3.16.zip";
+// const firefoxBuild = "../../adblockpluschrome/adblockplusfirefox-3.16.xpi";
+const ciTesting = process.env.CI_TESTING || true;
 
 const fs = require("fs");
 const BasePage = require("./page-objects/base.page");
 const ExtensionsPage = require("./page-objects/extensions.page");
+const GeneralPage = require("./page-objects/general.page");
 const helperExtension = "helper-extension";
-const globalRetriesNumber = 1;
+const globalRetriesNumber = 2;
 
 async function afterSequence()
 {
   const extensionsPage = new ExtensionsPage(browser);
-  for (const handle of await browser.getWindowHandles())
+  try
   {
-    await browser.switchToWindow(handle);
-    const currentTabTitle = await browser.getTitle();
-    if (currentTabTitle != "Adblock Plus has been installed!" &&
-      currentTabTitle != "Adblock Plus Options")
+    await extensionsPage.switchToABPOptionsTab();
+    const generalPage = new GeneralPage(browser);
+    await generalPage.init();
+  }
+  catch (Exception)
+  {
+    try
     {
-      await browser.closeWindow();
+      if (browser.capabilities.browserName == "firefox")
+      {
+        await extensionsPage.switchToTab("Debugging - Runtime / this-firefox");
+      }
+      else
+      {
+        await extensionsPage.switchToTab("Extensions");
+      }
+    }
+    // eslint-disable-next-line no-catch-shadow
+    catch (SecondException)
+    {
+      try
+      {
+        await extensionsPage.init();
+        await extensionsPage.clickReloadHelperExtensionButton();
+        await extensionsPage.switchToABPOptionsTab();
+      }
+      catch (ThirddException) {}
     }
   }
-  await extensionsPage.switchToABPOptionsTab(true);
-  await extensionsPage.init();
-  for (const handle of await browser.getWindowHandles())
-  {
-    await browser.switchToWindow(handle);
-    const currentTabTitle = await browser.getTitle();
-    if (currentTabTitle == "Adblock Plus Options")
-    {
-      await browser.closeWindow();
-    }
-  }
-  if (browser.capabilities.browserName == "firefox")
-  {
-    await extensionsPage.switchToTab("Debugging - Runtime / this-firefox");
-  }
-  else
-  {
-    await extensionsPage.switchToTab("Extensions");
-  }
-  await extensionsPage.clickReloadExtensionButton();
-  await extensionsPage.clickReloadHelperExtensionButton();
-  await extensionsPage.switchToABPOptionsTab();
 }
 
 async function beforeSequence()
@@ -77,6 +80,10 @@ async function beforeSequence()
     await browser.installAddOn(helperExtensionZip.toString("base64"), true);
   }
   const [origin] = await waitForExtension();
+  await browser.waitUntil(async() =>
+  {
+    return (await browser.getWindowHandles()).length == 3;
+  }, {timeout: 10000});
   await browser.url(`${origin}/desktop-options.html`);
   await browser.setWindowSize(1400, 1000);
   return [origin];

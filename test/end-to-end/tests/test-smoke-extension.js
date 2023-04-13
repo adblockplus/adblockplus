@@ -23,6 +23,7 @@ const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
 const PopupPage = require("../page-objects/popup.page");
 let globalOrigin;
+let lastTest = false;
 
 describe("test extension as part of the smoke tests", function()
 {
@@ -35,7 +36,10 @@ describe("test extension as part of the smoke tests", function()
 
   afterEach(async function()
   {
-    await afterSequence();
+    if (lastTest == false)
+    {
+      await afterSequence();
+    }
   });
 
   it("should reinitialize", async function()
@@ -76,10 +80,12 @@ describe("test extension as part of the smoke tests", function()
   {
     if (browser.capabilities.browserName != "firefox")
     {
+      lastTest = true;
       await browser.url("https://adblockinc.gitlab.io/QA-team/adblocking/" +
         "adblocked-count/adblocked-count-testpage.html");
       const popupPage = new PopupPage(browser);
       await popupPage.init(globalOrigin);
+      await popupPage.waitForNumberOfAdsBlockedInTotalTextToEqual("4");
       expect(String(await popupPage.
         getNumberOfAdsBlockedInTotalText()).includes("4")).to.be.true;
       await browser.url("https://adblockinc.gitlab.io/QA-team/adblocking/" +

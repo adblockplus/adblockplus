@@ -29,7 +29,7 @@ class ProblemPage extends BasePage
 
   async init(origin)
   {
-    await this.browser.url(`${origin}/problem.html`);
+    await browser.url(`${origin}/problem.html`);
   }
 
   get abpLogo()

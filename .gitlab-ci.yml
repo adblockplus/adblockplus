@@ -351,6 +351,7 @@ testpages:MV2:firefox:oldest:
     - apt-get update
     - apt-get -y install openjdk-11-jre
     - npx -y allure-commandline generate test/end-to-end/allure-results -o allure-report
+  timeout: 40m
   artifacts:
     when: always
     paths:
@@ -384,3 +385,11 @@ uitests:smoke:
   extends: .uitests
   variables:
     SUITE: smoke
+
+uitests:all:scheduled:
+  extends: .uitests
+  variables:
+    SUITE: all
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+      when: always

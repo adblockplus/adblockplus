@@ -26,7 +26,7 @@ const dayOnePageData = [
   {
     testName: "Day 1 - Learn more about malicious advertising",
     elementToClick: "learnMoreAboutMaliciousAdvertisingButton",
-    newTabUrl: "https://help.adblockplus.org/hc/en-us/articles/360062861653"
+    newTabUrl: /https:\/\/help\.adblockplus\.org\/hc\/.*articles\/360062861653/
   },
   {
     testName: "Day 1 - Contact us",
@@ -37,7 +37,7 @@ const dayOnePageData = [
   {
     testName: "Day 1 - Learn how",
     elementToClick: "learnHowButton",
-    newTabUrl: "https://help.adblockplus.org/hc/en-us/articles/1500002523962"
+    newTabUrl: /https:\/\/help\.adblockplus\.org\/hc\/.*articles\/1500002523962/
   },
   {
     testName: "Day 1 - eyeo GmbH",
@@ -55,18 +55,18 @@ const firstRunPageData = [
   {
     testName: "First run - Donate",
     elementToClick: "donateButton",
-    newTabUrl: "https://adblockplus.org/donate?utm_source=abp&utm_medium" +
-    "=frp_page&utm_campaign=donate"
+    newTabUrl: "https://adblockplus.org/periodic-contribution?utm_source=" +
+    "abp&utm_medium=frp_page&utm_campaign=donate"
   },
   {
     testName: "First run - strict criteria",
     elementToClick: "strictCriteriaLink",
-    newTabUrl: "https://adblockplus.org/en/acceptable-ads#criteria"
+    newTabUrl: /https:\/\/adblockplus.org\/en\/acceptable-ads#criteria\?link=acceptable_ads_criteria&lang=en-/
   },
   {
     testName: "First run - Turn off Acceptable Ads",
     elementToClick: "turnOffAALink",
-    newTabUrl: "https://adblockplus.org/en/acceptable-ads#optout"
+    newTabUrl: /https:\/\/adblockplus.org\/en\/acceptable-ads#optout\?link=acceptable_ads_opt_out&lang=en-/
   },
   {
     testName: "First run - Settings",
@@ -111,7 +111,9 @@ const problemPageData = [
   {
     testName: "Problem - Facebook icon",
     elementToClick: "facebookButton",
-    newTabUrl: "https://www.facebook.com/adblockplus"
+    newTabUrl: "https://www.facebook.com/adblockplus",
+    fallbackNewTabUrl: "https://www.facebook.com/login/?next=https%3A%2F%2F" +
+    "www.facebook.com%2Fadblockplus"
   },
   {
     testName: "Problem - Envelope icon",
@@ -128,8 +130,7 @@ const problemPageData = [
     elementToClick: "clickHereToReinstallButton",
     newTabUrlChrome: "https://chrome.google.com/webstore/detail/adblock-" +
     "plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb",
-    newTabUrlFirefox: "https://addons.mozilla.org/en-GB/firefox/" +
-    "addon/adblock-plus/",
+    newTabUrlFirefox: /https:\/\/addons.mozilla.org\/.*firefox\/addon\/adblock-plus/,
     webstoreCookiesConsentPageTitle: "Before you continue",
     chromeWebstorePageTitle: "Adblock Plus - free ad blocker - " +
     "Chrome Web Store"
@@ -145,7 +146,7 @@ const updatesPageData = [
   {
     testName: "Updates - Contribute",
     elementToClick: "contributeButton",
-    newTabUrl: "https://adblockplus.org/donate?utm_source=" +
+    newTabUrl: "https://adblockplus.org/periodic-contribution?utm_source=" +
     "abp&utm_medium=update_page&utm_campaign=donate"
   },
   {
@@ -153,8 +154,7 @@ const updatesPageData = [
     elementToClick: "rateItButton",
     newTabUrlChrome: "https://chrome.google.com/webstore/detail/adblock-plus" +
     "-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb/reviews?ref=store-rating",
-    newTabUrlFirefox: "https://addons.mozilla.org/en-GB/firefox/" +
-    "addon/adblock-plus/",
+    newTabUrlFirefox: /https:\/\/addons.mozilla.org\/.*firefox\/addon\/adblock-plus/,
     webstoreCookiesConsentPageTitle: "Before you continue",
     chromeWebstorePageTitle: "Adblock Plus - free ad blocker - " +
     "Chrome Web Store"
@@ -167,7 +167,9 @@ const updatesPageData = [
   {
     testName: "Updates - Facebook icon",
     elementToClick: "facebookButton",
-    newTabUrl: "https://www.facebook.com/adblockplus"
+    newTabUrl: "https://www.facebook.com/adblockplus",
+    fallbackNewTabUrl: "https://www.facebook.com/login/?next=https%3A%2F%2F" +
+    "www.facebook.com%2Fadblockplus"
   },
   {
     testName: "Updates - Envelope icon",

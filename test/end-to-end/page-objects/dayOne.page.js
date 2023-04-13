@@ -29,7 +29,7 @@ class DayOnePage extends BasePage
 
   async init(origin)
   {
-    await this.browser.url(`${origin}/day1.html`);
+    await browser.url(`${origin}/day1.html`);
   }
 
   get abpLogo()

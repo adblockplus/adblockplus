@@ -22,7 +22,7 @@ const {afterSequence, beforeSequence, globalRetriesNumber} =
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
 const TestPages = require("../page-objects/testPages.page");
-const clipboard = require("clipboardy");
+let lastTest = false;
 
 describe("test custom filters as part of the integration tests", function()
 {
@@ -35,7 +35,18 @@ describe("test custom filters as part of the integration tests", function()
 
   afterEach(async function()
   {
-    await afterSequence();
+    if (lastTest == false)
+    {
+      try
+      {
+        const advancedPage = new AdvancedPage(browser);
+        await advancedPage.init();
+        await advancedPage.clickCustomFLTableHeadCheckbox();
+        await advancedPage.clickDeleteCustomFLButton();
+      }
+      catch (Exception) {}
+      await afterSequence();
+    }
   });
 
   it("should block/show ad by adding/removing custom filter", async function()
@@ -48,9 +59,10 @@ describe("test custom filters as part of the integration tests", function()
       ###custom-hiding-id
       ##.custom-hiding-class
     `;
-    clipboard.writeSync(multilineString);
     await advancedPage.typeTextToAddCustomFilterListInput(
       "");
+    await browser.executeScript(
+      `navigator.clipboard.writeText(\`${multilineString}\`);`, []);
     const platform = await browser.
       executeScript("return navigator.platform", []);
     let pasteKey = "Control";
@@ -63,7 +75,20 @@ describe("test custom filters as part of the integration tests", function()
       "ocking/custom-filters/custom-filters-testpage.html";
     await browser.newWindow(customFiltersTestPage);
     await browser.refresh();
+    if (browser.capabilities.browserName == "msedge")
+    {
+      await browser.pause(2000);
+    }
     const testPages = new TestPages(browser);
+    if (browser.capabilities.browserName == "firefox")
+    {
+      if (await testPages.getCurrentTitle() !=
+        "Blocking and hiding")
+      {
+        await testPages.switchToTab("Custom filters testpage");
+        await browser.refresh();
+      }
+    }
     expect(await testPages.getCustomBlockingFilterText()).to.include(
       "custom blocking filter applied");
     expect(await testPages.getCustomBlockingRegexFilterText()).to.include(
@@ -98,9 +123,10 @@ describe("test custom filters as part of the integration tests", function()
       /custom-blocking.js
       /custom-blocking-regex.*
     `;
-    clipboard.writeSync(multilineString);
     await advancedPage.typeTextToAddCustomFilterListInput(
       "");
+    await browser.executeScript(
+      `navigator.clipboard.writeText(\`${multilineString}\`);`, []);
     const platform = await browser.
       executeScript("return navigator.platform", []);
     let pasteKey = "Control";
@@ -119,7 +145,7 @@ describe("test custom filters as part of the integration tests", function()
       "custom blocking filter should block this");
     expect(await testPages.getCustomBlockingRegexFilterText()).to.include(
       "custom blocking regex filter applied");
-    await testPages.switchToABPOptionsTab(true);
+    await testPages.switchToABPOptionsTab();
     await advancedPage.clickCustomFilterListsFirstItemToggle();
     await browser.newWindow(customFiltersTestPage);
     await browser.refresh();
@@ -131,9 +157,16 @@ describe("test custom filters as part of the integration tests", function()
 
   it("should block ad by edited custom filter", async function()
   {
+    lastTest = true;
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
     const inputText = "/custom-blocking.js";
+    try
+    {
+      await advancedPage.clickCustomFLTableHeadCheckbox();
+      await advancedPage.clickDeleteCustomFLButton();
+    }
+    catch (Exception) {}
     await advancedPage.typeTextToAddCustomFilterListInput(inputText);
     await advancedPage.clickAddCustomFilterListButton();
     await advancedPage.clickCustomFilterListsNthItemText("1");

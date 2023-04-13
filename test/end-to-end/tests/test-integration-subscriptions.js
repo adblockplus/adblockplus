@@ -23,6 +23,7 @@ const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
 const GeneralPage = require("../page-objects/general.page");
 const TestPages = require("../page-objects/testPages.page");
+let lastTest = false;
 
 describe("test subscriptions as part of the integration tests", function()
 {
@@ -35,7 +36,10 @@ describe("test subscriptions as part of the integration tests", function()
 
   afterEach(async function()
   {
-    await afterSequence();
+    if (lastTest == false)
+    {
+      await afterSequence();
+    }
   });
 
   it("should add new subscription via link", async function()
@@ -76,10 +80,81 @@ describe("test subscriptions as part of the integration tests", function()
       isSubscriptionHidingClassDisplayed()).to.be.false;
   });
 
-  it("should add/remove subscriptions", async function()
+  it("should disable/enable subscriptions", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
+    await advancedPage.clickEasyListFLStatusToggle();
+    expect(await advancedPage.
+      isEasyListFLStatusToggleSelected()).to.be.false;
+    await browser.newWindow("https://adblockinc.gitlab.io/QA-team/adblocking/block" +
+      "ing-hiding/blocking-hiding-testpage.html");
+    if (browser.capabilities.browserName == "firefox")
+    {
+      await browser.pause(500);
+    }
+    await browser.refresh();
+    const testPages = new TestPages(browser);
+    if (browser.capabilities.browserName == "firefox")
+    {
+      if (await testPages.getCurrentTitle() !=
+        "Blocking and hiding")
+      {
+        await testPages.switchToTab("Blocking and hiding");
+        await browser.refresh();
+      }
+    }
+    expect(await testPages.getPubfigFilterText()).to.include(
+      "pubfig.js blocking filter should block this");
+    expect(await testPages.getBanneradsFilterText()).to.include(
+      "first bannerads/* blocking filter should block this");
+    expect(await testPages.getSearchAdDivText()).to.include(
+      "search-ad id hiding filter should hide this");
+    expect(await testPages.getZergmodDivText()).to.include(
+      "zergmod class hiding filter should hide this");
+    await advancedPage.switchToABPOptionsTab();
+    await advancedPage.init();
+    await advancedPage.clickEasyListFLStatusToggle();
+    expect(await advancedPage.
+      isEasyListFLStatusToggleSelected()).to.be.true;
+    await browser.newWindow("https://adblockinc.gitlab.io/QA-team/adblocking/block" +
+      "ing-hiding/blocking-hiding-testpage.html");
+    await browser.refresh();
+    if (browser.capabilities.browserName == "firefox")
+    {
+      if (await testPages.getCurrentTitle() !=
+        "Blocking and hiding")
+      {
+        await testPages.switchToTab("Blocking and hiding");
+        await browser.refresh();
+      }
+    }
+    expect(await testPages.getPubfigFilterText()).to.include(
+      "/pubfig.js was blocked");
+    expect(await testPages.getBanneradsFilterText()).to.include(
+      "/bannerads/* was blocked");
+    expect(await testPages.
+      isSearchAdDivDisplayed()).to.be.false;
+    expect(await testPages.
+      isZergmodDivDisplayed()).to.be.false;
+  });
+
+  it("should add/remove subscriptions", async function()
+  {
+    const advancedPage = new AdvancedPage(browser);
+    if (browser.capabilities.browserName == "firefox")
+    {
+      await browser.refresh();
+      await advancedPage.switchToABPOptionsTab();
+      await advancedPage.init();
+      await advancedPage.clickAddBuiltinFilterListButton();
+      await advancedPage.clickEasyListEnglishFL();
+      await advancedPage.init();
+    }
+    else
+    {
+      await advancedPage.init();
+    }
     await advancedPage.clickEasyListFLTrashButton();
     expect(await advancedPage.
       isEasyListFLDisplayed()).to.be.false;
@@ -87,15 +162,24 @@ describe("test subscriptions as part of the integration tests", function()
       "ing-hiding/blocking-hiding-testpage.html");
     await browser.refresh();
     const testPages = new TestPages(browser);
+    if (browser.capabilities.browserName == "firefox")
+    {
+      if (await testPages.getCurrentTitle() !=
+        "Blocking and hiding")
+      {
+        await testPages.switchToTab("Blocking and hiding");
+        await browser.refresh();
+      }
+    }
     expect(await testPages.getPubfigFilterText()).to.include(
       "pubfig.js blocking filter should block this");
     expect(await testPages.getBanneradsFilterText()).to.include(
       "first bannerads/* blocking filter should block this");
-    expect(await testPages.getServerAdDivText()).to.include(
-      "ServerAd id hiding filter should hide this");
+    expect(await testPages.getSearchAdDivText()).to.include(
+      "search-ad id hiding filter should hide this");
     expect(await testPages.getZergmodDivText()).to.include(
       "zergmod class hiding filter should hide this");
-    await advancedPage.switchToABPOptionsTab(true);
+    await advancedPage.switchToABPOptionsTab();
     await advancedPage.init();
     await advancedPage.clickAddBuiltinFilterListButton();
     await advancedPage.clickEasyListEnglishFL();
@@ -108,49 +192,22 @@ describe("test subscriptions as part of the integration tests", function()
     await browser.newWindow("https://adblockinc.gitlab.io/QA-team/adblocking/block" +
       "ing-hiding/blocking-hiding-testpage.html");
     await browser.refresh();
+    if (browser.capabilities.browserName == "firefox")
+    {
+      if (await testPages.getCurrentTitle() !=
+        "Blocking and hiding")
+      {
+        await testPages.switchToTab("Blocking and hiding");
+        await browser.refresh();
+      }
+    }
+    lastTest = true;
     expect(await testPages.getPubfigFilterText()).to.include(
       "/pubfig.js was blocked");
     expect(await testPages.getBanneradsFilterText()).to.include(
       "/bannerads/* was blocked");
     expect(await testPages.
-      isServerAdDivDisplayed()).to.be.false;
-    expect(await testPages.
-      isZergmodDivDisplayed()).to.be.false;
-  });
-
-  it("should disable/enable subscriptions", async function()
-  {
-    const advancedPage = new AdvancedPage(browser);
-    await advancedPage.init();
-    await advancedPage.clickEasyListFLStatusToggle();
-    expect(await advancedPage.
-      isEasyListFLStatusToggleSelected()).to.be.false;
-    await browser.newWindow("https://adblockinc.gitlab.io/QA-team/adblocking/block" +
-      "ing-hiding/blocking-hiding-testpage.html");
-    await browser.refresh();
-    const testPages = new TestPages(browser);
-    expect(await testPages.getPubfigFilterText()).to.include(
-      "pubfig.js blocking filter should block this");
-    expect(await testPages.getBanneradsFilterText()).to.include(
-      "first bannerads/* blocking filter should block this");
-    expect(await testPages.getServerAdDivText()).to.include(
-      "ServerAd id hiding filter should hide this");
-    expect(await testPages.getZergmodDivText()).to.include(
-      "zergmod class hiding filter should hide this");
-    await advancedPage.switchToABPOptionsTab(true);
-    await advancedPage.init();
-    await advancedPage.clickEasyListFLStatusToggle();
-    expect(await advancedPage.
-      isEasyListFLStatusToggleSelected()).to.be.true;
-    await browser.newWindow("https://adblockinc.gitlab.io/QA-team/adblocking/block" +
-      "ing-hiding/blocking-hiding-testpage.html");
-    await browser.refresh();
-    expect(await testPages.getPubfigFilterText()).to.include(
-      "/pubfig.js was blocked");
-    expect(await testPages.getBanneradsFilterText()).to.include(
-      "/bannerads/* was blocked");
-    expect(await testPages.
-      isServerAdDivDisplayed()).to.be.false;
+      isSearchAdDivDisplayed()).to.be.false;
     expect(await testPages.
       isZergmodDivDisplayed()).to.be.false;
   });

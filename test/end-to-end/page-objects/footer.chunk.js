@@ -35,7 +35,7 @@ class FooterChunk extends BasePage
 
   get contributeButton()
   {
-    return this.browser.$(".button=Contribute");
+    return $(".button=Contribute");
   }
 
   get heartButton()
@@ -55,7 +55,7 @@ class FooterChunk extends BasePage
 
   async clickHeartButton()
   {
-    await (await this.heartButton).click();
+    await this.waitForEnabledThenClick(this.heartButton);
   }
 
   async switchToContributeTab()

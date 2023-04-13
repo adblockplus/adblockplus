@@ -17,11 +17,12 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence, globalRetriesNumber} =
-  require("../helpers");
+const {afterSequence, beforeSequence, randomIntFromInterval,
+       globalRetriesNumber} = require("../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
 const GeneralPage = require("../page-objects/general.page");
+let lastTest = false;
 
 describe("test advanced tab - filter lists", function()
 {
@@ -34,7 +35,10 @@ describe("test advanced tab - filter lists", function()
 
   afterEach(async function()
   {
-    await afterSequence();
+    if (lastTest == false)
+    {
+      await afterSequence();
+    }
   });
 
   it("should display default state", async function()
@@ -59,13 +63,41 @@ describe("test advanced tab - filter lists", function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
-    await advancedPage.clickUpdateAllFilterlistsButton();
     advancedPage.clickUpdateAllFilterlistsButton();
-    expect(await advancedPage.
-      isAbpFiltersFLUpdating()).to.be.true;
+    let updatingDisplayed = false;
+    for (let i = 0; i < 10; i++)
+    {
+      try
+      {
+        expect(await advancedPage.
+          isAbpFiltersFLUpdating()).to.be.true;
+        updatingDisplayed = true;
+        break;
+      }
+      catch (Exception)
+      {
+        await browser.pause(randomIntFromInterval(500, 1500));
+        advancedPage.clickUpdateAllFilterlistsButton();
+      }
+    }
+    expect(updatingDisplayed).to.be.true;
     advancedPage.clickUpdateAllFilterlistsButton();
-    expect(await advancedPage.
-      isEasyListFLUpdating()).to.be.true;
+    updatingDisplayed = false;
+    for (let i = 0; i < 10; i++)
+    {
+      try
+      {
+        expect(await advancedPage.
+          isEasyListFLUpdating()).to.be.true;
+        updatingDisplayed = true;
+        break;
+      }
+      catch (Exception)
+      {
+        await browser.pause(randomIntFromInterval(500, 1500));
+        advancedPage.clickUpdateAllFilterlistsButton();
+      }
+    }
     advancedPage.clickUpdateAllFilterlistsButton();
     expect(await advancedPage.
       isAllowNonintrusiveAdvertisingFLUpdating()).to.be.true;
@@ -81,7 +113,7 @@ describe("test advanced tab - filter lists", function()
       waitForEasyListFLLastUpdatedTextToEqual("Just now")).to.be.true;
     expect(await advancedPage.
       waitForAllowNonintrusiveFLLastUpdatedTextToEqual("Just now")).to.be.true;
-  }, 2);
+  }, 4);
 
   it("should update a filter list", async function()
   {
@@ -91,13 +123,28 @@ describe("test advanced tab - filter lists", function()
     await advancedPage.clickEasyListFLUpdateNowButton();
     await advancedPage.clickEasyListFLGearIcon();
     advancedPage.clickEasyListFLUpdateNowButton();
-    expect(await advancedPage.
-      isEasyListFLUpdating()).to.be.true;
+    let updatingDisplayed = false;
+    for (let i = 0; i < 20; i++)
+    {
+      try
+      {
+        expect(await advancedPage.
+          isEasyListFLUpdating()).to.be.true;
+        updatingDisplayed = true;
+        break;
+      }
+      catch (Exception)
+      {
+        await browser.pause(randomIntFromInterval(250, 750));
+        advancedPage.clickEasyListFLUpdateNowButton();
+      }
+    }
+    expect(updatingDisplayed).to.be.true;
     expect(await advancedPage.
       isAbpFiltersFLUpdating(1000, true)).to.be.true;
     expect(await advancedPage.
       isAllowNonintrusiveAdvertisingFLUpdating(1000, true)).to.be.true;
-  }, 3);
+  }, 4);
 
   it("should go to filter list web page", async function()
   {
@@ -144,7 +191,7 @@ describe("test advanced tab - filter lists", function()
     await generalPage.init();
     expect(await generalPage.getLanguagesTableEmptyPlaceholderText()).to.equal(
       "You don't have any language-specific filters.");
-  }, 2);
+  });
 
   it("should add a built-in filter list", async function()
   {
@@ -173,8 +220,16 @@ describe("test advanced tab - filter lists", function()
     await advancedPage.clickAddNewFilterListButton();
     expect(await advancedPage.
       isAddNewFilterListDialogDisplayed()).to.be.true;
-    await advancedPage.
-      typeTextToFilterListUrlInput("https://test-filterlist.txt");
+    if (browser.capabilities.browserName == "firefox")
+    {
+      await advancedPage.
+      typeTextToFilterListUrlInput("https://test-filterlist.txt", true);
+    }
+    else
+    {
+      await advancedPage.
+        typeTextToFilterListUrlInput("https://test-filterlist.txt");
+    }
     await advancedPage.clickAddAFilterListButton();
     expect(await advancedPage.
       isAddNewFilterListDialogDisplayed(true)).to.be.true;
@@ -191,8 +246,16 @@ describe("test advanced tab - filter lists", function()
     await advancedPage.clickAddNewFilterListButton();
     expect(await advancedPage.
       isAddNewFilterListDialogDisplayed()).to.be.true;
-    await advancedPage.
-      typeTextToFilterListUrlInput("test-filterlist.txt");
+    if (browser.capabilities.browserName == "firefox")
+    {
+      await advancedPage.
+      typeTextToFilterListUrlInput("test-filterlist.txt", true);
+    }
+    else
+    {
+      await advancedPage.
+        typeTextToFilterListUrlInput("test-filterlist.txt");
+    }
     await advancedPage.clickAddAFilterListButton();
     expect(await advancedPage.
       isUrlErrorMessageDisplayed()).to.be.true;
@@ -208,22 +271,39 @@ describe("test advanced tab - filter lists", function()
     await advancedPage.clickAddNewFilterListButton();
     expect(await advancedPage.
       isAddNewFilterListDialogDisplayed()).to.be.true;
-    await advancedPage.typeTextToFilterListUrlInput(
-      "https://gitlab.com/-/snippets/1997334/raw");
+    if (browser.capabilities.browserName == "firefox")
+    {
+      await advancedPage.typeTextToFilterListUrlInput(
+        "https://gitlab.com/-/snippets/1997334/raw", true);
+    }
+    else
+    {
+      await advancedPage.typeTextToFilterListUrlInput(
+        "https://gitlab.com/-/snippets/1997334/raw");
+    }
     await advancedPage.clickAddAFilterListButton();
-    await advancedPage.typeTextToAddCustomFilterListInput(
-      "@@||example.com^$document,subdocument");
+    if (browser.capabilities.browserName == "firefox")
+    {
+      await advancedPage.typeTextToAddCustomFilterListInput(
+        "@@||example.com^$document,subdocument", true);
+    }
+    else
+    {
+      await advancedPage.typeTextToAddCustomFilterListInput(
+        "@@||example.com^$document,subdocument");
+    }
     await advancedPage.clickAddCustomFilterListButton();
     await advancedPage.clickCustomFilterListsFirstItemToggle();
     expect(await advancedPage.
       isAbpTestFilterErrorIconDisplayed()).to.be.true;
     await advancedPage.clickAbpTestFilterErrorIcon();
     await advancedPage.clickEnableThemButton();
+    lastTest = true;
     expect(await advancedPage.
       isFilterListErrorPopoutDisplayed(true)).to.be.true;
     expect(await advancedPage.
       isAbpTestFilterErrorIconDisplayed(true)).to.be.true;
     expect(await advancedPage.
       isCustomFilterListsFirstItemToggleSelected()).to.be.true;
-  }, 3);
+  });
 });

@@ -31,15 +31,15 @@ class ExtensionsPage extends BasePage
   {
     if (browser.capabilities.browserName == "chrome")
     {
-      await this.browser.url("chrome://extensions");
+      await browser.url("chrome://extensions");
     }
     else if (browser.capabilities.browserName == "msedge")
     {
-      await this.browser.url("edge://extensions");
+      await browser.url("edge://extensions");
     }
     else if (browser.capabilities.browserName == "firefox")
     {
-      await this.browser.url("about:debugging#/runtime/this-firefox");
+      await browser.url("about:debugging#/runtime/this-firefox");
       await this.waitForDisplayedNoError(this.abpExtensionLabelFF);
     }
   }
@@ -86,7 +86,6 @@ class ExtensionsPage extends BasePage
 
   async clickReloadExtensionButton()
   {
-    await this.waitForDisplayedNoError(this.abpExtensionLabelFF);
     if (browser.capabilities.browserName == "chrome")
     {
       await this.waitForEnabledThenClick(this.
@@ -106,7 +105,6 @@ class ExtensionsPage extends BasePage
 
   async clickReloadHelperExtensionButton()
   {
-    await this.waitForDisplayedNoError(this.abpExtensionLabelFF);
     if (browser.capabilities.browserName == "chrome")
     {
       await this.waitForEnabledThenClick(this.

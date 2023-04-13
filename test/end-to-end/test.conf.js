@@ -20,6 +20,8 @@
 "use strict";
 
 const buildNumber = process.env.BUILD_NUMBER;
+// ======== USE THE FOLLOWING FOR DEBUGGING PURPOSES ==========
+// const buildNumber = "FIX_ALL_1";
 const {config: baseConfig} = require("./base.conf.js");
 const helpers = require("./helpers.js");
 
@@ -34,7 +36,7 @@ const parallelConfig = {
     {
       browserName: "Chrome",
       browserVersion: "latest",
-      platformName: "MacOS Monterey",
+      platformName: "Windows 10",
       "goog:chromeOptions": {
         extensions: [
           helpers.getChromiumExtensionPath(),
@@ -42,7 +44,9 @@ const parallelConfig = {
         ],
         args: ["--no-sandbox"],
         prefs: {
-          "intl.accept_languages": "en,en_US"
+          "intl.accept_languages": "en,en_US",
+          "profile.managed_default_content_settings.popups": 2,
+          "profile.managed_default_content_settings.notifications": 2
         },
         excludeSwitches: ["disable-extensions"]
       },
@@ -54,7 +58,13 @@ const parallelConfig = {
     {
       browserName: "Firefox",
       browserVersion: "latest",
-      platformName: "MacOS Monterey",
+      platformName: "Windows 10",
+      "moz:firefoxOptions": {
+        args: ["--no-sandbox"],
+        prefs: {
+          "permissions.default.geo": 2
+        }
+      },
       acceptInsecureCerts: true,
       exclude: [
         "./tests/test-issue-reporter.js",
@@ -64,15 +74,17 @@ const parallelConfig = {
     {
       browserName: "MicrosoftEdge",
       browserVersion: "latest",
-      platformName: "MacOS Monterey",
+      platformName: "Windows 10",
       "ms:edgeOptions": {
         extensions: [
           helpers.getChromiumExtensionPath(),
           require("fs").readFileSync("helper-extension/helper-extension.zip").toString("base64")
         ],
-        args: ["--no-sandbox"],
+        args: ["--no-sandbox", "--start-maximized"],
         prefs: {
-          "intl.accept_languages": "en,en_US"
+          "intl.accept_languages": "en,en_US",
+          "profile.managed_default_content_settings.popups": 2,
+          "profile.managed_default_content_settings.notifications": 2
         },
         excludeSwitches: ["disable-extensions"]
       },
@@ -83,7 +95,7 @@ const parallelConfig = {
       ]
     }
   ],
-  logLevel: "info",
+  logLevel: "error",
   coloredLogs: true,
   screenshotPath: "./errorShots/"
 };

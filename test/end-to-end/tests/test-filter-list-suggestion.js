@@ -23,6 +23,7 @@ const {expect} = require("chai");
 const PopupPage = require("../page-objects/popup.page");
 const GeneralPage = require("../page-objects/general.page");
 let globalOrigin;
+let lastTest = false;
 
 describe.skip("test filter list suggestion", function()
 {
@@ -35,7 +36,10 @@ describe.skip("test filter list suggestion", function()
 
   afterEach(async function()
   {
-    await afterSequence();
+    if (lastTest == false)
+    {
+      await afterSequence();
+    }
   });
 
   it("should display default behaviour", async function()
@@ -151,6 +155,7 @@ describe.skip("test filter list suggestion", function()
     await browser.url("https://www.tiscali.it/");
     const popupPage = new PopupPage(browser);
     await popupPage.init(globalOrigin);
+    lastTest = true;
     expect(await popupPage.
       isNotificationMessageDisplayed()).to.be.false;
   });

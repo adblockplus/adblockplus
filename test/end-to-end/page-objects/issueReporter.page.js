@@ -30,7 +30,6 @@ class IssueReporterPage extends BasePage
   async init(origin, tabId)
   {
     await this.browser.newWindow(`${origin}/issue-reporter.html?${tabId}`);
-    await this.browser.refresh();
     await (await this.cancelButton).waitForExist({timeout: 10000});
   }
 
@@ -71,7 +70,7 @@ class IssueReporterPage extends BasePage
 
   get highlightButton()
   {
-    return this.browser.$("//button[@class='highlight']");
+    return $("//button[@class='highlight']");
   }
 
   get highlightIssueHeader()

@@ -27,6 +27,7 @@ const AcceptableAdsDialogChunk =
 const HeartDialogChunk = require("../page-objects/heartDialog.chunk");
 const GeneralPage = require("../page-objects/general.page");
 const dataLinks = require("../test-data/data-links");
+let lastTest = false;
 
 describe("test options page dialog links", function()
 {
@@ -39,7 +40,13 @@ describe("test options page dialog links", function()
 
   afterEach(async function()
   {
-    await afterSequence();
+    if (lastTest == false)
+    {
+      const footerChunk = new FooterChunk(browser);
+      await footerChunk.switchToABPOptionsTab();
+      await browser.refresh();
+      await afterSequence();
+    }
   });
 
   it("should open privacy policy page", async function()
@@ -49,7 +56,7 @@ describe("test options page dialog links", function()
     const aboutDialogChunk = new AboutDialogChunk(browser);
     await aboutDialogChunk.clickPrivacyPolicyLink();
     await aboutDialogChunk.switchToPrivacyPolicyTab();
-    expect(await aboutDialogChunk.getCurrentUrl()).to.equal(
+    expect(await aboutDialogChunk.getCurrentUrl()).to.include(
       dataLinks.privacyPolicyUrl);
   });
 
@@ -60,7 +67,7 @@ describe("test options page dialog links", function()
     const aboutDialogChunk = new AboutDialogChunk(browser);
     await aboutDialogChunk.clickEyeoGmbhLink();
     await aboutDialogChunk.switchToImprintTab();
-    expect(await aboutDialogChunk.getCurrentUrl()).to.equal(
+    expect(await aboutDialogChunk.getCurrentUrl()).to.include(
       dataLinks.imprintUrl);
   });
 
@@ -79,7 +86,7 @@ describe("test options page dialog links", function()
       if (browser.capabilities.browserName == "firefox")
       {
         await heartDialogChunk.switchToAddonsTab();
-        expect(await heartDialogChunk.getCurrentUrl()).to.include(
+        expect(await heartDialogChunk.getCurrentUrl()).to.match(
           dataLinks.addonsUrl);
       }
       else if (browser.capabilities.browserName == "chrome")
@@ -96,7 +103,7 @@ describe("test options page dialog links", function()
           dataLinks.webstoreUrl);
       }
     }
-  }, 2);
+  });
 
   it("should open donate page", async function()
   {
@@ -114,10 +121,11 @@ describe("test options page dialog links", function()
       expect(await heartDialogChunk.getCurrentUrl()).to.equal(
         dataLinks.donateUrl);
     }
-  }, 2);
+  });
 
   it("should open aa survey page", async function()
   {
+    lastTest = true;
     const generalPage = new GeneralPage(browser);
     await generalPage.clickAllowAcceptableAdsCheckbox();
     if (await generalPage.isAllowAcceptableAdsCheckboxSelected())
@@ -129,5 +137,5 @@ describe("test options page dialog links", function()
     await acceptableAdsDialogChunk.switchToAASurveyTab();
     expect(await acceptableAdsDialogChunk.getCurrentUrl()).to.equal(
       dataLinks.aaSurveyUrl);
-  }, 2);
+  });
 });

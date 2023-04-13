@@ -24,6 +24,7 @@ const GeneralPage = require("../page-objects/general.page");
 const AdvancedPage = require("../page-objects/advanced.page");
 const AcceptableAdsDialogChunk =
   require("../page-objects/acceptableAdsDialog.chunk");
+let lastTest = false;
 
 describe("test options page general tab acceptable ads", function()
 {
@@ -36,7 +37,10 @@ describe("test options page general tab acceptable ads", function()
 
   afterEach(async function()
   {
-    await afterSequence();
+    if (lastTest == false)
+    {
+      await afterSequence();
+    }
   });
 
   it("should display AA default state", async function()
@@ -92,6 +96,7 @@ describe("test options page general tab acceptable ads", function()
       isOnlyAllowAdsWithoutTrackingCheckboxEnabled()).to.be.false;
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
+    lastTest = true;
     expect(await advancedPage.
       isAllowNonintrusiveAdvertisingWithoutTrackingFLDisplayed()).to.be.false;
     expect(await advancedPage.

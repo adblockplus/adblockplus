@@ -22,6 +22,7 @@ const {afterSequence, beforeSequence, globalRetriesNumber} =
 const {expect} = require("chai");
 const GeneralPage = require("../page-objects/general.page");
 const AdvancedPage = require("../page-objects/advanced.page");
+let lastTest = false;
 
 describe("test options page general tab recommended filters", function()
 {
@@ -34,7 +35,10 @@ describe("test options page general tab recommended filters", function()
 
   afterEach(async function()
   {
-    await afterSequence();
+    if (lastTest == false)
+    {
+      await afterSequence();
+    }
   });
 
   it("should block additional tracking", async function()
@@ -105,6 +109,7 @@ describe("test options page general tab recommended filters", function()
     expect(await generalPage.
       isBlockSocialMediaIconsTrackingCheckboxSelected(true)).to.be.true;
     await advancedPage.init();
+    lastTest = true;
     expect(await advancedPage.
       isFanboysSocialBlockingListFLDisplayed()).to.be.false;
   });

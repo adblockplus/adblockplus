@@ -61,14 +61,13 @@ class HeartDialogChunk extends BasePage
 
   async switchToAddonsTab()
   {
-    await this.switchToTab("Adblock Plus – Get this Extension" +
-    " for 🦊 Firefox (en-GB)");
+    await this.switchToTab(/https:\/\/addons.mozilla.org\/.*\/firefox\/addon\/adblock-plus/);
   }
 
   async switchToChromeWebstoreTab()
   {
     await this.switchToTab("Adblock Plus - free ad blocker - " +
-    "Chrome Web Store");
+      "Chrome Web Store");
   }
 
   async switchToWebstoreCookiesAgreementTab()
@@ -78,7 +77,7 @@ class HeartDialogChunk extends BasePage
 
   async switchToDonateTab()
   {
-    await this.switchToTab("Donate to Adblock Plus");
+    await this.switchToTab("Adblock Plus has been updated");
   }
 }
 

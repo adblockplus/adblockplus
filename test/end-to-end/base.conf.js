@@ -27,7 +27,7 @@ exports.config = {
   key: process.env.LT_ACCESS_KEY,
   "suites": {
     all: ["./tests/**.js"],
-    e2e: [
+    e2e:
       [
         "./tests/test-advanced-tab-custom-filters.js",
         "./tests/test-advanced-tab-customisations.js",
@@ -45,15 +45,14 @@ exports.config = {
         "./tests/test-options-page-tooltips.js",
         "./tests/test-options-page-tracking-warning.js",
         "./tests/test-page-links.js"
-      ]
-    ],
+      ],
     integration: ["./tests/test-integration-*.js"],
     smoke: ["./tests/test-smoke-*.js"]
   },
   logLevel: "info",
   bail: 0,
-  waitforTimeout: 10000,
-  connectionRetryTimeout: 600000,
+  waitforTimeout: 50000,
+  connectionRetryTimeout: 300000,
   connectionRetryCount: 3,
   path: "/wd/hub",
   hostname: "hub.lambdatest.com",

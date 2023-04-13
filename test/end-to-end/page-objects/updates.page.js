@@ -29,7 +29,7 @@ class UpdatesPage extends BasePage
 
   async init(origin)
   {
-    await this.browser.url(`${origin}/updates.html`);
+    await browser.url(`${origin}/updates.html`);
   }
 
   get abpLogo()

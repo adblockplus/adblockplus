@@ -24,6 +24,7 @@ const PopupPage = require("../page-objects/popup.page");
 const notificationScripts =
   require("../test-data/data-notifications-appearance").notificationScripts;
 let globalOrigin;
+let lastTest = false;
 
 describe("test client side notifications appearance", function()
 {
@@ -36,23 +37,10 @@ describe("test client side notifications appearance", function()
 
   afterEach(async function()
   {
-    await afterSequence();
-  });
-
-  it("should display critical notification", async function()
-  {
-    const popupPage = new PopupPage(browser);
-    await popupPage.init(globalOrigin);
-    await browser.executeScript(notificationScripts.criticalNotification, []);
-    expect(await popupPage.
-      getNotificationBorderColor()).to.equal("rgb(237, 30, 69)");
-    expect(await popupPage.
-      isCloseNotificationButtonDisplayed()).to.be.true;
-    expect(await popupPage.
-      isStopShowingNotificationsButtonDisplayed()).to.be.false;
-    await popupPage.clickCloseNotificationButton();
-    expect(await popupPage.
-      isNotificationMessageDisplayed()).to.be.false;
+    if (lastTest == false)
+    {
+      await afterSequence();
+    }
   });
 
   it("should display default notification", async function()
@@ -85,6 +73,23 @@ describe("test client side notifications appearance", function()
     expect(await popupPage.
       isStopShowingNotificationsButtonDisplayed()).to.be.true;
     await popupPage.clickStopShowingNotificationsButton();
+    expect(await popupPage.
+      isNotificationMessageDisplayed()).to.be.false;
+  });
+
+  it("should display critical notification", async function()
+  {
+    const popupPage = new PopupPage(browser);
+    await popupPage.init(globalOrigin);
+    await browser.executeScript(notificationScripts.criticalNotification, []);
+    expect(await popupPage.
+      getNotificationBorderColor()).to.equal("rgb(237, 30, 69)");
+    expect(await popupPage.
+      isCloseNotificationButtonDisplayed()).to.be.true;
+    expect(await popupPage.
+      isStopShowingNotificationsButtonDisplayed()).to.be.false;
+    await popupPage.clickCloseNotificationButton();
+    lastTest = true;
     expect(await popupPage.
       isNotificationMessageDisplayed()).to.be.false;
   });

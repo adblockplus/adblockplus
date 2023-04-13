@@ -23,26 +23,30 @@ module.exports =
   commentText: "TESTING, ignore report.",
   emailLabelText: "Email:",
   emailText: "********@a******.o*****",
-  filterData: '<filters>\n    <filter text="/pubfig.js" subscriptions="h' +
-  'ttps://easylist-downloads.adblockplus.org/easylist.txt" hitCount="1"/' +
-  '>\n    <filter text="/bannerads/*" subscriptions="https://easylist-downlo' +
-  'ads.adblockplus.org/easylist.txt" hitCount="2"/>\n    <filter text="###Se' +
-  'rverAd" subscriptions="https://easylist-downloads.adblockplus.org/easylis' +
-  't.txt" hitCount="1"/>\n    <filter text="##.zergmod" subscriptions="https' +
-  '://easylist-downloads.adblockplus.org/easylist.txt" hitCount="1' +
-  '"/>\n  </filters>',
+  filterData:
+  [
+    '<filter text="/pubfig.js" subscriptions="h' +
+    'ttps://easylist-downloads.adblockplus.org/easylist.txt" hitCount="1"/>',
+    '<filter text="/bannerads/*" subscriptions="https://easylist-downlo' +
+    'ads.adblockplus.org/easylist.txt" hitCount="2"/>',
+    '<filter text="###search-ad" subscriptions="https://easylist-downloads.a' +
+    'dblockplus.org/easylist.txt" hitCount="1"/>',
+    '<filter text="##.zergmod" subscriptions="https' +
+    '://easylist-downloads.adblockplus.org/easylist.txt" hitCount="1"/>'
+  ],
   issueTypeLableText: "Issue type:",
   issueTypeText: "False positive",
   otherIssuesText: "For all other issues, please contact us via " +
-  "support@adblockplus.org.",
-  privacyPolicyUrl: "https://adblockplus.org/en/privacy#issue-reporter",
+    "support@adblockplus.org.",
+  privacyPolicyUrl: "https://adblockplus.org/en/privacy#issue-reporter?link=" +
+    "reporter_privacy&lang=en-US",
   reportBeingProcessedText: "Please wait, the report is being processed. " +
-  "This will usually take at most 1 minute. You do not need to reload this " +
-  "page, it will reload automatically.",
+    "This will usually take at most 1 minute. You do not need to reload this" +
+    " page, it will reload automatically.",
   testPageUrl: "https://adblockinc.gitlab.io/QA-team/issue-reporter/" +
-  "issue-reporter-testpage.html",
+    "issue-reporter-testpage.html",
   topNoteText: "Note: An additional tab will temporarily open so the " +
-  "page you are on won't be affected by the Issue Reporter.",
+    "page you are on won't be affected by the Issue Reporter.",
   requestData:
   [
     '<request location="https://adblockinc.gitlab.io/QA-team/issue-reporter/' +
@@ -64,12 +68,17 @@ module.exports =
     'main="adblockinc.gitlab.io" thirdParty="undefined" count="1"/>'
   ],
   savedReportText: "Your report has been saved. You can access it at " +
-  "the following address",
+    "the following address",
   statusCellLabelText: "Status:",
   statusCellText: "unknown",
-  subscriptionsRegex: /<subscription id="https:\/\/easylist-downloads\.adblockplus\.org\/easylist\.txt" version="\d*" lastDownloadAttempt=".*" lastDownloadSuccess=".*" softExpiration="\d*" hardExpiration="\d*" downloadStatus="synchronize_ok" disabledFilters="0"\/>\n {4}<subscription id="https:\/\/easylist-downloads\.adblockplus\.org\/abp-filters-anti-cv\.txt" version="\d*" lastDownloadAttempt=".*" lastDownloadSuccess=".*" softExpiration="\d*" hardExpiration="\d*" downloadStatus="synchronize_ok" disabledFilters="0"\/>\n {4}<subscription id="https:\/\/easylist-downloads\.adblockplus\.org\/exceptionrules\.txt" version="\d*" lastDownloadAttempt=".*" lastDownloadSuccess=".*" softExpiration="\d*" hardExpiration="\d*" downloadStatus="synchronize_ok" disabledFilters="0"\/>/,
+  subscriptionsRegex:
+  [
+    /<subscription id="https:\/\/easylist-downloads\.adblockplus\.org\/easylist\.txt" version="\d*" lastDownloadAttempt=".*" lastDownloadSuccess=".*" softExpiration="\d*" hardExpiration="\d*" downloadStatus="synchronize_ok" disabledFilters="0"\/>/,
+    /<subscription id="https:\/\/easylist-downloads\.adblockplus\.org\/abp-filters-anti-cv\.txt" version="\d*" lastDownloadAttempt=".*" lastDownloadSuccess=".*" softExpiration="\d*" hardExpiration="\d*" downloadStatus="synchronize_ok" disabledFilters="0"\/>/,
+    /<subscription id="https:\/\/easylist-downloads\.adblockplus\.org\/exceptionrules\.txt" version="\d*" lastDownloadAttempt=".*" lastDownloadSuccess=".*" softExpiration="\d*" hardExpiration="\d*" downloadStatus="synchronize_ok" disabledFilters="0"\/>/
+  ],
   timeCellText: "Time:",
   websiteLabelText: "Website:",
   websiteCellHref: "https://adblockinc.gitlab.io/QA-team/issue-" +
-  "reporter/issue-reporter-testpage.html"
+    "reporter/issue-reporter-testpage.html"
 };

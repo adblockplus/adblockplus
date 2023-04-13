@@ -65,12 +65,17 @@ class BasePage
     return await this.browser.getUrl();
   }
 
+  async getCurrentTitle()
+  {
+    return await this.browser.getTitle();
+  }
+
   async getElementBySelector(selector)
   {
     return $(selector);
   }
 
-  async isElementDisplayed(selector, reverseOption = false, timeout = 5000)
+  async isElementDisplayed(selector, reverseOption = false, timeout = 10000)
   {
     return await this.waitForDisplayedNoError(
       this.getElementBySelector(selector), reverseOption, timeout);
@@ -83,7 +88,7 @@ class BasePage
     return (await element).click();
   }
 
-  async switchToTab(title, timeout = 10000)
+  async switchToTab(title, timeout = 3500)
   {
     let waitTime = 0;
     while (waitTime <= timeout)

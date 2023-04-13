@@ -23,6 +23,7 @@ const {expect} = require("chai");
 const GeneralPage = require("../page-objects/general.page");
 const AdvancedPage = require("../page-objects/advanced.page");
 const dataTooltips = require("../test-data/data-tooltips");
+let lastTest = false;
 
 describe("test options page tooltips", function()
 {
@@ -35,7 +36,10 @@ describe("test options page tooltips", function()
 
   afterEach(async function()
   {
-    await afterSequence();
+    if (lastTest == false)
+    {
+      await afterSequence();
+    }
   });
 
   it("should open notify me of available language fls tooltip", async function()
@@ -95,6 +99,7 @@ describe("test options page tooltips", function()
 
   it("should open show useful notifications tooltip", async function()
   {
+    lastTest = true;
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
     await advancedPage.clickShowUsefulNotificationsTooltipIcon();
