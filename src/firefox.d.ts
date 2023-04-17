@@ -15,5 +15,29 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export * from "./license";
-export * from "./license.types";
+/**
+ * Options for cloning an object
+ */
+interface CloneOptions {
+  /**
+   * Whether to include functions in the cloned object
+   */
+  cloneFunctions?: boolean;
+}
+
+/**
+ * Given an object defined in the content script, this creates a clone of
+ * the object in the page script's scope, thereby making the clone accessible
+ * to page scripts
+ *
+ * @param value - Object to clone
+ * @param instanceClone - Context to create clone in
+ * @param options - Clone options
+ *
+ * @returns clone of given object
+ */
+declare function cloneInto(
+  value: any,
+  instanceClone: Window | null,
+  options?: CloneOptions
+): any;

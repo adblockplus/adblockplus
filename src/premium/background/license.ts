@@ -207,6 +207,20 @@ function deactivateLicense(): void {
 }
 
 /**
+ * Provides payload to verify authenticity of Premium license data
+ *
+ * @returns Encoded signed Premium license data
+ */
+export function getAuthPayload(): string | null {
+  if (!hasActiveLicense()) {
+    return null;
+  }
+
+  const license = Prefs.get("premium_license") as License;
+  return `${license.encodedData}.${license.signature}`;
+}
+
+/**
  * Provides information about Premium state
  *
  * @returns Premium state information

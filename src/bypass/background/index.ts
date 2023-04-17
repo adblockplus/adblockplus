@@ -15,5 +15,6 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export * from "./license";
-export * from "./license.types";
+import "./bypass";
+
+export * from "./bypass.types";

@@ -15,5 +15,25 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export * from "./license";
-export * from "./license.types";
+/**
+ * DOM event for requesting payload to verify
+ * authenticity of Premium license data
+ */
+export interface AuthRequestEvent extends TrustedEvent {
+  detail: {
+    /**
+     * Signature for verifying authenticity of sender
+     */
+    signature: string;
+
+    /**
+     * Timestamp corresponding to current date and time
+     */
+    timestamp: number;
+  };
+}
+
+/**
+ * DOM event with data that we can safely interact with
+ */
+export interface TrustedEvent extends CustomEvent {}

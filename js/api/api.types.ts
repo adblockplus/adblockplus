@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import type Browser from "webextension-polyfill";
+import Browser from "webextension-polyfill";
 
 /**
  * Strings accepted for api.app.get's first prop

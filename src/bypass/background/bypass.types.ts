@@ -15,5 +15,18 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export * from "./license";
-export * from "./license.types";
+/**
+ * Message options for retrieving payload to verify
+ * authenticity of Premium license data
+ */
+export interface PremiumGetAuthPayloadOptions {
+  /**
+   * Signature for verifying authenticity of sender
+   */
+  signature: string;
+
+  /**
+   * Timestamp corresponding to current date and time
+   */
+  timestamp: number;
+}

@@ -51,6 +51,7 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
 - premium
   - [activate](#premiumactivate)
   - [get](#premiumget)
+  - [getAuthPayload](#premiumgetauthpayload)
   - [listen](#premiumlisten)
 - requests
   - [listen](#requestslisten)
@@ -335,13 +336,24 @@ If filter includes `showPageOptions`:
 
 **Response**
 
-**boolean** isSuccess
+- **boolean** isSuccess
 
 #### premium.get
 
 **Response**
 
 - **boolean** isActive
+
+#### premium.getAuthPayload
+
+**Arguments**
+
+- **string** signature
+- **number** timestamp
+
+**Response**
+
+- **string** payload
 
 #### premium.listen
 

@@ -41,7 +41,8 @@ export default {
           "adblockpluschrome/lib/contentFiltering.js",
           "adblockpluschrome/lib/messageResponder.js",
           "adblockpluschrome/lib/filterConfiguration.js",
-          "lib/public-api/allowlisting.js"
+          "lib/public-api/allowlisting.js",
+          "src/bypass/background/index.ts"
         ]
       }
     ]
@@ -81,6 +82,7 @@ export default {
         src: [
           "*.js",
           "*.html",
+          "dist/bypass.preload.js",
           "dist/composer.preload.js",
           "dist/premium.preload.js",
           "adblockpluschrome/devtools.*",

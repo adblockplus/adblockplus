@@ -15,7 +15,8 @@
         "polyfill.js",
         "ext/common.js",
         "ext/content.js",
-        "composer.preload.js"
+        "composer.preload.js",
+        "bypass.preload.js"
       ],
       "match_about_blank": true,
       "matches": [

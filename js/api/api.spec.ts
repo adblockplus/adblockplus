@@ -20,10 +20,7 @@ import { app } from "./api";
 describe("app", () => {
   describe("get", () => {
     it("should send the correct type", () => {
-      const sendRuntimeMessageSpy = jest.spyOn(
-        window.browser.runtime,
-        "sendMessage"
-      );
+      const sendRuntimeMessageSpy = jest.spyOn(browser.runtime, "sendMessage");
 
       const what = "applicationVersion";
       app.get(what);

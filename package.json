@@ -31,6 +31,10 @@
   },
   "$": {
     "bundle": {
+      "bypass-preload": [
+        "mkdir -p dist",
+        "$ create.js ./src/bypass/content/index.ts ./dist/bypass.preload.js"
+      ],
       "composer": "$ create.bundle composer",
       "composer-preload": [
         "mkdir -p dist",

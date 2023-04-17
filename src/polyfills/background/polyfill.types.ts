@@ -22,3 +22,19 @@
  * @param arg - Argument to pass along to event listeners
  */
 export type EventEmitterCallback<T> = (arg: T) => void;
+
+/**
+ * Temporary type for sender object, as passed to us via callback by
+ * browser.runtime.sendMessage()
+ */
+export interface MessageSender {
+  /**
+   * Information about sender page
+   */
+  page: {
+    /**
+     * URL of sender page
+     */
+    url: URL;
+  };
+}

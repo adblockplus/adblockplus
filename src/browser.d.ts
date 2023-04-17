@@ -15,5 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export * from "./license";
-export * from "./license.types";
+/**
+ * Global web extension API
+ */
+declare namespace browser {}
