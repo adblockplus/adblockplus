@@ -15,7 +15,11 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/**
- * Global web extension API
- */
-declare namespace browser {}
+import { Browser } from "webextension-polyfill";
+
+declare global {
+  /**
+   * Global web extension API
+   */
+  const browser: Browser.Browser;
+}
