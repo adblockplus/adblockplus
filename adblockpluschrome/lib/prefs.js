@@ -232,6 +232,20 @@ defaults.premium_upgrade_page_url = "https://accounts.adblockplus.org/%LANG%/pre
 defaults.premium_user_id = "";
 
 /**
+ * Map of commands
+ *
+ * @type {Object}
+ */
+defaults.ipm_commands = {};
+
+/**
+ * Trusted origin for URLs used in IPMs
+ *
+ * @type {string}
+ */
+defaults.ipm_safe_origin = "https://adblockplus.org";
+
+/**
   * @namespace
   * @static
   */
