@@ -246,6 +246,13 @@ defaults.ipm_commands = {};
 defaults.ipm_safe_origin = "https://adblockplus.org";
 
 /**
+ * Minimum log level
+ *
+ * @type {number}
+ */
+defaults.logger_log_level = 3;
+
+/**
   * @namespace
   * @static
   */
@@ -258,7 +265,14 @@ export let Prefs = {
    */
   get(preference)
   {
-    return (preference in overrides ? overrides : defaults)[preference];
+    let result = (preference in overrides ? overrides : defaults)[preference];
+
+    // Object preferences are mutable, so we need to clone them to avoid
+    // accidentally modifying the preference when modifying the object
+    if (typeof result === "object")
+      result = JSON.parse(JSON.stringify(result));
+
+    return result;
   },
 
   /**

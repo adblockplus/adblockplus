@@ -42,7 +42,8 @@ export default {
           "adblockpluschrome/lib/messageResponder.js",
           "adblockpluschrome/lib/filterConfiguration.js",
           "src/allowlisting/background/index.ts",
-          "src/bypass/background/index.ts"
+          "src/bypass/background/index.ts",
+          "src/ipm/background/index.ts"
         ]
       }
     ]

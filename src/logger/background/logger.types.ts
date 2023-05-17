@@ -15,6 +15,19 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export function logError(...data: any[]): void {
-  console.error(...data);
+/**
+ * Log output function
+ *
+ * @param data - Log data
+ */
+export type LogFunction = (...data: any[]) => void;
+
+/**
+ * Minimum log level
+ */
+export enum LogLevel {
+  debug = 1,
+  info = 2,
+  warn = 3,
+  error = 4
 }

@@ -16,11 +16,14 @@
  */
 
 import {
-  CommandName,
+  Behavior,
   Command,
+  CommandActor,
+  CommandName,
+  Content,
   commandLibraryVersion
 } from "./command-library.types";
-import { logError } from "./logger";
+import * as logger from "../../logger/background";
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";
 
 /**
@@ -32,6 +35,17 @@ const knownCommandsList = Object.values(CommandName);
  * The key for the command storage.
  */
 const commandStorageKey = "ipm_commands";
+
+/**
+ * Map of known command actors
+ */
+const actorByCommandName = new Map<CommandName, CommandActor>();
+
+/**
+ * List of commands that cannot be executed yet, including indication
+ * whether they are meant to be reinitialized
+ */
+const unexecutableCommands = new Map<Command, boolean>();
 
 /**
  * Checks whether the given input satisfies the requirements to be treated
@@ -51,6 +65,20 @@ function isCommand(candidate: unknown): candidate is Command {
 }
 
 /**
+ * Sets actor for handling command with given name
+ *
+ * @param commandName - Command name
+ * @param actor - Command actor
+ */
+export function setCommandActor(
+  commandName: CommandName,
+  actor: CommandActor
+): void {
+  actorByCommandName.set(commandName, actor);
+  retryExecuteCommands(commandName);
+}
+
+/**
  * Checks if the command can be processed.
  *
  * @param command The command from the IPM server
@@ -61,6 +89,76 @@ function canProcessCommand(command: Command): boolean {
     command.version === commandLibraryVersion &&
     knownCommandsList.includes(command.command_name)
   );
+}
+
+/**
+ * Removes the command data from persistent storage
+ *
+ * @param ipmId - IPM ID
+ */
+export function dismissCommand(ipmId: string): void {
+  const command = getCommand(ipmId);
+  if (!command) {
+    return;
+  }
+
+  const commandStorage = Prefs.get(commandStorageKey);
+  delete commandStorage[command.ipm_id];
+  Prefs.set(commandStorageKey, commandStorage);
+}
+
+/**
+ * Retrieves command behavior for given IPM ID
+ *
+ * @param ipmId - IPM ID
+ *
+ * @returns command behavior
+ */
+export function getBehavior(ipmId: string): Behavior | null {
+  const command = getCommand(ipmId);
+  if (!command) {
+    return null;
+  }
+
+  const actor = actorByCommandName.get(command.command_name);
+  if (!actor) {
+    return null;
+  }
+
+  return actor.getBehavior(command);
+}
+
+/**
+ * Retrieves command for given IPM ID
+ *
+ * @param ipmId - IPM ID
+ *
+ * @returns command
+ */
+function getCommand(ipmId: string): Command | null {
+  const commandStorage = Prefs.get(commandStorageKey);
+  return commandStorage[ipmId] || null;
+}
+
+/**
+ * Retrieves command content for given IPM ID
+ *
+ * @param ipmId - IPM ID
+ *
+ * @returns command content
+ */
+export function getContent(ipmId: string): Content | null {
+  const command = getCommand(ipmId);
+  if (!command) {
+    return null;
+  }
+
+  const actor = actorByCommandName.get(command.command_name);
+  if (!actor) {
+    return null;
+  }
+
+  return actor.getContent(command);
 }
 
 /**
@@ -76,64 +174,98 @@ function hasProcessedCommand(ipmId: string): boolean {
 }
 
 /**
+ * Records an event for the given IPM ID
+ *
+ * @param ipmId - IPM ID
+ * @param name - Event name
+ */
+export function recordEvent(ipmId: string, name: string): void {
+  logger.debug("[ipm]: Event received:", name);
+}
+
+/**
+ * Retries executing commands that couldn't be executed
+ *
+ * @param commandName - Command name
+ */
+function retryExecuteCommands(commandName: CommandName): void {
+  for (const [command, isInitialization] of unexecutableCommands) {
+    if (command.command_name !== commandName) {
+      continue;
+    }
+
+    unexecutableCommands.delete(command);
+    executeIPMCommand(command, isInitialization);
+  }
+}
+
+/**
  * Stores the command data to persistent storage.
  *
  * @param command The command from the IPM server
  */
 function storeCommandData(command: Command): void {
-  const commandStorage = Prefs.get(commandStorageKey);
-  commandStorage[command.ipm_id] = command;
-  updatePrefs(commandStorageKey, commandStorage);
-}
-
-/**
- * Updates Prefs storage for given key. Will clone the value to store, so
- * that if `value` is an object, it will bypass the the Prefs storage's
- * change detection mechanism (which only catches changes on primitives).
- *
- * @param key The key to update the storage for
- * @param value The data to store
- */
-function updatePrefs(key: string, value: any): void {
-  const clone = JSON.parse(JSON.stringify(value));
-  Prefs.set(key, clone);
+  const storage = Prefs.get(commandStorageKey);
+  storage[command.ipm_id] = command;
+  Prefs.set(commandStorageKey, storage);
 }
 
 /**
  * Executes a command sent by the IPM server.
  *
  * @param command The command from the IPM server
+ * @param isInitialization Whether the command is being restored when the
+ *   module initializes
  */
-export function executeIPMCommand(command: unknown): void {
+export function executeIPMCommand(
+  command: unknown,
+  isInitialization: boolean = false
+): void {
   if (!isCommand(command)) {
-    logError("[CommandLibrary]: Invalid command received.");
+    logger.error("[ipm]: Invalid command received.");
     return;
   }
 
   if (!canProcessCommand(command)) {
-    logError(
-      "[CommandLibrary]: Unknown command name received:",
-      command.command_name
-    );
+    logger.error("[ipm]: Unknown command name received:", command.command_name);
     return;
   }
 
-  if (hasProcessedCommand(command.ipm_id)) {
-    logError("[CommandLibrary]: Campaign already processed:", command.ipm_id);
+  const actor = actorByCommandName.get(command.command_name);
+  if (!actor) {
+    logger.warn("[ipm]: No actor found:", command.command_name);
+    unexecutableCommands.set(command, isInitialization);
     return;
   }
 
-  storeCommandData(command);
+  if (!actor.isValidCommand(command)) {
+    logger.error("[ipm]: Invalid parameters received.");
+    return;
+  }
 
-  switch (command.command_name) {
-    case CommandName.createOnPageDialog:
-      // call middleware
-      break;
-    default:
-      // We should never get here
-      logError(
-        "[CommandLibrary]: Invalid command name received:",
-        command.command_name
-      );
+  if (!isInitialization) {
+    if (hasProcessedCommand(command.ipm_id)) {
+      logger.error("[ipm]: Campaign already processed:", command.ipm_id);
+      return;
+    }
+
+    storeCommandData(command);
+  }
+
+  actor.handleCommand(command.ipm_id);
+}
+
+/**
+ * Initializes command library
+ */
+async function start(): Promise<void> {
+  await Prefs.untilLoaded;
+
+  // Reinitialize commands from storage
+  const commandStorage = Prefs.get(commandStorageKey);
+  for (const command of Object.values(commandStorage)) {
+    executeIPMCommand(command, true);
   }
 }
+
+void start().catch(logger.error);

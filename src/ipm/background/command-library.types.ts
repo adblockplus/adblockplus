@@ -21,6 +21,16 @@
 export const commandLibraryVersion = 1;
 
 /**
+ * Command behavior
+ */
+export interface Behavior {}
+
+/**
+ * Handler that gets called when command gets executed
+ */
+export type CommandHandler = (ipmId: string) => void;
+
+/**
  * An enum containing all known command names.
  */
 export enum CommandName {
@@ -49,3 +59,36 @@ export interface CommandMetaData {
  * The interface describing a valid IPM command.
  */
 export type Command = CommandMetaData & Record<string, unknown>;
+
+/**
+ * Command content
+ */
+export interface Content {}
+
+/**
+ * Command actor
+ */
+export interface CommandActor {
+  /**
+   * Retrieves the actor-specific command behavior
+   *
+   * @param command - Command
+   */
+  getBehavior: (command: Command) => Behavior | null;
+  /**
+   * Retrieves the actor-specific command content
+   *
+   * @param command - Command
+   */
+  getContent: (command: Command) => Content | null;
+  /**
+   * Handles given command
+   */
+  handleCommand: CommandHandler;
+  /**
+   * Checks whether the given command is valid for the actor
+   *
+   * @returns whether the given command is valid for the actor
+   */
+  isValidCommand: (command: Command) => boolean;
+}

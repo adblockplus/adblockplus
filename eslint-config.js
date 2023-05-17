@@ -96,7 +96,14 @@ module.exports = {
      */
     "no-use-before-define": ["error", {
       functions: false
-    }]
+    }],
+    /**
+     * These rules are disabled, because they're no longer expected to apply
+     * after we switch from Airbnb to Standard
+     */
+    "no-continue": "off",
+    "no-restricted-syntax": "off",
+    "no-void": "off"
   },
   overrides: [
     {
