@@ -44,6 +44,8 @@ lint:
     - npm run submodules:update
     - git submodule status
     - npm install
+    # We need to ensure the SDK is built before we lint code that imports it
+    - npm run $ create.dist.ewe
     # Run linter
     - npm run lint
 
@@ -300,3 +302,4 @@ testpages:MV2:firefox:oldest:
     BROWSER: firefox 68.0
     EXTENSION: adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
     PARAMETERS: $BROWSER
+    

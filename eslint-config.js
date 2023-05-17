@@ -54,6 +54,9 @@ module.exports = {
     // See https://typescript-eslint.io/rules/no-unused-vars/#how-to-use
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "error",
+    // We're using `void` to explicitly mark a promise as intentionally
+    // not awaited.
+    "no-void": "off",
     // We do not prefer default exports.
     "import/prefer-default-export": "off",
     // We do allow calling warn() and error()

@@ -59,6 +59,23 @@ port.on("filters.isAllowlisted", async message =>
   return {hostname: hostnameAllowlisted, page: pageAllowlisted};
 });
 
+/**
+ * Allowlists the given domain or URL.
+ *
+ * @param {object} options
+ *   Allowlisting options
+ * @param {string} [options.hostname]
+ *   Domain to allowlist (required unless singlePage is true)
+ * @param {string} options.origin
+ *   Filter origin
+ * @param {boolean} [options.singlePage=false]
+ *   Whether to allowlist the entire domain or a single page
+ * @param {string} [options.url]
+ *   URL to allowlist (required if no hostname)
+ *
+ * @returns {Promise}
+ * @throws {Error} Either domain or valid URL required
+ */
 export async function allowlist({hostname, origin, singlePage = false, url})
 {
   let filterText;

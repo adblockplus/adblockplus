@@ -41,7 +41,7 @@ export default {
           "adblockpluschrome/lib/contentFiltering.js",
           "adblockpluschrome/lib/messageResponder.js",
           "adblockpluschrome/lib/filterConfiguration.js",
-          "lib/public-api/allowlisting.js",
+          "src/allowlisting/background/index.ts",
           "src/bypass/background/index.ts"
         ]
       }
