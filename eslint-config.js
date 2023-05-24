@@ -102,8 +102,7 @@ module.exports = {
      * after we switch from Airbnb to Standard
      */
     "no-continue": "off",
-    "no-restricted-syntax": "off",
-    "no-void": "off"
+    "no-restricted-syntax": "off"
   },
   overrides: [
     {
