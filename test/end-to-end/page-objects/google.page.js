@@ -44,7 +44,7 @@ class GooglePage extends BasePage
 
   get searchBox()
   {
-    return $("//input[@title='Search']");
+    return $("//textarea[@title='Search']");
   }
 
   get sponsoredTag()

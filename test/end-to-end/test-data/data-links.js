@@ -25,7 +25,7 @@ module.exports =
   addonsUrl: /https:\/\/addons.mozilla.org\/.*firefox\/addon\/adblock-plus/,
   allowlistingLearnMoreUrl: "https://adblockplus.org/en/faq_basics#disable?link=allowlist&lang=en-",
   contributeUrl: "https://adblockplus.org/en/contribute?link=contribute&lang=en-",
-  donateUrl: "https://adblockplus.org/en/periodic-contribution?utm_source=abp&utm_medium=settings_page&utm_campaign=donate",
+  donateUrl: "https://adblockplus.org/en/contribution?utm_source=abp&utm_medium=settings_page&utm_campaign=donate",
   facebookUrl: "https://www.facebook.com/adblockplus",
   facebookFallbackUrl: "https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fadblockplus",
   forumUrlChrome: "https://forum.adblockplus.org/viewforum.php?f=10",

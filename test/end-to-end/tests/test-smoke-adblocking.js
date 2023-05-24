@@ -37,6 +37,7 @@ describe("test adblocking as part of the smoke tests", function()
 
   before(async function()
   {
+    lastTest = false;
     await beforeSequence();
   });
 

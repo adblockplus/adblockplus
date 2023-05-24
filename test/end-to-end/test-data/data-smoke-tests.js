@@ -38,6 +38,7 @@ module.exports =
   regex_pv: /(?<=&pv=).+?(?=\.)/,
   regexBrowserVersion: /(?<=browserVersion":").*?(?=")/,
   regexMajorBrowserVersion: /(?<=browserVersion":").*?(?=\.)/,
+  regexMajorBrowserVersionFF: /(?<=rv:)\d+/,
   regexManifestVersion: /(?<="version": ").*?(?=")/,
   siteKeyData: [
     {

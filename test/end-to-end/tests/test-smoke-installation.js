@@ -51,12 +51,24 @@ describe("test installation as part of the smoke tests", function()
     expect(currentUrl).to.have.string(
       "https://welcome.adblockplus.org/en/installed");
     const browserCapabilities = await browser.capabilities;
-    const majorBrowserVersion = (JSON.stringify(browserCapabilities)).
+    let majorBrowserVersion = (JSON.stringify(browserCapabilities)).
       match(testData.regexMajorBrowserVersion)[0];
     expect(majorBrowserVersion).to.equal(
       currentUrl.match(testData.regex_apv)[0]);
-    expect(majorBrowserVersion).to.equal(
-      currentUrl.match(testData.regex_pv)[0]);
+    if (browser.capabilities.browserName == "firefox")
+    {
+      const navigatorText = await browser.
+        executeScript("return navigator.userAgent;", []);
+      majorBrowserVersion = navigatorText.
+        match(testData.regexMajorBrowserVersionFF)[0];
+      expect(majorBrowserVersion).to.equal(
+        currentUrl.match(testData.regex_pv)[0]);
+    }
+    else
+    {
+      expect(majorBrowserVersion).to.equal(
+        currentUrl.match(testData.regex_pv)[0]);
+    }
     expect(appVersion).to.equal(currentUrl.match(testData.regex_av)[0]);
     if (browser.capabilities.browserName == "chrome")
     {
@@ -94,20 +106,44 @@ describe("test installation as part of the smoke tests", function()
   it("should uninstall extension", async function()
   {
     const generalPage = new GeneralPage(browser);
-    const appVersion = await browser.
-      executeScript("return browser.runtime.getManifest().version;", []);
+    let appVersion = "";
+    try
+    {
+      appVersion = await browser.
+        executeScript("return browser.runtime.getManifest().version;", []);
+    }
+    catch (Exception)
+    {
+      // Sometimes the browser object takes some time to get initialized
+      await browser.pause(4000);
+      await generalPage.switchToABPOptionsTab();
+      appVersion = await browser.
+        executeScript("return browser.runtime.getManifest().version;", []);
+    }
     await browser.executeScript("browser.management.uninstallSelf();", []);
     await generalPage.switchToUninstalledTab();
     const currentUrl = await generalPage.getCurrentUrl();
     expect(currentUrl).to.have.string(
       "https://adblockplus.org/en/uninstalled");
     const browserCapabilities = await browser.capabilities;
-    const majorBrowserVersion = (JSON.stringify(browserCapabilities)).
+    let majorBrowserVersion = (JSON.stringify(browserCapabilities)).
       match(testData.regexMajorBrowserVersion)[0];
     expect(majorBrowserVersion).to.equal(
       currentUrl.match(testData.regex_apv)[0]);
-    expect(majorBrowserVersion).to.equal(
-      currentUrl.match(testData.regex_pv)[0]);
+    if (browser.capabilities.browserName == "firefox")
+    {
+      const navigatorText = await browser.
+        executeScript("return navigator.userAgent;", []);
+      majorBrowserVersion = navigatorText.
+        match(testData.regexMajorBrowserVersionFF)[0];
+      expect(majorBrowserVersion).to.equal(
+        currentUrl.match(testData.regex_pv)[0]);
+    }
+    else
+    {
+      expect(majorBrowserVersion).to.equal(
+        currentUrl.match(testData.regex_pv)[0]);
+    }
     expect(appVersion).to.equal(currentUrl.match(testData.regex_av)[0]);
     lastTest = true;
     if (browser.capabilities.browserName == "chrome")

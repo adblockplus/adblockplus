@@ -55,7 +55,7 @@ const firstRunPageData = [
   {
     testName: "First run - Donate",
     elementToClick: "donateButton",
-    newTabUrl: "https://adblockplus.org/periodic-contribution?utm_source=" +
+    newTabUrl: "https://adblockplus.org/contribution?utm_source=" +
     "abp&utm_medium=frp_page&utm_campaign=donate"
   },
   {
@@ -146,7 +146,7 @@ const updatesPageData = [
   {
     testName: "Updates - Contribute",
     elementToClick: "contributeButton",
-    newTabUrl: "https://adblockplus.org/periodic-contribution?utm_source=" +
+    newTabUrl: "https://adblockplus.org/contribution?utm_source=" +
     "abp&utm_medium=update_page&utm_campaign=donate"
   },
   {

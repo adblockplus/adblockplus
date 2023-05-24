@@ -55,7 +55,7 @@ exports.config = {
   connectionRetryTimeout: 300000,
   connectionRetryCount: 3,
   path: "/wd/hub",
-  hostname: "hub.lambdatest.com",
+  hostname: "hub-virginia.lambdatest.com",
   services: [
     ["lambdatest", {
       tunnel: false
