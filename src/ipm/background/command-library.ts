@@ -204,7 +204,7 @@ function retryExecuteCommands(commandName: CommandName): void {
  *
  * @param command The command from the IPM server
  */
-function storeCommandData(command: Command): void {
+function storeCommand(command: Command): void {
   const storage = Prefs.get(commandStorageKey);
   storage[command.ipm_id] = command;
   Prefs.set(commandStorageKey, storage);
@@ -249,7 +249,7 @@ export function executeIPMCommand(
       return;
     }
 
-    storeCommandData(command);
+    storeCommand(command);
   }
 
   actor.handleCommand(command.ipm_id);
