@@ -347,10 +347,19 @@ testpages:MV2:firefox:oldest:
     CI_TESTING: "true"
   script:
     - npm install
-    - npm run test:end-to-end $SUITE || true
+    - npm run test:end-to-end $SUITE 2>&1 | tee lambdatest_output.txt || true
     - apt-get update
     - apt-get -y install openjdk-11-jre
     - npx -y allure-commandline generate test/end-to-end/allure-results -o allure-report
+    - |
+      log_output=$(cat lambdatest_output.txt)
+      regex_pattern="passed, [1-9]\\d* failed"
+      if [[ $log_output =~ $regex_pattern ]]; then
+        echo "Failed test cases found. Failing the job."
+        exit 1
+      else
+        echo "No failed test cases found. Job will pass."
+      fi
   timeout: 40m
   artifacts:
     when: always
