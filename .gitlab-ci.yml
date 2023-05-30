@@ -304,10 +304,25 @@ testpages:MV3:chrome:latest:
     SKIP: Subscriptions|Sitekey|Header
     PARAMETERS: '^.*$BROWSER((?!$SKIP).)*$'
 
+testpages:MV3:edge:latest:
+  extends: .testpages
+  variables:
+    BROWSER: edge latest
+    EXTENSION: adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
+    SKIP: Subscriptions|Sitekey|Header
+    PARAMETERS: '^.*$BROWSER((?!$SKIP).)*$'
+
 testpages:MV2:chrome:latest:
   extends: .testpages
   variables:
     BROWSER: chromium latest
+    EXTENSION: adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
+    PARAMETERS: $BROWSER
+
+testpages:MV2:edge:latest:
+  extends: .testpages
+  variables:
+    BROWSER: edge latest
     EXTENSION: adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
     PARAMETERS: $BROWSER
 
