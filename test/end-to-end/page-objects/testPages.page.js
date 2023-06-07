@@ -53,9 +53,9 @@ class TestPages extends BasePage
     return $("#custom-hiding-id");
   }
 
-  get pubfigFilter()
+  get awe2Filter()
   {
-    return $("#pubfig-blocking-filter");
+    return $("#awe2-blocking-filter");
   }
 
   get hiddenBySnippetText()
@@ -133,10 +133,10 @@ class TestPages extends BasePage
     return await (await this.banneradsFilter).getText();
   }
 
-  async getPubfigFilterText()
+  async getAwe2FilterText()
   {
-    await (await this.pubfigFilter).waitForEnabled({timeout: 2000});
-    return await (await this.pubfigFilter).getText();
+    await (await this.awe2Filter).waitForEnabled({timeout: 2000});
+    return await (await this.awe2Filter).getText();
   }
 
   async getSearchAdDivText()

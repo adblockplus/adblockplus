@@ -25,7 +25,7 @@ module.exports =
   emailText: "********@a******.o*****",
   filterData:
   [
-    '<filter text="/pubfig.js" subscriptions="h' +
+    '<filter text="/awe2.js" subscriptions="h' +
     'ttps://easylist-downloads.adblockplus.org/easylist.txt" hitCount="1"/>',
     '<filter text="/bannerads/*" subscriptions="https://easylist-downlo' +
     'ads.adblockplus.org/easylist.txt" hitCount="2"/>',
@@ -53,8 +53,8 @@ module.exports =
     'issue-reporter-testpage.html" type="DOCUMENT" docDomain="null" thirdPar' +
     'ty="undefined" count="3" filter="##.zergmod"/>',
     '<request location="https://adblockinc.gitlab.io/QA-team/issue-reporter/' +
-    'scripts/pubfig.js" type="SCRIPT" docDomain="adblockinc.gitlab.io" ' +
-    'thirdParty="undefined" count="1" filter="/pubfig.js"/>',
+    'scripts/awe2.js" type="SCRIPT" docDomain="adblockinc.gitlab.io" ' +
+    'thirdParty="undefined" count="1" filter="/awe2.js"/>',
     '<request location="https://adblockinc.gitlab.io/QA-team/issue-reporter/' +
     'scripts/bannerads/blocking-filter.js" type="SCRIPT" docDomain="adblocki' +
     'nc.gitlab.io" thirdParty="undefined" count="1" filter="/bannerads/*"/>',

@@ -104,8 +104,8 @@ describe("test subscriptions as part of the integration tests", function()
         await browser.refresh();
       }
     }
-    expect(await testPages.getPubfigFilterText()).to.include(
-      "pubfig.js blocking filter should block this");
+    expect(await testPages.getAwe2FilterText()).to.include(
+      "awe2.js blocking filter should block this");
     expect(await testPages.getBanneradsFilterText()).to.include(
       "first bannerads/* blocking filter should block this");
     expect(await testPages.getSearchAdDivText()).to.include(
@@ -129,10 +129,10 @@ describe("test subscriptions as part of the integration tests", function()
         await browser.refresh();
       }
     }
-    expect(await testPages.getPubfigFilterText()).to.include(
-      "/pubfig.js was blocked");
+    expect(await testPages.getAwe2FilterText()).to.include(
+      "awe2.js was blocked");
     expect(await testPages.getBanneradsFilterText()).to.include(
-      "/bannerads/* was blocked");
+      "bannerads/* was blocked");
     expect(await testPages.
       isSearchAdDivDisplayed()).to.be.false;
     expect(await testPages.
@@ -171,8 +171,8 @@ describe("test subscriptions as part of the integration tests", function()
         await browser.refresh();
       }
     }
-    expect(await testPages.getPubfigFilterText()).to.include(
-      "pubfig.js blocking filter should block this");
+    expect(await testPages.getAwe2FilterText()).to.include(
+      "awe2.js blocking filter should block this");
     expect(await testPages.getBanneradsFilterText()).to.include(
       "first bannerads/* blocking filter should block this");
     expect(await testPages.getSearchAdDivText()).to.include(
@@ -202,10 +202,10 @@ describe("test subscriptions as part of the integration tests", function()
       }
     }
     lastTest = true;
-    expect(await testPages.getPubfigFilterText()).to.include(
-      "/pubfig.js was blocked");
+    expect(await testPages.getAwe2FilterText()).to.include(
+      "awe2.js was blocked");
     expect(await testPages.getBanneradsFilterText()).to.include(
-      "/bannerads/* was blocked");
+      "bannerads/* was blocked");
     expect(await testPages.
       isSearchAdDivDisplayed()).to.be.false;
     expect(await testPages.

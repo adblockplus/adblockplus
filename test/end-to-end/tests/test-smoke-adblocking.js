@@ -164,10 +164,10 @@ describe("test adblocking as part of the smoke tests", function()
   {
     await browser.url(testData.blockHideUrl);
     const testPages = new TestPages(browser);
-    expect(await testPages.getPubfigFilterText()).to.include(
-      "/pubfig.js was blocked");
+    expect(await testPages.getAwe2FilterText()).to.include(
+      "awe2.js was blocked");
     expect(await testPages.getBanneradsFilterText()).to.include(
-      "/bannerads/* was blocked");
+      "bannerads/* was blocked");
     expect(await testPages.
       isSearchAdDivDisplayed()).to.be.false;
     expect(await testPages.
@@ -210,8 +210,8 @@ describe("test adblocking as part of the smoke tests", function()
         await browser.refresh();
       }
     }
-    expect(await testPages.getPubfigFilterText()).to.include(
-      "pubfig.js blocking filter should block this");
+    expect(await testPages.getAwe2FilterText()).to.include(
+      "awe2.js blocking filter should block this");
     expect(await testPages.getBanneradsFilterText()).to.include(
       "first bannerads/* blocking filter should block this");
     expect(await testPages.getSearchAdDivText()).to.include(
@@ -239,10 +239,10 @@ describe("test adblocking as part of the smoke tests", function()
       }
     }
     lastTest = true;
-    expect(await testPages.getPubfigFilterText()).to.include(
-      "/pubfig.js was blocked");
+    expect(await testPages.getAwe2FilterText()).to.include(
+      "awe2.js was blocked");
     expect(await testPages.getBanneradsFilterText()).to.include(
-      "/bannerads/* was blocked");
+      "bannerads/* was blocked");
     expect(await testPages.
       isSnippetFilterDivDisplayed()).to.be.false;
     expect(await testPages.
