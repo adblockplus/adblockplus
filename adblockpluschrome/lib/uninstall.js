@@ -53,11 +53,16 @@ async function getWebAllowlistingFilterCount()
 
   // collect their metadata
   const filtersMetadata = await Promise.all(
-    filters.map(async filter => await ewe.filters.getMetadata(filter.text))
+    filters.map(async filter =>
+    {
+      const metadata = await ewe.filters.getMetadata(filter.text)
+        .catch(() => null);
+      return metadata;
+    })
   );
 
   // count the ones that originated in the web
-  return filtersMetadata.filter(data => data.origin === "web").length;
+  return filtersMetadata.filter(data => data && data.origin === "web").length;
 }
 
 /**
