@@ -55,7 +55,8 @@ async function getAllowlistingTime(tabId: number): Promise<number | null> {
   }
 
   for (const filterText of allowlistingFilterTexts) {
-    const metadata = await ewe.filters.getMetadata(filterText)
+    const metadata = await ewe.filters
+      .getMetadata(filterText)
       .catch(() => null);
     if (!isFilterMetadata(metadata)) {
       continue;
