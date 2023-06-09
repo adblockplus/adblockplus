@@ -233,7 +233,7 @@ export function executeIPMCommand(
 
   const actor = actorByCommandName.get(command.command_name);
   if (!actor) {
-    logger.warn("[ipm]: No actor found:", command.command_name);
+    logger.debug("[ipm]: No actor found:", command.command_name);
     unexecutableCommands.set(command, isInitialization);
     return;
   }

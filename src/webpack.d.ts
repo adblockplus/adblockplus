@@ -15,5 +15,34 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export * from "./polyfill";
-export * from "./polyfill.types";
+/**
+ * CSS file imported via webpack
+ */
+declare module "*.css" {
+  const content: string;
+  export default content;
+}
+
+/**
+ * HTML file imported via webpack
+ */
+declare module "*.html" {
+  const content: string;
+  export default content;
+}
+
+/**
+ * SVG file imported via webpack
+ */
+declare module "*.svg" {
+  const content: string;
+  export default content;
+}
+
+/**
+ * Font file imported via webpack
+ */
+declare module "*.woff2" {
+  const content: string;
+  export default content;
+}

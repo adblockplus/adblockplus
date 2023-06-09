@@ -15,5 +15,9 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export * from "./polyfill";
-export * from "./polyfill.types";
+/**
+ * Temporary interface for message object, as passed from/to background page
+ */
+export interface Message {
+  type: string;
+}

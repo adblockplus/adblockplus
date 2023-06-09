@@ -15,5 +15,34 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export * from "./polyfill";
-export * from "./polyfill.types";
+#__abp-overlay-onpage-dialog,
+#__abp-overlay-onpage-dialog iframe
+{
+  all: unset !important;
+}
+
+#__abp-overlay-onpage-dialog
+{
+  position: fixed !important;
+  z-index: 2147483647 !important;
+  top: 35px !important;
+}
+
+:root:not([dir]) #__abp-overlay-onpage-dialog,
+:root[dir="ltr"] #__abp-overlay-onpage-dialog
+{
+  right: 35px !important;
+}
+
+:root[dir="rtl"] #__abp-overlay-onpage-dialog
+{
+  left: 35px !important;
+}
+
+#__abp-overlay-onpage-dialog iframe
+{
+  width: 280px !important;
+  height: var(--abp-overlay-onpage-dialog-height) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15) !important;
+}

@@ -24,7 +24,21 @@
 export type EventEmitterCallback<T> = (arg: T) => void;
 
 /**
- * Temporary type for sender object, as passed to us via callback by
+ * Temporary interface for metadata object that we attach to custom filters
+ */
+export interface FilterMetadata {
+  /**
+   * Filter creation date
+   */
+  created: number;
+  /**
+   * Filter origin
+   */
+  origin: string;
+}
+
+/**
+ * Temporary interface for sender object, as passed to us via callback by
  * browser.runtime.sendMessage()
  */
 export interface MessageSender {
@@ -33,8 +47,26 @@ export interface MessageSender {
    */
   page: {
     /**
-     * URL of sender page
+     * Sender page ID (same as tab ID)
+     */
+    id: number;
+    /**
+     * Sender page URL
      */
     url: URL;
   };
+}
+
+/**
+ * Temporary interface for "tab-removed" event data from TabSessionStorage
+ */
+export interface TabRemovedEventData {
+  /**
+   * Tab ID of removed tab
+   */
+  tabId: number;
+  /**
+   * Stored session data for removed tab
+   */
+  value: unknown;
 }

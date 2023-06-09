@@ -15,5 +15,16 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export * from "./polyfill";
-export * from "./polyfill.types";
+import { LocaleInfo } from "./locale.types";
+
+/**
+ * Retrieves user locale information
+ *
+ * @returns locale information
+ */
+export function getLocaleInfo(): LocaleInfo {
+  return {
+    locale: browser.i18n.getUILanguage(),
+    readingDirection: browser.i18n.getMessage("@@bidi_dir")
+  };
+}

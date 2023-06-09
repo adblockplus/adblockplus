@@ -98,9 +98,21 @@ module.exports = {
       functions: false
     }],
     /**
+     * The info module doesn't exist in the source code and is generated
+     * when building the extension, so we cannot lint it
+     */
+    "import/no-unresolved": [
+      "error",
+      {
+        ignore: ["info.?"]
+      }
+    ],
+    /**
      * These rules are disabled, because they're no longer expected to apply
      * after we switch from Airbnb to Standard
      */
+    "consistent-return": "off",
+    "no-await-in-loop": "off",
     "no-continue": "off",
     "no-restricted-syntax": "off"
   },
