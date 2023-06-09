@@ -49,7 +49,8 @@ async function removeWebAllowlistingFilters(): Promise<void> {
 
   const allowlistingFiltersWithMetadata = await Promise.all(
     allowlistingFilters.map(async (filter) => {
-      const metadata = await ewe.filters.getMetadata(filter.text);
+      const metadata = await ewe.filters.getMetadata(filter.text)
+        .catch(() => null);
       return { filter, metadata };
     })
   );
