@@ -262,6 +262,9 @@ defaults.onpage_dialog_command_stats = {};
 /**
  * Map of on-page dialog timing configurations
  *
+ * @see src/onpage-dialog/background/middleware/ipm-onpage-dialog.types.ts
+ * @see src/onpage-dialog/background/timing.types.ts
+ *
  * @type {Object}
  */
 defaults.onpage_dialog_timing_configurations = {
