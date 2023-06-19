@@ -132,7 +132,7 @@
   },
   "dependencies": {
     "@adblockinc/rules": "gitlab:adblockinc/ext/rules#fd1c65c",
-    "@eyeo/snippets": "0.6.1",
+    "@eyeo/snippets": "0.7.0",
     "@rollup/plugin-node-resolve": "13.3.0",
     "@rollup/plugin-typescript": "8.3.2",
     "@types/webextension-polyfill": "0.8.0",
