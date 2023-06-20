@@ -15,5 +15,16 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export * from "./polyfill";
-export * from "./polyfill.types";
+/**
+ * Locale information
+ */
+export interface LocaleInfo {
+  /**
+   * Locale code
+   */
+  locale: string;
+  /**
+   * Reading direction
+   */
+  readingDirection: string;
+}

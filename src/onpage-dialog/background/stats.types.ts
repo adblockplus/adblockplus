@@ -15,5 +15,16 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export * from "./polyfill";
-export * from "./polyfill.types";
+/**
+ * On-page UI command stats
+ */
+export interface Stats {
+  /**
+   * Count indicating how often the UI was displayed
+   */
+  displayCount: number;
+  /**
+   * Timestamp indicating when the UI was last display
+   */
+  lastDisplayTime: number;
+}

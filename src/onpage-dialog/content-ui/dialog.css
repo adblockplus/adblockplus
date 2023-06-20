@@ -1,0 +1,169 @@
+/*
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-present eyeo GmbH
+ *
+ * Adblock Plus is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Adblock Plus is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+:root
+{
+  --color-premium: #EDA51E;
+  --color-premium-hover: #EB9B05;
+}
+
+@font-face
+{
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Source Sans Pro Light"),
+    local("SourceSansPro-Light"),
+    var(--abp-overlay-onpage-dialog-url-font-300)
+    format("woff2");
+}
+
+@font-face
+{
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Source Sans Pro Regular"),
+    local("SourceSansPro-Regular"),
+    var(--abp-overlay-onpage-dialog-url-font-400)
+    format("woff2");
+}
+
+@font-face
+{
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Source Sans Pro Bold"),
+    local("SourceSansPro-Bold"),
+    var(--abp-overlay-onpage-dialog-url-font-700)
+    format("woff2");
+}
+
+body
+{
+  margin: 16px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 14px;
+  color: #333;
+  background-color: #FFF;
+}
+
+button
+{
+  cursor: pointer;
+}
+
+.flex
+{
+  flex: 1;
+}
+
+/*******************************************************************************
+ * Header
+ ******************************************************************************/
+
+header
+{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #C6C6C6;
+  font-size: 16px;
+}
+
+#logo
+{
+  width: auto;
+  height: 20px;
+}
+
+#close
+{
+  padding: 0px;
+  border: 0px;
+  background-color: transparent;
+}
+
+#close:hover
+{
+  filter: brightness(2);
+}
+
+#close::before
+{
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: 0.2rem solid transparent;
+  background-image: var(--abp-overlay-onpage-dialog-url-icon-close);
+  background-repeat: no-repeat;
+  content: "";
+}
+
+h1
+{
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+/*******************************************************************************
+ * Body
+ ******************************************************************************/
+
+#body
+{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  line-height: 1.4em;
+}
+
+#body p
+{
+  margin: 0;
+}
+
+/*******************************************************************************
+ * Footer
+ ******************************************************************************/
+
+footer
+{
+  margin-top: 16px;
+  font-size: 16px;
+}
+
+#continue
+{
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFF;
+  text-transform: uppercase;
+  background-color: var(--color-premium);
+}
+
+#continue:hover
+{
+  background-color: var(--color-premium-hover);
+}

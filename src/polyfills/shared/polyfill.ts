@@ -15,5 +15,17 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export * from "./polyfill";
-export * from "./polyfill.types";
+import { Message } from "./polyfill.types";
+
+/**
+ * Temporary function to check whether given candidate is a message
+ *
+ * @param candidate - Message candidate
+ *
+ * @returns whether candidate is message
+ */
+export function isMessage(candidate: unknown): candidate is Message {
+  return (
+    candidate !== null && typeof candidate === "object" && "type" in candidate
+  );
+}

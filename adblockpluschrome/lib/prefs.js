@@ -253,6 +253,34 @@ defaults.ipm_safe_origin = "https://adblockplus.org";
 defaults.logger_log_level = 3;
 
 /**
+ * Map of command stats
+ *
+ * @type {Object}
+ */
+defaults.onpage_dialog_command_stats = {};
+
+/**
+ * Map of on-page dialog timing configurations
+ *
+ * @see src/onpage-dialog/background/middleware/ipm-onpage-dialog.types.ts
+ * @see src/onpage-dialog/background/timing.types.ts
+ *
+ * @type {Object}
+ */
+defaults.onpage_dialog_timing_configurations = {
+  after_web_allowlisting: {
+    cooldownDuration: 24,
+    maxAllowlistingDelay: 2,
+    maxDisplayCount: 3
+  },
+  revisit_web_allowlisted_site: {
+    cooldownDuration: 48,
+    maxDisplayCount: 3,
+    minAllowlistingDelay: 48 * 60
+  }
+};
+
+/**
   * @namespace
   * @static
   */

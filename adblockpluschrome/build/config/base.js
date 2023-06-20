@@ -43,8 +43,17 @@ export default {
           "adblockpluschrome/lib/filterConfiguration.js",
           "src/allowlisting/background/index.ts",
           "src/bypass/background/index.ts",
-          "src/ipm/background/index.ts"
+          "src/ipm/background/index.ts",
+          "src/onpage-dialog/background/index.ts"
         ]
+      },
+      {
+        dest: "onpage-dialog.postload.js",
+        src: ["src/onpage-dialog/content/index.ts"]
+      },
+      {
+        dest: "onpage-dialog-ui.postload.js",
+        src: ["src/onpage-dialog/content-ui/index.ts"]
       }
     ]
   },
@@ -140,6 +149,10 @@ export default {
       {
         dest: "icons/abp-40.png",
         src: "skin/icons/toolbar/default-40.png"
+      },
+      {
+        dest: "skin/onpage-dialog.css",
+        src: "src/onpage-dialog/content/frame.css"
       },
       {
         dest: "vendor/webext-sdk/content.js",

@@ -302,4 +302,3 @@ testpages:MV2:firefox:oldest:
     BROWSER: firefox 68.0
     EXTENSION: adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
     PARAMETERS: $BROWSER
-    

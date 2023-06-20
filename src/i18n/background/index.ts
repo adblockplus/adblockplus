@@ -15,5 +15,5 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export * from "./polyfill";
-export * from "./polyfill.types";
+export * from "./locale";
+export * from "./locale.types";

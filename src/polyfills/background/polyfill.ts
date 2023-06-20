@@ -15,5 +15,22 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export * from "./polyfill";
-export * from "./polyfill.types";
+import { FilterMetadata } from "./polyfill.types";
+
+/**
+ * Temporary function to check whether given candidate is valid filter metadata
+ *
+ * @param candidate - Message candidate
+ *
+ * @returns whether candidate is valid filter metadata
+ */
+export function isFilterMetadata(
+  candidate: unknown
+): candidate is FilterMetadata {
+  return (
+    candidate !== null &&
+    typeof candidate === "object" &&
+    "created" in candidate &&
+    "origin" in candidate
+  );
+}

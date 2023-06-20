@@ -15,5 +15,5 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export * from "./polyfill";
-export * from "./polyfill.types";
+export * from "./ipm-onpage-dialog";
+export * from "./ipm-onpage-dialog.types";

@@ -102,7 +102,22 @@ declare interface EWE {
      */
     setAuthorizedKeys: (keys: string[]) => Promise<void>;
   };
+
   filters: {
+    /**
+     * Returns the allowing filters that will be effective when the given
+     * document will be reloaded
+     */
+    getAllowingFilters: (
+      /**
+       * ID of tab to look up
+       */
+      tabId: number,
+      /**
+       * Options for retrieving filters
+       */
+      options?: FiltersGetAllowingFiltersOptions
+    ) => Promise<string[]>;
     /**
      * Returns an extra data associated with a filter
      *
@@ -123,5 +138,12 @@ declare interface EWE {
      * @param texts - The filter rules to be removed.
      */
     remove: (texts: string | string[]) => Promise<void>;
+  };
+
+  notifications: {
+    /**
+     * Returns the list of ignored notification categories
+     */
+    getIgnoredCategories: () => string[];
   };
 }

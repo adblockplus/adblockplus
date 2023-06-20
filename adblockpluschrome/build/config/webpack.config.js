@@ -29,9 +29,25 @@ export default {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        type: "asset/source"
+      },
+      {
+        test: /\.html$/,
+        type: "asset/source"
+      },
+      {
         test: /\.js$/,
         enforce: "pre",
         use: ["source-map-loader"]
+      },
+      {
+        test: /\.svg$/,
+        type: "asset/inline"
+      },
+      {
+        test: /\.woff2$/,
+        type: "asset/inline"
       }
     ]
   },

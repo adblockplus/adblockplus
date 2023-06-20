@@ -15,5 +15,26 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export * from "./polyfill";
-export * from "./polyfill.types";
+/**
+ * On-page UI timing configuration
+ */
+export interface TimingConfiguration {
+  /**
+   * Number of hours after which on-page dialog can be shown again
+   */
+  cooldownDuration: number;
+  /**
+   * Maximum number of minutes after the page was allowlisted that the on-page
+   * dialog can be shown for the first time
+   */
+  maxAllowlistingDelay?: number;
+  /**
+   * Maximum number of times the on-page dialog can be shown
+   */
+  maxDisplayCount: number;
+  /**
+   * Minimum number of minutes after the page was allowlisted that the on-page
+   * dialog can be shown for the first time
+   */
+  minAllowlistingDelay?: number;
+}
