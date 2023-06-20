@@ -232,6 +232,27 @@ defaults.premium_upgrade_page_url = "https://accounts.adblockplus.org/%LANG%/pre
 defaults.premium_user_id = "";
 
 /**
+ * Map of commands
+ *
+ * @type {Object}
+ */
+defaults.ipm_commands = {};
+
+/**
+ * Trusted origin for URLs used in IPMs
+ *
+ * @type {string}
+ */
+defaults.ipm_safe_origin = "https://adblockplus.org";
+
+/**
+ * Minimum log level
+ *
+ * @type {number}
+ */
+defaults.logger_log_level = 3;
+
+/**
   * @namespace
   * @static
   */
@@ -244,7 +265,14 @@ export let Prefs = {
    */
   get(preference)
   {
-    return (preference in overrides ? overrides : defaults)[preference];
+    let result = (preference in overrides ? overrides : defaults)[preference];
+
+    // Object preferences are mutable, so we need to clone them to avoid
+    // accidentally modifying the preference when modifying the object
+    if (typeof result === "object")
+      result = JSON.parse(JSON.stringify(result));
+
+    return result;
   },
 
   /**
