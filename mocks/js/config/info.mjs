@@ -16,11 +16,12 @@
  */
 
 const info = {
+  baseName: "adblockplus",
   platform: "gecko",
   platformVersion: "34.0",
   application: "firefox",
   applicationVersion: "34.0",
-  addonName: "adblockplus",
+  addonName: "adblockplusfirefox",
   addonVersion: "2.6.7"
 };
 

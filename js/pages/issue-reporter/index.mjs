@@ -15,6 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import {getUUID} from "../../../src/id/background/index.ts";
 import {convertDoclinks} from "../../common";
 import {$, asIndentedString} from "../../dom";
 import {initI18n, setElementLinks} from "../../i18n";
@@ -214,24 +215,6 @@ function reportWithScreenshot(xmlReport, stepsData)
   return xmlReport;
 }
 
-function generateUUID(size = 8)
-{
-  const uuid = new Uint16Array(size);
-  window.crypto.getRandomValues(uuid);
-  uuid[3] = uuid[3] & 0x0FFF | 0x4000;  // version 4
-  uuid[4] = uuid[4] & 0x3FFF | 0x8000;  // variant 1
-
-  const uuidChunks = [];
-  for (let i = 0; i < uuid.length; i++)
-  {
-    const component = uuid[i].toString(16);
-    uuidChunks.push(("000" + component).slice(-4));
-    if (i >= 1 && i <= 4)
-      uuidChunks.push("-");
-  }
-  return uuidChunks.join("");
-}
-
 function sendReport(reportData)
 {
   // Passing a sequence to URLSearchParams() constructor only works starting
@@ -239,7 +222,7 @@ function sendReport(reportData)
   const params = new URLSearchParams();
   for (const [param, value] of [
     ["version", 1],
-    ["guid", generateUUID()],
+    ["guid", getUUID()],
     ["lang", $("adblock-plus", reportData)
                        .getAttribute("locale")]
   ])

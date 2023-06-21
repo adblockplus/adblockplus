@@ -114,7 +114,8 @@ module.exports = {
     "consistent-return": "off",
     "no-await-in-loop": "off",
     "no-continue": "off",
-    "no-restricted-syntax": "off"
+    "no-restricted-syntax": "off",
+    "no-restricted-globals": "off"
   },
   overrides: [
     {

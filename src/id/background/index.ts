@@ -15,20 +15,4 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export let addonName = "{{addonName}}";
-export let baseName = "adblockplus";
-export let addonVersion = "{{addonVersion}}";
-export let application = "unknown";
-export let applicationVersion = "0";
-export let platform = "gecko";
-export let platformVersion = "0";
-
-let match = /\brv:(\d+(?:\.\d+)?)\b/.exec(navigator.userAgent);
-if (match)
-  platformVersion = match[1];
-
-browser.runtime.getBrowserInfo().then(browserInfo =>
-{
-  application = browserInfo.name.toLowerCase();
-  applicationVersion = browserInfo.version;
-});
+export * from "./id";

@@ -15,15 +15,5 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export {
-  setListener,
-  removeListener,
-  setSchedule,
-  removeSchedule
-} from "./background/scheduled-event-emitter";
-
-export {
-  Schedule,
-  Listener,
-  ScheduleType
-} from "./background/scheduled-event-emitter.types";
+export * from "./scheduled-event-emitter";
+export * from "./scheduled-event-emitter.types";

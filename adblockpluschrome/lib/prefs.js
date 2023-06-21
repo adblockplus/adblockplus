@@ -64,6 +64,13 @@ lBnPV1v+dxDLb3DdK0Ip9wM74S2+Nf9359TCjAaWgNjiTnhBw6xpwTGn/8vzNL3p
 fcEVJJt8DUfuCYV9mtKPHbj06RHnLsaXQ72x6I+ocXi8TygTjldZFx13ttJqVvju
 UaTE0E4KN9Mzb/2zEYTgCzcCAwEAAQ==`
 ];
+
+/**
+ * A unique id for this extension installation.
+ *
+ * @type {string}
+ */
+defaults.installation_id = "";
 /**
  * The application version as set during initialization. Used to detect updates.
  *
@@ -230,6 +237,27 @@ defaults.premium_upgrade_page_url = "https://accounts.adblockplus.org/%LANG%/pre
  * @type {string}
  */
 defaults.premium_user_id = "";
+
+/**
+ * The URL of the IPM server.
+ *
+ * @type {string}
+ */
+defaults.ipm_server_url = "https://ipm.adblockplus.dev/api/stats";
+
+/**
+ * The interval in which to ping the IPM server, in ms. Defaults to 24 hours.
+ *
+ * @type {number}
+ */
+defaults.ipm_ping_interval = 24 * 60 * 60 * 1000;
+
+/**
+ * List of user events
+ *
+ * @type {array}
+ */
+defaults.ipm_events = [];
 
 /**
  * Map of commands

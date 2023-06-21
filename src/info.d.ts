@@ -21,7 +21,11 @@
  */
 declare module "info" {
   /**
-   * Extension name
+   * The base name of the extension. Always "adblockplus".
+   */
+  export const baseName = "adblockplus";
+  /**
+   * The name of the extension build.
    * e.g. "adblockpluschrome", "adblockplusfirefox"
    */
   export const addonName: string;

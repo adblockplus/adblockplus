@@ -27,6 +27,7 @@ import {revalidateAllowlistingStates} from "./allowlisting.js";
 import {initDisabledFilterCounters} from "./filterConfiguration.js";
 import {initNotifications} from "./notificationHelper.js";
 import {Prefs} from "./prefs.js";
+import {startTelemetry} from "../../src/ipm/background/index.ts";
 
 let firstRun;
 let userNotificationCallback = null;
@@ -190,6 +191,7 @@ function initElementHidingDebugMode()
   initElementHidingDebugMode();
   initNotifications(firstRun);
   premium.initialize();
+  void startTelemetry();
 })();
 
 /**

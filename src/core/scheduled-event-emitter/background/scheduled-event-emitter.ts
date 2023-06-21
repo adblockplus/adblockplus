@@ -23,12 +23,6 @@ import {
 
 import { SessionStorage } from "../../../../adblockpluschrome/lib/storage/session";
 
-// We want to obtain the reference to the global object from a
-// dedicated service eventually, so let's prepare for that.
-const global: WindowOrWorkerGlobalScope =
-  // eslint-disable-next-line no-restricted-globals
-  typeof window !== "undefined" ? window : self;
-
 /**
  * The ScheduledEventEmitter allows to schedule emission of events.
  *
@@ -167,6 +161,16 @@ export async function removeSchedule(name: string): Promise<void> {
 }
 
 /**
+ * Checks whether a schedule exists for the given event name.
+ *
+ * @param name The event name to check for
+ * @returns Whether a schedule exists for the given event name
+ */
+export function hasSchedule(name: string): boolean {
+  return name in schedules;
+}
+
+/**
  * Removes a listener.
  *
  * @param name The event name to remove the listener for
@@ -230,7 +234,7 @@ function activateSchedules(): void {
     if (!schedule.runOnce) {
       // Intervals are to start immediately.
       // eslint-disable-next-line no-param-reassign
-      schedule.activationId = global.setInterval(
+      schedule.activationId = self.setInterval(
         () => emitEvent(name),
         schedule.period
       );
@@ -240,7 +244,7 @@ function activateSchedules(): void {
     if (!isDue) {
       // A timeout that is not due yet and needs to be planned.
       // eslint-disable-next-line no-param-reassign
-      schedule.activationId = global.setTimeout(() => emitEvent(name), delta);
+      schedule.activationId = self.setTimeout(() => emitEvent(name), delta);
       return;
     }
 

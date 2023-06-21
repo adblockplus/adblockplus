@@ -33,7 +33,7 @@ import {
 import * as logger from "../../logger/background";
 import { MessageSender, TabRemovedEventData } from "../../polyfills/background";
 import { Message, isMessage } from "../../polyfills/shared";
-import { HideMessage, PingMessage, ShowMessage, StartInfo } from "../shared";
+import { HideMessage, PingMessage, StartInfo } from "../shared";
 import { getPremiumState } from "../../premium/background";
 import {
   DialogBehavior,
@@ -145,7 +145,7 @@ async function handleCloseMessage(
   }
 
   void dismissDialog(sender.page.id, ipmId);
-  recordEvent(ipmId, DialogEventType.closed);
+  void recordEvent(ipmId, DialogEventType.closed);
 }
 
 /**
@@ -176,7 +176,7 @@ async function handleContinueMessage(
   void browser.tabs.create({ url: targetUrl });
 
   void dismissDialog(sender.page.id, ipmId);
-  recordEvent(ipmId, DialogEventType.buttonClicked);
+  void recordEvent(ipmId, DialogEventType.buttonClicked);
 }
 
 /**
@@ -249,7 +249,7 @@ async function handlePingMessage(
   }
 
   void dismissDialog(sender.page.id, ipmId);
-  recordEvent(ipmId, DialogEventType.ignored);
+  void recordEvent(ipmId, DialogEventType.ignored);
 }
 
 /**
@@ -264,7 +264,7 @@ function handleTabRemovedEvent(data: TabRemovedEventData): void {
   }
 
   void dismissDialog(tabId, ipmId);
-  recordEvent(ipmId, DialogEventType.ignored);
+  void recordEvent(ipmId, DialogEventType.ignored);
 }
 
 /**
@@ -389,9 +389,9 @@ async function showDialog(
   await browser.tabs.sendMessage(tabId, {
     type: "onpage-dialog.show",
     platform: info.platform
-  } as ShowMessage);
+  });
 
-  recordEvent(ipmId, DialogEventType.injected);
+  void recordEvent(ipmId, DialogEventType.injected);
 }
 
 /**

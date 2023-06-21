@@ -26,12 +26,6 @@ import { ScheduleType } from "../../core/scheduled-event-emitter/background/sche
 import { EventEmitterCallback } from "../../polyfills/background";
 import { License, LicenseCheckPayload, PremiumState } from "./license.types";
 
-// We want to obtain the reference to the global object from a
-// dedicated service eventually, so let's prepare for that.
-const global: WindowOrWorkerGlobalScope =
-  // eslint-disable-next-line no-restricted-globals
-  typeof window !== "undefined" ? window : self;
-
 /**
  * Error indicating a temporary problem during a license check,
  * which could be resolved by a later retry
@@ -262,7 +256,7 @@ function scheduleNextLicenseCheck(nextTimestamp: number | null): void {
   // We cannot use scheduled-event-emitter to schedule delayed intervals, or
   // for rescheduling an event when it is emitted.
   // https://gitlab.com/adblockinc/ext/adblockplus/adblockplusui/-/issues/1227
-  licenseCheckTimeoutId = global.setTimeout(() => {
+  licenseCheckTimeoutId = self.setTimeout(() => {
     checkLicense();
     scheduleNextLicenseCheck(null);
   }, nextTimestamp - Date.now());

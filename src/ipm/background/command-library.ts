@@ -174,16 +174,6 @@ function hasProcessedCommand(ipmId: string): boolean {
 }
 
 /**
- * Records an event for the given IPM ID
- *
- * @param ipmId - IPM ID
- * @param name - Event name
- */
-export function recordEvent(ipmId: string, name: string): void {
-  logger.debug("[ipm]: Event received:", name);
-}
-
-/**
  * Retries executing commands that couldn't be executed
  *
  * @param commandName - Command name
