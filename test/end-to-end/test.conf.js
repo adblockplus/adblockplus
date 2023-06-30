@@ -90,7 +90,6 @@ const parallelConfig = {
       },
       acceptInsecureCerts: true,
       exclude: [
-        "./tests/test-issue-reporter.js",
         "./tests/legacy-unit.js"
       ]
     }

@@ -29,6 +29,12 @@ class BasePage
     return $("#content");
   }
 
+  get mockLicensingServerText()
+  {
+    return $("body[contains(text()," +
+    "'Mock licensing server is up and running')]");
+  }
+
   get truckerIFrame()
   {
     return $("#slave-2-1");
@@ -37,7 +43,7 @@ class BasePage
   async getABPOptionsTabId()
   {
     await this.switchToABPOptionsTab(true);
-    const currentTab = await this.browser.executeAsyncScript(`
+    const currentTab = await browser.executeAsyncScript(`
       function getTabID()
       {
         return new Promise((resolve, reject) =>
@@ -62,12 +68,12 @@ class BasePage
 
   async getCurrentUrl()
   {
-    return await this.browser.getUrl();
+    return await browser.getUrl();
   }
 
   async getCurrentTitle()
   {
-    return await this.browser.getTitle();
+    return await browser.getTitle();
   }
 
   async getElementBySelector(selector)
@@ -75,10 +81,21 @@ class BasePage
     return $(selector);
   }
 
+  async goToABPOptions(origin)
+  {
+    await browser.url(`${origin}/desktop-options.html`);
+  }
+
   async isElementDisplayed(selector, reverseOption = false, timeout = 10000)
   {
     return await this.waitForDisplayedNoError(
       this.getElementBySelector(selector), reverseOption, timeout);
+  }
+
+  async isMockLicensingServerTextDisplayed(reverseOption = false)
+  {
+    return await this.waitForDisplayedNoError(this.
+      mockLicensingServerText, reverseOption, 45000);
   }
 
   async scrollIntoViewAndClick(element)
@@ -95,12 +112,12 @@ class BasePage
     {
       try
       {
-        await this.browser.switchWindow(title);
+        await browser.switchWindow(title);
         break;
       }
       catch (Exception)
       {
-        await this.browser.pause(200);
+        await browser.pause(200);
         waitTime += 200;
       }
     }
@@ -113,11 +130,11 @@ class BasePage
   async switchToABPOptionsTab(noSwitchToFrame = false)
   {
     await this.switchToTab("Adblock Plus Options");
-    if (noSwitchToFrame == false)
+    if (noSwitchToFrame === false)
     {
       try
       {
-        await this.browser.switchToFrame(await this.contentIFrame);
+        await browser.switchToFrame(await this.contentIFrame);
       }
       catch (Exception)
       {
@@ -156,7 +173,7 @@ class BasePage
   async waitForEnabledThenClick(element, timeoutMs = 3000)
   {
     await (await element).waitForClickable({timeout: timeoutMs});
-    await this.browser.pause(700);
+    await browser.pause(700);
     return (await element).click();
   }
 
@@ -171,9 +188,9 @@ class BasePage
       {
         if (reverse)
         {
-          return await (await this.isSelected()) == false;
+          return await (await this.isSelected()) === false;
         }
-        return await (await this.isSelected()) == true;
+        return await (await this.isSelected()) === true;
       }, {
         timeout: timeoutMs,
         timeoutMsg: "Timeout while waiting on condition."
@@ -201,7 +218,7 @@ class BasePage
         if (reverse)
         {
           return await (await this.
-          getAttribute(attribute)) != expectedValue;
+          getAttribute(attribute)) !== expectedValue;
         }
         return await (await this.
         getAttribute(attribute)) === expectedValue;

@@ -773,7 +773,7 @@ class AdvancedPage extends BasePage
       this.customFilterListsFirstItemAlertIcon, "title",
       expectedValue, timeoutVal);
     // Wait until tooltip is displayed
-    await this.browser.pause(2500);
+    await browser.pause(2500);
     return await (await this.customFilterListsFirstItemAlertText).isDisplayed();
   }
 
@@ -1021,7 +1021,7 @@ class AdvancedPage extends BasePage
     {
       await (await this.filterListUrlInput).clearValue();
     }
-    await this.browser.keys(text);
+    await browser.keys(text);
   }
 
   async typeTextToAddCustomFilterListInput(text, noClearValue = false)
@@ -1039,7 +1039,7 @@ class AdvancedPage extends BasePage
     {
       await (await this.addCustomFilterListInput).clearValue();
     }
-    await this.browser.keys(text);
+    await browser.keys(text);
   }
 
   async verifyTextPresentInCustomFLTable(text, timeoutVal = 3000)
@@ -1054,7 +1054,7 @@ class AdvancedPage extends BasePage
         {
           return true;
         }
-        await this.browser.pause(200);
+        await browser.pause(200);
         waitTime += 200;
       }
     }

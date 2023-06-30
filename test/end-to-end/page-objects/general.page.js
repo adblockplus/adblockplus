@@ -264,9 +264,20 @@ class GeneralPage extends BasePage
     return $("#dialog-title-predefined");
   }
 
+  get premiumButton()
+  {
+    return $("//a[@class='button premium-label']");
+  }
+
+
   get trackingWarning()
   {
     return $("#tracking-warning");
+  }
+
+  get upgradeButton()
+  {
+    return $("//a[@data-i18n='options_upgrade_button']");
   }
 
   get yesUseThisFLButton()
@@ -398,6 +409,12 @@ class GeneralPage extends BasePage
     await (await this.okGotItTrackingWarningButton).click();
   }
 
+  async clickUpgradeButton()
+  {
+    await this.waitForEnabledThenClick(this.
+      upgradeButton);
+  }
+
   async clickYesUseThisFLButton()
   {
     await this.waitForEnabledThenClick(this.yesUseThisFLButton);
@@ -492,7 +509,7 @@ class GeneralPage extends BasePage
   async isBlockCookieWarningsCheckboxSelected()
   {
     return await (await this.blockCookieWarningsCheckbox).
-      getAttribute("aria-checked") === "true";
+      getAttribute("aria-checked") == "true";
   }
 
   async isBlockCookieWarningsTooltipTextDisplayed(reverseOption = false)
@@ -611,7 +628,7 @@ class GeneralPage extends BasePage
   async isOnlyAllowAdsWithoutTrackingCheckboxEnabled()
   {
     return await (await this.onlyAllowAdsWithoutTrackingCheckbox).
-    getAttribute("aria-disabled") === "false";
+    getAttribute("aria-disabled") == "false";
   }
 
   async isOnlyAllowAdsWithoutTrackingCheckboxSelected(reverse = false)
@@ -620,6 +637,11 @@ class GeneralPage extends BasePage
       waitForEnabled({timeout: 3000});
     return await this.waitForSelectedNoError(this.
       onlyAllowAdsWithoutTrackingCheckbox, reverse);
+  }
+
+  async isPremiumButtonDisplayed()
+  {
+    return await (await this.premiumButton).isDisplayed();
   }
 
   async isTrackingWarningDisplayed()
@@ -633,9 +655,21 @@ class GeneralPage extends BasePage
       trackingWarning, true);
   }
 
+  async isUpgradeButtonDisplayed(timeout)
+  {
+    return await this.waitForDisplayedNoError(
+      this.upgradeButton, false, timeout);
+  }
+
+  async switchToAACriteriaTab()
+  {
+    await this.switchToTab(/https:\/\/adblockplus\.org\/en\/acceptable-ads#criteria.*/);
+  }
+
   async switchToAAInfoTab()
   {
-    await this.switchToTab("Allowing acceptable ads in Adblock Plus");
+    await this.switchToTab("https://adblockplus.org/acceptable-" +
+      "ads#privacy-friendly-acceptable-ads");
   }
 
   async switchToInstalledTab()

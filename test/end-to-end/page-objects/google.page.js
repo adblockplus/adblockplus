@@ -72,7 +72,7 @@ class GooglePage extends BasePage
   {
     await this.waitForEnabledThenClick(this.searchBox);
     await (await this.searchBox).clearValue();
-    await this.browser.keys(text);
+    await browser.keys(text);
     await browser.keys("Enter");
   }
 }

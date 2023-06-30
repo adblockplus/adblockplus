@@ -20,7 +20,7 @@
 module.exports =
 {
   aaCriteriaUrl: "https://adblockplus.org/en/acceptable-ads#criteria?link=acceptable_ads_criteria&lang=en-",
-  aaLearnMoreUrl: "https://adblockplus.org/en/acceptable-ads#criteria?link=acceptable_ads_criteria&lang=",
+  aaLearnMoreUrl: "https://adblockplus.org/acceptable-ads#privacy-friendly-acceptable-ads",
   aaSurveyUrl: "https://adblockplus.org/acceptable-ads-survey",
   addonsUrl: /https:\/\/addons.mozilla.org\/.*firefox\/addon\/adblock-plus/,
   allowlistingLearnMoreUrl: "https://adblockplus.org/en/faq_basics#disable?link=allowlist&lang=en-",

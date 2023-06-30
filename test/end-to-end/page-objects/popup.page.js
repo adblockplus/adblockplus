@@ -84,7 +84,7 @@ class PopupPage extends BasePage
 
   async getNotificationBorderColor()
   {
-    return this.browser.executeScript("return window.getComputedStyle" +
+    return browser.executeScript("return window.getComputedStyle" +
       "(document.querySelector('#notification .content'),':before')." +
       "getPropertyValue('border-top-color')", []);
   }

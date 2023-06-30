@@ -18,7 +18,7 @@
 "use strict";
 
 const {beforeSequence, getCurrentDate, globalRetriesNumber} =
-  require("../helpers");
+       require("../helpers");
 const {expect} = require("chai");
 const IssueReportPage = require("../page-objects/issueReport.page");
 const IssueReporterPage = require("../page-objects/issueReporter.page");
@@ -26,7 +26,7 @@ const dataIssueReporter = require("../test-data/data-issue-reporter");
 let globalOrigin;
 let lastTest = false;
 
-describe.skip("test issue reporter", function()
+describe("test issue reporter", function()
 {
   this.retries(globalRetriesNumber);
 
@@ -37,7 +37,7 @@ describe.skip("test issue reporter", function()
 
   afterEach(async function()
   {
-    if (lastTest == false)
+    if (lastTest === false)
     {
       await browser.reloadSession();
       globalOrigin = await beforeSequence();

@@ -97,7 +97,7 @@ class AllowlistedWebsitesPage extends BasePage
   async setAllowlistingTextboxValue(value)
   {
     await (await this.allowlistingTextbox).click();
-    await this.browser.keys(value);
+    await browser.keys(value);
   }
 
   async switchToABPFAQTab()

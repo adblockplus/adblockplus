@@ -60,7 +60,7 @@ describe("test options page links", function()
     const generalPage = new GeneralPage(browser);
     await generalPage.init();
     await generalPage.clickAcceptableAdsCriteriaLink();
-    await generalPage.switchToAAInfoTab();
+    await generalPage.switchToAACriteriaTab();
     expect(await generalPage.getCurrentUrl()).to.include(
       dataLinks.aaCriteriaUrl);
   });

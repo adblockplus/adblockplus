@@ -9,6 +9,7 @@
 /skin/*.css
 /allure-report/
 /test/end-to-end/allure-results/
+/test/end-to-end/lambda_api.log
 
 # generated test coverage
 coverage/
@@ -22,5 +23,7 @@ coverage/
 /adblockpluschrome/.last_ui_build
 /adblockpluschrome/adblockpluschrome-*.zip
 /adblockpluschrome/adblockplusfirefox-*.xpi
+/adblockpluschrome/adblockplus-chrome-*.zip
+/adblockpluschrome/adblockplus-firefox-*.xpi
 /adblockpluschrome/adblockplus-*.tar.gz
 /adblockpluschrome/dist/

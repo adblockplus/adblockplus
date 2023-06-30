@@ -29,7 +29,8 @@ class IssueReporterPage extends BasePage
 
   async init(origin, tabId)
   {
-    await this.browser.newWindow(`${origin}/issue-reporter.html?${tabId}`);
+    await browser.newWindow(`${origin}/issue-reporter.html?${tabId}`);
+    await browser.url(`${origin}/issue-reporter.html?${tabId}`);
     await (await this.cancelButton).waitForExist({timeout: 10000});
   }
 
@@ -195,9 +196,9 @@ class IssueReporterPage extends BasePage
 
   async clickReportSavedLink()
   {
-    await this.browser.switchToFrame(await this.sendReportIFrame);
+    await browser.switchToFrame(await this.sendReportIFrame);
     await this.waitForEnabledThenClick(this.reportSavedLink);
-    await this.browser.switchToParentFrame();
+    await browser.switchToParentFrame();
   }
 
   async clickSendReportButton()
@@ -218,10 +219,10 @@ class IssueReporterPage extends BasePage
 
   async getReportSavedText()
   {
-    await this.browser.switchToFrame(await this.sendReportIFrame);
+    await browser.switchToFrame(await this.sendReportIFrame);
     const savedText = await (await
     this.reportSavedText).getText();
-    await this.browser.switchToParentFrame();
+    await browser.switchToParentFrame();
     return savedText;
   }
 
@@ -320,13 +321,13 @@ class IssueReporterPage extends BasePage
   async typeTextToCommentTextbox(text)
   {
     await (await this.commentTextbox).click();
-    await this.browser.keys(text);
+    await browser.keys(text);
   }
 
   async typeTextToEmailTextbox(text)
   {
     await (await this.emailTextbox).click();
-    await this.browser.keys(text);
+    await browser.keys(text);
   }
 }
 
