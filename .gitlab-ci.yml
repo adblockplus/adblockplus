@@ -394,6 +394,11 @@ uitests:all:
   extends: .uitests
   variables:
     SUITE: all
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+      when: always
+    - when: manual
+      allow_failure: true
 
 uitests:e2e:
   extends: .uitests
@@ -409,11 +414,9 @@ uitests:smoke:
   extends: .uitests
   variables:
     SUITE: smoke
-
-uitests:all:scheduled:
-  extends: .uitests
-  variables:
-    SUITE: all
   rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - if: $CI_COMMIT_BRANCH == "next" || $CI_COMMIT_BRANCH == "master"
       when: always
+    - when: manual
+      allow_failure: true
+    
