@@ -48,12 +48,12 @@ async function processResponse(response: Response): Promise<void> {
   }
 
   // If the server responded with anything else, we assume it's a command.
-  void response
-    .json()
-    .then((command) => executeIPMCommand(command))
-    .catch((error) =>
-      logError("[Telemetry]: Error parsing IPM response.", error)
-    );
+  try {
+    const command = JSON.parse(body);
+    executeIPMCommand(command);
+  } catch (error) {
+    logError("[Telemetry]: Error parsing IPM response.", error);
+  }
 }
 
 /**
