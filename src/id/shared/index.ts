@@ -15,26 +15,4 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { Prefs } from "../../../adblockpluschrome/lib/prefs";
-import { getUUID } from "../shared";
-
-const installationIdStorageKey = "installation_id";
-
-/**
- * Returns a unique id for this installation. Will stay the same until the
- * extension gets uninstalled or re-installed.
- *
- * @returns The installation id
- */
-export async function getInstallationId(): Promise<string> {
-  await Prefs.untilLoaded;
-
-  let id = Prefs.get(installationIdStorageKey);
-
-  if (id === "") {
-    id = getUUID();
-    Prefs.set(installationIdStorageKey, id);
-  }
-
-  return id;
-}
+export * from "./uuid";

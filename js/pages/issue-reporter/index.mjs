@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import {getUUID} from "../../../src/id/background/index.ts";
+import {getUUID} from "../../../src/id/shared/index.ts";
 import {convertDoclinks} from "../../common";
 import {$, asIndentedString} from "../../dom";
 import {initI18n, setElementLinks} from "../../i18n";
