@@ -101,6 +101,11 @@ class GeneralPage extends BasePage
     return $("//li[@aria-label='Block cookie warnings']/io-popout/div/div/p");
   }
 
+  get blockMoreDistractionsCheckbox()
+  {
+    return $("//li[@aria-label='Block more distractions']/button");
+  }
+
   get deutschPlusEnglishListItem()
   {
     return $("//li[contains(@role, 'option')" +
@@ -335,6 +340,12 @@ class GeneralPage extends BasePage
       blockCookieWarningsTooltipIcon);
   }
 
+  async clickBlockMoreDistractionsCheckbox()
+  {
+    await this.waitForEnabledThenClick(this.
+      blockMoreDistractionsCheckbox);
+  }
+
   async clickBlockPushNotificationsCheckbox()
   {
     await (await this.blockPushNotificationsCheckbox).click();
@@ -516,6 +527,15 @@ class GeneralPage extends BasePage
   {
     return await this.waitForDisplayedNoError(this.
       blockCookieWarningsTooltipText, reverseOption);
+  }
+
+  async isBlockMoreDistractionsCheckboxSelected(reverse = false)
+  {
+    await (await this.blockMoreDistractionsCheckbox).
+      waitForEnabled({timeout: 3000});
+    return await this.waitUntilAttributeValueIs(
+      this.blockMoreDistractionsCheckbox, "aria-checked", "true",
+      3000, reverse);
   }
 
   async isBlockPushNotificationsCheckboxSelected(reverse = false)

@@ -341,6 +341,11 @@ class AdvancedPage extends BasePage
     return $("//li[@aria-label='Liste FR+EasyList']/div/io-toggle/button");
   }
 
+  get premiumDistractionControlFL()
+  {
+    return $("//li[@aria-label='Premium - Distraction Control']");
+  }
+
   get showAdblockPlusPanelCheckbox()
   {
     return $("//li[@data-pref='show_devtools_panel']/button");
@@ -892,6 +897,12 @@ class AdvancedPage extends BasePage
     return await this.waitUntilAttributeValueIs(
       this.listeFREasyListFLStatusToggle, "aria-checked",
       expectedValue, timeoutVal);
+  }
+
+  async isPremiumDistractionControlFLDisplayed(reverseOption = false)
+  {
+    return await this.waitForDisplayedNoError(this.premiumDistractionControlFL,
+                                              reverseOption);
   }
 
   async isShowAdblockPlusPanelCheckboxSelected(expectedValue = "true",

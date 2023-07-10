@@ -28,6 +28,16 @@ class TestPages extends BasePage
     this.browser = browser;
   }
 
+  get autoplayVideosBlockingFilterId()
+  {
+    return $("#autoplayvideo-blocking-filter");
+  }
+
+  get autoplayVideosHidingFilterId()
+  {
+    return $("#product-video-container");
+  }
+
   get banneradsFilter()
   {
     return $("#bannerads-blocking-filter");
@@ -63,6 +73,26 @@ class TestPages extends BasePage
     return $("p*=This should be hidden by a snippet");
   }
 
+  get newsletterPopupsBlockingFilterId()
+  {
+    return $("#newsletter-blocking-filter");
+  }
+
+  get newsletterPopupsHidingFilterId()
+  {
+    return $("#newsletterMsg");
+  }
+
+  get pushNotificationsBlockingFilterId()
+  {
+    return $("#pushnotifications-blocking-filter");
+  }
+
+  get pushNotificationsHidingFilterId()
+  {
+    return $("#pushnotifications-hiding-filter");
+  }
+
   get searchAdDiv()
   {
     return $("#search-ad");
@@ -96,6 +126,16 @@ class TestPages extends BasePage
   get subscriptionHidingId()
   {
     return $("#subscription-hiding-id");
+  }
+
+  get surveysBlockingFilterId()
+  {
+    return $("#survey-blocking-filter");
+  }
+
+  get surveysHidingFilterId()
+  {
+    return $("#survey-feedback-to-left");
   }
 
   get zergmodDiv()
@@ -170,6 +210,16 @@ class TestPages extends BasePage
     return await (await this.zergmodDiv).getText();
   }
 
+  async isAutoplayVideosBlockingFilterIdDisplayed()
+  {
+    return await (await this.autoplayVideosBlockingFilterId).isDisplayed();
+  }
+
+  async isAutoplayVideosHidingFilterIdDisplayed()
+  {
+    return await (await this.autoplayVideosHidingFilterId).isDisplayed();
+  }
+
   async isCustomHidingClassDisplayed()
   {
     return await (await this.customHidingClass).isDisplayed();
@@ -185,6 +235,26 @@ class TestPages extends BasePage
     return await (await this.hiddenBySnippetText).isDisplayed();
   }
 
+  async isNewsletterPopupsBlockingFilterIdDisplayed()
+  {
+    return await (await this.newsletterPopupsBlockingFilterId).isDisplayed();
+  }
+
+  async isNewsletterPopupsHidingFilterIdDisplayed()
+  {
+    return await (await this.newsletterPopupsHidingFilterId).isDisplayed();
+  }
+
+  async isPushNotificationsBlockingFilterIdDisplayed()
+  {
+    return await (await this.pushNotificationsBlockingFilterId).isDisplayed();
+  }
+
+  async isPushNotificationsHidingFilterIdDisplayed()
+  {
+    return await (await this.pushNotificationsHidingFilterId).isDisplayed();
+  }
+
   async isSearchAdDivDisplayed()
   {
     return await (await this.searchAdDiv).isDisplayed();
@@ -198,6 +268,16 @@ class TestPages extends BasePage
   async isSubscriptionHidingIdDisplayed()
   {
     return await (await this.subscriptionHidingId).isDisplayed();
+  }
+
+  async isSurveysBlockingFilterIdDisplayed()
+  {
+    return await (await this.surveysBlockingFilterId).isDisplayed();
+  }
+
+  async isSurveysHidingFilterIdDisplayed()
+  {
+    return await (await this.surveysHidingFilterId).isDisplayed();
   }
 
   async isSnippetFilterDivDisplayed()
