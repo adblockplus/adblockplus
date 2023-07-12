@@ -1,25 +1,21 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "target": "es2016",
-    "typeRoots": ["node_modules/@types"],
-    "module": "es2020",
-    "allowUnreachableCode":false,
     "allowJs": true,
-    "outDir": "./dist",
-    "moduleResolution": "node",
-    "removeComments": true,
+    "allowUnreachableCode":false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "module": "es2020",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "skipLibCheck": true,
     "strict": true,
-    "skipLibCheck": true
+    "target": "es2016",
+    "typeRoots": [
+      "node_modules/@types"
+    ]
   },
-  "include":[
-    "js/**/*",
-    "lib/**/*",
-    "ext/**/*",
-    "build/**/*",
-    "mocks/**/*",
+  "include": [
     "src/**/*"
- ],
- "compileOnSave":false
+  ]
 }

@@ -59,12 +59,6 @@ argumentParser.addArgument("--partial", {
   help: "A partial build skips the build steps icons, rules and UI."
 });
 
-argumentParser.addArgument("--type-checking", {
-  choices: ["false", "true"],
-  defaultValue: "false",
-  help: "Runs type checks to validate types in source code."
-});
-
 let args = argumentParser.parseKnownArgs()[0];
 
 let targetDir = `devenv.${args.target}`;
@@ -128,8 +122,7 @@ async function getBuildSteps(options)
       webpackInfo: options.webpackInfo,
       addonName,
       addonVersion: options.version,
-      sourceMapType: options.sourceMapType,
-      skipTypeChecks: args["type_checking"] === "false"
+      sourceMapType: options.sourceMapType
     })
   );
 

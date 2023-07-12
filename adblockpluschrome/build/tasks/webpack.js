@@ -25,8 +25,7 @@ export default function webpack({
   webpackInfo,
   addonName,
   addonVersion,
-  sourceMapType,
-  skipTypeChecks
+  sourceMapType
 })
 {
   return merge(webpackInfo.bundles.map(bundle =>
@@ -62,7 +61,11 @@ export default function webpack({
                       loader: "ts-loader",
                       options: {
                         onlyCompileBundledFiles: true,
-                        transpileOnly: skipTypeChecks
+                        // We're running type checks separately due to memory
+                        // and performance problems when running them while
+                        // building the extension
+                        // https://gitlab.com/adblockinc/ext/adblockplus/adblockplusui/-/issues/1441
+                        transpileOnly: true
                       }
                     }
                   ]

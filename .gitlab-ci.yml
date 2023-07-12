@@ -66,16 +66,16 @@ build:
     - npm install
     # Create extension builds
     - cd adblockpluschrome
-    - npx gulp build -t chrome --type-checking true --unhandled-rejections=strict
-    - npx gulp build -t firefox --type-checking true --unhandled-rejections=strict
+    - npx gulp build -t chrome --unhandled-rejections=strict
+    - npx gulp build -t firefox --unhandled-rejections=strict
     - npx gulp source
     # Attach commit hash to build files
     - mv adblockpluschrome-*.zip adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
     - mv adblockplusfirefox-*.xpi adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
     - mv adblockplus-*.tar.gz adblockplus-${CI_COMMIT_SHORT_SHA}.tar.gz
     # Create Manifest v3 extension builds
-    - npx gulp build -t chrome -m 3 --type-checking true --unhandled-rejections=strict
-    - npx gulp build -t firefox -m 3 --type-checking true --unhandled-rejections=strict
+    - npx gulp build -t chrome -m 3 --unhandled-rejections=strict
+    - npx gulp build -t firefox -m 3 --unhandled-rejections=strict
     # Attach commit hash to build files
     - mv adblockpluschrome-*.zip adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
     - mv adblockplusfirefox-*.xpi adblockplus-firefox-${CI_COMMIT_SHORT_SHA}-mv3.xpi

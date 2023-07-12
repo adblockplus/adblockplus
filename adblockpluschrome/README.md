@@ -25,8 +25,6 @@ Manifest version 2.
 
 You can pass the `--partial true` argument to run a build that will not re-build the icons, the rules and the UI. This is useful if your new changes do not touch any of the beforementioned parts of the extension, and you can benefit from the faster build time. Note that you must have a run a full build once before you can succesfully run a partial build.
 
-You can pass the `--type-checking true` argument to run type checking for TypeScript files. This leads to a longer build time, but is useful in cases where you have changes inside of TypeScript files, or need re-checking the types.
-
 ### Development environment
 
 To simplify the process of testing your changes you can create an unpacked
