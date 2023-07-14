@@ -20,8 +20,8 @@ import {
   Command,
   CommandActor,
   CommandName,
-  Content,
-  commandLibraryVersion
+  CommandVersion,
+  Content
 } from "./command-library.types";
 import * as logger from "../../logger/background";
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";
@@ -86,8 +86,8 @@ export function setCommandActor(
  */
 function canProcessCommand(command: Command): boolean {
   return (
-    command.version === commandLibraryVersion &&
-    knownCommandsList.includes(command.command_name)
+    knownCommandsList.includes(command.command_name) &&
+    command.version === CommandVersion[command.command_name]
   );
 }
 
