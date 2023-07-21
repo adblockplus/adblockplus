@@ -61,7 +61,7 @@ argumentParser.addArgument("--partial", {
 
 let args = argumentParser.parseKnownArgs()[0];
 
-let targetDir = `devenv.${args.target}`;
+let targetDir = `../dist/devenv/${args.target}`;
 
 const buildTasks = [
   tasks.buildUI,
@@ -176,9 +176,9 @@ async function getBuildOptions(isDevenv, isSource)
         opts.version.concat(".", await gitUtils.getBuildnum());
     }
 
-    opts.output = zip.dest(
-      `${opts.basename}${opts.target}-${opts.version}${opts.archiveType}`
-    );
+    const filename =
+      `${opts.basename}${opts.target}-${opts.version}${opts.archiveType}`;
+    opts.output = zip.dest(`../dist/release/${filename}`);
   }
 
   opts.manifest = await tasks.getManifestContent({
@@ -210,7 +210,14 @@ async function buildPacked()
 
 function cleanDir()
 {
-  return del(targetDir);
+  // We need to enable del to delete the dist directory, which is located
+  // outside of this project and therefore potentially dangerous. So in addition
+  // to using its force flag, we're also checking that we're not deleting any
+  // non-dist directory to prevent accidents that may occur during development.
+  if (!/\/dist\//.test(targetDir))
+    throw new Error("Attempted deletion of non-dist directory");
+
+  return del(targetDir, {force: true});
 }
 
 export let devenv = gulp.series(...devenvTasks);
@@ -220,31 +227,7 @@ export let build = gulp.series(...buildTasks);
 export async function source()
 {
   let options = await getBuildOptions(false, true);
-  return tasks.sourceDistribution(`${options.basename}-${options.version}`);
-}
-
-function startWatch()
-{
-  gulp.watch(
-    [
-      "*.js",
-      "*.html",
-      "lib/*",
-      "ext/*",
-      "../*.js",
-      "!gulpfile.js"
-    ],
-    {
-      ignoreInitial: false
-    },
-    gulp.series(
-      cleanDir,
-      buildDevenv
-    )
+  return tasks.sourceDistribution(
+    `../dist/release/${options.basename}-${options.version}`
   );
 }
-
-export let watch = gulp.series(
-  tasks.buildUI,
-  startWatch
-);

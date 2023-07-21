@@ -98,7 +98,7 @@ exports.config = {
       const extensionPath = helpers.getChromiumExtensionPath();
       if (!fs.existsSync(extensionPath))
       {
-        console.error("Extension 'adblockpluschrome/devenv.chrome' does not exist");
+        console.error("Extension 'dist/devenv/chrome' does not exist");
         process.exit(1);
       }
     }
@@ -108,7 +108,7 @@ exports.config = {
       const extensionPath = helpers.getFirefoxExtensionPath();
       if (!fs.existsSync(extensionPath))
       {
-        console.error("Extension 'adblockpluschrome/*.xpi' does not exist");
+        console.error("Extension 'dist/release/*.xpi' does not exist");
         process.exit(1);
       }
     }

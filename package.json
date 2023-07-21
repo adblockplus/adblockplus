@@ -8,7 +8,9 @@
   },
   "scripts": {
     "$": "npm-dollar",
-    "bundle": "npm run $ bundle",
+    "build:dev": "cd ./adblockpluschrome/ && npx gulp devenv -t",
+    "build:release": "cd ./adblockpluschrome/ && npx gulp build -c release -t",
+    "build:source": "cd ./adblockpluschrome/ && npx gulp source",
     "dist": "npm run $ create.dist",
     "lint": "npm run $ lint",
     "eslint": "eslint --ext .ts,.js,.mjs,.cjs,.js.tmpl --ignore-path .gitignore ./",
@@ -16,9 +18,8 @@
     "eslint:legacy": "eslint --ext .js,.mjs --ignore-path .gitignore --ignore-pattern /adblockpluschrome/ ./",
     "eslint:adblockpluschrome": "eslint --ext .js,.cjs,.js.tmpl --ignore-path .gitignore adblockpluschrome/",
     "prettier": "prettier ./**/*.ts ./**/*.md ./**/*.scss ./**/*.html ./**/*.json --write",
-    "start": "http-server ./adblockpluschrome/devenv.local/",
+    "start": "http-server ./dist/devenv/local/",
     "test": "npm run $ test",
-    "watch": "npm run $ watch",
     "csv-export": "node build/locale-sync/csv/main.js -e",
     "csv-import": "node build/locale-sync/csv/main.js -i && node build/locale-sync/normalize.js",
     "test:cleanup-reports": "rm -r allure-report test/end-to-end/allure-results",
@@ -55,11 +56,7 @@
         "icons": "node build/icons-generation/index.js",
         "rules": "rules adblockplus",
         "ui": "$ bundle"
-      },
-      "mocks": [
-        "cd adblockpluschrome",
-        "npx gulp devenv -t local"
-      ]
+      }
     },
     "crowdin": {
       "download-translations": [
@@ -94,10 +91,6 @@
         "js": "mocha \"./test/unit/**/*.spec.js\"",
         "ts": "jest"
       }
-    },
-    "watch": {
-      "bundle": "watch 'npm run bundle' ./css ./js",
-      "test": "watch 'npm run test' ./css ./js"
     },
     "xtm": {
       "create": "node build/locale-sync/xtm --create",
@@ -166,7 +159,6 @@
     "stylelint": "14.9.1",
     "stylelint-config-eyeo": "1.0.3",
     "svgo": "1.3.2",
-    "watch": "1.0.2",
     "wdio-chromedriver-service": "7.3.2",
     "wdio-geckodriver-service": "2.1.1",
     "wdio-lambdatest-service": "1.0.16",

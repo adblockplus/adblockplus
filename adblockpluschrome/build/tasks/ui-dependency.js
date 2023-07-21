@@ -24,6 +24,8 @@ import {exec} from "child_process";
 import {Readable} from "stream";
 import Vinyl from "vinyl";
 
+const lastBuildTimeFilePath = "../dist/tmp/.last_ui_build";
+
 async function getMTime(file)
 {
   return (await fs.promises.stat(file)).mtimeMs;
@@ -39,7 +41,7 @@ function createBuild()
 async function mustBuildUI(lastUIBuildTime)
 {
   let matches = await (promisify(glob))(
-    "../{build/icons-generation,css,vendor}/**"
+    "../{build/icons-generation,css}/**"
   );
   matches.push(
     "../package.json",
@@ -60,14 +62,14 @@ async function mustBuildUI(lastUIBuildTime)
 
 function updateLastUIBuildTime()
 {
-  return fs.promises.utimes(".last_ui_build", new Date(), new Date());
+  return fs.promises.utimes(lastBuildTimeFilePath, new Date(), new Date());
 }
 
 function createLastUIBuildTime()
 {
   return new Readable.from([
     new Vinyl({
-      path: ".last_ui_build",
+      path: lastBuildTimeFilePath,
       contents: Buffer.from("")
     })
   ]).pipe(gulp.dest("."));
@@ -79,7 +81,7 @@ export async function buildUI(cb)
 
   try
   {
-    lastUIBuildTime = await getMTime(".last_ui_build");
+    lastUIBuildTime = await getMTime(lastBuildTimeFilePath);
   }
   catch (e)
   {

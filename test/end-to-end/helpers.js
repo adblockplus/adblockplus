@@ -99,7 +99,7 @@ function getChromiumExtensionPath()
   }
   else
   {
-    const extensionPath = "../../adblockpluschrome/devenv.chrome";
+    const extensionPath = "../../dist/devenv/chrome";
     chromeExtension = extensionPath;
   }
   return chromeExtension;
@@ -119,12 +119,12 @@ function getFirefoxExtensionPath()
   }
   else
   {
-    const files = fs.readdirSync("../../adblockpluschrome");
+    const files = fs.readdirSync("../../dist/release");
     files.forEach(async(name) =>
     {
       if (/.*\.xpi/.test(name))
       {
-        abpXpiFileName = "../../adblockpluschrome/" + name;
+        abpXpiFileName = "../../dist/release/" + name;
       }
     });
   }

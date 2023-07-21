@@ -65,28 +65,27 @@ build:
     # Update dependencies
     - npm install
     # Create extension builds
-    - cd adblockpluschrome
-    - npx gulp build -t chrome --unhandled-rejections=strict
-    - npx gulp build -t firefox --unhandled-rejections=strict
-    - npx gulp source
+    - npm run build:release chrome -- --unhandled-rejections=strict
+    - npm run build:release firefox -- --unhandled-rejections=strict
+    - npm run build:source
     # Attach commit hash to build files
-    - mv adblockpluschrome-*.zip adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
-    - mv adblockplusfirefox-*.xpi adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
-    - mv adblockplus-*.tar.gz adblockplus-${CI_COMMIT_SHORT_SHA}.tar.gz
+    - mv dist/release/adblockplus{chrome-*,-chrome-${CI_COMMIT_SHORT_SHA}}.zip
+    - mv dist/release/adblockplus{firefox-*,-firefox-${CI_COMMIT_SHORT_SHA}}.xpi
+    - mv dist/release/adblockplus-{*,${CI_COMMIT_SHORT_SHA}}.tar.gz
     # Create Manifest v3 extension builds
-    - npx gulp build -t chrome -m 3 --unhandled-rejections=strict
-    - npx gulp build -t firefox -m 3 --unhandled-rejections=strict
+    - npm run build:release chrome -- -m 3 --unhandled-rejections=strict
+    - npm run build:release firefox -- -m 3 --unhandled-rejections=strict
     # Attach commit hash to build files
-    - mv adblockpluschrome-*.zip adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
-    - mv adblockplusfirefox-*.xpi adblockplus-firefox-${CI_COMMIT_SHORT_SHA}-mv3.xpi
+    - mv dist/release/adblockplus{chrome-*,-chrome-${CI_COMMIT_SHORT_SHA}-mv3}.zip
+    - mv dist/release/adblockplus{firefox-*,-firefox-${CI_COMMIT_SHORT_SHA}-mv3}.xpi
   artifacts:
     name: "adblockplus-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHORT_SHA}"
     paths:
-      - adblockpluschrome/adblockplus-${CI_COMMIT_SHORT_SHA}.tar.gz
-      - adblockpluschrome/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
-      - adblockpluschrome/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
-      - adblockpluschrome/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
-      - adblockpluschrome/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}-mv3.xpi
+      - dist/release/adblockplus-${CI_COMMIT_SHORT_SHA}.tar.gz
+      - dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
+      - dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
+      - dist/release/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
+      - dist/release/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}-mv3.xpi
 
 # ################################################################################
 # # Check filesizes
@@ -96,7 +95,7 @@ build:
   image: alpine:latest
   stage: checkfilesizes
   script:
-   - unzip -d unpacked-extension/ adblockpluschrome/$EXTENSION
+   - unzip -d unpacked-extension/ dist/release/$EXTENSION
    - cd unpacked-extension/
    - if [ $(find . -type f -name '*.js' -size +4000k | wc -l) -gt 0 ]; then
        echo 'Some extension files are bigger than 4 MB:' &&
@@ -272,7 +271,7 @@ downloadxtm:
     - apk add git
     # Clone the latest master branch of the testpages project
     - git clone https://gitlab.com/eyeo/adblockplus/abc/testpages.adblockplus.org.git
-    - cp adblockpluschrome/$EXTENSION testpages.adblockplus.org
+    - cp dist/release/$EXTENSION testpages.adblockplus.org
   script:
     - cd testpages.adblockplus.org &&
       docker build -t testpages --build-arg EXTENSION_FILE=$EXTENSION . &&
@@ -354,8 +353,8 @@ testpages:MV2:firefox:oldest:
 .uitests:
   stage: uitests
   variables:
-    CHROME_BUILD: adblockpluschrome/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
-    FIREFOX_BUILD: adblockpluschrome/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
+    CHROME_BUILD: dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
+    FIREFOX_BUILD: dist/release/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
     BUILD_NUMBER: ${CI_COMMIT_SHORT_SHA}
     LT_USERNAME: $LT_USERNAME
     LT_ACCESS_KEY: $LT_ACCESS_KEY

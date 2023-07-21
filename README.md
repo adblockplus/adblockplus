@@ -125,8 +125,8 @@ can be run together with other tests via `npm test` or separately via
 ### End-to-end testing
 
 The `./test/end-to-end/tests` folder contains various end-to-end tests. After
-generating the [unpacked development build][abp-webext-readme-devenv] of the
-extension for Chrome, and [packed .xpi build][abp-webext-readme-build]
+generating the [unpacked development build](#building-the-extension) of the
+extension for Chrome, and [packed .xpi build](#building-the-extension)
 of the extension for Firefox, the tests can be executed in the latest stable
 Chrome and Firefox browsers by running `npm run test:end-to-end` - this will
 cleanup previously created allure results, if there are any. To run the tests
@@ -155,10 +155,58 @@ included when you install `npm`.
 ### Building the extension
 
 In order to build the extension you need to first
-[update its dependencies](#updating-the-dependencies). You can then navigate
-to the adblockpluschrome/ folder and run
-[the appropriate command][abp-webext-readme-build] for the type of build you'd
-like to generate.
+[update its dependencies](#updating-the-dependencies). You can then run the
+following command for the type of build you'd like to generate:
+
+```sh
+npm run build:{dev|release} {chrome|firefox|local} [-- <options>]
+```
+
+or
+
+```sh
+npm run build:source
+```
+
+Targets:
+- **chrome**: Chromium-based browsers
+- **firefox**: Firefox
+- **local**: [Local test environment](#testing)
+
+**`build:dev`:** Creates unpacked extension in _dist/devenv/\<target\>/_. It
+can be loaded under _chrome://extensions/_ in Chromium-based browsers, and under
+_about:debugging_ in Firefox.
+
+**`build:release`:** Creates the following extension build files in
+_dist/release/_ that can be published to the various extension stores:
+
+- adblockpluschrome-\*.zip
+- adblockplusfirefox-\*.xpi
+
+**`build:source`:** Creates the following source archive file in _dist/release/_
+that can be provided to extension stores for review purposes:
+
+- adblockplus-\*.tar.gz
+
+#### Options
+
+**`--config <*.js file path>`:** Specify a path to a new configuration file
+relative to _adblockpluschrome/gulpfile.js_ (see examples in
+_adblockpluschrome/build/config/_).
+
+**`--manifest-path <*.json file path>`:** Specify a path to a new
+_manifest.json_ file relative to _adblockpluschrome/gulpfile.js_ (see examples
+in _adblockpluschrome/build/tasks/manifest.js_).
+
+**`--manifest-version 3` or `-m 3`:** Generate a build that's compatible with
+WebExtensions Manifest version 3. If omitted, it will generate a build for
+Manifest version 2.
+
+**`--partial true`:** Run a build that will not re-build the icons, the rules
+and the UI. This is useful if your new changes do not touch any of the
+beforementioned parts of the extension, and you can benefit from the faster
+build time. Note that you must have a run a full build once before you can
+succesfully run a partial build.
 
 #### Updating the dependencies
 
@@ -174,9 +222,9 @@ e.g. after checking out a new revision.
 Various files need to be generated before using the UI. When building the UI
 for inclusion in the extension, this is achieved using `npm run dist`.
 
-For usage [in the test environment](#testing), you can run
-`npm run $ create.mocks` to generate the various bundles for all
-[UI elements](#ui-elements).
+For usage [in the test environment](#testing), run the
+[`build:dev`](#building-the-extension) script to generate the various bundles
+for all [UI elements](#ui-elements).
 
 Beyond that, this repository contains [various utilities][wiki-utils] that we
 rely on across our development process.
@@ -203,8 +251,6 @@ This project follows the typical GitLab process:
 [abp-ui]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/
 [abp-ui-nightlies]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/pipelines?scope=branches
 [abp-ui-tags]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/tags
-[abp-webext-readme-build]: /adblockpluschrome/README.md#building
-[abp-webext-readme-devenv]: /adblockpluschrome/README.md#development-environment
 [abp-webext-releases]: https://github.com/adblockplus/adblockpluschrome/releases
 [adblockinc-rules]: https://gitlab.com/adblockinc/ext/rules
 [badge-pipeline-image]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/badges/master/pipeline.svg

@@ -18,12 +18,4 @@ coverage/
 .DS_Store
 
 # adblockpluschrome
-/adblockpluschrome/devenv.*/
 /adblockpluschrome/node_modules/
-/adblockpluschrome/.last_ui_build
-/adblockpluschrome/adblockpluschrome-*.zip
-/adblockpluschrome/adblockplusfirefox-*.xpi
-/adblockpluschrome/adblockplus-chrome-*.zip
-/adblockpluschrome/adblockplus-firefox-*.xpi
-/adblockpluschrome/adblockplus-*.tar.gz
-/adblockpluschrome/dist/

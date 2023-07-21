@@ -18,6 +18,9 @@
 export default {
   extends: "base",
   webpack: {
+    alias: {
+      info$: "info.gecko.js.tmpl"
+    },
     bundles: [
       {
         dest: "background.js",
