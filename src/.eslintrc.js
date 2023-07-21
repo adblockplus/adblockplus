@@ -1,7 +1,3 @@
-/* eslint-env node */
-
-"use strict";
-
 /**
  * NOTE: This file just points to the actual configuration file found in the
  * `eslint` directory. Do not make changes to this file directly, but instead
@@ -9,5 +5,5 @@
  */
 
 module.exports = {
-  extends: "./eslint/legacy.js"
+  extends: "../eslint/standard.js"
 };

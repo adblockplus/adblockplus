@@ -15,30 +15,4 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import api from "../../src/core/api/front/index.ts";
-import {convertDoclinks} from "../common.mjs";
-import {$} from "../dom.mjs";
-import {initI18n} from "../i18n.mjs";
-
-import "../landing.mjs";
-
-api.app.getInfo().then((info) =>
-{
-  document.body.dataset.application = info.application;
-
-  api.doclinks.get(`${info.store}_store`).then((url) =>
-  {
-    $("#store-link").href = url;
-  });
-});
-
-function initOSReference(name, idx)
-{
-  const element = $(`#solution em[data-i18n-index="${idx}"]`);
-  element.classList.add("os", name);
-  element.title = browser.i18n.getMessage(`problem_os_${name}`);
-}
-
-convertDoclinks();
-initI18n();
-["windows", "mac"].forEach(initOSReference);
+export * from "./api.types";

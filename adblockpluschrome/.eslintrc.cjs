@@ -9,5 +9,5 @@
  */
 
 module.exports = {
-  extends: "./eslint/legacy.js"
+  extends: "../eslint/adblockpluschrome.js"
 };

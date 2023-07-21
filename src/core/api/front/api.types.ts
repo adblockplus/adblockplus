@@ -16,6 +16,7 @@
  */
 
 import Browser from "webextension-polyfill";
+import { PremiumActivateOptions } from "../shared";
 
 /**
  * Strings accepted for api.app.get's first prop
@@ -266,16 +267,6 @@ export type PrefsGetWhat =
   | "recommend_language_subscriptions"
   | "premium_manage_page_url"
   | "premium_upgrade_page_url";
-
-/**
- * Options for activating Premium license
- */
-export interface PremiumActivateOptions {
-  /**
-   * Premium user ID
-   */
-  userId: string;
-}
 
 /**
  * Options sent into subscription.get.

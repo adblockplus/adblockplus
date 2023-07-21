@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import api from "../../api/index.ts";
+import api from "../../../src/core/api/front/index.ts";
 import {getSourceAttribute} from "../../common.mjs";
 import {$, $$} from "../../dom.mjs";
 import {initI18n} from "../../i18n.mjs";

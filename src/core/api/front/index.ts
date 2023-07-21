@@ -52,7 +52,6 @@ export type {
   Port,
   PortEventListener,
   PrefsGetWhat,
-  PremiumActivateOptions,
   SendArgs,
   SendType,
   Store,

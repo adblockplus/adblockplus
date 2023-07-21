@@ -21,7 +21,7 @@ import { EventEmitter } from "../../../adblockpluschrome/lib/events";
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";
 import * as scheduledEmitter from "../../core/scheduled-event-emitter/background/scheduled-event-emitter";
 
-import { PremiumActivateOptions } from "../../../js/api";
+import { PremiumActivateOptions } from "../../core/api/shared";
 import { ScheduleType } from "../../core/scheduled-event-emitter/background/scheduled-event-emitter.types";
 import { EventEmitterCallback } from "../../polyfills/background";
 import { License, LicenseCheckPayload, PremiumState } from "./license.types";

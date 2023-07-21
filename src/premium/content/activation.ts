@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import api from "../../../js/api";
+import api from "../../core/api/front";
 
 import {
   PaymentAcknowledgedPayload,

@@ -11,6 +11,10 @@
     "bundle": "npm run $ bundle",
     "dist": "npm run $ create.dist",
     "lint": "npm run $ lint",
+    "eslint": "eslint --ext .ts,.js,.mjs,.cjs,.js.tmpl --ignore-path .gitignore ./",
+    "eslint:standard": "eslint --ignore-path .gitignore src/",
+    "eslint:legacy": "eslint --ext .js,.mjs --ignore-path .gitignore --ignore-pattern /adblockpluschrome/ ./",
+    "eslint:adblockpluschrome": "eslint --ext .js,.cjs,.js.tmpl --ignore-path .gitignore adblockpluschrome/",
     "prettier": "prettier ./**/*.ts ./**/*.md ./**/*.scss ./**/*.html ./**/*.json --write",
     "start": "http-server ./adblockpluschrome/devenv.local/",
     "test": "npm run $ test",
@@ -72,13 +76,9 @@
     ],
     "lint": {
       "css": "stylelint ./build/**/*.css ./css/*.scss ./skin/*.css ./src/**/*.css --ignore-path .gitignore",
-      "js": "eslint '*.js' './js/**/*.mjs' './lib/**/*.js' './ext/**/*.js' './build/**/*.js' './mocks/**/*.mjs' './test/**/*.js' './test/**/*.mjs' --no-eslintrc --config ./.eslintrc-legacy.js --ignore-path .gitignore",
-      "legacy": "eslint --ext .js,.cjs,.js.tmpl adblockpluschrome/*.js adblockpluschrome/lib/ adblockpluschrome/ext/ adblockpluschrome/build/ --ignore-path .gitignore",
-      "locale": "node build/locale-linter ./locale/**/*.json",
-      "ts": [
-        "eslint --ext .ts ./ --ignore-path .gitignore",
-        "tsc --noEmit"
-      ]
+      "js": "npm run eslint",
+      "ts": "tsc --noEmit",
+      "locale": "node build/locale-linter ./locale/**/*.json"
     },
     "optimize": {
       "gif": "gifsicle -o $1 $1",
@@ -92,7 +92,7 @@
     "test": {
       "unit": {
         "js": "mocha \"./test/unit/**/*.spec.js\"",
-        "ts": "jest && node ./scripts/printCoverageReportLink.js"
+        "ts": "jest"
       }
     },
     "watch": {

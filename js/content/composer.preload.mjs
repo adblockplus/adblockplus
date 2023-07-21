@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import api from "../api/index.ts";
+import api from "../../src/core/api/front/index.ts";
 
 // The page ID for the popup filter selection dialog (top frame only).
 let blockelementPopupId = null;

@@ -24,7 +24,7 @@ import {
   getRawItemTitle,
   loadLanguageNames
 } from "./titles.mjs";
-import api from "../../api/index.ts";
+import api from "../../../src/core/api/front/index.ts";
 import {
   convertDoclinks,
   getDoclink,

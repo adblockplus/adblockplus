@@ -3,10 +3,11 @@
 "use strict";
 
 /**
- * This is the ESLint configuration currently used for JavaScript files.
+ * This is the legacy ESLint configuration used for all files that are not
+ * in the `src` or `adblockpluschrome` directory.
  *
- * Eventually, we want to apply a new configuration which right now is only
- * used for TypeScript files and can be found at `.eslintrc.js`.
+ * Eventually, we will apply a new configuration which can be found
+ * at `standard.js`.
  */
 module.exports = {
   extends: "eslint-config-eyeo",

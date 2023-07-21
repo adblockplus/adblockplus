@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import * as api from "../../../js/api";
+import * as api from "../../core/api/front";
 import { Message, isMessage } from "../../polyfills/shared";
 import { ResizeMessage, ShowMessage } from "../shared";
 
