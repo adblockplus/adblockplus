@@ -20,6 +20,7 @@ import {convertDoclinks} from "../common.mjs";
 import {$} from "../dom.mjs";
 import {initI18n, setElementText, stripTagsUnsafe} from "../i18n.mjs";
 
+import "../../css/pages/day1.css";
 import "../landing.mjs";
 
 function initContact()

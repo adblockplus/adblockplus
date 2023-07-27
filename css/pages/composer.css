@@ -15,7 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-@import "../light.scss";
+@import "../../skin/fonts/font.css";
+@import "../light.css";
 
 *,
 *::before,

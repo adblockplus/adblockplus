@@ -62,22 +62,22 @@ io-highlighter[drawing] canvas
 
 io-highlighter .options .highlight
 {
-  background-image: url(icons/highlight.svg?off#off);
+  background-image: url(/skin/icons/highlight.svg?off#off);
 }
 
 io-highlighter[drawing="highlight"] .options .highlight
 {
-  background-image: url(icons/highlight.svg?on#on);
+  background-image: url(/skin/icons/highlight.svg?on#on);
 }
 
 io-highlighter .options .hide
 {
-  background-image: url(icons/hide.svg?off#off);
+  background-image: url(/skin/icons/hide.svg?off#off);
 }
 
 io-highlighter[drawing="hide"] .options .hide
 {
-  background-image: url(icons/hide.svg?on#on);
+  background-image: url(/skin/icons/hide.svg?on#on);
 }
 
 io-highlighter .options .highlight,

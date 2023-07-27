@@ -28,6 +28,7 @@ import {
   whenPageReady
 } from "./utils.mjs";
 
+import "../../../css/pages/popup.css";
 import "../../io-circle-toggle.mjs";
 import "./notifications.mjs";
 import "../../io-popup-footer.mjs";

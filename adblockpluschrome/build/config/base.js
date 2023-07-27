@@ -125,8 +125,7 @@ export default {
           "!skin/icons/toolbar/**",
           "!skin/icons/arrow.svg",
           "!skin/icons/logo/manifest/**",
-          "!skin/icons/mobile/**",
-          "!skin/mobile-options.css"
+          "!skin/icons/mobile/**"
         ]
       },
       {

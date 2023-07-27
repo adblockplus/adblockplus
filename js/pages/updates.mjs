@@ -22,6 +22,7 @@ import {convertDoclinks} from "../common.mjs";
 import {$} from "../dom.mjs";
 import {initI18n} from "../i18n.mjs";
 
+import "../../css/pages/updates.css";
 // We need to import io-element to initialize the i18n intent we're using
 import "../io-element.mjs";
 import "../landing.mjs";

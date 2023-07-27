@@ -15,7 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-@import "../landing.scss";
+@import "../../skin/fonts/font.css";
+@import "../landing.css";
 
 /*******************************************************************************
  * Header
@@ -28,7 +29,7 @@
 
 #title.block-icon::before
 {
-  background-image: url(icons/warning.svg);
+  background-image: url(/skin/icons/warning.svg);
 }
 
 .note
@@ -47,7 +48,7 @@
 
 #solution > .block-icon::before
 {
-  background-image: url(icons/checkmark-green.svg);
+  background-image: url(/skin/icons/checkmark-green.svg);
 }
 
 #solution ol
@@ -106,7 +107,7 @@ html[dir="rtl"] #solution ol::before
   width: 0.7em;
   height: 0.7em;
   vertical-align: middle;
-  background-image: url(icons/open-link.svg);
+  background-image: url(/skin/icons/open-link.svg);
   background-size: contain;
   background-repeat: no-repeat;
   content: "";
@@ -151,12 +152,12 @@ html[dir="rtl"] #solution .os::after
 
 #solution .os.mac::after
 {
-  background-image: url(icons/mac.svg);
+  background-image: url(/skin/icons/mac.svg);
 }
 
 #solution .os.windows::after
 {
-  background-image: url(icons/windows.svg);
+  background-image: url(/skin/icons/windows.svg);
 }
 
 body[data-application="opera"] [data-hide="opera"],

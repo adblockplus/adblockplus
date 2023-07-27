@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-@import "z-index.scss";
+@import "z-index.css";
 
 io-popout
 {
@@ -130,22 +130,22 @@ io-popout[anchor-icon="heart"][expanded] > .wrapper::before
 
 io-popout[type="menubar"] > .wrapper::before
 {
-  background-image: url(icons/gear.svg?default#default);
+  background-image: url(/skin/icons/gear.svg?default#default);
 }
 
 io-popout[type="tooltip"] > .wrapper::before
 {
-  background-image: url(icons/tooltip.svg);
+  background-image: url(/skin/icons/tooltip.svg);
 }
 
 io-popout[anchor-icon="heart"] > .wrapper::before
 {
-  background-image: url(icons/heart.svg);
+  background-image: url(/skin/icons/heart.svg);
 }
 
 io-popout[anchor-icon="error"] > .wrapper::before
 {
-  background-image: url(icons/error-round.svg);
+  background-image: url(/skin/icons/error-round.svg);
 }
 
 /*******************************************************************************
@@ -348,12 +348,12 @@ html[dir="rtl"] io-popout button.close
 
 io-popout[appearance="error"] .icon.close::before
 {
-  background-image: url(icons/close.svg?error#error);
+  background-image: url(/skin/icons/close.svg?error#error);
 }
 
 io-popout[appearance="error"] .icon.close:hover::before
 {
-  background-image: url(icons/close.svg?error-hover#error-hover);
+  background-image: url(/skin/icons/close.svg?error-hover#error-hover);
 }
 
 io-popout[appearance="error"]

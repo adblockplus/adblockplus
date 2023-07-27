@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-@import "z-index.scss";
+@import "z-index.css";
 
 io-list-box
 {
@@ -109,7 +109,7 @@ io-list-box [role="option"][aria-disabled="true"].hover
 
 io-list-box [role="option"][aria-selected="true"]
 {
-  background-image: url(icons/checkmark.svg?default#default);
+  background-image: url(/skin/icons/checkmark.svg?default#default);
   background-repeat: no-repeat;
   background-position: 8px center;
   background-size: 20px 20px;

@@ -1,3 +1,20 @@
+/*
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-present eyeo GmbH
+ *
+ * Adblock Plus is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Adblock Plus is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 @font-face
 {
   font-family: "Source Sans Pro";
@@ -5,7 +22,7 @@
   font-weight: 300;
   src: local("Source Sans Pro Light"),
        local("SourceSansPro-Light"),
-       url(source-sans-pro-300.woff2)
+       url(/skin/fonts/source-sans-pro-300.woff2)
        format('woff2');
 }
 
@@ -16,7 +33,7 @@
   font-weight: 400;
   src: local("Source Sans Pro Regular"),
        local("SourceSansPro-Regular"),
-       url(source-sans-pro-400.woff2)
+       url(/skin/fonts/source-sans-pro-400.woff2)
        format('woff2');
 }
 
@@ -27,7 +44,7 @@
   font-weight: 700;
   src: local("Source Sans Pro Bold"),
        local("SourceSansPro-Bold"),
-       url(source-sans-pro-700.woff2)
+       url(/skin/fonts/source-sans-pro-700.woff2)
        format('woff2');
 }
 

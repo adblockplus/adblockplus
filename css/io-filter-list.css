@@ -15,9 +15,9 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-@import "./io-checkbox.scss";
-@import "./io-toggle.scss";
-@import "./io-scrollbar.scss";
+@import "./io-checkbox.css";
+@import "./io-toggle.css";
+@import "./io-scrollbar.css";
 
 /*
   The component depends on its style and it will look for the

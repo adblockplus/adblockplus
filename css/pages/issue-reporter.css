@@ -15,11 +15,12 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-@import "../common.scss";
-@import "../light.scss";
-@import "../io-steps.scss";
-@import "../io-highlighter.scss";
-@import "../io-highlighter-fixes.scss";
+@import "../../skin/fonts/font.css";
+@import "../common.css";
+@import "../light.css";
+@import "../io-steps.css";
+@import "../io-highlighter.css";
+@import "../io-highlighter-fixes.css";
 
 html
 {
@@ -230,7 +231,7 @@ footer > div:not(#other-issues) > div
 {
   margin-top: 1rem;
   padding-top: 16px;
-  background-image: url(icons/info-big.svg);
+  background-image: url(/skin/icons/info-big.svg);
   background-repeat: no-repeat;
 }
 
@@ -373,27 +374,27 @@ input[type="radio"]
 
 input[type="checkbox"]
 {
-  background-image: url(icons/checkbox.svg?off#off);
+  background-image: url(/skin/icons/checkbox.svg?off#off);
 }
 
 input[type="checkbox"]:checked
 {
-  background-image: url(icons/checkbox.svg?on#on);
+  background-image: url(/skin/icons/checkbox.svg?on#on);
 }
 
 input[type="radio"]
 {
-  background-image: url(icons/radio.svg?normal#normal);
+  background-image: url(/skin/icons/radio.svg?normal#normal);
 }
 
 input[type="radio"]:hover
 {
-  background-image: url(icons/radio.svg?hover#hover);
+  background-image: url(/skin/icons/radio.svg?hover#hover);
 }
 
 input[type="radio"]:checked
 {
-  background-image: url(icons/radio.svg?selected#selected);
+  background-image: url(/skin/icons/radio.svg?selected#selected);
 }
 
 .modal:not([hidden])
@@ -470,12 +471,12 @@ input[type="radio"]:checked
 
 .icon.close.tertiary::before
 {
-  background-image: url(icons/close.svg?tertiary#tertiary);
+  background-image: url(/skin/icons/close.svg?tertiary#tertiary);
 }
 
 .icon.close.tertiary:hover::before
 {
-  background-image: url(icons/close.svg?tertiary-hover#tertiary-hover);
+  background-image: url(/skin/icons/close.svg?tertiary-hover#tertiary-hover);
 }
 
 body[data-page="commentPage"] #continue
