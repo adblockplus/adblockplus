@@ -16,33 +16,33 @@
  */
 
 /**
- * CSS file imported via webpack
+ * CSS file imported as text via webpack
  */
-declare module "*.css" {
+declare module "*.css?text" {
   const content: string;
   export default content;
 }
 
 /**
- * HTML file imported via webpack
+ * HTML file imported as text via webpack
  */
-declare module "*.html" {
+declare module "*.html?text" {
   const content: string;
   export default content;
 }
 
 /**
- * SVG file imported via webpack
+ * SVG file imported as data URI via webpack
  */
-declare module "*.svg" {
+declare module "*.svg?uri" {
   const content: string;
   export default content;
 }
 
 /**
- * Font file imported via webpack
+ * Font file imported as data URI via webpack
  */
-declare module "*.woff2" {
+declare module "*.woff2?uri" {
   const content: string;
   export default content;
 }

@@ -30,10 +30,24 @@ export default {
     rules: [
       {
         test: /\.css$/,
+        resourceQuery: /text/,
         type: "asset/source"
       },
       {
+        test: /\.css$/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              url: false
+            }
+          }
+        ]
+      },
+      {
         test: /\.html$/,
+        resourceQuery: /text/,
         type: "asset/source"
       },
       {
@@ -43,10 +57,12 @@ export default {
       },
       {
         test: /\.svg$/,
+        resourceQuery: /uri/,
         type: "asset/inline"
       },
       {
         test: /\.woff2$/,
+        resourceQuery: /uri/,
         type: "asset/inline"
       }
     ]
