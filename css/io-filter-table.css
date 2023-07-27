@@ -15,9 +15,9 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-@import "light.css";
-@import "io-filter-search.css";
-@import "io-filter-list.css";
+@import "./light.css";
+@import "./io-filter-search.css";
+@import "./io-filter-list.css";
 
 io-filter-table
 {

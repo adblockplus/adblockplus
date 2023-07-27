@@ -19,7 +19,7 @@
  * General
  ******************************************************************************/
 
-@import "../../skin/fonts/font.css";
+@import "../font.css";
 @import "../light.css";
 
 *
