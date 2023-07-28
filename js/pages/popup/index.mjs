@@ -124,6 +124,8 @@ activeTab.then(tab =>
     // @link https://bugzilla.mozilla.org/show_bug.cgi?id=1780550
     window.close();
   });
+
+  document.body.hidden = false;
 });
 
 function updateBlockedPerPage(blockedPage)

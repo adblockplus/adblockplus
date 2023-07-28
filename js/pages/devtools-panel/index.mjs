@@ -424,3 +424,5 @@ document.addEventListener("DOMContentLoaded", () =>
   const theme = browser.devtools.panels.themeName || "default";
   document.body.classList.add(theme);
 }, false);
+
+document.body.hidden = false;

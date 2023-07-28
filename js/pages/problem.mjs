@@ -43,3 +43,4 @@ function initOSReference(name, idx)
 convertDoclinks();
 initI18n();
 ["windows", "mac"].forEach(initOSReference);
+document.body.hidden = false;

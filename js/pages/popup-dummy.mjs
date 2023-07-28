@@ -70,3 +70,5 @@ function setupFooter()
       });
     });
 }
+
+document.body.hidden = false;

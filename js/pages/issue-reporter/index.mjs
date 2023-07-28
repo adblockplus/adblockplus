@@ -358,3 +358,5 @@ function encodeHTML(str)
     "\"": "&quot;"
   }[c]));
 }
+
+document.body.hidden = false;

@@ -213,3 +213,5 @@ function init()
 
 initI18n();
 window.addEventListener("load", init, false);
+
+document.body.hidden = false;

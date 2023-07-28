@@ -70,3 +70,4 @@ initI18n();
 initContact();
 initPopupDummy();
 initTitle();
+document.body.hidden = false;

@@ -169,3 +169,4 @@ function load()
 }
 
 load();
+document.body.hidden = false;

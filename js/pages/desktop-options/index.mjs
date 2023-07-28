@@ -1875,3 +1875,5 @@ function dispatchError(error)
     window.console.error(error);
   window.dispatchEvent(new CustomEvent("error"));
 }
+
+document.body.hidden = false;

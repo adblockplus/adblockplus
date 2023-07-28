@@ -103,3 +103,4 @@ initI18n();
 initLinks();
 initWarnings();
 initApplication();
+document.body.hidden = false;

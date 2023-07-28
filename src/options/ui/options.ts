@@ -40,6 +40,8 @@ async function start() {
   }
 
   iframe.setAttribute("src", frameUrl);
+
+  document.body.hidden = false;
 }
 
 void start().catch(console.error);

@@ -417,4 +417,6 @@ import "../../css/pages/mobile-options.css";
   {
     get("#imprint").href = url;
   });
+
+  document.body.hidden = false;
 }
