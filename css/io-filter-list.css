@@ -57,7 +57,7 @@ io-filter-list *::after
 }
 
 io-filter-list[disabled] io-checkbox,
-io-filter-list[disabled] io-toggle,
+io-filter-list[disabled] io-toggle
 {
   pointer-events: none;
 }
