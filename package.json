@@ -17,7 +17,6 @@
     "eslint:standard": "eslint --ignore-path .gitignore src/",
     "eslint:legacy": "eslint --ext .js,.mjs --ignore-path .gitignore --ignore-pattern /adblockpluschrome/ ./",
     "eslint:adblockpluschrome": "eslint --ext .js,.cjs,.js.tmpl --ignore-path .gitignore adblockpluschrome/",
-    "prettier": "prettier ./**/*.ts ./**/*.md ./**/*.css ./**/*.html ./**/*.json --write",
     "start": "http-server ./dist/devenv/local/",
     "test": "npm run $ test",
     "csv-export": "node build/locale-sync/csv/main.js -e",
