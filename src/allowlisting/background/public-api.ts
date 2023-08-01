@@ -20,6 +20,7 @@ import * as ewe from "@eyeo/webext-sdk";
 import { allowlist } from "../../../adblockpluschrome/lib/allowlisting";
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";
 import * as premium from "../../premium/background";
+import * as logger from "../../logger/background";
 
 /**
  * Function to be called when a valid allowlisting request was received
@@ -86,4 +87,4 @@ async function start(): Promise<void> {
   });
 }
 
-start();
+void start().catch(logger.error);

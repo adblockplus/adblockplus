@@ -62,6 +62,10 @@ export default {
         src: ["js/pages/desktop-options/index.mjs"]
       },
       {
+        dest: "devtools.js",
+        src: ["src/devtools/ui/index.ts"]
+      },
+      {
         dest: "devtools-panel.js",
         src: ["js/pages/devtools-panel/index.mjs"]
       },
@@ -80,6 +84,10 @@ export default {
       {
         dest: "onpage-dialog-ui.postload.js",
         src: ["src/onpage-dialog/content-ui/index.ts"]
+      },
+      {
+        dest: "options.js",
+        src: ["src/options/ui/index.ts"]
       },
       {
         dest: "polyfill.js",
@@ -141,8 +149,8 @@ export default {
         dest: "",
         src: [
           "*.html",
-          "adblockpluschrome/devtools.*",
-          "options.js",
+          "src/devtools/ui/devtools.html",
+          "src/options/ui/options.html",
           "!mobile-options.html"
         ]
       }

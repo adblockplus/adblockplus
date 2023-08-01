@@ -33,7 +33,7 @@ module.exports = {
   overrides: [
     {
       files: [
-        "./devtools.js", "./ext/*.js", "*.cjs"
+        "./ext/*.js", "*.cjs"
       ],
       parserOptions: {
         sourceType: "script"

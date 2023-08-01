@@ -15,22 +15,31 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-"use strict";
+import * as api from "../../core/api/front";
 
-const iframe = document.getElementById("content");
+/**
+ * Initializes options page
+ */
+async function start() {
+  const os = await api.app.get("os");
 
-iframe.onload = () =>
-{
-  document.title = iframe.contentDocument.title;
-};
+  const iframe = document.getElementById("content");
+  if (!(iframe instanceof HTMLIFrameElement)) {
+    return;
+  }
 
-(async() =>
-{
-  const os = await browser.runtime.sendMessage({
-    type: "app.get",
-    what: "os"
+  iframe.addEventListener("load", () => {
+    document.title = iframe.contentDocument?.title || "";
   });
+
   // Load the mobile version of the options page on Android.
-  iframe.src = iframe.getAttribute("data-src-" + os) ||
-               iframe.getAttribute("data-src");
-})();
+  const frameUrl =
+    iframe.getAttribute("data-src-" + os) || iframe.getAttribute("data-src");
+  if (!frameUrl) {
+    return;
+  }
+
+  iframe.setAttribute("src", frameUrl);
+}
+
+void start().catch(console.error);

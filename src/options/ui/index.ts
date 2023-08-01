@@ -15,26 +15,4 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export default {
-  extends: "base",
-  webpack: {
-    alias: {
-      info$: "info.chrome.js.tmpl"
-    }
-  },
-  mapping: {
-    copy: [
-      {
-        dest: "",
-        src: ["managed-storage-schema.json"]
-      }
-    ]
-  },
-  translations: {
-    dest: "_locales",
-    src: [
-      "!locale/es_AR/*.json",
-      "!locale/es_CL/*.json"
-    ]
-  }
-};
+import "./options";
