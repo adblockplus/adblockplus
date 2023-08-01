@@ -148,7 +148,7 @@ You can lint all files via `npm run lint` or lint only specific file types:
 You can try the example below via [npx][npx] which should be automatically
 included when you install `npm`.
 
-`npx stylelint --fix skin/real-file-name.css`
+`npx stylelint --fix css/real-file-name.css`
 
 ## Building
 

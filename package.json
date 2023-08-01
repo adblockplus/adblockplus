@@ -50,7 +50,7 @@
       "npm install --loglevel=error --no-audit --no-fund --no-optional --prefix adblockpluschrome"
     ],
     "lint": {
-      "css": "stylelint ./build/**/*.css ./css/*.css ./skin/*.css ./src/**/*.css --ignore-path .gitignore",
+      "css": "stylelint ./build/**/*.css ./css/*.css ./src/**/*.css --ignore-path .gitignore",
       "js": "npm run eslint",
       "ts": "tsc --noEmit",
       "locale": "node build/locale-linter ./locale/**/*.json"
