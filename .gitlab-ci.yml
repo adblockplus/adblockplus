@@ -207,7 +207,7 @@ uploadxtm:
     # which doesn't work inside the CI environment because it's using a detached
     # head (see https://gitlab.com/gitlab-org/gitlab-ce/issues/19421) to make
     # it work we need to created the corresponding branches
-    - git branch master origin/master
+    - git branch main origin/main
     - git checkout -B "$CI_BUILD_REF_NAME" "$CI_BUILD_REF"
     - npm run $ xtm.create
 
@@ -222,7 +222,7 @@ updatextm:
     # which doesn't work inside the CI environment because it's using a detached
     # head (see https://gitlab.com/gitlab-org/gitlab-ce/issues/19421) to make
     # it work we need to created the corresponding branches
-    - git branch master origin/master
+    - git branch main origin/main
     - git checkout -B "$CI_BUILD_REF_NAME" "$CI_BUILD_REF"
     - npm run $ xtm.update
 
@@ -237,7 +237,7 @@ downloadxtm:
     # which doesn't work inside the CI environment because it's using a detached
     # head (see https://gitlab.com/gitlab-org/gitlab-ce/issues/19421) to make
     # it work we need to created the corresponding branches
-    - git branch master origin/master
+    - git branch main origin/main
     - git checkout -B "$CI_BUILD_REF_NAME" "$CI_BUILD_REF"
     # Download the translations
     - npm run $ xtm.download
@@ -288,8 +288,8 @@ downloadxtm:
     # Do not trigger a merge request pipeline
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
       when: never
-    # Run automatically on release and master branch
-    - if: $CI_COMMIT_BRANCH == "release" || $CI_COMMIT_BRANCH == "master"
+    # Run automatically on release and main branch
+    - if: $CI_COMMIT_BRANCH == "release" || $CI_COMMIT_BRANCH == "main"
       allow_failure: true
     # Run manually on all other branches
     - when: manual
@@ -416,7 +416,7 @@ uitests:smoke:
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
       when: never
-    - if: $CI_COMMIT_BRANCH == "next" || $CI_COMMIT_BRANCH == "master"
+    - if: $CI_COMMIT_BRANCH == "next" || $CI_COMMIT_BRANCH == "main"
       when: always
     - when: manual
       allow_failure: true

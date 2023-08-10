@@ -61,7 +61,7 @@ function getParentVersionHash()
 {
   if (argv.rev)
     return argv.rev;
-  return exec("git rev-parse master");
+  return exec("git rev-parse main");
 }
 
 function createSourceFiles(hash)

@@ -253,8 +253,8 @@ This project follows the typical GitLab process:
 [abp-ui-tags]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/tags
 [abp-webext-releases]: https://github.com/adblockplus/adblockpluschrome/releases
 [adblockinc-rules]: https://gitlab.com/adblockinc/ext/rules
-[badge-pipeline-image]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/badges/master/pipeline.svg
-[badge-pipeline-link]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/commits/master
+[badge-pipeline-image]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/badges/main/pipeline.svg
+[badge-pipeline-link]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/commits/main
 [eyeo]: https://eyeo.com/
 [eyeo-ewe]: https://gitlab.com/eyeo/adblockplus/abc/webext-sdk
 [eyeo-snippets]: https://gitlab.com/eyeo/snippets

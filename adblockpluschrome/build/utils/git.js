@@ -31,7 +31,7 @@ export async function getBuildnum(revision = "HEAD")
   return BUILDNUM_OFFSET +
          parseInt((await promisify(execFile)("git", ["rev-list", "--count",
                                                      "--until", until,
-                                                     "origin/master",
+                                                     "origin/main",
                                                      revision])).stdout, 10);
 }
 
