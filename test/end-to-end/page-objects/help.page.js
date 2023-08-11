@@ -115,7 +115,7 @@ class HelpPage extends BasePage
 
   async switchToTwitterTab()
   {
-    await this.switchToTab("https://twitter.com/adblockplus");
+    await this.switchToTab(/https:\/\/twitter\.com\/.*adblockplus/);
   }
 }
 

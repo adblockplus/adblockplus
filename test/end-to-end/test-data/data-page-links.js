@@ -106,7 +106,7 @@ const problemPageData = [
   {
     testName: "Problem - Twitter icon",
     elementToClick: "twitterButton",
-    newTabUrl: "https://twitter.com/adblockplus"
+    newTabUrl: /https:\/\/twitter\.com\/.*adblockplus/
   },
   {
     testName: "Problem - Facebook icon",
@@ -162,7 +162,7 @@ const updatesPageData = [
   {
     testName: "Updates - Twitter icon",
     elementToClick: "twitterButton",
-    newTabUrl: "https://twitter.com/adblockplus"
+    newTabUrl: /https:\/\/twitter\.com\/.*adblockplus/
   },
   {
     testName: "Updates - Facebook icon",

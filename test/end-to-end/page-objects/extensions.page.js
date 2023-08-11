@@ -29,15 +29,15 @@ class ExtensionsPage extends BasePage
 
   async init()
   {
-    if (browser.capabilities.browserName === "chrome")
+    if (browser.capabilities.browserName == "chrome")
     {
       await browser.url("chrome://extensions");
     }
-    else if (browser.capabilities.browserName === "msedge")
+    else if (browser.capabilities.browserName == "msedge")
     {
       await browser.url("edge://extensions");
     }
-    else if (browser.capabilities.browserName === "firefox")
+    else if (browser.capabilities.browserName == "firefox")
     {
       await browser.url("about:debugging#/runtime/this-firefox");
       await this.waitForDisplayedNoError(this.abpExtensionLabelFF);
@@ -86,17 +86,17 @@ class ExtensionsPage extends BasePage
 
   async clickReloadExtensionButton()
   {
-    if (browser.capabilities.browserName === "chrome")
+    if (browser.capabilities.browserName == "chrome")
     {
       await this.waitForEnabledThenClick(this.
         reloadExtensionButtonChrome);
     }
-    else if (browser.capabilities.browserName === "firefox")
+    else if (browser.capabilities.browserName == "firefox")
     {
       await this.waitForEnabledThenClick(this.
         reloadExtensionButtonFF);
     }
-    else if (browser.capabilities.browserName === "msedge")
+    else if (browser.capabilities.browserName == "msedge")
     {
       await this.waitForEnabledThenClick(this.
         reloadExtensionButtonEdge);
@@ -105,17 +105,17 @@ class ExtensionsPage extends BasePage
 
   async clickReloadHelperExtensionButton()
   {
-    if (browser.capabilities.browserName === "chrome")
+    if (browser.capabilities.browserName == "chrome")
     {
       await this.waitForEnabledThenClick(this.
         reloadHelperExtensionButtonChrome);
     }
-    else if (browser.capabilities.browserName === "firefox")
+    else if (browser.capabilities.browserName == "firefox")
     {
       await this.waitForEnabledThenClick(this.
         reloadHelperExtensionButtonFF);
     }
-    else if (browser.capabilities.browserName === "msedge")
+    else if (browser.capabilities.browserName == "msedge")
     {
       await this.waitForEnabledThenClick(this.
         reloadHelperExtensionButtonEdge);

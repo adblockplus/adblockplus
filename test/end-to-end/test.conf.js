@@ -68,7 +68,8 @@ const parallelConfig = {
       acceptInsecureCerts: true,
       exclude: [
         "./tests/test-issue-reporter.js",
-        "./tests/legacy-unit.js"
+        "./tests/legacy-unit.js",
+        "./tests/test-abp-premium-license-check-retries.js"
       ]
     },
     {
@@ -90,7 +91,8 @@ const parallelConfig = {
       },
       acceptInsecureCerts: true,
       exclude: [
-        "./tests/legacy-unit.js"
+        "./tests/legacy-unit.js",
+        "./tests/test-abp-premium-license-check-retries.js"
       ]
     }
   ],

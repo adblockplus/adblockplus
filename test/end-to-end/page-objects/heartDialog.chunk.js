@@ -77,7 +77,7 @@ class HeartDialogChunk extends BasePage
 
   async switchToDonateTab()
   {
-    await this.switchToTab("Adblock Plus has been updated");
+    await this.switchToTab(/contribution/);
   }
 }
 

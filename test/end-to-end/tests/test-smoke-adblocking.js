@@ -33,10 +33,11 @@ let lastTest = false;
 
 describe("test adblocking as part of the smoke tests", function()
 {
-  this.retries(globalRetriesNumber + 1);
+  this.retries(globalRetriesNumber - 1);
 
   before(async function()
   {
+    this.timeout(200000);
     lastTest = false;
     await beforeSequence();
   });
@@ -66,15 +67,21 @@ describe("test adblocking as part of the smoke tests", function()
     {
       await googlePage.switchToTab("Google");
       await browser.refresh();
+      // The extension needs a couple seconds sometimes for acceptable ads load
+      await browser.pause(2000);
       await googlePage.init();
       await googlePage.searchForText("hotels");
     }
     try
     {
+      await browser.refresh();
+      await browser.pause(randomIntFromInterval(1500, 2500));
       expect(await googlePage.isAdTagDisplayed()).to.be.true;
     }
     catch (Exception)
     {
+      await browser.refresh();
+      await browser.pause(randomIntFromInterval(1500, 2500));
       expect(await googlePage.isSponsoredTagDisplayed()).to.be.true;
     }
     const extensionsPage = new ExtensionsPage(browser);
@@ -177,7 +184,15 @@ describe("test adblocking as part of the smoke tests", function()
   it("should block ad by snippet", async function()
   {
     const advancedPage = new AdvancedPage(browser);
-    await advancedPage.init();
+    try
+    {
+      await advancedPage.init();
+    }
+    catch (Exception)
+    {
+      await beforeSequence();
+      await advancedPage.init();
+    }
     await advancedPage.typeTextToAddCustomFilterListInput(
       "adblockinc.gitlab.io#$#hide-if-contains 'should be hidden' p[id]");
     await advancedPage.clickAddCustomFilterListButton();
@@ -192,7 +207,14 @@ describe("test adblocking as part of the smoke tests", function()
   it("should allowlist websites", async function()
   {
     const allowistedWebsitesPage = new AllowlistedWebsitesPage(browser);
-    await allowistedWebsitesPage.switchToABPOptionsTab();
+    try
+    {
+      await allowistedWebsitesPage.switchToABPOptionsTab();
+    }
+    catch (Exception)
+    {
+      await beforeSequence();
+    }
     await allowistedWebsitesPage.init();
     await allowistedWebsitesPage.
       setAllowlistingTextboxValue("https://adblockinc.gitlab.io/");

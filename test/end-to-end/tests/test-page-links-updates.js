@@ -96,6 +96,14 @@ describe("test page links - updates", function()
               dataSet.fallbackNewTabUrl);
           }
         }
+        else if (dataSet.testName == "Updates - Twitter icon")
+        {
+          await updatesPage.waitForEnabledThenClick(
+            updatesPage[dataSet.elementToClick]);
+          await updatesPage.switchToTab(dataSet.newTabUrl);
+          expect(await updatesPage.getCurrentUrl()).to.match(
+            dataSet.newTabUrl);
+        }
         else
         {
           await updatesPage.waitForEnabledThenClick(

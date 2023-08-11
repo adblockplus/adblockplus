@@ -48,7 +48,7 @@ describe("test options page dialogs", function()
 
   it("should contain donate and rate us button", async function()
   {
-    if (browser.capabilities.browserName == "msedge")
+    if (await browser.capabilities.browserName == "msedge")
     {
       console.warn("Test skipped for Edge.");
     }

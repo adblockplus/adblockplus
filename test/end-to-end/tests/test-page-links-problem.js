@@ -89,6 +89,14 @@ describe("test page links - problem", function()
             dataSet.fallbackNewTabUrl);
         }
       }
+      else if (dataSet.testName == "Problem - Twitter icon")
+      {
+        await problemPage.waitForEnabledThenClick(
+          problemPage[dataSet.elementToClick]);
+        await problemPage.switchToTab(dataSet.newTabUrl);
+        expect(await problemPage.getCurrentUrl()).to.match(
+          dataSet.newTabUrl);
+      }
       else
       {
         await problemPage.waitForEnabledThenClick(

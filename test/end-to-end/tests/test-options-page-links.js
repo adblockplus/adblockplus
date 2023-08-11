@@ -151,7 +151,7 @@ describe("test options page links", function()
     await helpPage.init();
     await helpPage.clickTwitterLink();
     await helpPage.switchToTwitterTab();
-    expect(await helpPage.getCurrentUrl()).to.include(
+    expect(await helpPage.getCurrentUrl()).to.match(
       dataLinks.twitterUrl);
   });
 
