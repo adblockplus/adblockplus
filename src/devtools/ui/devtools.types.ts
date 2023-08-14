@@ -20,7 +20,7 @@ import { DevtoolsPanels } from "webextension-polyfill/namespaces/devtools_panels
 /**
  * Function called upon a search action (start of a new search, search result
  * navigation, or search being canceled).
- **/
+ */
 type SearchListener = (action: string, queryString?: string) => any;
 
 /**
@@ -30,7 +30,7 @@ interface SearchExtension {
   /**
    * Fired upon a search action (start of a new search, search result
    * navigation, or search being canceled).
-   **/
+   */
   onSearch?: {
     addListener: (callback: SearchListener) => void;
   };

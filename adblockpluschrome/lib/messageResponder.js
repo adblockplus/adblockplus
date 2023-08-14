@@ -30,6 +30,29 @@ function forward(type, message, sender)
 }
 
 /**
+ * Opens given UI page or switches to it, if it's already open
+ *
+ * @param {string} pathname - UI page path name
+ */
+async function openUiPage(pathname)
+{
+  const tabs = await browser.tabs.query({});
+  for (const tab of tabs)
+  {
+    const url = new URL(tab.url);
+    if (pathname !== url.pathname)
+      continue;
+
+    void browser.tabs.update(tab.id, {active: true});
+    return;
+  }
+
+  void browser.tabs.create({
+    url: browser.runtime.getURL(pathname)
+  });
+}
+
+/**
  * @deprecated Please send the "filters.getTypes" message instead.
  *
  * @event "types.get"
@@ -42,10 +65,20 @@ port.on("types.get",
  *
  * @event "app.open"
  */
-port.on("app.open", (message, sender) =>
+port.on("app.open", async(message, sender) =>
 {
-  if (message.what == "options")
-    return forward("options.open", message, sender);
+  switch (message.what)
+  {
+    case "options":
+      await forward("options.open", message, sender);
+      break;
+    case "premium-onboarding":
+      await openUiPage("premium-onboarding.html");
+      break;
+  }
+
+  if (message.replaceTab)
+    void browser.tabs.remove(sender.page.id);
 });
 
 /**

@@ -39,9 +39,16 @@ export type AppGetWhat =
   | "senderId";
 
 /**
+ * Options for opening UI page
+ */
+export interface AppOpenOptions {
+  replaceTab?: boolean;
+}
+
+/**
  * Strings accepted for api.app.open's first prop
  */
-export type AppOpenWhat = "options";
+export type AppOpenWhat = "options" | "premium-onboarding";
 
 /**
  * Used by app.open and app.get, this uses the general

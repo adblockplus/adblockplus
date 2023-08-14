@@ -234,14 +234,6 @@ function hasActiveLicense(): boolean {
 }
 
 /**
- * Initializes Premium license and license checks
- */
-export function initialize(): void {
-  initializeMessaging();
-  initializeLicenseChecks();
-}
-
-/**
  * Schedules next license check
  *
  * @param nextTimestamp - Timestamp of next license check
@@ -313,4 +305,12 @@ function initializeMessaging(): void {
   ext.addTrustedMessageTypes(Prefs.get("premium_license_activation_origin"), [
     "premium.activate"
   ]);
+}
+
+/**
+ * Initializes Premium license and license checks
+ */
+export function start(): void {
+  initializeMessaging();
+  initializeLicenseChecks();
 }

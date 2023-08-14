@@ -22,9 +22,9 @@ import {
   listen,
   removeDisconnectListener
 } from "./api.port";
-
 import type {
   AppGetWhat,
+  AppOpenOptions,
   AppOpenWhat,
   DisplayMethod,
   ListenFilters,
@@ -98,7 +98,8 @@ export const app = {
    *
    * @param what which app page to open
    */
-  open: (what: AppOpenWhat) => send("app.open", { what })
+  open: (what: AppOpenWhat, options: AppOpenOptions = {}) =>
+    send("app.open", { what, ...options })
 };
 
 /**

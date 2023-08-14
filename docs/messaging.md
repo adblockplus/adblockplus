@@ -64,6 +64,7 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
   - [enableAllFilters](#subscriptionsenableallfilters)
   - [get](#subscriptionsget)
   - [getInitIssues](#subscriptionsgetinitissues)
+  - [getRecommendations](#subscriptionsgetrecommendations)
   - [listen](#subscriptionslisten)
   - [remove](#subscriptionsremove)
   - [toggle](#subscriptionstoggle)
@@ -140,8 +141,10 @@ If filter includes `showPageOptions`:
 - **string** [action]
   - `showPageOptions` (if "what" is `options`)
 - **any[]** [args] - (see [app.listen](#applisten))
+- **boolean** [replaceTab=false]
 - **string** what
   - `options`
+  - `premium-onboarding`
 
 ---
 

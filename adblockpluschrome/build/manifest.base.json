@@ -52,7 +52,8 @@
         "polyfill.js",
         "ext/common.js",
         "ext/content.js",
-        "premium.preload.js"
+        "premium.preload.js",
+        "premium-onboarding.preload.js"
       ],
       "matches": [
         "https://accounts.adblockplus.org/premium",

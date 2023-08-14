@@ -226,6 +226,13 @@ defaults.premium_license_check_url = "https://myadblock.licensing.adblockplus.de
 defaults.premium_manage_page_url = "https://accounts.adblockplus.org/%LANG%/manage?lic=%LICENSE_CODE%&s=%SOURCE%";
 
 /**
+ * Origin of page to trigger Premium onboarding
+ *
+ * @type {string}
+ */
+defaults.premium_onboarding_trigger_origin = "https://accounts.adblockplus.org";
+
+/**
  * Address of page to upgrade to Premium.
  *
  * @type {string}

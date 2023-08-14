@@ -38,7 +38,8 @@ export default {
           "src/allowlisting/background/index.ts",
           "src/bypass/background/index.ts",
           "src/ipm/background/index.ts",
-          "src/onpage-dialog/background/index.ts"
+          "src/onpage-dialog/background/index.ts",
+          "src/premium-onboarding/background/index.ts"
         ]
       },
       {
@@ -104,6 +105,10 @@ export default {
       {
         dest: "premium.preload.js",
         src: ["src/premium/content/index.ts"]
+      },
+      {
+        dest: "premium-onboarding.preload.js",
+        src: ["src/premium-onboarding/content/index.ts"]
       },
       {
         dest: "problem.js",

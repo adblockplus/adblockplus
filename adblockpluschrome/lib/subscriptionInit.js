@@ -178,7 +178,7 @@ async function start()
   await initDisabledFilterCounters();
   initElementHidingDebugMode();
   await initNotifications(firstRun);
-  premium.initialize();
+  premium.start();
   void startTelemetry();
   setReadyState(ReadyState.started);
 

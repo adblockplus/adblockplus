@@ -20,7 +20,7 @@ import { ExtensionPanelWithSearch } from "./devtools.types";
 
 /**
  * Developer tools panel window
- **/
+ */
 let panelWindow: Window | null = null;
 
 /**
@@ -28,7 +28,7 @@ let panelWindow: Window | null = null;
  *
  * @param eventName - Search action
  * @param queryString - Search query
- **/
+ */
 function forwardSearchAction(eventName: string, queryString?: string): void {
   if (!panelWindow) {
     return;
@@ -41,14 +41,14 @@ function forwardSearchAction(eventName: string, queryString?: string): void {
  * Sets panel window
  *
  * @param window - Developer tools panel window
- **/
+ */
 function setPanelWindow(window: Window): void {
   panelWindow = window;
 }
 
 /**
  * Unsets panel window
- **/
+ */
 function unsetPanelWindow(): void {
   panelWindow = null;
 }

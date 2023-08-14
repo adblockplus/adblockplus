@@ -62,4 +62,12 @@ async function onMessage(
     console.error("Failed to activate Premium license", ex);
   }
 }
-window.addEventListener("message", onMessage);
+
+/**
+ * Initializes Premium activation trigger
+ */
+function start(): void {
+  window.addEventListener("message", onMessage);
+}
+
+start();
