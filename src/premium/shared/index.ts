@@ -15,10 +15,4 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import api from "./api";
-
-export * from "./api";
-export * from "./api.port";
-export * from "./api.types";
-
-export default api;
+export * from "./state.types";

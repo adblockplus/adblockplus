@@ -1,0 +1,70 @@
+{
+  "premium_onboarding_cta_enable_all": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/954a4afc0b231e1635d59ad072b44d767ba86173/spec/abp/premium-onboarding.md#cta-section",
+    "message": "Enable all Premium features"
+  },
+  "premium_onboarding_cta_enable_none": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/954a4afc0b231e1635d59ad072b44d767ba86173/spec/abp/premium-onboarding.md#cta-section",
+    "message": "Not now"
+  },
+  "premium_onboarding_cta_finish": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/954a4afc0b231e1635d59ad072b44d767ba86173/spec/abp/premium-onboarding.md#hidden-cta",
+    "message": "Done"
+  },
+  "premium_onboarding_cta_upgrade": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/954a4afc0b231e1635d59ad072b44d767ba86173/spec/abp/premium-onboarding.md#cta-section",
+    "message": "Upgrade now"
+  },
+  "premium_onboarding_feature_annoyances_subtitle": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/954a4afc0b231e1635d59ad072b44d767ba86173/spec/abp/premium-onboarding.md#distraction-control",
+    "message": "Block floating videos, newsletter popups, survey requests and site notifications"
+  },
+  "premium_onboarding_feature_annoyances_title": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/954a4afc0b231e1635d59ad072b44d767ba86173/spec/abp/premium-onboarding.md#distraction-control",
+    "message": "Block more distractions"
+  },
+  "premium_onboarding_feature_cookies_description": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/954a4afc0b231e1635d59ad072b44d767ba86173/spec/abp/premium-onboarding.md#block-cookie-consent-pop-ups",
+    "message": "By adding this feature and blocking these prompts, you are consenting to not be notified about cookie usage and to edit cookie settings on individual websites. You can change this at any time."
+  },
+  "premium_onboarding_feature_cookies_subtitle": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/954a4afc0b231e1635d59ad072b44d767ba86173/spec/abp/premium-onboarding.md#block-cookie-consent-pop-ups",
+    "message": "Hide cookie consent pop-ups on popular sites"
+  },
+  "premium_onboarding_feature_cookies_title": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/954a4afc0b231e1635d59ad072b44d767ba86173/spec/abp/premium-onboarding.md#block-cookie-consent-pop-ups",
+    "message": "Block cookie consent pop-ups"
+  },
+  "premium_onboarding_finish_description": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/954a4afc0b231e1635d59ad072b44d767ba86173/spec/abp/premium-onboarding.md#hidden-cta",
+    "message": "Adblock Plus Premium will immediately start blocking content based on the features you selected. You can always make changes later in the <a0>Settings page</a0>."
+  },
+  "premium_onboarding_finish_title": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/954a4afc0b231e1635d59ad072b44d767ba86173/spec/abp/premium-onboarding.md#hidden-cta",
+    "message": "You’re all set!"
+  },
+  "premium_onboarding_label_alwayson": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/954a4afc0b231e1635d59ad072b44d767ba86173/spec/abp/premium-onboarding.md#distraction-control",
+    "message": "On by default"
+  },
+  "premium_onboarding_label_new": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/954a4afc0b231e1635d59ad072b44d767ba86173/spec/abp/premium-onboarding.md#block-cookie-consent-pop-ups",
+    "message": "New"
+  },
+  "premium_onboarding_label_recommended": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/954a4afc0b231e1635d59ad072b44d767ba86173/spec/abp/premium-onboarding.md#block-cookie-consent-pop-ups",
+    "message": "Recommended"
+  },
+  "premium_onboarding_subtitle": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/954a4afc0b231e1635d59ad072b44d767ba86173/spec/abp/premium-onboarding.md#page-intro",
+    "message": "Finish the setup to get the most out of your Premium subscription"
+  },
+  "premium_onboarding_title": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/954a4afc0b231e1635d59ad072b44d767ba86173/spec/abp/premium-onboarding.md#page-intro",
+    "message": "Welcome to Adblock Plus Premium"
+  },
+  "premium_onboarding_upgrade_description": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/954a4afc0b231e1635d59ad072b44d767ba86173/spec/abp/premium-onboarding.md#cta-section",
+    "message": "These features are only available for users on a Premium subscription."
+  }
+}

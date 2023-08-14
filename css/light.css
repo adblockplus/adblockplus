@@ -17,10 +17,17 @@
 
 :root
 {
+  --background-color-cta-primary: #0797E1;
+  --background-color-cta-primary-hover: #0797E1EE;
+  --background-color-cta-secondary: #FFF;
+  --background-color-cta-secondary-hover: #0001;
   --background-color-error: #F7DDE1;
+  --background-color-info: #0797E1;
   --background-color-secondary: #f7f7f7;
   --background-color-primary: #fff;
   --background-color-ternary: #edf9ff;
+  --border-color-cta-primary: var(--background-color-cta-primary);
+  --border-color-cta-secondary: var(--color-primary);
   --border-color-secondary: #d2d2d2;
   --border-color-primary: #e6e6e6;
   --border-color-ternary: #c0e6f9;
@@ -32,6 +39,8 @@
   --border-width-thin: 1px;
   --box-shadow-primary: 0 2px 4px 0 hsla(0, 0%, 84%, 0.5);
   --color-brand-primary: #ED1E45;
+  --color-cta-primary: #FFF;
+  --color-cta-secondary: #666;
   --color-primary: #585858;
   --color-secondary: #000;
   --color-dimmed: #4A4A4A;

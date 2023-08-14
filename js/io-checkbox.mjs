@@ -24,8 +24,17 @@ class IOCheckbox extends IOElement
     return ["checked", "disabled"];
   }
 
-  attributeChangedCallback()
+  attributeChangedCallback(name)
   {
+    if (!this.disabled && name === "checked")
+    {
+      this.dispatchEvent(new CustomEvent("change", {
+        bubbles: true,
+        cancelable: true,
+        detail: this.checked
+      }));
+    }
+
     this.render();
   }
 
@@ -37,15 +46,12 @@ class IOCheckbox extends IOElement
 
   onclick(event)
   {
-    if (!this.disabled)
+    if (this.disabled)
     {
-      this.checked = !this.checked;
-      this.dispatchEvent(new CustomEvent("change", {
-        bubbles: true,
-        cancelable: true,
-        detail: this.checked
-      }));
+      return;
     }
+
+    this.checked = !this.checked;
   }
 
   render()

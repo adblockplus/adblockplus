@@ -47,6 +47,11 @@ import {
   filterTypes as requestBlockerFilterTypes
 } from "./lib/request-blocker.mjs";
 
+function forward(type, message, sender)
+{
+  return port._onMessage(Object.assign({}, message, {type}), sender);
+}
+
 port.on("composer.isPageReady", () => Boolean(params.composerActive));
 port.on("stats.getBlockedPerPage", () => 123);
 port.on("stats.getBlockedTotal", () => 12345);
@@ -292,7 +297,7 @@ port.on("filters.isAllowlisted", () =>
     }
 
     if (message.what == "recommendations")
-      return Array.from(recommendations(), convertRecommendation);
+      return forward("subscriptions.getRecommendations", message, sender);
 
     if (message.what == "senderId")
       return sender.page.id;
@@ -569,6 +574,11 @@ port.on("filters.isAllowlisted", () =>
       dataCorrupted: isDataCorrupted(),
       reinitialized: isReinitialized()
     };
+  });
+
+  port.on("subscriptions.getRecommendations", () =>
+  {
+    return Array.from(recommendations(), convertRecommendation);
   });
 
   port.on("subscriptions.remove", (message, sender) =>

@@ -107,6 +107,10 @@ export default {
         src: ["src/premium/content/index.ts"]
       },
       {
+        dest: "premium-onboarding.js",
+        src: ["src/premium-onboarding/ui/index.ts"]
+      },
+      {
         dest: "premium-onboarding.preload.js",
         src: ["src/premium-onboarding/content/index.ts"]
       },
@@ -215,6 +219,10 @@ export default {
       {
         dest: "vendor/@eyeo/webext-sdk/content.js",
         src: "node_modules/@eyeo/webext-sdk/dist/ewe-content.js"
+      },
+      {
+        dest: "premium-onboarding.html",
+        src: "src/premium-onboarding/ui/onboarding.html"
       }
     ]
   },

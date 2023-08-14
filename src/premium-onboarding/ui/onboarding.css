@@ -1,0 +1,261 @@
+/*
+ * This file is part of Adblock Plus <https://adblockplus.org/>,
+ * Copyright (C) 2006-present eyeo GmbH
+ *
+ * Adblock Plus is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * Adblock Plus is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@import "../../../css/font.css";
+@import "../../../css/light.css";
+
+:root
+{
+  --content-width: 775px;
+}
+
+body
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
+  color: #666;
+  background-color: var(--background-color-secondary);
+}
+
+main
+{
+  box-sizing: border-box;
+  width: var(--content-width);
+  border: 1px solid var(--border-color-primary);
+  border-radius: 6px;
+  padding: 40px;
+  background-color: var(--background-color-primary);
+}
+
+h1,
+h2,
+h3
+{
+  margin: 0;
+}
+
+h1
+{
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--color-dimmed);
+}
+
+h2
+{
+  font-size: 16px;
+  color: #333;
+}
+
+h3
+{
+  font-size: 16px;
+}
+
+/*******************************************************************************
+ * Header
+ ******************************************************************************/
+
+body > header
+{
+  width: var(--content-width);
+  padding-bottom: 35px;
+}
+
+body > header > img
+{
+  height: 32px;
+}
+
+main > header
+{
+  border-bottom: 1px solid var(--border-color-primary);
+}
+
+main > header > h1
+{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+main > header > h1 > img
+{
+  height: 1em;
+}
+
+main > header > p
+{
+  margin: 20px 0;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+/*******************************************************************************
+ * Features
+ ******************************************************************************/
+
+.feature
+{
+  margin: 40px 0;
+  border: 1px solid var(--border-color-primary);
+  border-radius: 6px;
+  padding: 20px;
+  background-color: var(--background-color-primary);
+}
+
+.feature > header
+{
+  display: flex;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color-secondary);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.feature > header > label
+{
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.feature > header > .label
+{
+  font-weight: 600;
+  color: var(--color-info);
+}
+
+.feature > header > .label::before
+{
+  content: "(";
+}
+
+.feature > header > .label::after
+{
+  content: ")";
+}
+
+.feature.alwayson > header > .label
+{
+  color: #A9B2BD;
+}
+
+.feature > section
+{
+  display: flex;
+  gap: 2em;
+}
+
+.feature > section > img
+{
+  object-fit: contain;
+}
+
+.feature p
+{
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+.feature .label.new
+{
+  padding: 0 4px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #FFF;
+  background-color: var(--background-color-info);
+}
+
+/*******************************************************************************
+ * Footer
+ ******************************************************************************/
+
+footer
+{
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border-color-primary);
+}
+
+body.premium footer #choice-none,
+body:not(.premium) footer article:not(#choice-none),
+body:not(.chosen) #choice-finish,
+body.chosen #choice-continue
+{
+  display: none;
+}
+
+footer .ctas
+{
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
+}
+
+footer h2
+{
+  text-transform: uppercase;
+}
+
+footer p a
+{
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+footer .cta
+{
+  min-width: 225px;
+  padding: 1em 0.8em;
+  border: 1px solid var(--border-color-cta-secondary);
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-cta-secondary);
+  background-color: var(--background-color-cta-secondary);
+  transition: 100ms background-color;
+  cursor: pointer;
+}
+
+footer a.cta
+{
+  text-align: center;
+  text-decoration: none;
+}
+
+footer .cta:hover
+{
+  background-color: var(--background-color-cta-secondary-hover);
+}
+
+footer .cta.primary
+{
+  border-color: var(--border-color-cta-primary);
+  color: var(--color-cta-primary);
+  background-color: var(--background-color-cta-primary);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+footer .cta.primary:hover
+{
+  background-color: var(--background-color-cta-primary-hover);
+}

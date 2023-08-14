@@ -276,9 +276,59 @@ export type PrefsGetWhat =
   | "premium_upgrade_page_url";
 
 /**
+ * Subscription recommendation
+ */
+export interface Recommendation {
+  /**
+   * List of matching languages
+   */
+  languages: string[];
+
+  /**
+   * Subscription title
+   */
+  title: string;
+
+  /**
+   * Recommendation type
+   */
+  type: string;
+
+  /**
+   * Subscription URL
+   */
+  url: string;
+}
+
+/**
+ * Options sent to subscriptions.add
+ */
+export interface SubscriptionsAddOptions {
+  /**
+   * Whether user needs to confirm adding the subscription
+   **/
+  confirm?: boolean;
+
+  /**
+   * Subscription homepage URL
+   **/
+  homepage?: string;
+
+  /**
+   * Subscription title
+   **/
+  title?: string;
+
+  /**
+   * Subscription URL
+   */
+  url: string;
+}
+
+/**
  * Options sent into subscription.get.
  */
-export interface SubscriptionOptions {
+export interface SubscriptionsGetOptions {
   /**
    * Whether to return only the disabled filters.
    */
@@ -288,6 +338,16 @@ export interface SubscriptionOptions {
    * Whether or not to ignore filters that are disabled
    */
   ignoreDisabled?: boolean;
+}
+
+/**
+ * Options sent to subscriptions.remove
+ **/
+export interface SubscriptionsRemoveOptions {
+  /**
+   * Subscription URL
+   **/
+  url: string;
 }
 
 /**
@@ -301,7 +361,9 @@ export type SendArgs =
   | GetNotificationOptions
   | GetPrefsOptions
   | PremiumActivateOptions
-  | SubscriptionOptions;
+  | SubscriptionsAddOptions
+  | SubscriptionsGetOptions
+  | SubscriptionsRemoveOptions;
 
 /**
  * Actions allowed to be sent into the browser.runtime.sendMessage.
@@ -317,5 +379,8 @@ export type SendType =
   | "premium.get"
   | "stats.getBlockedPerPage"
   | "stats.getBlockedTotal"
+  | "subscriptions.add"
   | "subscriptions.get"
-  | "subscriptions.getInitIssues";
+  | "subscriptions.getInitIssues"
+  | "subscriptions.getRecommendations"
+  | "subscriptions.remove";

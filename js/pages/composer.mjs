@@ -16,6 +16,7 @@
  */
 
 import "../../css/pages/composer.css";
+import {closeCurrentTab} from "../../src/polyfills/ui/index.ts";
 import {getErrorMessage} from "../common.mjs";
 import {initI18n, stripTagsUnsafe} from "../i18n.mjs";
 
@@ -49,27 +50,6 @@ function addFilters(reload = false)
   });
 }
 
-// We'd rather just call window.close, but that isn't working consistently with
-// Firefox 57, even when allowScriptsToClose is passed to browser.windows.create
-// See https://bugzilla.mozilla.org/show_bug.cgi?id=1418394
-// window.close is also broken on Firefox 63.x
-// See https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/issues/791#note_374617568
-async function closeMe()
-{
-  try
-  {
-    const tab = await browser.tabs.getCurrent();
-    await browser.tabs.remove(tab.id);
-  }
-  catch (ex)
-  {
-    // Opera 68 throws a "Tabs cannot be edited right now (user may be
-    // dragging a tab)." exception when we attempt to close the window
-    // using `browser.tabs.remove`.
-    window.close();
-  }
-}
-
 function closeDialog(apply = false, reload = false)
 {
   document.getElementById("filters").disabled = true;
@@ -85,7 +65,7 @@ function closeDialog(apply = false, reload = false)
     }
   }).then(() =>
   {
-    closeMe();
+    closeCurrentTab();
   });
 }
 
@@ -97,7 +77,7 @@ function resetFilters()
   {
     browser.tabs.sendMessage(targetPageId, {
       type: "composer.content.startPickingElement"
-    }).then(closeMe);
+    }).then(closeCurrentTab);
   });
 }
 
@@ -203,7 +183,7 @@ function init()
         // [1] - https://bugzilla.mozilla.org/show_bug.cgi?id=1418655
         return true;
       case "composer.dialog.close":
-        closeMe();
+        closeCurrentTab();
         break;
     }
   });

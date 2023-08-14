@@ -26,6 +26,11 @@ io-checkbox
   cursor: pointer;
 }
 
+io-checkbox[disabled]
+{
+  cursor: default;
+}
+
 io-checkbox > button
 {
   width: 100%;
@@ -38,16 +43,21 @@ io-checkbox > button
   background-image: url(/skin/icons/checkbox.svg?off#off);
   background-repeat: no-repeat;
   background-size: contain;
+  cursor: inherit;
 }
 
 io-checkbox[disabled] > button
 {
   outline: none;
-  opacity: 0.5;
-  cursor: default;
+  background-image: url(/skin/icons/checkbox.svg?off-disabled#off-disabled);
 }
 
 io-checkbox[checked] > button
 {
   background-image: url(/skin/icons/checkbox.svg?on#on);
+}
+
+io-checkbox[disabled][checked] > button
+{
+  background-image: url(/skin/icons/checkbox.svg?on-disabled#on-disabled);
 }

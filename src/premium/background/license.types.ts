@@ -69,13 +69,3 @@ export interface LicenseCheckPayload {
    */
   v: "1";
 }
-
-/**
- * Premium state information
- */
-export interface PremiumState {
-  /**
-   * Whether the user has an active Premium license
-   */
-  isActive: boolean;
-}

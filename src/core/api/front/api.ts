@@ -15,6 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import { PremiumState } from "../../../premium/shared";
 import {
   addDisconnectListener,
   addMessageListener,
@@ -33,10 +34,11 @@ import type {
   PlatformToStore,
   PrefsGetWhat,
   QueryParams,
+  Recommendation,
   SendArgs,
   SendType,
   Store,
-  SubscriptionOptions
+  SubscriptionsGetOptions
 } from "./api.types";
 
 /**
@@ -56,6 +58,8 @@ export const app = {
    * retrieves app information corresponding to the passed string
    *
    * @param what which item of information to return
+   *
+   * @returns app information
    */
   get: <T = string>(what: AppGetWhat) => send<T>("app.get", { what }),
 
@@ -111,9 +115,11 @@ export const ctalinks = {
    *
    * @param link cta link name to retrieve
    * @param queryParams extra query parameters that should be added to the link
+   *
+   * @returns cta link
    */
   get: (link: string, queryParams: QueryParams = {}) =>
-    send("app.get", { what: "ctalink", link, queryParams })
+    send<string>("app.get", { what: "ctalink", link, queryParams })
 };
 
 /**
@@ -169,8 +175,10 @@ export const notifications = {
 export const prefs = {
   /**
    * Gets a specific preference setting according to the provided key.
+   *
+   * @returns preference value
    */
-  get: (key: PrefsGetWhat) => send("prefs.get", { key }),
+  get: <T>(key: PrefsGetWhat) => send<T>("prefs.get", { key }),
 
   /**
    * Adds a connection Listener for the "prefs"
@@ -188,13 +196,17 @@ export const premium = {
    * Triggers activation of Premium license with the given user ID
    *
    * @param userId - Premium user ID
+   *
+   * @returns whether activating Premium was successful
    */
-  activate: (userId: string) => send("premium.activate", { userId }),
+  activate: (userId: string) => send<boolean>("premium.activate", { userId }),
 
   /**
    * Retrieves the current Premium state
+   *
+   * @returns Premium state
    */
-  get: () => send("premium.get"),
+  get: () => send<PremiumState>("premium.get"),
 
   /**
    * Adds a connection listener for the Premium state
@@ -224,7 +236,7 @@ export const requests = {
  * @param sendType accepted message strings
  * @param rawArgs other arguments to be sent to the browser
  */
-function send<T = string>(
+function send<T = void>(
   sendType: SendType,
   rawArgs: SendArgs = {}
 ): Promise<T> {
@@ -265,11 +277,19 @@ export const stats = {
  */
 export const subscriptions = {
   /**
+   * Adds the given subscription
+   *
+   * @param url - Subscription URL
+   */
+  add: (url: string) => send("subscriptions.add", { url }),
+
+  /**
    * Retrieves the currently active subscriptions.
    *
    * @param options an object full of props to filter reported subscriptions
    */
-  get: (options: SubscriptionOptions) => send("subscriptions.get", options),
+  get: (options?: SubscriptionsGetOptions) =>
+    send("subscriptions.get", options),
 
   /**
    * Returns any initial subscription issues that may exist.
@@ -277,11 +297,26 @@ export const subscriptions = {
   getInitIssues: () => send("subscriptions.getInitIssues"),
 
   /**
+   * Retrieves a list of recommended subscriptions
+   *
+   * @returns list of recommended subscriptions
+   */
+  getRecommendations: () =>
+    send<Recommendation[]>("subscriptions.getRecommendations"),
+
+  /**
    * Adds a connection Listener for the "subscriptions"
    *
    * @param filter Filters to listen for
    */
-  listen: (filter: ListenFilters) => listen({ type: "subscriptions", filter })
+  listen: (filter: ListenFilters) => listen({ type: "subscriptions", filter }),
+
+  /**
+   * Removes the given subscription
+   *
+   * @param url - Subscription URL
+   */
+  remove: (url: string) => send("subscriptions.remove", { url })
 };
 
 /**

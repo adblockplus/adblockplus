@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+  - This file is part of Adblock Plus <https://adblockplus.org/>,
+  - Copyright (C) 2006-present eyeo GmbH
+  -
+  - Adblock Plus is free software: you can redistribute it and/or modify
+  - it under the terms of the GNU General Public License version 3 as
+  - published by the Free Software Foundation.
+  -
+  - Adblock Plus is distributed in the hope that it will be useful,
+  - but WITHOUT ANY WARRANTY; without even the implied warranty of
+  - MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  - GNU General Public License for more details.
+  -
+  - You should have received a copy of the GNU General Public License
+  - along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<html>
+  <head>
+    <title data-i18n="premium_onboarding_title"></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <script src="polyfill.js"></script>
+    <script src="ext/common.js"></script>
+    <script src="ext/content.js"></script>
+    <script src="premium-onboarding.js" defer></script>
+  </head>
+  <body hidden>
+
+    <header>
+      <img alt="" src="skin/icons/logo/abp-full.svg">
+    </header>
+
+    <main>
+      <header>
+        <h1>
+          <img alt="" src="skin/icons/premium-crown.svg">
+          <span data-i18n="premium_onboarding_title"></span>
+        </h1>
+        <p data-i18n="premium_onboarding_subtitle"></p>
+      </header>
+
+      <article class="feature alwayson">
+        <header>
+          <label>
+            <io-checkbox data-feature="annoyances" checked disabled></io-checkbox>
+            <h2 data-i18n="premium_onboarding_feature_annoyances_title"></h2>
+          </label>
+          <span class="label" data-i18n="premium_onboarding_label_alwayson"></span>
+        </header>
+
+        <section>
+          <img alt="" src="skin/icons/feature-annoyances.svg">
+          <h3 data-i18n="premium_onboarding_feature_annoyances_subtitle"></h3>
+        </section>
+      </article>
+
+      <article class="feature">
+        <header>
+          <label>
+            <io-checkbox data-feature="cookies-premium" disabled></io-checkbox>
+            <h2 data-i18n="premium_onboarding_feature_cookies_title"></h2>
+            <span class="label new" data-i18n="premium_onboarding_label_new"></span>
+          </label>
+          <span class="label" data-i18n="premium_onboarding_label_recommended"></span>
+        </header>
+
+        <section>
+          <img alt="" src="skin/icons/feature-cookies.svg">
+          <div>
+            <h3 data-i18n="premium_onboarding_feature_cookies_subtitle"></h3>
+            <p data-i18n="premium_onboarding_feature_cookies_description"></p>
+          </div>
+        </section>
+      </article>
+
+      <footer>
+        <article id="choice-none">
+          <p id="upgrade-description" data-i18n="premium_onboarding_upgrade_description"></p>
+          <div class="ctas">
+            <a id="cta-upgrade" class="cta primary" data-i18n="premium_onboarding_cta_upgrade" href="#"></a>
+          </div>
+        </article>
+
+        <article id="choice-continue">
+          <div class="ctas">
+            <button id="cta-enable-none" class="cta" data-i18n="premium_onboarding_cta_enable_none"></button>
+            <button id="cta-enable-all" class="cta primary" data-i18n="premium_onboarding_cta_enable_all"></button>
+          </div>
+        </article>
+
+        <article id="choice-finish">
+          <h2 data-i18n="premium_onboarding_finish_title"></h2>
+          <p id="finish-description" data-i18n="premium_onboarding_finish_description"></p>
+          <div class="ctas">
+            <button id="cta-finish" class="cta primary" data-i18n="premium_onboarding_cta_finish"></button>
+          </div>
+        </article>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -24,7 +24,8 @@ import * as scheduledEmitter from "../../core/scheduled-event-emitter/background
 import { PremiumActivateOptions } from "../../core/api/shared";
 import { ScheduleType } from "../../core/scheduled-event-emitter/background/scheduled-event-emitter.types";
 import { EventEmitterCallback } from "../../polyfills/background";
-import { License, LicenseCheckPayload, PremiumState } from "./license.types";
+import { PremiumState } from "../shared";
+import { License, LicenseCheckPayload } from "./license.types";
 
 /**
  * Error indicating a temporary problem during a license check,
