@@ -260,5 +260,10 @@
     "title": "AdBlock premium list",
     "url": "https://easylist-downloads.adblockplus.org/adblock_premium.txt",
     "homepage": "https://help.getadblock.com/support/home"
+  },
+  {
+    "type": "cookies-premium",
+    "title": "Cookie Consent Filter List",
+    "url": "https://easylist-downloads.adblockplus.org/cookie-filter-list.txt"
   }
 ]
