@@ -15,6 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import "../../css/pages/composer.css";
 import {getErrorMessage} from "../common.mjs";
 import {initI18n, stripTagsUnsafe} from "../i18n.mjs";
 
@@ -212,3 +213,5 @@ function init()
 
 initI18n();
 window.addEventListener("load", init, false);
+
+document.body.hidden = false;

@@ -15,9 +15,9 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-@import "light.scss";
-@import "io-filter-search.scss";
-@import "io-filter-list.scss";
+@import "./light.css";
+@import "./io-filter-search.css";
+@import "./io-filter-list.css";
 
 io-filter-table
 {
@@ -101,12 +101,12 @@ io-filter-table .footer button::before
 
 io-filter-table .footer .delete::before
 {
-  background-image: url(icons/trash.svg?error#error);
+  background-image: url(/skin/icons/trash.svg?error#error);
 }
 
 io-filter-table .footer .copy::before
 {
-  background-image: url(icons/copy.svg);
+  background-image: url(/skin/icons/copy.svg);
 }
 
 io-filter-table .footer ul.error

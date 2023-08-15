@@ -15,7 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-@import "../landing.scss";
+@import "../font.css";
+@import "../landing.css";
 
 /*******************************************************************************
  * Header
@@ -83,9 +84,9 @@ h1 em[data-i18n-index="1"]
   left: calc(var(--offset-start) * -1);
   width: calc(100% + var(--offset-start));
   height: 100px;
-  background-image: url(icons/day1/bug.svg),
-    url(icons/day1/wave.svg),
-    url(icons/day1/tower.svg);
+  background-image: url(/skin/icons/day1/bug.svg),
+    url(/skin/icons/day1/wave.svg),
+    url(/skin/icons/day1/tower.svg);
   background-repeat: no-repeat;
   background-size: 40px auto,
     160px auto

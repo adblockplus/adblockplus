@@ -26,6 +26,8 @@ import {
 } from "./report.mjs";
 import stepsManager from "./steps-manager.mjs";
 
+import "../../../css/pages/issue-reporter.css";
+
 const optionalPermissions = {
   permissions: [
     "contentSettings",
@@ -356,3 +358,5 @@ function encodeHTML(str)
     "\"": "&quot;"
   }[c]));
 }
+
+document.body.hidden = false;

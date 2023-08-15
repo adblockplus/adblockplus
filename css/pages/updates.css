@@ -15,7 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-@import "../landing.scss";
+@import "../font.css";
+@import "../landing.css";
 
 /*******************************************************************************
  * Header
@@ -56,12 +57,12 @@ h1
 
 #improvements h2::before
 {
-  background-image: url(icons/improvements.svg);
+  background-image: url(/skin/icons/improvements.svg);
 }
 
 #fixes h2::before
 {
-  background-image: url(icons/fixes.svg);
+  background-image: url(/skin/icons/fixes.svg);
 }
 
 .updates
@@ -103,7 +104,7 @@ html[dir="rtl"] .updates > li
   position: absolute;
   width: 20px;
   height: 20px;
-  background-image: url(icons/update.svg);
+  background-image: url(/skin/icons/update.svg);
   background-size: 100%;
   content: "";
 }
@@ -241,10 +242,10 @@ body[data-store="edge"] #contribute-rate
 
 #contribute-rate > .block-icon::before
 {
-  background-image: url(icons/waving.svg);
+  background-image: url(/skin/icons/waving.svg);
 }
 
 #contribute-donate > .block-icon::before
 {
-  background-image: url(icons/donate.svg);
+  background-image: url(/skin/icons/donate.svg);
 }

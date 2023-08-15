@@ -28,6 +28,7 @@ import {
   whenPageReady
 } from "./utils.mjs";
 
+import "../../../css/pages/popup.css";
 import "../../io-circle-toggle.mjs";
 import "./notifications.mjs";
 import "../../io-popup-footer.mjs";
@@ -123,6 +124,8 @@ activeTab.then(tab =>
     // @link https://bugzilla.mozilla.org/show_bug.cgi?id=1780550
     window.close();
   });
+
+  document.body.hidden = false;
 });
 
 function updateBlockedPerPage(blockedPage)

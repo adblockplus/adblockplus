@@ -35,7 +35,7 @@ io-checkbox > button
   border: 0;
   border-radius: 0;
   background-color: transparent;
-  background-image: url(icons/checkbox.svg?off#off);
+  background-image: url(/skin/icons/checkbox.svg?off#off);
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -49,5 +49,5 @@ io-checkbox[disabled] > button
 
 io-checkbox[checked] > button
 {
-  background-image: url(icons/checkbox.svg?on#on);
+  background-image: url(/skin/icons/checkbox.svg?on#on);
 }

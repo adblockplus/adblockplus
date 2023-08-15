@@ -6,7 +6,6 @@
 
 /screenshots/
 /skin/icons/toolbar/*.png
-/skin/*.css
 /allure-report/
 /test/end-to-end/allure-results/
 /test/end-to-end/lambda_api.log

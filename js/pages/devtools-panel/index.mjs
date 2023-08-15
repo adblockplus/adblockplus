@@ -19,6 +19,8 @@ import api from "../../../src/core/api/front/index.ts";
 import {initI18n, setElementText} from "../../i18n.mjs";
 import records from "./records.mjs";
 
+import "../../../css/pages/devtools-panel.css";
+
 const {getMessage} = browser.i18n;
 
 initI18n();
@@ -422,3 +424,5 @@ document.addEventListener("DOMContentLoaded", () =>
   const theme = browser.devtools.panels.themeName || "default";
   document.body.classList.add(theme);
 }, false);
+
+document.body.hidden = false;

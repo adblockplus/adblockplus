@@ -21,15 +21,15 @@ import "../../../adblockpluschrome/ext/common";
 import "../../../adblockpluschrome/ext/content";
 
 import { $ } from "../../../js/dom.mjs";
-import font300 from "../../../skin/fonts/source-sans-pro-300.woff2";
-import font400 from "../../../skin/fonts/source-sans-pro-400.woff2";
-import font700 from "../../../skin/fonts/source-sans-pro-700.woff2";
-import dialogLogo from "../../../skin/icons/logo/abp-full.svg";
+import font300 from "../../../skin/fonts/source-sans-pro-300.woff2?uri";
+import font400 from "../../../skin/fonts/source-sans-pro-400.woff2?uri";
+import font700 from "../../../skin/fonts/source-sans-pro-700.woff2?uri";
+import dialogLogo from "../../../skin/icons/logo/abp-full.svg?uri";
 import { Message } from "../../polyfills/shared";
 import { PingMessage, ResizeMessage, StartInfo } from "../shared";
-import dialogClose from "./close.svg";
-import dialogCss from "./dialog.css";
-import dialogHtml from "./dialog.html";
+import dialogClose from "./close.svg?uri";
+import dialogCss from "./dialog.css?text";
+import dialogHtml from "./dialog.html?text";
 
 /**
  * Handles interaction with close button

@@ -19,6 +19,8 @@ import api from "../../src/core/api/front/index.ts";
 import {convertDoclinks} from "../common.mjs";
 import {initI18n, setElementLinks, setElementText} from "../i18n.mjs";
 
+import "../../css/pages/first-run.css";
+
 function openOptions()
 {
   api.app.open("options");
@@ -101,3 +103,4 @@ initI18n();
 initLinks();
 initWarnings();
 initApplication();
+document.body.hidden = false;

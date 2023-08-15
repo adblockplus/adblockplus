@@ -15,9 +15,10 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-@import "../light.scss";
-@import "../io-circle-toggle.scss";
-@import "../io-popup-footer.scss";
+@import "../font.css";
+@import "../light.css";
+@import "../io-circle-toggle.css";
+@import "../io-popup-footer.css";
 
 :root
 {
@@ -210,8 +211,8 @@ a.premium-label::before
   display: inline-block;
   width: 15px;
   height: 10px;
-  -webkit-mask-image: url("icons/premium-crown.svg");
-  mask-image: url("icons/premium-crown.svg");
+  -webkit-mask-image: url(/skin/icons/premium-crown.svg);
+  mask-image: url(/skin/icons/premium-crown.svg);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-size: contain;
@@ -331,12 +332,12 @@ html[dir="rtl"] #notification .content h3
 
 #notification .content.critical h3
 {
-  background-image: url(icons/critical.svg);
+  background-image: url(/skin/icons/critical.svg);
 }
 
 #notification .content.information h3
 {
-  background-image: url(icons/info.svg);
+  background-image: url(/skin/icons/info.svg);
 }
 
 #notification .content hr
@@ -365,7 +366,7 @@ html[dir="rtl"] #notification .content h3
   height: var(--font-size-big);
   border: 0;
   opacity: 0.5;
-  background-image: url(icons/gear.svg?background#background);
+  background-image: url(/skin/icons/gear.svg?background#background);
   background-repeat: no-repeat;
   transition: opacity 0.1s ease-in;
   flex-shrink: 0;
@@ -649,7 +650,7 @@ body:not(.private) #block-element
   width: var(--font-size-medium);
   height: var(--font-size-medium);
   margin: 0 4px;
-  background-image: url(icons/block-element.svg);
+  background-image: url(/skin/icons/block-element.svg);
   background-size: var(--font-size-medium);
   background-repeat: no-repeat;
   content: "";
@@ -664,7 +665,7 @@ html[dir="rtl"] #block-element strong::before
 {
   display: block;
   height: 32px;
-  background-image: url(icons/block-element.svg);
+  background-image: url(/skin/icons/block-element.svg);
   background-size: 28px;
   background-repeat: no-repeat;
   background-position: top center;
@@ -694,12 +695,12 @@ html[dir="rtl"] #block-element-info strong::before
 
 #issue-reporter > span
 {
-  background-image: url(icons/report-issue.svg);
+  background-image: url(/skin/icons/report-issue.svg);
 }
 
 #block-element-cancel > span
 {
-  background-image: url(icons/cancel.svg);
+  background-image: url(/skin/icons/cancel.svg);
 }
 
 #issue-reporter > span,

@@ -15,7 +15,9 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-@import "../light.scss";
+@import "../font.css";
+@import "./popup.css";
+@import "../light.css";
 
 /*
  * Absolute positioning of child elements behaves as if parent is

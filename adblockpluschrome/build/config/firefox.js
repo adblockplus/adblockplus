@@ -33,8 +33,7 @@ export default {
       {
         dest: "skin",
         src: [
-          "skin/icons/mobile/**",
-          "skin/mobile-options.css"
+          "skin/icons/mobile/**"
         ]
       },
       {

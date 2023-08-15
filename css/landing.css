@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-@import "light.scss";
+@import "./light.css";
 
 /*******************************************************************************
  * General
@@ -383,15 +383,15 @@ article:last-child::after
 
 #social a.email
 {
-  background-image: url(icons/email-white.svg);
+  background-image: url(/skin/icons/email-white.svg);
 }
 
 #social a.facebook
 {
-  background-image: url(icons/facebook-white.svg);
+  background-image: url(/skin/icons/facebook-white.svg);
 }
 
 #social a.twitter
 {
-  background-image: url(icons/twitter-white.svg);
+  background-image: url(/skin/icons/twitter-white.svg);
 }

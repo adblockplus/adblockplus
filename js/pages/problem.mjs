@@ -20,6 +20,7 @@ import {convertDoclinks} from "../common.mjs";
 import {$} from "../dom.mjs";
 import {initI18n} from "../i18n.mjs";
 
+import "../../css/pages/problem.css";
 import "../landing.mjs";
 
 api.app.getInfo().then((info) =>
@@ -42,3 +43,4 @@ function initOSReference(name, idx)
 convertDoclinks();
 initI18n();
 ["windows", "mac"].forEach(initOSReference);
+document.body.hidden = false;

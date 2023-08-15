@@ -18,6 +18,7 @@
 import {$} from "../dom.mjs";
 import {initI18n} from "../i18n.mjs";
 
+import "../../css/pages/popup-dummy.css";
 import "../io-circle-toggle.mjs";
 import "../io-popup-footer.mjs";
 
@@ -69,3 +70,5 @@ function setupFooter()
       });
     });
 }
+
+document.body.hidden = false;

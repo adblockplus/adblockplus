@@ -17,7 +17,6 @@
     "eslint:standard": "eslint --ignore-path .gitignore src/",
     "eslint:legacy": "eslint --ext .js,.mjs --ignore-path .gitignore --ignore-pattern /adblockpluschrome/ ./",
     "eslint:adblockpluschrome": "eslint --ext .js,.cjs,.js.tmpl --ignore-path .gitignore adblockpluschrome/",
-    "prettier": "prettier ./**/*.ts ./**/*.md ./**/*.scss ./**/*.html ./**/*.json --write",
     "start": "http-server ./dist/devenv/local/",
     "test": "npm run $ test",
     "csv-export": "node build/locale-sync/csv/main.js -e",
@@ -31,31 +30,10 @@
     "postinstall": "npm run $ install"
   },
   "$": {
-    "bundle": {
-      "composer": "$ create.bundle composer",
-      "day1": [
-        "$ create.bundle.css popup",
-        "$ create.bundle popup-dummy",
-        "$ create.bundle day1"
-      ],
-      "desktop-options": "$ create.bundle desktop-options",
-      "devtools-panel": "$ create.bundle devtools-panel",
-      "first-run": "$ create.bundle first-run",
-      "issue-reporter": "$ create.bundle issue-reporter",
-      "mobile-options": "$ create.bundle mobile-options",
-      "popup": "$ create.bundle popup",
-      "problem": "$ create.bundle problem",
-      "updates": "$ create.bundle updates"
-    },
     "create": {
-      "bundle": {
-        "css": "$ create.css ./css/pages/$1.scss ./skin/$1.css"
-      },
-      "css": "sass --no-source-map $1 $2",
       "dist": {
         "icons": "node build/icons-generation/index.js",
-        "rules": "rules adblockplus",
-        "ui": "$ bundle"
+        "rules": "rules adblockplus"
       }
     },
     "crowdin": {
@@ -72,7 +50,7 @@
       "npm install --loglevel=error --no-audit --no-fund --no-optional --prefix adblockpluschrome"
     ],
     "lint": {
-      "css": "stylelint ./build/**/*.css ./css/*.scss ./skin/*.css ./src/**/*.css --ignore-path .gitignore",
+      "css": "stylelint ./build/**/*.css ./css/*.css ./src/**/*.css --ignore-path .gitignore",
       "js": "npm run eslint",
       "ts": "tsc --noEmit",
       "locale": "node build/locale-linter ./locale/**/*.json"
@@ -114,7 +92,6 @@
     "local-range": "0.1.0",
     "moment": "2.29.4",
     "npm-dollar": "2.2.1",
-    "sass": "1.52.1",
     "typescript": "4.7.3",
     "webextension-polyfill": "0.8.0"
   },

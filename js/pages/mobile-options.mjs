@@ -19,6 +19,8 @@ import api from "../../src/core/api/front/index.ts";
 import {convertDoclinks, getDoclink, getErrorMessage} from "../common.mjs";
 import {initI18n} from "../i18n.mjs";
 
+import "../../css/pages/mobile-options.css";
+
 {
   const dialogSubscribe = "subscribe";
   const idAcceptableAds = "acceptableAds";
@@ -415,4 +417,6 @@ import {initI18n} from "../i18n.mjs";
   {
     get("#imprint").href = url;
   });
+
+  document.body.hidden = false;
 }
