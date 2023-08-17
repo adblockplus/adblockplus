@@ -17,7 +17,6 @@
 
 import * as ewe from "@eyeo/webext-sdk";
 
-import * as premium from "../../src/premium/background/index.ts";
 import {showOptions} from "../../lib/pages/options.js";
 import {installHandler} from "./messaging/events.js";
 import {port} from "./messaging/port.js";
@@ -55,7 +54,7 @@ export async function addFilter(filterText, origin)
   return null;
 }
 
-async function addSubscription(details)
+export async function addSubscription(details)
 {
   try
   {
@@ -529,57 +528,6 @@ ewe.filters.onChanged.addListener(async(filter, property) =>
 ewe.subscriptions.onRemoved.addListener(subscription =>
 {
   disabledFilterCounters.delete(subscription.url);
-});
-
-/**
- * Returns the premium subscription (Distraction Control).
- *
- * @returns {Promise} The premium subscription
- */
-async function getPremiumSubscription()
-{
-  // The subscription of the "annoyances" type is the DC subscription
-  return (await ewe.subscriptions.getRecommendations())
-    .filter(recommendation => recommendation.type === "annoyances")
-    .shift();
-}
-
-/**
- * Adds the premium subscription.
- *
- * @returns {Promise} A Promise that settles after adding the subscription
- *  was fulfilled or rejected
- */
-async function addPremiumSubscription()
-{
-  const subscription = await getPremiumSubscription();
-
-  if (!(await ewe.subscriptions.has(subscription.url)))
-    await addSubscription(subscription);
-}
-
-/**
- * Removes the premium subscription.
- *
- * @returns {Promise} A Promise that settles after removing the subscription
- *  was fulfilled or rejected
- */
-async function removePremiumSubscription()
-{
-  const subscription = await getPremiumSubscription();
-
-  if (await ewe.subscriptions.has(subscription.url))
-    await ewe.subscriptions.remove(subscription.url);
-}
-
-premium.emitter.on("deactivated", () =>
-{
-  void removePremiumSubscription();
-});
-
-premium.emitter.on("activated", () =>
-{
-  void addPremiumSubscription();
 });
 
 installHandler("filters", "added", emit =>

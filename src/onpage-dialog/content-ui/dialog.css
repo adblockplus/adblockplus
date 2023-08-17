@@ -81,11 +81,16 @@ header
 {
   display: flex;
   align-items: center;
-  gap: 4px;
   margin-bottom: 12px;
   padding-bottom: 12px;
   border-bottom: 1px solid #C6C6C6;
   font-size: 16px;
+}
+
+html:not([dir="rtl"]) header > *:not(:last-child),
+html[dir="rtl"] header > *:not(:first-child)
+{
+  margin-right: 4px;
 }
 
 #logo
@@ -131,8 +136,13 @@ h1
 {
   display: flex;
   flex-direction: column;
-  gap: 1em;
   line-height: 1.4em;
+}
+
+html:not([dir="rtl"]) #body > *:not(:last-child),
+html[dir="rtl"] #body > *:not(:first-child)
+{
+  margin-bottom: 1em;
 }
 
 #body p

@@ -84,6 +84,45 @@ interface Filter {
   csp: string | null;
 }
 
+/**
+ * Defines the recommended filter subscriptions per language.
+ */
+interface Recommendation {
+  /**
+   * The identifier for this subscription.
+   */
+  id: string;
+  /**
+   * The languages that this recommendation would match to.
+   */
+  languages: string[];
+  /**
+   * The display name of the recommended subscription.
+   */
+  title: string;
+  /**
+   *  A list of subscriptions that this one depends on.
+   */
+  requires: string[];
+  /**
+   * A list of subscriptions that this one also contains.
+   */
+  includes: string[];
+  /**
+   * The kind of content targeted by this recommended subscription.
+   */
+  type: string;
+  /**
+   * Where the recommended subscription can be found in plain text.
+   */
+  url: string;
+  /**
+   * Where the recommended subscription can be found for MV2 in plain text
+   * (Manifest V3 only).
+   */
+  mv2URL?: string;
+}
+
 declare module "@eyeo/webext-sdk" {
   declare namespace allowlisting {
     /**
@@ -145,5 +184,25 @@ declare module "@eyeo/webext-sdk" {
      * Returns the list of ignored notification categories
      */
     const getIgnoredCategories: () => Promise<string[]>;
+  }
+
+  declare namespace subscriptions {
+    /**
+     * Checks if a subscription has been added.
+     *
+     * @param url - The URL of the subscription to be checked.
+     */
+    const has: (url: string) => Promise<boolean>;
+    /**
+     * Removes the subscription for the given URL. It will no longer have
+     * any effect.
+     *
+     * @param url - The URL of the subscription to be removed.
+     */
+    const remove: (url: string) => Promise<void>;
+    /**
+     * Returns an array of all recommended subscriptions.
+     */
+    const getRecommendations: () => Recommendation[];
   }
 }

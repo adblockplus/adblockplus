@@ -67,10 +67,6 @@
     "description": "General tab description",
     "message": "Determine what Adblock Plus shows and hides on websites"
   },
-  "options_beta_label": {
-    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/blob/559198fff12c6b3564a9d220e01f03fdfe4ea72b/spec/abp/desktop-settings/general-tab.md#premium-features-1",
-    "message": "Beta"
-  },
   "options_new_label": {
     "description": "Label of the new elements",
     "message": "New"
@@ -82,6 +78,10 @@
   "options_recommended_annoyances_description": {
     "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/blob/174961bed1ed95f9118bd08df0d6ad6e267e567d/spec/abp/desktop-settings/general-tab.md#premium-features-1",
     "message": "Block floating videos, newsletter pop-ups, survey requests and site notifications."
+  },
+  "options_recommended_cookies_premium_description": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/blob/ab27c2fcfbde533411185c88190a108f21f6496b/spec/abp/desktop-settings/general-tab.md#premium-features-1",
+    "message": "Browse websites without having to see cookie notifications."
   },
   "options_recommended_privacy_description": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/52243bc8596b06107461034c745a6ecdaa42f1f6/spec/abp/desktop-settings/general-tab.md#list-of-recommended-filter-lists",
@@ -531,6 +531,22 @@
   "options_dialog_language_other_empty": {
     "description": "Text shown when list of available languages is empty",
     "message": "There are no available languages."
+  },
+  "options_dialog_optIn_premium_subscription_title": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/blob/ab27c2fcfbde533411185c88190a108f21f6496b/spec/abp/desktop-settings/general-tab.md#premium-features-1",
+    "message": "Turn on block cookie consent pop-ups"
+  },
+  "options_dialog_optIn_premium_subscription_description": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/blob/ab27c2fcfbde533411185c88190a108f21f6496b/spec/abp/desktop-settings/general-tab.md#premium-features-1",
+    "message": "By adding this feature and blocking these prompts, you are consenting to not be notified about cookie usage and to edit cookie settings on individual websites. You can change this at any time."
+  },
+  "options_dialog_optIn_premium_subscription_confirm": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/blob/ab27c2fcfbde533411185c88190a108f21f6496b/spec/abp/desktop-settings/general-tab.md#premium-features-1",
+    "message": "Ok, got it"
+  },
+  "options_dialog_optIn_premium_subscription_reject": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/blob/ab27c2fcfbde533411185c88190a108f21f6496b/spec/abp/desktop-settings/general-tab.md#premium-features-1",
+    "message": "Not now"
   },
   "options_generic_error": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/40a632fc81fec3799018f5640cf7c8eac68df87f/spec/abp/options-page.md#error-state",

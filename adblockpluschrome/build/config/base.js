@@ -39,7 +39,8 @@ export default {
           "src/bypass/background/index.ts",
           "src/ipm/background/index.ts",
           "src/onpage-dialog/background/index.ts",
-          "src/premium-onboarding/background/index.ts"
+          "src/premium-onboarding/background/index.ts",
+          "src/premium-subscriptions/background/index.ts"
         ]
       },
       {

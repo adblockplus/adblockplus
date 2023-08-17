@@ -37,6 +37,10 @@
     "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/blob/174961bed1ed95f9118bd08df0d6ad6e267e567d/spec/abp/desktop-settings/general-tab.md#premium-features-1",
     "message": "Block more distractions"
   },
+  "common_feature_cookies_premium_title": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/blob/ab27c2fcfbde533411185c88190a108f21f6496b/spec/abp/desktop-settings/general-tab.md#premium-features-1",
+    "message": "Block cookie consent pop-ups"
+  },
   "common_feature_malware_title": {
     "description": "Feature title for anti-malware filter list",
     "message": "Block Malware"

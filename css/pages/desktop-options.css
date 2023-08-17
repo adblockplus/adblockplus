@@ -486,6 +486,12 @@ input[type="checkbox"].icon.toggle:disabled::before
   background-image: url(/skin/icons/trash.svg?default#default);
 }
 
+.close
+{
+  margin: 0;
+  cursor: pointer;
+}
+
 .close.icon::before
 {
   width: 1rem;
@@ -1641,16 +1647,19 @@ section.recommended-features h3
   font-size: 1rem;
 }
 
-section.recommended-features li .beta-label
+section.recommended-features li .label.new
 {
   display: none;
-  margin: 0 0.25rem;
-  font-size: var(--font-size-primary);
-  font-weight: 400;
+  margin: 0 4px;
+  padding: 0 4px;
+  border-radius: 4px;
   text-transform: uppercase;
+  font-size: var(--font-size-small);
+  color: #FFF;
+  background-color: var(--background-color-info);
 }
 
-section.recommended-features li.beta .beta-label
+section.recommended-features li.new .label.new
 {
   display: inline-block;
 }
@@ -1848,7 +1857,7 @@ html[dir="rtl"] #social ul li
   right: 0px;
   bottom: 0px;
   left: 0px;
-  opacity: 0.7;
+  opacity: 0.2;
   background-color: #000;
 }
 
@@ -1862,56 +1871,28 @@ body[data-dialog] #dialog-background
   overflow: hidden;
   position: fixed;
   z-index: var(--z-dialog);
-  top: 100px;
+  top: 50%;
+  transform: translateY(-50%);
   right: 0;
   left: 0;
   width: 700px;
   margin: auto;
+  padding: 20px;
   border-radius: var(--border-radius);
   background-color: #FFF;
   box-shadow: 0 -4px 20px 0 rgba(255, 255, 255, 0.11);
 }
 
-#dialog header
-{
-  display: flex;
-  padding: 1.5em;
-  background-color: #0797E1;
-}
-
-#dialog-title
-{
-  color: #FFF;
-  flex: 1;
-}
-
 #dialog-title h3
 {
-  margin: 0;
+  margin: 0 0 1.2em;
   text-transform: uppercase;
 }
 
-#dialog button
-{
-  display: inline-block;
-}
-
-.close
-{
-  margin: 0;
-  cursor: pointer;
-}
-
-#dialog #dialog-body
+#dialog-body
 {
   overflow: auto;
   max-height: 60vh;
-  padding: 2rem 1rem;
-}
-
-#dialog-body button
-{
-  margin-top: 2rem;
 }
 
 #dialog-body h3
@@ -1951,14 +1932,69 @@ html[dir="rtl"] #dialog-body h3::before
   background-image: url(/skin/icons/filter-list-url.svg);
 }
 
-html[dir="ltr"] #dialog-body button + button
+#dialog-body p
 {
-  margin-left: 1rem;
+  margin: 0;
 }
 
-html[dir="rtl"] #dialog-body button + button
+#dialog-body .ctas
 {
-  margin-right: 1rem;
+  display: flex;
+  justify-content: end;
+  margin-top: 1.2em;
+}
+
+html:not([dir="rtl"]) #dialog-body .ctas > *:not(:last-child),
+html[dir="rtl"] #dialog-body .ctas > *:not(:first-child)
+{
+  margin-right: 1.5em;
+}
+
+#dialog-body .ctas button
+{
+  min-width: 150px;
+  padding: 0.5em 1em;
+  border: 1px solid var(--border-color-cta-secondary);
+  border-radius: 6px;
+  font-size: var(--font-size-primary);
+  font-weight: 700;
+  color: var(--color-cta-secondary);
+  background-color: var(--background-color-cta-secondary);
+  box-shadow: none;
+  text-transform: capitalize;
+  transition: 100ms background-color;
+  cursor: pointer;
+}
+
+#dialog-body .ctas button:hover
+{
+  background-color: var(--background-color-cta-secondary-hover);
+}
+
+#dialog-body .ctas button.primary
+{
+  border-color: var(--border-color-cta-primary);
+  color: var(--color-cta-primary);
+  background-color: var(--background-color-cta-primary);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+#dialog-body .ctas button.primary:hover
+{
+  background-color: var(--background-color-cta-primary-hover);
+}
+
+#dialog-body .ctas button.premium
+{
+  border-color: var(--color-premium);
+  background-color: var(--color-premium);
+  color: #000;
+}
+
+#dialog-body .ctas button.premium:hover
+{
+  border-color: var(--color-premium-hover);
+  background-color: var(--color-premium-hover);
 }
 
 #dialog-content-language-add
@@ -1976,6 +2012,12 @@ html[dir="rtl"] #dialog-body button + button
 #dialog-content-about p
 {
   margin: 0.5rem 0rem;
+}
+
+#dialog-content-about .ctas,
+#dialog-content-invalid .ctas
+{
+  justify-content: center;
 }
 
 #dialog-content-import .side-controls
@@ -2087,6 +2129,8 @@ body:not([data-dialog="predefined"]) #dialog-title-predefined,
 body:not([data-dialog="predefined"]) #dialog-content-predefined,
 body:not([data-dialog="invalid"]) #dialog-title-invalid,
 body:not([data-dialog="invalid"]) #dialog-content-invalid,
+body:not([data-dialog="optIn-premium-subscription"]) #dialog-title-optIn-premium-subscription,
+body:not([data-dialog="optIn-premium-subscription"]) #dialog-content-optIn-premium-subscription,
 body:not([data-dialog]) #dialog
 {
   display: none;

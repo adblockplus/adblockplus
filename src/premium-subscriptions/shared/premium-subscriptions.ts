@@ -15,6 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export * from "./desktop-options";
-export * from "./desktop-options.types";
-export * from "./polyfill";
+/**
+ * Premium subscription types
+ */
+export const premiumTypes = new Set(["annoyances", "cookies-premium"]);

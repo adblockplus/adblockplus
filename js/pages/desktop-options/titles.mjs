@@ -58,7 +58,9 @@ export function getPrettyItemTitle(item, includeRaw)
   }
   else
   {
-    description = getMessage(`common_feature_${recommended}_title`);
+    description = getMessage(
+      `common_feature_${recommended.replace(/-/g, "_")}_title`
+    );
   }
 
   if (!description)

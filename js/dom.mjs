@@ -15,10 +15,18 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export const $ = (selector, container = document) =>
-  container.querySelector(selector);
-export const $$ = (selector, container = document) =>
-  container.querySelectorAll(selector);
+export const $ = (selector, container) =>
+{
+  if (!container)
+    container = document;
+  return container.querySelector(selector);
+};
+export const $$ = (selector, container) =>
+{
+  if (!container)
+    container = document;
+  return container.querySelectorAll(selector);
+};
 
 // basic copy and paste clipboard utility
 export const clipboard = {

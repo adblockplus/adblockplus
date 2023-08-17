@@ -99,7 +99,7 @@
             <div class="description-container">
               <header>
                 <h3 data-display></h3>
-                <span class="beta-label" data-i18n="options_beta_label"></span>
+                <span class="label new" data-i18n="options_new_label"></span>
               </header>
               <p class="description" data-template-i18n-body="options_recommended_%value%_description"></p>
             </div>
@@ -418,15 +418,15 @@
     <!-- Dialog -->
     <div id="dialog-background"></div>
     <div id="dialog" role="dialog" aria-modal="true" aria-hidden="true">
-      <header>
-        <span id="dialog-title">
-          <h3 id="dialog-title-about" data-i18n="options_dialog_about_title"></h3>
-          <h3 id="dialog-title-language-add" data-i18n="options_dialog_language_title"></h3>
-          <h3 id="dialog-title-language-change" data-i18n="options_dialog_language_title"></h3>
-          <h3 id="dialog-title-predefined" data-i18n="options_dialog_predefined_title"></h3>
-          <h3 id="dialog-title-invalid" data-i18n="options_dialog_invalid_title"></h3>
-        </span>
-        <button class="icon close primary" data-action="close-dialog"></button>
+      <!-- Placeholder element to determine when to wrap focus around -->
+      <span class="focus-first" tabindex="0"></span>
+      <header id="dialog-title">
+        <h3 id="dialog-title-about" data-i18n="options_dialog_about_title"></h3>
+        <h3 id="dialog-title-language-add" data-i18n="options_dialog_language_title"></h3>
+        <h3 id="dialog-title-language-change" data-i18n="options_dialog_language_title"></h3>
+        <h3 id="dialog-title-predefined" data-i18n="options_dialog_predefined_title"></h3>
+        <h3 id="dialog-title-invalid" data-i18n="options_dialog_invalid_title"></h3>
+        <h3 id="dialog-title-optIn-premium-subscription" data-i18n="options_dialog_optIn_premium_subscription_title"></h3>
       </header>
       <div id="dialog-body" class="content">
         <!-- About Adblock Plus -->
@@ -439,9 +439,9 @@
               <a id="privacy-policy" data-i18n="issueReporter_privacyPolicy" target="_blank"></a>
             </p>
           </div>
-          <p>
+          <div class="ctas">
             <button data-i18n="options_close" class="primary default-focus" data-action="close-dialog"></button>
-          </p>
+          </div>
         </div>
         <!-- Add predefined subscription -->
         <div id="dialog-content-predefined" class="dialog-content">
@@ -455,19 +455,34 @@
               <a href="#" target="_blank"></a>
             </div>
           </div>
-          <button class="default-focus primary"
-            data-action="add-predefined-subscription"
-            data-i18n="options_dialog_predefined_confirm"></button>
-          <button class="secondary" data-action="close-dialog"
-            data-i18n="options_customFilter_cancel"></button>
+          <div class="ctas">
+            <button class="secondary" data-action="close-dialog"
+              data-i18n="options_customFilter_cancel"></button>
+            <button class="default-focus primary"
+              data-action="add-predefined-subscription"
+              data-i18n="options_dialog_predefined_confirm"></button>
+          </div>
         </div>
         <!-- Reject invalid subscriptions -->
         <div id="dialog-content-invalid" class="dialog-content">
           <div class="error">!</div>
           <div id="dialog-description-invalid"
             data-i18n="options_dialog_invalid_message"></div>
-          <button class="default-focus primary" data-action="close-dialog"
-            data-i18n="options_customFilter_cancel"></button>
+          <div class="ctas">
+            <button class="default-focus primary" data-action="close-dialog"
+              data-i18n="options_customFilter_cancel"></button>
+          </div>
+        </div>
+        <!-- Add opt-in premium subscription -->
+        <div id="dialog-content-optIn-premium-subscription" class="dialog-content">
+          <p data-i18n="options_dialog_optIn_premium_subscription_description"></p>
+          <div class="ctas">
+            <button class="secondary" data-action="close-dialog"
+              data-i18n="options_dialog_optIn_premium_subscription_reject"></button>
+            <button class="default-focus premium"
+            data-action="add-subscription"
+            data-i18n="options_dialog_optIn_premium_subscription_confirm"></button>
+          </div>
         </div>
       </div>
       <!-- Placeholder element to determine when to wrap focus around -->

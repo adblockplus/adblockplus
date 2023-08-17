@@ -91,8 +91,13 @@ main > header
 main > header > h1
 {
   display: flex;
-  gap: 20px;
   align-items: center;
+}
+
+html:not([dir="rtl"]) main > header > h1 > *:not(:last-child),
+html[dir="rtl"] main > header > h1 > *:not(:first-child)
+{
+  margin-right: 20px;
 }
 
 main > header > h1 > img
@@ -134,7 +139,12 @@ main > header > p
 {
   display: flex;
   align-items: center;
-  gap: 0.5em;
+}
+
+html:not([dir="rtl"]) .feature > header > label > *:not(:last-child),
+html[dir="rtl"] .feature > header > label > *:not(:first-child)
+{
+  margin-right: 0.5em;
 }
 
 .feature > header > .label
@@ -161,7 +171,12 @@ main > header > p
 .feature > section
 {
   display: flex;
-  gap: 2em;
+}
+
+html:not([dir="rtl"]) .feature > section > *:not(:last-child),
+html[dir="rtl"] .feature > section > *:not(:first-child)
+{
+  margin-right: 2em;
 }
 
 .feature > section > img
@@ -208,7 +223,12 @@ footer .ctas
 {
   display: flex;
   justify-content: flex-end;
-  gap: 1em;
+}
+
+html:not([dir="rtl"]) footer .ctas > *:not(:last-child),
+html[dir="rtl"] footer .ctas > *:not(:first-child)
+{
+  margin-right: 1em;
 }
 
 footer h2

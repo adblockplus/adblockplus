@@ -16,5 +16,3 @@
  */
 
 export * from "./desktop-options";
-export * from "./desktop-options.types";
-export * from "./polyfill";

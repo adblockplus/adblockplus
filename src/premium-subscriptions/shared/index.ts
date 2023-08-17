@@ -15,6 +15,4 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export * from "./desktop-options";
-export * from "./desktop-options.types";
-export * from "./polyfill";
+export * from "./premium-subscriptions";
