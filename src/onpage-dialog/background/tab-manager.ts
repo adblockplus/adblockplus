@@ -24,6 +24,7 @@ import { port } from "../../../adblockpluschrome/lib/messaging/port";
 import { TabSessionStorage } from "../../../adblockpluschrome/lib/storage/tab-session";
 import { getLocaleInfo } from "../../i18n/background";
 import {
+  CommandName,
   createSafeOriginUrl,
   dismissCommand,
   getBehavior,
@@ -141,7 +142,11 @@ async function handleCloseMessage(
   }
 
   void dismissDialog(sender.page.id, ipmId);
-  void recordEvent(ipmId, DialogEventType.closed);
+  void recordEvent(
+    ipmId,
+    CommandName.createOnPageDialog,
+    DialogEventType.closed
+  );
 }
 
 /**
@@ -172,7 +177,11 @@ async function handleContinueMessage(
   void browser.tabs.create({ url: targetUrl });
 
   void dismissDialog(sender.page.id, ipmId);
-  void recordEvent(ipmId, DialogEventType.buttonClicked);
+  void recordEvent(
+    ipmId,
+    CommandName.createOnPageDialog,
+    DialogEventType.buttonClicked
+  );
 }
 
 /**
@@ -245,7 +254,11 @@ async function handlePingMessage(
   }
 
   void dismissDialog(sender.page.id, ipmId);
-  void recordEvent(ipmId, DialogEventType.ignored);
+  void recordEvent(
+    ipmId,
+    CommandName.createOnPageDialog,
+    DialogEventType.ignored
+  );
 }
 
 /**
@@ -260,7 +273,11 @@ function handleTabRemovedEvent(data: TabRemovedEventData): void {
   }
 
   void dismissDialog(tabId, ipmId);
-  void recordEvent(ipmId, DialogEventType.ignored);
+  void recordEvent(
+    ipmId,
+    CommandName.createOnPageDialog,
+    DialogEventType.ignored
+  );
 }
 
 /**
@@ -387,7 +404,11 @@ async function showDialog(
     platform: info.platform
   });
 
-  void recordEvent(ipmId, DialogEventType.injected);
+  void recordEvent(
+    ipmId,
+    CommandName.createOnPageDialog,
+    DialogEventType.injected
+  );
 }
 
 /**
