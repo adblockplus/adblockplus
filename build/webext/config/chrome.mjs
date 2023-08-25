@@ -26,7 +26,7 @@ export default {
     copy: [
       {
         dest: "",
-        src: ["managed-storage-schema.json"]
+        src: ["build/webext/managed-storage-schema.json"]
       }
     ]
   },

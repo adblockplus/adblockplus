@@ -29,7 +29,7 @@ export default {
       },
       {
         dest: "polyfill.js",
-        src: ["polyfill.js"],
+        src: ["mocks/js/polyfill.js"],
         overwrite: true
       },
       // Specific to Firefox Mobile
@@ -43,7 +43,7 @@ export default {
     copy: [
       {
         dest: "ext",
-        src: ["ext/**"]
+        src: ["mocks/js/ext/**"]
       },
       {
         dest: "locale",
@@ -66,7 +66,7 @@ export default {
       },
       {
         dest: "",
-        src: ["mobile-options.html"]
+        src: ["src/mobile-options/ui/mobile-options.html"]
       }
     ],
     rename: []

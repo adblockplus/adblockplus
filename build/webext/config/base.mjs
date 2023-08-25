@@ -157,11 +157,20 @@ export default {
       {
         dest: "",
         src: [
-          "*.html",
           "src/composer/ui/composer.html",
+          "src/day1/ui/day1.html",
+          "src/desktop-options/ui/desktop-options.html",
+          "src/devtools-panel/ui/devtools-panel.html",
           "src/devtools/ui/devtools.html",
+          "src/first-run/ui/first-run.html",
+          "src/issue-reporter/ui/issue-reporter.html",
+          "src/issue-reporter/ui/proxy.html",
+          "src/mobile-options/ui/mobile-options.html",
           "src/options/ui/options.html",
-          "!mobile-options.html"
+          "src/popup-dummy/ui/popup-dummy.html",
+          "src/popup/ui/popup.html",
+          "src/problem/ui/problem.html",
+          "src/updates/ui/updates.html"
         ]
       }
     ],

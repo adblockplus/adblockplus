@@ -12,7 +12,11 @@ module.exports = {
   coverageDirectory: "coverage",
   coverageReporters: ["json", "html", "text"],
   coveragePathIgnorePatterns: ["node_modules/", "jest.setup.ts"],
-  setupFiles: ["./polyfill.js", "./ext/common.js", "./ext/content.js"],
+  setupFiles: [
+    "./mocks/js/polyfill.js",
+    "./mocks/js/ext/common.js",
+    "./mocks/js/ext/content.js"
+  ],
   testEnvironment: "jsdom",
   testMatch: ["**/*.spec.ts"]
 };

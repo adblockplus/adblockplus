@@ -38,7 +38,7 @@ export default {
       },
       {
         dest: "",
-        src: ["mobile-options.html"]
+        src: ["src/mobile-options/ui/mobile-options.html"]
       }
     ]
   },
