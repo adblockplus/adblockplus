@@ -15,18 +15,21 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/** @module filterComposer */
+// Modules from legacy directories don't have type information yet, and adding
+// it is not trivial. Therefore we're first moving them over and apply the
+// coding style, and we're going to add type information in a subsequent step.
+// @ts-nocheck
 
 import * as info from "info";
 
 import * as ewe from "@eyeo/webext-sdk";
 
-import {port} from "./messaging/port.js";
-import {SessionStorage} from "./storage/session.js";
-import {TabSessionStorage} from "./storage/tab-session.js";
-import {allowlistingState} from "./allowlisting.js";
-import {Prefs} from "./prefs.js";
-import {extractHostFromFrame} from "./url.js";
+import { port } from "../../../adblockpluschrome/lib/messaging/port.js";
+import { SessionStorage } from "../../../adblockpluschrome/lib/storage/session.js";
+import { TabSessionStorage } from "../../../adblockpluschrome/lib/storage/tab-session.js";
+import { allowlistingState } from "../../../adblockpluschrome/lib/allowlisting.js";
+import { Prefs } from "../../../adblockpluschrome/lib/prefs.js";
+import { extractHostFromFrame } from "../../../adblockpluschrome/lib/url.js";
 
 /**
  * Key to store/retrieve the active filter composer dialog
@@ -35,21 +38,25 @@ const activeDialogKey = "activeDialog";
 
 const session = new SessionStorage("filterComposer");
 
-function isValidString(s)
-{
-  return s && s.indexOf("\0") == -1;
+const readyActivePages = new TabSessionStorage(
+  "filterComposer:readyActivePages"
+);
+let showingContextMenu = false;
+
+function isValidString(s) {
+  return s && s.indexOf("\0") === -1;
 }
 
-function escapeChar(chr)
-{
-  let code = chr.charCodeAt(0);
+function escapeChar(chr) {
+  const code = chr.charCodeAt(0);
 
   // Control characters and leading digits must be escaped based on
   // their char code in CSS. Moreover, curly brackets aren't allowed
   // in elemhide filters, and therefore must be escaped based on their
   // char code as well.
-  if (code <= 0x1F || code == 0x7F || /[\d{}]/.test(chr))
+  if (code <= 0x1f || code === 0x7f || /[\d{}]/.test(chr)) {
     return "\\" + code.toString(16) + " ";
+  }
 
   return "\\" + chr;
 }
@@ -62,8 +69,7 @@ function escapeChar(chr)
  * @return {string}
  * @static
  */
-export function escapeCSS(s)
-{
+export function escapeCSS(s) {
   return s.replace(/^[\d-]|[^\w\-\u0080-\uFFFF]/g, escapeChar);
 }
 
@@ -74,33 +80,29 @@ export function escapeCSS(s)
  * @return {string}
  * @static
  */
-export function quoteCSS(value)
-{
+export function quoteCSS(value) {
+  /* eslint-disable-next-line no-control-regex */
   return '"' + value.replace(/["\\{}\x00-\x1F\x7F]/g, escapeChar) + '"';
 }
 
-async function composeFilters(details)
-{
-  let {page, frame} = details;
-  let filters = [];
-  let selectors = [];
+async function composeFilters(details) {
+  const { page, frame } = details;
+  const filters = [];
+  const selectors = [];
 
-  let isFrameAllowlisted = await ewe.filters.isResourceAllowlisted(
+  const isFrameAllowlisted = await ewe.filters.isResourceAllowlisted(
     frame.url,
     "document",
     page.id,
     frame.id
   );
-  if (!isFrameAllowlisted)
-  {
-    let docDomain = extractHostFromFrame(frame);
+  if (!isFrameAllowlisted) {
+    const docDomain = extractHostFromFrame(frame);
 
     // Add a blocking filter for each URL of the element that can be blocked
-    if (details.url)
-    {
+    if (details.url) {
       let type;
-      switch (details.tagName)
-      {
+      switch (details.tagName) {
         case "img":
         case "input":
           type = "image";
@@ -119,53 +121,54 @@ async function composeFilters(details)
           break;
       }
 
-      let isAllowlisted = await ewe.filters.isResourceAllowlisted(
+      const isAllowlisted = await ewe.filters.isResourceAllowlisted(
         details.url,
         type,
         page.id,
         frame.id
       );
-      if (!isAllowlisted)
-      {
+      if (!isAllowlisted) {
         let filterText = details.url.replace(/^[\w-]+:\/+(?:www\.)?/, "||");
-        let isSpecificAllowlisted = await ewe.filters.isResourceAllowlisted(
+        const isSpecificAllowlisted = await ewe.filters.isResourceAllowlisted(
           details.url,
           "genericblock",
           page.id,
           frame.id
         );
-        if (isSpecificAllowlisted)
+        if (isSpecificAllowlisted) {
           filterText += "$domain=" + docDomain;
+        }
 
-        if (!filters.includes(filterText))
+        if (!filters.includes(filterText)) {
           filters.push(filterText);
+        }
       }
     }
 
     // If we couldn't generate any blocking filters, fallback to element hiding
-    let elementAllowlistingFilters = await ewe.filters.getAllowingFilters(
+    const elementAllowlistingFilters = await ewe.filters.getAllowingFilters(
       page.id,
       {
         frameId: frame.id,
         types: ["elemhide"]
       }
     );
-    let isElementAllowlisted = !!elementAllowlistingFilters.length;
-    if (filters.length == 0 && !isElementAllowlisted)
-    {
+    const isElementAllowlisted = !!elementAllowlistingFilters.length;
+    if (filters.length === 0 && !isElementAllowlisted) {
       // Generate CSS selectors based on the element's "id" and
       // "class" attribute.
-      if (isValidString(details.id))
+      if (isValidString(details.id)) {
         selectors.push("#" + escapeCSS(details.id));
+      }
 
-      let classes = details.classes.filter(isValidString);
-      if (classes.length > 0)
-        selectors.push(classes.map(c => "." + escapeCSS(c)).join(""));
+      const classes = details.classes.filter(isValidString);
+      if (classes.length > 0) {
+        selectors.push(classes.map((c) => "." + escapeCSS(c)).join(""));
+      }
 
       // If there is a "src" attribute, specifiying a URL that we can't block,
       // generate a CSS selector matching the "src" attribute
-      if (isValidString(details.src))
-      {
+      if (isValidString(details.src)) {
         selectors.push(
           escapeCSS(details.tagName) + "[src=" + quoteCSS(details.src) + "]"
         );
@@ -174,21 +177,24 @@ async function composeFilters(details)
       // As last resort, if there is a "style" attribute, and we
       // couldn't generate any filters so far, generate a CSS selector
       // matching the "style" attribute
-      if (isValidString(details.style) && selectors.length == 0 &&
-          filters.length == 0)
-      {
+      if (
+        isValidString(details.style) &&
+        selectors.length === 0 &&
+        filters.length === 0
+      ) {
         selectors.push(
           escapeCSS(details.tagName) + "[style=" + quoteCSS(details.style) + "]"
         );
       }
 
       // Add an element hiding filter for each generated CSS selector
-      for (let selector of selectors)
+      for (const selector of selectors) {
         filters.push(docDomain.replace(/^www\./, "") + "##" + selector);
+      }
     }
   }
 
-  return {filters, selectors};
+  return { filters, selectors };
 }
 
 /**
@@ -199,12 +205,10 @@ async function composeFilters(details)
  *                                with.
  * @returns {?number} dialog window's page ID
  */
-port.on("composer.openDialog", async(message, sender) =>
-{
+async function handleOpenDialogMessage(message, sender) {
   // Close previously active dialog before opening new one
   const activeDialog = await session.get(activeDialogKey);
-  if (activeDialog)
-  {
+  if (activeDialog) {
     void browser.tabs.remove(activeDialog.tab.id);
 
     // We cannot wait until this cleanup to occur when the tab gets closed,
@@ -244,14 +248,14 @@ port.on("composer.openDialog", async(message, sender) =>
   });
 
   // Wait for the tab to finish loading
-  if (dialogTab.status !== "complete")
+  if (dialogTab.status !== "complete") {
     return;
+  }
 
   await doInit();
-});
+}
 
-async function doInit()
-{
+async function doInit() {
   const activeDialog = await session.get(activeDialogKey);
 
   await browser.tabs.sendMessage(activeDialog.sender.id, {
@@ -261,12 +265,12 @@ async function doInit()
 
   activeDialog.initAttempt += 1;
   await session.set(activeDialogKey, activeDialog);
-  if (activeDialog.initAttempt > 30)
+  if (activeDialog.initAttempt > 30) {
     return;
+  }
 
-  try
-  {
-    let response = await browser.tabs.sendMessage(activeDialog.tab.id, {
+  try {
+    const response = await browser.tabs.sendMessage(activeDialog.tab.id, {
       type: "composer.dialog.init",
       sender: activeDialog.sender.id,
       filters: activeDialog.filters,
@@ -275,20 +279,19 @@ async function doInit()
 
     // Sometimes sendMessage incorrectly reports a success on Firefox, so
     // we must check the response too.
-    if (!response)
+    if (!response) {
       throw new Error();
+    }
 
     // Sometimes Firefox <63 doesn't draw the window's contents[1]
     // initially, so we resize the window slightly as a workaround.
     // [1] - https://bugzilla.mozilla.org/show_bug.cgi?id=1408446
-    if (info.application == "firefox")
-    {
-      await browser.windows.update(activeDialog.window.id,
-                                   {width: activeDialog.window.width + 2});
+    if (info.application === "firefox") {
+      await browser.windows.update(activeDialog.window.id, {
+        width: activeDialog.window.width + 2
+      });
     }
-  }
-  catch (e)
-  {
+  } catch (e) {
     // Firefox sometimes sets the status for a window to "complete" before
     // it is ready to receive messages[1]. As a workaround we'll try again a
     // few times with a second delay.
@@ -297,51 +300,45 @@ async function doInit()
   }
 }
 
-async function onTabRemoved(removedTabId)
-{
+async function onTabRemoved(removedTabId) {
   const activeDialog = await session.get(activeDialogKey);
-  if (!activeDialog)
+  if (!activeDialog) {
     return;
+  }
 
-  // Notify content script if dialog was closed
-  if (removedTabId === activeDialog.tab.id)
-  {
-    browser.tabs.sendMessage(activeDialog.sender.id, {
+  if (removedTabId === activeDialog.tab.id) {
+    // Notify content script if dialog was closed
+    void browser.tabs.sendMessage(activeDialog.sender.id, {
       type: "composer.content.dialogClosed",
       popupId: activeDialog.tab.id
     });
-  }
-  // Close dialog if tab was closed
-  else if (removedTabId === activeDialog.sender.id)
-  {
-    browser.tabs.sendMessage(activeDialog.tab.id, {
+  } else if (removedTabId === activeDialog.sender.id) {
+    // Close dialog if tab was closed
+    void browser.tabs.sendMessage(activeDialog.tab.id, {
       type: "composer.dialog.close"
     });
-  }
-  else
-  {
+  } else {
     return;
   }
 
   await session.delete(activeDialogKey);
 }
-browser.tabs.onRemoved.addListener(onTabRemoved);
 
-async function onTabUpdated(tabId, changeInfo)
-{
+async function onTabUpdated(tabId, changeInfo) {
   const activeDialog = await session.get(activeDialogKey);
-  if (!activeDialog || tabId !== activeDialog.tab.id)
+  if (!activeDialog || tabId !== activeDialog.tab.id) {
     return;
+  }
 
-  if (activeDialog.status === "complete" || changeInfo.status !== "complete")
+  if (activeDialog.status === "complete" || changeInfo.status !== "complete") {
     return;
+  }
 
   activeDialog.status = changeInfo.status;
   await session.set(activeDialogKey, activeDialog);
 
   await doInit();
 }
-browser.tabs.onUpdated.addListener(onTabUpdated);
 
 /**
  * @typedef {object} composerGetFiltersResult
@@ -365,8 +362,7 @@ browser.tabs.onUpdated.addListener(onTabUpdated);
  * @property {string?} url - The URL associated with the element.
  * @returns {composerGetFiltersResult}
  */
-port.on("composer.getFilters", (message, sender) =>
-{
+function handleGetFiltersMessage(message, sender) {
   return composeFilters({
     tagName: message.tagName,
     id: message.id,
@@ -377,7 +373,7 @@ port.on("composer.getFilters", (message, sender) =>
     page: sender.page,
     frame: sender.frame
   });
-});
+}
 
 /**
  * Forwards the given message payload to the given page ID, allowing a content
@@ -388,117 +384,107 @@ port.on("composer.getFilters", (message, sender) =>
  * @property {object} payload The contents of the message to forward.
  * @returns The response from the forwarded message's recipient.
  */
-port.on("composer.forward", (msg, sender) =>
-{
+function handleForwardMessage(msg, sender) {
   let targetPage;
-  if (msg.targetPageId)
+  if (msg.targetPageId) {
     targetPage = ext.getPage(msg.targetPageId);
-  else
+  } else {
     targetPage = sender.page;
-  if (targetPage)
-  {
+  }
+  if (targetPage) {
     msg.payload.sender = sender.page.id;
     return browser.tabs.sendMessage(targetPage.id, msg.payload);
   }
-});
+}
 
-ext.pages.onLoading.addListener(page =>
-{
+/**
+ * Reset "block element" feature
+ *
+ * @param {ext.Page} page - Page for which to reset "block element" feature
+ */
+function reset(page) {
   // When tabs start loading we send them a message to ensure that the state
   // of the "block element" tool is reset. This is necessary since Firefox will
   // sometimes cache the state of a tab when the user navigates back / forward,
   // which includes the state of the "block element" tool.
   // Since sending this message will often fail (e.g. for new tabs which have
   // just been opened) we catch and ignore any exception thrown.
-  browser.tabs.sendMessage(
-    page.id, {type: "composer.content.finished"}
-  ).catch(() => {});
-});
-
-
-/* Context menu and popup button */
-
-let readyActivePages = new TabSessionStorage("filterComposer:readyActivePages");
-let showingContextMenu = false;
-
-if ("contextMenus" in browser)
-{
-  browser.contextMenus.onClicked.addListener((itemInfo, tab) =>
-  {
-    if (itemInfo.menuItemId == "block_element")
-    {
-      browser.tabs.sendMessage(
-        tab.id, {type: "composer.content.contextMenuClicked"}
-      );
-    }
-  });
+  void browser.tabs
+    .sendMessage(page.id, { type: "composer.content.finished" })
+    .catch(() => {});
 }
 
-async function showOrHideContextMenu(activePage)
-{
+/**
+ * Handles clicks on context menu items
+ *
+ * @param {object} itemInfo - Clicked context menu item
+ * @param {Tab} tab - Tab on which context menu item was clicked
+ */
+function handleContextMenuClicked(itemInfo, tab) {
+  if (itemInfo.menuItemId === "block_element") {
+    void browser.tabs.sendMessage(tab.id, {
+      type: "composer.content.contextMenuClicked"
+    });
+  }
+}
+
+async function showOrHideContextMenu(activePage) {
   // Firefox for Android does not support browser.contextMenus.
   // https://bugzilla.mozilla.org/show_bug.cgi?id=1269062
-  if (!("contextMenus" in browser))
+  if (!("contextMenus" in browser)) {
     return;
+  }
 
-  let shouldShowContextMenu = Prefs.shouldShowBlockElementMenu &&
-                                await readyActivePages.get(activePage.id);
+  const shouldShowContextMenu =
+    Prefs.shouldShowBlockElementMenu &&
+    (await readyActivePages.get(activePage.id));
 
-  if (shouldShowContextMenu && !showingContextMenu)
-  {
-    browser.contextMenus.create({
+  if (shouldShowContextMenu && !showingContextMenu) {
+    void browser.contextMenus.create({
       id: "block_element",
       title: browser.i18n.getMessage("block_element"),
       contexts: ["image", "video", "audio"]
     });
     showingContextMenu = true;
-  }
-  else if (!shouldShowContextMenu && showingContextMenu)
-  {
-    browser.contextMenus.remove("block_element");
+  } else if (!shouldShowContextMenu && showingContextMenu) {
+    void browser.contextMenus.remove("block_element");
     showingContextMenu = false;
   }
 }
 
-async function updateContextMenu(updatedPage)
-{
-  let tabs = await browser.tabs.query({active: true, lastFocusedWindow: true});
-  if (tabs.length > 0 && (!updatedPage || updatedPage.id == tabs[0].id))
+async function updateContextMenu(updatedPage) {
+  const tabs = await browser.tabs.query({
+    active: true,
+    lastFocusedWindow: true
+  });
+  if (tabs.length > 0 && (!updatedPage || updatedPage.id === tabs[0].id))
     await showOrHideContextMenu(updatedPage || new ext.Page(tabs[0]));
 }
 
-browser.tabs.onActivated.addListener(async activeInfo =>
-{
-  await showOrHideContextMenu(new ext.Page({id: activeInfo.tabId}));
-});
-
-// Firefox for Android does not support browser.windows.
-// https://issues.adblockplus.org/ticket/5347
-if ("windows" in browser)
-{
-  browser.windows.onFocusChanged.addListener(windowId =>
-  {
-    if (windowId != browser.windows.WINDOW_ID_NONE)
-      updateContextMenu();
-  });
+/**
+ * Handles window focus changes
+ *
+ * @param {number} windowId - Focused window ID
+ */
+function handleFocusChanged(windowId) {
+  if (windowId !== browser.windows.WINDOW_ID_NONE) {
+    void updateContextMenu();
+  }
 }
 
-allowlistingState.addListener("changed", (page, isAllowlisted) =>
-{
-  void readyActivePages.transaction(async() =>
-  {
-    if (await readyActivePages.has(page.id))
-    {
+/**
+ * Handles allowlisting state changes
+ * @param {ext.Page} page - Page whose allowlisting state changed
+ * @param {boolean} isAllowlisted - New allowlisting state
+ */
+function handleAllowlistingStateChanged(page, isAllowlisted) {
+  void readyActivePages.transaction(async () => {
+    if (await readyActivePages.has(page.id)) {
       await readyActivePages.set(page.id, !isAllowlisted);
-      updateContextMenu(page);
+      void updateContextMenu(page);
     }
   });
-});
-
-Prefs.on("shouldShowBlockElementMenu", () =>
-{
-  updateContextMenu();
-});
+}
 
 /**
  * Returns true if the given page is ready for the "block element" tool, false
@@ -508,20 +494,18 @@ Prefs.on("shouldShowBlockElementMenu", () =>
  * @property {number} pageId
  * @returns {boolean}
  */
-port.on("composer.isPageReady", (message, sender) =>
-{
+function handleIsPageReadyMessage(message) {
   return readyActivePages.has(message.pageId);
-});
+}
 
-async function initializeReadyState(page)
-{
-  let isAllowlisted = await ewe.filters.isResourceAllowlisted(
+async function initializeReadyState(page) {
+  const isAllowlisted = await ewe.filters.isResourceAllowlisted(
     page.url,
     "document",
     page.id
   );
   await readyActivePages.set(page.id, !isAllowlisted);
-  updateContextMenu(page);
+  void updateContextMenu(page);
 }
 
 /**
@@ -531,40 +515,77 @@ async function initializeReadyState(page)
  * @event "composer.ready"
  * @returns {boolean}
  */
-port.on("composer.ready", async(message, sender) =>
-{
+async function handleReadyMessage(message, sender) {
   await initializeReadyState(sender.page);
-});
+}
 
-// We need to make sure that we check whether the content script is active
-// for each page load, since we only receive the "composer.ready" message
-// when it initializes itself on real page loads
-// https://gitlab.com/adblockinc/ext/adblockplus/adblockplusui/-/issues/1303
-ext.pages.onLoaded.addListener(async page =>
-{
-  try
-  {
-    const state = await browser.tabs.sendMessage(
-      page.id,
-      {type: "composer.content.getState"}
-    );
-    if (!state)
+/**
+ * Handles pages that finished loading
+ * @param {ext.Page} page - Page that finished loading
+ */
+async function handlePageLoaded(page) {
+  try {
+    const state = await browser.tabs.sendMessage(page.id, {
+      type: "composer.content.getState"
+    });
+    if (!state) {
       return;
+    }
 
     await initializeReadyState(page);
-  }
-  catch (ex)
-  {
+  } catch (ex) {
     // Ignore if we're unable to send messages to the tab
   }
-});
+}
 
-ext.addTrustedMessageTypes(null, [
-  "composer.content.clearPreviousRightClickEvent",
-  "composer.content.finished",
-  "composer.dialog.close",
-  "composer.forward",
-  "composer.getFilters",
-  "composer.openDialog",
-  "composer.ready"
-]);
+/**
+ * Initializes filter composer backend
+ */
+function start(): void {
+  browser.tabs.onRemoved.addListener(onTabRemoved);
+  browser.tabs.onUpdated.addListener(onTabUpdated);
+
+  port.on("composer.forward", handleForwardMessage);
+  port.on("composer.getFilters", handleGetFiltersMessage);
+  port.on("composer.isPageReady", handleIsPageReadyMessage);
+  port.on("composer.openDialog", handleOpenDialogMessage);
+  port.on("composer.ready", handleReadyMessage);
+
+  ext.pages.onLoading.addListener(reset);
+
+  if ("contextMenus" in browser) {
+    browser.contextMenus.onClicked.addListener(handleContextMenuClicked);
+  }
+
+  browser.tabs.onActivated.addListener(async (activeInfo) => {
+    await showOrHideContextMenu(new ext.Page({ id: activeInfo.tabId }));
+  });
+
+  // Firefox for Android does not support browser.windows.
+  // https://issues.adblockplus.org/ticket/5347
+  if ("windows" in browser) {
+    browser.windows.onFocusChanged.addListener(handleFocusChanged);
+  }
+
+  allowlistingState.addListener("changed", handleAllowlistingStateChanged);
+
+  Prefs.on("shouldShowBlockElementMenu", updateContextMenu);
+
+  // We need to make sure that we check whether the content script is active
+  // for each page load, since we only receive the "composer.ready" message
+  // when it initializes itself on real page loads
+  // https://gitlab.com/adblockinc/ext/adblockplus/adblockplusui/-/issues/1303
+  ext.pages.onLoaded.addListener(handlePageLoaded);
+
+  ext.addTrustedMessageTypes(null, [
+    "composer.content.clearPreviousRightClickEvent",
+    "composer.content.finished",
+    "composer.dialog.close",
+    "composer.forward",
+    "composer.getFilters",
+    "composer.openDialog",
+    "composer.ready"
+  ]);
+}
+
+start();

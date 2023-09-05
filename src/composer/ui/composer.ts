@@ -15,112 +15,114 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import "../../css/pages/composer.css";
-import {closeCurrentTab} from "../../src/polyfills/ui/index.ts";
-import {getErrorMessage} from "../common.mjs";
-import {initI18n, stripTagsUnsafe} from "../i18n.mjs";
+// Modules from legacy directories don't have type information yet, and adding
+// it is not trivial. Therefore we're first moving them over and apply the
+// coding style, and we're going to add type information in a subsequent step.
+// @ts-nocheck
+
+import "./composer.css";
+import { closeCurrentTab } from "../../polyfills/ui";
+import { getErrorMessage } from "../../../js/common.mjs";
+import { initI18n, stripTagsUnsafe } from "../../../js/i18n.mjs";
 
 let initialFilterText = "";
 let targetPageId = null;
 
-function onKeyDown(event)
-{
-  if (event.keyCode == 27)
-  {
+function onKeyDown(event) {
+  if (event.keyCode === 27) {
     event.preventDefault();
     closeDialog();
   }
 }
 
-function addFilters(reload = false)
-{
+function addFilters(reload = false) {
   const textarea = document.getElementById("filters");
-  browser.runtime.sendMessage({
-    type: "filters.importRaw",
-    text: textarea.value
-  }).then((errors) =>
-  {
-    if (errors.length > 0)
-    {
-      errors = errors.map(getErrorMessage);
-      alert(stripTagsUnsafe(errors.join("\n")));
-    }
-    else
-      closeDialog(!reload, reload);
-  });
+  void browser.runtime
+    .sendMessage({
+      type: "filters.importRaw",
+      text: textarea.value
+    })
+    .then((errors) => {
+      if (errors.length > 0) {
+        errors = errors.map(getErrorMessage);
+        alert(stripTagsUnsafe(errors.join("\n")));
+      } else {
+        closeDialog(!reload, reload);
+      }
+    });
 }
 
-function closeDialog(apply = false, reload = false)
-{
+function closeDialog(apply = false, reload = false) {
   document.getElementById("filters").disabled = true;
-  browser.runtime.sendMessage({
-    type: "composer.forward",
-    targetPageId,
-    payload:
-    {
-      type: "composer.content.finished",
-      popupAlreadyClosed: true,
-      reload,
-      apply
-    }
-  }).then(() =>
-  {
-    closeCurrentTab();
-  });
+  void browser.runtime
+    .sendMessage({
+      type: "composer.forward",
+      targetPageId,
+      payload: {
+        type: "composer.content.finished",
+        popupAlreadyClosed: true,
+        reload,
+        apply
+      }
+    })
+    .then(() => {
+      closeCurrentTab();
+    });
 }
 
-function resetFilters()
-{
-  browser.tabs.sendMessage(targetPageId, {
-    type: "composer.content.finished"
-  }).then(() =>
-  {
-    browser.tabs.sendMessage(targetPageId, {
-      type: "composer.content.startPickingElement"
-    }).then(closeCurrentTab);
-  });
+function resetFilters() {
+  void browser.tabs
+    .sendMessage(targetPageId, {
+      type: "composer.content.finished"
+    })
+    .then(() => {
+      void browser.tabs
+        .sendMessage(targetPageId, {
+          type: "composer.content.startPickingElement"
+        })
+        .then(closeCurrentTab);
+    });
 }
 
-function previewFilters({currentTarget})
-{
-  const {preview} = currentTarget.dataset;
+function previewFilters({ currentTarget }) {
+  const { preview } = currentTarget.dataset;
   const wasActive = preview === "active";
 
   const filtersTextArea = document.getElementById("filters");
 
   // if it is inactive, disable the textarea upfront
-  if (!wasActive)
+  if (!wasActive) {
     filtersTextArea.disabled = true;
+  }
 
-  browser.runtime.sendMessage({
-    type: "composer.forward",
-    targetPageId,
-    payload:
-    {
-      type: "composer.content.preview",
-      // toggle the preview mode
-      active: !wasActive
-    }
-  }).then(() =>
-  {
-    // if it was active, it's now inactive so the area should be editable
-    if (wasActive)
-      filtersTextArea.disabled = false;
+  void browser.runtime
+    .sendMessage({
+      type: "composer.forward",
+      targetPageId,
+      payload: {
+        type: "composer.content.preview",
+        // toggle the preview mode
+        active: !wasActive
+      }
+    })
+    .then(() => {
+      // if it was active, it's now inactive so the area should be editable
+      if (wasActive) {
+        filtersTextArea.disabled = false;
+      }
 
-    // toggle both data-preview and the button message accordingly
-    currentTarget.dataset.preview = wasActive ? "inactive" : "active";
-    currentTarget.textContent =
-      browser.i18n.getMessage(
+      // toggle both data-preview and the button message accordingly
+      currentTarget.dataset.preview = wasActive ? "inactive" : "active";
+      currentTarget.textContent = browser.i18n.getMessage(
         wasActive ? "composer_preview" : "composer_undo_preview"
       );
-  });
+    });
 }
 
-function updateComposerState({currentTarget})
-{
-  const {value} = currentTarget;
+function updateComposerState({ currentTarget }) {
+  const { value } = currentTarget;
   const disabled = !value.trim().length;
-  const changed = (initialFilterText !== value);
+  const changed = initialFilterText !== value;
 
   const block = document.getElementById("block");
   block.hidden = changed;
@@ -134,8 +136,7 @@ function updateComposerState({currentTarget})
   document.getElementById("preview").disabled = changed;
 }
 
-function init()
-{
+function init() {
   // Attach event listeners
   window.addEventListener("keydown", onKeyDown, false);
 
@@ -151,19 +152,15 @@ function init()
   const filtersTextArea = document.getElementById("filters");
   filtersTextArea.addEventListener("input", updateComposerState);
 
-  document.getElementById("unselect").addEventListener(
-    "click",
-    () => resetFilters()
-  );
-  document.getElementById("cancel").addEventListener(
-    "click",
-    () => closeDialog()
-  );
+  document
+    .getElementById("unselect")
+    .addEventListener("click", () => resetFilters());
+  document
+    .getElementById("cancel")
+    .addEventListener("click", () => closeDialog());
 
-  ext.onMessage.addListener((msg, sender) =>
-  {
-    switch (msg.type)
-    {
+  ext.onMessage.addListener((msg) => {
+    switch (msg.type) {
       case "composer.dialog.init":
         targetPageId = msg.sender;
         initialFilterText = msg.filters.join("\n");
@@ -191,7 +188,14 @@ function init()
   window.removeEventListener("load", init);
 }
 
-initI18n();
-window.addEventListener("load", init, false);
+/**
+ * Initializes filter composer dialog
+ */
+function start(): void {
+  initI18n();
+  window.addEventListener("load", init, false);
 
-document.body.hidden = false;
+  document.body.hidden = false;
+}
+
+start();

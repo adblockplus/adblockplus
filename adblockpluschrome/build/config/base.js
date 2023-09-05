@@ -29,7 +29,7 @@ export default {
           "adblockpluschrome/lib/subscriptionInit.js",
           "lib/init.js",
           "lib/recommendLanguage.js",
-          "adblockpluschrome/lib/filterComposer.js",
+          "src/composer/background/index.ts",
           "adblockpluschrome/lib/stats.js",
           "adblockpluschrome/lib/uninstall.js",
           "adblockpluschrome/lib/contentFiltering.js",
@@ -49,11 +49,11 @@ export default {
       },
       {
         dest: "composer.js",
-        src: ["js/pages/composer.mjs"]
+        src: ["src/composer/ui/index.ts"]
       },
       {
         dest: "composer.preload.js",
-        src: ["js/content/composer.preload.mjs"]
+        src: ["src/composer/content/index.ts"]
       },
       {
         dest: "day1.js",
@@ -158,6 +158,7 @@ export default {
         dest: "",
         src: [
           "*.html",
+          "src/composer/ui/composer.html",
           "src/devtools/ui/devtools.html",
           "src/options/ui/options.html",
           "!mobile-options.html"
