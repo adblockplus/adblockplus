@@ -23,6 +23,9 @@
   "common_feature_circumvention_title": {
     "message": "قائمة فلاتر ضد التحايل ABP"
   },
+  "common_feature_cookies_premium_title": {
+    "message": "حجب النوافذ المنبثقة الأمامية الخاصة بالموافقة على ملفات تعريف الارتباط"
+  },
   "common_feature_malware_title": {
     "message": "منع البرامج الضارة"
   },

@@ -20,6 +20,9 @@
   "common_feature_circumvention_title": {
     "message": "Λίστα φίλτρων έναντι παράκαμψης ABP"
   },
+  "common_feature_cookies_premium_title": {
+    "message": "Αποκλεισμός αναδυόμενων παραθύρων συναίνεσης για τα cookies"
+  },
   "common_feature_notifications_title": {
     "message": "Αποκλεισμός ειδοποιήσεων push"
   },

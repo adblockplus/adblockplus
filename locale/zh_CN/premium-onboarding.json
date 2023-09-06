@@ -1,0 +1,53 @@
+{
+  "premium_onboarding_cta_enable_all": {
+    "message": "启用所有 Premium 功能"
+  },
+  "premium_onboarding_cta_enable_none": {
+    "message": "暂时不要"
+  },
+  "premium_onboarding_cta_finish": {
+    "message": "完成"
+  },
+  "premium_onboarding_cta_upgrade": {
+    "message": "立即升级"
+  },
+  "premium_onboarding_feature_annoyances_subtitle": {
+    "message": "拦截浮动视频、新闻通讯弹出窗口、调查请求和网站通知"
+  },
+  "premium_onboarding_feature_annoyances_title": {
+    "message": "拦截更多干扰内容"
+  },
+  "premium_onboarding_feature_cookies_description": {
+    "message": "添加此功能并拦截这些弹出窗口，即表示您同意不接收有关 Cookie 使用的通知，且不在各个网站上编辑 Cookie 设置。您可以随时更改此功能。"
+  },
+  "premium_onboarding_feature_cookies_subtitle": {
+    "message": "隐藏热门网站上的 Cookie 同意弹出窗口"
+  },
+  "premium_onboarding_feature_cookies_title": {
+    "message": "拦截 Cookie 同意弹出窗口"
+  },
+  "premium_onboarding_finish_description": {
+    "message": "Adblock Plus Premium 将根据您所选的功能，立即开始拦截同意弹出窗口。您之后可以随时在<a0>设置页面</a0>更改此功能。"
+  },
+  "premium_onboarding_finish_title": {
+    "message": "一切就绪！"
+  },
+  "premium_onboarding_label_alwayson": {
+    "message": "默认开启"
+  },
+  "premium_onboarding_label_new": {
+    "message": "新功能"
+  },
+  "premium_onboarding_label_recommended": {
+    "message": "推荐"
+  },
+  "premium_onboarding_subtitle": {
+    "message": "完成设置以充分利用 Premium 订阅"
+  },
+  "premium_onboarding_title": {
+    "message": "欢迎使用 Adblock Plus Premium"
+  },
+  "premium_onboarding_upgrade_description": {
+    "message": "这些功能仅供 Premium 订阅用户使用。"
+  }
+}

@@ -52,9 +52,6 @@
       }
     }
   },
-  "options_beta_label": {
-    "message": "Beta"
-  },
   "options_builtin_filterList_add": {
     "message": "Yerleşik süzgeç listeleri ekleyin"
   },
@@ -158,6 +155,18 @@
   },
   "options_dialog_language_title": {
     "message": "Bir dil seçin"
+  },
+  "options_dialog_optIn_premium_subscription_confirm": {
+    "message": "Tamam, anladım"
+  },
+  "options_dialog_optIn_premium_subscription_description": {
+    "message": "Bu özelliği ekleyerek ve bu istemleri engelleyerek, çerez kullanımı hakkında bilgilendirilmemeyi ve çerez ayarlarını tek tek web sitelerinde düzenlemeyi kabul etmiş olursunuz. Bunu istediğiniz zaman değiştirebilirsiniz."
+  },
+  "options_dialog_optIn_premium_subscription_reject": {
+    "message": "Şimdi değil"
+  },
+  "options_dialog_optIn_premium_subscription_title": {
+    "message": "Çerez onayı isteyen açılır pencereleri engelle özelliğini etkinleştirin"
   },
   "options_dialog_predefined_confirm": {
     "message": "Evet, bu filtre listesini ekle"
@@ -370,6 +379,9 @@
   },
   "options_recommended_annoyances_description": {
     "message": "Yüzen videoları, bülten açılır pencerelerini, anket taleplerini ve site bildirimlerini engelleyin."
+  },
+  "options_recommended_cookies_premium_description": {
+    "message": "Çerez bildirimleriyle karşılaşmak zorunda kalmadan web sitelerinde gezinin."
   },
   "options_recommended_notifications_description": {
     "message": "Web sitelerinin, çevrimiçi etkinliğinizi izleyebilecek anlık bildirimlere izin vermeniz için istek göndermesine son verin."

@@ -1,0 +1,53 @@
+{
+  "premium_onboarding_cta_enable_all": {
+    "message": "Activer toutes les fonctionnalités Premium"
+  },
+  "premium_onboarding_cta_enable_none": {
+    "message": "Pas maintenant"
+  },
+  "premium_onboarding_cta_finish": {
+    "message": "Terminé"
+  },
+  "premium_onboarding_cta_upgrade": {
+    "message": "Mettre à niveau maintenant"
+  },
+  "premium_onboarding_feature_annoyances_subtitle": {
+    "message": "Bloquez les vidéos flottantes, les pop-ups de newsletter, les demandes d'enquête et les notifications des sites"
+  },
+  "premium_onboarding_feature_annoyances_title": {
+    "message": "Bloquez plus de sources de distraction"
+  },
+  "premium_onboarding_feature_cookies_description": {
+    "message": "En ajoutant cette fonction et en bloquant ces notifications, vous acceptez de ne pas être averti de l'utilisation des cookies et de modifier vos paramètres en matière de cookies sur les différents sites web que vous visitez. Vous pouvez modifier ces paramètres à tout moment."
+  },
+  "premium_onboarding_feature_cookies_subtitle": {
+    "message": "Masquez les pop-ups de consentement aux cookies sur les sites populaires"
+  },
+  "premium_onboarding_feature_cookies_title": {
+    "message": "Bloquez les pop-ups de consentement aux cookies"
+  },
+  "premium_onboarding_finish_description": {
+    "message": "Adblock Plus Premium bloquera immédiatement le contenu en fonction des paramètres que vous avez choisis. Vous pouvez toujours modifier vos choix ultérieurement dans la <a0>page des Paramètres</a0>."
+  },
+  "premium_onboarding_finish_title": {
+    "message": "Vous êtes prêt(e) !"
+  },
+  "premium_onboarding_label_alwayson": {
+    "message": "Activé par défaut"
+  },
+  "premium_onboarding_label_new": {
+    "message": "Nouveau"
+  },
+  "premium_onboarding_label_recommended": {
+    "message": "Recommandé"
+  },
+  "premium_onboarding_subtitle": {
+    "message": "Terminez la configuration pour profiter au maximum des avantages de votre abonnement Premium"
+  },
+  "premium_onboarding_title": {
+    "message": "Bienvenue à Adblock Plus Premium"
+  },
+  "premium_onboarding_upgrade_description": {
+    "message": "Ces fonctionnalités ne sont disponibles que pour les utilisateurs qui ont souscrit un abonnement Premium."
+  }
+}

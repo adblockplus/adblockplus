@@ -52,9 +52,6 @@
       }
     }
   },
-  "options_beta_label": {
-    "message": "Beta"
-  },
   "options_builtin_filterList_add": {
     "message": "Integrierte Filterlisten hinzufügen"
   },
@@ -158,6 +155,18 @@
   },
   "options_dialog_language_title": {
     "message": "Wähle eine Sprache"
+  },
+  "options_dialog_optIn_premium_subscription_confirm": {
+    "message": "OK, verstanden"
+  },
+  "options_dialog_optIn_premium_subscription_description": {
+    "message": "Durch Hinzufügen dieser Funktion und Blockieren dieser Aufforderungen erklärst du dich einverstanden, nicht über die Verwendung von Cookies benachrichtigt zu werden und Cookie-Einstellungen auf einzelnen Webseiten zu bearbeiten. Du kannst dies jederzeit wieder ändern."
+  },
+  "options_dialog_optIn_premium_subscription_reject": {
+    "message": "Nicht jetzt"
+  },
+  "options_dialog_optIn_premium_subscription_title": {
+    "message": "Pop-Ups von Cookie-Einwilligungen blockieren aktivieren"
   },
   "options_dialog_predefined_confirm": {
     "message": "Ja, diese Filterliste hinzufügen"
@@ -370,6 +379,9 @@
   },
   "options_recommended_annoyances_description": {
     "message": "Blockiere Bild-in-Bild-Videos, Newsletter-Pop-Ups, Umfragen und Benachrichtigungen von Websites."
+  },
+  "options_recommended_cookies_premium_description": {
+    "message": "Webseiten besuchen, ohne Cookie-Benachrichtigungen sehen zu müssen."
   },
   "options_recommended_notifications_description": {
     "message": "Verhindere, dass Websites dich darum bitten, Push-Benachrichtigungen zuzulassen, die deine Online-Aktivitäten nachverfolgen können."

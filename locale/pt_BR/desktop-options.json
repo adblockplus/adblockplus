@@ -52,9 +52,6 @@
       }
     }
   },
-  "options_beta_label": {
-    "message": "Beta"
-  },
   "options_builtin_filterList_add": {
     "message": "Adicionar listas de filtragem integradas"
   },
@@ -158,6 +155,18 @@
   },
   "options_dialog_language_title": {
     "message": "Selecionar um idioma"
+  },
+  "options_dialog_optIn_premium_subscription_confirm": {
+    "message": "OK, entendi."
+  },
+  "options_dialog_optIn_premium_subscription_description": {
+    "message": "Ao adicionar o recurso e bloquear esses alertas, você concorda em não ser notificado(a) sobre o uso de cookies e sobre a edição das configurações de cookies em sites específicos. Você pode alterar isso a qualquer momento."
+  },
+  "options_dialog_optIn_premium_subscription_reject": {
+    "message": "Agora não"
+  },
+  "options_dialog_optIn_premium_subscription_title": {
+    "message": "Acionar o bloqueio de janelas pop-up de autorização de cookies"
   },
   "options_dialog_predefined_confirm": {
     "message": "Sim, adicionar esta lista de filtros."
@@ -370,6 +379,9 @@
   },
   "options_recommended_annoyances_description": {
     "message": "Bloquear vídeos em janela flutuante, pop-ups de boletins informativos, solicitações de pesquisas e notificações de sites."
+  },
+  "options_recommended_cookies_premium_description": {
+    "message": "Navegue pelos sites sem precisar ver notificações de cookies."
   },
   "options_recommended_notifications_description": {
     "message": "Impedir que sites solicitem que você permita notificações de push que podem rastrear suas atividades on-line."

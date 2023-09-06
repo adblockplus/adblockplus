@@ -1,0 +1,53 @@
+{
+  "premium_onboarding_cta_enable_all": {
+    "message": "Habilita todas las funciones Premium"
+  },
+  "premium_onboarding_cta_enable_none": {
+    "message": "Ahora no"
+  },
+  "premium_onboarding_cta_finish": {
+    "message": "Hecho"
+  },
+  "premium_onboarding_cta_upgrade": {
+    "message": "Actualizar ahora"
+  },
+  "premium_onboarding_feature_annoyances_subtitle": {
+    "message": "Bloquea los vídeos flotantes, las ventanas emergentes de boletines de noticias, las solicitudes de encuestas y las notificaciones de los sitios"
+  },
+  "premium_onboarding_feature_annoyances_title": {
+    "message": "Bloquea más distracciones"
+  },
+  "premium_onboarding_feature_cookies_description": {
+    "message": "Al añadir esta función y bloquear estos mensajes, estás dando tu consentimiento para que no se te notifique el uso de cookies y para editar la configuración de cookies en sitios web concretos. Puedes cambiar esto en cualquier momento."
+  },
+  "premium_onboarding_feature_cookies_subtitle": {
+    "message": "Oculta las ventanas emergentes de consentimiento de cookies en los sitios populares"
+  },
+  "premium_onboarding_feature_cookies_title": {
+    "message": "Bloquea las ventanas emergentes de consentimiento de cookies"
+  },
+  "premium_onboarding_finish_description": {
+    "message": "Adblock Plus Premium comenzará inmediatamente a bloquear el contenido según las funciones que selecciones. Siempre podrás hacer cambios más tarde en la <a0>Página de ajustes</a0>."
+  },
+  "premium_onboarding_finish_title": {
+    "message": "¡Ya tienes todo listo!"
+  },
+  "premium_onboarding_label_alwayson": {
+    "message": "Habilitadas por defecto"
+  },
+  "premium_onboarding_label_new": {
+    "message": "Nueva"
+  },
+  "premium_onboarding_label_recommended": {
+    "message": "Recomendada"
+  },
+  "premium_onboarding_subtitle": {
+    "message": "Finaliza la configuración para sacar el máximo partido a tu suscripción Premium"
+  },
+  "premium_onboarding_title": {
+    "message": "Bienvenido a Adblock Plus Premium"
+  },
+  "premium_onboarding_upgrade_description": {
+    "message": "Estas funciones solo están disponibles para los usuarios de una suscripción Premium."
+  }
+}

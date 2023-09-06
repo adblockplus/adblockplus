@@ -1,0 +1,53 @@
+{
+  "premium_onboarding_cta_enable_all": {
+    "message": "Включить все функции Premium"
+  },
+  "premium_onboarding_cta_enable_none": {
+    "message": "Не сейчас"
+  },
+  "premium_onboarding_cta_finish": {
+    "message": "Готово"
+  },
+  "premium_onboarding_cta_upgrade": {
+    "message": "Обновить прямо сейчас"
+  },
+  "premium_onboarding_feature_annoyances_subtitle": {
+    "message": "Блокируйте всплывающие видео, выскакивающие окна с рассылками, предложения пройти опрос и уведомления сайтов"
+  },
+  "premium_onboarding_feature_annoyances_title": {
+    "message": "Блокируйте больше отвлекающих факторов"
+  },
+  "premium_onboarding_feature_cookies_description": {
+    "message": "Добавив эту функцию и блокируя такие запросы, вы соглашаетесь не получать уведомления об использовании файлов cookie и редактировать настройки файлов cookie на отдельных веб-сайтах. Это можно изменить в любой момент."
+  },
+  "premium_onboarding_feature_cookies_subtitle": {
+    "message": "Скрывайте выскакивающие окна с требованием согласия на использование файлов cookie на популярных сайтах"
+  },
+  "premium_onboarding_feature_cookies_title": {
+    "message": "Блокируйте выскакивающие окна с требованием согласия на использование файлов cookie"
+  },
+  "premium_onboarding_finish_description": {
+    "message": "Adblock Plus Premium немедленно начнет блокировать контент на основе выбранных вами функций. Вы всегда можете внести изменения позже на <a0>странице настроек</a0>."
+  },
+  "premium_onboarding_finish_title": {
+    "message": "Все готово!"
+  },
+  "premium_onboarding_label_alwayson": {
+    "message": "Включено по умолчанию"
+  },
+  "premium_onboarding_label_new": {
+    "message": "Новое"
+  },
+  "premium_onboarding_label_recommended": {
+    "message": "Рекомендуемое"
+  },
+  "premium_onboarding_subtitle": {
+    "message": "Завершите настройку, чтобы получить максимум от подписки Premium."
+  },
+  "premium_onboarding_title": {
+    "message": "Добро пожаловать в Adblock Plus Premium"
+  },
+  "premium_onboarding_upgrade_description": {
+    "message": "Эти функции доступны только для пользователей с подпиской Premium."
+  }
+}

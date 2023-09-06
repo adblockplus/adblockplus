@@ -1,0 +1,53 @@
+{
+  "premium_onboarding_cta_enable_all": {
+    "message": "Ενεργοποίηση όλων των χαρακτηριστικών Premium"
+  },
+  "premium_onboarding_cta_enable_none": {
+    "message": "Όχι τώρα"
+  },
+  "premium_onboarding_cta_finish": {
+    "message": "Έγινε"
+  },
+  "premium_onboarding_cta_upgrade": {
+    "message": "Αναβάθμιση τώρα"
+  },
+  "premium_onboarding_feature_annoyances_subtitle": {
+    "message": "Αποκλεισμός αιωρούμενων βίντεο, αναδυόμενων παραθύρων ενημερωτικών δελτίων, αιτημάτων για έρευνες και ειδοποιήσεων ιστοτόπων"
+  },
+  "premium_onboarding_feature_annoyances_title": {
+    "message": "Αποκλεισμός περισσότερων περισπασμών"
+  },
+  "premium_onboarding_feature_cookies_description": {
+    "message": "Προσθέτοντας αυτό το χαρακτηριστικό και αποκλείοντας αυτές τις ειδοποιήσεις, συναινείτε να μην ενημερώνεστε σχετικά με την χρήση των cookies και να τροποποιείτε τις ρυθμίσεις για τα cookies σε μεμονωμένους ιστοτόπους. Μπορείτε να το αλλάξετε αυτό οποτεδήποτε."
+  },
+  "premium_onboarding_feature_cookies_subtitle": {
+    "message": "Απόκρυψη αναδυόμενων παραθύρων συναίνεσης για τα cookies σε δημοφιλείς ιστοτόπους"
+  },
+  "premium_onboarding_feature_cookies_title": {
+    "message": "Αποκλεισμός αναδυόμενων παραθύρων συναίνεσης για τα cookies"
+  },
+  "premium_onboarding_finish_description": {
+    "message": "Το Adblock Plus Premium θα ξεκινήσει αμέσως να αποκλείει περιεχόμενο βάσει των χαρακτηριστικών που επιλέξατε. Μπορείτε πάντα να κάνετε αλλαγές σε μελλοντικό χρόνο στη <a0>σελίδα Ρυθμίσεις</a0>."
+  },
+  "premium_onboarding_finish_title": {
+    "message": "Είστε έτοιμοι!"
+  },
+  "premium_onboarding_label_alwayson": {
+    "message": "Ενεργό από προεπιλογή"
+  },
+  "premium_onboarding_label_new": {
+    "message": "Νέο"
+  },
+  "premium_onboarding_label_recommended": {
+    "message": "Προτείνεται"
+  },
+  "premium_onboarding_subtitle": {
+    "message": "Ολοκληρώστε την εγκατάσταση για να κερδίσετε περισσότερα από την συνδρομή Premium σας"
+  },
+  "premium_onboarding_title": {
+    "message": "Καλωσήρθατε στο Adblock Plus Premium"
+  },
+  "premium_onboarding_upgrade_description": {
+    "message": "Αυτά τα χαρακτηριστικά είναι διαθέσιμα μόνο για χρήστες συνδρομών Premium."
+  }
+}

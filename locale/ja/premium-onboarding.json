@@ -1,0 +1,53 @@
+{
+  "premium_onboarding_cta_enable_all": {
+    "message": "すべてのPremium機能を有効にする"
+  },
+  "premium_onboarding_cta_enable_none": {
+    "message": "今は有効にしない"
+  },
+  "premium_onboarding_cta_finish": {
+    "message": "完了"
+  },
+  "premium_onboarding_cta_upgrade": {
+    "message": "今すぐアップグレード"
+  },
+  "premium_onboarding_feature_annoyances_subtitle": {
+    "message": "フローティング動画、ニュースレターポップアップ、アンケート依頼、サイト通知をブロックする"
+  },
+  "premium_onboarding_feature_annoyances_title": {
+    "message": "さらに迷惑な要素をブロックする"
+  },
+  "premium_onboarding_feature_cookies_description": {
+    "message": "この機能を追加し、該当するプロンプトをブロックすることで、クッキーの使用に関する通知を受け取らないこと、また各ウェブサイトでクッキー設定を編集することに同意していただくことになります。この設定はいつでも変更可能です。"
+  },
+  "premium_onboarding_feature_cookies_subtitle": {
+    "message": "人気サイトでクッキー同意ポップアップを非表示にする"
+  },
+  "premium_onboarding_feature_cookies_title": {
+    "message": "クッキー同意ポップアップをブロックする"
+  },
+  "premium_onboarding_finish_description": {
+    "message": "Adblock Plus Premiumは、選択された機能に基づきすぐにコンテンツのブロックを開始します。後から、いつでも<a0>設定ページ</a0>で変更可能です。"
+  },
+  "premium_onboarding_finish_title": {
+    "message": "準備完了！"
+  },
+  "premium_onboarding_label_alwayson": {
+    "message": "デフォルトで有効"
+  },
+  "premium_onboarding_label_new": {
+    "message": "新規"
+  },
+  "premium_onboarding_label_recommended": {
+    "message": "おすすめ"
+  },
+  "premium_onboarding_subtitle": {
+    "message": "設定を完了し、Premiumサブスクリプションを最大限に活用しましょう"
+  },
+  "premium_onboarding_title": {
+    "message": "Adblock Plus Premiumへようこそ"
+  },
+  "premium_onboarding_upgrade_description": {
+    "message": "これらの機能は、Premiumサブスクリプションにご登録いただいたユーザーのみ利用可能です。"
+  }
+}

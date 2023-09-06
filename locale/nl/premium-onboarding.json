@@ -1,0 +1,53 @@
+{
+  "premium_onboarding_cta_enable_all": {
+    "message": "Schakel alle Premium-functies in"
+  },
+  "premium_onboarding_cta_enable_none": {
+    "message": "Niet nu"
+  },
+  "premium_onboarding_cta_finish": {
+    "message": "Klaar"
+  },
+  "premium_onboarding_cta_upgrade": {
+    "message": "Nu upgraden"
+  },
+  "premium_onboarding_feature_annoyances_subtitle": {
+    "message": "Blokkeer zwevende video's, pop-ups voor nieuwsbrieven, enquêteverzoeken en sitemeldingen"
+  },
+  "premium_onboarding_feature_annoyances_title": {
+    "message": "Blokkeer meer afleidingen"
+  },
+  "premium_onboarding_feature_cookies_description": {
+    "message": "Door deze functie toe te voegen en deze prompts te blokkeren, geeft u toestemming om geen meldingen te krijgen over het gebruik van cookies en om cookie-instellingen aan te passen op individuele websites. U kunt dit op elk moment wijzigen."
+  },
+  "premium_onboarding_feature_cookies_subtitle": {
+    "message": "Verberg pop-ups voor cookietoestemming op populaire sites"
+  },
+  "premium_onboarding_feature_cookies_title": {
+    "message": "Blokkeer pop-ups voor cookietoestemming"
+  },
+  "premium_onboarding_finish_description": {
+    "message": "Adblock Plus Premium start onmiddellijk met het blokkeren van content op basis van de functies die u hebt geselecteerd. U kunt later altijd wijzigingen aanbrengen op de <a0>Instellingenpagina</a0>."
+  },
+  "premium_onboarding_finish_title": {
+    "message": "U bent helemaal klaar!"
+  },
+  "premium_onboarding_label_alwayson": {
+    "message": "Standaard ingeschakeld"
+  },
+  "premium_onboarding_label_new": {
+    "message": "Nieuw"
+  },
+  "premium_onboarding_label_recommended": {
+    "message": "Aanbevolen"
+  },
+  "premium_onboarding_subtitle": {
+    "message": "Voltooi de installatie om alles uit uw Premium-abonnement te halen"
+  },
+  "premium_onboarding_title": {
+    "message": "Welkom bij Adblock Plus Premium"
+  },
+  "premium_onboarding_upgrade_description": {
+    "message": "Deze functies zijn alleen beschikbaar voor gebruikers met een Premium-abonnement."
+  }
+}

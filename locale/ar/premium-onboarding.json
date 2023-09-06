@@ -1,0 +1,53 @@
+{
+  "premium_onboarding_cta_enable_all": {
+    "message": "تمكين جميع ميزات Premium"
+  },
+  "premium_onboarding_cta_enable_none": {
+    "message": "ليس الآن"
+  },
+  "premium_onboarding_cta_finish": {
+    "message": "تم"
+  },
+  "premium_onboarding_cta_upgrade": {
+    "message": "الترقية الآن"
+  },
+  "premium_onboarding_feature_annoyances_subtitle": {
+    "message": "حجب مقاطع الفيديو العائمة وعناصر النشرات الإخبارية المنبثقة وطلبات الاستطلاعات وإشعارات المواقع."
+  },
+  "premium_onboarding_feature_annoyances_title": {
+    "message": "حجب المزيد من عوامل التشتيت"
+  },
+  "premium_onboarding_feature_cookies_description": {
+    "message": "بإضافة هذه الميزة وحظر هذه المطالبات، فإنك توافق على عدم إخطارك بشأن استخدام ملفات تعريف الارتباط وتعديل إعدادات ملفات تعريف الارتباط على مواقع الويب الفردية. ويمكنك تغيير هذا في أي وقت."
+  },
+  "premium_onboarding_feature_cookies_subtitle": {
+    "message": "إخفاء النوافذ المنبثقة الأمامية الخاصة بالموافقة على ملفات تعريف الارتباط في المواقع واسعة الانتشار"
+  },
+  "premium_onboarding_feature_cookies_title": {
+    "message": "حجب النوافذ المنبثقة الأمامية الخاصة بالموافقة على ملفات تعريف الارتباط"
+  },
+  "premium_onboarding_finish_description": {
+    "message": "سيبدأ Adblock Plus Premium فورًا في حجب المحتوى استنادًا إلى الميزات التي حددتها. ويمكنك دائمًا إجراء التغييرات لاحقًا في ⁦<a0>⁩صفحة الإعدادات⁦</a0>⁩."
+  },
+  "premium_onboarding_finish_title": {
+    "message": "أنت جاهز تمامًا!"
+  },
+  "premium_onboarding_label_alwayson": {
+    "message": "معيّن على \"تشغيل\" بشكل افتراضي"
+  },
+  "premium_onboarding_label_new": {
+    "message": "جديد"
+  },
+  "premium_onboarding_label_recommended": {
+    "message": "موصى به"
+  },
+  "premium_onboarding_subtitle": {
+    "message": "قم بإنهاء الإعداد لتحقيق أقصى استفادة من اشتراكك في Premium"
+  },
+  "premium_onboarding_title": {
+    "message": "مرحبًا بك في Adblock Plus Premium"
+  },
+  "premium_onboarding_upgrade_description": {
+    "message": "هذه الميزات ليست متاحة سوى للمستخدمين المشتركين في Premium."
+  }
+}

@@ -23,6 +23,9 @@
   "common_feature_circumvention_title": {
     "message": "ABP 우회덤핑방지 필터 목록"
   },
+  "common_feature_cookies_premium_title": {
+    "message": "쿠키 동의 팝업 차단"
+  },
   "common_feature_malware_title": {
     "message": "멀웨어 차단"
   },

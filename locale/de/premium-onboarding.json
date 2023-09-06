@@ -1,0 +1,53 @@
+{
+  "premium_onboarding_cta_enable_all": {
+    "message": "Alle Premium-Funktionen aktivieren"
+  },
+  "premium_onboarding_cta_enable_none": {
+    "message": "Nicht jetzt"
+  },
+  "premium_onboarding_cta_finish": {
+    "message": "Fertig"
+  },
+  "premium_onboarding_cta_upgrade": {
+    "message": "Jetzt aktualisieren"
+  },
+  "premium_onboarding_feature_annoyances_subtitle": {
+    "message": "Bild-in-Bild-Videos, Newsletter-Pop-Ups, Umfragen und Benachrichtigungen von Webseiten blockieren"
+  },
+  "premium_onboarding_feature_annoyances_title": {
+    "message": "Mehr Ablenkungen blockieren"
+  },
+  "premium_onboarding_feature_cookies_description": {
+    "message": "Durch Hinzufügen dieser Funktion und Blockieren dieser Aufforderungen erklärst du dich einverstanden, nicht über die Verwendung von Cookies benachrichtigt zu werden und Cookie-Einstellungen auf einzelnen Webseiten zu bearbeiten. Du kannst dies jederzeit wieder ändern."
+  },
+  "premium_onboarding_feature_cookies_subtitle": {
+    "message": "Pop-Ups von Cookie-Einwilligungen auf beliebten Webseiten ausblenden"
+  },
+  "premium_onboarding_feature_cookies_title": {
+    "message": "Pop-Ups von Cookie-Einwilligungen blockieren"
+  },
+  "premium_onboarding_finish_description": {
+    "message": "Adblock Plus Premium beginnt sofort, Inhalte anhand der von dir ausgewählten Funktionen zu blockieren. Du kannst jederzeit später auf der <a0>Einstellungen-Seite</a0> Änderungen vornehmen."
+  },
+  "premium_onboarding_finish_title": {
+    "message": "Du bist startbereit!"
+  },
+  "premium_onboarding_label_alwayson": {
+    "message": "Standardmäßig an"
+  },
+  "premium_onboarding_label_new": {
+    "message": "Neu"
+  },
+  "premium_onboarding_label_recommended": {
+    "message": "Empfohlen"
+  },
+  "premium_onboarding_subtitle": {
+    "message": "Schließe die Einrichtung ab, um dein Premium-Abonnement optimal zu nutzen"
+  },
+  "premium_onboarding_title": {
+    "message": "Willkommen bei Adblock Plus Premium"
+  },
+  "premium_onboarding_upgrade_description": {
+    "message": "Diese Funktionen stehen nur Nutzern mit einem Premium-Abonnement zur Verfügung."
+  }
+}

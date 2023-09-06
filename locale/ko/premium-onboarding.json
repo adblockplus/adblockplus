@@ -1,0 +1,53 @@
+{
+  "premium_onboarding_cta_enable_all": {
+    "message": "모든 프리미엄 기능 활성화"
+  },
+  "premium_onboarding_cta_enable_none": {
+    "message": "나중에 다시 알림"
+  },
+  "premium_onboarding_cta_finish": {
+    "message": "완료"
+  },
+  "premium_onboarding_cta_upgrade": {
+    "message": "지금 업그레이드"
+  },
+  "premium_onboarding_feature_annoyances_subtitle": {
+    "message": "플로팅 동영상, 뉴스레터 팝업, 설문 요청, 사이트 알림 차단"
+  },
+  "premium_onboarding_feature_annoyances_title": {
+    "message": "더 많은 뱡해물 차단"
+  },
+  "premium_onboarding_feature_cookies_description": {
+    "message": "이 기능을 추가하고 이러한 프롬프트를 차단해 귀하는 쿠키 사용에 대한 알림을 받지 않으며 개별 웹사이트의 쿠키 설정을 편집하는 데 동의하게 됩니다. 이는 언제든지 변경할 수 있습니다."
+  },
+  "premium_onboarding_feature_cookies_subtitle": {
+    "message": "인기 있는 사이트에서 쿠키 동의 팝업 숨기기"
+  },
+  "premium_onboarding_feature_cookies_title": {
+    "message": "쿠키 동의 팝업 차단"
+  },
+  "premium_onboarding_finish_description": {
+    "message": "Adblock Plus 프리미엄은 귀하가 선택한 기능에 따라 동의 차단을 즉시 시작합니다. <a0>설정 페이지</a0>에서 나중에 변경할 수 있습니다."
+  },
+  "premium_onboarding_finish_title": {
+    "message": "전부 설정했습니다!"
+  },
+  "premium_onboarding_label_alwayson": {
+    "message": "기본 설정"
+  },
+  "premium_onboarding_label_new": {
+    "message": "신규"
+  },
+  "premium_onboarding_label_recommended": {
+    "message": "추천"
+  },
+  "premium_onboarding_subtitle": {
+    "message": "프리미엄 구독을 최대한 활용하려면 설정을 완료하십시오"
+  },
+  "premium_onboarding_title": {
+    "message": "Adblock Plus 프리미엄에 오신 것을 환영합니다"
+  },
+  "premium_onboarding_upgrade_description": {
+    "message": "이러한 기능은 프리미엄 구독 사용자에게만 제공됩니다."
+  }
+}

@@ -52,9 +52,6 @@
       }
     }
   },
-  "options_beta_label": {
-    "message": "Beta"
-  },
   "options_builtin_filterList_add": {
     "message": "Aggiungere elenchi di filtri integrati"
   },
@@ -158,6 +155,18 @@
   },
   "options_dialog_language_title": {
     "message": "Selezionare una lingua"
+  },
+  "options_dialog_optIn_premium_subscription_confirm": {
+    "message": "Ok, ho capito"
+  },
+  "options_dialog_optIn_premium_subscription_description": {
+    "message": "Aggiungendo questa funzionalità e bloccando queste notifiche, acconsentirai a non ricevere le notifiche relative all'uso dei cookie e a modificare le impostazioni dei cookie su siti web individuali. Potrai cambiare questa funzionalità in qualsiasi momento."
+  },
+  "options_dialog_optIn_premium_subscription_reject": {
+    "message": "Non ora"
+  },
+  "options_dialog_optIn_premium_subscription_title": {
+    "message": "Blocca i pop-up di consenso ai cookie"
   },
   "options_dialog_predefined_confirm": {
     "message": "Sì, aggiungi questo elenco filtri"
@@ -370,6 +379,9 @@
   },
   "options_recommended_annoyances_description": {
     "message": "Blocca i video fluttuanti, i pop-up delle newsletter, le richieste di sondaggi e le notifiche dei siti."
+  },
+  "options_recommended_cookies_premium_description": {
+    "message": "Naviga i siti web senza vedere le notifiche dei cookie."
   },
   "options_recommended_notifications_description": {
     "message": "Impedisci ai siti web di chiederti di autorizzare le notifiche push che potrebbero tracciare la tua attività online."

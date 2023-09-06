@@ -49,9 +49,6 @@
       }
     }
   },
-  "options_beta_label": {
-    "message": "Beta"
-  },
   "options_builtin_filterList_add": {
     "message": "Προσθήκη ενσωματωμένων λιστών φίλτρων"
   },
@@ -143,6 +140,18 @@
   },
   "options_dialog_language_title": {
     "message": "Επιλέξτε μια γλώσσα"
+  },
+  "options_dialog_optIn_premium_subscription_confirm": {
+    "message": "Εντάξει, το κατάλαβα"
+  },
+  "options_dialog_optIn_premium_subscription_description": {
+    "message": "Προσθέτοντας αυτό το χαρακτηριστικό και αποκλείοντας αυτές τις ειδοποιήσεις, συναινείτε να μην ενημερώνεστε σχετικά με την χρήση των cookies και να τροποποιείτε τις ρυθμίσεις για τα cookies σε μεμονωμένους ιστοτόπους. Μπορείτε να το αλλάξετε αυτό οποτεδήποτε."
+  },
+  "options_dialog_optIn_premium_subscription_reject": {
+    "message": "Όχι τώρα"
+  },
+  "options_dialog_optIn_premium_subscription_title": {
+    "message": "Ενεργοποιήστε τον αποκλεισμό των αναδυόμενων παραθύρων συναίνεσης για τα cookies"
   },
   "options_dialog_predefined_confirm": {
     "message": "Ναι, να προστεθεί αυτή η λίστα φίλτρων"
@@ -328,6 +337,9 @@
   },
   "options_recommended_annoyances_description": {
     "message": "Αποκλεισμός κινούμενων βίντεο, αναδυόμενων ενημερωτικών δελτίων, αιτημάτων έρευνας και ειδοποιήσεων ιστότοπου."
+  },
+  "options_recommended_cookies_premium_description": {
+    "message": "Πλοηγηθείτε σε ιστοτόπους χωρίς να χρειάζεται να βλέπετε ειδοποιήσεις για τα cookies."
   },
   "options_recommended_notifications_description": {
     "message": "Μην αφήνετε τους ιστότοπους να σας ζητούν να επιτρέπετε ειδοποιήσεις push που θα μπορούσαν να παρακολουθούν τη δραστηριότητά σας στο διαδίκτυο."

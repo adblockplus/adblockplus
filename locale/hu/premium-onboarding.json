@@ -1,0 +1,53 @@
+{
+  "premium_onboarding_cta_enable_all": {
+    "message": "Az összes Prémium funkció engedélyezése"
+  },
+  "premium_onboarding_cta_enable_none": {
+    "message": "Most nem"
+  },
+  "premium_onboarding_cta_finish": {
+    "message": "Kész"
+  },
+  "premium_onboarding_cta_upgrade": {
+    "message": "Frissítés most"
+  },
+  "premium_onboarding_feature_annoyances_subtitle": {
+    "message": "Lebegő videók, felugró hírlevelek, felmérési kérelmek és weboldal értesítések blokkolása"
+  },
+  "premium_onboarding_feature_annoyances_title": {
+    "message": "További zavaró elemek blokkolása"
+  },
+  "premium_onboarding_feature_cookies_description": {
+    "message": "A funkció hozzáadásával és az értesítések blokkolásával elfogadod, hogy nem kapsz a sütik használatára és a süti beállítások módosítására vonatkozó értesítést az egyedi weboldalakon. A blokkolást bármikor kikapcsolhatod."
+  },
+  "premium_onboarding_feature_cookies_subtitle": {
+    "message": "Süti elfogadási felugró ablakok blokkolása a népszerű oldalakon"
+  },
+  "premium_onboarding_feature_cookies_title": {
+    "message": "Süti elfogadási felugró ablakok blokkolása"
+  },
+  "premium_onboarding_finish_description": {
+    "message": "Az Adblock Plus Premium bővítmény azonnal elkezdi blokkolni a tartalmakat a kiválasztott funkciók alapján. A későbbiekben bármikor módosíthatod a <a0>Beállítások oldalon</a0>."
+  },
+  "premium_onboarding_finish_title": {
+    "message": "Készen is van!"
+  },
+  "premium_onboarding_label_alwayson": {
+    "message": "Alapértelmezés szerint bekapcsolva"
+  },
+  "premium_onboarding_label_new": {
+    "message": "Új"
+  },
+  "premium_onboarding_label_recommended": {
+    "message": "Ajánlott"
+  },
+  "premium_onboarding_subtitle": {
+    "message": "Fejezd be a beállítást, hogy a legtöbbet hozhasd ki a Premium bővítmény előfizetésedből"
+  },
+  "premium_onboarding_title": {
+    "message": "Üdvözlünk az Adblock Plus Premium bővítményben"
+  },
+  "premium_onboarding_upgrade_description": {
+    "message": "Ezek a funkciók csak Premium bővítmény előfizetéssel rendelkező felhasználók számára érhetők el."
+  }
+}

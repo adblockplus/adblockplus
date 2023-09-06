@@ -23,6 +23,9 @@
   "common_feature_circumvention_title": {
     "message": "ABP Atlama Önleyici Süzgeç Listesi"
   },
+  "common_feature_cookies_premium_title": {
+    "message": "Çerez onayı isteyen açılır pencereleri engelle"
+  },
   "common_feature_malware_title": {
     "message": "Kötücül Yazılımı Engelle"
   },

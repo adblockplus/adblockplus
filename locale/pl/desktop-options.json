@@ -52,9 +52,6 @@
       }
     }
   },
-  "options_beta_label": {
-    "message": "Beta"
-  },
   "options_builtin_filterList_add": {
     "message": "Dodaj wbudowane listy filtrów"
   },
@@ -158,6 +155,18 @@
   },
   "options_dialog_language_title": {
     "message": "Wybierz język"
+  },
+  "options_dialog_optIn_premium_subscription_confirm": {
+    "message": "Tak, zrozumiałem/am"
+  },
+  "options_dialog_optIn_premium_subscription_description": {
+    "message": "Dodając tę funkcję i blokując te monity, wyrażasz zgodę na to, aby nie otrzymywać powiadomień o używaniu plików cookie oraz edycji ustawień plików cookies na poszczególnych stronach internetowych. Możesz to zmienić w dowolnym momencie."
+  },
+  "options_dialog_optIn_premium_subscription_reject": {
+    "message": "Nie teraz"
+  },
+  "options_dialog_optIn_premium_subscription_title": {
+    "message": "Włącz blokowanie wyskakujących okienek zgody na pliki cookie"
   },
   "options_dialog_predefined_confirm": {
     "message": "Tak, dodaję tę listę filtrów"
@@ -370,6 +379,9 @@
   },
   "options_recommended_annoyances_description": {
     "message": "Blokuj pływające filmy, wyskakujące okienka newslettera, prośby o wypełnienie ankiet oraz powiadomienia z witryn."
+  },
+  "options_recommended_cookies_premium_description": {
+    "message": "Przeglądaj strony internetowe bez wyświetlania powiadomień o plikach cookie."
   },
   "options_recommended_notifications_description": {
     "message": "Powstrzymaj witryny przed proszeniem o zgodę na powiadomienia, które mogłyby śledzić Twoją aktywność w sieci."

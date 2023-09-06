@@ -1,0 +1,53 @@
+{
+  "premium_onboarding_cta_enable_all": {
+    "message": "Attiva tutte le funzionalità Premium"
+  },
+  "premium_onboarding_cta_enable_none": {
+    "message": "Non ora"
+  },
+  "premium_onboarding_cta_finish": {
+    "message": "Fatto"
+  },
+  "premium_onboarding_cta_upgrade": {
+    "message": "Fai l'upgrade ora"
+  },
+  "premium_onboarding_feature_annoyances_subtitle": {
+    "message": "Blocca i video galleggianti, i popup delle newsletter, le richieste di sondaggio e le notifiche dei siti"
+  },
+  "premium_onboarding_feature_annoyances_title": {
+    "message": "Blocca ulteriori distrazioni"
+  },
+  "premium_onboarding_feature_cookies_description": {
+    "message": "Aggiungendo questa funzionalità e bloccando queste notifiche, acconsentirai a non ricevere le notifiche relative all'uso dei cookie e a modificare le impostazioni dei cookie su siti web individuali. Potrai cambiare questa funzionalità in qualsiasi momento."
+  },
+  "premium_onboarding_feature_cookies_subtitle": {
+    "message": "Nascondi i pop-up di consenso ai cookie su siti più frequentati"
+  },
+  "premium_onboarding_feature_cookies_title": {
+    "message": "Blocca i pop-up di consenso ai cookie"
+  },
+  "premium_onboarding_finish_description": {
+    "message": "Adblock Plus Premium comincerà immediatamente a bloccare contenuti in base alle impostazioni che selezionerai. Potrai sempre modificarle in seguito nella <a0>pagina Impostazioni</a0>."
+  },
+  "premium_onboarding_finish_title": {
+    "message": "Fatto!"
+  },
+  "premium_onboarding_label_alwayson": {
+    "message": "Attivato come da impostazione predefinita"
+  },
+  "premium_onboarding_label_new": {
+    "message": "Novità"
+  },
+  "premium_onboarding_label_recommended": {
+    "message": "Consigliato"
+  },
+  "premium_onboarding_subtitle": {
+    "message": "Completa la configurazione per ottenere il massimo dal tuo abbonamento Premium"
+  },
+  "premium_onboarding_title": {
+    "message": "Benvenuto ad Adblock Plus Premium"
+  },
+  "premium_onboarding_upgrade_description": {
+    "message": "Queste funzionalità sono disponibili solo agli utenti abbonati a Premium."
+  }
+}

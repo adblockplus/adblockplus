@@ -23,6 +23,9 @@
   "common_feature_circumvention_title": {
     "message": "Lista ABP de filtros anticircunvenção"
   },
+  "common_feature_cookies_premium_title": {
+    "message": "Bloquear janelas pop-up de autorização de cookies"
+  },
   "common_feature_malware_title": {
     "message": "Bloquear malware"
   },

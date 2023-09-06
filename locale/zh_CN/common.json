@@ -23,6 +23,9 @@
   "common_feature_circumvention_title": {
     "message": "ABP 反规避过滤列表"
   },
+  "common_feature_cookies_premium_title": {
+    "message": "拦截 Cookie 同意弹出窗口"
+  },
   "common_feature_malware_title": {
     "message": "屏蔽恶意软件"
   },

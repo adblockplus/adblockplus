@@ -23,6 +23,9 @@
   "common_feature_circumvention_title": {
     "message": "Список фильтров для антиобхода ABP"
   },
+  "common_feature_cookies_premium_title": {
+    "message": "Блокируйте выскакивающие окна с требованием согласия на использование файлов cookie"
+  },
   "common_feature_malware_title": {
     "message": "Блокировать вредоносные программы"
   },

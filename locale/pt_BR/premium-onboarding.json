@@ -1,0 +1,53 @@
+{
+  "premium_onboarding_cta_enable_all": {
+    "message": "Ativar todos os recursos Premium"
+  },
+  "premium_onboarding_cta_enable_none": {
+    "message": "Agora não"
+  },
+  "premium_onboarding_cta_finish": {
+    "message": "Concluído"
+  },
+  "premium_onboarding_cta_upgrade": {
+    "message": "Atualizar agora"
+  },
+  "premium_onboarding_feature_annoyances_subtitle": {
+    "message": "Bloquear vídeos flutuantes, janelas pop-up de boletins informativos, solicitações de pesquisas e notificações de sites."
+  },
+  "premium_onboarding_feature_annoyances_title": {
+    "message": "Bloquear mais distrações"
+  },
+  "premium_onboarding_feature_cookies_description": {
+    "message": "Ao adicionar o recurso e bloquear esses alertas, você concorda em não ser notificado(a) sobre o uso de cookies e sobre a edição das configurações de cookies em sites específicos. Você pode alterar isso a qualquer momento."
+  },
+  "premium_onboarding_feature_cookies_subtitle": {
+    "message": "Ocultar janelas pop-up de autorização de cookies em sites populares"
+  },
+  "premium_onboarding_feature_cookies_title": {
+    "message": "Bloquear janelas pop-up de autorização de cookies"
+  },
+  "premium_onboarding_finish_description": {
+    "message": "O Adblock Plus Premium começará a bloquear imediatamente conteúdo baseado nos recursos selecionados. Posteriormente, você poderá fazer alterações a qualquer momento na <a0>página Configurações</a0>."
+  },
+  "premium_onboarding_finish_title": {
+    "message": "Tudo pronto!"
+  },
+  "premium_onboarding_label_alwayson": {
+    "message": "Acionado por padrão"
+  },
+  "premium_onboarding_label_new": {
+    "message": "Novo"
+  },
+  "premium_onboarding_label_recommended": {
+    "message": "Recomendado"
+  },
+  "premium_onboarding_subtitle": {
+    "message": "Conclua a configuração para obter o máximo da sua assinatura Premium"
+  },
+  "premium_onboarding_title": {
+    "message": "Nossas boas-vindas ao Adblock Plus Premium"
+  },
+  "premium_onboarding_upgrade_description": {
+    "message": "Esses recursos estão disponíveis apenas para usuários com assinatura Premium."
+  }
+}

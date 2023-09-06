@@ -52,9 +52,6 @@
       }
     }
   },
-  "options_beta_label": {
-    "message": "Beta"
-  },
   "options_builtin_filterList_add": {
     "message": "Hirdetések beépített szűrőlistái"
   },
@@ -158,6 +155,18 @@
   },
   "options_dialog_language_title": {
     "message": "Válasszon egy nyelvet"
+  },
+  "options_dialog_optIn_premium_subscription_confirm": {
+    "message": "Rendben, értem"
+  },
+  "options_dialog_optIn_premium_subscription_description": {
+    "message": "A funkció hozzáadásával és az értesítések blokkolásával elfogadod, hogy nem kapsz a sütik használatára és a süti beállítások módosítására vonatkozó értesítést az egyedi weboldalakon. A blokkolást bármikor kikapcsolhatod."
+  },
+  "options_dialog_optIn_premium_subscription_reject": {
+    "message": "Most nem"
+  },
+  "options_dialog_optIn_premium_subscription_title": {
+    "message": "Kapcsold be a felugró süti elfogadási értesítések blokkolását"
   },
   "options_dialog_predefined_confirm": {
     "message": "Igen, végezze el e szűrőlista hozzáadást."
@@ -370,6 +379,9 @@
   },
   "options_recommended_annoyances_description": {
     "message": "Blokkolja a lebegő videókat, felugró hírleveleket, felmérés kérelmeket és webhely értesítéseket."
+  },
+  "options_recommended_cookies_premium_description": {
+    "message": "A weboldalakon felugró süti értesítések nélkül böngéssz."
   },
   "options_recommended_notifications_description": {
     "message": "Tiltsa le a webhelyek leküldéses értesítéseinek kérelmeit, amelyekkel online tevékenységét követhetik."

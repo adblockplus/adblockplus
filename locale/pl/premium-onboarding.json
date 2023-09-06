@@ -1,0 +1,53 @@
+{
+  "premium_onboarding_cta_enable_all": {
+    "message": "Włącz wszystkie funkcje Premium"
+  },
+  "premium_onboarding_cta_enable_none": {
+    "message": "Nie teraz"
+  },
+  "premium_onboarding_cta_finish": {
+    "message": "Zrobione"
+  },
+  "premium_onboarding_cta_upgrade": {
+    "message": "Uaktualnij teraz"
+  },
+  "premium_onboarding_feature_annoyances_subtitle": {
+    "message": "Blokuj pływające filmy, wyskakujące okienka newsletterów, prośby o wypełnienie ankiet oraz powiadomienia z witryn."
+  },
+  "premium_onboarding_feature_annoyances_title": {
+    "message": "Blokuj więcej elementów rozpraszających uwagę"
+  },
+  "premium_onboarding_feature_cookies_description": {
+    "message": "Dodając tę funkcję i blokując te monity, wyrażasz zgodę na to, aby nie otrzymywać powiadomień o używaniu plików cookie oraz edycji ustawień plików cookies na poszczególnych stronach internetowych. Możesz to zmienić w dowolnym momencie."
+  },
+  "premium_onboarding_feature_cookies_subtitle": {
+    "message": "Ukryj wyskakujące okienka zgody na pliki cookie w popularnych witrynach"
+  },
+  "premium_onboarding_feature_cookies_title": {
+    "message": "Blokuj wyskakujące okienka zgody na pliki cookie"
+  },
+  "premium_onboarding_finish_description": {
+    "message": "Adblock Plus Premium natychmiast rozpocznie blokowanie treści w oparciu o wybrane funkcje. Zmiany można zawsze wprowadzić później na <a0>stronie Ustawienia</a0>."
+  },
+  "premium_onboarding_finish_title": {
+    "message": "Wszystko gotowe!"
+  },
+  "premium_onboarding_label_alwayson": {
+    "message": "Włączone domyślnie"
+  },
+  "premium_onboarding_label_new": {
+    "message": "Nowość"
+  },
+  "premium_onboarding_label_recommended": {
+    "message": "Zalecane"
+  },
+  "premium_onboarding_subtitle": {
+    "message": "Zakończ konfigurację, aby w pełni wykorzystać możliwości subskrypcji Premium."
+  },
+  "premium_onboarding_title": {
+    "message": "Witamy w Adblock Plus Premium"
+  },
+  "premium_onboarding_upgrade_description": {
+    "message": "Funkcje te są dostępne tylko dla użytkowników korzystających z subskrypcji Premium."
+  }
+}

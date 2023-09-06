@@ -23,6 +23,9 @@
   "common_feature_circumvention_title": {
     "message": "Zestaw filtrów ABP przeciwdziałających omijaniu blokowania"
   },
+  "common_feature_cookies_premium_title": {
+    "message": "Blokuj wyskakujące okienka zgody na pliki cookie"
+  },
   "common_feature_malware_title": {
     "message": "Blokowanie szkodliwego oprogramowania"
   },

@@ -52,9 +52,6 @@
       }
     }
   },
-  "options_beta_label": {
-    "message": "Beta"
-  },
   "options_builtin_filterList_add": {
     "message": "Ingebouwde filterlijsten toevoegen"
   },
@@ -158,6 +155,18 @@
   },
   "options_dialog_language_title": {
     "message": "Een taal selecteren"
+  },
+  "options_dialog_optIn_premium_subscription_confirm": {
+    "message": "Oké, ik snap het"
+  },
+  "options_dialog_optIn_premium_subscription_description": {
+    "message": "Door deze functie toe te voegen en deze prompts te blokkeren, geeft u toestemming om geen meldingen te krijgen over het gebruik van cookies en om cookie-instellingen aan te passen op individuele websites. U kunt dit op elk moment wijzigen."
+  },
+  "options_dialog_optIn_premium_subscription_reject": {
+    "message": "Niet nu"
+  },
+  "options_dialog_optIn_premium_subscription_title": {
+    "message": "Schakel blokkeren van pop-ups voor cookietoestemming in"
   },
   "options_dialog_predefined_confirm": {
     "message": "Ja, deze filterlijst toevoegen"
@@ -370,6 +379,9 @@
   },
   "options_recommended_annoyances_description": {
     "message": "Blokkeer zwevende videovensters, nieuwsbriefpop-ups, enquêteverzoeken en websitemeldingen"
+  },
+  "options_recommended_cookies_premium_description": {
+    "message": "Surf op websites zonder cookiemeldingen te hoeven zien."
   },
   "options_recommended_notifications_description": {
     "message": "Voorkom dat websites u vragen om pushmeldingen toe te staan die uw online activiteit kunnen tracken."

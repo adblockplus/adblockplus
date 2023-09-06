@@ -52,9 +52,6 @@
       }
     }
   },
-  "options_beta_label": {
-    "message": "ベータ"
-  },
   "options_builtin_filterList_add": {
     "message": "組み込みフィルターリストを追加"
   },
@@ -149,6 +146,18 @@
   },
   "options_dialog_language_title": {
     "message": "言語の選択"
+  },
+  "options_dialog_optIn_premium_subscription_confirm": {
+    "message": "了解"
+  },
+  "options_dialog_optIn_premium_subscription_description": {
+    "message": "この機能を追加し、これらのプロンプトをブロックすることで、クッキーの使用に関する通知を受け取らないこと、また各ウェブサイトでクッキー設定を編集することに同意したことになります。この設定はいつでも変更可能です。"
+  },
+  "options_dialog_optIn_premium_subscription_reject": {
+    "message": "今は有効にしない"
+  },
+  "options_dialog_optIn_premium_subscription_title": {
+    "message": "クッキー同意ポップアップのブロックを有効にする"
   },
   "options_dialog_predefined_confirm": {
     "message": "はい。このフィルターリストを追加します"
@@ -347,6 +356,9 @@
   },
   "options_recommended_annoyances_description": {
     "message": "フローティング動画、ニュースレターポップアップ、アンケート依頼、サイト通知をブロックします。"
+  },
+  "options_recommended_cookies_premium_description": {
+    "message": "クッキー通知を表示せずに、ウェブサイトを閲覧します。"
   },
   "options_recommended_notifications_description": {
     "message": "ウェブサイト上で、ユーザーのオンライン行動を追跡するプッシュ通知の許可を求められることがなくなります。"

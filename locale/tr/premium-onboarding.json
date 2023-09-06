@@ -1,0 +1,53 @@
+{
+  "premium_onboarding_cta_enable_all": {
+    "message": "Premium özelliklerinin tümünü etkinleştirin"
+  },
+  "premium_onboarding_cta_enable_none": {
+    "message": "Şimdi değil"
+  },
+  "premium_onboarding_cta_finish": {
+    "message": "Bitti"
+  },
+  "premium_onboarding_cta_upgrade": {
+    "message": "Hemen yükseltin"
+  },
+  "premium_onboarding_feature_annoyances_subtitle": {
+    "message": "Kayan videoları, bülten açılır pencerelerini, anket taleplerini ve site bildirimlerini engelleyin"
+  },
+  "premium_onboarding_feature_annoyances_title": {
+    "message": "Daha fazla dikkat dağıtıcı unsur engelleyin"
+  },
+  "premium_onboarding_feature_cookies_description": {
+    "message": "Bu özelliği ekleyerek ve bu istemleri engelleyerek, çerez kullanımı hakkında bilgilendirilmemeyi ve çerez ayarlarını tek tek web sitelerinde düzenlemeyi kabul etmiş olursunuz. Bunu istediğiniz zaman değiştirebilirsiniz."
+  },
+  "premium_onboarding_feature_cookies_subtitle": {
+    "message": "Popüler sitelerdeki çerez onayı isteyen açılır pencereleri gizleyin"
+  },
+  "premium_onboarding_feature_cookies_title": {
+    "message": "Çerez onayı isteyen açılır pencereleri engelle"
+  },
+  "premium_onboarding_finish_description": {
+    "message": "Adblock Plus Premium, seçtiğiniz özelliklere göre içerik engellemeye hemen başlayacaktır. Daha sonra istediğiniz zaman <a0>Ayarlar sayfası</a0>ndan değişiklik yapabilirsiniz."
+  },
+  "premium_onboarding_finish_title": {
+    "message": "Hazırsınız!"
+  },
+  "premium_onboarding_label_alwayson": {
+    "message": "Varsayılan olarak etkin"
+  },
+  "premium_onboarding_label_new": {
+    "message": "Yeni"
+  },
+  "premium_onboarding_label_recommended": {
+    "message": "Önerilen"
+  },
+  "premium_onboarding_subtitle": {
+    "message": "Premium aboneliğinizden en iyi şekilde yararlanmak için kurulumu bitirin"
+  },
+  "premium_onboarding_title": {
+    "message": "Adblock Plus Premium’a hoş geldiniz"
+  },
+  "premium_onboarding_upgrade_description": {
+    "message": "Bu özellikler yalnızca Premium aboneliği olan kullanıcılara sunulmaktadır."
+  }
+}
