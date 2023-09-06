@@ -20,13 +20,13 @@ import argparse from "argparse";
 import merge from "merge-stream";
 import zip from "gulp-vinyl-zip";
 import del from "del";
-import * as tasks from "./build/tasks/index.js";
-import * as config from "./build/config/index.js";
-import * as configParser from "./build/configParser.js";
-import * as gitUtils from "./build/utils/git.js";
+import * as tasks from "./build/webext/tasks/index.mjs";
+import * as config from "./build/webext/config/index.mjs";
+import * as configParser from "./build/webext/configParser.mjs";
+import * as gitUtils from "./build/webext/utils/git.mjs";
 import url from "url";
 
-let argumentParser = new argparse.ArgumentParser({
+const argumentParser = new argparse.ArgumentParser({
   description: "Build the extension"
 });
 
@@ -59,9 +59,9 @@ argumentParser.addArgument("--partial", {
   help: "A partial build skips the build steps icons, rules and UI."
 });
 
-let args = argumentParser.parseKnownArgs()[0];
+const args = argumentParser.parseKnownArgs()[0];
 
-let targetDir = `../dist/devenv/${args.target}`;
+const targetDir = `./dist/devenv/${args.target}`;
 
 const buildTasks = [
   tasks.buildUI,
@@ -89,11 +89,11 @@ if (args.partial === "true")
 
 async function getBuildSteps(options)
 {
-  let translations = options.target == "chrome" ?
+  const translations = options.target == "chrome" ?
     tasks.chromeTranslations :
     tasks.translations;
-  let buildSteps = [];
-  let addonName = `${options.basename}${options.target}`;
+  const buildSteps = [];
+  const addonName = `${options.basename}${options.target}`;
 
   if (options.isDevenv)
   {
@@ -134,7 +134,7 @@ async function getBuildOptions(isDevenv, isSource)
   if (!isSource && !args.target)
     argumentParser.error("Argument \"-t/--target\" is required");
 
-  let opts = {
+  const opts = {
     isDevenv,
     target: args.target,
     channel: args.channel,
@@ -178,7 +178,7 @@ async function getBuildOptions(isDevenv, isSource)
 
     const filename =
       `${opts.basename}${opts.target}-${opts.version}${opts.archiveType}`;
-    opts.output = zip.dest(`../dist/release/${filename}`);
+    opts.output = zip.dest(`./dist/release/${filename}`);
   }
 
   opts.manifest = await tasks.getManifestContent({
@@ -194,7 +194,7 @@ async function getBuildOptions(isDevenv, isSource)
 
 async function buildDevenv()
 {
-  let options = await getBuildOptions(true);
+  const options = await getBuildOptions(true);
 
   return merge(await getBuildSteps(options))
     .pipe(options.output);
@@ -202,7 +202,7 @@ async function buildDevenv()
 
 async function buildPacked()
 {
-  let options = await getBuildOptions(false);
+  const options = await getBuildOptions(false);
 
   return merge(await getBuildSteps(options))
     .pipe(options.output);
@@ -210,24 +210,17 @@ async function buildPacked()
 
 function cleanDir()
 {
-  // We need to enable del to delete the dist directory, which is located
-  // outside of this project and therefore potentially dangerous. So in addition
-  // to using its force flag, we're also checking that we're not deleting any
-  // non-dist directory to prevent accidents that may occur during development.
-  if (!/\/dist\//.test(targetDir))
-    throw new Error("Attempted deletion of non-dist directory");
-
-  return del(targetDir, {force: true});
+  return del(targetDir);
 }
 
-export let devenv = gulp.series(...devenvTasks);
+export const devenv = gulp.series(...devenvTasks);
 
-export let build = gulp.series(...buildTasks);
+export const build = gulp.series(...buildTasks);
 
 export async function source()
 {
-  let options = await getBuildOptions(false, true);
+  const options = await getBuildOptions(false, true);
   return tasks.sourceDistribution(
-    `../dist/release/${options.basename}-${options.version}`
+    `./dist/release/${options.basename}-${options.version}`
   );
 }

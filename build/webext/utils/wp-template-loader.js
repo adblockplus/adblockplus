@@ -21,7 +21,7 @@ const handlebars = require("handlebars");
 
 module.exports = function wpTemplateLoader(source)
 {
-  let template = handlebars.compile(source);
+  const template = handlebars.compile(source);
 
   return template(this.query.data);
 };

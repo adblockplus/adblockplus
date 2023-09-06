@@ -23,14 +23,14 @@ const PLUGIN_NAME = "gulp-merge-translations";
 
 function mergeTranslations(options = {})
 {
-  let merged = {};
   let info;
-  let mandatoryInfo = {};
-  let fields = options.defaults ? options.defaults.fields : [];
+  const merged = {};
+  const mandatoryInfo = {};
+  const fields = options.defaults ? options.defaults.fields : [];
 
   function getLocaleName(fullPath)
   {
-    let parts = fullPath.split(path.sep);
+    const parts = fullPath.split(path.sep);
 
     return parts[parts.length - 2];
   }
@@ -48,8 +48,8 @@ function mergeTranslations(options = {})
     {
       try
       {
-        let locale = getLocaleName(file.path);
-        let content = JSON.parse(file.contents.toString());
+        const locale = getLocaleName(file.path);
+        const content = JSON.parse(file.contents.toString());
 
         info = info || {
           cwd: file.cwd,
@@ -80,7 +80,7 @@ function mergeTranslations(options = {})
       }
       catch (error)
       {
-        let msg = `${PLUGIN_NAME} parsing: ${file.path} : ${error.message}`;
+        const msg = `${PLUGIN_NAME} parsing: ${file.path} : ${error.message}`;
         this.emit("error", msg);
       }
     }

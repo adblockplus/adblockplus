@@ -17,7 +17,12 @@
 
 import path from "path";
 
-let tmplLoaderPath = path.resolve("build", "utils", "wp-template-loader.cjs");
+const tmplLoaderPath = path.resolve(
+  "build",
+  "webext",
+  "utils",
+  "wp-template-loader.js"
+);
 
 export default {
   optimization: {
@@ -72,9 +77,9 @@ export default {
   },
   resolve: {
     modules: [
+      path.resolve("adblockpluschrome/lib"),
       path.resolve("lib"),
-      path.resolve("../lib"),
-      path.resolve("build/templates"),
+      path.resolve("build/webext/templates"),
       "node_modules"
     ]
   },

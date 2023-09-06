@@ -25,8 +25,8 @@ const BUILDNUM_OFFSET = 10000;
 
 export async function getBuildnum(revision = "HEAD")
 {
-  let until = (await promisify(execFile)("git", ["log", "--pretty=%ct", "-n1",
-                                                 revision])).stdout.trim();
+  const until = (await promisify(execFile)("git", ["log", "--pretty=%ct", "-n1",
+                                                   revision])).stdout.trim();
 
   return BUILDNUM_OFFSET +
          parseInt((await promisify(execFile)("git", ["rev-list", "--count",
@@ -37,23 +37,24 @@ export async function getBuildnum(revision = "HEAD")
 
 export async function lsFiles()
 {
-  let {stdout} = await promisify(execFile)(
-    "git", ["-C", "..", "ls-files", "--recurse-submodules"]
+  const {stdout} = await promisify(execFile)(
+    "git", ["ls-files", "--recurse-submodules"]
   );
   return stdout.trim().split(EOL);
 }
 
 if (import.meta.url == pathToFileURL(process.argv[1]))
 {
-  let parser = argparse.ArgumentParser();
+  const parser = argparse.ArgumentParser();
   parser.addArgument(["-r", "--revision"],
                      {required: false, defaultValue: "HEAD"});
-  let args = parser.parseArgs();
+  const args = parser.parseArgs();
 
   (async() =>
   {
     try
     {
+      /* eslint-disable-next-line no-console */
       console.log(await getBuildnum(args.revision));
     }
     catch (err)

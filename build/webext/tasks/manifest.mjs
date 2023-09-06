@@ -32,7 +32,7 @@ async function editManifest(data, version, channel, target)
 
   if (target == "firefox")
   {
-    let {gecko} = data.applications;
+    const {gecko} = data.applications;
 
     if (channel == "development")
       gecko.id = gecko.app_id_devbuild;
@@ -57,7 +57,7 @@ async function editManifest(data, version, channel, target)
   if ("declarative_net_request" in data)
   {
     const rules = await getJSON(
-      "../node_modules/@adblockinc/rules/dist/manifest/adblockplus.json"
+      "./node_modules/@adblockinc/rules/dist/manifest/adblockplus.json"
     );
     data.declarative_net_request = rules;
   }
@@ -77,7 +77,7 @@ export function createManifest(contents)
 
 async function getJSON(path)
 {
-  let content = await fs.promises.readFile(resolve(path));
+  const content = await fs.promises.readFile(resolve(path));
   return JSON.parse(content);
 }
 
@@ -94,8 +94,10 @@ export async function getManifestContent(options)
   }
   else
   {
-    let base = await getJSON("build/manifest.base.json");
-    let specific = await getJSON(`build/manifest.v${manifestVersion}.json`);
+    const base = await getJSON("build/webext/manifest.base.json");
+    const specific = await getJSON(
+      `build/webext/manifest.v${manifestVersion}.json`
+    );
     raw = Object.assign({}, base, specific);
   }
 

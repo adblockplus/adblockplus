@@ -24,7 +24,7 @@ import {exec} from "child_process";
 import {Readable} from "stream";
 import Vinyl from "vinyl";
 
-const lastBuildTimeFilePath = "../dist/tmp/.last_ui_build";
+const lastBuildTimeFilePath = "./dist/tmp/.last_ui_build";
 
 async function getMTime(file)
 {
@@ -35,17 +35,17 @@ function createBuild()
 {
   // If that ever changes, please update any documentation regarding partial
   // builds!
-  return (promisify(exec))("bash -c \"npm run --prefix ../ dist\"");
+  return (promisify(exec))("bash -c \"npm run dist\"");
 }
 
 async function mustBuildUI(lastUIBuildTime)
 {
-  let matches = await (promisify(glob))(
-    "../{build/icons-generation,css}/**"
+  const matches = await (promisify(glob))(
+    "./{build/icons-generation,css}/**"
   );
   matches.push(
-    "../package.json",
-    "../package-lock.json"
+    "./package.json",
+    "./package-lock.json"
   );
 
   return await new Promise((resolve, reject) =>

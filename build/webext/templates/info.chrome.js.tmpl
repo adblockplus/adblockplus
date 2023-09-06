@@ -15,21 +15,21 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export let addonName = "{{addonName}}";
-export let baseName = "adblockplus";
-export let addonVersion = "{{addonVersion}}";
+export const addonName = "{{addonName}}";
+export const baseName = "adblockplus";
+export const addonVersion = "{{addonVersion}}";
 export let application = null;
 export let applicationVersion;
-export let platform = "chromium";
+export const platform = "chromium";
 export let platformVersion = null;
 
-let regexp = /(\S+)\/(\S+)(?:\s*\(.*?\))?/g;
+const regexp = /(\S+)\/(\S+)(?:\s*\(.*?\))?/g;
 let match;
 
 while (match = regexp.exec(navigator.userAgent))
 {
-  let app = match[1];
-  let ver = match[2];
+  const app = match[1];
+  const ver = match[2];
 
   if (app == "Chrome")
   {

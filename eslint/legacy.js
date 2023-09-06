@@ -35,7 +35,7 @@ module.exports = {
       }
     },
     {
-      files: ["build/**/*.js"],
+      files: ["build/**/*.js", "build/**/*.mjs"],
       env: {
         node: true
       }

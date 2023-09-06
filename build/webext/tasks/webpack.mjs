@@ -29,7 +29,7 @@ export default function webpack({
 })
 {
   return merge(webpackInfo.bundles.map(bundle =>
-    gulp.src(bundle.src, {cwd: ".."})
+    gulp.src(bundle.src)
     .pipe(webpackStream(
       {
         quiet: true,

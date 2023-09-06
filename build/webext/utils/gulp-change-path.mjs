@@ -23,7 +23,7 @@ function changePath(destination, custom = {})
   if (custom.cwd)
     destination = path.join(custom.cwd, destination);
 
-  let transform = new Transform({objectMode: true});
+  const transform = new Transform({objectMode: true});
 
   transform._transform = (file, encoding, cb) =>
   {

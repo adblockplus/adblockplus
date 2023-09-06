@@ -16,8 +16,8 @@
  */
 
 import gulp from "gulp";
-import mergeTranslations from "../utils/gulp-merge-translations.js";
-import changePath from "../utils/gulp-change-path.js";
+import mergeTranslations from "../utils/gulp-merge-translations.mjs";
+import changePath from "../utils/gulp-change-path.mjs";
 
 export function translations(locales)
 {
@@ -25,18 +25,18 @@ export function translations(locales)
   // to avoid this scenario by setting the current working directory to
   // the parent directory.
   // https://github.com/gulpjs/gulp/issues/2211
-  return gulp.src(locales.src, {cwd: ".."})
+  return gulp.src(locales.src)
     .pipe(mergeTranslations(
       {
         fileName: "messages.json"
       }))
-    .pipe(changePath(locales.dest, {cwd: ".."}));
+    .pipe(changePath(locales.dest));
 }
 
 function getRequiredInfo(manifest)
 {
-  let result = {};
-  let limits = {
+  const result = {};
+  const limits = {
     name: 12,
     name_releasebuild: 45,
     name_devbuild: 45,
@@ -47,7 +47,7 @@ function getRequiredInfo(manifest)
     .filter(value => typeof value == "string" && value.match("__MSG"))
     .map(name =>
     {
-      let parsed = name.replace(/(__MSG_)|(__)/g, "");
+      const parsed = name.replace(/(__MSG_)|(__)/g, "");
       return {
         name: parsed,
         limit: limits[parsed]
@@ -65,7 +65,7 @@ export function chromeTranslations(locales, manifest)
   // to avoid this scenario by setting the current working directory to
   // the parent directory.
   // https://github.com/gulpjs/gulp/issues/2211
-  return gulp.src(locales.src, {cwd: ".."})
+  return gulp.src(locales.src)
     .pipe(mergeTranslations(
       {
         fileName: "messages.json",
@@ -74,7 +74,6 @@ export function chromeTranslations(locales, manifest)
     .pipe(changePath(
       locales.dest,
       {
-        cwd: "..",
         match: /es_MX/g,
         replace: "es_419"
       }

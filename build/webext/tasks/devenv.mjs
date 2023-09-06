@@ -20,7 +20,7 @@ import Vinyl from "vinyl";
 
 export function addDevEnvVersion()
 {
-  let randNumber = Number(new Date()).toString();
+  const randNumber = Number(new Date()).toString();
 
   return new Readable.from([
     new Vinyl({

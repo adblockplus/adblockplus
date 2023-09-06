@@ -17,7 +17,7 @@
 
 import gulp from "gulp";
 import merge from "merge-stream";
-import changePath from "../utils/gulp-change-path.js";
+import changePath from "../utils/gulp-change-path.mjs";
 
 export default function mapping(bundles)
 {
@@ -27,16 +27,16 @@ export default function mapping(bundles)
       // to avoid this scenario by setting the current working directory to
       // the parent directory.
       // https://github.com/gulpjs/gulp/issues/2211
-      gulp.src(bundle.src, {cwd: ".."})
-      .pipe(changePath(bundle.dest, {cwd: ".."}))
+      gulp.src(bundle.src)
+      .pipe(changePath(bundle.dest))
     ),
     bundles.rename.map(bundle =>
       // Excluding files in parent directory doesn't work in Gulp so we need
       // to avoid this scenario by setting the current working directory to
       // the parent directory.
       // https://github.com/gulpjs/gulp/issues/2211
-      gulp.src(bundle.src, {cwd: ".."})
-      .pipe(changePath(bundle.dest, {cwd: "..", rename: true}))
+      gulp.src(bundle.src)
+      .pipe(changePath(bundle.dest, {rename: true}))
     )
   );
 }
