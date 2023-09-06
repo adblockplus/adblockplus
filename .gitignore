@@ -15,3 +15,9 @@ coverage/
 
 # OS generated files
 .DS_Store
+
+# adblockpluschrome
+/adblockpluschrome/node_modules/
+
+# version management
+.tool-versions
