@@ -104,13 +104,13 @@ describe("test adblocking as part of the smoke tests", function()
         (dataSet.website == "http://cook.com" &&
         browser.capabilities.browserName == "chrome") ||
         (dataSet.website == "http://zins.de" &&
-        browser.capabilities.browserName == "msedge"))
+        browser.capabilities.browserName == "MicrosoftEdge"))
     {
       it("should test sitekey: " + dataSet.website, async function()
       {
         await browser.newWindow(dataSet.website);
         const generalPage = new GeneralPage(browser);
-        if (browser.capabilities.browserName == "msedge")
+        if (browser.capabilities.browserName == "MicrosoftEdge")
         {
           try
           {
@@ -128,7 +128,7 @@ describe("test adblocking as part of the smoke tests", function()
         }
         await browser.pause(randomIntFromInterval(1500, 2500));
         await browser.refresh();
-        if (browser.capabilities.browserName == "msedge")
+        if (browser.capabilities.browserName == "MicrosoftEdge")
         {
           try
           {

@@ -75,7 +75,7 @@ describe("test custom filters as part of the integration tests", function()
       "ocking/custom-filters/custom-filters-testpage.html";
     await browser.newWindow(customFiltersTestPage);
     await browser.refresh();
-    if (browser.capabilities.browserName == "msedge")
+    if (browser.capabilities.browserName == "MicrosoftEdge")
     {
       await browser.pause(2000);
     }

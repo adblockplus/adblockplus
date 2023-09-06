@@ -33,7 +33,7 @@ class ExtensionsPage extends BasePage
     {
       await browser.url("chrome://extensions");
     }
-    else if (browser.capabilities.browserName == "msedge")
+    else if (browser.capabilities.browserName == "MicrosoftEdge")
     {
       await browser.url("edge://extensions");
     }
@@ -96,7 +96,7 @@ class ExtensionsPage extends BasePage
       await this.waitForEnabledThenClick(this.
         reloadExtensionButtonFF);
     }
-    else if (browser.capabilities.browserName == "msedge")
+    else if (browser.capabilities.browserName == "MicrosoftEdge")
     {
       await this.waitForEnabledThenClick(this.
         reloadExtensionButtonEdge);
@@ -115,7 +115,7 @@ class ExtensionsPage extends BasePage
       await this.waitForEnabledThenClick(this.
         reloadHelperExtensionButtonFF);
     }
-    else if (browser.capabilities.browserName == "msedge")
+    else if (browser.capabilities.browserName == "MicrosoftEdge")
     {
       await this.waitForEnabledThenClick(this.
         reloadHelperExtensionButtonEdge);

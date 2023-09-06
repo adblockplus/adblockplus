@@ -79,7 +79,7 @@ describe("test installation as part of the smoke tests", function()
       expect("chromium").to.
         equal(currentUrl.match(testData.regex_p)[0]);
     }
-    else if (browser.capabilities.browserName == "msedge")
+    else if (browser.capabilities.browserName == "MicrosoftEdge")
     {
       expect("adblockpluschrome").to.
         equal(currentUrl.match(testData.regex_an)[0]);
@@ -155,7 +155,7 @@ describe("test installation as part of the smoke tests", function()
       expect("chromium").to.
         equal(currentUrl.match(testData.regex_p)[0]);
     }
-    else if (browser.capabilities.browserName == "msedge")
+    else if (browser.capabilities.browserName == "MicrosoftEdge")
     {
       expect("adblockpluschrome").to.
         equal(currentUrl.match(testData.regex_an)[0]);
