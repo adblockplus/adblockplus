@@ -19,22 +19,6 @@
 
 module.exports =
 {
-  blockAdditionalTrackingTooltipText:
-    "Protect your privacy from known entities that may track your " +
-    "online activity across websites you visit.",
-  blockCookieWarningsTooltipText:
-    "By adding this filter you are waiving your right to be notified " +
-    "about cookies and edit cookie settings on individual websites. Please " +
-    "note that some websites may track you by default. More info here: " +
-    "https://adblockplus.org/block-cookie-warnings",
-  blockPushNotificationsTooltipText:
-    "Stop websites from asking you to allow push notifications that " +
-    "could track your online activity.",
-  blockSocialMediaIconsTrackingTooltipText:
-    "The social media icons on the websites you visit allow social media " +
-    "networks to build a profile of you based on your browsing habits - " +
-    "even when you don't click on them. Hiding these icons can protect " +
-    "your profile.",
   notifyLanguageFilterListsTooltipText:
     "Adblock Plus relies on filter lists to block ads in different languages.",
   showBlockElementTooltipText:

@@ -75,17 +75,6 @@ class GeneralPage extends BasePage
       "div[@class='description-container']/p");
   }
 
-  get blockAdditionalTrackingTooltipIcon()
-  {
-    return $("//li[@aria-label='Block additional tracking']/io-popout");
-  }
-
-  get blockAdditionalTrackingTooltipText()
-  {
-    return $("//li[@aria-label='Block additional tracking']" +
-      "/io-popout/div/div/p");
-  }
-
   get blockCookieConsentPopupsCheckbox()
   {
     return $("//li[@aria-label='Block cookie consent pop-ups']/button");
@@ -94,21 +83,6 @@ class GeneralPage extends BasePage
   get blockCookieConsentPopupsItem()
   {
     return $("//li[@aria-label='Block cookie consent pop-ups']");
-  }
-
-  get blockCookieWarningsCheckbox()
-  {
-    return $("//li[@aria-label='Block cookie warnings']/button");
-  }
-
-  get blockCookieWarningsTooltipIcon()
-  {
-    return $("//li[@aria-label='Block cookie warnings']/io-popout");
-  }
-
-  get blockCookieWarningsTooltipText()
-  {
-    return $("//li[@aria-label='Block cookie warnings']/io-popout/div/div/p");
   }
 
   get blockMoreDistractionsCheckbox()
@@ -143,22 +117,6 @@ class GeneralPage extends BasePage
     "div[@class='description-container']/p");
   }
 
-  get blockPushNotificationsTooltipIcon()
-  {
-    return $("//li[@aria-label='Block push notifications']/io-popout");
-  }
-
-  get blockPushNotificationsTooltipText()
-  {
-    return $("//li[@aria-label='Block push notifications']" +
-      "/io-popout/div/div/p");
-  }
-
-  get blockSocialMediaIconsTrackingTooltipIcon()
-  {
-    return $("//li[@aria-label='Block social media icons tracking']/io-popout");
-  }
-
   get blockSocialMediaIconsTrackingCheckbox()
   {
     return $("//li[@aria-label='Block social media icons tracking']/button");
@@ -168,12 +126,6 @@ class GeneralPage extends BasePage
   {
     return $("//li[@aria-label='Block social media icons tracking']/" +
     "div[@class='description-container']/p");
-  }
-
-  get blockSocialMediaIconsTrackingTooltipText()
-  {
-    return $("//li[@aria-label='Block social media icons tracking']" +
-        "/io-popout/div/div/p");
   }
 
   get doNotTrackNoteParagraph()
@@ -336,24 +288,6 @@ class GeneralPage extends BasePage
       blockAdditionalTrackingCheckbox);
   }
 
-  async clickBlockAdditionalTrackingTooltipIcon()
-  {
-    await this.waitForEnabledThenClick(this.
-      blockAdditionalTrackingTooltipIcon);
-  }
-
-  async clickBlockCookieWarningsCheckbox()
-  {
-    await this.waitForEnabledThenClick(this.
-      blockCookieWarningsCheckbox);
-  }
-
-  async clickBlockCookieWarningsTooltipIcon()
-  {
-    await this.waitForEnabledThenClick(this.
-      blockCookieWarningsTooltipIcon);
-  }
-
   async clickBlockMoreDistractionsCheckbox()
   {
     await this.waitForEnabledThenClick(this.
@@ -365,21 +299,9 @@ class GeneralPage extends BasePage
     await (await this.blockPushNotificationsCheckbox).click();
   }
 
-  async clickBlockPushNotificationsTooltipIcon()
-  {
-    await this.waitForEnabledThenClick(this.
-      blockPushNotificationsTooltipIcon);
-  }
-
   async clickBlockSocialMediaIconsTrackingCheckbox()
   {
     await (await this.blockSocialMediaIconsTrackingCheckbox).click();
-  }
-
-  async clickBlockSocialMediaIconsTrackingTooltipIcon()
-  {
-    await this.waitForEnabledThenClick(this.
-      blockSocialMediaIconsTrackingTooltipIcon);
   }
 
   async clickDeutschPlusEnglishListItem()
@@ -450,36 +372,15 @@ class GeneralPage extends BasePage
     return await (await this.blockAdditionalTrackingDescription).getText();
   }
 
-  async getBlockAdditionalTrackingTooltipText()
-  {
-    return await (await this.blockAdditionalTrackingTooltipText).getText();
-  }
-
-  async getBlockCookieWarningsTooltipText()
-  {
-    return await (await this.blockCookieWarningsTooltipText).getText();
-  }
-
   async getBlockPushNotificationsDescriptionText()
   {
     return await (await this.blockPushNotificationsDescription).getText();
-  }
-
-  async getBlockPushNotificationsTooltipText()
-  {
-    return await (await this.blockPushNotificationsTooltipText).getText();
   }
 
   async getBlockSocialMediaIconsTrackingDescriptionText()
   {
     return await (await
     this.blockSocialMediaIconsTrackingDescription).getText();
-  }
-
-  async getBlockSocialMediaIconsTrackingTooltipText()
-  {
-    return await (await
-    this.blockSocialMediaIconsTrackingTooltipText).getText();
   }
 
   async getLanguagesTableEmptyPlaceholderText()
@@ -525,12 +426,6 @@ class GeneralPage extends BasePage
       3000, reverse);
   }
 
-  async isBlockAdditionalTrackingTooltipTextDisplayed(reverseOption = false)
-  {
-    return await this.waitForDisplayedNoError(this.
-      blockAdditionalTrackingTooltipText, reverseOption);
-  }
-
   async isBlockCookieConsentPopupsCheckboxEnabled()
   {
     return await (await this.blockCookieConsentPopupsCheckbox).isEnabled();
@@ -549,18 +444,6 @@ class GeneralPage extends BasePage
   {
     return await this.waitForDisplayedNoError(this.
       blockCookieConsentPopupsItem, reverseOption);
-  }
-
-  async isBlockCookieWarningsCheckboxSelected()
-  {
-    return await (await this.blockCookieWarningsCheckbox).
-      getAttribute("aria-checked") == "true";
-  }
-
-  async isBlockCookieWarningsTooltipTextDisplayed(reverseOption = false)
-  {
-    return await this.waitForDisplayedNoError(this.
-      blockCookieWarningsTooltipText, reverseOption);
   }
 
   async isBlockMoreDistractionsCheckboxEnabled()
@@ -592,12 +475,6 @@ class GeneralPage extends BasePage
       3000, reverse);
   }
 
-  async isBlockPushNotificationsTooltipTextDisplayed(reverseOption = false)
-  {
-    return await this.waitForDisplayedNoError(this.
-      blockPushNotificationsTooltipText, reverseOption);
-  }
-
   async isBlockSocialMediaIconsTrackingCheckboxSelected(reverse = false)
   {
     await (await this.blockSocialMediaIconsTrackingCheckbox).
@@ -605,13 +482,6 @@ class GeneralPage extends BasePage
     return await this.waitUntilAttributeValueIs(
       this.blockSocialMediaIconsTrackingCheckbox, "aria-checked", "true",
       3000, reverse);
-  }
-
-  async isBlockSocialMediaIconsTrackingTooltipTextDisplayed(reverseOption =
-  false)
-  {
-    return await this.waitForDisplayedNoError(this.
-      blockSocialMediaIconsTrackingTooltipText, reverseOption);
   }
 
   async isDeutschPlusEnglishLanguageTableItemDisplayed(reverseOption = false)
