@@ -17,10 +17,10 @@
 
 "use strict";
 
-const {beforeSequence} = require("../helpers");
+const {beforeSequence, enablePremiumByMockServer} = require("../helpers");
 const {expect} = require("chai");
 const BackgroundPage = require("../page-objects/background.page");
-const GeneralPage = require("../page-objects/general.page");
+const PremiumHeaderChunk = require("../page-objects/premiumHeader.chunk");
 let globalOrigin;
 
 describe("test abp premium license check retries", function()
@@ -32,55 +32,9 @@ describe("test abp premium license check retries", function()
 
   it("should retry the request 3 times in 1 minute intervals", async function()
   {
-    await browser.newWindow("https://qa-mock-licensing-server.glitch.me/");
-    const generalPage = new GeneralPage(browser);
-    await generalPage.isMockLicensingServerTextDisplayed();
-    await generalPage.switchToABPOptionsTab();
-    await browser.executeScript(`
-      Promise.all([
-        new Promise((resolve, reject) => {
-          chrome.runtime.sendMessage({type: "prefs.set",
-            key: "premium_license_check_url",
-            value: "https://qa-mock-licensing-server.glitch.me/"},
-            response => {
-            if (browser.runtime.lastError) {
-              reject(browser.runtime.lastError);
-            } else {
-              resolve(response);
-            }
-          });
-        }),
-        new Promise((resolve, reject) => {
-          chrome.runtime.sendMessage({type: "premium.activate",
-          userId: "valid_user_id"}, response => {
-            if (browser.runtime.lastError) {
-              reject(browser.runtime.lastError);
-            } else {
-              resolve(response);
-            }
-          });
-        })
-      ]).then(results => console.log(results));
-    `, []);
-    let waitTime = 0;
-    while (waitTime <= 150000)
-    {
-      await browser.refresh();
-      if ((await generalPage.isPremiumButtonDisplayed()) == true)
-      {
-        break;
-      }
-      else
-      {
-        await browser.pause(200);
-        waitTime += 200;
-      }
-    }
-    if (waitTime >= 150000)
-    {
-      throw new Error("Premium was not enabled!");
-    }
-    expect(await generalPage.isPremiumButtonDisplayed()).to.be.true;
+    await enablePremiumByMockServer();
+    const premiumHeaderChunk = new PremiumHeaderChunk(browser);
+    expect(await premiumHeaderChunk.isPremiumButtonDisplayed()).to.be.true;
     const backgroundPage = new BackgroundPage(browser);
     if (browser.capabilities.browserName == "chrome")
     {
@@ -99,7 +53,7 @@ describe("test abp premium license check retries", function()
         });
       });
     `, []);
-    expect(await generalPage.isPremiumButtonDisplayed()).to.be.true;
+    expect(await premiumHeaderChunk.isPremiumButtonDisplayed()).to.be.true;
     await backgroundPage.switchToTab(/_generated_background_page/);
     let consoleLog;
     for (let i = 0; i < 4; i++)

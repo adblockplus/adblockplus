@@ -86,6 +86,16 @@ class GeneralPage extends BasePage
       "/io-popout/div/div/p");
   }
 
+  get blockCookieConsentPopupsCheckbox()
+  {
+    return $("//li[@aria-label='Block cookie consent pop-ups']/button");
+  }
+
+  get blockCookieConsentPopupsItem()
+  {
+    return $("//li[@aria-label='Block cookie consent pop-ups']");
+  }
+
   get blockCookieWarningsCheckbox()
   {
     return $("//li[@aria-label='Block cookie warnings']/button");
@@ -104,6 +114,11 @@ class GeneralPage extends BasePage
   get blockMoreDistractionsCheckbox()
   {
     return $("//li[@aria-label='Block more distractions']/button");
+  }
+
+  get blockMoreDistractionsItem()
+  {
+    return $("//li[@aria-label='Block more distractions']");
   }
 
   get deutschPlusEnglishListItem()
@@ -269,20 +284,19 @@ class GeneralPage extends BasePage
     return $("#dialog-title-predefined");
   }
 
-  get premiumButton()
+  get premiumSectionHeader()
   {
-    return $("//a[@class='button premium-label']");
+    return $("//header[@class='premium list-header']");
   }
-
 
   get trackingWarning()
   {
     return $("#tracking-warning");
   }
 
-  get upgradeButton()
+  get upgradeButtonGeneral()
   {
-    return $("//a[@data-i18n='options_upgrade_button']");
+    return $("//header/a[@data-i18n='options_upgrade_button']");
   }
 
   get yesUseThisFLButton()
@@ -420,10 +434,10 @@ class GeneralPage extends BasePage
     await (await this.okGotItTrackingWarningButton).click();
   }
 
-  async clickUpgradeButton()
+  async clickUpgradeButtonGeneral()
   {
     await this.waitForEnabledThenClick(this.
-      upgradeButton);
+      upgradeButtonGeneral);
   }
 
   async clickYesUseThisFLButton()
@@ -517,6 +531,26 @@ class GeneralPage extends BasePage
       blockAdditionalTrackingTooltipText, reverseOption);
   }
 
+  async isBlockCookieConsentPopupsCheckboxEnabled()
+  {
+    return await (await this.blockCookieConsentPopupsCheckbox).isEnabled();
+  }
+
+  async isBlockCookieConsentPopupsCheckboxSelected(reverse = false)
+  {
+    await (await this.blockCookieConsentPopupsCheckbox).
+      waitForEnabled({timeout: 3000});
+    return await this.waitUntilAttributeValueIs(
+      this.blockCookieConsentPopupsCheckbox, "aria-checked", "true",
+      3000, reverse);
+  }
+
+  async isBlockCookieConsentPopupsItemDisplayed(reverseOption = false)
+  {
+    return await this.waitForDisplayedNoError(this.
+      blockCookieConsentPopupsItem, reverseOption);
+  }
+
   async isBlockCookieWarningsCheckboxSelected()
   {
     return await (await this.blockCookieWarningsCheckbox).
@@ -529,6 +563,11 @@ class GeneralPage extends BasePage
       blockCookieWarningsTooltipText, reverseOption);
   }
 
+  async isBlockMoreDistractionsCheckboxEnabled()
+  {
+    return await (await this.blockMoreDistractionsCheckbox).isEnabled();
+  }
+
   async isBlockMoreDistractionsCheckboxSelected(reverse = false)
   {
     await (await this.blockMoreDistractionsCheckbox).
@@ -536,6 +575,12 @@ class GeneralPage extends BasePage
     return await this.waitUntilAttributeValueIs(
       this.blockMoreDistractionsCheckbox, "aria-checked", "true",
       3000, reverse);
+  }
+
+  async isBlockMoreDistractionsItemDisplayed(reverseOption = false)
+  {
+    return await this.waitForDisplayedNoError(this.
+      blockMoreDistractionsItem, reverseOption);
   }
 
   async isBlockPushNotificationsCheckboxSelected(reverse = false)
@@ -659,9 +704,9 @@ class GeneralPage extends BasePage
       onlyAllowAdsWithoutTrackingCheckbox, reverse);
   }
 
-  async isPremiumButtonDisplayed()
+  async isPremiumSectionHeaderDisplayed()
   {
-    return await (await this.premiumButton).isDisplayed();
+    return await this.waitForDisplayedNoError(this.premiumSectionHeader);
   }
 
   async isTrackingWarningDisplayed()
@@ -675,10 +720,10 @@ class GeneralPage extends BasePage
       trackingWarning, true);
   }
 
-  async isUpgradeButtonDisplayed(timeout)
+  async isUpgradeButtonGeneralDisplayed(timeout)
   {
     return await this.waitForDisplayedNoError(
-      this.upgradeButton, false, timeout);
+      this.upgradeButtonGeneral, false, timeout);
   }
 
   async switchToAACriteriaTab()

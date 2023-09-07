@@ -105,14 +105,15 @@ class BasePage
     return (await element).click();
   }
 
-  async switchToTab(title, timeout = 3500)
+  async switchToTab(title, timeout = 5000)
   {
     let waitTime = 0;
     while (waitTime <= timeout)
     {
       try
       {
-        await browser.switchWindow(title);
+        await Promise.race(await browser.switchWindow(title),
+                           await browser.pause(timeout));
         break;
       }
       catch (Exception)

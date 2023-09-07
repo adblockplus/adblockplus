@@ -21,7 +21,7 @@ const {beforeSequence, globalRetriesNumber,
        randomIntFromInterval} = require("../helpers");
 const {expect} = require("chai");
 const ExtensionsPage = require("../page-objects/extensions.page");
-const GeneralPage = require("../page-objects/general.page");
+const PremiumHeaderChunk = require("../page-objects/premiumHeader.chunk");
 const PremiumPage = require("../page-objects/premium.page");
 const StripeCheckoutPage = require("../page-objects/stripeCheckout.page");
 
@@ -36,11 +36,11 @@ describe("test abp premium license checks", function()
 
   it("should display active license status for premium user", async function()
   {
-    const generalPage = new GeneralPage(browser);
-    await generalPage.clickUpgradeButton();
-    await generalPage.switchToTab(
+    const premiumHeaderChunk = new PremiumHeaderChunk(browser);
+    await premiumHeaderChunk.clickUpgradeButton();
+    await premiumHeaderChunk.switchToTab(
       "Adblock Plus Premium | The world's #1 ad blocker");
-    const currentUrl = await generalPage.getCurrentUrl();
+    const currentUrl = await premiumHeaderChunk.getCurrentUrl();
     await browser.url(currentUrl + "?testmode");
     const premiumPage = new PremiumPage(browser);
     await premiumPage.clickGetPremiumMonthlyButton();
@@ -62,7 +62,7 @@ describe("test abp premium license checks", function()
     while (waitTime <= 150000)
     {
       await browser.refresh();
-      if ((await generalPage.isPremiumButtonDisplayed()) == true)
+      if ((await premiumHeaderChunk.isPremiumButtonDisplayed()) == true)
       {
         break;
       }
@@ -76,7 +76,7 @@ describe("test abp premium license checks", function()
     {
       throw new Error("Premium was not enabled!");
     }
-    expect(await generalPage.isPremiumButtonDisplayed()).to.be.true;
+    expect(await premiumHeaderChunk.isPremiumButtonDisplayed()).to.be.true;
     const licenseStatusText = await browser.executeScript(`
       return new Promise((resolve, reject) => {
         chrome.runtime.sendMessage({type: "prefs.get",

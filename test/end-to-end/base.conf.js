@@ -29,6 +29,7 @@ exports.config = {
     all: ["./tests/**.js"],
     e2e:
       [
+        "./tests/test-abp-premium-*.js",
         "./tests/test-advanced-tab-custom-filters.js",
         "./tests/test-advanced-tab-customisations.js",
         "./tests/test-advanced-tab-filter-lists.js",

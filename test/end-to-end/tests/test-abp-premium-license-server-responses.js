@@ -21,6 +21,7 @@ const {beforeSequence, afterSequence} = require("../helpers");
 const {expect} = require("chai");
 const BackgroundPage = require("../page-objects/background.page");
 const GeneralPage = require("../page-objects/general.page");
+const PremiumHeaderChunk = require("../page-objects/premiumHeader.chunk");
 const serverResponsesData =
   require("../test-data/data-license-server-responses").serverResponsesData;
 let globalOrigin;
@@ -111,10 +112,11 @@ describe("test abp premium license server responses", function()
         throw new Error("License is not active!");
       }
       waitTime = 0;
+      const premiumHeaderChunk = new PremiumHeaderChunk(browser);
       while (waitTime <= 150000)
       {
         await browser.refresh();
-        if ((await generalPage.isPremiumButtonDisplayed()) == true)
+        if ((await premiumHeaderChunk.isPremiumButtonDisplayed()) == true)
         {
           break;
         }
@@ -128,7 +130,7 @@ describe("test abp premium license server responses", function()
       {
         throw new Error("Premium was not enabled!");
       }
-      expect(await generalPage.isPremiumButtonDisplayed()).to.be.true;
+      expect(await premiumHeaderChunk.isPremiumButtonDisplayed()).to.be.true;
       const backgroundPage = new BackgroundPage(browser);
       if (browser.capabilities.browserName == "chrome")
       {
@@ -138,11 +140,12 @@ describe("test abp premium license server responses", function()
       await browser.executeScript(dataSet.request, []);
       if (dataSet.premiumStatus == "enabled")
       {
-        expect(await generalPage.isPremiumButtonDisplayed()).to.be.true;
+        expect(await premiumHeaderChunk.isPremiumButtonDisplayed()).to.be.true;
       }
       else
       {
-        expect(await generalPage.isUpgradeButtonDisplayed(10000)).to.be.true;
+        expect(await premiumHeaderChunk.isUpgradeButtonDisplayed(10000)).
+          to.be.true;
       }
       if (browser.capabilities.browserName == "chrome")
       {

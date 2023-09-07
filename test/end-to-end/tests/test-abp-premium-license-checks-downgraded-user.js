@@ -17,10 +17,11 @@
 
 "use strict";
 
-const {beforeSequence, globalRetriesNumber} = require("../helpers");
+const {beforeSequence, enablePremiumByMockServer,
+       globalRetriesNumber} = require("../helpers");
 const {expect} = require("chai");
 const ExtensionsPage = require("../page-objects/extensions.page");
-const GeneralPage = require("../page-objects/general.page");
+const PremiumHeaderChunk = require("../page-objects/premiumHeader.chunk");
 
 describe("test abp premium license checks", function()
 {
@@ -33,54 +34,7 @@ describe("test abp premium license checks", function()
 
   it("should display expired license for downgraded user", async function()
   {
-    await browser.newWindow("https://qa-mock-licensing-server.glitch.me/");
-    const generalPage = new GeneralPage(browser);
-    await generalPage.isMockLicensingServerTextDisplayed();
-    await generalPage.switchToABPOptionsTab();
-    await browser.executeScript(`
-      Promise.all([
-        new Promise((resolve, reject) => {
-          chrome.runtime.sendMessage({type: "prefs.set",
-            key: "premium_license_check_url",
-            value: "https://qa-mock-licensing-server.glitch.me/"},
-            response => {
-            if (browser.runtime.lastError) {
-              reject(browser.runtime.lastError);
-            } else {
-              resolve(response);
-            }
-          });
-        }),
-        new Promise((resolve, reject) => {
-          chrome.runtime.sendMessage({type: "premium.activate",
-          userId: "valid_user_id"}, response => {
-            if (browser.runtime.lastError) {
-              reject(browser.runtime.lastError);
-            } else {
-              resolve(response);
-            }
-          });
-        })
-      ]).then(results => console.log(results));
-    `, []);
-    let waitTime = 0;
-    while (waitTime <= 150000)
-    {
-      await browser.refresh();
-      if ((await generalPage.isPremiumButtonDisplayed()) == true)
-      {
-        break;
-      }
-      else
-      {
-        await browser.pause(200);
-        waitTime += 200;
-      }
-    }
-    if (waitTime >= 150000)
-    {
-      throw new Error("Premium was not enabled!");
-    }
+    await enablePremiumByMockServer();
     await browser.executeAsync(async(done) =>
     {
       try
@@ -94,7 +48,8 @@ describe("test abp premium license checks", function()
         done(error);
       }
     });
-    expect(await generalPage.isUpgradeButtonDisplayed(10000)).to.be.true;
+    const premiumHeaderChunk = new PremiumHeaderChunk(browser);
+    expect(await premiumHeaderChunk.isUpgradeButtonDisplayed(10000)).to.be.true;
     const nextLicenseCheck = await browser.executeScript(`
     return new Promise((resolve, reject) => {
       chrome.runtime.sendMessage({ type: "prefs.get",

@@ -52,9 +52,19 @@ class PopupPage extends BasePage
     return $("//div[@id='stats-total']/strong");
   }
 
+  get premiumButton()
+  {
+    return $("#premium-manage");
+  }
+
   get stopShowingNotificationsButton()
   {
     return $("//button[contains(.,'Stop showing notifications')]");
+  }
+
+  get upgradeButton()
+  {
+    return $("#premium-upgrade");
   }
 
   get yesButton()
@@ -75,6 +85,11 @@ class PopupPage extends BasePage
   async clickStopShowingNotificationsButton()
   {
     await (await this.stopShowingNotificationsButton).click();
+  }
+
+  async clickUpgradeButton()
+  {
+    await this.waitForEnabledThenClick(this.upgradeButton);
   }
 
   async clickYesButton()
@@ -109,9 +124,19 @@ class PopupPage extends BasePage
     return await (await this.notificationMessage).isDisplayed();
   }
 
+  async isPremiumButtonDisplayed()
+  {
+    return await (await this.premiumButton).isDisplayed();
+  }
+
   async isStopShowingNotificationsButtonDisplayed()
   {
     return await (await this.stopShowingNotificationsButton).isDisplayed();
+  }
+
+  async isUpgradeButtonDisplayed()
+  {
+    return await (await this.upgradeButton).isDisplayed();
   }
 
   async switchToProblemPageTab()

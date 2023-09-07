@@ -17,10 +17,10 @@
 
 "use strict";
 
-const {beforeSequence, globalRetriesNumber} = require("../helpers");
+const {beforeSequence, enablePremiumByMockServer,
+       globalRetriesNumber} = require("../helpers");
 const {expect} = require("chai");
 const TestPages = require("../page-objects/testPages.page");
-const GeneralPage = require("../page-objects/general.page");
 
 describe("test DC filterlist blocking for premium users", function()
 {
@@ -33,58 +33,11 @@ describe("test DC filterlist blocking for premium users", function()
 
   it("should block distraction control content", async function()
   {
-    await browser.newWindow("https://qa-mock-licensing-server.glitch.me/");
-    const generalPage = new GeneralPage(browser);
-    await generalPage.isMockLicensingServerTextDisplayed();
-    await generalPage.switchToABPOptionsTab();
-    await browser.executeScript(`
-      Promise.all([
-        new Promise((resolve, reject) => {
-          chrome.runtime.sendMessage({type: "prefs.set",
-            key: "premium_license_check_url",
-            value: "https://qa-mock-licensing-server.glitch.me/"},
-            response => {
-            if (browser.runtime.lastError) {
-              reject(browser.runtime.lastError);
-            } else {
-              resolve(response);
-            }
-          });
-        }),
-        new Promise((resolve, reject) => {
-          chrome.runtime.sendMessage({type: "premium.activate",
-          userId: "valid_user_id"}, response => {
-            if (browser.runtime.lastError) {
-              reject(browser.runtime.lastError);
-            } else {
-              resolve(response);
-            }
-          });
-        })
-      ]).then(results => console.log(results));
-    `, []);
-    let waitTime = 0;
-    while (waitTime <= 150000)
-    {
-      await browser.refresh();
-      if ((await generalPage.isPremiumButtonDisplayed()) == true)
-      {
-        break;
-      }
-      else
-      {
-        await browser.pause(200);
-        waitTime += 200;
-      }
-    }
-    if (waitTime >= 150000)
-    {
-      throw new Error("Premium was not enabled!");
-    }
+    await enablePremiumByMockServer();
     await browser.newWindow("https://adblockinc.gitlab.io/QA-team/" +
       "adblocking/DC-filters/DC-filters-testpage.html");
-    await generalPage.switchToTab("DC filters");
     const testPages = new TestPages(browser);
+    await testPages.switchToTab("DC filters");
     expect(await testPages.
       isPushNotificationsHidingFilterIdDisplayed()).to.be.false;
     expect(await testPages.

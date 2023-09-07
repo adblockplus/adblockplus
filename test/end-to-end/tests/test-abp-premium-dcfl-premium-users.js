@@ -17,7 +17,8 @@
 
 "use strict";
 
-const {beforeSequence, globalRetriesNumber} = require("../helpers");
+const {beforeSequence, enablePremiumByMockServer,
+       globalRetriesNumber} = require("../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
 const GeneralPage = require("../page-objects/general.page");
@@ -33,54 +34,8 @@ describe("test DC filterlist setting for premium users", function()
 
   it("should enable distraction control for premium user", async function()
   {
-    await browser.newWindow("https://qa-mock-licensing-server.glitch.me/");
+    await enablePremiumByMockServer();
     const generalPage = new GeneralPage(browser);
-    await generalPage.isMockLicensingServerTextDisplayed();
-    await generalPage.switchToABPOptionsTab();
-    await browser.executeScript(`
-      Promise.all([
-        new Promise((resolve, reject) => {
-          chrome.runtime.sendMessage({type: "prefs.set",
-            key: "premium_license_check_url",
-            value: "https://qa-mock-licensing-server.glitch.me/"},
-            response => {
-            if (browser.runtime.lastError) {
-              reject(browser.runtime.lastError);
-            } else {
-              resolve(response);
-            }
-          });
-        }),
-        new Promise((resolve, reject) => {
-          chrome.runtime.sendMessage({type: "premium.activate",
-          userId: "valid_user_id"}, response => {
-            if (browser.runtime.lastError) {
-              reject(browser.runtime.lastError);
-            } else {
-              resolve(response);
-            }
-          });
-        })
-      ]).then(results => console.log(results));
-    `, []);
-    let waitTime = 0;
-    while (waitTime <= 150000)
-    {
-      await browser.refresh();
-      if ((await generalPage.isPremiumButtonDisplayed()) == true)
-      {
-        break;
-      }
-      else
-      {
-        await browser.pause(200);
-        waitTime += 200;
-      }
-    }
-    if (waitTime >= 150000)
-    {
-      throw new Error("Premium was not enabled!");
-    }
     expect(await generalPage.
       isBlockMoreDistractionsCheckboxSelected()).to.be.true;
     const advancedPage = new AdvancedPage(browser);

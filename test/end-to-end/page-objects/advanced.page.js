@@ -341,6 +341,11 @@ class AdvancedPage extends BasePage
     return $("//li[@aria-label='Liste FR+EasyList']/div/io-toggle/button");
   }
 
+  get premiumBlockCookieConsentPopupsFL()
+  {
+    return $("//li[@aria-label='Premium - Block cookie consent pop-ups']");
+  }
+
   get premiumDistractionControlFL()
   {
     return $("//li[@aria-label='Premium - Distraction Control']");
@@ -897,6 +902,13 @@ class AdvancedPage extends BasePage
     return await this.waitUntilAttributeValueIs(
       this.listeFREasyListFLStatusToggle, "aria-checked",
       expectedValue, timeoutVal);
+  }
+
+  async isPremiumBlockCookieConsentPopupsFLDisplayed(reverseOption = false)
+  {
+    return await this.
+      waitForDisplayedNoError(this.premiumBlockCookieConsentPopupsFL,
+                              reverseOption);
   }
 
   async isPremiumDistractionControlFLDisplayed(reverseOption = false)

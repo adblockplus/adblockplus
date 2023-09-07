@@ -28,6 +28,7 @@ const fs = require("fs");
 const BasePage = require("./page-objects/base.page");
 const ExtensionsPage = require("./page-objects/extensions.page");
 const GeneralPage = require("./page-objects/general.page");
+const PremiumHeaderChunk = require("./page-objects/premiumHeader.chunk");
 const helperExtension = "helper-extension";
 const globalRetriesNumber = 2;
 
@@ -87,6 +88,59 @@ async function beforeSequence()
   await browser.url(`${origin}/desktop-options.html`);
   await browser.setWindowSize(1400, 1000);
   return [origin];
+}
+
+async function enablePremiumByMockServer()
+{
+  await browser.newWindow("https://qa-mock-licensing-server.glitch.me/");
+  const generalPage = new GeneralPage(browser);
+  await generalPage.isMockLicensingServerTextDisplayed();
+  await generalPage.switchToABPOptionsTab();
+  await browser.executeScript(`
+    Promise.all([
+      new Promise((resolve, reject) => {
+        chrome.runtime.sendMessage({type: "prefs.set",
+          key: "premium_license_check_url",
+          value: "https://qa-mock-licensing-server.glitch.me/"},
+          response => {
+          if (browser.runtime.lastError) {
+            reject(browser.runtime.lastError);
+          } else {
+            resolve(response);
+          }
+        });
+      }),
+      new Promise((resolve, reject) => {
+        chrome.runtime.sendMessage({type: "premium.activate",
+        userId: "valid_user_id"}, response => {
+          if (browser.runtime.lastError) {
+            reject(browser.runtime.lastError);
+          } else {
+            resolve(response);
+          }
+        });
+      })
+    ]).then(results => console.log(results));
+  `, []);
+  const premiumHeaderChunk = new PremiumHeaderChunk(browser);
+  let waitTime = 0;
+  while (waitTime <= 150000)
+  {
+    await browser.refresh();
+    if ((await premiumHeaderChunk.isPremiumButtonDisplayed()) == true)
+    {
+      break;
+    }
+    else
+    {
+      await browser.pause(200);
+      waitTime += 200;
+    }
+  }
+  if (waitTime >= 150000)
+  {
+    throw new Error("Premium was not enabled!");
+  }
 }
 
 function getChromiumExtensionPath()
@@ -170,7 +224,8 @@ async function waitForExtension()
   return [origin];
 }
 
-module.exports = {afterSequence, beforeSequence, getChromiumExtensionPath,
+module.exports = {afterSequence, beforeSequence, enablePremiumByMockServer,
+                  getChromiumExtensionPath,
                   getCurrentDate, getFirefoxExtensionPath,
                   randomIntFromInterval, helperExtension,
                   globalRetriesNumber, waitForExtension};
