@@ -17,6 +17,8 @@
 
 import * as api from "../../core/api/front";
 import { Message, isMessage } from "../../polyfills/shared";
+import { prepareElementForUnload } from "../../unload-cleanup/content";
+import { DisplayValue } from "../../unload-cleanup/shared";
 import { ResizeMessage, ShowMessage } from "../shared";
 
 /**
@@ -130,6 +132,7 @@ function showDialog(platform: string): void {
 
   overlay.appendChild(iframe);
   document.body.appendChild(overlay);
+  prepareElementForUnload(overlay, DisplayValue.block);
 
   // Firefox doesn't inject content scripts into frames with the sandbox
   // attribute, so we need to set the attribute after adding the element

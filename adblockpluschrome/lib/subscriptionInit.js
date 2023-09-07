@@ -31,6 +31,9 @@ import {revalidateAllowlistingStates} from "./allowlisting.js";
 import {initDisabledFilterCounters} from "./filterConfiguration.js";
 import {initNotifications} from "./notificationHelper.js";
 import {Prefs} from "./prefs.js";
+import {
+  start as startUnloadCleanup
+} from "../../src/unload-cleanup/background/index.ts";
 
 let firstRun;
 let userNotificationCallback = null;
@@ -180,6 +183,7 @@ async function start()
   await initNotifications(firstRun);
   premium.start();
   void startTelemetry();
+  startUnloadCleanup();
   setReadyState(ReadyState.started);
 
   /**
