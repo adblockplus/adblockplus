@@ -78,9 +78,9 @@
     }
   },
   "dependencies": {
-    "@adblockinc/rules": "gitlab:adblockinc/ext/rules#dfb055d8",
+    "@adblockinc/rules": "gitlab:adblockinc/ext/rules#5de545e",
     "@eyeo/snippets": "0.8.1",
-    "@eyeo/webext-sdk": "0.8.1",
+    "@eyeo/webext-sdk": "0.10.1",
     "argparse": "1.0.10",
     "canvas": "2.9.1",
     "css-loader": "6.8.1",
