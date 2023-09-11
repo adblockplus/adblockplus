@@ -148,6 +148,11 @@ class TestPages extends BasePage
     await this.waitForEnabledThenClick(this.subscribeLink);
   }
 
+  get cookieBanner()
+  {
+    return $("#cookieConsentModal");
+  }
+
   async getCustomBlockingFilterText()
   {
     return await (await this.customBlockingFilter).getText();
@@ -218,6 +223,12 @@ class TestPages extends BasePage
   async isAutoplayVideosHidingFilterIdDisplayed()
   {
     return await (await this.autoplayVideosHidingFilterId).isDisplayed();
+  }
+
+  async isCookieBannerDisplayed(reverseOption = false)
+  {
+    return await this.waitForDisplayedNoError(this.
+      cookieBanner, reverseOption, 2000);
   }
 
   async isCustomHidingClassDisplayed()

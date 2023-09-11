@@ -75,6 +75,27 @@ class GeneralPage extends BasePage
       "div[@class='description-container']/p");
   }
 
+  get blockCookieConsentPopupsDialog()
+  {
+    return $("#dialog-content-optIn-premium-subscription");
+  }
+
+  get blockCookieConsentPopupsDialogText()
+  {
+    return $("//*[@id='dialog-content-optIn-premium-subscription']/p");
+  }
+
+  get blockCookieConsentPopupsDialogNoButton()
+  {
+    return $("//*[@id='dialog-content-optIn-premium-subscription']/" +
+      "div/button[@data-action='close-dialog']");
+  }
+
+  get blockCookieConsentPopupsDialogOkButton()
+  {
+    return $("//button[@data-action='add-subscription']");
+  }
+
   get blockCookieConsentPopupsCheckbox()
   {
     return $("//li[@aria-label='Block cookie consent pop-ups']/button");
@@ -163,7 +184,6 @@ class GeneralPage extends BasePage
   {
     return $("//li[@aria-label='italiano + English']");
   }
-
 
   get italianoPlusEnglishListItem()
   {
@@ -288,6 +308,24 @@ class GeneralPage extends BasePage
       blockAdditionalTrackingCheckbox);
   }
 
+  async clickBlockCookieConsentPopupsDialogNoButton()
+  {
+    await this.waitForEnabledThenClick(this.
+      blockCookieConsentPopupsDialogNoButton);
+  }
+
+  async clickBlockCookieConsentPopupsDialogOkButton()
+  {
+    await this.waitForEnabledThenClick(this.
+      blockCookieConsentPopupsDialogOkButton);
+  }
+
+  async clickBlockCookieConsentPopupsCheckbox()
+  {
+    await this.waitForEnabledThenClick(this.
+      blockCookieConsentPopupsCheckbox);
+  }
+
   async clickBlockMoreDistractionsCheckbox()
   {
     await this.waitForEnabledThenClick(this.
@@ -372,6 +410,11 @@ class GeneralPage extends BasePage
     return await (await this.blockAdditionalTrackingDescription).getText();
   }
 
+  async getBlockCookieConsentPopupsDialogText()
+  {
+    return await (await this.blockCookieConsentPopupsDialogText).getText();
+  }
+
   async getBlockPushNotificationsDescriptionText()
   {
     return await (await this.blockPushNotificationsDescription).getText();
@@ -438,6 +481,11 @@ class GeneralPage extends BasePage
     return await this.waitUntilAttributeValueIs(
       this.blockCookieConsentPopupsCheckbox, "aria-checked", "true",
       3000, reverse);
+  }
+
+  async isBlockCookieConsentPopupsDialogDisplayed()
+  {
+    return await (await this.blockCookieConsentPopupsDialog).isDisplayed();
   }
 
   async isBlockCookieConsentPopupsItemDisplayed(reverseOption = false)

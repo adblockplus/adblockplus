@@ -356,7 +356,6 @@ class AdvancedPage extends BasePage
     return $("//li[@data-pref='show_devtools_panel']/button");
   }
 
-
   get showAdblockPlusPanelTooltipIcon()
   {
     return $("//li[@data-pref='show_devtools_panel']" +
