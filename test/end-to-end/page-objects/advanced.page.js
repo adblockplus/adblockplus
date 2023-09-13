@@ -122,6 +122,11 @@ class AdvancedPage extends BasePage
       "without third-party tracking']");
   }
 
+  get builtInFilterListsItems()
+  {
+    return $$("//io-list-box[@id='filters-box']/ul/li[@role='option']");
+  }
+
   get cancelAddingFLButton()
   {
     return $("//button[@data-action='close-filterlist-by-url']");
@@ -646,6 +651,16 @@ class AdvancedPage extends BasePage
   async clickUpdateAllFilterlistsButton()
   {
     await (await this.updateAllFilterlistsButton).click();
+  }
+
+  async getBuiltInFilterListsItemsNames()
+  {
+    const flItems = await this.builtInFilterListsItems;
+    return await Promise.all(
+      flItems.map(async(element) =>
+      {
+        return await element.getText();
+      }));
   }
 
   async getCustomFilterListsErrorText()

@@ -394,6 +394,8 @@ uitests:all:
   variables:
     SUITE: all
   rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: never
     - if: $CI_PIPELINE_SOURCE == "schedule"
       when: always
     - when: manual
@@ -414,6 +416,8 @@ uitests:smoke:
   variables:
     SUITE: smoke
   rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: never
     - if: $CI_PIPELINE_SOURCE == "schedule"
       when: never
     - if: $CI_COMMIT_BRANCH == "next" || $CI_COMMIT_BRANCH == "main"
