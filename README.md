@@ -1,3 +1,8 @@
+# IMPORTANT: Deprecation notice
+
+The "master" branch is deprecated and will no longer receive any updates. Please
+use the "main" branch instead.
+
 # Adblock Plus
 
 Welcome to the repository for the Adblock Plus extension!
