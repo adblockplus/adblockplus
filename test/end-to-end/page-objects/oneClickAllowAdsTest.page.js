@@ -29,7 +29,20 @@ class OneClickAllowAdsTestPage extends BasePage
 
   async init()
   {
-    await browser.url("fconeclick.blogspot.com/");
+    await browser.newWindow("https://fconeclick.blogspot.com/");
+    await this.switchToTab("FC oneclick");
+  }
+
+  async visitOneClickSubPage()
+  {
+    await browser.newWindow("https://fconeclick.blogspot.com/2021/09/1-click.html");
+    await this.switchToTab("1-click");
+  }
+
+  async visitOneClickAAPage()
+  {
+    await browser.newWindow("https://fconeclickaa.blogspot.com/");
+    await this.switchToTab("FC oneclick AA");
   }
 
   get oneClickButton()
@@ -37,9 +50,30 @@ class OneClickAllowAdsTestPage extends BasePage
     return $(".fc-button-whitelist");
   }
 
-  async clickOneClickButton(timeoutMs = 20000)
+  get oneClickGFCPaywall()
+  {
+    return $(".fc-dialog-container");
+  }
+
+  get oneClickDismissPaywallX()
+  {
+    return $(".fc-close");
+  }
+
+  async isOneClickGFCPaywallDisplayed(reverse = false)
+  {
+    return await this.
+      waitForDisplayedNoError(this.oneClickGFCPaywall, reverse, 2000);
+  }
+
+  async clickOneClickButton(timeoutMs = 1500)
   {
     await this.waitForEnabledThenClick(this.oneClickButton, timeoutMs);
+  }
+
+  async clickDismissPaywallX(timeoutMs = 1000)
+  {
+    await this.waitForEnabledThenClick(this.oneClickDismissPaywallX, timeoutMs);
   }
 }
 

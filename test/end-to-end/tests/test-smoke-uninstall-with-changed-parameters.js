@@ -38,12 +38,12 @@ describe("test uninstall after changed params as part of the smoke tests", funct
 
   it("should uninstall extension with changed params as part of the smoke tests", async function()
   {
-    const generalPage = new GeneralPage(browser);
-    await generalPage.switchToInstalledTab();
     const oneClickAllowAdsTestPage = new OneClickAllowAdsTestPage(browser);
     await oneClickAllowAdsTestPage.init();
     await oneClickAllowAdsTestPage.clickOneClickButton();
-    await generalPage.switchToABPOptionsTab();
+    await oneClickAllowAdsTestPage.switchToABPOptionsTab(true);
+    const generalPage = new GeneralPage(browser);
+    await generalPage.init();
     await generalPage.clickAllowAcceptableAdsCheckbox();
     expect(await generalPage.
         isAllowAcceptableAdsCheckboxSelected(false, 5000));
@@ -52,6 +52,8 @@ describe("test uninstall after changed params as part of the smoke tests", funct
     await advancedPage.clickEasyListFLStatusToggle();
     expect(await advancedPage.
       isEasyListFLStatusToggleSelected()).to.be.false;
+    // add wait for download count to update, fails once in a while in Chrome w/o this pause
+    await browser.pause(1500);
     await browser.executeScript("browser.management.uninstallSelf();", []);
     await generalPage.switchToUninstalledTab();
     const uninstallCurrentUrl = await generalPage.getCurrentUrl();
