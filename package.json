@@ -3,8 +3,8 @@
   "repository": "https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui",
   "license": "GPL-3.0",
   "engines": {
-    "node": ">=16.10.0 <17",
-    "npm": "8"
+    "node": ">=18.17.1 <19",
+    "npm": "9"
   },
   "scripts": {
     "$": "npm-dollar",
@@ -82,7 +82,7 @@
     "@eyeo/snippets": "0.8.1",
     "@eyeo/webext-sdk": "0.10.1",
     "argparse": "1.0.10",
-    "canvas": "2.9.1",
+    "canvas": "2.11.2",
     "css-loader": "6.8.1",
     "del": "5.1.0",
     "glob": "8.0.3",

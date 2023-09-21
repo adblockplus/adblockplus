@@ -29,8 +29,8 @@ Adblock Plus.
 
 To contribute to this project, you'll need:
 
-- [Node][nodejs] >= 16.10.0; < 17.0.0
-- [npm][npm] 8
+- [Node][nodejs] >= 18.17.1; <19
+- [npm][npm] 9
 
 `Node` should come installed with `npm`. If it doesn't, you can
 download `npm` [here][npm].

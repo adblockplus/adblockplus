@@ -14,9 +14,8 @@
 # along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
 
 ---
-
 default:
-  image: node:16.15.0
+  image: node:18.17.1
   before_script:
     # enable unsafe-perm to avoid problems with running npm as root
     # see https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/issues/193
