@@ -357,8 +357,8 @@
     if (typeof message !== "object" || !message.type)
       return;
 
-    // Ignore messages from EWE content scripts
-    if (message.type.startsWith("ewe:"))
+    // Ignore messages from EWE & ML content scripts
+    if (message.type.startsWith("ewe:") || message.type.startsWith("ML:"))
       return;
 
     // Ignore messages from content scripts, unless we listed them as

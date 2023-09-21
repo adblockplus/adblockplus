@@ -19,8 +19,11 @@
 
 import * as ewe from "@eyeo/webext-sdk";
 import * as snippets from "@eyeo/snippets";
+import {service as mlService} from "@eyeo/mlaf";
 
 ewe.snippets.setLibrary({
   injectedCode: snippets.main,
   isolatedCode: snippets.isolated
 });
+
+browser.runtime.onMessage.addListener(mlService.messageListener);
