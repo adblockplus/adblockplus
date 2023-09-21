@@ -27,16 +27,6 @@ class PremiumPage extends BasePage
     this.browser = browser;
   }
 
-  get paymentConfirmedLabel()
-  {
-    return $("//h4[@i18n='payment_confirmed']");
-  }
-
-  get payWithCreditCardButton()
-  {
-    return $("//span[@i18n='pwyw_method_cc']");
-  }
-
   get getPremiumMonthlyButton()
   {
     return $("//a[@data-plan='monthly']");
@@ -47,10 +37,26 @@ class PremiumPage extends BasePage
     return $("//a[@i18n='get_started_premium']");
   }
 
+  get paymentConfirmedLabel()
+  {
+    return $("//h4[@i18n='payment_confirmed']");
+  }
+
+  get payWithCreditCardButton()
+  {
+    return $("//span[@i18n='pwyw_method_cc']");
+  }
+
   async clickGetPremiumMonthlyButton()
   {
     await this.waitForEnabledThenClick(this.
       getPremiumMonthlyButton);
+  }
+
+  async clickGetStartedWithABPPremiumButton()
+  {
+    await this.waitForEnabledThenClick(this.
+      getStartedWithABPPremiumButton, 20000);
   }
 
   async clickPaymentConfirmedLabel()
@@ -70,12 +76,6 @@ class PremiumPage extends BasePage
     await this.waitForDisplayedNoError(this.paymentConfirmedLabel,
                                        false, 15000);
     return await (await this.paymentConfirmedLabel).getText();
-  }
-
-  async clickGetStartedWithABPPremiumButton()
-  {
-    await this.waitForEnabledThenClick(this.
-      getStartedWithABPPremiumButton, 15000);
   }
 }
 

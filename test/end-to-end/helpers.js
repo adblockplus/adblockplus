@@ -20,17 +20,19 @@
 const chromeBuild = "../../" + process.env.CHROME_BUILD;
 const firefoxBuild = "../../" + process.env.FIREFOX_BUILD;
 // ======== USE THE FOLLOWING FOR DEBUGGING PURPOSES ==========
-// const chromeBuild = "../../adblockpluschrome/adblockpluschrome-3.16.zip";
-// const firefoxBuild = "../../adblockpluschrome/adblockplusfirefox-3.16.xpi";
+// const chromeBuild = "../../dist/release/adblockpluschrome-3.18.1.zip";
+// const firefoxBuild = "../../dist/release/adblockplusfirefox-3.18.1.xpi";
 const ciTesting = process.env.CI_TESTING || true;
 
 const fs = require("fs");
 const BasePage = require("./page-objects/base.page");
 const ExtensionsPage = require("./page-objects/extensions.page");
 const GeneralPage = require("./page-objects/general.page");
+const PremiumPage = require("./page-objects/premium.page");
+const StripeCheckoutPage = require("./page-objects/stripeCheckout.page");
 const PremiumHeaderChunk = require("./page-objects/premiumHeader.chunk");
 const helperExtension = "helper-extension";
-const globalRetriesNumber = 2;
+const globalRetriesNumber = 0;
 
 async function afterSequence()
 {
@@ -143,6 +145,48 @@ async function enablePremiumByMockServer()
   }
 }
 
+async function enablePremiumByUI()
+{
+  const premiumHeaderChunk = new PremiumHeaderChunk(browser);
+  await premiumHeaderChunk.clickUpgradeButton();
+  await premiumHeaderChunk.switchToTab(
+    "Adblock Plus Premium | The world's #1 ad blocker");
+  const currentUrl = await premiumHeaderChunk.getCurrentUrl();
+  await browser.url(currentUrl + "?testmode");
+  const premiumPage = new PremiumPage(browser);
+  await premiumPage.clickGetPremiumMonthlyButton();
+  await premiumPage.clickPayWithCreditCardButton();
+  const stripeCheckoutPage = new StripeCheckoutPage();
+  await stripeCheckoutPage.init();
+  await stripeCheckoutPage.typeTextToEmailField("test_automation" +
+    randomIntFromInterval(1000000, 9999999).toString() + "@adblock.org");
+  await stripeCheckoutPage.typeTextToCardNumberField("4242424242424242");
+  await stripeCheckoutPage.typeTextToCardExpiryField("0528");
+  await stripeCheckoutPage.typeTextToCardCvcField("295");
+  await stripeCheckoutPage.typeTextToNameOnCardField("Test Automation");
+  await stripeCheckoutPage.typeTextToZIPField("10001");
+  await stripeCheckoutPage.clickSubscribeButton();
+  await premiumPage.switchToABPOptionsTab();
+  let waitTime = 0;
+  while (waitTime <= 150000)
+  {
+    await browser.refresh();
+    if ((await premiumHeaderChunk.isPremiumButtonDisplayed()) == true)
+    {
+      break;
+    }
+    else
+    {
+      await browser.pause(200);
+      waitTime += 200;
+    }
+  }
+  if (waitTime >= 150000)
+  {
+    throw new Error("Premium was not enabled!");
+  }
+}
+
 function getChromiumExtensionPath()
 {
   let chromeExtension;
@@ -225,7 +269,7 @@ async function waitForExtension()
 }
 
 module.exports = {afterSequence, beforeSequence, enablePremiumByMockServer,
-                  getChromiumExtensionPath,
+                  getChromiumExtensionPath, enablePremiumByUI,
                   getCurrentDate, getFirefoxExtensionPath,
                   randomIntFromInterval, helperExtension,
                   globalRetriesNumber, waitForExtension};
