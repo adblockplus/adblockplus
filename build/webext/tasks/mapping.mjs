@@ -23,18 +23,10 @@ export default function mapping(bundles)
 {
   return merge(
     bundles.copy.map(bundle =>
-      // Excluding files in parent directory doesn't work in Gulp so we need
-      // to avoid this scenario by setting the current working directory to
-      // the parent directory.
-      // https://github.com/gulpjs/gulp/issues/2211
       gulp.src(bundle.src)
       .pipe(changePath(bundle.dest))
     ),
     bundles.rename.map(bundle =>
-      // Excluding files in parent directory doesn't work in Gulp so we need
-      // to avoid this scenario by setting the current working directory to
-      // the parent directory.
-      // https://github.com/gulpjs/gulp/issues/2211
       gulp.src(bundle.src)
       .pipe(changePath(bundle.dest, {rename: true}))
     )

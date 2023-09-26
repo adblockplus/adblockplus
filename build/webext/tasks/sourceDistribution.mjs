@@ -23,11 +23,7 @@ import {lsFiles} from "../utils/git.mjs";
 export default async function sourceDistribution(filename)
 {
   const sourceFiles = await lsFiles();
-  // Excluding files in parent directory doesn't work in Gulp so we need
-  // to avoid this scenario by setting the current working directory to
-  // the parent directory.
-  // https://github.com/gulpjs/gulp/issues/2211
-  return gulp.src(sourceFiles)
+  return gulp.src(sourceFiles, {base: "."})
     .pipe(tar(`${filename}.tar`))
     .pipe(gzip())
     .pipe(gulp.dest(process.cwd()));

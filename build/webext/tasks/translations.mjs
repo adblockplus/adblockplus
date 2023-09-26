@@ -21,10 +21,6 @@ import changePath from "../utils/gulp-change-path.mjs";
 
 export function translations(locales)
 {
-  // Excluding files in parent directory doesn't work in Gulp so we need
-  // to avoid this scenario by setting the current working directory to
-  // the parent directory.
-  // https://github.com/gulpjs/gulp/issues/2211
   return gulp.src(locales.src)
     .pipe(mergeTranslations(
       {
@@ -61,10 +57,6 @@ function getRequiredInfo(manifest)
 
 export function chromeTranslations(locales, manifest)
 {
-  // Excluding files in parent directory doesn't work in Gulp so we need
-  // to avoid this scenario by setting the current working directory to
-  // the parent directory.
-  // https://github.com/gulpjs/gulp/issues/2211
   return gulp.src(locales.src)
     .pipe(mergeTranslations(
       {
