@@ -69,7 +69,7 @@ exports.config = {
   waitforTimeout: 10000,
   connectionRetryTimeout: 12000,
   connectionRetryCount: 3,
-  services: ["geckodriver", "selenium-standalone"],
+  services: ["geckodriver"],
   framework: "mocha",
   reporters: [["allure", {
     outputDir: "allure-results",
