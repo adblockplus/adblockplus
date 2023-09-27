@@ -40,6 +40,7 @@ export default {
       },
       {
         test: /\.css$/,
+        resourceQuery: "",
         use: [
           "style-loader",
           {
