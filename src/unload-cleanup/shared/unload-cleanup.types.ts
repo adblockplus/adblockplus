@@ -15,6 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import { Message } from "../../polyfills/shared";
+
 /**
  * An enum with all CSS `display` values we want to support.
  */
@@ -28,6 +30,8 @@ export enum DisplayValue {
 export const displayValueList = Object.values(DisplayValue);
 
 /**
- * The name of the message used to communicate with the background context.
+ * Message used to communicate with the background context.
  */
-export const messageName = "getUnloadClassName";
+export interface GetClassNameMessage extends Message {
+  type: "unload-cleanup.getClassName";
+}

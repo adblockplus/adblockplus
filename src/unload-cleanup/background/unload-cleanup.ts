@@ -16,8 +16,11 @@
  */
 
 import * as info from "info";
+
+import { port } from "../../../adblockpluschrome/lib/messaging/port";
+import { MessageSender } from "../../polyfills/background";
+import { displayValueList, isGetClassNameMessage } from "../shared";
 import { className } from "./unload-cleanup.types";
-import { displayValueList, messageName } from "../shared";
 
 /**
  * The CSS code to insert for visually hiding elements after extension unload.
@@ -39,33 +42,32 @@ const css = displayValueList
  * this if we are on Firefox.
  *
  * @param message The message itself. This is a serializable object.
- * @param sender A runtime.MessageSender object representing the sender of
- *  the message.
+ * @param sender An object representing the sender of the message.
  */
-function handleMessage(
+async function handleMessage(
   message: unknown,
-  sender: browser.Runtime.MessageSender
-): Promise<string> | undefined {
-  if (message !== messageName) {
+  sender: MessageSender
+): Promise<string | undefined> {
+  if (!isGetClassNameMessage(message)) {
     return;
   }
 
-  if (info.application !== "firefox" || typeof sender.tab === "undefined") {
+  if (info.application !== "firefox" || typeof sender.page === "undefined") {
     return;
   }
 
-  return browser.tabs
-    .insertCSS(sender.tab.id, {
-      code: css,
-      frameId: sender.frameId,
-      runAt: "document_start"
-    })
-    .then(() => className);
+  await browser.tabs.insertCSS(sender.page.id, {
+    code: css,
+    frameId: sender.frame.id,
+    runAt: "document_start"
+  });
+  return className;
 }
 
 /**
  * Starts listening for the message to insert the CSS and send the class name.
  */
 export function start(): void {
-  browser.runtime.onMessage.addListener(handleMessage);
+  port.on("unload-cleanup.getClassName", handleMessage);
+  ext.addTrustedMessageTypes(null, ["unload-cleanup.getClassName"]);
 }

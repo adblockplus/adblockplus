@@ -15,5 +15,21 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export * from "./unload-cleanup";
-export * from "./unload-cleanup.types";
+import { isMessage } from "../../polyfills/shared";
+import { GetClassNameMessage } from "./unload-cleanup.types";
+
+/**
+ * Checks whether given candidate is message of type
+ * "unload-cleanup.getClassName"
+ *
+ * @param candidate - Message candidate
+ *
+ * @returns whether candidate is message of type "unload-cleanup.getClassName"
+ */
+export function isGetClassNameMessage(
+  candidate: unknown
+): candidate is GetClassNameMessage {
+  return (
+    isMessage(candidate) && candidate.type === "unload-cleanup.getClassName"
+  );
+}

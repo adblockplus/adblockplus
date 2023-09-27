@@ -43,6 +43,15 @@ export interface FilterMetadata {
  */
 export interface MessageSender {
   /**
+   * Information about sender frame
+   */
+  frame: {
+    /**
+     * Sender frame ID
+     */
+    id: number;
+  };
+  /**
    * Information about sender page
    */
   page: {

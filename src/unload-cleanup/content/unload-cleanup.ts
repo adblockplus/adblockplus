@@ -15,25 +15,26 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { DisplayValue, messageName } from "../shared";
+import { DisplayValue, GetClassNameMessage } from "../shared";
 
 /**
  * Prepares an injected element for extension unload.
  *
- * @param element
- * @param displayValue
+ * @param element - Element
+ * @param displayValue - Display value to apply to element
  */
-export function prepareElementForUnload(
+export async function prepareElementForUnload(
   element: HTMLElement,
   displayValue: DisplayValue
 ) {
-  browser.runtime.sendMessage(messageName, (className: string | undefined) => {
-    if (typeof className === "undefined") {
-      // Background did not insert a style sheet.
-      // Do not add clean-up classes.
-      return;
-    }
-    element.classList.add(`${className}--${displayValue}`);
-    element.style.display = "none";
-  });
+  const className: string | undefined = await browser.runtime.sendMessage({
+    type: "unload-cleanup.getClassName"
+  } as GetClassNameMessage);
+  if (typeof className === "undefined") {
+    // Background did not insert a style sheet.
+    // Do not add clean-up classes.
+    return;
+  }
+  element.classList.add(`${className}--${displayValue}`);
+  element.style.display = "none";
 }
