@@ -45,6 +45,25 @@ class OneClickAllowAdsTestPage extends BasePage
     await this.switchToTab("FC oneclick AA");
   }
 
+  async visitNoSubdomainUrl()
+  {
+    await browser.newWindow("https://technium.ch/");
+    await this.switchToTab("Technium.ch Home - Technium");
+  }
+
+  async visitWWWSubdomainUrl()
+  {
+    await browser.newWindow("https://www.thesalarycalculator.co.uk");
+    await this.switchToTab(
+      "The Salary Calculator - 2023 / 2024 Tax Calculator");
+  }
+
+  async visitNonWWWSubdomainUrl()
+  {
+    await browser.newWindow("https://home.macdronic.com/");
+    await this.switchToTab("MACDRONIC.COM | Macdronic.com");
+  }
+
   get oneClickButton()
   {
     return $(".fc-button-whitelist");
