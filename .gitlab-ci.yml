@@ -148,7 +148,7 @@ uploadcrowdin:
   script:
     - npm install
     # installing java
-    - apt-get install openjdk-11-jre -yqq
+    - apt-get install default-jre-headless -yqq
     # installing crowdin-cli
     - wget https://artifacts.crowdin.com/repo/deb/crowdin3.deb -O crowdin.deb
     - dpkg -i crowdin.deb
@@ -165,7 +165,7 @@ downloadcrowdin:
   script:
     - npm install
     # installing java
-    - apt-get install openjdk-11-jre -yqq
+    - apt-get install default-jre-headless -yqq
     # installing crowdin-cli
     - wget https://artifacts.crowdin.com/repo/deb/crowdin3.deb -O crowdin.deb
     - dpkg -i crowdin.deb
@@ -362,7 +362,7 @@ testpages:MV2:firefox:oldest:
     - npm install
     - npm run test:end-to-end $SUITE 2>&1 | tee lambdatest_output.txt || true
     - apt-get update
-    - apt-get -y install openjdk-11-jre
+    - apt-get -y install default-jre-headless
     - npx -y allure-commandline generate test/end-to-end/allure-results -o allure-report
     - |
       log_output=$(cat lambdatest_output.txt)
