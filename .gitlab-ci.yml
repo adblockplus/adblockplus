@@ -86,6 +86,43 @@ build:
       - dist/release/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
       - dist/release/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}-mv3.xpi
 
+buildfromsource:
+  stage: build
+  needs: ["build"]
+  script:
+   - mkdir source
+   - tar xvf dist/release/adblockplus-${CI_COMMIT_SHORT_SHA}.tar.gz -C source
+   - cd source
+   - npm install
+   # Create mv2 extension builds from source archive
+   - npm run build:release chrome -- --unhandled-rejections=strict
+   - npm run build:release firefox -- --unhandled-rejections=strict
+   # Attach commit hash to build files
+   - mv dist/release/adblockplus{chrome-*,-chrome-${CI_COMMIT_SHORT_SHA}}.zip
+   - mv dist/release/adblockplus{firefox-*,-firefox-${CI_COMMIT_SHORT_SHA}}.xpi
+   # Create mv3 extension builds from source archive
+   - npm run build:release chrome -- -m 3 --unhandled-rejections=strict
+   - npm run build:release firefox -- -m 3 --unhandled-rejections=strict
+   # Attach commit hash to build files
+   - mv dist/release/adblockplus{chrome-*,-chrome-${CI_COMMIT_SHORT_SHA}-mv3}.zip
+   - mv dist/release/adblockplus{firefox-*,-firefox-${CI_COMMIT_SHORT_SHA}-mv3}.xpi
+  artifacts:
+   name: "adblockplus-source-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHORT_SHA}"
+   paths:
+     - source/dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
+     - source/dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
+     - source/dist/release/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
+     - source/dist/release/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}-mv3.xpi
+  rules:
+    # Do not trigger a merge request pipeline
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: never
+    # Run automatically on release and main branch
+    - if: $CI_COMMIT_BRANCH == "release" || $CI_COMMIT_BRANCH == "main"
+    # Run manually on all other branches
+    - when: manual
+      allow_failure: true
+
 # ################################################################################
 # # Check filesizes
 # ################################################################################
@@ -115,11 +152,65 @@ checkfilesizes:MV2:chrome:
   variables:
     EXTENSION: adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
 
-
 checkfilesizes:MV2:firefox:
   extends: .checkfilesizes
   variables:
     EXTENSION: adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
+
+# ################################################################################
+# Check build sizes
+# ################################################################################
+
+.checkbuildsizes:
+  stage: checkfilesizes
+  before_script:
+    - if [ ! -f $SOURCE_BUILD ] || [ ! -f $REPOSITORY_BUILD ]; then
+        echo "File not found" &&
+        exit 1;
+      fi
+  script:
+    - if((`stat -c%s $REPOSITORY_BUILD`!=`stat -c%s $SOURCE_BUILD`)); then
+        echo "Build from source archive and build from the repository are not the same size" &&
+        ls -l $REPOSITORY_BUILD &&
+        ls -l $SOURCE_BUILD &&
+        exit 1;
+      else
+        echo "Build from source archive and build from the repository are the same size" &&
+        exit 0;
+      fi
+  rules:
+    # Do not trigger a merge request pipeline
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: never
+    # Run automatically on release and main branch
+    - if: $CI_COMMIT_BRANCH == "release" || $CI_COMMIT_BRANCH == "main"
+    # Run manually on all other branches
+    - when: manual
+      allow_failure: true
+
+checkbuildsizes:MV3:chrome:
+  extends: .checkbuildsizes
+  variables:
+    REPOSITORY_BUILD: dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
+    SOURCE_BUILD: source/dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
+
+checkbuildsizes:MV2:chrome:
+  extends: .checkbuildsizes
+  variables:
+    REPOSITORY_BUILD: dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
+    SOURCE_BUILD: source/dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
+
+checkbuildsizes:MV3:firefox:
+  extends: .checkbuildsizes
+  variables:
+    REPOSITORY_BUILD: dist/release/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}-mv3.xpi
+    SOURCE_BUILD: source/dist/release/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}-mv3.xpi
+
+checkbuildsizes:MV2:firefox:
+  extends: .checkbuildsizes
+  variables:
+    REPOSITORY_BUILD: dist/release/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
+    SOURCE_BUILD: source/dist/release/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
 
 ################################################################################
 # Translate
