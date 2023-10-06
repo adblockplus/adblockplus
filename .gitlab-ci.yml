@@ -457,7 +457,7 @@ testpages:MV2:firefox:oldest:
     - npx -y allure-commandline generate test/end-to-end/allure-results -o allure-report
     - |
       log_output=$(cat lambdatest_output.txt)
-      regex_pattern="passed, [1-9]\\d* failed"
+      regex_pattern="passed, [1-9][0-9]* failed"
       if [[ $log_output =~ $regex_pattern ]]; then
         echo "Failed test cases found. Failing the job."
         exit 1
