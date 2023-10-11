@@ -409,7 +409,7 @@ async function showNotification(notification)
     // Because "newtab" notifications could potentially also contain upgrade
     // campaigns, we don't want to show them to premium users.
 
-    if (installType === "admin" || isPremiumUser)
+    if (installType === "admin" || isPremiumUser || navigator.webdriver)
     {
       void ewe.notifications.markAsShown(notification.id);
       void notificationDismissed(notification.id);
