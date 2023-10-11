@@ -17,7 +17,8 @@
 
 "use strict";
 
-const {beforeSequence, enablePremiumByMockServer} = require("../helpers");
+const {beforeSequence, enablePremiumByMockServer,
+       switchToABPOptionsTab} = require("../helpers");
 const {expect} = require("chai");
 const BackgroundPage = require("../page-objects/background.page");
 const PremiumHeaderChunk = require("../page-objects/premiumHeader.chunk");
@@ -39,7 +40,7 @@ describe("test abp premium license check retries", function()
     if (browser.capabilities.browserName == "chrome")
     {
       await backgroundPage.init(globalOrigin);
-      await backgroundPage.switchToABPOptionsTab();
+      await switchToABPOptionsTab();
     }
     await browser.executeScript(`
       return new Promise((resolve, reject) => {

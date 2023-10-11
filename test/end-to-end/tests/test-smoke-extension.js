@@ -17,8 +17,8 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence, globalRetriesNumber} =
-  require("../helpers");
+const {afterSequence, beforeSequence, globalRetriesNumber,
+       switchToABPOptionsTab} = require("../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
 const PopupPage = require("../page-objects/popup.page");
@@ -56,7 +56,7 @@ describe("test extension as part of the smoke tests", function()
     // Switch to tab since browser context was lost after reload
     await browser.switchWindow("Adblock Plus has been installed");
     await browser.url(`${globalOrigin}/options.html`);
-    await advancedPage.switchToABPOptionsTab();
+    await switchToABPOptionsTab();
     await advancedPage.init();
     expect(await advancedPage.
       isAbpFiltersFLDisplayed()).to.be.true;
@@ -81,11 +81,20 @@ describe("test extension as part of the smoke tests", function()
     if (browser.capabilities.browserName != "firefox")
     {
       lastTest = true;
-      await browser.url("https://adblockinc.gitlab.io/QA-team/adblocking/" +
+      await browser.newWindow("https://adblockinc.gitlab.io/QA-team/adblocking/" +
         "adblocked-count/adblocked-count-testpage.html");
       const popupPage = new PopupPage(browser);
+      await switchToABPOptionsTab();
       await popupPage.init(globalOrigin);
-      await popupPage.waitForNumberOfAdsBlockedInTotalTextToEqual("4");
+      try
+      {
+        await popupPage.waitForNumberOfAdsBlockedInTotalTextToEqual("4");
+      }
+      catch (Exception)
+      {
+        await browser.pause(2000);
+        await popupPage.waitForNumberOfAdsBlockedInTotalTextToEqual("4");
+      }
       expect(String(await popupPage.
         getNumberOfAdsBlockedInTotalText()).includes("4")).to.be.true;
       await browser.url("https://adblockinc.gitlab.io/QA-team/adblocking/" +

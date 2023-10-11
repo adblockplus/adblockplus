@@ -18,7 +18,7 @@
 
 "use strict";
 
-const {beforeSequence, globalRetriesNumber} =
+const {beforeSequence, globalRetriesNumber, switchToABPOptionsTab} =
   require("../helpers");
 const {expect} = require("chai");
 const OneClickAllowAdsTestPage =
@@ -41,7 +41,7 @@ describe("test uninstall after changed params as part of the smoke tests", funct
     const oneClickAllowAdsTestPage = new OneClickAllowAdsTestPage(browser);
     await oneClickAllowAdsTestPage.init();
     await oneClickAllowAdsTestPage.clickOneClickButton();
-    await oneClickAllowAdsTestPage.switchToABPOptionsTab(true);
+    await switchToABPOptionsTab(true);
     const generalPage = new GeneralPage(browser);
     await generalPage.init();
     await generalPage.clickAllowAcceptableAdsCheckbox();
@@ -58,16 +58,13 @@ describe("test uninstall after changed params as part of the smoke tests", funct
     await generalPage.switchToUninstalledTab();
     const uninstallCurrentUrl = await generalPage.getCurrentUrl();
     expect(uninstallCurrentUrl).to.have.string("https://adblockplus.org/en/uninstalled");
-    const params = new Proxy(new URLSearchParams(uninstallCurrentUrl),
-                             {
-                               get: (searchParams, prop) =>
-                                 searchParams.get(prop)
-                             });
     const todaysDate = moment().utc().format("YYYYMMDD");
-    expect(params.wafc).to.equal("1");
-    expect(params.ndc).to.equal("1");
-    expect(params.s).to.equal("0");
-    expect(params.c).to.equal("0");
-    expect(params.fv).to.equal(todaysDate);
+    const url = new URL(uninstallCurrentUrl);
+    const params = url.searchParams;
+    expect(params.get("wafc")).to.equal("1");
+    expect(params.get("ndc")).to.equal("1");
+    expect(params.get("s")).to.equal("0");
+    expect(params.get("c")).to.equal("0");
+    expect(params.get("fv")).to.equal(todaysDate);
   });
 });

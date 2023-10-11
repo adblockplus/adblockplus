@@ -5,5 +5,9 @@
   "rules": {
     "prettier/prettier": "off",
     "eqeqeq": "off"
+  },
+  "globals": {
+    "$": true,
+    "$$": true
   }
 }

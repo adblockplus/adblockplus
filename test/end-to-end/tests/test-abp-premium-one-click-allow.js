@@ -17,8 +17,8 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence, enablePremiumByUI, globalRetriesNumber} =
-  require("../helpers");
+const {afterSequence, beforeSequence, enablePremiumByUI, globalRetriesNumber,
+       switchToABPOptionsTab} = require("../helpers");
 const {expect} = require("chai");
 const AllowlistedWebsitesPage =
   require("../page-objects/allowlistedWebsites.page");
@@ -49,7 +49,7 @@ describe("test one click allow for premium users", function()
     const oneClickAllowAdsTestPage = new OneClickAllowAdsTestPage(browser);
     await oneClickAllowAdsTestPage.init();
     await oneClickAllowAdsTestPage.clickOneClickButton();
-    await oneClickAllowAdsTestPage.switchToABPOptionsTab(true);
+    await switchToABPOptionsTab(true);
     const allowListedWebsitesPage = new AllowlistedWebsitesPage(browser);
     await allowListedWebsitesPage.init();
     await allowListedWebsitesPage.
@@ -78,7 +78,7 @@ describe("test one click allow for premium users", function()
   it("should bypass Anti-adblock wall for premium users", async function()
   {
     const premiumHeaderChunk = new PremiumHeaderChunk(browser);
-    await premiumHeaderChunk.switchToABPOptionsTab(true);
+    await switchToABPOptionsTab(true);
     if (!await premiumHeaderChunk.isPremiumButtonDisplayed())
     {
       await enablePremiumByUI();

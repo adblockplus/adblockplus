@@ -39,7 +39,7 @@ async function afterSequence()
   const extensionsPage = new ExtensionsPage(browser);
   try
   {
-    await extensionsPage.switchToABPOptionsTab();
+    await switchToABPOptionsTab();
     const generalPage = new GeneralPage(browser);
     await generalPage.init();
   }
@@ -63,9 +63,11 @@ async function afterSequence()
       {
         await extensionsPage.init();
         await extensionsPage.clickReloadHelperExtensionButton();
-        await extensionsPage.switchToABPOptionsTab();
+        await switchToABPOptionsTab();
       }
-      catch (ThirddException) {}
+      catch (ThirdException)
+      {
+      }
     }
   }
 }
@@ -97,7 +99,7 @@ async function enablePremiumByMockServer()
   await browser.newWindow("https://qa-mock-licensing-server.glitch.me/");
   const generalPage = new GeneralPage(browser);
   await generalPage.isMockLicensingServerTextDisplayed();
-  await generalPage.switchToABPOptionsTab();
+  await switchToABPOptionsTab();
   await browser.executeScript(`
     Promise.all([
       new Promise((resolve, reject) => {
@@ -166,25 +168,34 @@ async function enablePremiumByUI()
   await stripeCheckoutPage.typeTextToNameOnCardField("Test Automation");
   await stripeCheckoutPage.typeTextToZIPField("10001");
   await stripeCheckoutPage.clickSubscribeButton();
-  await premiumPage.switchToABPOptionsTab();
-  let waitTime = 0;
-  while (waitTime <= 150000)
-  {
-    await browser.refresh();
-    if ((await premiumHeaderChunk.isPremiumButtonDisplayed()) == true)
+  await switchToABPOptionsTab();
+  await waitForCondition(await premiumHeaderChunk.isPremiumButtonDisplayed());
+}
+
+async function getABPOptionsTabId()
+{
+  await switchToABPOptionsTab(true);
+  const currentTab = await browser.executeAsyncScript(`
+    function getTabID()
     {
-      break;
-    }
-    else
-    {
-      await browser.pause(200);
-      waitTime += 200;
-    }
-  }
-  if (waitTime >= 150000)
-  {
-    throw new Error("Premium was not enabled!");
-  }
+      return new Promise((resolve, reject) =>
+      {
+        try
+        {
+          chrome.tabs.query({active: true,}, function (tabs)
+          {
+            resolve(tabs[0].id);})} catch (e) {reject(e);
+          }
+        })
+      }
+      async function returnID()
+      {
+        let responseTabID = await getTabID();
+        return responseTabID;}
+        var callback = arguments[arguments.length - 1];
+        returnID().then((data)=> {callback(data)
+      });`, []);
+  return currentTab;
 }
 
 function getChromiumExtensionPath()
@@ -234,6 +245,65 @@ function randomIntFromInterval(min, max)
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+async function switchToABPOptionsTab(noSwitchToFrame = false)
+{
+  const extensionsPage = new ExtensionsPage(browser);
+  try
+  {
+    await extensionsPage.switchToTab(/options\.html/);
+  }
+  catch (Exception)
+  {
+    await extensionsPage.init();
+    if (browser.capabilities.browserName == "firefox")
+    {
+      await extensionsPage.switchToTab("Debugging - Runtime / this-firefox");
+    }
+    else
+    {
+      await extensionsPage.switchToTab("Extensions");
+    }
+    await extensionsPage.clickReloadHelperExtensionButton();
+    await extensionsPage.switchToTab(/options\.html/);
+  }
+  if (noSwitchToFrame === false)
+  {
+    try
+    {
+      await browser.switchToFrame(await $("#content"));
+    }
+    catch (Exception)
+    {
+    }
+  }
+}
+
+async function waitForCondition(condition, waitTime = 150000,
+                                refresh = true, pauseTime = 200)
+{
+  let waitTimeMS = 0;
+  while (waitTimeMS <= waitTime)
+  {
+    if (refresh)
+    {
+      await browser.refresh();
+    }
+    if (condition == true)
+    {
+      break;
+    }
+    else
+    {
+      await browser.pause(pauseTime);
+      waitTimeMS += pauseTime;
+    }
+  }
+  if (waitTimeMS >= waitTime)
+  {
+    throw new Error("Condition was not met within the waitTime!");
+  }
+}
+
 async function waitForExtension()
 {
   let origin;
@@ -272,4 +342,5 @@ module.exports = {afterSequence, beforeSequence, enablePremiumByMockServer,
                   getChromiumExtensionPath, enablePremiumByUI,
                   getCurrentDate, getFirefoxExtensionPath,
                   randomIntFromInterval, helperExtension,
-                  globalRetriesNumber, waitForExtension};
+                  globalRetriesNumber, switchToABPOptionsTab,
+                  waitForExtension, getABPOptionsTabId, waitForCondition};

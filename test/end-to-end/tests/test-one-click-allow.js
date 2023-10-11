@@ -17,12 +17,11 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence, globalRetriesNumber} =
-  require("../helpers");
+const {afterSequence, beforeSequence, globalRetriesNumber,
+       switchToABPOptionsTab} = require("../helpers");
 const {expect} = require("chai");
 const OneClickAllowAdsTestPage =
   require("../page-objects/oneClickAllowAdsTest.page");
-const GeneralPage = require("../page-objects/general.page");
 const AllowlistedWebsitesPage =
   require("../page-objects/allowlistedWebsites.page");
 let lastTest = false;
@@ -53,7 +52,7 @@ describe("test one click allow", function()
     await oneClickAllowAdsTestPage.clickDismissPaywallX();
     expect(await oneClickAllowAdsTestPage.
       isOneClickGFCPaywallDisplayed(true)).to.be.true;
-    await oneClickAllowAdsTestPage.switchToABPOptionsTab(true);
+    await switchToABPOptionsTab(true);
     const allowlistedWebsitesPage = new AllowlistedWebsitesPage(browser);
     await allowlistedWebsitesPage.init();
     const attributesOfAllowlistingTableItems = await allowlistedWebsitesPage.
@@ -75,7 +74,7 @@ describe("test one click allow", function()
     await oneClickAllowAdsTestPage.clickOneClickButton();
     expect(await oneClickAllowAdsTestPage.
       isOneClickGFCPaywallDisplayed(true)).to.be.true;
-    await oneClickAllowAdsTestPage.switchToABPOptionsTab(true);
+    await switchToABPOptionsTab(true);
     const allowListedWebsitesPage = new AllowlistedWebsitesPage(browser);
     await allowListedWebsitesPage.init();
     const allowListedTableItemWithFCOneClick = await
@@ -102,7 +101,7 @@ describe("test one click allow", function()
     await oneClickAllowAdsTestPage.init();
     expect(await oneClickAllowAdsTestPage.
       isOneClickGFCPaywallDisplayed(true)).to.be.true;
-    await oneClickAllowAdsTestPage.switchToABPOptionsTab(true);
+    await switchToABPOptionsTab(true);
     const allowListedWebsitesPage = new AllowlistedWebsitesPage(browser);
     await allowListedWebsitesPage.init();
     const attributesOfAllowlistingTableItems = await
@@ -127,8 +126,7 @@ describe("test one click allow", function()
 
   it("should add 1-click allow site to allowlisted websites", async function()
   {
-    const generalPage = new GeneralPage(browser);
-    await generalPage.switchToABPOptionsTab(true);
+    await switchToABPOptionsTab(true);
     const allowListedWebsitesPage = new AllowlistedWebsitesPage(browser);
     await allowListedWebsitesPage.init();
     await allowListedWebsitesPage.

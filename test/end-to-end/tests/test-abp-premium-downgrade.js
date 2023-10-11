@@ -18,7 +18,7 @@
 "use strict";
 
 const {beforeSequence, enablePremiumByMockServer,
-       globalRetriesNumber} = require("../helpers");
+       globalRetriesNumber, switchToABPOptionsTab} = require("../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
 const ExtensionsPage = require("../page-objects/extensions.page");
@@ -59,7 +59,7 @@ describe("test abp premium downgrade", function()
     const extensionsPage = new ExtensionsPage(browser);
     await extensionsPage.init();
     await extensionsPage.clickReloadHelperExtensionButton();
-    await extensionsPage.switchToABPOptionsTab();
+    await switchToABPOptionsTab();
     expect(await premiumHeaderChunk.isUpgradeButtonDisplayed(10000)).to.be.true;
   });
 });

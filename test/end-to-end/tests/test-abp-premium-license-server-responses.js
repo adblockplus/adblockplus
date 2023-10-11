@@ -17,7 +17,8 @@
 
 "use strict";
 
-const {beforeSequence, afterSequence} = require("../helpers");
+const {beforeSequence, afterSequence,
+       switchToABPOptionsTab} = require("../helpers");
 const {expect} = require("chai");
 const BackgroundPage = require("../page-objects/background.page");
 const GeneralPage = require("../page-objects/general.page");
@@ -53,7 +54,7 @@ describe("test abp premium license server responses", function()
       await browser.newWindow("https://qa-mock-licensing-server.glitch.me/");
       const generalPage = new GeneralPage(browser);
       await generalPage.isMockLicensingServerTextDisplayed();
-      await generalPage.switchToABPOptionsTab();
+      await switchToABPOptionsTab();
       await browser.executeScript(`
         Promise.all([
           new Promise((resolve, reject) => {
@@ -135,7 +136,7 @@ describe("test abp premium license server responses", function()
       if (browser.capabilities.browserName == "chrome")
       {
         await backgroundPage.init(globalOrigin);
-        await backgroundPage.switchToABPOptionsTab();
+        await switchToABPOptionsTab();
       }
       await browser.executeScript(dataSet.request, []);
       if (dataSet.premiumStatus == "enabled")

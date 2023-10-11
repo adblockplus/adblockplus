@@ -18,7 +18,7 @@
 "use strict";
 
 const {beforeSequence, globalRetriesNumber,
-       enablePremiumByUI} = require("../helpers");
+       enablePremiumByUI, switchToABPOptionsTab} = require("../helpers");
 const {expect} = require("chai");
 const ExtensionsPage = require("../page-objects/extensions.page");
 const PremiumHeaderChunk = require("../page-objects/premiumHeader.chunk");
@@ -75,7 +75,7 @@ describe("test abp premium license checks", function()
     const extensionsPage = new ExtensionsPage(browser);
     await extensionsPage.init();
     await extensionsPage.clickReloadHelperExtensionButton();
-    await extensionsPage.switchToABPOptionsTab();
+    await switchToABPOptionsTab();
     const secondNextLicenseCheck = await browser.executeScript(`
       return new Promise((resolve, reject) => {
         chrome.runtime.sendMessage({ type: "prefs.get",

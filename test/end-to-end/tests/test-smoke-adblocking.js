@@ -18,7 +18,8 @@
 "use strict";
 
 const {afterSequence, beforeSequence, globalRetriesNumber,
-       randomIntFromInterval} = require("../helpers");
+       randomIntFromInterval, switchToABPOptionsTab,
+       waitForCondition} = require("../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
 const AllowlistedWebsitesPage =
@@ -50,53 +51,6 @@ describe("test adblocking as part of the smoke tests", function()
     }
   });
 
-  it("should display acceptable ads", async function()
-  {
-    const googlePage = new GooglePage(browser);
-    await googlePage.init();
-    try
-    {
-      await googlePage.clickAcceptAllButton();
-    }
-    catch (Exception) {}
-    try
-    {
-      await googlePage.searchForText("hotels");
-    }
-    catch (Exception)
-    {
-      await googlePage.switchToTab("Google");
-      await browser.refresh();
-      // The extension needs a couple seconds sometimes for acceptable ads load
-      await browser.pause(2000);
-      await googlePage.init();
-      await googlePage.searchForText("hotels");
-    }
-    try
-    {
-      await browser.refresh();
-      await browser.pause(randomIntFromInterval(1500, 2500));
-      expect(await googlePage.isAdTagDisplayed()).to.be.true;
-    }
-    catch (Exception)
-    {
-      await browser.refresh();
-      await browser.pause(randomIntFromInterval(1500, 2500));
-      expect(await googlePage.isSponsoredTagDisplayed()).to.be.true;
-    }
-    const extensionsPage = new ExtensionsPage(browser);
-    await extensionsPage.init();
-    await extensionsPage.clickReloadHelperExtensionButton();
-    await extensionsPage.switchToABPOptionsTab();
-    const generalPage = new GeneralPage(browser);
-    await generalPage.init();
-    await generalPage.clickAllowAcceptableAdsCheckbox();
-    await googlePage.init();
-    await googlePage.searchForText("hotels");
-    await browser.pause(randomIntFromInterval(1500, 2500));
-    expect(await googlePage.isAdTagDisplayed(true)).to.be.true;
-  });
-
   siteKeyData.forEach(async(dataSet) =>
   {
     if ((dataSet.website == "http://trucking.com" &&
@@ -122,6 +76,7 @@ describe("test adblocking as part of the smoke tests", function()
             await browser.pause(randomIntFromInterval(2500, 3500));
             await browser.refresh();
             await browser.pause(randomIntFromInterval(1500, 2500));
+            await browser.refresh();
             expect(await generalPage.isElementDisplayed(
               dataSet.relatedLinksSelector)).to.be.true;
           }
@@ -149,14 +104,14 @@ describe("test adblocking as part of the smoke tests", function()
           expect(await generalPage.isElementDisplayed(
             dataSet.relatedLinksSelector)).to.be.true;
         }
-        await generalPage.switchToABPOptionsTab();
+        await switchToABPOptionsTab();
         await generalPage.clickAllowAcceptableAdsCheckbox();
         await generalPage.switchToTab(dataSet.tabTitle);
         await browser.pause(randomIntFromInterval(1500, 2500));
         await browser.refresh();
         expect(await generalPage.isElementDisplayed(
           dataSet.relatedLinksSelector, true)).to.be.true;
-        await generalPage.switchToABPOptionsTab();
+        await switchToABPOptionsTab();
         await generalPage.clickAllowAcceptableAdsCheckbox();
         await generalPage.switchToTab(dataSet.tabTitle);
         await browser.pause(randomIntFromInterval(1500, 2500));
@@ -169,10 +124,11 @@ describe("test adblocking as part of the smoke tests", function()
 
   it("should block and hide ads", async function()
   {
-    await browser.url(testData.blockHideUrl);
+    await browser.newWindow(testData.blockHideUrl);
     const testPages = new TestPages(browser);
-    expect(await testPages.getAwe2FilterText()).to.include(
-      "awe2.js was blocked");
+    await waitForCondition(
+      ((await testPages.getAwe2FilterText()).includes("awe2.js was blocked")),
+      150000, true, randomIntFromInterval(500, 1500));
     expect(await testPages.getBanneradsFilterText()).to.include(
       "bannerads/* was blocked");
     expect(await testPages.
@@ -184,15 +140,8 @@ describe("test adblocking as part of the smoke tests", function()
   it("should block ad by snippet", async function()
   {
     const advancedPage = new AdvancedPage(browser);
-    try
-    {
-      await advancedPage.init();
-    }
-    catch (Exception)
-    {
-      await beforeSequence();
-      await advancedPage.init();
-    }
+    await switchToABPOptionsTab();
+    await advancedPage.init();
     await advancedPage.typeTextToAddCustomFilterListInput(
       "adblockinc.gitlab.io#$#hide-if-contains 'should be hidden' p[id]");
     await advancedPage.clickAddCustomFilterListButton();
@@ -207,14 +156,7 @@ describe("test adblocking as part of the smoke tests", function()
   it("should allowlist websites", async function()
   {
     const allowistedWebsitesPage = new AllowlistedWebsitesPage(browser);
-    try
-    {
-      await allowistedWebsitesPage.switchToABPOptionsTab();
-    }
-    catch (Exception)
-    {
-      await beforeSequence();
-    }
+    await switchToABPOptionsTab();
     await allowistedWebsitesPage.init();
     await allowistedWebsitesPage.
       setAllowlistingTextboxValue("https://adblockinc.gitlab.io/");
@@ -229,8 +171,11 @@ describe("test adblocking as part of the smoke tests", function()
         "Blocking and hiding")
       {
         await allowistedWebsitesPage.switchToTab("Blocking and hiding");
+        await browser.pause(2000);
         await browser.refresh();
+        await browser.pause(3000);
       }
+      await browser.refresh();
     }
     expect(await testPages.getAwe2FilterText()).to.include(
       "awe2.js blocking filter should block this");
@@ -240,7 +185,7 @@ describe("test adblocking as part of the smoke tests", function()
       "search-ad id hiding filter should hide this");
     expect(await testPages.getZergmodDivText()).to.include(
       "zergmod class hiding filter should hide this");
-    await allowistedWebsitesPage.switchToABPOptionsTab();
+    await switchToABPOptionsTab();
     await allowistedWebsitesPage.
       removeAllowlistedDomain("adblockinc.gitlab.io");
     const attributesOfAllowlistingTableItems = await
@@ -260,7 +205,6 @@ describe("test adblocking as part of the smoke tests", function()
         await browser.refresh();
       }
     }
-    lastTest = true;
     expect(await testPages.getAwe2FilterText()).to.include(
       "awe2.js was blocked");
     expect(await testPages.getBanneradsFilterText()).to.include(
@@ -269,5 +213,34 @@ describe("test adblocking as part of the smoke tests", function()
       isSnippetFilterDivDisplayed()).to.be.false;
     expect(await testPages.
       isHiddenBySnippetTextDisplayed()).to.be.false;
+  });
+
+  it("should display acceptable ads", async function()
+  {
+    lastTest = true;
+    const generalPage = new GeneralPage(browser);
+    expect(await generalPage.
+      isAllowAcceptableAdsCheckboxSelected()).to.be.true;
+    const googlePage = new GooglePage(browser);
+    await googlePage.init();
+    try
+    {
+      await googlePage.clickAcceptAllButton();
+    }
+    catch (Exception) {}
+    await googlePage.searchForText("rent a car");
+    await waitForCondition(
+      (await googlePage.isSponsoredTagDisplayed() == true),
+      150000, true, randomIntFromInterval(500, 1500));
+    const extensionsPage = new ExtensionsPage(browser);
+    await extensionsPage.init();
+    await extensionsPage.clickReloadHelperExtensionButton();
+    await switchToABPOptionsTab();
+    await generalPage.init();
+    await generalPage.clickAllowAcceptableAdsCheckbox();
+    await googlePage.init();
+    await googlePage.searchForText("rent a car");
+    await browser.pause(randomIntFromInterval(1500, 2500));
+    expect(await googlePage.isSponsoredTagDisplayed(true)).to.be.true;
   });
 });

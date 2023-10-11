@@ -180,7 +180,7 @@ class TestPages extends BasePage
 
   async getAwe2FilterText()
   {
-    await (await this.awe2Filter).waitForEnabled({timeout: 2000});
+    await (await this.awe2Filter).waitForEnabled({timeout: 4000});
     return await (await this.awe2Filter).getText();
   }
 

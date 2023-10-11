@@ -17,8 +17,8 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence, globalRetriesNumber} =
-  require("../helpers");
+const {afterSequence, beforeSequence, globalRetriesNumber,
+       switchToABPOptionsTab} = require("../helpers");
 const {expect} = require("chai");
 const GeneralPage = require("../page-objects/general.page");
 const testData = require("../test-data/data-smoke-tests");
@@ -116,7 +116,7 @@ describe("test installation as part of the smoke tests", function()
     {
       // Sometimes the browser object takes some time to get initialized
       await browser.pause(4000);
-      await generalPage.switchToABPOptionsTab();
+      await switchToABPOptionsTab();
       appVersion = await browser.
         executeScript("return browser.runtime.getManifest().version;", []);
     }

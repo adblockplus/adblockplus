@@ -17,8 +17,8 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence, globalRetriesNumber} =
-  require("../helpers");
+const {afterSequence, beforeSequence, globalRetriesNumber,
+       switchToABPOptionsTab} = require("../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
 const GeneralPage = require("../page-objects/general.page");
@@ -57,7 +57,7 @@ describe("test subscriptions as part of the integration tests", function()
       "class element should be hidden");
     await testPages.clickSubscribeLink();
     const generalPage = new GeneralPage(browser);
-    await generalPage.switchToABPOptionsTab();
+    await switchToABPOptionsTab();
     console.error(String(await generalPage.
       getPredefinedDialogTitleText()));
     expect(String(await generalPage.
@@ -112,7 +112,7 @@ describe("test subscriptions as part of the integration tests", function()
       "search-ad id hiding filter should hide this");
     expect(await testPages.getZergmodDivText()).to.include(
       "zergmod class hiding filter should hide this");
-    await advancedPage.switchToABPOptionsTab();
+    await switchToABPOptionsTab();
     await advancedPage.init();
     await advancedPage.clickEasyListFLStatusToggle();
     expect(await advancedPage.
@@ -145,7 +145,7 @@ describe("test subscriptions as part of the integration tests", function()
     if (browser.capabilities.browserName == "firefox")
     {
       await browser.refresh();
-      await advancedPage.switchToABPOptionsTab();
+      await switchToABPOptionsTab();
       await advancedPage.init();
       await advancedPage.clickAddBuiltinFilterListButton();
       await advancedPage.clickEasyListEnglishFL();
@@ -179,7 +179,7 @@ describe("test subscriptions as part of the integration tests", function()
       "search-ad id hiding filter should hide this");
     expect(await testPages.getZergmodDivText()).to.include(
       "zergmod class hiding filter should hide this");
-    await advancedPage.switchToABPOptionsTab();
+    await switchToABPOptionsTab();
     await advancedPage.init();
     await advancedPage.clickAddBuiltinFilterListButton();
     await advancedPage.clickEasyListEnglishFL();

@@ -40,32 +40,6 @@ class BasePage
     return $("#slave-2-1");
   }
 
-  async getABPOptionsTabId()
-  {
-    await this.switchToABPOptionsTab(true);
-    const currentTab = await browser.executeAsyncScript(`
-      function getTabID()
-      {
-        return new Promise((resolve, reject) =>
-        {
-          try
-          {
-            chrome.tabs.query({active: true,}, function (tabs)
-            {
-              resolve(tabs[0].id);})} catch (e) {reject(e);
-            }
-          })
-        }
-        async function returnID()
-        {
-          let responseTabID = await getTabID();
-          return responseTabID;}
-          var callback = arguments[arguments.length - 1];
-          returnID().then((data)=> {callback(data)
-        });`, []);
-    return currentTab;
-  }
-
   async getCurrentUrl()
   {
     return await browser.getUrl();
@@ -125,21 +99,6 @@ class BasePage
     if (waitTime >= timeout)
     {
       throw new Error("Could not switch to tab!");
-    }
-  }
-
-  async switchToABPOptionsTab(noSwitchToFrame = false)
-  {
-    await this.switchToTab("Adblock Plus Options");
-    if (noSwitchToFrame === false)
-    {
-      try
-      {
-        await browser.switchToFrame(await this.contentIFrame);
-      }
-      catch (Exception)
-      {
-      }
     }
   }
 

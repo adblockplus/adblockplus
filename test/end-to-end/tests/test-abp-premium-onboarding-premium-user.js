@@ -18,7 +18,7 @@
 "use strict";
 
 const {beforeSequence, enablePremiumByMockServer,
-       globalRetriesNumber} = require("../helpers");
+       globalRetriesNumber, switchToABPOptionsTab} = require("../helpers");
 const {expect} = require("chai");
 const GeneralPage = require("../page-objects/general.page");
 const WelcomeToPremiumPage = require("../page-objects/welcomeToPremium.page");
@@ -49,7 +49,7 @@ describe("should test onboarding page for premium user", function()
     expect(await welcomeToPremiumPage.
       isBlockCookieConsentPopupsCheckboxSelected()).to.be.true;
     await welcomeToPremiumPage.clickDoneButton();
-    await welcomeToPremiumPage.switchToABPOptionsTab();
+    await switchToABPOptionsTab();
     const generalPage = new GeneralPage(browser);
     expect(await generalPage.
       isBlockCookieConsentPopupsCheckboxSelected()).to.be.true;

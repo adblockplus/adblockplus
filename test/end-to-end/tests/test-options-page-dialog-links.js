@@ -17,8 +17,8 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence, globalRetriesNumber} =
-  require("../helpers");
+const {afterSequence, beforeSequence, globalRetriesNumber,
+       switchToABPOptionsTab} = require("../helpers");
 const {expect} = require("chai");
 const FooterChunk = require("../page-objects/footer.chunk");
 const AboutDialogChunk = require("../page-objects/aboutDialog.chunk");
@@ -42,8 +42,7 @@ describe("test options page dialog links", function()
   {
     if (lastTest == false)
     {
-      const footerChunk = new FooterChunk(browser);
-      await footerChunk.switchToABPOptionsTab();
+      await switchToABPOptionsTab();
       await browser.refresh();
       await afterSequence();
     }

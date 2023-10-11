@@ -17,8 +17,8 @@
 
 "use strict";
 
-const {beforeSequence, getCurrentDate, globalRetriesNumber} =
-       require("../helpers");
+const {beforeSequence, getCurrentDate, getABPOptionsTabId,
+       globalRetriesNumber} = require("../helpers");
 const {expect} = require("chai");
 const IssueReportPage = require("../page-objects/issueReport.page");
 const IssueReporterPage = require("../page-objects/issueReporter.page");
@@ -47,7 +47,7 @@ describe("test issue reporter", function()
   it("should display issue reporter default state", async function()
   {
     const issueReporterPage = new IssueReporterPage(browser);
-    const tabId = await issueReporterPage.getABPOptionsTabId();
+    const tabId = await getABPOptionsTabId();
     await browser.url(dataIssueReporter.testPageUrl);
     await issueReporterPage.init(globalOrigin, tabId);
     expect(await issueReporterPage.getTopNotificationText()).to.equal(
@@ -87,7 +87,7 @@ describe("test issue reporter", function()
   it("should close issue reporter", async function()
   {
     const issueReporterPage = new IssueReporterPage(browser);
-    const tabId = await issueReporterPage.getABPOptionsTabId();
+    const tabId = await getABPOptionsTabId();
     await browser.url(dataIssueReporter.testPageUrl);
     await issueReporterPage.init(globalOrigin, tabId);
     await issueReporterPage.clickCancelButton();
@@ -105,7 +105,7 @@ describe("test issue reporter", function()
   it("should send an issue report", async function()
   {
     const issueReporterPage = new IssueReporterPage(browser);
-    const tabId = await issueReporterPage.getABPOptionsTabId();
+    const tabId = await getABPOptionsTabId();
     await browser.url(dataIssueReporter.testPageUrl);
     await issueReporterPage.init(globalOrigin, tabId);
     await issueReporterPage.clickPageIsBrokenButton();
@@ -172,7 +172,7 @@ describe("test issue reporter", function()
   it("should contain issue report data", async function()
   {
     const issueReporterPage = new IssueReporterPage(browser);
-    const tabId = await issueReporterPage.getABPOptionsTabId();
+    const tabId = await getABPOptionsTabId();
     await browser.url(dataIssueReporter.testPageUrl);
     await issueReporterPage.init(globalOrigin, tabId);
     await issueReporterPage.clickIStillSeeAdsButton();
@@ -222,7 +222,7 @@ describe("test issue reporter", function()
   {
     lastTest = true;
     const issueReporterPage = new IssueReporterPage(browser);
-    const tabId = await issueReporterPage.getABPOptionsTabId();
+    const tabId = await getABPOptionsTabId();
     await browser.url(dataIssueReporter.testPageUrl);
     await issueReporterPage.init(globalOrigin, tabId);
     await issueReporterPage.clickPageIsBrokenButton();

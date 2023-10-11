@@ -17,8 +17,8 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence, globalRetriesNumber} =
-  require("../helpers");
+const {afterSequence, beforeSequence, globalRetriesNumber,
+       switchToABPOptionsTab} = require("../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
 const multipleFilters =
@@ -349,7 +349,7 @@ describe("test advanced tab custom filters", function()
     expect(await advancedPage.
       isCustomFilterListsFirstItemErrorIconDisplayed()).to.be.true;
     await browser.refresh();
-    await advancedPage.switchToABPOptionsTab();
+    await switchToABPOptionsTab();
     await advancedPage.init();
     expect(await advancedPage.
       verifyTextPresentInCustomFLTable(inputText)).to.be.true;

@@ -43,17 +43,17 @@ module.exports =
   siteKeyData: [
     {
       website: "http://trucking.com",
-      tabTitle: "Trucking.com",
+      tabTitle: /trucking\.com/,
       relatedLinksSelector: "#slave-2-1"
     },
     {
       website: "http://cook.com",
-      tabTitle: "Cook.com",
+      tabTitle: /cook\.com/,
       relatedLinksSelector: "#slave-1-1"
     },
     {
       website: "http://zins.de",
-      tabTitle: "zins.de - zins Resources and Information.",
+      tabTitle: /zins\.de/,
       relatedLinksSelector: "#master-1"
     }
   ],

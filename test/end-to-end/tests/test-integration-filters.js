@@ -17,8 +17,8 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence, globalRetriesNumber} =
-  require("../helpers");
+const {afterSequence, beforeSequence, globalRetriesNumber,
+       switchToABPOptionsTab} = require("../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
 const TestPages = require("../page-objects/testPages.page");
@@ -97,7 +97,7 @@ describe("test custom filters as part of the integration tests", function()
       isCustomHidingIdDisplayed()).to.be.false;
     expect(await testPages.
       isCustomHidingClassDisplayed()).to.be.false;
-    await testPages.switchToABPOptionsTab(true);
+    await switchToABPOptionsTab(true);
     await advancedPage.clickCustomFilterListsNthItemCheckbox("1");
     await advancedPage.clickCustomFilterListsNthItemCheckbox("2");
     await advancedPage.clickCustomFilterListsNthItemCheckbox("3");
@@ -145,7 +145,7 @@ describe("test custom filters as part of the integration tests", function()
       "custom blocking filter should block this");
     expect(await testPages.getCustomBlockingRegexFilterText()).to.include(
       "custom blocking regex filter applied");
-    await testPages.switchToABPOptionsTab();
+    await switchToABPOptionsTab();
     await advancedPage.clickCustomFilterListsFirstItemToggle();
     await browser.newWindow(customFiltersTestPage);
     await browser.refresh();

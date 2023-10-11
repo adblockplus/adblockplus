@@ -18,7 +18,7 @@
 "use strict";
 
 const {beforeSequence, enablePremiumByMockServer,
-       globalRetriesNumber} = require("../helpers");
+       globalRetriesNumber, switchToABPOptionsTab} = require("../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
 const GeneralPage = require("../page-objects/general.page");
@@ -36,7 +36,7 @@ describe("test cookie consent filterlist setting for premium users", function()
   {
     await enablePremiumByMockServer();
     const generalPage = new GeneralPage(browser);
-    await generalPage.switchToABPOptionsTab();
+    await switchToABPOptionsTab();
     expect(await generalPage.
       isBlockCookieConsentPopupsCheckboxSelected()).to.be.false;
     const advancedPage = new AdvancedPage(browser);
