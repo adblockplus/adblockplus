@@ -19,10 +19,12 @@
 
 "use strict";
 
-// const fs = require("fs");
-// const helpers = require("./helpers.js");
+const buildNumber = process.env.BUILD_NUMBER;
+// ======== USE THE FOLLOWING FOR DEBUGGING PURPOSES ==========
+// const buildNumber = "local-testrun";
 
 exports.config = {
+  buildNumber,
   user: process.env.LT_USERNAME,
   key: process.env.LT_ACCESS_KEY,
   "suites": {
@@ -48,6 +50,31 @@ exports.config = {
         "./tests/test-page-links.js"
       ],
     integration: ["./tests/test-integration-*.js"],
+    oldbrowsers:
+      [
+        "./tests/test-abp-premium-cookiefl-premium-users.js",
+        "./tests/test-abp-premium-dcfl-premium-users.js",
+        "./tests/test-abp-premium-downgrade.js",
+        "./tests/test-abp-premium-get-started.js",
+        "./tests/test-abp-premium-links-for-free-users.js",
+        "./tests/test-abp-premium-links-for-premium-users.js",
+        "./tests/test-abp-premium-onboarding-free-user.js",
+        "./tests/test-abp-premium-onboarding-premium-user.js",
+        "./tests/test-abp-premium-one-click-allow.js",
+        "./tests/test-abp-premium-ui.js",
+        "./tests/test-advanced-tab-customisations.js",
+        "./tests/test-advanced-tab-filter-lists.js",
+        "./tests/test-allowlisted-websites-tab.js",
+        "./tests/test-built-in-filter-list-dropdown.js",
+        "./tests/test-integration-subscriptions.js",
+        "./tests/test-one-click-allow.js",
+        "./tests/test-options-page-language.js",
+        "./tests/test-options-page-recommended-filters.js",
+        "./tests/test-smoke-adblocking.js",
+        "./tests/test-smoke-extension.js",
+        "./tests/test-smoke-installation.js",
+        "./tests/test-smoke-uninstall-with-changed-parameters.js"
+      ],
     smoke: ["./tests/test-smoke-*.js"]
   },
   logLevel: "info",

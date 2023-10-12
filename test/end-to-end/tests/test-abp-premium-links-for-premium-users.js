@@ -45,7 +45,7 @@ describe("test premium links for free users", function()
 
   linksPremiumUsers.forEach(async(dataSet) =>
   {
-    it("should display filters errors: " + dataSet.testName, async function()
+    it("should open link: " + dataSet.testName, async function()
     {
       if (dataSet.testName == "Options page - Premium button")
       {

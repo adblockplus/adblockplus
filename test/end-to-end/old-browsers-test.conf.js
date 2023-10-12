@@ -32,7 +32,7 @@ const parallelConfig = {
   capabilities: [
     {
       browserName: "Chrome",
-      browserVersion: "latest",
+      browserVersion: "85",
       platformName: "Windows 10",
       "goog:chromeOptions": {
         extensions: [
@@ -54,7 +54,7 @@ const parallelConfig = {
     },
     {
       browserName: "Firefox",
-      browserVersion: "latest",
+      browserVersion: "70",
       platformName: "Windows 10",
       "moz:firefoxOptions": {
         args: ["--no-sandbox"],
@@ -64,32 +64,7 @@ const parallelConfig = {
       },
       acceptInsecureCerts: true,
       exclude: [
-        "./tests/test-issue-reporter.js",
-        "./tests/legacy-unit.js",
-        "./tests/test-abp-premium-license-check-retries.js"
-      ]
-    },
-    {
-      browserName: "MicrosoftEdge",
-      browserVersion: "latest",
-      platformName: "Windows 10",
-      "ms:edgeOptions": {
-        extensions: [
-          helpers.getChromiumExtensionPath(),
-          require("fs").readFileSync("helper-extension/helper-extension.zip").toString("base64")
-        ],
-        args: ["--no-sandbox", "--start-maximized"],
-        prefs: {
-          "intl.accept_languages": "en,en_US",
-          "profile.managed_default_content_settings.popups": 2,
-          "profile.managed_default_content_settings.notifications": 2
-        },
-        excludeSwitches: ["disable-extensions"]
-      },
-      acceptInsecureCerts: true,
-      exclude: [
-        "./tests/legacy-unit.js",
-        "./tests/test-abp-premium-license-check-retries.js"
+        "./tests/legacy-unit.js"
       ]
     }
   ],

@@ -20,7 +20,7 @@
 const {beforeSequence, globalRetriesNumber} = require("../helpers");
 const {expect} = require("chai");
 
-describe("test abp premium license checks", function()
+describe("test abp premium license checks for free user", function()
 {
   this.retries(globalRetriesNumber);
 

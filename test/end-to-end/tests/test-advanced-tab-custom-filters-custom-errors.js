@@ -38,8 +38,7 @@ describe("test advanced tab custom filters - custom errors", function()
     {
       const advancedPage = new AdvancedPage(browser);
       await advancedPage.init();
-      await advancedPage.clickCustomFLTableHeadCheckbox();
-      await advancedPage.clickDeleteCustomFLButton();
+      await browser.refresh();
     }
     catch (Exception) {}
     await afterSequence();

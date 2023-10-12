@@ -23,7 +23,7 @@ const {expect} = require("chai");
 const ExtensionsPage = require("../page-objects/extensions.page");
 const PremiumHeaderChunk = require("../page-objects/premiumHeader.chunk");
 
-describe("test abp premium license checks", function()
+describe("test abp premium license checks for premium user", function()
 {
   this.retries(globalRetriesNumber);
 

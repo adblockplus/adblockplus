@@ -451,7 +451,7 @@ testpages:MV2:firefox:oldest:
     CI_TESTING: "true"
   script:
     - npm install
-    - npm run test:end-to-end $SUITE 2>&1 | tee lambdatest_output.txt || true
+    - npm run test:$CONFIGURATION $SUITE 2>&1 | tee lambdatest_output.txt || true
     - apt-get update
     - apt-get -y install default-jre-headless
     - npx -y allure-commandline generate test/end-to-end/allure-results -o allure-report
@@ -482,6 +482,7 @@ testpages:MV2:firefox:oldest:
 uitests:all:
   extends: .uitests
   variables:
+    CONFIGURATION: end-to-end
     SUITE: all
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
@@ -494,16 +495,25 @@ uitests:all:
 uitests:e2e:
   extends: .uitests
   variables:
+    CONFIGURATION: end-to-end
     SUITE: e2e
 
 uitests:integration:
   extends: .uitests
   variables:
+    CONFIGURATION: end-to-end
     SUITE: integration
+
+uitests:oldbrowsers:
+  extends: .uitests
+  variables:
+    CONFIGURATION: end-to-end-old-browsers
+    SUITE: oldbrowsers
 
 uitests:smoke:
   extends: .uitests
   variables:
+    CONFIGURATION: end-to-end
     SUITE: smoke
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'

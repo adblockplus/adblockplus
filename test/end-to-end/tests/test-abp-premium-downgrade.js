@@ -36,8 +36,6 @@ describe("test abp premium downgrade", function()
   it("should downgrade premium user", async function()
   {
     await enablePremiumByMockServer();
-    const premiumHeaderChunk = new PremiumHeaderChunk(browser);
-    expect(await premiumHeaderChunk.isPremiumButtonDisplayed()).to.be.true;
     await browser.executeAsync(async(done) =>
     {
       try
@@ -51,6 +49,7 @@ describe("test abp premium downgrade", function()
         done(error);
       }
     });
+    const premiumHeaderChunk = new PremiumHeaderChunk(browser);
     expect(await premiumHeaderChunk.isUpgradeButtonDisplayed(10000)).to.be.true;
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();

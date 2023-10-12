@@ -34,8 +34,6 @@ describe("test abp premium license check retries", function()
   it("should retry the request 3 times in 1 minute intervals", async function()
   {
     await enablePremiumByMockServer();
-    const premiumHeaderChunk = new PremiumHeaderChunk(browser);
-    expect(await premiumHeaderChunk.isPremiumButtonDisplayed()).to.be.true;
     const backgroundPage = new BackgroundPage(browser);
     if (browser.capabilities.browserName == "chrome")
     {
@@ -54,6 +52,7 @@ describe("test abp premium license check retries", function()
         });
       });
     `, []);
+    const premiumHeaderChunk = new PremiumHeaderChunk(browser);
     expect(await premiumHeaderChunk.isPremiumButtonDisplayed()).to.be.true;
     await backgroundPage.switchToTab(/_generated_background_page/);
     let consoleLog;
