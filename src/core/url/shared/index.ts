@@ -15,25 +15,4 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/** @module url */
-
-/**
- * Gets the IDN-decoded hostname from the URL of a frame.
- * If the URL don't have host information (like "about:blank"
- * and "data:" URLs) it falls back to the parent frame.
- *
- * @param {?Frame}  frame
- * @param {URL}    [originUrl]
- * @return {string}
- */
-export function extractHostFromFrame(frame, originUrl)
-{
-  for (; frame; frame = frame.parent)
-  {
-    let {hostname} = frame.url;
-    if (hostname)
-      return hostname;
-  }
-
-  return originUrl ? originUrl.hostname : "";
-}
+export * from "./url";

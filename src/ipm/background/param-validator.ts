@@ -15,6 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import { isDomainList } from "../../core/url/shared";
 import { Command } from "./command-library.types";
 import { ParamDefinitionList, ParamValidator } from "./param-validator.types";
 import { createSafeOriginUrl } from "./url";
@@ -52,6 +53,24 @@ export const isSafeUrl: ParamValidator = (param: unknown): boolean => {
   // with a safe origin from it.
   const url = createSafeOriginUrl(param);
   return typeof url === "string";
+};
+
+/**
+ * Validates a list of domains
+ *
+ * @param param The parameter to check
+ * @returns whether the given parameter is a valid domain list
+ */
+export const isValidDomainList: ParamValidator = (param: unknown): boolean => {
+  if (!param) {
+    return true;
+  }
+
+  if (typeof param !== "string") {
+    return false;
+  }
+
+  return isDomainList(param);
 };
 
 /**

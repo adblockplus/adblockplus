@@ -29,7 +29,7 @@ import { SessionStorage } from "../../../adblockpluschrome/lib/storage/session.j
 import { TabSessionStorage } from "../../../adblockpluschrome/lib/storage/tab-session.js";
 import { allowlistingState } from "../../../adblockpluschrome/lib/allowlisting.js";
 import { Prefs } from "../../../adblockpluschrome/lib/prefs.js";
-import { extractHostFromFrame } from "../../../adblockpluschrome/lib/url.js";
+import { extractHostFromFrame } from "../../core/url/shared";
 
 /**
  * Key to store/retrieve the active filter composer dialog

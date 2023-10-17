@@ -22,7 +22,8 @@ import { Behavior, Command, Content } from "../../../ipm/background";
  */
 export enum Timing {
   afterWebAllowlisting = "after_web_allowlisting",
-  revisitWebAllowlisted = "revisit_web_allowlisted_site"
+  revisitWebAllowlisted = "revisit_web_allowlisted_site",
+  afterNavigation = "after_navigation"
 }
 
 /**
@@ -41,6 +42,10 @@ export interface DialogBehavior extends Behavior {
    * When to open on-page dialog
    */
   timing: Timing;
+  /**
+   * List of domains on which the dialog should or should not be shown
+   */
+  domainList?: string;
 }
 
 /**
@@ -54,6 +59,7 @@ export interface DialogParams {
   lower_body?: string;
   button_label: string;
   button_target: string;
+  domain_list?: string;
 }
 
 /**

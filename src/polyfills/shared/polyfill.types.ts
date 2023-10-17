@@ -21,3 +21,11 @@
 export interface Message {
   type: string;
 }
+
+/**
+ * Temporary interface for the custom Frame type
+ */
+export interface Frame {
+  parent: Frame;
+  url: URL;
+}

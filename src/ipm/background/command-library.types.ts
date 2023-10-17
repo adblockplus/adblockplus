@@ -41,7 +41,7 @@ export enum CommandName {
  * A map that contains the version for each command.
  */
 export const CommandVersion: Record<CommandName, number> = {
-  [CommandName.createOnPageDialog]: 1
+  [CommandName.createOnPageDialog]: 2
 };
 
 /**

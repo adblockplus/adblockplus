@@ -22,6 +22,7 @@ import {
   ParamDefinitionList,
   isNotEmpty,
   isSafeUrl,
+  isValidDomainList,
   setCommandActor,
   validateParams
 } from "../../../ipm/background";
@@ -43,7 +44,8 @@ const paramDefinitionList: ParamDefinitionList<DialogParams> = [
     validate: (param): boolean =>
       typeof param === "undefined" ||
       param === Timing.afterWebAllowlisting ||
-      param === Timing.revisitWebAllowlisted
+      param === Timing.revisitWebAllowlisted ||
+      param === Timing.afterNavigation
   },
   {
     name: "display_duration",
@@ -66,6 +68,10 @@ const paramDefinitionList: ParamDefinitionList<DialogParams> = [
   {
     name: "button_target",
     validate: isSafeUrl
+  },
+  {
+    name: "domain_list",
+    validate: isValidDomainList
   }
 ];
 
@@ -87,7 +93,8 @@ function getBehavior(command: Command): DialogBehavior | null {
         ? command.display_duration
         : 5,
     target: command.button_target,
-    timing: command.timing
+    timing: command.timing,
+    domainList: command.domain_list
   };
 }
 

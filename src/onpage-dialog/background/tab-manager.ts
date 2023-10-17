@@ -340,7 +340,7 @@ async function handleTabsUpdatedEvent(
     }
 
     // Ignore command if on-page dialog should not be shown for this tab
-    if (!(await shouldBeShown(behavior.timing, tabId, stats))) {
+    if (!(await shouldBeShown(behavior, tab, stats))) {
       logger.debug("[onpage-dialog]: Don't show");
       continue;
     }

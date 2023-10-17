@@ -313,6 +313,10 @@ defaults.onpage_dialog_timing_configurations = {
     cooldownDuration: 48,
     maxDisplayCount: 3,
     minAllowlistingDelay: 48 * 60
+  },
+  after_navigation: {
+    cooldownDuration: 1,
+    maxDisplayCount: 1
   }
 };
 

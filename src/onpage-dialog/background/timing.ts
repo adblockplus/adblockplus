@@ -21,9 +21,11 @@ import { Prefs } from "../../../adblockpluschrome/lib/prefs";
 
 import * as logger from "../../logger/background";
 import { isFilterMetadata } from "../../polyfills/background";
-import { Timing, isTiming } from "./middleware";
+import { DialogBehavior, Timing, isTiming } from "./middleware";
 import { Stats } from "./stats.types";
 import { TimingConfiguration } from "./timing.types";
+import { Tabs } from "webextension-polyfill";
+import { isActiveOnDomain } from "../../core/url/shared";
 
 /**
  * Key for on-page dialog timing configurations storage
@@ -138,19 +140,21 @@ export function shouldBeDismissed(timing: Timing, stats: Stats): boolean {
 }
 
 /**
- * Determines whether command should be shown
+ * Determines whether afterWebAllowlisting or the
+ * revisitWebAllowlisted command should be shown
  *
  * @param timing - Timing name
- * @param tabId - Tab ID
+ * @param tab - Tab
  * @param stats - On-page stats
  *
  * @returns whether command should be shown
  */
-export async function shouldBeShown(
+async function shouldBeShownForAfterWebAllowlisting(
   timing: Timing,
-  tabId: number,
+  tab: Tabs.Tab,
   stats: Stats
 ): Promise<boolean> {
+  const tabId = tab.id || browser.tabs.TAB_ID_NONE;
   const config = knownConfigs.get(timing);
   if (!config) {
     logger.debug("[onpage-dialog]: Unknown timing");
@@ -187,13 +191,44 @@ export async function shouldBeShown(
     return false;
   }
 
+  return true;
+}
+/**
+ * Determines whether command should be shown
+ *
+ * @param behavior - The behavior of the command
+ * @param tab - Tab
+ * @param stats - On-page stats
+ *
+ * @returns whether command should be shown
+ */
+export async function shouldBeShown(
+  behavior: DialogBehavior,
+  tab: Tabs.Tab,
+  stats: Stats
+): Promise<boolean> {
+  const { domainList, timing } = behavior;
+
   // Ignore commands that should have already been dismissed
   if (shouldBeDismissed(timing, stats)) {
     logger.debug("[onpage-dialog]: No more dialogs to show for command");
     return false;
   }
 
-  return true;
+  // dialogs related to web allowlisting need an extra check
+  const isWebAllowlistingRelated = [
+    Timing.afterWebAllowlisting,
+    Timing.revisitWebAllowlisted
+  ].includes(timing);
+  if (
+    isWebAllowlistingRelated &&
+    !(await shouldBeShownForAfterWebAllowlisting(timing, tab, stats))
+  ) {
+    return false;
+  }
+
+  // Check if there are domains for the command
+  return isActiveOnDomain(tab.url || "", domainList);
 }
 
 /**
