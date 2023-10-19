@@ -338,9 +338,59 @@ async function waitForExtension()
   return [origin];
 }
 
+/**
+ * Gets the ID of current tab using the browser.tabs WebExtension API.
+ * This is mainly used to work with the popup when it is open in a tab.
+ * ⚠️ Make sure the tab you are targeting is loaded before trying to retrieve
+ * its ID
+ * @param {object} options
+ * @param {string} options.title - The title of the tab
+ * @param {string} options.urlPattern - A url [match pattern string](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Match_patterns)
+ * @returns {Number} `browser.tabs.TAB_ID_NONE` when tab was not found,
+ * or the tab ID from the browser.tabs Web extension API.
+ */
+async function getTabId({title, urlPattern})
+{
+  const currentWindowHandle = await browser.getWindowHandle();
+  await switchToABPOptionsTab(true);
+
+  const queryOptions = {};
+  if (title)
+  {
+    queryOptions.title = title;
+  }
+  if (urlPattern)
+  {
+    queryOptions.url = urlPattern;
+  }
+
+  const tabId = await browser.executeAsync(async(params, done) =>
+  {
+    try
+    {
+      const tabs = await browser.tabs.query(params.queryOptions);
+      if (tabs.length)
+      {
+        done(tabs[0].id);
+        return;
+      }
+    }
+    catch (error)
+    {
+      console.error(error);
+    }
+
+    done(browser.tabs.TAB_ID_NONE);
+  }, {queryOptions});
+
+  await browser.switchToWindow(currentWindowHandle);
+
+  return tabId;
+}
+
 module.exports = {afterSequence, beforeSequence, enablePremiumByMockServer,
                   getChromiumExtensionPath, enablePremiumByUI,
-                  getCurrentDate, getFirefoxExtensionPath,
+                  getCurrentDate, getFirefoxExtensionPath, getTabId,
                   randomIntFromInterval, helperExtension,
                   globalRetriesNumber, switchToABPOptionsTab,
                   waitForExtension, getABPOptionsTabId, waitForCondition};
