@@ -23,7 +23,7 @@ const {config: baseConfig} = require("./base.conf.js");
 const helpers = require("./helpers.js");
 
 const parallelConfig = {
-  maxInstances: 6,
+  maxInstances: 12,
   commonCapabilities: {
     "LT:Options": {
       build: baseConfig.buildNumber
