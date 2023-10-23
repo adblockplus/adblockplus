@@ -17,7 +17,7 @@
     "gulp-gzip": "1.4.2",
     "gulp-tar": "3.1.0",
     "gulp-vinyl-zip": "2.2.1",
-    "handlebars": "4.7.6",
+    "handlebars": "4.7.7",
     "merge-stream": "2.0.0",
     "source-map-loader": "4.0.1",
     "style-loader": "3.3.3",
