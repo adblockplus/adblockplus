@@ -59,7 +59,7 @@ async function processResponse(response: Response): Promise<void> {
 /**
  * Sends a ping together with telemetry data
  */
-async function sendPing(): Promise<void> {
+export async function sendPing(): Promise<void> {
   const payload = await getPayload();
 
   // We're deleting user events regardless of whether sending them will be

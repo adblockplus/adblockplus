@@ -34,6 +34,10 @@ import {Prefs} from "./prefs.js";
 import {
   start as startUnloadCleanup
 } from "../../src/unload-cleanup/background/index.ts";
+import {
+  start as startIPMPingListener
+} from "../../src/testing/ping-ipm/background";
+
 
 let firstRun;
 let userNotificationCallback = null;
@@ -184,6 +188,7 @@ async function start()
   premium.start();
   void startTelemetry();
   startUnloadCleanup();
+  startIPMPingListener();
   setReadyState(ReadyState.started);
 
   /**
