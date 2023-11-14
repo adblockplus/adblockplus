@@ -1,5 +1,4 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
     "allowJs": true,
     "allowUnreachableCode": false,
@@ -10,7 +9,7 @@
     "removeComments": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "es2016",
+    "target": "es2018",
     "typeRoots": [
       "node_modules/@types"
     ]
