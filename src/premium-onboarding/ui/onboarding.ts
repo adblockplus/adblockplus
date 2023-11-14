@@ -20,7 +20,7 @@ import { $, $$ } from "../../../js/dom.mjs";
 import api from "../../core/api/front";
 import { closeCurrentTab } from "../../polyfills/ui";
 
-import "../../../css/io-checkbox.css";
+import "../../components/ui/io-checkbox.css";
 import IOCheckbox from "../../../js/io-checkbox.mjs";
 import "./onboarding.css";
 

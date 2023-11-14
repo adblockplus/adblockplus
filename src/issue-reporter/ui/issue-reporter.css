@@ -15,12 +15,12 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-@import "../font.css";
-@import "../common.css";
-@import "../light.css";
-@import "../io-steps.css";
-@import "../io-highlighter.css";
-@import "../io-highlighter-fixes.css";
+@import "../../theme/ui/font.css";
+@import "../../theme/ui/common.css";
+@import "../../theme/ui/light.css";
+@import "../../components/ui/io-steps.css";
+@import "../../components/ui/io-highlighter.css";
+@import "../../components/ui/io-highlighter-fixes.css";
 
 html
 {

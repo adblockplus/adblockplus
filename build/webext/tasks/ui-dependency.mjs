@@ -41,7 +41,7 @@ function createBuild()
 async function mustBuildUI(lastUIBuildTime)
 {
   const matches = await (promisify(glob))(
-    "./{build/icons-generation,css}/**"
+    "./{build/icons-generation}/**"
   );
   matches.push(
     "./package.json",

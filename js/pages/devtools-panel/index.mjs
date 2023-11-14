@@ -19,7 +19,7 @@ import api from "../../../src/core/api/front/index.ts";
 import {initI18n, setElementText} from "../../i18n.mjs";
 import records from "./records.mjs";
 
-import "../../../css/pages/devtools-panel.css";
+import "../../../src/devtools-panel/ui/devtools-panel.css";
 
 const {getMessage} = browser.i18n;
 

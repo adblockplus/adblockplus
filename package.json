@@ -47,7 +47,7 @@
       "upload-translations": "crowdin upload translations --auto-approve-imported"
     },
     "lint": {
-      "css": "stylelint ./build/**/*.css ./css/*.css ./src/**/*.css --ignore-path .gitignore",
+      "css": "stylelint ./src/**/*.css --ignore-path .gitignore",
       "js": "npm run eslint",
       "ts": "tsc --noEmit",
       "locale": "node build/locale-linter ./locale/**/*.json"

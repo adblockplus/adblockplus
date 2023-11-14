@@ -15,8 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-@import "../font.css";
-@import "../light.css";
+@import "../../theme/ui/font.css";
+@import "../../theme/ui/light.css";
 
 body,
 input

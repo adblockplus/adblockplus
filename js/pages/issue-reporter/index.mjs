@@ -26,7 +26,7 @@ import {
 } from "./report.mjs";
 import stepsManager from "./steps-manager.mjs";
 
-import "../../../css/pages/issue-reporter.css";
+import "../../../src/issue-reporter/ui/issue-reporter.css";
 
 const optionalPermissions = {
   permissions: [
