@@ -43,7 +43,7 @@ import {
   stripTagsUnsafe
 } from "../../i18n.mjs";
 
-import "../../../css/pages/desktop-options.css";
+import "../../../src/desktop-options/ui/desktop-options.css";
 import "../../io-filter-table.mjs";
 import "../../io-list-box.mjs";
 import "../../io-popout.mjs";

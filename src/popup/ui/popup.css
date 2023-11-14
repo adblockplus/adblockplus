@@ -15,10 +15,10 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-@import "../font.css";
-@import "../light.css";
-@import "../io-circle-toggle.css";
-@import "../io-popup-footer.css";
+@import "../../theme/ui/font.css";
+@import "../../theme/ui/light.css";
+@import "../../components/ui/io-circle-toggle.css";
+@import "../../components/ui/io-popup-footer.css";
 
 :root
 {
