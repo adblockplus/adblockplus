@@ -17,13 +17,12 @@
 
 /** @module subscriptionInit */
 
-import * as info from "info";
-
 import rulesIndex from "@adblockinc/rules/adblockplus";
 import * as ewe from "@eyeo/webext-sdk";
 
 import {startTelemetry} from "../../src/ipm/background/index.ts";
 import * as premium from "../../src/premium/background/index.ts";
+import {info} from "../../src/info/background";
 import {setReadyState, ReadyState} from
   "../../src/testing/ready-state/background/index.ts";
 import {port} from "./messaging/port.js";

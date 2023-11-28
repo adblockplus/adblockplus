@@ -17,13 +17,12 @@
 
 /** @module prefs */
 
-import * as info from "info";
-
 import * as ewe from "@eyeo/webext-sdk";
 
 import {installHandler} from "./messaging/events.js";
 import {port} from "./messaging/port.js";
 import {EventEmitter} from "./events.js";
+import {info} from "../../src/info/background";
 
 const keyPrefix = "pref:";
 

@@ -15,8 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import * as info from "info";
 import * as browser from "webextension-polyfill";
+
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";
 import {
   CommandName,
@@ -37,6 +37,7 @@ import {
 } from "./data-collection.types";
 import { getPremiumState } from "../../premium/background";
 import { getInstallationId } from "../../id/background";
+import { info } from "../../info/background";
 
 /**
  * Takes a number, turns it into a string, and pads it if necessary to create

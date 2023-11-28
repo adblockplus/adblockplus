@@ -15,52 +15,61 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export const addonName = "{{addonName}}";
-export const baseName = "adblockplus";
-export const addonVersion = "{{addonVersion}}";
-export let application = null;
-export let applicationVersion;
-export const platform = "chromium";
-export let platformVersion = null;
+import { Info } from "./info.types";
+import { getMajorVersion } from "./version";
+
+const addonName = "{{addonName}}";
+const baseName = "adblockplus";
+const addonVersion = "{{addonVersion}}";
+let application = "";
+let applicationVersion = "";
+const platform = "chromium";
+let platformVersion = "";
 
 const regexp = /(\S+)\/(\S+)(?:\s*\(.*?\))?/g;
 let match;
 
-while (match = regexp.exec(navigator.userAgent))
-{
+while ((match = regexp.exec(navigator.userAgent))) {
   const app = match[1];
-  const ver = match[2];
+  const ver = getMajorVersion(match[2]);
 
-  if (app == "Chrome")
-  {
+  if (app === "Chrome") {
     platformVersion = ver;
   }
   // For compatibility with legacy websites, Chrome's UA
   // also includes a Mozilla, AppleWebKit and Safari token.
   // Any further name/version pair indicates a fork.
-  else if (app != "Mozilla" && app != "AppleWebKit" && app != "Safari")
-  {
-    if (app == "Edg")
+  else if (app !== "Mozilla" && app !== "AppleWebKit" && app !== "Safari") {
+    if (app === "Edg") {
       application = "edge";
-    else if (app == "OPR")
+    } else if (app === "OPR") {
       application = "opera";
-    else
+    } else {
       application = app.toLowerCase();
+    }
 
     applicationVersion = ver;
   }
 }
 
-// not a Chromium-based UA, probably modifed by the user
-if (!platformVersion)
-{
+// not a Chromium-based UA, probably modified by the user
+if (platformVersion === "") {
   application = "unknown";
   applicationVersion = platformVersion = "0";
 }
 
 // no additional name/version, so this is upstream Chrome
-if (!application)
-{
+if (application === "") {
   application = "chrome";
   applicationVersion = platformVersion;
 }
+
+export const info: Info = {
+  addonName,
+  baseName,
+  addonVersion,
+  application,
+  applicationVersion,
+  platform,
+  platformVersion
+};

@@ -17,11 +17,11 @@
 
 import * as ewe from "@eyeo/webext-sdk";
 
-import * as info from "info";
 import { Tabs } from "webextension-polyfill";
 
 import { port } from "../../../adblockpluschrome/lib/messaging/port";
 import { TabSessionStorage } from "../../../adblockpluschrome/lib/storage/tab-session";
+import { info } from "../../info/background";
 import { getLocaleInfo } from "../../i18n/background";
 import {
   CommandName,

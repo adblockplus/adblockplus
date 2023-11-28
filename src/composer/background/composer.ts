@@ -20,8 +20,6 @@
 // coding style, and we're going to add type information in a subsequent step.
 // @ts-nocheck
 
-import * as info from "info";
-
 import * as ewe from "@eyeo/webext-sdk";
 
 import { port } from "../../../adblockpluschrome/lib/messaging/port.js";
@@ -30,6 +28,7 @@ import { TabSessionStorage } from "../../../adblockpluschrome/lib/storage/tab-se
 import { allowlistingState } from "../../../adblockpluschrome/lib/allowlisting.js";
 import { Prefs } from "../../../adblockpluschrome/lib/prefs.js";
 import { extractHostFromFrame } from "../../core/url/shared";
+import { info } from "../../info/background";
 
 /**
  * Key to store/retrieve the active filter composer dialog

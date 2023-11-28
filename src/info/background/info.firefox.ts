@@ -15,20 +15,37 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export const addonName = "{{addonName}}";
-export const baseName = "adblockplus";
-export const addonVersion = "{{addonVersion}}";
-export let application = "unknown";
-export let applicationVersion = "0";
-export const platform = "gecko";
-export let platformVersion = "0";
+import { Info } from "./info.types";
+import { getMajorVersion } from "./version";
+
+const addonName = "{{addonName}}";
+const baseName = "adblockplus";
+const addonVersion = "{{addonVersion}}";
+let application = "unknown";
+let applicationVersion = "0";
+const platform = "gecko";
+let platformVersion = "0";
 
 const match = /\brv:(\d+(?:\.\d+)?)\b/.exec(navigator.userAgent);
-if (match)
-  platformVersion = match[1];
+if (match) {
+  platformVersion = getMajorVersion(match[1]);
+}
 
-browser.runtime.getBrowserInfo().then(browserInfo =>
-{
+browser.runtime.getBrowserInfo().then((browserInfo) => {
   application = browserInfo.name.toLowerCase();
-  applicationVersion = browserInfo.version;
+  applicationVersion = getMajorVersion(browserInfo.version);
 });
+
+export const info: Info = {
+  addonName,
+  baseName,
+  addonVersion,
+  get application() {
+    return application;
+  },
+  get applicationVersion() {
+    return applicationVersion;
+  },
+  platform,
+  platformVersion
+};

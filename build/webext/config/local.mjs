@@ -19,7 +19,7 @@ export default {
   extends: "base",
   webpack: {
     alias: {
-      info$: "info.gecko.js.tmpl"
+      "./info$": "./info.firefox.ts"
     },
     bundles: [
       {

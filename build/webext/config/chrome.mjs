@@ -19,7 +19,7 @@ export default {
   extends: "base",
   webpack: {
     alias: {
-      info$: "info.chrome.js.tmpl"
+      "./info$": "./info.chrome.ts"
     }
   },
   mapping: {

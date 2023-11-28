@@ -17,12 +17,11 @@
 
 /** @module messageResponder */
 
-import * as info from "info";
-
 import * as ewe from "@eyeo/webext-sdk";
 
 import {port} from "./messaging/port.js";
 import {Prefs} from "./prefs.js";
+import {info} from "../../src/info/background";
 
 function forward(type, message, sender)
 {

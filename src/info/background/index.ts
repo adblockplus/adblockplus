@@ -15,34 +15,4 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export default {
-  extends: "base",
-  webpack: {
-    alias: {
-      "./info$": "./info.firefox.ts"
-    },
-    bundles: [
-      {
-        dest: "mobile-options.js",
-        src: ["js/pages/mobile-options.mjs"]
-      }
-    ]
-  },
-  mapping: {
-    copy: [
-      {
-        dest: "skin",
-        src: [
-          "skin/icons/mobile/**"
-        ]
-      },
-      {
-        dest: "",
-        src: ["src/mobile-options/ui/mobile-options.html"]
-      }
-    ]
-  },
-  translations: {
-    src: ["locale/*/mobile-options.json"]
-  }
-};
+export * from "./info";

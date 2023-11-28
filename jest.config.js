@@ -11,7 +11,6 @@ module.exports = {
   collectCoverage: true,
   coverageDirectory: "coverage",
   coverageReporters: ["json", "html", "text"],
-  coveragePathIgnorePatterns: ["node_modules/", "jest.setup.ts"],
   setupFiles: [
     "./mocks/js/polyfill.js",
     "./mocks/js/ext/common.js",
