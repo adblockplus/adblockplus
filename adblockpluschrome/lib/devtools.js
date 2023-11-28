@@ -17,8 +17,6 @@
 
 /** @module devtools */
 
-import * as info from "info";
-
 import * as ewe from "@eyeo/webext-sdk";
 
 import {installHandler} from "./messaging/events.js";
@@ -30,6 +28,7 @@ import {
 } from "./messaging/types.js";
 import {TabSessionStorage} from "./storage/tab-session.js";
 import {compareVersions} from "./versions.js";
+import {info} from "../../src/info/background";
 
 const reloadStateByPage = new TabSessionStorage("devtools:reloadState");
 

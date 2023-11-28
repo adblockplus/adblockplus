@@ -17,12 +17,11 @@
 
 /** @module uninstall */
 
-import * as info from "info";
-
 import * as ewe from "@eyeo/webext-sdk";
 
 import {Prefs} from "./prefs.js";
 import {isDataCorrupted} from "./subscriptionInit.js";
+import {info} from "../../src/info/background";
 
 const abbreviations = [
   ["an", "addonName"],

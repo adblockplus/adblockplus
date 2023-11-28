@@ -15,34 +15,13 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export default {
-  extends: "base",
-  webpack: {
-    alias: {
-      "./info$": "./info.firefox.ts"
-    },
-    bundles: [
-      {
-        dest: "mobile-options.js",
-        src: ["js/pages/mobile-options.mjs"]
-      }
-    ]
-  },
-  mapping: {
-    copy: [
-      {
-        dest: "skin",
-        src: [
-          "skin/icons/mobile/**"
-        ]
-      },
-      {
-        dest: "",
-        src: ["src/mobile-options/ui/mobile-options.html"]
-      }
-    ]
-  },
-  translations: {
-    src: ["locale/*/mobile-options.json"]
-  }
-};
+/**
+ * Parses a SemVer compatible version string like "1.2.3-alpha" and returns
+ * the major version.
+ *
+ * @param version The version string to obtain the major version from
+ */
+export function getMajorVersion(version: string): string {
+  const majorVersion = version.split(".").shift();
+  return typeof majorVersion === "string" ? majorVersion : "0";
+}

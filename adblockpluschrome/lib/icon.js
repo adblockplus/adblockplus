@@ -17,11 +17,10 @@
 
 /** @module icon */
 
-import * as info from "info";
-
 import {TabSessionStorage} from "./storage/tab-session.js";
 import {allowlistingState} from "./allowlisting.js";
 import {setIconPath, setIconImageData, toggleBadge} from "./browserAction.js";
+import {info} from "../../src/info/background";
 
 const ANIMATION_LOOPS = 3;
 const FRAME_IN_MS = 100;

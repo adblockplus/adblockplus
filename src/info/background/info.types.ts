@@ -16,39 +16,39 @@
  */
 
 /**
- * Module generated when building the extension, which provides information
- * about the extension
+ * An interface describing some information about the extension, the type of
+ * build, and the browser the extension is running in. Some of the values are
+ * being set during build time, and some during runtime.
  */
-declare module "info" {
+export interface Info {
   /**
    * The base name of the extension. Always "adblockplus".
    */
-  export const baseName = "adblockplus";
+  baseName: "adblockplus";
   /**
-   * The name of the extension build.
-   * e.g. "adblockpluschrome", "adblockplusfirefox"
+   * The name of the extension build,
+   * e.g. "adblockpluschrome" or "adblockplusfirefox".
    */
-  export const addonName: string;
+  addonName: string;
   /**
-   * Extension version
+   * The extension version.
    */
-  export const addonVersion: string;
+  addonVersion: string;
   /**
-   * Browser name
-   * e.g. "chrome", "edge", "firefox", "opera", "unknown"
+   * The name of the browser the extension is running in,
+   * e.g. "chrome", "edge", "firefox", "opera", "unknown".
    */
-  export const application: string;
+  application: string;
   /**
-   * Browser version
+   * The version of the browser.
    */
-  export const applicationVersion: string;
+  applicationVersion: string;
   /**
-   * Browser platform name
-   * e.g. "chromium", "gecko"
+   * The name of the browser platform.
    */
-  export const platform: string;
+  platform: "chromium" | "gecko";
   /**
-   * Browser platform version
+   * The version of the browser platform.
    */
-  export const platformVersion: string;
+  platformVersion: string;
 }

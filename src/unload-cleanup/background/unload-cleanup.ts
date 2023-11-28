@@ -15,8 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import * as info from "info";
-
+import { info } from "../../info/background";
 import { port } from "../../../adblockpluschrome/lib/messaging/port";
 import { MessageSender } from "../../polyfills/background";
 import { displayValueList, isGetClassNameMessage } from "../shared";

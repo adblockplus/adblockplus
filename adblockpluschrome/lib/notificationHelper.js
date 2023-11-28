@@ -17,11 +17,10 @@
 
 /** @module notificationHelper */
 
-import * as info from "info";
-
 import * as ewe from "@eyeo/webext-sdk";
 
 import {getPremiumState} from "../../src/premium/background/index.ts";
+import {info} from "../../src/info/background";
 import {initDay1Notification} from "../../lib/notifications.js";
 import {showOptions} from "../../lib/pages/options.js";
 import {port} from "./messaging/port.js";

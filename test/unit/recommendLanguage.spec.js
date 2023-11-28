@@ -92,7 +92,11 @@ const defaultModules = {
       }
     }
   },
-  "info": {application: "firefox"},
+  "../src/info/background": {
+    info: {
+      application: "firefox"
+    }
+  },
   "prefs": {
     Prefs: {
       recommend_language_subscriptions: true
@@ -208,7 +212,7 @@ describe("Test language filter list recommendation", () =>
     });
 
     env.override(
-      env.modules.info,
+      env.modules["../src/info/background"].info,
       "application",
       "opera"
     );
