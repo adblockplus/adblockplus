@@ -27,6 +27,7 @@ import {
   CommandName,
   createSafeOriginUrl,
   dismissCommand,
+  doesLicenseStateMatch,
   getBehavior,
   getContent,
   recordEvent
@@ -35,7 +36,6 @@ import * as logger from "../../logger/background";
 import { MessageSender, TabRemovedEventData } from "../../polyfills/background";
 import { Message, isMessage } from "../../polyfills/shared";
 import { HideMessage, PingMessage, StartInfo } from "../shared";
-import { getPremiumState } from "../../premium/background";
 import {
   DialogBehavior,
   DialogEventType,
@@ -307,14 +307,6 @@ async function handleTabsUpdatedEvent(
   }
 
   for (const ipmId of unassignedIpmIds) {
-    // Ignore and dismiss command if user has Premium
-    const premium = getPremiumState();
-    if (premium.isActive) {
-      logger.debug("[onpage-dialog]: User has Premium");
-      dismissDialogCommand(ipmId);
-      continue;
-    }
-
     // Ignore and dismiss command if user opted-out of notifications
     const ignoredCategories = await ewe.notifications.getIgnoredCategories();
     if (ignoredCategories.includes("*")) {
@@ -335,6 +327,14 @@ async function handleTabsUpdatedEvent(
     const stats = getStats(ipmId);
     if (!isStats(stats)) {
       logger.debug("[onpage-dialog]: No command stats");
+      dismissDialogCommand(ipmId);
+      continue;
+    }
+
+    // Ignore and dismiss command if license state doesn't match those in the
+    // command
+    if (!(await doesLicenseStateMatch(behavior))) {
+      logger.debug("[onpage-dialog]: License has mismatch");
       dismissDialogCommand(ipmId);
       continue;
     }
