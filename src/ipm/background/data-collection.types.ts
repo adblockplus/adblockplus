@@ -130,8 +130,8 @@ export interface EventData {
  * An enum containing all known states for License.
  */
 export enum LicenseState {
-  active = "active",
-  inactive = "inactive"
+  active = "premium",
+  inactive = "free"
 }
 
 /**

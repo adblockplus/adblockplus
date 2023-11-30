@@ -17,9 +17,10 @@
 
 export * from "./command-library";
 export * from "./command-library.types";
-export * from "./param-validator";
-export * from "./param-validator.types";
-export * from "./url";
 export * from "./data-collection";
 export * from "./data-collection.types";
+export * from "./license";
+export * from "./param-validator";
+export * from "./param-validator.types";
 export { start as startTelemetry } from "./telemetry";
+export * from "./url";

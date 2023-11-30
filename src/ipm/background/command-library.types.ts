@@ -26,6 +26,16 @@ export const commandLibraryVersion = 1;
 export interface Behavior {}
 
 /**
+ * Command behavior
+ */
+export interface LicenseStateBehavior extends Behavior {
+  /**
+   * A comma separate list of Premium license state(s)
+   */
+  licenseStateList: string;
+}
+
+/**
  * Handler that gets called when command gets executed
  */
 export type CommandHandler = (ipmId: string) => void;
@@ -41,7 +51,7 @@ export enum CommandName {
  * A map that contains the version for each command.
  */
 export const CommandVersion: Record<CommandName, number> = {
-  [CommandName.createOnPageDialog]: 2
+  [CommandName.createOnPageDialog]: 3
 };
 
 /**
