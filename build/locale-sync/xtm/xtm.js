@@ -28,7 +28,6 @@ const {
   mkdirSync,
   unlinkSync
 } = require("fs");
-const fetch = require("node-fetch");
 const path = require("path");
 
 const {getToken, restApiUrl} = require("./authentication");

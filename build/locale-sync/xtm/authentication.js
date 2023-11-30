@@ -17,8 +17,6 @@
 
 "use strict";
 
-const fetch = require("node-fetch");
-
 const {restApiUrl} = require("./config");
 
 // Authentication
