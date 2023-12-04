@@ -30,17 +30,17 @@ let port: Port;
 /**
  * A set of connection listeners
  */
-const connectListeners: Set<PortEventListener> = new Set();
+const connectListeners = new Set<PortEventListener>();
 
 /**
  * A set of disconnection listeners
  */
-const disconnectListeners: Set<PortEventListener> = new Set();
+const disconnectListeners = new Set<PortEventListener>();
 
 /**
  * A set of message listeners
  */
-const messageListeners: Set<PortEventListener> = new Set();
+const messageListeners = new Set<PortEventListener>();
 
 /**
  * Adds a connect listener to the appropriate set.
@@ -49,7 +49,7 @@ const messageListeners: Set<PortEventListener> = new Set();
  *
  * @param listener supplied callback to be fired on connect
  */
-export function addConnectListener(listener: PortEventListener) {
+export function addConnectListener(listener: PortEventListener): void {
   connectListeners.add(listener);
   listener();
 }
@@ -59,7 +59,7 @@ export function addConnectListener(listener: PortEventListener) {
  *
  * @param listener supplied callback to be fired on disconnectconnect
  */
-export function addDisconnectListener(listener: PortEventListener) {
+export function addDisconnectListener(listener: PortEventListener): void {
   disconnectListeners.add(listener);
 }
 
@@ -68,7 +68,7 @@ export function addDisconnectListener(listener: PortEventListener) {
  *
  * @param listener supplied callback to be fired on recieving a message
  */
-export function addMessageListener(listener: PortEventListener) {
+export function addMessageListener(listener: PortEventListener): void {
   messageListeners.add(listener);
 }
 
@@ -89,7 +89,9 @@ export const connect = (): Port | null => {
     // and assume that the extension is gone
     port = null;
 
-    disconnectListeners.forEach((listener) => listener());
+    disconnectListeners.forEach((listener) => {
+      listener();
+    });
 
     return port;
   }
@@ -100,7 +102,9 @@ export const connect = (): Port | null => {
 
   port.onDisconnect.addListener(onDisconnect);
 
-  connectListeners.forEach((listener) => listener());
+  connectListeners.forEach((listener) => {
+    listener();
+  });
 
   return port;
 };
@@ -112,7 +116,7 @@ export const connect = (): Port | null => {
  * @param props.filter Filter strings to be acted upon.
  * @param ...options Other properties that may be passed, depending on type
  */
-export function listen({ type, filter, ...options }: ListenProps) {
+export function listen({ type, filter, ...options }: ListenProps): void {
   addConnectListener(() => {
     if (port) {
       port.postMessage({
@@ -129,7 +133,7 @@ export function listen({ type, filter, ...options }: ListenProps) {
  * assuming that the extension is still there, in order to wake up the
  * service worker
  */
-function onDisconnect() {
+function onDisconnect(): void {
   port = null;
   // If the disconnect occurs due to the extension being unloaded, we may
   // still be able to reconnect while that's ongoing, which misleads us into
@@ -145,12 +149,14 @@ function onDisconnect() {
  *
  * @param message props including type, passed on to the message listeners
  */
-function onMessage(message: MessageProps) {
+function onMessage(message: MessageProps): void {
   if (!message.type.endsWith(".respond")) {
     return;
   }
 
-  messageListeners.forEach((listener) => listener(message));
+  messageListeners.forEach((listener) => {
+    listener(message);
+  });
 }
 
 /**
@@ -158,6 +164,6 @@ function onMessage(message: MessageProps) {
  *
  * @param listener disconnect listener to remove
  */
-export function removeDisconnectListener(listener: PortEventListener) {
+export function removeDisconnectListener(listener: PortEventListener): void {
   disconnectListeners.delete(listener);
 }

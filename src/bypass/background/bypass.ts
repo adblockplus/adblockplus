@@ -19,8 +19,8 @@ import { port } from "../../../adblockpluschrome/lib/messaging/port";
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";
 import { getAuthPayload, getPremiumState } from "../../premium/background";
 
-import { MessageSender } from "../../polyfills/background";
-import { PremiumGetAuthPayloadOptions } from "./bypass.types";
+import { type MessageSender } from "../../polyfills/background";
+import { type PremiumGetAuthPayloadOptions } from "./bypass.types";
 
 /**
  * Algorithm used to verify authenticity of sender
@@ -144,8 +144,8 @@ async function verifySignature(
   const abSignature = base64ToArrayBuffer(signature);
   const authorizedKeys = Prefs.get("bypass_authorizedKeys") as string[];
 
-  const promisedValidations = authorizedKeys.map((key) => {
-    return verifySignatureWithKey(data, abSignature, key);
+  const promisedValidations = authorizedKeys.map(async (key) => {
+    return await verifySignatureWithKey(data, abSignature, key);
   });
   const validations = await Promise.all(promisedValidations);
   return validations.some((isValid) => isValid);
@@ -165,7 +165,12 @@ async function verifySignatureWithKey(
   signature: Uint8Array,
   pubKey: string
 ): Promise<boolean> {
-  return crypto.subtle.verify(algorithm, await getKey(pubKey), signature, data);
+  return await crypto.subtle.verify(
+    algorithm,
+    await getKey(pubKey),
+    signature,
+    data
+  );
 }
 
 /**

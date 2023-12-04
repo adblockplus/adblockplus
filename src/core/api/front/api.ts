@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { PremiumState } from "../../../premium/shared";
+import { type PremiumState } from "../../../premium/shared";
 import {
   addDisconnectListener,
   addMessageListener,
@@ -61,33 +61,35 @@ export const app = {
    *
    * @returns app information
    */
-  get: <T = string>(what: AppGetWhat) => send<T>("app.get", { what }),
+  get: async <T = string>(what: AppGetWhat) =>
+    await send<T>("app.get", { what }),
 
   /**
    * gets and returns basic relevant information of
    * the current instance of the extension
    */
   getInfo: async (): Promise<ExtensionInfo> => {
-    return Promise.all([app.get("application"), app.get("platform")]).then(
-      ([application, rawPlatform]) => {
-        const platform = rawPlatform as Platform;
+    return await Promise.all([
+      app.get("application"),
+      app.get("platform")
+    ]).then(([application, rawPlatform]) => {
+      const platform = rawPlatform as Platform;
 
-        let store: Store;
+      let store: Store;
 
-        // Edge and Opera have their own stores so we should refer to those instead
-        if (application !== "edge" && application !== "opera") {
-          store = platformToStore[platform] || "chrome";
-        } else {
-          store = application;
-        }
-
-        return {
-          application,
-          platform,
-          store
-        };
+      // Edge and Opera have their own stores so we should refer to those instead
+      if (application !== "edge" && application !== "opera") {
+        store = platformToStore[platform] ?? "chrome";
+      } else {
+        store = application;
       }
-    );
+
+      return {
+        application,
+        platform,
+        store
+      };
+    });
   },
 
   /**
@@ -95,15 +97,17 @@ export const app = {
    *
    * @param filter Filters to listen for
    */
-  listen: (filter: ListenFilters) => listen({ type: "app", filter }),
+  listen: (filter: ListenFilters) => {
+    listen({ type: "app", filter });
+  },
 
   /**
    * Opens an app page according to the passed string
    *
    * @param what which app page to open
    */
-  open: (what: AppOpenWhat, options: AppOpenOptions = {}) =>
-    send("app.open", { what, ...options })
+  open: async (what: AppOpenWhat, options: AppOpenOptions = {}) =>
+    await send("app.open", { what, ...options })
 };
 
 /**
@@ -118,8 +122,8 @@ export const ctalinks = {
    *
    * @returns cta link
    */
-  get: (link: string, queryParams: QueryParams = {}) =>
-    send<string>("app.get", { what: "ctalink", link, queryParams })
+  get: async (link: string, queryParams: QueryParams = {}) =>
+    await send<string>("app.get", { what: "ctalink", link, queryParams })
 };
 
 /**
@@ -131,7 +135,7 @@ export const doclinks = {
    *
    * @param link which link to retrieve
    */
-  get: (link: string) => send("app.get", { what: "doclink", link })
+  get: async (link: string) => await send("app.get", { what: "doclink", link })
 };
 
 /**
@@ -141,14 +145,15 @@ export const filters = {
   /**
    * Gets the currently active filters.
    */
-  get: () => send("filters.get"),
-
+  get: async () => await send("filters.get"),
   /**
    * Adds a connection Listener for the "filters"
    *
    * @param filter Filters to listen for
    */
-  listen: (filter: ListenFilters) => listen({ type: "filters", filter })
+  listen: (filter: ListenFilters) => {
+    listen({ type: "filters", filter });
+  }
 };
 
 /**
@@ -160,13 +165,12 @@ export const notifications = {
    *
    * @param displayMethod the way the notification intends to be displayed
    */
-  get: (displayMethod: DisplayMethod) =>
-    send("notifications.get", { displayMethod }),
-
+  get: async (displayMethod: DisplayMethod) =>
+    await send("notifications.get", { displayMethod }),
   /**
    * Marks all active notifications as seen.
    */
-  seen: () => send("notifications.seen")
+  seen: async () => await send("notifications.seen")
 };
 
 /**
@@ -178,14 +182,16 @@ export const prefs = {
    *
    * @returns preference value
    */
-  get: <T>(key: PrefsGetWhat) => send<T>("prefs.get", { key }),
+  get: async <T>(key: PrefsGetWhat) => await send<T>("prefs.get", { key }),
 
   /**
    * Adds a connection Listener for the "prefs"
    *
    * @param filter Filters to listen for
    */
-  listen: (filter: ListenFilters) => listen({ type: "prefs", filter })
+  listen: (filter: ListenFilters) => {
+    listen({ type: "prefs", filter });
+  }
 };
 
 /**
@@ -199,21 +205,24 @@ export const premium = {
    *
    * @returns whether activating Premium was successful
    */
-  activate: (userId: string) => send<boolean>("premium.activate", { userId }),
+  activate: async (userId: string) =>
+    await send<boolean>("premium.activate", { userId }),
 
   /**
    * Retrieves the current Premium state
    *
    * @returns Premium state
    */
-  get: () => send<PremiumState>("premium.get"),
+  get: async () => await send<PremiumState>("premium.get"),
 
   /**
    * Adds a connection listener for the Premium state
    *
    * @param filter - Filters what to listen for
    */
-  listen: (filter: ListenFilters) => listen({ type: "premium", filter })
+  listen: (filter: ListenFilters) => {
+    listen({ type: "premium", filter });
+  }
 };
 
 /**
@@ -226,8 +235,9 @@ export const requests = {
    * @param filter Filters to listen for
    * @param tabId tab to listen for changes on
    */
-  listen: (filter: ListenFilters, tabId: string) =>
-    listen({ type: "requests", filter, tabId })
+  listen: (filter: ListenFilters, tabId: string) => {
+    listen({ type: "requests", filter, tabId });
+  }
 };
 
 /**
@@ -236,7 +246,7 @@ export const requests = {
  * @param sendType accepted message strings
  * @param rawArgs other arguments to be sent to the browser
  */
-function send<T = void>(
+async function send<T = unknown>(
   sendType: SendType,
   rawArgs: SendArgs = {}
 ): Promise<T> {
@@ -245,7 +255,7 @@ function send<T = void>(
     type: sendType
   };
 
-  return browser.runtime.sendMessage(args);
+  return await browser.runtime.sendMessage(args);
 }
 
 /**
@@ -257,19 +267,20 @@ export const stats = {
    *
    * @param tab
    */
-  getBlockedPerPage: (tab: string) => send("stats.getBlockedPerPage", { tab }),
-
+  getBlockedPerPage: async (tab: string) =>
+    await send("stats.getBlockedPerPage", { tab }),
   /**
    * Returns the total amount of blocked requests.
    */
-  getBlockedTotal: () => send("stats.getBlockedTotal"),
-
+  getBlockedTotal: async () => await send("stats.getBlockedTotal"),
   /**
    * Adds a connection Listener for the "stats"
    *
    * @param filter Filters to listen for
    */
-  listen: (filter: ListenFilters) => listen({ type: "stats", filter })
+  listen: (filter: ListenFilters) => {
+    listen({ type: "stats", filter });
+  }
 };
 
 /**
@@ -281,42 +292,41 @@ export const subscriptions = {
    *
    * @param url - Subscription URL
    */
-  add: (url: string) => send("subscriptions.add", { url }),
-
+  add: async (url: string) => await send("subscriptions.add", { url }),
   /**
    * Retrieves the currently active subscriptions.
    *
    * @param options an object full of props to filter reported subscriptions
    */
-  get: (options?: SubscriptionsGetOptions) =>
-    send("subscriptions.get", options),
-
+  get: async (options?: SubscriptionsGetOptions) =>
+    await send("subscriptions.get", options),
   /**
    * Returns any initial subscription issues that may exist.
    */
-  getInitIssues: () => send("subscriptions.getInitIssues"),
-
+  getInitIssues: async () => await send("subscriptions.getInitIssues"),
   /**
    * Retrieves a list of recommended subscriptions
    *
    * @returns list of recommended subscriptions
    */
-  getRecommendations: () =>
-    send<Recommendation[]>("subscriptions.getRecommendations"),
+  getRecommendations: async () =>
+    await send<Recommendation[]>("subscriptions.getRecommendations"),
 
   /**
    * Adds a connection Listener for the "subscriptions"
    *
    * @param filter Filters to listen for
    */
-  listen: (filter: ListenFilters) => listen({ type: "subscriptions", filter }),
+  listen: (filter: ListenFilters) => {
+    listen({ type: "subscriptions", filter });
+  },
 
   /**
    * Removes the given subscription
    *
    * @param url - Subscription URL
    */
-  remove: (url: string) => send("subscriptions.remove", { url })
+  remove: async (url: string) => await send("subscriptions.remove", { url })
 };
 
 /**

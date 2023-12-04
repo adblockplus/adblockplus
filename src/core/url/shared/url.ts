@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { Frame } from "../../../polyfills/shared";
+import { type Frame } from "../../../polyfills/shared";
 
 /**
  * Parses the domains part of a filter text
@@ -168,7 +168,10 @@ function isValidHostname(hostname: string): boolean {
  *   end.
  * @returns A generator yielding domain suffixes.
  */
-function* domainSuffixes(domain: string, includeBlank = false) {
+function* domainSuffixes(
+  domain: string,
+  includeBlank = false
+): Generator<string, void, unknown> {
   // Since any IP address is already expected to be normalized, there's no need
   // to validate it.
   if (isIPAddress(domain)) {

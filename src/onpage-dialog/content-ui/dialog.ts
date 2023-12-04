@@ -25,8 +25,12 @@ import font300 from "../../../skin/fonts/source-sans-pro-300.woff2?uri";
 import font400 from "../../../skin/fonts/source-sans-pro-400.woff2?uri";
 import font700 from "../../../skin/fonts/source-sans-pro-700.woff2?uri";
 import dialogLogo from "../../../skin/icons/logo/abp-full.svg?uri";
-import { Message } from "../../polyfills/shared";
-import { PingMessage, ResizeMessage, StartInfo } from "../shared";
+import { type Message } from "../../polyfills/shared";
+import {
+  type PingMessage,
+  type ResizeMessage,
+  type StartInfo
+} from "../shared";
 import dialogClose from "./close.svg?uri";
 import dialogCss from "./dialog.css?text";
 import dialogHtml from "./dialog.html?text";
@@ -174,8 +178,8 @@ function isStartInfo(candidate: unknown): candidate is StartInfo {
  *
  * @returns message response
  */
-function sendMessage<T extends Message>(message: T): Promise<unknown> {
-  return browser.runtime.sendMessage(message);
+async function sendMessage<T extends Message>(message: T): Promise<unknown> {
+  return await browser.runtime.sendMessage(message);
 }
 
 /**
@@ -191,7 +195,9 @@ function start(): void {
     return;
   }
 
-  window.addEventListener("message", handleMessageEvent);
+  window.addEventListener("message", (event: MessageEvent) => {
+    void handleMessageEvent(event);
+  });
 }
 
 start();

@@ -29,20 +29,19 @@ interface FiltersGetAllowingFiltersOptions {
   /**
    * ID of the frame to look up
    */
-  frameId?: number = 0;
+  frameId?: number;
   /**
    * Types of filters to consider
    */
-  types?: string[] = ["document"];
+  types?: string[];
 }
 
 /**
- * Extra data associated with a filter
+ * Extra data associated with a filter.
+ *
+ * The SDK doesn't specify the type allowed for metadata entries.
  */
-interface FilterMetadata {
-  // The SDK doesn't specify the type allowed for metadata entries
-  [key: string]: any;
-}
+type FilterMetadata = Record<string, any>;
 
 /**
  * Represents a single filter rule and its state.

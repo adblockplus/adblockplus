@@ -16,9 +16,12 @@
  */
 
 import { isDomainList } from "../../core/url/shared";
-import { Command } from "./command-library.types";
+import { type Command } from "./command-library.types";
 import { isValidLicenseState } from "./license";
-import { ParamDefinitionList, ParamValidator } from "./param-validator.types";
+import {
+  type ParamDefinitionList,
+  type ParamValidator
+} from "./param-validator.types";
 import { createSafeOriginUrl } from "./url";
 
 /**
@@ -112,7 +115,7 @@ export function validateParams<T>(
       // Typescript is considering `definition.name` to be of type
       // Symbol (keyof T), so we need to convert it into a string
       const name = String(definition.name);
-      const param = command[name];
+      const param = String(command[name]);
       return definition.validate(param)
         ? ""
         : `Invalid value for parameter "${name}", got "${param}":`;

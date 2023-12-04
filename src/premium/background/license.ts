@@ -21,11 +21,11 @@ import { EventEmitter } from "../../../adblockpluschrome/lib/events";
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";
 import * as scheduledEmitter from "../../core/scheduled-event-emitter/background/scheduled-event-emitter";
 
-import { PremiumActivateOptions } from "../../core/api/shared";
+import { type PremiumActivateOptions } from "../../core/api/shared";
 import { ScheduleType } from "../../core/scheduled-event-emitter/background/scheduled-event-emitter.types";
-import { EventEmitterCallback } from "../../polyfills/background";
-import { PremiumState } from "../shared";
-import { License, LicenseCheckPayload } from "./license.types";
+import { type EventEmitterCallback } from "../../polyfills/background";
+import { type PremiumState } from "../shared";
+import { type License, type LicenseCheckPayload } from "./license.types";
 
 /**
  * Error indicating a temporary problem during a license check,
@@ -65,9 +65,9 @@ const licenseCheckRetryEventName = "premium.license.check.retry";
  * @param newLicense - New/updated Premium license
  */
 function activateLicense(oldLicense: License, newLicense: License): void {
-  Prefs.set("premium_license", newLicense);
+  void Prefs.set("premium_license", newLicense);
 
-  scheduledEmitter.removeSchedule(licenseCheckRetryEventName);
+  void scheduledEmitter.removeSchedule(licenseCheckRetryEventName);
 
   if (oldLicense.status === "active") {
     emitter.emit("updated");
@@ -91,7 +91,7 @@ async function checkLicense(retryCount: number = 0): Promise<void> {
   // Stop retrying but keep existing license for now, assuming that we are
   // temporarily unable to retrieve the license from the server
   if (retryCount >= 3) {
-    scheduledEmitter.removeSchedule(licenseCheckRetryEventName);
+    void scheduledEmitter.removeSchedule(licenseCheckRetryEventName);
     if (retryCount > 3) {
       return;
     }
@@ -107,11 +107,11 @@ async function checkLicense(retryCount: number = 0): Promise<void> {
       throw new TemporaryLicenseCheckError("No network connection");
     }
 
-    const requestData = {
+    const requestData: LicenseCheckPayload = {
       cmd: "license_check",
       u: userId,
       v: "1"
-    } as LicenseCheckPayload;
+    };
     const requestUrl = Prefs.get("premium_license_check_url") as string;
     const response = await fetch(requestUrl, {
       method: "POST",
@@ -143,7 +143,7 @@ async function checkLicense(retryCount: number = 0): Promise<void> {
     const newLicense = (await response.json()) as License;
 
     if (newLicense.lv !== 1) {
-      throw new Error(`Invalid license version: ${newLicense.lv}`);
+      throw new Error(`Invalid license version: ${String(newLicense.lv)}`);
     }
 
     if (oldLicense.status === "active" && newLicense.status === "expired") {
@@ -172,7 +172,7 @@ async function checkLicense(retryCount: number = 0): Promise<void> {
         return;
       }
 
-      scheduledEmitter.setSchedule(
+      void scheduledEmitter.setSchedule(
         licenseCheckRetryEventName,
         licenseCheckRetryDelay,
         ScheduleType.interval
@@ -189,11 +189,11 @@ async function checkLicense(retryCount: number = 0): Promise<void> {
  * Deactivate the existing Premium license
  */
 function deactivateLicense(): void {
-  Prefs.reset("premium_license");
-  Prefs.reset("premium_license_nextcheck");
-  Prefs.reset("premium_user_id");
+  void Prefs.reset("premium_license");
+  void Prefs.reset("premium_license_nextcheck");
+  void Prefs.reset("premium_user_id");
 
-  scheduledEmitter.removeSchedule(licenseCheckRetryEventName);
+  void scheduledEmitter.removeSchedule(licenseCheckRetryEventName);
   if (licenseCheckTimeoutId !== null) {
     self.clearTimeout(licenseCheckTimeoutId);
   }
@@ -242,14 +242,14 @@ function hasActiveLicense(): boolean {
 function scheduleNextLicenseCheck(nextTimestamp: number | null): void {
   if (!nextTimestamp) {
     nextTimestamp = Date.now() + licenseCheckPeriod;
-    Prefs.set("premium_license_nextcheck", nextTimestamp);
+    void Prefs.set("premium_license_nextcheck", nextTimestamp);
   }
 
   // We cannot use scheduled-event-emitter to schedule delayed intervals, or
   // for rescheduling an event when it is emitted.
   // https://gitlab.com/adblockinc/ext/adblockplus/adblockplusui/-/issues/1227
   licenseCheckTimeoutId = self.setTimeout(() => {
-    checkLicense();
+    void checkLicense();
     scheduleNextLicenseCheck(null);
   }, nextTimestamp - Date.now());
 }
@@ -258,8 +258,8 @@ function scheduleNextLicenseCheck(nextTimestamp: number | null): void {
  * Initializes license checks
  */
 function initializeLicenseChecks(): void {
-  scheduledEmitter.setListener(licenseCheckRetryEventName, (info) => {
-    checkLicense(info.callCount);
+  void scheduledEmitter.setListener(licenseCheckRetryEventName, (info) => {
+    void checkLicense(info.callCount);
   });
 
   const nextCheckTimestamp = Prefs.get("premium_license_nextcheck");
@@ -281,7 +281,7 @@ function initializeMessaging(): void {
 
     // The Premium license doesn't contain the Premium user ID,
     // so we need to store it separately for the time being
-    Prefs.set("premium_user_id", msg.userId);
+    void Prefs.set("premium_user_id", msg.userId);
     await checkLicense();
 
     return true;
@@ -293,7 +293,9 @@ function initializeMessaging(): void {
     "premium",
     "changed",
     (emit: EventEmitterCallback<PremiumState>) => {
-      const onChanged = () => emit(getPremiumState());
+      const onChanged = (): void => {
+        emit(getPremiumState());
+      };
       emitter.on("activated", onChanged);
       emitter.on("deactivated", onChanged);
       return () => {

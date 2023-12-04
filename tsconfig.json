@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "allowJs": true,
-    "allowUnreachableCode":false,
+    "allowUnreachableCode": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "module": "es2020",
@@ -16,6 +16,7 @@
     ]
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "src/.eslintrc.js"
   ]
 }

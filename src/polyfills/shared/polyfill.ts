@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { Message } from "./polyfill.types";
+import { type Message } from "./polyfill.types";
 
 /**
  * Temporary function to check whether given candidate is a message

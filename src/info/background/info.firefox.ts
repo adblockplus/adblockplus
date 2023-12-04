@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { Info } from "./info.types";
+import { type Info } from "./info.types";
 import { getMajorVersion } from "./version";
 
 const addonName = "{{addonName}}";
@@ -31,7 +31,7 @@ if (match) {
   platformVersion = getMajorVersion(match[1]);
 }
 
-browser.runtime.getBrowserInfo().then((browserInfo) => {
+void browser.runtime.getBrowserInfo().then((browserInfo) => {
   application = browserInfo.name.toLowerCase();
   applicationVersion = getMajorVersion(browserInfo.version);
 });

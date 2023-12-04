@@ -21,10 +21,10 @@ import { Prefs } from "../../../adblockpluschrome/lib/prefs";
 
 import * as logger from "../../logger/background";
 import { isFilterMetadata } from "../../polyfills/background";
-import { DialogBehavior, Timing, isTiming } from "./middleware";
-import { Stats } from "./stats.types";
-import { TimingConfiguration } from "./timing.types";
-import { Tabs } from "webextension-polyfill";
+import { type DialogBehavior, Timing, isTiming } from "./middleware";
+import { type Stats } from "./stats.types";
+import { type TimingConfiguration } from "./timing.types";
+import { type Tabs } from "webextension-polyfill";
 import { isActiveOnDomain } from "../../core/url/shared";
 
 /**
@@ -154,7 +154,7 @@ async function shouldBeShownForAfterWebAllowlisting(
   tab: Tabs.Tab,
   stats: Stats
 ): Promise<boolean> {
-  const tabId = tab.id || browser.tabs.TAB_ID_NONE;
+  const tabId = tab.id ?? browser.tabs.TAB_ID_NONE;
   const config = knownConfigs.get(timing);
   if (!config) {
     logger.debug("[onpage-dialog]: Unknown timing");
@@ -228,7 +228,7 @@ export async function shouldBeShown(
   }
 
   // Check if there are domains for the command
-  return isActiveOnDomain(tab.url || "", domainList);
+  return isActiveOnDomain(tab.url ?? "", domainList);
 }
 
 /**

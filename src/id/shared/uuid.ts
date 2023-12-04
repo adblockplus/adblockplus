@@ -27,10 +27,8 @@ function generateUUID(): string {
   const uuid = new Uint16Array(8);
   crypto.getRandomValues(uuid);
 
-  /* eslint-disable no-bitwise */
   uuid[3] = (uuid[3] & 0x0fff) | 0x4000; // version 4
   uuid[4] = (uuid[4] & 0x3fff) | 0x8000; // variant 1
-  /* eslint-enable no-bitwise */
 
   const uuidChunks = [];
   for (let i = 0; i < uuid.length; i += 1) {

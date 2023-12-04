@@ -16,7 +16,7 @@
  */
 
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";
-import { Stats } from "./stats.types";
+import { type Stats } from "./stats.types";
 
 /**
  * Key for stats storage
@@ -30,8 +30,11 @@ const statsStorageKey = "onpage_dialog_command_stats";
  */
 export function clearStats(ipmId: string): void {
   const statsStorage = Prefs.get(statsStorageKey);
+  // We can't use a Map or Set for `statsStorage`, so we need dynamic
+  // deletion here.
+  // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
   delete statsStorage[ipmId];
-  Prefs.set(statsStorageKey, statsStorage);
+  void Prefs.set(statsStorageKey, statsStorage);
 }
 
 /**
@@ -71,5 +74,5 @@ export function isStats(candidate: unknown): candidate is Stats {
 export function setStats(ipmId: string, stats: Stats): void {
   const storage = Prefs.get(statsStorageKey);
   storage[ipmId] = stats;
-  Prefs.set(statsStorageKey, storage);
+  void Prefs.set(statsStorageKey, storage);
 }

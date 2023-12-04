@@ -19,20 +19,20 @@ import * as browser from "webextension-polyfill";
 
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";
 import {
-  CommandName,
+  type CommandName,
   CommandVersion,
   commandLibraryVersion
 } from "./command-library.types";
 import {
-  BaseAttributes,
+  type BaseAttributes,
   DataType,
-  DeviceData,
-  EventData,
+  type DeviceData,
+  type EventData,
   LicenseState,
-  PayloadData,
+  type PayloadData,
   PlatformStatus,
   PlatformType,
-  UserData,
+  type UserData,
   eventStorageKey
 } from "./data-collection.types";
 import { getPremiumState } from "../../premium/background";
@@ -170,7 +170,7 @@ export async function getPayload(): Promise<PayloadData> {
  */
 export async function clearEvents(): Promise<void> {
   await Prefs.untilLoaded;
-  Prefs.set(eventStorageKey, []);
+  void Prefs.set(eventStorageKey, []);
 }
 
 /**
@@ -188,5 +188,5 @@ export async function recordEvent(
   const eventData = await getEventData(ipmId, command, name);
   const eventStorage = Prefs.get(eventStorageKey) as EventData[];
   eventStorage.push(eventData);
-  Prefs.set(eventStorageKey, eventStorage);
+  void Prefs.set(eventStorageKey, eventStorage);
 }

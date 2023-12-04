@@ -84,11 +84,17 @@ export async function sendPing(): Promise<void> {
  * Will schedule pings.
  */
 export async function start(): Promise<void> {
-  setListener(scheduleName, sendPing);
+  void setListener(scheduleName, () => {
+    void sendPing();
+  });
 
   if (!hasSchedule(scheduleName)) {
     await Prefs.untilLoaded;
     void sendPing();
-    setSchedule(scheduleName, Prefs.get(intervalKey), ScheduleType.interval);
+    void setSchedule(
+      scheduleName,
+      Prefs.get(intervalKey),
+      ScheduleType.interval
+    );
   }
 }

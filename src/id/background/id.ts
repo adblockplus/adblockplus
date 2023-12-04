@@ -33,7 +33,7 @@ export async function getInstallationId(): Promise<string> {
 
   if (id === "") {
     id = getUUID();
-    Prefs.set(installationIdStorageKey, id);
+    void Prefs.set(installationIdStorageKey, id);
   }
 
   return id;

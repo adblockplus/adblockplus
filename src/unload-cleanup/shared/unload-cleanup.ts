@@ -16,7 +16,7 @@
  */
 
 import { isMessage } from "../../polyfills/shared";
-import { GetClassNameMessage } from "./unload-cleanup.types";
+import { type GetClassNameMessage } from "./unload-cleanup.types";
 
 /**
  * Checks whether given candidate is message of type

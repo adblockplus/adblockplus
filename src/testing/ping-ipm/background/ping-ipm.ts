@@ -19,9 +19,9 @@ import { sendPing } from "../../../ipm/background/telemetry";
 import { port } from "../../../../adblockpluschrome/lib/messaging/port";
 import { Prefs } from "../../../../adblockpluschrome/lib/prefs";
 
-export function start() {
+export function start(): void {
   port.on("testing.ping_ipm_server", async () => {
     await Prefs.untilLoaded;
-    sendPing();
+    void sendPing();
   });
 }

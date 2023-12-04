@@ -18,6 +18,7 @@
 // Modules from legacy directories don't have type information yet, and adding
 // it is not trivial. Therefore we're first moving them over and apply the
 // coding style, and we're going to add type information in a subsequent step.
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
 import api from "../../core/api/front";
@@ -47,7 +48,7 @@ let previewSelectors = [];
 
 /* Utilities */
 
-function getURLFromElement(element) {
+function getURLFromElement(element): any {
   if (element.localName === "object") {
     if (element.data) {
       return element.data;
@@ -69,9 +70,9 @@ function getURLFromElement(element) {
   return element.currentSrc || element.src;
 }
 
-function getFiltersForElement(element) {
+async function getFiltersForElement(element): Promise<any> {
   const src = element.getAttribute("src");
-  return browser.runtime.sendMessage({
+  return await browser.runtime.sendMessage({
     type: "composer.getFilters",
     tagName: element.localName,
     id: element.id,
@@ -82,7 +83,9 @@ function getFiltersForElement(element) {
   });
 }
 
-async function getBlockableElementOrAncestor(element) {
+async function getBlockableElementOrAncestor(
+  element
+): Promise<HTMLElement | null> {
   // We assume that the user doesn't want to block the whole page.
   // So we never consider the <html> or <body> element.
   while (
@@ -118,7 +121,7 @@ async function getBlockableElementOrAncestor(element) {
       if (filters.length > 0) {
         return element;
       }
-      return getBlockableElementOrAncestor(element.parentElement);
+      return await getBlockableElementOrAncestor(element.parentElement);
     }
   }
 
@@ -129,7 +132,7 @@ async function getBlockableElementOrAncestor(element) {
 /* Element highlighting */
 
 // Adds an overlay to an element in order to highlight it.
-function addElementOverlay(element) {
+function addElementOverlay(element): HTMLDivElement | null {
   let position = "absolute";
   let offsetX = window.scrollX;
   let offsetY = window.scrollY;
@@ -171,10 +174,10 @@ function addElementOverlay(element) {
   return overlay;
 }
 
-function highlightElement(element, border, backgroundColor) {
+function highlightElement(element, border, backgroundColor): void {
   unhighlightElement(element);
 
-  const highlightWithOverlay = () => {
+  const highlightWithOverlay = (): void => {
     const overlay = addElementOverlay(element);
 
     // If the element isn't displayed no overlay will be added.
@@ -191,7 +194,7 @@ function highlightElement(element, border, backgroundColor) {
     };
   };
 
-  const highlightWithStyleAttribute = () => {
+  const highlightWithStyleAttribute = (): void => {
     const originalBorder = element.style.getPropertyValue("border");
     const originalBorderPriority =
       element.style.getPropertyPriority("box-shadow");
@@ -230,7 +233,7 @@ function highlightElement(element, border, backgroundColor) {
   }
 }
 
-function unhighlightElement(element) {
+function unhighlightElement(element): void {
   if (element && "_unhighlight" in element) {
     element._unhighlight();
     delete element._unhighlight;
@@ -239,7 +242,7 @@ function unhighlightElement(element) {
 
 // Highlight elements matching the selector string red.
 // (All elements that would be blocked by the proposed filters.)
-function highlightElements(selectorString) {
+function highlightElements(selectorString): void {
   unhighlightElements();
 
   const elements = Array.prototype.slice.call(
@@ -263,7 +266,7 @@ function highlightElements(selectorString) {
 }
 
 // Unhighlight the elements that were highlighted by selector string previously.
-function unhighlightElements() {
+function unhighlightElements(): void {
   if (highlightedElementsInterval) {
     clearInterval(highlightedElementsInterval);
     highlightedElementsInterval = null;
@@ -281,12 +284,12 @@ function unhighlightElements() {
 
 /* Input event handlers */
 
-function stopEventPropagation(event) {
+function stopEventPropagation(event): void {
   event.stopPropagation();
 }
 
 // Hovering over an element so highlight it.
-async function mouseOver(event) {
+async function mouseOver(event): Promise<void> {
   lastMouseOverEvent = event;
 
   const element = await getBlockableElementOrAncestor(event.target);
@@ -310,7 +313,7 @@ async function mouseOver(event) {
 }
 
 // No longer hovering over this element so unhighlight it.
-function mouseOut(event) {
+function mouseOut(event): void {
   if (!currentlyPickingElement || currentElement !== event.target) {
     return;
   }
@@ -320,7 +323,7 @@ function mouseOut(event) {
 }
 
 // Key events - Return selects currently hovered-over element, escape aborts.
-function keyDown(event) {
+function keyDown(event): void {
   if (!event.ctrlKey && !event.altKey && !event.shiftKey) {
     if (event.keyCode === 13 /* Return */) {
       void elementPicked(event);
@@ -334,7 +337,7 @@ function keyDown(event) {
 
 // Start highlighting elements yellow as the mouse moves over them, when one is
 // chosen launch the popup dialog for the user to confirm the generated filters.
-function startPickingElement() {
+function startPickingElement(): void {
   currentlyPickingElement = true;
 
   // Add (currently invisible) overlays for blockable elements that don't emit
@@ -349,6 +352,7 @@ function startPickingElement() {
     }
   );
 
+  /* eslint-disable @typescript-eslint/no-misused-promises */
   document.addEventListener("mousedown", stopEventPropagation, true);
   document.addEventListener("mouseup", stopEventPropagation, true);
   document.addEventListener("mouseenter", stopEventPropagation, true);
@@ -358,12 +362,13 @@ function startPickingElement() {
   document.addEventListener("click", elementPicked, true);
   document.addEventListener("contextmenu", elementPicked, true);
   document.addEventListener("keydown", keyDown, true);
+  /* eslint-enable @typescript-eslint/no-misused-promises */
 
   api.addDisconnectListener(onDisconnect);
 }
 
 // Used to hide/show blocked elements on composer.content.preview
-async function previewBlockedElements(active) {
+async function previewBlockedElements(active): Promise<void> {
   if (!currentElement) {
     return;
   }
@@ -391,7 +396,7 @@ async function previewBlockedElements(active) {
 }
 
 // the previewBlockedElements helper to avoid duplicated code
-function previewBlockedElement(element, active, overlays) {
+function previewBlockedElement(element, active, overlays): void {
   const display = active ? "none" : null;
   const find = Array.prototype.find;
   const overlay = find.call(overlays, ({ prisoner }) => prisoner === element);
@@ -403,7 +408,7 @@ function previewBlockedElement(element, active, overlays) {
 
 // The user has picked an element - currentElement. Highlight it red, generate
 // filters for it and open a popup dialog so that the user can confirm.
-async function elementPicked(event) {
+async function elementPicked(event): Promise<void> {
   if (!currentElement) {
     return;
   }
@@ -433,9 +438,10 @@ async function elementPicked(event) {
   });
 }
 
-function stopPickingElement() {
+function stopPickingElement(): void {
   currentlyPickingElement = false;
 
+  /* eslint-disable @typescript-eslint/no-misused-promises */
   document.removeEventListener("mousedown", stopEventPropagation, true);
   document.removeEventListener("mouseup", stopEventPropagation, true);
   document.removeEventListener("mouseenter", stopEventPropagation, true);
@@ -445,12 +451,13 @@ function stopPickingElement() {
   document.removeEventListener("click", elementPicked, true);
   document.removeEventListener("contextmenu", elementPicked, true);
   document.removeEventListener("keydown", keyDown, true);
+  /* eslint-enable @typescript-eslint/no-misused-promises */
 }
 
 /* Core logic */
 
 // We're done with the block element feature for now, tidy everything up.
-function deactivateBlockElement(popupAlreadyClosed) {
+function deactivateBlockElement(popupAlreadyClosed): void {
   if (!keepPreviewEnabled) {
     void previewBlockedElements(false);
   }
@@ -486,13 +493,13 @@ function deactivateBlockElement(popupAlreadyClosed) {
   api.removeDisconnectListener(onDisconnect);
 }
 
-function onDisconnect() {
+function onDisconnect(): void {
   // When the background page disconnects, it's no longer safe to send messages
   // to it, so we should instead leave it up to the browser to close the popup
   deactivateBlockElement(true);
 }
 
-function initializeComposer() {
+function initializeComposer(): void {
   // Use a contextmenu handler to save the last element the user right-clicked
   // on. To make things easier, we actually save the DOM event. We have to do
   // this because the contextMenu API only provides a URL, not the actual DOM

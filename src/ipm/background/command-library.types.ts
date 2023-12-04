@@ -23,6 +23,7 @@ export const commandLibraryVersion = 1;
 /**
  * Command behavior
  */
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface Behavior {}
 
 /**
@@ -80,6 +81,7 @@ export type Command = CommandMetaData & Record<string, unknown>;
 /**
  * Command content
  */
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface Content {}
 
 /**

@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { Message } from "../../polyfills/shared";
+import { type Message } from "../../polyfills/shared";
 
 /**
  * An enum with all CSS `display` values we want to support.

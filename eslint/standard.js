@@ -19,33 +19,19 @@ module.exports = {
     webextensions: true
   },
   extends: [
-    "standard",
-    "plugin:prettier/recommended",
-    "plugin:@typescript-eslint/eslint-recommended"
+    "standard-with-typescript",
+    "plugin:prettier/recommended"
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module"
   },
-  plugins: ["@typescript-eslint", "prettier"],
+  plugins: ["prettier"],
   rules: {
-    // The no-shadow rule must be used from @typescript-eslint instead of
-    // eslint, because it triggers false positives for any enum declaration.
-    // See https://typescript-eslint.io/rules/no-shadow/#how-to-use
-    "no-shadow": "off",
-    "@typescript-eslint/no-shadow": "error",
-
-    // The no-unused-vars rule must be used from @typescript-eslint instead of
-    // eslint, because it triggers false positives for globals in *.d.ts files.
-    // See https://typescript-eslint.io/rules/no-unused-vars/#how-to-use
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": "error",
-
-    // We need this to support no-floating-promises, which we want to
-    // eventually enforce.
-    // See https://typescript-eslint.io/rules/no-floating-promises/#ignorevoid
-    "no-void": ["error", {allowAsStatement: true}]
+    // To ease the transition to strict-boolean-expressions, we will
+    // only issue warnings instead of errors for now.
+    "@typescript-eslint/strict-boolean-expressions": "warn"
   },
   overrides: [
     {

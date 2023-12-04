@@ -16,9 +16,9 @@
  */
 
 import {
-  CollectionSubscription,
-  InitialRecommendedSubscription,
-  RecommendedPlainSubscription
+  type CollectionSubscription,
+  type InitialRecommendedSubscription,
+  type RecommendedPlainSubscription
 } from "./desktop-options.types";
 
 /**
