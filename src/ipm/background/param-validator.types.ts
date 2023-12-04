@@ -37,4 +37,4 @@ export interface ParamDefinition<T> {
 /**
  * A list of parameter definitions.
  */
-export type ParamDefinitionList<T> = ParamDefinition<T>[];
+export type ParamDefinitionList<T> = Array<ParamDefinition<T>>;

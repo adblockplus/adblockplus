@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { PlainSubscription } from "../../core/api/front";
+import { type PlainSubscription } from "../../core/api/front";
 
 /**
  * Initial data for a recommended subscription, that hasn't been installed yet,

@@ -18,6 +18,7 @@
 // Modules from legacy directories don't have type information yet, and adding
 // it is not trivial. Therefore we're first moving them over and apply the
 // coding style, and we're going to add type information in a subsequent step.
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
 import * as ewe from "@eyeo/webext-sdk";
@@ -42,11 +43,11 @@ const readyActivePages = new TabSessionStorage(
 );
 let showingContextMenu = false;
 
-function isValidString(s) {
+function isValidString(s): boolean {
   return s && s.indexOf("\0") === -1;
 }
 
-function escapeChar(chr) {
+function escapeChar(chr): string {
   const code = chr.charCodeAt(0);
 
   // Control characters and leading digits must be escaped based on
@@ -68,7 +69,7 @@ function escapeChar(chr) {
  * @return {string}
  * @static
  */
-export function escapeCSS(s) {
+export function escapeCSS(s): string {
   return s.replace(/^[\d-]|[^\w\-\u0080-\uFFFF]/g, escapeChar);
 }
 
@@ -79,12 +80,14 @@ export function escapeCSS(s) {
  * @return {string}
  * @static
  */
-export function quoteCSS(value) {
+export function quoteCSS(value): string {
   /* eslint-disable-next-line no-control-regex */
   return '"' + value.replace(/["\\{}\x00-\x1F\x7F]/g, escapeChar) + '"';
 }
 
-async function composeFilters(details) {
+async function composeFilters(
+  details
+): Promise<{ filters: any[]; selectors: any[] }> {
   const { page, frame } = details;
   const filters = [];
   const selectors = [];
@@ -204,7 +207,7 @@ async function composeFilters(details) {
  *                                with.
  * @returns {?number} dialog window's page ID
  */
-async function handleOpenDialogMessage(message, sender) {
+async function handleOpenDialogMessage(message, sender): Promise<void> {
   // Close previously active dialog before opening new one
   const activeDialog = await session.get(activeDialogKey);
   if (activeDialog) {
@@ -254,7 +257,7 @@ async function handleOpenDialogMessage(message, sender) {
   await doInit();
 }
 
-async function doInit() {
+async function doInit(): Promise<void> {
   const activeDialog = await session.get(activeDialogKey);
 
   await browser.tabs.sendMessage(activeDialog.sender.id, {
@@ -295,11 +298,13 @@ async function doInit() {
     // it is ready to receive messages[1]. As a workaround we'll try again a
     // few times with a second delay.
     // [1] - https://bugzilla.mozilla.org/show_bug.cgi?id=1418655
-    setTimeout(doInit, 100);
+    setTimeout(() => {
+      void doInit();
+    }, 100);
   }
 }
 
-async function onTabRemoved(removedTabId) {
+async function onTabRemoved(removedTabId): Promise<void> {
   const activeDialog = await session.get(activeDialogKey);
   if (!activeDialog) {
     return;
@@ -323,7 +328,7 @@ async function onTabRemoved(removedTabId) {
   await session.delete(activeDialogKey);
 }
 
-async function onTabUpdated(tabId, changeInfo) {
+async function onTabUpdated(tabId, changeInfo): Promise<void> {
   const activeDialog = await session.get(activeDialogKey);
   if (!activeDialog || tabId !== activeDialog.tab.id) {
     return;
@@ -361,8 +366,11 @@ async function onTabUpdated(tabId, changeInfo) {
  * @property {string?} url - The URL associated with the element.
  * @returns {composerGetFiltersResult}
  */
-function handleGetFiltersMessage(message, sender) {
-  return composeFilters({
+async function handleGetFiltersMessage(
+  message,
+  sender
+): Promise<{ filters: any[]; selectors: any[] }> {
+  return await composeFilters({
     tagName: message.tagName,
     id: message.id,
     src: message.src,
@@ -383,7 +391,7 @@ function handleGetFiltersMessage(message, sender) {
  * @property {object} payload The contents of the message to forward.
  * @returns The response from the forwarded message's recipient.
  */
-function handleForwardMessage(msg, sender) {
+function handleForwardMessage(msg, sender): Promise<any> | undefined {
   let targetPage;
   if (msg.targetPageId) {
     targetPage = ext.getPage(msg.targetPageId);
@@ -401,7 +409,7 @@ function handleForwardMessage(msg, sender) {
  *
  * @param {ext.Page} page - Page for which to reset "block element" feature
  */
-function reset(page) {
+function reset(page): void {
   // When tabs start loading we send them a message to ensure that the state
   // of the "block element" tool is reset. This is necessary since Firefox will
   // sometimes cache the state of a tab when the user navigates back / forward,
@@ -419,7 +427,7 @@ function reset(page) {
  * @param {object} itemInfo - Clicked context menu item
  * @param {Tab} tab - Tab on which context menu item was clicked
  */
-function handleContextMenuClicked(itemInfo, tab) {
+function handleContextMenuClicked(itemInfo, tab): void {
   if (itemInfo.menuItemId === "block_element") {
     void browser.tabs.sendMessage(tab.id, {
       type: "composer.content.contextMenuClicked"
@@ -427,7 +435,7 @@ function handleContextMenuClicked(itemInfo, tab) {
   }
 }
 
-async function showOrHideContextMenu(activePage) {
+async function showOrHideContextMenu(activePage): Promise<void> {
   // Firefox for Android does not support browser.contextMenus.
   // https://bugzilla.mozilla.org/show_bug.cgi?id=1269062
   if (!("contextMenus" in browser)) {
@@ -451,7 +459,7 @@ async function showOrHideContextMenu(activePage) {
   }
 }
 
-async function updateContextMenu(updatedPage) {
+async function updateContextMenu(updatedPage): Promise<void> {
   const tabs = await browser.tabs.query({
     active: true,
     lastFocusedWindow: true
@@ -465,7 +473,7 @@ async function updateContextMenu(updatedPage) {
  *
  * @param {number} windowId - Focused window ID
  */
-function handleFocusChanged(windowId) {
+function handleFocusChanged(windowId): void {
   if (windowId !== browser.windows.WINDOW_ID_NONE) {
     void updateContextMenu();
   }
@@ -476,7 +484,7 @@ function handleFocusChanged(windowId) {
  * @param {ext.Page} page - Page whose allowlisting state changed
  * @param {boolean} isAllowlisted - New allowlisting state
  */
-function handleAllowlistingStateChanged(page, isAllowlisted) {
+function handleAllowlistingStateChanged(page, isAllowlisted): void {
   void readyActivePages.transaction(async () => {
     if (await readyActivePages.has(page.id)) {
       await readyActivePages.set(page.id, !isAllowlisted);
@@ -493,11 +501,11 @@ function handleAllowlistingStateChanged(page, isAllowlisted) {
  * @property {number} pageId
  * @returns {boolean}
  */
-function handleIsPageReadyMessage(message) {
-  return readyActivePages.has(message.pageId);
+async function handleIsPageReadyMessage(message): Promise<boolean> {
+  return await readyActivePages.has(message.pageId);
 }
 
-async function initializeReadyState(page) {
+async function initializeReadyState(page): Promise<void> {
   const isAllowlisted = await ewe.filters.isResourceAllowlisted(
     page.url,
     "document",
@@ -514,7 +522,7 @@ async function initializeReadyState(page) {
  * @event "composer.ready"
  * @returns {boolean}
  */
-async function handleReadyMessage(message, sender) {
+async function handleReadyMessage(message, sender): Promise<void> {
   await initializeReadyState(sender.page);
 }
 
@@ -522,7 +530,7 @@ async function handleReadyMessage(message, sender) {
  * Handles pages that finished loading
  * @param {ext.Page} page - Page that finished loading
  */
-async function handlePageLoaded(page) {
+async function handlePageLoaded(page): Promise<void> {
   try {
     const state = await browser.tabs.sendMessage(page.id, {
       type: "composer.content.getState"
@@ -541,8 +549,10 @@ async function handlePageLoaded(page) {
  * Initializes filter composer backend
  */
 function start(): void {
+  /* eslint-disable @typescript-eslint/no-misused-promises */
   browser.tabs.onRemoved.addListener(onTabRemoved);
   browser.tabs.onUpdated.addListener(onTabUpdated);
+  /* eslint-enable @typescript-eslint/no-misused-promises */
 
   port.on("composer.forward", handleForwardMessage);
   port.on("composer.getFilters", handleGetFiltersMessage);
@@ -556,8 +566,8 @@ function start(): void {
     browser.contextMenus.onClicked.addListener(handleContextMenuClicked);
   }
 
-  browser.tabs.onActivated.addListener(async (activeInfo) => {
-    await showOrHideContextMenu(new ext.Page({ id: activeInfo.tabId }));
+  browser.tabs.onActivated.addListener((activeInfo) => {
+    void showOrHideContextMenu(new ext.Page({ id: activeInfo.tabId }));
   });
 
   // Firefox for Android does not support browser.windows.

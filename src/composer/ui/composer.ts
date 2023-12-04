@@ -18,6 +18,7 @@
 // Modules from legacy directories don't have type information yet, and adding
 // it is not trivial. Therefore we're first moving them over and apply the
 // coding style, and we're going to add type information in a subsequent step.
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
 import "./composer.css";
@@ -28,14 +29,14 @@ import { initI18n, stripTagsUnsafe } from "../../../js/i18n.mjs";
 let initialFilterText = "";
 let targetPageId = null;
 
-function onKeyDown(event) {
+function onKeyDown(event): void {
   if (event.keyCode === 27) {
     event.preventDefault();
     closeDialog();
   }
 }
 
-function addFilters(reload = false) {
+function addFilters(reload = false): void {
   const textarea = document.getElementById("filters");
   void browser.runtime
     .sendMessage({
@@ -52,7 +53,7 @@ function addFilters(reload = false) {
     });
 }
 
-function closeDialog(apply = false, reload = false) {
+function closeDialog(apply = false, reload = false): void {
   document.getElementById("filters").disabled = true;
   void browser.runtime
     .sendMessage({
@@ -66,11 +67,11 @@ function closeDialog(apply = false, reload = false) {
       }
     })
     .then(() => {
-      closeCurrentTab();
+      void closeCurrentTab();
     });
 }
 
-function resetFilters() {
+function resetFilters(): void {
   void browser.tabs
     .sendMessage(targetPageId, {
       type: "composer.content.finished"
@@ -84,7 +85,7 @@ function resetFilters() {
     });
 }
 
-function previewFilters({ currentTarget }) {
+function previewFilters({ currentTarget }): void {
   const { preview } = currentTarget.dataset;
   const wasActive = preview === "active";
 
@@ -119,7 +120,7 @@ function previewFilters({ currentTarget }) {
     });
 }
 
-function updateComposerState({ currentTarget }) {
+function updateComposerState({ currentTarget }): void {
   const { value } = currentTarget;
   const disabled = !value.trim().length;
   const changed = initialFilterText !== value;
@@ -136,15 +137,19 @@ function updateComposerState({ currentTarget }) {
   document.getElementById("preview").disabled = changed;
 }
 
-function init() {
+function init(): void {
   // Attach event listeners
   window.addEventListener("keydown", onKeyDown, false);
 
   const block = document.getElementById("block");
-  block.addEventListener("click", () => addFilters());
+  block.addEventListener("click", () => {
+    addFilters();
+  });
 
   const blockReload = document.getElementById("block-reload");
-  blockReload.addEventListener("click", () => addFilters(true));
+  blockReload.addEventListener("click", () => {
+    addFilters(true);
+  });
 
   const preview = document.getElementById("preview");
   preview.addEventListener("click", previewFilters);
@@ -152,12 +157,12 @@ function init() {
   const filtersTextArea = document.getElementById("filters");
   filtersTextArea.addEventListener("input", updateComposerState);
 
-  document
-    .getElementById("unselect")
-    .addEventListener("click", () => resetFilters());
-  document
-    .getElementById("cancel")
-    .addEventListener("click", () => closeDialog());
+  document.getElementById("unselect").addEventListener("click", () => {
+    resetFilters();
+  });
+  document.getElementById("cancel").addEventListener("click", () => {
+    closeDialog();
+  });
 
   ext.onMessage.addListener((msg) => {
     switch (msg.type) {
@@ -180,7 +185,7 @@ function init() {
         // [1] - https://bugzilla.mozilla.org/show_bug.cgi?id=1418655
         return true;
       case "composer.dialog.close":
-        closeCurrentTab();
+        void closeCurrentTab();
         break;
     }
   });

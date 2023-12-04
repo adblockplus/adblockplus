@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { LocaleInfo } from "./locale.types";
+import { type LocaleInfo } from "./locale.types";
 
 /**
  * Retrieves user locale information

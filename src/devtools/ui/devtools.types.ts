@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { DevtoolsPanels } from "webextension-polyfill/namespaces/devtools_panels";
+import { type DevtoolsPanels } from "webextension-polyfill/namespaces/devtools_panels";
 
 /**
  * Function called upon a search action (start of a new search, search result

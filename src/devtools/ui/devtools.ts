@@ -16,7 +16,7 @@
  */
 
 import * as api from "../../core/api/front";
-import { ExtensionPanelWithSearch } from "./devtools.types";
+import { type ExtensionPanelWithSearch } from "./devtools.types";
 
 /**
  * Developer tools panel window
@@ -56,7 +56,7 @@ function unsetPanelWindow(): void {
 /**
  * Initializes developer tools
  */
-async function start() {
+async function start(): Promise<void> {
   const isEnabled = await api.prefs.get("show_devtools_panel");
   if (!isEnabled) {
     return;

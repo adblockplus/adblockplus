@@ -16,12 +16,12 @@
  */
 
 import {
-  Behavior,
-  Command,
-  CommandActor,
+  type Behavior,
+  type Command,
+  type CommandActor,
   CommandName,
   CommandVersion,
-  Content
+  type Content
 } from "./command-library.types";
 import * as logger from "../../logger/background";
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";
@@ -103,8 +103,11 @@ export function dismissCommand(ipmId: string): void {
   }
 
   const commandStorage = Prefs.get(commandStorageKey);
+  // We can't use a Map or Set for `commandStorage`, so we need dynamic
+  // deletion here.
+  // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
   delete commandStorage[command.ipm_id];
-  Prefs.set(commandStorageKey, commandStorage);
+  void Prefs.set(commandStorageKey, commandStorage);
 }
 
 /**
@@ -197,7 +200,7 @@ function retryExecuteCommands(commandName: CommandName): void {
 function storeCommand(command: Command): void {
   const storage = Prefs.get(commandStorageKey);
   storage[command.ipm_id] = command;
-  Prefs.set(commandStorageKey, storage);
+  void Prefs.set(commandStorageKey, storage);
 }
 
 /**

@@ -20,7 +20,7 @@ import * as api from "../../core/api/front";
 /**
  * Initializes options page
  */
-async function start() {
+async function start(): Promise<void> {
   const os = await api.app.get("os");
 
   const iframe = document.getElementById("content");
@@ -29,12 +29,12 @@ async function start() {
   }
 
   iframe.addEventListener("load", () => {
-    document.title = iframe.contentDocument?.title || "";
+    document.title = iframe.contentDocument?.title ?? "";
   });
 
   // Load the mobile version of the options page on Android.
   const frameUrl =
-    iframe.getAttribute("data-src-" + os) || iframe.getAttribute("data-src");
+    iframe.getAttribute("data-src-" + os) ?? iframe.getAttribute("data-src");
   if (!frameUrl) {
     return;
   }

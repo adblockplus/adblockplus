@@ -16,8 +16,8 @@
  */
 
 import {
-  Schedule,
-  Listener,
+  type Schedule,
+  type Listener,
   ScheduleType
 } from "./scheduled-event-emitter.types";
 
@@ -70,7 +70,7 @@ let schedules: Record<string, Schedule> = Object.create(null);
 /**
  * The map of listeners. Keys are event names.
  */
-const listeners: Map<string, Listener> = new Map();
+const listeners = new Map<string, Listener>();
 
 /**
  * Registers a listener for the given event name. Will replace any existing
@@ -156,6 +156,9 @@ export async function removeSchedule(name: string): Promise<void> {
     self.clearInterval(schedule.activationId);
   }
 
+  // We can't use a Map or Set for `schedules`, so we need dynamic deletion
+  // here.
+  // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
   delete schedules[name];
   await persistSchedules();
 }
@@ -233,22 +236,23 @@ function activateSchedules(): void {
 
     if (!schedule.runOnce) {
       // Intervals are to start immediately.
-      schedule.activationId = self.setInterval(
-        () => emitEvent(name),
-        schedule.period
-      );
+      schedule.activationId = self.setInterval(() => {
+        void emitEvent(name);
+      }, schedule.period);
       return;
     }
 
     if (!isDue) {
       // A timeout that is not due yet and needs to be planned.
-      schedule.activationId = self.setTimeout(() => emitEvent(name), delta);
+      schedule.activationId = self.setTimeout(() => {
+        void emitEvent(name);
+      }, delta);
       return;
     }
 
     // Finally, a timeout that is already due, and needs to be emitted
     // right away.
-    emitEvent(name);
+    void emitEvent(name);
   });
 }
 

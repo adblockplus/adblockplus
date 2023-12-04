@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { Info } from "./info.types";
+import { type Info } from "./info.types";
 import { getMajorVersion } from "./version";
 
 const addonName = "{{addonName}}";

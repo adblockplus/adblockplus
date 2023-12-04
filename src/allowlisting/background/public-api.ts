@@ -57,9 +57,7 @@ async function removeWebAllowlistingFilters(): Promise<void> {
     .filter(({ metadata }) => metadata && metadata.origin === "web")
     .map(({ filter }) => filter);
 
-  return ewe.filters.remove(
-    webAllowlistingFilters.map((filter) => filter.text)
-  );
+  await ewe.filters.remove(webAllowlistingFilters.map((filter) => filter.text));
 }
 
 /**
@@ -68,7 +66,7 @@ async function removeWebAllowlistingFilters(): Promise<void> {
 async function start(): Promise<void> {
   const authorizedKeys = Prefs.get("allowlisting_authorizedKeys") as string[];
   void ewe.allowlisting.setAuthorizedKeys(authorizedKeys);
-  void ewe.allowlisting.setAllowlistingCallback(onAllowlisting);
+  ewe.allowlisting.setAllowlistingCallback(onAllowlisting);
 
   // Make sure the premium state is only read after the storage was loaded
   await Prefs.untilLoaded;

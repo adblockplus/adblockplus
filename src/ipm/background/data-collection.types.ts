@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { CommandName } from "./command-library.types";
+import { type CommandName } from "./command-library.types";
 
 /**
  * The types of data sent to the IPM server

@@ -15,8 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { EventEmitter } from "../../../adblockpluschrome/lib/events";
-import api, { MessageProps } from "../../core/api/front";
+import { type EventEmitter } from "../../../adblockpluschrome/lib/events";
+import api, { type MessageProps } from "../../core/api/front";
 import { $, $$ } from "../../../js/dom.mjs";
 import { premiumTypes } from "../shared";
 

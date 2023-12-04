@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { AuthRequestEvent, TrustedEvent } from "./public-api.types";
+import { type AuthRequestEvent, type TrustedEvent } from "./public-api.types";
 
 /**
  * List of events that are waiting to be processed
@@ -151,8 +151,10 @@ function startProcessingInterval(): void {
     return;
   }
 
-  processNextEvent();
-  processingIntervalId = setInterval(processNextEvent, processingDelay);
+  void processNextEvent();
+  processingIntervalId = setInterval(() => {
+    void processNextEvent();
+  }, processingDelay);
 }
 
 /**

@@ -23,7 +23,7 @@ describe("app", () => {
       const sendRuntimeMessageSpy = jest.spyOn(browser.runtime, "sendMessage");
 
       const what = "applicationVersion";
-      app.get(what);
+      void app.get(what);
 
       expect(sendRuntimeMessageSpy).toHaveBeenCalledTimes(1);
       expect(sendRuntimeMessageSpy).toHaveBeenCalledWith(

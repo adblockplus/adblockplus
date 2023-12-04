@@ -18,8 +18,8 @@
 import api from "../../core/api/front";
 
 import {
-  PaymentAcknowledgedPayload,
-  PaymentSuccessPayload
+  type PaymentAcknowledgedPayload,
+  type PaymentSuccessPayload
 } from "./activation.types";
 
 const trustedOrigin = "https://accounts.adblockplus.org";
@@ -29,9 +29,7 @@ const trustedOrigin = "https://accounts.adblockplus.org";
  *
  * @param event - Message event
  */
-async function onMessage(
-  event: MessageEvent<PaymentSuccessPayload>
-): Promise<void> {
+function onMessage(event: MessageEvent<PaymentSuccessPayload>): void {
   if (event.origin !== trustedOrigin) {
     return;
   }
@@ -48,16 +46,25 @@ async function onMessage(
 
   window.removeEventListener("message", onMessage);
 
+  void activateLicense(data.userId, event.origin);
+}
+
+/**
+ * Tries to activate premium for the given user ID. Will respond to the given
+ * origin if activation was successful.
+ *
+ * @param userId The user ID to activate
+ * @param origin The message origin to return the ack signal to
+ */
+async function activateLicense(userId: string, origin: string): Promise<void> {
   try {
-    const isSuccess = await api.premium.activate(data.userId);
+    const isSuccess = await api.premium.activate(userId);
     if (!isSuccess) {
       throw new Error("Error in background page");
     }
 
-    window.postMessage(
-      { ack: true } as PaymentAcknowledgedPayload,
-      event.origin
-    );
+    const payload: PaymentAcknowledgedPayload = { ack: true };
+    window.postMessage(payload, origin);
   } catch (ex) {
     console.error("Failed to activate Premium license", ex);
   }

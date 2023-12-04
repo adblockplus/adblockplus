@@ -16,9 +16,9 @@
  */
 
 import {
-  Command,
-  Content,
-  LicenseStateBehavior
+  type Command,
+  type Content,
+  type LicenseStateBehavior
 } from "../../../ipm/background";
 
 /**

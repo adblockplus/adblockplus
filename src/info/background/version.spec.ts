@@ -33,14 +33,18 @@ describe("info", () => {
 
     it("should not throw when the empty string is passed", () => {
       const version = "";
-      const func = () => getMajorVersion(version);
+      const func = (): void => {
+        getMajorVersion(version);
+      };
 
       expect(func).not.toThrow();
     });
 
     it("should not throw when a non-conforming version string is passed", () => {
       const version = "Not..A..Semver..Version";
-      const func = () => getMajorVersion(version);
+      const func = (): void => {
+        getMajorVersion(version);
+      };
 
       expect(func).not.toThrow();
     });

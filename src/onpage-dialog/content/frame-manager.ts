@@ -16,10 +16,10 @@
  */
 
 import * as api from "../../core/api/front";
-import { Message, isMessage } from "../../polyfills/shared";
+import { type Message, isMessage } from "../../polyfills/shared";
 import { prepareElementForUnload } from "../../unload-cleanup/content";
 import { DisplayValue } from "../../unload-cleanup/shared";
-import { ResizeMessage, ShowMessage } from "../shared";
+import { type ResizeMessage, type ShowMessage } from "../shared";
 
 /**
  * On-page dialog frame
@@ -73,7 +73,7 @@ function handleMessage(message: unknown): void {
  * Removes frame to hide on-page dialog, if it is shown
  */
 function hideDialog(): void {
-  if (overlay && overlay.parentNode) {
+  if (overlay?.parentNode) {
     overlay.parentNode.removeChild(overlay);
   }
   iframe = null;

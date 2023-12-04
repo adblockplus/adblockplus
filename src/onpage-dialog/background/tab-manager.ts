@@ -17,7 +17,7 @@
 
 import * as ewe from "@eyeo/webext-sdk";
 
-import { Tabs } from "webextension-polyfill";
+import { type Tabs } from "webextension-polyfill";
 
 import { port } from "../../../adblockpluschrome/lib/messaging/port";
 import { TabSessionStorage } from "../../../adblockpluschrome/lib/storage/tab-session";
@@ -33,18 +33,21 @@ import {
   recordEvent
 } from "../../ipm/background";
 import * as logger from "../../logger/background";
-import { MessageSender, TabRemovedEventData } from "../../polyfills/background";
-import { Message, isMessage } from "../../polyfills/shared";
-import { HideMessage, PingMessage, StartInfo } from "../shared";
 import {
-  DialogBehavior,
+  type MessageSender,
+  type TabRemovedEventData
+} from "../../polyfills/background";
+import { type Message, isMessage } from "../../polyfills/shared";
+import { type HideMessage, type PingMessage, type StartInfo } from "../shared";
+import {
+  type DialogBehavior,
   DialogEventType,
   isDialogBehavior,
   isDialogContent,
   setDialogCommandHandler
 } from "./middleware";
 import { clearStats, getStats, isStats, setStats } from "./stats";
-import { Stats } from "./stats.types";
+import { type Stats } from "./stats.types";
 import {
   shouldBeDismissed,
   shouldBeShown,
@@ -69,7 +72,8 @@ const unassignedIpmIds = new Set<string>();
 async function dismissDialog(tabId: number, ipmId: string): Promise<void> {
   logger.debug("[onpage-dialog]: Dismiss dialog");
   try {
-    await sendMessage(tabId, { type: "onpage-dialog.hide" } as HideMessage);
+    const message: HideMessage = { type: "onpage-dialog.hide" };
+    await sendMessage(tabId, message);
     await assignedIpmIds.delete(tabId);
   } catch (ex) {
     // Ignore if tab has already been removed
@@ -123,7 +127,7 @@ async function forwardMessage(
     return;
   }
 
-  return sendMessage(sender.page.id, message);
+  return await sendMessage(sender.page.id, message);
 }
 
 /**
@@ -357,8 +361,8 @@ async function handleTabsUpdatedEvent(
  *
  * @returns message response
  */
-function sendMessage(tabId: number, message: Message): Promise<unknown> {
-  return browser.tabs.sendMessage(tabId, message, { frameId: 0 });
+async function sendMessage(tabId: number, message: Message): Promise<unknown> {
+  return await browser.tabs.sendMessage(tabId, message, { frameId: 0 });
 }
 
 /**
@@ -437,6 +441,7 @@ async function start(): Promise<void> {
   assignedIpmIds.on("tab-removed", handleTabRemovedEvent);
 
   // Handle commands
+  // eslint-disable-next-line @typescript-eslint/no-misused-promises
   browser.tabs.onUpdated.addListener(handleTabsUpdatedEvent);
   setDialogCommandHandler(handleDialogCommand);
 }

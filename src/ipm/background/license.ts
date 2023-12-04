@@ -16,7 +16,7 @@
  */
 
 import { getPremiumState } from "../../premium/background";
-import { LicenseStateBehavior } from "./command-library.types";
+import { type LicenseStateBehavior } from "./command-library.types";
 import { LicenseState } from "./data-collection.types";
 
 /**

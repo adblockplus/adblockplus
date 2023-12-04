@@ -16,7 +16,7 @@
  */
 
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";
-import { LogFunction, LogLevel } from "./logger.types";
+import { type LogFunction, LogLevel } from "./logger.types";
 
 /**
  * Logs given data using provided log function
@@ -32,8 +32,6 @@ function log(level: LogLevel, fn: LogFunction, ...data: any[]): void {
 
   fn(...data);
 }
-
-/* eslint-disable no-console */
 
 /**
  * Logs messages for debugging
@@ -62,5 +60,3 @@ export const info = log.bind(null, LogLevel.info, console.info);
  * @param ...data - Data to log
  */
 export const warn = log.bind(null, LogLevel.warn, console.warn);
-
-/* eslint-enable no-console */

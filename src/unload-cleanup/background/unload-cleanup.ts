@@ -17,7 +17,7 @@
 
 import { info } from "../../info/background";
 import { port } from "../../../adblockpluschrome/lib/messaging/port";
-import { MessageSender } from "../../polyfills/background";
+import { type MessageSender } from "../../polyfills/background";
 import { displayValueList, isGetClassNameMessage } from "../shared";
 import { className } from "./unload-cleanup.types";
 

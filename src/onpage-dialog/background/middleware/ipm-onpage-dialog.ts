@@ -16,10 +16,10 @@
  */
 
 import {
-  Command,
-  CommandHandler,
+  type Command,
+  type CommandHandler,
   CommandName,
-  ParamDefinitionList,
+  type ParamDefinitionList,
   defaultLicenseState,
   isNotEmpty,
   isSafeUrl,
@@ -30,10 +30,10 @@ import {
 } from "../../../ipm/background";
 import * as logger from "../../../logger/background";
 import {
-  DialogBehavior,
-  DialogCommand,
-  DialogContent,
-  DialogParams,
+  type DialogBehavior,
+  type DialogCommand,
+  type DialogContent,
+  type DialogParams,
   Timing
 } from "./ipm-onpage-dialog.types";
 
@@ -101,7 +101,7 @@ function getBehavior(command: Command): DialogBehavior | null {
     target: command.button_target,
     timing: command.timing,
     domainList: command.domain_list,
-    licenseStateList: command.license_state_list || defaultLicenseState
+    licenseStateList: command.license_state_list ?? defaultLicenseState
   };
 }
 

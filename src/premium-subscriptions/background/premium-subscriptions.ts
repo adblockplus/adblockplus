@@ -28,9 +28,9 @@ import { premiumTypes } from "../shared";
  */
 async function getPremiumSubscriptions(): Promise<Recommendation[]> {
   // The subscription of the "annoyances" type is the DC subscription
-  return (await ewe.subscriptions.getRecommendations()).filter(({ type }) =>
-    premiumTypes.has(type)
-  );
+  return ewe.subscriptions
+    .getRecommendations()
+    .filter(({ type }) => premiumTypes.has(type));
 }
 
 /**

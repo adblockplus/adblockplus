@@ -15,8 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import Browser from "webextension-polyfill";
-import { PremiumActivateOptions } from "../shared";
+import type Browser from "webextension-polyfill";
+import { type PremiumActivateOptions } from "../shared";
 
 /**
  * Strings accepted for api.app.get's first prop
