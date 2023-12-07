@@ -115,10 +115,10 @@ export function validateParams<T>(
       // Typescript is considering `definition.name` to be of type
       // Symbol (keyof T), so we need to convert it into a string
       const name = String(definition.name);
-      const param = String(command[name]);
+      const param = command[name];
       return definition.validate(param)
         ? ""
-        : `Invalid value for parameter "${name}", got "${param}":`;
+        : `Invalid value for parameter "${name}", got "${String(param)}":`;
     })
     .filter((result) => result !== "");
 }
