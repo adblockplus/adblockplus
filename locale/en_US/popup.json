@@ -1,7 +1,7 @@
 {
   "idle_header": {
     "description": "https://gitlab.com/eyeo/specs/spec/-/blob/9f5b13a5e5d14cc8da5c28c4bac7698a164cc847/spec/abp/popup.md#inactive",
-    "message": "update on main There's nothing to block on this page!"
+    "message": "There's nothing to block on this page!"
   },
   "premium_upgrade": {
     "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/346793c03b74f446073c6653bdb7f84c7f08f680/spec/abp/popup.md#free-users",
