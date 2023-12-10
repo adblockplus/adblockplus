@@ -18,7 +18,7 @@
 import {getUUID} from "../../../src/id/shared/index.ts";
 import {convertDoclinks} from "../../common.mjs";
 import {$, asIndentedString} from "../../dom.mjs";
-import {initI18n, setElementLinks} from "../../i18n.mjs";
+import {initI18n, setElementLinks} from "../../../src/i18n/index.ts";
 import {
   collectData,
   closeRequestsCollectingTab,

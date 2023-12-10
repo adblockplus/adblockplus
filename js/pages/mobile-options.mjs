@@ -17,7 +17,7 @@
 
 import api from "../../src/core/api/front/index.ts";
 import {convertDoclinks, getDoclink, getErrorMessage} from "../common.mjs";
-import {initI18n} from "../i18n.mjs";
+import {initI18n} from "../../src/i18n/index.ts";
 
 import "../../src/mobile-options/ui/mobile-options.css";
 

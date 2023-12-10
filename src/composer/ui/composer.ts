@@ -24,7 +24,7 @@
 import "./composer.css";
 import { closeCurrentTab } from "../../polyfills/ui";
 import { getErrorMessage } from "../../../js/common.mjs";
-import { initI18n, stripTagsUnsafe } from "../../../js/i18n.mjs";
+import { initI18n, stripTagsUnsafe } from "../../i18n";
 
 let initialFilterText = "";
 let targetPageId = null;

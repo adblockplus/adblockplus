@@ -15,18 +15,4 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import api from "../src/core/api/front/index.ts";
-import {setElementLinks, setElementText} from "../src/i18n/index.ts";
-
-function initCopyrightNotice()
-{
-  api.doclinks.get("eyeo").then((url) =>
-  {
-    const year = new Date().getFullYear().toString();
-    const notice = document.getElementById("copyright-notice");
-    setElementText(notice, "common_copyright", year);
-    setElementLinks("copyright-notice", url);
-  });
-}
-
-initCopyrightNotice();
+export * from "./i18n";

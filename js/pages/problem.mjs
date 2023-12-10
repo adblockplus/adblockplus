@@ -18,7 +18,7 @@
 import api from "../../src/core/api/front/index.ts";
 import {convertDoclinks} from "../common.mjs";
 import {$} from "../dom.mjs";
-import {initI18n} from "../i18n.mjs";
+import {initI18n} from "../../src/i18n/index.ts";
 
 import "../../src/problem/ui/problem.css";
 import "../landing.mjs";
