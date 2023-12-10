@@ -20,7 +20,7 @@ import {bind, wire} from "hyperhtml";
 import api from "../../src/core/api/front/index.ts";
 import {convertDoclinks} from "../common.mjs";
 import {$} from "../dom.mjs";
-import {initI18n} from "../i18n.mjs";
+import {initI18n} from "../../src/i18n/index.ts";
 
 import "../../src/updates/ui/updates.css";
 // We need to import io-element to initialize the i18n intent we're using

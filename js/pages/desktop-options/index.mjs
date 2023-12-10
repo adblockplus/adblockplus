@@ -41,7 +41,7 @@ import {
   setElementLinks,
   setElementText,
   stripTagsUnsafe
-} from "../../i18n.mjs";
+} from "../../../src/i18n/index.ts";
 
 import "../../../src/desktop-options/ui/desktop-options.css";
 import "../../io-filter-table.mjs";

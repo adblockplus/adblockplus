@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { initI18n } from "../../../js/i18n.mjs";
+import { initI18n } from "../../i18n";
 import { $, $$ } from "../../../js/dom.mjs";
 import api from "../../core/api/front";
 import { closeCurrentTab } from "../../polyfills/ui";

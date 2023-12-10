@@ -16,7 +16,7 @@
  */
 
 import {$} from "../dom.mjs";
-import {initI18n} from "../i18n.mjs";
+import {initI18n} from "../../src/i18n/index.ts";
 
 import "../../src/popup-dummy/ui/popup-dummy.css";
 import "../io-circle-toggle.mjs";

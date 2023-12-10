@@ -17,7 +17,11 @@
 
 import api from "../../src/core/api/front/index.ts";
 import {convertDoclinks} from "../common.mjs";
-import {initI18n, setElementLinks, setElementText} from "../i18n.mjs";
+import {
+  initI18n,
+  setElementLinks,
+  setElementText
+} from "../../src/i18n/index.ts";
 
 import "../../src/first-run/ui/first-run.css";
 

@@ -18,7 +18,11 @@
 import api from "../../src/core/api/front/index.ts";
 import {convertDoclinks} from "../common.mjs";
 import {$} from "../dom.mjs";
-import {initI18n, setElementText, stripTagsUnsafe} from "../i18n.mjs";
+import {
+  initI18n,
+  setElementText,
+  stripTagsUnsafe
+} from "../../src/i18n/index.ts";
 
 import "../../src/day1/ui/day1.css";
 import "../landing.mjs";
