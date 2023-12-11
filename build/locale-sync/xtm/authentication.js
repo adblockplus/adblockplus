@@ -41,6 +41,8 @@ const getToken = () =>
 
   return fetch(uri, getTokenOptions).then((res) =>
   {
+    // eslint-disable-next-line no-console
+    res.json().then(console.log);
     if (!res.ok)
       return Promise.reject(res.json());
     return res.json();
