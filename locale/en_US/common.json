@@ -64,5 +64,8 @@
   "filter_action_failed": {
     "description": "One or more filters could not be saved or updated.",
     "message": "Something went wrong. Please try again."
+  },
+  "foo": {
+    "message": "bar"
   }
 }
