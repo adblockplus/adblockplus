@@ -41,6 +41,7 @@ const getToken = () =>
 
   return fetch(uri, getTokenOptions).then((res) =>
   {
+    res.json().then(console.log);
     if (!res.ok)
       return Promise.reject(res.json());
     return res.json();
