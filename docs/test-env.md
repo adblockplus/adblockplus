@@ -30,6 +30,8 @@ No parameters.
 | filtersDisabled | `true` | Show dialog as if all the filters of an updatable subscription were disabled[^subscriptions-filters] |
 | downloadStatus | `synchronize_ok` | Set filter list download status: Filter list download succeeded (default) |
 | | `synchronize_connection_error` | Set filter list download status: Connection error |
+| | `synchronize_diff_error` | Set filter list download status: Filter list diff update error |
+| | `synchronize_diff_too_many_filters` | Set filter list download status: Filter list diff update too large |
 | | `synchronize_invalid_data` | Set filter list download status: Invalid filter list |
 | | `synchronize_invalid_url` | Set filter list download status: Filter list has invalid URL |
 | | `synchronize_checksum_mismatch` | (deprecated) Set filter list download status: Checksum mismatch |
