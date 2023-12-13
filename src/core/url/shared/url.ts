@@ -138,8 +138,9 @@ function isValidHostname(hostname: string): boolean {
 
   // Based on
   // https://en.wikipedia.org/wiki/Hostname#Restrictions_on_valid_hostnames
-  if (hostname[hostname.length - 1] === ".")
+  if (hostname[hostname.length - 1] === ".") {
     hostname = hostname.substring(0, hostname.length - 1);
+  }
 
   if (hostname.length > 253) return false;
 

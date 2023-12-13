@@ -155,7 +155,7 @@ async function composeFilters(
         types: ["elemhide"]
       }
     );
-    const isElementAllowlisted = !!elementAllowlistingFilters.length;
+    const isElementAllowlisted = elementAllowlistingFilters.length > 0;
     if (filters.length === 0 && !isElementAllowlisted) {
       // Generate CSS selectors based on the element's "id" and
       // "class" attribute.
@@ -464,8 +464,9 @@ async function updateContextMenu(updatedPage): Promise<void> {
     active: true,
     lastFocusedWindow: true
   });
-  if (tabs.length > 0 && (!updatedPage || updatedPage.id === tabs[0].id))
+  if (tabs.length > 0 && (!updatedPage || updatedPage.id === tabs[0].id)) {
     await showOrHideContextMenu(updatedPage || new ext.Page(tabs[0]));
+  }
 }
 
 /**

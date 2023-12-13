@@ -164,8 +164,9 @@ function loadI18nStrings(): void {
   // Content of Template is not rendered on runtime so we need to add
   // translation strings for each Template documentFragment content
   // individually.
-  for (const template of document.querySelectorAll("template"))
+  for (const template of document.querySelectorAll("template")) {
     resolveStringNames(template.content);
+  }
 }
 
 async function setLanguageAttributes(): Promise<void> {
