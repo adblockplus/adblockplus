@@ -36,14 +36,5 @@ module.exports = {
     // We agreed that we don't want to allow single line code blocks. The
     // decision was made during a dev sync meeting on October 17th, 2023.
     "curly": "error"
-  },
-  overrides: [
-    {
-      // Let ESLint know that we use Jest for our specs.
-      files: ["*.spec.ts"],
-      env: {
-        jest: true
-      }
-    }
-  ]
+  }
 };

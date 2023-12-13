@@ -2191,6 +2191,16 @@ body:not([data-dialog]) #dialog
   will-change: transform;
 }
 
+#data-collection
+{
+  display: none;
+}
+
+html[data-application="firefox"] #data-collection
+{
+  display: block;
+}
+
 @keyframes show-notification
 {
   0%

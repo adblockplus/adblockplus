@@ -574,5 +574,17 @@
   "options_donate_button": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/677a0a3c68c7e96369301813d8b413c6ecd1b381/spec/abp/desktop-settings/index.md#store-rating",
     "message": "Donate"
+  },
+  "options_data_collection_opt_out_header": {
+    "message": "Data Collection",
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/f37613353f52e22a8034a00a43d497e012a45ce1/spec/abp/desktop-settings/advanced-tab.md#data-collection-section"
+  },
+  "options_data_collection_opt_out_description": {
+    "message": "In order to provide the best possible user experience, the Adblock Plus extension collects some user data by default. You can choose to opt-out of data collection here.",
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/f37613353f52e22a8034a00a43d497e012a45ce1/spec/abp/desktop-settings/advanced-tab.md#data-collection-section"
+  },
+  "options_data_collection_opt_out_label": {
+    "message": "Opt-out of all data collection in the Adblock Plus extension.",
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/f37613353f52e22a8034a00a43d497e012a45ce1/spec/abp/desktop-settings/advanced-tab.md#data-collection-section"
   }
 }

@@ -29,9 +29,9 @@ const prefsData = {
   show_devtools_panel: true,
   show_statsinicon: true,
   subscriptions_exceptionsurl: subscriptionUrls.URL_ALLOWLIST,
-  subscriptions_exceptionsurl_privacy:
-    subscriptionUrls.URL_ALLOWLIST_PRIVACY,
-  ui_warn_tracking: true
+  subscriptions_exceptionsurl_privacy: subscriptionUrls.URL_ALLOWLIST_PRIVACY,
+  ui_warn_tracking: true,
+  data_collection_opt_out: false
 };
 
 export default prefsData;

@@ -337,7 +337,8 @@ export type PrefsGetWhat =
   | "remote_first_run_page_url"
   | "recommend_language_subscriptions"
   | "premium_manage_page_url"
-  | "premium_upgrade_page_url";
+  | "premium_upgrade_page_url"
+  | "data_collection_opt_out";
 
 /**
  * Subscription recommendation

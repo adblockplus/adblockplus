@@ -343,6 +343,14 @@ defaults.onpage_dialog_timing_configurations = {
 };
 
 /**
+ * Whether to send user data to moengage or not (marketing CMS)
+ * Setting this to true will disable all IPMs
+ *
+ * @type {boolean}
+ */
+defaults.data_collection_opt_out = false;
+
+/**
   * @namespace
   * @static
   */

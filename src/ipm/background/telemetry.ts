@@ -60,6 +60,11 @@ async function processResponse(response: Response): Promise<void> {
  * Sends a ping together with telemetry data
  */
 export async function sendPing(): Promise<void> {
+  // Disable IPM when user opted out of data collection.
+  if (Prefs.get("data_collection_opt_out") === true) {
+    return;
+  }
+
   const payload = await getPayload();
 
   // We're deleting user events regardless of whether sending them will be

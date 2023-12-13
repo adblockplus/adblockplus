@@ -12,10 +12,14 @@ module.exports = {
   coverageDirectory: "coverage",
   coverageReporters: ["json", "html", "text"],
   setupFiles: [
-    "./mocks/js/polyfill.js",
+    "jest-webextension-mock",
+    "./mocks/js/jest-polyfill.js",
     "./mocks/js/ext/common.js",
     "./mocks/js/ext/content.js"
   ],
+  globals: {
+    fetch: global.fetch
+  },
   testEnvironment: "jsdom",
   testMatch: ["**/*.spec.ts"]
 };

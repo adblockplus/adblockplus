@@ -1859,7 +1859,8 @@ api.prefs.listen([
   "shouldShowBlockElementMenu",
   "show_devtools_panel",
   "show_statsinicon",
-  "ui_warn_tracking"
+  "ui_warn_tracking",
+  "data_collection_opt_out"
 ]);
 api.premium.listen(["changed"]);
 api.subscriptions.listen(["added", "changed", "filtersDisabled", "removed"]);
