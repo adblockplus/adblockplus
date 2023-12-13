@@ -72,7 +72,11 @@ const syncErrorIds = new Map([
   ["synchronize_invalid_data",
    "options_filterList_lastDownload_invalidData"],
   ["synchronize_checksum_mismatch",
-   "options_filterList_lastDownload_checksumMismatch"]
+   "options_filterList_lastDownload_checksumMismatch"],
+  ["synchronize_diff_error",
+   "options_filterList_lastDownload_diffError"],
+  ["synchronize_diff_too_many_filters",
+   "options_filterList_lastDownload_diffTooManyFilters"]
 ]);
 const filtersDisabledErrorId = "options_filterList_filtersDisabled";
 const subscriptionErrorIds = new Map();

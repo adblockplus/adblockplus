@@ -23,6 +23,7 @@ import {subscriptionDetails} from "../config/subscriptions.mjs";
 
 export function Subscription(url)
 {
+  this.updatable = true;
   this.url = url;
   this._disabled = false;
   this._lastDownload = 1234;
@@ -35,6 +36,7 @@ export function Subscription(url)
   if (details)
   {
     this._disabled = !!details.disabled;
+    this.updatable = !!details.updatable;
     this.title = details.title || "";
     this.updatable = details.updatable;
     if (details.filterText)
