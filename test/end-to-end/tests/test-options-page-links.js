@@ -137,7 +137,7 @@ describe("test options page links", function()
         dataLinks.forumUrlFirefox);
     }
     else if (browser.capabilities.browserName == "chrome" &&
-      browser.capabilities.browserName == "MicrosoftEdge")
+      browser.capabilities.browserName == "msedge")
     {
       await helpPage.switchToForumTabChrome();
       expect(await helpPage.getCurrentUrl()).to.include(

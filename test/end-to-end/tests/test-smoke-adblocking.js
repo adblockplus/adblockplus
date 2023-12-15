@@ -26,7 +26,6 @@ const AllowlistedWebsitesPage =
   require("../page-objects/allowlistedWebsites.page");
 const GeneralPage = require("../page-objects/general.page");
 const ExtensionsPage = require("../page-objects/extensions.page");
-const GooglePage = require("../page-objects/google.page");
 const TestPages = require("../page-objects/testPages.page");
 const siteKeyData = require("../test-data/data-smoke-tests").siteKeyData;
 const testData = require("../test-data/data-smoke-tests");
@@ -58,13 +57,13 @@ describe("test adblocking as part of the smoke tests", function()
         (dataSet.website == "http://cook.com" &&
         browser.capabilities.browserName == "chrome") ||
         (dataSet.website == "http://zins.de" &&
-        browser.capabilities.browserName == "MicrosoftEdge"))
+        browser.capabilities.browserName == "msedge"))
     {
       it("should test sitekey: " + dataSet.website, async function()
       {
         await browser.newWindow(dataSet.website);
         const generalPage = new GeneralPage(browser);
-        if (browser.capabilities.browserName == "MicrosoftEdge")
+        if (browser.capabilities.browserName == "msedge")
         {
           try
           {
@@ -83,7 +82,7 @@ describe("test adblocking as part of the smoke tests", function()
         }
         await browser.pause(randomIntFromInterval(1500, 2500));
         await browser.refresh();
-        if (browser.capabilities.browserName == "MicrosoftEdge")
+        if (browser.capabilities.browserName == "msedge")
         {
           try
           {
@@ -126,9 +125,9 @@ describe("test adblocking as part of the smoke tests", function()
   {
     await browser.newWindow(testData.blockHideUrl);
     const testPages = new TestPages(browser);
-    await waitForCondition(
-      ((await testPages.getAwe2FilterText()).includes("awe2.js was blocked")),
-      150000, true, randomIntFromInterval(500, 1500));
+    await waitForCondition("getAwe2FilterText", testPages, 15000, true,
+                           randomIntFromInterval(500, 1500),
+                           "awe2.js was blocked");
     expect(await testPages.getBanneradsFilterText()).to.include(
       "bannerads/* was blocked");
     expect(await testPages.
@@ -170,7 +169,7 @@ describe("test adblocking as part of the smoke tests", function()
       if (await allowistedWebsitesPage.getCurrentTitle() !=
         "Blocking and hiding")
       {
-        await allowistedWebsitesPage.switchToTab("Blocking and hiding");
+        await allowistedWebsitesPage.switchToTab(/blocking-hiding-testpage/);
         await browser.pause(2000);
         await browser.refresh();
         await browser.pause(3000);
@@ -201,7 +200,7 @@ describe("test adblocking as part of the smoke tests", function()
       if (await allowistedWebsitesPage.getCurrentTitle() !=
         "Blocking and hiding")
       {
-        await allowistedWebsitesPage.switchToTab("Blocking and hiding");
+        await allowistedWebsitesPage.switchToTab(/blocking-hiding-testpage/);
         await browser.refresh();
       }
     }
@@ -221,26 +220,33 @@ describe("test adblocking as part of the smoke tests", function()
     const generalPage = new GeneralPage(browser);
     expect(await generalPage.
       isAllowAcceptableAdsCheckboxSelected()).to.be.true;
-    const googlePage = new GooglePage(browser);
-    await googlePage.init();
+    const testPages = new TestPages(browser);
+    const ecosiaSearchUrl =
+      "https://www.ecosia.org/search?method=index&q=hotels";
+    await browser.newWindow(ecosiaSearchUrl);
+    await testPages.switchToTab(/ecosia/);
+    await browser.refresh();
     try
     {
-      await googlePage.clickAcceptAllButton();
+      await waitForCondition("isEcosiaAdPillDisplayed", testPages, 25000,
+                             true, randomIntFromInterval(1500, 3500));
     }
-    catch (Exception) {}
-    await googlePage.searchForText("rent a car");
-    await waitForCondition(
-      (await googlePage.isSponsoredTagDisplayed() == true),
-      150000, true, randomIntFromInterval(500, 1500));
+    catch (Exception)
+    {
+      await waitForCondition("isEcosiaAdPillAlternateDisplayed", testPages,
+                             25000, true, randomIntFromInterval(1500, 3500));
+    }
     const extensionsPage = new ExtensionsPage(browser);
     await extensionsPage.init();
     await extensionsPage.clickReloadHelperExtensionButton();
+    await browser.pause(randomIntFromInterval(1500, 2500));
     await switchToABPOptionsTab();
     await generalPage.init();
     await generalPage.clickAllowAcceptableAdsCheckbox();
-    await googlePage.init();
-    await googlePage.searchForText("rent a car");
+    await browser.newWindow(ecosiaSearchUrl);
+    await testPages.switchToTab(/ecosia/);
+    await browser.refresh();
     await browser.pause(randomIntFromInterval(1500, 2500));
-    expect(await googlePage.isSponsoredTagDisplayed(true)).to.be.true;
+    expect(await testPages.isEcosiaAdPillDisplayed(true)).to.be.true;
   });
 });

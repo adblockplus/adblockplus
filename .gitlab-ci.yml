@@ -484,12 +484,15 @@ uitests:all:
   variables:
     CONFIGURATION: end-to-end
     SUITE: all
+
+uitests:all:scheduled:
+  extends: .uitests
+  variables:
+    CONFIGURATION: end-to-end
+    SUITE: all
   rules:
-    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
-      when: never
-    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: always
-    - when: manual
       allow_failure: true
 
 uitests:e2e:

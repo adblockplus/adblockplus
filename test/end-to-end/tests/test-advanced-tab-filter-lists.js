@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence, randomIntFromInterval,
+const {afterSequence, beforeSequence,
        globalRetriesNumber} = require("../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
@@ -61,90 +61,44 @@ describe("test advanced tab - filter lists", function()
 
   it("should update all filter lists", async function()
   {
+    // Wait for 1 minute, for the Last Updated text to say "minutes ago"
+    await browser.pause(61000);
+    await browser.refresh();
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
-    advancedPage.clickUpdateAllFilterlistsButton();
-    let updatingDisplayed = false;
-    for (let i = 0; i < 10; i++)
-    {
-      try
-      {
-        expect(await advancedPage.
-          isAbpFiltersFLUpdating()).to.be.true;
-        updatingDisplayed = true;
-        break;
-      }
-      catch (Exception)
-      {
-        await browser.pause(randomIntFromInterval(500, 1500));
-        advancedPage.clickUpdateAllFilterlistsButton();
-      }
-    }
-    expect(updatingDisplayed).to.be.true;
-    advancedPage.clickUpdateAllFilterlistsButton();
-    updatingDisplayed = false;
-    for (let i = 0; i < 10; i++)
-    {
-      try
-      {
-        expect(await advancedPage.
-          isEasyListFLUpdating()).to.be.true;
-        updatingDisplayed = true;
-        break;
-      }
-      catch (Exception)
-      {
-        await browser.pause(randomIntFromInterval(500, 1500));
-        advancedPage.clickUpdateAllFilterlistsButton();
-      }
-    }
-    advancedPage.clickUpdateAllFilterlistsButton();
     expect(await advancedPage.
-      isAllowNonintrusiveAdvertisingFLUpdating()).to.be.true;
+      waitForAbpFiltersFLLastUpdatedTextToEqual("minutes ago")).to.be.true;
     expect(await advancedPage.
-      isAbpFiltersFLUpdatingDone()).to.be.true;
+      waitForEasyListFLLastUpdatedTextToEqual("minutes ago")).to.be.true;
     expect(await advancedPage.
-      isEasyListFLUpdatingDone()).to.be.true;
-    expect(await advancedPage.
-      isAllowNonintrusiveAdvertisingFLUpdatingDone()).to.be.true;
+      waitForAllowNonintrusiveFLLastUpdatedTextToEqual("minutes ago")).
+      to.be.true;
+    await advancedPage.clickUpdateAllFilterlistsButton();
     expect(await advancedPage.
       waitForAbpFiltersFLLastUpdatedTextToEqual("Just now")).to.be.true;
     expect(await advancedPage.
       waitForEasyListFLLastUpdatedTextToEqual("Just now")).to.be.true;
     expect(await advancedPage.
       waitForAllowNonintrusiveFLLastUpdatedTextToEqual("Just now")).to.be.true;
-  }, 4);
+  });
 
   it("should update a filter list", async function()
   {
+    // Wait for 1 minute, for the Last Updated text to say "minutes ago"
+    await browser.pause(61000);
+    await browser.refresh();
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
     await advancedPage.clickEasyListFLGearIcon();
     await advancedPage.clickEasyListFLUpdateNowButton();
-    await advancedPage.clickEasyListFLGearIcon();
-    advancedPage.clickEasyListFLUpdateNowButton();
-    let updatingDisplayed = false;
-    for (let i = 0; i < 20; i++)
-    {
-      try
-      {
-        expect(await advancedPage.
-          isEasyListFLUpdating()).to.be.true;
-        updatingDisplayed = true;
-        break;
-      }
-      catch (Exception)
-      {
-        await browser.pause(randomIntFromInterval(250, 750));
-        advancedPage.clickEasyListFLUpdateNowButton();
-      }
-    }
-    expect(updatingDisplayed).to.be.true;
     expect(await advancedPage.
-      isAbpFiltersFLUpdating(1000, true)).to.be.true;
+      waitForEasyListFLLastUpdatedTextToEqual("Just now")).to.be.true;
     expect(await advancedPage.
-      isAllowNonintrusiveAdvertisingFLUpdating(1000, true)).to.be.true;
-  }, 4);
+      waitForAbpFiltersFLLastUpdatedTextToEqual("minutes ago")).to.be.true;
+    expect(await advancedPage.
+      waitForAllowNonintrusiveFLLastUpdatedTextToEqual("minutes ago")).
+      to.be.true;
+  });
 
   it("should go to filter list web page", async function()
   {
@@ -279,7 +233,7 @@ describe("test advanced tab - filter lists", function()
     else
     {
       await advancedPage.typeTextToFilterListUrlInput(
-        "https://gitlab.com/-/snippets/1997334/raw");
+        "https://gitlab.com/-/snippets/1997334/raw", true);
     }
     await advancedPage.clickAddAFilterListButton();
     if (browser.capabilities.browserName == "firefox")

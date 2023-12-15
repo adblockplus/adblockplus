@@ -182,6 +182,11 @@ class AdvancedPage extends BasePage
     return $("//io-filter-list");
   }
 
+  async customFilterListsTableElementText(text)
+  {
+    return $("//div[@title='" + text + "']");
+  }
+
   get customFilterListsTableRowsTexts()
   {
     return $("//io-filter-list/table").$$("//div[@class='content']");
@@ -499,7 +504,7 @@ class AdvancedPage extends BasePage
 
   async clickCopyCustomFLButton()
   {
-    await (await this.copyCustomFLButton).click();
+    await this.scrollIntoViewAndClick(this.copyCustomFLButton);
   }
 
   async clickCustomFilterListsNthItemCheckbox(n)
@@ -541,7 +546,7 @@ class AdvancedPage extends BasePage
 
   async clickDeleteCustomFLButton()
   {
-    await (await this.deleteCustomFLButton).click();
+    await this.scrollIntoViewAndClick(this.deleteCustomFLButton);
   }
 
   async clickEasyListEnglishFL()
@@ -1024,23 +1029,22 @@ class AdvancedPage extends BasePage
 
   async switchToEasylistSourceTab()
   {
-    await this.switchToTab("https://easylist-downloads." +
-    "adblockplus.org/easylist.txt");
+    await this.switchToTab(/easylist-downloads/);
   }
 
   async switchToEasylisttoTab()
   {
-    await this.switchToTab("EasyList - Overview");
+    await this.switchToTab(/easylist.to/);
   }
 
   async switchToHowToWriteFiltersTab()
   {
-    await this.switchToTab("How to write filters – Adblock Plus");
+    await this.switchToTab(/360062733293/);
   }
 
   async switchToSubscriptionsTab()
   {
-    await this.switchToTab("Known Adblock Plus subscriptions");
+    await this.switchToTab(/link=subscriptions/);
   }
 
   async typeTextToFilterListUrlInput(text, noClearValue = false)
@@ -1081,21 +1085,17 @@ class AdvancedPage extends BasePage
 
   async verifyTextPresentInCustomFLTable(text, timeoutVal = 3000)
   {
-    let waitTime = 0;
-    while (waitTime <= timeoutVal)
+    try
     {
-      for (const element of (await this.customFilterListsTableRowsTexts))
+      const element = await this.customFilterListsTableElementText(text);
+      await element.waitForExist({timeout: timeoutVal});
+      if (!(await element.isDisplayedInViewport()))
       {
         await element.scrollIntoView();
-        if (await element.getText() == text)
-        {
-          return true;
-        }
-        await browser.pause(200);
-        waitTime += 200;
       }
+      return true;
     }
-    if (waitTime >= timeoutVal)
+    catch (error)
     {
       return false;
     }
@@ -1118,7 +1118,11 @@ class AdvancedPage extends BasePage
   async waitForCustomFilterListsNthItemTextToEqual(text, n,
                                                    timeoutVal = 5000)
   {
-    await (await this.customFilterListsNthItemText(n)).scrollIntoView();
+    if (!(await (await this.customFilterListsNthItemText(n)).
+      isDisplayedInViewport()))
+    {
+      await (await this.customFilterListsNthItemText(n)).scrollIntoView();
+    }
     return await this.waitUntilTextIs(
       this.customFilterListsNthItemText(n),
       text, timeoutVal);

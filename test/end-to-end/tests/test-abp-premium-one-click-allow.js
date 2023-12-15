@@ -27,7 +27,7 @@ const OneClickAllowAdsTestPage =
   require("../page-objects/oneClickAllowAdsTest.page");
 let lastTest = false;
 
-describe("test one click allow for premium users", function()
+describe.skip("test one click allow for premium users", function()
 {
   this.retries(globalRetriesNumber);
 

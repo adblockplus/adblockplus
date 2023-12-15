@@ -102,8 +102,19 @@ describe("test page links - problem", function()
         await problemPage.waitForEnabledThenClick(
           problemPage[dataSet.elementToClick]);
         await problemPage.switchToTab(dataSet.newTabUrl);
-        expect(await problemPage.getCurrentUrl()).to.equal(
-          dataSet.newTabUrl);
+        try
+        {
+          expect(await problemPage.getCurrentUrl()).to.equal(
+            dataSet.newTabUrl);
+        }
+        catch (Exception)
+        {
+          await problemPage.switchToTab("Adblock Plus | The world's" +
+            " #1 free ad blocker");
+          await browser.pause(500);
+          expect(await problemPage.getCurrentUrl()).to.equal(
+            dataSet.newTabUrl);
+        }
       }
     });
   });

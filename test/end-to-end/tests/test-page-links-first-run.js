@@ -44,7 +44,7 @@ describe("test page links - first run", function()
       {
         isPromotionLinksTest = true;
       }
-      if (browser.capabilities.browserName == "MicrosoftEdge" &&
+      if (browser.capabilities.browserName == "msedge" &&
         isPromotionLinksTest)
       {
         console.warn("Test skipped for Edge.");
@@ -54,7 +54,7 @@ describe("test page links - first run", function()
         const firstRunPage = new FirstRunPage(browser);
         try
         {
-          await firstRunPage.switchToTab("Installation Successful!");
+          await firstRunPage.switchToTab(/first-run.html/);
         }
         catch (Exception)
         {
@@ -73,8 +73,19 @@ describe("test page links - first run", function()
           }
           else
           {
-            expect(await firstRunPage.getCurrentUrl()).to.equal(
-              dataSet.newTabUrl);
+            try
+            {
+              expect(await firstRunPage.getCurrentUrl()).to.equal(
+                dataSet.newTabUrl);
+            }
+            catch (Exception)
+            {
+              await firstRunPage.switchToTab("Adblock Plus | The world's" +
+                " #1 free ad blocker");
+              await browser.pause(500);
+              expect(await firstRunPage.getCurrentUrl()).to.equal(
+                dataSet.newTabUrl);
+            }
           }
         }
         else

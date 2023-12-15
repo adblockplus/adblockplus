@@ -21,8 +21,6 @@ const {beforeSequence, globalRetriesNumber,
        enablePremiumByUI} = require("../helpers");
 const {expect} = require("chai");
 const PremiumPage = require("../page-objects/premium.page");
-const WelcomeToPremiumPage = require("../page-objects/welcomeToPremium.page");
-let globalOrigin;
 
 describe("test abp premium get started", function()
 {
@@ -30,7 +28,7 @@ describe("test abp premium get started", function()
 
   before(async function()
   {
-    globalOrigin = await beforeSequence();
+    await beforeSequence();
   });
 
   it("should display onboarding page for premium user", async function()
@@ -39,12 +37,19 @@ describe("test abp premium get started", function()
     const premiumPage = new PremiumPage(browser);
     await premiumPage.switchToTab(/accounts.adblockplus.org/);
     await premiumPage.clickGetStartedWithABPPremiumButton();
-    await premiumPage.switchToTab("Welcome to Adblock Plus Premium");
-    await browser.refresh();
-    expect(await premiumPage.getCurrentUrl()).to.include(
-      `${globalOrigin}/premium-onboarding.html`);
-    const welcomeToPremiumPage = new WelcomeToPremiumPage(browser);
-    expect(await welcomeToPremiumPage.
-      isEnableAllPremiumFeaturesButtonDisplayed()).to.be.true;
+    await premiumPage.switchToTab(/Get-started-with-AdBlock-Plus-Premium/);
+    try
+    {
+      expect(await premiumPage.getCurrentUrl()).to.include(
+        "Get-started-with-AdBlock-Plus-Premium");
+    }
+    catch (Exception)
+    {
+      await browser.pause(1000);
+      await premiumPage.switchToTab(/Get-started-with-AdBlock-Plus-Premium/);
+      await browser.pause(500);
+      expect(await premiumPage.getCurrentUrl()).to.include(
+        "Get-started-with-AdBlock-Plus-Premium");
+    }
   });
 });

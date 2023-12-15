@@ -39,7 +39,7 @@ describe("test premium links for free users", function()
   {
     if (lastTest == false)
     {
-      browser.closeWindow();
+      await browser.closeWindow();
       await afterSequence();
     }
   });
@@ -101,7 +101,7 @@ describe("test premium links for free users", function()
         expect(params.get("pv").match(/\d*/)[0]).to.equal(majorBrowserVersion);
         expect(params.get("p")).to.equal("gecko");
       }
-      else if (browser.capabilities.browserName == "MicrosoftEdge")
+      else if (browser.capabilities.browserName == "msedge")
       {
         expect(params.get("an")).to.equal("adblockpluschrome");
         expect(params.get("ap")).to.equal("edge");

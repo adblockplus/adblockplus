@@ -34,7 +34,8 @@ class PremiumPage extends BasePage
 
   get getStartedWithABPPremiumButton()
   {
-    return $("//a[@i18n='get_started_premium']");
+    return $("//a[@class='premium-checkout__button premium" +
+      "-checkout-success__button']");
   }
 
   get paymentConfirmedLabel()
@@ -45,6 +46,11 @@ class PremiumPage extends BasePage
   get payWithCreditCardButton()
   {
     return $("//span[@i18n='pwyw_method_cc']");
+  }
+
+  get premiumCheckoutButton()
+  {
+    return $("//button[@type='submit']");
   }
 
   async clickGetPremiumMonthlyButton()
@@ -69,6 +75,12 @@ class PremiumPage extends BasePage
   {
     await this.waitForEnabledThenClick(this.
       payWithCreditCardButton);
+  }
+
+  async clickPremiumCheckoutButton()
+  {
+    await this.waitForEnabledThenClick(this.
+      premiumCheckoutButton);
   }
 
   async getPaymentConfirmedLabelText()

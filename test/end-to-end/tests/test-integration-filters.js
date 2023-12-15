@@ -75,7 +75,7 @@ describe("test custom filters as part of the integration tests", function()
       "ocking/custom-filters/custom-filters-testpage.html";
     await browser.newWindow(customFiltersTestPage);
     await browser.refresh();
-    if (browser.capabilities.browserName == "MicrosoftEdge")
+    if (browser.capabilities.browserName == "msedge")
     {
       await browser.pause(2000);
     }
@@ -85,12 +85,24 @@ describe("test custom filters as part of the integration tests", function()
       if (await testPages.getCurrentTitle() !=
         "Blocking and hiding")
       {
-        await testPages.switchToTab("Custom filters testpage");
         await browser.refresh();
+        await testPages.switchToTab(/custom-filters-testpage/);
+        await browser.pause(1000);
       }
     }
-    expect(await testPages.getCustomBlockingFilterText()).to.include(
-      "custom blocking filter applied");
+    try
+    {
+      expect(await testPages.getCustomBlockingFilterText()).to.include(
+        "custom blocking filter applied");
+    }
+    catch (Exception)
+    {
+      await browser.pause(2000);
+      await browser.refresh();
+      await browser.pause(2000);
+      expect(await testPages.getCustomBlockingFilterText()).to.include(
+        "custom blocking filter applied");
+    }
     expect(await testPages.getCustomBlockingRegexFilterText()).to.include(
       "custom blocking regex filter applied");
     expect(await testPages.

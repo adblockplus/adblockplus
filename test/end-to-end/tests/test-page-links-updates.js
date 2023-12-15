@@ -40,7 +40,7 @@ describe("test page links - updates", function()
     it("should have a link for: " + dataSet.testName, async function()
     {
       if (dataSet.testName == "Updates - Rate it" &&
-        browser.capabilities.browserName == "MicrosoftEdge")
+        browser.capabilities.browserName == "msedge")
       {
         console.warn("Test skipped for Edge.");
       }

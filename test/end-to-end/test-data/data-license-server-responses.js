@@ -20,22 +20,6 @@
 
 const serverResponsesData = [
   {
-    testName: "expired license",
-    request: `
-      return new Promise((resolve, reject) => {
-        chrome.runtime.sendMessage({ type: "premium.activate", userId: "expired_user_id" }, response => {
-          if (chrome.runtime.lastError) {
-            reject(chrome.runtime.lastError);
-          } else {
-            resolve(response);
-          }
-        });
-      });
-    `,
-    premiumStatus: "disabled",
-    errorId: /Premium license check failed.*Error: Expired license/
-  },
-  {
     testName: "response 302",
     request: `
       return new Promise((resolve, reject) => {
@@ -146,6 +130,22 @@ const serverResponsesData = [
     `,
     premiumStatus: "disabled",
     errorId: /Premium license check failed.*Error: Request failed \(code: 401\)/
+  },
+  {
+    testName: "expired license",
+    request: `
+      return new Promise((resolve, reject) => {
+        chrome.runtime.sendMessage({ type: "premium.activate", userId: "expired_user_id" }, response => {
+          if (chrome.runtime.lastError) {
+            reject(chrome.runtime.lastError);
+          } else {
+            resolve(response);
+          }
+        });
+      });
+    `,
+    premiumStatus: "disabled",
+    errorId: /Premium license check failed.*Error: Expired license/
   }
 ];
 

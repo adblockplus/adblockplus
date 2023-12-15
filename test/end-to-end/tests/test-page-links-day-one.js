@@ -59,8 +59,19 @@ describe("test page links - day one", function()
         await dayOnePage.waitForEnabledThenClick(
           dayOnePage[dataSet.elementToClick]);
         await dayOnePage.switchToTab(dataSet.newTabUrl);
-        expect(await dayOnePage.getCurrentUrl()).to.equal(
-          dataSet.newTabUrl);
+        try
+        {
+          expect(await dayOnePage.getCurrentUrl()).to.equal(
+            dataSet.newTabUrl);
+        }
+        catch (Exception)
+        {
+          await dayOnePage.switchToTab("Adblock Plus | The world's" +
+            " #1 free ad blocker");
+          await browser.pause(500);
+          expect(await dayOnePage.getCurrentUrl()).to.equal(
+            dataSet.newTabUrl);
+        }
       }
     });
   });

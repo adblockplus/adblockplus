@@ -47,9 +47,19 @@ describe("test installation as part of the smoke tests", function()
     const appVersion = await browser.
       executeScript("return browser.runtime.getManifest().version;", []);
     await generalPage.switchToInstalledTab();
-    const currentUrl = await generalPage.getCurrentUrl();
-    expect(currentUrl).to.have.string(
-      "https://welcome.adblockplus.org/en/installed");
+    let currentUrl = await generalPage.getCurrentUrl();
+    try
+    {
+      expect(currentUrl).to.have.string(
+        "adblockplus.org/en/installed");
+    }
+    catch (Exception)
+    {
+      await browser.pause(1000);
+      currentUrl = await generalPage.getCurrentUrl();
+      expect(currentUrl).to.have.string(
+        "adblockplus.org/en/installed");
+    }
     const browserCapabilities = await browser.capabilities;
     let majorBrowserVersion = (JSON.stringify(browserCapabilities)).
       match(testData.regexMajorBrowserVersion)[0];
@@ -79,7 +89,7 @@ describe("test installation as part of the smoke tests", function()
       expect("chromium").to.
         equal(currentUrl.match(testData.regex_p)[0]);
     }
-    else if (browser.capabilities.browserName == "MicrosoftEdge")
+    else if (browser.capabilities.browserName == "msedge")
     {
       expect("adblockpluschrome").to.
         equal(currentUrl.match(testData.regex_an)[0]);
@@ -155,7 +165,7 @@ describe("test installation as part of the smoke tests", function()
       expect("chromium").to.
         equal(currentUrl.match(testData.regex_p)[0]);
     }
-    else if (browser.capabilities.browserName == "MicrosoftEdge")
+    else if (browser.capabilities.browserName == "msedge")
     {
       expect("adblockpluschrome").to.
         equal(currentUrl.match(testData.regex_an)[0]);

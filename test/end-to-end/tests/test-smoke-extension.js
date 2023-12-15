@@ -42,8 +42,37 @@ describe("test extension as part of the smoke tests", function()
     }
   });
 
+  it("should display total ad block count", async function()
+  {
+    if (browser.capabilities.browserName != "firefox")
+    {
+      await browser.newWindow("https://adblockinc.gitlab.io/QA-team/adblocking/" +
+        "adblocked-count/adblocked-count-testpage.html");
+      const popupPage = new PopupPage(browser);
+      await switchToABPOptionsTab();
+      await popupPage.init(globalOrigin);
+      try
+      {
+        await popupPage.waitForNumberOfAdsBlockedInTotalTextToEqual("4");
+      }
+      catch (Exception)
+      {
+        await browser.pause(2000);
+        await popupPage.waitForNumberOfAdsBlockedInTotalTextToEqual("4");
+      }
+      expect(String(await popupPage.
+        getNumberOfAdsBlockedInTotalText()).includes("4")).to.be.true;
+      await browser.url("https://adblockinc.gitlab.io/QA-team/adblocking/" +
+      "adblocked-count/adblocked-count-testpage.html");
+      await popupPage.init(globalOrigin);
+      expect(String(await popupPage.
+        getNumberOfAdsBlockedInTotalText()).includes("8")).to.be.true;
+    }
+  });
+
   it("should reinitialize", async function()
   {
+    lastTest = true;
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
     await advancedPage.clickAbpFiltersFLTrashButton();
@@ -74,34 +103,5 @@ describe("test extension as part of the smoke tests", function()
     await popupPage.switchToProblemPageTab();
     expect(String(await popupPage.
       getCurrentUrl()).includes(`${globalOrigin}/problem.html`)).to.be.true;
-  });
-
-  it("should display total ad block count", async function()
-  {
-    if (browser.capabilities.browserName != "firefox")
-    {
-      lastTest = true;
-      await browser.newWindow("https://adblockinc.gitlab.io/QA-team/adblocking/" +
-        "adblocked-count/adblocked-count-testpage.html");
-      const popupPage = new PopupPage(browser);
-      await switchToABPOptionsTab();
-      await popupPage.init(globalOrigin);
-      try
-      {
-        await popupPage.waitForNumberOfAdsBlockedInTotalTextToEqual("4");
-      }
-      catch (Exception)
-      {
-        await browser.pause(2000);
-        await popupPage.waitForNumberOfAdsBlockedInTotalTextToEqual("4");
-      }
-      expect(String(await popupPage.
-        getNumberOfAdsBlockedInTotalText()).includes("4")).to.be.true;
-      await browser.url("https://adblockinc.gitlab.io/QA-team/adblocking/" +
-      "adblocked-count/adblocked-count-testpage.html");
-      await popupPage.init(globalOrigin);
-      expect(String(await popupPage.
-        getNumberOfAdsBlockedInTotalText()).includes("8")).to.be.true;
-    }
   });
 });

@@ -68,6 +68,16 @@ class TestPages extends BasePage
     return $("#awe2-blocking-filter");
   }
 
+  get ecosiaAdPill()
+  {
+    return $("//span[@class='ad-pill']");
+  }
+
+  get ecosiaAdPillAlternate()
+  {
+    return $("span*=Ad");
+  }
+
   get hiddenBySnippetText()
   {
     return $("p*=This should be hidden by a snippet");
@@ -239,6 +249,18 @@ class TestPages extends BasePage
   async isCustomHidingIdDisplayed()
   {
     return await (await this.customHidingId).isDisplayed();
+  }
+
+  async isEcosiaAdPillDisplayed(reverseOption = false)
+  {
+    return await this.waitForDisplayedNoError(this.
+      ecosiaAdPill, reverseOption, 2000);
+  }
+
+  async isEcosiaAdPillAlternateDisplayed(reverseOption = false)
+  {
+    return await this.waitForDisplayedNoError(this.
+      ecosiaAdPillAlternate, reverseOption, 2000);
   }
 
   async isHiddenBySnippetTextDisplayed()

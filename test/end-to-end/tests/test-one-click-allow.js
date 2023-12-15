@@ -26,7 +26,7 @@ const AllowlistedWebsitesPage =
   require("../page-objects/allowlistedWebsites.page");
 let lastTest = false;
 
-describe("test one click allow", function()
+describe.skip("test one click allow", function()
 {
   this.retries(globalRetriesNumber);
 

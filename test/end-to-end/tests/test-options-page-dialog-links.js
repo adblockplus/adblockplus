@@ -72,7 +72,7 @@ describe("test options page dialog links", function()
 
   it("should open webstore page", async function()
   {
-    if (browser.capabilities.browserName == "MicrosoftEdge")
+    if (browser.capabilities.browserName == "msedge")
     {
       console.warn("Test skipped for Edge.");
     }
@@ -106,7 +106,7 @@ describe("test options page dialog links", function()
 
   it("should open donate page", async function()
   {
-    if (browser.capabilities.browserName == "MicrosoftEdge")
+    if (browser.capabilities.browserName == "msedge")
     {
       console.warn("Test skipped for Edge.");
     }

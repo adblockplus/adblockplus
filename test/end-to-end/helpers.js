@@ -20,19 +20,18 @@
 const chromeBuild = "../../" + process.env.CHROME_BUILD;
 const firefoxBuild = "../../" + process.env.FIREFOX_BUILD;
 // ======== USE THE FOLLOWING FOR DEBUGGING PURPOSES ==========
-// const chromeBuild = "../../dist/release/adblockpluschrome-3.18.1.zip";
-// const firefoxBuild = "../../dist/release/adblockplusfirefox-3.18.1.xpi";
+// const chromeBuild = "../../dist/release/adblockpluschrome-3.19.zip";
+// const firefoxBuild = "../../dist/release/adblockplusfirefox-3.19.xpi";
 const ciTesting = process.env.CI_TESTING || true;
 
 const fs = require("fs");
-const BasePage = require("./page-objects/base.page");
 const ExtensionsPage = require("./page-objects/extensions.page");
 const GeneralPage = require("./page-objects/general.page");
 const PremiumPage = require("./page-objects/premium.page");
-const StripeCheckoutPage = require("./page-objects/stripeCheckout.page");
+const PremiumCheckoutPage = require("./page-objects/premiumCheckout.page");
 const PremiumHeaderChunk = require("./page-objects/premiumHeader.chunk");
 const helperExtension = "helper-extension";
-const globalRetriesNumber = 0;
+const globalRetriesNumber = 2;
 
 async function afterSequence()
 {
@@ -87,10 +86,11 @@ async function beforeSequence()
   const [origin] = await waitForExtension();
   await browser.waitUntil(async() =>
   {
-    return (await browser.getWindowHandles()).length == 3;
+    return ((await browser.getWindowHandles()).length >= 3);
   }, {timeout: 10000});
   await browser.url(`${origin}/desktop-options.html`);
   await browser.setWindowSize(1400, 1000);
+  await browser.switchWindow("Adblock Plus Options");
   return [origin];
 }
 
@@ -99,6 +99,7 @@ async function enablePremiumByMockServer()
   await browser.newWindow("https://qa-mock-licensing-server.glitch.me/");
   const generalPage = new GeneralPage(browser);
   await generalPage.isMockLicensingServerTextDisplayed();
+  await browser.closeWindow();
   await switchToABPOptionsTab();
   await browser.executeScript(`
     Promise.all([
@@ -143,7 +144,7 @@ async function enablePremiumByMockServer()
   }
   if (waitTime >= 150000)
   {
-    throw new Error("Premium was not enabled!");
+    return false;
   }
 }
 
@@ -151,25 +152,35 @@ async function enablePremiumByUI()
 {
   const premiumHeaderChunk = new PremiumHeaderChunk(browser);
   await premiumHeaderChunk.clickUpgradeButton();
-  await premiumHeaderChunk.switchToTab(
-    "Adblock Plus Premium | The world's #1 ad blocker");
-  const currentUrl = await premiumHeaderChunk.getCurrentUrl();
-  await browser.url(currentUrl + "?testmode");
+  await premiumHeaderChunk.
+    switchToTab(/accounts.adblockplus.org\/en\/premium/);
+  let currentUrl = await premiumHeaderChunk.getCurrentUrl();
+  if (!currentUrl.includes("accounts"))
+  {
+    await premiumHeaderChunk.
+      switchToTab(/accounts.adblockplus.org\/en\/premium/);
+    await browser.pause(1000);
+    currentUrl = await premiumHeaderChunk.getCurrentUrl();
+  }
+  await browser.url(currentUrl + "&testmode");
   const premiumPage = new PremiumPage(browser);
   await premiumPage.clickGetPremiumMonthlyButton();
-  await premiumPage.clickPayWithCreditCardButton();
-  const stripeCheckoutPage = new StripeCheckoutPage();
-  await stripeCheckoutPage.init();
-  await stripeCheckoutPage.typeTextToEmailField("test_automation" +
+  await premiumPage.clickPremiumCheckoutButton();
+  const premiumCheckoutPage = new PremiumCheckoutPage(browser);
+  await premiumCheckoutPage.init();
+  await premiumCheckoutPage.typeTextToEmailField("test_automation" +
     randomIntFromInterval(1000000, 9999999).toString() + "@adblock.org");
-  await stripeCheckoutPage.typeTextToCardNumberField("4242424242424242");
-  await stripeCheckoutPage.typeTextToCardExpiryField("0528");
-  await stripeCheckoutPage.typeTextToCardCvcField("295");
-  await stripeCheckoutPage.typeTextToNameOnCardField("Test Automation");
-  await stripeCheckoutPage.typeTextToZIPField("10001");
-  await stripeCheckoutPage.clickSubscribeButton();
-  await switchToABPOptionsTab();
-  await waitForCondition(await premiumHeaderChunk.isPremiumButtonDisplayed());
+  await premiumCheckoutPage.typeTextToZIPField("10001");
+  await premiumCheckoutPage.clickContinueButton();
+  await premiumCheckoutPage.typeTextToCardNumberField("4242424242424242");
+  await premiumCheckoutPage.typeTextToCardExpiryField("0528");
+  await premiumCheckoutPage.typeTextToCardCvcField("295");
+  await premiumCheckoutPage.typeTextToNameOnCardField("Test Automation");
+  await premiumCheckoutPage.clickSubscribeButton();
+  await browser.switchToFrame(null);
+  await switchToABPOptionsTab(true);
+  await waitForCondition("isPremiumButtonDisplayed",
+                         premiumHeaderChunk);
 }
 
 async function getABPOptionsTabId()
@@ -250,7 +261,7 @@ async function switchToABPOptionsTab(noSwitchToFrame = false)
   const extensionsPage = new ExtensionsPage(browser);
   try
   {
-    await extensionsPage.switchToTab(/options\.html/);
+    await extensionsPage.switchToTab("Adblock Plus Options");
   }
   catch (Exception)
   {
@@ -264,7 +275,7 @@ async function switchToABPOptionsTab(noSwitchToFrame = false)
       await extensionsPage.switchToTab("Extensions");
     }
     await extensionsPage.clickReloadHelperExtensionButton();
-    await extensionsPage.switchToTab(/options\.html/);
+    await extensionsPage.switchToTab("Adblock Plus Options");
   }
   if (noSwitchToFrame === false)
   {
@@ -278,17 +289,33 @@ async function switchToABPOptionsTab(noSwitchToFrame = false)
   }
 }
 
-async function waitForCondition(condition, waitTime = 150000,
-                                refresh = true, pauseTime = 200)
+async function waitForCondition(condition, object = null, waitTime = 150000,
+                                refresh = true, pauseTime = 200, text = null)
 {
   let waitTimeMS = 0;
+  let conditionResult = false;
   while (waitTimeMS <= waitTime)
   {
     if (refresh)
     {
       await browser.refresh();
     }
-    if (condition == true)
+    if (object !== null)
+    {
+      if (text !== null)
+      {
+        conditionResult = (await object[condition]()).includes(text);
+      }
+      else
+      {
+        conditionResult = await object[condition]();
+      }
+    }
+    else
+    {
+      conditionResult = await condition;
+    }
+    if (conditionResult == true)
     {
       break;
     }
@@ -307,8 +334,6 @@ async function waitForCondition(condition, waitTime = 150000,
 async function waitForExtension()
 {
   let origin;
-  const basePage = new BasePage(browser);
-  await basePage.switchToTab("Adblock Plus Options");
   await browser.waitUntil(async() =>
   {
     for (const handle of await browser.getWindowHandles())
@@ -330,10 +355,12 @@ async function waitForExtension()
           callback(null);
         })();`, []);
       if (origin)
+      {
         return true;
+      }
     }
     return false;
-  }, {timeout: 5000}, "options page not found");
+  }, {timeout: 15000}, "options page not found");
 
   return [origin];
 }

@@ -19,7 +19,7 @@
 
 const BasePage = require("./base.page");
 
-class StripeCheckoutPage extends BasePage
+class PremiumCheckoutPage extends BasePage
 {
   constructor(browser)
   {
@@ -29,17 +29,20 @@ class StripeCheckoutPage extends BasePage
 
   async init()
   {
-    await this.waitForDisplayedNoError(this.subscribeButton);
+    const iframe = await this.paddleFrame;
+    await iframe.waitForExist({timeout: 10000});
+    await browser.switchToFrame(await this.paddleFrame);
+    await this.waitForDisplayedNoError(this.emailTextField);
   }
 
   get cardCvcTextField()
   {
-    return $("#cardCvc");
+    return $("#cvv");
   }
 
   get cardExpiryTextField()
   {
-    return $("#cardExpiry");
+    return $("#expiry");
   }
 
   get cardNumberTextField()
@@ -47,14 +50,30 @@ class StripeCheckoutPage extends BasePage
     return $("#cardNumber");
   }
 
+  get continueButton()
+  {
+    return $("//button[@type='submit']");
+  }
+
   get emailTextField()
   {
     return $("#email");
   }
 
+  get getStartedWithABPPremiumButton()
+  {
+    return $("//a[@class='premium-checkout__button premium" +
+      "-checkout-success__button']");
+  }
+
   get nameOnCardTextField()
   {
-    return $("#billingName");
+    return $("#cardHolder");
+  }
+
+  get paddleFrame()
+  {
+    return $("//iframe[@name='paddle_frame']");
   }
 
   get subscribeButton()
@@ -64,7 +83,13 @@ class StripeCheckoutPage extends BasePage
 
   get zipTextField()
   {
-    return $("#billingPostalCode");
+    return $("#postcode");
+  }
+
+  async clickContinueButton()
+  {
+    await this.waitForEnabledThenClick(this.
+      continueButton);
   }
 
   async clickSubscribeButton()
@@ -73,41 +98,52 @@ class StripeCheckoutPage extends BasePage
       subscribeButton);
   }
 
+  async isGetStartedWithABPPremiumButtonDisplayed()
+  {
+    return await (await this.getStartedWithABPPremiumButton).isDisplayed();
+  }
+
   async typeTextToCardCvcField(text)
   {
-    await (await this.cardCvcTextField).click();
+    await this.waitForEnabledThenClick(this.
+      cardCvcTextField, 10000);
     await browser.keys(text);
   }
 
   async typeTextToCardExpiryField(text)
   {
-    await (await this.cardExpiryTextField).click();
+    await this.waitForEnabledThenClick(this.
+      cardExpiryTextField, 10000);
     await browser.keys(text);
   }
 
   async typeTextToCardNumberField(text)
   {
-    await (await this.cardNumberTextField).click();
+    await this.waitForEnabledThenClick(this.
+      cardNumberTextField, 10000);
     await browser.keys(text);
   }
 
   async typeTextToEmailField(text)
   {
-    await (await this.emailTextField).click();
+    await this.waitForEnabledThenClick(this.
+      emailTextField, 10000);
     await browser.keys(text);
   }
 
   async typeTextToNameOnCardField(text)
   {
-    await (await this.nameOnCardTextField).click();
+    await this.waitForEnabledThenClick(this.
+      nameOnCardTextField, 10000);
     await browser.keys(text);
   }
 
   async typeTextToZIPField(text)
   {
-    await (await this.zipTextField).click();
+    await this.waitForEnabledThenClick(this.
+      zipTextField, 10000);
     await browser.keys(text);
   }
 }
 
-module.exports = StripeCheckoutPage;
+module.exports = PremiumCheckoutPage;

@@ -43,7 +43,10 @@ const parallelConfig = {
         prefs: {
           "intl.accept_languages": "en,en_US",
           "profile.managed_default_content_settings.popups": 2,
-          "profile.managed_default_content_settings.notifications": 2
+          "profile.managed_default_content_settings.notifications": 2,
+          "profile.content_settings.exceptions.clipboard": {
+            "*": {"setting": 1}
+          }
         },
         excludeSwitches: ["disable-extensions"]
       },
@@ -64,9 +67,10 @@ const parallelConfig = {
       },
       acceptInsecureCerts: true,
       exclude: [
-        "./tests/test-issue-reporter.js",
+        "./tests/test-issue-reporter-*.js",
         "./tests/legacy-unit.js",
-        "./tests/test-abp-premium-license-check-retries.js"
+        "./tests/test-abp-premium-license-check-retries.js",
+        "./tests/test-abp-premium-license-server-responses.js"
       ]
     },
     {
@@ -82,14 +86,18 @@ const parallelConfig = {
         prefs: {
           "intl.accept_languages": "en,en_US",
           "profile.managed_default_content_settings.popups": 2,
-          "profile.managed_default_content_settings.notifications": 2
+          "profile.managed_default_content_settings.notifications": 2,
+          "profile.content_settings.exceptions.clipboard": {
+            "*": {"setting": 1}
+          }
         },
         excludeSwitches: ["disable-extensions"]
       },
       acceptInsecureCerts: true,
       exclude: [
         "./tests/legacy-unit.js",
-        "./tests/test-abp-premium-license-check-retries.js"
+        "./tests/test-abp-premium-license-check-retries.js",
+        "./tests/test-abp-premium-license-server-responses.js"
       ]
     }
   ],

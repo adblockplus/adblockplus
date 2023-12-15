@@ -55,7 +55,8 @@ describe("test client side notifications appearance", function()
     expect(await popupPage.
       isStopShowingNotificationsButtonDisplayed()).to.be.true;
     await popupPage.clickLinkInNotificationMessage();
-    await popupPage.switchToTab("https://adblockplus.org/");
+    await popupPage.switchToTab("Adblock Plus | The world's " +
+      "#1 free ad blocker");
     expect(await popupPage.getCurrentUrl()).to.equal(
       "https://adblockplus.org/");
   });

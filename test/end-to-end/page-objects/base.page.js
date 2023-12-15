@@ -86,8 +86,7 @@ class BasePage
     {
       try
       {
-        await Promise.race([browser.switchWindow(title),
-                            browser.pause(timeout)]);
+        await browser.switchWindow(title);
         break;
       }
       catch (Exception)

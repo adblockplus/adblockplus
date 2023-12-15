@@ -38,7 +38,7 @@ describe("test premium links for free users", function()
   {
     if (lastTest == false)
     {
-      browser.closeWindow();
+      await browser.closeWindow();
       await afterSequence();
     }
   });
@@ -60,8 +60,19 @@ describe("test premium links for free users", function()
       expect(currentUrl).to.match(
         /https:\/\/accounts\.adblockplus\.org\/en.*\/manage\?lic=license_code&s=desktop-options/);
       const managePremiumAccountPage = new ManagePremiumAccountPage(browser);
-      expect(await managePremiumAccountPage.
-        isNeedAFewMinutesErrorDisplayed()).to.be.true;
+      try
+      {
+        expect(await managePremiumAccountPage.
+          isNeedAFewMinutesErrorDisplayed()).to.be.true;
+      }
+      catch (Exception)
+      {
+        await premiumHeaderChunk.switchToTab(
+          "accounts.adblockplus.org");
+        await browser.pause(1000);
+        expect(await managePremiumAccountPage.
+          isNeedAFewMinutesErrorDisplayed()).to.be.true;
+      }
     });
   });
 });

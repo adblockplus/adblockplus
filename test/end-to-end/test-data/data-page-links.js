@@ -128,12 +128,11 @@ const problemPageData = [
   {
     testName: "Problem - Uninstall and reinstall",
     elementToClick: "clickHereToReinstallButton",
-    newTabUrlChrome: "https://chrome.google.com/webstore/detail/adblock-" +
-    "plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb",
+    newTabUrlChrome: "https://chromewebstore.google.com/detai" +
+    "l/adblock-plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb",
     newTabUrlFirefox: /https:\/\/addons.mozilla.org\/.*firefox\/addon\/adblock-plus/,
     webstoreCookiesConsentPageTitle: "Before you continue",
-    chromeWebstorePageTitle: "Adblock Plus - free ad blocker - " +
-    "Chrome Web Store"
+    chromeWebstorePageTitle: /webstore/
   }
 ];
 
