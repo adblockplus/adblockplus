@@ -295,6 +295,20 @@ defaults.logger_log_level = 3;
 defaults.onpage_dialog_command_stats = {};
 
 /**
+ * Whether user has interacted with YouTube wall detection dialog
+ *
+ * @type {boolean}
+ */
+defaults.ytWallDetection_dialog_interacted = false;
+
+/**
+ * Where the dialog for the YouTube wall should link users to
+ *
+ * @type {string}
+ */
+defaults.ytWallDetection_dialog_url = "https://adblockplus.org/youtube";
+
+/**
  * Map of on-page dialog timing configurations
  *
  * @see src/onpage-dialog/background/middleware/ipm-onpage-dialog.types.ts
@@ -307,6 +321,10 @@ defaults.onpage_dialog_timing_configurations = {
     cooldownDuration: 24,
     maxAllowlistingDelay: 2,
     maxDisplayCount: 3
+  },
+  immediate: {
+    cooldownDuration: 0,
+    maxDisplayCount: 0
   },
   revisit_web_allowlisted_site: {
     cooldownDuration: 48,

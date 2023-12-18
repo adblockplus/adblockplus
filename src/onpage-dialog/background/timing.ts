@@ -21,9 +21,9 @@ import { Prefs } from "../../../adblockpluschrome/lib/prefs";
 
 import * as logger from "../../logger/background";
 import { isFilterMetadata } from "../../polyfills/background";
-import { type DialogBehavior, Timing, isTiming } from "./middleware";
+import { type Dialog } from "./dialog.types";
 import { type Stats } from "./stats.types";
-import { type TimingConfiguration } from "./timing.types";
+import { Timing, type TimingConfiguration } from "./timing.types";
 import { type Tabs } from "webextension-polyfill";
 import { isActiveOnDomain } from "../../core/url/shared";
 
@@ -68,6 +68,20 @@ async function getAllowlistingTime(tabId: number): Promise<number | null> {
   }
 
   return null;
+}
+
+/**
+ * Checks whether given candidate is timing
+ *
+ * @param candidate - Candidate
+ *
+ * @returns whether given candidate is timing
+ */
+export function isTiming(candidate: unknown): candidate is Timing {
+  return (
+    typeof candidate === "string" &&
+    Object.values(Timing).includes(candidate as Timing)
+  );
 }
 
 /**
@@ -120,16 +134,24 @@ function initializeConfigs(): void {
 /**
  * Determines whether command should be dismissed
  *
- * @param timing - Timing name
+ * @param dialog - Dialog information
  * @param stats - On-page stats
  *
  * @returns whether command should be dismissed
  */
-export function shouldBeDismissed(timing: Timing, stats: Stats): boolean {
-  const config = knownConfigs.get(timing);
-  if (!config) {
+export function shouldBeDismissed(dialog: Dialog, stats: Stats): boolean {
+  if (typeof stats !== "object") {
+    return false;
+  }
+
+  const config = knownConfigs.get(dialog.behavior.timing);
+  if (typeof config !== "object") {
     logger.debug("[onpage-dialog]: Unknown timing");
     return true;
+  }
+
+  if (config.maxDisplayCount === 0) {
+    return false;
   }
 
   logger.debug(
@@ -156,7 +178,7 @@ async function shouldBeShownForAfterWebAllowlisting(
 ): Promise<boolean> {
   const tabId = tab.id ?? browser.tabs.TAB_ID_NONE;
   const config = knownConfigs.get(timing);
-  if (!config) {
+  if (typeof config !== "object") {
     logger.debug("[onpage-dialog]: Unknown timing");
     return false;
   }
@@ -193,24 +215,25 @@ async function shouldBeShownForAfterWebAllowlisting(
 
   return true;
 }
+
 /**
  * Determines whether command should be shown
  *
- * @param behavior - The behavior of the command
  * @param tab - Tab
+ * @param dialog - Dialog information
  * @param stats - On-page stats
  *
  * @returns whether command should be shown
  */
 export async function shouldBeShown(
-  behavior: DialogBehavior,
   tab: Tabs.Tab,
+  dialog: Dialog,
   stats: Stats
 ): Promise<boolean> {
-  const { domainList, timing } = behavior;
+  const { domainList, timing } = dialog.behavior;
 
   // Ignore commands that should have already been dismissed
-  if (shouldBeDismissed(timing, stats)) {
+  if (shouldBeDismissed(dialog, stats)) {
     logger.debug("[onpage-dialog]: No more dialogs to show for command");
     return false;
   }

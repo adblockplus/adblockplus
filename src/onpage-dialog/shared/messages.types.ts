@@ -15,9 +15,9 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { type LocaleInfo } from "../../i18n/background";
+import { type LocaleInfo } from "../../i18n/shared";
 import { type Message } from "../../polyfills/shared";
-import { type DialogContent } from "../background/middleware";
+import { type DialogContent } from "./dialog.types";
 
 /**
  * Message for hiding the on-page dialog

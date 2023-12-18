@@ -40,7 +40,8 @@ export default {
           "src/ipm/background/index.ts",
           "src/onpage-dialog/background/index.ts",
           "src/premium-onboarding/background/index.ts",
-          "src/premium-subscriptions/background/index.ts"
+          "src/premium-subscriptions/background/index.ts",
+          "src/yt-wall-detection/background/index.ts"
         ]
       },
       {
@@ -122,6 +123,10 @@ export default {
       {
         dest: "updates.js",
         src: ["js/pages/updates.mjs"]
+      },
+      {
+        dest: "yt-wall-detection.preload.js",
+        src: ["src/yt-wall-detection/content/index.ts"]
       }
     ]
   },

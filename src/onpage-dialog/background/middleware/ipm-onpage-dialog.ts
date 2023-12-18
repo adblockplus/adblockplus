@@ -29,12 +29,12 @@ import {
   validateParams
 } from "../../../ipm/background";
 import * as logger from "../../../logger/background";
+import { type DialogContent } from "../../shared";
+import { type DialogBehavior } from "../dialog.types";
+import { Timing } from "../timing.types";
 import {
-  type DialogBehavior,
   type DialogCommand,
-  type DialogContent,
-  type DialogParams,
-  Timing
+  type DialogParams
 } from "./ipm-onpage-dialog.types";
 
 /**
@@ -118,31 +118,13 @@ function getContent(command: Command): DialogContent | null {
   }
 
   return {
-    body: command.lower_body
-      ? [command.upper_body, command.lower_body]
-      : [command.upper_body],
+    body:
+      typeof command.lower_body === "string"
+        ? [command.upper_body, command.lower_body]
+        : [command.upper_body],
     button: command.button_label,
     title: command.sub_title
   };
-}
-
-/**
- * Checks whether given candidate is on-page behavior
- *
- * @param candidate - Candidate
- *
- * @returns whether given candidate is on-page behavior
- */
-export function isDialogBehavior(
-  candidate: unknown
-): candidate is DialogBehavior {
-  return (
-    candidate !== null &&
-    typeof candidate === "object" &&
-    "displayDuration" in candidate &&
-    "target" in candidate &&
-    "timing" in candidate
-  );
 }
 
 /**
@@ -164,39 +146,6 @@ function isDialogCommand(command: Command): command is DialogCommand {
     validationErrors.join(" ")
   );
   return false;
-}
-
-/**
- * Checks whether given candidate is on-page content
- *
- * @param candidate - Candidate
- *
- * @returns whether given candidate is on-page content
- */
-export function isDialogContent(
-  candidate: unknown
-): candidate is DialogContent {
-  return (
-    candidate !== null &&
-    typeof candidate === "object" &&
-    "body" in candidate &&
-    "button" in candidate &&
-    "title" in candidate
-  );
-}
-
-/**
- * Checks whether given candidate is timing
- *
- * @param candidate - Candidate
- *
- * @returns whether given candidate is timing
- */
-export function isTiming(candidate: unknown): candidate is Timing {
-  return (
-    typeof candidate === "string" &&
-    Object.values(Timing).includes(candidate as Timing)
-  );
 }
 
 /**

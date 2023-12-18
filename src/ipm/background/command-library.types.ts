@@ -33,7 +33,7 @@ export interface LicenseStateBehavior extends Behavior {
   /**
    * A comma separate list of Premium license state(s)
    */
-  licenseStateList: string;
+  licenseStateList?: string;
 }
 
 /**

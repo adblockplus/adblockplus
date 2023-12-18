@@ -125,6 +125,19 @@ export async function allowlist({hostname, origin, singlePage = false, url})
 }
 
 /**
+ * Determines whether the given tab is allowlisted
+ *
+ * @param {number} tabId - Tab ID
+ *
+ * @returns {Promise<boolean>} whether the given tab is allowlisted
+ */
+async function isTabAllowlisted(tabId)
+{
+  const allowingFilters = await ewe.filters.getAllowingFilters(tabId);
+  return allowingFilters.length > 0;
+}
+
+/**
  * Adds an allowing filter for the given page's hostname, if it is not
  * already allowlisted. Note: If a disabled allowing filter exists, we
  * enable that instead.
@@ -195,8 +208,8 @@ export let allowlistingState = {
 
 async function revalidateAllowlistingState(page)
 {
-  const allowingFilters = await ewe.filters.getAllowingFilters(page.id);
-  eventEmitter.emit("changed", page, allowingFilters.length > 0);
+  const isAllowlisted = await isTabAllowlisted(page.id);
+  eventEmitter.emit("changed", page, isAllowlisted);
 }
 
 export async function revalidateAllowlistingStates()

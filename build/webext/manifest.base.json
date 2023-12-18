@@ -62,6 +62,16 @@
         "https://accounts.adblockplus.org/*/premium?*"
       ],
       "run_at": "document_start"
+    },
+    {
+      "js": [
+        "yt-wall-detection.preload.js"
+      ],
+      "matches": [
+        "https://youtube.com/*",
+        "https://www.youtube.com/*"
+      ],
+      "run_at": "document_start"
     }
   ],
   "name": "__MSG_name_releasebuild__",

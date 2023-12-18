@@ -1,0 +1,14 @@
+{
+  "ytWallDetection_dialog_body": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/97211d4c5855176cb4aa8c73dc64a83232ce7d72/spec/abp/ipms.md#message-for-youtubes-ad-wall",
+    "message": "If you're a user that sees YouTube's anti-ad block wall, you can still access the site with Adblock Plus installed."
+  },
+  "ytWallDetection_dialog_button": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/97211d4c5855176cb4aa8c73dc64a83232ce7d72/spec/abp/ipms.md#message-for-youtubes-ad-wall",
+    "message": "Learn more"
+  },
+  "ytWallDetection_dialog_title": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/97211d4c5855176cb4aa8c73dc64a83232ce7d72/spec/abp/ipms.md#message-for-youtubes-ad-wall",
+    "message": "YouTube shows an anti-ad block wall to some users."
+  }
+}

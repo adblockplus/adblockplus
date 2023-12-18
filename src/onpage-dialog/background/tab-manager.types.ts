@@ -15,25 +15,30 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { type Command } from "../../../ipm/background";
-import { type Timing } from "../timing.types";
-
 /**
- * On-page dialog command parameters
+ * On-page dialog event names
  */
-export interface DialogParams {
-  timing: Timing;
-  display_duration?: number;
-  sub_title: string;
-  upper_body: string;
-  lower_body?: string;
-  button_label: string;
-  button_target: string;
-  domain_list?: string;
-  license_state_list?: string;
+export enum DialogEventType {
+  buttonClicked = "dialog_button_clicked",
+  closed = "dialog_closed",
+  ignored = "dialog_ignored",
+  injected = "dialog_injected"
 }
 
 /**
- * A valid IPM command for an on page dialog command.
+ * Results when attempting to show on-page dialog
  */
-export type DialogCommand = Command & DialogParams;
+export enum ShowOnpageDialogResult {
+  /**
+   * Dialog wasn't shown but can be retried
+   */
+  ignored,
+  /**
+   * Dialog wasn't shown and should not be retried
+   */
+  rejected,
+  /**
+   * Dialog was shown
+   */
+  shown
+}
