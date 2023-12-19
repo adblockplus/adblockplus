@@ -11,7 +11,7 @@
     {
       "all_frames": true,
       "js": [
-        "vendor/@eyeo/webext-sdk/content.js",
+        "vendor/@eyeo/webext-ad-filtering-solution/content.js",
         "polyfill.js",
         "ext/common.js",
         "ext/content.js",

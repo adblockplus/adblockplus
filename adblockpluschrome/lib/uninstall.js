@@ -17,7 +17,7 @@
 
 /** @module uninstall */
 
-import * as ewe from "@eyeo/webext-sdk";
+import * as ewe from "@eyeo/webext-ad-filtering-solution";
 
 import {Prefs} from "./prefs.js";
 import {isDataCorrupted} from "./subscriptionInit.js";
@@ -53,12 +53,7 @@ async function getWebAllowlistingFilterCount()
 
   // collect their metadata
   const filtersMetadata = await Promise.all(
-    filters.map(async filter =>
-    {
-      const metadata = await ewe.filters.getMetadata(filter.text)
-        .catch(() => null);
-      return metadata;
-    })
+    filters.map(async filter => await ewe.filters.getMetadata(filter.text))
   );
 
   // count the ones that originated in the web

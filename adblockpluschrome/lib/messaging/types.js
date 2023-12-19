@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import * as ewe from "@eyeo/webext-sdk";
+import * as ewe from "@eyeo/webext-ad-filtering-solution";
 
 const requestMethods = new Set([
   "allowing",

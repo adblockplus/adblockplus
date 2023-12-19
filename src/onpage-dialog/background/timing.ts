@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import * as ewe from "@eyeo/webext-sdk";
+import * as ewe from "@eyeo/webext-ad-filtering-solution";
 
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";
 
@@ -53,9 +53,7 @@ async function getAllowlistingTime(tabId: number): Promise<number | null> {
   }
 
   for (const filterText of allowlistingFilterTexts) {
-    const metadata = await ewe.filters
-      .getMetadata(filterText)
-      .catch(() => null);
+    const metadata = await ewe.filters.getMetadata(filterText);
     if (!isFilterMetadata(metadata)) {
       continue;
     }

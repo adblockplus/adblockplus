@@ -122,7 +122,7 @@ interface Recommendation {
   mv2URL?: string;
 }
 
-declare module "@eyeo/webext-sdk" {
+declare module "@eyeo/webext-ad-filtering-solution" {
   declare namespace allowlisting {
     /**
      * Sets the function called when allowlisting succeeds

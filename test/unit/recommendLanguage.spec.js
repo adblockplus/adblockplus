@@ -16,7 +16,7 @@ const languageFile = {
     [defaultLocale]: `[${defaultLocale}]`
   }
 };
-const moduleEWE = "@eyeo/webext-sdk";
+const moduleEWE = "@eyeo/webext-ad-filtering-solution";
 const uiLocale = "en";
 
 const defaultGlobals = {

@@ -17,7 +17,7 @@
 
 /** @module messageResponder */
 
-import * as ewe from "@eyeo/webext-sdk";
+import * as ewe from "@eyeo/webext-ad-filtering-solution";
 
 import {port} from "./messaging/port.js";
 import {Prefs} from "./prefs.js";

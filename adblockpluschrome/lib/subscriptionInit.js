@@ -18,7 +18,7 @@
 /** @module subscriptionInit */
 
 import rulesIndex from "@adblockinc/rules/adblockplus";
-import * as ewe from "@eyeo/webext-sdk";
+import * as ewe from "@eyeo/webext-ad-filtering-solution";
 
 import {startTelemetry} from "../../src/ipm/background/index.ts";
 import * as premium from "../../src/premium/background/index.ts";

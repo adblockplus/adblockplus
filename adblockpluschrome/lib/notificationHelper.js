@@ -17,7 +17,7 @@
 
 /** @module notificationHelper */
 
-import * as ewe from "@eyeo/webext-sdk";
+import * as ewe from "@eyeo/webext-ad-filtering-solution";
 
 import {getPremiumState} from "../../src/premium/background/index.ts";
 import {info} from "../../src/info/background";

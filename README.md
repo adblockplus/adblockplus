@@ -256,7 +256,7 @@ This project follows the typical GitLab process:
 [badge-pipeline-image]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/badges/main/pipeline.svg
 [badge-pipeline-link]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/commits/main
 [eyeo]: https://eyeo.com/
-[eyeo-ewe]: https://gitlab.com/eyeo/adblockplus/abc/webext-sdk
+[eyeo-ewe]: https://gitlab.com/eyeo/adblockplus/abc/webext-ad-filtering-solution
 [eyeo-snippets]: https://gitlab.com/eyeo/snippets
 [eyeo-terms]: https://adblockplus.org/terms
 [gpl3]: https://www.gnu.org/licenses/gpl.html

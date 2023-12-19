@@ -17,7 +17,7 @@
 
 /** @module contentFiltering */
 
-import * as ewe from "@eyeo/webext-sdk";
+import * as ewe from "@eyeo/webext-ad-filtering-solution";
 import * as snippets from "@eyeo/snippets";
 import {service as mlService} from "@eyeo/mlaf";
 

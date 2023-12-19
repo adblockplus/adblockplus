@@ -21,7 +21,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
-import * as ewe from "@eyeo/webext-sdk";
+import * as ewe from "@eyeo/webext-ad-filtering-solution";
 
 import { port } from "../../../adblockpluschrome/lib/messaging/port.js";
 import { SessionStorage } from "../../../adblockpluschrome/lib/storage/session.js";
