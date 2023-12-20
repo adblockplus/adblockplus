@@ -72,6 +72,23 @@
         "https://www.youtube.com/*"
       ],
       "run_at": "document_start"
+    },
+    {
+      "js": [
+        "polyfill.js",
+        "ext/common.js",
+        "ext/content.js",
+        "options.preload.js"
+      ],
+      "matches": [
+        "https://adblockplus.org/installed",
+        "https://adblockplus.org/installed?*",
+        "https://adblockplus.org/*/installed",
+        "https://adblockplus.org/*/installed?*",
+        "https://welcome.adblockplus.org/*/installed",
+        "https://welcome.adblockplus.org/*/installed?*"
+      ],
+      "run_at": "document_idle"
     }
   ],
   "name": "__MSG_name_releasebuild__",

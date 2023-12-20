@@ -197,6 +197,11 @@ defaults.premium_license = {
 };
 
 /**
+ * Origins that are trusted to open the options page
+ */
+defaults.options_backlink_trusted_origins = ["https://welcome.adblockplus.org", "https://adblockplus.org"];
+
+/**
  * Origin of page to activate Premium license.
  *
  * @type {string}

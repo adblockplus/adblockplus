@@ -117,6 +117,10 @@ export default {
         src: ["src/premium-onboarding/content/index.ts"]
       },
       {
+        dest: "options.preload.js",
+        src: ["src/options/content/index.ts"]
+      },
+      {
         dest: "problem.js",
         src: ["js/pages/problem.mjs"]
       },

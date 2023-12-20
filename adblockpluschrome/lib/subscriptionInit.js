@@ -22,6 +22,7 @@ import * as ewe from "@eyeo/webext-ad-filtering-solution";
 
 import {startTelemetry} from "../../src/ipm/background/index.ts";
 import * as premium from "../../src/premium/background/index.ts";
+import {startOptionLinkListener} from "../../src/options/background";
 import {info} from "../../src/info/background";
 import {setReadyState, ReadyState} from
   "../../src/testing/ready-state/background/index.ts";
@@ -185,6 +186,7 @@ async function start()
   initElementHidingDebugMode();
   await initNotifications(firstRun);
   premium.start();
+  startOptionLinkListener();
   void startTelemetry();
   startUnloadCleanup();
   startIPMPingListener();
