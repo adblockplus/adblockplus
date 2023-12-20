@@ -49,7 +49,7 @@ describe("test uninstall after changed params as part of the smoke tests", funct
     expect(await advancedPage.
       isEasyListFLStatusToggleSelected()).to.be.false;
     // Add wait for download count to update, fails once in a while in Chrome w/o this pause
-    await browser.pause(1500);
+    await browser.pause(10000);
     await browser.executeScript("browser.management.uninstallSelf();", []);
     await generalPage.switchToUninstalledTab();
     // Wait for tab to properly load

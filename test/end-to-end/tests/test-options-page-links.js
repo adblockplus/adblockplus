@@ -42,6 +42,7 @@ describe("test options page links", function()
   {
     if (lastTest == false)
     {
+      await browser.closeWindow();
       await afterSequence();
     }
   });

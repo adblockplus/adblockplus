@@ -38,7 +38,6 @@ describe("test adblocking as part of the smoke tests", function()
   before(async function()
   {
     this.timeout(200000);
-    lastTest = false;
     await beforeSequence();
   });
 
@@ -52,12 +51,14 @@ describe("test adblocking as part of the smoke tests", function()
 
   siteKeyData.forEach(async(dataSet) =>
   {
+    // The browser names used here are the ones in test.conf not the runtime
+    // names, as the browser object is not properly initalized at this point
     if ((dataSet.website == "http://trucking.com" &&
-        browser.capabilities.browserName == "firefox") ||
+        browser.capabilities.browserName == "Firefox") ||
         (dataSet.website == "http://cook.com" &&
-        browser.capabilities.browserName == "chrome") ||
+        browser.capabilities.browserName == "Chrome") ||
         (dataSet.website == "http://zins.de" &&
-        browser.capabilities.browserName == "msedge"))
+        browser.capabilities.browserName == "MicrosoftEdge"))
     {
       it("should test sitekey: " + dataSet.website, async function()
       {
@@ -117,6 +118,7 @@ describe("test adblocking as part of the smoke tests", function()
         await browser.refresh();
         expect(await generalPage.isElementDisplayed(
           dataSet.relatedLinksSelector)).to.be.true;
+        await browser.closeWindow();
       });
     }
   }, 2);

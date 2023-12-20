@@ -54,6 +54,7 @@ describe("test abp premium license check retries", function()
     `, []);
     const premiumHeaderChunk = new PremiumHeaderChunk(browser);
     expect(await premiumHeaderChunk.isPremiumButtonDisplayed()).to.be.true;
+    await browser.pause(2000);
     await backgroundPage.switchToTab(/_generated_background_page/);
     let consoleLog;
     for (let i = 0; i < 4; i++)
