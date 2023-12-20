@@ -166,7 +166,17 @@ const defaultFilterLists = [
   },
   {
     flName: "Russian Easylist",
-    flId: "RU AdList+EasyList (Русский, українська + English)",
+    flId: "RU, UA, UZ, KZ+EasyList (Русский, українська, o’zbek, Қазақ тілі + English)",
+    flStatus: "present"
+  },
+  {
+    flName: "Turkish Easylist",
+    flId: "Turkish Filters+EasyList (Türkçe + English)",
+    flStatus: "present"
+  },
+  {
+    flName: "Japanese Easylist",
+    flId: "Japanese Filters+EasyList (日本語 + English)",
     flStatus: "present"
   }
 ];
