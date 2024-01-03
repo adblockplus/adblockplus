@@ -351,16 +351,16 @@ downloadxtm:
 
 .testpages:
   stage: testpages
-  image: docker:19.03.5
+  image: docker:20.10.16
   services:
-    - docker:19.03.5-dind
+    - docker:20.10.16-dind
   variables:
     DOCKER_DRIVER: overlay2
   interruptible: true
   before_script:
     - apk add git
     # Clone the latest master branch of the testpages project
-    - git clone https://gitlab.com/eyeo/adblockplus/abc/testpages.adblockplus.org.git
+    - git clone https://gitlab.com/eyeo/developer-experience/testpages.adblockplus.org.git
     - cp dist/release/$EXTENSION testpages.adblockplus.org
   script:
     - cd testpages.adblockplus.org &&
