@@ -61,8 +61,9 @@ const assignedDialogs = new TabSessionStorage("onpage-dialog:dialogs");
 export const eventEmitter = new EventEmitter();
 /**
  * Queue of dialogs that haven't been assigned to a tab yet
+ * Keys are dialog IDs
  */
-const unassignedDialogs = new Set<Dialog>();
+const unassignedDialogs = new Map<string, Dialog>();
 
 /**
  * Removes on-page dialog
@@ -103,7 +104,7 @@ async function removeDialog(tabId: number): Promise<void> {
  */
 function dismissDialog(dialog: Dialog): void {
   logger.debug("[onpage-dialog]: Dismiss dialog");
-  unassignedDialogs.delete(dialog);
+  unassignedDialogs.delete(dialog.id);
 
   if (typeof dialog.ipmId === "string") {
     dismissCommand(dialog.ipmId);
@@ -195,7 +196,7 @@ function handleDialogCommand(ipmId: string): void {
   }
 
   const dialog: Dialog = { behavior, content, id: ipmId, ipmId };
-  unassignedDialogs.add(dialog);
+  unassignedDialogs.set(dialog.id, dialog);
 }
 
 /**
@@ -290,7 +291,7 @@ async function handleTabsUpdatedEvent(
     return;
   }
 
-  for (const dialog of unassignedDialogs) {
+  for (const dialog of unassignedDialogs.values()) {
     // Ignore and dismiss command if license state doesn't match those in the
     // command
     if (!(await doesLicenseStateMatch(dialog.behavior))) {
