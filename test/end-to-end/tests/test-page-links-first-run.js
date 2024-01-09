@@ -44,7 +44,7 @@ describe("test page links - first run", function()
       {
         isPromotionLinksTest = true;
       }
-      if (browser.capabilities.browserName == "msedge" &&
+      if (browser.capabilities.browserName.toLowerCase().includes("edge") &&
         isPromotionLinksTest)
       {
         console.warn("Test skipped for Edge.");

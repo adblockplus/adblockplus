@@ -35,7 +35,7 @@ describe("test abp premium license check retries", function()
   {
     await enablePremiumByMockServer();
     const backgroundPage = new BackgroundPage(browser);
-    if (browser.capabilities.browserName == "chrome")
+    if (browser.capabilities.browserName.toLowerCase().includes("chrome"))
     {
       await backgroundPage.init(globalOrigin);
       await switchToABPOptionsTab();

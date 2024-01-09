@@ -75,12 +75,12 @@ describe("test custom filters as part of the integration tests", function()
       "ocking/custom-filters/custom-filters-testpage.html";
     await browser.newWindow(customFiltersTestPage);
     await browser.refresh();
-    if (browser.capabilities.browserName == "msedge")
+    if (browser.capabilities.browserName.toLowerCase().includes("edge"))
     {
       await browser.pause(2000);
     }
     const testPages = new TestPages(browser);
-    if (browser.capabilities.browserName == "firefox")
+    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
     {
       if (await testPages.getCurrentTitle() !=
         "Blocking and hiding")

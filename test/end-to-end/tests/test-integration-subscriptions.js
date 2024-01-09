@@ -89,13 +89,13 @@ describe("test subscriptions as part of the integration tests", function()
       isEasyListFLStatusToggleSelected()).to.be.false;
     await browser.newWindow("https://adblockinc.gitlab.io/QA-team/adblocking/block" +
       "ing-hiding/blocking-hiding-testpage.html");
-    if (browser.capabilities.browserName == "firefox")
+    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
     {
       await browser.pause(500);
     }
     await browser.refresh();
     const testPages = new TestPages(browser);
-    if (browser.capabilities.browserName == "firefox")
+    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
     {
       if (await testPages.getCurrentTitle() !=
         "Blocking and hiding")
@@ -120,7 +120,7 @@ describe("test subscriptions as part of the integration tests", function()
     await browser.newWindow("https://adblockinc.gitlab.io/QA-team/adblocking/block" +
       "ing-hiding/blocking-hiding-testpage.html");
     await browser.refresh();
-    if (browser.capabilities.browserName == "firefox")
+    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
     {
       if (await testPages.getCurrentTitle() !=
         "Blocking and hiding")
@@ -142,7 +142,7 @@ describe("test subscriptions as part of the integration tests", function()
   it("should add/remove subscriptions", async function()
   {
     const advancedPage = new AdvancedPage(browser);
-    if (browser.capabilities.browserName == "firefox")
+    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
     {
       await browser.refresh();
       await switchToABPOptionsTab();
@@ -162,7 +162,7 @@ describe("test subscriptions as part of the integration tests", function()
       "ing-hiding/blocking-hiding-testpage.html");
     await browser.refresh();
     const testPages = new TestPages(browser);
-    if (browser.capabilities.browserName == "firefox")
+    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
     {
       if (await testPages.getCurrentTitle() !=
         "Blocking and hiding")
@@ -192,7 +192,7 @@ describe("test subscriptions as part of the integration tests", function()
     await browser.newWindow("https://adblockinc.gitlab.io/QA-team/adblocking/block" +
       "ing-hiding/blocking-hiding-testpage.html");
     await browser.refresh();
-    if (browser.capabilities.browserName == "firefox")
+    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
     {
       if (await testPages.getCurrentTitle() !=
         "Blocking and hiding")

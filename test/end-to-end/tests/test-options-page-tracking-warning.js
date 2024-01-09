@@ -34,7 +34,7 @@ describe("test options page general tab tracking warning", function()
   it("should display tracking warning", async function()
   {
     const generalPage = new GeneralPage(browser);
-    if (browser.capabilities.browserName == "msedge")
+    if (browser.capabilities.browserName.toLowerCase().includes("edge"))
     {
       // The installed page is sometimes displayed with a couple seconds delay
       await browser.pause(3000);

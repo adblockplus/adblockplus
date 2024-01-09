@@ -65,7 +65,7 @@ describe("test installation as part of the smoke tests", function()
       match(testData.regexMajorBrowserVersion)[0];
     expect(majorBrowserVersion).to.equal(
       currentUrl.match(testData.regex_apv)[0]);
-    if (browser.capabilities.browserName == "firefox")
+    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
     {
       const navigatorText = await browser.
         executeScript("return navigator.userAgent;", []);
@@ -80,7 +80,7 @@ describe("test installation as part of the smoke tests", function()
         currentUrl.match(testData.regex_pv)[0]);
     }
     expect(appVersion).to.equal(currentUrl.match(testData.regex_av)[0]);
-    if (browser.capabilities.browserName == "chrome")
+    if (browser.capabilities.browserName.toLowerCase().includes("chrome"))
     {
       expect("adblockpluschrome").to.
         equal(currentUrl.match(testData.regex_an)[0]);
@@ -89,7 +89,7 @@ describe("test installation as part of the smoke tests", function()
       expect("chromium").to.
         equal(currentUrl.match(testData.regex_p)[0]);
     }
-    else if (browser.capabilities.browserName == "msedge")
+    else if (browser.capabilities.browserName.toLowerCase().includes("edge"))
     {
       expect("adblockpluschrome").to.
         equal(currentUrl.match(testData.regex_an)[0]);
@@ -98,7 +98,7 @@ describe("test installation as part of the smoke tests", function()
       expect("chromium").to.
         equal(currentUrl.match(testData.regex_p)[0]);
     }
-    else if (browser.capabilities.browserName == "firefox")
+    else if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
     {
       expect("adblockplusfirefox").to.
         equal(currentUrl.match(testData.regex_an)[0]);
@@ -140,7 +140,7 @@ describe("test installation as part of the smoke tests", function()
       match(testData.regexMajorBrowserVersion)[0];
     expect(majorBrowserVersion).to.equal(
       currentUrl.match(testData.regex_apv)[0]);
-    if (browser.capabilities.browserName == "firefox")
+    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
     {
       const navigatorText = await browser.
         executeScript("return navigator.userAgent;", []);
@@ -156,7 +156,7 @@ describe("test installation as part of the smoke tests", function()
     }
     expect(appVersion).to.equal(currentUrl.match(testData.regex_av)[0]);
     lastTest = true;
-    if (browser.capabilities.browserName == "chrome")
+    if (browser.capabilities.browserName.toLowerCase().includes("chrome"))
     {
       expect("adblockpluschrome").to.
         equal(currentUrl.match(testData.regex_an)[0]);
@@ -165,7 +165,7 @@ describe("test installation as part of the smoke tests", function()
       expect("chromium").to.
         equal(currentUrl.match(testData.regex_p)[0]);
     }
-    else if (browser.capabilities.browserName == "msedge")
+    else if (browser.capabilities.browserName.toLowerCase().includes("edge"))
     {
       expect("adblockpluschrome").to.
         equal(currentUrl.match(testData.regex_an)[0]);
@@ -174,7 +174,7 @@ describe("test installation as part of the smoke tests", function()
       expect("chromium").to.
         equal(currentUrl.match(testData.regex_p)[0]);
     }
-    else if (browser.capabilities.browserName == "firefox")
+    else if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
     {
       expect("adblockplusfirefox").to.
         equal(currentUrl.match(testData.regex_an)[0]);

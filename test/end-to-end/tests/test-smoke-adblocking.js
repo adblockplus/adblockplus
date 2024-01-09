@@ -54,17 +54,17 @@ describe("test adblocking as part of the smoke tests", function()
     // The browser names used here are the ones in test.conf not the runtime
     // names, as the browser object is not properly initalized at this point
     if ((dataSet.website == "http://trucking.com" &&
-        browser.capabilities.browserName == "Firefox") ||
+        browser.capabilities.browserName.toLowerCase().includes("firefox")) ||
         (dataSet.website == "http://cook.com" &&
-        browser.capabilities.browserName == "Chrome") ||
+        browser.capabilities.browserName.toLowerCase().includes("chrome")) ||
         (dataSet.website == "http://zins.de" &&
-        browser.capabilities.browserName == "MicrosoftEdge"))
+        browser.capabilities.browserName.toLowerCase().includes("edge")))
     {
       it("should test sitekey: " + dataSet.website, async function()
       {
         await browser.newWindow(dataSet.website);
         const generalPage = new GeneralPage(browser);
-        if (browser.capabilities.browserName == "msedge")
+        if (browser.capabilities.browserName.toLowerCase().includes("edge"))
         {
           try
           {
@@ -83,7 +83,7 @@ describe("test adblocking as part of the smoke tests", function()
         }
         await browser.pause(randomIntFromInterval(1500, 2500));
         await browser.refresh();
-        if (browser.capabilities.browserName == "msedge")
+        if (browser.capabilities.browserName.toLowerCase().includes("edge"))
         {
           try
           {
@@ -166,7 +166,7 @@ describe("test adblocking as part of the smoke tests", function()
     await allowistedWebsitesPage.clickAddWebsiteButton();
     await browser.newWindow(testData.allowlistingUrl);
     const testPages = new TestPages(browser);
-    if (browser.capabilities.browserName == "firefox")
+    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
     {
       if (await allowistedWebsitesPage.getCurrentTitle() !=
         "Blocking and hiding")
@@ -197,7 +197,7 @@ describe("test adblocking as part of the smoke tests", function()
     });
     await browser.newWindow(testData.allowlistingUrl);
     await browser.refresh();
-    if (browser.capabilities.browserName == "firefox")
+    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
     {
       if (await allowistedWebsitesPage.getCurrentTitle() !=
         "Blocking and hiding")

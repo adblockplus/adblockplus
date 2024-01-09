@@ -72,7 +72,7 @@ describe("test options page dialog links", function()
 
   it("should open webstore page", async function()
   {
-    if (browser.capabilities.browserName == "msedge")
+    if (browser.capabilities.browserName.toLowerCase().includes("edge"))
     {
       console.warn("Test skipped for Edge.");
     }
@@ -82,13 +82,14 @@ describe("test options page dialog links", function()
       await footerChunk.clickHeartButton();
       const heartDialogChunk = new HeartDialogChunk(browser);
       await heartDialogChunk.clickRateUsButton();
-      if (browser.capabilities.browserName == "firefox")
+      if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
       {
         await heartDialogChunk.switchToAddonsTab();
         expect(await heartDialogChunk.getCurrentUrl()).to.match(
           dataLinks.addonsUrl);
       }
-      else if (browser.capabilities.browserName == "chrome")
+      else if (browser.capabilities.browserName.toLowerCase().
+        includes("chrome"))
       {
         await heartDialogChunk.switchToChromeWebstoreTab();
         // Cookies agreement page was removed by Chrome.
@@ -106,7 +107,7 @@ describe("test options page dialog links", function()
 
   it("should open donate page", async function()
   {
-    if (browser.capabilities.browserName == "msedge")
+    if (browser.capabilities.browserName.toLowerCase().includes("edge"))
     {
       console.warn("Test skipped for Edge.");
     }

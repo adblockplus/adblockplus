@@ -40,7 +40,7 @@ describe("test page links - updates", function()
     it("should have a link for: " + dataSet.testName, async function()
     {
       if (dataSet.testName == "Updates - Rate it" &&
-        browser.capabilities.browserName == "msedge")
+        browser.capabilities.browserName.toLowerCase().includes("edge"))
       {
         console.warn("Test skipped for Edge.");
       }
@@ -57,7 +57,7 @@ describe("test page links - updates", function()
         {
           await updatesPage.waitForEnabledThenClick(
             updatesPage[dataSet.elementToClick]);
-          if (browser.capabilities.browserName == "chrome")
+          if (browser.capabilities.browserName.toLowerCase().includes("chrome"))
           {
             await updatesPage.switchToTab(
               dataSet.chromeWebstorePageTitle);
@@ -71,7 +71,8 @@ describe("test page links - updates", function()
             expect(await updatesPage.getCurrentUrl()).to.equal(
               dataSet.newTabUrlChrome);
           }
-          else if (browser.capabilities.browserName == "firefox")
+          else if (browser.capabilities.browserName.toLowerCase().
+            includes("firefox"))
           {
             const heartDialogChunk = new HeartDialogChunk(browser);
             await heartDialogChunk.switchToAddonsTab();

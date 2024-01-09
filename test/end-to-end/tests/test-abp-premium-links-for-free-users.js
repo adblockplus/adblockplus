@@ -82,7 +82,7 @@ describe("test premium links for free users", function()
       let majorBrowserVersion = (JSON.stringify(browserCapabilities)).
         match(/(?<=browserVersion":").*?(?=\.)/)[0];
       expect(params.get("s")).to.equal(dataSet.source);
-      if (browser.capabilities.browserName == "chrome")
+      if (browser.capabilities.browserName.toLowerCase().includes("chrome"))
       {
         expect(params.get("an")).to.equal("adblockpluschrome");
         expect(params.get("ap")).to.equal("chrome");
@@ -90,7 +90,8 @@ describe("test premium links for free users", function()
           to.equal(majorBrowserVersion);
         expect(params.get("p")).to.equal("chromium");
       }
-      else if (browser.capabilities.browserName == "firefox")
+      else if (browser.capabilities.browserName.toLowerCase().
+        includes("firefox"))
       {
         expect(params.get("an")).to.equal("adblockplusfirefox");
         expect(params.get("ap")).to.equal("firefox");
@@ -101,7 +102,7 @@ describe("test premium links for free users", function()
         expect(params.get("pv").match(/\d*/)[0]).to.equal(majorBrowserVersion);
         expect(params.get("p")).to.equal("gecko");
       }
-      else if (browser.capabilities.browserName == "msedge")
+      else if (browser.capabilities.browserName.toLowerCase().includes("edge"))
       {
         expect(params.get("an")).to.equal("adblockpluschrome");
         expect(params.get("ap")).to.equal("edge");

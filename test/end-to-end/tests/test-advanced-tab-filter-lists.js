@@ -174,7 +174,7 @@ describe("test advanced tab - filter lists", function()
     await advancedPage.clickAddNewFilterListButton();
     expect(await advancedPage.
       isAddNewFilterListDialogDisplayed()).to.be.true;
-    if (browser.capabilities.browserName == "firefox")
+    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
     {
       await advancedPage.
       typeTextToFilterListUrlInput("https://test-filterlist.txt", true);
@@ -200,7 +200,7 @@ describe("test advanced tab - filter lists", function()
     await advancedPage.clickAddNewFilterListButton();
     expect(await advancedPage.
       isAddNewFilterListDialogDisplayed()).to.be.true;
-    if (browser.capabilities.browserName == "firefox")
+    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
     {
       await advancedPage.
       typeTextToFilterListUrlInput("test-filterlist.txt", true);
@@ -225,7 +225,7 @@ describe("test advanced tab - filter lists", function()
     await advancedPage.clickAddNewFilterListButton();
     expect(await advancedPage.
       isAddNewFilterListDialogDisplayed()).to.be.true;
-    if (browser.capabilities.browserName == "firefox")
+    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
     {
       await advancedPage.typeTextToFilterListUrlInput(
         "https://gitlab.com/-/snippets/1997334/raw", true);
@@ -236,7 +236,7 @@ describe("test advanced tab - filter lists", function()
         "https://gitlab.com/-/snippets/1997334/raw", true);
     }
     await advancedPage.clickAddAFilterListButton();
-    if (browser.capabilities.browserName == "firefox")
+    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
     {
       await advancedPage.typeTextToAddCustomFilterListInput(
         "@@||example.com^$document,subdocument", true);

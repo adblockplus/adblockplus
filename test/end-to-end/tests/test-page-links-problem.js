@@ -50,7 +50,7 @@ describe("test page links - problem", function()
       {
         await problemPage.waitForEnabledThenClick(
           problemPage[dataSet.elementToClick]);
-        if (browser.capabilities.browserName == "chrome")
+        if (browser.capabilities.browserName.toLowerCase().includes("chrome"))
         {
           await problemPage.switchToTab(
             dataSet.chromeWebstorePageTitle);
@@ -64,7 +64,8 @@ describe("test page links - problem", function()
           expect(await problemPage.getCurrentUrl()).to.equal(
             dataSet.newTabUrlChrome);
         }
-        else if (browser.capabilities.browserName == "firefox")
+        else if (browser.capabilities.browserName.toLowerCase().
+          includes("firefox"))
         {
           const heartDialogChunk = new HeartDialogChunk(browser);
           await heartDialogChunk.switchToAddonsTab();

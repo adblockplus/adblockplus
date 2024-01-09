@@ -131,14 +131,15 @@ describe("test options page links", function()
     const helpPage = new HelpPage(browser);
     await helpPage.init();
     await helpPage.clickForumLink();
-    if (browser.capabilities.browserName == "firefox")
+    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
     {
       await helpPage.switchToForumTabFirefox();
       expect(await helpPage.getCurrentUrl()).to.include(
         dataLinks.forumUrlFirefox);
     }
-    else if (browser.capabilities.browserName == "chrome" &&
-      browser.capabilities.browserName == "msedge")
+    else if (browser.capabilities.browserName.toLowerCase().
+      includes("chrome") &&
+      browser.capabilities.browserName.toLowerCase().includes("edge"))
     {
       await helpPage.switchToForumTabChrome();
       expect(await helpPage.getCurrentUrl()).to.include(
