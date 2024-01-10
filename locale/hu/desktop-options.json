@@ -455,5 +455,14 @@
   },
   "options_upgrade_button": {
     "message": "Magasabb verzióra frissítés"
+  },
+  "options_data_collection_opt_out_header": {
+    "message": "Adatgyűjtés"
+  },
+  "options_data_collection_opt_out_description": {
+    "message": "A lehető legjobb felhasználói élmény biztosítása érdekében az Adblock Plus bővítmény alapértelmezés szerint néhány felhasználói adatot gyűjt. Itt elutasíthatja az adatgyűjtést."
+  },
+  "options_data_collection_opt_out_label": {
+    "message": "Valamennyi adatgyűjtés elutasítása az Adblock Plus bővítményben."
   }
 }

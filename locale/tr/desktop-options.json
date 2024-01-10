@@ -455,5 +455,14 @@
   },
   "options_upgrade_button": {
     "message": "Yükselt"
+  },
+  "options_data_collection_opt_out_header": {
+    "message": "Veri Toplama"
+  },
+  "options_data_collection_opt_out_description": {
+    "message": "Mümkün olan en iyi kullanıcı deneyimini sağlamak için Adblock Plus uzantısı varsayılan olarak bazı kullanıcı verilerini toplar. Veri toplamayı buradan devre dışı bırakmayı seçebilirsiniz."
+  },
+  "options_data_collection_opt_out_label": {
+    "message": "Adblock Plus uzantısındaki tüm veri toplamayı devre dışı bırak."
   }
 }

@@ -446,5 +446,14 @@
   },
   "options_upgrade_button": {
     "message": "업그레이드"
+  },
+  "options_data_collection_opt_out_header": {
+    "message": "데이터 수집"
+  },
+  "options_data_collection_opt_out_description": {
+    "message": "최고의 사용자 경험을 제공하기 위해, Adblock Plus 확장 프로그램은 일부 사용자 데이터 수집이 기본 설정으로 되어 있습니다. 여기에서 데이터 수집을 중단하도록 선택할 수 있습니다."
+  },
+  "options_data_collection_opt_out_label": {
+    "message": "Adblock Plus 확장 프로그램에서 모든 데이터 수집 중단하기."
   }
 }

@@ -432,5 +432,14 @@
   },
   "options_upgrade_button": {
     "message": "アップグレード"
+  },
+  "options_data_collection_opt_out_header": {
+    "message": "データ収集"
+  },
+  "options_data_collection_opt_out_description": {
+    "message": "可能な限り最善のユーザー体験を提供するため、AdBlock Plus拡張機能はデフォルトで一部のユーザーデータを収集します。こちらから、データ収集を解除することができます。"
+  },
+  "options_data_collection_opt_out_label": {
+    "message": "Adblock Plus拡張機能によるすべてのデータ収集を解除する。"
   }
 }

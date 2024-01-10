@@ -455,5 +455,14 @@
   },
   "options_upgrade_button": {
     "message": "Upgraden"
+  },
+  "options_data_collection_opt_out_header": {
+    "message": "Gegevensverzameling"
+  },
+  "options_data_collection_opt_out_description": {
+    "message": "Om de best mogelijke gebruikerservaring te bieden, verzamelt de Adblock Plus-extensie standaard enkele gebruikersgegevens. U kunt ervoor kiezen om het verzamelen van gegevens hier uit te schakelen."
+  },
+  "options_data_collection_opt_out_label": {
+    "message": "Het verzamelen van gegevens in de Adblock Plus-extensie uitschakelen."
   }
 }

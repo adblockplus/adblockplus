@@ -388,5 +388,14 @@
   },
   "options_upgrade_button": {
     "message": "Αναβάθμιση"
+  },
+  "options_data_collection_opt_out_header": {
+    "message": "Συλλογή δεδομένων"
+  },
+  "options_data_collection_opt_out_description": {
+    "message": "Προκειμένου να παρέχει την καλύτερη δυνατή εμπειρία χρήστη, η επέκταση Adblock Plus συλλέγει ορισμένα δεδομένα χρήστη από προεπιλογή. Μπορείτε να επιλέξετε να εξαιρεθείτε από τη συλλογή δεδομένων εδώ."
+  },
+  "options_data_collection_opt_out_label": {
+    "message": "Εξαιρεθείτε από κάθε είδους συλλογή δεδομένων από την επέκταση Adblock Plus."
   }
 }

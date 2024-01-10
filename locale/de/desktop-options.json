@@ -455,5 +455,14 @@
   },
   "options_upgrade_button": {
     "message": "Upgrade"
+  },
+  "options_data_collection_opt_out_header": {
+    "message": "Datenerhebung"
+  },
+  "options_data_collection_opt_out_description": {
+    "message": "Um das bestmögliche Nutzererlebnis zu gewährleisten, sammelt die Adblock Plus-Erweiterung automatisch einige Nutzerdaten. Du kannst die Datenerhebung hier untersagen."
+  },
+  "options_data_collection_opt_out_label": {
+    "message": "Jegliche Datenerhebung in der Adblock Plus-Erweiterung untersagen."
   }
 }

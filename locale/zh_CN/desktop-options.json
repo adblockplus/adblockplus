@@ -455,5 +455,14 @@
   },
   "options_upgrade_button": {
     "message": "升级"
+  },
+  "options_data_collection_opt_out_header": {
+    "message": "数据收集"
+  },
+  "options_data_collection_opt_out_description": {
+    "message": "为了提供尽可能好的用户体验，Adblock Plus 扩展程序默认收集某些用户数据，您可以在此选择退出数据收集。"
+  },
+  "options_data_collection_opt_out_label": {
+    "message": "退出 Adblock Plus 扩展程序的所有数据收集。"
   }
 }

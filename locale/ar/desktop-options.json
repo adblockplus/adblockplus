@@ -455,5 +455,14 @@
   },
   "options_upgrade_button": {
     "message": "ترقية"
+  },
+  "options_data_collection_opt_out_header": {
+    "message": "جمع البيانات"
+  },
+  "options_data_collection_opt_out_description": {
+    "message": "لتوفير أفضل تجربة ممكنة للمستخدم، يجمع ملحق Adblock Plus بعض بيانات المستخدم بشكل افتراضي. ويمكنك اختيار إلغاء الاشتراك في جمع البيانات من هنا."
+  },
+  "options_data_collection_opt_out_label": {
+    "message": "إلغاء الاشتراك في جميع عمليات جمع البيانات في ملحق Adblock Plus."
   }
 }
