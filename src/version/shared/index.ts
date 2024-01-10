@@ -15,13 +15,4 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/**
- * Parses a SemVer compatible version string like "1.2.3-alpha" and returns
- * the major version.
- *
- * @param version The version string to obtain the major version from
- */
-export function getMajorVersion(version: string): string {
-  const majorVersion = version.split(".").shift();
-  return typeof majorVersion === "string" ? majorVersion : "0";
-}
+export * from "./version";

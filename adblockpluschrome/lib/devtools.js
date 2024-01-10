@@ -26,9 +26,10 @@ import {
   toPlainFilter,
   toPlainSubscription
 } from "./messaging/types.js";
+import {compareVersions} from "../../src/version/shared";
 import {TabSessionStorage} from "./storage/tab-session.js";
-import {compareVersions} from "./versions.js";
 import {info} from "../../src/info/background";
+
 
 const reloadStateByPage = new TabSessionStorage("devtools:reloadState");
 

@@ -16,7 +16,7 @@
  */
 
 import { type Info } from "./info.types";
-import { getMajorVersion } from "./version";
+import { getMajorVersion } from "../../version/shared";
 
 const addonName = "{{addonName}}";
 const baseName = "adblockplus";
