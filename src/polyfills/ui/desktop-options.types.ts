@@ -28,7 +28,7 @@ export interface InitialRecommendedSubscription {
   disabled: boolean;
   /**
    * The {@link https://gitlab.com/eyeo/adblockplus/abc/adblockpluscore/-/jobs/artifacts/0.6.0/file/build/docs/module-subscriptionClasses.DownloadableSubscription.html?job=docs#downloadStatus|status}
-   * of the most recent download attempt (downloadable subscriptions only).
+   * of the most recent download attempt (updatable subscriptions only).
    */
   downloadStatus: null;
   /**

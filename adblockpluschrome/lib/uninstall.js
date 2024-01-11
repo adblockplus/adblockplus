@@ -85,7 +85,7 @@ function getAdsSubscriptions()
  */
 async function isAnySubscriptionActive(urls)
 {
-  for (let subscription of await ewe.subscriptions.getDownloadable())
+  for (let subscription of await ewe.subscriptions.getSubscriptions())
   {
     if (subscription.enabled && urls.has(subscription.url))
       return true;

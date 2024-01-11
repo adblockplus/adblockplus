@@ -286,7 +286,7 @@ port.on("subscriptions.enableAllFilters", async(message, sender) =>
 });
 
 /**
- * Returns a serialized version of all downloadable subscriptions which meet
+ * Returns a serialized version of all updatable subscriptions which meet
  * the given criteria. Optionally include the disabled filters for those
  * subscriptions.
  *
@@ -300,7 +300,7 @@ port.on("subscriptions.enableAllFilters", async(message, sender) =>
 port.on("subscriptions.get", async(message, sender) =>
 {
   let subscriptions = [];
-  for (let s of await ewe.subscriptions.getDownloadable())
+  for (let s of await ewe.subscriptions.getSubscriptions())
   {
     if (message.ignoreDisabled && !s.enabled)
       continue;
@@ -370,7 +370,7 @@ port.on("subscriptions.toggle", async(message, sender) =>
   if (await ewe.subscriptions.has(message.url))
   {
     let subscription;
-    for (let s of await ewe.subscriptions.getDownloadable())
+    for (let s of await ewe.subscriptions.getSubscriptions())
     {
       if (s.url == message.url)
       {
@@ -467,7 +467,7 @@ async function filtersRemove(message)
 
 export async function initDisabledFilterCounters()
 {
-  for (const subscription of await ewe.subscriptions.getDownloadable())
+  for (const subscription of await ewe.subscriptions.getSubscriptions())
   {
     let count = 0;
 

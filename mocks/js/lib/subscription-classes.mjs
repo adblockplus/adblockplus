@@ -36,6 +36,7 @@ export function Subscription(url)
   {
     this._disabled = !!details.disabled;
     this.title = details.title || "";
+    this.updatable = details.updatable;
     if (details.filterText)
     {
       this._filterText = details.filterText.slice();

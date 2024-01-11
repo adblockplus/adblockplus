@@ -93,7 +93,7 @@ port.on("filters.isAllowlisted", () =>
     const obj = convertObject(["disabled", "downloadStatus", "homepage",
                                "version", "lastDownload", "lastSuccess",
                                "softExpiration", "expires", "title",
-                               "url"], subscription);
+                               "updatable", "url"], subscription);
     if (subscription instanceof SpecialSubscription)
       obj.filters = convertSubscriptionFilters(subscription);
 

@@ -324,7 +324,7 @@ Collection.prototype.updateItem = function(item)
     {
       element.classList.remove("show-message");
       cleanSyncErrorIdsFromSubscription(item.url);
-      if (!item.downloadable)
+      if (!item.updatable)
       {
         const text = getMessage("options_filterList_lastDownload_bundled");
         $(".message", element).textContent = text;
@@ -392,7 +392,7 @@ Collection.prototype.updateItem = function(item)
     const updateElement = $("io-popout .update-subscription", element);
     if (updateElement)
     {
-      updateElement.setAttribute("aria-hidden", !item.downloadable);
+      updateElement.setAttribute("aria-hidden", !item.updatable);
     }
 
     const websiteElement = $("io-popout .website", element);

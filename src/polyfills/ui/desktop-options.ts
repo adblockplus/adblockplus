@@ -58,10 +58,10 @@ function isRecommendedPlainSubscription(
     item !== null &&
     typeof item === "object" &&
     "disabled" in item &&
-    "downloadable" in item &&
     "languages" in item &&
     "recommended" in item &&
     "title" in item &&
+    "updatable" in item &&
     "url" in item &&
     "version" in item
   );

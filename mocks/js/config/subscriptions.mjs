@@ -33,38 +33,38 @@ export const subscriptionDetails = {
     title: "EasyList Germany+EasyList",
     filterText: ["-ad-banner.", "-ad-big.", "-ad-bottom-", "-ad-button-"],
     installed: true,
-    downloadable: true
+    updatable: true
   },
   [URL_ALLOWLIST]: {
     title: "Allow non-intrusive advertising",
     installed: true,
-    downloadable: true
+    updatable: true
   },
   [URL_PREMIUM]: {
     title: "AdBlock premium list",
     installed: params.premiumIsActive,
-    downloadable: true
+    updatable: true
   },
   [URL_ALLOWLIST_PRIVACY]: {
     title: "Allow only nonintrusive ads that are privacy-friendly",
-    downloadable: true
+    updatable: true
   },
   [`${URL_SUBSCRIPTION_BASE}/fanboy-social.txt`]: {
     title: "Fanboy's Social Blocking List",
     installed: true,
-    downloadable: true
+    updatable: true
   },
   [`${URL_SUBSCRIPTION_BASE}/abp-filters-anti-cv.txt`]: {
     title: "ABP Anti-Circumvention list",
     installed: true,
-    downloadable: true,
+    updatable: true,
     disabled: false,
     recommended: "circumvention"
   },
   [`${URL_SUBSCRIPTION_BASE}/antiadblockfilters.txt`]: {
     title: "Adblock Warning Removal List",
     installed: true,
-    downloadable: true,
+    updatable: true,
     disabled: true
   },
   [URL_UNKNOWN]: {
@@ -73,7 +73,7 @@ export const subscriptionDetails = {
   },
   [USER_ID]: {
     installed: true,
-    downloadable: false
+    updatable: false
   }
 };
 

@@ -27,7 +27,7 @@ No parameters.
 | | `title-url` | Show dialog as if no title had been passed |
 | | `invalid` | Show dialog as if an invalid URL had been passed |
 | application | `edge` | Hides rating dialog |
-| filtersDisabled | `true` | Show dialog as if all the filters of a downloadable subscription were disabled[^subscriptions-filters] |
+| filtersDisabled | `true` | Show dialog as if all the filters of an updatable subscription were disabled[^subscriptions-filters] |
 | downloadStatus | `synchronize_ok` | Set filter list download status: Filter list download succeeded (default) |
 | | `synchronize_connection_error` | Set filter list download status: Connection error |
 | | `synchronize_invalid_data` | Set filter list download status: Invalid filter list |
@@ -43,7 +43,7 @@ If the `locale` uses any Chinese that starts with `zh`, the _Get in touch_ secti
 
 It's possible to trigger multiple errors at the same time, e.g. using `filtersDisabled` and `downloadStatus` parameters.
 
-[^subscriptions-filters]: Not all downloadable subscriptions would contain filters, look for the `filterText` property in the [subscription data list](../mocks/js/config/subscriptions.js).
+[^subscriptions-filters]: Not all updatable subscriptions would contain filters, look for the `filterText` property in the [subscription data list](../mocks/js/config/subscriptions.js).
 
 ### devtools-panel.html
 

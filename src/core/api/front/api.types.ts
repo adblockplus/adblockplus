@@ -250,19 +250,13 @@ export interface ExtensionInfo {
  */
 export interface PlainSubscription {
   /**
-   * Indicates whether this subscription is downloaded and updated
-   * over the network. If `false` the subscription is merely a container
-   * for user-defined filters.
-   */
-  downloadable: boolean;
-  /**
    * Indicates whether the subscription is currently downloading
-   * (downloadable subscriptions only).
+   * (updatable subscriptions only).
    */
   downloading?: boolean;
   /**
    * The {@link https://gitlab.com/eyeo/adblockplus/abc/adblockpluscore/-/jobs/artifacts/0.6.0/file/build/docs/module-subscriptionClasses.DownloadableSubscription.html?job=docs#downloadStatus|status}
-   * of the most recent download attempt (downloadable subscriptions only).
+   * of the most recent download attempt (updatable subscriptions only).
    */
   downloadStatus?: string;
   /**
@@ -271,7 +265,7 @@ export interface PlainSubscription {
   disabled: boolean;
   /**
    * Epoch time when the subscription must be downloaded
-   * (downloadable subscriptions only).
+   * (updatable subscriptions only).
    */
   expires?: number;
   /**
@@ -280,18 +274,18 @@ export interface PlainSubscription {
   homepage?: string;
   /**
    * Epoch time when the subscription was last downloaded to your machine
-   * (downloadable subscriptions only).
+   * (updatable subscriptions only).
    */
   lastDownload?: number;
   /**
    * Epoch time when this subscription was last successfully downloaded
-   * (downloadable subscriptions only).
+   * (updatable subscriptions only).
    */
   lastSuccess?: number;
   /**
    * Epoch time for the next attempt to download the subscription. Can be
    * updated even if the subscription was not downloaded. If `expires`
-   * is closer, then `expires` prevail. (downloadable subscriptions only).
+   * is closer, then `expires` prevail. (updatable subscriptions only).
    */
   softExpiration?: number;
   /**
@@ -299,12 +293,18 @@ export interface PlainSubscription {
    */
   title: string;
   /**
+   * Indicates whether this subscription is downloaded and updated
+   * over the network. If `false` the subscription is merely a container
+   * for user-defined filters.
+   */
+  updatable: boolean;
+  /**
    * Where the subscription can be found in plain text. Used as the identifier.
    */
   url: string;
   /**
    * The version provided by the subscription's metadata. Defaults to '0' if
-   * not provided. It might be set if the subscription is not downloadable.
+   * not provided. It might be set if the subscription is not updatable.
    */
   version: string;
 }

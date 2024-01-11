@@ -573,7 +573,6 @@ _none_
 **object**
 
 - **boolean** disabled
-- **boolean** downloadable
 - **boolean** [downloading]
 - **string** [downloadStatus]
 - **number** [expires]
@@ -582,6 +581,7 @@ _none_
 - **number** [lastSuccess]
 - **number** [softExpiration]
 - **string** title
+- **boolean** updatable
 - **string** url
 - **string** version
 

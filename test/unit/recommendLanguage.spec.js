@@ -69,7 +69,6 @@ const defaultModules = {
       async showNext() {}
     },
     subscriptions: {
-      getDownloadable: async() => [],
       getRecommendations()
       {
         return [
@@ -80,6 +79,7 @@ const defaultModules = {
           }
         ];
       },
+      getSubscriptions: async() => [],
       has: () => false
     }
   },
@@ -802,13 +802,13 @@ describe("Test language filter list recommendation", () =>
 
         env.override(
           env.modules[moduleEWE].subscriptions,
-          "getDownloadable",
+          "getRecommendations",
           recommendations
         );
 
         env.override(
           env.modules[moduleEWE].subscriptions,
-          "getRecommendations",
+          "getSubscriptions",
           recommendations
         );
 
