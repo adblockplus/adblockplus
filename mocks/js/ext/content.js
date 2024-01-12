@@ -153,8 +153,6 @@
   }
   browser.runtime.getBrowserInfo = getBrowserInfo;
 
-  browser.runtime.getURL = (path) => path;
-
   function getTab(url)
   {
     return {

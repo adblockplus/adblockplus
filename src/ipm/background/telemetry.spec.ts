@@ -61,26 +61,24 @@ jest.mock("../../../adblockpluschrome/lib/prefs", () => {
   };
 });
 
-const fetchIPMMock = jest.fn(async () => {
-  return {
-    ok: true,
-    text: async () => "",
-    json: async () => ({})
-  };
-}) as jest.Mock;
-
 describe("telemetry", () => {
   beforeEach(() => {
-    jest.spyOn(global, "fetch").mockImplementation(fetchIPMMock);
+    jest.spyOn(global, "fetch").mockImplementation(
+      jest.fn(async () => {
+        return await Promise.resolve({
+          ok: true,
+          text: async () => "",
+          json: async () => ({})
+        });
+      }) as jest.Mock
+    );
   });
-
-  afterEach(() => jest.resetAllMocks());
 
   describe("sendPing", () => {
     it("fetches IPM data when Prefs.data_collection_opt_out is false", async () => {
       await Prefs.set("data_collection_opt_out", false);
       await sendPing();
-      expect(fetchIPMMock).toHaveBeenCalledWith(
+      expect(global.fetch).toHaveBeenCalledWith(
         "https://example.com",
         expect.anything()
       );
@@ -89,7 +87,7 @@ describe("telemetry", () => {
     it("does not fetch IPM data when Prefs.data_collection_opt_out is true", async () => {
       await Prefs.set("data_collection_opt_out", true);
       await sendPing();
-      expect(fetchIPMMock).toHaveBeenCalledTimes(0);
+      expect(global.fetch).toHaveBeenCalledTimes(0);
     });
   });
 });

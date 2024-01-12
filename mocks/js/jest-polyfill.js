@@ -53,3 +53,10 @@ Object.assign(browser, {
     }
   }
 });
+
+Object.assign(browser, {
+  webRequest: {
+    onBeforeRequest() {},
+    ResourceType: {}
+  }
+});

@@ -11,6 +11,8 @@ module.exports = {
   collectCoverage: true,
   coverageDirectory: "coverage",
   coverageReporters: ["json", "html", "text"],
+  resetMocks: true,
+  restoreMocks: true,
   setupFiles: [
     "jest-webextension-mock",
     "./mocks/js/jest-polyfill.js",
