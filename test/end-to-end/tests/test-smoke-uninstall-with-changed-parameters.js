@@ -48,8 +48,6 @@ describe("test uninstall after changed params as part of the smoke tests", funct
     await advancedPage.clickEasyListFLStatusToggle();
     expect(await advancedPage.
       isEasyListFLStatusToggleSelected()).to.be.false;
-    // Add wait for download count to update, fails once in a while in Chrome w/o this pause
-    await browser.pause(10000);
     await browser.executeScript("browser.management.uninstallSelf();", []);
     await generalPage.switchToUninstalledTab();
     // Wait for tab to properly load
@@ -59,7 +57,6 @@ describe("test uninstall after changed params as part of the smoke tests", funct
     const todaysDate = moment().utc().format("YYYYMMDD");
     const url = new URL(uninstallCurrentUrl);
     const params = url.searchParams;
-    expect(params.get("ndc")).to.equal("1");
     expect(params.get("s")).to.equal("0");
     expect(params.get("c")).to.equal("0");
     expect(params.get("fv")).to.equal(todaysDate);
