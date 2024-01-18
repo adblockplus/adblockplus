@@ -180,7 +180,7 @@ async function handleContinueMessage(
  *
  * @param ipmId - IPM ID
  */
-function handleDialogCommand(ipmId: string): void {
+async function handleDialogCommand(ipmId: string): Promise<void> {
   if (typeof ipmId !== "string") {
     return;
   }

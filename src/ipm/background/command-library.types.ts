@@ -39,20 +39,22 @@ export interface LicenseStateBehavior extends Behavior {
 /**
  * Handler that gets called when command gets executed
  */
-export type CommandHandler = (ipmId: string) => void;
+export type CommandHandler = (ipmId: string) => Promise<void>;
 
 /**
  * An enum containing all known command names.
  */
 export enum CommandName {
-  createOnPageDialog = "create_on_page_dialog"
+  createOnPageDialog = "create_on_page_dialog",
+  createTab = "create_tab"
 }
 
 /**
  * A map that contains the version for each command.
  */
 export const CommandVersion: Record<CommandName, number> = {
-  [CommandName.createOnPageDialog]: 3
+  [CommandName.createOnPageDialog]: 3,
+  [CommandName.createTab]: 2
 };
 
 /**
@@ -60,7 +62,7 @@ export const CommandVersion: Record<CommandName, number> = {
  */
 export interface CommandMetaData {
   /**
-   * The command library version.
+   * The command version.
    */
   version: number;
   /**
