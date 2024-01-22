@@ -26,7 +26,7 @@ import { premiumTypes } from "../shared";
  *
  * @returns A list of premium subscriptions
  */
-async function getPremiumSubscriptions(): Promise<Recommendation[]> {
+async function getPremiumSubscriptions(): Promise<ewe.Recommendation[]> {
   // The subscription of the "annoyances" type is the DC subscription
   return ewe.subscriptions
     .getRecommendations()
