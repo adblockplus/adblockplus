@@ -29,6 +29,8 @@ import {
 } from "../../../ipm/background";
 import * as logger from "../../../logger/background";
 import {
+  CreationMethod,
+  defaultCreationMethod,
   type NewTabBehavior,
   type NewTabCommand,
   type NewTabParams
@@ -45,6 +47,15 @@ const paramDefinitionList: ParamDefinitionList<NewTabParams> = [
   {
     name: "license_state_list",
     validate: isValidLicenseStateList
+  },
+  {
+    name: "method",
+    validate: (param): boolean =>
+      typeof param === "undefined" ||
+      (typeof param === "string" &&
+        Object.values(CreationMethod)
+          .map((method) => String(method))
+          .includes(param))
   }
 ];
 
@@ -78,7 +89,10 @@ export function isNewTabBehavior(
   candidate: unknown
 ): candidate is NewTabBehavior {
   return (
-    candidate !== null && typeof candidate === "object" && "target" in candidate
+    candidate !== null &&
+    typeof candidate === "object" &&
+    "target" in candidate &&
+    "method" in candidate
   );
 }
 
@@ -94,9 +108,15 @@ function getBehavior(command: Command): NewTabBehavior | null {
     return null;
   }
 
+  const method =
+    typeof command.method === "undefined"
+      ? defaultCreationMethod
+      : CreationMethod[command.method];
+
   return {
     target: command.url,
-    licenseStateList: command.license_state_list ?? defaultLicenseState
+    licenseStateList: command.license_state_list ?? defaultLicenseState,
+    method
   };
 }
 

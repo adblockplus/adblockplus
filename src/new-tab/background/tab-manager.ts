@@ -26,16 +26,17 @@ import {
 } from "../../ipm/background";
 import * as logger from "../../logger/background";
 import {
-  NewTabEventType,
-  NewTabExitEventType,
-  NewTabErrorEventType,
+  CreationMethod,
   isNewTabBehavior,
   setNewTabCommandHandler
 } from "./middleware";
 import {
   ListenerType,
   type ListenerSet,
-  type Listener
+  type Listener,
+  CreationError,
+  CreationSuccess,
+  CreationRejection
 } from "./tab-manager.types";
 
 /**
@@ -54,6 +55,19 @@ const tabIds = new Set<number>();
  * ourselves. Keys are the IPM IDs that triggered the tab creation.
  */
 const newTabUpdateListeners = new Map<string, Listener>();
+
+/**
+ * Registers an event with the data collection feature.
+ *
+ * @param ipmId The ipm id to register the event for
+ * @param name The event name to register
+ */
+function registerEvent(
+  ipmId: string,
+  name: CreationSuccess | CreationError | CreationRejection
+): void {
+  void recordEvent(ipmId, CommandName.createTab, name);
+}
 
 /**
  * Listens to updates on the tab we created ourselves to check if the
@@ -75,7 +89,7 @@ function onNewTabUpdated(
     return;
   }
 
-  void recordEvent(ipmId, CommandName.createTab, NewTabEventType.loaded);
+  registerEvent(ipmId, CreationSuccess.loaded);
 
   const listener = newTabUpdateListeners.get(ipmId);
   if (typeof listener === "undefined") {
@@ -101,11 +115,7 @@ async function openNewTab(ipmId: string): Promise<void> {
   const behavior = getBehavior(ipmId);
   if (!isNewTabBehavior(behavior)) {
     logger.debug("[new-tab]: Invalid command behavior.");
-    void recordEvent(
-      ipmId,
-      CommandName.createTab,
-      NewTabErrorEventType.noBehaviorFound
-    );
+    registerEvent(ipmId, CreationError.invalidBehavior);
     dismissCommand(ipmId);
     return;
   }
@@ -113,11 +123,7 @@ async function openNewTab(ipmId: string): Promise<void> {
   // Ignore and dismiss command if license states mismatch.
   if (!(await doesLicenseStateMatch(behavior))) {
     logger.debug("[new-tab]: License state mismatch.");
-    void recordEvent(
-      ipmId,
-      CommandName.createTab,
-      NewTabErrorEventType.licenseStateNoMatch
-    );
+    registerEvent(ipmId, CreationError.licenseStateMismatch);
     dismissCommand(ipmId);
     return;
   }
@@ -127,11 +133,7 @@ async function openNewTab(ipmId: string): Promise<void> {
   const targetUrl = createSafeOriginUrl(behavior.target);
   if (targetUrl === null) {
     logger.debug("[new-tab]: Invalid target URL.");
-    void recordEvent(
-      ipmId,
-      CommandName.createTab,
-      NewTabErrorEventType.noUrlFound
-    );
+    registerEvent(ipmId, CreationError.invalidURL);
     dismissCommand(ipmId);
     return;
   }
@@ -148,15 +150,11 @@ async function openNewTab(ipmId: string): Promise<void> {
 
   if (tab === null) {
     // There was an error during tab creation. Let's retry later.
-    void recordEvent(
-      ipmId,
-      CommandName.createTab,
-      NewTabErrorEventType.tabCreationError
-    );
+    registerEvent(ipmId, CreationError.tabCreationError);
     return;
   }
 
-  void recordEvent(ipmId, CommandName.createTab, NewTabEventType.created);
+  registerEvent(ipmId, CreationSuccess.created);
   dismissCommand(ipmId);
 }
 
@@ -275,8 +273,23 @@ async function handleCommand(ipmId: string): Promise<void> {
   // Don't open new tabs if we're on a managed installation.
   const { installType } = await browser.management.getSelf();
   if ((installType as unknown) === "admin") {
-    void recordEvent(ipmId, CommandName.createTab, NewTabExitEventType.admin);
+    registerEvent(ipmId, CreationRejection.admin);
     dismissCommand(ipmId);
+    return;
+  }
+
+  // Don't open new tabs if something's wrong with the data we got.
+  const behavior = getBehavior(ipmId);
+  if (!isNewTabBehavior(behavior)) {
+    logger.debug("[new-tab]: Invalid command behavior.");
+    registerEvent(ipmId, CreationError.invalidBehavior);
+    dismissCommand(ipmId);
+    return;
+  }
+
+  // If the method is `force`, we need to create the tab right away.
+  if (behavior.method === CreationMethod.force) {
+    void openNewTab(ipmId);
     return;
   }
 

@@ -21,29 +21,25 @@ import {
 } from "../../../ipm/background";
 
 /**
- * New tab event names
+ * The method to use for creating the new tab.
  */
-export enum NewTabEventType {
-  created = "tab_created",
-  loaded = "tab_loaded"
+export enum CreationMethod {
+  /**
+   * `default` refers to the method implemented by earlier versions of the
+   * command, and means waiting until the user opens a new, blank tab.
+   */
+  default = "default",
+  /**
+   * `force` means that the tab is to be created as soon as the extension
+   * receives the command.
+   */
+  force = "force"
 }
 
 /**
- * New tab error event names
+ * The default creation method, in case the according parameter is omitted.
  */
-export enum NewTabErrorEventType {
-  noBehaviorFound = "error_no_behavior",
-  licenseStateNoMatch = "license_state_no_match",
-  noUrlFound = "error_no_url",
-  tabCreationError = "tab_creation_error"
-}
-
-/**
- * New tab exit event names
- */
-export enum NewTabExitEventType {
-  admin = "newtab_admin"
-}
+export const defaultCreationMethod = CreationMethod.default;
 
 /**
  * New tab behavior
@@ -53,6 +49,10 @@ export interface NewTabBehavior extends LicenseStateBehavior {
    * Target page to open
    */
   target: string;
+  /**
+   * The method to use for opening the tab creation.
+   */
+  method: CreationMethod;
 }
 
 /**
@@ -61,6 +61,7 @@ export interface NewTabBehavior extends LicenseStateBehavior {
 export interface NewTabParams {
   url: string;
   license_state_list?: string;
+  method?: `${CreationMethod}`;
 }
 
 /**

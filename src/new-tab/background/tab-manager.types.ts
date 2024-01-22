@@ -33,3 +33,28 @@ export type Listener = (...args: any[]) => void;
  * A map that maps the type of a listener to the listener itself.
  */
 export type ListenerSet = Record<ListenerType, Listener>;
+
+/**
+ * Event names for successful tab creation.
+ */
+export enum CreationSuccess {
+  created = "tab_created",
+  loaded = "tab_loaded"
+}
+
+/**
+ * Event names for when we couldn't create a tab.
+ */
+export enum CreationError {
+  invalidBehavior = "error_no_behavior",
+  licenseStateMismatch = "license_state_no_match",
+  invalidURL = "error_no_url",
+  tabCreationError = "tab_creation_error"
+}
+
+/**
+ * Event names for when we decided not to create a tab.
+ */
+export enum CreationRejection {
+  admin = "newtab_admin"
+}
