@@ -51,7 +51,7 @@ function containsPermissions()
   }
 }
 
-document.addEventListener("DOMContentLoaded", () =>
+document.addEventListener("DOMContentLoaded", async() =>
 {
   const supportEmail = "support@adblockplus.org";
   setElementLinks("sr-warning", `mailto:${supportEmail}`);
@@ -67,21 +67,23 @@ document.addEventListener("DOMContentLoaded", () =>
     $("#notification").setAttribute("aria-hidden", true);
   });
 
+  const screenshot = await browser.tabs.captureVisibleTab(
+    null,
+    {format: "png"}
+  );
+  // activate current tab and let the user report
+  const tab = await browser.tabs.getCurrent();
+  await browser.tabs.update(tab.id, {active: true});
+  const manageSteps = stepsManager({screenshot});
+
+  // Steps manager is waiting for the data to be collected, so to avoid race
+  // conditions, we need to wait for it to be initialized before collection
   const collectedData = collectData().catch(e =>
   {
     console.error(e);
     alert(e);
     closeMe();
   });
-
-  const manageSteps = browser.tabs.captureVisibleTab(null, {format: "png"})
-    .then(screenshot =>
-    {
-      // activate current tab and let the user report
-      return browser.tabs.getCurrent()
-        .then(tab => browser.tabs.update(tab.id, {active: true}))
-        .then(() => stepsManager({screenshot}));
-    });
 
   $("#send").addEventListener("click", function sendAll(event)
   {
