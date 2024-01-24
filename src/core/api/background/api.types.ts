@@ -15,38 +15,37 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/**
- * Temporary type for shortened EventEmitter callback,
- * as passed to us by installHandler()
- *
- * @param arg - Argument to pass along to event listeners
- */
-export type EventEmitterCallback<T> = (arg: T) => void;
+import { type Tabs } from "webextension-polyfill";
 
 /**
- * Temporary interface for metadata object that we attach to custom filters
+ * Message sender
  */
-export interface FilterMetadata {
+export interface MessageSender {
   /**
-   * Filter creation date
+   * Information about sender frame
    */
-  created: number;
+  frame: {
+    /**
+     * Sender frame ID
+     */
+    id: number;
+  };
   /**
-   * Filter origin
+   * Information about sender page
    */
-  origin: string;
-}
+  page: {
+    /**
+     * Sender page ID (same as tab ID)
+     */
+    id: number;
+    /**
+     * Sender page URL
+     */
+    url: URL;
+  };
 
-/**
- * Temporary interface for "tab-removed" event data from TabSessionStorage
- */
-export interface TabRemovedEventData {
   /**
-   * Tab ID of removed tab
+   * Information about sender tab
    */
-  tabId: number;
-  /**
-   * Stored session data for removed tab
-   */
-  value: unknown;
+  tab: Tabs.Tab;
 }

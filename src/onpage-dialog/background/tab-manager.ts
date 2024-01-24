@@ -34,12 +34,10 @@ import {
   recordEvent
 } from "../../ipm/background";
 import * as logger from "../../logger/background";
-import {
-  type MessageSender,
-  type TabRemovedEventData
-} from "../../polyfills/background";
-import { type Message, isMessage } from "../../polyfills/shared";
-import { type HideMessage, type PingMessage, type StartInfo } from "../shared";
+import { type MessageSender } from "../../core/api/background";
+import { type Message, isMessage } from "../../core/api/shared";
+import { type TabRemovedEventData } from "../../polyfills/background";
+import { type HideMessage, type StartInfo, isPingMessage } from "../shared";
 import { isDialog, isDialogBehavior, isDialogContent } from "./dialog";
 import { type Dialog } from "./dialog.types";
 import { setDialogCommandHandler } from "./middleware";
@@ -229,9 +227,13 @@ async function handleGetMessage(
  * @param  sender - Message sender
  */
 async function handlePingMessage(
-  message: PingMessage,
+  message: Message,
   sender: MessageSender
 ): Promise<void> {
+  if (!isPingMessage(message)) {
+    return;
+  }
+
   const dialog = await assignedDialogs.get(sender.page.id);
   if (!isDialog(dialog)) {
     return;

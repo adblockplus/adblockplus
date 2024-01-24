@@ -16,6 +16,13 @@
  */
 
 /**
+ * Message object, as passed from/to background page
+ */
+export interface Message {
+  type: string;
+}
+
+/**
  * Options for activating Premium license
  */
 export interface PremiumActivateOptions {

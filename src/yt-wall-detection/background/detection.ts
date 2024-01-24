@@ -26,8 +26,8 @@ import {
   eventEmitter as dialogEmitter,
   showOnpageDialog
 } from "../../onpage-dialog/background";
-import { type MessageSender } from "../../polyfills/background";
-import { type Message } from "../../polyfills/shared";
+import { type MessageSender } from "../../core/api/background";
+import { type Message } from "../../core/api/shared";
 import { detectedMessageType, isEnabled } from "../shared";
 
 /**

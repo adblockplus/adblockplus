@@ -19,7 +19,8 @@ import { port } from "../../../adblockpluschrome/lib/messaging/port";
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";
 import { getAuthPayload, getPremiumState } from "../../premium/background";
 
-import { type MessageSender } from "../../polyfills/background";
+import { type MessageSender } from "../../core/api/background";
+import { type Message } from "../../core/api/shared";
 import { type PremiumGetAuthPayloadOptions } from "./bypass.types";
 
 /**
@@ -90,9 +91,13 @@ async function getKey(key: string): Promise<CryptoKey> {
  * @returns requested payload
  */
 async function handleGetAuthPayloadMessage(
-  message: PremiumGetAuthPayloadOptions,
+  message: Message,
   sender: MessageSender
 ): Promise<string | null> {
+  if (!isPremiumGetAuthPayloadMessage(message)) {
+    return null;
+  }
+
   // Check Premium state
   if (!getPremiumState().isActive) {
     return null;
@@ -119,6 +124,23 @@ async function handleGetAuthPayloadMessage(
   }
 
   return payload;
+}
+
+/**
+ * Checks whether candidate is message of type "premium.getAuthPayload".
+ *
+ * @param candidate - Candidate
+ * @returns whether candidate is messag eof type "premium.getAuthPayload"
+ */
+function isPremiumGetAuthPayloadMessage(
+  candidate: unknown
+): candidate is PremiumGetAuthPayloadOptions {
+  return (
+    candidate !== null &&
+    typeof candidate === "object" &&
+    "signature" in candidate &&
+    "timestamp" in candidate
+  );
 }
 
 /**

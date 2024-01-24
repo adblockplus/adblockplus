@@ -16,13 +16,6 @@
  */
 
 /**
- * Temporary interface for message object, as passed from/to background page
- */
-export interface Message {
-  type: string;
-}
-
-/**
  * Temporary interface for the custom Frame type
  */
 export interface Frame {

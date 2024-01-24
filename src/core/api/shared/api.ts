@@ -15,21 +15,32 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { isMessage } from "../../core/api/shared";
-import { type GetClassNameMessage } from "./unload-cleanup.types";
+import { type Message, type PremiumActivateOptions } from "./api.types";
 
 /**
- * Checks whether given candidate is message of type
- * "unload-cleanup.getClassName"
+ * Checks whether given candidate is a message
  *
  * @param candidate - Message candidate
  *
- * @returns whether candidate is message of type "unload-cleanup.getClassName"
+ * @returns whether candidate is message
  */
-export function isGetClassNameMessage(
-  candidate: unknown
-): candidate is GetClassNameMessage {
+export function isMessage(candidate: unknown): candidate is Message {
   return (
-    isMessage(candidate) && candidate.type === "unload-cleanup.getClassName"
+    candidate !== null && typeof candidate === "object" && "type" in candidate
+  );
+}
+
+/**
+ * Checks whether given candidate is mesage of type "premium.activate"
+ *
+ * @param candidate - Candidate
+ *
+ * @returns whether candidate is message of type "premium.activate"
+ */
+export function isPremiumActivateOptions(
+  candidate: unknown
+): candidate is PremiumActivateOptions {
+  return (
+    candidate !== null && typeof candidate === "object" && "userId" in candidate
   );
 }

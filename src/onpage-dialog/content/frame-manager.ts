@@ -16,7 +16,7 @@
  */
 
 import * as api from "../../core/api/front";
-import { type Message, isMessage } from "../../polyfills/shared";
+import { type Message, isMessage } from "../../core/api/shared";
 import { prepareElementForUnload } from "../../unload-cleanup/content";
 import { DisplayValue } from "../../unload-cleanup/shared";
 import { type ResizeMessage, type ShowMessage } from "../shared";
