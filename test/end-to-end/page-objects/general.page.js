@@ -149,9 +149,19 @@ class GeneralPage extends BasePage
     "div[@class='description-container']/p");
   }
 
+  get contributeButton()
+  {
+    return $("//a[@data-i18n='options_footer_contribute']");
+  }
+
   get doNotTrackNoteParagraph()
   {
     return $("#dnt");
+  }
+
+  get deutschPlusEnglischLanguageTableItem()
+  {
+    return $("//li[@aria-label='Deutsch + Englisch']");
   }
 
   get deutschPlusEnglishLanguageTableItem()
@@ -224,7 +234,7 @@ class GeneralPage extends BasePage
         "and text()='Nederlands + English']");
   }
 
-  get notifyLanguageFilterListsTooltipCheckbox()
+  get notifyLanguageFilterListsCheckbox()
   {
     return $("//ul[@id='language-recommend']/li/button");
   }
@@ -259,6 +269,11 @@ class GeneralPage extends BasePage
   get premiumSectionHeader()
   {
     return $("//header[@class='premium list-header']");
+  }
+
+  get tabTitle()
+  {
+    return $("//h1[@data-i18n='options_tab_general']");
   }
 
   get trackingWarning()
@@ -342,6 +357,11 @@ class GeneralPage extends BasePage
     await (await this.blockSocialMediaIconsTrackingCheckbox).click();
   }
 
+  async clickContributeButton()
+  {
+    await (await this.contributeButton).click();
+  }
+
   async clickDeutschPlusEnglishListItem()
   {
     await this.scrollIntoViewAndClick(this.deutschPlusEnglishListItem);
@@ -373,9 +393,9 @@ class GeneralPage extends BasePage
     await (await this.nederlandsPlusEnglishListItem).click();
   }
 
-  async clickNotifyLanguageFilterListsTooltipCheckbox()
+  async clickNotifyLanguageFilterListsCheckbox()
   {
-    await (await this.notifyLanguageFilterListsTooltipCheckbox).click();
+    await (await this.notifyLanguageFilterListsCheckbox).click();
   }
 
   async clickNotifyLanguageFilterListsTooltipIcon()
@@ -450,6 +470,11 @@ class GeneralPage extends BasePage
     await (await this.predefinedDialogTitle).
       waitForEnabled({timeout: 3000});
     return await (await this.predefinedDialogTitle).getText();
+  }
+
+  async getTabTitleText()
+  {
+    return await (await this.tabTitle).getText();
   }
 
   async isAllowAcceptableAdsCheckboxSelected(reverse = false, timeoutMs = 5000)
@@ -532,6 +557,12 @@ class GeneralPage extends BasePage
       3000, reverse);
   }
 
+  async isDeutschPlusEnglischLanguageTableItemDisplayed(reverseOption = false)
+  {
+    return await this.waitForDisplayedNoError(this.
+      deutschPlusEnglischLanguageTableItem, reverseOption);
+  }
+
   async isDeutschPlusEnglishLanguageTableItemDisplayed(reverseOption = false)
   {
     return await this.waitForDisplayedNoError(this.
@@ -600,6 +631,12 @@ class GeneralPage extends BasePage
   {
     return await (await this.listeFRPlusEasylistLanguageTableItem).
     isDisplayed();
+  }
+
+  async isNotifyLanguageFilterListsCheckboxDisplayed(reverseOption = false)
+  {
+    return await this.waitForDisplayedNoError(this.
+      notifyLanguageFilterListsCheckbox, reverseOption);
   }
 
   async isNotifyLanguageFilterListsTooltipTextDisplayed(reverseOption = false)

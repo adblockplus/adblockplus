@@ -57,6 +57,11 @@ class PopupPage extends BasePage
     return $("#premium-manage");
   }
 
+  get statsTotalLabel()
+  {
+    return $("//span[@data-i18n='stats_label_total']");
+  }
+
   get stopShowingNotificationsButton()
   {
     return $("//button[contains(.,'Stop showing notifications')]");
@@ -112,6 +117,11 @@ class PopupPage extends BasePage
   async getNumberOfAdsBlockedInTotalText()
   {
     return await (await this.numberOfAdsBlockedInTotal).getText();
+  }
+
+  async getStatsTotalLabelText()
+  {
+    return await (await this.statsTotalLabel).getText();
   }
 
   async isCloseNotificationButtonDisplayed()

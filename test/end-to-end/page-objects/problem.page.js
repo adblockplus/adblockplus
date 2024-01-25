@@ -57,9 +57,19 @@ class ProblemPage extends BasePage
     return $("//a[@data-i18n-title='problem_social_facebook']");
   }
 
+  get pageTitle()
+  {
+    return $("//h1[@data-i18n='problem_title']");
+  }
+
   get twitterButton()
   {
     return $("//a[@data-i18n-title='problem_social_twitter']");
+  }
+
+  async getPageTitleText()
+  {
+    return await (await this.pageTitle).getText();
   }
 }
 

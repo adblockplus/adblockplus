@@ -67,6 +67,11 @@ class FirstRunPage extends BasePage
     return $("//a[text()='strict criteria']");
   }
 
+  get subtitleText()
+  {
+    return $("//p[@data-i18n='firstRun_subtitle']");
+  }
+
   get termsOfUseLink()
   {
     return $("//a[text()='Terms of Use']");
@@ -75,6 +80,11 @@ class FirstRunPage extends BasePage
   get turnOffAALink()
   {
     return $("//a[text()='Turn off Acceptable Ads']");
+  }
+
+  async getSubtitleText()
+  {
+    return await (await this.subtitleText).getText();
   }
 }
 

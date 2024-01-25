@@ -57,6 +57,11 @@ class UpdatesPage extends BasePage
     return $("//a[@data-i18n-title='updates_social_facebook']");
   }
 
+  get pageTitle()
+  {
+    return $("//h1[@data-i18n='updates_title']");
+  }
+
   get rateItButton()
   {
     return $("//a[@data-i18n='updates_contribute_rate_action']");
@@ -65,6 +70,11 @@ class UpdatesPage extends BasePage
   get twitterButton()
   {
     return $("//a[@data-i18n-title='updates_social_twitter']");
+  }
+
+  async getPageTitleText()
+  {
+    return await (await this.pageTitle).getText();
   }
 }
 

@@ -20,6 +20,7 @@
 "use strict";
 
 const {config: baseConfig} = require("./base.conf.js");
+const {config: localisationConfig} = require("./localisation.conf.js");
 const helpers = require("./helpers.js");
 
 const parallelConfig = {
@@ -52,7 +53,8 @@ const parallelConfig = {
       },
       acceptInsecureCerts: true,
       exclude: [
-        "./tests/legacy-unit.js"
+        "./tests/legacy-unit.js",
+        "./tests/localisation-*.js"
       ]
     },
     {
@@ -69,6 +71,7 @@ const parallelConfig = {
       exclude: [
         "./tests/test-issue-reporter-*.js",
         "./tests/legacy-unit.js",
+        "./tests/localisation-*.js",
         "./tests/test-abp-premium-license-check-retries.js",
         "./tests/test-abp-premium-license-server-responses.js"
       ]
@@ -96,6 +99,7 @@ const parallelConfig = {
       acceptInsecureCerts: true,
       exclude: [
         "./tests/legacy-unit.js",
+        "./tests/localisation-*.js",
         "./tests/test-abp-premium-license-check-retries.js",
         "./tests/test-abp-premium-license-server-responses.js"
       ]
@@ -106,7 +110,8 @@ const parallelConfig = {
   screenshotPath: "./errorShots/"
 };
 
-exports.config = {...baseConfig, ...parallelConfig};
+exports.config = {...baseConfig, ...parallelConfig,
+                  capabilities: [...parallelConfig.capabilities, ...localisationConfig.capabilities]};
 
 // Code to support common capabilities
 exports.config.capabilities.forEach((caps) =>

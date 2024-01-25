@@ -42,6 +42,11 @@ class DayOnePage extends BasePage
     return $("#contact");
   }
 
+  get contentMessage()
+  {
+    return $("//h1[@id='content-message']/strong");
+  }
+
   get eyeoGmbHLink()
   {
     return $("//a[text()='eyeo GmbH']");
@@ -55,6 +60,11 @@ class DayOnePage extends BasePage
   get learnMoreAboutMaliciousAdvertisingButton()
   {
     return $("//a[@data-i18n='day1_header_more']");
+  }
+
+  async getContentMessageText()
+  {
+    return await (await this.contentMessage).getText();
   }
 }
 

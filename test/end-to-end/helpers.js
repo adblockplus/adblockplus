@@ -71,7 +71,7 @@ async function afterSequence()
   }
 }
 
-async function beforeSequence()
+async function beforeSequence(expectedTabsNumber = 3)
 {
   if (browser.capabilities.browserName == "firefox")
   {
@@ -86,12 +86,40 @@ async function beforeSequence()
   const [origin] = await waitForExtension();
   await browser.waitUntil(async() =>
   {
-    return ((await browser.getWindowHandles()).length >= 3);
+    return ((await browser.getWindowHandles()).length >= expectedTabsNumber);
   }, {timeout: 10000});
   await browser.url(`${origin}/desktop-options.html`);
   await browser.setWindowSize(1400, 1000);
-  await browser.switchWindow("Adblock Plus Options");
+  await browser.switchWindow(/options\.html/);
   return [origin];
+}
+
+async function doesTabExist(tabName, timeout = 3000)
+{
+  const startTime = new Date().getTime();
+  while (new Date().getTime() - startTime < timeout)
+  {
+    const tabs = await browser.getWindowHandles();
+    for (const tab of await tabs)
+    {
+      await browser.switchToWindow(tab);
+      if (typeof tabName === "string")
+      {
+        const title = await browser.getTitle();
+        const url = await browser.getUrl();
+        if (title === tabName || url === tabName)
+          return true;
+      }
+      else if (tabName instanceof RegExp)
+      {
+        const url = await browser.getUrl();
+        if (tabName.test(url))
+          return true;
+      }
+      await browser.pause(200);
+    }
+  }
+  return false;
 }
 
 async function enablePremiumByMockServer()
@@ -415,7 +443,8 @@ async function getTabId({title, urlPattern})
   return tabId;
 }
 
-module.exports = {afterSequence, beforeSequence, enablePremiumByMockServer,
+module.exports = {afterSequence, beforeSequence, doesTabExist,
+                  enablePremiumByMockServer,
                   getChromiumExtensionPath, enablePremiumByUI,
                   getCurrentDate, getFirefoxExtensionPath, getTabId,
                   randomIntFromInterval, helperExtension,
