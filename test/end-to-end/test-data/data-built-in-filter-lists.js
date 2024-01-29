@@ -178,6 +178,16 @@ const defaultFilterLists = [
     flName: "Japanese Easylist",
     flId: "Japanese Filters+EasyList (日本語 + English)",
     flStatus: "present"
+  },
+  {
+    flName: "Hungarian Easylist",
+    flId: "Hufilter Basic+EasyList (magyar + English)",
+    flStatus: "present"
+  },
+  {
+    flName: "Global Easylist",
+    flId: "Global Filters+EasyList (ภาษาไทย, ελληνικά, slovenščina, Hrvatski, српски, bosanski + English)",
+    flStatus: "present"
   }
 ];
 
