@@ -305,9 +305,7 @@ async function handleCommand(ipmId: string): Promise<void> {
 /**
  * Initializes new tab manager
  */
-async function start(): Promise<void> {
+export async function start(): Promise<void> {
   logger.debug("[new-tab]: tab manager start");
   setNewTabCommandHandler(handleCommand);
 }
-
-void start().catch(logger.error);

@@ -20,23 +20,12 @@
 import rulesIndex from "@adblockinc/rules/adblockplus";
 import * as ewe from "@eyeo/webext-ad-filtering-solution";
 
-import {startTelemetry} from "../../src/ipm/background/index.ts";
-import * as premium from "../../src/premium/background/index.ts";
-import {startOptionLinkListener} from "../../src/options/background";
 import {info} from "../../src/info/background";
-import {setReadyState, ReadyState} from
-  "../../src/testing/ready-state/background/index.ts";
 import {port} from "./messaging/port.js";
 import {revalidateAllowlistingStates} from "./allowlisting.js";
 import {initDisabledFilterCounters} from "./filterConfiguration.js";
 import {initNotifications} from "./notificationHelper.js";
 import {Prefs} from "./prefs.js";
-import {
-  start as startUnloadCleanup
-} from "../../src/unload-cleanup/background/index.ts";
-import {
-  start as startIPMPingListener
-} from "../../src/testing/ping-ipm/background";
 
 const defaultSubscriptionIds = [
   "8C13E995-8F06-4927-BEA7-6C845FB7EEBF",
@@ -180,7 +169,7 @@ function initElementHidingDebugMode()
   );
 }
 
-async function start()
+export async function start()
 {
   const [eweFirstRun] = await Promise.all([
     ewe.start({
@@ -210,12 +199,6 @@ async function start()
   await initDisabledFilterCounters();
   initElementHidingDebugMode();
   await initNotifications(firstRun);
-  premium.start();
-  startOptionLinkListener();
-  void startTelemetry();
-  startUnloadCleanup();
-  startIPMPingListener();
-  setReadyState(ReadyState.started);
 
   /**
    * @typedef {object} subscriptionsGetInitIssuesResult
@@ -258,5 +241,3 @@ export function setNotifyUserCallback(callback)
 {
   userNotificationCallback = callback;
 }
-
-start();

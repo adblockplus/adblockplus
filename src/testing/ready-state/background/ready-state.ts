@@ -44,8 +44,6 @@ function getReadyState(): ReadyState {
 /**
  * Initializes the ReadyState module.
  */
-function start(): void {
+export function start(): void {
   port.on("testing.getReadyState", () => getReadyState());
 }
-
-start();

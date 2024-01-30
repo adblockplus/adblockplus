@@ -81,21 +81,6 @@ function scheduleBadgeUpdate(tabId)
   }
 }
 
-scheduledEventEmitter.setListener(badgeUpdateTopic, async() =>
-{
-  badgeUpdateScheduled = false;
-  await updateBadge();
-});
-
-// Once nagivation for the tab has been committed to (e.g. it's no longer
-// being prerendered) we clear its badge, or if some requests were already
-// blocked beforehand we display those on the badge now.
-browser.webNavigation.onCommitted.addListener(async details =>
-{
-  if (details.frameId == 0)
-    await updateBadge(details.tabId);
-});
-
 async function onBlockableItem({filter, request})
 {
   if (!filter || filter.type != "blocking")
@@ -125,8 +110,6 @@ async function onBlockableItem({filter, request})
   Prefs.blocked_total++;
   eventEmitter.emit("blocked_total", Prefs.blocked_total);
 }
-
-ewe.reporting.onBlockableItem.addListener(onBlockableItem);
 
 /**
   * @namespace
@@ -167,70 +150,92 @@ export let Stats = {
   }
 };
 
-Prefs.on("show_statsinicon", async() =>
+export function start()
 {
-  let tabs = await browser.tabs.query({});
-  for (let tab of tabs)
+  scheduledEventEmitter.setListener(badgeUpdateTopic, async() =>
   {
-    if (Prefs.show_statsinicon)
-      await updateBadge(tab.id);
-    else
-      setBadge(tab.id, null);
-  }
-});
+    badgeUpdateScheduled = false;
+    await updateBadge();
+  });
 
-/**
+  // Once nagivation for the tab has been committed to (e.g. it's no longer
+  // being prerendered) we clear its badge, or if some requests were already
+  // blocked beforehand we display those on the badge now.
+  browser.webNavigation.onCommitted.addListener(async details =>
+  {
+    if (details.frameId == 0)
+      await updateBadge(details.tabId);
+  });
+
+
+  ewe.reporting.onBlockableItem.addListener(onBlockableItem);
+
+
+  Prefs.on("show_statsinicon", async() =>
+  {
+    let tabs = await browser.tabs.query({});
+    for (let tab of tabs)
+    {
+      if (Prefs.show_statsinicon)
+        await updateBadge(tab.id);
+      else
+        setBadge(tab.id, null);
+    }
+  });
+
+  /**
  * Returns the number of blocked requests for the sender's page.
  *
  * @event "stats.getBlockedPerPage"
  * @returns {number}
  */
-port.on("stats.getBlockedPerPage",
-        message => getBlockedPerPage(new ext.Page(message.tab)));
+  port.on("stats.getBlockedPerPage",
+          message => getBlockedPerPage(new ext.Page(message.tab)));
 
-/**
- * Returns the total number of blocked requests on non-incognito pages.
- *
- * @event "stats.getBlockedTotal"
- * @returns {number}
- */
-port.on("stats.getBlockedTotal", () => Stats.blocked_total);
+  /**
+* Returns the total number of blocked requests on non-incognito pages.
+*
+* @event "stats.getBlockedTotal"
+* @returns {number}
+*/
+  port.on("stats.getBlockedTotal", () => Stats.blocked_total);
 
-browser.tabs.query({active: true}).then(tabs =>
-{
-  for (let tab of tabs)
+  browser.tabs.query({active: true}).then(tabs =>
   {
-    activeTabIds.add(tab.id);
-    activeTabIdByWindowId.set(tab.windowId, tab.id);
-  }
+    for (let tab of tabs)
+    {
+      activeTabIds.add(tab.id);
+      activeTabIdByWindowId.set(tab.windowId, tab.id);
+    }
 
-  scheduleBadgeUpdate();
-});
-
-installHandler("stats", null, (emit, action) =>
-{
-  const onChanged = info => emit(info);
-  Stats.on(action, onChanged);
-  return () => Stats.off(action, onChanged);
-});
-
-browser.tabs.onActivated.addListener(tab =>
-{
-  let lastActiveTabId = activeTabIdByWindowId.get(tab.windowId);
-  if (typeof lastActiveTabId != "undefined")
-    activeTabIds.delete(lastActiveTabId);
-
-  activeTabIds.add(tab.tabId);
-  activeTabIdByWindowId.set(tab.windowId, tab.tabId);
-
-  scheduleBadgeUpdate();
-});
-
-if ("windows" in browser)
-{
-  browser.windows.onRemoved.addListener(windowId =>
-  {
-    activeTabIds.delete(activeTabIdByWindowId.get(windowId));
-    activeTabIdByWindowId.delete(windowId);
+    scheduleBadgeUpdate();
   });
+
+  installHandler("stats", null, (emit, action) =>
+  {
+    const onChanged = info => emit(info);
+    Stats.on(action, onChanged);
+    return () => Stats.off(action, onChanged);
+  });
+
+  browser.tabs.onActivated.addListener(tab =>
+  {
+    let lastActiveTabId = activeTabIdByWindowId.get(tab.windowId);
+    if (typeof lastActiveTabId != "undefined")
+      activeTabIds.delete(lastActiveTabId);
+
+    activeTabIds.add(tab.tabId);
+    activeTabIdByWindowId.set(tab.windowId, tab.tabId);
+
+    scheduleBadgeUpdate();
+  });
+
+  if ("windows" in browser)
+  {
+    browser.windows.onRemoved.addListener(windowId =>
+    {
+      activeTabIds.delete(activeTabIdByWindowId.get(windowId));
+      activeTabIdByWindowId.delete(windowId);
+    });
+  }
 }

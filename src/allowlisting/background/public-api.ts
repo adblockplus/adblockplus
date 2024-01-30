@@ -20,7 +20,6 @@ import * as ewe from "@eyeo/webext-ad-filtering-solution";
 import { allowlist } from "../../../adblockpluschrome/lib/allowlisting";
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";
 import * as premium from "../../premium/background";
-import * as logger from "../../logger/background";
 
 /**
  * Function to be called when a valid allowlisting request was received
@@ -61,7 +60,7 @@ async function removeWebAllowlistingFilters(): Promise<void> {
 /**
  * Initializes experimental allowlisting API
  */
-async function start(): Promise<void> {
+export async function start(): Promise<void> {
   const authorizedKeys = Prefs.get("allowlisting_authorizedKeys") as string[];
   void ewe.allowlisting.setAuthorizedKeys(authorizedKeys);
   ewe.allowlisting.setAllowlistingCallback(onAllowlisting);
@@ -82,5 +81,3 @@ async function start(): Promise<void> {
     void ewe.allowlisting.setAuthorizedKeys(authorizedKeys);
   });
 }
-
-void start().catch(logger.error);

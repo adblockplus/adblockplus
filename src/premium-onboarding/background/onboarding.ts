@@ -20,10 +20,8 @@ import { Prefs } from "../../../adblockpluschrome/lib/prefs";
 /**
  * Initializes Premium onboarding trigger
  */
-function start(): void {
+export function start(): void {
   ext.addTrustedMessageTypes(Prefs.get("premium_onboarding_trigger_origin"), [
     "app.open"
   ]);
 }
-
-start();
