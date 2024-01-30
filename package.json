@@ -82,7 +82,7 @@
     "@adblockinc/rules": "gitlab:adblockinc/ext/rules#5bd69a3",
     "@eyeo/mlaf": "0.3.3",
     "@eyeo/snippets": "0.10.0",
-    "@eyeo/webext-ad-filtering-solution": "1.2.2",
+    "@eyeo/webext-ad-filtering-solution": "1.2.3",
     "argparse": "1.0.10",
     "canvas": "2.11.2",
     "css-loader": "6.8.1",
