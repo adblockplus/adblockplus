@@ -171,7 +171,7 @@ async function clearStorage(tabId)
 /**
  * Initializes tab-specific session storage.
  */
-export function start()
+function start()
 {
   // Clear tab-specific data when the tab's content changes
   ext.pages.onLoading.addListener(page =>
@@ -185,3 +185,4 @@ export function start()
     void clearStorage(tabId);
   });
 }
+start();

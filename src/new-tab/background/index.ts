@@ -15,4 +15,4 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export * from "./tab-manager";
+import "./tab-manager";

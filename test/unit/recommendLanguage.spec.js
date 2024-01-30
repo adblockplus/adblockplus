@@ -150,9 +150,8 @@ describe("Test language filter list recommendation", () =>
       }
     );
 
-    const recommendLanguage = env.requireModule("../../lib/recommendLanguage");
+    env.requireModule("../../lib/recommendLanguage");
     await wait(0);
-    await recommendLanguage.start();
 
     ok(addsListener, "Navigation events listener installed");
     ok(
@@ -189,9 +188,8 @@ describe("Test language filter list recommendation", () =>
       }
     );
 
-    const recommendLanguage = env.requireModule("../../lib/recommendLanguage");
+    env.requireModule("../../lib/recommendLanguage");
     await wait(0);
-    await recommendLanguage.start();
 
     nok(addsListener, "Navigation events listener installed");
     nok(
@@ -228,9 +226,8 @@ describe("Test language filter list recommendation", () =>
       }
     );
 
-    const recommendLanguage = env.requireModule("../../lib/recommendLanguage");
+    env.requireModule("../../lib/recommendLanguage");
     await wait(0);
-    await recommendLanguage.start();
 
     nok(addsListener, "Navigation events listener installed");
     nok(
@@ -267,9 +264,8 @@ describe("Test language filter list recommendation", () =>
       }
     );
 
-    const recommendLanguage = env.requireModule("../../lib/recommendLanguage");
+    env.requireModule("../../lib/recommendLanguage");
     await wait(0);
-    await recommendLanguage.start();
 
     nok(addsListener, "Navigation events listener installed");
     nok(
@@ -322,9 +318,7 @@ describe("Test language filter list recommendation", () =>
         }
       );
 
-      const recommendLanguage =
-        env.requireModule("../../lib/recommendLanguage");
-      recommendLanguage.start();
+      env.requireModule("../../lib/recommendLanguage");
     });
   });
 
@@ -397,9 +391,7 @@ describe("Test language filter list recommendation", () =>
         }
       );
 
-      const recommendLanguage =
-        env.requireModule("../../lib/recommendLanguage");
-      recommendLanguage.start();
+      env.requireModule("../../lib/recommendLanguage");
     });
   });
 
@@ -454,9 +446,7 @@ describe("Test language filter list recommendation", () =>
         }
       );
 
-      const recommendLanguage =
-        env.requireModule("../../lib/recommendLanguage");
-      recommendLanguage.start();
+      env.requireModule("../../lib/recommendLanguage");
     });
   });
 
@@ -494,9 +484,7 @@ describe("Test language filter list recommendation", () =>
         }
       );
 
-      const recommendLanguage =
-        env.requireModule("../../lib/recommendLanguage");
-      recommendLanguage.start();
+      env.requireModule("../../lib/recommendLanguage");
     });
   });
 
@@ -545,9 +533,7 @@ describe("Test language filter list recommendation", () =>
         }
       );
 
-      const recommendLanguage =
-        env.requireModule("../../lib/recommendLanguage");
-      recommendLanguage.start();
+      env.requireModule("../../lib/recommendLanguage");
     });
   });
 
@@ -595,9 +581,7 @@ describe("Test language filter list recommendation", () =>
           }
         );
 
-        const recommendLanguage =
-          env.requireModule("../../lib/recommendLanguage");
-        recommendLanguage.start();
+        env.requireModule("../../lib/recommendLanguage");
       });
     }
   );
@@ -682,9 +666,7 @@ describe("Test language filter list recommendation", () =>
         }
       );
 
-      const recommendLanguage =
-        env.requireModule("../../lib/recommendLanguage");
-      recommendLanguage.start();
+      env.requireModule("../../lib/recommendLanguage");
     });
   });
 
@@ -730,9 +712,7 @@ describe("Test language filter list recommendation", () =>
         }
       );
 
-      const recommendLanguage =
-        env.requireModule("../../lib/recommendLanguage");
-      recommendLanguage.start();
+      env.requireModule("../../lib/recommendLanguage");
     });
   });
 
@@ -778,9 +758,7 @@ describe("Test language filter list recommendation", () =>
         }
       );
 
-      const recommendLanguage =
-        env.requireModule("../../lib/recommendLanguage");
-      recommendLanguage.start();
+      env.requireModule("../../lib/recommendLanguage");
     });
   });
 
@@ -855,9 +833,7 @@ describe("Test language filter list recommendation", () =>
           }
         );
 
-        const recommendLanguage =
-          env.requireModule("../../lib/recommendLanguage");
-        recommendLanguage.start();
+        env.requireModule("../../lib/recommendLanguage");
       });
     }
   );

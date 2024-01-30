@@ -22,7 +22,28 @@ export default {
     bundles: [
       {
         dest: "background.js",
-        src: ["src/bootstrap/background/base.ts"]
+        src: [
+          "adblockpluschrome/lib/serviceworkerInit.js",
+          "adblockpluschrome/lib/devtools.js",
+          "adblockpluschrome/lib/debug.js",
+          "adblockpluschrome/lib/subscriptionInit.js",
+          "lib/init.js",
+          "lib/recommendLanguage.js",
+          "src/composer/background/index.ts",
+          "adblockpluschrome/lib/stats.js",
+          "adblockpluschrome/lib/uninstall.js",
+          "adblockpluschrome/lib/contentFiltering.js",
+          "adblockpluschrome/lib/messageResponder.js",
+          "adblockpluschrome/lib/filterConfiguration.js",
+          "src/allowlisting/background/index.ts",
+          "src/bypass/background/index.ts",
+          "src/ipm/background/index.ts",
+          "src/onpage-dialog/background/index.ts",
+          "src/new-tab/background/index.ts",
+          "src/premium-onboarding/background/index.ts",
+          "src/premium-subscriptions/background/index.ts",
+          "src/yt-wall-detection/background/index.ts"
+        ]
       },
       {
         dest: "bypass.preload.js",

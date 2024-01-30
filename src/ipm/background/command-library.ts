@@ -251,7 +251,7 @@ export function executeIPMCommand(
 /**
  * Initializes command library
  */
-export async function start(): Promise<void> {
+async function start(): Promise<void> {
   await Prefs.untilLoaded;
 
   // Reinitialize commands from storage
@@ -260,3 +260,5 @@ export async function start(): Promise<void> {
     executeIPMCommand(command, true);
   }
 }
+
+void start().catch(logger.error);

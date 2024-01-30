@@ -21,12 +21,9 @@ import * as ewe from "@eyeo/webext-ad-filtering-solution";
 import * as snippets from "@eyeo/snippets";
 import {service as mlService} from "@eyeo/mlaf";
 
-export function start()
-{
-  ewe.snippets.setLibrary({
-    injectedCode: snippets.main,
-    isolatedCode: snippets.isolated
-  });
+ewe.snippets.setLibrary({
+  injectedCode: snippets.main,
+  isolatedCode: snippets.isolated
+});
 
-  browser.runtime.onMessage.addListener(mlService.messageListener);
-}
+browser.runtime.onMessage.addListener(mlService.messageListener);

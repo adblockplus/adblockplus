@@ -427,7 +427,7 @@ async function addDialog(tabId: number): Promise<void> {
 /**
  * Initializes on-page manager
  */
-export async function start(): Promise<void> {
+async function start(): Promise<void> {
   await setupTimings();
 
   // Handle messages from content scripts
@@ -454,3 +454,5 @@ export async function start(): Promise<void> {
   browser.tabs.onUpdated.addListener(handleTabsUpdatedEvent);
   setDialogCommandHandler(handleDialogCommand);
 }
+
+void start().catch(logger.error);

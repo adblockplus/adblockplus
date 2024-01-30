@@ -96,7 +96,7 @@ function showDialog(tabId: number, tab: Tabs.Tab): void {
 /**
  * Initializes YouTube wall detection feature
  */
-export function start(): void {
+function start(): void {
   if (!isEnabled) {
     return;
   }
@@ -109,3 +109,5 @@ export function start(): void {
   ext.addTrustedMessageTypes("https://youtube.com", [detectedMessageType]);
   ext.addTrustedMessageTypes("https://www.youtube.com", [detectedMessageType]);
 }
+
+start();
