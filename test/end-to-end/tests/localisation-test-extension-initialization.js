@@ -31,7 +31,7 @@ describe("test extension initialization for language subscriptions", function()
     currentLocale = await browser.executeScript(
       "return navigator.language || navigator.userLanguage", []);
     let expectedTabsNumber = 3;
-    if (currentLocale.includes("sl"))
+    if (currentLocale.includes("ca"))
       expectedTabsNumber = 2;
     await beforeSequence(expectedTabsNumber);
   });
@@ -48,7 +48,7 @@ describe("test extension initialization for language subscriptions", function()
       expect(await generalPage.
         isDeutschPlusEnglischLanguageTableItemDisplayed()).to.be.true;
     }
-    else if (currentLocale.includes("sl"))
+    else if (currentLocale.includes("ca"))
     {
       expect(await generalPage.
         isEnglishLanguageTableItemDisplayed()).to.be.true;

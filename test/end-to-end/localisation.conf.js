@@ -144,9 +144,9 @@ exports.config = {
           helpers.getChromiumExtensionPath(),
           require("fs").readFileSync("helper-extension/helper-extension.zip").toString("base64")
         ],
-        args: ["--no-sandbox", "--lang=sl_SI"],
+        args: ["--no-sandbox", "--lang=ca_CA"],
         prefs: {
-          "intl.accept_languages": "sl_SI",
+          "intl.accept_languages": "ca_CA",
           "profile.managed_default_content_settings.popups": 2,
           "profile.managed_default_content_settings.notifications": 2,
           "profile.content_settings.exceptions.clipboard": {
@@ -172,9 +172,9 @@ exports.config = {
           helpers.getChromiumExtensionPath(),
           require("fs").readFileSync("helper-extension/helper-extension.zip").toString("base64")
         ],
-        args: ["--no-sandbox", "--start-maximized", "--lang=sl_SI"],
+        args: ["--no-sandbox", "--start-maximized", "--lang=ca_CA"],
         prefs: {
-          "intl.accept_languages": "sl_SI",
+          "intl.accept_languages": "ca_CA",
           "profile.managed_default_content_settings.popups": 2,
           "profile.managed_default_content_settings.notifications": 2,
           "profile.content_settings.exceptions.clipboard": {
