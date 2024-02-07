@@ -27,9 +27,13 @@ class PopupPage extends BasePage
     this.browser = browser;
   }
 
-  async init(origin)
+  async init(origin, tabId)
   {
-    await browser.url(`${origin}/popup.html`);
+    await browser.newWindow("about:blank");
+    await browser.url(
+      `${origin}/popup.html?testTabId=${tabId}`
+    );
+    await (await this.upgradeButton).waitForExist({timeout: 10000});
   }
 
   get closeNotificationButton()
@@ -75,6 +79,16 @@ class PopupPage extends BasePage
   get yesButton()
   {
     return $("//p[@id='notification-message']/a");
+  }
+
+  get thisDomainToggle()
+  {
+    return $("//*[@id='page-status']/div[1]/io-circle-toggle");
+  }
+
+  get refreshButton()
+  {
+    return $("#page-refresh").$("button");
   }
 
   async clickCloseNotificationButton()
@@ -160,6 +174,24 @@ class PopupPage extends BasePage
     return await this.waitUntilTextIs(this.numberOfAdsBlockedInTotal,
                                       text, timeoutVal);
   }
+
+  async clickThisDomainToggle()
+  {
+    await this.waitForEnabledThenClick(this.thisDomainToggle);
+  }
+
+  async waitUntilDomainToggleActive(reverse = false)
+  {
+    return await this.waitUntilAttributeValueIs(
+      this.thisDomainToggle, "checked",
+      null, 3000, reverse);
+  }
+
+  async clickRefreshButton()
+  {
+    await this.waitForEnabledThenClick(this.refreshButton);
+  }
 }
 
 module.exports = PopupPage;
+
