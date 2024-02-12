@@ -180,7 +180,7 @@ function initElementHidingDebugMode()
   );
 }
 
-async function start()
+export async function start()
 {
   const [eweFirstRun] = await Promise.all([
     ewe.start({
@@ -258,5 +258,3 @@ export function setNotifyUserCallback(callback)
 {
   userNotificationCallback = callback;
 }
-
-start();

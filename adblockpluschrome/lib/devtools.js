@@ -97,60 +97,64 @@ function onPageLoad(page)
   });
 }
 
-/**
- * Returns true if our devtools panel is supported by the browser.
- *
- * @event "devtools.supported"
- * @returns {boolean}
- */
-port.on("devtools.supported", (message, sender) =>
-  info.platform == "chromium" ||
+export function start()
+{
+  /**
+   * Returns true if our devtools panel is supported by the browser.
+   *
+   * @event "devtools.supported"
+   * @returns {boolean}
+   */
+  port.on("devtools.supported", (message, sender) =>
+    info.platform == "chromium" ||
   info.application == "firefox" &&
   compareVersions(info.applicationVersion, "54") >= 0
-);
+  );
 
-installHandler("requests", null, (emit, action, targetTabId) =>
-{
-  switch (action)
+  installHandler("requests", null, (emit, action, targetTabId) =>
   {
-    case "hits":
-      const blockableItemsOptions = {
-        filterType: "all",
-        includeElementHiding: true,
-        includeUnmatched: true,
-        tabId: targetTabId
-      };
-      const localOnBlockableItem = onBlockableItem.bind(null, emit);
+    switch (action)
+    {
+      case "hits":
+        const blockableItemsOptions = {
+          filterType: "all",
+          includeElementHiding: true,
+          includeUnmatched: true,
+          tabId: targetTabId
+        };
+        const localOnBlockableItem = onBlockableItem.bind(null, emit);
 
-      ewe.reporting.onBlockableItem.addListener(
-        localOnBlockableItem,
-        blockableItemsOptions
-      );
-      return () =>
-      {
-        ewe.reporting.onBlockableItem.removeListener(
+        ewe.reporting.onBlockableItem.addListener(
           localOnBlockableItem,
           blockableItemsOptions
         );
-      };
-    case "reset":
-      const localOnPageFrame = onPageFrame.bind(null, emit);
-      const localOnPageLoad = onPageLoad.bind(null, emit);
-
-      browser.webRequest.onBeforeRequest.addListener(
-        localOnPageFrame,
+        return () =>
         {
-          urls: ["http://*/*", "https://*/*"],
-          types: ["main_frame"],
-          tabId: targetTabId
-        }
-      );
-      ext.pages.onLoading.addListener(localOnPageLoad);
+          ewe.reporting.onBlockableItem.removeListener(
+            localOnBlockableItem,
+            blockableItemsOptions
+          );
+        };
+      case "reset":
+        const localOnPageFrame = onPageFrame.bind(null, emit);
+        const localOnPageLoad = onPageLoad.bind(null, emit);
 
-      return () =>
-      {
-        browser.webRequest.onBeforeRequest.removeListener(localOnPageFrame);
-        ext.pages.onLoading.removeListener(localOnPageLoad);
-      };
-  }
-});
+        browser.webRequest.onBeforeRequest.addListener(
+          localOnPageFrame,
+          {
+            urls: ["http://*/*", "https://*/*"],
+            types: ["main_frame"],
+            tabId: targetTabId
+          }
+        );
+        ext.pages.onLoading.addListener(localOnPageLoad);
+
+        return () =>
+        {
+          browser.webRequest.onBeforeRequest.removeListener(localOnPageFrame);
+          ext.pages.onLoading.removeListener(localOnPageLoad);
+        };
+    }
+  });
+}
+

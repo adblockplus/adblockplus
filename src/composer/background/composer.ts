@@ -549,7 +549,7 @@ async function handlePageLoaded(page): Promise<void> {
 /**
  * Initializes filter composer backend
  */
-function start(): void {
+export function start(): void {
   /* eslint-disable @typescript-eslint/no-misused-promises */
   browser.tabs.onRemoved.addListener(onTabRemoved);
   browser.tabs.onUpdated.addListener(onTabUpdated);
@@ -597,5 +597,3 @@ function start(): void {
     "composer.ready"
   ]);
 }
-
-start();

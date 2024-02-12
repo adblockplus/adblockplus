@@ -137,18 +137,21 @@ export async function setUninstallURL()
                                   search.join("&"));
 }
 
-ewe.notifications.on("downloaded", setUninstallURL);
-
-ewe.filters.onAdded.addListener(setUninstallURL);
-ewe.filters.onChanged.addListener(setUninstallURL);
-ewe.filters.onRemoved.addListener(setUninstallURL);
-
-ewe.subscriptions.onAdded.addListener(setUninstallURL);
-ewe.subscriptions.onChanged.addListener(async(subscription, property) =>
+export function start()
 {
-  if (property !== "enabled")
-    return;
+  ewe.notifications.on("downloaded", setUninstallURL);
 
-  await setUninstallURL();
-});
-ewe.subscriptions.onRemoved.addListener(setUninstallURL);
+  ewe.filters.onAdded.addListener(setUninstallURL);
+  ewe.filters.onChanged.addListener(setUninstallURL);
+  ewe.filters.onRemoved.addListener(setUninstallURL);
+
+  ewe.subscriptions.onAdded.addListener(setUninstallURL);
+  ewe.subscriptions.onChanged.addListener(async(subscription, property) =>
+  {
+    if (property !== "enabled")
+      return;
+
+    await setUninstallURL();
+  });
+  ewe.subscriptions.onRemoved.addListener(setUninstallURL);
+}

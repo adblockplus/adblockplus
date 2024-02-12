@@ -72,7 +72,7 @@ async function removePremiumSubscriptions(): Promise<void> {
 /**
  * Initializes Premium subscriptions in the background context.
  */
-function start(): void {
+export function start(): void {
   premium.emitter.on("deactivated", () => {
     void removePremiumSubscriptions();
   });
@@ -81,5 +81,3 @@ function start(): void {
     void addOptoutPremiumSubscriptions();
   });
 }
-
-start();

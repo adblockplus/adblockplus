@@ -214,9 +214,7 @@ function verifyTimestamp(timestamp: number): boolean {
 /**
  * Initializes module
  */
-function start(): void {
+export function start(): void {
   port.on("premium.getAuthPayload", handleGetAuthPayloadMessage);
   ext.addTrustedMessageTypes(null, ["premium.getAuthPayload"]);
 }
-
-start();
