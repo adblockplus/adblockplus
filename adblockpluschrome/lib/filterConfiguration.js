@@ -21,11 +21,11 @@ import {showOptions} from "../../lib/pages/options.js";
 import {installHandler} from "./messaging/events.js";
 import {port} from "./messaging/port.js";
 import {
-  toPlainFilter,
-  toPlainFilterError,
-  toPlainRecommendation,
-  toPlainSubscription
-} from "./messaging/types.js";
+  toSerializableFilter,
+  toSerializableFilterError,
+  toSerializableRecommendation,
+  toSerializableSubscription
+} from "../../src/core/api/background";
 import {EventEmitter} from "./events.js";
 import {filterTypes} from "./requestBlocker.js";
 
@@ -101,7 +101,7 @@ function parseFilter(text)
     {
       let filterError = ewe.filters.validate(filterText);
       if (filterError)
-        error = toPlainFilterError(filterError);
+        error = toSerializableFilterError(filterError);
     }
   }
 
@@ -238,7 +238,7 @@ export function start()
   port.on("filters.get", async(message, sender) =>
   {
     let filters = await ewe.filters.getUserFilters();
-    return filters.map(toPlainFilter);
+    return filters.map(toSerializableFilter);
   });
 
   /**
@@ -413,7 +413,7 @@ export function start()
       if (message.ignoreDisabled && !s.enabled)
         continue;
 
-      let subscription = toPlainSubscription(s);
+      let subscription = toSerializableSubscription(s);
       if (message.disabledFilters)
       {
         let filters = await ewe.subscriptions.getFilters(s.url) || [];
@@ -446,7 +446,7 @@ export function start()
   port.on("subscriptions.getRecommendations", async(message, sender) =>
   {
     const recommendations = await ewe.subscriptions.getRecommendations();
-    return Array.from(recommendations, toPlainRecommendation);
+    return Array.from(recommendations, toSerializableRecommendation);
   });
 
   /**
@@ -536,7 +536,7 @@ export function start()
 
   installHandler("filters", "added", emit =>
   {
-    const onAdded = filter => emit(toPlainFilter(filter));
+    const onAdded = filter => emit(toSerializableFilter(filter));
     ewe.filters.onAdded.addListener(onAdded);
     return () => ewe.filters.onAdded.removeListener(onAdded);
   });
@@ -544,21 +544,24 @@ export function start()
   installHandler("filters", "changed", emit =>
   {
     const onChanged = (filter, property) =>
-      emit(toPlainFilter(filter), property);
+      emit(toSerializableFilter(filter), property);
     ewe.filters.onChanged.addListener(onChanged);
     return () => ewe.filters.onChanged.removeListener(onChanged);
   });
 
   installHandler("filters", "removed", emit =>
   {
-    const onRemoved = filter => emit(toPlainFilter(filter));
+    const onRemoved = filter => emit(toSerializableFilter(filter));
     ewe.filters.onRemoved.addListener(onRemoved);
     return () => ewe.filters.onRemoved.removeListener(onRemoved);
   });
 
   installHandler("subscriptions", "added", emit =>
   {
-    const onAdded = subscription => emit(toPlainSubscription(subscription));
+    const onAdded = subscription =>
+    {
+      emit(toSerializableSubscription(subscription));
+    };
     ewe.subscriptions.onAdded.addListener(onAdded);
     return () => ewe.subscriptions.onAdded.removeListener(onAdded);
   });
@@ -567,7 +570,7 @@ export function start()
   {
     const onChanged = (subscription, property) =>
     {
-      emit(toPlainSubscription(subscription), property);
+      emit(toSerializableSubscription(subscription), property);
     };
     ewe.subscriptions.onChanged.addListener(onChanged);
     return () => ewe.subscriptions.onChanged.removeListener(onChanged);
@@ -577,7 +580,7 @@ export function start()
   {
     const onFiltersDisabled = (subscription, hadFilters, hasFilters) =>
     {
-      emit(toPlainSubscription(subscription), hadFilters, hasFilters);
+      emit(toSerializableSubscription(subscription), hadFilters, hasFilters);
     };
     eventEmitter.on("filtersDisabled", onFiltersDisabled);
     return () => eventEmitter.off("filtersDisabled", onFiltersDisabled);
@@ -585,7 +588,10 @@ export function start()
 
   installHandler("subscriptions", "removed", emit =>
   {
-    const onRemoved = subscription => emit(toPlainSubscription(subscription));
+    const onRemoved = subscription =>
+    {
+      emit(toSerializableSubscription(subscription));
+    };
     ewe.subscriptions.onRemoved.addListener(onRemoved);
     return () => ewe.subscriptions.onRemoved.removeListener(onRemoved);
   });

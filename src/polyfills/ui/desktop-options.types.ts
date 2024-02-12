@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { type PlainSubscription } from "../../core/api/front";
+import { type SerializableSubscription } from "../../core/api/shared";
 
 /**
  * Initial data for a recommended subscription, that hasn't been installed yet,
@@ -56,7 +56,7 @@ export interface InitialRecommendedSubscription {
 /**
  * Recommended subscription data consumed in the options page
  */
-export interface RecommendedPlainSubscription extends PlainSubscription {
+export interface RecommendedSubscription extends SerializableSubscription {
   /**
    * The languages that this recommendation would match to.
    */
@@ -72,4 +72,4 @@ export interface RecommendedPlainSubscription extends PlainSubscription {
  */
 export type CollectionSubscription =
   | InitialRecommendedSubscription
-  | RecommendedPlainSubscription;
+  | RecommendedSubscription;

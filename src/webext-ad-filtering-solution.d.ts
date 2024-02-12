@@ -45,6 +45,29 @@ declare module "@eyeo/webext-ad-filtering-solution" {
   type FilterMetadata = Record<string, any>;
 
   /**
+   * Represents an item that can be blocked.
+   */
+  interface BlockableItem {
+    /**
+     * The filter that matched, if any.
+     */
+    filter: Filter;
+    /**
+     * Extra information that might be relevant depending on the context.
+     */
+    matchInfo: FilterMatchInfo;
+    /**
+     * Either the onBeforeRequest details object or the onHeadersReceived
+     * details object from the web extensions API, or an object with the
+     * properties frameId , tabId and url.
+     */
+    request:
+      | Browser.WebRequest.OnBeforeRequestDetailsType
+      | Browser.WebRequest.OnHeadersReceivedDetailsType
+      | VirtualBlockableItemRequest;
+  }
+
+  /**
    * Represents a single filter rule and its state.
    */
   interface Filter {
@@ -85,6 +108,24 @@ declare module "@eyeo/webext-ad-filtering-solution" {
   }
 
   /**
+   * The result of parsing an invalid filter.
+   */
+  interface FilterError {
+    /**
+     * The filter option that made the filter invalid.
+     */
+    option: string | null;
+    /**
+     * The reason why the filter is invalid.
+     */
+    reason: string;
+    /**
+     * Either invalid_filter or invalid_domain.
+     */
+    type: string;
+  }
+
+  /**
    * Defines the recommended filter subscriptions per language.
    */
   interface Recommendation {
@@ -121,6 +162,71 @@ declare module "@eyeo/webext-ad-filtering-solution" {
      * (Manifest V3 only).
      */
     mv2URL?: string;
+  }
+
+  /**
+   * A resource that provides a list of filters that decide what to block.
+   */
+  interface Subscription {
+    /**
+     * Indicates whether the subscription is currently downloading (downloadble
+     * subscriptions only).
+     */
+    downloading: boolean;
+    /**
+     * The status of the most recent download attempt (downloadble subscriptions
+     * only).
+     */
+    downloadStatus?: string;
+    /**
+     * Indicates whether this subscription will be applied.
+     */
+    enabled: boolean;
+    /**
+     * Epoch time when the subscription must be downloaded (downloadble
+     * subscriptions only).
+     */
+    expires?: number;
+    /**
+     * Website of the project that manages this filter list.
+     */
+    homepage?: string;
+    /**
+     * Epoch time when the subscription was last downloaded to your machine
+     * (downloadble subscriptions only).
+     */
+    lastDownload?: number;
+    /**
+     * Epoch time when this subscription was last successfully downloaded
+     * (downloadble subscriptions only).
+     */
+    lastSuccess?: number;
+    /**
+     * Epoch time for the next attempt to download the subscription. Can be
+     * updated even if the subscription was not downloaded. If expires is
+     * closer, then expires prevail. (downloadble subscriptions only).
+     */
+    softExpiration?: number;
+    /**
+     * The display name of the subscription. If not provided, falls back to the
+     * URL.
+     */
+    title: string;
+    /**
+     * Indicates whether this subscription can be updated with either full or
+     * diff update over the network. If false the subscription is merely a
+     * container for user-defined filters.
+     */
+    updatable: boolean;
+    /**
+     * Where the subscription can be found in plain text. Used a the identifier.
+     */
+    url: string;
+    /**
+     * The version provided by the subscription's metadata. Defaults to '0' if
+     * not provided. It might be set if the subscription is not downloadable.
+     */
+    version: string;
   }
 
   declare namespace allowlisting {
@@ -183,6 +289,13 @@ declare module "@eyeo/webext-ad-filtering-solution" {
      * Returns the list of ignored notification categories
      */
     const getIgnoredCategories: () => Promise<string[]>;
+  }
+
+  declare namespace reporting {
+    /**
+     * Returns a mapping between resourceTypes and contentTypes.
+     */
+    const contentTypesMap: Map<string, string>;
   }
 
   declare namespace subscriptions {

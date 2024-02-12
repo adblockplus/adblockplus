@@ -18,7 +18,7 @@
 import {
   type CollectionSubscription,
   type InitialRecommendedSubscription,
-  type RecommendedPlainSubscription
+  type RecommendedSubscription
 } from "./desktop-options.types";
 
 /**
@@ -45,15 +45,15 @@ function isInitialRecommendedSubscription(
 }
 
 /**
- * Checks if an item is of type RecommendedPlainSubscription
+ * Checks if an item is of type RecommendedSubscription
  *
  * @param item - the item to check
  *
- * @returns Whether the item is of type RecommendedPlainSubscription or not
+ * @returns Whether the item is of type RecommendedSubscription or not
  */
-function isRecommendedPlainSubscription(
+function isRecommendedSubscription(
   item: unknown
-): item is RecommendedPlainSubscription {
+): item is RecommendedSubscription {
   return (
     item !== null &&
     typeof item === "object" &&
@@ -78,7 +78,6 @@ export function isCollectionSubscription(
   item: unknown
 ): item is CollectionSubscription {
   return (
-    isInitialRecommendedSubscription(item) ||
-    isRecommendedPlainSubscription(item)
+    isInitialRecommendedSubscription(item) || isRecommendedSubscription(item)
   );
 }

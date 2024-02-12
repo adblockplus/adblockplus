@@ -22,14 +22,13 @@ import * as ewe from "@eyeo/webext-ad-filtering-solution";
 import {installHandler} from "./messaging/events.js";
 import {port} from "./messaging/port.js";
 import {
-  toPlainBlockableItem,
-  toPlainFilter,
-  toPlainSubscription
-} from "./messaging/types.js";
+  toSerializableBlockableItem,
+  toSerializableFilter,
+  toSerializableSubscription
+} from "../../src/core/api/background";
 import {compareVersions} from "../../src/version/shared";
 import {TabSessionStorage} from "./storage/tab-session.js";
 import {info} from "../../src/info/background";
-
 
 const reloadStateByPage = new TabSessionStorage("devtools:reloadState");
 
@@ -43,12 +42,12 @@ async function onBlockableItem(emit, blockableItem)
     subscriptions = await ewe.subscriptions.getForFilter(filter.text);
     subscriptions = subscriptions
       .filter(subscription => subscription.enabled)
-      .map(toPlainSubscription);
+      .map(toSerializableSubscription);
   }
 
   emit(
-    toPlainBlockableItem(blockableItem),
-    (filter) ? toPlainFilter(filter) : null,
+    toSerializableBlockableItem(blockableItem),
+    (filter) ? toSerializableFilter(filter) : null,
     subscriptions
   );
 }

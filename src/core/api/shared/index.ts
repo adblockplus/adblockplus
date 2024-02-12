@@ -17,3 +17,4 @@
 
 export * from "./api";
 export * from "./api.types";
+export * from "./serializable.types";
