@@ -29,10 +29,10 @@ class BasePage
     return $("#content");
   }
 
-  get mockLicensingServerText()
+  async mockServerUpText(text)
   {
     return $("body[contains(text()," +
-    "'Mock licensing server is up and running')]");
+    "'" + text + "')]");
   }
 
   get truckerIFrame()
@@ -66,10 +66,10 @@ class BasePage
       this.getElementBySelector(selector), reverseOption, timeout);
   }
 
-  async isMockLicensingServerTextDisplayed(reverseOption = false)
+  async isMockServerUpTextDisplayed(serverUpText, reverseOption = false)
   {
     return await this.waitForDisplayedNoError(this.
-      mockLicensingServerText, reverseOption, 45000);
+      mockServerUpText(serverUpText), reverseOption, 45000);
   }
 
   async scrollIntoViewAndClick(element)

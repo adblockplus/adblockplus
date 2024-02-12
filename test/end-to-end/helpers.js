@@ -124,10 +124,8 @@ async function doesTabExist(tabName, timeout = 3000)
 
 async function enablePremiumByMockServer()
 {
-  await browser.newWindow("https://qa-mock-licensing-server.glitch.me/");
-  const generalPage = new GeneralPage(browser);
-  await generalPage.isMockLicensingServerTextDisplayed();
-  await browser.closeWindow();
+  await wakeMockServer("https://qa-mock-licensing-server.glitch.me/",
+                       "Mock licensing server is up and running");
   await switchToABPOptionsTab();
   await browser.executeScript(`
     Promise.all([
@@ -209,6 +207,21 @@ async function enablePremiumByUI()
   await switchToABPOptionsTab(true);
   await waitForCondition("isPremiumButtonDisplayed",
                          premiumHeaderChunk);
+}
+
+async function executeAsyncScript(script, ...args)
+{
+  const [isError, value] = await browser.executeAsyncScript(`
+    let promise = (async function() { ${script} }).apply(null, arguments[0]);
+    let callback = arguments[arguments.length - 1];
+    promise.then(
+      res => callback([false, res]),
+      err => callback([true, err instanceof Error ? err.message : err])
+    );`, args);
+
+  if (isError)
+    throw new Error(value);
+  return value;
 }
 
 async function getABPOptionsTabId()
@@ -393,6 +406,14 @@ async function waitForExtension()
   return [origin];
 }
 
+async function wakeMockServer(serverUrl, serverUpText)
+{
+  await browser.newWindow(serverUrl);
+  const generalPage = new GeneralPage(browser);
+  await generalPage.isMockServerUpTextDisplayed(serverUpText);
+  await browser.closeWindow();
+}
+
 /**
  * Gets the ID of current tab using the browser.tabs WebExtension API.
  * This is mainly used to work with the popup when it is open in a tab.
@@ -444,7 +465,8 @@ async function getTabId({title, urlPattern})
 }
 
 module.exports = {afterSequence, beforeSequence, doesTabExist,
-                  enablePremiumByMockServer,
+                  executeAsyncScript,
+                  enablePremiumByMockServer, wakeMockServer,
                   getChromiumExtensionPath, enablePremiumByUI,
                   getCurrentDate, getFirefoxExtensionPath, getTabId,
                   randomIntFromInterval, helperExtension,
