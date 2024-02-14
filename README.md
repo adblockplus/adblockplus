@@ -2,7 +2,7 @@
 
 Welcome to the repository for the Adblock Plus extension!
 
-The main project is hosted on [GitLab][abp-ui] and, in addition to the user
+The main project is hosted on [GitLab][abp-ext] and, in addition to the user
 interface and the web extension code, the Adblock Plus extension also includes
 [static filter lists][adblockinc-rules],
 [eyeo's Web Extension Ad Blocking Toolkit (EWE)][eyeo-ewe] and
@@ -109,7 +109,7 @@ that you want to test.
 ### Nightlies
 
 Nightly builds for feature and release [branches][wiki-branches] can be found
-as artifacts [from this page][abp-ui-nightlies].
+as artifacts [from this page][abp-ext-nightlies].
 
 ### Unit testing
 
@@ -231,7 +231,7 @@ rely on across our development process.
 
 ## Release history
 
-[Extension releases (since 3.11)][abp-ui-tags]
+[Extension releases (since 3.11)][abp-ext-tags]
 
 [Extension releases (prior to 3.11)][abp-webext-releases]
 
@@ -247,14 +247,14 @@ This project follows the typical GitLab process:
 
 
 
+[abp-ext]: https://gitlab.com/adblockinc/ext/adblockplus/adblockplus
+[abp-ext-nightlies]: https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/pipelines?scope=branches
+[abp-ext-tags]: https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/tags
 [abp-spec]: https://gitlab.com/eyeo/specs/spec/tree/master/spec/abp
-[abp-ui]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/
-[abp-ui-nightlies]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/pipelines?scope=branches
-[abp-ui-tags]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/tags
 [abp-webext-releases]: https://github.com/adblockplus/adblockpluschrome/releases
 [adblockinc-rules]: https://gitlab.com/adblockinc/ext/rules
-[badge-pipeline-image]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/badges/main/pipeline.svg
-[badge-pipeline-link]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/commits/main
+[badge-pipeline-image]: https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/badges/main/pipeline.svg
+[badge-pipeline-link]: https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/commits/main
 [eyeo]: https://eyeo.com/
 [eyeo-ewe]: https://gitlab.com/eyeo/adblockplus/abc/webext-ad-filtering-solution
 [eyeo-snippets]: https://gitlab.com/eyeo/snippets
@@ -264,5 +264,5 @@ This project follows the typical GitLab process:
 [nodejs]: https://nodejs.org/en/
 [npm]: https://www.npmjs.com/get-npm
 [npx]: https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b
-[wiki-branches]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/wikis/development-workflow#naming-schemes
-[wiki-utils]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/wikis/utilities
+[wiki-branches]: https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/wikis/development-workflow#branches
+[wiki-utils]: https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/wikis/utilities

@@ -1,6 +1,6 @@
 {
-  "name": "adblockplusui",
-  "repository": "https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui",
+  "name": "adblockplus",
+  "repository": "https://gitlab.com/adblockinc/ext/adblockplus/adblockplus",
   "license": "GPL-3.0",
   "engines": {
     "node": ">=18.17.1 <19",

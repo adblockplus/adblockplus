@@ -534,7 +534,7 @@ function replaceFilter(filter, currentTarget)
     }
     else
     {
-      // see https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/issues/338
+      // see https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/issues/338
       // until that lands, we remove the filter and add it at the end
       // of the table so, before rendering, drop the new filter and update
       // the current known one

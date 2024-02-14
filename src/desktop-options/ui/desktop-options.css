@@ -1691,7 +1691,7 @@ html[lang^="fr"] #language-recommend,
 /*
   Hide language recommendation feature for Opera users
   due to problems with its language detection
-  https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/issues/960
+  https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/issues/960
 */
 html[data-application="opera"] #language-recommend
 {

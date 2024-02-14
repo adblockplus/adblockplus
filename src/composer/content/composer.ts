@@ -605,7 +605,7 @@ function initializeComposer(): void {
  */
 function start(): void {
   // Firefox also injects our content scripts into blank top-level frames
-  // https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/issues/1082
+  // https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/issues/1082
   if (document instanceof HTMLDocument && location.href !== "about:blank") {
     initializeComposer();
   }

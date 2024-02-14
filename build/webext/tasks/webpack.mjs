@@ -64,7 +64,7 @@ export default function webpack({
                         // We're running type checks separately due to memory
                         // and performance problems when running them while
                         // building the extension
-                        // https://gitlab.com/adblockinc/ext/adblockplus/adblockplusui/-/issues/1441
+                        // https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/issues/1441
                         transpileOnly: true
                       }
                     }

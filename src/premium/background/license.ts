@@ -76,7 +76,7 @@ function activateLicense(oldLicense: License, newLicense: License): void {
     // scheduled-event-emitter or browser.action. Therefore we're using a
     // continuous series of timeouts to ensure that the license checks
     // are properly reinitialized whenever the extension loads.
-    // https://gitlab.com/adblockinc/ext/adblockplus/adblockplusui/-/issues/1267
+    // https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/issues/1267
     scheduleNextLicenseCheck(null);
     emitter.emit("activated");
   }
@@ -247,7 +247,7 @@ function scheduleNextLicenseCheck(nextTimestamp: number | null): void {
 
   // We cannot use scheduled-event-emitter to schedule delayed intervals, or
   // for rescheduling an event when it is emitted.
-  // https://gitlab.com/adblockinc/ext/adblockplus/adblockplusui/-/issues/1227
+  // https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/issues/1227
   licenseCheckTimeoutId = self.setTimeout(() => {
     void checkLicense();
     scheduleNextLicenseCheck(null);

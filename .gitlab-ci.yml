@@ -18,7 +18,7 @@ default:
   image: node:18.17.1
   before_script:
     # enable unsafe-perm to avoid problems with running npm as root
-    # see https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/issues/193
+    # see https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/issues/193
     - export npm_config_unsafe_perm=true
 
 stages:

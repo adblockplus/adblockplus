@@ -23,7 +23,7 @@ export async function closeCurrentTab(): Promise<void> {
   // Firefox 57, even when allowScriptsToClose is passed to browser.windows.create
   // See https://bugzilla.mozilla.org/show_bug.cgi?id=1418394
   // window.close is also broken on Firefox 63.x
-  // See https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/issues/791#note_374617568
+  // See https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/issues/791#note_374617568
   try {
     const tab = await browser.tabs.getCurrent();
     if (typeof tab.id !== "number") {

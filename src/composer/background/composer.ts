@@ -584,7 +584,7 @@ export function start(): void {
   // We need to make sure that we check whether the content script is active
   // for each page load, since we only receive the "composer.ready" message
   // when it initializes itself on real page loads
-  // https://gitlab.com/adblockinc/ext/adblockplus/adblockplusui/-/issues/1303
+  // https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/issues/1303
   ext.pages.onLoaded.addListener(handlePageLoaded);
 
   ext.addTrustedMessageTypes(null, [

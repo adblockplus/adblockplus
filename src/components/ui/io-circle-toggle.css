@@ -43,8 +43,8 @@ io-circle-toggle .off
 /*
  * We cannot rely on SVG's masking/clipping to work with CSS transforms
  * so we have to replicate the outline of the outer circle in CSS.
- * https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/issues/543
- * https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/issues/598
+ * https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/issues/543
+ * https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/issues/598
  */
 io-circle-toggle[checked] .on,
 io-circle-toggle .off
