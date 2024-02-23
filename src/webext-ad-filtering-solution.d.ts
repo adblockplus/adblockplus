@@ -51,7 +51,7 @@ declare module "@eyeo/webext-ad-filtering-solution" {
     /**
      * The filter that matched, if any.
      */
-    filter: Filter;
+    filter: Filter | null;
     /**
      * Extra information that might be relevant depending on the context.
      */

@@ -49,7 +49,7 @@ export function toSerializableBlockableItem(
     type = ewe.reporting.contentTypesMap.get(request.type);
   } else if (matchInfo.method === "allowing") {
     type = matchInfo.allowingReason;
-  } else if (typeof filter === "string") {
+  } else if (filter !== null) {
     // Show matching method when it had an effect on the request
     type = matchInfo.method;
   } else {
