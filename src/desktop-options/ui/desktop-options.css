@@ -2198,7 +2198,13 @@ body:not([data-dialog]) #dialog
 
 html[data-application="firefox"] #data-collection
 {
-  display: block;
+  /*
+   * We need to temporarily force-disable data collection in Firefox, while
+   * we're working on improving our data collection opt-out mechanism based
+   * on Mozilla's requirements
+   * https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/issues/1621
+   */
+  display: none;
 }
 
 @keyframes show-notification
