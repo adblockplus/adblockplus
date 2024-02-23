@@ -265,12 +265,9 @@ export function start()
 
     if (errors.length == 0)
     {
-      for (const filterText of filterTexts)
-      {
-        const error = await addFilter(filterText, message.origin);
-        if (error)
-          errors.push(error);
-      }
+      const error = await ewe.filters.add(filterTexts);
+      if (error)
+        errors.push(error);
     }
 
     return errors;
@@ -282,15 +279,26 @@ export function start()
    * @event "filters.remove"
    * @property {string} text
    *   The text of the filter to remove.
-   * @property {string} [subscriptionUrl]
-   *   The URL of the subscription to remove the filter from, defaults to all
-   *   subscriptions.
-   * @property {number} [index]
-   *   The index of the filter in the given subscription to remove, defaults to
-   *   all instances and ignored if subscriptionUrl isn't given.
    * @returns {string[]} errors
    */
   port.on("filters.remove", (message, sender) => filtersRemove(message));
+
+  /**
+   * Batch-removes the given filters.
+   *
+   * @event "filters.removeBatch"
+   * @property {string[]} texts
+   *   The texts of filters to remove.
+   * @returns {string[]} errors
+   */
+  port.on("filters.removeBatch", async message =>
+  {
+    await ewe.filters.remove(message.texts);
+
+    // in order to behave, from consumer perspective, like any other
+    // method that could produce errors, return an Array, even if empty
+    return [];
+  });
 
   /**
    * Replaces one custom user filter with another.

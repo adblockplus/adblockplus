@@ -127,17 +127,17 @@ class IOFilterTable extends IOElement
     switch (true)
     {
       case classList.contains("delete"):
-        const resolve = [];
+        const filterTexts = [];
         for (const filter of this.list.selected)
         {
           this.list.selected.delete(filter);
           this.filters.splice(this.filters.indexOf(filter), 1);
-          resolve.push(browser.runtime.sendMessage({
-            type: "filters.remove",
-            text: filter.text
-          }));
+          filterTexts.push(filter.text);
         }
-        Promise.all(resolve).then(
+        void browser.runtime.sendMessage({
+          type: "filters.removeBatch",
+          texts: filterTexts
+        }).then(
           () => updateList(this.list),
           (errors) => this.onerror({detail: {errors}})
         );

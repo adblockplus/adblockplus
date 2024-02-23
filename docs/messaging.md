@@ -35,6 +35,7 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
   - [isAllowlisted](#filtersisallowlisted)
   - [listen](#filterslisten)
   - [remove](#filtersremove)
+  - [removeBatch](#filtersremovebatch)
   - [replace](#filtersreplace)
   - [toggle](#filterstoggle)
   - [unallowlist](#filtersunallowlist)
@@ -222,6 +223,12 @@ If filter includes `showPageOptions`:
 **Arguments**
 
 - **string** text
+
+#### filters.removeBatch
+
+**Arguments**
+
+- **string** texts
 
 #### filters.replace
 
