@@ -86,9 +86,29 @@ class PopupPage extends BasePage
     return $("//*[@id='page-status']/div[1]/io-circle-toggle");
   }
 
+  get thisPageToggle()
+  {
+    return $("//*[@id='page-status']/div[2]/io-circle-toggle");
+  }
+
+  get blockSpecificElementButton()
+  {
+    return $("//*[@id='block-element']");
+  }
+
+  get pageStatsCounter()
+  {
+    return $("#stats-page > strong");
+  }
+
   get refreshButton()
   {
     return $("#page-refresh").$("button");
+  }
+
+  get refreshMessage()
+  {
+    return $("//*[@id='page-refresh']/div/span");
   }
 
   async clickCloseNotificationButton()
@@ -180,16 +200,53 @@ class PopupPage extends BasePage
     await this.waitForEnabledThenClick(this.thisDomainToggle);
   }
 
-  async waitUntilDomainToggleActive(reverse = false)
+  async isDomainToggleChecked()
   {
-    return await this.waitUntilAttributeValueIs(
-      this.thisDomainToggle, "checked",
-      null, 3000, reverse);
+    return await this.thisDomainToggle.
+    getAttribute("aria-checked") === "true";
+  }
+
+  async clickThisPageToggle()
+  {
+    await this.waitForEnabledThenClick(this.thisPageToggle);
+  }
+
+  async isPageToggleChecked()
+  {
+    return await this.thisPageToggle.
+    getAttribute("aria-checked") === "true";
+  }
+
+  async isPageToggleEnabled()
+  {
+    return await this.thisPageToggle.isClickable();
+  }
+
+  async isRefreshButtonDisplayed(reverseOption = false)
+  {
+    return await this.waitForDisplayedNoError(this.refreshButton,
+                                              reverseOption);
+  }
+
+  async isRefreshMessageDisplayed(reverseOption = false)
+  {
+    return await this.waitForDisplayedNoError(this.refreshMessage,
+                                              reverseOption);
   }
 
   async clickRefreshButton()
   {
     await this.waitForEnabledThenClick(this.refreshButton);
+  }
+
+  async isPageStatsCounterDisplayed()
+  {
+    return await (await this.pageStatsCounter).isDisplayed();
+  }
+
+  async isBlockSpecificElementButtonDisplayed()
+  {
+    return await (await this.blockSpecificElementButton).isDisplayed();
   }
 }
 
