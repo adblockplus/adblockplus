@@ -52,7 +52,7 @@ async function bootstrap(): Promise<void> {
   void startRecommendedLanguage();
   startComposer();
   startUninstall();
-  startContentFiltering();
+  void startContentFiltering();
   startMessageResponder();
   void startAllowListing().catch(logError);
   startBypass();

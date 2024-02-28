@@ -80,8 +80,7 @@
   },
   "dependencies": {
     "@adblockinc/rules": "gitlab:adblockinc/ext/rules#a49331b",
-    "@eyeo/mlaf": "0.3.3",
-    "@eyeo/snippets": "1.0.0",
+    "@eyeo/snippets": "1.2.1",
     "@eyeo/webext-ad-filtering-solution": "1.2.4",
     "argparse": "1.0.10",
     "canvas": "2.11.2",
