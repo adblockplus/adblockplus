@@ -279,11 +279,26 @@ defaults.ipm_events = [];
 defaults.ipm_commands = {};
 
 /**
- * Trusted origin for URLs used in IPMs
+ * Default trusted origin for URLs used in IPMs. This is the base URL used when
+ * a relative URL is passed.
  *
  * @type {string}
  */
-defaults.ipm_safe_origin = "https://adblockplus.org";
+defaults.ipm_default_origin = "https://adblockplus.org";
+
+/**
+ * Trusted origins for URLs used in IPMs
+ *
+ * @type {string}
+ */
+defaults.ipm_safe_origins = [
+  defaults.ipm_default_origin,
+  "https://accounts.adblockplus.org",
+  "https://blog.adblockplus.org",
+  "https://help.adblockplus.org",
+  "https://new.adblockplus.org",
+  "https://welcome.adblockplus.org"
+];
 
 /**
  * Minimum log level

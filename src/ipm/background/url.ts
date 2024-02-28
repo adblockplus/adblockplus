@@ -29,17 +29,19 @@ import { Prefs } from "../../../adblockpluschrome/lib/prefs";
  *   safe origin URL was not possible, or if origins did not match.
  */
 export function createSafeOriginUrl(url: string): string | null {
-  const safeOrigin = Prefs.get("ipm_safe_origin");
+  const defaultOrigin: string = Prefs.get("ipm_default_origin");
+  const safeOrigins: string[] = Prefs.get("ipm_safe_origins");
   let safeOriginUrl: URL;
 
   try {
-    safeOriginUrl = new URL(url, safeOrigin);
+    // If the url is relative, it will use the default origin
+    safeOriginUrl = new URL(url, defaultOrigin);
   } catch (ex) {
     return null;
   }
 
-  // Verify that provided URL didn't override the intended target origin
-  if (safeOriginUrl.origin !== safeOrigin) {
+  // Verify that provided URL origin is in the list of trusted origins
+  if (!safeOrigins.includes(safeOriginUrl.origin)) {
     return null;
   }
 
