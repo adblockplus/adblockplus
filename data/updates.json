@@ -5,7 +5,6 @@
   "fixes": [],
   "improvements": [
     {"id": "i1"},
-    {"id": "i2"},
-    {"id": "i3"}
+    {"id": "i2"}
   ]
 }
