@@ -17,13 +17,6 @@
 
 "use strict";
 
-const chromeBuild = "../../" + process.env.CHROME_BUILD;
-const firefoxBuild = "../../" + process.env.FIREFOX_BUILD;
-// ======== USE THE FOLLOWING FOR DEBUGGING PURPOSES ==========
-// const chromeBuild = "../../dist/release/adblockpluschrome-3.19.zip";
-// const firefoxBuild = "../../dist/release/adblockplusfirefox-3.19.xpi";
-const ciTesting = process.env.CI_TESTING || true;
-
 const fs = require("fs");
 const ExtensionsPage = require("./page-objects/extensions.page");
 const GeneralPage = require("./page-objects/general.page");
@@ -31,7 +24,13 @@ const PremiumPage = require("./page-objects/premium.page");
 const PremiumCheckoutPage = require("./page-objects/premiumCheckout.page");
 const PremiumHeaderChunk = require("./page-objects/premiumHeader.chunk");
 const helperExtension = "helper-extension";
+
 const globalRetriesNumber = 2;
+const ciTesting = process.env.CI_TESTING === "true";
+
+const chromeCIBuild = "../../" + process.env.CHROME_BUILD;
+const firefoxCIBuild = "../../" + process.env.FIREFOX_BUILD;
+
 
 async function afterSequence()
 {
@@ -256,7 +255,7 @@ function getChromiumExtensionPath()
   if (ciTesting)
   {
     chromeExtension = require("fs").
-      readFileSync(chromeBuild).toString("base64");
+      readFileSync(chromeCIBuild).toString("base64");
   }
   else
   {
@@ -266,17 +265,12 @@ function getChromiumExtensionPath()
   return chromeExtension;
 }
 
-function getCurrentDate(locale)
-{
-  return new Date().toLocaleDateString(locale);
-}
-
 function getFirefoxExtensionPath()
 {
   let abpXpiFileName;
   if (ciTesting)
   {
-    abpXpiFileName = firefoxBuild;
+    abpXpiFileName = firefoxCIBuild;
   }
   else
   {
@@ -290,6 +284,11 @@ function getFirefoxExtensionPath()
     });
   }
   return abpXpiFileName;
+}
+
+function getCurrentDate(locale)
+{
+  return new Date().toLocaleDateString(locale);
 }
 
 function randomIntFromInterval(min, max)

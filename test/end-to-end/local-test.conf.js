@@ -19,99 +19,88 @@
 
 "use strict";
 
+require("dotenv").config({path: "../../.env.e2e"});
 const fs = require("fs");
 const helpers = require("./helpers.js");
 
+const allureEnabled = process.env.ENABLE_ALLURE === "true";
+const chromeEnabled = process.env.ENABLE_CHROME === "true";
+const firefoxEnabled = process.env.ENABLE_FIREFOX === "true";
+const edgeEnabled = process.env.ENABLE_EDGE === "true";
+
+checkBuilds();
+
+const browserCapabilities = [];
+const specs = [
+  "./tests/*.js"
+];
+
+
+if (chromeEnabled)
+{
+  browserCapabilities.push({
+    browserName: "chrome",
+    "goog:chromeOptions": {
+      args: ["--no-sandbox",
+              `--load-extension=${helpers.getChromiumExtensionPath()},${helpers.helperExtension}`,
+              `--disable-extensions-except=${helpers.getChromiumExtensionPath()},${helpers.helperExtension}`],
+      excludeSwitches: ["disable-extensions"]
+    },
+    acceptInsecureCerts: true,
+    exclude: [
+      "./tests/legacy-unit.js"
+    ]
+  });
+}
+
+if (firefoxEnabled)
+{
+  browserCapabilities.push({
+    browserName: "firefox",
+    acceptInsecureCerts: true,
+    exclude: [
+      "./tests/test-issue-reporter.js",
+      "./tests/legacy-unit.js"
+    ]
+  });
+}
+
+if (edgeEnabled)
+{
+  browserCapabilities.push({
+    browserName: "MicrosoftEdge",
+    "ms:edgeOptions": {
+      args: ["--no-sandbox",
+              `--load-extension=${helpers.getChromiumExtensionPath()},${helpers.helperExtension}`,
+              `--disable-extensions-except=${helpers.getChromiumExtensionPath()},${helpers.helperExtension}`],
+      excludeSwitches: ["disable-extensions"]
+    },
+    acceptInsecureCerts: true,
+    exclude: [
+      "./tests/test-issue-reporter.js",
+      "./tests/legacy-unit.js"
+    ]
+  });
+}
+
 exports.config = {
-  specs: [
-    "./tests/**.js"
-  ],
-  maxInstances: 5,
-  capabilities: [
-    {
-      browserName: "chrome",
-      "goog:chromeOptions": {
-        args: ["--no-sandbox",
-                `--load-extension=${helpers.getChromiumExtensionPath()},${helpers.helperExtension}`,
-                `--disable-extensions-except=${helpers.getChromiumExtensionPath()},${helpers.helperExtension}`],
-        excludeSwitches: ["disable-extensions"]
-      },
-      acceptInsecureCerts: true,
-      exclude: [
-        "./tests/legacy-unit.js"
-      ]
-    },
-    {
-      browserName: "firefox",
-      acceptInsecureCerts: true,
-      exclude: [
-        "./tests/test-issue-reporter.js",
-        "./tests/legacy-unit.js"
-      ]
-    },
-    {
-      browserName: "MicrosoftEdge",
-      "ms:edgeOptions": {
-        args: ["--no-sandbox",
-                `--load-extension=${helpers.getChromiumExtensionPath()},${helpers.helperExtension}`,
-                `--disable-extensions-except=${helpers.getChromiumExtensionPath()},${helpers.helperExtension}`],
-        excludeSwitches: ["disable-extensions"]
-      },
-      acceptInsecureCerts: true,
-      exclude: [
-        "./tests/test-issue-reporter.js",
-        "./tests/legacy-unit.js"
-      ]
-    }
-  ],
+  specs,
+  maxInstances: Number(process.env.MAX_INSTANCES) || 1,
+  capabilities: browserCapabilities,
   logLevel: "info",
   bail: 0,
   waitforTimeout: 10000,
   connectionRetryTimeout: 12000,
   connectionRetryCount: 3,
-  services: ["geckodriver"],
   framework: "mocha",
-  reporters: [["allure", {
+  reporters: allureEnabled ? [["allure", {
     outputDir: "allure-results",
     disableWebdriverStepsReporting: true,
     disableWebdriverScreenshotsReporting: false
-  }]],
+  }]] : [],
   mochaOpts: {
     ui: "bdd",
     timeout: 900000
-  },
-  /**
-     * Gets executed once before all workers get launched.
-     * @param {Object} config wdio configuration object
-     * @param {Array.<Object>} capabilities list of capabilities details
-  */
-  onPrepare(config, capabilities)
-  {
-    const browserList = [];
-    for (const property in capabilities)
-    {
-      browserList.push(capabilities[property]["browserName"]);
-    }
-
-    if (browserList.includes("chrome") || browserList.includes("MicrosoftEdge"))
-    {
-      const extensionPath = helpers.getChromiumExtensionPath();
-      if (!fs.existsSync(extensionPath))
-      {
-        console.error("Extension 'dist/devenv/chrome' does not exist");
-        process.exit(1);
-      }
-    }
-
-    if (browserList.includes("firefox"))
-    {
-      const extensionPath = helpers.getFirefoxExtensionPath();
-      if (!fs.existsSync(extensionPath))
-      {
-        console.error("Extension 'dist/release/*.xpi' does not exist");
-        process.exit(1);
-      }
-    }
   },
   /**
      * Function to be executed after a test (in Mocha/Jasmine only)
@@ -135,3 +124,38 @@ exports.config = {
     }
   }
 };
+
+
+function checkBuilds()
+{
+  if (chromeEnabled || edgeEnabled)
+  {
+    const extensionPath = helpers.getChromiumExtensionPath();
+    if (!fs.existsSync(extensionPath))
+    {
+      console.error("\x1b[33m%s\x1b[0m", `
+-----------------------------------------------------------------
+Could not find chrome extension in 'dist/devenv/chrome'.
+Run 'npm run build:dev chrome' to build the MV2 extension.
+Or 'npm run build:dev chrome -- -m 3' to build the MV3 extension.
+-----------------------------------------------------------------
+      `);
+      process.exit(1);
+    }
+  }
+
+  if (firefoxEnabled)
+  {
+    const extensionDirectoryPath = "../../dist/release";
+    if (!fs.existsSync(extensionDirectoryPath) || !fs.existsSync(helpers.getFirefoxExtensionPath()))
+    {
+      console.error("\x1b[33m%s\x1b[0m", `
+-----------------------------------------------------------------
+Could not find firefox extension in 'dist/release/*.xpi'.
+Run 'npm run build:release firefox' to build it
+-----------------------------------------------------------------
+      `);
+      process.exit(1);
+    }
+  }
+}
