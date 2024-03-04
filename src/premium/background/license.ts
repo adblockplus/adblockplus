@@ -28,10 +28,9 @@ import { type PremiumState } from "../shared";
 import { type License, type LicenseCheckPayload } from "./license.types";
 
 /**
- * Error indicating a temporary problem during a license check,
- * which could be resolved by a later retry
+ * Error indicating an invalid license received from the server
  */
-class TemporaryLicenseCheckError extends Error {}
+class InvalidLicenseError extends Error {}
 
 /**
  * Emitter for license events
@@ -104,7 +103,7 @@ async function checkLicense(retryCount: number = 0): Promise<void> {
 
   try {
     if (!navigator.onLine) {
-      throw new TemporaryLicenseCheckError("No network connection");
+      throw new Error("No network connection");
     }
 
     const requestData: LicenseCheckPayload = {
@@ -130,9 +129,7 @@ async function checkLicense(retryCount: number = 0): Promise<void> {
       }
 
       if (status >= 500 && status <= 599) {
-        throw new TemporaryLicenseCheckError(
-          `Received error response (code: ${status})`
-        );
+        throw new Error(`Received error response (code: ${status})`);
       }
 
       console.error(`Received unexpected response (code: ${status})`);
@@ -142,23 +139,28 @@ async function checkLicense(retryCount: number = 0): Promise<void> {
     const oldLicense = Prefs.get("premium_license") as License;
     const newLicense = (await response.json()) as License;
 
-    if (newLicense.lv !== 1) {
-      throw new Error(`Invalid license version: ${String(newLicense.lv)}`);
+    const { lv: licenseVersion } = newLicense;
+    if (licenseVersion !== 1) {
+      throw new InvalidLicenseError(
+        `Invalid license version: ${String(licenseVersion)}`
+      );
     }
 
     if (oldLicense.status === "active" && newLicense.status === "expired") {
-      throw new Error("Expired license");
+      throw new InvalidLicenseError("Expired license");
     }
 
     if (newLicense.status !== "active") {
-      throw new Error(`Unknown license status: ${newLicense.status}`);
+      throw new InvalidLicenseError(
+        `Unknown license status: ${newLicense.status}`
+      );
     }
 
     // There's no guarantee that the server will send the License code in all requests,
     // but we need it for Premium user authentification in the Premium manage page
     if (!newLicense.code) {
       if (!oldLicense.code) {
-        throw new Error("Undefined license code");
+        throw new InvalidLicenseError("Undefined license code");
       }
 
       newLicense.code = oldLicense.code;
@@ -166,7 +168,10 @@ async function checkLicense(retryCount: number = 0): Promise<void> {
 
     activateLicense(oldLicense, newLicense);
   } catch (ex) {
-    if (ex instanceof TemporaryLicenseCheckError) {
+    if (ex instanceof InvalidLicenseError) {
+      console.error("Invalid Premium license", ex);
+      deactivateLicense();
+    } else {
       console.warn(`Premium license check failed (retries: ${retryCount})`, ex);
       if (retryCount > 0) {
         return;
@@ -177,11 +182,7 @@ async function checkLicense(retryCount: number = 0): Promise<void> {
         licenseCheckRetryDelay,
         ScheduleType.interval
       );
-      return;
     }
-
-    console.error("Premium license check failed", ex);
-    deactivateLicense();
   }
 }
 
