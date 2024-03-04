@@ -20,6 +20,12 @@ default:
     # enable unsafe-perm to avoid problems with running npm as root
     # see https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/issues/193
     - export npm_config_unsafe_perm=true
+  cache:  # Cache modules using lock file
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - .npm/
 
 stages:
   - lint
@@ -42,7 +48,7 @@ lint:
   stage: lint
   script:
     # Update dependencies
-    - npm install
+    - npm ci --cache .npm --prefer-offline
     # Run linter
     - npm run lint
 
@@ -50,7 +56,7 @@ test:
   stage: test
   script:
     # Update dependencies
-    - npm install
+    - npm ci --cache .npm --prefer-offline
     # Run tests
     - npm run test
 
@@ -62,7 +68,7 @@ build:
   stage: build
   script:
     # Update dependencies
-    - npm install
+    - npm ci --cache .npm --prefer-offline
     # Create extension builds
     - npm run build:release chrome -- --unhandled-rejections=strict
     - npm run build:release firefox -- --unhandled-rejections=strict
@@ -93,7 +99,7 @@ buildfromsource:
    - mkdir source
    - tar xvf dist/release/adblockplus-${CI_COMMIT_SHORT_SHA}.tar.gz -C source
    - cd source
-   - npm install
+   - npm ci --cache .npm --prefer-offline
    # Create mv2 extension builds from source archive
    - npm run build:release chrome -- --unhandled-rejections=strict
    - npm run build:release firefox -- --unhandled-rejections=strict
@@ -237,7 +243,7 @@ uploadcrowdin:
     - .crowdin
     - .translations
   script:
-    - npm install
+    - npm ci --cache .npm --prefer-offline
     # installing java
     - apt-get install default-jre-headless -yqq
     # installing crowdin-cli
@@ -254,7 +260,7 @@ downloadcrowdin:
     - .crowdin
     - .translations
   script:
-    - npm install
+    - npm ci --cache .npm --prefer-offline
     # installing java
     - apt-get install default-jre-headless -yqq
     # installing crowdin-cli
@@ -292,7 +298,7 @@ uploadxtm:
     - .xtm
     - .translations
   script:
-    - npm install
+    - npm ci --cache .npm --prefer-offline
     # Currently the xtm script determines the branch name using git rev-parse
     # which doesn't work inside the CI environment because it's using a detached
     # head (see https://gitlab.com/gitlab-org/gitlab-ce/issues/19421) to make
@@ -307,7 +313,7 @@ updatextm:
     - .xtm
     - .translations
   script:
-    - npm install
+    - npm ci --cache .npm --prefer-offline
     # Currently the xtm script determines the branch name using git rev-parse
     # which doesn't work inside the CI environment because it's using a detached
     # head (see https://gitlab.com/gitlab-org/gitlab-ce/issues/19421) to make
@@ -322,7 +328,7 @@ downloadxtm:
     - .xtm
     - .translations
   script:
-    - npm install
+    - npm ci --cache .npm --prefer-offline
     # Currently the xtm script determines the branch name using git rev-parse
     # which doesn't work inside the CI environment because it's using a detached
     # head (see https://gitlab.com/gitlab-org/gitlab-ce/issues/19421) to make
@@ -450,7 +456,7 @@ testpages:MV2:firefox:oldest:
     LT_ACCESS_KEY: $LT_ACCESS_KEY
     CI_TESTING: "true"
   script:
-    - npm install
+    - npm ci --cache .npm --prefer-offline
     - npm run test:$CONFIGURATION $SUITE 2>&1 | tee lambdatest_output.txt || true
     - apt-get update
     - apt-get -y install default-jre-headless

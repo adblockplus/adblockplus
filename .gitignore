@@ -18,3 +18,6 @@ coverage/
 
 # version management
 .tool-versions
+
+# npm cache for CI
+.npm
