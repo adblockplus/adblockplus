@@ -1,6 +1,6 @@
 {
   "notification_updates_message": {
-    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/0e66afef8c6f0cdd6faceeb671e34264cf5358c0/spec/abp/updates.md#notification-process",
     "message": "No action is required, continue browsing the web without annoying ads! <a>See what's new</a>"
   },
   "notification_updates_title": {
@@ -16,19 +16,19 @@
     "message": "Adblock Plus is up-to-date!"
   },
   "updates_update_i1_description": {
-    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/6bf047f5e7dfa6bef87999922b8a8e2280443d50/spec/abp/updates.md#current-updates",
-    "message": "Occasionally, we need to make substantial changes to ensure Adblock Plus keeps up with the browser ecosystem. We’re on the cusp of one such change, which is the result of changes Google is making to how browser extensions work in Chrome. Called Manifest V3, the name refers to a new version of Google’s browser extension platform. This evolution of the browser ecosystem will affect how all browser extensions work, and bring some challenges along with it. We’ve been working hard to ensure we have a Manifest V3-ready version. Since Manifest V3 was announced, we started making necessary architectural changes, including spliting up the Adblock Plus code base in order to create a dedicated library for the core ad blocking functionality. This change made it possible for us to continue to support Manifest V2 extensions where allowed, while switching to Manifest V3 on the Chromium browsers that require it. With this release, our users on Chromium browsers are now using the Manifest V3 version of Adblock Plus and can continue to enjoy a better browsing experience. If you’re experiencing any issues, please reach out to us at support@adblockplus.org and we’d be happy to help!"
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/0e66afef8c6f0cdd6faceeb671e34264cf5358c0/spec/abp/updates.md#current-updates",
+    "message": "Occasionally, we need to make substantial changes to ensure Adblock Plus keeps up with the browser ecosystem. We're on the cusp of one such change, which is the result of changes Google is making to how browser extensions work in Chrome. Called Manifest V3, the name refers to a new version of Google's browser extension platform. This evolution of the browser ecosystem will affect how all browser extensions work, and bring some challenges along with it. We've been working hard to ensure we have a Manifest V3-ready version. Since Manifest V3 was announced, we started making necessary architectural changes, including spliting up the Adblock Plus code base in order to create a dedicated library for the core ad blocking functionality. This change made it possible for us to continue to support Manifest V2 extensions where allowed, while switching to Manifest V3 on browsers that require it. With this release, our users on Chrome are now using the Manifest V3 version of Adblock Plus and can continue to enjoy a better browsing experience. If you're experiencing any issues, please reach out to us at support@adblockplus.org and we'd be happy to help!"
   },
   "updates_update_i1_title": {
-    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/6bf047f5e7dfa6bef87999922b8a8e2280443d50/spec/abp/updates.md#current-updates",
-    "message": "Switched to using Manifest V3 for Chromium browsers"
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/0e66afef8c6f0cdd6faceeb671e34264cf5358c0/spec/abp/updates.md#current-updates",
+    "message": "Switched to using Manifest V3 for Chrome"
   },
   "updates_update_i2_description": {
-    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/6bf047f5e7dfa6bef87999922b8a8e2280443d50/spec/abp/updates.md#current-updates",
-    "message": "Adblock Plus, like all ad blockers, relies on predefined rules to know what to block and hide on the web pages you visit. These rules are collected into lists, also called, \"filter lists.\" With Manifest V3, we are required to limit how many filter lists we can offer to our users, as well as package them with the extension. To comply with this new rule, we’ll have the ability to offer up to 100 pre-installed filter lists that you can turn on and off depending on your preferences. Out of these, only 50 can be turned on at the same time. We’re working to ensure that popular filter lists our users love are supported by us, and that any updates to these lists are brought to you by frequent new releases of the extension. This does mean that initially, our users will no longer be able to subscribe to any filter lists outside of what is provided in the extension. We will work to preserve the custom filter list data of those who are currently using third-party filter lists and reinstate their settings once support for these lists is available again."
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/0e66afef8c6f0cdd6faceeb671e34264cf5358c0/spec/abp/updates.md#current-updates",
+    "message": "Adblock Plus, like all ad blockers, relies on predefined rules to know what to block and hide on the web pages you visit. These rules are collected into lists, also called, \"filter lists.\" With Manifest V3, we are required to limit how many filter lists we can offer to our users, as well as package them with the extension. To comply with this new rule, we'll have the ability to offer up to 100 pre-installed filter lists that you can turn on and off depending on your preferences. Out of these, only 50 can be turned on at the same time. We're working to ensure that popular filter lists our users love are supported by us, and that any updates to these lists are brought to you by frequent new releases of the extension. This does mean that initially, our users will no longer be able to subscribe to any filter lists outside of what is provided in the extension. We will work to preserve the custom filter list data of those who are currently using third-party filter lists and reinstate their settings once support for these lists is available again."
   },
   "updates_update_i2_title": {
-    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/6bf047f5e7dfa6bef87999922b8a8e2280443d50/spec/abp/updates.md#current-updates",
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/0e66afef8c6f0cdd6faceeb671e34264cf5358c0/spec/abp/updates.md#current-updates",
     "message": "Static filter lists are now packaged with the extension"
   }
 }
