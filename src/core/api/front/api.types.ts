@@ -373,6 +373,8 @@ export type SendType =
   | "app.get"
   | "app.open"
   | "filters.get"
+  | "info.get"
+  | "info.getInjectionInfo"
   | "notifications.get"
   | "notifications.seen"
   | "prefs.get"

@@ -76,6 +76,21 @@
     {
       "js": [
         "polyfill.js",
+        "info-injector.preload.js"
+      ],
+      "matches": [
+        "https://adblockplus.org/*",
+        "https://accounts.adblockplus.org/*",
+        "https://new.adblockplus.org/*",
+        "https://welcome.adblockplus.org/*",
+        "https://getadblock.com/*",
+        "https://vpn.getadblock.com/*"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "js": [
+        "polyfill.js",
         "ext/common.js",
         "ext/content.js",
         "options.preload.js"

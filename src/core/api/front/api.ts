@@ -15,6 +15,8 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import { type InjectionInfo } from "../../../info-injector/shared";
+import { type Info } from "../../../info/background/info.types";
 import { type PremiumState } from "../../../premium/shared";
 import {
   addDisconnectListener,
@@ -327,6 +329,21 @@ export const subscriptions = {
    * @param url - Subscription URL
    */
   remove: async (url: string) => await send("subscriptions.remove", { url })
+};
+
+/**
+ * A collection of browser.runtime apis for info.
+ */
+export const info = {
+  /**
+   * Returns the browser platform information.
+   */
+  get: async () => await send<Info>("info.get"),
+  /**
+   * Returns the information to be injected on product websites.
+   */
+  getInjectionInfo: async () =>
+    await send<InjectionInfo>("info.getInjectionInfo")
 };
 
 /**

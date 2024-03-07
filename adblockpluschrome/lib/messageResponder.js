@@ -22,6 +22,8 @@ import * as ewe from "@eyeo/webext-ad-filtering-solution";
 import {port} from "./messaging/port.js";
 import {Prefs} from "./prefs.js";
 import {info} from "../../src/info/background";
+import {getInstallationId} from "../../src/id/background";
+import {getPremiumState} from "../../src/premium/background";
 
 function forward(type, message, sender)
 {
@@ -183,5 +185,29 @@ export function start()
    * @returns {infoGetResult}
    */
   port.on("info.get", (message, sender) => info);
-}
 
+  /**
+   * @typedef {object} injectionInfo
+   * @property {boolean} isPremium
+   *   Whether premium is activated
+   * @property {string} addonVersion
+   *   The extension's version, e.g. "3.6.3".
+   * @property {string} id
+   *   The installation id
+   */
+
+  /**
+   * Returns the information to be injected on product websites.
+   *
+   * @event "info.getInjectionInfo"
+   * @returns {injectionInfo}
+   */
+  port.on("info.getInjectionInfo", async() =>
+  {
+    const {isActive: isPremium} = getPremiumState();
+    const version = info.addonVersion;
+    const id = await getInstallationId();
+
+    return {isPremium, version, id};
+  });
+}
