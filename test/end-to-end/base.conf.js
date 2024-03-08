@@ -51,6 +51,13 @@ exports.config = {
         "./tests/test-options-page-tracking-warning.js",
         "./tests/test-page-links.js"
       ],
+    filterlists:
+      [
+        "./tests/test-advanced-tab-filter-lists.js",
+        "./tests/test-built-in-filter-list-dropdown.js",
+        "./tests/test-smoke-adblocking.js",
+        "./tests/test-options-page-acceptable-ads.js"
+      ],
     integration: ["./tests/test-integration-*.js"],
     oldbrowsers:
       [

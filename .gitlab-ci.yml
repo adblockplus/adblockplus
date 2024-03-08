@@ -505,6 +505,12 @@ uitests:e2e:
     CONFIGURATION: end-to-end
     SUITE: e2e
 
+uitests:filterlists:
+  extends: .uitests
+  variables:
+    CONFIGURATION: end-to-end
+    SUITE: filterlists
+
 uitests:integration:
   extends: .uitests
   variables:
