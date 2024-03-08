@@ -19,22 +19,17 @@
 
 "use strict";
 
-require("dotenv").config({path: "../../.env.e2e"});
-const fs = require("fs");
 const helpers = require("./helpers.js");
 
-const allureEnabled = process.env.ENABLE_ALLURE === "true";
-const chromeEnabled = process.env.ENABLE_CHROME === "true";
-const firefoxEnabled = process.env.ENABLE_FIREFOX === "true";
-const edgeEnabled = process.env.ENABLE_EDGE === "true";
-
-checkBuilds();
+const {allureEnabled, chromeEnabled, firefoxEnabled, edgeEnabled} = helpers.testConfig;
+helpers.localRunChecks();
 
 const browserCapabilities = [];
 const specs = [
   "./tests/*.js"
 ];
 
+const chromeExtensionPath = helpers.getChromiumExtensionPath({isLambdatest: false});
 
 if (chromeEnabled)
 {
@@ -42,8 +37,8 @@ if (chromeEnabled)
     browserName: "chrome",
     "goog:chromeOptions": {
       args: ["--no-sandbox",
-              `--load-extension=${helpers.getChromiumExtensionPath()},${helpers.helperExtension}`,
-              `--disable-extensions-except=${helpers.getChromiumExtensionPath()},${helpers.helperExtension}`],
+              `--load-extension=${chromeExtensionPath},${helpers.helperExtension}`,
+              `--disable-extensions-except=${chromeExtensionPath},${helpers.helperExtension}`],
       excludeSwitches: ["disable-extensions"]
     },
     acceptInsecureCerts: true,
@@ -71,8 +66,8 @@ if (edgeEnabled)
     browserName: "MicrosoftEdge",
     "ms:edgeOptions": {
       args: ["--no-sandbox",
-              `--load-extension=${helpers.getChromiumExtensionPath()},${helpers.helperExtension}`,
-              `--disable-extensions-except=${helpers.getChromiumExtensionPath()},${helpers.helperExtension}`],
+              `--load-extension=${chromeExtensionPath},${helpers.helperExtension}`,
+              `--disable-extensions-except=${chromeExtensionPath},${helpers.helperExtension}`],
       excludeSwitches: ["disable-extensions"]
     },
     acceptInsecureCerts: true,
@@ -124,38 +119,3 @@ exports.config = {
     }
   }
 };
-
-
-function checkBuilds()
-{
-  if (chromeEnabled || edgeEnabled)
-  {
-    const extensionPath = helpers.getChromiumExtensionPath();
-    if (!fs.existsSync(extensionPath))
-    {
-      console.error("\x1b[33m%s\x1b[0m", `
------------------------------------------------------------------
-Could not find chrome extension in 'dist/devenv/chrome'.
-Run 'npm run build:dev chrome' to build the MV2 extension.
-Or 'npm run build:dev chrome -- -m 3' to build the MV3 extension.
------------------------------------------------------------------
-      `);
-      process.exit(1);
-    }
-  }
-
-  if (firefoxEnabled)
-  {
-    const extensionDirectoryPath = "../../dist/release";
-    if (!fs.existsSync(extensionDirectoryPath) || !fs.existsSync(helpers.getFirefoxExtensionPath()))
-    {
-      console.error("\x1b[33m%s\x1b[0m", `
------------------------------------------------------------------
-Could not find firefox extension in 'dist/release/*.xpi'.
-Run 'npm run build:release firefox' to build it
------------------------------------------------------------------
-      `);
-      process.exit(1);
-    }
-  }
-}

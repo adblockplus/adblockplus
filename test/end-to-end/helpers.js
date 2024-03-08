@@ -17,20 +17,36 @@
 
 "use strict";
 
+require("dotenv").config({path: "../../.env.e2e"});
 const fs = require("fs");
 const ExtensionsPage = require("./page-objects/extensions.page");
 const GeneralPage = require("./page-objects/general.page");
 const PremiumPage = require("./page-objects/premium.page");
 const PremiumCheckoutPage = require("./page-objects/premiumCheckout.page");
 const PremiumHeaderChunk = require("./page-objects/premiumHeader.chunk");
+
 const helperExtension = "helper-extension";
 
 const globalRetriesNumber = 2;
-const ciTesting = process.env.CI_TESTING === "true";
+const isGitlab = process.env.CI === "true";
+
 
 const chromeCIBuild = "../../" + process.env.CHROME_BUILD;
 const firefoxCIBuild = "../../" + process.env.FIREFOX_BUILD;
 
+const extensionVersion = getExtensionVersion();
+const chromeLocalReleaseBuildPath =
+  `../../dist/release/adblockpluschrome-${extensionVersion}.zip`;
+const firefoxLocalReleaseBuildPath =
+  `../../dist/release/adblockplusfirefox-${extensionVersion}.xpi`;
+const chromeLocalDevBuildPath = "../../dist/devenv/chrome";
+
+const testConfig = {
+  allureEnabled: process.env.ENABLE_ALLURE === "true",
+  chromeEnabled: process.env.ENABLE_CHROME === "true",
+  firefoxEnabled: process.env.ENABLE_FIREFOX === "true",
+  edgeEnabled: process.env.ENABLE_EDGE === "true"
+};
 
 async function afterSequence()
 {
@@ -249,41 +265,29 @@ async function getABPOptionsTabId()
   return currentTab;
 }
 
-function getChromiumExtensionPath()
+function getChromiumExtensionPath({isLambdatest} = {isLambdatest: true})
 {
   let chromeExtension;
-  if (ciTesting)
+  if (isGitlab)
   {
     chromeExtension = require("fs").
       readFileSync(chromeCIBuild).toString("base64");
   }
+  else if (isLambdatest && !isGitlab)
+  {
+    chromeExtension = require("fs").
+      readFileSync(chromeLocalReleaseBuildPath).toString("base64");
+  }
   else
   {
-    const extensionPath = "../../dist/devenv/chrome";
-    chromeExtension = extensionPath;
+    chromeExtension = chromeLocalDevBuildPath;
   }
   return chromeExtension;
 }
 
 function getFirefoxExtensionPath()
 {
-  let abpXpiFileName;
-  if (ciTesting)
-  {
-    abpXpiFileName = firefoxCIBuild;
-  }
-  else
-  {
-    const files = fs.readdirSync("../../dist/release");
-    files.forEach(async(name) =>
-    {
-      if (/.*\.xpi/.test(name))
-      {
-        abpXpiFileName = "../../dist/release/" + name;
-      }
-    });
-  }
-  return abpXpiFileName;
+  return isGitlab ? firefoxCIBuild : firefoxLocalReleaseBuildPath;
 }
 
 function getCurrentDate(locale)
@@ -463,11 +467,127 @@ async function getTabId({title, urlPattern})
   return tabId;
 }
 
-module.exports = {afterSequence, beforeSequence, doesTabExist,
-                  executeAsyncScript,
-                  enablePremiumByMockServer, wakeMockServer,
-                  getChromiumExtensionPath, enablePremiumByUI,
-                  getCurrentDate, getFirefoxExtensionPath, getTabId,
-                  randomIntFromInterval, helperExtension,
-                  globalRetriesNumber, switchToABPOptionsTab,
-                  waitForExtension, getABPOptionsTabId, waitForCondition};
+function localRunChecks()
+{
+  checkEnvFileExists();
+  const {
+    chromeEnabled,
+    firefoxEnabled,
+    edgeEnabled
+  } = testConfig;
+
+  if (chromeEnabled || edgeEnabled)
+  {
+    if (!fs.existsSync(chromeLocalDevBuildPath))
+    {
+      console.error("\x1b[33m%s\x1b[0m", `
+-----------------------------------------------------------------
+Could not find chrome extension in 'dist/devenv/chrome'.
+Run 'npm run build:dev chrome' to build the MV2 extension.
+Or 'npm run build:dev chrome -- -m 3' to build the MV3 extension.
+-----------------------------------------------------------------
+      `);
+      process.exit(1);
+    }
+  }
+
+  if (firefoxEnabled)
+  {
+    checkFirefoxReleaseBuild();
+  }
+}
+
+function lambdatestRunChecks()
+{
+  if (isGitlab)
+  {
+    return;
+  }
+
+  checkEnvFileExists();
+  if (!process.env.LT_USERNAME || !process.env.LT_ACCESS_KEY)
+  {
+    console.error("\x1b[33m%s\x1b[0m", `
+-----------------------------------------------------------------
+Please set the following environment variables in the .env.e2e file:
+LT_USERNAME
+LT_ACCESS_KEY
+https://www.lambdatest.com/support/docs/using-environment-variables-for-authentication-credentials/
+-----------------------------------------------------------------
+    `);
+    process.exit(1);
+  }
+
+  if (!fs.existsSync(chromeLocalReleaseBuildPath))
+  {
+    console.error("\x1b[33m%s\x1b[0m", `
+-----------------------------------------------------------------
+Could not find chrome extension in 'dist/release'.
+Run 'npm run build:release chrome' to build the MV2 extension.
+Or 'npm run build:release chrome -- -m 3' to build the MV3 extension.
+-----------------------------------------------------------------
+    `);
+    process.exit(1);
+  }
+
+  checkFirefoxReleaseBuild();
+}
+
+function checkEnvFileExists()
+{
+  if (!fs.existsSync("../../.env.e2e"))
+  {
+    console.error("\x1b[33m%s\x1b[0m", `
+-----------------------------------------------------------------
+Please create a .env.e2e file in the root of the project.
+You can use the .env.e2e.template file as a template.
+-----------------------------------------------------------------
+    `);
+    process.exit(1);
+  }
+}
+
+function checkFirefoxReleaseBuild()
+{
+  if (!fs.existsSync(firefoxLocalReleaseBuildPath))
+  {
+    console.error("\x1b[33m%s\x1b[0m", `
+-----------------------------------------------------------------
+Could not find firefox extension in 'dist/release/*.xpi'.
+Run 'npm run build:release firefox' to build it
+-----------------------------------------------------------------
+    `);
+    process.exit(1);
+  }
+}
+
+/**
+ * The source of truth for the extension version is in base.mjs,
+ * Which is an ES6 module.
+ * Importing it would require us to make a lot of calls async or to port
+ * the entire test suite to ES6.
+ * To avoid that we just read the file and extract the version from it.
+ * @returns {string} the extension version
+ */
+function getExtensionVersion()
+{
+  const baseManifestPath = "../../build/webext/config/base.mjs";
+  const manifestContent = fs.readFileSync(baseManifestPath, "utf-8");
+  const versionMatch = manifestContent.match(/version: "(.*?)"/);
+  if (!versionMatch)
+  {
+    throw new Error("Could not find the version in the base manifest");
+  }
+  return versionMatch[1];
+}
+
+module.exports = {
+  afterSequence, beforeSequence, doesTabExist,
+  executeAsyncScript, testConfig, localRunChecks,
+  enablePremiumByMockServer, wakeMockServer, lambdatestRunChecks,
+  getChromiumExtensionPath, enablePremiumByUI,
+  getCurrentDate, getFirefoxExtensionPath, getTabId,
+  randomIntFromInterval, helperExtension,
+  globalRetriesNumber, switchToABPOptionsTab,
+  waitForExtension, getABPOptionsTabId, waitForCondition
+};

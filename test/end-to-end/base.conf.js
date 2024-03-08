@@ -19,9 +19,11 @@
 
 "use strict";
 
-const buildNumber = process.env.BUILD_NUMBER;
-// ======== USE THE FOLLOWING FOR DEBUGGING PURPOSES ==========
-// const buildNumber = "local-testrun";
+const commitHash = require("child_process")
+  .execSync("git rev-parse --short HEAD")
+  .toString().trim();
+
+const buildNumber = process.env.CI_COMMIT_SHORT_SHA ? process.env.CI_COMMIT_SHORT_SHA : `local-run-${commitHash}`;
 
 exports.config = {
   buildNumber,

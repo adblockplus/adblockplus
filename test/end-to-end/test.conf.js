@@ -19,9 +19,12 @@
 
 "use strict";
 
+const helpers = require("./helpers.js");
+helpers.lambdatestRunChecks();
+
 const {config: baseConfig} = require("./base.conf.js");
 const {config: localisationConfig} = require("./localisation.conf.js");
-const helpers = require("./helpers.js");
+
 
 const parallelConfig = {
   maxInstances: 12,

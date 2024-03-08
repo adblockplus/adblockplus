@@ -451,10 +451,8 @@ testpages:MV2:firefox:oldest:
   variables:
     CHROME_BUILD: dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
     FIREFOX_BUILD: dist/release/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
-    BUILD_NUMBER: ${CI_COMMIT_SHORT_SHA}
     LT_USERNAME: $LT_USERNAME
     LT_ACCESS_KEY: $LT_ACCESS_KEY
-    CI_TESTING: "true"
   script:
     - npm ci --cache .npm --prefer-offline
     - npm run test:$CONFIGURATION $SUITE 2>&1 | tee lambdatest_output.txt || true

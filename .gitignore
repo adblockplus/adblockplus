@@ -21,3 +21,5 @@ coverage/
 
 # npm cache for CI
 .npm
+# env file for e2e tests
+.env.e2e

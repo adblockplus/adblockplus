@@ -19,8 +19,10 @@
 
 "use strict";
 
-const {config: baseConfig} = require("./base.conf.js");
 const helpers = require("./helpers.js");
+helpers.lambdatestRunChecks();
+
+const {config: baseConfig} = require("./base.conf.js");
 
 const parallelConfig = {
   maxInstances: 6,
