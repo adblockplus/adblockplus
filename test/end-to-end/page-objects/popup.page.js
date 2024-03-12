@@ -51,6 +51,11 @@ class PopupPage extends BasePage
     return $("#notification-message");
   }
 
+  get numberOfAdsBlockedThisPage()
+  {
+    return $("//div[@id='stats-page']/strong");
+  }
+
   get numberOfAdsBlockedInTotal()
   {
     return $("//div[@id='stats-total']/strong");
@@ -146,6 +151,11 @@ class PopupPage extends BasePage
   async getNotificationMessageText()
   {
     return await (await this.notificationMessage).getText();
+  }
+
+  async getNumberOfAdsBlockedOnThisPageText()
+  {
+    return await (await this.numberOfAdsBlockedThisPage).getText();
   }
 
   async getNumberOfAdsBlockedInTotalText()
