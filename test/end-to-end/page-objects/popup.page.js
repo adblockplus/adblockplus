@@ -202,8 +202,13 @@ class PopupPage extends BasePage
 
   async isDomainToggleChecked()
   {
+    if (browser.capabilities.browserName === "firefox")
+    {
+      return await this.thisDomainToggle.
+      getAttribute("checked") != null;
+    }
     return await this.thisDomainToggle.
-    getAttribute("aria-checked") === "true";
+    getAttribute("checked") === "true";
   }
 
   async clickThisPageToggle()
@@ -213,8 +218,13 @@ class PopupPage extends BasePage
 
   async isPageToggleChecked()
   {
+    if (browser.capabilities.browserName === "firefox")
+    {
+      return await this.thisPageToggle.
+      getAttribute("checked") != null;
+    }
     return await this.thisPageToggle.
-    getAttribute("aria-checked") === "true";
+    getAttribute("checked") === "true";
   }
 
   async isPageToggleEnabled()

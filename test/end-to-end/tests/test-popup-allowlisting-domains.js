@@ -55,16 +55,17 @@ describe("test popup allowlisting and disallowlisting", function()
       "bannerads/* was blocked");
     expect(await testPage.
        isSearchAdDivDisplayed()).to.be.false;
-    // This is commented out because it fails due to an actual bug
-    // uncomment when fixed
-    // expect(await testPage.
-    //    isZergmodDivDisplayed()).to.be.false;
+    // This fails, it's a bug
+    expect(await testPage.
+       isZergmodDivDisplayed()).to.be.false;
     const popupPage = new PopupPage(browser);
     await popupPage.init(globalOrigin, tabId);
     await popupPage.clickThisDomainToggle();
     expect(await popupPage.isDomainToggleChecked()).to.be.false;
     await popupPage.clickRefreshButton();
+    await switchToABPOptionsTab(true);
     await testPage.switchToTab("Blocking and hiding");
+    await browser.refresh();
     await waitForCondition("getAwe2FilterText", 3000, testPage, true, 200,
                            "awe2.js blocking filter should block this");
     expect(await testPage.getAwe2FilterText()).to.include(
@@ -73,8 +74,7 @@ describe("test popup allowlisting and disallowlisting", function()
       "first bannerads/* blocking filter should block this");
     expect(await testPage.getSearchAdDivText()).to.include(
       "search-ad id hiding filter should hide this");
-    // This is commented out because it fails due to an actual bug
-    // uncomment when fixed
+    // This fails, it's a bug
     // expect(await testPage.getZergmodDivText()).to.include(
     //   "zergmod class hiding filter should hide this");
     await switchToABPOptionsTab(true);
@@ -89,19 +89,18 @@ describe("test popup allowlisting and disallowlisting", function()
     await testPage.switchToTab("Blocking and hiding");
     await popupPage.init(globalOrigin, tabId);
     await popupPage.clickThisDomainToggle();
-    expect(await popupPage.isDomainToggleChecked()).to.be.false;
+    expect(await popupPage.isDomainToggleChecked()).to.be.true;
     await popupPage.clickRefreshButton();
     await testPage.switchToTab("Blocking and hiding");
+    await browser.refresh();
     expect(await testPage.getAwe2FilterText()).to.include(
       "awe2.js was blocked");
     expect(await testPage.getBanneradsFilterText()).to.include(
       "bannerads/* was blocked");
     expect(await testPage.
        isSearchAdDivDisplayed()).to.be.false;
-    // This is commented out because it fails due to an actual bug
-    // uncomment when fixed
-    // expect(await testPage.
-    //    isZergmodDivDisplayed()).to.be.false;
+    expect(await testPage.
+       isZergmodDivDisplayed()).to.be.false;
     await switchToABPOptionsTab(true);
     await allowistedWebsitesPage.init();
     attributesOfAllowlistingTableItems = await allowistedWebsitesPage.
@@ -127,15 +126,15 @@ describe("test popup allowlisting and disallowlisting", function()
     await popupPage.init(globalOrigin, tabId);
     await popupPage.clickThisDomainToggle();
     await popupPage.clickRefreshButton();
-    await testPage.switchToTab("Adblock Plus Options");
+    await switchToABPOptionsTab(true);
     tabId = await getTabId({title: "Blocking and hiding"});
     await popupPage.switchToTab("Blocking and hiding");
     await popupPage.init(globalOrigin, tabId);
-    expect(await popupPage.isDomainToggleChecked()).to.be.false;
-    expect(await popupPage.isPageToggleChecked()).to.be.false;
+    expect(await popupPage.isDomainToggleChecked()).to.be.true;
+    expect(await popupPage.isPageToggleChecked()).to.be.true;
     expect(await popupPage.isPageStatsCounterDisplayed()).to.be.true;
     expect(await popupPage.isBlockSpecificElementButtonDisplayed()).to.be.true;
-    await testPage.switchToTab("Adblock Plus Options");
+    await switchToABPOptionsTab(true);
     await allowistedWebsitesPage.init();
     const attributesOfAllowlistingTableItems = await allowistedWebsitesPage.
         getAttributeOfAllowlistingTableItems("class");
@@ -159,7 +158,7 @@ describe("test popup allowlisting and disallowlisting", function()
     expect(await popupPage.isRefreshButtonDisplayed()).to.be.true;
     expect(await popupPage.isRefreshMessageDisplayed()).to.be.true;
     await popupPage.clickRefreshButton();
-    await testPage.switchToTab("Adblock Plus Options");
+    await switchToABPOptionsTab(true);
     await browser.newWindow(testData.blockHideUrl);
     await testPage.switchToTab("Blocking and hiding");
     // skip for FF, popup.html does not close
@@ -178,7 +177,7 @@ describe("test popup allowlisting and disallowlisting", function()
     expect(await popupPage.isPageToggleEnabled()).to.be.false;
     expect(await popupPage.isPageStatsCounterDisplayed()).to.be.false;
     expect(await popupPage.isBlockSpecificElementButtonDisplayed()).to.be.false;
-    await testPage.switchToTab("Adblock Plus Options");
+    await switchToABPOptionsTab(true);
     const allowistedWebsitesPage = new AllowlistedWebsitesPage(browser);
     await allowistedWebsitesPage.init();
     const attributesOfAllowlistingTableItems = await allowistedWebsitesPage
