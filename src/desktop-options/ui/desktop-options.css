@@ -136,7 +136,7 @@ button,
 button:disabled,
 button[aria-disabled="true"]
 {
-  cursor: default;
+  cursor: not-allowed;
 }
 
 button.primary:not(.icon),
@@ -174,10 +174,21 @@ button.secondary:not(.icon),
   color: #0797E1;
 }
 
-button.secondary:not(.icon):hover,
-.button.secondary:not(.icon):hover
+button.secondary:not(:disabled):not(.icon):hover,
+.button.secondary:not(:disabled):not(.icon):hover
 {
   box-shadow: inset 0 0 0 1px #0797E1;
+}
+
+button.secondary:disabled:not(.icon)
+{
+  color: #bbb;
+  background-color: #f3f3f3;
+}
+
+button.secondary:disabled:not(.icon):hover
+{
+  border-color: inherit;
 }
 
 button.link,
@@ -224,7 +235,7 @@ button.add.secondary
   border: 1px solid #bcbcbc;
 }
 
-button.add.secondary:hover
+button.add.secondary:not(:disabled):hover
 {
   border-color: #0797E1;
 }
@@ -263,6 +274,11 @@ button[data-action="open-filterlist-by-url"]
   position: relative;
   z-index: 1;
   background-color: #FFF;
+}
+
+html[data-manifest-version="2"] #filterlist-note-mv3
+{
+  display: none;
 }
 
 .side-controls:not(.wrap)
@@ -1991,6 +2007,12 @@ html[dir="rtl"] #dialog-body .ctas > *:not(:first-child)
   background-color: var(--background-color-cta-primary-hover);
 }
 
+#dialog-body .ctas button.primary:disabled
+{
+  background-color: #5CBCE1;
+  cursor: not-allowed;
+}
+
 #dialog-body .ctas button.premium
 {
   border-color: var(--color-premium);
@@ -2055,6 +2077,16 @@ html[dir="rtl"] #dialog-body .ctas > *:not(:first-child)
   border-radius: var(--border-radius);
   font-style: italic;
   background-color: var(--background-color-error);
+}
+
+html:not([data-manifest-version="2"]) #dialog-content-predefined .field
+{
+  display: none;
+}
+
+html[data-manifest-version="2"] #dialog-predefined-note-mv3
+{
+  display: none;
 }
 
 #dialog .field

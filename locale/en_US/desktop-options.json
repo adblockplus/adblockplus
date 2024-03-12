@@ -331,6 +331,10 @@
     "description": "Text inside 'Last update' column in Advanced tab",
     "message": "hours ago"
   },
+  "options_filterList_note_mv3": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/a5a9ded26db3d604c16b45b8dce497b3b8c81685/spec/abp/desktop-settings/advanced-tab.md#filter-lists-section, https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/a5a9ded26db3d604c16b45b8dce497b3b8c81685/spec/abp/desktop-settings/advanced-tab.md#add-filter-subscription-dialogue",
+    "message": "<strong>Note:</strong> The ability to add a new filter list via a URL is temporarily unavailable due to the migration to Manifest V3. We’re working on bringing this feature back and reinstating your previous custom filter list data. <a0>Learn more (English only)</a0>"
+  },
   "options_builtin_filterList_add": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/fdab34c8f8dbf0d134b9a848fa559c5001c13601/spec/abp/options-page.md#filter-list-buttons",
     "message": "Add built-in filter lists"

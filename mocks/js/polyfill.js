@@ -45,14 +45,21 @@
     return candidates;
   };
 
-  const match = /[?&]locale=([\w-]+)/.exec(window.top.location.search);
-  const selectedLocale = (match) ? match[1] : "en_US";
+  const localeMatch = /[?&]locale=([\w-]+)/.exec(window.top.location.search);
+  const selectedLocale = (localeMatch) ? localeMatch[1] : "en_US";
 
   const locales = getLocaleCandidates(selectedLocale);
   let localeIdxToLoad = 0;
   const catalog = Object.create(null);
   const catalogFile = window.location.pathname.replace(/.*\//, "")
     .replace(/\..*/, "") + ".json";
+
+  const manifestversionMatch = /[?&]manifestVersion=(\d)/.exec(
+    window.top.location.search
+  );
+  const manifestVersion = (manifestversionMatch) ?
+    parseInt(manifestversionMatch[1], 10) :
+    2;
 
   const replacePlaceholder = function(text, placeholder, content)
   {
@@ -178,6 +185,15 @@
 
     inspectedWindow: {
       reload: () => location.reload()
+    }
+  };
+
+  browser.runtime = {
+    getManifest()
+    {
+      return {
+        manifest_version: manifestVersion
+      };
     }
   };
 }());

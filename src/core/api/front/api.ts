@@ -88,6 +88,7 @@ export const app = {
 
       return {
         application,
+        manifestVersion: browser.runtime.getManifest().manifest_version,
         platform,
         store
       };

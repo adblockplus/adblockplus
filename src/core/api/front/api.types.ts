@@ -230,9 +230,14 @@ export type Store = PlatformToStore[Platform] | "edge" | "opera";
  */
 export interface ExtensionInfo {
   /**
-   * Appplication currently running the extension.
+   * Application currently running the extension.
    */
   application: string;
+
+  /**
+   * Extension manifest version.
+   */
+  manifestVersion: number;
 
   /**
    * Platform of the appplication currently running the extension.

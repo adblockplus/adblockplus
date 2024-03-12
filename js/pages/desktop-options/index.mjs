@@ -1296,6 +1296,11 @@ function onDOMLoaded()
   {
     $("#acceptable-ads-why-not a.primary").href = url;
   });
+  getDoclink("manifestv3_explanation").then(url =>
+  {
+    setElementLinks("filterlist-note-mv3", url);
+    setElementLinks("dialog-predefined-note-mv3", url);
+  });
 
   // Advanced tab
   browser.runtime.sendMessage({
@@ -1325,22 +1330,35 @@ function onDOMLoaded()
     setElementLinks("visit-forum", url);
   });
 
-  api.app.getInfo().then(({application, store}) =>
+  api.app.getInfo().then(({application, manifestVersion, store}) =>
   {
     document.documentElement.dataset.application = application;
+    document.documentElement.dataset.manifestVersion = manifestVersion;
 
-    // We need to restrict this feature to certain browsers for which we
+    // We need to restrict the rating feature to certain browsers for which we
     // have a link to where users can rate us
     if (!["chrome", "chromium", "opera", "firefox"].includes(application))
     {
       $("#support-us").setAttribute("aria-hidden", true);
-      return;
+    }
+    else
+    {
+      api.doclinks.get(`${store}_review`).then((url) =>
+      {
+        $("#support-us a[data-i18n='options_rating_button']").href = url;
+      });
     }
 
-    api.doclinks.get(`${store}_review`).then((url) =>
+    // Initial Manifest v3 extension versions don't include support for
+    // non-recommended filter lists, so we need to disable that functionality
+    // in the UI for the time being
+    if (manifestVersion !== 2)
     {
-      $("#support-us a[data-i18n='options_rating_button']").href = url;
-    });
+      $("#filterlist-by-url-wrap > button").disabled = true;
+      $(
+        "#dialog-content-predefined [data-action='add-predefined-subscription']"
+      ).disabled = true;
+    }
   });
 
   $("#dialog").addEventListener("keydown", function(event)

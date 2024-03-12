@@ -6,8 +6,9 @@
 
 | Parameter | Value | Description |
 |-|-|-|
-| application | String | Used for resolving application-specific documentation links (e.g. "chrome_support") |
-| locale | String | Show page using given locale (see [list of supported locales](../locale)) |
+| application | `string` | Used for resolving application-specific documentation links (e.g. "chrome_support") |
+| locale | `string` | Show page using given locale (see [list of supported locales](../locale)) |
+| manifestVersion | `number` | Show page using given extension manifest version |
 
 ### composer.html
 
