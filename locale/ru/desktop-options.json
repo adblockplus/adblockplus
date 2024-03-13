@@ -228,6 +228,12 @@
   "options_filterList_lastDownload_connectionError": {
     "message": "Список фильтров не удалось загрузить."
   },
+  "options_filterList_lastDownload_diffError": {
+    "message": "Обновление списка фильтров не удалось применить из-за внутренней ошибки."
+  },
+  "options_filterList_lastDownload_diffTooManyFilters": {
+    "message": "Обновление списка фильтров не удалось применить из-за ограничений браузера. Обновление до более новой версии расширения может решить эту проблему."
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Выполняется обновление"
   },

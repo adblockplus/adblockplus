@@ -228,6 +228,12 @@
   "options_filterList_lastDownload_connectionError": {
     "message": "فشل تنزيل قائمة عوامل التصفية."
   },
+  "options_filterList_lastDownload_diffError": {
+    "message": "تعذر تطبيق تحديث قائمة عوامل التصفية نظرًا لحدوث خطأ داخلي."
+  },
+  "options_filterList_lastDownload_diffTooManyFilters": {
+    "message": "تعذر تطبيق تحديث قائمة عوامل التصفية بسبب قيود المتصفح. وقد تُحل هذه المشكلة عن طريق التحديث إلى إصدار أحدث للملحق."
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "تحديث"
   },

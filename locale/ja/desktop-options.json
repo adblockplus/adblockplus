@@ -216,6 +216,12 @@
   "options_filterList_lastDownload_connectionError": {
     "message": "フィルターリストのダウンロードの失敗しました。"
   },
+  "options_filterList_lastDownload_diffError": {
+    "message": "内部エラーのためフィルターリストの更新が適用できません。"
+  },
+  "options_filterList_lastDownload_diffTooManyFilters": {
+    "message": "ブラウザーの制限のためフィルターリストの更新が適用できません。新しい拡張機能バージョンに更新すると、問題が解決する場合があります。"
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "更新中"
   },

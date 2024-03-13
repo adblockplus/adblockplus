@@ -228,6 +228,12 @@
   "options_filterList_lastDownload_connectionError": {
     "message": "筛选清单无法下载。"
   },
+  "options_filterList_lastDownload_diffError": {
+    "message": "由于内部错误，无法应用筛选清单更新。"
+  },
+  "options_filterList_lastDownload_diffTooManyFilters": {
+    "message": "由于浏览器限制，无法应用筛选清单更新。更新到较新版本的扩展程序可能会解决此问题。"
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "正在更新"
   },

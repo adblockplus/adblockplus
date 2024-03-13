@@ -228,6 +228,12 @@
   "options_filterList_lastDownload_connectionError": {
     "message": "Het downloaden van de filterlijst is mislukt."
   },
+  "options_filterList_lastDownload_diffError": {
+    "message": "Update van filterlijst kon niet worden toegepast vanwege een interne fout."
+  },
+  "options_filterList_lastDownload_diffTooManyFilters": {
+    "message": "De update van de filterlijst kon niet worden toegepast vanwege browserbeperkingen. Updaten naar een nieuwere extensieversie kan dit probleem verhelpen."
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Bijwerken"
   },

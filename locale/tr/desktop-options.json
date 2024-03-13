@@ -228,6 +228,12 @@
   "options_filterList_lastDownload_connectionError": {
     "message": "Filtre listesi indirilemedi."
   },
+  "options_filterList_lastDownload_diffError": {
+    "message": "Filtre listesi güncellemesi dâhili bir hata nedeniyle uygulanamadı."
+  },
+  "options_filterList_lastDownload_diffTooManyFilters": {
+    "message": "Filtre listesi güncellemesi tarayıcı sınırlamaları nedeniyle uygulanamadı. Uzantının daha yeni bir sürüme güncellenmesi bu sorunu çözümleyebilir."
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Güncelleniyor"
   },
