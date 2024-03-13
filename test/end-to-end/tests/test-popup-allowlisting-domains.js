@@ -55,9 +55,8 @@ describe("test popup allowlisting and disallowlisting", function()
       "bannerads/* was blocked");
     expect(await testPage.
        isSearchAdDivDisplayed()).to.be.false;
-    // This fails, it's a bug
     expect(await testPage.
-       isZergmodDivDisplayed()).to.be.false;
+       isAdContainerDivDisplayed()).to.be.false;
     const popupPage = new PopupPage(browser);
     await popupPage.init(globalOrigin, tabId);
     await popupPage.clickThisDomainToggle();
@@ -74,9 +73,8 @@ describe("test popup allowlisting and disallowlisting", function()
       "first bannerads/* blocking filter should block this");
     expect(await testPage.getSearchAdDivText()).to.include(
       "search-ad id hiding filter should hide this");
-    // This fails, it's a bug
-    // expect(await testPage.getZergmodDivText()).to.include(
-    //   "zergmod class hiding filter should hide this");
+    expect(await testPage.getAdContainerDivText()).to.include(
+      "AdContainer class hiding filter should hide this");
     await switchToABPOptionsTab(true);
     const allowistedWebsitesPage = new AllowlistedWebsitesPage(browser);
     await allowistedWebsitesPage.init();
@@ -100,7 +98,7 @@ describe("test popup allowlisting and disallowlisting", function()
     expect(await testPage.
        isSearchAdDivDisplayed()).to.be.false;
     expect(await testPage.
-       isZergmodDivDisplayed()).to.be.false;
+       isAdContainerDivDisplayed()).to.be.false;
     await switchToABPOptionsTab(true);
     await allowistedWebsitesPage.init();
     attributesOfAllowlistingTableItems = await allowistedWebsitesPage.

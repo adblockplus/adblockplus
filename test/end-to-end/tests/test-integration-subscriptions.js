@@ -110,8 +110,8 @@ describe("test subscriptions as part of the integration tests", function()
       "first bannerads/* blocking filter should block this");
     expect(await testPages.getSearchAdDivText()).to.include(
       "search-ad id hiding filter should hide this");
-    expect(await testPages.getZergmodDivText()).to.include(
-      "zergmod class hiding filter should hide this");
+    expect(await testPages.getAdContainerDivText()).to.include(
+      "AdContainer class hiding filter should hide this");
     await switchToABPOptionsTab();
     await advancedPage.init();
     await advancedPage.clickEasyListFLStatusToggle();
@@ -136,7 +136,7 @@ describe("test subscriptions as part of the integration tests", function()
     expect(await testPages.
       isSearchAdDivDisplayed()).to.be.false;
     expect(await testPages.
-      isZergmodDivDisplayed()).to.be.false;
+      isAdContainerDivDisplayed()).to.be.false;
   });
 
   it("should add/remove subscriptions", async function()
@@ -177,8 +177,8 @@ describe("test subscriptions as part of the integration tests", function()
       "first bannerads/* blocking filter should block this");
     expect(await testPages.getSearchAdDivText()).to.include(
       "search-ad id hiding filter should hide this");
-    expect(await testPages.getZergmodDivText()).to.include(
-      "zergmod class hiding filter should hide this");
+    expect(await testPages.getAdContainerDivText()).to.include(
+      "AdContainer class hiding filter should hide this");
     await switchToABPOptionsTab();
     await advancedPage.init();
     await advancedPage.clickAddBuiltinFilterListButton();
@@ -209,6 +209,6 @@ describe("test subscriptions as part of the integration tests", function()
     expect(await testPages.
       isSearchAdDivDisplayed()).to.be.false;
     expect(await testPages.
-      isZergmodDivDisplayed()).to.be.false;
+      isAdContainerDivDisplayed()).to.be.false;
   });
 });

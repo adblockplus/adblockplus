@@ -31,7 +31,7 @@ module.exports =
     'ads.adblockplus.org/easylist.txt" hitCount="2"/>',
     '<filter text="###search-ad" subscriptions="https://easylist-downloads.a' +
     'dblockplus.org/easylist.txt" hitCount="1"/>',
-    '<filter text="##.zergmod" subscriptions="https' +
+    '<filter text="##.AdContainer" subscriptions="https' +
     '://easylist-downloads.adblockplus.org/easylist.txt" hitCount="1"/>'
   ],
   issueTypeLableText: "Issue type:",
@@ -51,7 +51,7 @@ module.exports =
   [
     '<request location="https://adblockinc.gitlab.io/QA-team/issue-reporter/' +
     'issue-reporter-testpage.html" type="DOCUMENT" docDomain="null" thirdPar' +
-    'ty="undefined" count="3" filter="##.zergmod"/>',
+    'ty="undefined" count="3" filter="##.AdContainer"/>',
     '<request location="https://adblockinc.gitlab.io/QA-team/issue-reporter/' +
     'scripts/awe2.js" type="SCRIPT" docDomain="adblockinc.gitlab.io" ' +
     'thirdParty="undefined" count="1" filter="/awe2.js"/>',

@@ -148,9 +148,9 @@ class TestPages extends BasePage
     return $("#survey-feedback-to-left");
   }
 
-  get zergmodDiv()
+  get AdContainerDiv()
   {
-    return $("#zergmod");
+    return $("#AdContainer");
   }
 
   async clickSubscribeLink()
@@ -220,9 +220,9 @@ class TestPages extends BasePage
     return await (await this.subscriptionHidingId).getText();
   }
 
-  async getZergmodDivText()
+  async getAdContainerDivText()
   {
-    return await (await this.zergmodDiv).getText();
+    return await (await this.AdContainerDiv).getText();
   }
 
   async isAutoplayVideosBlockingFilterIdDisplayed()
@@ -318,9 +318,9 @@ class TestPages extends BasePage
     return await (await this.snippetFilterDiv).isDisplayed();
   }
 
-  async isZergmodDivDisplayed()
+  async isAdContainerDivDisplayed()
   {
-    return await (await this.zergmodDiv).isDisplayed();
+    return await (await this.AdContainerDiv).isDisplayed();
   }
 }
 

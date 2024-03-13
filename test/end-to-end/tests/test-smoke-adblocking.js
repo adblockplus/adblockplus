@@ -135,7 +135,7 @@ describe("test adblocking as part of the smoke tests", function()
     expect(await testPages.
       isSearchAdDivDisplayed()).to.be.false;
     expect(await testPages.
-      isZergmodDivDisplayed()).to.be.false;
+      isAdContainerDivDisplayed()).to.be.false;
   });
 
   it("should block ad by snippet", async function()
@@ -184,8 +184,8 @@ describe("test adblocking as part of the smoke tests", function()
       "first bannerads/* blocking filter should block this");
     expect(await testPages.getSearchAdDivText()).to.include(
       "search-ad id hiding filter should hide this");
-    expect(await testPages.getZergmodDivText()).to.include(
-      "zergmod class hiding filter should hide this");
+    expect(await testPages.getAdContainerDivText()).to.include(
+      "AdContainer class hiding filter should hide this");
     await switchToABPOptionsTab();
     await allowistedWebsitesPage.
       removeAllowlistedDomain("adblockinc.gitlab.io");
