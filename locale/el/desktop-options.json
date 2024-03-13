@@ -91,6 +91,15 @@
   "options_customize_showNotifications": {
     "message": "Εμφάνιση χρήσιμων ειδοποιήσεων"
   },
+  "options_data_collection_opt_out_description": {
+    "message": "Προκειμένου να παρέχει την καλύτερη δυνατή εμπειρία χρήστη, η επέκταση Adblock Plus συλλέγει ορισμένα δεδομένα χρήστη από προεπιλογή. Μπορείτε να επιλέξετε να εξαιρεθείτε από τη συλλογή δεδομένων εδώ."
+  },
+  "options_data_collection_opt_out_header": {
+    "message": "Συλλογή δεδομένων"
+  },
+  "options_data_collection_opt_out_label": {
+    "message": "Εξαιρεθείτε από κάθε είδους συλλογή δεδομένων από την επέκταση Adblock Plus."
+  },
   "options_dialog_about_copyright": {
     "message": "Πνευματικά δικαιώματα © $currentYear$ <a0>eyeo GmbH</a0>.",
     "placeholders": {
@@ -235,6 +244,9 @@
   },
   "options_filterList_minutes": {
     "message": "λεπτά πριν"
+  },
+  "options_filterList_note_mv3": {
+    "message": "<strong>Σημείωση:</strong>Η δυνατότητα προσθήκης μιας νέας λίστας φίλτρων μέσω μιας διεύθυνσης URL δεν είναι προσωρινά διαθέσιμη λόγω της μετάβασης στο Manifest V3. Εργαζόμαστε για την επαναφορά αυτής της δυνατότητας και την επαναφορά των προηγούμενων δεδομένων της προσαρμοσμένης λίστας φίλτρων σας. <a0>Μάθετε περισσότερα (μόνο στα Αγγλικά)</a0>"
   },
   "options_filterList_now": {
     "message": "Μόλις τώρα"
@@ -394,14 +406,5 @@
   },
   "options_upgrade_button": {
     "message": "Αναβάθμιση"
-  },
-  "options_data_collection_opt_out_header": {
-    "message": "Συλλογή δεδομένων"
-  },
-  "options_data_collection_opt_out_description": {
-    "message": "Προκειμένου να παρέχει την καλύτερη δυνατή εμπειρία χρήστη, η επέκταση Adblock Plus συλλέγει ορισμένα δεδομένα χρήστη από προεπιλογή. Μπορείτε να επιλέξετε να εξαιρεθείτε από τη συλλογή δεδομένων εδώ."
-  },
-  "options_data_collection_opt_out_label": {
-    "message": "Εξαιρεθείτε από κάθε είδους συλλογή δεδομένων από την επέκταση Adblock Plus."
   }
 }

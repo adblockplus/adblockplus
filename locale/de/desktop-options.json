@@ -103,6 +103,15 @@
   "options_customize_showNotifications_tooltip": {
     "message": "Benachrichtigungen von Adblock Plus zulassen (Benachrichtigungen in Bezug auf kritische Leistungsprobleme werden immer angezeigt)."
   },
+  "options_data_collection_opt_out_description": {
+    "message": "Um das bestmögliche Nutzererlebnis zu gewährleisten, sammelt die Adblock Plus-Erweiterung automatisch einige Nutzerdaten. Du kannst die Datenerhebung hier untersagen."
+  },
+  "options_data_collection_opt_out_header": {
+    "message": "Datenerhebung"
+  },
+  "options_data_collection_opt_out_label": {
+    "message": "Jegliche Datenerhebung in der Adblock Plus-Erweiterung untersagen."
+  },
   "options_dialog_about_copyright": {
     "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
     "placeholders": {
@@ -253,6 +262,9 @@
   },
   "options_filterList_minutes": {
     "message": "vor Minuten"
+  },
+  "options_filterList_note_mv3": {
+    "message": "<strong>Bitte beachte:</strong> Die Möglichkeit, eine neue Filterliste über eine URL hinzuzufügen, steht derzeit aufgrund der Migration zu Manifest V3 nicht zur Verfügung. Wir arbeiten daran, diese Funktion erneut anzubieten und deine früheren individuellen Filterlistendaten wieder herzustellen. <a0>Mehr erfahren (nur auf Englisch)</a0>"
   },
   "options_filterList_now": {
     "message": "Gerade jetzt"
@@ -461,14 +473,5 @@
   },
   "options_upgrade_button": {
     "message": "Upgrade"
-  },
-  "options_data_collection_opt_out_header": {
-    "message": "Datenerhebung"
-  },
-  "options_data_collection_opt_out_description": {
-    "message": "Um das bestmögliche Nutzererlebnis zu gewährleisten, sammelt die Adblock Plus-Erweiterung automatisch einige Nutzerdaten. Du kannst die Datenerhebung hier untersagen."
-  },
-  "options_data_collection_opt_out_label": {
-    "message": "Jegliche Datenerhebung in der Adblock Plus-Erweiterung untersagen."
   }
 }

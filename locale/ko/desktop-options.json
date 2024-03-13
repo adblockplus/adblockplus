@@ -103,6 +103,15 @@
   "options_customize_showNotifications_tooltip": {
     "message": "Adblock Plus으로부터의 알림 허용하기 (중요한 성능 문제와 관련된 알림은 항상 표시됩니다)."
   },
+  "options_data_collection_opt_out_description": {
+    "message": "최고의 사용자 경험을 제공하기 위해, Adblock Plus 확장 프로그램은 일부 사용자 데이터 수집이 기본 설정으로 되어 있습니다. 여기에서 데이터 수집을 중단하도록 선택할 수 있습니다."
+  },
+  "options_data_collection_opt_out_header": {
+    "message": "데이터 수집"
+  },
+  "options_data_collection_opt_out_label": {
+    "message": "Adblock Plus 확장 프로그램에서 모든 데이터 수집 중단하기."
+  },
   "options_dialog_about_copyright": {
     "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0> 저작권 소유.",
     "placeholders": {
@@ -253,6 +262,9 @@
   },
   "options_filterList_minutes": {
     "message": "분 전"
+  },
+  "options_filterList_note_mv3": {
+    "message": "<strong>참고:</strong> URL을 통해 새로운 필터 목록에 추가하는 기능을 Manifest V3 이전으로 인해 일시적으로 이용할 수 없습니다. 이 기능을 다시 사용할 수 있도록 노력하고 있으며 이전 맞춤 필터 목록 데이터로 복원하고 있습니다. <a0>더 보기(영어 용)</a0>"
   },
   "options_filterList_now": {
     "message": "지금"
@@ -452,14 +464,5 @@
   },
   "options_upgrade_button": {
     "message": "업그레이드"
-  },
-  "options_data_collection_opt_out_header": {
-    "message": "데이터 수집"
-  },
-  "options_data_collection_opt_out_description": {
-    "message": "최고의 사용자 경험을 제공하기 위해, Adblock Plus 확장 프로그램은 일부 사용자 데이터 수집이 기본 설정으로 되어 있습니다. 여기에서 데이터 수집을 중단하도록 선택할 수 있습니다."
-  },
-  "options_data_collection_opt_out_label": {
-    "message": "Adblock Plus 확장 프로그램에서 모든 데이터 수집 중단하기."
   }
 }

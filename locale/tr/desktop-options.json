@@ -103,6 +103,15 @@
   "options_customize_showNotifications_tooltip": {
     "message": "Adblock Plus’tan gelen tüm bildirimlere izin ver (kritik performans sorunlarıyla ilgili bildirimler her zaman gösterilir)."
   },
+  "options_data_collection_opt_out_description": {
+    "message": "Mümkün olan en iyi kullanıcı deneyimini sağlamak için Adblock Plus uzantısı varsayılan olarak bazı kullanıcı verilerini toplar. Veri toplamayı buradan devre dışı bırakmayı seçebilirsiniz."
+  },
+  "options_data_collection_opt_out_header": {
+    "message": "Veri Toplama"
+  },
+  "options_data_collection_opt_out_label": {
+    "message": "Adblock Plus uzantısındaki tüm veri toplamayı devre dışı bırak."
+  },
   "options_dialog_about_copyright": {
     "message": "Telif Hakkı © $currentYear$ <a0>eyeo GmbH</a0>.",
     "placeholders": {
@@ -253,6 +262,9 @@
   },
   "options_filterList_minutes": {
     "message": "dakika önce"
+  },
+  "options_filterList_note_mv3": {
+    "message": "<strong>Not:</strong> Manifest V3'e geçiş nedeniyle URL yoluyla yeni filtre listesi ekleme özelliği geçici olarak kullanılamıyor. Bu özelliği tekrar kullanıma sunmak ve önceki özel filtre listesi verilerinizi eski durumuna döndürmek için çalışmaya devam ediyoruz. <a0>Daha fazla bilgi edinin (yalnızca İngilizce)</a0>"
   },
   "options_filterList_now": {
     "message": "Şimdi"
@@ -461,14 +473,5 @@
   },
   "options_upgrade_button": {
     "message": "Yükselt"
-  },
-  "options_data_collection_opt_out_header": {
-    "message": "Veri Toplama"
-  },
-  "options_data_collection_opt_out_description": {
-    "message": "Mümkün olan en iyi kullanıcı deneyimini sağlamak için Adblock Plus uzantısı varsayılan olarak bazı kullanıcı verilerini toplar. Veri toplamayı buradan devre dışı bırakmayı seçebilirsiniz."
-  },
-  "options_data_collection_opt_out_label": {
-    "message": "Adblock Plus uzantısındaki tüm veri toplamayı devre dışı bırak."
   }
 }

@@ -103,6 +103,15 @@
   "options_customize_showNotifications_tooltip": {
     "message": "Meldingen van Adblock Plus toestaan (meldingen gerelateerd aan kritieke prestatieproblemen worden altijd getoond)."
   },
+  "options_data_collection_opt_out_description": {
+    "message": "Om de best mogelijke gebruikerservaring te bieden, verzamelt de Adblock Plus-extensie standaard enkele gebruikersgegevens. U kunt ervoor kiezen om het verzamelen van gegevens hier uit te schakelen."
+  },
+  "options_data_collection_opt_out_header": {
+    "message": "Gegevensverzameling"
+  },
+  "options_data_collection_opt_out_label": {
+    "message": "Het verzamelen van gegevens in de Adblock Plus-extensie uitschakelen."
+  },
   "options_dialog_about_copyright": {
     "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
     "placeholders": {
@@ -253,6 +262,9 @@
   },
   "options_filterList_minutes": {
     "message": "minuten geleden"
+  },
+  "options_filterList_note_mv3": {
+    "message": "<strong>Opmerking:</strong> De mogelijkheid om een nieuwe filterlijst toe te voegen via een URL is tijdelijk niet beschikbaar vanwege de migratie naar Manifest V3. We werken eraan om deze functie weer terug beschikbaar te maken en uw vorige aangepaste filterlijstgegevens te herstellen. <a0>Meer informatie (alleen beschikbaar in het Engels)</a0>"
   },
   "options_filterList_now": {
     "message": "Zojuist"
@@ -461,14 +473,5 @@
   },
   "options_upgrade_button": {
     "message": "Upgraden"
-  },
-  "options_data_collection_opt_out_header": {
-    "message": "Gegevensverzameling"
-  },
-  "options_data_collection_opt_out_description": {
-    "message": "Om de best mogelijke gebruikerservaring te bieden, verzamelt de Adblock Plus-extensie standaard enkele gebruikersgegevens. U kunt ervoor kiezen om het verzamelen van gegevens hier uit te schakelen."
-  },
-  "options_data_collection_opt_out_label": {
-    "message": "Het verzamelen van gegevens in de Adblock Plus-extensie uitschakelen."
   }
 }

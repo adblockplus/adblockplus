@@ -103,6 +103,15 @@
   "options_customize_showNotifications_tooltip": {
     "message": "السماح بالإشعارات من Adblock Plus (الإشعارات المتعلقة بمشاكل الأداء الهامة ستظهر دائمًا)."
   },
+  "options_data_collection_opt_out_description": {
+    "message": "لتوفير أفضل تجربة ممكنة للمستخدم، يجمع ملحق Adblock Plus بعض بيانات المستخدم بشكل افتراضي. ويمكنك اختيار إلغاء الاشتراك في جمع البيانات من هنا."
+  },
+  "options_data_collection_opt_out_header": {
+    "message": "جمع البيانات"
+  },
+  "options_data_collection_opt_out_label": {
+    "message": "إلغاء الاشتراك في جميع عمليات جمع البيانات في ملحق Adblock Plus."
+  },
   "options_dialog_about_copyright": {
     "message": "حقوق النشر © $currentYear$ <a0>eyeo GmbH</a0>.",
     "placeholders": {
@@ -253,6 +262,9 @@
   },
   "options_filterList_minutes": {
     "message": "منذ دقائق"
+  },
+  "options_filterList_note_mv3": {
+    "message": "<strong>ملاحظة:</strong> لا تتوفر القدرة على إضافة قائمة عوامل تصفية جديدة عبر عنوان URL مؤقتًا بسبب الترحيل إلى Manifest V3. ونعمل على إعادة تشغيل هذه الميزة واستعادة بيانات قوائم عوامل التصفية المخصصة السابقة الخاصة بك. ⁦<a0>⁩معرفة المزيد (باللغة الإنجليزية فقط)⁦</a0>⁩"
   },
   "options_filterList_now": {
     "message": "فقط الآن"
@@ -461,14 +473,5 @@
   },
   "options_upgrade_button": {
     "message": "ترقية"
-  },
-  "options_data_collection_opt_out_header": {
-    "message": "جمع البيانات"
-  },
-  "options_data_collection_opt_out_description": {
-    "message": "لتوفير أفضل تجربة ممكنة للمستخدم، يجمع ملحق Adblock Plus بعض بيانات المستخدم بشكل افتراضي. ويمكنك اختيار إلغاء الاشتراك في جمع البيانات من هنا."
-  },
-  "options_data_collection_opt_out_label": {
-    "message": "إلغاء الاشتراك في جميع عمليات جمع البيانات في ملحق Adblock Plus."
   }
 }

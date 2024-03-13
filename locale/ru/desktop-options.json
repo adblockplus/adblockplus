@@ -103,6 +103,15 @@
   "options_customize_showNotifications_tooltip": {
     "message": "Разрешить уведомления от Adblock Plus (уведомления, связанные с критическими проблемами производительности, всегда будут отображаться)."
   },
+  "options_data_collection_opt_out_description": {
+    "message": "Чтобы обеспечить наилучшие впечатления для пользователей, расширение Adblock Plus по умолчанию собирает некоторые пользовательские данные. Здесь вы можете отказаться от сбора данных."
+  },
+  "options_data_collection_opt_out_header": {
+    "message": "Сбор данных"
+  },
+  "options_data_collection_opt_out_label": {
+    "message": "Отказаться от сбора всех данных в расширении Adblock Plus."
+  },
   "options_dialog_about_copyright": {
     "message": "Авторское право © $currentYear$ <a0>eyeo GmbH</a0>.",
     "placeholders": {
@@ -253,6 +262,9 @@
   },
   "options_filterList_minutes": {
     "message": "минут(-ы) назад"
+  },
+  "options_filterList_note_mv3": {
+    "message": "<strong>Примечание:</strong> Возможность добавлять новый список фильтров через URL-адрес временно недоступна из-за перехода на Manifest V3. Мы работаем над тем, чтобы вернуть эту функцию и восстановить данные вашего предыдущего индивидуального списка фильтров. <a0>Узнать больше (только на английском языке)</a0>"
   },
   "options_filterList_now": {
     "message": "Только что"
@@ -461,14 +473,5 @@
   },
   "options_upgrade_button": {
     "message": "Сделать апгрейд"
-  },
-  "options_data_collection_opt_out_header": {
-    "message": "Сбор данных"
-  },
-  "options_data_collection_opt_out_description": {
-    "message": "Чтобы обеспечить наилучшие впечатления для пользователей, расширение Adblock Plus по умолчанию собирает некоторые пользовательские данные. Здесь вы можете отказаться от сбора данных."
-  },
-  "options_data_collection_opt_out_label": {
-    "message": "Отказаться от сбора всех данных в расширении Adblock Plus."
   }
 }

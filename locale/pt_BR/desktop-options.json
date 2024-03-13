@@ -103,6 +103,15 @@
   "options_customize_showNotifications_tooltip": {
     "message": "Permitir notificações do Adblock Plus (notificações relacionadas aos problemas críticos de desempenho serão sempre exibidas)."
   },
+  "options_data_collection_opt_out_description": {
+    "message": "A fim de proporcionar a melhor experiência de usuário possível, a extensão Adblock Plus coleta automaticamente alguns dados do usuário. Você tem a opção rejeitar a coleta de dados aqui."
+  },
+  "options_data_collection_opt_out_header": {
+    "message": "Coleta de dados"
+  },
+  "options_data_collection_opt_out_label": {
+    "message": "Rejeitar a coleta de todos os dados na extensão Adblock Plus."
+  },
   "options_dialog_about_copyright": {
     "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
     "placeholders": {
@@ -253,6 +262,9 @@
   },
   "options_filterList_minutes": {
     "message": "Há minutos"
+  },
+  "options_filterList_note_mv3": {
+    "message": "<strong>Observação:</strong> A capacidade de adicionar uma nova lista de filtros por meio de um URL está temporariamente indisponível devido à migração para a Manifest V3. Estamos trabalhando para trazer de volta esse recurso e restabelecer os dados anteriores das suas listas de filtros personalizadas. <a0>Saiba mais (apenas em inglês)</a0>"
   },
   "options_filterList_now": {
     "message": "Agora mesmo"
@@ -461,14 +473,5 @@
   },
   "options_upgrade_button": {
     "message": "Upgrade"
-  },
-  "options_data_collection_opt_out_header": {
-    "message": "Coleta de dados"
-  },
-  "options_data_collection_opt_out_description": {
-    "message": "A fim de proporcionar a melhor experiência de usuário possível, a extensão Adblock Plus coleta automaticamente alguns dados do usuário. Você tem a opção rejeitar a coleta de dados aqui."
-  },
-  "options_data_collection_opt_out_label": {
-    "message": "Rejeitar a coleta de todos os dados na extensão Adblock Plus."
   }
 }

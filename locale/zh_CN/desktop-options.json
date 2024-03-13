@@ -103,6 +103,15 @@
   "options_customize_showNotifications_tooltip": {
     "message": "允许来自 Adblock Plus 的通知（总是显示与关键性能问题有关的通知）。"
   },
+  "options_data_collection_opt_out_description": {
+    "message": "为了提供尽可能好的用户体验，Adblock Plus 扩展程序默认收集某些用户数据，您可以在此选择退出数据收集。"
+  },
+  "options_data_collection_opt_out_header": {
+    "message": "数据收集"
+  },
+  "options_data_collection_opt_out_label": {
+    "message": "退出 Adblock Plus 扩展程序的所有数据收集。"
+  },
   "options_dialog_about_copyright": {
     "message": "版权所有 © $currentYear$ <a0>eyeo GmbH</a0>。",
     "placeholders": {
@@ -253,6 +262,9 @@
   },
   "options_filterList_minutes": {
     "message": "几分钟前"
+  },
+  "options_filterList_note_mv3": {
+    "message": "<strong>注意：</strong>由于迁移到 Manifest V3，通过 URL 添加新筛选清单的功能暂时不可用。我们正在努力恢复此功能及您之前的自定义筛选清单数据。<a0>了解更多（仅英文版）</a0>"
   },
   "options_filterList_now": {
     "message": "刚才"
@@ -461,14 +473,5 @@
   },
   "options_upgrade_button": {
     "message": "升级"
-  },
-  "options_data_collection_opt_out_header": {
-    "message": "数据收集"
-  },
-  "options_data_collection_opt_out_description": {
-    "message": "为了提供尽可能好的用户体验，Adblock Plus 扩展程序默认收集某些用户数据，您可以在此选择退出数据收集。"
-  },
-  "options_data_collection_opt_out_label": {
-    "message": "退出 Adblock Plus 扩展程序的所有数据收集。"
   }
 }
