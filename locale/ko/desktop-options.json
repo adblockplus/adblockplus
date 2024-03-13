@@ -228,6 +228,12 @@
   "options_filterList_lastDownload_connectionError": {
     "message": "필터 목록 다운로드에 실패하였습니다."
   },
+  "options_filterList_lastDownload_diffError": {
+    "message": "내부 오류로 인해 필터 목록 업데이트를 적용할 수 없습니다."
+  },
+  "options_filterList_lastDownload_diffTooManyFilters": {
+    "message": "브라우저 제한으로 인해 필터 목록 업데이트를 적용할 수 없습니다. 새로운 확장 프로그램 버전으로 업데이트하는 것이 이 문제를 해결할 수도 있습니다."
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "업데이트중"
   },

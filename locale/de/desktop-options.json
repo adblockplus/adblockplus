@@ -228,6 +228,12 @@
   "options_filterList_lastDownload_connectionError": {
     "message": "Filterliste konnte nicht heruntergeladen werden."
   },
+  "options_filterList_lastDownload_diffError": {
+    "message": "Die Filterliste konnte aufgrund eines internen Fehlers nicht aktualisiert werden."
+  },
+  "options_filterList_lastDownload_diffTooManyFilters": {
+    "message": "Die Filterliste konnte aufgrund von Browser-Einschränkungen nicht aktualisiert werden. Durch Aktualisierung der Erweiterung auf eine neuere Version lässt sich dieses Problem möglicherweise beheben."
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Aktualisierung"
   },

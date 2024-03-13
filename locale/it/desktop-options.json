@@ -228,6 +228,12 @@
   "options_filterList_lastDownload_connectionError": {
     "message": "Impossibile scaricare l'elenco filtri."
   },
+  "options_filterList_lastDownload_diffError": {
+    "message": "Non è stato possibile applicare l'aggiornamento dell'elenco filtri a causa di un errore interno."
+  },
+  "options_filterList_lastDownload_diffTooManyFilters": {
+    "message": "Non è stato possibile applicare l'aggiornamento dell'elenco filtri a causa delle limitazioni del browser. L'aggiornamento a una versione più recente dell'estensione può risolvere il problema."
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Aggiornamento in corso"
   },

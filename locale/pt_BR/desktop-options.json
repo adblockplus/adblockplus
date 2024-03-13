@@ -228,6 +228,12 @@
   "options_filterList_lastDownload_connectionError": {
     "message": "Falha no download da lista de filtros."
   },
+  "options_filterList_lastDownload_diffError": {
+    "message": "A atualização de listas de filtros não pode ser aplicada devido a um erro interno."
+  },
+  "options_filterList_lastDownload_diffTooManyFilters": {
+    "message": "A atualização de lista de filtros não pode ser aplicada devido às limitações do navegador. Atualizar para uma versão mais recente da extensão pode resolver o problema."
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Atualizando"
   },

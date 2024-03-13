@@ -210,6 +210,12 @@
   "options_filterList_lastDownload_connectionError": {
     "message": "Η λήψη της λίστας φίλτρων δεν ήταν επιτυχής."
   },
+  "options_filterList_lastDownload_diffError": {
+    "message": "Η ενημέρωση της λίστας φίλτρων δεν μπόρεσε να εφαρμοστεί λόγω εσωτερικού σφάλματος."
+  },
+  "options_filterList_lastDownload_diffTooManyFilters": {
+    "message": "Η ενημέρωση της λίστας φίλτρων δεν μπόρεσε να εφαρμοστεί λόγω περιορισμών του προγράμματος περιήγησης. Η ενημέρωση σε νεότερη έκδοση της επέκτασης μπορεί να επιλύσει αυτό το πρόβλημα."
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Ενημέρωση"
   },

@@ -228,6 +228,12 @@
   "options_filterList_lastDownload_connectionError": {
     "message": "A szűrőlista letöltése nem sikerült."
   },
+  "options_filterList_lastDownload_diffError": {
+    "message": "A szűrőlista frissítés egy belső hiba miatt nem alkalmazható."
+  },
+  "options_filterList_lastDownload_diffTooManyFilters": {
+    "message": "A szűrőlista a böngésző korlátozásai miatt nem alkalmazható. Az újabb bővítményverzióra való frissítés megoldhatja ezt a problémát."
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Frissítés…"
   },

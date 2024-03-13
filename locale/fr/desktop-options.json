@@ -228,6 +228,12 @@
   "options_filterList_lastDownload_connectionError": {
     "message": "Cette liste de filtres n'a pu être téléchargée."
   },
+  "options_filterList_lastDownload_diffError": {
+    "message": "La mise à jour de la liste de filtrage n’a pas pu être effectuée en raison d’une erreur interne."
+  },
+  "options_filterList_lastDownload_diffTooManyFilters": {
+    "message": "La mise à jour de la liste de filtrage n’a pas pu être effectuée en raison des limitations du navigateur. Vous pouvez résoudre ce problème en mettant à jour l’extension."
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Mise à jour en cours"
   },
