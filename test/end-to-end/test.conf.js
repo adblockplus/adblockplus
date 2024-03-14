@@ -76,7 +76,8 @@ const parallelConfig = {
         "./tests/legacy-unit.js",
         "./tests/localisation-*.js",
         "./tests/test-abp-premium-license-check-retries.js",
-        "./tests/test-abp-premium-license-server-responses.js"
+        "./tests/test-abp-premium-license-server-responses.js",
+        "./tests/test-ipm-*.js"
       ]
     },
     {
