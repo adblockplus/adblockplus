@@ -116,6 +116,31 @@ class PopupPage extends BasePage
     return $("//*[@id='page-refresh']/div/span");
   }
 
+  get shareWithFriendsButton()
+  {
+    return $("//*[@id='counter-panel']/div[2]/div[1]/button");
+  }
+
+  get facebookShareIcon()
+  {
+    return $("//*[@id='counter-panel']/div[2]/div[2]/span[1]/a");
+  }
+
+  get twitterShareIcon()
+  {
+    return $("//*[@id='counter-panel']/div[2]/div[2]/span[2]/a");
+  }
+
+  get socialCancelLink()
+  {
+    return $("//*[@id='counter-panel']/div[2]/div[2]/button");
+  }
+
+  get nothingToBlockText()
+  {
+    return $("//*[@id='idle-status']/h2");
+  }
+
   async clickCloseNotificationButton()
   {
     await (await this.closeNotificationButton).click();
@@ -267,6 +292,55 @@ class PopupPage extends BasePage
   async isBlockSpecificElementButtonDisplayed()
   {
     return await (await this.blockSpecificElementButton).isDisplayed();
+  }
+
+  async clickShareWithFriendsButton()
+  {
+    await this.waitForEnabledThenClick(this.shareWithFriendsButton);
+  }
+
+  async clickSocialCancelLink()
+  {
+    await this.waitForEnabledThenClick(this.socialCancelLink);
+  }
+
+  async isShareWithFriendsButtonDisplayed(expectedValue = "0",
+                                          timeoutVal = 3000)
+  {
+    return await this.waitUntilAttributeValueIs(
+      this.shareWithFriendsButton, "tabIndex",
+      expectedValue, timeoutVal);
+  }
+
+  async isFacebookShareIconDisplayed(expectedValue = "0",
+                                     timeoutVal = 3000)
+  {
+    return await this.waitUntilAttributeValueIs(
+      this.facebookShareIcon, "tabIndex",
+      expectedValue, timeoutVal);
+  }
+
+  async isTwitterShareIconDisplayed(expectedValue = "0",
+                                    timeoutVal = 3000)
+  {
+    return await this.waitUntilAttributeValueIs(
+      this.twitterShareIcon, "tabIndex",
+      expectedValue, timeoutVal);
+  }
+
+  async isPageToggleDisplayed()
+  {
+    return await (await this.thisPageToggle).isDisplayed();
+  }
+
+  async isDomainToggleDisplayed()
+  {
+    return await (await this.thisDomainToggle).isDisplayed();
+  }
+
+  async isNothingToBlockTextDisplayed()
+  {
+    return await (await this.nothingToBlockText).isDisplayed();
   }
 }
 
