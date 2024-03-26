@@ -661,11 +661,7 @@ class AdvancedPage extends BasePage
   async getBuiltInFilterListsItemsNames()
   {
     const flItems = await this.builtInFilterListsItems;
-    return await Promise.all(
-      flItems.map(async(element) =>
-      {
-        return await element.getText();
-      }));
+    return await flItems.map((e) => e.getText());
   }
 
   async getCustomFilterListsErrorText()

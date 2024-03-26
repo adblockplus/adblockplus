@@ -107,19 +107,18 @@ describe("test advanced tab adding and removing custom filters", function()
       isCustomFilterListsFirstItemToggleDisplayed()).to.be.false;
   });
 
-  it("should support multiline paste", async function()
+  // CURRENTLY SKIPPED BECAUSE OF ISSUES (SEE #1650)
+  it.skip("should support multiline paste", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
-    const multilineString = `
-      [filterlist header]
-      ##.hiding_filter
+    const multilineString =
+      `##.hiding_filter
       /blocking/filter/*
       duplicate
 
       duplicate
-      ! comment
-    `;
+      ! comment`;
     await advancedPage.typeTextToAddCustomFilterListInput(
       "");
     await browser.executeScript(

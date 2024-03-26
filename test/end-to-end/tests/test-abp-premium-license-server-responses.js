@@ -57,6 +57,7 @@ describe("test abp premium license server responses", function()
       await backgroundPage.init(globalOrigin);
       await switchToABPOptionsTab();
       await browser.executeScript(dataSet.request, []);
+      await browser.refresh();
       const premiumHeaderChunk = new PremiumHeaderChunk(browser);
       if (dataSet.premiumStatus == "enabled")
       {
@@ -67,20 +68,9 @@ describe("test abp premium license server responses", function()
         expect(await premiumHeaderChunk.isUpgradeButtonDisplayed(10000)).
           to.be.true;
       }
-      await backgroundPage.switchToTab(/_generated_background_page/);
-      let consoleLog;
-      try
-      {
-        consoleLog = await browser.getLogs("browser");
-        expect(JSON.stringify(consoleLog)).to.match(dataSet.errorId);
-      }
-      catch
-      {
-        await backgroundPage.switchToTab(/_generated_background_page/);
-        await browser.pause(5000);
-        consoleLog = await browser.getLogs("browser");
-        expect(JSON.stringify(consoleLog)).to.match(dataSet.errorId);
-      }
+      await backgroundPage.switchToTab(/_generated_background_page\.html/);
+      const consoleLog = await browser.getLogs("browser");
+      expect(JSON.stringify(consoleLog)).to.match(dataSet.errorId);
     });
   });
 });

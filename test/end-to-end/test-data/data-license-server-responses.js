@@ -48,7 +48,7 @@ const serverResponsesData = [
         });
       });
     `,
-    premiumStatus: "disabled",
+    premiumStatus: "enabled",
     errorId: /Premium license check failed.*Error: Request failed \(code: 418\)/
   },
   {
@@ -80,7 +80,7 @@ const serverResponsesData = [
         });
       });
     `,
-    premiumStatus: "disabled",
+    premiumStatus: "enabled",
     errorId: /Premium license check failed.*SyntaxError: Unexpected token 'o',.*"non_json_response.*" is not valid JSON/
   },
   {
@@ -97,7 +97,7 @@ const serverResponsesData = [
       });
     `,
     premiumStatus: "disabled",
-    errorId: /Premium license check failed.*Error: Unknown license status: wrong_status/
+    errorId: /Invalid Premium license.*Error: Unknown license status: wrong_status/
   },
   {
     testName: "wrong version",
@@ -113,7 +113,7 @@ const serverResponsesData = [
       });
     `,
     premiumStatus: "disabled",
-    errorId: /Premium license check failed.*Error: Invalid license version: 2/
+    errorId: /Invalid Premium license.*Error: Invalid license version: 2/
   },
   {
     testName: "invalid user id",
@@ -128,7 +128,7 @@ const serverResponsesData = [
         });
       });
     `,
-    premiumStatus: "disabled",
+    premiumStatus: "enabled",
     errorId: /Premium license check failed.*Error: Request failed \(code: 401\)/
   },
   {
@@ -145,7 +145,7 @@ const serverResponsesData = [
       });
     `,
     premiumStatus: "disabled",
-    errorId: /Premium license check failed.*Error: Expired license/
+    errorId: /Invalid Premium license.*Error: Expired license/
   }
 ];
 

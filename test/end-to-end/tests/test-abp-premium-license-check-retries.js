@@ -60,21 +60,9 @@ describe("test abp premium license check retries", function()
     for (let i = 0; i < 4; i++)
     {
       consoleLog = await browser.getLogs("browser");
-      try
-      {
-        expect(JSON.stringify(consoleLog)).to.match(new RegExp(
-          "Premium license check failed \\(retries: " + i +
-          "\\)[^a-z]*Error: Received error response \\(code: 500\\)"));
-      }
-      catch (Exception)
-      {
-        await browser.pause(15000);
-        consoleLog = await browser.getLogs("browser");
-        await browser.pause(1000);
-        expect(JSON.stringify(consoleLog)).to.match(new RegExp(
-          "Premium license check failed \\(retries: " + i +
-          "\\)[^a-z]*Error: Received error response \\(code: 500\\)"));
-      }
+      expect(JSON.stringify(consoleLog)).to.match(new RegExp(
+        "Premium license check failed \\(retries: " + i +
+        "\\)[^a-z]*Error: Received error response \\(code: 500\\)"));
       if (i < 3)
       {
         // Wait 1 minute for a retry
