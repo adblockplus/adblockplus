@@ -101,6 +101,11 @@ class PopupPage extends BasePage
     return $("//*[@id='block-element']");
   }
 
+  get blockElementCancelButton()
+  {
+    return $("//*[@id='block-element-cancel']");
+  }
+
   get pageStatsCounter()
   {
     return $("#stats-page > strong");
@@ -139,6 +144,11 @@ class PopupPage extends BasePage
   get nothingToBlockText()
   {
     return $("//*[@id='idle-status']/h2");
+  }
+
+  get reportIssueButton()
+  {
+    return $("//*[@id='issue-reporter']/span");
   }
 
   async clickCloseNotificationButton()
@@ -294,6 +304,31 @@ class PopupPage extends BasePage
     return await (await this.blockSpecificElementButton).isDisplayed();
   }
 
+  async clickBlockSpecificElementButton()
+  {
+    await this.waitForEnabledThenClick(this.blockSpecificElementButton);
+  }
+
+  async isBlockElementCancelButtonDisplayed()
+  {
+    return await (await this.blockElementCancelButton).isDisplayed();
+  }
+
+  async clickBlockElementCancelButton()
+  {
+    await this.waitForEnabledThenClick(this.blockElementCancelButton);
+  }
+
+  async isReportAnIssueButtonDisplayed()
+  {
+    return await (await this.reportIssueButton).isDisplayed();
+  }
+
+  async clickReportAnIssueButton()
+  {
+    return await this.waitForEnabledThenClick(this.reportIssueButton);
+  }
+
   async clickShareWithFriendsButton()
   {
     await this.waitForEnabledThenClick(this.shareWithFriendsButton);
@@ -345,4 +380,3 @@ class PopupPage extends BasePage
 }
 
 module.exports = PopupPage;
-

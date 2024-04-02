@@ -109,30 +109,41 @@ async function beforeSequence(expectedTabsNumber = 3)
   return [origin];
 }
 
-async function doesTabExist(tabName, timeout = 3000)
+async function doesTabExist(tabName, timeout = 3000, countThreshold = 1)
 {
   const startTime = new Date().getTime();
+  let count = 0;
+  const checkTab = async(tabIdentifier) =>
+  {
+    if (typeof tabIdentifier === "string")
+    {
+      const title = await browser.getTitle();
+      const url = await browser.getUrl();
+      return title === tabIdentifier || url === tabIdentifier;
+    }
+    else if (tabIdentifier instanceof RegExp)
+    {
+      const url = await browser.getUrl();
+      return tabIdentifier.test(url);
+    }
+    return false;
+  };
   while (new Date().getTime() - startTime < timeout)
   {
     const tabs = await browser.getWindowHandles();
-    for (const tab of await tabs)
+    for (const tab of tabs)
     {
       await browser.switchToWindow(tab);
-      if (typeof tabName === "string")
+      if (await checkTab(tabName))
       {
-        const title = await browser.getTitle();
-        const url = await browser.getUrl();
-        if (title === tabName || url === tabName)
-          return true;
+        count++;
       }
-      else if (tabName instanceof RegExp)
-      {
-        const url = await browser.getUrl();
-        if (tabName.test(url))
-          return true;
-      }
-      await browser.pause(200);
     }
+    if (count >= countThreshold)
+    {
+      return true;
+    }
+    await browser.pause(200);
   }
   return false;
 }
