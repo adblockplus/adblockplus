@@ -81,5 +81,34 @@ const ipmCampaignsPremiumUsersData = [
   // }
 ];
 
+const ipmCampaignTriggersData = [
+  {
+    testName: "navigation campaign: CTA ignored",
+    command: 'browser.runtime.sendMessage({type: "prefs.set", key: "installation_id", value: "opdnavigationignoredtriggerABP"}); browser.runtime.sendMessage({type: "testing.ping_ipm_server"});',
+    noTriggerStep: "https://getadblock.com",
+    triggerStep1: "https://example.com",
+    triggerStep2: "https://wikipedia.org",
+    ipmId: "deviceID: opdnavigationignoredtriggerABP"
+  },
+  {
+    testName: "navigation campaign: CTA clicked",
+    command: 'browser.runtime.sendMessage({type: "prefs.set", key: "installation_id", value: "opdnavigationclickedtriggerABP"}); browser.runtime.sendMessage({type: "testing.ping_ipm_server"});',
+    noTriggerStep: "https://getadblock.com",
+    triggerStep1: "https://example.com",
+    triggerStep2: "https://wikipedia.org",
+    ipmId: "deviceID: opdnavigationclickedtriggerABP"
+  }
+  // TEST CASE SKIPPED BECAUSE THE UPDATE PAGE DOES NOT CURRENTLY OPEN WITH AUTOMATION
+  // {
+  //   testName: "new tab campaign with method: default",
+  //   command: 'browser.runtime.sendMessage({type: "prefs.set", key: "installation_id", value: "newtabtriggerABP"}); browser.runtime.sendMessage({type: "testing.ping_ipm_server"});',
+  //   noTriggerStep: "https://wikipedia.org",
+  //   triggerStep1: "about:blank",
+  //   triggerStep2: "about:blank",
+  //   ipmId: "update page"
+  // }
+];
+
 exports.ipmCampaignsFreeUsersData = ipmCampaignsFreeUsersData;
 exports.ipmCampaignsPremiumUsersData = ipmCampaignsPremiumUsersData;
+exports.ipmCampaignTriggersData = ipmCampaignTriggersData;
