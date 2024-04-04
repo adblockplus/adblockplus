@@ -35,6 +35,16 @@ To contribute to this project, you'll need:
 `Node` should come installed with `npm`. If it doesn't, you can
 download `npm` [here][npm].
 
+
+### `node-gyp` error?
+
+If you're using an apple machine with apple silicon (arm64 CPU), you may encounter an error where `node-gyp` fails to build.  
+
+The likely cause is that the `node-gyp` cannot find the binary online, then tries to build the binary locally, and fails
+because you have Python 3.12 installed, [which does not work work with some versions of `node-gyp`](https://github.com/nodejs/node-gyp/issues/2869).  
+
+You can solve this by installing Python 3.11 on your machine, you can use [`pyenv`](https://github.com/pyenv/pyenv) for that.
+
 **Important:** On Windows, you need a [Linux environment running on WSL][ms-wsl]
 and run the commands from within Bash.
 
