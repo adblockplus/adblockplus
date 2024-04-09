@@ -43,4 +43,8 @@ export interface InjectionInfo {
    * The installation id
    */
   id: string;
+  /**
+   * The premium user id
+   */
+  premiumId: string;
 }

@@ -204,10 +204,12 @@ export function start()
    */
   port.on("info.getInjectionInfo", async() =>
   {
+    await Prefs.untilLoaded;
     const {isActive: isPremium} = getPremiumState();
     const version = info.addonVersion;
     const id = await getInstallationId();
+    const premiumId = Prefs.get("premium_user_id");
 
-    return {isPremium, version, id};
+    return {isPremium, version, id, premiumId};
   });
 }
