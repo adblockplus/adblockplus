@@ -79,19 +79,6 @@ export function setCommandActor(
 }
 
 /**
- * Checks if the command can be processed.
- *
- * @param command The command from the IPM server
- * @returns Whether the command can be processed
- */
-function canProcessCommand(command: Command): boolean {
-  return (
-    knownCommandsList.includes(command.command_name) &&
-    command.version === CommandVersion[command.command_name]
-  );
-}
-
-/**
  * Removes the command data from persistent storage
  *
  * @param ipmId - IPM ID
@@ -219,8 +206,19 @@ export function executeIPMCommand(
     return;
   }
 
-  if (!canProcessCommand(command)) {
+  if (!knownCommandsList.includes(command.command_name)) {
     logger.error("[ipm]: Unknown command name received:", command.command_name);
+    return;
+  }
+
+  if (command.version !== CommandVersion[command.command_name]) {
+    logger.error(
+      `[ipm]: Command version mismatch for command "${
+        command.command_name
+      }". Requested version was ${command.version}", version present is ${
+        CommandVersion[command.command_name]
+      }`
+    );
     return;
   }
 
