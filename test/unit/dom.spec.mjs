@@ -16,11 +16,11 @@
  */
 
 import {equal, deepEqual} from "assert";
-import {TestEnvironment} from "../env";
+import {TestEnvironment} from "../env.js";
 import basichtml from "basichtml";
-import {DOMParser, XMLSerializer} from "xmldom";
+import {DOMParser, XMLSerializer} from "@xmldom/xmldom";
 
-import {$, $$, asIndentedString, relativeCoordinates} from "../../js/dom";
+import {$, $$, asIndentedString, relativeCoordinates} from "../../js/dom.mjs";
 
 let document;
 let env;
@@ -118,23 +118,9 @@ describe("Testing dom.js API", () =>
   {
     const resultA = {x: 158, y: 78};
     const eventA = {
-      layerX: 158,
-      layerY: 78
+      offsetX: 158,
+      offsetY: 78
     };
     deepEqual(relativeCoordinates(eventA), resultA);
-
-    const resultB = {x: 168, y: 98};
-    const eventB = {
-      currentTarget: {
-        offsetLeft: 95,
-        offsetTop: 40,
-        scrollLeft: 10,
-        scrollTop: 20,
-        offsetParent: null
-      },
-      pageX: 253,
-      pageY: 118
-    };
-    deepEqual(relativeCoordinates(eventB), resultB);
   });
 });
