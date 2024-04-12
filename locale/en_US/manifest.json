@@ -1,14 +1,15 @@
 {
   "description": {
-    "description": "https://gitlab.com/eyeo/adblockplus/webstores/blob/d7acfa77af92c53bce1aa5e243bd81768e004e01/spec/chrome-web-store/listing-en_US.md#summary, Note: this cannot be longer than 132 characters",
-    "message": "Block YouTube™ ads, pop-ups & fight malware!"
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/cf8617ccac93ccf0ab2cd77649be1226172b4019/spec/stores/chrome.md#summary2, Note: this cannot be longer than 132 characters",
+    "message": "Block YouTube ads, block pop-ups, and fight malware with Adblock Plus."
   },
   "name": {
+    "description": "Shortened extension name to be shown for all builds. Note: This should not be longer than 12 characters",
     "message": "Adblock Plus"
   },
   "name_releasebuild": {
-    "description": "Extension name to be shown for release builds. Note: this cannot be longer than 45 characters.",
-    "message": "Adblock Plus - free ad blocker"
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/cf8617ccac93ccf0ab2cd77649be1226172b4019/spec/stores/chrome.md#meta-data, Extension name to be shown for release builds. Note: this cannot be longer than 45 characters.",
+    "message": "Adblock Plus - ad blocker extension"
   },
   "name_devbuild": {
     "description": "Extension name to be shown for development builds. Note: this cannot be longer than 45 characters.",
