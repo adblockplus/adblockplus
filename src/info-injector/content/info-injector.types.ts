@@ -19,3 +19,8 @@
  * The id of the DOM node that we inject.
  */
 export const nodeId = "__adblock-plus-extension-info";
+
+/**
+ * The name of the dataset key where we store the info.
+ */
+export const datasetKey = "adblockPlusExtensionInfo";

@@ -17,7 +17,7 @@
 
 import * as api from "../../core/api/front";
 import { injectionOrigins, type InjectionInfo } from "../shared";
-import { nodeId } from "./info-injector.types";
+import { datasetKey, nodeId } from "./info-injector.types";
 
 /**
  * Gets a reference to the document of the page to inject the element into.
@@ -44,14 +44,11 @@ async function getInfo(): Promise<InjectionInfo> {
  * @param info The info to add to the element
  * @returns The element containing the info
  */
-function createInfoElement(
-  document: Document,
-  info: InjectionInfo
-): HTMLDivElement {
+function createInfoElement(document: Document, info: string): HTMLDivElement {
   const element = document.createElement("div");
   element.id = nodeId;
   element.style.display = "none";
-  element.textContent = JSON.stringify(info);
+  element.textContent = info;
   return element;
 }
 
@@ -67,28 +64,35 @@ function isRelevantOrigin(origin: string): boolean {
 }
 
 /**
- * Injects an element containing info about the extension.
+ * Injects an element containing info about the extension, and adds a dataset
+ * entry with the same info.
  */
-async function injectInfoElement(): Promise<void> {
+async function injectInfo(): Promise<void> {
   const document = getDocumentReference();
 
   if (!isRelevantOrigin(document.location.origin)) {
     return;
   }
 
-  const info = await getInfo();
+  const info = JSON.stringify(await getInfo());
   const element = createInfoElement(document, info);
 
   document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(element);
   });
+
+  // The platform team wants to have this information as soon as possible, so
+  // we try to provide the info also before the DOMContentLoaded event. If
+  // this shows to be successful, we want to switch over to doing only this,
+  // and not injecting a DOM element any longer.
+  document.documentElement.dataset[datasetKey] = info;
 }
 
 /**
  * Starts the info-injector feature.
  */
 function start(): void {
-  void injectInfoElement();
+  void injectInfo();
 }
 
 start();
