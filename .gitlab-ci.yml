@@ -450,6 +450,7 @@ testpages:MV2:firefox:oldest:
   stage: uitests
   variables:
     CHROME_BUILD: dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
+    CHROME_BUILD_MV3: dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
     FIREFOX_BUILD: dist/release/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
     LT_USERNAME: $LT_USERNAME
     LT_ACCESS_KEY: $LT_ACCESS_KEY
@@ -487,6 +488,16 @@ uitests:all:
   extends: .uitests
   variables:
     CONFIGURATION: end-to-end
+    SUITE: all
+
+uitests:all:mv3:
+  before_script:
+    - npm install axios
+    - export MV3_BUILD_CLOUD_URL=$(node test/end-to-end/upload-extension.js $LT_USERNAME $LT_ACCESS_KEY $CHROME_BUILD_MV3)
+    - echo $MV3_BUILD_CLOUD_URL
+  extends: .uitests
+  variables:
+    CONFIGURATION: end-to-end-mv3
     SUITE: all
 
 uitests:all:scheduled:

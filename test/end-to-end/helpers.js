@@ -102,7 +102,7 @@ async function beforeSequence(expectedTabsNumber = 3)
   await browser.waitUntil(async() =>
   {
     return ((await browser.getWindowHandles()).length >= expectedTabsNumber);
-  }, {timeout: 10000});
+  }, {timeout: 30000});
   await browser.url(`${origin}/desktop-options.html`);
   await browser.setWindowSize(1400, 1000);
   await browser.switchWindow(/options\.html/);
