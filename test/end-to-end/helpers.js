@@ -27,7 +27,7 @@ const PremiumHeaderChunk = require("./page-objects/premiumHeader.chunk");
 
 const helperExtension = "helper-extension";
 
-const globalRetriesNumber = 2;
+const globalRetriesNumber = 0;
 const isGitlab = process.env.CI === "true";
 
 
