@@ -156,6 +156,8 @@ class IOFilterTable extends IOElement
 
   onFilterAdd(event)
   {
+    this.search.disabled = true;
+
     const filters = event.detail.split(/(?:\r\n|\n)/);
 
     cleanErrors.call(this);
@@ -196,6 +198,8 @@ class IOFilterTable extends IOElement
       {
         this.onerror({detail: {errors}});
       }
+
+      this.search.disabled = false;
     });
   }
 
