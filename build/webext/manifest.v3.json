@@ -13,7 +13,7 @@
     "default_popup": "popup.html",
     "default_title": "__MSG_name__"
   },
-  "minimum_chrome_version": "124.0.6367.18",
+  "minimum_chrome_version": "124.0",
   "minimum_opera_version": "112.0",
   "declarative_net_request": {},
   "permissions": [
