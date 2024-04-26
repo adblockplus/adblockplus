@@ -26,7 +26,7 @@ import { premiumTypes } from "../shared";
  *
  * @returns A list of premium subscriptions
  */
-async function getPremiumSubscriptions(): Promise<ewe.Recommendation[]> {
+function getPremiumSubscriptions(): ewe.Recommendation[] {
   // The subscription of the "annoyances" type is the DC subscription
   return ewe.subscriptions
     .getRecommendations()
@@ -40,7 +40,7 @@ async function getPremiumSubscriptions(): Promise<ewe.Recommendation[]> {
  * the subscriptions gets fulfilled or rejected
  */
 async function addOptoutPremiumSubscriptions(): Promise<void> {
-  const subscriptions = await getPremiumSubscriptions();
+  const subscriptions = getPremiumSubscriptions();
 
   for (const subscription of subscriptions) {
     if (
@@ -60,13 +60,35 @@ async function addOptoutPremiumSubscriptions(): Promise<void> {
  * the subscriptions gets fulfilled or rejected
  */
 async function removePremiumSubscriptions(): Promise<void> {
-  const subscriptions = await getPremiumSubscriptions();
+  const subscriptions = getPremiumSubscriptions();
 
   for (const subscription of subscriptions) {
     if (await ewe.subscriptions.has(subscription.url)) {
       await ewe.subscriptions.remove(subscription.url);
     }
   }
+}
+
+async function getActiveSubscriptions(): Promise<ewe.Subscription[]> {
+  return await ewe.subscriptions.getSubscriptions();
+}
+
+// TODO: return the two subscriptions with their state
+// TODO: unit test this
+// TODO: return type
+function computePremiumState(
+  premiumSubscriptions: ewe.Recommendation[],
+  activeSubscriptions: ewe.Subscription[]
+): any {
+  console.log({ premiumSubscriptions, activeSubscriptions });
+  return premiumSubscriptions;
+}
+
+// TODO: return type
+export async function getPremiumSubscriptionsState(): Promise<any> {
+  const premiumSubscriptions = getPremiumSubscriptions();
+  const activeSubscriptions = await getActiveSubscriptions();
+  return computePremiumState(premiumSubscriptions, activeSubscriptions);
 }
 
 /**

@@ -140,6 +140,7 @@ function updateBlockedTotal(blockedTotal)
 async function setupPremium()
 {
   setupPremiumBanners();
+  updateToggles();
 
   const premium = await api.premium.get();
   setPremiumState(premium.isActive);
@@ -239,5 +240,22 @@ function setupFooter()
       });
 
       footer.startAnimation();
+    });
+}
+
+async function updateToggles()
+{
+  const isPremiumEnabled = await api.premium.get();
+
+  const distractionToggle = document
+  .getElementById("premium-distractions-toggle");
+
+  document
+    .getElementById("premium-distractions-toggle")
+    .addEventListener("click", async() =>
+    {
+      console.log("sending message");
+      const response = await api.app.get("premiumSubscriptions");
+      console.log({response});
     });
 }

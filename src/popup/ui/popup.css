@@ -831,6 +831,7 @@ html[dir="rtl"] #stats-page::after
 body.premium .premium-block
  {
   display: flex;
+  cursor: default;
   align-items: center;
   justify-content: space-between;
 }

@@ -24,6 +24,8 @@ import {Prefs} from "./prefs.js";
 import {info} from "../../src/info/background";
 import {getInstallationId} from "../../src/id/background";
 import {getPremiumState} from "../../src/premium/background";
+import {getPremiumSubscriptionsState}
+  from "../../src/premium-subscriptions/background";
 
 function forward(type, message, sender)
 {
@@ -157,6 +159,13 @@ export function start()
     {
       let platformInfo = await browser.runtime.getPlatformInfo();
       return platformInfo.os;
+    }
+
+    if (message.what === "premiumSubscriptions")
+    {
+      const premiumSubscriptions = await getPremiumSubscriptionsState();
+
+      return premiumSubscriptions;
     }
 
     return info[message.what];

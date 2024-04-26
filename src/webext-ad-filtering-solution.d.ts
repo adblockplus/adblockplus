@@ -320,5 +320,10 @@ declare module "@eyeo/webext-ad-filtering-solution" {
      * Returns an array of all recommended subscriptions.
      */
     const getRecommendations: () => Recommendation[];
+
+    /**
+     * Returns an array of all recommended subscriptions.
+     */
+    const getSubscriptions: () => Promise<Subscription[]>;
   }
 }

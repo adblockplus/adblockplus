@@ -36,6 +36,7 @@ export type AppGetWhat =
   | "platform"
   | "platformVersion"
   | "recommendations"
+  | "premiumSubscriptions"
   | "senderId";
 
 /**
