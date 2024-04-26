@@ -161,7 +161,7 @@ async function setupPremiumBanners()
   const source = getSourceAttribute(document.body);
   const premiumUpgradeUrl = await api.ctalinks.get("premium-upgrade", {source});
   $("#premium-upgrade").setAttribute("href", premiumUpgradeUrl);
-  document.querySelectorAll(".premium-block").forEach((element) =>
+  document.querySelectorAll("[data-link='premium']").forEach((element) =>
   {
     element.setAttribute("href", premiumUpgradeUrl);
   });
