@@ -42,21 +42,19 @@ export function start()
   ewe.reporting.onBlockableItem.addListener(onBlockableItem);
 }
 
-function extractCountry(request)
+function extractCountry()
 {
-  // TODO
-  return "(country)";
+  return "(country)"; // to implement
 }
 
 function extractPlatform()
 {
-  // TODO
-  return "(platform)";
+  return "(platform)"; // to implement
 }
 
 function isTrackedDomain(domain)
 {
-  // TODO: extract and check subdomains
+  // extract and check subdomains probably?
   return Object.keys(trackedDomains).includes(domain);
 }
 
@@ -85,7 +83,7 @@ async function onBlockableItem({filter, request})
       domain: hostname,
 
       timestamp: request.timeStamp,
-      country: extractCountry(request),
+      country: extractCountry(),
       platform: extractPlatform()
     };
     await blockedPerDomain.append(domainId, entry);
@@ -101,7 +99,7 @@ async function onBlockableItem({filter, request})
   // Make sure blocked_total is only read after the storage was loaded.
   await Prefs.untilLoaded;
 
-  // TODO: update total facebook.com (EE-417)
+  // to implement: update total facebook.com (EE-417)
 }
 
 /**

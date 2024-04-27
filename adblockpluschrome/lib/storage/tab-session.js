@@ -42,7 +42,7 @@ export class TabSessionStorage extends EventEmitter
    * @param {string} namespace storage key
    * @param {boolean} localStorage Use local storage instead or session storage?
    */
-  constructor(namespace, localStorage)
+  constructor(namespace, localStorage = false)
   {
     super();
     const key = "_tabs";
