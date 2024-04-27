@@ -55,20 +55,13 @@ api.app.getInfo().then(info =>
 activeTab.then(tab =>
 {
   const urlProtocol = tab.url && new URL(tab.url).protocol;
-  if (/^https?:$/.test(urlProtocol))
-  {
-    whenPageReady(tab).then(() =>
-    {
-      document.body.classList.remove("nohtml");
-    });
-  }
-  else
+  if (!(/^https?:$/.test(urlProtocol)))
   {
     document.body.classList.add("disabled");
     document.body.classList.add("ignore");
-    document.body.classList.remove("nohtml");
   }
 
+  document.body.classList.remove("nohtml");
   document.body.classList.toggle("private", tab.incognito);
 
   return tab;
