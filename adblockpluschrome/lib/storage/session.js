@@ -22,14 +22,6 @@
 const memoryStorage = new Map();
 
 /**
- * Indicates whether we need to store in-memory data using a dedicated browser
- * API. When we're running in the context of a service worker, we can no longer
- * rely on in-memory storage.
- * @type {boolean}
- */
-const useMemoryStorage = !("session" in browser.storage);
-
-/**
  * Session storage for storing in-memory data in a way that's safe to use in
  * a service worker context.
  */
@@ -38,11 +30,15 @@ export class SessionStorage
   /**
    * Initializes session storage.
    * @param {string} namespace
+   * @param {Object} storage
    */
-  constructor(namespace)
+  constructor(namespace, storage = browser.storage.session)
   {
+    // When we're running in the context of a service worker,
+    // we can no longer rely on in-memory storage.
     this._namespace = namespace;
     this._queue = Promise.resolve();
+    this.storage = storage;
   }
 
   /**
@@ -63,10 +59,10 @@ export class SessionStorage
   async delete(key)
   {
     const globalKey = this._getGlobalKey(key);
-    if (useMemoryStorage)
+    if (!this.storage)
       return memoryStorage.delete(globalKey);
 
-    return browser.storage.session.remove(globalKey);
+    return this.storage.remove(globalKey);
   }
 
   /**
@@ -77,10 +73,10 @@ export class SessionStorage
   async get(key)
   {
     const globalKey = this._getGlobalKey(key);
-    if (useMemoryStorage)
+    if (!this.storage)
       return memoryStorage.get(globalKey);
 
-    const storage = await browser.storage.session.get(globalKey);
+    const storage = await this.storage.get(globalKey);
     return storage[globalKey];
   }
 
@@ -93,13 +89,13 @@ export class SessionStorage
   async set(key, value)
   {
     const globalKey = this._getGlobalKey(key);
-    if (useMemoryStorage)
+    if (!this.storage)
     {
       memoryStorage.set(globalKey, value);
       return;
     }
 
-    await browser.storage.session.set({[globalKey]: value});
+    await this.storage.set({[globalKey]: value});
   }
 
   /**

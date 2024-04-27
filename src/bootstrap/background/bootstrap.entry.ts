@@ -23,6 +23,7 @@ import { start as startDevTools } from "../../../adblockpluschrome/lib/devtools.
 import { start as startFilterConfiguration } from "../../../adblockpluschrome/lib/filterConfiguration.js";
 import { start as startMessageResponder } from "../../../adblockpluschrome/lib/messageResponder.js";
 import { start as startStats } from "../../../adblockpluschrome/lib/stats.js";
+import { start as startDomainStats } from "../../../adblockpluschrome/lib/domain-stats.js";
 import { start as startTabSessionStorage } from "../../../adblockpluschrome/lib/storage/tab-session";
 import { start as startSubscriptionInit } from "../../../adblockpluschrome/lib/subscriptionInit.js";
 import { start as startUninstall } from "../../../adblockpluschrome/lib/uninstall.js";
@@ -48,6 +49,7 @@ async function bootstrap(): Promise<void> {
   startReadyState();
   startFilterConfiguration();
   startStats();
+  startDomainStats();
   void startSubscriptionInit();
   startInit();
   void startRecommendedLanguage();

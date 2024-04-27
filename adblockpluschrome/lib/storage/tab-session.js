@@ -15,14 +15,9 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import browser from "webextension-polyfill";
 import {EventEmitter} from "../events.js";
 import {SessionStorage} from "./session.js";
-
-/**
- * Session storage instance for storing tab-specific data.
- * @type {SessionStorage<number,any>}
- */
-const sessionByTabId = new SessionStorage("_tabs");
 
 // We need to keep track of all tab session storage instances so that we can
 // notify them about tab changes. Since we cannot iterate through a WeakSet,
@@ -44,11 +39,16 @@ export class TabSessionStorage extends EventEmitter
 {
   /**
    * Initializes session storage.
-   * @param {string} namespace
+   * @param {string} namespace storage key
+   * @param {boolean} localStorage Use local storage instead or session storage?
    */
-  constructor(namespace)
+  constructor(namespace, localStorage)
   {
     super();
+    const key = "_tabs";
+    this.sessionByTabId = localStorage ?
+      new SessionStorage(key, browser.storage.local) :
+      new SessionStorage(key);
 
     this._namespace = namespace;
     this._queue = Promise.resolve();
@@ -62,18 +62,19 @@ export class TabSessionStorage extends EventEmitter
    */
   async delete(tabId)
   {
-    return sessionByTabId.transaction(async() =>
+    const _this = this;
+    return this.sessionByTabId.transaction(async() =>
     {
-      const session = await sessionByTabId.get(tabId);
+      const session = await _this.sessionByTabId.get(tabId);
       if (!session)
         return;
 
       delete session[this._namespace];
 
       if (Object.keys(session).length)
-        await sessionByTabId.set(tabId, session);
+        await _this.sessionByTabId.set(tabId, session);
       else
-        await sessionByTabId.delete(tabId);
+        await _this.sessionByTabId.delete(tabId);
     });
   }
 
@@ -84,7 +85,7 @@ export class TabSessionStorage extends EventEmitter
    */
   async emit(name, tabId)
   {
-    const session = await sessionByTabId.get(tabId);
+    const session = await this.sessionByTabId.get(tabId);
     if (!session)
       return;
 
@@ -101,7 +102,7 @@ export class TabSessionStorage extends EventEmitter
    */
   async get(tabId)
   {
-    const session = await sessionByTabId.get(tabId);
+    const session = await this.sessionByTabId.get(tabId);
     if (!session)
       return;
 
@@ -115,7 +116,7 @@ export class TabSessionStorage extends EventEmitter
    */
   async has(tabId)
   {
-    const session = await sessionByTabId.get(tabId);
+    const session = await this.sessionByTabId.get(tabId);
     return session && this._namespace in session;
   }
 
@@ -127,11 +128,31 @@ export class TabSessionStorage extends EventEmitter
    */
   async set(tabId, value)
   {
-    return sessionByTabId.transaction(async() =>
+    const _this = this;
+    return this.sessionByTabId.transaction(async() =>
     {
-      const session = (await sessionByTabId.get(tabId)) || {};
+      const session = (await _this.sessionByTabId.get(tabId)) || {};
       session[this._namespace] = value;
-      await sessionByTabId.set(tabId, session);
+      await _this.sessionByTabId.set(tabId, session);
+    });
+  }
+
+  /**
+   * Appends session storage content specific to given tab ID.
+   * @param {number} tabId
+   * @param {any} value
+   * @return {Promise}
+   */
+  async append(tabId, value)
+  {
+    const _this = this;
+    return this.sessionByTabId.transaction(async() =>
+    {
+      const session = (await _this.sessionByTabId.get(tabId)) || {};
+      const values = session[this._namespace] || [];
+      values.push(value);
+      session[this._namespace] = values;
+      await _this.sessionByTabId.set(tabId, session);
     });
   }
 
@@ -158,14 +179,14 @@ export class TabSessionStorage extends EventEmitter
 async function clearStorage(tabId)
 {
   // Provide stored data to listeners before removing it
-  const session = await sessionByTabId.get(tabId);
-  if (session)
+  for (const storage of tabStorages)
   {
-    for (const tabStorage of tabStorages)
-      await tabStorage.emit("tab-removed", tabId);
-  }
+    const session = await storage.get(tabId);
+    if (session)
+      await storage.emit("tab-removed", tabId);
 
-  await sessionByTabId.delete(tabId);
+    await storage.delete(tabId);
+  }
 }
 
 /**
