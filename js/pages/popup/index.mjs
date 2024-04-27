@@ -24,8 +24,7 @@ import {createShareLink} from "./social-media-share.mjs";
 import setupToggles from "./toggles.mjs";
 import {
   activeTab,
-  reportIssue,
-  whenPageReady
+  reportIssue
 } from "./utils.mjs";
 
 import "../../../src/popup/ui/popup.css";
