@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "Bloquear elemento específico neste site"
-  },
   "browser_store_android": {
     "message": "Aplicativo Android no Google Play"
   },
@@ -70,34 +67,6 @@
   },
   "sendReport": {
     "message": "Relatar problema nesta página"
-  },
-  "share_on_facebook": {
-    "message": "Compartilhe no Facebook"
-  },
-  "share_on_twitter": {
-    "message": "Compartilhe no Twitter"
-  },
-  "share_on_twitter_message": {
-    "message": "Eu bloqueei $number$ anúncios com o Adblock Plus. Experimente, é GRÁTIS!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "Compartilhe no Weibo"
-  },
-  "share_on_weibo_message": {
-    "message": "Eu bloqueei $number$ anúncios com o Adblock Plus. Experimente, é GRÁTIS!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "Compartilhe números com amigos"
   },
   "stats_header": {
     "message": "Número de artigos bloqueados"

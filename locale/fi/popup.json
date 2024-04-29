@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "Estä yksittäinen kohde tällä sivustolla"
-  },
   "click_element_to_block_it": {
     "message": "Estä kohde napsauttamalla sitä"
   },
@@ -28,34 +25,6 @@
   },
   "sendReport": {
     "message": "Ilmoita ongelmasta"
-  },
-  "share_on_facebook": {
-    "message": "Jaa Facebookissa"
-  },
-  "share_on_twitter": {
-    "message": "Jaa Twitterissä"
-  },
-  "share_on_twitter_message": {
-    "message": "Olen estänyt $number$ mainosta Adblock Plussalla. Kokeile sitä ilmaiseksi!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "Jaa Weibossa"
-  },
-  "share_on_weibo_message": {
-    "message": "Olen estänyt $number$ mainosta Adblock Plussalla. Kokeile sitä ilmaiseksi!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "Jaa luku ystäville"
   },
   "stats_header": {
     "message": "Estettyjen kohteiden määrä"

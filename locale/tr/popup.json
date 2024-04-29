@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "Bu web sitesindeki belirli bir öğeyi bloke edin"
-  },
   "browser_store_android": {
     "message": "Google Play'de Android uygulaması"
   },
@@ -70,34 +67,6 @@
   },
   "sendReport": {
     "message": "Bu sayfadaki bir sorunu bildirin"
-  },
-  "share_on_facebook": {
-    "message": "Facebook'ta paylaş"
-  },
-  "share_on_twitter": {
-    "message": "Twitter'da paylaş"
-  },
-  "share_on_twitter_message": {
-    "message": "Adblock Plus ile $number$ reklamı engelledim. Sen de dene. ÜCRETSİZ!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "Weibo'da paylaş"
-  },
-  "share_on_weibo_message": {
-    "message": "Adblock Plus ile $number$ reklamı engelledim. Sen de dene. ÜCRETSİZ!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "Sayıları arkadaşlarınızla paylaşın"
   },
   "stats_header": {
     "message": "Engellenen ögelerin sayısı"

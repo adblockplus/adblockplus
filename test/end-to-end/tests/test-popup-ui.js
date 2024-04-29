@@ -59,22 +59,6 @@ describe("test popup ui", function()
     expect(totalAdsBlocked).to.not.equal(0);
   });
 
-  it("should show/hide social sharing tools based on state", async function()
-  {
-    await switchToABPOptionsTab();
-    const popupPage = new PopupPage(browser);
-    await popupPage.init(globalOrigin);
-    await browser.refresh();
-    await popupPage.clickShareWithFriendsButton();
-    expect(await popupPage.isFacebookShareIconDisplayed()).to.be.true;
-    expect(await popupPage.isTwitterShareIconDisplayed()).to.be.true;
-    expect(await popupPage.isShareWithFriendsButtonDisplayed()).to.be.false;
-    await popupPage.clickSocialCancelLink();
-    expect(await popupPage.isShareWithFriendsButtonDisplayed()).to.be.true;
-    expect(await popupPage.isFacebookShareIconDisplayed()).to.be.false;
-    expect(await popupPage.isTwitterShareIconDisplayed()).to.be.false;
-  });
-
   it("should use generic popup on non-https pages", async function()
   {
     await switchToABPOptionsTab();

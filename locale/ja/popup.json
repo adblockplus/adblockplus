@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "このウェブ上の特定の要素をブロックする"
-  },
   "browser_store_android": {
     "message": "Google Play の Android アプリ"
   },
@@ -73,31 +70,6 @@
   },
   "share_on_facebook": {
     "message": "Facebook で共有"
-  },
-  "share_on_twitter": {
-    "message": "Twitter で共有"
-  },
-  "share_on_twitter_message": {
-    "message": "Adblock Plus $number$ 件の広告をブロックしました。試してみましょう 。無料です！",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "微博で共有"
-  },
-  "share_on_weibo_message": {
-    "message": "Adblock Plus $number$ 件の広告をブロックしました。試してみましょう 。無料です！",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "数値を友人と共有する"
   },
   "stats_header": {
     "message": "ブロックした数"

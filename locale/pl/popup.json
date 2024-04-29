@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "Blokuj konkretny element na tej stronie"
-  },
   "browser_store_android": {
     "message": "Aplikacja na Androida w Google Play"
   },
@@ -73,31 +70,6 @@
   },
   "share_on_facebook": {
     "message": "Podziel się na Facebooku"
-  },
-  "share_on_twitter": {
-    "message": "Podziel się na Twitterze"
-  },
-  "share_on_twitter_message": {
-    "message": "Zablokowałem/am $number$ reklam z Adblock Plus. Też go wypróbuj - ZA DARMO!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "Udostępnij na Weibo"
-  },
-  "share_on_weibo_message": {
-    "message": "Zablokowałem/am $number$ reklam z Adblock Plus. Też go wypróbuj - ZA DARMO!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "Podziel się tą liczbą ze znajomymi"
   },
   "stats_header": {
     "message": "Liczba zablokowanych elementów"

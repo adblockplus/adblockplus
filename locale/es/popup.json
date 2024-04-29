@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "Bloquea elementos específicos de este sitio web"
-  },
   "browser_store_android": {
     "message": "Aplicación para Android en Google Play"
   },
@@ -70,34 +67,6 @@
   },
   "sendReport": {
     "message": "Informar de un problema en esta página"
-  },
-  "share_on_facebook": {
-    "message": "Compartir en Facebook"
-  },
-  "share_on_twitter": {
-    "message": "Compartir en Twitter"
-  },
-  "share_on_twitter_message": {
-    "message": "He bloqueado $number$ anuncios con Adblock Plus. Pruébalo. ¡Es gratis!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "Compartir en Weibo"
-  },
-  "share_on_weibo_message": {
-    "message": "He bloqueado $number$ anuncios con Adblock Plus. Pruébalo. ¡Es gratis!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "Comparte estas cifras con amigos"
   },
   "stats_header": {
     "message": "Número de elementos bloqueados"

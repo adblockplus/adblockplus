@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "Заблокировать определенный элемент на этом вебсайте"
-  },
   "browser_store_android": {
     "message": "Приложение Android на Google Play"
   },
@@ -70,34 +67,6 @@
   },
   "sendReport": {
     "message": "Сообщить о проблеме на этой странице"
-  },
-  "share_on_facebook": {
-    "message": "Поделиться в Facebook"
-  },
-  "share_on_twitter": {
-    "message": "Поделиться в Twitter"
-  },
-  "share_on_twitter_message": {
-    "message": "Я заблокировал(-а) $number$ рекламных объявлений с Adblock Plus. Попробуйте и вы – это БЕСПЛАТНО!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "Поделиться в Weibo"
-  },
-  "share_on_weibo_message": {
-    "message": "Я заблокировал(-а) $number$ рекламных объявлений с Adblock Plus. Попробуйте и вы – это БЕСПЛАТНО!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "Поделитесь цифрами с друзьями"
   },
   "stats_header": {
     "message": "Число заблокированных объектов"

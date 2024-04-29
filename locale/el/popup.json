@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "Αποκλεισμός συγκεκριμένου στοιχείου σε αυτή την ιστοσελίδα"
-  },
   "browser_store_android": {
     "message": "Android app στο Google Play"
   },
@@ -61,34 +58,6 @@
   },
   "sendReport": {
     "message": "Αναφορά προβλήματος σε αυτή τη σελίδα"
-  },
-  "share_on_facebook": {
-    "message": "Κοινοποίηση στο Facebook"
-  },
-  "share_on_twitter": {
-    "message": "Κοινοποίηση στο Twitter"
-  },
-  "share_on_twitter_message": {
-    "message": "Εχώ αποκλείσει $number$ τις διαφημίσεις με το Adblock Plus. Δοκιμάστε το - είναι ΔΩΡΕΑΝ!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "Κοινοποίηση στο Weibo"
-  },
-  "share_on_weibo_message": {
-    "message": "Εχώ αποκλείσει $number$ τις διαφημίσεις με το Adblock Plus. Δοκιμάστε το - είναι ΔΩΡΕΑΝ!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "Κοινοποίηση των αριθμών σε φίλους"
   },
   "stats_label_page": {
     "message": "σ' αυτή τη σελίδα"

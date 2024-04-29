@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "حجب عنصر محدد على موقع الويب هذا"
-  },
   "browser_store_android": {
     "message": "تطبيق Android على متجر Google Play"
   },
@@ -70,34 +67,6 @@
   },
   "sendReport": {
     "message": "الإبلاغ عن مشكلة في هذه الصفحة"
-  },
-  "share_on_facebook": {
-    "message": "المشاركة على فيسبوك"
-  },
-  "share_on_twitter": {
-    "message": "المشاركة على تويتر"
-  },
-  "share_on_twitter_message": {
-    "message": "لقد حجبت $number$ الإعلانات باستخدام Adblock Plus. جرّبه؛ إنّه مجاني!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "المشاركة على ويبو (Weibo)"
-  },
-  "share_on_weibo_message": {
-    "message": "لقد حجبت $number$ الإعلانات باستخدام Adblock Plus. جرّبه؛ إنّه مجاني!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "مشاركة الأرقام مع الأصدقاء"
   },
   "stats_header": {
     "message": "عدد العناصر التي حظرها"

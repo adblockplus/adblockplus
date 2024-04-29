@@ -17,10 +17,9 @@
 
 import api from "../../../src/core/api/front/index.ts";
 import {getSourceAttribute} from "../../common.mjs";
-import {$, $$} from "../../dom.mjs";
+import {$} from "../../dom.mjs";
 import {initI18n} from "../../../src/i18n/index.ts";
 import setupBlock from "./block-element.mjs";
-import {createShareLink} from "./social-media-share.mjs";
 import setupToggles from "./toggles.mjs";
 import {
   activeTab,
@@ -109,7 +108,6 @@ activeTab.then(tab =>
   setupToggles(tab);
   setupStats(tab);
   setupBlock(tab);
-  setupShare();
   setupFooter();
 
   // closing the popup when the user focus on a different tab,
@@ -137,14 +135,6 @@ function updateBlockedTotal(blockedTotal)
 {
   const total = blockedTotal.toLocaleString();
   $("#stats-total .amount").textContent = total;
-
-  // whenever the total changes, update social media shared stats links too
-  for (const media of ["facebook", "twitter", "weibo"])
-  {
-    const link = $(`#counter-panel .share a.${media}`);
-    link.target = "_blank";
-    link.href = createShareLink(media, blockedTotal);
-  }
 }
 
 async function setupPremium()
@@ -171,6 +161,10 @@ async function setupPremiumBanners()
   const source = getSourceAttribute(document.body);
   const premiumUpgradeUrl = await api.ctalinks.get("premium-upgrade", {source});
   $("#premium-upgrade").setAttribute("href", premiumUpgradeUrl);
+  document.querySelectorAll(".premium-block").forEach((element) =>
+  {
+    element.setAttribute("href", premiumUpgradeUrl);
+  });
 }
 
 function setPremiumState(premiumIsActive)
@@ -209,55 +203,6 @@ function setupStats(tab)
   });
 
   api.stats.listen(["blocked_per_page", "blocked_total"]);
-}
-
-function setupShare()
-{
-  const wrapper = $("#counter-panel .share");
-  const shareButton = $(".enter", wrapper);
-  const cancelButton = $(".cancel", wrapper);
-  const firstFocusable = $("a", wrapper);
-  const indexed = $$("[tabindex]", wrapper);
-
-  const isExpanded = () => wrapper.classList.contains("expanded");
-
-  // when sharing link enters the container, it should get focused,
-  // but only if the focus was still in the sharedButton
-  firstFocusable.addEventListener("transitionend", () =>
-  {
-    if (isExpanded() && document.activeElement === shareButton)
-      firstFocusable.focus();
-  });
-
-  wrapper.addEventListener("transitionend", () =>
-  {
-    const expanded = isExpanded();
-
-    // add/drop tabindex accordingly with the expanded value
-    const tabindex = expanded ? 0 : -1;
-    for (const el of indexed)
-    {
-      el.setAttribute("tabindex", tabindex);
-    }
-    shareButton.setAttribute("tabindex", expanded ? -1 : 0);
-
-    // if it's not expanded, and the cancel was clicked, and it's still focused
-    // move the focus back to the shareButton
-    if (!expanded && document.activeElement === cancelButton)
-      shareButton.focus();
-  });
-
-  shareButton.addEventListener("click", (event) =>
-  {
-    event.preventDefault();
-    wrapper.classList.add("expanded");
-  });
-
-  cancelButton.addEventListener("click", (event) =>
-  {
-    event.preventDefault();
-    wrapper.classList.remove("expanded");
-  });
 }
 
 function setupFooter()

@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "Bloquez des éléments spécifiques sur ce site web"
-  },
   "browser_store_android": {
     "message": "Application Android sur Google Play"
   },
@@ -70,34 +67,6 @@
   },
   "sendReport": {
     "message": "Rédiger un rapport sur cette page"
-  },
-  "share_on_facebook": {
-    "message": "Partagez sur Facebook"
-  },
-  "share_on_twitter": {
-    "message": "Partagez sur Twitter"
-  },
-  "share_on_twitter_message": {
-    "message": "J'ai bloqué $number$ pubs avec Adblock Plus. Faites un essai - c'est GRATUIT !",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "Partagez sur Weibo"
-  },
-  "share_on_weibo_message": {
-    "message": "J'ai bloqué $number$ pubs avec Adblock Plus. Faites un essai - c'est GRATUIT !",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "Partagez des numéros avec des amis"
   },
   "stats_header": {
     "message": "Nombre d’éléments bloqués"

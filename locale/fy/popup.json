@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "Spesifyk elemint op dizze website blokkearje"
-  },
   "click_element_to_block_it": {
     "message": "Klik op in elemint op de side om it te blokkearjen."
   },
@@ -28,34 +25,6 @@
   },
   "sendReport": {
     "message": "Probleem melde"
-  },
-  "share_on_facebook": {
-    "message": "Diele op Facebook"
-  },
-  "share_on_twitter": {
-    "message": "Diele op Twitter"
-  },
-  "share_on_twitter_message": {
-    "message": "Ik haw $number$ advertinsjes blokkearre mei Adblock Plus. Probearje it ris – it is FERGEES!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "Diele op Weibo"
-  },
-  "share_on_weibo_message": {
-    "message": "Ik haw $number$ advertinsjes blokkearre mei Adblock Plus. Probearje it ris – it is FERGEES!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "Oantallen diele mei freonen"
   },
   "stats_header": {
     "message": "Oantal blokkearre items"

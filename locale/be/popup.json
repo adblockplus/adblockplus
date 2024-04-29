@@ -26,23 +26,6 @@
   "sendReport": {
     "message": "Паведаміць аб праблеме"
   },
-  "share_on_facebook": {
-    "message": "Падзяліцца праз Facebook"
-  },
-  "share_on_twitter": {
-    "message": "Падзяліцца праз Twitter"
-  },
-  "share_on_twitter_message": {
-    "message": "Дзякуючы Adblock Plus у мяне заблакавана $number$ рэкламных аб'яў. Паспрабуйце і вы – гэта БЯСПЛАТНА.",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "Падзяліцца лічбамі з сябрамі"
-  },
   "stats_header": {
     "message": "Колькасць заблакаваных элементаў"
   },

@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "A weboldal bizonyos elemeinek blokkolása"
-  },
   "browser_store_android": {
     "message": "Android alkalmazás a Google Play áruházban"
   },
@@ -70,34 +67,6 @@
   },
   "sendReport": {
     "message": "Probléma jelentése az oldalon"
-  },
-  "share_on_facebook": {
-    "message": "Megosztás a Facebook-on"
-  },
-  "share_on_twitter": {
-    "message": "Megosztás a Twitter-en"
-  },
-  "share_on_twitter_message": {
-    "message": "Az Adblock Plus alkalmazással $number$ reklámot blokkoltam. Próbálja ki, INGYENES!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "Megosztás a Weibo mikroblog weboldalon"
-  },
-  "share_on_weibo_message": {
-    "message": "Az Adblock Plus alkalmazással $number$ reklámot blokkoltam. Próbálja ki, INGYENES!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "Számok megosztása a barátaival"
   },
   "stats_header": {
     "message": "Blokkolt elemek száma"

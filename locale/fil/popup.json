@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "I-block ang partikular na element sa webstire na'to"
-  },
   "click_element_to_block_it": {
     "message": "Pundutin ang isang element sa pahina upang i-block ito."
   },
@@ -28,31 +25,6 @@
   },
   "sendReport": {
     "message": "Mag-ulat ng problema sa pahinang ito"
-  },
-  "share_on_facebook": {
-    "message": "Ibahagi sa Facebook"
-  },
-  "share_on_twitter": {
-    "message": "Ibahagi sa Twitter"
-  },
-  "share_on_twitter_message": {
-    "message": "Naka-block ako ng $number$ (mga) ad gamit ang AdblockPlus. Subukan mo — LIBRE ito!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "Ibahagi sa Weibo"
-  },
-  "share_on_weibo_message": {
-    "message": "Naka-block ako ng $number$ (mga) ad gamit ang AdblockPlus. Subukan mo — LIBRE ito!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
   },
   "stats_header": {
     "message": "Bilang ng mga aytem na nai-block"

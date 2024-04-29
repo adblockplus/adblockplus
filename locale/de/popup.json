@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "Bestimmte Elemente auf dieser Website blockieren"
-  },
   "browser_store_android": {
     "message": "Android-App auf Google Play"
   },
@@ -70,34 +67,6 @@
   },
   "sendReport": {
     "message": "Einen auf dieser Seite aufgetretenen Fehler melden"
-  },
-  "share_on_facebook": {
-    "message": "Auf Facebook teilen"
-  },
-  "share_on_twitter": {
-    "message": "Auf Twitter teilen"
-  },
-  "share_on_twitter_message": {
-    "message": "Ich habe $number$ Werbeanzeigen mit Adblock Plus blockiert. Probier' es mal aus – es ist GRATIS!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "Auf Weibo teilen"
-  },
-  "share_on_weibo_message": {
-    "message": "Ich habe $number$ Werbeanzeigen mit Adblock Plus blockiert. Probier' es mal aus – es ist GRATIS!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "Zahlen mit Freunden teilen"
   },
   "stats_header": {
     "message": "Anzahl blockierter Elemente"

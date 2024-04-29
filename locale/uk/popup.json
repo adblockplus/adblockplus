@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "Блокувати конкретний елемент на цьому сайті"
-  },
   "click_element_to_block_it": {
     "message": "Натисніть на елемент на сторінці, щоб заблокувати його."
   },
@@ -28,34 +25,6 @@
   },
   "sendReport": {
     "message": "Повідомити про помилку"
-  },
-  "share_on_facebook": {
-    "message": "Опублікувати на Facebook"
-  },
-  "share_on_twitter": {
-    "message": "Твітнути в Twitter"
-  },
-  "share_on_twitter_message": {
-    "message": "Adblock Plus заблокував для мене $number$ рекламних оголошень. Спробуйте і ви — це безкоштовно!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "Поділитись на Weibo"
-  },
-  "share_on_weibo_message": {
-    "message": "Adblock Plus заблокував для мене $number$ рекламних оголошень. Спробуйте і ви — це безкоштовно!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "Поділитися з друзями"
   },
   "stats_header": {
     "message": "Кількість заблокованих об'єктів"
