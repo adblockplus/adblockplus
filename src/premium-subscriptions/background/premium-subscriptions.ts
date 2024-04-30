@@ -19,7 +19,11 @@ import * as ewe from "@eyeo/webext-ad-filtering-solution";
 
 import { addSubscription } from "../../../adblockpluschrome/lib/filterConfiguration";
 import * as premium from "../../premium/background";
-import { premiumTypes } from "../shared";
+import {
+  ANNOYANCE_SUBSCRIPTION_TYPE,
+  COOKIES_PREMIUM_SUBSCRIPTION_TYPE,
+  premiumTypes
+} from "../shared";
 
 /**
  * Returns a list of premium subscriptions.
@@ -73,19 +77,37 @@ async function getActiveSubscriptions(): Promise<ewe.Subscription[]> {
   return await ewe.subscriptions.getSubscriptions();
 }
 
-// TODO: return the two subscriptions with their state
 // TODO: unit test this
-// TODO: return type
 function computePremiumState(
   premiumSubscriptions: ewe.Recommendation[],
   activeSubscriptions: ewe.Subscription[]
-): any {
+): {
+  [ANNOYANCE_SUBSCRIPTION_TYPE]: boolean;
+  [COOKIES_PREMIUM_SUBSCRIPTION_TYPE]: boolean;
+} {
+  const annoyanceSubscriptionId = premiumSubscriptions.find(
+    (sub) => sub.type === ANNOYANCE_SUBSCRIPTION_TYPE
+  )?.id;
+  const cookiesPremiumSubscriptionId = premiumSubscriptions.find(
+    (sub) => sub.type === COOKIES_PREMIUM_SUBSCRIPTION_TYPE
+  )?.id;
+
   console.log({ premiumSubscriptions, activeSubscriptions });
-  return premiumSubscriptions;
+
+  return {
+    [ANNOYANCE_SUBSCRIPTION_TYPE]: activeSubscriptions.some(
+      (sub: ewe.Subscription) => sub.id === annoyanceSubscriptionId
+    ),
+    [COOKIES_PREMIUM_SUBSCRIPTION_TYPE]: activeSubscriptions.some(
+      (sub: ewe.Subscription) => sub.id === cookiesPremiumSubscriptionId
+    )
+  };
 }
 
-// TODO: return type
-export async function getPremiumSubscriptionsState(): Promise<any> {
+export async function getPremiumSubscriptionsState(): Promise<{
+  [ANNOYANCE_SUBSCRIPTION_TYPE]: boolean;
+  [COOKIES_PREMIUM_SUBSCRIPTION_TYPE]: boolean;
+}> {
   const premiumSubscriptions = getPremiumSubscriptions();
   const activeSubscriptions = await getActiveSubscriptions();
   return computePremiumState(premiumSubscriptions, activeSubscriptions);

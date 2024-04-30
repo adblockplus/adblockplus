@@ -15,7 +15,13 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+export const ANNOYANCE_SUBSCRIPTION_TYPE = "annoyances";
+export const COOKIES_PREMIUM_SUBSCRIPTION_TYPE = "cookies-premium";
+
 /**
  * Premium subscription types
  */
-export const premiumTypes = new Set(["annoyances", "cookies-premium"]);
+export const premiumTypes = new Set([
+  ANNOYANCE_SUBSCRIPTION_TYPE,
+  COOKIES_PREMIUM_SUBSCRIPTION_TYPE
+]);

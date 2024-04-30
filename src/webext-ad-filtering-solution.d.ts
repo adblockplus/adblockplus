@@ -172,6 +172,7 @@ declare module "@eyeo/webext-ad-filtering-solution" {
    * A resource that provides a list of filters that decide what to block.
    */
   interface Subscription {
+    id: string;
     /**
      * Indicates whether the subscription is currently downloading (downloadble
      * subscriptions only).
