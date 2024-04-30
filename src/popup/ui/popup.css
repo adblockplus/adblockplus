@@ -240,7 +240,8 @@ body.premium a.premium.upgrade
   display: none;
 }
 
-body.premium #page-premium-cta
+body.premium #page-premium-cta,
+body.ignore #page-premium-cta
  {
   display: none;
 }
