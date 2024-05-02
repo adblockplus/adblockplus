@@ -24,6 +24,9 @@ import {
   COOKIES_PREMIUM_SUBSCRIPTION_TYPE,
   premiumTypes
 } from "../shared";
+import { port } from "../../../adblockpluschrome/lib/messaging/port";
+import { type Message } from "../../core/api/shared";
+import type { PremiumSubscriptionsTypes } from "../../core/api/front/api.types";
 
 /**
  * Returns a list of premium subscriptions.
@@ -111,6 +114,24 @@ export function addPremiumSubscription(
 
   if (subscription !== undefined) {
     void addSubscription(subscription);
+  }
+}
+
+export async function removePremiumSubscription(
+  type: "cookies-premium" | "annoyances"
+): Promise<void> {
+  const subscription = getPremiumSubscriptions().find(
+    (sub) => sub.type === type
+  );
+
+  if (subscription === undefined) {
+    return;
+  }
+
+  const hasSubscription = await ewe.subscriptions.has(subscription.url);
+
+  if (hasSubscription) {
+    void ewe.subscriptions.remove(subscription.url);
   }
 }
 
