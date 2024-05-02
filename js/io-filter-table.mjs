@@ -163,13 +163,13 @@ class IOFilterTable extends IOElement
       type: "filters.importRaw",
       text: filters.join("\n")
     })
-    .then(errors =>
+    .then(([errors, filterTexts]) =>
     {
       if (!errors.length)
       {
-        filters.reverse();
+        filterTexts.reverse();
         let added = false;
-        for (const text of filters)
+        for (const text of filterTexts)
         {
           // We don't treat filter headers like invalid filters,
           // instead we simply ignore them and don't show any errors

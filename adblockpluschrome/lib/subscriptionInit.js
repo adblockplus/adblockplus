@@ -38,12 +38,6 @@ import {
   start as startIPMPingListener
 } from "../../src/testing/ping-ipm/background";
 
-const defaultSubscriptionIds = [
-  "8C13E995-8F06-4927-BEA7-6C845FB7EEBF",
-  "0798B6A2-94A4-4ADF-89ED-BEC112FC4C7F",
-  "D4028CDD-3D39-4624-ACC7-8140F4EC3238"
-];
-
 let firstRun;
 let userNotificationCallback = null;
 let reinitialized = false;
@@ -91,27 +85,7 @@ function setDataCorrupted(value)
 async function addSubscriptionsAndNotifyUser()
 {
   if (firstRun || reinitialized)
-  {
-    try
-    {
-      await ewe.subscriptions.addDefaults();
-    }
-    catch (ex)
-    {
-      console.error("Failed to add default filter lists:", ex);
-
-      // We don't want to keep the extension in a broken state, so we
-      // try to individually add default subscriptions ourselves
-      const recommendations = ewe.subscriptions.getRecommendations();
-      for (const recommendation of recommendations)
-      {
-        if (!defaultSubscriptionIds.includes(recommendation.id))
-          continue;
-
-        await ewe.subscriptions.add(recommendation.url);
-      }
-    }
-  }
+    await ewe.subscriptions.addDefaults();
 
   for (let url of Prefs.additional_subscriptions)
   {
@@ -186,6 +160,7 @@ export async function start()
     ewe.start({
       bundledSubscriptions: rulesIndex,
       bundledSubscriptionsPath: "/data/rules/abp",
+      inlineCss: false,
       name: info.addonName,
       version: info.addonVersion
     }),

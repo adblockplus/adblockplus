@@ -83,6 +83,10 @@ declare module "@eyeo/webext-ad-filtering-solution" {
      */
     enabled: boolean | null;
     /**
+     * For element hiding emulation filters, true if the filter will remove elements from the DOM rather hiding them.
+     */
+    remove?: boolean;
+    /**
      * Indicates that this filter is not subject to an internal optimization.
      * Filters that are considered slow should be avoided.
      * Only URLFilters can be slow.

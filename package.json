@@ -81,7 +81,7 @@
   "dependencies": {
     "@adblockinc/rules": "gitlab:adblockinc/ext/rules#141fd7f",
     "@eyeo/snippets": "1.2.2",
-    "@eyeo/webext-ad-filtering-solution": "1.2.4",
+    "@eyeo/webext-ad-filtering-solution": "1.5.0",
     "argparse": "1.0.10",
     "canvas": "2.11.2",
     "css-loader": "6.8.1",

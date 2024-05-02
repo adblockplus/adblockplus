@@ -192,6 +192,7 @@ If filter includes `showPageOptions`:
 **Response**
 
 **[FilterError](#filtererror)[]** errors
+**string** filterTexts
 
 #### filters.isAllowlisted
 

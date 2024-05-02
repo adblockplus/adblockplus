@@ -51,7 +51,11 @@ export function toSerializableBlockableItem(
     type = matchInfo.allowingReason;
   } else if (filter !== null) {
     // Show matching method when it had an effect on the request
-    type = matchInfo.method;
+    if (filter.remove === true) {
+      type = "remove";
+    } else {
+      type = matchInfo.method;
+    }
   } else {
     type = ewe.reporting.contentTypesMap.get(request.type);
   }
