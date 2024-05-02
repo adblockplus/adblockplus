@@ -27,6 +27,7 @@ import {
   whenPageReady
 } from "./utils.mjs";
 
+import {ANNOYANCE_SUBSCRIPTION_TYPE, COOKIES_PREMIUM_SUBSCRIPTION_TYPE} from "../../../src/premium-subscriptions/shared/premium-subscriptions.ts";
 import "../../../src/popup/ui/popup.css";
 import "../../io-circle-toggle.mjs";
 import "./notifications.mjs";
@@ -246,16 +247,32 @@ function setupFooter()
 async function updateToggles()
 {
   const isPremiumEnabled = await api.premium.get();
+  const premiumSubscriptionsState = await api.app.get("premiumSubscriptions");
+  const annoyanceSubActive = isPremiumEnabled &&
+  premiumSubscriptionsState[ANNOYANCE_SUBSCRIPTION_TYPE];
+  const cookiesSubActive = isPremiumEnabled &&
+  premiumSubscriptionsState[COOKIES_PREMIUM_SUBSCRIPTION_TYPE];
 
-  const distractionToggle = document
-  .getElementById("premium-distractions-toggle");
+  const cookieToggle = document
+    .getElementById("premium-cookie-toggle");
+  const annoyanceToggle = document
+    .getElementById("premium-distractions-toggle");
 
-  document
-    .getElementById("premium-distractions-toggle")
-    .addEventListener("click", async() =>
-    {
-      console.log("sending message");
-      const response = await api.app.get("premiumSubscriptions");
-      console.log({response});
-    });
+  if (cookiesSubActive)
+  {
+    cookieToggle.setAttribute("checked", "");
+  }
+  else
+  {
+    cookieToggle.removeAttribute("checked");
+  }
+
+  if (annoyanceSubActive)
+  {
+    annoyanceToggle.setAttribute("checked", "");
+  }
+  else
+  {
+    annoyanceToggle.removeAttribute("checked");
+  }
 }

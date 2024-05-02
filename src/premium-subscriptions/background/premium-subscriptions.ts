@@ -92,8 +92,6 @@ function computePremiumState(
     (sub) => sub.type === COOKIES_PREMIUM_SUBSCRIPTION_TYPE
   )?.id;
 
-  console.log({ premiumSubscriptions, activeSubscriptions });
-
   return {
     [ANNOYANCE_SUBSCRIPTION_TYPE]: activeSubscriptions.some(
       (sub: ewe.Subscription) => sub.id === annoyanceSubscriptionId
