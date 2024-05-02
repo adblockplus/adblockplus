@@ -24,5 +24,6 @@ export let filterTypes = new Set(function*()
   for (let type of ewe.reporting.contentTypesMap.values())
     yield type.toUpperCase();
 
+  yield "REMOVE";
   yield "SNIPPET";
 }());

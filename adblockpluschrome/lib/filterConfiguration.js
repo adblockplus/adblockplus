@@ -93,6 +93,8 @@ function parseFilter(text)
 
   if (filterText)
   {
+    filterText = ewe.filters.normalize(filterText);
+
     if (filterText[0] == "[")
     {
       error = {type: "unexpected_filter_list_header"};
@@ -270,7 +272,7 @@ export function start()
         errors.push(error);
     }
 
-    return errors;
+    return [errors, filterTexts];
   });
 
   /**
