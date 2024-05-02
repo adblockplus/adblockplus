@@ -27,7 +27,10 @@ import {
   whenPageReady
 } from "./utils.mjs";
 
-import {ANNOYANCE_SUBSCRIPTION_TYPE, COOKIES_PREMIUM_SUBSCRIPTION_TYPE} from "../../../src/premium-subscriptions/shared/premium-subscriptions.ts";
+import {
+  ANNOYANCE_SUBSCRIPTION_TYPE,
+  COOKIES_PREMIUM_SUBSCRIPTION_TYPE
+} from "../../../src/premium-subscriptions/shared/premium-subscriptions.ts";
 import "../../../src/popup/ui/popup.css";
 import "../../io-circle-toggle.mjs";
 import "./notifications.mjs";

@@ -1,4 +1,3 @@
-import { premium } from "../../core/api/front/api";
 /*
  * This file is part of Adblock Plus <https://adblockplus.org/>,
  * Copyright (C) 2006-present eyeo GmbH
