@@ -37,6 +37,15 @@ Object.assign(browser.runtime, {
     {
       resolve({os: "jest"});
     });
+  },
+  getManifest()
+  {
+    return {
+      manifest_version: 3,
+      options_ui: {
+        page: "options.html"
+      }
+    };
   }
 });
 
@@ -59,4 +68,8 @@ Object.assign(browser, {
     onBeforeRequest() {},
     ResourceType: {}
   }
+});
+
+Object.assign(browser, {
+  action: browser.browserAction
 });

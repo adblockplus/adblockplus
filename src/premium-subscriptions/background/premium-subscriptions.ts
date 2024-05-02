@@ -78,7 +78,7 @@ async function getActiveSubscriptions(): Promise<ewe.Subscription[]> {
 }
 
 // TODO: unit test this
-function computePremiumState(
+export function computePremiumState(
   premiumSubscriptions: ewe.Recommendation[],
   activeSubscriptions: ewe.Subscription[]
 ): {
