@@ -357,6 +357,10 @@ export interface SubscriptionsRemoveOptions {
   url: string;
 }
 
+export interface PremiumSubscriptionsTypes {
+  subscriptionType: "cookies-premium" | "annoyances";
+}
+
 /**
  * Available argument configurations for talking to the runtime.
  */
@@ -369,6 +373,7 @@ export type SendArgs =
   | GetPrefsOptions
   | PremiumActivateOptions
   | SubscriptionsAddOptions
+  | PremiumSubscriptionsTypes
   | SubscriptionsGetOptions
   | SubscriptionsRemoveOptions;
 
@@ -386,6 +391,7 @@ export type SendType =
   | "prefs.get"
   | "premium.activate"
   | "premium.get"
+  | "premium.subscriptions.add"
   | "stats.getBlockedPerPage"
   | "stats.getBlockedTotal"
   | "subscriptions.add"

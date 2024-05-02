@@ -109,6 +109,7 @@ activeTab.then(tab =>
   });
 
   setupPremium();
+  setupPremiumToggles();
   setupToggles(tab);
   setupStats(tab);
   setupBlock(tab);
@@ -245,6 +246,27 @@ function setupFooter()
 
       footer.startAnimation();
     });
+}
+
+async function setupPremiumToggles()
+{
+  // const cookieToggle = document
+  //   .getElementById("premium-cookie-toggle");
+  const annoyanceToggle = document
+    .getElementById("premium-distractions-toggle");
+
+  annoyanceToggle.addEventListener("click", async() =>
+  {
+    const value = annoyanceToggle.getAttribute("checked") !== null;
+    if (value)
+    {
+      api.premium.add(ANNOYANCE_SUBSCRIPTION_TYPE);
+    }
+    else
+    {
+      // api.premium.remove(ANNOYANCE_SUBSCRIPTION_TYPE);
+    }
+  });
 }
 
 async function updateToggles()

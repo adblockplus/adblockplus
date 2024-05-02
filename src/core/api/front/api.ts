@@ -40,7 +40,8 @@ import type {
   SendArgs,
   SendType,
   Store,
-  SubscriptionsGetOptions
+  SubscriptionsGetOptions,
+  PremiumSubscriptionsTypes
 } from "./api.types";
 
 /**
@@ -219,6 +220,17 @@ export const premium = {
   get: async () => await send<PremiumState>("premium.get"),
 
   /**
+   * Add a premium subscription
+   *
+   * @returns Premium state
+   */
+  add: async (
+    subscriptionType: PremiumSubscriptionsTypes["subscriptionType"]
+  ) => {
+    await send("premium.subscriptions.add", { subscriptionType });
+  },
+
+  /**
    * Adds a connection listener for the Premium state
    *
    * @param filter - Filters what to listen for
@@ -257,7 +269,6 @@ async function send<T = unknown>(
     ...rawArgs,
     type: sendType
   };
-
   return await browser.runtime.sendMessage(args);
 }
 

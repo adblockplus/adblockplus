@@ -164,7 +164,6 @@ export function start()
     if (message.what === "premiumSubscriptions")
     {
       const premiumSubscriptions = await getPremiumSubscriptionsState();
-
       return premiumSubscriptions;
     }
 

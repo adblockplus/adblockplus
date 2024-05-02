@@ -102,6 +102,18 @@ export function computePremiumState(
   };
 }
 
+export function addPremiumSubscription(
+  type: "cookies-premium" | "annoyances"
+): void {
+  const subscription = getPremiumSubscriptions().find(
+    (sub) => sub.type === type
+  );
+
+  if (subscription !== undefined) {
+    void addSubscription(subscription);
+  }
+}
+
 export async function getPremiumSubscriptionsState(): Promise<{
   [ANNOYANCE_SUBSCRIPTION_TYPE]: boolean;
   [COOKIES_PREMIUM_SUBSCRIPTION_TYPE]: boolean;
@@ -122,4 +134,17 @@ export function start(): void {
   premium.emitter.on("activated", () => {
     void addOptoutPremiumSubscriptions();
   });
+
+  port.on(
+    "premium.subscriptions.add",
+    async (msg: Message & PremiumSubscriptionsTypes) => {
+      console.log("received premium sub message", msg);
+
+      if (msg.type !== "premium.subscriptions.add") {
+        return;
+      }
+
+      addPremiumSubscription(msg.subscriptionType);
+    }
+  );
 }
