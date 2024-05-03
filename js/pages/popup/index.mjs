@@ -110,6 +110,7 @@ activeTab.then(tab =>
 
   setupPremium();
   setupPremiumToggles();
+  setupCookieModal();
   setupToggles(tab);
   setupStats(tab);
   setupBlock(tab);
@@ -250,8 +251,8 @@ function setupFooter()
 
 async function setupPremiumToggles()
 {
-  // const cookieToggle = document
-  //   .getElementById("premium-cookie-toggle");
+  const cookieToggle = document
+    .getElementById("premium-cookie-toggle");
   const annoyanceToggle = document
     .getElementById("premium-distractions-toggle");
 
@@ -265,6 +266,22 @@ async function setupPremiumToggles()
     else
     {
       api.premium.remove(ANNOYANCE_SUBSCRIPTION_TYPE);
+    }
+  });
+
+  cookieToggle.addEventListener("click", async(event) =>
+  {
+    const value = cookieToggle.getAttribute("checked") !== null;
+
+
+    if (value)
+    {
+      const modalContainer = document.getElementById("cookie-consent-modal");
+      modalContainer.classList.add("visible");
+    }
+    else
+    {
+      api.premium.remove(COOKIES_PREMIUM_SUBSCRIPTION_TYPE);
     }
   });
 }
@@ -300,4 +317,26 @@ async function updateToggles()
   {
     annoyanceToggle.removeAttribute("checked");
   }
+}
+
+function setupCookieModal()
+{
+  const modalContainer = document.getElementById("cookie-consent-modal");
+  const cookieToggle = document
+    .getElementById("premium-cookie-toggle");
+
+  const closeButton = document.getElementById("cookie-consent-modal-close");
+  const acceptButton = document.getElementById("cookie-consent-modal-accept");
+
+  closeButton.addEventListener("click", () =>
+  {
+    modalContainer.classList.remove("visible");
+    cookieToggle.removeAttribute("checked");
+  });
+
+  acceptButton.addEventListener("click", async() =>
+  {
+    api.premium.add(COOKIES_PREMIUM_SUBSCRIPTION_TYPE);
+    modalContainer.classList.remove("visible");
+  });
 }

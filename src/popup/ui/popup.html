@@ -99,6 +99,7 @@
               data-i18n="premium_cookies_subtitle"
             ></span>
           </div>
+
           <io-circle-toggle id="premium-cookie-toggle"></io-circle-toggle>
         </article>
         <article class="premium-block">
@@ -172,23 +173,27 @@
       <io-popup-footer></io-popup-footer>
     </footer>
 
-    <div class="cookie-consent-modal-container">
-      <div id="cookie-consent-modal" class="cookie-consent-modal">
+    <div
+      id="cookie-consent-modal"
+      class="cookie-consent-modal-container hidden"
+    >
+      <div class="cookie-consent-modal">
         <h3
           class="cookie-consent-modal-title"
           data-i18n="options_dialog_optIn_premium_subscription_title"
         ></h3>
         <p
+          class="cookie-consent-modal-text"
           data-i18n="options_dialog_optIn_premium_subscription_description"
         ></p>
-        <div class="ctas">
+        <div class="cookie-consent-modal-button-container">
           <button
-            class="secondary"
+            class="cookie-consent-modal-button"
             id="cookie-consent-modal-close"
             data-i18n="options_dialog_optIn_premium_subscription_reject"
           ></button>
           <button
-            class="default-focus premium"
+            class="cookie-consent-modal-button premium"
             id="cookie-consent-modal-accept"
             data-i18n="options_dialog_optIn_premium_subscription_confirm"
           ></button>
