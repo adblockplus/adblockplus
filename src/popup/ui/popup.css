@@ -887,3 +887,24 @@ body.premium .premium-block
   fill: var(--color-premium);
 }
 
+.cookie-consent-modal-container
+ {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.2;
+  background-color: #000;
+}
+
+.cookie-consent-modal
+ {
+  position: absolute;
+  top: 50%;
+  right: calc(var(--block-spacing) / 2);
+  left: calc(var(--block-spacing) / 2);
+  border-radius: var(--border-radius);
+  background: #fff;
+  transform: translateY(-50%);
+}

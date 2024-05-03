@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <!--
   - This file is part of Adblock Plus <https://adblockplus.org/>,
   - Copyright (C) 2006-present eyeo GmbH
@@ -66,8 +66,7 @@
         </div>
       </div>
       <div id="page-premium-cta">
-        <a target="_blank"
-        data-link="premium" class="premium-block">
+        <a target="_blank" data-link="premium" class="premium-block">
           <span
             class="premium-block-title"
             data-i18n="premium_cookies_title"
@@ -77,7 +76,7 @@
             data-i18n="premium_cookies_subtitle"
           ></span>
         </a>
-        <a target="_blank" data-link="premium"  class="premium-block">
+        <a target="_blank" data-link="premium" class="premium-block">
           <span
             class="premium-block-title"
             data-i18n="premium_distractions_title"
@@ -113,7 +112,10 @@
               data-i18n="premium_distractions_subtitle"
             ></span>
           </div>
-          <io-circle-toggle id="premium-distractions-toggle" checked></io-circle-toggle>
+          <io-circle-toggle
+            id="premium-distractions-toggle"
+            checked
+          ></io-circle-toggle>
         </article>
       </div>
       <div id="page-info">
@@ -169,5 +171,29 @@
     <footer>
       <io-popup-footer></io-popup-footer>
     </footer>
+
+    <div class="cookie-consent-modal-container">
+      <div id="cookie-consent-modal" class="cookie-consent-modal">
+        <h3
+          class="cookie-consent-modal-title"
+          data-i18n="options_dialog_optIn_premium_subscription_title"
+        ></h3>
+        <p
+          data-i18n="options_dialog_optIn_premium_subscription_description"
+        ></p>
+        <div class="ctas">
+          <button
+            class="secondary"
+            id="cookie-consent-modal-close"
+            data-i18n="options_dialog_optIn_premium_subscription_reject"
+          ></button>
+          <button
+            class="default-focus premium"
+            id="cookie-consent-modal-accept"
+            data-i18n="options_dialog_optIn_premium_subscription_confirm"
+          ></button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
