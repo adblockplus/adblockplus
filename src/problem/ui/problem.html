@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--
   - This file is part of Adblock Plus <https://adblockplus.org/>,
   - Copyright (C) 2006-present eyeo GmbH
@@ -16,81 +16,100 @@
   - along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
   -->
 <html>
-<head>
-  <title data-i18n="problem_title"></title>
-  <link rel="icon" type="image/png" href="icons/abp-32.png">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <script src="polyfill.js"></script>
-  <script src="ext/common.js"></script>
-  <script src="ext/content.js"></script>
-  <script src="problem.js" defer></script>
-</head>
-<body hidden>
-
-<main>
-  <header>
-    <div class="content columns">
-      <div id="title-wrapper">
-        <a class="logo" data-doclink="adblock_plus" target="_blank">
-          <img src="skin/icons/logo/abp-full.svg" alt="Adblock Plus">
-        </a>
-        <div id="title" class="block-icon">
-          <h1 data-i18n="problem_title"></h1>
-          <p data-hide="opera" data-i18n="problem_subtitle"></p>
-          <p data-show="opera" data-i18n="problem_subtitle_opera"></p>
-          <p class="note" data-i18n="problem_note"></p>
+  <head>
+    <title data-i18n="problem_title"></title>
+    <link rel="icon" type="image/png" href="icons/abp-32.png" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <script src="polyfill.js"></script>
+    <script src="ext/common.js"></script>
+    <script src="ext/content.js"></script>
+    <script src="problem.js" defer></script>
+  </head>
+  <body hidden>
+    <main>
+      <header>
+        <div class="content columns">
+          <div id="title-wrapper">
+            <a class="logo" data-doclink="adblock_plus" target="_blank">
+              <img src="skin/icons/logo/abp-full.svg" alt="Adblock Plus" />
+            </a>
+            <div id="title" class="block-icon">
+              <h1 data-i18n="problem_title"></h1>
+              <p data-hide="opera" data-i18n="problem_subtitle"></p>
+              <p data-show="opera" data-i18n="problem_subtitle_opera"></p>
+              <p class="note" data-i18n="problem_note"></p>
+            </div>
+          </div>
+          <div id="hero">
+            <img src="skin/icons/problem/data-corrupted.png" alt="" />
+          </div>
         </div>
-      </div>
-      <div id="hero">
-        <img src="skin/icons/problem/data-corrupted.png" alt="">
-      </div>
-    </div>
-  </header>
+      </header>
 
-  <article id="solution" class="secondary">
-    <div class="content block-icon">
-      <h2 data-i18n="problem_solution_title"></h2>
-      <div data-hide="opera">
-        <a id="store-link" src="#" target="_blank" data-i18n="problem_solution_action"></a>
-      </div>
-      <div data-show="opera">
-        <ol>
-          <li>
-            <a data-doclink="opera_store" target="_blank"
-              data-i18n="problem_solution_opera_step_1"></a>
-          </li>
-          <li data-i18n="problem_solution_opera_step_2"></li>
-          <li data-i18n="problem_solution_opera_step_3"></li>
-          <li data-i18n="problem_solution_opera_step_4"></li>
-          <li data-i18n="problem_solution_opera_step_5"></li>
-          <li data-i18n="problem_solution_opera_step_6"></li>
-          <li data-i18n="problem_solution_opera_step_7"></li>
-        </ol>
-      </div>
-    </div>
-  </article>
+      <article id="solution" class="secondary">
+        <div class="content block-icon">
+          <h2 data-i18n="problem_solution_title"></h2>
+          <div data-hide="opera">
+            <a
+              id="store-link"
+              src="#"
+              target="_blank"
+              data-i18n="problem_solution_action"
+            ></a>
+          </div>
+          <div data-show="opera">
+            <ol>
+              <li>
+                <a
+                  data-doclink="opera_store"
+                  target="_blank"
+                  data-i18n="problem_solution_opera_step_1"
+                ></a>
+              </li>
+              <li data-i18n="problem_solution_opera_step_2"></li>
+              <li data-i18n="problem_solution_opera_step_3"></li>
+              <li data-i18n="problem_solution_opera_step_4"></li>
+              <li data-i18n="problem_solution_opera_step_5"></li>
+              <li data-i18n="problem_solution_opera_step_6"></li>
+              <li data-i18n="problem_solution_opera_step_7"></li>
+            </ol>
+          </div>
+        </div>
+      </article>
 
-  <article id="social">
-    <div class="content">
-      <h2 data-i18n="problem_social_title"></h2>
-      <p data-i18n="problem_social_description"></p>
-      <p>
-        <a class="twitter" target="_blank" data-doclink="social_twitter"
-          data-i18n-title="problem_social_twitter"></a>
-        <a class="facebook" target="_blank" data-doclink="social_facebook"
-          data-i18n-title="problem_social_facebook"></a>
-        <a class="email" href="mailto:support@adblockplus.org"
-          data-i18n-title="problem_social_email"></a>
-        </a>
-      </p>
-    </div>
-  </article>
-</main>
+      <article id="social">
+        <div class="content">
+          <h2 data-i18n="problem_social_title"></h2>
+          <p data-i18n="problem_social_description"></p>
+          <p>
+            <a
+              class="twitter"
+              target="_blank"
+              data-doclink="social_twitter"
+              data-i18n-title="problem_social_twitter"
+            ></a>
+            <a
+              class="facebook"
+              target="_blank"
+              data-doclink="social_facebook"
+              data-i18n-title="problem_social_facebook"
+            ></a>
+            <a
+              class="email"
+              href="mailto:support@adblockplus.org"
+              data-i18n-title="problem_social_email"
+            ></a>
+          </p>
+        </div>
+      </article>
+    </main>
 
-<footer>
-  <span id="copyright-notice"></span>
-</footer>
-
-</body>
+    <footer>
+      <span id="copyright-notice"></span>
+    </footer>
+  </body>
 </html>

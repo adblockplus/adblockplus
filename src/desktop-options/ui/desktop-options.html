@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--
   - This file is part of Adblock Plus <https://adblockplus.org/>,
   - Copyright (C) 2006-present eyeo GmbH
@@ -18,9 +18,9 @@
 
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title data-i18n="options_page_document_title"></title>
-    <link rel="icon" type="image/png" href="icons/abp-32.png">
+    <link rel="icon" type="image/png" href="icons/abp-32.png" />
     <script src="polyfill.js"></script>
     <script src="ext/common.js"></script>
     <script src="ext/content.js"></script>
@@ -36,32 +36,71 @@
         </header>
 
         <nav>
-          <ul class="tabs"
-              role="tablist" data-action="switch-tab"
-              data-keys="ArrowLeft ArrowUp ArrowRight ArrowDown">
+          <ul
+            class="tabs"
+            role="tablist"
+            data-action="switch-tab"
+            data-keys="ArrowLeft ArrowUp ArrowRight ArrowDown"
+          >
             <li role="presentation">
-              <a id="tab-general" href="#general" data-i18n="options_tab_general" role="tab" aria-selected="true" tabindex="0" aria-controls="content-general"></a>
+              <a
+                id="tab-general"
+                href="#general"
+                data-i18n="options_tab_general"
+                role="tab"
+                aria-selected="true"
+                tabindex="0"
+                aria-controls="content-general"
+              ></a>
             </li>
             <li role="presentation">
-              <a id="tab-allowlist" href="#allowlist" data-i18n="options_tab_allowlist" role="tab" tabindex="-1" aria-controls="content-allowlist"></a>
+              <a
+                id="tab-allowlist"
+                href="#allowlist"
+                data-i18n="options_tab_allowlist"
+                role="tab"
+                tabindex="-1"
+                aria-controls="content-allowlist"
+              ></a>
             </li>
             <li role="presentation">
-              <a id="tab-advanced" href="#advanced" data-i18n="options_tab_advanced" role="tab" tabindex="-1" aria-controls="content-advanced"></a>
+              <a
+                id="tab-advanced"
+                href="#advanced"
+                data-i18n="options_tab_advanced"
+                role="tab"
+                tabindex="-1"
+                aria-controls="content-advanced"
+              ></a>
             </li>
             <li role="presentation">
-              <a id="tab-help" href="#help" data-i18n="options_tab_help" role="tab" tabindex="-1" aria-controls="content-help"></a>
+              <a
+                id="tab-help"
+                href="#help"
+                data-i18n="options_tab_help"
+                role="tab"
+                tabindex="-1"
+                aria-controls="content-help"
+              ></a>
             </li>
           </ul>
         </nav>
 
         <footer>
           <p>
-            <a data-i18n="options_footer_contribute" class="button secondary"
-              data-doclink="contribute"></a>
+            <a
+              data-i18n="options_footer_contribute"
+              class="button secondary"
+              data-doclink="contribute"
+            ></a>
           </p>
           <p>
-            <button data-i18n="options_footer_about" class="link"
-                    data-action="open-dialog" data-dialog="about"></button>
+            <button
+              data-i18n="options_footer_about"
+              class="link"
+              data-action="open-dialog"
+              data-dialog="about"
+            ></button>
           </p>
         </footer>
       </div>
@@ -69,16 +108,37 @@
     <aside class="premium-banner-container">
       <div class="premium-upgrade banner foreground">
         <span class="premium-label" dir="ltr">Premium</span>
-        <p id="premium-upgrade-description" data-i18n="options_premium_upgrade_description"></p>
-        <a class="premium upgrade button" href="" target="_blank" data-i18n="options_upgrade_button"></a>
+        <p
+          id="premium-upgrade-description"
+          data-i18n="options_premium_upgrade_description"
+        ></p>
+        <a
+          class="premium upgrade button"
+          href=""
+          target="_blank"
+          data-i18n="options_upgrade_button"
+        ></a>
       </div>
       <div class="premium-manage banner background">
-        <a class="button" href="" target="_blank" data-i18n="options_premium_manage"></a>
-        <a class="button premium-label" href="" target="_blank" dir="ltr">Premium</a>
+        <a
+          class="button"
+          href=""
+          target="_blank"
+          data-i18n="options_premium_manage"
+        ></a>
+        <a class="button premium-label" href="" target="_blank" dir="ltr"
+          >Premium</a
+        >
+      </div>
     </aside>
     <main>
       <!-- General tab content -->
-      <div id="content-general" role="tabpanel" aria-labelledby="tab-general" data-source="general-tab">
+      <div
+        id="content-general"
+        role="tabpanel"
+        aria-labelledby="tab-general"
+        data-source="general-tab"
+      >
         <header>
           <h1 data-i18n="options_tab_general"></h1>
           <p data-i18n="options_general_description"></p>
@@ -87,7 +147,12 @@
           <div>
             <header class="premium list-header">
               <h2 class="premium icon" dir="ltr">Premium</h2>
-              <a class="premium upgrade button" href="" target="_blank" data-i18n="options_upgrade_button"></a>
+              <a
+                class="premium upgrade button"
+                href=""
+                target="_blank"
+                data-i18n="options_upgrade_button"
+              ></a>
             </header>
             <ul id="premium-list-table" class="premium list"></ul>
           </div>
@@ -96,13 +161,21 @@
             <ul id="free-list-table" class="list"></ul>
           </div>
           <template>
-            <button data-action="toggle-remove-subscription" data-disable="preconfigured" role="checkbox" class="control icon"></button>
+            <button
+              data-action="toggle-remove-subscription"
+              data-disable="preconfigured"
+              role="checkbox"
+              class="control icon"
+            ></button>
             <div class="description-container">
               <header>
                 <h3 data-display></h3>
                 <span class="label new" data-i18n="options_new_label"></span>
               </header>
-              <p class="description" data-template-i18n-body="options_recommended_%value%_description"></p>
+              <p
+                class="description"
+                data-template-i18n-body="options_recommended_%value%_description"
+              ></p>
             </div>
           </template>
         </section>
@@ -113,33 +186,89 @@
           </header>
           <form id="acceptable-ads">
             <div id="tracking-warning">
-              <button id="hide-tracking-warning" class="icon close tertiary" type="button" data-pref="ui_warn_tracking" data-action="toggle-pref">
-                <span data-i18n="common_notification_hide" class="sr-only"></span>
+              <button
+                id="hide-tracking-warning"
+                class="icon close tertiary"
+                type="button"
+                data-pref="ui_warn_tracking"
+                data-action="toggle-pref"
+              >
+                <span
+                  data-i18n="common_notification_hide"
+                  class="sr-only"
+                ></span>
               </button>
               <p id="tracking-warning-1"></p>
               <p data-i18n="options_tracking_warning_2"></p>
               <p id="tracking-warning-3"></p>
-              <button data-i18n="options_tracking_warning_acknowledgment" class="link" type="button" data-pref="ui_warn_tracking" data-action="toggle-pref"></button>
+              <button
+                data-i18n="options_tracking_warning_acknowledgment"
+                class="link"
+                type="button"
+                data-pref="ui_warn_tracking"
+                data-action="toggle-pref"
+              ></button>
             </div>
             <ul>
               <li>
-                <input type="checkbox" id="acceptable-ads-allow" class="icon" name="acceptable-ads" data-value="ads"></input>
-                <label for="acceptable-ads-allow" data-i18n="options_acceptableAds_ads_label"></label>
-                <div id="acceptable-ads-why-not" role="dialog" aria-hidden="true">
+                <input
+                  type="checkbox"
+                  id="acceptable-ads-allow"
+                  class="icon"
+                  name="acceptable-ads"
+                  data-value="ads"
+                />
+                <label
+                  for="acceptable-ads-allow"
+                  data-i18n="options_acceptableAds_ads_label"
+                ></label>
+                <div
+                  id="acceptable-ads-why-not"
+                  role="dialog"
+                  aria-hidden="true"
+                >
                   <p data-i18n="options_aa_opt_out_survey"></p>
-                  <a class="button primary" target="_blank" data-i18n="options_aa_opt_out_survey_ok" data-action="hide-acceptable-ads-survey"></a>
-                  <button type="button" data-i18n="options_aa_opt_out_survey_no" data-action="hide-acceptable-ads-survey"></button>
+                  <a
+                    class="button primary"
+                    target="_blank"
+                    data-i18n="options_aa_opt_out_survey_ok"
+                    data-action="hide-acceptable-ads-survey"
+                  ></a>
+                  <button
+                    type="button"
+                    data-i18n="options_aa_opt_out_survey_no"
+                    data-action="hide-acceptable-ads-survey"
+                  ></button>
                 </div>
-                <p id="enable-acceptable-ads-description" class="description" data-i18n="options_acceptableAds_ads_description_1"></p>
+                <p
+                  id="enable-acceptable-ads-description"
+                  class="description"
+                  data-i18n="options_acceptableAds_ads_description_1"
+                ></p>
               </li>
               <ul>
                 <li>
-                  <input type="checkbox" id="acceptable-ads-privacy-allow" class="icon" name="acceptable-ads" data-value="privacy"></input>
-                  <label for="acceptable-ads-privacy-allow" data-i18n="options_acceptableAds_privacy_label"></label>
+                  <input
+                    type="checkbox"
+                    id="acceptable-ads-privacy-allow"
+                    class="icon"
+                    name="acceptable-ads"
+                    data-value="privacy"
+                  />
+                  <label
+                    for="acceptable-ads-privacy-allow"
+                    data-i18n="options_acceptableAds_privacy_label"
+                  ></label>
                   <p>
-                    <a data-i18n="options_learn_more" data-doclink="privacy_friendly_ads"></a>
+                    <a
+                      data-i18n="options_learn_more"
+                      data-doclink="privacy_friendly_ads"
+                    ></a>
                   </p>
-                  <p id="dnt" data-i18n="options_acceptableAds_dnt_notification"></p>
+                  <p
+                    id="dnt"
+                    data-i18n="options_acceptableAds_dnt_notification"
+                  ></p>
                 </li>
               </ul>
             </ul>
@@ -148,7 +277,10 @@
         <section>
           <header>
             <h2 data-i18n="options_language_header"></h2>
-            <p id="blocking-languages-description" data-i18n="options_language_description"></p>
+            <p
+              id="blocking-languages-description"
+              data-i18n="options_language_description"
+            ></p>
           </header>
           <div id="blocking-languages">
             <ul id="blocking-languages-table" class="table list bottom-control">
@@ -159,8 +291,21 @@
                     (<span data-display="title"></span>)
                   </span>
                 </span>
-                <button data-single="hidden" data-hide="preconfigured" data-action="remove-subscription" class="icon delete control" data-i18n-title="options_control_remove_title"></button>
-                <button data-single="visible" data-hide="preconfigured" data-action="open-languages-box" data-dialog="language-change" data-i18n="options_language_change" class="link"></button>
+                <button
+                  data-single="hidden"
+                  data-hide="preconfigured"
+                  data-action="remove-subscription"
+                  class="icon delete control"
+                  data-i18n-title="options_control_remove_title"
+                ></button>
+                <button
+                  data-single="visible"
+                  data-hide="preconfigured"
+                  data-action="open-languages-box"
+                  data-dialog="language-change"
+                  data-i18n="options_language_change"
+                  class="link"
+                ></button>
               </template>
             </ul>
             <io-list-box
@@ -171,9 +316,16 @@
             ></io-list-box>
             <ul id="language-recommend" class="list">
               <li data-pref="recommend_language_subscriptions">
-                <button class="icon" role="checkbox" data-action="toggle-pref"></button>
+                <button
+                  class="icon"
+                  role="checkbox"
+                  data-action="toggle-pref"
+                ></button>
                 <span data-i18n="options_language_recommend"></span>
-                <io-popout type="tooltip" i18n-body="options_language_recommend_tooltip"></io-popout>
+                <io-popout
+                  type="tooltip"
+                  i18n-body="options_language_recommend_tooltip"
+                ></io-popout>
               </li>
             </ul>
             <p data-i18n="options_language_tip"></p>
@@ -188,7 +340,13 @@
             <ul id="more-list-table" class="table list">
               <template>
                 <span data-display></span>
-                <button data-hide="preconfigured" data-action="remove-subscription" data-i18n="options_control_remove_title" class="control link" data-i18n-title="options_control_remove_title"></button>
+                <button
+                  data-hide="preconfigured"
+                  data-action="remove-subscription"
+                  data-i18n="options_control_remove_title"
+                  class="control link"
+                  data-i18n-title="options_control_remove_title"
+                ></button>
               </template>
             </ul>
             <p data-i18n="options_more_filters_note"></p>
@@ -197,7 +355,11 @@
       </div>
 
       <!-- Allowlist tab content -->
-      <div id="content-allowlist" role="tabpanel" aria-labelledby="tab-allowlist">
+      <div
+        id="content-allowlist"
+        role="tabpanel"
+        aria-labelledby="tab-allowlist"
+      >
         <header>
           <h1 data-i18n="options_tab_allowlist"></h1>
           <p>
@@ -207,28 +369,35 @@
         </header>
         <section>
           <form>
-            <input id="allowlisting-textbox" type="text"
-              data-i18n-placeholder="options_allowlist_placeholder_example">
-            <button id="allowlisting-add-button"
-                    type="submit"
-                    data-action="add-domain-exception"
-                    data-i18n="options_allowlist_add" class="primary" disabled>
-            </button>
+            <input
+              id="allowlisting-textbox"
+              type="text"
+              data-i18n-placeholder="options_allowlist_placeholder_example"
+            />
+            <button
+              id="allowlisting-add-button"
+              type="submit"
+              data-action="add-domain-exception"
+              data-i18n="options_allowlist_add"
+              class="primary"
+              disabled
+            ></button>
           </form>
           <ul id="allowlisting-table" class="table list">
             <template>
               <span data-display></span>
-              <button data-action="remove-filter" class="icon delete control"
-                data-i18n-title="options_control_remove_title">
-              </button>
+              <button
+                data-action="remove-filter"
+                class="icon delete control"
+                data-i18n-title="options_control_remove_title"
+              ></button>
             </template>
           </ul>
         </section>
       </div>
 
       <!-- Advanced tab content -->
-      <div id="content-advanced" role="tabpanel"
-          aria-labelledby="tab-advanced">
+      <div id="content-advanced" role="tabpanel" aria-labelledby="tab-advanced">
         <header>
           <h1 data-i18n="options_tab_advanced"></h1>
           <p data-i18n="options_advanced_description"></p>
@@ -237,28 +406,60 @@
           <h2 data-i18n="options_customize_header"></h2>
           <ul id="customize" class="list">
             <li data-pref="show_statsinicon">
-              <button class="icon" role="checkbox" data-action="toggle-pref"></button>
+              <button
+                class="icon"
+                role="checkbox"
+                data-action="toggle-pref"
+              ></button>
               <span data-i18n="options_customize_iconStats"></span>
             </li>
             <li data-pref="shouldShowBlockElementMenu">
-              <button class="icon" role="checkbox" data-action="toggle-pref"></button>
+              <button
+                class="icon"
+                role="checkbox"
+                data-action="toggle-pref"
+              ></button>
               <span data-i18n="options_customize_blockElement"></span>
-              <io-popout type="tooltip" i18n-body="options_customize_blockElement_tooltip"></io-popout>
+              <io-popout
+                type="tooltip"
+                i18n-body="options_customize_blockElement_tooltip"
+              ></io-popout>
             </li>
             <li data-pref="show_devtools_panel">
-              <button class="icon" role="checkbox" data-action="toggle-pref"></button>
+              <button
+                class="icon"
+                role="checkbox"
+                data-action="toggle-pref"
+              ></button>
               <span data-i18n="options_customize_showDevToolsPanel"></span>
-              <io-popout type="tooltip" i18n-body="options_customize_showDevToolsPanel_tooltip"></io-popout>
+              <io-popout
+                type="tooltip"
+                i18n-body="options_customize_showDevToolsPanel_tooltip"
+              ></io-popout>
             </li>
             <li data-pref="elemhide_debug">
-              <button class="icon" role="checkbox" data-action="toggle-pref"></button>
+              <button
+                class="icon"
+                role="checkbox"
+                data-action="toggle-pref"
+              ></button>
               <span data-i18n="options_customize_elemhideDebug"></span>
-              <io-popout type="tooltip" i18n-body="options_customize_elemhideDebug_tooltip"></io-popout>
+              <io-popout
+                type="tooltip"
+                i18n-body="options_customize_elemhideDebug_tooltip"
+              ></io-popout>
             </li>
             <li data-pref="notifications_ignoredcategories">
-              <button class="icon" role="checkbox" data-action="toggle-pref"></button>
+              <button
+                class="icon"
+                role="checkbox"
+                data-action="toggle-pref"
+              ></button>
               <span data-i18n="options_customize_showNotifications"></span>
-              <io-popout type="tooltip" i18n-body="options_customize_showNotifications_tooltip"></io-popout>
+              <io-popout
+                type="tooltip"
+                i18n-body="options_customize_showNotifications_tooltip"
+              ></io-popout>
             </li>
           </ul>
         </section>
@@ -267,11 +468,19 @@
             <h2 data-i18n="options_filterList_title"></h2>
             <p>
               <span data-i18n="options_filterList_description"></span>
-              <a data-i18n="options_learn_more" data-doclink="subscriptions"></a>
+              <a
+                data-i18n="options_learn_more"
+                data-doclink="subscriptions"
+              ></a>
             </p>
           </header>
           <div id="update-all-subscriptions">
-            <button id="update" data-i18n="options_filterList_update" class="secondary" data-action="update-all-subscriptions"></button>
+            <button
+              id="update"
+              data-i18n="options_filterList_update"
+              class="secondary"
+              data-action="update-all-subscriptions"
+            ></button>
           </div>
           <div id="all-filter-lists-table-header" class="th">
             <h3 data-i18n="options_filterList_column_status" class="col5"></h3>
@@ -283,7 +492,10 @@
           <ul class="table cols" id="all-filter-lists-table">
             <template>
               <div class="col5">
-                <io-toggle class="control" data-action="toggle-disable-subscription"></io-toggle>
+                <io-toggle
+                  class="control"
+                  data-action="toggle-disable-subscription"
+                ></io-toggle>
               </div>
               <div class="col5">
                 <span data-display></span>
@@ -291,7 +503,12 @@
               <div class="col5">
                 <span class="last-update"></span>
                 <span class="message"></span>
-                <io-popout type="tooltip" appearance="error" anchor-icon="error" data-template-i18n-body="options_filterList_errorPopup_title">
+                <io-popout
+                  type="tooltip"
+                  appearance="error"
+                  anchor-icon="error"
+                  data-template-i18n-body="options_filterList_errorPopup_title"
+                >
                   <ul class="error-list"></ul>
                 </io-popout>
               </div>
@@ -299,19 +516,35 @@
                 <io-popout type="menubar">
                   <ul class="content" role="menu">
                     <li role="menuitem">
-                      <button data-i18n="options_filterList_updateNow" class="icon update-subscription" data-action="update-subscription"></button>
+                      <button
+                        data-i18n="options_filterList_updateNow"
+                        class="icon update-subscription"
+                        data-action="update-subscription"
+                      ></button>
                     </li>
                     <li role="menuitem">
-                      <a data-i18n="options_filterList_website" class="icon website" target="_blank"></a>
+                      <a
+                        data-i18n="options_filterList_website"
+                        class="icon website"
+                        target="_blank"
+                      ></a>
                     </li>
                     <li role="menuitem">
-                      <a data-i18n="options_filterList_source" class="icon source" target="_blank"></a>
+                      <a
+                        data-i18n="options_filterList_source"
+                        class="icon source"
+                        target="_blank"
+                      ></a>
                     </li>
                   </ul>
                 </io-popout>
               </div>
               <div class="col5">
-                <button data-hide="preconfigured" data-action="remove-subscription" class="control icon delete"></button>
+                <button
+                  data-hide="preconfigured"
+                  data-action="remove-subscription"
+                  class="control icon delete"
+                ></button>
               </div>
             </template>
           </ul>
@@ -320,11 +553,15 @@
               id="filters-box"
               data-text="options_builtin_filterList_add"
               data-expanded="options_builtin_filterList_add"
-              autoclose detached
+              autoclose
+              detached
             ></io-list-box>
             <div id="filterlist-by-url-wrap" tabindex="-1">
               <div id="filterlist-by-url" aria-hidden="true">
-                <h3 data-i18n="options_filterList_add" class="add secondary"></h3>
+                <h3
+                  data-i18n="options_filterList_add"
+                  class="add secondary"
+                ></h3>
                 <form data-validation="custom" novalidate>
                   <p class="main-input">
                     <!--
@@ -333,32 +570,59 @@
                       a supported protocol
                       https://gitlab.com/eyeo/adblockplus/adblockpluscore/blob/d3f6b1b7e3880eab6356b132493a4a947c87d33f/lib/downloader.js#L270
                     -->
-                    <input id="import-list-url" type="url"
-                      required pattern="^(?:data|https):.*$"
-                      data-i18n-placeholder="options_dialog_import_subscription_location">
+                    <input
+                      id="import-list-url"
+                      type="url"
+                      required
+                      pattern="^(?:data|https):.*$"
+                      data-i18n-placeholder="options_dialog_import_subscription_location"
+                    />
                     <span class="error-msg"></span>
                     <span class="icon attention"></span>
                   </p>
                   <p class="side-controls">
-                    <button type="button" data-i18n="options_dialog_import_title" class="primary" data-action="validate-import-subscription"></button>
-                    <button type="reset" data-i18n="options_customFilter_cancel" class="secondary" data-action="close-filterlist-by-url"></button>
+                    <button
+                      type="button"
+                      data-i18n="options_dialog_import_title"
+                      class="primary"
+                      data-action="validate-import-subscription"
+                    ></button>
+                    <button
+                      type="reset"
+                      data-i18n="options_customFilter_cancel"
+                      class="secondary"
+                      data-action="close-filterlist-by-url"
+                    ></button>
                   </p>
                 </form>
               </div>
-              <button data-i18n="options_filterList_add" class="add secondary" data-action="open-filterlist-by-url"></button>
+              <button
+                data-i18n="options_filterList_add"
+                class="add secondary"
+                data-action="open-filterlist-by-url"
+              ></button>
             </div>
-            <div id="filterlist-note-mv3" data-i18n="options_filterList_note_mv3"></div>
+            <div
+              id="filterlist-note-mv3"
+              data-i18n="options_filterList_note_mv3"
+            ></div>
           </div>
         </section>
 
         <section>
           <header>
             <h2 data-i18n="options_customFilters_title"></h2>
-            <p id="custom-filters-description" data-i18n="options_customFilters_description"></p>
+            <p
+              id="custom-filters-description"
+              data-i18n="options_customFilters_description"
+            ></p>
           </header>
           <div id="custom-filters">
             <h3>
-              <span data-i18n="options_customFilters_widget_title" class="io-filter-table-title"></span>
+              <span
+                data-i18n="options_customFilters_widget_title"
+                class="io-filter-table-title"
+              ></span>
             </h3>
             <io-filter-table></io-filter-table>
           </div>
@@ -368,11 +632,17 @@
         <section id="data-collection">
           <h2 data-i18n="options_data_collection_opt_out_header"></h2>
           <p>
-            <span data-i18n="options_data_collection_opt_out_description"></span>
+            <span
+              data-i18n="options_data_collection_opt_out_description"
+            ></span>
           </p>
           <ul class="list">
             <li data-pref="data_collection_opt_out">
-              <button class="icon" role="checkbox" data-action="toggle-pref"></button>
+              <button
+                class="icon"
+                role="checkbox"
+                data-action="toggle-pref"
+              ></button>
               <span data-i18n="options_data_collection_opt_out_label"></span>
             </li>
           </ul>
@@ -393,7 +663,9 @@
             <li id="visit-forum" data-i18n="options_report_forum"></li>
             <li>
               <span data-i18n="options_email"></span>
-              <a href="mailto:support@adblockplus.org">support@adblockplus.org</a>
+              <a href="mailto:support@adblockplus.org"
+                >support@adblockplus.org</a
+              >
             </li>
           </ul>
         </section>
@@ -423,11 +695,16 @@
     <!-- Additional sidebar -->
     <aside>
       <io-popout id="support-us" type="dialog" anchor-icon="heart">
-        <img class="h2-icon" src="skin/icons/waving.svg">
+        <img class="h2-icon" src="skin/icons/waving.svg" />
         <h2 data-i18n="options_supportUs_title"></h2>
         <p data-i18n="options_supportUs_description"></p>
         <a data-i18n="options_rating_button" class="button" target="_blank"></a>
-        <a data-i18n="options_donate_button" data-doclink="donate_settings_page" class="button" target="_blank"></a>
+        <a
+          data-i18n="options_donate_button"
+          data-doclink="donate_settings_page"
+          class="button"
+          target="_blank"
+        ></a>
       </io-popout>
     </aside>
 
@@ -438,11 +715,26 @@
       <span class="focus-first" tabindex="0"></span>
       <header id="dialog-title">
         <h3 id="dialog-title-about" data-i18n="options_dialog_about_title"></h3>
-        <h3 id="dialog-title-language-add" data-i18n="options_dialog_language_title"></h3>
-        <h3 id="dialog-title-language-change" data-i18n="options_dialog_language_title"></h3>
-        <h3 id="dialog-title-predefined" data-i18n="options_dialog_predefined_title"></h3>
-        <h3 id="dialog-title-invalid" data-i18n="options_dialog_invalid_title"></h3>
-        <h3 id="dialog-title-optIn-premium-subscription" data-i18n="options_dialog_optIn_premium_subscription_title"></h3>
+        <h3
+          id="dialog-title-language-add"
+          data-i18n="options_dialog_language_title"
+        ></h3>
+        <h3
+          id="dialog-title-language-change"
+          data-i18n="options_dialog_language_title"
+        ></h3>
+        <h3
+          id="dialog-title-predefined"
+          data-i18n="options_dialog_predefined_title"
+        ></h3>
+        <h3
+          id="dialog-title-invalid"
+          data-i18n="options_dialog_invalid_title"
+        ></h3>
+        <h3
+          id="dialog-title-optIn-premium-subscription"
+          data-i18n="options_dialog_optIn_premium_subscription_title"
+        ></h3>
       </header>
       <div id="dialog-body" class="content">
         <!-- About Adblock Plus -->
@@ -452,11 +744,19 @@
             <p id="copyright"></p>
             <p data-i18n="options_dialog_about_trademark"></p>
             <p>
-              <a id="privacy-policy" data-i18n="issueReporter_privacyPolicy" target="_blank"></a>
+              <a
+                id="privacy-policy"
+                data-i18n="issueReporter_privacyPolicy"
+                target="_blank"
+              ></a>
             </p>
           </div>
           <div class="ctas">
-            <button data-i18n="options_close" class="primary default-focus" data-action="close-dialog"></button>
+            <button
+              data-i18n="options_close"
+              class="primary default-focus"
+              data-action="close-dialog"
+            ></button>
           </div>
         </div>
         <!-- Add predefined subscription -->
@@ -470,42 +770,65 @@
               <h3 data-i18n="options_dialog_predefined_subscription_url"></h3>
               <a href="#" target="_blank"></a>
             </div>
-            <div id="dialog-predefined-note-mv3" data-i18n="options_filterList_note_mv3"></div>
+            <div
+              id="dialog-predefined-note-mv3"
+              data-i18n="options_filterList_note_mv3"
+            ></div>
           </div>
           <div class="ctas">
-            <button class="secondary" data-action="close-dialog"
-              data-i18n="options_customFilter_cancel"></button>
-            <button class="default-focus primary"
+            <button
+              class="secondary"
+              data-action="close-dialog"
+              data-i18n="options_customFilter_cancel"
+            ></button>
+            <button
+              class="default-focus primary"
               data-action="add-predefined-subscription"
-              data-i18n="options_dialog_predefined_confirm"></button>
+              data-i18n="options_dialog_predefined_confirm"
+            ></button>
           </div>
         </div>
         <!-- Reject invalid subscriptions -->
         <div id="dialog-content-invalid" class="dialog-content">
           <div class="error">!</div>
-          <div id="dialog-description-invalid"
-            data-i18n="options_dialog_invalid_message"></div>
+          <div
+            id="dialog-description-invalid"
+            data-i18n="options_dialog_invalid_message"
+          ></div>
           <div class="ctas">
-            <button class="default-focus primary" data-action="close-dialog"
-              data-i18n="options_customFilter_cancel"></button>
+            <button
+              class="default-focus primary"
+              data-action="close-dialog"
+              data-i18n="options_customFilter_cancel"
+            ></button>
           </div>
         </div>
         <!-- Add opt-in premium subscription -->
-        <div id="dialog-content-optIn-premium-subscription" class="dialog-content">
-          <p data-i18n="options_dialog_optIn_premium_subscription_description"></p>
+        <div
+          id="dialog-content-optIn-premium-subscription"
+          class="dialog-content"
+        >
+          <p
+            data-i18n="options_dialog_optIn_premium_subscription_description"
+          ></p>
           <div class="ctas">
-            <button class="secondary" data-action="close-dialog"
-              data-i18n="options_dialog_optIn_premium_subscription_reject"></button>
-            <button class="default-focus premium"
-            data-action="add-subscription"
-            data-i18n="options_dialog_optIn_premium_subscription_confirm"></button>
+            <button
+              class="secondary"
+              data-action="close-dialog"
+              data-i18n="options_dialog_optIn_premium_subscription_reject"
+            ></button>
+            <button
+              class="default-focus premium"
+              data-action="add-subscription"
+              data-i18n="options_dialog_optIn_premium_subscription_confirm"
+            ></button>
           </div>
         </div>
       </div>
       <!-- Placeholder element to determine when to wrap focus around -->
       <span class="focus-last" tabindex="0"></span>
     </div>
-     <!-- Notification -->
+    <!-- Notification -->
     <div id="notification" aria-hidden="true" aria-live="polite">
       <strong id="notification-text"></strong>
       <button class="icon close secondary" data-action="hide-notification">

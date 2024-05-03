@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--
   - This file is part of Adblock Plus <https://adblockplus.org/>,
   - Copyright (C) 2006-present eyeo GmbH
@@ -18,16 +18,18 @@
 <html>
   <head>
     <title data-i18n="mops_title"></title>
-    <link rel="icon" type="image/png" href="icons/abp-32.png">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="icon" type="image/png" href="icons/abp-32.png" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
     <script src="polyfill.js"></script>
     <script src="ext/common.js"></script>
     <script src="ext/content.js"></script>
     <script src="mobile-options.js" defer></script>
   </head>
   <body hidden>
-
     <main>
       <h1 data-i18n="mops_title"></h1>
 
@@ -38,30 +40,44 @@
             <span id="enabled-domain"></span>
           </label>
         </span>
-        <input id="enabled" type="checkbox" data-action="toggle-enabled">
+        <input id="enabled" type="checkbox" data-action="toggle-enabled" />
         <label class="toggle-image" for="enabled"></label>
       </p>
 
       <h2 data-i18n="mops_subscriptions_header"></h2>
 
       <ul id="subscriptions-installed"></ul>
-      <button data-i18n="mops_filterlist_add" class="add"
-          data-action="open-dialog" data-dialog="recommended">
-      </button>
+      <button
+        data-i18n="mops_filterlist_add"
+        class="add"
+        data-action="open-dialog"
+        data-dialog="recommended"
+      ></button>
 
       <p class="toggle-container">
         <span>
-          <label data-i18n="mops_acceptableAds_description" class="checkbox"
-              for="acceptableAds">
+          <label
+            data-i18n="mops_acceptableAds_description"
+            class="checkbox"
+            for="acceptableAds"
+          >
           </label>
-          <a id="acceptableAds-more" data-i18n="mops_acceptableAds_more" data-doclink="acceptable_ads"></a>
+          <a
+            id="acceptableAds-more"
+            data-i18n="mops_acceptableAds_more"
+            data-doclink="acceptable_ads"
+          ></a>
         </span>
-        <input id="acceptableAds" type="checkbox">
+        <input id="acceptableAds" type="checkbox" />
         <label class="toggle-image" for="acceptableAds"></label>
       </p>
 
       <footer>
-        <a id="privacy-policy" data-i18n="issueReporter_privacyPolicy" target="_blank"></a>
+        <a
+          id="privacy-policy"
+          data-i18n="issueReporter_privacyPolicy"
+          target="_blank"
+        ></a>
         <a id="imprint" target="_blank">eyeo GmbH</a>
       </footer>
     </main>
@@ -70,37 +86,54 @@
       <div id="dialog-recommended" role="dialog">
         <ul id="subscriptions-recommended"></ul>
 
-        <button data-i18n="mops_filterlist_add_url" class="add"
-            data-action="open-dialog" data-dialog="subscribe">
-        </button>
+        <button
+          data-i18n="mops_filterlist_add_url"
+          class="add"
+          data-action="open-dialog"
+          data-dialog="subscribe"
+        ></button>
       </div>
 
       <div id="dialog-subscribe" role="dialog">
         <form>
           <h2 data-i18n="mops_subscribe_header"></h2>
           <p>
-            <input name="title" type="text"
-              data-i18n-placeholder="mops_subscribe_title">
+            <input
+              name="title"
+              type="text"
+              data-i18n-placeholder="mops_subscribe_title"
+            />
             <label data-i18n="mops_subscribe_title"></label>
           </p>
 
           <p>
-            <input name="url" type="text"
-              data-i18n-placeholder="mops_subscribe_url">
+            <input
+              name="url"
+              type="text"
+              data-i18n-placeholder="mops_subscribe_url"
+            />
             <label data-i18n="mops_subscribe_url"></label>
-            <span data-i18n="mops_error_url" class="error" data-error="url"></span>
+            <span
+              data-i18n="mops_error_url"
+              class="error"
+              data-error="url"
+            ></span>
           </p>
 
-          <button type="submit"
-              data-i18n="mops_filterlist_add_action" class="primary">
-          </button>
+          <button
+            type="submit"
+            data-i18n="mops_filterlist_add_action"
+            class="primary"
+          ></button>
 
-          <button type="reset" data-i18n="mops_action_cancel" class="secondary"
-              data-action="close-dialog">
-          </button>
+          <button
+            type="reset"
+            data-i18n="mops_action_cancel"
+            class="secondary"
+            data-action="close-dialog"
+          ></button>
         </form>
       </div>
     </div>
-
   </body>
 </html>

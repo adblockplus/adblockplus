@@ -30,9 +30,8 @@ export async function prepareElementForUnload(
   const message: GetClassNameMessage = {
     type: "unload-cleanup.getClassName"
   };
-  const className: string | undefined = await browser.runtime.sendMessage(
-    message
-  );
+  const className: string | undefined =
+    await browser.runtime.sendMessage(message);
   if (typeof className === "undefined") {
     // Background did not insert a style sheet.
     // Do not add clean-up classes.

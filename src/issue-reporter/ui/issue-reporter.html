@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--
   - This file is part of Adblock Plus <https://adblockplus.org/>,
   - Copyright (C) 2006-present eyeo GmbH
@@ -18,8 +18,8 @@
 
 <html>
   <head>
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="icons/abp-32.png">
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="icons/abp-32.png" />
     <script defer src="polyfill.js"></script>
     <script defer src="ext/common.js"></script>
     <script defer src="ext/content.js"></script>
@@ -29,37 +29,62 @@
   <body hidden>
     <!-- Notification -->
     <div id="notification">
-      <span id="notification-text" data-i18n="issueReporter_data_gathering_tab"></span>
+      <span
+        id="notification-text"
+        data-i18n="issueReporter_data_gathering_tab"
+      ></span>
       <button class="icon close tertiary" id="hide-notification">
         <span data-i18n="common_notification_hide" class="sr-only"></span>
       </button>
     </div>
     <header>
       <div class="logo">
-        <img id="logo" alt="" src="skin/icons/logo/abp-full.svg">
+        <img id="logo" alt="" src="skin/icons/logo/abp-full.svg" />
         <p data-i18n="issueReporter_page_title"></p>
       </div>
-      <io-steps i18n-labels="
+      <io-steps
+        i18n-labels="
         issueReporter_selectIssueButton_label
         issueReporter_markIssueButton_label
         issueReporter_detailsButton_label
         issueReporter_doneButton_label
-      "></io-steps>
+      "
+      ></io-steps>
     </header>
 
     <main>
-
       <div class="page" id="typeSelectorPage">
-        <span id="sr-warning" tabindex="0" class="sr-only" data-i18n="issueReporter_screenreader_warning"></span>
+        <span
+          id="sr-warning"
+          tabindex="0"
+          class="sr-only"
+          data-i18n="issueReporter_screenreader_warning"
+        ></span>
 
         <h1 data-i18n="issueReporter_typeSelector_heading"></h1>
         <p data-i18n="issueReporter_typeSelector_description"></p>
         <div id="typeSelectorGroup">
-          <input type="radio" id="typeFalsePositive" value="false positive" name="type">
-          <label for="typeFalsePositive" data-i18n="issueReporter_falsePositive_label"></label>
+          <input
+            type="radio"
+            id="typeFalsePositive"
+            value="false positive"
+            name="type"
+          />
+          <label
+            for="typeFalsePositive"
+            data-i18n="issueReporter_falsePositive_label"
+          ></label>
           <p data-i18n="issueReporter_falsePositive_description"></p>
-          <input type="radio" id="typeFalseNegative" value="false negative" name="type">
-          <label for="typeFalseNegative" data-i18n="issueReporter_falseNegative_label"></label>
+          <input
+            type="radio"
+            id="typeFalseNegative"
+            value="false negative"
+            name="type"
+          />
+          <label
+            for="typeFalseNegative"
+            data-i18n="issueReporter_falseNegative_label"
+          ></label>
           <p data-i18n="issueReporter_falseNegative_description"></p>
         </div>
       </div>
@@ -74,23 +99,38 @@
         <p data-i18n="issueReporter_email_description"></p>
 
         <label for="email" data-i18n="issueReporter_email_label"></label>
-        <input type="email" id="email" maxlength="200">
+        <input type="email" id="email" maxlength="200" />
 
         <div id="anonymousSubmissionContainer">
-          <input type="checkbox" id="anonymousSubmission">
-          <label for="anonymousSubmission" data-i18n="issueReporter_anonymousSubmission_label"></label>
-          <div id="anonymousSubmissionWarning" data-invisible="true" data-i18n="issueReporter_anonymousSubmission_warning"></div>
+          <input type="checkbox" id="anonymousSubmission" />
+          <label
+            for="anonymousSubmission"
+            data-i18n="issueReporter_anonymousSubmission_label"
+          ></label>
+          <div
+            id="anonymousSubmissionWarning"
+            data-invisible="true"
+            data-i18n="issueReporter_anonymousSubmission_warning"
+          ></div>
         </div>
 
         <label for="comment" data-i18n="issueReporter_comment_label"></label>
         <p data-i18n="issueReporter_comment_description"></p>
         <textarea id="comment"></textarea>
         <p id="includeConfigContainer">
-          <input id="includeConfig" type="checkbox">
-          <label for="includeConfig" data-i18n="issueReporter_config_label"></label>
+          <input id="includeConfig" type="checkbox" />
+          <label
+            for="includeConfig"
+            data-i18n="issueReporter_config_label"
+          ></label>
         </p>
         <p>
-          <button id="showData" data-i18n="issueReporter_showData_label" class="link" disabled></button>
+          <button
+            id="showData"
+            data-i18n="issueReporter_showData_label"
+            class="link"
+            disabled
+          ></button>
         </p>
       </div>
 
@@ -111,7 +151,11 @@
       <div class="modal" id="showDataOverlay" hidden>
         <div class="modalContent">
           <pre id="showDataValue" tabindex="0"></pre>
-          <button id="showDataClose" data-i18n="cancel" class="primary"></button>
+          <button
+            id="showDataClose"
+            data-i18n="cancel"
+            class="primary"
+          ></button>
         </div>
       </div>
     </main>
@@ -119,11 +163,26 @@
     <footer>
       <div>
         <div>
-          <a id="privacyPolicy" data-i18n="issueReporter_privacyPolicy" data-doclink="reporter_privacy"></a>
+          <a
+            id="privacyPolicy"
+            data-i18n="issueReporter_privacyPolicy"
+            data-doclink="reporter_privacy"
+          ></a>
         </div>
         <button id="cancel" data-i18n="cancel" class="secondary"></button>
-        <button id="continue" data-i18n="continue" class="primary" disabled></button>
-        <button id="send" data-i18n="issueReporter_sendButton_label" class="primary" disabled hidden></button>
+        <button
+          id="continue"
+          data-i18n="continue"
+          class="primary"
+          disabled
+        ></button>
+        <button
+          id="send"
+          data-i18n="issueReporter_sendButton_label"
+          class="primary"
+          disabled
+          hidden
+        ></button>
       </div>
       <div id="other-issues" data-i18n="issueReporter_other_issues"></div>
     </footer>
