@@ -19,7 +19,7 @@
   },
   "firstRun_donate": {
     "description": "https://gitlab.com/eyeo/specs/spec/-/blob/d8fb4d685ae8b6f264558e506c02f8b89d3a1612/spec/abp/first-run.md#header",
-    "message": "Donate"
+    "message": "Contribute"
   },
   "firstRun_fair_description": {
     "description": "https://gitlab.com/eyeo/specs/spec/-/blob/6a6fb785b6a703c5fe77e7109ddf3f6b3ee22787/spec/abp/first-run.md#index-1",

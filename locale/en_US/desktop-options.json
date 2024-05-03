@@ -585,7 +585,7 @@
   },
   "options_donate_button": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/677a0a3c68c7e96369301813d8b413c6ecd1b381/spec/abp/desktop-settings/index.md#store-rating",
-    "message": "Donate"
+    "message": "Contribute"
   },
   "options_data_collection_opt_out_header": {
     "message": "Data Collection",

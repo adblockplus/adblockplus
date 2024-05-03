@@ -115,7 +115,7 @@
   },
   "footer_donate_button": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/588556f9ca89668a018aa7db00252747ba789b07/spec/abp/popup.md#footer-teaser",
-    "message": "Donate"
+    "message": "Contribute"
   },
   "footer_rate_description": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/588556f9ca89668a018aa7db00252747ba789b07/spec/abp/popup.md#footer-teaser",
