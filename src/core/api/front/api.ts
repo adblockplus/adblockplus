@@ -221,13 +221,23 @@ export const premium = {
 
   /**
    * Add a premium subscription
-   *
-   * @returns Premium state
+   * @returns void
    */
   add: async (
     subscriptionType: PremiumSubscriptionsTypes["subscriptionType"]
   ) => {
     await send("premium.subscriptions.add", { subscriptionType });
+  },
+
+  /**
+   * Removes a premium subscription
+   *
+   * @returns Premium state
+   */
+  remove: async (
+    subscriptionType: PremiumSubscriptionsTypes["subscriptionType"]
+  ) => {
+    await send("premium.subscriptions.remove", { subscriptionType });
   },
 
   /**

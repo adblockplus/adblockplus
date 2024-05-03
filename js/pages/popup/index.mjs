@@ -264,7 +264,7 @@ async function setupPremiumToggles()
     }
     else
     {
-      // api.premium.remove(ANNOYANCE_SUBSCRIPTION_TYPE);
+      api.premium.remove(ANNOYANCE_SUBSCRIPTION_TYPE);
     }
   });
 }

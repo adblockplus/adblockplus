@@ -392,6 +392,7 @@ export type SendType =
   | "premium.activate"
   | "premium.get"
   | "premium.subscriptions.add"
+  | "premium.subscriptions.remove"
   | "stats.getBlockedPerPage"
   | "stats.getBlockedTotal"
   | "subscriptions.add"

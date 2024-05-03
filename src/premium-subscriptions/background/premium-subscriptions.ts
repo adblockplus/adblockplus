@@ -158,14 +158,23 @@ export function start(): void {
 
   port.on(
     "premium.subscriptions.add",
-    async (msg: Message & PremiumSubscriptionsTypes) => {
-      console.log("received premium sub message", msg);
-
+    (msg: Message & PremiumSubscriptionsTypes) => {
       if (msg.type !== "premium.subscriptions.add") {
         return;
       }
 
       addPremiumSubscription(msg.subscriptionType);
+    }
+  );
+
+  port.on(
+    "premium.subscriptions.remove",
+    async (msg: Message & PremiumSubscriptionsTypes) => {
+      if (msg.type !== "premium.subscriptions.remove") {
+        return;
+      }
+
+      await removePremiumSubscription(msg.subscriptionType);
     }
   );
 }
