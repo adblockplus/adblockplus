@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--
   - This file is part of Adblock Plus <https://adblockplus.org/>,
   - Copyright (C) 2006-present eyeo GmbH
@@ -18,7 +18,7 @@
 <html>
   <head>
     <title>Adblock Plus</title>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <script src="polyfill.js"></script>
     <script src="ext/common.js"></script>
     <script src="ext/content.js"></script>
@@ -26,16 +26,27 @@
   </head>
   <body class="nohtml" tabindex="1" data-source="popup" hidden>
     <header>
-      <img src="skin/icons/logo/abp-full.svg" alt="">
-      <a id="premium-upgrade" data-i18n="premium_upgrade" class="premium upgrade" target="_blank"></a>
-      <a id="premium-manage" class="premium manage premium-label" dir="ltr" target="_blank">Premium</a>
+      <img src="skin/icons/logo/abp-full.svg" alt="" />
+      <a
+        id="premium-upgrade"
+        data-i18n="premium_upgrade"
+        class="premium upgrade"
+        target="_blank"
+      ></a>
+      <a
+        id="premium-manage"
+        class="premium manage premium-label"
+        dir="ltr"
+        target="_blank"
+        >Premium</a
+      >
       <button id="options" data-i18n="options_short"></button>
     </header>
     <div id="notification" hidden></div>
     <main>
       <div id="idle-status">
         <h2 data-i18n="idle_header"></h2>
-        <img src="skin/icons/idle.svg" alt="">
+        <img src="skin/icons/idle.svg" alt="" />
       </div>
       <div id="page-status">
         <h2 data-i18n="status_header"></h2>
@@ -71,37 +82,59 @@
             <div class="share">
               <div class="stack">
                 <button class="enter">
-                  <img src="skin/icons/share.svg" alt="">
+                  <img src="skin/icons/share.svg" alt="" />
                   <span data-i18n="social_media_share"></span>
                 </button>
               </div>
               <div class="stack links">
                 <span class="link">
                   <a class="facebook" tabindex="-1" href="#">
-                    <img data-i18n-alt="share_on_facebook" src="skin/icons/share-on-facebook.svg" height="16">
+                    <img
+                      data-i18n-alt="share_on_facebook"
+                      src="skin/icons/share-on-facebook.svg"
+                      height="16"
+                    />
                   </a>
                 </span>
                 <span class="link">
                   <a class="twitter" tabindex="-1" href="#">
-                    <img data-i18n-alt="share_on_twitter" src="skin/icons/share-on-twitter.svg" height="14">
+                    <img
+                      data-i18n-alt="share_on_twitter"
+                      src="skin/icons/share-on-twitter.svg"
+                      height="14"
+                    />
                   </a>
                 </span>
                 <span class="link weibo">
                   <a class="weibo" tabindex="-1" href="#">
-                    <img data-i18n-alt="share_on_weibo" src="skin/icons/share-on-weibo.svg" height="14">
+                    <img
+                      data-i18n-alt="share_on_weibo"
+                      src="skin/icons/share-on-weibo.svg"
+                      height="14"
+                    />
                   </a>
                 </span>
-                <button class="cancel" tabindex="-1" data-i18n="cancel"></button>
+                <button
+                  class="cancel"
+                  tabindex="-1"
+                  data-i18n="cancel"
+                ></button>
               </div>
             </div>
           </div>
           <div class="options">
             <button id="block-element">
-              <strong data-i18n="easy_create_filter" class="block background-icon"></strong>
+              <strong
+                data-i18n="easy_create_filter"
+                class="block background-icon"
+              ></strong>
               <span data-i18n="block_element_description" class="block"></span>
             </button>
             <button id="issue-reporter">
-              <span data-i18n="sendReport" class="report background-icon"></span>
+              <span
+                data-i18n="sendReport"
+                class="report background-icon"
+              ></span>
             </button>
           </div>
         </div>

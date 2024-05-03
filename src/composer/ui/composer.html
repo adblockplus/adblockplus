@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--
   - This file is part of Adblock Plus <https://adblockplus.org/>,
   - Copyright (C) 2006-present eyeo GmbH
@@ -18,8 +18,8 @@
 
 <html>
   <head>
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="icons/abp-32.png">
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="icons/abp-32.png" />
     <title>Adblock Plus</title>
     <script src="polyfill.js"></script>
     <script src="ext/common.js"></script>
@@ -28,24 +28,44 @@
   </head>
   <body hidden>
     <main>
-      <textarea id="filters" data-i18n="composer_loading"
-                autocomplete="off" autocorrect="off" autocapitalize="off"
-                spellcheck="false" disabled></textarea>
+      <textarea
+        id="filters"
+        data-i18n="composer_loading"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+        disabled
+      ></textarea>
       <div id="actions">
         <div id="details">
-          <span id="selected" data-count="0" data-i18n="composer_elements"></span>
+          <span
+            id="selected"
+            data-count="0"
+            data-i18n="composer_elements"
+          ></span>
           •
           <button id="unselect" data-i18n="composer_unselect"></button>
         </div>
         <div class="spacer"></div>
-        <button id="preview" data-i18n="composer_preview" data-preview="inactive" disabled></button>
+        <button
+          id="preview"
+          data-i18n="composer_preview"
+          data-preview="inactive"
+          disabled
+        ></button>
         <button id="block" data-i18n="composer_block" disabled></button>
-        <button id="block-reload" data-i18n="composer_block_reload" disabled hidden></button>
+        <button
+          id="block-reload"
+          data-i18n="composer_block_reload"
+          disabled
+          hidden
+        ></button>
       </div>
     </main>
     <footer>
       <button id="cancel" data-i18n="composer_cancel"></button>
-      <img id="logo" src="skin/icons/logo/abp-full.svg" alt="">
+      <img id="logo" src="skin/icons/logo/abp-full.svg" alt="" />
     </footer>
   </body>
 </html>

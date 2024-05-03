@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--
   - This file is part of Adblock Plus <https://adblockplus.org/>,
   - Copyright (C) 2006-present eyeo GmbH
@@ -16,101 +16,119 @@
   - along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
   -->
 <html>
-<head>
-  <title data-i18n="updates_title"></title>
-  <link rel="icon" type="image/png" href="icons/abp-32.png">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <script src="polyfill.js"></script>
-  <script src="ext/common.js"></script>
-  <script src="ext/content.js"></script>
-  <script src="updates.js" defer></script>
-</head>
-<body hidden>
-
-<main>
-  <header>
-    <div class="content columns">
-      <div id="title-wrapper">
-        <a class="logo" data-doclink="adblock_plus">
-          <img src="skin/icons/logo/abp-full.svg" alt="Adblock Plus">
-        </a>
-        <div id="title">
-          <div>
-            <span id="version"></span>
-          </div>
-          <h1 data-i18n="updates_title"></h1>
-          <p data-i18n="updates_subtitle"></p>
-        </div>
-      </div>
-      <div id="hero">
-        <img src="" alt="">
-      </div>
-    </div>
-  </header>
-
-  <article class="secondary">
-    <div class="content">
-      <section id="improvements">
-        <h2 class="icon" data-i18n="updates_improvements_title"></h2>
-        <ul class="updates"></ul>
-      </section>
-
-      <section id="fixes">
-        <h2 class="icon" data-i18n="updates_fixes_title"></h2>
-        <ul class="updates"></ul>
-      </section>
-    </div>
-
-    <div id="contribute" class="content">
+  <head>
+    <title data-i18n="updates_title"></title>
+    <link rel="icon" type="image/png" href="icons/abp-32.png" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <script src="polyfill.js"></script>
+    <script src="ext/common.js"></script>
+    <script src="ext/content.js"></script>
+    <script src="updates.js" defer></script>
+  </head>
+  <body hidden>
+    <main>
       <header>
-        <h2 data-i18n="updates_contribute_title"></h2>
-        <p id="contribute-subtitle"></p>
+        <div class="content columns">
+          <div id="title-wrapper">
+            <a class="logo" data-doclink="adblock_plus">
+              <img src="skin/icons/logo/abp-full.svg" alt="Adblock Plus" />
+            </a>
+            <div id="title">
+              <div>
+                <span id="version"></span>
+              </div>
+              <h1 data-i18n="updates_title"></h1>
+              <p data-i18n="updates_subtitle"></p>
+            </div>
+          </div>
+          <div id="hero">
+            <img src="" alt="" />
+          </div>
+        </div>
       </header>
 
-      <div class="columns">
-        <section id="contribute-rate">
-          <div class="block-icon">
-            <h3 data-i18n="updates_contribute_rate_title"></h3>
-            <p data-i18n="updates_contribute_rate_subtitle"></p>
-            <a class="button secondary"
-              href="#" target="_blank"
-              data-i18n="updates_contribute_rate_action"></a>
+      <article class="secondary">
+        <div class="content">
+          <section id="improvements">
+            <h2 class="icon" data-i18n="updates_improvements_title"></h2>
+            <ul class="updates"></ul>
+          </section>
+
+          <section id="fixes">
+            <h2 class="icon" data-i18n="updates_fixes_title"></h2>
+            <ul class="updates"></ul>
+          </section>
+        </div>
+
+        <div id="contribute" class="content">
+          <header>
+            <h2 data-i18n="updates_contribute_title"></h2>
+            <p id="contribute-subtitle"></p>
+          </header>
+
+          <div class="columns">
+            <section id="contribute-rate">
+              <div class="block-icon">
+                <h3 data-i18n="updates_contribute_rate_title"></h3>
+                <p data-i18n="updates_contribute_rate_subtitle"></p>
+                <a
+                  class="button secondary"
+                  href="#"
+                  target="_blank"
+                  data-i18n="updates_contribute_rate_action"
+                ></a>
+              </div>
+            </section>
+
+            <section id="contribute-donate">
+              <div class="block-icon">
+                <h3 data-i18n="updates_contribute_donate_title"></h3>
+                <p data-i18n="updates_contribute_donate_subtitle"></p>
+                <a
+                  class="button secondary"
+                  data-doclink="donation_update_page"
+                  target="_blank"
+                  data-i18n="updates_contribute_donate_action"
+                ></a>
+              </div>
+            </section>
           </div>
-        </section>
+        </div>
+      </article>
 
-        <section id="contribute-donate">
-          <div class="block-icon">
-            <h3 data-i18n="updates_contribute_donate_title"></h3>
-            <p data-i18n="updates_contribute_donate_subtitle"></p>
-            <a class="button secondary"
-              data-doclink="donation_update_page" target="_blank"
-              data-i18n="updates_contribute_donate_action"></a>
-          </div>
-        </section>
-      </div>
-    </div>
-  </article>
+      <article id="social">
+        <div class="content">
+          <h2 data-i18n="updates_social_title"></h2>
+          <p data-i18n="updates_social_description"></p>
+          <p>
+            <a
+              class="twitter"
+              target="_blank"
+              data-doclink="social_twitter"
+              data-i18n-title="updates_social_twitter"
+            ></a>
+            <a
+              class="facebook"
+              target="_blank"
+              data-doclink="social_facebook"
+              data-i18n-title="updates_social_facebook"
+            ></a>
+            <a
+              class="email"
+              href="mailto:support@adblockplus.org"
+              data-i18n-title="updates_social_email"
+            ></a>
+          </p>
+        </div>
+      </article>
+    </main>
 
-  <article id="social">
-    <div class="content">
-      <h2 data-i18n="updates_social_title"></h2>
-      <p data-i18n="updates_social_description"></p>
-      <p>
-        <a class="twitter" target="_blank" data-doclink="social_twitter"
-          data-i18n-title="updates_social_twitter"></a>
-        <a class="facebook" target="_blank" data-doclink="social_facebook"
-          data-i18n-title="updates_social_facebook"></a>
-        <a class="email" href="mailto:support@adblockplus.org"
-          data-i18n-title="updates_social_email"></a>
-      </p>
-    </div>
-  </article>
-</main>
-
-<footer>
-  <span id="copyright-notice"></span>
-</footer>
-
-</body>
+    <footer>
+      <span id="copyright-notice"></span>
+    </footer>
+  </body>
 </html>

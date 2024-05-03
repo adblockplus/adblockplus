@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <!--
   - This file is part of Adblock Plus <https://adblockplus.org/>,
@@ -19,29 +19,34 @@
 
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <link rel="icon" type="image/png" href="icons/abp-32.png">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <link rel="icon" type="image/png" href="icons/abp-32.png" />
     <style>
-    body
-    {
-      margin: 0;
-      border: none;
-      padding: 0;
-    }
+      body {
+        margin: 0;
+        border: none;
+        padding: 0;
+      }
 
-    #content
-    {
-      border: none;
-      position: fixed;
-      width: 100%;
-      height: 100%;
-    }
+      #content {
+        border: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+      }
     </style>
     <script src="polyfill.js"></script>
     <script src="options.js" defer></script>
   </head>
   <body hidden>
-    <iframe id="content" data-src="desktop-options.html" data-src-android="mobile-options.html"></iframe>
+    <iframe
+      id="content"
+      data-src="desktop-options.html"
+      data-src-android="mobile-options.html"
+    ></iframe>
   </body>
 </html>

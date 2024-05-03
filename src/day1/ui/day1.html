@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--
   - This file is part of Adblock Plus <https://adblockplus.org/>,
   - Copyright (C) 2006-present eyeo GmbH
@@ -18,25 +18,31 @@
 <html>
   <head>
     <title id="title-message"></title>
-    <link rel="icon" type="image/png" href="icons/abp-32.png">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="icon" type="image/png" href="icons/abp-32.png" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
     <script src="polyfill.js"></script>
     <script src="ext/common.js"></script>
     <script src="ext/content.js"></script>
     <script src="day1.js" defer></script>
   </head>
   <body hidden>
-
     <main>
       <header>
         <div class="content">
           <a class="logo" data-doclink="adblock_plus" target="_blank">
-            <img src="skin/icons/logo/abp-full.svg" alt="Adblock Plus">
+            <img src="skin/icons/logo/abp-full.svg" alt="Adblock Plus" />
           </a>
           <h1 id="content-message"></h1>
-          <a class="button" data-doclink="adware" target="_blank"
-            data-i18n="day1_header_more"></a>
+          <a
+            class="button"
+            data-doclink="adware"
+            target="_blank"
+            data-i18n="day1_header_more"
+          ></a>
         </div>
       </header>
 
@@ -48,8 +54,13 @@
             <p data-i18n="day1_community_description_2"></p>
           </div>
           <div>
-            <a id="contact" class="button" target="_blank"
-              data-i18n="day1_community_contact"></a>
+            <a
+              id="contact"
+              class="button"
+              target="_blank"
+              data-i18n="day1_community_contact"
+            ></a>
+          </div>
         </div>
       </article>
 
@@ -58,15 +69,21 @@
           <div>
             <h2 data-i18n="day1_blockelement_title"></h2>
             <p data-i18n="day1_blockelement_description"></p>
-            <a class="button secondary"
-              data-doclink="block_element" target="_blank"
-              data-i18n="day1_blockelement_more"></a>
+            <a
+              class="button secondary"
+              data-doclink="block_element"
+              target="_blank"
+              data-i18n="day1_blockelement_more"
+            ></a>
           </div>
           <div>
-            <img src="skin/backgrounds/toolbar.svg" alt="">
-            <iframe id="popup-dummy" src="popup-dummy.html"
+            <img src="skin/backgrounds/toolbar.svg" alt="" />
+            <iframe
+              id="popup-dummy"
+              src="popup-dummy.html"
               data-i18n-title="day1_blockelement_screenshot"
-              tabindex="-1"></iframe>
+              tabindex="-1"
+            ></iframe>
           </div>
         </div>
       </article>
@@ -75,6 +92,5 @@
     <footer>
       <span id="copyright-notice"></span>
     </footer>
-
   </body>
 </html>
