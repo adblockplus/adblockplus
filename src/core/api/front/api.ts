@@ -228,7 +228,9 @@ export const premium = {
   ) => {
     await send("premium.subscriptions.add", { subscriptionType });
   },
-
+  getPremiumSubscriptionsState: async () => {
+    return await send("premium.subscriptions.getState");
+  },
   /**
    * Removes a premium subscription
    *

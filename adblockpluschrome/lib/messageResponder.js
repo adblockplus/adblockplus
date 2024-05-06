@@ -161,12 +161,6 @@ export function start()
       return platformInfo.os;
     }
 
-    if (message.what === "premiumSubscriptions")
-    {
-      const premiumSubscriptions = await getPremiumSubscriptionsState();
-      return premiumSubscriptions;
-    }
-
     return info[message.what];
   });
 

@@ -289,7 +289,9 @@ async function setupPremiumToggles()
 async function updateToggles()
 {
   const isPremiumEnabled = await api.premium.get();
-  const premiumSubscriptionsState = await api.app.get("premiumSubscriptions");
+  const premiumSubscriptionsState = await api
+    .premium.getPremiumSubscriptionsState();
+
   const annoyanceSubActive = isPremiumEnabled &&
   premiumSubscriptionsState[ANNOYANCE_SUBSCRIPTION_TYPE];
   const cookiesSubActive = isPremiumEnabled &&

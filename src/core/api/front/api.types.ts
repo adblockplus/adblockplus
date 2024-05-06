@@ -36,7 +36,6 @@ export type AppGetWhat =
   | "platform"
   | "platformVersion"
   | "recommendations"
-  | "premiumSubscriptions"
   | "senderId";
 
 /**
@@ -393,6 +392,7 @@ export type SendType =
   | "premium.get"
   | "premium.subscriptions.add"
   | "premium.subscriptions.remove"
+  | "premium.subscriptions.getState"
   | "stats.getBlockedPerPage"
   | "stats.getBlockedTotal"
   | "subscriptions.add"

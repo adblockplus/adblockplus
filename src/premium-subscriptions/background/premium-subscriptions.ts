@@ -177,4 +177,13 @@ export function start(): void {
       await removePremiumSubscription(msg.subscriptionType);
     }
   );
+
+  port.on("premium.subscriptions.getState", async (msg: Message) => {
+    if (msg.type !== "premium.subscriptions.getState") {
+      return;
+    }
+
+    const state = await getPremiumSubscriptionsState();
+    return state;
+  });
 }
