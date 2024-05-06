@@ -1300,11 +1300,6 @@ function onDOMLoaded()
   {
     $("#acceptable-ads-why-not a.primary").href = url;
   });
-  getDoclink("manifestv3_explanation").then(url =>
-  {
-    setElementLinks("filterlist-note-mv3", url);
-    setElementLinks("dialog-predefined-note-mv3", url);
-  });
 
   // Advanced tab
   browser.runtime.sendMessage({
@@ -1351,17 +1346,6 @@ function onDOMLoaded()
       {
         $("#support-us a[data-i18n='options_rating_button']").href = url;
       });
-    }
-
-    // Initial Manifest v3 extension versions don't include support for
-    // non-recommended filter lists, so we need to disable that functionality
-    // in the UI for the time being
-    if (manifestVersion !== 2)
-    {
-      $("#filterlist-by-url-wrap > button").disabled = true;
-      $(
-        "#dialog-content-predefined [data-action='add-predefined-subscription']"
-      ).disabled = true;
     }
   });
 

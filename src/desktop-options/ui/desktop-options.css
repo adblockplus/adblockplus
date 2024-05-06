@@ -276,11 +276,6 @@ button[data-action="open-filterlist-by-url"]
   background-color: #FFF;
 }
 
-html[data-manifest-version="2"] #filterlist-note-mv3
-{
-  display: none;
-}
-
 .side-controls:not(.wrap)
 {
   display: flex;
@@ -2077,16 +2072,6 @@ html[dir="rtl"] #dialog-body .ctas > *:not(:first-child)
   border-radius: var(--border-radius);
   font-style: italic;
   background-color: var(--background-color-error);
-}
-
-html:not([data-manifest-version="2"]) #dialog-content-predefined .field
-{
-  display: none;
-}
-
-html[data-manifest-version="2"] #dialog-predefined-note-mv3
-{
-  display: none;
 }
 
 #dialog .field
