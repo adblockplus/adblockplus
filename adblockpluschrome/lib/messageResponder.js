@@ -24,8 +24,6 @@ import {Prefs} from "./prefs.js";
 import {info} from "../../src/info/background";
 import {getInstallationId} from "../../src/id/background";
 import {getPremiumState} from "../../src/premium/background";
-import {getPremiumSubscriptionsState}
-  from "../../src/premium-subscriptions/background";
 
 function forward(type, message, sender)
 {
