@@ -65,7 +65,7 @@
   },
   "sendReport": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/5a876713adebe79842be51ad6e287b1c675e023a/spec/abp/popup.md#block-element-and-report-issue",
-    "message": "Report an issue on this page"
+    "message": "Report issue"
   },
   "footer_mobile_description": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/588556f9ca89668a018aa7db00252747ba789b07/spec/abp/popup.md#footer-teaser",
