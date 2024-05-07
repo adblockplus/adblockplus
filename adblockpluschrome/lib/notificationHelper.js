@@ -21,6 +21,10 @@ import * as ewe from "@eyeo/webext-ad-filtering-solution";
 
 import {getPremiumState} from "../../src/premium/background/index.ts";
 import {info} from "../../src/info/background";
+import {
+  applyLinkTemplating,
+  isTabAlreadyOpen
+} from "../../src/notifications/background";
 import {initDay1Notification} from "../../lib/notifications.js";
 import {showOptions} from "../../lib/pages/options.js";
 import {port} from "./messaging/port.js";
@@ -73,16 +77,6 @@ const displayMethods = new Map([
   ["information", ["icon", "popup"]]
 ]);
 const defaultDisplayMethods = ["popup"];
-
-const linkPlaceholders = [
-  ["LANG", () => browser.i18n.getUILanguage().replace("-", "_")],
-  ["ADDON_NAME", () => info.addonName],
-  ["ADDON_VERSION", () => info.addonVersion],
-  ["APPLICATION_NAME", () => info.application],
-  ["APPLICATION_VERSION", () => info.applicationVersion],
-  ["PLATFORM_NAME", () => info.platform],
-  ["PLATFORM_VERSION", () => info.platformVersion]
-];
 
 // We must hard code any "abp:" prefixed notification links here, otherwise
 // notifications linking to them will not be displayed at all.
@@ -276,12 +270,15 @@ async function notificationDismissed(notificationId, isStashed)
     await session.delete(getButtonsKey(notificationId));
 }
 
-function openNotificationInNewTab(notification)
+async function openNotificationInNewTab(notification)
 {
-  let tabIds = new Set();
   let [url] = notification.links;
-  for (let [key, getValue] of linkPlaceholders)
-    url = url.replace(`%${key}%`, encodeURIComponent(getValue()));
+  const tabExists = await isTabAlreadyOpen(url, notification);
+  if (tabExists)
+    return;
+
+  let tabIds = new Set();
+  url = applyLinkTemplating(url, info);
 
   function openNotificationTab()
   {
@@ -415,7 +412,7 @@ async function showNotification(notification)
       return;
     }
 
-    openNotificationInNewTab(notification);
+    await openNotificationInNewTab(notification);
   }
   else
   {
