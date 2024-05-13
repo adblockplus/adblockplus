@@ -43,7 +43,7 @@ function addFilters(reload = false): void {
       type: "filters.importRaw",
       text: textarea.value
     })
-    .then((errors) => {
+    .then(([errors]) => {
       if (errors.length > 0) {
         errors = errors.map(getErrorMessage);
         alert(stripTagsUnsafe(errors.join("\n")));
