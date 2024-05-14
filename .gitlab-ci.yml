@@ -357,24 +357,16 @@ downloadxtm:
 
 .testpages:
   stage: testpages
-  image: docker:20.10.16
+  image: docker:24.0.5
   services:
-    - docker:20.10.16-dind
-  variables:
-    DOCKER_DRIVER: overlay2
+    - docker:24.0.5-dind
   interruptible: true
   before_script:
-    - apk add git
-    # Clone the latest master branch of the testpages project
-    - git clone https://gitlab.com/eyeo/developer-experience/testpages.adblockplus.org.git
-    - cp dist/release/$EXTENSION testpages.adblockplus.org
+    - apk add bash git
   script:
-    - cd testpages.adblockplus.org &&
-      docker build -t testpages --build-arg EXTENSION_FILE=$EXTENSION . &&
-      docker run --shm-size=256m -e SKIP_EXTENSION_DOWNLOAD="true" -e GREP="$PARAMETERS" testpages
+    - TERMINAL=t EXTENSION=dist/release/$EXTENSION ./test/compliance.sh
   after_script:
-    - docker cp $(docker ps -aqf ancestor=testpages):/testpages.adblockplus.org/test/screenshots .
-      2> /dev/null
+    - docker cp $(docker ps -aqf ancestor=compliance):/testpages.adblockplus.org/test/screenshots . 2> /dev/null
   artifacts:
     paths:
       - screenshots/
@@ -391,56 +383,54 @@ downloadxtm:
     - when: manual
       allow_failure: true
 
-testpages:MV3:chrome:latest:
+.testpages:MV3:
   extends: .testpages
   variables:
-    BROWSER: chromium latest
     EXTENSION: adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
-    SKIP: Subscriptions|Sitekey|Header
-    PARAMETERS: '^.*$BROWSER((?!$SKIP).)*$'
+    MANIFEST: mv3
+
+testpages:MV3:chrome:latest:
+  extends: .testpages:MV3
+  variables:
+    BROWSER: chromium latest
 
 testpages:MV3:edge:latest:
-  extends: .testpages
+  extends: .testpages:MV3
   variables:
     BROWSER: edge latest
-    EXTENSION: adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
-    SKIP: Subscriptions|Sitekey|Header
-    PARAMETERS: '^.*$BROWSER((?!$SKIP).)*$'
+
+.testpages:MV2:
+  extends: .testpages
+  variables:
+    EXTENSION: adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
+    MANIFEST: mv2
 
 testpages:MV2:chrome:latest:
-  extends: .testpages
+  extends: .testpages:MV2
   variables:
     BROWSER: chromium latest
-    EXTENSION: adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
-    PARAMETERS: $BROWSER
 
 testpages:MV2:edge:latest:
-  extends: .testpages
+  extends: .testpages:MV2
   variables:
     BROWSER: edge latest
-    EXTENSION: adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
-    PARAMETERS: $BROWSER
 
 testpages:MV2:chrome:oldest:
-  extends: .testpages
+  extends: .testpages:MV2
   variables:
     BROWSER: chromium 77.0.3865.0
-    EXTENSION: adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
-    PARAMETERS: $BROWSER
 
 testpages:MV2:firefox:latest:
-  extends: .testpages
+  extends: .testpages:MV2
   variables:
     BROWSER: firefox latest
     EXTENSION: adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
-    PARAMETERS: $BROWSER
 
 testpages:MV2:firefox:oldest:
-  extends: .testpages
+  extends: .testpages:MV2
   variables:
     BROWSER: firefox 68.0
     EXTENSION: adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
-    PARAMETERS: $BROWSER
 
 ################################################################################
 # UI tests

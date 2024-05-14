@@ -9,6 +9,7 @@
 /allure-report/
 /test/end-to-end/allure-results/
 /test/end-to-end/lambda_api.log
+/testpages.adblockplus.org/
 
 # generated test coverage
 coverage/

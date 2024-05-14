@@ -164,7 +164,29 @@ e.g
    ```
    all: ["./tests/test-options-page-dialog-links.js"],
    ```
- Allure reporter is used for displaying the results after the execution has been completed. The report can be generated and opened using the `npm run test:generate-and-open-report` command.   
+ Allure reporter is used for displaying the results after the execution has been completed. The report can be generated and opened using the `npm run test:generate-and-open-report` command.
+
+### Compliance tests
+
+Compliance tests run on a local version of [testpages](https://abptestpages.org)
+to assure compliance between Adblock Plus and other eyeo adblocking solutions.
+They run the tests from the [testpages project](https://gitlab.com/eyeo/developer-experience/testpages.adblockplus.org/)
+using a local build of the Adblock Plus extension.
+
+Prerequisites:
+
+- Docker
+
+To run the tests:
+
+```sh
+EXTENSION=dist/release/<build file> MANIFEST={mv2|mv3} ./test/compliance.sh
+```
+
+Optional environment variables:
+
+- BROWSER: Browser and version to run. The default is "chromium latest".
+- IMAGE_NAME: Name of the docker container. The default is "compliance".
 
 ### Linting
 
