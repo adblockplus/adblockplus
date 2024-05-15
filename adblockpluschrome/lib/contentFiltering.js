@@ -26,6 +26,10 @@ import {Prefs} from "./prefs.js";
 function updateMlTelemetryOptout()
 {
   mlService.setOptions({
+    async exceptionRules(tabId)
+    {
+      return ewe.filters.getAllowingFilters(tabId);
+    },
     privateBrowsingTelemetry: false,
     telemetryOptOut: Prefs.get("data_collection_opt_out")
   });
