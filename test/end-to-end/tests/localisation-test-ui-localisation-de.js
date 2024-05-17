@@ -37,7 +37,7 @@ describe("test ui for different languages - German", function()
 
   before(async function()
   {
-    globalOrigin = await beforeSequence(2);
+    globalOrigin = await beforeSequence(false);
   });
 
   uiLocalisationData.forEach(async(dataSet) =>

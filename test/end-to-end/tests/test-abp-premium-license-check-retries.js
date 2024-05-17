@@ -20,26 +20,22 @@
 const {beforeSequence, enablePremiumByMockServer,
        switchToABPOptionsTab} = require("../helpers");
 const {expect} = require("chai");
-const BackgroundPage = require("../page-objects/background.page");
 const PremiumHeaderChunk = require("../page-objects/premiumHeader.chunk");
-let globalOrigin;
+const ServiceWorkerPage = require("../page-objects/serviceWorker.page");
 
 describe("test abp premium license check retries", function()
 {
   before(async function()
   {
-    globalOrigin = await beforeSequence();
+    await beforeSequence();
   });
 
   it("should retry the request 3 times in 1 minute intervals", async function()
   {
     await enablePremiumByMockServer();
-    const backgroundPage = new BackgroundPage(browser);
-    if (browser.capabilities.browserName.toLowerCase().includes("chrome"))
-    {
-      await backgroundPage.init(globalOrigin);
-      await switchToABPOptionsTab();
-    }
+    const serviceWorkerPage = new ServiceWorkerPage(browser);
+    await serviceWorkerPage.init();
+    await switchToABPOptionsTab();
     await browser.executeScript(`
       return new Promise((resolve, reject) => {
         chrome.runtime.sendMessage({ type: "premium.activate",
@@ -55,16 +51,18 @@ describe("test abp premium license check retries", function()
     const premiumHeaderChunk = new PremiumHeaderChunk(browser);
     expect(await premiumHeaderChunk.isPremiumButtonDisplayed()).to.be.true;
     await browser.pause(2000);
-    await backgroundPage.switchToTab(/_generated_background_page/);
-    let consoleLog;
+    let logText;
     for (let i = 0; i < 4; i++)
     {
-      consoleLog = await browser.getLogs("browser");
-      expect(JSON.stringify(consoleLog)).to.match(new RegExp(
+      await serviceWorkerPage.switchToTab(/serviceworker/);
+      logText = await serviceWorkerPage.getLogTextAreaText();
+      expect(JSON.stringify(logText)).to.match(new RegExp(
         "Premium license check failed \\(retries: " + i +
         "\\)[^a-z]*Error: Received error response \\(code: 500\\)"));
       if (i < 3)
       {
+        await browser.refresh();
+        await switchToABPOptionsTab();
         // Wait 1 minute for a retry
         await browser.pause(63000);
       }

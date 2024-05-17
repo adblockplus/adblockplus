@@ -23,8 +23,8 @@ const helpers = require("./helpers.js");
 helpers.lambdatestRunChecks();
 
 const {config: baseConfig} = require("./base.conf.js");
-const {config: localisationConfig} = require("./localisation.conf.js");
 
+process.env.MANIFEST_VERSION = 2;
 
 const parallelConfig = {
   maxInstances: 12,
@@ -34,32 +34,6 @@ const parallelConfig = {
     }
   },
   capabilities: [
-    {
-      browserName: "Chrome",
-      browserVersion: "latest",
-      platformName: "Windows 10",
-      "goog:chromeOptions": {
-        extensions: [
-          helpers.getChromiumExtensionPath(),
-          require("fs").readFileSync("helper-extension/helper-extension.zip").toString("base64")
-        ],
-        args: ["--no-sandbox"],
-        prefs: {
-          "intl.accept_languages": "en,en_US",
-          "profile.managed_default_content_settings.popups": 2,
-          "profile.managed_default_content_settings.notifications": 2,
-          "profile.content_settings.exceptions.clipboard": {
-            "*": {"setting": 1}
-          }
-        },
-        excludeSwitches: ["disable-extensions"]
-      },
-      acceptInsecureCerts: true,
-      exclude: [
-        "./tests/legacy-unit.js",
-        "./tests/localisation-*.js"
-      ]
-    },
     {
       browserName: "Firefox",
       browserVersion: "latest",
@@ -115,7 +89,7 @@ const parallelConfig = {
 };
 
 exports.config = {...baseConfig, ...parallelConfig,
-                  capabilities: [...parallelConfig.capabilities, ...localisationConfig.capabilities]};
+                  capabilities: [...parallelConfig.capabilities]};
 
 // Code to support common capabilities
 exports.config.capabilities.forEach((caps) =>

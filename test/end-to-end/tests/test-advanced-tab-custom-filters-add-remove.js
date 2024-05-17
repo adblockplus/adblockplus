@@ -107,8 +107,7 @@ describe("test advanced tab adding and removing custom filters", function()
       isCustomFilterListsFirstItemToggleDisplayed()).to.be.false;
   });
 
-  // CURRENTLY SKIPPED BECAUSE OF ISSUES (SEE #1650)
-  it.skip("should support multiline paste", async function()
+  it("should support multiline paste", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();

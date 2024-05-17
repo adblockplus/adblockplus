@@ -42,14 +42,14 @@ module.exports =
   regexManifestVersion: /(?<="version": ").*?(?=")/,
   siteKeyData: [
     {
-      website: "http://trucking.com",
-      tabTitle: /trucking\.com/,
-      relatedLinksSelector: "#slave-2-1"
+      website: "http://church.com",
+      tabTitle: /church\.com/,
+      relatedLinksSelector: "#e1"
     },
     {
-      website: "http://cook.com",
-      tabTitle: /cook\.com/,
-      relatedLinksSelector: "#slave-1-1"
+      website: "http://mckowen.com",
+      tabTitle: /mckowen\.com/,
+      relatedLinksSelector: "#e1"
     },
     {
       website: "http://zins.de",

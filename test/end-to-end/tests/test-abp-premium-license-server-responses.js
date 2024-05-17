@@ -17,47 +17,31 @@
 
 "use strict";
 
-const {beforeSequence, afterSequence,
-       switchToABPOptionsTab,
+const {beforeSequence, switchToABPOptionsTab,
        enablePremiumByMockServer} = require("../helpers");
 const {expect} = require("chai");
-const BackgroundPage = require("../page-objects/background.page");
+const ServiceWorkerPage = require("../page-objects/serviceWorker.page");
 const PremiumHeaderChunk = require("../page-objects/premiumHeader.chunk");
 const serverResponsesData =
   require("../test-data/data-license-server-responses").serverResponsesData;
-let globalOrigin;
-let lastTest = false;
 
 describe("test abp premium license server responses", function()
 {
   before(async function()
   {
-    globalOrigin = await beforeSequence();
-  });
-
-  afterEach(async function()
-  {
-    if (lastTest === false)
-    {
-      await browser.closeWindow();
-      await afterSequence();
-    }
+    await beforeSequence();
   });
 
   serverResponsesData.forEach(async(dataSet) =>
   {
     it("should display response for: " + dataSet.testName, async function()
     {
-      if (dataSet.testName == "invalid user id")
-      {
-        lastTest = true;
-      }
+      await switchToABPOptionsTab();
       await enablePremiumByMockServer();
-      const backgroundPage = new BackgroundPage(browser);
-      await backgroundPage.init(globalOrigin);
+      const serviceWorkerPage = new ServiceWorkerPage(browser);
+      await serviceWorkerPage.init();
       await switchToABPOptionsTab();
       await browser.executeScript(dataSet.request, []);
-      await browser.refresh();
       const premiumHeaderChunk = new PremiumHeaderChunk(browser);
       if (dataSet.premiumStatus == "enabled")
       {
@@ -68,9 +52,10 @@ describe("test abp premium license server responses", function()
         expect(await premiumHeaderChunk.isUpgradeButtonDisplayed(10000)).
           to.be.true;
       }
-      await backgroundPage.switchToTab(/_generated_background_page\.html/);
-      const consoleLog = await browser.getLogs("browser");
-      expect(JSON.stringify(consoleLog)).to.match(dataSet.errorId);
+      await serviceWorkerPage.switchToTab(/serviceworker-internals/);
+      const logText = await serviceWorkerPage.getLogTextAreaText();
+      expect(logText).to.match(dataSet.errorId);
+      await browser.closeWindow();
     });
   });
 });

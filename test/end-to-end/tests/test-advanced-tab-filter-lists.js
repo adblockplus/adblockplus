@@ -113,13 +113,15 @@ describe("test advanced tab - filter lists", function()
 
   it("should go to filter list source page", async function()
   {
+    let easylistSourcePage = "https://easylist-downloads.adblockplus.org/easylist.txt";
+    if (process.env.MANIFEST_VERSION == 3)
+      easylistSourcePage = "https://easylist-downloads.adblockplus.org/v3/full/easylist.txt";
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
     await advancedPage.clickEasyListFLGearIcon();
     await advancedPage.clickEasyListFLSourceButton();
     await advancedPage.switchToEasylistSourceTab();
-    expect(await advancedPage.getCurrentUrl()).to.equal(
-      "https://easylist-downloads.adblockplus.org/easylist.txt");
+    expect(await advancedPage.getCurrentUrl()).to.equal(easylistSourcePage);
   });
 
   it("should disable/enable a filter list", async function()
@@ -169,92 +171,92 @@ describe("test advanced tab - filter lists", function()
 
   it("should add a filter list via URL", async function()
   {
-    const advancedPage = new AdvancedPage(browser);
-    await advancedPage.init();
-    await advancedPage.clickAddNewFilterListButton();
-    expect(await advancedPage.
-      isAddNewFilterListDialogDisplayed()).to.be.true;
-    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
-    {
-      await advancedPage.
-      typeTextToFilterListUrlInput("https://test-filterlist.txt", true);
-    }
+    if (process.env.MANIFEST_VERSION == 3)
+      console.warn("Test skipped for MV3.");
     else
     {
-      await advancedPage.
-        typeTextToFilterListUrlInput("https://test-filterlist.txt");
+      const advancedPage = new AdvancedPage(browser);
+      await advancedPage.init();
+      await advancedPage.clickAddNewFilterListButton();
+      expect(await advancedPage.
+        isAddNewFilterListDialogDisplayed()).to.be.true;
+      if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
+      {
+        await advancedPage.
+        typeTextToFilterListUrlInput("https://test-filterlist.txt", true);
+      }
+      else
+      {
+        await advancedPage.
+          typeTextToFilterListUrlInput("https://test-filterlist.txt");
+      }
+      await advancedPage.clickAddAFilterListButton();
+      expect(await advancedPage.
+        isAddNewFilterListDialogDisplayed(true)).to.be.true;
+      expect(await advancedPage.
+        isTestFilterListDisplayed()).to.be.true;
+      expect(await advancedPage.
+        isTestFilterListStatusToggleSelected()).to.be.true;
     }
-    await advancedPage.clickAddAFilterListButton();
-    expect(await advancedPage.
-      isAddNewFilterListDialogDisplayed(true)).to.be.true;
-    expect(await advancedPage.
-      isTestFilterListDisplayed()).to.be.true;
-    expect(await advancedPage.
-      isTestFilterListStatusToggleSelected()).to.be.true;
   });
 
   it("should display an error for invalid filter list via URL", async function()
   {
-    const advancedPage = new AdvancedPage(browser);
-    await advancedPage.init();
-    await advancedPage.clickAddNewFilterListButton();
-    expect(await advancedPage.
-      isAddNewFilterListDialogDisplayed()).to.be.true;
-    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
-    {
-      await advancedPage.
-      typeTextToFilterListUrlInput("test-filterlist.txt", true);
-    }
+    if (process.env.MANIFEST_VERSION == 3)
+      console.warn("Test skipped for MV3.");
     else
     {
-      await advancedPage.
-        typeTextToFilterListUrlInput("test-filterlist.txt");
+      const advancedPage = new AdvancedPage(browser);
+      await advancedPage.init();
+      await advancedPage.clickAddNewFilterListButton();
+      expect(await advancedPage.
+        isAddNewFilterListDialogDisplayed()).to.be.true;
+      if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
+      {
+        await advancedPage.
+        typeTextToFilterListUrlInput("test-filterlist.txt", true);
+      }
+      else
+      {
+        await advancedPage.
+          typeTextToFilterListUrlInput("test-filterlist.txt");
+      }
+      await advancedPage.clickAddAFilterListButton();
+      expect(await advancedPage.
+        isUrlErrorMessageDisplayed()).to.be.true;
+      await advancedPage.clickCancelAddingFLButton();
+      expect(await advancedPage.
+        isTestFilterListNoHtttpsDisplayed()).to.be.false;
     }
-    await advancedPage.clickAddAFilterListButton();
-    expect(await advancedPage.
-      isUrlErrorMessageDisplayed()).to.be.true;
-    await advancedPage.clickCancelAddingFLButton();
-    expect(await advancedPage.
-      isTestFilterListNoHtttpsDisplayed()).to.be.false;
   });
 
   it("should display disabled filters error", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
-    await advancedPage.clickAddNewFilterListButton();
-    expect(await advancedPage.
-      isAddNewFilterListDialogDisplayed()).to.be.true;
-    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
-    {
-      await advancedPage.typeTextToFilterListUrlInput(
-        "https://gitlab.com/-/snippets/1997334/raw", true);
-    }
-    else
-    {
-      await advancedPage.typeTextToFilterListUrlInput(
-        "https://gitlab.com/-/snippets/1997334/raw", true);
-    }
-    await advancedPage.clickAddAFilterListButton();
     if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
     {
       await advancedPage.typeTextToAddCustomFilterListInput(
-        "@@||example.com^$document,subdocument", true);
+        "expres.cz##.barMan", true);
     }
     else
     {
       await advancedPage.typeTextToAddCustomFilterListInput(
-        "@@||example.com^$document,subdocument");
+        "expres.cz##.barMan");
     }
     await advancedPage.clickAddCustomFilterListButton();
     await advancedPage.clickCustomFilterListsFirstItemToggle();
     expect(await advancedPage.
-      isAbpTestFilterErrorIconDisplayed()).to.be.true;
-    await advancedPage.clickAbpTestFilterErrorIcon();
+      isAbpFiltersFLErrorIconDisplayed()).to.be.true;
+    await advancedPage.clickAbpFiltersFLErrorIcon();
+    expect(await advancedPage.getFilterListErrorTooltipText()).to.equal(
+      "There are one or more issues with this filter list:" +
+      "Some filters in this filter list are disabled.\n" +
+      "Enable them");
     await advancedPage.clickEnableThemButton();
     lastTest = true;
     expect(await advancedPage.
-      isFilterListErrorPopoutDisplayed(true)).to.be.true;
+      isFilterListErrorTooltipDisplayed(true)).to.be.true;
     expect(await advancedPage.
       isAbpTestFilterErrorIconDisplayed(true)).to.be.true;
     expect(await advancedPage.

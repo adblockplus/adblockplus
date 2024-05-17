@@ -26,6 +26,7 @@ const PremiumCheckoutPage = require("./page-objects/premiumCheckout.page");
 const PremiumHeaderChunk = require("./page-objects/premiumHeader.chunk");
 
 const helperExtension = "helper-extension";
+const helperExtensionMV3 = "helper-extension-mv3";
 
 const globalRetriesNumber = 0;
 const isGitlab = process.env.CI === "true";
@@ -86,7 +87,7 @@ async function afterSequence()
   }
 }
 
-async function beforeSequence(expectedTabsNumber = 3)
+async function beforeSequence(expectInstalledTab = true)
 {
   if (browser.capabilities.browserName == "firefox")
   {
@@ -99,13 +100,26 @@ async function beforeSequence(expectedTabsNumber = 3)
     await browser.installAddOn(helperExtensionZip.toString("base64"), true);
   }
   const [origin] = await waitForExtension();
-  await browser.waitUntil(async() =>
+  if (expectInstalledTab)
   {
-    return ((await browser.getWindowHandles()).length >= expectedTabsNumber);
-  }, {timeout: 30000});
+    await browser.waitUntil(async() =>
+    {
+      const windowHandles = await browser.getWindowHandles();
+      for (const handle of windowHandles)
+      {
+        await browser.switchToWindow(handle);
+        const url = await browser.getUrl();
+        if (url.includes("installed"))
+        {
+          await browser.switchWindow(/installed/);
+          return true;
+        }
+      }
+    }, {timeout: 50000});
+  }
+  await browser.switchWindow(/options\.html/);
   await browser.url(`${origin}/desktop-options.html`);
   await browser.setWindowSize(1400, 1000);
-  await browser.switchWindow(/options\.html/);
   return [origin];
 }
 
@@ -190,8 +204,8 @@ async function enablePremiumByMockServer()
     }
     else
     {
-      await browser.pause(200);
-      waitTime += 200;
+      await browser.pause(1000);
+      waitTime += 1000;
     }
   }
   if (waitTime >= 150000)
@@ -598,7 +612,7 @@ module.exports = {
   enablePremiumByMockServer, wakeMockServer, lambdatestRunChecks,
   getChromiumExtensionPath, enablePremiumByUI,
   getCurrentDate, getFirefoxExtensionPath, getTabId,
-  randomIntFromInterval, helperExtension,
+  randomIntFromInterval, helperExtension, helperExtensionMV3,
   globalRetriesNumber, switchToABPOptionsTab,
   waitForExtension, getABPOptionsTabId, waitForCondition
 };

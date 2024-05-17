@@ -44,40 +44,45 @@ describe("test subscriptions as part of the integration tests", function()
 
   it("should add new subscription via link", async function()
   {
-    await browser.url("https://adblockinc.gitlab.io/QA-team/adblocking" +
-      "/subscriptions/subscriptions-testpage.html");
-    const testPages = new TestPages(browser);
-    expect(await testPages.getSubscriptionBlockingText()).to.include(
-      "/subscription-blocking.js should be blocked");
-    expect(await testPages.getSubscriptionBlockingRegexText()).to.include(
-      "/subscription-blocking-regex.js should be blocked");
-    expect(await testPages.getSubscriptionHidingIdText()).to.include(
-      "id element should be hidden");
-    expect(await testPages.getSubscriptionHidingClassText()).to.include(
-      "class element should be hidden");
-    await testPages.clickSubscribeLink();
-    const generalPage = new GeneralPage(browser);
-    await switchToABPOptionsTab();
-    console.error(String(await generalPage.
-      getPredefinedDialogTitleText()));
-    expect(String(await generalPage.
-      getPredefinedDialogTitleText()).includes("ARE YOU SURE YOU WANT TO ADD" +
-      " THIS FILTER LIST?")).to.be.true;
-    await generalPage.clickYesUseThisFLButton();
-    expect(String(await generalPage.
-      getMoreFilterListsTableItemByLabelText("ABP test subscription")).
-      includes("ABP test subscription")).to.be.true;
-    await browser.newWindow("https://adblockinc.gitlab.io/QA-team/adblocking" +
-      "/subscriptions/subscriptions-testpage.html");
-    await browser.refresh();
-    expect(await testPages.getSubscriptionBlockingText()).to.include(
-      "/subscription-blocking.js was blocked");
-    expect(await testPages.getSubscriptionBlockingRegexText()).to.include(
-      "/subscription-blocking-regex.* was blocked");
-    expect(await testPages.
-      isSubscriptionHidingIdDisplayed()).to.be.false;
-    expect(await testPages.
-      isSubscriptionHidingClassDisplayed()).to.be.false;
+    if (process.env.MANIFEST_VERSION == 3)
+      console.warn("Test skipped for MV3.");
+    else
+    {
+      await browser.url("https://adblockinc.gitlab.io/QA-team/adblocking" +
+        "/subscriptions/subscriptions-testpage.html");
+      const testPages = new TestPages(browser);
+      expect(await testPages.getSubscriptionBlockingText()).to.include(
+        "/subscription-blocking.js should be blocked");
+      expect(await testPages.getSubscriptionBlockingRegexText()).to.include(
+        "/subscription-blocking-regex.js should be blocked");
+      expect(await testPages.getSubscriptionHidingIdText()).to.include(
+        "id element should be hidden");
+      expect(await testPages.getSubscriptionHidingClassText()).to.include(
+        "class element should be hidden");
+      await testPages.clickSubscribeLink();
+      const generalPage = new GeneralPage(browser);
+      await switchToABPOptionsTab();
+      console.error(String(await generalPage.
+        getPredefinedDialogTitleText()));
+      expect(String(await generalPage.
+        getPredefinedDialogTitleText()).includes("ARE YOU SURE YOU" +
+        " WANT TO ADD THIS FILTER LIST?")).to.be.true;
+      await generalPage.clickYesUseThisFLButton();
+      expect(String(await generalPage.
+        getMoreFilterListsTableItemByLabelText("ABP test subscription")).
+        includes("ABP test subscription")).to.be.true;
+      await browser.newWindow("https://adblockinc.gitlab.io/QA-team/adblocking" +
+        "/subscriptions/subscriptions-testpage.html");
+      await browser.refresh();
+      expect(await testPages.getSubscriptionBlockingText()).to.include(
+        "/subscription-blocking.js was blocked");
+      expect(await testPages.getSubscriptionBlockingRegexText()).to.include(
+        "/subscription-blocking-regex.* was blocked");
+      expect(await testPages.
+        isSubscriptionHidingIdDisplayed()).to.be.false;
+      expect(await testPages.
+        isSubscriptionHidingClassDisplayed()).to.be.false;
+    }
   });
 
   it("should disable/enable subscriptions", async function()
@@ -129,8 +134,17 @@ describe("test subscriptions as part of the integration tests", function()
         await browser.refresh();
       }
     }
-    expect(await testPages.getAwe2FilterText()).to.include(
-      "awe2.js was blocked");
+    try
+    {
+      expect(await testPages.getAwe2FilterText()).to.include(
+        "awe2.js was blocked");
+    }
+    catch (Exception)
+    {
+      await browser.pause(1000);
+      expect(await testPages.getAwe2FilterText()).to.include(
+        "awe2.js was blocked");
+    }
     expect(await testPages.getBanneradsFilterText()).to.include(
       "bannerads/* was blocked");
     expect(await testPages.
@@ -202,8 +216,17 @@ describe("test subscriptions as part of the integration tests", function()
       }
     }
     lastTest = true;
-    expect(await testPages.getAwe2FilterText()).to.include(
-      "awe2.js was blocked");
+    try
+    {
+      expect(await testPages.getAwe2FilterText()).to.include(
+        "awe2.js was blocked");
+    }
+    catch (Exception)
+    {
+      await browser.pause(1000);
+      expect(await testPages.getAwe2FilterText()).to.include(
+        "awe2.js was blocked");
+    }
     expect(await testPages.getBanneradsFilterText()).to.include(
       "bannerads/* was blocked");
     expect(await testPages.

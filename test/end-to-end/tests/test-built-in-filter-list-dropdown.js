@@ -40,6 +40,14 @@ describe("test built in filter list dropdown - default filter lists", function()
   {
     it("should display filter list: " + dataSet.flName, async function()
     {
+      if (dataSet.flName == "Snippets")
+      {
+        if (process.env.MANIFEST_VERSION == 3)
+        {
+          dataSet.flId = "ABP filters (compliance) " +
+            "(ABP Anti-Circumvention Filter List)";
+        }
+      }
       if (dataSet.flStatus == "present")
       {
         expect(flNames).to.include(dataSet.flId);

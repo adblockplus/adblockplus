@@ -26,6 +26,8 @@ const {config: baseConfig} = require("./base.conf.js");
 const {config: localisationConfig} = require("./localisation.conf.js");
 const mv3BuildCloudUrl = process.env.MV3_BUILD_CLOUD_URL;
 
+process.env.MANIFEST_VERSION = 3;
+
 const parallelConfig = {
   maxInstances: 12,
   commonCapabilities: {
@@ -43,7 +45,7 @@ const parallelConfig = {
       platformName: "Windows 10",
       "goog:chromeOptions": {
         extensions: [
-          require("fs").readFileSync("helper-extension/helper-extension-mv3.zip").toString("base64")
+          require("fs").readFileSync("helper-extension-mv3/helper-extension-mv3.zip").toString("base64")
         ],
         args: ["--no-sandbox"],
         prefs: {
@@ -71,7 +73,7 @@ const parallelConfig = {
       platformName: "Windows 10",
       "ms:edgeOptions": {
         extensions: [
-          require("fs").readFileSync("helper-extension/helper-extension-mv3.zip").toString("base64")
+          require("fs").readFileSync("helper-extension-mv3/helper-extension-mv3.zip").toString("base64")
         ],
         args: ["--no-sandbox", "--start-maximized"],
         prefs: {

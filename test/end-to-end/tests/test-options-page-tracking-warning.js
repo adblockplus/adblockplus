@@ -17,8 +17,7 @@
 
 "use strict";
 
-const {beforeSequence, globalRetriesNumber,
-       switchToABPOptionsTab} = require("../helpers");
+const {beforeSequence, globalRetriesNumber} = require("../helpers");
 const {expect} = require("chai");
 const GeneralPage = require("../page-objects/general.page");
 
@@ -34,12 +33,6 @@ describe("test options page general tab tracking warning", function()
   it("should display tracking warning", async function()
   {
     const generalPage = new GeneralPage(browser);
-    if (browser.capabilities.browserName.toLowerCase().includes("edge"))
-    {
-      // The installed page is sometimes displayed with a couple seconds delay
-      await browser.pause(3000);
-      await switchToABPOptionsTab();
-    }
     await generalPage.clickBlockAdditionalTrackingCheckbox();
     expect(await generalPage.
       isTrackingWarningDisplayed()).to.be.true;

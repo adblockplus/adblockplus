@@ -19,18 +19,21 @@
 
 "use strict";
 
-const helpers = require("./helpers.js");
+const mv3BuildCloudUrl = process.env.MV3_BUILD_CLOUD_URL;
+process.env.MANIFEST_VERSION = 3;
 
 exports.config = {
   capabilities: [
     {
+      "LT:Options": {
+        "lambda:loadExtension": [mv3BuildCloudUrl]
+      },
       browserName: "Chrome",
       browserVersion: "latest",
       platformName: "Windows 10",
       "goog:chromeOptions": {
         extensions: [
-          helpers.getChromiumExtensionPath(),
-          require("fs").readFileSync("helper-extension/helper-extension.zip").toString("base64")
+          require("fs").readFileSync("helper-extension-mv3/helper-extension-mv3.zip").toString("base64")
         ],
         args: ["--no-sandbox", "--lang=de"],
         prefs: {
@@ -51,13 +54,15 @@ exports.config = {
       ]
     },
     {
+      "LT:Options": {
+        "lambda:loadExtension": [mv3BuildCloudUrl]
+      },
       browserName: "MicrosoftEdge",
       browserVersion: "latest",
       platformName: "Windows 10",
       "ms:edgeOptions": {
         extensions: [
-          helpers.getChromiumExtensionPath(),
-          require("fs").readFileSync("helper-extension/helper-extension.zip").toString("base64")
+          require("fs").readFileSync("helper-extension-mv3/helper-extension-mv3.zip").toString("base64")
         ],
         args: ["--no-sandbox", "--start-maximized", "--lang=de"],
         prefs: {
@@ -78,13 +83,15 @@ exports.config = {
       ]
     },
     {
+      "LT:Options": {
+        "lambda:loadExtension": [mv3BuildCloudUrl]
+      },
       browserName: "Chrome",
       browserVersion: "latest-1",
       platformName: "Windows 10",
       "goog:chromeOptions": {
         extensions: [
-          helpers.getChromiumExtensionPath(),
-          require("fs").readFileSync("helper-extension/helper-extension.zip").toString("base64")
+          require("fs").readFileSync("helper-extension-mv3/helper-extension-mv3.zip").toString("base64")
         ],
         args: ["--no-sandbox", "--lang=ar_SA"],
         prefs: {
@@ -107,13 +114,15 @@ exports.config = {
       ]
     },
     {
+      "LT:Options": {
+        "lambda:loadExtension": [mv3BuildCloudUrl]
+      },
       browserName: "MicrosoftEdge",
       browserVersion: "latest-1",
       platformName: "Windows 10",
       "ms:edgeOptions": {
         extensions: [
-          helpers.getChromiumExtensionPath(),
-          require("fs").readFileSync("helper-extension/helper-extension.zip").toString("base64")
+          require("fs").readFileSync("helper-extension-mv3/helper-extension-mv3.zip").toString("base64")
         ],
         args: ["--no-sandbox", "--start-maximized", "--lang=ar_SA"],
         prefs: {
@@ -136,13 +145,15 @@ exports.config = {
       ]
     },
     {
+      "LT:Options": {
+        "lambda:loadExtension": [mv3BuildCloudUrl]
+      },
       browserName: "Chrome",
       browserVersion: "latest-2",
       platformName: "Windows 10",
       "goog:chromeOptions": {
         extensions: [
-          helpers.getChromiumExtensionPath(),
-          require("fs").readFileSync("helper-extension/helper-extension.zip").toString("base64")
+          require("fs").readFileSync("helper-extension-mv3/helper-extension-mv3.zip").toString("base64")
         ],
         args: ["--no-sandbox", "--lang=ca_CA"],
         prefs: {
@@ -164,13 +175,15 @@ exports.config = {
       ]
     },
     {
+      "LT:Options": {
+        "lambda:loadExtension": [mv3BuildCloudUrl]
+      },
       browserName: "MicrosoftEdge",
       browserVersion: "latest-2",
       platformName: "Windows 10",
       "ms:edgeOptions": {
         extensions: [
-          helpers.getChromiumExtensionPath(),
-          require("fs").readFileSync("helper-extension/helper-extension.zip").toString("base64")
+          require("fs").readFileSync("helper-extension-mv3/helper-extension-mv3.zip").toString("base64")
         ],
         args: ["--no-sandbox", "--start-maximized", "--lang=ca_CA"],
         prefs: {

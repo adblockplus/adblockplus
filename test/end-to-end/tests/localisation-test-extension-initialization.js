@@ -30,10 +30,10 @@ describe("test extension initialization for language subscriptions", function()
   {
     currentLocale = await browser.executeScript(
       "return navigator.language || navigator.userLanguage", []);
-    let expectedTabsNumber = 3;
+    let expectInstalledTab = true;
     if (currentLocale.includes("ca"))
-      expectedTabsNumber = 2;
-    await beforeSequence(expectedTabsNumber);
+      expectInstalledTab = false;
+    await beforeSequence(expectInstalledTab);
   });
 
   // eslint-disable-next-line max-len

@@ -39,22 +39,43 @@ class AdvancedPage extends BasePage
 
   get abpFiltersFL()
   {
-    return $("//li[@aria-label='ABP filters']");
+    let abpFiltersText = "ABP filters";
+    if (process.env.MANIFEST_VERSION == 3)
+      abpFiltersText = "ABP filters (compliance)";
+    return $("//li[@aria-label='" + abpFiltersText + "']");
+  }
+
+  get abpFiltersFLErrorIcon()
+  {
+    let abpFiltersText = "ABP filters";
+    if (process.env.MANIFEST_VERSION == 3)
+      abpFiltersText = "ABP filters (compliance)";
+    return $("//li[@aria-label='" + abpFiltersText + "']/div/io-popout");
   }
 
   get abpFiltersFLLastUpdatedText()
   {
-    return $("//li[@aria-label='ABP filters']/div/span[@class='last-update']");
+    let abpFiltersText = "ABP filters";
+    if (process.env.MANIFEST_VERSION == 3)
+      abpFiltersText = "ABP filters (compliance)";
+    return $("//li[@aria-label='" + abpFiltersText +
+      "']/div/span[@class='last-update']");
   }
 
   get abpFiltersFLStatusToggle()
   {
-    return $("//li[@aria-label='ABP filters']/div/io-toggle/button");
+    let abpFiltersText = "ABP filters";
+    if (process.env.MANIFEST_VERSION == 3)
+      abpFiltersText = "ABP filters (compliance)";
+    return $("//li[@aria-label='" + abpFiltersText + "']/div/io-toggle/button");
   }
 
   get abpFiltersFLTrashButton()
   {
-    return $("//li[@aria-label='ABP filters']/div/button" +
+    let abpFiltersText = "ABP filters";
+    if (process.env.MANIFEST_VERSION == 3)
+      abpFiltersText = "ABP filters (compliance)";
+    return $("//li[@aria-label='" + abpFiltersText + "']/div/button" +
       "[@data-action='remove-subscription']");
   }
 
@@ -308,6 +329,24 @@ class AdvancedPage extends BasePage
       "'options_filterList_errorPopup_title']");
   }
 
+  get filterListErrorTooltip()
+  {
+    return $("//io-popout[@data-template-i18n-body=" +
+      "'options_filterList_errorPopup_title']/div/div[@role='tooltip']");
+  }
+
+  get filterListErrorTooltipText()
+  {
+    return $("//io-popout[@data-template-i18n-body=" +
+      "'options_filterList_errorPopup_title']/div/div[@role='tooltip']/p");
+  }
+
+  get filterListErrorTooltipFirstErrorText()
+  {
+    return $("//io-popout[@data-template-i18n-body=" +
+      "'options_filterList_errorPopup_title']/div/div[@role='tooltip']/ul/li");
+  }
+
   get filterListsLearnMoreLink()
   {
     return $("//a[contains(@data-doclink, 'subscriptions')" +
@@ -459,6 +498,11 @@ class AdvancedPage extends BasePage
   {
     return $("//span[contains(@class, 'error-msg')" +
         "and text()='URL must start with https://.']");
+  }
+
+  async clickAbpFiltersFLErrorIcon()
+  {
+    await (await this.abpFiltersFLErrorIcon).click();
   }
 
   async clickAbpTestFilterErrorIcon()
@@ -669,6 +713,16 @@ class AdvancedPage extends BasePage
     return await (await this.customFilterListsErrorText).getText();
   }
 
+  async getFilterListErrorTooltipText()
+  {
+    let completeTooltipText = "";
+    completeTooltipText +=
+      await (await this.filterListErrorTooltipText).getText();
+    completeTooltipText +=
+      await (await this.filterListErrorTooltipFirstErrorText).getText();
+    return completeTooltipText;
+  }
+
   async getFlTableEmptyPlaceholderText()
   {
     return await (await this.flTableEmptyPlaceholder).getText();
@@ -702,7 +756,7 @@ class AdvancedPage extends BasePage
   async isAbpFiltersFLStatusToggleSelected()
   {
     return await (await this.abpFiltersFLStatusToggle).
-    getAttribute("aria-checked") === "true";
+      getAttribute("aria-checked") === "true";
   }
 
   async isAbpFiltersFLUpdating(timeout = 5000, reverse = false)
@@ -716,6 +770,12 @@ class AdvancedPage extends BasePage
     return await this.waitUntilAttributeValueIs(
       this.abpFiltersFL, "class",
       "show-message", 10000, true);
+  }
+
+  async isAbpFiltersFLErrorIconDisplayed(reverseOption = false)
+  {
+    return await this.waitForDisplayedNoError(this.abpFiltersFLErrorIcon,
+                                              reverseOption);
   }
 
   async isAbpTestFilterErrorIconDisplayed(reverseOption = false)
@@ -892,6 +952,12 @@ class AdvancedPage extends BasePage
   async isFilterListErrorPopoutDisplayed(reverseOption = false)
   {
     return await this.waitForDisplayedNoError(this.filterListErrorPopout,
+                                              reverseOption);
+  }
+
+  async isFilterListErrorTooltipDisplayed(reverseOption = false)
+  {
+    return await this.waitForDisplayedNoError(this.filterListErrorTooltip,
                                               reverseOption);
   }
 

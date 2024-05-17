@@ -140,7 +140,7 @@ The `./test/end-to-end/tests` folder contains various end-to-end tests. These te
 
 a) To run the end-to-end tests locally, the [unpacked development builds](#building-the-extension) of the extension should be generated. After generating the required extension builds for Chrome, and Firefox, 
   
-* Run the test:end-to-end-local npm script `npm run test:end-to-end-local`
+* Run the test:end-to-end-local npm script `npm run test:end-to-end-local` or `npm run test:end-to-end-local-mv3`
 
 
 **NOTE**: If you only want to execute a single test file, you can replace the value of the `specs` constant in the [local-test.conf.js](https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/blob/next/test/end-to-end/local-test.conf.js?ref_type=heads#L26) to an array containing only the [path](https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/tree/next/test/end-to-end/tests) to the test(s) you want to run
@@ -157,7 +157,7 @@ b) To run the end-to-end tests using [LambdaTest](https://automation.lambdatest.
 
 * Create a new .env file with your Lambda credentials. You can use the [.env.e2e.template](https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/blob/next/.env.e2e.template?ref_type=heads) provided as a guide.
 
-* Run the test:end-to-end npm script `npm run test:end-to-end all`, or replace the `all` part with the desired test suite (`e2e`, `integration`, `smoke`).
+* Run the test:end-to-end npm script `npm run test:end-to-end all` or `npm run test:end-to-end-mv3 all`, or replace the `all` part with the desired test suite (`e2e`, `integration`, `smoke`).
 
 **NOTE**: If you only want to execute a single test file, you can replace the value of the `all` property in the [base.conf.js](https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/blob/next/test/end-to-end/base.conf.js#L31) to an array containing only the [path](https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/tree/next/test/end-to-end/tests) to the test(s) you want to run.
 e.g 

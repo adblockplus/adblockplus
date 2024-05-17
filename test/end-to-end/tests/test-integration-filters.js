@@ -55,7 +55,7 @@ describe("test custom filters as part of the integration tests", function()
     await advancedPage.init();
     const multilineString = `
       /custom-blocking.js
-      /custom-blocking-regex.*
+      /custom-blocking-regex*
       ###custom-hiding-id
       ##.custom-hiding-class
     `;
@@ -133,7 +133,7 @@ describe("test custom filters as part of the integration tests", function()
     await advancedPage.init();
     const multilineString = `
       /custom-blocking.js
-      /custom-blocking-regex.*
+      /custom-blocking-regex*
     `;
     await advancedPage.typeTextToAddCustomFilterListInput(
       "");
@@ -186,7 +186,7 @@ describe("test custom filters as part of the integration tests", function()
     {
       await browser.keys("Backspace");
     }
-    const text = "/custom-blocking-regex.*";
+    const text = "/custom-blocking-regex*";
     for (const char of text)
     {
       await browser.keys(char);

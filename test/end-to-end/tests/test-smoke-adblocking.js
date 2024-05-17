@@ -53,73 +53,78 @@ describe("test adblocking as part of the smoke tests", function()
   {
     // The browser names used here are the ones in test.conf not the runtime
     // names, as the browser object is not properly initalized at this point
-    if ((dataSet.website == "http://trucking.com" &&
+    if ((dataSet.website == "http://church.com" &&
         browser.capabilities.browserName.toLowerCase().includes("firefox")) ||
-        (dataSet.website == "http://cook.com" &&
+        (dataSet.website == "http://mckowen.com" &&
         browser.capabilities.browserName.toLowerCase().includes("chrome")) ||
         (dataSet.website == "http://zins.de" &&
         browser.capabilities.browserName.toLowerCase().includes("edge")))
     {
-      it("should test sitekey: " + dataSet.website, async function()
+      if (process.env.MANIFEST_VERSION == 3)
+        console.warn("Test skipped for MV3.");
+      else
       {
-        await browser.newWindow(dataSet.website);
-        const generalPage = new GeneralPage(browser);
-        if (browser.capabilities.browserName.toLowerCase().includes("edge"))
+        it("should test sitekey: " + dataSet.website, async function()
         {
-          try
+          await browser.newWindow(dataSet.website);
+          const generalPage = new GeneralPage(browser);
+          if (browser.capabilities.browserName.toLowerCase().includes("edge"))
+          {
+            try
+            {
+              expect(await generalPage.isElementDisplayed(
+                dataSet.relatedLinksSelector)).to.be.true;
+            }
+            catch (Exception)
+            {
+              await browser.pause(randomIntFromInterval(2500, 3500));
+              await browser.refresh();
+              await browser.pause(randomIntFromInterval(1500, 2500));
+              await browser.refresh();
+              expect(await generalPage.isElementDisplayed(
+                dataSet.relatedLinksSelector)).to.be.true;
+            }
+          }
+          await browser.pause(randomIntFromInterval(1500, 2500));
+          await browser.refresh();
+          if (browser.capabilities.browserName.toLowerCase().includes("edge"))
+          {
+            try
+            {
+              expect(await generalPage.isElementDisplayed(
+                dataSet.relatedLinksSelector)).to.be.true;
+            }
+            catch (Exception)
+            {
+              await browser.pause(randomIntFromInterval(2500, 3500));
+              await browser.refresh();
+              await browser.pause(randomIntFromInterval(1500, 2500));
+              expect(await generalPage.isElementDisplayed(
+                dataSet.relatedLinksSelector)).to.be.true;
+            }
+          }
+          else
           {
             expect(await generalPage.isElementDisplayed(
               dataSet.relatedLinksSelector)).to.be.true;
           }
-          catch (Exception)
-          {
-            await browser.pause(randomIntFromInterval(2500, 3500));
-            await browser.refresh();
-            await browser.pause(randomIntFromInterval(1500, 2500));
-            await browser.refresh();
-            expect(await generalPage.isElementDisplayed(
-              dataSet.relatedLinksSelector)).to.be.true;
-          }
-        }
-        await browser.pause(randomIntFromInterval(1500, 2500));
-        await browser.refresh();
-        if (browser.capabilities.browserName.toLowerCase().includes("edge"))
-        {
-          try
-          {
-            expect(await generalPage.isElementDisplayed(
-              dataSet.relatedLinksSelector)).to.be.true;
-          }
-          catch (Exception)
-          {
-            await browser.pause(randomIntFromInterval(2500, 3500));
-            await browser.refresh();
-            await browser.pause(randomIntFromInterval(1500, 2500));
-            expect(await generalPage.isElementDisplayed(
-              dataSet.relatedLinksSelector)).to.be.true;
-          }
-        }
-        else
-        {
+          await switchToABPOptionsTab();
+          await generalPage.clickAllowAcceptableAdsCheckbox();
+          await generalPage.switchToTab(dataSet.tabTitle);
+          await browser.pause(randomIntFromInterval(1500, 2500));
+          await browser.refresh();
+          expect(await generalPage.isElementDisplayed(
+            dataSet.relatedLinksSelector, true)).to.be.true;
+          await switchToABPOptionsTab();
+          await generalPage.clickAllowAcceptableAdsCheckbox();
+          await generalPage.switchToTab(dataSet.tabTitle);
+          await browser.pause(randomIntFromInterval(1500, 2500));
+          await browser.refresh();
           expect(await generalPage.isElementDisplayed(
             dataSet.relatedLinksSelector)).to.be.true;
-        }
-        await switchToABPOptionsTab();
-        await generalPage.clickAllowAcceptableAdsCheckbox();
-        await generalPage.switchToTab(dataSet.tabTitle);
-        await browser.pause(randomIntFromInterval(1500, 2500));
-        await browser.refresh();
-        expect(await generalPage.isElementDisplayed(
-          dataSet.relatedLinksSelector, true)).to.be.true;
-        await switchToABPOptionsTab();
-        await generalPage.clickAllowAcceptableAdsCheckbox();
-        await generalPage.switchToTab(dataSet.tabTitle);
-        await browser.pause(randomIntFromInterval(1500, 2500));
-        await browser.refresh();
-        expect(await generalPage.isElementDisplayed(
-          dataSet.relatedLinksSelector)).to.be.true;
-        await browser.closeWindow();
-      });
+          await browser.closeWindow();
+        });
+      }
     }
   }, 2);
 

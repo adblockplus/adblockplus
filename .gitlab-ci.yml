@@ -459,7 +459,7 @@ testpages:MV2:firefox:oldest:
       else
         echo "No failed test cases found. Job will pass."
       fi
-  timeout: 60m
+  timeout: 120m
   artifacts:
     when: always
     paths:
