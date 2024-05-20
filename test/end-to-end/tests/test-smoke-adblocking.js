@@ -103,6 +103,14 @@ describe("test adblocking as part of the smoke tests", function()
                 dataSet.relatedLinksSelector)).to.be.true;
             }
           }
+          else if (browser.capabilities.browserName.
+            toLowerCase().includes("firefox"))
+          {
+            await browser.switchToFrame(await $("#master-1"));
+            expect(await generalPage.isElementDisplayed(
+              dataSet.relatedLinksSelector)).to.be.true;
+            await browser.switchToParentFrame();
+          }
           else
           {
             expect(await generalPage.isElementDisplayed(
@@ -120,13 +128,24 @@ describe("test adblocking as part of the smoke tests", function()
           await generalPage.switchToTab(dataSet.tabTitle);
           await browser.pause(randomIntFromInterval(1500, 2500));
           await browser.refresh();
-          expect(await generalPage.isElementDisplayed(
-            dataSet.relatedLinksSelector)).to.be.true;
+          if (!browser.capabilities.browserName.
+            toLowerCase().includes("firefox"))
+          {
+            expect(await generalPage.isElementDisplayed(
+              dataSet.relatedLinksSelector)).to.be.true;
+          }
+          else
+          {
+            await browser.switchToFrame(await $("#master-1"));
+            expect(await generalPage.isElementDisplayed(
+              dataSet.relatedLinksSelector)).to.be.true;
+            await browser.switchToParentFrame();
+          }
           await browser.closeWindow();
         });
       }
     }
-  }, 2);
+  });
 
   it("should block and hide ads", async function()
   {
@@ -141,6 +160,7 @@ describe("test adblocking as part of the smoke tests", function()
       isSearchAdDivDisplayed()).to.be.false;
     expect(await testPages.
       isAdContainerDivDisplayed()).to.be.false;
+    await browser.closeWindow();
   });
 
   it("should block ad by snippet", async function()
@@ -157,6 +177,7 @@ describe("test adblocking as part of the smoke tests", function()
       isSnippetFilterDivDisplayed()).to.be.false;
     expect(await testPages.
       isHiddenBySnippetTextDisplayed()).to.be.false;
+    await browser.closeWindow();
   });
 
   it("should allowlist websites", async function()
@@ -183,6 +204,8 @@ describe("test adblocking as part of the smoke tests", function()
       }
       await browser.refresh();
     }
+    await browser.refresh();
+    await allowistedWebsitesPage.switchToTab(/blocking-hiding-testpage/);
     expect(await testPages.getAwe2FilterText()).to.include(
       "awe2.js blocking filter should block this");
     expect(await testPages.getBanneradsFilterText()).to.include(
