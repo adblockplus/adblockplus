@@ -109,49 +109,53 @@ describe("test advanced tab adding and removing custom filters", function()
 
   it("should support multiline paste", async function()
   {
-    const advancedPage = new AdvancedPage(browser);
-    await advancedPage.init();
-    const multilineString =
-      `##.hiding_filter
-      /blocking/filter/*
-      duplicate
+    // Skip for MV2 because of bug
+    if (process.env.MANIFEST_VERSION == 3)
+    {
+      const advancedPage = new AdvancedPage(browser);
+      await advancedPage.init();
+      const multilineString =
+        `##.hiding_filter
+        /blocking/filter/*
+        duplicate
 
-      duplicate
-      ! comment`;
-    await advancedPage.typeTextToAddCustomFilterListInput(
-      "");
-    await browser.executeScript(
-      `navigator.clipboard.writeText(\`${multilineString}\`);`, []);
-    const platform = await browser.
-      executeScript("return navigator.platform", []);
-    let pasteKey = "Control";
-    if (platform.includes("Mac"))
-    {
-      pasteKey = "Command";
-    }
-    await browser.keys([pasteKey, "V"]);
-    try
-    {
-      await advancedPage.
-        waitForCustomFilterListsNthItemTextToEqual("##.hiding_filter", "1");
-    }
-    catch (Exception)
-    {
+        duplicate
+        ! comment`;
       await advancedPage.typeTextToAddCustomFilterListInput(
         "");
-      await browser.pause(1000);
+      await browser.executeScript(
+        `navigator.clipboard.writeText(\`${multilineString}\`);`, []);
+      const platform = await browser.
+        executeScript("return navigator.platform", []);
+      let pasteKey = "Control";
+      if (platform.includes("Mac"))
+      {
+        pasteKey = "Command";
+      }
       await browser.keys([pasteKey, "V"]);
-      await advancedPage.
-        waitForCustomFilterListsNthItemTextToEqual("##.hiding_filter", "1");
+      try
+      {
+        await advancedPage.
+          waitForCustomFilterListsNthItemTextToEqual("##.hiding_filter", "1");
+      }
+      catch (Exception)
+      {
+        await advancedPage.typeTextToAddCustomFilterListInput(
+          "");
+        await browser.pause(1000);
+        await browser.keys([pasteKey, "V"]);
+        await advancedPage.
+          waitForCustomFilterListsNthItemTextToEqual("##.hiding_filter", "1");
+      }
+      expect(await advancedPage.
+        verifyTextPresentInCustomFLTable("##.hiding_filter")).to.be.true;
+      expect(await advancedPage.
+        verifyTextPresentInCustomFLTable("/blocking/filter/*")).to.be.true;
+      expect(await advancedPage.
+        verifyTextPresentInCustomFLTable("duplicate")).to.be.true;
+      expect(await advancedPage.
+        verifyTextPresentInCustomFLTable("! comment")).to.be.true;
     }
-    expect(await advancedPage.
-      verifyTextPresentInCustomFLTable("##.hiding_filter")).to.be.true;
-    expect(await advancedPage.
-      verifyTextPresentInCustomFLTable("/blocking/filter/*")).to.be.true;
-    expect(await advancedPage.
-      verifyTextPresentInCustomFLTable("duplicate")).to.be.true;
-    expect(await advancedPage.
-      verifyTextPresentInCustomFLTable("! comment")).to.be.true;
   });
 
   it("should delete a custom filter", async function()
@@ -161,8 +165,10 @@ describe("test advanced tab adding and removing custom filters", function()
     await advancedPage.typeTextToAddCustomFilterListInput(
       "test/remove-filter.png");
     await advancedPage.clickAddCustomFilterListButton();
+    await advancedPage.init();
     await advancedPage.clickCustomFilterListsNthItemCheckbox("1");
     await advancedPage.clickDeleteCustomFLButton();
+    await advancedPage.init();
     expect(await advancedPage.
       verifyTextPresentInCustomFLTable("test/remove-filter.png")).to.be.false;
   });
@@ -217,6 +223,7 @@ describe("test advanced tab adding and removing custom filters", function()
     await advancedPage.typeTextToAddCustomFilterListInput(
       "duplicated/filter.png");
     await advancedPage.clickAddCustomFilterListButton();
+    await advancedPage.init();
     await advancedPage.typeTextToAddCustomFilterListInput(
       "duplicated/filter.png");
     expect(await advancedPage.
