@@ -147,14 +147,14 @@ describe("test options page links", function()
     }
   });
 
-  it("should open twitter page", async function()
+  it("should open X page", async function()
   {
     const helpPage = new HelpPage(browser);
     await helpPage.init();
-    await helpPage.clickTwitterLink();
-    await helpPage.switchToTwitterTab();
+    await helpPage.clickXLink();
+    await helpPage.switchToXTab();
     expect(await helpPage.getCurrentUrl()).to.match(
-      dataLinks.twitterUrl);
+      dataLinks.XUrl);
   });
 
   it("should open facebook page", async function()

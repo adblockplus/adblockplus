@@ -131,7 +131,7 @@ class PopupPage extends BasePage
     return $("//*[@id='counter-panel']/div[2]/div[2]/span[1]/a");
   }
 
-  get twitterShareIcon()
+  get XShareIcon()
   {
     return $("//*[@id='counter-panel']/div[2]/div[2]/span[2]/a");
   }
@@ -355,11 +355,10 @@ class PopupPage extends BasePage
       expectedValue, timeoutVal);
   }
 
-  async isTwitterShareIconDisplayed(expectedValue = "0",
-                                    timeoutVal = 3000)
+  async isXShareIconDisplayed(expectedValue = "0", timeoutVal = 3000)
   {
     return await this.waitUntilAttributeValueIs(
-      this.twitterShareIcon, "tabIndex",
+      this.XShareIcon, "tabIndex",
       expectedValue, timeoutVal);
   }
 

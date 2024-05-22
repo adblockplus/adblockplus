@@ -104,9 +104,9 @@ const problemPageData = [
     newTabUrl: "https://adblockplus.org/"
   },
   {
-    testName: "Problem - Twitter icon",
-    elementToClick: "twitterButton",
-    newTabUrl: /https:\/\/twitter\.com\/.*adblockplus/
+    testName: "Problem - X icon",
+    elementToClick: "XButton",
+    newTabUrl: /https:\/\/x\.com\/.*adblockplus/
   },
   {
     testName: "Problem - Facebook icon",
@@ -159,9 +159,9 @@ const updatesPageData = [
     "Chrome Web Store"
   },
   {
-    testName: "Updates - Twitter icon",
-    elementToClick: "twitterButton",
-    newTabUrl: /https:\/\/twitter\.com\/.*adblockplus/
+    testName: "Updates - X icon",
+    elementToClick: "XButton",
+    newTabUrl: /https:\/\/x\.com\/.*adblockplus/
   },
   {
     testName: "Updates - Facebook icon",

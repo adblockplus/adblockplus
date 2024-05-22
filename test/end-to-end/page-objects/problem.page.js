@@ -62,7 +62,7 @@ class ProblemPage extends BasePage
     return $("//h1[@data-i18n='problem_title']");
   }
 
-  get twitterButton()
+  get XButton()
   {
     return $("//a[@data-i18n-title='problem_social_twitter']");
   }

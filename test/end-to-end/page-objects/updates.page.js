@@ -67,7 +67,7 @@ class UpdatesPage extends BasePage
     return $("//a[@data-i18n='updates_contribute_rate_action']");
   }
 
-  get twitterButton()
+  get XButton()
   {
     return $("//a[@data-i18n-title='updates_social_twitter']");
   }

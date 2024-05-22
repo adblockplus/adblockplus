@@ -67,12 +67,12 @@ describe("test popup ui", function()
     await browser.refresh();
     await popupPage.clickShareWithFriendsButton();
     expect(await popupPage.isFacebookShareIconDisplayed()).to.be.true;
-    expect(await popupPage.isTwitterShareIconDisplayed()).to.be.true;
+    expect(await popupPage.isXShareIconDisplayed()).to.be.true;
     expect(await popupPage.isShareWithFriendsButtonDisplayed()).to.be.false;
     await popupPage.clickSocialCancelLink();
     expect(await popupPage.isShareWithFriendsButtonDisplayed()).to.be.true;
     expect(await popupPage.isFacebookShareIconDisplayed()).to.be.false;
-    expect(await popupPage.isTwitterShareIconDisplayed()).to.be.false;
+    expect(await popupPage.isXShareIconDisplayed()).to.be.false;
   });
 
   it("should use generic popup on non-https pages", async function()

@@ -36,6 +36,6 @@ module.exports =
   privacyPolicyUrl: "https://adblockplus.org/en/privacy?link=privacy&lang=en-",
   reportAnIssueUrl: "https://adblockplus.org/bugs#reporting",
   subscriptionsUrl: "https://adblockplus.org/en/subscriptions?link=subscriptions&lang=en-",
-  twitterUrl: /https:\/\/twitter\.com\/.*adblockplus/,
+  XUrl: /https:\/\/x\.com\/.*adblockplus/,
   webstoreUrl: "https://chrome.google.com/webstore/detail/adblock-plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb/reviews?ref=store-rating"
 };

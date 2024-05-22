@@ -53,7 +53,7 @@ class HelpPage extends BasePage
     return $("//a[text()='Send us a bug report']");
   }
 
-  get twitterLink()
+  get XLink()
   {
     return $(".twitter");
   }
@@ -78,9 +78,9 @@ class HelpPage extends BasePage
     await (await this.sendUsABugReportLink).click();
   }
 
-  async clickTwitterLink()
+  async clickXLink()
   {
-    await (await this.twitterLink).click();
+    await (await this.XLink).click();
   }
 
   async clickVisitOurHelpCenterLink()
@@ -113,9 +113,9 @@ class HelpPage extends BasePage
     await this.switchToTab("https://help.adblockplus.org/hc/en-us");
   }
 
-  async switchToTwitterTab()
+  async switchToXTab()
   {
-    await this.switchToTab(/https:\/\/twitter\.com\/.*adblockplus/);
+    await this.switchToTab(/https:\/\/x\.com\/.*adblockplus/);
   }
 }
 

@@ -90,7 +90,7 @@ describe("test page links - problem", function()
             dataSet.fallbackNewTabUrl);
         }
       }
-      else if (dataSet.testName == "Problem - Twitter icon")
+      else if (dataSet.testName == "Problem - X icon")
       {
         await problemPage.waitForEnabledThenClick(
           problemPage[dataSet.elementToClick]);
