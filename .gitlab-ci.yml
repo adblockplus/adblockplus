@@ -32,7 +32,7 @@ stages:
   - test
   - build
   - checkfilesizes
-  - testpages
+  - compliance
   - uitests
   - uploadxtm
   - updatextm
@@ -352,11 +352,11 @@ downloadxtm:
     - 'git push -f -o merge_request.create -o merge_request.target=$CI_COMMIT_REF_NAME -o merge_request.remove_source_branch -o merge_request.title="WIP: ${COMMIT_MSG}" $PUSH_URL HEAD:refs/heads/$TARGET_BRANCH'
 
 ################################################################################
-# Ad filtering tests
+# Compliance tests
 ################################################################################
 
-.testpages:
-  stage: testpages
+.compliance:
+  stage: compliance
   image: docker:24.0.5
   services:
     - docker:24.0.5-dind
@@ -373,61 +373,51 @@ downloadxtm:
     when: always
     expire_in: 1 month
   rules:
-    # Do not trigger a merge request pipeline
-    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    # Do not trigger merge request event pipelines
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
       when: never
-    # Run automatically on release and main branch
-    - if: $CI_COMMIT_BRANCH == "release" || $CI_COMMIT_BRANCH == "main"
-      allow_failure: true
-    # Run manually on all other branches
-    - when: manual
-      allow_failure: true
+    - when: always
 
-.testpages:MV3:
-  extends: .testpages
+.compliance:MV3:
+  extends: .compliance
   variables:
     EXTENSION: adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
     MANIFEST: mv3
 
-testpages:MV3:chrome:latest:
-  extends: .testpages:MV3
-  variables:
-    BROWSER: chromium latest
-
-testpages:MV3:edge:latest:
-  extends: .testpages:MV3
+comp:MV3:edge:latest:
+  extends: .compliance:MV3
   variables:
     BROWSER: edge latest
 
-.testpages:MV2:
-  extends: .testpages
+.compliance:MV2:
+  extends: .compliance
   variables:
     EXTENSION: adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
     MANIFEST: mv2
 
-testpages:MV2:chrome:latest:
-  extends: .testpages:MV2
+comp:MV2:chrome:latest:
+  extends: .compliance:MV2
   variables:
     BROWSER: chromium latest
 
-testpages:MV2:edge:latest:
-  extends: .testpages:MV2
+comp:MV2:edge:latest:
+  extends: .compliance:MV2
   variables:
     BROWSER: edge latest
 
-testpages:MV2:chrome:oldest:
-  extends: .testpages:MV2
+comp:MV2:chrome:oldest:
+  extends: .compliance:MV2
   variables:
     BROWSER: chromium 77.0.3865.0
 
-testpages:MV2:firefox:latest:
-  extends: .testpages:MV2
+comp:MV2:firefox:latest:
+  extends: .compliance:MV2
   variables:
     BROWSER: firefox latest
     EXTENSION: adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
 
-testpages:MV2:firefox:oldest:
-  extends: .testpages:MV2
+comp:MV2:firefox:oldest:
+  extends: .compliance:MV2
   variables:
     BROWSER: firefox 68.0
     EXTENSION: adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi

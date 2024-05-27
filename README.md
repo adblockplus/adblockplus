@@ -38,7 +38,9 @@ download `npm` [here][npm].
 
 ### `node-gyp` error?
 
-If you're using an apple machine with apple silicon (arm64 CPU), you may encounter an error where `node-gyp` fails to build.  
+If you're using an apple machine with apple silicon (arm64 CPU), you may
+encounter an error where `node-gyp` fails to build. In that case you need to run
+`arch -x86_64 zsh` before any other commands.
 
 The likely cause is that the `node-gyp` cannot find the binary online, then tries to build the binary locally, and fails
 because you have Python 3.12 installed, [which does not work work with some versions of `node-gyp`](https://github.com/nodejs/node-gyp/issues/2869).  
