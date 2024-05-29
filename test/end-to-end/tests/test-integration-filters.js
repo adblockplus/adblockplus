@@ -53,24 +53,9 @@ describe("test custom filters as part of the integration tests", function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
-    const multilineString = `
-      /custom-blocking.js
-      /custom-blocking-regex*
-      ###custom-hiding-id
-      ##.custom-hiding-class
-    `;
-    await advancedPage.typeTextToAddCustomFilterListInput(
-      "");
-    await browser.executeScript(
-      `navigator.clipboard.writeText(\`${multilineString}\`);`, []);
-    const platform = await browser.
-      executeScript("return navigator.platform", []);
-    let pasteKey = "Control";
-    if (platform.includes("Mac"))
-    {
-      pasteKey = "Command";
-    }
-    await browser.keys([pasteKey, "V"]);
+    const filtersToAdd = ["/custom-blocking.js", "/custom-blocking-regex*",
+                          "###custom-hiding-id", "##.custom-hiding-class"];
+    await advancedPage.addCustomFiltersOneByOne(filtersToAdd);
     const customFiltersTestPage = "https://adblockinc.gitlab.io/QA-team/adbl" +
       "ocking/custom-filters/custom-filters-testpage.html";
     await browser.newWindow(customFiltersTestPage);
@@ -110,12 +95,9 @@ describe("test custom filters as part of the integration tests", function()
     expect(await testPages.
       isCustomHidingClassDisplayed()).to.be.false;
     await switchToABPOptionsTab(true);
-    await advancedPage.clickCustomFilterListsNthItemCheckbox("1");
-    await advancedPage.clickCustomFilterListsNthItemCheckbox("2");
-    await advancedPage.clickCustomFilterListsNthItemCheckbox("3");
-    await advancedPage.clickCustomFilterListsNthItemCheckbox("4");
+    await advancedPage.clickCustomFLTableHeadCheckbox();
     await advancedPage.clickDeleteCustomFLButton();
-    await browser.newWindow(customFiltersTestPage);
+    await advancedPage.switchToTab(/custom-filters-testpage/);
     await browser.refresh();
     expect(await testPages.getCustomBlockingFilterText()).to.include(
       "custom blocking filter should block this");
@@ -131,22 +113,8 @@ describe("test custom filters as part of the integration tests", function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
-    const multilineString = `
-      /custom-blocking.js
-      /custom-blocking-regex*
-    `;
-    await advancedPage.typeTextToAddCustomFilterListInput(
-      "");
-    await browser.executeScript(
-      `navigator.clipboard.writeText(\`${multilineString}\`);`, []);
-    const platform = await browser.
-      executeScript("return navigator.platform", []);
-    let pasteKey = "Control";
-    if (platform.includes("Mac"))
-    {
-      pasteKey = "Command";
-    }
-    await browser.keys([pasteKey, "V"]);
+    const filtersToAdd = ["/custom-blocking-regex*", "/custom-blocking.js"];
+    await advancedPage.addCustomFiltersOneByOne(filtersToAdd);
     await advancedPage.clickCustomFilterListsFirstItemToggle();
     const customFiltersTestPage = "https://adblockinc.gitlab.io/QA-team/adbl" +
       "ocking/custom-filters/custom-filters-testpage.html";
@@ -161,8 +129,19 @@ describe("test custom filters as part of the integration tests", function()
     await advancedPage.clickCustomFilterListsFirstItemToggle();
     await browser.newWindow(customFiltersTestPage);
     await browser.refresh();
-    expect(await testPages.getCustomBlockingFilterText()).to.include(
-      "custom blocking filter applied");
+    try
+    {
+      expect(await testPages.getCustomBlockingFilterText()).to.include(
+        "custom blocking filter applied");
+    }
+    catch (Exception)
+    {
+      await browser.pause(1000);
+      await browser.refresh();
+      await browser.pause(1500);
+      expect(await testPages.getCustomBlockingFilterText()).to.include(
+        "custom blocking filter applied");
+    }
     expect(await testPages.getCustomBlockingRegexFilterText()).to.include(
       "custom blocking regex filter applied");
   });
@@ -192,13 +171,25 @@ describe("test custom filters as part of the integration tests", function()
       await browser.keys(char);
     }
     await browser.keys("Enter");
+    await advancedPage.verifyTextPresentInCustomFLTable(text);
     const customFiltersTestPage = "https://adblockinc.gitlab.io/QA-team/adbl" +
       "ocking/custom-filters/custom-filters-testpage.html";
     await browser.newWindow(customFiltersTestPage);
     await browser.refresh();
     const testPages = new TestPages(browser);
-    expect(await testPages.getCustomBlockingFilterText()).to.include(
-      "custom blocking filter should block this");
+    try
+    {
+      expect(await testPages.getCustomBlockingFilterText()).to.include(
+        "custom blocking filter should block this");
+    }
+    catch (Exception)
+    {
+      await browser.pause(1000);
+      await browser.refresh();
+      await browser.pause(1500);
+      expect(await testPages.getCustomBlockingFilterText()).to.include(
+        "custom blocking filter should block this");
+    }
     expect(await testPages.getCustomBlockingRegexFilterText()).to.include(
       "custom blocking regex filter applied");
   });

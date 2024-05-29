@@ -500,6 +500,16 @@ class AdvancedPage extends BasePage
         "and text()='URL must start with https://.']");
   }
 
+  async addCustomFiltersOneByOne(filters)
+  {
+    for (const filter of filters)
+    {
+      await this.typeTextToAddCustomFilterListInput(filter);
+      await this.clickAddCustomFilterListButton();
+      await this.verifyTextPresentInCustomFLTable(filter);
+    }
+  }
+
   async clickAbpFiltersFLErrorIcon()
   {
     await (await this.abpFiltersFLErrorIcon).click();

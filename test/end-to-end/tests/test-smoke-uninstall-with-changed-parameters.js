@@ -48,10 +48,12 @@ describe("test uninstall after changed params as part of the smoke tests", funct
     await advancedPage.clickEasyListFLStatusToggle();
     expect(await advancedPage.
       isEasyListFLStatusToggleSelected()).to.be.false;
+    // Wait for FL to be properly removed
+    await browser.pause(1000);
     await browser.executeScript("browser.management.uninstallSelf();", []);
     await generalPage.switchToUninstalledTab();
     // Wait for tab to properly load
-    await browser.pause(1500);
+    await browser.pause(1000);
     const uninstallCurrentUrl = await generalPage.getCurrentUrl();
     expect(uninstallCurrentUrl).to.have.string("https://adblockplus.org/en/uninstalled");
     const todaysDate = moment().utc().format("YYYYMMDD");

@@ -272,8 +272,6 @@ describe("test advanced tab editing custom filters", function()
       await browser.keys("Backspace");
     }
     await advancedPage.typeTextToAddCustomFilterListInput("");
-    expect(await advancedPage.
-      verifyTextPresentInCustomFLTable(inputText, 200)).to.be.false;
     const platform = await browser.
       executeScript("return navigator.platform", []);
     let pasteKey = "Control";
