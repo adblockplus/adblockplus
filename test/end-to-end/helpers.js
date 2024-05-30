@@ -120,7 +120,7 @@ async function beforeSequence(expectInstalledTab = true)
   await browser.switchWindow(/options\.html/);
   await browser.url(`${origin}/desktop-options.html`);
   await browser.setWindowSize(1400, 1000);
-  return [origin];
+  return origin;
 }
 
 async function doesTabExist(tabName, timeout = 3000, countThreshold = 1)
