@@ -384,6 +384,11 @@ downloadxtm:
     EXTENSION: adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
     MANIFEST: mv3
 
+comp:MV3:chromium:latest:
+  extends: .compliance:MV3
+  variables:
+    BROWSER: chromium latest
+
 comp:MV3:edge:latest:
   extends: .compliance:MV3
   variables:
@@ -395,7 +400,7 @@ comp:MV3:edge:latest:
     EXTENSION: adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
     MANIFEST: mv2
 
-comp:MV2:chrome:latest:
+comp:MV2:chromium:latest:
   extends: .compliance:MV2
   variables:
     BROWSER: chromium latest
@@ -405,7 +410,7 @@ comp:MV2:edge:latest:
   variables:
     BROWSER: edge latest
 
-comp:MV2:chrome:oldest:
+comp:MV2:chromium:oldest:
   extends: .compliance:MV2
   variables:
     BROWSER: chromium 77.0.3865.0
