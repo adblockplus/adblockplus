@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "Bloķēt konkrētu elementu šajā tīmekļvietnē"
-  },
   "click_element_to_block_it": {
     "message": "Noklikšķiniet uz lapas elementa, lai to bloķētu."
   },
@@ -28,22 +25,6 @@
   },
   "sendReport": {
     "message": "Ziņot par problēmu"
-  },
-  "share_on_twitter_message": {
-    "message": "Esmu bloķējis $number$ reklāmas, izmantojot Adblock Plus. Izmēģiniet - tas ir BEZ MAKSAS!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo_message": {
-    "message": "Esmu bloķējis $number$ reklāmas, izmantojot Adblock Plus. Izmēģiniet - tas ir BEZ MAKSAS!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
   },
   "stats_header": {
     "message": "Bloķēto elementu skaits"

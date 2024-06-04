@@ -17,10 +17,9 @@
 
 import api from "../../../src/core/api/front/index.ts";
 import {getSourceAttribute} from "../../common.mjs";
-import {$, $$} from "../../dom.mjs";
+import {$} from "../../dom.mjs";
 import {initI18n} from "../../../src/i18n/index.ts";
 import setupBlock from "./block-element.mjs";
-import {createShareLink} from "./social-media-share.mjs";
 import setupToggles from "./toggles.mjs";
 import {
   activeTab,
@@ -28,6 +27,10 @@ import {
   whenPageReady
 } from "./utils.mjs";
 
+import {
+  ANNOYANCE_SUBSCRIPTION_TYPE,
+  COOKIES_PREMIUM_SUBSCRIPTION_TYPE
+} from "../../../src/premium-subscriptions/shared/premium-subscriptions.ts";
 import "../../../src/popup/ui/popup.css";
 import "../../io-circle-toggle.mjs";
 import "./notifications.mjs";
@@ -106,10 +109,11 @@ activeTab.then(tab =>
   });
 
   setupPremium();
+  setupPremiumToggles();
+  setupCookieModal();
   setupToggles(tab);
   setupStats(tab);
   setupBlock(tab);
-  setupShare();
   setupFooter();
 
   // closing the popup when the user focus on a different tab,
@@ -137,19 +141,12 @@ function updateBlockedTotal(blockedTotal)
 {
   const total = blockedTotal.toLocaleString();
   $("#stats-total .amount").textContent = total;
-
-  // whenever the total changes, update social media shared stats links too
-  for (const media of ["facebook", "twitter", "weibo"])
-  {
-    const link = $(`#counter-panel .share a.${media}`);
-    link.target = "_blank";
-    link.href = createShareLink(media, blockedTotal);
-  }
 }
 
 async function setupPremium()
 {
   setupPremiumBanners();
+  updateToggles();
 
   const premium = await api.premium.get();
   setPremiumState(premium.isActive);
@@ -171,6 +168,10 @@ async function setupPremiumBanners()
   const source = getSourceAttribute(document.body);
   const premiumUpgradeUrl = await api.ctalinks.get("premium-upgrade", {source});
   $("#premium-upgrade").setAttribute("href", premiumUpgradeUrl);
+  document.querySelectorAll("[data-link='premium']").forEach((element) =>
+  {
+    element.setAttribute("href", premiumUpgradeUrl);
+  });
 }
 
 function setPremiumState(premiumIsActive)
@@ -211,55 +212,6 @@ function setupStats(tab)
   api.stats.listen(["blocked_per_page", "blocked_total"]);
 }
 
-function setupShare()
-{
-  const wrapper = $("#counter-panel .share");
-  const shareButton = $(".enter", wrapper);
-  const cancelButton = $(".cancel", wrapper);
-  const firstFocusable = $("a", wrapper);
-  const indexed = $$("[tabindex]", wrapper);
-
-  const isExpanded = () => wrapper.classList.contains("expanded");
-
-  // when sharing link enters the container, it should get focused,
-  // but only if the focus was still in the sharedButton
-  firstFocusable.addEventListener("transitionend", () =>
-  {
-    if (isExpanded() && document.activeElement === shareButton)
-      firstFocusable.focus();
-  });
-
-  wrapper.addEventListener("transitionend", () =>
-  {
-    const expanded = isExpanded();
-
-    // add/drop tabindex accordingly with the expanded value
-    const tabindex = expanded ? 0 : -1;
-    for (const el of indexed)
-    {
-      el.setAttribute("tabindex", tabindex);
-    }
-    shareButton.setAttribute("tabindex", expanded ? -1 : 0);
-
-    // if it's not expanded, and the cancel was clicked, and it's still focused
-    // move the focus back to the shareButton
-    if (!expanded && document.activeElement === cancelButton)
-      shareButton.focus();
-  });
-
-  shareButton.addEventListener("click", (event) =>
-  {
-    event.preventDefault();
-    wrapper.classList.add("expanded");
-  });
-
-  cancelButton.addEventListener("click", (event) =>
-  {
-    event.preventDefault();
-    wrapper.classList.remove("expanded");
-  });
-}
-
 function setupFooter()
 {
   const footer = document.querySelector("io-popup-footer");
@@ -295,4 +247,97 @@ function setupFooter()
 
       footer.startAnimation();
     });
+}
+
+async function setupPremiumToggles()
+{
+  const cookieToggle = document
+    .getElementById("premium-cookie-toggle");
+  const annoyanceToggle = document
+    .getElementById("premium-distractions-toggle");
+
+  annoyanceToggle.addEventListener("click", async() =>
+  {
+    const value = annoyanceToggle.getAttribute("checked") !== null;
+    if (value)
+    {
+      api.premium.add(ANNOYANCE_SUBSCRIPTION_TYPE);
+    }
+    else
+    {
+      api.premium.remove(ANNOYANCE_SUBSCRIPTION_TYPE);
+    }
+  });
+
+  cookieToggle.addEventListener("click", async(event) =>
+  {
+    const value = cookieToggle.getAttribute("checked") !== null;
+
+    if (value)
+    {
+      const modalContainer = document.getElementById("cookie-consent-modal");
+      modalContainer.classList.add("visible");
+    }
+    else
+    {
+      api.premium.remove(COOKIES_PREMIUM_SUBSCRIPTION_TYPE);
+    }
+  });
+}
+
+async function updateToggles()
+{
+  const isPremiumEnabled = await api.premium.get();
+  const premiumSubscriptionsState = await api
+    .premium.getPremiumSubscriptionsState();
+
+  const annoyanceSubActive = isPremiumEnabled &&
+  premiumSubscriptionsState[ANNOYANCE_SUBSCRIPTION_TYPE];
+  const cookiesSubActive = isPremiumEnabled &&
+  premiumSubscriptionsState[COOKIES_PREMIUM_SUBSCRIPTION_TYPE];
+
+  const cookieToggle = document
+    .getElementById("premium-cookie-toggle");
+  const annoyanceToggle = document
+    .getElementById("premium-distractions-toggle");
+
+  if (cookiesSubActive)
+  {
+    cookieToggle.setAttribute("checked", "");
+  }
+  else
+  {
+    cookieToggle.removeAttribute("checked");
+  }
+
+  if (annoyanceSubActive)
+  {
+    annoyanceToggle.setAttribute("checked", "");
+  }
+  else
+  {
+    annoyanceToggle.removeAttribute("checked");
+  }
+}
+
+function setupCookieModal()
+{
+  const modalContainer = document.getElementById("cookie-consent-modal");
+  const cookieToggle = document
+    .getElementById("premium-cookie-toggle");
+
+  const closeButton = document.getElementById("cookie-consent-modal-close");
+  const acceptButton = document.getElementById("cookie-consent-modal-accept");
+
+  closeButton.addEventListener("click", () =>
+  {
+    modalContainer.classList.remove("visible");
+    cookieToggle.removeAttribute("checked");
+  });
+
+  acceptButton.addEventListener("click", async() =>
+  {
+    api.premium.add(COOKIES_PREMIUM_SUBSCRIPTION_TYPE);
+    modalContainer.classList.remove("visible");
+  });
 }

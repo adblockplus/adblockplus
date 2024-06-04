@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "Заблокировать определенный элемент на этом вебсайте"
-  },
   "browser_store_android": {
     "message": "Приложение Android на Google Play"
   },
@@ -69,35 +66,7 @@
     "message": "Щёлкните кнопку внизу, чтобы изменения вступили в силу."
   },
   "sendReport": {
-    "message": "Сообщить о проблеме на этой странице"
-  },
-  "share_on_facebook": {
-    "message": "Поделиться в Facebook"
-  },
-  "share_on_twitter": {
-    "message": "Поделиться в Twitter"
-  },
-  "share_on_twitter_message": {
-    "message": "Я заблокировал(-а) $number$ рекламных объявлений с Adblock Plus. Попробуйте и вы – это БЕСПЛАТНО!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "Поделиться в Weibo"
-  },
-  "share_on_weibo_message": {
-    "message": "Я заблокировал(-а) $number$ рекламных объявлений с Adblock Plus. Попробуйте и вы – это БЕСПЛАТНО!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "Поделитесь цифрами с друзьями"
+    "message": "Сообщить о проблеме"
   },
   "stats_header": {
     "message": "Число заблокированных объектов"
@@ -116,5 +85,17 @@
   },
   "status_page": {
     "message": "Данная страница:"
+  },
+  "premium_cookies_title": {
+    "message": "Блокировка выскакивающих окон с требованием согласия на использование файлов cookie"
+  },
+  "premium_cookies_subtitle": {
+    "message": "Скрывайте большинство баннеров cookie на популярных сайтах"
+  },
+  "premium_distractions_title": {
+    "message": "Блокируйте больше отвлекающих факторов"
+  },
+  "premium_distractions_subtitle": {
+    "message": "Блокируйте распространенные отвлекающие факторы, такие как видео с автоматическим воспроизведением"
   }
 }

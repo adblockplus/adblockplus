@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "Blochează un element specific pe acest site"
-  },
   "click_element_to_block_it": {
     "message": "Clichează pe un element din pagină pentru a-l bloca."
   },
@@ -31,31 +28,6 @@
   },
   "share_on_facebook": {
     "message": "Partajează pe Facebook"
-  },
-  "share_on_twitter": {
-    "message": "Partajează pe Twitter"
-  },
-  "share_on_twitter_message": {
-    "message": "Am blocat $number$ (de) reclame cu Adblock Plus. Încearcă - este GRATUIT!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "Distribuie pe Weibo"
-  },
-  "share_on_weibo_message": {
-    "message": "Am blocat $number$ (de) reclame cu Adblock Plus. Încearcă - este GRATUIT!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "Partajează numere cu prietenii"
   },
   "stats_header": {
     "message": "Numărul de elemente blocate"

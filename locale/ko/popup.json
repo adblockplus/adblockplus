@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "이 웹사이트의 구체적 요소 차단하기"
-  },
   "browser_store_android": {
     "message": "Google Play의 Android 앱"
   },
@@ -69,35 +66,7 @@
     "message": "효과를 적용하려면 하단의 버튼을 클릭하세요."
   },
   "sendReport": {
-    "message": "이 페이지의 문제 신고하기"
-  },
-  "share_on_facebook": {
-    "message": "Facebook에 공유하기"
-  },
-  "share_on_twitter": {
-    "message": "트위터에 공유하기"
-  },
-  "share_on_twitter_message": {
-    "message": "Adblock Plus로 광고 $number$개를 차단했습니다. 무료로 사용해보세요!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "웨이보(Weibo)에 공유하기"
-  },
-  "share_on_weibo_message": {
-    "message": "Adblock Plus로 광고 $number$개를 차단했습니다. 무료로 사용해보세요!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "차단 개수 친구와 공유하기"
+    "message": "문제 신고"
   },
   "stats_header": {
     "message": "차단된 광고의 수"
@@ -116,5 +85,17 @@
   },
   "status_page": {
     "message": "이 페이지:"
+  },
+  "premium_cookies_title": {
+    "message": "쿠키 동의 팝업 차단"
+  },
+  "premium_cookies_subtitle": {
+    "message": "인기 있는 사이트에 있는 대부분의 쿠키 배너 숨기기"
+  },
+  "premium_distractions_title": {
+    "message": "더 많은 방해물 차단"
+  },
+  "premium_distractions_subtitle": {
+    "message": "자동 재생 동영상 같은 일반적인 방해물 차단"
   }
 }

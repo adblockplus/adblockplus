@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "Bloca un element específic en aquest lloc web"
-  },
   "click_element_to_block_it": {
     "message": "Feu clic a un element de la pàgina per bloquejar-lo."
   },
@@ -28,34 +25,6 @@
   },
   "sendReport": {
     "message": "Informa d'un problema en aquesta pàgina"
-  },
-  "share_on_facebook": {
-    "message": "Comparteix al Facebook"
-  },
-  "share_on_twitter": {
-    "message": "Comparteix al Twitter"
-  },
-  "share_on_twitter_message": {
-    "message": "He bloquejat $number$ anuncis amb l'Adblock Plus. Proveu-lo. És GRATUÏT!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "Comparteix al Weibo"
-  },
-  "share_on_weibo_message": {
-    "message": "He bloquejat $number$ anuncis amb l'Adblock Plus. Proveu-lo. És GRATUÏT!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "Comparteix les xifres amb amics"
   },
   "stats_header": {
     "message": "Número d'elements bloquejats"

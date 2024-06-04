@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "拦截此网站上的特定元素"
-  },
   "browser_store_android": {
     "message": "在 Google Play 获取 Android 应用程序"
   },
@@ -69,35 +66,7 @@
     "message": "点击以下按钮以使更改生效。"
   },
   "sendReport": {
-    "message": "报告此页面上的问题"
-  },
-  "share_on_facebook": {
-    "message": "在 Facebook 上分享"
-  },
-  "share_on_twitter": {
-    "message": "在 Twitter 上分享"
-  },
-  "share_on_twitter_message": {
-    "message": "我使用$number$ Adblock Plus 拦截广告。试试吧，完全免费！",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "在微博上分享"
-  },
-  "share_on_weibo_message": {
-    "message": "我使用$number$ Adblock Plus 拦截广告。试试吧，完全免费！",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "与朋友分享号码"
+    "message": "报告问题"
   },
   "stats_header": {
     "message": "被拦截的项目数"
@@ -116,5 +85,17 @@
   },
   "status_page": {
     "message": "此页面："
+  },
+  "premium_cookies_title": {
+    "message": "拦截 Cookie 同意弹出菜单"
+  },
+  "premium_cookies_subtitle": {
+    "message": "隐藏热门网站上的大部分 Cookie 横幅"
+  },
+  "premium_distractions_title": {
+    "message": "拦截更多干扰"
+  },
+  "premium_distractions_subtitle": {
+    "message": "拦截自动播放视频等常见干扰"
   }
 }

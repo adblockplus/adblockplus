@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "Bloquez des éléments spécifiques sur ce site web"
-  },
   "browser_store_android": {
     "message": "Application Android sur Google Play"
   },
@@ -69,35 +66,7 @@
     "message": "Cliquez sur le bouton ci-dessous pour que les modifications soient prises en compte."
   },
   "sendReport": {
-    "message": "Rédiger un rapport sur cette page"
-  },
-  "share_on_facebook": {
-    "message": "Partagez sur Facebook"
-  },
-  "share_on_twitter": {
-    "message": "Partagez sur Twitter"
-  },
-  "share_on_twitter_message": {
-    "message": "J'ai bloqué $number$ pubs avec Adblock Plus. Faites un essai - c'est GRATUIT !",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "Partagez sur Weibo"
-  },
-  "share_on_weibo_message": {
-    "message": "J'ai bloqué $number$ pubs avec Adblock Plus. Faites un essai - c'est GRATUIT !",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "Partagez des numéros avec des amis"
+    "message": "Signaler un problème"
   },
   "stats_header": {
     "message": "Nombre d’éléments bloqués"
@@ -116,5 +85,17 @@
   },
   "status_page": {
     "message": "Cette page :"
+  },
+  "premium_cookies_title": {
+    "message": "Bloquez les fenêtres pop-up de consentement aux cookies"
+  },
+  "premium_cookies_subtitle": {
+    "message": "Masquez la plupart des bannières de cookies sur les sites les plus fréquentés"
+  },
+  "premium_distractions_title": {
+    "message": "Bloquez davantage de sources de distraction"
+  },
+  "premium_distractions_subtitle": {
+    "message": "Bloquez les sources de distraction courantes comme les vidéos en lecture automatique"
   }
 }

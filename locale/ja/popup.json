@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "このウェブ上の特定の要素をブロックする"
-  },
   "browser_store_android": {
     "message": "Google Play の Android アプリ"
   },
@@ -69,35 +66,10 @@
     "message": "以下のボタンをクリックして、変更を有効にしてください。"
   },
   "sendReport": {
-    "message": "このページの問題を報告する"
+    "message": "問題報告"
   },
   "share_on_facebook": {
     "message": "Facebook で共有"
-  },
-  "share_on_twitter": {
-    "message": "Twitter で共有"
-  },
-  "share_on_twitter_message": {
-    "message": "Adblock Plus $number$ 件の広告をブロックしました。試してみましょう 。無料です！",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "微博で共有"
-  },
-  "share_on_weibo_message": {
-    "message": "Adblock Plus $number$ 件の広告をブロックしました。試してみましょう 。無料です！",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "数値を友人と共有する"
   },
   "stats_header": {
     "message": "ブロックした数"
@@ -116,5 +88,17 @@
   },
   "status_page": {
     "message": "本ページ："
+  },
+  "premium_cookies_title": {
+    "message": "クッキーの同意ポップアップをブロックする"
+  },
+  "premium_cookies_subtitle": {
+    "message": "人気サイトのほとんどのクッキーバナーを非表示にする"
+  },
+  "premium_distractions_title": {
+    "message": "多くの煩わしい表示をブロックする"
+  },
+  "premium_distractions_subtitle": {
+    "message": "動画の自動再生などのよくある煩わしい表示をブロックする"
   }
 }

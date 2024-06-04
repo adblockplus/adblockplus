@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "A weboldal bizonyos elemeinek blokkolása"
-  },
   "browser_store_android": {
     "message": "Android alkalmazás a Google Play áruházban"
   },
@@ -69,35 +66,7 @@
     "message": "A módosítások érvényesítéséhez kattintson az alábbi gombra."
   },
   "sendReport": {
-    "message": "Probléma jelentése az oldalon"
-  },
-  "share_on_facebook": {
-    "message": "Megosztás a Facebook-on"
-  },
-  "share_on_twitter": {
-    "message": "Megosztás a Twitter-en"
-  },
-  "share_on_twitter_message": {
-    "message": "Az Adblock Plus alkalmazással $number$ reklámot blokkoltam. Próbálja ki, INGYENES!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "Megosztás a Weibo mikroblog weboldalon"
-  },
-  "share_on_weibo_message": {
-    "message": "Az Adblock Plus alkalmazással $number$ reklámot blokkoltam. Próbálja ki, INGYENES!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "Számok megosztása a barátaival"
+    "message": "Probléma jelentése"
   },
   "stats_header": {
     "message": "Blokkolt elemek száma"
@@ -116,5 +85,17 @@
   },
   "status_page": {
     "message": "Ez az oldal:"
+  },
+  "premium_cookies_title": {
+    "message": "Sütihasználati hozzájárulást kérő előugró ablakok blokkolása"
+  },
+  "premium_cookies_subtitle": {
+    "message": "A legtöbb sütinyilatkozat elrejtése a legnépszerűbb oldalakon"
+  },
+  "premium_distractions_title": {
+    "message": "Több zavaró elem blokkolása"
+  },
+  "premium_distractions_subtitle": {
+    "message": "Zavaró elemek blokkolása, mint például az automatikus videolejátszás"
   }
 }

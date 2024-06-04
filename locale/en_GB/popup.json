@@ -26,23 +26,6 @@
   "sendReport": {
     "message": "Report issue"
   },
-  "share_on_facebook": {
-    "message": "Share on Facebook"
-  },
-  "share_on_twitter": {
-    "message": "Share on Twitter"
-  },
-  "share_on_twitter_message": {
-    "message": "I've blocked $number$ ads with Adblock Plus. Give it a try - it's FREE!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "Share numbers with friends"
-  },
   "stats_header": {
     "message": "Number of items blocked"
   },

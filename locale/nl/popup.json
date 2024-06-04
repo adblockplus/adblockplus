@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "Specifieke elementen op deze website blokkeren"
-  },
   "browser_store_android": {
     "message": "Android-app op Google Play"
   },
@@ -69,35 +66,7 @@
     "message": "Klik op de knop hieronder om wijzigingen door te voeren."
   },
   "sendReport": {
-    "message": "Een probleem op deze pagina melden"
-  },
-  "share_on_facebook": {
-    "message": "Delen op Facebook"
-  },
-  "share_on_twitter": {
-    "message": "Delen op Twitter"
-  },
-  "share_on_twitter_message": {
-    "message": "Ik heb reclame geblokkeerd $number$ met Adblock Plus. Probeer het eens - het is GRATIS!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "Delen op Weibo"
-  },
-  "share_on_weibo_message": {
-    "message": "Ik heb reclame geblokkeerd $number$ met Adblock Plus. Probeer het eens - het is GRATIS!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "Aantallen delen met vrienden"
+    "message": "Probleem melden"
   },
   "stats_header": {
     "message": "Aantal geblokkeerde items"
@@ -116,5 +85,17 @@
   },
   "status_page": {
     "message": "Deze pagina:"
+  },
+  "premium_cookies_title": {
+    "message": "Blokkeer pop-ups die vragen om cookietoestemming"
+  },
+  "premium_cookies_subtitle": {
+    "message": "Verberg de meeste cookiebanners op populaire websites"
+  },
+  "premium_distractions_title": {
+    "message": "Blokkeer meer afleidingen"
+  },
+  "premium_distractions_subtitle": {
+    "message": "Blokkeer veelvoorkomende afleidingen, zoals video's die automatisch worden afgespeeld"
   }
 }

@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "Blokir elemen tertentu di situs web ini"
-  },
   "click_element_to_block_it": {
     "message": "Klik elemen pada laman untuk memblokirnya."
   },
@@ -31,31 +28,6 @@
   },
   "share_on_facebook": {
     "message": "Bagikan di Facebook"
-  },
-  "share_on_twitter": {
-    "message": "Bagikan di Twitter"
-  },
-  "share_on_twitter_message": {
-    "message": "Saya telah memblokir $number$ iklan dengan Adblock Plus. Coba sekarang - GRATIS!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "Bagikan di Weibo"
-  },
-  "share_on_weibo_message": {
-    "message": "Saya telah memblokir $number$ iklan dengan Adblock Plus. Coba sekarang - GRATIS!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "Bagikan ke teman-teman"
   },
   "stats_header": {
     "message": "Jumlah item yang diblokir"

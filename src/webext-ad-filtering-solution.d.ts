@@ -172,6 +172,7 @@ declare module "@eyeo/webext-ad-filtering-solution" {
    * A resource that provides a list of filters that decide what to block.
    */
   interface Subscription {
+    id: string;
     /**
      * Indicates whether the subscription is currently downloading (downloadble
      * subscriptions only).
@@ -320,5 +321,15 @@ declare module "@eyeo/webext-ad-filtering-solution" {
      * Returns an array of all recommended subscriptions.
      */
     const getRecommendations: () => Recommendation[];
+
+    /**
+     * Returns an array of all recommended subscriptions.
+     */
+    const getSubscriptions: () => Promise<Subscription[]>;
+
+    /**
+     * Enables a previously disabled subscription. Has no effect otherwise.
+     */
+    const enable: (url: string) => Promise<void>;
   }
 }

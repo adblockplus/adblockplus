@@ -1,7 +1,4 @@
 {
-  "block_element_description": {
-    "message": "Αποκλεισμός συγκεκριμένου στοιχείου σε αυτή την ιστοσελίδα"
-  },
   "browser_store_android": {
     "message": "Android app στο Google Play"
   },
@@ -60,35 +57,7 @@
     "message": "Κάντε κλικ στο παρακάτω κουμπί για να πραγματοποιηθούν οι αλλαγές."
   },
   "sendReport": {
-    "message": "Αναφορά προβλήματος σε αυτή τη σελίδα"
-  },
-  "share_on_facebook": {
-    "message": "Κοινοποίηση στο Facebook"
-  },
-  "share_on_twitter": {
-    "message": "Κοινοποίηση στο Twitter"
-  },
-  "share_on_twitter_message": {
-    "message": "Εχώ αποκλείσει $number$ τις διαφημίσεις με το Adblock Plus. Δοκιμάστε το - είναι ΔΩΡΕΑΝ!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "share_on_weibo": {
-    "message": "Κοινοποίηση στο Weibo"
-  },
-  "share_on_weibo_message": {
-    "message": "Εχώ αποκλείσει $number$ τις διαφημίσεις με το Adblock Plus. Δοκιμάστε το - είναι ΔΩΡΕΑΝ!",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
-  },
-  "social_media_share": {
-    "message": "Κοινοποίηση των αριθμών σε φίλους"
+    "message": "Αναφορά ζητήματος"
   },
   "stats_label_page": {
     "message": "σ' αυτή τη σελίδα"
@@ -104,5 +73,17 @@
   },
   "status_page": {
     "message": "Αυτή η σελίδα:"
+  },
+  "premium_cookies_title": {
+    "message": "Αποκλεισμός αναδυόμενων παραθύρων συγκατάθεσης για τα cookies"
+  },
+  "premium_cookies_subtitle": {
+    "message": "Απόκρυψη των περισσότερων μπάνερ για τα cookies σε δημοφιλείς ιστοσελίδες"
+  },
+  "premium_distractions_title": {
+    "message": "Αποκλείστε περισσότερους περισπασμούς"
+  },
+  "premium_distractions_subtitle": {
+    "message": "Αποκλείστε κοινούς περισπασμούς, όπως τα βίντεο με αυτόματη αναπαραγωγή"
   }
 }

@@ -19,14 +19,22 @@ import * as ewe from "@eyeo/webext-ad-filtering-solution";
 
 import { addSubscription } from "../../../adblockpluschrome/lib/filterConfiguration";
 import * as premium from "../../premium/background";
-import { premiumTypes } from "../shared";
+import {
+  ANNOYANCE_SUBSCRIPTION_TYPE,
+  COOKIES_PREMIUM_SUBSCRIPTION_TYPE,
+  premiumTypes,
+  type PremiumSubscriptionType
+} from "../shared";
+import { port } from "../../../adblockpluschrome/lib/messaging/port";
+import { type Message } from "../../core/api/shared";
+import type { PremiumSubscriptionsTypes } from "../../core/api/front/api.types";
 
 /**
  * Returns a list of premium subscriptions.
  *
  * @returns A list of premium subscriptions
  */
-async function getPremiumSubscriptions(): Promise<ewe.Recommendation[]> {
+function getPremiumSubscriptions(): ewe.Recommendation[] {
   // The subscription of the "annoyances" type is the DC subscription
   return ewe.subscriptions
     .getRecommendations()
@@ -40,7 +48,7 @@ async function getPremiumSubscriptions(): Promise<ewe.Recommendation[]> {
  * the subscriptions gets fulfilled or rejected
  */
 async function addOptoutPremiumSubscriptions(): Promise<void> {
-  const subscriptions = await getPremiumSubscriptions();
+  const subscriptions = getPremiumSubscriptions();
 
   for (const subscription of subscriptions) {
     if (
@@ -60,13 +68,79 @@ async function addOptoutPremiumSubscriptions(): Promise<void> {
  * the subscriptions gets fulfilled or rejected
  */
 async function removePremiumSubscriptions(): Promise<void> {
-  const subscriptions = await getPremiumSubscriptions();
+  const subscriptions = getPremiumSubscriptions();
 
   for (const subscription of subscriptions) {
     if (await ewe.subscriptions.has(subscription.url)) {
       await ewe.subscriptions.remove(subscription.url);
     }
   }
+}
+
+export function computePremiumState(
+  premiumSubscriptions: ewe.Recommendation[],
+  activeSubscriptions: ewe.Subscription[]
+): {
+  [ANNOYANCE_SUBSCRIPTION_TYPE]: boolean;
+  [COOKIES_PREMIUM_SUBSCRIPTION_TYPE]: boolean;
+} {
+  const annoyanceSubscriptionId = premiumSubscriptions.find(
+    (sub) => sub.type === ANNOYANCE_SUBSCRIPTION_TYPE
+  )?.id;
+  const cookiesPremiumSubscriptionId = premiumSubscriptions.find(
+    (sub) => sub.type === COOKIES_PREMIUM_SUBSCRIPTION_TYPE
+  )?.id;
+
+  return {
+    [ANNOYANCE_SUBSCRIPTION_TYPE]: activeSubscriptions.some(
+      (sub: ewe.Subscription) =>
+        sub.id === annoyanceSubscriptionId && sub.enabled
+    ),
+    [COOKIES_PREMIUM_SUBSCRIPTION_TYPE]: activeSubscriptions.some(
+      (sub: ewe.Subscription) =>
+        sub.id === cookiesPremiumSubscriptionId && sub.enabled
+    )
+  };
+}
+
+export async function addPremiumSubscription(
+  type: PremiumSubscriptionType
+): Promise<void> {
+  const subscription = getPremiumSubscriptions().find(
+    (sub) => sub.type === type
+  );
+
+  if (subscription !== undefined) {
+    await addSubscription(subscription);
+    void ewe.subscriptions.enable(subscription.url);
+  }
+}
+
+export async function removePremiumSubscription(
+  type: PremiumSubscriptionType
+): Promise<void> {
+  const subscription = getPremiumSubscriptions().find(
+    (sub) => sub.type === type
+  );
+
+  if (subscription === undefined) {
+    return;
+  }
+
+  const hasSubscription = await ewe.subscriptions.has(subscription.url);
+
+  if (hasSubscription) {
+    void ewe.subscriptions.remove(subscription.url);
+  }
+}
+
+export async function getPremiumSubscriptionsState(): Promise<{
+  [ANNOYANCE_SUBSCRIPTION_TYPE]: boolean;
+  [COOKIES_PREMIUM_SUBSCRIPTION_TYPE]: boolean;
+}> {
+  const premiumSubscriptions = getPremiumSubscriptions();
+  const activeSubscriptions = await ewe.subscriptions.getSubscriptions();
+  return computePremiumState(premiumSubscriptions, activeSubscriptions);
 }
 
 /**
@@ -79,5 +153,36 @@ export function start(): void {
 
   premium.emitter.on("activated", () => {
     void addOptoutPremiumSubscriptions();
+  });
+
+  port.on(
+    "premium.subscriptions.add",
+    (msg: Message & PremiumSubscriptionsTypes) => {
+      if (msg.type !== "premium.subscriptions.add") {
+        return;
+      }
+
+      void addPremiumSubscription(msg.subscriptionType);
+    }
+  );
+
+  port.on(
+    "premium.subscriptions.remove",
+    async (msg: Message & PremiumSubscriptionsTypes) => {
+      if (msg.type !== "premium.subscriptions.remove") {
+        return;
+      }
+
+      await removePremiumSubscription(msg.subscriptionType);
+    }
+  );
+
+  port.on("premium.subscriptions.getState", async (msg: Message) => {
+    if (msg.type !== "premium.subscriptions.getState") {
+      return;
+    }
+
+    const state = await getPremiumSubscriptionsState();
+    return state;
   });
 }

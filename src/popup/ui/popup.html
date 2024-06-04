@@ -25,8 +25,8 @@
     <script defer src="popup.js"></script>
   </head>
   <body class="nohtml" tabindex="1" data-source="popup" hidden>
-    <header>
-      <img src="skin/icons/logo/abp-full.svg" alt="" />
+    <header class="popup-header">
+      <img src="skin/icons/popup/logo.svg" alt="Adblock Plus" />
       <a
         id="premium-upgrade"
         data-i18n="premium_upgrade"
@@ -50,14 +50,14 @@
       </div>
       <div id="page-status">
         <h2 data-i18n="status_header"></h2>
-        <div class="domain">
+        <div class="domain status_block">
           <div class="details">
             <h3 data-i18n="status_domain"></h3>
             <p id="blocking-domain"></p>
           </div>
           <io-circle-toggle checked></io-circle-toggle>
         </div>
-        <div class="page">
+        <div class="page status_block">
           <div class="details">
             <h3 data-i18n="status_page"></h3>
             <p id="blocking-page"></p>
@@ -65,9 +65,63 @@
           <io-circle-toggle checked></io-circle-toggle>
         </div>
       </div>
+      <div id="page-premium-cta">
+        <a target="_blank" data-link="premium" class="premium-block">
+          <span
+            class="premium-block-title"
+            data-i18n="premium_cookies_title"
+          ></span>
+          <span
+            class="premium-block-subtitle"
+            data-i18n="premium_cookies_subtitle"
+          ></span>
+        </a>
+        <a target="_blank" data-link="premium" class="premium-block">
+          <span
+            class="premium-block-title"
+            data-i18n="premium_distractions_title"
+          ></span>
+          <span
+            class="premium-block-subtitle"
+            data-i18n="premium_distractions_subtitle"
+          ></span>
+        </a>
+      </div>
+      <div id="page-premium-controls">
+        <article class="premium-block">
+          <div class="premium-block-text">
+            <span
+              class="premium-block-title"
+              data-i18n="premium_cookies_title"
+            ></span>
+            <span
+              class="premium-block-subtitle"
+              data-i18n="premium_cookies_subtitle"
+            ></span>
+          </div>
+
+          <io-circle-toggle id="premium-cookie-toggle"></io-circle-toggle>
+        </article>
+        <article class="premium-block">
+          <div class="premium-block-text">
+            <span
+              class="premium-block-title"
+              data-i18n="premium_distractions_title"
+            ></span>
+            <span
+              class="premium-block-subtitle"
+              data-i18n="premium_distractions_subtitle"
+            ></span>
+          </div>
+          <io-circle-toggle
+            id="premium-distractions-toggle"
+            checked
+          ></io-circle-toggle>
+        </article>
+      </div>
       <div id="page-info">
         <div id="default-container">
-          <h2 data-i18n="stats_header"></h2>
+          <h2 class="page-info-header" data-i18n="stats_header"></h2>
           <div id="counter-panel" class="card">
             <div class="stats">
               <div id="stats-page">
@@ -79,48 +133,6 @@
                 <strong class="amount"></strong>
               </div>
             </div>
-            <div class="share">
-              <div class="stack">
-                <button class="enter">
-                  <img src="skin/icons/share.svg" alt="" />
-                  <span data-i18n="social_media_share"></span>
-                </button>
-              </div>
-              <div class="stack links">
-                <span class="link">
-                  <a class="facebook" tabindex="-1" href="#">
-                    <img
-                      data-i18n-alt="share_on_facebook"
-                      src="skin/icons/share-on-facebook.svg"
-                      height="16"
-                    />
-                  </a>
-                </span>
-                <span class="link">
-                  <a class="twitter" tabindex="-1" href="#">
-                    <img
-                      data-i18n-alt="share_on_twitter"
-                      src="skin/icons/share-on-twitter.svg"
-                      height="14"
-                    />
-                  </a>
-                </span>
-                <span class="link weibo">
-                  <a class="weibo" tabindex="-1" href="#">
-                    <img
-                      data-i18n-alt="share_on_weibo"
-                      src="skin/icons/share-on-weibo.svg"
-                      height="14"
-                    />
-                  </a>
-                </span>
-                <button
-                  class="cancel"
-                  tabindex="-1"
-                  data-i18n="cancel"
-                ></button>
-              </div>
-            </div>
           </div>
           <div class="options">
             <button id="block-element">
@@ -128,7 +140,6 @@
                 data-i18n="easy_create_filter"
                 class="block background-icon"
               ></strong>
-              <span data-i18n="block_element_description" class="block"></span>
             </button>
             <button id="issue-reporter">
               <span
@@ -161,5 +172,33 @@
     <footer>
       <io-popup-footer></io-popup-footer>
     </footer>
+
+    <div
+      id="cookie-consent-modal"
+      class="cookie-consent-modal-container hidden"
+    >
+      <div class="cookie-consent-modal">
+        <h3
+          class="cookie-consent-modal-title"
+          data-i18n="options_dialog_optIn_premium_subscription_title"
+        ></h3>
+        <p
+          class="cookie-consent-modal-text"
+          data-i18n="options_dialog_optIn_premium_subscription_description"
+        ></p>
+        <div class="cookie-consent-modal-button-container">
+          <button
+            class="cookie-consent-modal-button"
+            id="cookie-consent-modal-close"
+            data-i18n="options_dialog_optIn_premium_subscription_reject"
+          ></button>
+          <button
+            class="cookie-consent-modal-button premium"
+            id="cookie-consent-modal-accept"
+            data-i18n="options_dialog_optIn_premium_subscription_confirm"
+          ></button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
