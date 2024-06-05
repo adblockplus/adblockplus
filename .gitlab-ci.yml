@@ -28,8 +28,6 @@ default:
       - .npm/
 
 stages:
-  - lint
-  - test
   - build
   - checkfilesizes
   - compliance
@@ -41,34 +39,28 @@ stages:
   - downloadcrowdin
 
 ################################################################################
-# Test
-################################################################################
-
-lint:
-  stage: lint
-  script:
-    # Update dependencies
-    - npm ci --cache .npm --prefer-offline
-    # Run linter
-    - npm run lint
-
-test:
-  stage: test
-  script:
-    # Update dependencies
-    - npm ci --cache .npm --prefer-offline
-    # Run tests
-    - npm run test
-
-################################################################################
 # Build
 ################################################################################
 
-build:
+.build:
   stage: build
-  script:
+  before_script:
     # Update dependencies
     - npm ci --cache .npm --prefer-offline
+
+lint:
+  extends: .build
+  script:
+    - npm run lint
+
+test:
+  extends: .build
+  script:
+    - npm run test
+
+build:
+  extends: .build
+  script:
     # Create extension builds
     - npm run build:release chrome -- --unhandled-rejections=strict
     - npm run build:release firefox -- --unhandled-rejections=strict
@@ -361,6 +353,7 @@ downloadxtm:
   services:
     - docker:24.0.5-dind
   interruptible: true
+  needs: ["build"]
   before_script:
     - apk add bash git
   script:
