@@ -17,6 +17,8 @@
 
 "use strict";
 
+let extensionUrl;
+
 function openOptionsPage()
 {
   chrome.management.getAll(extensions =>
@@ -30,6 +32,7 @@ function openOptionsPage()
         extension.name != "Chrome Automation Extension"
       )
       {
+        extensionUrl = extension.optionsUrl;
         chrome.tabs.create({url: extension.optionsUrl});
       }
     }
@@ -65,6 +68,23 @@ function closeLoadingTab()
     }
   });
 }
+
+function openDevToolsPanelPage()
+{
+  const devToolsPanelUrl = extensionUrl.match(/.*\//)[0] + "devtools-panel.html";
+  chrome.tabs.create({url: devToolsPanelUrl});
+}
+
+chrome.webNavigation.onCompleted.addListener(details =>
+{
+  if (
+    details.url === "https://adblockplus.org/openDevToolsPanelPage" &&
+    details.tabId
+  )
+  {
+    openDevToolsPanelPage();
+  }
+}, {url: [{hostEquals: "adblockplus.org"}]});
 
 function openServiceWorkerPage()
 {
