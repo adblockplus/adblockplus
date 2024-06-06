@@ -17,21 +17,91 @@
 
 "use strict";
 
-// The timeout allows the ABP extension being ready
-setTimeout(() =>
+let extensionUrl;
+
+function openOptionsPage()
 {
   chrome.management.getAll(extensions =>
   {
     for (const extension of extensions)
     {
-      if (extension.type == "extension" &&
-          extension.installType == "development" &&
-          extension.id != chrome.runtime.id &&
-          extension.name != "Chrome Automation Extension")
+      if (
+        extension.type == "extension" &&
+        extension.installType == "development" &&
+        extension.id != chrome.runtime.id &&
+        extension.name != "Chrome Automation Extension"
+      )
       {
+        extensionUrl = extension.optionsUrl;
         chrome.tabs.create({url: extension.optionsUrl});
-        return;
       }
     }
   });
-}, 1000);
+}
+
+function closeDataTab()
+{
+  chrome.tabs.query({}, tabs =>
+  {
+    for (const tab of tabs)
+    {
+      if (tab.url.startsWith("data"))
+      {
+        chrome.tabs.remove(tab.id);
+        clearInterval(closeLoadedDataTabInterval);
+      }
+    }
+  });
+}
+
+function closeLoadingTab()
+{
+  chrome.tabs.query({}, tabs =>
+  {
+    for (const tab of tabs)
+    {
+      if (tab.status === "loading")
+      {
+        chrome.tabs.remove(tab.id);
+        clearInterval(closeLoadedDataTabInterval);
+      }
+    }
+  });
+}
+
+function openDevToolsPanelPage()
+{
+  const devToolsPanelUrl = extensionUrl.match(/.*\//)[0] + "devtools-panel.html";
+  chrome.tabs.create({url: devToolsPanelUrl});
+}
+
+chrome.webNavigation.onCompleted.addListener(details =>
+{
+  if (
+    details.url === "https://adblockplus.org/openDevToolsPanelPage" &&
+    details.tabId
+  )
+  {
+    openDevToolsPanelPage();
+  }
+}, {url: [{hostEquals: "adblockplus.org"}]});
+
+function openServiceWorkerPage()
+{
+  chrome.tabs.update({url: "chrome://serviceworker-internals/"});
+}
+
+chrome.webNavigation.onCompleted.addListener(details =>
+{
+  if (
+    details.url === "https://adblockplus.org/openServiceWorkerPage" &&
+    details.tabId
+  )
+  {
+    openServiceWorkerPage();
+  }
+}, {url: [{hostEquals: "adblockplus.org"}]});
+
+openOptionsPage();
+const closeLoadedDataTabInterval = setInterval(closeDataTab, 2000);
+setTimeout(closeLoadingTab, 3000);
