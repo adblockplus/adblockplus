@@ -46,7 +46,8 @@ export type CommandHandler = (ipmId: string) => Promise<void>;
  */
 export enum CommandName {
   createOnPageDialog = "create_on_page_dialog",
-  createTab = "create_tab"
+  createTab = "create_tab",
+  deleteCommands = "delete_commands"
 }
 
 /**
@@ -54,7 +55,8 @@ export enum CommandName {
  */
 export const CommandVersion: Record<CommandName, number> = {
   [CommandName.createOnPageDialog]: 4,
-  [CommandName.createTab]: 4
+  [CommandName.createTab]: 4,
+  [CommandName.deleteCommands]: 1
 };
 
 /**
@@ -112,4 +114,12 @@ export interface CommandActor {
    * @returns whether the given command is valid for the actor
    */
   isValidCommand: (command: Command) => boolean;
+}
+
+/**
+ * IPM delete-commands event names
+ */
+export enum DeleteEventType {
+  sucess = "deletion_success",
+  error = "deletion_error"
 }
