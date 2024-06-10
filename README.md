@@ -128,7 +128,7 @@ as artifacts [from this page][abp-ext-nightlies].
 The `./test/unit` folder contains various unit tests files. Those can be run
 together with other tests via `npm test` or separately via `npm $ test.unit`.
 
-## Integration testing
+### Integration testing
 
 The `./test/integration` folder contains various integration tests files. Those
 can be run together with other tests via `npm test` or separately via
@@ -137,36 +137,54 @@ can be run together with other tests via `npm test` or separately via
 
 ### End-to-end testing
 
-The `./test/end-to-end/tests` folder contains various end-to-end tests. These tests can be executed locally, (in the latest stable Chrome, Firefox and Edge browsers) or they can be executed using [LambdaTest](https://automation.lambdatest.com/).
+The `./test/end-to-end/tests` folder contains various end-to-end tests. These
+tests can be executed locally, (in the latest stable Chrome, Firefox and Edge
+browsers) or they can be executed using [LambdaTest](https://automation.lambdatest.com/).
 
+#### Local run
 
-a) To run the end-to-end tests locally, the [unpacked development builds](#building-the-extension) of the extension should be generated. After generating the required extension builds for Chrome, and Firefox, 
-  
-* Run the test:end-to-end-local npm script `npm run test:end-to-end-local` or `npm run test:end-to-end-local-mv3`
+To run the end-to-end tests locally:
 
+- Create a new .env file based on the [.env.e2e.template](https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/blob/next/.env.e2e.template?ref_type=heads).
+- Generate the [unpacked development builds](#building-the-extension)
+of the extension.
+- Run the test:end-to-end-local script.
 
-**NOTE**: If you only want to execute a single test file, you can replace the value of the `specs` constant in the [local-test.conf.js](https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/blob/next/test/end-to-end/local-test.conf.js?ref_type=heads#L26) to an array containing only the [path](https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/tree/next/test/end-to-end/tests) to the test(s) you want to run
+Example:
 
-e.g
-
+```sh
+cp .env.e2e.template .env.e2e
+npm run build:dev chrome -- --manifest-version 3
+MANIFEST_VERSION=3 npm run test:end-to-end-local all
 ```
-const specs = ["./tests/test-options-page-dialog-links.js"];
-```
 
+#### LabdaTest run
   
-  
-b) To run the end-to-end tests using [LambdaTest](https://automation.lambdatest.com/), the [release builds](#building-the-extension) of the extension should be generated. After generating the required builds, take the following steps:
+To run the end-to-end tests using [LambdaTest](https://automation.lambdatest.com/):
 
-* Create a new .env file with your Lambda credentials. You can use the [.env.e2e.template](https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/blob/next/.env.e2e.template?ref_type=heads) provided as a guide.
+- Create a new .env file with your Lambda credentials. You can use the
+[.env.e2e.template](https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/blob/next/.env.e2e.template?ref_type=heads)
+provided as a guide.
+- Generate the [release builds](#building-the-extension) of the extension.
+- Run the test:end-to-end npm script `npm run test:end-to-end all` or
+`npm run test:end-to-end-mv3 all`.
 
-* Run the test:end-to-end npm script `npm run test:end-to-end all` or `npm run test:end-to-end-mv3 all`, or replace the `all` part with the desired test suite (`e2e`, `integration`, `smoke`).
+#### Notes
 
-**NOTE**: If you only want to execute a single test file, you can replace the value of the `all` property in the [base.conf.js](https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/blob/next/test/end-to-end/base.conf.js#L31) to an array containing only the [path](https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/tree/next/test/end-to-end/tests) to the test(s) you want to run.
-e.g 
-   ```
-   all: ["./tests/test-options-page-dialog-links.js"],
-   ```
- Allure reporter is used for displaying the results after the execution has been completed. The report can be generated and opened using the `npm run test:generate-and-open-report` command.
+- You can replace `all` tests with a specific test suite (`e2e`, `integration`,
+`smoke`).
+- If you only want to execute a single test file, you can replace the value of the
+`all` property in [suites.js](https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/blob/next/test/end-to-end/suites.js#L21)
+to an array containing only the [path](https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/tree/next/test/end-to-end/tests)
+to the test(s) you want to run. Example:
+
+  ```js
+  all: ["./tests/test-options-page-dialog-links.js"],
+  ```
+
+- Allure reporter is used for displaying the results after the execution has been
+completed. The report can be generated and opened using the
+`npm run test:generate-and-open-report` command.
 
 ### Compliance tests
 

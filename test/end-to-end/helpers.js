@@ -25,12 +25,8 @@ const PremiumPage = require("./page-objects/premium.page");
 const PremiumCheckoutPage = require("./page-objects/premiumCheckout.page");
 const PremiumHeaderChunk = require("./page-objects/premiumHeader.chunk");
 
-const helperExtension = "helper-extension";
-const helperExtensionMV3 = "helper-extension-mv3";
-
 const globalRetriesNumber = 0;
 const isGitlab = process.env.CI === "true";
-
 
 const chromeCIBuild = "../../" + process.env.CHROME_BUILD;
 const firefoxCIBuild = "../../" + process.env.FIREFOX_BUILD;
@@ -46,7 +42,9 @@ const testConfig = {
   allureEnabled: process.env.ENABLE_ALLURE === "true",
   chromeEnabled: process.env.ENABLE_CHROME === "true",
   firefoxEnabled: process.env.ENABLE_FIREFOX === "true",
-  edgeEnabled: process.env.ENABLE_EDGE === "true"
+  edgeEnabled: process.env.ENABLE_EDGE === "true",
+  helperExtension: process.env.MANIFEST_VERSION === 3 ?
+    "helper-extension-mv3" : "helper-extension"
 };
 
 async function afterSequence()
@@ -612,7 +610,6 @@ module.exports = {
   enablePremiumByMockServer, wakeMockServer, lambdatestRunChecks,
   getChromiumExtensionPath, enablePremiumByUI,
   getCurrentDate, getFirefoxExtensionPath, getTabId,
-  randomIntFromInterval, helperExtension, helperExtensionMV3,
-  globalRetriesNumber, switchToABPOptionsTab,
+  randomIntFromInterval, globalRetriesNumber, switchToABPOptionsTab,
   waitForExtension, getABPOptionsTabId, waitForCondition
 };
