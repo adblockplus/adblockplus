@@ -453,8 +453,7 @@ comp:MV2:firefox:oldest:
     paths:
       - allure-report
     expire_in: 1 week
-  dependencies:
-    - build
+  needs: ["build"]
   rules:
     # Do not trigger a merge request pipeline
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'

@@ -20,27 +20,28 @@
 "use strict";
 
 const helpers = require("./helpers.js");
+const {suites} = require("./suites.js");
 
-const {allureEnabled, chromeEnabled, firefoxEnabled, edgeEnabled} = helpers.testConfig;
+const {allureEnabled, chromeEnabled, firefoxEnabled, edgeEnabled,
+       helperExtension} = helpers.testConfig;
 helpers.localRunChecks();
 
 const browserCapabilities = [];
-const specs = [
-  "./tests/*.js"
-];
-
 const chromeExtensionPath = helpers.getChromiumExtensionPath({isLambdatest: false});
+const chromiumOptions = {
+  args: [
+    "--no-sandbox",
+    `--load-extension=${chromeExtensionPath},${helperExtension}`,
+    `--disable-extensions-except=${chromeExtensionPath},${helperExtension}`
+  ],
+  excludeSwitches: ["disable-extensions"]
+};
 
 if (chromeEnabled)
 {
   browserCapabilities.push({
     browserName: "chrome",
-    "goog:chromeOptions": {
-      args: ["--no-sandbox",
-              `--load-extension=${chromeExtensionPath},${helpers.helperExtension}`,
-              `--disable-extensions-except=${chromeExtensionPath},${helpers.helperExtension}`],
-      excludeSwitches: ["disable-extensions"]
-    },
+    "goog:chromeOptions": chromiumOptions,
     acceptInsecureCerts: true,
     exclude: [
       "./tests/legacy-unit.js"
@@ -64,12 +65,7 @@ if (edgeEnabled)
 {
   browserCapabilities.push({
     browserName: "MicrosoftEdge",
-    "ms:edgeOptions": {
-      args: ["--no-sandbox",
-              `--load-extension=${chromeExtensionPath},${helpers.helperExtension}`,
-              `--disable-extensions-except=${chromeExtensionPath},${helpers.helperExtension}`],
-      excludeSwitches: ["disable-extensions"]
-    },
+    "ms:edgeOptions": chromiumOptions,
     acceptInsecureCerts: true,
     exclude: [
       "./tests/test-issue-reporter.js",
@@ -79,10 +75,10 @@ if (edgeEnabled)
 }
 
 exports.config = {
-  specs,
+  suites,
   maxInstances: Number(process.env.MAX_INSTANCES) || 1,
   capabilities: browserCapabilities,
-  logLevel: "info",
+  logLevel: "error",
   bail: 0,
   waitforTimeout: 10000,
   connectionRetryTimeout: 12000,
@@ -92,7 +88,10 @@ exports.config = {
     outputDir: "allure-results",
     disableWebdriverStepsReporting: true,
     disableWebdriverScreenshotsReporting: false
-  }]] : [],
+  }]] : [["spec", {
+    realtimeReporting: true,
+    showPreface: false
+  }]],
   mochaOpts: {
     ui: "bdd",
     timeout: 900000
