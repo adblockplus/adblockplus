@@ -396,6 +396,14 @@
     "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/9d1aef42a790c5be8cd017d4dc06cd5efb05557e/spec/abp/desktop-settings/advanced-tab.md#filter-list-error-statuses",
     "message": "Filter list update could not be applied due to browser limitations. Updating to a newer extension version may fix this problem."
   },
+  "options_filterList_lastDownload_diffTooOld": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/efcd245a208f15fdc7379d479266c674f34f6793/spec/abp/desktop-settings/advanced-tab.md#filter-list-error-statuses",
+    "message": "Filter list update could not be applied due to an outdated extension version. Updating to a newer extension version may fix this problem."
+  },
+  "options_filterList_lastDownload_dnrError": {
+    "description": "https://gitlab.com/adblockinc/ext/adblockplus/spec/-/blob/efcd245a208f15fdc7379d479266c674f34f6793/spec/abp/desktop-settings/advanced-tab.md#filter-list-error-statuses",
+    "message": "Filter list update could not be applied due to invalid filters."
+  },
   "options_filterList_lastDownload_inProgress": {
     "description": "Progress message in advanced tab",
     "message": "Updating"
