@@ -215,6 +215,7 @@ checkbuildsizes:MV2:firefox:
 ################################################################################
 
 .translations:
+  needs: []
   rules:
     - if: $CI_COMMIT_BRANCH =~ /^feature-/
       when: manual
