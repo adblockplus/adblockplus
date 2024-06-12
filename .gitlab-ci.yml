@@ -215,12 +215,11 @@ checkbuildsizes:MV2:firefox:
 ################################################################################
 
 .translations:
-  needs: []
   rules:
     - if: $CI_COMMIT_BRANCH =~ /^feature-/
       when: manual
-    - if: $CI_COMMIT_BRANCH == "ee-630"
-      when: always
+    - if: $CI_COMMIT_BRANCH == "release"
+      when: manual
 
 .crowdin:
   variables:
