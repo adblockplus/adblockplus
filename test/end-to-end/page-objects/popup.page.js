@@ -33,7 +33,43 @@ class PopupPage extends BasePage
     await browser.url(
       `${origin}/popup.html?testTabId=${tabId}`
     );
-    await (await this.upgradeButton).waitForExist({timeout: 10000});
+    await (await this.pageStatsCounter).waitForExist({timeout: 10000});
+  }
+
+  get blockCookieConsentPopupsTitle()
+  {
+    return $("//div[@id='page-premium-cta']/a/" +
+      "span[@data-i18n='premium_cookies_title']");
+  }
+
+  get blockCookieConsentPopupsPremiumTitle()
+  {
+    return $("//div[@id='page-premium-controls']/article" +
+      "/div/span[@data-i18n='premium_cookies_title']");
+  }
+
+  get blockCookieConsentPopupsToggle()
+  {
+    return $("//io-circle-toggle[@id='premium-cookie-toggle']" +
+      "//*[@role='checkbox']");
+  }
+
+  get blockMoreDistractionsTitle()
+  {
+    return $("//div[@id='page-premium-cta']/a/" +
+      "span[@data-i18n='premium_distractions_title']");
+  }
+
+  get blockMoreDistractionsPremiumTitle()
+  {
+    return $("//div[@id='page-premium-controls']/article" +
+      "/div/span[@data-i18n='premium_distractions_title']");
+  }
+
+  get blockMoreDistractionsToggle()
+  {
+    return $("//io-circle-toggle[@id='premium-distractions-toggle']" +
+    "//*[@role='checkbox']");
   }
 
   get closeNotificationButton()
@@ -151,6 +187,16 @@ class PopupPage extends BasePage
     return $("//*[@id='issue-reporter']/span");
   }
 
+  async clickBlockCookieConsentPopupsTitle()
+  {
+    await (await this.blockCookieConsentPopupsTitle).click();
+  }
+
+  async clickBlockMoreDistractionsTitle()
+  {
+    await (await this.blockMoreDistractionsTitle).click();
+  }
+
   async clickCloseNotificationButton()
   {
     await (await this.closeNotificationButton).click();
@@ -201,6 +247,93 @@ class PopupPage extends BasePage
   async getStatsTotalLabelText()
   {
     return await (await this.statsTotalLabel).getText();
+  }
+
+  async isBlockCookieConsentPopupsCrownIconDisplayed()
+  {
+    const bgImage = await (await this.blockCookieConsentPopupsPremiumTitle).
+      getCSSProperty("mask-image", "::before");
+    const isDisplayed = await (await this.
+      blockCookieConsentPopupsPremiumTitle).isDisplayed();
+    const hasCrownIcon = JSON.stringify(bgImage).
+      includes("/skin/icons/premium-crown.svg");
+    return isDisplayed && hasCrownIcon;
+  }
+
+  async isBlockCookieConsentPopupsLockIconDisplayed()
+  {
+    const bgImage = await (await this.blockCookieConsentPopupsTitle).
+      getCSSProperty("background-image", "::before");
+    const isDisplayed = await (await this.
+      blockCookieConsentPopupsTitle).isDisplayed();
+    const hasLockIcon = JSON.stringify(bgImage).
+      includes("/skin/icons/premium-lock.svg");
+    return isDisplayed && hasLockIcon;
+  }
+
+  async isBlockCookieConsentPopupsTitleDisplayed()
+  {
+    return await (await this.blockCookieConsentPopupsTitle).isDisplayed();
+  }
+
+  async isBlockCookieConsentPopupsPremiumTitleDisplayed()
+  {
+    return await (await this.
+      blockCookieConsentPopupsPremiumTitle).isDisplayed();
+  }
+
+  async isBlockCookieConsentPopupsToggleDisplayed()
+  {
+    return await (await this.blockCookieConsentPopupsToggle).isDisplayed();
+  }
+
+  async isBlockCookieConsentPopupsToggleSelected()
+  {
+    return await (await this.blockCookieConsentPopupsToggle).
+      getAttribute("aria-checked") === "true";
+  }
+
+  async isBlockMoreDistractionsCrownIconDisplayed()
+  {
+    const bgImage = await (await this.blockMoreDistractionsPremiumTitle).
+      getCSSProperty("mask-image", "::before");
+    const isDisplayed = await (await this.
+      blockMoreDistractionsPremiumTitle).isDisplayed();
+    const hasCrownIcon = JSON.stringify(bgImage).
+      includes("/skin/icons/premium-crown.svg");
+    return isDisplayed && hasCrownIcon;
+  }
+
+  async isBlockMoreDistractionsLockIconDisplayed()
+  {
+    const bgImage = await (await this.blockMoreDistractionsTitle).
+      getCSSProperty("background-image", "::before");
+    const isDisplayed = await (await this.
+      blockMoreDistractionsTitle).isDisplayed();
+    const hasLockIcon = JSON.stringify(bgImage).
+      includes("/skin/icons/premium-lock.svg");
+    return isDisplayed && hasLockIcon;
+  }
+
+  async isBlockMoreDistractionsTitleDisplayed()
+  {
+    return await (await this.blockMoreDistractionsTitle).isDisplayed();
+  }
+
+  async isBlockMoreDistractionsPremiumTitleDisplayed()
+  {
+    return await (await this.blockMoreDistractionsPremiumTitle).isDisplayed();
+  }
+
+  async isBlockMoreDistractionsToggleDisplayed()
+  {
+    return await (await this.blockMoreDistractionsToggle).isDisplayed();
+  }
+
+  async isBlockMoreDistractionsToggleSelected()
+  {
+    return await (await this.blockMoreDistractionsToggle).
+      getAttribute("aria-checked") === "true";
   }
 
   async isCloseNotificationButtonDisplayed()

@@ -53,6 +53,24 @@ const linksFreeUsers = [
       await pageObject.clickUpgradeButton();
     },
     source: "popup"
+  },
+  {
+    testName: "Popup - Block cookie consent pop-ups",
+    page: "Popup",
+    async clickOnLink(pageObject)
+    {
+      await pageObject.clickBlockCookieConsentPopupsTitle();
+    },
+    source: "popup"
+  },
+  {
+    testName: "Popup - Block more distractions",
+    page: "Popup",
+    async clickOnLink(pageObject)
+    {
+      await pageObject.clickBlockMoreDistractionsTitle();
+    },
+    source: "popup"
   }
 ];
 

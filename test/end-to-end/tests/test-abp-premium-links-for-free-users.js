@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence} =
+const {afterSequence, beforeSequence, switchToABPOptionsTab, getTabId} =
   require("../helpers");
 const {expect} = require("chai");
 const GeneralPage = require("../page-objects/general.page");
@@ -25,6 +25,7 @@ const PopupPage = require("../page-objects/popup.page");
 const PremiumHeaderChunk = require("../page-objects/premiumHeader.chunk");
 const linksFreeUsers =
   require("../test-data/data-premium-links").linksFreeUsers;
+let appVersion;
 let globalOrigin;
 let lastTest = false;
 
@@ -33,6 +34,10 @@ describe("test premium links for free users", function()
   before(async function()
   {
     globalOrigin = await beforeSequence();
+    appVersion = await browser.
+      executeScript("return browser.runtime.getManifest().version;", []);
+    await browser.newWindow("https://example.com");
+    await switchToABPOptionsTab();
   });
 
   afterEach(async function()
@@ -52,8 +57,6 @@ describe("test premium links for free users", function()
       {
         lastTest = true;
       }
-      const appVersion = await browser.
-        executeScript("return browser.runtime.getManifest().version;", []);
       let page;
       if (dataSet.page == "Options")
       {
@@ -67,7 +70,9 @@ describe("test premium links for free users", function()
       else
       {
         page = new PopupPage(browser);
-        await page.init(globalOrigin);
+        await page.switchToTab("Example Domain");
+        const tabId = await getTabId({title: "Example Domain"});
+        await page.init(globalOrigin, tabId);
       }
       await dataSet.clickOnLink(page);
       await page.switchToTab(
