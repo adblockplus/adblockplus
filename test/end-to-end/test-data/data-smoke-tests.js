@@ -40,23 +40,10 @@ module.exports =
   regexMajorBrowserVersion: /(?<=browserVersion":").*?(?=\.)/,
   regexMajorBrowserVersionFF: /(?<=rv:)\d+/,
   regexManifestVersion: /(?<="version": ").*?(?=")/,
-  siteKeyData: [
-    {
-      website: "http://church.com",
-      tabTitle: /church\.com/,
-      relatedLinksSelector: "#e1"
-    },
-    {
-      website: "http://mckowen.com",
-      tabTitle: /mckowen\.com/,
-      relatedLinksSelector: "#e1"
-    },
-    {
-      website: "http://zins.de",
-      tabTitle: /zins\.de/,
-      relatedLinksSelector: "#master-1"
-    }
-  ],
+  sitekey: {
+    url: "https://abptestpages.org/en/exceptions/sitekey_mv2",
+    title: /Sitekey on MV2/
+  },
   snippetsPageUrl: "https://adblockinc.gitlab.io/QA-team/adblocking/snippets" +
     "/snippets-testpage.html"
 };

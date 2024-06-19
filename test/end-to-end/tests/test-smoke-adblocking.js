@@ -27,9 +27,56 @@ const AllowlistedWebsitesPage =
 const GeneralPage = require("../page-objects/general.page");
 const ExtensionsPage = require("../page-objects/extensions.page");
 const TestPages = require("../page-objects/testPages.page");
-const siteKeyData = require("../test-data/data-smoke-tests").siteKeyData;
+const {sitekey} = require("../test-data/data-smoke-tests");
 const testData = require("../test-data/data-smoke-tests");
 let lastTest = false;
+
+async function getTestpagesFilters()
+{
+  const generalPage = new GeneralPage(browser);
+  await browser.waitUntil(() => generalPage.isElementDisplayed("pre"));
+
+  const filters = [];
+  for await (const filter of $$("pre"))
+  {
+    filters.push(await filter.getText());
+  }
+
+  if (filters.length == 0)
+    throw new Error("No filters were found on the page");
+
+  return filters.join("\n");
+}
+
+async function addFiltersToABP(filters)
+{
+  const error = await browser.executeAsync(async(filtersToAdd, callback) =>
+  {
+    const [errors] = await browser.runtime.sendMessage(
+      {type: "filters.importRaw", text: filtersToAdd}
+    );
+    if (typeof errors != "undefined" && errors[0])
+      callback(errors[0]);
+
+    callback();
+  }, filters);
+
+  if (error)
+    throw new Error(error);
+}
+
+function removeAllFiltersFromABP()
+{
+  return browser.executeAsync(async callback =>
+  {
+    const filters = await browser.runtime.sendMessage({type: "filters.get"});
+    await Promise.all(filters.map(filter => browser.runtime.sendMessage(
+      {type: "filters.remove", text: filter.text}
+    )));
+
+    callback();
+  });
+}
 
 describe("test adblocking as part of the smoke tests", function()
 {
@@ -49,102 +96,37 @@ describe("test adblocking as part of the smoke tests", function()
     }
   });
 
-  siteKeyData.forEach(async(dataSet) =>
+  it("uses sitekey to allowlist content", async function()
   {
-    // The browser names used here are the ones in test.conf not the runtime
-    // names, as the browser object is not properly initalized at this point
-    if ((dataSet.website == "http://church.com" &&
-        browser.capabilities.browserName.toLowerCase().includes("firefox")) ||
-        (dataSet.website == "http://mckowen.com" &&
-        browser.capabilities.browserName.toLowerCase().includes("chrome")) ||
-        (dataSet.website == "http://zins.de" &&
-        browser.capabilities.browserName.toLowerCase().includes("edge")))
+    if (process.env.MANIFEST_VERSION === "3")
+      this.skip();
+
+    await browser.newWindow(sitekey.url);
+    const filters = await getTestpagesFilters();
+
+    await switchToABPOptionsTab();
+    await addFiltersToABP(filters);
+
+    const generalPage = new GeneralPage(browser);
+    await generalPage.switchToTab(sitekey.title);
+    await browser.refresh();
+    await browser.waitUntil(async() =>
     {
-      if (process.env.MANIFEST_VERSION == 3)
-        console.warn("Test skipped for MV3.");
-      else
-      {
-        it("should test sitekey: " + dataSet.website, async function()
-        {
-          await browser.newWindow(dataSet.website);
-          const generalPage = new GeneralPage(browser);
-          if (browser.capabilities.browserName.toLowerCase().includes("edge"))
-          {
-            try
-            {
-              expect(await generalPage.isElementDisplayed(
-                dataSet.relatedLinksSelector)).to.be.true;
-            }
-            catch (Exception)
-            {
-              await browser.pause(randomIntFromInterval(2500, 3500));
-              await browser.refresh();
-              await browser.pause(randomIntFromInterval(1500, 2500));
-              await browser.refresh();
-              expect(await generalPage.isElementDisplayed(
-                dataSet.relatedLinksSelector)).to.be.true;
-            }
-          }
-          await browser.pause(randomIntFromInterval(1500, 2500));
-          await browser.refresh();
-          if (browser.capabilities.browserName.toLowerCase().includes("edge"))
-          {
-            try
-            {
-              expect(await generalPage.isElementDisplayed(
-                dataSet.relatedLinksSelector)).to.be.true;
-            }
-            catch (Exception)
-            {
-              await browser.pause(randomIntFromInterval(2500, 3500));
-              await browser.refresh();
-              await browser.pause(randomIntFromInterval(1500, 2500));
-              expect(await generalPage.isElementDisplayed(
-                dataSet.relatedLinksSelector)).to.be.true;
-            }
-          }
-          else if (browser.capabilities.browserName.
-            toLowerCase().includes("firefox"))
-          {
-            await browser.switchToFrame(await $("#master-1"));
-            expect(await generalPage.isElementDisplayed(
-              dataSet.relatedLinksSelector)).to.be.true;
-            await browser.switchToParentFrame();
-          }
-          else
-          {
-            expect(await generalPage.isElementDisplayed(
-              dataSet.relatedLinksSelector)).to.be.true;
-          }
-          await switchToABPOptionsTab();
-          await generalPage.clickAllowAcceptableAdsCheckbox();
-          await generalPage.switchToTab(dataSet.tabTitle);
-          await browser.pause(randomIntFromInterval(1500, 2500));
-          await browser.refresh();
-          expect(await generalPage.isElementDisplayed(
-            dataSet.relatedLinksSelector, true)).to.be.true;
-          await switchToABPOptionsTab();
-          await generalPage.clickAllowAcceptableAdsCheckbox();
-          await generalPage.switchToTab(dataSet.tabTitle);
-          await browser.pause(randomIntFromInterval(1500, 2500));
-          await browser.refresh();
-          if (!browser.capabilities.browserName.
-            toLowerCase().includes("firefox"))
-          {
-            expect(await generalPage.isElementDisplayed(
-              dataSet.relatedLinksSelector)).to.be.true;
-          }
-          else
-          {
-            await browser.switchToFrame(await $("#master-1"));
-            expect(await generalPage.isElementDisplayed(
-              dataSet.relatedLinksSelector)).to.be.true;
-            await browser.switchToParentFrame();
-          }
-          await browser.closeWindow();
-        });
-      }
-    }
+      return await generalPage.isElementDisplayed(
+        "#sitekey-fail-1", false, 200) == false;
+    });
+    expect(await generalPage.isElementDisplayed(
+      "#sitekey-fail-2", false, 100)).to.be.false;
+    expect(await generalPage.isElementDisplayed(
+      "#sitekey-area > div.testcase-examplecontent")).to.be.true;
+
+    await browser.switchToFrame(await $("#sitekey-frame"));
+    expect(await generalPage.isElementDisplayed("#inframe-target")).to.be.true;
+    expect(await generalPage.isElementDisplayed("#inframe-image")).to.be.true;
+    await browser.closeWindow();
+
+    await switchToABPOptionsTab();
+    await removeAllFiltersFromABP();
   });
 
   it("should block and hide ads", async function()
