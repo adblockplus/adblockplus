@@ -20,7 +20,7 @@
 import rulesIndex from "@adblockinc/rules/adblockplus";
 import * as ewe from "@eyeo/webext-ad-filtering-solution";
 
-import {startTelemetry} from "../../src/ipm/background/index.ts";
+import {startTelemetry, initializeCDP} from "../../src/ipm/background/index.ts";
 import * as premium from "../../src/premium/background/index.ts";
 import {startOptionLinkListener} from "../../src/options/background";
 import {info} from "../../src/info/background";
@@ -156,14 +156,24 @@ function initElementHidingDebugMode()
 
 export async function start()
 {
+  let addonInfo = {
+    bundledSubscriptions: rulesIndex,
+    bundledSubscriptionsPath: "/data/rules/abp",
+    inlineCss: false,
+    name: info.addonName,
+    version: info.addonVersion
+  };
+
+  let cdp = {
+    pingUrl: webpackDotenvPlugin.ADBLOCKPLUS_CDP_PING_URL,
+    aggregateUrl: webpackDotenvPlugin.ADBLOCKPLUS_CDP_AGGREGATE_URL,
+    bearer: webpackDotenvPlugin.ADBLOCKPLUS_CDP_BEARER
+  };
+  if (cdp.pingUrl && cdp.aggregateUrl && cdp.bearer)
+    addonInfo.cdp = cdp;
+
   const [eweFirstRun] = await Promise.all([
-    ewe.start({
-      bundledSubscriptions: rulesIndex,
-      bundledSubscriptionsPath: "/data/rules/abp",
-      inlineCss: false,
-      name: info.addonName,
-      version: info.addonVersion
-    }),
+    ewe.start(addonInfo),
     Prefs.untilLoaded.catch(() => { setDataCorrupted(true); }),
     testStorage().catch(() => { setDataCorrupted(true); })
   ]);
@@ -188,6 +198,7 @@ export async function start()
   premium.start();
   startOptionLinkListener();
   void startTelemetry();
+  void initializeCDP();
   startUnloadCleanup();
   startIPMPingListener();
   setReadyState(ReadyState.started);

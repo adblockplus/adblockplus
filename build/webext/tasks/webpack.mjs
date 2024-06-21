@@ -15,6 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import Dotenv from "dotenv-webpack";
 import gulp from "gulp";
 import merge from "merge-stream";
 import webpackStream from "webpack-stream";
@@ -72,6 +73,14 @@ export default function webpack({
                 }
               ]
             },
+            plugins: [
+              new Dotenv({
+                systemvars: true,
+                defaults: true,
+                silent: true,
+                prefix: "webpackDotenvPlugin."
+              })
+            ],
             externals: {
               perf_hooks: "self"
             }

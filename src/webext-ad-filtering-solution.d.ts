@@ -332,4 +332,18 @@ declare module "@eyeo/webext-ad-filtering-solution" {
      */
     const enable: (url: string) => Promise<void>;
   }
+
+  declare namespace cdp {
+    /**
+     * Opt in or out from CDP
+     *
+     * @param optOut - `true` to opt out from CDP
+     */
+    const setOptOut: (optOut: boolean) => Promise<void>;
+
+    /**
+     * Returns whether opted out from CDP
+     */
+    const isOptOut: () => Promise<boolean>;
+  }
 }

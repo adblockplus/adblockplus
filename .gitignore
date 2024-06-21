@@ -24,3 +24,6 @@ coverage/
 .npm
 # env file for e2e tests
 .env.e2e
+
+# env file for CDP
+.env

@@ -15,13 +15,29 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export * from "./command-library";
-export * from "./command-library.types";
-export * from "./data-collection";
-export * from "./data-collection.types";
-export * from "./license";
-export * from "./param-validator";
-export * from "./param-validator.types";
-export { start as startTelemetry } from "./telemetry";
-export { initialize as initializeCDP } from "./cdp";
-export * from "./url";
+import * as ewe from "@eyeo/webext-ad-filtering-solution";
+
+import { Prefs } from "../../../adblockpluschrome/lib/prefs";
+import { error as logError } from "../../logger/background";
+
+async function applyOptOut(): Promise<void> {
+  await ewe.cdp.setOptOut(Prefs.get("data_collection_opt_out"));
+}
+
+async function initOptOut(): Promise<void> {
+  await Prefs.untilLoaded;
+
+  await applyOptOut();
+  Prefs.on("data_collection_opt_out", applyOptOut);
+}
+
+/**
+ * Initializes the CDP.
+ */
+export async function initialize(): Promise<void> {
+  try {
+    await initOptOut();
+  } catch (error) {
+    logError("CDP initialization failed with error: ", error);
+  }
+}

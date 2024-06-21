@@ -20,7 +20,8 @@ module.exports = {
     exports: true,
     ext: true,
     module: true,
-    require: true
+    require: true,
+    webpackDotenvPlugin: "readonly"
   },
   parserOptions: {
     ecmaVersion: 11,

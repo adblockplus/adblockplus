@@ -221,6 +221,10 @@ included when you install `npm`.
 
 ### Building the extension
 
+Copy the `.env.defaults` file in the root directory to a `.env` file and fill in
+the variables accordingly. This step can be skipped, and is only required if
+you wish to enable the sending of CDP data.
+
 In order to build the extension you need to first
 [update its dependencies](#updating-the-dependencies). You can then run the
 following command for the type of build you'd like to generate:
