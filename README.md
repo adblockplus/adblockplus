@@ -125,14 +125,10 @@ as artifacts [from this page][abp-ext-nightlies].
 
 ### Unit testing
 
-The `./test/unit` folder contains various unit tests files. Those can be run
-together with other tests via `npm test` or separately via `npm $ test.unit`.
-
-### Integration testing
-
-The `./test/integration` folder contains various integration tests files. Those
-can be run together with other tests via `npm test` or separately via
-`npm $ test.integration`.
+The `./test/unit` folder contains various mocha unit tests files 
+which can be run via `npm run $ unit.legacy`. For `.ts` files we have jest 
+unit tests that can be run via `npm run $ unit.standard`.
+Those can be run together via `npm test`.
 
 
 ### End-to-end testing

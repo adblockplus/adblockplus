@@ -18,7 +18,7 @@
     "eslint:legacy": "eslint --ext .js,.mjs --ignore-path .gitignore --ignore-pattern /adblockpluschrome/ ./",
     "eslint:adblockpluschrome": "eslint --ext .js,.cjs --ignore-path .gitignore adblockpluschrome/",
     "start": "http-server ./dist/devenv/local/",
-    "test": "npm run $ test",
+    "test": "npm run $ unit",
     "csv-export": "node build/locale-sync/csv/main.js -e",
     "csv-import": "node build/locale-sync/csv/main.js -i && node build/locale-sync/normalize.js",
     "test:cleanup-reports": "rm -r allure-report test/end-to-end/allure-results",
@@ -62,11 +62,9 @@
         "mv $1.mp4 $1"
       ]
     },
-    "test": {
-      "unit": {
-        "js": "mocha \"./test/unit/**/*.spec.{js,mjs}\"",
-        "ts": "jest"
-      }
+    "unit": {
+      "legacy": "mocha \"./test/unit/**/*.spec.{js,mjs}\"",
+      "standard": "jest"
     },
     "xtm": {
       "create": "node build/locale-sync/xtm --create",

@@ -30,6 +30,7 @@ default:
 stages:
   - build
   - checkfilesizes
+  - unit
   - compliance
   - uitests
   - uploadxtm
@@ -52,11 +53,6 @@ lint:
   extends: .build
   script:
     - npm run lint
-
-test:
-  extends: .build
-  script:
-    - npm run test
 
 build:
   extends: .build
@@ -419,6 +415,26 @@ comp:MV2:firefox:oldest:
   variables:
     BROWSER: firefox 68.0
     EXTENSION: adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
+
+
+################################################################################
+# Unit tests
+################################################################################
+
+.unit: 
+ extends: .build
+ stage: unit
+ needs: []
+
+unit:legacy:
+  extends: .unit
+  script:
+    - npm run $ unit.legacy
+
+unit:standard:
+  extends: .unit
+  script:
+    - npm run $ unit.standard
 
 ################################################################################
 # UI tests
