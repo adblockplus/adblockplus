@@ -39,6 +39,14 @@ stages:
   - uploadcrowdin
   - downloadcrowdin
 
+# Pipeline rules
+.always:
+  rules:
+    # Do not trigger merge request pipelines
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      when: never
+    - when: always
+
 ################################################################################
 # Build
 ################################################################################
@@ -362,10 +370,7 @@ downloadxtm:
     when: always
     expire_in: 1 month
   rules:
-    # Do not trigger merge request event pipelines
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-      when: never
-    - when: always
+    - !reference [.always, rules]
 
 .compliance:MV3:
   extends: .compliance
@@ -537,11 +542,4 @@ uitests:smoke:
     CONFIGURATION: end-to-end
     SUITE: smoke
   rules:
-    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
-      when: never
-    - if: $CI_PIPELINE_SOURCE == "schedule"
-      when: never
-    - if: $CI_COMMIT_BRANCH == "next" || $CI_COMMIT_BRANCH == "main"
-      when: always
-    - when: manual
-      allow_failure: true
+    - !reference [.always, rules]
