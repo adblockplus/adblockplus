@@ -315,6 +315,13 @@ defaults.logger_log_level = 3;
 defaults.onpage_dialog_command_stats = {};
 
 /**
+ * The URL for the campaign that automatically opens on extension update
+ *
+ * @type {string}
+ */
+defaults.update_campaign_url = "https://adblockplus.org/%LANG%/update?an=%ADDON_NAME%&av=%ADDON_VERSION%&ap=%APPLICATION_NAME%&apv=%APPLICATION_VERSION%&p=%PLATFORM_NAME%&pv=%PLATFORM_VERSION%";
+
+/**
  * Whether user has interacted with YouTube wall detection dialog
  *
  * @type {boolean}

@@ -39,6 +39,7 @@ import { start as startPremiumSubscriptions } from "../../premium-subscriptions/
 import { start as startReadyState } from "../../testing/ready-state/background";
 import { start as startYTWallDetection } from "../../yt-wall-detection/background";
 import { start as startInfoInjector } from "../../info-injector/background";
+import { start as startUpdateCampaign } from "../../update-campaign/background";
 
 async function bootstrap(): Promise<void> {
   startTabSessionStorage();
@@ -63,6 +64,7 @@ async function bootstrap(): Promise<void> {
   startPremiumSubscriptions();
   startYTWallDetection();
   startInfoInjector();
+  startUpdateCampaign();
 }
 
 void bootstrap();
