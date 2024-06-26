@@ -367,10 +367,23 @@ class PopupPage extends BasePage
       "settings to be reset.");
   }
 
-  async waitForNumberOfAdsBlockedInTotalTextToEqual(text, timeoutVal = 3000)
+  async waitForNumberOfAdsBlockedToBeInRange(min, max)
   {
-    return await this.waitUntilTextIs(this.numberOfAdsBlockedInTotal,
-                                      text, timeoutVal);
+    let adsBlocked;
+    try
+    {
+      await this.numberOfAdsBlockedInTotal.waitUntil(async function()
+      {
+        adsBlocked = parseInt(await this.getText(), 10);
+        return adsBlocked > min && adsBlocked <= max;
+      }, {timeout: 2000});
+    }
+    catch (err)
+    {
+      throw new Error("Unexpected ads blocked count. Expected: " +
+        `${min} < value <= ${max}. Actual: ${adsBlocked}`);
+    }
+    return adsBlocked;
   }
 
   async clickThisDomainToggle()

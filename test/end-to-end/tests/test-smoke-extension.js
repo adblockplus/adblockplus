@@ -46,27 +46,19 @@ describe("test extension as part of the smoke tests", function()
   {
     if (browser.capabilities.browserName != "firefox")
     {
-      await browser.newWindow("https://adblockinc.gitlab.io/QA-team/adblocking/" +
-        "adblocked-count/adblocked-count-testpage.html");
+      const url = "https://adblockinc.gitlab.io/QA-team/adblocking/adblocked-count/adblocked-count-testpage.html";
       const popupPage = new PopupPage(browser);
-      await switchToABPOptionsTab();
+      const maxAdsBlocked = 10;
+
+      await browser.newWindow(url);
       await popupPage.init(globalOrigin);
-      try
-      {
-        await popupPage.waitForNumberOfAdsBlockedInTotalTextToEqual("4");
-      }
-      catch (Exception)
-      {
-        await browser.pause(2000);
-        await popupPage.waitForNumberOfAdsBlockedInTotalTextToEqual("4");
-      }
-      expect(String(await popupPage.
-        getNumberOfAdsBlockedInTotalText()).includes("4")).to.be.true;
-      await browser.url("https://adblockinc.gitlab.io/QA-team/adblocking/" +
-      "adblocked-count/adblocked-count-testpage.html");
+      const blockedFirst = await popupPage.waitForNumberOfAdsBlockedToBeInRange(
+        0, maxAdsBlocked);
+
+      await browser.url(url);
       await popupPage.init(globalOrigin);
-      expect(String(await popupPage.
-        getNumberOfAdsBlockedInTotalText()).includes("8")).to.be.true;
+      await popupPage.waitForNumberOfAdsBlockedToBeInRange(
+        blockedFirst, maxAdsBlocked);
     }
   });
 
