@@ -21,6 +21,48 @@ import { allowlist } from "../../../adblockpluschrome/lib/allowlisting";
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";
 import * as premium from "../../premium/background";
 
+const trustedSoftonicDomains = [
+  "softonic-ar.com",
+  "softonic-id.com",
+  "softonic-th.com",
+  "softonic.cn",
+  "softonic.com",
+  "softonic.com.br",
+  "softonic.com.tr",
+  "softonic.jp",
+  "softonic.kr",
+  "softonic.nl",
+  "softonic.pl",
+  "softonic.ru",
+  "softonic.vn",
+  "softoniclabs.com"
+];
+
+/**
+ * Return a root domain to allowlist for Softonic subdomains
+ *
+ * @param hostname - hostname to parse
+ */
+function getAllowlistingDomain(hostname: string): string {
+  // Softonic generates subdomains for various software
+  // (e.g., chrome.softonic.com, minecraft.softonic.com).
+  // Allowlisting the subdomains of the trusted Softonic domains list
+  // is intended to affect other subdomains.
+  if (hostname.includes("softonic")) {
+    const domainParts = hostname.split(".");
+    while (domainParts.length > 0) {
+      const subdomain = domainParts.join(".");
+      if (trustedSoftonicDomains.includes(subdomain)) {
+        return subdomain;
+      }
+
+      domainParts.shift();
+    }
+  }
+
+  return hostname.replace(/^www\./, "");
+}
+
 /**
  * Function to be called when a valid allowlisting request was received
  *
@@ -30,7 +72,7 @@ async function onAllowlisting(domain: string): Promise<void> {
   if (premium.getPremiumState().isActive) return;
 
   await allowlist({
-    hostname: domain,
+    hostname: getAllowlistingDomain(domain),
     origin: "web"
   });
 }
