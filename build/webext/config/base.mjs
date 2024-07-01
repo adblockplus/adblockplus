@@ -64,11 +64,11 @@ export default {
         src: ["js/pages/issue-reporter/index.mjs"]
       },
       {
-        dest: "onpage-dialog.postload.js",
+        dest: "onpage-dialog.preload.js",
         src: ["src/onpage-dialog/content/index.ts"]
       },
       {
-        dest: "onpage-dialog-ui.postload.js",
+        dest: "onpage-dialog-ui.preload.js",
         src: ["src/onpage-dialog/content-ui/index.ts"]
       },
       {

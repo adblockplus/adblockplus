@@ -27,25 +27,25 @@
     },
     {
       "js": [
-        "onpage-dialog.postload.js"
+        "onpage-dialog.preload.js"
       ],
       "matches": [
         "http://*/*",
         "https://*/*"
       ],
-      "run_at": "document_end"
+      "run_at": "document_start"
     },
     {
       "all_frames": true,
       "js": [
-        "onpage-dialog-ui.postload.js"
+        "onpage-dialog-ui.preload.js"
       ],
       "match_about_blank": true,
       "matches": [
         "http://*/*",
         "https://*/*"
       ],
-      "run_at": "document_end"
+      "run_at": "document_start"
     },
     {
       "js": [
