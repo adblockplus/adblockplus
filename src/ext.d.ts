@@ -15,18 +15,30 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/**
- * Global extension utilities
- */
-declare namespace ext {
+import { type Browser } from "webextension-polyfill";
+
+declare global {
   /**
-   * Adds trusted message types for certain origins
-   *
-   * @param origin - URL origin of sender page
-   * @param types - Message types to trust for given origin
+   * Global extension utilities
    */
-  const addTrustedMessageTypes: (
-    origin: string | null,
-    types: string[]
-  ) => void;
+  declare namespace ext {
+    /**
+     * Adds trusted message types for certain origins
+     *
+     * @param origin - URL origin of sender page
+     * @param types - Message types to trust for given origin
+     */
+    const addTrustedMessageTypes: (
+      origin: string | null,
+      types: string[]
+    ) => void;
+
+    /**
+     * Determines whether given message sender can be trusted
+     *
+     *  @param sender - Message sender
+     *  @returns whether given message sender can be trusted
+     */
+    const isTrustedSender: (sender: Browser.Runtime.MessageSender) => boolean;
+  }
 }

@@ -16,4 +16,5 @@
  */
 
 export * from "./api.types";
+export * from "./events";
 export * from "./serializable";

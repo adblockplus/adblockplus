@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { installHandler } from "../../../adblockpluschrome/lib/messaging/events";
+import { installHandler } from "../../core/api/background";
 import { port } from "../../../adblockpluschrome/lib/messaging/port";
 import { EventEmitter } from "../../../adblockpluschrome/lib/events";
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";

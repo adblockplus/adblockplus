@@ -23,6 +23,20 @@ export interface Message {
 }
 
 /**
+ * Message object for "*.listen" types
+ */
+export interface ListenMessage extends Message {
+  /**
+   * List of event names to listen to
+   */
+  filter: string[];
+  /**
+   * ID of tab for which to listen to events
+   */
+  tabId?: number;
+}
+
+/**
  * Options for activating Premium license
  */
 export interface PremiumActivateOptions {

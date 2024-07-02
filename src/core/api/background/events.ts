@@ -15,35 +15,58 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import {EventEmitter} from "../events.js";
+import type Browser from "webextension-polyfill";
 
-const cleanupByTabId = new Map();
+import { EventEmitter } from "../../../../adblockpluschrome/lib/events";
+import {
+  type CleanupFunction,
+  type EventHandler,
+  type EventHandlerInstall
+} from "./events.types";
+import { isListenMessage } from "../shared";
+
+/**
+ * Cleanup functions by tab ID
+ */
+const cleanupByTabId = new Map<number, CleanupFunction>();
+/**
+ * Event emitter
+ */
 const eventEmitter = new EventEmitter();
-const handlerByName = new Map();
-const handlerTemplateByType = new Map();
+/**
+ * Map of event handlers by event name
+ */
+const handlerByName = new Map<string, EventHandler>();
+
+/**
+ * Map of event handler templates by event type
+ */
+const handlerTemplateByType = new Map<string, EventHandler>();
 
 /**
  * Installs a handler for lazily adding/removing event listeners depending on
  * whether someone is actively listening via the Messaging API.
  *
- * @param {string} type
+ * @param type
  *   type of events to allow listening to
- * @param {string} [action]
+ * @param action
  *   specific event to allow listening to
  *   null if handler applies to all events for the given type
- * @param {Function} install
+ * @param install
  *   callback function for adding event listeners
  *   will receive emit, action, targetTabId as arguments
  *   expected to return callback function for removing event listeners
  */
-export function installHandler(type, action, install)
-{
-  const handler = {install, uninstall: null};
+export function installHandler(
+  type: string,
+  action: string | null,
+  install: EventHandlerInstall
+): void {
+  const handler: EventHandler = { install, uninstall: null };
 
   // Handlers that can be used for arbitrary actions should be used as
   // templates, from which we can create handlers later
-  if (!action)
-  {
+  if (action === null) {
     handlerTemplateByType.set(type, handler);
     return;
   }
@@ -51,20 +74,31 @@ export function installHandler(type, action, install)
   handlerByName.set(`${type}.${action}`, handler);
 }
 
-function listen(type, actions, uiPort, targetTabId = null)
-{
-  const cleanups = [];
+/**
+ * Activates event handler for given type of events
+ *
+ * @param type - Event type
+ * @param actions - Event names
+ * @param uiPort - UI page port
+ * @param targetTabId - ID of tab for which to listen to events
+ */
+function listen(
+  type: string,
+  actions: string[],
+  uiPort: Browser.Runtime.Port,
+  targetTabId: number | null = null
+): void {
+  const cleanups: CleanupFunction[] = [];
 
-  for (const action of actions)
-  {
+  for (const action of actions) {
     let name = `${type}.${action}`;
-    if (targetTabId !== null)
+    if (targetTabId !== null) {
       name = `${name}:${targetTabId}`;
+    }
 
     // Add message response listener
-    const onResponse = (...args) =>
-    {
-      uiPort.postMessage({type: `${type}.respond`, action, args});
+    const onResponse = (...args: unknown[]): void => {
+      uiPort.postMessage({ type: `${type}.respond`, action, args });
     };
     eventEmitter.on(name, onResponse);
 
@@ -72,81 +106,104 @@ function listen(type, actions, uiPort, targetTabId = null)
     let handler = handlerByName.get(name);
     // If there's no handler for the given action, we should check
     // whether there's a generic handler for the type and create one from that
-    if (!handler)
-    {
+    if (typeof handler === "undefined") {
       const template = handlerTemplateByType.get(type);
-      if (template)
-      {
+      if (typeof template !== "undefined") {
         handler = Object.assign({}, template);
         handlerByName.set(name, handler);
       }
     }
-    if (handler && !handler.uninstall)
-    {
+    if (typeof handler !== "undefined" && handler.uninstall === null) {
       const emit = eventEmitter.emit.bind(eventEmitter, name);
       handler.uninstall = handler.install(emit, action, targetTabId);
     }
 
-    cleanups.push(() =>
-    {
+    cleanups.push(() => {
       eventEmitter.off(name, onResponse);
 
       // Uninstall event handler, if it's no longer needed
-      if (!eventEmitter.hasListeners(name))
-      {
+      if (!eventEmitter.hasListeners(name)) {
         const actionHandler = handlerByName.get(name);
-        if (actionHandler && actionHandler.uninstall)
-        {
+        if (
+          typeof actionHandler !== "undefined" &&
+          typeof actionHandler.uninstall === "function"
+        ) {
           actionHandler.uninstall();
-          handler.uninstall = null;
+          if (typeof handler !== "undefined") {
+            handler.uninstall = null;
+          }
         }
       }
     });
   }
 
-  const cleanupAll = () =>
-  {
-    for (const cleanup of cleanups)
+  const cleanupAll = (): void => {
+    for (const cleanup of cleanups) {
       cleanup();
+    }
   };
 
   // Stop listening when port disconnects (e.g. page is closed),
   // or when target tab is closed
   uiPort.onDisconnect.addListener(cleanupAll);
-  if (targetTabId !== null)
+  if (targetTabId !== null) {
     cleanupByTabId.set(targetTabId, cleanupAll);
+  }
 }
 
-function onTabRemoved(tabId)
-{
+/**
+ * Handles tab removed events
+ *
+ * @param tabId - Tab ID
+ */
+function onTabRemoved(tabId: number): void {
   const cleanup = cleanupByTabId.get(tabId);
-  if (!cleanup)
+  if (typeof cleanup === "undefined") {
     return;
+  }
 
   cleanup();
   cleanupByTabId.delete(tabId);
 }
-browser.tabs.onRemoved.addListener(onTabRemoved);
 
-function onConnect(uiPort)
-{
-  if (!ext.isTrustedSender(uiPort.sender))
+/**
+ * Handles connection events
+ *
+ * @param uiPort - UI page port
+ */
+function onConnect(uiPort: Browser.Runtime.Port): void {
+  if (!ext.isTrustedSender(uiPort.sender)) {
     return;
+  }
 
-  if (uiPort.name !== "ui")
+  if (uiPort.name !== "ui") {
     return;
+  }
 
-  uiPort.onMessage.addListener(message =>
-  {
+  uiPort.onMessage.addListener((message: unknown) => {
+    if (!isListenMessage(message)) {
+      return;
+    }
+
     const [type, action] = message.type.split(".", 2);
 
     // For now we're only using long-lived connections
     // for handling "*.listen" messages
     // https://issues.adblockplus.org/ticket/6440/
-    if (action !== "listen")
+    if (action !== "listen") {
       return;
+    }
 
     listen(type, message.filter, uiPort, message.tabId);
   });
 }
-browser.runtime.onConnect.addListener(onConnect);
+
+/**
+ * Initializes messaging event handling functionality
+ */
+function start(): void {
+  browser.tabs.onRemoved.addListener(onTabRemoved);
+  browser.runtime.onConnect.addListener(onConnect);
+}
+
+start();

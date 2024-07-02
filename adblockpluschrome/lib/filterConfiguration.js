@@ -18,7 +18,7 @@
 import * as ewe from "@eyeo/webext-ad-filtering-solution";
 
 import {showOptions} from "../../lib/pages/options.js";
-import {installHandler} from "./messaging/events.js";
+import {installHandler} from "../../src/core/api/background";
 import {port} from "./messaging/port.js";
 import {
   toSerializableFilter,
