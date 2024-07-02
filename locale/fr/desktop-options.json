@@ -243,6 +243,12 @@
   "options_filterList_lastDownload_diffTooManyFilters": {
     "message": "La mise à jour de la liste de filtrage n’a pas pu être effectuée en raison des limitations du navigateur. Vous pouvez résoudre ce problème en mettant à jour l’extension."
   },
+  "options_filterList_lastDownload_diffTooOld": {
+    "message": "La mise à jour de la liste de filtrage n’a pas pu être effectuée, car la version de l’extension n’est pas à jour. Pour résoudre ce problème, veuillez mettre à jour l’extension."
+  },
+  "options_filterList_lastDownload_dnrError": {
+    "message": "La mise à jour de la liste de filtrage n’a pas pu être effectuée, car les filtres sont invalides."
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Mise à jour en cours"
   },

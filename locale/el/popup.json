@@ -47,6 +47,18 @@
   "overlay_notification_closing_button_optout": {
     "message": "Διακοπή εμφάνισης ειδοποιήσεων"
   },
+  "premium_cookies_subtitle": {
+    "message": "Απόκρυψη των περισσότερων μπάνερ για τα cookies σε δημοφιλείς ιστοσελίδες"
+  },
+  "premium_cookies_title": {
+    "message": "Αποκλεισμός αναδυόμενων παραθύρων συγκατάθεσης για τα cookies"
+  },
+  "premium_distractions_subtitle": {
+    "message": "Αποκλείστε κοινούς περισπασμούς, όπως τα βίντεο με αυτόματη αναπαραγωγή"
+  },
+  "premium_distractions_title": {
+    "message": "Αποκλείστε περισσότερους περισπασμούς"
+  },
   "premium_upgrade": {
     "message": "Αναβάθμιση"
   },
@@ -73,17 +85,5 @@
   },
   "status_page": {
     "message": "Αυτή η σελίδα:"
-  },
-  "premium_cookies_title": {
-    "message": "Αποκλεισμός αναδυόμενων παραθύρων συγκατάθεσης για τα cookies"
-  },
-  "premium_cookies_subtitle": {
-    "message": "Απόκρυψη των περισσότερων μπάνερ για τα cookies σε δημοφιλείς ιστοσελίδες"
-  },
-  "premium_distractions_title": {
-    "message": "Αποκλείστε περισσότερους περισπασμούς"
-  },
-  "premium_distractions_subtitle": {
-    "message": "Αποκλείστε κοινούς περισπασμούς, όπως τα βίντεο με αυτόματη αναπαραγωγή"
   }
 }

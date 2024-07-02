@@ -243,6 +243,12 @@
   "options_filterList_lastDownload_diffTooManyFilters": {
     "message": "Non è stato possibile applicare l'aggiornamento dell'elenco filtri a causa delle limitazioni del browser. L'aggiornamento a una versione più recente dell'estensione può risolvere il problema."
   },
+  "options_filterList_lastDownload_diffTooOld": {
+    "message": "Non è stato possibile completare l'aggiornamento della lista dei filtri a causa della versione obsoleta dell'estensione. L'aggiornamento dell'estensione potrebbe risolvere il problema."
+  },
+  "options_filterList_lastDownload_dnrError": {
+    "message": "Non è stato possibile applicare l'aggiornamento dell'elenco filtri a causa di filtri errati."
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Aggiornamento in corso"
   },

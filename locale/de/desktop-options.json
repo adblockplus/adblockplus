@@ -243,6 +243,12 @@
   "options_filterList_lastDownload_diffTooManyFilters": {
     "message": "Die Filterliste konnte aufgrund von Browser-Einschränkungen nicht aktualisiert werden. Durch Aktualisierung der Erweiterung auf eine neuere Version lässt sich dieses Problem möglicherweise beheben."
   },
+  "options_filterList_lastDownload_diffTooOld": {
+    "message": "Die Filterliste konnte aufgrund einer veralteten Erweiterung nicht aktualisiert werden. Durch Aktualisierung der Erweiterung auf eine neuere Version lässt sich dieses Problem möglicherweise beheben."
+  },
+  "options_filterList_lastDownload_dnrError": {
+    "message": "Die Filterliste konnte aufgrund ungültiger Filter nicht aktualisiert werden."
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Aktualisierung"
   },

@@ -56,6 +56,18 @@
   "overlay_notification_closing_button_optout": {
     "message": "Tonen van meldingen stoppen"
   },
+  "premium_cookies_subtitle": {
+    "message": "Verberg de meeste cookiebanners op populaire websites"
+  },
+  "premium_cookies_title": {
+    "message": "Blokkeer pop-ups die vragen om cookietoestemming"
+  },
+  "premium_distractions_subtitle": {
+    "message": "Blokkeer veelvoorkomende afleidingen, zoals video's die automatisch worden afgespeeld"
+  },
+  "premium_distractions_title": {
+    "message": "Blokkeer meer afleidingen"
+  },
   "premium_upgrade": {
     "message": "Upgraden"
   },
@@ -85,17 +97,5 @@
   },
   "status_page": {
     "message": "Deze pagina:"
-  },
-  "premium_cookies_title": {
-    "message": "Blokkeer pop-ups die vragen om cookietoestemming"
-  },
-  "premium_cookies_subtitle": {
-    "message": "Verberg de meeste cookiebanners op populaire websites"
-  },
-  "premium_distractions_title": {
-    "message": "Blokkeer meer afleidingen"
-  },
-  "premium_distractions_subtitle": {
-    "message": "Blokkeer veelvoorkomende afleidingen, zoals video's die automatisch worden afgespeeld"
   }
 }

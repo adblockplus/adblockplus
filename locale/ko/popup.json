@@ -56,6 +56,18 @@
   "overlay_notification_closing_button_optout": {
     "message": "알림 표시를 중지합니다"
   },
+  "premium_cookies_subtitle": {
+    "message": "인기 있는 사이트에 있는 대부분의 쿠키 배너 숨기기"
+  },
+  "premium_cookies_title": {
+    "message": "쿠키 동의 팝업 차단"
+  },
+  "premium_distractions_subtitle": {
+    "message": "자동 재생 동영상 같은 일반적인 방해물 차단"
+  },
+  "premium_distractions_title": {
+    "message": "더 많은 방해물 차단"
+  },
   "premium_upgrade": {
     "message": "업그레이드"
   },
@@ -85,17 +97,5 @@
   },
   "status_page": {
     "message": "이 페이지:"
-  },
-  "premium_cookies_title": {
-    "message": "쿠키 동의 팝업 차단"
-  },
-  "premium_cookies_subtitle": {
-    "message": "인기 있는 사이트에 있는 대부분의 쿠키 배너 숨기기"
-  },
-  "premium_distractions_title": {
-    "message": "더 많은 방해물 차단"
-  },
-  "premium_distractions_subtitle": {
-    "message": "자동 재생 동영상 같은 일반적인 방해물 차단"
   }
 }

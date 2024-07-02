@@ -243,6 +243,12 @@
   "options_filterList_lastDownload_diffTooManyFilters": {
     "message": "تعذر تطبيق تحديث قائمة عوامل التصفية بسبب قيود المتصفح. وقد تُحل هذه المشكلة عن طريق التحديث إلى إصدار أحدث للملحق."
   },
+  "options_filterList_lastDownload_diffTooOld": {
+    "message": "تعذر تطبيق تحديث قائمة عوامل التصفية نظرًا لأن إصدار الملحق قديم. وقد يؤدي التحديث لإصدار ملحق أحدث إلى حل هذه المشكلة."
+  },
+  "options_filterList_lastDownload_dnrError": {
+    "message": "تعذر تطبيق تحديث قائمة عوامل التصفية بسبب وجود عوامل تصفية غير صالحة."
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "تحديث"
   },

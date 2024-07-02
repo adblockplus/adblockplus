@@ -243,6 +243,12 @@
   "options_filterList_lastDownload_diffTooManyFilters": {
     "message": "A szűrőlista a böngésző korlátozásai miatt nem alkalmazható. Az újabb bővítményverzióra való frissítés megoldhatja ezt a problémát."
   },
+  "options_filterList_lastDownload_diffTooOld": {
+    "message": "Egy elavult bővítmény verzió miatt nem frissíthető a szűrőlista. Egy újabb bővítmény verzióra frissítés megoldhatja ezt a problémát."
+  },
+  "options_filterList_lastDownload_dnrError": {
+    "message": "Érvénytelen szűrők miatt nem alkalmazható a szűrőlista frissítés."
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Frissítés…"
   },

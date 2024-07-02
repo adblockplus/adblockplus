@@ -56,6 +56,18 @@
   "overlay_notification_closing_button_optout": {
     "message": "Ne jelenjenek meg értesítések"
   },
+  "premium_cookies_subtitle": {
+    "message": "A legtöbb sütinyilatkozat elrejtése a legnépszerűbb oldalakon"
+  },
+  "premium_cookies_title": {
+    "message": "Sütihasználati hozzájárulást kérő előugró ablakok blokkolása"
+  },
+  "premium_distractions_subtitle": {
+    "message": "Zavaró elemek blokkolása, mint például az automatikus videolejátszás"
+  },
+  "premium_distractions_title": {
+    "message": "Több zavaró elem blokkolása"
+  },
   "premium_upgrade": {
     "message": "Magasabb verzióra frissítés"
   },
@@ -85,17 +97,5 @@
   },
   "status_page": {
     "message": "Ez az oldal:"
-  },
-  "premium_cookies_title": {
-    "message": "Sütihasználati hozzájárulást kérő előugró ablakok blokkolása"
-  },
-  "premium_cookies_subtitle": {
-    "message": "A legtöbb sütinyilatkozat elrejtése a legnépszerűbb oldalakon"
-  },
-  "premium_distractions_title": {
-    "message": "Több zavaró elem blokkolása"
-  },
-  "premium_distractions_subtitle": {
-    "message": "Zavaró elemek blokkolása, mint például az automatikus videolejátszás"
   }
 }

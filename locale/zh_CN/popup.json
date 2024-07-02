@@ -56,6 +56,18 @@
   "overlay_notification_closing_button_optout": {
     "message": "停止显示通知"
   },
+  "premium_cookies_subtitle": {
+    "message": "隐藏热门网站上的大部分 Cookie 横幅"
+  },
+  "premium_cookies_title": {
+    "message": "拦截 Cookie 同意弹出菜单"
+  },
+  "premium_distractions_subtitle": {
+    "message": "拦截自动播放视频等常见干扰"
+  },
+  "premium_distractions_title": {
+    "message": "拦截更多干扰"
+  },
   "premium_upgrade": {
     "message": "升级"
   },
@@ -85,17 +97,5 @@
   },
   "status_page": {
     "message": "此页面："
-  },
-  "premium_cookies_title": {
-    "message": "拦截 Cookie 同意弹出菜单"
-  },
-  "premium_cookies_subtitle": {
-    "message": "隐藏热门网站上的大部分 Cookie 横幅"
-  },
-  "premium_distractions_title": {
-    "message": "拦截更多干扰"
-  },
-  "premium_distractions_subtitle": {
-    "message": "拦截自动播放视频等常见干扰"
   }
 }

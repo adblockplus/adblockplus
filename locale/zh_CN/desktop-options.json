@@ -243,6 +243,12 @@
   "options_filterList_lastDownload_diffTooManyFilters": {
     "message": "由于浏览器限制，无法应用筛选清单更新。更新到较新版本的扩展程序可能会解决此问题。"
   },
+  "options_filterList_lastDownload_diffTooOld": {
+    "message": "由于扩展程序版本过时，无法应用筛选清单更新。更新到更新版本的扩展程序有可能解决此问题。"
+  },
+  "options_filterList_lastDownload_dnrError": {
+    "message": "由于筛选器无效，无法应用筛选清单更新。"
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "正在更新"
   },

@@ -56,6 +56,18 @@
   "overlay_notification_closing_button_optout": {
     "message": "通知の表示を停止"
   },
+  "premium_cookies_subtitle": {
+    "message": "人気サイトのほとんどのクッキーバナーを非表示にする"
+  },
+  "premium_cookies_title": {
+    "message": "クッキーの同意ポップアップをブロックする"
+  },
+  "premium_distractions_subtitle": {
+    "message": "動画の自動再生などのよくある煩わしい表示をブロックする"
+  },
+  "premium_distractions_title": {
+    "message": "多くの煩わしい表示をブロックする"
+  },
   "premium_upgrade": {
     "message": "アップグレード"
   },
@@ -88,17 +100,5 @@
   },
   "status_page": {
     "message": "本ページ："
-  },
-  "premium_cookies_title": {
-    "message": "クッキーの同意ポップアップをブロックする"
-  },
-  "premium_cookies_subtitle": {
-    "message": "人気サイトのほとんどのクッキーバナーを非表示にする"
-  },
-  "premium_distractions_title": {
-    "message": "多くの煩わしい表示をブロックする"
-  },
-  "premium_distractions_subtitle": {
-    "message": "動画の自動再生などのよくある煩わしい表示をブロックする"
   }
 }

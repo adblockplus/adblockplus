@@ -243,6 +243,12 @@
   "options_filterList_lastDownload_diffTooManyFilters": {
     "message": "브라우저 제한으로 인해 필터 목록 업데이트를 적용할 수 없습니다. 새로운 확장 프로그램 버전으로 업데이트하는 것이 이 문제를 해결할 수도 있습니다."
   },
+  "options_filterList_lastDownload_diffTooOld": {
+    "message": "구식 확장 프로그램 버전으로 인해 필터 목록 업데이트를 적용할 수 없습니다. 새로운 확장 프로그램 버전으로 업데이트하는 것이 이 문제를 해결할 수도 있습니다."
+  },
+  "options_filterList_lastDownload_dnrError": {
+    "message": "유효하지 않은 필터로 인해 필터 목록 업데이트를 적용할 수 없습니다."
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "업데이트중"
   },

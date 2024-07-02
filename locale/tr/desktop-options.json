@@ -243,6 +243,12 @@
   "options_filterList_lastDownload_diffTooManyFilters": {
     "message": "Filtre listesi güncellemesi tarayıcı sınırlamaları nedeniyle uygulanamadı. Uzantının daha yeni bir sürüme güncellenmesi bu sorunu çözümleyebilir."
   },
+  "options_filterList_lastDownload_diffTooOld": {
+    "message": "Uzantı sürümü eski olduğu için filtre listesi güncellemesi uygulanamadı. Daha yeni bir uzantı sürümüne güncelleme yapmak bu sorunu çözebilir."
+  },
+  "options_filterList_lastDownload_dnrError": {
+    "message": "Filtreler geçersiz olduğu için filtre listesi güncellemesi uygulanamadı."
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Güncelleniyor"
   },

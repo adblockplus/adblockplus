@@ -56,6 +56,18 @@
   "overlay_notification_closing_button_optout": {
     "message": "Non mostrare più notifiche"
   },
+  "premium_cookies_subtitle": {
+    "message": "Nascondi la maggior parte dei banner dei cookie sui siti più visitati"
+  },
+  "premium_cookies_title": {
+    "message": "Blocca i pop-up per il consenso ai cookie"
+  },
+  "premium_distractions_subtitle": {
+    "message": "Blocca le distrazioni più comuni come i video in riproduzione automatica"
+  },
+  "premium_distractions_title": {
+    "message": "Blocca ancora più distrazioni"
+  },
   "premium_upgrade": {
     "message": "Aggiorna"
   },
@@ -85,17 +97,5 @@
   },
   "status_page": {
     "message": "Questa pagina:"
-  },
-  "premium_cookies_title": {
-    "message": "Blocca i pop-up per il consenso ai cookie"
-  },
-  "premium_cookies_subtitle": {
-    "message": "Nascondi la maggior parte dei banner dei cookie sui siti più visitati"
-  },
-  "premium_distractions_title": {
-    "message": "Blocca ancora più distrazioni"
-  },
-  "premium_distractions_subtitle": {
-    "message": "Blocca le distrazioni più comuni come i video in riproduzione automatica"
   }
 }

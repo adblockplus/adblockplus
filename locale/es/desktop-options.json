@@ -243,6 +243,12 @@
   "options_filterList_lastDownload_diffTooManyFilters": {
     "message": "No se ha podido aplicar la actualización de la lista de filtros debido a las limitaciones del navegador. Este problema puede solucionarse actualizando la extensión a una versión más reciente."
   },
+  "options_filterList_lastDownload_diffTooOld": {
+    "message": "No se ha podido aplicar la actualización de la lista de filtros porque la versión de la extensión no está actualizada. Actualizar a una versión de extensión más reciente puede solucionar este problema."
+  },
+  "options_filterList_lastDownload_dnrError": {
+    "message": "No se ha podido aplicar la actualización de la lista de filtros porque los filtros no son válidos."
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Actualizando"
   },

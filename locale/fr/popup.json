@@ -56,6 +56,18 @@
   "overlay_notification_closing_button_optout": {
     "message": "Cesser d'afficher les notifications"
   },
+  "premium_cookies_subtitle": {
+    "message": "Masquez la plupart des bannières de cookies sur les sites les plus fréquentés"
+  },
+  "premium_cookies_title": {
+    "message": "Bloquez les fenêtres pop-up de consentement aux cookies"
+  },
+  "premium_distractions_subtitle": {
+    "message": "Bloquez les sources de distraction courantes comme les vidéos en lecture automatique"
+  },
+  "premium_distractions_title": {
+    "message": "Bloquez davantage de sources de distraction"
+  },
   "premium_upgrade": {
     "message": "Mise à jour"
   },
@@ -85,17 +97,5 @@
   },
   "status_page": {
     "message": "Cette page :"
-  },
-  "premium_cookies_title": {
-    "message": "Bloquez les fenêtres pop-up de consentement aux cookies"
-  },
-  "premium_cookies_subtitle": {
-    "message": "Masquez la plupart des bannières de cookies sur les sites les plus fréquentés"
-  },
-  "premium_distractions_title": {
-    "message": "Bloquez davantage de sources de distraction"
-  },
-  "premium_distractions_subtitle": {
-    "message": "Bloquez les sources de distraction courantes comme les vidéos en lecture automatique"
   }
 }

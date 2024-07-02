@@ -243,6 +243,12 @@
   "options_filterList_lastDownload_diffTooManyFilters": {
     "message": "Обновление списка фильтров не удалось применить из-за ограничений браузера. Обновление до более новой версии расширения может решить эту проблему."
   },
+  "options_filterList_lastDownload_diffTooOld": {
+    "message": "Обновление списка фильтров не удалось применить из-за того, что ваша версия расширения устарела. Обновление до более новой версии может решить эту проблему."
+  },
+  "options_filterList_lastDownload_dnrError": {
+    "message": "Обновление списка фильтров не удалось применить из-за недействительных фильтров."
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Выполняется обновление"
   },

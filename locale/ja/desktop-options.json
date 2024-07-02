@@ -231,6 +231,12 @@
   "options_filterList_lastDownload_diffTooManyFilters": {
     "message": "ブラウザーの制限のためフィルターリストの更新が適用できません。新しい拡張機能バージョンに更新すると、問題が解決する場合があります。"
   },
+  "options_filterList_lastDownload_diffTooOld": {
+    "message": "拡張機能のバージョンが古いため、フィルターリストの更新を適用できませんでした。拡張機能のバージョンを更新すると、この問題が解決する場合があります。"
+  },
+  "options_filterList_lastDownload_dnrError": {
+    "message": "フィルターが無効なため、フィルターリストの更新が適用できませんでした。"
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "更新中"
   },

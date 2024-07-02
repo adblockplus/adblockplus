@@ -56,6 +56,18 @@
   "overlay_notification_closing_button_optout": {
     "message": "Bildirimleri gösterme"
   },
+  "premium_cookies_subtitle": {
+    "message": "Popüler sitelerdeki çoğu çerez bandını engelleyin"
+  },
+  "premium_cookies_title": {
+    "message": "Çerez onayı açılır pencerelerini engelleyin"
+  },
+  "premium_distractions_subtitle": {
+    "message": "Otomatik oynatılan videolar gibi yaygın dikkat dağıtıcı unsurları engelleyin"
+  },
+  "premium_distractions_title": {
+    "message": "Daha fazla dikkat dağıtıcı unsur engelleyin"
+  },
   "premium_upgrade": {
     "message": "Yükselt"
   },
@@ -85,17 +97,5 @@
   },
   "status_page": {
     "message": "Bu sayfa:"
-  },
-  "premium_cookies_title": {
-    "message": "Çerez onayı açılır pencerelerini engelleyin"
-  },
-  "premium_cookies_subtitle": {
-    "message": "Popüler sitelerdeki çoğu çerez bandını engelleyin"
-  },
-  "premium_distractions_title": {
-    "message": "Daha fazla dikkat dağıtıcı unsur engelleyin"
-  },
-  "premium_distractions_subtitle": {
-    "message": "Otomatik oynatılan videolar gibi yaygın dikkat dağıtıcı unsurları engelleyin"
   }
 }

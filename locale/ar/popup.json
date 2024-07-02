@@ -56,6 +56,18 @@
   "overlay_notification_closing_button_optout": {
     "message": "إيقاف عرض الإشعارات"
   },
+  "premium_cookies_subtitle": {
+    "message": "إخفاء معظم شعارات ملفات تعريف الارتباط على المواقع الشهيرة"
+  },
+  "premium_cookies_title": {
+    "message": "حجب النوافذ المنبثقة الأمامية الخاصة بالموافقة على ملفات تعريف الارتباط"
+  },
+  "premium_distractions_subtitle": {
+    "message": "حجب عوامل التشتيت الشائعة مثل مقاطع الفيديو تلقائية التشغيل"
+  },
+  "premium_distractions_title": {
+    "message": "حجب المزيد من عوامل التشتيت"
+  },
   "premium_upgrade": {
     "message": "ترقية"
   },
@@ -85,17 +97,5 @@
   },
   "status_page": {
     "message": "هذه الصفحة:"
-  },
-  "premium_cookies_title": {
-    "message": "حجب النوافذ المنبثقة الأمامية الخاصة بالموافقة على ملفات تعريف الارتباط"
-  },
-  "premium_cookies_subtitle": {
-    "message": "إخفاء معظم شعارات ملفات تعريف الارتباط على المواقع الشهيرة"
-  },
-  "premium_distractions_title": {
-    "message": "حجب المزيد من عوامل التشتيت"
-  },
-  "premium_distractions_subtitle": {
-    "message": "حجب عوامل التشتيت الشائعة مثل مقاطع الفيديو تلقائية التشغيل"
   }
 }

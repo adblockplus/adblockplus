@@ -56,6 +56,18 @@
   "overlay_notification_closing_button_optout": {
     "message": "Запретить показ уведомлений"
   },
+  "premium_cookies_subtitle": {
+    "message": "Скрывайте большинство баннеров cookie на популярных сайтах"
+  },
+  "premium_cookies_title": {
+    "message": "Блокировка выскакивающих окон с требованием согласия на использование файлов cookie"
+  },
+  "premium_distractions_subtitle": {
+    "message": "Блокируйте распространенные отвлекающие факторы, такие как видео с автоматическим воспроизведением"
+  },
+  "premium_distractions_title": {
+    "message": "Блокируйте больше отвлекающих факторов"
+  },
   "premium_upgrade": {
     "message": "Сделать апгрейд"
   },
@@ -85,17 +97,5 @@
   },
   "status_page": {
     "message": "Данная страница:"
-  },
-  "premium_cookies_title": {
-    "message": "Блокировка выскакивающих окон с требованием согласия на использование файлов cookie"
-  },
-  "premium_cookies_subtitle": {
-    "message": "Скрывайте большинство баннеров cookie на популярных сайтах"
-  },
-  "premium_distractions_title": {
-    "message": "Блокируйте больше отвлекающих факторов"
-  },
-  "premium_distractions_subtitle": {
-    "message": "Блокируйте распространенные отвлекающие факторы, такие как видео с автоматическим воспроизведением"
   }
 }

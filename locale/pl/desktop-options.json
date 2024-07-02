@@ -243,6 +243,12 @@
   "options_filterList_lastDownload_diffTooManyFilters": {
     "message": "Nie można zastosować aktualizacji listy filtrów ze względu na ograniczenia przeglądarki. Aktualizacja do nowszej wersji rozszerzenia może rozwiązać ten problem."
   },
+  "options_filterList_lastDownload_diffTooOld": {
+    "message": "Aktualizacja listy filtrów nie mogła zostać wykonana z powodu nieaktualnej wersji rozszerzenia. Aktualizacja do nowszej wersji rozszerzenia może rozwiązać ten problem."
+  },
+  "options_filterList_lastDownload_dnrError": {
+    "message": "Aktualizacja listy filtrów nie mogła zostać wykonana z powodu nieprawidłowych filtrów."
+  },
   "options_filterList_lastDownload_inProgress": {
     "message": "Aktualizacja"
   },
