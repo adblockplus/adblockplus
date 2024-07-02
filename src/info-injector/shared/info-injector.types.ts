@@ -47,4 +47,8 @@ export interface InjectionInfo {
    * The premium user id
    */
   premiumId: string;
+  /**
+   * The number of blocked requests
+   */
+  blockCount: number;
 }
