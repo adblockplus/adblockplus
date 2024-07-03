@@ -19,6 +19,8 @@
 
 require("dotenv").config({path: "../../.env.e2e"});
 const fs = require("fs");
+const path = require("path");
+
 const ExtensionsPage = require("./page-objects/extensions.page");
 const GeneralPage = require("./page-objects/general.page");
 const PremiumPage = require("./page-objects/premium.page");
@@ -40,11 +42,10 @@ const chromeLocalDevBuildPath = "../../dist/devenv/chrome";
 
 const testConfig = {
   allureEnabled: process.env.ENABLE_ALLURE === "true",
-  chromeEnabled: process.env.ENABLE_CHROME === "true",
-  firefoxEnabled: process.env.ENABLE_FIREFOX === "true",
-  edgeEnabled: process.env.ENABLE_EDGE === "true",
-  helperExtension: process.env.MANIFEST_VERSION === 3 ?
-    "helper-extension-mv3" : "helper-extension"
+  browserName: process.env.BROWSER,
+  helperExtension: process.env.MANIFEST_VERSION === "3" ?
+    "helper-extension-mv3" : "helper-extension",
+  screenshotsPath: path.join(process.cwd(), "screenshots")
 };
 
 async function afterSequence()
@@ -102,16 +103,11 @@ async function beforeSequence(expectInstalledTab = true)
   {
     await browser.waitUntil(async() =>
     {
-      const windowHandles = await browser.getWindowHandles();
-      for (const handle of windowHandles)
+      for (const handle of await browser.getWindowHandles())
       {
         await browser.switchToWindow(handle);
-        const url = await browser.getUrl();
-        if (url.includes("installed"))
-        {
-          await browser.switchWindow(/installed/);
+        if (/installed|first-run/.test(await browser.getUrl()))
           return true;
-        }
       }
     }, {timeout: 50000});
   }
@@ -356,6 +352,23 @@ async function switchToABPOptionsTab(noSwitchToFrame = false)
   }
 }
 
+function waitForSwitchToABPOptionsTab(timeout = 5000)
+{
+  return browser.waitUntil(async() =>
+  {
+    try
+    {
+      await switchToABPOptionsTab();
+      return true;
+    }
+    catch (e) {}
+  }, {
+    timeout,
+    interval: 2000,
+    timeoutMsg: `Could not switch to ABP Options Tab after ${timeout}ms`
+  });
+}
+
 async function waitForCondition(condition, object = null, waitTime = 150000,
                                 refresh = true, pauseTime = 200, text = null)
 {
@@ -493,13 +506,9 @@ async function getTabId({title, urlPattern})
 function localRunChecks()
 {
   checkEnvFileExists();
-  const {
-    chromeEnabled,
-    firefoxEnabled,
-    edgeEnabled
-  } = testConfig;
+  const {browserName} = testConfig;
 
-  if (chromeEnabled || edgeEnabled)
+  if (browserName === "chrome" || browserName === "edge")
   {
     if (!fs.existsSync(chromeLocalDevBuildPath))
     {
@@ -514,7 +523,7 @@ Or 'npm run build:dev chrome -- -m 3' to build the MV3 extension.
     }
   }
 
-  if (firefoxEnabled)
+  if (browserName === "firefox")
   {
     checkFirefoxReleaseBuild();
   }
@@ -611,5 +620,6 @@ module.exports = {
   getChromiumExtensionPath, enablePremiumByUI,
   getCurrentDate, getFirefoxExtensionPath, getTabId,
   randomIntFromInterval, globalRetriesNumber, switchToABPOptionsTab,
-  waitForExtension, getABPOptionsTabId, waitForCondition
+  waitForExtension, getABPOptionsTabId, waitForCondition,
+  waitForSwitchToABPOptionsTab
 };

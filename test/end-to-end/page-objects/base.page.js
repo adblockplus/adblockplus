@@ -55,11 +55,6 @@ class BasePage
     return $(selector);
   }
 
-  async goToABPOptions(origin)
-  {
-    await browser.url(`${origin}/desktop-options.html`);
-  }
-
   async isElementDisplayed(selector, reverseOption = false, timeout = 10000)
   {
     return await this.waitForDisplayedNoError(

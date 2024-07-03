@@ -17,32 +17,21 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence, globalRetriesNumber,
-       switchToABPOptionsTab} = require("../helpers");
+const {waitForSwitchToABPOptionsTab} = require("../../helpers");
 const {expect} = require("chai");
-const AdvancedPage = require("../page-objects/advanced.page");
-const PopupPage = require("../page-objects/popup.page");
-let globalOrigin;
-let lastTest = false;
+const AdvancedPage = require("../../page-objects/advanced.page");
+const PopupPage = require("../../page-objects/popup.page");
 
-describe("test extension as part of the smoke tests", function()
+module.exports = function()
 {
-  this.retries(globalRetriesNumber + 1);
+  let globalOrigin;
 
-  before(async function()
+  before(function()
   {
-    globalOrigin = await beforeSequence();
+    ({globalOrigin} = this.test.parent.parent);
   });
 
-  afterEach(async function()
-  {
-    if (lastTest == false)
-    {
-      await afterSequence();
-    }
-  });
-
-  it("should display total ad block count", async function()
+  it("displays total ad block count", async function()
   {
     if (browser.capabilities.browserName != "firefox")
     {
@@ -62,9 +51,8 @@ describe("test extension as part of the smoke tests", function()
     }
   });
 
-  it("should reinitialize", async function()
+  it("resets settings", async function()
   {
-    lastTest = true;
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
     await advancedPage.clickAbpFiltersFLTrashButton();
@@ -74,15 +62,11 @@ describe("test extension as part of the smoke tests", function()
       "You have not added any filter lists to Adblock Plus. Filter lists " +
       "you add will be shown here.");
     await browser.executeScript("browser.runtime.reload();", []);
-    // Switch to tab since browser context was lost after reload
-    await browser.switchWindow("Adblock Plus has been installed");
-    await browser.url(`${globalOrigin}/options.html`);
-    await switchToABPOptionsTab();
+
+    await waitForSwitchToABPOptionsTab(15000);
     await advancedPage.init();
-    expect(await advancedPage.
-      isAbpFiltersFLDisplayed()).to.be.true;
-    expect(await advancedPage.
-      isEasyListFLDisplayed()).to.be.true;
+    expect(await advancedPage.isAbpFiltersFLDisplayed()).to.be.true;
+    expect(await advancedPage.isEasyListFLDisplayed()).to.be.true;
     expect(await advancedPage.
       isAllowNonintrusiveAdvertisingFLDisplayed()).to.be.true;
     const popupPage = new PopupPage(browser);
@@ -96,4 +80,4 @@ describe("test extension as part of the smoke tests", function()
     expect(String(await popupPage.
       getCurrentUrl()).includes(`${globalOrigin}/problem.html`)).to.be.true;
   });
-});
+};

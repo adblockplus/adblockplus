@@ -694,7 +694,8 @@ class GeneralPage extends BasePage
 
   async switchToInstalledTab()
   {
-    await this.switchToTab("Adblock Plus has been installed!");
+    const title = /Adblock Plus has been installed!|Installation Successful!/;
+    await this.switchToTab(title);
   }
 
   async switchToUninstalledTab()

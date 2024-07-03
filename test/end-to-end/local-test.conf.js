@@ -1,5 +1,4 @@
 /* eslint-disable quote-props */
-/* eslint-disable max-len */
 /*
  * This file is part of Adblock Plus <https://adblockplus.org/>,
  * Copyright (C) 2006-present eyeo GmbH
@@ -19,15 +18,19 @@
 
 "use strict";
 
+const path = require("path");
+const fs = require("fs");
+
 const helpers = require("./helpers.js");
 const {suites} = require("./suites.js");
 
-const {allureEnabled, chromeEnabled, firefoxEnabled, edgeEnabled,
-       helperExtension} = helpers.testConfig;
+const {allureEnabled, browserName, helperExtension,
+       screenshotsPath} = helpers.testConfig;
 helpers.localRunChecks();
 
 const browserCapabilities = [];
-const chromeExtensionPath = helpers.getChromiumExtensionPath({isLambdatest: false});
+const chromeExtensionPath =
+  helpers.getChromiumExtensionPath({isLambdatest: false});
 const chromiumOptions = {
   args: [
     "--no-sandbox",
@@ -37,7 +40,7 @@ const chromiumOptions = {
   excludeSwitches: ["disable-extensions"]
 };
 
-if (chromeEnabled)
+if (browserName === "chrome")
 {
   browserCapabilities.push({
     browserName: "chrome",
@@ -48,8 +51,7 @@ if (chromeEnabled)
     ]
   });
 }
-
-if (firefoxEnabled)
+else if (browserName === "firefox")
 {
   browserCapabilities.push({
     browserName: "firefox",
@@ -60,8 +62,7 @@ if (firefoxEnabled)
     ]
   });
 }
-
-if (edgeEnabled)
+else if (browserName === "edge")
 {
   browserCapabilities.push({
     browserName: "MicrosoftEdge",
@@ -79,6 +80,10 @@ exports.config = {
   maxInstances: Number(process.env.MAX_INSTANCES) || 1,
   capabilities: browserCapabilities,
   logLevel: "error",
+  logLevels: {
+    webdriver: "silent",
+    "@wdio/local-runner": "silent"
+  },
   bail: 0,
   waitforTimeout: 10000,
   connectionRetryTimeout: 12000,
@@ -96,25 +101,25 @@ exports.config = {
     ui: "bdd",
     timeout: 900000
   },
-  /**
-     * Function to be executed after a test (in Mocha/Jasmine only)
-     * @param {Object}  test             test object
-     * @param {Object}  context          scope object the test was executed with
-     * @param {Error}   result.error     error object in case the test fails, otherwise `undefined`
-     * @param {Any}     result.result    return object of test function
-     * @param {Number}  result.duration  duration of test
-     * @param {Boolean} result.passed    true if test has passed, otherwise false
-     * @param {Object}  result.retries   informations to spec related retries, e.g. `{ attempts: 0, limit: 0 }`
-     */
-  afterTest(
-    test,
-    context,
-    {error, result, duration, passed, retries}
-  )
+  async before()
   {
-    if (error)
+    await fs.promises.mkdir(screenshotsPath, {recursive: true});
+    // eslint-disable-next-line no-console
+    console.log(`MANIFEST_VERSION=${process.env.MANIFEST_VERSION}`);
+  },
+  async afterTest(test, context, {error})
+  {
+    if (!error)
+      return;
+
+    try
     {
-      browser.takeScreenshot();
+      const filename = `${test.title.replaceAll(" ", "_")}.png`;
+      await browser.saveScreenshot(path.join(screenshotsPath, filename));
+    }
+    catch (err)
+    {
+      console.warn(`Screenshot could not be saved: ${err}`);
     }
   }
 };

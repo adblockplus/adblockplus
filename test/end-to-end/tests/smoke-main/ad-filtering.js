@@ -17,19 +17,17 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence, globalRetriesNumber,
-       randomIntFromInterval, switchToABPOptionsTab,
-       waitForCondition} = require("../helpers");
+const {randomIntFromInterval, switchToABPOptionsTab,
+       waitForCondition} = require("../../helpers");
 const {expect} = require("chai");
-const AdvancedPage = require("../page-objects/advanced.page");
+const AdvancedPage = require("../../page-objects/advanced.page");
 const AllowlistedWebsitesPage =
-  require("../page-objects/allowlistedWebsites.page");
-const GeneralPage = require("../page-objects/general.page");
-const ExtensionsPage = require("../page-objects/extensions.page");
-const TestPages = require("../page-objects/testPages.page");
-const {sitekey} = require("../test-data/data-smoke-tests");
-const testData = require("../test-data/data-smoke-tests");
-let lastTest = false;
+  require("../../page-objects/allowlistedWebsites.page");
+const GeneralPage = require("../../page-objects/general.page");
+const ExtensionsPage = require("../../page-objects/extensions.page");
+const TestPages = require("../../page-objects/testPages.page");
+const {sitekey} = require("../../test-data/data-smoke-tests");
+const testData = require("../../test-data/data-smoke-tests");
 
 async function getTestpagesFilters()
 {
@@ -78,36 +76,21 @@ function removeAllFiltersFromABP()
   });
 }
 
-describe("test adblocking as part of the smoke tests", function()
+module.exports = function()
 {
-  this.retries(globalRetriesNumber - 1);
-
-  before(async function()
-  {
-    this.timeout(200000);
-    await beforeSequence();
-  });
-
-  afterEach(async function()
-  {
-    if (lastTest == false)
-    {
-      await afterSequence();
-    }
-  });
-
   it("uses sitekey to allowlist content", async function()
   {
     if (process.env.MANIFEST_VERSION === "3")
       this.skip();
 
     await browser.newWindow(sitekey.url);
+    const generalPage = new GeneralPage(browser);
+    await generalPage.switchToTab(sitekey.title, 8000);
     const filters = await getTestpagesFilters();
 
     await switchToABPOptionsTab();
     await addFiltersToABP(filters);
 
-    const generalPage = new GeneralPage(browser);
     await generalPage.switchToTab(sitekey.title);
     await browser.refresh();
     await browser.waitUntil(async() =>
@@ -129,23 +112,23 @@ describe("test adblocking as part of the smoke tests", function()
     await removeAllFiltersFromABP();
   });
 
-  it("should block and hide ads", async function()
+  it("blocks and hides ads", async function()
   {
     await browser.newWindow(testData.blockHideUrl);
+    const generalPage = new GeneralPage(browser);
+    await generalPage.switchToTab(testData.blockHideUrl);
     const testPages = new TestPages(browser);
     await waitForCondition("getAwe2FilterText", testPages, 15000, true,
                            randomIntFromInterval(500, 1500),
                            "awe2.js was blocked");
     expect(await testPages.getBanneradsFilterText()).to.include(
       "bannerads/* was blocked");
-    expect(await testPages.
-      isSearchAdDivDisplayed()).to.be.false;
-    expect(await testPages.
-      isAdContainerDivDisplayed()).to.be.false;
+    expect(await testPages.isSearchAdDivDisplayed()).to.be.false;
+    expect(await testPages.isAdContainerDivDisplayed()).to.be.false;
     await browser.closeWindow();
   });
 
-  it("should block ad by snippet", async function()
+  it("uses snippets to blocks ads", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await switchToABPOptionsTab();
@@ -155,22 +138,19 @@ describe("test adblocking as part of the smoke tests", function()
     await advancedPage.clickAddCustomFilterListButton();
     await browser.newWindow(testData.snippetsPageUrl);
     const testPages = new TestPages(browser);
-    expect(await testPages.
-      isSnippetFilterDivDisplayed()).to.be.false;
-    expect(await testPages.
-      isHiddenBySnippetTextDisplayed()).to.be.false;
+    expect(await testPages.isSnippetFilterDivDisplayed()).to.be.false;
+    expect(await testPages.isHiddenBySnippetTextDisplayed()).to.be.false;
     await browser.closeWindow();
   });
 
-  it("should allowlist websites", async function()
+  it("allowlists websites", async function()
   {
     const allowistedWebsitesPage = new AllowlistedWebsitesPage(browser);
     await switchToABPOptionsTab();
     await allowistedWebsitesPage.init();
     await allowistedWebsitesPage.
       setAllowlistingTextboxValue("https://adblockinc.gitlab.io/");
-    expect(await allowistedWebsitesPage.
-      isAddWebsiteButtonEnabled()).to.be.true;
+    expect(await allowistedWebsitesPage.isAddWebsiteButtonEnabled()).to.be.true;
     await allowistedWebsitesPage.clickAddWebsiteButton();
     await browser.newWindow(testData.allowlistingUrl);
     const testPages = new TestPages(browser);
@@ -220,18 +200,14 @@ describe("test adblocking as part of the smoke tests", function()
       "awe2.js was blocked");
     expect(await testPages.getBanneradsFilterText()).to.include(
       "bannerads/* was blocked");
-    expect(await testPages.
-      isSnippetFilterDivDisplayed()).to.be.false;
-    expect(await testPages.
-      isHiddenBySnippetTextDisplayed()).to.be.false;
+    expect(await testPages.isSnippetFilterDivDisplayed()).to.be.false;
+    expect(await testPages.isHiddenBySnippetTextDisplayed()).to.be.false;
   });
 
-  it("should display acceptable ads", async function()
+  it("displays acceptable ads", async function()
   {
-    lastTest = true;
     const generalPage = new GeneralPage(browser);
-    expect(await generalPage.
-      isAllowAcceptableAdsCheckboxSelected()).to.be.true;
+    expect(await generalPage.isAllowAcceptableAdsCheckboxSelected()).to.be.true;
     const testPages = new TestPages(browser);
     const ecosiaSearchUrl =
       "https://www.ecosia.org/search?method=index&q=hotels";
@@ -261,4 +237,4 @@ describe("test adblocking as part of the smoke tests", function()
     await browser.pause(randomIntFromInterval(1500, 2500));
     expect(await testPages.isEcosiaAdPillDisplayed(true)).to.be.true;
   });
-});
+};

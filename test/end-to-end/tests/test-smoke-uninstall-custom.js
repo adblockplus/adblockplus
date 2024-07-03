@@ -18,24 +18,20 @@
 
 "use strict";
 
-const {beforeSequence, switchToABPOptionsTab} =
-  require("../helpers");
+const {beforeSequence, switchToABPOptionsTab} = require("../helpers");
 const {expect} = require("chai");
 const GeneralPage = require("../page-objects/general.page");
 const AdvancedPage = require("../page-objects/advanced.page");
 const moment = require("moment");
 
-describe("test uninstall after changed params as part of the smoke tests", function()
+describe("Smoke Tests - Uninstall with custom settings", function()
 {
-  // This test case can't be retried, because the extension is uninstalled
-  this.retries(0);
-
   before(async function()
   {
     await beforeSequence();
   });
 
-  it("should uninstall extension with changed params as part of the smoke tests", async function()
+  it("uninstalls the extension with custom settings", async function()
   {
     await switchToABPOptionsTab(true);
     const generalPage = new GeneralPage(browser);

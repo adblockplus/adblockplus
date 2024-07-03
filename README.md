@@ -146,15 +146,19 @@ To run the end-to-end tests locally:
 of the extension.
 - Run the test:end-to-end-local script.
 
-Example:
+Examples:
 
 ```sh
 cp .env.e2e.template .env.e2e
+# Chrome
 npm run build:dev chrome -- --manifest-version 3
-MANIFEST_VERSION=3 npm run test:end-to-end-local all
+MANIFEST_VERSION=3 BROWSER={chrome|edge} npm run test:end-to-end-local all
+# Firefox
+npm run build:release firefox -- --manifest-version 2
+MANIFEST_VERSION=2 BROWSER=firefox npm run test:end-to-end-local all
 ```
 
-#### LabdaTest run
+#### LambdaTest run
   
 To run the end-to-end tests using [LambdaTest](https://automation.lambdatest.com/):
 
@@ -181,6 +185,7 @@ to the test(s) you want to run. Example:
 - Allure reporter is used for displaying the results after the execution has been
 completed. The report can be generated and opened using the
 `npm run test:generate-and-open-report` command.
+- Screenshots of failing tests get saved to `test/end-to-end/screenshots`
 
 ### Compliance tests
 

@@ -41,7 +41,7 @@ exports.suites = {
   filterlists: [
     "./tests/test-advanced-tab-filter-lists.js",
     "./tests/test-built-in-filter-list-dropdown.js",
-    "./tests/test-smoke-adblocking.js",
+    "./tests/test-smoke-main.js",
     "./tests/test-options-page-acceptable-ads.js"
   ],
   integration: ["./tests/test-integration-*.js"],
@@ -64,10 +64,7 @@ exports.suites = {
     "./tests/test-one-click-allow.js",
     "./tests/test-options-page-language.js",
     "./tests/test-options-page-recommended-filters.js",
-    "./tests/test-smoke-adblocking.js",
-    "./tests/test-smoke-extension.js",
-    "./tests/test-smoke-installation.js",
-    "./tests/test-smoke-uninstall-with-changed-parameters.js"
+    "./tests/test-smoke-*.js"
   ],
   smoke: ["./tests/test-smoke-*.js"]
 };

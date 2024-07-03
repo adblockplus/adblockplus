@@ -31,7 +31,10 @@ exports.config = {
   user: process.env.LT_USERNAME,
   key: process.env.LT_ACCESS_KEY,
   suites,
-  logLevel: "info",
+  logLevel: "error",
+  logLevels: {
+    webdriver: "silent"
+  },
   bail: 0,
   waitforTimeout: 50000,
   connectionRetryTimeout: 300000,

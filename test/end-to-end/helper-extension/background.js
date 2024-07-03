@@ -54,21 +54,6 @@ function closeDataTab()
   });
 }
 
-function closeLoadingTab()
-{
-  chrome.tabs.query({}, tabs =>
-  {
-    for (const tab of tabs)
-    {
-      if (tab.status === "loading")
-      {
-        chrome.tabs.remove(tab.id);
-        clearInterval(closeLoadedDataTabInterval);
-      }
-    }
-  });
-}
-
 function openDevToolsPanelPage()
 {
   const devToolsPanelUrl = extensionUrl.match(/.*\//)[0] + "devtools-panel.html";
@@ -104,4 +89,3 @@ chrome.webNavigation.onCompleted.addListener(details =>
 
 openOptionsPage();
 const closeLoadedDataTabInterval = setInterval(closeDataTab, 2000);
-setTimeout(closeLoadingTab, 3000);
