@@ -32,7 +32,7 @@ describe("test page links - problem", function()
 
   before(async function()
   {
-    globalOrigin = await beforeSequence();
+    ({origin: globalOrigin} = await beforeSequence());
   });
 
   problemPageData.forEach(async(dataSet) =>

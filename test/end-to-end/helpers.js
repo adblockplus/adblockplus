@@ -98,7 +98,9 @@ async function beforeSequence(expectInstalledTab = true)
     await browser.pause(500);
     await browser.installAddOn(helperExtensionZip.toString("base64"), true);
   }
+
   const [origin] = await waitForExtension();
+  let installedUrl;
   if (expectInstalledTab)
   {
     await browser.waitUntil(async() =>
@@ -106,15 +108,21 @@ async function beforeSequence(expectInstalledTab = true)
       for (const handle of await browser.getWindowHandles())
       {
         await browser.switchToWindow(handle);
-        if (/installed|first-run/.test(await browser.getUrl()))
+        installedUrl = await browser.getUrl();
+        if (/installed|first-run/.test(installedUrl))
+        {
+          await browser.url("about:blank"); // Ensures at least one open tab
           return true;
+        }
       }
     }, {timeout: 50000});
   }
-  await browser.switchWindow(/options\.html/);
+
+  await switchToABPOptionsTab();
   await browser.url(`${origin}/desktop-options.html`);
   await browser.setWindowSize(1400, 1000);
-  return origin;
+
+  return {origin, installedUrl};
 }
 
 async function doesTabExist(tabName, timeout = 3000, countThreshold = 1)

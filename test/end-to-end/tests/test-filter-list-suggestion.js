@@ -31,7 +31,7 @@ describe.skip("test filter list suggestion", function()
 
   before(async function()
   {
-    globalOrigin = await beforeSequence();
+    ({origin: globalOrigin} = await beforeSequence());
   });
 
   afterEach(async function()

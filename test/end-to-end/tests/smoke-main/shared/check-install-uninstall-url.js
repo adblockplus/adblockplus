@@ -20,11 +20,8 @@
 const {expect} = require("chai");
 const testData = require("../../../test-data/data-smoke-tests");
 
-module.exports = async function(expectedUrl, appVersion)
+module.exports = async function(url, appVersion)
 {
-  const url = await browser.getUrl();
-  expect(url).to.have.string(expectedUrl);
-
   const browserCapabilities = await browser.capabilities;
   let majorBrowserVersion = (JSON.stringify(browserCapabilities)).
     match(testData.regexMajorBrowserVersion)[0];

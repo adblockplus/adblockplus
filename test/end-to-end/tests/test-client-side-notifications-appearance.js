@@ -32,7 +32,7 @@ describe("test client side notifications appearance", function()
 
   before(async function()
   {
-    globalOrigin = await beforeSequence();
+    ({origin: globalOrigin} = await beforeSequence());
   });
 
   afterEach(async function()

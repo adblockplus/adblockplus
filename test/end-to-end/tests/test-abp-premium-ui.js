@@ -33,7 +33,7 @@ describe("test abp premium ui", function()
 {
   before(async function()
   {
-    globalOrigin = await beforeSequence();
+    ({origin: globalOrigin} = await beforeSequence());
   });
 
   it("should display correct UI for a free user", async function()

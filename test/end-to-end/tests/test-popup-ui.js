@@ -30,7 +30,7 @@ describe("test popup ui", function()
 {
   before(async function()
   {
-    globalOrigin = await beforeSequence();
+    ({origin: globalOrigin} = await beforeSequence());
   });
 
   afterEach(async function()

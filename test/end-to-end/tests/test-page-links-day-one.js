@@ -31,7 +31,7 @@ describe("test page links - day one", function()
 
   before(async function()
   {
-    globalOrigin = await beforeSequence();
+    ({origin: globalOrigin} = await beforeSequence());
   });
 
   dayOnePageData.forEach(async(dataSet) =>

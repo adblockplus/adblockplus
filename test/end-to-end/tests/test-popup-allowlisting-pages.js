@@ -32,7 +32,7 @@ describe("test popup allowlisting and disallowlisting pages", function()
 {
   before(async function()
   {
-    globalOrigin = await beforeSequence();
+    ({origin: globalOrigin} = await beforeSequence());
   });
 
   afterEach(async function()

@@ -32,7 +32,7 @@ describe("test page links - updates", function()
 
   before(async function()
   {
-    globalOrigin = await beforeSequence();
+    ({origin: globalOrigin} = await beforeSequence());
   });
 
   updatesPageData.forEach(async(dataSet) =>

@@ -33,7 +33,7 @@ describe("test premium links for free users", function()
 {
   before(async function()
   {
-    globalOrigin = await beforeSequence();
+    ({origin: globalOrigin} = await beforeSequence());
     appVersion = await browser.
       executeScript("return browser.runtime.getManifest().version;", []);
     await browser.newWindow("https://example.com");

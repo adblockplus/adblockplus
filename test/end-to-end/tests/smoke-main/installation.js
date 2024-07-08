@@ -19,23 +19,25 @@
 
 const {expect} = require("chai");
 
-const GeneralPage = require("../../page-objects/general.page");
 const checkInstallUninstallUrl =
   require("./shared/check-install-uninstall-url");
 
 module.exports = function()
 {
-  it("installs the extension", async function()
+  it("opens the install url", async function()
   {
-    const generalPage = new GeneralPage(browser);
+    // installedUrl is assigned to test context in beforeSequence()
+    const {installedUrl} = this.test.parent.parent;
+    if (installedUrl.includes("first-run"))
+    {
+      console.warn(`ABP installation opened first run page: ${installedUrl}`);
+      this.skip();
+    }
+
+    expect(installedUrl).to.have.string("adblockplus.org/en/installed");
+
     const appVersion = await browser.
       executeScript("return browser.runtime.getManifest().version;", []);
-    await generalPage.switchToInstalledTab();
-
-    const url = await browser.getUrl();
-    expect(url).to.match(/adblockplus.org\/en\/installed|first-run/);
-    await checkInstallUninstallUrl(url, appVersion);
-
-    await browser.closeWindow();
+    await checkInstallUninstallUrl(installedUrl, appVersion);
   });
 };

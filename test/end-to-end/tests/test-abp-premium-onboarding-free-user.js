@@ -28,7 +28,7 @@ describe("test abp premium onboarding free user", function()
 
   before(async function()
   {
-    globalOrigin = await beforeSequence();
+    ({origin: globalOrigin} = await beforeSequence());
   });
 
   it("should test onboarding page for free user", async function()

@@ -31,7 +31,7 @@ describe("test issue reporter", function()
 
   before(async function()
   {
-    globalOrigin = await beforeSequence();
+    ({origin: globalOrigin} = await beforeSequence());
   });
 
   it("should send an issue report", async function()

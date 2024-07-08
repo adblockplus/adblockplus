@@ -27,7 +27,9 @@ describe("Smoke Tests - Main", function()
 {
   before(async function()
   {
-    this.test.parent.globalOrigin = await beforeSequence();
+    const {origin, installedUrl} = await beforeSequence();
+    this.test.parent.globalOrigin = origin;
+    this.test.parent.installedUrl = installedUrl;
   });
 
   afterEach(async function()

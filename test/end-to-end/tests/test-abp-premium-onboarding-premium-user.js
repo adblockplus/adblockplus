@@ -30,7 +30,7 @@ describe("should test onboarding page for premium user", function()
 
   beforeEach(async function()
   {
-    globalOrigin = await beforeSequence();
+    ({origin: globalOrigin} = await beforeSequence());
   });
 
   it("should display onboarding page for premium user", async function()

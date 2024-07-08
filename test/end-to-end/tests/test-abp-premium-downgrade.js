@@ -33,7 +33,7 @@ describe("test abp premium downgrade", function()
 
   before(async function()
   {
-    globalOrigin = await beforeSequence();
+    ({origin: globalOrigin} = await beforeSequence());
   });
 
   it("should downgrade premium user", async function()

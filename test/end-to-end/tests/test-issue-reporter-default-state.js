@@ -30,7 +30,7 @@ describe("test issue reporter", function()
 
   before(async function()
   {
-    globalOrigin = await beforeSequence();
+    ({origin: globalOrigin} = await beforeSequence());
   });
 
   it("should display issue reporter default state", async function()
