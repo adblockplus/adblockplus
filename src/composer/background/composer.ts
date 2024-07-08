@@ -23,7 +23,7 @@
 
 import * as ewe from "@eyeo/webext-ad-filtering-solution";
 
-import { port } from "../../../adblockpluschrome/lib/messaging/port.js";
+import { port } from "../../core/api/background";
 import { SessionStorage } from "../../../adblockpluschrome/lib/storage/session.js";
 import { TabSessionStorage } from "../../../adblockpluschrome/lib/storage/tab-session.js";
 import { allowlistingState } from "../../../adblockpluschrome/lib/allowlisting.js";

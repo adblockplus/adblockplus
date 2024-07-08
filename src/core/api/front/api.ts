@@ -18,6 +18,7 @@
 import { type InjectionInfo } from "../../../info-injector/shared";
 import { type Info } from "../../../info/background/info.types";
 import { type PremiumState } from "../../../premium/shared";
+import { type PremiumSubscriptionsAddRemoveOptions } from "../shared";
 import {
   addDisconnectListener,
   addMessageListener,
@@ -40,8 +41,7 @@ import type {
   SendArgs,
   SendType,
   Store,
-  SubscriptionsGetOptions,
-  PremiumSubscriptionsTypes
+  SubscriptionsGetOptions
 } from "./api.types";
 
 /**
@@ -224,7 +224,7 @@ export const premium = {
    * @returns void
    */
   add: async (
-    subscriptionType: PremiumSubscriptionsTypes["subscriptionType"]
+    subscriptionType: PremiumSubscriptionsAddRemoveOptions["subscriptionType"]
   ) => {
     await send("premium.subscriptions.add", { subscriptionType });
   },
@@ -240,7 +240,7 @@ export const premium = {
    * @returns Premium state
    */
   remove: async (
-    subscriptionType: PremiumSubscriptionsTypes["subscriptionType"]
+    subscriptionType: PremiumSubscriptionsAddRemoveOptions["subscriptionType"]
   ) => {
     await send("premium.subscriptions.remove", { subscriptionType });
   },

@@ -17,4 +17,7 @@
 
 export * from "./api.types";
 export * from "./events";
+export * from "./events.types";
+export * from "./port";
+export * from "./port.types";
 export * from "./serializable";

@@ -27,7 +27,7 @@ import {
 } from "../../src/notifications/background";
 import {initDay1Notification} from "../../lib/notifications.js";
 import {showOptions} from "../../lib/pages/options.js";
-import {port} from "./messaging/port.js";
+import {port} from "../../src/core/api/background";
 import {SessionStorage} from "./storage/session.js";
 import {askConfirmSubscription} from "./filterConfiguration.js";
 import {startIconAnimation, stopIconAnimation} from "./icon.js";

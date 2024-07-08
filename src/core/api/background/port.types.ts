@@ -15,13 +15,19 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { sendPing } from "../../../ipm/background/telemetry";
-import { port } from "../../../core/api/background";
-import { Prefs } from "../../../../adblockpluschrome/lib/prefs";
+import { type Message } from "../shared";
+import { type MessageSender } from "./api.types";
 
-export function start(): void {
-  port.on("testing.ping_ipm_server", async () => {
-    await Prefs.untilLoaded;
-    void sendPing();
-  });
-}
+/**
+ * Function to be called when a particular message is received.
+ *
+ * @param message - Message
+ * @param sender - Message sender
+ * @return The callback can return undefined (no response),
+ *         a value (response to be sent to sender immediately)
+ *         or a promise (asynchronous response).
+ */
+export type PortMessageListener = (
+  message: Message,
+  sender: MessageSender
+) => unknown;

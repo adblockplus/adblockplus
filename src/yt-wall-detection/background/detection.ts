@@ -17,7 +17,7 @@
 
 import { type Tabs } from "webextension-polyfill";
 
-import { port } from "../../../adblockpluschrome/lib/messaging/port";
+import { port } from "../../core/api/background";
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";
 import {
   type Dialog,

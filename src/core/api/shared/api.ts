@@ -18,7 +18,8 @@
 import {
   type ListenMessage,
   type Message,
-  type PremiumActivateOptions
+  type PremiumActivateOptions,
+  type PremiumSubscriptionsAddRemoveOptions
 } from "./api.types";
 
 /**
@@ -58,5 +59,21 @@ export function isPremiumActivateOptions(
 ): candidate is PremiumActivateOptions {
   return (
     candidate !== null && typeof candidate === "object" && "userId" in candidate
+  );
+}
+
+/**
+ * Checks whether candidate is PremiumSubscriptionsAddRemoveOptions.
+ *
+ * @param candidate - Candidate
+ * @returns whether candidate is PremiumSubscriptionsAddRemoveOptions
+ */
+export function isPremiumSubscriptionsAddRemoveOptions(
+  candidate: unknown
+): candidate is PremiumSubscriptionsAddRemoveOptions {
+  return (
+    candidate !== null &&
+    typeof candidate === "object" &&
+    "subscriptionType" in candidate
   );
 }

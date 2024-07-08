@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import {port} from "./messaging/port.js";
+import {port} from "../../src/core/api/background";
 
 let lastError = null;
 

@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { port } from "../../../../adblockpluschrome/lib/messaging/port";
+import { port } from "../../../core/api/background";
 import { ReadyState } from "./ready-state.types";
 
 /**

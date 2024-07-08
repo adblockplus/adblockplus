@@ -19,8 +19,7 @@
 
 import * as ewe from "@eyeo/webext-ad-filtering-solution";
 
-import {installHandler} from "../../src/core/api/background";
-import {port} from "./messaging/port.js";
+import {installHandler, port} from "../../src/core/api/background";
 import {EventEmitter} from "./events.js";
 import {info} from "../../src/info/background";
 

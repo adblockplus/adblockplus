@@ -16,7 +16,10 @@
  */
 
 import type Browser from "webextension-polyfill";
-import { type PremiumActivateOptions } from "../shared";
+import type {
+  PremiumActivateOptions,
+  PremiumSubscriptionsAddRemoveOptions
+} from "../shared";
 
 /**
  * Strings accepted for api.app.get's first prop
@@ -356,10 +359,6 @@ export interface SubscriptionsRemoveOptions {
   url: string;
 }
 
-export interface PremiumSubscriptionsTypes {
-  subscriptionType: "cookies-premium" | "annoyances";
-}
-
 /**
  * Available argument configurations for talking to the runtime.
  */
@@ -372,7 +371,7 @@ export type SendArgs =
   | GetPrefsOptions
   | PremiumActivateOptions
   | SubscriptionsAddOptions
-  | PremiumSubscriptionsTypes
+  | PremiumSubscriptionsAddRemoveOptions
   | SubscriptionsGetOptions
   | SubscriptionsRemoveOptions;
 

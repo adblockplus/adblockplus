@@ -19,14 +19,9 @@
 
 import * as ewe from "@eyeo/webext-ad-filtering-solution";
 
-import {port} from "./messaging/port.js";
+import {port} from "../../src/core/api/background";
 import {Prefs} from "./prefs.js";
 import {info} from "../../src/info/background";
-
-function forward(type, message, sender)
-{
-  return port._onMessage(Object.assign({}, message, {type}), sender);
-}
 
 /**
  * Opens given UI page or switches to it, if it's already open
@@ -58,8 +53,8 @@ export function start()
    *
    * @event "types.get"
    */
-  port.on("types.get",
-          (message, sender) => forward("filters.getTypes", message, sender));
+  port.on("types.get", (message, sender) =>
+    port.forward("filters.getTypes", message, sender));
 
   /**
    * @deprecated Please send the "options.open" message instead.
@@ -71,7 +66,7 @@ export function start()
     switch (message.what)
     {
       case "options":
-        await forward("options.open", message, sender);
+        await port.forward("options.open", message, sender);
         break;
       case "premium-onboarding":
         await openUiPage("premium-onboarding.html");
@@ -140,14 +135,18 @@ export function start()
     }
 
     if (message.what == "doclink")
-      return forward("prefs.getDocLink", message, sender);
+      return port.forward("prefs.getDocLink", message, sender);
 
     if (message.what == "recommendations")
-      return forward("subscriptions.getRecommendations", message, sender);
+      return port.forward("subscriptions.getRecommendations", message, sender);
 
     if (message.what == "features")
     {
-      let devToolsPanel = await forward("devtools.supported", message, sender);
+      let devToolsPanel = await port.forward(
+        "devtools.supported",
+        message,
+        sender
+      );
       return {devToolsPanel};
     }
 

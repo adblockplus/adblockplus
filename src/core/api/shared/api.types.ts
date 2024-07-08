@@ -45,3 +45,10 @@ export interface PremiumActivateOptions {
    */
   userId: string;
 }
+
+/**
+ * Options for adding/removing Premium subscription
+ */
+export interface PremiumSubscriptionsAddRemoveOptions {
+  subscriptionType: "cookies-premium" | "annoyances";
+}

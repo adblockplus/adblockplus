@@ -19,7 +19,7 @@ import * as ewe from "@eyeo/webext-ad-filtering-solution";
 
 import { type Tabs } from "webextension-polyfill";
 
-import { port } from "../../../adblockpluschrome/lib/messaging/port";
+import { port } from "../../core/api/background";
 import { TabSessionStorage } from "../../../adblockpluschrome/lib/storage/tab-session";
 import { EventEmitter } from "../../../adblockpluschrome/lib/events";
 import { getLocaleInfo } from "../../i18n/background";

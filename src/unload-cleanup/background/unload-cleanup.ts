@@ -16,7 +16,7 @@
  */
 
 import { info } from "../../info/background";
-import { port } from "../../../adblockpluschrome/lib/messaging/port";
+import { port } from "../../core/api/background";
 import { type MessageSender } from "../../core/api/background";
 import { displayValueList, isGetClassNameMessage } from "../shared";
 import { className } from "./unload-cleanup.types";

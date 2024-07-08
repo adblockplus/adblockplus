@@ -25,9 +25,9 @@ import {
   premiumTypes,
   type PremiumSubscriptionType
 } from "../shared";
-import { port } from "../../../adblockpluschrome/lib/messaging/port";
+import { port } from "../../core/api/background";
+import { isPremiumSubscriptionsAddRemoveOptions } from "../../core/api/shared";
 import { type Message } from "../../core/api/shared";
-import type { PremiumSubscriptionsTypes } from "../../core/api/front/api.types";
 
 /**
  * Returns a list of premium subscriptions.
@@ -155,27 +155,27 @@ export function start(): void {
     void addOptoutPremiumSubscriptions();
   });
 
-  port.on(
-    "premium.subscriptions.add",
-    (msg: Message & PremiumSubscriptionsTypes) => {
-      if (msg.type !== "premium.subscriptions.add") {
-        return;
-      }
-
-      void addPremiumSubscription(msg.subscriptionType);
+  port.on("premium.subscriptions.add", (msg: Message) => {
+    if (
+      msg.type !== "premium.subscriptions.add" ||
+      !isPremiumSubscriptionsAddRemoveOptions(msg)
+    ) {
+      return;
     }
-  );
 
-  port.on(
-    "premium.subscriptions.remove",
-    async (msg: Message & PremiumSubscriptionsTypes) => {
-      if (msg.type !== "premium.subscriptions.remove") {
-        return;
-      }
+    void addPremiumSubscription(msg.subscriptionType);
+  });
 
-      await removePremiumSubscription(msg.subscriptionType);
+  port.on("premium.subscriptions.remove", async (msg: Message) => {
+    if (
+      msg.type !== "premium.subscriptions.remove" ||
+      !isPremiumSubscriptionsAddRemoveOptions(msg)
+    ) {
+      return;
     }
-  );
+
+    await removePremiumSubscription(msg.subscriptionType);
+  });
 
   port.on("premium.subscriptions.getState", async (msg: Message) => {
     if (msg.type !== "premium.subscriptions.getState") {

@@ -26,7 +26,7 @@ import {startOptionLinkListener} from "../../src/options/background";
 import {info} from "../../src/info/background";
 import {setReadyState, ReadyState} from
   "../../src/testing/ready-state/background/index.ts";
-import {port} from "./messaging/port.js";
+import {port} from "../../src/core/api/background";
 import {revalidateAllowlistingStates} from "./allowlisting.js";
 import {initDisabledFilterCounters} from "./filterConfiguration.js";
 import {initNotifications} from "./notificationHelper.js";
