@@ -17,7 +17,6 @@
 
 import { EventEmitter } from "../../../../adblockpluschrome/lib/events";
 import {
-  type Frame,
   type Message,
   getMessageResponse,
   isMessage,
@@ -144,42 +143,6 @@ export function addTrustedMessageTypes(
 }
 
 /**
- * Retrieve information about given frame
- *
- * @param tabId - Tab ID
- * @param frameId - Frame ID
- * @returns frame information
- */
-async function getFrame(tabId: number, frameId: number): Promise<Frame | null> {
-  const details = await browser.webNavigation.getAllFrames({ tabId });
-  if (!details || details.length === 0) {
-    return null;
-  }
-
-  const frames = new Map<number, Frame>();
-
-  for (const detail of details) {
-    const frame: Frame = {
-      id: detail.frameId,
-      url: new URL(detail.url)
-    };
-    frames.set(detail.frameId, frame);
-
-    if (detail.parentFrameId > -1) {
-      if (detail.frameId !== detail.parentFrameId) {
-        frame.parent = frames.get(detail.parentFrameId);
-      }
-
-      if (!frame.parent && detail.frameId !== 0 && detail.parentFrameId !== 0) {
-        frame.parent = frames.get(0);
-      }
-    }
-  }
-
-  return frames.get(frameId) ?? null;
-}
-
-/**
  * Determines origin of given message sender
  *
  * @param sender - Message sender
@@ -256,32 +219,17 @@ function onMessage(
     return;
   }
 
-  // At this point we know that it's our message and that it's safe to respond
-  // to, so we can return a promise without breaking anything
-  return (async () => {
-    // Retrieving the frame hierarchy is only necessary for generating filters
-    // for the filter composer, so we're only attaching it for that particular
-    // message
-    const frame =
-      message.type === "composer.getFilters" &&
-      typeof rawSender.tab?.id !== "undefined" &&
-      typeof rawSender.frameId !== "undefined"
-        ? await getFrame(rawSender.tab.id, rawSender.frameId)
-        : null;
+  const sender: MessageSender = {
+    frameId: rawSender.frameId,
+    tab: rawSender.tab
+  };
+  const responses = messageEmitter.dispatch(message, sender);
+  const response = getMessageResponse(responses);
+  if (typeof response === "undefined") {
+    return;
+  }
 
-    const sender: MessageSender = {
-      frame,
-      frameId: rawSender.frameId,
-      tab: rawSender.tab
-    };
-    const responses = messageEmitter.dispatch(message, sender);
-    const response = getMessageResponse(responses);
-    if (typeof response === "undefined") {
-      return;
-    }
-
-    return response;
-  })();
+  return Promise.resolve(response);
 }
 
 /**

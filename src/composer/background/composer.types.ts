@@ -16,39 +16,19 @@
  */
 
 /**
- * Message object, as passed from/to background page
+ * Page frame
  */
-export interface Message {
-  type: string;
-}
-
-/**
- * Message object for "*.listen" types
- */
-export interface ListenMessage extends Message {
+export interface Frame {
   /**
-   * List of event names to listen to
+   * Frame ID
    */
-  filter: string[];
+  id: number;
   /**
-   * ID of tab for which to listen to events
+   * Parent frame
    */
-  tabId?: number;
-}
-
-/**
- * Options for activating Premium license
- */
-export interface PremiumActivateOptions {
+  parent?: Frame;
   /**
-   * Premium user ID
+   * Frame URL
    */
-  userId: string;
-}
-
-/**
- * Options for adding/removing Premium subscription
- */
-export interface PremiumSubscriptionsAddRemoveOptions {
-  subscriptionType: "cookies-premium" | "annoyances";
+  url: URL;
 }

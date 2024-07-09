@@ -23,13 +23,14 @@
 
 import * as ewe from "@eyeo/webext-ad-filtering-solution";
 
+import { type Frame } from "./composer.types";
+
 import { addTrustedMessageTypes, port } from "../../core/api/background";
 import { getPage, pageEmitter } from "../../core/pages/background";
 import { SessionStorage } from "../../../adblockpluschrome/lib/storage/session.js";
 import { TabSessionStorage } from "../../../adblockpluschrome/lib/storage/tab-session.js";
 import { allowlistingState } from "../../../adblockpluschrome/lib/allowlisting.js";
 import { Prefs } from "../../../adblockpluschrome/lib/prefs.js";
-import { extractHostFromFrame } from "../../core/url/shared";
 import { info } from "../../info/background";
 
 /**
@@ -84,6 +85,64 @@ export function escapeCSS(s): string {
 export function quoteCSS(value): string {
   /* eslint-disable-next-line no-control-regex */
   return '"' + value.replace(/["\\{}\x00-\x1F\x7F]/g, escapeChar) + '"';
+}
+
+/**
+ * Retrieve information about given frame
+ *
+ * @param tabId - Tab ID
+ * @param frameId - Frame ID
+ * @returns frame information
+ */
+async function getFrame(tabId: number, frameId: number): Promise<Frame | null> {
+  const details = await browser.webNavigation.getAllFrames({ tabId });
+  if (!details || details.length === 0) {
+    return null;
+  }
+
+  const frames = new Map<number, Frame>();
+
+  for (const detail of details) {
+    const frame: Frame = {
+      id: detail.frameId,
+      url: new URL(detail.url)
+    };
+    frames.set(detail.frameId, frame);
+
+    if (detail.parentFrameId > -1) {
+      if (detail.frameId !== detail.parentFrameId) {
+        frame.parent = frames.get(detail.parentFrameId);
+      }
+
+      if (!frame.parent && detail.frameId !== 0 && detail.parentFrameId !== 0) {
+        frame.parent = frames.get(0);
+      }
+    }
+  }
+
+  return frames.get(frameId) ?? null;
+}
+
+/**
+ * Gets the IDN-decoded hostname from the URL of a frame.
+ * If the URL don't have host information (like "about:blank"
+ * and "data:" URLs) it falls back to the parent frame.
+ *
+ * @param frame
+ * @param originUrl
+ * @returns The hostname
+ */
+export function extractHostFromFrame(frame: Frame, originUrl?: URL): string {
+  let currentFrame: Frame | undefined = frame;
+  while (currentFrame) {
+    const { hostname } = currentFrame.url;
+    if (hostname) {
+      return hostname;
+    }
+    currentFrame = currentFrame.parent;
+  }
+
+  return originUrl ? originUrl.hostname : "";
 }
 
 async function composeFilters(
@@ -371,6 +430,7 @@ async function handleGetFiltersMessage(
   message,
   sender
 ): Promise<{ filters: any[]; selectors: any[] }> {
+  const frame = await getFrame(sender.tab.id, sender.frameId);
   return await composeFilters({
     tagName: message.tagName,
     id: message.id,
@@ -379,7 +439,7 @@ async function handleGetFiltersMessage(
     classes: message.classes,
     url: message.url,
     page: sender.tab,
-    frame: sender.frame
+    frame
   });
 }
 

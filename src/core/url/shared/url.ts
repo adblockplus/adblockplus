@@ -15,8 +15,6 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { type Frame } from "../../api/shared";
-
 /**
  * Parses the domains part of a filter text
  * (e.g. `example.com,~mail.example.com`) into a `Map` object.
@@ -252,26 +250,4 @@ export function isDomainList(list: string): boolean {
   return Array.from(domains.keys()).every(
     (domain) => !domain || isValidHostname(domain)
   );
-}
-
-/**
- * Gets the IDN-decoded hostname from the URL of a frame.
- * If the URL don't have host information (like "about:blank"
- * and "data:" URLs) it falls back to the parent frame.
- *
- * @param frame
- * @param originUrl
- * @returns The hostname
- */
-export function extractHostFromFrame(frame: Frame, originUrl?: URL): string {
-  let currentFrame: Frame | undefined = frame;
-  while (currentFrame) {
-    const { hostname } = currentFrame.url;
-    if (hostname) {
-      return hostname;
-    }
-    currentFrame = currentFrame.parent;
-  }
-
-  return originUrl ? originUrl.hostname : "";
 }
