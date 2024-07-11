@@ -19,10 +19,6 @@ module.exports = {
     "./mocks/js/ext/common.js",
     "./mocks/js/ext/content.js"
   ],
-  globals: {
-    fetch: global.fetch,
-    structuredClone: global.structuredClone
-  },
-  testEnvironment: "jsdom",
+  testEnvironment: "./mocks/js/jest-jsdom.mjs",
   testMatch: ["**/*.spec.ts"]
 };

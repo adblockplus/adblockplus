@@ -118,11 +118,6 @@ Various aspects of the pages can be tested by setting parameters in the URL (see
 **Note**: You need to [create the bundles](#bundling-the-ui) for the UI page(s)
 that you want to test.
 
-### Nightlies
-
-Nightly builds for feature and release [branches][wiki-branches] can be found
-as artifacts [from this page][abp-ext-nightlies].
-
 ### Unit testing
 
 The `./test/unit` folder contains various mocha unit tests files 
@@ -221,6 +216,22 @@ You can try the example below via [npx][npx] which should be automatically
 included when you install `npm`.
 
 `npx stylelint --fix css/real-file-name.css`
+
+## CI pipeline
+
+The project uses Gitlab CI to run pipelines which contain build and test jobs.
+
+### Nightlies
+
+Nightly builds for feature and release [branches][wiki-branches] can be found
+as artifacts [from this page][abp-ext-nightlies].
+
+### Runners
+
+Pipeline jobs use self-managed runners from Google Cloud Platform (GCP). The
+the setup of the runner is defined in [the devops runner project](https://gitlab.com/eyeo/devops/terraform/projects/gitlab-runners/terraform-adblock-inc-runner/), and the runner status can be checked
+[here](https://gitlab.com/groups/adblockinc/ext/-/runners). Access to GCP
+resources like the GCloud console can be granted by devops as well.
 
 ## Building
 

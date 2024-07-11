@@ -26,6 +26,8 @@ default:
         - package-lock.json
     paths:
       - .npm/
+  tags:
+    - "GCP"
 
 stages:
   - build
@@ -426,7 +428,7 @@ comp:MV2:firefox:oldest:
 # Unit tests
 ################################################################################
 
-.unit: 
+.unit:
  extends: .build
  stage: unit
  needs: []
