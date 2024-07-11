@@ -19,6 +19,8 @@
 
 "use strict";
 
+const helpers = require("./helpers.js");
+
 const mv3BuildCloudUrl = process.env.MV3_BUILD_CLOUD_URL;
 process.env.MANIFEST_VERSION = 3;
 
@@ -33,7 +35,7 @@ exports.config = {
       platformName: "Windows 10",
       "goog:chromeOptions": {
         extensions: [
-          require("fs").readFileSync("helper-extension-mv3/helper-extension-mv3.zip").toString("base64")
+          require("fs").readFileSync(helpers.testConfig.helperExtensionZipPath).toString("base64")
         ],
         args: ["--no-sandbox", "--lang=de"],
         prefs: {
@@ -62,7 +64,7 @@ exports.config = {
       platformName: "Windows 10",
       "ms:edgeOptions": {
         extensions: [
-          require("fs").readFileSync("helper-extension-mv3/helper-extension-mv3.zip").toString("base64")
+          require("fs").readFileSync(helpers.testConfig.helperExtensionZipPath).toString("base64")
         ],
         args: ["--no-sandbox", "--start-maximized", "--lang=de"],
         prefs: {
@@ -91,7 +93,7 @@ exports.config = {
       platformName: "Windows 10",
       "goog:chromeOptions": {
         extensions: [
-          require("fs").readFileSync("helper-extension-mv3/helper-extension-mv3.zip").toString("base64")
+          require("fs").readFileSync(helpers.testConfig.helperExtensionZipPath).toString("base64")
         ],
         args: ["--no-sandbox", "--lang=ar_SA"],
         prefs: {
@@ -122,7 +124,7 @@ exports.config = {
       platformName: "Windows 10",
       "ms:edgeOptions": {
         extensions: [
-          require("fs").readFileSync("helper-extension-mv3/helper-extension-mv3.zip").toString("base64")
+          require("fs").readFileSync(helpers.testConfig.helperExtensionZipPath).toString("base64")
         ],
         args: ["--no-sandbox", "--start-maximized", "--lang=ar_SA"],
         prefs: {
@@ -153,7 +155,7 @@ exports.config = {
       platformName: "Windows 10",
       "goog:chromeOptions": {
         extensions: [
-          require("fs").readFileSync("helper-extension-mv3/helper-extension-mv3.zip").toString("base64")
+          require("fs").readFileSync(helpers.testConfig.helperExtensionZipPath).toString("base64")
         ],
         args: ["--no-sandbox", "--lang=ca_CA"],
         prefs: {
@@ -183,7 +185,7 @@ exports.config = {
       platformName: "Windows 10",
       "ms:edgeOptions": {
         extensions: [
-          require("fs").readFileSync("helper-extension-mv3/helper-extension-mv3.zip").toString("base64")
+          require("fs").readFileSync(helpers.testConfig.helperExtensionZipPath).toString("base64")
         ],
         args: ["--no-sandbox", "--start-maximized", "--lang=ca_CA"],
         prefs: {

@@ -39,7 +39,7 @@ const parallelConfig = {
       "goog:chromeOptions": {
         extensions: [
           helpers.getChromiumExtensionPath(),
-          require("fs").readFileSync("helper-extension/helper-extension.zip").toString("base64")
+          require("fs").readFileSync(helpers.testConfig.helperExtensionZipPath).toString("base64")
         ],
         args: ["--no-sandbox"],
         prefs: {

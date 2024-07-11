@@ -45,7 +45,7 @@ const parallelConfig = {
       platformName: "Windows 10",
       "goog:chromeOptions": {
         extensions: [
-          require("fs").readFileSync("helper-extension-mv3/helper-extension-mv3.zip").toString("base64")
+          require("fs").readFileSync(helpers.testConfig.helperExtensionZipPath).toString("base64")
         ],
         args: ["--no-sandbox"],
         prefs: {
@@ -73,7 +73,7 @@ const parallelConfig = {
       platformName: "Windows 10",
       "ms:edgeOptions": {
         extensions: [
-          require("fs").readFileSync("helper-extension-mv3/helper-extension-mv3.zip").toString("base64")
+          require("fs").readFileSync(helpers.testConfig.helperExtensionZipPath).toString("base64")
         ],
         args: ["--no-sandbox", "--start-maximized"],
         prefs: {

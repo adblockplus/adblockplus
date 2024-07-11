@@ -34,17 +34,21 @@ const chromeCIBuild = "../../" + process.env.CHROME_BUILD;
 const firefoxCIBuild = "../../" + process.env.FIREFOX_BUILD;
 
 const extensionVersion = getExtensionVersion();
+const distPath = path.join(process.cwd(), "..", "..", "dist");
 const chromeLocalReleaseBuildPath =
-  `../../dist/release/adblockpluschrome-${extensionVersion}.zip`;
+  path.join(distPath, "release", `adblockpluschrome-${extensionVersion}.zip`);
 const firefoxLocalReleaseBuildPath =
-  `../../dist/release/adblockplusfirefox-${extensionVersion}.xpi`;
-const chromeLocalDevBuildPath = "../../dist/devenv/chrome";
+  path.join(distPath, "release", `adblockplusfirefox-${extensionVersion}.xpi`);
+const chromeLocalDevBuildPath = path.join(distPath, "devenv", "chrome");
+const helperExtensionPath = path.join(distPath, "devenv", "helper-extension");
+const helperExtensionZipPath =
+  path.join(distPath, "devenv", "helper-extension.zip");
 
 const testConfig = {
   allureEnabled: process.env.ENABLE_ALLURE === "true",
   browserName: process.env.BROWSER,
-  helperExtension: process.env.MANIFEST_VERSION === "3" ?
-    "helper-extension-mv3" : "helper-extension",
+  helperExtensionPath,
+  helperExtensionZipPath,
   screenshotsPath: path.join(process.cwd(), "screenshots")
 };
 
@@ -92,8 +96,8 @@ async function beforeSequence(expectInstalledTab = true)
   {
     const abpXpiFileName = getFirefoxExtensionPath();
     const abpExtensionXpi = await fs.promises.readFile(abpXpiFileName);
-    const helperExtensionZip = await fs.promises.
-      readFile("helper-extension/helper-extension.zip");
+    const helperExtensionZip =
+      await fs.promises.readFile(helperExtensionZipPath);
     await browser.installAddOn(abpExtensionXpi.toString("base64"), true);
     await browser.pause(500);
     await browser.installAddOn(helperExtensionZip.toString("base64"), true);

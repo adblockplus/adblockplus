@@ -39,21 +39,6 @@ function openOptionsPage()
   });
 }
 
-function closeDataTab()
-{
-  chrome.tabs.query({}, tabs =>
-  {
-    for (const tab of tabs)
-    {
-      if (tab.url.startsWith("data"))
-      {
-        chrome.tabs.remove(tab.id);
-        clearInterval(closeLoadedDataTabInterval);
-      }
-    }
-  });
-}
-
 function openDevToolsPanelPage()
 {
   const devToolsPanelUrl = extensionUrl.match(/.*\//)[0] + "devtools-panel.html";
@@ -88,4 +73,35 @@ chrome.webNavigation.onCompleted.addListener(details =>
 }, {url: [{hostEquals: "adblockplus.org"}]});
 
 openOptionsPage();
-const closeLoadedDataTabInterval = setInterval(closeDataTab, 2000);
+
+const closeLoadedDataTabInterval = setInterval(() =>
+{
+  chrome.tabs.query({}, tabs =>
+  {
+    for (const tab of tabs)
+    {
+      if (tab.url.startsWith("data"))
+      {
+        chrome.tabs.remove(tab.id);
+        clearInterval(closeLodingTabInterval);
+        clearInterval(closeLoadedDataTabInterval);
+      }
+    }
+  });
+}, 2000);
+
+const closeLodingTabInterval = setTimeout(() =>
+{
+  chrome.tabs.query({}, tabs =>
+  {
+    for (const tab of tabs)
+    {
+      if (tab.status === "loading" && !tab.url.endsWith("options.html"))
+      {
+        chrome.tabs.remove(tab.id);
+        clearInterval(closeLodingTabInterval);
+        clearInterval(closeLoadedDataTabInterval);
+      }
+    }
+  });
+}, 3000);

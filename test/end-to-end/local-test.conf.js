@@ -24,7 +24,7 @@ const fs = require("fs");
 const helpers = require("./helpers.js");
 const {suites} = require("./suites.js");
 
-const {allureEnabled, browserName, helperExtension,
+const {allureEnabled, browserName, helperExtensionPath,
        screenshotsPath} = helpers.testConfig;
 helpers.localRunChecks();
 
@@ -34,8 +34,8 @@ const chromeExtensionPath =
 const chromiumOptions = {
   args: [
     "--no-sandbox",
-    `--load-extension=${chromeExtensionPath},${helperExtension}`,
-    `--disable-extensions-except=${chromeExtensionPath},${helperExtension}`
+    `--load-extension=${chromeExtensionPath},${helperExtensionPath}`,
+    `--disable-extensions-except=${chromeExtensionPath},${helperExtensionPath}`
   ],
   excludeSwitches: ["disable-extensions"]
 };
@@ -86,7 +86,8 @@ exports.config = {
   },
   bail: 0,
   waitforTimeout: 10000,
-  connectionRetryTimeout: 12000,
+  // connectionRetryTimeout is used on the initial browser instance loading
+  connectionRetryTimeout: 20000,
   connectionRetryCount: 3,
   framework: "mocha",
   reporters: allureEnabled ? [["allure", {

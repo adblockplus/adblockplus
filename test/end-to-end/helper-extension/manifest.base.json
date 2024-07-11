@@ -1,11 +1,7 @@
 {
-  "name": "Helper extension MV3",
+  "name": "Helper extension",
   "version": "0.0.1",
-  "manifest_version": 3,
   "description": "Opens the ABP options page",
-  "background": {
-    "service_worker": "background.js"
-  },
   "permissions": [
     "management",
     "tabs",
