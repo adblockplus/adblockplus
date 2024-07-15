@@ -136,7 +136,7 @@ const defaultFilterLists = [
   },
   {
     flName: "Indian Easylist",
-    flId: "IndianList+EasyList (বাংলা (ভারত), ગુજરાતી (ભારત), भारतीय, ਪੰਜਾਬੀ (ਭਾਰਤ), অসমীয়া, मराठी, മലയാളം, తెలుగు, ಕನ್ನಡ, ଓଡ଼ିଆ, नेपाली, සිංහල + English)",
+    flId: "IndianList+EasyList (অসমীয়া, বাংলা (ভারত), ગુજરાતી (ભારત), भारतीय, ಕನ್ನಡ, undefined, മലയാളം, मराठी, नेपाली, ଓଡ଼ିଆ, ਪੰਜਾਬੀ (ਭਾਰਤ), සිංහල, தமிழ், తెలుగు + English)",
     flStatus: "present"
   },
   {
@@ -186,7 +186,7 @@ const defaultFilterLists = [
   },
   {
     flName: "Global Easylist",
-    flId: "Global Filters+EasyList (ภาษาไทย, ελληνικά, slovenščina, Hrvatski, српски, bosanski + English)",
+    flId: "Global Filters+EasyList (bosanski, ελληνικά, Filipino, Hrvatski, slovenščina, српски, ภาษาไทย + English)",
     flStatus: "present"
   }
 ];

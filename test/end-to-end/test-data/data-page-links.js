@@ -61,12 +61,12 @@ const firstRunPageData = [
   {
     testName: "First run - strict criteria",
     elementToClick: "strictCriteriaLink",
-    newTabUrl: /https:\/\/adblockplus.org\/en\/acceptable-ads#criteria\?link=acceptable_ads_criteria&lang=en-/
+    newTabUrl: /https:\/\/adblockplus.org\/en\/acceptable-ads#criteria/
   },
   {
     testName: "First run - Turn off Acceptable Ads",
     elementToClick: "turnOffAALink",
-    newTabUrl: /https:\/\/adblockplus.org\/en\/acceptable-ads#optout\?link=acceptable_ads_opt_out&lang=en-/
+    newTabUrl: /https:\/\/adblockplus.org\/en\/acceptable-ads#optout/
   },
   {
     testName: "First run - Settings",

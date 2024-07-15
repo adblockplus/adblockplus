@@ -1116,7 +1116,7 @@ class AdvancedPage extends BasePage
 
   async switchToSubscriptionsTab()
   {
-    await this.switchToTab(/link=subscriptions/);
+    await this.switchToTab(/subscriptions/);
   }
 
   async typeTextToFilterListUrlInput(text, noClearValue = false)

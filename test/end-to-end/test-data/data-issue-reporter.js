@@ -38,8 +38,7 @@ module.exports =
   issueTypeText: "False positive",
   otherIssuesText: "For all other issues, please contact us via " +
     "support@adblockplus.org.",
-  privacyPolicyUrl: "https://adblockplus.org/en/privacy#issue-reporter?link=" +
-    "reporter_privacy&lang=en-US",
+  privacyPolicyUrl: "https://adblockplus.org/en/privacy#issue-reporter",
   reportBeingProcessedText: "Please wait, the report is being processed. " +
     "This will usually take at most 1 minute. You do not need to reload this" +
     " page, it will reload automatically.",
