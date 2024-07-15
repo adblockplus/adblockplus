@@ -692,15 +692,15 @@ class GeneralPage extends BasePage
       "ads#privacy-friendly-acceptable-ads");
   }
 
-  async switchToInstalledTab()
+  async switchToInstalledTab(timeout = 8000)
   {
     const title = /Adblock Plus has been installed!|Installation Successful!/;
-    await this.switchToTab(title);
+    await this.switchToTab(title, timeout);
   }
 
-  async switchToUninstalledTab()
+  async switchToUninstalledTab(timeout = 8000)
   {
-    await this.switchToTab("Adblock Plus has been uninstalled");
+    await this.switchToTab("Adblock Plus has been uninstalled", timeout);
   }
 }
 

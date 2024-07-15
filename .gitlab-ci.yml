@@ -446,11 +446,15 @@ unit:standard:
 
 .uitests:
   stage: uitests
+  needs: ["build"]
+  before_script:
+    - cd $[[ inputs.hostpath ]]
+
+.uitests:lambdatest:
+  extends: .uitests
   variables:
     LT_USERNAME: $LT_USERNAME
     LT_ACCESS_KEY: $LT_ACCESS_KEY
-  before_script:
-    - cd $[[ inputs.hostpath ]]
   script:
     - npm ci --cache .npm --prefer-offline
     - cp .env.e2e.template .env.e2e
@@ -473,7 +477,6 @@ unit:standard:
     paths:
       - $[[ inputs.hostpath ]]/allure-report
     expire_in: 1 week
-  needs: ["build"]
   rules:
     # Do not trigger a merge request pipeline
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
@@ -482,7 +485,7 @@ unit:standard:
       allow_failure: true
 
 uitests:all:
-  extends: .uitests
+  extends: .uitests:lambdatest
   variables:
     CONFIGURATION: end-to-end
     SUITE: all
@@ -493,13 +496,13 @@ uitests:all:mv3:
     - npm install axios
     - export MV3_BUILD_CLOUD_URL=$(node test/end-to-end/upload-extension.js $LT_USERNAME $LT_ACCESS_KEY $CHROME_BUILD_MV3)
     - echo $MV3_BUILD_CLOUD_URL
-  extends: .uitests
+  extends: .uitests:lambdatest
   variables:
     CONFIGURATION: end-to-end-mv3
     SUITE: all
 
 uitests:all:scheduled:
-  extends: .uitests
+  extends: .uitests:lambdatest
   variables:
     CONFIGURATION: end-to-end
     SUITE: all
@@ -509,7 +512,7 @@ uitests:all:scheduled:
       allow_failure: true
 
 uitests:e2e:
-  extends: .uitests
+  extends: .uitests:lambdatest
   variables:
     CONFIGURATION: end-to-end
     SUITE: e2e
@@ -520,27 +523,57 @@ uitests:filterlists:mv3:
     - npm install axios
     - export MV3_BUILD_CLOUD_URL=$(node test/end-to-end/upload-extension.js $LT_USERNAME $LT_ACCESS_KEY $CHROME_BUILD_MV3)
     - echo $MV3_BUILD_CLOUD_URL
-  extends: .uitests
+  extends: .uitests:lambdatest
   variables:
     CONFIGURATION: end-to-end-mv3
     SUITE: filterlists
 
 uitests:integration:
-  extends: .uitests
+  extends: .uitests:lambdatest
   variables:
     CONFIGURATION: end-to-end
     SUITE: integration
 
 uitests:oldbrowsers:
-  extends: .uitests
+  extends: .uitests:lambdatest
   variables:
     CONFIGURATION: end-to-end-old-browsers
     SUITE: oldbrowsers
 
-uitests:smoke:
+.uitests:docker:
   extends: .uitests
-  variables:
-    CONFIGURATION: end-to-end
-    SUITE: smoke
+  image: docker:24.0.5
+  services:
+    - docker:24.0.5-dind
+  interruptible: true
+  script:
+    - docker build -t end-to-end -f test/end-to-end/Dockerfile --build-arg MANIFEST_VERSION=$MANIFEST_VERSION --build-arg BROWSER=$BROWSER --build-arg BUILD_EXTENSION=false .
+    - docker run --cpus=2 --shm-size=2g -t -e SUITE=smoke -e CI end-to-end
+  after_script:
+    - IMAGE_ID=$(docker ps -aqf ancestor=end-to-end)
+    - docker cp $IMAGE_ID:/adblockplus/test/end-to-end/screenshots . 2> /dev/null
+  artifacts:
+    paths:
+      - screenshots/
+    when: on_failure
+    expire_in: 1 mo
   rules:
     - !reference [.always, rules]
+
+uitests:docker:MV2:firefox:
+  extends: .uitests:docker
+  variables:
+    MANIFEST_VERSION: 2
+    BROWSER: firefox
+
+uitests:docker:MV2:edge:
+  extends: .uitests:docker
+  variables:
+    MANIFEST_VERSION: 2
+    BROWSER: edge
+
+uitests:docker:MV3:chrome:
+  extends: .uitests:docker
+  variables:
+    MANIFEST_VERSION: 3
+    BROWSER: chrome

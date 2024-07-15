@@ -20,11 +20,14 @@
 
 const path = require("path");
 const fs = require("fs");
+const AdmZip = require("adm-zip");
 
 const helpers = require("./helpers.js");
 const {suites} = require("./suites.js");
 
-const {allureEnabled, browserName, screenshotsPath} = helpers.testConfig;
+const {allureEnabled, browserName, screenshotsPath, releasePath, chromeBuild,
+       helperExtensionUnpackedPath} = helpers.testConfig;
+
 helpers.localRunChecks();
 
 const browserCapabilities = [];
@@ -33,12 +36,42 @@ const chromiumOptions = {
     "--no-sandbox",
     "--window-size=1400,1000",
     "--disable-search-engine-choice-screen"
-  ],
-  extensions: [
-    helpers.getChromiumExtension(),
-    helpers.getHelperExtension()
   ]
 };
+
+if (process.env.MANIFEST_VERSION === "3")
+{
+  // For some reason loading the MV3 zipped extension on docker produces a
+  // `webdriver: RequestError: write ECONNRESET` error.
+  // Unzipping it to load it unpacked
+  const chromeExtensionUnpackedPath = path.join(releasePath, "chrome-unpacked");
+  fs.rmSync(chromeExtensionUnpackedPath, {force: true, recursive: true});
+
+  const zip = new AdmZip(chromeBuild);
+  zip.extractAllTo(chromeExtensionUnpackedPath, true);
+
+  chromiumOptions.args.push("--load-extension=" +
+    `${chromeExtensionUnpackedPath},${helperExtensionUnpackedPath}`);
+}
+else
+{
+  chromiumOptions.extensions =
+    browserName === "chrome" || browserName === "edge" ? [
+      helpers.getChromiumExtension(),
+      helpers.getHelperExtension()
+    ] : [];
+}
+
+const firefoxOptions = {args: [
+  "-width=1400",
+  "-height=1000"
+]};
+
+if (process.env.FORCE_HEADFUL !== "true")
+{
+  chromiumOptions.args.push("--headless=new");
+  firefoxOptions.args.push("-headless");
+}
 
 if (browserName === "chrome")
 {
@@ -55,12 +88,7 @@ else if (browserName === "firefox")
 {
   browserCapabilities.push({
     browserName: "firefox",
-    "moz:firefoxOptions": {
-      args: [
-        "-width=1400",
-        "-height=1000"
-      ]
-    },
+    "moz:firefoxOptions": firefoxOptions,
     acceptInsecureCerts: true,
     exclude: [
       "./tests/test-issue-reporter.js",
@@ -70,7 +98,7 @@ else if (browserName === "firefox")
 }
 else if (browserName === "edge")
 {
-  browserCapabilities.push({
+  const edgeCapabilities = {
     browserName: "MicrosoftEdge",
     "ms:edgeOptions": chromiumOptions,
     acceptInsecureCerts: true,
@@ -78,7 +106,19 @@ else if (browserName === "edge")
       "./tests/test-issue-reporter.js",
       "./tests/legacy-unit.js"
     ]
-  });
+  };
+
+  // On Docker, sometimes `Error: End of central directory not found` appears
+  // when WDIO runs the edgedriver script. Setting the edgedriver binary path
+  // as a workaround. `EDGDEDRIVER_PATH` is set in `Dockerfile`.
+  if (process.env.EDGDEDRIVER_PATH)
+  {
+    edgeCapabilities["wdio:edgedriverOptions"] = {
+      binary: process.env.EDGDEDRIVER_PATH
+    };
+  }
+
+  browserCapabilities.push(edgeCapabilities);
 }
 
 async function manageScreenshot(test, error)
@@ -110,7 +150,7 @@ exports.config = {
   bail: 0,
   waitforTimeout: 10000,
   // connectionRetryTimeout is used on the initial browser instance loading
-  connectionRetryTimeout: 50000,
+  connectionRetryTimeout: 120000,
   connectionRetryCount: 3,
   framework: "mocha",
   reporters: allureEnabled ? [["allure", {
@@ -123,7 +163,7 @@ exports.config = {
   }]],
   mochaOpts: {
     ui: "bdd",
-    timeout: 900000
+    timeout: 300000
   },
   async before()
   {

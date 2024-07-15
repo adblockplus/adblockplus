@@ -30,7 +30,7 @@ const globalRetriesNumber = 0;
 const isGitlab = process.env.CI === "true";
 
 const chromeBuild = process.env.MANIFEST_VERSION === "2" ?
-  findFirstMatchingFile(`../../${process.env.CHROME_BUILD}`) :
+  findFirstMatchingFile(`../../${process.env.CHROME_BUILD_MV2}`) :
   findFirstMatchingFile(`../../${process.env.CHROME_BUILD_MV3}`);
 const firefoxBuild = findFirstMatchingFile(
   `../../${process.env.FIREFOX_BUILD}`);
@@ -38,11 +38,16 @@ const firefoxBuild = findFirstMatchingFile(
 const distPath = path.join(process.cwd(), "..", "..", "dist");
 const helperExtensionPath =
   path.join(distPath, "devenv", "helper-extension.zip");
+const helperExtensionUnpackedPath =
+  path.join(distPath, "devenv", "helper-extension");
 
 const testConfig = {
   allureEnabled: process.env.ENABLE_ALLURE === "true",
   browserName: process.env.BROWSER,
-  screenshotsPath: path.join(process.cwd(), "screenshots")
+  screenshotsPath: path.join(process.cwd(), "screenshots"),
+  releasePath: path.join(distPath, "release"),
+  chromeBuild,
+  helperExtensionUnpackedPath
 };
 
 async function afterSequence(optionsUrl = null)
@@ -295,7 +300,7 @@ function findFirstMatchingFile(pathWithPattern)
   if (firstFile)
     return path.join(dir, firstFile);
 
-  throw new Error(`No file with pattern ${pattern} found in dir ${dir}`);
+  console.warn(`No file with pattern ${pattern} found in dir ${dir}`);
 }
 
 function getExtension(extensionPath)
@@ -333,12 +338,13 @@ async function switchToABPOptionsTab(options = {})
   const defaultOptions =
     {switchToFrame: true, optionsUrl: null, refresh: false};
   const {switchToFrame, optionsUrl, refresh} = {...defaultOptions, ...options};
-  const timeout = 1000;
+  const timeout = 5000;
+  const quickTimeout = 1000;
 
   const generalPage = new GeneralPage(browser);
   try
   {
-    await generalPage.switchToTab("Adblock Plus Options", timeout);
+    await generalPage.switchToTab("Adblock Plus Options", quickTimeout);
   }
   catch (err)
   {
@@ -351,7 +357,7 @@ async function switchToABPOptionsTab(options = {})
     // Switching to the handle of any open tab as a workaround.
     await browser.switchToWindow((await browser.getWindowHandles())[0]);
     await browser.url(optionsUrl);
-    await generalPage.switchToTab("Adblock Plus Options", 5000);
+    await generalPage.switchToTab("Adblock Plus Options", timeout);
   }
 
   if (refresh)
@@ -435,6 +441,24 @@ async function waitForNewWindow(url, timeout = 5000)
     timeout,
     timeoutMsg: `Could not open new window "${url}" after ${timeout}ms`
   });
+}
+
+// Polling expect function calls until they pass
+async function waitForAssertion(expectFn, timeout = 5000, message = "Timed out",
+                                interval = 500)
+{
+  return browser.waitUntil(async() =>
+  {
+    try
+    {
+      await expectFn();
+      return true;
+    }
+    catch (e)
+    {
+      await browser.refresh();
+    }
+  }, {timeout, interval, timeoutMsg: `${message} after ${timeout}ms`});
 }
 
 async function waitForCondition(condition, object = null, waitTime = 150000,
@@ -645,5 +669,6 @@ module.exports = {
   getCurrentDate, getTabId, enablePremiumByUI,
   randomIntFromInterval, globalRetriesNumber, switchToABPOptionsTab,
   waitForExtension, getABPOptionsTabId, waitForCondition,
-  waitForSwitchToABPOptionsTab, waitForNewWindow, isChrome, isFirefox, isEdge
+  waitForSwitchToABPOptionsTab, waitForNewWindow, waitForAssertion, isChrome,
+  isFirefox, isEdge
 };

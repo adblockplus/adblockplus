@@ -36,9 +36,20 @@ module.exports = function()
     const appVersion = await browser.
       executeScript("return browser.runtime.getManifest().version;", []);
 
-    await browser.executeScript("browser.management.uninstallSelf();", []);
-    await generalPage.switchToUninstalledTab();
+    try
+    {
+      await browser.executeScript("browser.management.uninstallSelf();", []);
+    }
+    catch (err)
+    {
+      if (!err.message.includes("connect ECONNREFUSED"))
+        throw err;
 
+      // WDIO seems to not handle well the options tab being closed when the
+      // extension is uninstalled
+    }
+
+    await generalPage.switchToUninstalledTab();
     const url = await browser.getUrl();
     expect(url).to.have.string("https://adblockplus.org/en/uninstalled");
     await checkInstallUninstallUrl(url, appVersion);

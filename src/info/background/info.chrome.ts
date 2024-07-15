@@ -33,7 +33,7 @@ while ((match = regexp.exec(navigator.userAgent))) {
   const app = match[1];
   const ver = getMajorVersion(match[2]);
 
-  if (app === "Chrome") {
+  if (app === "Chrome" || app === "HeadlessChrome") {
     platformVersion = ver;
   }
   // For compatibility with legacy websites, Chrome's UA

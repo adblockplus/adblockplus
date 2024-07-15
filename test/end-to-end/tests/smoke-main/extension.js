@@ -17,7 +17,8 @@
 
 "use strict";
 
-const {waitForSwitchToABPOptionsTab} = require("../../helpers");
+const {waitForSwitchToABPOptionsTab, switchToABPOptionsTab, waitForAssertion} =
+  require("../../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../../page-objects/advanced.page");
 const PopupPage = require("../../page-objects/popup.page");
@@ -42,11 +43,17 @@ module.exports = function()
     await popupPage.init(globalOrigin);
     const blockedFirst =
       await popupPage.waitForNumberOfAdsBlockedToBeInRange(0, maxAdsBlocked);
+    await browser.closeWindow();
 
-    await browser.url(url);
+    await browser.switchWindow(url);
+    await browser.refresh();
     await popupPage.init(globalOrigin);
     await popupPage.waitForNumberOfAdsBlockedToBeInRange(
       blockedFirst, maxAdsBlocked);
+    await browser.closeWindow();
+
+    await browser.switchWindow(url);
+    await browser.closeWindow();
   });
 
   it("resets settings", async function()
@@ -56,26 +63,42 @@ module.exports = function()
     await advancedPage.clickAbpFiltersFLTrashButton();
     await advancedPage.clickEasyListFLTrashButton();
     await advancedPage.clickAllowNonintrusiveAdvertisingFLTrashButton();
+    await advancedPage.init();
     expect(await advancedPage.getFlTableEmptyPlaceholderText()).to.equal(
       "You have not added any filter lists to Adblock Plus. Filter lists " +
       "you add will be shown here.");
     await browser.executeScript("browser.runtime.reload();", []);
 
-    await waitForSwitchToABPOptionsTab(optionsUrl, 15000);
-    await advancedPage.init();
-    expect(await advancedPage.isAbpFiltersFLDisplayed()).to.be.true;
+    // After reloading the extenstion, under slow conditions on MV3 the options
+    // page may take a long time to load
+    await waitForSwitchToABPOptionsTab(optionsUrl, 60000);
+    await waitForAssertion(async() =>
+    {
+      await switchToABPOptionsTab({refresh: true});
+      await advancedPage.init();
+      expect(await advancedPage.isAbpFiltersFLDisplayed()).to.be.true;
+    }, 30000, "ABP filters FL is not displayed", 2000);
     expect(await advancedPage.isEasyListFLDisplayed()).to.be.true;
     expect(await advancedPage.
       isAllowNonintrusiveAdvertisingFLDisplayed()).to.be.true;
     const popupPage = new PopupPage(browser);
     await popupPage.init(globalOrigin);
-    expect(String(await popupPage.
-      getNotificationMessageText()).includes("An issue has caused your ABP " +
-      "settings to be reset to default. Fix the issue and " +
-      "learn more")).to.be.true;
+    await waitForAssertion(async() =>
+    {
+      expect(String(await popupPage.getNotificationMessageText()).includes(
+        "An issue has caused your ABP settings to be reset to default. Fix " +
+        "the issue and learn more")).to.be.true;
+    }, 30000, "Popup page didn't show reset settings message", 2000);
     await popupPage.clickLinkInNotificationMessage();
     await popupPage.switchToProblemPageTab();
     expect(String(await popupPage.
       getCurrentUrl()).includes(`${globalOrigin}/problem.html`)).to.be.true;
+
+    // Only Firefox triggers the updated page
+    if (browser.capabilities.browserName === "firefox")
+    {
+      await popupPage.switchToTab("Adblock Plus has been updated", 15000);
+      browser.closeWindow();
+    }
   });
 };

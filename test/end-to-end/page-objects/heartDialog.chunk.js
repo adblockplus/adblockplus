@@ -77,7 +77,7 @@ class HeartDialogChunk extends BasePage
 
   async switchToDonateTab()
   {
-    await this.switchToTab(/contribution/);
+    await this.switchToTab(/donate/);
   }
 }
 

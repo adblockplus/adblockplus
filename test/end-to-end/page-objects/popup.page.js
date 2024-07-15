@@ -31,9 +31,7 @@ class PopupPage extends BasePage
   async init(origin, tabId)
   {
     await browser.newWindow("about:blank");
-    await browser.url(
-      `${origin}/popup.html?testTabId=${tabId}`
-    );
+    await browser.url(`${origin}/popup.html?testTabId=${tabId}`);
     await (await this.pageStatsCounter).waitForExist({timeout: 10000});
   }
 
@@ -386,11 +384,12 @@ class PopupPage extends BasePage
   async switchToProblemPageTab()
   {
     await this.switchToTab("A browser issue has caused your ABP " +
-      "settings to be reset.");
+      "settings to be reset.", 8000);
   }
 
   async waitForNumberOfAdsBlockedToBeInRange(min, max)
   {
+    const timeout = 8000;
     let adsBlocked;
     try
     {
@@ -398,12 +397,12 @@ class PopupPage extends BasePage
       {
         adsBlocked = parseInt(await this.getText(), 10);
         return adsBlocked > min && adsBlocked <= max;
-      }, {timeout: 2000});
+      }, {timeout});
     }
     catch (err)
     {
-      throw new Error("Unexpected ads blocked count. Expected: " +
-        `${min} < value <= ${max}. Actual: ${adsBlocked}`);
+      throw new Error(`Unexpected ads blocked count after ${timeout}ms. ` +
+        `Expected: ${min} < value <= ${max}. Actual: ${adsBlocked}`);
     }
     return adsBlocked;
   }

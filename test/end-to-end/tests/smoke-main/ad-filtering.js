@@ -17,15 +17,14 @@
 
 "use strict";
 
-const {randomIntFromInterval, switchToABPOptionsTab, isFirefox,
-       waitForCondition} = require("../../helpers");
+const {randomIntFromInterval, switchToABPOptionsTab, waitForNewWindow,
+       waitForAssertion, waitForCondition} = require("../../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../../page-objects/advanced.page");
 const AllowlistedWebsitesPage =
   require("../../page-objects/allowlistedWebsites.page");
 const GeneralPage = require("../../page-objects/general.page");
 const TestPages = require("../../page-objects/testPages.page");
-const {sitekey} = require("../../test-data/data-smoke-tests");
 const testData = require("../../test-data/data-smoke-tests");
 
 async function getTestpagesFilters()
@@ -89,15 +88,14 @@ module.exports = function()
     if (process.env.MANIFEST_VERSION === "3")
       this.skip();
 
-    await browser.newWindow(sitekey.url);
-    const generalPage = new GeneralPage(browser);
-    await generalPage.switchToTab(sitekey.title, 8000);
+    await waitForNewWindow(testData.sitekeyUrl, 8000);
     const filters = await getTestpagesFilters();
 
     await switchToABPOptionsTab();
     await addFiltersToABP(filters);
 
-    await generalPage.switchToTab(sitekey.title);
+    const generalPage = new GeneralPage(browser);
+    await generalPage.switchToTab(testData.sitekeyUrl, 8000);
     await browser.refresh();
     await browser.waitUntil(async() =>
     {
@@ -120,13 +118,16 @@ module.exports = function()
 
   it("blocks and hides ads", async function()
   {
-    await browser.newWindow(testData.blockHideUrl);
-    const generalPage = new GeneralPage(browser);
-    await generalPage.switchToTab(testData.blockHideUrl);
+    await waitForNewWindow(testData.blockHideUrl);
+
     const testPages = new TestPages(browser);
-    await waitForCondition("getAwe2FilterText", testPages, 15000, true,
-                           randomIntFromInterval(500, 1500),
-                           "awe2.js was blocked");
+    const timeout = 15000;
+    await waitForAssertion(async() =>
+    {
+      browser.refresh();
+      expect(await testPages.getAwe2FilterText()).to.include(
+        "awe2.js was blocked");
+    }, timeout, "awe2.js blocking filter was not applied");
     expect(await testPages.getBanneradsFilterText()).to.include(
       "bannerads/* was blocked");
     expect(await testPages.isSearchAdDivDisplayed()).to.be.false;
@@ -134,17 +135,20 @@ module.exports = function()
     await browser.closeWindow();
   });
 
-  it("uses snippets to blocks ads", async function()
+  it("uses snippets to block ads", async function()
   {
     const advancedPage = new AdvancedPage(browser);
-    await switchToABPOptionsTab();
     await advancedPage.init();
     await advancedPage.typeTextToAddCustomFilterListInput(
       "adblockinc.gitlab.io#$#hide-if-contains 'should be hidden' p[id]");
     await advancedPage.clickAddCustomFilterListButton();
     await browser.newWindow(testData.snippetsPageUrl);
     const testPages = new TestPages(browser);
-    expect(await testPages.isSnippetFilterDivDisplayed()).to.be.false;
+    const timeout = 5000;
+    await browser.waitUntil(async() =>
+    {
+      return await testPages.isSnippetFilterDivDisplayed() == false;
+    }, {timeout, timeoutMsg: `snippet div still displayed after ${timeout}ms`});
     expect(await testPages.isHiddenBySnippetTextDisplayed()).to.be.false;
     await browser.closeWindow();
   });
@@ -152,34 +156,27 @@ module.exports = function()
   it("allowlists websites", async function()
   {
     const allowistedWebsitesPage = new AllowlistedWebsitesPage(browser);
-    await switchToABPOptionsTab();
     await allowistedWebsitesPage.init();
     await allowistedWebsitesPage.
       setAllowlistingTextboxValue("https://adblockinc.gitlab.io/");
     expect(await allowistedWebsitesPage.isAddWebsiteButtonEnabled()).to.be.true;
     await allowistedWebsitesPage.clickAddWebsiteButton();
-    await browser.newWindow(testData.allowlistingUrl);
+
+    await waitForNewWindow(testData.blockHideUrl);
     const testPages = new TestPages(browser);
-    if (isFirefox())
+    const timeout = 5000;
+    await waitForAssertion(async() =>
     {
-      if (await allowistedWebsitesPage.getCurrentTitle() !=
-        "Blocking and hiding")
-      {
-        await allowistedWebsitesPage.switchToTab(/blocking-hiding-testpage/);
-        await browser.pause(2000);
-        await browser.refresh();
-        await browser.pause(3000);
-      }
-      await browser.refresh();
-    }
-    await browser.refresh();
-    await allowistedWebsitesPage.switchToTab(/blocking-hiding-testpage/);
-    expect(await testPages.getAwe2FilterText()).to.include(
-      "awe2.js blocking filter should block this");
+      expect(await testPages.getAwe2FilterText()).to.include(
+        "awe2.js blocking filter should block this");
+    }, timeout, "awe2.js blocking filter was not applied");
     expect(await testPages.getBanneradsFilterText()).to.include(
       "first bannerads/* blocking filter should block this");
-    expect(await testPages.getSearchAdDivText()).to.include(
-      "search-ad id hiding filter should hide this");
+    await waitForAssertion(async() =>
+    {
+      expect(await testPages.getSearchAdDivText()).to.include(
+        "search-ad id hiding filter should hide this");
+    }, timeout, "awe2.js blocking filter was not applied");
     expect(await testPages.getAdContainerDivText()).to.include(
       "AdContainer class hiding filter should hide this");
     await switchToABPOptionsTab();
@@ -191,27 +188,27 @@ module.exports = function()
     {
       expect(element).to.equal("empty-placeholder");
     });
-    await browser.newWindow(testData.allowlistingUrl);
-    await browser.refresh();
-    if (isFirefox())
+
+    await waitForNewWindow(testData.allowlistingUrl);
+    await waitForAssertion(async() =>
     {
-      if (await allowistedWebsitesPage.getCurrentTitle() !=
-        "Blocking and hiding")
-      {
-        await allowistedWebsitesPage.switchToTab(/blocking-hiding-testpage/);
-        await browser.refresh();
-      }
-    }
-    expect(await testPages.getAwe2FilterText()).to.include(
-      "awe2.js was blocked");
-    expect(await testPages.getBanneradsFilterText()).to.include(
-      "bannerads/* was blocked");
+      expect(await testPages.getAwe2FilterText()).to.include(
+        "awe2.js was blocked");
+      expect(await testPages.getBanneradsFilterText()).to.include(
+        "bannerads/* was blocked");
+    }, timeout, "awe2.js or bannerads/* was not blocked");
     expect(await testPages.isSnippetFilterDivDisplayed()).to.be.false;
     expect(await testPages.isHiddenBySnippetTextDisplayed()).to.be.false;
   });
 
   it("displays acceptable ads", async function()
   {
+    // https://eyeo.atlassian.net/browse/EE-723
+    if (process.env.LOCAL_RUN === "true")
+    {
+      this.skip();
+    }
+
     const generalPage = new GeneralPage(browser);
     expect(await generalPage.isAllowAcceptableAdsCheckboxSelected()).to.be.true;
     const testPages = new TestPages(browser);

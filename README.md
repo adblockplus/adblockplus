@@ -150,6 +150,9 @@ npm run build:release {chrome|firefox} -- --manifest-version {2|3}
 MANIFEST_VERSION={2|3} BROWSER={chrome|firefox|edge} npm run test:end-to-end-local all
 ```
 
+The `FORCE_HEADFUL=true` environment variable may be used to run the browser in
+headful mode instead of headless.
+
 #### LambdaTest run
   
 To run the end-to-end tests using [LambdaTest](https://automation.lambdatest.com/):
@@ -178,6 +181,26 @@ to the test(s) you want to run. Example:
 completed. The report can be generated and opened using the
 `npm run test:generate-and-open-report` command.
 - Screenshots of failing tests get saved to `test/end-to-end/screenshots`
+
+#### Docker run
+
+Prerequisites: Docker
+
+```sh
+docker build -t end-to-end -f test/end-to-end/Dockerfile --build-arg MANIFEST_VERSION={2|3} --build-arg BROWSER={chrome|firefox|edge} --build-arg BUILD_EXTENSION={true|false} .
+docker run --cpus=2 --shm-size=2g -it -e SUITE=smoke end-to-end
+```
+
+The default behaviour builds the extension inside the docker image. Setting the
+`BUILD_EXTENSION` build argument to `false` will use the contents of the local
+`dist` folder instead.
+
+To access the screenshots for failing tests run the following command, which
+copies them to the `test/end-to-end/screenshots` folder:
+
+```shell
+docker cp $(docker ps -aqf ancestor=end-to-end | head -n 1):/adblockplus/test/end-to-end/screenshots ./test/end-to-end
+```
 
 ### Compliance tests
 
