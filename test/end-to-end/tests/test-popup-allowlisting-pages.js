@@ -68,7 +68,8 @@ describe("test popup allowlisting and disallowlisting pages", function()
     expect(await popupPage.isPageToggleChecked()).to.be.true;
     expect(await popupPage.isPageStatsCounterDisplayed()).to.be.true;
     expect(await popupPage.isBlockSpecificElementButtonDisplayed()).to.be.true;
-    await popupPage.switchToTab("Adblock Plus Options");
+
+    await switchToABPOptionsTab();
     const allowistedWebsitesPage = new AllowlistedWebsitesPage(browser);
     await allowistedWebsitesPage.init();
     const attributesOfAllowlistingTableItems = await allowistedWebsitesPage
@@ -93,7 +94,8 @@ describe("test popup allowlisting and disallowlisting pages", function()
     expect(await popupPage.isRefreshButtonDisplayed()).to.be.true;
     expect(await popupPage.isRefreshMessageDisplayed()).to.be.true;
     await popupPage.clickRefreshButton();
-    await switchToABPOptionsTab(true);
+
+    await switchToABPOptionsTab({switchToFrame: false});
     await testPage.switchToTab("Blocking and hiding");
     await browser.refresh();
     await waitForCondition("getAwe2FilterText", 3000, testPage, true, 200,
@@ -119,7 +121,8 @@ describe("test popup allowlisting and disallowlisting pages", function()
     await popupPage.init(globalOrigin, tabId);
     expect(await popupPage.isDomainToggleChecked()).to.be.true;
     expect(await popupPage.isPageToggleEnabled()).to.be.true;
-    await switchToABPOptionsTab(true);
+
+    await switchToABPOptionsTab();
     const allowistedWebsitesPage = new AllowlistedWebsitesPage(browser);
     await allowistedWebsitesPage.init();
     const attributesOfAllowlistingTableItems = await allowistedWebsitesPage

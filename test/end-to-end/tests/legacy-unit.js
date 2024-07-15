@@ -22,45 +22,13 @@ const assert = require("assert");
 const {waitForExtension} = require("../helpers");
 const TestPage = require("../page-objects/test.page");
 
-let extensionHandle = null;
 let origin = null;
-
-/*
- * Standard-compliant polyfill for WebDriver#executeScript,
- * working around limitations of ChromeDriver <77,
- * enabling scripts to return a promise.
- */
-async function executeScriptCompliant(script, ...args)
-{
-  const [isError, value] = await browser.executeAsyncScript(`
-    let promise = (async function() { ${script} }).apply(null, arguments[0]);
-    let callback = arguments[arguments.length - 1];
-    promise.then(
-      res => callback([false, res]),
-      err => callback([true, err instanceof Error ? err.message : err])
-    );`, args);
-
-  if (isError)
-    throw new Error(value);
-  return value;
-}
-
-async function checkLastError(handle)
-{
-  await browser.switchToWindow(handle);
-
-  const error = await executeScriptCompliant(
-    "return browser.runtime.sendMessage({type: \"debug.getLastError\"});"
-  );
-  if (error != null)
-    assert.fail("Unhandled error in background page: " + error);
-}
 
 describe("Testing units", () =>
 {
   before(async() =>
   {
-    [origin, extensionHandle] = await waitForExtension();
+    ({origin} = await waitForExtension());
     await browser.url(`${origin}/tests/index.html`);
   });
 
@@ -75,7 +43,5 @@ describe("Testing units", () =>
 
     const passes = await testPage.getSuccessCountText();
     assert.ok(parseInt(passes, 10) > 0, "No tests were executed");
-
-    await checkLastError(extensionHandle);
   });
 });

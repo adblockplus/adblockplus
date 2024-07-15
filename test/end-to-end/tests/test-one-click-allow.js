@@ -52,7 +52,8 @@ describe.skip("test one click allow", function()
     await oneClickAllowAdsTestPage.clickDismissPaywallX();
     expect(await oneClickAllowAdsTestPage.
       isOneClickGFCPaywallDisplayed(true)).to.be.true;
-    await switchToABPOptionsTab(true);
+
+    await switchToABPOptionsTab({switchToFrame: false});
     const allowlistedWebsitesPage = new AllowlistedWebsitesPage(browser);
     await allowlistedWebsitesPage.init();
     const attributesOfAllowlistingTableItems = await allowlistedWebsitesPage.
@@ -74,7 +75,8 @@ describe.skip("test one click allow", function()
     await oneClickAllowAdsTestPage.clickOneClickButton();
     expect(await oneClickAllowAdsTestPage.
       isOneClickGFCPaywallDisplayed(true)).to.be.true;
-    await switchToABPOptionsTab(true);
+
+    await switchToABPOptionsTab({switchToFrame: false});
     const allowListedWebsitesPage = new AllowlistedWebsitesPage(browser);
     await allowListedWebsitesPage.init();
     const allowListedTableItemWithFCOneClick = await
@@ -101,7 +103,8 @@ describe.skip("test one click allow", function()
     await oneClickAllowAdsTestPage.init();
     expect(await oneClickAllowAdsTestPage.
       isOneClickGFCPaywallDisplayed(true)).to.be.true;
-    await switchToABPOptionsTab(true);
+
+    await switchToABPOptionsTab({switchToFrame: false});
     const allowListedWebsitesPage = new AllowlistedWebsitesPage(browser);
     await allowListedWebsitesPage.init();
     const attributesOfAllowlistingTableItems = await
@@ -126,7 +129,7 @@ describe.skip("test one click allow", function()
 
   it("should add 1-click allow site to allowlisted websites", async function()
   {
-    await switchToABPOptionsTab(true);
+    await switchToABPOptionsTab({switchToFrame: false});
     const allowListedWebsitesPage = new AllowlistedWebsitesPage(browser);
     await allowListedWebsitesPage.init();
     await allowListedWebsitesPage.

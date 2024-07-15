@@ -94,7 +94,9 @@ describe("test custom filters as part of the integration tests", function()
       isCustomHidingIdDisplayed()).to.be.false;
     expect(await testPages.
       isCustomHidingClassDisplayed()).to.be.false;
-    await switchToABPOptionsTab(true);
+
+    await switchToABPOptionsTab();
+    await advancedPage.init();
     await advancedPage.clickCustomFLTableHeadCheckbox();
     await advancedPage.clickDeleteCustomFLButton();
     await advancedPage.switchToTab(/custom-filters-testpage/);

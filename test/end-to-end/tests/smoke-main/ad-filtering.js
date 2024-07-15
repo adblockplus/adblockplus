@@ -24,7 +24,6 @@ const AdvancedPage = require("../../page-objects/advanced.page");
 const AllowlistedWebsitesPage =
   require("../../page-objects/allowlistedWebsites.page");
 const GeneralPage = require("../../page-objects/general.page");
-const ExtensionsPage = require("../../page-objects/extensions.page");
 const TestPages = require("../../page-objects/testPages.page");
 const {sitekey} = require("../../test-data/data-smoke-tests");
 const testData = require("../../test-data/data-smoke-tests");
@@ -78,6 +77,13 @@ function removeAllFiltersFromABP()
 
 module.exports = function()
 {
+  let optionsUrl;
+
+  before(function()
+  {
+    ({optionsUrl} = this.test.parent.parent);
+  });
+
   it("uses sitekey to allowlist content", async function()
   {
     if (process.env.MANIFEST_VERSION === "3")
@@ -224,11 +230,8 @@ module.exports = function()
       await waitForCondition("isEcosiaAdPillAlternateDisplayed", testPages,
                              25000, true, randomIntFromInterval(1500, 3500));
     }
-    const extensionsPage = new ExtensionsPage(browser);
-    await extensionsPage.init();
-    await extensionsPage.clickReloadHelperExtensionButton();
-    await browser.pause(randomIntFromInterval(1500, 2500));
-    await switchToABPOptionsTab();
+
+    await switchToABPOptionsTab({optionsUrl});
     await generalPage.init();
     await generalPage.clickAllowAcceptableAdsCheckbox();
     await browser.newWindow(ecosiaSearchUrl);

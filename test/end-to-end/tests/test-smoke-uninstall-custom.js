@@ -18,7 +18,7 @@
 
 "use strict";
 
-const {beforeSequence, switchToABPOptionsTab} = require("../helpers");
+const {beforeSequence} = require("../helpers");
 const {expect} = require("chai");
 const GeneralPage = require("../page-objects/general.page");
 const AdvancedPage = require("../page-objects/advanced.page");
@@ -33,7 +33,6 @@ describe("Smoke Tests - Uninstall with custom settings", function()
 
   it("uninstalls the extension with custom settings", async function()
   {
-    await switchToABPOptionsTab(true);
     const generalPage = new GeneralPage(browser);
     await generalPage.init();
     await generalPage.clickAllowAcceptableAdsCheckbox();

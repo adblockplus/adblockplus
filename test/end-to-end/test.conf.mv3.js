@@ -42,7 +42,7 @@ const parallelConfig = {
       },
       browserName: "Chrome",
       browserVersion: "latest",
-      platformName: "Windows 10",
+      platformName: "macOS Monterey",
       "goog:chromeOptions": {
         extensions: [
           require("fs").readFileSync(helpers.testConfig.helperExtensionZipPath).toString("base64")

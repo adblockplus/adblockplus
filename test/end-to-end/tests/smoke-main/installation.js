@@ -26,7 +26,7 @@ module.exports = function()
 {
   it("opens the install url", async function()
   {
-    // installedUrl is assigned to test context in beforeSequence()
+    // installedUrl is assigned to test context in the before hook
     const {installedUrl} = this.test.parent.parent;
     if (installedUrl.includes("first-run"))
     {

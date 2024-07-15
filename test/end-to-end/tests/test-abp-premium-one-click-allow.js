@@ -49,7 +49,8 @@ describe.skip("test one click allow for premium users", function()
     const oneClickAllowAdsTestPage = new OneClickAllowAdsTestPage(browser);
     await oneClickAllowAdsTestPage.init();
     await oneClickAllowAdsTestPage.clickOneClickButton();
-    await switchToABPOptionsTab(true);
+
+    await switchToABPOptionsTab({switchToFrame: false});
     const allowListedWebsitesPage = new AllowlistedWebsitesPage(browser);
     await allowListedWebsitesPage.init();
     await allowListedWebsitesPage.
@@ -77,8 +78,8 @@ describe.skip("test one click allow for premium users", function()
 
   it("should bypass Anti-adblock wall for premium users", async function()
   {
+    await switchToABPOptionsTab({switchToFrame: false});
     const premiumHeaderChunk = new PremiumHeaderChunk(browser);
-    await switchToABPOptionsTab(true);
     if (!await premiumHeaderChunk.isPremiumButtonDisplayed())
     {
       await enablePremiumByUI();

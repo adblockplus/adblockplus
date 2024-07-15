@@ -31,11 +31,13 @@ let lastTest = false;
 
 describe("test options page links", function()
 {
+  let optionsUrl;
+
   this.retries(globalRetriesNumber);
 
   before(async function()
   {
-    await beforeSequence();
+    ({optionsUrl} = await beforeSequence());
   });
 
   afterEach(async function()
@@ -43,7 +45,7 @@ describe("test options page links", function()
     if (lastTest == false)
     {
       await browser.closeWindow();
-      await afterSequence();
+      await afterSequence(optionsUrl);
     }
   });
 

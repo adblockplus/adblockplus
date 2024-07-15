@@ -62,7 +62,8 @@ describe("test popup allowlisting and disallowlisting", function()
     await popupPage.clickThisDomainToggle();
     expect(await popupPage.isDomainToggleChecked()).to.be.false;
     await popupPage.clickRefreshButton();
-    await switchToABPOptionsTab(true);
+
+    await switchToABPOptionsTab({switchToFrame: false});
     await testPage.switchToTab("Blocking and hiding");
     await browser.refresh();
     await waitForCondition("getAwe2FilterText", 3000, testPage, true, 200,
@@ -75,7 +76,8 @@ describe("test popup allowlisting and disallowlisting", function()
       "search-ad id hiding filter should hide this");
     expect(await testPage.getAdContainerDivText()).to.include(
       "AdContainer class hiding filter should hide this");
-    await switchToABPOptionsTab(true);
+
+    await switchToABPOptionsTab();
     const allowistedWebsitesPage = new AllowlistedWebsitesPage(browser);
     await allowistedWebsitesPage.init();
     let attributesOfAllowlistingTableItems = await allowistedWebsitesPage.
@@ -99,7 +101,8 @@ describe("test popup allowlisting and disallowlisting", function()
        isSearchAdDivDisplayed()).to.be.false;
     expect(await testPage.
        isAdContainerDivDisplayed()).to.be.false;
-    await switchToABPOptionsTab(true);
+
+    await switchToABPOptionsTab();
     await allowistedWebsitesPage.init();
     attributesOfAllowlistingTableItems = await allowistedWebsitesPage.
         getAttributeOfAllowlistingTableItems("class");
@@ -124,7 +127,8 @@ describe("test popup allowlisting and disallowlisting", function()
     await popupPage.init(globalOrigin, tabId);
     await popupPage.clickThisDomainToggle();
     await popupPage.clickRefreshButton();
-    await switchToABPOptionsTab(true);
+
+    await switchToABPOptionsTab({switchToFrame: false});
     tabId = await getTabId({title: "Blocking and hiding"});
     await popupPage.switchToTab("Blocking and hiding");
     await popupPage.init(globalOrigin, tabId);
@@ -132,7 +136,8 @@ describe("test popup allowlisting and disallowlisting", function()
     expect(await popupPage.isPageToggleChecked()).to.be.true;
     expect(await popupPage.isPageStatsCounterDisplayed()).to.be.true;
     expect(await popupPage.isBlockSpecificElementButtonDisplayed()).to.be.true;
-    await switchToABPOptionsTab(true);
+
+    await switchToABPOptionsTab();
     await allowistedWebsitesPage.init();
     const attributesOfAllowlistingTableItems = await allowistedWebsitesPage.
         getAttributeOfAllowlistingTableItems("class");
@@ -156,7 +161,8 @@ describe("test popup allowlisting and disallowlisting", function()
     expect(await popupPage.isRefreshButtonDisplayed()).to.be.true;
     expect(await popupPage.isRefreshMessageDisplayed()).to.be.true;
     await popupPage.clickRefreshButton();
-    await switchToABPOptionsTab(true);
+
+    await switchToABPOptionsTab({switchToFrame: false});
     await browser.newWindow(testData.blockHideUrl);
     await testPage.switchToTab("Blocking and hiding");
     // skip for FF, popup.html does not close
@@ -175,7 +181,8 @@ describe("test popup allowlisting and disallowlisting", function()
     expect(await popupPage.isPageToggleEnabled()).to.be.false;
     expect(await popupPage.isPageStatsCounterDisplayed()).to.be.false;
     expect(await popupPage.isBlockSpecificElementButtonDisplayed()).to.be.false;
-    await switchToABPOptionsTab(true);
+
+    await switchToABPOptionsTab();
     const allowistedWebsitesPage = new AllowlistedWebsitesPage(browser);
     await allowistedWebsitesPage.init();
     const attributesOfAllowlistingTableItems = await allowistedWebsitesPage

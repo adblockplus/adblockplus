@@ -17,12 +17,11 @@
 
 "use strict";
 
-const {beforeSequence, switchToABPOptionsTab,
+const {beforeSequence, afterSequence, waitForNewWindow, switchToABPOptionsTab,
        executeAsyncScript, enablePremiumByMockServer} = require("../helpers");
 const {expect} = require("chai");
 const abpDomInjectionData =
   require("../test-data/data-abp-dom-injection").abpDomInjectionData;
-const GeneralPage = require("../page-objects/general.page");
 let appVersion;
 let id;
 
@@ -40,17 +39,31 @@ describe("test abp DOM injection for premium user", function()
     await enablePremiumByMockServer();
   });
 
+  afterEach(async function()
+  {
+    await afterSequence();
+  });
+
   abpDomInjectionData.forEach(async(dataSet) =>
   {
     it("should return correct values for: " + dataSet.testName, async function()
     {
-      await switchToABPOptionsTab();
-      await browser.newWindow(dataSet.url);
-      const generalPage = new GeneralPage(browser);
-      await generalPage.switchToTab(dataSet.url);
-      const abpInfo = JSON.parse(await browser.
-        executeScript("return document." +
-        "getElementById('__adblock-plus-extension-info').textContent;", []));
+      await waitForNewWindow(dataSet.url);
+      let abpInfo;
+      await browser.waitUntil(async() =>
+      {
+        try
+        {
+          abpInfo = JSON.parse(await browser.executeScript("return document." +
+            "getElementById('__adblock-plus-extension-info').textContent;", [])
+          );
+          return true;
+        }
+        catch (e)
+        {
+          await browser.refresh();
+        }
+      }, {timeoutMsg: `abpInfo was not found on ${dataSet.url}`});
       const dataAbpInfo = JSON.parse(await browser.
         executeScript("return document.get" +
         'ElementsByTagName("html")[0].getAttribute' +

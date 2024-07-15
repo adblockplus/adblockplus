@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence,
+const {afterSequence, beforeSequence, switchToABPOptionsTab,
        globalRetriesNumber} = require("../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
@@ -63,7 +63,8 @@ describe("test advanced tab - filter lists", function()
   {
     // Wait for 1 minute, for the Last Updated text to say "minutes ago"
     await browser.pause(61000);
-    await browser.refresh();
+
+    await switchToABPOptionsTab({refresh: true});
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
     expect(await advancedPage.
@@ -86,7 +87,8 @@ describe("test advanced tab - filter lists", function()
   {
     // Wait for 1 minute, for the Last Updated text to say "minutes ago"
     await browser.pause(61000);
-    await browser.refresh();
+
+    await switchToABPOptionsTab({refresh: true});
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
     await advancedPage.clickEasyListFLGearIcon();

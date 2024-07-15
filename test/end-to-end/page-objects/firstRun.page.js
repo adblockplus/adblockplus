@@ -29,6 +29,7 @@ class FirstRunPage extends BasePage
 
   async init(origin)
   {
+    await browser.newWindow("about:blank");
     await browser.url(`${origin}/first-run.html`);
   }
 

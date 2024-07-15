@@ -64,21 +64,6 @@ class ExtensionsPage extends BasePage
     return $("//button[text()='Reload']");
   }
 
-  get reloadHelperExtensionButtonChrome()
-  {
-    return $$(">>>#dev-reload-button")[1];
-  }
-
-  get reloadHelperExtensionButtonEdge()
-  {
-    return $$("//span[text()='Reload']")[1];
-  }
-
-  get reloadHelperExtensionButtonFF()
-  {
-    return $$("//button[text()='Reload']")[1];
-  }
-
   get removeExtensionButton()
   {
     return $(">>>#removeButton");
@@ -100,25 +85,6 @@ class ExtensionsPage extends BasePage
     {
       await this.waitForEnabledThenClick(this.
         reloadExtensionButtonEdge);
-    }
-  }
-
-  async clickReloadHelperExtensionButton()
-  {
-    if (browser.capabilities.browserName.toLowerCase().includes("chrome"))
-    {
-      await this.waitForEnabledThenClick(this.
-        reloadHelperExtensionButtonChrome);
-    }
-    else if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
-    {
-      await this.waitForEnabledThenClick(this.
-        reloadHelperExtensionButtonFF);
-    }
-    else if (browser.capabilities.browserName.toLowerCase().includes("edge"))
-    {
-      await this.waitForEnabledThenClick(this.
-        reloadHelperExtensionButtonEdge);
     }
   }
 

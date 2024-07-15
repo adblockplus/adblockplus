@@ -34,8 +34,8 @@ const chromeExtensionPath =
 const chromiumOptions = {
   args: [
     "--no-sandbox",
-    `--load-extension=${chromeExtensionPath},${helperExtensionPath}`,
-    `--disable-extensions-except=${chromeExtensionPath},${helperExtensionPath}`
+    "--window-size=1400,1000",
+    `--load-extension=${chromeExtensionPath},${helperExtensionPath}`
   ],
   excludeSwitches: ["disable-extensions"]
 };
@@ -55,6 +55,12 @@ else if (browserName === "firefox")
 {
   browserCapabilities.push({
     browserName: "firefox",
+    "moz:firefoxOptions": {
+      args: [
+        "-width=1400",
+        "-height=1000"
+      ]
+    },
     acceptInsecureCerts: true,
     exclude: [
       "./tests/test-issue-reporter.js",
@@ -75,6 +81,23 @@ else if (browserName === "edge")
   });
 }
 
+async function manageScreenshot(test, error)
+{
+  if (!error || error.constructor.name == "Pending") // Pending means skipped
+    return;
+
+  try
+  {
+    const title = test.title.replaceAll(" ", "_").replaceAll("\"", "")
+      .replaceAll(":", "").replaceAll("/", "_");
+    await browser.saveScreenshot(path.join(screenshotsPath, `${title}.png`));
+  }
+  catch (err)
+  {
+    console.warn(`Screenshot could not be saved: ${err}`);
+  }
+}
+
 exports.config = {
   suites,
   maxInstances: Number(process.env.MAX_INSTANCES) || 1,
@@ -87,7 +110,7 @@ exports.config = {
   bail: 0,
   waitforTimeout: 10000,
   // connectionRetryTimeout is used on the initial browser instance loading
-  connectionRetryTimeout: 20000,
+  connectionRetryTimeout: 50000,
   connectionRetryCount: 3,
   framework: "mocha",
   reporters: allureEnabled ? [["allure", {
@@ -104,23 +127,17 @@ exports.config = {
   },
   async before()
   {
+    process.env.LOCAL_RUN = "true";
     await fs.promises.mkdir(screenshotsPath, {recursive: true});
     // eslint-disable-next-line no-console
     console.log(`MANIFEST_VERSION=${process.env.MANIFEST_VERSION}`);
   },
+  async afterHook(test, context, {error})
+  {
+    await manageScreenshot(test, error);
+  },
   async afterTest(test, context, {error})
   {
-    if (!error)
-      return;
-
-    try
-    {
-      const filename = `${test.title.replaceAll(" ", "_")}.png`;
-      await browser.saveScreenshot(path.join(screenshotsPath, filename));
-    }
-    catch (err)
-    {
-      console.warn(`Screenshot could not be saved: ${err}`);
-    }
+    await manageScreenshot(test, error);
   }
 };

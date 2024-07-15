@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {beforeSequence, switchToABPOptionsTab,
+const {beforeSequence, afterSequence, waitForNewWindow,
        executeAsyncScript} = require("../helpers");
 const {expect} = require("chai");
 const abpDomInjectionData =
@@ -36,15 +36,31 @@ describe("test abp DOM injection", function()
       "sendMessage({type: 'prefs.get', key: 'installation_id'});");
   });
 
+  afterEach(async function()
+  {
+    await afterSequence();
+  });
+
   abpDomInjectionData.forEach(async(dataSet) =>
   {
     it("should return correct values for: " + dataSet.testName, async function()
     {
-      await switchToABPOptionsTab();
-      await browser.newWindow(dataSet.url);
-      const abpInfo = JSON.parse(await browser.
-        executeScript("return document." +
-        "getElementById('__adblock-plus-extension-info').textContent;", []));
+      await waitForNewWindow(dataSet.url);
+      let abpInfo;
+      await browser.waitUntil(async() =>
+      {
+        try
+        {
+          abpInfo = JSON.parse(await browser.executeScript("return document." +
+            "getElementById('__adblock-plus-extension-info').textContent;", [])
+          );
+          return true;
+        }
+        catch (e)
+        {
+          await browser.refresh();
+        }
+      }, {timeoutMsg: `abpInfo was not found on ${dataSet.url}`});
       const dataAbpInfo = JSON.parse(await browser.
         executeScript("return document.get" +
         'ElementsByTagName("html")[0].getAttribute' +

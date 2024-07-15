@@ -21,25 +21,27 @@ const {beforeSequence, enablePremiumByMockServer, getTabId,
        globalRetriesNumber, switchToABPOptionsTab} = require("../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
-const ExtensionsPage = require("../page-objects/extensions.page");
 const GeneralPage = require("../page-objects/general.page");
 const PopupPage = require("../page-objects/popup.page");
 const PremiumHeaderChunk = require("../page-objects/premiumHeader.chunk");
-let globalOrigin;
 
 describe("test abp premium downgrade", function()
 {
+  let globalOrigin;
+  let optionsUrl;
+
   this.retries(globalRetriesNumber);
 
   before(async function()
   {
-    ({origin: globalOrigin} = await beforeSequence());
+    ({origin: globalOrigin, optionsUrl} = await beforeSequence());
   });
 
   it("should downgrade premium user", async function()
   {
     await enablePremiumByMockServer();
-    await browser.executeAsync(async(done) =>
+
+    const result = await browser.executeAsync(async(done) =>
     {
       try
       {
@@ -52,6 +54,9 @@ describe("test abp premium downgrade", function()
         done(error);
       }
     });
+    if (result !== true)
+      throw new Error(`premium.activate result: ${result}`);
+
     const premiumHeaderChunk = new PremiumHeaderChunk(browser);
     expect(await premiumHeaderChunk.isUpgradeButtonDisplayed(10000)).to.be.true;
     const generalPage = new GeneralPage(browser);
@@ -82,10 +87,8 @@ describe("test abp premium downgrade", function()
       isBlockCookieConsentPopupsToggleDisplayed()).to.be.false;
     expect(await popupPage.
       isBlockMoreDistractionsToggleDisplayed()).to.be.false;
-    const extensionsPage = new ExtensionsPage(browser);
-    await extensionsPage.init();
-    await extensionsPage.clickReloadHelperExtensionButton();
-    await switchToABPOptionsTab();
+
+    await switchToABPOptionsTab({optionsUrl});
     expect(await premiumHeaderChunk.isUpgradeButtonDisplayed(10000)).to.be.true;
   });
 });

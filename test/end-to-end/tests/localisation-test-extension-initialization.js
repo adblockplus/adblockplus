@@ -40,7 +40,6 @@ describe("test extension initialization for language subscriptions", function()
   it("should correctly initialize extension for different languages", async function()
   {
     const generalPage = new GeneralPage(browser);
-    await generalPage.switchToTab(/options\.html/);
     expect(await generalPage.
       isAllowAcceptableAdsCheckboxSelected()).to.be.true;
     if (currentLocale.includes("de"))

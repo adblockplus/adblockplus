@@ -21,7 +21,6 @@ require("dotenv").config({path: "../../.env.e2e"});
 const fs = require("fs");
 const path = require("path");
 
-const ExtensionsPage = require("./page-objects/extensions.page");
 const GeneralPage = require("./page-objects/general.page");
 const PremiumPage = require("./page-objects/premium.page");
 const PremiumCheckoutPage = require("./page-objects/premiumCheckout.page");
@@ -52,42 +51,14 @@ const testConfig = {
   screenshotsPath: path.join(process.cwd(), "screenshots")
 };
 
-async function afterSequence()
+async function afterSequence(optionsUrl = null)
 {
-  const extensionsPage = new ExtensionsPage(browser);
-  try
-  {
-    await switchToABPOptionsTab();
-    const generalPage = new GeneralPage(browser);
-    await generalPage.init();
-  }
-  catch (Exception)
-  {
-    try
-    {
-      if (browser.capabilities.browserName == "firefox")
-      {
-        await extensionsPage.switchToTab("Debugging - Runtime / this-firefox");
-      }
-      else
-      {
-        await extensionsPage.switchToTab("Extensions");
-      }
-    }
-    // eslint-disable-next-line no-catch-shadow
-    catch (SecondException)
-    {
-      try
-      {
-        await extensionsPage.init();
-        await extensionsPage.clickReloadHelperExtensionButton();
-        await switchToABPOptionsTab();
-      }
-      catch (ThirdException)
-      {
-      }
-    }
-  }
+  await switchToABPOptionsTab({optionsUrl, refresh: true});
+
+  const generalPage = new GeneralPage(browser);
+  await generalPage.init();
+
+  await waitForAbleToExecuteScripts();
 }
 
 async function beforeSequence(expectInstalledTab = true)
@@ -103,10 +74,13 @@ async function beforeSequence(expectInstalledTab = true)
     await browser.installAddOn(helperExtensionZip.toString("base64"), true);
   }
 
-  const [origin] = await waitForExtension();
+  const {origin, optionsUrl} = await waitForExtension();
   let installedUrl;
   if (expectInstalledTab)
   {
+    // On MV3 the opening of the installed page may take a very long time
+    // on slow environments
+    const timeout = 50000;
     await browser.waitUntil(async() =>
     {
       for (const handle of await browser.getWindowHandles())
@@ -119,14 +93,19 @@ async function beforeSequence(expectInstalledTab = true)
           return true;
         }
       }
-    }, {timeout: 50000});
+    }, {
+      timeout,
+      interval: 2000,
+      timeoutMsg: `Installed page didn't open after ${timeout}ms`
+    });
   }
 
-  await switchToABPOptionsTab();
-  await browser.url(`${origin}/desktop-options.html`);
-  await browser.setWindowSize(1400, 1000);
+  if (process.env.LOCAL_RUN !== "true")
+    await browser.setWindowSize(1400, 1000);
 
-  return {origin, installedUrl};
+  await afterSequence();
+
+  return {origin, optionsUrl, installedUrl};
 }
 
 async function doesTabExist(tabName, timeout = 3000, countThreshold = 1)
@@ -199,25 +178,21 @@ async function enablePremiumByMockServer()
       })
     ]).then(results => console.log(results));
   `, []);
+
   const premiumHeaderChunk = new PremiumHeaderChunk(browser);
-  let waitTime = 0;
-  while (waitTime <= 150000)
+  const timeout = 15000;
+  await browser.waitUntil(async() =>
   {
-    await browser.refresh();
-    if ((await premiumHeaderChunk.isPremiumButtonDisplayed()) == true)
+    try
     {
-      break;
+      await premiumHeaderChunk.premiumButton.waitForDisplayed();
+      return true;
     }
-    else
+    catch (e)
     {
-      await browser.pause(1000);
-      waitTime += 1000;
+      await browser.refresh();
     }
-  }
-  if (waitTime >= 150000)
-  {
-    return false;
-  }
+  }, {timeout, timeoutMsg: `Premium button not displayed after ${timeout}ms`});
 }
 
 async function enablePremiumByUI()
@@ -249,10 +224,21 @@ async function enablePremiumByUI()
   await premiumCheckoutPage.typeTextToCardCvcField("295");
   await premiumCheckoutPage.typeTextToNameOnCardField("Test Automation");
   await premiumCheckoutPage.clickSubscribeButton();
-  await browser.switchToFrame(null);
-  await switchToABPOptionsTab(true);
-  await waitForCondition("isPremiumButtonDisplayed",
-                         premiumHeaderChunk);
+
+  // Real premium takes a while to be enabled
+  const timeout = 80000;
+  await browser.waitUntil(async() =>
+  {
+    try
+    {
+      await premiumHeaderChunk.premiumButton.waitForDisplayed();
+      return true;
+    }
+    catch (e)
+    {
+      await switchToABPOptionsTab({refresh: true});
+    }
+  }, {timeout, timeoutMsg: `Premium button not displayed after ${timeout}ms`});
 }
 
 async function executeAsyncScript(script, ...args)
@@ -272,7 +258,7 @@ async function executeAsyncScript(script, ...args)
 
 async function getABPOptionsTabId()
 {
-  await switchToABPOptionsTab(true);
+  await switchToABPOptionsTab({switchToFrame: false});
   const currentTab = await browser.executeAsyncScript(`
     function getTabID()
     {
@@ -331,53 +317,112 @@ function randomIntFromInterval(min, max)
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-async function switchToABPOptionsTab(noSwitchToFrame = false)
+async function switchToABPOptionsTab(options = {})
 {
-  const extensionsPage = new ExtensionsPage(browser);
+  const defaultOptions =
+    {switchToFrame: true, optionsUrl: null, refresh: false};
+  const {switchToFrame, optionsUrl, refresh} = {...defaultOptions, ...options};
+  const timeout = 1000;
+
+  const generalPage = new GeneralPage(browser);
   try
   {
-    await extensionsPage.switchToTab("Adblock Plus Options");
+    await generalPage.switchToTab("Adblock Plus Options", timeout);
   }
-  catch (Exception)
+  catch (err)
   {
-    await extensionsPage.init();
-    if (browser.capabilities.browserName == "firefox")
-    {
-      await extensionsPage.switchToTab("Debugging - Runtime / this-firefox");
-    }
-    else
-    {
-      await extensionsPage.switchToTab("Extensions");
-    }
-    await extensionsPage.clickReloadHelperExtensionButton();
-    await extensionsPage.switchToTab("Adblock Plus Options");
+    // optionsUrl is passed when the options tab is expected to be closed
+    if (!optionsUrl)
+      throw err;
+
+    // When the extension reloads WDIO seems to get confused about the current
+    // tab, producing a "no such window" error on any browsing command.
+    // Switching to the handle of any open tab as a workaround.
+    await browser.switchToWindow((await browser.getWindowHandles())[0]);
+    await browser.url(optionsUrl);
+    await generalPage.switchToTab("Adblock Plus Options", 5000);
   }
-  if (noSwitchToFrame === false)
+
+  if (refresh)
+    await browser.refresh();
+
+  if (!switchToFrame)
+    return;
+
+  await browser.waitUntil(async() =>
   {
+    if (await generalPage._generalTabButton.isClickable())
+      return true; // already in the content frame
+
     try
     {
       await browser.switchToFrame(await $("#content"));
-    }
-    catch (Exception)
-    {
-    }
-  }
-}
-
-function waitForSwitchToABPOptionsTab(timeout = 5000)
-{
-  return browser.waitUntil(async() =>
-  {
-    try
-    {
-      await switchToABPOptionsTab();
       return true;
     }
     catch (e) {}
   }, {
     timeout,
-    interval: 2000,
+    timeoutMsg: `Could not switch to options content frame after ${timeout}ms`
+  });
+}
+
+function waitForSwitchToABPOptionsTab(optionsUrl, timeout = 5000)
+{
+  return browser.waitUntil(async() =>
+  {
+    try
+    {
+      await switchToABPOptionsTab({optionsUrl});
+      return true;
+    }
+    catch (e) {}
+  }, {
+    timeout,
+    interval: 1000,
     timeoutMsg: `Could not switch to ABP Options Tab after ${timeout}ms`
+  });
+}
+
+// Wait until the extension doesn't make webdriver throw when running scripts
+// Only needed by firefox
+async function waitForAbleToExecuteScripts(timeout = 15000)
+{
+  if (browser.capabilities.browserName !== "firefox")
+    return;
+
+  return browser.waitUntil(async() =>
+  {
+    try
+    {
+      return await browser.executeScript("return true;", []);
+    }
+    catch (e) {}
+  }, {
+    timeout,
+    interval: 2000,
+    timeoutMsg: `Webdriver can't execute scripts after ${timeout}ms`
+  });
+}
+
+// Under stress conditions, for some reason browser.newWindow() may silently
+// fail. This is a workaround to ensure it either worked or timed out
+async function waitForNewWindow(url, timeout = 5000)
+{
+  await browser.newWindow(url);
+  return browser.waitUntil(async() =>
+  {
+    try
+    {
+      await browser.switchWindow(url);
+      return true;
+    }
+    catch (e)
+    {
+      await browser.url(url);
+    }
+  }, {
+    timeout,
+    timeoutMsg: `Could not open new window "${url}" after ${timeout}ms`
   });
 }
 
@@ -425,36 +470,40 @@ async function waitForCondition(condition, object = null, waitTime = 150000,
 
 async function waitForExtension()
 {
+  const timeout = 20000;
   let origin;
+  let optionsUrl;
+
+  await waitForAbleToExecuteScripts();
+
   await browser.waitUntil(async() =>
   {
     for (const handle of await browser.getWindowHandles())
     {
       await browser.switchToWindow(handle);
-      origin = await browser.executeAsyncScript(`
-        let callback = arguments[arguments.length - 1];
-        (async() =>
+
+      ({origin, optionsUrl} = await browser.executeAsync(async callback =>
+      {
+        if (typeof browser !== "undefined" &&
+            browser.management !== "undefined")
         {
-          if (typeof browser != "undefined")
-          {
-            let info = await browser.management.getSelf();
-            if (info.optionsUrl)
-            {
-              callback(location.origin);
-              return;
-            }
-          }
-          callback(null);
-        })();`, []);
+          const info = await browser.management.getSelf();
+          callback(info.optionsUrl ?
+            {origin: location.origin, optionsUrl: info.optionsUrl} : {});
+        }
+        else
+        {
+          callback({});
+        }
+      }));
       if (origin)
       {
         return true;
       }
     }
-    return false;
-  }, {timeout: 15000}, "options page not found");
+  }, {timeout, timeoutMsg: `Options page not found after ${timeout}ms`});
 
-  return [origin];
+  return {origin, optionsUrl};
 }
 
 async function wakeMockServer(serverUrl, serverUpText)
@@ -479,7 +528,7 @@ async function wakeMockServer(serverUrl, serverUpText)
 async function getTabId({title, urlPattern})
 {
   const currentWindowHandle = await browser.getWindowHandle();
-  await switchToABPOptionsTab(true);
+  await switchToABPOptionsTab({switchToFrame: false});
 
   const queryOptions = {};
   if (title)
@@ -633,5 +682,5 @@ module.exports = {
   getCurrentDate, getFirefoxExtensionPath, getTabId,
   randomIntFromInterval, globalRetriesNumber, switchToABPOptionsTab,
   waitForExtension, getABPOptionsTabId, waitForCondition,
-  waitForSwitchToABPOptionsTab
+  waitForSwitchToABPOptionsTab, waitForNewWindow
 };

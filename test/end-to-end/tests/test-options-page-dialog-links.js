@@ -42,7 +42,7 @@ describe("test options page dialog links", function()
   {
     if (lastTest == false)
     {
-      await switchToABPOptionsTab();
+      await switchToABPOptionsTab({switchToFrame: false});
       await browser.refresh();
       await afterSequence();
     }

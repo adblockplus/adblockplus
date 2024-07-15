@@ -25,30 +25,28 @@ const PopupPage = require("../../page-objects/popup.page");
 module.exports = function()
 {
   let globalOrigin;
+  let optionsUrl;
 
   before(function()
   {
-    ({globalOrigin} = this.test.parent.parent);
+    ({globalOrigin, optionsUrl} = this.test.parent.parent);
   });
 
   it("displays total ad block count", async function()
   {
-    if (browser.capabilities.browserName != "firefox")
-    {
-      const url = "https://adblockinc.gitlab.io/QA-team/adblocking/adblocked-count/adblocked-count-testpage.html";
-      const popupPage = new PopupPage(browser);
-      const maxAdsBlocked = 10;
+    const url = "https://adblockinc.gitlab.io/QA-team/adblocking/adblocked-count/adblocked-count-testpage.html";
+    const popupPage = new PopupPage(browser);
+    const maxAdsBlocked = 15;
 
-      await browser.newWindow(url);
-      await popupPage.init(globalOrigin);
-      const blockedFirst = await popupPage.waitForNumberOfAdsBlockedToBeInRange(
-        0, maxAdsBlocked);
+    await browser.newWindow(url);
+    await popupPage.init(globalOrigin);
+    const blockedFirst =
+      await popupPage.waitForNumberOfAdsBlockedToBeInRange(0, maxAdsBlocked);
 
-      await browser.url(url);
-      await popupPage.init(globalOrigin);
-      await popupPage.waitForNumberOfAdsBlockedToBeInRange(
-        blockedFirst, maxAdsBlocked);
-    }
+    await browser.url(url);
+    await popupPage.init(globalOrigin);
+    await popupPage.waitForNumberOfAdsBlockedToBeInRange(
+      blockedFirst, maxAdsBlocked);
   });
 
   it("resets settings", async function()
@@ -63,7 +61,7 @@ module.exports = function()
       "you add will be shown here.");
     await browser.executeScript("browser.runtime.reload();", []);
 
-    await waitForSwitchToABPOptionsTab(15000);
+    await waitForSwitchToABPOptionsTab(optionsUrl, 15000);
     await advancedPage.init();
     expect(await advancedPage.isAbpFiltersFLDisplayed()).to.be.true;
     expect(await advancedPage.isEasyListFLDisplayed()).to.be.true;

@@ -74,26 +74,20 @@ class BasePage
     return (await element).click();
   }
 
-  async switchToTab(title, timeout = 5000)
+  switchToTab(title, timeout = 5000)
   {
-    let waitTime = 0;
-    while (waitTime <= timeout)
+    return browser.waitUntil(async() =>
     {
       try
       {
         await browser.switchWindow(title);
-        break;
+        return true;
       }
-      catch (Exception)
-      {
-        await browser.pause(200);
-        waitTime += 200;
-      }
-    }
-    if (waitTime >= timeout)
-    {
-      throw new Error("Could not switch to tab!");
-    }
+      catch (e) {}
+    }, {
+      timeout,
+      timeoutMsg: `Could not switch to tab "${title}" after ${timeout}ms`
+    });
   }
 
   async waitForDisplayedNoError(element,

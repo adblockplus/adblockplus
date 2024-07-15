@@ -20,16 +20,17 @@
 const {beforeSequence, globalRetriesNumber,
        enablePremiumByUI, switchToABPOptionsTab} = require("../helpers");
 const {expect} = require("chai");
-const ExtensionsPage = require("../page-objects/extensions.page");
 const PremiumHeaderChunk = require("../page-objects/premiumHeader.chunk");
 
 describe("test abp premium license checks for premium user", function()
 {
+  let optionsUrl;
+
   this.retries(globalRetriesNumber);
 
   before(async function()
   {
-    await beforeSequence();
+    ({optionsUrl} = await beforeSequence());
   });
 
   it("should display active license status for premium user", async function()
@@ -72,10 +73,8 @@ describe("test abp premium license checks for premium user", function()
       toLocaleDateString("en-CA").toString()).to.include(dateOfTomorrow);
     const nextLicenseCheckTime = `${nextLicenseCheckFullDate.getHours()}}`;
     expect(nextLicenseCheckTime).to.include(timeNow);
-    const extensionsPage = new ExtensionsPage(browser);
-    await extensionsPage.init();
-    await extensionsPage.clickReloadHelperExtensionButton();
-    await switchToABPOptionsTab();
+
+    await switchToABPOptionsTab({optionsUrl});
     const secondNextLicenseCheck = await browser.executeScript(`
       return new Promise((resolve, reject) => {
         chrome.runtime.sendMessage({ type: "prefs.get",

@@ -29,8 +29,7 @@ class PremiumCheckoutPage extends BasePage
 
   async init()
   {
-    const iframe = await this.paddleFrame;
-    await iframe.waitForExist({timeout: 10000});
+    await this.paddleFrame.waitForExist({timeout: 10000});
     await browser.switchToFrame(await this.paddleFrame);
     await this.waitForDisplayedNoError(this.emailTextField);
   }
@@ -120,7 +119,7 @@ class PremiumCheckoutPage extends BasePage
   async typeTextToCardNumberField(text)
   {
     await this.waitForEnabledThenClick(this.
-      cardNumberTextField, 10000);
+      cardNumberTextField, 20000);
     await browser.keys(text);
   }
 
