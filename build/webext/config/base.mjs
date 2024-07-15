@@ -136,7 +136,9 @@ export default {
       },
       {
         dest: "icons/logo",
-        src: ["skin/icons/logo/manifest/**"]
+        src: [
+          "skin/icons/logo/manifest/**"
+        ]
       },
       {
         dest: "data",
@@ -144,7 +146,9 @@ export default {
       },
       {
         dest: "ext",
-        src: ["adblockpluschrome/ext/**"]
+        src: [
+          "adblockpluschrome/ext/**"
+        ]
       },
       {
         dest: "",
@@ -221,7 +225,8 @@ export default {
       },
       {
         dest: "vendor/@eyeo/webext-ad-filtering-solution/content.js",
-        src: "node_modules/@eyeo/webext-ad-filtering-solution/dist/ewe-content.js"
+        src:
+          "node_modules/@eyeo/webext-ad-filtering-solution/dist/ewe-content.js"
       },
       {
         dest: "premium-onboarding.html",
@@ -231,6 +236,9 @@ export default {
   },
   translations: {
     dest: "_locales",
-    src: ["locale/**/*.json", "!locale/*/mobile-options.json"]
+    src: [
+      "locale/**/*.json",
+      "!locale/*/mobile-options.json"
+    ]
   }
 };
