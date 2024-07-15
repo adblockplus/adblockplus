@@ -316,6 +316,16 @@ for all [UI elements](#ui-elements).
 Beyond that, this repository contains [various utilities][wiki-utils] that we
 rely on across our development process.
 
+### Error reporting
+
+We use [Sentry](https://sentry.io/) to report the errors. In order to initialize it
+during the build one has to pass `ADBLOCKPLUS_SENTRY_DSN` and `ADBLOCKPLUS_SENTRY_ENVIRONMENT`
+variables in either `.env` file or as environment variable during the (CI) build. If not
+initialized, console warning is shown. By default `ADBLOCKPLUS_SENTRY_ENVIRONMENT=production`.
+User emails are cut on client side and data scrubbing on
+[server side](https://docs.sentry.io/security-legal-pii/scrubbing/server-side-scrubbing/) is
+configured by default.
+
 ## Release history
 
 [Extension releases (since 3.11)][abp-ext-tags]

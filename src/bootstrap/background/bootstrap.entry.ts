@@ -25,6 +25,10 @@ import { start as startMessageResponder } from "../../../adblockpluschrome/lib/m
 import { start as startStats } from "../../../adblockpluschrome/lib/stats.js";
 import { start as startTabSessionStorage } from "../../../adblockpluschrome/lib/storage/tab-session";
 import { start as startSubscriptionInit } from "../../../adblockpluschrome/lib/subscriptionInit.js";
+import {
+  start as startErrorReporting,
+  reportError
+} from "../../error-reporter/background";
 import { start as startUninstall } from "../../../adblockpluschrome/lib/uninstall.js";
 import { start as startInit } from "../../../lib/init.js";
 import { start as startRecommendedLanguage } from "../../../lib/recommendLanguage.js";
@@ -41,30 +45,40 @@ import { start as startYTWallDetection } from "../../yt-wall-detection/backgroun
 import { start as startInfoInjector } from "../../info-injector/background";
 import { start as startUpdateCampaign } from "../../update-campaign/background";
 
+function reportAndLogError(e: Error): void {
+  reportError(e);
+  logError(e);
+}
+
 async function bootstrap(): Promise<void> {
-  startTabSessionStorage();
-  startDevTools();
-  startDebug();
-  void startIPM().catch(logError);
-  startReadyState();
-  startFilterConfiguration();
-  startStats();
-  void startSubscriptionInit();
-  startInit();
-  void startRecommendedLanguage();
-  startComposer();
-  startUninstall();
-  void startContentFiltering();
-  startMessageResponder();
-  void startAllowListing().catch(logError);
-  startBypass();
-  void startOnPageDialog().catch(logError);
-  void startNewTab().catch(logError);
-  startPremiumOnboarding();
-  startPremiumSubscriptions();
-  startYTWallDetection();
-  startInfoInjector();
-  startUpdateCampaign();
+  await startErrorReporting();
+  try {
+    startTabSessionStorage();
+    startDevTools();
+    startDebug();
+    void startIPM().catch(reportAndLogError);
+    startReadyState();
+    startFilterConfiguration();
+    startStats();
+    void startSubscriptionInit().catch(reportAndLogError);
+    startInit();
+    void startRecommendedLanguage().catch(reportAndLogError);
+    startComposer();
+    startUninstall();
+    void startContentFiltering().catch(reportAndLogError);
+    startMessageResponder();
+    void startAllowListing().catch(reportAndLogError);
+    startBypass();
+    void startOnPageDialog().catch(reportAndLogError);
+    void startNewTab().catch(reportAndLogError);
+    startPremiumOnboarding();
+    startPremiumSubscriptions();
+    startYTWallDetection();
+    startInfoInjector();
+    startUpdateCampaign();
+  } catch (error) {
+    reportError(error as Error);
+  }
 }
 
 void bootstrap();

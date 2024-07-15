@@ -250,6 +250,13 @@ defaults.premium_upgrade_page_url = "https://accounts.adblockplus.org/%LANG%/pre
 defaults.premium_user_id = "";
 
 /**
+ * Sentry user ID
+ *
+ * @type {string}
+ */
+defaults.sentry_user_id = "";
+
+/**
  * The URL of the IPM server.
  *
  * @type {string}

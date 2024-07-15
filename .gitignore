@@ -25,5 +25,8 @@ coverage/
 # env file for e2e tests
 .env.e2e
 
-# env file for CDP
+# env file for CDP/Sentry
 .env
+
+# Sentry Config File
+.env.sentry-build-plugin
