@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {beforeSequence, globalRetriesNumber} = require("../helpers");
+const {beforeSequence, globalRetriesNumber, isEdge} = require("../helpers");
 const {expect} = require("chai");
 const FooterChunk = require("../page-objects/footer.chunk");
 const AboutDialogChunk = require("../page-objects/aboutDialog.chunk");
@@ -48,21 +48,17 @@ describe("test options page dialogs", function()
 
   it("should contain donate and rate us button", async function()
   {
-    if (await browser.capabilities.browserName.toLowerCase().includes("edge"))
-    {
-      console.warn("Test skipped for Edge.");
-    }
-    else
-    {
-      const footerChunk = new FooterChunk(browser);
-      await footerChunk.clickHeartButton();
-      const heartDialogChunk = new HeartDialogChunk(browser);
-      expect(await heartDialogChunk.isDonateButtonDisplayed()).to.be.true;
-      expect(await heartDialogChunk.isRateUsButtonDisplayed()).to.be.true;
-      await footerChunk.clickHeartButton();
-      expect(await heartDialogChunk.isDonateButtonDisplayed(true)).to.be.true;
-      expect(await heartDialogChunk.isRateUsButtonDisplayed(true)).to.be.true;
-    }
+    if (await isEdge())
+      this.skip();
+
+    const footerChunk = new FooterChunk(browser);
+    await footerChunk.clickHeartButton();
+    const heartDialogChunk = new HeartDialogChunk(browser);
+    expect(await heartDialogChunk.isDonateButtonDisplayed()).to.be.true;
+    expect(await heartDialogChunk.isRateUsButtonDisplayed()).to.be.true;
+    await footerChunk.clickHeartButton();
+    expect(await heartDialogChunk.isDonateButtonDisplayed(true)).to.be.true;
+    expect(await heartDialogChunk.isRateUsButtonDisplayed(true)).to.be.true;
   });
 
   it("should contain go to survey and no thanks button", async function()

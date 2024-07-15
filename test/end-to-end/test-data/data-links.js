@@ -29,6 +29,7 @@ module.exports =
   facebookUrl: "https://www.facebook.com/adblockplus",
   facebookFallbackUrl: "https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2Fadblockplus",
   forumUrlChrome: "https://forum.adblockplus.org//viewforum.php?f=10",
+  forumUrlEdge: "https://forum.adblockplus.org//viewforum.php?f=27",
   forumUrlFirefox: "https://forum.adblockplus.org//viewforum.php?f=1",
   helpCenterUrl: "https://help.adblockplus.org/hc/en-us",
   howToWriteFiltersUrl: "https://help.adblockplus.org/hc/en-us/articles/360062733293",

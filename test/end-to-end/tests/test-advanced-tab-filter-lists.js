@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence, switchToABPOptionsTab,
+const {afterSequence, beforeSequence, switchToABPOptionsTab, isFirefox,
        globalRetriesNumber} = require("../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
@@ -116,7 +116,7 @@ describe("test advanced tab - filter lists", function()
   it("should go to filter list source page", async function()
   {
     let easylistSourcePage = "https://easylist-downloads.adblockplus.org/easylist.txt";
-    if (process.env.MANIFEST_VERSION == 3)
+    if (process.env.MANIFEST_VERSION === "3")
       easylistSourcePage = "https://easylist-downloads.adblockplus.org/v3/full/easylist.txt";
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
@@ -173,70 +173,61 @@ describe("test advanced tab - filter lists", function()
 
   it("should add a filter list via URL", async function()
   {
-    if (process.env.MANIFEST_VERSION == 3)
-      console.warn("Test skipped for MV3.");
+    if (process.env.MANIFEST_VERSION === "3")
+      this.skip();
+
+    const advancedPage = new AdvancedPage(browser);
+    await advancedPage.init();
+    await advancedPage.clickAddNewFilterListButton();
+    expect(await advancedPage.isAddNewFilterListDialogDisplayed()).to.be.true;
+    if (isFirefox())
+    {
+      await advancedPage.
+        typeTextToFilterListUrlInput("https://test-filterlist.txt", true);
+    }
     else
     {
-      const advancedPage = new AdvancedPage(browser);
-      await advancedPage.init();
-      await advancedPage.clickAddNewFilterListButton();
-      expect(await advancedPage.
-        isAddNewFilterListDialogDisplayed()).to.be.true;
-      if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
-      {
-        await advancedPage.
-        typeTextToFilterListUrlInput("https://test-filterlist.txt", true);
-      }
-      else
-      {
-        await advancedPage.
-          typeTextToFilterListUrlInput("https://test-filterlist.txt");
-      }
-      await advancedPage.clickAddAFilterListButton();
-      expect(await advancedPage.
-        isAddNewFilterListDialogDisplayed(true)).to.be.true;
-      expect(await advancedPage.
-        isTestFilterListDisplayed()).to.be.true;
-      expect(await advancedPage.
-        isTestFilterListStatusToggleSelected()).to.be.true;
+      await advancedPage.
+        typeTextToFilterListUrlInput("https://test-filterlist.txt");
     }
+    await advancedPage.clickAddAFilterListButton();
+    expect(await advancedPage.isAddNewFilterListDialogDisplayed(true))
+      .to.be.true;
+    expect(await advancedPage.isTestFilterListDisplayed()).to.be.true;
+    expect(await advancedPage.isTestFilterListStatusToggleSelected())
+      .to.be.true;
   });
 
   it("should display an error for invalid filter list via URL", async function()
   {
-    if (process.env.MANIFEST_VERSION == 3)
-      console.warn("Test skipped for MV3.");
+    if (process.env.MANIFEST_VERSION === "3")
+      this.skip();
+
+    const advancedPage = new AdvancedPage(browser);
+    await advancedPage.init();
+    await advancedPage.clickAddNewFilterListButton();
+    expect(await advancedPage.
+      isAddNewFilterListDialogDisplayed()).to.be.true;
+    if (isFirefox())
+    {
+      await advancedPage.
+        typeTextToFilterListUrlInput("test-filterlist.txt", true);
+    }
     else
     {
-      const advancedPage = new AdvancedPage(browser);
-      await advancedPage.init();
-      await advancedPage.clickAddNewFilterListButton();
-      expect(await advancedPage.
-        isAddNewFilterListDialogDisplayed()).to.be.true;
-      if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
-      {
-        await advancedPage.
-        typeTextToFilterListUrlInput("test-filterlist.txt", true);
-      }
-      else
-      {
-        await advancedPage.
-          typeTextToFilterListUrlInput("test-filterlist.txt");
-      }
-      await advancedPage.clickAddAFilterListButton();
-      expect(await advancedPage.
-        isUrlErrorMessageDisplayed()).to.be.true;
-      await advancedPage.clickCancelAddingFLButton();
-      expect(await advancedPage.
-        isTestFilterListNoHtttpsDisplayed()).to.be.false;
+      await advancedPage.typeTextToFilterListUrlInput("test-filterlist.txt");
     }
+    await advancedPage.clickAddAFilterListButton();
+    expect(await advancedPage.isUrlErrorMessageDisplayed()).to.be.true;
+    await advancedPage.clickCancelAddingFLButton();
+    expect(await advancedPage.isTestFilterListNoHtttpsDisplayed()).to.be.false;
   });
 
   it("should display disabled filters error", async function()
   {
     const advancedPage = new AdvancedPage(browser);
     await advancedPage.init();
-    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
+    if (isFirefox())
     {
       await advancedPage.typeTextToAddCustomFilterListInput(
         "expres.cz##.barMan", true);

@@ -22,7 +22,7 @@
 const helpers = require("./helpers.js");
 
 const mv3BuildCloudUrl = process.env.MV3_BUILD_CLOUD_URL;
-process.env.MANIFEST_VERSION = 3;
+process.env.MANIFEST_VERSION = "3";
 
 exports.config = {
   capabilities: [
@@ -61,7 +61,7 @@ exports.config = {
       },
       browserName: "MicrosoftEdge",
       browserVersion: "latest",
-      platformName: "Windows 10",
+      platformName: "Windows 11",
       "ms:edgeOptions": {
         extensions: [
           require("fs").readFileSync(helpers.testConfig.helperExtensionZipPath).toString("base64")
@@ -121,7 +121,7 @@ exports.config = {
       },
       browserName: "MicrosoftEdge",
       browserVersion: "latest-1",
-      platformName: "Windows 10",
+      platformName: "Windows 11",
       "ms:edgeOptions": {
         extensions: [
           require("fs").readFileSync(helpers.testConfig.helperExtensionZipPath).toString("base64")
@@ -182,7 +182,7 @@ exports.config = {
       },
       browserName: "MicrosoftEdge",
       browserVersion: "latest-2",
-      platformName: "Windows 10",
+      platformName: "Windows 11",
       "ms:edgeOptions": {
         extensions: [
           require("fs").readFileSync(helpers.testConfig.helperExtensionZipPath).toString("base64")

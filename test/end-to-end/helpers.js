@@ -63,7 +63,7 @@ async function afterSequence(optionsUrl = null)
 
 async function beforeSequence(expectInstalledTab = true)
 {
-  if (browser.capabilities.browserName == "firefox")
+  if (isFirefox())
   {
     const abpXpiFileName = getFirefoxExtensionPath();
     const abpExtensionXpi = await fs.promises.readFile(abpXpiFileName);
@@ -387,7 +387,7 @@ function waitForSwitchToABPOptionsTab(optionsUrl, timeout = 5000)
 // Only needed by firefox
 async function waitForAbleToExecuteScripts(timeout = 15000)
 {
-  if (browser.capabilities.browserName !== "firefox")
+  if (!isFirefox())
     return;
 
   return browser.waitUntil(async() =>
@@ -674,6 +674,26 @@ function getExtensionVersion()
   return versionMatch[1];
 }
 
+function isBrowser(browserName)
+{
+  return browser.capabilities.browserName.toLowerCase().includes(browserName);
+}
+
+function isChrome()
+{
+  return isBrowser("chrome");
+}
+
+function isFirefox()
+{
+  return isBrowser("firefox");
+}
+
+function isEdge()
+{
+  return isBrowser("edge");
+}
+
 module.exports = {
   afterSequence, beforeSequence, doesTabExist,
   executeAsyncScript, testConfig, localRunChecks,
@@ -682,5 +702,5 @@ module.exports = {
   getCurrentDate, getFirefoxExtensionPath, getTabId,
   randomIntFromInterval, globalRetriesNumber, switchToABPOptionsTab,
   waitForExtension, getABPOptionsTabId, waitForCondition,
-  waitForSwitchToABPOptionsTab, waitForNewWindow
+  waitForSwitchToABPOptionsTab, waitForNewWindow, isChrome, isFirefox, isEdge
 };

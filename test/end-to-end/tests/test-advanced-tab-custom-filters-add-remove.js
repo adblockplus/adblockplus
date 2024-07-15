@@ -110,7 +110,7 @@ describe("test advanced tab adding and removing custom filters", function()
   it("should support multiline paste", async function()
   {
     // Skip for MV2 because of bug
-    if (process.env.MANIFEST_VERSION == 3)
+    if (process.env.MANIFEST_VERSION === "3")
     {
       const advancedPage = new AdvancedPage(browser);
       await advancedPage.init();

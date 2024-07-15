@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {beforeSequence, globalRetriesNumber,
+const {beforeSequence, globalRetriesNumber, isFirefox,
        switchToABPOptionsTab} = require("../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
@@ -145,7 +145,7 @@ describe("test advanced tab editing custom filters", function()
     await advancedPage.
       waitForCustomFilterListsNthItemTextToEqual("duplicate", "4");
     // Skip for FF because the sorting arrow doesn't currently work as expected
-    if (browser.capabilities.browserName != "firefox")
+    if (!isFirefox())
     {
       await advancedPage.clickCustomFLTableHeadArrow();
       await advancedPage.

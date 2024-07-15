@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence, globalRetriesNumber,
+const {afterSequence, beforeSequence, globalRetriesNumber, isEdge, isFirefox,
        switchToABPOptionsTab} = require("../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
@@ -60,15 +60,13 @@ describe("test custom filters as part of the integration tests", function()
       "ocking/custom-filters/custom-filters-testpage.html";
     await browser.newWindow(customFiltersTestPage);
     await browser.refresh();
-    if (browser.capabilities.browserName.toLowerCase().includes("edge"))
-    {
+    if (isEdge())
       await browser.pause(2000);
-    }
+
     const testPages = new TestPages(browser);
-    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
+    if (isFirefox())
     {
-      if (await testPages.getCurrentTitle() !=
-        "Blocking and hiding")
+      if (await testPages.getCurrentTitle() != "Blocking and hiding")
       {
         await browser.refresh();
         await testPages.switchToTab(/custom-filters-testpage/);

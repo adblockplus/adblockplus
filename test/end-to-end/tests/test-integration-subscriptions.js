@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence, globalRetriesNumber,
+const {afterSequence, beforeSequence, globalRetriesNumber, isFirefox,
        switchToABPOptionsTab} = require("../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../page-objects/advanced.page");
@@ -44,45 +44,42 @@ describe("test subscriptions as part of the integration tests", function()
 
   it("should add new subscription via link", async function()
   {
-    if (process.env.MANIFEST_VERSION == 3)
-      console.warn("Test skipped for MV3.");
-    else
-    {
-      await browser.url("https://adblockinc.gitlab.io/QA-team/adblocking" +
-        "/subscriptions/subscriptions-testpage.html");
-      const testPages = new TestPages(browser);
-      expect(await testPages.getSubscriptionBlockingText()).to.include(
-        "/subscription-blocking.js should be blocked");
-      expect(await testPages.getSubscriptionBlockingRegexText()).to.include(
-        "/subscription-blocking-regex.js should be blocked");
-      expect(await testPages.getSubscriptionHidingIdText()).to.include(
-        "id element should be hidden");
-      expect(await testPages.getSubscriptionHidingClassText()).to.include(
-        "class element should be hidden");
-      await testPages.clickSubscribeLink();
-      const generalPage = new GeneralPage(browser);
-      await switchToABPOptionsTab();
-      console.error(String(await generalPage.
-        getPredefinedDialogTitleText()));
-      expect(String(await generalPage.
-        getPredefinedDialogTitleText()).includes("ARE YOU SURE YOU" +
-        " WANT TO ADD THIS FILTER LIST?")).to.be.true;
-      await generalPage.clickYesUseThisFLButton();
-      expect(String(await generalPage.
-        getMoreFilterListsTableItemByLabelText("ABP test subscription")).
-        includes("ABP test subscription")).to.be.true;
-      await browser.newWindow("https://adblockinc.gitlab.io/QA-team/adblocking" +
-        "/subscriptions/subscriptions-testpage.html");
-      await browser.refresh();
-      expect(await testPages.getSubscriptionBlockingText()).to.include(
-        "/subscription-blocking.js was blocked");
-      expect(await testPages.getSubscriptionBlockingRegexText()).to.include(
-        "/subscription-blocking-regex.* was blocked");
-      expect(await testPages.
-        isSubscriptionHidingIdDisplayed()).to.be.false;
-      expect(await testPages.
-        isSubscriptionHidingClassDisplayed()).to.be.false;
-    }
+    if (process.env.MANIFEST_VERSION === "3")
+      this.skip();
+
+    await browser.url("https://adblockinc.gitlab.io/QA-team/adblocking" +
+      "/subscriptions/subscriptions-testpage.html");
+    const testPages = new TestPages(browser);
+    expect(await testPages.getSubscriptionBlockingText()).to.include(
+      "/subscription-blocking.js should be blocked");
+    expect(await testPages.getSubscriptionBlockingRegexText()).to.include(
+      "/subscription-blocking-regex.js should be blocked");
+    expect(await testPages.getSubscriptionHidingIdText()).to.include(
+      "id element should be hidden");
+    expect(await testPages.getSubscriptionHidingClassText()).to.include(
+      "class element should be hidden");
+    await testPages.clickSubscribeLink();
+    const generalPage = new GeneralPage(browser);
+
+    await switchToABPOptionsTab();
+    console.error(String(await generalPage.
+      getPredefinedDialogTitleText()));
+    expect(String(await generalPage.
+      getPredefinedDialogTitleText()).includes("ARE YOU SURE YOU" +
+      " WANT TO ADD THIS FILTER LIST?")).to.be.true;
+    await generalPage.clickYesUseThisFLButton();
+    expect(String(await generalPage.
+      getMoreFilterListsTableItemByLabelText("ABP test subscription")).
+      includes("ABP test subscription")).to.be.true;
+    await browser.newWindow("https://adblockinc.gitlab.io/QA-team/adblocking" +
+      "/subscriptions/subscriptions-testpage.html");
+    await browser.refresh();
+    expect(await testPages.getSubscriptionBlockingText()).to.include(
+      "/subscription-blocking.js was blocked");
+    expect(await testPages.getSubscriptionBlockingRegexText()).to.include(
+      "/subscription-blocking-regex.* was blocked");
+    expect(await testPages.isSubscriptionHidingIdDisplayed()).to.be.false;
+    expect(await testPages.isSubscriptionHidingClassDisplayed()).to.be.false;
   });
 
   it("should disable/enable subscriptions", async function()
@@ -94,16 +91,15 @@ describe("test subscriptions as part of the integration tests", function()
       isEasyListFLStatusToggleSelected()).to.be.false;
     await browser.newWindow("https://adblockinc.gitlab.io/QA-team/adblocking/block" +
       "ing-hiding/blocking-hiding-testpage.html");
-    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
+    if (isFirefox())
     {
       await browser.pause(500);
     }
     await browser.refresh();
     const testPages = new TestPages(browser);
-    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
+    if (isFirefox())
     {
-      if (await testPages.getCurrentTitle() !=
-        "Blocking and hiding")
+      if (await testPages.getCurrentTitle() != "Blocking and hiding")
       {
         await testPages.switchToTab("Blocking and hiding");
         await browser.refresh();
@@ -125,10 +121,9 @@ describe("test subscriptions as part of the integration tests", function()
     await browser.newWindow("https://adblockinc.gitlab.io/QA-team/adblocking/block" +
       "ing-hiding/blocking-hiding-testpage.html");
     await browser.refresh();
-    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
+    if (isFirefox())
     {
-      if (await testPages.getCurrentTitle() !=
-        "Blocking and hiding")
+      if (await testPages.getCurrentTitle() != "Blocking and hiding")
       {
         await testPages.switchToTab("Blocking and hiding");
         await browser.refresh();
@@ -156,7 +151,7 @@ describe("test subscriptions as part of the integration tests", function()
   it("should add/remove subscriptions", async function()
   {
     const advancedPage = new AdvancedPage(browser);
-    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
+    if (isFirefox())
     {
       await browser.refresh();
       await switchToABPOptionsTab();
@@ -176,10 +171,9 @@ describe("test subscriptions as part of the integration tests", function()
       "ing-hiding/blocking-hiding-testpage.html");
     await browser.refresh();
     const testPages = new TestPages(browser);
-    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
+    if (isFirefox())
     {
-      if (await testPages.getCurrentTitle() !=
-        "Blocking and hiding")
+      if (await testPages.getCurrentTitle() != "Blocking and hiding")
       {
         await testPages.switchToTab("Blocking and hiding");
         await browser.refresh();
@@ -206,10 +200,9 @@ describe("test subscriptions as part of the integration tests", function()
     await browser.newWindow("https://adblockinc.gitlab.io/QA-team/adblocking/block" +
       "ing-hiding/blocking-hiding-testpage.html");
     await browser.refresh();
-    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
+    if (isFirefox())
     {
-      if (await testPages.getCurrentTitle() !=
-        "Blocking and hiding")
+      if (await testPages.getCurrentTitle() != "Blocking and hiding")
       {
         await testPages.switchToTab("Blocking and hiding");
         await browser.refresh();

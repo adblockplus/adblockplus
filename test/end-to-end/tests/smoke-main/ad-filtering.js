@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {randomIntFromInterval, switchToABPOptionsTab,
+const {randomIntFromInterval, switchToABPOptionsTab, isFirefox,
        waitForCondition} = require("../../helpers");
 const {expect} = require("chai");
 const AdvancedPage = require("../../page-objects/advanced.page");
@@ -160,7 +160,7 @@ module.exports = function()
     await allowistedWebsitesPage.clickAddWebsiteButton();
     await browser.newWindow(testData.allowlistingUrl);
     const testPages = new TestPages(browser);
-    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
+    if (isFirefox())
     {
       if (await allowistedWebsitesPage.getCurrentTitle() !=
         "Blocking and hiding")
@@ -193,7 +193,7 @@ module.exports = function()
     });
     await browser.newWindow(testData.allowlistingUrl);
     await browser.refresh();
-    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
+    if (isFirefox())
     {
       if (await allowistedWebsitesPage.getCurrentTitle() !=
         "Blocking and hiding")

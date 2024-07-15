@@ -18,6 +18,7 @@
 "use strict";
 
 const BasePage = require("./base.page");
+const {isChrome, isFirefox, isEdge} = require("../helpers");
 
 class ExtensionsPage extends BasePage
 {
@@ -29,15 +30,15 @@ class ExtensionsPage extends BasePage
 
   async init()
   {
-    if (browser.capabilities.browserName.toLowerCase().includes("chrome"))
+    if (isChrome())
     {
       await browser.url("chrome://extensions");
     }
-    else if (browser.capabilities.browserName.toLowerCase().includes("edge"))
+    else if (isEdge())
     {
       await browser.url("edge://extensions");
     }
-    else if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
+    else if (isFirefox())
     {
       await browser.url("about:debugging#/runtime/this-firefox");
       await this.waitForDisplayedNoError(this.abpExtensionLabelFF);
@@ -71,20 +72,17 @@ class ExtensionsPage extends BasePage
 
   async clickReloadExtensionButton()
   {
-    if (browser.capabilities.browserName.toLowerCase().includes("chrome"))
+    if (isChrome())
     {
-      await this.waitForEnabledThenClick(this.
-        reloadExtensionButtonChrome);
+      await this.waitForEnabledThenClick(this.reloadExtensionButtonChrome);
     }
-    else if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
+    else if (isFirefox())
     {
-      await this.waitForEnabledThenClick(this.
-        reloadExtensionButtonFF);
+      await this.waitForEnabledThenClick(this.reloadExtensionButtonFF);
     }
-    else if (browser.capabilities.browserName.toLowerCase().includes("edge"))
+    else if (isEdge())
     {
-      await this.waitForEnabledThenClick(this.
-        reloadExtensionButtonEdge);
+      await this.waitForEnabledThenClick(this.reloadExtensionButtonEdge);
     }
   }
 

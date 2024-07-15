@@ -40,7 +40,7 @@ class AdvancedPage extends BasePage
   get abpFiltersFL()
   {
     let abpFiltersText = "ABP filters";
-    if (process.env.MANIFEST_VERSION == 3)
+    if (process.env.MANIFEST_VERSION === "3")
       abpFiltersText = "ABP filters (compliance)";
     return $("//li[@aria-label='" + abpFiltersText + "']");
   }
@@ -48,7 +48,7 @@ class AdvancedPage extends BasePage
   get abpFiltersFLErrorIcon()
   {
     let abpFiltersText = "ABP filters";
-    if (process.env.MANIFEST_VERSION == 3)
+    if (process.env.MANIFEST_VERSION === "3")
       abpFiltersText = "ABP filters (compliance)";
     return $("//li[@aria-label='" + abpFiltersText + "']/div/io-popout");
   }
@@ -56,7 +56,7 @@ class AdvancedPage extends BasePage
   get abpFiltersFLLastUpdatedText()
   {
     let abpFiltersText = "ABP filters";
-    if (process.env.MANIFEST_VERSION == 3)
+    if (process.env.MANIFEST_VERSION === "3")
       abpFiltersText = "ABP filters (compliance)";
     return $("//li[@aria-label='" + abpFiltersText +
       "']/div/span[@class='last-update']");
@@ -65,7 +65,7 @@ class AdvancedPage extends BasePage
   get abpFiltersFLStatusToggle()
   {
     let abpFiltersText = "ABP filters";
-    if (process.env.MANIFEST_VERSION == 3)
+    if (process.env.MANIFEST_VERSION === "3")
       abpFiltersText = "ABP filters (compliance)";
     return $("//li[@aria-label='" + abpFiltersText + "']/div/io-toggle/button");
   }
@@ -73,7 +73,7 @@ class AdvancedPage extends BasePage
   get abpFiltersFLTrashButton()
   {
     let abpFiltersText = "ABP filters";
-    if (process.env.MANIFEST_VERSION == 3)
+    if (process.env.MANIFEST_VERSION === "3")
       abpFiltersText = "ABP filters (compliance)";
     return $("//li[@aria-label='" + abpFiltersText + "']/div/button" +
       "[@data-action='remove-subscription']");
@@ -1192,7 +1192,7 @@ class AdvancedPage extends BasePage
 
   async switchToSubscriptionsTab()
   {
-    await this.switchToTab(/link=subscriptions/);
+    await this.switchToTab(/subscriptions/);
   }
 
   async typeTextToFilterListUrlInput(text, noClearValue = false)

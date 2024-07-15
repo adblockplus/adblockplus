@@ -17,7 +17,7 @@
 
 "use strict";
 
-const {beforeSequence, globalRetriesNumber} =
+const {beforeSequence, globalRetriesNumber, isChrome, isFirefox} =
   require("../helpers");
 const {expect} = require("chai");
 const HeartDialogChunk = require("../page-objects/heartDialog.chunk");
@@ -50,7 +50,7 @@ describe("test page links - problem", function()
       {
         await problemPage.waitForEnabledThenClick(
           problemPage[dataSet.elementToClick]);
-        if (browser.capabilities.browserName.toLowerCase().includes("chrome"))
+        if (isChrome())
         {
           await problemPage.switchToTab(
             dataSet.chromeWebstorePageTitle);
@@ -64,8 +64,7 @@ describe("test page links - problem", function()
           expect(await problemPage.getCurrentUrl()).to.equal(
             dataSet.newTabUrlChrome);
         }
-        else if (browser.capabilities.browserName.toLowerCase().
-          includes("firefox"))
+        else if (isFirefox())
         {
           const heartDialogChunk = new HeartDialogChunk(browser);
           await heartDialogChunk.switchToAddonsTab();

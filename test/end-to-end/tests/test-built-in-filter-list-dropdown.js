@@ -42,7 +42,7 @@ describe("test built in filter list dropdown - default filter lists", function()
     {
       if (dataSet.flName == "Snippets")
       {
-        if (process.env.MANIFEST_VERSION == 3)
+        if (process.env.MANIFEST_VERSION === "3")
         {
           dataSet.flId = "ABP filters (compliance) " +
             "(ABP Anti-Circumvention Filter List)";

@@ -18,6 +18,7 @@
 "use strict";
 
 const BasePage = require("./base.page");
+const {isFirefox} = require("../helpers");
 
 class PopupPage extends BasePage
 {
@@ -414,7 +415,7 @@ class PopupPage extends BasePage
 
   async isDomainToggleChecked()
   {
-    if (browser.capabilities.browserName === "firefox")
+    if (isFirefox())
     {
       return await this.thisDomainToggle.
       getAttribute("checked") != null;
@@ -430,7 +431,7 @@ class PopupPage extends BasePage
 
   async isPageToggleChecked()
   {
-    if (browser.capabilities.browserName === "firefox")
+    if (isFirefox())
     {
       return await this.thisPageToggle.
       getAttribute("checked") != null;

@@ -26,7 +26,7 @@ const {config: baseConfig} = require("./base.conf.js");
 const {config: localisationConfig} = require("./localisation.conf.js");
 const mv3BuildCloudUrl = process.env.MV3_BUILD_CLOUD_URL;
 
-process.env.MANIFEST_VERSION = 3;
+process.env.MANIFEST_VERSION = "3";
 
 const parallelConfig = {
   maxInstances: 12,
@@ -70,7 +70,7 @@ const parallelConfig = {
       },
       browserName: "MicrosoftEdge",
       browserVersion: "latest",
-      platformName: "Windows 10",
+      platformName: "Windows 11",
       "ms:edgeOptions": {
         extensions: [
           require("fs").readFileSync(helpers.testConfig.helperExtensionZipPath).toString("base64")

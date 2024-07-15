@@ -24,7 +24,7 @@ helpers.lambdatestRunChecks();
 
 const {config: baseConfig} = require("./base.conf.js");
 
-process.env.MANIFEST_VERSION = 2;
+process.env.MANIFEST_VERSION = "2";
 
 const parallelConfig = {
   maxInstances: 12,

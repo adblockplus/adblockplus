@@ -17,8 +17,8 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence, globalRetriesNumber,
-       switchToABPOptionsTab} = require("../helpers");
+const {afterSequence, beforeSequence, globalRetriesNumber, isChrome, isFirefox,
+       isEdge, switchToABPOptionsTab} = require("../helpers");
 const {expect} = require("chai");
 const FooterChunk = require("../page-objects/footer.chunk");
 const AboutDialogChunk = require("../page-objects/aboutDialog.chunk");
@@ -72,55 +72,46 @@ describe("test options page dialog links", function()
 
   it("should open webstore page", async function()
   {
-    if (browser.capabilities.browserName.toLowerCase().includes("edge"))
+    if (isEdge())
+      this.skip();
+
+    const footerChunk = new FooterChunk(browser);
+    await footerChunk.clickHeartButton();
+    const heartDialogChunk = new HeartDialogChunk(browser);
+    await heartDialogChunk.clickRateUsButton();
+    if (isFirefox())
     {
-      console.warn("Test skipped for Edge.");
+      await heartDialogChunk.switchToAddonsTab();
+      expect(await heartDialogChunk.getCurrentUrl()).to.match(
+        dataLinks.addonsUrl);
     }
-    else
+    else if (isChrome())
     {
-      const footerChunk = new FooterChunk(browser);
-      await footerChunk.clickHeartButton();
-      const heartDialogChunk = new HeartDialogChunk(browser);
-      await heartDialogChunk.clickRateUsButton();
-      if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
-      {
-        await heartDialogChunk.switchToAddonsTab();
-        expect(await heartDialogChunk.getCurrentUrl()).to.match(
-          dataLinks.addonsUrl);
-      }
-      else if (browser.capabilities.browserName.toLowerCase().
-        includes("chrome"))
-      {
-        await heartDialogChunk.switchToChromeWebstoreTab();
-        // Cookies agreement page was removed by Chrome.
-        // Keeping this functionality here in case it changes back.
-        // await browser.keys("Tab");
-        // await browser.keys("Tab");
-        // await browser.keys("Tab");
-        // await browser.keys("Tab");
-        // await browser.keys("Enter");
-        expect(await heartDialogChunk.getCurrentUrl()).to.include(
-          dataLinks.webstoreUrl);
-      }
+      await heartDialogChunk.switchToChromeWebstoreTab();
+      // Cookies agreement page was removed by Chrome.
+      // Keeping this functionality here in case it changes back.
+      // await browser.keys("Tab");
+      // await browser.keys("Tab");
+      // await browser.keys("Tab");
+      // await browser.keys("Tab");
+      // await browser.keys("Enter");
+      expect(await heartDialogChunk.getCurrentUrl()).to.include(
+        dataLinks.webstoreUrl);
     }
   });
 
   it("should open donate page", async function()
   {
-    if (browser.capabilities.browserName.toLowerCase().includes("edge"))
-    {
-      console.warn("Test skipped for Edge.");
-    }
-    else
-    {
-      const footerChunk = new FooterChunk(browser);
-      await footerChunk.clickHeartButton();
-      const heartDialogChunk = new HeartDialogChunk(browser);
-      await heartDialogChunk.clickDonateButton();
-      await heartDialogChunk.switchToDonateTab();
-      expect(await heartDialogChunk.getCurrentUrl()).to.equal(
-        dataLinks.donateUrl);
-    }
+    if (isEdge())
+      this.skip();
+
+    const footerChunk = new FooterChunk(browser);
+    await footerChunk.clickHeartButton();
+    const heartDialogChunk = new HeartDialogChunk(browser);
+    await heartDialogChunk.clickDonateButton();
+    await heartDialogChunk.switchToDonateTab();
+    expect(await heartDialogChunk.getCurrentUrl()).to.equal(
+      dataLinks.donateUrl);
   });
 
   it("should open aa survey page", async function()

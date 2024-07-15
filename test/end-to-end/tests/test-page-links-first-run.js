@@ -17,12 +17,10 @@
 
 "use strict";
 
-const {beforeSequence, globalRetriesNumber} =
-  require("../helpers");
+const {beforeSequence, globalRetriesNumber, isEdge} = require("../helpers");
 const {expect} = require("chai");
 const FirstRunPage = require("../page-objects/firstRun.page");
-const firstRunPageData =
-  require("../test-data/data-page-links").firstRunPageData;
+const {firstRunPageData} = require("../test-data/data-page-links");
 let globalOrigin;
 
 describe("test page links - first run", function()
@@ -38,61 +36,54 @@ describe("test page links - first run", function()
   {
     it("should have a link for: " + dataSet.testName, async function()
     {
-      let isPromotionLinksTest = false;
-      if (dataSet.testName == "First run - App Store" ||
-        dataSet.testName == "First run - Google Play")
+      const isPromotionLinksTest =
+        dataSet.testName == "First run - App Store" ||
+        dataSet.testName == "First run - Google Play";
+
+      if (isEdge() && isPromotionLinksTest)
+        this.skip();
+
+      const firstRunPage = new FirstRunPage(browser);
+      try
       {
-        isPromotionLinksTest = true;
+        await firstRunPage.switchToTab(/first-run.html/);
       }
-      if (browser.capabilities.browserName.toLowerCase().includes("edge") &&
-        isPromotionLinksTest)
+      catch (Exception)
       {
-        console.warn("Test skipped for Edge.");
+        await firstRunPage.init(globalOrigin);
       }
-      else
+      await firstRunPage.waitForEnabledThenClick(
+        firstRunPage[dataSet.elementToClick]);
+      await firstRunPage.switchToTab(dataSet.newTabUrl);
+      if (dataSet.newTabUrl != "/options.html")
       {
-        const firstRunPage = new FirstRunPage(browser);
-        try
+        if (dataSet.testName == "First run - strict criteria" ||
+          dataSet.testName == "First run - Turn off Acceptable Ads")
         {
-          await firstRunPage.switchToTab(/first-run.html/);
-        }
-        catch (Exception)
-        {
-          await firstRunPage.init(globalOrigin);
-        }
-        await firstRunPage.waitForEnabledThenClick(
-          firstRunPage[dataSet.elementToClick]);
-        await firstRunPage.switchToTab(dataSet.newTabUrl);
-        if (dataSet.newTabUrl != "/options.html")
-        {
-          if (dataSet.testName == "First run - strict criteria" ||
-            dataSet.testName == "First run - Turn off Acceptable Ads")
-          {
-            expect(await firstRunPage.getCurrentUrl()).to.match(
-              dataSet.newTabUrl);
-          }
-          else
-          {
-            try
-            {
-              expect(await firstRunPage.getCurrentUrl()).to.equal(
-                dataSet.newTabUrl);
-            }
-            catch (Exception)
-            {
-              await firstRunPage.switchToTab("Adblock Plus | The world's" +
-                " #1 free ad blocker");
-              await browser.pause(500);
-              expect(await firstRunPage.getCurrentUrl()).to.equal(
-                dataSet.newTabUrl);
-            }
-          }
+          expect(await firstRunPage.getCurrentUrl()).to.match(
+            dataSet.newTabUrl);
         }
         else
         {
-          expect(await firstRunPage.getCurrentUrl()).to.equal(
-            globalOrigin + dataSet.newTabUrl);
+          try
+          {
+            expect(await firstRunPage.getCurrentUrl()).to.equal(
+              dataSet.newTabUrl);
+          }
+          catch (Exception)
+          {
+            await firstRunPage.switchToTab("Adblock Plus | The world's" +
+              " #1 free ad blocker");
+            await browser.pause(500);
+            expect(await firstRunPage.getCurrentUrl()).to.equal(
+              dataSet.newTabUrl);
+          }
         }
+      }
+      else
+      {
+        expect(await firstRunPage.getCurrentUrl()).to.equal(
+          globalOrigin + dataSet.newTabUrl);
       }
     });
   });

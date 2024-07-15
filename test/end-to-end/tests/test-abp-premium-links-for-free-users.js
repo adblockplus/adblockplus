@@ -17,8 +17,8 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence, switchToABPOptionsTab, getTabId} =
-  require("../helpers");
+const {afterSequence, beforeSequence, switchToABPOptionsTab, getTabId, isChrome,
+       isFirefox, isEdge} = require("../helpers");
 const {expect} = require("chai");
 const GeneralPage = require("../page-objects/general.page");
 const PopupPage = require("../page-objects/popup.page");
@@ -83,11 +83,10 @@ describe("test premium links for free users", function()
       const url = new URL(currentUrl);
       const params = url.searchParams;
       expect(params.get("av")).to.equal(appVersion);
-      const browserCapabilities = await browser.capabilities;
-      let majorBrowserVersion = (JSON.stringify(browserCapabilities)).
+      let majorBrowserVersion = (JSON.stringify(browser.capabilities)).
         match(/(?<=browserVersion":").*?(?=\.)/)[0];
       expect(params.get("s")).to.equal(dataSet.source);
-      if (browser.capabilities.browserName.toLowerCase().includes("chrome"))
+      if (isChrome())
       {
         expect(params.get("an")).to.equal("adblockpluschrome");
         expect(params.get("ap")).to.equal("chrome");
@@ -95,8 +94,7 @@ describe("test premium links for free users", function()
           to.equal(majorBrowserVersion);
         expect(params.get("p")).to.equal("chromium");
       }
-      else if (browser.capabilities.browserName.toLowerCase().
-        includes("firefox"))
+      else if (isFirefox())
       {
         expect(params.get("an")).to.equal("adblockplusfirefox");
         expect(params.get("ap")).to.equal("firefox");
@@ -107,7 +105,7 @@ describe("test premium links for free users", function()
         expect(params.get("pv").match(/\d*/)[0]).to.equal(majorBrowserVersion);
         expect(params.get("p")).to.equal("gecko");
       }
-      else if (browser.capabilities.browserName.toLowerCase().includes("edge"))
+      else if (isEdge())
       {
         expect(params.get("an")).to.equal("adblockpluschrome");
         expect(params.get("ap")).to.equal("edge");

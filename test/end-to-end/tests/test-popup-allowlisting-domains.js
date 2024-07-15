@@ -18,7 +18,7 @@
 "use strict";
 
 const {beforeSequence, afterSequence, getTabId, switchToABPOptionsTab,
-       waitForCondition, doesTabExist} = require("../helpers");
+       waitForCondition, doesTabExist, isFirefox} = require("../helpers");
 const {expect} = require("chai");
 const PopupPage = require("../page-objects/popup.page");
 const TestPage = require("../page-objects/testPages.page");
@@ -166,7 +166,7 @@ describe("test popup allowlisting and disallowlisting", function()
     await browser.newWindow(testData.blockHideUrl);
     await testPage.switchToTab("Blocking and hiding");
     // skip for FF, popup.html does not close
-    if (browser.capabilities.browserName != "firefox")
+    if (!isFirefox())
     {
       expect(await doesTabExist(popupUrl)).to.be.false;
     }

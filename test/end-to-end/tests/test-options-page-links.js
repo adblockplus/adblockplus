@@ -17,8 +17,8 @@
 
 "use strict";
 
-const {afterSequence, beforeSequence, globalRetriesNumber} =
-  require("../helpers");
+const {afterSequence, beforeSequence, globalRetriesNumber, isFirefox, isChrome,
+       isEdge} = require("../helpers");
 const {expect} = require("chai");
 const FooterChunk = require("../page-objects/footer.chunk");
 const GeneralPage = require("../page-objects/general.page");
@@ -133,19 +133,23 @@ describe("test options page links", function()
     const helpPage = new HelpPage(browser);
     await helpPage.init();
     await helpPage.clickForumLink();
-    if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
+    if (isFirefox())
     {
       await helpPage.switchToForumTabFirefox();
       expect(await helpPage.getCurrentUrl()).to.include(
         dataLinks.forumUrlFirefox);
     }
-    else if (browser.capabilities.browserName.toLowerCase().
-      includes("chrome") &&
-      browser.capabilities.browserName.toLowerCase().includes("edge"))
+    else if (isChrome())
     {
       await helpPage.switchToForumTabChrome();
       expect(await helpPage.getCurrentUrl()).to.include(
         dataLinks.forumUrlChrome);
+    }
+    else if (isEdge())
+    {
+      await helpPage.switchToForumTabEdge();
+      expect(await helpPage.getCurrentUrl()).to.include(
+        dataLinks.forumUrlEdge);
     }
   });
 

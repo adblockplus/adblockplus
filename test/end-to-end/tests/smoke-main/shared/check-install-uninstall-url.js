@@ -19,14 +19,14 @@
 
 const {expect} = require("chai");
 const testData = require("../../../test-data/data-smoke-tests");
+const {isFirefox} = require("../../../helpers");
 
 module.exports = async function(url, appVersion)
 {
-  const browserCapabilities = await browser.capabilities;
-  let majorBrowserVersion = (JSON.stringify(browserCapabilities)).
+  let majorBrowserVersion = (JSON.stringify(browser.capabilities)).
     match(testData.regexMajorBrowserVersion)[0];
   expect(majorBrowserVersion).to.equal(url.match(testData.regex_apv)[0]);
-  if (browser.capabilities.browserName.toLowerCase().includes("firefox"))
+  if (isFirefox())
   {
     const navigatorText = await browser.
       executeScript("return navigator.userAgent;", []);

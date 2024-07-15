@@ -103,6 +103,11 @@ class HelpPage extends BasePage
     await this.switchToTab("Adblock Plus for Chrome support - Adblock Plus");
   }
 
+  async switchToForumTabEdge()
+  {
+    await this.switchToTab("Adblock Plus for Edge support - Adblock Plus");
+  }
+
   async switchToForumTabFirefox()
   {
     await this.switchToTab("Adblock Plus for Firefox support - Adblock Plus");
