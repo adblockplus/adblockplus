@@ -145,12 +145,6 @@ export default {
         src: "data/*.json"
       },
       {
-        dest: "ext",
-        src: [
-          "adblockpluschrome/ext/**"
-        ]
-      },
-      {
         dest: "",
         src: [
           "src/composer/ui/composer.html",

@@ -20,6 +20,7 @@
 import * as ewe from "@eyeo/webext-ad-filtering-solution";
 
 import {installHandler, port} from "../../src/core/api/background";
+import {getPage} from "../../src/core/pages/background";
 import {TabSessionStorage} from "./storage/tab-session.js";
 import {setBadge} from "./browserAction.js";
 import {EventEmitter} from "./events.js";
@@ -189,7 +190,7 @@ export function start()
  * @returns {number}
  */
   port.on("stats.getBlockedPerPage",
-          message => getBlockedPerPage(new ext.Page(message.tab)));
+          async message => getBlockedPerPage(await getPage(message.tab)));
 
   /**
 * Returns the total number of blocked requests on non-incognito pages.

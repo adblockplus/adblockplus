@@ -13,8 +13,6 @@
       "js": [
         "vendor/@eyeo/webext-ad-filtering-solution/content.js",
         "polyfill.js",
-        "ext/common.js",
-        "ext/content.js",
         "composer.preload.js",
         "bypass.preload.js"
       ],
@@ -50,8 +48,6 @@
     {
       "js": [
         "polyfill.js",
-        "ext/common.js",
-        "ext/content.js",
         "premium.preload.js",
         "premium-onboarding.preload.js"
       ],
@@ -91,8 +87,6 @@
     {
       "js": [
         "polyfill.js",
-        "ext/common.js",
-        "ext/content.js",
         "options.preload.js"
       ],
       "matches": [

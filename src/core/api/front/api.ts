@@ -18,7 +18,11 @@
 import { type InjectionInfo } from "../../../info-injector/shared";
 import { type Info } from "../../../info/background/info.types";
 import { type PremiumState } from "../../../premium/shared";
-import { type PremiumSubscriptionsAddRemoveOptions } from "../shared";
+import {
+  type PremiumSubscriptionsAddRemoveOptions,
+  MessageEmitter,
+  getMessageResponse
+} from "../shared";
 import {
   addDisconnectListener,
   addMessageListener,
@@ -31,6 +35,7 @@ import type {
   AppOpenOptions,
   AppOpenWhat,
   DisplayMethod,
+  FrontMessageEmitter,
   ListenFilters,
   ExtensionInfo,
   Platform,
@@ -43,6 +48,11 @@ import type {
   Store,
   SubscriptionsGetOptions
 } from "./api.types";
+
+/**
+ * Message emitter instance for use in front context
+ */
+export const messageEmitter: FrontMessageEmitter = new MessageEmitter();
 
 /**
  * All the Platforms with their store name.
@@ -394,9 +404,41 @@ const api = {
   stats
 };
 
-/**
- * The browser.runtime port, is connected at runtime  by the connect function
- */
-connect();
-
 export default api;
+
+/**
+ * Initializes front messaging API
+ */
+function start(): void {
+  /**
+   * The browser.runtime port, is connected at runtime  by the connect function
+   */
+  connect();
+
+  // Firefox 55 erroneously sends messages from the content script to the
+  // devtools panel:
+  // https://bugzilla.mozilla.org/show_bug.cgi?id=1383310
+  // As a workaround, listen for messages only if this isn't the devtools panel.
+  // Note that Firefox processes API access lazily, so browser.devtools will
+  // always exist but will have undefined as its value on other pages.
+  if (typeof browser.devtools === "undefined") {
+    // Listen for messages from the background page.
+    // We're disabling the requirement for always returning a promise, because
+    // we need to be careful what we return from this listener function. It may
+    // be harmful for us to return a truthy value (e.g. a Promise), since the
+    // browser may misinterpret it as being an actual value, causing unexpected
+    // behavior.
+    /* eslint-disable-next-line @typescript-eslint/promise-function-async */
+    browser.runtime.onMessage.addListener((message, sender) => {
+      const responses = messageEmitter.dispatch(message, sender);
+      const response = getMessageResponse(responses);
+      if (typeof response === "undefined") {
+        return;
+      }
+
+      return Promise.resolve(response);
+    });
+  }
+}
+
+start();

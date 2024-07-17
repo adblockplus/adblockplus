@@ -16,12 +16,35 @@
  */
 
 import { EventEmitter } from "../../../../adblockpluschrome/lib/events";
-import { type Message } from "../shared";
-import { type MessageSender } from "./api.types";
-import { type PortMessageListener } from "./port.types";
+import {
+  type Frame,
+  type Message,
+  getMessageResponse,
+  isMessage,
+  MessageEmitter
+} from "../shared";
+import { type MessageListener } from "../shared/emitter.types";
+import {
+  type BackgroundMessageEmitter,
+  type BrowserMessageSenderWithOrigin,
+  type MessageSender
+} from "./port.types";
 
 /**
- * Communication port wrapping ext.onMessage to receive messages.
+ * Message emitter instance for use in background context
+ */
+export const messageEmitter: BackgroundMessageEmitter = new MessageEmitter();
+/**
+ * Extension's own origin
+ */
+const selfOrigin = new URL(browser.runtime.getURL("")).origin;
+/**
+ * Map containing trusted message types for any given origin
+ */
+const trustedTypesByOrigin = new Map();
+
+/**
+ * Communication port wrapping message emitter to receive messages.
  */
 class Port {
   /**
@@ -32,7 +55,7 @@ class Port {
   constructor() {
     this.eventEmitter = new EventEmitter();
     this.onMessage = this.onMessage.bind(this);
-    ext.onMessage.addListener(this.onMessage);
+    messageEmitter.addListener(this.onMessage);
   }
 
   /**
@@ -48,7 +71,7 @@ class Port {
 
     try {
       const responses = listeners.map((listener) => listener(message, sender));
-      return ext.getMessageResponse(responses);
+      return getMessageResponse(responses);
     } catch (err) {
       console.error(err);
     }
@@ -75,7 +98,7 @@ class Port {
    * @param name - Event name
    * @param listener - Event listener
    */
-  on(name: string, listener: PortMessageListener): void {
+  on(name: string, listener: MessageListener<MessageSender>): void {
     this.eventEmitter.on(name, listener);
   }
 
@@ -85,7 +108,7 @@ class Port {
    * @param name - Event name
    * @param listener - Event listener
    */
-  off(name: string, listener: PortMessageListener): void {
+  off(name: string, listener: MessageListener<MessageSender>): void {
     this.eventEmitter.off(name, listener);
   }
 
@@ -93,7 +116,7 @@ class Port {
    * Disables the port and makes it stop listening to incoming messages.
    */
   disconnect(): void {
-    ext.onMessage.removeListener(this.onMessage);
+    messageEmitter.removeListener(this.onMessage);
   }
 }
 
@@ -101,3 +124,171 @@ class Port {
  * The default port to receive messages.
  */
 export const port = new Port();
+
+/**
+ * Specify message types that we allow only for certain origins.
+ *
+ * @param origin - Sender origin (any if `null`)
+ * @param types - Trusted message types for given origin
+ */
+export function addTrustedMessageTypes(
+  origin: string | null,
+  types: string[]
+): void {
+  if (!trustedTypesByOrigin.has(origin)) {
+    trustedTypesByOrigin.set(origin, []);
+  }
+
+  const trustedTypes = trustedTypesByOrigin.get(origin);
+  trustedTypes.push(...types);
+}
+
+/**
+ * Retrieve information about given frame
+ *
+ * @param tabId - Tab ID
+ * @param frameId - Frame ID
+ * @returns frame information
+ */
+async function getFrame(tabId: number, frameId: number): Promise<Frame | null> {
+  const details = await browser.webNavigation.getAllFrames({ tabId });
+  if (!details || details.length === 0) {
+    return null;
+  }
+
+  const frames = new Map<number, Frame>();
+
+  for (const detail of details) {
+    const frame: Frame = {
+      id: detail.frameId,
+      url: new URL(detail.url)
+    };
+    frames.set(detail.frameId, frame);
+
+    if (detail.parentFrameId > -1) {
+      if (detail.frameId !== detail.parentFrameId) {
+        frame.parent = frames.get(detail.parentFrameId);
+      }
+
+      if (!frame.parent && detail.frameId !== 0 && detail.parentFrameId !== 0) {
+        frame.parent = frames.get(0);
+      }
+    }
+  }
+
+  return frames.get(frameId) ?? null;
+}
+
+/**
+ * Determines origin of given message sender
+ *
+ * @param sender - Message sender
+ * @returns message sender origin
+ */
+function getSenderOrigin(
+  sender: BrowserMessageSenderWithOrigin
+): string | null {
+  // Firefox (at least up to version 105) doesn't support MessageSender.origin
+  if (sender.origin) {
+    return sender.origin;
+  }
+
+  if (!sender.url) {
+    return null;
+  }
+
+  return new URL(sender.url).origin;
+}
+
+/**
+ * Determines whether given message type can be trusted for given origin
+ *
+ * @param origin - Origin
+ * @param type - Message type
+ * @returns whether given message type can be trusted for given origin
+ */
+function isTrustedMessageType(origin: string | null, type: string): boolean {
+  const trustedTypes = trustedTypesByOrigin.get(origin);
+  return !!trustedTypes && trustedTypes.includes(type);
+}
+
+/**
+ * Determines whether given message sender can be trusted
+ *
+ *  @param sender - Message sender
+ *  @returns whether given message sender can be trusted
+ */
+export function isTrustedSender(
+  sender: browser.Runtime.MessageSender
+): boolean {
+  return getSenderOrigin(sender) === selfOrigin;
+}
+
+/**
+ * Handles incoming messages
+ *
+ * @param message - Message
+ * @param rawSender - Message sender as provided by the browser
+ * @returns message response (if any)
+ */
+function onMessage(
+  message: unknown,
+  rawSender: browser.Runtime.MessageSender
+): Promise<unknown> | undefined {
+  // Ignore invalid messages
+  if (!isMessage(message)) {
+    return;
+  }
+
+  // Ignore messages from EWE & ML content scripts
+  if (message.type.startsWith("ewe:") || message.type.startsWith("ML:")) {
+    return;
+  }
+
+  // Ignore messages from content scripts, unless we listed them as
+  // safe to use in the context they're running in
+  if (
+    !isTrustedSender(rawSender) &&
+    !isTrustedMessageType(getSenderOrigin(rawSender), message.type) &&
+    !isTrustedMessageType(null, message.type)
+  ) {
+    console.warn("Untrusted message received", message.type, rawSender.url);
+    return;
+  }
+
+  // At this point we know that it's our message and that it's safe to respond
+  // to, so we can return a promise without breaking anything
+  return (async () => {
+    // Retrieving the frame hierarchy is only necessary for generating filters
+    // for the filter composer, so we're only attaching it for that particular
+    // message
+    const frame =
+      message.type === "composer.getFilters" &&
+      typeof rawSender.tab?.id !== "undefined" &&
+      typeof rawSender.frameId !== "undefined"
+        ? await getFrame(rawSender.tab.id, rawSender.frameId)
+        : null;
+
+    const sender: MessageSender = {
+      frame,
+      frameId: rawSender.frameId,
+      tab: rawSender.tab
+    };
+    const responses = messageEmitter.dispatch(message, sender);
+    const response = getMessageResponse(responses);
+    if (typeof response === "undefined") {
+      return;
+    }
+
+    return response;
+  })();
+}
+
+/**
+ * Initializes message handling functionality
+ */
+function start(): void {
+  browser.runtime.onMessage.addListener(onMessage);
+}
+
+start();

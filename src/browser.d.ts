@@ -17,9 +17,18 @@
 
 import { type Browser } from "webextension-polyfill";
 
+/**
+ * Observed web extension API browser object due to outdated type package
+ */
+interface ActualBrowser extends Omit<Browser, "webRequest"> {
+  webRequest: WebRequest.Static & {
+    ResourceType: WebRequest.ResourceType[];
+  };
+}
+
 declare global {
   /**
    * Global web extension API
    */
-  const browser: Browser.Browser;
+  const browser: ActualBrowser;
 }

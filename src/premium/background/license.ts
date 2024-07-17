@@ -15,7 +15,11 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { installHandler, port } from "../../core/api/background";
+import {
+  addTrustedMessageTypes,
+  installHandler,
+  port
+} from "../../core/api/background";
 import { EventEmitter } from "../../../adblockpluschrome/lib/events";
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";
 import * as scheduledEmitter from "../../core/scheduled-event-emitter/background/scheduled-event-emitter";
@@ -309,7 +313,7 @@ function initializeMessaging(): void {
     }
   );
 
-  ext.addTrustedMessageTypes(Prefs.get("premium_license_activation_origin"), [
+  addTrustedMessageTypes(Prefs.get("premium_license_activation_origin"), [
     "premium.activate"
   ]);
 }

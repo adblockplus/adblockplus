@@ -17,9 +17,15 @@
 
 import type Browser from "webextension-polyfill";
 import type {
+  MessageEmitter,
   PremiumActivateOptions,
   PremiumSubscriptionsAddRemoveOptions
 } from "../shared";
+
+/**
+ * Message emitter in front context
+ */
+export type FrontMessageEmitter = MessageEmitter<browser.Runtime.MessageSender>;
 
 /**
  * Strings accepted for api.app.get's first prop

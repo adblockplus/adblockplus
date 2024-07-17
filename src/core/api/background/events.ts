@@ -24,6 +24,7 @@ import {
   type EventHandlerInstall
 } from "./events.types";
 import { isListenMessage } from "../shared";
+import { isTrustedSender } from "./port";
 
 /**
  * Cleanup functions by tab ID
@@ -172,7 +173,7 @@ function onTabRemoved(tabId: number): void {
  * @param uiPort - UI page port
  */
 function onConnect(uiPort: Browser.Runtime.Port): void {
-  if (!ext.isTrustedSender(uiPort.sender)) {
+  if (!uiPort.sender || !isTrustedSender(uiPort.sender)) {
     return;
   }
 

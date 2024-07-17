@@ -17,9 +17,6 @@
 
 import "webextension-polyfill";
 
-import "../../../adblockpluschrome/ext/common";
-import "../../../adblockpluschrome/ext/content";
-
 import { $ } from "../../../js/dom.mjs";
 import font300 from "../../../skin/fonts/source-sans-pro-300.woff2?uri";
 import font400 from "../../../skin/fonts/source-sans-pro-400.woff2?uri";

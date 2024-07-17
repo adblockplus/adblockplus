@@ -34,7 +34,7 @@ module.exports = {
   overrides: [
     {
       files: [
-        "./ext/*.js", "*.cjs"
+        "*.cjs"
       ],
       parserOptions: {
         sourceType: "script"

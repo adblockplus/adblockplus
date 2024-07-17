@@ -16,6 +16,24 @@
  */
 
 /**
+ * Page frame
+ */
+export interface Frame {
+  /**
+   * Frame ID
+   */
+  id: number;
+  /**
+   * Parent frame
+   */
+  parent?: Frame;
+  /**
+   * Frame URL
+   */
+  url: URL;
+}
+
+/**
  * Message object, as passed from/to background page
  */
 export interface Message {

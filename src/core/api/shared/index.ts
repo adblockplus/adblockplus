@@ -17,4 +17,6 @@
 
 export * from "./api";
 export * from "./api.types";
+export * from "./emitter";
+export * from "./emitter.types";
 export * from "./serializable.types";

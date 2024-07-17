@@ -4,8 +4,6 @@
     "persistent": true,
     "scripts": [
       "polyfill.js",
-      "ext/common.js",
-      "ext/background.js",
       "background.js"
     ]
   },

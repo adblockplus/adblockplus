@@ -74,7 +74,7 @@ export function start()
     }
 
     if (message.replaceTab)
-      void browser.tabs.remove(sender.page.id);
+      void browser.tabs.remove(sender.tab.id);
   });
 
   /**
@@ -103,7 +103,7 @@ export function start()
       return ewe.subscriptions.ACCEPTABLE_ADS_PRIVACY_URL;
 
     if (message.what == "senderId")
-      return sender.page.id;
+      return sender.tab.id;
 
     if (message.what == "ctalink")
     {

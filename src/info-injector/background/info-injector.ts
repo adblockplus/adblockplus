@@ -18,7 +18,7 @@
 import { getInstallationId } from "../../id/background";
 import { info } from "../../info/background";
 import { type InjectionInfo, injectionOrigins } from "../shared";
-import { port } from "../../core/api/background";
+import { addTrustedMessageTypes, port } from "../../core/api/background";
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";
 import { getPremiumState } from "../../premium/background";
 
@@ -44,6 +44,6 @@ export function start(): void {
   port.on("info.getInjectionInfo", handleGetInjectionInfo);
 
   injectionOrigins.forEach((origin) => {
-    ext.addTrustedMessageTypes(origin, ["info.getInjectionInfo"]);
+    addTrustedMessageTypes(origin, ["info.getInjectionInfo"]);
   });
 }

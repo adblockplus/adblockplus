@@ -20,6 +20,7 @@
 import * as ewe from "@eyeo/webext-ad-filtering-solution";
 
 import {port} from "../../src/core/api/background";
+import {getPage, pageEmitter} from "../../src/core/pages/background";
 import {EventEmitter} from "./events.js";
 import {addFilter} from "./filterConfiguration.js";
 
@@ -152,7 +153,7 @@ async function isTabAllowlisted(tabId)
  */
 port.on("filters.allowlist", async message =>
 {
-  let page = new ext.Page(message.tab);
+  let page = await getPage(message.tab);
   await allowlist({
     origin: message.origin,
     singlePage: message.singlePage,
@@ -216,10 +217,10 @@ export async function revalidateAllowlistingStates()
 {
   let tabs = await browser.tabs.query({});
   for (let tab of tabs)
-    revalidateAllowlistingState(new ext.Page(tab));
+    revalidateAllowlistingState(await getPage(tab));
 }
 
-ext.pages.onLoaded.addListener(revalidateAllowlistingState);
+pageEmitter.on("loaded", revalidateAllowlistingState);
 ewe.filters.onAdded.addListener(revalidateAllowlistingStates);
 ewe.filters.onChanged.addListener(async(filter, property) =>
 {

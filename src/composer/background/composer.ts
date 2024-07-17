@@ -23,7 +23,8 @@
 
 import * as ewe from "@eyeo/webext-ad-filtering-solution";
 
-import { port } from "../../core/api/background";
+import { addTrustedMessageTypes, port } from "../../core/api/background";
+import { getPage, pageEmitter } from "../../core/pages/background";
 import { SessionStorage } from "../../../adblockpluschrome/lib/storage/session.js";
 import { TabSessionStorage } from "../../../adblockpluschrome/lib/storage/tab-session.js";
 import { allowlistingState } from "../../../adblockpluschrome/lib/allowlisting.js";
@@ -236,7 +237,7 @@ async function handleOpenDialogMessage(message, sender): Promise<void> {
     highlights: message.highlights,
     initAttempt: 0,
     sender: {
-      id: sender.page.id
+      id: sender.tab.id
     },
     status: null,
     tab: {
@@ -377,7 +378,7 @@ async function handleGetFiltersMessage(
     style: message.style,
     classes: message.classes,
     url: message.url,
-    page: sender.page,
+    page: sender.tab,
     frame: sender.frame
   });
 }
@@ -391,23 +392,23 @@ async function handleGetFiltersMessage(
  * @property {object} payload The contents of the message to forward.
  * @returns The response from the forwarded message's recipient.
  */
-function handleForwardMessage(msg, sender): Promise<any> | undefined {
+async function handleForwardMessage(msg, sender): Promise<any> {
   let targetPage;
   if (msg.targetPageId) {
-    targetPage = ext.getPage(msg.targetPageId);
+    targetPage = await getPage({ id: msg.targetPageId });
   } else {
-    targetPage = sender.page;
+    targetPage = sender.tab;
   }
   if (targetPage) {
-    msg.payload.sender = sender.page.id;
-    return browser.tabs.sendMessage(targetPage.id, msg.payload);
+    msg.payload.sender = sender.tab.id;
+    return await browser.tabs.sendMessage(targetPage.id, msg.payload);
   }
 }
 
 /**
  * Reset "block element" feature
  *
- * @param {ext.Page} page - Page for which to reset "block element" feature
+ * @param {Page} page - Page for which to reset "block element" feature
  */
 function reset(page): void {
   // When tabs start loading we send them a message to ensure that the state
@@ -465,7 +466,7 @@ async function updateContextMenu(updatedPage): Promise<void> {
     lastFocusedWindow: true
   });
   if (tabs.length > 0 && (!updatedPage || updatedPage.id === tabs[0].id)) {
-    await showOrHideContextMenu(updatedPage || new ext.Page(tabs[0]));
+    await showOrHideContextMenu(updatedPage || (await getPage(tabs[0])));
   }
 }
 
@@ -482,7 +483,7 @@ function handleFocusChanged(windowId): void {
 
 /**
  * Handles allowlisting state changes
- * @param {ext.Page} page - Page whose allowlisting state changed
+ * @param {Page} page - Page whose allowlisting state changed
  * @param {boolean} isAllowlisted - New allowlisting state
  */
 function handleAllowlistingStateChanged(page, isAllowlisted): void {
@@ -524,12 +525,12 @@ async function initializeReadyState(page): Promise<void> {
  * @returns {boolean}
  */
 async function handleReadyMessage(message, sender): Promise<void> {
-  await initializeReadyState(sender.page);
+  await initializeReadyState(sender.tab);
 }
 
 /**
  * Handles pages that finished loading
- * @param {ext.Page} page - Page that finished loading
+ * @param {Page} page - Page that finished loading
  */
 async function handlePageLoaded(page): Promise<void> {
   try {
@@ -547,6 +548,16 @@ async function handlePageLoaded(page): Promise<void> {
 }
 
 /**
+ * Handles tab activation
+ *
+ * @param tabId - Activated tab ID
+ */
+async function handleTabActivated(tabId: number): Promise<void> {
+  const page = await getPage({ id: tabId });
+  void showOrHideContextMenu(page);
+}
+
+/**
  * Initializes filter composer backend
  */
 export function start(): void {
@@ -561,14 +572,14 @@ export function start(): void {
   port.on("composer.openDialog", handleOpenDialogMessage);
   port.on("composer.ready", handleReadyMessage);
 
-  ext.pages.onLoading.addListener(reset);
+  pageEmitter.on("loading", reset);
 
   if ("contextMenus" in browser) {
     browser.contextMenus.onClicked.addListener(handleContextMenuClicked);
   }
 
   browser.tabs.onActivated.addListener((activeInfo) => {
-    void showOrHideContextMenu(new ext.Page({ id: activeInfo.tabId }));
+    void handleTabActivated(activeInfo.tabId);
   });
 
   // Firefox for Android does not support browser.windows.
@@ -585,9 +596,9 @@ export function start(): void {
   // for each page load, since we only receive the "composer.ready" message
   // when it initializes itself on real page loads
   // https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/issues/1303
-  ext.pages.onLoaded.addListener(handlePageLoaded);
+  pageEmitter.on("loaded", handlePageLoaded);
 
-  ext.addTrustedMessageTypes(null, [
+  addTrustedMessageTypes(null, [
     "composer.content.clearPreviousRightClickEvent",
     "composer.content.finished",
     "composer.dialog.close",

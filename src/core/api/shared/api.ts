@@ -23,6 +23,23 @@ import {
 } from "./api.types";
 
 /**
+ * Determines message response based on a list of responeses
+ *
+ * We only support a single response for message listeners. Therefore we need to
+ * identify the first valid one, so that we can then return it.
+ *
+ * @param responses - Message responses
+ * @returns message response (if any)
+ */
+export function getMessageResponse(responses: unknown[]): unknown {
+  for (const response of responses) {
+    if (typeof response !== "undefined") {
+      return response;
+    }
+  }
+}
+
+/**
  * Checks whether given candidate is a message
  *
  * @param candidate - Message candidate

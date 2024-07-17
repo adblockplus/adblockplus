@@ -16,6 +16,7 @@
  */
 
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";
+import { addTrustedMessageTypes } from "../../core/api/background";
 
 export function startOptionLinkListener(): void {
   const trustedOrigins = Prefs.get("options_backlink_trusted_origins");
@@ -24,6 +25,6 @@ export function startOptionLinkListener(): void {
   }
 
   trustedOrigins.forEach((trustedOrigin) => {
-    ext.addTrustedMessageTypes(trustedOrigin, ["options.open"]);
+    addTrustedMessageTypes(trustedOrigin, ["options.open"]);
   });
 }

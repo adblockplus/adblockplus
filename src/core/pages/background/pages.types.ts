@@ -15,10 +15,20 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import { type Tabs } from "webextension-polyfill";
+
 /**
- * Temporary interface for the custom Frame type
+ * Page shown in tab
  */
-export interface Frame {
-  parent: Frame;
+export interface TabPage {
+  id: Tabs.Tab["id"];
   url: URL;
+}
+
+/**
+ * Information relating to a tab
+ */
+export interface TabDescriptor {
+  id?: Tabs.Tab["id"];
+  url?: Tabs.Tab["url"];
 }

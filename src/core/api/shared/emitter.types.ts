@@ -15,37 +15,15 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { type Tabs } from "webextension-polyfill";
+import { type Message } from "./api.types";
 
 /**
- * Message sender
+ * Function to be called when a particular message is received.
+ *
+ * @param message - Message
+ * @param sender - Message sender
+ * @return The callback can return undefined (no response),
+ *         a value (response to be sent to sender immediately)
+ *         or a promise (asynchronous response).
  */
-export interface MessageSender {
-  /**
-   * Information about sender frame
-   */
-  frame: {
-    /**
-     * Sender frame ID
-     */
-    id: number;
-  };
-  /**
-   * Information about sender page
-   */
-  page: {
-    /**
-     * Sender page ID (same as tab ID)
-     */
-    id: number;
-    /**
-     * Sender page URL
-     */
-    url: URL;
-  };
-
-  /**
-   * Information about sender tab
-   */
-  tab: Tabs.Tab;
-}
+export type MessageListener<T> = (message: Message, sender: T) => unknown;

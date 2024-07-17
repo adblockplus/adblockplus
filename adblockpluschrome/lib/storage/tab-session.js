@@ -15,6 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import {pageEmitter} from "../../../src/core/pages/background";
 import {EventEmitter} from "../events.js";
 import {SessionStorage} from "./session.js";
 
@@ -174,13 +175,13 @@ async function clearStorage(tabId)
 export function start()
 {
   // Clear tab-specific data when the tab's content changes
-  ext.pages.onLoading.addListener(page =>
+  pageEmitter.on("loading", page =>
   {
     void clearStorage(page.id);
   });
 
   // Clear tab-specific data when the tab gets removed
-  ext.pages.onRemoved.addListener(tabId =>
+  pageEmitter.on("removed", tabId =>
   {
     void clearStorage(tabId);
   });

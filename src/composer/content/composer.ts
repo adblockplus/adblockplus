@@ -21,7 +21,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
-import api from "../../core/api/front";
+import * as api from "../../core/api/front";
 
 // The page ID for the popup filter selection dialog (top frame only).
 let blockelementPopupId = null;
@@ -523,7 +523,7 @@ function initializeComposer(): void {
     true
   );
 
-  ext.onMessage.addListener((message) => {
+  api.messageEmitter.addListener((message) => {
     switch (message.type) {
       case "composer.content.preview":
         void previewBlockedElements(message.active);

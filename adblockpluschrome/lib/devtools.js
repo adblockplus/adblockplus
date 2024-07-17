@@ -25,6 +25,7 @@ import {
   toSerializableFilter,
   toSerializableSubscription
 } from "../../src/core/api/background";
+import {pageEmitter} from "../../src/core/pages/background";
 import {compareVersions} from "../../src/version/shared";
 import {TabSessionStorage} from "./storage/tab-session.js";
 import {info} from "../../src/info/background";
@@ -145,12 +146,12 @@ export function start()
             tabId: targetTabId
           }
         );
-        ext.pages.onLoading.addListener(localOnPageLoad);
+        pageEmitter.on("loading", localOnPageLoad);
 
         return () =>
         {
           browser.webRequest.onBeforeRequest.removeListener(localOnPageFrame);
-          ext.pages.onLoading.removeListener(localOnPageLoad);
+          pageEmitter.off("loading", localOnPageLoad);
         };
     }
   });

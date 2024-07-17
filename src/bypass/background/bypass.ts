@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { port } from "../../core/api/background";
+import { addTrustedMessageTypes, port } from "../../core/api/background";
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";
 import { getAuthPayload, getPremiumState } from "../../premium/background";
 
@@ -111,7 +111,13 @@ async function handleGetAuthPayloadMessage(
   }
 
   // Verify signature
-  const domain = sender.page.url.hostname;
+  if (!sender.tab?.url) {
+    return null;
+  }
+  const domain = new URL(sender.tab.url).hostname;
+  if (!domain) {
+    return null;
+  }
   const validSignature = await verifySignature(domain, timestamp, signature);
   if (!validSignature) {
     return null;
@@ -216,5 +222,5 @@ function verifyTimestamp(timestamp: number): boolean {
  */
 export function start(): void {
   port.on("premium.getAuthPayload", handleGetAuthPayloadMessage);
-  ext.addTrustedMessageTypes(null, ["premium.getAuthPayload"]);
+  addTrustedMessageTypes(null, ["premium.getAuthPayload"]);
 }

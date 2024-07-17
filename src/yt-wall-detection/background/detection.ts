@@ -17,7 +17,11 @@
 
 import { type Tabs } from "webextension-polyfill";
 
-import { port } from "../../core/api/background";
+import {
+  type MessageSender,
+  addTrustedMessageTypes,
+  port
+} from "../../core/api/background";
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";
 import {
   type Dialog,
@@ -26,7 +30,6 @@ import {
   eventEmitter as dialogEmitter,
   showOnpageDialog
 } from "../../onpage-dialog/background";
-import { type MessageSender } from "../../core/api/background";
 import { type Message } from "../../core/api/shared";
 import { detectedMessageType, isEnabled } from "../shared";
 
@@ -106,6 +109,6 @@ export function start(): void {
 
   port.on(detectedMessageType, handleDetectedMessage);
 
-  ext.addTrustedMessageTypes("https://youtube.com", [detectedMessageType]);
-  ext.addTrustedMessageTypes("https://www.youtube.com", [detectedMessageType]);
+  addTrustedMessageTypes("https://youtube.com", [detectedMessageType]);
+  addTrustedMessageTypes("https://www.youtube.com", [detectedMessageType]);
 }

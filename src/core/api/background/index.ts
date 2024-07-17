@@ -15,7 +15,6 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export * from "./api.types";
 export * from "./events";
 export * from "./events.types";
 export * from "./port";

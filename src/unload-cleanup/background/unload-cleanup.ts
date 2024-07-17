@@ -16,8 +16,11 @@
  */
 
 import { info } from "../../info/background";
-import { port } from "../../core/api/background";
-import { type MessageSender } from "../../core/api/background";
+import {
+  type MessageSender,
+  addTrustedMessageTypes,
+  port
+} from "../../core/api/background";
 import { displayValueList, isGetClassNameMessage } from "../shared";
 import { className } from "./unload-cleanup.types";
 
@@ -47,17 +50,17 @@ async function handleMessage(
   message: unknown,
   sender: MessageSender
 ): Promise<string | undefined> {
-  if (!isGetClassNameMessage(message)) {
+  if (
+    !isGetClassNameMessage(message) ||
+    typeof sender.tab?.id === "undefined" ||
+    info.application !== "firefox"
+  ) {
     return;
   }
 
-  if (info.application !== "firefox" || typeof sender.page === "undefined") {
-    return;
-  }
-
-  await browser.tabs.insertCSS(sender.page.id, {
+  await browser.tabs.insertCSS(sender.tab.id, {
     code: css,
-    frameId: sender.frame.id,
+    frameId: sender.frameId,
     runAt: "document_start"
   });
   return className;
@@ -68,5 +71,5 @@ async function handleMessage(
  */
 export function start(): void {
   port.on("unload-cleanup.getClassName", handleMessage);
-  ext.addTrustedMessageTypes(null, ["unload-cleanup.getClassName"]);
+  addTrustedMessageTypes(null, ["unload-cleanup.getClassName"]);
 }

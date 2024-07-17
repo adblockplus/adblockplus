@@ -102,8 +102,8 @@ export function whenPageReady(tab)
   {
     function onMessage(message, sender)
     {
-      if (message.type == "composer.ready" && sender.page &&
-          sender.page.id == tab.id)
+      if (message.type == "composer.ready" && sender.tab &&
+          sender.tab.id == tab.id)
       {
         browser.runtime.onMessage.removeListener(onMessage);
         resolve();

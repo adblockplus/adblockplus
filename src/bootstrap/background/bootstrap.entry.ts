@@ -44,6 +44,7 @@ import { start as startReadyState } from "../../testing/ready-state/background";
 import { start as startYTWallDetection } from "../../yt-wall-detection/background";
 import { start as startInfoInjector } from "../../info-injector/background";
 import { start as startUpdateCampaign } from "../../update-campaign/background";
+import { start as startPages } from "../../core/pages/background";
 
 function reportAndLogError(e: Error): void {
   reportError(e);
@@ -53,6 +54,7 @@ function reportAndLogError(e: Error): void {
 async function bootstrap(): Promise<void> {
   await startErrorReporting();
   try {
+    startPages();
     startTabSessionStorage();
     startDevTools();
     startDebug();

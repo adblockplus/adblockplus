@@ -15,7 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { type Frame } from "../../../polyfills/shared";
+import { type Frame } from "../../api/shared";
 
 /**
  * Parses the domains part of a filter text
@@ -264,11 +264,13 @@ export function isDomainList(list: string): boolean {
  * @returns The hostname
  */
 export function extractHostFromFrame(frame: Frame, originUrl?: URL): string {
-  for (; frame; frame = frame.parent) {
-    const { hostname } = frame.url;
+  let currentFrame: Frame | undefined = frame;
+  while (currentFrame) {
+    const { hostname } = currentFrame.url;
     if (hostname) {
       return hostname;
     }
+    currentFrame = currentFrame.parent;
   }
 
   return originUrl ? originUrl.hostname : "";

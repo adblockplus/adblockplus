@@ -19,7 +19,7 @@ import * as ewe from "@eyeo/webext-ad-filtering-solution";
 
 import { type Tabs } from "webextension-polyfill";
 
-import { port } from "../../core/api/background";
+import { addTrustedMessageTypes, port } from "../../core/api/background";
 import { TabSessionStorage } from "../../../adblockpluschrome/lib/storage/tab-session";
 import { EventEmitter } from "../../../adblockpluschrome/lib/events";
 import { getLocaleInfo } from "../../i18n/background";
@@ -121,11 +121,11 @@ async function forwardMessage(
   message: unknown,
   sender: MessageSender
 ): Promise<unknown> {
-  if (!isMessage(message)) {
+  if (!isMessage(message) || typeof sender.tab?.id === "undefined") {
     return;
   }
 
-  return await sendMessage(sender.page.id, message);
+  return await sendMessage(sender.tab.id, message);
 }
 
 /**
@@ -138,12 +138,16 @@ async function handleCloseMessage(
   message: Message,
   sender: MessageSender
 ): Promise<void> {
-  const dialog = await assignedDialogs.get(sender.page.id);
+  if (typeof sender.tab?.id === "undefined") {
+    return;
+  }
+
+  const dialog = await assignedDialogs.get(sender.tab.id);
   if (!isDialog(dialog)) {
     return;
   }
 
-  void removeDialog(sender.page.id);
+  void removeDialog(sender.tab.id);
   recordDialogEvent(dialog, DialogEventType.closed);
 }
 
@@ -157,7 +161,11 @@ async function handleContinueMessage(
   message: Message,
   sender: MessageSender
 ): Promise<void> {
-  const dialog = await assignedDialogs.get(sender.page.id);
+  if (typeof sender.tab?.id === "undefined") {
+    return;
+  }
+
+  const dialog = await assignedDialogs.get(sender.tab.id);
   if (!isDialog(dialog)) {
     return;
   }
@@ -169,7 +177,7 @@ async function handleContinueMessage(
 
   void browser.tabs.create({ url: safeTargetUrl });
 
-  void removeDialog(sender.page.id);
+  void removeDialog(sender.tab.id);
   recordDialogEvent(dialog, DialogEventType.buttonClicked);
 }
 
@@ -209,7 +217,11 @@ async function handleGetMessage(
   message: Message,
   sender: MessageSender
 ): Promise<StartInfo | null> {
-  const dialog = await assignedDialogs.get(sender.page.id);
+  if (typeof sender.tab?.id === "undefined") {
+    return null;
+  }
+
+  const dialog = await assignedDialogs.get(sender.tab.id);
   if (!isDialog(dialog)) {
     return null;
   }
@@ -230,11 +242,11 @@ async function handlePingMessage(
   message: Message,
   sender: MessageSender
 ): Promise<void> {
-  if (!isPingMessage(message)) {
+  if (!isPingMessage(message) || typeof sender.tab?.id === "undefined") {
     return;
   }
 
-  const dialog = await assignedDialogs.get(sender.page.id);
+  const dialog = await assignedDialogs.get(sender.tab.id);
   if (!isDialog(dialog)) {
     return;
   }
@@ -247,7 +259,7 @@ async function handlePingMessage(
     return;
   }
 
-  void removeDialog(sender.page.id);
+  void removeDialog(sender.tab.id);
   recordDialogEvent(dialog, DialogEventType.ignored);
 }
 
@@ -437,7 +449,7 @@ export async function start(): Promise<void> {
   port.on("onpage-dialog.ping", handlePingMessage);
   port.on("onpage-dialog.resize", forwardMessage);
 
-  ext.addTrustedMessageTypes(null, [
+  addTrustedMessageTypes(null, [
     "onpage-dialog.continue",
     "onpage-dialog.close",
     "onpage-dialog.get",

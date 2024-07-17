@@ -21,6 +21,7 @@ import {TabSessionStorage} from "./storage/tab-session.js";
 import {allowlistingState} from "./allowlisting.js";
 import {setIconPath, setIconImageData, toggleBadge} from "./browserAction.js";
 import {info} from "../../src/info/background";
+import {getPage, pageEmitter} from "../../src/core/pages/background";
 
 const ANIMATION_LOOPS = 3;
 const FRAME_IN_MS = 100;
@@ -202,7 +203,7 @@ async function renderFrames(opacities)
 async function animateIcon(opacities, frames)
 {
   let tabs = await browser.tabs.query({active: true});
-  let pages = tabs.map(tab => new ext.Page(tab));
+  let pages = tabs.map(getPage);
 
   let animationLoop = 0;
   let animationStep = 0;
@@ -215,7 +216,7 @@ async function animateIcon(opacities, frames)
     await setIcon(page, opacity, frames);
     toggleBadge(page.id, true);
   };
-  ext.pages.onActivated.addListener(onActivated);
+  pageEmitter.on("activated", onActivated);
 
   canUpdateIcon = false;
   for (let page of pages)
@@ -241,7 +242,7 @@ async function animateIcon(opacities, frames)
         if (++animationLoop > ANIMATION_LOOPS - 1 || stopRequested)
         {
           clearInterval(interval);
-          ext.pages.onActivated.removeListener(onActivated);
+          pageEmitter.off("activated", onActivated);
           for (let page of pages)
             toggleBadge(page.id, false);
           canUpdateIcon = true;

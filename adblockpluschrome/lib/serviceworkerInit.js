@@ -18,8 +18,4 @@
 /* eslint-env serviceworker */
 
 if (typeof importScripts !== "undefined")
-{
   importScripts("polyfill.js");
-  importScripts("ext/common.js");
-  importScripts("ext/background.js");
-}

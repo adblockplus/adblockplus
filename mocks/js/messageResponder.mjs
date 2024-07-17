@@ -304,7 +304,7 @@ port.on("filters.isAllowlisted", () =>
       return Array.from(recommendations(), convertRecommendation);
 
     if (message.what == "senderId")
-      return sender.page.id;
+      return sender.tab.id;
 
     return info[message.what];
   });
