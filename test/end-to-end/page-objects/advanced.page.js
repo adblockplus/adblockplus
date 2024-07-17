@@ -148,6 +148,11 @@ class AdvancedPage extends BasePage
     return $$("//io-list-box[@id='filters-box']/ul/li[@role='option']");
   }
 
+  async builtInFilterListsTableItem(text)
+  {
+    return $("//li[contains(text(), '" + text + "')]");
+  }
+
   get cancelAddingFLButton()
   {
     return $("//button[@data-action='close-filterlist-by-url']");
@@ -395,9 +400,33 @@ class AdvancedPage extends BasePage
     return $("//li[@aria-label='Premium - Block cookie consent pop-ups']");
   }
 
+  get premiumBlockCookieConsentPopupsFLStatusToggle()
+  {
+    return $("//li[@aria-label='Premium - Block cookie consent pop-ups']" +
+      "/div/io-toggle/button");
+  }
+
+  get premiumBlockCookieConsentPopupsFLTrashButton()
+  {
+    return $("//li[@aria-label='Premium - Block cookie consent pop-ups']" +
+      "/div/button[@data-action='remove-subscription']");
+  }
+
   get premiumDistractionControlFL()
   {
     return $("//li[@aria-label='Premium - Distraction Control']");
+  }
+
+  get premiumDistractionControlFLStatusToggle()
+  {
+    return $("//li[@aria-label='Premium - Distraction Control']" +
+      "/div/io-toggle/button");
+  }
+
+  get premiumBlockMoreDistractionsFLTrashButton()
+  {
+    return $("//li[@aria-label='Premium - Distraction Control']" +
+      "/div/button[@data-action='remove-subscription']");
   }
 
   get showAdblockPlusPanelCheckbox()
@@ -551,6 +580,11 @@ class AdvancedPage extends BasePage
       this.allowNonintrusiveAdvertisingFLTrashButton);
   }
 
+  async clickBuiltInFLTableItem(text)
+  {
+    await this.scrollIntoViewAndClick(this.builtInFilterListsTableItem(text));
+  }
+
   async clickCancelAddingFLButton()
   {
     await (await this.cancelAddingFLButton).click();
@@ -656,6 +690,29 @@ class AdvancedPage extends BasePage
   async clickListeFREasyListFL()
   {
     await this.scrollIntoViewAndClick(this.listeFREasyListFLDropdownItem);
+  }
+
+  async clickPremiumBlockCookieConsentPopupsFLStatusToggle()
+  {
+    await this.scrollIntoViewAndClick(
+      this.premiumBlockCookieConsentPopupsFLStatusToggle);
+  }
+
+  async clickPremiumBlockCookieConsentPopupsFLTrashButton()
+  {
+    await (await this.premiumBlockCookieConsentPopupsFLTrashButton).click();
+  }
+
+  async clickPremiumDistractionControlFLStatusToggle()
+  {
+    await this.scrollIntoViewAndClick(
+      this.premiumDistractionControlFLStatusToggle);
+  }
+
+  async clickPremiumBlockMoreDistractionsFLTrashButton()
+  {
+    await this.scrollIntoViewAndClick(
+      this.premiumBlockMoreDistractionsFLTrashButton);
   }
 
   async clickShowAdblockPlusPanelCheckbox()
@@ -1002,10 +1059,28 @@ class AdvancedPage extends BasePage
                               reverseOption);
   }
 
+  async isPremiumBlockCookieConsentPopupsFLStatusToggleSelected(
+    expectedValue = "true",
+    timeoutVal = 3000)
+  {
+    return await this.waitUntilAttributeValueIs(
+      this.premiumBlockCookieConsentPopupsFLStatusToggle, "aria-checked",
+      expectedValue, timeoutVal);
+  }
+
   async isPremiumDistractionControlFLDisplayed(reverseOption = false)
   {
     return await this.waitForDisplayedNoError(this.premiumDistractionControlFL,
                                               reverseOption);
+  }
+
+  async isPremiumDistractionControlFLStatusToggleSelected(
+    expectedValue = "true",
+    timeoutVal = 3000)
+  {
+    return await this.waitUntilAttributeValueIs(
+      this.premiumDistractionControlFLStatusToggle, "aria-checked",
+      expectedValue, timeoutVal);
   }
 
   async isShowAdblockPlusPanelCheckboxSelected(expectedValue = "true",
@@ -1116,7 +1191,7 @@ class AdvancedPage extends BasePage
 
   async switchToSubscriptionsTab()
   {
-    await this.switchToTab(/subscriptions/);
+    await this.switchToTab(/link=subscriptions/);
   }
 
   async typeTextToFilterListUrlInput(text, noClearValue = false)

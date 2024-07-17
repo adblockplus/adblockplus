@@ -77,6 +77,21 @@ class PopupPage extends BasePage
     return $("//button[contains(.,'Close')]");
   }
 
+  get cookieConsentPopupsPopup()
+  {
+    return $("#cookie-consent-modal");
+  }
+
+  get cookieConsentPopupsPopupNotNowButton()
+  {
+    return $("#cookie-consent-modal-close");
+  }
+
+  get cookieConsentPopupsPopupOkGotItButton()
+  {
+    return $("#cookie-consent-modal-accept");
+  }
+
   get linkInNotificationMessage()
   {
     return $("//p[@id='notification-message']/a");
@@ -192,14 +207,35 @@ class PopupPage extends BasePage
     await (await this.blockCookieConsentPopupsTitle).click();
   }
 
+  async clickBlockCookieConsentPopupsToggle()
+  {
+    await (await this.blockCookieConsentPopupsToggle).click();
+  }
+
   async clickBlockMoreDistractionsTitle()
   {
     await (await this.blockMoreDistractionsTitle).click();
   }
 
+  async clickBlockMoreDistractionsToggle()
+  {
+    await (await this.blockMoreDistractionsToggle).click();
+  }
+
   async clickCloseNotificationButton()
   {
     await (await this.closeNotificationButton).click();
+  }
+
+  async clickCookieConsentPopupsPopupNotNowButton()
+  {
+    await (await this.cookieConsentPopupsPopupNotNowButton).click();
+  }
+
+
+  async clickCookieConsentPopupsPopupOkGotItButton()
+  {
+    await (await this.cookieConsentPopupsPopupOkGotItButton).click();
   }
 
   async clickLinkInNotificationMessage()
@@ -339,6 +375,11 @@ class PopupPage extends BasePage
   async isCloseNotificationButtonDisplayed()
   {
     return await (await this.closeNotificationButton).isDisplayed();
+  }
+
+  async isCookieConsentPopupsPopupDisplayed()
+  {
+    return await (await this.cookieConsentPopupsPopup).isDisplayed();
   }
 
   async isNotificationMessageDisplayed()
