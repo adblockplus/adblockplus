@@ -29,7 +29,12 @@ export default {
       },
       {
         dest: "polyfill.js",
-        src: ["mocks/js/polyfill.js"],
+        src: ["mocks/js/polyfills/ui/index.entry.mjs"],
+        overwrite: true
+      },
+      {
+        dest: "polyfill-background.js",
+        src: ["mocks/js/polyfills/background/index.entry.mjs"],
         overwrite: true
       },
       // Specific to Firefox Mobile
@@ -41,10 +46,6 @@ export default {
   },
   mapping: {
     copy: [
-      {
-        dest: "ext",
-        src: ["mocks/js/ext/**"]
-      },
       {
         dest: "locale",
         src: ["locale/**"]

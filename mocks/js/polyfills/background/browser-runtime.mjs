@@ -15,51 +15,17 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-"use strict";
+import {Port} from "../shared/index.mjs";
 
-(function()
-{
-  if (typeof ext == "undefined")
-    window.ext = {};
-
-  window.addEventListener("load", () =>
-  {
-    parent.postMessage({
-      type: "backgroundPageLoaded"
-    }, "*");
-  }, false);
-
-  /* Message passing */
-
-  if (!("runtime" in browser))
-    browser.runtime = {};
-
-  function postMessage(msg)
-  {
-    parent.postMessage({
-      type: "port",
-      id: this._id,
-      payload: msg
-    }, "*");
-  }
-  ext._Port.prototype.postMessage = postMessage;
-
-  function onConnect(listener)
+export const onConnect = {
+  addListener(listener)
   {
     window.addEventListener("message", (event) =>
     {
       if (event.data.type != "connect")
         return;
 
-      listener(new ext._Port(event.data.id, event.data.name));
+      listener(new Port(event.data.id, event.data.name));
     });
   }
-  window.browser.runtime.onConnect = {addListener: onConnect};
-
-  if (!("tabs" in browser))
-    browser.tabs = {};
-
-  browser.tabs.onRemoved = {
-    addListener() {}
-  };
-}());
+};

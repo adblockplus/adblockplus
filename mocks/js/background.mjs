@@ -15,6 +15,7 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import {Page} from "./polyfills/shared/index.mjs";
 import {port} from "./lib/messaging.mjs";
 import {params} from "./config/env.mjs";
 
@@ -30,7 +31,7 @@ import "./messageResponder.mjs";
       return;
     const {payload: message, messageId} = event.data;
     const sender = {
-      page: new ext.Page(event.source)
+      page: new Page(event.source)
     };
 
     const listeners = port._listeners[message.type];
