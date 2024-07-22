@@ -74,34 +74,22 @@ chrome.webNavigation.onCompleted.addListener(details =>
 
 openOptionsPage();
 
-const closeLoadedDataTabInterval = setInterval(() =>
+const closeDataTabInterval = setInterval(() =>
 {
   chrome.tabs.query({}, tabs =>
   {
     for (const tab of tabs)
     {
-      if (tab.url.startsWith("data"))
+      if (!tab.url.startsWith("data"))
+        continue;
+
+      chrome.tabs.remove(tab.id, () =>
       {
-        chrome.tabs.remove(tab.id);
-        clearInterval(closeLodingTabInterval);
-        clearInterval(closeLoadedDataTabInterval);
-      }
+        if (chrome.runtime.lastError)
+          console.error(chrome.runtime.lastError);
+        else
+          clearInterval(closeDataTabInterval);
+      });
     }
   });
 }, 2000);
-
-const closeLodingTabInterval = setTimeout(() =>
-{
-  chrome.tabs.query({}, tabs =>
-  {
-    for (const tab of tabs)
-    {
-      if (tab.status === "loading" && !tab.url.endsWith("options.html"))
-      {
-        chrome.tabs.remove(tab.id);
-        clearInterval(closeLodingTabInterval);
-        clearInterval(closeLoadedDataTabInterval);
-      }
-    }
-  });
-}, 3000);
