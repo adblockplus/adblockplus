@@ -172,26 +172,6 @@ class PopupPage extends BasePage
     return $("//*[@id='page-refresh']/div/span");
   }
 
-  get shareWithFriendsButton()
-  {
-    return $("//*[@id='counter-panel']/div[2]/div[1]/button");
-  }
-
-  get facebookShareIcon()
-  {
-    return $("//*[@id='counter-panel']/div[2]/div[2]/span[1]/a");
-  }
-
-  get XShareIcon()
-  {
-    return $("//*[@id='counter-panel']/div[2]/div[2]/span[2]/a");
-  }
-
-  get socialCancelLink()
-  {
-    return $("//*[@id='counter-panel']/div[2]/div[2]/button");
-  }
-
   get nothingToBlockText()
   {
     return $("//*[@id='idle-status']/h2");
@@ -514,39 +494,6 @@ class PopupPage extends BasePage
   async clickReportAnIssueButton()
   {
     return await this.waitForEnabledThenClick(this.reportIssueButton);
-  }
-
-  async clickShareWithFriendsButton()
-  {
-    await this.waitForEnabledThenClick(this.shareWithFriendsButton);
-  }
-
-  async clickSocialCancelLink()
-  {
-    await this.waitForEnabledThenClick(this.socialCancelLink);
-  }
-
-  async isShareWithFriendsButtonDisplayed(expectedValue = "0",
-                                          timeoutVal = 3000)
-  {
-    return await this.waitUntilAttributeValueIs(
-      this.shareWithFriendsButton, "tabIndex",
-      expectedValue, timeoutVal);
-  }
-
-  async isFacebookShareIconDisplayed(expectedValue = "0",
-                                     timeoutVal = 3000)
-  {
-    return await this.waitUntilAttributeValueIs(
-      this.facebookShareIcon, "tabIndex",
-      expectedValue, timeoutVal);
-  }
-
-  async isXShareIconDisplayed(expectedValue = "0", timeoutVal = 3000)
-  {
-    return await this.waitUntilAttributeValueIs(
-      this.XShareIcon, "tabIndex",
-      expectedValue, timeoutVal);
   }
 
   async isPageToggleDisplayed()
