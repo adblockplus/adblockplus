@@ -52,7 +52,7 @@ function reportAndLogError(e: Error): void {
 }
 
 async function bootstrap(): Promise<void> {
-  await startErrorReporting();
+  startErrorReporting();
   try {
     startPages();
     startTabSessionStorage();

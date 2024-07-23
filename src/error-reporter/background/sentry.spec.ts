@@ -36,7 +36,8 @@ jest.mock("../../../adblockpluschrome/lib/prefs", () => {
       },
       set: (key: string, value: any) => {
         prefsData[key] = value;
-      }
+      },
+      untilLoaded: Promise.resolve()
     }
   };
 });
@@ -58,7 +59,7 @@ describe("Sentry", () => {
   });
 
   it("sends a request when bug report requested", async () => {
-    await initialize(DSN, ENVIRONMENT, "testSentryUserId");
+    void initialize(DSN, ENVIRONMENT, "testSentryUserId");
     const ERR_MESSAGE = "Test error";
     reportError(new Error(ERR_MESSAGE));
     expect(global.fetch).toHaveBeenCalledWith(
@@ -104,7 +105,7 @@ describe("Sentry", () => {
   it("does not send user email", async () => {
     await Prefs.set("premium_user_id", ""); // default (no value)
 
-    await initialize(DSN, ENVIRONMENT);
+    void initialize(DSN, ENVIRONMENT);
     reportError(new Error("Test error"));
     const lastEvent = getLastEvent();
     expect(lastEvent).toBeDefined();
@@ -114,14 +115,14 @@ describe("Sentry", () => {
   it("does not pass premium user ID if not saved", async () => {
     await Prefs.set("premium_user_id", ""); // default (no value)
 
-    await initialize(DSN, ENVIRONMENT);
+    void initialize(DSN, ENVIRONMENT);
     reportError(new Error("Test error"));
     const lastEvent = getLastEvent();
     expect(lastEvent).toBeDefined();
     expect(lastEvent?.extra).toBeUndefined();
   });
 
-  it("passes premium user ID if saved", async () => {
+  it("passes premium status", async () => {
     const PREMIUM_USER_ID = "testPremiumUserId";
     await Prefs.set("premium_user_id", PREMIUM_USER_ID);
 
@@ -130,7 +131,7 @@ describe("Sentry", () => {
     expect(getLastEvent()).toEqual(
       expect.objectContaining({
         extra: {
-          premium_user_id: PREMIUM_USER_ID
+          is_premium_user: true
         }
       })
     );

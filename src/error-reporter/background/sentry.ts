@@ -36,7 +36,7 @@ let scope: Scope;
  * @param error - Error to report
  */
 export function reportError(error: Error): void {
-  if (scope != null) {
+  if (scope) {
     scope.captureException(error);
   }
 }
@@ -93,10 +93,6 @@ export async function initialize(
     beforeSend(event) {
       console.warn("Event", event);
       lastEvent = event;
-      if (event.user != null) {
-        // Don't send user's email address
-        delete event.user.email;
-      }
       return event;
     }
   });
@@ -105,13 +101,17 @@ export async function initialize(
   scope.setClient(client);
   client.init();
 
+  self.addEventListener("error", (event) => {
+    reportError(event.error);
+  });
+
   await Prefs.untilLoaded;
 
-  if (userId == null) {
+  if (!userId) {
     userId = Prefs.get(SENTRY_USER_ID);
-    if (userId == null || userId === "") {
+    if (!userId) {
       userId = getUUID();
-      await Prefs.set(SENTRY_USER_ID, userId);
+      void Prefs.set(SENTRY_USER_ID, userId);
     }
   }
 
@@ -120,24 +120,18 @@ export async function initialize(
   });
 
   const premiumUserId = Prefs.get("premium_user_id");
-  if (premiumUserId !== "") {
-    scope.setExtra("premium_user_id", premiumUserId);
-  }
-
-  self.addEventListener("error", (event) => {
-    reportError(event.error);
-  });
+  scope.setExtra("is_premium_user", Boolean(premiumUserId));
 }
 
 /**
  * Initialize and start error reporting
  */
-export async function start(): Promise<void> {
+export function start(): void {
   if (
     webpackDotenvPlugin.ADBLOCKPLUS_SENTRY_DSN != null &&
     webpackDotenvPlugin.ADBLOCKPLUS_SENTRY_ENVIRONMENT != null
   ) {
-    await initialize(
+    void initialize(
       webpackDotenvPlugin.ADBLOCKPLUS_SENTRY_DSN,
       webpackDotenvPlugin.ADBLOCKPLUS_SENTRY_ENVIRONMENT
     );
