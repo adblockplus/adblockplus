@@ -31,11 +31,13 @@ import {filterTypes} from "./requestBlocker.js";
 const disabledFilterCounters = new Map();
 const eventEmitter = new EventEmitter();
 
-export async function addFilter(filterText, origin)
+export async function addFilter(filterText, origin, expiresAt)
 {
   const data = {created: Date.now()};
   if (origin)
     data.origin = origin;
+  if (expiresAt)
+    data.expiresAt = expiresAt;
 
   try
   {
@@ -44,10 +46,7 @@ export async function addFilter(filterText, origin)
   }
   catch (ex)
   {
-    // If we add an existing filter again, we ignore the resulting error to
-    // avoid showing unnecessary error messages to the user
-    if (ex.type !== "storage_duplicate_filters")
-      return ex;
+    return ex;
   }
 
   return null;
@@ -266,9 +265,14 @@ export function start()
 
     if (errors.length == 0)
     {
-      const error = await ewe.filters.add(filterTexts);
-      if (error)
+      try
+      {
+        await ewe.filters.add(filterTexts);
+      }
+      catch (error)
+      {
         errors.push(error);
+      }
     }
 
     return [errors, filterTexts];

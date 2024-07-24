@@ -74,11 +74,18 @@ port.on("filters.isAllowlisted", async message =>
  *   Whether to allowlist the entire domain or a single page
  * @param {string} [options.url]
  *   URL to allowlist (required if no hostname)
+ * @param {number} [options.expiresAt] The timestamp when the filter should
+ *  expire (allowed 1 day - 365 days in the future).
  *
  * @returns {Promise}
  * @throws {Error} Either domain or valid URL required
  */
-export async function allowlist({hostname, origin, singlePage = false, url})
+export async function allowlist({
+  hostname,
+  origin,
+  singlePage = false,
+  url,
+  expiresAt})
 {
   let filterText;
 
@@ -122,7 +129,7 @@ export async function allowlist({hostname, origin, singlePage = false, url})
 
   const filterSubscriptions = await ewe.subscriptions.getForFilter(filterText);
   if (filterSubscriptions.length == 0)
-    await addFilter(filterText, origin);
+    await addFilter(filterText, origin, expiresAt);
 }
 
 /**

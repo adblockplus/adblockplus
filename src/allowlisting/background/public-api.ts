@@ -20,6 +20,7 @@ import * as ewe from "@eyeo/webext-ad-filtering-solution";
 import { allowlist } from "../../../adblockpluschrome/lib/allowlisting";
 import { Prefs } from "../../../adblockpluschrome/lib/prefs";
 import * as premium from "../../premium/background";
+import { type AllowlistOptions } from "./public-api.types";
 
 const trustedSoftonicDomains = [
   "softonic-ar.com",
@@ -67,13 +68,21 @@ function getAllowlistingDomain(hostname: string): string {
  * Function to be called when a valid allowlisting request was received
  *
  * @param domain - Domain to allowlist
+ *  @param options Additional options for the allowlisting.
+ *  @param options.expiresAt The timestamp when the filter should
+ *  expire (allowed 1 day - 365 days in the future).
+ *
  */
-async function onAllowlisting(domain: string): Promise<void> {
+async function onAllowlisting(
+  domain: string,
+  options: AllowlistOptions
+): Promise<void> {
   if (premium.getPremiumState().isActive) return;
 
   await allowlist({
     hostname: getAllowlistingDomain(domain),
-    origin: "web"
+    origin: "web",
+    expiresAt: options?.expiresAt
   });
 }
 

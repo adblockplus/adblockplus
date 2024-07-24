@@ -15,5 +15,14 @@
  * along with Adblock Plus.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-export * from "./public-api";
-export * from "./public-api.types";
+/**
+ * Additional options for the allowlisting
+ *
+ *  @param options Additional options for the allowlisting.
+ *  @param options.expiresAt The timestamp when the filter should
+ *  expire (allowed 1 day - 365 days in the future).
+ *
+ */
+export interface AllowlistOptions {
+  expiresAt: number;
+}
