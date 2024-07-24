@@ -45,6 +45,11 @@ class IPMChunk extends BasePage
     return $("#body");
   }
 
+  get ipmDialog()
+  {
+    return $("#__abp-overlay-onpage-dialog");
+  }
+
   get ipmIframe()
   {
     return $("//iframe[@frameborder='0']");
@@ -68,6 +73,11 @@ class IPMChunk extends BasePage
   async getIPMTitleText()
   {
     return await (await this.ipmTitle).getText();
+  }
+
+  async isIPMDialogDisplayed()
+  {
+    return await (await this.ipmDialog).isDisplayed();
   }
 
   async isIPMiFrameExisting()
