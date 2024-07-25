@@ -22,6 +22,7 @@ const {beforeSequence, switchToABPOptionsTab,
 const {expect} = require("chai");
 const abpDomInjectionData =
   require("../test-data/data-abp-dom-injection").abpDomInjectionData;
+const GeneralPage = require("../page-objects/general.page");
 let appVersion;
 let id;
 
@@ -30,6 +31,8 @@ describe("test abp DOM injection for premium user", function()
   before(async function()
   {
     await beforeSequence();
+    await browser.newWindow("https://adblockinc.gitlab.io/QA-team/adblocking/blocking-hiding/blocking-hiding-testpage.html");
+    await switchToABPOptionsTab();
     appVersion = await browser.
       executeScript("return browser.runtime.getManifest().version;", []);
     id = await executeAsyncScript("return browser.runtime." +
@@ -43,6 +46,8 @@ describe("test abp DOM injection for premium user", function()
     {
       await switchToABPOptionsTab();
       await browser.newWindow(dataSet.url);
+      const generalPage = new GeneralPage(browser);
+      await generalPage.switchToTab(dataSet.url);
       const abpInfo = JSON.parse(await browser.
         executeScript("return document." +
         "getElementById('__adblock-plus-extension-info').textContent;", []));
@@ -58,6 +63,8 @@ describe("test abp DOM injection for premium user", function()
       expect(dataAbpInfo.premiumId == "valid_user_id").to.be.true;
       expect(dataAbpInfo.version == appVersion).to.be.true;
       expect(dataAbpInfo.id == id).to.be.true;
+      expect(dataAbpInfo.blockCount != 0).to.be.true;
+      expect(dataAbpInfo.blockCount == abpInfo.blockCount).to.be.true;
       await browser.closeWindow();
     });
   });

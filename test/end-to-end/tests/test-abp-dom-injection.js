@@ -57,6 +57,8 @@ describe("test abp DOM injection", function()
       expect(dataAbpInfo.premiumId == "").to.be.true;
       expect(dataAbpInfo.version == appVersion).to.be.true;
       expect(dataAbpInfo.id == id).to.be.true;
+      expect(dataAbpInfo.blockCount == 0).to.be.true;
+      expect(dataAbpInfo.blockCount == abpInfo.blockCount).to.be.true;
       await browser.closeWindow();
     });
   });
