@@ -68,7 +68,8 @@ export function getLastEvent(): SentryErrorEvent | undefined {
 export async function initialize(
   dsn: string,
   environment: string,
-  userId?: string
+  userId?: string,
+  sampleRate?: number
 ): Promise<void> {
   // filter integrations that use the global variable
   const integrations = getDefaultIntegrations({}).filter(
@@ -89,7 +90,7 @@ export async function initialize(
     transport: makeFetchTransport,
     stackParser: defaultStackParser,
     integrations,
-    tracesSampleRate: 0.01, // 1% of all errors
+    sampleRate: sampleRate ?? 0.01,
     beforeSend(event) {
       console.warn("Event", event);
       lastEvent = event;

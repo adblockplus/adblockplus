@@ -59,7 +59,7 @@ describe("Sentry", () => {
   });
 
   it("sends a request when bug report requested", async () => {
-    void initialize(DSN, ENVIRONMENT, "testSentryUserId");
+    void initialize(DSN, ENVIRONMENT, "testSentryUserId", 1);
     const ERR_MESSAGE = "Test error";
     reportError(new Error(ERR_MESSAGE));
     expect(global.fetch).toHaveBeenCalledWith(
@@ -126,7 +126,7 @@ describe("Sentry", () => {
     const PREMIUM_USER_ID = "testPremiumUserId";
     await Prefs.set("premium_user_id", PREMIUM_USER_ID);
 
-    await initialize(DSN, ENVIRONMENT);
+    await initialize(DSN, ENVIRONMENT, undefined, 1);
     reportError(new Error("Test error"));
     expect(getLastEvent()).toEqual(
       expect.objectContaining({
