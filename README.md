@@ -39,13 +39,15 @@ download `npm` [here][npm].
 ### `node-gyp` error?
 
 If you're using an apple machine with apple silicon (arm64 CPU), you may
-encounter an error where `node-gyp` fails to build. In that case you need to run
-`arch -x86_64 zsh` before any other commands.
+encounter an error where `node-gyp` fails to build during `npm install`. In that
+case you need to run `arch -x86_64 zsh` before any other commands, and make sure
+you are not using `nvm` to run the node version.
 
-The likely cause is that the `node-gyp` cannot find the binary online, then tries to build the binary locally, and fails
-because you have Python 3.12 installed, [which does not work work with some versions of `node-gyp`](https://github.com/nodejs/node-gyp/issues/2869).  
-
-You can solve this by installing Python 3.11 on your machine, you can use [`pyenv`](https://github.com/pyenv/pyenv) for that.
+Another possible cause is that `node-gyp` cannot find the binary online,
+then tries to build the binary locally and fails because of Python 3.12 being
+installed, [which does not work work with some versions of `node-gyp`](https://github.com/nodejs/node-gyp/issues/2869).
+That could be solved by installing Python 3.11 locally, and
+[`pyenv`](https://github.com/pyenv/pyenv) could be used for that.
 
 **Important:** On Windows, you need a [Linux environment running on WSL][ms-wsl]
 and run the commands from within Bash.
