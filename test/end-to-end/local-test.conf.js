@@ -24,20 +24,20 @@ const fs = require("fs");
 const helpers = require("./helpers.js");
 const {suites} = require("./suites.js");
 
-const {allureEnabled, browserName, helperExtensionPath,
-       screenshotsPath} = helpers.testConfig;
+const {allureEnabled, browserName, screenshotsPath} = helpers.testConfig;
 helpers.localRunChecks();
 
 const browserCapabilities = [];
-const chromeExtensionPath =
-  helpers.getChromiumExtensionPath({isLambdatest: false});
 const chromiumOptions = {
   args: [
     "--no-sandbox",
     "--window-size=1400,1000",
-    `--load-extension=${chromeExtensionPath},${helperExtensionPath}`
+    "--disable-search-engine-choice-screen"
   ],
-  excludeSwitches: ["disable-extensions"]
+  extensions: [
+    helpers.getChromiumExtension(),
+    helpers.getHelperExtension()
+  ]
 };
 
 if (browserName === "chrome")

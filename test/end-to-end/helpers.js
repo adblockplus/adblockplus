@@ -34,20 +34,16 @@ const firefoxCIBuild = "../../" + process.env.FIREFOX_BUILD;
 
 const extensionVersion = getExtensionVersion();
 const distPath = path.join(process.cwd(), "..", "..", "dist");
-const chromeLocalReleaseBuildPath =
+const chromeExtensionPath =
   path.join(distPath, "release", `adblockpluschrome-${extensionVersion}.zip`);
-const firefoxLocalReleaseBuildPath =
+const firefoxExtensionPath =
   path.join(distPath, "release", `adblockplusfirefox-${extensionVersion}.xpi`);
-const chromeLocalDevBuildPath = path.join(distPath, "devenv", "chrome");
-const helperExtensionPath = path.join(distPath, "devenv", "helper-extension");
-const helperExtensionZipPath =
+const helperExtensionPath =
   path.join(distPath, "devenv", "helper-extension.zip");
 
 const testConfig = {
   allureEnabled: process.env.ENABLE_ALLURE === "true",
   browserName: process.env.BROWSER,
-  helperExtensionPath,
-  helperExtensionZipPath,
   screenshotsPath: path.join(process.cwd(), "screenshots")
 };
 
@@ -65,13 +61,9 @@ async function beforeSequence(expectInstalledTab = true)
 {
   if (isFirefox())
   {
-    const abpXpiFileName = getFirefoxExtensionPath();
-    const abpExtensionXpi = await fs.promises.readFile(abpXpiFileName);
-    const helperExtensionZip =
-      await fs.promises.readFile(helperExtensionZipPath);
-    await browser.installAddOn(abpExtensionXpi.toString("base64"), true);
+    await browser.installAddOn(getFirefoxExtension(), true);
     await browser.pause(500);
-    await browser.installAddOn(helperExtensionZip.toString("base64"), true);
+    await browser.installAddOn(getHelperExtension(), true);
   }
 
   const {origin, optionsUrl} = await waitForExtension();
@@ -282,29 +274,24 @@ async function getABPOptionsTabId()
   return currentTab;
 }
 
-function getChromiumExtensionPath({isLambdatest} = {isLambdatest: true})
+function getExtension(extensionPath)
 {
-  let chromeExtension;
-  if (isGitlab)
-  {
-    chromeExtension = require("fs").
-      readFileSync(chromeCIBuild).toString("base64");
-  }
-  else if (isLambdatest && !isGitlab)
-  {
-    chromeExtension = require("fs").
-      readFileSync(chromeLocalReleaseBuildPath).toString("base64");
-  }
-  else
-  {
-    chromeExtension = chromeLocalDevBuildPath;
-  }
-  return chromeExtension;
+  return fs.readFileSync(extensionPath).toString("base64");
 }
 
-function getFirefoxExtensionPath()
+function getChromiumExtension()
 {
-  return isGitlab ? firefoxCIBuild : firefoxLocalReleaseBuildPath;
+  return getExtension(isGitlab ? chromeCIBuild : chromeExtensionPath);
+}
+
+function getFirefoxExtension()
+{
+  return getExtension(isGitlab ? firefoxCIBuild : firefoxExtensionPath);
+}
+
+function getHelperExtension()
+{
+  return getExtension(helperExtensionPath);
 }
 
 function getCurrentDate(locale)
@@ -570,24 +557,9 @@ function localRunChecks()
   const {browserName} = testConfig;
 
   if (browserName === "chrome" || browserName === "edge")
-  {
-    if (!fs.existsSync(chromeLocalDevBuildPath))
-    {
-      console.error("\x1b[33m%s\x1b[0m", `
------------------------------------------------------------------
-Could not find chrome extension in 'dist/devenv/chrome'.
-Run 'npm run build:dev chrome' to build the MV2 extension.
-Or 'npm run build:dev chrome -- -m 3' to build the MV3 extension.
------------------------------------------------------------------
-      `);
-      process.exit(1);
-    }
-  }
-
-  if (browserName === "firefox")
-  {
+    checkChromeReleaseBuild();
+  else if (browserName === "firefox")
     checkFirefoxReleaseBuild();
-  }
 }
 
 function lambdatestRunChecks()
@@ -598,6 +570,7 @@ function lambdatestRunChecks()
   }
 
   checkEnvFileExists();
+
   if (!process.env.LT_USERNAME || !process.env.LT_ACCESS_KEY)
   {
     console.error("\x1b[33m%s\x1b[0m", `
@@ -611,18 +584,7 @@ https://www.lambdatest.com/support/docs/using-environment-variables-for-authenti
     process.exit(1);
   }
 
-  if (!fs.existsSync(chromeLocalReleaseBuildPath))
-  {
-    console.error("\x1b[33m%s\x1b[0m", `
------------------------------------------------------------------
-Could not find chrome extension in 'dist/release'.
-Run 'npm run build:release chrome' to build the MV2 extension.
-Or 'npm run build:release chrome -- -m 3' to build the MV3 extension.
------------------------------------------------------------------
-    `);
-    process.exit(1);
-  }
-
+  checkChromeReleaseBuild();
   checkFirefoxReleaseBuild();
 }
 
@@ -640,9 +602,24 @@ You can use the .env.e2e.template file as a template.
   }
 }
 
+function checkChromeReleaseBuild()
+{
+  if (!fs.existsSync(chromeExtensionPath))
+  {
+    console.error("\x1b[33m%s\x1b[0m", `
+-----------------------------------------------------------------
+Could not find chrome extension in 'dist/release/*.zip'.
+Run 'npm run build:release chrome' to build the MV2 extension.
+Or 'npm run build:release chrome -- -m 3' to build the MV3 extension.
+-----------------------------------------------------------------
+    `);
+    process.exit(1);
+  }
+}
+
 function checkFirefoxReleaseBuild()
 {
-  if (!fs.existsSync(firefoxLocalReleaseBuildPath))
+  if (!fs.existsSync(firefoxExtensionPath))
   {
     console.error("\x1b[33m%s\x1b[0m", `
 -----------------------------------------------------------------
@@ -698,8 +675,8 @@ module.exports = {
   afterSequence, beforeSequence, doesTabExist,
   executeAsyncScript, testConfig, localRunChecks,
   enablePremiumByMockServer, wakeMockServer, lambdatestRunChecks,
-  getChromiumExtensionPath, enablePremiumByUI,
-  getCurrentDate, getFirefoxExtensionPath, getTabId,
+  getChromiumExtension, getFirefoxExtension, getHelperExtension,
+  getCurrentDate, getTabId, enablePremiumByUI,
   randomIntFromInterval, globalRetriesNumber, switchToABPOptionsTab,
   waitForExtension, getABPOptionsTabId, waitForCondition,
   waitForSwitchToABPOptionsTab, waitForNewWindow, isChrome, isFirefox, isEdge

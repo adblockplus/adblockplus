@@ -61,8 +61,8 @@ const parallelConfig = {
       platformName: "Windows 10",
       "ms:edgeOptions": {
         extensions: [
-          helpers.getChromiumExtensionPath(),
-          require("fs").readFileSync(helpers.testConfig.helperExtensionZipPath).toString("base64")
+          helpers.getChromiumExtension(),
+          helpers.getHelperExtension()
         ],
         args: ["--no-sandbox", "--start-maximized"],
         prefs: {

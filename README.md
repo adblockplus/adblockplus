@@ -137,20 +137,15 @@ browsers) or they can be executed using [LambdaTest](https://automation.lambdate
 To run the end-to-end tests locally:
 
 - Create a new .env file based on the [.env.e2e.template](https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/blob/next/.env.e2e.template?ref_type=heads).
-- Generate the [unpacked development builds](#building-the-extension)
-of the extension.
+- Generate the [release builds](#building-the-extension) of the extension.
 - Run the test:end-to-end-local script.
 
-Examples:
+Example:
 
 ```sh
 cp .env.e2e.template .env.e2e
-# Chrome
-npm run build:dev chrome -- --manifest-version 3
-MANIFEST_VERSION=3 BROWSER={chrome|edge} npm run test:end-to-end-local all
-# Firefox
-npm run build:release firefox -- --manifest-version 2
-MANIFEST_VERSION=2 BROWSER=firefox npm run test:end-to-end-local all
+npm run build:release {chrome|firefox} -- --manifest-version {2|3}
+MANIFEST_VERSION={2|3} BROWSER={chrome|firefox|edge} npm run test:end-to-end-local all
 ```
 
 #### LambdaTest run

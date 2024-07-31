@@ -35,7 +35,7 @@ exports.config = {
       platformName: "macOS Monterey",
       "goog:chromeOptions": {
         extensions: [
-          require("fs").readFileSync(helpers.testConfig.helperExtensionZipPath).toString("base64")
+          helpers.getHelperExtension()
         ],
         args: ["--no-sandbox", "--lang=de"],
         prefs: {
@@ -64,7 +64,7 @@ exports.config = {
       platformName: "Windows 11",
       "ms:edgeOptions": {
         extensions: [
-          require("fs").readFileSync(helpers.testConfig.helperExtensionZipPath).toString("base64")
+          helpers.getHelperExtension()
         ],
         args: ["--no-sandbox", "--start-maximized", "--lang=de"],
         prefs: {
@@ -93,7 +93,7 @@ exports.config = {
       platformName: "macOS Monterey",
       "goog:chromeOptions": {
         extensions: [
-          require("fs").readFileSync(helpers.testConfig.helperExtensionZipPath).toString("base64")
+          helpers.getHelperExtension()
         ],
         args: ["--no-sandbox", "--lang=ar_SA"],
         prefs: {
@@ -124,7 +124,7 @@ exports.config = {
       platformName: "Windows 11",
       "ms:edgeOptions": {
         extensions: [
-          require("fs").readFileSync(helpers.testConfig.helperExtensionZipPath).toString("base64")
+          helpers.getHelperExtension()
         ],
         args: ["--no-sandbox", "--start-maximized", "--lang=ar_SA"],
         prefs: {
@@ -155,7 +155,7 @@ exports.config = {
       platformName: "macOS Monterey",
       "goog:chromeOptions": {
         extensions: [
-          require("fs").readFileSync(helpers.testConfig.helperExtensionZipPath).toString("base64")
+          helpers.getHelperExtension()
         ],
         args: ["--no-sandbox", "--lang=ca_CA"],
         prefs: {
@@ -185,7 +185,7 @@ exports.config = {
       platformName: "Windows 11",
       "ms:edgeOptions": {
         extensions: [
-          require("fs").readFileSync(helpers.testConfig.helperExtensionZipPath).toString("base64")
+          helpers.getHelperExtension()
         ],
         args: ["--no-sandbox", "--start-maximized", "--lang=ca_CA"],
         prefs: {

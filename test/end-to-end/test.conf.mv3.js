@@ -45,7 +45,7 @@ const parallelConfig = {
       platformName: "macOS Monterey",
       "goog:chromeOptions": {
         extensions: [
-          require("fs").readFileSync(helpers.testConfig.helperExtensionZipPath).toString("base64")
+          helpers.getHelperExtension()
         ],
         args: ["--no-sandbox"],
         prefs: {
@@ -73,7 +73,7 @@ const parallelConfig = {
       platformName: "Windows 11",
       "ms:edgeOptions": {
         extensions: [
-          require("fs").readFileSync(helpers.testConfig.helperExtensionZipPath).toString("base64")
+          helpers.getHelperExtension()
         ],
         args: ["--no-sandbox", "--start-maximized"],
         prefs: {
