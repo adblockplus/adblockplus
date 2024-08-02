@@ -87,12 +87,17 @@ build:
     - npm run build:release chrome -- -m 3 --unhandled-rejections=strict
     # Attach commit hash to MV3 build files
     - mv dist/release/adblockplus{chrome-*,-chrome-${CI_COMMIT_SHORT_SHA}-mv3}.zip
+    # Create development builds
+    - npm run build:release chrome -- -m 3 -c development --unhandled-rejections=strict
+    # Attach commit hash to development build files
+    - mv dist/release/adblockplus{chrome-*,-chrome-dev-${CI_COMMIT_SHORT_SHA}-mv3}.zip
   artifacts:
     name: "adblockplus-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHORT_SHA}"
     paths:
       - $[[ inputs.hostpath ]]/dist/release/adblockplus-${CI_COMMIT_SHORT_SHA}.tar.gz
       - $[[ inputs.hostpath ]]/dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
       - $[[ inputs.hostpath ]]/dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
+      - $[[ inputs.hostpath ]]/dist/release/adblockplus-chrome-dev-${CI_COMMIT_SHORT_SHA}-mv3.zip
       - $[[ inputs.hostpath ]]/dist/release/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
 
 buildfromsource:
