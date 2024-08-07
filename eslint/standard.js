@@ -31,7 +31,7 @@ module.exports = {
   rules: {
     // To ease the transition to strict-boolean-expressions, we will
     // only issue warnings instead of errors for now.
-    "@typescript-eslint/strict-boolean-expressions": "warn",
+    "@typescript-eslint/strict-boolean-expressions": "off",
 
     // We agreed that we don't want to allow single line code blocks. The
     // decision was made during a dev sync meeting on October 17th, 2023.
