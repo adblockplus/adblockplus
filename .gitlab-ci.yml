@@ -121,9 +121,9 @@ buildfromsource:
   artifacts:
    name: "adblockplus-source-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHORT_SHA}"
    paths:
-     - $[[ inputs.hostpath ]]source/dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
-     - $[[ inputs.hostpath ]]source/dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
-     - $[[ inputs.hostpath ]]source/dist/release/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
+     - $[[ inputs.hostpath ]]/source/dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
+     - $[[ inputs.hostpath ]]/source/dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
+     - $[[ inputs.hostpath ]]/source/dist/release/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
   rules:
     # Do not trigger a merge request pipeline
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
