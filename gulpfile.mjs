@@ -171,9 +171,24 @@ async function getBuildOptions(isDevenv, isSource)
   {
     if (opts.channel == "development")
     {
-      opts.version = args["build_num"] ?
-        opts.version.concat(".", args["build_num"]) :
-        opts.version.concat(".", await gitUtils.getBuildnum());
+      const versionParts = opts.version.split(".", 4);
+      if (versionParts.length > 3)
+      {
+        console.warn("Version string has more than three pre-defined segments");
+      }
+
+      for (let i = 0; i < 3; i++)
+      {
+        if (versionParts[i])
+        {
+          continue;
+        }
+
+        versionParts[i] = "0";
+      }
+      versionParts[3] = args["build_num"] || await gitUtils.getBuildnum();
+
+      opts.version = versionParts.join(".");
     }
 
     const filename =
