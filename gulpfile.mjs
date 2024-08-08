@@ -169,6 +169,7 @@ async function getBuildOptions(isDevenv, isSource)
   }
   else
   {
+    opts.baseversion = opts.version;
     if (opts.channel == "development")
     {
       const versionParts = opts.version.split(".", 4);
@@ -190,10 +191,6 @@ async function getBuildOptions(isDevenv, isSource)
 
       opts.version = versionParts.join(".");
     }
-
-    const filename =
-      `${opts.basename}${opts.target}-${opts.version}${opts.archiveType}`;
-    opts.output = zip.dest(`./dist/release/${filename}`);
   }
 
   opts.manifest = await tasks.getManifestContent({
@@ -207,20 +204,58 @@ async function getBuildOptions(isDevenv, isSource)
   return opts;
 }
 
+async function getBuildOutput(opts)
+{
+  if (opts.isDevenv)
+  {
+    return gulp.dest(targetDir);
+  }
+
+  const filenameTarget = (opts.channel === "release") ?
+    opts.target :
+    `${opts.target}${opts.channel}`;
+  const filenameVersion = await getFilenameVersion(opts);
+
+  const filenameParts = [
+    opts.basename,
+    filenameTarget,
+    filenameVersion,
+    `mv${opts.manifestVersion}`
+  ];
+  const filename = `${filenameParts.join("-")}${opts.archiveType}`;
+
+  return zip.dest(`./dist/release/${filename}`);
+}
+
+async function getFilenameVersion(opts)
+{
+  const hasReleaseTag = await gitUtils.hasTag(
+    `${opts.basename}-${opts.baseversion}`
+  );
+  if (hasReleaseTag)
+  {
+    return opts.version;
+  }
+
+  return gitUtils.getCommitHash();
+}
+
 async function buildDevenv()
 {
   const options = await getBuildOptions(true);
+  const output = await getBuildOutput(options);
 
   return merge(await getBuildSteps(options))
-    .pipe(options.output);
+    .pipe(output);
 }
 
 async function buildPacked()
 {
   const options = await getBuildOptions(false);
+  const output = await getBuildOutput(options);
 
   return merge(await getBuildSteps(options))
-    .pipe(options.output);
+    .pipe(output);
 }
 
 function cleanDir()
@@ -235,7 +270,9 @@ export const build = gulp.series(...buildTasks);
 export async function source()
 {
   const options = await getBuildOptions(false, true);
+  const filenameVersion = await getFilenameVersion(options);
+
   return tasks.sourceDistribution(
-    `./dist/release/${options.basename}-${options.version}`
+    `./dist/release/${options.basename}-${filenameVersion}`
   );
 }

@@ -165,9 +165,9 @@ export async function start()
   };
 
   let cdp = {
-    pingUrl: webpackDotenvPlugin.ADBLOCKPLUS_CDP_PING_URL,
-    aggregateUrl: webpackDotenvPlugin.ADBLOCKPLUS_CDP_AGGREGATE_URL,
-    bearer: webpackDotenvPlugin.ADBLOCKPLUS_CDP_BEARER
+    pingUrl: webpackDotenvPlugin.CDP_PING_URL,
+    aggregateUrl: webpackDotenvPlugin.CDP_AGGREGATE_URL,
+    bearer: webpackDotenvPlugin.CDP_BEARER
   };
   if (cdp.pingUrl && cdp.aggregateUrl && cdp.bearer)
     addonInfo.cdp = cdp;

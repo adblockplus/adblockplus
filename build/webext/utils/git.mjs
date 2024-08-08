@@ -17,30 +17,51 @@
 
 import argparse from "argparse";
 import {pathToFileURL} from "url";
-import {execFile} from "child_process";
+import {execFile as execFileSync} from "child_process";
 import {promisify} from "util";
 import {EOL} from "os";
 
 const BUILDNUM_OFFSET = 10000;
 
+export async function execFile(...args)
+{
+  const {stdout} = await promisify(execFileSync)(...args);
+  return stdout.trim();
+}
+
 export async function getBuildnum(revision = "HEAD")
 {
-  const until = (await promisify(execFile)("git", ["log", "--pretty=%ct", "-n1",
-                                                   revision])).stdout.trim();
+  const until = await execFile(
+    "git",
+    ["log", "--pretty=%ct", "-n1", revision]
+  );
 
-  return BUILDNUM_OFFSET +
-         parseInt((await promisify(execFile)("git", ["rev-list", "--count",
-                                                     "--until", until,
-                                                     "origin/main",
-                                                     revision])).stdout, 10);
+  const buildNumberString = await execFile(
+    "git",
+    ["rev-list", "--count", "--until", until, "origin/main", revision]
+  );
+  return BUILDNUM_OFFSET + parseInt(buildNumberString, 10);
+}
+
+export async function getCommitHash()
+{
+  return await execFile("git", ["rev-parse", "--short", "HEAD"]);
+}
+
+export async function hasTag(tag)
+{
+  const tagsString = await execFile("git", ["tag", "--points-at", "HEAD"]);
+  const tags = tagsString.split(EOL);
+  return tags.includes(tag);
 }
 
 export async function lsFiles()
 {
-  const {stdout} = await promisify(execFile)(
-    "git", ["ls-files", "--recurse-submodules"]
+  const fileString = await execFile(
+    "git",
+    ["ls-files", "--recurse-submodules"]
   );
-  return stdout.trim().split(EOL);
+  return fileString.split(EOL);
 }
 
 if (import.meta.url == pathToFileURL(process.argv[1]))

@@ -75,55 +75,48 @@ lint:
 build:
   extends: .build
   script:
-    # Create MV2 extension builds
-    - npm run build:release chrome -- --unhandled-rejections=strict
-    - npm run build:release firefox -- --unhandled-rejections=strict
+    # Create .env file from CI variables
+    - echo "CDP_AGGREGATE_URL=\"$ADBLOCKPLUS_CDP_AGGREGATE_URL\"" >> .env
+    - echo "CDP_BEARER=\"$ADBLOCKPLUS_CDP_BEARER\"" >> .env
+    - echo "CDP_PING_URL=\"$ADBLOCKPLUS_CDP_PING_URL\"" >> .env
+    - echo "SENTRY_DSN=\"$ADBLOCKPLUS_SENTRY_DSN\"" >> .env
+    - echo "SENTRY_ENVIRONMENT=\"$ADBLOCKPLUS_SENTRY_ENVIRONMENT\"" >> .env
+    # Create source archive
     - npm run build:source
-    # Attach commit hash to MV2 build files
-    - mv dist/release/adblockplus{chrome-*,-chrome-${CI_COMMIT_SHORT_SHA}}.zip
-    - mv dist/release/adblockplus{firefox-*,-firefox-${CI_COMMIT_SHORT_SHA}}.xpi
-    - mv dist/release/adblockplus-{*,${CI_COMMIT_SHORT_SHA}}.tar.gz
+    # Create MV2 extension builds
+    - npm run build:release chrome -- -m 2 --unhandled-rejections=strict
+    - npm run build:release firefox -- -m 2 --unhandled-rejections=strict
     # Create MV3 extension builds
     - npm run build:release chrome -- -m 3 --unhandled-rejections=strict
-    # Attach commit hash to MV3 build files
-    - mv dist/release/adblockplus{chrome-*,-chrome-${CI_COMMIT_SHORT_SHA}-mv3}.zip
-    # Create development builds
     - npm run build:release chrome -- -m 3 -c development --unhandled-rejections=strict
-    # Attach commit hash to development build files
-    - mv dist/release/adblockplus{chrome-*,-chrome-dev-${CI_COMMIT_SHORT_SHA}-mv3}.zip
   artifacts:
     name: "adblockplus-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHORT_SHA}"
     paths:
-      - $[[ inputs.hostpath ]]/dist/release/adblockplus-${CI_COMMIT_SHORT_SHA}.tar.gz
-      - $[[ inputs.hostpath ]]/dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
-      - $[[ inputs.hostpath ]]/dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
-      - $[[ inputs.hostpath ]]/dist/release/adblockplus-chrome-dev-${CI_COMMIT_SHORT_SHA}-mv3.zip
-      - $[[ inputs.hostpath ]]/dist/release/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
+      - $[[ inputs.hostpath ]]/dist/release/adblockplus-*.tar.gz
+      - $[[ inputs.hostpath ]]/dist/release/adblockplus-chrome-*-mv2.zip
+      - $[[ inputs.hostpath ]]/dist/release/adblockplus-chrome-*-mv3.zip
+      - $[[ inputs.hostpath ]]/dist/release/adblockplus-chromedevelopment-*-mv3.zip
+      - $[[ inputs.hostpath ]]/dist/release/adblockplus-firefox-*-mv2.xpi
 
 buildfromsource:
   stage: build
   needs: ["build"]
   script:
    - mkdir source
-   - tar xvf dist/release/adblockplus-${CI_COMMIT_SHORT_SHA}.tar.gz -C source
+   - tar xvf dist/release/adblockplus-*.tar.gz -C source
    - cd source
    - npm ci --cache .npm --prefer-offline
    # Create MV2 extension builds from source archive
-   - npm run build:release chrome -- --unhandled-rejections=strict
-   - npm run build:release firefox -- --unhandled-rejections=strict
-   # Attach commit hash to MV2 build files
-   - mv dist/release/adblockplus{chrome-*,-chrome-${CI_COMMIT_SHORT_SHA}}.zip
-   - mv dist/release/adblockplus{firefox-*,-firefox-${CI_COMMIT_SHORT_SHA}}.xpi
+   - npm run build:release chrome -- -m 2 --unhandled-rejections=strict
+   - npm run build:release firefox -- -m 2 --unhandled-rejections=strict
    # Create MV3 extension builds from source archive
    - npm run build:release chrome -- -m 3 --unhandled-rejections=strict
-   # Attach commit hash to MV3 build files
-   - mv dist/release/adblockplus{chrome-*,-chrome-${CI_COMMIT_SHORT_SHA}-mv3}.zip
   artifacts:
    name: "adblockplus-source-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHORT_SHA}"
    paths:
-     - $[[ inputs.hostpath ]]/source/dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
-     - $[[ inputs.hostpath ]]/source/dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
-     - $[[ inputs.hostpath ]]/source/dist/release/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
+     - $[[ inputs.hostpath ]]/source/dist/release/adblockplus-chrome-*-mv2.zip
+     - $[[ inputs.hostpath ]]/source/dist/release/adblockplus-chrome-*-mv3.zip
+     - $[[ inputs.hostpath ]]/source/dist/release/adblockplus-firefox-*-mv2.xpi
   rules:
     # Do not trigger a merge request pipeline
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
@@ -158,17 +151,17 @@ buildfromsource:
 checkfilesizes:MV3:chrome:
   extends: .checkfilesizes
   variables:
-    EXTENSION: adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
+    EXTENSION: adblockplus-chrome-*-mv3.zip
 
 checkfilesizes:MV2:chrome:
   extends: .checkfilesizes
   variables:
-    EXTENSION: adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
+    EXTENSION: adblockplus-chrome-*-mv2.zip
 
 checkfilesizes:MV2:firefox:
   extends: .checkfilesizes
   variables:
-    EXTENSION: adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
+    EXTENSION: adblockplus-firefox-*-mv2.xpi
 
 # ################################################################################
 # Check build sizes
@@ -204,20 +197,20 @@ checkfilesizes:MV2:firefox:
 checkbuildsizes:MV3:chrome:
   extends: .checkbuildsizes
   variables:
-    REPOSITORY_BUILD: dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
-    SOURCE_BUILD: source/dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
+    REPOSITORY_BUILD: dist/release/adblockplus-chrome-*-mv3.zip
+    SOURCE_BUILD: source/dist/release/adblockplus-chrome-*-mv3.zip
 
 checkbuildsizes:MV2:chrome:
   extends: .checkbuildsizes
   variables:
-    REPOSITORY_BUILD: dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
-    SOURCE_BUILD: source/dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
+    REPOSITORY_BUILD: dist/release/adblockplus-chrome-*-mv2.zip
+    SOURCE_BUILD: source/dist/release/adblockplus-chrome-*-mv2.zip
 
 checkbuildsizes:MV2:firefox:
   extends: .checkbuildsizes
   variables:
-    REPOSITORY_BUILD: dist/release/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
-    SOURCE_BUILD: source/dist/release/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
+    REPOSITORY_BUILD: dist/release/adblockplus-firefox-*-mv2.xpi
+    SOURCE_BUILD: source/dist/release/adblockplus-firefox-*-mv2.xpi
 
 ################################################################################
 # Translate
@@ -382,7 +375,7 @@ downloadxtm:
 .compliance:MV3:
   extends: .compliance
   variables:
-    EXTENSION: adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
+    EXTENSION: adblockplus-chrome-*-mv3.zip
     MANIFEST: mv3
 
 comp:MV3:chromium:latest:
@@ -398,7 +391,7 @@ comp:MV3:edge:latest:
 .compliance:MV2:
   extends: .compliance
   variables:
-    EXTENSION: adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
+    EXTENSION: adblockplus-chrome-*-mv2.zip
     MANIFEST: mv2
 
 comp:MV2:chromium:latest:
@@ -420,14 +413,13 @@ comp:MV2:firefox:latest:
   extends: .compliance:MV2
   variables:
     BROWSER: firefox latest
-    EXTENSION: adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
+    EXTENSION: adblockplus-firefox-*-mv2.xpi
 
 comp:MV2:firefox:oldest:
   extends: .compliance:MV2
   variables:
     BROWSER: firefox 68.0
-    EXTENSION: adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
-
+    EXTENSION: adblockplus-firefox-*-mv2.xpi
 
 ################################################################################
 # Unit tests
@@ -455,9 +447,9 @@ unit:standard:
 .uitests:
   stage: uitests
   variables:
-    CHROME_BUILD: dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}.zip
-    CHROME_BUILD_MV3: dist/release/adblockplus-chrome-${CI_COMMIT_SHORT_SHA}-mv3.zip
-    FIREFOX_BUILD: dist/release/adblockplus-firefox-${CI_COMMIT_SHORT_SHA}.xpi
+    CHROME_BUILD: dist/release/adblockplus-chrome-*-mv2.zip
+    CHROME_BUILD_MV3: dist/release/adblockplus-chrome-*-mv3.zip
+    FIREFOX_BUILD: dist/release/adblockplus-firefox-*-mv2.xpi
     LT_USERNAME: $LT_USERNAME
     LT_ACCESS_KEY: $LT_ACCESS_KEY
   before_script:

@@ -22,7 +22,7 @@ declare global {
    * WebpackDotenv plugin declared env. variables for Sentry
    */
   const webpackDotenvPlugin: {
-    ADBLOCKPLUS_SENTRY_DSN?: string;
-    ADBLOCKPLUS_SENTRY_ENVIRONMENT?: string;
+    SENTRY_DSN?: string;
+    SENTRY_ENVIRONMENT?: string;
   };
 }

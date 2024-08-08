@@ -129,17 +129,17 @@ export async function initialize(
  */
 export function start(): void {
   if (
-    webpackDotenvPlugin.ADBLOCKPLUS_SENTRY_DSN != null &&
-    webpackDotenvPlugin.ADBLOCKPLUS_SENTRY_ENVIRONMENT != null
+    webpackDotenvPlugin.SENTRY_DSN != null &&
+    webpackDotenvPlugin.SENTRY_ENVIRONMENT != null
   ) {
     void initialize(
-      webpackDotenvPlugin.ADBLOCKPLUS_SENTRY_DSN,
-      webpackDotenvPlugin.ADBLOCKPLUS_SENTRY_ENVIRONMENT
+      webpackDotenvPlugin.SENTRY_DSN,
+      webpackDotenvPlugin.SENTRY_ENVIRONMENT
     );
   } else {
     console.warn(
       "Sentry is not initialized. " +
-        "Pass `ADBLOCKPLUS_SENTRY_DSN` and `ADBLOCKPLUS_SENTRY_ENVIRONMENT` " +
+        "Pass `SENTRY_DSN` and `SENTRY_ENVIRONMENT` " +
         "in .env file or env. variables, see README file"
     );
   }
