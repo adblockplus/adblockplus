@@ -18,7 +18,6 @@
 "use strict";
 
 const nodeCanvas = require("canvas");
-const childProcess = require("child_process");
 const fs = require("fs");
 const path = require("path");
 const {promisify} = require("util");
@@ -73,27 +72,6 @@ async function loadImage(name)
   return nodeCanvas.loadImage(filepath);
 }
 
-function optimizePNG(filepath)
-{
-  return new Promise((resolve, reject) =>
-  {
-    const proc = childProcess.spawn(
-      "npm",
-      ["run", "$", "optimize.png", filepath]
-    );
-    proc.on("close", (code) =>
-    {
-      if (code)
-      {
-        reject(`Failed to optimize PNG file: ${filepath}`);
-        return;
-      }
-
-      resolve();
-    });
-  });
-}
-
 async function createIcon(variant, size)
 {
   const {color, content, type} = variant;
@@ -132,7 +110,6 @@ async function createIcon(variant, size)
   const outputFilepath = path.join(outputDir, `${type}-${size}.png`);
   const pngBuffer = canvas.toBuffer();
   await fsWriteFile(outputFilepath, pngBuffer);
-  await optimizePNG(outputFilepath);
   // eslint-disable-next-line no-console
   console.log(`Created icon ${outputFilepath}`);
 }
