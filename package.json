@@ -70,9 +70,9 @@
     }
   },
   "dependencies": {
-    "@adblockinc/rules": "gitlab:adblockinc/ext/rules#037b71767cc1efecc624aaae12761d043f25d4f6",
+    "@adblockinc/rules": "gitlab:adblockinc/ext/rules#04a8ddcc2d09c44f151630d98e5a388e9fcd8d3e",
     "@eyeo/snippets": "1.4.0",
-    "@eyeo/webext-ad-filtering-solution": "1.10.0",
+    "@eyeo/webext-ad-filtering-solution": "1.11.0",
     "@sentry/browser": "8.2.1",
     "argparse": "1.0.10",
     "canvas": "2.11.2",

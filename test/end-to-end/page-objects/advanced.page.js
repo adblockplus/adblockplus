@@ -252,49 +252,49 @@ class AdvancedPage extends BasePage
 
   get easyListFL()
   {
-    return $("//li[@aria-label='EasyList (safe)']");
+    return $("//li[@aria-label='EasyList']");
   }
 
   get easyListFLGearIcon()
   {
-    return $("//li[@aria-label='EasyList (safe)']" +
+    return $("//li[@aria-label='EasyList']" +
       "/div/io-popout[@type='menubar']");
   }
 
   get easyListFLLastUpdatedText()
   {
     // eslint-disable-next-line max-len
-    return $("//li[@aria-label='EasyList (safe)']/div/span[@class='last-update']");
+    return $("//li[@aria-label='EasyList']/div/span[@class='last-update']");
   }
 
   get easyListFLSourceButton()
   {
-    return $("//li[@aria-label='EasyList (safe)']" +
+    return $("//li[@aria-label='EasyList']" +
       "/div/io-popout[@type='menubar']" +
       "/div/div/ul/li/a[@data-i18n='options_filterList_source']");
   }
 
   get easyListFLStatusToggle()
   {
-    return $("//li[@aria-label='EasyList (safe)']/div/io-toggle/button");
+    return $("//li[@aria-label='EasyList']/div/io-toggle/button");
   }
 
   get easyListFLTrashButton()
   {
-    return $("//li[@aria-label='EasyList (safe)']/div/button" +
+    return $("//li[@aria-label='EasyList']/div/button" +
       "[@data-action='remove-subscription']");
   }
 
   get easyListFLUpdateNowButton()
   {
-    return $("//li[@aria-label='EasyList (safe)']" +
+    return $("//li[@aria-label='EasyList']" +
       "/div/io-popout[@type='menubar']" +
       "/div/div/ul/li/button[@data-i18n='options_filterList_updateNow']");
   }
 
   get easyListFLWebsiteButton()
   {
-    return $("//li[@aria-label='EasyList (safe)']" +
+    return $("//li[@aria-label='EasyList']" +
       "/div/io-popout[@type='menubar']" +
       "/div/div/ul/li/a[@data-i18n='options_filterList_website']");
   }
