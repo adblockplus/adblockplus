@@ -490,7 +490,8 @@ uitests:all:
     SUITE: all
 
 uitests:all:mv3:
-  before_script:
+  before_script:    
+    - cd $[[ inputs.hostpath ]]    
     - npm install axios
     - export MV3_BUILD_CLOUD_URL=$(node test/end-to-end/upload-extension.js $LT_USERNAME $LT_ACCESS_KEY $CHROME_BUILD_MV3)
     - echo $MV3_BUILD_CLOUD_URL
@@ -517,6 +518,7 @@ uitests:e2e:
 
 uitests:filterlists:mv3:
   before_script:
+    - cd $[[ inputs.hostpath ]]
     - npm install axios
     - export MV3_BUILD_CLOUD_URL=$(node test/end-to-end/upload-extension.js $LT_USERNAME $LT_ACCESS_KEY $CHROME_BUILD_MV3)
     - echo $MV3_BUILD_CLOUD_URL
