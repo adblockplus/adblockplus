@@ -29,8 +29,10 @@ const PremiumHeaderChunk = require("./page-objects/premiumHeader.chunk");
 const globalRetriesNumber = 0;
 const isGitlab = process.env.CI === "true";
 
-const chromeCIBuild = "../../" + process.env.CHROME_BUILD;
-const firefoxCIBuild = "../../" + process.env.FIREFOX_BUILD;
+const chromeCIBuild = findFirstMatchingFile(
+  `../../${process.env.CHROME_BUILD}`);
+const firefoxCIBuild = findFirstMatchingFile(
+  `../../${process.env.FIREFOX_BUILD}`);
 
 const extensionVersion = getExtensionVersion();
 const distPath = path.join(process.cwd(), "..", "..", "dist");
@@ -272,6 +274,22 @@ async function getABPOptionsTabId()
         returnID().then((data)=> {callback(data)
       });`, []);
   return currentTab;
+}
+
+function findFirstMatchingFile(pathWithPattern)
+{
+  const dir = path.dirname(pathWithPattern);
+  const pattern = path.basename(pathWithPattern);
+  const regexPattern = new RegExp(pattern.replace("*", ".*"));
+
+  const files = fs.readdirSync(dir);
+  const firstFile = files.find(file => regexPattern.test(file));
+
+  if (firstFile)
+  {
+    return path.join(dir, firstFile);
+  }
+  throw new Error(`No file with pattern ${pattern} found in dir ${dir}`);
 }
 
 function getExtension(extensionPath)
