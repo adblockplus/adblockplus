@@ -71,6 +71,8 @@ export async function initialize(
   userId?: string,
   sampleRate?: number
 ): Promise<void> {
+  const manifest = browser.runtime.getManifest();
+
   // filter integrations that use the global variable
   const integrations = getDefaultIntegrations({}).filter(
     (defaultIntegration: { name: string }) => {
@@ -89,6 +91,11 @@ export async function initialize(
     release: info.addonVersion,
     transport: makeFetchTransport,
     stackParser: defaultStackParser,
+    initialScope: {
+      tags: {
+        manifestVersion: manifest.manifest_version
+      }
+    },
     integrations,
     sampleRate: sampleRate ?? 0.01,
     beforeSend(event) {
