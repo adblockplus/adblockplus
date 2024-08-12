@@ -447,15 +447,13 @@ unit:standard:
 .uitests:
   stage: uitests
   variables:
-    CHROME_BUILD: dist/release/adblockplus-chrome-*-mv2.zip
-    CHROME_BUILD_MV3: dist/release/adblockplus-chrome-*-mv3.zip
-    FIREFOX_BUILD: dist/release/adblockplus-firefox-*-mv2.xpi
     LT_USERNAME: $LT_USERNAME
     LT_ACCESS_KEY: $LT_ACCESS_KEY
   before_script:
     - cd $[[ inputs.hostpath ]]
   script:
     - npm ci --cache .npm --prefer-offline
+    - cp .env.e2e.template .env.e2e
     - npm run test:$CONFIGURATION $SUITE 2>&1 | tee lambdatest_output.txt || true
     - apt-get update
     - apt-get -y install default-jre-headless

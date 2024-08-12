@@ -29,17 +29,13 @@ const PremiumHeaderChunk = require("./page-objects/premiumHeader.chunk");
 const globalRetriesNumber = 0;
 const isGitlab = process.env.CI === "true";
 
-const chromeCIBuild = findFirstMatchingFile(
-  `../../${process.env.CHROME_BUILD}`);
-const firefoxCIBuild = findFirstMatchingFile(
+const chromeBuild = process.env.MANIFEST_VERSION === "2" ?
+  findFirstMatchingFile(`../../${process.env.CHROME_BUILD}`) :
+  findFirstMatchingFile(`../../${process.env.CHROME_BUILD_MV3}`);
+const firefoxBuild = findFirstMatchingFile(
   `../../${process.env.FIREFOX_BUILD}`);
 
-const extensionVersion = getExtensionVersion();
 const distPath = path.join(process.cwd(), "..", "..", "dist");
-const chromeExtensionPath =
-  path.join(distPath, "release", `adblockpluschrome-${extensionVersion}.zip`);
-const firefoxExtensionPath =
-  path.join(distPath, "release", `adblockplusfirefox-${extensionVersion}.xpi`);
 const helperExtensionPath =
   path.join(distPath, "devenv", "helper-extension.zip");
 
@@ -282,13 +278,23 @@ function findFirstMatchingFile(pathWithPattern)
   const pattern = path.basename(pathWithPattern);
   const regexPattern = new RegExp(pattern.replace("*", ".*"));
 
-  const files = fs.readdirSync(dir);
-  const firstFile = files.find(file => regexPattern.test(file));
-
-  if (firstFile)
+  let files;
+  try
   {
-    return path.join(dir, firstFile);
+    files = fs.readdirSync(dir);
   }
+  catch (err)
+  {
+    if (!err.message.includes("ENOENT: no such file or directory"))
+      throw err;
+
+    throw new Error("The 'dist/release/' folder does not exist");
+  }
+
+  const firstFile = files.find(file => regexPattern.test(file));
+  if (firstFile)
+    return path.join(dir, firstFile);
+
   throw new Error(`No file with pattern ${pattern} found in dir ${dir}`);
 }
 
@@ -299,12 +305,12 @@ function getExtension(extensionPath)
 
 function getChromiumExtension()
 {
-  return getExtension(isGitlab ? chromeCIBuild : chromeExtensionPath);
+  return getExtension(chromeBuild);
 }
 
 function getFirefoxExtension()
 {
-  return getExtension(isGitlab ? firefoxCIBuild : firefoxExtensionPath);
+  return getExtension(firefoxBuild);
 }
 
 function getHelperExtension()
@@ -572,12 +578,6 @@ async function getTabId({title, urlPattern})
 function localRunChecks()
 {
   checkEnvFileExists();
-  const {browserName} = testConfig;
-
-  if (browserName === "chrome" || browserName === "edge")
-    checkChromeReleaseBuild();
-  else if (browserName === "firefox")
-    checkFirefoxReleaseBuild();
 }
 
 function lambdatestRunChecks()
@@ -601,9 +601,6 @@ https://www.lambdatest.com/support/docs/using-environment-variables-for-authenti
     `);
     process.exit(1);
   }
-
-  checkChromeReleaseBuild();
-  checkFirefoxReleaseBuild();
 }
 
 function checkEnvFileExists()
@@ -618,55 +615,6 @@ You can use the .env.e2e.template file as a template.
     `);
     process.exit(1);
   }
-}
-
-function checkChromeReleaseBuild()
-{
-  if (!fs.existsSync(chromeExtensionPath))
-  {
-    console.error("\x1b[33m%s\x1b[0m", `
------------------------------------------------------------------
-Could not find chrome extension in 'dist/release/*.zip'.
-Run 'npm run build:release chrome' to build the MV2 extension.
-Or 'npm run build:release chrome -- -m 3' to build the MV3 extension.
------------------------------------------------------------------
-    `);
-    process.exit(1);
-  }
-}
-
-function checkFirefoxReleaseBuild()
-{
-  if (!fs.existsSync(firefoxExtensionPath))
-  {
-    console.error("\x1b[33m%s\x1b[0m", `
------------------------------------------------------------------
-Could not find firefox extension in 'dist/release/*.xpi'.
-Run 'npm run build:release firefox' to build it
------------------------------------------------------------------
-    `);
-    process.exit(1);
-  }
-}
-
-/**
- * The source of truth for the extension version is in base.mjs,
- * Which is an ES6 module.
- * Importing it would require us to make a lot of calls async or to port
- * the entire test suite to ES6.
- * To avoid that we just read the file and extract the version from it.
- * @returns {string} the extension version
- */
-function getExtensionVersion()
-{
-  const baseManifestPath = "../../build/webext/config/base.mjs";
-  const manifestContent = fs.readFileSync(baseManifestPath, "utf-8");
-  const versionMatch = manifestContent.match(/version: "(.*?)"/);
-  if (!versionMatch)
-  {
-    throw new Error("Could not find the version in the base manifest");
-  }
-  return versionMatch[1];
 }
 
 function isBrowser(browserName)
