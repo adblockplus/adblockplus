@@ -101,6 +101,8 @@ build:
 buildfromsource:
   stage: build
   needs: ["build"]
+  before_script:
+   - cd $[[ inputs.hostpath ]]
   script:
    - mkdir source
    - tar xvf dist/release/adblockplus-*.tar.gz -C source
@@ -170,6 +172,7 @@ checkfilesizes:MV2:firefox:
 .checkbuildsizes:
   stage: checkfilesizes
   before_script:
+    - cd $[[ inputs.hostpath ]]
     - if [ ! -f $SOURCE_BUILD ] || [ ! -f $REPOSITORY_BUILD ]; then
         echo "File not found" &&
         exit 1;
@@ -554,7 +557,7 @@ uitests:oldbrowsers:
     - docker cp $IMAGE_ID:/adblockplus/test/end-to-end/screenshots . 2> /dev/null
   artifacts:
     paths:
-      - screenshots/
+      - $[[ inputs.hostpath ]]/screenshots/
     when: on_failure
     expire_in: 1 mo
   rules:
