@@ -38,18 +38,8 @@ let defaults = Object.create(null);
  * @type {string[]}
  */
 defaults.allowlisting_authorizedKeys = [
-  `MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAuePfbm865kumeftXjlbt
-J68DTXLTn0VeOgdSTqOcpADVqH0Kxz5hfLMaoKC/QhO3SmAu1yZwJZ1WP9Uyu3I5
-EvJwEt7OHjJv54GhyYCtylMDCqSZgIIkUtB9PSXqFe3qyKAXACzwnLHmYIMMC1rx
-bViqMD06+S4NKtzEh602/JsOOTHkXDJFQi5gGpd7Yn/r1YFG20JzU5lr0pf3dOEK
-gNXiEwSRCuVSZ2+MHMtkFdP83/k59rTOfz5+ZThYmxECytD0JyY+bpDbso/XxQeL
-fThNEEnSpbbeJRZQM5Lwf4D/f1wzSvyRrQiQz6Bo6TrA9DpL/BHqgUBv4O+DwhAu
-8tFaaI+YWUmA1M6DRCL1aPQlFf3RB+aAf/TXFRU6enm8y/DFKWnwZja1YlApxTYT
-MGnZ5hrsXZZImjcKBKwXi3JCtLkfV+osAHYrMAJPPAfECkch/ovrEUcdBEu4WsJ+
-gKlL2C1/ZL+fTZc+H9qt38qba8my5XlQmhXmzXFKKyp+1pqNkQuYzzT0M8PUqtlh
-z5aNu4gc/sOrQayusssUkkwISWm9yKc9pwOE+2Ax45iq2xNhjx0+rl9nc/chV21T
-ZLfyePid/4N3Q7obmQ9a6trOBIF5ONyg16CK61RjacnG76AMKrVOoq9lzF2UufL8
-Myzw9X8Wsw3VrjJyYbWhUtkCAwEAAQ==`,
+  // Readership Link public key
+  // https://gitlab.com/adblockinc/ext/adblockplus/adblockplus/-/issues/1370
   `MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAwWP4dO4iYcHpcO6lVmjC
 gg/jfLM4fP+wWNaoDvMke0gQ7m9smXVtgbYXb6qzEd0aDaCRX3em+eo6bWp6ps5U
 +8USRxuNH4cs6ZLjGynmZnm2TXrJScixUEw4ULq8Rdexr4ZmtT1WfUjJSFQpWWwp
@@ -62,6 +52,29 @@ Sd5O2iTqWPmJ03wVSXLx+6g0fgaGHEDtKtbfhuHvDG2dIoAB7q+oKBHQJ7CIFEbI
 lBnPV1v+dxDLb3DdK0Ip9wM74S2+Nf9359TCjAaWgNjiTnhBw6xpwTGn/8vzNL3p
 fcEVJJt8DUfuCYV9mtKPHbj06RHnLsaXQ72x6I+ocXi8TygTjldZFx13ttJqVvju
 UaTE0E4KN9Mzb/2zEYTgCzcCAwEAAQ==`
+];
+
+/**
+ * Public keys used to verify authenticity of entities that are authorized to
+ * use the bypass API.
+ *
+ * @type {string[]}
+ */
+defaults.bypass_authorizedKeys = [
+  // Readership Link public key
+  // https://eyeo.atlassian.net/browse/EXT-29
+  `MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAt7CNJC8ntgHa4GviCdeV
+f1sSIJMI73rDvUcGPS0u/SlJCoE0v71q76b6pEJd7Znztxiyfx9SePM+uaCZKpfm
+2sXx/vOfOXDsSDGyUq0a3vj/kNtIaLEhoaZ+uYYBQV995BfQ/qOUgkFNimyfwzYg
++chyXqEvwjjqRQ5cWOUmK4lQoAr+OJXmoq9KHSK6TnW7gHZrm5CUhN9TR2DRv9io
+DiVTDIcbBh7KpvN4o/gp+x+oCbh3sWtucweu9fhUwKvlqoO24xuMfLQJ+iSShy5z
+gKfWCEcQoOYARsV5pTsOKo8u3e2bbc/D5rCKTOqG3vSkafaxLLyskUz9zEm+gkOO
+PMF/M0BZIZ8gPzz+YlOr9qGvLfV9XiagIpF/sPxi86f7TPlMGnOi4N4PT5eMaFtK
+tfy2y3PJZN9cxAOitFjtXlllPsDbu9VAERfSCCZgHM7QY+GqQKrMcaHC3tNGhcve
+GhL5A8p+PLLu8msHcc11DmmDgNVVamRggk3h5STbJP+TkgoZ1BoAYPStjF+xzvCj
+UnIc1wA9sRfRNPcW+fVjOFkAF99sqew6zqL3gwmMdHdd9iVUHx7yyLkJOwJhzM5n
+I51tXMpSOPPNheNGfAY7b8xGGv8M3SgoLg+dtKAV1mjyFftZ/9KP2+82Hgu+QNAX
+9OLtuZ8eT/2idUzy2F+u17cCAwEAAQ==`
 ];
 
 /**
@@ -87,26 +100,7 @@ defaults.documentation_link = "https://adblockplus.org/redirect?link=%LINK%&lang
  * @type {number}
  */
 defaults.blocked_total = 0;
-/**
- * Public keys used to verify authenticity of entities that are authorized to
- * use the bypass API.
- *
- * @type {string[]}
- */
-defaults.bypass_authorizedKeys = [
-  `MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAsCtBp9/0qCM5lp0lJVSx
-IAGgWZsX50xeJfBq6OkfsI+305Yj0igVfyVASOaC1fc2JRHD/uAOKk47SiPcBkiz
-mPHUt9ziOtAEkW7GrU6gaVOSwp26vUbSuvg9ouut5U2m8ULOyzp+WyU8nCzTPV5o
-AvCta04bK9or4UnyTRKyqADlNwz7WnH+0QiHYbgtfE/E3rowEoMEAC44C7OiawCm
-rnBXAkyBJnh1oEfUVI4LurxVl/zLo8MWfzErkaJy1FpsFR3F3L9ymKXpmxbhlDdX
-0rxjwnRD/2sCWW3SJOU26gfFgu/NI6LGxcWdPrucdkoOOOnNQjjDlhGYPTqqxugH
-/I5r+tAeUrrwKjmFcpMdxX7dfw1LoBoZCZnShZKlGKDqXf985Dc+3StbGWcxwNn9
-l9/Ho6YFA7fKpBKEED2V+SrDb4RCkScvOOiMOI1v5bwsLinUd/2yxRDrO25uwU7h
-r4LqmOguqjjLGF17d2WvG5D+LIQwgusxQd9Jk/n9PRdwtVGJhSDsDc8el2nKIqk9
-ofk3YJzAIbS9iHQ2LuHubuhzYjkxRLcdSbt1oONHCSHeecZn/OXwYeTvU7Po1KPW
-emi3XUpyjylUe9ONlw50lynwRw117bNHQDDHwKPoVW1cjoAtRsCnviFHPWTPjQKe
-A2LS9qa7eNdIonehrzG20cECAwEAAQ==`
-];
+
 /**
  * Whether to show a badge in the toolbar icon indicating the number
  * of blocked ads.
